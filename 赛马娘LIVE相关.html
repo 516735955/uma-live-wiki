@@ -113,6 +113,38 @@
                 linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
                 url('/uma_tools/img/hero_bg.jpg') center center / cover no-repeat;
         }
+        .home-upcoming {
+            position: absolute; right: 28px; bottom: 24px; z-index: 5;
+            max-width: 360px; width: auto;
+            display: flex; flex-direction: column; gap: 6px;
+            padding: 14px 18px;
+            color: #fff; cursor: pointer; text-decoration: none;
+            background: rgba(20, 26, 41, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .home-upcoming:hover { transform: translateY(-3px); border-color: rgba(255, 199, 87, 0.7); }
+        .home-upcoming .hu-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 3px 10px; border-radius: 999px;
+            background: linear-gradient(90deg, #ff8c1a, #ffb347);
+            color: #fff; font-size: 0.72em; font-weight: 800; letter-spacing: 0.1em;
+            text-shadow: none; align-self: flex-start;
+        }
+        .home-upcoming .hu-title {
+            font-size: 1em; font-weight: 700; line-height: 1.4;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .home-upcoming .hu-meta { font-size: 0.8em; opacity: 0.88; letter-spacing: 0.02em; }
+        .home-upcoming .hu-link {
+            margin-top: 3px; font-size: 0.82em; font-weight: 700;
+            color: #ffc657; letter-spacing: 0.04em;
+        }
 
         /* ===== SUBPAGE HEADER (top navy bar, like umamusume.jp sub pages) ===== */
         .sub-header {
@@ -944,6 +976,7 @@
             .home-stat-number { font-size: 1.1rem; }
             .home-stat-label { font-size: 0.66rem; letter-spacing: 0.05em; }
             .home-nav { position: relative; z-index: 1; top: 0; flex: 1 1 auto; width: 100%; max-width: none; padding: 18px 12px 30px; background: transparent; }
+            .home-upcoming { position: relative; left: auto; right: auto; bottom: auto; z-index: 1; max-width: none; margin: 10px 14px 22px; }
             .home-tabs { flex-direction: column; gap: 10px; }
             .home-tab { flex: none; justify-content: flex-start; padding: 14px 18px; border-left: none; border-bottom: none; border-radius: 12px; background: rgba(35, 65, 143, 0.45); border: 1px solid rgba(255, 255, 255, 0.18); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
             .home-tab:hover { border-left: none; border-bottom: none; background: rgba(58, 109, 240, 0.42); }
@@ -1602,6 +1635,10 @@
         .ev-l-link:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
         .ev-l-link.live { color: var(--brand-dark); }
         .ev-l-link.live:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
+        .ev-l-link.nonlive { color: var(--text-2); }
+        .ev-l-link.nonlive:hover { background: #1f8a8c; border-color: #1f8a8c; color: #fff; }
+        .ev-l-link.nonlive svg { color: #1f8a8c; }
+        .ev-l-link.nonlive:hover svg { color: #fff; }
         .events-empty { padding: 60px 20px; text-align: center; color: var(--text-3); font-size: 0.95em; }
         .events-footer-note {
             margin-top: 18px; padding: 12px 16px; border-top: 1px solid var(--border);
@@ -2209,6 +2246,12 @@
             </nav>
         </div>
         <div class="home-hero"></div>
+        <a v-if="nextUpcomingEvent" class="home-upcoming" :href="nextUpcomingHref" @click.prevent="openNextUpcoming()">
+            <span class="hu-badge">即将开演</span>
+            <span class="hu-title">{{ nextUpcomingEvent.title }}</span>
+            <span class="hu-meta">{{ nextUpcomingEvent.date_zh }}<template v-if="nextUpcomingEvent.venue"> · {{ nextUpcomingEvent.venue }}</template></span>
+            <span class="hu-link">查看演出详情 →</span>
+        </a>
     </div>
 
     <header v-if="!home" class="sub-header">
@@ -2488,6 +2531,11 @@
                         <div class="live-cat-title">其他</div>
                         <div class="live-cat-desc">音乐祭、舞台、电台活动等<br>其他现场活动</div>
                     </div>
+                    <div class="live-cat-card" @click="openCat('nonlive')">
+                        <div class="live-cat-icon">🗓️</div>
+                        <div class="live-cat-title">非Live活动</div>
+                        <div class="live-cat-desc">音乐祭、展会、发售纪念等活动<br>非Live活跃活动（来自 Eventernote）</div>
+                    </div>
                 </div>
                 <div class="live-cat-note" id="liveCatNote" :style="catNote?'':'display:none'">{{ catNote }}</div>
             </div>
@@ -2515,7 +2563,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                     返回分类
                 </button>
-                <template v-if="liveCatData && liveCatData[liveCatType]">
+                <template v-if="currentCat">
                     <div v-if="liveCatSections.length > 1" class="live-cat-grid" id="liveCatGrid">
                         <div v-for="(sec,si) in liveCatSections" :key="si" class="live-cat-card" @click="openCatSection(si)">
                             <div class="live-cat-icon">{{ sec.icon || '💿' }}</div>
@@ -2524,7 +2572,7 @@
                         </div>
                     </div>
                     <div v-else class="live-series-grid" id="liveCatGrid">
-                        <div v-for="(g,gi) in liveCatSections[0].groups" :key="gi" class="live-series-card live-event-card" :class="liveCatType==='other' ? sectionCardClass(gi) : ''" @click="openCatDetail(liveCatType, -1, gi)">
+                        <div v-for="(g,gi) in liveCatSections[0].groups" :key="gi" class="live-series-card live-event-card" :class="(liveCatType==='other' || liveCatType==='nonlive') ? sectionCardClass(gi) : ''" @click="openCatDetail(liveCatType, -1, gi)">
                             <img v-if="g.cover" class="live-event-cover" :src="g.cover" :alt="g.group" loading="lazy">
                             <div v-if="!g.cover" class="live-series-no">{{ g.subs.length }}</div>
                             <div class="live-event-body" :class="{hascover: g.cover}">
@@ -2568,7 +2616,8 @@
                         <div class="live-perf-list" id="livePerfList">
                             <div v-for="(s,pi) in (currentGroup?currentGroup.subs:[])" :key="pi" class="live-perf-item" :class="{selected: pi===livePerf}" :id="'livePerf_'+pi">
                                 <div class="live-perf-head" @click="selectLivePerf(pi)"><span>{{ s.title }}</span><span class="live-perf-date">{{ s.date }}</span></div>
-                                <div v-if="s.days.length>1" class="live-day-btns">
+                                <div v-if="s.nonlive" class="live-perf-nodays">本活动 · 无私演歌单</div>
+                                <div v-else-if="s.days.length>1" class="live-day-btns">
                                     <button v-for="(d,di) in s.days" :key="di" class="live-day-btn" :class="{active: (pi===livePerf && di===liveDay)}" :id="'liveDay_'+pi+'_'+di" @click="selectLiveDay(pi,di)">{{ d.label }}</button>
                                 </div>
                                 <div v-else class="live-perf-nodays">{{ s.days[0].label }} 当日歌单</div>
@@ -2585,7 +2634,7 @@
                                 </span>
                             </div>
                             <div v-if="setlistTable" v-html="setlistTable"></div>
-                            <div v-else class="live-setlist-placeholder">暂无数据</div>
+                            <div v-else class="live-setlist-placeholder">{{ (currentSub && currentSub.nonlive) ? '非Live活动 · 无歌单' : '暂无数据' }}</div>
                         </div>
                     </div>
                 </div>
@@ -3032,6 +3081,9 @@
                         </a>
                         <a v-if="e.live" class="ev-l-link live" :href="e.live" @click.prevent="openLiveFromEvents(e.live)" :title="'查看「' + e.title + '」的详细歌单'" aria-label="查看详细歌单">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        </a>
+                        <a v-else class="ev-l-link nonlive" :href="nonliveHref(e)" @click.prevent="openNonliveFromEvents(e)" :title="'查看「' + e.title + '」的活动详情页面'" aria-label="查看活动详情页面">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                         </a>
                     </span>
                 </div>
@@ -4301,7 +4353,7 @@ createApp({
             liveView.value = 'liveSeries';
             restoreLiveScrollFromState('liveSeries');
           }
-        } else if (seg.length >= 2 && (seg[1] === 'cd' || seg[1] === 'twinkle' || seg[1] === 'other')) {
+        } else if (seg.length >= 2 && (seg[1] === 'cd' || seg[1] === 'twinkle' || seg[1] === 'other' || seg[1] === 'nonlive')) {
           liveCatType.value = seg[1];
           if (seg.length >= 3) {
             if (seg[1] === 'cd' && seg.length >= 4) {
@@ -4669,9 +4721,35 @@ createApp({
 
     // live
     const seriesGrid = SERIES_GRID;
+    const liveNonliveCat = computed(function () {
+      const groups = [];
+      (eventsAll.value || []).forEach(function (e) {
+        if (e.live) return;
+        let castHtml = '';
+        if (e.times) castHtml += '<div class="cast-line">' + e.times + '</div>';
+        const names = (e.actors || []).map(function (a) { return a.name; }).filter(Boolean);
+        if (names.length) castHtml += '<div class="cast-line">出演：' + names.join('、') + '</div>';
+        const sub = {
+          title: e.title,
+          date: e.date + (e.venue ? '　' + e.venue : ''),
+          cast: castHtml,
+          tips: '出处：Eventernote 活动页\n' + ((e.link && e.link.indexOf('eventernote.com') !== -1) ? e.link : ''),
+          days: [],
+          vids: [],
+          nonlive: true,
+          evLink: e.link
+        };
+        groups.push({ group: e.title, subs: [sub], cover: e.img || '', nonlive: true });
+      });
+      return { group: '非Live活动', groups: groups };
+    });
+    const currentCat = computed(function () {
+      if (liveCatType.value === 'nonlive') return liveNonliveCat.value || null;
+      return (liveCatData.value && liveCatData.value[liveCatType.value]) || null;
+    });
     const currentGroup = computed(function () {
       if (liveView.value === 'liveCatDetail') {
-        const cat = liveCatData.value && liveCatData.value[liveCatType.value];
+        const cat = currentCat.value;
         if (!cat || liveCatIndex.value < 0) return null;
         const gi = liveCatIndex.value;
         if (cat.sections) {
@@ -4687,7 +4765,7 @@ createApp({
       return LIVE_DATA[liveSeriesIndex.value];
     });
     const liveCatSections = computed(function () {
-      const cat = liveCatData.value && liveCatData.value[liveCatType.value];
+      const cat = currentCat.value;
       if (!cat) return [];
       if (cat.sections) return cat.sections;
       return [{ group: cat.group, groups: cat.groups || [] }];
@@ -4735,7 +4813,7 @@ createApp({
     }
     function openCat(cat) {
       if (cat === 'series') { showLiveView('liveSeries'); }
-      else if (cat === 'cd' || cat === 'twinkle' || cat === 'other') {
+      else if (cat === 'cd' || cat === 'twinkle' || cat === 'other' || cat === 'nonlive') {
         liveCatType.value = cat;
         liveCatIndex.value = -1;
         liveCatSectionIndex.value = -1;
@@ -4772,6 +4850,18 @@ createApp({
       showLiveView('liveCatList');
     }
     function liveDetailBack() {
+      if (liveReturnSource.value === 'home') {
+        liveReturnSource.value = 'live';
+        liveSeriesIndex.value = -1;
+        livePerf.value = -1;
+        liveDay.value = 0;
+        activeTab.value = 'songs';
+        const path = LANG_PREFIX;
+        if (currentUrlPath() !== path) history.pushState({ r: true }, '', path);
+        syncFromUrl();
+        window.scrollTo(0, 0);
+        return;
+      }
       if (liveReturnSource.value === 'events') {
         liveReturnSource.value = 'live';
         liveSeriesIndex.value = -1;
@@ -4794,6 +4884,35 @@ createApp({
       eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
       liveBackScroll.view = '';
       history.pushState({ r: true }, '', path);
+      syncFromUrl();
+      liveReturnSource.value = 'events';
+      var goTop = function () {
+        var el = document.documentElement;
+        var prev = el.style.scrollBehavior;
+        el.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        el.style.scrollBehavior = prev;
+      };
+      requestAnimationFrame(goTop);
+      setTimeout(goTop, 0);
+    }
+    function nonliveGi(e) {
+      const gs = (liveNonliveCat.value && liveNonliveCat.value.groups) || [];
+      for (let i = 0; i < gs.length; i++) {
+        if (gs[i] && gs[i].nonlive && gs[i].subs && gs[i].subs[0] && gs[i].subs[0].evLink === e.link) return i;
+      }
+      return -1;
+    }
+    function nonliveHref(e) {
+      const gi = nonliveGi(e);
+      return gi >= 0 ? LANG_PREFIX + '/live/nonlive/' + gi : LANG_PREFIX + '/live/nonlive';
+    }
+    function openNonliveFromEvents(e) {
+      if (nonliveGi(e) < 0) return;
+      eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
+      history.pushState({ r: true }, '', nonliveHref(e));
       syncFromUrl();
       liveReturnSource.value = 'events';
       var goTop = function () {
@@ -4854,7 +4973,9 @@ createApp({
     });
     const setlistTitle = computed(function () {
       const s = currentSub.value;
-      if (!s || liveDay.value >= s.days.length) return '';
+      if (!s) return '';
+      if (s.nonlive) return s.title + ' · 本活动';
+      if (liveDay.value >= s.days.length) return '';
       return s.title + ' · ' + s.days[liveDay.value].label;
     });
     const setlistLinks = computed(function () {
@@ -5138,6 +5259,32 @@ createApp({
       var t = new Date(e.date + 'T00:00:00').getTime();
       return !isNaN(t) && t < Date.now() - 86400000;
     }
+    const nextUpcomingEvent = computed(function () {
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+      const today = now.getTime();
+      let best = null, bestT = 0;
+      (eventsAll.value || []).forEach(function (e) {
+        const t = new Date(e.date + 'T00:00:00').getTime();
+        if (isNaN(t)) return;
+        if (t < today) return;
+        if (!best || t < bestT) { best = e; bestT = t; }
+      });
+      return best;
+    });
+    const nextUpcomingHref = computed(function () {
+      const e = nextUpcomingEvent.value;
+      if (!e) return null;
+      if (e.live) return e.live;
+      return nonliveHref(e);
+    });
+    function openNextUpcoming() {
+      const e = nextUpcomingEvent.value;
+      if (!e) return;
+      if (e.live) openLiveFromEvents(e.live);
+      else openNonliveFromEvents(e);
+      liveReturnSource.value = 'home';
+    }
     function onEvImgError(ev) {
       ev.target.style.visibility = 'hidden';
     }
@@ -5393,6 +5540,7 @@ function registerCover(url) {
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
       showLiveView, openCat, openLiveSeries, selectLivePerf, selectLiveDay, liveDetailBack, openLiveFromEvents,
       liveCatType, liveCatIndex, liveCatData, loadLiveCatData, openCatDetail, backCatList, liveCatSectionIndex, liveCatSections, openCatSection, currentSection, sectionCardClass,
+      currentCat, liveNonliveCat, nonliveGi, nonliveHref, openNonliveFromEvents,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, newsBack, loadNews, newsHeroCover,
@@ -5402,6 +5550,7 @@ function registerCover(url) {
       eventsCount, eventsMeta, eventsQuery, evTime, setEvTime, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
+      nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
