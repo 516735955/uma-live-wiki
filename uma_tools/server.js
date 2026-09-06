@@ -78,8 +78,11 @@ let newsIndexCache = { at: 0, data: null };
 
 // ---- machine translation of news titles (Baidu Translate API, cached) ----
 const TRANS_CACHE_FILE = path.join(__dirname, 'trans_cache.json');
-const BAIDU_APPID = '20260809002662334';
-const BAIDU_SECRET = 'n15AkXxiWAYimDDHt5eh';
+// Baidu Translate API credentials. Do NOT hardcode real keys in this file:
+// load them from environment variables so the public repo stays secret-free.
+// When unset, translation degrades gracefully (titles/bodies stay in Japanese).
+const BAIDU_APPID = process.env.BAIDU_APPID || '';
+const BAIDU_SECRET = process.env.BAIDU_SECRET || '';
 let transCache = {};
 try { transCache = JSON.parse(fs.readFileSync(TRANS_CACHE_FILE, 'utf8')); } catch (e) {}
 let transQueue = [];

@@ -9,3 +9,20 @@ _db_build_draft.json
 
 # 官网抓取缓存（非网站源码）
 Default Project/
+
+# 旧版/备份 HTML（仅保留当前版本作为站点源码）
+赛马娘LIVE相关_original_backup.html
+赛马娘LIVE相关_vue.html
+赛马娘LIVE相关_备份_*.html
+赛马娘LIVE相关_样式备份_*.html
+
+# 运行时产生的日志 / 缓存 / 临时文件
+*.log
+*.err
+uma_tools/trans_cache.json
+uma_tools/lantis_news.json
+uma_tools/pending.json
+uma_tools/pending_preview.md
+uma_tools/refind_matches.json
+uma_tools/goods_dump.json
+__pycache__/
