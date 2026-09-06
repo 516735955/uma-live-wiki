@@ -1,0 +1,1381 @@
+﻿{
+ "_meta": {
+  "source": "https://umamusume.jp/character/",
+  "count": 171,
+  "moegirl": "https://mobile.moegirl.org.cn/赛马娘_Pretty_Derby/登场人物"
+ },
+ "characters": [
+  {
+   "id": "specialweek",
+   "name_ja": "スペシャルウィーク",
+   "name_zh": "特别周",
+   "cv": "和氣あず未",
+   "img": "/uma_official/specialweek.png",
+   "page": "https://zh.moegirl.org.cn/%E7%89%B9%E5%88%AB%E5%91%A8"
+  },
+  {
+   "id": "silencesuzuka",
+   "name_ja": "サイレンススズカ",
+   "name_zh": "无声铃鹿",
+   "cv": "高野麻里佳",
+   "img": "/uma_official/silencesuzuka.png",
+   "page": "https://zh.moegirl.org.cn/%E6%97%A0%E5%A3%B0%E9%93%83%E9%B9%BF"
+  },
+   {
+    "id": "tokaiteio",
+    "name_ja": "トウカイテイオー",
+    "name_zh": "东海帝王",
+    "cv": "Machico",
+    "cv_former": "伊波杏树", "cv_former_ja": "伊波杏樹",
+    "img": "/uma_official/tokaiteio.png",
+    "page": "https://zh.moegirl.org.cn/%E4%B8%9C%E6%B5%B7%E5%B8%9D%E7%8E%8B"
+   },
+  {
+   "id": "maruzensky",
+   "name_ja": "マルゼンスキー",
+   "name_zh": "丸善斯基",
+   "cv": "Lynn",
+   "img": "/uma_official/maruzensky.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B8%B8%E5%96%84%E6%96%AF%E5%9F%BA"
+  },
+  {
+   "id": "fujikiseki",
+   "name_ja": "フジキセキ",
+   "name_zh": "富士奇石",
+   "cv": "松井恵理子",
+   "img": "/uma_official/fujikiseki.png",
+   "page": "https://zh.moegirl.org.cn/%E5%AF%8C%E5%A3%AB%E5%A5%87%E7%9F%B3"
+  },
+  {
+   "id": "oguricap",
+   "name_ja": "オグリキャップ",
+   "name_zh": "小栗帽",
+   "cv": "高柳知葉",
+   "img": "/uma_official/oguricap.png",
+   "page": "https://zh.moegirl.org.cn/%E5%B0%8F%E6%A0%97%E5%B8%BD"
+  },
+  {
+   "id": "goldship",
+   "name_ja": "ゴールドシップ",
+   "name_zh": "黄金船",
+   "cv": "上田瞳",
+   "img": "/uma_official/goldship.png",
+   "page": "https://zh.moegirl.org.cn/%E9%BB%84%E9%87%91%E8%88%B9"
+  },
+  {
+   "id": "vodka",
+   "name_ja": "ウオッカ",
+   "name_zh": "伏特加(赛马娘 Pretty Derby)",
+   "cv": "大橋彩香",
+   "img": "/uma_official/vodka.png",
+   "page": "https://zh.moegirl.org.cn/%E4%BC%8F%E7%89%B9%E5%8A%A0(%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby)"
+  },
+  {
+   "id": "daiwascarlet",
+   "name_ja": "ダイワスカーレット",
+   "name_zh": "大和赤骥",
+   "cv": "木村千咲",
+   "img": "/uma_official/daiwascarlet.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%A7%E5%92%8C%E8%B5%A4%E9%AA%A5"
+  },
+  {
+   "id": "taikishuttle",
+   "name_ja": "タイキシャトル",
+   "name_zh": "大树快车",
+   "cv": "大坪由佳",
+   "img": "/uma_official/taikishuttle.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%A7%E6%A0%91%E5%BF%AB%E8%BD%A6"
+  },
+  {
+   "id": "grasswonder",
+   "name_ja": "グラスワンダー",
+   "name_zh": "草上飞",
+   "cv": "前田玲奈",
+   "img": "/uma_official/grasswonder.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8D%89%E4%B8%8A%E9%A3%9E"
+  },
+  {
+   "id": "hishiamazon",
+   "name_ja": "ヒシアマゾン",
+   "name_zh": "菱亚马逊",
+   "cv": "巽悠衣子",
+   "img": "/uma_official/hishiamazon.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8F%B1%E4%BA%9A%E9%A9%AC%E9%80%8A"
+  },
+  {
+   "id": "mejiromcqueen",
+   "name_ja": "メジロマックイーン",
+   "name_zh": "目白麦昆",
+   "cv": "大西沙織",
+   "img": "/uma_official/mejiromcqueen.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E9%BA%A6%E6%98%86"
+  },
+  {
+   "id": "elcondorpasa",
+   "name_ja": "エルコンドルパサー",
+   "name_zh": "神鹰(赛马娘 Pretty Derby)",
+   "cv": "髙橋ミナミ",
+   "img": "/uma_official/elcondorpasa.png",
+   "page": "https://zh.moegirl.org.cn/%E7%A5%9E%E9%B9%B0(%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby)"
+  },
+  {
+   "id": "tmoperao",
+   "name_ja": "テイエムオペラオー",
+   "name_zh": "好歌剧",
+   "cv": "徳井青空",
+   "img": "/uma_official/tmoperao.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A5%BD%E6%AD%8C%E5%89%A7"
+  },
+   {
+    "id": "naritabrian",
+    "name_ja": "ナリタブライアン",
+    "name_zh": "成田白仁",
+    "cv": "衣川里佳",
+    "cv_former": "相坂优歌", "cv_former_ja": "相坂優歌",
+    "img": "/uma_official/naritabrian.png",
+    "page": "https://zh.moegirl.org.cn/%E6%88%90%E7%94%B0%E7%99%BD%E4%BB%81"
+   },
+  {
+   "id": "symbolirudolf",
+   "name_ja": "シンボリルドルフ",
+   "name_zh": "鲁道夫象征",
+   "cv": "田所あずさ",
+   "img": "/uma_official/symbolirudolf.png",
+   "page": "https://zh.moegirl.org.cn/%E9%B2%81%E9%81%93%E5%A4%AB%E8%B1%A1%E5%BE%81"
+  },
+  {
+   "id": "airgroove",
+   "name_ja": "エアグルーヴ",
+   "name_zh": "气槽",
+   "cv": "青木瑠璃子",
+   "img": "/uma_official/airgroove.png",
+   "page": "https://zh.moegirl.org.cn/%E6%B0%94%E6%A7%BD"
+  },
+  {
+   "id": "agnesdigital",
+   "name_ja": "アグネスデジタル",
+   "name_zh": "爱丽数码",
+   "cv": "鈴木みのり",
+   "img": "/uma_official/agnesdigital.png",
+   "page": "https://zh.moegirl.org.cn/%E7%88%B1%E4%B8%BD%E6%95%B0%E7%A0%81"
+  },
+  {
+   "id": "seiunsky",
+   "name_ja": "セイウンスカイ",
+   "name_zh": "青云天空",
+   "cv": "鬼頭明里",
+   "img": "/uma_official/seiunsky.png",
+   "page": "https://zh.moegirl.org.cn/%E9%9D%92%E4%BA%91%E5%A4%A9%E7%A9%BA"
+  },
+  {
+   "id": "tamamocross",
+   "name_ja": "タマモクロス",
+   "name_zh": "玉藻十字",
+   "cv": "大空直美",
+   "img": "/uma_official/tamamocross.png",
+   "page": "https://zh.moegirl.org.cn/%E7%8E%89%E8%97%BB%E5%8D%81%E5%AD%97"
+  },
+  {
+   "id": "finemotion",
+   "name_ja": "ファインモーション",
+   "name_zh": "美妙姿势",
+   "cv": "橋本ちなみ",
+   "img": "/uma_official/finemotion.png",
+   "page": "https://zh.moegirl.org.cn/%E7%BE%8E%E5%A6%99%E5%A7%BF%E5%8A%BF"
+  },
+  {
+   "id": "biwahayahide",
+   "name_ja": "ビワハヤヒデ",
+   "name_zh": "琵琶晨光",
+   "cv": "近藤唯",
+   "img": "/uma_official/biwahayahide.png",
+   "page": "https://zh.moegirl.org.cn/%E7%90%B5%E7%90%B6%E6%99%A8%E5%85%89"
+  },
+   {
+    "id": "mayanotopgun",
+    "name_ja": "マヤノトップガン",
+    "name_zh": "摩耶重炮",
+    "cv": "星谷美緒",
+    "cv_former": "今村彩夏", "cv_former_ja": "今村彩夏",
+    "img": "/uma_official/mayanotopgun.png",
+    "page": "https://zh.moegirl.org.cn/%E6%91%A9%E8%80%B6%E9%87%8D%E7%82%AE"
+   },
+  {
+   "id": "manhattancafe",
+   "name_ja": "マンハッタンカフェ",
+   "name_zh": "曼城茶座",
+   "cv": "小倉唯",
+   "img": "/uma_official/manhattancafe.png",
+   "page": "https://zh.moegirl.org.cn/%E6%9B%BC%E5%9F%8E%E8%8C%B6%E5%BA%A7"
+  },
+  {
+   "id": "mihonobourbon",
+   "name_ja": "ミホノブルボン",
+   "name_zh": "美浦波旁",
+   "cv": "長谷川育美",
+   "img": "/uma_official/mihonobourbon.png",
+   "page": "https://zh.moegirl.org.cn/%E7%BE%8E%E6%B5%A6%E6%B3%A2%E6%97%81"
+  },
+  {
+   "id": "mejiroryan",
+   "name_ja": "メジロライアン",
+   "name_zh": "目白赖恩",
+   "cv": "土師亜文",
+   "img": "/uma_official/mejiroryan.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E8%B5%96%E6%81%A9"
+  },
+  {
+   "id": "hishiakebono",
+   "name_ja": "ヒシアケボノ",
+   "name_zh": "菱曙",
+   "cv": "松嵜麗",
+   "img": "/uma_official/hishiakebono.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8F%B1%E6%9B%99"
+  },
+  {
+   "id": "yukinobijin",
+   "name_ja": "ユキノビジン",
+   "name_zh": "雪之美人",
+   "cv": "山本希望",
+   "img": "/uma_official/yukinobijin.png",
+   "page": "https://zh.moegirl.org.cn/%E9%9B%AA%E4%B9%8B%E7%BE%8E%E4%BA%BA"
+  },
+  {
+   "id": "riceshower",
+   "name_ja": "ライスシャワー",
+   "name_zh": "米浴",
+   "cv": "石見舞菜香",
+   "img": "/uma_official/riceshower.png",
+   "page": "https://zh.moegirl.org.cn/%E7%B1%B3%E6%B5%B4"
+  },
+   {
+    "id": "inesfujin",
+    "name_ja": "アイネスフウジン",
+    "name_zh": "艾尼斯风神",
+    "cv": "長江里加",
+    "cv_former": "岭内知美", "cv_former_ja": "嶺内ともみ",
+    "img": "/uma_official/inesfujin.png",
+    "page": "https://zh.moegirl.org.cn/%E8%89%BE%E5%B0%BC%E6%96%AF%E9%A3%8E%E7%A5%9E"
+   },
+  {
+   "id": "agnestachyon",
+   "name_ja": "アグネスタキオン",
+   "name_zh": "爱丽速子",
+   "cv": "上坂すみれ",
+   "img": "/uma_official/agnestachyon.png",
+   "page": "https://zh.moegirl.org.cn/%E7%88%B1%E4%B8%BD%E9%80%9F%E5%AD%90"
+  },
+  {
+   "id": "admirevega",
+   "name_ja": "アドマイヤベガ",
+   "name_zh": "爱慕织姬",
+   "cv": "咲々木瞳",
+   "img": "/uma_official/admirevega.png",
+   "page": "https://zh.moegirl.org.cn/%E7%88%B1%E6%85%95%E7%BB%87%E5%A7%AC"
+  },
+  {
+   "id": "inarione",
+   "name_ja": "イナリワン",
+   "name_zh": "稻荷一",
+   "cv": "井上遥乃",
+   "img": "/uma_official/inarione.png",
+   "page": "https://zh.moegirl.org.cn/%E7%A8%BB%E8%8D%B7%E4%B8%80"
+  },
+  {
+   "id": "winningticket",
+   "name_ja": "ウイニングチケット",
+   "name_zh": "胜利奖券",
+   "cv": "渡部優衣",
+   "img": "/uma_official/winningticket.png",
+   "page": "https://zh.moegirl.org.cn/%E8%83%9C%E5%88%A9%E5%A5%96%E5%88%B8"
+  },
+  {
+   "id": "airshakur",
+   "name_ja": "エアシャカール",
+   "name_zh": "空中神宫",
+   "cv": "津田美波",
+   "img": "/uma_official/airshakur.png",
+   "page": "https://zh.moegirl.org.cn/%E7%A9%BA%E4%B8%AD%E7%A5%9E%E5%AE%AB"
+  },
+  {
+   "id": "eishinflash",
+   "name_ja": "エイシンフラッシュ",
+   "name_zh": "荣进闪耀",
+   "cv": "藤野彩水",
+   "img": "/uma_official/eishinflash.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8D%A3%E8%BF%9B%E9%97%AA%E8%80%80"
+  },
+  {
+   "id": "currenchan",
+   "name_ja": "カレンチャン",
+   "name_zh": "真机伶",
+   "cv": "篠原侑",
+   "img": "/uma_official/currenchan.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9C%9F%E6%9C%BA%E4%BC%B6"
+  },
+  {
+   "id": "kawakamiprincess",
+   "name_ja": "カワカミプリンセス",
+   "name_zh": "川上公主",
+   "cv": "高橋花林",
+   "img": "/uma_official/kawakamiprincess.png",
+   "page": "https://zh.moegirl.org.cn/%E5%B7%9D%E4%B8%8A%E5%85%AC%E4%B8%BB"
+  },
+  {
+   "id": "goldcity",
+   "name_ja": "ゴールドシチー",
+   "name_zh": "黄金城市",
+   "cv": "香坂さき",
+   "img": "/uma_official/goldcity.png",
+   "page": "https://zh.moegirl.org.cn/%E9%BB%84%E9%87%91%E5%9F%8E%E5%B8%82"
+  },
+  {
+   "id": "sakurabakushino",
+   "name_ja": "サクラバクシンオー",
+   "name_zh": "樱花进王",
+   "cv": "三澤紗千香",
+   "img": "/uma_official/sakurabakushino.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A8%B1%E8%8A%B1%E8%BF%9B%E7%8E%8B"
+  },
+  {
+   "id": "seekingthepearl",
+   "name_ja": "シーキングザパール",
+   "name_zh": "采珠",
+   "cv": "福原綾香",
+   "img": "/uma_official/seekingthepearl.png",
+   "page": "https://zh.moegirl.org.cn/%E9%87%87%E7%8F%A0"
+  },
+  {
+   "id": "shinkowindy",
+   "name_ja": "シンコウウインディ",
+   "name_zh": "新光风",
+   "cv": "高田憂希",
+   "img": "/uma_official/shinkowindy.png",
+   "page": "https://zh.moegirl.org.cn/%E6%96%B0%E5%85%89%E9%A3%8E"
+  },
+  {
+   "id": "sweeptosho",
+   "name_ja": "スイープトウショウ",
+   "name_zh": "东商变革",
+   "cv": "杉浦しおり",
+   "img": "/uma_official/sweeptosho.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B8%9C%E5%95%86%E5%8F%98%E9%9D%A9"
+  },
+  {
+   "id": "supercreek",
+   "name_ja": "スーパークリーク",
+   "name_zh": "超级溪流",
+   "cv": "優木かな",
+   "img": "/uma_official/supercreek.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B6%85%E7%BA%A7%E6%BA%AA%E6%B5%81"
+  },
+  {
+   "id": "smartfalcon",
+   "name_ja": "スマートファルコン",
+   "name_zh": "醒目飞鹰",
+   "cv": "大和田仁美",
+   "img": "/uma_official/smartfalcon.png",
+   "page": "https://zh.moegirl.org.cn/%E9%86%92%E7%9B%AE%E9%A3%9E%E9%B9%B0"
+  },
+  {
+   "id": "zennorobroy",
+   "name_ja": "ゼンノロブロイ",
+   "name_zh": "荒漠英雄",
+   "cv": "照井春佳",
+   "img": "/uma_official/zennorobroy.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8D%92%E6%BC%A0%E8%8B%B1%E9%9B%84"
+  },
+  {
+   "id": "tosenjordan",
+   "name_ja": "トーセンジョーダン",
+   "name_zh": "东瀛佐敦",
+   "cv": "鈴木絵理",
+   "img": "/uma_official/tosenjordan.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B8%9C%E7%80%9B%E4%BD%90%E6%95%A6"
+  },
+  {
+   "id": "nakayamafesta",
+   "name_ja": "ナカヤマフェスタ",
+   "name_zh": "中山庆典",
+   "cv": "下地紫野",
+   "img": "/uma_official/nakayamafesta.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B8%AD%E5%B1%B1%E5%BA%86%E5%85%B8"
+  },
+  {
+   "id": "naritataishin",
+   "name_ja": "ナリタタイシン",
+   "name_zh": "成田大进",
+   "cv": "渡部恵子",
+   "img": "/uma_official/naritataishin.png",
+   "page": "https://zh.moegirl.org.cn/%E6%88%90%E7%94%B0%E5%A4%A7%E8%BF%9B"
+  },
+  {
+   "id": "nishinoflower",
+   "name_ja": "ニシノフラワー",
+   "name_zh": "西野花",
+   "cv": "河井晴菜",
+   "img": "/uma_official/nishinoflower.png",
+   "page": "https://zh.moegirl.org.cn/%E8%A5%BF%E9%87%8E%E8%8A%B1"
+  },
+  {
+   "id": "haruurara",
+   "name_ja": "ハルウララ",
+   "name_zh": "春乌拉拉",
+   "cv": "首藤志奈",
+   "img": "/uma_official/haruurara.png",
+   "page": "https://zh.moegirl.org.cn/%E6%98%A5%E4%B9%8C%E6%8B%89%E6%8B%89"
+  },
+  {
+   "id": "bamboomemory",
+   "name_ja": "バンブーメモリー",
+   "name_zh": "青竹回忆",
+   "cv": "藍原ことみ",
+   "img": "/uma_official/bamboomemory.png",
+   "page": "https://zh.moegirl.org.cn/%E9%9D%92%E7%AB%B9%E5%9B%9E%E5%BF%86"
+  },
+  {
+   "id": "bikopegasus",
+   "name_ja": "ビコーペガサス",
+   "name_zh": "微光飞驹",
+   "cv": "田中あいみ",
+   "img": "/uma_official/bikopegasus.png",
+   "page": "https://zh.moegirl.org.cn/%E5%BE%AE%E5%85%89%E9%A3%9E%E9%A9%B9"
+  },
+  {
+   "id": "marveloussunday",
+   "name_ja": "マーベラスサンデー",
+   "name_zh": "美丽周日",
+   "cv": "三宅麻理恵",
+   "img": "/uma_official/marveloussunday.png",
+   "page": "https://zh.moegirl.org.cn/%E7%BE%8E%E4%B8%BD%E5%91%A8%E6%97%A5"
+  },
+  {
+   "id": "matikanefukukitaru",
+   "name_ja": "マチカネフクキタル",
+   "name_zh": "待兼福来",
+   "cv": "新田ひより",
+   "img": "/uma_official/matikanefukukitaru.png",
+   "page": "https://zh.moegirl.org.cn/%E5%BE%85%E5%85%BC%E7%A6%8F%E6%9D%A5"
+  },
+  {
+   "id": "mrcb",
+   "name_ja": "ミスターシービー",
+   "name_zh": "千明代表",
+   "cv": "天海由梨奈",
+   "img": "/uma_official/mrcb.png",
+   "page": "https://zh.moegirl.org.cn/%E5%8D%83%E6%98%8E%E4%BB%A3%E8%A1%A8"
+  },
+  {
+   "id": "meishodoto",
+   "name_ja": "メイショウドトウ",
+   "name_zh": "名将怒涛",
+   "cv": "和多田美咲",
+   "img": "/uma_official/meishodoto.png",
+   "page": "https://zh.moegirl.org.cn/%E5%90%8D%E5%B0%86%E6%80%92%E6%B6%9B"
+  },
+  {
+   "id": "mejirodober",
+   "name_ja": "メジロドーベル",
+   "name_zh": "目白多伯",
+   "cv": "久保田ひかり",
+   "img": "/uma_official/mejirodober.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E5%A4%9A%E4%BC%AF"
+  },
+  {
+   "id": "nicenature",
+   "name_ja": "ナイスネイチャ",
+   "name_zh": "优秀素质",
+   "cv": "前田佳織里",
+   "img": "/uma_official/nicenature.png",
+   "page": "https://zh.moegirl.org.cn/%E4%BC%98%E7%A7%80%E7%B4%A0%E8%B4%A8"
+  },
+  {
+   "id": "kinghalo",
+   "name_ja": "キングヘイロー",
+   "name_zh": "圣王光环",
+   "cv": "佐伯伊織",
+   "img": "/uma_official/kinghalo.png",
+   "page": "https://zh.moegirl.org.cn/%E5%9C%A3%E7%8E%8B%E5%85%89%E7%8E%AF"
+  },
+  {
+   "id": "matikanetannhauser",
+   "name_ja": "マチカネタンホイザ",
+   "name_zh": "待兼诗歌剧",
+   "cv": "遠野ひかる",
+   "img": "/uma_official/matikanetannhauser.png",
+   "page": "https://zh.moegirl.org.cn/%E5%BE%85%E5%85%BC%E8%AF%97%E6%AD%8C%E5%89%A7"
+  },
+  {
+   "id": "ikunodictus",
+   "name_ja": "イクノディクタス",
+   "name_zh": "生野狄杜斯",
+   "cv": "田澤茉純",
+   "img": "/uma_official/ikunodictus.png",
+   "page": "https://zh.moegirl.org.cn/%E7%94%9F%E9%87%8E%E7%8B%84%E6%9D%9C%E6%96%AF"
+  },
+  {
+   "id": "mejiropalmer",
+   "name_ja": "メジロパーマー",
+   "name_zh": "目白善信",
+   "cv": "のぐちゆり",
+   "img": "/uma_official/mejiropalmer.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E5%96%84%E4%BF%A1"
+  },
+  {
+   "id": "daitakuhelios",
+   "name_ja": "ダイタクヘリオス",
+   "name_zh": "大拓太阳神",
+   "cv": "山根綺",
+   "img": "/uma_official/daitakuhelios.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%A7%E6%8B%93%E5%A4%AA%E9%98%B3%E7%A5%9E"
+  },
+  {
+   "id": "twinturbo",
+   "name_ja": "ツインターボ",
+   "name_zh": "双涡轮",
+   "cv": "花井美春",
+   "img": "/uma_official/twinturbo.png",
+   "page": "https://zh.moegirl.org.cn/%E5%8F%8C%E6%B6%A1%E8%BD%AE"
+  },
+  {
+   "id": "satonodiamond",
+   "name_ja": "サトノダイヤモンド",
+   "name_zh": "里见光钻",
+   "cv": "立花日菜",
+   "img": "/uma_official/satonodiamond.png",
+   "page": "https://zh.moegirl.org.cn/%E9%87%8C%E8%A7%81%E5%85%89%E9%92%BB"
+  },
+  {
+   "id": "kitasanblack",
+   "name_ja": "キタサンブラック",
+   "name_zh": "北部玄驹",
+   "cv": "矢野妃菜喜",
+   "img": "/uma_official/kitasanblack.png",
+   "page": "https://zh.moegirl.org.cn/%E5%8C%97%E9%83%A8%E7%8E%84%E9%A9%B9"
+  },
+  {
+   "id": "sakurachiyonoo",
+   "name_ja": "サクラチヨノオー",
+   "name_zh": "樱花千代王",
+   "cv": "野口瑠璃子",
+   "img": "/uma_official/sakurachiyonoo.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A8%B1%E8%8A%B1%E5%8D%83%E4%BB%A3%E7%8E%8B"
+  },
+  {
+   "id": "siriussymboli",
+   "name_ja": "シリウスシンボリ",
+   "name_zh": "天狼星象征",
+   "cv": "ファイルーズあい",
+   "img": "/uma_official/siriussymboli.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%A9%E7%8B%BC%E6%98%9F%E8%B1%A1%E5%BE%81"
+  },
+  {
+   "id": "mejiroardan",
+   "name_ja": "メジロアルダン",
+   "name_zh": "目白阿尔丹",
+   "cv": "会沢紗弥",
+   "img": "/uma_official/mejiroardan.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E9%98%BF%E5%B0%94%E4%B8%B9"
+  },
+  {
+   "id": "yaenomuteki",
+   "name_ja": "ヤエノムテキ",
+   "name_zh": "八重无敌",
+   "cv": "日原あゆみ",
+   "img": "/uma_official/yaenomuteki.png",
+   "page": "https://zh.moegirl.org.cn/%E5%85%AB%E9%87%8D%E6%97%A0%E6%95%8C"
+  },
+  {
+   "id": "tsurumarutsuyoshi",
+   "name_ja": "ツルマルツヨシ",
+   "name_zh": "鹤丸刚志",
+   "cv": "青山吉能",
+   "img": "/uma_official/tsurumarutsuyoshi.png",
+   "page": "https://zh.moegirl.org.cn/%E9%B9%A4%E4%B8%B8%E5%88%9A%E5%BF%97"
+  },
+  {
+   "id": "mejirobright",
+   "name_ja": "メジロブライト",
+   "name_zh": "目白光明",
+   "cv": "大西綺華",
+   "img": "/uma_official/mejirobright.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E5%85%89%E6%98%8E"
+  },
+  {
+   "id": "daringtact",
+   "name_ja": "デアリングタクト",
+   "name_zh": "谋勇兼备",
+   "cv": "羊宮妃那",
+   "img": "/uma_official/daringtact.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B0%8B%E5%8B%87%E5%85%BC%E5%A4%87"
+  },
+  {
+   "id": "sakuralaurel",
+   "name_ja": "サクラローレル",
+   "name_zh": "樱花桂冠",
+   "cv": "真野美月",
+   "img": "/uma_official/sakuralaurel.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A8%B1%E8%8A%B1%E6%A1%82%E5%86%A0"
+  },
+  {
+   "id": "naritatoproad",
+   "name_ja": "ナリタトップロード",
+   "name_zh": "成田路",
+   "cv": "中村カンナ",
+   "img": "/uma_official/naritatoproad.png",
+   "page": "https://zh.moegirl.org.cn/%E6%88%90%E7%94%B0%E8%B7%AF"
+  },
+  {
+   "id": "yamaninzephyr",
+   "name_ja": "ヤマニンゼファー",
+   "name_zh": "也文摄辉",
+   "cv": "今泉りおな",
+   "img": "/uma_official/yamaninzephyr.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B9%9F%E6%96%87%E6%91%84%E8%BE%89"
+  },
+  {
+   "id": "furioso",
+   "name_ja": "フリオーソ",
+   "name_zh": "狂怒乐章",
+   "cv": "西連寺亜希",
+   "img": "/uma_official/furioso.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "transcend",
+   "name_ja": "トランセンド",
+   "name_zh": "创升",
+   "cv": "塚田悠衣",
+   "img": "/uma_official/transcend.png",
+   "page": "https://zh.moegirl.org.cn/%E5%88%9B%E5%8D%87"
+  },
+  {
+   "id": "espoircity",
+   "name_ja": "エスポワールシチー",
+   "name_zh": "希望之城",
+   "cv": "亜咲花",
+   "img": "/uma_official/espoircity.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "northflight",
+   "name_ja": "ノースフライト",
+   "name_zh": "北方飞翔",
+   "cv": "指出毬亜",
+   "img": "/uma_official/northflight.png",
+   "page": "https://zh.moegirl.org.cn/%E5%8C%97%E6%96%B9%E9%A3%9E%E7%BF%94"
+  },
+  {
+   "id": "symbolikriss",
+   "name_ja": "シンボリクリスエス",
+   "name_zh": "吉兆",
+   "cv": "春川芽生",
+   "img": "/uma_official/symbolikriss.png",
+   "page": "https://zh.moegirl.org.cn/%E5%90%89%E5%85%86"
+  },
+  {
+   "id": "taninogimlet",
+   "name_ja": "タニノギムレット",
+   "name_zh": "谷野美酒",
+   "cv": "松岡美里",
+   "img": "/uma_official/taninogimlet.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B0%B7%E9%87%8E%E7%BE%8E%E9%85%92"
+  },
+  {
+   "id": "daiichiruby",
+   "name_ja": "ダイイチルビー",
+   "name_zh": "第一红宝石",
+   "cv": "礒部花凜",
+   "img": "/uma_official/daiichiruby.png",
+   "page": "https://zh.moegirl.org.cn/%E7%AC%AC%E4%B8%80%E7%BA%A2%E5%AE%9D%E7%9F%B3"
+  },
+  {
+   "id": "mejiroramonu",
+   "name_ja": "メジロラモーヌ",
+   "name_zh": "目白高峰",
+   "cv": "東山奈央",
+   "img": "/uma_official/mejiroramonu.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9B%AE%E7%99%BD%E9%AB%98%E5%B3%B0"
+  },
+  {
+   "id": "astonmachan",
+   "name_ja": "アストンマーチャン",
+   "name_zh": "真弓快车",
+   "cv": "井上ほの花",
+   "img": "/uma_official/astonmachan.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9C%9F%E5%BC%93%E5%BF%AB%E8%BD%A6"
+  },
+  {
+   "id": "satonocrown",
+   "name_ja": "サトノクラウン",
+   "name_zh": "里见皇冠",
+   "cv": "鈴代紗弓",
+   "img": "/uma_official/satonocrown.png",
+   "page": "https://zh.moegirl.org.cn/%E9%87%8C%E8%A7%81%E7%9A%87%E5%86%A0"
+  },
+  {
+   "id": "chevalgrand",
+   "name_ja": "シュヴァルグラン",
+   "name_zh": "高尚骏逸",
+   "cv": "夏吉ゆうこ",
+   "img": "/uma_official/chevalgrand.png",
+   "page": "https://zh.moegirl.org.cn/%E9%AB%98%E5%B0%9A%E9%AA%8F%E9%80%B8"
+  },
+  {
+   "id": "verxina",
+   "name_ja": "ヴィルシーナ",
+   "name_zh": "极峰",
+   "cv": "奥野香耶",
+   "img": "/uma_official/verxina.png",
+   "page": "https://zh.moegirl.org.cn/%E6%9E%81%E5%B3%B0"
+  },
+  {
+   "id": "vivlos",
+   "name_ja": "ヴィブロス",
+   "name_zh": "强击",
+   "cv": "伊藤彩沙",
+   "img": "/uma_official/vivlos.png",
+   "page": "https://zh.moegirl.org.cn/%E5%BC%BA%E5%87%BB"
+  },
+  {
+   "id": "dantsuflame",
+   "name_ja": "ダンツフレーム",
+   "name_zh": "烈焰快驹",
+   "cv": "福嶋晴菜",
+   "img": "/uma_official/dantsuflame.png",
+   "page": "https://zh.moegirl.org.cn/%E7%83%88%E7%84%B0%E5%BF%AB%E9%A9%B9"
+  },
+  {
+   "id": "ksmiracle",
+   "name_ja": "ケイエスミラクル",
+   "name_zh": "凯斯奇迹",
+   "cv": "佐藤日向",
+   "img": "/uma_official/ksmiracle.png",
+   "page": "https://zh.moegirl.org.cn/%E5%87%AF%E6%96%AF%E5%A5%87%E8%BF%B9"
+  },
+  {
+   "id": "junglepocket",
+   "name_ja": "ジャングルポケット",
+   "name_zh": "森林宝穴",
+   "cv": "藤本侑里",
+   "img": "/uma_official/junglepocket.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A3%AE%E6%9E%97%E5%AE%9D%E7%A9%B4"
+  },
+  {
+   "id": "believe",
+   "name_ja": "ビリーヴ",
+   "name_zh": "信念",
+   "cv": "秋山実咲",
+   "img": "/uma_official/believe.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "noreason",
+   "name_ja": "ノーリーズン",
+   "name_zh": "莫名其妙",
+   "cv": "河野ひより",
+   "img": "/uma_official/noreason.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99"
+  },
+  {
+   "id": "stillinlove",
+   "name_ja": "スティルインラブ",
+   "name_zh": "爱如往昔",
+   "cv": "宮下早紀",
+   "img": "/uma_official/stillinlove.png",
+   "page": "https://zh.moegirl.org.cn/%E7%88%B1%E5%A6%82%E5%BE%80%E6%98%94"
+  },
+  {
+   "id": "copanorickey",
+   "name_ja": "コパノリッキー",
+   "name_zh": "小林历奇",
+   "cv": "稲垣好",
+   "img": "/uma_official/copanorickey.png",
+   "page": "https://zh.moegirl.org.cn/%E5%B0%8F%E6%9E%97%E5%8E%86%E5%A5%87"
+  },
+  {
+   "id": "hokkotarumae",
+   "name_ja": "ホッコータルマエ",
+   "name_zh": "北港火山",
+   "cv": "菊池紗矢香",
+   "img": "/uma_official/hokkotarumae.png",
+   "page": "https://zh.moegirl.org.cn/%E5%8C%97%E6%B8%AF%E7%81%AB%E5%B1%B1"
+  },
+  {
+   "id": "wonderacute",
+   "name_ja": "ワンダーアキュート",
+   "name_zh": "奇锐骏",
+   "cv": "須藤叶希",
+   "img": "/uma_official/wonderacute.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A5%87%E9%94%90%E9%AA%8F"
+  },
+  {
+   "id": "samsonbig",
+   "name_ja": "サムソンビッグ",
+   "name_zh": "大森逊",
+   "cv": "根本京里",
+   "img": "/uma_official/samsonbig.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%A7%E6%A3%AE%E9%80%8A"
+  },
+  {
+   "id": "soundsofearth",
+   "name_ja": "サウンズオブアース",
+   "name_zh": "万籁争鸣",
+   "cv": "MAKIKO",
+   "img": "/uma_official/soundsofearth.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B8%87%E7%B1%81%E4%BA%89%E9%B8%A3"
+  },
+  {
+   "id": "royceandroyce",
+   "name_ja": "ロイスアンドロイス",
+   "name_zh": "莱斯莱斯",
+   "cv": "田辺留依",
+   "img": "/uma_official/royceandroyce.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "katsuragiace",
+   "name_ja": "カツラギエース",
+   "name_zh": "葛城王牌",
+   "cv": "藤原夏海",
+   "img": "/uma_official/katsuragiace.png",
+   "page": "https://zh.moegirl.org.cn/%E8%91%9B%E5%9F%8E%E7%8E%8B%E7%89%8C"
+  },
+  {
+   "id": "neouniverse",
+   "name_ja": "ネオユニヴァース",
+   "name_zh": "新宇宙(赛马娘 Pretty Derby)",
+   "cv": "白石晴香",
+   "img": "/uma_official/neouniverse.png",
+   "page": "https://zh.moegirl.org.cn/%E6%96%B0%E5%AE%87%E5%AE%99(%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby)"
+  },
+  {
+   "id": "hishimiracle",
+   "name_ja": "ヒシミラクル",
+   "name_zh": "菱钻奇宝",
+   "cv": "春日さくら",
+   "img": "/uma_official/hishimiracle.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8F%B1%E9%92%BB%E5%A5%87%E5%AE%9D"
+  },
+  {
+   "id": "tapdancecity",
+   "name_ja": "タップダンスシチー",
+   "name_zh": "跳舞城",
+   "cv": "篠田みなみ",
+   "img": "/uma_official/tapdancecity.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B7%B3%E8%88%9E%E5%9F%8E"
+  },
+  {
+   "id": "duramente",
+   "name_ja": "ドゥラメンテ",
+   "name_zh": "大鸣大放",
+   "cv": "秋奈",
+   "img": "/uma_official/duramente.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%A7%E9%B8%A3%E5%A4%A7%E6%94%BE"
+  },
+  {
+   "id": "rheinkraft",
+   "name_ja": "ラインクラフト",
+   "name_zh": "莱茵力量",
+   "cv": "小島菜々恵",
+   "img": "/uma_official/rheinkraft.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8E%B1%E8%8C%B5%E5%8A%9B%E9%87%8F"
+  },
+  {
+   "id": "cesario",
+   "name_ja": "シーザリオ",
+   "name_zh": "西沙里奥",
+   "cv": "佐藤榛夏",
+   "img": "/uma_official/cesario.png",
+   "page": "https://zh.moegirl.org.cn/%E8%A5%BF%E6%B2%99%E9%87%8C%E5%A5%A5"
+  },
+  {
+   "id": "airmessiah",
+   "name_ja": "エアメサイア",
+   "name_zh": "空中救世主",
+   "cv": "根本優奈",
+   "img": "/uma_official/airmessiah.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "daringheart",
+   "name_ja": "デアリングハート",
+   "name_zh": "勇敢之心",
+   "cv": "希水しお",
+   "img": "/uma_official/daringheart.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "fusaichipandora",
+   "name_ja": "フサイチパンドラ",
+   "name_zh": "房一潘多拉",
+   "cv": "佳原萌枝",
+   "img": "/uma_official/fusaichipandora.png",
+   "page": "https://zh.moegirl.org.cn/%E6%88%BF%E4%B8%80%E6%BD%98%E5%A4%9A%E6%8B%89"
+  },
+  {
+   "id": "buenavista",
+   "name_ja": "ブエナビスタ",
+   "name_zh": "迷人景致",
+   "cv": "和泉風花",
+   "img": "/uma_official/buenavista.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "orfevre",
+   "name_ja": "オルフェーヴル",
+   "name_zh": "黄金巨匠",
+   "cv": "日笠陽子",
+   "img": "/uma_official/orfevre.png",
+   "page": "https://zh.moegirl.org.cn/%E9%BB%84%E9%87%91%E5%B7%A8%E5%8C%A0"
+  },
+  {
+   "id": "gentildonna",
+   "name_ja": "ジェンティルドンナ",
+   "name_zh": "贵妇人",
+   "cv": "芹澤優",
+   "img": "/uma_official/gentildonna.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B4%B5%E5%A6%87%E4%BA%BA"
+  },
+  {
+   "id": "winvariation",
+   "name_ja": "ウインバリアシオン",
+   "name_zh": "凯旋芭蕾",
+   "cv": "月城日花",
+   "img": "/uma_official/winvariation.png",
+   "page": "https://zh.moegirl.org.cn/%E5%87%AF%E6%97%8B%E8%8A%AD%E8%95%BE"
+  },
+  {
+   "id": "admiregroove",
+   "name_ja": "アドマイヤグルーヴ",
+   "name_zh": "爱慕律动",
+   "cv": "鈴木日菜",
+   "img": "/uma_official/admiregroove.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "dreamjourney",
+   "name_ja": "ドリームジャーニー",
+   "name_zh": "梦之旅",
+   "cv": "吉岡茉祐",
+   "img": "/uma_official/dreamjourney.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A2%A6%E4%B9%8B%E6%97%85"
+  },
+  {
+   "id": "calstonelighto",
+   "name_ja": "カルストンライトオ",
+   "name_zh": "金镇之光",
+   "cv": "望月ゆみこ",
+   "img": "/uma_official/calstonelighto.png",
+   "page": "https://zh.moegirl.org.cn/%E9%87%91%E9%95%87%E4%B9%8B%E5%85%89"
+  },
+  {
+   "id": "durandal",
+   "name_ja": "デュランダル",
+   "name_zh": "多旺达",
+   "cv": "野木奏",
+   "img": "/uma_official/durandal.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A4%9A%E6%97%BA%E8%BE%BE"
+  },
+  {
+   "id": "bubblegumfellow",
+   "name_ja": "バブルガムフェロー",
+   "name_zh": "吹波糖",
+   "cv": "神谷早矢佳",
+   "img": "/uma_official/bubblegumfellow.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "sakurachitoseo",
+   "name_ja": "サクラチトセオー",
+   "name_zh": "樱花千岁王",
+   "cv": "明智璃子",
+   "img": "/uma_official/sakurachitoseo.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "fenomeno",
+   "name_ja": "フェノーメノ",
+   "name_zh": "超常骏骥",
+   "cv": "日比優理香",
+   "img": "/uma_official/fenomeno.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B6%85%E5%B8%B8%E9%AA%8F%E9%AA%A5"
+  },
+  {
+   "id": "blastonepiece",
+   "name_ja": "ブラストワンピース",
+   "name_zh": "防爆装束",
+   "cv": "紫月杏朱彩",
+   "img": "/uma_official/blastonepiece.png",
+   "page": "https://zh.moegirl.org.cn/%E9%98%B2%E7%88%86%E8%A3%85%E6%9D%9F"
+  },
+  {
+   "id": "almondeye",
+   "name_ja": "アーモンドアイ",
+   "name_zh": "杏目",
+   "cv": "石原夏織",
+   "img": "/uma_official/almondeye.png",
+   "page": "https://zh.moegirl.org.cn/%E6%9D%8F%E7%9B%AE"
+  },
+  {
+   "id": "luckylilac",
+   "name_ja": "ラッキーライラック",
+   "name_zh": "旺紫丁",
+   "cv": "中島由貴",
+   "img": "/uma_official/luckylilac.png",
+   "page": "https://zh.moegirl.org.cn/%E6%97%BA%E7%B4%AB%E4%B8%81"
+  },
+  {
+   "id": "granalegria",
+   "name_ja": "グランアレグリア",
+   "name_zh": "放声欢呼",
+   "cv": "夏目妃菜",
+   "img": "/uma_official/granalegria.png",
+   "page": "https://zh.moegirl.org.cn/%E6%94%BE%E5%A3%B0%E6%AC%A2%E5%91%BC"
+  },
+  {
+   "id": "lovesonlyyou",
+   "name_ja": "ラヴズオンリーユー",
+   "name_zh": "唯独爱你",
+   "cv": "久保田未夢",
+   "img": "/uma_official/lovesonlyyou.png",
+   "page": "https://zh.moegirl.org.cn/%E5%94%AF%E7%8B%AC%E7%88%B1%E4%BD%A0"
+  },
+  {
+   "id": "chronogenesis",
+   "name_ja": "クロノジェネシス",
+   "name_zh": "创世驹",
+   "cv": "真名瀬日和",
+   "img": "/uma_official/chronogenesis.png",
+   "page": "https://zh.moegirl.org.cn/%E5%88%9B%E4%B8%96%E9%A9%B9"
+  },
+  {
+   "id": "currenbouquetdor",
+   "name_ja": "カレンブーケドール",
+   "name_zh": "机伶金花",
+   "cv": "小田杏樹",
+   "img": "/uma_official/currenbouquetdor.png",
+   "page": "https://zh.moegirl.org.cn/%E6%9C%BA%E4%BC%B6%E9%87%91%E8%8A%B1"
+  },
+  {
+   "id": "staygold",
+   "name_ja": "ステイゴールド",
+   "name_zh": "黄金旅程",
+   "cv": "松田颯水",
+   "img": "/uma_official/staygold.png",
+   "page": "https://zh.moegirl.org.cn/%E9%BB%84%E9%87%91%E6%97%85%E7%A8%8B"
+  },
+  {
+   "id": "reddesire",
+   "name_ja": "レッドディザイア",
+   "name_zh": "红色梦想",
+   "cv": "関根瞳",
+   "img": "/uma_official/reddesire.png",
+   "page": "https://zh.moegirl.org.cn/%E7%BA%A2%E8%89%B2%E6%A2%A6%E6%83%B3"
+  },
+  {
+   "id": "kiseki",
+   "name_ja": "キセキ",
+   "name_zh": "神业",
+   "cv": "星希成奏",
+   "img": "/uma_official/kiseki.png",
+   "page": "https://zh.moegirl.org.cn/%E7%A5%9E%E4%B8%9A"
+  },
+  {
+   "id": "foreveryoung",
+   "name_ja": "フォーエバーヤング",
+   "name_zh": "青春永驻",
+   "cv": "海弓シュリ",
+   "img": "/uma_official/foreveryoung.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "marchelorraine",
+   "name_ja": "マルシュロレーヌ",
+   "name_zh": "洛林军歌",
+   "cv": "近貞月乃",
+   "img": "/uma_official/marchelorraine.png",
+   "page": "https://zh.moegirl.org.cn/%E6%B4%9B%E6%9E%97%E5%86%9B%E6%AD%8C"
+  },
+  {
+   "id": "epiphaneia",
+   "name_ja": "エピファネイア",
+   "name_zh": "神威启示",
+   "cv": "千賀光莉",
+   "img": "/uma_official/epiphaneia.png",
+   "page": "https://zh.moegirl.org.cn/%E7%A5%9E%E5%A8%81%E5%90%AF%E7%A4%BA"
+  },
+  {
+   "id": "logotype",
+   "name_ja": "ロゴタイプ",
+   "name_zh": "标志名驹",
+   "cv": "髙橋美空",
+   "img": "/uma_official/logotype.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A0%87%E5%BF%97%E5%90%8D%E9%A9%B9"
+  },
+  {
+   "id": "victoirepisa",
+   "name_ja": "ヴィクトワールピサ",
+   "name_zh": "比萨胜驹",
+   "cv": "嶋野花",
+   "img": "/uma_official/victoirepisa.png",
+   "page": "https://zh.moegirl.org.cn/%E6%AF%94%E8%90%A8%E8%83%9C%E9%A9%B9"
+  },
+  {
+   "id": "rosekingdom",
+   "name_ja": "ローズキングダム",
+   "name_zh": "玫瑰帝国",
+   "cv": "菊池ゆりな",
+   "img": "/uma_official/rosekingdom.png",
+   "page": "https://zh.moegirl.org.cn/%E7%8E%AB%E7%91%B0%E5%B8%9D%E5%9B%BD"
+  },
+  {
+   "id": "rulership",
+   "name_ja": "ルーラーシップ",
+   "name_zh": "统治地位",
+   "cv": "海野水玉",
+   "img": "/uma_official/rulership.png",
+   "page": "https://zh.moegirl.org.cn/%E7%BB%9F%E6%B2%BB%E5%9C%B0%E4%BD%8D"
+  },
+  {
+   "id": "titleholder",
+   "name_ja": "タイトルホルダー",
+   "name_zh": "领衔",
+   "cv": "華成結",
+   "img": "/uma_official/titleholder.png",
+   "page": "https://zh.moegirl.org.cn/%E9%A2%86%E8%A1%94"
+  },
+  {
+   "id": "happymeek",
+   "name_ja": "ハッピーミーク",
+   "name_zh": "快乐米可",
+   "cv": "吉咲みゆ",
+   "img": "/uma_official/happymeek.png",
+   "page": "https://zh.moegirl.org.cn/%E5%BF%AB%E4%B9%90%E7%B1%B3%E5%8F%AF"
+  },
+  {
+   "id": "bitterglasse",
+   "name_ja": "ビターグラッセ",
+   "name_zh": "苦涩糖衣",
+   "cv": "島田愛野",
+   "img": "/uma_official/bitterglasse.png",
+   "page": "https://zh.moegirl.org.cn/%E8%8B%A6%E6%B6%A9%E7%B3%96%E8%A1%A3"
+  },
+  {
+   "id": "littlecocon",
+   "name_ja": "リトルココン",
+   "name_zh": "小小圆茧",
+   "cv": "白砂沙帆",
+   "img": "/uma_official/littlecocon.png",
+   "page": "https://zh.moegirl.org.cn/%E5%B0%8F%E5%B0%8F%E5%9C%86%E8%8C%A7"
+  },
+  {
+   "id": "venuspaques",
+   "name_ja": "ヴェニュスパーク",
+   "name_zh": "维纳斯公园",
+   "cv": "折原日菜",
+   "img": "/uma_official/venuspaques.png",
+   "page": "https://zh.moegirl.org.cn/Venus_Paques"
+  },
+  {
+   "id": "rigantona",
+   "name_ja": "リガントーナ",
+   "name_zh": "里格安东娜",
+   "cv": "井料愛良",
+   "img": "/uma_official/rigantona.png",
+   "page": "https://zh.moegirl.org.cn/Rigantona"
+  },
+  {
+   "id": "sononelfie",
+   "name_ja": "ソノンエルフィー",
+   "name_zh": "索侬艾尔菲",
+   "cv": "小清水亜美",
+   "img": "/uma_official/sononelfie.png",
+   "page": "https://zh.moegirl.org.cn/Sonon_Elfie"
+  },
+  {
+   "id": "hayakawatazuna",
+   "name_ja": "駿川たづな",
+   "name_zh": "骏川手纲",
+   "cv": "藤井ゆきよ",
+   "img": "/uma_official/hayakawatazuna.png",
+   "page": "https://zh.moegirl.org.cn/%E9%AA%8F%E5%B7%9D%E6%89%8B%E7%BA%B2"
+  },
+  {
+   "id": "akikawayayoi",
+   "name_ja": "秋川やよい",
+   "name_zh": "秋川弥生",
+   "cv": "水橋かおり",
+   "img": "/uma_official/akikawayayoi.png",
+   "page": "https://zh.moegirl.org.cn/%E7%A7%8B%E5%B7%9D%E5%BC%A5%E7%94%9F"
+  },
+  {
+   "id": "otonashietsuko",
+   "name_ja": "乙名史悦子",
+   "name_zh": "乙名史悦子",
+   "cv": "陶山恵実里",
+   "img": "/uma_official/otonashietsuko.png",
+   "page": "https://zh.moegirl.org.cn/%E4%B9%99%E5%90%8D%E5%8F%B2%E6%82%A6%E5%AD%90"
+  },
+  {
+   "id": "kiryuinaoi",
+   "name_ja": "桐生院葵",
+   "name_zh": "桐生院葵",
+   "cv": "岡咲美保",
+   "img": "/uma_official/kiryuinaoi.png",
+   "page": "https://zh.moegirl.org.cn/%E6%A1%90%E7%94%9F%E9%99%A2%E8%91%B5"
+  },
+  {
+   "id": "anshinzawasasami",
+   "name_ja": "安心沢刺々美",
+   "name_zh": "安心泽刺刺美",
+   "cv": "井上喜久子",
+   "img": "/uma_official/anshinzawasasami.png",
+   "page": "https://zh.moegirl.org.cn/%E5%AE%89%E5%BF%83%E6%B3%BD%E5%88%BA%E5%88%BA%E7%BE%8E"
+  },
+  {
+   "id": "kashimotoriko",
+   "name_ja": "樫本理子",
+   "name_zh": "㭴本理子",
+   "cv": "朴璐美",
+   "img": "/uma_official/kashimotoriko.png",
+   "page": "https://zh.moegirl.org.cn/%E3%AD%B4%E6%9C%AC%E7%90%86%E5%AD%90"
+  },
+  {
+   "id": "lighthello",
+   "name_ja": "ライトハロー",
+   "name_zh": "光辉致意",
+   "cv": "植田佳奈",
+   "img": "/uma_official/lighthello.png",
+   "page": "https://zh.moegirl.org.cn/%E5%85%89%E8%BE%89%E8%87%B4%E6%84%8F"
+  },
+  {
+   "id": "darleyarabian",
+   "name_ja": "ダーレーアラビアン",
+   "name_zh": "达利阿拉伯",
+   "cv": "進藤尚美",
+   "img": "/uma_official/darleyarabian.png",
+   "page": "https://zh.moegirl.org.cn/%E8%BE%BE%E5%88%A9%E9%98%BF%E6%8B%89%E4%BC%AF"
+  },
+  {
+   "id": "godolphinbarb",
+   "name_ja": "ゴドルフィンバルブ",
+   "name_zh": "高多芬阿拉伯",
+   "cv": "佐藤聡美",
+   "img": "/uma_official/godolphinbarb.png",
+   "page": "https://zh.moegirl.org.cn/%E9%AB%98%E5%A4%9A%E8%8A%AC%E9%98%BF%E6%8B%89%E4%BC%AF"
+  },
+  {
+   "id": "byerleyturk",
+   "name_ja": "バイアリーターク",
+   "name_zh": "拜耶尔土耳其",
+   "cv": "斎賀みつき",
+   "img": "/uma_official/byerleyturk.png",
+   "page": "https://zh.moegirl.org.cn/%E6%8B%9C%E8%80%B6%E5%B0%94%E5%9C%9F%E8%80%B3%E5%85%B6"
+  },
+  {
+   "id": "satakemei",
+   "name_ja": "佐岳メイ",
+   "name_zh": "佐岳芽衣",
+   "cv": "堀江由衣",
+   "img": "/uma_official/satakemei.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "tsurugiryoka",
+   "name_ja": "都留岐涼花",
+   "name_zh": "都留岐凉花",
+   "cv": "佐藤利奈",
+   "img": "/uma_official/tsurugiryoka.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "sugarlights",
+   "name_ja": "シュガーライツ",
+   "name_zh": "蜜糖灯光",
+   "cv": "石川由依",
+   "img": "/uma_official/sugarlights.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "saintlite",
+   "name_ja": "セントライト",
+   "name_zh": "圣烈特",
+   "cv": "能登麻美子",
+   "img": "/uma_official/saintlite.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "speedsymboli",
+   "name_ja": "スピードシンボリ",
+   "name_zh": "速度象征",
+   "cv": "沢城みゆき",
+   "img": "/uma_official/speedsymboli.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "haiseiko",
+   "name_ja": "ハイセイコー",
+   "name_zh": "海塞克",
+   "cv": "丹下桜",
+   "img": "/uma_official/haiseiko.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "tuckerbryne",
+   "name_ja": "タッカーブライン",
+   "name_zh": "塔克·布莱恩",
+   "cv": "小林ゆう",
+   "img": "/uma_official/tuckerbryne.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "hoshinakiyoko",
+   "name_ja": "保科健子",
+   "name_zh": "保科健子",
+   "cv": "高垣彩陽",
+   "img": "/uma_official/hoshinakiyoko.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "yunohanabloom",
+   "name_ja": "ユノハナブルーム",
+   "name_zh": "汤花盛绽",
+   "cv": "豊崎愛生",
+   "img": "/uma_official/yunohanabloom.png",
+   "page": "https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9"
+  },
+  {
+   "id": "casinodrive",
+   "name_ja": "カジノドライヴ",
+   "name_zh": "娱乐场",
+   "cv": "愛美",
+   "img": "/uma_official/casinodrive.png",
+   "page": "https://zh.moegirl.org.cn/%E5%A8%B1%E4%B9%90%E5%9C%BA"
+  },
+  {
+   "id": "akasakamisato",
+   "name_ja": "赤坂美聡",
+   "name_zh": "赤坂美聪",
+   "cv": "明坂聡美",
+   "img": "/uma_official/akasakamisato.png",
+   "page": "https://zh.moegirl.org.cn/%E8%B5%A4%E5%9D%82%E7%BE%8E%E8%81%AA"
+  },
+  {
+   "id": "hosoejunko",
+   "name_ja": "細江純子",
+   "name_zh": "细江纯子",
+   "cv": "細江純子",
+   "img": "/uma_official/hosoejunko.png",
+   "page": "https://zh.moegirl.org.cn/%E7%BB%86%E6%B1%9F%E7%BA%AF%E5%AD%90"
+  },
+  {
+   "id": "genuine",
+   "name_ja": "ジェニュイン",
+   "name_zh": "真诚",
+   "cv": "福島美里衣",
+   "img": "/uma_official/genuine.png",
+   "page": "https://zh.moegirl.org.cn/%E7%9C%9F%E8%AA%A0_(%E9%A9%AC)"
+  }
+ ]
+}

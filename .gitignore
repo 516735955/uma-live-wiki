@@ -1,0 +1,11 @@
+# 备份 / 构建产物
+*.bak
+*.bak_*
+*.rar
+*.xlsx
+*.pyc
+node_modules/
+_db_build_draft.json
+
+# 官网抓取缓存（非网站源码）
+Default Project/

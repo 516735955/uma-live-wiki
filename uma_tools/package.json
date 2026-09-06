@@ -1,0 +1,14 @@
+{
+  "name": "uma-live-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "赛马娘 live 页面工具：本地服务 + 官网新CD检测 + 网易云详情补全",
+  "scripts": {
+    "serve": "node server.js",
+    "scrape": "node scrape.js",
+    "apply": "node apply.js"
+  },
+  "dependencies": {
+    "devalue": "^4.3.3"
+  }
+}

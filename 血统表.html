@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赛马娘 角色页签 · 血统表 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+    background: linear-gradient(135deg, #fdf6fb 0%, #f3eefc 100%);
+    color: #333;
+  }
+  header {
+    background: #fff;
+    padding: 16px 28px;
+    box-shadow: 0 2px 10px rgba(150, 120, 180, 0.15);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 22px; color: #6f4e96; }
+  header .sub { color: #9a86b3; font-size: 13px; }
+  nav.tabs {
+    display: flex;
+    gap: 4px;
+    padding: 0 20px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+  nav.tabs button {
+    border: none;
+    background: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    color: #777;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+  }
+  nav.tabs button.active { color: #6f4e96; border-bottom-color: #6f4e96; font-weight: 600; }
+  main { padding: 16px 20px; }
+  .pane { display: none; }
+  .pane.active { display: block; }
+
+  /* sub tabs inside 角色 */
+  nav.subnav {
+    display: flex;
+    gap: 6px;
+    padding: 10px 12px;
+    background: #f6f2fb;
+    border: 1px solid #e6def4;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  nav.subnav button {
+    border: 1px solid #d8cfe8;
+    background: #fff;
+    color: #5a4a80;
+    padding: 7px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  nav.subnav button.active { background: #6f4e96; color: #fff; border-color: #6f4e96; font-weight: 600; }
+  .subpane { display: none; }
+  .subpane.active { display: block; }
+
+  /* ---- zoom views ---- */
+  #globalWrap, #roleWrap, #subGlobalWrap {
+    position: relative;
+    overflow: auto;
+    border: 1px solid #e3dcf2;
+    border-radius: 8px;
+    background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='12' height='12' fill='%23f5f3fb'/><rect x='12' y='12' width='12' height='12' fill='%23f5f3fb'/></svg>");
+  }
+  #globalStage, #roleStage, #subGlobalStage {
+    transform-origin: 0 0;
+    width: max-content;
+    line-height: 0;
+  }
+  #globalStage img, #subGlobalStage img { display: block; max-width: none; }
+  .zoombar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid #eee;
+    z-index: 5;
+  }
+  .zoombar button, .zoombar select, .zoombar input, .navbtn {
+    border: 1px solid #d8cfe8;
+    background: #fff;
+    color: #5a4a80;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .zoombar button:hover, .navbtn:hover { background: #f0eafa; }
+  .zoombar .hint { margin-left: auto; color: #a99cbf; font-size: 12px; align-self: center; }
+
+  /* ---- intro page ---- */
+  #introSearch {
+    width: 320px;
+    padding: 9px 14px;
+    border: 1px solid #d8cfe8;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    outline: none;
+  }
+  #introSearch:focus { border-color: #6f4e96; }
+  #introCount { color: #9a86b3; font-size: 13px; margin-bottom: 10px; }
+  #introGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: 10px;
+  }
+  .intro-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 12px 10px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .12s, box-shadow .12s;
+  }
+  .intro-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(150,120,180,0.25); border-color: #d8cfe8; }
+  .intro-card img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; background: #f5f3fb; }
+  .intro-card .zh { font-weight: 700; font-size: 15px; color: #6f4e96; margin-top: 8px; }
+  .intro-card .jp { font-size: 12px; color: #888; }
+  .intro-card .cv { font-size: 11px; color: #b39aab; margin-top: 2px; }
+  .intro-card .pedbtn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border: 1px solid #d8cfe8;
+    background: #faf7ff;
+    color: #6f4e96;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .intro-card .pedbtn:hover { background: #6f4e96; color: #fff; }
+  .intro-card .pedbtn.off { display: none; }
+
+  /* ---- roommate ---- */
+  #roommate { text-align: center; }
+  #roommate img { max-width: 100%; max-height: 78vh; border-radius: 10px; box-shadow: 0 8px 24px rgba(150,120,180,0.2); cursor: zoom-in; }
+  #roommateHint { color: #a99cbf; font-size: 12px; margin-top: 8px; }
+
+  /* ---- videos ---- */
+  .video-list { display: flex; gap: 14px; flex-wrap: wrap; }
+  .video-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 420px;
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(150,120,180,0.12);
+    transition: transform .12s, box-shadow .12s;
+  }
+  .video-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(150,120,180,0.28); border-color: #d8cfe8; }
+  .video-card .thumb {
+    width: 112px;
+    height: 70px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #8b6db0, #e0759f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 26px;
+  }
+  .video-card .vt { font-size: 14px; font-weight: 600; color: #5a4a80; }
+  .video-card .vsite { font-size: 11px; color: #b39aab; margin-top: 4px; }
+
+  /* ---- pedigree pane ---- */
+  #pedHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+  #pedHeader .nm { font-size: 18px; font-weight: 700; color: #6f4e96; }
+  #pedHeader .info { color: #9a86b3; font-size: 13px; }
+  .navbtn { padding: 6px 14px; }
+  .navbtn:disabled { opacity: .4; cursor: default; }
+
+  /* ---- blood relationship node graph ---- */
+  #graphWrap {
+    position: relative;
+    overflow: auto;
+    border: 1px solid #e3dcf2;
+    border-radius: 8px;
+    background:
+      #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='12' height='12' fill='%23f5f3fb'/><rect x='12' y='12' width='12' height='12' fill='%23f5f3fb'/></svg>");
+  }
+  #graphStage { transform-origin: 0 0; position: relative; }
+  
+  .rel-plain .av {
+    width: 64px; height: 64px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #f0ecf7;
+    border: 2px dashed #cbbfe0;
+    font-size: 24px; color: #9b8cc0;
+  }
+  .rel-plain .av img { display: none; }
+  .rel-plain .nm { font-size: 11px; color: #6a5d86; line-height: 1.3; }
+
+.rel-node {
+    position: absolute;
+    width: 76px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .rel-node .av {
+    width: 64px; height: 64px;
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f2eef9;
+    border: 2px solid #d8cfe8;
+    box-shadow: 0 2px 6px rgba(120,90,160,0.18);
+    display: block;
+  }
+  .rel-node .nm {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #5a4a80;
+    font-weight: 600;
+    line-height: 1.2;
+    word-break: break-all;
+  }
+  .rel-node .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 0 5px;
+    border-radius: 8px;
+    color: #6f4e96;
+    background: #f1ebfb;
+    margin-bottom: 3px;
+  }
+  .rel-node .tag.m-g { background: #ffe3ec; color: #c2457a; }
+  .rel-node .tag.d-c { background: #e0f0ff; color: #2b6cb0; }
+  .rel-root .av { border-width: 3px; border-color: #6f4e96; box-shadow: 0 0 0 3px rgba(111,78,150,0.18); }
+  .rel-node:hover .av { transform: scale(1.06); }
+  .rel-node.disabled .av { opacity: .45; }
+  .rel-edge { stroke: #b9a8d6; stroke-width: 1.6; fill: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>赛马娘 角色页签 · 血统表 2026</h1>
+  <span class="sub">角色介绍 · 宿舍室友 · 入坑视频 · 现实马血统</span>
+</header>
+<nav class="tabs">
+  <button data-tab="roles" class="active">角色</button>
+  <button data-tab="global">全局血缘图</button>
+  <button data-tab="pedigree">血统表页签</button>
+</nav>
+<main>
+
+  <!-- ============ 角色 (sub tabs) ============ -->
+  <section id="tab-roles" class="pane active">
+    <nav class="subnav">
+      <button data-sub="intro" class="active">赛马娘角色介绍</button>
+      <button data-sub="room">宿舍室友图</button>
+      <button data-sub="video">入坑推荐视频</button>
+      <button data-sub="blood">现实马血统关系图</button>
+      <button data-sub="graph">马娘血缘节点图</button>
+    </nav>
+
+    <div id="sub-intro" class="subpane active">
+      <input id="introSearch" placeholder="搜索：中文名 / 日文名 / CV…" autocomplete="off">
+      <div id="introCount"></div>
+      <div id="introGrid"></div>
+    </div>
+
+    <div id="sub-room" class="subpane">
+      <div id="roommate">
+        <img src="480DD656D6F892646606A962F0A9246C.jpg" alt="宿舍室友图">
+        <div id="roommateHint">点击图片在新窗口查看大图</div>
+      </div>
+    </div>
+
+    <div id="sub-video" class="subpane">
+      <div class="video-list">
+        <a class="video-card" href="https://www.bilibili.com/video/BV1N83n6YEyT/" target="_blank" rel="noopener">
+          <span class="thumb">▶</span>
+          <span class="vt">世纪末霸王与他的指定产驹龙二</span>
+        </a>
+        <a class="video-card" href="https://www.bilibili.com/video/BV1N83n6YEyT/" target="_blank" rel="noopener">
+          <span class="thumb">▶</span>
+          <span class="vt">世纪末霸王与他的指定产驹龙二</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="sub-blood" class="subpane">
+      <div class="zoombar">
+        <button id="bgzin">＋ 放大</button>
+        <button id="bgzout">－ 缩小</button>
+        <button id="bgzreset">重置视图</button>
+        <button id="bgzfit">适应窗口</button>
+        <span class="hint">鼠标滚轮缩放 · 按住拖动平移</span>
+      </div>
+      <div id="subGlobalWrap">
+        <div id="subGlobalStage"><img id="subGlobalImg" src="uma_pedigree_2026.svg" alt="现实马血统关系图"></div>
+      </div>
+    </div>
+
+    <div id="sub-graph" class="subpane">
+      <div class="zoombar">
+        <button id="gngzin">＋ 放大</button>
+        <button id="gngzout">－ 缩小</button>
+        <button id="gngzreset">重置视图</button>
+        <button id="gngzfit">适应窗口</button>
+        <input id="graphSearch" placeholder="搜索马娘：中文 / 日文 / 英文名…" autocomplete="off" style="width:260px">
+        <span class="hint">点击节点跳转 · 上3代 / 下2代 · 仅限已有马娘</span>
+      </div>
+      <div id="graphStatus" style="padding:8px 12px;color:#9a86b3;font-size:13px"></div>
+      <div id="graphWrap" style="height:70vh">
+        <div id="graphStage" style="width:max-content;line-height:0"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 全局血缘图 ============ -->
+  <section id="tab-global" class="pane">
+    <div class="zoombar">
+      <button id="gzin">＋ 放大</button>
+      <button id="gzout">－ 缩小</button>
+      <button id="gzreset">重置视图</button>
+      <button id="gzfit">适应窗口</button>
+      <span class="hint">鼠标滚轮缩放 · 按住拖动平移</span>
+    </div>
+    <div id="globalWrap">
+      <div id="globalStage"><img id="globalImg" src="uma_pedigree_2026.svg" alt="全局血缘图"></div>
+    </div>
+  </section>
+
+  <!-- ============ 血统表页签 ============ -->
+  <section id="tab-pedigree" class="pane">
+    <div id="pedHeader">
+      <button class="navbtn" id="prevRole">‹ 上一个</button>
+      <span class="nm" id="pedName"></span>
+      <span class="info" id="pedInfo"></span>
+      <button class="navbtn" id="nextRole">下一个 ›</button>
+      <button class="navbtn" id="pedAll" style="margin-left:auto">查看全局血缘图</button>
+    </div>
+    <div class="zoombar">
+      <button id="pzin">＋ 放大</button>
+      <button id="pzout">－ 缩小</button>
+      <button id="pzreset">重置视图</button>
+      <span class="hint">每名马娘的血统表 · 最深 6 代 · 蓝色=牡马 粉色=牝马 灰色=未知</span>
+    </div>
+    <div id="roleWrap">
+      <div id="roleStage" style="padding:16px"><img id="pedImg" src="" alt=""></div>
+    </div>
+  </section>
+</main>
+
+<script src="血统表_data.js"></script>
+<script src="intro_data.js"></script>
+<script src="血统关系_data.js"></script>
+<script>
+(function () {
+  /* ---------- top tabs ---------- */
+  document.querySelectorAll('nav.tabs button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      switchTab(btn.dataset.tab);
+    });
+  });
+  function switchTab(id) {
+    document.querySelectorAll('nav.tabs button').forEach(function (b) { b.classList.toggle('active', b.dataset.tab === id); });
+    document.querySelectorAll('.pane').forEach(function (p) { p.classList.toggle('active', p.id === 'tab-' + id); });
+    if (id === 'global') globalCtrl.fit();
+    if (id === 'pedigree' && current >= 0) pedCtrl.fit();
+  }
+
+  /* ---------- sub tabs ---------- */
+  document.querySelectorAll('nav.subnav button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.dataset.sub;
+      document.querySelectorAll('nav.subnav button').forEach(function (b) { b.classList.toggle('active', b.dataset.sub === id); });
+      document.querySelectorAll('.subpane').forEach(function (p) { p.classList.toggle('active', p.id === 'sub-' + id); });
+      if (id === 'blood') subGlobalCtrl.fit();
+      if (id === 'graph') setTimeout(function () { relCtrl.fit(); }, 50);
+    });
+  });
+
+  /* ---------- generic pan/zoom ---------- */
+  function makeZoom(stageEl, imgEl, zin, zout, zreset, zfit) {
+    var scale = 1, tx = 0, ty = 0, dragging = false, sx = 0, sy = 0, ox = 0, oy = 0;
+    function apply() {
+      stageEl.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+    }
+    function fit() {
+      var w = stageEl.parentElement.clientWidth, h = stageEl.parentElement.clientHeight;
+      if (w < 50) return;
+      var iw = imgEl.naturalWidth || 1000, ih = imgEl.naturalHeight || 800;
+      scale = Math.min(w / iw, h / ih);
+      if (scale > 1) scale = 1;
+      tx = (w - iw * scale) / 2;
+      ty = (h - ih * scale) / 2;
+      apply();
+    }
+    function zoomAt(mx, my, delta) {
+      var rect = stageEl.getBoundingClientRect();
+      var px = mx - rect.left, py = my - rect.top;
+      var nx = (px - tx) / scale, ny = (py - ty) / scale;
+      var ns = Math.max(0.05, Math.min(4, scale * delta));
+      tx = px - nx * ns;
+      ty = py - ny * ns;
+      scale = ns;
+      apply();
+    }
+    stageEl.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      var r = stageEl.getBoundingClientRect();
+      zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1.15 : 1 / 1.15);
+    }, { passive: false });
+    stageEl.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      dragging = true; sx = e.clientX; sy = e.clientY; ox = tx; oy = ty;
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      tx = ox + (e.clientX - sx); ty = oy + (e.clientY - sy);
+      apply();
+    });
+    window.addEventListener('mouseup', function () { dragging = false; });
+    imgEl.addEventListener('load', fit);
+    if (zfit) zfit.addEventListener('click', fit);
+    zin.addEventListener('click', function () { zoomAt(stageEl.parentElement.clientWidth / 2, 100, 1.2); });
+    zout.addEventListener('click', function () { zoomAt(stageEl.parentElement.clientWidth / 2, 100, 1 / 1.2); });
+    zreset.addEventListener('click', function () { scale = 1; tx = 0; ty = 0; apply(); });
+    apply();
+    return { fit: fit, reset: function () { scale = 1; tx = 0; ty = 0; apply(); } };
+  }
+
+  var globalCtrl = makeZoom(
+    document.getElementById('globalStage'), document.getElementById('globalImg'),
+    document.getElementById('gzin'), document.getElementById('gzout'),
+    document.getElementById('gzreset'), document.getElementById('gzfit')
+  );
+  var subGlobalCtrl = makeZoom(
+    document.getElementById('subGlobalStage'), document.getElementById('subGlobalImg'),
+    document.getElementById('bgzin'), document.getElementById('bgzout'),
+    document.getElementById('bgzreset'), document.getElementById('bgzfit')
+  );
+  var pedCtrl = makeZoom(
+    document.getElementById('roleStage'), document.getElementById('pedImg'),
+    document.getElementById('pzin'), document.getElementById('pzout'),
+    document.getElementById('pzreset'), null
+  );
+
+  /* ---------- intro (角色介绍) ---------- */
+  var searchBox = document.getElementById('introSearch');
+  var grid = document.getElementById('introGrid');
+
+  function UMACHARA_index_by_cid(cid) {
+    for (var i = 0; i < UMACHARA.length; i++) if (UMACHARA[i].cid === cid) return i;
+    return -1;
+  }
+
+  function renderIntro() {
+    var q = (searchBox.value || '').trim().toLowerCase();
+    var list = UMA_INTRO.filter(function (c) {
+      if (!q) return true;
+      return (c.zh && c.zh.toLowerCase().indexOf(q) >= 0) ||
+             (c.name && c.name.toLowerCase().indexOf(q) >= 0) ||
+             (c.cv && c.cv.toLowerCase().indexOf(q) >= 0);
+    });
+    document.getElementById('introCount').textContent = '共 ' + list.length + ' 位角色 · 点击卡片查看官方介绍（萌娘百科）';
+    grid.innerHTML = '';
+    list.forEach(function (c) {
+      var d = document.createElement('div');
+      d.className = 'intro-card';
+      d.innerHTML = '<span class="pedbtn">血统</span><img src="' + c.av + '" alt=""><div class="zh">' + c.zh + '</div><div class="jp">' + c.name + '</div><div class="cv">CV：' + c.cv + '</div>';
+      d.addEventListener('click', function () {
+        var target = c.page && c.page.indexOf('moegirl') >= 0
+          ? c.page.replace('zh.moegirl.org.cn', 'mobile.moegirl.org.cn')
+          : 'https://mobile.moegirl.org.cn/' + encodeURIComponent(c.zh);
+        window.open(target, '_blank', 'noopener');
+      });
+      var pb = d.querySelector('.pedbtn');
+      var mi = UMACHARA_index_by_cid(c.id);
+      if (mi < 0) {
+        pb.classList.add('off');
+      } else {
+        pb.addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          selectRole(mi);
+        });
+      }
+      grid.appendChild(d);
+    });
+  }
+  searchBox.addEventListener('input', renderIntro);
+
+  /* ---------- roommate ---------- */
+  document.querySelector('#roommate img').addEventListener('click', function () {
+    window.open(this.src, '_blank');
+  });
+
+  /* ---------- pedigree pane ---------- */
+  var current = -1;
+  function selectRole(idx) {
+    if (idx < 0 || idx >= UMACHARA.length) return;
+    current = idx;
+    var c = UMACHARA[idx];
+    document.getElementById('pedName').textContent = c.zh;
+    document.getElementById('pedInfo').textContent = c.name + ' · ' + (c.bd || c.year || '');
+    var im = document.getElementById('pedImg');
+    im.src = 'role_svgs/' + c.fs + '.svg';
+    document.getElementById('prevRole').disabled = current <= 0;
+    document.getElementById('nextRole').disabled = current >= UMACHARA.length - 1;
+    switchTab('pedigree');
+    im.onload = function () { pedCtrl.fit(); };
+  }
+  document.getElementById('prevRole').addEventListener('click', function () { selectRole(current - 1); });
+  document.getElementById('nextRole').addEventListener('click', function () { selectRole(current + 1); });
+  document.getElementById('pedAll').addEventListener('click', function () { switchTab('global'); });
+
+  window.addEventListener('keydown', function (e) {
+    var el = document.activeElement;
+    if (el && el.tagName === 'INPUT') return;
+    if (document.getElementById('tab-pedigree').classList.contains('active')) {
+      if (e.key === 'ArrowLeft') selectRole(current - 1);
+      if (e.key === 'ArrowRight') selectRole(current + 1);
+    }
+  });
+
+  /* ---------- 马娘血缘节点图 ---------- */
+  var relByCid = {};
+  PED_REL.forEach(function (n) { relByCid[n.cid] = n; });
+
+  var relCtrl = { scale: 1, tx: 0, ty: 0, dragging: false, sx: 0, sy: 0, ox: 0, oy: 0 };
+  relCtrl.apply = function () {
+    var st = document.getElementById('graphStage');
+    st.style.transform = 'translate(' + this.tx + 'px,' + this.ty + 'px) scale(' + this.scale + ')';
+  };
+  relCtrl.reset = function () { this.scale = 1; this.tx = 0; this.ty = 0; this.apply(); };
+  relCtrl.fit = function (cw) {
+    var w = cw || document.getElementById('graphWrap').clientWidth;
+    var st = document.getElementById('graphStage');
+    var iw = st.offsetWidth, ih = st.offsetHeight, h = document.getElementById('graphWrap').clientHeight;
+    if (!iw) return;
+    this.scale = Math.min(w / iw, h / ih);
+    if (this.scale > 1) this.scale = 1;
+    this.tx = (w - iw * this.scale) / 2;
+    this.ty = h > 0 ? (h - ih * this.scale) / 2 : 20;
+    this.apply();
+  };
+
+  var SLOTW = 132, NODEH = 150, VGAP = 120, PAD = 60;
+
+  function ancTag(r, i) {
+    if (r === 0) return i === 0 ? '父' : '母';
+    if (r === 1) {
+      if (i === 0) return '祖父';
+      if (i === 1) return '祖母';
+      if (i === 2) return '母父';
+      return '母母';
+    }
+    return '曾祖·' + (i % 2 === 0 ? '父系' : '母系');
+  }
+
+  function renderBloodGraph(root) {
+    var stage = document.getElementById('graphStage');
+    stage.innerHTML = '';
+    var SV = 'http://www.w3.org/2000/svg';
+    var rootNode = relByCid[root];
+    var up = rootNode.up || [[], [], []];
+    var originX = PAD + 4 * SLOTW;   // enough room for 3 ancestor levels (8 cols)
+
+    var pos = {};        // cid -> {x, y, tag}
+    var edges = [];      // {x1,y1,x2,y2,color}
+
+    // ---- ancestors (up): row0=父母, row1=祖父母, row2=曾祖 ----
+    var maxG = 0;
+    for (var gi = 0; gi < up.length; gi++) {
+      var row = up[gi];
+      var has = false;
+      if (row) for (var z = 0; z < row.length; z++) if (row[z]) { has = true; break; }
+      if (!has) break;
+      maxG = gi + 1;
+    }
+    maxG = Math.min(3, maxG);
+
+    // root position
+    var rootX = originX;
+    var rootY = PAD + maxG * (NODEH + VGAP);
+    pos[root] = { x: rootX, y: rootY, tag: '' };
+
+    // ancestor rows (row r closest to root: r=0 = 父母)
+    for (var r = 0; r < maxG; r++) {
+      var row = up[r];
+      var y = rootY - (r + 1) * (NODEH + VGAP);
+      var n = Math.pow(2, r + 1);   // parents:2, grandparents:4, great:8
+      for (var i = 0; i < n; i++) {
+        var cid = row[i];
+        if (!cid) continue;
+        var x = originX + (i + 0.5 - Math.pow(2, r)) * SLOTW;
+        pos[cid] = { x: x, y: y, tag: ancTag(r, i) };
+        if (r === 0) {
+          // parents connect to root
+          edges.push({ x1: x, y1: y + NODEH / 2, x2: rootX, y2: rootY - NODEH / 2, color: '#b9a8d6' });
+        } else {
+          // grandparents/great connect to their child at row r-1 slot floor(i/2)
+          var childCid = up[r - 1][Math.floor(i / 2)];
+          if (childCid && pos[childCid]) {
+            edges.push({
+              x1: x, y1: y + NODEH / 2,
+              x2: pos[childCid].x, y2: pos[childCid].y - NODEH / 2,
+              color: '#b9a8d6'
+            });
+          }
+        }
+      }
+    }
+
+    // ---- descendants (children / grandchildren) below root ----
+    var children = (rootNode.children || []).filter(function (c) { return relByCid[c]; });
+    var grand = (rootNode.grandchildren || []).filter(function (c) {
+      if (!relByCid[c]) return false;
+      var p = relByCid[c].up[0] || [];
+      return (p[0] && children.indexOf(p[0]) >= 0) || (p[1] && children.indexOf(p[1]) >= 0);
+    });
+    if (children.length) {
+      for (var cIdx = 0; cIdx < children.length; cIdx++) {
+        var cx = originX + (cIdx + 0.5 - children.length / 2) * SLOTW;
+        var cy2 = rootY + NODEH + VGAP;
+        pos[children[cIdx]] = { x: cx, y: cy2, tag: '子女' };
+        edges.push({ x1: rootX, y1: rootY + NODEH / 2, x2: cx, y2: cy2 + NODEH / 2, color: '#4a7ac7' });
+      }
+    }
+    if (grand.length) {
+      // group grandchildren under their parent child
+      var byChild = {};
+      grand.forEach(function (gc) {
+        var p = (relByCid[gc].up[0] || []);
+        var parentC = p[0] && children.indexOf(p[0]) >= 0 ? p[0] : (p[1] && children.indexOf(p[1]) >= 0 ? p[1] : root);
+        (byChild[parentC] = byChild[parentC] || []).push(gc);
+      });
+      Object.keys(byChild).forEach(function (parentC) {
+        var list = byChild[parentC];
+        var px2 = (pos[parentC] && pos[parentC].x) || rootX;
+        var n = list.length;
+        for (var k = 0; k < n; k++) {
+          var gx = px2 + (k + 0.5 - n / 2) * SLOTW;
+          var gy = rootY + 2 * (NODEH + VGAP);
+          pos[list[k]] = { x: gx, y: gy, tag: '孙辈' };
+          edges.push({
+            x1: px2, y1: (pos[parentC] ? pos[parentC].y : rootY) + NODEH / 2,
+            x2: gx, y2: gy + NODEH / 2,
+            color: '#d9577c'
+          });
+        }
+      });
+    }
+
+    // ---- stage size ----
+    var maxX = 0, maxY = 0;
+    function nodeEl(id) {
+      var p = pos[id];
+      if (!p) return;
+      var el = document.createElement('div');
+      el.className = 'rel-node' + (id === root ? ' rel-root' : '') + (relByCid[id].av ? '' : ' rel-plain');
+      el.dataset.cid = id;
+      el.innerHTML = '<span class="tag"></span>' + (relByCid[id].av ? '<span class="av"><img src="' + relByCid[id].av + '"></span>' : '<span class="av"><i>原</i></span>') + '<div class="nm">' + (relByCid[id].zh || relByCid[id].ja || relByCid[id].en || id) + '</div>';
+      el.addEventListener('click', function () { selectRel(id); });
+      el.style.left = (p.x - SLOTW / 2 + 28) + 'px';
+      el.style.top = (p.y - 30) + 'px';
+      var tagEl = el.querySelector('.tag');
+      tagEl.textContent = p.tag || '';
+      tagEl.className = 'tag' + (p.tag === '母父' || p.tag === '母母' || p.tag === '子女' || p.tag === '孙辈' ? ' m-g' : '');
+      if (!p.tag) tagEl.style.display = 'none';
+      stage.appendChild(el);
+      maxX = Math.max(maxX, p.x + SLOTW / 2);
+      maxY = Math.max(maxY, p.y + NODEH / 2);
+    }
+    Object.keys(pos).forEach(nodeEl);
+
+    var stageW = Math.max(1200, maxX + PAD * 2);
+    var stageH = maxY + PAD;
+    stage.style.width = stageW + 'px';
+    stage.style.height = stageH + 'px';
+    var svg = document.createElementNS(SV, 'svg');
+    svg.setAttribute('width', stageW);
+    svg.setAttribute('height', stageH);
+    svg.style.cssText = 'position:absolute;left:0;top:0;width:' + stageW + 'px;height:' + stageH + 'px;overflow:visible';
+    edges.forEach(function (e) {
+      var line = document.createElementNS(SV, 'line');
+      line.setAttribute('x1', e.x1); line.setAttribute('y1', e.y1);
+      line.setAttribute('x2', e.x2); line.setAttribute('y2', e.y2);
+      line.setAttribute('class', 'rel-edge');
+      line.setAttribute('stroke', e.color);
+      svg.appendChild(line);
+    });
+    stage.appendChild(svg);
+
+    var ancCnt = Object.keys(pos).length;
+    document.getElementById('graphStatus').textContent =
+      (rootNode.zh || root) + ' · 上溯 ' + maxG + ' 代 / 下延 2 代 · 共 ' + ancCnt + ' 个已有马娘节点';
+    relCtrl.reset();
+    relCtrl.fit();
+  }
+
+  var relSearch = document.getElementById('graphSearch');
+  function selectRel(cid) {
+    if (!relByCid[cid]) return;
+    renderBloodGraph(cid);
+    relSearch.value = relByCid[cid].zh || cid;
+  }
+  relSearch.addEventListener('input', function () {
+    var q = (this.value || '').trim().toLowerCase();
+    if (!q) return;
+    var hit = null;
+    for (var i = 0; i < PED_REL.length; i++) {
+      var n = PED_REL[i];
+      if ((n.zh && n.zh.toLowerCase() === q) ||
+          (n.en && n.en.toLowerCase() === q) ||
+          (n.ja && n.ja.toLowerCase() === q)) { hit = n.cid; break; }
+    }
+    if (hit) selectRel(hit);
+  });
+  relSearch.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      var q = (this.value || '').trim().toLowerCase();
+      var hit = null;
+      for (var i = 0; i < PED_REL.length; i++) {
+        var n = PED_REL[i];
+        if (n.zh && n.zh.toLowerCase().indexOf(q) >= 0) { hit = n.cid; break; }
+      }
+      if (hit) selectRel(hit);
+    }
+  });
+
+  document.getElementById('gngzin').addEventListener('click', function () {
+    relCtrl.scale = Math.min(4, relCtrl.scale * 1.2);
+    relCtrl.apply();
+  });
+  document.getElementById('gngzout').addEventListener('click', function () {
+    relCtrl.scale = Math.max(0.05, relCtrl.scale / 1.2);
+    relCtrl.apply();
+  });
+  document.getElementById('gngzreset').addEventListener('click', function () { relCtrl.reset(); });
+  document.getElementById('gngzfit').addEventListener('click', function () { relCtrl.fit(); });
+
+  (function initGraphEvents() {
+    var st = document.getElementById('graphStage');
+    st.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      var r = st.getBoundingClientRect();
+      var nx = (e.clientX - r.left - relCtrl.tx) / relCtrl.scale;
+      var ny = (e.clientY - r.top - relCtrl.ty) / relCtrl.scale;
+      var ns = Math.max(0.05, Math.min(4, relCtrl.scale * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+      relCtrl.tx = e.clientX - r.left - nx * ns;
+      relCtrl.ty = e.clientY - r.top - ny * ns;
+      relCtrl.scale = ns;
+      relCtrl.apply();
+    }, { passive: false });
+    st.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      relCtrl.dragging = true; relCtrl.sx = e.clientX; relCtrl.sy = e.clientY;
+      relCtrl.ox = relCtrl.tx; relCtrl.oy = relCtrl.ty;
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', function (e) {
+      if (!relCtrl.dragging) return;
+      relCtrl.tx = relCtrl.ox + (e.clientX - relCtrl.sx);
+      relCtrl.ty = relCtrl.oy + (e.clientY - relCtrl.sy);
+      relCtrl.apply();
+    });
+    window.addEventListener('mouseup', function () { relCtrl.dragging = false; });
+  })();
+
+  document.querySelector('nav.subnav button[data-sub="blood"]').addEventListener('click', function () {
+    setTimeout(function () { subGlobalCtrl.fit(); }, 50);
+  });
+
+  selectRel('epiphaneia');
+  relSearch.value = '';
+
+  renderIntro();
+})();
+</script>
+</body>
+</html>
