@@ -690,10 +690,12 @@ server.listen(PORT, () => {
   console.log('News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...');
   runEventsCrawl('startup');
   runCharsCrawl('startup');
+  runAlbumsCrawl('startup');
   reloadLantis(); // use existing lantis_news.json immediately; re-crawl in background
   runLantisCrawl('startup');
   setInterval(() => runEventsCrawl('daily'), 24 * 60 * 60 * 1000);
   setInterval(() => runCharsCrawl('daily'), 24 * 60 * 60 * 1000);
+  setInterval(() => runAlbumsCrawl('auto'), 6 * 60 * 60 * 1000);
   setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
 });
 
@@ -739,5 +741,24 @@ function runLantisCrawl(reason) {
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
     else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's');
     reloadLantis();
+  });
+}
+
+// ---- Album auto-crawl (microCMS -> albums.json placeholders; netease enrich) ----
+const ALBUMS_SCRIPT = path.join(__dirname, 'auto_albums.py');
+let albumsRunning = false;
+function runAlbumsCrawl(reason) {
+  if (albumsRunning) return;
+  albumsRunning = true;
+  const t0 = Date.now();
+  execFile('python', [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+    albumsRunning = false;
+    const tag = '[albums-crawl ' + reason + ']';
+    if (err) {
+      console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
+    } else {
+      const lines = String(stdout || '').trim().split('\n');
+      console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', lines[lines.length - 1]);
+    }
   });
 }
