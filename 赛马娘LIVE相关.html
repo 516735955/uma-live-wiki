@@ -4728,6 +4728,15 @@ createApp({
       if (isNaN(d.getTime())) return true;
       return d.getTime() < Date.now();
     }
+    function _groupDateNum(g) {
+      const s = (g && g.subs && g.subs[0] && g.subs[0].date) || '';
+      const m = String(s).match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
+      if (!m) return 0;
+      return (+m[1]) * 10000 + (+m[2]) * 100 + (+m[3]);
+    }
+    function _sortGroupsDateDesc(groups) {
+      if (Array.isArray(groups)) groups.sort(function (a, b) { return _groupDateNum(b) - _groupDateNum(a); });
+    }
     const liveNonliveCat = computed(function () {
       const groups = [];
       (eventsAll.value || []).forEach(function (e) {
@@ -4750,7 +4759,12 @@ createApp({
         };
         groups.push({ group: e.title, subs: [sub], cover: '', nonlive: true, upcoming: upcoming });
       });
-      groups.sort(function (a, b) { return (a.upcoming ? 1 : 0) - (b.upcoming ? 1 : 0); });
+      groups.sort(function (a, b) {
+        const ua = a.upcoming ? 1 : 0;
+        const ub = b.upcoming ? 1 : 0;
+        if (ua !== ub) return ua - ub;
+        return _groupDateNum(b) - _groupDateNum(a);
+      });
       return { group: '非Live活动', groups: groups };
     });
     const liveNonlivePastGroups = computed(function () {
@@ -5531,7 +5545,14 @@ function registerCover(url) {
     function loadLiveCatData() {
       return fetch('/live_cat_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) { liveCatData.value = data || null; })
+        .then(function (data) {
+          if (data) {
+            if (data.cd && Array.isArray(data.cd.sections)) data.cd.sections.forEach(function (sec) { _sortGroupsDateDesc(sec && sec.groups); });
+            if (data.twinkle) _sortGroupsDateDesc(data.twinkle.groups);
+            if (data.other) _sortGroupsDateDesc(data.other.groups);
+          }
+          liveCatData.value = data || null;
+        })
         .catch(function () { liveCatData.value = null; });
     }
 
