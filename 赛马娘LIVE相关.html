@@ -4510,16 +4510,16 @@ createApp({
         if (filterType.value && a.type !== filterType.value) return false;
         return true;
       });
-      if (sortMode.value === 'release') {
+      if (sortMode.value === 'name') {
+        list.sort(function (x, y) { return x.name.localeCompare(y.name, 'ja'); });
+      } else {
         list.sort(function (x, y) {
           const dx = String(x.release || ''), dy = String(y.release || '');
           if (dx === dy) return x.name.localeCompare(y.name, 'ja');
           if (!dx) return 1;
           if (!dy) return -1;
-          return dx.localeCompare(dy);
+          return dy.localeCompare(dx);
         });
-      } else if (sortMode.value === 'name') {
-        list.sort(function (x, y) { return x.name.localeCompare(y.name, 'ja'); });
       }
       return list;
     });
