@@ -3081,7 +3081,7 @@
                         <a class="ev-l-link" :href="e.link" target="_blank" rel="noopener noreferrer" :title="'在 Eventernote 查看「' + e.title + '」'" aria-label="在 Eventernote 查看原文">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </a>
-                        <a v-if="e.live" class="ev-l-link live" :href="e.live" @click.prevent="openLiveFromEvents(e.live)" :title="'查看「' + e.title + '」的详细歌单'" aria-label="查看详细歌单">
+                        <a v-if="e.live" class="ev-l-link live" :href="liveDetailHref(e.live)" @click.prevent="openLiveFromEvents(liveDetailHref(e.live))" :title="'查看「' + e.title + '」的详细歌单'" aria-label="查看详细歌单">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                         </a>
                         <a v-else class="ev-l-link nonlive" :href="nonliveHref(e)" @click.prevent="openNonliveFromEvents(e)" :title="'查看「' + e.title + '」的活动详情页面'" aria-label="查看活动详情页面">
@@ -3677,6 +3677,7 @@ createApp({
     const liveCatIndex = ref(-1);
     const liveCatSectionIndex = ref(-1);
     const liveCatData = ref(null);
+    const liveCatDataOrig = ref(null);
     const savedScrollY = ref(0);
     const albumReturnView = ref('songs');
     const liveReturnSource = ref('live');
@@ -4914,6 +4915,42 @@ createApp({
       if (liveView.value === 'liveCatDetail') backCatList();
       else showLiveView('liveSeries');
     }
+    function liveDetailHref(path) {
+      path = String(path || '');
+      if (path.indexOf('number_series_event') !== -1 || path.indexOf('/live/nonlive/') !== -1) return path;
+      const orig = liveCatDataOrig.value;
+      if (!orig) return path;
+      const mcd = path.match(/^\/(?:zh-Hans\/)?live\/cd\/(\d+)\/(\d+)$/);
+      if (mcd) {
+        const si = +mcd[1], gi = +mcd[2];
+        const sec = orig.cd && orig.cd.sections && orig.cd.sections[si];
+        const g0 = sec && sec.groups && sec.groups[gi];
+        if (g0) {
+          const cur = liveCatData.value;
+          const csec = cur && cur.cd && cur.cd.sections && cur.cd.sections[si];
+          if (csec && Array.isArray(csec.groups)) {
+            for (let i = 0; i < csec.groups.length; i++) {
+              if (csec.groups[i] && csec.groups[i].group === g0.group) return '/zh-Hans/live/cd/' + si + '/' + i;
+            }
+          }
+        }
+        return path;
+      }
+      const m2 = path.match(/^\/(?:zh-Hans\/)?live\/(other|twinkle)\/(\d+)$/);
+      if (m2) {
+        const gi = +m2[2], cat = m2[1];
+        const g0 = orig[cat] && orig[cat].groups && orig[cat].groups[gi];
+        if (g0) {
+          const cg = liveCatData.value && liveCatData.value[cat] && liveCatData.value[cat].groups;
+          if (Array.isArray(cg)) {
+            for (let i = 0; i < cg.length; i++) {
+              if (cg[i] && cg[i].group === g0.group) return '/zh-Hans/live/' + cat + '/' + i;
+            }
+          }
+        }
+      }
+      return path;
+    }
     function openLiveFromEvents(path) {
       eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
       liveBackScroll.view = '';
@@ -5311,13 +5348,13 @@ createApp({
     const nextUpcomingHref = computed(function () {
       const e = nextUpcomingEvent.value;
       if (!e) return null;
-      if (e.live) return e.live;
+      if (e.live) return liveDetailHref(e.live);
       return nonliveHref(e);
     });
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
       if (!e) return;
-      if (e.live) openLiveFromEvents(e.live);
+      if (e.live) openLiveFromEvents(liveDetailHref(e.live));
       else openNonliveFromEvents(e);
       liveReturnSource.value = 'home';
     }
@@ -5546,6 +5583,7 @@ function registerCover(url) {
       return fetch('/live_cat_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
+          try { liveCatDataOrig.value = JSON.parse(JSON.stringify(data)); } catch (e) { liveCatDataOrig.value = null; }
           if (data) {
             if (data.cd && Array.isArray(data.cd.sections)) data.cd.sections.forEach(function (sec) { _sortGroupsDateDesc(sec && sec.groups); });
             if (data.twinkle) _sortGroupsDateDesc(data.twinkle.groups);
@@ -5581,7 +5619,7 @@ function registerCover(url) {
       fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
-      showLiveView, openCat, openLiveSeries, selectLivePerf, selectLiveDay, liveDetailBack, openLiveFromEvents,
+      showLiveView, openCat, openLiveSeries, selectLivePerf, selectLiveDay, liveDetailBack, openLiveFromEvents, liveDetailHref,
       liveCatType, liveCatIndex, liveCatData, loadLiveCatData, openCatDetail, backCatList, liveCatSectionIndex, liveCatSections, openCatSection, currentSection, sectionCardClass,
       currentCat, liveNonliveCat, liveNonlivePastGroups, liveCatListGroups, nonliveGi, nonliveHref, openNonliveFromEvents,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
