@@ -2564,7 +2564,8 @@
                     返回分类
                 </button>
                 <template v-if="currentCat">
-                    <div v-if="liveCatSections.length > 1" class="live-cat-grid" id="liveCatGrid">
+                    <div v-if="liveCatType==='nonlive' && liveCatListGroups.length===0" class="live-empty">暂无已结束的非Live活动</div>
+                    <div v-else-if="liveCatSections.length > 1" class="live-cat-grid" id="liveCatGrid">
                         <div v-for="(sec,si) in liveCatSections" :key="si" class="live-cat-card" @click="openCatSection(si)">
                             <div class="live-cat-icon">{{ sec.icon || '💿' }}</div>
                             <div class="live-cat-title">{{ sec.group }}</div>
@@ -2572,7 +2573,7 @@
                         </div>
                     </div>
                     <div v-else class="live-series-grid" id="liveCatGrid">
-                        <div v-for="(g,gi) in liveCatSections[0].groups" :key="gi" class="live-series-card live-event-card" :class="(liveCatType==='other' || liveCatType==='nonlive') ? sectionCardClass(gi) : ''" @click="openCatDetail(liveCatType, -1, gi)">
+                        <div v-for="(g,gi) in liveCatListGroups" :key="gi" class="live-series-card live-event-card" :class="(liveCatType==='other' || liveCatType==='nonlive') ? sectionCardClass(gi) : ''" @click="openCatDetail(liveCatType, -1, gi)">
                             <img v-if="g.cover" class="live-event-cover" :src="g.cover" :alt="g.group" loading="lazy">
                             <div v-if="!g.cover" class="live-series-no">{{ g.subs.length }}</div>
                             <div class="live-event-body" :class="{hascover: g.cover}">
@@ -2616,7 +2617,8 @@
                         <div class="live-perf-list" id="livePerfList">
                             <div v-for="(s,pi) in (currentGroup?currentGroup.subs:[])" :key="pi" class="live-perf-item" :class="{selected: pi===livePerf}" :id="'livePerf_'+pi">
                                 <div class="live-perf-head" @click="selectLivePerf(pi)"><span>{{ s.title }}</span><span class="live-perf-date">{{ s.date }}</span></div>
-                                <div v-if="s.nonlive" class="live-perf-nodays">本活动 · 无私演歌单</div>
+                                <div v-if="s.nonlive && !!s.upcoming" class="live-perf-nodays">暂未开演</div>
+                                <div v-else-if="s.nonlive" class="live-perf-nodays">本活动 · 无私演歌单</div>
                                 <div v-else-if="s.days.length>1" class="live-day-btns">
                                     <button v-for="(d,di) in s.days" :key="di" class="live-day-btn" :class="{active: (pi===livePerf && di===liveDay)}" :id="'liveDay_'+pi+'_'+di" @click="selectLiveDay(pi,di)">{{ d.label }}</button>
                                 </div>
@@ -2634,7 +2636,7 @@
                                 </span>
                             </div>
                             <div v-if="setlistTable" v-html="setlistTable"></div>
-                            <div v-else class="live-setlist-placeholder">{{ (currentSub && currentSub.nonlive) ? '非Live活动 · 无歌单' : '暂无数据' }}</div>
+                            <div v-else class="live-setlist-placeholder">{{ (currentSub && currentSub.nonlive && !!currentSub.upcoming) ? '暂未开演' : ((currentSub && currentSub.nonlive) ? '非Live活动 · 无歌单' : '暂无数据') }}</div>
                         </div>
                     </div>
                 </div>
@@ -4721,6 +4723,11 @@ createApp({
 
     // live
     const seriesGrid = SERIES_GRID;
+    function _isPastDate(ds) {
+      const d = new Date(ds + 'T23:59:59');
+      if (isNaN(d.getTime())) return true;
+      return d.getTime() < Date.now();
+    }
     const liveNonliveCat = computed(function () {
       const groups = [];
       (eventsAll.value || []).forEach(function (e) {
@@ -4729,6 +4736,7 @@ createApp({
         if (e.times) castHtml += '<div class="cast-line">' + e.times + '</div>';
         const names = (e.actors || []).map(function (a) { return a.name; }).filter(Boolean);
         if (names.length) castHtml += '<div class="cast-line">出演：' + names.join('、') + '</div>';
+        const upcoming = !_isPastDate(e.date);
         const sub = {
           title: e.title,
           date: e.date + (e.venue ? '　' + e.venue : ''),
@@ -4737,11 +4745,23 @@ createApp({
           days: [],
           vids: [],
           nonlive: true,
+          upcoming: upcoming,
           evLink: e.link
         };
-        groups.push({ group: e.title, subs: [sub], cover: e.img || '', nonlive: true });
+        groups.push({ group: e.title, subs: [sub], cover: e.img || '', nonlive: true, upcoming: upcoming });
       });
+      groups.sort(function (a, b) { return (a.upcoming ? 1 : 0) - (b.upcoming ? 1 : 0); });
       return { group: '非Live活动', groups: groups };
+    });
+    const liveNonlivePastGroups = computed(function () {
+      const all = (liveNonliveCat.value && liveNonliveCat.value.groups) || [];
+      return all.filter(function (g) { return !g.upcoming; });
+    });
+    const liveCatListGroups = computed(function () {
+      if (liveCatType.value === 'nonlive') return liveNonlivePastGroups.value;
+      const secs = liveCatSections.value;
+      if (!secs.length) return [];
+      return secs[0].groups || [];
     });
     const currentCat = computed(function () {
       if (liveCatType.value === 'nonlive') return liveNonliveCat.value || null;
@@ -4967,6 +4987,7 @@ createApp({
         '<a class="live-info-date-src"' + (srcUrl ? ' href="' + srcUrl + '" target="_blank" rel="noopener" title="' + srcText + '"' : '') + '>出处：' + src + '</a>' : '';
       let h = '<div class="live-info-title">' + (s.title||'') + '</div>';
       h += '<div class="live-info-date"><span class="live-info-date-main">时间：' + dTime + '　地点：' + dPlace + '</span>' + srcHtml + '</div>';
+      if (s.nonlive && !!s.upcoming) h += '<div class="live-info-cast"><div class="cast-line" style="color:var(--accent,#ff8c1a);font-weight:700;">暂未开演 · 歌单整理中</div></div>';
       if (s.cast) h += '<div class="live-info-cast">' + s.cast + '</div>';
       if (s.tips && !srcHtml) h += '<div class="live-info-tips">' + s.tips + '</div>';
       return fixAvatarSrc(h);
@@ -4974,6 +4995,7 @@ createApp({
     const setlistTitle = computed(function () {
       const s = currentSub.value;
       if (!s) return '';
+      if (s.nonlive && !!s.upcoming) return s.title + ' · 暂未开演';
       if (s.nonlive) return s.title + ' · 本活动';
       if (liveDay.value >= s.days.length) return '';
       return s.title + ' · ' + s.days[liveDay.value].label;
@@ -5540,7 +5562,7 @@ function registerCover(url) {
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
       showLiveView, openCat, openLiveSeries, selectLivePerf, selectLiveDay, liveDetailBack, openLiveFromEvents,
       liveCatType, liveCatIndex, liveCatData, loadLiveCatData, openCatDetail, backCatList, liveCatSectionIndex, liveCatSections, openCatSection, currentSection, sectionCardClass,
-      currentCat, liveNonliveCat, nonliveGi, nonliveHref, openNonliveFromEvents,
+      currentCat, liveNonliveCat, liveNonlivePastGroups, liveCatListGroups, nonliveGi, nonliveHref, openNonliveFromEvents,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, newsBack, loadNews, newsHeroCover,
