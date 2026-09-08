@@ -2002,6 +2002,17 @@
             object-fit: cover; display: block; background: #eee;
         }
         #tab-characters .c-vtitle { font-size: 14px; font-weight: 600; color: #2c3650; }
+        #tab-characters .c-sbooks {
+            display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0 0 4px;
+        }
+        #tab-characters .c-sbook {
+            display: flex; align-items: center; justify-content: center;
+            background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 14px 10px;
+            text-decoration: none; color: #2c3650; font-size: 14px; font-weight: 600;
+            box-shadow: 0 2px 8px rgba(32,40,59,.12);
+            transition: transform .12s, box-shadow .12s;
+        }
+        #tab-characters .c-sbook:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(32,40,59,.28); border-color: #ff8c1a; }
         #tab-characters .c-zoombar {
             display: flex; gap: 6px; padding: 8px 12px; background: #fff; border: 1px solid #e6e4ee;
             border-bottom: none; border-radius: 10px 10px 0 0;
@@ -2695,7 +2706,7 @@
                 <button class="db-card" type="button" data-db="characters" @click="goDbView('characters')">
                     <span class="db-no">01 / 05</span>
                     <span class="db-headline">角色 <em>CHARACTER · /characters</em></span>
-                    <span class="db-desc">角色介绍 · 宿舍室友图 · 精选视频 · 血统关系</span>
+                    <span class="db-desc">角色介绍 · 角色设定相关 · 精选视频 · 血统关系</span>
                     <span class="db-meta"><b>{{ charCount }}</b> 位角色</span>
                 </button>
                 <button class="db-card" type="button" data-db="voice" @click="goDbView('voice')">
@@ -2877,7 +2888,7 @@
             <div class="c-wrap">
                 <nav class="c-subnav">
                     <button class="c-sub" data-sub="intro" :class="{active: charSub==='intro'}" type="button" @click="goCharSub('intro')">赛马娘角色介绍</button>
-                    <button class="c-sub" data-sub="room" :class="{active: charSub==='room'}" type="button" @click="goCharSub('room')">宿舍室友图</button>
+                    <button class="c-sub" data-sub="room" :class="{active: charSub==='room'}" type="button" @click="goCharSub('room')">角色设定相关</button>
                     <button class="c-sub" data-sub="videos" :class="{active: charSub==='videos'}" type="button" @click="goCharSub('videos')">精选推荐视频</button>
                 </nav>
 
@@ -2929,6 +2940,18 @@
                 </section>
 
                 <section v-if="charSub==='room'" class="c-page" id="c-room">
+                    <header class="c-page-head">
+                        <h2 class="c-page-title">赛马娘设定集</h2>
+                    </header>
+                    <div class="c-sbooks">
+                        <a class="c-sbook" href="https://www.bilibili.com/video/BV1MsdABFEc7/?spm_id_from=333.1387.0.0&vd_source=b6c42169e7baf7c3eb553cdb6dd8c930" target="_blank" rel="noopener">第1册</a>
+                        <a class="c-sbook" href="https://www.bilibili.com/video/BV1MsdABFEc7/?spm_id_from=333.1387.0.0&vd_source=b6c42169e7baf7c3eb553cdb6dd8c930" target="_blank" rel="noopener">第2册</a>
+                        <a class="c-sbook" href="https://www.bilibili.com/video/BV1MsdABFEc7/?spm_id_from=333.1387.0.0&vd_source=b6c42169e7baf7c3eb553cdb6dd8c930" target="_blank" rel="noopener">第3册</a>
+                        <a class="c-sbook" href="https://www.bilibili.com/video/BV1MsdABFEc7/?spm_id_from=333.1387.0.0&vd_source=b6c42169e7baf7c3eb553cdb6dd8c930" target="_blank" rel="noopener">第4册</a>
+                    </div>
+                    <header class="c-page-head">
+                        <h2 class="c-page-title">宿舍室友关系</h2>
+                    </header>
                     <p class="c-page-sub">游戏内宿舍合住的室友组合一览，点击图片放大查看。</p>
                     <div class="c-room">
                         <img src="/480DD656D6F892646606A962F0A9246C.jpg" alt="宿舍室友图" class="c-room-img">
