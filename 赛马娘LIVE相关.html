@@ -4537,7 +4537,8 @@ createApp({
       return '';
     }
     const filteredAlbums = computed(function () {
-      const today = new Date().toISOString().slice(0, 10);
+      const now = new Date();
+      const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
       const list = albums.value.filter(function (a) {
         if (a.release && String(a.release) > today) return false;
         if (filterWork.value && albumWorkOf(a.name) !== filterWork.value) return false;
