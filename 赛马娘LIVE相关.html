@@ -4748,7 +4748,7 @@ createApp({
           upcoming: upcoming,
           evLink: e.link
         };
-        groups.push({ group: e.title, subs: [sub], cover: e.img || '', nonlive: true, upcoming: upcoming });
+        groups.push({ group: e.title, subs: [sub], cover: '', nonlive: true, upcoming: upcoming });
       });
       groups.sort(function (a, b) { return (a.upcoming ? 1 : 0) - (b.upcoming ? 1 : 0); });
       return { group: '非Live活动', groups: groups };
