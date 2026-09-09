@@ -268,8 +268,9 @@ createApp({
       }
       if (first === 'characters') {
         const sub = (seg[1] || '').toLowerCase();
-        return sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' && sub !== 'blood'
+        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' && sub !== 'blood'
           ? loadCharacterDetailData() : loadCharacterIndexData();
+        return Promise.all([characterReady, loadHomeSummary()]);
       }
       if (first === 'events') return loadEvents();
       if (first !== 'database') return Promise.resolve();
@@ -277,11 +278,12 @@ createApp({
       if (!sub) return loadHomeSummary();
       if (sub === 'albums' || sub === 'songs') return loadAlbums();
       if (sub === 'events') return loadEvents();
-      if (sub === 'voice' || sub === 'voice-actors') return loadVoiceData();
+      if (sub === 'voice' || sub === 'voice-actors') return Promise.all([loadVoiceData(), loadHomeSummary()]);
       if (sub === 'characters') {
         const charPath = (seg[2] || '').toLowerCase();
-        return charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos' && charPath !== 'blood'
+        const characterReady = charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos' && charPath !== 'blood'
           ? loadCharacterDetailData() : loadCharacterIndexData();
+        return Promise.all([characterReady, loadHomeSummary()]);
       }
       return Promise.resolve();
     }
