@@ -21,6 +21,11 @@ createApp({
     const albumsError = ref('');
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
+    function syncBodyBackground(isHome) {
+      document.body.classList.toggle('subpage-bg', !isHome);
+    }
+    syncBodyBackground(home.value);
+    watch(home, syncBodyBackground);
     const albumDetail = ref(null);
     const artistDetail = ref(null);
     const search = ref('');

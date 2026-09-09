@@ -28,7 +28,6 @@
             font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', system-ui, sans-serif;
             color: var(--text);
             background-color: var(--bg);
-            background-image: url('/uma_tools/img/bg_texture_white.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -36,6 +35,7 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
+        body.subpage-bg { background-image: url('/uma_tools/img/bg_texture_white.webp'); }
 
         ::selection { background: rgba(214, 0, 28, 0.16); color: var(--accent-dark); }
         :focus-visible { outline: 2px solid rgba(214, 0, 28, 0.6); outline-offset: 2px; }
@@ -1842,8 +1842,6 @@
         .legal-text li { margin: 4px 0; }
         .legal-back { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 14px; color: var(--brand); cursor: pointer; }
         .legal-updated { font-size: 13px; color: var(--text-3); margin-top: 24px; }
-
-    
 
         #tab-characters { padding-bottom: 20px; }
         #tab-characters .c-wrap { max-width: 1280px; margin: 0 auto; }
