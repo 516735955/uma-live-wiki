@@ -3,17 +3,15 @@
 流程（与 角色与声优爬取流程.md 对应）:
   阶段0 门禁: 萌百登场人物页须已收录新角色(含中文名/CV)
   阶段1 入库: 官方立绘/头像下载, CHAR_INDEX追加并按官方顺序重排
-  阶段1.5:   uma_moe透明立绘(600x1056规范) + make_avatar逻辑生成200头像
+  阶段1.5:   保存 uma_moe 透明立绘；头像默认使用阶段1下载的官方图标
   阶段2:     角色详情(intro本地化)追加进 character_detail_data.js
+  阶段3:     提示维护 pedigree_source.json，再生成并校验浏览器血统数据
   阶段4:     新声优照片/生日(Moegill优先)并入 va_photos_data.js
-血统图(netkeiba被403)不自动化——输出待办清单人工处理。
 用法: python crawl_characters.py
 """
 import io, re, json, sys, os, time, urllib.request, urllib.parse, tempfile
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from PIL import Image, ImageDraw, ImageChops
-UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, 'data')
@@ -185,7 +183,7 @@ def main():
             moe = Image.open(io.BytesIO(raw)).convert('RGBA')
             moe = trim(moe)
             mw, mh = moe.size
-            s = min(650.0 / mw, (1056 * 0.84) / mh, 1.0)
+            s = min(600.0 / mw, (1056 * 0.84) / mh, 1.0)
             moe = moe.resize((int(mw*s), int(mh*s)), Image.LANCZOS)
             canvas = Image.new('RGBA', (600, 1056), (0, 0, 0, 0))
             canvas.paste(moe, ((600 - moe.size[0]) // 2, (1056 - moe.size[1]) // 2), moe)
@@ -286,11 +284,14 @@ def main():
     out.append('window.VA_PHOTOS = %s;' % json.dumps(manifest, ensure_ascii=False))
     write_text_atomic(man_path, '\n'.join(out))
 
-    # ---- 血统待办提示 ----
+    # ---- 阶段3: 血统源数据待办提示 ----
     if moe_pages:
-        print('\n[待人工] 血统关系图(netkeiba被403)需为以下角色手动补录:')
+        print('\n[待人工] 请在 data/pedigree_source.json 补充以下角色的节点、原型映射和亲本事实:')
         for cid in moe_pages:
             print('   -', cid, '(' + moe_pages[cid]['zh'] + ')')
+        print('完成后运行:')
+        print('   python3 uma_tools/build_pedigree.py')
+        print('   python3 uma_tools/check_pedigree.py')
 
     print('DONE total_chars=%d' % len(chars), flush=True)
     return 0
