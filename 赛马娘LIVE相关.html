@@ -2471,7 +2471,7 @@
                         <div v-for="a in albumHits" :key="a.name" class="album-card"
                              :data-album="albumName(a)" :data-release="a.release" :data-company="a.company"
                              :style="coverStyle(a)" @click="openAlbum(a)">
-                            <img class="album-cover" :src="a.cover" :alt="a.name" loading="lazy">
+                            <img class="album-cover" :src="coverThumb(a.cover, 360)" :alt="a.name" crossorigin="anonymous" loading="lazy" @load="sampleCover($event, a.cover)">
                             <div class="album-info">
                                 <div class="album-name">{{ a.name }}</div>
                             </div>
@@ -2485,7 +2485,7 @@
                 <div v-for="a in filteredAlbums" :key="a.name" class="album-card"
                      :data-album="albumName(a)" :data-release="a.release" :data-company="a.company"
                      :style="coverStyle(a)" @click="openAlbum(a)">
-                    <img class="album-cover" :src="a.cover" :alt="a.name" loading="lazy">
+                    <img class="album-cover" :src="coverThumb(a.cover, 360)" :alt="a.name" crossorigin="anonymous" loading="lazy" @load="sampleCover($event, a.cover)">
                     <div class="album-info">
                     <div class="album-name">{{ a.name }}</div>
                     </div>
@@ -2674,7 +2674,7 @@
             <div class="album-detail">
                 <div class="detail-left">
                     <div class="detail-cover-wrap">
-                        <img class="detail-cover" :src="albumDetail.data.cover || ''" :alt="albumDetail.data.name" @error="onEvImgError($event)">
+                        <img class="detail-cover" :src="coverThumb(albumDetail.data.cover, 640)" :alt="albumDetail.data.name" @error="onEvImgError($event)">
                     </div>
                     <div class="detail-meta">
                         <h2 class="detail-name">{{ albumDetail.data.name }}</h2>
@@ -2863,7 +2863,7 @@
                         <td class="rel-cat">{{ a.catalog || '—' }}</td>
                         <td>
                             <div class="rel-title-cell" @click="openAlbumFromDb(a)">
-                                <img class="rel-cover" :src="a.cover || ''" :alt="a.name" loading="lazy" @error="onEvImgError($event)">
+                                <img class="rel-cover" :src="coverThumb(a.cover, 128)" :alt="a.name" loading="lazy" @error="onEvImgError($event)">
                                 <span class="rel-title">{{ a.name }}</span>
                             </div>
                         </td>
@@ -3606,7 +3606,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
         </button>
         <div class="mini-row">
-            <img class="player-cover" :src="player.cover" alt="">
+            <img class="player-cover" :src="coverThumb(player.cover, 96)" alt="">
             <div class="player-info">
                 <div class="player-song">{{ player.name }}</div>
                 <div class="player-artist" :title="player.artist">{{ player.artist }}</div>
@@ -5566,29 +5566,31 @@ createApp({
     watch(function () { return eventsAll.value; }, function () { if (evDataView.value && !voiceEvData.value.length) computeEvData(); });
     const coverTint = reactive({});
     const tintSet = new Set();
-function registerCover(url) {
+    function coverThumb(url, size) {
+      const src = String(url || '');
+      if (!src || !/^https?:\/\/p\d+\.music\.126\.net\//i.test(src) || /[?&]param=\d+y\d+/i.test(src)) return src;
+      const px = Math.max(64, parseInt(size, 10) || 360);
+      return src + (src.indexOf('?') === -1 ? '?' : '&') + 'param=' + px + 'y' + px;
+    }
+    window.umaCoverThumb = coverThumb;
+    function sampleCover(event, url) {
       if (!url || tintSet.has(url)) return;
       tintSet.add(url);
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      img.onload = function () {
-        try {
-          const c = document.createElement('canvas');
-          const s = 40;
-          c.width = s; c.height = s;
-          const ctx = c.getContext('2d', { willReadFrequently: true });
-          ctx.drawImage(img, 0, 0, s, s);
-          const d = ctx.getImageData(0, 0, s, s).data;
-          let r = 0, g = 0, b = 0, n = 0;
-          for (let i = 0; i < d.length; i += 4) { r += d[i]; g += d[i + 1]; b += d[i + 2]; n++; }
-          coverTint[url] = Math.round(r / n) + ',' + Math.round(g / n) + ',' + Math.round(b / n);
-        } catch (e) { /* keep fallback tint */ }
-      };
-      img.onerror = function () {};
-      img.src = url;
+      const img = event && event.currentTarget;
+      if (!img || !img.naturalWidth) return;
+      try {
+        const c = document.createElement('canvas');
+        const s = 40;
+        c.width = s; c.height = s;
+        const ctx = c.getContext('2d', { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0, s, s);
+        const d = ctx.getImageData(0, 0, s, s).data;
+        let r = 0, g = 0, b = 0, n = 0;
+        for (let i = 0; i < d.length; i += 4) { r += d[i]; g += d[i + 1]; b += d[i + 2]; n++; }
+        coverTint[url] = Math.round(r / n) + ',' + Math.round(g / n) + ',' + Math.round(b / n);
+      } catch (e) { /* keep fallback tint */ }
     }
     function coverStyle(album) {
-      registerCover(album.cover);
       return { '--cover-tint': coverTint[album.cover] || '22,26,41' };
     }
     function newsDate(s) {
@@ -5763,7 +5765,7 @@ function registerCover(url) {
       filterWork, filterType, sortMode, WORK_LIST, TYPE_LIST, filteredAlbums, setFilter, clearFilters, workLabel, typeLabel, filterActive, showFilters, backTopVisible, backToTop, onScroll,
       albumTypeOf,
       isTabActive, switchTab, enterTab, goHome, goDbView, dbView, albumName, clearSearch, songHits, artistHits, albumHits, artistSongs, openArtist, backArtist, openAlbum, openAlbumFromDb, albumBack, detailNoteText, albumBackLabel, isSongHit,
-      statSongs, statAlbums, statLive, statGongyan,       loadAlbums, coverStyle, evDataView, evDataTab, evDataLoading, evDataError, openEvData, closeEvData, vaFilters, songFilter, rankSort, vaPage, songPage, evRankPage, actorRankList, songRankList, actorPageRows, songPageRows, actorPageCount, songPageCount, actorPageStart, actorPageEnd, songPageStart, songPageEnd, actorPageList, songPageList, setVaFilter, isVaFilter, setSongFilter, setVaPage, goVaPage, setSongPage, goSongPage,
+      statSongs, statAlbums, statLive, statGongyan,       loadAlbums, coverStyle, coverThumb, sampleCover, evDataView, evDataTab, evDataLoading, evDataError, openEvData, closeEvData, vaFilters, songFilter, rankSort, vaPage, songPage, evRankPage, actorRankList, songRankList, actorPageRows, songPageRows, actorPageCount, songPageCount, actorPageStart, actorPageEnd, songPageStart, songPageEnd, actorPageList, songPageList, setVaFilter, isVaFilter, setSongFilter, setVaPage, goVaPage, setSongPage, goSongPage,
       fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
@@ -6747,7 +6749,7 @@ function registerCover(url) {
         var tr = document.createElement('tr');
         tr.className = 'song-row';
         tr.innerHTML =
-          '<td class="col-name"><img class="song-thumb" src="' + (r.s.pic || r.al.cover || '') + '" alt="" loading="lazy"><span class="song-name">' + (r.s.name || '') + '</span></td>' +
+          '<td class="col-name"><img class="song-thumb" src="' + (window.umaCoverThumb ? window.umaCoverThumb(r.s.pic || r.al.cover || '', 96) : (r.s.pic || r.al.cover || '')) + '" alt="" loading="lazy"><span class="song-name">' + (r.s.name || '') + '</span></td>' +
           '<td class="col-date">' + (r.al.release || '') + '</td>' +
           '<td class="col-album">' + (r.al.name || '') + '</td>';
         tr.addEventListener('click', function () { openSongFromDb(r.al, r.s); });
