@@ -3,19 +3,23 @@ import io, sys, re, json, html, datetime, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-H = io.open(os.path.join(ROOT, '赛马娘LIVE相关.html'), encoding='utf-8').read()
-def extract(name):
-    i = H.find(name + ' = ')
-    s = H.index('[', i); dep = 0; e = -1
-    for j in range(s, len(H)):
-        if H[j] == '[': dep += 1
-        elif H[j] == ']':
+APP_JS = io.open(os.path.join(ROOT, 'uma_tools', 'app.js'), encoding='utf-8').read()
+def extract_array(source, name):
+    i = source.find(name + ' = ')
+    if i < 0:
+        raise ValueError('%s not found' % name)
+    s = source.index('[', i); dep = 0; e = -1
+    for j in range(s, len(source)):
+        if source[j] == '[': dep += 1
+        elif source[j] == ']':
             dep -= 1
             if dep == 0: e = j + 1; break
-    return json.loads(H[s:e])
+    if e < 0:
+        raise ValueError('%s is incomplete' % name)
+    return json.loads(source[s:e])
 
 LIVE = json.load(io.open(os.path.join(ROOT, 'live_data.json'), encoding='utf-8'))
-SERIES = extract('SERIES_GRID')
+SERIES = extract_array(APP_JS, 'SERIES_GRID')
 CAT = json.load(io.open(os.path.join(ROOT, 'live_cat_data.json'), encoding='utf-8'))
 # 用 app 实际角色库 CHAR_INDEX（character_index_data.js，179个，最完整且与页面一致）
 jsrc = io.open(os.path.join(ROOT, 'character_index_data.js'), encoding='utf-8').read()
