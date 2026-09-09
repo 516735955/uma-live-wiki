@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """阶段0：检测官方站新增角色（增量入口）
-用法: python check_new_characters.py
+用法: python3 check_new_characters.py
 """
-import io, re, json, sys, urllib.request
+import io, re, json, sys, os, urllib.request
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-INDEX = r'G:\学习\AI\character_index_data.js'
+TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(TOOLS_DIR)
+INDEX = os.path.join(ROOT, 'character_index_data.js')
 URL = 'https://umamusume.jp/character/'
 
 def fetch(url):

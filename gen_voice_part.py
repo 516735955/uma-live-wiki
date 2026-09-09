@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import io, sys, re, json, html, datetime
+import io, sys, re, json, html, datetime, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-H = io.open(r'G:\学习\AI\赛马娘LIVE相关.html', encoding='utf-8').read()
+ROOT = os.path.dirname(os.path.abspath(__file__))
+H = io.open(os.path.join(ROOT, '赛马娘LIVE相关.html'), encoding='utf-8').read()
 def extract(name):
     i = H.find(name + ' = ')
     s = H.index('[', i); dep = 0; e = -1
@@ -15,12 +16,12 @@ def extract(name):
 
 LIVE = extract('LIVE_DATA')
 SERIES = extract('SERIES_GRID')
-CAT = json.load(io.open(r'G:\学习\AI\live_cat_data.json', encoding='utf-8'))
-# 用 app 实际角色库 CHAR_INDEX（character_index_data.js，173个，最完整且与页面一致）
-jsrc = io.open(r'G:\学习\AI\character_index_data.js', encoding='utf-8').read()
+CAT = json.load(io.open(os.path.join(ROOT, 'live_cat_data.json'), encoding='utf-8'))
+# 用 app 实际角色库 CHAR_INDEX（character_index_data.js，179个，最完整且与页面一致）
+jsrc = io.open(os.path.join(ROOT, 'character_index_data.js'), encoding='utf-8').read()
 CHAR_INDEX = json.loads(re.search(r'window\.CHAR_INDEX\s*=\s*(\[[\s\S]*?\])\s*;', jsrc).group(1))
 # 兼容后备：并入 characters_data.json
-chars_doc = json.load(io.open(r'G:\学习\AI\characters_data.json', encoding='utf-8-sig'))['characters']
+chars_doc = json.load(io.open(os.path.join(ROOT, 'characters_data.json'), encoding='utf-8-sig'))['characters']
 # 异体字折叠（高↔髙、崎↔﨑 等），让声优名对齐到 voice 库规范写法
 VFOLD = {'髙': '高', '﨑': '崎', '祥': '祥', '塚': '塚', '濱': '浜', '諸': '諸',
          '侮': '仏', '墨': '墨', '梶': '梶', '稲': '稲', '榊': '榊', '蓮': '蓮'}
@@ -81,7 +82,7 @@ def build_actor_from_xlsx(events_data_events):
             cat = 'nonlive'
         cat_by_title[norm_title(e.get('title', ''))] = cat
     try:
-        wb = openpyxl.load_workbook(r'G:\学习\AI\events_list.xlsx', data_only=True)
+        wb = openpyxl.load_workbook(os.path.join(ROOT, 'events_list.xlsx'), data_only=True)
     except Exception as ex:
         print('actor xlsx: events_list.xlsx 读取失败，跳过:', str(ex)[:80])
         return
@@ -131,10 +132,10 @@ def build_actor_from_xlsx(events_data_events):
            'source': 'events_list.xlsx + events_data.json + CHAR_INDEX',
            'cutoff': today.isoformat(), 'only_before_today': True,
            'total_events': len(entries), 'entries': entries}
-    io.open(r'G:\学习\AI\actor_participation.json', 'w', encoding='utf-8').write(json.dumps(out, ensure_ascii=False, indent=1))
+    io.open(os.path.join(ROOT, 'actor_participation.json'), 'w', encoding='utf-8').write(json.dumps(out, ensure_ascii=False, indent=1))
     print('actor_participation.json 写出: 事件=%d 出演者条目=%d 未解析跳过=%d 今日及未来跳过=%d (截至 %s)' % (len(entries), total_names, skipped, skipped_future, today.isoformat()))
 
-ev = json.load(io.open(r'G:\学习\AI\events_data.json', encoding='utf-8-sig'))['events']
+ev = json.load(io.open(os.path.join(ROOT, 'events_data.json'), encoding='utf-8-sig'))['events']
 
 def collect_voice(tb):
     st = set()
@@ -324,7 +325,7 @@ for gi, grp in enumerate(LIVE):
 
 result = {'generated_at': 'local-build', 'source': 'events_data.json + live_cat_data.json + characters_data.json + LIVE_DATA',
           'total': len(events), 'events': events}
-io.open(r'G:\学习\AI\voice_participation.json', 'w', encoding='utf-8').write(json.dumps(result, ensure_ascii=False, indent=1))
+io.open(os.path.join(ROOT, 'voice_participation.json'), 'w', encoding='utf-8').write(json.dumps(result, ensure_ascii=False, indent=1))
 build_actor_from_xlsx(ev)
 
 from collections import Counter

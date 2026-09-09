@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 """头像生成器v2：严格复刻已认可构图(compose_v9) + 投影/软边后处理
-用法: python make_avatar.py <cid> <透明立绘路径> [窗边长覆盖值]
+用法: python3 make_avatar.py <cid> <透明立绘路径> [窗边长覆盖值]
 """
 import io, re, sys, os, json
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from PIL import Image, ImageDraw, ImageChops, ImageFilter
 
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(TOOLS_DIR)
 
 def hex2rgb(hx):
     hx = hx.lstrip('#')
     return tuple(int(hx[i:i+2], 16) for i in (0, 2, 4))
 
 def main():
-    ROOT = r'G:\学习\AI'
     cid = sys.argv[1]
     art_path = sys.argv[2]
     override = int(sys.argv[3]) if len(sys.argv) > 3 else None

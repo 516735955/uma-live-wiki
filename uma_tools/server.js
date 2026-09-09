@@ -8,6 +8,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -27,6 +28,15 @@ const MIME = {
 
 const PORT = parseInt(process.argv[2] || '8080', 10);
 const ROOT = path.resolve(process.argv[3] || path.join(__dirname, '..'));
+
+function isInsideRoot(filePath) {
+  const relativePath = path.relative(ROOT, filePath);
+  return relativePath === '' || (
+    relativePath !== '..' &&
+    !relativePath.startsWith('..' + path.sep) &&
+    !path.isAbsolute(relativePath)
+  );
+}
 
 // Entry HTML file: support both the original CJK filename and index.html (some
 // setups rename it, e.g. behind nginx). Pick whichever exists in ROOT.
@@ -639,8 +649,17 @@ function handleAudioProxy(req, res, params) {
 }
 
 const server = http.createServer((req, res) => {
-  const urlObj = new URL(req.url, 'http://x');
-  let urlPath = decodeURIComponent(urlObj.pathname || '/');
+  let urlObj;
+  let urlPath;
+  try {
+    urlObj = new URL(req.url, 'http://x');
+    urlPath = decodeURIComponent(urlObj.pathname || '/');
+    if (urlPath.indexOf('\0') !== -1) throw new Error('null byte in path');
+  } catch (e) {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('400 Bad Request');
+    return;
+  }
   const params = urlObj.searchParams;
 
   if (req.method === 'GET' && urlPath.indexOf('/api/news-index') === 0) return handleNewsIndex(res);
@@ -651,7 +670,7 @@ const server = http.createServer((req, res) => {
 
   if (urlPath === '/') urlPath = '/' + INDEX_FILE;
   let filePath = path.normalize(path.join(ROOT, urlPath));
-  if (!filePath.startsWith(ROOT)) { res.writeHead(403); res.end('Forbidden'); return; }
+  if (!isInsideRoot(filePath)) { res.writeHead(403); res.end('Forbidden'); return; }
 
   fs.stat(filePath, (err, st) => {
     if (err || !st.isFile()) {
@@ -707,7 +726,7 @@ function runCharsCrawl(reason) {
   if (charsRunning) return;
   charsRunning = true;
   const t0 = Date.now();
-  execFile('python', [CHARS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [CHARS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     charsRunning = false;
     const tag = '[chars-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -720,7 +739,7 @@ function runEventsCrawl(reason) {
   if (crawlRunning) return;
   crawlRunning = true;
   const t0 = Date.now();
-  execFile('python', [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     crawlRunning = false;
     const tag = '[events-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -735,7 +754,7 @@ function runLantisCrawl(reason) {
   if (lantisRunning) return;
   lantisRunning = true;
   const t0 = Date.now();
-  execFile('python', [LANTIS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [LANTIS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     lantisRunning = false;
     const tag = '[lantis-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -751,7 +770,7 @@ function runAlbumsCrawl(reason) {
   if (albumsRunning) return;
   albumsRunning = true;
   const t0 = Date.now();
-  execFile('python', [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     albumsRunning = false;
     const tag = '[albums-crawl ' + reason + ']';
     if (err) {

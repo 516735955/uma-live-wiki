@@ -2086,6 +2086,8 @@
         #tab-characters .cio-detail-foot { margin-top: 16px; padding: 12px 14px; background: #fbfafd; border: 1px solid #e6e4ee; border-radius: 10px; color: #6b6f7a; font-size: 12px; line-height: 1.8; }
         #tab-characters .cio-detail-foot a { color: #ff8c1a; }
         @media screen and (max-width: 700px) {
+            #tab-characters .c-sbooks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            #tab-characters .c-sbook { padding: 18px 10px; }
             #tab-characters .umamusume-intro .uma-img { border-right: none; border-bottom: 4px dashed; width: 100%; display: block; }
             #tab-characters .umamusume-intro .uma-detail { width: 100%; }
         }
@@ -4296,7 +4298,7 @@ createApp({
               else if (evTime.value === 'past') path += '?filter[time]=past';
             }
           } else if (dbView.value === 'voice') {
-            path = LANG_PREFIX + '/database/voice' + (voiceDetail.value ? '/' + voiceDetail.value.slug : '');
+            path = LANG_PREFIX + '/database/voice-actors' + (voiceDetail.value ? '/' + voiceDetail.value.slug : '');
           } else if (dbView.value === 'albums') {
             path = LANG_PREFIX + '/database/albums';
           } else if (dbView.value === 'songs') {
@@ -4443,7 +4445,7 @@ createApp({
             const ft = url.searchParams.get('filter[time]');
             evTime.value = (ft === 'upcoming' || ft === 'past') ? ft : 'all';
           }
-        } else if (sub === 'voice') {
+        } else if (sub === 'voice' || sub === 'voice-actors') {
           dbView.value = 'voice';
           voiceDetail.value = findVaBySlug(seg[2] ? decodeURIComponent(seg[2]) : '');
         } else if (sub === 'albums' || sub === 'songs') {
@@ -6488,7 +6490,7 @@ function registerCover(url) {
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'va-card';
-        card.href = '/zh-Hans/database/voice/' + v.slug;
+        card.href = '/zh-Hans/database/voice-actors/' + v.slug;
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
         var ph = window.VA_PHOTOS && window.VA_PHOTOS[v.key];
         var imgHtml = ph
