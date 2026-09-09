@@ -303,6 +303,7 @@
                 收录ウマ娘各类现场live演出曲目，选择分类后按场次查看详细歌单。<br>
                 未收录曲目 / 待补充场次的歌曲将显示为 <em style="color:var(--amber);">暂无数据</em>
             </div>
+            <div v-if="liveDataError || liveCatDataError" class="news-error">{{ liveDataError || liveCatDataError }}</div>
 
             <div class="live-view" :class="{active: liveView==='liveCats'}" id="liveCats">
                 <div class="live-cat-grid">

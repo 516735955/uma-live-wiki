@@ -56,7 +56,9 @@ createApp({
     const liveCatIndex = ref(-1);
     const liveCatSectionIndex = ref(-1);
     const liveData = ref([]);
+    const liveDataError = ref('');
     const liveCatData = ref(null);
+    const liveCatDataError = ref('');
     const liveCatDataOrig = ref(null);
     const dataScriptPromises = {};
     let newsLoadPromise = null;
@@ -2124,6 +2126,7 @@ createApp({
     }
     function loadLiveCatData() {
       if (liveCatLoadPromise) return liveCatLoadPromise;
+      liveCatDataError.value = '';
       liveCatLoadPromise = fetch('/live_cat_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
@@ -2135,15 +2138,22 @@ createApp({
           }
           liveCatData.value = data || null;
         })
-        .catch(function () { liveCatData.value = null; });
+        .catch(function () {
+          liveCatData.value = null;
+          liveCatDataError.value = '无法加载活动演出数据（请确认 /live_cat_data.json 可访问）。';
+        });
       return liveCatLoadPromise;
     }
     function loadLiveData() {
       if (liveDataLoadPromise) return liveDataLoadPromise;
+      liveDataError.value = '';
       liveDataLoadPromise = fetch('/live_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { liveData.value = Array.isArray(data) ? data : []; })
-        .catch(function () { liveData.value = []; });
+        .catch(function () {
+          liveData.value = [];
+          liveDataError.value = '无法加载编号系列公演数据（请确认 /live_data.json 可访问）。';
+        });
       return liveDataLoadPromise;
     }
 
@@ -2173,7 +2183,7 @@ createApp({
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
       showLiveView, openCat, openLiveSeries, selectLivePerf, selectLiveDay, liveDetailBack, openLiveFromEvents, liveDetailHref,
-      liveCatType, liveCatIndex, liveData, loadLiveData, liveCatData, loadLiveCatData, openCatDetail, backCatList, liveCatSectionIndex, liveCatSections, openCatSection, currentSection, sectionCardClass,
+      liveCatType, liveCatIndex, liveData, liveDataError, loadLiveData, liveCatData, liveCatDataError, loadLiveCatData, openCatDetail, backCatList, liveCatSectionIndex, liveCatSections, openCatSection, currentSection, sectionCardClass,
       currentCat, liveNonliveCat, liveNonlivePastGroups, liveCatListGroups, nonliveGi, nonliveHref, openNonliveFromEvents,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
