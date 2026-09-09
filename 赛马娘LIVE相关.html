@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>赛马娘综合站</title>
+<link rel="preload" href="/uma_tools/vendor/vue.global.prod.js" as="script">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
         [v-cloak] { display: none; }
@@ -418,7 +419,7 @@
 
         .albums-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px; padding-bottom: 84px;
+            gap: 20px; min-height: 70vh; padding-bottom: 84px;
         }
 
         .album-card {
@@ -1883,7 +1884,11 @@
         #tab-characters .cio-sort .icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; pointer-events: none; }
         #tab-characters .c-count { color: #7c7a8a; font-size: 13px; margin-bottom: 12px; }
         #tab-characters .cio-list ul.cio-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(146px, 1fr)); gap: 26px 12px; }
-        #tab-characters .cio-list ul.cio-grid li { margin: 0; }
+        #tab-characters .cio-list ul.cio-grid li {
+            margin: 0;
+            content-visibility: auto;
+            contain-intrinsic-size: auto 324px;
+        }
         #tab-characters .cio-card { display: block; text-decoration: none; color: inherit; --color-main: #8c83ff; --color-sub: #ece9ff; background-color: var(--color-sub); box-shadow: 0 3px 7px rgba(0, 0, 0, .2); position: relative; overflow: hidden; transition: transform .16s ease; }
         #tab-characters .cio-card:hover { transform: translateY(-3px); }
         #tab-characters .cio-card dl { background: #fff; margin: 0; position: relative; display: flex; flex-direction: column; }
@@ -1931,7 +1936,11 @@
         #tab-db-voice .va-search { width: 320px; max-width: 100%; padding: 9px 14px; border: 1px solid #e6e4ee; border-radius: 8px; font-size: 14px; outline: none; font-family: inherit; background: #fff; }
         #tab-db-voice .va-search:focus { border-color: #ff8c1a; }
         #tab-db-voice ul.va-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-        #tab-db-voice ul.va-grid li { margin: 0; }
+        #tab-db-voice ul.va-grid li {
+            margin: 0;
+            content-visibility: auto;
+            contain-intrinsic-size: auto 110px;
+        }
         #tab-db-voice .va-card { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; --color-main: #8c83ff; background: #fff; border: 1px solid #e6e4ee; border-left: 4px solid var(--color-main); border-radius: 10px; padding: 12px 14px 12px 12px; box-shadow: 0 2px 8px rgba(32,40,59,.08); transition: transform .15s ease, box-shadow .15s ease; position: relative; overflow: hidden; }
         #tab-db-voice .va-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(32,40,59,.16); }
         #tab-db-voice .va-card-img { width: 64px; height: 84px; border-radius: 8px; object-fit: cover; object-position: top center; background: #f5f4f9; flex: none; }
@@ -2330,7 +2339,7 @@
 
                 <div v-if="newsItems.length" class="news-hero-grid">
                     <div v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" @click="openNews(n.announce_id)">
-                        <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" loading="lazy">
+                        <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'">
                         <div class="news-hero-body">
                             <div class="news-hero-meta">
                                 <span class="news-hero-tag" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>
@@ -2478,10 +2487,10 @@
                 <div v-if="albumHits.length" class="search-section">
                     <div class="search-section-title">专辑匹配：{{ albumHits.length }}张</div>
                     <div class="albums-grid">
-                        <div v-for="a in albumHits" :key="a.name" class="album-card"
+                        <div v-for="(a,i) in albumHits" :key="a.name" class="album-card"
                              :data-album="albumName(a)" :data-release="a.release" :data-company="a.company"
                              :style="coverStyle(a)" @click="openAlbum(a)">
-                            <img class="album-cover" :src="coverThumb(a.cover, 360)" :alt="a.name" crossorigin="anonymous" loading="lazy" @load="sampleCover($event, a.cover)">
+                            <img class="album-cover" :src="coverThumb(a.cover, 360)" :alt="a.name" crossorigin="anonymous" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" @load="sampleCover($event, a.cover)">
                             <div class="album-info">
                                 <div class="album-name">{{ a.name }}</div>
                             </div>
@@ -2492,10 +2501,10 @@
             </div>
 
             <div v-else class="albums-grid" id="albumsGrid">
-                <div v-for="a in filteredAlbums" :key="a.name" class="album-card"
+                <div v-for="(a,i) in filteredAlbums" :key="a.name" class="album-card"
                      :data-album="albumName(a)" :data-release="a.release" :data-company="a.company"
                      :style="coverStyle(a)" @click="openAlbum(a)">
-                    <img class="album-cover" :src="coverThumb(a.cover, 360)" :alt="a.name" crossorigin="anonymous" loading="lazy" @load="sampleCover($event, a.cover)">
+                    <img class="album-cover" :src="coverThumb(a.cover, 360)" :alt="a.name" crossorigin="anonymous" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" @load="sampleCover($event, a.cover)">
                     <div class="album-info">
                     <div class="album-name">{{ a.name }}</div>
                     </div>
@@ -2579,8 +2588,8 @@
                     返回分类
                 </button>
                 <div class="live-series-grid" id="liveSeriesGrid">
-                    <div v-for="c in seriesGrid" :key="c.index" class="live-series-card" :style="coverStyle(c)" @click="openLiveSeries(c.index)">
-                        <img class="live-series-cover" :src="c.cover" :alt="c.title" loading="lazy">
+                    <div v-for="(c,i) in seriesGrid" :key="c.index" class="live-series-card" :style="coverStyle(c)" @click="openLiveSeries(c.index)">
+                        <img class="live-series-cover" :src="c.cover" :alt="c.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'">
                         <div class="live-series-no">{{ c.no }}</div>
                         <div class="live-series-info">
                             <div class="live-series-title">{{ c.title }}</div>
@@ -2803,8 +2812,8 @@
                 <button class="va-back" type="button" @click="voiceBack()">← 返回声优列表</button>
                 <div class="va-detail-head" :style="{'--color-main': (voiceDetail.roles[0] && voiceDetail.roles[0].main) || '#8c83ff'}">
                     <div class="va-photo-wrap">
-                        <img v-if="voiceDetail.photo" class="va-photo" :src="voiceDetail.photo" :alt="voiceDetail.zh" loading="lazy">
-                        <img v-else-if="voiceDetail.roles[0] && voiceDetail.roles[0].img" class="va-photo" :src="voiceDetail.roles[0].img" :alt="voiceDetail.zh" loading="lazy" style="object-position: top center;">
+                        <img v-if="voiceDetail.photo" class="va-photo" :src="voiceDetail.photo" :alt="voiceDetail.zh" fetchpriority="high">
+                        <img v-else-if="voiceDetail.roles[0] && voiceDetail.roles[0].img" class="va-photo" :src="voiceDetail.roles[0].img" :alt="voiceDetail.zh" fetchpriority="high" style="object-position: top center;">
                         <div v-else class="va-photo va-photo-empty">暂无图片</div>
                         <p v-if="voiceDetail.credit" class="va-photo-credit">照片：<a :href="voiceDetail.credit.page" target="_blank" rel="noopener">{{ voiceDetail.credit.title }}</a> · {{ voiceDetail.credit.src === 'MyAnimeList' ? 'MyAnimeList' : '萌娘百科' }}</p>
                         <p v-else class="va-photo-credit">暂无声优照片</p>
@@ -2942,7 +2951,7 @@
                             </div>
                         </div>
                         <div class="cio-detail-hero" v-if="charDetail.img && !charHasIntro">
-                            <img class="cio-detail-portrait" :src="charDetail.img" :alt="charDetail.zh" loading="lazy">
+                            <img class="cio-detail-portrait" :src="charDetail.img" :alt="charDetail.zh" fetchpriority="high">
                             <div class="cio-detail-meta">
                                 <p class="cio-detail-cv" v-if="charDetail.cv_zh">CV：{{ charDetail.cv_zh }}</p>
                                 <p class="cio-detail-bio" v-if="charDetail.birth">生日：{{ charDetail.birth }}</p>
@@ -3111,7 +3120,7 @@
                 <div v-for="(e,i) in eventsPaged" :key="e.link" class="events-row">
                     <span class="ev-d">{{ e.date_zh }}</span>
                     <span class="ev-t">
-                        <img class="ev-t-img" :class="{desaturate: pastEvent(e)}" :src="e.img" :alt="e.title" loading="lazy" @error="onEvImgError($event)">
+                        <img class="ev-t-img" :class="{desaturate: pastEvent(e)}" :src="e.img" :alt="e.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" @error="onEvImgError($event)">
                         <span class="ev-t-main">
                             <a class="ev-t-title" :href="e.link" target="_blank" rel="noopener noreferrer" :title="e.title">{{ e.title }}</a>
                             <span class="ev-t-sub" v-if="e.times">{{ e.times }}</span>
@@ -5948,10 +5957,11 @@ createApp({
         });
         card.style.setProperty('--color-main', c.main || '#8c83ff');
         card.style.setProperty('--color-sub', c.sub || '#ece9ff');
+        var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
         card.innerHTML =
           '<dl>' +
             '<dt>' +
-              (c.img || c.av ? '<div class="cio-img"><img src="' + (c.img || c.av) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '" loading="lazy"></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
+              (c.img || c.av ? '<div class="cio-img"><img src="' + (c.img || c.av) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
               '<div class="cio-bg"><p>' + (c.en || c.ja || '') + '</p></div>' +
             '</dt>' +
             '<dd>' +
@@ -6645,15 +6655,16 @@ createApp({
         return false;
       });
       grid.innerHTML = '';
-      list.forEach(function (v) {
+      list.forEach(function (v, i) {
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'va-card';
         card.href = '/zh-Hans/database/voice-actors/' + v.slug;
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
         var ph = window.VA_PHOTOS && window.VA_PHOTOS[v.key];
+        var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
         var imgHtml = ph
-          ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '" loading="lazy">'
+          ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'
           : '<span class="va-ph-fb">' + (v.zh || v.ja || '?').charAt(0) + '</span>';
           card.innerHTML =
           imgHtml +
