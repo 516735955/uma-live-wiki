@@ -640,8 +640,16 @@ function handleAudioProxy(req, res, params) {
 }
 
 const server = http.createServer((req, res) => {
-  const urlObj = new URL(req.url, 'http://x');
-  let urlPath = decodeURIComponent(urlObj.pathname || '/');
+  let urlObj;
+  let urlPath;
+  try {
+    urlObj = new URL(req.url, 'http://x');
+    urlPath = decodeURIComponent(urlObj.pathname || '/');
+  } catch (e) {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('400 Bad Request');
+    return;
+  }
   const params = urlObj.searchParams;
 
   if (req.method === 'GET' && urlPath.indexOf('/api/news-index') === 0) return handleNewsIndex(res);
