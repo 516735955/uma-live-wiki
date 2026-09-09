@@ -344,18 +344,46 @@ function sendJson(res, code, obj) {
   }
 }
 
+function parseWindowArray(text, globalName) {
+  const match = String(text || '').match(new RegExp('window\\.' + globalName + '\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;'));
+  if (!match) throw new Error(globalName + ' data unavailable');
+  return JSON.parse(match[1]);
+}
+
+function countVoiceActors(characters, voiceList) {
+  const actors = new Set();
+  characters.forEach((character) => {
+    const current = character && (character.cv_zh || character.cv);
+    if (current) actors.add(current);
+    if (character && character.cv_former) actors.add(character.cv_former);
+  });
+  voiceList.forEach((voice) => {
+    const zh = String((voice && voice.zh) || '').trim();
+    const ja = String((voice && voice.ja) || '').trim();
+    if (!zh && !ja) return;
+    if (actors.has(zh) || (ja && actors.has(ja))) return;
+    actors.add(zh || ja);
+  });
+  return actors.size;
+}
+
 function handleHomeSummary(res) {
   if (homeSummaryCache.data && Date.now() - homeSummaryCache.at < HOME_SUMMARY_TTL) {
     sendJson(res, 200, homeSummaryCache.data);
     return;
   }
-  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_data.json'];
-  Promise.all(files.map((name) => fs.promises.readFile(path.join(ROOT, name), 'utf8').then((text) => JSON.parse(text))))
-    .then((docs) => {
-      const albums = Array.isArray(docs[0]) ? docs[0] : [];
-      const numbered = Array.isArray(docs[1]) ? docs[1] : [];
-      const cats = docs[2] || {};
-      const events = docs[3] && Array.isArray(docs[3].events) ? docs[3].events : [];
+  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_data.json', 'character_index_data.js', 'voice_list_data.js'];
+  Promise.all(files.map((name) => fs.promises.readFile(path.join(ROOT, name), 'utf8')))
+    .then((texts) => {
+      const albumsDoc = JSON.parse(texts[0]);
+      const numberedDoc = JSON.parse(texts[1]);
+      const cats = JSON.parse(texts[2]) || {};
+      const eventsDoc = JSON.parse(texts[3]);
+      const characters = parseWindowArray(texts[4], 'CHAR_INDEX');
+      const voiceList = parseWindowArray(texts[5], 'VA_LIST');
+      const albums = Array.isArray(albumsDoc) ? albumsDoc : [];
+      const numbered = Array.isArray(numberedDoc) ? numberedDoc : [];
+      const events = eventsDoc && Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
       const sumGroups = (groups) => (groups || []).reduce((total, group) => total + ((group && group.subs) || []).length, 0);
       let liveCount = numbered.reduce((total, group) => total + ((group && group.subs) || []).reduce(
         (subtotal, sub) => subtotal + (sub && sub.days ? sub.days.length : 1), 0
@@ -379,7 +407,10 @@ function handleHomeSummary(res) {
           songs: albums.reduce((total, album) => total + ((album && album.songs) || []).length, 0),
           albums: albums.length,
           live: liveCount,
-          performances: numbered.length
+          performances: numbered.length,
+          characters: characters.length,
+          voiceActors: countVoiceActors(characters, voiceList),
+          events: events.length
         },
         nextEvent: nextEvent
       };

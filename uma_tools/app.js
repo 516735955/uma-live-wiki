@@ -72,7 +72,7 @@ createApp({
     const charSavedScrollY = ref(0);
     const vaSavedScrollY = ref(0);
     const eventsAll = ref([]);
-    const homeStats = reactive({ songs: null, albums: null, live: null, performances: null });
+    const homeStats = reactive({ songs: null, albums: null, live: null, performances: null, characters: null, voiceActors: null, events: null });
     const homeNextEvent = ref(null);
     const eventsMeta = ref('');
     const eventsError = ref('');
@@ -248,6 +248,7 @@ createApp({
     function ensureTabData(tab) {
       if (tab === 'news') return loadNews();
       if (tab === 'songs') return loadAlbums();
+      if (tab === 'database') return loadHomeSummary();
       return Promise.resolve();
     }
     function prepareCurrentRoute() {
@@ -271,6 +272,7 @@ createApp({
       if (first === 'events') return loadEvents();
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
+      if (!sub) return loadHomeSummary();
       if (sub === 'albums' || sub === 'songs') return loadAlbums();
       if (sub === 'events') return loadEvents();
       if (sub === 'voice' || sub === 'voice-actors') return loadVoiceData();
@@ -291,10 +293,13 @@ createApp({
           homeStats.albums = Number.isFinite(stats.albums) ? stats.albums : null;
           homeStats.live = Number.isFinite(stats.live) ? stats.live : null;
           homeStats.performances = Number.isFinite(stats.performances) ? stats.performances : null;
+          homeStats.characters = Number.isFinite(stats.characters) ? stats.characters : null;
+          homeStats.voiceActors = Number.isFinite(stats.voiceActors) ? stats.voiceActors : null;
+          homeStats.events = Number.isFinite(stats.events) ? stats.events : null;
           homeNextEvent.value = (data && data.nextEvent) || null;
         })
         .catch(function () {
-          return Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents()]);
+          return Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
         });
       return homeSummaryLoadPromise;
     }
@@ -508,7 +513,8 @@ createApp({
     }
     function goDbView(v) {
       let ready = Promise.resolve();
-      if (v === 'characters') ready = loadCharacterIndexData();
+      if (v === 'index') ready = loadHomeSummary();
+      else if (v === 'characters') ready = loadCharacterIndexData();
       else if (v === 'voice') ready = loadVoiceData();
       else if (v === 'albums' || v === 'songs') ready = loadAlbums();
       else if (v === 'events') ready = loadEvents();
@@ -1603,8 +1609,13 @@ createApp({
       return albums.value.reduce(function (n, a) { return n + a.songs.length; }, 0);
     });
     const statAlbums = computed(function () { return homeStats.albums !== null ? homeStats.albums : albums.value.length; });
-    const charCount = computed(function () { return (window.CHAR_INDEX && window.CHAR_INDEX.length) || 173; });
-    const statVoiceActors = computed(function () { return vaList().length; });
+    const charCount = computed(function () {
+      if (homeStats.characters !== null) return homeStats.characters;
+      return (window.CHAR_INDEX && window.CHAR_INDEX.length) || 0;
+    });
+    const statVoiceActors = computed(function () {
+      return homeStats.voiceActors !== null ? homeStats.voiceActors : vaList().length;
+    });
     const relAlbums = computed(function () {
       let out = albums.value.slice();
       if (relFilter.value) out = out.filter(function (a) { return a.type === relFilter.value; });
@@ -1786,7 +1797,7 @@ createApp({
     watch(function () { return newsType.value; }, function () { newsPage.value = 1; });
     watch(function () { return newsItems.value.length; }, function () { newsPage.value = 1; });
 
-    const eventsCount = computed(function () { return eventsAll.value.length; });
+    const eventsCount = computed(function () { return homeStats.events !== null ? homeStats.events : eventsAll.value.length; });
     const eventsFiltered = computed(function () {
       const q = (eventsQuery.value || '').toLowerCase();
       let out = eventsAll.value.filter(function (e) {
