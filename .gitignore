@@ -19,7 +19,6 @@ Default Project/
 # 运行时产生的日志 / 缓存 / 临时文件
 *.log
 *.err
-uma_tools/trans_cache.json
 uma_tools/lantis_news.json
 uma_tools/pending.json
 uma_tools/pending_preview.md
