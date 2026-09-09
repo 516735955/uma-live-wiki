@@ -3711,6 +3711,7 @@ createApp({
     let liveDataLoadPromise = null;
     let liveCatLoadPromise = null;
     let eventsLoadPromise = null;
+    let homeSummaryLoadPromise = null;
     const savedScrollY = ref(0);
     const albumReturnView = ref('songs');
     const liveReturnSource = ref('live');
@@ -3718,6 +3719,8 @@ createApp({
     const charSavedScrollY = ref(0);
     const vaSavedScrollY = ref(0);
     const eventsAll = ref([]);
+    const homeStats = reactive({ songs: null, albums: null, live: null, performances: null });
+    const homeNextEvent = ref(null);
     const eventsMeta = ref('');
     const eventsError = ref('');
     const eventsLoading = ref(false);
@@ -3914,10 +3917,27 @@ createApp({
       }
       return Promise.resolve();
     }
+    function loadHomeSummary() {
+      if (homeSummaryLoadPromise) return homeSummaryLoadPromise;
+      homeSummaryLoadPromise = fetch('/api/home-summary', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (data) {
+          const stats = (data && data.stats) || {};
+          homeStats.songs = Number.isFinite(stats.songs) ? stats.songs : null;
+          homeStats.albums = Number.isFinite(stats.albums) ? stats.albums : null;
+          homeStats.live = Number.isFinite(stats.live) ? stats.live : null;
+          homeStats.performances = Number.isFinite(stats.performances) ? stats.performances : null;
+          homeNextEvent.value = (data && data.nextEvent) || null;
+        })
+        .catch(function () {
+          return Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents()]);
+        });
+      return homeSummaryLoadPromise;
+    }
     function loadHomeDataWhenIdle() {
       const load = function () {
         if (!home.value) return;
-        Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents()]);
+        loadHomeSummary();
       };
       const schedule = function () {
         if ('requestIdleCallback' in window) window.requestIdleCallback(load, { timeout: 10000 });
@@ -5214,8 +5234,11 @@ createApp({
     });
 
     // albums loading
-    const statSongs = computed(function () { return albums.value.reduce(function (n, a) { return n + a.songs.length; }, 0); });
-    const statAlbums = computed(function () { return albums.value.length; });
+    const statSongs = computed(function () {
+      if (homeStats.songs !== null) return homeStats.songs;
+      return albums.value.reduce(function (n, a) { return n + a.songs.length; }, 0);
+    });
+    const statAlbums = computed(function () { return homeStats.albums !== null ? homeStats.albums : albums.value.length; });
     const charCount = computed(function () { return (window.CHAR_INDEX && window.CHAR_INDEX.length) || 173; });
     const statVoiceActors = computed(function () { return vaList().length; });
     const relAlbums = computed(function () {
@@ -5305,9 +5328,9 @@ createApp({
         if (cat.twinkle && cat.twinkle.groups) n += sumGroups(cat.twinkle.groups);
         if (cat.other && cat.other.groups) n += sumGroups(cat.other.groups);
       }
-      return n;
+      return homeStats.live !== null ? homeStats.live : n;
     });
-    const statGongyan = computed(function () { return liveData.value.length; });
+    const statGongyan = computed(function () { return homeStats.performances !== null ? homeStats.performances : liveData.value.length; });
     const newsHero = computed(function () {
       function timeOf(n) {
         const s = n.post_at || n.update_at || '';
@@ -5465,6 +5488,7 @@ createApp({
       return !isNaN(t) && t < Date.now() - 86400000;
     }
     const nextUpcomingEvent = computed(function () {
+      if (homeNextEvent.value) return homeNextEvent.value;
       const now = new Date();
       now.setHours(0, 0, 0, 0);
       const today = now.getTime();
@@ -5486,9 +5510,11 @@ createApp({
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
       if (!e) return;
-      if (e.live) openLiveFromEvents(liveDetailHref(e.live));
-      else openNonliveFromEvents(e);
-      liveReturnSource.value = 'home';
+      ensureTabData('live').then(function () {
+        if (e.live) openLiveFromEvents(liveDetailHref(e.live));
+        else openNonliveFromEvents(e);
+        liveReturnSource.value = 'home';
+      });
     }
     function onEvImgError(ev) {
       ev.target.style.visibility = 'hidden';

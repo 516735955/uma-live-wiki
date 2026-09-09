@@ -50,6 +50,8 @@ const NEWS_INDEX_URL = 'https://umamusume.jp/api/ajax/pr_info_index?format=json'
 const NEWS_DETAIL_URL = 'https://umamusume.jp/api/ajax/pr_info_detail?format=json';
 const NEWS_TTL = 5 * 60 * 1000; // cache the full crawl for 5 minutes
 const NEWS_MAX_CONC = 5;        // upstream request concurrency
+const HOME_SUMMARY_TTL = 60 * 1000;
+let homeSummaryCache = { at: 0, data: null };
 
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
 // Scraped by crawl_lantis_news.py into lantis_news.json. Merged into the news
@@ -315,6 +317,51 @@ function sendJson(res, code, obj) {
     'Access-Control-Allow-Origin': '*'
   });
   res.end(JSON.stringify(obj));
+}
+
+function handleHomeSummary(res) {
+  if (homeSummaryCache.data && Date.now() - homeSummaryCache.at < HOME_SUMMARY_TTL) {
+    sendJson(res, 200, homeSummaryCache.data);
+    return;
+  }
+  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_data.json'];
+  Promise.all(files.map((name) => fs.promises.readFile(path.join(ROOT, name), 'utf8').then((text) => JSON.parse(text))))
+    .then((docs) => {
+      const albums = Array.isArray(docs[0]) ? docs[0] : [];
+      const numbered = Array.isArray(docs[1]) ? docs[1] : [];
+      const cats = docs[2] || {};
+      const events = docs[3] && Array.isArray(docs[3].events) ? docs[3].events : [];
+      const sumGroups = (groups) => (groups || []).reduce((total, group) => total + ((group && group.subs) || []).length, 0);
+      let liveCount = numbered.reduce((total, group) => total + ((group && group.subs) || []).reduce(
+        (subtotal, sub) => subtotal + (sub && sub.days ? sub.days.length : 1), 0
+      ), 0);
+      if (cats.cd && Array.isArray(cats.cd.sections)) {
+        liveCount += cats.cd.sections.reduce((total, section) => total + sumGroups(section && section.groups), 0);
+      }
+      if (cats.twinkle) liveCount += sumGroups(cats.twinkle.groups);
+      if (cats.other) liveCount += sumGroups(cats.other.groups);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      let nextEvent = null;
+      let nextTime = 0;
+      events.forEach((event) => {
+        const time = new Date(String(event.date || '') + 'T00:00:00').getTime();
+        if (isNaN(time) || time < today.getTime()) return;
+        if (!nextEvent || time < nextTime) { nextEvent = event; nextTime = time; }
+      });
+      const data = {
+        stats: {
+          songs: albums.reduce((total, album) => total + ((album && album.songs) || []).length, 0),
+          albums: albums.length,
+          live: liveCount,
+          performances: numbered.length
+        },
+        nextEvent: nextEvent
+      };
+      homeSummaryCache = { at: Date.now(), data: data };
+      sendJson(res, 200, data);
+    })
+    .catch(() => sendJson(res, 500, { error: 'home summary unavailable' }));
 }
 
 function fetchNewsPage(page, cb) {
@@ -663,6 +710,7 @@ const server = http.createServer((req, res) => {
   const params = urlObj.searchParams;
 
   if (req.method === 'GET' && urlPath.indexOf('/api/news-index') === 0) return handleNewsIndex(res);
+  if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
   if (req.method === 'GET' && urlPath.indexOf('/api/news-detail') === 0) return handleNewsDetail(req, res, params);
   if (req.method === 'GET' && urlPath.indexOf('/api/lantis-news') === 0) return handleLantisNews(res);
   if (req.method === 'GET' && urlPath.indexOf('/api/lantis-detail') === 0) return handleLantisDetail(req, res, params);
