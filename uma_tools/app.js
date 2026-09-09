@@ -283,17 +283,8 @@ createApp({
         });
       return homeSummaryLoadPromise;
     }
-    function loadHomeDataWhenIdle() {
-      const load = function () {
-        if (!home.value) return;
-        loadHomeSummary();
-      };
-      const schedule = function () {
-        if ('requestIdleCallback' in window) window.requestIdleCallback(load, { timeout: 10000 });
-        else window.setTimeout(load, 1000);
-      };
-      if (document.readyState === 'complete') schedule();
-      else window.addEventListener('load', schedule, { once: true });
+    function loadHomeSummaryIfNeeded() {
+      if (home.value) loadHomeSummary();
     }
 
     const player = reactive({
@@ -497,7 +488,7 @@ createApp({
       artistDetail.value = null;
       activeTab.value = 'songs';
       window.scrollTo(0, 0);
-      loadHomeDataWhenIdle();
+      loadHomeSummaryIfNeeded();
       pushUrl();
     }
     function goDbView(v) {
@@ -2152,7 +2143,7 @@ createApp({
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, newsBack, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
       currentGroup, currentSub, liveInfoHtml, setlistTitle, setlistLinks, setlistTable,
-      seriesGrid, syncFromUrl, prepareCurrentRoute, loadHomeDataWhenIdle,
+      seriesGrid, syncFromUrl, prepareCurrentRoute, loadHomeSummaryIfNeeded,
       eventsCount, eventsMeta, eventsQuery, evTime, setEvTime, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
@@ -2172,7 +2163,7 @@ createApp({
     };
     window.addEventListener('popstate', syncPrepared);
     syncPrepared();
-    this.loadHomeDataWhenIdle();
+    this.loadHomeSummaryIfNeeded();
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.onScroll();
   }
