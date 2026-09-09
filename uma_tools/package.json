@@ -7,8 +7,5 @@
     "serve": "node server.js",
     "scrape": "node scrape.js",
     "apply": "node apply.js"
-  },
-  "dependencies": {
-    "devalue": "^4.3.3"
   }
 }
