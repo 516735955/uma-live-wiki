@@ -22,8 +22,8 @@ uma-live-wiki/                    仓库根目录
 │   └── ...
 ├── album_covers/                  外部源较慢的专辑封面本地 WebP 副本
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
-├── role_svgs/                     保留的旧版单角色血统 SVG（当前详情页不读取）
-├── pedigree_assets/               当前全局血统页使用的静态 SVG（#5 将替换展示层）
+├── role_svgs/                     单角色血统 SVG 历史资源
+├── pedigree_assets/               全局血统页当前加载的静态 SVG 资源
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
 │   ├── app.js                    SPA 逻辑
@@ -68,11 +68,18 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 `data/*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
 `data/*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
 
-血统数据只编辑 `data/pedigree_source.json`，再运行
-`python3 uma_tools/build_pedigree.py` 生成浏览器使用的 `data/pedigree_data.js`。源数据记录明确的
-父、母和角色原型映射；三代祖先、子孙、角色兄弟姐妹及相关配种对象均由脚本推导，避免多处手工同步。
-其中 `source: "jbis"` 表示亲本已直接对照 JBIS-Search，`source: "legacy"` 表示沿用仓库原有的
-多来源资料、尚未在本轮逐条复核；新增或纠错时应优先直接核对 JBIS-Search，并保留真实来源标记。
+血统数据的维护入口是 data/pedigree_source.json，以下命令生成浏览器使用的 data/pedigree_data.js
+
+```bash
+python3 uma_tools/build_pedigree.py
+```
+
+源数据记录父母、角色原型映射和核验来源；三代祖先、子孙、角色兄弟姐妹及相关配种对象由脚本统一推导
+
+当前 517 条直接亲本记录均已完成来源核验：131 条来自 JBIS-Search，386 条来自 netkeiba 的具体赛马
+血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，netkeiba 记录同时保存
+source_url。179 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按
+原创角色或非赛马角色维护
 
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 
