@@ -1,0 +1,669 @@
+{
+  "source": "https://www.jbis.jp/horse/result/",
+  "notes": "Verified parent pairs used to repair the existing pedigree export. Query names are retained so ambiguous country/year matches remain reviewable.",
+  "aliases": {
+    "akikawayayoi": "northern_taste",
+    "bochuzoku": "montjeu_ire",
+    "hayakawatazuna": "tokino_minoru",
+    "bramble_rose": "bramalea",
+    "sadlers_wells": "sadler_s_wells",
+    "ノーザンダンサー": "northern_dancer",
+    "ニアークティック": "nearctic",
+    "ナタルマ": "natalma",
+    "レディアンジェラ": "lady_angela",
+    "シェリル": "cheryl",
+    "メジロアサマ": "mejiro_asama",
+    "メジロティターン": "mejiro_titan",
+    "メジロオーロラ": "mejiro_aurola",
+    "メジロアイリス": "mejiro_iris",
+    "メジロチエイサー": "メジロチェイサー",
+    "フレンチデビュティ": "フレンチデピュティ",
+    "クラシックゴーゴー": "classic_go_go",
+    "エリザブルー": "eliza_blue",
+    "ミッテラン": "mitterand",
+    "ミルリーフ": "mill_reef",
+    "ミスカリズマ": "miss_charisma",
+    "ダンスール": "danseur"
+  },
+  "new_nodes": {
+    "intentionally": "Intentionally",
+    "chamossaire": "Chamossaire",
+    "life_hill": "Life Hill",
+    "tale_of_two_cities": "Tale of Two Cities",
+    "cindy_lou": "Cindy Lou",
+    "alibhai": "Alibhai",
+    "boudoir": "Boudoir",
+    "easton": "Easton",
+    "blue_cyprus": "Blue Cyprus",
+    "thong": "Thong",
+    "miss_disco": "Miss Disco",
+    "gainsborough": "Gainsborough",
+    "selene": "Selene",
+    "reason_to_earn": "Reason to Earn",
+    "poker": "Poker",
+    "fair_charmer": "Fair Charmer",
+    "pange": "Pange",
+    "attica": "Attica",
+    "bull_lea": "Bull Lea",
+    "our_page": "Our Page",
+    "menow": "Menow",
+    "gaga": "Gaga",
+    "war_admiral": "War Admiral",
+    "businesslike": "Businesslike",
+    "fleet_nasrullah": "Fleet Nasrullah",
+    "chinese_doll": "Chinese Doll",
+    "hibiscus": "Hibiscus",
+    "mejiro_queen": "Mejiro Queen",
+    "pan": "Pan",
+    "barley_corn": "Barley Corn",
+    "tenerani": "Tenerani",
+    "romanella": "Romanella",
+    "discovery": "Discovery",
+    "miyako": "Miyako",
+    "source_sucree": "Source Sucree",
+    "rosy_legend": "Rosy Legend",
+    "abjer": "Abjer",
+    "coronis": "Coronis",
+    "fair_trial": "Fair Trial",
+    "una": "Una",
+    "new_providence": "New Providence",
+    "shining_sun": "Shining Sun",
+    "fun_fair": "Fun Fair",
+    "cora_deans": "Cora Deans",
+    "mourne": "Mourne",
+    "senones": "Senones",
+    "nashua": "Nashua",
+    "rarelea": "Rarelea",
+    "blue_swords": "Blue Swords",
+    "galla_colors": "Galla Colors",
+    "imperatrice": "Imperatrice",
+    "teddy": "Teddy",
+    "plucky_liege": "Plucky Liege",
+    "gentle_play": "Gentle Play",
+    "inquisition": "Inquisition",
+    "hindostan": "Hindostan",
+    "asama_yuri": "Asama Yuri",
+    "lady_rebecca": "Lady Rebecca",
+    "busted": "Busted",
+    "highclere": "Highclere",
+    "zeddaan": "Zeddaan",
+    "khairunissa": "Khairunissa",
+    "only_for_life": "Only for Life",
+    "lorelei": "Lorelei",
+    "thicket": "Thicket",
+    "preciptic": "Preciptic",
+    "campanette": "Campanette",
+    "kahyasi": "Kahyasi",
+    "kerali": "Kerali",
+    "court_martial": "Court Martial",
+    "barra": "Barra",
+    "matrice": "Matrice",
+    "pompilia": "Pompilia",
+    "blue_gem": "Blue Gem",
+    "fair_copy": "Fair Copy",
+    "la_melodie": "La Melodie",
+    "height_of_fashion": "Height of Fashion",
+    "flower_bowl": "Flower Bowl",
+    "hasty_road": "Hasty Road",
+    "sunny_vale": "Sunny Vale",
+    "pharos": "Pharos",
+    "nogara": "Nogara",
+    "spring_run": "Spring Run",
+    "blenheim": "Blenheim",
+    "delleana": "Delleana",
+    "pasadoble": "Pasadoble",
+    "cosmic_bomb": "Cosmic Bomb",
+    "montparnasse": "Montparnasse",
+    "edelweiss": "Edelweiss",
+    "johannesburg": "Johannesburg",
+    "mumtaz_begum": "Mumtaz Begum",
+    "crimson_saint": "Crimson Saint",
+    "raise_you": "Raise You"
+  },
+  "parents": {
+    "in_reality": [
+      "intentionally",
+      "my_dear_girl"
+    ],
+    "remand": [
+      "alcide",
+      "admonish"
+    ],
+    "pas_de_nom": [
+      "admiral_s_voyage",
+      "petitioner"
+    ],
+    "fortino": [
+      "grey_sovereign",
+      "ranavalo"
+    ],
+    "chambord": [
+      "chamossaire",
+      "life_hill"
+    ],
+    "cougar": [
+      "tale_of_two_cities",
+      "cindy_lou"
+    ],
+    "warning": [
+      "known_fact",
+      "slightly_dangerous"
+    ],
+    "deputy_minister": [
+      "vice_regent",
+      "mint_copy"
+    ],
+    "sadler_s_wells": [
+      "northern_dancer",
+      "fairy_bridge"
+    ],
+    "morn_of_song": [
+      "blushing_groom",
+      "glorious_song"
+    ],
+    "your_host": [
+      "alibhai",
+      "boudoir"
+    ],
+    "wisteria": [
+      "easton",
+      "blue_cyprus"
+    ],
+    "sanctus": [
+      "fine_top",
+      "sanelta"
+    ],
+    "riverman": [
+      "never_bend",
+      "river_lady"
+    ],
+    "lisadell": [
+      "forli",
+      "thong"
+    ],
+    "special": [
+      "forli",
+      "thong"
+    ],
+    "bold_ruler": [
+      "nasrullah",
+      "miss_disco"
+    ],
+    "tapit": [
+      "pulpit",
+      "tap_your_heels"
+    ],
+    "ameriflora": [
+      "danzig",
+      "graceful_touch"
+    ],
+    "gris_vitesse": [
+      "amerigo",
+      "matchiche"
+    ],
+    "hyperion": [
+      "gainsborough",
+      "selene"
+    ],
+    "bold_reasoning": [
+      "boldnesian",
+      "reason_to_earn"
+    ],
+    "my_charmer": [
+      "poker",
+      "fair_charmer"
+    ],
+    "sensibility": [
+      "hail_to_reason",
+      "pange"
+    ],
+    "sir_ivor": [
+      "sir_gaylord",
+      "attica"
+    ],
+    "bull_page": [
+      "bull_lea",
+      "our_page"
+    ],
+    "tom_fool": [
+      "menow",
+      "gaga"
+    ],
+    "busanda": [
+      "war_admiral",
+      "businesslike"
+    ],
+    "fleeting_doll": [
+      "fleet_nasrullah",
+      "chinese_doll"
+    ],
+    "lady_angela": [
+      "hyperion",
+      "sister_sarah"
+    ],
+    "amazon_warrior": [
+      "khaled",
+      "war_betsy"
+    ],
+    "レールデユタン": [
+      "maruzensky",
+      "ケイツナミ"
+    ],
+    "アンバーシャダイ": [
+      "northern_taste",
+      "clear_amber"
+    ],
+    "ケイツナミ": [
+      "ラディガ",
+      "hibiscus"
+    ],
+    "clear_amber": [
+      "ambiopoise",
+      "one_clear_call"
+    ],
+    "メジロナガサキ": [
+      "never_beat",
+      "メジロボサツ"
+    ],
+    "milesian": [
+      "my_babu",
+      "oatflake"
+    ],
+    "paleo": [
+      "pharis",
+      "calonice"
+    ],
+    "メジロボサツ": [
+      "montaval",
+      "mejiro_queen"
+    ],
+    "chanel": [
+      "pan",
+      "barley_corn"
+    ],
+    "gay_mecene": [
+      "vaguely_noble",
+      "gay_missile"
+    ],
+    "princess_lyphard": [
+      "lyphard",
+      "no_luck"
+    ],
+    "ribot": [
+      "tenerani",
+      "romanella"
+    ],
+    "geisha": [
+      "discovery",
+      "miyako"
+    ],
+    "real_shadai": [
+      "roberto",
+      "desert_vixen"
+    ],
+    "ライラックポイント": [
+      "maruzensky",
+      "クリカツラ"
+    ],
+    "クリカツラ": [
+      "tiepolo",
+      "クリノホシ"
+    ],
+    "sir_gaylord": [
+      "turn_to",
+      "somethingroyal"
+    ],
+    "royal_charger": [
+      "nearco",
+      "sun_princess"
+    ],
+    "sayajirao": [
+      "nearco",
+      "rosy_legend"
+    ],
+    "calonice": [
+      "abjer",
+      "coronis"
+    ],
+    "palestine": [
+      "fair_trial",
+      "una"
+    ],
+    "chateaugay": [
+      "swaps",
+      "banquet_bell"
+    ],
+    "south_ocean": [
+      "new_providence",
+      "shining_sun"
+    ],
+    "sally_deans": [
+      "fun_fair",
+      "cora_deans"
+    ],
+    "snob": [
+      "mourne",
+      "senones"
+    ],
+    "bramalea": [
+      "nashua",
+      "rarelea"
+    ],
+    "turn_to": [
+      "royal_charger",
+      "source_sucree"
+    ],
+    "nothirdchance": [
+      "blue_swords",
+      "galla_colors"
+    ],
+    "somethingroyal": [
+      "princequillo",
+      "imperatrice"
+    ],
+    "bulldog": [
+      "teddy",
+      "plucky_liege"
+    ],
+    "rover": [
+      "bulldog",
+      "gentle_play"
+    ],
+    "dontconceal": [],
+    "wind_in_her_hair": [
+      "alzao",
+      "burghclere"
+    ],
+    "alzao": [
+      "lyphard",
+      "lady_rebecca"
+    ],
+    "burghclere": [
+      "busted",
+      "highclere"
+    ],
+    "kampala": [
+      "kalamoun",
+      "state_pension"
+    ],
+    "kalamoun": [
+      "zeddaan",
+      "khairunissa"
+    ],
+    "state_pension": [
+      "only_for_life",
+      "lorelei"
+    ],
+    "severn_bridge": [
+      "hornbeam",
+      "priddy_fair"
+    ],
+    "hornbeam": [
+      "hyperion",
+      "thicket"
+    ],
+    "priddy_fair": [
+      "preciptic",
+      "campanette"
+    ],
+    "kelley_s_day": [
+      "graustark",
+      "golden_trail"
+    ],
+    "graustark": [
+      "ribot",
+      "flower_bowl"
+    ],
+    "golden_trail": [
+      "hasty_road",
+      "sunny_vale"
+    ],
+    "ゴールデンサッシュ": [
+      "dictus",
+      "ダイナサッシュ"
+    ],
+    "manfath": [
+      "ラストタイクーン",
+      "pilot_bird"
+    ],
+    "ダイナカール": [
+      "northern_taste",
+      "シャダイフェザー"
+    ],
+    "pacific_princess": [
+      "damascus",
+      "fiji"
+    ],
+    "ハーツクライ": [
+      "sunday_silence",
+      "アイリッシュダンス"
+    ],
+    "ハルーワスウィート": [
+      "machiavellian",
+      "halwa_song"
+    ],
+    "ゴールドアリュール": [
+      "sunday_silence",
+      "nikiya"
+    ],
+    "トウショウボーイ": [
+      "tesco_boy",
+      "social_butterfly"
+    ],
+    "suncourt": [
+      "hyperion",
+      "inquisition"
+    ],
+    "social_butterfly": [
+      "your_host",
+      "wisteria"
+    ],
+    "never_beat": [
+      "never_say_die",
+      "bride_elect"
+    ],
+    "オリエンタルアート": [
+      "mejiromcqueen",
+      "エレクトロアート"
+    ],
+    "ダイナサッシュ": [
+      "northern_taste",
+      "royal_sash"
+    ],
+    "dancing_brave": [
+      "lyphard",
+      "navajo_princess"
+    ],
+    "nice_dancer": [
+      "northern_dancer",
+      "nice_princess"
+    ],
+    "lady_victoria": [
+      "ヴィクトリアパーク",
+      "lady_angela"
+    ],
+    "mejiro_asama": [
+      "partholon",
+      "スヰート"
+    ],
+    "mejiro_titan": [
+      "mejiro_asama",
+      "cheryl"
+    ],
+    "mejiro_aurola": [
+      "remand",
+      "mejiro_iris"
+    ],
+    "mejiro_iris": [
+      "hindostan",
+      "asama_yuri"
+    ],
+    "メジロチェイサー": [
+      "メジロサンマン",
+      "cheryl"
+    ],
+    "woodman": [
+      "mr_prospector",
+      "プレイメイト"
+    ],
+    "harbinger": [
+      "dansili",
+      "penang_pearl"
+    ],
+    "hasili": [
+      "kahyasi",
+      "kerali"
+    ],
+    "goofed": [
+      "court_martial",
+      "barra"
+    ],
+    "pago_pago": [
+      "matrice",
+      "pompilia"
+    ],
+    "princely_gift": [
+      "nasrullah",
+      "blue_gem"
+    ],
+    "menetrier": [
+      "fair_copy",
+      "la_melodie"
+    ],
+    "kirov_premiere": [
+      "sadler_s_wells",
+      "querida"
+    ],
+    "bago": [
+      "nashwan",
+      "moonlight_s_box"
+    ],
+    "nashwan": [
+      "blushing_groom",
+      "height_of_fashion"
+    ],
+    "silver_hawk": [
+      "roberto",
+      "gris_vitesse"
+    ],
+    "motivator_gb": [
+      "montjeu_ire",
+      "out_west_usa"
+    ],
+    "roberto": [
+      "hail_to_reason",
+      "bramalea"
+    ],
+    "flaming_page": [
+      "bull_page",
+      "flaring_top"
+    ],
+    "secretariat": [
+      "bold_ruler",
+      "somethingroyal"
+    ],
+    "nearctic": [
+      "nearco",
+      "lady_angela"
+    ],
+    "nearco": [
+      "pharos",
+      "nogara"
+    ],
+    "red_god": [
+      "nasrullah",
+      "spring_run"
+    ],
+    "donatello": [
+      "blenheim",
+      "delleana"
+    ],
+    "raise_a_native": [
+      "native_dancer",
+      "raise_you"
+    ],
+    "natalma": [
+      "native_dancer",
+      "アルマームード"
+    ],
+    "miesque": [
+      "nureyev",
+      "pasadoble"
+    ],
+    "ラストタイクーン": [
+      "try_my_best",
+      "mill_princess"
+    ],
+    "cosmah": [
+      "cosmic_bomb",
+      "アルマームード"
+    ],
+    "mountain_flower": [
+      "montparnasse",
+      "edelweiss"
+    ],
+    "scat_daddy": [
+      "johannesburg",
+      "love_style"
+    ],
+    "nasrullah": [
+      "nearco",
+      "mumtaz_begum"
+    ],
+    "terlingua": [
+      "secretariat",
+      "crimson_saint"
+    ],
+    "フレンチデピュティ": [
+      "deputy_minister",
+      "mitterand"
+    ],
+    "ロジータ": [
+      "mill_george",
+      "メロウマダング"
+    ],
+    "danseur": [
+      "Tantieme",
+      "La Danse"
+    ]
+  },
+  "source_queries": {
+    "chambord": "Chambord GB",
+    "cougar": "Cougar CHI 1966",
+    "sensibility": "Sensibility USA 1971",
+    "suncourt": "Suncourt GB 1952",
+    "woodman": "Woodman USA 1983",
+    "bago": "Bago FR 2001",
+    "silver_hawk": "Silver Hawk USA 1979",
+    "snob": "Snob FR 1959",
+    "chanel": "Chanel FR 1961",
+    "nothirdchance": "Nothirdchance USA 1948",
+    "wind_in_her_hair": "Wind in Her Hair IRE 1991",
+    "lady_victoria": "Lady Victoria CAN 1962",
+    "mejiro_iris": "Mejiro Iris JPN 1964",
+    "kalamoun": "Kalamoun GB 1970",
+    "state_pension": "State Pension GB 1967",
+    "hornbeam": "Hornbeam GB 1953",
+    "priddy_fair": "Priddy Fair GB 1956",
+    "hasili": "Hasili IRE 1991",
+    "goofed": "Goofed USA 1960",
+    "pago_pago": "Pago Pago AUS 1960",
+    "princely_gift": "Princely Gift GB 1951",
+    "menetrier": "Menetrier FR 1944",
+    "nashwan": "Nashwan USA 1986",
+    "graustark": "Graustark USA 1963",
+    "golden_trail": "Golden Trail USA 1958",
+    "nearco": "Nearco ITY 1935",
+    "red_god": "Red God USA 1954",
+    "donatello": "Donatello FR 1934",
+    "miesque": "Miesque USA 1984",
+    "cosmah": "Cosmah USA 1953",
+    "mountain_flower": "Mountain Flower USA 1964",
+    "scat_daddy": "Scat Daddy USA 2004",
+    "nasrullah": "Nasrullah GB 1940",
+    "terlingua": "Terlingua USA 1976",
+    "alzao": "Alzao USA 1980",
+    "burghclere": "Burghclere GB 1977",
+    "ラストタイクーン": "Last Tycoon IRE 1983"
+  }
+}
