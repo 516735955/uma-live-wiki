@@ -3176,17 +3176,30 @@ createApp({
     if (window.__songsRows) {
       draw(search && search.value ? search.value : '', window.__songsPage);
     } else {
-      fetch('/albums.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (albums) {
+      var useAlbums = function (albums) {
         var rows = [];
         (albums || []).slice().sort(function (a, b) { return (b.release || '').localeCompare(a.release || ''); }).forEach(function (al) {
           (al.songs || []).forEach(function (s, i) { rows.push({ s: s, al: al, i: i }); });
         });
         window.__songsRows = rows;
         draw(search && search.value ? search.value : '', window.__songsPage);
-      }).catch(function () {
+      };
+      var showLoadError = function () {
         if (nd) { nd.textContent = '无法加载专辑数据（请确认服务器提供 /albums.json）'; nd.style.display = 'block'; }
         if (pager) { pager.innerHTML = ''; pager.style.display = 'none'; }
-      });
+      };
+      var app = window.__uma_app;
+      if (app && typeof app.loadAlbums === 'function') {
+        app.loadAlbums().then(function () {
+          if (app.albumsError) throw new Error(app.albumsError);
+          useAlbums(app.albums);
+        }).catch(showLoadError);
+      } else {
+        fetch('/albums.json', { cache: 'no-cache' })
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+          .then(useAlbums)
+          .catch(showLoadError);
+      }
     }
     if (search && !search._wired) { search._wired = true; search.addEventListener('input', function () { window.__songsPage = 1; draw(search.value, 1); }); }
   }
