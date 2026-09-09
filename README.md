@@ -32,17 +32,26 @@ uma-live-wiki/                    仓库根目录
 
 ## 本地启动 / 预览
 
-需要 Node.js（建议 ≥ 14）与 Python 3（抓取脚本用）。在仓库根目录执行：
+普通预览只需要 Node.js（建议 ≥ 14）。在仓库根目录执行：
 
 ```bash
-node uma_tools/server.js
+node uma_tools/server.js --no-crawl
+# 或：npm --prefix uma_tools run serve
 ```
 
 服务器默认监听 `http://localhost:8080`，以当前仓库根目录为站点根目录，自动优先返回
-`index.html` 或 `赛马娘LIVE相关.html`。浏览器打开预览即可。
+`index.html` 或 `赛马娘LIVE相关.html`。`--no-crawl` 只关闭后台抓取，页面与站内 API 均可正常预览，
+也不会在启动时改写数据文件。
+
+需要长期运行并自动刷新活动、角色、专辑和 Lantis 新闻时，使用：
+
+```bash
+node uma_tools/server.js
+# 或：npm --prefix uma_tools run serve:auto
+```
 
 服务器在 Windows 上默认调用 `python`，在 macOS/Linux 上默认调用 `python3`。如果 Python 3
-使用其他命令名，可通过 `PYTHON_BIN` 指定，例如：
+使用其他命令名，可在启用自动刷新时通过 `PYTHON_BIN` 指定，例如：
 
 ```bash
 PYTHON_BIN=/path/to/python3 node uma_tools/server.js
@@ -69,27 +78,57 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 按需加载的 `*_data.js` 地址在 `uma_tools/app.js` 中保留版本参数（用于上线后强制刷新缓存）。
 修改对应 JavaScript 数据文件并准备上线时，再更新该文件地址上的版本参数。
 
-## 协作流程（普通成员）
+## 数据维护
 
-仓库是 GitHub 上公开仓库。两种方式：
+脚本均从自身位置解析仓库根目录，不依赖某台电脑的绝对路径。常用入口如下：
 
-### 方式 A：直接推送到 main（适合你作为站长的常态工作）
+| 数据 | 手动命令 | 主要输出 |
+|---|---|---|
+| Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `events_data.json`；存在本地 Excel 镜像时会尝试同步 |
+| 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
+| 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `albums.json` |
+| Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
+| 出演统计 | `python3 gen_voice_part.py` | `actor_participation.json`、`voice_participation.json` |
+
+修改 `events_data.json`、`live_data.json` 或 `live_cat_data.json` 后，应再运行一次
+`python3 gen_voice_part.py`。出演统计只读取仓库内受版本控制的数据，不需要 `events_list.xlsx`，
+因此干净 clone 也能重建相同口径的结果。
+
+大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
 
 ```bash
-git pull                        # 先同步远端最新改动
-# ... 编辑文件 ...
-git add .
-git commit -m "描述本次改动"
-git push origin main            # 推到 GitHub
+python3 -m pip install Pillow
 ```
 
-### 方式 B：他人贡献（Pull Request 流程，站长评审后合并）
+`openpyxl` 仅用于 `crawl_events.py` 对本地 `events_list.xlsx` / `voice_list.xlsx` 镜像的可选同步；
+缺少这些文件或依赖不会阻止站点使用 JSON 数据。翻译结果缓存 `uma_tools/trans_cache.json`
+随仓库维护；抓取日志、运行状态和 `lantis_news.json` 仍是本地产物，不提交。
 
-1. 在 GitHub 上 **Fork** 本仓库；
-2. Clone 自己的 Fork，新建分支 `git checkout -b fix-xxx`；
-3. 修改后提交并推到自己的 Fork；
-4. 在 GitHub 页面发起 Pull Request；
-5. 由仓库管理员（站长）评审、合并。
+## 协作流程
+
+有仓库写权限的协作者使用功能分支和 Pull Request。一次 PR 可以包含多个小提交，
+每个 commit 只处理一个明确问题；开发期间不必在每个 commit 前重复同步。
+
+开始一批工作时同步一次 `main`：
+
+```bash
+git fetch origin main
+git switch <工作分支>
+git rebase origin/main
+```
+
+完成整批工作、准备提 PR 时，再同步一次并复验：
+
+```bash
+git fetch origin main
+git rebase origin/main
+# 运行与改动相称的代码、数据和页面复验
+git push -u origin <工作分支>
+gh pr create --base main --head <工作分支>
+```
+
+PR 标题应概括本批目标，正文说明改了什么、如何验证以及兼容性影响。没有仓库写权限的贡献者
+仍按 GitHub 的常规方式 Fork 仓库，从自己的功能分支向本仓库 `main` 提交 PR。
 
 ## 环境变量（重要：密钥不入库）
 
@@ -115,11 +154,12 @@ node uma_tools/server.js
 
 - **改了数据看不到变化？** 硬刷新 Ctrl+F5，或确认服务器读取的是「赛马娘LIVE相关.html」而非其他旧版文件。
 - **文件很大/有 secrets？** 不要提交 `*.bak*`、`AI.rar`、`Default Project/`（官网抓取原始数据）、
-  `uma_tools` 下的日志/缓存（server.log、trans_cache.json 等）以及任何密钥；这些已在 `.gitignore` 中。
+  `uma_tools` 下的日志与运行状态文件以及任何密钥；这些已在 `.gitignore` 中。翻译缓存
+  `uma_tools/trans_cache.json` 是例外，它是站点可复用的数据结果。
 - **想新增批量抓取的验证工具？** 放到 `uma_tools/` 下，命名如 `check_*.py`，并在提交前跑一遍语法检查。
 
 ## 致谢 / 数据来源
 
 - 角色立绘与官方图片：赛马娘官网及相关公开资源
 - 视频资源：B 站UP主公开视频（按角色整理原型马解说/歌曲）
-- 站点由一人维护，欢迎 PR 共建
+- 站点由爱好者协作者共同维护，欢迎 PR 共建
