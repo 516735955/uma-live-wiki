@@ -239,7 +239,7 @@ createApp({
       return Promise.all([
         loadCharacterIndexData(),
         loadDataScript('/data/character_detail_data.js?v=20260904', 'CHAR_DETAIL'),
-        loadDataScript('/data/pedigree_data.js?v=20260910', 'PED_REL')
+        loadDataScript('/data/pedigree_data.js?v=20260910-2', 'PED_REL')
       ]);
     }
     function loadVoiceData() {

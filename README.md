@@ -14,7 +14,8 @@ uma-live-wiki/                    仓库根目录
 ├── data/                          站点运行数据（JS / JSON）
 │   ├── character_index_data.js    角色索引（179 个角色）
 │   ├── character_detail_data.js   角色详情
-│   ├── pedigree_data.js           血统关系（1334 条，window.PED_REL）
+│   ├── pedigree_source.json       可维护的原型马、亲本与角色映射源数据
+│   ├── pedigree_data.js           由源数据生成的浏览器血统关系（window.PED_REL）
 │   ├── albums.json                专辑与歌曲
 │   ├── live_data.json             编号系列公演与歌单
 │   ├── live_cat_data.json         其他演唱会分类/曲目
@@ -66,6 +67,10 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 `data/*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
 `data/*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
 
+血统数据只编辑 `data/pedigree_source.json`，再运行
+`python3 uma_tools/build_pedigree.py` 生成浏览器使用的 `data/pedigree_data.js`。源数据记录明确的
+父、母和角色原型映射；三代祖先、子孙、角色兄弟姐妹及相关配种对象均由脚本推导，避免多处手工同步。
+
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 
 ```js
@@ -88,6 +93,7 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 |---|---|---|
 | Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `data/events_data.json`；存在本地 Excel 镜像时会尝试同步 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
+| 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
 | 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
 | Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
 | 出演统计 | `python3 uma_tools/gen_voice_part.py` | `data/actor_participation.json`、`data/voice_participation.json` |
