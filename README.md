@@ -20,6 +20,7 @@ uma-live-wiki/                    仓库根目录
 ├── live_cat_data.json             其他演唱会分类/曲目
 ├── events_data.json               活动数据
 ├── albums.json                    专辑数据
+├── album_covers/                  外部源较慢的专辑封面本地 WebP 副本
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ role_svgs/ video_thumbs/  图片资源
 ├── 血统表/                       血统图表
 ├── uma_tools/                    工具脚本
