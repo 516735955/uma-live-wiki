@@ -9,7 +9,7 @@
 ## 目录结构
 
 ```
-G:\学习\AI\                        根目录（也是仓库根目录）
+uma-live-wiki/                    仓库根目录
 ├── 赛马娘LIVE相关.html            站点主文件（约 1.4MB，所有 SPA 逻辑与部分数据）
 ├── *_data.js                      各类数据文件（window 全局变量，页面通过 <script> 加载）
 │   ├── character_index_data.js    角色索引（179 个角色）
@@ -29,15 +29,21 @@ G:\学习\AI\                        根目录（也是仓库根目录）
 
 ## 本地启动 / 预览
 
-需要 Node.js（建议 ≥ 14）与 Python（抓取脚本用）。
+需要 Node.js（建议 ≥ 14）与 Python 3（抓取脚本用）。在仓库根目录执行：
 
 ```bash
-cd G:\学习\AI
 node uma_tools/server.js
 ```
 
-服务器默认监听 `http://localhost:8080`，以 `G:\学习\AI` 为站点根目录，自动优先返回
+服务器默认监听 `http://localhost:8080`，以当前仓库根目录为站点根目录，自动优先返回
 `index.html` 或 `赛马娘LIVE相关.html`。浏览器打开预览即可。
+
+服务器在 Windows 上默认调用 `python`，在 macOS/Linux 上默认调用 `python3`。如果 Python 3
+使用其他命令名，可通过 `PYTHON_BIN` 指定，例如：
+
+```bash
+PYTHON_BIN=/path/to/python3 node uma_tools/server.js
+```
 
 如需关闭服务器：终端 Ctrl+C。
 
@@ -85,6 +91,14 @@ git push origin main            # 推到 GitHub
 ## 环境变量（重要：密钥不入库）
 
 `uma_tools/server.js` 内置百度翻译缓存接口，**密钥不写入仓库**，通过环境变量注入：
+
+macOS / Linux：
+
+```bash
+BAIDU_APPID="你的APPID" BAIDU_SECRET="你的SECRET" node uma_tools/server.js
+```
+
+Windows PowerShell：
 
 ```powershell
 $env:BAIDU_APPID = "你的APPID"

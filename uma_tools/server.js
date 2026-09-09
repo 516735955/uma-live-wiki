@@ -8,6 +8,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -707,7 +708,7 @@ function runCharsCrawl(reason) {
   if (charsRunning) return;
   charsRunning = true;
   const t0 = Date.now();
-  execFile('python', [CHARS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [CHARS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     charsRunning = false;
     const tag = '[chars-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -720,7 +721,7 @@ function runEventsCrawl(reason) {
   if (crawlRunning) return;
   crawlRunning = true;
   const t0 = Date.now();
-  execFile('python', [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     crawlRunning = false;
     const tag = '[events-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -735,7 +736,7 @@ function runLantisCrawl(reason) {
   if (lantisRunning) return;
   lantisRunning = true;
   const t0 = Date.now();
-  execFile('python', [LANTIS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [LANTIS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     lantisRunning = false;
     const tag = '[lantis-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -751,7 +752,7 @@ function runAlbumsCrawl(reason) {
   if (albumsRunning) return;
   albumsRunning = true;
   const t0 = Date.now();
-  execFile('python', [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     albumsRunning = false;
     const tag = '[albums-crawl ' + reason + ']';
     if (err) {
