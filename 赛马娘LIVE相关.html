@@ -5491,8 +5491,8 @@ function registerCover(url) {
       img.onerror = function () {};
       img.src = url;
     }
-    SERIES_GRID.forEach(function (s) { registerCover(s.cover); });
     function coverStyle(album) {
+      registerCover(album.cover);
       return { '--cover-tint': coverTint[album.cover] || '22,26,41' };
     }
     function newsDate(s) {
@@ -5614,7 +5614,7 @@ function registerCover(url) {
       albumsError.value = '';
       return fetch('/albums.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) { albums.value = Array.isArray(data) ? data : []; data.forEach(function (a) { registerCover(a.cover); }); })
+        .then(function (data) { albums.value = Array.isArray(data) ? data : []; })
         .catch(function (e) { albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools\server.js 后打开 http://localhost:8080/）'; });
     }
     function loadLiveCatData() {
