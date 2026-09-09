@@ -12,7 +12,8 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BASE)
-ALBUMS_JSON = os.path.join(ROOT, 'albums.json')
+DATA_DIR = os.path.join(ROOT, 'data')
+ALBUMS_JSON = os.path.join(DATA_DIR, 'albums.json')
 STATE_JSON = os.path.join(BASE, 'albums_auto_state.json')
 LOG_FILE = os.path.join(BASE, 'albums_auto.log')
 

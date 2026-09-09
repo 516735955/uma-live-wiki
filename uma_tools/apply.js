@@ -5,7 +5,7 @@ const path = require('path');
 // 用法: 先审阅 uma_tools/pending.json（删掉不要的项，或把 candidate 留空即跳过），再运行:
 //   node uma_tools/apply.js
 const ROOT = path.resolve(__dirname, '..');
-const ALBUMS_JSON = path.join(ROOT, 'albums.json');
+const ALBUMS_JSON = path.join(ROOT, 'data', 'albums.json');
 const PENDING_JSON = path.join(__dirname, 'pending.json');
 
 const norm = (s) => String(s || '').replace(/[『』（）()\[\]「」・ー\u3000\s]/g, '').toLowerCase();

@@ -8,7 +8,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS_DIR)
-INDEX = os.path.join(ROOT, 'character_index_data.js')
+INDEX = os.path.join(ROOT, 'data', 'character_index_data.js')
 URL = 'https://umamusume.jp/character/'
 
 def fetch(url):

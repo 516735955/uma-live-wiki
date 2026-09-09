@@ -2,8 +2,10 @@
 import io, sys, re, json, html, datetime, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-APP_JS = io.open(os.path.join(ROOT, 'uma_tools', 'app.js'), encoding='utf-8').read()
+TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(TOOLS_DIR)
+DATA_DIR = os.path.join(ROOT, 'data')
+APP_JS = io.open(os.path.join(TOOLS_DIR, 'app.js'), encoding='utf-8').read()
 def extract_array(source, name):
     i = source.find(name + ' = ')
     if i < 0:
@@ -18,15 +20,15 @@ def extract_array(source, name):
         raise ValueError('%s is incomplete' % name)
     return json.loads(source[s:e])
 
-LIVE = json.load(io.open(os.path.join(ROOT, 'live_data.json'), encoding='utf-8'))
+LIVE = json.load(io.open(os.path.join(DATA_DIR, 'live_data.json'), encoding='utf-8'))
 SERIES = extract_array(APP_JS, 'SERIES_GRID')
-CAT = json.load(io.open(os.path.join(ROOT, 'live_cat_data.json'), encoding='utf-8'))
+CAT = json.load(io.open(os.path.join(DATA_DIR, 'live_cat_data.json'), encoding='utf-8'))
 # 用 app 实际角色库 CHAR_INDEX（character_index_data.js，179个，最完整且与页面一致）
-jsrc = io.open(os.path.join(ROOT, 'character_index_data.js'), encoding='utf-8').read()
+jsrc = io.open(os.path.join(DATA_DIR, 'character_index_data.js'), encoding='utf-8').read()
 CHAR_INDEX = json.loads(re.search(r'window\.CHAR_INDEX\s*=\s*(\[[\s\S]*?\])\s*;', jsrc).group(1))
 # 兼容后备：并入 characters_data.json
-chars_doc = json.load(io.open(os.path.join(ROOT, 'characters_data.json'), encoding='utf-8-sig'))['characters']
-voice_src = io.open(os.path.join(ROOT, 'voice_list_data.js'), encoding='utf-8').read()
+chars_doc = json.load(io.open(os.path.join(DATA_DIR, 'characters_data.json'), encoding='utf-8-sig'))['characters']
+voice_src = io.open(os.path.join(DATA_DIR, 'voice_list_data.js'), encoding='utf-8').read()
 VOICE_LIST = json.loads(re.search(r'window\.VA_LIST\s*=\s*(\[[\s\S]*?\])\s*;', voice_src).group(1))
 # 异体字折叠（高↔髙、崎↔﨑 等），让声优名对齐到 voice 库规范写法
 VFOLD = {'髙': '高', '﨑': '崎', '祥': '祥', '塚': '塚', '濱': '浜', '諸': '諸',
@@ -121,10 +123,10 @@ def build_actor_participation(events_data_events):
            'source': 'events_data.json + CHAR_INDEX + voice_list_data.js',
            'cutoff': today.isoformat(), 'only_before_today': True,
            'total_events': len(entries), 'entries': entries}
-    io.open(os.path.join(ROOT, 'actor_participation.json'), 'w', encoding='utf-8').write(json.dumps(out, ensure_ascii=False, indent=1))
+    io.open(os.path.join(DATA_DIR, 'actor_participation.json'), 'w', encoding='utf-8').write(json.dumps(out, ensure_ascii=False, indent=1))
     print('actor_participation.json 写出: 事件=%d 原始出演者=%d 未解析跳过=%d 今日及未来跳过=%d (截至 %s)' % (len(entries), total_names, skipped, skipped_future, today.isoformat()))
 
-ev = json.load(io.open(os.path.join(ROOT, 'events_data.json'), encoding='utf-8-sig'))['events']
+ev = json.load(io.open(os.path.join(DATA_DIR, 'events_data.json'), encoding='utf-8-sig'))['events']
 
 def collect_voice(tb):
     st = set()
@@ -314,7 +316,7 @@ for gi, grp in enumerate(LIVE):
 
 result = {'generated_at': 'local-build', 'source': 'events_data.json + live_cat_data.json + live_data.json + characters_data.json',
           'total': len(events), 'events': events}
-io.open(os.path.join(ROOT, 'voice_participation.json'), 'w', encoding='utf-8').write(json.dumps(result, ensure_ascii=False, indent=1))
+io.open(os.path.join(DATA_DIR, 'voice_participation.json'), 'w', encoding='utf-8').write(json.dumps(result, ensure_ascii=False, indent=1))
 build_actor_participation(ev)
 
 from collections import Counter

@@ -16,6 +16,7 @@ UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(ROOT, 'data')
 OFFICIAL = 'https://umamusume.jp/character/'
 MOE_LIST = ('https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/'
             '%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9')
@@ -64,7 +65,7 @@ def main():
     today = datetime.date.today().isoformat()
 
     # ---- 现有角色 ----
-    idx_path = os.path.join(ROOT, 'character_index_data.js')
+    idx_path = os.path.join(DATA_DIR, 'character_index_data.js')
     t = io.open(idx_path, encoding='utf-8').read()
     _i = t.find('['); _j = t.rfind(']')
     chars = json.loads(t[_i:_j + 1])
@@ -118,7 +119,7 @@ def main():
         return 0
 
     # ---- 阶段1&1.5&2: 逐个入库 ----
-    det_path = os.path.join(ROOT, 'character_detail_data.js')
+    det_path = os.path.join(DATA_DIR, 'character_detail_data.js')
     t2 = io.open(det_path, encoding='utf-8').read().rstrip()
     head2 = t2[:-2].rstrip()
     if not head2.endswith(','):
@@ -208,7 +209,7 @@ def main():
     print('CHAR_INDEX:', len(chars), '| 详情追加:', len(add_detail), flush=True)
 
     # ---- 阶段4: 新声优 ----
-    man_path = os.path.join(ROOT, 'va_photos_data.js')
+    man_path = os.path.join(DATA_DIR, 'va_photos_data.js')
     man_raw = io.open(man_path, encoding='utf-8').read()
     man_j = man_raw.find('{'); man_J = man_raw.rfind('}') + 1
     manifest = json.loads(man_raw[man_j:man_J])
