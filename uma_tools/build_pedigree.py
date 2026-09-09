@@ -218,6 +218,10 @@ def build_export(source, characters):
         if horse_id:
             horse_to_characters[canonical(horse_id)].append(character_id)
 
+    def compatible_descendant_id(horse_id):
+        linked_characters = horse_to_characters.get(canonical(horse_id), [])
+        return linked_characters[0] if linked_characters else horse_id
+
     output = []
     for record in records:
         runtime_id = record["id"]
@@ -229,12 +233,16 @@ def build_export(source, characters):
         row0 = [pair.get("sire"), pair.get("dam")]
         row1 = ancestor_row(row0, parents)
         row2 = ancestor_row(row1, parents)
-        direct_children = list(children.get(horse_id, []))
+        direct_children = [
+            compatible_descendant_id(child_id)
+            for child_id in children.get(horse_id, [])
+        ]
         grandchildren = []
-        for child_id in direct_children:
+        for child_id in children.get(horse_id, []):
             for grandchild_id in children.get(child_id, []):
-                if grandchild_id not in grandchildren:
-                    grandchildren.append(grandchild_id)
+                display_id = compatible_descendant_id(grandchild_id)
+                if display_id not in grandchildren:
+                    grandchildren.append(display_id)
 
         node = {
             "cid": runtime_id,

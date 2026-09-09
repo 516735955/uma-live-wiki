@@ -1,595 +1,596 @@
 {
   "sources": {
-    "legacy": {
-      "name": "Legacy multi-source import",
-      "note": "Existing repository data retained where no newer direct verification is recorded."
-    },
     "jbis": {
       "name": "JBIS-Search",
       "url": "https://www.jbis.jp/horse/",
       "note": "Direct parentage checked against the horse or pedigree result page."
+    },
+    "netkeiba": {
+      "name": "netkeiba",
+      "url": "https://db.netkeiba.com/horse/",
+      "note": "Direct parentage checked against the individual horse pedigree page."
     }
   },
   "character_mappings": {
     "specialweek": {
       "horse": "specialweek",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "silencesuzuka": {
       "horse": "silencesuzuka",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tokaiteio": {
       "horse": "tokaiteio",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "maruzensky": {
       "horse": "maruzensky",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "fujikiseki": {
       "horse": "fujikiseki",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "oguricap": {
       "horse": "oguricap",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "goldship": {
       "horse": "goldship",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "vodka": {
       "horse": "vodka",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "daiwascarlet": {
       "horse": "daiwascarlet",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "taikishuttle": {
       "horse": "taikishuttle",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "grasswonder": {
       "horse": "grasswonder",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "hishiamazon": {
       "horse": "hishiamazon",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejiromcqueen": {
       "horse": "mejiromcqueen",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "elcondorpasa": {
       "horse": "elcondorpasa",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tmoperao": {
       "horse": "tmoperao",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "naritabrian": {
       "horse": "naritabrian",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "symbolirudolf": {
       "horse": "symbolirudolf",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "airgroove": {
       "horse": "airgroove",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "agnesdigital": {
       "horse": "agnesdigital",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "seiunsky": {
       "horse": "seiunsky",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tamamocross": {
       "horse": "tamamocross",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "finemotion": {
       "horse": "finemotion",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "biwahayahide": {
       "horse": "biwahayahide",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mayanotopgun": {
       "horse": "mayanotopgun",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "manhattancafe": {
       "horse": "manhattancafe",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mihonobourbon": {
       "horse": "mihonobourbon",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejiroryan": {
       "horse": "mejiroryan",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "hishiakebono": {
       "horse": "hishiakebono",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "yukinobijin": {
       "horse": "yukinobijin",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "riceshower": {
       "horse": "riceshower",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "inesfujin": {
       "horse": "inesfujin",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "agnestachyon": {
       "horse": "agnestachyon",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "admirevega": {
       "horse": "admirevega",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "inarione": {
       "horse": "inarione",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "winningticket": {
       "horse": "winningticket",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "airshakur": {
       "horse": "airshakur",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "eishinflash": {
       "horse": "eishinflash",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "currenchan": {
       "horse": "currenchan",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "kawakamiprincess": {
       "horse": "kawakamiprincess",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "goldcity": {
       "horse": "goldcity",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "sakurabakushino": {
       "horse": "sakurabakushino",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "seekingthepearl": {
       "horse": "seekingthepearl",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "shinkowindy": {
       "horse": "shinkowindy",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "sweeptosho": {
       "horse": "sweeptosho",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "supercreek": {
       "horse": "supercreek",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "smartfalcon": {
       "horse": "smartfalcon",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "zennorobroy": {
       "horse": "zennorobroy",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tosenjordan": {
       "horse": "tosenjordan",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "nakayamafesta": {
       "horse": "nakayamafesta",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "naritataishin": {
       "horse": "naritataishin",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "nishinoflower": {
       "horse": "nishinoflower",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "haruurara": {
       "horse": "haruurara",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "bamboomemory": {
       "horse": "bamboomemory",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "bikopegasus": {
       "horse": "bikopegasus",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "marveloussunday": {
       "horse": "marveloussunday",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "matikanefukukitaru": {
       "horse": "matikanefukukitaru",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mrcb": {
       "horse": "mrcb",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "meishodoto": {
       "horse": "meishodoto",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejirodober": {
       "horse": "mejirodober",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "nicenature": {
       "horse": "nicenature",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "kinghalo": {
       "horse": "kinghalo",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "matikanetannhauser": {
       "horse": "matikanetannhauser",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "ikunodictus": {
       "horse": "ikunodictus",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejiropalmer": {
       "horse": "mejiropalmer",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "daitakuhelios": {
       "horse": "daitakuhelios",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "twinturbo": {
       "horse": "twinturbo",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "satonodiamond": {
       "horse": "satonodiamond",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "kitasanblack": {
       "horse": "kitasanblack",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "sakurachiyonoo": {
       "horse": "sakurachiyonoo",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "siriussymboli": {
       "horse": "siriussymboli",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejiroardan": {
       "horse": "mejiroardan",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "yaenomuteki": {
       "horse": "yaenomuteki",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tsurumarutsuyoshi": {
       "horse": "tsurumarutsuyoshi",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejirobright": {
       "horse": "mejirobright",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "daringtact": {
       "horse": "daringtact",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "sakuralaurel": {
       "horse": "sakuralaurel",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "naritatoproad": {
       "horse": "naritatoproad",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "yamaninzephyr": {
       "horse": "yamaninzephyr",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "furioso": {
       "horse": "furioso",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "transcend": {
       "horse": "transcend",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "espoircity": {
       "horse": "espoircity",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "northflight": {
       "horse": "northflight",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "symbolikriss": {
       "horse": "symbolikriss",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "taninogimlet": {
       "horse": "taninogimlet",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "daiichiruby": {
       "horse": "daiichiruby",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "mejiroramonu": {
       "horse": "mejiroramonu",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "astonmachan": {
       "horse": "astonmachan",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "satonocrown": {
       "horse": "satonocrown",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "chevalgrand": {
       "horse": "chevalgrand",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "verxina": {
       "horse": "verxina",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "vivlos": {
       "horse": "vivlos",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "dantsuflame": {
       "horse": "dantsuflame",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "ksmiracle": {
       "horse": "ksmiracle",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "junglepocket": {
       "horse": "junglepocket",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "believe": {
       "horse": "believe",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "noreason": {
       "horse": "noreason",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "stillinlove": {
       "horse": "stillinlove",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "copanorickey": {
       "horse": "copanorickey",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "hokkotarumae": {
       "horse": "hokkotarumae",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "wonderacute": {
       "horse": "wonderacute",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "samsonbig": {
       "horse": "samsonbig",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "soundsofearth": {
       "horse": "soundsofearth",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "royceandroyce": {
       "horse": "royceandroyce",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "katsuragiace": {
       "horse": "katsuragiace",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "neouniverse": {
       "horse": "neouniverse",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "hishimiracle": {
       "horse": "hishimiracle",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tapdancecity": {
       "horse": "tapdancecity",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "duramente": {
       "horse": "duramente",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "rheinkraft": {
       "horse": "rheinkraft",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "cesario": {
       "horse": "cesario",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "airmessiah": {
       "horse": "airmessiah",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "daringheart": {
       "horse": "daringheart",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "fusaichipandora": {
       "horse": "fusaichipandora",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "buenavista": {
       "horse": "buenavista",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "orfevre": {
       "horse": "orfevre",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "gentildonna": {
       "horse": "gentildonna",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "winvariation": {
       "horse": "winvariation",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "admiregroove": {
       "horse": "admiregroove",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "dreamjourney": {
       "horse": "dreamjourney",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "calstonelighto": {
       "horse": "calstonelighto",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "durandal": {
       "horse": "durandal",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "genuine": {
       "horse": "genuine",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "bubblegumfellow": {
       "horse": "bubblegumfellow",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "sakurachitoseo": {
       "horse": "sakurachitoseo",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "fenomeno": {
       "horse": "fenomeno",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "blastonepiece": {
       "horse": "blastonepiece",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "almondeye": {
       "horse": "almondeye",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "luckylilac": {
       "horse": "luckylilac",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "granalegria": {
       "horse": "granalegria",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "lovesonlyyou": {
       "horse": "lovesonlyyou",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "chronogenesis": {
       "horse": "chronogenesis",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "currenbouquetdor": {
       "horse": "currenbouquetdor",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "staygold": {
       "horse": "staygold",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "reddesire": {
       "horse": "reddesire",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "kiseki": {
       "horse": "kiseki",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "foreveryoung": {
       "horse": "foreveryoung",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "marchelorraine": {
       "horse": "marchelorraine",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "epiphaneia": {
       "horse": "epiphaneia",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "logotype": {
       "horse": "logotype",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "victoirepisa": {
       "horse": "victoirepisa",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "rosekingdom": {
       "horse": "rosekingdom",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "rulership": {
       "horse": "rulership",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "efforia": {
       "horse": "efforia",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "titleholder": {
       "horse": "titleholder",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "phalaenopsis": {
       "horse": "phalaenopsis",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "happymeek": {
       "horse": null,
@@ -605,23 +606,23 @@
     },
     "venuspaques": {
       "horse": "venuspaques",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "rigantona": {
       "horse": "rigantona",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "sononelfie": {
       "horse": "sononelfie",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "hayakawatazuna": {
       "horse": "tokino_minoru",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "akikawayayoi": {
       "horse": "northern_taste",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "otonashietsuko": {
       "horse": null,
@@ -641,19 +642,19 @@
     },
     "lighthello": {
       "horse": "lighthello",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "darleyarabian": {
       "horse": "darleyarabian",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "godolphinbarb": {
       "horse": "godolphinbarb",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "byerleyturk": {
       "horse": "byerleyturk",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "satakemei": {
       "horse": null,
@@ -669,15 +670,15 @@
     },
     "saintlite": {
       "horse": "saintlite",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "speedsymboli": {
       "horse": "speedsymboli",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "haiseiko": {
       "horse": "haiseiko",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "tuckerbryne": {
       "horse": null,
@@ -693,7 +694,7 @@
     },
     "casinodrive": {
       "horse": "casinodrive",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "akasakamisato": {
       "horse": null,
@@ -713,11 +714,11 @@
     },
     "bochuzoku": {
       "horse": "montjeu_ire",
-      "kind": "namesake"
+      "kind": "horse"
     },
     "zankan_koukou": {
       "horse": "zankan_koukou",
-      "kind": "fan_consensus"
+      "kind": "horse"
     },
     "teppen_commentator_honizumi": {
       "horse": null,
@@ -738,7 +739,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "キャンペンガール",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995103211/"
       }
     },
     {
@@ -750,7 +752,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "wakia",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994103997/"
       }
     },
     {
@@ -762,7 +765,8 @@
       "parents": {
         "sire": "symbolirudolf",
         "dam": "トウカイナチュラル",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988101025/"
       }
     },
     {
@@ -774,7 +778,8 @@
       "parents": {
         "sire": "nijinsky",
         "dam": "shill",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0003bd/"
       }
     },
     {
@@ -786,7 +791,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "millracer",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1992109618/"
       }
     },
     {
@@ -798,7 +804,8 @@
       "parents": {
         "sire": "dancing_cap",
         "dam": "ホワイトナルビー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985102167/"
       }
     },
     {
@@ -810,7 +817,8 @@
       "parents": {
         "sire": "staygold",
         "dam": "ポイントフラッグ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2009102739/"
       }
     },
     {
@@ -822,7 +830,8 @@
       "parents": {
         "sire": "taninogimlet",
         "dam": "タニノシスター",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2004104258/"
       }
     },
     {
@@ -834,7 +843,8 @@
       "parents": {
         "sire": "agnestachyon",
         "dam": "スカーレットブーケ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2004103198/"
       }
     },
     {
@@ -846,7 +856,8 @@
       "parents": {
         "sire": "devil_s_bag",
         "dam": "ウェルシュマフィン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994109686/"
       }
     },
     {
@@ -858,7 +869,8 @@
       "parents": {
         "sire": "silver_hawk",
         "dam": "ameriflora",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995108676/"
       }
     },
     {
@@ -870,7 +882,8 @@
       "parents": {
         "sire": "theatrical",
         "dam": "katies",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1991109852/"
       }
     },
     {
@@ -882,7 +895,8 @@
       "parents": {
         "sire": "mejiro_titan",
         "dam": "mejiro_aurola",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987107235/"
       }
     },
     {
@@ -894,7 +908,8 @@
       "parents": {
         "sire": "kingmambo",
         "dam": "saddlers_gal",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995108742/"
       }
     },
     {
@@ -906,7 +921,8 @@
       "parents": {
         "sire": "opera_house",
         "dam": "once_wed",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996100292/"
       }
     },
     {
@@ -918,7 +934,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "pacificus",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1991108889/"
       }
     },
     {
@@ -930,7 +947,8 @@
       "parents": {
         "sire": "partholon",
         "dam": "スイートルナ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981107017/"
       }
     },
     {
@@ -942,7 +960,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "ダイナカール",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993109154/"
       }
     },
     {
@@ -954,7 +973,8 @@
       "parents": {
         "sire": "crafty_prospector",
         "dam": "chancey_squaw",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1997110025/"
       }
     },
     {
@@ -966,7 +986,8 @@
       "parents": {
         "sire": "sheriff_s_star",
         "dam": "シスターミル",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995107393/"
       }
     },
     {
@@ -978,7 +999,8 @@
       "parents": {
         "sire": "シービークロス",
         "dam": "グリーンシャトー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1984101673/"
       }
     },
     {
@@ -990,7 +1012,8 @@
       "parents": {
         "sire": "デインヒル",
         "dam": "cocotte",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999110187/"
       }
     },
     {
@@ -1002,7 +1025,8 @@
       "parents": {
         "sire": "sharrood",
         "dam": "pacificus",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990103355/"
       }
     },
     {
@@ -1014,7 +1038,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "alp_me_please",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1992102988/"
       }
     },
     {
@@ -1026,7 +1051,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "subtle_change",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998101554/"
       }
     },
     {
@@ -1038,7 +1064,8 @@
       "parents": {
         "sire": "magnitude",
         "dam": "カツミエコー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1989103049/"
       }
     },
     {
@@ -1050,7 +1077,8 @@
       "parents": {
         "sire": "アンバーシャダイ",
         "dam": "メジロチェイサー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987105368/"
       }
     },
     {
@@ -1062,7 +1090,8 @@
       "parents": {
         "sire": "woodman",
         "dam": "mysteries",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1992110167/"
       }
     },
     {
@@ -1074,7 +1103,8 @@
       "parents": {
         "sire": "サクラユタカオー",
         "dam": "ファティマ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990103565/"
       }
     },
     {
@@ -1086,7 +1116,8 @@
       "parents": {
         "sire": "real_shadai",
         "dam": "ライラックポイント",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1989107699/"
       }
     },
     {
@@ -1098,7 +1129,8 @@
       "parents": {
         "sire": "sea_hawk",
         "dam": "テスコパール",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987100579/"
       }
     },
     {
@@ -1110,7 +1142,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "アグネスフローラ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998101516/"
       }
     },
     {
@@ -1122,7 +1155,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "ベガ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996107396/"
       }
     },
     {
@@ -1134,7 +1168,8 @@
       "parents": {
         "sire": "mill_george",
         "dam": "テイトヤシマ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1984106229/"
       }
     },
     {
@@ -1146,7 +1181,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "パワフルレディ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990102314/"
       }
     },
     {
@@ -1158,7 +1194,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "i_dreamed_a_dream",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1997103398/"
       }
     },
     {
@@ -1170,7 +1207,8 @@
       "parents": {
         "sire": "キングズベスト",
         "dam": "moonlady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2007102951/"
       }
     },
     {
@@ -1182,7 +1220,8 @@
       "parents": {
         "sire": "クロフネ",
         "dam": "スプリングチケット",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2007102807/"
       }
     },
     {
@@ -1194,7 +1233,8 @@
       "parents": {
         "sire": "kinghalo",
         "dam": "takano_secretary",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2003107045/"
       }
     },
     {
@@ -1206,7 +1246,8 @@
       "parents": {
         "sire": "viceregal",
         "dam": "イタリアンシチー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1984105823/"
       }
     },
     {
@@ -1218,7 +1259,8 @@
       "parents": {
         "sire": "サクラユタカオー",
         "dam": "サクラハゴロモ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1989108341/"
       }
     },
     {
@@ -1230,7 +1272,8 @@
       "parents": {
         "sire": "seeking_the_gold",
         "dam": "page_proof",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994109364/"
       }
     },
     {
@@ -1242,7 +1285,8 @@
       "parents": {
         "sire": "doulab",
         "dam": "ローズコマンダー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993106964/"
       }
     },
     {
@@ -1254,7 +1298,8 @@
       "parents": {
         "sire": "end_sweep",
         "dam": "タバサトウショウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2001104313/"
       }
     },
     {
@@ -1266,7 +1311,8 @@
       "parents": {
         "sire": "no_attention",
         "dam": "ナイスデイ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985104409/"
       }
     },
     {
@@ -1278,7 +1324,8 @@
       "parents": {
         "sire": "ゴールドアリュール",
         "dam": "ケイシュウハーブ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2005100097/"
       }
     },
     {
@@ -1290,7 +1337,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "roamin_rachel",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2000101517/"
       }
     },
     {
@@ -1302,7 +1350,8 @@
       "parents": {
         "sire": "junglepocket",
         "dam": "エヴリウィスパー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2006103169/"
       }
     },
     {
@@ -1314,7 +1363,8 @@
       "parents": {
         "sire": "staygold",
         "dam": "ディアウィンク",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2006102424/"
       }
     },
     {
@@ -1326,7 +1376,8 @@
       "parents": {
         "sire": "rivlia",
         "dam": "タイシンリリイ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990102766/"
       }
     },
     {
@@ -1338,7 +1389,8 @@
       "parents": {
         "sire": "majestic_light",
         "dam": "duplicit",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1989107262/"
       }
     },
     {
@@ -1350,7 +1402,8 @@
       "parents": {
         "sire": "ニッポーテイオー",
         "dam": "ヒロイン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996106177/"
       }
     },
     {
@@ -1362,7 +1415,8 @@
       "parents": {
         "sire": "morning_frolic",
         "dam": "マドンナバンブー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985104122/"
       }
     },
     {
@@ -1374,7 +1428,8 @@
       "parents": {
         "sire": "danzig",
         "dam": "condessa",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1991109886/"
       }
     },
     {
@@ -1386,7 +1441,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "モミジダンサー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1992103687/"
       }
     },
     {
@@ -1398,7 +1454,8 @@
       "parents": {
         "sire": "crystal_glitters",
         "dam": "アテナトウショウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994100530/"
       }
     },
     {
@@ -1410,7 +1467,8 @@
       "parents": {
         "sire": "トウショウボーイ",
         "dam": "シービークイン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1980107022/"
       }
     },
     {
@@ -1422,7 +1480,8 @@
       "parents": {
         "sire": "bigstone",
         "dam": "princess_reema",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996110113/"
       }
     },
     {
@@ -1434,7 +1493,8 @@
       "parents": {
         "sire": "mejiroryan",
         "dam": "メジロビューティー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994108393/"
       }
     },
     {
@@ -1446,7 +1506,8 @@
       "parents": {
         "sire": "nice_dancer",
         "dam": "ウラカワミユキ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988104866/"
       }
     },
     {
@@ -1458,7 +1519,8 @@
       "parents": {
         "sire": "dancing_brave",
         "dam": "goodbye_halo",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995104427/"
       }
     },
     {
@@ -1470,7 +1532,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "クリプシー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1989103489/"
       }
     },
     {
@@ -1482,7 +1545,8 @@
       "parents": {
         "sire": "dictus",
         "dam": "ダイナランディング",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987104784/"
       }
     },
     {
@@ -1494,7 +1558,8 @@
       "parents": {
         "sire": "メジロイーグル",
         "dam": "メジロファンタジー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987105372/"
       }
     },
     {
@@ -1506,7 +1571,8 @@
       "parents": {
         "sire": "ビゼンニシキ",
         "dam": "ネヴアーイチバン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987102798/"
       }
     },
     {
@@ -1518,7 +1584,8 @@
       "parents": {
         "sire": "lyra_ridge",
         "dam": "レーシングジイーン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988106332/"
       }
     },
     {
@@ -1530,7 +1597,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "malpensa",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2013106101/"
       }
     },
     {
@@ -1542,7 +1610,8 @@
       "parents": {
         "sire": "ブラックタイド",
         "dam": "シュガーハート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2012102013/"
       }
     },
     {
@@ -1554,7 +1623,8 @@
       "parents": {
         "sire": "maruzensky",
         "dam": "サクラセダン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985100743/"
       }
     },
     {
@@ -1566,7 +1636,8 @@
       "parents": {
         "sire": "mogami",
         "dam": "スイートエプソム",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1982103448/"
       }
     },
     {
@@ -1578,7 +1649,8 @@
       "parents": {
         "sire": "アスワン",
         "dam": "メジロヒリュウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985103406/"
       }
     },
     {
@@ -1590,7 +1662,8 @@
       "parents": {
         "sire": "ヤマニンスキー",
         "dam": "ツルミスター",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985104215/"
       }
     },
     {
@@ -1602,7 +1675,8 @@
       "parents": {
         "sire": "symbolirudolf",
         "dam": "sweet_cielo",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995108246/"
       }
     },
     {
@@ -1614,7 +1688,8 @@
       "parents": {
         "sire": "mejiroryan",
         "dam": "レールデユタン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994108411/"
       }
     },
     {
@@ -1626,7 +1701,8 @@
       "parents": {
         "sire": "epiphaneia",
         "dam": "デアリングバード",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2017100720/"
       }
     },
     {
@@ -1638,7 +1714,8 @@
       "parents": {
         "sire": "rainbow_quest",
         "dam": "lola_lola",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1991103498/"
       }
     },
     {
@@ -1650,7 +1727,8 @@
       "parents": {
         "sire": "サッカーボーイ",
         "dam": "floral_magic",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996102442/"
       }
     },
     {
@@ -1662,7 +1740,8 @@
       "parents": {
         "sire": "ニホンピロウイナー",
         "dam": "ヤマニンポリシー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988101069/"
       }
     },
     {
@@ -1674,7 +1753,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "ファーザ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2004106867/"
       }
     },
     {
@@ -1686,7 +1766,8 @@
       "parents": {
         "sire": "wild_rush",
         "dam": "シネマスコープ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2006104736/"
       }
     },
     {
@@ -1698,7 +1779,8 @@
       "parents": {
         "sire": "ゴールドアリュール",
         "dam": "エミネントシチー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2005102837/"
       }
     },
     {
@@ -1710,7 +1792,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "シャダイフライト",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990100908/"
       }
     },
     {
@@ -1722,7 +1805,8 @@
       "parents": {
         "sire": "kris_s",
         "dam": "tee_kay",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999110099/"
       }
     },
     {
@@ -1734,7 +1818,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "タニノクリスタル",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999100226/"
       }
     },
     {
@@ -1746,7 +1831,8 @@
       "parents": {
         "sire": "トウショウボーイ",
         "dam": "ハギノトップレディ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987100260/"
       }
     },
     {
@@ -1758,7 +1844,8 @@
       "parents": {
         "sire": "mogami",
         "dam": "メジロヒリュウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1983103914/"
       }
     },
     {
@@ -1770,7 +1857,8 @@
       "parents": {
         "sire": "アドマイヤコジーン",
         "dam": "ラスリングカプス",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2004103323/"
       }
     },
     {
@@ -1782,7 +1870,8 @@
       "parents": {
         "sire": "marju",
         "dam": "ii",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2012104668/"
       }
     },
     {
@@ -1794,7 +1883,8 @@
       "parents": {
         "sire": "ハーツクライ",
         "dam": "ハルーワスウィート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2012104759/"
       }
     },
     {
@@ -1806,7 +1896,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "ハルーワスウィート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2009106264/"
       }
     },
     {
@@ -1818,7 +1909,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "ハルーワスウィート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2013106007/"
       }
     },
     {
@@ -1830,7 +1922,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "インターピレネー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998103058/"
       }
     },
     {
@@ -1842,7 +1935,8 @@
       "parents": {
         "sire": "stutz_blackhawk",
         "dam": "lady_bend_fager",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988107943/"
       }
     },
     {
@@ -1854,7 +1948,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "dance_charmer",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998101786/"
       }
     },
     {
@@ -1866,7 +1961,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "great_christine",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998101038/"
       }
     },
     {
@@ -1878,7 +1974,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "ambrosine",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999104198/"
       }
     },
     {
@@ -1890,7 +1987,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "bradamante",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2000106022/"
       }
     },
     {
@@ -1902,7 +2000,8 @@
       "parents": {
         "sire": "ゴールドアリュール",
         "dam": "コパノニキータ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2010106548/"
       }
     },
     {
@@ -1914,7 +2013,8 @@
       "parents": {
         "sire": "キングカメハメハ",
         "dam": "マダムチェロキー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2009100921/"
       }
     },
     {
@@ -1926,7 +2026,8 @@
       "parents": {
         "sire": "charismatic",
         "dam": "ワンダーヘリテージ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2006106794/"
       }
     },
     {
@@ -1938,7 +2039,8 @@
       "parents": {
         "sire": "サクラショウリ",
         "dam": "シュンイチオーカン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1991104957/"
       }
     },
     {
@@ -1950,7 +2052,8 @@
       "parents": {
         "sire": "neouniverse",
         "dam": "first_violin",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2011104377/"
       }
     },
     {
@@ -1962,7 +2065,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "that_s_my_pal",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990104491/"
       }
     },
     {
@@ -1974,7 +2078,8 @@
       "parents": {
         "sire": "boysie_boy",
         "dam": "タニノベンチャ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1980101425/"
       }
     },
     {
@@ -1986,7 +2091,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "pointed_pass",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2000101426/"
       }
     },
     {
@@ -1998,7 +2104,8 @@
       "parents": {
         "sire": "サッカーボーイ",
         "dam": "シュンサクヨシコ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999104693/"
       }
     },
     {
@@ -2010,7 +2117,8 @@
       "parents": {
         "sire": "pleasant_tap",
         "dam": "all_dance",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1997110043/"
       }
     },
     {
@@ -2022,7 +2130,8 @@
       "parents": {
         "sire": "キングカメハメハ",
         "dam": "admiregroove",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2012104511/"
       }
     },
     {
@@ -2034,7 +2143,8 @@
       "parents": {
         "sire": "end_sweep",
         "dam": "マストビーラヴド",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100959/"
       }
     },
     {
@@ -2046,7 +2156,8 @@
       "parents": {
         "sire": "specialweek",
         "dam": "kirov_premiere",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100844/"
       }
     },
     {
@@ -2058,7 +2169,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "エアデジャヴー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100516/"
       }
     },
     {
@@ -2070,7 +2182,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "daring_danzig",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100600/"
       }
     },
     {
@@ -2082,7 +2195,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "lotta_lace",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2003103043/"
       }
     },
     {
@@ -2094,7 +2208,8 @@
       "parents": {
         "sire": "specialweek",
         "dam": "ビワハイジ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2006103319/"
       }
     },
     {
@@ -2106,7 +2221,8 @@
       "parents": {
         "sire": "staygold",
         "dam": "オリエンタルアート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2008102636/"
       }
     },
     {
@@ -2118,7 +2234,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "donna_blini",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2009106253/"
       }
     },
     {
@@ -2130,7 +2247,8 @@
       "parents": {
         "sire": "ハーツクライ",
         "dam": "スーパーバレリーナ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2008103206/"
       }
     },
     {
@@ -2142,7 +2260,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "airgroove",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2000107542/"
       }
     },
     {
@@ -2154,7 +2273,8 @@
       "parents": {
         "sire": "staygold",
         "dam": "オリエンタルアート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2004102753/"
       }
     },
     {
@@ -2166,7 +2286,8 @@
       "parents": {
         "sire": "warning",
         "dam": "オオシマルチア",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998103333/"
       }
     },
     {
@@ -2178,7 +2299,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "サワヤカプリンセス",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999106756/"
       }
     },
     {
@@ -2190,7 +2312,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "croupier_lady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1992109450/"
       }
     },
     {
@@ -2202,7 +2325,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "bubble_company",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993109219/"
       }
     },
     {
@@ -2214,7 +2338,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "サクラクレアー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990108898/"
       }
     },
     {
@@ -2226,7 +2351,8 @@
       "parents": {
         "sire": "staygold",
         "dam": "de_laroche",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2009106599/"
       }
     },
     {
@@ -2238,7 +2364,8 @@
       "parents": {
         "sire": "harbinger",
         "dam": "ツルマルワンピース",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2015104882/"
       }
     },
     {
@@ -2250,7 +2377,8 @@
       "parents": {
         "sire": "ロードカナロア",
         "dam": "fusaichipandora",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2015104961/"
       }
     },
     {
@@ -2262,7 +2390,8 @@
       "parents": {
         "sire": "orfevre",
         "dam": "lilacs_and_lace",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2015105046/"
       }
     },
     {
@@ -2274,7 +2403,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "tapitsfly",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2016104532/"
       }
     },
     {
@@ -2286,7 +2416,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "loves_only_me",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2016104648/"
       }
     },
     {
@@ -2298,7 +2429,8 @@
       "parents": {
         "sire": "bago",
         "dam": "クロノロジスト",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2016104750/"
       }
     },
     {
@@ -2310,7 +2442,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "solaria",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2016105089/"
       }
     },
     {
@@ -2322,7 +2455,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "ゴールデンサッシュ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994108729/"
       }
     },
     {
@@ -2334,7 +2468,8 @@
       "parents": {
         "sire": "manhattancafe",
         "dam": "グレイトサンライズ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2006102929/"
       }
     },
     {
@@ -2346,7 +2481,8 @@
       "parents": {
         "sire": "rulership",
         "dam": "ブリッツフィナーレ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2014101976/"
       }
     },
     {
@@ -2358,7 +2494,8 @@
       "parents": {
         "sire": "real_steel",
         "dam": "forever_darling",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2021105727/"
       }
     },
     {
@@ -2370,7 +2507,8 @@
       "parents": {
         "sire": "orfevre",
         "dam": "ヴィートマルシェ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2016104426/"
       }
     },
     {
@@ -2382,7 +2520,8 @@
       "parents": {
         "sire": "symbolikriss",
         "dam": "cesario",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2010104155/"
       }
     },
     {
@@ -2394,7 +2533,8 @@
       "parents": {
         "sire": "ローエングリン",
         "dam": "ステレオタイプ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2010103783/"
       }
     },
     {
@@ -2406,7 +2546,8 @@
       "parents": {
         "sire": "neouniverse",
         "dam": "whitewater_affair",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2007102923/"
       }
     },
     {
@@ -2418,7 +2559,8 @@
       "parents": {
         "sire": "キングカメハメハ",
         "dam": "ローズバド",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2007103404/"
       }
     },
     {
@@ -2430,7 +2572,8 @@
       "parents": {
         "sire": "キングカメハメハ",
         "dam": "airgroove",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2007103143/"
       }
     },
     {
@@ -2442,7 +2585,8 @@
       "parents": {
         "sire": "duramente",
         "dam": "メーヴェ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2018103559/"
       }
     },
     {
@@ -2471,29 +2615,21 @@
     },
     {
       "id": "venuspaques",
-      "zh": "维纳斯公园",
+      "alias_of": "treve",
+      "zh": "卓芙",
       "ja": "ヴェニュスパーク",
       "en": "Venus Paques",
       "avatar": "uma_avatars/VenusPaques.png",
-      "real_name": "Treve",
-      "parents": {
-        "sire": "motivator_gb",
-        "dam": "trevise_fr",
-        "source": "legacy"
-      }
+      "real_name": "Treve"
     },
     {
       "id": "rigantona",
+      "alias_of": "dancing_brave",
       "zh": "里格安东娜",
       "ja": "リガントーナ",
       "en": "Rigantona",
       "avatar": "uma_avatars/Rigantona.png",
-      "real_name": "Dancing Brave",
-      "parents": {
-        "sire": "lyphard_usa",
-        "dam": "navajo_princess_usa",
-        "source": "legacy"
-      }
+      "real_name": "Dancing Brave"
     },
     {
       "id": "sononelfie",
@@ -2505,7 +2641,8 @@
       "parents": {
         "sire": "クロフネ",
         "dam": "ロジータ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2007104510/"
       }
     },
     {
@@ -2568,7 +2705,8 @@
       "parents": {
         "sire": "haku_taisei_gb",
         "dam": "nice_rose_jpn",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994100030/"
       }
     },
     {
@@ -2625,7 +2763,8 @@
       "parents": {
         "sire": "diolite",
         "dam": "flippancy",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0008a9/"
       }
     },
     {
@@ -2637,7 +2776,8 @@
       "parents": {
         "sire": "royal_challenger",
         "dam": "スイートイン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1963100089/"
       }
     },
     {
@@ -2649,7 +2789,8 @@
       "parents": {
         "sire": "china_rock",
         "dam": "ハイユウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000b7f/"
       }
     },
     {
@@ -2685,7 +2826,8 @@
       "parents": {
         "sire": "mineshaft",
         "dam": "better_than_honour",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2005110112/"
       }
     },
     {
@@ -2712,7 +2854,8 @@
       "parents": {
         "sire": "halo",
         "dam": "wishing_well",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00033a/"
       }
     },
     {
@@ -2723,7 +2866,8 @@
       "parents": {
         "sire": "hail_to_reason",
         "dam": "cosmah",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0012bf/"
       }
     },
     {
@@ -2734,7 +2878,8 @@
       "parents": {
         "sire": "understanding",
         "dam": "mountain_flower",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a008c1e/"
       }
     },
     {
@@ -2745,7 +2890,8 @@
       "parents": {
         "sire": "kampala",
         "dam": "severn_bridge",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1983109006/"
       }
     },
     {
@@ -2767,7 +2913,8 @@
       "parents": {
         "sire": "turn_to",
         "dam": "nothirdchance",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000f2b/"
       }
     },
     {
@@ -2829,7 +2976,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "lady_victoria",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000258/"
       }
     },
     {
@@ -2846,7 +2994,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "antique_value",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990104462/"
       }
     },
     {
@@ -2863,7 +3012,8 @@
       "parents": {
         "sire": "nearctic",
         "dam": "natalma",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000e04/"
       }
     },
     {
@@ -2880,7 +3030,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "real_crafty_lady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00193b/"
       }
     },
     {
@@ -2891,7 +3042,8 @@
       "parents": {
         "sire": "chief_s_crown",
         "dam": "allicance",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00abee/"
       }
     },
     {
@@ -2902,7 +3054,8 @@
       "parents": {
         "sire": "raise_a_native",
         "dam": "gold_digger",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001607/"
       }
     },
     {
@@ -2965,7 +3118,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "pas_de_nom",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0000d3/"
       }
     },
     {
@@ -2986,10 +3140,17 @@
       "ja": "",
       "en": "Runaway Bride",
       "parents": {
-        "sire": "donut_king",
-        "dam": "fleeting_doll",
-        "source": "legacy"
+        "sire": "wild_risk",
+        "dam": "aimee",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0079de/"
       }
+    },
+    {
+      "id": "aimee",
+      "zh": "Aimee",
+      "ja": "",
+      "en": "Aimee"
     },
     {
       "id": "アグネスフローラ",
@@ -2999,7 +3160,8 @@
       "parents": {
         "sire": "royal_ski",
         "dam": "アグネスレディー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987103805/"
       }
     },
     {
@@ -3118,7 +3280,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "i_dreamed_a_dream",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995107979/"
       }
     },
     {
@@ -3129,7 +3292,8 @@
       "parents": {
         "sire": "well_decorated",
         "dam": "hidden_trail",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00018c/"
       }
     },
     {
@@ -3170,7 +3334,8 @@
       "parents": {
         "sire": "キングカメハメハ",
         "dam": "レディブラッサム",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2008103552/"
       }
     },
     {
@@ -3181,7 +3346,8 @@
       "parents": {
         "sire": "kingmambo",
         "dam": "manfath",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2001103460/"
       }
     },
     {
@@ -3198,7 +3364,8 @@
       "parents": {
         "sire": "nureyev",
         "dam": "sex_appeal",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a006604/"
       }
     },
     {
@@ -3209,7 +3376,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "miesque",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001d7e/"
       }
     },
     {
@@ -3231,7 +3399,8 @@
       "parents": {
         "sire": "storm_bird",
         "dam": "terlingua",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001a98/"
       }
     },
     {
@@ -3248,7 +3417,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "special",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001676/"
       }
     },
     {
@@ -3265,7 +3435,8 @@
       "parents": {
         "sire": "cozzene",
         "dam": "アドマイヤマカディ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996106512/"
       }
     },
     {
@@ -3276,7 +3447,8 @@
       "parents": {
         "sire": "woodman",
         "dam": "fieldy",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993109739/"
       }
     },
     {
@@ -3316,7 +3488,8 @@
       "parents": {
         "sire": "fortino",
         "dam": "chambord",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0010ed/"
       }
     },
     {
@@ -3357,7 +3530,8 @@
       "parents": {
         "sire": "grey_dawn",
         "dam": "timely_affair",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000474/"
       }
     },
     {
@@ -3368,7 +3542,8 @@
       "parents": {
         "sire": "moubariz",
         "dam": "ニンバスバンブー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1978106291/"
       }
     },
     {
@@ -3451,7 +3626,8 @@
       "parents": {
         "sire": "danzig",
         "dam": "great_lady_m",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00015d/"
       }
     },
     {
@@ -3491,7 +3667,8 @@
       "parents": {
         "sire": "condorcet",
         "dam": "varinessa",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00964c/"
       }
     },
     {
@@ -3572,7 +3749,8 @@
       "parents": {
         "sire": "caro",
         "dam": "angel_island",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0002f5/"
       }
     },
     {
@@ -3583,7 +3761,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "pacific_princess",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0062b2/"
       }
     },
     {
@@ -3673,7 +3852,8 @@
       "parents": {
         "sire": "キングカメハメハ",
         "dam": "ツルマルグラマー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2008101894/"
       }
     },
     {
@@ -3682,9 +3862,10 @@
       "ja": "",
       "en": "Dansili",
       "parents": {
-        "sire": "danzig",
+        "sire": "デインヒル",
         "dam": "hasili",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a010a5f/"
       }
     },
     {
@@ -3707,7 +3888,8 @@
       "parents": {
         "sire": "danzig",
         "dam": "razy_ana",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0000d1/"
       }
     },
     {
@@ -3747,7 +3929,8 @@
       "parents": {
         "sire": "lyphard",
         "dam": "prodice",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000087/"
       }
     },
     {
@@ -3758,7 +3941,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "goofed",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001205/"
       }
     },
     {
@@ -3798,7 +3982,8 @@
       "parents": {
         "sire": "caerleon",
         "dam": "aghsan",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993109481/"
       }
     },
     {
@@ -3809,7 +3994,8 @@
       "parents": {
         "sire": "maruzensky",
         "dam": "レディーシラオキ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987101495/"
       }
     },
     {
@@ -3838,7 +4024,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "flaming_page",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000dfe/"
       }
     },
     {
@@ -3880,7 +4067,8 @@
       "parents": {
         "sire": "crystal_glitters",
         "dam": "オオシマスズラン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990100610/"
       }
     },
     {
@@ -3903,7 +4091,8 @@
       "parents": {
         "sire": "blushing_groom",
         "dam": "tales_to_tell",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0000c0/"
       }
     },
     {
@@ -3943,7 +4132,8 @@
       "parents": {
         "sire": "red_god",
         "dam": "runaway_bride",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001340/"
       }
     },
     {
@@ -3972,7 +4162,8 @@
       "parents": {
         "sire": "a_p_indy",
         "dam": "prospectors_delite",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a010545/"
       }
     },
     {
@@ -3983,7 +4174,8 @@
       "parents": {
         "sire": "deputy_minister",
         "dam": "blush_with_pride",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a010cb3/"
       }
     },
     {
@@ -4023,7 +4215,8 @@
       "parents": {
         "sire": "bold_reasoning",
         "dam": "my_charmer",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0015fc/"
       }
     },
     {
@@ -4092,7 +4285,8 @@
       "parents": {
         "sire": "bold_reason",
         "dam": "special",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a008892/"
       }
     },
     {
@@ -4143,7 +4337,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "coup_de_folie",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001c1d/"
       }
     },
     {
@@ -4164,10 +4359,17 @@
       "ja": "",
       "en": "Coup de Folie",
       "parents": {
-        "sire": "nureyev",
-        "dam": "morn_of_song",
-        "source": "legacy"
+        "sire": "halo",
+        "dam": "raise_the_standard",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00931f/"
       }
+    },
+    {
+      "id": "raise_the_standard",
+      "zh": "Raise the Standard",
+      "ja": "",
+      "en": "Raise the Standard"
     },
     {
       "id": "morn_of_song",
@@ -4199,7 +4401,8 @@
       "parents": {
         "sire": "クロフネ",
         "dam": "インディスユニゾン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2003103047/"
       }
     },
     {
@@ -4227,7 +4430,8 @@
       "parents": {
         "sire": "フレンチデピュティ",
         "dam": "ブルーアヴェニュー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998110135/"
       }
     },
     {
@@ -4267,7 +4471,8 @@
       "parents": {
         "sire": "classic_go_go",
         "dam": "eliza_blue",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000071/"
       }
     },
     {
@@ -4295,7 +4500,8 @@
       "parents": {
         "sire": "timber_country",
         "dam": "ニホンピロローズ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2001107110/"
       }
     },
     {
@@ -4342,7 +4548,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "wind_in_her_hair",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100816/"
       }
     },
     {
@@ -4353,7 +4560,8 @@
       "parents": {
         "sire": "scat_daddy",
         "dam": "so_linda",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a012945/"
       }
     },
     {
@@ -4438,7 +4646,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "カズミハルコマ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1997103424/"
       }
     },
     {
@@ -4490,7 +4699,8 @@
       "parents": {
         "sire": "sancy",
         "dam": "イットー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1977104003/"
       }
     },
     {
@@ -4501,7 +4711,8 @@
       "parents": {
         "sire": "princely_gift",
         "dam": "suncourt",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000355/"
       }
     },
     {
@@ -4608,7 +4819,8 @@
       "parents": {
         "sire": "dandy_lute",
         "dam": "ベニバナビゼン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981106396/"
       }
     },
     {
@@ -4619,7 +4831,8 @@
       "parents": {
         "sire": "never_beat",
         "dam": "ミスナンバイチバン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00581c/"
       }
     },
     {
@@ -4701,7 +4914,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "スカーレットインク",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988107320/"
       }
     },
     {
@@ -4724,46 +4938,42 @@
     },
     {
       "id": "motivator2002",
+      "alias_of": "motivator_gb",
       "zh": "Motivator2002 鹿毛",
       "ja": "",
-      "en": "Motivator2002 鹿毛",
-      "parents": {
-        "sire": "montjeu1996",
-        "dam": "out_west1994",
-        "source": "legacy"
-      }
+      "en": "Motivator2002 鹿毛"
     },
     {
       "id": "trevise2000",
+      "alias_of": "trevise",
       "zh": "Trevise2000 鹿毛",
       "ja": "",
-      "en": "Trevise2000 鹿毛",
-      "parents": {
-        "sire": "anabaa1992",
-        "dam": "trevillari1987",
-        "source": "legacy"
-      }
+      "en": "Trevise2000 鹿毛"
     },
     {
       "id": "montjeu1996",
+      "alias_of": "montjeu_ire",
       "zh": "Montjeu1996 鹿毛",
       "ja": "",
       "en": "Montjeu1996 鹿毛"
     },
     {
       "id": "out_west1994",
+      "alias_of": "out_west",
       "zh": "Out West1994 黒鹿毛",
       "ja": "",
       "en": "Out West1994 黒鹿毛"
     },
     {
       "id": "anabaa1992",
+      "alias_of": "anabaa",
       "zh": "Anabaa1992 鹿毛",
       "ja": "",
       "en": "Anabaa1992 鹿毛"
     },
     {
       "id": "trevillari1987",
+      "alias_of": "trevillari",
       "zh": "Trevillari1987 鹿毛",
       "ja": "",
       "en": "Trevillari1987 鹿毛"
@@ -4776,7 +4986,8 @@
       "parents": {
         "sire": "top_ville",
         "dam": "toute_cy",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00aedc/"
       }
     },
     {
@@ -4822,7 +5033,8 @@
       "parents": {
         "sire": "roberto",
         "dam": "kelley_s_day",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000082/"
       }
     },
     {
@@ -4833,7 +5045,8 @@
       "parents": {
         "sire": "sanquirico",
         "dam": "モンテマリア",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990106996/"
       }
     },
     {
@@ -4889,7 +5102,8 @@
       "parents": {
         "sire": "lyphard",
         "dam": "goofed",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0001f6/"
       }
     },
     {
@@ -4912,7 +5126,8 @@
       "parents": {
         "sire": "danzig",
         "dam": "impetuous_gal",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0000d5/"
       }
     },
     {
@@ -4952,7 +5167,8 @@
       "parents": {
         "sire": "roberto",
         "dam": "sharp_queen",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0016f2/"
       }
     },
     {
@@ -5003,7 +5219,8 @@
       "parents": {
         "sire": "sanctus",
         "dam": "doronic",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0000ed/"
       }
     },
     {
@@ -5073,7 +5290,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "scotch_princess",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1986104964/"
       }
     },
     {
@@ -5102,7 +5320,8 @@
       "parents": {
         "sire": "kingmambo",
         "dam": "allegretta",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0022d2/"
       }
     },
     {
@@ -5113,7 +5332,8 @@
       "parents": {
         "sire": "platini",
         "dam": "midnight_fever",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a010eb7/"
       }
     },
     {
@@ -5178,7 +5398,8 @@
       "parents": {
         "sire": "sadler_s_wells",
         "dam": "glenveagh",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0002c9/"
       }
     },
     {
@@ -5212,7 +5433,8 @@
       "parents": {
         "sire": "gold_meridian",
         "dam": "tri_argo",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00b2b6/"
       }
     },
     {
@@ -5223,7 +5445,8 @@
       "parents": {
         "sire": "princequillo",
         "dam": "bridgework",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0083b4/"
       }
     },
     {
@@ -5246,7 +5469,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "ヘップバーンシチー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998106179/"
       }
     },
     {
@@ -5275,7 +5499,8 @@
       "parents": {
         "sire": "デインヒル",
         "dam": "sea_port",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00fe54/"
       }
     },
     {
@@ -5310,7 +5535,8 @@
       "parents": {
         "sire": "troy",
         "dam": "gay_milly",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00a870/"
       }
     },
     {
@@ -5375,7 +5601,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "loves_only_me",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2012104889/"
       }
     },
     {
@@ -5386,7 +5613,8 @@
       "parents": {
         "sire": "congrats",
         "dam": "darling_my_darling",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a013dcb/"
       }
     },
     {
@@ -5397,7 +5625,8 @@
       "parents": {
         "sire": "storm_cat",
         "dam": "monevassia",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a01179f/"
       }
     },
     {
@@ -5432,7 +5661,8 @@
       "parents": {
         "sire": "mining",
         "dam": "one_smart_lady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a006722/"
       }
     },
     {
@@ -5443,7 +5673,8 @@
       "parents": {
         "sire": "le_fabuleux",
         "dam": "marston_s_mill",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00021e/"
       }
     },
     {
@@ -5484,7 +5715,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "baya",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00685a/"
       }
     },
     {
@@ -5518,7 +5750,8 @@
       "parents": {
         "sire": "tom_fool",
         "dam": "busanda",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000e0e/"
       }
     },
     {
@@ -5529,7 +5762,8 @@
       "parents": {
         "sire": "bertolini",
         "dam": "cal_norma_s_lady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a010eb8/"
       }
     },
     {
@@ -5570,7 +5804,8 @@
       "parents": {
         "sire": "what_luck",
         "dam": "question_d_argent",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00631a/"
       }
     },
     {
@@ -5622,7 +5857,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "victoria_regina",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0004e8/"
       }
     },
     {
@@ -5633,7 +5869,8 @@
       "parents": {
         "sire": "tesco_boy",
         "dam": "リンネス",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1979100652/"
       }
     },
     {
@@ -5685,7 +5922,8 @@
       "parents": {
         "sire": "mejiromcqueen",
         "dam": "パストラリズム",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998106155/"
       }
     },
     {
@@ -5714,7 +5952,8 @@
       "parents": {
         "sire": "tapit",
         "dam": "flying_marlin",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a01205e/"
       }
     },
     {
@@ -5823,7 +6062,8 @@
       "parents": {
         "sire": "rockefella",
         "dam": "may_wong",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0009ab/"
       }
     },
     {
@@ -5834,7 +6074,8 @@
       "parents": {
         "sire": "karim",
         "dam": "dalmogan",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0035a9/"
       }
     },
     {
@@ -5927,7 +6168,8 @@
       "parents": {
         "sire": "lypheor",
         "dam": "チヨダマサコ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1983102584/"
       }
     },
     {
@@ -5938,7 +6180,8 @@
       "parents": {
         "sire": "lucky_sovereign",
         "dam": "ピアレスレデイ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1991102559/"
       }
     },
     {
@@ -5997,7 +6240,8 @@
       "parents": {
         "sire": "seattle_slew",
         "dam": "phydilla",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0099ab/"
       }
     },
     {
@@ -6048,7 +6292,8 @@
       "parents": {
         "sire": "nureyev",
         "dam": "tree_of_knowledge",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001bed/"
       }
     },
     {
@@ -6059,7 +6304,8 @@
       "parents": {
         "sire": "nonoalco",
         "dam": "mortefontaine",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a009322/"
       }
     },
     {
@@ -6123,7 +6369,8 @@
       "parents": {
         "sire": "dictus",
         "dam": "ダイナサッシュ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985103538/"
       }
     },
     {
@@ -6134,7 +6381,8 @@
       "parents": {
         "sire": "shady_heights",
         "dam": "シュンサクレディ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1992106068/"
       }
     },
     {
@@ -6193,7 +6441,8 @@
       "parents": {
         "sire": "cherokee_run",
         "dam": "アンフォイルド",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2001105650/"
       }
     },
     {
@@ -6240,7 +6489,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "nice_randing",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1980102007/"
       }
     },
     {
@@ -6293,7 +6543,8 @@
       "parents": {
         "sire": "mill_reef",
         "dam": "miss_charisma",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00021b/"
       }
     },
     {
@@ -6304,7 +6555,8 @@
       "parents": {
         "sire": "larkspur",
         "dam": "ヤシマジェット",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955102306/"
       }
     },
     {
@@ -6369,7 +6621,8 @@
       "parents": {
         "sire": "herbager",
         "dam": "sea_nymph",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00000d/"
       }
     },
     {
@@ -6380,7 +6633,8 @@
       "parents": {
         "sire": "tesco_boy",
         "dam": "ムツミパール",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955108554/"
       }
     },
     {
@@ -6439,7 +6693,8 @@
       "parents": {
         "sire": "nureyev",
         "dam": "skillful_joy",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00657c/"
       }
     },
     {
@@ -6468,7 +6723,8 @@
       "parents": {
         "sire": "king_s_troop",
         "dam": "rising_hope",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0003e2/"
       }
     },
     {
@@ -6479,7 +6735,8 @@
       "parents": {
         "sire": "venture",
         "dam": "abbey_bridge",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955102558/"
       }
     },
     {
@@ -6550,7 +6807,8 @@
       "parents": {
         "sire": "seattle_slew",
         "dam": "summer_secretary",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996110021/"
       }
     },
     {
@@ -6572,7 +6830,8 @@
       "parents": {
         "sire": "halo",
         "dam": "pound_foolish",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0062e2/"
       }
     },
     {
@@ -6585,7 +6844,13 @@
       "id": "navajo_princess",
       "zh": "Navajo Princess",
       "ja": "",
-      "en": "Navajo Princess"
+      "en": "Navajo Princess",
+      "parents": {
+        "sire": "drone",
+        "dam": "olmec",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0081bb/"
+      }
     },
     {
       "id": "pound_foolish",
@@ -6618,7 +6883,8 @@
       "parents": {
         "sire": "sir_gaylord",
         "dam": "cap_and_bells",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001668/"
       }
     },
     {
@@ -6652,7 +6918,8 @@
       "parents": {
         "sire": "ディープインパクト",
         "dam": "ロンドンブリッジ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2008105619/"
       }
     },
     {
@@ -6681,7 +6948,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "wind_in_her_hair",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2001103312/"
       }
     },
     {
@@ -6692,7 +6960,8 @@
       "parents": {
         "sire": "sakurabakushino",
         "dam": "オトメゴコロ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2005106935/"
       }
     },
     {
@@ -6709,7 +6978,8 @@
       "parents": {
         "sire": "tesco_boy",
         "dam": "アンジェリカ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1982101222/"
       }
     },
     {
@@ -6720,7 +6990,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "clear_amber",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1984104366/"
       }
     },
     {
@@ -6743,7 +7014,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "sunny_morning",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001b86/"
       }
     },
     {
@@ -6754,7 +7026,8 @@
       "parents": {
         "sire": "never_bend",
         "dam": "princess_fager",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0001cb/"
       }
     },
     {
@@ -6812,7 +7085,8 @@
       "parents": {
         "sire": "haiseiko",
         "dam": "dancer_light_jpn",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1987104019/"
       }
     },
     {
@@ -6823,25 +7097,27 @@
       "parents": {
         "sire": "nice_dancer_can",
         "dam": "serrado_jpn",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1989104278/"
       }
     },
     {
       "id": "dancer_light_jpn",
       "zh": "Dancer Light (JPN)",
-      "ja": "",
+      "ja": "ダンサーライト",
       "en": "Dancer Light (JPN)"
     },
     {
       "id": "nice_dancer_can",
+      "alias_of": "nice_dancer",
       "zh": "Nice Dancer (CAN)",
-      "ja": "",
+      "ja": "ナイスダンサー",
       "en": "Nice Dancer (CAN)"
     },
     {
       "id": "serrado_jpn",
       "zh": "Serrado (JPN)",
-      "ja": "",
+      "ja": "セラード",
       "en": "Serrado (JPN)"
     },
     {
@@ -6864,7 +7140,8 @@
       "parents": {
         "sire": "le_beau_prince",
         "dam": "happy_night",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a007cea/"
       }
     },
     {
@@ -6887,7 +7164,8 @@
       "parents": {
         "sire": "singspiel",
         "dam": "carling",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1999106738/"
       }
     },
     {
@@ -6898,7 +7176,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "スターバレリーナ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100573/"
       }
     },
     {
@@ -6963,7 +7242,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "south_ocean",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0016d4/"
       }
     },
     {
@@ -6985,7 +7265,8 @@
       "parents": {
         "sire": "flower_alley",
         "dam": "refinement",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a011df8/"
       }
     },
     {
@@ -7030,9 +7311,10 @@
       "ja": "サトルチェンジ",
       "en": "Subtle Change",
       "parents": {
-        "sire": "santa_luciana",
-        "dam": "law_society",
-        "source": "legacy"
+        "sire": "law_society",
+        "dam": "santa_luciana",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000334/"
       }
     },
     {
@@ -7067,7 +7349,8 @@
       "parents": {
         "sire": "フレンチデピュティ",
         "dam": "キョウエイマーチ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2002100843/"
       }
     },
     {
@@ -7090,7 +7373,8 @@
       "parents": {
         "sire": "buckpasser",
         "dam": "quill",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0002fd/"
       }
     },
     {
@@ -7169,14 +7453,15 @@
       "parents": {
         "sire": "viceregal",
         "dam": "momigi",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1980103440/"
       }
     },
     {
       "id": "momigi",
-      "zh": "モミジ / Momigi",
-      "ja": "モミジ",
-      "en": "Momigi"
+      "zh": "モミジII / Momiji II",
+      "ja": "モミジII",
+      "en": "Momiji II"
     },
     {
       "id": "laugh_aloud",
@@ -7198,7 +7483,8 @@
       "parents": {
         "sire": "トウショウボーイ",
         "dam": "グレイトウショウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981106904/"
       }
     },
     {
@@ -7255,7 +7541,8 @@
       "parents": {
         "sire": "アローエクスプレス",
         "dam": "モンタロッチ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1975103624/"
       }
     },
     {
@@ -7307,7 +7594,8 @@
       "parents": {
         "sire": "blushing_groom",
         "dam": "swiss",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00617d/"
       }
     },
     {
@@ -7336,7 +7624,8 @@
       "parents": {
         "sire": "ラストタイクーン",
         "dam": "batave",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a002085/"
       }
     },
     {
@@ -7347,7 +7636,8 @@
       "parents": {
         "sire": "affirmed",
         "dam": "first_fling",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000296/"
       }
     },
     {
@@ -7424,7 +7714,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "lily_of_the_nile",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1979101744/"
       }
     },
     {
@@ -7435,7 +7726,8 @@
       "parents": {
         "sire": "never_beat",
         "dam": "amazon_warrior",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955105235/"
       }
     },
     {
@@ -7572,7 +7864,8 @@
       "parents": {
         "sire": "partholon",
         "dam": "メジロナガサキ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1982102119/"
       }
     },
     {
@@ -7583,7 +7876,8 @@
       "parents": {
         "sire": "milesian",
         "dam": "paleo",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00026d/"
       }
     },
     {
@@ -7686,7 +7980,8 @@
       "parents": {
         "sire": "gay_mecene",
         "dam": "princess_lyphard",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981100746/"
       }
     },
     {
@@ -7749,7 +8044,8 @@
       "parents": {
         "sire": "lyphard",
         "dam": "no_luck",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00022a/"
       }
     },
     {
@@ -7791,7 +8087,8 @@
       "parents": {
         "sire": "mill_reef",
         "dam": "altesse_royale",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000467/"
       }
     },
     {
@@ -7802,7 +8099,8 @@
       "parents": {
         "sire": "chalet",
         "dam": "ハイフレーム",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1983105125/"
       }
     },
     {
@@ -7861,7 +8159,8 @@
       "parents": {
         "sire": "topyo",
         "dam": "メイドウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955106410/"
       }
     },
     {
@@ -7902,7 +8201,8 @@
       "parents": {
         "sire": "タイトスポット",
         "dam": "セイレイ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998100446/"
       }
     },
     {
@@ -7937,18 +8237,20 @@
       "parents": {
         "sire": "riverman",
         "dam": "dahlia",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000d2f/"
       }
     },
     {
       "id": "タイシンリリイ",
-      "zh": "タイシンリリイ",
-      "ja": "タイシンリリイ",
+      "zh": "タイシンリリィ",
+      "ja": "タイシンリリィ",
       "en": "",
       "parents": {
         "sire": "ラディガ",
         "dam": "インターラーケン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981100213/"
       }
     },
     {
@@ -8001,7 +8303,8 @@
       "parents": {
         "sire": "affirmed",
         "dam": "rare_lady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00012a/"
       }
     },
     {
@@ -8024,7 +8327,8 @@
       "parents": {
         "sire": "kris",
         "dam": "silken_way",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000285/"
       }
     },
     {
@@ -8082,7 +8386,8 @@
       "parents": {
         "sire": "habitony",
         "dam": "ケンマルミドリ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981103156/"
       }
     },
     {
@@ -8135,7 +8440,8 @@
       "parents": {
         "sire": "majestic_prince",
         "dam": "irradiate",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00167b/"
       }
     },
     {
@@ -8146,7 +8452,8 @@
       "parents": {
         "sire": "danzig",
         "dam": "fabulous_fraud",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0061e6/"
       }
     },
     {
@@ -8204,7 +8511,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "barada",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00002b/"
       }
     },
     {
@@ -8297,7 +8605,8 @@
       "parents": {
         "sire": "hitting_away",
         "dam": "forward_flight",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955105023/"
       }
     },
     {
@@ -8344,7 +8653,8 @@
       "parents": {
         "sire": "native_dancer",
         "dam": "merry_madcap",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000b10/"
       }
     },
     {
@@ -8355,7 +8665,8 @@
       "parents": {
         "sire": "silver_shark",
         "dam": "ネヴァーナルビー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955105496/"
       }
     },
     {
@@ -8366,7 +8677,8 @@
       "parents": {
         "sire": "polynesian",
         "dam": "geisha",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000f89/"
       }
     },
     {
@@ -8436,7 +8748,8 @@
       "parents": {
         "sire": "caerleon",
         "dam": "grace_and_glory",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998110203/"
       }
     },
     {
@@ -8459,7 +8772,8 @@
       "parents": {
         "sire": "forty_niner",
         "dam": "broom_dance",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00010f/"
       }
     },
     {
@@ -8470,7 +8784,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "ダイナシュート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993109161/"
       }
     },
     {
@@ -8574,46 +8889,42 @@
     },
     {
       "id": "lyphard_usa",
+      "alias_of": "lyphard",
       "zh": "Lyphard (USA)",
       "ja": "",
-      "en": "Lyphard (USA)",
-      "parents": {
-        "sire": "northern_dancer_can",
-        "dam": "goofed_usa",
-        "source": "legacy"
-      }
+      "en": "Lyphard (USA)"
     },
     {
       "id": "navajo_princess_usa",
+      "alias_of": "navajo_princess",
       "zh": "Navajo Princess (USA)",
       "ja": "",
-      "en": "Navajo Princess (USA)",
-      "parents": {
-        "sire": "drone_usa",
-        "dam": "olmec_usa",
-        "source": "legacy"
-      }
+      "en": "Navajo Princess (USA)"
     },
     {
       "id": "northern_dancer_can",
+      "alias_of": "northern_dancer",
       "zh": "Northern Dancer (CAN)",
       "ja": "",
       "en": "Northern Dancer (CAN)"
     },
     {
       "id": "goofed_usa",
+      "alias_of": "goofed",
       "zh": "Goofed (USA)",
       "ja": "",
       "en": "Goofed (USA)"
     },
     {
       "id": "drone_usa",
+      "alias_of": "drone",
       "zh": "Drone (USA)",
       "ja": "",
       "en": "Drone (USA)"
     },
     {
       "id": "olmec_usa",
+      "alias_of": "olmec",
       "zh": "Olmec (USA)",
       "ja": "",
       "en": "Olmec (USA)"
@@ -8672,7 +8983,8 @@
       "parents": {
         "sire": "sunday_silence",
         "dam": "ロゼカラー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1998101861/"
       }
     },
     {
@@ -8695,7 +9007,8 @@
       "parents": {
         "sire": "key_to_the_mint",
         "dam": "beautiful_memory",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0060c0/"
       }
     },
     {
@@ -8736,7 +9049,8 @@
       "parents": {
         "sire": "diophon",
         "dam": "needle_rock",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000403/"
       }
     },
     {
@@ -8747,7 +9061,8 @@
       "parents": {
         "sire": "flamboyant",
         "dam": "slip",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a002496/"
       }
     },
     {
@@ -8842,7 +9157,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "clare_bridge",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1982101897/"
       }
     },
     {
@@ -8871,7 +9187,8 @@
       "parents": {
         "sire": "sedan",
         "dam": "swanswood_grove",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955104868/"
       }
     },
     {
@@ -8912,7 +9229,8 @@
       "parents": {
         "sire": "blushing_groom",
         "dam": "i_will_follow",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001b4d/"
       }
     },
     {
@@ -8923,7 +9241,8 @@
       "parents": {
         "sire": "saint_cyrien",
         "dam": "bold_lady",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0001ea/"
       }
     },
     {
@@ -8970,7 +9289,8 @@
       "parents": {
         "sire": "partholon",
         "dam": "シリネラ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1975101505/"
       }
     },
     {
@@ -8981,7 +9301,8 @@
       "parents": {
         "sire": "floribunda",
         "dam": "フジカワ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1978100461/"
       }
     },
     {
@@ -9028,7 +9349,8 @@
       "parents": {
         "sire": "ラストタイクーン",
         "dam": "flame_of_tara",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001fb6/"
       }
     },
     {
@@ -9039,7 +9361,8 @@
       "parents": {
         "sire": "rossini",
         "dam": "la_joconde",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a011cf6/"
       }
     },
     {
@@ -9104,7 +9427,8 @@
       "parents": {
         "sire": "orpen",
         "dam": "marsella",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a011cdc/"
       }
     },
     {
@@ -9151,7 +9475,8 @@
       "parents": {
         "sire": "mr_prospector",
         "dam": "con_game",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001bea/"
       }
     },
     {
@@ -9162,7 +9487,8 @@
       "parents": {
         "sire": "seattle_slew",
         "dam": "barb_s_bold",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000264/"
       }
     },
     {
@@ -9197,7 +9523,8 @@
       "parents": {
         "sire": "posse",
         "dam": "castle_moon",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000d53/"
       }
     },
     {
@@ -9208,7 +9535,8 @@
       "parents": {
         "sire": "mill_george",
         "dam": "スイトアンジュレ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1990106921/"
       }
     },
     {
@@ -9255,7 +9583,8 @@
       "parents": {
         "sire": "topsider",
         "dam": "passerine",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0000fe/"
       }
     },
     {
@@ -9266,7 +9595,8 @@
       "parents": {
         "sire": "dust_commander",
         "dam": "ハマヒリュウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1976101585/"
       }
     },
     {
@@ -9331,7 +9661,8 @@
       "parents": {
         "sire": "miswaki",
         "dam": "rascal_rascal",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a006378/"
       }
     },
     {
@@ -9366,7 +9697,8 @@
       "parents": {
         "sire": "partholon",
         "dam": "shiretoko",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1976103269/"
       }
     },
     {
@@ -9395,7 +9727,8 @@
       "parents": {
         "sire": "mississipian",
         "dam": "キョウエイシラユキ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988102419/"
       }
     },
     {
@@ -9436,7 +9769,8 @@
       "parents": {
         "sire": "dixieland_band",
         "dam": "sunrise_symphony",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a011521/"
       }
     },
     {
@@ -9477,7 +9811,8 @@
       "parents": {
         "sire": "royal_charger",
         "dam": "skerweather",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0004b0/"
       }
     },
     {
@@ -9488,7 +9823,8 @@
       "parents": {
         "sire": "rising_light",
         "dam": "feenagh",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955100028/"
       }
     },
     {
@@ -9564,7 +9900,8 @@
       "parents": {
         "sire": "roberto",
         "dam": "sulemeif",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0062fc/"
       }
     },
     {
@@ -9587,7 +9924,8 @@
       "parents": {
         "sire": "green_dancer",
         "dam": "no_no_nanette",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000c78/"
       }
     },
     {
@@ -9598,7 +9936,8 @@
       "parents": {
         "sire": "intermezzo",
         "dam": "サチノヒメ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1979106146/"
       }
     },
     {
@@ -9609,7 +9948,8 @@
       "parents": {
         "sire": "nijinsky",
         "dam": "green_valley",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001353/"
       }
     },
     {
@@ -9679,7 +10019,8 @@
       "parents": {
         "sire": "dancing_brave",
         "dam": "サマンサトウショウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993100872/"
       }
     },
     {
@@ -9726,7 +10067,8 @@
       "parents": {
         "sire": "speedsymboli",
         "dam": "dance_time",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955103905/"
       }
     },
     {
@@ -9789,7 +10131,8 @@
       "parents": {
         "sire": "halo",
         "dam": "ballade",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001a8f/"
       }
     },
     {
@@ -9800,7 +10143,8 @@
       "parents": {
         "sire": "caerleon",
         "dam": "muffitys",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00039b/"
       }
     },
     {
@@ -9841,7 +10185,8 @@
       "parents": {
         "sire": "fortino",
         "dam": "ズイショウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1975107312/"
       }
     },
     {
@@ -9852,7 +10197,8 @@
       "parents": {
         "sire": "chateaugay",
         "dam": "クインビー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955108273/"
       }
     },
     {
@@ -9922,7 +10268,8 @@
       "parents": {
         "sire": "crystal_palace",
         "dam": "タニノシーバード",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1988105774/"
       }
     },
     {
@@ -9963,7 +10310,8 @@
       "parents": {
         "sire": "pleasant_colony",
         "dam": "never_knock",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00fdb2/"
       }
     },
     {
@@ -9974,7 +10322,8 @@
       "parents": {
         "sire": "northern_dancer",
         "dam": "all_rainbows",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00a464/"
       }
     },
     {
@@ -10027,11 +10376,13 @@
       "parents": {
         "sire": "motivator",
         "dam": "top_table",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2008110046/"
       }
     },
     {
       "id": "motivator",
+      "alias_of": "motivator_gb",
       "zh": "Motivator",
       "ja": "",
       "en": "Motivator"
@@ -10044,6 +10395,7 @@
     },
     {
       "id": "montjeu",
+      "alias_of": "montjeu_ire",
       "zh": "Montjeu",
       "ja": "",
       "en": "Montjeu"
@@ -10068,7 +10420,8 @@
       "parents": {
         "sire": "sadler_s_wells",
         "dam": "colorspin",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000d77/"
       }
     },
     {
@@ -10079,7 +10432,8 @@
       "parents": {
         "sire": "blushing_groom",
         "dam": "noura",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00612d/"
       }
     },
     {
@@ -10126,7 +10480,8 @@
       "parents": {
         "sire": "nice_dancer",
         "dam": "トウカイミドリ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1982102716/"
       }
     },
     {
@@ -10155,7 +10510,8 @@
       "parents": {
         "sire": "テトラテマ",
         "dam": "voleuse",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000359/"
       }
     },
     {
@@ -10166,7 +10522,8 @@
       "parents": {
         "sire": "soldennis",
         "dam": "tylant_s_queen",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0026c4/"
       }
     },
     {
@@ -10249,7 +10606,8 @@
       "parents": {
         "sire": "northern_taste",
         "dam": "crafty_wife",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1997103621/"
       }
     },
     {
@@ -10272,7 +10630,8 @@
       "parents": {
         "sire": "wild_again",
         "dam": "rose_park",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0003a1/"
       }
     },
     {
@@ -10283,7 +10642,8 @@
       "parents": {
         "sire": "tony_bin",
         "dam": "ブルーハワイ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993105186/"
       }
     },
     {
@@ -10342,7 +10702,8 @@
       "parents": {
         "sire": "conquistador_cielo",
         "dam": "change_water",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a006277/"
       }
     },
     {
@@ -10377,7 +10738,8 @@
       "parents": {
         "sire": "lyphard",
         "dam": "riverside",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000cfc/"
       }
     },
     {
@@ -10388,7 +10750,8 @@
       "parents": {
         "sire": "sancy",
         "dam": "マウタジヨウオー",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1982104949/"
       }
     },
     {
@@ -10440,14 +10803,10 @@
     },
     {
       "id": "trevise_fr",
+      "alias_of": "trevise",
       "zh": "Trevise (FR)",
       "ja": "",
-      "en": "Trevise (FR)",
-      "parents": {
-        "sire": "anabaa_usa",
-        "dam": "trevillari_usa",
-        "source": "legacy"
-      }
+      "en": "Trevise (FR)"
     },
     {
       "id": "montjeu_ire",
@@ -10458,23 +10817,27 @@
       "parents": {
         "sire": "sadler_s_wells",
         "dam": "floripedes",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1996190001/"
       }
     },
     {
       "id": "out_west_usa",
+      "alias_of": "out_west",
       "zh": "Out West (USA)",
       "ja": "",
       "en": "Out West (USA)"
     },
     {
       "id": "anabaa_usa",
+      "alias_of": "anabaa",
       "zh": "Anabaa (USA)",
       "ja": "",
       "en": "Anabaa (USA)"
     },
     {
       "id": "trevillari_usa",
+      "alias_of": "trevillari",
       "zh": "Trevillari (USA)",
       "ja": "",
       "en": "Trevillari (USA)"
@@ -10487,7 +10850,8 @@
       "parents": {
         "sire": "machiavellian",
         "dam": "much_too_risky",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00039f/"
       }
     },
     {
@@ -10502,10 +10866,17 @@
       "ja": "",
       "en": "Bustino",
       "parents": {
-        "sire": "buckskin",
-        "dam": "saint_baroness",
-        "source": "legacy"
+        "sire": "busted",
+        "dam": "ship_yard",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000564/"
       }
+    },
+    {
+      "id": "ship_yard",
+      "zh": "Ship Yard",
+      "ja": "",
+      "en": "Ship Yard"
     },
     {
       "id": "short_rations",
@@ -10521,7 +10892,8 @@
       "parents": {
         "sire": "rousillon",
         "dam": "エナジートウショウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1993104185/"
       }
     },
     {
@@ -10556,7 +10928,8 @@
       "parents": {
         "sire": "maruzensky",
         "dam": "ロッチテスコ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981105172/"
       }
     },
     {
@@ -10579,7 +10952,8 @@
       "parents": {
         "sire": "storm_bird",
         "dam": "カウントオンアチェンジ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1994109504/"
       }
     },
     {
@@ -10619,7 +10993,8 @@
       "parents": {
         "sire": "summer_squall",
         "dam": "bali_babe",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00fa33/"
       }
     },
     {
@@ -10630,7 +11005,8 @@
       "parents": {
         "sire": "pleasant_tap",
         "dam": "casa_petrone",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995108883/"
       }
     },
     {
@@ -10677,7 +11053,8 @@
       "parents": {
         "sire": "nijinsky_ii",
         "dam": "unmentionable",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1975102626/"
       }
     },
     {
@@ -10688,7 +11065,8 @@
       "parents": {
         "sire": "yellow_god",
         "dam": "フジコウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1980104232/"
       }
     },
     {
@@ -10734,7 +11112,8 @@
       "parents": {
         "sire": "steel_heart",
         "dam": "ニホンピロエバート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1980106362/"
       }
     },
     {
@@ -10745,7 +11124,8 @@
       "parents": {
         "sire": "blushing_groom",
         "dam": "ヤマホウユウ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981105842/"
       }
     },
     {
@@ -10792,7 +11172,8 @@
       "parents": {
         "sire": "royal_ski",
         "dam": "ビューテイワン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1983101468/"
       }
     },
     {
@@ -10852,7 +11233,8 @@
       "parents": {
         "sire": "theft",
         "dam": "第弐タイランツクヰーン",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a01029a/"
       }
     },
     {
@@ -10864,7 +11246,8 @@
       "parents": {
         "sire": "epiphaneia",
         "dam": "ケイティーズハート",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/2018105027/"
       }
     },
     {
@@ -10876,7 +11259,8 @@
       "parents": {
         "sire": "brian_s_time",
         "dam": "キャットクイル",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1995105092/"
       }
     },
     {
@@ -10922,7 +11306,8 @@
       "parents": {
         "sire": "motivator_gb",
         "dam": "trevise",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a01224c/"
       }
     },
     {
@@ -10940,7 +11325,8 @@
       "parents": {
         "sire": "high_top",
         "dam": "sega_ville",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001841/"
       }
     },
     {
@@ -10951,7 +11337,8 @@
       "parents": {
         "sire": "tennyson",
         "dam": "adele_toumignon",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00aedd/"
       }
     },
     {
@@ -10962,7 +11349,8 @@
       "parents": {
         "sire": "danzig",
         "dam": "balbonella",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0022e2/"
       }
     },
     {
@@ -10973,7 +11361,8 @@
       "parents": {
         "sire": "anabaa",
         "dam": "trevillari",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a01224b/"
       }
     },
     {
@@ -10984,19 +11373,15 @@
       "parents": {
         "sire": "riverman",
         "dam": "trevilla",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a01224a/"
       }
     },
     {
       "id": "paypal",
       "zh": "PayPal",
       "ja": "ペイパール",
-      "en": "PayPal",
-      "parents": {
-        "sire": "bustino",
-        "dam": "mussorgskys_dream",
-        "source": "legacy"
-      }
+      "en": "PayPal"
     },
     {
       "id": "mussorgskys_dream",
@@ -11039,7 +11424,8 @@
       "parents": {
         "sire": "alycidon",
         "dam": "chenille",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000dae/"
       }
     },
     {
@@ -11107,7 +11493,8 @@
       "parents": {
         "sire": "snob",
         "dam": "chanel",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000581/"
       }
     },
     {
@@ -11264,12 +11651,13 @@
       "ja": "ベルノライト",
       "en": "Belno Light",
       "avatar": "uma_avatars/崭新光辉.png",
-      "real_name": "兵蜂",
-      "real_name_en": "Tobu Bee",
+      "real_name": "ツインビー",
+      "real_name_en": "Twin Bee",
       "parents": {
         "sire": "nice_dancer",
-        "dam": "ヒラクリウウ",
-        "source": "legacy"
+        "dam": "hiraku_ryu",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1985101371/"
       }
     },
     {
@@ -11279,8 +11667,9 @@
       "en": "Hiraku Ryu",
       "parents": {
         "sire": "danseur",
-        "dam": null,
-        "source": "legacy"
+        "dam": "グランドバンシー",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955105200/"
       }
     },
     {
@@ -11313,7 +11702,8 @@
       "parents": {
         "sire": "マダング",
         "dam": "スピードキョウブ",
-        "source": "legacy"
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1981105650/"
       }
     },
     {
@@ -11359,9 +11749,9 @@
     },
     {
       "id": "スピードキョウブ",
-      "zh": "スピードキョウブ / Speed Kyoubu",
-      "ja": "スピードキョウブ",
-      "en": "Speed Kyoubu"
+      "zh": "スピードキヨフジ / Speed Kiyofuji",
+      "ja": "スピードキヨフジ",
+      "en": "Speed Kiyofuji"
     },
     {
       "id": "フレンチデビュティ",
@@ -11372,20 +11762,28 @@
     },
     {
       "id": "ヒラクリウウ",
-      "zh": "ヒラクリウウ / Hirakuriuu",
-      "ja": "ヒラクリウウ",
-      "en": "Hirakuriuu"
+      "alias_of": "hiraku_ryu",
+      "zh": "ヒラクリユウ / Hiraku Ryu",
+      "ja": "ヒラクリユウ",
+      "en": "Hiraku Ryu"
     },
     {
       "id": "グランドバンシー",
-      "zh": "グランドバンシー / Grand Bouncy",
-      "ja": "グランドバンシー",
-      "en": "Grand Bouncy",
+      "zh": "グランドパンシー / Grand Pansy",
+      "ja": "グランドパンシー",
+      "en": "Grand Pansy",
       "parents": {
         "sire": "トサミドリ",
-        "dam": "クサノ",
-        "source": "legacy"
+        "dam": "クリゾノ",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955100314/"
       }
+    },
+    {
+      "id": "クリゾノ",
+      "zh": "クリゾノ / Kurizono",
+      "ja": "クリゾノ",
+      "en": "Kurizono"
     },
     {
       "id": "Tantieme",

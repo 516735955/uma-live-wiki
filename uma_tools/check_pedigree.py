@@ -35,7 +35,7 @@ def main():
     for character_id, mapping in mappings.items():
         horse_id = mapping.get("horse")
         kind = mapping.get("kind")
-        if kind not in ("namesake", "fan_consensus", "original", "non_uma"):
+        if kind not in ("horse", "original", "non_uma"):
             errors.append("invalid mapping kind for %s: %r" % (character_id, kind))
         if horse_id and canonical(horse_id) not in canonical_ids:
             errors.append("mapped horse is missing: %s -> %s" % (
@@ -43,6 +43,8 @@ def main():
             ))
         if horse_id is None and kind not in ("original", "non_uma"):
             errors.append("horse mapping missing for %s" % character_id)
+        if horse_id is not None and kind != "horse":
+            errors.append("horse mapping kind drift for %s" % character_id)
 
     role_usage = defaultdict(set)
     for node_id, pair in parents.items():
@@ -232,8 +234,22 @@ def main():
         for node in records:
             value = str(node.get(field) or "").strip().casefold()
             if value:
-                labels[value].append(node["id"])
-        duplicate_groups = [ids for ids in labels.values() if len(ids) > 1]
+                labels[value].append(node)
+        duplicate_groups = []
+        for group in labels.values():
+            if len(group) < 2:
+                continue
+            if len({canonical(node["id"]) for node in group}) == 1:
+                continue
+            born = [node.get("born") for node in group]
+            if all(born) and len(set(born)) == len(born):
+                continue
+            if all(
+                (mappings.get(node["id"]) or {}).get("kind") == "non_uma"
+                for node in group
+            ):
+                continue
+            duplicate_groups.append([node["id"] for node in group])
         if duplicate_groups:
             warnings.append("%s duplicate label groups: %d" % (
                 field, len(duplicate_groups)
