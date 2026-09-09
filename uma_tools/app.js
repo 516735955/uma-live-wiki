@@ -40,7 +40,7 @@ createApp({
     const newsNextId = ref(0);
     const newsPage = ref(1);
     const newsPerPage = 20;
-    const newsDefaultCover = '/news-card-default.webp';
+    const newsDefaultCover = '/uma_tools/img/news-card-default.webp';
     const filterWork = ref('');
     const filterType = ref('');
     const showFilters = ref(false);
