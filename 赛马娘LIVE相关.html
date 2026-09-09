@@ -1106,8 +1106,8 @@
                         </label>
                     </div>
 
-                    <button class="fix-submit" type="submit" :disabled="!fix.page || !fix.body || !fix.agree">
-                        提交订正
+                    <button class="fix-submit" type="submit" :disabled="!fix.page || !fix.body || !fix.agree || fixSendState==='sending'">
+                        {{ fixSendState==='sending' ? '正在提交…' : '提交订正' }}
                     </button>
                     <p class="fix-note">提交后将通过邮件发送给维护者；若已禁用 JavaScript，可通过站页脚中的联系方式联系我们。</p>
                 </form>

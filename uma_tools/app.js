@@ -21,6 +21,14 @@ createApp({
     const albumsError = ref('');
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
+    watch(activeTab, function () {
+      Vue.nextTick(function () {
+        const nav = document.querySelector('.sub-tabs');
+        const tab = nav && nav.querySelector('.sub-tab.active');
+        if (!nav || !tab || nav.scrollWidth <= nav.clientWidth) return;
+        nav.scrollTo({ left: Math.max(0, tab.offsetLeft - (nav.clientWidth - tab.offsetWidth) / 2), behavior: 'smooth' });
+      });
+    }, { immediate: true });
     function syncBodyBackground(isHome) {
       document.body.classList.toggle('subpage-bg', !isHome);
     }
@@ -231,7 +239,7 @@ createApp({
       return Promise.all([
         loadCharacterIndexData(),
         loadDataScript('/data/character_detail_data.js?v=20260904', 'CHAR_DETAIL'),
-        loadDataScript('/data/pedigree_data.js?v=20260830', 'PED_REL')
+        loadDataScript('/data/pedigree_data.js?v=20260910', 'PED_REL')
       ]);
     }
     function loadVoiceData() {
@@ -303,6 +311,7 @@ createApp({
           homeNextEvent.value = (data && data.nextEvent) || null;
         })
         .catch(function () {
+          homeSummaryLoadPromise = null;
           return Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
         });
       return homeSummaryLoadPromise;
@@ -333,7 +342,8 @@ createApp({
     const fixDone = ref(false);
     const fixSendState = ref('');
     function submitFix() {
-      if (!fix.page || !fix.body || !fix.agree) return;
+      if (!fix.page || !fix.body || !fix.agree || fixSendState.value === 'sending') return;
+      fixSendState.value = 'sending';
       const k = { k1: '资料错误', k2: '缺少资料', k3: '翻译问题', k4: '图片问题', k5: '链接问题', k6: '其他' };
       const kindText = k[fix.kind] || '其他';
       const body =
@@ -361,6 +371,7 @@ createApp({
           '联系方式': fix.contact || '（无）'
         })
       }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
         fixDone.value = true;
         fixSendState.value = 'ok';
       }).catch(function () {
@@ -410,12 +421,6 @@ createApp({
 
     function isTabActive(k) {
       return activeTab.value === k;
-    }
-    function goCharSub(sub) {
-      charDetailSource.value = '';
-      charSub.value = sub;
-      window.scrollTo(0, 0);
-      pushUrl();
     }
     function charBack() {
       if (charDetailSource.value === 'voice') {
@@ -1914,6 +1919,7 @@ createApp({
           eventsError.value = eventsAll.value.length ? '' : '活动数据为空。';
         })
         .catch(function () {
+          eventsLoadPromise = null;
           eventsAll.value = [];
           eventsLoading.value = false;
           eventsError.value = '无法加载活动数据（请确认 data/events_data.json 存在，并通过本地服务访问本页）。';
@@ -2032,12 +2038,38 @@ createApp({
     }
     function cleanNewsBody(html) {
       if (!html) return '';
-      let h = String(html);
-      h = h.replace(/<span data-renderer-mark="true"[^>]*>/gi, '');
-      h = h.replace(/<span[^>]*>|<\/span>/gi, '');
-      h = h.replace(/<div[^>]*>\s*<\/div>/gi, '');
-      h = h.replace(/<\/?exclusion-game[^>]*>/gi, '');
-      return h;
+      const doc = new DOMParser().parseFromString(String(html), 'text/html');
+      const allowedTags = new Set([
+        'A', 'P', 'BR', 'DIV', 'SPAN', 'STRONG', 'B', 'EM', 'I', 'U', 'S',
+        'UL', 'OL', 'LI', 'DL', 'DT', 'DD', 'BLOCKQUOTE', 'H1', 'H2', 'H3',
+        'H4', 'H5', 'H6', 'HR', 'TABLE', 'THEAD', 'TBODY', 'TFOOT', 'TR',
+        'TH', 'TD', 'FIGURE', 'FIGCAPTION', 'PICTURE', 'SOURCE', 'IMG'
+      ]);
+      const dangerousTags = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META', 'BASE']);
+      const allowedAttrs = new Set(['href', 'src', 'srcset', 'alt', 'title', 'width', 'height', 'loading', 'colspan', 'rowspan']);
+      function safeUrl(value) {
+        const normalized = String(value || '').trim().replace(/[\u0000-\u0020]+/g, '');
+        return !/(?:^|,)(?:javascript|data|vbscript):/i.test(normalized);
+      }
+      Array.from(doc.body.querySelectorAll('*')).forEach(function (el) {
+        if (!allowedTags.has(el.tagName)) {
+          if (dangerousTags.has(el.tagName)) el.remove();
+          else el.replaceWith.apply(el, Array.from(el.childNodes));
+          return;
+        }
+        Array.from(el.attributes).forEach(function (attr) {
+          const name = attr.name.toLowerCase();
+          if (!allowedAttrs.has(name) || ((name === 'href' || name === 'src' || name === 'srcset') && !safeUrl(attr.value))) {
+            el.removeAttribute(attr.name);
+          }
+        });
+        if (el.tagName === 'A' && el.hasAttribute('href')) {
+          el.setAttribute('target', '_blank');
+          el.setAttribute('rel', 'noopener noreferrer');
+        }
+        if (el.tagName === 'IMG') el.setAttribute('loading', 'lazy');
+      });
+      return doc.body.innerHTML;
     }
     function loadNews() {
       if (newsLoadPromise) return newsLoadPromise;
@@ -2050,6 +2082,7 @@ createApp({
           newsLoading.value = false;
         })
         .catch(function () {
+          newsLoadPromise = null;
           newsItems.value = [];
           newsLoading.value = false;
           newsError.value = '无法加载新闻数据（请通过本地服务访问，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
@@ -2081,7 +2114,7 @@ createApp({
         window.scrollTo(0, 0);
         pushUrl();
         fetch('/api/lantis-detail?id=' + encodeURIComponent(id), { cache: 'no-cache' })
-          .then(function (r) { return r.json(); })
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
           .then(function (d) {
             if (!d || !d.detail || !d.detail.announce_id) throw new Error('no detail');
             const dd = d.detail;
@@ -2100,7 +2133,7 @@ createApp({
         return;
       }
       fetch('/api/news-detail?id=' + id, { cache: 'no-cache' })
-        .then(function (r) { return r.json(); })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (d) {
           if (!d || !d.detail || !d.detail.announce_id) throw new Error('no detail');
           newsDetail.value = d.detail;
@@ -2123,7 +2156,10 @@ createApp({
       albumsLoadPromise = fetch('/data/albums.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { albums.value = Array.isArray(data) ? data : []; })
-        .catch(function (e) { albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）'; });
+        .catch(function (e) {
+          albumsLoadPromise = null;
+          albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
+        });
       return albumsLoadPromise;
     }
     function loadLiveCatData() {
@@ -2141,6 +2177,7 @@ createApp({
           liveCatData.value = data || null;
         })
         .catch(function () {
+          liveCatLoadPromise = null;
           liveCatData.value = null;
           liveCatDataError.value = '无法加载活动演出数据（请确认 /data/live_cat_data.json 可访问）。';
         });
@@ -2153,6 +2190,7 @@ createApp({
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { liveData.value = Array.isArray(data) ? data : []; })
         .catch(function () {
+          liveDataLoadPromise = null;
           liveData.value = [];
           liveDataError.value = '无法加载编号系列公演数据（请确认 /data/live_data.json 可访问）。';
         });
