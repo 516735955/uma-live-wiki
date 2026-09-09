@@ -34,7 +34,7 @@
             font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', system-ui, sans-serif;
             color: var(--text);
             background-color: var(--bg);
-            background-image: url('/uma_tools/img/bg_texture_white.jpg');
+            background-image: url('/uma_tools/img/bg_texture_white.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -111,7 +111,7 @@
             flex: 1 1 auto; min-width: 0; position: relative;
             background:
                 linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
-                url('/uma_tools/img/hero_bg.jpg') center center / cover no-repeat;
+                url('/uma_tools/img/hero_bg.webp') center center / cover no-repeat;
         }
         .home-upcoming {
             position: absolute; right: 28px; bottom: 24px; z-index: 5;
@@ -151,7 +151,7 @@
             position: sticky; top: 0; z-index: 1001;
             display: flex; align-items: stretch; color: #fff;
             background-color: #23418f;
-            background-image: url('/uma_tools/img/bg_blue.png');
+            background-image: url('/uma_tools/img/bg_blue.webp');
             background-size: 100vw auto;
             background-repeat: repeat-y;
             background-position: left top;
@@ -188,7 +188,7 @@
         .sub-tab.active {
             color: #fff;
             background-color: #ff8c1a;
-            background-image: url('/uma_tools/img/bg_texture_white.jpg');
+            background-image: url('/uma_tools/img/bg_texture_white.webp');
             background-size: cover;
             background-position: center;
             background-blend-mode: multiply;
@@ -966,7 +966,12 @@
         }
         @media (max-width: 768px) {
             .home-layout { flex-direction: column; height: auto; min-height: 100vh; position: relative; background: #0d1220; }
-            .home-hero { position: absolute; inset: 0; z-index: 0; min-height: 0; }
+            .home-hero {
+                position: absolute; inset: 0; z-index: 0; min-height: 0;
+                background-image:
+                    linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
+                    url('/uma_tools/img/hero_bg_tablet.webp');
+            }
             .home-brand { position: relative; z-index: 1; top: 0; left: 0; width: 100%; padding: 26px 10px 8px; margin: 0; align-items: center; }
             .home-brand .hl-zh { font-size: 1.7rem; letter-spacing: 0.08em; white-space: nowrap; max-width: 100%; }
             .home-brand .hl-en { font-size: 0.82rem; letter-spacing: 0.18em; white-space: nowrap; max-width: 100%; }
@@ -998,6 +1003,11 @@
             .progress-bar { flex: 0 0 80px; }
         }
         @media (max-width: 480px) {
+            .home-hero {
+                background-image:
+                    linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
+                    url('/uma_tools/img/hero_bg_phone.webp');
+            }
             .setlist-table { font-size: 0.78em; }
             .song-controls { flex-direction: column; }
             .view-toggle { width: 100%; }
@@ -2173,7 +2183,7 @@
         .site-footer {
             margin-top: 40px; padding: 40px 20px 28px; border-top: 1px solid rgba(255, 255, 255, 0.14);
             background-color: #23418f;
-            background-image: url('/uma_tools/img/bg_blue.png');
+            background-image: url('/uma_tools/img/bg_blue.webp');
             background-size: 100vw auto;
             background-repeat: repeat-y;
             background-position: left top;
