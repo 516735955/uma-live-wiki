@@ -168,6 +168,6 @@ for k in chars_sorted:
         js_str(nd.get('zh') or ''), js_str(nd.get('name') or ''),
         js_str(nd.get('year') or ''), js_str(nd.get('bd') or ''), js_str(thumb_b64(nd, 64))))
 datajs = 'const UMACHARA = [\n' + ',\n'.join(items) + '\n];\n'
-out = os.path.join(BASE, '血统表_data.js')
+out = os.path.join(BASE, 'archive', 'legacy-pedigree', '血统表_data.js')
 open(out, 'w', encoding='utf-8').write(datajs)
 print('data.js written:', out, 'KB:', os.path.getsize(out) // 1024)

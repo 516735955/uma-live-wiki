@@ -3,7 +3,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const ALBUMS_JSON = path.join(ROOT, 'data', 'albums.json');
-const BACKUP = path.join(ROOT, '赛马娘LIVE相关_备份_原版_20260805.html');
+const BACKUP = path.join(ROOT, 'archive', 'live-page-snapshots', '赛马娘LIVE相关_备份_原版_20260805.html');
 
 const norm = (s) => String(s || '').replace(/[『』（）()\[\]「」・ー\u3000\s]/g, '').toLowerCase();
 

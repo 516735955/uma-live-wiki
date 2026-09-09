@@ -2,7 +2,7 @@
 import shutil, os
 
 SRC = r'G:\学习\AI\赛马娘LIVE相关.html'
-BAK = r'G:\学习\AI\uma_tools\赛马娘LIVE相关_备份_角色页签注入前.html'
+BAK = r'G:\学习\AI\archive\live-page-snapshots\赛马娘LIVE相关_备份_角色页签注入前.html'
 shutil.copyfile(SRC, BAK)
 c = open(SRC, encoding='utf-8').read()
 
@@ -123,7 +123,7 @@ STYLE = '''
 '''
 
 INIT_JS = '''
-<script src="intro_data.js"></script>
+<script src="/archive/legacy-pedigree/intro_data.js"></script>
 <script>
 (function () {
   var curZoom = null;
