@@ -7,7 +7,8 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS_DIR)
-OUT = os.path.join(ROOT, 'events_data.json')
+DATA_DIR = os.path.join(ROOT, 'data')
+OUT = os.path.join(DATA_DIR, 'events_data.json')
 BASE = 'https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC(gal%E2%80%99up!)/22274/events'
 LIMIT = 100
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Accept-Language': 'ja'}
@@ -78,8 +79,8 @@ def parse_block(block):
     }
 
 
-LIVE_DATA = os.path.join(ROOT, 'live_cat_data.json')
-NUMBERED_LIVE_DATA = os.path.join(ROOT, 'live_data.json')
+LIVE_DATA = os.path.join(DATA_DIR, 'live_cat_data.json')
+NUMBERED_LIVE_DATA = os.path.join(DATA_DIR, 'live_data.json')
 APP_JS = os.path.join(ROOT, 'uma_tools', 'app.js')
 
 EVENTS_XLSX = os.path.join(ROOT, 'events_list.xlsx')

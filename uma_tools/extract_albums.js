@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const source = path.resolve(process.argv[2] || path.join(ROOT, '赛马娘LIVE相关.html'));
-const output = path.resolve(process.argv[3] || path.join(ROOT, 'albums.json'));
+const output = path.resolve(process.argv[3] || path.join(ROOT, 'data', 'albums.json'));
 const body = fs.readFileSync(source, 'utf8');
 // current page still embeds inline ALBUMS
 const m = body.match(/const ALBUMS = (\[.*?\]);\s*\n/s);

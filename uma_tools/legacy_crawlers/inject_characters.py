@@ -2,7 +2,7 @@
 import shutil, os
 
 SRC = r'G:\学习\AI\赛马娘LIVE相关.html'
-BAK = r'G:\学习\AI\uma_tools\赛马娘LIVE相关_备份_角色页签注入前.html'
+BAK = r'G:\学习\AI\archive\live-page-snapshots\赛马娘LIVE相关_备份_角色页签注入前.html'
 shutil.copyfile(SRC, BAK)
 c = open(SRC, encoding='utf-8').read()
 
@@ -22,7 +22,7 @@ NEW_INNER = '''            <div class="c-wrap">
 
                 <div class="c-pane" id="c-room">
                     <div class="c-room">
-                        <img src="480DD656D6F892646606A962F0A9246C.jpg" alt="宿舍室友图" class="c-room-img">
+                        <img src="/uma_tools/img/character-roommates.jpg" alt="宿舍室友图" class="c-room-img">
                         <div class="c-room-hint">点击图片在新窗口查看大图</div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ NEW_INNER = '''            <div class="c-wrap">
                         <span class="c-zhint">鼠标滚轮缩放 · 按住拖动平移</span>
                     </div>
                     <div class="c-gwrap">
-                        <div class="c-gstage" id="c-global-stage"><img id="c-global-img" src="uma_pedigree_2026.svg" alt="现实马血统关系图"></div>
+                        <div class="c-gstage" id="c-global-stage"><img id="c-global-img" src="/pedigree_assets/global-pedigree-2026.svg" alt="现实马血统关系图"></div>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@ STYLE = '''
 '''
 
 INIT_JS = '''
-<script src="intro_data.js"></script>
+<script src="/archive/legacy-pedigree/intro_data.js"></script>
 <script>
 (function () {
   var curZoom = null;

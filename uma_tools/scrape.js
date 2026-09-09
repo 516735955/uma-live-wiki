@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const ALBUMS_JSON = path.join(ROOT, 'albums.json');
+const ALBUMS_JSON = path.join(ROOT, 'data', 'albums.json');
 const PENDING_JSON = path.join(ROOT, 'uma_tools', 'pending.json');
 const PREVIEW_MD = path.join(ROOT, 'uma_tools', 'pending_preview.md');
 

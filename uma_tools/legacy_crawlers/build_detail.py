@@ -106,5 +106,6 @@ for i, (cid, d) in enumerate(detail.items()):
     lines.append("  '%s': %s%s" % (cid, obj, comma))
 lines.append("};")
 out = "\n".join(lines)
-open(r"G:\学习\AI\character_detail_data.js", "w", encoding="utf-8").write(out)
-print("wrote character_detail_data.js", os.path.getsize(r"G:\学习\AI\character_detail_data.js"))
+output_path = r"G:\学习\AI\data\character_detail_data.js"
+open(output_path, "w", encoding="utf-8").write(out)
+print("wrote character_detail_data.js", os.path.getsize(output_path))

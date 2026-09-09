@@ -43,6 +43,7 @@ const NO_AUTO_CRAWL = CLI_ARGS.includes('--no-crawl');
 const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
 const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
 const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
+const DATA_DIR = path.join(ROOT, 'data');
 
 function isInsideRoot(filePath) {
   const relativePath = path.relative(ROOT, filePath);
@@ -381,7 +382,7 @@ function handleHomeSummary(res) {
     return;
   }
   const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_data.json', 'character_index_data.js', 'voice_list_data.js'];
-  Promise.all(files.map((name) => fs.promises.readFile(path.join(ROOT, name), 'utf8')))
+  Promise.all(files.map((name) => fs.promises.readFile(path.join(DATA_DIR, name), 'utf8')))
     .then((texts) => {
       const albumsDoc = JSON.parse(texts[0]);
       const numberedDoc = JSON.parse(texts[1]);

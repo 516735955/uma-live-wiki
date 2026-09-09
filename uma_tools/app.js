@@ -40,7 +40,7 @@ createApp({
     const newsNextId = ref(0);
     const newsPage = ref(1);
     const newsPerPage = 20;
-    const newsDefaultCover = '/news-card-default.webp';
+    const newsDefaultCover = '/uma_tools/img/news-card-default.webp';
     const filterWork = ref('');
     const filterType = ref('');
     const showFilters = ref(false);
@@ -225,20 +225,20 @@ createApp({
       return dataScriptPromises[src];
     }
     function loadCharacterIndexData() {
-      return loadDataScript('/character_index_data.js?v=20260904', 'CHAR_INDEX');
+      return loadDataScript('/data/character_index_data.js?v=20260904', 'CHAR_INDEX');
     }
     function loadCharacterDetailData() {
       return Promise.all([
         loadCharacterIndexData(),
-        loadDataScript('/character_detail_data.js?v=20260904', 'CHAR_DETAIL'),
-        loadDataScript('/pedigree_data.js?v=20260830', 'PED_REL')
+        loadDataScript('/data/character_detail_data.js?v=20260904', 'CHAR_DETAIL'),
+        loadDataScript('/data/pedigree_data.js?v=20260830', 'PED_REL')
       ]);
     }
     function loadVoiceData() {
       return Promise.all([
         loadCharacterIndexData(),
-        loadDataScript('/va_photos_data.js?v=20260830', 'VA_PHOTOS'),
-        loadDataScript('/voice_list_data.js?v=20260830', 'VA_LIST')
+        loadDataScript('/data/va_photos_data.js?v=20260830', 'VA_PHOTOS'),
+        loadDataScript('/data/voice_list_data.js?v=20260830', 'VA_LIST')
       ]);
     }
     function loadLivePathData(path) {
@@ -1905,7 +1905,7 @@ createApp({
       if (eventsLoadPromise) return eventsLoadPromise;
       eventsError.value = '';
       eventsLoading.value = true;
-      eventsLoadPromise = fetch('/events_data.json', { cache: 'no-cache' })
+      eventsLoadPromise = fetch('/data/events_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           eventsAll.value = (data && Array.isArray(data.events)) ? data.events : [];
@@ -1916,7 +1916,7 @@ createApp({
         .catch(function () {
           eventsAll.value = [];
           eventsLoading.value = false;
-          eventsError.value = '无法加载活动数据（请确认 events_data.json 存在，并通过本地服务访问本页）。';
+          eventsError.value = '无法加载活动数据（请确认 data/events_data.json 存在，并通过本地服务访问本页）。';
         });
       return eventsLoadPromise;
     }
@@ -1940,7 +1940,7 @@ createApp({
       evDataError.value = '';
       vaFilters.value = []; songFilter.value = 'all'; vaPage.value = 1; songPage.value = 1;
       // 歌曲演出次数排行：仍来自 voice_participation.json（不变）
-      fetch('/voice_participation.json', { cache: 'no-cache' })
+      fetch('/data/voice_participation.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           var events = (data && data.events) || [];
@@ -1954,14 +1954,14 @@ createApp({
         })
         .catch(function () { /* 歌曲数据加载失败不阻塞声优侧 */ });
       // 声优出演次数排行：改由 events_list.xlsx 导出的 actor_participation.json（按事件计数）
-      fetch('/actor_participation.json', { cache: 'no-cache' })
+      fetch('/data/actor_participation.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           var entries = (data && data.entries) || [];
           voiceEvData.value = entries.map(function (e) { return { cat: e.cat, actors: e.actors }; });
           evDataLoading.value = false;
         })
-        .catch(function () { evDataError.value = '无法加载声优参与数据（actor_participation.json）。'; evDataLoading.value = false; });
+        .catch(function () { evDataError.value = '无法加载声优参与数据（data/actor_participation.json）。'; evDataLoading.value = false; });
     }
     function setEvTime(v) {
       if (v !== 'all' && v !== 'upcoming' && v !== 'past') return;
@@ -2120,7 +2120,7 @@ createApp({
     function loadAlbums() {
       if (albumsLoadPromise) return albumsLoadPromise;
       albumsError.value = '';
-      albumsLoadPromise = fetch('/albums.json', { cache: 'no-cache' })
+      albumsLoadPromise = fetch('/data/albums.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { albums.value = Array.isArray(data) ? data : []; })
         .catch(function (e) { albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）'; });
@@ -2129,7 +2129,7 @@ createApp({
     function loadLiveCatData() {
       if (liveCatLoadPromise) return liveCatLoadPromise;
       liveCatDataError.value = '';
-      liveCatLoadPromise = fetch('/live_cat_data.json', { cache: 'no-cache' })
+      liveCatLoadPromise = fetch('/data/live_cat_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           try { liveCatDataOrig.value = JSON.parse(JSON.stringify(data)); } catch (e) { liveCatDataOrig.value = null; }
@@ -2142,19 +2142,19 @@ createApp({
         })
         .catch(function () {
           liveCatData.value = null;
-          liveCatDataError.value = '无法加载活动演出数据（请确认 /live_cat_data.json 可访问）。';
+          liveCatDataError.value = '无法加载活动演出数据（请确认 /data/live_cat_data.json 可访问）。';
         });
       return liveCatLoadPromise;
     }
     function loadLiveData() {
       if (liveDataLoadPromise) return liveDataLoadPromise;
       liveDataError.value = '';
-      liveDataLoadPromise = fetch('/live_data.json', { cache: 'no-cache' })
+      liveDataLoadPromise = fetch('/data/live_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { liveData.value = Array.isArray(data) ? data : []; })
         .catch(function () {
           liveData.value = [];
-          liveDataError.value = '无法加载编号系列公演数据（请确认 /live_data.json 可访问）。';
+          liveDataError.value = '无法加载编号系列公演数据（请确认 /data/live_data.json 可访问）。';
         });
       return liveDataLoadPromise;
     }
@@ -3187,7 +3187,7 @@ createApp({
         draw(search && search.value ? search.value : '', window.__songsPage);
       };
       var showLoadError = function () {
-        if (nd) { nd.textContent = '无法加载专辑数据（请确认服务器提供 /albums.json）'; nd.style.display = 'block'; }
+        if (nd) { nd.textContent = '无法加载专辑数据（请确认服务器提供 /data/albums.json）'; nd.style.display = 'block'; }
         if (pager) { pager.innerHTML = ''; pager.style.display = 'none'; }
       };
       var app = window.__uma_app;
@@ -3197,7 +3197,7 @@ createApp({
           useAlbums(app.albums);
         }).catch(showLoadError);
       } else {
-        fetch('/albums.json', { cache: 'no-cache' })
+        fetch('/data/albums.json', { cache: 'no-cache' })
           .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
           .then(useAlbums)
           .catch(showLoadError);

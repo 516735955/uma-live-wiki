@@ -100,7 +100,7 @@ def main():
     state = {}
     if os.path.exists(STATE):
         state = json.load(open(STATE, encoding='utf-8'))
-    chars = json.load(open(os.path.join(BASE, 'characters_data.json'), encoding='utf-8'))['characters']
+    chars = json.load(open(os.path.join(BASE, 'data', 'characters_data.json'), encoding='utf-8'))['characters']
     done = state.get('done', [])
     results = state.get('results', {})
     for c in chars:

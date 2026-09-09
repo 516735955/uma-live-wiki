@@ -6,7 +6,7 @@ from PIL import Image
 
 ROOT = r'G:\学习\AI'
 OUT_DIR = os.path.join(ROOT, 'uma_va')
-MANIFEST = os.path.join(ROOT, 'va_photos_data.js')
+MANIFEST = os.path.join(ROOT, 'data', 'va_photos_data.js')
 STATE = r'C:\Users\51673\AppData\Local\Temp\opencode\va_photo_state2.json'
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 DATE_RE = re.compile(r'(19|20)\d{2}年\d{1,2}月\d{1,2}日')

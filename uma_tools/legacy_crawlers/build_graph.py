@@ -7,7 +7,7 @@ STATE = os.path.join(TMP, 'pedigree_state.json')
 
 state = json.load(open(STATE, encoding='utf-8'))
 results = state['results']
-chars = json.load(open(os.path.join(BASE, 'characters_data.json'), encoding='utf-8'))['characters']
+chars = json.load(open(os.path.join(BASE, 'data', 'characters_data.json'), encoding='utf-8'))['characters']
 avatars = {m['char']: m['avatar'] for m in
            json.load(open(os.path.join(TMP, 'avatar_map.json'), encoding='utf-8'))}
 

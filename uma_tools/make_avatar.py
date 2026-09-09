@@ -19,7 +19,7 @@ def main():
     art_path = sys.argv[2]
     override = int(sys.argv[3]) if len(sys.argv) > 3 else None
 
-    t = io.open(os.path.join(ROOT, 'character_index_data.js'), encoding='utf-8').read()
+    t = io.open(os.path.join(ROOT, 'data', 'character_index_data.js'), encoding='utf-8').read()
     _i = t.find('['); _j = t.rfind(']')
     chars = json.loads(t[_i:_j + 1])
     main_hex = next((c.get('main', '#8c83ff') for c in chars if c['id'] == cid), '#8c83ff')
