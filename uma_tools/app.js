@@ -1469,14 +1469,14 @@ createApp({
       }
       return path;
     }
-    function openLiveFromEvents(path) {
+    function openLiveFromEvents(path, returnSource) {
       const open = function () {
         path = liveDetailHref(path);
         eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
         liveBackScroll.view = '';
         history.pushState({ r: true }, '', path);
         syncFromUrl();
-        liveReturnSource.value = 'events';
+        liveReturnSource.value = returnSource || 'events';
         var goTop = function () {
           var el = document.documentElement;
           var prev = el.style.scrollBehavior;
@@ -1885,10 +1885,12 @@ createApp({
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
       if (!e) return;
-      const ready = e.live ? loadLivePathData(e.live) : loadEvents();
-      ready.then(function () {
-        if (e.live) openLiveFromEvents(liveDetailHref(e.live));
-        else openNonliveFromEvents(e);
+      if (e.live) {
+        openLiveFromEvents(liveDetailHref(e.live), 'home');
+        return;
+      }
+      loadEvents().then(function () {
+        openNonliveFromEvents(e);
         liveReturnSource.value = 'home';
       });
     }
