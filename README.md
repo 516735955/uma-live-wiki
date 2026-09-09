@@ -14,14 +14,16 @@ uma-live-wiki/                    仓库根目录
 ├── data/                          站点运行数据（JS / JSON）
 │   ├── character_index_data.js    角色索引（179 个角色）
 │   ├── character_detail_data.js   角色详情
-│   ├── pedigree_data.js           血统关系（1334 条，window.PED_REL）
+│   ├── pedigree_source.json       可维护的原型马、亲本与角色映射源数据
+│   ├── pedigree_data.js           由源数据生成的浏览器血统关系（window.PED_REL）
 │   ├── albums.json                专辑与歌曲
 │   ├── live_data.json             编号系列公演与歌单
 │   ├── live_cat_data.json         其他演唱会分类/曲目
 │   └── ...
 ├── album_covers/                  外部源较慢的专辑封面本地 WebP 副本
-├── uma_avatars/ uma_moe/ uma_official/ uma_va/ role_svgs/ video_thumbs/  图片资源
-├── pedigree_assets/               血统图表资源
+├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
+├── role_svgs/                     单角色血统 SVG 历史资源
+├── pedigree_assets/               全局血统页当前加载的静态 SVG 资源
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
 │   ├── app.js                    SPA 逻辑
@@ -66,6 +68,19 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 `data/*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
 `data/*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
 
+血统数据的维护入口是 data/pedigree_source.json，以下命令生成浏览器使用的 data/pedigree_data.js
+
+```bash
+python3 uma_tools/build_pedigree.py
+```
+
+源数据记录父母、角色原型映射和核验来源；三代祖先、子孙、角色兄弟姐妹及相关配种对象由脚本统一推导
+
+当前 517 条直接亲本记录均已完成来源核验：131 条来自 JBIS-Search，386 条来自 netkeiba 的具体赛马
+血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，netkeiba 记录同时保存
+source_url。179 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按
+原创角色或非赛马角色维护
+
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 
 ```js
@@ -88,6 +103,7 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 |---|---|---|
 | Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `data/events_data.json`；存在本地 Excel 镜像时会尝试同步 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
+| 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
 | 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
 | Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
 | 出演统计 | `python3 uma_tools/gen_voice_part.py` | `data/actor_participation.json`、`data/voice_participation.json` |
@@ -129,7 +145,7 @@ git push -u origin <工作分支>
 gh pr create --base main --head <工作分支>
 ```
 
-PR 标题应概括本批目标，正文说明改了什么、如何验证以及兼容性影响。没有仓库写权限的贡献者
+PR 标题使用英文概括本批目标，正文使用中文说明改了什么、如何验证以及兼容性影响。没有仓库写权限的贡献者
 仍按 GitHub 的常规方式 Fork 仓库，从自己的功能分支向本仓库 `main` 提交 PR。
 
 ## 环境变量（重要：密钥不入库）

@@ -3,12 +3,25 @@
 # Output: lantis_news.json  (list of {id, date, title, url, category})
 # Approach: crawl paginated list pages, parse <span class="list_time">date</span>
 # then <a href="url">title</a> inside <ul class="news_list"><li>...</li>.
-import re, io, json, sys, time, urllib.request, ssl, os
+import re, io, json, sys, time, urllib.request, ssl, os, tempfile
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lantis_news.json')
 MAX_PAGES = 30  # upper bound safety
 
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
+
+def write_json_atomic(path, value):
+    fd, tmp = tempfile.mkstemp(prefix='.lantis-', suffix='.tmp', dir=os.path.dirname(path))
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
+            json.dump(value, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, path)
+    except Exception:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
 
 def fetch(url, timeout=20):
     ctx = ssl.create_default_context()
@@ -147,8 +160,7 @@ def main():
     uniq.sort(key=date_key, reverse=True)
     # Fetch article images (bounded to the newest few on this run; cached across runs).
     ensure_images(uniq, max_fetch=40)
-    with io.open(OUT, 'w', encoding='utf-8') as f:
-        json.dump(uniq, f, ensure_ascii=False, indent=1)
+    write_json_atomic(OUT, uniq)
     print('total', len(uniq), 'with images:', sum(1 for it in uniq if it.get('image')), '->', OUT)
 
 if __name__ == '__main__':

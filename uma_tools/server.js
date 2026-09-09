@@ -119,7 +119,14 @@ let transDirty = false;
 
 function saveTransCache() {
   if (!transDirty) return;
-  try { fs.writeFileSync(TRANS_CACHE_FILE, JSON.stringify(transCache, null, 1)); transDirty = false; } catch (e) {}
+  const tempPath = TRANS_CACHE_FILE + '.' + process.pid + '.tmp';
+  try {
+    fs.writeFileSync(tempPath, JSON.stringify(transCache, null, 1));
+    fs.renameSync(tempPath, TRANS_CACHE_FILE);
+    transDirty = false;
+  } catch (e) {
+    try { fs.unlinkSync(tempPath); } catch (e2) {}
+  }
 }
 
 function translateOne(text, attempt) {
@@ -619,7 +626,7 @@ function handleLantisDetail(req, res, params) {
       url: url
     };
     const tm = body.match(/<h2[^>]*class="newsin_title"[^>]*>([\s\S]*?)<\/h2>/i) ||
-               body.match(/<title>([^<]*)<! /i);
+               body.match(/<title>([^<]*)<\/title>/i);
     if (tm) detail.title = cleanHtml(tm[1]).trim();
     const inner = extractInnercon(body) || '';
     detail.message = inner;
@@ -669,6 +676,17 @@ function extractInnercon(body) {
 // the page never hits flaky third-party hosts directly and Range/seek keeps working.
 // Falls back across several public meting mirrors when one returns a non-audio response. ----
 const AUDIO_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1';
+const METING_HOSTS = new Set(['api.injahow.cn', 'met.liiiu.cn', 'api.baka.plus', 'meting.mikus.ink']);
+
+function isAllowedAudioUrl(value) {
+  let u;
+  try { u = new URL(value); } catch (e) { return false; }
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') return false;
+  if (u.username || u.password) return false;
+  if (u.port && u.port !== '80' && u.port !== '443') return false;
+  const host = u.hostname.toLowerCase().replace(/\.$/, '');
+  return METING_HOSTS.has(host) || host === 'music.163.com' || host === 'music.126.net' || host.endsWith('.music.126.net');
+}
 
 function metingCandidates(target) {
   let u;
@@ -697,10 +715,11 @@ function metingCandidates(target) {
   return out;
 }
 
-function audioFetchOnce(url, headers, cb, hops) {
+function audioFetchOnce(url, headers, cb, hops, onRequest) {
   hops = hops || 0;
   let u;
-  try { u = new URL(url); } catch (e) { cb(new Error('bad url')); return; }
+  try { u = new URL(url); } catch (e) { cb(new Error('bad url')); return null; }
+  if (!isAllowedAudioUrl(u.href)) { cb(new Error('audio host not allowed')); return null; }
   const mod = u.protocol === 'http:' ? http : https;
   let called = false;
   const done = (err, r, pref) => { if (called) return; called = true; cb(err, r, pref); };
@@ -709,26 +728,31 @@ function audioFetchOnce(url, headers, cb, hops) {
     if (hops < 5 && r.statusCode >= 300 && r.statusCode < 400 && r.headers.location) {
       r.resume();
       const next = new URL(r.headers.location, u).href;
-      const dest = audioFetchOnce(next, headers, done, hops + 1);
-      return; // dest will own completion
+      audioFetchOnce(next, headers, done, hops + 1, onRequest);
+      return;
     }
     done(null, r, pref);
   });
+  if (onRequest) onRequest(pref);
   pref.on('error', (e) => done(e, null, pref));
   pref.setTimeout(20000, function () { try { pref.destroy(new Error('timeout')); } catch (e) {} });
+  return pref;
 }
 
 function handleAudioProxy(req, res, params) {
   const target = params.get('url');
-  if (!target || !/^https?:\/\//i.test(target)) {
+  if (!target || !isAllowedAudioUrl(target)) {
     res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('bad audio url');
     return;
   }
   const candidates = metingCandidates(target);
   let idx = 0;
+  let activeUpstream = null;
+  let clientClosed = false;
 
   function tryNext() {
+    if (clientClosed) return;
     if (idx >= candidates.length) {
       try { res.writeHead(502, { 'Content-Type': 'text/plain; charset=utf-8' }); res.end('audio proxy failed'); } catch (e) {}
       return;
@@ -737,6 +761,7 @@ function handleAudioProxy(req, res, params) {
     const headers = { 'User-Agent': AUDIO_UA, 'Referer': 'https://music.163.com/' };
     if (req.headers.range) headers.Range = req.headers.range;
     audioFetchOnce(url, headers, (err, r, pref) => {
+      if (clientClosed) { try { if (pref) pref.destroy(); } catch (e) {} return; }
       if (err || !r) { try { if (pref) pref.destroy(); } catch (e) {} tryNext(); return; }
       const ct = String(r.headers['content-type'] || '');
       const isAudio = /audio\//i.test(ct) || /octet-stream/i.test(ct);
@@ -760,9 +785,12 @@ function handleAudioProxy(req, res, params) {
         res.writeHead(r.statusCode || 200, h);
         r.pipe(res);
       } catch (e) { try { if (pref) pref.destroy(); } catch (e2) {} }
-    });
+    }, 0, function (pref) { activeUpstream = pref; });
   }
-  req.on('close', () => { /* client gone; upstream req destroyed below via stream end */ });
+  res.on('close', () => {
+    clientClosed = true;
+    try { if (activeUpstream) activeUpstream.destroy(); } catch (e) {}
+  });
   tryNext();
 }
 
@@ -780,12 +808,13 @@ const server = http.createServer((req, res) => {
   }
   const params = urlObj.searchParams;
 
-  if (req.method === 'GET' && urlPath.indexOf('/api/news-index') === 0) return handleNewsIndex(res);
+  if (req.method === 'GET' && urlPath === '/api/news-index') return handleNewsIndex(res);
   if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
-  if (req.method === 'GET' && urlPath.indexOf('/api/news-detail') === 0) return handleNewsDetail(req, res, params);
-  if (req.method === 'GET' && urlPath.indexOf('/api/lantis-news') === 0) return handleLantisNews(res);
-  if (req.method === 'GET' && urlPath.indexOf('/api/lantis-detail') === 0) return handleLantisDetail(req, res, params);
-  if (req.method === 'GET' && urlPath.indexOf('/api/audio') === 0) return handleAudioProxy(req, res, params);
+  if (req.method === 'GET' && urlPath === '/api/news-detail') return handleNewsDetail(req, res, params);
+  if (req.method === 'GET' && urlPath === '/api/lantis-news') return handleLantisNews(res);
+  if (req.method === 'GET' && urlPath === '/api/lantis-detail') return handleLantisDetail(req, res, params);
+  if (req.method === 'GET' && urlPath === '/api/audio') return handleAudioProxy(req, res, params);
+  if (urlPath.startsWith('/api/')) return sendJson(res, 404, { error: 'unknown api endpoint' });
 
   if (urlPath === '/') urlPath = '/' + INDEX_FILE;
   let filePath = path.normalize(path.join(ROOT, urlPath));
