@@ -1,5 +1,6 @@
 // Zero-dependency static file server for the 赛马娘 page.
-// Usage: node server.js [port] [root]   (default port 8080, root = parent folder of this script)
+// Usage: node server.js [port] [root] [--no-crawl]
+//   --no-crawl disables background data refresh for ordinary local preview.
 // News proxy endpoints (official umamusume API lacks CORS headers, front-end calls same-origin):
 //   GET /api/news-index            -> merged fresh news list (pages 1..NEWS_TOP)
 //   GET /api/news-detail?id=<id>   -> single news detail
@@ -37,8 +38,11 @@ function requestAcceptsGzip(req) {
   });
 }
 
-const PORT = parseInt(process.argv[2] || '8080', 10);
-const ROOT = path.resolve(process.argv[3] || path.join(__dirname, '..'));
+const CLI_ARGS = process.argv.slice(2);
+const NO_AUTO_CRAWL = CLI_ARGS.includes('--no-crawl');
+const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
+const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
+const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
 
 function isInsideRoot(filePath) {
   const relativePath = path.relative(ROOT, filePath);
@@ -802,10 +806,14 @@ function serveFile(filePath, req, res) {
 server.listen(PORT, () => {
   console.log('Serving ' + ROOT + '  ->  http://localhost:' + PORT + '/');
   console.log('News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...');
+  reloadLantis();
+  if (NO_AUTO_CRAWL) {
+    console.log('Automatic data refresh disabled (--no-crawl).');
+    return;
+  }
   runEventsCrawl('startup');
   runCharsCrawl('startup');
   runAlbumsCrawl('startup');
-  reloadLantis(); // use existing lantis_news.json immediately; re-crawl in background
   runLantisCrawl('startup');
   setInterval(() => runEventsCrawl('daily'), 24 * 60 * 60 * 1000);
   setInterval(() => runCharsCrawl('daily'), 24 * 60 * 60 * 1000);
