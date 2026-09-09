@@ -4,7 +4,8 @@
   "private": true,
   "description": "赛马娘 live 页面工具：本地服务 + 官网新CD检测 + 网易云详情补全",
   "scripts": {
-    "serve": "node server.js",
+    "serve": "node server.js --no-crawl",
+    "serve:auto": "node server.js",
     "scrape": "node scrape.js",
     "apply": "node apply.js"
   }

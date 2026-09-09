@@ -79,7 +79,8 @@ def parse_block(block):
 
 
 LIVE_DATA = os.path.join(ROOT, 'live_cat_data.json')
-SPA_HTML = os.path.join(ROOT, '赛马娘LIVE相关.html')
+NUMBERED_LIVE_DATA = os.path.join(ROOT, 'live_data.json')
+APP_JS = os.path.join(ROOT, 'uma_tools', 'app.js')
 
 EVENTS_XLSX = os.path.join(ROOT, 'events_list.xlsx')
 VOICE_XLSX = os.path.join(ROOT, 'voice_list.xlsx')
@@ -236,12 +237,12 @@ def _conflict(a, b):
 
 
 def build_series_index():
-    """numbered-series (1st~7th EVENT) index from the SPA's own LIVE_DATA/SERIES_GRID.
+    """numbered-series (1st~7th EVENT) index from live_data.json/SERIES_GRID.
     One entry per DAY (deep link /{no}_EVENT/{perf}/{day}), dates inferred from
     the sub's start date because EN lists shows per day."""
     try:
-        h = io.open(SPA_HTML, encoding='utf-8').read()
-        LD = json.loads(re.search(r'const LIVE_DATA = (\[.*?\]);\n', h, re.S).group(1))
+        h = io.open(APP_JS, encoding='utf-8').read()
+        LD = json.load(io.open(NUMBERED_LIVE_DATA, encoding='utf-8'))
         SG = json.loads(re.search(r'const SERIES_GRID = (\[.*?\]);\n', h, re.S).group(1))
     except Exception as ex:
         print('series index unavailable:', str(ex)[:80], flush=True)

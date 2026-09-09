@@ -1,5 +1,6 @@
 // Zero-dependency static file server for the 赛马娘 page.
-// Usage: node server.js [port] [root]   (default port 8080, root = parent folder of this script)
+// Usage: node server.js [port] [root] [--no-crawl]
+//   --no-crawl disables background data refresh for ordinary local preview.
 // News proxy endpoints (official umamusume API lacks CORS headers, front-end calls same-origin):
 //   GET /api/news-index            -> merged fresh news list (pages 1..NEWS_TOP)
 //   GET /api/news-detail?id=<id>   -> single news detail
@@ -8,6 +9,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const zlib = require('zlib');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
@@ -25,9 +27,22 @@ const MIME = {
   '.gif': 'image/gif',
   '.ico': 'image/x-icon'
 };
+const COMPRESSIBLE_EXTENSIONS = new Set(['.html', '.htm', '.json', '.js', '.mjs', '.css', '.svg']);
 
-const PORT = parseInt(process.argv[2] || '8080', 10);
-const ROOT = path.resolve(process.argv[3] || path.join(__dirname, '..'));
+function requestAcceptsGzip(req) {
+  return String(req.headers['accept-encoding'] || '').split(',').some((entry) => {
+    const parts = entry.trim().toLowerCase().split(';');
+    if (parts[0] !== 'gzip' && parts[0] !== '*') return false;
+    const quality = parts.slice(1).find((part) => part.trim().startsWith('q='));
+    return !quality || Number(quality.trim().slice(2)) > 0;
+  });
+}
+
+const CLI_ARGS = process.argv.slice(2);
+const NO_AUTO_CRAWL = CLI_ARGS.includes('--no-crawl');
+const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
+const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
+const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
 
 function isInsideRoot(filePath) {
   const relativePath = path.relative(ROOT, filePath);
@@ -50,6 +65,8 @@ const NEWS_INDEX_URL = 'https://umamusume.jp/api/ajax/pr_info_index?format=json'
 const NEWS_DETAIL_URL = 'https://umamusume.jp/api/ajax/pr_info_detail?format=json';
 const NEWS_TTL = 5 * 60 * 1000; // cache the full crawl for 5 minutes
 const NEWS_MAX_CONC = 5;        // upstream request concurrency
+const HOME_SUMMARY_TTL = 60 * 1000;
+let homeSummaryCache = { at: 0, data: null };
 
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
 // Scraped by crawl_lantis_news.py into lantis_news.json. Merged into the news
@@ -101,7 +118,7 @@ let transDirty = false;
 
 function saveTransCache() {
   if (!transDirty) return;
-  try { fs.writeFileSync(TRANS_CACHE_FILE, JSON.stringify(transCache)); transDirty = false; } catch (e) {}
+  try { fs.writeFileSync(TRANS_CACHE_FILE, JSON.stringify(transCache, null, 1)); transDirty = false; } catch (e) {}
 }
 
 function translateOne(text, attempt) {
@@ -144,9 +161,11 @@ async function pumpTranslations() {
     const item = transQueue.shift();
     // Baidu free tier is ~1 QPS; translate serially with a small delay.
     const zh = await translateOne(item.text, 0);
-    if (zh && zh !== item.text) transCache[item.text] = zh;
-    transDirty = true;
-    saveTransCache();
+    if (zh && zh !== item.text) {
+      transCache[item.text] = zh;
+      transDirty = true;
+      saveTransCache();
+    }
     item.cb(zh || item.text);
     await new Promise((r) => setTimeout(r, 250));
   }
@@ -156,6 +175,7 @@ async function pumpTranslations() {
 function translateTitle(text, cb) {
   if (!text) return cb(text || '');
   if (transCache[text]) return cb(transCache[text]);
+  if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
   transQueue.push({ text: text, cb: cb });
   pumpTranslations();
 }
@@ -204,6 +224,7 @@ function translateHtmlMessage(html, cb) {
   const hash = crypto.createHash('md5').update(src).digest('hex');
   const key = 'msg_' + hash;
   if (transCache[key]) return cb(transCache[key]);
+  if (!BAIDU_APPID || !BAIDU_SECRET) return cb(src);
   // tokenize: alternates text / tag
   const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
   const runs = []; // {tokIndex, text}
@@ -309,12 +330,102 @@ function httpsGetHtml(url, cb) {
 }
 
 function sendJson(res, code, obj) {
-  res.writeHead(code, {
+  const body = Buffer.from(JSON.stringify(obj));
+  const headers = {
     'Content-Type': 'application/json; charset=utf-8',
     'Cache-Control': 'no-store',
     'Access-Control-Allow-Origin': '*'
+  };
+  const finish = (payload, compressed) => {
+    if (compressed) {
+      headers['Content-Encoding'] = 'gzip';
+      headers.Vary = 'Accept-Encoding';
+    }
+    headers['Content-Length'] = payload.length;
+    res.writeHead(code, headers);
+    res.end(payload);
+  };
+  if (body.length >= 1024 && res.req && requestAcceptsGzip(res.req)) {
+    zlib.gzip(body, (err, compressed) => finish(err ? body : compressed, !err));
+  } else {
+    finish(body, false);
+  }
+}
+
+function parseWindowArray(text, globalName) {
+  const match = String(text || '').match(new RegExp('window\\.' + globalName + '\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;'));
+  if (!match) throw new Error(globalName + ' data unavailable');
+  return JSON.parse(match[1]);
+}
+
+function countVoiceActors(characters, voiceList) {
+  const actors = new Set();
+  characters.forEach((character) => {
+    const current = character && (character.cv_zh || character.cv);
+    if (current) actors.add(current);
+    if (character && character.cv_former) actors.add(character.cv_former);
   });
-  res.end(JSON.stringify(obj));
+  voiceList.forEach((voice) => {
+    const zh = String((voice && voice.zh) || '').trim();
+    const ja = String((voice && voice.ja) || '').trim();
+    if (!zh && !ja) return;
+    if (actors.has(zh) || (ja && actors.has(ja))) return;
+    actors.add(zh || ja);
+  });
+  return actors.size;
+}
+
+function handleHomeSummary(res) {
+  if (homeSummaryCache.data && Date.now() - homeSummaryCache.at < HOME_SUMMARY_TTL) {
+    sendJson(res, 200, homeSummaryCache.data);
+    return;
+  }
+  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_data.json', 'character_index_data.js', 'voice_list_data.js'];
+  Promise.all(files.map((name) => fs.promises.readFile(path.join(ROOT, name), 'utf8')))
+    .then((texts) => {
+      const albumsDoc = JSON.parse(texts[0]);
+      const numberedDoc = JSON.parse(texts[1]);
+      const cats = JSON.parse(texts[2]) || {};
+      const eventsDoc = JSON.parse(texts[3]);
+      const characters = parseWindowArray(texts[4], 'CHAR_INDEX');
+      const voiceList = parseWindowArray(texts[5], 'VA_LIST');
+      const albums = Array.isArray(albumsDoc) ? albumsDoc : [];
+      const numbered = Array.isArray(numberedDoc) ? numberedDoc : [];
+      const events = eventsDoc && Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
+      const sumGroups = (groups) => (groups || []).reduce((total, group) => total + ((group && group.subs) || []).length, 0);
+      let liveCount = numbered.reduce((total, group) => total + ((group && group.subs) || []).reduce(
+        (subtotal, sub) => subtotal + (sub && sub.days ? sub.days.length : 1), 0
+      ), 0);
+      if (cats.cd && Array.isArray(cats.cd.sections)) {
+        liveCount += cats.cd.sections.reduce((total, section) => total + sumGroups(section && section.groups), 0);
+      }
+      if (cats.twinkle) liveCount += sumGroups(cats.twinkle.groups);
+      if (cats.other) liveCount += sumGroups(cats.other.groups);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      let nextEvent = null;
+      let nextTime = 0;
+      events.forEach((event) => {
+        const time = new Date(String(event.date || '') + 'T00:00:00').getTime();
+        if (isNaN(time) || time < today.getTime()) return;
+        if (!nextEvent || time < nextTime) { nextEvent = event; nextTime = time; }
+      });
+      const data = {
+        stats: {
+          songs: albums.reduce((total, album) => total + ((album && album.songs) || []).length, 0),
+          albums: albums.length,
+          live: liveCount,
+          performances: numbered.length,
+          characters: characters.length,
+          voiceActors: countVoiceActors(characters, voiceList),
+          events: events.length
+        },
+        nextEvent: nextEvent
+      };
+      homeSummaryCache = { at: Date.now(), data: data };
+      sendJson(res, 200, data);
+    })
+    .catch(() => sendJson(res, 500, { error: 'home summary unavailable' }));
 }
 
 function fetchNewsPage(page, cb) {
@@ -380,45 +491,15 @@ function handleNewsIndex(res) {
             items.forEach(function (n) {
               if (transCache[n.title]) n.title_zh = transCache[n.title];
             });
-            // Pre-fetch hero cover images (first <img> in body) for the hero items the front-end
-            // shows (2 latest MEDIA + 1 latest GAME), matching the client's newsHero computed.
-            const heroes = [];
-            let mediaSeen = 0, gameSeen = 0;
+            newsIndexCache = { at: Date.now(), data: data };
+            sendJson(res, 200, data);
+            // Translate missing titles in the background for the next cached response.
             items.forEach(function (n) {
-              if (mediaSeen < 2 && n.announce_label === 3) { heroes.push(n); mediaSeen++; }
-              else if (gameSeen < 1 && n.announce_label === 1) { heroes.push(n); gameSeen++; }
+              if (!n.title_zh) translateTitle(n.title, function () {});
             });
-            const heroNeeded = heroes.filter(function (n) { return !n.image; });
-            let heroDone = 0;
-            if (!heroNeeded.length) {
-              newsIndexCache = { at: Date.now(), data: data };
-              sendJson(res, 200, data);
-              finishBackground();
-              return;
-            }
-            heroNeeded.forEach(function (n) {
-              httpsGet(NEWS_DETAIL_URL + '&announce_id=' + n.announce_id, function (err, djson) {
-                if (!err && djson && djson.detail) {
-                  const m = String(djson.detail.message || '').match(/<img[^>]+src=["']([^"']+)["']/i);
-                  if (m && m[1]) n.hero_img = m[1];
-                }
-                heroDone++;
-                if (heroDone === heroNeeded.length) {
-                  newsIndexCache = { at: Date.now(), data: data };
-                  sendJson(res, 200, data);
-                  finishBackground();
-                }
-              });
+            lantisList.forEach(function (n) {
+              if (!transCache[n.title]) translateTitle(n.title, function () {});
             });
-            function finishBackground() {
-              // translate any titles not yet cached (result lands in cache + next response)
-              items.forEach(function (n) {
-                if (!n.title_zh) translateTitle(n.title, function () {});
-              });
-              lantisList.forEach(function (n) {
-                if (!transCache[n.title]) translateTitle(n.title, function () {});
-              });
-            }
             return;
           }
           pump();
@@ -663,6 +744,7 @@ const server = http.createServer((req, res) => {
   const params = urlObj.searchParams;
 
   if (req.method === 'GET' && urlPath.indexOf('/api/news-index') === 0) return handleNewsIndex(res);
+  if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
   if (req.method === 'GET' && urlPath.indexOf('/api/news-detail') === 0) return handleNewsDetail(req, res, params);
   if (req.method === 'GET' && urlPath.indexOf('/api/lantis-news') === 0) return handleLantisNews(res);
   if (req.method === 'GET' && urlPath.indexOf('/api/lantis-detail') === 0) return handleLantisDetail(req, res, params);
@@ -678,17 +760,17 @@ const server = http.createServer((req, res) => {
       // serve the SPA index so deep links / refreshes work.
       if (!path.extname(urlPath)) {
         filePath = path.join(ROOT, INDEX_FILE);
-        return serveFile(filePath, res);
+        return serveFile(filePath, req, res);
       }
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.end('404 Not Found: ' + urlPath);
       return;
     }
-    serveFile(filePath, res);
+    serveFile(filePath, req, res);
   });
 });
 
-function serveFile(filePath, res) {
+function serveFile(filePath, req, res) {
   fs.stat(filePath, (err2, st2) => {
     if (err2 || !st2.isFile()) {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
@@ -696,21 +778,46 @@ function serveFile(filePath, res) {
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, {
+    const headers = {
       'Content-Type': MIME[ext] || 'application/octet-stream',
-      'Cache-Control': 'no-store'
-    });
-    fs.createReadStream(filePath).pipe(res);
+      'Cache-Control': 'no-cache',
+      'Last-Modified': st2.mtime.toUTCString()
+    };
+    const ifModifiedSince = Date.parse(req.headers['if-modified-since'] || '');
+    if (!isNaN(ifModifiedSince) && Math.floor(st2.mtimeMs / 1000) <= Math.floor(ifModifiedSince / 1000)) {
+      res.writeHead(304, headers);
+      res.end();
+      return;
+    }
+    const shouldCompress = st2.size >= 1024 && COMPRESSIBLE_EXTENSIONS.has(ext) && requestAcceptsGzip(req);
+    if (shouldCompress) {
+      headers['Content-Encoding'] = 'gzip';
+      headers.Vary = 'Accept-Encoding';
+    } else {
+      headers['Content-Length'] = st2.size;
+    }
+    res.writeHead(200, headers);
+    if (req.method === 'HEAD') {
+      res.end();
+      return;
+    }
+    const input = fs.createReadStream(filePath);
+    if (shouldCompress) input.pipe(zlib.createGzip()).pipe(res);
+    else input.pipe(res);
   });
 }
 
 server.listen(PORT, () => {
   console.log('Serving ' + ROOT + '  ->  http://localhost:' + PORT + '/');
   console.log('News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...');
+  reloadLantis();
+  if (NO_AUTO_CRAWL) {
+    console.log('Automatic data refresh disabled (--no-crawl).');
+    return;
+  }
   runEventsCrawl('startup');
   runCharsCrawl('startup');
   runAlbumsCrawl('startup');
-  reloadLantis(); // use existing lantis_news.json immediately; re-crawl in background
   runLantisCrawl('startup');
   setInterval(() => runEventsCrawl('daily'), 24 * 60 * 60 * 1000);
   setInterval(() => runCharsCrawl('daily'), 24 * 60 * 60 * 1000);

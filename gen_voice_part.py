@@ -3,25 +3,31 @@ import io, sys, re, json, html, datetime, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-H = io.open(os.path.join(ROOT, '赛马娘LIVE相关.html'), encoding='utf-8').read()
-def extract(name):
-    i = H.find(name + ' = ')
-    s = H.index('[', i); dep = 0; e = -1
-    for j in range(s, len(H)):
-        if H[j] == '[': dep += 1
-        elif H[j] == ']':
+APP_JS = io.open(os.path.join(ROOT, 'uma_tools', 'app.js'), encoding='utf-8').read()
+def extract_array(source, name):
+    i = source.find(name + ' = ')
+    if i < 0:
+        raise ValueError('%s not found' % name)
+    s = source.index('[', i); dep = 0; e = -1
+    for j in range(s, len(source)):
+        if source[j] == '[': dep += 1
+        elif source[j] == ']':
             dep -= 1
             if dep == 0: e = j + 1; break
-    return json.loads(H[s:e])
+    if e < 0:
+        raise ValueError('%s is incomplete' % name)
+    return json.loads(source[s:e])
 
-LIVE = extract('LIVE_DATA')
-SERIES = extract('SERIES_GRID')
+LIVE = json.load(io.open(os.path.join(ROOT, 'live_data.json'), encoding='utf-8'))
+SERIES = extract_array(APP_JS, 'SERIES_GRID')
 CAT = json.load(io.open(os.path.join(ROOT, 'live_cat_data.json'), encoding='utf-8'))
 # 用 app 实际角色库 CHAR_INDEX（character_index_data.js，179个，最完整且与页面一致）
 jsrc = io.open(os.path.join(ROOT, 'character_index_data.js'), encoding='utf-8').read()
 CHAR_INDEX = json.loads(re.search(r'window\.CHAR_INDEX\s*=\s*(\[[\s\S]*?\])\s*;', jsrc).group(1))
 # 兼容后备：并入 characters_data.json
 chars_doc = json.load(io.open(os.path.join(ROOT, 'characters_data.json'), encoding='utf-8-sig'))['characters']
+voice_src = io.open(os.path.join(ROOT, 'voice_list_data.js'), encoding='utf-8').read()
+VOICE_LIST = json.loads(re.search(r'window\.VA_LIST\s*=\s*(\[[\s\S]*?\])\s*;', voice_src).group(1))
 # 异体字折叠（高↔髙、崎↔﨑 等），让声优名对齐到 voice 库规范写法
 VFOLD = {'髙': '高', '﨑': '崎', '祥': '祥', '塚': '塚', '濱': '浜', '諸': '諸',
          '侮': '仏', '墨': '墨', '梶': '梶', '稲': '稲', '榊': '榊', '蓮': '蓮'}
@@ -46,6 +52,17 @@ def add_char(c):
         if nm: charToCv[nm] = cv
 for c in CHAR_INDEX: add_char(c)
 for c in chars_doc: add_char(c)
+for v in VOICE_LIST:
+    zh = (v.get('zh') or '').strip()
+    ja = (v.get('ja') or '').strip()
+    canonical = ja or zh
+    if not canonical:
+        continue
+    voiceDb.add(canonical)
+    for name in (zh, ja):
+        if name:
+            charToCv[name] = canonical
+            cv_fold.setdefault(vfold(name), canonical)
 def resolve_cv(n):
     if not n: return None
     n = n.strip()
@@ -61,41 +78,12 @@ def resolve_cv(n):
     if n in charToCv: return charToCv[n]
     return None
 
-def build_actor_from_xlsx(events_data_events):
-    """声优排行数据源：events_list.xlsx 的 出演者（按事件计数），规范到 CV 名，
-    cat 由 events_data 按 标题 匹配得到。写出 actor_participation.json。"""
-    try:
-        import openpyxl
-    except Exception:
-        print('actor xlsx: openpyxl 不可用，跳过')
-        return
-    def norm_title(t):
-        return re.sub(r'\s+', '', (t or '').replace('\u3000', ' ')).strip()
-    cat_by_title = {}
-    for e in events_data_events:
-        live = e.get('live', '') or ''
-        if 'number_series_event' in live:
-            cat = 'num'
-        elif live:
-            cat = 'otherlive'
-        else:
-            cat = 'nonlive'
-        cat_by_title[norm_title(e.get('title', ''))] = cat
-    try:
-        wb = openpyxl.load_workbook(os.path.join(ROOT, 'events_list.xlsx'), data_only=True)
-    except Exception as ex:
-        print('actor xlsx: events_list.xlsx 读取失败，跳过:', str(ex)[:80])
-        return
-    ws = wb[wb.sheetnames[0]]
+def build_actor_participation(events_data_events):
+    """声优排行数据源：events_data.json 的出演者（按事件计数）。
+    只保留能映射到当前角色/声优库的名字，使任意干净 clone 都能重建结果。"""
     today = datetime.date.today()
-    def parse_date(cell):
-        if cell is None:
-            return None
-        if isinstance(cell, datetime.datetime):
-            return cell.date()
-        if isinstance(cell, datetime.date):
-            return cell
-        m = re.search(r'(\d{4})-(\d{1,2})-(\d{1,2})', str(cell))
+    def parse_date(value):
+        m = re.search(r'(\d{4})-(\d{1,2})-(\d{1,2})', str(value or ''))
         if m:
             try:
                 return datetime.date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
@@ -106,34 +94,35 @@ def build_actor_from_xlsx(events_data_events):
     total_names = 0
     skipped = 0
     skipped_future = 0
-    for r in range(2, ws.max_row + 1):
-        date_cell = ws.cell(r, 1).value
-        title = ws.cell(r, 2).value
-        actors_raw = ws.cell(r, 4).value
-        if not title and not actors_raw:
-            continue
-        d = parse_date(date_cell)
+    for event in events_data_events:
+        d = parse_date(event.get('date'))
         if d is None or d >= today:
             skipped_future += 1
             continue
-        cat = cat_by_title.get(norm_title(title), 'nonlive')
-        names = [x.strip() for x in (actors_raw or '').split('、') if x.strip()] if isinstance(actors_raw, str) else []
+        live = event.get('live', '') or ''
+        cat = 'num' if 'number_series_event' in live else ('otherlive' if live else 'nonlive')
         cvs = []
-        for nm in names:
+        seen = set()
+        for actor in event.get('actors') or []:
+            nm = (actor.get('name') or '').strip()
+            if not nm:
+                continue
+            total_names += 1
             cand = '佐伯伊織' if nm == '佐伯伊織(NU-KO)' else nm
             cv = resolve_cv(cand)
             if cv:
-                cvs.append(cv)
+                if cv not in seen:
+                    cvs.append(cv)
+                    seen.add(cv)
             else:
                 skipped += 1
         entries.append({'cat': cat, 'actors': cvs})
-        total_names += len(names)
     out = {'generated_at': 'local-build',
-           'source': 'events_list.xlsx + events_data.json + CHAR_INDEX',
+           'source': 'events_data.json + CHAR_INDEX + voice_list_data.js',
            'cutoff': today.isoformat(), 'only_before_today': True,
            'total_events': len(entries), 'entries': entries}
     io.open(os.path.join(ROOT, 'actor_participation.json'), 'w', encoding='utf-8').write(json.dumps(out, ensure_ascii=False, indent=1))
-    print('actor_participation.json 写出: 事件=%d 出演者条目=%d 未解析跳过=%d 今日及未来跳过=%d (截至 %s)' % (len(entries), total_names, skipped, skipped_future, today.isoformat()))
+    print('actor_participation.json 写出: 事件=%d 原始出演者=%d 未解析跳过=%d 今日及未来跳过=%d (截至 %s)' % (len(entries), total_names, skipped, skipped_future, today.isoformat()))
 
 ev = json.load(io.open(os.path.join(ROOT, 'events_data.json'), encoding='utf-8-sig'))['events']
 
@@ -323,10 +312,10 @@ for gi, grp in enumerate(LIVE):
         link = '/zh-Hans/live/number_series_event/%s_EVENT/%d' % (no, pi + 1)
         events.append({'link': link, 'title': sub.get('title', ''), 'cat': 'num', 'days': days})
 
-result = {'generated_at': 'local-build', 'source': 'events_data.json + live_cat_data.json + characters_data.json + LIVE_DATA',
+result = {'generated_at': 'local-build', 'source': 'events_data.json + live_cat_data.json + live_data.json + characters_data.json',
           'total': len(events), 'events': events}
 io.open(os.path.join(ROOT, 'voice_participation.json'), 'w', encoding='utf-8').write(json.dumps(result, ensure_ascii=False, indent=1))
-build_actor_from_xlsx(ev)
+build_actor_participation(ev)
 
 from collections import Counter
 cc = Counter(ev['cat'] for ev in events)

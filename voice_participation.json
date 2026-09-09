@@ -1,7 +1,7 @@
 {
  "generated_at": "local-build",
- "source": "events_data.json + live_cat_data.json + characters_data.json + LIVE_DATA",
- "total": 261,
+ "source": "events_data.json + live_cat_data.json + live_data.json + characters_data.json",
+ "total": 262,
  "events": [
   {
    "link": "https://www.eventernote.com/events/466254",
@@ -34,6 +34,19 @@
       "千賀光莉",
       "香里有佐",
       "華成結"
+     ]
+    }
+   ]
+  },
+  {
+   "link": "https://www.eventernote.com/events/491631",
+   "title": "ウマ娘 プリティーダービー×ウィナーズレディコラボ in 中山競馬場(2026年9月27日)",
+   "cat": "nonlive",
+   "days": [
+    {
+     "voice_actors": [
+      "今泉りおな",
+      "井上ほの花"
      ]
     }
    ]
