@@ -14,7 +14,7 @@ def extract(name):
             if dep == 0: e = j + 1; break
     return json.loads(H[s:e])
 
-LIVE = extract('LIVE_DATA')
+LIVE = json.load(io.open(os.path.join(ROOT, 'live_data.json'), encoding='utf-8'))
 SERIES = extract('SERIES_GRID')
 CAT = json.load(io.open(os.path.join(ROOT, 'live_cat_data.json'), encoding='utf-8'))
 # 用 app 实际角色库 CHAR_INDEX（character_index_data.js，179个，最完整且与页面一致）
@@ -323,7 +323,7 @@ for gi, grp in enumerate(LIVE):
         link = '/zh-Hans/live/number_series_event/%s_EVENT/%d' % (no, pi + 1)
         events.append({'link': link, 'title': sub.get('title', ''), 'cat': 'num', 'days': days})
 
-result = {'generated_at': 'local-build', 'source': 'events_data.json + live_cat_data.json + characters_data.json + LIVE_DATA',
+result = {'generated_at': 'local-build', 'source': 'events_data.json + live_cat_data.json + live_data.json + characters_data.json',
           'total': len(events), 'events': events}
 io.open(os.path.join(ROOT, 'voice_participation.json'), 'w', encoding='utf-8').write(json.dumps(result, ensure_ascii=False, indent=1))
 build_actor_from_xlsx(ev)

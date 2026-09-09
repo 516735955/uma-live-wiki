@@ -10,12 +10,13 @@
 
 ```
 uma-live-wiki/                    仓库根目录
-├── 赛马娘LIVE相关.html            站点主文件（约 1.4MB，所有 SPA 逻辑与部分数据）
+├── 赛马娘LIVE相关.html            站点主文件（SPA 结构、样式与逻辑）
 ├── *_data.js                      各类数据文件（window 全局变量，页面通过 <script> 加载）
 │   ├── character_index_data.js    角色索引（179 个角色）
 │   ├── character_detail_data.js   角色详情
 │   ├── pedigree_data.js           血统关系（1334 条，window.PED_REL）
-│   ├── live_cat_data.json         演唱会分类/曲目
+│   ├── live_data.json             编号系列公演与歌单
+│   ├── live_cat_data.json         其他演唱会分类/曲目
 │   ├── events_data.json           活动数据
 │   ├── albums.json                专辑数据
 │   └── ...
@@ -49,8 +50,8 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 
 ## 数据格式约定
 
-`*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`。
-页面用 `<script src="xxx_data.js"></script>` 引入。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
+`*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
+`*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
 
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 
