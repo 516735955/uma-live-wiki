@@ -2872,7 +2872,7 @@ createApp({
           var av = nd.av;
           if (av && av.indexOf('/') === -1 && av.indexOf('data:') !== 0) av = '/' + av;
           if (av && av.indexOf('uma_avatars') === 0) av = '/' + av;
-          el.innerHTML = '<span class="tag"></span><img class="av" src="' + av + '" alt="" loading="lazy"><div class="nm">' + (nd.real || nd.zh || id) + '</div>';
+          el.innerHTML = '<span class="tag"></span><img class="av" src="' + av + '" alt="" loading="lazy"><div class="nm">' + (nd.zh || nd.real || id) + '</div>';
           el.addEventListener('click', function () { selectRel(id); });
         } else {
           el.innerHTML = '<span class="tag"></span><span class="av">原</span><div class="nm">' + (nd.real || nd.zh || id) + '</div>';
