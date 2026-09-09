@@ -3649,12 +3649,6 @@
 </div>
 
 <script src="/uma_tools/vendor/vue.global.prod.js"></script>
-<script src="/intro_data.js"></script>
-<script src="/character_index_data.js?v=20260904"></script>
-<script src="/character_detail_data.js?v=20260904"></script>
-<script src="/pedigree_data.js?v=20260830"></script>
-<script src="/va_photos_data.js?v=20260830"></script>
-<script src="/voice_list_data.js?v=20260830"></script>
 <script>
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
@@ -3664,11 +3658,20 @@ const { createApp, ref, reactive, computed, watch } = Vue;
 
 createApp({
   setup() {
+    function routeSegments() {
+      const seg = window.location.pathname.split('/').filter(Boolean);
+      if (seg.length && seg[0].toLowerCase() === 'zh-hans') seg.shift();
+      return seg;
+    }
+    const initialSegments = routeSegments();
+    const initialFirst = (initialSegments[0] || '').toLowerCase();
+    const initialTab = initialFirst === 'characters' || initialFirst === 'events' ? 'database' :
+      (initialFirst === 'music' || initialFirst === 'artist' || !initialFirst ? 'songs' : initialFirst);
     const audio = ref(null);
     const albums = ref([]);
     const albumsError = ref('');
-    const activeTab = ref('songs');
-    const home = ref(true);
+    const activeTab = ref(initialTab);
+    const home = ref(initialSegments.length === 0);
     const albumDetail = ref(null);
     const artistDetail = ref(null);
     const search = ref('');
@@ -3702,6 +3705,12 @@ createApp({
     const liveData = ref([]);
     const liveCatData = ref(null);
     const liveCatDataOrig = ref(null);
+    const dataScriptPromises = {};
+    let newsLoadPromise = null;
+    let albumsLoadPromise = null;
+    let liveDataLoadPromise = null;
+    let liveCatLoadPromise = null;
+    let eventsLoadPromise = null;
     const savedScrollY = ref(0);
     const albumReturnView = ref('songs');
     const liveReturnSource = ref('live');
@@ -3841,6 +3850,83 @@ createApp({
     const relYear = ref('');
     const relPage = ref(1);
 
+    function loadDataScript(src, globalName) {
+      if (globalName && window[globalName]) return Promise.resolve();
+      if (dataScriptPromises[src]) return dataScriptPromises[src];
+      dataScriptPromises[src] = new Promise(function (resolve, reject) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = function () {
+          delete dataScriptPromises[src];
+          reject(new Error('failed to load ' + src));
+        };
+        document.head.appendChild(script);
+      });
+      return dataScriptPromises[src];
+    }
+    function loadCharacterIndexData() {
+      return loadDataScript('/character_index_data.js?v=20260904', 'CHAR_INDEX');
+    }
+    function loadCharacterDetailData() {
+      return Promise.all([
+        loadCharacterIndexData(),
+        loadDataScript('/character_detail_data.js?v=20260904', 'CHAR_DETAIL'),
+        loadDataScript('/pedigree_data.js?v=20260830', 'PED_REL')
+      ]);
+    }
+    function loadVoiceData() {
+      return Promise.all([
+        loadCharacterIndexData(),
+        loadDataScript('/va_photos_data.js?v=20260830', 'VA_PHOTOS'),
+        loadDataScript('/voice_list_data.js?v=20260830', 'VA_LIST')
+      ]);
+    }
+    function ensureTabData(tab) {
+      if (tab === 'news') return loadNews();
+      if (tab === 'songs') return loadAlbums();
+      if (tab === 'live') return Promise.all([loadLiveData(), loadLiveCatData(), loadEvents()]);
+      return Promise.resolve();
+    }
+    function prepareCurrentRoute() {
+      const seg = routeSegments();
+      if (!seg.length) return Promise.resolve();
+      const first = (seg[0] || '').toLowerCase();
+      if (first === 'news') return loadNews();
+      if (first === 'music' || first === 'artist' || first === 'songs') return loadAlbums();
+      if (first === 'live') return ensureTabData('live');
+      if (first === 'characters') {
+        const sub = (seg[1] || '').toLowerCase();
+        return sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' && sub !== 'blood'
+          ? loadCharacterDetailData() : loadCharacterIndexData();
+      }
+      if (first === 'events') return loadEvents();
+      if (first !== 'database') return Promise.resolve();
+      const sub = (seg[1] || '').toLowerCase();
+      if (sub === 'albums' || sub === 'songs') return loadAlbums();
+      if (sub === 'events') return loadEvents();
+      if (sub === 'voice' || sub === 'voice-actors') return loadVoiceData();
+      if (sub === 'characters') {
+        const charPath = (seg[2] || '').toLowerCase();
+        return charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos' && charPath !== 'blood'
+          ? loadCharacterDetailData() : loadCharacterIndexData();
+      }
+      return Promise.resolve();
+    }
+    function loadHomeDataWhenIdle() {
+      const load = function () {
+        if (!home.value) return;
+        Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents()]);
+      };
+      const schedule = function () {
+        if ('requestIdleCallback' in window) window.requestIdleCallback(load, { timeout: 10000 });
+        else window.setTimeout(load, 1000);
+      };
+      if (document.readyState === 'complete') schedule();
+      else window.addEventListener('load', schedule, { once: true });
+    }
+
     const player = reactive({
       shown: false, url: null, playing: false,
       cover: '', name: '', artist: '',
@@ -3972,6 +4058,7 @@ createApp({
       charSub.value = 'intro';
       charDetail.value = null;
       voiceDetail.value = null;
+      ensureTabData(k);
       pushUrl();
     }
     function enterTab(k) {
@@ -3987,6 +4074,7 @@ createApp({
       if (k !== 'database') charSub.value = 'intro';
       if (k !== 'database') charDetail.value = null;
       voiceDetail.value = null;
+      ensureTabData(k);
       window.scrollTo(0, 0);
       pushUrl();
     }
@@ -4011,13 +4099,16 @@ createApp({
       }
     }
     function openCharDetail(id) {
-      const found = findCharById(id);
-      if (!found) return;
-      if (!charDetail.value) charSavedScrollY.value = window.scrollY || 0;
-      charDetail.value = found;
-      window.scrollTo(0, 0);
-      pushUrl();
-      Vue.nextTick(renderCharBlood);
+      const show = function () {
+        const found = findCharById(id);
+        if (!found) return;
+        if (!charDetail.value) charSavedScrollY.value = window.scrollY || 0;
+        charDetail.value = found;
+        window.scrollTo(0, 0);
+        pushUrl();
+        Vue.nextTick(renderCharBlood);
+      };
+      return loadCharacterDetailData().then(show, show);
     }
     function renderCharBlood() {
       var box = document.getElementById('cCharBlood');
@@ -4037,15 +4128,26 @@ createApp({
       artistDetail.value = null;
       activeTab.value = 'songs';
       window.scrollTo(0, 0);
+      loadHomeDataWhenIdle();
       pushUrl();
     }
     function goDbView(v) {
-      evDataView.value = false;
-      if (v !== 'voice') voiceDetail.value = null;
-      if (v === 'songs') { window.__songsPage = 1; var _st = document.getElementById('tab-db-songs'); if (_st) _st._rendered = false; }
-      dbView.value = v;
-      window.scrollTo(0, 0);
-      pushUrl();
+      let ready = Promise.resolve();
+      if (v === 'characters') ready = loadCharacterIndexData();
+      else if (v === 'voice') ready = loadVoiceData();
+      else if (v === 'albums' || v === 'songs') ready = loadAlbums();
+      else if (v === 'events') ready = loadEvents();
+      const activate = function () {
+        evDataView.value = false;
+        if (v !== 'voice') voiceDetail.value = null;
+        if (v === 'songs') { window.__songsPage = 1; var _st = document.getElementById('tab-db-songs'); if (_st) _st._rendered = false; }
+        dbView.value = v;
+        window.scrollTo(0, 0);
+        pushUrl();
+      };
+      if (v === 'characters' || v === 'voice') return ready.then(activate, activate);
+      activate();
+      return ready;
     }
     function vaSlugOf(name) {
       return encodeURIComponent(String(name || ''));
@@ -4132,16 +4234,19 @@ createApp({
       }
     }
     function openCharFromVoice(id) {
-      const found = findCharById(id);
-      if (!found) return;
-      charDetailSource.value = 'voice';
-      savedVoiceDetail.value = voiceDetail.value;
-      dbView.value = 'characters';
-      charSub.value = 'intro';
-      voiceDetail.value = null;
-      charDetail.value = found;
-      window.scrollTo(0, 0);
-      pushUrl();
+      const show = function () {
+        const found = findCharById(id);
+        if (!found) return;
+        charDetailSource.value = 'voice';
+        savedVoiceDetail.value = voiceDetail.value;
+        dbView.value = 'characters';
+        charSub.value = 'intro';
+        voiceDetail.value = null;
+        charDetail.value = found;
+        window.scrollTo(0, 0);
+        pushUrl();
+      };
+      return loadCharacterDetailData().then(show, show);
     }
     function albumName(a) { return a.name; }
     function clearSearch() {
@@ -5389,9 +5494,10 @@ createApp({
       ev.target.style.visibility = 'hidden';
     }
     function loadEvents() {
+      if (eventsLoadPromise) return eventsLoadPromise;
       eventsError.value = '';
       eventsLoading.value = true;
-      return fetch('/events_data.json', { cache: 'no-cache' })
+      eventsLoadPromise = fetch('/events_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           eventsAll.value = (data && Array.isArray(data.events)) ? data.events : [];
@@ -5404,6 +5510,7 @@ createApp({
           eventsLoading.value = false;
           eventsError.value = '无法加载活动数据（请确认 events_data.json 存在，并通过本地服务访问本页）。';
         });
+      return eventsLoadPromise;
     }
     function openEvData() {
       evDataView.value = true;
@@ -5517,9 +5624,10 @@ function registerCover(url) {
       return h;
     }
     function loadNews() {
+      if (newsLoadPromise) return newsLoadPromise;
       newsError.value = '';
       newsLoading.value = true;
-      fetch('/api/news-index', { cache: 'no-cache' })
+      newsLoadPromise = fetch('/api/news-index', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (d) {
           newsItems.value = (d && d.information_list) || [];
@@ -5531,6 +5639,7 @@ function registerCover(url) {
           newsLoading.value = false;
           newsError.value = '无法加载新闻数据（请通过本地服务访问，例如 node uma_tools\server.js 后打开 http://localhost:8080/）';
         });
+      return newsLoadPromise;
     }
     function newsHeroCover(n) {
       if (!n) return newsDefaultCover;
@@ -5600,14 +5709,17 @@ function registerCover(url) {
       pushUrl();
     }
     function loadAlbums() {
+      if (albumsLoadPromise) return albumsLoadPromise;
       albumsError.value = '';
-      return fetch('/albums.json', { cache: 'no-cache' })
+      albumsLoadPromise = fetch('/albums.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { albums.value = Array.isArray(data) ? data : []; })
         .catch(function (e) { albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools\server.js 后打开 http://localhost:8080/）'; });
+      return albumsLoadPromise;
     }
     function loadLiveCatData() {
-      return fetch('/live_cat_data.json', { cache: 'no-cache' })
+      if (liveCatLoadPromise) return liveCatLoadPromise;
+      liveCatLoadPromise = fetch('/live_cat_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           try { liveCatDataOrig.value = JSON.parse(JSON.stringify(data)); } catch (e) { liveCatDataOrig.value = null; }
@@ -5619,12 +5731,15 @@ function registerCover(url) {
           liveCatData.value = data || null;
         })
         .catch(function () { liveCatData.value = null; });
+      return liveCatLoadPromise;
     }
     function loadLiveData() {
-      return fetch('/live_data.json', { cache: 'no-cache' })
+      if (liveDataLoadPromise) return liveDataLoadPromise;
+      liveDataLoadPromise = fetch('/live_data.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { liveData.value = Array.isArray(data) ? data : []; })
         .catch(function () { liveData.value = []; });
+      return liveDataLoadPromise;
     }
 
     // audio events
@@ -5660,7 +5775,7 @@ function registerCover(url) {
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, newsBack, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
       currentGroup, currentSub, liveInfoHtml, setlistTitle, setlistLinks, setlistTable,
-      seriesGrid, syncFromUrl,
+      seriesGrid, syncFromUrl, prepareCurrentRoute, loadHomeDataWhenIdle,
       eventsCount, eventsMeta, eventsQuery, evTime, setEvTime, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
@@ -5675,12 +5790,12 @@ function registerCover(url) {
     this.bindAudio();
     const self = this;
     window.__uma_app = this;
-    window.addEventListener('popstate', function () { self.syncFromUrl(); });
-    this.loadNews();
-    this.loadAlbums().then(function () { self.syncFromUrl(); });
-    this.loadLiveData();
-    this.loadLiveCatData();
-    this.loadEvents();
+    const syncPrepared = function () {
+      self.prepareCurrentRoute().then(function () { self.syncFromUrl(); }, function () { self.syncFromUrl(); });
+    };
+    window.addEventListener('popstate', syncPrepared);
+    syncPrepared();
+    this.loadHomeDataWhenIdle();
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.onScroll();
   }
@@ -5825,6 +5940,7 @@ function registerCover(url) {
     var box = (root || document).querySelector('#cDetailBlock');
     if (!box) return;
     function fill() {
+      refreshRelIndex();
       var detail = window.__uma_app ? window.__uma_app.charDetail : null;
       if (!detail || !detail.id || !window.CHAR_DETAIL) return;
       if (box.getAttribute('data-d-filled') === detail.id) return;
@@ -5877,7 +5993,13 @@ function registerCover(url) {
 
   /* ---------- 血缘关系节点图（角色详情页下方） ---------- */
   var relByCid = {};
-  if (typeof PED_REL !== 'undefined') PED_REL.forEach(function (n) { relByCid[n.cid] = n; });
+  var relSource = null;
+  function refreshRelIndex() {
+    if (typeof PED_REL === 'undefined' || relSource === PED_REL) return;
+    relByCid = {};
+    PED_REL.forEach(function (n) { relByCid[n.cid] = n; });
+    relSource = PED_REL;
+  }
   var NON_UMA = { otonashietsuko:1, kiryuinaoi:1, anshinzawasasami:1, kashimotoriko:1, satakemei:1, tsurugiryoka:1, hoshinakiyoko:1, akasakamisato:1, hosoejunko:1, spica_trainer:1, narita_trainer:1, teppen_commentator_honizumi:1, teppen_commentator_yamamoto:1 };
   var UMA_VIDEOS = {
   "sakurabakushino": [{"n":"短途领域的爆进之王","bv":"BV12K4y1N78N"}],
@@ -6061,6 +6183,7 @@ function registerCover(url) {
 
   function renderBloodGraphInDetail(box, root) {
     if (!box) return;
+    refreshRelIndex();
     if (NON_UMA[root]) {
       var note = document.createElement('div');
       note.className = 'c-blood c-blood-pure';
@@ -6662,9 +6785,6 @@ mo.observe(document.body, { childList: true, subtree: true });
 initCharTab();
 initVoiceTab();
 initSongsTab();
-if (window.__uma_app && typeof window.__uma_app.syncFromUrl === 'function') {
-  window.__uma_app.syncFromUrl();
-}
 })();
 </script>
 </body>
