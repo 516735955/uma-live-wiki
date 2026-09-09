@@ -4500,7 +4500,8 @@ createApp({
       { key: 'yon', label: '赛马娘四格' },
       { key: 'yur', label: '摇曳马娘' },
       { key: 'sg', label: 'STARTING GATE系列' },
-      { key: 'wl', label: 'WINNING LIVE系列' }
+      { key: 'wl', label: 'WINNING LIVE系列' },
+      { key: 'svt', label: 'Solo Vocal Tracks系列' }
     ];
     const TYPE_LIST = [
       { key: '专辑', label: '专辑' },
@@ -4512,7 +4513,7 @@ createApp({
       '': '',
       s2: ['ANIMATION DERBY Season 2'], s3: ['ANIMATION DERBY Season 3'], s1: ['ANIMATION DERBY'],
       rttp: ['ROAD TO THE TOP'], movi: ['新時代の扉'], cinder: ['シンデレラグレイ'],
-      yon: ['うまよん'], yur: ['うまゆる'], sg: ['STARTING GATE'], wl: ['WINNING LIVE'],
+      yon: ['うまよん'], yur: ['うまゆる'], sg: ['STARTING GATE'], wl: ['WINNING LIVE'], svt: ['Solo Vocal Tracks'],
       inst: ['サウンドトラック', 'Soundtrack', 'Sound Track']
     };
     function isWorkKey(k, name) {
@@ -4535,6 +4536,7 @@ createApp({
       if (/うまよん/.test(name)) return 'yon';
       if (/うまゆる/.test(name)) return 'yur';
       if (/STARTING GATE/.test(name)) return 'sg';
+      if (/Solo Vocal Tracks/.test(name)) return 'svt';
       if (/WINNING LIVE/.test(name)) return 'wl';
       return '';
     }
