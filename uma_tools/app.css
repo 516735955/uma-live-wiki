@@ -1549,6 +1549,10 @@
         .news-detail-title { font-size: 1.5em; font-weight: 800; color: var(--text); line-height: 1.4; margin-bottom: 14px; }
         .news-detail-body { line-height: 1.9; font-size: 0.95em; color: var(--text); }
         .news-detail-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 8px 0; }
+        .news-detail-body .news-embed {
+            display: block; width: 100%; max-width: 720px; aspect-ratio: 16 / 9;
+            height: auto; margin: 12px auto; border: 0; border-radius: 8px;
+        }
         .news-detail-body a { color: var(--brand-dark, #e67510); text-decoration: underline; }
         .news-detail-body span[data-text-custom-color] { color: inherit; }
 

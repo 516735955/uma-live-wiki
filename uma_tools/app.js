@@ -2043,13 +2043,23 @@ createApp({
         'A', 'P', 'BR', 'DIV', 'SPAN', 'STRONG', 'B', 'EM', 'I', 'U', 'S',
         'UL', 'OL', 'LI', 'DL', 'DT', 'DD', 'BLOCKQUOTE', 'H1', 'H2', 'H3',
         'H4', 'H5', 'H6', 'HR', 'TABLE', 'THEAD', 'TBODY', 'TFOOT', 'TR',
-        'TH', 'TD', 'FIGURE', 'FIGCAPTION', 'PICTURE', 'SOURCE', 'IMG'
+        'TH', 'TD', 'FIGURE', 'FIGCAPTION', 'PICTURE', 'SOURCE', 'IMG', 'IFRAME'
       ]);
-      const dangerousTags = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META', 'BASE']);
+      const dangerousTags = new Set(['SCRIPT', 'STYLE', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META', 'BASE']);
       const allowedAttrs = new Set(['href', 'src', 'srcset', 'alt', 'title', 'width', 'height', 'loading', 'colspan', 'rowspan']);
+      const iframeAttrs = new Set(['src', 'title', 'width', 'height', 'loading', 'allow', 'allowfullscreen', 'frameborder', 'referrerpolicy']);
       function safeUrl(value) {
         const normalized = String(value || '').trim().replace(/[\u0000-\u0020]+/g, '');
         return !/(?:^|,)(?:javascript|data|vbscript):/i.test(normalized);
+      }
+      function trustedVideoEmbed(value) {
+        try {
+          const url = new URL(String(value || ''), window.location.origin);
+          const trustedHost = ['youtube.com', 'www.youtube.com', 'youtube-nocookie.com', 'www.youtube-nocookie.com'].includes(url.hostname);
+          return url.protocol === 'https:' && trustedHost && /^\/embed\/[A-Za-z0-9_-]+/.test(url.pathname);
+        } catch (e) {
+          return false;
+        }
       }
       Array.from(doc.body.querySelectorAll('*')).forEach(function (el) {
         if (!allowedTags.has(el.tagName)) {
@@ -2057,9 +2067,14 @@ createApp({
           else el.replaceWith.apply(el, Array.from(el.childNodes));
           return;
         }
+        if (el.tagName === 'IFRAME' && !trustedVideoEmbed(el.getAttribute('src'))) {
+          el.remove();
+          return;
+        }
+        const attrs = el.tagName === 'IFRAME' ? iframeAttrs : allowedAttrs;
         Array.from(el.attributes).forEach(function (attr) {
           const name = attr.name.toLowerCase();
-          if (!allowedAttrs.has(name) || ((name === 'href' || name === 'src' || name === 'srcset') && !safeUrl(attr.value))) {
+          if (!attrs.has(name) || ((name === 'href' || name === 'src' || name === 'srcset') && !safeUrl(attr.value))) {
             el.removeAttribute(attr.name);
           }
         });
@@ -2068,6 +2083,11 @@ createApp({
           el.setAttribute('rel', 'noopener noreferrer');
         }
         if (el.tagName === 'IMG') el.setAttribute('loading', 'lazy');
+        if (el.tagName === 'IFRAME') {
+          el.className = 'news-embed';
+          el.setAttribute('loading', 'lazy');
+          el.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        }
       });
       return doc.body.innerHTML;
     }
