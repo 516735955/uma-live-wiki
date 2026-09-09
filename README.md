@@ -1,29 +1,31 @@
 # 赛马娘LIVE综合站
 
-一个纯静态的赛马娘演唱会/LIVE 资讯站，零框架、零构建，由单页 HTML + JavaScript 数据文件驱动。
+一个零构建的赛马娘演唱会/LIVE 资讯站，由单页 HTML、浏览器版 Vue 3、按需加载的数据文件和零依赖 Node.js 服务驱动。
 
 - 在线站点：https://umamusumelivewiki.top/zh-Hans
 - 本仓库：https://github.com/516735955/uma-live-wiki
-- 技术栈：原生 HTML/CSS/JS + Node.js（仅用于本地静态服务器脚本）+ Python（抓取/数据处理脚本）
+- 技术栈：HTML/CSS/JS + Vue 3 浏览器运行时 + Node.js + Python（抓取/数据处理脚本）
 
 ## 目录结构
 
 ```
 uma-live-wiki/                    仓库根目录
-├── 赛马娘LIVE相关.html            站点主文件（SPA 结构、样式与逻辑）
-├── *_data.js                      各类数据文件（window 全局变量，页面通过 <script> 加载）
+├── 赛马娘LIVE相关.html            SPA 页面结构
+├── *_data.js                      window 全局变量形式的数据文件（按页面加载）
 │   ├── character_index_data.js    角色索引（179 个角色）
 │   ├── character_detail_data.js   角色详情
 │   ├── pedigree_data.js           血统关系（1334 条，window.PED_REL）
-│   ├── live_data.json             编号系列公演与歌单
-│   ├── live_cat_data.json         其他演唱会分类/曲目
-│   ├── events_data.json           活动数据
-│   ├── albums.json                专辑数据
 │   └── ...
+├── live_data.json                 编号系列公演与歌单
+├── live_cat_data.json             其他演唱会分类/曲目
+├── events_data.json               活动数据
+├── albums.json                    专辑数据
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ role_svgs/ video_thumbs/  图片资源
 ├── 血统表/                       血统图表
 ├── uma_tools/                    工具脚本
-│   ├── server.js                 本地静态服务器（零依赖）
+│   ├── app.css                   站点样式
+│   ├── app.js                    SPA 逻辑
+│   ├── server.js                 静态文件与站内 API 服务（零依赖）
 │   └── *.py *.js                  抓取/处理/校验脚本
 └── .gitignore
 ```
@@ -64,8 +66,8 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 
 ## 页面版本号
 
-主文件 `赛马娘LIVE相关.html` 内会有全局版本常量（用于上线后强制刷新缓存）。
-每次修改上线后把版本号 +1，再重新部署。
+按需加载的 `*_data.js` 地址在 `uma_tools/app.js` 中保留版本参数（用于上线后强制刷新缓存）。
+修改对应 JavaScript 数据文件并准备上线时，再更新该文件地址上的版本参数。
 
 ## 协作流程（普通成员）
 
