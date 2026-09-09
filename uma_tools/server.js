@@ -118,7 +118,7 @@ let transDirty = false;
 
 function saveTransCache() {
   if (!transDirty) return;
-  try { fs.writeFileSync(TRANS_CACHE_FILE, JSON.stringify(transCache)); transDirty = false; } catch (e) {}
+  try { fs.writeFileSync(TRANS_CACHE_FILE, JSON.stringify(transCache, null, 1)); transDirty = false; } catch (e) {}
 }
 
 function translateOne(text, attempt) {
@@ -161,9 +161,11 @@ async function pumpTranslations() {
     const item = transQueue.shift();
     // Baidu free tier is ~1 QPS; translate serially with a small delay.
     const zh = await translateOne(item.text, 0);
-    if (zh && zh !== item.text) transCache[item.text] = zh;
-    transDirty = true;
-    saveTransCache();
+    if (zh && zh !== item.text) {
+      transCache[item.text] = zh;
+      transDirty = true;
+      saveTransCache();
+    }
     item.cb(zh || item.text);
     await new Promise((r) => setTimeout(r, 250));
   }
@@ -173,6 +175,7 @@ async function pumpTranslations() {
 function translateTitle(text, cb) {
   if (!text) return cb(text || '');
   if (transCache[text]) return cb(transCache[text]);
+  if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
   transQueue.push({ text: text, cb: cb });
   pumpTranslations();
 }
@@ -221,6 +224,7 @@ function translateHtmlMessage(html, cb) {
   const hash = crypto.createHash('md5').update(src).digest('hex');
   const key = 'msg_' + hash;
   if (transCache[key]) return cb(transCache[key]);
+  if (!BAIDU_APPID || !BAIDU_SECRET) return cb(src);
   // tokenize: alternates text / tag
   const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
   const runs = []; // {tokIndex, text}
