@@ -331,7 +331,7 @@
                 </button>
                 <div class="live-series-grid" id="liveSeriesGrid">
                     <div v-for="(c,i) in seriesGrid" :key="c.index" class="live-series-card" :style="coverStyle(c)" @click="openLiveSeries(c.index)">
-                        <img class="live-series-cover" :src="c.cover" :alt="c.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'">
+                        <img class="live-series-cover" :src="microCmsImage(c.cover, 560)" :alt="c.title" :loading="liveView === 'liveSeries' && i < 2 ? 'eager' : 'lazy'" :fetchpriority="liveView === 'liveSeries' && i === 0 ? 'high' : 'auto'">
                         <div class="live-series-no">{{ c.no }}</div>
                         <div class="live-series-info">
                             <div class="live-series-title">{{ c.title }}</div>

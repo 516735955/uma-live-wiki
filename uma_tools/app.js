@@ -235,10 +235,15 @@ createApp({
         loadDataScript('/voice_list_data.js?v=20260830', 'VA_LIST')
       ]);
     }
+    function loadLivePathData(path) {
+      const value = String(path || '');
+      if (value.indexOf('number_series_event') !== -1) return loadLiveData();
+      if (value.indexOf('/live/nonlive') !== -1) return loadEvents();
+      return loadLiveCatData();
+    }
     function ensureTabData(tab) {
       if (tab === 'news') return loadNews();
       if (tab === 'songs') return loadAlbums();
-      if (tab === 'live') return Promise.all([loadLiveData(), loadLiveCatData(), loadEvents()]);
       return Promise.resolve();
     }
     function prepareCurrentRoute() {
@@ -247,7 +252,13 @@ createApp({
       const first = (seg[0] || '').toLowerCase();
       if (first === 'news') return loadNews();
       if (first === 'music' || first === 'artist' || first === 'songs') return loadAlbums();
-      if (first === 'live') return ensureTabData('live');
+      if (first === 'live') {
+        const sub = (seg[1] || '').toLowerCase();
+        if (!sub) return Promise.resolve();
+        if (sub === 'number_series_event') return loadLiveData();
+        if (sub === 'nonlive') return loadEvents();
+        return loadLiveCatData();
+      }
       if (first === 'characters') {
         const sub = (seg[1] || '').toLowerCase();
         return sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' && sub !== 'blood'
@@ -1339,12 +1350,17 @@ createApp({
       pushUrl();
     }
     function openCat(cat) {
-      if (cat === 'series') { showLiveView('liveSeries'); }
-      else if (cat === 'cd' || cat === 'twinkle' || cat === 'other' || cat === 'nonlive') {
-        liveCatType.value = cat;
-        liveCatIndex.value = -1;
-        liveCatSectionIndex.value = -1;
-        showLiveView('liveCatList');
+      if (cat === 'series') {
+        loadLiveData().then(function () { showLiveView('liveSeries'); }, function () { showLiveView('liveSeries'); });
+      } else if (cat === 'cd' || cat === 'twinkle' || cat === 'other' || cat === 'nonlive') {
+        const show = function () {
+          liveCatType.value = cat;
+          liveCatIndex.value = -1;
+          liveCatSectionIndex.value = -1;
+          showLiveView('liveCatList');
+        };
+        const ready = cat === 'nonlive' ? loadEvents() : loadLiveCatData();
+        ready.then(show, show);
       }
       else { catNote.value = (cat === 'cd') ? 'CD发售纪念活动 正在建设中，敬请期待...' : 'Twinkle Circle! 正在建设中，敬请期待...'; }
     }
@@ -1444,22 +1460,26 @@ createApp({
       return path;
     }
     function openLiveFromEvents(path) {
-      eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
-      liveBackScroll.view = '';
-      history.pushState({ r: true }, '', path);
-      syncFromUrl();
-      liveReturnSource.value = 'events';
-      var goTop = function () {
-        var el = document.documentElement;
-        var prev = el.style.scrollBehavior;
-        el.style.scrollBehavior = 'auto';
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-        el.style.scrollBehavior = prev;
+      const open = function () {
+        path = liveDetailHref(path);
+        eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
+        liveBackScroll.view = '';
+        history.pushState({ r: true }, '', path);
+        syncFromUrl();
+        liveReturnSource.value = 'events';
+        var goTop = function () {
+          var el = document.documentElement;
+          var prev = el.style.scrollBehavior;
+          el.style.scrollBehavior = 'auto';
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+          el.style.scrollBehavior = prev;
+        };
+        requestAnimationFrame(goTop);
+        setTimeout(goTop, 0);
       };
-      requestAnimationFrame(goTop);
-      setTimeout(goTop, 0);
+      return loadLivePathData(path).then(open, open);
     }
     function nonliveGi(e) {
       const gs = (liveNonliveCat.value && liveNonliveCat.value.groups) || [];
@@ -1850,7 +1870,8 @@ createApp({
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
       if (!e) return;
-      ensureTabData('live').then(function () {
+      const ready = e.live ? loadLivePathData(e.live) : loadEvents();
+      ready.then(function () {
         if (e.live) openLiveFromEvents(liveDetailHref(e.live));
         else openNonliveFromEvents(e);
         liveReturnSource.value = 'home';
@@ -1937,6 +1958,12 @@ createApp({
       if (!src || !/^https?:\/\/p\d+\.music\.126\.net\//i.test(src) || /[?&]param=\d+y\d+/i.test(src)) return src;
       const px = Math.max(64, parseInt(size, 10) || 360);
       return src + (src.indexOf('?') === -1 ? '?' : '&') + 'param=' + px + 'y' + px;
+    }
+    function microCmsImage(url, width) {
+      const src = String(url || '');
+      if (!/^https:\/\/images\.microcms-assets\.io\//i.test(src)) return src;
+      const px = Math.max(1, Math.round(width || 560));
+      return src + (src.indexOf('?') === -1 ? '?' : '&') + 'w=' + px + '&fm=webp&q=75';
     }
     window.umaCoverThumb = coverThumb;
     function sampleCover(event, url) {
@@ -2131,7 +2158,7 @@ createApp({
       filterWork, filterType, sortMode, WORK_LIST, TYPE_LIST, filteredAlbums, setFilter, clearFilters, workLabel, typeLabel, filterActive, showFilters, backTopVisible, backToTop, onScroll,
       albumTypeOf,
       isTabActive, switchTab, enterTab, goHome, goDbView, dbView, albumName, clearSearch, songHits, artistHits, albumHits, artistSongs, openArtist, backArtist, openAlbum, openAlbumFromDb, albumBack, detailNoteText, albumBackLabel, isSongHit,
-      statSongs, statAlbums, statLive, statGongyan,       loadAlbums, coverStyle, coverThumb, sampleCover, evDataView, evDataTab, evDataLoading, evDataError, openEvData, closeEvData, vaFilters, songFilter, rankSort, vaPage, songPage, evRankPage, actorRankList, songRankList, actorPageRows, songPageRows, actorPageCount, songPageCount, actorPageStart, actorPageEnd, songPageStart, songPageEnd, actorPageList, songPageList, setVaFilter, isVaFilter, setSongFilter, setVaPage, goVaPage, setSongPage, goSongPage,
+      statSongs, statAlbums, statLive, statGongyan,       loadAlbums, coverStyle, coverThumb, microCmsImage, sampleCover, evDataView, evDataTab, evDataLoading, evDataError, openEvData, closeEvData, vaFilters, songFilter, rankSort, vaPage, songPage, evRankPage, actorRankList, songRankList, actorPageRows, songPageRows, actorPageCount, songPageCount, actorPageStart, actorPageEnd, songPageStart, songPageEnd, actorPageList, songPageList, setVaFilter, isVaFilter, setSongFilter, setVaPage, goVaPage, setSongPage, goSongPage,
       fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
