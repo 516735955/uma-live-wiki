@@ -380,7 +380,7 @@
                         </div>
                     </div>
                 </template>
-                <div v-else class="live-empty">活动数据加载中...</div>
+                <div v-else class="live-empty">{{ liveCatDataError ? '暂无活动数据' : '活动数据加载中...' }}</div>
             </div>
 
             <div class="live-view" :class="{active: liveView==='liveCatSection'}" id="liveCatSection">
