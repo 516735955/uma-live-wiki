@@ -8,6 +8,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const zlib = require('zlib');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
@@ -25,6 +26,16 @@ const MIME = {
   '.gif': 'image/gif',
   '.ico': 'image/x-icon'
 };
+const COMPRESSIBLE_EXTENSIONS = new Set(['.html', '.htm', '.json', '.js', '.mjs', '.css', '.svg']);
+
+function requestAcceptsGzip(req) {
+  return String(req.headers['accept-encoding'] || '').split(',').some((entry) => {
+    const parts = entry.trim().toLowerCase().split(';');
+    if (parts[0] !== 'gzip' && parts[0] !== '*') return false;
+    const quality = parts.slice(1).find((part) => part.trim().startsWith('q='));
+    return !quality || Number(quality.trim().slice(2)) > 0;
+  });
+}
 
 const PORT = parseInt(process.argv[2] || '8080', 10);
 const ROOT = path.resolve(process.argv[3] || path.join(__dirname, '..'));
@@ -311,12 +322,26 @@ function httpsGetHtml(url, cb) {
 }
 
 function sendJson(res, code, obj) {
-  res.writeHead(code, {
+  const body = Buffer.from(JSON.stringify(obj));
+  const headers = {
     'Content-Type': 'application/json; charset=utf-8',
     'Cache-Control': 'no-store',
     'Access-Control-Allow-Origin': '*'
-  });
-  res.end(JSON.stringify(obj));
+  };
+  const finish = (payload, compressed) => {
+    if (compressed) {
+      headers['Content-Encoding'] = 'gzip';
+      headers.Vary = 'Accept-Encoding';
+    }
+    headers['Content-Length'] = payload.length;
+    res.writeHead(code, headers);
+    res.end(payload);
+  };
+  if (body.length >= 1024 && res.req && requestAcceptsGzip(res.req)) {
+    zlib.gzip(body, (err, compressed) => finish(err ? body : compressed, !err));
+  } else {
+    finish(body, false);
+  }
 }
 
 function handleHomeSummary(res) {
@@ -726,17 +751,17 @@ const server = http.createServer((req, res) => {
       // serve the SPA index so deep links / refreshes work.
       if (!path.extname(urlPath)) {
         filePath = path.join(ROOT, INDEX_FILE);
-        return serveFile(filePath, res);
+        return serveFile(filePath, req, res);
       }
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.end('404 Not Found: ' + urlPath);
       return;
     }
-    serveFile(filePath, res);
+    serveFile(filePath, req, res);
   });
 });
 
-function serveFile(filePath, res) {
+function serveFile(filePath, req, res) {
   fs.stat(filePath, (err2, st2) => {
     if (err2 || !st2.isFile()) {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
@@ -744,11 +769,32 @@ function serveFile(filePath, res) {
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, {
+    const headers = {
       'Content-Type': MIME[ext] || 'application/octet-stream',
-      'Cache-Control': 'no-store'
-    });
-    fs.createReadStream(filePath).pipe(res);
+      'Cache-Control': 'no-cache',
+      'Last-Modified': st2.mtime.toUTCString()
+    };
+    const ifModifiedSince = Date.parse(req.headers['if-modified-since'] || '');
+    if (!isNaN(ifModifiedSince) && Math.floor(st2.mtimeMs / 1000) <= Math.floor(ifModifiedSince / 1000)) {
+      res.writeHead(304, headers);
+      res.end();
+      return;
+    }
+    const shouldCompress = st2.size >= 1024 && COMPRESSIBLE_EXTENSIONS.has(ext) && requestAcceptsGzip(req);
+    if (shouldCompress) {
+      headers['Content-Encoding'] = 'gzip';
+      headers.Vary = 'Accept-Encoding';
+    } else {
+      headers['Content-Length'] = st2.size;
+    }
+    res.writeHead(200, headers);
+    if (req.method === 'HEAD') {
+      res.end();
+      return;
+    }
+    const input = fs.createReadStream(filePath);
+    if (shouldCompress) input.pipe(zlib.createGzip()).pipe(res);
+    else input.pipe(res);
   });
 }
 
