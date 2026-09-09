@@ -35,8 +35,7 @@ createApp({
     const newsNextId = ref(0);
     const newsPage = ref(1);
     const newsPerPage = 20;
-    const heroImgs = reactive({});
-    const newsDefaultCover = '/news-card-default.jpg';
+    const newsDefaultCover = '/news-card-default.webp';
     const filterWork = ref('');
     const filterType = ref('');
     const showFilters = ref(false);
@@ -2027,7 +2026,6 @@ createApp({
         .then(function (d) {
           newsItems.value = (d && d.information_list) || [];
           newsLoading.value = false;
-          primeHeroImages();
         })
         .catch(function () {
           newsItems.value = [];
@@ -2038,13 +2036,7 @@ createApp({
     }
     function newsHeroCover(n) {
       if (!n) return newsDefaultCover;
-      if (n.image) return n.image;
-      if (n.hero_img) return n.hero_img;
-      return heroImgs[n.announce_id] || newsDefaultCover;
-    }
-    function primeHeroImages() {
-      // Hero cover images are pre-fetched by the server (/api/news-index returns hero_img).
-      // No extra per-item detail requests needed here; fall back to the default cover.
+      return n.image || newsDefaultCover;
     }
     function openNews(id) {
       if (!id) return;

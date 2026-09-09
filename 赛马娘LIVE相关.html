@@ -79,17 +79,28 @@
             <div v-else class="news-list">
                 <div v-if="newsError" class="news-error">{{ newsError }}</div>
 
-                <div v-if="newsItems.length" class="news-hero-grid">
-                    <div v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" @click="openNews(n.announce_id)">
-                        <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'">
-                        <div class="news-hero-body">
-                            <div class="news-hero-meta">
-                                <span class="news-hero-tag" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>
-                                <span class="news-hero-date">{{ newsDate(n.post_at) }}</span>
+                <div v-if="newsItems.length || newsLoading" class="news-hero-grid">
+                    <template v-if="newsItems.length">
+                        <div v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" @click="openNews(n.announce_id)">
+                            <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'">
+                            <div class="news-hero-body">
+                                <div class="news-hero-meta">
+                                    <span class="news-hero-tag" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>
+                                    <span class="news-hero-date">{{ newsDate(n.post_at) }}</span>
+                                </div>
+                                <div class="news-hero-title">{{ newsTitle(n) }}</div>
                             </div>
-                            <div class="news-hero-title">{{ newsTitle(n) }}</div>
                         </div>
-                    </div>
+                    </template>
+                    <template v-else>
+                        <div v-for="i in 3" :key="'news-skeleton-' + i" class="news-hero-card news-hero-skeleton" aria-hidden="true">
+                            <div class="news-hero-cover"></div>
+                            <div class="news-hero-body">
+                                <span class="news-skeleton-line short"></span>
+                                <span class="news-skeleton-line"></span>
+                            </div>
+                        </div>
+                    </template>
                 </div>
 
                 <div class="news-filter-bar">

@@ -452,45 +452,15 @@ function handleNewsIndex(res) {
             items.forEach(function (n) {
               if (transCache[n.title]) n.title_zh = transCache[n.title];
             });
-            // Pre-fetch hero cover images (first <img> in body) for the hero items the front-end
-            // shows (2 latest MEDIA + 1 latest GAME), matching the client's newsHero computed.
-            const heroes = [];
-            let mediaSeen = 0, gameSeen = 0;
+            newsIndexCache = { at: Date.now(), data: data };
+            sendJson(res, 200, data);
+            // Translate missing titles in the background for the next cached response.
             items.forEach(function (n) {
-              if (mediaSeen < 2 && n.announce_label === 3) { heroes.push(n); mediaSeen++; }
-              else if (gameSeen < 1 && n.announce_label === 1) { heroes.push(n); gameSeen++; }
+              if (!n.title_zh) translateTitle(n.title, function () {});
             });
-            const heroNeeded = heroes.filter(function (n) { return !n.image; });
-            let heroDone = 0;
-            if (!heroNeeded.length) {
-              newsIndexCache = { at: Date.now(), data: data };
-              sendJson(res, 200, data);
-              finishBackground();
-              return;
-            }
-            heroNeeded.forEach(function (n) {
-              httpsGet(NEWS_DETAIL_URL + '&announce_id=' + n.announce_id, function (err, djson) {
-                if (!err && djson && djson.detail) {
-                  const m = String(djson.detail.message || '').match(/<img[^>]+src=["']([^"']+)["']/i);
-                  if (m && m[1]) n.hero_img = m[1];
-                }
-                heroDone++;
-                if (heroDone === heroNeeded.length) {
-                  newsIndexCache = { at: Date.now(), data: data };
-                  sendJson(res, 200, data);
-                  finishBackground();
-                }
-              });
+            lantisList.forEach(function (n) {
+              if (!transCache[n.title]) translateTitle(n.title, function () {});
             });
-            function finishBackground() {
-              // translate any titles not yet cached (result lands in cache + next response)
-              items.forEach(function (n) {
-                if (!n.title_zh) translateTitle(n.title, function () {});
-              });
-              lantisList.forEach(function (n) {
-                if (!transCache[n.title]) translateTitle(n.title, function () {});
-              });
-            }
             return;
           }
           pump();
