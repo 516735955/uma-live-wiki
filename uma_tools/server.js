@@ -435,6 +435,39 @@ function fetchNewsPage(page, cb) {
   });
 }
 
+function extractFirstImage(html) {
+  if (!html || typeof html !== 'string') return '';
+  const m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+  return m ? m[1] : '';
+}
+const BACKFILL_CONC = 3;
+const BACKFILL_TIMEOUT = 10000;
+function backfillNewsImages(list, cb) {
+  const need = list.filter((n) => n.announce_label === 3 && !n.image && n.announce_id);
+  if (!need.length) { cb(); return; }
+  let idx = 0, active = 0, done = 0, finished = false;
+  const finish = () => { if (!finished) { finished = true; cb(); } };
+  function pump() {
+    while (active < BACKFILL_CONC && idx < need.length) {
+      const item = need[idx++];
+      active++;
+      httpsGet(NEWS_DETAIL_URL + '&announce_id=' + item.announce_id, (err, json) => {
+        active--;
+        if (!err && json && json.detail) {
+          const d = json.detail;
+          const img = d.image || d.image_big || extractFirstImage(d.message) || '';
+          if (img) item.image = img;
+        }
+        done++;
+        if (done === need.length) finish();
+        else pump();
+      });
+    }
+  }
+  pump();
+  setTimeout(() => { if (!finished) finish(); }, BACKFILL_TIMEOUT);
+}
+
 function handleNewsIndex(res) {
   if (newsIndexCache.data && Date.now() - newsIndexCache.at < NEWS_TTL) {
     sendJson(res, 200, newsIndexCache.data);
@@ -491,8 +524,11 @@ function handleNewsIndex(res) {
             items.forEach(function (n) {
               if (transCache[n.title]) n.title_zh = transCache[n.title];
             });
-            newsIndexCache = { at: Date.now(), data: data };
-            sendJson(res, 200, data);
+            // Backfill missing images for MEDIA items from detail pages.
+            backfillNewsImages(items, () => {
+              newsIndexCache = { at: Date.now(), data: data };
+              sendJson(res, 200, data);
+            });
             // Translate missing titles in the background for the next cached response.
             items.forEach(function (n) {
               if (!n.title_zh) translateTitle(n.title, function () {});
