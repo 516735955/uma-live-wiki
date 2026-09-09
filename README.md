@@ -11,23 +11,24 @@
 ```
 uma-live-wiki/                    仓库根目录
 ├── 赛马娘LIVE相关.html            SPA 页面结构
-├── *_data.js                      window 全局变量形式的数据文件（按页面加载）
+├── data/                          站点运行数据（JS / JSON）
 │   ├── character_index_data.js    角色索引（179 个角色）
 │   ├── character_detail_data.js   角色详情
 │   ├── pedigree_data.js           血统关系（1334 条，window.PED_REL）
+│   ├── albums.json                专辑与歌曲
+│   ├── live_data.json             编号系列公演与歌单
+│   ├── live_cat_data.json         其他演唱会分类/曲目
 │   └── ...
-├── live_data.json                 编号系列公演与歌单
-├── live_cat_data.json             其他演唱会分类/曲目
-├── events_data.json               活动数据
-├── albums.json                    专辑数据
 ├── album_covers/                  外部源较慢的专辑封面本地 WebP 副本
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ role_svgs/ video_thumbs/  图片资源
-├── 血统表/                       血统图表
+├── pedigree_assets/               血统图表资源
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
 │   ├── app.js                    SPA 逻辑
 │   ├── server.js                 静态文件与站内 API 服务（零依赖）
+│   ├── img/                       工具和页面共用的零散图片
 │   └── *.py *.js                  抓取/处理/校验脚本
+├── archive/                       不参与运行的历史页面、旧数据和诊断快照
 └── .gitignore
 ```
 
@@ -62,8 +63,8 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 
 ## 数据格式约定
 
-`*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
-`*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
+`data/*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
+`data/*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
 
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 
@@ -85,14 +86,14 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 
 | 数据 | 手动命令 | 主要输出 |
 |---|---|---|
-| Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `events_data.json`；存在本地 Excel 镜像时会尝试同步 |
+| Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `data/events_data.json`；存在本地 Excel 镜像时会尝试同步 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
-| 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `albums.json` |
+| 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
 | Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
-| 出演统计 | `python3 gen_voice_part.py` | `actor_participation.json`、`voice_participation.json` |
+| 出演统计 | `python3 uma_tools/gen_voice_part.py` | `data/actor_participation.json`、`data/voice_participation.json` |
 
-修改 `events_data.json`、`live_data.json` 或 `live_cat_data.json` 后，应再运行一次
-`python3 gen_voice_part.py`。出演统计只读取仓库内受版本控制的数据，不需要 `events_list.xlsx`，
+修改 `data/events_data.json`、`data/live_data.json` 或 `data/live_cat_data.json` 后，应再运行一次
+`python3 uma_tools/gen_voice_part.py`。出演统计只读取仓库内受版本控制的数据，不需要 `events_list.xlsx`，
 因此干净 clone 也能重建相同口径的结果。
 
 大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
