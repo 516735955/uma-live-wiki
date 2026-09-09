@@ -29,6 +29,15 @@ const MIME = {
 const PORT = parseInt(process.argv[2] || '8080', 10);
 const ROOT = path.resolve(process.argv[3] || path.join(__dirname, '..'));
 
+function isInsideRoot(filePath) {
+  const relativePath = path.relative(ROOT, filePath);
+  return relativePath === '' || (
+    relativePath !== '..' &&
+    !relativePath.startsWith('..' + path.sep) &&
+    !path.isAbsolute(relativePath)
+  );
+}
+
 // Entry HTML file: support both the original CJK filename and index.html (some
 // setups rename it, e.g. behind nginx). Pick whichever exists in ROOT.
 const INDEX_CANDIDATES = ['index.html', '赛马娘LIVE相关.html'];
@@ -645,6 +654,7 @@ const server = http.createServer((req, res) => {
   try {
     urlObj = new URL(req.url, 'http://x');
     urlPath = decodeURIComponent(urlObj.pathname || '/');
+    if (urlPath.indexOf('\0') !== -1) throw new Error('null byte in path');
   } catch (e) {
     res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('400 Bad Request');
@@ -660,7 +670,7 @@ const server = http.createServer((req, res) => {
 
   if (urlPath === '/') urlPath = '/' + INDEX_FILE;
   let filePath = path.normalize(path.join(ROOT, urlPath));
-  if (!filePath.startsWith(ROOT)) { res.writeHead(403); res.end('Forbidden'); return; }
+  if (!isInsideRoot(filePath)) { res.writeHead(403); res.end('Forbidden'); return; }
 
   fs.stat(filePath, (err, st) => {
     if (err || !st.isFile()) {
