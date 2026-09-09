@@ -2050,7 +2050,7 @@ createApp({
         .catch(function () {
           newsItems.value = [];
           newsLoading.value = false;
-          newsError.value = '无法加载新闻数据（请通过本地服务访问，例如 node uma_tools\server.js 后打开 http://localhost:8080/）';
+          newsError.value = '无法加载新闻数据（请通过本地服务访问，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
         });
       return newsLoadPromise;
     }
@@ -2121,7 +2121,7 @@ createApp({
       albumsLoadPromise = fetch('/albums.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) { albums.value = Array.isArray(data) ? data : []; })
-        .catch(function (e) { albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools\server.js 后打开 http://localhost:8080/）'; });
+        .catch(function (e) { albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）'; });
       return albumsLoadPromise;
     }
     function loadLiveCatData() {
