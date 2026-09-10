@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>血缘关系图·关系镜头</title>
+<title>角色页血统关系原型</title>
 <link rel="stylesheet" href="/uma_tools/pedigree-lab.css">
 <script defer src="/data/character_index_data.js?v=20260904"></script>
 <script defer src="/data/pedigree_data.js?v=20260910-3"></script>
@@ -11,27 +11,27 @@
 </head>
 <body>
 <header class="lab-header">
-  <a class="lab-brand" href="/zh-Hans/database/characters/blood" aria-label="返回现实马血统关系图">
+  <a class="lab-brand" id="character-back-link" href="/zh-Hans/database/characters/staygold" aria-label="返回当前角色页">
     <span>赛马娘演出综合站</span>
   </a>
   <div class="lab-heading">
-    <strong>血缘关系图·关系镜头</strong>
-    <span>#5第一阶段·角色页正式原型</span>
+    <strong>角色页血统关系原型</strong>
+    <span>#5第一阶段</span>
   </div>
 </header>
 
 <main class="lab-page">
   <section class="lab-controls" aria-label="复杂样本">
     <div class="controls-copy">
-      <span class="controls-kicker">复杂关系实测</span>
-      <p>切换样本，检查关系密度、中间代和配种路径。</p>
+      <h1>选择角色查看血统关系</h1>
+      <p>三个样本分别覆盖大量同辈、多条后代血统和中间代。</p>
     </div>
     <div class="lab-samples" role="group" aria-label="复杂样本">
       <button type="button" class="sample-button is-active" data-sample="staygold">
         <span>黄金旅程</span><small>兄弟姐妹最多</small>
       </button>
       <button type="button" class="sample-button" data-sample="akikawayayoi">
-        <span>秋川弥生</span><small>配种关系最多</small>
+        <span>秋川弥生</span><small>后代血统最多</small>
       </button>
       <button type="button" class="sample-button" data-sample="daringheart">
         <span>勇敢之心</span><small>包含中间代</small>
@@ -39,49 +39,35 @@
     </div>
   </section>
 
-  <section class="lab-workspace" aria-labelledby="workspace-title">
+  <section class="lab-workspace is-expanded" aria-labelledby="workspace-title">
     <div class="workspace-head">
       <div>
-        <h1 id="workspace-title">黄金旅程的血缘关系</h1>
+        <h2 id="workspace-title">黄金旅程的血统关系</h2>
         <p id="workspace-summary">正在载入真实关系数据…</p>
       </div>
-      <div class="workspace-actions">
-        <button type="button" data-action="zoom-out" aria-label="缩小">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
-        </button>
-        <button type="button" data-action="zoom-in" aria-label="放大">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-        </button>
-        <button type="button" class="fit-button" data-action="fit">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
-          适应窗口
-        </button>
-        <button type="button" class="root-button" data-action="root">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>
-          定位主角
-        </button>
-      </div>
+      <button type="button" class="collapse-button" data-action="toggle" aria-expanded="true" aria-controls="workspace-content">
+        <span>收起血统</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
 
-    <div class="relation-legend" aria-label="图例">
-      <span><i class="legend-line ancestor"></i>先代</span>
-      <span><i class="legend-line sibling"></i>兄弟姐妹</span>
-      <span><i class="legend-line descendant"></i>子孙</span>
-      <span><i class="legend-node role"></i>马娘角色</span>
-      <span><i class="legend-node horse"></i>现实赛马</span>
-      <span class="legend-hint">默认展开全部关系·滚轮缩放·拖动平移·悬停查看详情</span>
-    </div>
-
-    <div class="workspace-body">
-      <div class="graph-viewport" id="graph-viewport" tabindex="0" aria-label="可缩放的血缘关系图">
-        <div class="graph-stage" id="graph-stage"></div>
-        <div class="zoom-readout" id="zoom-readout">100%</div>
+    <div class="workspace-content" id="workspace-content">
+      <div class="relation-legend" aria-label="图例">
+        <span><i class="legend-sex male">牡</i>牡马</span>
+        <span><i class="legend-sex female">牝</i>牝马</span>
+        <span><i class="legend-sex gelding">阉</i>阉马</span>
+        <span><i class="legend-node role"></i>已有角色页</span>
+        <span class="legend-hint">点选任意赛马查看三语名称与资料</span>
       </div>
-      <aside class="relation-inspector" id="relation-inspector" aria-live="polite"></aside>
+
+      <div class="workspace-body">
+        <div class="relationship-view" id="relationship-view" aria-label="角色血统关系"></div>
+        <aside class="relation-inspector" id="relation-inspector" aria-live="polite"></aside>
+      </div>
     </div>
   </section>
 
-  <p class="lab-footnote">第一阶段使用真实数据验证关系镜头，角色页正式接入在下一阶段完成。</p>
+  <p class="lab-footnote">上方切换角色，模拟从各自角色页展开血统模块。</p>
 </main>
 
 <div class="mobile-sheet" id="mobile-sheet" aria-hidden="true">
