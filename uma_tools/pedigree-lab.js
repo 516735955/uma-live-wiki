@@ -277,7 +277,7 @@
 
   function highlightIds(item) {
     var ids = [currentModel.root.id, item.id];
-    (item.path || []).concat(item.sharedParents || []).concat(item.via || []).forEach(function (id) {
+    (item.path || []).concat(item.sharedParents || []).concat(item.via || []).concat(item.groupIds || []).forEach(function (id) {
       if (id && ids.indexOf(id) === -1) ids.push(id);
     });
     return ids;
@@ -320,8 +320,8 @@
     options = options || {};
     var element = document.createElement('button');
     var isRoot = Boolean(options.root);
-    var width = isRoot ? 178 : (item.role ? 140 : 124);
-    var height = isRoot ? 68 : (item.role ? 56 : 42);
+    var width = isRoot ? 182 : (item.role ? 152 : 128);
+    var height = isRoot ? 70 : (item.role ? 60 : 44);
     element.className = 'ped-node' + (isRoot ? ' is-root' : '') + (item.role ? ' is-role' : ' is-horse');
     element.dataset.group = item.group;
     element.dataset.nodeId = item.id;
@@ -360,11 +360,12 @@
     return { x: x, y: y, width: width, height: height, element: element, item: item };
   }
 
-  function createGroupLabel(title, count, x, y) {
+  function createGroupLabel(title, count, x, y, width) {
     var label = document.createElement('div');
     label.className = 'relation-group-label';
     label.style.left = x + 'px';
     label.style.top = y + 'px';
+    if (width) label.style.width = width + 'px';
     label.innerHTML = '<strong>' + escapeHtml(title) + '</strong><span>' + count + '位</span>';
     stage.appendChild(label);
   }
@@ -401,13 +402,30 @@
     svg.appendChild(path);
   }
 
+  function addPath(svg, d, group, relationIds) {
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'relation-edge ' + group);
+    path.dataset.relationIds = (relationIds || []).filter(Boolean).join('|');
+    svg.appendChild(path);
+  }
+
+  function addJunction(svg, x, y, group) {
+    var junction = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    junction.setAttribute('cx', x);
+    junction.setAttribute('cy', y);
+    junction.setAttribute('r', 4);
+    junction.setAttribute('class', 'relation-junction ' + group);
+    svg.appendChild(junction);
+  }
+
   function addPartnerChip(item, x, y) {
     var chip = document.createElement('button');
     var parentRole = item.parentRole || '';
     chip.className = 'partner-chip' + (parentRole ? ' is-' + parentRole : '');
     chip.dataset.nodeId = item.id;
     chip.dataset.horseId = item.horseId;
-    chip.style.left = x + 'px';
+    chip.style.left = (x - 76) + 'px';
     chip.style.top = y + 'px';
     chip.type = 'button';
     chip.innerHTML = '<span class="partner-role">' + escapeHtml(item.tag) + '</span><strong>' +
@@ -415,6 +433,7 @@
     chip.setAttribute('aria-label', item.tag + '，' + item.name + '，' + (sexLabels[item.sex] || '赛马'));
     bindInteractive(chip, item);
     stage.appendChild(chip);
+    return { x: x, y: y + 15, width: 152, height: 30, element: chip, item: item };
   }
 
   function spread(count, center, spacing) {
@@ -453,8 +472,56 @@
     return { first: first };
   }
 
+  function descendantGroups(structure, rootId) {
+    var groups = [];
+    var byPartner = {};
+    structure.first.forEach(function (entry) {
+      var key = entry.partner ? entry.partner.id : '__' + entry.id;
+      if (!byPartner[key]) {
+        byPartner[key] = { partner: entry.partner, entries: [] };
+        groups.push(byPartner[key]);
+      }
+      byPartner[key].entries.push(entry);
+    });
+    groups.sort(function (a, b) {
+      return compareBornName(a.entries[0].item, b.entries[0].item);
+    });
+    groups.forEach(function (group) {
+      group.entries.sort(function (a, b) { return compareBornName(a.item, b.item); });
+      var ids = [rootId];
+      if (group.partner) ids.push(group.partner.id);
+      group.entries.forEach(function (entry) {
+        ids.push(entry.item.id);
+        entry.terminals.forEach(function (terminal) { ids.push(terminal.id); });
+      });
+      group.ids = ids;
+      if (group.partner) {
+        group.partner.groupIds = ids;
+        group.partner.via = group.entries.map(function (entry) { return entry.id; });
+      }
+      group.entries.forEach(function (entry) {
+        entry.item.groupIds = ids;
+        entry.terminals.forEach(function (terminal) { terminal.groupIds = ids; });
+      });
+    });
+    return groups;
+  }
+
+  function descendantRows(groups, columns) {
+    var rows = [];
+    for (var index = 0; index < groups.length; index += columns) {
+      var rowGroups = groups.slice(index, index + columns);
+      var hasGrandchildren = rowGroups.some(function (group) {
+        return group.entries.some(function (entry) { return entry.terminals.length > 0; });
+      });
+      rows.push({ groups: rowGroups, height: hasGrandchildren ? 202 : 140 });
+    }
+    return rows;
+  }
+
   function renderLens(model) {
     var structure = descendantStructure(model);
+    var descendantFamilies = descendantGroups(structure, model.root.id);
     var siblingGroups = [];
     var siblingMap = {};
     model.siblings.forEach(function (item) {
@@ -470,14 +537,25 @@
       }
       siblingMap[key].items.push(item);
     });
+    siblingGroups.forEach(function (group) {
+      var groupIds = [model.root.id].concat(group.items[0].sharedParents || []);
+      group.items.forEach(function (item) { groupIds.push(item.id); });
+      group.ids = groupIds;
+      group.items.forEach(function (item) { item.groupIds = groupIds; });
+    });
 
-    var siblingRows = 0;
-    siblingGroups.forEach(function (group) { siblingRows += 1 + Math.ceil(group.items.length / 3); });
-    var descendantRows = 0;
-    structure.first.forEach(function (entry) { descendantRows += Math.max(1, entry.terminals.length); });
-    var relationRows = Math.max(siblingRows, descendantRows, model.breeding.length);
+    var hasSiblings = siblingGroups.length > 0;
+    var descendantColumns = hasSiblings ? 2 : Math.min(4, Math.max(1, descendantFamilies.length));
+    var familyRows = descendantRows(descendantFamilies, descendantColumns);
+    var siblingHeight = 0;
+    siblingGroups.forEach(function (group) {
+      siblingHeight += 54 + Math.ceil(group.items.length / 3) * 68;
+    });
+    var familyHeight = familyRows.reduce(function (total, row) { return total + row.height; }, 0);
+    var breedingHeight = model.breeding.length ? 126 : 0;
+    var lowerHeight = Math.max(siblingHeight, familyHeight + breedingHeight);
     var width = 1280;
-    var height = Math.max(790, 470 + relationRows * 78);
+    var height = Math.max(760, 485 + lowerHeight);
     var rootX = 620;
     var rootY = 390;
     stage.style.width = width + 'px';
@@ -522,68 +600,115 @@
       });
     }
 
-    var siblingY = 474;
-    siblingGroups.forEach(function (group) {
-      createGroupLabel(group.title, group.items.length, 47, siblingY - 20);
+    var siblingY = 486;
+    siblingGroups.forEach(function (group, groupIndex) {
+      createGroupLabel(group.title, group.items.length, 43, siblingY, 390);
       var rowCount = Math.ceil(group.items.length / 3);
-      group.items.forEach(function (item, index) {
-        var col = index % 3;
-        var rowIndex = Math.floor(index / 3);
-        var node = createNode(item, 88 + col * 142, siblingY + 36 + rowIndex * 68, { hideTag: true });
-        addEdge(svg, positions.root, node, 'sibling', {
-          horizontal: true,
-          fromDx: -89,
-          fromDy: 0,
-          toDx: node.width / 2,
-          toDy: 0,
-          relationIds: [model.root.id, item.id].concat(item.sharedParents || [])
+      var busX = 455 - groupIndex * 6;
+      var firstRowBusY = siblingY + 42;
+      var lastRowBusY = firstRowBusY + (rowCount - 1) * 68;
+      addPath(svg,
+        'M' + (rootX - 91) + ',' + rootY +
+        ' C' + (rootX - 132) + ',' + rootY + ' ' + busX + ',' + (rootY + 25) + ' ' + busX + ',' + firstRowBusY +
+        ' V' + lastRowBusY,
+        'sibling', group.ids
+      );
+      for (var rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+        var rowItems = group.items.slice(rowIndex * 3, rowIndex * 3 + 3);
+        var rowXs = spread(rowItems.length, 222, 142);
+        var rowBusY = firstRowBusY + rowIndex * 68;
+        var nodeY = rowBusY + 31;
+        addPath(svg, 'M' + rowXs[0] + ',' + rowBusY + ' H' + busX, 'sibling',
+          [model.root.id].concat(group.items[0].sharedParents || []));
+        rowItems.forEach(function (item, colIndex) {
+          var node = createNode(item, rowXs[colIndex], nodeY, { hideTag: true });
+          addPath(svg, 'M' + rowXs[colIndex] + ',' + rowBusY + ' V' + (nodeY - node.height / 2),
+            'sibling', [model.root.id, item.id].concat(item.sharedParents || []));
         });
-      });
+      }
       siblingY += 58 + rowCount * 68;
     });
 
-    var descendantY = 500;
-    structure.first.forEach(function (entry) {
-      var span = Math.max(1, entry.terminals.length);
-      var firstY = descendantY + (span - 1) * 38;
-      var firstNode = createNode(entry.item, 855, firstY);
-      positions['d1_' + entry.id] = firstNode;
-      addEdge(svg, positions.root, firstNode, 'descendant', {
-        horizontal: true,
-        fromDx: 89,
-        fromDy: 0,
-        toDx: -firstNode.width / 2,
-        toDy: 0,
-        relationIds: [model.root.id, entry.id]
+    if (descendantFamilies.length) {
+      var areaLeft = hasSiblings ? 500 : 35;
+      var areaWidth = hasSiblings ? 750 : 1170;
+      var laneWidth = areaWidth / descendantColumns;
+      var familyY = 486;
+      var rowUnionYs = [];
+      familyRows.forEach(function (row) {
+        rowUnionYs.push(familyY + 42);
+        familyY += row.height;
       });
-      if (entry.partner) addPartnerChip(entry.partner, 768, firstY - 49);
-      entry.terminals.forEach(function (item, index) {
-        var terminalY = descendantY + index * 76;
-        var terminal = createNode(item, 1110, terminalY);
-        addEdge(svg, firstNode, terminal, 'descendant', {
-          horizontal: true,
-          fromDx: firstNode.width / 2,
-          fromDy: 0,
-          toDx: -terminal.width / 2,
-          toDy: 0,
-          relationIds: [entry.id, item.id]
+      addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + rowUnionYs[rowUnionYs.length - 1],
+        'descendant', [model.root.id]);
+      familyY = 486;
+      familyRows.forEach(function (row) {
+        var rowStart = areaLeft + (descendantColumns - row.groups.length) * laneWidth / 2;
+        var centers = row.groups.map(function (_, index) {
+          return rowStart + laneWidth * (index + .5);
         });
+        var unionY = familyY + 42;
+        var busStart = Math.min(rootX, centers[0]);
+        var busEnd = Math.max(rootX, centers[centers.length - 1]);
+        addPath(svg, 'M' + busStart + ',' + unionY + ' H' + busEnd, 'descendant', [model.root.id]);
+        row.groups.forEach(function (group, groupIndex) {
+          var groupX = centers[groupIndex];
+          addJunction(svg, groupX, unionY, 'descendant');
+          if (group.partner) {
+            addPartnerChip(group.partner, groupX, familyY);
+            addPath(svg, 'M' + groupX + ',' + (familyY + 30) + ' V' + unionY,
+              'partner ' + group.partner.parentRole, group.ids);
+          }
+          var childY = familyY + 91;
+          var childXs = spread(group.entries.length, groupX, 164);
+          var childBusY = familyY + 55;
+          if (childXs.length > 1) {
+            addPath(svg, 'M' + childXs[0] + ',' + childBusY + ' H' + childXs[childXs.length - 1],
+              'descendant', group.ids);
+          }
+          addPath(svg, 'M' + groupX + ',' + unionY + ' V' + childBusY, 'descendant', group.ids);
+          group.entries.forEach(function (entry, entryIndex) {
+            var childX = childXs[entryIndex];
+            var childNode = createNode(entry.item, childX, childY);
+            positions['d1_' + entry.id] = childNode;
+            addPath(svg, 'M' + childX + ',' + childBusY + ' V' + (childY - childNode.height / 2),
+              'descendant', [model.root.id, entry.id].concat(group.partner ? [group.partner.id] : []));
+            if (entry.terminals.length) {
+              var terminalY = familyY + 169;
+              var terminalXs = spread(entry.terminals.length, childX, 158);
+              var terminalBusY = familyY + 132;
+              addPath(svg, 'M' + childX + ',' + (childY + childNode.height / 2) + ' V' + terminalBusY,
+                'descendant', [entry.id]);
+              if (terminalXs.length > 1) {
+                addPath(svg, 'M' + terminalXs[0] + ',' + terminalBusY + ' H' + terminalXs[terminalXs.length - 1],
+                  'descendant', [entry.id]);
+              }
+              entry.terminals.forEach(function (item, terminalIndex) {
+                var terminal = createNode(item, terminalXs[terminalIndex], terminalY);
+                addPath(svg, 'M' + terminalXs[terminalIndex] + ',' + terminalBusY +
+                  ' V' + (terminalY - terminal.height / 2), 'descendant', [entry.id, item.id]);
+              });
+            }
+          });
+        });
+        familyY += row.height;
       });
-      descendantY += span * 76;
-    });
+    }
 
-    var breedingY = Math.max(500, descendantY + (structure.first.length ? 18 : 0));
-    model.breeding.forEach(function (item, index) {
-      var node = createNode(item, 935, breedingY + index * 78);
-      addEdge(svg, positions.root, node, 'breeding', {
-        horizontal: true,
-        fromDx: 89,
-        fromDy: 0,
-        toDx: -node.width / 2,
-        toDy: 0,
-        relationIds: [model.root.id, item.id]
+    if (model.breeding.length) {
+      var breedingY = 540 + familyHeight;
+      var breedingXs = spread(model.breeding.length, rootX, Math.min(260, 900 / Math.max(1, model.breeding.length - 1)));
+      var breedingBusY = breedingY - 54;
+      addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + breedingBusY, 'breeding', [model.root.id]);
+      addPath(svg, 'M' + breedingXs[0] + ',' + breedingBusY + ' H' + breedingXs[breedingXs.length - 1],
+        'breeding', [model.root.id]);
+      model.breeding.forEach(function (item, index) {
+        item.groupIds = [model.root.id, item.id];
+        var node = createNode(item, breedingXs[index], breedingY);
+        addPath(svg, 'M' + breedingXs[index] + ',' + breedingBusY +
+          ' V' + (breedingY - node.height / 2), 'breeding', [model.root.id, item.id]);
       });
-    });
+    }
     return { width: width, height: height };
   }
 
