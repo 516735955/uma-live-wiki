@@ -2066,6 +2066,10 @@
         #tab-characters .c-gstage img { display: block; max-width: none; }
         /* ---- character detail (moegirl intro block) ---- */
         #tab-characters .cio-detail { max-width: 760px; margin: 0 auto; }
+        #tab-characters .cio-detail.has-pedigree-lens { max-width: 1400px; }
+        #tab-characters .has-pedigree-lens > .cio-detail-top,
+        #tab-characters .has-pedigree-lens > .c-detail-block,
+        #tab-characters .has-pedigree-lens > .cio-detail-foot { width: min(760px, 100%); margin-right: auto; margin-left: auto; }
         #tab-characters .cio-detail-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
         #tab-characters .cio-back {
             flex-shrink: 0; border: 1px solid #e6e4ee; background: #fff; color: #2c3650;
@@ -2110,11 +2114,20 @@
         #tab-characters .umamusume-intro .uma-description p { text-indent: 2em; margin: 0 0 8px; line-height: 1.7; font-size: 14px; }
         #tab-characters .cio-detail-foot { margin-top: 16px; padding: 12px 14px; background: #fbfafd; border: 1px solid #e6e4ee; border-radius: 10px; color: #6b6f7a; font-size: 12px; line-height: 1.8; }
         #tab-characters .cio-detail-foot a { color: #ff8c1a; }
+        #tab-characters .c-pedigree-lens {
+            margin-top: 22px; overflow: hidden; border: 1px solid #dfe1ea; border-radius: 18px;
+            background: #f7f8fc; box-shadow: 0 10px 28px rgba(24,33,64,.09);
+        }
+        #tab-characters .c-pedigree-lens-frame {
+            display: block; width: 100%; height: 900px; border: 0; background: #f7f8fc;
+        }
         @media screen and (max-width: 700px) {
             #tab-characters .c-sbooks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             #tab-characters .c-sbook { padding: 18px 10px; }
             #tab-characters .umamusume-intro .uma-img { border-right: none; border-bottom: 4px dashed; width: 100%; display: block; }
             #tab-characters .umamusume-intro .uma-detail { width: 100%; }
+            #tab-characters .c-pedigree-lens { border-radius: 12px; }
+            #tab-characters .c-pedigree-lens-frame { height: 690px; }
         }
         /* ---- blood relationship node graph (character detail) ---- */
         #tab-characters .c-blood { margin-top: 22px; border-top: 2px dashed #e3dcf2; padding-top: 14px; }

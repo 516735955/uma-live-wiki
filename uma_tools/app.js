@@ -2471,6 +2471,15 @@ createApp({
   /* ---------- 血缘关系节点图（角色详情页下方） ---------- */
   var relByCid = {};
   var relSource = null;
+  window.addEventListener('message', function (event) {
+    if (event.origin !== window.location.origin || !event.data || event.data.type !== 'uma-pedigree-height') return;
+    var frames = document.querySelectorAll('.c-pedigree-lens-frame');
+    frames.forEach(function (frame) {
+      if (frame.dataset.pedigreeSample !== event.data.sample) return;
+      var height = Math.max(640, Math.min(1600, Number(event.data.height) || 0));
+      if (height) frame.style.height = height + 'px';
+    });
+  });
   function refreshRelIndex() {
     if (typeof PED_REL === 'undefined' || relSource === PED_REL) return;
     relByCid = {};
@@ -2677,6 +2686,15 @@ createApp({
       note.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
         '<p class="c-blood-pure-note">' + nonUmaMsg + '</p>';
       box.appendChild(note);
+      return;
+    }
+    if (root === 'staygold') {
+      var lens = document.createElement('section');
+      lens.className = 'c-pedigree-lens';
+      lens.innerHTML = '<iframe class="c-pedigree-lens-frame" data-pedigree-sample="staygold" ' +
+        'src="/pedigree-lab.html?embed=1&amp;sample=staygold&amp;v=20260911-3" ' +
+        'title="黄金旅程的血统关系" loading="eager"></iframe>';
+      box.appendChild(lens);
       return;
     }
     var sec = document.createElement('div');
