@@ -11,7 +11,7 @@
 </head>
 <body>
 <header class="lab-header">
-  <a class="lab-brand" id="character-back-link" href="/zh-Hans/database/characters/staygold" aria-label="返回当前角色页">
+  <a class="lab-brand" id="character-back-link" href="/zh-Hans/database/characters/staygold" aria-label="返回黄金旅程角色页">
     <span>赛马娘演出综合站</span>
   </a>
   <div class="lab-heading">
@@ -53,15 +53,20 @@
 
     <div class="workspace-content" id="workspace-content">
       <div class="relation-legend" aria-label="图例">
+        <span><i class="legend-line ancestor"></i>先代</span>
+        <span><i class="legend-line sibling"></i>同辈</span>
+        <span><i class="legend-line descendant"></i>后代</span>
         <span><i class="legend-sex male">牡</i>牡马</span>
         <span><i class="legend-sex female">牝</i>牝马</span>
         <span><i class="legend-sex gelding">阉</i>阉马</span>
         <span><i class="legend-node role"></i>已有角色页</span>
-        <span class="legend-hint">点选任意赛马查看三语名称与资料</span>
+        <span class="legend-hint">悬停查看路径，点选赛马查看资料</span>
       </div>
 
       <div class="workspace-body">
-        <div class="relationship-view" id="relationship-view" aria-label="角色血统关系"></div>
+        <div class="graph-viewport" id="graph-viewport" aria-label="血统关系图">
+          <div class="graph-stage" id="graph-stage"></div>
+        </div>
         <aside class="relation-inspector" id="relation-inspector" aria-live="polite"></aside>
       </div>
     </div>
