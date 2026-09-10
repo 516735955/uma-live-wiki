@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>血缘关系图方案评审</title>
+<link rel="stylesheet" href="/uma_tools/pedigree-lab.css">
+<script defer src="/data/character_index_data.js?v=20260904"></script>
+<script defer src="/data/pedigree_data.js?v=20260910-3"></script>
+<script defer src="/uma_tools/pedigree-lab.js"></script>
+</head>
+<body>
+<header class="lab-header">
+  <a class="lab-brand" href="/zh-Hans/database/characters/blood" aria-label="返回现实马血统关系图">
+    <span>赛马娘演出综合站</span>
+  </a>
+  <div class="lab-heading">
+    <strong>血缘关系图方案评审</strong>
+    <span>使用真实数据比较3种信息结构</span>
+  </div>
+</header>
+
+<main class="lab-page">
+  <section class="lab-controls" aria-label="原型设置">
+    <div class="lab-samples" role="group" aria-label="复杂样本">
+      <button type="button" class="sample-button is-active" data-sample="staygold">
+        <span>黄金旅程</span><small>兄弟姐妹最多</small>
+      </button>
+      <button type="button" class="sample-button" data-sample="akikawayayoi">
+        <span>秋川弥生</span><small>配种关系最多</small>
+      </button>
+      <button type="button" class="sample-button" data-sample="daringheart">
+        <span>勇敢之心</span><small>包含中间代</small>
+      </button>
+    </div>
+
+    <div class="lab-views" role="tablist" aria-label="展示方案">
+      <button type="button" role="tab" aria-selected="true" class="view-button is-active" data-view="atlas">
+        <span>A·世代全景</span><small>所有关系同时铺开</small>
+      </button>
+      <button type="button" role="tab" aria-selected="false" class="view-button" data-view="lens">
+        <span>B·关系镜头</span><small>围绕主角按关系聚类</small>
+      </button>
+      <button type="button" role="tab" aria-selected="false" class="view-button" data-view="panel">
+        <span>C·主图+关系面板</span><small>主干图与密集关系分区</small>
+      </button>
+    </div>
+  </section>
+
+  <section class="lab-workspace" aria-labelledby="workspace-title">
+    <div class="workspace-head">
+      <div>
+        <h1 id="workspace-title">黄金旅程的血缘关系</h1>
+        <p id="workspace-summary">正在载入真实关系数据…</p>
+      </div>
+      <div class="workspace-actions">
+        <button type="button" data-action="zoom-out" aria-label="缩小">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+        </button>
+        <button type="button" data-action="zoom-in" aria-label="放大">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button type="button" class="fit-button" data-action="fit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+          适应窗口
+        </button>
+      </div>
+    </div>
+
+    <div class="relation-legend" aria-label="图例">
+      <span><i class="legend-line ancestor"></i>先代</span>
+      <span><i class="legend-line sibling"></i>兄弟姐妹</span>
+      <span><i class="legend-line descendant"></i>子孙</span>
+      <span><i class="legend-node role"></i>马娘角色</span>
+      <span><i class="legend-node horse"></i>现实赛马</span>
+      <span class="legend-hint">滚轮缩放·拖动平移·悬停查看关系</span>
+    </div>
+
+    <div class="workspace-body">
+      <div class="graph-viewport" id="graph-viewport" tabindex="0" aria-label="可缩放的血缘关系图">
+        <div class="graph-stage" id="graph-stage"></div>
+        <div class="zoom-readout" id="zoom-readout">100%</div>
+      </div>
+      <aside class="relation-inspector" id="relation-inspector" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <p class="lab-footnote">此页面仅用于#5方案评审；角色页现有血统图保持不变。</p>
+</main>
+
+<div class="mobile-sheet" id="mobile-sheet" aria-hidden="true">
+  <button type="button" class="sheet-backdrop" data-sheet-close aria-label="关闭关系详情"></button>
+  <section class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <div class="sheet-grip"></div>
+    <button type="button" class="sheet-close" data-sheet-close aria-label="关闭">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div id="sheet-content"></div>
+  </section>
+</div>
+</body>
+</html>
