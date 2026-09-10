@@ -1,7 +1,10 @@
 (function () {
   'use strict';
 
-  var state = { sample: 'staygold', expanded: true, lockedItem: null, resizeTimer: null };
+  var query = new URLSearchParams(window.location.search);
+  var requestedSample = query.get('sample');
+  var embedded = query.has('embed');
+  var state = { sample: requestedSample || 'staygold', expanded: true, lockedItem: null, resizeTimer: null };
   var byId = {};
   var charById = {};
   var viewport = document.getElementById('graph-viewport');
@@ -22,6 +25,8 @@
     SAF: '南非', UAE: '阿联酋'
   };
   var relationRank = { full: 0, same_dam: 1, same_sire: 2 };
+
+  if (embedded) document.documentElement.classList.add('is-embedded');
 
   function escapeHtml(value) {
     return String(value == null ? '' : value)
@@ -152,6 +157,7 @@
       item.generation = relation.generation;
       item.path = (relation.path || []).slice();
       item.links = relation.links || [];
+      item.pathPartners = item.links.map(function (link) { return link.partner; }).filter(Boolean);
       return item;
     }).sort(function (a, b) {
       return a.generation - b.generation || compareBornName(a, b);
@@ -190,7 +196,7 @@
     return '<div class="horse-fact"><dt>' + escapeHtml(label) + '</dt><dd>' + escapeHtml(value) + '</dd></div>';
   }
 
-  function detailHtml(item, headingId) {
+  function detailHtml(item, headingId, locked) {
     var groupNames = {
       root: '当前角色', ancestor: '先代血统', sibling: '同辈角色',
       descendant: '后代角色', partner: '另一方亲本', breeding: '繁育关联'
@@ -227,12 +233,16 @@
     if (item.years && item.years.length) html += factRow('记录年份', item.years.join('、') + '年');
     html += '</dl>';
     html += '<div class="inspector-actions">';
+    if (locked) {
+      html += '<button class="inspector-unpin" type="button" data-unpin>取消固定</button>';
+    }
     if (item.sourceUrl) {
       html += '<a class="inspector-link source-link" href="' + escapeHtml(item.sourceUrl) +
         '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.sourceName) + '</a>';
     }
     if (item.role && !item.isCurrent) {
-      html += '<a class="inspector-link character-link" href="' + characterRoute(item.cid) + '">前往' +
+      html += '<a class="inspector-link character-link" href="' + characterRoute(item.cid) + '"' +
+        (embedded ? ' target="_top"' : '') + '>前往' +
         escapeHtml(item.name) + '角色页</a>';
     }
     html += '</div></div>';
@@ -241,9 +251,12 @@
 
   function renderDetail(item, mobile) {
     if (!item) return;
-    inspector.innerHTML = detailHtml(item, 'inspector-title');
+    var locked = Boolean(state.lockedItem && state.lockedItem.horseId === item.horseId);
+    inspector.innerHTML = detailHtml(item, 'inspector-title', locked);
+    var unpin = inspector.querySelector('[data-unpin]');
+    if (unpin) unpin.addEventListener('click', clearPin);
     if (mobile) {
-      sheetContent.innerHTML = detailHtml(item, 'sheet-title');
+      sheetContent.innerHTML = detailHtml(item, 'sheet-title', false);
       sheet.classList.add('is-open');
       sheet.setAttribute('aria-hidden', 'false');
     }
@@ -257,9 +270,25 @@
   }
 
   function pinDetail(item, mobile) {
+    if (state.lockedItem && state.lockedItem.horseId === item.horseId) {
+      clearPin();
+      return;
+    }
     state.lockedItem = item;
     renderDetail(item, mobile);
     syncPinnedSelection();
+  }
+
+  function closeSheet() {
+    sheet.classList.remove('is-open');
+    sheet.setAttribute('aria-hidden', 'true');
+  }
+
+  function clearPin() {
+    state.lockedItem = null;
+    closeSheet();
+    syncPinnedSelection();
+    clearHoverPath();
   }
 
   function previewDetail(item) {
@@ -277,7 +306,7 @@
 
   function highlightIds(item) {
     var ids = [currentModel.root.id, item.id];
-    (item.path || []).concat(item.sharedParents || []).concat(item.via || []).concat(item.groupIds || []).forEach(function (id) {
+    (item.path || []).concat(item.sharedParents || []).concat(item.pathPartners || []).concat(item.via || []).forEach(function (id) {
       if (id && ids.indexOf(id) === -1) ids.push(id);
     });
     return ids;
@@ -290,10 +319,13 @@
       element.classList.toggle('is-path-node', ids.indexOf(element.dataset.nodeId) !== -1);
     });
     stage.querySelectorAll('.relation-edge').forEach(function (edge) {
+      var triggerIds = (edge.dataset.highlightIds || '').split('|').filter(Boolean);
       var edgeIds = (edge.dataset.relationIds || '').split('|').filter(Boolean);
-      edge.classList.toggle('is-path-edge', edgeIds.length > 0 && edgeIds.every(function (id) {
-        return ids.indexOf(id) !== -1;
-      }));
+      var isExactPath = triggerIds.length > 0 && triggerIds.indexOf(item.id) !== -1;
+      var isLegacyPath = triggerIds.length === 0 && edgeIds.length > 0 && edgeIds.every(function (id) {
+          return ids.indexOf(id) !== -1;
+        });
+      edge.classList.toggle('is-path-edge', isExactPath || isLegacyPath);
     });
   }
 
@@ -402,12 +434,41 @@
     svg.appendChild(path);
   }
 
-  function addPath(svg, d, group, relationIds) {
+  function addPath(svg, d, group, relationIds, highlightIds) {
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d', d);
     path.setAttribute('class', 'relation-edge ' + group);
     path.dataset.relationIds = (relationIds || []).filter(Boolean).join('|');
+    path.dataset.highlightIds = (highlightIds || []).filter(Boolean).join('|');
     svg.appendChild(path);
+  }
+
+  function roundedOrthogonalPath(points, radius) {
+    if (!points || points.length < 2) return '';
+    var d = 'M' + points[0].x + ',' + points[0].y;
+    for (var index = 1; index < points.length - 1; index++) {
+      var previous = points[index - 1];
+      var corner = points[index];
+      var next = points[index + 1];
+      var incoming = Math.abs(corner.x - previous.x) + Math.abs(corner.y - previous.y);
+      var outgoing = Math.abs(next.x - corner.x) + Math.abs(next.y - corner.y);
+      var turnRadius = Math.min(radius || 12, incoming / 2, outgoing / 2);
+      var before = {
+        x: corner.x + (previous.x === corner.x ? 0 : (previous.x < corner.x ? -turnRadius : turnRadius)),
+        y: corner.y + (previous.y === corner.y ? 0 : (previous.y < corner.y ? -turnRadius : turnRadius))
+      };
+      var after = {
+        x: corner.x + (next.x === corner.x ? 0 : (next.x < corner.x ? -turnRadius : turnRadius)),
+        y: corner.y + (next.y === corner.y ? 0 : (next.y < corner.y ? -turnRadius : turnRadius))
+      };
+      d += ' L' + before.x + ',' + before.y + ' Q' + corner.x + ',' + corner.y + ' ' + after.x + ',' + after.y;
+    }
+    var last = points[points.length - 1];
+    return d + ' L' + last.x + ',' + last.y;
+  }
+
+  function addRoundedPath(svg, points, group, relationIds, highlightIds, radius) {
+    addPath(svg, roundedOrthogonalPath(points, radius), group, relationIds, highlightIds);
   }
 
   function addJunction(svg, x, y, group) {
@@ -496,12 +557,14 @@
       });
       group.ids = ids;
       if (group.partner) {
-        group.partner.groupIds = ids;
         group.partner.via = group.entries.map(function (entry) { return entry.id; });
       }
       group.entries.forEach(function (entry) {
-        entry.item.groupIds = ids;
-        entry.terminals.forEach(function (terminal) { terminal.groupIds = ids; });
+        var partnerId = group.partner && group.partner.id;
+        entry.item.pathPartners = (entry.item.pathPartners || []).concat(partnerId || []).filter(Boolean);
+        entry.terminals.forEach(function (terminal) {
+          terminal.pathPartners = (terminal.pathPartners || []).concat(partnerId || []).filter(Boolean);
+        });
       });
     });
     return groups;
@@ -541,7 +604,7 @@
       var groupIds = [model.root.id].concat(group.items[0].sharedParents || []);
       group.items.forEach(function (item) { groupIds.push(item.id); });
       group.ids = groupIds;
-      group.items.forEach(function (item) { item.groupIds = groupIds; });
+      group.itemIds = group.items.map(function (item) { return item.id; });
     });
 
     var hasSiblings = siblingGroups.length > 0;
@@ -549,7 +612,7 @@
     var familyRows = descendantRows(descendantFamilies, descendantColumns);
     var siblingHeight = 0;
     siblingGroups.forEach(function (group) {
-      siblingHeight += 54 + Math.ceil(group.items.length / 3) * 68;
+      siblingHeight += 54 + Math.ceil(group.items.length / 3) * 72;
     });
     var familyHeight = familyRows.reduce(function (total, row) { return total + row.height; }, 0);
     var breedingHeight = model.breeding.length ? 126 : 0;
@@ -602,31 +665,32 @@
 
     var siblingY = 486;
     siblingGroups.forEach(function (group, groupIndex) {
-      createGroupLabel(group.title, group.items.length, 43, siblingY, 390);
+      createGroupLabel(group.title, group.items.length, 28, siblingY, 452);
       var rowCount = Math.ceil(group.items.length / 3);
-      var busX = 455 - groupIndex * 6;
+      var busX = 492 - groupIndex * 6;
       var firstRowBusY = siblingY + 42;
-      var lastRowBusY = firstRowBusY + (rowCount - 1) * 68;
+      var lastRowBusY = firstRowBusY + (rowCount - 1) * 72;
       addPath(svg,
         'M' + (rootX - 91) + ',' + rootY +
         ' C' + (rootX - 132) + ',' + rootY + ' ' + busX + ',' + (rootY + 25) + ' ' + busX + ',' + firstRowBusY +
         ' V' + lastRowBusY,
-        'sibling', group.ids
+        'sibling', group.ids, group.itemIds
       );
       for (var rowIndex = 0; rowIndex < rowCount; rowIndex++) {
         var rowItems = group.items.slice(rowIndex * 3, rowIndex * 3 + 3);
-        var rowXs = spread(rowItems.length, 222, 142);
-        var rowBusY = firstRowBusY + rowIndex * 68;
-        var nodeY = rowBusY + 31;
+        var rowXs = spread(rowItems.length, 250, 160);
+        var rowBusY = firstRowBusY + rowIndex * 72;
+        var nodeY = rowBusY + 34;
+        var rowItemIds = rowItems.map(function (item) { return item.id; });
         addPath(svg, 'M' + rowXs[0] + ',' + rowBusY + ' H' + busX, 'sibling',
-          [model.root.id].concat(group.items[0].sharedParents || []));
+          [model.root.id].concat(group.items[0].sharedParents || []), rowItemIds);
         rowItems.forEach(function (item, colIndex) {
           var node = createNode(item, rowXs[colIndex], nodeY, { hideTag: true });
           addPath(svg, 'M' + rowXs[colIndex] + ',' + rowBusY + ' V' + (nodeY - node.height / 2),
-            'sibling', [model.root.id, item.id].concat(item.sharedParents || []));
+            'sibling', [model.root.id, item.id].concat(item.sharedParents || []), [item.id]);
         });
       }
-      siblingY += 58 + rowCount * 68;
+      siblingY += 58 + rowCount * 72;
     });
 
     if (descendantFamilies.length) {
@@ -639,8 +703,11 @@
         rowUnionYs.push(familyY + 42);
         familyY += row.height;
       });
+      var allDescendantIds = descendantFamilies.reduce(function (ids, group) {
+        return ids.concat(group.ids.filter(function (id) { return id !== model.root.id; }));
+      }, []);
       addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + rowUnionYs[rowUnionYs.length - 1],
-        'descendant', [model.root.id]);
+        'descendant', [model.root.id], allDescendantIds);
       familyY = 486;
       familyRows.forEach(function (row) {
         var rowStart = areaLeft + (descendantColumns - row.groups.length) * laneWidth / 2;
@@ -648,45 +715,50 @@
           return rowStart + laneWidth * (index + .5);
         });
         var unionY = familyY + 42;
-        var busStart = Math.min(rootX, centers[0]);
-        var busEnd = Math.max(rootX, centers[centers.length - 1]);
-        addPath(svg, 'M' + busStart + ',' + unionY + ' H' + busEnd, 'descendant', [model.root.id]);
         row.groups.forEach(function (group, groupIndex) {
           var groupX = centers[groupIndex];
+          var groupTriggerIds = group.ids.filter(function (id) { return id !== model.root.id; });
+          addRoundedPath(svg, [
+            { x: rootX, y: unionY - 28 },
+            { x: rootX, y: unionY },
+            { x: groupX, y: unionY }
+          ], 'descendant', [model.root.id], groupTriggerIds, 14);
           addJunction(svg, groupX, unionY, 'descendant');
           if (group.partner) {
             addPartnerChip(group.partner, groupX, familyY);
             addPath(svg, 'M' + groupX + ',' + (familyY + 30) + ' V' + unionY,
-              'partner ' + group.partner.parentRole, group.ids);
+              'partner ' + group.partner.parentRole, group.ids, groupTriggerIds);
           }
           var childY = familyY + 91;
           var childXs = spread(group.entries.length, groupX, 164);
           var childBusY = familyY + 55;
           if (childXs.length > 1) {
             addPath(svg, 'M' + childXs[0] + ',' + childBusY + ' H' + childXs[childXs.length - 1],
-              'descendant', group.ids);
+              'descendant', group.ids, groupTriggerIds);
           }
-          addPath(svg, 'M' + groupX + ',' + unionY + ' V' + childBusY, 'descendant', group.ids);
+          addPath(svg, 'M' + groupX + ',' + unionY + ' V' + childBusY,
+            'descendant', group.ids, groupTriggerIds);
           group.entries.forEach(function (entry, entryIndex) {
             var childX = childXs[entryIndex];
             var childNode = createNode(entry.item, childX, childY);
+            var childTriggerIds = [entry.id].concat(entry.terminals.map(function (terminal) { return terminal.id; }));
             positions['d1_' + entry.id] = childNode;
             addPath(svg, 'M' + childX + ',' + childBusY + ' V' + (childY - childNode.height / 2),
-              'descendant', [model.root.id, entry.id].concat(group.partner ? [group.partner.id] : []));
+              'descendant', [model.root.id, entry.id].concat(group.partner ? [group.partner.id] : []), childTriggerIds);
             if (entry.terminals.length) {
               var terminalY = familyY + 169;
               var terminalXs = spread(entry.terminals.length, childX, 158);
               var terminalBusY = familyY + 132;
               addPath(svg, 'M' + childX + ',' + (childY + childNode.height / 2) + ' V' + terminalBusY,
-                'descendant', [entry.id]);
+                'descendant', [entry.id], entry.terminals.map(function (terminal) { return terminal.id; }));
               if (terminalXs.length > 1) {
                 addPath(svg, 'M' + terminalXs[0] + ',' + terminalBusY + ' H' + terminalXs[terminalXs.length - 1],
-                  'descendant', [entry.id]);
+                  'descendant', [entry.id], entry.terminals.map(function (terminal) { return terminal.id; }));
               }
               entry.terminals.forEach(function (item, terminalIndex) {
                 var terminal = createNode(item, terminalXs[terminalIndex], terminalY);
                 addPath(svg, 'M' + terminalXs[terminalIndex] + ',' + terminalBusY +
-                  ' V' + (terminalY - terminal.height / 2), 'descendant', [entry.id, item.id]);
+                  ' V' + (terminalY - terminal.height / 2), 'descendant', [entry.id, item.id], [item.id]);
               });
             }
           });
@@ -699,14 +771,15 @@
       var breedingY = 540 + familyHeight;
       var breedingXs = spread(model.breeding.length, rootX, Math.min(260, 900 / Math.max(1, model.breeding.length - 1)));
       var breedingBusY = breedingY - 54;
-      addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + breedingBusY, 'breeding', [model.root.id]);
+      var breedingIds = model.breeding.map(function (item) { return item.id; });
+      addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + breedingBusY,
+        'breeding', [model.root.id], breedingIds);
       addPath(svg, 'M' + breedingXs[0] + ',' + breedingBusY + ' H' + breedingXs[breedingXs.length - 1],
-        'breeding', [model.root.id]);
+        'breeding', [model.root.id], breedingIds);
       model.breeding.forEach(function (item, index) {
-        item.groupIds = [model.root.id, item.id];
         var node = createNode(item, breedingXs[index], breedingY);
         addPath(svg, 'M' + breedingXs[index] + ',' + breedingBusY +
-          ' V' + (breedingY - node.height / 2), 'breeding', [model.root.id, item.id]);
+          ' V' + (breedingY - node.height / 2), 'breeding', [model.root.id, item.id], [item.id]);
       });
     }
     return { width: width, height: height };
@@ -729,12 +802,20 @@
       }
       viewport.scrollTop = 0;
     }
+    if (embedded && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'uma-pedigree-height',
+        sample: state.sample,
+        height: Math.ceil(workspace.getBoundingClientRect().height)
+      }, window.location.origin);
+    }
   }
 
   function render() {
     currentModel = buildModel(state.sample);
     stage.innerHTML = '';
     state.lockedItem = null;
+    closeSheet();
     document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
     var summary = ['三代血统'];
     if (currentModel.siblings.length) summary.push(currentModel.siblings.length + '位同辈角色');
@@ -760,6 +841,7 @@
   }
 
   document.querySelectorAll('[data-sample]').forEach(function (button) {
+    button.classList.toggle('is-active', button.dataset.sample === state.sample);
     button.addEventListener('click', function () {
       state.sample = button.dataset.sample;
       document.querySelectorAll('[data-sample]').forEach(function (item) {
@@ -780,21 +862,22 @@
   });
 
   sheet.querySelectorAll('[data-sheet-close]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      sheet.classList.remove('is-open');
-      sheet.setAttribute('aria-hidden', 'true');
-    });
+    button.addEventListener('click', clearPin);
+  });
+  viewport.addEventListener('click', function (event) {
+    if (state.lockedItem && !event.target.closest('[data-horse-id]')) clearPin();
   });
   window.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-      sheet.classList.remove('is-open');
-      sheet.setAttribute('aria-hidden', 'true');
-    }
+    if (event.key === 'Escape') clearPin();
   });
   window.addEventListener('resize', function () {
     window.clearTimeout(state.resizeTimer);
     state.resizeTimer = window.setTimeout(layoutStage, 120);
   });
+
+  if (embedded) {
+    backLink.setAttribute('target', '_top');
+  }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeData);
   else initializeData();

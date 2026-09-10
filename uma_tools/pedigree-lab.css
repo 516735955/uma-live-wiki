@@ -198,8 +198,8 @@ button:focus-visible, a:focus-visible {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2;
-  transition: opacity .16s;
+  stroke-width: 1.7;
+  transition: opacity .16s, stroke-width .16s;
 }
 .relation-edge.ancestor { stroke: var(--ancestor); opacity: .7; }
 .relation-edge.sibling { stroke: var(--sibling); opacity: .72; }
@@ -208,7 +208,7 @@ button:focus-visible, a:focus-visible {
 .relation-edge.partner.sire { stroke: var(--sire); opacity: .72; }
 .relation-edge.partner.dam { stroke: var(--dam); opacity: .72; }
 .graph-stage.has-hover-path .relation-edge:not(.is-path-edge) { opacity: .09; }
-.relation-edge.is-path-edge { opacity: 1; stroke-width: 3.5; }
+.relation-edge.is-path-edge { opacity: 1; stroke-width: 2.7; }
 .relation-junction { stroke: #fff; stroke-width: 2; }
 .relation-junction.descendant { fill: var(--descendant); }
 
@@ -482,6 +482,17 @@ button:focus-visible, a:focus-visible {
   line-height: 1.5;
 }
 .inspector-actions { display: grid; gap: 8px; padding: 6px 16px 16px; }
+.inspector-unpin {
+  min-height: 38px;
+  cursor: pointer;
+  color: var(--blue-dark);
+  border: 1px solid #cad4f2;
+  border-radius: 9px;
+  background: #f3f6ff;
+  font-size: 11px;
+  font-weight: 800;
+}
+.inspector-unpin:hover { border-color: var(--blue); background: #e8eeff; }
 .inspector-link {
   display: flex;
   min-height: 40px;
@@ -501,6 +512,13 @@ button:focus-visible, a:focus-visible {
 .character-link:hover { background: #e8eeff; }
 .lab-footnote { margin-top: 13px; color: var(--text-3); font-size: 12px; text-align: center; }
 .mobile-sheet { display: none; }
+
+.is-embedded body { min-height: 0; background: transparent; }
+.is-embedded .lab-header,
+.is-embedded .lab-controls,
+.is-embedded .lab-footnote { display: none; }
+.is-embedded .lab-page { width: 100%; margin: 0; }
+.is-embedded .lab-workspace { border: 0; border-radius: 0; box-shadow: none; }
 
 @media (max-width: 1100px) {
   .lab-controls { align-items: flex-start; }
