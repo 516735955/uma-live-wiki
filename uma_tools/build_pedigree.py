@@ -273,6 +273,8 @@ def build_export(source, characters):
             node["parentage_source_url"] = source_url
         if target.get("profile_url"):
             node["profile_url"] = target["profile_url"]
+        if target.get("sex"):
+            node["sex"] = target["sex"]
         if record.get("alias_of"):
             node["alias_of"] = horse_id
         if horse_to_characters.get(horse_id):
