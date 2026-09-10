@@ -273,8 +273,15 @@ def build_export(source, characters):
             node["parentage_source_url"] = source_url
         if target.get("profile_url"):
             node["profile_url"] = target["profile_url"]
+        if target.get("metadata_source_url"):
+            node["metadata_source_url"] = target["metadata_source_url"]
         if target.get("sex"):
             node["sex"] = target["sex"]
+        if target.get("breeding_partners"):
+            node["breeding_partners"] = [
+                dict(partner, horse_id=canonical(partner["horse_id"]))
+                for partner in target["breeding_partners"]
+            ]
         if record.get("alias_of"):
             node["alias_of"] = horse_id
         if horse_to_characters.get(horse_id):
