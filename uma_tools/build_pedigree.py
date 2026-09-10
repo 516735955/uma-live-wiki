@@ -268,6 +268,9 @@ def build_export(source, characters):
             node["born"] = target["born"]
         if parent_sources.get(horse_id):
             node["parentage_source"] = parent_sources[horse_id]
+        source_url = (target.get("parents") or {}).get("source_url")
+        if source_url:
+            node["parentage_source_url"] = source_url
         if record.get("alias_of"):
             node["alias_of"] = horse_id
         if horse_to_characters.get(horse_id):
