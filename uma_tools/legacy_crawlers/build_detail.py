@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import re, json, os, urllib.request, ssl, time
 
+# 人工翻译/校对过角色介绍的白名单:重建时保留仓库中已有的人工版本,不得用萌百原文覆盖
+MANUAL_DESC = {'genuine', 'efforia', 'phalaenopsis'}
+
 base = r"C:\Users\51673\AppData\Local\Temp\opencode"
 moe = open(base + r"\moe_dengchang.html", encoding="utf-8").read()
 chars = json.load(open(base + r"\final_characters_moe.json", encoding="utf-8"))
@@ -70,6 +73,9 @@ missing = []
 for ch in chars:
     if not ch.get("block_found"):
         missing.append(ch["id"]); continue
+    if ch["id"] in MANUAL_DESC:
+        print("whitelist skip", ch["id"])
+        continue
     h = ch["block_html"]
     m = re.search(r'<img src="([^"]+)"', h)
     if not m:
@@ -98,14 +104,30 @@ for ch in chars:
 
 print("detail count:", len(detail), "missing:", missing)
 
+output_path = r"G:\学习\AI\data\character_detail_data.js"
+
+# 白名单角色:从现有文件整行原样保留人工翻译版本(不做JSON解析,避免转义破坏)
+kept = {}
+if os.path.exists(output_path):
+    try:
+        for line in open(output_path, encoding="utf-8").read().splitlines():
+            s = line.strip()
+            for cid in MANUAL_DESC:
+                if s.startswith("'%s':" % cid):
+                    kept[cid] = line.rstrip().rstrip(',')
+    except Exception as e:
+        print("whitelist load failed", e)
+if kept:
+    print("whitelist kept:", ", ".join(sorted(kept)))
+    for cid in kept:
+        detail.pop(cid, None)
+
 # write JS data file
 lines = ["window.CHAR_DETAIL = {"]
-for i, (cid, d) in enumerate(detail.items()):
-    comma = "," if i < len(detail) - 1 else ""
-    obj = json.dumps(d, ensure_ascii=False)
-    lines.append("  '%s': %s%s" % (cid, obj, comma))
+items = ["  '%s': %s" % (cid, json.dumps(d, ensure_ascii=False)) for cid, d in detail.items()]
+items += [kept[cid] for cid in MANUAL_DESC if cid in kept]
+lines.append(",\n".join(items))
 lines.append("};")
 out = "\n".join(lines)
-output_path = r"G:\学习\AI\data\character_detail_data.js"
 open(output_path, "w", encoding="utf-8").write(out)
 print("wrote character_detail_data.js", os.path.getsize(output_path))

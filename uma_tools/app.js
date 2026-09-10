@@ -238,7 +238,7 @@ createApp({
     function loadCharacterDetailData() {
       return Promise.all([
         loadCharacterIndexData(),
-        loadDataScript('/data/character_detail_data.js?v=20260904', 'CHAR_DETAIL'),
+        loadDataScript('/data/character_detail_data.js?v=20260910-4', 'CHAR_DETAIL'),
         loadDataScript('/data/pedigree_data.js?v=20260910-2', 'PED_REL')
       ]);
     }

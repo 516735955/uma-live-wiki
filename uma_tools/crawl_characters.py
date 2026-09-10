@@ -19,6 +19,8 @@ OFFICIAL = 'https://umamusume.jp/character/'
 MOE_LIST = ('https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby/'
             '%E7%99%BB%E5%9C%BA%E4%BA%BA%E7%89%A9')
 DATE_RE = re.compile(r'(19|20)\d{2}年\d{1,2}月\d{1,2}日')
+# 人工翻译/校对过角色介绍的白名单:爬虫不得覆盖这些角色的详情描述
+MANUAL_DESC = {'genuine', 'efforia', 'phalaenopsis'}
 
 def write_text_atomic(path, content):
     fd, tmp = tempfile.mkstemp(prefix='.characters-', suffix='.tmp', dir=os.path.dirname(path))
@@ -127,6 +129,13 @@ def main():
             print('  [等待萌百]', cid, '(' + jp + ')', flush=True)
     if not moe_pages:
         print('萌百尚未更新任何新角色，结束。', flush=True)
+        return 0
+    whitelisted = [cid for cid in moe_pages if cid in MANUAL_DESC]
+    if whitelisted:
+        print('  [白名单保护] 跳过人工翻译角色详情:', ', '.join(whitelisted), flush=True)
+        moe_pages = {cid: info for cid, info in moe_pages.items() if cid not in MANUAL_DESC}
+    if not moe_pages:
+        print('新角色均在人工翻译白名单内，管线结束。', flush=True)
         return 0
 
     # ---- 阶段1&1.5&2: 逐个入库 ----

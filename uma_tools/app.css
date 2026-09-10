@@ -412,7 +412,7 @@
 
         .albums-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px; min-height: 70vh; padding-bottom: 84px;
+            gap: 20px; min-height: 70vh; align-content: start; padding-bottom: 84px;
         }
 
         .album-card {
