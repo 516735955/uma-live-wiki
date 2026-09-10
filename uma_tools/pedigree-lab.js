@@ -759,7 +759,14 @@
       sheet.setAttribute('aria-hidden', 'true');
     }
   });
-  window.addEventListener('resize', function () { window.clearTimeout(state.resizeTimer); state.resizeTimer = window.setTimeout(fitStage, 120); });
+  window.addEventListener('resize', function () {
+    window.clearTimeout(state.resizeTimer);
+    state.resizeTimer = window.setTimeout(function () {
+      fitStage();
+      if (window.innerWidth <= 760) focusRoot(.72);
+      else if (state.fitScale < .5) focusRoot(.5);
+    }, 120);
+  });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeData);
   else initializeData();
