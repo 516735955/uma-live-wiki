@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var state = { sample: 'staygold', focus: 'all', expanded: true, resizeTimer: null };
+  var state = { sample: 'staygold', expanded: true, lockedItem: null, resizeTimer: null };
   var byId = {};
   var charById = {};
   var viewport = document.getElementById('graph-viewport');
@@ -15,6 +15,13 @@
   var currentModel = null;
   var sexLabels = { male: '牡马', female: '牝马', gelding: '阉马' };
   var sexShort = { male: '牡', female: '牝', gelding: '阉' };
+  var countryLabels = {
+    JPN: '日本', USA: '美国', GB: '英国', CAN: '加拿大', IRE: '爱尔兰',
+    FR: '法国', ITY: '意大利', ARG: '阿根廷', AUS: '澳大利亚',
+    NZ: '新西兰', GER: '德国', BRZ: '巴西', CHI: '智利',
+    SAF: '南非', UAE: '阿联酋'
+  };
+  var relationRank = { full: 0, same_dam: 1, same_sire: 2 };
 
   function escapeHtml(value) {
     return String(value == null ? '' : value)
@@ -40,24 +47,22 @@
   }
 
   function sourceLabel(url) {
-    if (url.indexOf('netkeiba.com') !== -1) return 'netkeiba赛马资料页';
-    if (url.indexOf('jbis.or.jp') !== -1 || url.indexOf('jbis.jp') !== -1) return 'JBIS赛马资料页';
-    return '现实赛马资料来源';
+    if (url.indexOf('jbis.or.jp') !== -1 || url.indexOf('jbis.jp') !== -1) return '查看JBIS资料';
+    if (url.indexOf('netkeiba.com') !== -1) return '查看netkeiba资料';
+    return '查看赛马资料来源';
   }
 
   function getNode(id, rootId) {
     var rootNode = byId[rootId];
-    var lookupId = id;
-    if (rootNode && id === rootNode.horse_id) lookupId = rootId;
+    var lookupId = rootNode && id === rootNode.horse_id ? rootId : id;
     var node = byId[lookupId] || byId[id] || { cid: id, zh: id };
     var horseNode = node.horse_id && byId[node.horse_id] ? byId[node.horse_id] : node;
     var cid = charById[lookupId] ? lookupId : node.character_id;
     var character = cid ? charById[cid] : null;
     var role = Boolean(character);
     var horseZh = cleanName(horseNode.zh || node.real || node.zh || horseNode.en || node.en || id);
-    var name = role ? cleanName(character.zh) : horseZh;
-    var secondary = role ? '原型·' + horseZh : cleanName(horseNode.en || horseNode.ja || node.en || node.ja);
-    var profileUrl = horseNode.profile_url || node.profile_url || node.parentage_source_url || '';
+    var sourceUrl = horseNode.metadata_source_url || node.metadata_source_url ||
+      horseNode.profile_url || node.profile_url || node.parentage_source_url || '';
     return {
       id: id,
       lookupId: lookupId,
@@ -65,16 +70,17 @@
       cid: cid || '',
       role: role,
       isCurrent: cid === rootId,
-      name: name,
+      name: role ? cleanName(character.zh) : horseZh,
       horseId: horseNode.cid || node.horse_id || id,
       horseZh: horseZh,
       ja: cleanName(horseNode.ja || node.ja),
       en: cleanName(horseNode.en || node.en),
       sex: horseNode.sex || node.sex || '',
-      secondary: secondary,
+      born: horseNode.born || node.born || '',
+      country: horseNode.country || node.country || '',
       avatar: avatarUrl((character && character.img) || node.av || horseNode.av),
-      sourceUrl: profileUrl,
-      sourceName: sourceLabel(profileUrl),
+      sourceUrl: sourceUrl,
+      sourceName: sourceLabel(sourceUrl),
       parents: horseNode.parents || node.parents || {}
     };
   }
@@ -95,9 +101,16 @@
     return '同父';
   }
 
+  function compareBornName(a, b) {
+    var aBorn = Number(a.born) || 9999;
+    var bBorn = Number(b.born) || 9999;
+    if (aBorn !== bBorn) return aBorn - bBorn;
+    return a.name.localeCompare(b.name, 'zh-Hans-CN');
+  }
+
   function buildModel(rootId) {
     var rootNode = byId[rootId];
-    var relations = rootNode.character_relations || { siblings: [], descendants: [], partners: [] };
+    var relations = rootNode.character_relations || { siblings: [], descendants: [] };
     var ancestors = [];
     (rootNode.up || []).forEach(function (row, generation) {
       (row || []).forEach(function (id, index) {
@@ -127,31 +140,49 @@
       item.relationKind = relation.relation;
       item.sharedParents = relation.shared_parents || [];
       return item;
+    }).sort(function (a, b) {
+      var relationDifference = relationRank[a.relationKind] - relationRank[b.relationKind];
+      return relationDifference || compareBornName(a, b);
     });
 
     var descendants = (relations.descendants || []).map(function (relation) {
-      var path = (relation.path || []).slice();
       var item = getNode(relation.cid, rootId);
       item.group = 'descendant';
       item.tag = relation.generation === 1 ? '子代' : '孙代';
       item.generation = relation.generation;
-      item.path = path;
+      item.path = (relation.path || []).slice();
       item.links = relation.links || [];
       return item;
+    }).sort(function (a, b) {
+      return a.generation - b.generation || compareBornName(a, b);
     });
 
-    var partners = (relations.partners || []).map(function (relation) {
+    var breeding = (rootNode.breeding_partners || []).map(function (relation) {
       var item = getNode(relation.horse_id, rootId);
-      item.group = 'partner';
-      item.tag = '另一侧亲本';
-      item.via = relation.via || [];
+      item.group = 'breeding';
+      item.tag = '繁育关联';
+      item.years = relation.years || [];
+      item.sourceUrl = relation.source_url || item.sourceUrl;
+      item.sourceName = sourceLabel(item.sourceUrl);
+      item.path = [rootId, item.id];
       return item;
+    }).sort(function (a, b) {
+      var aYear = a.years[0] || 9999;
+      var bYear = b.years[0] || 9999;
+      return aYear - bYear || compareBornName(a, b);
     });
 
     var root = getNode(rootId, rootId);
     root.group = 'root';
     root.tag = '当前角色';
-    return { root: root, rootNode: rootNode, ancestors: ancestors, siblings: siblings, descendants: descendants, partners: partners };
+    return {
+      root: root,
+      rootNode: rootNode,
+      ancestors: ancestors,
+      siblings: siblings,
+      descendants: descendants,
+      breeding: breeding
+    };
   }
 
   function factRow(label, value) {
@@ -161,17 +192,17 @@
 
   function detailHtml(item, headingId) {
     var groupNames = {
-      root: '当前角色',
-      ancestor: '先代血统',
-      sibling: '同辈角色',
-      descendant: '后代角色',
-      partner: '另一侧亲本'
+      root: '当前角色', ancestor: '先代血统', sibling: '同辈角色',
+      descendant: '后代角色', partner: '另一方亲本', breeding: '繁育关联'
     };
-    var html = '<div class="inspector-heading">';
-    if (item.avatar) html += '<img class="inspector-avatar" src="' + escapeHtml(item.avatar) + '" alt="">';
-    html += '<div><span class="inspector-type ' + escapeHtml(item.group) + '">' + escapeHtml(item.tag || groupNames[item.group] || '赛马资料') + '</span>';
+    var detailClass = item.role ? 'is-role-detail' : 'is-horse-detail';
+    var html = '<div class="inspector-card ' + detailClass + '">';
+    html += '<div class="inspector-heading">';
+    if (item.role && item.avatar) html += '<img class="inspector-avatar" src="' + escapeHtml(item.avatar) + '" alt="">';
+    html += '<div class="inspector-identity"><span class="inspector-type ' + escapeHtml(item.group) + '">' +
+      escapeHtml(item.tag || groupNames[item.group] || '赛马资料') + '</span>';
     html += '<h2' + (headingId ? ' id="' + escapeHtml(headingId) + '"' : '') + '>' + escapeHtml(item.name) + '</h2>';
-    if (item.role) html += '<p class="inspector-real">现实原型·' + escapeHtml(item.horseZh) + '</p>';
+    if (item.sex) html += '<span class="detail-sex ' + escapeHtml(item.sex) + '">' + escapeHtml(sexLabels[item.sex]) + '</span>';
     html += '</div></div>';
     html += '<dl class="horse-names">';
     html += factRow('中文名', item.horseZh);
@@ -179,41 +210,65 @@
     html += factRow('英文名', item.en);
     html += '</dl>';
     html += '<dl class="horse-facts">';
-    html += factRow('性别', sexLabels[item.sex] || '');
+    html += factRow('出生年份', item.born ? item.born + '年' : '');
+    html += factRow('产地', countryLabels[item.country] || item.country);
     if (item.parents && item.parents.sire) html += factRow('父', nameOf(item.parents.sire, currentModel.root.lookupId));
     if (item.parents && item.parents.dam) html += factRow('母', nameOf(item.parents.dam, currentModel.root.lookupId));
     if (item.sharedParents && item.sharedParents.length) {
-      html += factRow('共同亲本', item.sharedParents.map(function (id) { return nameOf(id, currentModel.root.lookupId); }).join('、'));
-    }
-    if (item.path && item.path.length > 1) {
-      html += factRow('血统路径', item.path.map(function (id) { return nameOf(id, currentModel.root.lookupId); }).join('→'));
+      html += factRow('共同亲本', item.sharedParents.map(function (id) {
+        return nameOf(id, currentModel.root.lookupId);
+      }).join('、'));
     }
     if (item.via && item.via.length) {
-      html += factRow('关联后代', item.via.map(function (id) { return nameOf(id, currentModel.root.lookupId); }).join('、'));
+      html += factRow('关联子代', item.via.map(function (id) {
+        return nameOf(id, currentModel.root.lookupId);
+      }).join('、'));
     }
+    if (item.years && item.years.length) html += factRow('记录年份', item.years.join('、') + '年');
     html += '</dl>';
     html += '<div class="inspector-actions">';
     if (item.sourceUrl) {
-      html += '<a class="inspector-link source-link" href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noopener noreferrer">查看' + escapeHtml(item.sourceName) + '</a>';
+      html += '<a class="inspector-link source-link" href="' + escapeHtml(item.sourceUrl) +
+        '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.sourceName) + '</a>';
     }
     if (item.role && !item.isCurrent) {
-      html += '<a class="inspector-link character-link" href="' + characterRoute(item.cid) + '">前往' + escapeHtml(item.name) + '角色页</a>';
+      html += '<a class="inspector-link character-link" href="' + characterRoute(item.cid) + '">前往' +
+        escapeHtml(item.name) + '角色页</a>';
     }
-    html += '</div>';
+    html += '</div></div>';
     return html;
   }
 
-  function showDetail(item, mobile) {
+  function renderDetail(item, mobile) {
     if (!item) return;
     inspector.innerHTML = detailHtml(item, 'inspector-title');
-    stage.querySelectorAll('[data-horse-id]').forEach(function (element) {
-      element.classList.toggle('is-selected', element.dataset.horseId === item.horseId);
-    });
     if (mobile) {
       sheetContent.innerHTML = detailHtml(item, 'sheet-title');
       sheet.classList.add('is-open');
       sheet.setAttribute('aria-hidden', 'false');
     }
+  }
+
+  function syncPinnedSelection() {
+    stage.querySelectorAll('[data-horse-id]').forEach(function (element) {
+      element.classList.toggle('is-selected', Boolean(state.lockedItem) &&
+        element.dataset.horseId === state.lockedItem.horseId);
+    });
+  }
+
+  function pinDetail(item, mobile) {
+    state.lockedItem = item;
+    renderDetail(item, mobile);
+    syncPinnedSelection();
+  }
+
+  function previewDetail(item) {
+    if (!state.lockedItem) renderDetail(item, false);
+  }
+
+  function restoreDetail() {
+    if (!currentModel) return;
+    renderDetail(state.lockedItem || currentModel.root, false);
   }
 
   function isCoarsePointer() {
@@ -236,7 +291,9 @@
     });
     stage.querySelectorAll('.relation-edge').forEach(function (edge) {
       var edgeIds = (edge.dataset.relationIds || '').split('|').filter(Boolean);
-      edge.classList.toggle('is-path-edge', edgeIds.length > 0 && edgeIds.every(function (id) { return ids.indexOf(id) !== -1; }));
+      edge.classList.toggle('is-path-edge', edgeIds.length > 0 && edgeIds.every(function (id) {
+        return ids.indexOf(id) !== -1;
+      }));
     });
   }
 
@@ -245,16 +302,17 @@
     stage.querySelectorAll('.is-path-node,.is-path-edge').forEach(function (element) {
       element.classList.remove('is-path-node', 'is-path-edge');
     });
+    restoreDetail();
   }
 
   function bindInteractive(element, item) {
-    element.addEventListener('mouseenter', function () { showDetail(item, false); setHoverPath(item); });
+    element.addEventListener('mouseenter', function () { previewDetail(item); setHoverPath(item); });
     element.addEventListener('mouseleave', clearHoverPath);
-    element.addEventListener('focus', function () { showDetail(item, false); setHoverPath(item); });
+    element.addEventListener('focus', function () { previewDetail(item); setHoverPath(item); });
     element.addEventListener('blur', clearHoverPath);
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      showDetail(item, isCoarsePointer());
+      pinDetail(item, isCoarsePointer());
     });
   }
 
@@ -262,8 +320,8 @@
     options = options || {};
     var element = document.createElement('button');
     var isRoot = Boolean(options.root);
-    var width = isRoot ? 202 : (item.role ? 156 : 154);
-    var height = isRoot ? 88 : (item.role ? 72 : 62);
+    var width = isRoot ? 178 : (item.role ? 140 : 124);
+    var height = isRoot ? 68 : (item.role ? 56 : 42);
     element.className = 'ped-node' + (isRoot ? ' is-root' : '') + (item.role ? ' is-role' : ' is-horse');
     element.dataset.group = item.group;
     element.dataset.nodeId = item.id;
@@ -278,11 +336,13 @@
       tag.textContent = item.tag;
       element.appendChild(tag);
     }
-    var sex = document.createElement('span');
-    sex.className = 'ped-sex ' + (item.sex || '');
-    sex.textContent = sexShort[item.sex] || '';
-    if (item.sex) sex.setAttribute('aria-label', sexLabels[item.sex]);
-    element.appendChild(sex);
+    if (item.sex) {
+      var sex = document.createElement('span');
+      sex.className = 'ped-sex ' + item.sex;
+      sex.textContent = sexShort[item.sex];
+      sex.setAttribute('aria-label', sexLabels[item.sex]);
+      element.appendChild(sex);
+    }
     if (item.role) {
       var image = document.createElement('img');
       image.className = 'ped-avatar';
@@ -290,74 +350,19 @@
       image.alt = '';
       image.loading = 'lazy';
       element.appendChild(image);
-    } else {
-      var mark = document.createElement('span');
-      mark.className = 'horse-mark';
-      mark.textContent = '原';
-      element.appendChild(mark);
     }
     var copy = document.createElement('span');
     copy.className = 'ped-copy';
-    copy.innerHTML = '<span class="ped-name">' + escapeHtml(item.name) + '</span>' +
-      (item.secondary ? '<span class="ped-sub">' + escapeHtml(item.secondary) + '</span>' : '');
+    copy.innerHTML = '<span class="ped-name">' + escapeHtml(item.name) + '</span>';
     element.appendChild(copy);
     bindInteractive(element, item);
     stage.appendChild(element);
     return { x: x, y: y, width: width, height: height, element: element, item: item };
   }
 
-  function createPanelRow(item) {
-    var row = document.createElement('button');
-    row.className = 'panel-row';
-    row.dataset.group = item.group;
-    row.dataset.horseId = item.horseId;
-    row.type = 'button';
-    if (item.avatar) {
-      var img = document.createElement('img');
-      img.src = item.avatar;
-      img.alt = '';
-      img.loading = 'lazy';
-      row.appendChild(img);
-    } else {
-      var mark = document.createElement('span');
-      mark.className = 'horse-mark';
-      mark.textContent = '原';
-      row.appendChild(mark);
-    }
-    var copy = document.createElement('span');
-    copy.className = 'ped-copy';
-    copy.innerHTML = '<strong>' + escapeHtml(item.name) + '</strong><small>' + escapeHtml(item.tag || item.secondary) + '</small>';
-    row.appendChild(copy);
-    bindInteractive(row, item);
-    return row;
-  }
-
-  function createLabel(text, x, y, cluster) {
+  function createGroupLabel(title, count, x, y) {
     var label = document.createElement('div');
-    label.className = cluster ? 'cluster-label' : 'generation-label';
-    label.textContent = text;
-    label.style.left = x + 'px';
-    label.style.top = y + 'px';
-    stage.appendChild(label);
-  }
-
-  function createZone(title, note, x, y, width, height, group) {
-    var zone = document.createElement('section');
-    zone.className = 'relation-zone ' + group;
-    zone.dataset.group = group;
-    zone.style.left = x + 'px';
-    zone.style.top = y + 'px';
-    zone.style.width = width + 'px';
-    zone.style.height = height + 'px';
-    zone.innerHTML = '<div class="zone-heading"><span>' + escapeHtml(title) + '</span><small>' + escapeHtml(note) + '</small></div>';
-    stage.appendChild(zone);
-    return zone;
-  }
-
-  function createGroupLabel(title, count, x, y, group) {
-    var label = document.createElement('div');
-    label.className = 'relation-group-label ' + group;
-    label.dataset.group = group;
+    label.className = 'relation-group-label';
     label.style.left = x + 'px';
     label.style.top = y + 'px';
     label.innerHTML = '<strong>' + escapeHtml(title) + '</strong><span>' + count + '位</span>';
@@ -391,7 +396,6 @@
     }
     path.setAttribute('d', d);
     path.setAttribute('class', 'relation-edge ' + group);
-    path.dataset.group = group;
     path.dataset.relationIds = (options.relationIds || [from.item && from.item.id, to.item && to.item.id])
       .filter(Boolean).join('|');
     svg.appendChild(path);
@@ -399,16 +403,15 @@
 
   function addPartnerChip(item, x, y) {
     var chip = document.createElement('button');
-    chip.className = 'partner-chip';
-    chip.dataset.group = 'partner';
+    var parentRole = item.parentRole || '';
+    chip.className = 'partner-chip' + (parentRole ? ' is-' + parentRole : '');
     chip.dataset.nodeId = item.id;
     chip.dataset.horseId = item.horseId;
     chip.style.left = x + 'px';
     chip.style.top = y + 'px';
     chip.type = 'button';
-    chip.innerHTML = '<span class="partner-role">' + escapeHtml(item.tag) + '</span>' +
-      '<strong>' + escapeHtml(item.name) + '</strong>' +
-      '<span class="ped-sex ' + escapeHtml(item.sex || '') + '">' + escapeHtml(sexShort[item.sex] || '') + '</span>';
+    chip.innerHTML = '<span class="partner-role">' + escapeHtml(item.tag) + '</span><strong>' +
+      escapeHtml(item.name) + '</strong>';
     chip.setAttribute('aria-label', item.tag + '，' + item.name + '，' + (sexLabels[item.sex] || '赛马'));
     bindInteractive(chip, item);
     stage.appendChild(chip);
@@ -421,110 +424,33 @@
   }
 
   function descendantStructure(model) {
-    var firstOrder = [];
     var firstMap = {};
-    var terminals = [];
     model.descendants.forEach(function (descendant) {
       var path = descendant.path || [];
       var firstId = path[1] || descendant.id;
       if (!firstMap[firstId]) {
         var firstItem = path.length === 2 ? descendant : getNode(firstId, model.root.lookupId);
         firstItem.group = 'descendant';
-        firstItem.tag = path.length === 2 ? descendant.tag : '中间代';
+        firstItem.tag = '子代';
         firstItem.path = path.length === 2 ? path.slice() : [model.root.id, firstId];
         firstMap[firstId] = { id: firstId, item: firstItem, terminals: [], partner: null };
-        firstOrder.push(firstMap[firstId]);
       }
-      if (path.length > 2) {
-        firstMap[firstId].terminals.push(descendant);
-        terminals.push({ parentId: firstId, item: descendant });
-      }
+      if (path.length > 2) firstMap[firstId].terminals.push(descendant);
       var firstLink = descendant.links && descendant.links[0];
       if (firstLink && firstLink.partner && !firstMap[firstId].partner) {
         var partner = getNode(firstLink.partner, model.root.lookupId);
         partner.group = 'partner';
-        partner.tag = firstLink.role === 'dam' ? '父' : '母';
+        partner.parentRole = firstLink.role === 'dam' ? 'sire' : 'dam';
+        partner.tag = partner.parentRole === 'sire' ? '父' : '母';
         partner.via = [firstId];
         partner.path = [model.root.id, firstId];
         firstMap[firstId].partner = partner;
       }
     });
-    return { first: firstOrder, terminals: terminals };
-  }
-
-  function renderAtlas(model) {
-    var structure = descendantStructure(model);
-    var maxCount = Math.max(8, model.siblings.length, structure.first.length, structure.terminals.length);
-    var width = Math.max(1500, maxCount * 170 + 240);
-    var height = structure.terminals.length ? 1240 : 1060;
-    var center = width / 2;
-    stage.style.width = width + 'px';
-    stage.style.height = height + 'px';
-    var svg = createSvg(width, height);
-    var positions = {};
-
-    createLabel('第3代先祖', 50, 43);
-    createLabel('第2代先祖', 50, 183);
-    createLabel('父母', 50, 323);
-    createLabel('当前角色', 50, 499);
-    createLabel('兄弟姐妹角色', 50, 677);
-    createLabel('角色后代路径', 50, 875);
-
-    for (var generation = 2; generation >= 0; generation--) {
-      var row = model.ancestors.filter(function (item) { return item.generation === generation + 1; });
-      var y = 82 + (2 - generation) * 140;
-      var xs = spread(row.length, center, Math.min(178, (width - 260) / Math.max(1, row.length)));
-      row.forEach(function (item, index) {
-        positions['a' + generation + '_' + item.index] = createNode(item, xs[index], y);
-      });
-    }
-    positions.root = createNode(model.root, center, 550, { root: true, hideTag: true });
-    [0, 1].forEach(function (index) { addEdge(svg, positions['a0_' + index], positions.root, 'ancestor'); });
-    [0, 1, 2, 3].forEach(function (index) {
-      addEdge(svg, positions['a1_' + index], positions['a0_' + Math.floor(index / 2)], 'ancestor');
-    });
-    for (var ai = 0; ai < 8; ai++) addEdge(svg, positions['a2_' + ai], positions['a1_' + Math.floor(ai / 2)], 'ancestor');
-
-    var siblingXs = spread(model.siblings.length, center, 168);
-    model.siblings.forEach(function (item, index) {
-      var node = createNode(item, siblingXs[index], 734);
-      positions['s' + index] = node;
-      var shared = item.sharedParents && item.sharedParents[0];
-      var parent = null;
-      model.ancestors.forEach(function (ancestor) {
-        if (ancestor.id === shared && ancestor.generation === 1) parent = positions['a0_' + ancestor.index];
-      });
-      addEdge(svg, parent || positions.root, node, 'sibling');
-    });
-
-    var firstXs = spread(structure.first.length, center, Math.min(210, (width - 280) / Math.max(1, structure.first.length)));
-    structure.first.forEach(function (entry, index) {
-      var node = createNode(entry.item, firstXs[index], 930);
-      positions['d1_' + entry.id] = node;
-      addEdge(svg, positions.root, node, 'descendant');
-      if (entry.partner) addPartnerChip(entry.partner, firstXs[index] + 84, 844);
-    });
-    if (structure.terminals.length) {
-      var terminalXs = spread(structure.terminals.length, center, Math.min(190, (width - 280) / Math.max(1, structure.terminals.length)));
-      structure.terminals.forEach(function (entry, index) {
-        var node = createNode(entry.item, terminalXs[index], 1122);
-        addEdge(svg, positions['d1_' + entry.parentId], node, 'descendant');
-      });
-    }
-    return { width: width, height: height };
-  }
-
-  function applyLensFocus(focus) {
-    state.focus = focus;
-    stage.querySelectorAll('[data-group]').forEach(function (element) {
-      var group = element.dataset.group;
-      var muted = focus !== 'all' && group !== focus && group !== 'root';
-      element.classList.toggle(element.classList.contains('relation-edge') ? 'muted' : 'is-muted', muted);
-      element.classList.toggle('is-related', !muted && focus !== 'all' && group === focus && !element.classList.contains('relation-edge'));
-    });
-    stage.querySelectorAll('.lens-filter button').forEach(function (button) {
-      button.classList.toggle('is-active', button.dataset.focus === focus);
-    });
+    var first = Object.keys(firstMap).map(function (id) { return firstMap[id]; });
+    first.sort(function (a, b) { return compareBornName(a.item, b.item); });
+    first.forEach(function (entry) { entry.terminals.sort(compareBornName); });
+    return { first: first };
   }
 
   function renderLens(model) {
@@ -534,43 +460,42 @@
     model.siblings.forEach(function (item) {
       var key = item.relationKind + ':' + (item.sharedParents || []).join(',');
       if (!siblingMap[key]) {
-        siblingMap[key] = { items: [], title: item.tag + '·' + item.sharedParents.map(function (id) { return nameOf(id, model.root.lookupId); }).join('、') };
+        siblingMap[key] = {
+          items: [],
+          title: item.tag + '·' + item.sharedParents.map(function (id) {
+            return nameOf(id, model.root.lookupId);
+          }).join('、')
+        };
         siblingGroups.push(siblingMap[key]);
       }
       siblingMap[key].items.push(item);
     });
-    var siblingHeight = 74;
-    siblingGroups.forEach(function (group) { siblingHeight += 46 + Math.ceil(group.items.length / 3) * 92; });
+
+    var siblingRows = 0;
+    siblingGroups.forEach(function (group) { siblingRows += 1 + Math.ceil(group.items.length / 3); });
     var descendantRows = 0;
     structure.first.forEach(function (entry) { descendantRows += Math.max(1, entry.terminals.length); });
-    var descendantHeight = 92 + descendantRows * 102;
-    var width = 1560;
-    var height = Math.max(1050, 420 + siblingHeight, 420 + descendantHeight);
+    var relationRows = Math.max(siblingRows, descendantRows, model.breeding.length);
+    var width = 1280;
+    var height = Math.max(790, 470 + relationRows * 78);
+    var rootX = 620;
+    var rootY = 390;
     stage.style.width = width + 'px';
     stage.style.height = height + 'px';
     var svg = createSvg(width, height);
     var positions = {};
-    var hasSiblings = siblingGroups.length > 0;
-    var rootX = hasSiblings ? 720 : 600;
-    var rootY = 520;
-    var descendantZoneX = hasSiblings ? 900 : 710;
-
-    createZone('3代先祖', '使用父、母、母父等血统位置；悬停节点会点亮完整路径。', hasSiblings ? 70 : 24, 24, hasSiblings ? 1280 : 1200, 354, 'ancestor');
-    if (hasSiblings) {
-      createZone('同辈角色', '只展示已有角色页的同父、同母及全同胞。', 24, 414, 500, siblingHeight, 'sibling');
-    }
-    createZone('2代内角色后代', '完整保留中间代，另一侧亲本贴近对应路径。', descendantZoneX, 414, hasSiblings ? 630 : 820, descendantHeight, 'descendant');
 
     var orbit = document.createElement('div');
     orbit.className = 'root-orbit';
-    orbit.style.left = (rootX - 142) + 'px';
-    orbit.style.top = (rootY - 118) + 'px';
+    orbit.style.left = (rootX - 116) + 'px';
+    orbit.style.top = (rootY - 91) + 'px';
     stage.appendChild(orbit);
 
     for (var generation = 2; generation >= 0; generation--) {
       var row = model.ancestors.filter(function (item) { return item.generation === generation + 1; });
-      var xs = spread(row.length, rootX, generation === 2 ? 158 : 188);
-      var y = 80 + (2 - generation) * 112;
+      var spacing = generation === 2 ? 136 : (generation === 1 ? 190 : 280);
+      var xs = spread(row.length, rootX, spacing);
+      var y = 55 + (2 - generation) * 100;
       row.forEach(function (item, index) {
         positions['a' + generation + '_' + item.index] = createNode(item, xs[index], y);
       });
@@ -578,150 +503,87 @@
     positions.root = createNode(model.root, rootX, rootY, { root: true, hideTag: true });
     [0, 1].forEach(function (index) {
       var parent = positions['a0_' + index];
-      if (parent) addEdge(svg, parent, positions.root, 'ancestor', { relationIds: [parent.item.id, model.root.id] });
+      if (parent) addEdge(svg, parent, positions.root, 'ancestor', {
+        relationIds: [parent.item.id, model.root.id]
+      });
     });
     [0, 1, 2, 3].forEach(function (index) {
       var ancestor = positions['a1_' + index];
       var child = positions['a0_' + Math.floor(index / 2)];
-      if (ancestor && child) addEdge(svg, ancestor, child, 'ancestor', { relationIds: [ancestor.item.id, child.item.id] });
+      if (ancestor && child) addEdge(svg, ancestor, child, 'ancestor', {
+        relationIds: [ancestor.item.id, child.item.id]
+      });
     });
     for (var ai = 0; ai < 8; ai++) {
       var oldest = positions['a2_' + ai];
       var next = positions['a1_' + Math.floor(ai / 2)];
-      if (oldest && next) addEdge(svg, oldest, next, 'ancestor', { relationIds: [oldest.item.id, next.item.id] });
+      if (oldest && next) addEdge(svg, oldest, next, 'ancestor', {
+        relationIds: [oldest.item.id, next.item.id]
+      });
     }
 
-    var siblingY = 472;
+    var siblingY = 474;
     siblingGroups.forEach(function (group) {
-      createGroupLabel(group.title, group.items.length, 50, siblingY, 'sibling');
+      createGroupLabel(group.title, group.items.length, 47, siblingY - 20);
       var rowCount = Math.ceil(group.items.length / 3);
-      var groupCenterY = siblingY + 42 + rowCount * 46;
-      addEdge(svg, positions.root, { x: 524, y: groupCenterY, width: 0, height: 0, item: null }, 'sibling', {
-        horizontal: true,
-        fromDx: -101,
-        fromDy: 0,
-        toDx: 0,
-        toDy: 0,
-        relationIds: [model.root.id].concat(group.items[0].sharedParents || [])
-      });
       group.items.forEach(function (item, index) {
         var col = index % 3;
         var rowIndex = Math.floor(index / 3);
-        createNode(item, 108 + col * 164, siblingY + 66 + rowIndex * 92, { hideTag: true });
+        var node = createNode(item, 88 + col * 142, siblingY + 36 + rowIndex * 68, { hideTag: true });
+        addEdge(svg, positions.root, node, 'sibling', {
+          horizontal: true,
+          fromDx: -89,
+          fromDy: 0,
+          toDx: node.width / 2,
+          toDy: 0,
+          relationIds: [model.root.id, item.id].concat(item.sharedParents || [])
+        });
       });
-      siblingY += 46 + rowCount * 92;
+      siblingY += 58 + rowCount * 68;
     });
 
-    var descendantY = 492;
+    var descendantY = 500;
     structure.first.forEach(function (entry) {
       var span = Math.max(1, entry.terminals.length);
-      var firstY = descendantY + (span - 1) * 51;
-      var firstX = descendantZoneX + 102;
-      var terminalX = descendantZoneX + 438;
-      var node = createNode(entry.item, firstX, firstY);
-      positions['d1_' + entry.id] = node;
-      addEdge(svg, positions.root, node, 'descendant', {
+      var firstY = descendantY + (span - 1) * 38;
+      var firstNode = createNode(entry.item, 855, firstY);
+      positions['d1_' + entry.id] = firstNode;
+      addEdge(svg, positions.root, firstNode, 'descendant', {
         horizontal: true,
-        fromDx: 101,
+        fromDx: 89,
         fromDy: 0,
-        toDx: -78,
+        toDx: -firstNode.width / 2,
         toDy: 0,
         relationIds: [model.root.id, entry.id]
       });
-      if (entry.partner) addPartnerChip(entry.partner, descendantZoneX + 180, firstY - 44);
+      if (entry.partner) addPartnerChip(entry.partner, 768, firstY - 49);
       entry.terminals.forEach(function (item, index) {
-        var terminalY = descendantY + index * 102;
-        var terminal = createNode(item, terminalX, terminalY);
-        addEdge(svg, node, terminal, 'descendant', {
+        var terminalY = descendantY + index * 76;
+        var terminal = createNode(item, 1110, terminalY);
+        addEdge(svg, firstNode, terminal, 'descendant', {
           horizontal: true,
-          fromDx: 77,
+          fromDx: firstNode.width / 2,
           fromDy: 0,
-          toDx: -78,
+          toDx: -terminal.width / 2,
           toDy: 0,
           relationIds: [entry.id, item.id]
         });
       });
-      descendantY += span * 102;
+      descendantY += span * 76;
     });
 
-    var filter = document.createElement('div');
-    filter.className = 'lens-filter';
-    filter.style.left = (rootX - 160) + 'px';
-    filter.style.top = '610px';
-    [['all', '全部'], ['ancestor', '先代'], ['sibling', '同辈'], ['descendant', '后代'], ['partner', '另一侧亲本']].forEach(function (entry) {
-      var button = document.createElement('button');
-      button.type = 'button';
-      button.dataset.focus = entry[0];
-      button.textContent = entry[1];
-      button.addEventListener('click', function () { applyLensFocus(entry[0]); });
-      filter.appendChild(button);
-    });
-    stage.appendChild(filter);
-    applyLensFocus(state.focus);
-    return { width: width, height: height };
-  }
-
-  function createRelationPanel(title, note, items, x, y, partnerPanel) {
-    var panel = document.createElement('section');
-    panel.className = 'panel-list' + (partnerPanel ? ' is-partners' : '');
-    panel.style.left = x + 'px';
-    panel.style.top = y + 'px';
-    var heading = document.createElement('h3');
-    heading.textContent = title;
-    panel.appendChild(heading);
-    var description = document.createElement('p');
-    description.textContent = note;
-    panel.appendChild(description);
-    var rows = document.createElement('div');
-    rows.className = 'panel-rows';
-    items.forEach(function (item) { rows.appendChild(createPanelRow(item)); });
-    panel.appendChild(rows);
-    stage.appendChild(panel);
-  }
-
-  function renderPanel(model) {
-    var structure = descendantStructure(model);
-    var width = 1480;
-    var height = Math.max(900, 780 + structure.terminals.length * 20);
-    var graphCenter = 480;
-    stage.style.width = width + 'px';
-    stage.style.height = height + 'px';
-    var svg = createSvg(width, height);
-    var positions = {};
-
-    createLabel('3代先祖主干', 50, 37);
-    createLabel('当前角色', 50, 437);
-    createLabel('角色后代路径', 50, 586);
-
-    for (var generation = 2; generation >= 0; generation--) {
-      var row = model.ancestors.filter(function (item) { return item.generation === generation + 1; });
-      var xs = spread(row.length, graphCenter, generation === 2 ? 104 : 170);
-      var y = 78 + (2 - generation) * 130;
-      row.forEach(function (item, index) {
-        positions['a' + generation + '_' + item.index] = createNode(item, xs[index], y);
+    var breedingY = Math.max(500, descendantY + (structure.first.length ? 18 : 0));
+    model.breeding.forEach(function (item, index) {
+      var node = createNode(item, 935, breedingY + index * 78);
+      addEdge(svg, positions.root, node, 'breeding', {
+        horizontal: true,
+        fromDx: 89,
+        fromDy: 0,
+        toDx: -node.width / 2,
+        toDy: 0,
+        relationIds: [model.root.id, item.id]
       });
-    }
-    positions.root = createNode(model.root, graphCenter, 486, { root: true, hideTag: true });
-    [0, 1].forEach(function (index) { addEdge(svg, positions['a0_' + index], positions.root, 'ancestor'); });
-    [0, 1, 2, 3].forEach(function (index) { addEdge(svg, positions['a1_' + index], positions['a0_' + Math.floor(index / 2)], 'ancestor'); });
-    for (var ai = 0; ai < 8; ai++) addEdge(svg, positions['a2_' + ai], positions['a1_' + Math.floor(ai / 2)], 'ancestor');
-
-    var firstXs = spread(structure.first.length, graphCenter, Math.min(184, 780 / Math.max(1, structure.first.length)));
-    structure.first.forEach(function (entry, index) {
-      var node = createNode(entry.item, firstXs[index], 645);
-      positions['d1_' + entry.id] = node;
-      addEdge(svg, positions.root, node, 'descendant');
     });
-    if (structure.terminals.length) {
-      var terminalXs = spread(structure.terminals.length, graphCenter, Math.min(174, 780 / Math.max(1, structure.terminals.length)));
-      structure.terminals.forEach(function (entry, index) {
-        var node = createNode(entry.item, terminalXs[index], 805);
-        addEdge(svg, positions['d1_' + entry.parentId], node, 'descendant');
-      });
-    }
-
-    createRelationPanel('兄弟姐妹角色', '仅收录拥有角色页面的同父、同母或全同胞。', model.siblings, 1000, 62, false);
-    createRelationPanel('另一侧亲本', '不占用主图节点，悬停或点击查看来源与关联路径。', model.partners, 1000, 575, true);
     return { width: width, height: height };
   }
 
@@ -729,11 +591,11 @@
     var width = parseFloat(stage.style.width) || 1;
     var height = parseFloat(stage.style.height) || 1;
     var mobile = window.innerWidth <= 760;
-    var padding = mobile ? 12 : 18;
-    var scale = mobile ? .58 : Math.min(1, (viewport.clientWidth - padding * 2) / width);
+    var padding = mobile ? 10 : 18;
+    var scale = mobile ? .62 : Math.min(1, (viewport.clientWidth - padding * 2) / width);
     var tx = mobile ? 0 : Math.max(padding, (viewport.clientWidth - width * scale) / 2);
     stage.style.transform = 'translate(' + tx + 'px,' + padding + 'px) scale(' + scale + ')';
-    viewport.style.height = (mobile ? 650 : Math.ceil(height * scale + padding * 2)) + 'px';
+    viewport.style.height = (mobile ? 610 : Math.ceil(height * scale + padding * 2)) + 'px';
     if (mobile) {
       var root = stage.querySelector('.ped-node.is-root');
       if (root) {
@@ -747,15 +609,18 @@
   function render() {
     currentModel = buildModel(state.sample);
     stage.innerHTML = '';
-    state.focus = 'all';
+    state.lockedItem = null;
     document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
-    document.getElementById('workspace-summary').textContent =
-      '三代血统·' + currentModel.siblings.length + '位同辈角色·' +
-      currentModel.descendants.length + '条两代内角色后代路径';
+    var summary = ['三代血统'];
+    if (currentModel.siblings.length) summary.push(currentModel.siblings.length + '位同辈角色');
+    if (currentModel.descendants.length) summary.push(currentModel.descendants.length + '位后代角色');
+    if (currentModel.breeding.length) summary.push(currentModel.breeding.length + '位繁育关联角色');
+    document.getElementById('workspace-summary').textContent = summary.join('·');
     backLink.href = characterRoute(state.sample);
     backLink.setAttribute('aria-label', '返回' + currentModel.root.name + '角色页');
     renderLens(currentModel);
-    showDetail(currentModel.root, false);
+    renderDetail(currentModel.root, false);
+    syncPinnedSelection();
     requestAnimationFrame(layoutStage);
   }
 
@@ -772,7 +637,9 @@
   document.querySelectorAll('[data-sample]').forEach(function (button) {
     button.addEventListener('click', function () {
       state.sample = button.dataset.sample;
-      document.querySelectorAll('[data-sample]').forEach(function (item) { item.classList.toggle('is-active', item === button); });
+      document.querySelectorAll('[data-sample]').forEach(function (item) {
+        item.classList.toggle('is-active', item === button);
+      });
       render();
     });
   });

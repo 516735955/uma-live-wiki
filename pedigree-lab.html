@@ -6,7 +6,7 @@
 <title>角色页血统关系原型</title>
 <link rel="stylesheet" href="/uma_tools/pedigree-lab.css">
 <script defer src="/data/character_index_data.js?v=20260904"></script>
-<script defer src="/data/pedigree_data.js?v=20260910-3"></script>
+<script defer src="/data/pedigree_data.js?v=20260911-1"></script>
 <script defer src="/uma_tools/pedigree-lab.js"></script>
 </head>
 <body>
@@ -24,7 +24,7 @@
   <section class="lab-controls" aria-label="复杂样本">
     <div class="controls-copy">
       <h1>选择角色查看血统关系</h1>
-      <p>三个样本分别覆盖大量同辈、多条后代血统和中间代。</p>
+      <p>四个样本分别覆盖大量同辈、多条后代血统、子代和母马繁育关联。</p>
     </div>
     <div class="lab-samples" role="group" aria-label="复杂样本">
       <button type="button" class="sample-button is-active" data-sample="staygold">
@@ -34,7 +34,10 @@
         <span>秋川弥生</span><small>后代血统最多</small>
       </button>
       <button type="button" class="sample-button" data-sample="daringheart">
-        <span>勇敢之心</span><small>包含中间代</small>
+        <span>勇敢之心</span><small>包含子代</small>
+      </button>
+      <button type="button" class="sample-button" data-sample="nishinoflower">
+        <span>西野花</span><small>母马繁育关联</small>
       </button>
     </div>
   </section>
@@ -52,17 +55,6 @@
     </div>
 
     <div class="workspace-content" id="workspace-content">
-      <div class="relation-legend" aria-label="图例">
-        <span><i class="legend-line ancestor"></i>先代</span>
-        <span><i class="legend-line sibling"></i>同辈</span>
-        <span><i class="legend-line descendant"></i>后代</span>
-        <span><i class="legend-sex male">牡</i>牡马</span>
-        <span><i class="legend-sex female">牝</i>牝马</span>
-        <span><i class="legend-sex gelding">阉</i>阉马</span>
-        <span><i class="legend-node role"></i>已有角色页</span>
-        <span class="legend-hint">悬停查看路径，点选赛马查看资料</span>
-      </div>
-
       <div class="workspace-body">
         <div class="graph-viewport" id="graph-viewport" aria-label="血统关系图">
           <div class="graph-stage" id="graph-stage"></div>
