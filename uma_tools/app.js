@@ -276,7 +276,7 @@ createApp({
       }
       if (first === 'characters') {
         const sub = (seg[1] || '').toLowerCase();
-        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' && sub !== 'blood'
+        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos'
           ? loadCharacterDetailData() : loadCharacterIndexData();
         return Promise.all([characterReady, loadHomeSummary()]);
       }
@@ -289,7 +289,7 @@ createApp({
       if (sub === 'voice' || sub === 'voice-actors') return Promise.all([loadVoiceData(), loadHomeSummary()]);
       if (sub === 'characters') {
         const charPath = (seg[2] || '').toLowerCase();
-        const characterReady = charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos' && charPath !== 'blood'
+        const characterReady = charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos'
           ? loadCharacterDetailData() : loadCharacterIndexData();
         return Promise.all([characterReady, loadHomeSummary()]);
       }
@@ -468,7 +468,7 @@ createApp({
       pushUrl();
     }
     function goCharSub(sub) {
-      if (sub !== 'intro' && sub !== 'room' && sub !== 'videos' && sub !== 'blood') sub = 'intro';
+      if (sub !== 'intro' && sub !== 'room' && sub !== 'videos') sub = 'intro';
       const fromDetail = !!charDetail.value;
       charSub.value = sub;
       charDetail.value = null;
@@ -912,7 +912,7 @@ createApp({
         if (sub === 'characters') {
           dbView.value = 'characters';
           const csub = (seg[2] || 'intro').toLowerCase();
-          if (csub === 'room' || csub === 'videos' || csub === 'blood') {
+          if (csub === 'room' || csub === 'videos') {
             charSub.value = csub;
           } else {
             charSub.value = 'intro';
@@ -944,7 +944,7 @@ createApp({
           dbView.value = 'characters';
           const sub = (seg[1] || 'intro').toLowerCase();
           charDetail.value = null;
-          if (sub === 'room' || sub === 'videos' || sub === 'blood') {
+          if (sub === 'room' || sub === 'videos') {
             charSub.value = sub;
           } else {
             charSub.value = 'intro';
@@ -2279,72 +2279,6 @@ createApp({
 
 
 (function () {
-  var curZoom = null;
-  function applyZ() {
-    var z = curZoom;
-    if (z) z.stage.style.transform = 'translate(' + z.tx + 'px,' + z.ty + 'px) scale(' + z.scale + ')';
-  }
-  window.addEventListener('mousemove', function (e) {
-    var z = curZoom;
-    if (!z || !z.dragging) return;
-    z.tx = z.ox + (e.clientX - z.sx);
-    z.ty = z.oy + (e.clientY - z.sy);
-    applyZ();
-  });
-  window.addEventListener('mouseup', function () { if (curZoom) curZoom.dragging = false; });
-
-  function fitGlobal() {
-    var z = curZoom;
-    if (!z) return;
-    var w = z.stage.parentElement.clientWidth, h = z.stage.parentElement.clientHeight;
-    if (w < 50) return;
-    var iw = z.img.naturalWidth || 1000, ih = z.img.naturalHeight || 800;
-    z.scale = Math.min(w / iw, h / ih); if (z.scale > 1) z.scale = 1;
-    z.tx = (w - iw * z.scale) / 2; z.ty = (h - ih * z.scale) / 2;
-    applyZ();
-  }
-  function zoomStep(delta) {
-    var z = curZoom;
-    if (!z) return;
-    var ns = Math.max(0.05, Math.min(4, z.scale * delta));
-    z.tx = (z.stage.parentElement.clientWidth / 2) - ((z.stage.parentElement.clientWidth / 2) - z.tx) * (ns / z.scale);
-    z.ty = 100 - (100 - z.ty) * (ns / z.scale);
-    z.scale = ns;
-    applyZ();
-  }
-
-  function initZoom(root) {
-    var stage = (root || document).querySelector('#c-global-stage');
-    var img = (root || document).querySelector('#c-global-img');
-    if (!stage || !img || stage.getAttribute('data-c-inited')) return;
-    stage.setAttribute('data-c-inited', '1');
-    var z = { scale: 1, tx: 0, ty: 0, dragging: false, stage: stage, img: img };
-    curZoom = z;
-    stage.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      var delta = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-      var rect = stage.getBoundingClientRect();
-      var px = e.clientX - rect.left, py = e.clientY - rect.top;
-      var nx = (px - z.tx) / z.scale, ny = (py - z.ty) / z.scale;
-      var ns = Math.max(0.05, Math.min(4, z.scale * delta));
-      z.tx = px - nx * ns; z.ty = py - ny * ns; z.scale = ns;
-      applyZ();
-    }, { passive: false });
-    stage.addEventListener('mousedown', function (e) {
-      if (e.button !== 0) return;
-      z.dragging = true; z.sx = e.clientX; z.sy = e.clientY; z.ox = z.tx; z.oy = z.ty;
-      e.preventDefault();
-    });
-    img.addEventListener('load', fitGlobal);
-    var zin = root.querySelector('#cgzin'), zout = root.querySelector('#cgzout'),
-        zreset = root.querySelector('#cgzreset'), zfit = root.querySelector('#cgzfit');
-    if (zfit) zfit.addEventListener('click', fitGlobal);
-    if (zin) zin.addEventListener('click', function () { zoomStep(1.2); });
-    if (zout) zout.addEventListener('click', function () { zoomStep(1 / 1.2); });
-    if (zreset) zreset.addEventListener('click', function () { z.scale = 1; z.tx = 0; z.ty = 0; applyZ(); });
-    applyZ();
-  }
-
   function renderIntro(root) {
     var grid = (root || document).querySelector('#cIntroGrid');
     var input = (root || document).querySelector('#cIntroSearch');
@@ -2653,299 +2587,42 @@ createApp({
   "zankan_koukou": [{"n":"原型马解说 暂无视频"}],
 };
 
-  var relCtrl = { scale: 1, tx: 0, ty: 0, dragging: false, sx: 0, sy: 0, ox: 0, oy: 0 };
-  var SLOTW = 132, NODEH = 150, VGAP = 120, PAD = 60;
-
-  function ancTag(r, i) {
-    if (r === 0) return i === 0 ? '父' : '母';
-    if (r === 1) {
-      if (i === 0) return '祖父';
-      if (i === 1) return '祖母';
-      if (i === 2) return '母父';
-      return '母母';
-    }
-    return '曾祖·' + (i % 2 === 0 ? '父系' : '母系');
-  }
-
   function renderBloodGraphInDetail(box, root) {
     if (!box) return;
+    var detailRoot = box.closest ? box.closest('.cio-detail') : null;
+    if (detailRoot) detailRoot.classList.remove('has-pedigree-lens');
     refreshRelIndex();
+
+    var message = '';
     if (NON_UMA[root]) {
-      var note = document.createElement('div');
+      message = '该角色非赛马娘，无现实原型，不提供血缘关系图。';
+    } else if (relByCid[root] && relByCid[root].pure) {
+      message = '该角色为纯原创赛马娘，无现实原型，不提供血缘关系图。';
+    }
+    if (message) {
+      var note = document.createElement('section');
       note.className = 'c-blood c-blood-pure';
       note.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
-        '<p class="c-blood-pure-note">该角色非赛马娘，无现实原型，不提供血缘关系图。</p>';
+        '<p class="c-blood-pure-note">' + message + '</p>';
       box.appendChild(note);
       return;
     }
-    if (typeof PED_REL === 'undefined' || !relByCid[root]) return;
-    if (relByCid[root].pure) {
-      var note = document.createElement('div');
-      note.className = 'c-blood c-blood-pure';
-      var nonUmaMsg = NON_UMA[root] ? '该角色非赛马娘，无现实原型，不提供血缘关系图。' : '该角色为纯原创赛马娘，无现实原型，不提供血缘关系图。';
-      note.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
-        '<p class="c-blood-pure-note">' + nonUmaMsg + '</p>';
-      box.appendChild(note);
-      return;
-    }
-    if (root === 'staygold' || root === 'admiregroove') {
-      var lens = document.createElement('section');
-      lens.className = 'c-pedigree-lens';
-      var frame = document.createElement('iframe');
-      var displayName = relByCid[root].zh || root;
-      frame.className = 'c-pedigree-lens-frame';
-      frame.dataset.pedigreeSample = root;
-      frame.src = '/pedigree-lab.html?embed=1&sample=' + encodeURIComponent(root) + '&v=20260911-9';
-      frame.title = displayName + '的血统关系';
-      frame.loading = 'eager';
-      lens.appendChild(frame);
-      box.appendChild(lens);
-      return;
-    }
-    var sec = document.createElement('div');
-    sec.className = 'c-blood';
-    sec.innerHTML =
-      '<div class="c-blood-head">' +
-        '<h3 class="c-blood-title">血缘关系图<small>上溯3代 · 下延2代 · 点击节点跳转</small></h3>' +
-        '<div class="c-blood-tools">' +
-          '<input class="c-blood-search" placeholder="搜索马娘并跳转…" autocomplete="off">' +
-          '<span class="c-blood-zoom"><button type="button" data-zoom="in">＋</button><button type="button" data-zoom="out">－</button></span>' +
-        '</div>' +
-      '</div>' +
-      '<p class="c-blood-status"></p>' +
-      '<div class="c-blood-wrap"><div class="c-blood-stage"></div></div>';
-    box.appendChild(sec);
 
-    var wrap = sec.querySelector('.c-blood-wrap');
-    var stage = sec.querySelector('.c-blood-stage');
-    var statusEl = sec.querySelector('.c-blood-status');
-    var searchEl = sec.querySelector('.c-blood-search');
+    var relation = relByCid[root];
+    if (!relation) return;
+    if (detailRoot) detailRoot.classList.add('has-pedigree-lens');
 
-    var ctrl = { scale: 1, tx: 0, ty: 0, dragging: false, sx: 0, sy: 0, ox: 0, oy: 0 };
-    ctrl.apply = function () {
-      stage.style.transform = 'translate(' + ctrl.tx + 'px,' + ctrl.ty + 'px) scale(' + ctrl.scale + ')';
-    };
-    ctrl.fit = function () {
-      var w = wrap.clientWidth || 600, h = wrap.clientHeight || 480;
-      var iw = stage.offsetWidth, ih = stage.offsetHeight;
-      if (!iw) return;
-      ctrl.scale = Math.min(1, Math.min(w / iw, h / ih));
-      ctrl.fitScale = ctrl.scale;
-      ctrl.tx = (w - iw * ctrl.scale) / 2;
-      ctrl.ty = (h - ih * ctrl.scale) / 2;
-      ctrl.apply();
-    };
-
-    wrap.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      ctrl.scale = Math.max(0.05, Math.min(4, ctrl.scale * (e.deltaY < 0 ? 1.15 : 0.87)));
-      ctrl.apply();
-    }, { passive: false });
-    wrap.addEventListener('mousedown', function (e) {
-      if (e.target.closest && e.target.closest('.rel-node')) return;
-      ctrl.dragging = true; ctrl.sx = e.clientX; ctrl.sy = e.clientY; ctrl.ox = ctrl.tx; ctrl.oy = ctrl.ty;
-    });
-    window.addEventListener('mousemove', function (e) {
-      if (!ctrl.dragging) return;
-      ctrl.tx = ctrl.ox + (e.clientX - ctrl.sx); ctrl.ty = ctrl.oy + (e.clientY - ctrl.sy);
-      ctrl.apply();
-    });
-    window.addEventListener('mouseup', function () { ctrl.dragging = false; });
-    var pinchDist = null, pinchScale = 1;
-    function touchDist(e) {
-      var dx = e.touches[0].clientX - e.touches[1].clientX;
-      var dy = e.touches[0].clientY - e.touches[1].clientY;
-      return Math.sqrt(dx * dx + dy * dy);
-    }
-    wrap.addEventListener('touchstart', function (e) {
-      if (e.target.closest && e.target.closest('.rel-node')) return;
-      if (e.touches.length === 1) {
-        ctrl.dragging = true; ctrl.sx = e.touches[0].clientX; ctrl.sy = e.touches[0].clientY; ctrl.ox = ctrl.tx; ctrl.oy = ctrl.ty;
-      } else if (e.touches.length === 2) {
-        ctrl.dragging = false;
-        pinchDist = touchDist(e); pinchScale = ctrl.scale;
-      }
-    }, { passive: false });
-    wrap.addEventListener('touchmove', function (e) {
-      if (e.touches.length === 1 && ctrl.dragging) {
-        if (ctrl.scale > (ctrl.fitScale || 1)) {
-          e.preventDefault();
-          ctrl.tx = ctrl.ox + (e.touches[0].clientX - ctrl.sx);
-          ctrl.ty = ctrl.oy + (e.touches[0].clientY - ctrl.sy);
-          ctrl.apply();
-        }
-      } else if (e.touches.length === 2 && pinchDist) {
-        e.preventDefault();
-        var d = touchDist(e);
-        ctrl.scale = Math.max(0.05, Math.min(4, pinchScale * (d / pinchDist)));
-        ctrl.apply();
-      }
-    }, { passive: false });
-    wrap.addEventListener('touchend', function (e) {
-      if (e.touches.length < 2) pinchDist = null;
-      if (e.touches.length === 0) ctrl.dragging = false;
-    });
-    sec.querySelector('[data-zoom=in]').addEventListener('click', function () {
-      ctrl.scale = Math.min(4, ctrl.scale * 1.2); ctrl.apply();
-    });
-    sec.querySelector('[data-zoom=out]').addEventListener('click', function () {
-      ctrl.scale = Math.max(0.05, ctrl.scale / 1.2); ctrl.apply();
-    });
-
-    function selectRel(cid) {
-      if (cid === root) return;
-      if (window.__uma_app && typeof window.__uma_app.openCharDetail === 'function') {
-        window.__uma_app.openCharDetail(cid);
-      }
-    }
-
-    function draw() {
-      stage.innerHTML = '';
-      var SV = 'http://www.w3.org/2000/svg';
-      var rootNode = relByCid[root];
-      var up = rootNode.up || [[], [], []];
-      var originX = PAD + 4 * SLOTW;
-      var pos = {}, edges = [];
-
-      var maxG = 0;
-      for (var gi = 0; gi < up.length; gi++) {
-        var row = up[gi];
-        var has = false;
-        if (row) for (var z = 0; z < row.length; z++) if (row[z]) { has = true; break; }
-        if (!has) break;
-        maxG = gi + 1;
-      }
-      maxG = Math.min(3, maxG);
-
-      var rootX = originX, rootY = PAD + maxG * (NODEH + VGAP);
-      var rootKey = 'root';
-      pos[rootKey] = { x: rootX, y: rootY, tag: '', cid: root };
-
-      for (var r = 0; r < maxG; r++) {
-        var rowUp = up[r];
-        var y = rootY - (r + 1) * (NODEH + VGAP);
-        var n = Math.pow(2, r + 1);
-        for (var i = 0; i < n; i++) {
-          var cid = rowUp[i];
-          if (!cid || !relByCid[cid]) continue;
-          var x = originX + (i + 0.5 - Math.pow(2, r)) * SLOTW;
-          var key = r + '_' + i;
-          pos[key] = { x: x, y: y, tag: ancTag(r, i), cid: cid };
-          if (r === 0) {
-            edges.push({ x1: x, y1: y + NODEH / 2, x2: rootX, y2: rootY - NODEH / 2, color: '#b9a8d6' });
-          } else {
-            var childKey = (r - 1) + '_' + Math.floor(i / 2);
-            if (pos[childKey]) {
-              edges.push({ x1: x, y1: y + NODEH / 2, x2: pos[childKey].x, y2: pos[childKey].y - NODEH / 2, color: '#b9a8d6' });
-            }
-          }
-        }
-      }
-
-      var children = (rootNode.children || []).filter(function (c) { return relByCid[c]; });
-      var grand = (rootNode.grandchildren || []).filter(function (c) {
-        if (!relByCid[c]) return false;
-        var p = relByCid[c].up[0] || [];
-        return (p[0] && children.indexOf(p[0]) >= 0) || (p[1] && children.indexOf(p[1]) >= 0);
-      });
-      if (children.length) {
-        for (var cIdx = 0; cIdx < children.length; cIdx++) {
-          var cx = originX + (cIdx + 0.5 - children.length / 2) * SLOTW;
-          var cy2 = rootY + NODEH + VGAP;
-          var cKey = 'child_' + cIdx;
-          pos[cKey] = { x: cx, y: cy2, tag: '子女', cid: children[cIdx] };
-          edges.push({ x1: rootX, y1: rootY + NODEH / 2, x2: cx, y2: cy2 - 30, color: '#4a7ac7' });
-        }
-      }
-      if (grand.length) {
-        var byChild = {};
-        grand.forEach(function (gc) {
-          var p = (relByCid[gc].up[0] || []);
-          var parentC = p[0] && children.indexOf(p[0]) >= 0 ? p[0] : (p[1] && children.indexOf(p[1]) >= 0 ? p[1] : root);
-          (byChild[parentC] = byChild[parentC] || []).push(gc);
-        });
-        Object.keys(byChild).forEach(function (parentC) {
-          var list = byChild[parentC];
-          var px2 = rootX, py2 = rootY;
-          Object.keys(pos).forEach(function (k) { if (pos[k].cid === parentC) { px2 = pos[k].x; py2 = pos[k].y; } });
-          var nn = list.length;
-          for (var k = 0; k < nn; k++) {
-            var gx = px2 + (k + 0.5 - nn / 2) * SLOTW;
-            var gy = rootY + 2 * (NODEH + VGAP);
-            var gcKey = 'grand_' + parentC + '_' + k;
-            pos[gcKey] = { x: gx, y: gy, tag: '孙辈', cid: list[k] };
-            edges.push({
-              x1: px2, y1: py2 + NODEH / 2,
-              x2: gx, y2: gy - 30, color: '#d9577c'
-            });
-          }
-        });
-      }
-
-      var maxX = 0, maxY = 0;
-      function nodeEl(key) {
-        var p = pos[key];
-        if (!p) return;
-        var id = p.cid;
-        var nd = relByCid[id];
-        var el = document.createElement('div');
-        var plain = !nd.av;
-        el.className = 'rel-node' + (id === root ? ' rel-root' : '') + (plain ? ' rel-plain' : '');
-        if (!plain) {
-          var av = nd.av;
-          if (av && av.indexOf('/') === -1 && av.indexOf('data:') !== 0) av = '/' + av;
-          if (av && av.indexOf('uma_avatars') === 0) av = '/' + av;
-          el.innerHTML = '<span class="tag"></span><img class="av" src="' + av + '" alt="" loading="lazy"><div class="nm">' + (nd.zh || nd.real || id) + '</div>';
-          el.addEventListener('click', function () { selectRel(id); });
-        } else {
-          el.innerHTML = '<span class="tag"></span><span class="av">原</span><div class="nm">' + (nd.real || nd.zh || id) + '</div>';
-        }
-        el.style.left = (p.x - SLOTW / 2 + 28) + 'px';
-        el.style.top = (p.y - 30) + 'px';
-        var tagEl = el.querySelector('.tag');
-        tagEl.textContent = p.tag || '';
-        tagEl.className = 'tag' + (p.tag === '母父' || p.tag === '母母' || p.tag === '子女' || p.tag === '孙辈' ? ' m-g' : '');
-        if (!p.tag) tagEl.style.display = 'none';
-        stage.appendChild(el);
-        maxX = Math.max(maxX, p.x + SLOTW / 2);
-        maxY = Math.max(maxY, p.y + NODEH / 2);
-      }
-      Object.keys(pos).forEach(nodeEl);
-
-      var stageW = Math.max(1200, maxX + PAD * 2);
-      var stageH = maxY + PAD;
-      stage.style.width = stageW + 'px';
-      stage.style.height = stageH + 'px';
-      var svg = document.createElementNS(SV, 'svg');
-      svg.setAttribute('width', stageW);
-      svg.setAttribute('height', stageH);
-      svg.style.cssText = 'position:absolute;left:0;top:0;width:' + stageW + 'px;height:' + stageH + 'px;overflow:visible';
-      edges.forEach(function (e) {
-        var line = document.createElementNS(SV, 'line');
-        line.setAttribute('x1', e.x1); line.setAttribute('y1', e.y1);
-        line.setAttribute('x2', e.x2); line.setAttribute('y2', e.y2);
-        line.setAttribute('class', 'rel-edge');
-        line.setAttribute('stroke', e.color);
-        svg.appendChild(line);
-      });
-      stage.appendChild(svg);
-
-      var cnt = Object.keys(pos).length;
-      statusEl.textContent = '原型马名：' + (rootNode.real || rootNode.zh || root) + ' · 上溯 ' + maxG + ' 代 / 下延 2 代 · 共 ' + cnt + ' 个节点（空心为现实原型马名）';
-      ctrl.scale = 1; ctrl.tx = 0; ctrl.ty = 0;
-      requestAnimationFrame(ctrl.fit);
-    }
-    draw();
-
-    searchEl.addEventListener('keydown', function (e) {
-      if (e.key !== 'Enter') return;
-      var q = (this.value || '').trim().toLowerCase();
-      if (!q) return;
-      for (var i = 0; i < PED_REL.length; i++) {
-        var n = PED_REL[i];
-        if (n.av && n.zh && n.zh.toLowerCase().indexOf(q) >= 0) { selectRel(n.cid); return; }
-      }
-    });
+    var lens = document.createElement('section');
+    lens.className = 'c-pedigree-lens';
+    var frame = document.createElement('iframe');
+    var displayName = relation.zh || root;
+    frame.className = 'c-pedigree-lens-frame';
+    frame.dataset.pedigreeSample = root;
+    frame.src = '/pedigree-lab.html?embed=1&sample=' + encodeURIComponent(root) + '&v=20260911-10';
+    frame.title = displayName + '的血统关系';
+    frame.loading = 'eager';
+    lens.appendChild(frame);
+    box.appendChild(lens);
   }
 
   function openCharDetailGlobal(id) {
@@ -3057,7 +2734,6 @@ createApp({
     if (!tab) return;
     renderIntro(tab);
     renderDetail(tab);
-    initZoom(tab);
     initRoom(tab);
   }
 

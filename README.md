@@ -23,7 +23,8 @@ uma-live-wiki/                    仓库根目录
 ├── album_covers/                  外部源较慢的专辑封面本地 WebP 副本
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
 ├── role_svgs/                     单角色血统 SVG 历史资源
-├── pedigree_assets/               全局血统页当前加载的静态 SVG 资源
+├── pedigree_assets/               血统图静态历史资源
+├── pedigree-lab.html              角色页血统关系组件的开发预览页
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
 │   ├── app.js                    SPA 逻辑
@@ -81,6 +82,9 @@ python3 uma_tools/build_pedigree.py
 赛马血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，节点同时保存可访问的具体
 资料页。179 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按原创
 角色或非赛马角色维护
+
+160 个现实赛马角色页统一嵌入交互血统组件，默认展示三代祖先、已有角色页的同辈与两代内后代，
+并展示有角色页的繁育关联。角色详情页是血统关系的用户入口；开发预览页用于独立调试组件。
 
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 

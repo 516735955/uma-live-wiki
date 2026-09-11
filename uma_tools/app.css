@@ -2048,22 +2048,6 @@
         }
         #tab-characters .c-sbook > * { position: relative; z-index: 1; }
         #tab-characters .c-sbook:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(32,40,59,.28); border-color: #ff8c1a; }
-        #tab-characters .c-zoombar {
-            display: flex; gap: 6px; padding: 8px 12px; background: #fff; border: 1px solid #e6e4ee;
-            border-bottom: none; border-radius: 10px 10px 0 0;
-        }
-        #tab-characters .c-zoombar button {
-            border: 1px solid #e6e4ee; background: #fff; color: #2c3650; padding: 5px 12px;
-            border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit;
-        }
-        #tab-characters .c-zoombar button:hover { background: #f5f4f9; }
-        #tab-characters .c-zhint { margin-left: auto; color: #a99cbf; font-size: 12px; align-self: center; }
-        #tab-characters .c-gwrap {
-            height: calc(100vh - 360px); min-height: 420px; overflow: auto; position: relative;
-            border: 1px solid #e6e4ee; border-radius: 0 0 10px 10px; background: #fff;
-        }
-        #tab-characters .c-gstage { transform-origin: 0 0; width: max-content; line-height: 0; }
-        #tab-characters .c-gstage img { display: block; max-width: none; }
         /* ---- character detail (moegirl intro block) ---- */
         #tab-characters .cio-detail { max-width: 760px; margin: 0 auto; }
         #tab-characters .cio-detail.has-pedigree-lens { max-width: 1400px; }
@@ -2129,82 +2113,18 @@
             #tab-characters .c-pedigree-lens { border-radius: 12px; }
             #tab-characters .c-pedigree-lens-frame { height: 690px; }
         }
-        /* ---- blood relationship node graph (character detail) ---- */
-        #tab-characters .c-blood { margin-top: 22px; border-top: 2px dashed #e3dcf2; padding-top: 14px; }
-        #tab-characters .c-blood-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
-        #tab-characters .c-blood-title { margin: 0; font-size: 16px; font-weight: 700; color: #20283b; }
-        #tab-characters .c-blood-title small { font-weight: 400; color: #a99cbf; font-size: 12px; margin-left: 8px; }
-        #tab-characters .c-blood-search {
-            border: 1px solid #e6e4ee; background: #fff; color: #2c3650;
-            padding: 6px 12px; border-radius: 8px; font-size: 13px; width: 230px; font-family: inherit;
-            box-shadow: 0 2px 6px rgba(32,40,59,.08);
+        /* ---- character detail pedigree availability notes ---- */
+        #tab-characters .c-blood {
+            margin-top: 22px; padding-top: 14px; border-top: 2px dashed #e3dcf2;
         }
-        #tab-characters .c-blood-status { font-size: 12px; color: #7c7a8a; margin: 0 0 8px; }
-        #tab-characters .c-blood-pure-note { font-size: 13px; color: #7c7a8a; line-height: 1.7; margin: 0; padding: 14px 16px; }
+        #tab-characters .c-blood-head { margin-bottom: 10px; }
+        #tab-characters .c-blood-title {
+            margin: 0; color: #20283b; font-size: 16px; font-weight: 700;
+        }
         #tab-characters .c-blood-pure { border-bottom: 1px solid #e6e4ee; }
-        #tab-characters .c-blood-wrap {
-            position: relative; overflow: auto; border: 1px solid #e3dcf2; border-radius: 8px; background:
-            #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='12' height='12' fill='%23f5f3fb'/><rect x='12' y='12' width='12' height='12' fill='%23f5f3fb'/></svg>");
+        #tab-characters .c-blood-pure-note {
+            margin: 0; padding: 14px 16px; color: #7c7a8a; font-size: 13px; line-height: 1.7;
         }
-        #tab-characters .c-blood-stage { transform-origin: 0 0; position: relative; }
-        #tab-characters .rel-node {
-            position: absolute; width: 76px; text-align: center; cursor: pointer; user-select: none;
-        }
-        #tab-characters .rel-node .av {
-            width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; object-fit: cover;
-            background: #f2eef9; border: 2px solid #d8cfe8; box-shadow: 0 2px 6px rgba(120,90,160,0.18); display: block;
-        }
-        #tab-characters .rel-node .nm { margin-top: 4px; font-size: 12px; color: #5a4a80; font-weight: 600; line-height: 1.2; word-break: break-all; }
-        #tab-characters .rel-node.rel-plain .av {
-            width: 64px; height: 64px; margin: 0 auto; border-radius: 50%;
-            background: #f0ecf7; border: 2px dashed #cbbfe0; box-shadow: none; display: flex;
-            align-items: center; justify-content: center; font-size: 24px; color: #9b8cc0;
-        }
-        #tab-characters .rel-node.rel-plain { cursor: default; }
-        #tab-characters .rel-node.rel-plain:hover .av { transform: none; }
-        #tab-characters .rel-node .nm { margin-top: 4px; font-size: 12px; color: #5a4a80; font-weight: 600; line-height: 1.2; word-break: break-all; }
-        #tab-characters .rel-node .tag { display: inline-block; font-size: 10px; padding: 0 5px; border-radius: 8px; color: #6f4e96; background: #f1ebfb; margin-bottom: 3px; }
-        #tab-characters .rel-node .tag.m-g { background: #ffe3ec; color: #c2457a; }
-        #tab-characters .rel-node .tag.d-c { background: #e0f0ff; color: #2b6cb0; }
-        #tab-characters .rel-root .av { border-width: 3px; border-color: #6f4e96; box-shadow: 0 0 0 3px rgba(111,78,150,0.18); }
-        #tab-characters .rel-node:hover .av { transform: scale(1.06); }
-        #tab-characters .rel-node.disabled .av { opacity: .45; }
-        #tab-characters .rel-edge { stroke-width: 1.6; fill: none; }
-        #tab-characters .c-blood-zoom { display: inline-flex; gap: 6px; }
-        #tab-characters .c-blood-zoom button {
-            border: 1px solid #e6e4ee; background: #fff; color: #2c3650; width: 40px; height: 40px;
-            border-radius: 8px; cursor: pointer; font-size: 16px; line-height: 1; font-family: inherit;
-            box-shadow: 0 2px 6px rgba(32,40,59,.08);
-        }
-        #tab-characters .c-blood-zoom button:hover { background: #f5f4f9; }
-
-        /* blood-graph styles (global, also used by the Vue database character detail) */
-        .c-blood { margin-top: 22px; border-top: 2px dashed #e3dcf2; padding-top: 14px; }
-        .c-blood-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
-        .c-blood-title { margin: 0; font-size: 16px; font-weight: 700; color: #20283b; }
-        .c-blood-title small { font-weight: 400; color: #a99cbf; font-size: 12px; margin-left: 8px; }
-        .c-blood-search { border: 1px solid #e6e4ee; background: #fff; color: #2c3650; padding: 6px 12px; border-radius: 8px; font-size: 13px; width: 230px; font-family: inherit; box-shadow: 0 2px 6px rgba(32,40,59,.08); }
-        .c-blood-status { font-size: 12px; color: #7c7a8a; margin: 0 0 8px; }
-        .c-blood-pure-note { font-size: 13px; color: #7c7a8a; line-height: 1.7; margin: 0; padding: 14px 16px; }
-        .c-blood-pure { border-bottom: 1px solid #e6e4ee; }
-        .c-blood-wrap { position: relative; overflow: auto; border: 1px solid #e3dcf2; border-radius: 8px; background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='12' height='12' fill='%23f5f3fb'/><rect x='12' y='12' width='12' height='12' fill='%23f5f3fb'/></svg>"); }
-        .c-blood-stage { transform-origin: 0 0; position: relative; }
-        .rel-node { position: absolute; width: 76px; text-align: center; cursor: pointer; user-select: none; }
-        .rel-node .av { width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; object-fit: cover; background: #f2eef9; border: 2px solid #d8cfe8; box-shadow: 0 2px 6px rgba(120,90,160,0.18); display: block; }
-        .rel-node .nm { margin-top: 4px; font-size: 12px; color: #5a4a80; font-weight: 600; line-height: 1.2; word-break: break-all; }
-        .rel-node.rel-plain .av { width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; background: #f0ecf7; border: 2px dashed #cbbfe0; box-shadow: none; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #9b8cc0; }
-        .rel-node.rel-plain { cursor: default; }
-        .rel-node.rel-plain:hover .av { transform: none; }
-        .rel-node .tag { display: inline-block; font-size: 10px; padding: 0 5px; border-radius: 8px; color: #6f4e96; background: #f1ebfb; margin-bottom: 3px; }
-        .rel-node .tag.m-g { background: #ffe3ec; color: #c2457a; }
-        .rel-node .tag.d-c { background: #e0f0ff; color: #2b6cb0; }
-        .rel-root .av { border-width: 3px; border-color: #6f4e96; box-shadow: 0 0 0 3px rgba(111,78,150,0.18); }
-        .rel-node:hover .av { transform: scale(1.06); }
-        .rel-node.disabled .av { opacity: .45; }
-        .rel-edge { stroke-width: 1.6; fill: none; }
-        .c-blood-zoom { display: inline-flex; gap: 6px; }
-        .c-blood-zoom button { border: 1px solid #e6e4ee; background: #fff; color: #2c3650; width: 40px; height: 40px; border-radius: 8px; cursor: pointer; font-size: 16px; line-height: 1; font-family: inherit; box-shadow: 0 2px 6px rgba(32,40,59,.08); }
-        .c-blood-zoom button:hover { background: #f5f4f9; }
 
         /* ===== SITE FOOTER ===== */
         .home-layout + .site-footer { margin-top: 0; }
