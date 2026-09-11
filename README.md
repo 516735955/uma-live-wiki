@@ -148,9 +148,12 @@ gh pr create --base main --head <工作分支>
 PR 标题使用英文概括本批目标，正文使用中文说明改了什么、如何验证以及兼容性影响。没有仓库写权限的贡献者
 仍按 GitHub 的常规方式 Fork 仓库，从自己的功能分支向本仓库 `main` 提交 PR。
 
-## 环境变量（重要：密钥不入库）
+## 环境变量与百度翻译凭据
 
-`uma_tools/server.js` 内置百度翻译缓存接口，**密钥不写入仓库**，通过环境变量注入：
+`uma_tools/server.js` 内置百度翻译缓存接口，读取顺序：
+
+1. 环境变量 `BAIDU_APPID` / `BAIDU_SECRET`（优先级最高）
+2. `uma_tools/baidu.conf.json`（随仓库提交，拉取后开箱即用）
 
 macOS / Linux：
 
@@ -165,6 +168,9 @@ $env:BAIDU_APPID = "你的APPID"
 $env:BAIDU_SECRET = "你的SECRET"
 node uma_tools/server.js
 ```
+
+> 注意：`baidu.conf.json` 含真实密钥并已提交到仓库。若仓库是公开的，任何人可见并可能消耗你的翻译额度。
+> 请确认仓库访问范围是可控的，或通过环境变量覆盖/删除该文件。
 
 不配置时翻译功能自动降级（标题/正文保持日文），不影响其他功能。
 

@@ -106,11 +106,25 @@ let newsIndexCache = { at: 0, data: null };
 
 // ---- machine translation of news titles (Baidu Translate API, cached) ----
 const TRANS_CACHE_FILE = path.join(__dirname, 'trans_cache.json');
-// Baidu Translate API credentials. Do NOT hardcode real keys in this file:
-// load them from environment variables so the public repo stays secret-free.
-// When unset, translation degrades gracefully (titles/bodies stay in Japanese).
-const BAIDU_APPID = process.env.BAIDU_APPID || '';
-const BAIDU_SECRET = process.env.BAIDU_SECRET || '';
+// Baidu Translate API credentials. Resolution order: env vars > baidu.conf.json.
+// The conf file is committed so a fresh clone/pull works out of the box,
+// while BAIDU_APPID / BAIDU_SECRET env vars can still override it.
+function loadBaiduCreds() {
+  const fromEnv = {
+    appid: process.env.BAIDU_APPID || '',
+    secret: process.env.BAIDU_SECRET || ''
+  };
+  if (fromEnv.appid && fromEnv.secret) return fromEnv;
+  try {
+    const f = JSON.parse(fs.readFileSync(path.join(__dirname, 'baidu.conf.json'), 'utf8'));
+    return { appid: f.appid || '', secret: f.secret || '' };
+  } catch (e) {
+    return { appid: '', secret: '' };
+  }
+}
+const _baiduCreds = loadBaiduCreds();
+const BAIDU_APPID = _baiduCreds.appid;
+const BAIDU_SECRET = _baiduCreds.secret;
 let transCache = {};
 try { transCache = JSON.parse(fs.readFileSync(TRANS_CACHE_FILE, 'utf8')); } catch (e) {}
 let transQueue = [];
