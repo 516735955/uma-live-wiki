@@ -412,12 +412,12 @@
     var element = document.createElement('button');
     var isRoot = Boolean(options.root);
     var isAncestor = item.group === 'ancestor';
-    var isBreeding = item.group === 'breeding' && item.records && item.records.length;
     var width = isRoot ? 182 : (isAncestor ? (item.role ? 142 : 124) :
-      (isBreeding ? 176 : (item.role ? 152 : 128)));
-    var height = isRoot ? 70 : (isBreeding ? 78 : (item.role ? 60 : 44));
+      (item.role ? 152 : 128));
+    var height = isRoot ? 70 : (item.role ? 60 : 44);
     element.className = 'ped-node' + (isRoot ? ' is-root' : '') +
-      (isAncestor ? ' is-ancestor-node' : '') + (item.role ? ' is-role' : ' is-horse');
+      (isAncestor ? ' is-ancestor-node' : '') + (item.role ? ' is-role' : ' is-horse') +
+      (item.parentRole ? ' is-' + item.parentRole : '');
     element.dataset.group = item.group;
     element.dataset.nodeId = item.id;
     element.dataset.focusId = item.focusId || item.id;
@@ -450,31 +450,10 @@
     var copy = document.createElement('span');
     copy.className = 'ped-copy';
     copy.innerHTML = '<span class="ped-name">' + escapeHtml(item.name) + '</span>';
-    if (isBreeding) {
-      var history = document.createElement('span');
-      history.className = 'ped-breeding-history';
-      item.records.forEach(function (record) {
-        var event = document.createElement('span');
-        event.className = 'ped-breeding-event ' + record.outcome;
-        event.textContent = record.year + (record.outcome === 'no_foal' ? '未产驹' : '有产驹');
-        history.appendChild(event);
-      });
-      copy.appendChild(history);
-    }
     element.appendChild(copy);
     bindInteractive(element, item);
     stage.appendChild(element);
     return { x: x, y: y, width: width, height: height, element: element, item: item };
-  }
-
-  function createGroupLabel(title, count, x, y, width) {
-    var label = document.createElement('div');
-    label.className = 'relation-group-label';
-    label.style.left = x + 'px';
-    label.style.top = y + 'px';
-    if (width) label.style.width = width + 'px';
-    label.innerHTML = '<strong>' + escapeHtml(title) + '</strong><span>' + count + '位</span>';
-    stage.appendChild(label);
   }
 
   function createSvg(width, height) {
@@ -534,23 +513,13 @@
     svg.appendChild(path);
   }
 
-  function addPartnerChip(item, x, y) {
-    var chip = document.createElement('button');
-    var parentRole = item.parentRole || '';
-    chip.className = 'partner-chip' + (parentRole ? ' is-' + parentRole : '');
-    chip.dataset.group = item.group;
-    chip.dataset.nodeId = item.id;
-    chip.dataset.focusId = item.focusId || item.id;
-    chip.dataset.horseId = item.horseId;
-    chip.style.left = (x - 76) + 'px';
-    chip.style.top = y + 'px';
-    chip.type = 'button';
-    chip.innerHTML = '<span class="partner-role">' + escapeHtml(item.tag) + '</span><strong>' +
-      escapeHtml(item.name) + '</strong>';
-    chip.setAttribute('aria-label', item.tag + '，' + item.name + '，' + (sexLabels[item.sex] || '赛马'));
-    bindInteractive(chip, item);
-    stage.appendChild(chip);
-    return { x: x, y: y + 15, width: 152, height: 30, element: chip, item: item };
+  function addJunction(svg, x, y, group) {
+    var junction = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    junction.setAttribute('cx', x);
+    junction.setAttribute('cy', y);
+    junction.setAttribute('r', 4);
+    junction.setAttribute('class', 'relation-junction ' + group);
+    svg.appendChild(junction);
   }
 
   function spread(count, center, spacing) {
@@ -628,29 +597,49 @@
     return groups;
   }
 
-  function packFamilies(groups, availableWidth) {
-    var rows = [];
-    var gap = 16;
-    var row = { groups: [], width: 0, height: 0 };
-    groups.forEach(function (group) {
-      var widestLevel = group.entries.length;
-      group.entries.forEach(function (entry) {
-        widestLevel = Math.max(widestLevel, entry.terminals.length);
-      });
-      group.layoutWidth = Math.min(availableWidth, Math.max(172, widestLevel * 158));
-      var needed = group.layoutWidth + (row.groups.length ? gap : 0);
-      if (row.groups.length && row.width + needed > availableWidth) {
-        rows.push(row);
-        row = { groups: [], width: 0, height: 0 };
-        needed = group.layoutWidth;
-      }
-      row.groups.push(group);
-      row.width += needed;
-      row.height = Math.max(row.height, group.entries.some(function (entry) {
-        return entry.terminals.length > 0;
-      }) ? 202 : 130);
+  function relationshipUnits(model) {
+    var families = descendantGroups(descendantStructure(model), model.root.id);
+    var breedingByHorse = {};
+    var usedBreeding = {};
+
+    model.breeding.forEach(function (item) {
+      breedingByHorse[item.horseId || item.id] = item;
     });
-    if (row.groups.length) rows.push(row);
+
+    var units = families.map(function (family) {
+      var partner = family.partner;
+      var breedingItem = partner && breedingByHorse[partner.horseId || partner.id];
+      if (partner && breedingItem) {
+        partner.records = breedingItem.records;
+        partner.sourceUrl = breedingItem.sourceUrl || partner.sourceUrl;
+        partner.sourceName = breedingItem.sourceName || partner.sourceName;
+        usedBreeding[breedingItem.horseId || breedingItem.id] = true;
+      }
+      return {
+        type: 'family',
+        partner: partner,
+        entries: family.entries,
+        ids: family.ids
+      };
+    });
+
+    model.breeding.forEach(function (item) {
+      if (usedBreeding[item.horseId || item.id]) return;
+      units.push({
+        type: 'breeding',
+        partner: item,
+        entries: [],
+        ids: [model.root.id, item.id]
+      });
+    });
+    return units;
+  }
+
+  function chunk(items, size) {
+    var rows = [];
+    for (var index = 0; index < items.length; index += size) {
+      rows.push(items.slice(index, index + size));
+    }
     return rows;
   }
 
@@ -667,47 +656,49 @@
   }
 
   function renderLens(model) {
-    var width = 1180;
-    var edgePadding = 38;
-    var contentWidth = width - edgePadding * 2;
-    var rootX = width / 2;
+    var siblingColumns = Math.min(3, Math.max(1, model.siblings.length));
+    var rootX = Math.max(650, 196 + siblingColumns * 168);
     var hasAncestors = model.ancestors.length > 0;
     var rootY = hasAncestors ? 326 : 88;
-    var cursorY = rootY + 118;
     var positions = {};
-    var structure = descendantStructure(model);
-    var descendantFamilies = descendantGroups(structure, model.root.id);
-    var siblingGroups = [];
-    var siblingMap = {};
-    var siblingColumns = Math.max(1, Math.floor(contentWidth / 168));
+    var units = relationshipUnits(model);
+    var familyUnits = units.filter(function (unit) { return unit.type === 'family'; });
+    var breedingUnits = units.filter(function (unit) { return unit.type === 'breeding'; });
+    var unitColumns = Math.min(3, Math.max(1, units.length));
+    var familyRows = chunk(familyUnits, unitColumns);
+    var breedingRows = chunk(breedingUnits, unitColumns);
+    var relationRows = familyRows.map(function (row) {
+      return { type: 'family', units: row };
+    }).concat(breedingRows.map(function (row) {
+      return { type: 'breeding', units: row };
+    }));
+    var rightmostUnitX = rootX + 275 + (unitColumns - 1) * 320;
+    var width = Math.max(1200, rootX + 596, rightmostUnitX + 126);
+    var siblingRows = Math.ceil(model.siblings.length / siblingColumns);
+    var siblingBottom = model.siblings.length ? rootY + (siblingRows - 1) * 88 + 56 : rootY + 92;
+    var relationCursorY = rootY;
+    var relationLayouts = [];
 
     model.root.pathFocusIds = [model.root.focusId];
-    model.siblings.forEach(function (item) {
-      var key = item.relationKind + ':' + (item.sharedParents || []).join(',');
-      if (!siblingMap[key]) {
-        siblingMap[key] = {
-          items: [],
-          title: item.tag + '·' + item.sharedParents.map(function (id) {
-            return nameOf(id, model.root.lookupId);
-          }).join('、')
-        };
-        siblingGroups.push(siblingMap[key]);
-      }
-      siblingMap[key].items.push(item);
+    relationRows.forEach(function (row) {
+      var hasGrandchildren = row.units.some(function (unit) {
+        return unit.entries.some(function (entry) { return entry.terminals.length > 0; });
+      });
+      var hasChildren = row.units.some(function (unit) { return unit.entries.length > 0; });
+      var rowHeight = hasGrandchildren ? 266 : (hasChildren ? 174 : 88);
+      relationLayouts.push({
+        type: row.type,
+        units: row.units,
+        partnerY: relationCursorY,
+        busY: relationCursorY + 46,
+        childY: relationCursorY + 110,
+        terminalY: relationCursorY + 202,
+        height: rowHeight
+      });
+      relationCursorY += rowHeight;
     });
-
-    siblingGroups.forEach(function (group) {
-      cursorY += 48 + Math.ceil(group.items.length / siblingColumns) * 74;
-    });
-    var familyRows = packFamilies(descendantFamilies, contentWidth);
-    if (familyRows.length) {
-      cursorY += 20;
-      familyRows.forEach(function (row) { cursorY += row.height; });
-    }
-    if (model.breeding.length) {
-      cursorY += 56 + Math.ceil(model.breeding.length / siblingColumns) * 102;
-    }
-    var height = Math.max(rootY + 92, cursorY + 34);
+    var relationBottom = relationRows.length ? relationCursorY + 32 : rootY + 92;
+    var height = Math.max(hasAncestors ? 428 : 180, siblingBottom, relationBottom);
 
     stage.style.width = width + 'px';
     stage.style.height = height + 'px';
@@ -721,13 +712,16 @@
 
     if (hasAncestors) {
       var ancestorYs = { 3: 50, 2: 136, 1: 222 };
+      var ancestorOffsets = {
+        1: [-300, 300],
+        2: [-450, -150, 150, 450],
+        3: [-525, -375, -225, -75, 75, 225, 375, 525]
+      };
       [3, 2, 1].forEach(function (generation) {
         var row = model.ancestors.filter(function (item) { return item.generation === generation; });
-        var spacing = row.length > 1 ? (width - 142) / (row.length - 1) : 0;
-        var xs = spread(row.length, rootX, spacing);
-        row.forEach(function (item, index) {
+        row.forEach(function (item) {
           positions['a' + (generation - 1) + '_' + item.index] = createNode(
-            item, xs[index], ancestorYs[generation]
+            item, rootX + ancestorOffsets[generation][item.index], ancestorYs[generation]
           );
         });
       });
@@ -765,164 +759,166 @@
       addFocusPath(svg, points, 'ancestor', [oldest.item.focusId], 14);
     }
 
-    var sectionY = rootY + 118;
-    siblingGroups.forEach(function (group) {
-      createGroupLabel(group.title, group.items.length, edgePadding, sectionY, contentWidth);
-      sectionY += 40;
-      var rows = Math.ceil(group.items.length / siblingColumns);
-      for (var rowIndex = 0; rowIndex < rows; rowIndex++) {
-        var rowItems = group.items.slice(rowIndex * siblingColumns, (rowIndex + 1) * siblingColumns);
-        var rowXs = spread(rowItems.length, rootX, rowItems.length > 1 ? 168 : 0);
-        var busY = sectionY + rowIndex * 74;
-        var nodeY = busY + 34;
-        if (rowXs.length > 1) {
-          addRoundedPath(svg, [
-            { x: rowXs[0], y: busY },
-            { x: rowXs[rowXs.length - 1], y: busY }
-          ], 'sibling', group.items.map(function (item) { return item.id; }), 12);
-        }
+    if (model.siblings.length) {
+      var siblingTrunkX = rootX - 112;
+      var rootLeft = rootX - positions.root.width / 2;
+      var lastSiblingBusY = rootY + (siblingRows - 1) * 88 + 42;
+      addRoundedPath(svg, [
+        { x: rootLeft, y: rootY },
+        { x: siblingTrunkX, y: rootY },
+        { x: siblingTrunkX, y: lastSiblingBusY }
+      ], 'sibling', [model.root.id].concat(model.siblings.map(function (item) { return item.id; })), 14);
+      for (var siblingRowIndex = 0; siblingRowIndex < siblingRows; siblingRowIndex++) {
+        var rowItems = model.siblings.slice(
+          siblingRowIndex * siblingColumns, (siblingRowIndex + 1) * siblingColumns
+        );
+        var siblingY = rootY + siblingRowIndex * 88;
+        var siblingBusY = siblingY + 42;
+        var siblingXs = rowItems.map(function (item, index) {
+          return rootX - 250 - index * 168;
+        });
+        addRoundedPath(svg, [
+          { x: siblingTrunkX, y: siblingBusY },
+          { x: siblingXs[siblingXs.length - 1], y: siblingBusY }
+        ], 'sibling', [model.root.id].concat(rowItems.map(function (item) { return item.id; })), 14);
         rowItems.forEach(function (item, itemIndex) {
-          var node = createNode(item, rowXs[itemIndex], nodeY, { hideTag: true });
+          var siblingX = siblingXs[itemIndex];
+          var siblingNode = createNode(item, siblingX, siblingY);
+          var nodeBottom = siblingY + siblingNode.height / 2;
           addRoundedPath(svg, [
-            { x: rowXs[itemIndex], y: busY },
-            { x: rowXs[itemIndex], y: nodeY - node.height / 2 }
-          ], 'sibling', [model.root.id, item.id], 12);
+            { x: siblingX, y: nodeBottom },
+            { x: siblingX, y: siblingBusY }
+          ], 'sibling', [model.root.id, item.id], 14);
           addFocusPath(svg, [
-            { x: rowXs[0], y: busY },
-            { x: rowXs[itemIndex], y: busY },
-            { x: rowXs[itemIndex], y: nodeY - node.height / 2 }
-          ], 'sibling', [item.focusId], 12);
+            { x: rootLeft, y: rootY },
+            { x: siblingTrunkX, y: rootY },
+            { x: siblingTrunkX, y: siblingBusY },
+            { x: siblingX, y: siblingBusY },
+            { x: siblingX, y: nodeBottom }
+          ], 'sibling', [item.focusId], 14);
         });
       }
-      sectionY += rows * 74 + 8;
-    });
-    if (familyRows.length) sectionY += 12;
-    familyRows.forEach(function (row) {
-      var rowStart = (width - row.width) / 2;
-      var xCursor = rowStart;
-      var rowTop = sectionY;
-        var rowBusY = rowTop + 36;
-      row.groups.forEach(function (group, groupIndex) {
-        if (groupIndex) xCursor += 16;
-        var groupX = xCursor + group.layoutWidth / 2;
-        var childXs = spread(group.entries.length, groupX, group.entries.length > 1 ? 158 : 0);
-        var childBusY = rowTop + 50;
-        var childY = rowTop + 86;
-        var groupFocusIds = [];
-        group.entries.forEach(function (entry) {
-          groupFocusIds.push(entry.item.focusId);
-          entry.terminals.forEach(function (terminal) { groupFocusIds.push(terminal.focusId); });
+    }
+
+    if (relationLayouts.length) {
+      var relationTrunkX = rootX + 105;
+      var rootRight = rootX + positions.root.width / 2;
+      var lastBusY = relationLayouts[relationLayouts.length - 1].busY;
+      addRoundedPath(svg, [
+        { x: rootRight, y: rootY },
+        { x: relationTrunkX, y: rootY },
+        { x: relationTrunkX, y: lastBusY }
+      ], 'kinship', [model.root.id].concat(units.reduce(function (ids, unit) {
+        return ids.concat(unit.ids);
+      }, [])), 14);
+
+      relationLayouts.forEach(function (layout) {
+        var groupClass = layout.type === 'breeding' ? 'breeding' : 'descendant';
+        var unitXs = layout.units.map(function (unit, index) {
+          return rootX + 275 + index * 320;
         });
-        if (group.partner) {
-          group.partner.pathFocusIds = [model.root.focusId, group.partner.focusId].concat(groupFocusIds);
-          addPartnerChip(group.partner, groupX, rowTop);
-          addRoundedPath(svg, [
-            { x: groupX, y: rowTop + 30 },
-            { x: groupX, y: childBusY }
-          ], 'partner ' + group.partner.parentRole, group.ids, 12);
-          addFocusPath(svg, [
-            { x: groupX, y: rowTop + 30 },
-            { x: groupX, y: childBusY }
-          ], 'partner ' + group.partner.parentRole, [group.partner.focusId], 12);
-        }
-        if (!group.partner) {
-          addRoundedPath(svg, [
-            { x: groupX, y: rowBusY },
-            { x: groupX, y: childBusY }
-          ], 'descendant', group.ids, 12);
-        }
-        if (childXs.length > 1) {
-          addRoundedPath(svg, [
-            { x: childXs[0], y: childBusY },
-            { x: childXs[childXs.length - 1], y: childBusY }
-          ], 'descendant', group.ids, 12);
-        }
-        group.entries.forEach(function (entry, entryIndex) {
-          var childX = childXs[entryIndex];
-          var childNode = createNode(entry.item, childX, childY);
-          var partnerFocus = group.partner ? [group.partner.focusId] : [];
-          var terminalFocus = entry.terminals.map(function (terminal) { return terminal.focusId; });
-          entry.item.pathFocusIds = [model.root.focusId, entry.item.focusId].concat(partnerFocus);
-          entry.terminals.forEach(function (terminal) {
-            terminal.pathFocusIds = [model.root.focusId, entry.item.focusId, terminal.focusId].concat(partnerFocus);
+        addRoundedPath(svg, [
+          { x: relationTrunkX, y: layout.busY },
+          { x: unitXs[unitXs.length - 1], y: layout.busY }
+        ], groupClass, layout.units.reduce(function (ids, unit) { return ids.concat(unit.ids); }, []), 14);
+
+        layout.units.forEach(function (unit, unitIndex) {
+          var unitX = unitXs[unitIndex];
+          var unitFocusIds = [];
+          var partnerNode = null;
+          if (unit.partner) {
+            partnerNode = createNode(unit.partner, unitX, layout.partnerY);
+            unitFocusIds.push(unit.partner.focusId);
+          }
+          unit.entries.forEach(function (entry) {
+            unitFocusIds.push(entry.item.focusId);
+            entry.terminals.forEach(function (terminal) { unitFocusIds.push(terminal.focusId); });
           });
-          addRoundedPath(svg, [
-            { x: childX, y: childBusY },
-            { x: childX, y: childY - childNode.height / 2 }
-          ], 'descendant', [model.root.id, entry.id], 12);
-          addFocusPath(svg, [
-            { x: groupX, y: group.partner ? rowTop + 30 : rowBusY },
-            { x: groupX, y: childBusY },
-            { x: childX, y: childBusY },
-            { x: childX, y: childY - childNode.height / 2 }
-          ], 'descendant', [entry.item.focusId].concat(terminalFocus, partnerFocus), 14);
-          if (entry.terminals.length) {
-            var terminalBusY = rowTop + 130;
-            var terminalY = rowTop + 168;
-            var terminalXs = spread(entry.terminals.length, childX,
-              entry.terminals.length > 1 ? 158 : 0);
+          addJunction(svg, unitX, layout.busY, groupClass);
+          if (partnerNode) {
+            var partnerClass = unit.type === 'breeding' ? 'breeding' :
+              'partner ' + unit.partner.parentRole;
             addRoundedPath(svg, [
-              { x: childX, y: childY + childNode.height / 2 },
+              { x: unitX, y: layout.partnerY + partnerNode.height / 2 },
+              { x: unitX, y: layout.busY }
+            ], partnerClass, unit.ids, 14);
+            addFocusPath(svg, [
+              { x: unitX, y: layout.partnerY + partnerNode.height / 2 },
+              { x: unitX, y: layout.busY }
+            ], partnerClass, unitFocusIds, 14);
+          }
+          addFocusPath(svg, [
+            { x: rootRight, y: rootY },
+            { x: relationTrunkX, y: rootY },
+            { x: relationTrunkX, y: layout.busY },
+            { x: unitX, y: layout.busY }
+          ], groupClass, unitFocusIds, 14);
+
+          if (unit.partner) {
+            var familyNodeIds = unit.entries.reduce(function (ids, entry) {
+              return ids.concat(entry.item.focusId, entry.terminals.map(function (terminal) {
+                return terminal.focusId;
+              }));
+            }, []);
+            unit.partner.pathFocusIds = [model.root.focusId, unit.partner.focusId].concat(familyNodeIds);
+          }
+          var childXs = spread(unit.entries.length, unitX, unit.entries.length > 1 ? 156 : 0);
+          unit.entries.forEach(function (entry, entryIndex) {
+            var childX = childXs[entryIndex];
+            var childNode = createNode(entry.item, childX, layout.childY);
+            var partnerFocus = unit.partner ? [unit.partner.focusId] : [];
+            var terminalFocus = entry.terminals.map(function (terminal) { return terminal.focusId; });
+            entry.item.pathFocusIds = [model.root.focusId, entry.item.focusId].concat(partnerFocus);
+            entry.terminals.forEach(function (terminal) {
+              terminal.pathFocusIds = [model.root.focusId, entry.item.focusId, terminal.focusId]
+                .concat(partnerFocus);
+            });
+            addRoundedPath(svg, [
+              { x: unitX, y: layout.busY },
+              { x: unitX, y: layout.busY + 18 },
+              { x: childX, y: layout.busY + 18 },
+              { x: childX, y: layout.childY - childNode.height / 2 }
+            ], 'descendant', [model.root.id, entry.id], 14);
+            addFocusPath(svg, [
+              { x: unitX, y: layout.busY },
+              { x: unitX, y: layout.busY + 18 },
+              { x: childX, y: layout.busY + 18 },
+              { x: childX, y: layout.childY - childNode.height / 2 }
+            ], 'descendant', [entry.item.focusId].concat(terminalFocus, partnerFocus), 14);
+
+            if (!entry.terminals.length) return;
+            var terminalBusY = layout.childY + childNode.height / 2 + 18;
+            var terminalXs = spread(entry.terminals.length, childX,
+              entry.terminals.length > 1 ? 156 : 0);
+            addRoundedPath(svg, [
+              { x: childX, y: layout.childY + childNode.height / 2 },
               { x: childX, y: terminalBusY }
-            ], 'descendant', [entry.id], 12);
+            ], 'descendant', [entry.id], 14);
             if (terminalXs.length > 1) {
               addRoundedPath(svg, [
                 { x: terminalXs[0], y: terminalBusY },
                 { x: terminalXs[terminalXs.length - 1], y: terminalBusY }
-              ], 'descendant', [entry.id], 12);
+              ], 'descendant', [entry.id].concat(entry.terminals.map(function (terminal) {
+                return terminal.id;
+              })), 14);
             }
             entry.terminals.forEach(function (terminal, terminalIndex) {
-              var terminalNode = createNode(terminal, terminalXs[terminalIndex], terminalY);
+              var terminalX = terminalXs[terminalIndex];
+              var terminalNode = createNode(terminal, terminalX, layout.terminalY);
               addRoundedPath(svg, [
-                { x: terminalXs[terminalIndex], y: terminalBusY },
-                { x: terminalXs[terminalIndex], y: terminalY - terminalNode.height / 2 }
-              ], 'descendant', [entry.id, terminal.id], 12);
+                { x: terminalX, y: terminalBusY },
+                { x: terminalX, y: layout.terminalY - terminalNode.height / 2 }
+              ], 'descendant', [entry.id, terminal.id], 14);
               addFocusPath(svg, [
-                { x: childX, y: childY + childNode.height / 2 },
+                { x: childX, y: layout.childY + childNode.height / 2 },
                 { x: childX, y: terminalBusY },
-                { x: terminalXs[terminalIndex], y: terminalBusY },
-                { x: terminalXs[terminalIndex], y: terminalY - terminalNode.height / 2 }
-              ], 'descendant', [terminal.focusId], 14);
+                { x: terminalX, y: terminalBusY },
+                { x: terminalX, y: layout.terminalY - terminalNode.height / 2 }
+              ], 'descendant', [terminal.focusId].concat(partnerFocus), 14);
             });
-          }
+          });
         });
-        xCursor += group.layoutWidth;
       });
-      sectionY += row.height;
-    });
-    if (model.breeding.length) {
-      sectionY += 22;
-      createGroupLabel('繁育记录', model.breeding.length, edgePadding, sectionY, contentWidth);
-      sectionY += 40;
-      var breedingRows = Math.ceil(model.breeding.length / siblingColumns);
-      for (var breedingRow = 0; breedingRow < breedingRows; breedingRow++) {
-        var breedingItems = model.breeding.slice(
-          breedingRow * siblingColumns, (breedingRow + 1) * siblingColumns
-        );
-        var breedingXs = spread(breedingItems.length, rootX,
-          breedingItems.length > 1 ? 190 : 0);
-        var breedingBusY = sectionY + breedingRow * 102;
-        if (breedingXs.length > 1) {
-          addRoundedPath(svg, [
-            { x: breedingXs[0], y: breedingBusY },
-            { x: breedingXs[breedingXs.length - 1], y: breedingBusY }
-          ], 'breeding', breedingItems.map(function (item) { return item.id; }), 12);
-        }
-        breedingItems.forEach(function (item, itemIndex) {
-          var nodeY = breedingBusY + 50;
-          var node = createNode(item, breedingXs[itemIndex], nodeY);
-          item.pathFocusIds = [model.root.focusId, item.focusId];
-          addRoundedPath(svg, [
-            { x: breedingXs[itemIndex], y: breedingBusY },
-            { x: breedingXs[itemIndex], y: nodeY - node.height / 2 }
-          ], 'breeding', [model.root.id, item.id], 12);
-          addFocusPath(svg, [
-            { x: breedingXs[0], y: breedingBusY },
-            { x: breedingXs[itemIndex], y: breedingBusY },
-            { x: breedingXs[itemIndex], y: nodeY - node.height / 2 }
-          ], 'breeding', [item.focusId], 12);
-        });
-      }
     }
     return { width: width, height: height };
   }

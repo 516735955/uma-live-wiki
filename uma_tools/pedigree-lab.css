@@ -210,6 +210,7 @@ button:focus-visible, a:focus-visible {
 .relation-edge.sibling { stroke: var(--sibling); opacity: .58; }
 .relation-edge.descendant { stroke: var(--descendant); opacity: .62; }
 .relation-edge.breeding { stroke: var(--breeding); stroke-dasharray: 5 5; opacity: .66; }
+.relation-edge.kinship { stroke: #9d8a75; opacity: .38; }
 .relation-edge.partner.sire { stroke: var(--sire); opacity: .58; }
 .relation-edge.partner.dam { stroke: var(--dam); opacity: .58; }
 .relation-focus-edge {
@@ -228,9 +229,11 @@ button:focus-visible, a:focus-visible {
 .relation-focus-edge.partner.sire { stroke: var(--sire); }
 .relation-focus-edge.partner.dam { stroke: var(--dam); }
 .graph-stage.has-hover-path .relation-edge:not(.relation-focus-edge) { opacity: .07; }
+.graph-stage.has-hover-path .relation-junction { opacity: .08; }
 .relation-focus-edge.is-path-edge { opacity: 1 !important; }
-.relation-junction { stroke: #fff; stroke-width: 2; }
+.relation-junction { stroke: #fff; stroke-width: 2; transition: opacity .15s; }
 .relation-junction.descendant { fill: var(--descendant); }
+.relation-junction.breeding { fill: var(--breeding); }
 
 .root-orbit {
   position: absolute;
@@ -242,27 +245,6 @@ button:focus-visible, a:focus-visible {
   background: radial-gradient(circle, rgba(255, 248, 237, .97) 0, rgba(255, 248, 237, .52) 53%, transparent 73%);
   box-shadow: inset 0 0 0 14px rgba(255, 255, 255, .26);
   pointer-events: none;
-}
-
-.relation-group-label {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  width: 394px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3px 7px;
-  color: var(--sibling);
-  border-bottom: 1px solid rgba(35, 124, 129, .2);
-  pointer-events: none;
-}
-.relation-group-label strong { font-size: 11px; font-weight: 900; }
-.relation-group-label span {
-  padding: 2px 7px;
-  border-radius: 999px;
-  background: rgba(35, 124, 129, .1);
-  font-size: 10px;
-  font-weight: 800;
 }
 
 .ped-node {
@@ -291,8 +273,7 @@ button:focus-visible, a:focus-visible {
   transform: translateY(-2px);
 }
 .ped-node.is-selected { border-color: var(--orange); box-shadow: 0 8px 22px rgba(218, 108, 8, .2); }
-.graph-stage.has-hover-path .ped-node:not(.is-path-node),
-.graph-stage.has-hover-path .partner-chip:not(.is-path-node) { opacity: .28; }
+.graph-stage.has-hover-path .ped-node:not(.is-path-node) { opacity: .28; }
 .ped-node.is-path-node {
   z-index: 11;
   border-color: var(--orange);
@@ -318,17 +299,6 @@ button:focus-visible, a:focus-visible {
 }
 .ped-node.is-ancestor-node.is-role { width: 142px; }
 .ped-node.is-ancestor-node.is-horse { width: 124px; }
-.ped-node[data-group="breeding"] { width: 176px; min-height: 78px; }
-.ped-node[data-group="breeding"] .ped-copy { align-self: stretch; display: flex; min-width: 0; flex-direction: column; justify-content: center; }
-.ped-breeding-history { display: flex; flex-wrap: wrap; gap: 2px 4px; margin-top: 4px; }
-.ped-breeding-event {
-  color: #35603c;
-  font-size: 8px;
-  font-weight: 800;
-  line-height: 1.25;
-  white-space: nowrap;
-}
-.ped-breeding-event.no_foal { color: #9a3d53; }
 .ped-sex {
   position: absolute;
   top: 6px;
@@ -387,36 +357,8 @@ button:focus-visible, a:focus-visible {
 .ped-tag.sibling { background: var(--sibling); }
 .ped-tag.descendant { background: var(--descendant); }
 .ped-tag.breeding { background: var(--breeding); }
-
-.partner-chip {
-  position: absolute;
-  z-index: 5;
-  display: inline-flex;
-  width: 152px;
-  max-width: 152px;
-  min-height: 28px;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 8px;
-  overflow: hidden;
-  cursor: pointer;
-  border: 1px solid #c9d4f4;
-  border-radius: 999px;
-  background: #f5f7ff;
-  font-size: 10px;
-  line-height: 1.2;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: border-color .15s, box-shadow .15s, opacity .15s;
-}
-.partner-chip.is-dam { color: #5d478f; border-color: #d6ccec; background: #f8f5fd; }
-.partner-chip.is-sire { color: #294aa9; border-color: #c9d4f4; background: #f5f7ff; }
-.partner-chip:hover, .partner-chip.is-path-node { border-color: currentColor; box-shadow: 0 5px 14px rgba(54, 65, 104, .12); }
-.partner-chip.is-selected { border-color: var(--orange); }
-.partner-chip .partner-role { font-weight: 900; }
-.partner-chip.is-dam .partner-role { color: var(--dam); }
-.partner-chip.is-sire .partner-role { color: var(--sire); }
-.partner-chip strong { overflow: hidden; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.ped-node.is-sire .ped-tag { background: var(--sire); }
+.ped-node.is-dam .ped-tag { background: var(--dam); }
 
 .relation-inspector {
   position: relative;

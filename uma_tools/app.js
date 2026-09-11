@@ -2631,12 +2631,12 @@ createApp({
     frame.dataset.pedigreeSample = root;
     frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-8">' +
+      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-9">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
       ';window.PEDIGREE_EMBEDDED=true;<\/script>' +
       '<script defer src="/data/character_index_data.js?v=20260904"><\/script>' +
       '<script defer src="/data/pedigree_data.js?v=20260911-7"><\/script>' +
-      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-11"><\/script></head>' +
+      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-12"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
       '<section class="lab-workspace is-expanded" aria-labelledby="workspace-title">' +
       '<div class="workspace-head"><div><h2 id="workspace-title">血统关系</h2>' +
