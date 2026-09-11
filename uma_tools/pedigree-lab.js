@@ -6,7 +6,6 @@
   var embedded = query.has('embed') || Boolean(window.PEDIGREE_EMBEDDED);
   var state = {
     sample: requestedSample || 'staygold',
-    expanded: true,
     lockedItem: null,
     lockedKey: '',
     resizeTimer: null,
@@ -16,11 +15,9 @@
   var charById = {};
   var viewport = document.getElementById('graph-viewport');
   var stage = document.getElementById('graph-stage');
-  var inspector = document.getElementById('relation-inspector');
   var sheet = document.getElementById('mobile-sheet');
   var sheetContent = document.getElementById('sheet-content');
   var workspace = document.querySelector('.lab-workspace');
-  var workspaceContent = document.getElementById('workspace-content');
   var backLink = document.getElementById('character-back-link');
   var currentModel = null;
   var sexLabels = { male: '牡马', female: '牝马', gelding: '阉马' };
@@ -229,15 +226,57 @@
 
   function factRow(label, value) {
     if (!value) return '';
-    return '<div class="horse-fact"><dt>' + escapeHtml(label) + '</dt><dd>' + escapeHtml(value) + '</dd></div>';
+    return '<div class="horse-fact"><dt>' +
+      escapeHtml(label) + '</dt><dd>' + escapeHtml(value) + '</dd></div>';
   }
 
-  function detailHtml(item, headingId, locked) {
+  function detailInformation(item) {
+    var rows = [];
+    function add(label, value) {
+      if (value) rows.push(factRow(label, value));
+    }
+    add('中文名', item.horseZh);
+    add('日文名', item.ja);
+    add('英文名', item.en);
+    add('出生年份', item.born ? item.born + '年' : '');
+    add('产地', countryLabels[item.country] || item.country);
+    if (item.parents && item.parents.sire) {
+      add('父', nameOf(item.parents.sire, currentModel.root.lookupId));
+    }
+    if (item.parents && item.parents.dam) {
+      add('母', nameOf(item.parents.dam, currentModel.root.lookupId));
+    }
+    if (item.sharedParents && item.sharedParents.length) {
+      add('共同亲本', item.sharedParents.map(function (id) {
+        return nameOf(id, currentModel.root.lookupId);
+      }).join('、'));
+    }
+    if (item.via && item.via.length) {
+      add('关联子代', item.via.map(function (id) {
+        return nameOf(id, currentModel.root.lookupId);
+      }).join('、'));
+    }
+    if (item.records && item.records.length) {
+      var outcomes = item.records.map(function (record) {
+        var outcome = record.outcome === 'no_foal' ? '未产驹' : '有产驹';
+        return record.year + '年' + outcome;
+      }).join('、');
+      rows.push(factRow('繁育记录', item.records.length + '次｜' + outcomes));
+    }
+    return {
+      html: rows.join(''),
+      density: rows.length <= 5 ? 'compact' : (rows.length >= 9 ? 'dense' : 'standard')
+    };
+  }
+
+  function detailHtml(item, headingId, information) {
     var groupNames = {
       root: '当前角色', ancestor: '先代血统', sibling: '同辈角色',
-      descendant: '后代角色', partner: '另一方亲本', breeding: '繁育记录'
+      descendant: '后代角色', partner: '繁育', breeding: '繁育记录'
     };
-    var detailClass = item.role ? 'is-role-detail' : 'is-horse-detail';
+    information = information || detailInformation(item);
+    var detailClass = (item.role ? 'is-role-detail' : 'is-horse-detail') +
+      ' is-' + information.density + '-detail';
     var style = item.role ? ' style="--role-color:' + escapeHtml(item.roleColor) +
       ';--role-sub-color:' + escapeHtml(item.roleSubColor) + ';--role-ink:' + escapeHtml(item.roleInk) + '"' : '';
     var html = '<div class="inspector-card ' + detailClass + '"' + style + '>';
@@ -248,41 +287,8 @@
     html += '<h2' + (headingId ? ' id="' + escapeHtml(headingId) + '"' : '') + '>' + escapeHtml(item.name) + '</h2>';
     if (item.sex) html += '<span class="detail-sex ' + escapeHtml(item.sex) + '">' + escapeHtml(sexLabels[item.sex]) + '</span>';
     html += '</div></div>';
-    html += '<dl class="horse-names">';
-    html += factRow('中文名', item.horseZh);
-    html += factRow('日文名', item.ja);
-    html += factRow('英文名', item.en);
-    html += '</dl>';
-    html += '<dl class="horse-facts">';
-    html += factRow('出生年份', item.born ? item.born + '年' : '');
-    html += factRow('产地', countryLabels[item.country] || item.country);
-    if (item.parents && item.parents.sire) html += factRow('父', nameOf(item.parents.sire, currentModel.root.lookupId));
-    if (item.parents && item.parents.dam) html += factRow('母', nameOf(item.parents.dam, currentModel.root.lookupId));
-    if (item.sharedParents && item.sharedParents.length) {
-      html += factRow('共同亲本', item.sharedParents.map(function (id) {
-        return nameOf(id, currentModel.root.lookupId);
-      }).join('、'));
-    }
-    if (item.via && item.via.length) {
-      html += factRow('关联子代', item.via.map(function (id) {
-        return nameOf(id, currentModel.root.lookupId);
-      }).join('、'));
-    }
-    if (item.records && item.records.length) {
-      html += factRow('繁育记录', item.records.length + '次');
-      html += '<div class="breeding-history"><dt>逐年结果</dt><dd>';
-      item.records.forEach(function (record) {
-        var outcome = record.outcome === 'no_foal' ? '未产驹' : '有产驹';
-        html += '<span class="breeding-event ' + escapeHtml(record.outcome) + '">' +
-          escapeHtml(record.year + '年·' + outcome) + '</span>';
-      });
-      html += '</dd></div>';
-    }
-    html += '</dl>';
+    html += '<dl class="horse-details">' + information.html + '</dl>';
     html += '<div class="inspector-actions">';
-    if (locked) {
-      html += '<button class="inspector-unpin" type="button" data-unpin>取消固定</button>';
-    }
     if (item.sourceUrl) {
       html += '<a class="inspector-link source-link" href="' + escapeHtml(item.sourceUrl) +
         '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.sourceName) + '</a>';
@@ -296,21 +302,18 @@
     return html;
   }
 
-  function renderDetail(item, mobile) {
+  function renderDetail(item) {
     if (!item) return;
-    var locked = Boolean(state.lockedItem && state.lockedKey === item.selectionKey);
-    inspector.innerHTML = detailHtml(item, 'inspector-title', locked);
-    var unpin = inspector.querySelector('[data-unpin]');
-    if (unpin) unpin.addEventListener('click', clearPin);
-    if (mobile) {
-      sheetContent.innerHTML = detailHtml(item, 'sheet-title', false);
-      sheet.classList.add('is-open');
-      sheet.setAttribute('aria-hidden', 'false');
-      requestAnimationFrame(function () {
-        var close = sheet.querySelector('.sheet-close');
-        if (close) close.focus();
-      });
-    }
+    var information = detailInformation(item);
+    sheet.classList.remove('has-compact-detail', 'has-standard-detail', 'has-dense-detail');
+    sheet.classList.add('has-' + information.density + '-detail');
+    sheetContent.innerHTML = detailHtml(item, 'sheet-title', information);
+    sheet.classList.add('is-open');
+    sheet.setAttribute('aria-hidden', 'false');
+    requestAnimationFrame(function () {
+      var close = sheet.querySelector('.sheet-close');
+      if (close) close.focus();
+    });
   }
 
   function syncPinnedSelection() {
@@ -320,7 +323,7 @@
     });
   }
 
-  function pinDetail(item, mobile, selectionKey, trigger) {
+  function pinDetail(item, selectionKey, trigger) {
     if (state.lockedItem && state.lockedKey === selectionKey) {
       clearPin();
       return;
@@ -329,7 +332,7 @@
     state.lockedItem = item;
     state.lockedKey = selectionKey;
     state.returnFocus = trigger || document.activeElement;
-    renderDetail(item, mobile);
+    renderDetail(item);
     syncPinnedSelection();
   }
 
@@ -349,19 +352,6 @@
     state.returnFocus = null;
     syncPinnedSelection();
     clearHoverPath();
-  }
-
-  function previewDetail(item) {
-    if (!state.lockedItem) renderDetail(item, false);
-  }
-
-  function restoreDetail() {
-    if (!currentModel) return;
-    renderDetail(state.lockedItem || currentModel.root, false);
-  }
-
-  function isCoarsePointer() {
-    return window.matchMedia('(hover: none), (pointer: coarse)').matches || window.innerWidth <= 760;
   }
 
   function highlightIds(item) {
@@ -391,19 +381,18 @@
     stage.querySelectorAll('.is-path-node,.is-path-edge').forEach(function (element) {
       element.classList.remove('is-path-node', 'is-path-edge');
     });
-    restoreDetail();
   }
 
   function bindInteractive(element, item) {
     var selectionKey = item.selectionKey || item.focusId || (item.group + ':' + item.id);
     element.dataset.selectionKey = selectionKey;
-    element.addEventListener('mouseenter', function () { previewDetail(item); setHoverPath(item); });
+    element.addEventListener('mouseenter', function () { setHoverPath(item); });
     element.addEventListener('mouseleave', clearHoverPath);
-    element.addEventListener('focus', function () { previewDetail(item); setHoverPath(item); });
+    element.addEventListener('focus', function () { setHoverPath(item); });
     element.addEventListener('blur', clearHoverPath);
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      pinDetail(item, isCoarsePointer(), selectionKey, element);
+      pinDetail(item, selectionKey, element);
     });
   }
 
@@ -412,8 +401,7 @@
     var element = document.createElement('button');
     var isRoot = Boolean(options.root);
     var isAncestor = item.group === 'ancestor';
-    var width = isRoot ? 182 : (isAncestor ? (item.role ? 142 : 124) :
-      (item.role ? 152 : 128));
+    var width = isRoot ? 182 : (item.role ? 152 : 128);
     var height = isRoot ? 70 : (item.role ? 60 : 44);
     element.className = 'ped-node' + (isRoot ? ' is-root' : '') +
       (isAncestor ? ' is-ancestor-node' : '') + (item.role ? ' is-role' : ' is-horse') +
@@ -453,7 +441,14 @@
     element.appendChild(copy);
     bindInteractive(element, item);
     stage.appendChild(element);
-    return { x: x, y: y, width: width, height: height, element: element, item: item };
+    var renderedWidth = element.offsetWidth || width;
+    var renderedHeight = element.offsetHeight || height;
+    element.style.left = Math.round(x - renderedWidth / 2) + 'px';
+    element.style.top = Math.round(y - renderedHeight / 2) + 'px';
+    return {
+      x: x, y: y, width: renderedWidth, height: renderedHeight,
+      element: element, item: item
+    };
   }
 
   function createSvg(width, height) {
@@ -513,19 +508,43 @@
     svg.appendChild(path);
   }
 
-  function addJunction(svg, x, y, group) {
-    var junction = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    junction.setAttribute('cx', x);
-    junction.setAttribute('cy', y);
-    junction.setAttribute('r', 4);
-    junction.setAttribute('class', 'relation-junction ' + group);
-    svg.appendChild(junction);
-  }
-
   function spread(count, center, spacing) {
     var result = [];
     for (var i = 0; i < count; i++) result.push(center + (i - (count - 1) / 2) * spacing);
     return result;
+  }
+
+  function familyHalfSpan(unit) {
+    if (!unit.entries.length) return 76;
+    var childCenters = spread(unit.entries.length, 0, unit.entries.length > 1 ? 156 : 0);
+    var minimum = Infinity;
+    var maximum = -Infinity;
+    unit.entries.forEach(function (entry, index) {
+      var childX = childCenters[index];
+      minimum = Math.min(minimum, childX - 76);
+      maximum = Math.max(maximum, childX + 76);
+      if (!entry.terminals.length) return;
+      spread(entry.terminals.length, childX, entry.terminals.length > 1 ? 156 : 0)
+        .forEach(function (terminalX) {
+          minimum = Math.min(minimum, terminalX - 76);
+          maximum = Math.max(maximum, terminalX + 76);
+        });
+    });
+    return Math.max(Math.abs(minimum), Math.abs(maximum));
+  }
+
+  function packFamilyRow(units, rootX) {
+    var previousRight = rootX + 91;
+    return units.map(function (unit, index) {
+      var halfSpan = familyHalfSpan(unit);
+      var centerX = index === 0 ?
+        (units.length === 1 ? rootX + halfSpan + 76 : previousRight + 32 + halfSpan) :
+        previousRight + 32 + halfSpan;
+      var partnerX = units.length === 1 ? rootX + (centerX - rootX) * 2 : centerX;
+      var right = Math.max(centerX + halfSpan, partnerX + 76);
+      previousRight = right;
+      return { centerX: centerX, partnerX: partnerX, right: right };
+    });
   }
 
   function descendantStructure(model) {
@@ -548,7 +567,7 @@
         partner.group = 'partner';
         partner.focusId = 'partner:' + partner.id;
         partner.parentRole = firstLink.role === 'dam' ? 'sire' : 'dam';
-        partner.tag = partner.parentRole === 'sire' ? '父' : '母';
+        partner.tag = '繁育';
         partner.via = [firstId];
         partner.path = [model.root.id, firstId];
         firstMap[firstId].partner = partner;
@@ -656,28 +675,28 @@
   }
 
   function renderLens(model) {
-    var siblingColumns = Math.min(3, Math.max(1, model.siblings.length));
-    var rootX = Math.max(650, 196 + siblingColumns * 168);
+    var siblingColumns = Math.min(4, Math.max(1, model.siblings.length));
     var hasAncestors = model.ancestors.length > 0;
     var rootY = hasAncestors ? 326 : 88;
     var positions = {};
     var units = relationshipUnits(model);
     var familyUnits = units.filter(function (unit) { return unit.type === 'family'; });
     var breedingUnits = units.filter(function (unit) { return unit.type === 'breeding'; });
-    var unitColumns = Math.min(3, Math.max(1, units.length));
-    var familyRows = chunk(familyUnits, unitColumns);
-    var breedingRows = chunk(breedingUnits, unitColumns);
+    var breedingOnLeft = Boolean(breedingUnits.length && !model.siblings.length);
+    var rootX = model.siblings.length ? Math.max(650, 196 + siblingColumns * 168) :
+      (breedingOnLeft ? 700 : 650);
+    var familyColumns = !model.siblings.length && familyUnits.length >= 8 ? 5 :
+      (familyUnits.length === 4 ? 2 : Math.min(3, Math.max(1, familyUnits.length)));
+    var breedingColumns = Math.min(breedingOnLeft ? 3 : 4, Math.max(1, breedingUnits.length));
+    var familyRows = chunk(familyUnits, familyColumns);
     var relationRows = familyRows.map(function (row) {
       return { type: 'family', units: row };
-    }).concat(breedingRows.map(function (row) {
-      return { type: 'breeding', units: row };
-    }));
-    var rightmostUnitX = rootX + 275 + (unitColumns - 1) * 320;
-    var width = Math.max(1200, rootX + 596, rightmostUnitX + 126);
+    });
     var siblingRows = Math.ceil(model.siblings.length / siblingColumns);
     var siblingBottom = model.siblings.length ? rootY + (siblingRows - 1) * 88 + 56 : rootY + 92;
     var relationCursorY = rootY;
     var relationLayouts = [];
+    var breedingLayouts = [];
 
     model.root.pathFocusIds = [model.root.focusId];
     relationRows.forEach(function (row) {
@@ -697,25 +716,46 @@
       });
       relationCursorY += rowHeight;
     });
-    var relationBottom = relationRows.length ? relationCursorY + 32 : rootY + 92;
-    var height = Math.max(hasAncestors ? 428 : 180, siblingBottom, relationBottom);
+    relationLayouts.forEach(function (layout) {
+      layout.familyPositions = packFamilyRow(layout.units, rootX);
+    });
+    var breedingStartY = breedingUnits.length ?
+      (breedingOnLeft ? rootY : (relationLayouts.length ? relationCursorY + 78 : rootY)) : 0;
+    breedingUnits.forEach(function (unit, index) {
+      var column = index % breedingColumns;
+      var row = Math.floor(index / breedingColumns);
+      breedingLayouts.push({
+        unit: unit,
+        x: breedingOnLeft ? rootX - 250 - column * 168 : rootX + 240 + column * 184,
+        y: breedingStartY + row * 88,
+        row: row,
+        column: column,
+        side: breedingOnLeft ? 'left' : 'right'
+      });
+    });
+    var rightmostFamilyX = relationLayouts.reduce(function (maximum, layout) {
+      return Math.max(maximum, layout.familyPositions.reduce(function (rowMaximum, position) {
+        return Math.max(rowMaximum, position.right);
+      }, rootX));
+    }, rootX);
+    var rightmostBreedingX = breedingUnits.length && !breedingOnLeft ?
+      rootX + 240 + (breedingColumns - 1) * 184 : rootX;
+    var width = Math.max(1350, rootX + 650, rightmostFamilyX + 24, rightmostBreedingX + 126);
+    var relationBottom = relationLayouts.length ? relationCursorY + 32 : rootY + 92;
+    var breedingBottom = breedingLayouts.length ?
+      breedingLayouts[breedingLayouts.length - 1].y + 62 : rootY + 92;
+    var height = Math.max(hasAncestors ? 428 : 180, siblingBottom, relationBottom, breedingBottom);
 
     stage.style.width = width + 'px';
     stage.style.height = height + 'px';
     var svg = createSvg(width, height);
 
-    var orbit = document.createElement('div');
-    orbit.className = 'root-orbit';
-    orbit.style.left = (rootX - 116) + 'px';
-    orbit.style.top = (rootY - 91) + 'px';
-    stage.appendChild(orbit);
-
     if (hasAncestors) {
       var ancestorYs = { 3: 50, 2: 136, 1: 222 };
       var ancestorOffsets = {
-        1: [-300, 300],
-        2: [-450, -150, 150, 450],
-        3: [-525, -375, -225, -75, 75, 225, 375, 525]
+        1: [-328, 328],
+        2: [-492, -164, 164, 492],
+        3: [-574, -410, -246, -82, 82, 246, 410, 574]
       };
       [3, 2, 1].forEach(function (generation) {
         var row = model.ancestors.filter(function (item) { return item.generation === generation; });
@@ -800,30 +840,31 @@
       }
     }
 
-    if (relationLayouts.length) {
-      var relationTrunkX = rootX + 105;
-      var rootRight = rootX + positions.root.width / 2;
-      var lastBusY = relationLayouts[relationLayouts.length - 1].busY;
-      addRoundedPath(svg, [
-        { x: rootRight, y: rootY },
-        { x: relationTrunkX, y: rootY },
-        { x: relationTrunkX, y: lastBusY }
-      ], 'kinship', [model.root.id].concat(units.reduce(function (ids, unit) {
-        return ids.concat(unit.ids);
-      }, [])), 14);
+    if (relationLayouts.length || breedingLayouts.length) {
+      var familyRootY = rootY + positions.root.height / 2;
+      if (relationLayouts.length) {
+        addRoundedPath(svg, [
+          { x: rootX, y: familyRootY },
+          { x: rootX, y: relationLayouts[relationLayouts.length - 1].busY }
+        ], 'descendant', [model.root.id].concat(familyUnits.reduce(function (ids, unit) {
+          return ids.concat(unit.ids);
+        }, [])), 22);
+      }
 
       relationLayouts.forEach(function (layout) {
-        var groupClass = layout.type === 'breeding' ? 'breeding' : 'descendant';
-        var unitXs = layout.units.map(function (unit, index) {
-          return rootX + 275 + index * 320;
-        });
+        var rowRight = layout.familyPositions.reduce(function (maximum, position) {
+          return Math.max(maximum, position.centerX);
+        }, rootX);
+        var rowIds = layout.units.reduce(function (ids, unit) { return ids.concat(unit.ids); }, []);
         addRoundedPath(svg, [
-          { x: relationTrunkX, y: layout.busY },
-          { x: unitXs[unitXs.length - 1], y: layout.busY }
-        ], groupClass, layout.units.reduce(function (ids, unit) { return ids.concat(unit.ids); }, []), 14);
+          { x: rootX, y: layout.busY },
+          { x: rowRight, y: layout.busY }
+        ], 'descendant', rowIds, 22);
 
         layout.units.forEach(function (unit, unitIndex) {
-          var unitX = unitXs[unitIndex];
+          var familyPosition = layout.familyPositions[unitIndex];
+          var unitX = familyPosition.partnerX;
+          var familyCenterX = familyPosition.centerX;
           var unitFocusIds = [];
           var partnerNode = null;
           if (unit.partner) {
@@ -834,25 +875,21 @@
             unitFocusIds.push(entry.item.focusId);
             entry.terminals.forEach(function (terminal) { unitFocusIds.push(terminal.focusId); });
           });
-          addJunction(svg, unitX, layout.busY, groupClass);
           if (partnerNode) {
-            var partnerClass = unit.type === 'breeding' ? 'breeding' :
-              'partner ' + unit.partner.parentRole;
-            addRoundedPath(svg, [
+            var partnerClass = 'partner ' + unit.partner.parentRole;
+            var partnerPoints = [
               { x: unitX, y: layout.partnerY + partnerNode.height / 2 },
-              { x: unitX, y: layout.busY }
-            ], partnerClass, unit.ids, 14);
-            addFocusPath(svg, [
-              { x: unitX, y: layout.partnerY + partnerNode.height / 2 },
-              { x: unitX, y: layout.busY }
-            ], partnerClass, unitFocusIds, 14);
+              { x: unitX, y: layout.busY },
+              { x: familyCenterX, y: layout.busY }
+            ];
+            addRoundedPath(svg, partnerPoints, partnerClass, unit.ids, 22);
+            addFocusPath(svg, partnerPoints, partnerClass, unitFocusIds, 22);
           }
           addFocusPath(svg, [
-            { x: rootRight, y: rootY },
-            { x: relationTrunkX, y: rootY },
-            { x: relationTrunkX, y: layout.busY },
-            { x: unitX, y: layout.busY }
-          ], groupClass, unitFocusIds, 14);
+            { x: rootX, y: familyRootY },
+            { x: rootX, y: layout.busY },
+            { x: familyCenterX, y: layout.busY }
+          ], 'descendant', unitFocusIds, 22);
 
           if (unit.partner) {
             var familyNodeIds = unit.entries.reduce(function (ids, entry) {
@@ -862,10 +899,35 @@
             }, []);
             unit.partner.pathFocusIds = [model.root.focusId, unit.partner.focusId].concat(familyNodeIds);
           }
-          var childXs = spread(unit.entries.length, unitX, unit.entries.length > 1 ? 156 : 0);
+          var childXs = spread(unit.entries.length, familyCenterX, unit.entries.length > 1 ? 156 : 0);
+          var childNodes = unit.entries.map(function (entry, entryIndex) {
+            return createNode(entry.item, childXs[entryIndex], layout.childY);
+          });
+          var childJoinY = layout.busY + 18;
+          if (unit.entries.length === 1) {
+            addRoundedPath(svg, [
+              { x: familyCenterX, y: layout.busY },
+              { x: childXs[0], y: layout.childY - childNodes[0].height / 2 }
+            ], 'descendant', unit.ids, 22);
+          } else if (unit.entries.length > 1) {
+            addRoundedPath(svg, [
+              { x: familyCenterX, y: layout.busY },
+              { x: familyCenterX, y: childJoinY }
+            ], 'descendant', unit.ids, 22);
+            addRoundedPath(svg, [
+              { x: childXs[0], y: childJoinY },
+              { x: childXs[childXs.length - 1], y: childJoinY }
+            ], 'descendant', unit.ids, 22);
+            childNodes.forEach(function (childNode, childIndex) {
+              addRoundedPath(svg, [
+                { x: childXs[childIndex], y: childJoinY },
+                { x: childXs[childIndex], y: layout.childY - childNode.height / 2 }
+              ], 'descendant', [model.root.id, unit.entries[childIndex].id], 22);
+            });
+          }
           unit.entries.forEach(function (entry, entryIndex) {
             var childX = childXs[entryIndex];
-            var childNode = createNode(entry.item, childX, layout.childY);
+            var childNode = childNodes[entryIndex];
             var partnerFocus = unit.partner ? [unit.partner.focusId] : [];
             var terminalFocus = entry.terminals.map(function (terminal) { return terminal.focusId; });
             entry.item.pathFocusIds = [model.root.focusId, entry.item.focusId].concat(partnerFocus);
@@ -873,18 +935,14 @@
               terminal.pathFocusIds = [model.root.focusId, entry.item.focusId, terminal.focusId]
                 .concat(partnerFocus);
             });
-            addRoundedPath(svg, [
-              { x: unitX, y: layout.busY },
-              { x: unitX, y: layout.busY + 18 },
+            var childPoints = [
+              { x: familyCenterX, y: layout.busY },
+              { x: familyCenterX, y: layout.busY + 18 },
               { x: childX, y: layout.busY + 18 },
               { x: childX, y: layout.childY - childNode.height / 2 }
-            ], 'descendant', [model.root.id, entry.id], 14);
-            addFocusPath(svg, [
-              { x: unitX, y: layout.busY },
-              { x: unitX, y: layout.busY + 18 },
-              { x: childX, y: layout.busY + 18 },
-              { x: childX, y: layout.childY - childNode.height / 2 }
-            ], 'descendant', [entry.item.focusId].concat(terminalFocus, partnerFocus), 14);
+            ];
+            addFocusPath(svg, childPoints, 'descendant',
+              [entry.item.focusId].concat(terminalFocus, partnerFocus), 22);
 
             if (!entry.terminals.length) return;
             var terminalBusY = layout.childY + childNode.height / 2 + 18;
@@ -893,14 +951,14 @@
             addRoundedPath(svg, [
               { x: childX, y: layout.childY + childNode.height / 2 },
               { x: childX, y: terminalBusY }
-            ], 'descendant', [entry.id], 14);
+            ], 'descendant', [entry.id], 22);
             if (terminalXs.length > 1) {
               addRoundedPath(svg, [
                 { x: terminalXs[0], y: terminalBusY },
                 { x: terminalXs[terminalXs.length - 1], y: terminalBusY }
               ], 'descendant', [entry.id].concat(entry.terminals.map(function (terminal) {
                 return terminal.id;
-              })), 14);
+              })), 22);
             }
             entry.terminals.forEach(function (terminal, terminalIndex) {
               var terminalX = terminalXs[terminalIndex];
@@ -908,17 +966,106 @@
               addRoundedPath(svg, [
                 { x: terminalX, y: terminalBusY },
                 { x: terminalX, y: layout.terminalY - terminalNode.height / 2 }
-              ], 'descendant', [entry.id, terminal.id], 14);
+              ], 'descendant', [entry.id, terminal.id], 22);
               addFocusPath(svg, [
                 { x: childX, y: layout.childY + childNode.height / 2 },
                 { x: childX, y: terminalBusY },
                 { x: terminalX, y: terminalBusY },
                 { x: terminalX, y: layout.terminalY - terminalNode.height / 2 }
-              ], 'descendant', [terminal.focusId].concat(partnerFocus), 14);
+              ], 'descendant', [terminal.focusId].concat(partnerFocus), 22);
             });
           });
         });
       });
+
+      var rightBreedingLayouts = breedingLayouts.filter(function (layout) {
+        return layout.side === 'right';
+      });
+      if (rightBreedingLayouts.length) {
+        var rightHasFamilies = relationLayouts.length > 0;
+        var rightRootX = rightHasFamilies ? rootX - positions.root.width / 2 + 18 :
+          rootX + positions.root.width / 2;
+        var rightRootY = rightHasFamilies ? familyRootY : rootY;
+        var rightTrunkX = rightHasFamilies ? rootX - 26 : rootX + 112;
+        var rightElbowY = rightRootY;
+        var lastRightBusY = rightBreedingLayouts[rightBreedingLayouts.length - 1].y + 42;
+        addRoundedPath(svg, [
+          { x: rightRootX, y: rightRootY },
+          { x: rightRootX, y: rightElbowY },
+          { x: rightTrunkX, y: rightElbowY },
+          { x: rightTrunkX, y: lastRightBusY }
+        ], 'breeding', [model.root.id].concat(breedingUnits.reduce(function (ids, unit) {
+          return ids.concat(unit.ids);
+        }, [])), 22);
+        for (var rightRow = 0; rightRow <= rightBreedingLayouts[rightBreedingLayouts.length - 1].row; rightRow++) {
+          var rightRowItems = rightBreedingLayouts.filter(function (layout) { return layout.row === rightRow; });
+          var rightBusY = rightRowItems[0].y + 42;
+          addRoundedPath(svg, [
+            { x: rightTrunkX, y: rightBusY },
+            { x: rightRowItems[rightRowItems.length - 1].x, y: rightBusY }
+          ], 'breeding', rightRowItems.reduce(function (ids, layout) {
+            return ids.concat(layout.unit.ids);
+          }, []), 22);
+          rightRowItems.forEach(function (layout) {
+            var item = layout.unit.partner;
+            var node = createNode(item, layout.x, layout.y);
+            var nodeBottom = layout.y + node.height / 2;
+            item.pathFocusIds = [model.root.focusId, item.focusId];
+            addRoundedPath(svg, [
+              { x: layout.x, y: nodeBottom },
+              { x: layout.x, y: rightBusY }
+            ], 'breeding', layout.unit.ids, 22);
+            addFocusPath(svg, [
+              { x: rightRootX, y: rightRootY },
+              { x: rightRootX, y: rightElbowY },
+              { x: rightTrunkX, y: rightElbowY },
+              { x: rightTrunkX, y: rightBusY },
+              { x: layout.x, y: rightBusY },
+              { x: layout.x, y: nodeBottom }
+            ], 'breeding', [item.focusId], 22);
+          });
+        }
+      }
+
+      if (breedingOnLeft) {
+        var breedingRootLeft = rootX - positions.root.width / 2;
+        var leftTrunkX = rootX - 112;
+        var lastLeftBusY = breedingLayouts[breedingLayouts.length - 1].y + 42;
+        addRoundedPath(svg, [
+          { x: breedingRootLeft, y: rootY },
+          { x: leftTrunkX, y: rootY },
+          { x: leftTrunkX, y: lastLeftBusY }
+        ], 'breeding', [model.root.id].concat(breedingUnits.reduce(function (ids, unit) {
+          return ids.concat(unit.ids);
+        }, [])), 22);
+        for (var leftRow = 0; leftRow <= breedingLayouts[breedingLayouts.length - 1].row; leftRow++) {
+          var leftRowItems = breedingLayouts.filter(function (layout) { return layout.row === leftRow; });
+          var leftBusY = leftRowItems[0].y + 42;
+          addRoundedPath(svg, [
+            { x: leftTrunkX, y: leftBusY },
+            { x: leftRowItems[leftRowItems.length - 1].x, y: leftBusY }
+          ], 'breeding', leftRowItems.reduce(function (ids, layout) {
+            return ids.concat(layout.unit.ids);
+          }, []), 22);
+          leftRowItems.forEach(function (layout) {
+            var item = layout.unit.partner;
+            var node = createNode(item, layout.x, layout.y);
+            var nodeBottom = layout.y + node.height / 2;
+            item.pathFocusIds = [model.root.focusId, item.focusId];
+            addRoundedPath(svg, [
+              { x: layout.x, y: nodeBottom },
+              { x: layout.x, y: leftBusY }
+            ], 'breeding', layout.unit.ids, 22);
+            addFocusPath(svg, [
+              { x: breedingRootLeft, y: rootY },
+              { x: leftTrunkX, y: rootY },
+              { x: leftTrunkX, y: leftBusY },
+              { x: layout.x, y: leftBusY },
+              { x: layout.x, y: nodeBottom }
+            ], 'breeding', [item.focusId], 22);
+          });
+        }
+      }
     }
     return { width: width, height: height };
   }
@@ -957,15 +1104,9 @@
     state.lockedKey = '';
     closeSheet();
     document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
-    var summary = [currentModel.ancestors.length ? '三代血统' : '血统资料始于本马'];
-    if (currentModel.siblings.length) summary.push(currentModel.siblings.length + '位同辈角色');
-    if (currentModel.descendants.length) summary.push(currentModel.descendants.length + '位后代角色');
-    if (currentModel.breeding.length) summary.push(currentModel.breeding.length + '位繁育角色');
-    document.getElementById('workspace-summary').textContent = summary.join('·');
     backLink.href = characterRoute(state.sample);
     backLink.setAttribute('aria-label', '返回' + currentModel.root.name + '角色页');
     renderLens(currentModel);
-    renderDetail(currentModel.root, false);
     syncPinnedSelection();
     requestAnimationFrame(layoutStage);
   }
@@ -974,7 +1115,7 @@
     (window.PED_REL || []).forEach(function (node) { byId[node.cid] = node; });
     (window.CHAR_INDEX || []).forEach(function (character) { charById[character.id] = character; });
     if (!byId[state.sample]) {
-      document.getElementById('workspace-summary').textContent = '血统关系数据载入失败，请刷新页面重试。';
+      document.getElementById('workspace-title').textContent = '血统关系暂不可用';
       return;
     }
     render();
@@ -989,16 +1130,6 @@
       });
       render();
     });
-  });
-
-  document.querySelector('[data-action="toggle"]').addEventListener('click', function () {
-    state.expanded = !state.expanded;
-    workspace.classList.toggle('is-expanded', state.expanded);
-    workspaceContent.hidden = !state.expanded;
-    var button = document.querySelector('[data-action="toggle"]');
-    button.setAttribute('aria-expanded', String(state.expanded));
-    button.querySelector('span').textContent = state.expanded ? '收起血统' : '展开血统';
-    requestAnimationFrame(state.expanded ? layoutStage : syncEmbeddedHeight);
   });
 
   sheet.querySelectorAll('[data-sheet-close]').forEach(function (button) {

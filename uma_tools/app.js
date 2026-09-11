@@ -2631,21 +2631,17 @@ createApp({
     frame.dataset.pedigreeSample = root;
     frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-9">' +
+      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-15">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
       ';window.PEDIGREE_EMBEDDED=true;<\/script>' +
       '<script defer src="/data/character_index_data.js?v=20260904"><\/script>' +
-      '<script defer src="/data/pedigree_data.js?v=20260911-7"><\/script>' +
-      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-12"><\/script></head>' +
+      '<script defer src="/data/pedigree_data.js?v=20260911-8"><\/script>' +
+      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-20"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
-      '<section class="lab-workspace is-expanded" aria-labelledby="workspace-title">' +
-      '<div class="workspace-head"><div><h2 id="workspace-title">血统关系</h2>' +
-      '<p id="workspace-summary">正在载入关系数据…</p></div>' +
-      '<button type="button" class="collapse-button" data-action="toggle" aria-expanded="true" aria-controls="workspace-content">' +
-      '<span>收起血统</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>' +
-      '<div class="workspace-content" id="workspace-content"><div class="workspace-body">' +
+      '<section class="lab-workspace" aria-labelledby="workspace-title">' +
+      '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +
+      '<div class="workspace-content"><div class="workspace-body">' +
       '<div class="graph-viewport" id="graph-viewport" aria-label="血统关系图"><div class="graph-stage" id="graph-stage"></div></div>' +
-      '<aside class="relation-inspector" id="relation-inspector" aria-live="polite"></aside>' +
       '</div></div></section></main>' +
       '<div class="mobile-sheet" id="mobile-sheet" aria-hidden="true">' +
       '<button type="button" class="sheet-backdrop" data-sheet-close aria-label="关闭关系详情"></button>' +
