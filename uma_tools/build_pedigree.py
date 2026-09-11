@@ -260,6 +260,8 @@ def build_export(source, characters):
             node["pure"] = True
         if display.get("real_name"):
             node["real"] = display["real_name"]
+        if display.get("real_name_zh"):
+            node["real_zh"] = display["real_name_zh"]
         if display.get("real_name_en"):
             node["real_en"] = display["real_name_en"]
         if target.get("country"):

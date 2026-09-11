@@ -74,12 +74,13 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 python3 uma_tools/build_pedigree.py
 ```
 
-源数据记录父母、角色原型映射和核验来源；三代祖先、子孙、角色兄弟姐妹及相关配种对象由脚本统一推导
+源数据记录父母、角色原型映射、独立繁育记录和核验来源；三代祖先、两代内角色后代、角色兄弟姐妹及
+后代路径中的另一方亲本由脚本统一推导
 
-当前 517 条直接亲本记录均已完成来源核验：131 条来自 JBIS-Search，386 条来自 netkeiba 的具体赛马
-血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，netkeiba 记录同时保存
-source_url。179 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按
-原创角色或非赛马角色维护
+当前 1223 条直接亲本记录均已完成来源核验：22 条来自 JBIS-Search，1201 条来自 netkeiba 的具体
+赛马血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，节点同时保存可访问的具体
+资料页。179 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按原创
+角色或非赛马角色维护
 
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 
