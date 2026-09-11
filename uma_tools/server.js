@@ -143,6 +143,17 @@ function saveTransCache() {
   }
 }
 
+// 百度翻译会将部分日文词组判定为敏感词(error 20003, 如「育成シナリオ」)。
+// 处理方式:预先替换成已确认的中文对照词后重试;若仍失败,按标点分段逐个翻译,失败段保留原文。
+const SENSITIVE_REPLACE = [
+  { jp: '育成シナリオ', zh: '育成剧本' }
+];
+function sanitizeSensitive(text) {
+  let out = String(text || '');
+  SENSITIVE_REPLACE.forEach(function (r) { out = out.split(r.jp).join(r.zh); });
+  return out;
+}
+
 function translateOne(text, attempt) {
   return new Promise((resolve) => {
     const salt = String(Date.now() + Math.floor(Math.random() * 1000));
@@ -168,11 +179,49 @@ function translateOne(text, attempt) {
             }, 1200 * ((attempt || 0) + 1));
             return;
           }
+          if (code === '20003') {
+            // sensitive word hit: try pre-replacing known terms, else segment-by-segment
+            translateSensitiveSafe(text).then(resolve);
+            return;
+          }
           resolve('');
         } catch (e) { resolve(''); }
       });
     }).on('error', () => resolve(''))
       .setTimeout(20000, function () { this.destroy(); resolve(''); });
+  });
+}
+
+function translateSensitiveSafe(text) {
+  return new Promise((resolve) => {
+    const safe = sanitizeSensitive(text);
+    if (safe !== text) {
+      translateOne(safe, 0).then(resolve);
+      return;
+    }
+    // split on punctuation/space; translate each segment, keep failed ones as-is
+    const parts = String(text).split(/([「」『』」。、,，。！？\s])/).filter(function (s) { return s !== ''; });
+    const segs = [];
+    let cur = '';
+    parts.forEach(function (p) {
+      if (/^[「」『』」。、,，。！？\s]$/.test(p)) {
+        if (cur) { segs.push(cur); cur = ''; }
+        segs.push(p);
+      } else { cur += p; }
+    });
+    if (cur) segs.push(cur);
+    if (!segs.length) { resolve(String(text)); return; }
+    const out = [];
+    let done = 0;
+    segs.forEach(function (seg, i) {
+      if (!seg.trim()) { out[i] = seg; done++; if (done === segs.length) finish(); return; }
+      translateOne(seg, 0).then(function (zh) {
+        out[i] = (zh && zh !== seg) ? zh : seg;
+        done++;
+        if (done === segs.length) finish();
+      });
+    });
+    function finish() { resolve(out.join('')); }
   });
 }
 
@@ -232,6 +281,21 @@ function translateBatchLines(lines, cb) {
         if (code === '54003' || code === '54000') {
           // rate-limited: after a pause, caller retries by translating one by one
           return cb(null);
+        }
+        if (code === '20003') {
+          // a line in this batch hit a sensitive word; translate each line via
+          // the sensitive-safe path instead of dropping the whole chunk.
+          let n = 0;
+          const out = [];
+          const walk = function (i) {
+            if (i >= lines.length) return cb(out);
+            translateSensitiveSafe(lines[i]).then(function (zh) {
+              out[i] = (zh && zh !== lines[i]) ? zh : lines[i];
+              walk(i + 1);
+            });
+          };
+          walk(0);
+          return;
         }
         cb(lines);
       } catch (e) { cb(lines); }
@@ -492,7 +556,14 @@ function backfillNewsImages(list, cb) {
 
 function handleNewsIndex(res) {
   if (newsIndexCache.data && Date.now() - newsIndexCache.at < NEWS_TTL) {
-    sendJson(res, 200, newsIndexCache.data);
+    // Re-fill title_zh from transCache on every serve: background translations
+    // may have finished after this data was cached, so a 5-min-old response
+    // should still pick them up instead of showing stale Japanese titles.
+    const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
+    cached.information_list.forEach(function (n) {
+      if (transCache[n.title]) n.title_zh = transCache[n.title];
+    });
+    sendJson(res, 200, cached);
     return;
   }
   // First learn the total page count, then crawl from the last page down to page 1.
