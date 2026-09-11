@@ -1895,7 +1895,7 @@ createApp({
       const e = nextUpcomingEvent.value;
       if (!e) return;
       if (e.live) {
-        openLiveFromEvents(liveDetailHref(e.live), 'home');
+        openLiveFromEvents(e.live, 'home');
         return;
       }
       loadEvents().then(function () {
