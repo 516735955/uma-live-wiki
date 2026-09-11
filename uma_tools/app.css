@@ -2049,11 +2049,7 @@
         #tab-characters .c-sbook > * { position: relative; z-index: 1; }
         #tab-characters .c-sbook:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(32,40,59,.28); border-color: #ff8c1a; }
         /* ---- character detail (moegirl intro block) ---- */
-        #tab-characters .cio-detail { max-width: 760px; margin: 0 auto; }
-        #tab-characters .cio-detail.has-pedigree-lens { max-width: 1400px; }
-        #tab-characters .has-pedigree-lens > .cio-detail-top,
-        #tab-characters .has-pedigree-lens > .c-detail-block,
-        #tab-characters .has-pedigree-lens > .cio-detail-foot { width: min(760px, 100%); margin-right: auto; margin-left: auto; }
+        #tab-characters .cio-detail { max-width: 1180px; margin: 0 auto; }
         #tab-characters .cio-detail-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
         #tab-characters .cio-back {
             flex-shrink: 0; border: 1px solid #e6e4ee; background: #fff; color: #2c3650;
@@ -2062,7 +2058,6 @@
         }
         #tab-characters .cio-back:hover { background: #f5f4f9; }
         #tab-characters .cio-detail-title { margin: 0; font-size: 20px; font-weight: 700; color: #20283b; }
-        #tab-characters .cio-detail-sub { margin: 2px 0 0; color: #a99cbf; font-size: 12px; }
         #tab-characters .cio-detail-hero { display: flex; gap: 16px; align-items: flex-start; background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 14px; box-shadow: 0 6px 18px rgba(32,40,59,.12); }
         #tab-characters .cio-detail-portrait { width: 130px; height: 184px; object-fit: cover; object-position: top center; border-radius: 10px; flex: none; background: #f0eef6; }
         #tab-characters .cio-detail-meta { padding-top: 6px; }
@@ -2075,12 +2070,12 @@
             background: #fff; box-shadow: 0 8px 24px rgba(32,40,59,.16);
         }
         #tab-characters .umamusume-intro .uma-img {
-            border-right: 4px dashed; width: 38%; display: flex; align-items: flex-end; justify-content: center;
+            border-right: 4px dashed; width: min(38%, 390px); flex: 0 0 min(38%, 390px); display: flex; align-items: flex-end; justify-content: center;
             padding: 6px 0 0;
         }
         #tab-characters .umamusume-intro .uma-img p { margin: 0; line-height: 0; width: 100%; }
         #tab-characters .umamusume-intro .uma-img img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
-        #tab-characters .umamusume-intro .uma-detail { width: 62%; text-align: center; padding: 14px 10px; }
+        #tab-characters .umamusume-intro .uma-detail { min-width: 0; flex: 1 1 0; text-align: center; padding: 14px 18px; }
         #tab-characters .umamusume-intro .uma-basic .uma-name { font-size: 26px; font-weight: 700; line-height: 1.3; }
         #tab-characters .umamusume-intro .uma-basic .uma-name p, #tab-characters .umamusume-intro .uma-cv p, #tab-characters .umamusume-intro .uma-real p { margin: 0; }
         #tab-characters .umamusume-intro .uma-cv { font-size: 18px; font-weight: 700; margin-top: 2px; }
@@ -2096,10 +2091,10 @@
         #tab-characters .umamusume-intro .uma-info-table td { padding: 2px 4px; }
         #tab-characters .umamusume-intro .uma-description { margin: 10px; border-top: 3px dashed; padding-top: 10px; text-align: left; }
         #tab-characters .umamusume-intro .uma-description p { text-indent: 2em; margin: 0 0 8px; line-height: 1.7; font-size: 14px; }
-        #tab-characters .cio-detail-foot { margin-top: 16px; padding: 12px 14px; background: #fbfafd; border: 1px solid #e6e4ee; border-radius: 10px; color: #6b6f7a; font-size: 12px; line-height: 1.8; }
+        #tab-characters .cio-detail-foot { margin-top: 12px; color: #77798a; font-size: 11px; text-align: right; }
         #tab-characters .cio-detail-foot a { color: #ff8c1a; }
         #tab-characters .c-pedigree-lens {
-            margin-top: 22px; overflow: hidden; border: 1px solid #dfe1ea; border-radius: 18px;
+            margin-top: 18px; overflow: hidden; border: 1px solid #dfe1ea; border-radius: 14px;
             background: #f7f8fc; box-shadow: 0 10px 28px rgba(24,33,64,.09);
         }
         #tab-characters .c-pedigree-lens-frame {
@@ -2108,7 +2103,7 @@
         @media screen and (max-width: 700px) {
             #tab-characters .c-sbooks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             #tab-characters .c-sbook { padding: 18px 10px; }
-            #tab-characters .umamusume-intro .uma-img { border-right: none; border-bottom: 4px dashed; width: 100%; display: block; }
+            #tab-characters .umamusume-intro .uma-img { border-right: none; border-bottom: 4px dashed; width: 100%; max-width: none; flex-basis: 100%; display: block; }
             #tab-characters .umamusume-intro .uma-detail { width: 100%; }
             #tab-characters .c-pedigree-lens { border-radius: 12px; }
             #tab-characters .c-pedigree-lens-frame { height: 690px; }
@@ -2125,6 +2120,12 @@
         #tab-characters .c-blood-pure-note {
             margin: 0; padding: 14px 16px; color: #7c7a8a; font-size: 13px; line-height: 1.7;
         }
+        #tab-characters .c-blood-retry {
+            min-height: 40px; margin: 0 16px 16px; padding: 0 14px; cursor: pointer;
+            color: #23418f; border: 1px solid #cad4f2; border-radius: 9px; background: #f3f6ff;
+            font: 700 12px/1 "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+        #tab-characters .c-blood-retry:hover { border-color: #3159d9; background: #e8eeff; }
 
         /* ===== SITE FOOTER ===== */
         .home-layout + .site-footer { margin-top: 0; }

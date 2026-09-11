@@ -701,7 +701,6 @@
                             <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : '← 返回角色列表' }}</button>
                             <div>
                                 <h3 class="cio-detail-title">{{ charDetail.zh }}</h3>
-                                <p class="cio-detail-sub">资料摘自萌娘百科 · {{ charDetail.ja }}</p>
                             </div>
                         </div>
                         <div class="cio-detail-hero" v-if="charDetail.img && !charHasIntro">
@@ -718,8 +717,7 @@
                         <div class="c-detail-block" id="cDetailBlock"></div>
                         <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <div class="cio-detail-foot">
-                            <p>阅读更多：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科（移动版）</a></p>
-                            <p>本文引自萌娘百科（zh.moegirl.org.cn / mobile.moegirl.org.cn），文字内容默认使用《知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆》（CC BY-NC-SA 3.0 CN）协议。</p>
+                            角色资料：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科</a>（CC BY-NC-SA 3.0 CN）
                         </div>
                     </div>
                 </section>

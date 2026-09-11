@@ -24,7 +24,6 @@ uma-live-wiki/                    仓库根目录
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
 ├── role_svgs/                     单角色血统 SVG 历史资源
 ├── pedigree_assets/               血统图静态历史资源
-├── pedigree-lab.html              角色页血统关系组件的开发预览页
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
 │   ├── app.js                    SPA 逻辑
@@ -75,8 +74,8 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 python3 uma_tools/build_pedigree.py
 ```
 
-源数据记录父母、角色原型映射、独立繁育记录和核验来源；三代祖先、两代内角色后代、角色兄弟姐妹及
-后代路径中的另一方亲本由脚本统一推导
+源数据记录父母、角色原型映射、繁育年份、繁育结果和核验来源；三代祖先、两代内角色后代、角色兄弟姐妹及
+后代路径中的另一方亲本由脚本统一推导。
 
 当前 1223 条直接亲本记录均已完成来源核验：22 条来自 JBIS-Search，1201 条来自 netkeiba 的具体
 赛马血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，节点同时保存可访问的具体
@@ -84,7 +83,8 @@ python3 uma_tools/build_pedigree.py
 角色或非赛马角色维护
 
 160 个现实赛马角色页统一嵌入交互血统组件，默认展示三代祖先、已有角色页的同辈与两代内后代，
-并展示有角色页的繁育关联。角色详情页是血统关系的用户入口；开发预览页用于独立调试组件。
+并展示有角色页的繁育关联。43 匹角色母马均已完成繁育履历核验，当前收录 70 对角色马之间的关系、
+88 条逐年记录，其中 22 条为未产驹记录。角色详情页是血统关系的唯一用户入口。
 
 原型马解说视频格式（`window.UMA_VIDEOS`，当前 160 个角色）：
 

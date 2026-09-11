@@ -2379,26 +2379,25 @@ createApp({
         }
       }
       var vids = UMA_VIDEOS[detail.id];
-    if (vids && vids.length) {
-      var intro = box.querySelector('.umamusume-intro');
-      if (intro) {
-        var vEl = document.createElement('div');
-        vEl.className = 'uma-videos';
-        var btns = '';
-        for (var vi = 0; vi < vids.length; vi++) {
-          if (vids[vi].bv || vids[vi].url) {
-            var vhref = vids[vi].url || ('https://www.bilibili.com/video/' + vids[vi].bv + '/');
-            btns += '<a class="uma-video-btn" href="' + vhref + '" target="_blank" rel="noopener">' + vids[vi].n + '</a>';
-          } else {
-            btns += '<span class="uma-video-btn uma-video-none">' + vids[vi].n + '</span>';
+      if (vids && vids.length) {
+        var intro = box.querySelector('.umamusume-intro');
+        if (intro) {
+          var vEl = document.createElement('div');
+          vEl.className = 'uma-videos';
+          var btns = '';
+          for (var vi = 0; vi < vids.length; vi++) {
+            if (vids[vi].bv || vids[vi].url) {
+              var vhref = vids[vi].url || ('https://www.bilibili.com/video/' + vids[vi].bv + '/');
+              btns += '<a class="uma-video-btn" href="' + vhref + '" target="_blank" rel="noopener">' + vids[vi].n + '</a>';
+            } else {
+              btns += '<span class="uma-video-btn uma-video-none">' + vids[vi].n + '</span>';
+            }
           }
+          vEl.innerHTML = '<div class="uma-videos-label">原型马解说</div><div class="uma-videos-btns">' + btns + '</div>';
+          intro.appendChild(vEl);
         }
-        vEl.innerHTML = '<div class="uma-videos-label">原型马解说</div><div class="uma-videos-btns">' + btns + '</div>';
-        intro.appendChild(vEl);
       }
     }
-    fill();
-  }
     fill();
   }
 
@@ -2406,11 +2405,12 @@ createApp({
   var relByCid = {};
   var relSource = null;
   window.addEventListener('message', function (event) {
-    if (event.origin !== window.location.origin || !event.data || event.data.type !== 'uma-pedigree-height') return;
+    if (!event.data || event.data.type !== 'uma-pedigree-height') return;
     var frames = document.querySelectorAll('.c-pedigree-lens-frame');
     frames.forEach(function (frame) {
+      if (frame.contentWindow !== event.source) return;
       if (frame.dataset.pedigreeSample !== event.data.sample) return;
-      var height = Math.max(76, Math.min(1600, Number(event.data.height) || 0));
+      var height = Math.max(76, Math.min(3200, Number(event.data.height) || 0));
       if (height) frame.style.height = height + 'px';
     });
   });
@@ -2420,7 +2420,6 @@ createApp({
     PED_REL.forEach(function (n) { relByCid[n.cid] = n; });
     relSource = PED_REL;
   }
-  var NON_UMA = { otonashietsuko:1, kiryuinaoi:1, anshinzawasasami:1, kashimotoriko:1, satakemei:1, tsurugiryoka:1, hoshinakiyoko:1, akasakamisato:1, hosoejunko:1, spica_trainer:1, narita_trainer:1, teppen_commentator_honizumi:1, teppen_commentator_yamamoto:1 };
   var UMA_VIDEOS = {
   "sakurabakushino": [{"n":"短途领域的爆进之王","bv":"BV12K4y1N78N"}],
   "haruurara": [{"n":"百战百败努力家，不胜传说乌拉拉","bv":"BV1xp4y1t7VS"}],
@@ -2593,10 +2592,11 @@ createApp({
     if (detailRoot) detailRoot.classList.remove('has-pedigree-lens');
     refreshRelIndex();
 
+    var relation = relByCid[root];
     var message = '';
-    if (NON_UMA[root]) {
+    if (relation && relation.mapping_kind === 'non_uma') {
       message = '该角色非赛马娘，无现实原型，不提供血缘关系图。';
-    } else if (relByCid[root] && relByCid[root].pure) {
+    } else if (relation && (relation.mapping_kind === 'original' || relation.pure)) {
       message = '该角色为纯原创赛马娘，无现实原型，不提供血缘关系图。';
     }
     if (message) {
@@ -2608,19 +2608,53 @@ createApp({
       return;
     }
 
-    var relation = relByCid[root];
-    if (!relation) return;
+    if (!relation) {
+      var missing = document.createElement('section');
+      missing.className = 'c-blood c-blood-pure';
+      missing.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
+        '<p class="c-blood-pure-note">血统数据载入失败。</p>' +
+        '<button type="button" class="c-blood-retry">重新载入</button>';
+      missing.querySelector('.c-blood-retry').addEventListener('click', function () {
+        window.location.reload();
+      });
+      box.appendChild(missing);
+      return;
+    }
     if (detailRoot) detailRoot.classList.add('has-pedigree-lens');
 
     var lens = document.createElement('section');
     lens.className = 'c-pedigree-lens';
     var frame = document.createElement('iframe');
     var displayName = relation.zh || root;
+    var sampleId = String(root).replace(/[^a-z0-9_]/gi, '');
     frame.className = 'c-pedigree-lens-frame';
     frame.dataset.pedigreeSample = root;
-    frame.src = '/pedigree-lab.html?embed=1&sample=' + encodeURIComponent(root) + '&v=20260911-10';
+    frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-8">' +
+      '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
+      ';window.PEDIGREE_EMBEDDED=true;<\/script>' +
+      '<script defer src="/data/character_index_data.js?v=20260904"><\/script>' +
+      '<script defer src="/data/pedigree_data.js?v=20260911-7"><\/script>' +
+      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-11"><\/script></head>' +
+      '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
+      '<section class="lab-workspace is-expanded" aria-labelledby="workspace-title">' +
+      '<div class="workspace-head"><div><h2 id="workspace-title">血统关系</h2>' +
+      '<p id="workspace-summary">正在载入关系数据…</p></div>' +
+      '<button type="button" class="collapse-button" data-action="toggle" aria-expanded="true" aria-controls="workspace-content">' +
+      '<span>收起血统</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>' +
+      '<div class="workspace-content" id="workspace-content"><div class="workspace-body">' +
+      '<div class="graph-viewport" id="graph-viewport" aria-label="血统关系图"><div class="graph-stage" id="graph-stage"></div></div>' +
+      '<aside class="relation-inspector" id="relation-inspector" aria-live="polite"></aside>' +
+      '</div></div></section></main>' +
+      '<div class="mobile-sheet" id="mobile-sheet" aria-hidden="true">' +
+      '<button type="button" class="sheet-backdrop" data-sheet-close aria-label="关闭关系详情"></button>' +
+      '<section class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">' +
+      '<div class="sheet-grip"></div><button type="button" class="sheet-close" data-sheet-close aria-label="关闭">' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
+      '<div id="sheet-content"></div></section></div></body></html>';
     frame.title = displayName + '的血统关系';
-    frame.loading = 'eager';
+    frame.loading = 'lazy';
     lens.appendChild(frame);
     box.appendChild(lens);
   }

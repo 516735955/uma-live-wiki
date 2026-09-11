@@ -2,14 +2,15 @@
   'use strict';
 
   var query = new URLSearchParams(window.location.search);
-  var requestedSample = query.get('sample');
-  var embedded = query.has('embed');
+  var requestedSample = query.get('sample') || window.PEDIGREE_SAMPLE;
+  var embedded = query.has('embed') || Boolean(window.PEDIGREE_EMBEDDED);
   var state = {
     sample: requestedSample || 'staygold',
     expanded: true,
     lockedItem: null,
     lockedKey: '',
-    resizeTimer: null
+    resizeTimer: null,
+    returnFocus: null
   };
   var byId = {};
   var charById = {};
@@ -63,6 +64,18 @@
     return '查看赛马资料来源';
   }
 
+  function safeColor(value, fallback) {
+    return /^#[0-9a-f]{6}$/i.test(String(value || '')) ? value : fallback;
+  }
+
+  function contrastColor(value) {
+    var color = safeColor(value, '#3159d9').slice(1);
+    var red = parseInt(color.slice(0, 2), 16);
+    var green = parseInt(color.slice(2, 4), 16);
+    var blue = parseInt(color.slice(4, 6), 16);
+    return (red * 299 + green * 587 + blue * 114) / 1000 > 164 ? '#20283b' : '#ffffff';
+  }
+
   function getNode(id, rootId) {
     var rootNode = byId[rootId];
     var lookupId = rootNode && id === rootNode.horse_id ? rootId : id;
@@ -91,6 +104,9 @@
       born: horseNode.born || node.born || '',
       country: horseNode.country || node.country || '',
       avatar: avatarUrl((character && character.img) || node.av || horseNode.av),
+      roleColor: safeColor(character && character.main, '#3159d9'),
+      roleSubColor: safeColor(character && character.sub, '#23418f'),
+      roleInk: contrastColor(character && character.main),
       sourceUrl: sourceUrl,
       sourceName: sourceLabel(sourceUrl),
       parents: horseNode.parents || node.parents || {}
@@ -157,7 +173,8 @@
       item.tag = siblingLabel(relation.relation);
       item.relationKind = relation.relation;
       item.sharedParents = relation.shared_parents || [];
-      item.pathFocusIds = [rootId, item.id].concat(ancestors.filter(function (ancestor) {
+      item.focusId = 'sibling:' + item.id;
+      item.pathFocusIds = ['root:' + rootId, item.focusId].concat(ancestors.filter(function (ancestor) {
         return item.sharedParents.indexOf(ancestor.id) !== -1;
       }).map(function (ancestor) { return ancestor.focusId; }));
       return item;
@@ -171,6 +188,7 @@
       item.group = 'descendant';
       item.tag = relation.generation === 1 ? '子代' : '孙代';
       item.generation = relation.generation;
+      item.focusId = 'descendant:' + relation.generation + ':' + item.id;
       item.path = (relation.path || []).slice();
       item.links = relation.links || [];
       item.pathPartners = item.links.map(function (link) { return link.partner; }).filter(Boolean);
@@ -182,21 +200,23 @@
     var breeding = (rootNode.breeding_partners || []).map(function (relation) {
       var item = getNode(relation.horse_id, rootId);
       item.group = 'breeding';
-      item.tag = '繁育关联';
-      item.years = relation.years || [];
+      item.tag = '繁育';
+      item.records = relation.records || [];
+      item.focusId = 'breeding:' + item.id;
       item.sourceUrl = relation.source_url || item.sourceUrl;
       item.sourceName = sourceLabel(item.sourceUrl);
       item.path = [rootId, item.id];
       return item;
     }).sort(function (a, b) {
-      var aYear = a.years[0] || 9999;
-      var bYear = b.years[0] || 9999;
+      var aYear = a.records.length ? a.records[0].year : 9999;
+      var bYear = b.records.length ? b.records[0].year : 9999;
       return aYear - bYear || compareBornName(a, b);
     });
 
     var root = getNode(rootId, rootId);
     root.group = 'root';
     root.tag = '当前角色';
+    root.focusId = 'root:' + rootId;
     return {
       root: root,
       rootNode: rootNode,
@@ -215,10 +235,12 @@
   function detailHtml(item, headingId, locked) {
     var groupNames = {
       root: '当前角色', ancestor: '先代血统', sibling: '同辈角色',
-      descendant: '后代角色', partner: '另一方亲本', breeding: '繁育关联'
+      descendant: '后代角色', partner: '另一方亲本', breeding: '繁育记录'
     };
     var detailClass = item.role ? 'is-role-detail' : 'is-horse-detail';
-    var html = '<div class="inspector-card ' + detailClass + '">';
+    var style = item.role ? ' style="--role-color:' + escapeHtml(item.roleColor) +
+      ';--role-sub-color:' + escapeHtml(item.roleSubColor) + ';--role-ink:' + escapeHtml(item.roleInk) + '"' : '';
+    var html = '<div class="inspector-card ' + detailClass + '"' + style + '>';
     html += '<div class="inspector-heading">';
     if (item.role && item.avatar) html += '<img class="inspector-avatar" src="' + escapeHtml(item.avatar) + '" alt="">';
     html += '<div class="inspector-identity"><span class="inspector-type ' + escapeHtml(item.group) + '">' +
@@ -246,7 +268,16 @@
         return nameOf(id, currentModel.root.lookupId);
       }).join('、'));
     }
-    if (item.years && item.years.length) html += factRow('记录年份', item.years.join('、') + '年');
+    if (item.records && item.records.length) {
+      html += factRow('繁育记录', item.records.length + '次');
+      html += '<div class="breeding-history"><dt>逐年结果</dt><dd>';
+      item.records.forEach(function (record) {
+        var outcome = record.outcome === 'no_foal' ? '未产驹' : '有产驹';
+        html += '<span class="breeding-event ' + escapeHtml(record.outcome) + '">' +
+          escapeHtml(record.year + '年·' + outcome) + '</span>';
+      });
+      html += '</dd></div>';
+    }
     html += '</dl>';
     html += '<div class="inspector-actions">';
     if (locked) {
@@ -275,6 +306,10 @@
       sheetContent.innerHTML = detailHtml(item, 'sheet-title', false);
       sheet.classList.add('is-open');
       sheet.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(function () {
+        var close = sheet.querySelector('.sheet-close');
+        if (close) close.focus();
+      });
     }
   }
 
@@ -285,7 +320,7 @@
     });
   }
 
-  function pinDetail(item, mobile, selectionKey) {
+  function pinDetail(item, mobile, selectionKey, trigger) {
     if (state.lockedItem && state.lockedKey === selectionKey) {
       clearPin();
       return;
@@ -293,19 +328,25 @@
     item.selectionKey = selectionKey;
     state.lockedItem = item;
     state.lockedKey = selectionKey;
+    state.returnFocus = trigger || document.activeElement;
     renderDetail(item, mobile);
     syncPinnedSelection();
   }
 
   function closeSheet() {
+    var wasOpen = sheet.classList.contains('is-open');
     sheet.classList.remove('is-open');
     sheet.setAttribute('aria-hidden', 'true');
+    if (wasOpen && state.returnFocus && document.contains(state.returnFocus)) {
+      state.returnFocus.focus();
+    }
   }
 
   function clearPin() {
     state.lockedItem = null;
     state.lockedKey = '';
     closeSheet();
+    state.returnFocus = null;
     syncPinnedSelection();
     clearHoverPath();
   }
@@ -334,7 +375,7 @@
   function setHoverPath(item) {
     var ids = highlightIds(item);
     var visualIds = item.pathFocusIds || ids;
-    var focusId = item.focusId || item.id;
+    var focusId = item.focusId || (item.group + ':' + item.id);
     stage.classList.add('has-hover-path');
     stage.querySelectorAll('[data-node-id]').forEach(function (element) {
       element.classList.toggle('is-path-node', visualIds.indexOf(element.dataset.focusId) !== -1);
@@ -362,7 +403,7 @@
     element.addEventListener('blur', clearHoverPath);
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      pinDetail(item, isCoarsePointer(), selectionKey);
+      pinDetail(item, isCoarsePointer(), selectionKey, element);
     });
   }
 
@@ -371,8 +412,10 @@
     var element = document.createElement('button');
     var isRoot = Boolean(options.root);
     var isAncestor = item.group === 'ancestor';
-    var width = isRoot ? 182 : (isAncestor ? (item.role ? 142 : 124) : (item.role ? 152 : 128));
-    var height = isRoot ? 70 : (item.role ? 60 : 44);
+    var isBreeding = item.group === 'breeding' && item.records && item.records.length;
+    var width = isRoot ? 182 : (isAncestor ? (item.role ? 142 : 124) :
+      (isBreeding ? 176 : (item.role ? 152 : 128)));
+    var height = isRoot ? 70 : (isBreeding ? 78 : (item.role ? 60 : 44));
     element.className = 'ped-node' + (isRoot ? ' is-root' : '') +
       (isAncestor ? ' is-ancestor-node' : '') + (item.role ? ' is-role' : ' is-horse');
     element.dataset.group = item.group;
@@ -407,6 +450,17 @@
     var copy = document.createElement('span');
     copy.className = 'ped-copy';
     copy.innerHTML = '<span class="ped-name">' + escapeHtml(item.name) + '</span>';
+    if (isBreeding) {
+      var history = document.createElement('span');
+      history.className = 'ped-breeding-history';
+      item.records.forEach(function (record) {
+        var event = document.createElement('span');
+        event.className = 'ped-breeding-event ' + record.outcome;
+        event.textContent = record.year + (record.outcome === 'no_foal' ? '未产驹' : '有产驹');
+        history.appendChild(event);
+      });
+      copy.appendChild(history);
+    }
     element.appendChild(copy);
     bindInteractive(element, item);
     stage.appendChild(element);
@@ -430,30 +484,6 @@
     svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
     stage.appendChild(svg);
     return svg;
-  }
-
-  function addEdge(svg, from, to, group, options) {
-    if (!from || !to) return;
-    options = options || {};
-    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    var sx = from.x + (options.fromDx || 0);
-    var sy = from.y + (options.fromDy == null ? from.height / 2 : options.fromDy);
-    var tx = to.x + (options.toDx || 0);
-    var ty = to.y + (options.toDy == null ? -to.height / 2 : options.toDy);
-    var d;
-    if (options.horizontal) {
-      var mx = (sx + tx) / 2;
-      d = 'M' + sx + ',' + sy + ' C' + mx + ',' + sy + ' ' + mx + ',' + ty + ' ' + tx + ',' + ty;
-    } else {
-      var my = (sy + ty) / 2;
-      d = 'M' + sx + ',' + sy + ' C' + sx + ',' + my + ' ' + tx + ',' + my + ' ' + tx + ',' + ty;
-    }
-    path.setAttribute('d', d);
-    path.setAttribute('class', 'relation-edge ' + group);
-    path.dataset.relationIds = (options.relationIds || [from.item && from.item.id, to.item && to.item.id])
-      .filter(Boolean).join('|');
-    svg.appendChild(path);
-    return path;
   }
 
   function addPath(svg, d, group, relationIds) {
@@ -504,12 +534,6 @@
     svg.appendChild(path);
   }
 
-  function addFocusCurve(svg, from, to, group, focusIds, options) {
-    options = options || {};
-    var base = addEdge(svg, from, to, group + ' relation-focus-edge', options);
-    base.dataset.focusIds = (focusIds || []).filter(Boolean).join('|');
-  }
-
   function addPartnerChip(item, x, y) {
     var chip = document.createElement('button');
     var parentRole = item.parentRole || '';
@@ -544,6 +568,7 @@
         var firstItem = path.length === 2 ? descendant : getNode(firstId, model.root.lookupId);
         firstItem.group = 'descendant';
         firstItem.tag = '子代';
+        firstItem.focusId = 'descendant:1:' + firstId;
         firstItem.path = path.length === 2 ? path.slice() : [model.root.id, firstId];
         firstMap[firstId] = { id: firstId, item: firstItem, terminals: [], partner: null };
       }
@@ -552,6 +577,7 @@
       if (firstLink && firstLink.partner && !firstMap[firstId].partner) {
         var partner = getNode(firstLink.partner, model.root.lookupId);
         partner.group = 'partner';
+        partner.focusId = 'partner:' + partner.id;
         partner.parentRole = firstLink.role === 'dam' ? 'sire' : 'dam';
         partner.tag = partner.parentRole === 'sire' ? '父' : '母';
         partner.via = [firstId];
@@ -602,67 +628,60 @@
     return groups;
   }
 
-  function descendantRows(groups, columns) {
+  function packFamilies(groups, availableWidth) {
     var rows = [];
-    for (var index = 0; index < groups.length; index += columns) {
-      var rowGroups = groups.slice(index, index + columns);
-      var hasGrandchildren = rowGroups.some(function (group) {
-        return group.entries.some(function (entry) { return entry.terminals.length > 0; });
+    var gap = 16;
+    var row = { groups: [], width: 0, height: 0 };
+    groups.forEach(function (group) {
+      var widestLevel = group.entries.length;
+      group.entries.forEach(function (entry) {
+        widestLevel = Math.max(widestLevel, entry.terminals.length);
       });
-      rows.push({ groups: rowGroups, height: hasGrandchildren ? 306 : 200 });
-    }
+      group.layoutWidth = Math.min(availableWidth, Math.max(172, widestLevel * 158));
+      var needed = group.layoutWidth + (row.groups.length ? gap : 0);
+      if (row.groups.length && row.width + needed > availableWidth) {
+        rows.push(row);
+        row = { groups: [], width: 0, height: 0 };
+        needed = group.layoutWidth;
+      }
+      row.groups.push(group);
+      row.width += needed;
+      row.height = Math.max(row.height, group.entries.some(function (entry) {
+        return entry.terminals.length > 0;
+      }) ? 202 : 130);
+    });
+    if (row.groups.length) rows.push(row);
     return rows;
   }
 
-  function descendantSpinePosition(rows, areaLeft, laneWidth, columns, rootX) {
-    var occupied = [];
-    rows.forEach(function (row) {
-      var rowStart = areaLeft + (columns - row.groups.length) * laneWidth / 2;
-      row.groups.forEach(function (group, groupIndex) {
-        var groupX = rowStart + laneWidth * (groupIndex + .5);
-        occupied.push([groupX - 82, groupX + 82]);
-        spread(group.entries.length, groupX, 164).forEach(function (childX, entryIndex) {
-          occupied.push([childX - 82, childX + 82]);
-          spread(group.entries[entryIndex].terminals.length, childX, 158).forEach(function (terminalX) {
-            occupied.push([terminalX - 82, terminalX + 82]);
-          });
-        });
-      });
-    });
-    var left = 380;
-    var right = rootX - 28;
-    var ranges = occupied.map(function (range) {
-      return [Math.max(left, range[0]), Math.min(right, range[1])];
-    }).filter(function (range) { return range[0] < range[1]; }).sort(function (a, b) {
-      return a[0] - b[0];
-    });
-    var merged = [];
-    ranges.forEach(function (range) {
-      var last = merged[merged.length - 1];
-      if (!last || range[0] > last[1]) merged.push(range.slice());
-      else last[1] = Math.max(last[1], range[1]);
-    });
-    var gaps = [];
-    var cursor = left;
-    merged.forEach(function (range) {
-      if (range[0] > cursor) gaps.push([cursor, range[0]]);
-      cursor = Math.max(cursor, range[1]);
-    });
-    if (cursor < right) gaps.push([cursor, right]);
-    if (!gaps.length) return left - 24;
-    gaps.sort(function (a, b) {
-      var widthDifference = (b[1] - b[0]) - (a[1] - a[0]);
-      if (widthDifference) return widthDifference;
-      return Math.abs(rootX - b[1]) - Math.abs(rootX - a[1]);
-    });
-    return (gaps[0][0] + gaps[0][1]) / 2;
+  function pairPath(from, to) {
+    var startY = from.y + from.height / 2;
+    var endY = to.y - to.height / 2;
+    var middleY = (startY + endY) / 2;
+    return [
+      { x: from.x, y: startY },
+      { x: from.x, y: middleY },
+      { x: to.x, y: middleY },
+      { x: to.x, y: endY }
+    ];
   }
 
   function renderLens(model) {
+    var width = 1180;
+    var edgePadding = 38;
+    var contentWidth = width - edgePadding * 2;
+    var rootX = width / 2;
+    var hasAncestors = model.ancestors.length > 0;
+    var rootY = hasAncestors ? 326 : 88;
+    var cursorY = rootY + 118;
+    var positions = {};
     var structure = descendantStructure(model);
     var descendantFamilies = descendantGroups(structure, model.root.id);
     var siblingGroups = [];
     var siblingMap = {};
+    var siblingColumns = Math.max(1, Math.floor(contentWidth / 168));
+
+    model.root.pathFocusIds = [model.root.focusId];
     model.siblings.forEach(function (item) {
       var key = item.relationKind + ':' + (item.sharedParents || []).join(',');
       if (!siblingMap[key]) {
@@ -676,31 +695,23 @@
       }
       siblingMap[key].items.push(item);
     });
-    siblingGroups.forEach(function (group) {
-      var groupIds = [model.root.id].concat(group.items[0].sharedParents || []);
-      group.items.forEach(function (item) { groupIds.push(item.id); });
-      group.ids = groupIds;
-      group.itemIds = group.items.map(function (item) { return item.id; });
-    });
 
-    var hasSiblings = siblingGroups.length > 0;
-    var descendantColumns = hasSiblings ? 2 : Math.min(3, Math.max(1, descendantFamilies.length));
-    var familyRows = descendantRows(descendantFamilies, descendantColumns);
-    var siblingHeight = 0;
     siblingGroups.forEach(function (group) {
-      siblingHeight += 60 + Math.ceil(group.items.length / 3) * 78;
+      cursorY += 48 + Math.ceil(group.items.length / siblingColumns) * 74;
     });
-    var familyHeight = familyRows.reduce(function (total, row) { return total + row.height; }, 0);
-    var breedingHeight = model.breeding.length ? 126 : 0;
-    var lowerHeight = Math.max(siblingHeight, familyHeight + breedingHeight);
-    var width = 1320;
-    var height = Math.max(790, 505 + lowerHeight);
-    var rootX = 660;
-    var rootY = 405;
+    var familyRows = packFamilies(descendantFamilies, contentWidth);
+    if (familyRows.length) {
+      cursorY += 20;
+      familyRows.forEach(function (row) { cursorY += row.height; });
+    }
+    if (model.breeding.length) {
+      cursorY += 56 + Math.ceil(model.breeding.length / siblingColumns) * 102;
+    }
+    var height = Math.max(rootY + 92, cursorY + 34);
+
     stage.style.width = width + 'px';
     stage.style.height = height + 'px';
     var svg = createSvg(width, height);
-    var positions = {};
 
     var orbit = document.createElement('div');
     orbit.className = 'root-orbit';
@@ -708,207 +719,210 @@
     orbit.style.top = (rootY - 91) + 'px';
     stage.appendChild(orbit);
 
-    for (var generation = 2; generation >= 0; generation--) {
-      var row = model.ancestors.filter(function (item) { return item.generation === generation + 1; });
-      var spacing = generation === 2 ? 156 : (generation === 1 ? 210 : 310);
-      var xs = spread(row.length, rootX, spacing);
-      var y = 58 + (2 - generation) * 104;
-      row.forEach(function (item, index) {
-        positions['a' + generation + '_' + item.index] = createNode(item, xs[index], y);
+    if (hasAncestors) {
+      var ancestorYs = { 3: 50, 2: 136, 1: 222 };
+      [3, 2, 1].forEach(function (generation) {
+        var row = model.ancestors.filter(function (item) { return item.generation === generation; });
+        var spacing = row.length > 1 ? (width - 142) / (row.length - 1) : 0;
+        var xs = spread(row.length, rootX, spacing);
+        row.forEach(function (item, index) {
+          positions['a' + (generation - 1) + '_' + item.index] = createNode(
+            item, xs[index], ancestorYs[generation]
+          );
+        });
       });
     }
     positions.root = createNode(model.root, rootX, rootY, { root: true, hideTag: true });
+
     [0, 1].forEach(function (index) {
       var parent = positions['a0_' + index];
-      if (parent) {
-        var parentFocusIds = model.ancestors.filter(function (item) {
-          return Math.floor(item.index / Math.pow(2, item.generation - 1)) === index;
-        }).map(function (item) { return item.focusId; });
-        addEdge(svg, parent, positions.root, 'ancestor', {
-          relationIds: [parent.item.id, model.root.id]
-        });
-        addFocusCurve(svg, parent, positions.root, 'ancestor', parentFocusIds);
-      }
+      if (!parent) return;
+      var focusIds = model.ancestors.filter(function (item) {
+        return Math.floor(item.index / Math.pow(2, item.generation - 1)) === index;
+      }).map(function (item) { return item.focusId; });
+      var points = pairPath(parent, positions.root);
+      addRoundedPath(svg, points, 'ancestor', [parent.item.id, model.root.id], 14);
+      addFocusPath(svg, points, 'ancestor', focusIds, 14);
     });
     [0, 1, 2, 3].forEach(function (index) {
       var ancestor = positions['a1_' + index];
       var child = positions['a0_' + Math.floor(index / 2)];
-      if (ancestor && child) {
-        var ancestorFocusIds = model.ancestors.filter(function (item) {
-          return item.generation >= 2 &&
-            Math.floor(item.index / Math.pow(2, item.generation - 2)) === index;
-        }).map(function (item) { return item.focusId; });
-        addEdge(svg, ancestor, child, 'ancestor', {
-          relationIds: [ancestor.item.id, child.item.id]
-        });
-        addFocusCurve(svg, ancestor, child, 'ancestor', ancestorFocusIds);
-      }
+      if (!ancestor || !child) return;
+      var focusIds = model.ancestors.filter(function (item) {
+        return item.generation >= 2 &&
+          Math.floor(item.index / Math.pow(2, item.generation - 2)) === index;
+      }).map(function (item) { return item.focusId; });
+      var points = pairPath(ancestor, child);
+      addRoundedPath(svg, points, 'ancestor', [ancestor.item.id, child.item.id], 14);
+      addFocusPath(svg, points, 'ancestor', focusIds, 14);
     });
-    for (var ai = 0; ai < 8; ai++) {
-      var oldest = positions['a2_' + ai];
-      var next = positions['a1_' + Math.floor(ai / 2)];
-      if (oldest && next) {
-        addEdge(svg, oldest, next, 'ancestor', {
-          relationIds: [oldest.item.id, next.item.id]
-        });
-        addFocusCurve(svg, oldest, next, 'ancestor', [oldest.item.focusId]);
-      }
+    for (var ancestorIndex = 0; ancestorIndex < 8; ancestorIndex++) {
+      var oldest = positions['a2_' + ancestorIndex];
+      var next = positions['a1_' + Math.floor(ancestorIndex / 2)];
+      if (!oldest || !next) continue;
+      var points = pairPath(oldest, next);
+      addRoundedPath(svg, points, 'ancestor', [oldest.item.id, next.item.id], 14);
+      addFocusPath(svg, points, 'ancestor', [oldest.item.focusId], 14);
     }
 
-    var siblingY = 516;
-    siblingGroups.forEach(function (group, groupIndex) {
-      createGroupLabel(group.title, group.items.length, 24, siblingY, 472);
-      var rowCount = Math.ceil(group.items.length / 3);
-      var busX = 526 - groupIndex * 6;
-      var firstRowBusY = siblingY + 46;
-      var lastRowBusY = firstRowBusY + (rowCount - 1) * 78;
-      addRoundedPath(svg, [
-        { x: rootX - 91, y: rootY },
-        { x: busX, y: rootY },
-        { x: busX, y: lastRowBusY }
-      ], 'sibling', group.ids, 18);
-      for (var rowIndex = 0; rowIndex < rowCount; rowIndex++) {
-        var rowItems = group.items.slice(rowIndex * 3, rowIndex * 3 + 3);
-        var rowXs = spread(rowItems.length, 256, 164);
-        var rowBusY = firstRowBusY + rowIndex * 78;
-        var nodeY = rowBusY + 38;
-        addPath(svg, 'M' + rowXs[0] + ',' + rowBusY + ' H' + busX, 'sibling',
-          [model.root.id].concat(group.items[0].sharedParents || []));
-        rowItems.forEach(function (item, colIndex) {
-          var node = createNode(item, rowXs[colIndex], nodeY, { hideTag: true });
-          addPath(svg, 'M' + rowXs[colIndex] + ',' + rowBusY + ' V' + (nodeY - node.height / 2),
-            'sibling', [model.root.id, item.id].concat(item.sharedParents || []));
-          addFocusPath(svg, [
-            { x: rootX - 91, y: rootY },
-            { x: busX, y: rootY },
-            { x: busX, y: rowBusY },
-            { x: rowXs[colIndex], y: rowBusY },
-            { x: rowXs[colIndex], y: nodeY - node.height / 2 }
-          ], 'sibling', [item.id], 18);
-        });
-      }
-      siblingY += 60 + rowCount * 78;
-    });
-
-    if (descendantFamilies.length) {
-      var areaLeft = hasSiblings ? 635 : 40;
-      var areaWidth = hasSiblings ? 670 : 1240;
-      var laneWidth = areaWidth / descendantColumns;
-      var descendantSpineX = hasSiblings ? 604 : descendantSpinePosition(
-        familyRows, areaLeft, laneWidth, descendantColumns, rootX
-      );
-      var branchY = rootY + 68;
-      var familyY = 516;
-      var rowUnionYs = [];
-      familyRows.forEach(function (row) {
-        rowUnionYs.push(familyY + 50);
-        familyY += row.height;
-      });
-      addRoundedPath(svg, [
-        { x: rootX, y: rootY + 35 },
-        { x: rootX, y: branchY },
-        { x: descendantSpineX, y: branchY },
-        { x: descendantSpineX, y: rowUnionYs[rowUnionYs.length - 1] }
-      ], 'descendant', [model.root.id], 18);
-      familyY = 516;
-      familyRows.forEach(function (row) {
-        var rowStart = areaLeft + (descendantColumns - row.groups.length) * laneWidth / 2;
-        var centers = row.groups.map(function (_, index) {
-          return rowStart + laneWidth * (index + .5);
-        });
-        var unionY = familyY + 50;
-        row.groups.forEach(function (group, groupIndex) {
-          var groupX = centers[groupIndex];
-          if (group.partner) {
-            addPartnerChip(group.partner, groupX, familyY);
-            addPath(svg, 'M' + groupX + ',' + (familyY + 30) + ' V' + unionY,
-              'partner ' + group.partner.parentRole, group.ids);
-          }
-          var childY = familyY + 125;
-          var childXs = spread(group.entries.length, groupX, 164);
-          var childBusY = familyY + 78;
+    var sectionY = rootY + 118;
+    siblingGroups.forEach(function (group) {
+      createGroupLabel(group.title, group.items.length, edgePadding, sectionY, contentWidth);
+      sectionY += 40;
+      var rows = Math.ceil(group.items.length / siblingColumns);
+      for (var rowIndex = 0; rowIndex < rows; rowIndex++) {
+        var rowItems = group.items.slice(rowIndex * siblingColumns, (rowIndex + 1) * siblingColumns);
+        var rowXs = spread(rowItems.length, rootX, rowItems.length > 1 ? 168 : 0);
+        var busY = sectionY + rowIndex * 74;
+        var nodeY = busY + 34;
+        if (rowXs.length > 1) {
           addRoundedPath(svg, [
-            { x: descendantSpineX, y: unionY },
-            { x: groupX, y: unionY },
-            { x: groupX, y: childBusY }
-          ], 'descendant', [model.root.id], 18);
-          if (childXs.length > 1) {
-            addPath(svg, 'M' + childXs[0] + ',' + childBusY + ' H' + childXs[childXs.length - 1],
-              'descendant', group.ids);
-          }
-          group.entries.forEach(function (entry, entryIndex) {
-            var childX = childXs[entryIndex];
-            var childNode = createNode(entry.item, childX, childY);
-            positions['d1_' + entry.id] = childNode;
-            addPath(svg, 'M' + childX + ',' + childBusY + ' V' + (childY - childNode.height / 2),
-              'descendant', [model.root.id, entry.id].concat(group.partner ? [group.partner.id] : []));
-            var familyFocusIds = [entry.id].concat(entry.terminals.map(function (terminal) { return terminal.id; }));
-            if (group.partner) familyFocusIds.push(group.partner.id);
-            addFocusPath(svg, [
-              { x: rootX, y: rootY + 35 },
-              { x: rootX, y: branchY },
-              { x: descendantSpineX, y: branchY },
-              { x: descendantSpineX, y: unionY },
-              { x: groupX, y: unionY },
-              { x: groupX, y: childBusY },
-              { x: childX, y: childBusY },
-              { x: childX, y: childY - childNode.height / 2 }
-            ], 'descendant', familyFocusIds, 18);
-            if (group.partner) {
-              addFocusPath(svg, [
-                { x: groupX, y: familyY + 30 },
-                { x: groupX, y: unionY }
-              ], 'partner ' + group.partner.parentRole, familyFocusIds, 18);
-            }
-            if (entry.terminals.length) {
-              var terminalY = familyY + 240;
-              var terminalXs = spread(entry.terminals.length, childX, 158);
-              var terminalBusY = familyY + 190;
-              addPath(svg, 'M' + childX + ',' + (childY + childNode.height / 2) + ' V' + terminalBusY,
-                'descendant', [entry.id]);
-              if (terminalXs.length > 1) {
-                addPath(svg, 'M' + terminalXs[0] + ',' + terminalBusY + ' H' + terminalXs[terminalXs.length - 1],
-                  'descendant', [entry.id]);
-              }
-              entry.terminals.forEach(function (item, terminalIndex) {
-                var terminal = createNode(item, terminalXs[terminalIndex], terminalY);
-                addPath(svg, 'M' + terminalXs[terminalIndex] + ',' + terminalBusY +
-                  ' V' + (terminalY - terminal.height / 2), 'descendant', [entry.id, item.id]);
-                addFocusPath(svg, [
-                  { x: childX, y: childY + childNode.height / 2 },
-                  { x: childX, y: terminalBusY },
-                  { x: terminalXs[terminalIndex], y: terminalBusY },
-                  { x: terminalXs[terminalIndex], y: terminalY - terminal.height / 2 }
-                ], 'descendant', [item.id], 18);
-              });
-            }
-          });
+            { x: rowXs[0], y: busY },
+            { x: rowXs[rowXs.length - 1], y: busY }
+          ], 'sibling', group.items.map(function (item) { return item.id; }), 12);
+        }
+        rowItems.forEach(function (item, itemIndex) {
+          var node = createNode(item, rowXs[itemIndex], nodeY, { hideTag: true });
+          addRoundedPath(svg, [
+            { x: rowXs[itemIndex], y: busY },
+            { x: rowXs[itemIndex], y: nodeY - node.height / 2 }
+          ], 'sibling', [model.root.id, item.id], 12);
+          addFocusPath(svg, [
+            { x: rowXs[0], y: busY },
+            { x: rowXs[itemIndex], y: busY },
+            { x: rowXs[itemIndex], y: nodeY - node.height / 2 }
+          ], 'sibling', [item.focusId], 12);
         });
-        familyY += row.height;
+      }
+      sectionY += rows * 74 + 8;
+    });
+    if (familyRows.length) sectionY += 12;
+    familyRows.forEach(function (row) {
+      var rowStart = (width - row.width) / 2;
+      var xCursor = rowStart;
+      var rowTop = sectionY;
+        var rowBusY = rowTop + 36;
+      row.groups.forEach(function (group, groupIndex) {
+        if (groupIndex) xCursor += 16;
+        var groupX = xCursor + group.layoutWidth / 2;
+        var childXs = spread(group.entries.length, groupX, group.entries.length > 1 ? 158 : 0);
+        var childBusY = rowTop + 50;
+        var childY = rowTop + 86;
+        var groupFocusIds = [];
+        group.entries.forEach(function (entry) {
+          groupFocusIds.push(entry.item.focusId);
+          entry.terminals.forEach(function (terminal) { groupFocusIds.push(terminal.focusId); });
+        });
+        if (group.partner) {
+          group.partner.pathFocusIds = [model.root.focusId, group.partner.focusId].concat(groupFocusIds);
+          addPartnerChip(group.partner, groupX, rowTop);
+          addRoundedPath(svg, [
+            { x: groupX, y: rowTop + 30 },
+            { x: groupX, y: childBusY }
+          ], 'partner ' + group.partner.parentRole, group.ids, 12);
+          addFocusPath(svg, [
+            { x: groupX, y: rowTop + 30 },
+            { x: groupX, y: childBusY }
+          ], 'partner ' + group.partner.parentRole, [group.partner.focusId], 12);
+        }
+        if (!group.partner) {
+          addRoundedPath(svg, [
+            { x: groupX, y: rowBusY },
+            { x: groupX, y: childBusY }
+          ], 'descendant', group.ids, 12);
+        }
+        if (childXs.length > 1) {
+          addRoundedPath(svg, [
+            { x: childXs[0], y: childBusY },
+            { x: childXs[childXs.length - 1], y: childBusY }
+          ], 'descendant', group.ids, 12);
+        }
+        group.entries.forEach(function (entry, entryIndex) {
+          var childX = childXs[entryIndex];
+          var childNode = createNode(entry.item, childX, childY);
+          var partnerFocus = group.partner ? [group.partner.focusId] : [];
+          var terminalFocus = entry.terminals.map(function (terminal) { return terminal.focusId; });
+          entry.item.pathFocusIds = [model.root.focusId, entry.item.focusId].concat(partnerFocus);
+          entry.terminals.forEach(function (terminal) {
+            terminal.pathFocusIds = [model.root.focusId, entry.item.focusId, terminal.focusId].concat(partnerFocus);
+          });
+          addRoundedPath(svg, [
+            { x: childX, y: childBusY },
+            { x: childX, y: childY - childNode.height / 2 }
+          ], 'descendant', [model.root.id, entry.id], 12);
+          addFocusPath(svg, [
+            { x: groupX, y: group.partner ? rowTop + 30 : rowBusY },
+            { x: groupX, y: childBusY },
+            { x: childX, y: childBusY },
+            { x: childX, y: childY - childNode.height / 2 }
+          ], 'descendant', [entry.item.focusId].concat(terminalFocus, partnerFocus), 14);
+          if (entry.terminals.length) {
+            var terminalBusY = rowTop + 130;
+            var terminalY = rowTop + 168;
+            var terminalXs = spread(entry.terminals.length, childX,
+              entry.terminals.length > 1 ? 158 : 0);
+            addRoundedPath(svg, [
+              { x: childX, y: childY + childNode.height / 2 },
+              { x: childX, y: terminalBusY }
+            ], 'descendant', [entry.id], 12);
+            if (terminalXs.length > 1) {
+              addRoundedPath(svg, [
+                { x: terminalXs[0], y: terminalBusY },
+                { x: terminalXs[terminalXs.length - 1], y: terminalBusY }
+              ], 'descendant', [entry.id], 12);
+            }
+            entry.terminals.forEach(function (terminal, terminalIndex) {
+              var terminalNode = createNode(terminal, terminalXs[terminalIndex], terminalY);
+              addRoundedPath(svg, [
+                { x: terminalXs[terminalIndex], y: terminalBusY },
+                { x: terminalXs[terminalIndex], y: terminalY - terminalNode.height / 2 }
+              ], 'descendant', [entry.id, terminal.id], 12);
+              addFocusPath(svg, [
+                { x: childX, y: childY + childNode.height / 2 },
+                { x: childX, y: terminalBusY },
+                { x: terminalXs[terminalIndex], y: terminalBusY },
+                { x: terminalXs[terminalIndex], y: terminalY - terminalNode.height / 2 }
+              ], 'descendant', [terminal.focusId], 14);
+            });
+          }
+        });
+        xCursor += group.layoutWidth;
       });
-    }
-
+      sectionY += row.height;
+    });
     if (model.breeding.length) {
-      var breedingY = 540 + familyHeight;
-      var breedingXs = spread(model.breeding.length, rootX, Math.min(260, 900 / Math.max(1, model.breeding.length - 1)));
-      var breedingBusY = breedingY - 54;
-      addRoundedPath(svg, [
-        { x: rootX, y: rootY + 35 },
-        { x: rootX, y: breedingBusY }
-      ], 'breeding', [model.root.id], 18);
-      addPath(svg, 'M' + breedingXs[0] + ',' + breedingBusY + ' H' + breedingXs[breedingXs.length - 1],
-        'breeding', [model.root.id]);
-      model.breeding.forEach(function (item, index) {
-        var node = createNode(item, breedingXs[index], breedingY);
-        addPath(svg, 'M' + breedingXs[index] + ',' + breedingBusY +
-          ' V' + (breedingY - node.height / 2), 'breeding', [model.root.id, item.id]);
-        addFocusPath(svg, [
-          { x: rootX, y: rootY + 35 },
-          { x: rootX, y: breedingBusY },
-          { x: breedingXs[index], y: breedingBusY },
-          { x: breedingXs[index], y: breedingY - node.height / 2 }
-        ], 'breeding', [item.id], 18);
-      });
+      sectionY += 22;
+      createGroupLabel('繁育记录', model.breeding.length, edgePadding, sectionY, contentWidth);
+      sectionY += 40;
+      var breedingRows = Math.ceil(model.breeding.length / siblingColumns);
+      for (var breedingRow = 0; breedingRow < breedingRows; breedingRow++) {
+        var breedingItems = model.breeding.slice(
+          breedingRow * siblingColumns, (breedingRow + 1) * siblingColumns
+        );
+        var breedingXs = spread(breedingItems.length, rootX,
+          breedingItems.length > 1 ? 190 : 0);
+        var breedingBusY = sectionY + breedingRow * 102;
+        if (breedingXs.length > 1) {
+          addRoundedPath(svg, [
+            { x: breedingXs[0], y: breedingBusY },
+            { x: breedingXs[breedingXs.length - 1], y: breedingBusY }
+          ], 'breeding', breedingItems.map(function (item) { return item.id; }), 12);
+        }
+        breedingItems.forEach(function (item, itemIndex) {
+          var nodeY = breedingBusY + 50;
+          var node = createNode(item, breedingXs[itemIndex], nodeY);
+          item.pathFocusIds = [model.root.focusId, item.focusId];
+          addRoundedPath(svg, [
+            { x: breedingXs[itemIndex], y: breedingBusY },
+            { x: breedingXs[itemIndex], y: nodeY - node.height / 2 }
+          ], 'breeding', [model.root.id, item.id], 12);
+          addFocusPath(svg, [
+            { x: breedingXs[0], y: breedingBusY },
+            { x: breedingXs[itemIndex], y: breedingBusY },
+            { x: breedingXs[itemIndex], y: nodeY - node.height / 2 }
+          ], 'breeding', [item.focusId], 12);
+        });
+      }
     }
     return { width: width, height: height };
   }
@@ -919,7 +933,7 @@
         type: 'uma-pedigree-height',
         sample: state.sample,
         height: Math.ceil(workspace.getBoundingClientRect().height)
-      }, window.location.origin);
+      }, '*');
     }
   }
 
@@ -927,19 +941,16 @@
     var width = parseFloat(stage.style.width) || 1;
     var height = parseFloat(stage.style.height) || 1;
     var mobile = window.innerWidth <= 760;
-    var padding = mobile ? 10 : 18;
-    var scale = mobile ? .62 : Math.min(1, (viewport.clientWidth - padding * 2) / width);
-    var tx = mobile ? 0 : Math.max(padding, (viewport.clientWidth - width * scale) / 2);
-    stage.style.transform = 'translate(' + tx + 'px,' + padding + 'px) scale(' + scale + ')';
-    viewport.style.height = (mobile ? 610 : Math.ceil(height * scale + padding * 2)) + 'px';
-    if (mobile) {
-      var root = stage.querySelector('.ped-node.is-root');
-      if (root) {
-        var rootCenter = (parseFloat(root.style.left) + root.offsetWidth / 2) * scale;
-        viewport.scrollLeft = Math.max(0, rootCenter - viewport.clientWidth / 2);
-      }
-      viewport.scrollTop = 0;
-    }
+    var padding = mobile ? 6 : 12;
+    var scale = Math.min(1,
+      (viewport.clientWidth - padding * 2) / width,
+      (viewport.clientHeight - padding * 2) / height
+    );
+    var tx = Math.max(padding, (viewport.clientWidth - width * scale) / 2);
+    var ty = Math.max(padding, (viewport.clientHeight - height * scale) / 2);
+    stage.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+    viewport.scrollLeft = 0;
+    viewport.scrollTop = 0;
     syncEmbeddedHeight();
   }
 
@@ -950,10 +961,10 @@
     state.lockedKey = '';
     closeSheet();
     document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
-    var summary = ['三代血统'];
+    var summary = [currentModel.ancestors.length ? '三代血统' : '血统资料始于本马'];
     if (currentModel.siblings.length) summary.push(currentModel.siblings.length + '位同辈角色');
     if (currentModel.descendants.length) summary.push(currentModel.descendants.length + '位后代角色');
-    if (currentModel.breeding.length) summary.push(currentModel.breeding.length + '位繁育关联角色');
+    if (currentModel.breeding.length) summary.push(currentModel.breeding.length + '位繁育角色');
     document.getElementById('workspace-summary').textContent = summary.join('·');
     backLink.href = characterRoute(state.sample);
     backLink.setAttribute('aria-label', '返回' + currentModel.root.name + '角色页');
@@ -1002,6 +1013,18 @@
   });
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') clearPin();
+    if (event.key !== 'Tab' || !sheet.classList.contains('is-open')) return;
+    var focusable = sheet.querySelectorAll('button:not([disabled]),a[href]');
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
   window.addEventListener('resize', function () {
     window.clearTimeout(state.resizeTimer);
