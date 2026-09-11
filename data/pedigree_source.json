@@ -872,7 +872,9 @@
       "sex": "female",
       "born": 2004,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2004104258/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2004104258/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000801136/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "daiwascarlet",
@@ -890,7 +892,20 @@
       "sex": "female",
       "born": 2004,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000798369/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000798369/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000798369/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "eishinflash",
+          "records": [
+            {
+              "year": 2018,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000798369/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "taikishuttle",
@@ -944,7 +959,9 @@
       "sex": "female",
       "born": 1991,
       "country": "USA",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1991109852/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1991109852/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000250077/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "mejiromcqueen",
@@ -1052,7 +1069,9 @@
       "sex": "female",
       "born": 1993,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000274849/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000274849/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000274849/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "agnesdigital",
@@ -1124,7 +1143,9 @@
       "sex": "female",
       "born": 1999,
       "country": "IRE",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1999110187/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1999110187/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000704208/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "biwahayahide",
@@ -1250,7 +1271,50 @@
       "sex": "female",
       "born": 1990,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1990103565/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1990103565/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000232060/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "northern_taste",
+          "records": [
+            {
+              "year": 1996,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000232060/broodmare/info/"
+        },
+        {
+          "horse_id": "daitakuhelios",
+          "records": [
+            {
+              "year": 2002,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000232060/broodmare/info/"
+        },
+        {
+          "horse_id": "winningticket",
+          "records": [
+            {
+              "year": 2004,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000232060/broodmare/info/"
+        },
+        {
+          "horse_id": "manhattancafe",
+          "records": [
+            {
+              "year": 2006,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000232060/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "riceshower",
@@ -1412,7 +1476,20 @@
       "sex": "female",
       "born": 2007,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2007102807/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2007102807/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001044299/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "duramente",
+          "records": [
+            {
+              "year": 2022,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001044299/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "kawakamiprincess",
@@ -1430,7 +1507,20 @@
       "sex": "female",
       "born": 2003,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2003107045/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2003107045/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000759762/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "duramente",
+          "records": [
+            {
+              "year": 2019,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000759762/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "goldcity",
@@ -1484,7 +1574,9 @@
       "sex": "female",
       "born": 1994,
       "country": "USA",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1994109364/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1994109364/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000287603/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "shinkowindy",
@@ -1520,7 +1612,60 @@
       "sex": "female",
       "born": 2001,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2001104313/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2001104313/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000726199/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "agnestachyon",
+          "records": [
+            {
+              "year": 2009,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000726199/broodmare/info/"
+        },
+        {
+          "horse_id": "staygold",
+          "records": [
+            {
+              "year": 2013,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000726199/broodmare/info/"
+        },
+        {
+          "horse_id": "orfevre",
+          "records": [
+            {
+              "year": 2015,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000726199/broodmare/info/"
+        },
+        {
+          "horse_id": "duramente",
+          "records": [
+            {
+              "year": 2018,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000726199/broodmare/info/"
+        },
+        {
+          "horse_id": "kitasanblack",
+          "records": [
+            {
+              "year": 2019,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000726199/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "supercreek",
@@ -1650,27 +1795,60 @@
       "breeding_partners": [
         {
           "horse_id": "taikishuttle",
-          "years": [
-            2000,
-            2013
+          "records": [
+            {
+              "year": 2000,
+              "outcome": "foal"
+            }
           ],
           "source_url": "https://www.jbis.or.jp/horse/0000224549/broodmare/info/"
         },
         {
           "horse_id": "seiunsky",
-          "years": [
-            2003
+          "records": [
+            {
+              "year": 2003,
+              "outcome": "foal"
+            }
           ],
           "source_url": "https://www.jbis.or.jp/horse/0000224549/broodmare/info/"
         },
         {
           "horse_id": "agnestachyon",
-          "years": [
-            2008
+          "records": [
+            {
+              "year": 2004,
+              "outcome": "foal"
+            },
+            {
+              "year": 2007,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000224549/broodmare/info/"
+        },
+        {
+          "horse_id": "taninogimlet",
+          "records": [
+            {
+              "year": 2009,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000224549/broodmare/info/"
+        },
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2011,
+              "outcome": "no_foal"
+            }
           ],
           "source_url": "https://www.jbis.or.jp/horse/0000224549/broodmare/info/"
         }
-      ]
+      ],
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000224549/broodmare/info/"
     },
     {
       "id": "haruurara",
@@ -1688,7 +1866,9 @@
       "sex": "female",
       "born": 1996,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1996106177/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1996106177/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000307965/",
+      "breeding_partners": []
     },
     {
       "id": "bamboomemory",
@@ -1814,7 +1994,88 @@
       "sex": "female",
       "born": 1994,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1994108393/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1994108393/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "elcondorpasa",
+          "records": [
+            {
+              "year": 2001,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        },
+        {
+          "horse_id": "agnestachyon",
+          "records": [
+            {
+              "year": 2003,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        },
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2005,
+              "outcome": "no_foal"
+            },
+            {
+              "year": 2009,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        },
+        {
+          "horse_id": "manhattancafe",
+          "records": [
+            {
+              "year": 2006,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        },
+        {
+          "horse_id": "specialweek",
+          "records": [
+            {
+              "year": 2007,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        },
+        {
+          "horse_id": "zennorobroy",
+          "records": [
+            {
+              "year": 2012,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        },
+        {
+          "horse_id": "rulership",
+          "records": [
+            {
+              "year": 2014,
+              "outcome": "foal"
+            },
+            {
+              "year": 2016,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000286632/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "nicenature",
@@ -1886,7 +2147,84 @@
       "sex": "female",
       "born": 1987,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000200905/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000200905/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "mejiromcqueen",
+          "records": [
+            {
+              "year": 1995,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        },
+        {
+          "horse_id": "mejiroryan",
+          "records": [
+            {
+              "year": 1996,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        },
+        {
+          "horse_id": "symbolirudolf",
+          "records": [
+            {
+              "year": 1998,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        },
+        {
+          "horse_id": "sakuralaurel",
+          "records": [
+            {
+              "year": 2001,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        },
+        {
+          "horse_id": "marveloussunday",
+          "records": [
+            {
+              "year": 2006,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        },
+        {
+          "horse_id": "tapdancecity",
+          "records": [
+            {
+              "year": 2007,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        },
+        {
+          "horse_id": "noreason",
+          "records": [
+            {
+              "year": 2008,
+              "outcome": "foal"
+            },
+            {
+              "year": 2009,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000200905/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "mejiropalmer",
@@ -2102,7 +2440,9 @@
       "sex": "female",
       "born": 2017,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0001236599/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0001236599/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001236599/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "sakuralaurel",
@@ -2228,7 +2568,64 @@
       "sex": "female",
       "born": 1990,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1990100908/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1990100908/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000229403/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "northern_taste",
+          "records": [
+            {
+              "year": 1996,
+              "outcome": "foal"
+            },
+            {
+              "year": 1997,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000229403/broodmare/info/"
+        },
+        {
+          "horse_id": "elcondorpasa",
+          "records": [
+            {
+              "year": 2003,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000229403/broodmare/info/"
+        },
+        {
+          "horse_id": "taikishuttle",
+          "records": [
+            {
+              "year": 2004,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000229403/broodmare/info/"
+        },
+        {
+          "horse_id": "specialweek",
+          "records": [
+            {
+              "year": 2005,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000229403/broodmare/info/"
+        },
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2007,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000229403/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "symbolikriss",
@@ -2282,7 +2679,38 @@
       "sex": "female",
       "born": 1987,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1987100260/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1987100260/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000196381/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "elcondorpasa",
+          "records": [
+            {
+              "year": 2001,
+              "outcome": "no_foal"
+            },
+            {
+              "year": 2002,
+              "outcome": "foal"
+            },
+            {
+              "year": 2003,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000196381/broodmare/info/"
+        },
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2006,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000196381/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "mejiroramonu",
@@ -2300,7 +2728,64 @@
       "sex": "female",
       "born": 1983,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1983103914/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1983103914/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000158372/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "symbolirudolf",
+          "records": [
+            {
+              "year": 1990,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000158372/broodmare/info/"
+        },
+        {
+          "horse_id": "mejiroryan",
+          "records": [
+            {
+              "year": 1999,
+              "outcome": "foal"
+            },
+            {
+              "year": 2003,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000158372/broodmare/info/"
+        },
+        {
+          "horse_id": "elcondorpasa",
+          "records": [
+            {
+              "year": 2002,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000158372/broodmare/info/"
+        },
+        {
+          "horse_id": "taninogimlet",
+          "records": [
+            {
+              "year": 2004,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000158372/broodmare/info/"
+        },
+        {
+          "horse_id": "sakurabakushino",
+          "records": [
+            {
+              "year": 2005,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000158372/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "astonmachan",
@@ -2318,7 +2803,9 @@
       "sex": "female",
       "born": 2004,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2004103323/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2004103323/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000801522/",
+      "breeding_partners": []
     },
     {
       "id": "satonocrown",
@@ -2372,7 +2859,24 @@
       "sex": "female",
       "born": 2009,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2009106264/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2009106264/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001107937/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2022,
+              "outcome": "no_foal"
+            },
+            {
+              "year": 2025,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001107937/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "vivlos",
@@ -2390,7 +2894,30 @@
       "sex": "female",
       "born": 2013,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2013106007/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2013106007/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001169235/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2024,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001169235/broodmare/info/"
+        },
+        {
+          "horse_id": "efforia",
+          "records": [
+            {
+              "year": 2026,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001169235/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "dantsuflame",
@@ -2462,7 +2989,9 @@
       "sex": "female",
       "born": 1998,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000324472/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000324472/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000324472/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "noreason",
@@ -2498,7 +3027,9 @@
       "sex": "female",
       "born": 2000,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000707242/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000707242/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000707242/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "copanorickey",
@@ -2714,7 +3245,9 @@
       "sex": "female",
       "born": 2002,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2002100959/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2002100959/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000743113/",
+      "breeding_partners": []
     },
     {
       "id": "cesario",
@@ -2732,7 +3265,24 @@
       "sex": "female",
       "born": 2002,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2002100844/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2002100844/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000743110/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2010,
+              "outcome": "foal"
+            },
+            {
+              "year": 2011,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000743110/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "airmessiah",
@@ -2750,7 +3300,20 @@
       "sex": "female",
       "born": 2002,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000750289/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000750289/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000750289/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "junglepocket",
+          "records": [
+            {
+              "year": 2010,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000750289/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "daringheart",
@@ -2768,7 +3331,20 @@
       "sex": "female",
       "born": 2002,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000750310/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000750310/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000750310/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "taninogimlet",
+          "records": [
+            {
+              "year": 2009,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000750310/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "fusaichipandora",
@@ -2786,7 +3362,34 @@
       "sex": "female",
       "born": 2003,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000762056/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000762056/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000762056/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2009,
+              "outcome": "foal"
+            },
+            {
+              "year": 2010,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000762056/broodmare/info/"
+        },
+        {
+          "horse_id": "rulership",
+          "records": [
+            {
+              "year": 2017,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000762056/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "buenavista",
@@ -2804,7 +3407,20 @@
       "sex": "female",
       "born": 2006,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2006103319/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2006103319/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000989286/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "rulership",
+          "records": [
+            {
+              "year": 2024,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000989286/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "orfevre",
@@ -2840,7 +3456,24 @@
       "sex": "female",
       "born": 2009,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2009106253/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2009106253/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001110862/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2022,
+              "outcome": "no_foal"
+            },
+            {
+              "year": 2024,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001110862/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "winvariation",
@@ -2876,7 +3509,20 @@
       "sex": "female",
       "born": 2000,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0000713851/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000713851/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000713851/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "symbolikriss",
+          "records": [
+            {
+              "year": 2009,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000713851/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "dreamjourney",
@@ -3038,7 +3684,30 @@
       "sex": "female",
       "born": 2015,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2015104961/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2015104961/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001203363/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2022,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001203363/broodmare/info/"
+        },
+        {
+          "horse_id": "kitasanblack",
+          "records": [
+            {
+              "year": 2024,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001203363/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "luckylilac",
@@ -3056,7 +3725,34 @@
       "sex": "female",
       "born": 2015,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0001208248/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0001208248/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001208248/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2023,
+              "outcome": "no_foal"
+            },
+            {
+              "year": 2024,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001208248/broodmare/info/"
+        },
+        {
+          "horse_id": "kitasanblack",
+          "records": [
+            {
+              "year": 2025,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001208248/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "granalegria",
@@ -3074,7 +3770,20 @@
       "sex": "female",
       "born": 2016,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2016104532/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2016104532/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001220947/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2023,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001220947/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "lovesonlyyou",
@@ -3092,7 +3801,20 @@
       "sex": "female",
       "born": 2016,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2016104648/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2016104648/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001221351/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2023,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001221351/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "chronogenesis",
@@ -3110,7 +3832,30 @@
       "sex": "female",
       "born": 2016,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2016104750/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2016104750/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001216129/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2023,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001216129/broodmare/info/"
+        },
+        {
+          "horse_id": "kitasanblack",
+          "records": [
+            {
+              "year": 2026,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001216129/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "currenbouquetdor",
@@ -3128,7 +3873,28 @@
       "sex": "female",
       "born": 2016,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2016105089/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2016105089/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001221953/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2023,
+              "outcome": "foal"
+            },
+            {
+              "year": 2025,
+              "outcome": "foal"
+            },
+            {
+              "year": 2026,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001221953/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "staygold",
@@ -3164,7 +3930,9 @@
       "sex": "female",
       "born": 2006,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/2006102929/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/2006102929/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000994916/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "kiseki",
@@ -3218,7 +3986,30 @@
       "sex": "female",
       "born": 2016,
       "country": "JPN",
-      "metadata_source_url": "https://www.jbis.or.jp/horse/0001215728/"
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0001215728/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001215728/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "kitasanblack",
+          "records": [
+            {
+              "year": 2024,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001215728/broodmare/info/"
+        },
+        {
+          "horse_id": "epiphaneia",
+          "records": [
+            {
+              "year": 2026,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001215728/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "epiphaneia",
@@ -3468,7 +4259,9 @@
       "country": "JPN",
       "real_name_zh": "月光玫瑰",
       "real_name_en": "Moonlight Rose",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1994100030/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1994100030/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000278269/",
+      "breeding_partners": []
     },
     {
       "id": "darleyarabian",
@@ -21175,7 +21968,72 @@
       "sex": "female",
       "born": 1995,
       "country": "JPN",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1995105092/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1995105092/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000295505/broodmare/info/",
+      "breeding_partners": [
+        {
+          "horse_id": "fujikiseki",
+          "records": [
+            {
+              "year": 2004,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000295505/broodmare/info/"
+        },
+        {
+          "horse_id": "specialweek",
+          "records": [
+            {
+              "year": 2007,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000295505/broodmare/info/"
+        },
+        {
+          "horse_id": "agnestachyon",
+          "records": [
+            {
+              "year": 2008,
+              "outcome": "no_foal"
+            },
+            {
+              "year": 2009,
+              "outcome": "foal"
+            },
+            {
+              "year": 2010,
+              "outcome": "no_foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000295505/broodmare/info/"
+        },
+        {
+          "horse_id": "manhattancafe",
+          "records": [
+            {
+              "year": 2011,
+              "outcome": "foal"
+            },
+            {
+              "year": 2012,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000295505/broodmare/info/"
+        },
+        {
+          "horse_id": "victoirepisa",
+          "records": [
+            {
+              "year": 2016,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0000295505/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "ケイティーズハート",
@@ -21267,7 +22125,9 @@
       "sex": "female",
       "born": 2010,
       "country": "FR",
-      "metadata_source_url": "https://db.netkeiba.com/horse/000a01224c/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/000a01224c/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001299272/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "sadlers_wells",
@@ -21775,7 +22635,9 @@
       "born": 1985,
       "country": "JPN",
       "real_name_zh": "双蜂",
-      "metadata_source_url": "https://db.netkeiba.com/horse/1985101371/"
+      "metadata_source_url": "https://db.netkeiba.com/horse/1985101371/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000176854/broodmare/info/",
+      "breeding_partners": []
     },
     {
       "id": "hiraku_ryu",

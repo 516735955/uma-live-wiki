@@ -47,6 +47,76 @@ def main():
         if horse_id is not None and kind != "horse":
             errors.append("horse mapping kind drift for %s" % character_id)
 
+    mapped_horses = {
+        canonical(mapping["horse"])
+        for mapping in mappings.values()
+        if mapping.get("kind") == "horse" and mapping.get("horse")
+    }
+    breeding_pairs = set()
+    breeding_records = 0
+    for mare_id in sorted(mapped_horses):
+        mare = by_id.get(mare_id) or {}
+        if mare.get("sex") != "female":
+            continue
+        if not mare.get("breeding_source_url"):
+            errors.append("mapped mare has no breeding source: %s" % mare_id)
+        if "breeding_partners" not in mare:
+            errors.append("mapped mare has no breeding review result: %s" % mare_id)
+            continue
+        seen_partners = set()
+        for relation in mare.get("breeding_partners") or []:
+            partner_id = canonical(relation.get("horse_id"))
+            if not partner_id or partner_id not in mapped_horses:
+                errors.append("breeding partner has no character: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+                continue
+            if partner_id == mare_id:
+                errors.append("self breeding relation: %s" % mare_id)
+            if partner_id in seen_partners:
+                errors.append("duplicate breeding partner: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            seen_partners.add(partner_id)
+            if (by_id.get(partner_id) or {}).get("sex") != "male":
+                errors.append("breeding partner is not male: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            if not relation.get("source_url"):
+                errors.append("breeding relation has no source: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            pair_records = relation.get("records") or []
+            if not pair_records:
+                errors.append("breeding relation has no records: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            seen_years = set()
+            for event in pair_records:
+                year = event.get("year")
+                outcome = event.get("outcome")
+                if not isinstance(year, int) or year < mare.get("born", 0):
+                    errors.append("invalid breeding year: %s -> %s: %r" % (
+                        mare_id, partner_id, year
+                    ))
+                if year in seen_years:
+                    errors.append("duplicate breeding year: %s -> %s: %s" % (
+                        mare_id, partner_id, year
+                    ))
+                seen_years.add(year)
+                if outcome not in ("foal", "no_foal"):
+                    errors.append("invalid breeding outcome: %s -> %s: %r" % (
+                        mare_id, partner_id, outcome
+                    ))
+            if pair_records != sorted(
+                    pair_records, key=lambda event: (event.get("year", 0),
+                                                     event.get("outcome", ""))):
+                errors.append("unsorted breeding records: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            breeding_pairs.add(tuple(sorted((mare_id, partner_id))))
+            breeding_records += len(pair_records)
+
     role_usage = defaultdict(set)
     for node_id, pair in parents.items():
         sire = pair.get("sire")
@@ -347,9 +417,10 @@ def main():
     )
     print(
         "pedigree integrity ok: %d source nodes, %d character mappings, "
-        "%d visual horses, %d sibling links, %d descendant paths" % (
+        "%d visual horses, %d sibling links, %d descendant paths, "
+        "%d breeding pairs, %d breeding records" % (
             len(records), len(mappings), len(visual_horses), sibling_links,
-            descendant_paths
+            descendant_paths, len(breeding_pairs), breeding_records
         )
     )
     return 0

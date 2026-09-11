@@ -218,6 +218,28 @@ def build_export(source, characters):
         if horse_id:
             horse_to_characters[canonical(horse_id)].append(character_id)
 
+    breeding_by_horse = defaultdict(list)
+    for record in records:
+        mare_id = canonical(record["id"])
+        for relation in record.get("breeding_partners") or []:
+            partner_id = canonical(relation["horse_id"])
+            records_for_pair = [dict(item) for item in relation.get("records") or []]
+            common = {
+                "records": records_for_pair,
+                "source_url": relation.get("source_url"),
+            }
+            breeding_by_horse[mare_id].append(
+                dict(common, horse_id=partner_id)
+            )
+            breeding_by_horse[partner_id].append(
+                dict(common, horse_id=mare_id)
+            )
+    for relations in breeding_by_horse.values():
+        relations.sort(key=lambda relation: (
+            (relation.get("records") or [{}])[0].get("year", 9999),
+            relation["horse_id"],
+        ))
+
     def compatible_descendant_id(horse_id):
         linked_characters = horse_to_characters.get(canonical(horse_id), [])
         return linked_characters[0] if linked_characters else horse_id
@@ -279,11 +301,10 @@ def build_export(source, characters):
             node["metadata_source_url"] = target["metadata_source_url"]
         if target.get("sex"):
             node["sex"] = target["sex"]
-        if target.get("breeding_partners"):
-            node["breeding_partners"] = [
-                dict(partner, horse_id=canonical(partner["horse_id"]))
-                for partner in target["breeding_partners"]
-            ]
+        if target.get("breeding_source_url"):
+            node["breeding_source_url"] = target["breeding_source_url"]
+        if breeding_by_horse.get(horse_id):
+            node["breeding_partners"] = breeding_by_horse[horse_id]
         if record.get("alias_of"):
             node["alias_of"] = horse_id
         if horse_to_characters.get(horse_id):
