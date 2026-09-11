@@ -3,6 +3,7 @@
 
 import json
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 
@@ -45,6 +46,76 @@ def main():
             errors.append("horse mapping missing for %s" % character_id)
         if horse_id is not None and kind != "horse":
             errors.append("horse mapping kind drift for %s" % character_id)
+
+    mapped_horses = {
+        canonical(mapping["horse"])
+        for mapping in mappings.values()
+        if mapping.get("kind") == "horse" and mapping.get("horse")
+    }
+    breeding_pairs = set()
+    breeding_records = 0
+    for mare_id in sorted(mapped_horses):
+        mare = by_id.get(mare_id) or {}
+        if mare.get("sex") != "female":
+            continue
+        if not mare.get("breeding_source_url"):
+            errors.append("mapped mare has no breeding source: %s" % mare_id)
+        if "breeding_partners" not in mare:
+            errors.append("mapped mare has no breeding review result: %s" % mare_id)
+            continue
+        seen_partners = set()
+        for relation in mare.get("breeding_partners") or []:
+            partner_id = canonical(relation.get("horse_id"))
+            if not partner_id or partner_id not in mapped_horses:
+                errors.append("breeding partner has no character: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+                continue
+            if partner_id == mare_id:
+                errors.append("self breeding relation: %s" % mare_id)
+            if partner_id in seen_partners:
+                errors.append("duplicate breeding partner: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            seen_partners.add(partner_id)
+            if (by_id.get(partner_id) or {}).get("sex") != "male":
+                errors.append("breeding partner is not male: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            if not relation.get("source_url"):
+                errors.append("breeding relation has no source: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            pair_records = relation.get("records") or []
+            if not pair_records:
+                errors.append("breeding relation has no records: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            seen_years = set()
+            for event in pair_records:
+                year = event.get("year")
+                outcome = event.get("outcome")
+                if not isinstance(year, int) or year < mare.get("born", 0):
+                    errors.append("invalid breeding year: %s -> %s: %r" % (
+                        mare_id, partner_id, year
+                    ))
+                if year in seen_years:
+                    errors.append("duplicate breeding year: %s -> %s: %s" % (
+                        mare_id, partner_id, year
+                    ))
+                seen_years.add(year)
+                if outcome not in ("foal", "no_foal"):
+                    errors.append("invalid breeding outcome: %s -> %s: %r" % (
+                        mare_id, partner_id, outcome
+                    ))
+            if pair_records != sorted(
+                    pair_records, key=lambda event: (event.get("year", 0),
+                                                     event.get("outcome", ""))):
+                errors.append("unsorted breeding records: %s -> %s" % (
+                    mare_id, partner_id
+                ))
+            breeding_pairs.add(tuple(sorted((mare_id, partner_id))))
+            breeding_records += len(pair_records)
 
     role_usage = defaultdict(set)
     for node_id, pair in parents.items():
@@ -229,6 +300,78 @@ def main():
         if (relations.get("partners") or []) != list(expected_partners.values()):
             errors.append("partner scope drift on %s" % node_id)
 
+    for record in records:
+        real_name_fields = ("real_name_zh", "real_name", "real_name_en")
+        if any(record.get(field) for field in real_name_fields):
+            for field in real_name_fields:
+                if not record.get(field):
+                    errors.append("incomplete real horse identity %s: %s" % (
+                        record["id"], field
+                    ))
+
+    visual_horses = set()
+    for character_id, mapping in mappings.items():
+        mapped_horse = mapping.get("horse")
+        if not mapped_horse:
+            continue
+        mapped_horse = canonical(mapped_horse)
+        visual_horses.add(mapped_horse)
+        runtime = runtime_by_id[character_id]
+        for row in runtime.get("up") or []:
+            visual_horses.update(canonical(node_id) for node_id in row if node_id)
+        relations = runtime.get("character_relations") or {}
+        for sibling in relations.get("siblings") or []:
+            if sibling.get("horse_id"):
+                visual_horses.add(canonical(sibling["horse_id"]))
+        for descendant in relations.get("descendants") or []:
+            visual_horses.update(
+                canonical(node_id) for node_id in (descendant.get("path") or [])
+                if node_id
+            )
+            for link in descendant.get("links") or []:
+                if link.get("partner"):
+                    visual_horses.add(canonical(link["partner"]))
+        for partner in relations.get("partners") or []:
+            if partner.get("horse_id"):
+                visual_horses.add(canonical(partner["horse_id"]))
+        for partner in runtime.get("breeding_partners") or []:
+            if partner.get("horse_id"):
+                visual_horses.add(canonical(partner["horse_id"]))
+
+    direct_parents = set()
+    for node_id in visual_horses:
+        pair = parents.get(node_id) or {}
+        direct_parents.update(
+            parent_id for parent_id in (pair.get("sire"), pair.get("dam"))
+            if parent_id
+        )
+    complete_scope = visual_horses | direct_parents
+    foundation_ids = {"darleyarabian", "godolphinbarb", "byerleyturk"}
+    japanese_text = re.compile(r"[\u3040-\u30fa\u30fc-\u30ff]")
+    latin_text = re.compile(r"[A-Za-z]")
+    han_text = re.compile(r"[\u3400-\u9fff]")
+    for node_id in sorted(complete_scope):
+        record = by_id.get(node_id) or {}
+        for field in ("zh", "ja", "en", "sex", "born", "country"):
+            if not record.get(field):
+                errors.append("incomplete visualization horse %s: %s" % (
+                    node_id, field
+                ))
+        chinese = str(record.get("zh") or "")
+        if (not han_text.search(chinese) or latin_text.search(chinese)
+                or japanese_text.search(chinese) or "/" in chinese):
+            errors.append("non-Chinese visualization label %s: %s" % (
+                node_id, chinese
+            ))
+        if not (
+            record.get("metadata_source_url") or record.get("profile_url")
+            or (record.get("parents") or {}).get("source_url")
+        ):
+            errors.append("visualization horse has no source URL: %s" % node_id)
+        if node_id in visual_horses and node_id not in foundation_ids:
+            pair = parents.get(node_id) or {}
+            if not pair.get("sire") or not pair.get("dam"):
+                errors.append("visualization horse has incomplete parents: %s" % node_id)
     for field in ("zh", "ja", "en"):
         labels = defaultdict(list)
         for node in records:
@@ -274,8 +417,10 @@ def main():
     )
     print(
         "pedigree integrity ok: %d source nodes, %d character mappings, "
-        "%d sibling links, %d descendant paths" % (
-            len(records), len(mappings), sibling_links, descendant_paths
+        "%d visual horses, %d sibling links, %d descendant paths, "
+        "%d breeding pairs, %d breeding records" % (
+            len(records), len(mappings), len(visual_horses), sibling_links,
+            descendant_paths, len(breeding_pairs), breeding_records
         )
     )
     return 0

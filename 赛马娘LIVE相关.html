@@ -701,7 +701,6 @@
                             <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : '← 返回角色列表' }}</button>
                             <div>
                                 <h3 class="cio-detail-title">{{ charDetail.zh }}</h3>
-                                <p class="cio-detail-sub">资料摘自萌娘百科 · {{ charDetail.ja }}</p>
                             </div>
                         </div>
                         <div class="cio-detail-hero" v-if="charDetail.img && !charHasIntro">
@@ -718,8 +717,7 @@
                         <div class="c-detail-block" id="cDetailBlock"></div>
                         <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <div class="cio-detail-foot">
-                            <p>阅读更多：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科（移动版）</a></p>
-                            <p>本文引自萌娘百科（zh.moegirl.org.cn / mobile.moegirl.org.cn），文字内容默认使用《知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆》（CC BY-NC-SA 3.0 CN）协议。</p>
+                            角色资料：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科</a>（CC BY-NC-SA 3.0 CN）
                         </div>
                     </div>
                 </section>
@@ -811,22 +809,6 @@
                     </div>
                 </section>
 
-                <section v-if="charSub==='blood'" class="c-page" id="c-blood">
-                    <header class="c-page-head">
-                        <h2 class="c-page-title">现实马血统关系图</h2>
-                        <p class="c-page-sub">赛马娘原型现实赛马之间的血统关系图谱，支持缩放与拖动查看。</p>
-                    </header>
-                    <div class="c-zoombar">
-                        <button type="button" id="cgzin">＋ 放大</button>
-                        <button type="button" id="cgzout">－ 缩小</button>
-                        <button type="button" id="cgzreset">重置视图</button>
-                        <button type="button" id="cgzfit">适应窗口</button>
-                        <span class="c-zhint">鼠标滚轮缩放 · 按住拖动平移</span>
-                    </div>
-                    <div class="c-gwrap">
-                        <div class="c-gstage" id="c-global-stage"><img id="c-global-img" :src="'/pedigree_assets/global-pedigree-2026.svg'" alt="现实马血统关系图" loading="lazy"></div>
-                    </div>
-                </section>
             </div>
 </div>
 
