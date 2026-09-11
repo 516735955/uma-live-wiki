@@ -696,7 +696,7 @@
                         <ul class="cio-grid" id="cIntroGrid"></ul>
                         <p class="cio-nodata" id="cIntroNoData">没有找到匹配的角色</p>
                     </div>
-                    <div class="cio-detail" id="cIntroDetail" :class="{'has-pedigree-lens': charDetail && charDetail.id === 'staygold'}" v-if="charDetail" v-cloak>
+                    <div class="cio-detail" id="cIntroDetail" :class="{'has-pedigree-lens': charDetail && (charDetail.id === 'staygold' || charDetail.id === 'admiregroove')}" v-if="charDetail" v-cloak>
                         <div class="cio-detail-top">
                             <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : '← 返回角色列表' }}</button>
                             <div>

@@ -4,7 +4,13 @@
   var query = new URLSearchParams(window.location.search);
   var requestedSample = query.get('sample');
   var embedded = query.has('embed');
-  var state = { sample: requestedSample || 'staygold', expanded: true, lockedItem: null, resizeTimer: null };
+  var state = {
+    sample: requestedSample || 'staygold',
+    expanded: true,
+    lockedItem: null,
+    lockedKey: '',
+    resizeTimer: null
+  };
   var byId = {};
   var charById = {};
   var viewport = document.getElementById('graph-viewport');
@@ -22,7 +28,7 @@
     JPN: '日本', USA: '美国', GB: '英国', CAN: '加拿大', IRE: '爱尔兰',
     FR: '法国', ITY: '意大利', ARG: '阿根廷', AUS: '澳大利亚',
     NZ: '新西兰', GER: '德国', BRZ: '巴西', CHI: '智利',
-    SAF: '南非', UAE: '阿联酋'
+    SAF: '南非', UAE: '阿联酋', SYR: '叙利亚', SUI: '瑞士', URU: '乌拉圭'
   };
   var relationRank = { full: 0, same_dam: 1, same_sire: 2 };
 
@@ -65,7 +71,8 @@
     var cid = charById[lookupId] ? lookupId : node.character_id;
     var character = cid ? charById[cid] : null;
     var role = Boolean(character);
-    var horseZh = cleanName(horseNode.zh || node.real || node.zh || horseNode.en || node.en || id);
+    var horseZh = cleanName(horseNode.real_zh || horseNode.zh || node.real_zh || node.zh ||
+      horseNode.en || node.en || id);
     var sourceUrl = horseNode.metadata_source_url || node.metadata_source_url ||
       horseNode.profile_url || node.profile_url || node.parentage_source_url || '';
     return {
@@ -78,8 +85,8 @@
       name: role ? cleanName(character.zh) : horseZh,
       horseId: horseNode.cid || node.horse_id || id,
       horseZh: horseZh,
-      ja: cleanName(horseNode.ja || node.ja),
-      en: cleanName(horseNode.en || node.en),
+      ja: cleanName(horseNode.real || horseNode.ja || node.real || node.ja),
+      en: cleanName(horseNode.real_en || horseNode.en || node.real_en || node.en),
       sex: horseNode.sex || node.sex || '',
       born: horseNode.born || node.born || '',
       country: horseNode.country || node.country || '',
@@ -125,6 +132,7 @@
         item.tag = pedigreeTag(generation + 1, index);
         item.generation = generation + 1;
         item.index = index;
+        item.focusId = 'ancestor:' + item.generation + ':' + index;
         ancestors.push(item);
       });
     });
@@ -136,6 +144,11 @@
         if (ancestorId && path.indexOf(ancestorId) === -1) path.push(ancestorId);
       }
       item.path = path;
+      item.pathFocusIds = [rootId];
+      for (var pathLevel = 1; pathLevel <= item.generation; pathLevel++) {
+        var pathIndex = Math.floor(item.index / Math.pow(2, item.generation - pathLevel));
+        item.pathFocusIds.push('ancestor:' + pathLevel + ':' + pathIndex);
+      }
     });
 
     var siblings = (relations.siblings || []).map(function (relation) {
@@ -144,6 +157,9 @@
       item.tag = siblingLabel(relation.relation);
       item.relationKind = relation.relation;
       item.sharedParents = relation.shared_parents || [];
+      item.pathFocusIds = [rootId, item.id].concat(ancestors.filter(function (ancestor) {
+        return item.sharedParents.indexOf(ancestor.id) !== -1;
+      }).map(function (ancestor) { return ancestor.focusId; }));
       return item;
     }).sort(function (a, b) {
       var relationDifference = relationRank[a.relationKind] - relationRank[b.relationKind];
@@ -251,7 +267,7 @@
 
   function renderDetail(item, mobile) {
     if (!item) return;
-    var locked = Boolean(state.lockedItem && state.lockedItem.horseId === item.horseId);
+    var locked = Boolean(state.lockedItem && state.lockedKey === item.selectionKey);
     inspector.innerHTML = detailHtml(item, 'inspector-title', locked);
     var unpin = inspector.querySelector('[data-unpin]');
     if (unpin) unpin.addEventListener('click', clearPin);
@@ -263,18 +279,20 @@
   }
 
   function syncPinnedSelection() {
-    stage.querySelectorAll('[data-horse-id]').forEach(function (element) {
+    stage.querySelectorAll('[data-selection-key]').forEach(function (element) {
       element.classList.toggle('is-selected', Boolean(state.lockedItem) &&
-        element.dataset.horseId === state.lockedItem.horseId);
+        element.dataset.selectionKey === state.lockedKey);
     });
   }
 
-  function pinDetail(item, mobile) {
-    if (state.lockedItem && state.lockedItem.horseId === item.horseId) {
+  function pinDetail(item, mobile, selectionKey) {
+    if (state.lockedItem && state.lockedKey === selectionKey) {
       clearPin();
       return;
     }
+    item.selectionKey = selectionKey;
     state.lockedItem = item;
+    state.lockedKey = selectionKey;
     renderDetail(item, mobile);
     syncPinnedSelection();
   }
@@ -286,6 +304,7 @@
 
   function clearPin() {
     state.lockedItem = null;
+    state.lockedKey = '';
     closeSheet();
     syncPinnedSelection();
     clearHoverPath();
@@ -314,18 +333,15 @@
 
   function setHoverPath(item) {
     var ids = highlightIds(item);
+    var visualIds = item.pathFocusIds || ids;
+    var focusId = item.focusId || item.id;
     stage.classList.add('has-hover-path');
     stage.querySelectorAll('[data-node-id]').forEach(function (element) {
-      element.classList.toggle('is-path-node', ids.indexOf(element.dataset.nodeId) !== -1);
+      element.classList.toggle('is-path-node', visualIds.indexOf(element.dataset.focusId) !== -1);
     });
-    stage.querySelectorAll('.relation-edge').forEach(function (edge) {
-      var triggerIds = (edge.dataset.highlightIds || '').split('|').filter(Boolean);
-      var edgeIds = (edge.dataset.relationIds || '').split('|').filter(Boolean);
-      var isExactPath = triggerIds.length > 0 && triggerIds.indexOf(item.id) !== -1;
-      var isLegacyPath = triggerIds.length === 0 && edgeIds.length > 0 && edgeIds.every(function (id) {
-          return ids.indexOf(id) !== -1;
-        });
-      edge.classList.toggle('is-path-edge', isExactPath || isLegacyPath);
+    stage.querySelectorAll('.relation-focus-edge').forEach(function (edge) {
+      var triggerIds = (edge.dataset.focusIds || '').split('|').filter(Boolean);
+      edge.classList.toggle('is-path-edge', triggerIds.indexOf(focusId) !== -1);
     });
   }
 
@@ -338,13 +354,15 @@
   }
 
   function bindInteractive(element, item) {
+    var selectionKey = item.selectionKey || item.focusId || (item.group + ':' + item.id);
+    element.dataset.selectionKey = selectionKey;
     element.addEventListener('mouseenter', function () { previewDetail(item); setHoverPath(item); });
     element.addEventListener('mouseleave', clearHoverPath);
     element.addEventListener('focus', function () { previewDetail(item); setHoverPath(item); });
     element.addEventListener('blur', clearHoverPath);
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      pinDetail(item, isCoarsePointer());
+      pinDetail(item, isCoarsePointer(), selectionKey);
     });
   }
 
@@ -352,11 +370,14 @@
     options = options || {};
     var element = document.createElement('button');
     var isRoot = Boolean(options.root);
-    var width = isRoot ? 182 : (item.role ? 152 : 128);
+    var isAncestor = item.group === 'ancestor';
+    var width = isRoot ? 182 : (isAncestor ? (item.role ? 142 : 124) : (item.role ? 152 : 128));
     var height = isRoot ? 70 : (item.role ? 60 : 44);
-    element.className = 'ped-node' + (isRoot ? ' is-root' : '') + (item.role ? ' is-role' : ' is-horse');
+    element.className = 'ped-node' + (isRoot ? ' is-root' : '') +
+      (isAncestor ? ' is-ancestor-node' : '') + (item.role ? ' is-role' : ' is-horse');
     element.dataset.group = item.group;
     element.dataset.nodeId = item.id;
+    element.dataset.focusId = item.focusId || item.id;
     element.dataset.horseId = item.horseId;
     element.setAttribute('aria-label', item.name + (item.tag ? '，' + item.tag : ''));
     element.style.left = Math.round(x - width / 2) + 'px';
@@ -432,19 +453,23 @@
     path.dataset.relationIds = (options.relationIds || [from.item && from.item.id, to.item && to.item.id])
       .filter(Boolean).join('|');
     svg.appendChild(path);
+    return path;
   }
 
-  function addPath(svg, d, group, relationIds, highlightIds) {
+  function addPath(svg, d, group, relationIds) {
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d', d);
     path.setAttribute('class', 'relation-edge ' + group);
     path.dataset.relationIds = (relationIds || []).filter(Boolean).join('|');
-    path.dataset.highlightIds = (highlightIds || []).filter(Boolean).join('|');
     svg.appendChild(path);
   }
 
   function roundedOrthogonalPath(points, radius) {
     if (!points || points.length < 2) return '';
+    points = points.filter(function (point, index) {
+      return index === 0 || point.x !== points[index - 1].x || point.y !== points[index - 1].y;
+    });
+    if (points.length < 2) return '';
     var d = 'M' + points[0].x + ',' + points[0].y;
     for (var index = 1; index < points.length - 1; index++) {
       var previous = points[index - 1];
@@ -467,24 +492,31 @@
     return d + ' L' + last.x + ',' + last.y;
   }
 
-  function addRoundedPath(svg, points, group, relationIds, highlightIds, radius) {
-    addPath(svg, roundedOrthogonalPath(points, radius), group, relationIds, highlightIds);
+  function addRoundedPath(svg, points, group, relationIds, radius) {
+    addPath(svg, roundedOrthogonalPath(points, radius), group, relationIds);
   }
 
-  function addJunction(svg, x, y, group) {
-    var junction = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    junction.setAttribute('cx', x);
-    junction.setAttribute('cy', y);
-    junction.setAttribute('r', 4);
-    junction.setAttribute('class', 'relation-junction ' + group);
-    svg.appendChild(junction);
+  function addFocusPath(svg, points, group, focusIds, radius) {
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', roundedOrthogonalPath(points, radius || 14));
+    path.setAttribute('class', 'relation-focus-edge ' + group);
+    path.dataset.focusIds = (focusIds || []).filter(Boolean).join('|');
+    svg.appendChild(path);
+  }
+
+  function addFocusCurve(svg, from, to, group, focusIds, options) {
+    options = options || {};
+    var base = addEdge(svg, from, to, group + ' relation-focus-edge', options);
+    base.dataset.focusIds = (focusIds || []).filter(Boolean).join('|');
   }
 
   function addPartnerChip(item, x, y) {
     var chip = document.createElement('button');
     var parentRole = item.parentRole || '';
     chip.className = 'partner-chip' + (parentRole ? ' is-' + parentRole : '');
+    chip.dataset.group = item.group;
     chip.dataset.nodeId = item.id;
+    chip.dataset.focusId = item.focusId || item.id;
     chip.dataset.horseId = item.horseId;
     chip.style.left = (x - 76) + 'px';
     chip.style.top = y + 'px';
@@ -577,9 +609,53 @@
       var hasGrandchildren = rowGroups.some(function (group) {
         return group.entries.some(function (entry) { return entry.terminals.length > 0; });
       });
-      rows.push({ groups: rowGroups, height: hasGrandchildren ? 202 : 140 });
+      rows.push({ groups: rowGroups, height: hasGrandchildren ? 306 : 200 });
     }
     return rows;
+  }
+
+  function descendantSpinePosition(rows, areaLeft, laneWidth, columns, rootX) {
+    var occupied = [];
+    rows.forEach(function (row) {
+      var rowStart = areaLeft + (columns - row.groups.length) * laneWidth / 2;
+      row.groups.forEach(function (group, groupIndex) {
+        var groupX = rowStart + laneWidth * (groupIndex + .5);
+        occupied.push([groupX - 82, groupX + 82]);
+        spread(group.entries.length, groupX, 164).forEach(function (childX, entryIndex) {
+          occupied.push([childX - 82, childX + 82]);
+          spread(group.entries[entryIndex].terminals.length, childX, 158).forEach(function (terminalX) {
+            occupied.push([terminalX - 82, terminalX + 82]);
+          });
+        });
+      });
+    });
+    var left = 380;
+    var right = rootX - 28;
+    var ranges = occupied.map(function (range) {
+      return [Math.max(left, range[0]), Math.min(right, range[1])];
+    }).filter(function (range) { return range[0] < range[1]; }).sort(function (a, b) {
+      return a[0] - b[0];
+    });
+    var merged = [];
+    ranges.forEach(function (range) {
+      var last = merged[merged.length - 1];
+      if (!last || range[0] > last[1]) merged.push(range.slice());
+      else last[1] = Math.max(last[1], range[1]);
+    });
+    var gaps = [];
+    var cursor = left;
+    merged.forEach(function (range) {
+      if (range[0] > cursor) gaps.push([cursor, range[0]]);
+      cursor = Math.max(cursor, range[1]);
+    });
+    if (cursor < right) gaps.push([cursor, right]);
+    if (!gaps.length) return left - 24;
+    gaps.sort(function (a, b) {
+      var widthDifference = (b[1] - b[0]) - (a[1] - a[0]);
+      if (widthDifference) return widthDifference;
+      return Math.abs(rootX - b[1]) - Math.abs(rootX - a[1]);
+    });
+    return (gaps[0][0] + gaps[0][1]) / 2;
   }
 
   function renderLens(model) {
@@ -608,19 +684,19 @@
     });
 
     var hasSiblings = siblingGroups.length > 0;
-    var descendantColumns = hasSiblings ? 2 : Math.min(4, Math.max(1, descendantFamilies.length));
+    var descendantColumns = hasSiblings ? 2 : Math.min(3, Math.max(1, descendantFamilies.length));
     var familyRows = descendantRows(descendantFamilies, descendantColumns);
     var siblingHeight = 0;
     siblingGroups.forEach(function (group) {
-      siblingHeight += 54 + Math.ceil(group.items.length / 3) * 72;
+      siblingHeight += 60 + Math.ceil(group.items.length / 3) * 78;
     });
     var familyHeight = familyRows.reduce(function (total, row) { return total + row.height; }, 0);
     var breedingHeight = model.breeding.length ? 126 : 0;
     var lowerHeight = Math.max(siblingHeight, familyHeight + breedingHeight);
-    var width = 1280;
-    var height = Math.max(760, 485 + lowerHeight);
-    var rootX = 620;
-    var rootY = 390;
+    var width = 1320;
+    var height = Math.max(790, 505 + lowerHeight);
+    var rootX = 660;
+    var rootY = 405;
     stage.style.width = width + 'px';
     stage.style.height = height + 'px';
     var svg = createSvg(width, height);
@@ -634,9 +710,9 @@
 
     for (var generation = 2; generation >= 0; generation--) {
       var row = model.ancestors.filter(function (item) { return item.generation === generation + 1; });
-      var spacing = generation === 2 ? 136 : (generation === 1 ? 190 : 280);
+      var spacing = generation === 2 ? 156 : (generation === 1 ? 210 : 310);
       var xs = spread(row.length, rootX, spacing);
-      var y = 55 + (2 - generation) * 100;
+      var y = 58 + (2 - generation) * 104;
       row.forEach(function (item, index) {
         positions['a' + generation + '_' + item.index] = createNode(item, xs[index], y);
       });
@@ -644,121 +720,166 @@
     positions.root = createNode(model.root, rootX, rootY, { root: true, hideTag: true });
     [0, 1].forEach(function (index) {
       var parent = positions['a0_' + index];
-      if (parent) addEdge(svg, parent, positions.root, 'ancestor', {
-        relationIds: [parent.item.id, model.root.id]
-      });
+      if (parent) {
+        var parentFocusIds = model.ancestors.filter(function (item) {
+          return Math.floor(item.index / Math.pow(2, item.generation - 1)) === index;
+        }).map(function (item) { return item.focusId; });
+        addEdge(svg, parent, positions.root, 'ancestor', {
+          relationIds: [parent.item.id, model.root.id]
+        });
+        addFocusCurve(svg, parent, positions.root, 'ancestor', parentFocusIds);
+      }
     });
     [0, 1, 2, 3].forEach(function (index) {
       var ancestor = positions['a1_' + index];
       var child = positions['a0_' + Math.floor(index / 2)];
-      if (ancestor && child) addEdge(svg, ancestor, child, 'ancestor', {
-        relationIds: [ancestor.item.id, child.item.id]
-      });
+      if (ancestor && child) {
+        var ancestorFocusIds = model.ancestors.filter(function (item) {
+          return item.generation >= 2 &&
+            Math.floor(item.index / Math.pow(2, item.generation - 2)) === index;
+        }).map(function (item) { return item.focusId; });
+        addEdge(svg, ancestor, child, 'ancestor', {
+          relationIds: [ancestor.item.id, child.item.id]
+        });
+        addFocusCurve(svg, ancestor, child, 'ancestor', ancestorFocusIds);
+      }
     });
     for (var ai = 0; ai < 8; ai++) {
       var oldest = positions['a2_' + ai];
       var next = positions['a1_' + Math.floor(ai / 2)];
-      if (oldest && next) addEdge(svg, oldest, next, 'ancestor', {
-        relationIds: [oldest.item.id, next.item.id]
-      });
+      if (oldest && next) {
+        addEdge(svg, oldest, next, 'ancestor', {
+          relationIds: [oldest.item.id, next.item.id]
+        });
+        addFocusCurve(svg, oldest, next, 'ancestor', [oldest.item.focusId]);
+      }
     }
 
-    var siblingY = 486;
+    var siblingY = 516;
     siblingGroups.forEach(function (group, groupIndex) {
-      createGroupLabel(group.title, group.items.length, 28, siblingY, 452);
+      createGroupLabel(group.title, group.items.length, 24, siblingY, 472);
       var rowCount = Math.ceil(group.items.length / 3);
-      var busX = 492 - groupIndex * 6;
-      var firstRowBusY = siblingY + 42;
-      var lastRowBusY = firstRowBusY + (rowCount - 1) * 72;
-      addPath(svg,
-        'M' + (rootX - 91) + ',' + rootY +
-        ' C' + (rootX - 132) + ',' + rootY + ' ' + busX + ',' + (rootY + 25) + ' ' + busX + ',' + firstRowBusY +
-        ' V' + lastRowBusY,
-        'sibling', group.ids, group.itemIds
-      );
+      var busX = 526 - groupIndex * 6;
+      var firstRowBusY = siblingY + 46;
+      var lastRowBusY = firstRowBusY + (rowCount - 1) * 78;
+      addRoundedPath(svg, [
+        { x: rootX - 91, y: rootY },
+        { x: busX, y: rootY },
+        { x: busX, y: lastRowBusY }
+      ], 'sibling', group.ids, 18);
       for (var rowIndex = 0; rowIndex < rowCount; rowIndex++) {
         var rowItems = group.items.slice(rowIndex * 3, rowIndex * 3 + 3);
-        var rowXs = spread(rowItems.length, 250, 160);
-        var rowBusY = firstRowBusY + rowIndex * 72;
-        var nodeY = rowBusY + 34;
-        var rowItemIds = rowItems.map(function (item) { return item.id; });
+        var rowXs = spread(rowItems.length, 256, 164);
+        var rowBusY = firstRowBusY + rowIndex * 78;
+        var nodeY = rowBusY + 38;
         addPath(svg, 'M' + rowXs[0] + ',' + rowBusY + ' H' + busX, 'sibling',
-          [model.root.id].concat(group.items[0].sharedParents || []), rowItemIds);
+          [model.root.id].concat(group.items[0].sharedParents || []));
         rowItems.forEach(function (item, colIndex) {
           var node = createNode(item, rowXs[colIndex], nodeY, { hideTag: true });
           addPath(svg, 'M' + rowXs[colIndex] + ',' + rowBusY + ' V' + (nodeY - node.height / 2),
-            'sibling', [model.root.id, item.id].concat(item.sharedParents || []), [item.id]);
+            'sibling', [model.root.id, item.id].concat(item.sharedParents || []));
+          addFocusPath(svg, [
+            { x: rootX - 91, y: rootY },
+            { x: busX, y: rootY },
+            { x: busX, y: rowBusY },
+            { x: rowXs[colIndex], y: rowBusY },
+            { x: rowXs[colIndex], y: nodeY - node.height / 2 }
+          ], 'sibling', [item.id], 18);
         });
       }
-      siblingY += 58 + rowCount * 72;
+      siblingY += 60 + rowCount * 78;
     });
 
     if (descendantFamilies.length) {
-      var areaLeft = hasSiblings ? 500 : 35;
-      var areaWidth = hasSiblings ? 750 : 1170;
+      var areaLeft = hasSiblings ? 635 : 40;
+      var areaWidth = hasSiblings ? 670 : 1240;
       var laneWidth = areaWidth / descendantColumns;
-      var familyY = 486;
+      var descendantSpineX = hasSiblings ? 604 : descendantSpinePosition(
+        familyRows, areaLeft, laneWidth, descendantColumns, rootX
+      );
+      var branchY = rootY + 68;
+      var familyY = 516;
       var rowUnionYs = [];
       familyRows.forEach(function (row) {
-        rowUnionYs.push(familyY + 42);
+        rowUnionYs.push(familyY + 50);
         familyY += row.height;
       });
-      var allDescendantIds = descendantFamilies.reduce(function (ids, group) {
-        return ids.concat(group.ids.filter(function (id) { return id !== model.root.id; }));
-      }, []);
-      addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + rowUnionYs[rowUnionYs.length - 1],
-        'descendant', [model.root.id], allDescendantIds);
-      familyY = 486;
+      addRoundedPath(svg, [
+        { x: rootX, y: rootY + 35 },
+        { x: rootX, y: branchY },
+        { x: descendantSpineX, y: branchY },
+        { x: descendantSpineX, y: rowUnionYs[rowUnionYs.length - 1] }
+      ], 'descendant', [model.root.id], 18);
+      familyY = 516;
       familyRows.forEach(function (row) {
         var rowStart = areaLeft + (descendantColumns - row.groups.length) * laneWidth / 2;
         var centers = row.groups.map(function (_, index) {
           return rowStart + laneWidth * (index + .5);
         });
-        var unionY = familyY + 42;
+        var unionY = familyY + 50;
         row.groups.forEach(function (group, groupIndex) {
           var groupX = centers[groupIndex];
-          var groupTriggerIds = group.ids.filter(function (id) { return id !== model.root.id; });
-          addRoundedPath(svg, [
-            { x: rootX, y: unionY - 28 },
-            { x: rootX, y: unionY },
-            { x: groupX, y: unionY }
-          ], 'descendant', [model.root.id], groupTriggerIds, 14);
-          addJunction(svg, groupX, unionY, 'descendant');
           if (group.partner) {
             addPartnerChip(group.partner, groupX, familyY);
             addPath(svg, 'M' + groupX + ',' + (familyY + 30) + ' V' + unionY,
-              'partner ' + group.partner.parentRole, group.ids, groupTriggerIds);
+              'partner ' + group.partner.parentRole, group.ids);
           }
-          var childY = familyY + 91;
+          var childY = familyY + 125;
           var childXs = spread(group.entries.length, groupX, 164);
-          var childBusY = familyY + 55;
+          var childBusY = familyY + 78;
+          addRoundedPath(svg, [
+            { x: descendantSpineX, y: unionY },
+            { x: groupX, y: unionY },
+            { x: groupX, y: childBusY }
+          ], 'descendant', [model.root.id], 18);
           if (childXs.length > 1) {
             addPath(svg, 'M' + childXs[0] + ',' + childBusY + ' H' + childXs[childXs.length - 1],
-              'descendant', group.ids, groupTriggerIds);
+              'descendant', group.ids);
           }
-          addPath(svg, 'M' + groupX + ',' + unionY + ' V' + childBusY,
-            'descendant', group.ids, groupTriggerIds);
           group.entries.forEach(function (entry, entryIndex) {
             var childX = childXs[entryIndex];
             var childNode = createNode(entry.item, childX, childY);
-            var childTriggerIds = [entry.id].concat(entry.terminals.map(function (terminal) { return terminal.id; }));
             positions['d1_' + entry.id] = childNode;
             addPath(svg, 'M' + childX + ',' + childBusY + ' V' + (childY - childNode.height / 2),
-              'descendant', [model.root.id, entry.id].concat(group.partner ? [group.partner.id] : []), childTriggerIds);
+              'descendant', [model.root.id, entry.id].concat(group.partner ? [group.partner.id] : []));
+            var familyFocusIds = [entry.id].concat(entry.terminals.map(function (terminal) { return terminal.id; }));
+            if (group.partner) familyFocusIds.push(group.partner.id);
+            addFocusPath(svg, [
+              { x: rootX, y: rootY + 35 },
+              { x: rootX, y: branchY },
+              { x: descendantSpineX, y: branchY },
+              { x: descendantSpineX, y: unionY },
+              { x: groupX, y: unionY },
+              { x: groupX, y: childBusY },
+              { x: childX, y: childBusY },
+              { x: childX, y: childY - childNode.height / 2 }
+            ], 'descendant', familyFocusIds, 18);
+            if (group.partner) {
+              addFocusPath(svg, [
+                { x: groupX, y: familyY + 30 },
+                { x: groupX, y: unionY }
+              ], 'partner ' + group.partner.parentRole, familyFocusIds, 18);
+            }
             if (entry.terminals.length) {
-              var terminalY = familyY + 169;
+              var terminalY = familyY + 240;
               var terminalXs = spread(entry.terminals.length, childX, 158);
-              var terminalBusY = familyY + 132;
+              var terminalBusY = familyY + 190;
               addPath(svg, 'M' + childX + ',' + (childY + childNode.height / 2) + ' V' + terminalBusY,
-                'descendant', [entry.id], entry.terminals.map(function (terminal) { return terminal.id; }));
+                'descendant', [entry.id]);
               if (terminalXs.length > 1) {
                 addPath(svg, 'M' + terminalXs[0] + ',' + terminalBusY + ' H' + terminalXs[terminalXs.length - 1],
-                  'descendant', [entry.id], entry.terminals.map(function (terminal) { return terminal.id; }));
+                  'descendant', [entry.id]);
               }
               entry.terminals.forEach(function (item, terminalIndex) {
                 var terminal = createNode(item, terminalXs[terminalIndex], terminalY);
                 addPath(svg, 'M' + terminalXs[terminalIndex] + ',' + terminalBusY +
-                  ' V' + (terminalY - terminal.height / 2), 'descendant', [entry.id, item.id], [item.id]);
+                  ' V' + (terminalY - terminal.height / 2), 'descendant', [entry.id, item.id]);
+                addFocusPath(svg, [
+                  { x: childX, y: childY + childNode.height / 2 },
+                  { x: childX, y: terminalBusY },
+                  { x: terminalXs[terminalIndex], y: terminalBusY },
+                  { x: terminalXs[terminalIndex], y: terminalY - terminal.height / 2 }
+                ], 'descendant', [item.id], 18);
               });
             }
           });
@@ -771,18 +892,35 @@
       var breedingY = 540 + familyHeight;
       var breedingXs = spread(model.breeding.length, rootX, Math.min(260, 900 / Math.max(1, model.breeding.length - 1)));
       var breedingBusY = breedingY - 54;
-      var breedingIds = model.breeding.map(function (item) { return item.id; });
-      addPath(svg, 'M' + rootX + ',' + (rootY + 35) + ' V' + breedingBusY,
-        'breeding', [model.root.id], breedingIds);
+      addRoundedPath(svg, [
+        { x: rootX, y: rootY + 35 },
+        { x: rootX, y: breedingBusY }
+      ], 'breeding', [model.root.id], 18);
       addPath(svg, 'M' + breedingXs[0] + ',' + breedingBusY + ' H' + breedingXs[breedingXs.length - 1],
-        'breeding', [model.root.id], breedingIds);
+        'breeding', [model.root.id]);
       model.breeding.forEach(function (item, index) {
         var node = createNode(item, breedingXs[index], breedingY);
         addPath(svg, 'M' + breedingXs[index] + ',' + breedingBusY +
-          ' V' + (breedingY - node.height / 2), 'breeding', [model.root.id, item.id], [item.id]);
+          ' V' + (breedingY - node.height / 2), 'breeding', [model.root.id, item.id]);
+        addFocusPath(svg, [
+          { x: rootX, y: rootY + 35 },
+          { x: rootX, y: breedingBusY },
+          { x: breedingXs[index], y: breedingBusY },
+          { x: breedingXs[index], y: breedingY - node.height / 2 }
+        ], 'breeding', [item.id], 18);
       });
     }
     return { width: width, height: height };
+  }
+
+  function syncEmbeddedHeight() {
+    if (embedded && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'uma-pedigree-height',
+        sample: state.sample,
+        height: Math.ceil(workspace.getBoundingClientRect().height)
+      }, window.location.origin);
+    }
   }
 
   function layoutStage() {
@@ -802,19 +940,14 @@
       }
       viewport.scrollTop = 0;
     }
-    if (embedded && window.parent !== window) {
-      window.parent.postMessage({
-        type: 'uma-pedigree-height',
-        sample: state.sample,
-        height: Math.ceil(workspace.getBoundingClientRect().height)
-      }, window.location.origin);
-    }
+    syncEmbeddedHeight();
   }
 
   function render() {
     currentModel = buildModel(state.sample);
     stage.innerHTML = '';
     state.lockedItem = null;
+    state.lockedKey = '';
     closeSheet();
     document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
     var summary = ['三代血统'];
@@ -858,7 +991,7 @@
     var button = document.querySelector('[data-action="toggle"]');
     button.setAttribute('aria-expanded', String(state.expanded));
     button.querySelector('span').textContent = state.expanded ? '收起血统' : '展开血统';
-    if (state.expanded) requestAnimationFrame(layoutStage);
+    requestAnimationFrame(state.expanded ? layoutStage : syncEmbeddedHeight);
   });
 
   sheet.querySelectorAll('[data-sheet-close]').forEach(function (button) {

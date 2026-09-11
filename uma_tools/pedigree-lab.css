@@ -201,14 +201,29 @@ button:focus-visible, a:focus-visible {
   stroke-width: 1.7;
   transition: opacity .16s, stroke-width .16s;
 }
-.relation-edge.ancestor { stroke: var(--ancestor); opacity: .7; }
-.relation-edge.sibling { stroke: var(--sibling); opacity: .72; }
-.relation-edge.descendant { stroke: var(--descendant); opacity: .8; }
-.relation-edge.breeding { stroke: var(--breeding); stroke-dasharray: 5 5; opacity: .82; }
-.relation-edge.partner.sire { stroke: var(--sire); opacity: .72; }
-.relation-edge.partner.dam { stroke: var(--dam); opacity: .72; }
-.graph-stage.has-hover-path .relation-edge:not(.is-path-edge) { opacity: .09; }
-.relation-edge.is-path-edge { opacity: 1; stroke-width: 2.7; }
+.relation-edge.ancestor { stroke: var(--ancestor); opacity: .54; }
+.relation-edge.sibling { stroke: var(--sibling); opacity: .58; }
+.relation-edge.descendant { stroke: var(--descendant); opacity: .62; }
+.relation-edge.breeding { stroke: var(--breeding); stroke-dasharray: 5 5; opacity: .66; }
+.relation-edge.partner.sire { stroke: var(--sire); opacity: .58; }
+.relation-edge.partner.dam { stroke: var(--dam); opacity: .58; }
+.relation-focus-edge {
+  fill: none;
+  opacity: 0 !important;
+  pointer-events: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: opacity .15s;
+}
+.relation-focus-edge.ancestor { stroke: var(--ancestor); }
+.relation-focus-edge.sibling { stroke: var(--sibling); }
+.relation-focus-edge.descendant { stroke: var(--descendant); }
+.relation-focus-edge.breeding { stroke: var(--breeding); stroke-dasharray: none; }
+.relation-focus-edge.partner.sire { stroke: var(--sire); }
+.relation-focus-edge.partner.dam { stroke: var(--dam); }
+.graph-stage.has-hover-path .relation-edge:not(.relation-focus-edge) { opacity: .07; }
+.relation-focus-edge.is-path-edge { opacity: 1 !important; }
 .relation-junction { stroke: #fff; stroke-width: 2; }
 .relation-junction.descendant { fill: var(--descendant); }
 
@@ -296,6 +311,8 @@ button:focus-visible, a:focus-visible {
   background: rgba(255, 255, 255, .94);
   box-shadow: 0 3px 10px rgba(30, 38, 68, .06);
 }
+.ped-node.is-ancestor-node.is-role { width: 142px; }
+.ped-node.is-ancestor-node.is-horse { width: 124px; }
 .ped-sex {
   position: absolute;
   top: 6px;
@@ -333,7 +350,12 @@ button:focus-visible, a:focus-visible {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.is-root .ped-name { display: block; font-size: 16px; white-space: nowrap; }
+.is-root .ped-name {
+  display: -webkit-box;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  white-space: normal;
+}
 .ped-tag {
   position: absolute;
   top: -10px;

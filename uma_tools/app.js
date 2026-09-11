@@ -239,7 +239,7 @@ createApp({
       return Promise.all([
         loadCharacterIndexData(),
         loadDataScript('/data/character_detail_data.js?v=20260910-4', 'CHAR_DETAIL'),
-        loadDataScript('/data/pedigree_data.js?v=20260910-2', 'PED_REL')
+        loadDataScript('/data/pedigree_data.js?v=20260911-6', 'PED_REL')
       ]);
     }
     function loadVoiceData() {
@@ -2476,7 +2476,7 @@ createApp({
     var frames = document.querySelectorAll('.c-pedigree-lens-frame');
     frames.forEach(function (frame) {
       if (frame.dataset.pedigreeSample !== event.data.sample) return;
-      var height = Math.max(640, Math.min(1600, Number(event.data.height) || 0));
+      var height = Math.max(76, Math.min(1600, Number(event.data.height) || 0));
       if (height) frame.style.height = height + 'px';
     });
   });
@@ -2688,12 +2688,17 @@ createApp({
       box.appendChild(note);
       return;
     }
-    if (root === 'staygold') {
+    if (root === 'staygold' || root === 'admiregroove') {
       var lens = document.createElement('section');
       lens.className = 'c-pedigree-lens';
-      lens.innerHTML = '<iframe class="c-pedigree-lens-frame" data-pedigree-sample="staygold" ' +
-        'src="/pedigree-lab.html?embed=1&amp;sample=staygold&amp;v=20260911-3" ' +
-        'title="黄金旅程的血统关系" loading="eager"></iframe>';
+      var frame = document.createElement('iframe');
+      var displayName = relByCid[root].zh || root;
+      frame.className = 'c-pedigree-lens-frame';
+      frame.dataset.pedigreeSample = root;
+      frame.src = '/pedigree-lab.html?embed=1&sample=' + encodeURIComponent(root) + '&v=20260911-9';
+      frame.title = displayName + '的血统关系';
+      frame.loading = 'eager';
+      lens.appendChild(frame);
       box.appendChild(lens);
       return;
     }
