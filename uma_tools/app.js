@@ -2254,37 +2254,92 @@ createApp({
       '快乐米可': '快乐温顺',
       '苦涩糖衣': '微苦糖渍'
     };
+    function decodeHtml(s) {
+      return (s || '').replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+    }
     function parseSetlistRows(html) {
       const rows = String(html || '').split(/<tr>/);
       const out = [];
       rows.forEach(function (r) {
         const m = r.match(/<td class="setlist-song">([^<]*)<\/td>/);
         if (!m) return;
-        const song = (m[1] || '').replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+        const song = decodeHtml(m[1]);
         if (!song) return;
         if (/^MC\d*$/.test(song) || song === '安可') return;
+        const pm = r.match(/<td class="setlist-perf">([\s\S]*?)<\/td>/);
+        const all = pm ? decodeHtml(pm[1]) : '';
         const names = [];
         const re = /perf-name">([^<]+)<\/span>/g;
         let mm;
-        while ((mm = re.exec(r)) !== null) names.push(mm[1].replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').trim());
-        out.push({ song: song, names: names });
+        while ((mm = re.exec(r)) !== null) names.push(decodeHtml(mm[1]));
+        out.push({ song: song, names: names, all: all });
       });
       return out;
     }
-    function accumulateSetlists(data, acc) {
-      const arr = Array.isArray(data) ? data : [];
-      arr.forEach(function (live) {
-        (live.subs || []).forEach(function (sub) {
-          (sub.days || []).forEach(function (day) {
-            if (!day || !day.table) return;
-            parseSetlistRows(day.table).forEach(function (row) {
-              row.names.forEach(function (n) {
-                if (!acc[n]) acc[n] = {};
-                if (!acc[n][row.song]) acc[n][row.song] = 0;
-                acc[n][row.song] += 1;
-              });
+    function parseCast(castHtml) {
+      const out = [];
+      const s = String(castHtml || '');
+      const marks = [];
+      const re = /cast-label">([^<]+)<\/span>/g;
+      let m;
+      while ((m = re.exec(s)) !== null) marks.push({ label: decodeHtml(m[1]), idx: re.lastIndex });
+      if (marks.length === 0) {
+        const roles = [];
+        const rr = /（([^）]+)）/g;
+        while ((m = rr.exec(s)) !== null) roles.push(decodeHtml(m[1]));
+        if (roles.length) out.push({ label: '出演', roles: roles });
+        return out;
+      }
+      marks.forEach(function (mk) {
+        const rest = s.slice(mk.idx);
+        const cut = rest.search(/<div|<\/div>/);
+        const text = cut >= 0 ? rest.slice(0, cut) : rest;
+        const roles = [];
+        const rr = /（([^）]+)）/g;
+        let mm;
+        while ((mm = rr.exec(text)) !== null) roles.push(decodeHtml(mm[1]));
+        out.push({ label: mk.label, roles: roles });
+      });
+      return out;
+    }
+    var CAST_EXCLUDE = /实况|嘉宾|向导|解说|司会|特邀嘉宾/;
+    function rolesForDay(castGroups, date, dayIdx) {
+      var dayNum = 0;
+      var dm = String(date || '').match(/(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{1,2})/);
+      if (dm) dayNum = Number(dm[3]) + dayIdx;
+      var out = [];
+      castGroups.forEach(function (g) {
+        if (CAST_EXCLUDE.test(g.label)) return;
+        if (/两日|両日/.test(g.label)) { out.push.apply(out, g.roles); return; }
+        if (/仅|のみ|限定/.test(g.label)) {
+          var dm2 = g.label.match(/(\d{1,2})\s*日/);
+          if (dm2 && Number(dm2[1]) === dayNum) out.push.apply(out, g.roles);
+          return;
+        }
+        out.push.apply(out, g.roles);
+      });
+      return out;
+    }
+    function accumulateSub(sub, acc) {
+      var castGroups = parseCast(sub.cast);
+      (sub.days || []).forEach(function (day, dayIdx) {
+        if (!day || !day.table) return;
+        var expandRoles = null;
+        parseSetlistRows(day.table).forEach(function (row) {
+          if (/全员/.test(row.all)) {
+            if (!expandRoles) expandRoles = rolesForDay(castGroups, sub.date, dayIdx);
+            expandRoles.forEach(function (n) {
+              if (!acc[n]) acc[n] = {};
+              if (!acc[n][row.song]) acc[n][row.song] = 0;
+              acc[n][row.song] += 1;
             });
-          });
+          } else {
+            row.names.forEach(function (n) {
+              if (!acc[n]) acc[n] = {};
+              if (!acc[n][row.song]) acc[n][row.song] = 0;
+              acc[n][row.song] += 1;
+            });
+          }
         });
       });
     }
@@ -2292,54 +2347,21 @@ createApp({
       if (charSongsLoadPromise) return charSongsLoadPromise;
       charSongsLoadPromise = Promise.all([loadLiveCatData(), loadLiveData()])
         .then(function () {
-          const cat = liveCatData.value;
-          if (cat) {
-            if (cat.cd && Array.isArray(cat.cd.sections)) {
-              cat.cd.sections.forEach(function (sec) {
-                (sec.groups || []).forEach(function (grp) {
-                  (grp.subs || []).forEach(function (sub) {
-                    (sub.days || []).forEach(function (day) {
-                      if (!day || !day.table) return;
-                      parseSetlistRows(day.table).forEach(function (row) {
-                        row.names.forEach(function (n) {
-                          if (!charSongsMap[n]) charSongsMap[n] = {};
-                          if (!charSongsMap[n][row.song]) charSongsMap[n][row.song] = 0;
-                          charSongsMap[n][row.song] += 1;
-                        });
-                      });
-                    });
-                  });
-                });
-              });
-            }
-            ['twinkle', 'other'].forEach(function (k) {
-              var g = cat[k] && cat[k].groups;
-              if (!g) return;
-              g.forEach(function (grp) {
-                if (!grp) return;
-                var subs = grp.subs || [];
-                subs.forEach(function (sub) {
-                  if (!sub || !sub.days) return;
-                  sub.days.forEach(function (day) {
-                    if (!day || !day.table) return;
-                    parseSetlistRows(day.table).forEach(function (row) {
-                      row.names.forEach(function (n) {
-                        if (!charSongsMap[n]) charSongsMap[n] = {};
-                        if (!charSongsMap[n][row.song]) charSongsMap[n][row.song] = 0;
-                        charSongsMap[n][row.song] += 1;
-                      });
-                    });
-                  });
-                });
-              });
-            });
+          var cat = liveCatData.value;
+          function walkSubs(subs) {
+            (subs || []).forEach(function (sub) { if (sub && sub.days) accumulateSub(sub, charSongsMap); });
           }
-          accumulateSetlists(liveData.value, charSongsMap);
+          function walkGroups(list) {
+            (list || []).forEach(function (g) { if (g && g.subs) walkSubs(g.subs); });
+          }
+          if (cat) {
+            if (cat.cd && Array.isArray(cat.cd.sections)) cat.cd.sections.forEach(function (s) { walkGroups(s.groups); });
+            ['twinkle', 'other'].forEach(function (k) { if (cat[k]) walkGroups(cat[k].groups); });
+          }
+          (liveData.value || []).forEach(function (live) { walkSubs(live.subs); });
           charSongsVersion.value += 1;
         })
-        .catch(function () {
-          charSongsVersion.value += 1;
-        });
+        .catch(function () { charSongsVersion.value += 1; });
       return charSongsLoadPromise;
     }
     const charSongsDetailOpen = ref(false);
