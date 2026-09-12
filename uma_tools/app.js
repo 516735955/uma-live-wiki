@@ -286,7 +286,7 @@ createApp({
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
       if (!sub) return loadHomeSummary();
-      if (sub === 'albums' || sub === 'songs') return loadAlbums();
+      if (sub === 'albums' || sub === 'songs') return Promise.all([loadAlbums(), loadSongEvData(), loadLiveData(), loadLiveCatData()]);
       if (sub === 'events') return loadEvents();
       if (sub === 'voice' || sub === 'voice-actors') return Promise.all([loadVoiceData(), loadHomeSummary()]);
       if (sub === 'characters') {
@@ -1158,7 +1158,7 @@ createApp({
       return { song: { name: name, artist: '' }, album: null };
     }
     function openSongFromChar(songTitle) {
-      loadAlbums().then(function () {
+      Promise.all([loadAlbums(), loadSongEvData(), loadLiveData(), loadLiveCatData()]).then(function () {
         songDetail.value = findSongByName(songTitle);
         activeTab.value = 'database';
         dbView.value = 'songs';
@@ -1166,15 +1166,26 @@ createApp({
         pushUrl();
       });
     }
+    function songIsVariantOf(base, other) {
+      const b = String(base).trim();
+      const o = String(other).trim();
+      if (!b) return false;
+      if (o === b) return true;
+      if (o.indexOf(b) !== 0) return false;
+      return /^[\s（(\-]/.test(o.slice(b.length));
+    }
     const songAlbums = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
       var out = [];
+      var seen = {};
       albums.value.forEach(function (a) {
-        if (a.songs) {
-          a.songs.forEach(function (s) {
-            if (s.name === name) out.push(a);
-          });
+        if (!a.songs) return;
+        for (var i = 0; i < a.songs.length; i++) {
+          if (songIsVariantOf(name, a.songs[i].name)) {
+            if (!seen[a.name]) { seen[a.name] = 1; out.push(a); }
+            break;
+          }
         }
       });
       return out;
@@ -2098,24 +2109,30 @@ createApp({
       d.innerHTML = s;
       return d.textContent || '';
     }
-    function computeEvData() {
-      evDataLoading.value = true;
-      evDataError.value = '';
-      vaFilters.value = []; songFilter.value = 'all'; vaPage.value = 1; songPage.value = 1;
-      // 歌曲演出次数排行：仍来自 voice_participation.json（不变）
-      fetch('/data/voice_participation.json', { cache: 'no-cache' })
+    let songEvLoadPromise = null;
+    function loadSongEvData() {
+      if (songEvLoadPromise) return songEvLoadPromise;
+      songEvLoadPromise = fetch('/data/voice_participation.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           var events = (data && data.events) || [];
           var sEv = [];
           events.forEach(function (ev) {
             (ev.days || []).forEach(function (d) {
-              if (d.songs && d.songs.length) sEv.push({ cat: ev.cat, songs: d.songs });
+              if (d.songs && d.songs.length) sEv.push({ cat: ev.cat, songs: d.songs, link: ev.link, title: ev.title });
             });
           });
           songEvData.value = sEv;
         })
-        .catch(function () { /* 歌曲数据加载失败不阻塞声优侧 */ });
+        .catch(function () { songEvLoadPromise = null; songEvData.value = []; });
+      return songEvLoadPromise;
+    }
+    function computeEvData() {
+      evDataLoading.value = true;
+      evDataError.value = '';
+      vaFilters.value = []; songFilter.value = 'all'; vaPage.value = 1; songPage.value = 1;
+      // 歌曲演出次数排行：仍来自 voice_participation.json（不变）
+      loadSongEvData();
       // 声优出演次数排行：改由 events_list.xlsx 导出的 actor_participation.json（按事件计数）
       fetch('/data/actor_participation.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
@@ -2561,7 +2578,7 @@ createApp({
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
-      songDetail, songAlbums, songLives, songCharList, findSongByName, openSongFromChar,
+      songDetail, songAlbums, songLives, songCharList, findSongByName, openSongFromChar, loadSongEvData,
       songEarliestRelease, songLivesExpanded, songLivesVisible, openLiveFromUrl,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
@@ -3162,6 +3179,9 @@ createApp({
     var app = window.__uma_app;
     if (!app) return;
     try {
+      if (typeof app.loadSongEvData === 'function') { app.loadSongEvData(); }
+      if (typeof app.loadLiveData === 'function') { app.loadLiveData(); }
+      if (typeof app.loadLiveCatData === 'function') { app.loadLiveCatData(); }
       app.songDetail = app.findSongByName(song.name);
       app.activeTab = 'database';
       app.dbView = 'songs';
