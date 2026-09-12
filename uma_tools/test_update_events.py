@@ -184,6 +184,45 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             ],
         )
 
+    def test_full_cast_setlist_rows_expand_to_the_correct_day_cast(self):
+        class Identities:
+            @staticmethod
+            def character_id(name):
+                return {
+                    "特别周": "specialweek",
+                    "东海帝王": "tokaiteio",
+                    "无声铃鹿": "silencesuzuka",
+                    "骏川手纲": "hayakawatazuna",
+                }.get(name, "")
+
+        cast = """<div class="cast-line"><span class="cast-label">两日出演：</span>和氣あず未（特别周）</div>
+        <div class="cast-line"><span class="cast-label">仅5日：</span>Machico（东海帝王）</div>
+        <div class="cast-line"><span class="cast-label">仅6日：</span>高野麻里佳（无声铃鹿）</div>
+        <div class="cast-line"><span class="cast-label">向导：</span>藤井ゆきよ（骏川手纲）</div>"""
+        table = """<table><tbody><tr><td class="setlist-song">Song A</td>
+        <td class="setlist-perf">全员（2人）</td></tr></tbody></table>"""
+        day_one = UPDATE_EVENTS.cast_characters_for_session(cast, Identities(), "2022.3.5-6", 0)
+        day_two = UPDATE_EVENTS.cast_characters_for_session(cast, Identities(), "2022.3.5-6", 1)
+        self.assertEqual(day_one, ["specialweek", "tokaiteio"])
+        self.assertEqual(day_two, ["specialweek", "silencesuzuka"])
+        self.assertEqual(
+            UPDATE_EVENTS.table_performances(table, Identities(), day_two),
+            [{"song": "Song A", "character_ids": ["specialweek", "silencesuzuka"]}],
+        )
+
+    def test_unlabelled_performers_survive_an_auxiliary_labeled_cast_line(self):
+        class Identities:
+            @staticmethod
+            def character_id(name):
+                return {"特别周": "specialweek", "骏川手纲": "hayakawatazuna"}.get(name, "")
+
+        cast = """<div class="cast-line">和氣あず未（特别周）</div>
+        <div class="cast-line"><span class="cast-label">向导：</span>藤井ゆきよ（骏川手纲）</div>"""
+        self.assertEqual(
+            UPDATE_EVENTS.cast_characters_for_session(cast, Identities(), "2024.1.1", 0),
+            ["specialweek"],
+        )
+
     def test_short_character_aliases_require_name_boundaries(self):
         identities = UPDATE_EVENTS.IdentityIndex.__new__(UPDATE_EVENTS.IdentityIndex)
         identities.character_by_alias = {"エル": "elcondorpasa", "スペ": "specialweek"}

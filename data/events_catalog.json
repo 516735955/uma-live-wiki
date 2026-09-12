@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T08:27:29+00:00",
+  "generated_at": "2026-09-12T12:17:11+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "b7eb03fe490561e4e955a19566d134e425eb6efba4157249193a5c5c5e531c78",
@@ -6805,37 +6805,63 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "oguricap",
-            "buenavista",
-            "foreveryoung",
-            "luckylilac",
-            "currenbouquetdor",
-            "granalegria",
-            "epiphaneia",
-            "sakurachiyonoo",
-            "airshakur",
-            "lovesonlyyou",
             "meishodoto",
-            "reddesire",
+            "buenavista",
             "calstonelighto",
-            "espoircity",
-            "sakurachitoseo",
-            "tokaiteio",
-            "symbolikriss",
-            "tmoperao",
-            "victoirepisa",
-            "kiseki",
-            "tamamocross",
-            "agnesdigital",
             "almondeye",
+            "reddesire",
+            "foreveryoung",
             "marchelorraine",
-            "casinodrive",
-            "daringtact"
+            "epiphaneia",
+            "victoirepisa",
+            "tokaiteio",
+            "oguricap",
+            "tmoperao",
+            "agnesdigital",
+            "tamamocross",
+            "airshakur",
+            "sakurachiyonoo",
+            "daringtact",
+            "espoircity",
+            "symbolikriss",
+            "sakurachitoseo",
+            "luckylilac",
+            "granalegria",
+            "lovesonlyyou",
+            "currenbouquetdor",
+            "kiseki",
+            "casinodrive"
           ],
           "performances": [
             {
               "song": "VOLTAGE",
-              "character_ids": []
+              "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "tokaiteio",
+                "oguricap",
+                "tmoperao",
+                "agnesdigital",
+                "tamamocross",
+                "airshakur",
+                "sakurachiyonoo",
+                "daringtact",
+                "espoircity",
+                "symbolikriss",
+                "sakurachitoseo",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "kiseki"
+              ]
             },
             {
               "song": "爆熱マイソウル",
@@ -7028,15 +7054,92 @@
             },
             {
               "song": "U.M.A. NEW WORLD!!",
-              "character_ids": []
+              "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "tokaiteio",
+                "oguricap",
+                "tmoperao",
+                "agnesdigital",
+                "tamamocross",
+                "airshakur",
+                "sakurachiyonoo",
+                "daringtact",
+                "espoircity",
+                "symbolikriss",
+                "sakurachitoseo",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "kiseki"
+              ]
             },
             {
               "song": "You! Aim! A!!",
-              "character_ids": []
+              "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "tokaiteio",
+                "oguricap",
+                "tmoperao",
+                "agnesdigital",
+                "tamamocross",
+                "airshakur",
+                "sakurachiyonoo",
+                "daringtact",
+                "espoircity",
+                "symbolikriss",
+                "sakurachitoseo",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "kiseki"
+              ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "tokaiteio",
+                "oguricap",
+                "tmoperao",
+                "agnesdigital",
+                "tamamocross",
+                "airshakur",
+                "sakurachiyonoo",
+                "daringtact",
+                "espoircity",
+                "symbolikriss",
+                "sakurachitoseo",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "kiseki",
                 "casinodrive"
               ]
             }
@@ -7081,38 +7184,64 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "goldship",
-            "dreamjourney",
-            "calstonelighto",
             "meishodoto",
-            "naritatoproad",
-            "nakayamafesta",
-            "logotype",
-            "kitasanblack",
-            "admiregroove",
-            "reddesire",
             "buenavista",
+            "calstonelighto",
             "almondeye",
+            "reddesire",
+            "foreveryoung",
+            "marchelorraine",
+            "epiphaneia",
+            "victoirepisa",
+            "goldship",
             "finemotion",
-            "gentildonna",
+            "eishinflash",
             "tosenjordan",
+            "nakayamafesta",
+            "kitasanblack",
+            "naritatoproad",
             "junglepocket",
             "duramente",
+            "admiregroove",
+            "dreamjourney",
             "fenomeno",
             "staygold",
-            "marchelorraine",
-            "foreveryoung",
-            "victoirepisa",
-            "eishinflash",
+            "logotype",
             "rosekingdom",
             "rulership",
-            "titleholder",
-            "epiphaneia"
+            "gentildonna",
+            "titleholder"
           ],
           "performances": [
             {
               "song": "UMA IN TOKYO",
-              "character_ids": []
+              "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "goldship",
+                "finemotion",
+                "eishinflash",
+                "tosenjordan",
+                "nakayamafesta",
+                "kitasanblack",
+                "naritatoproad",
+                "junglepocket",
+                "duramente",
+                "admiregroove",
+                "dreamjourney",
+                "fenomeno",
+                "staygold",
+                "logotype",
+                "rosekingdom",
+                "rulership"
+              ]
             },
             {
               "song": "トレセン音頭",
@@ -7306,17 +7435,93 @@
             },
             {
               "song": "U.M.A. NEW WORLD!!",
-              "character_ids": []
+              "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "goldship",
+                "finemotion",
+                "eishinflash",
+                "tosenjordan",
+                "nakayamafesta",
+                "kitasanblack",
+                "naritatoproad",
+                "junglepocket",
+                "duramente",
+                "admiregroove",
+                "dreamjourney",
+                "fenomeno",
+                "staygold",
+                "logotype",
+                "rosekingdom",
+                "rulership"
+              ]
             },
             {
               "song": "You! Aim! A!!",
               "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "goldship",
+                "finemotion",
+                "eishinflash",
+                "tosenjordan",
+                "nakayamafesta",
+                "kitasanblack",
+                "naritatoproad",
+                "junglepocket",
+                "duramente",
+                "admiregroove",
+                "dreamjourney",
+                "fenomeno",
+                "staygold",
+                "logotype",
+                "rosekingdom",
+                "rulership",
                 "gentildonna"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "goldship",
+                "finemotion",
+                "eishinflash",
+                "tosenjordan",
+                "nakayamafesta",
+                "kitasanblack",
+                "naritatoproad",
+                "junglepocket",
+                "duramente",
+                "admiregroove",
+                "dreamjourney",
+                "fenomeno",
+                "staygold",
+                "logotype",
+                "rosekingdom",
+                "rulership",
                 "titleholder",
                 "gentildonna"
               ]
@@ -7358,9 +7563,9 @@
       "summary": "",
       "characters": [
         {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
+          "id": "meishodoto",
+          "name": "名将怒涛",
+          "name_ja": "メイショウドトウ"
         },
         {
           "id": "buenavista",
@@ -7368,104 +7573,9 @@
           "name_ja": "ブエナビスタ"
         },
         {
-          "id": "foreveryoung",
-          "name": "青春永驻",
-          "name_ja": "フォーエバーヤング"
-        },
-        {
-          "id": "luckylilac",
-          "name": "旺紫丁",
-          "name_ja": "ラッキーライラック"
-        },
-        {
-          "id": "currenbouquetdor",
-          "name": "机伶金花",
-          "name_ja": "カレンブーケドール"
-        },
-        {
-          "id": "granalegria",
-          "name": "放声欢呼",
-          "name_ja": "グランアレグリア"
-        },
-        {
-          "id": "epiphaneia",
-          "name": "神威启示",
-          "name_ja": "エピファネイア"
-        },
-        {
-          "id": "sakurachiyonoo",
-          "name": "樱花千代王",
-          "name_ja": "サクラチヨノオー"
-        },
-        {
-          "id": "airshakur",
-          "name": "空中神宫",
-          "name_ja": "エアシャカール"
-        },
-        {
-          "id": "lovesonlyyou",
-          "name": "唯独爱你",
-          "name_ja": "ラヴズオンリーユー"
-        },
-        {
-          "id": "meishodoto",
-          "name": "名将怒涛",
-          "name_ja": "メイショウドトウ"
-        },
-        {
-          "id": "reddesire",
-          "name": "红色梦想",
-          "name_ja": "レッドディザイア"
-        },
-        {
           "id": "calstonelighto",
           "name": "金镇之光",
           "name_ja": "カルストンライトオ"
-        },
-        {
-          "id": "espoircity",
-          "name": "希望之城",
-          "name_ja": "エスポワールシチー"
-        },
-        {
-          "id": "sakurachitoseo",
-          "name": "樱花千岁王",
-          "name_ja": "サクラチトセオー"
-        },
-        {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
-        },
-        {
-          "id": "symbolikriss",
-          "name": "吉兆",
-          "name_ja": "シンボリクリスエス"
-        },
-        {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "victoirepisa",
-          "name": "比萨胜驹",
-          "name_ja": "ヴィクトワールピサ"
-        },
-        {
-          "id": "kiseki",
-          "name": "神业",
-          "name_ja": "キセキ"
-        },
-        {
-          "id": "tamamocross",
-          "name": "玉藻十字",
-          "name_ja": "タマモクロス"
-        },
-        {
-          "id": "agnesdigital",
-          "name": "爱丽数码",
-          "name_ja": "アグネスデジタル"
         },
         {
           "id": "almondeye",
@@ -7473,14 +7583,64 @@
           "name_ja": "アーモンドアイ"
         },
         {
+          "id": "reddesire",
+          "name": "红色梦想",
+          "name_ja": "レッドディザイア"
+        },
+        {
+          "id": "foreveryoung",
+          "name": "青春永驻",
+          "name_ja": "フォーエバーヤング"
+        },
+        {
           "id": "marchelorraine",
           "name": "洛林军歌",
           "name_ja": "マルシュロレーヌ"
         },
         {
-          "id": "casinodrive",
-          "name": "娱乐场",
-          "name_ja": "カジノドライヴ"
+          "id": "epiphaneia",
+          "name": "神威启示",
+          "name_ja": "エピファネイア"
+        },
+        {
+          "id": "victoirepisa",
+          "name": "比萨胜驹",
+          "name_ja": "ヴィクトワールピサ"
+        },
+        {
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
+        },
+        {
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
+        },
+        {
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
+        },
+        {
+          "id": "agnesdigital",
+          "name": "爱丽数码",
+          "name_ja": "アグネスデジタル"
+        },
+        {
+          "id": "tamamocross",
+          "name": "玉藻十字",
+          "name_ja": "タマモクロス"
+        },
+        {
+          "id": "airshakur",
+          "name": "空中神宫",
+          "name_ja": "エアシャカール"
+        },
+        {
+          "id": "sakurachiyonoo",
+          "name": "樱花千代王",
+          "name_ja": "サクラチヨノオー"
         },
         {
           "id": "daringtact",
@@ -7488,39 +7648,54 @@
           "name_ja": "デアリングタクト"
         },
         {
+          "id": "espoircity",
+          "name": "希望之城",
+          "name_ja": "エスポワールシチー"
+        },
+        {
+          "id": "symbolikriss",
+          "name": "吉兆",
+          "name_ja": "シンボリクリスエス"
+        },
+        {
+          "id": "sakurachitoseo",
+          "name": "樱花千岁王",
+          "name_ja": "サクラチトセオー"
+        },
+        {
+          "id": "luckylilac",
+          "name": "旺紫丁",
+          "name_ja": "ラッキーライラック"
+        },
+        {
+          "id": "granalegria",
+          "name": "放声欢呼",
+          "name_ja": "グランアレグリア"
+        },
+        {
+          "id": "lovesonlyyou",
+          "name": "唯独爱你",
+          "name_ja": "ラヴズオンリーユー"
+        },
+        {
+          "id": "currenbouquetdor",
+          "name": "机伶金花",
+          "name_ja": "カレンブーケドール"
+        },
+        {
+          "id": "kiseki",
+          "name": "神业",
+          "name_ja": "キセキ"
+        },
+        {
+          "id": "casinodrive",
+          "name": "娱乐场",
+          "name_ja": "カジノドライヴ"
+        },
+        {
           "id": "goldship",
           "name": "黄金船",
           "name_ja": "ゴールドシップ"
-        },
-        {
-          "id": "dreamjourney",
-          "name": "梦之旅",
-          "name_ja": "ドリームジャーニー"
-        },
-        {
-          "id": "naritatoproad",
-          "name": "成田路",
-          "name_ja": "ナリタトップロード"
-        },
-        {
-          "id": "nakayamafesta",
-          "name": "中山庆典",
-          "name_ja": "ナカヤマフェスタ"
-        },
-        {
-          "id": "logotype",
-          "name": "标志名驹",
-          "name_ja": "ロゴタイプ"
-        },
-        {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
-          "id": "admiregroove",
-          "name": "爱慕律动",
-          "name_ja": "アドマイヤグルーヴ"
         },
         {
           "id": "finemotion",
@@ -7528,14 +7703,29 @@
           "name_ja": "ファインモーション"
         },
         {
-          "id": "gentildonna",
-          "name": "贵妇人",
-          "name_ja": "ジェンティルドンナ"
+          "id": "eishinflash",
+          "name": "荣进闪耀",
+          "name_ja": "エイシンフラッシュ"
         },
         {
           "id": "tosenjordan",
           "name": "东瀛佐敦",
           "name_ja": "トーセンジョーダン"
+        },
+        {
+          "id": "nakayamafesta",
+          "name": "中山庆典",
+          "name_ja": "ナカヤマフェスタ"
+        },
+        {
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "naritatoproad",
+          "name": "成田路",
+          "name_ja": "ナリタトップロード"
         },
         {
           "id": "junglepocket",
@@ -7548,6 +7738,16 @@
           "name_ja": "ドゥラメンテ"
         },
         {
+          "id": "admiregroove",
+          "name": "爱慕律动",
+          "name_ja": "アドマイヤグルーヴ"
+        },
+        {
+          "id": "dreamjourney",
+          "name": "梦之旅",
+          "name_ja": "ドリームジャーニー"
+        },
+        {
           "id": "fenomeno",
           "name": "超常骏骥",
           "name_ja": "フェノーメノ"
@@ -7558,9 +7758,9 @@
           "name_ja": "ステイゴールド"
         },
         {
-          "id": "eishinflash",
-          "name": "荣进闪耀",
-          "name_ja": "エイシンフラッシュ"
+          "id": "logotype",
+          "name": "标志名驹",
+          "name_ja": "ロゴタイプ"
         },
         {
           "id": "rosekingdom",
@@ -7571,6 +7771,11 @@
           "id": "rulership",
           "name": "统治地位",
           "name_ja": "ルーラーシップ"
+        },
+        {
+          "id": "gentildonna",
+          "name": "贵妇人",
+          "name_ja": "ジェンティルドンナ"
         },
         {
           "id": "titleholder",
@@ -16250,37 +16455,61 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "matikanetannhauser",
-            "nicenature",
-            "tokaiteio",
-            "durandal",
-            "calstonelighto",
-            "currenchan",
-            "admiregroove",
-            "grasswonder",
             "oguricap",
-            "stillinlove",
-            "chronogenesis",
-            "currenbouquetdor",
-            "lovesonlyyou",
-            "admirevega",
-            "naritatoproad",
-            "tmoperao",
-            "dantsuflame",
-            "agnestachyon",
-            "matikanefukukitaru",
             "rheinkraft",
             "cesario",
+            "admiregroove",
+            "chronogenesis",
+            "staygold",
+            "tokaiteio",
+            "grasswonder",
+            "tmoperao",
+            "agnestachyon",
+            "admirevega",
+            "currenchan",
+            "matikanefukukitaru",
             "mejirodober",
+            "nicenature",
+            "matikanetannhauser",
+            "naritatoproad",
+            "dantsuflame",
+            "stillinlove",
+            "calstonelighto",
+            "lovesonlyyou",
+            "currenbouquetdor",
+            "durandal",
             "silencesuzuka",
             "tsurumarutsuyoshi",
-            "specialweek",
-            "staygold"
+            "specialweek"
           ],
           "performances": [
             {
               "song": "Shake The World!!",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "tokaiteio",
+                "grasswonder",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "currenchan",
+                "matikanefukukitaru",
+                "mejirodober",
+                "nicenature",
+                "matikanetannhauser",
+                "naritatoproad",
+                "dantsuflame",
+                "stillinlove",
+                "calstonelighto",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "durandal"
+              ]
             },
             {
               "song": "UMA Summer",
@@ -16475,18 +16704,87 @@
             {
               "song": "めにしゅき♡ラッシュっしゅ！",
               "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "tokaiteio",
+                "grasswonder",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "currenchan",
+                "matikanefukukitaru",
+                "mejirodober",
+                "nicenature",
+                "matikanetannhauser",
+                "naritatoproad",
+                "dantsuflame",
+                "stillinlove",
+                "calstonelighto",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "durandal",
                 "tsurumarutsuyoshi"
               ]
             },
             {
               "song": "STARTING FORCE",
               "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "tokaiteio",
+                "grasswonder",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "currenchan",
+                "matikanefukukitaru",
+                "mejirodober",
+                "nicenature",
+                "matikanetannhauser",
+                "naritatoproad",
+                "dantsuflame",
+                "stillinlove",
+                "calstonelighto",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "durandal",
                 "tsurumarutsuyoshi"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "tokaiteio",
+                "grasswonder",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "currenchan",
+                "matikanefukukitaru",
+                "mejirodober",
+                "nicenature",
+                "matikanetannhauser",
+                "naritatoproad",
+                "dantsuflame",
+                "stillinlove",
+                "calstonelighto",
+                "lovesonlyyou",
+                "currenbouquetdor",
+                "durandal",
                 "tsurumarutsuyoshi"
               ]
             }
@@ -16533,36 +16831,61 @@
           ],
           "character_ids": [
             "oguricap",
+            "rheinkraft",
+            "cesario",
+            "admiregroove",
+            "chronogenesis",
+            "staygold",
             "mejiroryan",
             "inesfujin",
             "kawakamiprincess",
+            "sweeptosho",
+            "supercreek",
             "bikopegasus",
             "satonodiamond",
+            "kitasanblack",
+            "yaenomuteki",
             "transcend",
+            "chevalgrand",
+            "verxina",
+            "vivlos",
             "hokkotarumae",
             "wonderacute",
             "airmessiah",
             "daringheart",
-            "admiregroove",
             "buenavista",
-            "chronogenesis",
-            "staygold",
-            "kitasanblack",
-            "chevalgrand",
-            "verxina",
-            "vivlos",
-            "sweeptosho",
-            "supercreek",
-            "yaenomuteki",
             "tuckerbryne",
-            "rheinkraft",
-            "cesario",
             "specialweek"
           ],
           "performances": [
             {
               "song": "Shake The World!!",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "mejiroryan",
+                "inesfujin",
+                "kawakamiprincess",
+                "sweeptosho",
+                "supercreek",
+                "bikopegasus",
+                "satonodiamond",
+                "kitasanblack",
+                "yaenomuteki",
+                "transcend",
+                "chevalgrand",
+                "verxina",
+                "vivlos",
+                "hokkotarumae",
+                "wonderacute",
+                "airmessiah",
+                "daringheart",
+                "buenavista"
+              ]
             },
             {
               "song": "めにしゅき♡ラッシュっしゅ！",
@@ -16758,15 +17081,90 @@
             },
             {
               "song": "Precious Star Dreamer",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "mejiroryan",
+                "inesfujin",
+                "kawakamiprincess",
+                "sweeptosho",
+                "supercreek",
+                "bikopegasus",
+                "satonodiamond",
+                "kitasanblack",
+                "yaenomuteki",
+                "transcend",
+                "chevalgrand",
+                "verxina",
+                "vivlos",
+                "hokkotarumae",
+                "wonderacute",
+                "airmessiah",
+                "daringheart",
+                "buenavista"
+              ]
             },
             {
               "song": "GIRLS' LEGEND U",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "mejiroryan",
+                "inesfujin",
+                "kawakamiprincess",
+                "sweeptosho",
+                "supercreek",
+                "bikopegasus",
+                "satonodiamond",
+                "kitasanblack",
+                "yaenomuteki",
+                "transcend",
+                "chevalgrand",
+                "verxina",
+                "vivlos",
+                "hokkotarumae",
+                "wonderacute",
+                "airmessiah",
+                "daringheart",
+                "buenavista"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "rheinkraft",
+                "cesario",
+                "admiregroove",
+                "chronogenesis",
+                "staygold",
+                "mejiroryan",
+                "inesfujin",
+                "kawakamiprincess",
+                "sweeptosho",
+                "supercreek",
+                "bikopegasus",
+                "satonodiamond",
+                "kitasanblack",
+                "yaenomuteki",
+                "transcend",
+                "chevalgrand",
+                "verxina",
+                "vivlos",
+                "hokkotarumae",
+                "wonderacute",
+                "airmessiah",
+                "daringheart",
+                "buenavista"
+              ]
             }
           ],
           "setlist_source": {
@@ -16809,99 +17207,9 @@
       "summary": "时间地点\n出处：AniLive资料库（码：66LF）\nhttps://pan.quark.cn/s/813ae1f0b6ca 码：66LF",
       "characters": [
         {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
-        },
-        {
-          "id": "nicenature",
-          "name": "优秀素质",
-          "name_ja": "ナイスネイチャ"
-        },
-        {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
-        },
-        {
-          "id": "durandal",
-          "name": "多旺达",
-          "name_ja": "デュランダル"
-        },
-        {
-          "id": "calstonelighto",
-          "name": "金镇之光",
-          "name_ja": "カルストンライトオ"
-        },
-        {
-          "id": "currenchan",
-          "name": "真机伶",
-          "name_ja": "カレンチャン"
-        },
-        {
-          "id": "admiregroove",
-          "name": "爱慕律动",
-          "name_ja": "アドマイヤグルーヴ"
-        },
-        {
-          "id": "grasswonder",
-          "name": "草上飞",
-          "name_ja": "グラスワンダー"
-        },
-        {
           "id": "oguricap",
           "name": "小栗帽",
           "name_ja": "オグリキャップ"
-        },
-        {
-          "id": "stillinlove",
-          "name": "爱如往昔",
-          "name_ja": "スティルインラブ"
-        },
-        {
-          "id": "chronogenesis",
-          "name": "创世驹",
-          "name_ja": "クロノジェネシス"
-        },
-        {
-          "id": "currenbouquetdor",
-          "name": "机伶金花",
-          "name_ja": "カレンブーケドール"
-        },
-        {
-          "id": "lovesonlyyou",
-          "name": "唯独爱你",
-          "name_ja": "ラヴズオンリーユー"
-        },
-        {
-          "id": "admirevega",
-          "name": "爱慕织姬",
-          "name_ja": "アドマイヤベガ"
-        },
-        {
-          "id": "naritatoproad",
-          "name": "成田路",
-          "name_ja": "ナリタトップロード"
-        },
-        {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "dantsuflame",
-          "name": "烈焰快驹",
-          "name_ja": "ダンツフレーム"
-        },
-        {
-          "id": "agnestachyon",
-          "name": "爱丽速子",
-          "name_ja": "アグネスタキオン"
-        },
-        {
-          "id": "matikanefukukitaru",
-          "name": "待兼福来",
-          "name_ja": "マチカネフクキタル"
         },
         {
           "id": "rheinkraft",
@@ -16914,9 +17222,104 @@
           "name_ja": "シーザリオ"
         },
         {
+          "id": "admiregroove",
+          "name": "爱慕律动",
+          "name_ja": "アドマイヤグルーヴ"
+        },
+        {
+          "id": "chronogenesis",
+          "name": "创世驹",
+          "name_ja": "クロノジェネシス"
+        },
+        {
+          "id": "staygold",
+          "name": "黄金旅程",
+          "name_ja": "ステイゴールド"
+        },
+        {
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
+        },
+        {
+          "id": "grasswonder",
+          "name": "草上飞",
+          "name_ja": "グラスワンダー"
+        },
+        {
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
+        },
+        {
+          "id": "agnestachyon",
+          "name": "爱丽速子",
+          "name_ja": "アグネスタキオン"
+        },
+        {
+          "id": "admirevega",
+          "name": "爱慕织姬",
+          "name_ja": "アドマイヤベガ"
+        },
+        {
+          "id": "currenchan",
+          "name": "真机伶",
+          "name_ja": "カレンチャン"
+        },
+        {
+          "id": "matikanefukukitaru",
+          "name": "待兼福来",
+          "name_ja": "マチカネフクキタル"
+        },
+        {
           "id": "mejirodober",
           "name": "目白多伯",
           "name_ja": "メジロドーベル"
+        },
+        {
+          "id": "nicenature",
+          "name": "优秀素质",
+          "name_ja": "ナイスネイチャ"
+        },
+        {
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
+        },
+        {
+          "id": "naritatoproad",
+          "name": "成田路",
+          "name_ja": "ナリタトップロード"
+        },
+        {
+          "id": "dantsuflame",
+          "name": "烈焰快驹",
+          "name_ja": "ダンツフレーム"
+        },
+        {
+          "id": "stillinlove",
+          "name": "爱如往昔",
+          "name_ja": "スティルインラブ"
+        },
+        {
+          "id": "calstonelighto",
+          "name": "金镇之光",
+          "name_ja": "カルストンライトオ"
+        },
+        {
+          "id": "lovesonlyyou",
+          "name": "唯独爱你",
+          "name_ja": "ラヴズオンリーユー"
+        },
+        {
+          "id": "currenbouquetdor",
+          "name": "机伶金花",
+          "name_ja": "カレンブーケドール"
+        },
+        {
+          "id": "durandal",
+          "name": "多旺达",
+          "name_ja": "デュランダル"
         },
         {
           "id": "silencesuzuka",
@@ -16934,11 +17337,6 @@
           "name_ja": "スペシャルウィーク"
         },
         {
-          "id": "staygold",
-          "name": "黄金旅程",
-          "name_ja": "ステイゴールド"
-        },
-        {
           "id": "mejiroryan",
           "name": "目白赖恩",
           "name_ja": "メジロライアン"
@@ -16954,6 +17352,16 @@
           "name_ja": "カワカミプリンセス"
         },
         {
+          "id": "sweeptosho",
+          "name": "东商变革",
+          "name_ja": "スイープトウショウ"
+        },
+        {
+          "id": "supercreek",
+          "name": "超级溪流",
+          "name_ja": "スーパークリーク"
+        },
+        {
           "id": "bikopegasus",
           "name": "微光飞驹",
           "name_ja": "ビコーペガサス"
@@ -16964,9 +17372,34 @@
           "name_ja": "サトノダイヤモンド"
         },
         {
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "yaenomuteki",
+          "name": "八重无敌",
+          "name_ja": "ヤエノムテキ"
+        },
+        {
           "id": "transcend",
           "name": "创升",
           "name_ja": "トランセンド"
+        },
+        {
+          "id": "chevalgrand",
+          "name": "高尚骏逸",
+          "name_ja": "シュヴァルグラン"
+        },
+        {
+          "id": "verxina",
+          "name": "极峰",
+          "name_ja": "ヴィルシーナ"
+        },
+        {
+          "id": "vivlos",
+          "name": "强击",
+          "name_ja": "ヴィブロス"
         },
         {
           "id": "hokkotarumae",
@@ -16992,41 +17425,6 @@
           "id": "buenavista",
           "name": "迷人景致",
           "name_ja": "ブエナビスタ"
-        },
-        {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
-          "id": "chevalgrand",
-          "name": "高尚骏逸",
-          "name_ja": "シュヴァルグラン"
-        },
-        {
-          "id": "verxina",
-          "name": "极峰",
-          "name_ja": "ヴィルシーナ"
-        },
-        {
-          "id": "vivlos",
-          "name": "强击",
-          "name_ja": "ヴィブロス"
-        },
-        {
-          "id": "sweeptosho",
-          "name": "东商变革",
-          "name_ja": "スイープトウショウ"
-        },
-        {
-          "id": "supercreek",
-          "name": "超级溪流",
-          "name_ja": "スーパークリーク"
-        },
-        {
-          "id": "yaenomuteki",
-          "name": "八重无敌",
-          "name_ja": "ヤエノムテキ"
         },
         {
           "id": "tuckerbryne",
@@ -23685,40 +24083,69 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "granalegria",
-            "currenbouquetdor",
-            "lovesonlyyou",
-            "chronogenesis",
+            "oguricap",
+            "nakayamafesta",
+            "mrcb",
+            "verxina",
+            "gentildonna",
             "blastonepiece",
-            "daringtact",
             "almondeye",
             "luckylilac",
-            "hokkotarumae",
-            "smartfalcon",
-            "copanorickey",
-            "espoircity",
-            "transcend",
-            "furioso",
+            "granalegria",
+            "lovesonlyyou",
+            "chronogenesis",
+            "currenbouquetdor",
             "mayanotopgun",
-            "matikanefukukitaru",
             "seekingthepearl",
+            "smartfalcon",
+            "matikanefukukitaru",
             "matikanetannhauser",
-            "chevalgrand",
-            "mrcb",
+            "daringtact",
+            "furioso",
+            "transcend",
+            "espoircity",
             "northflight",
-            "nakayamafesta",
-            "verxina",
+            "mejiroramonu",
+            "chevalgrand",
             "vivlos",
             "stillinlove",
-            "mejiroramonu",
-            "gentildonna",
-            "oguricap",
+            "copanorickey",
+            "hokkotarumae",
             "zankan_koukou"
           ],
           "performances": [
             {
               "song": "STARTING FORCE",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "mayanotopgun",
+                "seekingthepearl",
+                "smartfalcon",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "daringtact",
+                "furioso",
+                "transcend",
+                "espoircity",
+                "northflight",
+                "mejiroramonu",
+                "chevalgrand",
+                "vivlos",
+                "stillinlove",
+                "copanorickey",
+                "hokkotarumae"
+              ]
             },
             {
               "song": "GIRLS' LEGEND U",
@@ -23918,15 +24345,102 @@
             },
             {
               "song": "Legend-Changer",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "mayanotopgun",
+                "seekingthepearl",
+                "smartfalcon",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "daringtact",
+                "furioso",
+                "transcend",
+                "espoircity",
+                "northflight",
+                "mejiroramonu",
+                "chevalgrand",
+                "vivlos",
+                "stillinlove",
+                "copanorickey",
+                "hokkotarumae"
+              ]
             },
             {
               "song": "Shake The World!!",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "mayanotopgun",
+                "seekingthepearl",
+                "smartfalcon",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "daringtact",
+                "furioso",
+                "transcend",
+                "espoircity",
+                "northflight",
+                "mejiroramonu",
+                "chevalgrand",
+                "vivlos",
+                "stillinlove",
+                "copanorickey",
+                "hokkotarumae"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "mayanotopgun",
+                "seekingthepearl",
+                "smartfalcon",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "daringtact",
+                "furioso",
+                "transcend",
+                "espoircity",
+                "northflight",
+                "mejiroramonu",
+                "chevalgrand",
+                "vivlos",
+                "stillinlove",
+                "copanorickey",
+                "hokkotarumae"
+              ]
             }
           ],
           "setlist_source": {
@@ -23969,38 +24483,66 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
+            "oguricap",
+            "nakayamafesta",
+            "mrcb",
+            "verxina",
+            "gentildonna",
+            "blastonepiece",
+            "almondeye",
+            "luckylilac",
+            "granalegria",
+            "lovesonlyyou",
+            "chronogenesis",
+            "currenbouquetdor",
+            "goldship",
+            "naritabrian",
+            "tamamocross",
+            "biwahayahide",
+            "supercreek",
+            "sakurachiyonoo",
+            "mejiroardan",
+            "yaenomuteki",
+            "orfevre",
             "winvariation",
+            "dreamjourney",
             "calstonelighto",
             "durandal",
-            "believe",
-            "dreamjourney",
             "fenomeno",
-            "gentildonna",
-            "verxina",
-            "granalegria",
-            "almondeye",
-            "mrcb",
-            "currenbouquetdor",
-            "luckylilac",
-            "tamamocross",
-            "goldship",
-            "biwahayahide",
-            "oguricap",
-            "chronogenesis",
-            "lovesonlyyou",
-            "yaenomuteki",
-            "mejiroardan",
-            "sakurachiyonoo",
-            "naritabrian",
-            "supercreek",
-            "nakayamafesta",
-            "blastonepiece",
-            "orfevre"
+            "believe"
           ],
           "performances": [
             {
               "song": "STARTING FORCE",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "goldship",
+                "naritabrian",
+                "tamamocross",
+                "biwahayahide",
+                "supercreek",
+                "sakurachiyonoo",
+                "mejiroardan",
+                "yaenomuteki",
+                "orfevre",
+                "winvariation",
+                "dreamjourney",
+                "calstonelighto",
+                "durandal",
+                "fenomeno",
+                "believe"
+              ]
             },
             {
               "song": "U.M.A. NEW WORLD!!",
@@ -24196,15 +24738,99 @@
             },
             {
               "song": "Legend-Changer",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "goldship",
+                "naritabrian",
+                "tamamocross",
+                "biwahayahide",
+                "supercreek",
+                "sakurachiyonoo",
+                "mejiroardan",
+                "yaenomuteki",
+                "orfevre",
+                "winvariation",
+                "dreamjourney",
+                "calstonelighto",
+                "durandal",
+                "fenomeno",
+                "believe"
+              ]
             },
             {
               "song": "Shake The World!!",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "goldship",
+                "naritabrian",
+                "tamamocross",
+                "biwahayahide",
+                "supercreek",
+                "sakurachiyonoo",
+                "mejiroardan",
+                "yaenomuteki",
+                "orfevre",
+                "winvariation",
+                "dreamjourney",
+                "calstonelighto",
+                "durandal",
+                "fenomeno",
+                "believe"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "oguricap",
+                "nakayamafesta",
+                "mrcb",
+                "verxina",
+                "gentildonna",
+                "blastonepiece",
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "lovesonlyyou",
+                "chronogenesis",
+                "currenbouquetdor",
+                "goldship",
+                "naritabrian",
+                "tamamocross",
+                "biwahayahide",
+                "supercreek",
+                "sakurachiyonoo",
+                "mejiroardan",
+                "yaenomuteki",
+                "orfevre",
+                "winvariation",
+                "dreamjourney",
+                "calstonelighto",
+                "durandal",
+                "fenomeno",
+                "believe"
+              ]
             }
           ],
           "setlist_source": {
@@ -24252,34 +24878,34 @@
       "summary": "时间地点\n出处：AniLive资料库（码：66LF）\nhttps://pan.quark.cn/s/813ae1f0b6ca 码：66LF",
       "characters": [
         {
-          "id": "granalegria",
-          "name": "放声欢呼",
-          "name_ja": "グランアレグリア"
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
         },
         {
-          "id": "currenbouquetdor",
-          "name": "机伶金花",
-          "name_ja": "カレンブーケドール"
+          "id": "nakayamafesta",
+          "name": "中山庆典",
+          "name_ja": "ナカヤマフェスタ"
         },
         {
-          "id": "lovesonlyyou",
-          "name": "唯独爱你",
-          "name_ja": "ラヴズオンリーユー"
+          "id": "mrcb",
+          "name": "千明代表",
+          "name_ja": "ミスターシービー"
         },
         {
-          "id": "chronogenesis",
-          "name": "创世驹",
-          "name_ja": "クロノジェネシス"
+          "id": "verxina",
+          "name": "极峰",
+          "name_ja": "ヴィルシーナ"
+        },
+        {
+          "id": "gentildonna",
+          "name": "贵妇人",
+          "name_ja": "ジェンティルドンナ"
         },
         {
           "id": "blastonepiece",
           "name": "防爆装束",
           "name_ja": "ブラストワンピース"
-        },
-        {
-          "id": "daringtact",
-          "name": "谋勇兼备",
-          "name_ja": "デアリングタクト"
         },
         {
           "id": "almondeye",
@@ -24292,34 +24918,24 @@
           "name_ja": "ラッキーライラック"
         },
         {
-          "id": "hokkotarumae",
-          "name": "北港火山",
-          "name_ja": "ホッコータルマエ"
+          "id": "granalegria",
+          "name": "放声欢呼",
+          "name_ja": "グランアレグリア"
         },
         {
-          "id": "smartfalcon",
-          "name": "醒目飞鹰",
-          "name_ja": "スマートファルコン"
+          "id": "lovesonlyyou",
+          "name": "唯独爱你",
+          "name_ja": "ラヴズオンリーユー"
         },
         {
-          "id": "copanorickey",
-          "name": "小林历奇",
-          "name_ja": "コパノリッキー"
+          "id": "chronogenesis",
+          "name": "创世驹",
+          "name_ja": "クロノジェネシス"
         },
         {
-          "id": "espoircity",
-          "name": "希望之城",
-          "name_ja": "エスポワールシチー"
-        },
-        {
-          "id": "transcend",
-          "name": "创升",
-          "name_ja": "トランセンド"
-        },
-        {
-          "id": "furioso",
-          "name": "狂怒乐章",
-          "name_ja": "フリオーソ"
+          "id": "currenbouquetdor",
+          "name": "机伶金花",
+          "name_ja": "カレンブーケドール"
         },
         {
           "id": "mayanotopgun",
@@ -24327,14 +24943,19 @@
           "name_ja": "マヤノトップガン"
         },
         {
-          "id": "matikanefukukitaru",
-          "name": "待兼福来",
-          "name_ja": "マチカネフクキタル"
-        },
-        {
           "id": "seekingthepearl",
           "name": "采珠",
           "name_ja": "シーキングザパール"
+        },
+        {
+          "id": "smartfalcon",
+          "name": "醒目飞鹰",
+          "name_ja": "スマートファルコン"
+        },
+        {
+          "id": "matikanefukukitaru",
+          "name": "待兼福来",
+          "name_ja": "マチカネフクキタル"
         },
         {
           "id": "matikanetannhauser",
@@ -24342,14 +24963,24 @@
           "name_ja": "マチカネタンホイザ"
         },
         {
-          "id": "chevalgrand",
-          "name": "高尚骏逸",
-          "name_ja": "シュヴァルグラン"
+          "id": "daringtact",
+          "name": "谋勇兼备",
+          "name_ja": "デアリングタクト"
         },
         {
-          "id": "mrcb",
-          "name": "千明代表",
-          "name_ja": "ミスターシービー"
+          "id": "furioso",
+          "name": "狂怒乐章",
+          "name_ja": "フリオーソ"
+        },
+        {
+          "id": "transcend",
+          "name": "创升",
+          "name_ja": "トランセンド"
+        },
+        {
+          "id": "espoircity",
+          "name": "希望之城",
+          "name_ja": "エスポワールシチー"
         },
         {
           "id": "northflight",
@@ -24357,14 +24988,14 @@
           "name_ja": "ノースフライト"
         },
         {
-          "id": "nakayamafesta",
-          "name": "中山庆典",
-          "name_ja": "ナカヤマフェスタ"
+          "id": "mejiroramonu",
+          "name": "目白高峰",
+          "name_ja": "メジロラモーヌ"
         },
         {
-          "id": "verxina",
-          "name": "极峰",
-          "name_ja": "ヴィルシーナ"
+          "id": "chevalgrand",
+          "name": "高尚骏逸",
+          "name_ja": "シュヴァルグラン"
         },
         {
           "id": "vivlos",
@@ -24377,19 +25008,14 @@
           "name_ja": "スティルインラブ"
         },
         {
-          "id": "mejiroramonu",
-          "name": "目白高峰",
-          "name_ja": "メジロラモーヌ"
+          "id": "copanorickey",
+          "name": "小林历奇",
+          "name_ja": "コパノリッキー"
         },
         {
-          "id": "gentildonna",
-          "name": "贵妇人",
-          "name_ja": "ジェンティルドンナ"
-        },
-        {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
+          "id": "hokkotarumae",
+          "name": "北港火山",
+          "name_ja": "ホッコータルマエ"
         },
         {
           "id": "zankan_koukou",
@@ -24397,9 +25023,59 @@
           "name_ja": "崭新光辉"
         },
         {
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
+        },
+        {
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
+        },
+        {
+          "id": "tamamocross",
+          "name": "玉藻十字",
+          "name_ja": "タマモクロス"
+        },
+        {
+          "id": "biwahayahide",
+          "name": "琵琶晨光",
+          "name_ja": "ビワハヤヒデ"
+        },
+        {
+          "id": "supercreek",
+          "name": "超级溪流",
+          "name_ja": "スーパークリーク"
+        },
+        {
+          "id": "sakurachiyonoo",
+          "name": "樱花千代王",
+          "name_ja": "サクラチヨノオー"
+        },
+        {
+          "id": "mejiroardan",
+          "name": "目白阿尔丹",
+          "name_ja": "メジロアルダン"
+        },
+        {
+          "id": "yaenomuteki",
+          "name": "八重无敌",
+          "name_ja": "ヤエノムテキ"
+        },
+        {
+          "id": "orfevre",
+          "name": "黄金巨匠",
+          "name_ja": "オルフェーヴル"
+        },
+        {
           "id": "winvariation",
           "name": "凯旋芭蕾",
           "name_ja": "ウインバリアシオン"
+        },
+        {
+          "id": "dreamjourney",
+          "name": "梦之旅",
+          "name_ja": "ドリームジャーニー"
         },
         {
           "id": "calstonelighto",
@@ -24412,64 +25088,14 @@
           "name_ja": "デュランダル"
         },
         {
-          "id": "believe",
-          "name": "信念",
-          "name_ja": "ビリーヴ"
-        },
-        {
-          "id": "dreamjourney",
-          "name": "梦之旅",
-          "name_ja": "ドリームジャーニー"
-        },
-        {
           "id": "fenomeno",
           "name": "超常骏骥",
           "name_ja": "フェノーメノ"
         },
         {
-          "id": "tamamocross",
-          "name": "玉藻十字",
-          "name_ja": "タマモクロス"
-        },
-        {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
-        },
-        {
-          "id": "biwahayahide",
-          "name": "琵琶晨光",
-          "name_ja": "ビワハヤヒデ"
-        },
-        {
-          "id": "yaenomuteki",
-          "name": "八重无敌",
-          "name_ja": "ヤエノムテキ"
-        },
-        {
-          "id": "mejiroardan",
-          "name": "目白阿尔丹",
-          "name_ja": "メジロアルダン"
-        },
-        {
-          "id": "sakurachiyonoo",
-          "name": "樱花千代王",
-          "name_ja": "サクラチヨノオー"
-        },
-        {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
-        },
-        {
-          "id": "supercreek",
-          "name": "超级溪流",
-          "name_ja": "スーパークリーク"
-        },
-        {
-          "id": "orfevre",
-          "name": "黄金巨匠",
-          "name_ja": "オルフェーヴル"
+          "id": "believe",
+          "name": "信念",
+          "name_ja": "ビリーヴ"
         }
       ]
     },
@@ -49925,37 +50551,63 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "vodka",
-            "elcondorpasa",
+            "tokaiteio",
+            "manhattancafe",
             "winningticket",
-            "tosenjordan",
-            "mrcb",
-            "matikanetannhauser",
+            "kitasanblack",
+            "verxina",
             "junglepocket",
-            "stillinlove",
-            "soundsofearth",
+            "duramente",
             "rheinkraft",
             "cesario",
             "daringheart",
-            "duramente",
+            "vodka",
+            "daiwascarlet",
+            "elcondorpasa",
             "matikanefukukitaru",
+            "mrcb",
+            "matikanetannhauser",
+            "satonodiamond",
             "naritatoproad",
             "symbolikriss",
-            "verxina",
+            "stillinlove",
             "hokkotarumae",
-            "tokaiteio",
-            "daiwascarlet",
-            "satonodiamond",
-            "kitasanblack",
             "wonderacute",
+            "soundsofearth",
             "tapdancecity",
-            "manhattancafe",
+            "tosenjordan",
             "tsurugiryoka"
           ],
           "performances": [
             {
               "song": "Comeback Story V",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "matikanefukukitaru",
+                "mrcb",
+                "matikanetannhauser",
+                "satonodiamond",
+                "naritatoproad",
+                "symbolikriss",
+                "stillinlove",
+                "hokkotarumae",
+                "wonderacute",
+                "soundsofearth",
+                "tapdancecity",
+                "tosenjordan"
+              ]
             },
             {
               "song": "GIRLS' LEGEND U",
@@ -50194,15 +50846,92 @@
             },
             {
               "song": "U.M.A. NEW WORLD!!",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "matikanefukukitaru",
+                "mrcb",
+                "matikanetannhauser",
+                "satonodiamond",
+                "naritatoproad",
+                "symbolikriss",
+                "stillinlove",
+                "hokkotarumae",
+                "wonderacute",
+                "soundsofearth",
+                "tapdancecity",
+                "tosenjordan"
+              ]
             },
             {
               "song": "トレセン音頭",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "matikanefukukitaru",
+                "mrcb",
+                "matikanetannhauser",
+                "satonodiamond",
+                "naritatoproad",
+                "symbolikriss",
+                "stillinlove",
+                "hokkotarumae",
+                "wonderacute",
+                "soundsofearth",
+                "tapdancecity",
+                "tosenjordan"
+              ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "matikanefukukitaru",
+                "mrcb",
+                "matikanetannhauser",
+                "satonodiamond",
+                "naritatoproad",
+                "symbolikriss",
+                "stillinlove",
+                "hokkotarumae",
+                "wonderacute",
+                "soundsofearth",
+                "tapdancecity",
+                "tosenjordan",
                 "tsurugiryoka"
               ]
             }
@@ -50249,37 +50978,63 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "twinturbo",
+            "tokaiteio",
+            "manhattancafe",
+            "winningticket",
+            "kitasanblack",
+            "verxina",
+            "junglepocket",
+            "duramente",
+            "rheinkraft",
+            "cesario",
+            "daringheart",
+            "tmoperao",
+            "naritabrian",
+            "agnestachyon",
+            "bikopegasus",
             "nicenature",
             "ikunodictus",
-            "bikopegasus",
-            "duramente",
-            "admirevega",
-            "tmoperao",
-            "dantsuflame",
-            "naritabrian",
-            "winningticket",
-            "noreason",
-            "goldship",
-            "hishimiracle",
-            "chevalgrand",
-            "verxina",
-            "vivlos",
-            "tokaiteio",
-            "junglepocket",
-            "rheinkraft",
+            "twinturbo",
             "sakuralaurel",
+            "chevalgrand",
+            "vivlos",
+            "dantsuflame",
+            "noreason",
+            "hishimiracle",
             "airmessiah",
-            "daringheart",
-            "cesario",
-            "kitasanblack",
-            "manhattancafe",
-            "agnestachyon"
+            "admirevega",
+            "goldship"
           ],
           "performances": [
             {
               "song": "Comeback Story V",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "tmoperao",
+                "naritabrian",
+                "agnestachyon",
+                "bikopegasus",
+                "nicenature",
+                "ikunodictus",
+                "twinturbo",
+                "sakuralaurel",
+                "chevalgrand",
+                "vivlos",
+                "dantsuflame",
+                "noreason",
+                "hishimiracle",
+                "airmessiah",
+                "admirevega"
+              ]
             },
             {
               "song": "爆熱マイソウル",
@@ -50509,18 +51264,93 @@
             {
               "song": "U.M.A. NEW WORLD!!",
               "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "tmoperao",
+                "naritabrian",
+                "agnestachyon",
+                "bikopegasus",
+                "nicenature",
+                "ikunodictus",
+                "twinturbo",
+                "sakuralaurel",
+                "chevalgrand",
+                "vivlos",
+                "dantsuflame",
+                "noreason",
+                "hishimiracle",
+                "airmessiah",
+                "admirevega",
                 "goldship"
               ]
             },
             {
               "song": "トレセン音頭",
               "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "tmoperao",
+                "naritabrian",
+                "agnestachyon",
+                "bikopegasus",
+                "nicenature",
+                "ikunodictus",
+                "twinturbo",
+                "sakuralaurel",
+                "chevalgrand",
+                "vivlos",
+                "dantsuflame",
+                "noreason",
+                "hishimiracle",
+                "airmessiah",
+                "admirevega",
                 "goldship"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "tokaiteio",
+                "manhattancafe",
+                "winningticket",
+                "kitasanblack",
+                "verxina",
+                "junglepocket",
+                "duramente",
+                "rheinkraft",
+                "cesario",
+                "daringheart",
+                "tmoperao",
+                "naritabrian",
+                "agnestachyon",
+                "bikopegasus",
+                "nicenature",
+                "ikunodictus",
+                "twinturbo",
+                "sakuralaurel",
+                "chevalgrand",
+                "vivlos",
+                "dantsuflame",
+                "noreason",
+                "hishimiracle",
+                "airmessiah",
+                "admirevega",
                 "goldship"
               ]
             }
@@ -50565,14 +51395,14 @@
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
       "characters": [
         {
-          "id": "vodka",
-          "name": "伏特加",
-          "name_ja": "ウオッカ"
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
         },
         {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
+          "id": "manhattancafe",
+          "name": "曼城茶座",
+          "name_ja": "マンハッタンカフェ"
         },
         {
           "id": "winningticket",
@@ -50580,19 +51410,14 @@
           "name_ja": "ウイニングチケット"
         },
         {
-          "id": "tosenjordan",
-          "name": "东瀛佐敦",
-          "name_ja": "トーセンジョーダン"
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
         },
         {
-          "id": "mrcb",
-          "name": "千明代表",
-          "name_ja": "ミスターシービー"
-        },
-        {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
+          "id": "verxina",
+          "name": "极峰",
+          "name_ja": "ヴィルシーナ"
         },
         {
           "id": "junglepocket",
@@ -50600,14 +51425,9 @@
           "name_ja": "ジャングルポケット"
         },
         {
-          "id": "stillinlove",
-          "name": "爱如往昔",
-          "name_ja": "スティルインラブ"
-        },
-        {
-          "id": "soundsofearth",
-          "name": "万籁争鸣",
-          "name_ja": "サウンズオブアース"
+          "id": "duramente",
+          "name": "大鸣大放",
+          "name_ja": "ドゥラメンテ"
         },
         {
           "id": "rheinkraft",
@@ -50625,14 +51445,39 @@
           "name_ja": "デアリングハート"
         },
         {
-          "id": "duramente",
-          "name": "大鸣大放",
-          "name_ja": "ドゥラメンテ"
+          "id": "vodka",
+          "name": "伏特加",
+          "name_ja": "ウオッカ"
+        },
+        {
+          "id": "daiwascarlet",
+          "name": "大和赤骥",
+          "name_ja": "ダイワスカーレット"
+        },
+        {
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
         },
         {
           "id": "matikanefukukitaru",
           "name": "待兼福来",
           "name_ja": "マチカネフクキタル"
+        },
+        {
+          "id": "mrcb",
+          "name": "千明代表",
+          "name_ja": "ミスターシービー"
+        },
+        {
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
+        },
+        {
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
         },
         {
           "id": "naritatoproad",
@@ -50645,9 +51490,9 @@
           "name_ja": "シンボリクリスエス"
         },
         {
-          "id": "verxina",
-          "name": "极峰",
-          "name_ja": "ヴィルシーナ"
+          "id": "stillinlove",
+          "name": "爱如往昔",
+          "name_ja": "スティルインラブ"
         },
         {
           "id": "hokkotarumae",
@@ -50655,29 +51500,14 @@
           "name_ja": "ホッコータルマエ"
         },
         {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
-        },
-        {
-          "id": "daiwascarlet",
-          "name": "大和赤骥",
-          "name_ja": "ダイワスカーレット"
-        },
-        {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
-        },
-        {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
           "id": "wonderacute",
           "name": "奇锐骏",
           "name_ja": "ワンダーアキュート"
+        },
+        {
+          "id": "soundsofearth",
+          "name": "万籁争鸣",
+          "name_ja": "サウンズオブアース"
         },
         {
           "id": "tapdancecity",
@@ -50685,9 +51515,9 @@
           "name_ja": "タップダンスシチー"
         },
         {
-          "id": "manhattancafe",
-          "name": "曼城茶座",
-          "name_ja": "マンハッタンカフェ"
+          "id": "tosenjordan",
+          "name": "东瀛佐敦",
+          "name_ja": "トーセンジョーダン"
         },
         {
           "id": "tsurugiryoka",
@@ -50695,9 +51525,24 @@
           "name_ja": "都留岐涼花"
         },
         {
-          "id": "twinturbo",
-          "name": "双涡轮",
-          "name_ja": "ツインターボ"
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
+        },
+        {
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
+        },
+        {
+          "id": "agnestachyon",
+          "name": "爱丽速子",
+          "name_ja": "アグネスタキオン"
+        },
+        {
+          "id": "bikopegasus",
+          "name": "微光飞驹",
+          "name_ja": "ビコーペガサス"
         },
         {
           "id": "nicenature",
@@ -50710,44 +51555,14 @@
           "name_ja": "イクノディクタス"
         },
         {
-          "id": "bikopegasus",
-          "name": "微光飞驹",
-          "name_ja": "ビコーペガサス"
+          "id": "twinturbo",
+          "name": "双涡轮",
+          "name_ja": "ツインターボ"
         },
         {
-          "id": "admirevega",
-          "name": "爱慕织姬",
-          "name_ja": "アドマイヤベガ"
-        },
-        {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "dantsuflame",
-          "name": "烈焰快驹",
-          "name_ja": "ダンツフレーム"
-        },
-        {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
-        },
-        {
-          "id": "noreason",
-          "name": "莫名其妙",
-          "name_ja": "ノーリーズン"
-        },
-        {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
-        },
-        {
-          "id": "hishimiracle",
-          "name": "菱钻奇宝",
-          "name_ja": "ヒシミラクル"
+          "id": "sakuralaurel",
+          "name": "樱花桂冠",
+          "name_ja": "サクラローレル"
         },
         {
           "id": "chevalgrand",
@@ -50760,9 +51575,19 @@
           "name_ja": "ヴィブロス"
         },
         {
-          "id": "sakuralaurel",
-          "name": "樱花桂冠",
-          "name_ja": "サクラローレル"
+          "id": "dantsuflame",
+          "name": "烈焰快驹",
+          "name_ja": "ダンツフレーム"
+        },
+        {
+          "id": "noreason",
+          "name": "莫名其妙",
+          "name_ja": "ノーリーズン"
+        },
+        {
+          "id": "hishimiracle",
+          "name": "菱钻奇宝",
+          "name_ja": "ヒシミラクル"
         },
         {
           "id": "airmessiah",
@@ -50770,9 +51595,14 @@
           "name_ja": "エアメサイア"
         },
         {
-          "id": "agnestachyon",
-          "name": "爱丽速子",
-          "name_ja": "アグネスタキオン"
+          "id": "admirevega",
+          "name": "爱慕织姬",
+          "name_ja": "アドマイヤベガ"
+        },
+        {
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
         }
       ]
     },
@@ -54403,34 +55233,58 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
+            "specialweek",
+            "tokaiteio",
+            "mihonobourbon",
+            "riceshower",
+            "nicenature",
+            "satonodiamond",
+            "kitasanblack",
+            "satonocrown",
+            "chevalgrand",
             "verxina",
-            "vivlos",
             "soundsofearth",
             "royceandroyce",
             "duramente",
             "oguricap",
-            "mihonobourbon",
-            "riceshower",
             "inarione",
             "supercreek",
             "mrcb",
-            "nicenature",
             "matikanetannhauser",
             "ikunodictus",
-            "katsuragiace",
-            "tokaiteio",
             "symbolikriss",
-            "specialweek",
+            "vivlos",
             "hokkotarumae",
-            "chevalgrand",
-            "satonocrown",
-            "satonodiamond",
-            "kitasanblack"
+            "katsuragiace"
           ],
           "performances": [
             {
               "song": "Comeback Story V",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "oguricap",
+                "inarione",
+                "supercreek",
+                "mrcb",
+                "matikanetannhauser",
+                "ikunodictus",
+                "symbolikriss",
+                "vivlos",
+                "hokkotarumae",
+                "katsuragiace"
+              ]
             },
             {
               "song": "Make debut!",
@@ -54636,15 +55490,87 @@
             },
             {
               "song": "DRAMATIC JOURNEY",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "oguricap",
+                "inarione",
+                "supercreek",
+                "mrcb",
+                "matikanetannhauser",
+                "ikunodictus",
+                "symbolikriss",
+                "vivlos",
+                "hokkotarumae",
+                "katsuragiace"
+              ]
             },
             {
               "song": "トレセン音頭",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "oguricap",
+                "inarione",
+                "supercreek",
+                "mrcb",
+                "matikanetannhauser",
+                "ikunodictus",
+                "symbolikriss",
+                "vivlos",
+                "hokkotarumae",
+                "katsuragiace"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "oguricap",
+                "inarione",
+                "supercreek",
+                "mrcb",
+                "matikanetannhauser",
+                "ikunodictus",
+                "symbolikriss",
+                "vivlos",
+                "hokkotarumae",
+                "katsuragiace"
+              ]
             }
           ],
           "setlist_source": {
@@ -54695,35 +55621,59 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "verxina",
-            "chevalgrand",
-            "junglepocket",
-            "satonocrown",
-            "daitakuhelios",
-            "sakuralaurel",
-            "royceandroyce",
-            "soundsofearth",
-            "tmoperao",
-            "elcondorpasa",
-            "goldship",
-            "duramente",
-            "kitasanblack",
+            "specialweek",
+            "tokaiteio",
             "mihonobourbon",
             "riceshower",
             "nicenature",
+            "satonodiamond",
+            "kitasanblack",
+            "satonocrown",
+            "chevalgrand",
+            "verxina",
+            "soundsofearth",
+            "royceandroyce",
+            "duramente",
+            "goldship",
+            "elcondorpasa",
+            "tmoperao",
+            "admirevega",
+            "daitakuhelios",
+            "sakuralaurel",
+            "naritatoproad",
             "yamaninzephyr",
             "astonmachan",
-            "satonodiamond",
-            "admirevega",
-            "naritatoproad",
-            "specialweek",
-            "silencesuzuka",
-            "tokaiteio"
+            "junglepocket",
+            "silencesuzuka"
           ],
           "performances": [
             {
               "song": "Comeback Story V",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "goldship",
+                "elcondorpasa",
+                "tmoperao",
+                "admirevega",
+                "daitakuhelios",
+                "sakuralaurel",
+                "naritatoproad",
+                "yamaninzephyr",
+                "astonmachan",
+                "junglepocket"
+              ]
             },
             {
               "song": "Ms. VICTORIA",
@@ -54955,7 +55905,31 @@
             },
             {
               "song": "DRAMATIC JOURNEY",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "goldship",
+                "elcondorpasa",
+                "tmoperao",
+                "admirevega",
+                "daitakuhelios",
+                "sakuralaurel",
+                "naritatoproad",
+                "yamaninzephyr",
+                "astonmachan",
+                "junglepocket"
+              ]
             },
             {
               "song": "イチバン星が駆ける空",
@@ -54998,12 +55972,58 @@
             {
               "song": "トレセン音頭",
               "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "goldship",
+                "elcondorpasa",
+                "tmoperao",
+                "admirevega",
+                "daitakuhelios",
+                "sakuralaurel",
+                "naritatoproad",
+                "yamaninzephyr",
+                "astonmachan",
+                "junglepocket",
                 "silencesuzuka"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "satonocrown",
+                "chevalgrand",
+                "verxina",
+                "soundsofearth",
+                "royceandroyce",
+                "duramente",
+                "goldship",
+                "elcondorpasa",
+                "tmoperao",
+                "admirevega",
+                "daitakuhelios",
+                "sakuralaurel",
+                "naritatoproad",
+                "yamaninzephyr",
+                "astonmachan",
+                "junglepocket",
                 "silencesuzuka"
               ]
             }
@@ -55048,14 +56068,54 @@
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
       "characters": [
         {
+          "id": "specialweek",
+          "name": "特别周",
+          "name_ja": "スペシャルウィーク"
+        },
+        {
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
+        },
+        {
+          "id": "mihonobourbon",
+          "name": "美浦波旁",
+          "name_ja": "ミホノブルボン"
+        },
+        {
+          "id": "riceshower",
+          "name": "米浴",
+          "name_ja": "ライスシャワー"
+        },
+        {
+          "id": "nicenature",
+          "name": "优秀素质",
+          "name_ja": "ナイスネイチャ"
+        },
+        {
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
+        },
+        {
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "satonocrown",
+          "name": "里见皇冠",
+          "name_ja": "サトノクラウン"
+        },
+        {
+          "id": "chevalgrand",
+          "name": "高尚骏逸",
+          "name_ja": "シュヴァルグラン"
+        },
+        {
           "id": "verxina",
           "name": "极峰",
           "name_ja": "ヴィルシーナ"
-        },
-        {
-          "id": "vivlos",
-          "name": "强击",
-          "name_ja": "ヴィブロス"
         },
         {
           "id": "soundsofearth",
@@ -55078,16 +56138,6 @@
           "name_ja": "オグリキャップ"
         },
         {
-          "id": "mihonobourbon",
-          "name": "美浦波旁",
-          "name_ja": "ミホノブルボン"
-        },
-        {
-          "id": "riceshower",
-          "name": "米浴",
-          "name_ja": "ライスシャワー"
-        },
-        {
           "id": "inarione",
           "name": "稻荷一",
           "name_ja": "イナリワン"
@@ -55103,11 +56153,6 @@
           "name_ja": "ミスターシービー"
         },
         {
-          "id": "nicenature",
-          "name": "优秀素质",
-          "name_ja": "ナイスネイチャ"
-        },
-        {
           "id": "matikanetannhauser",
           "name": "待兼诗歌剧",
           "name_ja": "マチカネタンホイザ"
@@ -55118,24 +56163,14 @@
           "name_ja": "イクノディクタス"
         },
         {
-          "id": "katsuragiace",
-          "name": "葛城王牌",
-          "name_ja": "カツラギエース"
-        },
-        {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
-        },
-        {
           "id": "symbolikriss",
           "name": "吉兆",
           "name_ja": "シンボリクリスエス"
         },
         {
-          "id": "specialweek",
-          "name": "特别周",
-          "name_ja": "スペシャルウィーク"
+          "id": "vivlos",
+          "name": "强击",
+          "name_ja": "ヴィブロス"
         },
         {
           "id": "hokkotarumae",
@@ -55143,29 +56178,29 @@
           "name_ja": "ホッコータルマエ"
         },
         {
-          "id": "chevalgrand",
-          "name": "高尚骏逸",
-          "name_ja": "シュヴァルグラン"
+          "id": "katsuragiace",
+          "name": "葛城王牌",
+          "name_ja": "カツラギエース"
         },
         {
-          "id": "satonocrown",
-          "name": "里见皇冠",
-          "name_ja": "サトノクラウン"
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
         },
         {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
         },
         {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
         },
         {
-          "id": "junglepocket",
-          "name": "森林宝穴",
-          "name_ja": "ジャングルポケット"
+          "id": "admirevega",
+          "name": "爱慕织姬",
+          "name_ja": "アドマイヤベガ"
         },
         {
           "id": "daitakuhelios",
@@ -55178,19 +56213,9 @@
           "name_ja": "サクラローレル"
         },
         {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
-        },
-        {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
+          "id": "naritatoproad",
+          "name": "成田路",
+          "name_ja": "ナリタトップロード"
         },
         {
           "id": "yamaninzephyr",
@@ -55203,14 +56228,9 @@
           "name_ja": "アストンマーチャン"
         },
         {
-          "id": "admirevega",
-          "name": "爱慕织姬",
-          "name_ja": "アドマイヤベガ"
-        },
-        {
-          "id": "naritatoproad",
-          "name": "成田路",
-          "name_ja": "ナリタトップロード"
+          "id": "junglepocket",
+          "name": "森林宝穴",
+          "name_ja": "ジャングルポケット"
         },
         {
           "id": "silencesuzuka",
@@ -61353,32 +62373,54 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "grasswonder",
-            "specialweek",
-            "elcondorpasa",
-            "yaenomuteki",
-            "oguricap",
-            "inarione",
-            "sakuralaurel",
-            "mihonobourbon",
-            "riceshower",
             "tokaiteio",
+            "oguricap",
+            "grasswonder",
+            "elcondorpasa",
             "nicenature",
-            "vodka",
-            "ikunodictus",
-            "daiwascarlet",
             "matikanetannhauser",
+            "ikunodictus",
+            "twinturbo",
+            "satonodiamond",
             "kitasanblack",
             "tapdancecity",
-            "satonodiamond",
+            "specialweek",
+            "vodka",
+            "daiwascarlet",
             "naritabrian",
             "mayanotopgun",
-            "twinturbo"
+            "mihonobourbon",
+            "riceshower",
+            "inarione",
+            "yaenomuteki",
+            "sakuralaurel"
           ],
           "performances": [
             {
               "song": "DRAMATIC JOURNEY",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "yaenomuteki",
+                "sakuralaurel"
+              ]
             },
             {
               "song": "NEXT FRONTIER",
@@ -61491,11 +62533,55 @@
             },
             {
               "song": "トレセン音頭",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "yaenomuteki",
+                "sakuralaurel"
+              ]
             },
             {
               "song": "走れウマ娘",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "yaenomuteki",
+                "sakuralaurel"
+              ]
             },
             {
               "song": "Dance 2 Endless Beat",
@@ -61563,15 +62649,81 @@
             },
             {
               "song": "笑顔の宝物 -Beyond The Future!-",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "yaenomuteki",
+                "sakuralaurel"
+              ]
             },
             {
               "song": "Comeback Story V",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "yaenomuteki",
+                "sakuralaurel"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "yaenomuteki",
+                "sakuralaurel"
+              ]
             }
           ],
           "setlist_source": {
@@ -61617,33 +62769,55 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "satonocrown",
-            "tosenjordan",
-            "ikunodictus",
-            "matikanetannhauser",
-            "nakayamafesta",
-            "nicenature",
-            "currenchan",
-            "elcondorpasa",
-            "grasswonder",
-            "twinturbo",
-            "neouniverse",
-            "haruurara",
+            "tokaiteio",
             "oguricap",
-            "smartfalcon",
-            "kitasanblack",
+            "grasswonder",
+            "elcondorpasa",
+            "nicenature",
+            "matikanetannhauser",
+            "ikunodictus",
+            "twinturbo",
             "satonodiamond",
+            "kitasanblack",
             "tapdancecity",
             "goldship",
-            "siriussymboli",
+            "currenchan",
+            "smartfalcon",
+            "tosenjordan",
+            "nakayamafesta",
+            "haruurara",
             "mejiropalmer",
             "daitakuhelios",
-            "tokaiteio"
+            "satonocrown",
+            "neouniverse",
+            "siriussymboli"
           ],
           "performances": [
             {
               "song": "DRAMATIC JOURNEY",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "goldship",
+                "currenchan",
+                "smartfalcon",
+                "tosenjordan",
+                "nakayamafesta",
+                "haruurara",
+                "mejiropalmer",
+                "daitakuhelios",
+                "satonocrown",
+                "neouniverse"
+              ]
             },
             {
               "song": "グロウアップ・シャイン！",
@@ -61791,11 +62965,55 @@
             },
             {
               "song": "トレセン音頭",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "goldship",
+                "currenchan",
+                "smartfalcon",
+                "tosenjordan",
+                "nakayamafesta",
+                "haruurara",
+                "mejiropalmer",
+                "daitakuhelios",
+                "satonocrown",
+                "neouniverse"
+              ]
             },
             {
               "song": "走れウマ娘",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "goldship",
+                "currenchan",
+                "smartfalcon",
+                "tosenjordan",
+                "nakayamafesta",
+                "haruurara",
+                "mejiropalmer",
+                "daitakuhelios",
+                "satonocrown",
+                "neouniverse"
+              ]
             },
             {
               "song": "Dance 2 Endless Beat",
@@ -61860,11 +63078,54 @@
             },
             {
               "song": "笑顔の宝物 -Beyond The Future!-",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "goldship",
+                "currenchan",
+                "smartfalcon",
+                "tosenjordan",
+                "nakayamafesta",
+                "haruurara",
+                "mejiropalmer",
+                "daitakuhelios",
+                "satonocrown",
+                "neouniverse"
+              ]
             },
             {
               "song": "Comeback Story V",
               "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "goldship",
+                "currenchan",
+                "smartfalcon",
+                "tosenjordan",
+                "nakayamafesta",
+                "haruurara",
+                "mejiropalmer",
+                "daitakuhelios",
+                "satonocrown",
+                "neouniverse",
                 "siriussymboli"
               ]
             },
@@ -61879,6 +63140,27 @@
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "tokaiteio",
+                "oguricap",
+                "grasswonder",
+                "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "goldship",
+                "currenchan",
+                "smartfalcon",
+                "tosenjordan",
+                "nakayamafesta",
+                "haruurara",
+                "mejiropalmer",
+                "daitakuhelios",
+                "satonocrown",
+                "neouniverse",
                 "siriussymboli"
               ]
             }
@@ -61927,24 +63209,9 @@
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
       "characters": [
         {
-          "id": "grasswonder",
-          "name": "草上飞",
-          "name_ja": "グラスワンダー"
-        },
-        {
-          "id": "specialweek",
-          "name": "特别周",
-          "name_ja": "スペシャルウィーク"
-        },
-        {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
-        },
-        {
-          "id": "yaenomuteki",
-          "name": "八重无敌",
-          "name_ja": "ヤエノムテキ"
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
         },
         {
           "id": "oguricap",
@@ -61952,29 +63219,14 @@
           "name_ja": "オグリキャップ"
         },
         {
-          "id": "inarione",
-          "name": "稻荷一",
-          "name_ja": "イナリワン"
+          "id": "grasswonder",
+          "name": "草上飞",
+          "name_ja": "グラスワンダー"
         },
         {
-          "id": "sakuralaurel",
-          "name": "樱花桂冠",
-          "name_ja": "サクラローレル"
-        },
-        {
-          "id": "mihonobourbon",
-          "name": "美浦波旁",
-          "name_ja": "ミホノブルボン"
-        },
-        {
-          "id": "riceshower",
-          "name": "米浴",
-          "name_ja": "ライスシャワー"
-        },
-        {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
         },
         {
           "id": "nicenature",
@@ -61982,9 +63234,9 @@
           "name_ja": "ナイスネイチャ"
         },
         {
-          "id": "vodka",
-          "name": "伏特加",
-          "name_ja": "ウオッカ"
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
         },
         {
           "id": "ikunodictus",
@@ -61992,14 +63244,14 @@
           "name_ja": "イクノディクタス"
         },
         {
-          "id": "daiwascarlet",
-          "name": "大和赤骥",
-          "name_ja": "ダイワスカーレット"
+          "id": "twinturbo",
+          "name": "双涡轮",
+          "name_ja": "ツインターボ"
         },
         {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
         },
         {
           "id": "kitasanblack",
@@ -62012,9 +63264,19 @@
           "name_ja": "タップダンスシチー"
         },
         {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
+          "id": "specialweek",
+          "name": "特别周",
+          "name_ja": "スペシャルウィーク"
+        },
+        {
+          "id": "vodka",
+          "name": "伏特加",
+          "name_ja": "ウオッカ"
+        },
+        {
+          "id": "daiwascarlet",
+          "name": "大和赤骥",
+          "name_ja": "ダイワスカーレット"
         },
         {
           "id": "naritabrian",
@@ -62027,14 +63289,44 @@
           "name_ja": "マヤノトップガン"
         },
         {
-          "id": "twinturbo",
-          "name": "双涡轮",
-          "name_ja": "ツインターボ"
+          "id": "mihonobourbon",
+          "name": "美浦波旁",
+          "name_ja": "ミホノブルボン"
         },
         {
-          "id": "satonocrown",
-          "name": "里见皇冠",
-          "name_ja": "サトノクラウン"
+          "id": "riceshower",
+          "name": "米浴",
+          "name_ja": "ライスシャワー"
+        },
+        {
+          "id": "inarione",
+          "name": "稻荷一",
+          "name_ja": "イナリワン"
+        },
+        {
+          "id": "yaenomuteki",
+          "name": "八重无敌",
+          "name_ja": "ヤエノムテキ"
+        },
+        {
+          "id": "sakuralaurel",
+          "name": "樱花桂冠",
+          "name_ja": "サクラローレル"
+        },
+        {
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
+        },
+        {
+          "id": "currenchan",
+          "name": "真机伶",
+          "name_ja": "カレンチャン"
+        },
+        {
+          "id": "smartfalcon",
+          "name": "醒目飞鹰",
+          "name_ja": "スマートファルコン"
         },
         {
           "id": "tosenjordan",
@@ -62047,34 +63339,9 @@
           "name_ja": "ナカヤマフェスタ"
         },
         {
-          "id": "currenchan",
-          "name": "真机伶",
-          "name_ja": "カレンチャン"
-        },
-        {
-          "id": "neouniverse",
-          "name": "新宇宙",
-          "name_ja": "ネオユニヴァース"
-        },
-        {
           "id": "haruurara",
           "name": "春乌拉拉",
           "name_ja": "ハルウララ"
-        },
-        {
-          "id": "smartfalcon",
-          "name": "醒目飞鹰",
-          "name_ja": "スマートファルコン"
-        },
-        {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
-        },
-        {
-          "id": "siriussymboli",
-          "name": "天狼星象征",
-          "name_ja": "シリウスシンボリ"
         },
         {
           "id": "mejiropalmer",
@@ -62085,6 +63352,21 @@
           "id": "daitakuhelios",
           "name": "大拓太阳神",
           "name_ja": "ダイタクヘリオス"
+        },
+        {
+          "id": "satonocrown",
+          "name": "里见皇冠",
+          "name_ja": "サトノクラウン"
+        },
+        {
+          "id": "neouniverse",
+          "name": "新宇宙",
+          "name_ja": "ネオユニヴァース"
+        },
+        {
+          "id": "siriussymboli",
+          "name": "天狼星象征",
+          "name_ja": "シリウスシンボリ"
         }
       ]
     },
@@ -64988,32 +66270,54 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "finemotion",
-            "symbolikriss",
-            "agnesdigital",
-            "vodka",
             "tokaiteio",
-            "mrcb",
-            "airshakur",
             "daiwascarlet",
-            "yamaninzephyr",
+            "mrcb",
+            "kitasanblack",
+            "symbolikriss",
             "hokkotarumae",
             "wonderacute",
-            "biwahayahide",
-            "naritabrian",
-            "mejiropalmer",
             "katsuragiace",
-            "kitasanblack",
-            "supercreek",
             "oguricap",
+            "vodka",
+            "naritabrian",
+            "agnesdigital",
+            "biwahayahide",
+            "finemotion",
+            "airshakur",
+            "supercreek",
+            "mejiropalmer",
             "daitakuhelios",
+            "yamaninzephyr",
             "daiichiruby",
             "ksmiracle"
           ],
           "performances": [
             {
               "song": "DRAMATIC JOURNEY",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "oguricap",
+                "vodka",
+                "naritabrian",
+                "agnesdigital",
+                "biwahayahide",
+                "finemotion",
+                "airshakur",
+                "supercreek",
+                "mejiropalmer",
+                "daitakuhelios",
+                "yamaninzephyr",
+                "daiichiruby",
+                "ksmiracle"
+              ]
             },
             {
               "song": "Bright Melody",
@@ -65232,15 +66536,81 @@
             },
             {
               "song": "Everlasting BEATS",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "oguricap",
+                "vodka",
+                "naritabrian",
+                "agnesdigital",
+                "biwahayahide",
+                "finemotion",
+                "airshakur",
+                "supercreek",
+                "mejiropalmer",
+                "daitakuhelios",
+                "yamaninzephyr",
+                "daiichiruby",
+                "ksmiracle"
+              ]
             },
             {
               "song": "Gaze on Me!",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "oguricap",
+                "vodka",
+                "naritabrian",
+                "agnesdigital",
+                "biwahayahide",
+                "finemotion",
+                "airshakur",
+                "supercreek",
+                "mejiropalmer",
+                "daitakuhelios",
+                "yamaninzephyr",
+                "daiichiruby",
+                "ksmiracle"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "oguricap",
+                "vodka",
+                "naritabrian",
+                "agnesdigital",
+                "biwahayahide",
+                "finemotion",
+                "airshakur",
+                "supercreek",
+                "mejiropalmer",
+                "daitakuhelios",
+                "yamaninzephyr",
+                "daiichiruby",
+                "ksmiracle"
+              ]
             }
           ],
           "setlist_source": {
@@ -65282,32 +66652,54 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "daiwascarlet",
-            "riceshower",
             "tokaiteio",
-            "tmoperao",
-            "matikanetannhauser",
-            "meishodoto",
-            "naritatoproad",
-            "symbolikriss",
-            "tsurumarutsuyoshi",
-            "sakuralaurel",
+            "daiwascarlet",
             "mrcb",
-            "katsuragiace",
-            "chevalgrand",
-            "hishimiracle",
-            "tapdancecity",
+            "kitasanblack",
+            "symbolikriss",
             "hokkotarumae",
             "wonderacute",
-            "copanorickey",
-            "kitasanblack",
+            "katsuragiace",
+            "tmoperao",
             "agnestachyon",
-            "admirevega"
+            "admirevega",
+            "meishodoto",
+            "matikanetannhauser",
+            "tsurumarutsuyoshi",
+            "sakuralaurel",
+            "naritatoproad",
+            "chevalgrand",
+            "copanorickey",
+            "hishimiracle",
+            "tapdancecity",
+            "riceshower"
           ],
           "performances": [
             {
               "song": "DRAMATIC JOURNEY",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "meishodoto",
+                "matikanetannhauser",
+                "tsurumarutsuyoshi",
+                "sakuralaurel",
+                "naritatoproad",
+                "chevalgrand",
+                "copanorickey",
+                "hishimiracle",
+                "tapdancecity",
+                "riceshower"
+              ]
             },
             {
               "song": "ゆるパカHAPPY DAYS！",
@@ -65499,15 +66891,81 @@
             },
             {
               "song": "Everlasting BEATS",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "meishodoto",
+                "matikanetannhauser",
+                "tsurumarutsuyoshi",
+                "sakuralaurel",
+                "naritatoproad",
+                "chevalgrand",
+                "copanorickey",
+                "hishimiracle",
+                "tapdancecity",
+                "riceshower"
+              ]
             },
             {
               "song": "Gaze on Me!",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "meishodoto",
+                "matikanetannhauser",
+                "tsurumarutsuyoshi",
+                "sakuralaurel",
+                "naritatoproad",
+                "chevalgrand",
+                "copanorickey",
+                "hishimiracle",
+                "tapdancecity",
+                "riceshower"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "tokaiteio",
+                "daiwascarlet",
+                "mrcb",
+                "kitasanblack",
+                "symbolikriss",
+                "hokkotarumae",
+                "wonderacute",
+                "katsuragiace",
+                "tmoperao",
+                "agnestachyon",
+                "admirevega",
+                "meishodoto",
+                "matikanetannhauser",
+                "tsurumarutsuyoshi",
+                "sakuralaurel",
+                "naritatoproad",
+                "chevalgrand",
+                "copanorickey",
+                "hishimiracle",
+                "tapdancecity",
+                "riceshower"
+              ]
             }
           ],
           "setlist_source": {
@@ -65555,39 +67013,9 @@
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
       "characters": [
         {
-          "id": "finemotion",
-          "name": "美妙姿势",
-          "name_ja": "ファインモーション"
-        },
-        {
-          "id": "symbolikriss",
-          "name": "吉兆",
-          "name_ja": "シンボリクリスエス"
-        },
-        {
-          "id": "agnesdigital",
-          "name": "爱丽数码",
-          "name_ja": "アグネスデジタル"
-        },
-        {
-          "id": "vodka",
-          "name": "伏特加",
-          "name_ja": "ウオッカ"
-        },
-        {
           "id": "tokaiteio",
           "name": "东海帝王",
           "name_ja": "トウカイテイオー"
-        },
-        {
-          "id": "mrcb",
-          "name": "千明代表",
-          "name_ja": "ミスターシービー"
-        },
-        {
-          "id": "airshakur",
-          "name": "空中神宫",
-          "name_ja": "エアシャカール"
         },
         {
           "id": "daiwascarlet",
@@ -65595,9 +67023,19 @@
           "name_ja": "ダイワスカーレット"
         },
         {
-          "id": "yamaninzephyr",
-          "name": "也文摄辉",
-          "name_ja": "ヤマニンゼファー"
+          "id": "mrcb",
+          "name": "千明代表",
+          "name_ja": "ミスターシービー"
+        },
+        {
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "symbolikriss",
+          "name": "吉兆",
+          "name_ja": "シンボリクリスエス"
         },
         {
           "id": "hokkotarumae",
@@ -65610,34 +67048,9 @@
           "name_ja": "ワンダーアキュート"
         },
         {
-          "id": "biwahayahide",
-          "name": "琵琶晨光",
-          "name_ja": "ビワハヤヒデ"
-        },
-        {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
-        },
-        {
-          "id": "mejiropalmer",
-          "name": "目白善信",
-          "name_ja": "メジロパーマー"
-        },
-        {
           "id": "katsuragiace",
           "name": "葛城王牌",
           "name_ja": "カツラギエース"
-        },
-        {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
-          "id": "supercreek",
-          "name": "超级溪流",
-          "name_ja": "スーパークリーク"
         },
         {
           "id": "oguricap",
@@ -65645,9 +67058,54 @@
           "name_ja": "オグリキャップ"
         },
         {
+          "id": "vodka",
+          "name": "伏特加",
+          "name_ja": "ウオッカ"
+        },
+        {
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
+        },
+        {
+          "id": "agnesdigital",
+          "name": "爱丽数码",
+          "name_ja": "アグネスデジタル"
+        },
+        {
+          "id": "biwahayahide",
+          "name": "琵琶晨光",
+          "name_ja": "ビワハヤヒデ"
+        },
+        {
+          "id": "finemotion",
+          "name": "美妙姿势",
+          "name_ja": "ファインモーション"
+        },
+        {
+          "id": "airshakur",
+          "name": "空中神宫",
+          "name_ja": "エアシャカール"
+        },
+        {
+          "id": "supercreek",
+          "name": "超级溪流",
+          "name_ja": "スーパークリーク"
+        },
+        {
+          "id": "mejiropalmer",
+          "name": "目白善信",
+          "name_ja": "メジロパーマー"
+        },
+        {
           "id": "daitakuhelios",
           "name": "大拓太阳神",
           "name_ja": "ダイタクヘリオス"
+        },
+        {
+          "id": "yamaninzephyr",
+          "name": "也文摄辉",
+          "name_ja": "ヤマニンゼファー"
         },
         {
           "id": "daiichiruby",
@@ -65660,19 +67118,19 @@
           "name_ja": "ケイエスミラクル"
         },
         {
-          "id": "riceshower",
-          "name": "米浴",
-          "name_ja": "ライスシャワー"
-        },
-        {
           "id": "tmoperao",
           "name": "好歌剧",
           "name_ja": "テイエムオペラオー"
         },
         {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
+          "id": "agnestachyon",
+          "name": "爱丽速子",
+          "name_ja": "アグネスタキオン"
+        },
+        {
+          "id": "admirevega",
+          "name": "爱慕织姬",
+          "name_ja": "アドマイヤベガ"
         },
         {
           "id": "meishodoto",
@@ -65680,9 +67138,9 @@
           "name_ja": "メイショウドトウ"
         },
         {
-          "id": "naritatoproad",
-          "name": "成田路",
-          "name_ja": "ナリタトップロード"
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
         },
         {
           "id": "tsurumarutsuyoshi",
@@ -65695,9 +67153,19 @@
           "name_ja": "サクラローレル"
         },
         {
+          "id": "naritatoproad",
+          "name": "成田路",
+          "name_ja": "ナリタトップロード"
+        },
+        {
           "id": "chevalgrand",
           "name": "高尚骏逸",
           "name_ja": "シュヴァルグラン"
+        },
+        {
+          "id": "copanorickey",
+          "name": "小林历奇",
+          "name_ja": "コパノリッキー"
         },
         {
           "id": "hishimiracle",
@@ -65710,19 +67178,9 @@
           "name_ja": "タップダンスシチー"
         },
         {
-          "id": "copanorickey",
-          "name": "小林历奇",
-          "name_ja": "コパノリッキー"
-        },
-        {
-          "id": "agnestachyon",
-          "name": "爱丽速子",
-          "name_ja": "アグネスタキオン"
-        },
-        {
-          "id": "admirevega",
-          "name": "爱慕织姬",
-          "name_ja": "アドマイヤベガ"
+          "id": "riceshower",
+          "name": "米浴",
+          "name_ja": "ライスシャワー"
         }
       ]
     },
@@ -77243,14 +78701,27 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
+            "specialweek",
+            "tokaiteio",
+            "maruzensky",
+            "naritabrian",
+            "mihonobourbon",
+            "riceshower",
+            "admirevega",
+            "nicenature",
+            "satonodiamond",
+            "kitasanblack",
+            "sakurachiyonoo",
+            "naritatoproad",
             "oguricap",
+            "daiwascarlet",
             "taikishuttle",
             "tamamocross",
-            "mihonobourbon",
-            "mejiroryan",
-            "riceshower",
+            "mayanotopgun",
+            "supercreek",
             "mejirodober",
             "mejiroardan",
+            "yaenomuteki",
             "mejirobright",
             "sakuralaurel",
             "yamaninzephyr",
@@ -77258,25 +78729,41 @@
             "astonmachan",
             "ksmiracle",
             "copanorickey",
-            "specialweek",
-            "tokaiteio",
-            "mayanotopgun",
-            "supercreek",
-            "nicenature",
-            "yaenomuteki",
-            "naritabrian",
-            "kitasanblack",
-            "daiwascarlet",
-            "maruzensky",
-            "admirevega",
-            "satonodiamond",
-            "sakurachiyonoo",
-            "naritatoproad"
+            "mejiroryan"
           ],
           "performances": [
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "oguricap",
+                "daiwascarlet",
+                "taikishuttle",
+                "tamamocross",
+                "mayanotopgun",
+                "supercreek",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki",
+                "mejirobright",
+                "sakuralaurel",
+                "yamaninzephyr",
+                "daiichiruby",
+                "astonmachan",
+                "ksmiracle",
+                "copanorickey"
+              ]
             },
             {
               "song": "WINnin' 5 -ウイニング☆ファイヴ-",
@@ -77547,15 +79034,102 @@
             },
             {
               "song": "We are DREAMERS!!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "oguricap",
+                "daiwascarlet",
+                "taikishuttle",
+                "tamamocross",
+                "mayanotopgun",
+                "supercreek",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki",
+                "mejirobright",
+                "sakuralaurel",
+                "yamaninzephyr",
+                "daiichiruby",
+                "astonmachan",
+                "ksmiracle",
+                "copanorickey"
+              ]
             },
             {
               "song": "GIRLS' LEGEND U",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "oguricap",
+                "daiwascarlet",
+                "taikishuttle",
+                "tamamocross",
+                "mayanotopgun",
+                "supercreek",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki",
+                "mejirobright",
+                "sakuralaurel",
+                "yamaninzephyr",
+                "daiichiruby",
+                "astonmachan",
+                "ksmiracle",
+                "copanorickey"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "oguricap",
+                "daiwascarlet",
+                "taikishuttle",
+                "tamamocross",
+                "mayanotopgun",
+                "supercreek",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki",
+                "mejirobright",
+                "sakuralaurel",
+                "yamaninzephyr",
+                "daiichiruby",
+                "astonmachan",
+                "ksmiracle",
+                "copanorickey"
+              ]
             }
           ],
           "setlist_source": {
@@ -77608,39 +79182,66 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
+            "specialweek",
+            "tokaiteio",
             "maruzensky",
+            "naritabrian",
             "mihonobourbon",
+            "riceshower",
+            "admirevega",
+            "nicenature",
+            "satonodiamond",
+            "kitasanblack",
+            "sakurachiyonoo",
+            "naritatoproad",
+            "goldship",
+            "grasswonder",
+            "elcondorpasa",
+            "tmoperao",
+            "winningticket",
             "smartfalcon",
+            "meishodoto",
+            "matikanetannhauser",
+            "ikunodictus",
             "mejiropalmer",
             "daitakuhelios",
             "twinturbo",
-            "kitasanblack",
-            "specialweek",
-            "grasswonder",
-            "elcondorpasa",
             "tsurumarutsuyoshi",
-            "tmoperao",
-            "admirevega",
-            "naritatoproad",
             "symbolikriss",
-            "meishodoto",
-            "nicenature",
-            "ikunodictus",
-            "sakurachiyonoo",
-            "tokaiteio",
-            "matikanetannhauser",
-            "satonodiamond",
-            "goldship",
-            "naritabrian",
-            "riceshower",
-            "winningticket",
             "mejiromcqueen",
             "spica_trainer"
           ],
           "performances": [
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "goldship",
+                "grasswonder",
+                "elcondorpasa",
+                "tmoperao",
+                "winningticket",
+                "smartfalcon",
+                "meishodoto",
+                "matikanetannhauser",
+                "ikunodictus",
+                "mejiropalmer",
+                "daitakuhelios",
+                "twinturbo",
+                "tsurumarutsuyoshi",
+                "symbolikriss"
+              ]
             },
             {
               "song": "逃げ切りっ！Fallin' Love",
@@ -77929,17 +79530,96 @@
             },
             {
               "song": "We are DREAMERS!!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "goldship",
+                "grasswonder",
+                "elcondorpasa",
+                "tmoperao",
+                "winningticket",
+                "smartfalcon",
+                "meishodoto",
+                "matikanetannhauser",
+                "ikunodictus",
+                "mejiropalmer",
+                "daitakuhelios",
+                "twinturbo",
+                "tsurumarutsuyoshi",
+                "symbolikriss"
+              ]
             },
             {
               "song": "GIRLS' LEGEND U",
               "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "goldship",
+                "grasswonder",
+                "elcondorpasa",
+                "tmoperao",
+                "winningticket",
+                "smartfalcon",
+                "meishodoto",
+                "matikanetannhauser",
+                "ikunodictus",
+                "mejiropalmer",
+                "daitakuhelios",
+                "twinturbo",
+                "tsurumarutsuyoshi",
+                "symbolikriss",
                 "mejiromcqueen"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "specialweek",
+                "tokaiteio",
+                "maruzensky",
+                "naritabrian",
+                "mihonobourbon",
+                "riceshower",
+                "admirevega",
+                "nicenature",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "goldship",
+                "grasswonder",
+                "elcondorpasa",
+                "tmoperao",
+                "winningticket",
+                "smartfalcon",
+                "meishodoto",
+                "matikanetannhauser",
+                "ikunodictus",
+                "mejiropalmer",
+                "daitakuhelios",
+                "twinturbo",
+                "tsurumarutsuyoshi",
+                "symbolikriss",
                 "mejiromcqueen",
                 "spica_trainer"
               ]
@@ -77976,9 +79656,74 @@
       "summary": "时间地点\n出处：AniLive资料库（码：zEmG）\nhttps://pan.quark.cn/s/75b0090dc04f 码：zEmG",
       "characters": [
         {
+          "id": "specialweek",
+          "name": "特别周",
+          "name_ja": "スペシャルウィーク"
+        },
+        {
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
+        },
+        {
+          "id": "maruzensky",
+          "name": "丸善斯基",
+          "name_ja": "マルゼンスキー"
+        },
+        {
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
+        },
+        {
+          "id": "mihonobourbon",
+          "name": "美浦波旁",
+          "name_ja": "ミホノブルボン"
+        },
+        {
+          "id": "riceshower",
+          "name": "米浴",
+          "name_ja": "ライスシャワー"
+        },
+        {
+          "id": "admirevega",
+          "name": "爱慕织姬",
+          "name_ja": "アドマイヤベガ"
+        },
+        {
+          "id": "nicenature",
+          "name": "优秀素质",
+          "name_ja": "ナイスネイチャ"
+        },
+        {
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
+        },
+        {
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "sakurachiyonoo",
+          "name": "樱花千代王",
+          "name_ja": "サクラチヨノオー"
+        },
+        {
+          "id": "naritatoproad",
+          "name": "成田路",
+          "name_ja": "ナリタトップロード"
+        },
+        {
           "id": "oguricap",
           "name": "小栗帽",
           "name_ja": "オグリキャップ"
+        },
+        {
+          "id": "daiwascarlet",
+          "name": "大和赤骥",
+          "name_ja": "ダイワスカーレット"
         },
         {
           "id": "taikishuttle",
@@ -77991,19 +79736,14 @@
           "name_ja": "タマモクロス"
         },
         {
-          "id": "mihonobourbon",
-          "name": "美浦波旁",
-          "name_ja": "ミホノブルボン"
+          "id": "mayanotopgun",
+          "name": "摩耶重炮",
+          "name_ja": "マヤノトップガン"
         },
         {
-          "id": "mejiroryan",
-          "name": "目白赖恩",
-          "name_ja": "メジロライアン"
-        },
-        {
-          "id": "riceshower",
-          "name": "米浴",
-          "name_ja": "ライスシャワー"
+          "id": "supercreek",
+          "name": "超级溪流",
+          "name_ja": "スーパークリーク"
         },
         {
           "id": "mejirodober",
@@ -78014,6 +79754,11 @@
           "id": "mejiroardan",
           "name": "目白阿尔丹",
           "name_ja": "メジロアルダン"
+        },
+        {
+          "id": "yaenomuteki",
+          "name": "八重无敌",
+          "name_ja": "ヤエノムテキ"
         },
         {
           "id": "mejirobright",
@@ -78051,79 +79796,54 @@
           "name_ja": "コパノリッキー"
         },
         {
-          "id": "specialweek",
-          "name": "特别周",
-          "name_ja": "スペシャルウィーク"
+          "id": "mejiroryan",
+          "name": "目白赖恩",
+          "name_ja": "メジロライアン"
         },
         {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
         },
         {
-          "id": "mayanotopgun",
-          "name": "摩耶重炮",
-          "name_ja": "マヤノトップガン"
+          "id": "grasswonder",
+          "name": "草上飞",
+          "name_ja": "グラスワンダー"
         },
         {
-          "id": "supercreek",
-          "name": "超级溪流",
-          "name_ja": "スーパークリーク"
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
         },
         {
-          "id": "nicenature",
-          "name": "优秀素质",
-          "name_ja": "ナイスネイチャ"
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
         },
         {
-          "id": "yaenomuteki",
-          "name": "八重无敌",
-          "name_ja": "ヤエノムテキ"
-        },
-        {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
-        },
-        {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
-          "id": "daiwascarlet",
-          "name": "大和赤骥",
-          "name_ja": "ダイワスカーレット"
-        },
-        {
-          "id": "maruzensky",
-          "name": "丸善斯基",
-          "name_ja": "マルゼンスキー"
-        },
-        {
-          "id": "admirevega",
-          "name": "爱慕织姬",
-          "name_ja": "アドマイヤベガ"
-        },
-        {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
-        },
-        {
-          "id": "sakurachiyonoo",
-          "name": "樱花千代王",
-          "name_ja": "サクラチヨノオー"
-        },
-        {
-          "id": "naritatoproad",
-          "name": "成田路",
-          "name_ja": "ナリタトップロード"
+          "id": "winningticket",
+          "name": "胜利奖券",
+          "name_ja": "ウイニングチケット"
         },
         {
           "id": "smartfalcon",
           "name": "醒目飞鹰",
           "name_ja": "スマートファルコン"
+        },
+        {
+          "id": "meishodoto",
+          "name": "名将怒涛",
+          "name_ja": "メイショウドトウ"
+        },
+        {
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
+        },
+        {
+          "id": "ikunodictus",
+          "name": "生野狄杜斯",
+          "name_ja": "イクノディクタス"
         },
         {
           "id": "mejiropalmer",
@@ -78141,54 +79861,14 @@
           "name_ja": "ツインターボ"
         },
         {
-          "id": "grasswonder",
-          "name": "草上飞",
-          "name_ja": "グラスワンダー"
-        },
-        {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
-        },
-        {
           "id": "tsurumarutsuyoshi",
           "name": "鹤丸刚志",
           "name_ja": "ツルマルツヨシ"
         },
         {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
           "id": "symbolikriss",
           "name": "吉兆",
           "name_ja": "シンボリクリスエス"
-        },
-        {
-          "id": "meishodoto",
-          "name": "名将怒涛",
-          "name_ja": "メイショウドトウ"
-        },
-        {
-          "id": "ikunodictus",
-          "name": "生野狄杜斯",
-          "name_ja": "イクノディクタス"
-        },
-        {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
-        },
-        {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
-        },
-        {
-          "id": "winningticket",
-          "name": "胜利奖券",
-          "name_ja": "ウイニングチケット"
         },
         {
           "id": "mejiromcqueen",
@@ -85742,33 +87422,54 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "satonodiamond",
-            "tokaiteio",
-            "agnesdigital",
+            "taikishuttle",
+            "tmoperao",
+            "naritabrian",
             "mayanotopgun",
             "smartfalcon",
-            "nishinoflower",
-            "haruurara",
-            "nicenature",
+            "kitasanblack",
+            "tokaiteio",
+            "agnesdigital",
+            "finemotion",
+            "mejiroryan",
             "admirevega",
             "currenchan",
+            "supercreek",
+            "nishinoflower",
+            "haruurara",
+            "meishodoto",
+            "mejirodober",
+            "nicenature",
             "ikunodictus",
             "mejirobright",
             "naritatoproad",
-            "finemotion",
-            "mejiroryan",
-            "naritabrian",
-            "supercreek",
-            "tmoperao",
-            "meishodoto",
-            "mejirodober",
-            "kitasanblack",
-            "taikishuttle"
+            "satonodiamond"
           ],
           "performances": [
             {
               "song": "We are DREAMERS!!",
               "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "tokaiteio",
+                "agnesdigital",
+                "finemotion",
+                "mejiroryan",
+                "admirevega",
+                "currenchan",
+                "supercreek",
+                "nishinoflower",
+                "haruurara",
+                "meishodoto",
+                "mejirodober",
+                "nicenature",
+                "ikunodictus",
+                "mejirobright",
+                "naritatoproad",
                 "satonodiamond"
               ]
             },
@@ -85958,18 +87659,81 @@
             {
               "song": "大好きのタカラバコ",
               "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "tokaiteio",
+                "agnesdigital",
+                "finemotion",
+                "mejiroryan",
+                "admirevega",
+                "currenchan",
+                "supercreek",
+                "nishinoflower",
+                "haruurara",
+                "meishodoto",
+                "mejirodober",
+                "nicenature",
+                "ikunodictus",
+                "mejirobright",
+                "naritatoproad",
                 "satonodiamond"
               ]
             },
             {
               "song": "走れウマ娘",
               "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "tokaiteio",
+                "agnesdigital",
+                "finemotion",
+                "mejiroryan",
+                "admirevega",
+                "currenchan",
+                "supercreek",
+                "nishinoflower",
+                "haruurara",
+                "meishodoto",
+                "mejirodober",
+                "nicenature",
+                "ikunodictus",
+                "mejirobright",
+                "naritatoproad",
                 "satonodiamond"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "tokaiteio",
+                "agnesdigital",
+                "finemotion",
+                "mejiroryan",
+                "admirevega",
+                "currenchan",
+                "supercreek",
+                "nishinoflower",
+                "haruurara",
+                "meishodoto",
+                "mejirodober",
+                "nicenature",
+                "ikunodictus",
+                "mejirobright",
+                "naritatoproad",
                 "satonodiamond"
               ]
             }
@@ -86013,33 +87777,56 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "grasswonder",
             "taikishuttle",
+            "tmoperao",
             "naritabrian",
             "mayanotopgun",
-            "specialweek",
-            "elcondorpasa",
-            "tmoperao",
-            "sakurachiyonoo",
-            "matikanefukukitaru",
-            "biwahayahide",
             "smartfalcon",
-            "tosenjordan",
-            "matikanetannhauser",
-            "naritataishin",
-            "winningticket",
-            "yaenomuteki",
+            "kitasanblack",
+            "specialweek",
+            "oguricap",
+            "goldship",
             "vodka",
             "daiwascarlet",
-            "kitasanblack",
-            "goldship",
-            "oguricap",
+            "grasswonder",
+            "elcondorpasa",
+            "biwahayahide",
+            "winningticket",
+            "tosenjordan",
+            "naritataishin",
+            "matikanefukukitaru",
+            "matikanetannhauser",
+            "sakurachiyonoo",
+            "yaenomuteki",
             "manhattancafe"
           ],
           "performances": [
             {
               "song": "We are DREAMERS!!",
-              "character_ids": []
+              "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "specialweek",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "grasswonder",
+                "elcondorpasa",
+                "biwahayahide",
+                "winningticket",
+                "tosenjordan",
+                "naritataishin",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "sakurachiyonoo",
+                "yaenomuteki",
+                "manhattancafe"
+              ]
             },
             {
               "song": "奇跡を信じて！",
@@ -86231,11 +88018,57 @@
             },
             {
               "song": "大好きのタカラバコ",
-              "character_ids": []
+              "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "specialweek",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "grasswonder",
+                "elcondorpasa",
+                "biwahayahide",
+                "winningticket",
+                "tosenjordan",
+                "naritataishin",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "sakurachiyonoo",
+                "yaenomuteki",
+                "manhattancafe"
+              ]
             },
             {
               "song": "走れウマ娘",
-              "character_ids": []
+              "character_ids": [
+                "taikishuttle",
+                "tmoperao",
+                "naritabrian",
+                "mayanotopgun",
+                "smartfalcon",
+                "kitasanblack",
+                "specialweek",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "grasswonder",
+                "elcondorpasa",
+                "biwahayahide",
+                "winningticket",
+                "tosenjordan",
+                "naritataishin",
+                "matikanefukukitaru",
+                "matikanetannhauser",
+                "sakurachiyonoo",
+                "yaenomuteki",
+                "manhattancafe"
+              ]
             },
             {
               "song": "うまぴょい伝説",
@@ -86282,19 +88115,19 @@
       "summary": "时间地点\n出处：AniLive资料库（码：5xeR）\nhttps://pan.quark.cn/s/1266c33617be 码：5xeR",
       "characters": [
         {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
+          "id": "taikishuttle",
+          "name": "大树快车",
+          "name_ja": "タイキシャトル"
         },
         {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
         },
         {
-          "id": "agnesdigital",
-          "name": "爱丽数码",
-          "name_ja": "アグネスデジタル"
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
         },
         {
           "id": "mayanotopgun",
@@ -86307,19 +88140,29 @@
           "name_ja": "スマートファルコン"
         },
         {
-          "id": "nishinoflower",
-          "name": "西野花",
-          "name_ja": "ニシノフラワー"
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
         },
         {
-          "id": "haruurara",
-          "name": "春乌拉拉",
-          "name_ja": "ハルウララ"
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
         },
         {
-          "id": "nicenature",
-          "name": "优秀素质",
-          "name_ja": "ナイスネイチャ"
+          "id": "agnesdigital",
+          "name": "爱丽数码",
+          "name_ja": "アグネスデジタル"
+        },
+        {
+          "id": "finemotion",
+          "name": "美妙姿势",
+          "name_ja": "ファインモーション"
+        },
+        {
+          "id": "mejiroryan",
+          "name": "目白赖恩",
+          "name_ja": "メジロライアン"
         },
         {
           "id": "admirevega",
@@ -86330,6 +88173,36 @@
           "id": "currenchan",
           "name": "真机伶",
           "name_ja": "カレンチャン"
+        },
+        {
+          "id": "supercreek",
+          "name": "超级溪流",
+          "name_ja": "スーパークリーク"
+        },
+        {
+          "id": "nishinoflower",
+          "name": "西野花",
+          "name_ja": "ニシノフラワー"
+        },
+        {
+          "id": "haruurara",
+          "name": "春乌拉拉",
+          "name_ja": "ハルウララ"
+        },
+        {
+          "id": "meishodoto",
+          "name": "名将怒涛",
+          "name_ja": "メイショウドトウ"
+        },
+        {
+          "id": "mejirodober",
+          "name": "目白多伯",
+          "name_ja": "メジロドーベル"
+        },
+        {
+          "id": "nicenature",
+          "name": "优秀素质",
+          "name_ja": "ナイスネイチャ"
         },
         {
           "id": "ikunodictus",
@@ -86347,54 +88220,9 @@
           "name_ja": "ナリタトップロード"
         },
         {
-          "id": "finemotion",
-          "name": "美妙姿势",
-          "name_ja": "ファインモーション"
-        },
-        {
-          "id": "mejiroryan",
-          "name": "目白赖恩",
-          "name_ja": "メジロライアン"
-        },
-        {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
-        },
-        {
-          "id": "supercreek",
-          "name": "超级溪流",
-          "name_ja": "スーパークリーク"
-        },
-        {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "meishodoto",
-          "name": "名将怒涛",
-          "name_ja": "メイショウドトウ"
-        },
-        {
-          "id": "mejirodober",
-          "name": "目白多伯",
-          "name_ja": "メジロドーベル"
-        },
-        {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
-          "id": "taikishuttle",
-          "name": "大树快车",
-          "name_ja": "タイキシャトル"
-        },
-        {
-          "id": "grasswonder",
-          "name": "草上飞",
-          "name_ja": "グラスワンダー"
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
         },
         {
           "id": "specialweek",
@@ -86402,49 +88230,14 @@
           "name_ja": "スペシャルウィーク"
         },
         {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
         },
         {
-          "id": "sakurachiyonoo",
-          "name": "樱花千代王",
-          "name_ja": "サクラチヨノオー"
-        },
-        {
-          "id": "matikanefukukitaru",
-          "name": "待兼福来",
-          "name_ja": "マチカネフクキタル"
-        },
-        {
-          "id": "biwahayahide",
-          "name": "琵琶晨光",
-          "name_ja": "ビワハヤヒデ"
-        },
-        {
-          "id": "tosenjordan",
-          "name": "东瀛佐敦",
-          "name_ja": "トーセンジョーダン"
-        },
-        {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
-        },
-        {
-          "id": "naritataishin",
-          "name": "成田大进",
-          "name_ja": "ナリタタイシン"
-        },
-        {
-          "id": "winningticket",
-          "name": "胜利奖券",
-          "name_ja": "ウイニングチケット"
-        },
-        {
-          "id": "yaenomuteki",
-          "name": "八重无敌",
-          "name_ja": "ヤエノムテキ"
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
         },
         {
           "id": "vodka",
@@ -86457,14 +88250,54 @@
           "name_ja": "ダイワスカーレット"
         },
         {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
+          "id": "grasswonder",
+          "name": "草上飞",
+          "name_ja": "グラスワンダー"
         },
         {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
+        },
+        {
+          "id": "biwahayahide",
+          "name": "琵琶晨光",
+          "name_ja": "ビワハヤヒデ"
+        },
+        {
+          "id": "winningticket",
+          "name": "胜利奖券",
+          "name_ja": "ウイニングチケット"
+        },
+        {
+          "id": "tosenjordan",
+          "name": "东瀛佐敦",
+          "name_ja": "トーセンジョーダン"
+        },
+        {
+          "id": "naritataishin",
+          "name": "成田大进",
+          "name_ja": "ナリタタイシン"
+        },
+        {
+          "id": "matikanefukukitaru",
+          "name": "待兼福来",
+          "name_ja": "マチカネフクキタル"
+        },
+        {
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
+        },
+        {
+          "id": "sakurachiyonoo",
+          "name": "樱花千代王",
+          "name_ja": "サクラチヨノオー"
+        },
+        {
+          "id": "yaenomuteki",
+          "name": "八重无敌",
+          "name_ja": "ヤエノムテキ"
         },
         {
           "id": "manhattancafe",
@@ -89351,28 +91184,49 @@
             "specialweek",
             "silencesuzuka",
             "tokaiteio",
-            "finemotion",
-            "biwahayahide",
-            "supercreek",
-            "matikanefukukitaru",
-            "mejirodober",
+            "maruzensky",
+            "oguricap",
             "goldship",
             "vodka",
             "daiwascarlet",
-            "eishinflash",
-            "yaenomuteki",
-            "winningticket",
-            "mejiroardan",
-            "tosenjordan",
+            "matikanefukukitaru",
+            "nicenature",
             "matikanetannhauser",
-            "oguricap",
-            "maruzensky",
-            "nicenature"
+            "finemotion",
+            "biwahayahide",
+            "winningticket",
+            "eishinflash",
+            "supercreek",
+            "tosenjordan",
+            "mejirodober",
+            "mejiroardan",
+            "yaenomuteki"
           ],
           "performances": [
             {
               "song": "We are DREAMERS!!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "finemotion",
+                "biwahayahide",
+                "winningticket",
+                "eishinflash",
+                "supercreek",
+                "tosenjordan",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki"
+              ]
             },
             {
               "song": "Fanfare for Future!",
@@ -89547,15 +91401,78 @@
             },
             {
               "song": "大好きのタカラバコ",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "finemotion",
+                "biwahayahide",
+                "winningticket",
+                "eishinflash",
+                "supercreek",
+                "tosenjordan",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki"
+              ]
             },
             {
               "song": "走れウマ娘",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "finemotion",
+                "biwahayahide",
+                "winningticket",
+                "eishinflash",
+                "supercreek",
+                "tosenjordan",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "finemotion",
+                "biwahayahide",
+                "winningticket",
+                "eishinflash",
+                "supercreek",
+                "tosenjordan",
+                "mejirodober",
+                "mejiroardan",
+                "yaenomuteki"
+              ]
             }
           ],
           "setlist_source": {
@@ -89596,32 +91513,54 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "tokaiteio",
-            "naritatoproad",
-            "meishodoto",
-            "seiunsky",
-            "sakurachiyonoo",
-            "fujikiseki",
-            "matikanetannhauser",
-            "smartfalcon",
-            "grasswonder",
-            "daiwascarlet",
             "specialweek",
+            "silencesuzuka",
+            "tokaiteio",
             "maruzensky",
             "oguricap",
             "goldship",
-            "satonodiamond",
-            "matikanefukukitaru",
             "vodka",
+            "daiwascarlet",
+            "matikanefukukitaru",
             "nicenature",
+            "matikanetannhauser",
+            "fujikiseki",
+            "grasswonder",
             "elcondorpasa",
-            "silencesuzuka",
-            "kitasanblack"
+            "smartfalcon",
+            "meishodoto",
+            "satonodiamond",
+            "kitasanblack",
+            "sakurachiyonoo",
+            "naritatoproad",
+            "seiunsky"
           ],
           "performances": [
             {
               "song": "We are DREAMERS!!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "fujikiseki",
+                "grasswonder",
+                "elcondorpasa",
+                "smartfalcon",
+                "meishodoto",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "seiunsky"
+              ]
             },
             {
               "song": "winning the soul",
@@ -89800,15 +91739,81 @@
             },
             {
               "song": "大好きのタカラバコ",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "fujikiseki",
+                "grasswonder",
+                "elcondorpasa",
+                "smartfalcon",
+                "meishodoto",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "seiunsky"
+              ]
             },
             {
               "song": "走れウマ娘",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "fujikiseki",
+                "grasswonder",
+                "elcondorpasa",
+                "smartfalcon",
+                "meishodoto",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "seiunsky"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "maruzensky",
+                "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "matikanefukukitaru",
+                "nicenature",
+                "matikanetannhauser",
+                "fujikiseki",
+                "grasswonder",
+                "elcondorpasa",
+                "smartfalcon",
+                "meishodoto",
+                "satonodiamond",
+                "kitasanblack",
+                "sakurachiyonoo",
+                "naritatoproad",
+                "seiunsky"
+              ]
             }
           ],
           "setlist_source": {
@@ -89867,29 +91872,14 @@
           "name_ja": "トウカイテイオー"
         },
         {
-          "id": "finemotion",
-          "name": "美妙姿势",
-          "name_ja": "ファインモーション"
+          "id": "maruzensky",
+          "name": "丸善斯基",
+          "name_ja": "マルゼンスキー"
         },
         {
-          "id": "biwahayahide",
-          "name": "琵琶晨光",
-          "name_ja": "ビワハヤヒデ"
-        },
-        {
-          "id": "supercreek",
-          "name": "超级溪流",
-          "name_ja": "スーパークリーク"
-        },
-        {
-          "id": "matikanefukukitaru",
-          "name": "待兼福来",
-          "name_ja": "マチカネフクキタル"
-        },
-        {
-          "id": "mejirodober",
-          "name": "目白多伯",
-          "name_ja": "メジロドーベル"
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
         },
         {
           "id": "goldship",
@@ -89907,44 +91897,9 @@
           "name_ja": "ダイワスカーレット"
         },
         {
-          "id": "eishinflash",
-          "name": "荣进闪耀",
-          "name_ja": "エイシンフラッシュ"
-        },
-        {
-          "id": "yaenomuteki",
-          "name": "八重无敌",
-          "name_ja": "ヤエノムテキ"
-        },
-        {
-          "id": "winningticket",
-          "name": "胜利奖券",
-          "name_ja": "ウイニングチケット"
-        },
-        {
-          "id": "mejiroardan",
-          "name": "目白阿尔丹",
-          "name_ja": "メジロアルダン"
-        },
-        {
-          "id": "tosenjordan",
-          "name": "东瀛佐敦",
-          "name_ja": "トーセンジョーダン"
-        },
-        {
-          "id": "matikanetannhauser",
-          "name": "待兼诗歌剧",
-          "name_ja": "マチカネタンホイザ"
-        },
-        {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
-        },
-        {
-          "id": "maruzensky",
-          "name": "丸善斯基",
-          "name_ja": "マルゼンスキー"
+          "id": "matikanefukukitaru",
+          "name": "待兼福来",
+          "name_ja": "マチカネフクキタル"
         },
         {
           "id": "nicenature",
@@ -89952,24 +91907,54 @@
           "name_ja": "ナイスネイチャ"
         },
         {
-          "id": "naritatoproad",
-          "name": "成田路",
-          "name_ja": "ナリタトップロード"
+          "id": "matikanetannhauser",
+          "name": "待兼诗歌剧",
+          "name_ja": "マチカネタンホイザ"
         },
         {
-          "id": "meishodoto",
-          "name": "名将怒涛",
-          "name_ja": "メイショウドトウ"
+          "id": "finemotion",
+          "name": "美妙姿势",
+          "name_ja": "ファインモーション"
         },
         {
-          "id": "seiunsky",
-          "name": "青云天空",
-          "name_ja": "セイウンスカイ"
+          "id": "biwahayahide",
+          "name": "琵琶晨光",
+          "name_ja": "ビワハヤヒデ"
         },
         {
-          "id": "sakurachiyonoo",
-          "name": "樱花千代王",
-          "name_ja": "サクラチヨノオー"
+          "id": "winningticket",
+          "name": "胜利奖券",
+          "name_ja": "ウイニングチケット"
+        },
+        {
+          "id": "eishinflash",
+          "name": "荣进闪耀",
+          "name_ja": "エイシンフラッシュ"
+        },
+        {
+          "id": "supercreek",
+          "name": "超级溪流",
+          "name_ja": "スーパークリーク"
+        },
+        {
+          "id": "tosenjordan",
+          "name": "东瀛佐敦",
+          "name_ja": "トーセンジョーダン"
+        },
+        {
+          "id": "mejirodober",
+          "name": "目白多伯",
+          "name_ja": "メジロドーベル"
+        },
+        {
+          "id": "mejiroardan",
+          "name": "目白阿尔丹",
+          "name_ja": "メジロアルダン"
+        },
+        {
+          "id": "yaenomuteki",
+          "name": "八重无敌",
+          "name_ja": "ヤエノムテキ"
         },
         {
           "id": "fujikiseki",
@@ -89977,19 +91962,9 @@
           "name_ja": "フジキセキ"
         },
         {
-          "id": "smartfalcon",
-          "name": "醒目飞鹰",
-          "name_ja": "スマートファルコン"
-        },
-        {
           "id": "grasswonder",
           "name": "草上飞",
           "name_ja": "グラスワンダー"
-        },
-        {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
         },
         {
           "id": "elcondorpasa",
@@ -89997,9 +91972,39 @@
           "name_ja": "エルコンドルパサー"
         },
         {
+          "id": "smartfalcon",
+          "name": "醒目飞鹰",
+          "name_ja": "スマートファルコン"
+        },
+        {
+          "id": "meishodoto",
+          "name": "名将怒涛",
+          "name_ja": "メイショウドトウ"
+        },
+        {
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
+        },
+        {
           "id": "kitasanblack",
           "name": "北部玄驹",
           "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "sakurachiyonoo",
+          "name": "樱花千代王",
+          "name_ja": "サクラチヨノオー"
+        },
+        {
+          "id": "naritatoproad",
+          "name": "成田路",
+          "name_ja": "ナリタトップロード"
+        },
+        {
+          "id": "seiunsky",
+          "name": "青云天空",
+          "name_ja": "セイウンスカイ"
         }
       ]
     },
@@ -93846,12 +95851,12 @@
               "character_ids": [
                 "tokaiteio",
                 "goldship",
-                "manhattancafe",
-                "matikanetannhauser",
                 "ikunodictus",
+                "matikanetannhauser",
                 "mejiropalmer",
+                "twinturbo",
                 "daitakuhelios",
-                "twinturbo"
+                "manhattancafe"
               ]
             }
           ],
@@ -97331,29 +99336,50 @@
             "うまぴょい伝説"
           ],
           "character_ids": [
-            "naritabrian",
-            "haruurara",
-            "tokaiteio",
             "specialweek",
-            "matikanefukukitaru",
-            "taikishuttle",
-            "oguricap",
-            "tmoperao",
-            "airgroove",
-            "grasswonder",
-            "daiwascarlet",
+            "silencesuzuka",
+            "tokaiteio",
             "goldship",
+            "daiwascarlet",
             "biwahayahide",
-            "naritataishin",
-            "mayanotopgun",
             "winningticket",
+            "naritataishin",
+            "oguricap",
+            "grasswonder",
+            "taikishuttle",
             "elcondorpasa",
-            "silencesuzuka"
+            "tmoperao",
+            "naritabrian",
+            "airgroove",
+            "mayanotopgun",
+            "sakurabakushino",
+            "haruurara",
+            "matikanefukukitaru"
           ],
           "performances": [
             {
               "song": "GIRLS' LEGEND U",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "oguricap",
+                "grasswonder",
+                "taikishuttle",
+                "elcondorpasa",
+                "tmoperao",
+                "naritabrian",
+                "airgroove",
+                "mayanotopgun",
+                "sakurabakushino",
+                "haruurara",
+                "matikanefukukitaru"
+              ]
             },
             {
               "song": "winning the soul",
@@ -97492,15 +99518,75 @@
             },
             {
               "song": "Special Record!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "oguricap",
+                "grasswonder",
+                "taikishuttle",
+                "elcondorpasa",
+                "tmoperao",
+                "naritabrian",
+                "airgroove",
+                "mayanotopgun",
+                "sakurabakushino",
+                "haruurara",
+                "matikanefukukitaru"
+              ]
             },
             {
               "song": "Never Looking Back",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "oguricap",
+                "grasswonder",
+                "taikishuttle",
+                "elcondorpasa",
+                "tmoperao",
+                "naritabrian",
+                "airgroove",
+                "mayanotopgun",
+                "sakurabakushino",
+                "haruurara",
+                "matikanefukukitaru"
+              ]
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "oguricap",
+                "grasswonder",
+                "taikishuttle",
+                "elcondorpasa",
+                "tmoperao",
+                "naritabrian",
+                "airgroove",
+                "mayanotopgun",
+                "sakurabakushino",
+                "haruurara",
+                "matikanefukukitaru"
+              ]
             }
           ],
           "setlist_source": {
@@ -97541,27 +99627,45 @@
             "specialweek",
             "silencesuzuka",
             "tokaiteio",
-            "mejiromcqueen",
-            "daiwascarlet",
             "goldship",
-            "vodka",
-            "mihonobourbon",
+            "daiwascarlet",
             "biwahayahide",
-            "riceshower",
-            "naritataishin",
-            "kitasanblack",
             "winningticket",
-            "satonodiamond",
-            "twinturbo",
+            "naritataishin",
+            "mejiromcqueen",
+            "mihonobourbon",
+            "riceshower",
             "nicenature",
-            "spica_trainer",
+            "ikunodictus",
             "mejiropalmer",
-            "ikunodictus"
+            "twinturbo",
+            "satonodiamond",
+            "kitasanblack",
+            "vodka",
+            "spica_trainer"
           ],
           "performances": [
             {
               "song": "GIRLS' LEGEND U",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "mejiromcqueen",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "ikunodictus",
+                "mejiropalmer",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack"
+              ]
             },
             {
               "song": "ユメヲカケル！",
@@ -97702,18 +99806,69 @@
             {
               "song": "Special Record!",
               "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "mejiromcqueen",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "ikunodictus",
+                "mejiropalmer",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
                 "vodka"
               ]
             },
             {
               "song": "Never Looking Back",
               "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "mejiromcqueen",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "ikunodictus",
+                "mejiropalmer",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
                 "vodka"
               ]
             },
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "goldship",
+                "daiwascarlet",
+                "biwahayahide",
+                "winningticket",
+                "naritataishin",
+                "mejiromcqueen",
+                "mihonobourbon",
+                "riceshower",
+                "nicenature",
+                "ikunodictus",
+                "mejiropalmer",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
                 "vodka"
               ]
             }
@@ -97759,89 +99914,9 @@
       "summary": "时间地点\n出处：AniLive资料库（码：c3NJ）\nhttps://pan.quark.cn/s/d647fd722483 码：c3NJ",
       "characters": [
         {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
-        },
-        {
-          "id": "haruurara",
-          "name": "春乌拉拉",
-          "name_ja": "ハルウララ"
-        },
-        {
-          "id": "tokaiteio",
-          "name": "东海帝王",
-          "name_ja": "トウカイテイオー"
-        },
-        {
           "id": "specialweek",
           "name": "特别周",
           "name_ja": "スペシャルウィーク"
-        },
-        {
-          "id": "matikanefukukitaru",
-          "name": "待兼福来",
-          "name_ja": "マチカネフクキタル"
-        },
-        {
-          "id": "taikishuttle",
-          "name": "大树快车",
-          "name_ja": "タイキシャトル"
-        },
-        {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
-        },
-        {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "airgroove",
-          "name": "气槽",
-          "name_ja": "エアグルーヴ"
-        },
-        {
-          "id": "grasswonder",
-          "name": "草上飞",
-          "name_ja": "グラスワンダー"
-        },
-        {
-          "id": "daiwascarlet",
-          "name": "大和赤骥",
-          "name_ja": "ダイワスカーレット"
-        },
-        {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
-        },
-        {
-          "id": "biwahayahide",
-          "name": "琵琶晨光",
-          "name_ja": "ビワハヤヒデ"
-        },
-        {
-          "id": "naritataishin",
-          "name": "成田大进",
-          "name_ja": "ナリタタイシン"
-        },
-        {
-          "id": "mayanotopgun",
-          "name": "摩耶重炮",
-          "name_ja": "マヤノトップガン"
-        },
-        {
-          "id": "winningticket",
-          "name": "胜利奖券",
-          "name_ja": "ウイニングチケット"
-        },
-        {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
         },
         {
           "id": "silencesuzuka",
@@ -97849,14 +99924,94 @@
           "name_ja": "サイレンススズカ"
         },
         {
+          "id": "tokaiteio",
+          "name": "东海帝王",
+          "name_ja": "トウカイテイオー"
+        },
+        {
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
+        },
+        {
+          "id": "daiwascarlet",
+          "name": "大和赤骥",
+          "name_ja": "ダイワスカーレット"
+        },
+        {
+          "id": "biwahayahide",
+          "name": "琵琶晨光",
+          "name_ja": "ビワハヤヒデ"
+        },
+        {
+          "id": "winningticket",
+          "name": "胜利奖券",
+          "name_ja": "ウイニングチケット"
+        },
+        {
+          "id": "naritataishin",
+          "name": "成田大进",
+          "name_ja": "ナリタタイシン"
+        },
+        {
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
+        },
+        {
+          "id": "grasswonder",
+          "name": "草上飞",
+          "name_ja": "グラスワンダー"
+        },
+        {
+          "id": "taikishuttle",
+          "name": "大树快车",
+          "name_ja": "タイキシャトル"
+        },
+        {
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
+        },
+        {
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
+        },
+        {
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
+        },
+        {
+          "id": "airgroove",
+          "name": "气槽",
+          "name_ja": "エアグルーヴ"
+        },
+        {
+          "id": "mayanotopgun",
+          "name": "摩耶重炮",
+          "name_ja": "マヤノトップガン"
+        },
+        {
+          "id": "sakurabakushino",
+          "name": "樱花进王",
+          "name_ja": "サクラバクシンオー"
+        },
+        {
+          "id": "haruurara",
+          "name": "春乌拉拉",
+          "name_ja": "ハルウララ"
+        },
+        {
+          "id": "matikanefukukitaru",
+          "name": "待兼福来",
+          "name_ja": "マチカネフクキタル"
+        },
+        {
           "id": "mejiromcqueen",
           "name": "目白麦昆",
           "name_ja": "メジロマックイーン"
-        },
-        {
-          "id": "vodka",
-          "name": "伏特加",
-          "name_ja": "ウオッカ"
         },
         {
           "id": "mihonobourbon",
@@ -97869,29 +100024,14 @@
           "name_ja": "ライスシャワー"
         },
         {
-          "id": "kitasanblack",
-          "name": "北部玄驹",
-          "name_ja": "キタサンブラック"
-        },
-        {
-          "id": "satonodiamond",
-          "name": "里见光钻",
-          "name_ja": "サトノダイヤモンド"
-        },
-        {
-          "id": "twinturbo",
-          "name": "双涡轮",
-          "name_ja": "ツインターボ"
-        },
-        {
           "id": "nicenature",
           "name": "优秀素质",
           "name_ja": "ナイスネイチャ"
         },
         {
-          "id": "spica_trainer",
-          "name": "SPICA队的训练员",
-          "name_ja": "SPICAのトレーナー"
+          "id": "ikunodictus",
+          "name": "生野狄杜斯",
+          "name_ja": "イクノディクタス"
         },
         {
           "id": "mejiropalmer",
@@ -97899,9 +100039,29 @@
           "name_ja": "メジロパーマー"
         },
         {
-          "id": "ikunodictus",
-          "name": "生野狄杜斯",
-          "name_ja": "イクノディクタス"
+          "id": "twinturbo",
+          "name": "双涡轮",
+          "name_ja": "ツインターボ"
+        },
+        {
+          "id": "satonodiamond",
+          "name": "里见光钻",
+          "name_ja": "サトノダイヤモンド"
+        },
+        {
+          "id": "kitasanblack",
+          "name": "北部玄驹",
+          "name_ja": "キタサンブラック"
+        },
+        {
+          "id": "vodka",
+          "name": "伏特加",
+          "name_ja": "ウオッカ"
+        },
+        {
+          "id": "spica_trainer",
+          "name": "SPICA队的训练员",
+          "name_ja": "SPICAのトレーナー"
         }
       ]
     },
@@ -104400,12 +106560,12 @@
             {
               "song": "おジャ魔女カーニバル!!",
               "character_ids": [
-                "tokaiteio",
-                "oguricap",
                 "vodka",
+                "tokaiteio",
                 "daiwascarlet",
-                "grasswonder",
-                "haruurara"
+                "haruurara",
+                "oguricap",
+                "grasswonder"
               ]
             }
           ],
@@ -107447,26 +109607,45 @@
             "specialweek",
             "silencesuzuka",
             "tokaiteio",
-            "mejiromcqueen",
-            "daiwascarlet",
-            "goldship",
-            "vodka",
-            "fujikiseki",
-            "seiunsky",
-            "oguricap",
-            "maruzensky",
-            "haruurara",
-            "grasswonder",
-            "tmoperao",
-            "taikishuttle",
             "airgroove",
+            "goldship",
+            "taikishuttle",
+            "mejiromcqueen",
+            "vodka",
+            "seiunsky",
+            "daiwascarlet",
+            "haruurara",
+            "elcondorpasa",
+            "oguricap",
             "hishiamazon",
-            "elcondorpasa"
+            "tmoperao",
+            "grasswonder",
+            "fujikiseki",
+            "maruzensky"
           ],
           "performances": [
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "airgroove",
+                "goldship",
+                "taikishuttle",
+                "mejiromcqueen",
+                "vodka",
+                "seiunsky",
+                "daiwascarlet",
+                "haruurara",
+                "elcondorpasa",
+                "oguricap",
+                "hishiamazon",
+                "tmoperao",
+                "grasswonder",
+                "fujikiseki",
+                "maruzensky"
+              ]
             },
             {
               "song": "Make debut!",
@@ -107557,7 +109736,26 @@
             },
             {
               "song": "Special Record!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "airgroove",
+                "goldship",
+                "taikishuttle",
+                "mejiromcqueen",
+                "vodka",
+                "seiunsky",
+                "daiwascarlet",
+                "haruurara",
+                "elcondorpasa",
+                "oguricap",
+                "hishiamazon",
+                "tmoperao",
+                "grasswonder",
+                "fujikiseki",
+                "maruzensky"
+              ]
             },
             {
               "song": "CATCH THE VICTORY!",
@@ -107660,7 +109858,26 @@
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "airgroove",
+                "goldship",
+                "taikishuttle",
+                "mejiromcqueen",
+                "vodka",
+                "seiunsky",
+                "daiwascarlet",
+                "haruurara",
+                "elcondorpasa",
+                "oguricap",
+                "hishiamazon",
+                "tmoperao",
+                "grasswonder",
+                "fujikiseki",
+                "maruzensky"
+              ]
             }
           ],
           "setlist_source": {
@@ -107713,14 +109930,9 @@
           "name_ja": "トウカイテイオー"
         },
         {
-          "id": "mejiromcqueen",
-          "name": "目白麦昆",
-          "name_ja": "メジロマックイーン"
-        },
-        {
-          "id": "daiwascarlet",
-          "name": "大和赤骥",
-          "name_ja": "ダイワスカーレット"
+          "id": "airgroove",
+          "name": "气槽",
+          "name_ja": "エアグルーヴ"
         },
         {
           "id": "goldship",
@@ -107728,14 +109940,19 @@
           "name_ja": "ゴールドシップ"
         },
         {
+          "id": "taikishuttle",
+          "name": "大树快车",
+          "name_ja": "タイキシャトル"
+        },
+        {
+          "id": "mejiromcqueen",
+          "name": "目白麦昆",
+          "name_ja": "メジロマックイーン"
+        },
+        {
           "id": "vodka",
           "name": "伏特加",
           "name_ja": "ウオッカ"
-        },
-        {
-          "id": "fujikiseki",
-          "name": "富士奇石",
-          "name_ja": "フジキセキ"
         },
         {
           "id": "seiunsky",
@@ -107743,14 +109960,9 @@
           "name_ja": "セイウンスカイ"
         },
         {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
-        },
-        {
-          "id": "maruzensky",
-          "name": "丸善斯基",
-          "name_ja": "マルゼンスキー"
+          "id": "daiwascarlet",
+          "name": "大和赤骥",
+          "name_ja": "ダイワスカーレット"
         },
         {
           "id": "haruurara",
@@ -107758,24 +109970,14 @@
           "name_ja": "ハルウララ"
         },
         {
-          "id": "grasswonder",
-          "name": "草上飞",
-          "name_ja": "グラスワンダー"
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
         },
         {
-          "id": "tmoperao",
-          "name": "好歌剧",
-          "name_ja": "テイエムオペラオー"
-        },
-        {
-          "id": "taikishuttle",
-          "name": "大树快车",
-          "name_ja": "タイキシャトル"
-        },
-        {
-          "id": "airgroove",
-          "name": "气槽",
-          "name_ja": "エアグルーヴ"
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
         },
         {
           "id": "hishiamazon",
@@ -107783,9 +109985,24 @@
           "name_ja": "ヒシアマゾン"
         },
         {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
+          "id": "tmoperao",
+          "name": "好歌剧",
+          "name_ja": "テイエムオペラオー"
+        },
+        {
+          "id": "grasswonder",
+          "name": "草上飞",
+          "name_ja": "グラスワンダー"
+        },
+        {
+          "id": "fujikiseki",
+          "name": "富士奇石",
+          "name_ja": "フジキセキ"
+        },
+        {
+          "id": "maruzensky",
+          "name": "丸善斯基",
+          "name_ja": "マルゼンスキー"
         }
       ]
     },
@@ -116081,26 +118298,42 @@
             "specialweek",
             "silencesuzuka",
             "tokaiteio",
+            "naritabrian",
+            "airgroove",
+            "goldship",
             "taikishuttle",
             "mejiromcqueen",
-            "elcondorpasa",
-            "daiwascarlet",
-            "goldship",
             "vodka",
-            "grasswonder",
+            "daiwascarlet",
+            "elcondorpasa",
+            "oguricap",
             "hishiamazon",
+            "grasswonder",
+            "fujikiseki",
             "seiunsky",
             "sakurabakushino",
-            "naritataishin",
-            "fujikiseki",
-            "oguricap",
-            "airgroove",
-            "naritabrian"
+            "naritataishin"
           ],
           "performances": [
             {
               "song": "うまぴょい伝説",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "naritabrian",
+                "airgroove",
+                "goldship",
+                "taikishuttle",
+                "mejiromcqueen",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "oguricap",
+                "hishiamazon",
+                "grasswonder",
+                "fujikiseki"
+              ]
             },
             {
               "song": "Fanfare for Future!",
@@ -116167,6 +118400,21 @@
             {
               "song": "うまぴょい伝説",
               "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "naritabrian",
+                "airgroove",
+                "goldship",
+                "taikishuttle",
+                "mejiromcqueen",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "oguricap",
+                "hishiamazon",
+                "grasswonder",
+                "fujikiseki",
                 "seiunsky",
                 "sakurabakushino",
                 "naritataishin"
@@ -116250,7 +118498,23 @@
             },
             {
               "song": "ENDLESS DREAM!!",
-              "character_ids": []
+              "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
+                "naritabrian",
+                "airgroove",
+                "goldship",
+                "taikishuttle",
+                "mejiromcqueen",
+                "vodka",
+                "daiwascarlet",
+                "elcondorpasa",
+                "oguricap",
+                "hishiamazon",
+                "grasswonder",
+                "fujikiseki"
+              ]
             }
           ],
           "setlist_source": {
@@ -116303,6 +118567,21 @@
           "name_ja": "トウカイテイオー"
         },
         {
+          "id": "naritabrian",
+          "name": "成田白仁",
+          "name_ja": "ナリタブライアン"
+        },
+        {
+          "id": "airgroove",
+          "name": "气槽",
+          "name_ja": "エアグルーヴ"
+        },
+        {
+          "id": "goldship",
+          "name": "黄金船",
+          "name_ja": "ゴールドシップ"
+        },
+        {
           "id": "taikishuttle",
           "name": "大树快车",
           "name_ja": "タイキシャトル"
@@ -116313,9 +118592,9 @@
           "name_ja": "メジロマックイーン"
         },
         {
-          "id": "elcondorpasa",
-          "name": "神鹰",
-          "name_ja": "エルコンドルパサー"
+          "id": "vodka",
+          "name": "伏特加",
+          "name_ja": "ウオッカ"
         },
         {
           "id": "daiwascarlet",
@@ -116323,14 +118602,19 @@
           "name_ja": "ダイワスカーレット"
         },
         {
-          "id": "goldship",
-          "name": "黄金船",
-          "name_ja": "ゴールドシップ"
+          "id": "elcondorpasa",
+          "name": "神鹰",
+          "name_ja": "エルコンドルパサー"
         },
         {
-          "id": "vodka",
-          "name": "伏特加",
-          "name_ja": "ウオッカ"
+          "id": "oguricap",
+          "name": "小栗帽",
+          "name_ja": "オグリキャップ"
+        },
+        {
+          "id": "hishiamazon",
+          "name": "菱亚马逊",
+          "name_ja": "ヒシアマゾン"
         },
         {
           "id": "grasswonder",
@@ -116338,9 +118622,9 @@
           "name_ja": "グラスワンダー"
         },
         {
-          "id": "hishiamazon",
-          "name": "菱亚马逊",
-          "name_ja": "ヒシアマゾン"
+          "id": "fujikiseki",
+          "name": "富士奇石",
+          "name_ja": "フジキセキ"
         },
         {
           "id": "seiunsky",
@@ -116356,26 +118640,6 @@
           "id": "naritataishin",
           "name": "成田大进",
           "name_ja": "ナリタタイシン"
-        },
-        {
-          "id": "fujikiseki",
-          "name": "富士奇石",
-          "name_ja": "フジキセキ"
-        },
-        {
-          "id": "oguricap",
-          "name": "小栗帽",
-          "name_ja": "オグリキャップ"
-        },
-        {
-          "id": "airgroove",
-          "name": "气槽",
-          "name_ja": "エアグルーヴ"
-        },
-        {
-          "id": "naritabrian",
-          "name": "成田白仁",
-          "name_ja": "ナリタブライアン"
         }
       ]
     },

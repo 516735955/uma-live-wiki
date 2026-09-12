@@ -61,6 +61,14 @@ PERFORMER_RE = re.compile(r'<span class="perf-name">([\s\S]*?)</span>')
 ROW_RE = re.compile(r"<tr\b[^>]*>([\s\S]*?)</tr>", re.I)
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 EVENTERNOTE_ID_RE = re.compile(r"/events/id/(\d+)")
+CAST_LINE_RE = re.compile(
+    r'<div\b[^>]*class=["\'][^"\']*\bcast-line\b[^"\']*["\'][^>]*>([\s\S]*?)</div>', re.I
+)
+CAST_LABEL_RE = re.compile(
+    r'<span\b[^>]*class=["\'][^"\']*\bcast-label\b[^"\']*["\'][^>]*>([\s\S]*?)</span>', re.I
+)
+FULL_CAST_RE = re.compile(r"(?:全员|全員)")
+NON_PERFORMER_CAST_LABEL_RE = re.compile(r"实况|實況|嘉宾|ゲスト|向导|案内|解说|解説|司会|MC", re.I)
 
 
 def read_json(path: Path) -> Any:
@@ -170,8 +178,13 @@ def table_characters(table: str) -> list[str]:
     return list(dict.fromkeys(clean_text(match.group(1)) for match in PERFORMER_RE.finditer(table or "") if clean_text(match.group(1))))
 
 
-def table_performances(table: str, identities: "IdentityIndex") -> list[dict[str, Any]]:
+def table_performances(
+    table: str,
+    identities: "IdentityIndex",
+    full_cast_character_ids: Iterable[str] = (),
+) -> list[dict[str, Any]]:
     performances = []
+    full_cast = list(dict.fromkeys(character_id for character_id in full_cast_character_ids if character_id))
     for row_match in ROW_RE.finditer(table or ""):
         row = row_match.group(1)
         song_match = SONG_RE.search(row)
@@ -185,6 +198,8 @@ def table_performances(table: str, identities: "IdentityIndex") -> list[dict[str
             character_id = identities.character_id(name)
             if character_id and character_id not in character_ids:
                 character_ids.append(character_id)
+        if FULL_CAST_RE.search(clean_text(row)):
+            character_ids = list(dict.fromkeys([*full_cast, *character_ids]))
         performances.append({"song": song, "character_ids": character_ids})
     return performances
 
@@ -212,6 +227,32 @@ def parse_cast_text(value: str) -> list[dict[str, str]]:
         if actor and len(actor) <= 30 and not re.search(r"全員|ほか|他\d|出演者", actor):
             out.append({"name": actor, "role": role})
     return out
+
+
+def cast_characters_for_session(
+    value: str,
+    identities: "IdentityIndex",
+    date_value: Any,
+    day_index: int,
+) -> list[str]:
+    """Resolve the performing character cast for one day of a curated event."""
+    lines = CAST_LINE_RE.findall(value or "") or [value or ""]
+    session_date = event_date_for_day(date_value, day_index)
+    session_day = dt.date.fromisoformat(session_date).day if session_date else 0
+    character_ids = []
+    for line in lines:
+        label_match = CAST_LABEL_RE.search(line)
+        label = clean_text(label_match.group(1)) if label_match else ""
+        if label and NON_PERFORMER_CAST_LABEL_RE.search(label):
+            continue
+        day_match = re.search(r"(?:仅|僅)?(\d{1,2})日", label)
+        if day_match and session_day and int(day_match.group(1)) != session_day:
+            continue
+        for item in parse_cast_text(line):
+            character_id = identities.character_id(item.get("role") or "")
+            if character_id and character_id not in character_ids:
+                character_ids.append(character_id)
+    return character_ids
 
 
 def stable_suffix(value: str) -> str:
@@ -547,7 +588,10 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
             event_cast = make_cast(cast_source, identities, "curated_live_cast")
             for day_index, day in enumerate(sub.get("days") or []):
                 table = day.get("table") or ""
-                performances = table_performances(table, identities)
+                full_cast = cast_characters_for_session(
+                    sub.get("cast") or "", identities, sub.get("date"), day_index
+                )
+                performances = table_performances(table, identities, full_cast)
                 characters = list(dict.fromkeys(char_id for performance in performances for char_id in performance["character_ids"]))
                 sessions.append({
                     "id": f"{event_id}-session-{day_index + 1}",
@@ -623,7 +667,10 @@ def category_events(data: dict[str, Any], identities: IdentityIndex, used: set[s
                     sessions = []
                     for day_index, day in enumerate(sub.get("days") or []):
                         table = day.get("table") or ""
-                        performances = table_performances(table, identities)
+                        full_cast = cast_characters_for_session(
+                            sub.get("cast") or "", identities, sub.get("date"), day_index
+                        )
+                        performances = table_performances(table, identities, full_cast)
                         characters = list(dict.fromkeys(char_id for performance in performances for char_id in performance["character_ids"]))
                         sessions.append({
                             "id": f"{event_id}-session-{day_index + 1}", "label": day.get("label") or "本公演",
