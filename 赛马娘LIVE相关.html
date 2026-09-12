@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>赛马娘综合站</title>
-<link rel="stylesheet" href="/uma_tools/app.css?v=20260912-2">
+<link rel="stylesheet" href="/uma_tools/app.css?v=20260912-3">
 <script defer src="/uma_tools/vendor/vue.global.prod.js"></script>
-<script defer src="/uma_tools/app.js?v=20260912-2"></script>
+<script defer src="/uma_tools/app.js?v=20260912-3"></script>
 </head>
 <body>
 
@@ -568,9 +568,11 @@
                 </div>
                 <ul class="song-list">
                     <li v-for="(r,i) in songAlbums" :key="i" class="song-list-item song-list-album" :class="{current: songDetail.album && r.a.name === songDetail.album.name}">
-                        <span class="song-list-date">{{ r.a.release }}</span>
-                        <span class="song-list-artist" :title="r.artist" v-if="r.artist">{{ r.artist }}</span>
-                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a)">{{ r.a.name }} →</a>
+                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a)">
+                            <span class="song-list-date">{{ r.a.release }}</span>
+                            <span class="song-list-name">{{ r.a.name }}</span>
+                            <span class="song-list-arrow">→</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -578,9 +580,11 @@
                 <h3 class="song-section-title">演出现场</h3>
                 <ul class="song-list">
                     <li v-for="(ev,i) in songLivesVisible" :key="i" class="song-list-item">
-                        <span class="song-list-date">{{ ev.liveDate }}</span>
-                        <span class="song-list-artist" :title="ev.artist" v-if="ev.artist">{{ ev.artist }}</span>
-                        <a class="song-list-link" :href="ev.liveUrl" @click.prevent="openLiveFromUrl(ev.liveUrl)">{{ ev.liveTitle }} →</a>
+                        <a class="song-list-link" :href="ev.liveUrl" @click.prevent="openLiveFromUrl(ev.liveUrl)">
+                            <span class="song-list-date">{{ ev.liveDate }}</span>
+                            <span class="song-list-name">{{ ev.liveTitle }}</span>
+                            <span class="song-list-arrow">→</span>
+                        </a>
                     </li>
                 </ul>
                 <button v-if="songLives.length > 10 && !songLivesExpanded" class="song-list-toggle" type="button" @click="songLivesExpanded = true">

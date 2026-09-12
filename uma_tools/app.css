@@ -1547,9 +1547,10 @@
             overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         }
         .song-list-cnt { color: var(--brand); font-weight: 700; min-width: 40px; }
-        .song-list-link { color: var(--brand); text-decoration: none; font-weight: 600; }
+        .song-list-link { color: var(--brand); text-decoration: none; flex: 1; display: flex; align-items: center; gap: 12px; min-width: 0; }
         .song-list-link:hover { text-decoration: underline; }
-        .song-list-name { color: var(--text-2); }
+        .song-list-name { color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .song-list-arrow { margin-left: auto; color: var(--brand); }
         .song-list-more { color: var(--text-3); font-size: 0.82em; margin-top: 8px; }
         .song-list-toggle {
             display: block; width: 100%; margin-top: 10px; padding: 10px 14px; cursor: pointer;
