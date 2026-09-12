@@ -453,7 +453,7 @@
             font-variant-numeric: tabular-nums;
         }
 
-        .song-list { max-height: 0; overflow: hidden; transition: max-height 0.38s ease; }
+        .album-card .song-list { max-height: 0; overflow: hidden; transition: max-height 0.38s ease; }
         .album-card.expanded .song-list { max-height: 3000px; }
 
         .song-item {
