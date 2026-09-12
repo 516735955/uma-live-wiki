@@ -718,6 +718,18 @@
                             </div>
                         </div>
                         <div class="c-detail-block" id="cDetailBlock"></div>
+                        <section class="cio-songs" v-if="charSongsList.length">
+                            <header class="cio-songs-head">
+                                <h3 class="cio-songs-title">演出曲目</h3>
+                                <span class="cio-songs-meta">共 {{ charSongsList.length }} 首 · 在全演出中演唱记录</span>
+                            </header>
+                            <ul class="cio-songs-list">
+                                <li v-for="(s,i) in charSongsList" :key="i" class="cio-songs-item">
+                                    <span class="cio-songs-times" :class="{top: i<3}">×{{ s.count }}</span>
+                                    <span class="cio-songs-name">{{ s.title }}</span>
+                                </li>
+                            </ul>
+                        </section>
                         <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <div class="cio-detail-foot">
                             角色资料：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科</a>（CC BY-NC-SA 3.0 CN）

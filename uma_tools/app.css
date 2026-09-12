@@ -2109,6 +2109,26 @@
             #tab-characters .c-pedigree-lens { border-radius: 12px; }
             #tab-characters .c-pedigree-lens-frame { height: 690px; }
         }
+        /* ---- character detail performed songs ---- */
+        #tab-characters .cio-songs {
+            margin-top: 22px; padding-top: 14px; border-top: 2px dashed #e3dcf2;
+        }
+        #tab-characters .cio-songs-head { margin-bottom: 10px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+        #tab-characters .cio-songs-title { margin: 0; color: #20283b; font-size: 16px; font-weight: 700; }
+        #tab-characters .cio-songs-meta { color: #85879a; font-size: 12px; }
+        #tab-characters .cio-songs-list {
+            list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 8px 18px; max-height: 420px; overflow-y: auto; border: 1px solid #eeecf6; border-radius: 12px; padding: 12px; background: #fbfbfd;
+        }
+        #tab-characters .cio-songs-item { display: flex; align-items: center; gap: 10px; min-width: 0; }
+        #tab-characters .cio-songs-times {
+            flex: none; min-width: 38px; text-align: right; color: #8488a0; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
+        }
+        #tab-characters .cio-songs-times.top { color: #ff8c1a; }
+        #tab-characters .cio-songs-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2c3650; font-size: 13px; }
+        @media screen and (max-width: 520px) {
+            #tab-characters .cio-songs-list { grid-template-columns: 1fr; max-height: 320px; }
+        }
         /* ---- character detail pedigree availability notes ---- */
         #tab-characters .c-blood {
             margin-top: 22px; padding-top: 14px; border-top: 2px dashed #e3dcf2;
