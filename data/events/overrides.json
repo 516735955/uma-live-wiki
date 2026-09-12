@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "event_patches": {
+    "pakatube-20230401-lcpgkvi33w4": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20230402-msmggqxb6iq": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20230403-r4wedbhghtq": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20230404-vg5vsxyikf4": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20240215-8on-r5eeomk": {
+      "character_ids": ["goldship"]
+    },
+    "pakatube-20240318-p6mybsmi6o0": {
+      "character_ids": ["oguricap", "supercreek", "sakuralaurel", "naritabrian"]
+    },
+    "pakatube-20240531-granblue-fantasy-relink": {
+      "character_ids": ["goldship"]
+    },
+    "pakatube-20250806-wb-shadowverse-worlds-beyond": {
+      "character_ids": ["fusaichipandora", "espoircity", "tosenjordan", "mejiropalmer", "goldcity"]
+    },
+    "pakatube-20251124-shadow-corridor": {
+      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+    },
+    "pakatube-20251125-shadow-corridor": {
+      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+    },
+    "pakatube-20251126-shadow-corridor": {
+      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+    }
+  },
+  "event_aliases": {
+    "official-special-20240316-venue101": "live-other-2024-03-16-venue101",
+    "official-special-20240724-tif-presents-one-song-fes": "live-other-2024-07-25-tif-presents-one-song-fes"
+  },
+  "voice_aliases": {
+    "佐伯伊織(NU-KO)": "佐伯伊織",
+    "高橋未奈美": "髙橋ミナミ",
+    "⻑江里加": "長江里加"
+  },
+  "character_aliases": {
+    "シービー": "mrcb",
+    "エース": "katsuragiace",
+    "ローレル": "sakuralaurel",
+    "バブル": "bubblegumfellow",
+    "ファイン": "finemotion",
+    "シャカール": "airshakur",
+    "トップロード": "naritatoproad",
+    "ミラ子": "hishimiracle",
+    "スペ": "specialweek",
+    "グラス": "grasswonder",
+    "エル": "elcondorpasa",
+    "スカイ": "seiunsky",
+    "キング": "kinghalo",
+    "ファレノ": "phalaenopsis",
+    "アイ": "almondeye",
+    "ララ": "luckylilac",
+    "ブラスト": "blastonepiece",
+    "ブーケ": "currenbouquetdor",
+    "ラヴズ": "lovesonlyyou",
+    "マルシュ": "marchelorraine",
+    "パーマー": "mejiropalmer",
+    "ライアン": "mejiroryan",
+    "アルダン": "mejiroardan",
+    "ブライト": "mejirobright",
+    "ヴィルシーナ": "verxina",
+    "シュヴァル": "chevalgrand",
+    "ヴィブロス": "vivlos",
+    "フジ": "fujikiseki",
+    "パール": "seekingthepearl",
+    "フリオーソ": "furioso",
+    "アース": "soundsofearth",
+    "クラフト": "rheinkraft",
+    "シーザリオ": "cesario",
+    "スイープ": "sweeptosho",
+    "フラワー": "nishinoflower",
+    "メサイア": "airmessiah",
+    "ハート": "daringheart",
+    "ポッケ": "junglepocket",
+    "ダンツ": "dantsuflame",
+    "オペラオー": "tmoperao",
+    "ギムレット": "taninogimlet",
+    "クリスエス": "symbolikriss",
+    "ネイチャ": "nicenature",
+    "イクノ": "ikunodictus",
+    "タンホイザ": "matikanetannhauser",
+    "ロイス": "royceandroyce",
+    "ビリーヴ": "believe",
+    "ライトオ": "calstonelighto",
+    "デュランダル": "durandal",
+    "タイシン": "naritataishin",
+    "アケボノ": "hishiakebono",
+    "ライス": "riceshower",
+    "ヤン子": "foreveryoung",
+    "カジノ": "casinodrive",
+    "エピ": "epiphaneia",
+    "ロゴ": "logotype",
+    "フラッシュ": "eishinflash",
+    "ピサ": "victoirepisa",
+    "ローズ": "rosekingdom",
+    "ルーラー": "rulership",
+    "カレン": "currenchan",
+    "マーチャン": "astonmachan",
+    "ゼファー": "yamaninzephyr",
+    "タマモ": "tamamocross",
+    "アイネス": "inesfujin",
+    "シチー": "goldcity",
+    "リッキー": "copanorickey",
+    "タルマエ": "hokkotarumae",
+    "シオン": "winvariation",
+    "オルフェ": "orfevre",
+    "ジャーニー": "dreamjourney",
+    "ゴルシ": "goldship",
+    "ゴルシちゃん": "goldship"
+  },
+  "hidden_event_ids": []
+}

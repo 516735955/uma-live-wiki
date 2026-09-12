@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+
+import hashlib
+import importlib.util
+import json
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent.parent
+SPEC = importlib.util.spec_from_file_location("update_events", ROOT / "uma_tools" / "update_events.py")
+UPDATE_EVENTS = importlib.util.module_from_spec(SPEC)
+assert SPEC.loader is not None
+SPEC.loader.exec_module(UPDATE_EVENTS)
+
+
+class EventPipelineTest(unittest.TestCase):
+    def test_program_identity_distinguishes_all_regular_series(self):
+        self.assertEqual(
+            UPDATE_EVENTS.program_identity("そこそこぱかライブTV Vol.55"),
+            ("sokosoko-paka-live-tv-055", "sokosoko-paka-live-tv"),
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.program_identity("「ウマ娘」ぱかライブTV' #6 5.5周年スペシャル！"),
+            ("paka-live-tv-prime-006", "paka-live-tv-prime"),
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.program_identity("ぱかライブTV Vol.61"),
+            ("paka-live-tv-061", "paka-live-tv"),
+        )
+
+    def test_regular_episode_coverage_only_advances_contiguously(self):
+        rows = [
+            {"title": "ぱかライブTV Vol.63", "channel_id": UPDATE_EVENTS.OFFICIAL_CHANNEL_ID},
+            {"title": "ぱかライブTV Vol.564", "channel_id": UPDATE_EVENTS.OFFICIAL_CHANNEL_ID},
+        ]
+        expected = UPDATE_EVENTS.expected_regular_program_ids(rows)
+        self.assertIn(("paka-live-tv", 63), expected)
+        self.assertNotIn(("paka-live-tv", 64), expected)
+        self.assertNotIn(("paka-live-tv", 564), expected)
+
+    def test_program_summary_articles_are_not_treated_as_broadcast_announcements(self):
+        self.assertFalse(
+            UPDATE_EVENTS.is_official_program_announcement(
+                "次回ガチャ更新情報など！「ぱかライブTV Vol.33」発表まとめ！"
+            )
+        )
+        self.assertTrue(
+            UPDATE_EVENTS.is_official_program_announcement(
+                "「そこそこぱかライブTV Vol.27」10月13日19時公開！"
+            )
+        )
+
+    def test_program_cast_parser_stops_before_disclaimer(self):
+        description = """出走者：
+明坂聡美（実況役）【MC】
+高柳知葉（オグリキャップ役）
+
+※番組内容は変更になる場合があります。
+"""
+        self.assertEqual(
+            UPDATE_EVENTS.parse_program_cast(description),
+            [
+                {"name": "明坂聡美", "role": "実況"},
+                {"name": "高柳知葉", "role": "オグリキャップ"},
+            ],
+        )
+
+    def test_program_sessions_preserve_day_specific_cast(self):
+        description = """■配信予定日
+DAY1：2024年3月30日（土）19:00頃開始予定
+DAY2：2024年3月31日（日）19:00頃開始予定
+■DAY1 出走者
+明坂聡美（実況役）
+天海由梨奈（ミスターシービー役）
+■DAY2 出走者
+上田瞳（ゴールドシップ役）
+※出走者は変更になる場合があります。
+"""
+        self.assertEqual(
+            UPDATE_EVENTS.parse_program_sessions(description),
+            [
+                {
+                    "label": "DAY1",
+                    "date": "2024-03-30",
+                    "cast": [
+                        {"name": "明坂聡美", "role": "実況"},
+                        {"name": "天海由梨奈", "role": "ミスターシービー"},
+                    ],
+                },
+                {
+                    "label": "DAY2",
+                    "date": "2024-03-31",
+                    "cast": [{"name": "上田瞳", "role": "ゴールドシップ"}],
+                },
+            ],
+        )
+
+    def test_special_announcement_identity_is_stable(self):
+        self.assertEqual(
+            UPDATE_EVENTS.announcement_identity(
+                "ぱかスペース！ 5th EVENT -YELL- 同時視聴を配信！",
+                "",
+                "2024-02-10",
+            ),
+            ("official-special-paka-space-5th-event-yell", "official-special"),
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.announcement_identity(
+                "3月16日放送のNHK「Venue101」にウマ娘が出走決定！",
+                "",
+                "2024-03-16",
+            ),
+            ("official-special-20240316-venue101", "official-special"),
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.announcement_identity(
+                "「ぱかライブTV Vol.33」発表まとめ！",
+                "そこそこぱかライブTV Vol.27も公開予定",
+                "2023-09-28",
+            ),
+            ("paka-live-tv-033", "paka-live-tv"),
+        )
+
+    def test_date_list_inherits_year_within_one_schedule(self):
+        self.assertEqual(
+            UPDATE_EVENTS.all_dates("2025年7月6日（日）、7月13日（日）深夜に放送"),
+            ["2025-07-06", "2025-07-13"],
+        )
+
+    def test_pakatube_scope_includes_programs_but_not_promotional_assets(self):
+        included = [
+            "【ボドゲ実況】4人でカタンをプレイしたぞ！",
+            "【お絵かき配信】ラヴズがイラストを描きながら雑談するぞ！",
+            "【TVアニメ第3期】第1話の同時視聴やっちゃうぞ！",
+            "【ぴすラジッ！】ウマ娘楽曲でトークしちゃうぞ！",
+        ]
+        for title in included:
+            self.assertTrue(UPDATE_EVENTS.is_pakatube_character_program(title), title)
+        for title in ["【ウマ娘】新シリーズ配信アニメ制作決定！", "4th EVENT ティザーPV", "新CM公開"]:
+            self.assertFalse(UPDATE_EVENTS.is_pakatube_character_program(title), title)
+
+    def test_setlist_relationships_are_parsed_per_song_row(self):
+        class Identities:
+            @staticmethod
+            def character_id(name):
+                return {"特别周": "specialweek", "无声铃鹿": "silencesuzuka"}.get(name, "")
+
+        table = """<table><tbody>
+        <tr><td class="setlist-song">Song A</td><td><span class="perf-name">特别周</span></td></tr>
+        <tr><td class="setlist-song">Song B</td><td><span class="perf-name">无声铃鹿</span></td></tr>
+        </tbody></table>"""
+        self.assertEqual(
+            UPDATE_EVENTS.table_performances(table, Identities()),
+            [
+                {"song": "Song A", "character_ids": ["specialweek"]},
+                {"song": "Song B", "character_ids": ["silencesuzuka"]},
+            ],
+        )
+
+    def test_short_character_aliases_require_name_boundaries(self):
+        identities = UPDATE_EVENTS.IdentityIndex.__new__(UPDATE_EVENTS.IdentityIndex)
+        identities.character_by_alias = {"エル": "elcondorpasa", "スペ": "specialweek"}
+        self.assertEqual(
+            set(identities.characters_in_text("エルとスペでゲーム実況")),
+            {"elcondorpasa", "specialweek"},
+        )
+        self.assertEqual(identities.characters_in_text("スーパーエルフのゲーム実況"), [])
+
+    def test_unicode_event_title_gets_order_independent_suffix(self):
+        suffix = UPDATE_EVENTS.stable_title_suffix("シブヤノオト")
+        self.assertRegex(suffix, r"^title-[0-9a-f]{12}$")
+        self.assertEqual(suffix, UPDATE_EVENTS.stable_title_suffix("シブヤノオト"))
+
+    def test_build_preserves_curated_live_sources(self):
+        paths = [ROOT / "data" / "live_data.json", ROOT / "data" / "live_cat_data.json"]
+        before = [hashlib.sha256(path.read_bytes()).hexdigest() for path in paths]
+        built = UPDATE_EVENTS.build()
+        after = [hashlib.sha256(path.read_bytes()).hexdigest() for path in paths]
+        self.assertEqual(before, after)
+        self.assertTrue(built["catalog"]["events"])
+        self.assertTrue(built["appearances"]["voice_actors"])
+
+    def test_every_curated_setlist_day_has_an_exact_source_locator(self):
+        built = UPDATE_EVENTS.build()
+        actual = {
+            json.dumps(session["setlist_source"], sort_keys=True): session
+            for event in built["catalog"]["events"]
+            for session in event.get("sessions") or []
+            if session.get("setlist_source")
+        }
+        expected = {}
+        live = json.loads((ROOT / "data" / "live_data.json").read_text(encoding="utf-8"))
+        for group_index, group in enumerate(live):
+            for performance_index, performance in enumerate(group.get("subs") or []):
+                for day_index, day in enumerate(performance.get("days") or []):
+                    locator = {"file": "data/live_data.json", "group": group_index, "performance": performance_index, "day": day_index}
+                    expected[json.dumps(locator, sort_keys=True)] = day.get("table") or ""
+        categories = json.loads((ROOT / "data" / "live_cat_data.json").read_text(encoding="utf-8"))
+        for category, root in categories.items():
+            sections = root.get("sections") or [{"groups": root.get("groups") or []}]
+            has_sections = bool(root.get("sections"))
+            for section_index, section in enumerate(sections):
+                for group_index, group in enumerate(section.get("groups") or []):
+                    for performance_index, performance in enumerate(group.get("subs") or []):
+                        for day_index, day in enumerate(performance.get("days") or []):
+                            locator = {
+                                "file": "data/live_cat_data.json",
+                                "category": category,
+                                "section": section_index if has_sections else None,
+                                "group": group_index,
+                                "performance": performance_index,
+                                "day": day_index,
+                            }
+                            expected[json.dumps(locator, sort_keys=True)] = day.get("table") or ""
+        self.assertEqual(set(actual), set(expected))
+
+        class NoCharacters:
+            @staticmethod
+            def character_id(_name):
+                return ""
+
+        for locator, table in expected.items():
+            parsed_songs = [row["song"] for row in UPDATE_EVENTS.table_performances(table, NoCharacters())]
+            self.assertEqual(actual[locator]["songs"], parsed_songs, locator)
+
+    def test_character_only_programs_do_not_become_voice_appearances(self):
+        built = UPDATE_EVENTS.build()
+        character_only_ids = {
+            event["id"]
+            for event in built["catalog"]["events"]
+            if event.get("cast_status") == "character_only"
+        }
+        voice_event_ids = {
+            event["event_id"]
+            for actor in built["appearances"]["voice_actors"].values()
+            for event in actor["events"]
+        }
+        self.assertTrue(character_only_ids)
+        self.assertTrue(character_only_ids.isdisjoint(voice_event_ids))
+        for event in built["voice_compat"]["events"]:
+            if event["link"].rsplit("/", 1)[-1] in character_only_ids:
+                self.assertTrue(all(not day["voice_actors"] for day in event["days"]))
+
+    def test_committed_relationships_reference_known_records(self):
+        catalog = json.loads((ROOT / "data" / "events_catalog.json").read_text(encoding="utf-8"))
+        appearances = json.loads((ROOT / "data" / "appearance_index.json").read_text(encoding="utf-8"))
+        profiles = json.loads((ROOT / "data" / "voice_actor_profiles.json").read_text(encoding="utf-8"))["voice_actors"]
+        self.assertEqual(UPDATE_EVENTS.validate(catalog, appearances, profiles), [])
+
+
+if __name__ == "__main__":
+    unittest.main()

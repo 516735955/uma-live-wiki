@@ -1,0 +1,50 @@
+# Unified event sources
+
+This directory contains maintainable source records for the unified event catalog.
+Generated files live one directory above and must not be edited by hand.
+
+## Files
+
+- `series.json`: stable identities and display names for recurring event/program series.
+- `official_programs.json`: official broadcast metadata collected from the official YouTube channel and official portal announcements. It is refreshed explicitly with `python3 uma_tools/update_events.py --refresh-programs` and remains usable offline after it is committed.
+- `overrides.json`: small, reviewed corrections for source conflicts, aliases, missing cast, or intentionally hidden records. This is the only hand-edited event correction layer.
+
+## Update workflow
+
+Run `python3 uma_tools/update_events.py`. The command reads all existing event,
+live, character, and voice sources, then atomically writes:
+
+- `data/events_catalog.json`
+- `data/appearance_index.json`
+- `data/voice_actor_profiles.json`
+- legacy compatibility indexes `data/actor_participation.json` and `data/voice_participation.json`
+
+Run `python3 uma_tools/update_events.py --check` in verification. It rebuilds in
+memory, validates stable IDs and references, and checks that the generated files
+match the source inputs without writing anything.
+
+The command records SHA-256 digests of `live_data.json` and
+`live_cat_data.json` before and after every build and fails if either changes.
+Their hand-tuned setlist HTML is never normalized or rewritten.
+
+## Evidence rules
+
+Every cast relationship carries its evidence kind. The order of preference is:
+official announcement, official YouTube metadata, curated official-source
+confirmation, then Eventernote. A missing cast remains `pending`; it is never
+filled by guessing from a title or character name.
+
+PakaTube character programs are limited to full official episodes with a clear
+program format, including gameplay, board games, drawing/chat streams,
+watch-alongs, official on-location editions, and named talk/radio series.
+Commercials, music videos, Shorts, trailers, anime clips, and one-off
+promotional assets are excluded. Characters named in those records are linked
+as fictional appearances only; they never create a voice-actor appearance
+unless an official source names the voice actor separately.
+
+Official special-program discovery also reads portal announcements for
+PakaSpace watch-alongs and externally produced TV appearances. Multi-day
+programs keep per-session dates and casts. When the same appearance already has
+a hand-curated setlist record, `overrides.json` aliases the announcement to that
+record so the official source is added without duplicating or replacing the
+setlist.

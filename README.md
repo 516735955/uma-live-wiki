@@ -107,15 +107,18 @@ python3 uma_tools/build_pedigree.py
 | 数据 | 手动命令 | 主要输出 |
 |---|---|---|
 | Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `data/events_data.json`；存在本地 Excel 镜像时会尝试同步 |
+| 官方节目源 | `python3 uma_tools/update_events.py --refresh-programs` | 刷新 `data/events/official_programs.json` 并重建统一活动数据 |
+| 统一活动与出演关系 | `python3 uma_tools/update_events.py` | 活动目录、声优档案、出演关系及旧统计兼容文件 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
 | 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
 | 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
 | Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
-| 出演统计 | `python3 uma_tools/gen_voice_part.py` | `data/actor_participation.json`、`data/voice_participation.json` |
+| 活动数据校验 | `python3 uma_tools/update_events.py --check` | 只读重建并核对已提交生成物，不写文件 |
 
 修改 `data/events_data.json`、`data/live_data.json` 或 `data/live_cat_data.json` 后，应再运行一次
-`python3 uma_tools/gen_voice_part.py`。出演统计只读取仓库内受版本控制的数据，不需要 `events_list.xlsx`，
-因此干净 clone 也能重建相同口径的结果。
+`python3 uma_tools/update_events.py`。它从仓库内受版本控制的源数据统一重建活动目录与出演索引，
+不需要 `events_list.xlsx`。`live_data.json` 与 `live_cat_data.json` 仅作为输入，构建前后会校验哈希，
+其中人工精调的演出歌单不会被重写。旧命令 `gen_voice_part.py` 仅保留为转发到新构建器的兼容入口。
 
 大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
 
