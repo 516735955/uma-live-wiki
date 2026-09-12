@@ -13,6 +13,16 @@ createApp({
     }
     const initialSegments = routeSegments();
     const initialFirst = (initialSegments[0] || '').toLowerCase();
+    const initialDatabaseSection = initialFirst === 'database' ? (initialSegments[1] || '').toLowerCase() : '';
+    const initialDatabaseView = ['music', 'artist', 'songs'].indexOf(initialFirst) >= 0 ? 'songs' :
+      (initialFirst === 'characters' ? 'characters' : ({
+        characters: 'characters',
+        voice: 'voice',
+        'voice-actors': 'voice',
+        albums: 'albums',
+        songs: 'songs',
+        other: 'other'
+      }[initialDatabaseSection] || 'index'));
     const initialTab = initialFirst === 'events' || initialFirst === 'live' ? 'live' :
       (['characters', 'database', 'music', 'artist', 'songs', ''].indexOf(initialFirst) >= 0 ? 'database' : initialFirst);
     const audio = ref(null);
@@ -92,7 +102,7 @@ createApp({
       return out;
     }
     const charDetail = ref(null);
-    const dbView = ref(['music', 'artist', 'songs'].indexOf(initialFirst) >= 0 ? 'songs' : 'index');
+    const dbView = ref(initialDatabaseView);
     const voiceDetail = ref(null);
     const charSection = ref('profile');
     const voiceSection = ref('profile');
