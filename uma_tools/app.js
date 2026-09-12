@@ -1,5 +1,5 @@
 
-console.log('[uma-live] build 20260912-3');
+console.log('[uma-live] build 20260912-4');
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
 const SERIES_GRID = [{"index":0,"no":"1st","title":"1st EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/471238a99eba4fc09b643fd77362e450/event_01.png"},{"index":1,"no":"2nd","title":"2nd EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/00cea361d13343d085477a7bdcae48fa/event_02.png"},{"index":2,"no":"3rd","title":"3rd EVENT","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/df69154e90b44827a691cc454f9c5279/event_03.png"},{"index":3,"no":"4th","title":"4th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/aba8419984df479d94896b3ba20c23fa/event_05.png"},{"index":4,"no":"4thExtra","title":"4th EVENT EXTRA STAGE","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e0aaca1a08bd49fa889fa22f6a402311/event_04.png"},{"index":5,"no":"5th","title":"5th EVENT","meta":"4 场公演 · 8 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8c98ef15165742ae8492fec00157a8c5/event_06.png"},{"index":6,"no":"6th","title":"6th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8e25390d779041fbb1b9485a043cd235/event_tnf.png"},{"index":7,"no":"7th","title":"7th EVENT","meta":"5 场公演 · 10 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e33a4cddf22d4bf69e5d3fa0edc9a52a/event_ts.png"}];
@@ -153,11 +153,17 @@ createApp({
       if (parts[0] !== 'live') return [];
       var typ = parts[1];
       var hasSI = parts.length >= 4;
-      var si = hasSI ? parseInt(parts[2], 10) : 0;
-      var gi = hasSI ? parseInt(parts[3], 10) : parseInt(parts[2], 10);
-      if (isNaN(gi)) return [];
       var node = liveCatData.value[typ];
       if (!node) return [];
+      var si = 0;
+      var gi;
+      if (node.sections) {
+        si = hasSI ? parseInt(parts[2], 10) : 0;
+        gi = hasSI ? parseInt(parts[3], 10) : parseInt(parts[2], 10);
+      } else {
+        gi = parseInt(parts[2], 10);
+      }
+      if (isNaN(gi)) return [];
       var groups = null;
       if (node.sections) {
         var sec = node.sections[si];
@@ -784,7 +790,13 @@ createApp({
               } else {
                 path = LANG_PREFIX + '/live/' + liveCatType.value + '/' + liveCatIndex.value;
               }
-              if (livePerf.value > 0 || liveDay.value > 0) path += '/' + livePerf.value + '/' + liveDay.value;
+              if (liveCatType.value === 'number_series_event') {
+                if (livePerf.value > 0 || liveDay.value > 0) path += '/' + livePerf.value + '/' + liveDay.value;
+              } else if (livePerf.value > 0) {
+                path += '/' + livePerf.value + '/' + liveDay.value;
+              } else if (liveDay.value > 0) {
+                path += '/' + liveDay.value;
+              }
             } else {
               path = LANG_PREFIX + '/live/' + liveCatType.value;
             }
@@ -912,7 +924,7 @@ createApp({
               const gi = parseInt(seg[3], 10);
               if (!isNaN(si) && si >= 0 && !isNaN(gi) && gi >= 0) {
                 const pi = (seg.length >= 6) ? parseInt(seg[4], 10) : -1;
-                const di = (seg.length >= 6) ? parseInt(seg[5], 10) : -1;
+                const di = (seg.length >= 6) ? parseInt(seg[5], 10) : (seg.length >= 5) ? parseInt(seg[4], 10) : -1;
                 openCatDetail('cd', si, gi, pi, di);
               } else { liveCatIndex.value = -1; liveCatSectionIndex.value = -1; liveView.value = 'liveCatList'; restoreLiveScrollFromState('liveCatList'); }
             } else if (seg[1] === 'cd') {
@@ -923,7 +935,7 @@ createApp({
               const idx = parseInt(seg[2], 10);
               if (!isNaN(idx) && idx >= 0) {
                 const pi = (seg.length >= 5) ? parseInt(seg[3], 10) : -1;
-                const di = (seg.length >= 5) ? parseInt(seg[4], 10) : -1;
+                const di = (seg.length >= 5) ? parseInt(seg[4], 10) : (seg.length >= 4) ? parseInt(seg[3], 10) : -1;
                 openCatDetail(seg[1], -1, idx, pi, di);
               } else { liveCatIndex.value = -1; liveCatSectionIndex.value = -1; liveView.value = 'liveCatList'; restoreLiveScrollFromState('liveCatList'); }
             }
@@ -1282,6 +1294,26 @@ createApp({
             liveDay.value = parseInt(parts[4], 10) || 0;
             pushUrl();
             window.scrollTo(0, 0);
+          }
+        } else if (parts[1] === 'twinkle' || parts[1] === 'cd' || parts[1] === 'other') {
+          var cat = parts[1];
+          if (cat === 'cd' ? parts.length >= 4 : parts.length >= 3) {
+            var a = parseInt(parts[2], 10) || 0;
+            var pi = -1;
+            var di = -1;
+            if (cat === 'cd') {
+              var gi = parseInt(parts[3], 10) || 0;
+              if (parts.length >= 6) { pi = parseInt(parts[4], 10); di = parseInt(parts[5], 10); }
+              else if (parts.length === 5) { di = parseInt(parts[4], 10); }
+              openCatDetail(cat, a, gi, pi, di);
+            } else {
+              if (parts.length >= 5) { pi = parseInt(parts[3], 10); di = parseInt(parts[4], 10); }
+              else if (parts.length === 4) { di = parseInt(parts[3], 10); }
+              openCatDetail(cat, -1, a, pi, di);
+            }
+          } else if (cat === 'cd') {
+            var si2 = parseInt(parts[2], 10) || 0;
+            openCatSection(si2);
           }
         }
       }
