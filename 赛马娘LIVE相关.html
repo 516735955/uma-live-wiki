@@ -769,7 +769,7 @@
                             <ul class="cio-songs-list">
                                 <li v-for="(s,i) in charSongsVisible" :key="i" class="cio-songs-item">
                                     <span class="cio-songs-times" :class="{top: i<3}">×{{ s.count }}</span>
-                                    <a class="cio-songs-name" :href="'/zh-Hans/database/songs/' + encodeURIComponent(s.title)" @click.prevent="songDetail=findSongByName(s.title); activeTab='database'; dbView='songs'; window.scrollTo(0,0)">{{ s.title }}</a>
+                                    <a class="cio-songs-name" :href="'/zh-Hans/database/songs/' + encodeURIComponent(s.title)" @click.prevent="openSongFromChar(s.title)">{{ s.title }}</a>
                                 </li>
                             </ul>
                             <button v-if="charSongsList.length > 10" class="cio-songs-toggle" type="button" @click="toggleCharSongs">

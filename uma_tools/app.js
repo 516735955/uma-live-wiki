@@ -1157,6 +1157,15 @@ createApp({
       }
       return { song: { name: name, artist: '' }, album: null };
     }
+    function openSongFromChar(songTitle) {
+      loadAlbums().then(function () {
+        songDetail.value = findSongByName(songTitle);
+        activeTab.value = 'database';
+        dbView.value = 'songs';
+        window.scrollTo(0, 0);
+        pushUrl();
+      });
+    }
     const songAlbums = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
@@ -2552,7 +2561,7 @@ createApp({
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
-      songDetail, songAlbums, songLives, songCharList, findSongByName,
+      songDetail, songAlbums, songLives, songCharList, findSongByName, openSongFromChar,
       songEarliestRelease, songLivesExpanded, songLivesVisible, openLiveFromUrl,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
