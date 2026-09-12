@@ -100,6 +100,7 @@ createApp({
     const rankSort = ref('count');
     const vaPage = ref(1);
     const songPage = ref(1);
+    const songDetail = ref(null);
     const evRankPage = 30;
     const voiceEvData = ref([]);
     const songEvData = ref([]);
@@ -809,7 +810,11 @@ createApp({
           } else if (dbView.value === 'albums') {
             path = LANG_PREFIX + '/database/albums';
           } else if (dbView.value === 'songs') {
-            path = LANG_PREFIX + '/database/songs' + (window.__songsPage && window.__songsPage > 1 ? '?page=' + window.__songsPage : '');
+            if (songDetail.value && songDetail.value.song) {
+              path = LANG_PREFIX + '/database/songs/' + encodeURIComponent(songDetail.value.song.name);
+            } else {
+              path = LANG_PREFIX + '/database/songs' + (window.__songsPage && window.__songsPage > 1 ? '?page=' + window.__songsPage : '');
+            }
           } else {
             path = LANG_PREFIX + '/database';
           }
@@ -961,7 +966,16 @@ createApp({
           voiceDetail.value = findVaBySlug(seg[2] ? decodeURIComponent(seg[2]) : '');
         } else if (sub === 'albums' || sub === 'songs') {
           dbView.value = sub;
-          if (sub === 'songs') { var _sp = parseInt(new URLSearchParams(location.search).get('page'), 10); window.__songsPage = (isNaN(_sp) || _sp < 1) ? 1 : _sp; }
+          songDetail.value = null;
+          if (sub === 'songs') {
+            if (seg[2]) {
+              var songName = decodeURIComponent(seg[2]);
+              songDetail.value = findSongByName(songName);
+            } else {
+              var _sp = parseInt(new URLSearchParams(location.search).get('page'), 10);
+              window.__songsPage = (isNaN(_sp) || _sp < 1) ? 1 : _sp;
+            }
+          }
         } else {
           dbView.value = 'index';
         }
@@ -1131,6 +1145,50 @@ createApp({
         return s;
       }).filter(Boolean);
     }
+    function findSongByName(name) {
+      if (!name) return null;
+      for (var i = 0; i < albums.value.length; i++) {
+        var a = albums.value[i];
+        if (a.songs) {
+          for (var j = 0; j < a.songs.length; j++) {
+            if (a.songs[j].name === name) return { song: a.songs[j], album: a };
+          }
+        }
+      }
+      return { song: { name: name, artist: '' }, album: null };
+    }
+    const songAlbums = computed(function () {
+      if (!songDetail.value || !songDetail.value.song) return [];
+      var name = songDetail.value.song.name;
+      var out = [];
+      albums.value.forEach(function (a) {
+        if (a.songs) {
+          a.songs.forEach(function (s) {
+            if (s.name === name) out.push(a);
+          });
+        }
+      });
+      return out;
+    });
+    const songLives = computed(function () {
+      if (!songDetail.value || !songDetail.value.song) return [];
+      var name = songDetail.value.song.name;
+      var out = [];
+      songEvData.value.forEach(function (ev) {
+        if (ev.songs && ev.songs.indexOf(name) !== -1) out.push(ev);
+      });
+      return out;
+    });
+    const songCharList = computed(function () {
+      if (!songDetail.value || !songDetail.value.song) return [];
+      var name = songDetail.value.song.name;
+      var out = [];
+      Object.keys(charSongsMap).forEach(function (zh) {
+        if (charSongsMap[zh][name]) out.push({ zh: zh, count: charSongsMap[zh][name] });
+      });
+      out.sort(function (a, b) { return b.count - a.count; });
+      return out;
+    });
 
     function openAlbum(a, target) {
       albumReturnView.value = 'songs';
@@ -2431,6 +2489,7 @@ createApp({
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
+      songDetail, songAlbums, songLives, songCharList, findSongByName,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio
@@ -3030,19 +3089,18 @@ createApp({
     var app = window.__uma_app;
     if (!app) return;
     try {
-      if (song && song.name) app.search = song.name;
-      app.activeTab = 'songs';
-      app.openAlbum(album, song);
-      app.albumReturnView = 'dbsongs';
+      app.songDetail = app.findSongByName(song.name);
+      app.activeTab = 'database';
+      app.dbView = 'songs';
+      window.scrollTo(0, 0);
+      app.pushUrl();
     } catch (e) {
       try {
-        if (album && album.name) {
-          app.activeTab = 'songs';
-          app.albumDetail = { data: album, songs: album.songs || [], shown: (album.songs || []).length, total: (album.songs || []).length, query: (song && song.name) || '', targetName: (song && song.name) || null, note: '' };
-          app.albumReturnView = 'dbsongs';
-          if (typeof app.pushUrl === 'function') app.pushUrl();
-        }
-      } catch (_) {}
+        if (song && song.name) app.search = song.name;
+        app.activeTab = 'songs';
+        app.openAlbum(album, song);
+        app.albumReturnView = 'dbsongs';
+      } catch (e2) {}
     }
   }
 

@@ -522,13 +522,14 @@
         </div>
 
         <div id="tab-db-songs" v-if="activeTab==='database' && dbView==='songs'" class="tab-content active">
+            <template v-if="!songDetail">
             <button class="back-btn" type="button" @click="goDbView('index')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 返回资料库
             </button>
             <div class="tab-intro">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                歌曲库 SONGS · 共 {{ statSongs }} 首。点击曲目跳转到所属专辑详情并定位该曲。
+                歌曲库 SONGS · 共 {{ statSongs }} 首。点击曲目跳转到歌曲详情页。
             </div>
             <div class="song-toolbar">
                 <svg class="song-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -544,6 +545,52 @@
                 <div class="news-pager" id="songPager"></div>
                 <p class="song-nodata" id="songNoData">没有找到匹配的歌曲</p>
             </div>
+            </template>
+            <template v-else>
+            <button class="back-btn" type="button" @click="songDetail=null; goDbView('songs')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                返回歌曲列表
+            </button>
+            <div class="song-detail">
+                <h1 class="song-detail-title">{{ songDetail.song.name }}</h1>
+                <div class="song-detail-meta" v-if="songDetail.song.artist">
+                    <span class="song-detail-label">演唱</span>
+                    <span class="song-detail-artist">{{ songDetail.song.artist }}</span>
+                </div>
+                <div class="song-detail-meta" v-if="songDetail.album">
+                    <span class="song-detail-label">收录专辑</span>
+                    <a class="song-detail-link" :href="'/zh-Hans/database/albums/' + encodeURIComponent(songDetail.album.name)" @click.prevent="openAlbumFromDb(songDetail.album)">{{ songDetail.album.name }}</a>
+                </div>
+            </div>
+            <div class="song-section" v-if="songAlbums.length > 1">
+                <h3 class="song-section-title">收录CD</h3>
+                <ul class="song-list">
+                    <li v-for="(a,i) in songAlbums" :key="i" class="song-list-item">
+                        <span class="song-list-date">{{ a.release }}</span>
+                        <a class="song-list-link" :href="'/zh-Hans/database/albums/' + encodeURIComponent(a.name)" @click.prevent="openAlbumFromDb(a)">{{ a.name }} →</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="song-section" v-if="songLives.length > 0">
+                <h3 class="song-section-title">演出现场</h3>
+                <ul class="song-list">
+                    <li v-for="(ev,i) in songLives.slice(0,10)" :key="i" class="song-list-item">
+                        <span class="song-list-date">{{ ev.cat }}</span>
+                        <span class="song-list-name">{{ ev.songs ? ev.songs.length + '首' : '' }}</span>
+                    </li>
+                </ul>
+                <div v-if="songLives.length > 10" class="song-list-more">还有 {{ songLives.length - 10 }} 场演出</div>
+            </div>
+            <div class="song-section" v-if="songCharList.length > 0">
+                <h3 class="song-section-title">演出角色</h3>
+                <ul class="song-list">
+                    <li v-for="(c,i) in songCharList.slice(0,10)" :key="i" class="song-list-item">
+                        <span class="song-list-cnt">×{{ c.count }}</span>
+                        <a class="song-list-link" :href="'/zh-Hans/database/characters/' + c.zh" @click.prevent="openCharDetail({id:c.zh,zh:c.zh})">{{ c.zh }}</a>
+                    </li>
+                </ul>
+            </div>
+            </template>
         </div>
 
         <div id="tab-db-voice" v-if="activeTab==='database' && dbView==='voice'" class="tab-content active">
@@ -727,7 +774,7 @@
                             <ul class="cio-songs-list">
                                 <li v-for="(s,i) in charSongsVisible" :key="i" class="cio-songs-item">
                                     <span class="cio-songs-times" :class="{top: i<3}">×{{ s.count }}</span>
-                                    <span class="cio-songs-name">{{ s.title }}</span>
+                                    <a class="cio-songs-name" :href="'/zh-Hans/database/songs/' + encodeURIComponent(s.title)" @click.prevent="songDetail=findSongByName(s.title); activeTab='database'; dbView='songs'; window.scrollTo(0,0)">{{ s.title }}</a>
                                 </li>
                             </ul>
                             <button v-if="charSongsList.length > 10" class="cio-songs-toggle" type="button" @click="toggleCharSongs">

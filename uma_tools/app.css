@@ -1505,6 +1505,33 @@
             .song-actions { flex: 1 1 100%; margin-left: 0; justify-content: flex-start; margin-top: 4px; }
         }
 
+        /* song detail page */
+        .song-detail { margin-bottom: 24px; }
+        .song-detail-title { font-size: 1.5em; font-weight: 700; color: var(--text); margin: 0 0 12px; }
+        .song-detail-meta { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; font-size: 0.88em; }
+        .song-detail-label { color: var(--text-3); font-weight: 600; }
+        .song-detail-artist { color: var(--text-2); }
+        .song-detail-link { color: var(--brand); text-decoration: none; font-weight: 600; }
+        .song-detail-link:hover { text-decoration: underline; }
+
+        .song-section { margin-bottom: 24px; }
+        .song-section-title {
+            font-size: 1.1em; font-weight: 700; color: var(--text); margin: 0 0 10px;
+            padding-bottom: 6px; border-bottom: 2px solid var(--brand);
+        }
+        .song-list { list-style: none; margin: 0; padding: 0; }
+        .song-list-item {
+            display: flex; align-items: center; gap: 12px; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 0.88em;
+        }
+        .song-list-item:last-child { border-bottom: none; }
+        .song-list-date { color: var(--text-3); font-size: 0.82em; min-width: 80px; }
+        .song-list-cnt { color: var(--brand); font-weight: 700; min-width: 40px; }
+        .song-list-link { color: var(--brand); text-decoration: none; font-weight: 600; }
+        .song-list-link:hover { text-decoration: underline; }
+        .song-list-name { color: var(--text-2); }
+        .song-list-more { color: var(--text-3); font-size: 0.82em; margin-top: 8px; }
+
         .news-pager {
             display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
             gap: 12px; padding: 18px 4px 0; border-top: 1px solid var(--border); margin-top: 8px;
