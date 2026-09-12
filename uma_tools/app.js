@@ -2142,8 +2142,15 @@ createApp({
           var events = (data && data.events) || [];
           var sEv = [];
           events.forEach(function (ev) {
-            (ev.days || []).forEach(function (d) {
-              if (d.songs && d.songs.length) sEv.push({ cat: ev.cat, songs: d.songs, link: ev.link, title: ev.title, voice_actors: d.voice_actors });
+            (ev.days || []).forEach(function (d, dayIndex) {
+              if (d.songs && d.songs.length) {
+                var dayLink = ev.link;
+                if (ev.link) {
+                  var lm = ev.link.match(/^(\/zh-Hans\/live\/number_series_event\/[^\/]+\/\d+)(\/\d+)?$/);
+                  if (lm) dayLink = lm[1] + '/' + dayIndex;
+                }
+                sEv.push({ cat: ev.cat, songs: d.songs, link: dayLink, title: ev.title, voice_actors: d.voice_actors });
+              }
             });
           });
           songEvData.value = sEv;
