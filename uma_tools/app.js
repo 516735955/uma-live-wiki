@@ -1,7 +1,6 @@
 
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
-const SERIES_GRID = [{"index":0,"no":"1st","title":"1st EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/471238a99eba4fc09b643fd77362e450/event_01.png"},{"index":1,"no":"2nd","title":"2nd EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/00cea361d13343d085477a7bdcae48fa/event_02.png"},{"index":2,"no":"3rd","title":"3rd EVENT","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/df69154e90b44827a691cc454f9c5279/event_03.png"},{"index":3,"no":"4th","title":"4th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/aba8419984df479d94896b3ba20c23fa/event_05.png"},{"index":4,"no":"4thExtra","title":"4th EVENT EXTRA STAGE","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e0aaca1a08bd49fa889fa22f6a402311/event_04.png"},{"index":5,"no":"5th","title":"5th EVENT","meta":"4 场公演 · 8 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8c98ef15165742ae8492fec00157a8c5/event_06.png"},{"index":6,"no":"6th","title":"6th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8e25390d779041fbb1b9485a043cd235/event_tnf.png"},{"index":7,"no":"7th","title":"7th EVENT","meta":"5 场公演 · 10 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e33a4cddf22d4bf69e5d3fa0edc9a52a/event_ts.png"}];
 
 const { createApp, ref, reactive, computed, watch } = Vue;
 
@@ -14,8 +13,8 @@ createApp({
     }
     const initialSegments = routeSegments();
     const initialFirst = (initialSegments[0] || '').toLowerCase();
-    const initialTab = initialFirst === 'events' ? 'live' : (initialFirst === 'characters' ? 'database' :
-      (initialFirst === 'music' || initialFirst === 'artist' || !initialFirst ? 'songs' : initialFirst));
+    const initialTab = initialFirst === 'events' || initialFirst === 'live' ? 'live' :
+      (['characters', 'database', 'music', 'artist', 'songs', ''].indexOf(initialFirst) >= 0 ? 'database' : initialFirst);
     const audio = ref(null);
     const albums = ref([]);
     const albumsError = ref('');
@@ -35,8 +34,6 @@ createApp({
     syncBodyBackground(home.value);
     watch(home, syncBodyBackground);
     const albumDetail = ref(null);
-    const artistDetail = ref(null);
-    const search = ref('');
     const newsItems = ref([]);
     const newsError = ref('');
     const newsLoading = ref(false);
@@ -49,52 +46,22 @@ createApp({
     const newsPage = ref(1);
     const newsPerPage = 20;
     const newsDefaultCover = '/uma_tools/img/news-card-default.webp';
-    const filterWork = ref('');
-    const filterType = ref('');
-    const showFilters = ref(false);
-    const sortMode = ref('');
-    const backTopVisible = ref(false);
-    const view = ref('list');
     const liveView = ref('eventHub');
-    const liveSeriesIndex = ref(-1);
-    const livePerf = ref(-1);
-    const liveDay = ref(0);
-    const catNote = ref('');
-    const liveCatType = ref('cd');
-    const liveCatIndex = ref(-1);
-    const liveCatSectionIndex = ref(-1);
-    const liveData = ref([]);
-    const liveDataError = ref('');
-    const liveCatData = ref(null);
-    const liveCatDataError = ref('');
-    const liveCatDataOrig = ref(null);
     const dataScriptPromises = {};
     let newsLoadPromise = null;
     let albumsLoadPromise = null;
-    let liveDataLoadPromise = null;
-    let liveCatLoadPromise = null;
     let eventsLoadPromise = null;
     let songCatalogLoadPromise = null;
     let relationshipLoadPromise = null;
     let homeSummaryLoadPromise = null;
-    const savedScrollY = ref(0);
-    const songSavedScrollY = ref(0);
-    const songFromChar = ref(null);
-    const albumReturnView = ref('songs');
-    const liveReturnSource = ref('live');
-    const eventsSavedScrollY = ref(0);
-    const charSavedScrollY = ref(0);
-    const vaSavedScrollY = ref(0);
     const eventsAll = ref([]);
     const eventSeries = ref([]);
     const eventDetail = ref(null);
-    const eventDetailSource = ref('');
-    const eventReturnEntity = ref(null);
+    const selectedEventSessionId = ref('');
     const songCatalog = ref({ coverage: {}, songs: [] });
     const songCatalogError = ref('');
     const songDetail = ref(null);
-    const songDetailSource = ref('');
-    const savedSongDetail = ref(null);
+    const songSection = ref('releases');
     const songDbQuery = ref('');
     const songDbScope = ref('all');
     const songDbSort = ref('name');
@@ -104,7 +71,6 @@ createApp({
     const voiceProfiles = ref([]);
     const homeStats = reactive({ songs: null, albums: null, live: null, performances: null, characters: null, voiceActors: null, events: null });
     const homeNextEvent = ref(null);
-    const eventsMeta = ref('');
     const eventsError = ref('');
     const eventsLoading = ref(false);
     const eventsQuery = ref('');
@@ -114,18 +80,6 @@ createApp({
     const evYear = ref('all');
     const eventsPage = ref(1);
     const eventsPerPage = 20;
-    const evDataView = ref(false);
-    const evDataTab = ref('actor');
-    const evDataLoading = ref(false);
-    const evDataError = ref('');
-    const vaFilters = ref([]);
-    const songFilter = ref('all');
-    const rankSort = ref('count');
-    const vaPage = ref(1);
-    const songPage = ref(1);
-    const evRankPage = 30;
-    const voiceEvData = ref([]);
-    const songEvData = ref([]);
     function pagerList(cur, total) {
       var out = [];
       if (total <= 7) { for (var i = 1; i <= total; i++) out.push(i); return out; }
@@ -137,109 +91,33 @@ createApp({
       out.push(total);
       return out;
     }
-    function countVoice() {
-      var map = {};
-      var sel = vaFilters.value;
-      var useAll = sel.length === 0;
-      voiceEvData.value.forEach(function (ev) {
-        if (!useAll && sel.indexOf(ev.cat) === -1) return;
-        ev.actors.forEach(function (n) { map[n] = (map[n] || 0) + 1; });
-      });
-      var arr = Object.keys(map).map(function (n) { return { name: n, count: map[n] }; });
-      if (rankSort.value === 'name') {
-        arr.sort(function (a, b) { return a.name.localeCompare(b.name, 'ja'); });
-      } else {
-        arr.sort(function (a, b) { return b.count - a.count || (a.name < b.name ? -1 : 1); });
-      }
-      return arr;
-    }
-    function countSong(filter) {
-      var map = {};
-      songEvData.value.forEach(function (ev) {
-        if (filter !== 'all' && ev.cat !== filter) return;
-        ev.songs.forEach(function (n) { map[n] = (map[n] || 0) + 1; });
-      });
-      var arr = Object.keys(map).map(function (n) { return { name: n, count: map[n] }; });
-      if (rankSort.value === 'name') {
-        arr.sort(function (a, b) { return a.name.localeCompare(b.name, 'ja'); });
-      } else {
-        arr.sort(function (a, b) { return b.count - a.count || (a.name < b.name ? -1 : 1); });
-      }
-      return arr;
-    }
-    function getEventSetlists(liveUrl) {
-      if (!liveUrl || liveCatData.value == null) return [];
-      var parts = String(liveUrl).split('/').filter(Boolean);
-      if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
-      if (parts[0] !== 'live') return [];
-      var typ = parts[1];
-      var hasSI = parts.length >= 4;
-      var si = hasSI ? parseInt(parts[2], 10) : 0;
-      var gi = hasSI ? parseInt(parts[3], 10) : parseInt(parts[2], 10);
-      if (isNaN(gi)) return [];
-      var node = liveCatData.value[typ];
-      if (!node) return [];
-      var groups = null;
-      if (node.sections) {
-        var sec = node.sections[si];
-        if (!sec || !sec.groups) return [];
-        groups = sec.groups;
-      } else if (node.groups) {
-        groups = node.groups;
-      } else { return []; }
-      var grp = groups[gi];
-      if (!grp) return [];
-      var tables = [];
-      (function walk(o) {
-        if (o == null || typeof o !== 'object') return;
-        if (Array.isArray(o)) { o.forEach(walk); return; }
-        for (var k in o) { if (k === 'table' && typeof o[k] === 'string') tables.push(o[k]); else walk(o[k]); }
-      })(grp);
-      return tables;
-    }
-    const actorRankList = computed(function () { return countVoice(); });
-    const songRankList = computed(function () { return countSong(songFilter.value); });
-    const actorPageCount = computed(function () { return Math.max(1, Math.ceil(actorRankList.value.length / evRankPage)); });
-    const songPageCount = computed(function () { return Math.max(1, Math.ceil(songRankList.value.length / evRankPage)); });
-    const actorPageRows = computed(function () { var s = (vaPage.value - 1) * evRankPage; return actorRankList.value.slice(s, s + evRankPage); });
-    const songPageRows = computed(function () { var s = (songPage.value - 1) * evRankPage; return songRankList.value.slice(s, s + evRankPage); });
-    const actorPageStart = computed(function () { return actorRankList.value.length ? (vaPage.value - 1) * evRankPage + 1 : 0; });
-    const actorPageEnd = computed(function () { return Math.min(vaPage.value * evRankPage, actorRankList.value.length); });
-    const songPageStart = computed(function () { return songRankList.value.length ? (songPage.value - 1) * evRankPage + 1 : 0; });
-    const songPageEnd = computed(function () { return Math.min(songPage.value * evRankPage, songRankList.value.length); });
-    const actorPageList = computed(function () { return pagerList(vaPage.value, actorPageCount.value); });
-    const songPageList = computed(function () { return pagerList(songPage.value, songPageCount.value); });
-    function setVaFilter(f) {
-      if (f === 'all') { vaFilters.value = []; }
-      else {
-        const i = vaFilters.value.indexOf(f);
-        if (i >= 0) vaFilters.value.splice(i, 1);
-        else vaFilters.value.push(f);
-      }
-      vaPage.value = 1;
-    }
-    function isVaFilter(f) { return f === 'all' ? vaFilters.value.length === 0 : vaFilters.value.indexOf(f) !== -1; }
-    function setSongFilter(f) { songFilter.value = f; songPage.value = 1; }
-    function setVaPage(p) { if (p >= 1 && p <= actorPageCount.value) vaPage.value = p; }
-    function goVaPage(d) { setVaPage(vaPage.value + d); }
-    function setSongPage(p) { if (p >= 1 && p <= songPageCount.value) songPage.value = p; }
-    function goSongPage(d) { setSongPage(songPage.value + d); }
-    watch(rankSort, function () { vaPage.value = 1; songPage.value = 1; });
-    const charSub = ref('intro');
     const charDetail = ref(null);
-    const dbView = ref('index');
+    const dbView = ref(['music', 'artist', 'songs'].indexOf(initialFirst) >= 0 ? 'songs' : 'index');
     const voiceDetail = ref(null);
-    const charDetailSource = ref('');
-    const charBackUrl = ref('');
-    const voiceDetailSource = ref('');
+    const charSection = ref('profile');
+    const voiceSection = ref('profile');
+    const otherSection = ref('relationships');
+    const curatedVideos = [
+      { id: 'BV1N83n6YEyT', title: '“笨蛋，我一直都认可你啊！”' },
+      { id: 'BV1sRw2ezEXZ', title: '我以世纪大逃 换你奇迹复活' },
+      { id: 'BV1jF411B7sw', title: '无败的陨落，奇迹的复活「T.E.I.O」' },
+      { id: 'BV1J5411Q7Do', title: '场上的嘘声对于“反派”的她却是最好的勋章' },
+      { id: 'BV1Az4y1c7NU', title: '三匹三冠马的对决：特殊的时代' },
+      { id: 'BV1Q1HUzaE6H', title: 'Never give up' },
+      { id: 'BV1FH4y1z78L', title: '不是所有的马都是卡莲酱的，池添' },
+      { id: 'BV1vz4y1Y7M3', title: '船哥与121亿日元' },
+      { id: 'BV1PyfDBaEUE', title: '1993 有马纪念：他们都说我赢不了' },
+      { id: 'BV12G411r72u', title: '曾风光无限的目白牧场为何解散？' },
+      { id: 'BV1WY411Y7o5', title: '一匹赛马能为已逝的人类母亲做什么？' },
+      { id: 'BV1zA411L7YT', title: '一代芦毛马传奇：小栗帽' },
+      { id: 'BV1znUwB4ELs', title: '后来，那个时代被称为黄金时代' },
+      { id: 'BV1kSLdznEGS', title: '你强任你强，我有三冠王' },
+      { id: 'BV1dt4y1o7x1', title: '这就是男子汉的谢幕之际' }
+    ];
     const voiceHistoryQuery = ref('');
     const voiceHistoryKind = ref('all');
     const charHistoryQuery = ref('');
     const charHistoryKind = ref('all');
-    const charHasIntro = computed(function () {
-      var id = charDetail.value && charDetail.value.id;
-      return !!(window.CHAR_DETAIL && id && window.CHAR_DETAIL[id] && window.CHAR_DETAIL[id].html);
-    });
     const charAppearance = computed(function () {
       const id = charDetail.value && charDetail.value.id;
       return (id && appearanceIndex.value.characters && appearanceIndex.value.characters[id]) || { events: [], songs: [] };
@@ -251,8 +129,6 @@ createApp({
         return !query || String(event.title || '').toLowerCase().indexOf(query) !== -1 || String(event.date || '').indexOf(query) !== -1;
       });
     });
-    const savedVoiceDetail = ref(null);
-    const savedEventDetail = ref(null);
     const relFilter = ref('');
     const relYear = ref('');
     const relPage = ref(1);
@@ -285,12 +161,7 @@ createApp({
       ]);
     }
     function loadVoiceData() {
-      return Promise.all([
-        loadCharacterIndexData(),
-        loadDataScript('/data/va_photos_data.js?v=20260830', 'VA_PHOTOS'),
-        loadDataScript('/data/voice_list_data.js?v=20260830', 'VA_LIST'),
-        loadRelationshipData()
-      ]);
+      return loadRelationshipData();
     }
     function loadRelationshipData() {
       if (relationshipLoadPromise) return relationshipLoadPromise;
@@ -323,15 +194,9 @@ createApp({
         });
       return songCatalogLoadPromise;
     }
-    function loadLivePathData(path) {
-      const value = String(path || '');
-      if (value.indexOf('number_series_event') !== -1) return loadLiveData();
-      if (value.indexOf('/live/nonlive') !== -1) return loadEvents();
-      return loadLiveCatData();
-    }
     function ensureTabData(tab) {
       if (tab === 'news') return loadNews();
-      if (tab === 'songs') return Promise.all([loadAlbums(), loadSongCatalog()]);
+      if (tab === 'songs') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
       if (tab === 'live') return Promise.all([loadEvents(), loadRelationshipData(), loadSongCatalog(), loadCharacterIndexData()]);
       if (tab === 'database') return loadHomeSummary();
       return Promise.resolve();
@@ -341,25 +206,18 @@ createApp({
       if (!seg.length) return Promise.resolve();
       const first = (seg[0] || '').toLowerCase();
       if (first === 'news') return loadNews();
-      if (first === 'music' || first === 'artist' || first === 'songs') return Promise.all([loadAlbums(), loadSongCatalog()]);
-      if (first === 'live') {
-        const sub = (seg[1] || '').toLowerCase();
-        if (!sub) return Promise.resolve();
-        if (sub === 'number_series_event') return loadLiveData();
-        if (sub === 'nonlive') return loadEvents();
-        return loadLiveCatData();
-      }
+      if (first === 'music' || first === 'artist' || first === 'songs') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
+      if (first === 'live') return Promise.all([loadEvents(), loadRelationshipData(), loadSongCatalog(), loadCharacterIndexData()]);
       if (first === 'characters') {
         const sub = (seg[1] || '').toLowerCase();
-        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos'
-          ? loadCharacterDetailData() : loadCharacterIndexData();
+        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' ? loadCharacterDetailData() : loadCharacterIndexData();
         return Promise.all([characterReady, loadHomeSummary()]);
       }
       if (first === 'events') return Promise.all([loadEvents(), loadRelationshipData(), loadSongCatalog(), loadCharacterIndexData()]);
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
       if (!sub) return loadHomeSummary();
-      if (sub === 'albums') return loadAlbums();
+      if (sub === 'albums') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
       if (sub === 'songs') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
       if (sub === 'events') return Promise.all([loadEvents(), loadRelationshipData()]);
       if (sub === 'voice' || sub === 'voice-actors') return Promise.all([loadVoiceData(), loadHomeSummary()]);
@@ -369,6 +227,7 @@ createApp({
           ? loadCharacterDetailData() : loadCharacterIndexData();
         return Promise.all([characterReady, loadHomeSummary()]);
       }
+      if (sub === 'other') return loadHomeSummary();
       return Promise.resolve();
     }
     function loadHomeSummary() {
@@ -388,7 +247,7 @@ createApp({
         })
         .catch(function () {
           homeSummaryLoadPromise = null;
-          return Promise.all([loadAlbums(), loadLiveData(), loadLiveCatData(), loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
+          return null;
         });
       return homeSummaryLoadPromise;
     }
@@ -462,111 +321,112 @@ createApp({
       home.value = false;
       activeTab.value = 'contribute';
       albumDetail.value = null;
-      artistDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
       newsDetail.value = null;
       eventDetail.value = null;
-      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'eventHub';
+      liveView.value = 'eventHub';
       dbView.value = 'index';
-      charDetail.value = null; voiceDetail.value = null; charSub.value = 'intro';
-      window.scrollTo(0, 0);
+      charDetail.value = null; voiceDetail.value = null;
+      resetPageScroll();
       pushUrl();
     }
     function goContributeContact() {
       home.value = false;
       activeTab.value = 'contribute-contact';
       albumDetail.value = null;
-      artistDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
       newsDetail.value = null;
-      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'eventHub';
+      liveView.value = 'eventHub';
       dbView.value = 'index';
-      charDetail.value = null; voiceDetail.value = null; charSub.value = 'intro';
-      window.scrollTo(0, 0);
+      charDetail.value = null; voiceDetail.value = null;
+      resetPageScroll();
       pushUrl();
     }
     function goLegal(page) {
       home.value = false;
       activeTab.value = page === 'privacy' ? 'legal-privacy' : 'legal-terms';
       albumDetail.value = null;
-      artistDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
       newsDetail.value = null;
-      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'eventHub';
+      liveView.value = 'eventHub';
       dbView.value = 'index';
-      charDetail.value = null; voiceDetail.value = null; charSub.value = 'intro';
-      window.scrollTo(0, 0);
+      charDetail.value = null; voiceDetail.value = null;
+      resetPageScroll();
       pushUrl();
     }
 
     function isTabActive(k) {
+      if (k === 'songs') return activeTab.value === 'database' && dbView.value === 'songs';
+      if (k === 'database') return activeTab.value === 'database' && dbView.value !== 'songs';
       return activeTab.value === k;
     }
-    function charBack() {
-      if (charDetailSource.value === 'voice') {
-        charDetail.value = null;
-        dbView.value = 'voice';
-        voiceDetail.value = savedVoiceDetail.value;
-        savedVoiceDetail.value = null;
-        charDetailSource.value = '';
-        window.scrollTo(0, 0);
-        pushUrl();
-      } else if (charDetailSource.value === 'event') {
-        charDetail.value = null;
-        activeTab.value = 'live';
-        liveView.value = 'eventDetail';
-        eventDetail.value = savedEventDetail.value;
-        savedEventDetail.value = null;
-        charDetailSource.value = '';
-        window.scrollTo(0, 0);
-        pushUrl();
-      } else if (charDetailSource.value === 'song' && savedSongDetail.value) {
-        charDetail.value = null;
-        dbView.value = 'songs';
-        songDetail.value = savedSongDetail.value;
-        savedSongDetail.value = null;
-        charDetailSource.value = '';
-        window.scrollTo(0, 0);
-        pushUrl();
-      } else {
-        goCharSub('intro');
-      }
+    function resetPageScroll() {
+      window.scrollTo(0, 0);
+      Vue.nextTick(function () {
+        window.requestAnimationFrame(function () { window.scrollTo(0, 0); });
+      });
     }
-    function consumeCharBack() {
-      charBackUrl.value = '';
-      try {
-        var raw = sessionStorage.getItem('uma-char-back');
-        if (!raw) return;
-        var data = JSON.parse(raw);
-        if (!data || !data.url || !data.target) return;
-        if (String(data.target) !== String((charDetail.value || {}).id || '')) return;
-        if (data.url === window.location.origin + window.location.pathname + window.location.search) return;
-        charBackUrl.value = data.url;
-      } catch (e) {
-        charBackUrl.value = '';
-      }
+    function navigateTo(path, replace) {
+      const method = replace ? 'replaceState' : 'pushState';
+      if (currentUrlPath() !== path) history[method]({ umaInternal: true }, '', path);
+      const ready = prepareCurrentRoute();
+      Promise.resolve(ready).then(syncFromUrl, syncFromUrl);
+      resetPageScroll();
     }
-    function charBackPrev() {
-      var url = charBackUrl.value;
-      charBackUrl.value = '';
-      try { sessionStorage.removeItem('uma-char-back'); } catch (e) {}
-      if (url) window.location.href = url;
+    function historyBack(fallback) {
+      if (history.state && history.state.umaInternal && history.length > 1) {
+        history.back();
+        return;
+      }
+      navigateTo(fallback || LANG_PREFIX, true);
+    }
+    function setCharSection(section) {
+      if (['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) === -1) return;
+      charSection.value = section;
+      pushUrl();
+      if (section === 'pedigree') Vue.nextTick(renderCharBlood);
+    }
+    function setVoiceSection(section) {
+      if (['profile', 'songs', 'appearances'].indexOf(section) === -1) return;
+      voiceSection.value = section;
+      pushUrl();
+    }
+    function setSongSection(section) {
+      if (['releases', 'performances', 'credits'].indexOf(section) === -1) return;
+      songSection.value = section;
+      pushUrl();
+    }
+    function setOtherSection(section) {
+      if (section !== 'relationships' && section !== 'videos') return;
+      otherSection.value = section;
+      pushUrl();
+    }
+    function openCharacter(id) {
+      const show = function () {
+        const found = findCharById(id);
+        if (!found) return;
+        activeTab.value = 'database';
+        dbView.value = 'characters';
+        charDetail.value = found;
+        charSection.value = 'profile';
+        resetPageScroll();
+        pushUrl();
+        Vue.nextTick(function () {
+          if (typeof renderDetail === 'function') renderDetail(null);
+        });
+      };
+      return loadCharacterDetailData().then(show, show);
+    }
+    function openCharDetail(id) {
+      return openCharacter(id);
     }
     function switchTab(k) {
       albumDetail.value = null;
-      artistDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
-      activeTab.value = k;
-      liveSeriesIndex.value = -1;
-      livePerf.value = 0;
-      liveDay.value = 0;
+      activeTab.value = k === 'songs' ? 'database' : k;
       liveView.value = 'eventHub';
-      if (k !== 'database') dbView.value = 'index';
-      charSub.value = 'intro';
+      if (k === 'songs') dbView.value = 'songs';
+      else dbView.value = 'index';
       charDetail.value = null;
       voiceDetail.value = null;
       ensureTabData(k);
@@ -574,55 +434,17 @@ createApp({
     }
     function enterTab(k) {
       albumDetail.value = null;
-      artistDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
       home.value = false;
-      activeTab.value = k;
-      liveSeriesIndex.value = -1;
-      livePerf.value = 0;
-      liveDay.value = 0;
+      activeTab.value = k === 'songs' ? 'database' : k;
       liveView.value = 'eventHub';
-      if (k !== 'database') dbView.value = 'index';
-      if (k !== 'database') charSub.value = 'intro';
+      if (k === 'songs') dbView.value = 'songs';
+      else dbView.value = 'index';
       if (k !== 'database') charDetail.value = null;
       voiceDetail.value = null;
       ensureTabData(k);
-      window.scrollTo(0, 0);
+      resetPageScroll();
       pushUrl();
-    }
-    function goCharSub(sub) {
-      if (sub !== 'intro' && sub !== 'room' && sub !== 'videos') sub = 'intro';
-      const fromDetail = !!charDetail.value;
-      charSub.value = sub;
-      charDetail.value = null;
-      pushUrl();
-      if (fromDetail && sub === 'intro' && charSavedScrollY.value > 0) {
-        var sy = charSavedScrollY.value;
-        Vue.nextTick(function () {
-          var max = document.documentElement.scrollHeight - window.innerHeight;
-          var target = Math.min(sy, Math.max(0, max));
-          var saved = document.documentElement.style.scrollBehavior;
-          document.documentElement.style.scrollBehavior = 'auto';
-          window.scrollTo(0, target);
-          document.documentElement.style.scrollBehavior = saved;
-        });
-      } else {
-        window.scrollTo(0, 0);
-      }
-    }
-    function openCharDetail(id) {
-      const show = function () {
-        const found = findCharById(id);
-        if (!found) return;
-        if (!charDetail.value) charSavedScrollY.value = window.scrollY || 0;
-        charDetail.value = found;
-        consumeCharBack();
-        window.scrollTo(0, 0);
-        pushUrl();
-        Vue.nextTick(renderCharBlood);
-      };
-      return loadCharacterDetailData().then(show, show);
     }
     function renderCharBlood() {
       var box = document.getElementById('cCharBlood');
@@ -639,11 +461,10 @@ createApp({
     function goHome() {
       home.value = true;
       albumDetail.value = null;
-      artistDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
-      activeTab.value = 'songs';
-      window.scrollTo(0, 0);
+      activeTab.value = 'database';
+      dbView.value = 'songs';
+      resetPageScroll();
       loadHomeSummaryIfNeeded();
       pushUrl();
     }
@@ -653,7 +474,7 @@ createApp({
           activeTab.value = 'live';
           liveView.value = 'eventHub';
           eventDetail.value = null;
-          window.scrollTo(0, 0);
+          resetPageScroll();
           pushUrl();
         });
       }
@@ -661,14 +482,17 @@ createApp({
       if (v === 'index') ready = loadHomeSummary();
       else if (v === 'characters') ready = loadCharacterIndexData();
       else if (v === 'voice') ready = loadVoiceData();
-      else if (v === 'albums') ready = loadAlbums();
+      else if (v === 'albums') ready = Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
       else if (v === 'songs') ready = Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
       const activate = function () {
-        evDataView.value = false;
+        activeTab.value = 'database';
         if (v !== 'voice') voiceDetail.value = null;
-        if (v === 'songs') { songDetail.value = null; songDetailSource.value = ''; songDbPage.value = 1; }
+        if (v === 'songs') { songDetail.value = null; songSection.value = 'releases'; songDbPage.value = 1; }
+        if (v === 'albums') albumDetail.value = null;
+        if (v === 'characters') charDetail.value = null;
+        if (v === 'other') otherSection.value = 'relationships';
         dbView.value = v;
-        window.scrollTo(0, 0);
+        resetPageScroll();
         pushUrl();
       };
       if (v === 'characters' || v === 'voice') return ready.then(activate, activate);
@@ -695,9 +519,6 @@ createApp({
       if (!n) return n;
       var profile = voiceProfileForName(n);
       if (profile) return '<a href="' + LANG_PREFIX + '/database/voice-actors/' + encodeURIComponent(profile.id) + '">' + n + '</a>';
-      var ph = (window.VA_PHOTOS && window.VA_PHOTOS[n]) || null;
-      var page = ph ? ph.page : '';
-      if (page) return '<a href="' + page + '" target="_blank" rel="noopener">' + n + '</a>';
       return n;
     };
     function vaList() {
@@ -713,7 +534,7 @@ createApp({
             ja: identity.ja || identity.zh || '',
             kana: identity.kana || '',
             aliases: identity.aliases || [],
-            roles: (profile.roles || []).map(function (role) {
+            roles: (profile.roles || []).slice(0, 1).map(function (role) {
               return { id: role.character_id || '', zh: role.name || '', ja: role.name_ja || '', en: '', img: role.image || '', main: role.color_main || '', sub: role.color_sub || '', orig: !!role.former };
             }),
             photo: photo.url || '',
@@ -730,39 +551,7 @@ createApp({
           };
         });
       }
-      var src = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
-      var map = new Map();
-      var charByZh = {};
-      src.forEach(function (c) { if (c.zh) charByZh[c.zh] = c.id; });
-      src.forEach(function (c) {
-        var key = c.cv_zh || c.cv;
-        if (!key) return;
-        if (!map.has(key)) {
-          var ph = (window.VA_PHOTOS && window.VA_PHOTOS[key]) || null;
-          map.set(key, { slug: vaSlugOf(key), zh: c.cv_zh || '', ja: c.cv || key, roles: [], photo: ph ? ph.img : '', credit: ph || null, birth: ph ? (ph.birth || '') : '' });
-        }
-        map.get(key).roles.push({ id: c.id, zh: c.role_zh || c.zh, ja: c.ja || '', en: c.en || '', img: c.img || '', main: c.main || '', sub: c.sub || '' });
-        if (c.cv_former) {
-          var fk = c.cv_former;
-          if (!map.has(fk)) {
-            var fph = (window.VA_PHOTOS && window.VA_PHOTOS[fk]) || null;
-            map.set(fk, { slug: vaSlugOf(fk), zh: c.cv_former, ja: c.cv_former_ja || fk, roles: [], photo: fph ? fph.img : '', credit: fph || null, birth: fph ? (fph.birth || '') : '' });
-          }
-          map.get(fk).roles.push({ id: c.id, zh: c.zh, orig: true, ja: c.ja || '', en: c.en || '', img: c.img || '', main: c.main || '', sub: c.sub || '' });
-        }
-      });
-      // 合并 voice_list.xlsx 中未收录于 CHAR_INDEX 的声优（如训练员 / 解说等）
-      var extra = window.VA_LIST || [];
-      extra.forEach(function (v) {
-        var zh = (v.zh || '').trim(), ja = (v.ja || '').trim();
-        if (!zh && !ja) return;
-        if (map.has(zh) || (ja && map.has(ja))) return;
-        var ph = (window.VA_PHOTOS && (window.VA_PHOTOS[zh] || (ja && window.VA_PHOTOS[ja]))) || null;
-        var roles = [];
-        if (v.role && v.role.trim()) roles.push({ zh: v.role.trim(), id: charByZh[v.role.trim()] || '', img: '', main: '', sub: '' });
-        map.set(zh || ja, { slug: vaSlugOf(zh || ja), zh: zh || ja, ja: ja || zh, roles: roles, photo: ph ? ph.img : '', credit: ph || null, birth: ph ? (ph.birth || '') : '' });
-      });
-      return Array.from(map.values());
+      return [];
     }
     function findVaBySlug(slug) {
       var target = String(slug || '');
@@ -780,22 +569,10 @@ createApp({
       const id = voiceDetail.value && voiceDetail.value.id;
       return (id && appearanceIndex.value.voice_actors && appearanceIndex.value.voice_actors[id]) || { events: [], songs: [] };
     });
-    const voiceUpcoming = computed(function () {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      return voiceAppearance.value.events.filter(function (event) {
-        const time = new Date((event.date || '') + 'T00:00:00').getTime();
-        return !isNaN(time) && time >= today.getTime();
-      }).slice().sort(function (a, b) { return String(a.date).localeCompare(String(b.date)); });
-    });
     const voicePastByYear = computed(function () {
       const groups = [];
       const map = {};
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
       voiceAppearance.value.events.forEach(function (event) {
-        const time = new Date((event.date || '') + 'T00:00:00').getTime();
-        if (!isNaN(time) && time >= today.getTime()) return;
         if (voiceHistoryKind.value !== 'all' && event.kind !== voiceHistoryKind.value) return;
         const query = String(voiceHistoryQuery.value || '').trim().toLowerCase();
         if (query && String(event.title || '').toLowerCase().indexOf(query) === -1 && String(event.date || '').indexOf(query) === -1) return;
@@ -805,84 +582,28 @@ createApp({
       });
       return groups;
     });
-    function openVoiceFromEvent(actorId) {
+    function openVoice(actorId) {
       const show = function () {
         const found = findVaBySlug(actorId);
         if (!found) return;
-        savedEventDetail.value = eventDetail.value;
-        voiceDetailSource.value = 'event';
         activeTab.value = 'database';
         dbView.value = 'voice';
         voiceDetail.value = found;
-        eventDetail.value = null;
-        window.scrollTo(0, 0);
+        voiceSection.value = 'profile';
+        resetPageScroll();
         pushUrl();
       };
       return loadVoiceData().then(show, show);
     }
     function openVa(slug) {
-      const found = findVaBySlug(slug);
-      if (!found) return;
-      voiceDetailSource.value = '';
-      savedEventDetail.value = null;
-      if (!voiceDetail.value) vaSavedScrollY.value = window.scrollY || 0;
-      voiceDetail.value = found;
-      window.scrollTo(0, 0);
-      pushUrl();
+      return openVoice(slug);
     }
-    function voiceBack() {
-      if (voiceDetailSource.value === 'event') {
-        voiceDetail.value = null;
-        activeTab.value = 'live';
-        liveView.value = 'eventDetail';
-        eventDetail.value = savedEventDetail.value;
-        savedEventDetail.value = null;
-        voiceDetailSource.value = '';
-        window.scrollTo(0, 0);
-        pushUrl();
-        return;
-      }
-      if (voiceDetailSource.value === 'song' && savedSongDetail.value) {
-        voiceDetail.value = null;
-        dbView.value = 'songs';
-        songDetail.value = savedSongDetail.value;
-        savedSongDetail.value = null;
-        voiceDetailSource.value = '';
-        window.scrollTo(0, 0);
-        pushUrl();
-        return;
-      }
-      voiceDetail.value = null;
-      pushUrl();
-      var sy = vaSavedScrollY.value;
-      vaSavedScrollY.value = 0;
-      if (sy > 0) {
-        Vue.nextTick(function () {
-          var max = document.documentElement.scrollHeight - window.innerHeight;
-          var target = Math.min(sy, Math.max(0, max));
-          var saved = document.documentElement.style.scrollBehavior;
-          document.documentElement.style.scrollBehavior = 'auto';
-          window.scrollTo(0, target);
-          document.documentElement.style.scrollBehavior = saved;
-        });
-      } else {
-        window.scrollTo(0, 0);
-      }
+    function openVoiceByName(name) {
+      const profile = voiceProfileForName(name);
+      if (profile) return openVoice(profile.id);
     }
     function openCharFromVoice(id) {
-      const show = function () {
-        const found = findCharById(id);
-        if (!found) return;
-        charDetailSource.value = 'voice';
-        savedVoiceDetail.value = voiceDetail.value;
-        dbView.value = 'characters';
-        charSub.value = 'intro';
-        voiceDetail.value = null;
-        charDetail.value = found;
-        window.scrollTo(0, 0);
-        pushUrl();
-      };
-      return loadCharacterDetailData().then(show, show);
+      return openCharacter(id);
     }
     const songAliasMap = computed(function () {
       const map = {};
@@ -962,87 +683,39 @@ createApp({
         return String(b.performance.session_date || b.performance.event_date).localeCompare(String(a.performance.session_date || a.performance.event_date));
       });
     });
-    const songDetailCharacters = computed(function () {
-      return ((songDetail.value && songDetail.value.character_ids) || []).map(findCharById).filter(Boolean);
-    });
     const songDetailVoiceActors = computed(function () {
       return ((songDetail.value && songDetail.value.voice_actor_ids) || []).map(findVaBySlug).filter(Boolean);
     });
-    function openSong(songOrId, source) {
+    function songSingerLabel(song) {
+      const names = ((song && song.voice_actor_ids) || []).map(function (actorId) {
+        const voice = findVaBySlug(actorId);
+        return voice && voice.zh;
+      }).filter(Boolean);
+      if (names.length) return names.join(' / ');
+      const credits = Array.from(new Set((song && song.artists) || [])).filter(Boolean);
+      return credits.length ? credits.join(' / ') : '—';
+    }
+    function openSong(songOrId) {
       const show = function () {
         const found = findSong(songOrId);
         if (!found) return;
-        songDetailSource.value = source || (eventDetail.value ? 'event' : (charDetail.value ? 'character' : (voiceDetail.value ? 'voice' : 'list')));
-        if (songDetailSource.value === 'event') savedEventDetail.value = eventDetail.value;
         songDetail.value = found;
+        songSection.value = 'releases';
         activeTab.value = 'database';
         dbView.value = 'songs';
-        eventDetail.value = null;
-        window.scrollTo(0, 0);
+        resetPageScroll();
         pushUrl();
       };
       return Promise.all([loadSongCatalog(), loadVoiceData()]).then(show, show);
     }
-    function songBack() {
-      const source = songDetailSource.value;
-      songDetail.value = null;
-      songDetailSource.value = '';
-      if (source === 'event' && savedEventDetail.value) {
-        activeTab.value = 'live';
-        liveView.value = 'eventDetail';
-        eventDetail.value = savedEventDetail.value;
-        savedEventDetail.value = null;
-      } else if (source === 'character' && charDetail.value) {
-        dbView.value = 'characters';
-      } else if (source === 'voice' && voiceDetail.value) {
-        dbView.value = 'voice';
-      } else if (source === 'album' || source === 'music' || source === 'artist') {
-        activeTab.value = 'songs';
-      }
-      window.scrollTo(0, 0);
-      pushUrl();
-    }
     function openAlbumFromSong(item) {
       const release = item && item.release ? item.release : item;
-      const version = item && item.version ? item.version : null;
       const album = albums.value.find(function (entry) { return entry.name === release.album_name; });
       if (!album) return;
-      savedSongDetail.value = songDetail.value;
-      activeTab.value = 'songs';
-      search.value = version ? version.title : '';
-      openAlbum(album, (album.songs || []).find(function (track) { return version && track.name === version.title; }) || null);
-      albumReturnView.value = 'song';
+      openAlbum(album);
     }
-    function openEventFromSong(eventId) {
-      savedSongDetail.value = songDetail.value;
-      openEvent(eventId, 'song');
-    }
-    function openCharacterFromSong(characterId) {
-      const show = function () {
-        savedSongDetail.value = songDetail.value;
-        charDetailSource.value = 'song';
-        dbView.value = 'characters';
-        charSub.value = 'intro';
-        charDetail.value = findCharById(characterId);
-        songDetail.value = null;
-        window.scrollTo(0, 0);
-        pushUrl();
-      };
-      return loadCharacterDetailData().then(show, show);
-    }
-    function openVoiceFromSong(actorId) {
-      const show = function () {
-        const found = findVaBySlug(actorId);
-        if (!found) return;
-        savedSongDetail.value = songDetail.value;
-        voiceDetailSource.value = 'song';
-        dbView.value = 'voice';
-        voiceDetail.value = found;
-        songDetail.value = null;
-        window.scrollTo(0, 0);
-        pushUrl();
-      };
-      return loadVoiceData().then(show, show);
+    function openEventUrl(path) {
+      if (path) navigateTo(path);
     }
     function characterName(characterId) {
       const character = findCharById(characterId);
@@ -1052,25 +725,41 @@ createApp({
       const character = findCharById(characterId);
       return character ? character.img : '';
     }
+    function characterColor(characterId) {
+      const character = findCharById(characterId);
+      return character ? character.main : '#ff8c1a';
+    }
+    function voiceRoleImage(voice) {
+      return voice && voice.roles && voice.roles[0] ? voice.roles[0].img : '';
+    }
+    function voiceRoleColor(voice) {
+      return voice && voice.roles && voice.roles[0] && voice.roles[0].main ? voice.roles[0].main : '#ff8c1a';
+    }
+    function albumTrackVocalists(track, trackIndex) {
+      const album = albumDetail.value && albumDetail.value.data;
+      const song = findSong(track && track.name);
+      if (!album || !song) return [];
+      const number = Number(trackIndex) + 1;
+      for (const version of (song.versions || [])) {
+        for (const release of (version.releases || [])) {
+          if (release.album_name !== album.name || Number(release.track_number) !== number) continue;
+          return (release.vocalists || []).map(function (vocalist) {
+            return {
+              voice_actor_id: vocalist.voice_actor_id,
+              name: vocalist.voice_actor_name,
+              image: vocalist.character && vocalist.character.image,
+              color: vocalist.character && vocalist.character.color_main
+            };
+          });
+        }
+      }
+      return [];
+    }
     function albumName(a) { return a.name; }
-    function clearSearch() {
-      search.value = '';
-      artistDetail.value = null;
-    }
-    function onScroll() {
-      backTopVisible.value = (window.scrollY || 0) > 480;
-    }
-    function backToTop() {
-      var saved = document.documentElement.style.scrollBehavior;
-      document.documentElement.style.scrollBehavior = 'auto';
-      window.scrollTo(0, 0);
-      document.documentElement.style.scrollBehavior = saved;
-    }
-
     // ---- client-side routing (history mode) ----
     function findCharById(id) {
       if (!id) return null;
-      var arr = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : (window.UMA_INTRO || []);
+      var arr = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
       var norm = String(id).toLowerCase();
       for (var i = 0; i < arr.length; i++) {
         if (String(arr[i].id || '').toLowerCase() === norm) {
@@ -1089,7 +778,7 @@ createApp({
     function findCharByDisplayName(name) {
       var target = String(name || '').replace(/\s+/g, '').toLowerCase();
       if (!target) return null;
-      var arr = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : (window.UMA_INTRO || []);
+      var arr = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
       for (var i = 0; i < arr.length; i++) {
         var candidate = arr[i];
         var names = [candidate.zh, candidate.ja, candidate.name, candidate.en];
@@ -1131,13 +820,6 @@ createApp({
       }
       return albums.value.find(function (a) { return a.name === decoded || a.name === target; }) || null;
     }
-    function seriesNoToIndex(no) {
-      const t = String(no || '').toLowerCase().replace(/_event$/, '');
-      for (let i = 0; i < SERIES_GRID.length; i++) {
-        if (SERIES_GRID[i].no.toLowerCase() === t) return i;
-      }
-      return -1;
-    }
     const LANG_PREFIX = '/zh-Hans';
     function currentUrlPath() {
       return window.location.pathname + window.location.search;
@@ -1145,15 +827,7 @@ createApp({
     function pushUrl() {
       let path = '/';
       if (!home.value) {
-        if (activeTab.value === 'songs') {
-          if (artistDetail.value) {
-            path = LANG_PREFIX + '/artist/' + encodeURIComponent(artistDetail.value);
-          } else if (albumDetail.value) {
-            path = LANG_PREFIX + '/music/' + slugOfAlbum(albumDetail.value.data.name);
-          } else {
-            path = LANG_PREFIX + '/music';
-          }
-        } else if (activeTab.value === 'news') {
+        if (activeTab.value === 'news') {
           if (newsDetail.value) {
             path = LANG_PREFIX + '/news/' + newsDetail.value.announce_id;
           } else {
@@ -1161,71 +835,41 @@ createApp({
             if (newsPage.value > 1) path += '?page=' + newsPage.value;
           }
         } else if (activeTab.value === 'live') {
-          if (liveView.value === 'eventHub') {
+          if (liveView.value === 'eventDetail' && eventDetail.value) {
+            path = LANG_PREFIX + '/events/' + encodeURIComponent(eventDetail.value.id);
+            if (selectedEventSessionId.value) path += '?session=' + encodeURIComponent(selectedEventSessionId.value);
+          } else {
             path = LANG_PREFIX + '/events';
             const params = [];
+            if (eventsQuery.value) params.push('q=' + encodeURIComponent(eventsQuery.value));
             if (evTime.value !== 'all') params.push('time=' + encodeURIComponent(evTime.value));
             if (evKind.value !== 'all') params.push('kind=' + encodeURIComponent(evKind.value));
             if (evMode.value !== 'all') params.push('mode=' + encodeURIComponent(evMode.value));
             if (evYear.value !== 'all') params.push('year=' + encodeURIComponent(evYear.value));
+            if (eventsPage.value > 1) params.push('page=' + eventsPage.value);
             if (params.length) path += '?' + params.join('&');
-          } else if (liveView.value === 'eventDetail' && eventDetail.value) {
-            path = LANG_PREFIX + '/events/' + encodeURIComponent(eventDetail.value.id);
-          } else if (liveView.value === 'liveSeries') {
-            path = LANG_PREFIX + '/live/number_series_event';
-          } else if (liveView.value === 'liveDetail') {
-            const sg = (liveSeriesIndex.value >= 0 && liveSeriesIndex.value < SERIES_GRID.length) ? SERIES_GRID[liveSeriesIndex.value] : null;
-            if (sg) {
-              path = LANG_PREFIX + '/live/number_series_event/' + sg.no + '_EVENT';
-              if (livePerf.value > 0 || liveDay.value > 0) path += '/' + livePerf.value + '/' + liveDay.value;
-            } else {
-              path = LANG_PREFIX + '/live/number_series_event';
-            }
-          } else if (liveView.value === 'liveCatList') {
-            path = LANG_PREFIX + '/live/' + liveCatType.value;
-          } else if (liveView.value === 'liveCatSection') {
-            if (liveCatSectionIndex.value >= 0) {
-              path = LANG_PREFIX + '/live/' + liveCatType.value + '/' + liveCatSectionIndex.value;
-            } else {
-              path = LANG_PREFIX + '/live/' + liveCatType.value;
-            }
-          } else if (liveView.value === 'liveCatDetail') {
-            if (liveCatIndex.value >= 0) {
-              if (liveCatSectionIndex.value >= 0) {
-                path = LANG_PREFIX + '/live/' + liveCatType.value + '/' + liveCatSectionIndex.value + '/' + liveCatIndex.value;
-              } else {
-                path = LANG_PREFIX + '/live/' + liveCatType.value + '/' + liveCatIndex.value;
-              }
-              if (livePerf.value > 0 || liveDay.value > 0) path += '/' + livePerf.value + '/' + liveDay.value;
-            } else {
-              path = LANG_PREFIX + '/live/' + liveCatType.value;
-            }
-          } else {
-            path = LANG_PREFIX + '/live';
           }
         } else if (activeTab.value === 'database') {
           if (dbView.value === 'characters') {
+            path = LANG_PREFIX + '/database/characters';
             if (charDetail.value && charDetail.value.id) {
-              path = LANG_PREFIX + '/database/characters/' + encodeURIComponent(charDetail.value.id);
-            } else {
-              path = LANG_PREFIX + '/database/characters' + (charSub.value === 'intro' ? '' : '/' + charSub.value);
-            }
-          } else if (dbView.value === 'events') {
-            if (evDataView.value) {
-              path = LANG_PREFIX + '/database/events/data';
-            } else {
-              path = LANG_PREFIX + '/database/events';
-              if (evTime.value === 'upcoming') path += '?filter[time]=upcoming';
-              else if (evTime.value === 'past') path += '?filter[time]=past';
+              path += '/' + encodeURIComponent(charDetail.value.id);
+              if (charSection.value !== 'profile') path += '?section=' + encodeURIComponent(charSection.value);
             }
           } else if (dbView.value === 'voice') {
-            path = LANG_PREFIX + '/database/voice-actors' + (voiceDetail.value ? '/' + voiceDetail.value.slug : '');
+            path = LANG_PREFIX + '/database/voice-actors';
+            if (voiceDetail.value) {
+              path += '/' + encodeURIComponent(voiceDetail.value.slug);
+              if (voiceSection.value !== 'profile') path += '?section=' + encodeURIComponent(voiceSection.value);
+            }
           } else if (dbView.value === 'albums') {
             path = LANG_PREFIX + '/database/albums';
+            if (albumDetail.value) path += '/' + slugOfAlbum(albumDetail.value.data.name);
           } else if (dbView.value === 'songs') {
             path = LANG_PREFIX + '/database/songs';
             if (songDetail.value) {
               path += '/' + encodeURIComponent(songDetail.value.id);
+              if (songSection.value !== 'releases') path += '?section=' + encodeURIComponent(songSection.value);
             } else {
               const params = [];
               if (songDbQuery.value) params.push('q=' + encodeURIComponent(songDbQuery.value));
@@ -1234,6 +878,8 @@ createApp({
               if (songDbPage.value > 1) params.push('page=' + songDbPage.value);
               if (params.length) path += '?' + params.join('&');
             }
+          } else if (dbView.value === 'other') {
+            path = LANG_PREFIX + '/database/other/' + otherSection.value;
           } else {
             path = LANG_PREFIX + '/database';
           }
@@ -1252,7 +898,7 @@ createApp({
         path = LANG_PREFIX;
       }
       if (currentUrlPath() !== path) {
-        history.pushState({ r: true }, '', path);
+        history.pushState({ umaInternal: true }, '', path);
       }
     }
     function syncFromUrl() {
@@ -1264,15 +910,15 @@ createApp({
       const first = (seg[0] || '').toLowerCase();
       home.value = seg.length === 0;
       albumDetail.value = null;
-      artistDetail.value = null;
       newsDetail.value = null;
+      eventDetail.value = null;
+      voiceDetail.value = null;
+      charDetail.value = null;
       songDetail.value = null;
-      songDetailSource.value = '';
-      liveSeriesIndex.value = -1;
-      livePerf.value = 0;
-      liveDay.value = 0;
       liveView.value = 'eventHub';
-      activeTab.value = 'songs';
+      selectedEventSessionId.value = '';
+      activeTab.value = 'database';
+      dbView.value = 'index';
       if (home.value) return;
       if (first === 'news') {
         activeTab.value = 'news';
@@ -1300,371 +946,145 @@ createApp({
         const subLegal = (seg[1] || '').toLowerCase();
         activeTab.value = subLegal === 'privacy' ? 'legal-privacy' : 'legal-terms';
       } else if (first === 'music') {
-        activeTab.value = 'songs';
+        activeTab.value = 'database';
+        dbView.value = 'albums';
+        let target = LANG_PREFIX + '/database/albums';
         if (seg.length >= 2) {
           const a = findAlbumBySlug(decodeURIComponent(seg[1]));
-          if (a) openAlbum(a, null);
+          if (a) {
+            albumDetail.value = { data: a, songs: a.songs || [] };
+            target += '/' + slugOfAlbum(a.name);
+          }
         }
+        history.replaceState(history.state || {}, '', target);
       } else if (first === 'artist') {
-        activeTab.value = 'songs';
+        activeTab.value = 'database';
+        dbView.value = 'songs';
+        let target = LANG_PREFIX + '/database/songs';
         if (seg.length >= 2) {
-          artistDetail.value = decodeURIComponent(seg[1]);
+          songDbQuery.value = decodeURIComponent(seg[1]);
+          target += '?q=' + encodeURIComponent(songDbQuery.value);
         }
+        history.replaceState(history.state || {}, '', target);
+      } else if (first === 'songs') {
+        activeTab.value = 'database';
+        dbView.value = 'songs';
+        history.replaceState(history.state || {}, '', LANG_PREFIX + '/database/songs');
       } else if (first === 'events') {
         activeTab.value = 'live';
-        liveView.value = 'eventHub';
         const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
         if (requested) {
           const found = eventsAll.value.find(function (event) { return event.id === requested; });
           if (found) {
             eventDetail.value = found;
             liveView.value = 'eventDetail';
-            loadLiveData();
-            loadLiveCatData();
+            const session = url.searchParams.get('session');
+            const sessions = found.sessions || [];
+            selectedEventSessionId.value = sessions.some(function (item) { return item.id === session; })
+              ? session : ((sessions[0] && sessions[0].id) || '');
           }
         } else {
           const time = url.searchParams.get('time');
           const kind = url.searchParams.get('kind');
           const mode = url.searchParams.get('mode');
           const year = url.searchParams.get('year');
+          const page = parseInt(url.searchParams.get('page') || '1', 10);
+          eventsQuery.value = url.searchParams.get('q') || '';
           evTime.value = ['upcoming', 'past'].indexOf(time) >= 0 ? time : 'all';
           evKind.value = ['concert', 'onsite', 'official_program'].indexOf(kind) >= 0 ? kind : 'all';
           evMode.value = ['onsite', 'online', 'hybrid'].indexOf(mode) >= 0 ? mode : 'all';
           evYear.value = /^20\d{2}$/.test(year || '') ? year : 'all';
+          eventsPage.value = isNaN(page) || page < 1 ? 1 : page;
         }
       } else if (first === 'live') {
+        const requestedPath = '/' + raw.join('/');
+        const legacy = eventsAll.value.find(function (event) {
+          return event.legacy_url === requestedPath || (event.legacy_aliases || []).indexOf(requestedPath) !== -1;
+        });
+        const target = legacy ? LANG_PREFIX + '/events/' + encodeURIComponent(legacy.id) : LANG_PREFIX + '/events';
+        history.replaceState(history.state || {}, '', target);
         activeTab.value = 'live';
-        if (seg.length >= 2 && seg[1] === 'number_series_event') {
-          if (seg.length >= 3) {
-            const idx = seriesNoToIndex(seg[2]);
-            if (idx >= 0) {
-              const pi = (seg.length >= 5) ? parseInt(seg[3], 10) : -1;
-              const di = (seg.length >= 5) ? parseInt(seg[4], 10) : -1;
-              openLiveSeries(idx, pi, di);
-            }
-          } else {
-            liveView.value = 'liveSeries';
-            restoreLiveScrollFromState('liveSeries');
-          }
-        } else if (seg.length >= 2 && (seg[1] === 'cd' || seg[1] === 'twinkle' || seg[1] === 'other' || seg[1] === 'nonlive')) {
-          liveCatType.value = seg[1];
-          if (seg.length >= 3) {
-            if (seg[1] === 'cd' && seg.length >= 4) {
-              const si = parseInt(seg[2], 10);
-              const gi = parseInt(seg[3], 10);
-              if (!isNaN(si) && si >= 0 && !isNaN(gi) && gi >= 0) {
-                const pi = (seg.length >= 6) ? parseInt(seg[4], 10) : -1;
-                const di = (seg.length >= 6) ? parseInt(seg[5], 10) : -1;
-                openCatDetail('cd', si, gi, pi, di);
-              } else { liveCatIndex.value = -1; liveCatSectionIndex.value = -1; liveView.value = 'liveCatList'; restoreLiveScrollFromState('liveCatList'); }
-            } else if (seg[1] === 'cd') {
-              const si = parseInt(seg[2], 10);
-              if (!isNaN(si) && si >= 0) openCatSection(si);
-              else { liveCatIndex.value = -1; liveCatSectionIndex.value = -1; liveView.value = 'liveCatList'; restoreLiveScrollFromState('liveCatList'); }
-            } else {
-              const idx = parseInt(seg[2], 10);
-              if (!isNaN(idx) && idx >= 0) {
-                const pi = (seg.length >= 5) ? parseInt(seg[3], 10) : -1;
-                const di = (seg.length >= 5) ? parseInt(seg[4], 10) : -1;
-                openCatDetail(seg[1], -1, idx, pi, di);
-              } else { liveCatIndex.value = -1; liveCatSectionIndex.value = -1; liveView.value = 'liveCatList'; restoreLiveScrollFromState('liveCatList'); }
-            }
-          } else {
-            liveCatIndex.value = -1;
-            liveCatSectionIndex.value = -1;
-            liveView.value = 'liveCatList';
-            restoreLiveScrollFromState('liveCatList');
-          }
+        liveView.value = legacy ? 'eventDetail' : 'eventHub';
+        if (legacy) {
+          eventDetail.value = legacy;
+          selectedEventSessionId.value = legacy.sessions && legacy.sessions[0] ? legacy.sessions[0].id : '';
         }
       } else if (first === 'database') {
         activeTab.value = 'database';
         const sub = (seg[1] || '').toLowerCase();
-        charDetail.value = null;
         if (sub === 'characters') {
           dbView.value = 'characters';
-          const csub = (seg[2] || 'intro').toLowerCase();
-          if (csub === 'room' || csub === 'videos') {
-            charSub.value = csub;
-          } else {
-            charSub.value = 'intro';
-            const found = findCharById(csub);
-            if (found) {
-              charDetail.value = found;
-              consumeCharBack();
-            }
-          }
+          const requested = seg[2] ? decodeURIComponent(seg[2]) : '';
+          charDetail.value = requested ? findCharById(requested) : null;
+          const section = url.searchParams.get('section');
+          charSection.value = ['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) >= 0 ? section : 'profile';
         } else if (sub === 'events') {
-          if ((seg[2] || '').toLowerCase() === 'data') {
-            dbView.value = 'events';
-            evDataView.value = true;
-            computeEvData();
-          } else {
-            activeTab.value = 'live';
-            liveView.value = 'eventHub';
-            const ft = url.searchParams.get('filter[time]');
-            evTime.value = (ft === 'upcoming' || ft === 'past') ? ft : 'all';
-            history.replaceState({ r: true }, '', LANG_PREFIX + '/events' + (evTime.value !== 'all' ? '?time=' + evTime.value : ''));
-          }
+          const ft = url.searchParams.get('filter[time]');
+          const target = LANG_PREFIX + '/events' + ((ft === 'upcoming' || ft === 'past') ? '?time=' + ft : '');
+          history.replaceState(history.state || {}, '', target);
+          activeTab.value = 'live';
+          liveView.value = 'eventHub';
+          evTime.value = (ft === 'upcoming' || ft === 'past') ? ft : 'all';
         } else if (sub === 'voice' || sub === 'voice-actors') {
           dbView.value = 'voice';
           voiceDetail.value = findVaBySlug(seg[2] ? decodeURIComponent(seg[2]) : '');
-        } else if (sub === 'albums' || sub === 'songs') {
-          dbView.value = sub;
-          if (sub === 'songs') {
-            const requestedSong = seg[2] ? decodeURIComponent(seg[2]) : '';
-            songDetail.value = requestedSong ? findSong(requestedSong) : null;
-            songDbQuery.value = url.searchParams.get('q') || '';
-            songDbScope.value = ['released', 'performed', 'connected'].indexOf(url.searchParams.get('scope')) >= 0 ? url.searchParams.get('scope') : 'all';
-            songDbSort.value = ['performances', 'releases'].indexOf(url.searchParams.get('sort')) >= 0 ? url.searchParams.get('sort') : 'name';
-            const songPageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
-            songDbPage.value = isNaN(songPageFromUrl) || songPageFromUrl < 1 ? 1 : songPageFromUrl;
+          const section = url.searchParams.get('section');
+          voiceSection.value = ['profile', 'songs', 'appearances'].indexOf(section) >= 0 ? section : 'profile';
+        } else if (sub === 'albums') {
+          dbView.value = 'albums';
+          const requestedAlbum = seg[2] ? decodeURIComponent(seg[2]) : '';
+          const album = requestedAlbum ? findAlbumBySlug(requestedAlbum) : null;
+          if (album) {
+            albumDetail.value = { data: album, songs: album.songs || [], shown: (album.songs || []).length, total: (album.songs || []).length, query: '', targetName: null, note: '' };
           }
+        } else if (sub === 'songs') {
+          dbView.value = 'songs';
+          const requestedSong = seg[2] ? decodeURIComponent(seg[2]) : '';
+          songDetail.value = requestedSong ? findSong(requestedSong) : null;
+          const section = url.searchParams.get('section');
+          songSection.value = ['releases', 'performances', 'credits'].indexOf(section) >= 0 ? section : 'releases';
+          songDbQuery.value = url.searchParams.get('q') || '';
+          songDbScope.value = ['released', 'performed', 'connected'].indexOf(url.searchParams.get('scope')) >= 0 ? url.searchParams.get('scope') : 'all';
+          songDbSort.value = ['performances', 'releases'].indexOf(url.searchParams.get('sort')) >= 0 ? url.searchParams.get('sort') : 'name';
+          const songPageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
+          songDbPage.value = isNaN(songPageFromUrl) || songPageFromUrl < 1 ? 1 : songPageFromUrl;
+        } else if (sub === 'other') {
+          dbView.value = 'other';
+          otherSection.value = seg[2] === 'videos' ? 'videos' : 'relationships';
         } else {
           dbView.value = 'index';
         }
       } else if (first === 'characters') {
+        const sub = (seg[1] || '').toLowerCase();
+        let target = LANG_PREFIX + '/database/characters';
+        if (sub === 'room') target = LANG_PREFIX + '/database/other/relationships';
+        else if (sub === 'videos') target = LANG_PREFIX + '/database/other/videos';
+        else if (sub && sub !== 'intro') target += '/' + encodeURIComponent(sub);
+        history.replaceState(history.state || {}, '', target);
         activeTab.value = 'database';
-        dbView.value = 'characters';
-        const sub = (seg[1] || 'intro').toLowerCase();
-        charDetail.value = null;
         if (sub === 'room' || sub === 'videos') {
-          charSub.value = sub;
+          dbView.value = 'other';
+          otherSection.value = sub === 'videos' ? 'videos' : 'relationships';
         } else {
-          charSub.value = 'intro';
-          const found = findCharById(sub);
-          if (found) charDetail.value = found;
+          dbView.value = 'characters';
+          charDetail.value = sub && sub !== 'intro' ? findCharById(sub) : null;
         }
       } else if (first === 'links') {
         activeTab.value = 'links';
       } else {
-        activeTab.value = 'songs';
+        activeTab.value = 'database';
+        dbView.value = 'index';
       }
       Vue.nextTick(renderCharBlood);
     }
-    function route() {
-      syncFromUrl();
-    }
-
-    // ---- classification for filters ----
-    const WORK_LIST = [
-      { key: 's1', label: '赛马娘 Season 1' },
-      { key: 's2', label: '赛马娘 Season 2' },
-      { key: 's3', label: '赛马娘 Season 3' },
-      { key: 'rttp', label: 'ROAD TO THE TOP' },
-      { key: 'movi', label: '剧场版《新時代の扉》' },
-      { key: 'cinder', label: '芦毛灰姑娘' },
-      { key: 'yon', label: '赛马娘四格' },
-      { key: 'yur', label: '摇曳马娘' },
-      { key: 'sg', label: 'STARTING GATE系列' },
-      { key: 'wl', label: 'WINNING LIVE系列' },
-      { key: 'svt', label: 'Solo Vocal Tracks系列' }
-    ];
-    const TYPE_LIST = [
-      { key: '专辑', label: '专辑' },
-      { key: '单曲', label: '单曲' },
-      { key: '原声带', label: '原声带' },
-      { key: '精选辑', label: '精选辑' }
-    ];
-    const FILTERS = {
-      '': '',
-      s2: ['ANIMATION DERBY Season 2'], s3: ['ANIMATION DERBY Season 3'], s1: ['ANIMATION DERBY'],
-      rttp: ['ROAD TO THE TOP'], movi: ['新時代の扉'], cinder: ['シンデレラグレイ'],
-      yon: ['うまよん'], yur: ['うまゆる'], sg: ['STARTING GATE'], wl: ['WINNING LIVE'], svt: ['Solo Vocal Tracks'],
-      inst: ['サウンドトラック', 'Soundtrack', 'Sound Track']
-    };
-    function isWorkKey(k, name) {
-      if (k === 's1') return /ANIMATION DERBY(?! Season [23])/.test(name);
-      return FILTERS[k] && FILTERS[k].some(function (f) { return name.indexOf(f) !== -1; });
-    }
-    function albumTypeOf(name) {
-      if (/サウンドトラック|Sound ?Track/i.test(name)) return 'inst';
-      if (/WINNING LIVE (?:06|12|17|25|32)$/.test(name)) return 'inst';
-      if (/ROAD TO THE TOP/.test(name)) return 'inst';
-      if (/うまよん|うまゆる/.test(name)) return 'inst';
-      return 'song';
-    }
-    function albumWorkOf(name) {
-      if (/ANIMATION DERBY Season [23]/.test(name)) return /Season 2/.test(name) ? 's2' : 's3';
-      if (/ANIMATION DERBY/.test(name)) return 's1';
-      if (/ROAD TO THE TOP/.test(name)) return 'rttp';
-      if (/新時代の扉/.test(name)) return 'movi';
-      if (/シンデレラグレイ|^超える$/.test(name)) return 'cinder';
-      if (/うまよん/.test(name)) return 'yon';
-      if (/うまゆる/.test(name)) return 'yur';
-      if (/STARTING GATE/.test(name)) return 'sg';
-      if (/Solo Vocal Tracks/.test(name)) return 'svt';
-      if (/WINNING LIVE/.test(name)) return 'wl';
-      return '';
-    }
-    const filteredAlbums = computed(function () {
-      const now = new Date();
-      const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-      const list = albums.value.filter(function (a) {
-        if (a.release && String(a.release) > today) return false;
-        if (filterWork.value && albumWorkOf(a.name) !== filterWork.value) return false;
-        if (filterType.value && a.type !== filterType.value) return false;
-        return true;
-      });
-      if (sortMode.value === 'name') {
-        list.sort(function (x, y) { return x.name.localeCompare(y.name, 'ja'); });
-      } else {
-        list.sort(function (x, y) {
-          const dx = String(x.release || ''), dy = String(y.release || '');
-          if (dx === dy) return x.name.localeCompare(y.name, 'ja');
-          if (!dx) return 1;
-          if (!dy) return -1;
-          return dy.localeCompare(dx);
-        });
-      }
-      return list;
-    });
-    function setFilter(which, key) {
-      if (which === 'work') filterWork.value = (filterWork.value === key) ? '' : key;
-      else filterType.value = (filterType.value === key) ? '' : key;
-    }
-    function clearFilters() {
-      filterWork.value = '';
-      filterType.value = '';
-    }
-    function workLabel(key) {
-      const f = WORK_LIST.find(function (x) { return x.key === key; });
-      return f ? f.label : key;
-    }
-    function typeLabel(key) {
-      const f = TYPE_LIST.find(function (x) { return x.key === key; });
-      return f ? f.label : key;
-    }
-    function filterActive() { return !!(filterWork.value || filterType.value); }
-
-    // search results (structured)
-    const qSearch = computed(function () { return (search.value || '').toLowerCase().trim(); });
-    const songHits = computed(function () {
-      const q = qSearch.value; if (!q) return [];
-      const out = [];
-      filteredAlbums.value.forEach(function (a) { a.songs.forEach(function (s) { if (s.name.toLowerCase().indexOf(q) !== -1) out.push({ album: a, song: s }); }); });
-      return out;
-    });
-    const artistHits = computed(function () {
-      const q = qSearch.value; if (!q) return [];
-      const set = {};
-      filteredAlbums.value.forEach(function (a) { a.songs.forEach(function (s) {
-        splitArtists(s.artist).forEach(function (nm) {
-          if (nm.toLowerCase().indexOf(q) !== -1) set[nm] = 1;
-        });
-      }); });
-      return Object.keys(set);
-    });
-    const albumHits = computed(function () {
-      const q = qSearch.value; if (!q) return [];
-      return filteredAlbums.value.filter(function (a) { return a.name.toLowerCase().indexOf(q) !== -1; });
-    });
-    const artistSongs = computed(function () {
-      if (!artistDetail.value) return [];
-      const out = [];
-      filteredAlbums.value.forEach(function (a) { a.songs.forEach(function (s) { if (splitArtists(s.artist).indexOf(artistDetail.value) !== -1) out.push({ album: a, song: s }); }); });
-      return out;
-    });
-    function openArtist(a) { artistDetail.value = a; albumDetail.value = null; window.scrollTo(0, 0); pushUrl(); }
-    function backArtist() { artistDetail.value = null; window.scrollTo(0, 0); pushUrl(); }
-
-    function splitArtists(str) {
-      return String(str || '').split(/[/、]/).map(function (s) {
-        s = s.trim();
-        if (!s) return '';
-        const cv = s.match(/\(CV\.\s*([^()]*)\)/);
-        if (cv) return cv[1].trim();
-        return s;
-      }).filter(Boolean);
-    }
-
-    function openAlbum(a, target) {
-      albumReturnView.value = 'songs';
-      savedScrollY.value = window.scrollY || 0;
-      const q = search.value.trim();
-      var matched = 0;
-      if (q) {
-        const lq = q.toLowerCase();
-        a.songs.forEach(function (s) {
-          if (s.name.toLowerCase().indexOf(lq) !== -1 || s.artist.toLowerCase().indexOf(lq) !== -1) matched++;
-        });
-      }
-      albumDetail.value = {
-        data: a, songs: a.songs, shown: a.songs.length, total: a.songs.length, query: q, targetName: target ? target.name : null,
-        note: matched > 0 ? '匹配到 ' + matched + ' 首，展示该专辑全部 ' + a.songs.length + ' 首' : ''
-      };
+    function openAlbum(a) {
+      activeTab.value = 'database';
+      dbView.value = 'albums';
+      albumDetail.value = { data: a, songs: a.songs || [] };
+      resetPageScroll();
       pushUrl();
-      var savedBehavior = document.documentElement.style.scrollBehavior;
-      document.documentElement.style.scrollBehavior = 'auto';
-      window.scrollTo(0, 0);
-      document.documentElement.style.scrollBehavior = savedBehavior;
-      requestAnimationFrame(function () {
-        const t = document.getElementById('tab-album');
-        if (t) t.scrollTop = 0;
-      });
-      requestAnimationFrame(function () {
-        if (!q) return;
-        const list = document.querySelector('#tab-album .detail-songs');
-        const targetName = albumDetail.value ? albumDetail.value.targetName : null;
-        if (!list || !targetName) return;
-        var row = null;
-        const rows = list.querySelectorAll('.song-item.hit-highlight');
-        for (let k = 0; k < rows.length; k++) {
-          const nm = rows[k].querySelector('.song-name');
-          if (nm && nm.textContent === targetName) { row = rows[k]; break; }
-        }
-        if (!row) return;
-        const lr = list.getBoundingClientRect();
-        const rr = row.getBoundingClientRect();
-        list.scrollTop += (rr.top - lr.top) - (lr.height / 2 - rr.height / 2);
-      });
     }
-    function openAlbumFromDb(a, returnView) {
-      activeTab.value = 'songs';
-      artistDetail.value = null;
-      albumDetail.value = null;
-      openAlbum(a, null);
-      albumReturnView.value = returnView || 'albums';
-    }
-    function albumBack() {
-      albumDetail.value = null;
-      artistDetail.value = null;
-      if (albumReturnView.value === 'albums') {
-        activeTab.value = 'database';
-        dbView.value = 'albums';
-      } else if (albumReturnView.value === 'dbsongs') {
-        activeTab.value = 'database';
-        dbView.value = 'songs';
-        search.value = '';
-      } else if (albumReturnView.value === 'song' && savedSongDetail.value) {
-        activeTab.value = 'database';
-        dbView.value = 'songs';
-        songDetail.value = savedSongDetail.value;
-        savedSongDetail.value = null;
-      } else {
-        activeTab.value = 'songs';
-      }
-      pushUrl();
-      var sy = savedScrollY.value;
-      Vue.nextTick(function () {
-        var max = document.documentElement.scrollHeight - window.innerHeight;
-        var target = Math.min(sy, Math.max(0, max));
-        var saved = document.documentElement.style.scrollBehavior;
-        document.documentElement.style.scrollBehavior = 'auto';
-        window.scrollTo(0, target);
-        document.documentElement.style.scrollBehavior = saved;
-      });
-    }
-    const detailNoteText = computed(function () { return albumDetail.value ? albumDetail.value.note : ''; });
-    const albumBackLabel = computed(function () {
-      if (albumReturnView.value === 'albums') return '返回';
-      if (albumDetail.value && albumDetail.value.query) return '返回';
-      return '返回';
-    });
-    function isSongHit(s) {
-      if (!albumDetail.value || !albumDetail.value.query) return false;
-      const q = albumDetail.value.query.toLowerCase();
-      return s.name.toLowerCase().indexOf(q) !== -1 || s.artist.toLowerCase().indexOf(q) !== -1;
-    }
+    function openAlbumFromDb(a) { openAlbum(a); }
 
     // player
     function isActive(url) { return player.url === url && player.playing; }
@@ -1721,398 +1141,7 @@ createApp({
       return 'width:' + pct + '%';
     });
 
-    // live
-    const seriesGrid = SERIES_GRID;
-    function _isPastDate(ds) {
-      const d = new Date(ds + 'T23:59:59');
-      if (isNaN(d.getTime())) return true;
-      return d.getTime() < Date.now();
-    }
-    function _groupDateNum(g) {
-      const s = (g && g.subs && g.subs[0] && g.subs[0].date) || '';
-      const m = String(s).match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
-      if (!m) return 0;
-      return (+m[1]) * 10000 + (+m[2]) * 100 + (+m[3]);
-    }
-    function _sortGroupsDateDesc(groups) {
-      if (Array.isArray(groups)) groups.sort(function (a, b) { return _groupDateNum(b) - _groupDateNum(a); });
-    }
-    const liveNonliveCat = computed(function () {
-      const groups = [];
-      (eventsAll.value || []).forEach(function (e) {
-        if (e.live) return;
-        let castHtml = '';
-        if (e.times) castHtml += '<div class="cast-line">' + e.times + '</div>';
-        const names = (e.actors || []).map(function (a) { return a.name; }).filter(Boolean);
-        if (names.length) castHtml += '<div class="cast-line">出演：' + names.join('、') + '</div>';
-        const upcoming = !_isPastDate(e.date);
-        const sub = {
-          title: e.title,
-          date: e.date + (e.venue ? '　' + e.venue : ''),
-          cast: castHtml,
-          tips: '出处：Eventernote 活动页\n' + ((e.link && e.link.indexOf('eventernote.com') !== -1) ? e.link : ''),
-          days: [],
-          vids: [],
-          nonlive: true,
-          upcoming: upcoming,
-          evLink: e.link
-        };
-        groups.push({ group: e.title, subs: [sub], cover: '', nonlive: true, upcoming: upcoming });
-      });
-      groups.sort(function (a, b) {
-        const ua = a.upcoming ? 1 : 0;
-        const ub = b.upcoming ? 1 : 0;
-        if (ua !== ub) return ua - ub;
-        return _groupDateNum(b) - _groupDateNum(a);
-      });
-      return { group: '非Live活动', groups: groups };
-    });
-    const liveNonlivePastGroups = computed(function () {
-      const all = (liveNonliveCat.value && liveNonliveCat.value.groups) || [];
-      return all.filter(function (g) { return !g.upcoming; });
-    });
-    const liveCatListGroups = computed(function () {
-      if (liveCatType.value === 'nonlive') return liveNonlivePastGroups.value;
-      const secs = liveCatSections.value;
-      if (!secs.length) return [];
-      return secs[0].groups || [];
-    });
-    const currentCat = computed(function () {
-      if (liveCatType.value === 'nonlive') return liveNonliveCat.value || null;
-      return (liveCatData.value && liveCatData.value[liveCatType.value]) || null;
-    });
-    const currentGroup = computed(function () {
-      if (liveView.value === 'liveCatDetail') {
-        const cat = currentCat.value;
-        if (!cat || liveCatIndex.value < 0) return null;
-        const gi = liveCatIndex.value;
-        if (cat.sections) {
-          const si = liveCatSectionIndex.value;
-          const sec = (si >= 0 && si < cat.sections.length) ? cat.sections[si] : null;
-          if (!sec || !sec.groups || gi >= sec.groups.length) return null;
-          return sec.groups[gi];
-        }
-        if (!cat.groups || gi >= cat.groups.length) return null;
-        return cat.groups[gi];
-      }
-      if (liveSeriesIndex.value < 0) return null;
-      return liveData.value[liveSeriesIndex.value];
-    });
-    const liveCatSections = computed(function () {
-      const cat = currentCat.value;
-      if (!cat) return [];
-      if (cat.sections) return cat.sections;
-      return [{ group: cat.group, groups: cat.groups || [] }];
-    });
-    const currentSection = computed(function () {
-      const secs = liveCatSections.value;
-      const si = liveCatSectionIndex.value;
-      if (si < 0 || si >= secs.length) return null;
-      return secs[si];
-    });
-    const CARD_COLORS = ['cc-0', 'cc-1', 'cc-2', 'cc-3', 'cc-4', 'cc-5'];
-    function sectionCardClass(gi) { return CARD_COLORS[gi % CARD_COLORS.length]; }
-    const liveBackScroll = { view: '', y: 0 };
-    function saveLiveScroll() {
-      liveBackScroll.view = liveView.value;
-      liveBackScroll.y = window.pageYOffset || document.documentElement.scrollTop || 0;
-    }
-    function restoreLiveScroll(y) {
-      const el = document.documentElement;
-      const prev = el.style.scrollBehavior;
-      el.style.scrollBehavior = 'auto';
-      window.scrollTo(0, y);
-      document.documentElement.scrollTop = y;
-      document.body.scrollTop = y;
-      el.style.scrollBehavior = prev;
-    }
-    function restoreLiveScrollFromState(id) {
-      if (liveBackScroll.view === id && liveBackScroll.y > 0) {
-        const y = liveBackScroll.y;
-        liveBackScroll.view = '';
-        restoreLiveScroll(y);
-        requestAnimationFrame(function () { restoreLiveScroll(y); });
-        return true;
-      }
-      return false;
-    }
-    function showLiveView(id) {
-      liveView.value = id;
-      if (id === 'liveDetail' || id === 'liveCatDetail') {
-        restoreLiveScroll(0);
-        requestAnimationFrame(function () { const d = document.getElementById('liveDetail'); if (d) d.scrollTop = 0; });
-      } else if (!restoreLiveScrollFromState(id)) {
-        window.scrollTo(0, 0);
-      }
-      pushUrl();
-    }
-    function openCat(cat) {
-      if (cat === 'series') {
-        loadLiveData().then(function () { showLiveView('liveSeries'); }, function () { showLiveView('liveSeries'); });
-      } else if (cat === 'cd' || cat === 'twinkle' || cat === 'other' || cat === 'nonlive') {
-        const show = function () {
-          liveCatType.value = cat;
-          liveCatIndex.value = -1;
-          liveCatSectionIndex.value = -1;
-          showLiveView('liveCatList');
-        };
-        const ready = cat === 'nonlive' ? loadEvents() : loadLiveCatData();
-        ready.then(show, show);
-      }
-      else { catNote.value = (cat === 'cd') ? 'CD发售纪念活动 正在建设中，敬请期待...' : 'Twinkle Circle! 正在建设中，敬请期待...'; }
-    }
-    function openCatSection(si) {
-      liveCatSectionIndex.value = si;
-      liveCatIndex.value = -1;
-      livePerf.value = 0;
-      liveDay.value = 0;
-      showLiveView('liveCatSection');
-    }
-    function openCatDetail(type, si, gi, pi, di) {
-      liveReturnSource.value = 'live';
-      saveLiveScroll();
-      liveCatType.value = type;
-      liveCatSectionIndex.value = si;
-      liveCatIndex.value = gi;
-      livePerf.value = (typeof pi === 'number' && pi >= 0) ? pi : 0;
-      liveDay.value = (typeof di === 'number' && di >= 0) ? di : 0;
-      showLiveView('liveCatDetail');
-    }
-    function backCatList() {
-      const cat = liveCatData.value && liveCatData.value[liveCatType.value];
-      if (liveView.value === 'liveCatDetail' && cat && cat.sections && liveCatSectionIndex.value >= 0) {
-        liveCatIndex.value = -1;
-        showLiveView('liveCatSection');
-        return;
-      }
-      liveCatIndex.value = -1;
-      liveCatSectionIndex.value = -1;
-      showLiveView('liveCatList');
-    }
-    function liveDetailBack() {
-      if (liveReturnSource.value === 'song') {
-        liveReturnSource.value = 'live';
-        liveSeriesIndex.value = -1;
-        livePerf.value = -1;
-        liveDay.value = 0;
-        activeTab.value = 'database';
-        dbView.value = 'songs';
-        pushUrl();
-        Vue.nextTick(function () {
-          var max = document.documentElement.scrollHeight - window.innerHeight;
-          var target = Math.min(songSavedScrollY.value, Math.max(0, max));
-          restoreLiveScroll(target);
-        });
-        return;
-      }
-      if (liveReturnSource.value === 'home') {
-        liveReturnSource.value = 'live';
-        liveSeriesIndex.value = -1;
-        livePerf.value = -1;
-        liveDay.value = 0;
-        activeTab.value = 'songs';
-        const path = LANG_PREFIX;
-        if (currentUrlPath() !== path) history.pushState({ r: true }, '', path);
-        syncFromUrl();
-        window.scrollTo(0, 0);
-        return;
-      }
-      if (liveReturnSource.value === 'events') {
-        liveReturnSource.value = 'live';
-        liveSeriesIndex.value = -1;
-        livePerf.value = -1;
-        liveDay.value = 0;
-        activeTab.value = 'database';
-        dbView.value = 'events';
-        pushUrl();
-        Vue.nextTick(function () {
-          var max = document.documentElement.scrollHeight - window.innerHeight;
-          var target = Math.min(eventsSavedScrollY.value, Math.max(0, max));
-          restoreLiveScroll(target);
-        });
-        return;
-      }
-      if (liveReturnSource.value === 'eventDetail') {
-        liveReturnSource.value = 'live';
-        activeTab.value = 'live';
-        liveView.value = 'eventDetail';
-        pushUrl();
-        window.scrollTo(0, 0);
-        return;
-      }
-      if (liveView.value === 'liveCatDetail') backCatList();
-      else showLiveView('liveSeries');
-    }
-    function liveDetailHref(path) {
-      path = String(path || '');
-      if (path.indexOf('number_series_event') !== -1 || path.indexOf('/live/nonlive/') !== -1) return path;
-      const orig = liveCatDataOrig.value;
-      if (!orig) return path;
-      const mcd = path.match(/^\/(?:zh-Hans\/)?live\/cd\/(\d+)\/(\d+)$/);
-      if (mcd) {
-        const si = +mcd[1], gi = +mcd[2];
-        const sec = orig.cd && orig.cd.sections && orig.cd.sections[si];
-        const g0 = sec && sec.groups && sec.groups[gi];
-        if (g0) {
-          const cur = liveCatData.value;
-          const csec = cur && cur.cd && cur.cd.sections && cur.cd.sections[si];
-          if (csec && Array.isArray(csec.groups)) {
-            for (let i = 0; i < csec.groups.length; i++) {
-              if (csec.groups[i] && csec.groups[i].group === g0.group) return '/zh-Hans/live/cd/' + si + '/' + i;
-            }
-          }
-        }
-        return path;
-      }
-      const m2 = path.match(/^\/(?:zh-Hans\/)?live\/(other|twinkle)\/(\d+)$/);
-      if (m2) {
-        const gi = +m2[2], cat = m2[1];
-        const g0 = orig[cat] && orig[cat].groups && orig[cat].groups[gi];
-        if (g0) {
-          const cg = liveCatData.value && liveCatData.value[cat] && liveCatData.value[cat].groups;
-          if (Array.isArray(cg)) {
-            for (let i = 0; i < cg.length; i++) {
-              if (cg[i] && cg[i].group === g0.group) return '/zh-Hans/live/' + cat + '/' + i;
-            }
-          }
-        }
-      }
-      return path;
-    }
-    function openLiveFromEvents(path, returnSource) {
-      const open = function () {
-        path = liveDetailHref(path);
-        eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
-        liveBackScroll.view = '';
-        history.pushState({ r: true }, '', path);
-        syncFromUrl();
-        liveReturnSource.value = returnSource || 'events';
-        var goTop = function () {
-          var el = document.documentElement;
-          var prev = el.style.scrollBehavior;
-          el.style.scrollBehavior = 'auto';
-          window.scrollTo(0, 0);
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-          el.style.scrollBehavior = prev;
-        };
-        requestAnimationFrame(goTop);
-        setTimeout(goTop, 0);
-      };
-      return loadLivePathData(path).then(open, open);
-    }
-    function nonliveGi(e) {
-      const gs = (liveNonliveCat.value && liveNonliveCat.value.groups) || [];
-      for (let i = 0; i < gs.length; i++) {
-        if (gs[i] && gs[i].nonlive && gs[i].subs && gs[i].subs[0] && gs[i].subs[0].evLink === e.link) return i;
-      }
-      return -1;
-    }
-    function nonliveHref(e) {
-      const gi = nonliveGi(e);
-      return gi >= 0 ? LANG_PREFIX + '/live/nonlive/' + gi : LANG_PREFIX + '/live/nonlive';
-    }
-    function openNonliveFromEvents(e) {
-      if (nonliveGi(e) < 0) return;
-      eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
-      history.pushState({ r: true }, '', nonliveHref(e));
-      syncFromUrl();
-      liveReturnSource.value = 'events';
-      var goTop = function () {
-        var el = document.documentElement;
-        var prev = el.style.scrollBehavior;
-        el.style.scrollBehavior = 'auto';
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-        el.style.scrollBehavior = prev;
-      };
-      requestAnimationFrame(goTop);
-      setTimeout(goTop, 0);
-    }
-    function openLiveSeries(i, pi, di) {
-      liveReturnSource.value = 'live';
-      saveLiveScroll();
-      liveSeriesIndex.value = i;
-      livePerf.value = (typeof pi === 'number' && pi >= 0) ? pi : 0;
-      liveDay.value = (typeof di === 'number' && di >= 0) ? di : 0;
-      showLiveView('liveDetail');
-    }
-    function selectLivePerf(pi) {
-      livePerf.value = pi;
-      liveDay.value = 0;
-      requestAnimationFrame(function () { const d = document.getElementById('liveDetail'); if (d) d.scrollTop = 0; });
-    }
-    function selectLiveDay(pi, di) {
-      livePerf.value = pi;
-      liveDay.value = di;
-      requestAnimationFrame(function () { const d = document.getElementById('liveDetail'); if (d) d.scrollTop = 0; });
-    }
-    const currentSub = computed(function () {
-      const g = currentGroup.value;
-      if (!g || livePerf.value < 0 || livePerf.value >= g.subs.length) return null;
-      return g.subs[livePerf.value];
-    });
-    function catDetailTitle(g, s) {
-      if (!g) return '';
-      if (!s || !s.title) return g.group;
-      if (s.title === g.group) return g.group;
-      if (s.title.indexOf(g.group) === 0) return s.title;
-      return g.group + ' ' + s.title;
-    }
-    const liveDetailTitle = computed(function () {
-      return catDetailTitle(currentGroup.value, currentSub.value);
-    });
-    const liveInfoHtml = computed(function () {
-      const g = currentGroup.value;
-      const s = currentSub.value;
-      if (!s) return '<div class="live-setlist-placeholder">请在左侧选择一场公演</div>';
-      const dp = (s.date || '').split(/\s+/);
-      const dTime = dp[0] || '';
-      const dPlace = dp.slice(1).join(' ');
-      let src = '', srcUrl = '', srcText = '';
-      if (s.tips) {
-        const sm = s.tips.match(/(?:出处|来源)[：:]\s*([^\n]+)/);
-        const um = s.tips.match(/https?:\/\/[^\s]+/);
-        if (sm) src = sm[1].replace(/[\r\n\s]+$/, '').trim();
-        if (um) { srcUrl = um[0].replace(/\/$/, ''); srcText = srcUrl; }
-      }
-      var srcHtml = (src || srcText) ?
-        '<a class="live-info-date-src"' + (srcUrl ? ' href="' + srcUrl + '" target="_blank" rel="noopener" title="' + srcText + '"' : '') + '>出处：' + src + '</a>' : '';
-      let h = '<div class="live-info-title">' + catDetailTitle(g, s) + '</div>';
-      h += '<div class="live-info-date"><span class="live-info-date-main">时间：' + dTime + '　地点：' + dPlace + '</span>' + srcHtml + '</div>';
-      if (s.nonlive && !!s.upcoming) h += '<div class="live-info-cast"><div class="cast-line" style="color:var(--accent,#ff8c1a);font-weight:700;">暂未开演 · 歌单整理中</div></div>';
-      if (s.cast) h += '<div class="live-info-cast">' + s.cast + '</div>';
-      if (s.tips && !srcHtml) h += '<div class="live-info-tips">' + s.tips + '</div>';
-      return fixAvatarSrc(h);
-    });
-    const setlistTitle = computed(function () {
-      const g = currentGroup.value;
-      const s = currentSub.value;
-      if (!s) return '';
-      const base = catDetailTitle(g, s);
-      if (s.nonlive && !!s.upcoming) return base + ' · 暂未开演';
-      if (s.nonlive) return base + ' · 本活动';
-      if (liveDay.value >= s.days.length) return '';
-      return base + ' · ' + s.days[liveDay.value].label;
-    });
-    const setlistLinks = computed(function () {
-      const s = currentSub.value;
-      if (!s || liveDay.value >= s.days.length || !s.vids) return [];
-      const links = [];
-      s.vids.forEach(function (v) {
-        if (v[1] === 'D' + (liveDay.value + 1)) {
-          const raw = String(v[0] || '');
-          const urls = raw.match(/https?:\/\/\S+/g) || [];
-          if (urls.length) {
-            const cleaned = urls.map(function (u) { return u.replace(/[.,，。;；\s]+$/, ''); });
-            const obj = { href: cleaned[0], title: cleaned.length > 1 ? cleaned.join('\n') : undefined };
-            links.push(obj);
-          }
-        }
-      });
-      return links;
-    });
+    // The generated event catalog carries the exact validated curated table.
     function fixAvatarSrc(html) {
       return String(html || '').replace(/(["'])uma_avatars\//g, '$1/uma_avatars/');
     }
@@ -2120,11 +1149,6 @@ createApp({
       return String(html || '').replace(/<td class="setlist-song">安可<\/td>\s*<td class="setlist-perf">/g,
         '<td class="setlist-song">安可</td><td class="setlist-perf encore-hide">');
     }
-    const setlistTable = computed(function () {
-      const s = currentSub.value;
-      if (!s || liveDay.value >= s.days.length) return '';
-      return fixAvatarSrc(hideEncorePerf(s.days[liveDay.value].table || ''));
-    });
     function linkSetlistSongs(table) {
       var linked = String(table || '').replace(/(<td\s+class=["']setlist-song["'][^>]*>)([\s\S]*?)(<\/td>)/gi, function (_, start, body, end) {
         const title = decodeHtml(body).trim();
@@ -2147,24 +1171,12 @@ createApp({
         return;
       }
       var performer = event.target.closest('button[data-character-id]');
-      if (performer) openCharacterFromEvent(performer.getAttribute('data-character-id'));
+      if (performer) openCharacter(performer.getAttribute('data-character-id'));
     }
     function eventSessionTable(session) {
-      const source = session && session.setlist_source;
-      if (!source) return '';
-      let day = null;
-      if (source.file === 'data/live_data.json') {
-        const group = liveData.value[source.group];
-        const performance = group && (group.subs || [])[source.performance];
-        day = performance && (performance.days || [])[source.day];
-      } else if (source.file === 'data/live_cat_data.json') {
-        const root = liveCatDataOrig.value && liveCatDataOrig.value[source.category];
-        const section = root && Array.isArray(root.sections) ? root.sections[source.section || 0] : root;
-        const group = section && (section.groups || [])[source.group];
-        const performance = group && (group.subs || [])[source.performance];
-        day = performance && (performance.days || [])[source.day];
-      }
-      return day ? linkSetlistSongs(fixAvatarSrc(hideEncorePerf(day.table || ''))) : '';
+      return session && session.setlist_html
+        ? linkSetlistSongs(fixAvatarSrc(hideEncorePerf(session.setlist_html)))
+        : '';
     }
 
     // albums loading
@@ -2186,9 +1198,6 @@ createApp({
       if (relFilter.value) out = out.filter(function (a) { return a.type === relFilter.value; });
       if (relYear.value) out = out.filter(function (a) { return String(a.release).slice(0, 4) === relYear.value; });
       return out.slice().sort(function (a, b) { return String(b.release).localeCompare(String(a.release)); });
-    });
-    const relTypesCount = computed(function () {
-      return albums.value.reduce(function (s, a) { return s.add(a.type); }, new Set()).size;
     });
     const relTypeList = computed(function () {
       return ['专辑', '单曲', '原声带', '精选辑'].filter(function (t) {
@@ -2236,41 +1245,25 @@ createApp({
       if (isNaN(n)) return;
       if (n < 1 || n > relPageCount.value) return;
       relPage.value = n;
-      const el = document.querySelector('#tab-db-albums .rel-table');
+      const el = document.querySelector('#tab-db-albums .album-database-grid');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     function goRelPage(dir) {
       setRelPage(relPage.value + dir);
-    }
-    function setRelFilter(t) {
-      relFilter.value = (relFilter.value === t) ? '' : t;
-      relPage.value = 1;
-    }
-    function setRelYear(y) {
-      relYear.value = (relYear.value === y) ? '' : y;
-      relPage.value = 1;
     }
     function clearRelFilters() {
       relFilter.value = '';
       relYear.value = '';
       relPage.value = 1;
     }
-    function relIsSold(a) {
-      const t = new Date(String(a.release || '').replace(/-/g, '/')).getTime();
-      return !isNaN(t) && t <= Date.now();
-    }
     const statLive = computed(function () {
-      let n = liveData.value.reduce(function (a, g) { return a + g.subs.reduce(function (b, s) { return b + (s.days ? s.days.length : 1); }, 0); }, 0);
-      const cat = liveCatData.value;
-      if (cat) {
-        const sumGroups = function (gs) { return gs.reduce(function (a, g) { return a + g.subs.length; }, 0); };
-        if (cat.cd && cat.cd.sections) n += cat.cd.sections.reduce(function (a, s) { return a + sumGroups(s.groups); }, 0);
-        if (cat.twinkle && cat.twinkle.groups) n += sumGroups(cat.twinkle.groups);
-        if (cat.other && cat.other.groups) n += sumGroups(cat.other.groups);
-      }
-      return homeStats.live !== null ? homeStats.live : n;
+      if (homeStats.live !== null) return homeStats.live;
+      return eventsAll.value.filter(function (event) { return event.kind === 'concert'; }).length;
     });
-    const statGongyan = computed(function () { return homeStats.performances !== null ? homeStats.performances : liveData.value.length; });
+    const statGongyan = computed(function () {
+      if (homeStats.performances !== null) return homeStats.performances;
+      return eventsAll.value.reduce(function (total, event) { return total + (event.sessions || []).length; }, 0);
+    });
     const newsHero = computed(function () {
       function timeOf(n) {
         const s = n.post_at || n.update_at || '';
@@ -2382,7 +1375,19 @@ createApp({
         const series = eventSeriesMap.value[e.series_id] || {};
         if (((series.name || '') + ' ' + (series.name_ja || '')).toLowerCase().indexOf(q) !== -1) return true;
         if ((e.cast || []).some(function (a) { return ((a.name || '') + ' ' + (a.role || '')).toLowerCase().indexOf(q) !== -1; })) return true;
-        if ((e.characters || []).some(function (character) { return ((character.name || '') + ' ' + (character.name_ja || '')).toLowerCase().indexOf(q) !== -1; })) return true;
+        const characterIds = [];
+        (e.character_ids || []).forEach(function (id) { if (characterIds.indexOf(id) === -1) characterIds.push(id); });
+        (e.cast || []).forEach(function (cast) { if (cast.character_id && characterIds.indexOf(cast.character_id) === -1) characterIds.push(cast.character_id); });
+        (e.sessions || []).forEach(function (session) {
+          (session.character_ids || []).forEach(function (id) { if (characterIds.indexOf(id) === -1) characterIds.push(id); });
+          (session.performances || []).forEach(function (performance) {
+            (performance.character_ids || []).forEach(function (id) { if (characterIds.indexOf(id) === -1) characterIds.push(id); });
+          });
+        });
+        if (characterIds.some(function (id) {
+          const character = findCharById(id) || {};
+          return ((character.zh || '') + ' ' + (character.ja || '') + ' ' + (character.en || '')).toLowerCase().indexOf(q) !== -1;
+        })) return true;
         return (e.sessions || []).some(function (session) { return (session.songs || []).some(function (song) { return song.toLowerCase().indexOf(q) !== -1; }); });
       });
       if (evTime.value !== 'all') {
@@ -2457,34 +1462,12 @@ createApp({
       const series = eventSeriesMap.value[(event && event.series_id) || ''];
       return series ? series.name : '';
     }
-    function eventCastSummary(event) {
-      const cast = (event && event.cast) || [];
-      if (!cast.length && event && event.cast_status === 'character_only') {
-        const characters = event.characters || [];
-        return (characters.slice(0, 5).map(function (item) { return item.name; }).join('、') || '角色出演节目')
-          + (characters.length > 5 ? ' 等 ' + characters.length + ' 位角色' : '') + '（不计声优本人出演）';
-      }
-      if (!cast.length) return event && event.cast_status === 'announced_tba' ? '出演阵容由官方待公布' : (event && event.cast_status === 'pending' ? '出演者待核实' : '出演者资料待补');
-      return cast.slice(0, 5).map(function (item) { return item.name + (item.role ? '（' + item.role + '）' : ''); }).join('、') + (cast.length > 5 ? ' 等 ' + cast.length + ' 人' : '');
-    }
     const eventVoiceCast = computed(function () {
       return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type === 'voice_actor' || item.voice_actor_id; });
     });
     const eventGuestCast = computed(function () {
       return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type !== 'voice_actor' && !item.voice_actor_id; });
     });
-    function eventCastStatusLabel(status) {
-      return { verified: '已核实', partial: '部分收录', character_only: '仅角色出演', announced_tba: '官方待公布' }[status] || '待核实';
-    }
-    function castPersonLabel(kind) {
-      return { guest_artist: '特邀艺人', project_staff: '项目工作人员', virtual_guest: '虚拟嘉宾', media_guest: '节目嘉宾', external_guest: '外部嘉宾' }[kind] || '嘉宾';
-    }
-    function castEvidenceLabel(cast) {
-      const labels = { official_youtube: '官方节目单', official_announcement: '官方公告', official_broadcaster: '节目官方页', community_archive: '节目补档', curated_live_cast: '精调出演表', curated_correction: '人工核实', eventernote: 'Eventernote' };
-      const kinds = ((cast && cast.evidence_sources) || []).map(function (source) { return source.kind; });
-      if (!kinds.length && cast && cast.evidence) kinds.push(cast.evidence);
-      return Array.from(new Set(kinds)).map(function (kind) { return labels[kind] || '资料来源'; }).join(' · ') || '资料来源';
-    }
     function eventSongCount(event) {
       return (event.sessions || []).reduce(function (total, session) { return total + (session.songs || []).length; }, 0);
     }
@@ -2501,89 +1484,34 @@ createApp({
       const status = (voice.fieldStatus || {})[field];
       return { not_published: '未公开', not_applicable: '不适用', source_unavailable: '暂无可核实公开资料' }[status] || '——';
     }
-    function openEvent(eventOrId, source) {
+    const selectedEventSession = computed(function () {
+      const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
+      return sessions.find(function (session) { return session.id === selectedEventSessionId.value; }) || sessions[0] || null;
+    });
+    const eventMediaLinks = computed(function () {
+      return ((eventDetail.value && eventDetail.value.media) || []).filter(function (item) { return item.url; });
+    });
+    function selectEventSession(sessionId) {
+      selectedEventSessionId.value = sessionId;
+      pushUrl();
+    }
+    function openEvent(eventOrId) {
       const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
-      const found = eventsAll.value.find(function (event) { return event.id === id; });
-      if (!found) {
-        if (id && !eventsLoadPromise) return loadEvents().then(function () { openEvent(id); });
-        return;
-      }
-      eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
-      eventDetailSource.value = source || (
-        activeTab.value === 'database' && dbView.value === 'characters' && charDetail.value ? 'character' :
-        (activeTab.value === 'database' && dbView.value === 'voice' && voiceDetail.value ? 'voice' : '')
-      );
-      if (eventDetailSource.value === 'character') eventReturnEntity.value = charDetail.value;
-      else if (eventDetailSource.value === 'voice') eventReturnEntity.value = voiceDetail.value;
-      else if (eventDetailSource.value === 'song') eventReturnEntity.value = savedSongDetail.value || songDetail.value;
-      else eventReturnEntity.value = null;
-      eventDetail.value = found;
-      liveView.value = 'eventDetail';
-      activeTab.value = 'live';
-      window.scrollTo(0, 0);
-      pushUrl();
-      loadLiveData();
-      loadLiveCatData();
-    }
-    function eventBack() {
-      if (eventDetailSource.value === 'song' && (eventReturnEntity.value || savedSongDetail.value)) {
-        eventDetail.value = null;
-        eventDetailSource.value = '';
-        activeTab.value = 'database';
-        dbView.value = 'songs';
-        songDetail.value = eventReturnEntity.value || savedSongDetail.value;
-        savedSongDetail.value = null;
-        eventReturnEntity.value = null;
-        window.scrollTo(0, 0);
-        pushUrl();
-        return;
-      }
-      if (eventDetailSource.value === 'character' && eventReturnEntity.value) {
-        eventDetail.value = null;
-        eventDetailSource.value = '';
-        activeTab.value = 'database';
-        dbView.value = 'characters';
-        charDetail.value = eventReturnEntity.value;
-        eventReturnEntity.value = null;
-        window.scrollTo(0, 0);
-        pushUrl();
-        return;
-      }
-      if (eventDetailSource.value === 'voice' && eventReturnEntity.value) {
-        eventDetail.value = null;
-        eventDetailSource.value = '';
-        activeTab.value = 'database';
-        dbView.value = 'voice';
-        voiceDetail.value = eventReturnEntity.value;
-        eventReturnEntity.value = null;
-        window.scrollTo(0, 0);
-        pushUrl();
-        return;
-      }
-      eventDetail.value = null;
-      eventDetailSource.value = '';
-      eventReturnEntity.value = null;
-      liveView.value = 'eventHub';
-      pushUrl();
-      Vue.nextTick(function () { restoreLiveScroll(eventsSavedScrollY.value || 0); });
-    }
-    function openEventLegacy(event) {
-      if (!event || !event.legacy_url) return;
-      openLiveFromEvents(event.legacy_url, 'eventDetail');
-    }
-    function openCharacterFromEvent(characterId) {
       const show = function () {
-        savedEventDetail.value = eventDetail.value;
-        charDetailSource.value = 'event';
-        activeTab.value = 'database';
-        dbView.value = 'characters';
-        charSub.value = 'intro';
-        charDetail.value = findCharById(characterId);
-        eventDetail.value = null;
-        window.scrollTo(0, 0);
+        const found = eventsAll.value.find(function (event) { return event.id === id; });
+        if (!found) return;
+        eventDetail.value = found;
+        selectedEventSessionId.value = found.sessions && found.sessions[0] ? found.sessions[0].id : '';
+        liveView.value = 'eventDetail';
+        activeTab.value = 'live';
+        resetPageScroll();
         pushUrl();
       };
-      return loadCharacterDetailData().then(show, show);
+      if (eventsAll.value.length) return show();
+      return loadEvents().then(show);
+    }
+    function eventKindColor(kind) {
+      return { concert: '#ff8c1a', onsite: '#426bd7', official_program: '#12a9b7' }[kind] || '#ff8c1a';
     }
     const nextUpcomingEvent = computed(function () {
       if (homeNextEvent.value) return homeNextEvent.value;
@@ -2608,8 +1536,12 @@ createApp({
       if (!e) return;
       loadEvents().then(function () { home.value = false; openEvent(e.id); });
     }
-    function onEvImgError(ev) {
-      ev.target.style.visibility = 'hidden';
+    function onEventImageError(ev, event) {
+      const image = ev && ev.target;
+      const fallback = event && event.image_fallback;
+      if (!image || !fallback || image.getAttribute('data-fallback') === '1') return;
+      image.setAttribute('data-fallback', '1');
+      image.src = fallback;
     }
     function loadEvents() {
       if (eventsLoadPromise) return eventsLoadPromise;
@@ -2620,7 +1552,6 @@ createApp({
         .then(function (data) {
           eventsAll.value = (data && Array.isArray(data.events)) ? data.events : [];
           eventSeries.value = (data && Array.isArray(data.series)) ? data.series : [];
-          eventsMeta.value = (data && data.generated_at) ? String(data.generated_at).slice(0, 10) : '';
           eventsLoading.value = false;
           eventsError.value = eventsAll.value.length ? '' : '活动数据为空。';
         })
@@ -2633,56 +1564,11 @@ createApp({
         });
       return eventsLoadPromise;
     }
-    function openEvData() {
-      evDataView.value = true;
-      activeTab.value = 'database';
-      dbView.value = 'events';
-      computeEvData();
-      pushUrl();
-    }
-    function closeEvData() {
-      evDataView.value = false;
-      activeTab.value = 'live';
-      liveView.value = 'eventHub';
-      pushUrl();
-    }
     function decodeHtml(s) {
       if (!s) return '';
       var d = document.createElement('div');
       d.innerHTML = s;
       return d.textContent || '';
-    }
-    function computeEvData() {
-      evDataLoading.value = true;
-      evDataError.value = '';
-      vaFilters.value = []; songFilter.value = 'all'; vaPage.value = 1; songPage.value = 1;
-      if (!eventsAll.value.length) {
-        evDataError.value = '活动目录尚未加载。';
-        evDataLoading.value = false;
-        return;
-      }
-      var profilesById = {};
-      voiceProfiles.value.forEach(function (profile) { profilesById[profile.id] = profile; });
-      var actorRows = [];
-      var songRows = [];
-      eventsAll.value.forEach(function (event) {
-        var cat = event.series_id === 'numbered-live' ? 'num' : (event.kind === 'concert' ? 'otherlive' : 'nonlive');
-        var names = [];
-        (event.cast || []).forEach(function (cast) {
-          if (!cast.voice_actor_id) return;
-          var profile = profilesById[cast.voice_actor_id] || {};
-          var identity = profile.identity || {};
-          var name = identity.ja || identity.zh || cast.name || '';
-          if (name && names.indexOf(name) === -1) names.push(name);
-        });
-        actorRows.push({ cat: cat, actors: names });
-        (event.sessions || []).forEach(function (session) {
-          if (session.songs && session.songs.length) songRows.push({ cat: cat, songs: session.songs });
-        });
-      });
-      voiceEvData.value = actorRows;
-      songEvData.value = songRows;
-      evDataLoading.value = false;
     }
     function setEvTime(v) {
       if (v !== 'all' && v !== 'upcoming' && v !== 'past') return;
@@ -2707,14 +1593,19 @@ createApp({
     watch(function () { return evKind.value; }, function () { eventsPage.value = 1; });
     watch(function () { return evMode.value; }, function () { eventsPage.value = 1; });
     watch(function () { return evYear.value; }, function () { eventsPage.value = 1; });
-    watch(function () { return eventsAll.value; }, function () { if (evDataView.value && !voiceEvData.value.length) computeEvData(); });
     const coverTint = reactive({});
     const tintSet = new Set();
+    const catalogCoverFallback = '/uma_tools/img/album-placeholder.svg';
     function coverThumb(url, size) {
       const src = String(url || '');
-      if (!src || !/^https?:\/\/p\d+\.music\.126\.net\//i.test(src) || /[?&]param=\d+y\d+/i.test(src)) return src;
+      if (!src || src === '/album_covers/placeholder.webp') return catalogCoverFallback;
+      if (!/^https?:\/\/p\d+\.music\.126\.net\//i.test(src) || /[?&]param=\d+y\d+/i.test(src)) return src;
       const px = Math.max(64, parseInt(size, 10) || 360);
       return src + (src.indexOf('?') === -1 ? '?' : '&') + 'param=' + px + 'y' + px;
+    }
+    function onCatalogImageError(event) {
+      const image = event && event.currentTarget;
+      if (image && !String(image.src || '').endsWith(catalogCoverFallback)) image.src = catalogCoverFallback;
     }
     function microCmsImage(url, width) {
       const src = String(url || '');
@@ -2861,7 +1752,7 @@ createApp({
         newsDetailBody.value = '';
         newsPrevId.value = 0;
         newsNextId.value = 0;
-        window.scrollTo(0, 0);
+        resetPageScroll();
         pushUrl();
         fetch('/api/lantis-detail?id=' + encodeURIComponent(id), { cache: 'no-cache' })
           .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
@@ -2890,7 +1781,7 @@ createApp({
           newsDetailBody.value = cleanNewsBody(d.detail.message_zh || d.detail.message);
           newsPrevId.value = d.prev_announce_id || 0;
           newsNextId.value = d.next_announce_id || 0;
-          window.scrollTo(0, 0);
+          resetPageScroll();
           pushUrl();
         })
         .catch(function () { newsError.value = '详情加载失败'; });
@@ -2912,52 +1803,7 @@ createApp({
         });
       return albumsLoadPromise;
     }
-    function loadLiveCatData() {
-      if (liveCatLoadPromise) return liveCatLoadPromise;
-      liveCatDataError.value = '';
-      liveCatLoadPromise = fetch('/data/live_cat_data.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) {
-          try { liveCatDataOrig.value = JSON.parse(JSON.stringify(data)); } catch (e) { liveCatDataOrig.value = null; }
-          if (data) {
-            if (data.cd && Array.isArray(data.cd.sections)) data.cd.sections.forEach(function (sec) { _sortGroupsDateDesc(sec && sec.groups); });
-            if (data.twinkle) _sortGroupsDateDesc(data.twinkle.groups);
-            if (data.other) _sortGroupsDateDesc(data.other.groups);
-          }
-          liveCatData.value = data || null;
-        })
-        .catch(function () {
-          liveCatLoadPromise = null;
-          liveCatData.value = null;
-          liveCatDataError.value = '无法加载活动演出数据（请确认 /data/live_cat_data.json 可访问）。';
-        });
-      return liveCatLoadPromise;
-    }
-    function loadLiveData() {
-      if (liveDataLoadPromise) return liveDataLoadPromise;
-      liveDataError.value = '';
-      liveDataLoadPromise = fetch('/data/live_data.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) { liveData.value = Array.isArray(data) ? data : []; })
-        .catch(function () {
-          liveDataLoadPromise = null;
-          liveData.value = [];
-          liveDataError.value = '无法加载编号系列公演数据（请确认 /data/live_data.json 可访问）。';
-        });
-      return liveDataLoadPromise;
-    }
-    const charSongsDetailOpen = ref(false);
-    const charSongsList = computed(function () {
-      return charAppearance.value.songs || [];
-    });
-    const charSongsVisible = computed(function () {
-      return charSongsDetailOpen.value ? charSongsList.value : charSongsList.value.slice(0, 10);
-    });
-    function toggleCharSongs() {
-      charSongsDetailOpen.value = !charSongsDetailOpen.value;
-    }
     watch(function () { return charDetail.value && charDetail.value.id; }, function () {
-      charSongsDetailOpen.value = false;
       charHistoryQuery.value = '';
       charHistoryKind.value = 'all';
     });
@@ -2983,34 +1829,27 @@ createApp({
     }
 
     return {
-      audio, albums, albumsError, activeTab, home, albumDetail, albumReturnView, artistDetail, search, view, liveView, liveSeriesIndex, livePerf, liveDay, catNote, player, tabs,
-      filterWork, filterType, sortMode, WORK_LIST, TYPE_LIST, filteredAlbums, setFilter, clearFilters, workLabel, typeLabel, filterActive, showFilters, backTopVisible, backToTop, onScroll,
-      albumTypeOf,
-      isTabActive, switchTab, enterTab, goHome, goDbView, dbView, albumName, clearSearch, songHits, artistHits, albumHits, artistSongs, openArtist, backArtist, openAlbum, openAlbumFromDb, albumBack, detailNoteText, albumBackLabel, isSongHit,
-      statSongs, statAlbums, statLive, statGongyan,       loadAlbums, coverStyle, coverThumb, microCmsImage, sampleCover, evDataView, evDataTab, evDataLoading, evDataError, openEvData, closeEvData, vaFilters, songFilter, rankSort, vaPage, songPage, evRankPage, actorRankList, songRankList, actorPageRows, songPageRows, actorPageCount, songPageCount, actorPageStart, actorPageEnd, songPageStart, songPageEnd, actorPageList, songPageList, setVaFilter, isVaFilter, setSongFilter, setVaPage, goVaPage, setSongPage, goSongPage,
+      audio, albums, albumsError, activeTab, home, albumDetail, liveView, player, tabs,
+      isTabActive, switchTab, enterTab, goHome, goDbView, dbView, albumName, openAlbum, openAlbumFromDb,
+      statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
-      showLiveView, openCat, openLiveSeries, selectLivePerf, selectLiveDay, liveDetailBack, openLiveFromEvents, liveDetailHref,
-      liveCatType, liveCatIndex, liveData, liveDataError, loadLiveData, liveCatData, liveCatDataError, loadLiveCatData, openCatDetail, backCatList, liveCatSectionIndex, liveCatSections, openCatSection, currentSection, sectionCardClass,
-      currentCat, liveNonliveCat, liveNonlivePastGroups, liveCatListGroups, nonliveGi, nonliveHref, openNonliveFromEvents,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, newsBack, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
-      currentGroup, currentSub, liveDetailTitle, liveInfoHtml, setlistTitle, setlistLinks, setlistTable,
-      seriesGrid, syncFromUrl, prepareCurrentRoute, loadHomeSummaryIfNeeded,
-      eventsCount, eventsMeta, eventsQuery, evTime, evKind, evMode, evYear, eventYears, setEvTime, setEvKind, setEvMode, setEvYear, clearEventFilters, eventsPaged, eventsFiltered,
+      syncFromUrl, prepareCurrentRoute, loadHomeSummaryIfNeeded, navigateTo, historyBack,
+      eventsCount, eventsQuery, evTime, evKind, evMode, evYear, eventYears, setEvTime, setEvKind, setEvMode, setEvYear, clearEventFilters, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
-      setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
+      setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      eventDetail, eventDetailSource, eventVideos, eventVoiceCast, eventGuestCast, openEvent, eventBack, openEventLegacy, eventDateLabel, eventKindLabel, eventModeLabel, eventSeriesName, eventCastSummary, eventSongCount, eventCastStatusLabel, castPersonLabel, castEvidenceLabel, sourceLabel, openVoiceFromEvent, openCharacterFromEvent, eventSessionTable, onEventSetlistClick,
-      songCatalog, songCatalogError, songDetail, songDetailSource, songDbQuery, songDbScope, songDbSort, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, clearSongDbFilters, songDetailReleases, songDetailPerformances, songDetailCharacters, songDetailVoiceActors, openSong, songBack, openAlbumFromSong, openEventFromSong, openCharacterFromSong, openVoiceFromSong, loadSongCatalog, characterName, characterImage,
-      charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
-      charBackUrl, charBackPrev,
-      charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
-      voiceProfiles, voiceDetail, voiceDetailSource, voiceAppearance, voiceUpcoming, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
-      relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
+      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaLinks, eventVideos, eventVoiceCast, eventGuestCast, openEvent, eventDateLabel, eventKindLabel, eventKindColor, eventModeLabel, eventSeriesName, eventSongCount, sourceLabel, eventSessionTable, onEventSetlistClick,
+      songCatalog, songCatalogError, songDetail, songSection, setSongSection, songDbQuery, songDbScope, songDbSort, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, clearSongDbFilters, songDetailReleases, songDetailPerformances, songDetailVoiceActors, songSingerLabel, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceRoleImage, voiceRoleColor, albumTrackVocalists,
+      charDetail, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
+      voiceProfiles, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, statVoiceActors, charCount, openVa, openVoice, openVoiceByName, openCharFromVoice, LANG_PREFIX,
+      otherSection, setOtherSection, curatedVideos,
+      relFilter, relAlbums, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, clearRelFilters,
       bindAudio
     };
   },
@@ -3024,8 +1863,6 @@ createApp({
     window.addEventListener('popstate', syncPrepared);
     syncPrepared();
     this.loadHomeSummaryIfNeeded();
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-    this.onScroll();
   }
 }).mount('#app');
 
@@ -3041,10 +1878,7 @@ createApp({
     grid.setAttribute('data-c-inited', '1');
     function norm(c) { return String(c || '').toLowerCase(); }
     function data() {
-      if (window.CHAR_INDEX && window.CHAR_INDEX.length) return window.CHAR_INDEX;
-      return (window.UMA_INTRO || []).map(function (c) {
-        return { zh: c.zh, ja: c.name, en: c.en || c.name, cv_zh: c.cv, cv: c.cv, img: c.av, page: c.page, main: '#8c83ff', sub: '#ece9ff' };
-      });
+      return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
     }
     function render() {
       var q = norm(input.value.trim());
@@ -3059,14 +1893,10 @@ createApp({
       else if (s === 'cv') { list = list.slice().sort(function (a, b) { return norm(a.cv_zh).localeCompare(norm(b.cv_zh), 'zh'); }); }
       grid.innerHTML = '';
       list.forEach(function (c, i) {
-        var url = c.page ? c.page.replace('zh.moegirl.org.cn', 'mobile.moegirl.org.cn')
-                         : 'https://mobile.moegirl.org.cn/' + encodeURIComponent(c.zh);
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'cio-card';
-        card.href = url;
-        card.target = '_blank';
-        card.rel = 'noopener';
+        card.href = '/zh-Hans/database/characters/' + encodeURIComponent(c.id);
         card.addEventListener('click', function (e) {
           e.preventDefault();
           openCharDetailGlobal(c.id);
@@ -3110,57 +1940,13 @@ createApp({
       if (box.getAttribute('data-d-filled') === detail.id) return;
       var d = window.CHAR_DETAIL[detail.id];
       if (!d || !d.html) return;
-      box.innerHTML = '<div class="mw-parser-output">' + d.html + '</div>';
+      var source = document.createElement('div');
+      source.innerHTML = d.html;
+      var description = source.querySelector('.uma-description');
+      box.innerHTML = description && description.innerHTML.trim()
+        ? '<div class="character-description">' + description.innerHTML + '</div>'
+        : '';
       box.setAttribute('data-d-filled', detail.id);
-      if (d.cv_former_zh) {
-        var cvEl = box.querySelector('.uma-cv');
-        if (cvEl) {
-          var cvP = cvEl.querySelector('p');
-          if (cvP) {
-            cvP.innerHTML = '<span>CV：</span>' + (window.vaLink || function (x) { return x; })(d.cv_former_zh) + '→' + (window.vaLink || function (x) { return x; })(d.cv_zh || '');
-          }
-        }
-      }
-      var currentCv = box.querySelector('.uma-cv p');
-      if (currentCv) {
-        Array.from(currentCv.querySelectorAll('a')).forEach(function (link) {
-          var profile = window.voiceProfileForName && window.voiceProfileForName(link.textContent || '');
-          if (!profile) return;
-          var prefix = (window.__uma_app && window.__uma_app.LANG_PREFIX) || '/zh-Hans';
-          link.href = prefix + '/database/voice-actors/' + encodeURIComponent(profile.id);
-          link.removeAttribute('target');
-          link.removeAttribute('rel');
-        });
-      }
-      var rel = relByCid[detail.id];
-      if (rel && rel.real) {
-        var cvEl = box.querySelector('.uma-cv');
-        if (cvEl) {
-          var realEl = document.createElement('div');
-          realEl.className = 'uma-real';
-          realEl.innerHTML = '<p>原型马：' + rel.real + '</p>';
-          cvEl.parentNode.insertBefore(realEl, cvEl);
-        }
-      }
-      var vids = UMA_VIDEOS[detail.id];
-      if (vids && vids.length) {
-        var intro = box.querySelector('.umamusume-intro');
-        if (intro) {
-          var vEl = document.createElement('div');
-          vEl.className = 'uma-videos';
-          var btns = '';
-          for (var vi = 0; vi < vids.length; vi++) {
-            if (vids[vi].bv || vids[vi].url) {
-              var vhref = vids[vi].url || ('https://www.bilibili.com/video/' + vids[vi].bv + '/');
-              btns += '<a class="uma-video-btn" href="' + vhref + '" target="_blank" rel="noopener">' + vids[vi].n + '</a>';
-            } else {
-              btns += '<span class="uma-video-btn uma-video-none">' + vids[vi].n + '</span>';
-            }
-          }
-          vEl.innerHTML = '<div class="uma-videos-label">原型马解说</div><div class="uma-videos-btns">' + btns + '</div>';
-          intro.appendChild(vEl);
-        }
-      }
     }
     fill();
   }
@@ -3352,8 +2138,6 @@ createApp({
 
   function renderBloodGraphInDetail(box, root) {
     if (!box) return;
-    var detailRoot = box.closest ? box.closest('.cio-detail') : null;
-    if (detailRoot) detailRoot.classList.remove('has-pedigree-lens');
     refreshRelIndex();
 
     var relation = relByCid[root];
@@ -3384,8 +2168,6 @@ createApp({
       box.appendChild(missing);
       return;
     }
-    if (detailRoot) detailRoot.classList.add('has-pedigree-lens');
-
     var lens = document.createElement('section');
     lens.className = 'c-pedigree-lens';
     var frame = document.createElement('iframe');
@@ -3519,7 +2301,7 @@ createApp({
   }
 
   function initRoom(root) {
-    var img = (root || document).querySelector('.c-room-img');
+    var img = (root || document).querySelector('.roommate-image');
     if (!img || img.getAttribute('data-room-inited')) return;
     img.setAttribute('data-room-inited', '1');
     img.addEventListener('click', function () { openRoomLightbox(img.getAttribute('src') || img.src); });
@@ -3527,10 +2309,11 @@ createApp({
 
   function initCharTab() {
     var tab = document.getElementById('tab-characters');
-    if (!tab) return;
-    renderIntro(tab);
-    renderDetail(tab);
-    initRoom(tab);
+    if (tab) {
+      renderIntro(tab);
+      renderDetail(tab);
+    }
+    initRoom(document);
   }
 
   /* ---------- 声优库列表 ---------- */
@@ -3554,32 +2337,7 @@ createApp({
           };
         });
       }
-      var src = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
-      var map = new Map();
-      var charByZh = {};
-      src.forEach(function (c) { if (c.zh) charByZh[c.zh] = c.id; });
-      src.forEach(function (c) {
-        var key = c.cv_zh || c.cv;
-        if (!key) return;
-        if (!map.has(key)) map.set(key, { key: key, slug: encodeURIComponent(key), zh: c.cv_zh || '', ja: c.cv || key, roles: [] });
-        map.get(key).roles.push({ id: c.id, zh: c.role_zh || c.zh, main: c.main || '#8c83ff' });
-        if (c.cv_former) {
-          var fk = c.cv_former;
-          if (!map.has(fk)) map.set(fk, { key: fk, slug: encodeURIComponent(fk), zh: c.cv_former || fk, ja: c.cv_former_ja || fk, roles: [] });
-          map.get(fk).roles.push({ id: c.id, zh: c.zh, orig: true, main: c.main || '#8c83ff' });
-        }
-      });
-      // 合并 voice_list.xlsx 中未收录于 CHAR_INDEX 的声优（如训练员 / 解说等）
-      var extra = window.VA_LIST || [];
-      extra.forEach(function (v) {
-        var zh = (v.zh || '').trim(), ja = (v.ja || '').trim();
-        if (!zh && !ja) return;
-        if (map.has(zh) || (ja && map.has(ja))) return;
-        var roles = [];
-        if (v.role && v.role.trim()) roles.push({ zh: v.role.trim(), id: charByZh[v.role.trim()] || '', main: '#8c83ff' });
-        map.set(zh || ja, { key: zh || ja, slug: encodeURIComponent(zh || ja), zh: zh || ja, ja: ja || zh, roles: roles });
-      });
-      return Array.from(map.values());
+      return [];
     }
     function render() {
       var q = norm(input.value.trim());
@@ -3598,7 +2356,7 @@ createApp({
         card.className = 'va-card';
         card.href = '/zh-Hans/database/voice-actors/' + v.slug;
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
-        var ph = v.photo ? { img: v.photo } : (window.VA_PHOTOS && window.VA_PHOTOS[v.key]);
+        var ph = v.photo ? { img: v.photo } : null;
         var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
         var imgHtml = ph
           ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'

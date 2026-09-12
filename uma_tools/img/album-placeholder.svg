@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">专辑封面待公布</title>
+  <desc id="desc">蓝色唱片与橙色标记组成的资料库占位图</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4166e8"/>
+      <stop offset="1" stop-color="#223c9d"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffad38"/>
+      <stop offset="1" stop-color="#ff7f18"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="#f3f5fb"/>
+  <path d="M0 0h600v108L0 252z" fill="url(#blue)"/>
+  <path d="M600 600H0V492l600-144z" fill="#e9edf8"/>
+  <circle cx="300" cy="304" r="166" fill="#fff" stroke="#3558d8" stroke-width="18"/>
+  <circle cx="300" cy="304" r="118" fill="none" stroke="#dfe5f5" stroke-width="3"/>
+  <circle cx="300" cy="304" r="72" fill="url(#orange)"/>
+  <circle cx="300" cy="304" r="20" fill="#fff"/>
+  <path d="M85 502h240" stroke="#3558d8" stroke-width="12"/>
+  <path d="M85 530h150" stroke="#ff8c1a" stroke-width="12"/>
+</svg>
