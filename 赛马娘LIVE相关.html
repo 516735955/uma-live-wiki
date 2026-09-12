@@ -1010,20 +1010,6 @@
                             </div>
                         </div>
                         <div class="c-detail-block" id="cDetailBlock"></div>
-                        <section class="char-activity-block">
-                            <div class="va-section-head"><div><span>APPEARANCES</span><h3>活动出演</h3></div><b>{{ charAppearance.events.length }}</b></div>
-                            <div v-if="charAppearance.events.length" class="char-event-list">
-                                <button v-for="event in charAppearance.events" :key="event.event_id" class="va-event-row" @click="openEvent(event.event_id)">
-                                    <time>{{ event.date || '日期待补' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }} →</em>
-                                </button>
-                            </div>
-                            <p v-else class="event-data-pending">暂未收录可核实的活动出演。</p>
-                            <div class="va-section-head char-song-head"><div><span>PERFORMED SONGS</span><h3>演唱歌曲</h3></div><b>{{ charAppearance.songs.length }}</b></div>
-                            <div v-if="charAppearance.songs.length" class="va-song-grid">
-                                <div v-for="song in charAppearance.songs" :key="song.name"><b>{{ song.name }}</b><span>{{ song.performances }} 场有记录</span></div>
-                            </div>
-                            <p v-else class="event-data-pending">精调歌单中暂未识别到该角色的演唱记录。</p>
-                        </section>
                         <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <section class="cio-songs" v-if="charSongsList.length">
                             <header class="cio-songs-head">
@@ -1031,14 +1017,23 @@
                                 <span class="cio-songs-meta">共 {{ charSongsList.length }} 首</span>
                             </header>
                             <ul class="cio-songs-list">
-                                <li v-for="(s,i) in charSongsVisible" :key="i" class="cio-songs-item">
-                                    <span class="cio-songs-times" :class="{top: i<3}">×{{ s.count }}</span>
-                                    <a class="cio-songs-name" :href="'/zh-Hans/database/songs/' + encodeURIComponent(s.title)" @click.prevent="openSongFromChar(s.title)">{{ s.title }}</a>
+                                <li v-for="(s,i) in charSongsVisible" :key="s.name" class="cio-songs-item">
+                                    <span class="cio-songs-times" :class="{top: i<3}">{{ s.performances }} 场有记录</span>
+                                    <a class="cio-songs-name" :href="'/zh-Hans/database/songs/' + encodeURIComponent(s.name)" @click.prevent="openSongFromChar(s.name)">{{ s.name }}</a>
                                 </li>
                             </ul>
                             <button v-if="charSongsList.length > 10" class="cio-songs-toggle" type="button" @click="toggleCharSongs">
                                 {{ charSongsDetailOpen ? '收起详情' : '展开详情（' + (charSongsList.length - 10) + '）' }}
                             </button>
+                        </section>
+                        <section class="char-activity-block">
+                            <div class="va-section-head"><div><span>APPEARANCES</span><h3>出场履历</h3></div><b>{{ charAppearance.events.length }}</b></div>
+                            <div v-if="charAppearance.events.length" class="char-event-list">
+                                <button v-for="event in charAppearance.events" :key="event.event_id" class="va-event-row" @click="openEvent(event.event_id)">
+                                    <time>{{ event.date || '官方待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }} →</em>
+                                </button>
+                            </div>
+                            <p v-else class="event-data-pending">暂未收录可核实的活动出演。</p>
                         </section>
                         <div class="cio-detail-foot">
                             角色资料：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科</a>（CC BY-NC-SA 3.0 CN）

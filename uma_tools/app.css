@@ -2184,7 +2184,7 @@
         #tab-characters .cio-songs-item:last-child { border-bottom: none; }
         #tab-characters .cio-songs-item:hover { background: #f6f5fb; }
         #tab-characters .cio-songs-times {
-            flex: none; min-width: 42px; text-align: right; color: #8488a0; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
+            flex: none; min-width: 72px; text-align: right; color: #8488a0; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
         }
         #tab-characters .cio-songs-times.top { color: #ff8c1a; }
         #tab-characters .cio-songs-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2c3650; font-size: 13px; font-weight: 600; text-decoration: none; border-bottom: 1px dotted transparent; transition: color .15s, border-color .15s; }
@@ -2364,7 +2364,6 @@
         .char-activity-block { margin-top: 18px; }
         .char-event-list { max-height: 420px; overflow-y: auto; border: 1px solid var(--border); border-radius: 7px; }
         .char-event-list .va-event-row:first-child { border-top: 0; }
-        .char-song-head { margin-top: 24px; }
 
         @media (max-width: 760px) {
             .event-hub-head { align-items: stretch; flex-direction: column; padding: 22px 20px; }
