@@ -125,19 +125,17 @@
     {
       "zh": "小西克幸",
       "ja": "小西克幸",
-      "aliases": ["小西 克幸"],
-      "roles": [{"name": "北原穰", "name_ja": "北原穣"}]
+      "aliases": ["小西 克幸"]
     },
     {
       "zh": "伊濑茉莉也",
       "ja": "伊瀬茉莉也",
-      "aliases": ["伊瀬 茉莉也"],
-      "roles": [{"name": "藤正进行曲", "name_ja": "フジマサマーチ"}]
+      "aliases": ["伊瀬 茉莉也"]
     },
     {
       "zh": "濑户桃子",
       "ja": "瀬戸桃子",
-      "roles": [{"name": "贝尔诺莱特", "name_ja": "ベルノライト"}]
+      "aliases": ["瀬戸 桃子"]
     }
   ],
   "voice_actor_profile_overrides": {
@@ -166,6 +164,9 @@
     ]
   },
   "character_aliases": {
+    "贝尔诺莱特": "zankan_koukou",
+    "ベルノライト": "zankan_koukou",
+    "Belno Light": "zankan_koukou",
     "シービー": "mrcb",
     "エース": "katsuragiace",
     "ローレル": "sakuralaurel",

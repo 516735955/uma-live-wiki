@@ -211,6 +211,21 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             def character_id(name):
                 return {"スペシャルウィーク": "specialweek"}.get(name, "")
 
+            @staticmethod
+            def voice_id(_name):
+                return ""
+
+            @staticmethod
+            def current_character_id(_actor_id):
+                return ""
+
+            profile_by_id = {}
+            character_by_id = {}
+
+            @staticmethod
+            def character_payload(_character_id):
+                return {}
+
         albums = [{
             "name": "Album A", "catalog": "ABC-1", "release": "2024-01-01", "type": "专辑", "cover": "cover.jpg",
             "songs": [
@@ -227,12 +242,32 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             "sessions": [{"id": "event-a-session-1", "label": "DAY1", "date": "2024-02-01", "performances": [{"song": "Song A ※Short ver.", "character_ids": ["specialweek"]}]}],
         }]
         catalog = UPDATE_EVENTS.build_song_catalog(albums, events, Identities(), "2024-02-02T00:00:00+00:00")
-        self.assertEqual(catalog["coverage"], {"songs": 1, "versions": 7, "release_tracks": 6, "live_performances": 1})
+        self.assertEqual(catalog["coverage"], {"songs": 1, "versions": 7, "albums": 1, "release_tracks": 6, "live_performances": 1})
         self.assertEqual(catalog["songs"][0]["title"], "Song A")
         self.assertEqual(len(catalog["songs"][0]["versions"]), 7)
         character_version = next(version for version in catalog["songs"][0]["versions"] if "スペシャルウィーク" in version["title"])
         self.assertEqual(character_version["version_label"], "Game Size / 角色独唱：スペシャルウィーク")
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
+
+    def test_release_credits_resolve_to_one_actor_and_character(self):
+        built = UPDATE_EVENTS.build()
+        special_week = next(
+            profile for profile in built["profiles"]["voice_actors"]
+            if profile["identity"]["zh"] == "和气杏未"
+        )
+        relations = built["appearances"]["voice_actors"][special_week["id"]]["songs"]
+        self.assertTrue(relations)
+        self.assertTrue(all(relation["releases"] > 0 for relation in relations))
+        credited = [
+            vocalist
+            for song in built["songs"]["songs"]
+            for version in song["versions"]
+            for release in version["releases"]
+            for vocalist in release["vocalists"]
+            if vocalist["voice_actor_id"] == special_week["id"]
+        ]
+        self.assertTrue(credited)
+        self.assertEqual({row["character_id"] for row in credited}, {"specialweek"})
 
     def test_full_cast_setlist_rows_expand_to_the_correct_day_cast(self):
         class Identities:
@@ -345,6 +380,39 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         for locator, table in expected.items():
             parsed_songs = [row["song"] for row in UPDATE_EVENTS.table_performances(table, NoCharacters())]
             self.assertEqual(actual[locator]["songs"], parsed_songs, locator)
+
+    def test_only_curated_sessions_may_contain_songs(self):
+        built = UPDATE_EVENTS.build()
+        for event in built["catalog"]["events"]:
+            for session in event.get("sessions") or []:
+                expected_status = "verified" if session.get("setlist_source") else "none"
+                self.assertEqual(session["setlist_status"], expected_status)
+                if session.get("songs") or session.get("performances"):
+                    self.assertIn(session.get("setlist_source", {}).get("file"), {
+                        "data/live_data.json", "data/live_cat_data.json",
+                    })
+
+    def test_every_event_has_a_stable_visible_cover(self):
+        built = UPDATE_EVENTS.build()
+        for event in built["catalog"]["events"]:
+            self.assertTrue(event["image"], event["id"])
+            self.assertTrue(event["image_fallback"], event["id"])
+
+    def test_catalog_documents_share_one_build_id(self):
+        built = UPDATE_EVENTS.build()
+        ids = {built[key]["build_id"] for key in ("catalog", "songs", "appearances", "profiles", "manifest")}
+        self.assertEqual(len(ids), 1)
+
+    def test_belno_aliases_resolve_to_one_canonical_character(self):
+        built = UPDATE_EVENTS.build()
+        events = built["catalog"]["events"]
+        matching = [
+            cast for event in events for cast in event.get("cast") or []
+            if cast.get("voice_actor_id") == "va-0115"
+        ]
+        self.assertTrue(matching)
+        self.assertEqual({row["character_id"] for row in matching}, {"zankan_koukou"})
+        self.assertEqual({row["role"] for row in matching}, {"崭新光辉"})
 
     def test_character_only_programs_do_not_become_voice_appearances(self):
         built = UPDATE_EVENTS.build()
