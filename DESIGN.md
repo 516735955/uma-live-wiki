@@ -1,41 +1,42 @@
 ---
 name: Uma Musume Live Wiki
-description: 一套可相互跳转、可持续维护的赛马娘演出资料档案。
+description: 官方灵感的深蓝纹理资料馆，连接赛马娘的活动、歌曲、专辑、角色与声优。
 colors:
   navy: "#20283b"
-  navy-secondary: "#2c3650"
-  accent-red: "#d6001c"
+  navy-deep: "#141a29"
+  cobalt: "#3558d8"
+  cobalt-dark: "#3654b7"
   brand-orange: "#ff8c1a"
+  brand-orange-dark: "#b94c00"
   paper: "#f5f4f9"
   white: "#ffffff"
-  archive-blue: "#d8e9f8"
-  table-blue: "#cfe3f6"
-  link-blue: "#244f8c"
-  border: "#e6e4ee"
+  surface-muted: "#f5f6fb"
+  line: "#e3e5ef"
   text: "#26272b"
-  text-secondary: "#5f5f6a"
+  text-muted: "#5f5f6a"
 rounded:
-  sm: "5px"
-  md: "6px"
-  lg: "8px"
+  sm: "6px"
+  md: "8px"
+  lg: "12px"
   pill: "999px"
 spacing:
   xs: "6px"
   sm: "8px"
   md: "12px"
-  lg: "16px"
-  xl: "18px"
+  lg: "18px"
+  xl: "24px"
 typography:
   display:
     fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
-    fontSize: "clamp(1.3rem, 3vw, 1.8rem)"
-    fontWeight: 800
-    lineHeight: 1.3
-  headline:
+    fontSize: "clamp(2rem, 5vw, 3rem)"
+    fontWeight: 900
+    lineHeight: 1
+    letterSpacing: "0.055em"
+  title:
     fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
-    fontSize: "17px"
-    fontWeight: 800
-    lineHeight: 1.4
+    fontSize: "clamp(1.55rem, 2.6vw, 2.35rem)"
+    fontWeight: 900
+    lineHeight: 1.18
   body:
     fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
     fontSize: "14px"
@@ -44,167 +45,174 @@ typography:
   label:
     fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
     fontSize: "14px"
-    fontWeight: 700
+    fontWeight: 800
     lineHeight: 1.3
 components:
-  archive-heading:
-    backgroundColor: "{colors.archive-blue}"
-    textColor: "{colors.navy}"
+  library-heading:
+    backgroundColor: "transparent"
+    textColor: "{colors.navy-deep}"
     typography: "{typography.display}"
-    rounded: "{rounded.lg}"
-    padding: "18px 22px"
-  archive-input:
+    padding: "7px 2px 15px"
+  capsule-search:
     backgroundColor: "{colors.white}"
     textColor: "{colors.text}"
     typography: "{typography.body}"
-    rounded: "{rounded.md}"
-    height: "40px"
-  archive-chip:
-    backgroundColor: "transparent"
-    textColor: "{colors.text-secondary}"
+    rounded: "{rounded.pill}"
+    height: "44px"
+  capsule-filter-active:
+    backgroundColor: "{colors.cobalt}"
+    textColor: "{colors.white}"
     typography: "{typography.label}"
     rounded: "{rounded.pill}"
     height: "34px"
-  archive-table:
+  entity-hero:
+    backgroundColor: "{colors.cobalt}"
+    textColor: "{colors.white}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: "46px"
+  data-table:
     backgroundColor: "{colors.white}"
     textColor: "{colors.text}"
     typography: "{typography.body}"
-    rounded: "{rounded.lg}"
-  archive-action:
-    backgroundColor: "#3159a5"
-    textColor: "{colors.white}"
-    typography: "{typography.label}"
     rounded: "{rounded.md}"
-    height: "40px"
 ---
 
 # Design System: Uma Musume Live Wiki
 
 ## Overview
 
-**Creative North Star: "可往返的浅蓝档案馆"**
+**Creative North Star: "深蓝纹理里的官方资料馆"**
 
-资料库页面是一套连续的档案：用户可以从活动看到场次、曲目、出演者和来源，再进入歌曲、角色或声优，且返回时保留原来的浏览语境。视觉上沿用站内已有的浅蓝标题栏、白色资料表和蓝橙强调色，让信息本身成为主角，支持长列表的快速扫描和逐层深入。
+这是一个围绕赛马娘 LIVE 资料建立的粉丝档案馆。官方 umamusume.jp 的深蓝纹理、强烈的中文标题和橙色品牌强调提供入口感；进入资料区后，白色纸张表面承载长列表和表格，让活动、歌曲、专辑、角色与声优之间的事实关系保持清楚。页面不是各自独立的仪表盘，而是一套可以沿关系连续浏览、随时返回的资料系统。
 
-页面采用克制的平面层次和中等信息密度。活动、歌曲、专辑、角色、声优共用页头、搜索、筛选、表格、分节标题、链接和空状态；活动详情复用成熟的现场曲目表，版本、收录盘和出演关系通过真实链接继续展开。中文是界面语言，不用英文小标题、指标卡、装饰性注释或彩色侧边条制造层次。
+资料库同级页面遵循同一套骨架：返回入口、中文大标题与蓝色底线、白色胶囊搜索/下拉/筛选、结果列表或资料表、详情 hero 与关系分节。活动详情直接承接已经精调的现场曲目表；专辑列表保留旧版封面卡片和 `View more` 悬停反馈，角色列表保留旧版彩色角色卡。信息优先于装饰，不使用粉色、暖色筛选面板、大红重置按钮、AI 式小字说明、侧边色条或嵌套卡片。
 
 **Key Characteristics:**
 
-- 浅蓝标题栏与白底档案表构成统一骨架。
-- 14px 起的正文、稳定列结构和紧凑留白服务长资料阅读。
-- 蓝色链接承担跨库导航，橙色只用于强调和清除筛选等辅助动作。
-- 桌面优先，同时在 390px 宽度下转换为可读的纵向资料块。
+- 深蓝纹理导航和蓝色纹理详情 hero 建立站点识别，橙色只做品牌与状态强调。
+- 中文主标题和蓝色底线是资料页统一页头，不再添加英文微型副标题。
+- 搜索、下拉、筛选、分页和详情栏目使用统一的白底胶囊语言，筛选与分页 active 使用蓝色渐变。
+- 白色纸张表面承载数据；关系 chip 由角色色圆形头像和中文名组成。
+- 桌面端强调扫描，900px/700px/480px 逐级收窄，390px 仍保持清楚的主要文字。
 
 ## Colors
 
-冷静的纸张底色承接丰富的角色图像；深海军蓝负责正文和标题，浅蓝负责资料层级，蓝色负责可点击关系，红橙色保留站点识别与少量操作强调。
+深蓝和蓝色负责空间与结构，白色负责阅读表面，橙色负责导航、详情身份、角色卡和少量关键交互；角色卡的颜色来自角色资料本身，只在角色卡和头像边界中出现。
 
 ### Primary
 
-- **档案蓝** (#d8e9f8)：资料页头、分节栏和场次标题的共同底色。
-- **导航蓝** (#244f8c)：歌曲、活动、角色、声优和专辑之间的可点击关系。
+- **深海军蓝** (#20283b)：导航、正文标题、表格线和主要文字。
+- **纹理钴蓝** (#3558d8)：资料详情 hero、搜索焦点和导航区域的结构色。
+- **品牌橙** (#ff8c1a)：导航、详情身份标签、角色卡和关键交互强调，不承担筛选或分页 active。
 
 ### Secondary
 
-- **品牌橙** (#ff8c1a)：站点品牌元素和需要被注意的辅助动作。
-- **提醒红** (#d6001c)：全站已有的重点状态与焦点色，资料页中保持节制。
+- **深橙文字** (#b94c00)：橙色背景上的深色文字、链接 hover 和辅助动作。
+- **角色色** (由数据提供)：角色卡、角色头像边框和关系 chip 的身份色，不用于整块筛选面板。
 
 ### Neutral
 
-- **纸张灰** (#f5f4f9)：页面底色，避免纯白大面积刺眼。
-- **白色** (#ffffff)：表格、资料区和输入控件的阅读表面。
-- **海军蓝** (#20283b)：标题和主要文字。
-- **正文灰** (#26272b)：常规信息文字。
-- **边界灰** (#e6e4ee)：表格行分隔和控件边界。
+- **纸张灰** (#f5f4f9)：资料页面背景。
+- **白色** (#ffffff)：搜索、下拉、资料表、详情分节和封面卡片表面。
+- **表面灰** (#f5f6fb)：表头和次级资料区域。
+- **正文黑** (#26272b)：正文和记录名称。
+- **静音灰** (#5f5f6a)：日期、数量和次级信息。
+- **结构线** (#e3e5ef)：表格行、分节和控件边界。
 
-**The One Archive Rule.** 同级资料页必须使用相同的浅蓝页头、工具栏、筛选、表格和分节结构；差异只来自内容关系，不来自另造一套界面。
+**The Blue Active Rule.** 筛选和分页 active 统一使用深蓝到钴蓝的渐变；橙色只用于导航、详情身份、角色卡和关键交互，不使用粉色、暖色筛选容器或大红色重置动作抢占资料层级。
 
 ## Typography
 
 **Display Font:** Microsoft YaHei, with PingFang SC, Noto Sans SC and system sans-serif fallbacks.
 
-**Body Font:** 同一中文无衬线字体栈，避免在资料页切换字体造成扫描断裂。
+**Body Font:** 同一中文无衬线字体栈。
 
-**Character:** 字体朴素、清晰、偏信息导向；粗体只标出标题、列名和可行动的记录，不用装饰性字距或等宽字体模拟“数据感”。
+**Character:** 中文标题厚重直接，资料库页头不添加英文微型副标题；正文保持朴素、可扫描，不用等宽字体或密集英文标签制造伪专业感。
 
 ### Hierarchy
 
-- **Display** (800, clamp(1.3rem, 3vw, 1.8rem), 1.3)：资料库页头和详情标题。
-- **Headline** (800, 17px, 1.4)：白色资料区的分节标题。
-- **Title** (700–800, 14–16px, 1.4)：表格记录、场次名称和可点击实体。
-- **Body** (400, 14px, 1.5–1.75)：资料、来源、说明和表格内容。
-- **Label** (700, 14px, 1.3)：筛选标签、表头、按钮和结果数量。
+- **Display** (900, clamp(2rem, 5vw, 3rem), 1)：资料库页头中文主标题。
+- **Title** (900, clamp(1.55rem, 2.6vw, 2.35rem), 1.18)：实体详情 hero 标题。
+- **Headline** (900, 1.2rem, 1.4)：详情分节标题和重要资料名称。
+- **Body** (400, 14px, 1.5–1.75)：表格、来源、关系和说明。
+- **Label** (700–900, 14px, 1.3)：搜索、下拉、筛选、表头和数量。
 
-**The Readable Record Rule.** 资料页正文和可点击记录不低于 14px；13px 只用于次要日期、类型或来源辅助信息，不能承担主要内容。
+**The Clear Record Rule.** 主要资料文字不低于 14px；页头层级由中文标题和蓝色底线直接表达，不把关键内容藏进小字注释、侧边说明或仅供模型理解的标签。
 
 ## Layout
 
-资料页使用单列档案流，内容在桌面端保持宽而不散，页头、筛选、表格和详情分节按固定顺序出现。页头以 18–22px 内边距建立入口，工具栏和筛选紧随其后，表格采用 14px 正文、10–14px 单元格内边距和清楚的横向分隔。详情页先展示活动或实体核心资料，再展示关系表，最后放媒体与来源。
+资料页最大宽度约 1280px，采用单列档案流。页头靠左排列中文大标题，底部 3px 蓝线形成稳定锚点；结果数量靠右。搜索与下拉在同一行，筛选胶囊紧随其后，列表以白色纸张表面展开。实体详情用蓝纹理 hero：左侧封面或头像，右侧橙色身份、标题、关系 chip 和事实；下面以胶囊栏目切换和白色资料分节承载表格。
 
-搜索和下拉控件统一为 40px 高；筛选项使用同一组胶囊按钮，选中态为实色蓝，未选中态为无填充。桌面端筛选组水平排列，760px 以下改为纵向；560px 以下活动和歌曲索引表逐条堆叠，现场曲目和专辑表保留稳定可读的列宽并允许横向滚动，390px 页面不得出现意外溢出。
+控件默认 40–44px 高、胶囊圆角；筛选项 34px 高。活动、歌曲和专辑目录使用带封面的整行记录，专辑目录延续封面卡片和 `View more` hover，角色目录延续每张角色独有的主色卡。900px 以下控件换行，700px 以下 hero 和目录改为移动布局，480px 以下栏目保持可用且封面、头像与主要记录仍可读；长表格只在必要时局部横向滚动。
 
 ## Elevation & Depth
 
-资料库采用平面优先的层次。白色资料区叠在纸张灰背景上，浅蓝标题栏和极细边界表达结构；档案表和关系卡不使用悬浮阴影或上移动画。全站旧页面仍有既有阴影，但新增和统一后的 #6 资料组件保持无阴影，以免把档案误读成仪表盘卡片。
+深蓝纹理、白色纸张和低强度蓝灰阴影组成混合层次。导航和实体 hero 用纹理与蓝色渐变建立深度，白色表面用细边界和轻阴影从页面背景中分离；目录行、专辑封面和角色卡可以在 hover 时轻微抬升或放大，反馈结束后回到原位。筛选和数据表不使用厚重阴影或暖色面板，active 胶囊使用蓝色渐变表达状态。
 
-**The Flat Archive Rule.** 默认状态只用背景色和边界分层；交互反馈使用浅蓝底色或边界变深，不用发光、浮起或渐变来抢夺内容注意力。
+### Shadow Vocabulary
+
+- **纸张分离** (`0 5px 12px rgba(53,88,216,.10)`): 搜索、下拉和分页胶囊与背景的轻微分离。
+- **目录 hover** (`0 8px 20px rgba(53,88,216,.11)`): 目录行或封面卡 hover 的短暂反馈。
+- **品牌 hover** (`0 5px 12px rgba(255,140,26,.16)`): 橙色关系按钮和来源按钮的反馈。
+
+**The Texture-First Rule.** 深度优先来自官方风格纹理、内容封面和白色纸张的对比；阴影只说明表面或交互状态，不替代信息结构。
 
 ## Shapes
 
-形状是克制的圆角矩形：资料容器约 8px，输入、按钮和链接约 6px，标签使用完整胶囊圆角。边界为浅灰或低饱和蓝，表格行不另套卡片；现场曲目表的场次标题与表格共享连续的上圆角轮廓。头像和封面保留内容本身的圆形或方形比例，不把每条关系包成独立彩色卡片。
+搜索、下拉、筛选、返回、分页和实体栏目统一使用胶囊形（999px）；资料分节和详情 hero 使用克制圆角（8–12px）。表格内部不套一层层卡片，行以横线和交替的极浅蓝灰区分。角色卡保留角色色边框、彩色背景和 `View more` 遮罩这一既有形制；关系 chip 不包成彩色胶囊，而是圆形角色头像加中文名。
 
 ## Components
 
 ### Buttons
 
-- **Shape:** 轻微圆角（6px），40px 最小高度，中文标签保持清楚。
-- **Primary:** 档案操作按钮使用实色蓝底白字，水平内边距 14px。
-- **Hover / Focus:** 悬停变为更深蓝或浅蓝底；焦点使用 2px 可见轮廓，不移动布局。
-- **Secondary / Ghost:** 关系链接和清除筛选使用白底或透明底蓝字，只有边界或底色变化。
+- **Shape:** 操作按钮默认胶囊，最小高度 40px；清除筛选也沿用白底胶囊，不能变成大红警示块。
+- **Primary:** 关键交互可使用橙色；筛选和分页 active 使用深蓝到钴蓝渐变与白字。
+- **Hover / Focus:** 使用橙色边界、轻微缩放或平移，焦点保持清楚的橙色轮廓；不改变布局尺寸。
+- **Secondary:** 返回、来源和关系入口使用白底、深蓝文字与浅蓝/橙色边界。
 
 ### Chips
 
-- **Style:** 34px 高、12px 水平内边距、胶囊形；未选中透明，悬停浅蓝。
-- **State:** 选中使用实色蓝底白字；同一筛选组始终只有一个选中值。
+- **Style:** 筛选 chip 是白底、细边界、胶囊圆角；active 是深蓝到钴蓝渐变填充。
+- **Relation:** 角色关系 chip 是角色色圆形头像 + 中文名，点击进入角色或声优，不使用小号英文身份说明。
 
 ### Cards / Containers
 
-- **Corner Style:** 资料区 8px，内部详情和版本块 6–7px。
-- **Background:** 页面纸张灰、内容白、标题档案蓝。
-- **Shadow Strategy:** #6 资料库不使用阴影，依靠色调和边界表达层级。
-- **Border:** 使用浅灰细线，表格内部用横向分隔。
-- **Internal Padding:** 页头 18–22px，资料区 18px，移动端收窄到 12–16px。
+- **Directory:** 活动、歌曲、专辑使用白色整行目录；专辑延续封面卡片和 `View more` hover。
+- **Character:** 角色列表保留旧版彩色角色卡、角色图、主色边框和 hover 遮罩。
+- **Hero:** 歌曲、专辑、活动、声优、角色详情共享纹理蓝 hero，封面或肖像带白框和橙色偏移阴影。
+- **Surface:** 白色纸张表面承载分节和表格；避免嵌套卡片、侧边色条和装饰性指标卡。
 
 ### Inputs / Fields
 
-- **Style:** 白底、浅灰边界、6px 圆角，40px 高；搜索图标内置但不喧宾夺主。
-- **Focus:** 蓝色边界和轻微 3px 外圈，保持键盘可见。
-- **Error / Disabled:** 文字和空状态直接说明原因；没有资料时展示诚实的“待补充/暂未收录”，不伪造内容。
+- **Search:** 白底胶囊，44px 高，左侧搜索图标，焦点为橙色边界和轻微外圈。
+- **Select:** 白底胶囊，原生下拉行为，统一箭头和 44px 高度。
+- **Filter:** 各资料库共用 `.ui-filter-group` 和胶囊按钮；active 统一蓝色渐变，重置使用中性白底。
 
 ### Navigation
 
-- **Style:** 跨库关系使用统一蓝色文字按钮或链接；活动、歌曲、版本、专辑、角色和声优都可互相进入。
-- **State:** 悬停下划线或浅蓝底；详情页提供返回来源入口，返回时恢复筛选和滚动语境。
-- **Mobile:** 详情关系按纵向分节阅读，长表格使用局部横向滚动，不缩小到难以阅读。
+- **Style:** 深蓝纹理导航提供站点入口；资料页以中文大标题和蓝底线保持当前位置。
+- **State:** 目录记录、关系 chip、曲名、专辑、角色和声优都使用真实可点击关系；详情页返回入口恢复上下文。
+- **Mobile:** 导航和栏目允许换行或横向浏览，长表格局部滚动，不靠缩小文字解决空间问题。
 
 ### Archive Table
 
-表格是本项目的签名组件：浅蓝表头、白底记录、细横线和悬停浅蓝行。活动详情直接复用已精调的现场曲目表，并在曲名、出演者和出典处提供关系链接；没有可靠数据时保留来源和明确的待补状态。
+表格是资料阅读的基础组件：白底、浅灰表头、深蓝底线、14px 正文和轻微 hover。活动详情复用成熟现场曲目表，歌曲、出演者、角色和出典均可继续跳转；来源和待补信息保持明确而不伪造。
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** 先复用已有档案表、页头、筛选和控件，再扩展数据关系。
-- **Do** 把活动、歌曲、专辑、角色、声优的关系做成可点击的真实路径，并提供返回语境。
-- **Do** 用浅蓝标题栏、白底资料表、蓝色链接和橙色辅助强调维持站内连续性。
-- **Do** 在桌面和 390px 手机都保持 14px 以上的主要资料文字和 40px 控件。
-- **Do** 为未发布、待补充和不适用信息保留明确状态，维护者可以据此继续更新。
+- **Do** 使用深蓝纹理导航和详情 hero、橙色品牌强调、白色纸张表面。
+- **Do** 为所有同级资料库复用中文大标题、蓝底线和统一胶囊控件。
+- **Do** 延续专辑封面卡片与 `View more` hover，延续角色彩色卡和角色色头像 chip。
+- **Do** 让活动、歌曲、专辑、角色、声优通过真实关系互相跳转，并允许返回原浏览位置。
+- **Do** 让主要资料在桌面和 390px 手机都保持清晰可读，并尊重 `prefers-reduced-motion`。
 
 ### Don't:
 
-- **Don't** 为活动详情或任何同级资料页另造一套不兼容的布局。
-- **Don't** 使用英文小标题、指标卡、装饰性说明、彩色侧边条或卡片堆叠制造 AI 味道。
-- **Don't** 把同一实体分别维护在多个重复索引中，或为了“完整”推测没有证据的出演关系。
-- **Don't** 把主要信息压缩成小字，也不要用阴影、渐变和浮起动画替代清楚的结构。
-- **Don't** 改写或覆盖人工精调的现场曲目来源。
+- **Don't** 为同级资料库另造不同的页头、筛选、下拉或表格组件。
+- **Don't** 使用粉色、暖色筛选面板、大红重置、AI 式小字说明、英文微型副标题、侧边色条或嵌套卡片。
+- **Don't** 用指标卡、渐变大背景或装饰性统计替代真实资料和关系表。
+- **Don't** 把关系 chip 做成无头像的通用标签，也不要把角色色扩散成整页暖色背景。
+- **Don't** 覆盖人工精调的现场曲目来源，或推测没有证据的出演关系。

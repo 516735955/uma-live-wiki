@@ -17,7 +17,7 @@ The product should behave as one connected reference library rather than several
 
 1. Treat concerts, onsite appearances, and identifiable official broadcasts as events in one shared chronology.
 2. Keep series, event, and session distinct. A series contains events; an event may contain one or more sessions such as DAY1 and DAY2.
-3. Store relationships with their evidence. Do not infer a voice actor appearance from a character-only program, and do not guess cast membership from incomplete metadata.
+3. Store relationships with their evidence. Resolve a structured official character credit through the one current character-to-voice-actor mapping, but never treat an unstructured title or description mention as cast evidence.
 4. Prefer official site announcements and official video metadata, then curated confirmations with an official source, then Eventernote as a supplementary source.
 5. Preserve manually refined setlists exactly. `data/live_data.json` and `data/live_cat_data.json` remain source inputs and must not be rewritten by the unified event updater.
 6. Generate shared event and appearance indexes from source data so pages do not maintain conflicting counts or histories.
@@ -30,7 +30,7 @@ The product should behave as one connected reference library rather than several
 
 Included events are time-bound official activities with an identifiable program or appearance: music lives and concerts; onsite talks, release events, racecourse appearances, and public recordings; regular official programs such as PakaLive TV, PakaLive TV', SokoSoko PakaLive TV, and PakaTube programs with an identifiable episode and cast; anniversary, game, anime, or live retrospective specials; and externally produced programs supported by an official announcement.
 
-Excluded items are ordinary promotional assets such as commercials, music videos, trailers, anime clips, Shorts, and uploads without a distinct program identity. In-character 3D content without credited performers may create character participation, but must not create a voice actor appearance.
+Excluded items are ordinary promotional assets such as commercials, music videos, trailers, anime clips, Shorts, and uploads without a distinct program identity. In-character 3D content may create an appearance only when the official program metadata contains structured character credits; those credits resolve through the canonical current performer mapping.
 
 ## Technical constraints
 
