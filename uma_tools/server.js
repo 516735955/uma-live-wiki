@@ -466,7 +466,7 @@ function handleHomeSummary(res) {
     sendJson(res, 200, homeSummaryCache.data);
     return;
   }
-  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_data.json', 'character_index_data.js', 'voice_list_data.js'];
+  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_catalog.json', 'character_index_data.js', 'voice_list_data.js'];
   Promise.all(files.map((name) => fs.promises.readFile(path.join(DATA_DIR, name), 'utf8')))
     .then((texts) => {
       const albumsDoc = JSON.parse(texts[0]);
@@ -979,6 +979,7 @@ server.listen(PORT, () => {
 // ---- Events auto-crawl (Eventernote -> events_data.json) ----
 const { execFile } = require('child_process');
 const CRAWL_SCRIPT = path.join(__dirname, 'crawl_events.py');
+const EVENT_BUILD_SCRIPT = path.join(__dirname, 'update_events.py');
 let crawlRunning = false;
 function runCharsCrawl(reason) {
   if (charsRunning) return;
@@ -1000,8 +1001,25 @@ function runEventsCrawl(reason) {
   execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     crawlRunning = false;
     const tag = '[events-crawl ' + reason + ']';
-    if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-    else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
+    if (err) {
+      console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
+      return;
+    }
+    console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
+    runEventBuild(reason);
+  });
+}
+
+function runEventBuild(reason) {
+  const t0 = Date.now();
+  execFile(PYTHON_BIN, [EVENT_BUILD_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+    const tag = '[events-build ' + reason + ']';
+    if (err) {
+      console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
+      return;
+    }
+    homeSummaryCache = { at: 0, data: null };
+    console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n')[0]);
   });
 }
 

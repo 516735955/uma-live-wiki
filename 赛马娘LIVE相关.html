@@ -31,10 +31,10 @@
         </div>
         <div class="home-hero"></div>
         <a v-if="nextUpcomingEvent" class="home-upcoming" :href="nextUpcomingHref" @click.prevent="openNextUpcoming()">
-            <span class="hu-badge">即将开演</span>
+            <span class="hu-badge">即将举办</span>
             <span class="hu-title">{{ nextUpcomingEvent.title }}</span>
-            <span class="hu-meta">{{ nextUpcomingEvent.date_zh }}<template v-if="nextUpcomingEvent.venue"> · {{ nextUpcomingEvent.venue }}</template></span>
-            <span class="hu-link">查看演出详情 →</span>
+            <span class="hu-meta">{{ eventDateLabel(nextUpcomingEvent) }}<template v-if="nextUpcomingEvent.venue"> · {{ nextUpcomingEvent.venue }}</template></span>
+            <span class="hu-link">查看活动详情 →</span>
         </a>
     </div>
 
@@ -298,12 +298,188 @@
         </div>
 
         <div id="tab-live" v-if="activeTab==='live'" class="tab-content active">
-            <div class="tab-intro">
+            <div v-if="liveView==='eventHub'" class="tab-intro event-intro">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+                活动 EVENT。把音乐公演、线下活动与官方节目放进同一条时间线，并连接出演声优、角色和精调歌单。
+            </div>
+            <div v-else-if="liveView!=='eventDetail'" class="tab-intro">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
                 收录ウマ娘各类现场live演出曲目，选择分类后按场次查看详细歌单。<br>
                 未收录曲目 / 待补充场次的歌曲将显示为 <em style="color:var(--amber);">暂无数据</em>
             </div>
             <div v-if="liveDataError || liveCatDataError" class="news-error">{{ liveDataError || liveCatDataError }}</div>
+
+            <div class="live-view" :class="{active: liveView==='eventHub'}" id="eventHub">
+                <div class="event-hub-head">
+                    <div>
+                        <p class="event-hub-kicker">CONNECTED ARCHIVE · 持续更新</p>
+                        <h2>从一场活动，找到所有关联资料</h2>
+                        <p>共 {{ eventsCount }} 条。官方节目出演缺失时会明确标记为待核实，不会用角色或标题反推声优。</p>
+                    </div>
+                    <button class="event-stats-link" type="button" @click="openEvData()">查看出演与歌曲统计 →</button>
+                </div>
+
+                <div class="event-toolbar">
+                    <div class="event-search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                        <input type="search" v-model.trim="eventsQuery" placeholder="搜索标题、系列、声优、角色、会场或歌曲" autocomplete="off">
+                        <button v-if="eventsQuery" type="button" @click="eventsQuery=''" aria-label="清空搜索">×</button>
+                    </div>
+                    <div class="event-result-count"><b>{{ eventsFiltered.length }}</b> / {{ eventsCount }}</div>
+                </div>
+
+                <div class="event-filter-stack">
+                    <div class="event-filter-row">
+                        <span>时间</span>
+                        <button :class="{active:evTime==='all'}" @click="setEvTime('all')">全部</button>
+                        <button :class="{active:evTime==='upcoming'}" @click="setEvTime('upcoming')">即将举办</button>
+                        <button :class="{active:evTime==='past'}" @click="setEvTime('past')">已结束</button>
+                    </div>
+                    <div class="event-filter-row">
+                        <span>内容</span>
+                        <button :class="{active:evKind==='all'}" @click="setEvKind('all')">全部</button>
+                        <button :class="{active:evKind==='concert'}" @click="setEvKind('concert')">音乐演出</button>
+                        <button :class="{active:evKind==='onsite'}" @click="setEvKind('onsite')">线下活动</button>
+                        <button :class="{active:evKind==='official_program'}" @click="setEvKind('official_program')">官方节目</button>
+                    </div>
+                    <div class="event-filter-row">
+                        <span>形式</span>
+                        <button :class="{active:evMode==='all'}" @click="setEvMode('all')">全部</button>
+                        <button :class="{active:evMode==='onsite'}" @click="setEvMode('onsite')">现场</button>
+                        <button :class="{active:evMode==='online'}" @click="setEvMode('online')">线上</button>
+                        <button :class="{active:evMode==='hybrid'}" @click="setEvMode('hybrid')">混合</button>
+                        <select v-model="evYear" @change="setEvYear(evYear)" aria-label="按年份筛选">
+                            <option value="all">全部年份</option>
+                            <option v-for="year in eventYears" :key="year" :value="year">{{ year }}</option>
+                        </select>
+                        <button v-if="eventsQuery || evTime!=='all' || evKind!=='all' || evMode!=='all' || evYear!=='all'" class="event-filter-clear" @click="clearEventFilters()">清除筛选</button>
+                    </div>
+                </div>
+
+                <div class="event-timeline" id="eventsRowsTop">
+                    <article v-for="(event,i) in eventsPaged" :key="event.id" class="event-card" role="button" tabindex="0" @click="openEvent(event)" @keydown.enter.prevent="openEvent(event)" @keydown.space.prevent="openEvent(event)">
+                        <div class="event-card-date">
+                            <b>{{ event.date ? event.date.slice(5) : '待补' }}</b>
+                            <span>{{ event.date ? event.date.slice(0,4) : 'DATE' }}</span>
+                        </div>
+                        <div class="event-card-media" :class="{'no-image':!event.image}">
+                            <img v-if="event.image" :src="event.image" :alt="event.title" :loading="i<3?'eager':'lazy'" @error="onEvImgError($event)">
+                            <span v-else>{{ eventKindLabel(event.kind).slice(0,1) }}</span>
+                        </div>
+                        <div class="event-card-main">
+                            <div class="event-card-tags">
+                                <span :class="'kind-'+event.kind">{{ eventKindLabel(event.kind) }}</span>
+                                <span>{{ eventModeLabel(event.mode) }}</span>
+                                <span v-if="eventSeriesName(event)">{{ eventSeriesName(event) }}</span>
+                            </div>
+                            <h3>{{ event.title }}</h3>
+                            <p class="event-card-place">{{ event.venue || '地点待补' }}</p>
+                            <p class="event-card-cast">{{ eventCastSummary(event) }}</p>
+                        </div>
+                        <div class="event-card-side">
+                            <span v-if="eventSongCount(event)">{{ eventSongCount(event) }} 首曲目</span>
+                            <span v-if="event.cast && event.cast.length">{{ event.cast.length }} 位出演</span>
+                            <b>查看详情 →</b>
+                        </div>
+                    </article>
+                    <div v-if="eventsLoading && !eventsAll.length" class="events-empty">活动目录加载中…</div>
+                    <div v-else-if="eventsError" class="events-empty">{{ eventsError }}</div>
+                    <div v-else-if="!eventsFiltered.length" class="events-empty">没有符合当前条件的活动。</div>
+                </div>
+
+                <div v-if="eventsFiltered.length" class="news-pager">
+                    <div class="news-pager-count">显示 {{ eventsPageStart }}-{{ eventsPageEnd }} 共 {{ eventsFiltered.length }} 条</div>
+                    <div class="news-pager-btns">
+                        <button class="news-pager-btn" :disabled="eventsPage<=1" @click="goEventsPage(-1)">‹</button>
+                        <button v-for="(page,i) in eventsPageList" :key="i" class="news-pager-btn" :class="{active:page===eventsPage}" :disabled="page==='…'" @click="setEventsPage(page)">{{ page }}</button>
+                        <button class="news-pager-btn" :disabled="eventsPage>=eventsPageCount" @click="goEventsPage(1)">›</button>
+                    </div>
+                </div>
+                <p class="events-footer-note">目录生成于 {{ eventsMeta || '本地构建' }}。资料来自站内精调歌单、官方节目元数据与 Eventernote；各条详情页会分别列出来源。</p>
+            </div>
+
+            <div class="live-view" :class="{active: liveView==='eventDetail'}" id="eventDetail">
+                <template v-if="eventDetail">
+                    <button class="back-btn" type="button" @click="eventBack()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                        返回活动时间线
+                    </button>
+                    <article class="event-detail-shell">
+                        <header class="event-detail-hero">
+                            <div class="event-detail-cover" :class="{'no-image':!eventDetail.image}">
+                                <img v-if="eventDetail.image" :src="eventDetail.image" :alt="eventDetail.title" @error="onEvImgError($event)">
+                                <span v-else>{{ eventKindLabel(eventDetail.kind) }}</span>
+                            </div>
+                            <div class="event-detail-title">
+                                <div class="event-card-tags">
+                                    <span :class="'kind-'+eventDetail.kind">{{ eventKindLabel(eventDetail.kind) }}</span>
+                                    <span>{{ eventModeLabel(eventDetail.mode) }}</span>
+                                    <span v-if="eventSeriesName(eventDetail)">{{ eventSeriesName(eventDetail) }}</span>
+                                </div>
+                                <p class="event-detail-date">{{ eventDateLabel(eventDetail) }}</p>
+                                <h2>{{ eventDetail.title }}</h2>
+                                <p v-if="eventDetail.summary" class="event-detail-summary">{{ eventDetail.summary }}</p>
+                                <div class="event-detail-actions">
+                                    <button v-if="eventDetail.legacy_url" type="button" @click="openEventLegacy(eventDetail)">打开完整精调歌单 →</button>
+                                    <a v-if="eventDetail.media && eventDetail.media[0] && eventDetail.media[0].url" :href="eventDetail.media[0].url" target="_blank" rel="noopener">观看官方/收录视频 ↗</a>
+                                </div>
+                            </div>
+                        </header>
+
+                        <dl class="event-facts">
+                            <div><dt>日期</dt><dd>{{ eventDateLabel(eventDetail) }}</dd></div>
+                            <div><dt>地点 / 形式</dt><dd>{{ eventDetail.venue || eventModeLabel(eventDetail.mode) }}</dd></div>
+                            <div><dt>出演资料</dt><dd>{{ eventDetail.cast_status==='verified' ? '已核实' : (eventDetail.cast_status==='partial' ? '部分收录' : (eventDetail.cast_status==='character_only' ? '仅角色出演' : '待核实')) }}</dd></div>
+                            <div><dt>场次</dt><dd>{{ eventDetail.sessions && eventDetail.sessions.length ? eventDetail.sessions.length : '待补' }}</dd></div>
+                        </dl>
+
+                        <section class="event-detail-section">
+                            <div class="event-section-head"><div><span>CAST</span><h3>{{ eventDetail.cast_status==='character_only' ? '出演角色' : '出演声优与角色' }}</h3></div><p>{{ eventDetail.cast_status==='character_only' ? ((eventDetail.characters || []).length + ' 位角色，不计声优本人出演') : (eventDetail.cast && eventDetail.cast.length ? eventDetail.cast.length + ' 条已记录关系' : '资料待补') }}</p></div>
+                            <div v-if="eventDetail.cast && eventDetail.cast.length" class="event-cast-grid">
+                                <div v-for="cast in eventDetail.cast" :key="cast.name+'-'+cast.role" class="event-cast-item">
+                                    <button :disabled="!cast.voice_actor_id" @click="cast.voice_actor_id && openVoiceFromEvent(cast.voice_actor_id)">{{ cast.name }}</button>
+                                    <button v-if="cast.role" class="event-cast-role" :disabled="!cast.character_id" @click="cast.character_id && openCharacterFromEvent(cast.character_id)">{{ cast.role }}</button>
+                                    <span>{{ cast.evidence==='official_youtube' ? '官方节目单' : (cast.evidence==='official_announcement' ? '官方公告' : (cast.evidence==='curated_live_cast' ? '精调出演表' : 'Eventernote')) }}</span>
+                                </div>
+                            </div>
+                            <div v-else-if="eventDetail.cast_status==='character_only' && eventDetail.characters && eventDetail.characters.length" class="event-character-links">
+                                <button v-for="character in eventDetail.characters" :key="character.id" @click="openCharacterFromEvent(character.id)">{{ character.name }} <span>{{ character.name_ja }}</span> →</button>
+                            </div>
+                            <p v-else class="event-data-pending">该活动本身已确认，但出演者资料尚未得到足够来源支持。</p>
+                        </section>
+
+                        <section v-if="eventDetail.sessions && eventDetail.sessions.length" class="event-detail-section">
+                            <div class="event-section-head"><div><span>SESSIONS</span><h3>{{ eventDetail.kind==='official_program' ? '节目场次' : '场次与曲目' }}</h3></div><p v-if="eventDetail.legacy_url">完整表格保留在原精调歌单中</p></div>
+                            <div class="event-session-list">
+                                <details v-for="session in eventDetail.sessions" :key="session.id" :open="eventDetail.sessions.length===1">
+                                    <summary><b>{{ session.label }}</b><span>{{ session.date || '日期待补' }} · {{ session.songs && session.songs.length ? session.songs.length + ' 首' : (eventDetail.kind==='official_program' ? '暂无独立歌单' : '曲目待补') }}</span></summary>
+                                    <div v-if="eventDetail.sessions.length>1 && session.cast && session.cast.length" class="event-session-cast" aria-label="本场次出演者">
+                                        <button v-for="cast in session.cast" :key="cast.name+'-'+cast.role" type="button" :disabled="!cast.voice_actor_id" @click="cast.voice_actor_id && openVoiceFromEvent(cast.voice_actor_id)">
+                                            {{ cast.name }}<span v-if="cast.role"> / {{ cast.role }}</span>
+                                        </button>
+                                    </div>
+                                    <ol v-if="session.songs && session.songs.length" class="event-song-list">
+                                        <li v-for="song in session.songs" :key="song">{{ song }}</li>
+                                    </ol>
+                                    <p v-else>{{ eventDetail.kind==='official_program' ? '本节目暂无可核实的独立歌单记录。' : '本场次暂无曲目资料。' }}</p>
+                                </details>
+                            </div>
+                        </section>
+
+                        <section v-if="eventVideos.length" class="event-detail-section">
+                            <div class="event-section-head"><div><span>MEDIA</span><h3>节目影像</h3></div></div>
+                            <div v-for="media in eventVideos" :key="media.video_id" class="event-video">
+                                <iframe :src="'https://www.youtube-nocookie.com/embed/'+media.video_id" :title="eventDetail.title" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </section>
+
+                        <section class="event-detail-section event-sources">
+                            <div class="event-section-head"><div><span>SOURCES</span><h3>资料来源</h3></div></div>
+                            <a v-for="source in eventDetail.sources" :key="source.kind+'-'+source.url" :href="source.url" :target="source.url && source.url.indexOf('/zh-Hans/')!==0 ? '_blank' : null" rel="noopener">{{ sourceLabel(source) }} <span>↗</span></a>
+                        </section>
+                    </article>
+                </template>
+            </div>
 
             <div class="live-view" :class="{active: liveView==='liveCats'}" id="liveCats">
                 <div class="live-cat-grid">
@@ -485,38 +661,32 @@
 <div id="tab-database-index" v-if="activeTab==='database' && dbView==='index'" class="tab-content active">
             <div class="tab-intro">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                资料库 DATABASE。角色、声优、专辑、歌曲与活动出演的资料归档，点击卡片进入对应子库。
+                资料库 DATABASE。角色、声优、专辑与歌曲的资料归档；活动与出演关系已整合到顶层“活动”。
             </div>
             <div class="db-grid">
                 <button class="db-card" type="button" data-db="characters" @click="goDbView('characters')">
-                    <span class="db-no">01 / 05</span>
+                    <span class="db-no">01 / 04</span>
                     <span class="db-headline">角色 <em>CHARACTER · /characters</em></span>
                     <span class="db-desc">角色介绍 · 角色设定相关 · 精选视频 · 血统关系</span>
                     <span class="db-meta"><b>{{ charCount }}</b> 位角色</span>
                 </button>
                 <button class="db-card" type="button" data-db="voice" @click="goDbView('voice')">
-                    <span class="db-no">02 / 05</span>
+                    <span class="db-no">02 / 04</span>
                     <span class="db-headline">声优 <em>VOICE ACTORS · /voice-actors</em></span>
-                    <span class="db-desc">声优资料 · 担当角色</span>
+                    <span class="db-desc">声优资料 · 担当角色 · 活动履历 · 演唱歌曲</span>
                     <span class="db-meta"><b>{{ statVoiceActors }}</b> 位声优</span>
                 </button>
                 <button class="db-card" type="button" data-db="albums" @click="goDbView('albums')">
-                    <span class="db-no">03 / 05</span>
+                    <span class="db-no">03 / 04</span>
                     <span class="db-headline">专辑 <em>DISCOGRAPHY · /albums</em></span>
                     <span class="db-desc">CD 单曲 · 专辑</span>
                     <span class="db-meta"><b>{{ statAlbums }}</b> 张</span>
                 </button>
                 <button class="db-card" type="button" data-db="songs" @click="goDbView('songs')">
-                    <span class="db-no">04 / 05</span>
+                    <span class="db-no">04 / 04</span>
                     <span class="db-headline">歌曲 <em>SONG · /songs</em></span>
                     <span class="db-desc">全团曲目</span>
                     <span class="db-meta"><b>{{ statSongs }}</b> 首</span>
-                </button>
-                <button class="db-card" type="button" data-db="events" @click="goDbView('events')">
-                    <span class="db-no">05 / 05</span>
-                    <span class="db-headline">活动出演 <em>EVENT · /events</em></span>
-                    <span class="db-desc">演唱会 · 节目出演履历</span>
-                    <span class="db-meta"><b>{{ eventsCount }}</b> 件</span>
                 </button>
             </div>
         </div>
@@ -638,24 +808,32 @@
                 <p class="va-nodata" id="vaNoData">没有找到匹配的声优</p>
             </template>
             <template v-else>
-                <button class="va-back" type="button" @click="voiceBack()">← 返回声优列表</button>
+                <button class="va-back" type="button" @click="voiceBack()">{{ voiceDetailSource === 'event' ? '← 返回活动' : '← 返回声优列表' }}</button>
                 <div class="va-detail-head" :style="{'--color-main': (voiceDetail.roles[0] && voiceDetail.roles[0].main) || '#8c83ff'}">
                     <div class="va-photo-wrap">
                         <img v-if="voiceDetail.photo" class="va-photo" :src="voiceDetail.photo" :alt="voiceDetail.zh" fetchpriority="high">
                         <img v-else-if="voiceDetail.roles[0] && voiceDetail.roles[0].img" class="va-photo" :src="voiceDetail.roles[0].img" :alt="voiceDetail.zh" fetchpriority="high" style="object-position: top center;">
                         <div v-else class="va-photo va-photo-empty">暂无图片</div>
-                        <p v-if="voiceDetail.credit" class="va-photo-credit">照片：<a :href="voiceDetail.credit.page" target="_blank" rel="noopener">{{ voiceDetail.credit.title }}</a> · {{ voiceDetail.credit.src === 'MyAnimeList' ? 'MyAnimeList' : '萌娘百科' }}</p>
+                        <p v-if="voiceDetail.credit" class="va-photo-credit">图片资料：<a :href="voiceDetail.credit.page" target="_blank" rel="noopener">{{ voiceDetail.credit.title }}</a></p>
                         <p v-else class="va-photo-credit">暂无声优照片</p>
                     </div>
                     <div class="va-head-info">
                         <p class="va-detail-label">Voice Actor · 声优</p>
-                        <h3 class="va-detail-name">{{ voiceDetail.zh }}<a v-if="voiceDetail.credit && voiceDetail.credit.page" class="va-home-link" :href="voiceDetail.credit.page" target="_blank" rel="noopener">官方主页 →</a><span v-else class="va-home-link na">官方主页 暂无</span></h3>
+                        <h3 class="va-detail-name">{{ voiceDetail.zh }}<a v-if="voiceDetail.officialProfile" class="va-home-link" :href="voiceDetail.officialProfile" target="_blank" rel="noopener">官方资料 →</a></h3>
                         <p class="va-detail-kana">{{ voiceDetail.ja }}</p>
                         <dl class="va-info">
                             <div><dt>声优</dt><dd>{{ voiceDetail.zh }}</dd></div>
                             <div><dt>日文名</dt><dd>{{ voiceDetail.ja }}</dd></div>
                             <div><dt>生日</dt><dd>{{ voiceDetail.birth || '——' }}</dd></div>
+                            <div><dt>出身地</dt><dd>{{ voiceDetail.birthplace || '待补充' }}</dd></div>
+                            <div><dt>事务所</dt><dd>{{ voiceDetail.agency || '待补充' }}</dd></div>
                         </dl>
+                        <div class="va-stat-strip">
+                            <div><b>{{ voiceDetail.stats.events || 0 }}</b><span>活动出演</span></div>
+                            <div><b>{{ voiceDetail.stats.concerts || 0 }}</b><span>音乐演出</span></div>
+                            <div><b>{{ voiceDetail.stats.programs || 0 }}</b><span>官方节目</span></div>
+                            <div><b>{{ voiceDetail.stats.songs || 0 }}</b><span>演唱歌曲</span></div>
+                        </div>
                     </div>
                 </div>
                 <div class="va-cast">
@@ -671,6 +849,31 @@
                         </a>
                     </div>
                 </div>
+                <section v-if="voiceUpcoming.length" class="va-history-section va-upcoming">
+                    <div class="va-section-head"><div><span>NEXT</span><h3>即将参加</h3></div><b>{{ voiceUpcoming.length }}</b></div>
+                    <button v-for="event in voiceUpcoming" :key="event.event_id" class="va-event-row" @click="openEvent(event.event_id)">
+                        <time>{{ event.date || '日期待补' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }} →</em>
+                    </button>
+                </section>
+                <section class="va-history-section">
+                    <div class="va-section-head"><div><span>HISTORY</span><h3>赛马娘相关出演履历</h3></div><b>{{ voiceAppearance.events.length }}</b></div>
+                    <div v-if="voicePastByYear.length" class="va-history-years">
+                        <details v-for="(group,index) in voicePastByYear" :key="group.year" :open="index===0">
+                            <summary><b>{{ group.year }}</b><span>{{ group.events.length }} 次</span></summary>
+                            <button v-for="event in group.events" :key="event.event_id" class="va-event-row" @click="openEvent(event.event_id)">
+                                <time>{{ event.date || '日期待补' }}</time><span>{{ event.title }}</span><em>{{ eventSeriesName(event) || eventKindLabel(event.kind) }} →</em>
+                            </button>
+                        </details>
+                    </div>
+                    <p v-else class="event-data-pending">暂未收录可核实的活动出演。</p>
+                </section>
+                <section class="va-history-section">
+                    <div class="va-section-head"><div><span>SONGS</span><h3>演唱歌曲</h3></div><b>{{ voiceAppearance.songs.length }}</b></div>
+                    <div v-if="voiceAppearance.songs.length" class="va-song-grid">
+                        <div v-for="song in voiceAppearance.songs" :key="song.name"><b>{{ song.name }}</b><span>{{ song.performances }} 场有记录</span></div>
+                    </div>
+                    <p v-else class="event-data-pending">精调歌单中暂未识别到个人演唱记录。</p>
+                </section>
             </template>
         </div>
 
@@ -774,7 +977,7 @@
                     <div class="cio-detail" id="cIntroDetail" v-if="charDetail" v-cloak>
                         <div class="cio-detail-top">
                             <div class="cio-back-row">
-                                <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : '← 返回角色列表' }}</button>
+                                <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : (charDetailSource === 'event' ? '← 返回活动' : '← 返回角色列表') }}</button>
                                 <button v-if="charBackUrl" class="cio-back" type="button" @click="charBackPrev()">← 返回之前页</button>
                             </div>
                             <div>
@@ -793,6 +996,20 @@
                             </div>
                         </div>
                         <div class="c-detail-block" id="cDetailBlock"></div>
+                        <section class="char-activity-block">
+                            <div class="va-section-head"><div><span>APPEARANCES</span><h3>活动出演</h3></div><b>{{ charAppearance.events.length }}</b></div>
+                            <div v-if="charAppearance.events.length" class="char-event-list">
+                                <button v-for="event in charAppearance.events" :key="event.event_id" class="va-event-row" @click="openEvent(event.event_id)">
+                                    <time>{{ event.date || '日期待补' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }} →</em>
+                                </button>
+                            </div>
+                            <p v-else class="event-data-pending">暂未收录可核实的活动出演。</p>
+                            <div class="va-section-head char-song-head"><div><span>PERFORMED SONGS</span><h3>演唱歌曲</h3></div><b>{{ charAppearance.songs.length }}</b></div>
+                            <div v-if="charAppearance.songs.length" class="va-song-grid">
+                                <div v-for="song in charAppearance.songs" :key="song.name"><b>{{ song.name }}</b><span>{{ song.performances }} 场有记录</span></div>
+                            </div>
+                            <p v-else class="event-data-pending">精调歌单中暂未识别到该角色的演唱记录。</p>
+                        </section>
                         <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <section class="cio-songs" v-if="charSongsList.length">
                             <header class="cio-songs-head">
@@ -906,11 +1123,11 @@
 </div>
 
         <div id="tab-events" v-if="activeTab==='database' && dbView==='events'" class="tab-content active">
-            <button class="back-btn" type="button" @click="goDbView('index')">
+            <button v-if="!evDataView" class="back-btn" type="button" @click="goDbView('events')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 返回资料库
             </button>
-            <div class="tab-intro">
+            <div v-if="!evDataView" class="tab-intro">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                 收录自 Eventernote 的出演清单，共 {{ eventsCount }} 个活动，点击标题可跳转 Eventernote 查看详情。<br>
                 数据来源：<a href="https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC(gal%E2%80%99up!)/22274/events" target="_blank" rel="noopener noreferrer" style="color:var(--brand-dark);">Eventernote 演员页 ↗</a>

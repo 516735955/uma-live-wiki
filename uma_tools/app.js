@@ -15,8 +15,8 @@ createApp({
     }
     const initialSegments = routeSegments();
     const initialFirst = (initialSegments[0] || '').toLowerCase();
-    const initialTab = initialFirst === 'characters' || initialFirst === 'events' ? 'database' :
-      (initialFirst === 'music' || initialFirst === 'artist' || !initialFirst ? 'songs' : initialFirst);
+    const initialTab = initialFirst === 'events' ? 'live' : (initialFirst === 'characters' ? 'database' :
+      (initialFirst === 'music' || initialFirst === 'artist' || !initialFirst ? 'songs' : initialFirst));
     const audio = ref(null);
     const albums = ref([]);
     const albumsError = ref('');
@@ -56,7 +56,7 @@ createApp({
     const sortMode = ref('');
     const backTopVisible = ref(false);
     const view = ref('list');
-    const liveView = ref('liveCats');
+    const liveView = ref('eventHub');
     const liveSeriesIndex = ref(-1);
     const livePerf = ref(-1);
     const liveDay = ref(0);
@@ -75,6 +75,7 @@ createApp({
     let liveDataLoadPromise = null;
     let liveCatLoadPromise = null;
     let eventsLoadPromise = null;
+    let relationshipLoadPromise = null;
     let homeSummaryLoadPromise = null;
     const savedScrollY = ref(0);
     const songSavedScrollY = ref(0);
@@ -85,6 +86,10 @@ createApp({
     const charSavedScrollY = ref(0);
     const vaSavedScrollY = ref(0);
     const eventsAll = ref([]);
+    const eventSeries = ref([]);
+    const eventDetail = ref(null);
+    const appearanceIndex = ref({ voice_actors: {}, characters: {} });
+    const voiceProfiles = ref([]);
     const homeStats = reactive({ songs: null, albums: null, live: null, performances: null, characters: null, voiceActors: null, events: null });
     const homeNextEvent = ref(null);
     const eventsMeta = ref('');
@@ -92,6 +97,9 @@ createApp({
     const eventsLoading = ref(false);
     const eventsQuery = ref('');
     const evTime = ref('all');
+    const evKind = ref('all');
+    const evMode = ref('all');
+    const evYear = ref('all');
     const eventsPage = ref(1);
     const eventsPerPage = 20;
     const evDataView = ref(false);
@@ -218,11 +226,17 @@ createApp({
     const voiceDetail = ref(null);
     const charDetailSource = ref('');
     const charBackUrl = ref('');
+    const voiceDetailSource = ref('');
     const charHasIntro = computed(function () {
       var id = charDetail.value && charDetail.value.id;
       return !!(window.CHAR_DETAIL && id && window.CHAR_DETAIL[id] && window.CHAR_DETAIL[id].html);
     });
+    const charAppearance = computed(function () {
+      const id = charDetail.value && charDetail.value.id;
+      return (id && appearanceIndex.value.characters && appearanceIndex.value.characters[id]) || { events: [], songs: [] };
+    });
     const savedVoiceDetail = ref(null);
+    const savedEventDetail = ref(null);
     const relFilter = ref('');
     const relYear = ref('');
     const relPage = ref(1);
@@ -250,15 +264,32 @@ createApp({
       return Promise.all([
         loadCharacterIndexData(),
         loadDataScript('/data/character_detail_data.js?v=20260910-4', 'CHAR_DETAIL'),
-        loadDataScript('/data/pedigree_data.js?v=20260911-8', 'PED_REL')
+        loadDataScript('/data/pedigree_data.js?v=20260911-8', 'PED_REL'),
+        loadRelationshipData()
       ]);
     }
     function loadVoiceData() {
       return Promise.all([
         loadCharacterIndexData(),
         loadDataScript('/data/va_photos_data.js?v=20260830', 'VA_PHOTOS'),
-        loadDataScript('/data/voice_list_data.js?v=20260830', 'VA_LIST')
+        loadDataScript('/data/voice_list_data.js?v=20260830', 'VA_LIST'),
+        loadRelationshipData()
       ]);
+    }
+    function loadRelationshipData() {
+      if (relationshipLoadPromise) return relationshipLoadPromise;
+      relationshipLoadPromise = Promise.all([
+        fetch('/data/voice_actor_profiles.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }),
+        fetch('/data/appearance_index.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      ]).then(function (rows) {
+        voiceProfiles.value = (rows[0] && rows[0].voice_actors) || [];
+        appearanceIndex.value = rows[1] || { voice_actors: {}, characters: {} };
+      }).catch(function () {
+        relationshipLoadPromise = null;
+        voiceProfiles.value = [];
+        appearanceIndex.value = { voice_actors: {}, characters: {} };
+      });
+      return relationshipLoadPromise;
     }
     function loadLivePathData(path) {
       const value = String(path || '');
@@ -269,6 +300,7 @@ createApp({
     function ensureTabData(tab) {
       if (tab === 'news') return loadNews();
       if (tab === 'songs') return loadAlbums();
+      if (tab === 'live') return Promise.all([loadEvents(), loadRelationshipData()]);
       if (tab === 'database') return loadHomeSummary();
       return Promise.resolve();
     }
@@ -291,12 +323,14 @@ createApp({
           ? loadCharacterDetailData() : loadCharacterIndexData();
         return Promise.all([characterReady, loadHomeSummary()]);
       }
-      if (first === 'events') return loadEvents();
+      if (first === 'events') return Promise.all([loadEvents(), loadRelationshipData()]);
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
       if (!sub) return loadHomeSummary();
-      if (sub === 'albums' || sub === 'songs') return Promise.all([loadAlbums(), loadSongEvData(), loadLiveData(), loadLiveCatData()]);
-      if (sub === 'events') return loadEvents();
+      if (sub === 'albums' || sub === 'songs') {
+        return Promise.all([loadAlbums(), loadSongEvData(), loadLiveData(), loadLiveCatData(), loadRelationshipData()]);
+      }
+      if (sub === 'events') return Promise.all([loadEvents(), loadRelationshipData()]);
       if (sub === 'voice' || sub === 'voice-actors') return Promise.all([loadVoiceData(), loadHomeSummary()]);
       if (sub === 'characters') {
         const charPath = (seg[2] || '').toLowerCase();
@@ -343,7 +377,7 @@ createApp({
     const tabs = [
       { key: 'news', label: '新闻', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V9"/><polyline points="12 2 12 22"/><path d="M3 5h6"/><path d="M3 9h6"/><path d="M3 13h6"/><path d="M12 7h9"/><path d="M12 11h9"/><path d="M12 15h9"/></svg>' },
       { key: 'songs', label: '歌曲', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>' },
-      { key: 'live', label: 'Live演出', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>' },
+      { key: 'live', label: '活动', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>' },
       { key: 'database', label: '资料库', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>' },
       { key: 'links', label: '友链', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>' }
     ];
@@ -399,7 +433,8 @@ createApp({
       albumDetail.value = null;
       artistDetail.value = null;
       newsDetail.value = null;
-      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'liveCats';
+      eventDetail.value = null;
+      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'eventHub';
       dbView.value = 'index';
       charDetail.value = null; voiceDetail.value = null; charSub.value = 'intro';
       window.scrollTo(0, 0);
@@ -411,7 +446,7 @@ createApp({
       albumDetail.value = null;
       artistDetail.value = null;
       newsDetail.value = null;
-      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'liveCats';
+      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'eventHub';
       dbView.value = 'index';
       charDetail.value = null; voiceDetail.value = null; charSub.value = 'intro';
       window.scrollTo(0, 0);
@@ -423,7 +458,7 @@ createApp({
       albumDetail.value = null;
       artistDetail.value = null;
       newsDetail.value = null;
-      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'liveCats';
+      liveSeriesIndex.value = -1; livePerf.value = 0; liveDay.value = 0; liveView.value = 'eventHub';
       dbView.value = 'index';
       charDetail.value = null; voiceDetail.value = null; charSub.value = 'intro';
       window.scrollTo(0, 0);
@@ -439,6 +474,15 @@ createApp({
         dbView.value = 'voice';
         voiceDetail.value = savedVoiceDetail.value;
         savedVoiceDetail.value = null;
+        charDetailSource.value = '';
+        window.scrollTo(0, 0);
+        pushUrl();
+      } else if (charDetailSource.value === 'event') {
+        charDetail.value = null;
+        activeTab.value = 'live';
+        liveView.value = 'eventDetail';
+        eventDetail.value = savedEventDetail.value;
+        savedEventDetail.value = null;
         charDetailSource.value = '';
         window.scrollTo(0, 0);
         pushUrl();
@@ -473,7 +517,7 @@ createApp({
       liveSeriesIndex.value = -1;
       livePerf.value = 0;
       liveDay.value = 0;
-      liveView.value = 'liveCats';
+      liveView.value = 'eventHub';
       if (k !== 'database') dbView.value = 'index';
       charSub.value = 'intro';
       charDetail.value = null;
@@ -489,7 +533,7 @@ createApp({
       liveSeriesIndex.value = -1;
       livePerf.value = 0;
       liveDay.value = 0;
-      liveView.value = 'liveCats';
+      liveView.value = 'eventHub';
       if (k !== 'database') dbView.value = 'index';
       if (k !== 'database') charSub.value = 'intro';
       if (k !== 'database') charDetail.value = null;
@@ -554,12 +598,20 @@ createApp({
       pushUrl();
     }
     function goDbView(v) {
+      if (v === 'events') {
+        return Promise.all([loadEvents(), loadRelationshipData()]).then(function () {
+          activeTab.value = 'live';
+          liveView.value = 'eventHub';
+          eventDetail.value = null;
+          window.scrollTo(0, 0);
+          pushUrl();
+        });
+      }
       let ready = Promise.resolve();
       if (v === 'index') ready = loadHomeSummary();
       else if (v === 'characters') ready = loadCharacterIndexData();
       else if (v === 'voice') ready = loadVoiceData();
       else if (v === 'albums' || v === 'songs') ready = loadAlbums();
-      else if (v === 'events') ready = loadEvents();
       const activate = function () {
         evDataView.value = false;
         if (v !== 'voice') voiceDetail.value = null;
@@ -575,15 +627,56 @@ createApp({
     function vaSlugOf(name) {
       return encodeURIComponent(String(name || ''));
     }
+    function voiceProfileForName(name) {
+      var target = String(name || '').replace(/[\s　]/g, '').replace(/髙/g, '高');
+      if (!target) return null;
+      for (var i = 0; i < voiceProfiles.value.length; i++) {
+        var profile = voiceProfiles.value[i];
+        var identity = profile.identity || {};
+        var names = [identity.zh, identity.ja].concat(identity.aliases || []);
+        if (names.some(function (item) { return String(item || '').replace(/[\s　]/g, '').replace(/髙/g, '高') === target; })) return profile;
+      }
+      return null;
+    }
+    window.voiceProfileForName = voiceProfileForName;
     window.vaLink = function (name) {
       var n = String(name || '');
       if (!n) return n;
+      var profile = voiceProfileForName(n);
+      if (profile) return '<a href="' + LANG_PREFIX + '/database/voice-actors/' + encodeURIComponent(profile.id) + '">' + n + '</a>';
       var ph = (window.VA_PHOTOS && window.VA_PHOTOS[n]) || null;
       var page = ph ? ph.page : '';
       if (page) return '<a href="' + page + '" target="_blank" rel="noopener">' + n + '</a>';
       return n;
     };
     function vaList() {
+      if (voiceProfiles.value.length) {
+        return voiceProfiles.value.map(function (profile) {
+          const identity = profile.identity || {};
+          const details = profile.profile || {};
+          const photo = profile.photo || {};
+          return {
+            id: profile.id,
+            slug: profile.slug || profile.id,
+            zh: identity.zh || identity.ja || '',
+            ja: identity.ja || identity.zh || '',
+            kana: identity.kana || '',
+            aliases: identity.aliases || [],
+            roles: (profile.roles || []).map(function (role) {
+              return { id: role.character_id || '', zh: role.name || '', ja: role.name_ja || '', en: '', img: role.image || '', main: role.color_main || '', sub: role.color_sub || '', orig: !!role.former };
+            }),
+            photo: photo.url || '',
+            credit: photo.source_url ? { page: photo.source_url, title: photo.source_title || '图片来源', src: 'reference' } : null,
+            birth: details.birthday || '',
+            birthplace: details.birthplace || '',
+            agency: details.agency || '',
+            officialProfile: details.official_profile || '',
+            social: details.social || [],
+            profileStatus: details.status || 'partial',
+            stats: profile.stats || { events: 0, concerts: 0, programs: 0, songs: 0 }
+          };
+        });
+      }
       var src = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
       var map = new Map();
       var charByZh = {};
@@ -622,7 +715,7 @@ createApp({
       var target = String(slug || '');
       if (!target) return null;
       var list = vaList();
-      for (var i = 0; i < list.length; i++) { if (list[i].slug === target) return list[i]; }
+      for (var i = 0; i < list.length; i++) { if (list[i].slug === target || list[i].id === target) return list[i]; }
       try {
         var dec = decodeURIComponent(target);
         for (var j = 0; j < list.length; j++) { if (list[j].slug === vaSlugOf(dec)) return list[j]; }
@@ -630,15 +723,69 @@ createApp({
       } catch (e) {}
       return null;
     }
+    const voiceAppearance = computed(function () {
+      const id = voiceDetail.value && voiceDetail.value.id;
+      return (id && appearanceIndex.value.voice_actors && appearanceIndex.value.voice_actors[id]) || { events: [], songs: [] };
+    });
+    const voiceUpcoming = computed(function () {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return voiceAppearance.value.events.filter(function (event) {
+        const time = new Date((event.date || '') + 'T00:00:00').getTime();
+        return !isNaN(time) && time >= today.getTime();
+      }).slice().sort(function (a, b) { return String(a.date).localeCompare(String(b.date)); });
+    });
+    const voicePastByYear = computed(function () {
+      const groups = [];
+      const map = {};
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      voiceAppearance.value.events.forEach(function (event) {
+        const time = new Date((event.date || '') + 'T00:00:00').getTime();
+        if (!isNaN(time) && time >= today.getTime()) return;
+        const year = (event.date || '日期待补').slice(0, 4);
+        if (!map[year]) { map[year] = { year: year, events: [] }; groups.push(map[year]); }
+        map[year].events.push(event);
+      });
+      return groups;
+    });
+    function openVoiceFromEvent(actorId) {
+      const show = function () {
+        const found = findVaBySlug(actorId);
+        if (!found) return;
+        savedEventDetail.value = eventDetail.value;
+        voiceDetailSource.value = 'event';
+        activeTab.value = 'database';
+        dbView.value = 'voice';
+        voiceDetail.value = found;
+        eventDetail.value = null;
+        window.scrollTo(0, 0);
+        pushUrl();
+      };
+      return loadVoiceData().then(show, show);
+    }
     function openVa(slug) {
       const found = findVaBySlug(slug);
       if (!found) return;
+      voiceDetailSource.value = '';
+      savedEventDetail.value = null;
       if (!voiceDetail.value) vaSavedScrollY.value = window.scrollY || 0;
       voiceDetail.value = found;
       window.scrollTo(0, 0);
       pushUrl();
     }
     function voiceBack() {
+      if (voiceDetailSource.value === 'event') {
+        voiceDetail.value = null;
+        activeTab.value = 'live';
+        liveView.value = 'eventDetail';
+        eventDetail.value = savedEventDetail.value;
+        savedEventDetail.value = null;
+        voiceDetailSource.value = '';
+        window.scrollTo(0, 0);
+        pushUrl();
+        return;
+      }
       voiceDetail.value = null;
       pushUrl();
       var sy = vaSavedScrollY.value;
@@ -767,7 +914,17 @@ createApp({
             if (newsPage.value > 1) path += '?page=' + newsPage.value;
           }
         } else if (activeTab.value === 'live') {
-          if (liveView.value === 'liveSeries') {
+          if (liveView.value === 'eventHub') {
+            path = LANG_PREFIX + '/events';
+            const params = [];
+            if (evTime.value !== 'all') params.push('time=' + encodeURIComponent(evTime.value));
+            if (evKind.value !== 'all') params.push('kind=' + encodeURIComponent(evKind.value));
+            if (evMode.value !== 'all') params.push('mode=' + encodeURIComponent(evMode.value));
+            if (evYear.value !== 'all') params.push('year=' + encodeURIComponent(evYear.value));
+            if (params.length) path += '?' + params.join('&');
+          } else if (liveView.value === 'eventDetail' && eventDetail.value) {
+            path = LANG_PREFIX + '/events/' + encodeURIComponent(eventDetail.value.id);
+          } else if (liveView.value === 'liveSeries') {
             path = LANG_PREFIX + '/live/number_series_event';
           } else if (liveView.value === 'liveDetail') {
             const sg = (liveSeriesIndex.value >= 0 && liveSeriesIndex.value < SERIES_GRID.length) ? SERIES_GRID[liveSeriesIndex.value] : null;
@@ -866,7 +1023,7 @@ createApp({
       liveSeriesIndex.value = -1;
       livePerf.value = 0;
       liveDay.value = 0;
-      liveView.value = 'liveCats';
+      liveView.value = 'eventHub';
       activeTab.value = 'songs';
       if (home.value) return;
       if (first === 'news') {
@@ -904,6 +1061,23 @@ createApp({
         activeTab.value = 'songs';
         if (seg.length >= 2) {
           artistDetail.value = decodeURIComponent(seg[1]);
+        }
+      } else if (first === 'events') {
+        activeTab.value = 'live';
+        liveView.value = 'eventHub';
+        const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
+        if (requested) {
+          const found = eventsAll.value.find(function (event) { return event.id === requested; });
+          if (found) { eventDetail.value = found; liveView.value = 'eventDetail'; }
+        } else {
+          const time = url.searchParams.get('time');
+          const kind = url.searchParams.get('kind');
+          const mode = url.searchParams.get('mode');
+          const year = url.searchParams.get('year');
+          evTime.value = ['upcoming', 'past'].indexOf(time) >= 0 ? time : 'all';
+          evKind.value = ['concert', 'onsite', 'official_program'].indexOf(kind) >= 0 ? kind : 'all';
+          evMode.value = ['onsite', 'online', 'hybrid'].indexOf(mode) >= 0 ? mode : 'all';
+          evYear.value = /^20\d{2}$/.test(year || '') ? year : 'all';
         }
       } else if (first === 'live') {
         activeTab.value = 'live';
@@ -968,14 +1142,16 @@ createApp({
             }
           }
         } else if (sub === 'events') {
-          dbView.value = 'events';
           if ((seg[2] || '').toLowerCase() === 'data') {
+            dbView.value = 'events';
             evDataView.value = true;
             computeEvData();
           } else {
-            evDataView.value = false;
+            activeTab.value = 'live';
+            liveView.value = 'eventHub';
             const ft = url.searchParams.get('filter[time]');
             evTime.value = (ft === 'upcoming' || ft === 'past') ? ft : 'all';
+            history.replaceState({ r: true }, '', LANG_PREFIX + '/events' + (evTime.value !== 'all' ? '?time=' + evTime.value : ''));
           }
         } else if (sub === 'voice' || sub === 'voice-actors') {
           dbView.value = 'voice';
@@ -996,29 +1172,17 @@ createApp({
         } else {
           dbView.value = 'index';
         }
-      } else if (first === 'characters' || first === 'events') {
+      } else if (first === 'characters') {
         activeTab.value = 'database';
-        if (first === 'characters') {
-          dbView.value = 'characters';
-          const sub = (seg[1] || 'intro').toLowerCase();
-          charDetail.value = null;
-          if (sub === 'room' || sub === 'videos') {
-            charSub.value = sub;
-          } else {
-            charSub.value = 'intro';
-            const found = findCharById(sub);
-            if (found) charDetail.value = found;
-          }
+        dbView.value = 'characters';
+        const sub = (seg[1] || 'intro').toLowerCase();
+        charDetail.value = null;
+        if (sub === 'room' || sub === 'videos') {
+          charSub.value = sub;
         } else {
-          dbView.value = 'events';
-          if ((seg[1] || '').toLowerCase() === 'data') {
-            evDataView.value = true;
-            computeEvData();
-          } else {
-            evDataView.value = false;
-            const ft = url.searchParams.get('filter[time]');
-            evTime.value = (ft === 'upcoming' || ft === 'past') ? ft : 'all';
-          }
+          charSub.value = 'intro';
+          const found = findCharById(sub);
+          if (found) charDetail.value = found;
         }
       } else if (first === 'links') {
         activeTab.value = 'links';
@@ -1768,6 +1932,14 @@ createApp({
         });
         return;
       }
+      if (liveReturnSource.value === 'eventDetail') {
+        liveReturnSource.value = 'live';
+        activeTab.value = 'live';
+        liveView.value = 'eventDetail';
+        pushUrl();
+        window.scrollTo(0, 0);
+        return;
+      }
       if (liveView.value === 'liveCatDetail') backCatList();
       else showLiveView('liveSeries');
     }
@@ -2150,15 +2322,28 @@ createApp({
     watch(function () { return newsType.value; }, function () { newsPage.value = 1; });
     watch(function () { return newsItems.value.length; }, function () { newsPage.value = 1; });
 
-    const eventsCount = computed(function () { return homeStats.events !== null ? homeStats.events : eventsAll.value.length; });
+    const eventsCount = computed(function () { return eventsAll.value.length || (homeStats.events !== null ? homeStats.events : 0); });
+    const eventSeriesMap = computed(function () {
+      const map = {};
+      eventSeries.value.forEach(function (series) { map[series.id] = series; });
+      return map;
+    });
+    const eventYears = computed(function () {
+      const years = new Set();
+      eventsAll.value.forEach(function (event) { if (/^20\d{2}/.test(event.date || '')) years.add(event.date.slice(0, 4)); });
+      return Array.from(years).sort().reverse();
+    });
     const eventsFiltered = computed(function () {
       const q = (eventsQuery.value || '').toLowerCase();
       let out = eventsAll.value.filter(function (e) {
         if (!q) return true;
         if ((e.title || '').toLowerCase().indexOf(q) !== -1) return true;
         if ((e.venue || '').toLowerCase().indexOf(q) !== -1) return true;
-        if ((e.times || '').toLowerCase().indexOf(q) !== -1) return true;
-        return e.actors.some(function (a) { return (a.name || '').toLowerCase().indexOf(q) !== -1; });
+        const series = eventSeriesMap.value[e.series_id] || {};
+        if (((series.name || '') + ' ' + (series.name_ja || '')).toLowerCase().indexOf(q) !== -1) return true;
+        if ((e.cast || []).some(function (a) { return ((a.name || '') + ' ' + (a.role || '')).toLowerCase().indexOf(q) !== -1; })) return true;
+        if ((e.characters || []).some(function (character) { return ((character.name || '') + ' ' + (character.name_ja || '')).toLowerCase().indexOf(q) !== -1; })) return true;
+        return (e.sessions || []).some(function (session) { return (session.songs || []).some(function (song) { return song.toLowerCase().indexOf(q) !== -1; }); });
       });
       if (evTime.value !== 'all') {
         const now = Date.now();
@@ -2169,6 +2354,9 @@ createApp({
           return t < now - 86400000;
         });
       }
+      if (evKind.value !== 'all') out = out.filter(function (event) { return event.kind === evKind.value; });
+      if (evMode.value !== 'all') out = out.filter(function (event) { return event.mode === evMode.value; });
+      if (evYear.value !== 'all') out = out.filter(function (event) { return (event.date || '').slice(0, 4) === evYear.value; });
       return out;
     });
     const eventsPageCount = computed(function () {
@@ -2215,6 +2403,77 @@ createApp({
       var t = new Date(e.date + 'T00:00:00').getTime();
       return !isNaN(t) && t < Date.now() - 86400000;
     }
+    function eventDateLabel(event) {
+      if (!event || !event.date) return '日期待补';
+      return event.end_date && event.end_date !== event.date ? event.date + ' — ' + event.end_date : event.date;
+    }
+    function eventKindLabel(kind) {
+      return { concert: '音乐演出', onsite: '线下活动', official_program: '官方节目' }[kind] || '活动';
+    }
+    function eventModeLabel(mode) {
+      return { onsite: '现场', online: '线上', hybrid: '线上＋现场' }[mode] || '形式待补';
+    }
+    function eventSeriesName(event) {
+      const series = eventSeriesMap.value[(event && event.series_id) || ''];
+      return series ? series.name : '';
+    }
+    function eventCastSummary(event) {
+      const cast = (event && event.cast) || [];
+      if (!cast.length && event && event.cast_status === 'character_only') {
+        const characters = event.characters || [];
+        return (characters.slice(0, 5).map(function (item) { return item.name; }).join('、') || '角色出演节目')
+          + (characters.length > 5 ? ' 等 ' + characters.length + ' 位角色' : '') + '（不计声优本人出演）';
+      }
+      if (!cast.length) return event && event.cast_status === 'pending' ? '出演者待核实' : '出演者资料待补';
+      return cast.slice(0, 5).map(function (item) { return item.name + (item.role ? '（' + item.role + '）' : ''); }).join('、') + (cast.length > 5 ? ' 等 ' + cast.length + ' 人' : '');
+    }
+    function eventSongCount(event) {
+      return (event.sessions || []).reduce(function (total, session) { return total + (session.songs || []).length; }, 0);
+    }
+    const eventVideos = computed(function () {
+      return ((eventDetail.value && eventDetail.value.media) || []).filter(function (item) { return item.video_id; });
+    });
+    function sourceLabel(source) {
+      return (source && source.label) || ({ official_announcement: '官方公告', official_youtube: '官方 YouTube', curated_live: '站内精调歌单', eventernote: 'Eventernote' }[(source && source.kind) || ''] || '资料来源');
+    }
+    function openEvent(eventOrId) {
+      const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
+      const found = eventsAll.value.find(function (event) { return event.id === id; });
+      if (!found) {
+        if (id && !eventsLoadPromise) return loadEvents().then(function () { openEvent(id); });
+        return;
+      }
+      eventsSavedScrollY.value = window.pageYOffset || document.documentElement.scrollTop || 0;
+      eventDetail.value = found;
+      liveView.value = 'eventDetail';
+      activeTab.value = 'live';
+      window.scrollTo(0, 0);
+      pushUrl();
+    }
+    function eventBack() {
+      eventDetail.value = null;
+      liveView.value = 'eventHub';
+      pushUrl();
+      Vue.nextTick(function () { restoreLiveScroll(eventsSavedScrollY.value || 0); });
+    }
+    function openEventLegacy(event) {
+      if (!event || !event.legacy_url) return;
+      openLiveFromEvents(event.legacy_url, 'eventDetail');
+    }
+    function openCharacterFromEvent(characterId) {
+      const show = function () {
+        savedEventDetail.value = eventDetail.value;
+        charDetailSource.value = 'event';
+        activeTab.value = 'database';
+        dbView.value = 'characters';
+        charSub.value = 'intro';
+        charDetail.value = findCharById(characterId);
+        eventDetail.value = null;
+        window.scrollTo(0, 0);
+        pushUrl();
+      };
+      return loadCharacterDetailData().then(show, show);
+    }
     const nextUpcomingEvent = computed(function () {
       if (homeNextEvent.value) return homeNextEvent.value;
       const now = new Date();
@@ -2231,21 +2490,12 @@ createApp({
     });
     const nextUpcomingHref = computed(function () {
       const e = nextUpcomingEvent.value;
-      if (!e) return null;
-      if (e.live) return liveDetailHref(e.live);
-      return nonliveHref(e);
+      return e ? LANG_PREFIX + '/events/' + encodeURIComponent(e.id) : null;
     });
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
       if (!e) return;
-      if (e.live) {
-        openLiveFromEvents(e.live, 'home');
-        return;
-      }
-      loadEvents().then(function () {
-        openNonliveFromEvents(e);
-        liveReturnSource.value = 'home';
-      });
+      loadEvents().then(function () { home.value = false; openEvent(e.id); });
     }
     function onEvImgError(ev) {
       ev.target.style.visibility = 'hidden';
@@ -2254,29 +2504,35 @@ createApp({
       if (eventsLoadPromise) return eventsLoadPromise;
       eventsError.value = '';
       eventsLoading.value = true;
-      eventsLoadPromise = fetch('/data/events_data.json', { cache: 'no-cache' })
+      eventsLoadPromise = fetch('/data/events_catalog.json', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (data) {
           eventsAll.value = (data && Array.isArray(data.events)) ? data.events : [];
-          eventsMeta.value = (data && data._meta && data._meta.scraped_at) ? data._meta.scraped_at : '2026-08-12';
+          eventSeries.value = (data && Array.isArray(data.series)) ? data.series : [];
+          eventsMeta.value = (data && data.generated_at) ? String(data.generated_at).slice(0, 10) : '';
           eventsLoading.value = false;
           eventsError.value = eventsAll.value.length ? '' : '活动数据为空。';
         })
         .catch(function () {
           eventsLoadPromise = null;
           eventsAll.value = [];
+          eventSeries.value = [];
           eventsLoading.value = false;
-          eventsError.value = '无法加载活动数据（请确认 data/events_data.json 存在，并通过本地服务访问本页）。';
+          eventsError.value = '无法加载统一活动目录（请确认 data/events_catalog.json 已生成，并通过本地服务访问本页）。';
         });
       return eventsLoadPromise;
     }
     function openEvData() {
       evDataView.value = true;
+      activeTab.value = 'database';
+      dbView.value = 'events';
       computeEvData();
       pushUrl();
     }
     function closeEvData() {
       evDataView.value = false;
+      activeTab.value = 'live';
+      liveView.value = 'eventHub';
       pushUrl();
     }
     function decodeHtml(s) {
@@ -2327,8 +2583,23 @@ createApp({
       eventsPage.value = 1;
       pushUrl();
     }
+    function setEvKind(value) { evKind.value = value; eventsPage.value = 1; pushUrl(); }
+    function setEvMode(value) { evMode.value = value; eventsPage.value = 1; pushUrl(); }
+    function setEvYear(value) { evYear.value = value; eventsPage.value = 1; pushUrl(); }
+    function clearEventFilters() {
+      eventsQuery.value = '';
+      evTime.value = 'all';
+      evKind.value = 'all';
+      evMode.value = 'all';
+      evYear.value = 'all';
+      eventsPage.value = 1;
+      pushUrl();
+    }
     watch(function () { return eventsQuery.value; }, function () { eventsPage.value = 1; });
     watch(function () { return evTime.value; }, function () { eventsPage.value = 1; });
+    watch(function () { return evKind.value; }, function () { eventsPage.value = 1; });
+    watch(function () { return evMode.value; }, function () { eventsPage.value = 1; });
+    watch(function () { return evYear.value; }, function () { eventsPage.value = 1; });
     watch(function () { return eventsAll.value; }, function () { if (evDataView.value && !voiceEvData.value.length) computeEvData(); });
     const coverTint = reactive({});
     const tintSet = new Set();
@@ -2749,17 +3020,17 @@ createApp({
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
       currentGroup, currentSub, liveDetailTitle, liveInfoHtml, setlistTitle, setlistLinks, setlistTable,
       seriesGrid, syncFromUrl, prepareCurrentRoute, loadHomeSummaryIfNeeded,
-      eventsCount, eventsMeta, eventsQuery, evTime, setEvTime, eventsPaged, eventsFiltered,
+      eventsCount, eventsMeta, eventsQuery, evTime, evKind, evMode, evYear, eventYears, setEvTime, setEvKind, setEvMode, setEvYear, clearEventFilters, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
+      eventDetail, eventVideos, openEvent, eventBack, openEventLegacy, eventDateLabel, eventKindLabel, eventModeLabel, eventSeriesName, eventCastSummary, eventSongCount, sourceLabel, openVoiceFromEvent, openCharacterFromEvent,
+      charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro, charAppearance,
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
       songDetail, songAlbums, songLives, songCharList, findSongByName, openSongFromChar, loadSongEvData,
-      songEarliestRelease, songLivesExpanded, songLivesVisible, songAlbumsExpanded, openLiveFromUrl,
-      songFromChar, songBackPrev,
-      voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
+      songEarliestRelease, songLivesExpanded, songLivesVisible, openLiveFromUrl,
+      voiceProfiles, voiceDetail, voiceDetailSource, voiceAppearance, voiceUpcoming, voicePastByYear, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio
     };
@@ -2870,6 +3141,17 @@ createApp({
             cvP.innerHTML = '<span>CV：</span>' + (window.vaLink || function (x) { return x; })(d.cv_former_zh) + '→' + (window.vaLink || function (x) { return x; })(d.cv_zh || '');
           }
         }
+      }
+      var currentCv = box.querySelector('.uma-cv p');
+      if (currentCv) {
+        Array.from(currentCv.querySelectorAll('a')).forEach(function (link) {
+          var profile = window.voiceProfileForName && window.voiceProfileForName(link.textContent || '');
+          if (!profile) return;
+          var prefix = (window.__uma_app && window.__uma_app.LANG_PREFIX) || '/zh-Hans';
+          link.href = prefix + '/database/voice-actors/' + encodeURIComponent(profile.id);
+          link.removeAttribute('target');
+          link.removeAttribute('rel');
+        });
       }
       var rel = relByCid[detail.id];
       if (rel && rel.real) {
@@ -3244,7 +3526,9 @@ createApp({
       ov = document.createElement('div');
       ov.id = 'c-lightbox';
       ov.className = 'c-lightbox';
-      ov.innerHTML = '<img src="" alt="宿舍室友图大图">';
+      var lightboxImage = document.createElement('img');
+      lightboxImage.alt = '宿舍室友图大图';
+      ov.appendChild(lightboxImage);
       document.body.appendChild(ov);
     }
     initRoomPinch(ov);
@@ -3278,6 +3562,19 @@ createApp({
     grid.setAttribute('data-va-inited', '1');
     function norm(v) { return String(v || '').toLowerCase(); }
     function data() {
+      var generated = window.__uma_app && window.__uma_app.voiceProfiles;
+      if (generated && generated.length) {
+        return generated.map(function (profile) {
+          var identity = profile.identity || {}, photo = profile.photo || {};
+          return {
+            key: identity.zh || identity.ja || profile.id,
+            slug: profile.slug || profile.id,
+            zh: identity.zh || identity.ja || '', ja: identity.ja || identity.zh || '',
+            photo: photo.url || '',
+            roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', orig: !!role.former, main: role.color_main || '#8c83ff' }; })
+          };
+        });
+      }
       var src = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
       var map = new Map();
       var charByZh = {};
@@ -3322,7 +3619,7 @@ createApp({
         card.className = 'va-card';
         card.href = '/zh-Hans/database/voice-actors/' + v.slug;
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
-        var ph = window.VA_PHOTOS && window.VA_PHOTOS[v.key];
+        var ph = v.photo ? { img: v.photo } : (window.VA_PHOTOS && window.VA_PHOTOS[v.key]);
         var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
         var imgHtml = ph
           ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'
