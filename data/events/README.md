@@ -7,7 +7,7 @@ Generated files live one directory above and must not be edited by hand.
 
 - `series.json`: stable identities and display names for recurring event/program series.
 - `official_programs.json`: official broadcast metadata collected from the official YouTube channel and official portal announcements. It is refreshed explicitly with `python3 uma_tools/update_events.py --refresh-programs` and remains usable offline after it is committed.
-- `voice_actor_details.json`: cited biographical fields refreshed from Japanese Wikipedia, with reviewed per-person official-source fallbacks in `overrides.json`.
+- `voice_actor_details.json`: cited biographical fields refreshed from Japanese Wikipedia, official-agency portrait fallbacks for people absent from the local photo index, and reviewed per-person corrections in `overrides.json`.
 - `overrides.json`: small, reviewed corrections for source conflicts, aliases, missing cast, or intentionally hidden records. This is the only hand-edited event correction layer.
 
 ## Update workflow
@@ -16,10 +16,15 @@ Run `python3 uma_tools/update_events.py`. The command reads all existing event,
 live, character, and voice sources, then atomically writes:
 
 - `data/events_catalog.json`
+- `data/song_catalog.json`
 - `data/appearance_index.json`
 - `data/voice_actor_profiles.json`
 
-The statistics view derives its rows from `events_catalog.json`; no parallel
+`song_catalog.json` is the shared music relationship index. It groups explicit
+song versions under one work while retaining every original title, album track,
+audio URL, live performance, character, and verified voice-actor relationship.
+Setlist spellings and version annotations remain intact in `events_catalog.json`.
+The statistics view derives its rows from these generated indexes; no parallel
 compatibility indexes are generated.
 
 Run `python3 uma_tools/update_events.py --check` in verification. It rebuilds in

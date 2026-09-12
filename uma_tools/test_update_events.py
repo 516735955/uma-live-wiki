@@ -15,6 +15,17 @@ SPEC.loader.exec_module(UPDATE_EVENTS)
 
 
 class EventPipelineTest(unittest.TestCase):
+    def test_program_summary_discards_channel_boilerplate(self):
+        description = (
+            "北海道の動物たちに魅了されたサクラチヨノオーが…… "
+            "■イベント開催中！ https://umamusume.jp/news/detail.php?id=1264 "
+            "チャンネル登録はこちら！ https://www.youtube.com/@UMAMUSUME_official"
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.concise_program_summary(description),
+            "北海道の動物たちに魅了されたサクラチヨノオーが…… ■イベント開催中！",
+        )
+
     def test_program_identity_distinguishes_all_regular_series(self):
         self.assertEqual(
             UPDATE_EVENTS.program_identity("そこそこぱかライブTV Vol.55"),
@@ -184,6 +195,45 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             ],
         )
 
+    def test_setlist_song_versions_are_preserved(self):
+        self.assertEqual(
+            UPDATE_EVENTS.clean_song("winning the soul（GO BEYOND Mix Ver.）"),
+            "winning the soul（GO BEYOND Mix Ver.）",
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.clean_song("うまぴょい伝説 ※Short ver."),
+            "うまぴょい伝説 ※Short ver.",
+        )
+
+    def test_song_catalog_groups_explicit_versions_without_losing_releases(self):
+        class Identities:
+            @staticmethod
+            def character_id(name):
+                return {"スペシャルウィーク": "specialweek"}.get(name, "")
+
+        albums = [{
+            "name": "Album A", "catalog": "ABC-1", "release": "2024-01-01", "type": "专辑", "cover": "cover.jpg",
+            "songs": [
+                {"name": "Song A", "artist": "Singer", "url": "a"},
+                {"name": "Song A (Game Size)", "artist": "Singer", "url": "b"},
+                {"name": "Song A (Game Size)（スペシャルウィーク）", "artist": "Singer", "url": "c"},
+                {"name": "Song A -Band Ver-", "artist": "Singer", "url": "d"},
+                {"name": "Song A (Artist (Band) Remix)", "artist": "Singer", "url": "e"},
+                {"name": "Song A (TV Size) [13話EDテーマ]", "artist": "Singer", "url": "f"},
+            ],
+        }]
+        events = [{
+            "id": "event-a", "title": "Event A", "date": "2024-02-01", "kind": "concert", "series_id": "test",
+            "sessions": [{"id": "event-a-session-1", "label": "DAY1", "date": "2024-02-01", "performances": [{"song": "Song A ※Short ver.", "character_ids": ["specialweek"]}]}],
+        }]
+        catalog = UPDATE_EVENTS.build_song_catalog(albums, events, Identities(), "2024-02-02T00:00:00+00:00")
+        self.assertEqual(catalog["coverage"], {"songs": 1, "versions": 7, "release_tracks": 6, "live_performances": 1})
+        self.assertEqual(catalog["songs"][0]["title"], "Song A")
+        self.assertEqual(len(catalog["songs"][0]["versions"]), 7)
+        character_version = next(version for version in catalog["songs"][0]["versions"] if "スペシャルウィーク" in version["title"])
+        self.assertEqual(character_version["version_label"], "Game Size / 角色独唱：スペシャルウィーク")
+        self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
+
     def test_full_cast_setlist_rows_expand_to_the_correct_day_cast(self):
         class Identities:
             @staticmethod
@@ -248,6 +298,13 @@ DAY2：2024年3月31日（日）19:00頃開始予定
 
     def test_every_curated_setlist_day_has_an_exact_source_locator(self):
         built = UPDATE_EVENTS.build()
+        actual_locators = [
+            json.dumps(session["setlist_source"], sort_keys=True)
+            for event in built["catalog"]["events"]
+            for session in event.get("sessions") or []
+            if session.get("setlist_source")
+        ]
+        self.assertEqual(len(actual_locators), len(set(actual_locators)))
         actual = {
             json.dumps(session["setlist_source"], sort_keys=True): session
             for event in built["catalog"]["events"]
@@ -342,15 +399,56 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             {"curated_live_cast", "official_announcement"},
         )
 
+    def test_person_only_cast_evidence_folds_into_one_known_role(self):
+        merged = UPDATE_EVENTS.merge_cast_records([
+            {
+                "voice_actor_id": "va-0040", "name": "和氣あず未", "character_id": "specialweek",
+                "role": "特别周", "evidence": "curated_live_cast", "source_url": "",
+                "person_type": "voice_actor", "resolution": "resolved",
+            },
+            {
+                "voice_actor_id": "va-0040", "name": "和氣あず未", "character_id": "", "role": "",
+                "evidence": "eventernote", "source_url": "https://example.test/event",
+                "person_type": "voice_actor", "resolution": "resolved",
+            },
+        ])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["character_id"], "specialweek")
+        self.assertEqual(
+            {source["kind"] for source in merged[0]["evidence_sources"]},
+            {"curated_live_cast", "eventernote"},
+        )
+
     def test_wikipedia_search_identity_rejects_unrelated_people(self):
         self.assertEqual(UPDATE_EVENTS.wikipedia_title_key("中島由貴 (声優)"), UPDATE_EVENTS.wikipedia_title_key("中島由貴"))
         self.assertNotEqual(UPDATE_EVENTS.wikipedia_title_key("上田瞳"), UPDATE_EVENTS.wikipedia_title_key("高柳知葉"))
 
+    def test_official_profile_photo_reads_supported_agency_pages(self):
+        original_json = UPDATE_EVENTS.fetch_json_url
+        original_text = UPDATE_EVENTS.fetch_text_url
+        try:
+            UPDATE_EVENTS.fetch_json_url = lambda _url: {
+                "talent": {"image_path1": "https://across-ent.com/assets/media/portrait.jpg"}
+            }
+            UPDATE_EVENTS.fetch_text_url = lambda _url: '<meta property="og:image" content="/ogp.jpg"><div class="photo"><img src="/img/talent/32/1.jpg"></div>'
+            self.assertEqual(
+                UPDATE_EVENTS.official_profile_photo("https://across-ent.com/voice_actor/detail.html?id=110")["photo_url"],
+                "https://across-ent.com/assets/media/portrait.jpg",
+            )
+            self.assertEqual(
+                UPDATE_EVENTS.official_profile_photo("https://www.kenproduction.co.jp/talent/32")["photo_url"],
+                "https://www.kenproduction.co.jp/img/talent/32/1.jpg",
+            )
+        finally:
+            UPDATE_EVENTS.fetch_json_url = original_json
+            UPDATE_EVENTS.fetch_text_url = original_text
+
     def test_committed_relationships_reference_known_records(self):
         catalog = json.loads((ROOT / "data" / "events_catalog.json").read_text(encoding="utf-8"))
+        songs = json.loads((ROOT / "data" / "song_catalog.json").read_text(encoding="utf-8"))
         appearances = json.loads((ROOT / "data" / "appearance_index.json").read_text(encoding="utf-8"))
         profiles = json.loads((ROOT / "data" / "voice_actor_profiles.json").read_text(encoding="utf-8"))["voice_actors"]
-        self.assertEqual(UPDATE_EVENTS.validate(catalog, appearances, profiles), [])
+        self.assertEqual(UPDATE_EVENTS.validate(catalog, songs, appearances, profiles), [])
 
 
 if __name__ == "__main__":

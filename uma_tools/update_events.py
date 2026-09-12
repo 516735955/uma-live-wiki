@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the unified event, appearance, and voice-actor indexes.
+"""Build the unified event, music, appearance, and voice-actor indexes.
 
 The two hand-curated live JSON files are immutable inputs. The normal command is
 offline and deterministic apart from generated_at. Network discovery is an
@@ -50,6 +50,7 @@ VOICE_DETAILS_FILE = EVENTS_DIR / "voice_actor_details.json"
 IMMUTABLE_LIVE_FILES = (DATA_DIR / "live_data.json", DATA_DIR / "live_cat_data.json")
 OUTPUT_FILES = {
     "catalog": DATA_DIR / "events_catalog.json",
+    "songs": DATA_DIR / "song_catalog.json",
     "appearances": DATA_DIR / "appearance_index.json",
     "profiles": DATA_DIR / "voice_actor_profiles.json",
 }
@@ -69,6 +70,12 @@ CAST_LABEL_RE = re.compile(
 )
 FULL_CAST_RE = re.compile(r"(?:全员|全員)")
 NON_PERFORMER_CAST_LABEL_RE = re.compile(r"实况|實況|嘉宾|ゲスト|向导|案内|解说|解説|司会|MC", re.I)
+SONG_VERSION_HINT_RE = re.compile(
+    r"(?:ver(?:sion)?\.?|size|remaster|remix|mix|off[ -]?vocal|instrumental|"
+    r"acoustic|symphonic|revision|arrange|edit|solo|feat\.|short|long|game|tv|"
+    r"anime|pv|mv|舞台|剧中|劇中|歌词版|歌詞版|アドリブ|メロ)",
+    re.I,
+)
 
 
 def read_json(path: Path) -> Any:
@@ -109,6 +116,24 @@ def atomic_json(path: Path, value: Any) -> None:
 
 def clean_text(value: Any) -> str:
     return re.sub(r"\s+", " ", html.unescape(HTML_TAG_RE.sub("", str(value or "")))).strip()
+
+
+def concise_program_summary(value: Any, limit: int = 300) -> str:
+    """Keep the editorial introduction and discard channel-wide YouTube boilerplate."""
+    text = clean_text(value)
+    if not text:
+        return ""
+    text = re.split(
+        r"\s+(?:https?://|[-+]{5,}|チャンネル登録はこちら|"
+        r"【ウマ娘 プリティーダービー(?:公式| 公式)|【ぱかチューブっ！公式)",
+        text,
+        maxsplit=1,
+    )[0].strip()
+    if len(text) <= limit:
+        return text
+    shortened = text[:limit].rstrip()
+    sentence_end = max(shortened.rfind("。"), shortened.rfind("！"), shortened.rfind("？"))
+    return shortened[: sentence_end + 1] if sentence_end >= limit // 2 else shortened + "……"
 
 
 def fold_name(value: str) -> str:
@@ -162,8 +187,6 @@ def clean_song(raw: str) -> str:
     value = clean_text(raw)
     if not value or value == "安可" or "曲名不明" in value or re.fullmatch(r"MC\d*", value, re.I):
         return ""
-    value = re.sub(r"（[^（）]*）", "", value)
-    value = re.sub(r"\([^()]*\)", "", value)
     value = value.replace("\ufe0e", "").replace("\ufe0f", "")
     value = re.sub(r"\s+([!?！？。、,.])", r"\1", value)
     value = re.sub(r"\s+", " ", value).strip()
@@ -202,6 +225,225 @@ def table_performances(
             character_ids = list(dict.fromkeys([*full_cast, *character_ids]))
         performances.append({"song": song, "character_ids": character_ids})
     return performances
+
+
+def fold_song_key(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", clean_song(value)).lower()
+    normalized = normalized.replace("’", "'").replace("‘", "'").replace("・", "·")
+    return re.sub(r"\s+", "", normalized)
+
+
+def pop_trailing_song_group(value: str) -> tuple[str, str] | None:
+    """Return the final balanced ASCII/full-width parenthetical group."""
+    text = value.strip()
+    if not text or text[-1] not in ")）":
+        return None
+    closing = text[-1]
+    opening = "(" if closing == ")" else "（"
+    depth = 0
+    for index in range(len(text) - 1, -1, -1):
+        char = text[index]
+        if char == closing:
+            depth += 1
+        elif char == opening:
+            depth -= 1
+            if depth == 0:
+                candidate = text[:index].strip()
+                label = text[index + 1:-1].strip()
+                return (candidate, label) if candidate and label else None
+    return None
+
+
+def split_song_version(title: str, identities: "IdentityIndex", known_titles: set[str]) -> tuple[str, str]:
+    """Split only explicit version/performer suffixes; preserve ambiguous title text."""
+    base = clean_song(title)
+    labels: list[str] = []
+    while base:
+        bracket_match = re.match(r"^(.*?)\s*\[([^\[\]]+)\]\s*$", base)
+        if (
+            bracket_match
+            and bracket_match.group(1).strip()
+            and (
+                SONG_VERSION_HINT_RE.search(bracket_match.group(2))
+                or SONG_VERSION_HINT_RE.search(bracket_match.group(1))
+                or fold_song_key(bracket_match.group(1)) in known_titles
+            )
+        ):
+            base = bracket_match.group(1).strip()
+            labels.insert(0, bracket_match.group(2).strip())
+            continue
+        note_match = re.match(r"^(.*?)\s*※\s*(.+)$", base)
+        if note_match and note_match.group(1).strip():
+            base = note_match.group(1).strip()
+            labels.insert(0, note_match.group(2).strip())
+            continue
+        dash_match = re.match(r"^(.*?)\s+[-‐‑–—―]\s*(.+?)\s*[-‐‑–—―]?\s*$", base)
+        if (
+            dash_match
+            and dash_match.group(1).strip()
+            and fold_song_key(dash_match.group(1)) in known_titles
+            and SONG_VERSION_HINT_RE.search(dash_match.group(2))
+        ):
+            base = dash_match.group(1).strip()
+            labels.insert(0, dash_match.group(2).strip())
+            continue
+        suffix = pop_trailing_song_group(base)
+        if not suffix:
+            break
+        candidate, label = suffix
+        character_id = identities.character_id(label)
+        should_split = bool(
+            SONG_VERSION_HINT_RE.search(label)
+            or character_id
+            or fold_song_key(candidate) in known_titles
+        )
+        if not should_split:
+            break
+        base = candidate
+        labels.insert(0, f"角色独唱：{label}" if character_id else label)
+    return base or clean_song(title), " / ".join(label for label in labels if label)
+
+
+def stable_song_id(title: str) -> str:
+    normalized = unicodedata.normalize("NFKC", title or "").strip()
+    readable = stable_suffix(normalized)[:40]
+    digest = hashlib.sha1(fold_song_key(normalized).encode("utf-8")).hexdigest()[:10]
+    return "song-" + ((readable + "-") if readable else "") + digest
+
+
+def stable_version_id(song_id: str, title: str) -> str:
+    digest = hashlib.sha1(fold_song_key(title).encode("utf-8")).hexdigest()[:10]
+    return f"{song_id}-v-{digest}"
+
+
+def stable_album_id(album: dict[str, Any]) -> str:
+    catalog = re.sub(r"[^a-z0-9]+", "-", str(album.get("catalog") or "").lower()).strip("-")
+    if catalog:
+        return "album-" + catalog
+    title = str(album.get("name") or "")
+    return "album-" + hashlib.sha1(fold_song_key(title).encode("utf-8")).hexdigest()[:12]
+
+
+def build_song_catalog(
+    albums: list[dict[str, Any]],
+    events: list[dict[str, Any]],
+    identities: "IdentityIndex",
+    generated_at: str,
+) -> dict[str, Any]:
+    """Build one canonical work with explicit release/performance variants."""
+    raw_titles = {
+        fold_song_key(str(song.get("name") or ""))
+        for album in albums
+        for song in album.get("songs") or []
+        if clean_song(str(song.get("name") or ""))
+    }
+    raw_titles.update(
+        fold_song_key(str(performance.get("song") or ""))
+        for event in events
+        for session in event.get("sessions") or []
+        for performance in session.get("performances") or []
+        if clean_song(str(performance.get("song") or ""))
+    )
+    works: dict[str, dict[str, Any]] = {}
+
+    def ensure_version(exact_title: str) -> tuple[dict[str, Any], dict[str, Any]]:
+        title = clean_song(exact_title)
+        base, version_label = split_song_version(title, identities, raw_titles)
+        work_key = fold_song_key(base)
+        work = works.setdefault(work_key, {
+            "id": stable_song_id(base), "title": base, "aliases": set(), "artists": set(),
+            "character_ids": set(), "voice_actor_ids": set(), "versions": {},
+        })
+        work["aliases"].add(title)
+        version_key = fold_song_key(title)
+        version = work["versions"].setdefault(version_key, {
+            "id": stable_version_id(work["id"], title), "title": title,
+            "version_label": version_label, "artists": set(), "releases": [], "performances": [],
+        })
+        return work, version
+
+    for album in albums:
+        album_id = stable_album_id(album)
+        for track_number, track in enumerate(album.get("songs") or [], 1):
+            if not clean_song(str(track.get("name") or "")):
+                continue
+            work, version = ensure_version(str(track.get("name") or ""))
+            artist = str(track.get("artist") or "").strip()
+            if artist:
+                work["artists"].add(artist)
+                version["artists"].add(artist)
+            release = {
+                "album_id": album_id, "album_name": album.get("name") or "", "release_date": album.get("release") or "",
+                "catalog": album.get("catalog") or "", "type": album.get("type") or "", "cover": album.get("cover") or "",
+                "track_number": track_number, "artist": artist, "audio_url": track.get("url") or "", "image": track.get("pic") or "",
+            }
+            version["releases"].append(release)
+
+    for event in events:
+        for session in event.get("sessions") or []:
+            actor_ids_by_character: dict[str, set[str]] = defaultdict(set)
+            for cast in [*(event.get("cast") or []), *(session.get("cast") or [])]:
+                if cast.get("character_id") and cast.get("voice_actor_id"):
+                    actor_ids_by_character[cast["character_id"]].add(cast["voice_actor_id"])
+            for performance_index, performance in enumerate(session.get("performances") or [], 1):
+                title = str(performance.get("song") or "")
+                if not clean_song(title):
+                    continue
+                work, version = ensure_version(title)
+                performance["song_id"] = work["id"]
+                performance["version_id"] = version["id"]
+                performance["song_title"] = work["title"]
+                character_ids = list(dict.fromkeys(performance.get("character_ids") or []))
+                voice_actor_ids = set()
+                for character_id in character_ids:
+                    resolved = actor_ids_by_character.get(character_id) or set()
+                    character = getattr(identities, "character_by_id", {}).get(character_id) or {}
+                    if not resolved and not character.get("cv_former") and hasattr(identities, "voice_id"):
+                        current_actor = identities.voice_id(character.get("cv") or character.get("cv_zh") or "")
+                        if current_actor:
+                            resolved = {current_actor}
+                    voice_actor_ids.update(resolved)
+                work["character_ids"].update(character_ids)
+                work["voice_actor_ids"].update(voice_actor_ids)
+                version["performances"].append({
+                    "event_id": event.get("id") or "", "event_title": event.get("title") or "", "event_date": event.get("date") or "",
+                    "kind": event.get("kind") or "", "series_id": event.get("series_id") or "",
+                    "session_id": session.get("id") or "", "session_label": session.get("label") or "",
+                    "session_date": session.get("date") or "", "performance_index": performance_index,
+                    "character_ids": character_ids, "voice_actor_ids": sorted(voice_actor_ids),
+                })
+
+    songs = []
+    for work in works.values():
+        versions = []
+        for version in work["versions"].values():
+            releases = sorted(version["releases"], key=lambda row: (row["release_date"] or "9999-99-99", row["album_name"], row["track_number"]))
+            performances = sorted(version["performances"], key=lambda row: (row["session_date"] or row["event_date"] or "0000-00-00", row["event_id"], row["session_id"]), reverse=True)
+            versions.append({
+                "id": version["id"], "title": version["title"], "version_label": version["version_label"],
+                "artists": sorted(version["artists"]), "releases": releases, "performances": performances,
+                "release_count": len(releases), "performance_count": len(performances),
+            })
+        versions.sort(key=lambda row: (bool(row["version_label"]), row["version_label"], row["title"]))
+        release_count = sum(version["release_count"] for version in versions)
+        performance_count = sum(version["performance_count"] for version in versions)
+        songs.append({
+            "id": work["id"], "title": work["title"], "aliases": sorted(work["aliases"]),
+            "artists": sorted(work["artists"]), "character_ids": sorted(work["character_ids"]),
+            "voice_actor_ids": sorted(work["voice_actor_ids"]),
+            "versions": versions, "version_count": len(versions), "release_count": release_count,
+            "performance_count": performance_count,
+        })
+    songs.sort(key=lambda row: (fold_song_key(row["title"]), row["id"]))
+    return {
+        "schema_version": 1, "generated_at": generated_at,
+        "coverage": {
+            "songs": len(songs), "versions": sum(row["version_count"] for row in songs),
+            "release_tracks": sum(row["release_count"] for row in songs),
+            "live_performances": sum(row["performance_count"] for row in songs),
+        },
+        "songs": songs,
+    }
 
 
 def parse_cast_text(value: str) -> list[dict[str, str]]:
@@ -398,9 +640,9 @@ class IdentityIndex:
                 next_number += 1
             assigned_ids.add(actor_id)
             aliases = sorted(set(record["aliases"]), key=lambda value: (value != record["zh"], value))
-            photo = self.photos.get(record["zh"]) or self.photos.get(record["ja"]) or {}
             detail = next((details_by_alias.get(fold_name(name)) for name in (record["ja"], record["zh"], *aliases) if details_by_alias.get(fold_name(name))), {})
             detail = dict(detail)
+            photo = self.photos.get(record["zh"]) or self.photos.get(record["ja"]) or {}
             profile_patch = next(
                 ((self.overrides.get("voice_actor_profile_overrides") or {}).get(name) for name in (record["ja"], record["zh"], *aliases) if (self.overrides.get("voice_actor_profile_overrides") or {}).get(name)),
                 None,
@@ -433,9 +675,9 @@ class IdentityIndex:
                     "status": detail.get("status") or "partial",
                 },
                 "photo": {
-                    "url": photo.get("img") or "",
-                    "source_url": photo.get("page") or "",
-                    "source_title": photo.get("title") or "",
+                    "url": photo.get("img") or detail.get("photo_url") or "",
+                    "source_url": photo.get("page") or detail.get("photo_source_url") or "",
+                    "source_title": photo.get("title") or detail.get("photo_source_title") or "",
                 },
                 "roles": sorted(record["roles"], key=lambda role: (role["former"], role["name"])),
             })
@@ -539,7 +781,34 @@ def merge_cast_records(items: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
             existing["role"] = item["role"]
         if not existing.get("character_id") and item.get("character_id"):
             existing["character_id"] = item["character_id"]
-    return out
+
+    # Eventernote often confirms only the person while a hand-curated setlist
+    # supplies that same person's character. When exactly one richer relation
+    # exists, fold the person-only evidence into it instead of showing the cast
+    # member twice. Keep the generic row when one actor genuinely has multiple
+    # roles and the source does not say which one it supports.
+    actor_relations: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for item in out:
+        actor_id = str(item.get("voice_actor_id") or "")
+        if actor_id and (item.get("character_id") or item.get("role")):
+            actor_relations[actor_id].append(item)
+    merged_generic_ids: set[int] = set()
+    for item in out:
+        actor_id = str(item.get("voice_actor_id") or "")
+        if not actor_id or item.get("character_id") or item.get("role"):
+            continue
+        richer = actor_relations.get(actor_id) or []
+        if len(richer) != 1:
+            continue
+        target = richer[0]
+        target["evidence_sources"] = list({
+            (source.get("kind"), source.get("url")): source
+            for source in [*target.get("evidence_sources", []), *item.get("evidence_sources", [])]
+        }.values())
+        if not target.get("source_url") and item.get("source_url"):
+            target["source_url"] = item["source_url"]
+        merged_generic_ids.add(id(item))
+    return [item for item in out if id(item) not in merged_generic_ids]
 
 
 def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, evidence: str, source_url: str = "") -> list[dict[str, Any]]:
@@ -787,7 +1056,7 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
             "sessions": sessions,
             "media": program_media,
             "sources": program_sources,
-            "legacy_url": "", "image": source.get("thumbnail") or "", "summary": source.get("summary") or "",
+            "legacy_url": "", "image": source.get("thumbnail") or "", "summary": concise_program_summary(source.get("summary")),
             "schedule_status": source.get("schedule_status") or ("scheduled" if source.get("date") else "unknown"),
             "metadata_status": source.get("metadata_status") or "complete",
         })
@@ -928,17 +1197,24 @@ def build_appearance_index(events: list[dict[str, Any]], identities: IdentityInd
                 char_in_event.add(char_id)
                 if actor_id:
                     cast_actor_by_character[char_id].add(actor_id)
-        event_songs: dict[str, set[str]] = defaultdict(set)
+        event_songs: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
         for session in event.get("sessions") or []:
             session_chars = set(session.get("character_ids") or [])
             char_in_event.update(session_chars)
             for performance in session.get("performances") or []:
-                song = performance.get("song") or ""
-                if not song:
+                song = performance.get("song_title") or performance.get("song") or ""
+                song_id = performance.get("song_id") or ""
+                version_id = performance.get("version_id") or ""
+                if not song or not song_id:
                     continue
                 performance_chars = set(performance.get("character_ids") or [])
                 for char_id in performance_chars:
-                    event_songs[char_id].add(song)
+                    relation = event_songs[char_id].setdefault(song_id, {
+                        "song_id": song_id, "name": song, "event_ids": [], "performance_ids": [], "version_ids": [],
+                    })
+                    relation["event_ids"].append(event["id"])
+                    relation["performance_ids"].append(f"{session.get('id') or event['id']}:{version_id}")
+                    relation["version_ids"].append(version_id)
                 for char_id in performance_chars:
                     character = identities.character_by_id.get(char_id) or {}
                     actor_ids = cast_actor_by_character.get(char_id) or set()
@@ -960,8 +1236,12 @@ def build_appearance_index(events: list[dict[str, Any]], identities: IdentityInd
         for char_id, songs in event_songs.items():
             if char_id not in chars:
                 continue
-            for song in songs:
-                chars[char_id]["songs"].setdefault(song, []).append(event["id"])
+            for song_id, relation in songs.items():
+                char_relation = chars[char_id]["songs"].setdefault(song_id, {
+                    "song_id": song_id, "name": relation["name"], "event_ids": [], "performance_ids": [], "version_ids": [],
+                })
+                for key in ("event_ids", "performance_ids", "version_ids"):
+                    char_relation[key].extend(relation[key])
                 character = identities.character_by_id.get(char_id) or {}
                 actor_ids = cast_actor_by_character.get(char_id) or set()
                 if not actor_ids and not character.get("cv_former"):
@@ -970,16 +1250,28 @@ def build_appearance_index(events: list[dict[str, Any]], identities: IdentityInd
                         actor_ids = {current_actor}
                 for actor_id in actor_ids:
                     if actor_id in voice:
-                        voice[actor_id]["songs"].setdefault(song, []).append(event["id"])
+                        actor_relation = voice[actor_id]["songs"].setdefault(song_id, {
+                            "song_id": song_id, "name": relation["name"], "event_ids": [], "performance_ids": [], "version_ids": [],
+                        })
+                        for key in ("event_ids", "performance_ids", "version_ids"):
+                            actor_relation[key].extend(relation[key])
     for bucket in (voice, chars):
         for value in bucket.values():
             value["events"].sort(key=lambda row: (row.get("date") or "0000-00-00", row["event_id"]), reverse=True)
             value["songs"] = [
-                {"name": name, "event_ids": list(dict.fromkeys(event_ids)), "performances": len(set(event_ids))}
-                for name, event_ids in sorted(value["songs"].items(), key=lambda row: (-len(set(row[1])), row[0]))
+                {
+                    "song_id": relation["song_id"], "name": relation["name"],
+                    "event_ids": list(dict.fromkeys(relation["event_ids"])),
+                    "version_ids": list(dict.fromkeys(relation["version_ids"])),
+                    "performances": len(set(relation["performance_ids"])),
+                }
+                for relation in sorted(
+                    value["songs"].values(),
+                    key=lambda row: (-len(set(row["performance_ids"])), row["name"]),
+                )
             ]
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "voice_actors": voice,
         "characters": chars,
         "unresolved_cast": [{"name": name, "events": count} for name, count in unresolved.most_common()],
@@ -998,7 +1290,12 @@ def enrich_profiles(profiles: list[dict[str, Any]], appearance_index: dict[str, 
     return profiles
 
 
-def validate(catalog: dict[str, Any], appearances: dict[str, Any], profiles: list[dict[str, Any]]) -> list[str]:
+def validate(
+    catalog: dict[str, Any],
+    songs_catalog: dict[str, Any],
+    appearances: dict[str, Any],
+    profiles: list[dict[str, Any]],
+) -> list[str]:
     errors: list[str] = []
     event_ids = [event.get("id") for event in catalog.get("events") or []]
     event_id_set = set(event_ids)
@@ -1009,6 +1306,18 @@ def validate(catalog: dict[str, Any], appearances: dict[str, Any], profiles: lis
         errors.append("duplicate voice actor IDs")
     known_actors = set(actor_ids)
     known_characters = set(appearances.get("characters") or {})
+    song_ids = [song.get("id") for song in songs_catalog.get("songs") or []]
+    known_songs = set(song_ids)
+    version_ids = [
+        version.get("id")
+        for song in songs_catalog.get("songs") or []
+        for version in song.get("versions") or []
+    ]
+    known_versions = set(version_ids)
+    if len(song_ids) != len(known_songs):
+        errors.append("duplicate song IDs")
+    if len(version_ids) != len(known_versions):
+        errors.append("duplicate song version IDs")
     semantic_events: dict[tuple[str, str], list[str]] = defaultdict(list)
     all_session_ids: list[str] = []
     for event in catalog.get("events") or []:
@@ -1055,15 +1364,30 @@ def validate(catalog: dict[str, Any], appearances: dict[str, Any], profiles: lis
         for character_id in event.get("character_ids") or []:
             if character_id not in known_characters:
                 errors.append(f"event {event['id']} references unknown character {character_id}")
+        session_sources: set[tuple[str, str, str]] = set()
         for session in event.get("sessions") or []:
             all_session_ids.append(session.get("id") or "")
             if not session.get("id") or not session.get("label"):
                 errors.append(f"event {event['id']} has a session without stable ID or label")
             if not session.get("date") and event.get("schedule_status") != "announced_tba":
                 errors.append(f"session {session.get('id')} has no date without an announced-TBA status")
+            if session.get("setlist_source"):
+                source_key = (
+                    str(session.get("label") or ""),
+                    str(session.get("date") or ""),
+                    json.dumps(session["setlist_source"], ensure_ascii=False, sort_keys=True),
+                )
+                if source_key in session_sources:
+                    errors.append(f"event {event['id']} repeats setlist source for {session.get('label')}")
+                session_sources.add(source_key)
             for character_id in session.get("character_ids") or []:
                 if character_id not in known_characters:
                     errors.append(f"session {session.get('id')} references unknown character {character_id}")
+            for performance in session.get("performances") or []:
+                if performance.get("song_id") not in known_songs:
+                    errors.append(f"session {session.get('id')} references unknown song {performance.get('song_id')}")
+                if performance.get("version_id") not in known_versions:
+                    errors.append(f"session {session.get('id')} references unknown song version {performance.get('version_id')}")
     for semantic_key, matching_ids in semantic_events.items():
         if semantic_key[1] and len(matching_ids) > 1:
             errors.append(f"duplicate event identity {semantic_key}: {', '.join(matching_ids)}")
@@ -1077,6 +1401,13 @@ def validate(catalog: dict[str, Any], appearances: dict[str, Any], profiles: lis
         for row in value.get("events") or []:
             if row.get("event_id") not in event_id_set:
                 errors.append(f"actor {actor_id} references unknown event {row.get('event_id')}")
+        for row in value.get("songs") or []:
+            if row.get("song_id") not in known_songs:
+                errors.append(f"actor {actor_id} references unknown song {row.get('song_id')}")
+    for character_id, value in (appearances.get("characters") or {}).items():
+        for row in value.get("songs") or []:
+            if row.get("song_id") not in known_songs:
+                errors.append(f"character {character_id} references unknown song {row.get('song_id')}")
     identity_owners: dict[str, str] = {}
     allowed_field_statuses = {"verified", "not_published", "not_applicable"}
     for profile in profiles:
@@ -1750,6 +2081,48 @@ def voice_detail_from_wikipedia(name_zh: str, name_ja: str, aliases: list[str]) 
     }
 
 
+def official_profile_photo(profile_url: str) -> dict[str, str]:
+    """Resolve a portrait from a supported official agency profile.
+
+    The profile page remains the cited source even when an agency exposes its
+    image through a separate JSON endpoint. Unknown sites use conservative
+    page metadata or an explicitly named profile-photo container.
+    """
+    if not profile_url:
+        return {}
+    parsed = urllib.parse.urlparse(profile_url)
+    image_url = ""
+    if parsed.netloc.endswith("across-ent.com"):
+        talent_id = (urllib.parse.parse_qs(parsed.query).get("id") or [""])[0]
+        if talent_id:
+            endpoint = "https://acrossent-admin.sakuraweb.com/_v1.php/talentview?" + urllib.parse.urlencode({
+                "query": "view",
+                "id": talent_id,
+            })
+            payload = fetch_json_url(endpoint)
+            image_url = str((payload.get("talent") or {}).get("image_path1") or "")
+    else:
+        source = fetch_text_url(profile_url)
+        patterns = (
+            r'<div\b[^>]*class=["\'][^"\']*\bphoto\b[^"\']*["\'][^>]*>[\s\S]{0,500}?<img\b[^>]*src=["\']([^"\']+)',
+            r'<link\b[^>]*rel=["\']image_src["\'][^>]*href=["\']([^"\']+)',
+            r'<meta\b[^>]*property=["\']og:image["\'][^>]*content=["\']([^"\']+)',
+            r'<meta\b[^>]*content=["\']([^"\']+)["\'][^>]*property=["\']og:image["\']',
+        )
+        for pattern in patterns:
+            match = re.search(pattern, source, re.I)
+            if match:
+                image_url = urllib.parse.urljoin(profile_url, html.unescape(match.group(1)))
+                break
+    if not image_url:
+        return {}
+    return {
+        "photo_url": image_url,
+        "photo_source_url": profile_url,
+        "photo_source_title": "官方事务所资料页",
+    }
+
+
 def refresh_voice_actor_details() -> dict[str, Any]:
     characters = read_window_data(DATA_DIR / "character_index_data.js", "CHAR_INDEX")
     voice_list = read_window_data(DATA_DIR / "voice_list_data.js", "VA_LIST")
@@ -1798,6 +2171,14 @@ def refresh_voice_actor_details() -> dict[str, Any]:
                     field_status[field] = "verified"
             record["field_status"] = field_status
             record["status"] = "complete"
+        if not profile.get("photo", {}).get("url") and record.get("official_profile"):
+            try:
+                record.update(official_profile_photo(str(record["official_profile"])))
+            except Exception:
+                previous = previous_by_lookup.get(fold_name(identity.get("ja") or "")) or {}
+                for field in ("photo_url", "photo_source_url", "photo_source_title"):
+                    if previous.get(field):
+                        record[field] = previous[field]
         return record
 
     records = []
@@ -1807,7 +2188,7 @@ def refresh_voice_actor_details() -> dict[str, Any]:
     records.sort(key=lambda row: fold_name(row.get("name_ja") or row.get("name_zh") or ""))
     return {
         "schema_version": 2,
-        "source": "Japanese Wikipedia voice-actor infoboxes; official profile URLs are taken from the cited infobox field",
+        "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
         "refreshed_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
         "coverage": {
             "records": len(records),
@@ -1816,6 +2197,7 @@ def refresh_voice_actor_details() -> dict[str, Any]:
                 field: sum(bool(row.get(field)) for row in records)
                 for field in ("birthday", "birthplace", "agency", "official_profile")
             },
+            "official_profile_photos": sum(bool(row.get("photo_url")) for row in records),
             "accounted_fields": {
                 field: sum((row.get("field_status") or {}).get(field) in ("verified", "not_published", "not_applicable", "source_unavailable") for row in records)
                 for field in ("birthday", "birthplace", "agency", "official_profile")
@@ -2205,6 +2587,7 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     source_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}
     live_data = read_json(DATA_DIR / "live_data.json")
     live_cat_data = read_json(DATA_DIR / "live_cat_data.json")
+    albums = read_json(DATA_DIR / "albums.json")
     eventernote = read_json(DATA_DIR / "events_data.json")
     series = read_json(EVENTS_DIR / "series.json")
     programs = programs_override if programs_override is not None else read_json(EVENTS_DIR / "official_programs.json")
@@ -2236,6 +2619,8 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
             for character_id in character_ids if character_id in identities.character_by_id
         ]
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
+    generated_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
+    songs_catalog = build_song_catalog(albums, events, identities, generated_at)
     appearances = build_appearance_index(events, identities)
     profiles = enrich_profiles(identities.profiles, appearances)
     current_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}
@@ -2245,7 +2630,7 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     modes = Counter(event.get("mode") or "unknown" for event in events)
     catalog = {
         "schema_version": 1,
-        "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+        "generated_at": generated_at,
         "source_integrity": {name: {"sha256": digest, "preserved": True} for name, digest in source_hashes.items()},
         "coverage": {
             "events": len(events), "by_kind": dict(sorted(kinds.items())), "by_mode": dict(sorted(modes.items())),
@@ -2256,10 +2641,10 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     }
     profiles_doc = {"schema_version": 1, "generated_at": catalog["generated_at"], "voice_actors": profiles}
     appearances["generated_at"] = catalog["generated_at"]
-    errors = validate(catalog, appearances, profiles)
+    errors = validate(catalog, songs_catalog, appearances, profiles)
     if errors:
         raise RuntimeError("validation failed:\n- " + "\n- ".join(errors[:30]))
-    return {"catalog": catalog, "appearances": appearances, "profiles": profiles_doc}
+    return {"catalog": catalog, "songs": songs_catalog, "appearances": appearances, "profiles": profiles_doc}
 
 
 def comparable(value: Any) -> Any:

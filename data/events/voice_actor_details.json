@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "source": "Japanese Wikipedia voice-actor infoboxes; official profile URLs are taken from the cited infobox field",
-  "refreshed_at": "2026-09-12T08:27:29+00:00",
+  "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
+  "refreshed_at": "2026-09-12T13:55:42+00:00",
   "coverage": {
     "records": 185,
     "source_pages": 185,
@@ -11,6 +11,7 @@
       "agency": 180,
       "official_profile": 157
     },
+    "official_profile_photos": 2,
     "accounted_fields": {
       "birthday": 185,
       "birthplace": 185,
@@ -619,7 +620,10 @@
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E7%80%AC%E8%8C%89%E8%8E%89%E4%B9%9F"
         }
-      ]
+      ],
+      "photo_url": "https://across-ent.com/assets/media/3ccaae4f30b99f8308f9e5e8e54c778f19b7062c.jpg",
+      "photo_source_url": "https://across-ent.com/voice_actor/detail.html?id=110",
+      "photo_source_title": "官方事务所资料页"
     },
     {
       "lookup_name": "伊藤彩沙",
@@ -1598,7 +1602,10 @@
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%A5%BF%E5%85%8B%E5%B9%B8"
         }
-      ]
+      ],
+      "photo_url": "https://www.kenproduction.co.jp/img/talent/32/1.jpg",
+      "photo_source_url": "https://www.kenproduction.co.jp/talent/32",
+      "photo_source_title": "官方事务所资料页"
     },
     {
       "lookup_name": "山本希望",
