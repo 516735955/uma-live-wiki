@@ -466,15 +466,18 @@ function handleHomeSummary(res) {
     sendJson(res, 200, homeSummaryCache.data);
     return;
   }
-  const files = ['albums.json', 'live_data.json', 'live_cat_data.json', 'events_catalog.json', 'character_index_data.js', 'voice_list_data.js'];
+  const files = ['albums.json', 'song_catalog.json', 'live_data.json', 'live_cat_data.json', 'events_catalog.json', 'character_index_data.js', 'voice_list_data.js', 'voice_actor_profiles.json'];
   Promise.all(files.map((name) => fs.promises.readFile(path.join(DATA_DIR, name), 'utf8')))
     .then((texts) => {
       const albumsDoc = JSON.parse(texts[0]);
-      const numberedDoc = JSON.parse(texts[1]);
-      const cats = JSON.parse(texts[2]) || {};
-      const eventsDoc = JSON.parse(texts[3]);
-      const characters = parseWindowArray(texts[4], 'CHAR_INDEX');
-      const voiceList = parseWindowArray(texts[5], 'VA_LIST');
+      const songsDoc = JSON.parse(texts[1]);
+      const numberedDoc = JSON.parse(texts[2]);
+      const cats = JSON.parse(texts[3]) || {};
+      const eventsDoc = JSON.parse(texts[4]);
+      const characters = parseWindowArray(texts[5], 'CHAR_INDEX');
+      const voiceList = parseWindowArray(texts[6], 'VA_LIST');
+      const voiceProfilesDoc = JSON.parse(texts[7]);
+      const voiceProfiles = voiceProfilesDoc && Array.isArray(voiceProfilesDoc.voice_actors) ? voiceProfilesDoc.voice_actors : [];
       const albums = Array.isArray(albumsDoc) ? albumsDoc : [];
       const numbered = Array.isArray(numberedDoc) ? numberedDoc : [];
       const events = eventsDoc && Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
@@ -498,12 +501,12 @@ function handleHomeSummary(res) {
       });
       const data = {
         stats: {
-          songs: albums.reduce((total, album) => total + ((album && album.songs) || []).length, 0),
+          songs: songsDoc && songsDoc.coverage ? songsDoc.coverage.songs : albums.reduce((total, album) => total + ((album && album.songs) || []).length, 0),
           albums: albums.length,
           live: liveCount,
           performances: numbered.length,
           characters: characters.length,
-          voiceActors: countVoiceActors(characters, voiceList),
+          voiceActors: voiceProfiles.length || countVoiceActors(characters, voiceList),
           events: events.length
         },
         nextEvent: nextEvent
