@@ -1,0 +1,4665 @@
+{
+  "schema_version": 2,
+  "source": "Japanese Wikipedia voice-actor infoboxes; official profile URLs are taken from the cited infobox field",
+  "refreshed_at": "2026-09-12T08:27:29+00:00",
+  "coverage": {
+    "records": 185,
+    "source_pages": 185,
+    "complete_fields": {
+      "birthday": 184,
+      "birthplace": 184,
+      "agency": 180,
+      "official_profile": 157
+    },
+    "accounted_fields": {
+      "birthday": 185,
+      "birthplace": 185,
+      "agency": 185,
+      "official_profile": 185
+    }
+  },
+  "records": [
+    {
+      "lookup_name": "Lynn",
+      "name_zh": "Lynn",
+      "name_ja": "Lynn",
+      "aliases": [],
+      "kana": "りん",
+      "birthday": "6月1日",
+      "birthplace": "新潟県妙高市",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14244/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/Lynn"
+        }
+      ]
+    },
+    {
+      "lookup_name": "MAKIKO",
+      "name_zh": "MAKIKO",
+      "name_ja": "MAKIKO",
+      "aliases": [],
+      "kana": "まきこ",
+      "birthday": "12月21日",
+      "birthplace": "静岡県",
+      "agency": "EARLY WING",
+      "official_profile": "https://www.earlywing.co.jp/actordb/categ/talent_makiko",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/MAKIKO"
+        }
+      ]
+    },
+    {
+      "lookup_name": "Machico",
+      "name_zh": "Machico",
+      "name_ja": "Machico",
+      "aliases": [],
+      "kana": "まちこ",
+      "birthday": "3月25日",
+      "birthplace": "広島県呉市",
+      "agency": "ボイスキット",
+      "official_profile": "https://machi.co/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/Machico"
+        }
+      ]
+    },
+    {
+      "lookup_name": "のぐちゆり",
+      "name_zh": "野口百合",
+      "name_ja": "のぐちゆり",
+      "aliases": [],
+      "kana": "",
+      "birthday": "12月24日",
+      "birthplace": "埼玉県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/noguchi-yuri.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E3%81%AE%E3%81%90%E3%81%A1%E3%82%86%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "ファイルーズあい",
+      "name_zh": "菲鲁兹·蓝",
+      "name_ja": "ファイルーズあい",
+      "aliases": [],
+      "kana": "",
+      "birthday": "7月6日",
+      "birthplace": "東京都",
+      "agency": "マウスプロモーション",
+      "official_profile": "https://mausu.net/talent/fairouz-ai.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%BC%E3%82%BA%E3%81%82%E3%81%84"
+        }
+      ]
+    },
+    {
+      "lookup_name": "三宅麻理恵",
+      "name_zh": "三宅麻理惠",
+      "name_ja": "三宅麻理恵",
+      "aliases": [],
+      "kana": "みやけ まりえ",
+      "birthday": "6月7日",
+      "birthplace": "大阪府",
+      "agency": "ラクーンドッグ",
+      "official_profile": "https://www.raccoon-dog.co.jp/talent/r06-miyake.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AE%85%E9%BA%BB%E7%90%86%E6%81%B5"
+        }
+      ]
+    },
+    {
+      "lookup_name": "三澤紗千香",
+      "name_zh": "三泽纱千香",
+      "name_ja": "三澤紗千香",
+      "aliases": [],
+      "kana": "みさわ さちか",
+      "birthday": "1月13日",
+      "birthplace": "山梨県",
+      "agency": "フリー",
+      "official_profile": "https://www.universal-music.co.jp/misawa-sachika/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%BE%A4%E7%B4%97%E5%8D%83%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "上坂すみれ",
+      "name_zh": "上坂堇",
+      "name_ja": "上坂すみれ",
+      "aliases": [],
+      "kana": "うえさか すみれ",
+      "birthday": "12月19日",
+      "birthplace": "神奈川県",
+      "agency": "ボイスキット",
+      "official_profile": "https://king-cr.jp/artist/uesakasumire/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%9D%82%E3%81%99%E3%81%BF%E3%82%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "上田瞳",
+      "name_zh": "上田瞳",
+      "name_ja": "上田瞳",
+      "aliases": [],
+      "kana": "うえだ ひとみ",
+      "birthday": "7月29日",
+      "birthplace": "京都府",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/ueda-hitomi.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E7%94%B0%E7%9E%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "下地紫野",
+      "name_zh": "下地紫野",
+      "name_ja": "下地紫野",
+      "aliases": [],
+      "kana": "しもじ しの",
+      "birthday": "6月4日",
+      "birthplace": "沖縄県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/shimoji-shino.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E5%9C%B0%E7%B4%AB%E9%87%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "中島由貴",
+      "name_zh": "中岛由贵",
+      "name_ja": "中島由貴",
+      "aliases": [],
+      "kana": "なかしま ゆき",
+      "birthday": "9月12日",
+      "birthplace": "和歌山県",
+      "agency": "ビーフェクト",
+      "official_profile": "https://nakashimayuki.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B3%B6%E7%94%B1%E8%B2%B4_%28%E5%A3%B0%E5%84%AA%29"
+        }
+      ]
+    },
+    {
+      "lookup_name": "中村カンナ",
+      "name_zh": "中村栞奈",
+      "name_ja": "中村カンナ",
+      "aliases": [],
+      "kana": "なかむら かんな",
+      "birthday": "10月26日",
+      "birthplace": "大阪府",
+      "agency": "Rush Style",
+      "official_profile": "https://rushstyle.net/talent/kanna_nakamura",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%9D%91%E3%82%AB%E3%83%B3%E3%83%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "丹下桜",
+      "name_zh": "丹下樱",
+      "name_ja": "丹下桜",
+      "aliases": [],
+      "kana": "たんげ さくら",
+      "birthday": "3月24日",
+      "birthplace": "愛知県葉栗郡木曽川町（現：一宮市）",
+      "agency": "ピクニック",
+      "official_profile": "http://www.sakura-alamode.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%B9%E4%B8%8B%E6%A1%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "久保田ひかり",
+      "name_zh": "久保田光",
+      "name_ja": "久保田ひかり",
+      "aliases": [],
+      "kana": "くぼた ひかり",
+      "birthday": "3月23日",
+      "birthplace": "東京都",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14294/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BF%9D%E7%94%B0%E3%81%B2%E3%81%8B%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "久保田未夢",
+      "name_zh": "久保田未梦",
+      "name_ja": "久保田未夢",
+      "aliases": [],
+      "kana": "くぼた みゆ",
+      "birthday": "1月31日",
+      "birthplace": "埼玉県秩父市",
+      "agency": "",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "not_published",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BF%9D%E7%94%B0%E6%9C%AA%E5%A4%A2"
+        }
+      ]
+    },
+    {
+      "lookup_name": "井上ほの花",
+      "name_zh": "井上穗乃花",
+      "name_ja": "井上ほの花",
+      "aliases": [],
+      "kana": "いのうえ ほのか",
+      "birthday": "2月9日",
+      "birthplace": "神奈川県",
+      "agency": "オフィスアネモネ",
+      "official_profile": "https://www.office-anemone.com/?page_id=3013",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E3%81%BB%E3%81%AE%E8%8A%B1"
+        }
+      ]
+    },
+    {
+      "lookup_name": "井上喜久子",
+      "name_zh": "井上喜久子",
+      "name_ja": "井上喜久子",
+      "aliases": [],
+      "kana": "いのうえ きくこ",
+      "birthday": "9月25日",
+      "birthplace": "神奈川県横須賀市",
+      "agency": "オフィスアネモネベルベットオフィス（ナレーション部門のみ）",
+      "official_profile": "https://www.manbow.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E5%96%9C%E4%B9%85%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "井上遥乃",
+      "name_zh": "井上遥乃",
+      "name_ja": "井上遥乃",
+      "aliases": [],
+      "kana": "いのうえ はるの",
+      "birthday": "9月16日",
+      "birthplace": "東京都",
+      "agency": "AIR AGENCY",
+      "official_profile": "https://www.air-agency.co.jp/talent/woman/haruno_inoue",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E9%81%A5%E4%B9%83"
+        }
+      ]
+    },
+    {
+      "lookup_name": "井料愛良",
+      "name_zh": "井料爱良",
+      "name_ja": "井料愛良",
+      "aliases": [],
+      "kana": "いりょう あいら",
+      "birthday": "9月19日",
+      "birthplace": "東京都",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14421/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E6%96%99%E6%84%9B%E8%89%AF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "亜咲花",
+      "name_zh": "亚咲花",
+      "name_ja": "亜咲花",
+      "aliases": [],
+      "kana": "あさか",
+      "birthday": "10月7日",
+      "birthplace": "愛知県名古屋市",
+      "agency": "CAT entertainment",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BA%9C%E5%92%B2%E8%8A%B1"
+        }
+      ]
+    },
+    {
+      "lookup_name": "今村彩夏",
+      "name_zh": "今村彩夏",
+      "name_ja": "今村彩夏",
+      "aliases": [],
+      "kana": "いまむら あやか",
+      "birthday": "8月5日",
+      "birthplace": "大阪府",
+      "agency": "WITH LINE（最終所属）",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E6%9D%91%E5%BD%A9%E5%A4%8F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "今泉りおな",
+      "name_zh": "今泉里绪菜",
+      "name_ja": "今泉りおな",
+      "aliases": [],
+      "kana": "いまいずみ りおな",
+      "birthday": "1月26日",
+      "birthplace": "愛知県",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14410/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E6%B3%89%E3%82%8A%E3%81%8A%E3%81%AA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "伊波杏树",
+      "name_zh": "伊波杏树",
+      "name_ja": "伊波杏樹",
+      "aliases": [],
+      "kana": "いなみ あんじゅ",
+      "birthday": "2月7日",
+      "birthplace": "埼玉県",
+      "agency": "ソニー・ミュージックアーティスツ",
+      "official_profile": "https://anjuinami.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E6%B3%A2%E6%9D%8F%E6%A8%B9"
+        }
+      ]
+    },
+    {
+      "lookup_name": "伊瀬茉莉也",
+      "name_zh": "伊濑茉莉也",
+      "name_ja": "伊瀬茉莉也",
+      "aliases": [
+        "伊瀬 茉莉也"
+      ],
+      "kana": "いせ まりや",
+      "birthday": "9月25日",
+      "birthplace": "神奈川県横浜市",
+      "agency": "アクロス エンタテインメント",
+      "official_profile": "https://across-ent.com/voice_actor/detail.html?id=110",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E7%80%AC%E8%8C%89%E8%8E%89%E4%B9%9F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "伊藤彩沙",
+      "name_zh": "伊藤彩沙",
+      "name_ja": "伊藤彩沙",
+      "aliases": [],
+      "kana": "いとう あやさ",
+      "birthday": "8月17日",
+      "birthplace": "京都府",
+      "agency": "響",
+      "official_profile": "https://hibiki-cast.jp/hibiki_f/ito_ayasa/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E5%BD%A9%E6%B2%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "会沢紗弥",
+      "name_zh": "会泽纱弥",
+      "name_ja": "会沢紗弥",
+      "aliases": [],
+      "kana": "あいざわ さや",
+      "birthday": "9月9日",
+      "birthplace": "埼玉県",
+      "agency": "大沢事務所",
+      "official_profile": "https://osawa-inc.co.jp/sayaaizawa/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BC%9A%E6%B2%A2%E7%B4%97%E5%BC%A5"
+        }
+      ]
+    },
+    {
+      "lookup_name": "佐伯伊織",
+      "name_zh": "佐伯伊织",
+      "name_ja": "佐伯伊織",
+      "aliases": [
+        "佐伯伊織(NU-KO)"
+      ],
+      "kana": "さえき いおり",
+      "birthday": "7月22日",
+      "birthplace": "神奈川県",
+      "agency": "スワロウ",
+      "official_profile": "https://swallow-p.com/actor/saeki-iori/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E4%BC%AF%E4%BC%8A%E7%B9%94"
+        }
+      ]
+    },
+    {
+      "lookup_name": "佐藤利奈",
+      "name_zh": "佐藤利奈",
+      "name_ja": "佐藤利奈",
+      "aliases": [],
+      "kana": "さとう りな",
+      "birthday": "5月2日",
+      "birthplace": "福岡県北九州市",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=11916",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%97%A4%E5%88%A9%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "佐藤日向",
+      "name_zh": "佐藤日向",
+      "name_ja": "佐藤日向",
+      "aliases": [],
+      "kana": "さとう ひなた",
+      "birthday": "12月23日",
+      "birthplace": "新潟県",
+      "agency": "アミューズクリエイティブスタジオ",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%97%A4%E6%97%A5%E5%90%91"
+        }
+      ]
+    },
+    {
+      "lookup_name": "佐藤榛夏",
+      "name_zh": "佐藤榛夏",
+      "name_ja": "佐藤榛夏",
+      "aliases": [],
+      "kana": "さとう はるか",
+      "birthday": "8月13日",
+      "birthplace": "千葉県",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=180",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%97%A4%E6%A6%9B%E5%A4%8F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "佐藤聡美",
+      "name_zh": "佐藤聪美",
+      "name_ja": "佐藤聡美",
+      "aliases": [],
+      "kana": "さとう さとみ",
+      "birthday": "5月8日",
+      "birthplace": "宮城県仙台市",
+      "agency": "アクセルワン",
+      "official_profile": "http://king-cr.jp/artist/satou_satomi/sp/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%97%A4%E8%81%A1%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "佳原萌枝",
+      "name_zh": "佳原萌枝",
+      "name_ja": "佳原萌枝",
+      "aliases": [],
+      "kana": "かはら もえ",
+      "birthday": "12月18日",
+      "birthplace": "大阪府",
+      "agency": "ホーリーピーク",
+      "official_profile": "https://holypeak.com/talent/voice-actor-women/%E4%BD%B3%E5%8E%9F/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BD%B3%E5%8E%9F%E8%90%8C%E6%9E%9D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "優木かな",
+      "name_zh": "优木加奈",
+      "name_ja": "優木かな",
+      "aliases": [],
+      "kana": "ゆうき かな",
+      "birthday": "3月10日",
+      "birthplace": "神奈川県",
+      "agency": "ヴィムス",
+      "official_profile": "https://web.archive.org/web/20240412124152/https://kananote.net/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%84%AA%E6%9C%A8%E3%81%8B%E3%81%AA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "前田佳織里",
+      "name_zh": "前田佳织里",
+      "name_ja": "前田佳織里",
+      "aliases": [],
+      "kana": "まえだ かおり",
+      "birthday": "4月25日",
+      "birthplace": "福岡県北九州市",
+      "agency": "アミューズクリエイティブスタジオ",
+      "official_profile": "https://www.amuse.co.jp/artist/A8884/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E4%BD%B3%E7%B9%94%E9%87%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "前田玲奈",
+      "name_zh": "前田玲奈",
+      "name_ja": "前田玲奈",
+      "aliases": [],
+      "kana": "まえだ れな",
+      "birthday": "4月28日",
+      "birthplace": "福岡県",
+      "agency": "ステイラック",
+      "official_profile": "https://stay-luck.com/talent/maeda-rena/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E7%8E%B2%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "千賀光莉",
+      "name_zh": "千贺光莉",
+      "name_ja": "千賀光莉",
+      "aliases": [],
+      "kana": "せんが ひかり",
+      "birthday": "8月13日",
+      "birthplace": "福島県福島市",
+      "agency": "FIRST WIND production",
+      "official_profile": "https://firstwind.co.jp/talentpage/senga_hikari/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%B3%80%E5%85%89%E8%8E%89"
+        }
+      ]
+    },
+    {
+      "lookup_name": "吉咲みゆ",
+      "name_zh": "吉咲美优",
+      "name_ja": "吉咲みゆ",
+      "aliases": [],
+      "kana": "よしざき みゆ",
+      "birthday": "10月4日",
+      "birthplace": "埼玉県",
+      "agency": "ホーリーピーク（ - 2025年10月）",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%92%B2%E3%81%BF%E3%82%86"
+        }
+      ]
+    },
+    {
+      "lookup_name": "吉岡茉祐",
+      "name_zh": "吉冈茉祐",
+      "name_ja": "吉岡茉祐",
+      "aliases": [],
+      "kana": "よしおか まゆ",
+      "birthday": "11月7日",
+      "birthplace": "大阪府",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%B2%A1%E8%8C%89%E7%A5%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "和多田美咲",
+      "name_zh": "和多田美咲",
+      "name_ja": "和多田美咲",
+      "aliases": [],
+      "kana": "わただ みさき",
+      "birthday": "3月16日",
+      "birthplace": "静岡県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/watada-misaki.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E5%A4%9A%E7%94%B0%E7%BE%8E%E5%92%B2"
+        }
+      ]
+    },
+    {
+      "lookup_name": "和氣あず未",
+      "name_zh": "和气杏未",
+      "name_ja": "和氣あず未",
+      "aliases": [],
+      "kana": "わき あずみ",
+      "birthday": "9月8日",
+      "birthplace": "東京都",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://columbia.jp/wakiazumi/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "和泉風花",
+      "name_zh": "和泉风花",
+      "name_ja": "和泉風花",
+      "aliases": [],
+      "kana": "いずみ ふうか",
+      "birthday": "1月11日",
+      "birthplace": "愛知県",
+      "agency": "アミューズクリエイティブスタジオ",
+      "official_profile": "https://www.amuse.co.jp/artist/A8990/index.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B3%89%E9%A2%A8%E8%8A%B1"
+        }
+      ]
+    },
+    {
+      "lookup_name": "咲々木瞳",
+      "name_zh": "咲咲木瞳",
+      "name_ja": "咲々木瞳",
+      "aliases": [],
+      "kana": "ささき ひとみ",
+      "birthday": "10月30日",
+      "birthplace": "東京都",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12931",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%92%B2%E3%80%85%E6%9C%A8%E7%9E%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "土師亜文",
+      "name_zh": "土师亚文",
+      "name_ja": "土師亜文",
+      "aliases": [],
+      "kana": "はし あふみ",
+      "birthday": "5月9日",
+      "birthplace": "東京都",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E5%B8%AB%E4%BA%9C%E6%96%87"
+        }
+      ]
+    },
+    {
+      "lookup_name": "土田大",
+      "name_zh": "土田大",
+      "name_ja": "土田大",
+      "aliases": [],
+      "kana": "つちだ ひろし",
+      "birthday": "2月8日",
+      "birthplace": "東京都",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E7%94%B0%E5%A4%A7"
+        }
+      ]
+    },
+    {
+      "lookup_name": "堀江由衣",
+      "name_zh": "堀江由衣",
+      "name_ja": "堀江由衣",
+      "aliases": [],
+      "kana": "ほりえ ゆい",
+      "birthday": "9月20日",
+      "birthplace": "東京都",
+      "agency": "ヴィムス",
+      "official_profile": "https://horie-yui.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E6%B1%9F%E7%94%B1%E8%A1%A3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "塚田悠衣",
+      "name_zh": "冢田悠衣",
+      "name_ja": "塚田悠衣",
+      "aliases": [],
+      "kana": "つかだ ゆい",
+      "birthday": "6月5日",
+      "birthplace": "京都府",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=165",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A1%9A%E7%94%B0%E6%82%A0%E8%A1%A3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "夏吉ゆうこ",
+      "name_zh": "夏吉优子",
+      "name_ja": "夏吉ゆうこ",
+      "aliases": [],
+      "kana": "なつよし ゆうこ",
+      "birthday": "5月1日",
+      "birthplace": "大阪府",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/202",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93"
+        }
+      ]
+    },
+    {
+      "lookup_name": "夏目妃菜",
+      "name_zh": "夏目妃菜",
+      "name_ja": "夏目妃菜",
+      "aliases": [],
+      "kana": "なつめ ひな",
+      "birthday": "9月13日",
+      "birthplace": "東京都",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/natsume-hina.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E5%A6%83%E8%8F%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大和田仁美",
+      "name_zh": "大和田仁美",
+      "name_ja": "大和田仁美",
+      "aliases": [],
+      "kana": "おおわだ ひとみ",
+      "birthday": "3月23日",
+      "birthplace": "神奈川県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/ohwada-hitomi.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%92%8C%E7%94%B0%E4%BB%81%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大坪由佳",
+      "name_zh": "大坪由佳",
+      "name_ja": "大坪由佳",
+      "aliases": [],
+      "kana": "おおつぼ ゆか",
+      "birthday": "6月11日",
+      "birthplace": "千葉県",
+      "agency": "m&i",
+      "official_profile": "https://mand-i.jp/talent/大坪-由佳/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%9D%AA%E7%94%B1%E4%BD%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大橋彩香",
+      "name_zh": "大桥彩香",
+      "name_ja": "大橋彩香",
+      "aliases": [],
+      "kana": "おおはし あやか",
+      "birthday": "9月13日",
+      "birthplace": "東京都",
+      "agency": "INSPIONエージェンシー",
+      "official_profile": "https://ohashiayaka.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%A9%8B%E5%BD%A9%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大空直美",
+      "name_zh": "大空直美",
+      "name_ja": "大空直美",
+      "aliases": [],
+      "kana": "おおぞら なおみ",
+      "birthday": "2月4日",
+      "birthplace": "大阪府高槻市",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/ohzora-naomi.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大西沙織",
+      "name_zh": "大西沙织",
+      "name_ja": "大西沙織",
+      "aliases": [],
+      "kana": "おおにし さおり",
+      "birthday": "8月6日",
+      "birthplace": "千葉県",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=29",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B2%99%E7%B9%94"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大西綺華",
+      "name_zh": "大西绮华",
+      "name_ja": "大西綺華",
+      "aliases": [],
+      "kana": "おおにし あやか",
+      "birthday": "8月19日",
+      "birthplace": "大阪府泉佐野市",
+      "agency": "ケンユウオフィス",
+      "official_profile": "https://kenyu-office.com/ohnishiayaka/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E7%B6%BA%E8%8F%AF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "天海由梨奈",
+      "name_zh": "天海由梨奈",
+      "name_ja": "天海由梨奈",
+      "aliases": [],
+      "kana": "あまみ ゆりな",
+      "birthday": "7月7日",
+      "birthplace": "神奈川県",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%B5%B7%E7%94%B1%E6%A2%A8%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "奥野香耶",
+      "name_zh": "奥野香耶",
+      "name_ja": "奥野香耶",
+      "aliases": [],
+      "kana": "おくの かや",
+      "birthday": "3月1日",
+      "birthplace": "岩手県盛岡市",
+      "agency": "フリー",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E9%87%8E%E9%A6%99%E8%80%B6"
+        }
+      ]
+    },
+    {
+      "lookup_name": "宮下早紀",
+      "name_zh": "宫下早纪",
+      "name_ja": "宮下早紀",
+      "aliases": [],
+      "kana": "みやした さき",
+      "birthday": "12月4日",
+      "birthplace": "奈良県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=13083",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E4%B8%8B%E6%97%A9%E7%B4%80"
+        }
+      ]
+    },
+    {
+      "lookup_name": "小倉唯",
+      "name_zh": "小仓唯",
+      "name_ja": "小倉唯",
+      "aliases": [],
+      "kana": "おぐら ゆい",
+      "birthday": "8月15日",
+      "birthplace": "群馬県みどり市",
+      "agency": "スタイルキューブ",
+      "official_profile": "https://ogurayui-official.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%80%89%E5%94%AF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "小島菜々恵",
+      "name_zh": "小岛菜菜惠",
+      "name_ja": "小島菜々恵",
+      "aliases": [],
+      "kana": "こじま ななえ",
+      "birthday": "4月21日",
+      "birthplace": "北海道札幌市",
+      "agency": "CLipCLover",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%B3%B6%E8%8F%9C%E3%80%85%E6%81%B5"
+        }
+      ]
+    },
+    {
+      "lookup_name": "小林ゆう",
+      "name_zh": "小林优",
+      "name_ja": "小林ゆう",
+      "aliases": [],
+      "kana": "こばやし ゆう",
+      "birthday": "2月5日",
+      "birthplace": "東京都",
+      "agency": "ホーリーピーク",
+      "official_profile": "https://sp.kobayashiyu.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E3%82%86%E3%81%86"
+        }
+      ]
+    },
+    {
+      "lookup_name": "小清水亜美",
+      "name_zh": "小清水亚美",
+      "name_ja": "小清水亜美",
+      "aliases": [],
+      "kana": "こしみず あみ",
+      "birthday": "2月15日",
+      "birthplace": "東京都国分寺市",
+      "agency": "オフィス リスタート",
+      "official_profile": "https://columbia.jp/koshimizuami/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B8%85%E6%B0%B4%E4%BA%9C%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "小田杏樹",
+      "name_zh": "小田杏树",
+      "name_ja": "小田杏樹",
+      "aliases": [],
+      "kana": "おだ あんじゅ",
+      "birthday": "1月30日",
+      "birthplace": "静岡県",
+      "agency": "アクセルワン",
+      "official_profile": "https://www.axl-one.com/talent/oda.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E6%9D%8F%E6%A8%B9"
+        }
+      ]
+    },
+    {
+      "lookup_name": "小西克幸",
+      "name_zh": "小西克幸",
+      "name_ja": "小西克幸",
+      "aliases": [
+        "小西 克幸"
+      ],
+      "kana": "こにし かつゆき",
+      "birthday": "4月21日",
+      "birthplace": "和歌山県和歌山市",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/32",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%A5%BF%E5%85%8B%E5%B9%B8"
+        }
+      ]
+    },
+    {
+      "lookup_name": "山本希望",
+      "name_zh": "山本希望",
+      "name_ja": "山本希望",
+      "aliases": [],
+      "kana": "やまもと のぞみ",
+      "birthday": "8月9日",
+      "birthplace": "青森県三沢市",
+      "agency": "ヴィムス",
+      "official_profile": "https://www.vims.co.jp/talent/374/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%9C%AC%E5%B8%8C%E6%9C%9B"
+        }
+      ]
+    },
+    {
+      "lookup_name": "山本昌広",
+      "name_zh": "山本昌广",
+      "name_ja": "山本昌",
+      "aliases": [
+        "山本昌広"
+      ],
+      "kana": "",
+      "birthday": "8月11日",
+      "birthplace": "",
+      "agency": "",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "not_applicable",
+        "agency": "not_applicable",
+        "official_profile": "not_applicable"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%9C%AC%E6%98%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "山根綺",
+      "name_zh": "山根绮",
+      "name_ja": "山根綺",
+      "aliases": [],
+      "kana": "やまね あや",
+      "birthday": "2月4日",
+      "birthplace": "神奈川県横浜市",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/yamane-aya.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%A0%B9%E7%B6%BA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "岡咲美保",
+      "name_zh": "冈咲美保",
+      "name_ja": "岡咲美保",
+      "aliases": [],
+      "kana": "おかさき みほ",
+      "birthday": "11月22日",
+      "birthplace": "岡山県",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.okasakimiho.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E5%92%B2%E7%BE%8E%E4%BF%9D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "島田愛野",
+      "name_zh": "岛田爱野",
+      "name_ja": "島田愛野",
+      "aliases": [],
+      "kana": "しまだ あいの",
+      "birthday": "4月17日",
+      "birthplace": "東京都",
+      "agency": "Rush Style",
+      "official_profile": "https://rushstyle.net/talent/aino_shimada/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E7%94%B0%E6%84%9B%E9%87%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "嶋野花",
+      "name_zh": "岛野花",
+      "name_ja": "嶋野花",
+      "aliases": [],
+      "kana": "しまの はな",
+      "birthday": "8月17日",
+      "birthplace": "千葉県",
+      "agency": "アクセルワン",
+      "official_profile": "https://axl-one.com/talent/shimano.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B6%8B%E9%87%8E%E8%8A%B1"
+        }
+      ]
+    },
+    {
+      "lookup_name": "岭内知美",
+      "name_zh": "岭内知美",
+      "name_ja": "嶺内ともみ",
+      "aliases": [],
+      "kana": "みねうち ともみ",
+      "birthday": "12月22日",
+      "birthplace": "東京都",
+      "agency": "アイムエンタープライズ（最終所属）",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B6%BA%E5%86%85%E3%81%A8%E3%82%82%E3%81%BF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "巽悠衣子",
+      "name_zh": "巽悠衣子",
+      "name_ja": "巽悠衣子",
+      "aliases": [],
+      "kana": "たつみ ゆいこ",
+      "birthday": "9月17日",
+      "birthplace": "大阪府",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=61",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B7%BD%E6%82%A0%E8%A1%A3%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "希水しお",
+      "name_zh": "希水汐",
+      "name_ja": "希水しお",
+      "aliases": [],
+      "kana": "きすい しお",
+      "birthday": "3月28日",
+      "birthplace": "東京都",
+      "agency": "オスカープロモーション・青二プロダクション （2014年 - 2017年）BLACK SHIP（2021年 - 2025年 ） LINC（2025年-）",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%B8%8C%E6%B0%B4%E3%81%97%E3%81%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "徳井青空",
+      "name_zh": "德井青空",
+      "name_ja": "徳井青空",
+      "aliases": [],
+      "kana": "とくい そら",
+      "birthday": "12月26日",
+      "birthplace": "千葉県",
+      "agency": "エイベックス・ピクチャーズ",
+      "official_profile": "https://avex.jp/tokuisora/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "愛美",
+      "name_zh": "爱美",
+      "name_ja": "愛美",
+      "aliases": [],
+      "kana": "あいみ",
+      "birthday": "12月25日",
+      "birthplace": "兵庫県神戸市",
+      "agency": "響",
+      "official_profile": "https://aimi.info",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "折原日菜",
+      "name_zh": "折原日菜",
+      "name_ja": "折原日菜",
+      "aliases": [],
+      "kana": "",
+      "birthday": "5月8日",
+      "birthplace": "東京都",
+      "agency": "フリーランス",
+      "official_profile": "https://hina-orihara.bitfan.id/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "折原日菜官方网站",
+          "url": "https://hina-orihara.bitfan.id/"
+        },
+        {
+          "kind": "reliable_media",
+          "label": "事务所退所报道",
+          "url": "https://encount.press/archives/935337/"
+        }
+      ]
+    },
+    {
+      "lookup_name": "指出毬亜",
+      "name_zh": "指出毬亚",
+      "name_ja": "指出毬亜",
+      "aliases": [],
+      "kana": "さしで まりあ",
+      "birthday": "9月20日",
+      "birthplace": "埼玉県",
+      "agency": "WITH LINE",
+      "official_profile": "https://withline.jp/talent/maria_sashide",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%8C%87%E5%87%BA%E6%AF%AC%E4%BA%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "斎賀みつき",
+      "name_zh": "斋贺光希",
+      "name_ja": "斎賀みつき",
+      "aliases": [],
+      "kana": "さいが みつき",
+      "birthday": "6月12日",
+      "birthplace": "埼玉県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/35",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%96%8E%E8%B3%80%E3%81%BF%E3%81%A4%E3%81%8D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "新田ひより",
+      "name_zh": "新田日和",
+      "name_ja": "新田ひより",
+      "aliases": [],
+      "kana": "にった ひより",
+      "birthday": "7月1日",
+      "birthplace": "東京都",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14335/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E7%94%B0%E3%81%B2%E3%82%88%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "日原あゆみ",
+      "name_zh": "日原步美",
+      "name_ja": "日原あゆみ",
+      "aliases": [],
+      "kana": "ひのはら あゆみ",
+      "birthday": "6月30日",
+      "birthplace": "千葉県",
+      "agency": "ソニー・ミュージックアーティスツ",
+      "official_profile": "https://www.sma.co.jp/s/sma/artist/549",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%8E%9F%E3%81%82%E3%82%86%E3%81%BF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "日比優理香",
+      "name_zh": "日比优理香",
+      "name_ja": "日比優理香",
+      "aliases": [],
+      "kana": "ひび ゆりこ",
+      "birthday": "10月11日",
+      "birthplace": "埼玉県",
+      "agency": "INSPIONエージェンシー",
+      "official_profile": "https://inspion-agc.co.jp/ja/talent/hibi-yuriko/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%AF%94%E5%84%AA%E7%90%86%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "日笠陽子",
+      "name_zh": "日笠阳子",
+      "name_ja": "日笠陽子",
+      "aliases": [],
+      "kana": "ひかさ ようこ",
+      "birthday": "7月16日",
+      "birthplace": "神奈川県",
+      "agency": "i.nari（代表）",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%AC%A0%E9%99%BD%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "明坂聡美",
+      "name_zh": "明坂聪美",
+      "name_ja": "明坂聡美",
+      "aliases": [],
+      "kana": "あけさか さとみ",
+      "birthday": "1月2日",
+      "birthplace": "埼玉県",
+      "agency": "アミュレート",
+      "official_profile": "https://akeko.exblog.jp/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E5%9D%82%E8%81%A1%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "明智璃子",
+      "name_zh": "明智璃子",
+      "name_ja": "明智璃子",
+      "aliases": [],
+      "kana": "あけち りこ",
+      "birthday": "12月22日",
+      "birthplace": "兵庫県",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%99%BA%E7%92%83%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "星希成奏",
+      "name_zh": "星希成奏",
+      "name_ja": "星希成奏",
+      "aliases": [],
+      "kana": "ほしき せえな",
+      "birthday": "10月11日",
+      "birthplace": "福岡県北九州市",
+      "agency": "アプトプロ",
+      "official_profile": "https://aptepro.jp/talents/s_hoshiki.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%98%9F%E5%B8%8C%E6%88%90%E5%A5%8F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "星谷美緒",
+      "name_zh": "星谷美绪",
+      "name_ja": "星谷美緒",
+      "aliases": [],
+      "kana": "ほしたに みお",
+      "birthday": "1月2日",
+      "birthplace": "山梨県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12793",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%98%9F%E8%B0%B7%E7%BE%8E%E7%B7%92"
+        }
+      ]
+    },
+    {
+      "lookup_name": "春川芽生",
+      "name_zh": "春川芽生",
+      "name_ja": "春川芽生",
+      "aliases": [],
+      "kana": "はるかわ めいく",
+      "birthday": "8月11日",
+      "birthplace": "大阪府",
+      "agency": "スターダストプロモーション",
+      "official_profile": "https://www.stardust.co.jp/talent/voiceactor/harukawameiku/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%98%A5%E5%B7%9D%E8%8A%BD%E7%94%9F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "春日さくら",
+      "name_zh": "春日樱",
+      "name_ja": "春日さくら",
+      "aliases": [],
+      "kana": "かすが さくら",
+      "birthday": "12月12日",
+      "birthplace": "東京都",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/kasuga-sakura.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%98%A5%E6%97%A5%E3%81%95%E3%81%8F%E3%82%89"
+        }
+      ]
+    },
+    {
+      "lookup_name": "月城日花",
+      "name_zh": "月城日花",
+      "name_ja": "月城日花",
+      "aliases": [],
+      "kana": "つきしろ ひか",
+      "birthday": "3月17日",
+      "birthplace": "福岡県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=13033",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9C%88%E5%9F%8E%E6%97%A5%E8%8A%B1"
+        }
+      ]
+    },
+    {
+      "lookup_name": "望月ゆみこ",
+      "name_zh": "望月裕美子",
+      "name_ja": "望月ゆみこ",
+      "aliases": [],
+      "kana": "もちづき ゆみこ",
+      "birthday": "5月25日",
+      "birthplace": "鳥取県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://kenproduction.co.jp/talent/239",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9C%9B%E6%9C%88%E3%82%86%E3%81%BF%E3%81%93"
+        }
+      ]
+    },
+    {
+      "lookup_name": "木村千咲",
+      "name_zh": "木村千咲",
+      "name_ja": "木村千咲",
+      "aliases": [],
+      "kana": "きむら ちさ",
+      "birthday": "8月28日",
+      "birthplace": "兵庫県",
+      "agency": "REBOOT",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%9D%91%E5%8D%83%E5%92%B2"
+        }
+      ]
+    },
+    {
+      "lookup_name": "本泉莉奈",
+      "name_zh": "本泉莉奈",
+      "name_ja": "本泉莉奈",
+      "aliases": [],
+      "kana": "ほんいずみ りな",
+      "birthday": "2月4日",
+      "birthplace": "福島県",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E6%B3%89%E8%8E%89%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "朴璐美",
+      "name_zh": "朴璐美",
+      "name_ja": "朴璐美",
+      "aliases": [],
+      "kana": "ぱく ろみ",
+      "birthday": "1月22日",
+      "birthplace": "東京都江戸川区",
+      "agency": "SViL",
+      "official_profile": "https://www.svil.co.jp/%E6%9C%B4%E7%92%90%E7%BE%8E",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9C%B4%E7%92%90%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "杉浦しおり",
+      "name_zh": "杉浦栞",
+      "name_ja": "杉浦しおり",
+      "aliases": [],
+      "kana": "すぎうら しおり",
+      "birthday": "7月1日",
+      "birthplace": "愛知県",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=39",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E6%B5%A6%E3%81%97%E3%81%8A%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "東山奈央",
+      "name_zh": "东山奈央",
+      "name_ja": "東山奈央",
+      "aliases": [],
+      "kana": "とうやま なお",
+      "birthday": "3月11日",
+      "birthplace": "東京都",
+      "agency": "インテンション",
+      "official_profile": "https://toyamanao.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%B1%B1%E5%A5%88%E5%A4%AE"
+        }
+      ]
+    },
+    {
+      "lookup_name": "松井恵理子",
+      "name_zh": "松井惠理子",
+      "name_ja": "松井恵理子",
+      "aliases": [],
+      "kana": "まつい えりこ",
+      "birthday": "3月8日",
+      "birthplace": "愛知県蒲郡市",
+      "agency": "アトレイズ",
+      "official_profile": "https://atrays.jp/actor/talent/matsui-eriko/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%BA%95%E6%81%B5%E7%90%86%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "松岡美里",
+      "name_zh": "松冈美里",
+      "name_ja": "松岡美里",
+      "aliases": [],
+      "kana": "まつおか みさと",
+      "birthday": "3月23日",
+      "birthplace": "兵庫県",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=83",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B2%A1%E7%BE%8E%E9%87%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "松嵜麗",
+      "name_zh": "松嵜丽",
+      "name_ja": "松嵜麗",
+      "aliases": [],
+      "kana": "まつざき れい",
+      "birthday": "5月31日",
+      "birthplace": "福岡県福岡市",
+      "agency": "マウスプロモーション",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B5%9C%E9%BA%97"
+        }
+      ]
+    },
+    {
+      "lookup_name": "松田颯水",
+      "name_zh": "松田飒水",
+      "name_ja": "松田颯水",
+      "aliases": [],
+      "kana": "まつだ さつみ",
+      "birthday": "7月17日",
+      "birthplace": "大阪府高槻市",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14258/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E7%94%B0%E9%A2%AF%E6%B0%B4"
+        }
+      ]
+    },
+    {
+      "lookup_name": "根本京里",
+      "name_zh": "根本京里",
+      "name_ja": "根本京里",
+      "aliases": [],
+      "kana": "ねもと みやり",
+      "birthday": "5月22日",
+      "birthplace": "茨城県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/nemoto-miyari.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%A0%B9%E6%9C%AC%E4%BA%AC%E9%87%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "根本優奈",
+      "name_zh": "根本优奈",
+      "name_ja": "根本優奈",
+      "aliases": [],
+      "kana": "ねもと ゆな",
+      "birthday": "11月26日",
+      "birthplace": "東京都",
+      "agency": "クレイジーボックス",
+      "official_profile": "https://crazy-box.co.jp/talent/根本優奈/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%A0%B9%E6%9C%AC%E5%84%AA%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "植田佳奈",
+      "name_zh": "植田佳奈",
+      "name_ja": "植田佳奈",
+      "aliases": [],
+      "kana": "うえだ かな",
+      "birthday": "6月9日",
+      "birthplace": "大阪府東大阪市",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=25",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%A4%8D%E7%94%B0%E4%BD%B3%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "橋本ちなみ",
+      "name_zh": "桥本千波",
+      "name_ja": "橋本ちなみ",
+      "aliases": [],
+      "kana": "はしもと ちなみ",
+      "birthday": "7月17日",
+      "birthplace": "長野県",
+      "agency": "ヴィムス",
+      "official_profile": "https://www.vims.co.jp/talent/362/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%A9%8B%E6%9C%AC%E3%81%A1%E3%81%AA%E3%81%BF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "櫻庭有紗",
+      "name_zh": "樱庭有纱",
+      "name_ja": "櫻庭有紗",
+      "aliases": [],
+      "kana": "さくらば ありさ",
+      "birthday": "9月18日",
+      "birthplace": "青森県",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14395/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%AB%BB%E5%BA%AD%E6%9C%89%E7%B4%97"
+        }
+      ]
+    },
+    {
+      "lookup_name": "水橋かおり",
+      "name_zh": "水桥香织",
+      "name_ja": "水橋かおり",
+      "aliases": [],
+      "kana": "みずはし かおり",
+      "birthday": "8月28日",
+      "birthplace": "北海道札幌市",
+      "agency": "アーツビジョン",
+      "official_profile": "https://miz84.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E6%A9%8B%E3%81%8B%E3%81%8A%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "沖野晃司",
+      "name_zh": "冲野晃司",
+      "name_ja": "沖野晃司",
+      "aliases": [],
+      "kana": "おきの こうじ",
+      "birthday": "11月18日",
+      "birthplace": "福岡県",
+      "agency": "アトミックモンキー",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E9%87%8E%E6%99%83%E5%8F%B8"
+        }
+      ]
+    },
+    {
+      "lookup_name": "沢城みゆき",
+      "name_zh": "泽城美雪",
+      "name_ja": "沢城みゆき",
+      "aliases": [],
+      "kana": "さわしろ みゆき",
+      "birthday": "6月2日",
+      "birthplace": "東京都",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/sawashiro-miyuki.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B2%A2%E5%9F%8E%E3%81%BF%E3%82%86%E3%81%8D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "河井晴菜",
+      "name_zh": "河井晴菜",
+      "name_ja": "河井晴菜",
+      "aliases": [],
+      "kana": "かわい はるな",
+      "birthday": "9月11日",
+      "birthplace": "千葉県",
+      "agency": "ヴィムス",
+      "official_profile": "https://www.vims.co.jp/talent/342/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E4%BA%95%E6%99%B4%E8%8F%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "河野ひより",
+      "name_zh": "河野日和",
+      "name_ja": "河野ひより",
+      "aliases": [],
+      "kana": "こうの ひより",
+      "birthday": "6月21日",
+      "birthplace": "山梨県",
+      "agency": "FIRST WIND production",
+      "official_profile": "https://firstwind.co.jp/talentpage/kono_hiyori/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E9%87%8E%E3%81%B2%E3%82%88%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "lookup_name": "津田美波",
+      "name_zh": "津田美波",
+      "name_ja": "津田美波",
+      "aliases": [],
+      "kana": "つだ みなみ",
+      "birthday": "6月8日",
+      "birthplace": "神奈川県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://ameblo.jp/00dpd/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E7%94%B0%E7%BE%8E%E6%B3%A2"
+        }
+      ]
+    },
+    {
+      "lookup_name": "浅见春那",
+      "name_zh": "浅见春那",
+      "name_ja": "浅見春那",
+      "aliases": [],
+      "kana": "あさみ はるな",
+      "birthday": "3月21日",
+      "birthplace": "福井県",
+      "agency": "EARLY WING",
+      "official_profile": "https://www.earlywing.co.jp/actordb/catea/talent_asamiharuna",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E8%A6%8B%E6%98%A5%E9%82%A3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "海弓シュリ",
+      "name_zh": "海弓首里",
+      "name_ja": "海弓シュリ",
+      "aliases": [],
+      "kana": "みゆみ しゅり",
+      "birthday": "1月6日",
+      "birthplace": "沖縄県",
+      "agency": "マウスプロモーション",
+      "official_profile": "https://mausu.net/talent/miyumi_shuri.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E5%BC%93%E3%82%B7%E3%83%A5%E3%83%AA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "海野水玉",
+      "name_zh": "海野水玉",
+      "name_ja": "海野水玉",
+      "aliases": [],
+      "kana": "うみの みずたま",
+      "birthday": "",
+      "birthplace": "静岡県",
+      "agency": "Alibiroom、i.nari",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "not_published",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E9%87%8E%E6%B0%B4%E7%8E%89"
+        }
+      ]
+    },
+    {
+      "lookup_name": "渡部優衣",
+      "name_zh": "渡部优衣",
+      "name_ja": "渡部優衣",
+      "aliases": [],
+      "kana": "わたなべ ゆい",
+      "birthday": "12月4日",
+      "birthplace": "大阪府箕面市",
+      "agency": "ケンユウオフィス",
+      "official_profile": "https://yuiwatanabe.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B8%A1%E9%83%A8%E5%84%AA%E8%A1%A3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "渡部恵子",
+      "name_zh": "渡部惠子",
+      "name_ja": "渡部恵子",
+      "aliases": [],
+      "kana": "わたなべ けいこ",
+      "birthday": "3月29日",
+      "birthplace": "埼玉県",
+      "agency": "エムドーン",
+      "official_profile": "https://mdawn.co.jp/keiko_watanabe.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B8%A1%E9%83%A8%E6%81%B5%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "瀬戸桃子",
+      "name_zh": "濑户桃子",
+      "name_ja": "瀬戸桃子",
+      "aliases": [],
+      "kana": "せと ももこ",
+      "birthday": "8月17日",
+      "birthplace": "埼玉県",
+      "agency": "トイズファクトリー",
+      "official_profile": "https://www.toysfactory.co.jp/artist/momokoseto/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "照井春佳",
+      "name_zh": "照井春佳",
+      "name_ja": "照井春佳",
+      "aliases": [],
+      "kana": "てるい はるか",
+      "birthday": "3月7日",
+      "birthplace": "岩手県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/terui-haruka.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%85%A7%E4%BA%95%E6%98%A5%E4%BD%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "田中あいみ",
+      "name_zh": "田中爱美",
+      "name_ja": "田中あいみ",
+      "aliases": [],
+      "kana": "たなか あいみ",
+      "birthday": "4月28日",
+      "birthplace": "東京都、神奈川県",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E3%81%82%E3%81%84%E3%81%BF_%28%E5%A3%B0%E5%84%AA%29"
+        }
+      ]
+    },
+    {
+      "lookup_name": "田所あずさ",
+      "name_zh": "田所梓",
+      "name_ja": "田所あずさ",
+      "aliases": [],
+      "kana": "たどころ あずさ",
+      "birthday": "11月10日",
+      "birthplace": "茨城県水戸市",
+      "agency": "INSPIONエージェンシー",
+      "official_profile": "https://inspion-agc.co.jp/ja/talent/tadokoro-azusa/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%89%80%E3%81%82%E3%81%9A%E3%81%95"
+        }
+      ]
+    },
+    {
+      "lookup_name": "田澤茉純",
+      "name_zh": "田泽茉纯",
+      "name_ja": "田澤茉純",
+      "aliases": [],
+      "kana": "たざわ ますみ",
+      "birthday": "11月22日",
+      "birthplace": "神奈川県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12566",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%BE%A4%E8%8C%89%E7%B4%94"
+        }
+      ]
+    },
+    {
+      "lookup_name": "田辺留依",
+      "name_zh": "田边留依",
+      "name_ja": "田辺留依",
+      "aliases": [],
+      "kana": "たなべ るい",
+      "birthday": "5月23日",
+      "birthplace": "東京都",
+      "agency": "ステイラック",
+      "official_profile": "https://stay-luck.com/talent/tanabe-rui/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E8%BE%BA%E7%95%99%E4%BE%9D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "白石晴香",
+      "name_zh": "白石晴香",
+      "name_ja": "白石晴香",
+      "aliases": [],
+      "kana": "しらいし はるか",
+      "birthday": "4月8日",
+      "birthplace": "東京都",
+      "agency": "トイズファクトリー",
+      "official_profile": "https://www.toysfactory.co.jp/artist/harukashiraishi/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%9F%B3%E6%99%B4%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "白砂沙帆",
+      "name_zh": "白砂沙帆",
+      "name_ja": "白砂沙帆",
+      "aliases": [],
+      "kana": "しらす さほ",
+      "birthday": "8月19日",
+      "birthplace": "和歌山県",
+      "agency": "マウスプロモーション",
+      "official_profile": "https://mausu.net/talent/shirasu-saho.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%A0%82%E6%B2%99%E5%B8%86"
+        }
+      ]
+    },
+    {
+      "lookup_name": "相坂優歌",
+      "name_zh": "相坂优歌",
+      "name_ja": "相坂優歌",
+      "aliases": [],
+      "kana": "あいさか ゆうか",
+      "birthday": "9月5日",
+      "birthplace": "千葉県",
+      "agency": "アプトプロ",
+      "official_profile": "https://www.jvcmusic.co.jp/flyingdog/-/Artist/A025341.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9B%B8%E5%9D%82%E5%84%AA%E6%AD%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "真名瀬日和",
+      "name_zh": "真名濑日和",
+      "name_ja": "真名瀬日和",
+      "aliases": [],
+      "kana": "まなせ ひより",
+      "birthday": "2月27日",
+      "birthplace": "埼玉県",
+      "agency": "INSPIONエージェンシー",
+      "official_profile": "https://inspion-agc.co.jp/ja/talent/manase-hiyori/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E5%90%8D%E7%80%AC%E6%97%A5%E5%92%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "真野美月",
+      "name_zh": "真野美月",
+      "name_ja": "真野美月",
+      "aliases": [],
+      "kana": "まの みづき",
+      "birthday": "1月11日",
+      "birthplace": "大分県",
+      "agency": "尾木プロ THE NEXT",
+      "official_profile": "https://www.oginext.com/women/mano.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E9%87%8E%E7%BE%8E%E6%9C%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "矢野妃菜喜",
+      "name_zh": "矢野妃菜喜",
+      "name_ja": "矢野妃菜喜",
+      "aliases": [],
+      "kana": "やの ひなき",
+      "birthday": "3月5日",
+      "birthplace": "兵庫県",
+      "agency": "ソニー・ミュージックアーティスツ",
+      "official_profile": "https://www.sma.co.jp/s/sma/artist/454#/news/0",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9F%A2%E9%87%8E%E5%A6%83%E8%8F%9C%E5%96%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "石原夏織",
+      "name_zh": "石原夏织",
+      "name_ja": "石原夏織",
+      "aliases": [],
+      "kana": "いしはら かおり",
+      "birthday": "8月6日",
+      "birthplace": "千葉県",
+      "agency": "スタイルキューブ",
+      "official_profile": "http://ishiharakaori.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%8E%9F%E5%A4%8F%E7%B9%94"
+        }
+      ]
+    },
+    {
+      "lookup_name": "石川由依",
+      "name_zh": "石川由依",
+      "name_ja": "石川由依",
+      "aliases": [],
+      "kana": "いしかわ ゆい",
+      "birthday": "5月30日",
+      "birthplace": "兵庫県",
+      "agency": "amitty",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B7%9D%E7%94%B1%E4%BE%9D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "石見舞菜香",
+      "name_zh": "石见舞菜香",
+      "name_ja": "石見舞菜香",
+      "aliases": [],
+      "kana": "いわみ まなか",
+      "birthday": "4月30日",
+      "birthplace": "埼玉県",
+      "agency": "ラクーンドッグ",
+      "official_profile": "https://www.raccoon-dog.co.jp/talent/r10-iwami.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E8%A6%8B%E8%88%9E%E8%8F%9C%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "礒部花凜",
+      "name_zh": "𥐟部花凛",
+      "name_ja": "礒部花凜",
+      "aliases": [],
+      "kana": "いそべ かりん",
+      "birthday": "5月26日",
+      "birthplace": "奈良県",
+      "agency": "アミューズクリエイティブスタジオ",
+      "official_profile": "https://www.amuse.co.jp/artist/A8915/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A4%92%E9%83%A8%E8%8A%B1%E5%87%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "神谷早矢佳",
+      "name_zh": "神谷早矢佳",
+      "name_ja": "神谷早矢佳",
+      "aliases": [],
+      "kana": "かみたに さやか",
+      "birthday": "6月22日",
+      "birthplace": "兵庫県",
+      "agency": "アスレーベン",
+      "official_profile": "https://asleben.jp/talents/sayaka-kamitani",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E8%B0%B7%E6%97%A9%E7%9F%A2%E4%BD%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "福原綾香",
+      "name_zh": "福原绫香",
+      "name_ja": "福原綾香",
+      "aliases": [],
+      "kana": "ふくはら あやか",
+      "birthday": "12月31日",
+      "birthplace": "鹿児島県",
+      "agency": "アクロスエンタテインメント",
+      "official_profile": "https://across-ent.com/voice_actor/detail.html?id=181",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%8E%9F%E7%B6%BE%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "福島美里衣",
+      "name_zh": "福岛美里衣",
+      "name_ja": "福島美里衣",
+      "aliases": [],
+      "kana": "ふくしま みりい",
+      "birthday": "2月19日",
+      "birthplace": "東京都",
+      "agency": "アトレイズ",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B3%B6%E7%BE%8E%E9%87%8C%E8%A1%A3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "福嶋晴菜",
+      "name_zh": "福岛晴菜",
+      "name_ja": "福嶋晴菜",
+      "aliases": [],
+      "kana": "ふくしま はるな",
+      "birthday": "4月22日",
+      "birthplace": "大阪府",
+      "agency": "スワロウ",
+      "official_profile": "https://swallow-p.com/actor/fukushima-haruna/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "秋奈",
+      "name_zh": "秋奈",
+      "name_ja": "秋奈",
+      "aliases": [],
+      "kana": "あきな",
+      "birthday": "11月2日",
+      "birthplace": "宮城県",
+      "agency": "",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "not_published",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "秋山実咲",
+      "name_zh": "秋山实咲",
+      "name_ja": "秋山実咲",
+      "aliases": [],
+      "kana": "あきやま みさき",
+      "birthday": "8月2日",
+      "birthplace": "静岡県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/akiyama-misaki.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%B1%B1%E5%AE%9F%E5%92%B2"
+        }
+      ]
+    },
+    {
+      "lookup_name": "稲垣好",
+      "name_zh": "稻垣好",
+      "name_ja": "稲垣好",
+      "aliases": [],
+      "kana": "いながき このみ",
+      "birthday": "7月24日",
+      "birthplace": "新潟県新潟市",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://imenterprise.jp/profile.php?id=148",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E5%9E%A3%E5%A5%BD"
+        }
+      ]
+    },
+    {
+      "lookup_name": "立花日菜",
+      "name_zh": "立花日菜",
+      "name_ja": "立花日菜",
+      "aliases": [],
+      "kana": "たちばな ひな",
+      "birthday": "6月14日",
+      "birthplace": "宮城県仙台市",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14415/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E8%8A%B1%E6%97%A5%E8%8F%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "篠原侑",
+      "name_zh": "篠原侑",
+      "name_ja": "篠原侑",
+      "aliases": [],
+      "kana": "ささはら ゆう",
+      "birthday": "4月30日",
+      "birthplace": "熊本県",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=35",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%AF%A0%E5%8E%9F%E4%BE%91"
+        }
+      ]
+    },
+    {
+      "lookup_name": "篠田みなみ",
+      "name_zh": "篠田南",
+      "name_ja": "篠田みなみ",
+      "aliases": [],
+      "kana": "しのだ みなみ",
+      "birthday": "6月3日",
+      "birthplace": "千葉県",
+      "agency": "オフィスアネモネ（業務提携）",
+      "official_profile": "https://www.office-anemone.com/?page_id=7891",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%AF%A0%E7%94%B0%E3%81%BF%E3%81%AA%E3%81%BF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "紫月杏朱彩",
+      "name_zh": "紫月杏朱彩",
+      "name_ja": "紫月杏朱彩",
+      "aliases": [],
+      "kana": "しづき あずさ",
+      "birthday": "11月8日",
+      "birthplace": "神奈川県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12993",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%B4%AB%E6%9C%88%E6%9D%8F%E6%9C%B1%E5%BD%A9"
+        }
+      ]
+    },
+    {
+      "lookup_name": "細江純子",
+      "name_zh": "细江纯子",
+      "name_ja": "細江純子",
+      "aliases": [],
+      "kana": "",
+      "birthday": "3月12日",
+      "birthplace": "愛知県蒲郡市",
+      "agency": "",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "not_applicable",
+        "official_profile": "not_applicable"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%B4%B0%E6%B1%9F%E7%B4%94%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "羊宮妃那",
+      "name_zh": "羊宫妃那",
+      "name_ja": "羊宮妃那",
+      "aliases": [],
+      "kana": "ようみや ひな",
+      "birthday": "3月26日",
+      "birthplace": "奈良県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/yomiya-hina.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E7%BE%8A%E5%AE%AE%E5%A6%83%E9%82%A3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "能登麻美子",
+      "name_zh": "能登麻美子",
+      "name_ja": "能登麻美子",
+      "aliases": [],
+      "kana": "のと まみこ",
+      "birthday": "2月6日",
+      "birthplace": "石川県金沢市",
+      "agency": "大沢事務所",
+      "official_profile": "https://osawa-inc.co.jp/women/notomamiko/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%83%BD%E7%99%BB%E9%BA%BB%E7%BE%8E%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "花井美春",
+      "name_zh": "花井美春",
+      "name_ja": "花井美春",
+      "aliases": [],
+      "kana": "はない みはる",
+      "birthday": "2月8日",
+      "birthplace": "北海道千歳市",
+      "agency": "アトレイズ",
+      "official_profile": "https://atrays.jp/actor/talent/hanai-miharu/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E4%BA%95%E7%BE%8E%E6%98%A5"
+        }
+      ]
+    },
+    {
+      "lookup_name": "芹澤優",
+      "name_zh": "芹泽优",
+      "name_ja": "芹澤優",
+      "aliases": [],
+      "kana": "せりざわ ゆう",
+      "birthday": "12月3日",
+      "birthplace": "東京都",
+      "agency": "",
+      "official_profile": "https://yu-serizawa.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "not_published",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%8A%B9%E6%BE%A4%E5%84%AA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "菊池ゆりな",
+      "name_zh": "菊池友莉菜",
+      "name_ja": "菊池ゆりな",
+      "aliases": [],
+      "kana": "きくち ゆりな",
+      "birthday": "2月7日",
+      "birthplace": "福島県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/254",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%8F%8A%E6%B1%A0%E3%82%86%E3%82%8A%E3%81%AA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "菊池紗矢香",
+      "name_zh": "菊池纱矢香",
+      "name_ja": "菊池紗矢香",
+      "aliases": [],
+      "kana": "きくち さやか",
+      "birthday": "5月8日",
+      "birthplace": "千葉県",
+      "agency": "クレアボイス",
+      "official_profile": "https://clare-voice.co.jp/talent/sayaka_kikuchi",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99"
+        }
+      ]
+    },
+    {
+      "lookup_name": "華成結",
+      "name_zh": "华成结",
+      "name_ja": "華成結",
+      "aliases": [],
+      "kana": "かなり ゆい",
+      "birthday": "9月26日",
+      "birthplace": "愛知県",
+      "agency": "スワロウ",
+      "official_profile": "https://swallow-p.com/actor/kanari-yui/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%8F%AF%E6%88%90%E7%B5%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "藍原ことみ",
+      "name_zh": "蓝原琴美",
+      "name_ja": "藍原ことみ",
+      "aliases": [],
+      "kana": "あいはら ことみ",
+      "birthday": "5月2日",
+      "birthplace": "青森県",
+      "agency": "アスレーベン",
+      "official_profile": "https://asleben.jp/talents/kotomi-aihara",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%97%8D%E5%8E%9F%E3%81%93%E3%81%A8%E3%81%BF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "藤井ゆきよ",
+      "name_zh": "藤井幸代",
+      "name_ja": "藤井ゆきよ",
+      "aliases": [],
+      "kana": "ふじい ゆきよ",
+      "birthday": "5月8日",
+      "birthplace": "神奈川県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/fujii-yukiyo.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E4%BA%95%E3%82%86%E3%81%8D%E3%82%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "藤原夏海",
+      "name_zh": "藤原夏海",
+      "name_ja": "藤原夏海",
+      "aliases": [],
+      "kana": "ふじわら なつみ",
+      "birthday": "6月2日",
+      "birthplace": "静岡県浜松市",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14398/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E5%A4%8F%E6%B5%B7"
+        }
+      ]
+    },
+    {
+      "lookup_name": "藤本侑里",
+      "name_zh": "藤本侑里",
+      "name_ja": "藤本侑里",
+      "aliases": [],
+      "kana": "ふじもと ゆり",
+      "birthday": "9月11日",
+      "birthplace": "千葉県",
+      "agency": "FIRST WIND production",
+      "official_profile": "https://firstwind.co.jp/talentpage/fujimoto_yuri",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E6%9C%AC%E4%BE%91%E9%87%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "藤野彩水",
+      "name_zh": "藤野彩水",
+      "name_ja": "藤野彩水",
+      "aliases": [],
+      "kana": "ふじの あやみ",
+      "birthday": "3月28日",
+      "birthplace": "北海道札幌市",
+      "agency": "DRプロジェクト",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E9%87%8E%E5%BD%A9%E6%B0%B4"
+        }
+      ]
+    },
+    {
+      "lookup_name": "衣川里佳",
+      "name_zh": "衣川里佳",
+      "name_ja": "衣川里佳",
+      "aliases": [],
+      "kana": "きぬがわ りか",
+      "birthday": "12月17日",
+      "birthplace": "東京都",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=13153",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%A1%A3%E5%B7%9D%E9%87%8C%E4%BD%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "西連寺亜希",
+      "name_zh": "西连寺亚希",
+      "name_ja": "西連寺亜希",
+      "aliases": [],
+      "kana": "さいれんじ あき",
+      "birthday": "1月12日",
+      "birthplace": "茨城県",
+      "agency": "グリーンノート",
+      "official_profile": "https://greennote-info.com/akisairenji/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E9%80%A3%E5%AF%BA%E4%BA%9C%E5%B8%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "豊崎愛生",
+      "name_zh": "丰崎爱生",
+      "name_ja": "豊崎愛生",
+      "aliases": [],
+      "kana": "とよさき あき",
+      "birthday": "10月28日",
+      "birthplace": "徳島県",
+      "agency": "ミュージックレイン",
+      "official_profile": "https://musicrayn.com/s/mra/artist/toyosaki_aki",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%B4%8E%E6%84%9B%E7%94%9F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "近藤唯",
+      "name_zh": "近藤唯",
+      "name_ja": "近藤唯",
+      "aliases": [],
+      "kana": "こんどう ゆい",
+      "birthday": "6月28日",
+      "birthplace": "神奈川県",
+      "agency": "ケンユウオフィス",
+      "official_profile": "https://kenyu-office.com/kondoyui/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E8%97%A4%E5%94%AF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "近貞月乃",
+      "name_zh": "近贞月乃",
+      "name_ja": "近貞月乃",
+      "aliases": [],
+      "kana": "ちかさだ つきの",
+      "birthday": "7月11日",
+      "birthplace": "神奈川県",
+      "agency": "オフィスアネモネ",
+      "official_profile": "https://www.office-anemone.com/?page_id=6219",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E8%B2%9E%E6%9C%88%E4%B9%83"
+        }
+      ]
+    },
+    {
+      "lookup_name": "進藤尚美",
+      "name_zh": "进藤尚美",
+      "name_ja": "進藤尚美",
+      "aliases": [],
+      "kana": "しんどう なおみ",
+      "birthday": "11月9日",
+      "birthplace": "京都府",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/shindo-naomi.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%80%B2%E8%97%A4%E5%B0%9A%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "遠野ひかる",
+      "name_zh": "远野光",
+      "name_ja": "遠野ひかる",
+      "aliases": [],
+      "kana": "とおの ひかる",
+      "birthday": "3月5日",
+      "birthplace": "東京都",
+      "agency": "響",
+      "official_profile": "https://hibiki-cast.jp/hibiki_f/tono_hikaru/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%81%A0%E9%87%8E%E3%81%B2%E3%81%8B%E3%82%8B"
+        }
+      ]
+    },
+    {
+      "lookup_name": "野口瑠璃子",
+      "name_zh": "野口瑠璃子",
+      "name_ja": "野口瑠璃子",
+      "aliases": [],
+      "kana": "のぐち るりこ",
+      "birthday": "7月6日",
+      "birthplace": "福岡県",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14337/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E5%8F%A3%E7%91%A0%E7%92%83%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "野木奏",
+      "name_zh": "野木奏",
+      "name_ja": "野木奏",
+      "aliases": [],
+      "kana": "のぎ かな",
+      "birthday": "9月11日",
+      "birthplace": "北海道",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=13118",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E6%9C%A8%E5%A5%8F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "鈴代紗弓",
+      "name_zh": "铃代纱弓",
+      "name_ja": "鈴代紗弓",
+      "aliases": [],
+      "kana": "すずしろ さゆみ",
+      "birthday": "2月4日",
+      "birthplace": "神奈川県",
+      "agency": "アーツビジョン",
+      "official_profile": "https://www.artsvision.co.jp/talent/14408/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E4%BB%A3%E7%B4%97%E5%BC%93"
+        }
+      ]
+    },
+    {
+      "lookup_name": "鈴木みのり",
+      "name_zh": "铃木实里",
+      "name_ja": "鈴木みのり",
+      "aliases": [],
+      "kana": "すずき みのり",
+      "birthday": "10月1日",
+      "birthplace": "愛知県",
+      "agency": "声優：青二プロダクション歌手：クラウドナイン",
+      "official_profile": "https://www.aoni.co.jp/search/suzuki-minori.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E3%81%BF%E3%81%AE%E3%82%8A_%28%E5%A3%B0%E5%84%AA%29"
+        }
+      ]
+    },
+    {
+      "lookup_name": "鈴木日菜",
+      "name_zh": "铃木日菜",
+      "name_ja": "鈴木日菜",
+      "aliases": [],
+      "kana": "すずき ひな",
+      "birthday": "2月12日",
+      "birthplace": "埼玉県",
+      "agency": "マウスプロモーション",
+      "official_profile": "https://mausu.net/talent/suzuki-hina.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E6%97%A5%E8%8F%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "鈴木絵理",
+      "name_zh": "铃木绘理",
+      "name_ja": "鈴木絵理",
+      "aliases": [],
+      "kana": "すずき えり",
+      "birthday": "6月22日",
+      "birthplace": "神奈川県{{Cite web|和書|publisher=俳協",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12594",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E7%B5%B5%E7%90%86"
+        }
+      ]
+    },
+    {
+      "lookup_name": "長江里加",
+      "name_zh": "长江里加",
+      "name_ja": "長江里加",
+      "aliases": [
+        "⻑江里加"
+      ],
+      "kana": "ながえ りか",
+      "birthday": "9月28日",
+      "birthplace": "埼玉県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/nagae-rika.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B1%9F%E9%87%8C%E5%8A%A0"
+        }
+      ]
+    },
+    {
+      "lookup_name": "長谷川育美",
+      "name_zh": "长谷川育美",
+      "name_ja": "長谷川育美",
+      "aliases": [],
+      "kana": "はせがわ いくみ",
+      "birthday": "5月31日",
+      "birthplace": "栃木県",
+      "agency": "ラクーンドッグ",
+      "official_profile": "https://www.raccoon-dog.co.jp/talent/r11-hasegawa.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E8%B0%B7%E5%B7%9D%E8%82%B2%E7%BE%8E"
+        }
+      ]
+    },
+    {
+      "lookup_name": "関根瞳",
+      "name_zh": "关根瞳",
+      "name_ja": "関根瞳",
+      "aliases": [],
+      "kana": "せきね ひとみ",
+      "birthday": "5月9日",
+      "birthplace": "東京都",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=43",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%A0%B9%E7%9E%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "陶山恵実里",
+      "name_zh": "陶山惠实里",
+      "name_ja": "陶山恵実里",
+      "aliases": [],
+      "kana": "すやま えみり",
+      "birthday": "5月26日",
+      "birthplace": "東京都",
+      "agency": "マウスプロモーション",
+      "official_profile": "https://mausu.net/talent/suyama-emiri.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%99%B6%E5%B1%B1%E6%81%B5%E5%AE%9F%E9%87%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "青山吉能",
+      "name_zh": "青山吉能",
+      "name_ja": "青山吉能",
+      "aliases": [],
+      "kana": "あおやま よしの",
+      "birthday": "5月15日",
+      "birthplace": "熊本県",
+      "agency": "81プロデュース",
+      "official_profile": "",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "not_published"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E5%B1%B1%E5%90%89%E8%83%BD"
+        }
+      ]
+    },
+    {
+      "lookup_name": "青木瑠璃子",
+      "name_zh": "青木瑠璃子",
+      "name_ja": "青木瑠璃子",
+      "aliases": [],
+      "kana": "あおき るりこ",
+      "birthday": "3月24日",
+      "birthplace": "埼玉県",
+      "agency": "アスレーベン",
+      "official_profile": "https://asleben.jp/talents/ruriko-aoki",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%9C%A8%E7%91%A0%E7%92%83%E5%AD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "須藤叶希",
+      "name_zh": "须藤叶希",
+      "name_ja": "須藤叶希",
+      "aliases": [],
+      "kana": "すどう かのこ",
+      "birthday": "1月20日",
+      "birthplace": "神奈川県",
+      "agency": "東宝芸能Breathe Arts（業務提携）",
+      "official_profile": "https://www.toho-ent.co.jp/actor/2080",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E8%97%A4%E5%8F%B6%E5%B8%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "首藤志奈",
+      "name_zh": "首藤志奈",
+      "name_ja": "首藤志奈",
+      "aliases": [],
+      "kana": "しゅとう ゆきな",
+      "birthday": "12月19日",
+      "birthplace": "大分県",
+      "agency": "ラクーンドッグ",
+      "official_profile": "https://www.raccoon-dog.co.jp/talent/r14-syutou.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%A6%96%E8%97%A4%E5%BF%97%E5%A5%88"
+        }
+      ]
+    },
+    {
+      "lookup_name": "香坂さき",
+      "name_zh": "香坂沙希",
+      "name_ja": "香坂さき",
+      "aliases": [],
+      "kana": "こうさか さき",
+      "birthday": "5月25日",
+      "birthplace": "千葉県",
+      "agency": "AIR AGENCY",
+      "official_profile": "https://www.air-agency.co.jp/talent/woman/saki_kosaka",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E5%9D%82%E3%81%95%E3%81%8D"
+        }
+      ]
+    },
+    {
+      "lookup_name": "香里有佐",
+      "name_zh": "香里有佐",
+      "name_ja": "香里有佐",
+      "aliases": [],
+      "kana": "こうり ありさ",
+      "birthday": "3月13日",
+      "birthplace": "大阪府",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/kori-arisa.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E9%87%8C%E6%9C%89%E4%BD%90"
+        }
+      ]
+    },
+    {
+      "lookup_name": "高垣彩陽",
+      "name_zh": "高垣彩阳",
+      "name_ja": "高垣彩陽",
+      "aliases": [],
+      "kana": "たかがき あやひ",
+      "birthday": "10月25日",
+      "birthplace": "東京都",
+      "agency": "ミュージックレイン",
+      "official_profile": "https://www.takagakiayahi.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%9E%A3%E5%BD%A9%E9%99%BD"
+        }
+      ]
+    },
+    {
+      "lookup_name": "高柳知葉",
+      "name_zh": "高柳知叶",
+      "name_ja": "高柳知葉",
+      "aliases": [],
+      "kana": "たかやなぎ ともよ",
+      "birthday": "10月14日",
+      "birthplace": "千葉県",
+      "agency": "ラクーンドッグ",
+      "official_profile": "https://www.raccoon-dog.co.jp/talent/r13-takayanagi.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89"
+        }
+      ]
+    },
+    {
+      "lookup_name": "髙橋ミナミ",
+      "name_zh": "高桥未奈美",
+      "name_ja": "髙橋ミナミ",
+      "aliases": [
+        "高橋未奈美"
+      ],
+      "kana": "たかはし ミナミ",
+      "birthday": "12月20日",
+      "birthplace": "神奈川県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12532",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%99%E6%A9%8B%E3%83%9F%E3%83%8A%E3%83%9F"
+        }
+      ]
+    },
+    {
+      "lookup_name": "髙橋美空",
+      "name_zh": "高桥美空",
+      "name_ja": "髙橋美空",
+      "aliases": [],
+      "kana": "たかはし みそら",
+      "birthday": "12月6日",
+      "birthplace": "東京都",
+      "agency": "JTBエンタテインメント",
+      "official_profile": "https://www.jtbnextcreation.com/jtb-ent-voice/2448/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%99%E6%A9%8B%E7%BE%8E%E7%A9%BA"
+        }
+      ]
+    },
+    {
+      "lookup_name": "高橋花林",
+      "name_zh": "高桥花林",
+      "name_ja": "高橋花林",
+      "aliases": [],
+      "kana": "たかはし かりん",
+      "birthday": "9月9日",
+      "birthplace": "神奈川県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/takahashi-karin.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A9%8B%E8%8A%B1%E6%9E%97"
+        }
+      ]
+    },
+    {
+      "lookup_name": "高田憂希",
+      "name_zh": "高田忧希",
+      "name_ja": "高田憂希",
+      "aliases": [],
+      "kana": "たかだ ゆうき",
+      "birthday": "3月16日",
+      "birthplace": "福岡県北九州市",
+      "agency": "マウスプロモーション",
+      "official_profile": "https://mausu.net/talent/takada-yuuki.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E7%94%B0%E6%86%82%E5%B8%8C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "高野麻里佳",
+      "name_zh": "高野麻里佳",
+      "name_ja": "高野麻里佳",
+      "aliases": [],
+      "kana": "こうの まりか",
+      "birthday": "2月22日",
+      "birthplace": "東京都",
+      "agency": "青二プロダクション",
+      "official_profile": "https://columbia.jp/kohnomarika/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%87%8E%E9%BA%BB%E9%87%8C%E4%BD%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "鬼頭明里",
+      "name_zh": "鬼头明里",
+      "name_ja": "鬼頭明里",
+      "aliases": [],
+      "kana": "きとう あかり",
+      "birthday": "10月16日",
+      "birthplace": "愛知県名古屋市",
+      "agency": "ラクーンドッグ",
+      "official_profile": "https://kitoakari.com/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E9%A0%AD%E6%98%8E%E9%87%8C"
+        }
+      ]
+    }
+  ]
+}

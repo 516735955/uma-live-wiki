@@ -6,6 +6,8 @@ offline and deterministic apart from generated_at. Network discovery is an
 explicit maintenance action:
 
     python3 uma_tools/update_events.py --refresh-programs
+    python3 uma_tools/update_events.py --refresh-profiles
+    python3 uma_tools/update_events.py --refresh-all
     python3 uma_tools/update_events.py
     python3 uma_tools/update_events.py --check
 """
@@ -23,7 +25,10 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 import unicodedata
+import urllib.error
+import urllib.parse
 import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -36,13 +41,17 @@ DATA_DIR = ROOT / "data"
 EVENTS_DIR = DATA_DIR / "events"
 OFFICIAL_CHANNEL_ID = "UCAWxPGGuIfWME2KTLUmSCHw"
 REGULAR_PROGRAM_BASELINES = {"paka-live-tv": 62, "paka-live-tv-prime": 6, "sokosoko-paka-live-tv": 55}
+PAKALIVE_ARCHIVE_PAGES = {
+    "paka-live-tv": "https://umamusu.wiki/PakaLive_TV",
+    "paka-live-tv-prime": "https://umamusu.wiki/PakaLive_TV_Dash",
+}
+ANN_PROGRAM_URL = "https://www.allnightnippon.com/umamusume/"
+VOICE_DETAILS_FILE = EVENTS_DIR / "voice_actor_details.json"
 IMMUTABLE_LIVE_FILES = (DATA_DIR / "live_data.json", DATA_DIR / "live_cat_data.json")
 OUTPUT_FILES = {
     "catalog": DATA_DIR / "events_catalog.json",
     "appearances": DATA_DIR / "appearance_index.json",
     "profiles": DATA_DIR / "voice_actor_profiles.json",
-    "actor_compat": DATA_DIR / "actor_participation.json",
-    "voice_compat": DATA_DIR / "voice_participation.json",
 }
 
 VFOLD = str.maketrans({"髙": "高", "﨑": "崎", "祥": "祥", "塚": "塚", "濱": "浜", "諸": "諸"})
@@ -235,11 +244,17 @@ def unique_id(base: str, used: set[str]) -> str:
 
 
 class IdentityIndex:
-    def __init__(self, characters: list[dict[str, Any]], voice_list: list[dict[str, Any]], photos: dict[str, Any], overrides: dict[str, Any], previous: list[dict[str, Any]]):
+    def __init__(self, characters: list[dict[str, Any]], voice_list: list[dict[str, Any]], photos: dict[str, Any], overrides: dict[str, Any], previous: list[dict[str, Any]], details: dict[str, Any] | None = None):
         self.characters = characters
         self.voice_list = voice_list
         self.photos = photos
         self.overrides = overrides
+        self.profile_details = details or {"records": []}
+        self.non_voice_people = {
+            fold_name(str(alias)): str(kind)
+            for kind, aliases in (overrides.get("non_voice_people") or {}).items()
+            for alias in aliases
+        }
         self.voice_by_alias: dict[str, str] = {}
         self.character_by_alias: dict[str, str] = {}
         self.character_by_id = {str(item.get("id")): item for item in characters if item.get("id")}
@@ -248,7 +263,11 @@ class IdentityIndex:
             identity = item.get("identity") or {}
             for name in (identity.get("zh"), identity.get("ja"), *(identity.get("aliases") or [])):
                 if name:
-                    self._prior_ids[fold_name(str(name))] = str(item.get("id"))
+                    # Canonical local names are visited before aliases. Keep the
+                    # first owner when an earlier generated profile contained a
+                    # bad external alias, so one polluted alias cannot steal a
+                    # stable ID from the actual person.
+                    self._prior_ids.setdefault(fold_name(str(name)), str(item.get("id")))
         self.profiles = self._build_profiles()
         self.profile_by_id = {item["id"]: item for item in self.profiles}
 
@@ -266,6 +285,28 @@ class IdentityIndex:
             for name in (zh, ja):
                 if name:
                     alias_to_group[fold_name(name)] = key
+        for row in self.overrides.get("additional_voice_actors") or []:
+            zh = str(row.get("zh") or row.get("ja") or "").strip()
+            ja = str(row.get("ja") or row.get("zh") or "").strip()
+            aliases = [zh, ja, *(row.get("aliases") or [])]
+            key = next((alias_to_group.get(fold_name(name)) for name in aliases if name and alias_to_group.get(fold_name(name))), "") or fold_name(ja or zh)
+            if not key:
+                continue
+            record = grouped.setdefault(key, {"zh": zh or ja, "ja": ja or zh, "aliases": set(), "roles": []})
+            record["aliases"].update(name for name in aliases if name)
+            for name in aliases:
+                if name:
+                    alias_to_group[fold_name(name)] = key
+            for role in row.get("roles") or []:
+                record["roles"].append({
+                    "character_id": str(role.get("character_id") or ""),
+                    "name": str(role.get("name") or role.get("name_ja") or ""),
+                    "name_ja": str(role.get("name_ja") or role.get("name") or ""),
+                    "former": False,
+                    "image": str(role.get("image") or ""),
+                    "color_main": str(role.get("color_main") or ""),
+                    "color_sub": str(role.get("color_sub") or ""),
+                })
         for char in self.characters:
             current_ja = str(char.get("cv") or "").strip()
             current_zh = str(char.get("cv_zh") or current_ja).strip()
@@ -296,29 +337,59 @@ class IdentityIndex:
 
         used_ids = {value for value in self._prior_ids.values() if value}
         next_number = max([int(match.group(1)) for item in used_ids if (match := re.fullmatch(r"va-(\d+)", item))] or [0]) + 1
+        assigned_ids: set[str] = set()
         profiles: list[dict[str, Any]] = []
+        details_by_alias = {}
+        for detail in self.profile_details.get("records") or []:
+            for name in (detail.get("name_ja"), detail.get("name_zh"), *(detail.get("aliases") or [])):
+                if name:
+                    details_by_alias[fold_name(str(name))] = detail
         for key in sorted(grouped):
             record = grouped[key]
             actor_id = self._prior_ids.get(key)
+            if actor_id in assigned_ids:
+                actor_id = ""
             if not actor_id:
                 while f"va-{next_number:04d}" in used_ids:
                     next_number += 1
                 actor_id = f"va-{next_number:04d}"
                 used_ids.add(actor_id)
                 next_number += 1
+            assigned_ids.add(actor_id)
             aliases = sorted(set(record["aliases"]), key=lambda value: (value != record["zh"], value))
             photo = self.photos.get(record["zh"]) or self.photos.get(record["ja"]) or {}
+            detail = next((details_by_alias.get(fold_name(name)) for name in (record["ja"], record["zh"], *aliases) if details_by_alias.get(fold_name(name))), {})
+            detail = dict(detail)
+            profile_patch = next(
+                ((self.overrides.get("voice_actor_profile_overrides") or {}).get(name) for name in (record["ja"], record["zh"], *aliases) if (self.overrides.get("voice_actor_profile_overrides") or {}).get(name)),
+                None,
+            )
+            if profile_patch:
+                detail.update({field: value for field, value in profile_patch.items() if field != "sources"})
+                detail["sources"] = list({
+                    (source.get("kind"), source.get("url")): source
+                    for source in [*detail.get("sources", []), *profile_patch.get("sources", [])]
+                    if source.get("url")
+                }.values())
+                statuses = dict(detail.get("field_status") or {})
+                for field in ("birthday", "birthplace", "agency", "official_profile"):
+                    if profile_patch.get(field):
+                        statuses[field] = "verified"
+                detail["field_status"] = statuses
+                detail["status"] = "complete"
             profiles.append({
                 "id": actor_id,
                 "slug": actor_id,
-                "identity": {"zh": record["zh"], "ja": record["ja"], "kana": "", "aliases": aliases},
+                "identity": {"zh": record["zh"], "ja": detail.get("name_ja") or record["ja"], "kana": detail.get("kana") or "", "aliases": aliases},
                 "profile": {
-                    "birthday": photo.get("birth") or "",
-                    "birthplace": "",
-                    "agency": "",
-                    "official_profile": "",
-                    "social": [],
-                    "status": "partial",
+                    "birthday": detail.get("birthday") or photo.get("birth") or "",
+                    "birthplace": detail.get("birthplace") or "",
+                    "agency": detail.get("agency") or "",
+                    "official_profile": detail.get("official_profile") or "",
+                    "social": detail.get("social") or [],
+                    "field_status": detail.get("field_status") or {},
+                    "sources": detail.get("sources") or [],
+                    "status": detail.get("status") or "partial",
                 },
                 "photo": {
                     "url": photo.get("img") or "",
@@ -381,49 +452,96 @@ class IdentityIndex:
                 chosen.append(character_id)
         return chosen
 
+    def non_voice_person_type(self, value: str) -> str:
+        return self.non_voice_people.get(fold_name(value), "")
+
+
+def cast_relation_key(item: dict[str, Any]) -> tuple[str, ...]:
+    actor_id = str(item.get("voice_actor_id") or "")
+    character_id = str(item.get("character_id") or "")
+    if actor_id and character_id:
+        return ("voice_character", actor_id, character_id)
+    if actor_id:
+        return ("voice_role", actor_id, fold_name(item.get("role") or ""))
+    return (
+        "person_role",
+        str(item.get("person_type") or ""),
+        fold_name(item.get("name") or ""),
+        character_id or fold_name(item.get("role") or ""),
+    )
+
+
+def merge_cast_records(items: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Merge one real appearance while retaining every supporting source."""
+    out: list[dict[str, Any]] = []
+    by_relation: dict[tuple[str, ...], dict[str, Any]] = {}
+    for raw in items:
+        item = dict(raw)
+        evidence_sources = [dict(source) for source in item.get("evidence_sources") or []]
+        if item.get("evidence"):
+            evidence_sources.append({"kind": item["evidence"], "url": item.get("source_url") or ""})
+        evidence_sources = list({(source.get("kind"), source.get("url")): source for source in evidence_sources}.values())
+        item["evidence_sources"] = evidence_sources
+        key = cast_relation_key(item)
+        existing = by_relation.get(key)
+        if existing is None:
+            by_relation[key] = item
+            out.append(item)
+            continue
+        existing["evidence_sources"] = list({
+            (source.get("kind"), source.get("url")): source
+            for source in [*existing.get("evidence_sources", []), *evidence_sources]
+        }.values())
+        if not existing.get("source_url") and item.get("source_url"):
+            existing["source_url"] = item["source_url"]
+        if not existing.get("role") and item.get("role"):
+            existing["role"] = item["role"]
+        if not existing.get("character_id") and item.get("character_id"):
+            existing["character_id"] = item["character_id"]
+    return out
+
 
 def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, evidence: str, source_url: str = "") -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str]] = set()
     for item in items:
         name = str(item.get("name") or "").strip()
         role = str(item.get("role") or "").strip()
         actor_id = identities.voice_id(name)
+        item_evidence = str(item.get("source_kind") or evidence)
+        item_source_url = str(item.get("source_url") or source_url)
+        person_type = "voice_actor" if actor_id else str(item.get("person_type") or identities.non_voice_person_type(name) or "unresolved")
         # Eventernote event pages often list every artist at a mixed festival.
         # Only names connected to this project's voice-actor identity table are
         # a supported Uma Musume relationship; unknown festival guests are not
         # shown as franchise cast.
-        if evidence == "eventernote" and not actor_id:
+        if item_evidence == "eventernote" and not actor_id:
             continue
         character_id = identities.character_id(role)
-        key = (actor_id, fold_name(name), character_id or fold_name(role))
-        if key in seen:
-            continue
-        seen.add(key)
         out.append({
             "voice_actor_id": actor_id,
             "name": name,
             "character_id": character_id,
             "role": role,
-            "evidence": evidence,
-            "source_url": source_url,
-            "resolution": "resolved" if actor_id else "unresolved",
+            "evidence": item_evidence,
+            "source_url": item_source_url,
+            "person_type": person_type,
+            "resolution": "resolved" if actor_id else person_type,
         })
-    return out
+    return merge_cast_records(out)
 
 
 def series_lookup(series_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {item["id"]: item for item in series_doc.get("series", [])}
 
 
-def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used: set[str]) -> list[dict[str, Any]]:
+def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used: set[str], stable_ids: dict[str, str] | None = None) -> list[dict[str, Any]]:
     out = []
     for group_index, group in enumerate(data):
         series_match = re.search(r"(\d+(?:st|nd|rd|th)(?:\s*EVENT)?(?:\s*EXTRA)?)", group.get("group") or "", re.I)
         series_token = re.sub(r"\s+", "-", series_match.group(1).lower()) if series_match else f"series-{group_index + 1}"
         for performance_index, sub in enumerate(group.get("subs") or []):
             date = first_date(sub.get("date"))
-            event_id = unique_id(f"live-numbered-{series_token}-{date or performance_index + 1}", used)
+            event_id = unique_id((stable_ids or {}).get(sub.get("title") or "") or f"live-numbered-{series_token}-{date or performance_index + 1}", used)
             sessions = []
             cast_source = parse_cast_text(sub.get("cast") or "")
             event_cast = make_cast(cast_source, identities, "curated_live_cast")
@@ -543,8 +661,7 @@ def attach_eventernote(events: list[dict[str, Any]], eventernote_doc: dict[str, 
         if match:
             eventernote_id = match.group(1)
         if linked:
-            existing = {(item.get("voice_actor_id"), fold_name(item.get("name") or "")) for item in linked["cast"]}
-            linked["cast"].extend(item for item in cast if (item.get("voice_actor_id"), fold_name(item.get("name") or "")) not in existing)
+            linked["cast"] = merge_cast_records([*linked["cast"], *cast])
             linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
             linked["sources"].append({"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""})
             linked["image"] = linked.get("image") or source.get("img") or ""
@@ -571,14 +688,15 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
         for source_session in source_sessions:
             source_cast.extend(source_session.get("cast") or [])
         cast = make_cast(source_cast, identities, source_kind, source_url)
-        cast_by_identity = {}
-        for item in cast:
-            key = item.get("voice_actor_id") or fold_name(item.get("name") or "")
-            if key:
-                cast_by_identity[key] = item
         program_media = source.get("media") or ([{"url": source.get("url") or "", "label": "官方视频", "video_id": source.get("video_id") or "", "duration": source.get("duration")}]
                                                   if source.get("url") else [])
-        program_sources = source.get("sources") or ([{"kind": source_kind, "label": "官方公告" if source_kind == "official_announcement" else "官方 YouTube", "url": source_url}]
+        source_labels = {
+            "official_announcement": "官方公告",
+            "official_youtube": "官方 YouTube",
+            "community_archive": "Umamusume Wiki 补档",
+            "official_broadcaster": "节目官方页",
+        }
+        program_sources = source.get("sources") or ([{"kind": source_kind, "label": source_labels.get(source_kind, "资料来源"), "url": source_url}]
                                                      if source_url else [])
         characters = []
         for item in source.get("characters") or []:
@@ -618,15 +736,17 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
         events.append({
             "id": event_id, "title": source.get("title") or "", "date": source.get("date") or "", "end_date": source.get("end_date") or source.get("date") or "",
             "kind": "official_program", "mode": "online", "series_id": source.get("series_id") or "official-special", "venue": "在线播出",
-            "cast_status": source.get("cast_status") or ("verified" if cast else "pending"), "cast": list(cast_by_identity.values()), "character_ids": characters,
+            "cast_status": source.get("cast_status") or ("verified" if cast else "pending"), "cast": cast, "character_ids": characters,
             "sessions": sessions,
             "media": program_media,
             "sources": program_sources,
             "legacy_url": "", "image": source.get("thumbnail") or "", "summary": source.get("summary") or "",
+            "schedule_status": source.get("schedule_status") or ("scheduled" if source.get("date") else "unknown"),
+            "metadata_status": source.get("metadata_status") or "complete",
         })
 
 
-def apply_overrides(events: list[dict[str, Any]], overrides: dict[str, Any]) -> list[dict[str, Any]]:
+def apply_overrides(events: list[dict[str, Any]], overrides: dict[str, Any], identities: IdentityIndex) -> list[dict[str, Any]]:
     patches = overrides.get("event_patches") or {}
     aliases = overrides.get("event_aliases") or {}
     hidden = set(overrides.get("hidden_event_ids") or [])
@@ -635,23 +755,107 @@ def apply_overrides(events: list[dict[str, Any]], overrides: dict[str, Any]) -> 
         event["id"] = canonical
         patch = patches.get(canonical)
         if patch:
-            event.update(patch)
+            event.update({key: value for key, value in patch.items() if key not in ("cast_add", "sources_add")})
+            additions = make_cast(patch.get("cast_add") or [], identities, "curated_correction")
+            known_cast = {(item.get("voice_actor_id"), fold_name(item.get("name") or ""), fold_name(item.get("role") or "")) for item in event.get("cast") or []}
+            event.setdefault("cast", []).extend(
+                item for item in additions
+                if (item.get("voice_actor_id"), fold_name(item.get("name") or ""), fold_name(item.get("role") or "")) not in known_cast
+            )
+            event.setdefault("sources", []).extend(
+                source for source in patch.get("sources_add") or [] if source not in event.get("sources", [])
+            )
     return [event for event in events if event["id"] not in hidden]
 
 
 def dedupe_events(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    # Merge only high-confidence duplicates: same official program id, or an
-    # Eventernote row already attached by an explicit legacy URL. Similar titles
-    # are intentionally left separate for curator review.
-    by_id: dict[str, dict[str, Any]] = {}
+    # IDs are merged only after an explicit alias or exact source identity has
+    # established equivalence. The richer program record supplies the shell,
+    # while curated setlists, legacy links, cast evidence, and media are unioned.
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for event in events:
-        if event["id"] not in by_id:
-            by_id[event["id"]] = event
-            continue
-        target = by_id[event["id"]]
-        target["sources"].extend(source for source in event["sources"] if source not in target["sources"])
-        target["cast"].extend(item for item in event["cast"] if item not in target["cast"])
-    return list(by_id.values())
+        grouped[event["id"]].append(event)
+
+    def unique(items: Iterable[Any], key) -> list[Any]:
+        out = []
+        seen = set()
+        for item in items:
+            marker = key(item)
+            if marker in seen:
+                continue
+            seen.add(marker)
+            out.append(item)
+        return out
+
+    def merge_session(target: dict[str, Any], incoming: dict[str, Any]) -> None:
+        target["songs"] = unique([*target.get("songs", []), *incoming.get("songs", [])], lambda value: value)
+        target["character_ids"] = unique([*target.get("character_ids", []), *incoming.get("character_ids", [])], lambda value: value)
+        target["cast"] = merge_cast_records([*target.get("cast", []), *incoming.get("cast", [])])
+        target["performances"] = unique(
+            [*target.get("performances", []), *incoming.get("performances", [])],
+            lambda item: (item.get("song"), tuple(item.get("character_ids") or [])),
+        )
+        if incoming.get("setlist_source") and not target.get("setlist_source"):
+            target["setlist_source"] = incoming["setlist_source"]
+
+    out = []
+    for event_id, rows in grouped.items():
+        primary = max(
+            rows,
+            key=lambda row: (
+                row.get("kind") == "official_program",
+                bool(row.get("date")),
+                bool(row.get("image")),
+                len(row.get("summary") or ""),
+            ),
+        )
+        merged = dict(primary)
+        merged["sources"] = unique(
+            [source for row in rows for source in row.get("sources", [])],
+            lambda source: (source.get("kind"), source.get("url")),
+        )
+        merged["media"] = unique(
+            [media for row in rows for media in row.get("media", [])],
+            lambda media: media.get("video_id") or media.get("url"),
+        )
+        merged["cast"] = merge_cast_records(item for row in rows for item in row.get("cast", []))
+        merged["character_ids"] = unique(
+            [character_id for row in rows for character_id in row.get("character_ids", [])],
+            lambda character_id: character_id,
+        )
+        merged["legacy_aliases"] = unique(
+            [alias for row in rows for alias in row.get("legacy_aliases", [])],
+            lambda alias: alias,
+        )
+        merged["legacy_url"] = next((row.get("legacy_url") for row in rows if row.get("legacy_url")), "")
+        sessions: list[dict[str, Any]] = []
+        for row in rows:
+            row_sessions = row.get("sessions") or []
+            for incoming in row_sessions:
+                same = next(
+                    (
+                        session for session in sessions
+                        if session.get("date") == incoming.get("date")
+                        and (
+                            fold_name(session.get("label") or "") == fold_name(incoming.get("label") or "")
+                            or (len(row_sessions) == 1 and len(primary.get("sessions") or []) == 1)
+                        )
+                    ),
+                    None,
+                )
+                if same:
+                    merge_session(same, incoming)
+                else:
+                    sessions.append(dict(incoming))
+        for index, session in enumerate(sessions):
+            session["id"] = f"{event_id}-session-{index + 1}"
+        merged["sessions"] = sessions
+        if len(rows) > 1 and any(row.get("kind") == "official_program" for row in rows):
+            merged["kind"] = "official_program"
+            merged["mode"] = "online"
+            merged["venue"] = "在线播出"
+        out.append(merged)
+    return out
 
 
 def build_appearance_index(events: list[dict[str, Any]], identities: IdentityIndex) -> dict[str, Any]:
@@ -671,7 +875,7 @@ def build_appearance_index(events: list[dict[str, Any]], identities: IdentityInd
             char_id = cast.get("character_id") or ""
             if actor_id:
                 voice_in_event[actor_id].add(cast.get("evidence") or "")
-            else:
+            elif cast.get("person_type") == "unresolved":
                 unresolved[cast.get("name") or "（空）"] += 1
             if char_id:
                 char_in_event.add(char_id)
@@ -747,37 +951,10 @@ def enrich_profiles(profiles: list[dict[str, Any]], appearance_index: dict[str, 
     return profiles
 
 
-def compatibility_files(events: list[dict[str, Any]], appearance_index: dict[str, Any], identities: IdentityIndex) -> tuple[dict[str, Any], dict[str, Any]]:
-    actor_entries = []
-    voice_events = []
-    for event in events:
-        actors = []
-        for cast in event.get("cast") or []:
-            actor_id = cast.get("voice_actor_id") or ""
-            if actor_id and actor_id in identities.profile_by_id:
-                actors.append(identities.profile_by_id[actor_id]["identity"]["ja"])
-        days = []
-        for session in event.get("sessions") or []:
-            session_actors = []
-            if event.get("cast_status") != "character_only":
-                for char_id in session.get("character_ids") or []:
-                    character = identities.character_by_id.get(char_id) or {}
-                    actor_id = identities.voice_id(character.get("cv") or character.get("cv_zh") or "")
-                    if actor_id and actor_id in identities.profile_by_id:
-                        session_actors.append(identities.profile_by_id[actor_id]["identity"]["ja"])
-            days.append({"label": session.get("label") or "", "voice_actors": sorted(set(session_actors or actors)), "songs": session.get("songs") or []})
-        cat = "num" if event.get("series_id") == "numbered-live" else ("otherlive" if event.get("kind") == "concert" else "nonlive")
-        actor_entries.append({"cat": cat, "actors": sorted(set(actors))})
-        voice_events.append({"link": event.get("legacy_url") or f"/zh-Hans/events/{event['id']}", "title": event.get("title") or "", "cat": cat, "days": days})
-    return (
-        {"schema_version": 2, "generated_at": "source-build", "source": "events_catalog.json", "only_before_today": False, "total_events": len(actor_entries), "entries": actor_entries},
-        {"schema_version": 2, "generated_at": "source-build", "source": "events_catalog.json", "total": len(voice_events), "events": voice_events},
-    )
-
-
 def validate(catalog: dict[str, Any], appearances: dict[str, Any], profiles: list[dict[str, Any]]) -> list[str]:
     errors: list[str] = []
     event_ids = [event.get("id") for event in catalog.get("events") or []]
+    event_id_set = set(event_ids)
     if len(event_ids) != len(set(event_ids)):
         errors.append("duplicate event IDs")
     actor_ids = [profile.get("id") for profile in profiles]
@@ -785,27 +962,103 @@ def validate(catalog: dict[str, Any], appearances: dict[str, Any], profiles: lis
         errors.append("duplicate voice actor IDs")
     known_actors = set(actor_ids)
     known_characters = set(appearances.get("characters") or {})
+    semantic_events: dict[tuple[str, str], list[str]] = defaultdict(list)
+    all_session_ids: list[str] = []
     for event in catalog.get("events") or []:
         if not event.get("title"):
             errors.append(f"event {event.get('id')} has no title")
+        normalized_title = re.sub(r"[\W_]+", "", unicodedata.normalize("NFKC", event.get("title") or "").lower())
+        semantic_events[(event.get("date") or "", normalized_title)].append(event.get("id") or "")
+        if not event.get("date") and event.get("schedule_status") != "announced_tba":
+            errors.append(f"event {event.get('id')} has no date without an announced-TBA status")
+        if event.get("date"):
+            try:
+                dt.date.fromisoformat(event["date"])
+            except (TypeError, ValueError):
+                errors.append(f"event {event.get('id')} has invalid date {event.get('date')}")
+        sources = event.get("sources") or []
+        if not sources:
+            errors.append(f"event {event.get('id')} has no evidence source")
+        source_keys = [(source.get("kind"), source.get("url")) for source in sources]
+        if len(source_keys) != len(set(source_keys)):
+            errors.append(f"event {event.get('id')} has duplicate evidence sources")
+        if any(not source.get("url") for source in sources):
+            errors.append(f"event {event.get('id')} has a source without URL")
+        cast_status = event.get("cast_status")
+        if cast_status not in ("verified", "partial", "character_only", "announced_tba"):
+            errors.append(f"event {event.get('id')} has unsupported cast status {cast_status}")
+        if cast_status == "verified" and not event.get("cast"):
+            errors.append(f"event {event.get('id')} is verified without cast")
+        if cast_status == "character_only" and (event.get("cast") or not event.get("character_ids")):
+            errors.append(f"event {event.get('id')} has inconsistent character-only cast")
+        cast_keys = []
         for cast in event.get("cast") or []:
+            person_type = cast.get("person_type")
+            if person_type == "unresolved" or not person_type:
+                errors.append(f"event {event['id']} has unresolved person {cast.get('name')}")
+            if person_type == "voice_actor" and not cast.get("voice_actor_id"):
+                errors.append(f"event {event['id']} has voice actor without identity {cast.get('name')}")
             if cast.get("voice_actor_id") and cast["voice_actor_id"] not in known_actors:
                 errors.append(f"event {event['id']} references unknown actor {cast['voice_actor_id']}")
             if cast.get("character_id") and cast["character_id"] not in known_characters:
                 errors.append(f"event {event['id']} references unknown character {cast['character_id']}")
+            cast_keys.append(cast_relation_key(cast))
+        if len(cast_keys) != len(set(cast_keys)):
+            errors.append(f"event {event.get('id')} has duplicate cast relationships")
         for character_id in event.get("character_ids") or []:
             if character_id not in known_characters:
                 errors.append(f"event {event['id']} references unknown character {character_id}")
         for session in event.get("sessions") or []:
+            all_session_ids.append(session.get("id") or "")
+            if not session.get("id") or not session.get("label"):
+                errors.append(f"event {event['id']} has a session without stable ID or label")
+            if not session.get("date") and event.get("schedule_status") != "announced_tba":
+                errors.append(f"session {session.get('id')} has no date without an announced-TBA status")
             for character_id in session.get("character_ids") or []:
                 if character_id not in known_characters:
                     errors.append(f"session {session.get('id')} references unknown character {character_id}")
+    for semantic_key, matching_ids in semantic_events.items():
+        if semantic_key[1] and len(matching_ids) > 1:
+            errors.append(f"duplicate event identity {semantic_key}: {', '.join(matching_ids)}")
+    if len(all_session_ids) != len(set(all_session_ids)):
+        errors.append("duplicate or empty session IDs")
+    if appearances.get("unresolved_cast"):
+        errors.append("appearance index contains unresolved cast")
     for actor_id, value in (appearances.get("voice_actors") or {}).items():
         if actor_id not in known_actors:
             errors.append(f"appearance index has unknown actor {actor_id}")
         for row in value.get("events") or []:
-            if row.get("event_id") not in set(event_ids):
+            if row.get("event_id") not in event_id_set:
                 errors.append(f"actor {actor_id} references unknown event {row.get('event_id')}")
+    identity_owners: dict[str, str] = {}
+    allowed_field_statuses = {"verified", "not_published", "not_applicable"}
+    for profile in profiles:
+        identity = profile.get("identity") or {}
+        for name in (identity.get("zh"), identity.get("ja"), *(identity.get("aliases") or [])):
+            if not name:
+                continue
+            folded = fold_name(str(name))
+            owner = identity_owners.setdefault(folded, profile.get("id") or "")
+            if owner != profile.get("id"):
+                errors.append(f"voice actor identity {name} belongs to both {owner} and {profile.get('id')}")
+        details = profile.get("profile") or {}
+        if not details.get("sources"):
+            errors.append(f"voice actor {profile.get('id')} has no profile source")
+        field_status = details.get("field_status") or {}
+        for field in ("birthday", "birthplace", "agency", "official_profile"):
+            status = field_status.get(field)
+            if status not in allowed_field_statuses:
+                errors.append(f"voice actor {profile.get('id')} has unaccounted {field}: {status}")
+            if status == "verified" and not details.get(field):
+                errors.append(f"voice actor {profile.get('id')} marks empty {field} verified")
+    for series_id, baseline in REGULAR_PROGRAM_BASELINES.items():
+        ids = {event.get("id") for event in catalog.get("events") or [] if event.get("series_id") == series_id}
+        missing = [f"{series_id}-{number:03d}" for number in range(1, baseline + 1) if f"{series_id}-{number:03d}" not in ids]
+        if missing:
+            errors.append(f"series {series_id} is missing episodes: {', '.join(missing)}")
+    for event_id in [*(f"official-special-abema-stakes-{number:02d}" for number in range(1, 7)), *(f"all-night-nippon-gold-{number:03d}" for number in range(1, 7))]:
+        if event_id not in event_id_set:
+            errors.append(f"required historical or announced program is missing: {event_id}")
     return errors
 
 
@@ -865,6 +1118,11 @@ def parse_program_cast_line(line: str) -> dict[str, str] | None:
         if re.search(r"https?://|公式(?:HP|サイト)|詳細", name + role, re.I):
             return None
         return {"name": name, "role": role} if name else None
+    role_first = re.match(r"(.+?)役\s+([^\s]+)$", value)
+    if role_first:
+        role = role_first.group(1).strip()
+        name = re.sub(r"さん$", "", role_first.group(2).strip())
+        return {"name": name, "role": role} if name else None
     if value and len(value) < 30 and not re.search(r"[:：]|全員|ほか|予定|変更", value):
         return {"name": value, "role": ""}
     return None
@@ -881,13 +1139,13 @@ def parse_program_sessions(description: str, default_date: str = "") -> list[dic
                 session_dates[fold_name(schedule.group(1))] = value
     sessions = []
     for index, line in enumerate(lines):
-        heading = re.fullmatch(r"(?:■\s*)?(?:(DAY\s*\d+|前編|後編)\s*)?(?:出走者|出演者)[:：]?", line, re.I)
+        heading = re.fullmatch(r"(?:■\s*)?(?:(DAY\s*\d+|前編|後編)\s*)?(?:出走者|出演者|出演)[:：]?", line, re.I)
         if not heading:
             continue
         label = (heading.group(1) or "本期节目").strip()
         cast = []
         for candidate in lines[index + 1:]:
-            if re.fullmatch(r"(?:■\s*)?(?:(?:DAY\s*\d+|前編|後編)\s*)?(?:出走者|出演者)[:：]?", candidate, re.I):
+            if re.fullmatch(r"(?:■\s*)?(?:(?:DAY\s*\d+|前編|後編)\s*)?(?:出走者|出演者|出演)[:：]?", candidate, re.I):
                 break
             if not candidate:
                 if cast:
@@ -941,6 +1199,585 @@ def parse_program_date(description: str) -> str:
     return ""
 
 
+def fetch_text_url(url: str, attempts: int = 3) -> str:
+    request = urllib.request.Request(url, headers={"User-Agent": "uma-live-wiki data updater/1.0"})
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as error:
+            if error.code == 404 or error.code < 429 or attempt + 1 >= attempts:
+                raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt + 1 >= attempts:
+                raise
+        time.sleep(0.5 * (attempt + 1))
+    raise RuntimeError(f"unable to fetch {url}")
+
+
+def plain_wikitext(value: str) -> str:
+    text = re.sub(r"<!--.*?-->", "", str(value or ""), flags=re.S)
+    text = re.sub(r"<ref\b[^>]*>.*?</ref>|<ref\b[^>]*/>", "", text, flags=re.I | re.S)
+    text = re.sub(r"<br\s*/?>", " ", text, flags=re.I)
+    text = re.sub(r"</?(?:del|s|small|span)\b[^>]*>", "", text, flags=re.I)
+    text = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", text)
+    text = re.sub(r"\[\[([^\]]+)\]\]", r"\1", text)
+    text = re.sub(r"\[(?:https?://\S+)\s+([^\]]+)\]", r"\1", text)
+    text = text.replace("'''", "").replace("''", "")
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+
+def wiki_table_rows(source: str, caption: str) -> list[list[str]]:
+    marker = "|+ " + caption
+    marker_index = source.find(marker)
+    if marker_index < 0:
+        return []
+    start = source.rfind("{|", 0, marker_index)
+    end = source.find("|}", marker_index)
+    if start < 0 or end < 0:
+        return []
+    rows = []
+    for block in source[start:end].split("|-")[2:]:
+        cells: list[str] = []
+        current: str | None = None
+        for line in block.splitlines():
+            if line.startswith("|") and not line.startswith("|}"):
+                if current is not None:
+                    cells.append(current)
+                current = line[1:].strip()
+            elif current is not None:
+                current += " " + line.strip()
+        if current is not None:
+            cells.append(current)
+        if cells:
+            rows.append(cells)
+    return rows
+
+
+def wiki_archive_date(value: str) -> str:
+    text = plain_wikitext(value).replace("Sept ", "Sep ").replace("Sept. ", "Sep ")
+    for pattern in ("%b %d, %Y", "%B %d, %Y", "%Y/%m/%d"):
+        try:
+            return dt.datetime.strptime(text, pattern).date().isoformat()
+        except ValueError:
+            pass
+    return first_date(text)
+
+
+def english_identity_key(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKC", value or "").lower())
+
+
+def historical_cast(value: str, characters: list[dict[str, Any]], source_url: str) -> list[dict[str, str]]:
+    by_english = {english_identity_key(str(row.get("en") or "")): row for row in characters if row.get("en")}
+    aliases = {
+        english_identity_key("Tazuna Hayakawa"): english_identity_key("Hayakawa Tazuna"),
+        english_identity_key("Misato Akasaka"): english_identity_key("Akasaka Misato"),
+        english_identity_key("Trainer"): english_identity_key("Spica's Trainer"),
+        english_identity_key("Yamamin Zephyr"): english_identity_key("Yamanin Zephyr"),
+    }
+    supplementary = {
+        english_identity_key("Belno Light"): ("瀬戸桃子", "ベルノライト"),
+        english_identity_key("Fujimasa March"): ("伊瀬茉莉也", "フジマサマーチ"),
+    }
+    external_names = {
+        "Yoohei Kawakami": "川上洋平",
+        "Masaki Shirai": "白井眞輝",
+        "Junnosuke Ito": "伊藤隼之介",
+        "Akihiro Ishihara": "石原章弘",
+        "Takeshi Itazu": "板津雄志",
+        "Koichi Tsunoda": "角田晃一",
+        "Naohide Fukuhara": "福原直英",
+        "Tomoki Kondo": "近藤智樹",
+        "Keita Matsumoto": "松本圭太",
+        "Asakawa": "浅川",
+    }
+    text = plain_wikitext(value)
+    pairs = re.findall(r"([A-Za-zÀ-ž.'’\- ]+?)\s*\(([^()]*)\)", text)
+    out: list[dict[str, str]] = []
+    seen = set()
+    for actor_english, role_english in pairs:
+        actor_english = re.sub(r"^(?:Part\s*\d+|Special guests?)\s*:\s*", "", actor_english, flags=re.I).strip(" ,")
+        role_english = re.sub(r"^\?+\s*[-=]*>\s*", "", role_english).strip()
+        role_key = aliases.get(english_identity_key(role_english), english_identity_key(role_english))
+        character = by_english.get(role_key)
+        if character:
+            item = {
+                "name": str(character.get("cv") or character.get("cv_zh") or actor_english),
+                "role": str(character.get("ja") or character.get("zh") or role_english),
+                "source_kind": "community_archive",
+                "source_url": source_url,
+            }
+        elif role_key in supplementary:
+            actor, role = supplementary[role_key]
+            item = {"name": actor, "role": role, "source_kind": "community_archive", "source_url": source_url}
+        else:
+            item = {
+                "name": external_names.get(actor_english, actor_english),
+                "role": plain_wikitext(role_english),
+                "person_type": "external_guest",
+                "source_kind": "community_archive",
+                "source_url": source_url,
+            }
+        key = (fold_name(item["name"]), fold_name(item["role"]))
+        if key not in seen:
+            seen.add(key)
+            out.append(item)
+    special_match = re.search(r"Special guests?:\s*Yoohei Kawakami and Masaki Shirai", text, re.I)
+    if special_match:
+        for english_name in ("Yoohei Kawakami", "Masaki Shirai"):
+            item = {
+                "name": external_names[english_name],
+                "role": "[Alexandros]",
+                "person_type": "external_guest",
+                "source_kind": "community_archive",
+                "source_url": source_url,
+            }
+            key = (fold_name(item["name"]), fold_name(item["role"]))
+            if key not in seen:
+                seen.add(key)
+                out.append(item)
+    return out
+
+
+def historical_programs() -> list[dict[str, Any]]:
+    characters = read_window_data(DATA_DIR / "character_index_data.js", "CHAR_INDEX")
+    programs: list[dict[str, Any]] = []
+    main_source = fetch_text_url(PAKALIVE_ARCHIVE_PAGES["paka-live-tv"] + "?action=raw")
+    for cells in wiki_table_rows(main_source, "PakaLive TV Volumes"):
+        volume = plain_wikitext(cells[0]) if cells else ""
+        if not volume.isdigit() or len(cells) < 5:
+            continue
+        number = int(volume)
+        date = wiki_archive_date(cells[1])
+        cast = historical_cast(" ".join(cells[3:5]), characters, PAKALIVE_ARCHIVE_PAGES["paka-live-tv"])
+        duration_match = re.search(r"(\d+)\s*min", plain_wikitext(cells[8]) if len(cells) > 8 else "", re.I)
+        programs.append({
+            "id": f"paka-live-tv-{number:03d}",
+            "series_id": "paka-live-tv",
+            "title": f"ぱかライブTV Vol.{number}",
+            "date": date,
+            "video_id": "",
+            "url": "",
+            "thumbnail": "",
+            "duration": int(duration_match.group(1)) * 60 if duration_match else None,
+            "cast_status": "verified",
+            "cast": cast,
+            "characters": [],
+            "sessions": [],
+            "summary": plain_wikitext(cells[2]),
+            "source_kind": "community_archive",
+            "source_url": PAKALIVE_ARCHIVE_PAGES["paka-live-tv"],
+        })
+    for cells in wiki_table_rows(main_source, "Abema Stakes episodes"):
+        volume = plain_wikitext(cells[0]) if cells else ""
+        match = re.fullmatch(r"(\d+)R", volume, re.I)
+        if not match or len(cells) < 4:
+            continue
+        number = int(match.group(1))
+        date = wiki_archive_date(cells[1])
+        cast = historical_cast(cells[3], characters, PAKALIVE_ARCHIVE_PAGES["paka-live-tv"])
+        duration_match = re.search(r"(\d+)\s*m", plain_wikitext(cells[6]) if len(cells) > 6 else "", re.I)
+        programs.append({
+            "id": f"official-special-abema-stakes-{number:02d}",
+            "series_id": "official-special",
+            "title": f"Abemaステークス 第{number}R",
+            "date": date,
+            "video_id": "",
+            "url": "",
+            "thumbnail": "",
+            "duration": int(duration_match.group(1)) * 60 if duration_match else None,
+            "cast_status": "verified",
+            "cast": cast,
+            "characters": [],
+            "sessions": [],
+            "summary": plain_wikitext(cells[2]),
+            "source_kind": "community_archive",
+            "source_url": PAKALIVE_ARCHIVE_PAGES["paka-live-tv"],
+        })
+    dash_source = fetch_text_url(PAKALIVE_ARCHIVE_PAGES["paka-live-tv-prime"] + "?action=raw")
+    for cells in wiki_table_rows(dash_source, "PakaLive TV Dash Volumes"):
+        volume = plain_wikitext(cells[0]) if cells else ""
+        if not volume.isdigit() or len(cells) < 6:
+            continue
+        number = int(volume)
+        date = wiki_archive_date(cells[1])
+        cast = historical_cast(" ".join(cells[3:5]), characters, PAKALIVE_ARCHIVE_PAGES["paka-live-tv-prime"])
+        guest_text = plain_wikitext(cells[5])
+        if guest_text:
+            guest_name = re.split(r"\s*\(", guest_text, maxsplit=1)[0].strip()
+            guest_map = {"Takeshi Itazu": "板津雄志", "Koichi Tsunoda": "角田晃一", "Naohide Fukuhara": "福原直英", "Tomoki Kondo": "近藤智樹", "Keita Matsumoto": "松本圭太", "Asakawa": "浅川"}
+            cast.append({
+                "name": guest_map.get(guest_name, guest_name),
+                "role": re.search(r"\(([^)]+)\)", guest_text).group(1) if re.search(r"\(([^)]+)\)", guest_text) else "现实嘉宾",
+                "person_type": "external_guest",
+                "source_kind": "community_archive",
+                "source_url": PAKALIVE_ARCHIVE_PAGES["paka-live-tv-prime"],
+            })
+        duration_match = re.search(r"(\d+)\s*min", plain_wikitext(cells[9]) if len(cells) > 9 else "", re.I)
+        programs.append({
+            "id": f"paka-live-tv-prime-{number:03d}",
+            "series_id": "paka-live-tv-prime",
+            "title": f"ぱかライブTV' #{number}",
+            "date": date,
+            "video_id": "",
+            "url": "",
+            "thumbnail": "",
+            "duration": int(duration_match.group(1)) * 60 if duration_match else None,
+            "cast_status": "verified",
+            "cast": cast,
+            "characters": [],
+            "sessions": [],
+            "summary": plain_wikitext(cells[2]),
+            "source_kind": "community_archive",
+            "source_url": PAKALIVE_ARCHIVE_PAGES["paka-live-tv-prime"],
+        })
+    return programs
+
+
+def official_radio_programs(existing_programs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    series_id = "all-night-nippon-gold"
+    first_url = "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/"
+    trailer_url = "https://www.youtube.com/watch?v=k66w0hd_6Ms"
+    rows: list[dict[str, Any]] = [
+        {
+            "id": "all-night-nippon-gold-001",
+            "series_id": series_id,
+            "title": "ウマ娘のオールナイトニッポンGOLD 第1回",
+            "date": "2026-05-08",
+            "cast_status": "verified",
+            "cast": [
+                {"name": "上田瞳", "role": "ゴールドシップ"},
+                {"name": "日笠陽子", "role": "オルフェーヴル"},
+                {"name": "松田颯水", "role": "ステイゴールド"},
+                {"name": "荘口彰久", "role": "アシスタント", "person_type": "external_guest"},
+            ],
+            "summary": "ニッポン放送をキーステーションに全国19局ネットで生放送。",
+            "source_kind": "official_broadcaster",
+            "source_url": first_url,
+            "sources": [{"kind": "official_broadcaster", "label": "节目官方页", "url": first_url}],
+        },
+        {
+            "id": "all-night-nippon-gold-002",
+            "series_id": series_id,
+            "title": "ウマ娘のオールナイトニッポンGOLD 第2回",
+            "date": "2026-07-24",
+            "cast_status": "verified",
+            "cast": [
+                {"name": "藤本侑里", "role": "ジャングルポケット"},
+                {"name": "福嶋晴菜", "role": "ダンツフレーム"},
+                {"name": "徳井青空", "role": "テイエムオペラオー"},
+                {"name": "オーイシマサヨシ", "role": "ゲスト", "person_type": "external_guest"},
+            ],
+            "summary": "劇場版『新時代の扉』出演者を中心にしたラジオ特別番組。",
+            "source_kind": "official_youtube",
+            "source_url": trailer_url,
+            "sources": [{"kind": "official_youtube", "label": "官方 YouTube", "url": trailer_url}],
+        },
+    ]
+    known = {row["id"]: row for row in [*existing_programs, *rows] if row.get("series_id") == series_id}
+    dated = sorted(row.get("date") for row in known.values() if row.get("date"))
+    latest_date = dt.date.fromisoformat(dated[-1]) if dated else dt.date(2026, 5, 8)
+    try:
+        page = fetch_text_url(ANN_PROGRAM_URL)
+        description_match = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', page, re.I)
+        description = html.unescape(description_match.group(1)) if description_match else clean_text(page)
+        date_match = re.search(r"(\d{1,2})月(\d{1,2})日", description)
+        if date_match:
+            month, day = int(date_match.group(1)), int(date_match.group(2))
+            page_date = None
+            for year in range(latest_date.year, latest_date.year + 3):
+                try:
+                    candidate = dt.date(year, month, day)
+                except ValueError:
+                    continue
+                if candidate > dt.date(2026, 5, 8):
+                    page_date = candidate
+                    if candidate >= latest_date:
+                        break
+            if page_date:
+                matching_id = next((event_id for event_id, row in known.items() if row.get("date") == page_date.isoformat()), "")
+                if not matching_id:
+                    matching_id = next(
+                        (f"all-night-nippon-gold-{number:03d}" for number in range(1, 7)
+                         if not known.get(f"all-night-nippon-gold-{number:03d}", {}).get("date")),
+                        "",
+                    )
+                cast = []
+                for role, name in re.findall(r"([ァ-ヺー一-龯々〆ヵヶA-Za-z・]+)役の([ぁ-ゖァ-ヺー一-龯々〆ヵヶA-Za-z・]+)", description):
+                    cast.append({"name": name, "role": role})
+                assistant = re.search(
+                    r"アシスタントは(?:フリーアナウンサーの)?"
+                    r"([ぁ-ゖァ-ヺー一-龯々〆ヵヶA-Za-z・]+?)(?:が担当|[、。])",
+                    description,
+                )
+                if assistant:
+                    cast.append({"name": assistant.group(1), "role": "アシスタント", "person_type": "external_guest"})
+                if matching_id and cast:
+                    number = int(matching_id.rsplit("-", 1)[1])
+                    rows.append({
+                        "id": matching_id,
+                        "series_id": series_id,
+                        "title": f"ウマ娘のオールナイトニッポンGOLD 第{number}回",
+                        "date": page_date.isoformat(),
+                        "cast_status": "verified",
+                        "cast": cast,
+                        "summary": clean_text(description)[:300],
+                        "source_kind": "official_broadcaster",
+                        "source_url": ANN_PROGRAM_URL,
+                        "sources": [{"kind": "official_broadcaster", "label": "节目官方页", "url": ANN_PROGRAM_URL}],
+                    })
+    except Exception:
+        pass
+    complete_ids = {row["id"] for row in [*existing_programs, *rows] if row.get("series_id") == series_id and row.get("date")}
+    for number in range(3, 7):
+        event_id = f"all-night-nippon-gold-{number:03d}"
+        if event_id in complete_ids:
+            continue
+        rows.append({
+            "id": event_id,
+            "series_id": series_id,
+            "title": f"ウマ娘のオールナイトニッポンGOLD 第{number}回",
+            "date": "",
+            "cast_status": "announced_tba",
+            "cast": [],
+            "characters": [],
+            "sessions": [],
+            "schedule_status": "announced_tba",
+            "metadata_status": "announced_tba",
+            "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
+            "source_kind": "official_youtube",
+            "source_url": trailer_url,
+            "sources": [{"kind": "official_youtube", "label": "官方 YouTube", "url": trailer_url}],
+        })
+    return rows
+
+
+def balanced_template(source: str, name: str) -> str:
+    start = source.find("{{" + name)
+    if start < 0:
+        return ""
+    depth = 0
+    index = start
+    while index < len(source) - 1:
+        pair = source[index:index + 2]
+        if pair == "{{":
+            depth += 1
+            index += 2
+            continue
+        if pair == "}}":
+            depth -= 1
+            index += 2
+            if depth == 0:
+                return source[start:index]
+            continue
+        index += 1
+    return ""
+
+
+def template_fields(template: str) -> dict[str, str]:
+    matches = list(re.finditer(r"^\|\s*([^=\n]+?)\s*=\s*", template, re.M))
+    fields = {}
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(template)
+        fields[match.group(1).strip()] = template[match.end():end].strip()
+    return fields
+
+
+def clean_wikipedia_field(value: str) -> str:
+    text = re.sub(r"<!--.*?-->", "", str(value or ""), flags=re.S)
+    text = re.sub(r"<ref\b[^>]*>.*?</ref>|<ref\b[^>]*/>", "", text, flags=re.I | re.S)
+    text = re.sub(r"\{\{(?:JPN|Japan)\}\}", "", text, flags=re.I)
+    text = re.sub(r"\{\{[^{}]*\}\}", "", text)
+    text = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", text)
+    text = re.sub(r"\[\[([^\]]+)\]\]", r"\1", text)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = text.replace("'''", "").replace("''", "")
+    return re.sub(r"\s+", " ", html.unescape(text)).strip(" ・")
+
+
+def wikipedia_raw(title: str) -> str:
+    query = urllib.parse.urlencode({"title": title, "action": "raw"})
+    return fetch_text_url("https://ja.wikipedia.org/w/index.php?" + query)
+
+
+def wikipedia_person_template(source: str) -> tuple[str, dict[str, str]]:
+    for template_name in ("声優", "ActorActress", "騎手"):
+        template = balanced_template(source, template_name)
+        if template:
+            return template_name, template_fields(template)
+    return "", {}
+
+
+def wikipedia_biography_page(source: str) -> bool:
+    if wikipedia_person_template(source)[0]:
+        return True
+    prefix = source[:6000]
+    if re.search(r"[{][{][^{}\n]*(?:aimai|曖昧さ回避)[^{}\n]*[}][}]", prefix, re.I):
+        return False
+    return bool(re.search(r"'''[^']+'''.{0,800}(?:声優|俳優|歌手|騎手|アナウンサー|プロ野球選手)", prefix, re.S))
+
+
+def wikipedia_title_key(value: str) -> str:
+    base = re.sub(r"\s*[_(（][^)）]+[)）]\s*$", "", value or "")
+    return fold_name(base)
+
+
+def wikipedia_voice_page(candidates: list[str]) -> tuple[str, str]:
+    tried = set()
+    for candidate in candidates:
+        if not candidate or candidate in tried:
+            continue
+        tried.add(candidate)
+        try:
+            source = wikipedia_raw(candidate)
+        except Exception:
+            continue
+        redirect = re.match(r"#(?:REDIRECT|転送)\s*\[\[([^\]]+)\]\]", source, re.I)
+        if redirect:
+            try:
+                candidate = redirect.group(1)
+                source = wikipedia_raw(candidate)
+            except Exception:
+                continue
+        if wikipedia_biography_page(source):
+            return candidate, source
+    candidate_keys = {wikipedia_title_key(value) for value in candidates if value}
+    query = urllib.parse.urlencode({
+        "action": "query", "list": "search", "srsearch": (candidates[0] if candidates else "") + " 声優",
+        "srlimit": 3, "format": "json", "formatversion": 2,
+    })
+    try:
+        result = fetch_json_url("https://ja.wikipedia.org/w/api.php?" + query)
+    except Exception:
+        return "", ""
+    for row in (result.get("query") or {}).get("search") or []:
+        title = row.get("title") or ""
+        if title in tried or wikipedia_title_key(title) not in candidate_keys:
+            continue
+        try:
+            source = wikipedia_raw(title)
+        except Exception:
+            continue
+        if wikipedia_biography_page(source):
+            return title, source
+    return "", ""
+
+
+def voice_detail_from_wikipedia(name_zh: str, name_ja: str, aliases: list[str]) -> dict[str, Any]:
+    page_title, source = wikipedia_voice_page([name_ja, *aliases, name_zh])
+    template_name, fields = wikipedia_person_template(source) if source else ("", {})
+    month = re.sub(r"\D", "", fields.get("生月") or "")
+    day = re.sub(r"\D", "", fields.get("生日") or "")
+    if not (month and day):
+        birthday_source = fields.get("生") or source[:5000]
+        birthday_match = re.search(r"(?:生年月日と年齢|birth date and age)\s*\|\s*\d{4}\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})", birthday_source, re.I)
+        if not birthday_match:
+            birthday_match = re.search(r"\[\[(?:19|20)\d{2}年\]\]\s*\[\[(\d{1,2})月\]\]\s*\[\[(\d{1,2})日\]\]", birthday_source)
+        if birthday_match:
+            month, day = birthday_match.groups()
+    birthday = f"{int(month)}月{int(day)}日" if month and day else ""
+    birthplace = clean_wikipedia_field(fields.get("出身地") or fields.get("出生地") or fields.get("出") or "")
+    agency = clean_wikipedia_field(fields.get("事務所") or "")
+    official_field = fields.get("公式サイト") or ""
+    official_match = re.search(r"https?://[^\s\]|<]+", official_field)
+    official_profile = official_match.group(0) if official_match else ""
+    kana = clean_wikipedia_field(fields.get("ふりがな") or "")
+    canonical_field = fields.get("名前") or fields.get("芸名") or fields.get("名") or ""
+    canonical_ja = re.sub(r"\s+", "", clean_wikipedia_field(canonical_field)) or re.sub(r"\s+", "", re.sub(r"\s*\([^)]*\)$", "", page_title)) or name_ja
+    source_url = "https://ja.wikipedia.org/wiki/" + urllib.parse.quote(page_title.replace(" ", "_")) if page_title else ""
+    values = {"birthday": birthday, "birthplace": birthplace, "agency": agency, "official_profile": official_profile}
+    missing_status = "not_applicable" if source and template_name not in ("声優", "ActorActress") else "not_published"
+    return {
+        "lookup_name": name_ja,
+        "name_zh": name_zh,
+        "name_ja": canonical_ja,
+        "aliases": list(dict.fromkeys(
+            alias for alias in [name_ja, *aliases] if alias and alias not in (name_zh, canonical_ja)
+        )),
+        "kana": kana,
+        **values,
+        "field_status": {key: "verified" if value else ("source_unavailable" if not source else missing_status) for key, value in values.items()},
+        "status": "complete" if source else "source_unavailable",
+        "sources": ([{"kind": "wikipedia", "label": "日文维基百科", "url": source_url}] if source_url else []),
+    }
+
+
+def refresh_voice_actor_details() -> dict[str, Any]:
+    characters = read_window_data(DATA_DIR / "character_index_data.js", "CHAR_INDEX")
+    voice_list = read_window_data(DATA_DIR / "voice_list_data.js", "VA_LIST")
+    photos = read_window_data(DATA_DIR / "va_photos_data.js", "VA_PHOTOS")
+    overrides = read_json(EVENTS_DIR / "overrides.json")
+    previous_profiles = []
+    if OUTPUT_FILES["profiles"].exists():
+        previous_profiles = read_json(OUTPUT_FILES["profiles"]).get("voice_actors") or []
+    previous_details = read_json(VOICE_DETAILS_FILE).get("records") or [] if VOICE_DETAILS_FILE.exists() else []
+    previous_by_lookup = {
+        fold_name(str(record.get("lookup_name") or "")): record
+        for record in previous_details
+        if record.get("lookup_name") and record.get("sources")
+    }
+    identities = IdentityIndex(characters, voice_list, photos, overrides, previous_profiles)
+    reverse_aliases: dict[str, list[str]] = defaultdict(list)
+    for alias, canonical in (overrides.get("voice_aliases") or {}).items():
+        reverse_aliases[fold_name(str(canonical))].append(str(alias))
+    profile_overrides = {
+        fold_name(str(name)): value
+        for name, value in (overrides.get("voice_actor_profile_overrides") or {}).items()
+    }
+
+    def fetch(profile: dict[str, Any]) -> dict[str, Any]:
+        identity = profile["identity"]
+        aliases = [*identity.get("aliases", []), *reverse_aliases.get(fold_name(identity.get("ja") or ""), [])]
+        record = voice_detail_from_wikipedia(identity.get("zh") or "", identity.get("ja") or "", aliases)
+        if not record.get("sources"):
+            previous = previous_by_lookup.get(fold_name(identity.get("ja") or ""))
+            if previous:
+                record = dict(previous)
+        patch = next(
+            (profile_overrides.get(fold_name(name)) for name in (identity.get("ja"), identity.get("zh"), *aliases) if profile_overrides.get(fold_name(name))),
+            None,
+        )
+        if patch:
+            record.update({key: value for key, value in patch.items() if key != "sources"})
+            record["sources"] = list({
+                (source.get("kind"), source.get("url")): source
+                for source in [*record.get("sources", []), *patch.get("sources", [])]
+                if source.get("url")
+            }.values())
+            field_status = dict(record.get("field_status") or {})
+            for field in ("birthday", "birthplace", "agency", "official_profile"):
+                if patch.get(field):
+                    field_status[field] = "verified"
+            record["field_status"] = field_status
+            record["status"] = "complete"
+        return record
+
+    records = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        for record in executor.map(fetch, identities.profiles):
+            records.append(record)
+    records.sort(key=lambda row: fold_name(row.get("name_ja") or row.get("name_zh") or ""))
+    return {
+        "schema_version": 2,
+        "source": "Japanese Wikipedia voice-actor infoboxes; official profile URLs are taken from the cited infobox field",
+        "refreshed_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+        "coverage": {
+            "records": len(records),
+            "source_pages": sum(bool(row.get("sources")) for row in records),
+            "complete_fields": {
+                field: sum(bool(row.get(field)) for row in records)
+                for field in ("birthday", "birthplace", "agency", "official_profile")
+            },
+            "accounted_fields": {
+                field: sum((row.get("field_status") or {}).get(field) in ("verified", "not_published", "not_applicable", "source_unavailable") for row in records)
+                for field in ("birthday", "birthplace", "agency", "official_profile")
+            },
+        },
+        "records": records,
+    }
+
+
 def fetch_video_metadata(video_id: str) -> dict[str, Any] | None:
     command = ["yt-dlp", "--skip-download", "--no-warnings", "--dump-single-json", f"https://www.youtube.com/watch?v={video_id}"]
     try:
@@ -986,7 +1823,8 @@ def is_pakatube_character_program(title: str) -> bool:
         return False
     return bool(re.search(
         r"ゲーム実況|ボドゲ実況|お絵かき配信|打ち上げプチ配信|^【配信】|同時視聴|"
-        r"ぱかチューブっ!出張版|ぴすラジッ|ゴルシトーク|ぱかトークっ!",
+        r"ぱかチューブっ!出張版|ぴすラジッ|ゴルシトーク|ぱかトークっ!|"
+        r"完全密着|梅雨特別企画|焼肉シミュレーター|メカダービー",
         value,
         re.I,
     ))
@@ -994,7 +1832,10 @@ def is_pakatube_character_program(title: str) -> bool:
 
 def is_official_special_video(title: str) -> bool:
     value = unicodedata.normalize("NFKC", title or "")
-    return bool(re.fullmatch(r"そこそこぱかライブTV\s*-EXTRA STAGE-", value, re.I))
+    return bool(
+        re.fullmatch(r"そこそこぱかライブTV\s*-EXTRA STAGE-", value, re.I)
+        or re.search(r"うまよん.*オーディオコメンタリーリレー第\d+回", value, re.I)
+    )
 
 
 def announcement_identity(title: str, message: str, date: str) -> tuple[str, str]:
@@ -1094,12 +1935,11 @@ def official_news_programs() -> list[dict[str, Any]]:
 
 
 def refresh_programs() -> dict[str, Any]:
-    if not shutil_which("yt-dlp"):
-        raise RuntimeError("yt-dlp is required for --refresh-programs")
     existing_doc = read_json(EVENTS_DIR / "official_programs.json") if (EVENTS_DIR / "official_programs.json").exists() else {"programs": []}
     existing_programs = list(existing_doc.get("programs") or [])
-    rebuild_regular = int(existing_doc.get("schema_version") or 1) < 2
-    channel_entries = discover_official_channel()
+    youtube_available = bool(shutil_which("yt-dlp"))
+    channel_entries = discover_official_channel() if youtube_available else []
+    rebuild_regular = int(existing_doc.get("schema_version") or 1) < 2 and bool(channel_entries)
     expected_ids = expected_regular_program_ids([*existing_programs, *channel_entries])
     expected_id_values = set(expected_ids.values())
     programs = []
@@ -1158,6 +1998,13 @@ def refresh_programs() -> dict[str, Any]:
     except Exception:
         news_programs = []
     programs.extend(news_programs)
+    try:
+        programs.extend(historical_programs())
+    except Exception:
+        # The committed snapshot remains authoritative when the supplementary
+        # archive is temporarily unavailable.
+        pass
+    programs.extend(official_radio_programs(existing_programs))
     character_metadata = [metadata for metadata in fetched_metadata if is_pakatube_character_program(metadata.get("title") or "")]
     character_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for metadata in character_metadata:
@@ -1219,7 +2066,13 @@ def refresh_programs() -> dict[str, Any]:
         if not source_url:
             return []
         source_kind = row.get("source_kind") or "official_youtube"
-        return [{"kind": source_kind, "label": "官方公告" if source_kind == "official_announcement" else "官方 YouTube", "url": source_url}]
+        labels = {
+            "official_announcement": "官方公告",
+            "official_youtube": "官方 YouTube",
+            "community_archive": "Umamusume Wiki 补档",
+            "official_broadcaster": "节目官方页",
+        }
+        return [{"kind": source_kind, "label": labels.get(source_kind, "资料来源"), "url": source_url}]
 
     # Combine archive metadata and announcements under one stable program ID.
     # The richer record supplies presentation fields; all evidence links, cast,
@@ -1234,7 +2087,7 @@ def refresh_programs() -> dict[str, Any]:
         target = by_id[event_id]
         richer = bool(program.get("cast")) or bool(program.get("video_id"))
         if richer:
-            for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url"):
+            for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status"):
                 if program.get(field):
                     target[field] = program[field]
         target["sources"] = list({(item.get("kind"), item.get("url")): item for item in [*target.get("sources", []), *implicit_sources(program)] if item.get("url")}.values())
@@ -1278,6 +2131,7 @@ def refresh_programs() -> dict[str, Any]:
         "source": f"official YouTube channel {OFFICIAL_CHANNEL_ID} and official portal announcements",
         "refreshed_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
         "coverage": {
+            "official_youtube_refresh": "verified" if channel_entries else ("tool_unavailable" if not youtube_available else "source_unavailable"),
             "expected_regular_episodes": len(expected_ids),
             "records": len(ordered),
             "source_verified_regular_episodes": len(found_ids),
@@ -1300,13 +2154,14 @@ def shutil_which(name: str) -> str | None:
     return None
 
 
-def build(programs_override: dict[str, Any] | None = None) -> dict[str, Any]:
+def build(programs_override: dict[str, Any] | None = None, details_override: dict[str, Any] | None = None) -> dict[str, Any]:
     source_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}
     live_data = read_json(DATA_DIR / "live_data.json")
     live_cat_data = read_json(DATA_DIR / "live_cat_data.json")
     eventernote = read_json(DATA_DIR / "events_data.json")
     series = read_json(EVENTS_DIR / "series.json")
     programs = programs_override if programs_override is not None else read_json(EVENTS_DIR / "official_programs.json")
+    details = details_override if details_override is not None else (read_json(VOICE_DETAILS_FILE) if VOICE_DETAILS_FILE.exists() else {"records": []})
     overrides = read_json(EVENTS_DIR / "overrides.json")
     characters = read_window_data(DATA_DIR / "character_index_data.js", "CHAR_INDEX")
     voice_list = read_window_data(DATA_DIR / "voice_list_data.js", "VA_LIST")
@@ -1315,13 +2170,13 @@ def build(programs_override: dict[str, Any] | None = None) -> dict[str, Any]:
     if OUTPUT_FILES["profiles"].exists():
         previous_doc = read_json(OUTPUT_FILES["profiles"])
         previous_profiles = previous_doc.get("voice_actors") or []
-    identities = IdentityIndex(characters, voice_list, photos, overrides, previous_profiles)
+    identities = IdentityIndex(characters, voice_list, photos, overrides, previous_profiles, details)
     used: set[str] = set()
-    events = numbered_events(live_data, identities, used)
+    events = numbered_events(live_data, identities, used, overrides.get("stable_event_ids") or {})
     events.extend(category_events(live_cat_data, identities, used))
     attach_eventernote(events, eventernote, identities, used)
     add_programs(events, programs, identities, used)
-    events = apply_overrides(events, overrides)
+    events = apply_overrides(events, overrides, identities)
     events = dedupe_events(events)
     for event in events:
         character_ids = list(event.get("character_ids") or [])
@@ -1336,7 +2191,6 @@ def build(programs_override: dict[str, Any] | None = None) -> dict[str, Any]:
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     appearances = build_appearance_index(events, identities)
     profiles = enrich_profiles(identities.profiles, appearances)
-    actor_compat, voice_compat = compatibility_files(events, appearances, identities)
     current_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}
     if current_hashes != source_hashes:
         raise RuntimeError("curated live sources changed during event build")
@@ -1358,7 +2212,7 @@ def build(programs_override: dict[str, Any] | None = None) -> dict[str, Any]:
     errors = validate(catalog, appearances, profiles)
     if errors:
         raise RuntimeError("validation failed:\n- " + "\n- ".join(errors[:30]))
-    return {"catalog": catalog, "appearances": appearances, "profiles": profiles_doc, "actor_compat": actor_compat, "voice_compat": voice_compat}
+    return {"catalog": catalog, "appearances": appearances, "profiles": profiles_doc}
 
 
 def comparable(value: Any) -> Any:
@@ -1373,12 +2227,17 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--refresh-programs", action="store_true", help="refresh regular, character, and special programs from official sources")
+    mode.add_argument("--refresh-profiles", action="store_true", help="refresh voice-actor biographical fields and cited profile links")
+    mode.add_argument("--refresh-all", action="store_true", help="refresh programs and voice-actor profiles, then rebuild all indexes")
     mode.add_argument("--check", action="store_true", help="validate sources and committed generated files without writing")
     args = parser.parse_args()
-    refreshed = None
-    if args.refresh_programs:
-        refreshed = refresh_programs()
-    built = build(refreshed)
+    refreshed_programs = None
+    refreshed_details = None
+    if args.refresh_programs or args.refresh_all:
+        refreshed_programs = refresh_programs()
+    if args.refresh_profiles or args.refresh_all:
+        refreshed_details = refresh_voice_actor_details()
+    built = build(refreshed_programs, refreshed_details)
     if args.check:
         mismatches = []
         for key, path in OUTPUT_FILES.items():
@@ -1389,9 +2248,12 @@ def main() -> int:
             return 1
         print(f"event data valid: {len(built['catalog']['events'])} events, {len(built['profiles']['voice_actors'])} voice actors")
         return 0
-    if refreshed is not None:
-        atomic_json(EVENTS_DIR / "official_programs.json", refreshed)
-        print(f"official programs refreshed: {len(refreshed['programs'])}")
+    if refreshed_programs is not None:
+        atomic_json(EVENTS_DIR / "official_programs.json", refreshed_programs)
+        print(f"official programs refreshed: {len(refreshed_programs['programs'])}")
+    if refreshed_details is not None:
+        atomic_json(VOICE_DETAILS_FILE, refreshed_details)
+        print(f"voice actor details refreshed: {len(refreshed_details['records'])}")
     for key, path in OUTPUT_FILES.items():
         atomic_json(path, built[key])
     coverage = built["catalog"]["coverage"]

@@ -66,6 +66,22 @@ class EventPipelineTest(unittest.TestCase):
             ],
         )
 
+    def test_program_cast_parser_supports_role_first_commentary_credits(self):
+        description = """出演
+スペシャルウィーク役　和氣あず未
+サイレンススズカ役　　高野麻里佳
+
+【放送情報】
+TOKYO MX
+"""
+        self.assertEqual(
+            UPDATE_EVENTS.parse_program_cast(description),
+            [
+                {"name": "和氣あず未", "role": "スペシャルウィーク"},
+                {"name": "高野麻里佳", "role": "サイレンススズカ"},
+            ],
+        )
+
     def test_program_sessions_preserve_day_specific_cast(self):
         description = """■配信予定日
 DAY1：2024年3月30日（土）19:00頃開始予定
@@ -134,11 +150,21 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             "【お絵かき配信】ラヴズがイラストを描きながら雑談するぞ！",
             "【TVアニメ第3期】第1話の同時視聴やっちゃうぞ！",
             "【ぴすラジッ！】ウマ娘楽曲でトークしちゃうぞ！",
+            "【完全密着】ゴルシちゃんの休日覗いてみるか？",
+            "【メカダービー】ゴルシちゃん最速への道～その1～",
         ]
         for title in included:
             self.assertTrue(UPDATE_EVENTS.is_pakatube_character_program(title), title)
         for title in ["【ウマ娘】新シリーズ配信アニメ制作決定！", "4th EVENT ティザーPV", "新CM公開"]:
             self.assertFalse(UPDATE_EVENTS.is_pakatube_character_program(title), title)
+
+    def test_official_special_scope_includes_cast_commentary(self):
+        self.assertTrue(
+            UPDATE_EVENTS.is_official_special_video(
+                "アニメ「うまよん」特別企画 オーディオコメンタリーリレー第１回"
+            )
+        )
+        self.assertFalse(UPDATE_EVENTS.is_official_special_video("【ラジオ切り抜き】レースの模様をお届け！"))
 
     def test_setlist_relationships_are_parsed_per_song_row(self):
         class Identities:
@@ -238,9 +264,48 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         }
         self.assertTrue(character_only_ids)
         self.assertTrue(character_only_ids.isdisjoint(voice_event_ids))
-        for event in built["voice_compat"]["events"]:
-            if event["link"].rsplit("/", 1)[-1] in character_only_ids:
-                self.assertTrue(all(not day["voice_actors"] for day in event["days"]))
+
+    def test_explicit_alias_merge_preserves_curated_setlist_and_all_evidence(self):
+        rows = [
+            {
+                "id": "same-event", "title": "Curated", "date": "2024-01-01", "kind": "concert",
+                "sources": [{"kind": "curated_live", "url": "/curated"}], "cast": [], "character_ids": [],
+                "sessions": [{"id": "curated-session", "label": "DAY1", "date": "2024-01-01", "songs": ["Song A"], "character_ids": [], "cast": [], "performances": [], "setlist_source": {"file": "data/live_data.json", "day": 0}}],
+            },
+            {
+                "id": "same-event", "title": "Official", "date": "2024-01-01", "kind": "official_program",
+                "sources": [{"kind": "official_announcement", "url": "https://example.test/official"}], "cast": [], "character_ids": [],
+                "sessions": [{"id": "program-session", "label": "DAY1", "date": "2024-01-01", "songs": [], "character_ids": [], "cast": [], "performances": []}],
+            },
+        ]
+        merged = UPDATE_EVENTS.dedupe_events(rows)[0]
+        self.assertEqual(merged["sessions"][0]["songs"], ["Song A"])
+        self.assertEqual(merged["sessions"][0]["setlist_source"]["file"], "data/live_data.json")
+        self.assertEqual({source["kind"] for source in merged["sources"]}, {"curated_live", "official_announcement"})
+
+    def test_duplicate_cast_relationship_merges_sources_across_role_languages(self):
+        merged = UPDATE_EVENTS.merge_cast_records([
+            {
+                "voice_actor_id": "va-0040", "name": "和氣あず未", "character_id": "specialweek",
+                "role": "特别周", "evidence": "curated_live_cast", "source_url": "",
+                "person_type": "voice_actor", "resolution": "resolved",
+            },
+            {
+                "voice_actor_id": "va-0040", "name": "和氣あず未", "character_id": "specialweek",
+                "role": "スペシャルウィーク", "evidence": "official_announcement",
+                "source_url": "https://example.test/official", "person_type": "voice_actor", "resolution": "resolved",
+            },
+        ])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["role"], "特别周")
+        self.assertEqual(
+            {source["kind"] for source in merged[0]["evidence_sources"]},
+            {"curated_live_cast", "official_announcement"},
+        )
+
+    def test_wikipedia_search_identity_rejects_unrelated_people(self):
+        self.assertEqual(UPDATE_EVENTS.wikipedia_title_key("中島由貴 (声優)"), UPDATE_EVENTS.wikipedia_title_key("中島由貴"))
+        self.assertNotEqual(UPDATE_EVENTS.wikipedia_title_key("上田瞳"), UPDATE_EVENTS.wikipedia_title_key("高柳知葉"))
 
     def test_committed_relationships_reference_known_records(self):
         catalog = json.loads((ROOT / "data" / "events_catalog.json").read_text(encoding="utf-8"))

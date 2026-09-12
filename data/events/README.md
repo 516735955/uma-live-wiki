@@ -7,6 +7,7 @@ Generated files live one directory above and must not be edited by hand.
 
 - `series.json`: stable identities and display names for recurring event/program series.
 - `official_programs.json`: official broadcast metadata collected from the official YouTube channel and official portal announcements. It is refreshed explicitly with `python3 uma_tools/update_events.py --refresh-programs` and remains usable offline after it is committed.
+- `voice_actor_details.json`: cited biographical fields refreshed from Japanese Wikipedia, with reviewed per-person official-source fallbacks in `overrides.json`.
 - `overrides.json`: small, reviewed corrections for source conflicts, aliases, missing cast, or intentionally hidden records. This is the only hand-edited event correction layer.
 
 ## Update workflow
@@ -17,10 +18,13 @@ live, character, and voice sources, then atomically writes:
 - `data/events_catalog.json`
 - `data/appearance_index.json`
 - `data/voice_actor_profiles.json`
-- legacy compatibility indexes `data/actor_participation.json` and `data/voice_participation.json`
+
+The statistics view derives its rows from `events_catalog.json`; no parallel
+compatibility indexes are generated.
 
 Run `python3 uma_tools/update_events.py --check` in verification. It rebuilds in
-memory, validates stable IDs and references, and checks that the generated files
+memory, validates dates, evidence, episode continuity, identities, cast status,
+profile-field accounting, stable IDs, and references, and checks that the generated files
 match the source inputs without writing anything.
 
 The command records SHA-256 digests of `live_data.json` and
@@ -31,8 +35,9 @@ Their hand-tuned setlist HTML is never normalized or rewritten.
 
 Every cast relationship carries its evidence kind. The order of preference is:
 official announcement, official YouTube metadata, curated official-source
-confirmation, then Eventernote. A missing cast remains `pending`; it is never
-filled by guessing from a title or character name.
+confirmation, then Eventernote. A published record may be written only with a
+verified cast, an explicitly character-only appearance, or an official
+`announced_tba` status. A cast is never guessed from a title or character name.
 
 PakaTube character programs are limited to full official episodes with a clear
 program format, including gameplay, board games, drawing/chat streams,
