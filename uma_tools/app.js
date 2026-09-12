@@ -2342,6 +2342,7 @@ createApp({
         });
       return charSongsLoadPromise;
     }
+    const charSongsDetailOpen = ref(false);
     const charSongsList = computed(function () {
       charSongsVersion.value;
       const id = charDetail.value && charDetail.value.id;
@@ -2353,6 +2354,18 @@ createApp({
       return Object.keys(byZh).map(function (t) {
         return { title: t, count: byZh[t] };
       }).sort(function (a, b) { return b.count - a.count; });
+    });
+    const charSongsVisible = computed(function () {
+      return charSongsDetailOpen.value ? charSongsList.value : charSongsList.value.slice(0, 10);
+    });
+    function toggleCharSongs() {
+      charSongsDetailOpen.value = !charSongsDetailOpen.value;
+    }
+    function resetCharSongs() {
+      charSongsDetailOpen.value = false;
+    }
+    watch(function () { return charDetail.value && charDetail.value.id; }, function () {
+      charSongsDetailOpen.value = false;
     });
 
     // audio events
@@ -2395,7 +2408,7 @@ createApp({
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
       charBackUrl, charBackPrev,
-      charSongsList,
+      charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio

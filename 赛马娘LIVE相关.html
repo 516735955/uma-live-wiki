@@ -721,14 +721,17 @@
                         <section class="cio-songs" v-if="charSongsList.length">
                             <header class="cio-songs-head">
                                 <h3 class="cio-songs-title">演出曲目</h3>
-                                <span class="cio-songs-meta">共 {{ charSongsList.length }} 首 · 在全演出中演唱记录</span>
+                                <span class="cio-songs-meta">共 {{ charSongsList.length }} 首</span>
                             </header>
                             <ul class="cio-songs-list">
-                                <li v-for="(s,i) in charSongsList" :key="i" class="cio-songs-item">
+                                <li v-for="(s,i) in charSongsVisible" :key="i" class="cio-songs-item">
                                     <span class="cio-songs-times" :class="{top: i<3}">×{{ s.count }}</span>
                                     <span class="cio-songs-name">{{ s.title }}</span>
                                 </li>
                             </ul>
+                            <button v-if="charSongsList.length > 10" class="cio-songs-toggle" type="button" @click="toggleCharSongs">
+                                {{ charSongsDetailOpen ? '收起详情' : '展开详情（' + (charSongsList.length - 10) + '）' }}
+                            </button>
                         </section>
                         <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <div class="cio-detail-foot">

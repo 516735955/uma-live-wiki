@@ -2117,18 +2117,25 @@
         #tab-characters .cio-songs-title { margin: 0; color: #20283b; font-size: 16px; font-weight: 700; }
         #tab-characters .cio-songs-meta { color: #85879a; font-size: 12px; }
         #tab-characters .cio-songs-list {
-            list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 8px 18px; max-height: 420px; overflow-y: auto; border: 1px solid #eeecf6; border-radius: 12px; padding: 12px; background: #fbfbfd;
+            list-style: none; margin: 0; padding: 0; border: 1px solid #eeecf6; border-radius: 12px; background: #fbfbfd; overflow: hidden;
         }
-        #tab-characters .cio-songs-item { display: flex; align-items: center; gap: 10px; min-width: 0; }
+        #tab-characters .cio-songs-item {
+            display: flex; align-items: center; gap: 12px; min-width: 0; padding: 9px 14px;
+            border-bottom: 1px solid #f0eef6; transition: background .15s;
+        }
+        #tab-characters .cio-songs-item:last-child { border-bottom: none; }
+        #tab-characters .cio-songs-item:hover { background: #f6f5fb; }
         #tab-characters .cio-songs-times {
-            flex: none; min-width: 38px; text-align: right; color: #8488a0; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
+            flex: none; min-width: 42px; text-align: right; color: #8488a0; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
         }
         #tab-characters .cio-songs-times.top { color: #ff8c1a; }
-        #tab-characters .cio-songs-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2c3650; font-size: 13px; }
-        @media screen and (max-width: 520px) {
-            #tab-characters .cio-songs-list { grid-template-columns: 1fr; max-height: 320px; }
+        #tab-characters .cio-songs-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2c3650; font-size: 13px; font-weight: 600; }
+        #tab-characters .cio-songs-toggle {
+            display: block; width: 100%; margin-top: 10px; padding: 10px 14px; cursor: pointer;
+            color: #23418f; border: 1px solid #cad4f2; border-radius: 9px; background: #f3f6ff;
+            font: 700 12px/1 "Microsoft YaHei", "PingFang SC", sans-serif; transition: background .15s, border-color .15s;
         }
+        #tab-characters .cio-songs-toggle:hover { border-color: #3159d9; background: #e8eeff; }
         /* ---- character detail pedigree availability notes ---- */
         #tab-characters .c-blood {
             margin-top: 22px; padding-top: 14px; border-top: 2px dashed #e3dcf2;
