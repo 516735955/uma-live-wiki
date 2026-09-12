@@ -1,5 +1,5 @@
 
-console.log('[uma-live] build 20260912-5');
+console.log('[uma-live] build 20260912-6');
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
 const SERIES_GRID = [{"index":0,"no":"1st","title":"1st EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/471238a99eba4fc09b643fd77362e450/event_01.png"},{"index":1,"no":"2nd","title":"2nd EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/00cea361d13343d085477a7bdcae48fa/event_02.png"},{"index":2,"no":"3rd","title":"3rd EVENT","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/df69154e90b44827a691cc454f9c5279/event_03.png"},{"index":3,"no":"4th","title":"4th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/aba8419984df479d94896b3ba20c23fa/event_05.png"},{"index":4,"no":"4thExtra","title":"4th EVENT EXTRA STAGE","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e0aaca1a08bd49fa889fa22f6a402311/event_04.png"},{"index":5,"no":"5th","title":"5th EVENT","meta":"4 场公演 · 8 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8c98ef15165742ae8492fec00157a8c5/event_06.png"},{"index":6,"no":"6th","title":"6th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8e25390d779041fbb1b9485a043cd235/event_tnf.png"},{"index":7,"no":"7th","title":"7th EVENT","meta":"5 场公演 · 10 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e33a4cddf22d4bf69e5d3fa0edc9a52a/event_ts.png"}];
@@ -1221,6 +1221,13 @@ createApp({
       var dates = songAlbums.value.map(function (r) { return r.a.release || ''; }).filter(Boolean).sort();
       return dates[0] || '';
     });
+    function _dayRangeSplit(dateStr, dayIdx) {
+      var m = String(dateStr || '').match(/^(\d{4})[.\-\/](\d{1,2})[.\-\/](\d{1,2})\s*-\s*(\d{1,2})(?:\s|$)/);
+      if (!m) return null;
+      var d1 = parseInt(m[3], 10), d2 = parseInt(m[4], 10);
+      var day = (dayIdx >= 1) ? d2 : d1;
+      return { date: m[1] + '.' + parseInt(m[2], 10) + '.' + day, label: 'DAY' + (dayIdx + 1) };
+    }
     const songLives = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
@@ -1232,6 +1239,7 @@ createApp({
           var liveUrl = ev.link || '';
           if (liveUrl && !liveUrl.startsWith('/zh-Hans')) liveUrl = '/zh-Hans/live/' + liveUrl;
           var liveArtist = (ev.voice_actors && ev.voice_actors.length) ? ev.voice_actors.join('、') : '';
+          var dayIdx = 0;
           if (liveUrl) {
             var parts = liveUrl.split('/').filter(Boolean);
             if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
@@ -1241,6 +1249,7 @@ createApp({
                 var live = liveData.value[idx];
                 var pi = parseInt(parts[3], 10) || 0;
                 var di = parseInt(parts[4], 10) || 0;
+                dayIdx = di;
                 if (live.subs && live.subs[pi]) {
                   liveDate = live.subs[pi].date || '';
                   liveTitle = live.subs[pi].title || liveTitle;
@@ -1264,6 +1273,8 @@ createApp({
               }
             }
           }
+          var split = _dayRangeSplit(liveDate, dayIdx);
+          if (split) { liveDate = split.date; liveTitle = liveTitle + ' ' + split.label; }
           out.push({ liveDate: liveDate, liveTitle: liveTitle, liveUrl: liveUrl, cat: ev.cat, artist: liveArtist });
         }
       });
