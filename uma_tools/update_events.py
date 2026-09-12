@@ -47,6 +47,7 @@ PAKALIVE_ARCHIVE_PAGES = {
 }
 ANN_PROGRAM_URL = "https://www.allnightnippon.com/umamusume/"
 VOICE_DETAILS_FILE = EVENTS_DIR / "voice_actor_details.json"
+VOICE_IDENTITIES_FILE = EVENTS_DIR / "voice_actor_identities.json"
 IMMUTABLE_LIVE_FILES = (DATA_DIR / "live_data.json", DATA_DIR / "live_cat_data.json")
 OUTPUT_FILES = {
     "catalog": DATA_DIR / "events_catalog.json",
@@ -619,7 +620,7 @@ def unique_id(base: str, used: set[str]) -> str:
 
 
 class IdentityIndex:
-    def __init__(self, characters: list[dict[str, Any]], voice_list: list[dict[str, Any]], photos: dict[str, Any], overrides: dict[str, Any], previous: list[dict[str, Any]], details: dict[str, Any] | None = None):
+    def __init__(self, characters: list[dict[str, Any]], voice_list: list[dict[str, Any]], photos: dict[str, Any], overrides: dict[str, Any], identity_registry: dict[str, Any], details: dict[str, Any] | None = None):
         self.characters = characters
         self.voice_list = voice_list
         self.photos = photos
@@ -633,19 +634,24 @@ class IdentityIndex:
         self.voice_by_alias: dict[str, str] = {}
         self.character_by_alias: dict[str, str] = {}
         self.character_by_id = {str(item.get("id")): item for item in characters if item.get("id")}
-        self._prior_ids: dict[str, str] = {}
-        for item in previous:
-            identity = item.get("identity") or {}
-            for name in (identity.get("zh"), identity.get("ja"), *(identity.get("aliases") or [])):
-                if name:
-                    # Canonical local names are visited before aliases. Keep the
-                    # first owner when an earlier generated profile contained a
-                    # bad external alias, so one polluted alias cannot steal a
-                    # stable ID from the actual person.
-                    self._prior_ids.setdefault(fold_name(str(name)), str(item.get("id")))
+        self._canonical_ids: dict[str, str] = {}
+        registry_ids: set[str] = set()
+        for item in identity_registry.get("voice_actors") or []:
+            actor_id = str(item.get("id") or "")
+            if not actor_id or actor_id in registry_ids:
+                raise ValueError(f"invalid or duplicate canonical voice-actor ID: {actor_id!r}")
+            registry_ids.add(actor_id)
+            for name in item.get("names") or []:
+                alias = fold_name(str(name))
+                owner = self._canonical_ids.get(alias)
+                if owner and owner != actor_id:
+                    raise ValueError(f"voice-actor alias {name!r} belongs to both {owner} and {actor_id}")
+                if alias:
+                    self._canonical_ids[alias] = actor_id
         self.profiles = self._build_profiles()
         self.profile_by_id = {item["id"]: item for item in self.profiles}
         self.current_role_by_voice_id: dict[str, dict[str, Any]] = {}
+        self.current_voice_by_character_id: dict[str, str] = {}
         for profile in self.profiles:
             current_roles = [
                 role for role in profile.get("roles") or []
@@ -653,6 +659,7 @@ class IdentityIndex:
             ]
             if len(current_roles) == 1:
                 self.current_role_by_voice_id[profile["id"]] = current_roles[0]
+                self.current_voice_by_character_id[current_roles[0]["character_id"]] = profile["id"]
 
     def _build_profiles(self) -> list[dict[str, Any]]:
         grouped: dict[str, dict[str, Any]] = {}
@@ -718,8 +725,7 @@ class IdentityIndex:
                     if char_name:
                         self.character_by_alias[fold_name(str(char_name))] = str(char.get("id"))
 
-        used_ids = {value for value in self._prior_ids.values() if value}
-        next_number = max([int(match.group(1)) for item in used_ids if (match := re.fullmatch(r"va-(\d+)", item))] or [0]) + 1
+        used_ids = {value for value in self._canonical_ids.values() if value}
         assigned_ids: set[str] = set()
         profiles: list[dict[str, Any]] = []
         details_by_alias = {}
@@ -729,15 +735,19 @@ class IdentityIndex:
                     details_by_alias[fold_name(str(name))] = detail
         for key in sorted(grouped):
             record = grouped[key]
-            actor_id = self._prior_ids.get(key)
+            actor_id = next((
+                self._canonical_ids.get(fold_name(name))
+                for name in (record["ja"], record["zh"], *record["aliases"])
+                if self._canonical_ids.get(fold_name(name))
+            ), "")
             if actor_id in assigned_ids:
                 actor_id = ""
             if not actor_id:
-                while f"va-{next_number:04d}" in used_ids:
-                    next_number += 1
-                actor_id = f"va-{next_number:04d}"
+                identity_key = fold_name(record["ja"] or record["zh"])
+                actor_id = "va-auto-" + hashlib.sha1(identity_key.encode("utf-8")).hexdigest()[:12]
+                if actor_id in used_ids:
+                    raise ValueError(f"deterministic voice-actor ID collision for {record['ja'] or record['zh']}")
                 used_ids.add(actor_id)
-                next_number += 1
             assigned_ids.add(actor_id)
             aliases = sorted(set(record["aliases"]), key=lambda value: (value != record["zh"], value))
             detail = next((details_by_alias.get(fold_name(name)) for name in (record["ja"], record["zh"], *aliases) if details_by_alias.get(fold_name(name))), {})
@@ -812,6 +822,9 @@ class IdentityIndex:
             return current
         roles = [role for role in (self.profile_by_id.get(voice_actor_id) or {}).get("roles") or [] if role.get("character_id")]
         return str(roles[0]["character_id"]) if len(roles) == 1 else ""
+
+    def current_voice_id(self, character_id: str) -> str:
+        return self.current_voice_by_character_id.get(str(character_id or ""), "")
 
     def character_payload(self, character_id: str) -> dict[str, Any]:
         character = self.character_by_id.get(character_id) or {}
@@ -945,9 +958,11 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
         # shown as franchise cast.
         if item_evidence == "eventernote" and not actor_id:
             continue
-        character_id = identities.character_id(role)
-        if actor_id and not character_id:
-            character_id = identities.current_character_id(actor_id)
+        # A voice-actor identity has exactly one canonical role in this archive.
+        # Source-side role labels may be missing, translated differently, or
+        # attached to the wrong same-named commentator; never let them create a
+        # second actor-to-character relationship at runtime.
+        character_id = identities.current_character_id(actor_id) if actor_id else identities.character_id(role)
         profile = identities.profile_by_id.get(actor_id) or {}
         character = identities.character_by_id.get(character_id) or {}
         out.append({
@@ -961,6 +976,26 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
             "resolution": "resolved" if actor_id else person_type,
         })
     return merge_cast_records(out)
+
+
+def make_character_cast(character_ids: Iterable[str], identities: IdentityIndex, evidence: str, source_url: str = "") -> list[dict[str, Any]]:
+    """Resolve an official character credit through the canonical current cast."""
+    rows = []
+    for character_id in dict.fromkeys(str(item or "") for item in character_ids if item):
+        actor_id = identities.current_voice_id(character_id)
+        profile = identities.profile_by_id.get(actor_id) or {}
+        character = identities.character_by_id.get(character_id) or {}
+        actor_name = (profile.get("identity") or {}).get("zh") or ""
+        character_name = character.get("zh") or ""
+        if not actor_name or not character_name:
+            continue
+        rows.append({
+            "name": actor_name,
+            "role": character_name,
+            "source_kind": evidence,
+            "source_url": source_url,
+        })
+    return make_cast(rows, identities, evidence, source_url)
 
 
 def series_lookup(series_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -991,15 +1026,18 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
                 )
                 performances = table_performances(table, identities, full_cast)
                 characters = list(dict.fromkeys(char_id for performance in performances for char_id in performance["character_ids"]))
-                sessions.append({
+                session = {
                     "id": f"{event_id}-session-{day_index + 1}",
                     "label": day.get("label") or f"DAY{day_index + 1}",
                     "date": event_date_for_day(sub.get("date"), day_index),
                     "songs": [performance["song"] for performance in performances],
                     "character_ids": characters,
                     "performances": performances,
-                    "setlist_source": {"file": "data/live_data.json", "group": group_index, "performance": performance_index, "day": day_index},
-                })
+                }
+                if table:
+                    session["setlist_html"] = table
+                    session["setlist_source"] = {"file": "data/live_data.json", "group": group_index, "performance": performance_index, "day": day_index}
+                sessions.append(session)
             no = series_token.replace("-event", "")
             base_legacy = f"/zh-Hans/live/number_series_event/{no}_EVENT"
             legacy = base_legacy if performance_index == 0 else f"{base_legacy}/{performance_index}/0"
@@ -1070,13 +1108,16 @@ def category_events(data: dict[str, Any], identities: IdentityIndex, used: set[s
                         )
                         performances = table_performances(table, identities, full_cast)
                         characters = list(dict.fromkeys(char_id for performance in performances for char_id in performance["character_ids"]))
-                        sessions.append({
+                        session = {
                             "id": f"{event_id}-session-{day_index + 1}", "label": day.get("label") or "本公演",
                             "date": event_date_for_day(sub.get("date"), day_index), "songs": [performance["song"] for performance in performances],
                             "character_ids": characters,
                             "performances": performances,
-                            "setlist_source": {"file": "data/live_cat_data.json", "category": category, "section": section_index if has_sections else None, "group": group_index, "performance": performance_index, "day": day_index},
-                        })
+                        }
+                        if table:
+                            session["setlist_html"] = table
+                            session["setlist_source"] = {"file": "data/live_cat_data.json", "category": category, "section": section_index if has_sections else None, "group": group_index, "performance": performance_index, "day": day_index}
+                        sessions.append(session)
                     cast = make_cast(parse_cast_text(sub.get("cast") or ""), identities, "curated_live_cast")
                     venue = venue_from_date_text(sub.get("date")) if date else str(sub.get("date") or "")
                     out.append({
@@ -1156,6 +1197,11 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
                 host_id = identities.character_id("ゴールドシップ")
                 if host_id and host_id not in characters:
                     characters.append(host_id)
+        if characters:
+            cast = merge_cast_records([
+                *cast,
+                *make_character_cast(characters, identities, "official_character_credit", source_url),
+            ])
         sessions = []
         for index, source_session in enumerate(source_sessions):
             session_cast = make_cast(source_session.get("cast") or [], identities, source_kind, source_url)
@@ -1168,6 +1214,11 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
                 char_id = identities.character_id(str(item))
                 if char_id and char_id not in session_characters:
                     session_characters.append(char_id)
+            if session_characters:
+                session_cast = merge_cast_records([
+                    *session_cast,
+                    *make_character_cast(session_characters, identities, "official_character_credit", source_url),
+                ])
             sessions.append({
                 "id": f"{event_id}-session-{index + 1}",
                 "label": source_session.get("label") or f"场次 {index + 1}",
@@ -1181,7 +1232,7 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
         events.append({
             "id": event_id, "title": source.get("title") or "", "date": source.get("date") or "", "end_date": source.get("end_date") or source.get("date") or "",
             "kind": "official_program", "mode": "online", "series_id": source.get("series_id") or "official-special", "venue": "在线播出",
-            "cast_status": source.get("cast_status") or ("verified" if cast else "pending"), "cast": cast, "character_ids": characters,
+            "cast_status": "verified" if cast else (source.get("cast_status") or "pending"), "cast": cast, "character_ids": characters,
             "sessions": sessions,
             "media": program_media,
             "sources": program_sources,
@@ -1201,6 +1252,12 @@ def apply_overrides(events: list[dict[str, Any]], overrides: dict[str, Any], ide
         patch = patches.get(canonical)
         if patch:
             event.update({key: value for key, value in patch.items() if key not in ("cast_add", "sources_add")})
+            if "character_ids" in patch:
+                allowed_characters = set(patch.get("character_ids") or [])
+                event["cast"] = [
+                    item for item in event.get("cast") or []
+                    if not item.get("character_id") or item.get("character_id") in allowed_characters
+                ]
             additions = make_cast(patch.get("cast_add") or [], identities, "curated_correction")
             known_cast = {(item.get("voice_actor_id"), fold_name(item.get("name") or ""), fold_name(item.get("role") or "")) for item in event.get("cast") or []}
             event.setdefault("cast", []).extend(
@@ -1210,6 +1267,27 @@ def apply_overrides(events: list[dict[str, Any]], overrides: dict[str, Any], ide
             event.setdefault("sources", []).extend(
                 source for source in patch.get("sources_add") or [] if source not in event.get("sources", [])
             )
+        event_characters = list(dict.fromkeys([
+            *(str(item or "") for item in event.get("character_ids") or [] if item),
+            *(str(item.get("character_id") or "") for item in event.get("cast") or [] if item.get("character_id")),
+        ]))
+        if event_characters:
+            represented_characters = {
+                str(item.get("character_id") or "")
+                for item in event.get("cast") or []
+                if item.get("voice_actor_id") and item.get("character_id")
+            }
+            missing_characters = [
+                character_id for character_id in event_characters
+                if character_id not in represented_characters
+            ]
+            if missing_characters:
+                event["cast"] = merge_cast_records([
+                    *(event.get("cast") or []),
+                    *make_character_cast(missing_characters, identities, "canonical_character_cast"),
+                ])
+            if event["cast"]:
+                event["cast_status"] = "verified"
     return [event for event in events if event["id"] not in hidden]
 
 
@@ -1242,6 +1320,7 @@ def dedupe_events(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
         )
         if incoming.get("setlist_source") and not target.get("setlist_source"):
             target["setlist_source"] = incoming["setlist_source"]
+            target["setlist_html"] = incoming.get("setlist_html") or ""
 
     out = []
     for event_id, rows in grouped.items():
@@ -1468,6 +1547,23 @@ def validate(
         errors.append("duplicate voice actor IDs")
     known_actors = set(actor_ids)
     known_characters = set(appearances.get("characters") or {})
+    current_voice_by_character: dict[str, list[str]] = defaultdict(list)
+    character_by_voice: dict[str, str] = {}
+    for profile in profiles:
+        roles = [role for role in profile.get("roles") or [] if role.get("character_id")]
+        if len(roles) != 1:
+            errors.append(f"voice actor {profile.get('id')} has {len(roles)} canonical characters")
+        elif profile.get("id"):
+            character_by_voice[str(profile["id"])] = str(roles[0]["character_id"])
+        current_roles = [role for role in profile.get("roles") or [] if not role.get("former")]
+        if len(current_roles) > 1:
+            errors.append(f"voice actor {profile.get('id')} has multiple current characters")
+        for role in current_roles:
+            current_voice_by_character[str(role.get("character_id") or "")].append(str(profile.get("id") or ""))
+    for character_id in known_characters:
+        owners = current_voice_by_character.get(character_id) or []
+        if len(owners) != 1:
+            errors.append(f"character {character_id} has {len(owners)} current voice actors")
     song_ids = [song.get("id") for song in songs_catalog.get("songs") or []]
     known_songs = set(song_ids)
     version_ids = [
@@ -1524,6 +1620,10 @@ def validate(
                 errors.append(f"event {event['id']} has actor without canonical character {cast['voice_actor_id']}")
             if cast.get("character_id") and cast["character_id"] not in known_characters:
                 errors.append(f"event {event['id']} references unknown character {cast['character_id']}")
+            if cast.get("voice_actor_id") and cast.get("character_id") != character_by_voice.get(str(cast["voice_actor_id"])):
+                errors.append(
+                    f"event {event['id']} maps actor {cast['voice_actor_id']} to noncanonical character {cast.get('character_id')}"
+                )
             cast_keys.append(cast_relation_key(cast))
         if len(cast_keys) != len(set(cast_keys)):
             errors.append(f"event {event.get('id')} has duplicate cast relationships")
@@ -1546,8 +1646,12 @@ def validate(
                 if source_key in session_sources:
                     errors.append(f"event {event['id']} repeats setlist source for {session.get('label')}")
                 session_sources.add(source_key)
+                if not session.get("setlist_html"):
+                    errors.append(f"session {session.get('id')} has a curated source without its exact setlist HTML")
             elif session.get("songs") or session.get("performances"):
                 errors.append(f"session {session.get('id')} has songs outside the curated setlist source")
+            elif session.get("setlist_html"):
+                errors.append(f"session {session.get('id')} has setlist HTML outside the curated setlist source")
             expected_setlist_status = "verified" if session.get("setlist_source") else "none"
             if session.get("setlist_status") != expected_setlist_status:
                 errors.append(f"session {session.get('id')} has inconsistent setlist status")
@@ -2302,16 +2406,14 @@ def refresh_voice_actor_details() -> dict[str, Any]:
     voice_list = read_window_data(DATA_DIR / "voice_list_data.js", "VA_LIST")
     photos = read_window_data(DATA_DIR / "va_photos_data.js", "VA_PHOTOS")
     overrides = read_json(EVENTS_DIR / "overrides.json")
-    previous_profiles = []
-    if OUTPUT_FILES["profiles"].exists():
-        previous_profiles = read_json(OUTPUT_FILES["profiles"]).get("voice_actors") or []
+    identity_registry = read_json(VOICE_IDENTITIES_FILE)
     previous_details = read_json(VOICE_DETAILS_FILE).get("records") or [] if VOICE_DETAILS_FILE.exists() else []
     previous_by_lookup = {
         fold_name(str(record.get("lookup_name") or "")): record
         for record in previous_details
         if record.get("lookup_name") and record.get("sources")
     }
-    identities = IdentityIndex(characters, voice_list, photos, overrides, previous_profiles)
+    identities = IdentityIndex(characters, voice_list, photos, overrides, identity_registry)
     reverse_aliases: dict[str, list[str]] = defaultdict(list)
     for alias, canonical in (overrides.get("voice_aliases") or {}).items():
         reverse_aliases[fold_name(str(canonical))].append(str(alias))
@@ -2770,11 +2872,8 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     characters = read_window_data(DATA_DIR / "character_index_data.js", "CHAR_INDEX")
     voice_list = read_window_data(DATA_DIR / "voice_list_data.js", "VA_LIST")
     photos = read_window_data(DATA_DIR / "va_photos_data.js", "VA_PHOTOS")
-    previous_profiles = []
-    if OUTPUT_FILES["profiles"].exists():
-        previous_doc = read_json(OUTPUT_FILES["profiles"])
-        previous_profiles = previous_doc.get("voice_actors") or []
-    identities = IdentityIndex(characters, voice_list, photos, overrides, previous_profiles, details)
+    identity_registry = read_json(VOICE_IDENTITIES_FILE)
+    identities = IdentityIndex(characters, voice_list, photos, overrides, identity_registry, details)
     used: set[str] = set()
     events = numbered_events(live_data, identities, used, overrides.get("stable_event_ids") or {})
     events.extend(category_events(live_cat_data, identities, used))
@@ -2784,21 +2883,18 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     events = dedupe_events(events)
     for event in events:
         event["image_fallback"] = fallback_event_cover(event)
-        event["image"] = event.get("image") or event["image_fallback"]
+        image = str(event.get("image") or "")
+        # Eventernote's small attachments are often white schedule captures or
+        # unstable user uploads rather than usable key art.  Keep them as
+        # evidence only and render the stable series/kind cover instead.
+        if "eventernote.s3.amazonaws.com/" in image:
+            image = ""
+        event["image"] = image or event["image_fallback"]
         event["setlist_status"] = "verified" if any(
             session.get("setlist_source") for session in event.get("sessions") or []
         ) else "none"
         for session in event.get("sessions") or []:
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
-        character_ids = list(event.get("character_ids") or [])
-        for session in event.get("sessions") or []:
-            for character_id in session.get("character_ids") or []:
-                if character_id not in character_ids:
-                    character_ids.append(character_id)
-        event["characters"] = [
-            {"id": character_id, "name": identities.character_by_id[character_id].get("zh") or "", "name_ja": identities.character_by_id[character_id].get("ja") or ""}
-            for character_id in character_ids if character_id in identities.character_by_id
-        ]
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     generated_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     songs_catalog = build_song_catalog(albums, events, identities, generated_at)
@@ -2826,7 +2922,7 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
         "live": live_data, "live_categories": live_cat_data, "albums": albums,
         "eventernote": eventernote, "series": series, "programs": programs,
         "voice_details": details, "overrides": overrides, "characters": characters,
-        "voice_list": voice_list, "voice_photos": photos,
+        "voice_list": voice_list, "voice_photos": photos, "voice_identities": identity_registry,
     }
     build_id = hashlib.sha256(
         json.dumps(build_material, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")

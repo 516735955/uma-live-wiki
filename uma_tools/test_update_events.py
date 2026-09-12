@@ -5,6 +5,7 @@ import importlib.util
 import json
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,6 +16,18 @@ SPEC.loader.exec_module(UPDATE_EVENTS)
 
 
 class EventPipelineTest(unittest.TestCase):
+    def test_voice_actor_ids_come_from_the_canonical_registry(self):
+        with mock.patch.object(UPDATE_EVENTS, "read_json", wraps=UPDATE_EVENTS.read_json) as reader:
+            built = UPDATE_EVENTS.build()
+        read_paths = {call.args[0] for call in reader.call_args_list}
+        self.assertIn(UPDATE_EVENTS.VOICE_IDENTITIES_FILE, read_paths)
+        self.assertNotIn(UPDATE_EVENTS.OUTPUT_FILES["profiles"], read_paths)
+        registry = UPDATE_EVENTS.read_json(UPDATE_EVENTS.VOICE_IDENTITIES_FILE)
+        registered_ids = {row["id"] for row in registry["voice_actors"]}
+        generated_ids = {row["id"] for row in built["profiles"]["voice_actors"]}
+        self.assertTrue(registered_ids.issubset(generated_ids))
+        self.assertTrue(all(actor_id.startswith("va-auto-") for actor_id in generated_ids - registered_ids))
+
     def test_program_summary_discards_channel_boilerplate(self):
         description = (
             "北海道の動物たちに魅了されたサクラチヨノオーが…… "
@@ -351,6 +364,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         for group_index, group in enumerate(live):
             for performance_index, performance in enumerate(group.get("subs") or []):
                 for day_index, day in enumerate(performance.get("days") or []):
+                    if not (day.get("table") or ""):
+                        continue
                     locator = {"file": "data/live_data.json", "group": group_index, "performance": performance_index, "day": day_index}
                     expected[json.dumps(locator, sort_keys=True)] = day.get("table") or ""
         categories = json.loads((ROOT / "data" / "live_cat_data.json").read_text(encoding="utf-8"))
@@ -361,6 +376,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 for group_index, group in enumerate(section.get("groups") or []):
                     for performance_index, performance in enumerate(group.get("subs") or []):
                         for day_index, day in enumerate(performance.get("days") or []):
+                            if not (day.get("table") or ""):
+                                continue
                             locator = {
                                 "file": "data/live_cat_data.json",
                                 "category": category,
@@ -380,6 +397,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         for locator, table in expected.items():
             parsed_songs = [row["song"] for row in UPDATE_EVENTS.table_performances(table, NoCharacters())]
             self.assertEqual(actual[locator]["songs"], parsed_songs, locator)
+            self.assertEqual(actual[locator]["setlist_html"], table, locator)
 
     def test_only_curated_sessions_may_contain_songs(self):
         built = UPDATE_EVENTS.build()
@@ -391,12 +409,17 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                     self.assertIn(session.get("setlist_source", {}).get("file"), {
                         "data/live_data.json", "data/live_cat_data.json",
                     })
+                if session.get("setlist_source"):
+                    self.assertTrue(session.get("setlist_html"), session.get("id"))
+                else:
+                    self.assertNotIn("setlist_html", session)
 
     def test_every_event_has_a_stable_visible_cover(self):
         built = UPDATE_EVENTS.build()
         for event in built["catalog"]["events"]:
             self.assertTrue(event["image"], event["id"])
             self.assertTrue(event["image_fallback"], event["id"])
+            self.assertNotIn("eventernote.s3.amazonaws.com/", event["image"], event["id"])
 
     def test_catalog_documents_share_one_build_id(self):
         built = UPDATE_EVENTS.build()
@@ -414,20 +437,27 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual({row["character_id"] for row in matching}, {"zankan_koukou"})
         self.assertEqual({row["role"] for row in matching}, {"崭新光辉"})
 
-    def test_character_only_programs_do_not_become_voice_appearances(self):
+    def test_character_credited_programs_resolve_to_the_current_voice_cast(self):
         built = UPDATE_EVENTS.build()
-        character_only_ids = {
-            event["id"]
-            for event in built["catalog"]["events"]
-            if event.get("cast_status") == "character_only"
+        programs = [
+            event for event in built["catalog"]["events"]
+            if event.get("series_id") == "pakatube-character-program" and event.get("character_ids")
+        ]
+        self.assertTrue(programs)
+        voice_appearances = {
+            actor_id: {event["event_id"] for event in actor["events"]}
+            for actor_id, actor in built["appearances"]["voice_actors"].items()
         }
-        voice_event_ids = {
-            event["event_id"]
-            for actor in built["appearances"]["voice_actors"].values()
-            for event in actor["events"]
-        }
-        self.assertTrue(character_only_ids)
-        self.assertTrue(character_only_ids.isdisjoint(voice_event_ids))
+        for event in programs:
+            cast_by_character = {
+                row["character_id"]: row["voice_actor_id"]
+                for row in event.get("cast") or []
+                if row.get("character_id") and row.get("voice_actor_id")
+            }
+            self.assertEqual(set(cast_by_character), set(event["character_ids"]), event["id"])
+            self.assertEqual(event["cast_status"], "verified")
+            for actor_id in cast_by_character.values():
+                self.assertIn(event["id"], voice_appearances.get(actor_id, set()))
 
     def test_explicit_alias_merge_preserves_curated_setlist_and_all_evidence(self):
         rows = [
@@ -486,6 +516,39 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             {source["kind"] for source in merged[0]["evidence_sources"]},
             {"curated_live_cast", "eventernote"},
         )
+
+    def test_known_actor_always_uses_its_single_canonical_character(self):
+        class Identities:
+            profile_by_id = {"va-1": {"identity": {"zh": "声优甲"}}}
+            character_by_id = {
+                "character-a": {"zh": "角色甲"},
+                "character-b": {"zh": "角色乙"},
+            }
+
+            @staticmethod
+            def voice_id(_name):
+                return "va-1"
+
+            @staticmethod
+            def character_id(_name):
+                return "character-b"
+
+            @staticmethod
+            def current_character_id(_actor_id):
+                return "character-a"
+
+            @staticmethod
+            def non_voice_person_type(_name):
+                return ""
+
+        cast = UPDATE_EVENTS.make_cast(
+            [{"name": "声优甲", "role": "来源误写的角色乙"}],
+            Identities(),
+            "eventernote",
+        )
+        self.assertEqual(len(cast), 1)
+        self.assertEqual(cast[0]["character_id"], "character-a")
+        self.assertEqual(cast[0]["role"], "角色甲")
 
     def test_wikipedia_search_identity_rejects_unrelated_people(self):
         self.assertEqual(UPDATE_EVENTS.wikipedia_title_key("中島由貴 (声優)"), UPDATE_EVENTS.wikipedia_title_key("中島由貴"))
