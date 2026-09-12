@@ -966,12 +966,10 @@ server.listen(PORT, () => {
     console.log('Automatic data refresh disabled (--no-crawl).');
     return;
   }
-  runEventsCrawl('startup');
-  runCharsCrawl('startup');
+  runDataRefresh('startup');
   runAlbumsCrawl('startup');
   runLantisCrawl('startup');
-  setInterval(() => runEventsCrawl('daily'), 24 * 60 * 60 * 1000);
-  setInterval(() => runCharsCrawl('daily'), 24 * 60 * 60 * 1000);
+  setInterval(() => runDataRefresh('daily'), 24 * 60 * 60 * 1000);
   setInterval(() => runAlbumsCrawl('auto'), 6 * 60 * 60 * 1000);
   setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
 });
@@ -981,8 +979,14 @@ const { execFile } = require('child_process');
 const CRAWL_SCRIPT = path.join(__dirname, 'crawl_events.py');
 const EVENT_BUILD_SCRIPT = path.join(__dirname, 'update_events.py');
 let crawlRunning = false;
-function runCharsCrawl(reason) {
-  if (charsRunning) return;
+let dataRefreshRunning = false;
+function runDataRefresh(reason) {
+  if (dataRefreshRunning) return;
+  dataRefreshRunning = true;
+  runCharsCrawl(reason, () => runEventsCrawl(reason, () => { dataRefreshRunning = false; }));
+}
+function runCharsCrawl(reason, done) {
+  if (charsRunning) { if (done) done(); return; }
   charsRunning = true;
   const t0 = Date.now();
   execFile(PYTHON_BIN, [CHARS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
@@ -990,36 +994,43 @@ function runCharsCrawl(reason) {
     const tag = '[chars-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
     else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
+    if (done) done();
   });
 }
 let charsRunning = false;
 const CHARS_SCRIPT = path.join(__dirname, 'crawl_characters.py');
-function runEventsCrawl(reason) {
-  if (crawlRunning) return;
+function runEventsCrawl(reason, done) {
+  if (crawlRunning) { if (done) done(); return; }
   crawlRunning = true;
   const t0 = Date.now();
   execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
-    crawlRunning = false;
     const tag = '[events-crawl ' + reason + ']';
     if (err) {
       console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-      return;
+    } else {
+      console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
     }
-    console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
-    runEventBuild(reason);
+    // Official programs and profile pages can still refresh when Eventernote
+    // is temporarily unavailable; the builder preserves the last verified
+    // remote snapshot and replaces generated files atomically.
+    runEventBuild(reason, () => {
+      crawlRunning = false;
+      if (done) done();
+    });
   });
 }
 
-function runEventBuild(reason) {
+function runEventBuild(reason, done) {
   const t0 = Date.now();
-  execFile(PYTHON_BIN, [EVENT_BUILD_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [EVENT_BUILD_SCRIPT, '--refresh-all'], { windowsHide: true }, (err, stdout, stderr) => {
     const tag = '[events-build ' + reason + ']';
     if (err) {
       console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-      return;
+    } else {
+      homeSummaryCache = { at: 0, data: null };
+      console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n')[0]);
     }
-    homeSummaryCache = { at: 0, data: null };
-    console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n')[0]);
+    if (done) done();
   });
 }
 

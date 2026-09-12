@@ -108,7 +108,9 @@ python3 uma_tools/build_pedigree.py
 |---|---|---|
 | Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `data/events_data.json`；存在本地 Excel 镜像时会尝试同步 |
 | 官方节目源 | `python3 uma_tools/update_events.py --refresh-programs` | 刷新 `data/events/official_programs.json` 并重建统一活动数据 |
-| 统一活动与出演关系 | `python3 uma_tools/update_events.py` | 活动目录、声优档案、出演关系及旧统计兼容文件 |
+| 声优资料源 | `python3 uma_tools/update_events.py --refresh-profiles` | 刷新 `data/events/voice_actor_details.json` 并重建声优档案 |
+| 统一活动与出演关系 | `python3 uma_tools/update_events.py` | `events_catalog.json`、`appearance_index.json`、`voice_actor_profiles.json` |
+| 全部远程源刷新 | `python3 uma_tools/update_events.py --refresh-all` | 刷新节目、声优资料并原子重建三份运行数据 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
 | 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
 | 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
@@ -118,7 +120,8 @@ python3 uma_tools/build_pedigree.py
 修改 `data/events_data.json`、`data/live_data.json` 或 `data/live_cat_data.json` 后，应再运行一次
 `python3 uma_tools/update_events.py`。它从仓库内受版本控制的源数据统一重建活动目录与出演索引，
 不需要 `events_list.xlsx`。`live_data.json` 与 `live_cat_data.json` 仅作为输入，构建前后会校验哈希，
-其中人工精调的演出歌单不会被重写。旧命令 `gen_voice_part.py` 仅保留为转发到新构建器的兼容入口。
+其中人工精调的演出歌单不会被重写。统计页直接从统一活动目录计算，不再生成重复的兼容统计索引。
+正常启动 `uma_tools/server.js` 时会串行刷新角色、Eventernote、官方节目和声优资料，之后每 24 小时重复一次；本地预览可使用 `--no-crawl` 关闭自动刷新。
 
 大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
 

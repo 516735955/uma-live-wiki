@@ -2313,6 +2313,10 @@
         .event-cast-item button:disabled { color: var(--text); cursor: default; }
         .event-cast-item .event-cast-role { color: var(--text-2); font-weight: 600; }
         .event-cast-item > span { grid-column: 1 / -1; color: var(--text-3); font-size: .66rem; }
+        .event-guest-block { margin-top: 18px; }
+        .event-guest-block h4 { margin: 0 0 9px; color: var(--text-2); font-size: .78rem; letter-spacing: .06em; }
+        .event-cast-guest strong { overflow: hidden; color: var(--text); font-size: .84rem; text-overflow: ellipsis; white-space: nowrap; }
+        .event-cast-guest > span:not(:last-child) { grid-column: 2; color: var(--text-2); font-size: .78rem; }
         .event-character-links { display: flex; flex-wrap: wrap; gap: 8px; }
         .event-character-links button { padding: 9px 12px; border: 1px solid var(--border); border-radius: 7px; background: #fff; color: #3159d9; font: 700 .8rem/1.3 inherit; cursor: pointer; }
         .event-character-links button:hover { border-color: #3159d9; background: #f5f7ff; }
@@ -2342,6 +2346,9 @@
         .va-stat-strip div + div { border-left: 1px solid var(--border); }
         .va-stat-strip b { color: var(--navy); font-size: 1.35rem; }
         .va-stat-strip span { color: var(--text-3); font-size: .72rem; }
+        .va-profile-sources { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 12px; margin-top: 14px; color: var(--text-3); font-size: .72rem; }
+        .va-profile-sources a { color: var(--color-main, #6957d8); font-weight: 650; text-decoration: none; }
+        .va-profile-sources a:hover { text-decoration: underline; }
         .va-history-section { margin-top: 16px; }
         .va-upcoming { border-top: 2px solid #c45d0a; }
         .va-history-years { display: flex; flex-direction: column; gap: 8px; }

@@ -672,6 +672,8 @@ createApp({
             agency: details.agency || '',
             officialProfile: details.official_profile || '',
             social: details.social || [],
+            fieldStatus: details.field_status || {},
+            profileSources: details.sources || [],
             profileStatus: details.status || 'partial',
             stats: profile.stats || { events: 0, concerts: 0, programs: 0, songs: 0 }
           };
@@ -2404,7 +2406,7 @@ createApp({
       return !isNaN(t) && t < Date.now() - 86400000;
     }
     function eventDateLabel(event) {
-      if (!event || !event.date) return '日期待补';
+      if (!event || !event.date) return event && event.schedule_status === 'announced_tba' ? '官方待公布' : '日期待补';
       return event.end_date && event.end_date !== event.date ? event.date + ' — ' + event.end_date : event.date;
     }
     function eventKindLabel(kind) {
@@ -2424,8 +2426,26 @@ createApp({
         return (characters.slice(0, 5).map(function (item) { return item.name; }).join('、') || '角色出演节目')
           + (characters.length > 5 ? ' 等 ' + characters.length + ' 位角色' : '') + '（不计声优本人出演）';
       }
-      if (!cast.length) return event && event.cast_status === 'pending' ? '出演者待核实' : '出演者资料待补';
+      if (!cast.length) return event && event.cast_status === 'announced_tba' ? '出演阵容由官方待公布' : (event && event.cast_status === 'pending' ? '出演者待核实' : '出演者资料待补');
       return cast.slice(0, 5).map(function (item) { return item.name + (item.role ? '（' + item.role + '）' : ''); }).join('、') + (cast.length > 5 ? ' 等 ' + cast.length + ' 人' : '');
+    }
+    const eventVoiceCast = computed(function () {
+      return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type === 'voice_actor' || item.voice_actor_id; });
+    });
+    const eventGuestCast = computed(function () {
+      return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type !== 'voice_actor' && !item.voice_actor_id; });
+    });
+    function eventCastStatusLabel(status) {
+      return { verified: '已核实', partial: '部分收录', character_only: '仅角色出演', announced_tba: '官方待公布' }[status] || '待核实';
+    }
+    function castPersonLabel(kind) {
+      return { guest_artist: '特邀艺人', project_staff: '项目工作人员', virtual_guest: '虚拟嘉宾', media_guest: '节目嘉宾', external_guest: '外部嘉宾' }[kind] || '嘉宾';
+    }
+    function castEvidenceLabel(cast) {
+      const labels = { official_youtube: '官方节目单', official_announcement: '官方公告', official_broadcaster: '节目官方页', community_archive: '节目补档', curated_live_cast: '精调出演表', curated_correction: '人工核实', eventernote: 'Eventernote' };
+      const kinds = ((cast && cast.evidence_sources) || []).map(function (source) { return source.kind; });
+      if (!kinds.length && cast && cast.evidence) kinds.push(cast.evidence);
+      return Array.from(new Set(kinds)).map(function (kind) { return labels[kind] || '资料来源'; }).join(' · ') || '资料来源';
     }
     function eventSongCount(event) {
       return (event.sessions || []).reduce(function (total, session) { return total + (session.songs || []).length; }, 0);
@@ -2434,7 +2454,14 @@ createApp({
       return ((eventDetail.value && eventDetail.value.media) || []).filter(function (item) { return item.video_id; });
     });
     function sourceLabel(source) {
-      return (source && source.label) || ({ official_announcement: '官方公告', official_youtube: '官方 YouTube', curated_live: '站内精调歌单', eventernote: 'Eventernote' }[(source && source.kind) || ''] || '资料来源');
+      return (source && source.label) || ({ official_announcement: '官方公告', official_youtube: '官方 YouTube', official_broadcaster: '节目官方页', official_event_site: '活动官方网站', official_profile: '个人官方网站', community_archive: '节目补档', curated_live: '站内精调歌单', eventernote: 'Eventernote' }[(source && source.kind) || ''] || '资料来源');
+    }
+    function voiceFieldLabel(voice, field) {
+      if (!voice) return '——';
+      const value = field === 'birthday' ? voice.birth : voice[field];
+      if (value) return value;
+      const status = (voice.fieldStatus || {})[field];
+      return { not_published: '未公开', not_applicable: '不适用', source_unavailable: '暂无可核实公开资料' }[status] || '——';
     }
     function openEvent(eventOrId) {
       const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
@@ -2541,41 +2568,61 @@ createApp({
       d.innerHTML = s;
       return d.textContent || '';
     }
-    let songEvLoadPromise = null;
     function loadSongEvData() {
-      if (songEvLoadPromise) return songEvLoadPromise;
-      songEvLoadPromise = fetch('/data/voice_participation.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) {
-          var events = (data && data.events) || [];
-          var sEv = [];
-          events.forEach(function (ev) {
-            (ev.days || []).forEach(function (d, dayIndex) {
-              if (d.songs && d.songs.length) {
-                sEv.push({ cat: ev.cat, songs: d.songs, link: ev.link, dayIndex: dayIndex, title: ev.title, voice_actors: d.voice_actors });
-              }
+      return loadEvents().then(function () {
+        var rows = [];
+        eventsAll.value.forEach(function (event) {
+          (event.sessions || []).forEach(function (session, dayIndex) {
+            if (!session.songs || !session.songs.length) return;
+            var dayLink = event.legacy_url || (LANG_PREFIX + '/events/' + encodeURIComponent(event.id));
+            if (event.legacy_url) {
+              var parts = event.legacy_url.split('/').filter(Boolean);
+              if (parts.length - 2 >= 4) dayLink = event.legacy_url.replace(/\/\d+$/, '');
+              dayLink += '/' + dayIndex;
+            }
+            rows.push({
+              cat: event.series_id === 'numbered-live' ? 'num' : (event.kind === 'concert' ? 'otherlive' : 'nonlive'),
+              songs: session.songs,
+              link: dayLink,
+              title: event.title,
+              voice_actors: (event.cast || []).map(function (cast) { return cast.name; }).filter(Boolean)
             });
           });
-          songEvData.value = sEv;
-        })
-        .catch(function () { songEvLoadPromise = null; songEvData.value = []; });
-      return songEvLoadPromise;
+        });
+        songEvData.value = rows;
+      });
     }
     function computeEvData() {
       evDataLoading.value = true;
       evDataError.value = '';
       vaFilters.value = []; songFilter.value = 'all'; vaPage.value = 1; songPage.value = 1;
-      // 歌曲演出次数排行：仍来自 voice_participation.json（不变）
-      loadSongEvData();
-      // 声优出演次数排行：改由 events_list.xlsx 导出的 actor_participation.json（按事件计数）
-      fetch('/data/actor_participation.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) {
-          var entries = (data && data.entries) || [];
-          voiceEvData.value = entries.map(function (e) { return { cat: e.cat, actors: e.actors }; });
-          evDataLoading.value = false;
-        })
-        .catch(function () { evDataError.value = '无法加载声优参与数据（data/actor_participation.json）。'; evDataLoading.value = false; });
+      if (!eventsAll.value.length) {
+        evDataError.value = '活动目录尚未加载。';
+        evDataLoading.value = false;
+        return;
+      }
+      var profilesById = {};
+      voiceProfiles.value.forEach(function (profile) { profilesById[profile.id] = profile; });
+      var actorRows = [];
+      var songRows = [];
+      eventsAll.value.forEach(function (event) {
+        var cat = event.series_id === 'numbered-live' ? 'num' : (event.kind === 'concert' ? 'otherlive' : 'nonlive');
+        var names = [];
+        (event.cast || []).forEach(function (cast) {
+          if (!cast.voice_actor_id) return;
+          var profile = profilesById[cast.voice_actor_id] || {};
+          var identity = profile.identity || {};
+          var name = identity.ja || identity.zh || cast.name || '';
+          if (name && names.indexOf(name) === -1) names.push(name);
+        });
+        actorRows.push({ cat: cat, actors: names });
+        (event.sessions || []).forEach(function (session) {
+          if (session.songs && session.songs.length) songRows.push({ cat: cat, songs: session.songs });
+        });
+      });
+      voiceEvData.value = actorRows;
+      songEvData.value = songRows;
+      evDataLoading.value = false;
     }
     function setEvTime(v) {
       if (v !== 'all' && v !== 'upcoming' && v !== 'past') return;
@@ -3024,13 +3071,13 @@ createApp({
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      eventDetail, eventVideos, openEvent, eventBack, openEventLegacy, eventDateLabel, eventKindLabel, eventModeLabel, eventSeriesName, eventCastSummary, eventSongCount, sourceLabel, openVoiceFromEvent, openCharacterFromEvent,
+      eventDetail, eventVideos, eventVoiceCast, eventGuestCast, openEvent, eventBack, openEventLegacy, eventDateLabel, eventKindLabel, eventModeLabel, eventSeriesName, eventCastSummary, eventSongCount, eventCastStatusLabel, castPersonLabel, castEvidenceLabel, sourceLabel, openVoiceFromEvent, openCharacterFromEvent,
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro, charAppearance,
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
       songDetail, songAlbums, songLives, songCharList, findSongByName, openSongFromChar, loadSongEvData,
       songEarliestRelease, songLivesExpanded, songLivesVisible, openLiveFromUrl,
-      voiceProfiles, voiceDetail, voiceDetailSource, voiceAppearance, voiceUpcoming, voicePastByYear, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
+      voiceProfiles, voiceDetail, voiceDetailSource, voiceAppearance, voiceUpcoming, voicePastByYear, voiceFieldLabel, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio
     };

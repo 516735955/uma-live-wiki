@@ -420,7 +420,7 @@
                                 <h2>{{ eventDetail.title }}</h2>
                                 <p v-if="eventDetail.summary" class="event-detail-summary">{{ eventDetail.summary }}</p>
                                 <div class="event-detail-actions">
-                                    <button v-if="eventDetail.legacy_url" type="button" @click="openEventLegacy(eventDetail)">打开完整精调歌单 →</button>
+                                    <button v-if="eventDetail.legacy_url" type="button" @click="openEventLegacy(eventDetail)">{{ eventSongCount(eventDetail) ? '打开完整精调歌单 →' : '打开原演出页面 →' }}</button>
                                     <a v-if="eventDetail.media && eventDetail.media[0] && eventDetail.media[0].url" :href="eventDetail.media[0].url" target="_blank" rel="noopener">观看官方/收录视频 ↗</a>
                                 </div>
                             </div>
@@ -429,30 +429,40 @@
                         <dl class="event-facts">
                             <div><dt>日期</dt><dd>{{ eventDateLabel(eventDetail) }}</dd></div>
                             <div><dt>地点 / 形式</dt><dd>{{ eventDetail.venue || eventModeLabel(eventDetail.mode) }}</dd></div>
-                            <div><dt>出演资料</dt><dd>{{ eventDetail.cast_status==='verified' ? '已核实' : (eventDetail.cast_status==='partial' ? '部分收录' : (eventDetail.cast_status==='character_only' ? '仅角色出演' : '待核实')) }}</dd></div>
-                            <div><dt>场次</dt><dd>{{ eventDetail.sessions && eventDetail.sessions.length ? eventDetail.sessions.length : '待补' }}</dd></div>
+                            <div><dt>出演资料</dt><dd>{{ eventCastStatusLabel(eventDetail.cast_status) }}</dd></div>
+                            <div><dt>场次</dt><dd>{{ eventDetail.sessions && eventDetail.sessions.length ? eventDetail.sessions.length : '单场活动' }}</dd></div>
                         </dl>
 
                         <section class="event-detail-section">
-                            <div class="event-section-head"><div><span>CAST</span><h3>{{ eventDetail.cast_status==='character_only' ? '出演角色' : '出演声优与角色' }}</h3></div><p>{{ eventDetail.cast_status==='character_only' ? ((eventDetail.characters || []).length + ' 位角色，不计声优本人出演') : (eventDetail.cast && eventDetail.cast.length ? eventDetail.cast.length + ' 条已记录关系' : '资料待补') }}</p></div>
-                            <div v-if="eventDetail.cast && eventDetail.cast.length" class="event-cast-grid">
-                                <div v-for="cast in eventDetail.cast" :key="cast.name+'-'+cast.role" class="event-cast-item">
+                            <div class="event-section-head"><div><span>CAST</span><h3>{{ eventDetail.cast_status==='character_only' ? '出演角色' : (eventVoiceCast.length ? '出演声优与角色' : (eventGuestCast.length ? '嘉宾与工作人员' : '出演阵容')) }}</h3></div><p>{{ eventDetail.cast_status==='character_only' ? ((eventDetail.characters || []).length + ' 位角色，不计声优本人出演') : (eventDetail.cast && eventDetail.cast.length ? eventDetail.cast.length + ' 条已记录关系' : (eventDetail.cast_status==='announced_tba' ? '官方待公布' : '资料待补')) }}</p></div>
+                            <div v-if="eventVoiceCast.length" class="event-cast-grid">
+                                <div v-for="cast in eventVoiceCast" :key="cast.name+'-'+cast.role" class="event-cast-item">
                                     <button :disabled="!cast.voice_actor_id" @click="cast.voice_actor_id && openVoiceFromEvent(cast.voice_actor_id)">{{ cast.name }}</button>
                                     <button v-if="cast.role" class="event-cast-role" :disabled="!cast.character_id" @click="cast.character_id && openCharacterFromEvent(cast.character_id)">{{ cast.role }}</button>
-                                    <span>{{ cast.evidence==='official_youtube' ? '官方节目单' : (cast.evidence==='official_announcement' ? '官方公告' : (cast.evidence==='curated_live_cast' ? '精调出演表' : 'Eventernote')) }}</span>
+                                    <span>{{ castEvidenceLabel(cast) }}</span>
                                 </div>
                             </div>
-                            <div v-else-if="eventDetail.cast_status==='character_only' && eventDetail.characters && eventDetail.characters.length" class="event-character-links">
+                            <div v-if="eventGuestCast.length" class="event-guest-block">
+                                <h4>嘉宾与工作人员</h4>
+                                <div class="event-cast-grid">
+                                    <div v-for="cast in eventGuestCast" :key="cast.name+'-'+cast.role" class="event-cast-item event-cast-guest">
+                                        <strong>{{ cast.name }}</strong>
+                                        <span v-if="cast.role">{{ cast.role }}</span>
+                                        <span>{{ castPersonLabel(cast.person_type) }} · {{ castEvidenceLabel(cast) }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="eventDetail.cast_status==='character_only' && eventDetail.characters && eventDetail.characters.length" class="event-character-links">
                                 <button v-for="character in eventDetail.characters" :key="character.id" @click="openCharacterFromEvent(character.id)">{{ character.name }} <span>{{ character.name_ja }}</span> →</button>
                             </div>
-                            <p v-else class="event-data-pending">该活动本身已确认，但出演者资料尚未得到足够来源支持。</p>
+                            <p v-if="!eventVoiceCast.length && !eventGuestCast.length && eventDetail.cast_status!=='character_only'" class="event-data-pending">{{ eventDetail.cast_status==='announced_tba' ? '该活动已官方公布，出演阵容尚待官方发表。' : '该活动本身已确认，但出演者资料尚未得到足够来源支持。' }}</p>
                         </section>
 
                         <section v-if="eventDetail.sessions && eventDetail.sessions.length" class="event-detail-section">
-                            <div class="event-section-head"><div><span>SESSIONS</span><h3>{{ eventDetail.kind==='official_program' ? '节目场次' : '场次与曲目' }}</h3></div><p v-if="eventDetail.legacy_url">完整表格保留在原精调歌单中</p></div>
+                            <div class="event-section-head"><div><span>SESSIONS</span><h3>{{ eventDetail.kind==='official_program' ? '节目场次' : '场次与曲目' }}</h3></div><p v-if="eventDetail.legacy_url && eventSongCount(eventDetail)">完整表格保留在原精调歌单中</p></div>
                             <div class="event-session-list">
                                 <details v-for="session in eventDetail.sessions" :key="session.id" :open="eventDetail.sessions.length===1">
-                                    <summary><b>{{ session.label }}</b><span>{{ session.date || '日期待补' }} · {{ session.songs && session.songs.length ? session.songs.length + ' 首' : (eventDetail.kind==='official_program' ? '暂无独立歌单' : '曲目待补') }}</span></summary>
+                                    <summary><b>{{ session.label }}</b><span>{{ session.date || (eventDetail.schedule_status==='announced_tba' ? '官方待公布' : '日期待补') }} · {{ session.songs && session.songs.length ? session.songs.length + ' 首' : (eventDetail.kind==='official_program' ? '暂无独立歌单' : '曲目待补') }}</span></summary>
                                     <div v-if="eventDetail.sessions.length>1 && session.cast && session.cast.length" class="event-session-cast" aria-label="本场次出演者">
                                         <button v-for="cast in session.cast" :key="cast.name+'-'+cast.role" type="button" :disabled="!cast.voice_actor_id" @click="cast.voice_actor_id && openVoiceFromEvent(cast.voice_actor_id)">
                                             {{ cast.name }}<span v-if="cast.role"> / {{ cast.role }}</span>
@@ -824,10 +834,14 @@
                         <dl class="va-info">
                             <div><dt>声优</dt><dd>{{ voiceDetail.zh }}</dd></div>
                             <div><dt>日文名</dt><dd>{{ voiceDetail.ja }}</dd></div>
-                            <div><dt>生日</dt><dd>{{ voiceDetail.birth || '——' }}</dd></div>
-                            <div><dt>出身地</dt><dd>{{ voiceDetail.birthplace || '待补充' }}</dd></div>
-                            <div><dt>事务所</dt><dd>{{ voiceDetail.agency || '待补充' }}</dd></div>
+                            <div><dt>生日</dt><dd>{{ voiceFieldLabel(voiceDetail, 'birthday') }}</dd></div>
+                            <div><dt>出身地</dt><dd>{{ voiceFieldLabel(voiceDetail, 'birthplace') }}</dd></div>
+                            <div><dt>事务所</dt><dd>{{ voiceFieldLabel(voiceDetail, 'agency') }}</dd></div>
                         </dl>
+                        <div v-if="voiceDetail.profileSources && voiceDetail.profileSources.length" class="va-profile-sources">
+                            <span>人物资料来源</span>
+                            <a v-for="source in voiceDetail.profileSources" :key="source.kind+'-'+source.url" :href="source.url" target="_blank" rel="noopener">{{ source.label || '资料页' }} ↗</a>
+                        </div>
                         <div class="va-stat-strip">
                             <div><b>{{ voiceDetail.stats.events || 0 }}</b><span>活动出演</span></div>
                             <div><b>{{ voiceDetail.stats.concerts || 0 }}</b><span>音乐演出</span></div>
