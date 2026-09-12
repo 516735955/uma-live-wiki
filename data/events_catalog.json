@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T19:13:00+00:00",
+  "generated_at": "2026-09-12T21:05:24+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "b7eb03fe490561e4e955a19566d134e425eb6efba4157249193a5c5c5e531c78",
@@ -30,61 +30,71 @@
       "id": "numbered-live",
       "name": "编号系列公演",
       "name_ja": "ナンバリングイベント",
-      "kind": "concert"
+      "kind": "concert",
+      "cover": "/uma_tools/img/event-covers/numbered-live.svg"
     },
     {
       "id": "winning-live-release",
       "name": "WINNING LIVE 发售纪念活动",
       "name_ja": "WINNING LIVE 発売記念イベント",
-      "kind": "concert"
+      "kind": "concert",
+      "cover": "/uma_tools/img/event-covers/winning-live.svg"
     },
     {
       "id": "starting-gate-release",
       "name": "STARTING GATE 发售纪念活动",
       "name_ja": "STARTING GATE 発売記念イベント",
-      "kind": "concert"
+      "kind": "concert",
+      "cover": "/uma_tools/img/event-covers/starting-gate.svg"
     },
     {
       "id": "twinkle-circle",
       "name": "Twinkle Circle!",
       "name_ja": "Twinkle Circle!",
-      "kind": "concert"
+      "kind": "concert",
+      "cover": "/uma_tools/img/event-covers/twinkle-circle.svg"
     },
     {
       "id": "paka-live-tv",
       "name": "PakaLive TV",
       "name_ja": "ぱかライブTV",
-      "kind": "official_program"
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/paka-live-tv.svg"
     },
     {
       "id": "paka-live-tv-prime",
       "name": "PakaLive TV'",
       "name_ja": "ぱかライブTV'",
-      "kind": "official_program"
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/paka-live-tv-prime.svg"
     },
     {
       "id": "sokosoko-paka-live-tv",
       "name": "SokoSoko PakaLive TV",
       "name_ja": "そこそこぱかライブTV",
-      "kind": "official_program"
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg"
     },
     {
       "id": "pakatube-character-program",
       "name": "PakaTube 角色节目",
       "name_ja": "ぱかチューブっ！キャラクター番組",
-      "kind": "official_program"
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/pakatube.svg"
     },
     {
       "id": "all-night-nippon-gold",
       "name": "赛马娘 All Night Nippon GOLD",
       "name_ja": "ウマ娘のオールナイトニッポンGOLD",
-      "kind": "official_program"
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/ann-gold.svg"
     },
     {
       "id": "official-special",
       "name": "官方特别节目",
       "name_ja": "公式特別番組",
-      "kind": "official_program"
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/official-program.svg"
     }
   ],
   "events": [
@@ -242,7 +252,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 13:00 開演 14:30 終演 21:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -367,7 +376,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 15:00 開演 16:00 終演 17:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -883,7 +891,7 @@
       "sources": [
         {
           "kind": "curated_live",
-          "label": "站内精调歌单",
+          "label": "站内精调资料",
           "url": "/zh-Hans/live/number_series_event/7th_EVENT/1/0"
         },
         {
@@ -902,9 +910,8 @@
         "/zh-Hans/live/number_series_event/7th_EVENT/1/0",
         "/zh-Hans/live/number_series_event/7th_EVENT/1/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "none"
     },
     {
@@ -965,7 +972,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -1135,7 +1141,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/ann-gold.svg",
       "setlist_status": "none"
     },
     {
@@ -1228,7 +1233,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -1321,7 +1325,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:30 終演 13:50",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -1446,7 +1449,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 12:00 終演 20:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -1571,7 +1573,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 16:00 開演 17:00 終演 18:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -1881,7 +1882,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -2068,7 +2068,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -2255,7 +2254,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -2421,7 +2419,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -2916,7 +2913,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
       "setlist_status": "none"
     },
     {
@@ -3175,7 +3171,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -3434,7 +3429,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -3645,7 +3639,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -3706,7 +3699,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:00 終演 15:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -3767,7 +3759,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 11:30 終演 11:50",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -4070,7 +4061,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
       "setlist_status": "none"
     },
     {
@@ -4240,7 +4230,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/ann-gold.svg",
       "setlist_status": "none"
     },
     {
@@ -4427,7 +4416,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -4791,7 +4779,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -4978,7 +4965,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -5139,7 +5125,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -5224,7 +5209,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -5527,7 +5511,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
       "setlist_status": "none"
     },
     {
@@ -7611,9 +7594,8 @@
         "/zh-Hans/live/number_series_event/7th_EVENT/0/1",
         "/zh-Hans/live/number_series_event/7th_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -7800,7 +7782,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -7987,7 +7968,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -8290,7 +8270,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
       "setlist_status": "none"
     },
     {
@@ -8460,7 +8439,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/ann-gold.svg",
       "setlist_status": "none"
     },
     {
@@ -8537,7 +8515,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:00 終演 14:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -8614,7 +8591,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:00 終演 14:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -8917,7 +8893,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
       "setlist_status": "none"
     },
     {
@@ -9195,7 +9170,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -9272,7 +9246,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -9438,7 +9411,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -9499,7 +9471,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 14:00 開演 14:30 終演 15:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -9560,7 +9531,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 12:30 開演 13:00 終演 13:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -9621,7 +9591,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 11:00 開演 11:30 終演 12:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -9924,7 +9893,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
       "setlist_status": "none"
     },
     {
@@ -10111,7 +10079,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -10421,7 +10388,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -10498,7 +10464,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -10897,7 +10862,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -11063,7 +11027,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -11250,7 +11213,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -11437,7 +11399,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -11706,7 +11667,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -12009,7 +11969,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -12315,7 +12274,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -12392,7 +12350,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -12595,7 +12552,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -12672,7 +12628,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -12943,7 +12898,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -13036,7 +12990,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:00 終演 17:20",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -13129,7 +13082,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:30 終演 14:50",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -13400,7 +13352,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -13500,7 +13451,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -13600,7 +13550,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -13700,7 +13649,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -13966,7 +13914,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -14336,7 +14283,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -14534,7 +14480,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -14763,7 +14708,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -14882,7 +14826,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -15153,7 +15096,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -17350,9 +17292,8 @@
         "/zh-Hans/live/number_series_event/6th_EVENT/1/0",
         "/zh-Hans/live/number_series_event/6th_EVENT/1/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/6th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：66LF）\nhttps://pan.quark.cn/s/813ae1f0b6ca 码：66LF",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -17518,7 +17459,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -17579,7 +17519,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:55 終演 16:15",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -17640,7 +17579,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:30 終演 13:50",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -17827,7 +17765,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -17904,7 +17841,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -18175,7 +18111,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -18268,7 +18203,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -18361,7 +18295,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:30 終演 13:50",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -18527,7 +18460,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -18786,7 +18718,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -19042,7 +18973,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -19441,7 +19371,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -19565,7 +19494,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -19735,7 +19663,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -19962,7 +19889,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -20233,7 +20159,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -20343,7 +20268,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -20453,7 +20377,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -20677,7 +20600,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -20770,7 +20692,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 10:00 開演 10:30 終演 11:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -20863,7 +20784,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 14:30 開演 14:35 終演 14:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -21132,7 +21052,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -21302,7 +21221,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -21505,7 +21423,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -21692,7 +21609,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -21963,7 +21879,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -22072,7 +21987,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -22233,7 +22147,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -22504,7 +22417,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -24661,9 +24573,8 @@
         "/zh-Hans/live/number_series_event/6th_EVENT/0/1",
         "/zh-Hans/live/number_series_event/6th_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/6th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：66LF）\nhttps://pan.quark.cn/s/813ae1f0b6ca 码：66LF",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -24884,7 +24795,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -25050,7 +24960,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -25237,7 +25146,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -25424,7 +25332,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -25611,7 +25518,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -25986,7 +25892,6 @@
         "/zh-Hans/live/other/52",
         "/zh-Hans/live/other/52/0/0"
       ],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "verified"
     },
     {
@@ -26152,7 +26057,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -26423,7 +26327,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -26644,7 +26547,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -26865,7 +26767,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -26950,7 +26851,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -27103,7 +27003,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -27148,7 +27047,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -27611,7 +27509,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -27814,7 +27711,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -28054,7 +27950,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -28275,7 +28170,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -28546,7 +28440,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -28712,7 +28605,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -28969,7 +28861,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -29367,7 +29258,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -29554,7 +29444,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -29615,7 +29504,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -29802,7 +29690,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -30137,7 +30024,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -30198,7 +30084,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -30259,7 +30144,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -30826,7 +30710,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -31392,7 +31275,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -31558,7 +31440,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -31683,7 +31564,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:00 終演 18:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -31792,7 +31672,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 13:30 開演 14:00 終演 16:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -32063,7 +31942,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -32182,7 +32060,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -32576,7 +32453,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -33127,7 +33003,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -33679,7 +33554,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -33845,7 +33719,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -34104,7 +33977,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -34518,7 +34390,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -34789,7 +34660,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -35031,7 +34901,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -35582,7 +35451,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -36133,7 +36001,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -36685,7 +36552,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -36762,7 +36628,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:55 終演 16:25",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -36839,7 +36704,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:25 終演 13:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -37005,7 +36869,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -37536,7 +37399,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -38067,7 +37929,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -38599,7 +38460,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -38870,7 +38730,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -39057,7 +38916,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -39380,7 +39238,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -39567,7 +39424,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -39788,7 +39644,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -39881,7 +39736,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:40 終演 16:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -39974,7 +39828,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:30 終演 13:50",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -40177,7 +40030,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -40704,7 +40556,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -41232,7 +41083,6 @@
       ],
       "image": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/twinkle-circle.svg",
       "setlist_status": "verified"
     },
     {
@@ -41695,7 +41545,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -41861,7 +41710,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -42120,7 +41968,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -42331,7 +42178,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -42602,7 +42448,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -42868,7 +42713,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -43067,7 +42911,6 @@
         "/zh-Hans/live/other/46",
         "/zh-Hans/live/other/46/0/0"
       ],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "verified"
     },
     {
@@ -43233,7 +43076,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -43454,7 +43296,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -43675,7 +43516,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -43896,7 +43736,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -43973,7 +43812,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:15 終演 17:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -44050,7 +43888,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:35 終演 15:55",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -44143,7 +43980,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 12:30 終演 15:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -44414,7 +44250,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -44673,7 +44508,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -44755,7 +44589,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "《TIF presents ONE SONG FES.》第1期的现场录制。",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -44816,7 +44649,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 16:30 終演 18:55",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -44877,7 +44709,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:00 終演 15:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -44938,7 +44769,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 11:45 終演 14:20",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -45141,7 +44971,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -45218,7 +45047,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 13:30 開演 14:00 終演 14:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -45295,7 +45123,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 16:00 開演 18:00 終演 22:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -45380,7 +45207,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -45651,7 +45477,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -45776,7 +45601,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 15:40 開演 15:55 終演 18:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -45963,7 +45787,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -46150,7 +45973,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -46404,7 +46226,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -46607,7 +46428,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -46792,7 +46612,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -46853,7 +46672,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -47124,7 +46942,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -47327,7 +47144,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -47514,7 +47330,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -47701,7 +47516,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -48035,7 +47849,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -48306,7 +48119,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -50506,9 +50318,8 @@
         "/zh-Hans/live/number_series_event/5th_EVENT/3/0",
         "/zh-Hans/live/number_series_event/5th_EVENT/3/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/5th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -50661,7 +50472,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -50999,7 +50809,6 @@
         "/zh-Hans/live/other/44",
         "/zh-Hans/live/other/44/0/0"
       ],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "verified"
     },
     {
@@ -51202,7 +51011,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -51525,7 +51333,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -51988,7 +51795,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -52262,7 +52068,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -52347,7 +52152,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -52681,7 +52485,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -54774,9 +54577,8 @@
         "/zh-Hans/live/number_series_event/5th_EVENT/2/0",
         "/zh-Hans/live/number_series_event/5th_EVENT/2/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/5th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -55047,7 +54849,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -55250,7 +55051,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -55597,7 +55397,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -55658,7 +55457,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:25 終演 16:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -55929,7 +55727,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -55990,7 +55787,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:40 終演 16:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56051,7 +55847,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:25 終演 16:40",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56217,7 +56012,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -56278,7 +56072,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:45 終演 14:15",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56339,7 +56132,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:00 終演 18:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56400,7 +56192,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 16:00 終演 17:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56461,7 +56252,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 20:10 終演 20:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56522,7 +56312,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 18:15 終演 18:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56583,7 +56372,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:25 終演 15:40",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56692,7 +56480,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -56863,7 +56650,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -56956,7 +56742,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:00 終演 17:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -57227,7 +57012,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -57393,7 +57177,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -57833,7 +57616,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -57942,7 +57724,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:00 終演 17:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -58231,7 +58012,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -58502,7 +58282,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -58579,7 +58358,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 15:10 開演 15:10 終演 15:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -58656,7 +58434,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 13:20 開演 13:20 終演 13:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -58859,7 +58636,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -58944,7 +58720,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -59215,7 +58990,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -59292,7 +59066,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 16:00 終演 16:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -59369,7 +59142,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:30 終演 14:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -61352,9 +61124,8 @@
         "/zh-Hans/live/number_series_event/5th_EVENT/1/0",
         "/zh-Hans/live/number_series_event/5th_EVENT/1/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/5th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -61515,7 +61286,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -61973,7 +61743,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -62223,7 +61992,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -62421,7 +62189,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -62466,7 +62233,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -62732,7 +62498,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -64778,9 +64543,8 @@
         "/zh-Hans/live/number_series_event/5th_EVENT/0/1",
         "/zh-Hans/live/number_series_event/5th_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/5th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：j84h）\nhttps://pan.quark.cn/s/09972c1b18f4 码：j84h",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -65046,7 +64810,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -65244,7 +65007,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -65510,7 +65272,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -65671,7 +65432,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -65962,7 +65722,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -66023,7 +65782,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 16:30 終演 17:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -66289,7 +66047,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -66350,7 +66107,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -66511,7 +66267,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -66636,7 +66391,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -66755,7 +66509,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -66874,7 +66627,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -67127,7 +66879,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -67227,7 +66978,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -67327,7 +67077,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -67593,7 +67342,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -67791,7 +67539,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -68249,7 +67996,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -68410,7 +68156,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -68487,7 +68232,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:00 終演 13:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -68817,7 +68561,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -68878,7 +68621,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -68939,7 +68681,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -69235,7 +68976,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -69584,7 +69324,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -69933,7 +69672,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -70199,7 +69937,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -70548,7 +70285,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -70897,7 +70633,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -71246,7 +70981,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -71595,7 +71329,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -71945,7 +71678,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -72143,7 +71875,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -72477,7 +72208,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -72554,7 +72284,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -72820,7 +72549,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -72897,7 +72625,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -72942,7 +72669,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -73103,7 +72829,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -73148,7 +72873,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -73193,7 +72917,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -73238,7 +72961,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -73521,7 +73243,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -73790,7 +73511,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -74056,7 +73776,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -74117,7 +73836,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:15 終演 15:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -74178,7 +73896,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 12:40 終演 12:55",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -74490,7 +74207,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -75031,7 +74747,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 14:00 開演 16:00 終演 20:25",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -77030,9 +76745,8 @@
         "/zh-Hans/live/number_series_event/4th-extra_EVENT/0/1",
         "/zh-Hans/live/number_series_event/4th-extra_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/4th-extra.png",
       "summary": "时间地点\n出处：AniLive资料库（码：zEmG）\nhttps://pan.quark.cn/s/75b0090dc04f 码：zEmG",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -77573,7 +77287,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 14:00 開演 16:10 終演 20:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -77839,7 +77552,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -78000,7 +77712,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -78266,7 +77977,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -78467,7 +78177,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -78528,7 +78237,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 10:00 開演 15:55 終演 16:20",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -78589,7 +78297,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 10:00 開演 14:00 終演 14:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -78750,7 +78457,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -79209,7 +78915,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -79370,7 +79075,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -79828,7 +79532,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -80064,7 +79767,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -80141,7 +79843,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:00 終演 14:40",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -80407,7 +80108,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -80492,7 +80192,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -80650,7 +80349,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -80997,7 +80695,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -81186,7 +80883,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -81347,7 +81043,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -81613,7 +81308,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -81698,7 +81392,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -81859,7 +81552,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -81925,7 +81617,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -82063,7 +81754,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -82148,7 +81838,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -82414,7 +82103,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -82601,7 +82289,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -82762,7 +82449,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -84782,9 +84468,8 @@
         "/zh-Hans/live/number_series_event/4th_EVENT/1/0",
         "/zh-Hans/live/number_series_event/4th_EVENT/1/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/4th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：5xeR）\nhttps://pan.quark.cn/s/1266c33617be 码：5xeR",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -84944,7 +84629,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -85210,7 +84894,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -85371,7 +85054,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -85416,7 +85098,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 14:30 開演 15:00 終演 15:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -85461,7 +85142,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 10:30 開演 11:00 終演 11:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -85643,7 +85323,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -85909,7 +85588,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -86142,7 +85820,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -86303,7 +85980,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -86388,7 +86064,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -88196,9 +87871,8 @@
         "/zh-Hans/live/number_series_event/4th_EVENT/0/1",
         "/zh-Hans/live/number_series_event/4th_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/4th.png",
       "summary": "时间地点\n出处：AniLive资料库（码：5xeR）\nhttps://pan.quark.cn/s/1266c33617be 码：5xeR",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -88592,7 +88266,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -88677,7 +88350,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -88838,7 +88510,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -89165,7 +88836,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -89250,7 +88920,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -89516,7 +89185,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -89677,7 +89345,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -89934,7 +89601,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -90334,7 +90000,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -90419,7 +90084,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -90580,7 +90244,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -91038,7 +90701,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -91225,7 +90887,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -91462,7 +91123,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -91819,7 +91479,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -92117,7 +91776,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -92202,7 +91860,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -92363,7 +92020,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -92546,7 +92202,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -92726,7 +92381,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -92845,7 +92499,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -93111,7 +92764,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -93272,7 +92924,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -93441,7 +93092,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -93628,7 +93278,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -93789,7 +93438,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -94055,7 +93703,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -95652,9 +95299,8 @@
         "/zh-Hans/live/number_series_event/3rd_EVENT/0/1",
         "/zh-Hans/live/number_series_event/3rd_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/3rd.png",
       "summary": "时间地点\n出处：AniLive资料库（码：c3NJ）\nhttps://pan.quark.cn/s/d647fd722483 码：c3NJ",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -95815,7 +95461,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -95900,7 +95545,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -96102,7 +95746,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -96187,7 +95830,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -96348,7 +95990,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -96509,7 +96150,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -96696,7 +96336,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -97140,7 +96779,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -97301,7 +96939,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -97535,7 +97172,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -97769,7 +97405,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -97952,7 +97587,6 @@
       ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/winning-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -98134,7 +97768,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -98560,7 +98193,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -99018,7 +98650,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -99316,7 +98947,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -99553,7 +99183,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -99755,7 +99384,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -99989,7 +99617,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "pending",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/paka-live-tv.svg",
       "setlist_status": "none"
     },
     {
@@ -100150,7 +99777,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -100311,7 +99937,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -100472,7 +100097,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -100557,7 +100181,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -100642,7 +100265,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -100727,7 +100349,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -100812,7 +100433,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -100931,7 +100551,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -101016,7 +100635,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -101325,7 +100943,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -101629,7 +101246,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -101714,7 +101330,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -101799,7 +101414,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -101884,7 +101498,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -102218,7 +101831,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -102303,7 +101915,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -102388,7 +101999,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -102473,7 +102083,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -102774,7 +102383,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 19:00 終演 19:15",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -103215,7 +102823,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -103551,7 +103158,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -103636,7 +103242,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -103950,7 +103555,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -104035,7 +103639,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -104176,7 +103779,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 13:40 終演 15:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -104317,7 +103919,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 11:20 終演 13:00",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -104402,7 +104003,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -104487,7 +104087,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -105444,9 +105043,8 @@
         "/zh-Hans/live/number_series_event/2nd_EVENT",
         "/zh-Hans/live/number_series_event/2nd_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/2nd.png",
       "summary": "时间地点\n出处：AniLive资料库（码：G8n5）\nhttps://pan.quark.cn/s/488cece972e6 码：G8n5",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -105531,7 +105129,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -105780,7 +105377,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -105889,7 +105485,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 17:00 終演 17:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -106155,7 +105750,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -106240,7 +105834,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -106325,7 +105918,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -106903,7 +106495,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -107153,7 +106744,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -107238,7 +106828,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -107536,7 +107125,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -107886,7 +107474,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -108252,7 +107839,6 @@
       ],
       "image": "/uma_tools/img/event-covers/concert.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/concert.svg",
       "setlist_status": "verified"
     },
     {
@@ -108582,7 +108168,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -108968,7 +108553,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -109077,7 +108661,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:00 終演 15:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -109313,7 +108896,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -109515,7 +109097,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -109600,7 +109181,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/pakatube.svg",
       "setlist_status": "none"
     },
     {
@@ -109677,7 +109257,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 18:30 終演 20:40",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -109754,7 +109333,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:15 終演 14:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -109911,7 +109489,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 18:40 終演 20:10",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -110068,7 +109645,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:10 終演 14:45",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -110145,7 +109721,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 11:30 開演 12:05 終演 12:35",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -110539,7 +110114,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -110920,7 +110494,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -111154,7 +110727,6 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/official-program.svg",
       "setlist_status": "none"
     },
     {
@@ -111728,7 +111300,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -111853,7 +111424,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 14:00 終演 14:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -112092,7 +111662,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -112298,7 +111867,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -113105,9 +112673,8 @@
         "/zh-Hans/live/number_series_event/1st_EVENT",
         "/zh-Hans/live/number_series_event/1st_EVENT/0/0"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/1st.png",
       "summary": "时间地点\n出处：AniLive资料库（码：p2NR）\nhttps://pan.quark.cn/s/db1fd32f52e1 码：p2NR",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "verified"
     },
     {
@@ -113367,7 +112934,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -113628,7 +113194,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -113737,7 +113302,6 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "開場 - 開演 15:00 終演 15:30",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "none"
     },
     {
@@ -113949,7 +113513,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -114162,7 +113725,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -114376,7 +113938,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -114641,7 +114202,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -114907,7 +114467,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -115119,7 +114678,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -115358,7 +114916,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -115598,7 +115155,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -115811,7 +115367,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -116025,7 +115580,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -116236,7 +115790,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -116448,7 +116001,6 @@
       ],
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/starting-gate.svg",
       "setlist_status": "verified"
     },
     {
@@ -116702,7 +116254,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -117064,7 +116615,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -117222,7 +116772,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -117420,7 +116969,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -117566,7 +117114,6 @@
       ],
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "image_fallback": "/uma_tools/img/event-covers/onsite.svg",
       "setlist_status": "verified"
     },
     {
@@ -117606,7 +117153,6 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/ann-gold.svg",
       "setlist_status": "none"
     },
     {
@@ -117646,7 +117192,6 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/ann-gold.svg",
       "setlist_status": "none"
     },
     {
@@ -117686,7 +117231,6 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "legacy_aliases": [],
-      "image_fallback": "/uma_tools/img/event-covers/ann-gold.svg",
       "setlist_status": "none"
     },
     {
@@ -117725,7 +117269,7 @@
       "sources": [
         {
           "kind": "curated_live",
-          "label": "站内精调歌单",
+          "label": "站内精调资料",
           "url": "/zh-Hans/live/number_series_event/7th_EVENT/4/0"
         },
         {
@@ -117739,11 +117283,10 @@
         "/zh-Hans/live/number_series_event/7th_EVENT/4/0",
         "/zh-Hans/live/number_series_event/7th_EVENT/4/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "横滨站已由官方宣布，日期、场馆与出演阵容尚未公布。",
       "schedule_status": "announced_tba",
       "metadata_status": "complete",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "none"
     },
     {
@@ -117782,7 +117325,7 @@
       "sources": [
         {
           "kind": "curated_live",
-          "label": "站内精调歌单",
+          "label": "站内精调资料",
           "url": "/zh-Hans/live/number_series_event/7th_EVENT/3/0"
         },
         {
@@ -117796,11 +117339,10 @@
         "/zh-Hans/live/number_series_event/7th_EVENT/3/0",
         "/zh-Hans/live/number_series_event/7th_EVENT/3/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "首尔站已由官方宣布，日期、场馆与出演阵容尚未公布。",
       "schedule_status": "announced_tba",
       "metadata_status": "complete",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "none"
     },
     {
@@ -117839,7 +117381,7 @@
       "sources": [
         {
           "kind": "curated_live",
-          "label": "站内精调歌单",
+          "label": "站内精调资料",
           "url": "/zh-Hans/live/number_series_event/7th_EVENT/2/0"
         },
         {
@@ -117853,13 +117395,12 @@
         "/zh-Hans/live/number_series_event/7th_EVENT/2/0",
         "/zh-Hans/live/number_series_event/7th_EVENT/2/1"
       ],
-      "image": "/uma_tools/img/event-covers/numbered-live.svg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "伦敦站已由官方宣布，日期、场馆与出演阵容尚未公布。",
       "schedule_status": "announced_tba",
       "metadata_status": "complete",
-      "image_fallback": "/uma_tools/img/event-covers/numbered-live.svg",
       "setlist_status": "none"
     }
   ],
-  "build_id": "ea1db5da8486aaa59e49"
+  "build_id": "53724b61ff51060fe2ec"
 }

@@ -414,12 +414,32 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 else:
                     self.assertNotIn("setlist_html", session)
 
+    def test_curated_source_label_matches_setlist_status(self):
+        built = UPDATE_EVENTS.build()
+        for event in built["catalog"]["events"]:
+            for source in event.get("sources") or []:
+                if source.get("kind") != "curated_live":
+                    continue
+                expected = "站内精调歌单" if event["setlist_status"] == "verified" else "站内精调资料"
+                self.assertEqual(source.get("label"), expected, event["id"])
+
     def test_every_event_has_a_stable_visible_cover(self):
         built = UPDATE_EVENTS.build()
         for event in built["catalog"]["events"]:
             self.assertTrue(event["image"], event["id"])
-            self.assertTrue(event["image_fallback"], event["id"])
+            self.assertNotIn("image_fallback", event, event["id"])
             self.assertNotIn("eventernote.s3.amazonaws.com/", event["image"], event["id"])
+        numbered = [event for event in built["catalog"]["events"] if event.get("series_id") == "numbered-live"]
+        self.assertEqual({event["image"] for event in numbered}, {
+            "/uma_tools/img/event-covers/numbered/1st.png",
+            "/uma_tools/img/event-covers/numbered/2nd.png",
+            "/uma_tools/img/event-covers/numbered/3rd.png",
+            "/uma_tools/img/event-covers/numbered/4th.png",
+            "/uma_tools/img/event-covers/numbered/4th-extra.png",
+            "/uma_tools/img/event-covers/numbered/5th.png",
+            "/uma_tools/img/event-covers/numbered/6th.png",
+            "/uma_tools/img/event-covers/numbered/7th.png",
+        })
 
     def test_catalog_documents_share_one_build_id(self):
         built = UPDATE_EVENTS.build()

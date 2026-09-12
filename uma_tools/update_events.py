@@ -57,22 +57,20 @@ OUTPUT_FILES = {
     "manifest": DATA_DIR / "catalog_manifest.json",
 }
 
-EVENT_COVER_BY_SERIES = {
-    "paka-live-tv": "/uma_tools/img/event-covers/paka-live-tv.svg",
-    "paka-live-tv-prime": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
-    "sokosoko-paka-live-tv": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
-    "pakatube-character-program": "/uma_tools/img/event-covers/pakatube.svg",
-    "all-night-nippon-gold": "/uma_tools/img/event-covers/ann-gold.svg",
-    "winning-live-release": "/uma_tools/img/event-covers/winning-live.svg",
-    "starting-gate-release": "/uma_tools/img/event-covers/starting-gate.svg",
-    "numbered-live": "/uma_tools/img/event-covers/numbered-live.svg",
-    "twinkle-circle": "/uma_tools/img/event-covers/twinkle-circle.svg",
-    "official-special": "/uma_tools/img/event-covers/official-program.svg",
-}
 EVENT_COVER_BY_KIND = {
     "concert": "/uma_tools/img/event-covers/concert.svg",
     "official_program": "/uma_tools/img/event-covers/official-program.svg",
     "onsite": "/uma_tools/img/event-covers/onsite.svg",
+}
+NUMBERED_EVENT_COVERS = {
+    "1st-event": "/uma_tools/img/event-covers/numbered/1st.png",
+    "2nd-event": "/uma_tools/img/event-covers/numbered/2nd.png",
+    "3rd-event": "/uma_tools/img/event-covers/numbered/3rd.png",
+    "4th-event-extra": "/uma_tools/img/event-covers/numbered/4th-extra.png",
+    "4th-event": "/uma_tools/img/event-covers/numbered/4th.png",
+    "5th-event": "/uma_tools/img/event-covers/numbered/5th.png",
+    "6th-event": "/uma_tools/img/event-covers/numbered/6th.png",
+    "7th-event": "/uma_tools/img/event-covers/numbered/7th.png",
 }
 
 VFOLD = str.maketrans({"髙": "高", "﨑": "崎", "祥": "祥", "塚": "塚", "濱": "浜", "諸": "諸"})
@@ -1002,10 +1000,20 @@ def series_lookup(series_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {item["id"]: item for item in series_doc.get("series", [])}
 
 
-def fallback_event_cover(event: dict[str, Any]) -> str:
-    return EVENT_COVER_BY_SERIES.get(str(event.get("series_id") or "")) or EVENT_COVER_BY_KIND.get(
+def resolve_event_cover(event: dict[str, Any], series_by_id: dict[str, dict[str, Any]]) -> str:
+    """Return the one cover URL published for an event."""
+    image = str(event.get("image") or "")
+    if image and "eventernote.s3.amazonaws.com/" not in image:
+        return image
+    event_id = str(event.get("id") or "").lower()
+    if event.get("series_id") == "numbered-live":
+        for token, cover in NUMBERED_EVENT_COVERS.items():
+            if token in event_id:
+                return cover
+    series = series_by_id.get(str(event.get("series_id") or "")) or {}
+    return str(series.get("cover") or EVENT_COVER_BY_KIND.get(
         str(event.get("kind") or ""), EVENT_COVER_BY_KIND["onsite"]
-    )
+    ))
 
 
 def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used: set[str], stable_ids: dict[str, str] | None = None) -> list[dict[str, Any]]:
@@ -1581,7 +1589,7 @@ def validate(
     for event in catalog.get("events") or []:
         if not event.get("title"):
             errors.append(f"event {event.get('id')} has no title")
-        if not event.get("image") or not event.get("image_fallback"):
+        if not event.get("image"):
             errors.append(f"event {event.get('id')} has no visible cover")
         normalized_title = re.sub(r"[\W_]+", "", unicodedata.normalize("NFKC", event.get("title") or "").lower())
         semantic_events[(event.get("date") or "", normalized_title)].append(event.get("id") or "")
@@ -2881,18 +2889,16 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     add_programs(events, programs, identities, used)
     events = apply_overrides(events, overrides, identities)
     events = dedupe_events(events)
+    series_by_id = series_lookup(series)
     for event in events:
-        event["image_fallback"] = fallback_event_cover(event)
-        image = str(event.get("image") or "")
-        # Eventernote's small attachments are often white schedule captures or
-        # unstable user uploads rather than usable key art.  Keep them as
-        # evidence only and render the stable series/kind cover instead.
-        if "eventernote.s3.amazonaws.com/" in image:
-            image = ""
-        event["image"] = image or event["image_fallback"]
+        event.pop("image_fallback", None)
+        event["image"] = resolve_event_cover(event, series_by_id)
         event["setlist_status"] = "verified" if any(
             session.get("setlist_source") for session in event.get("sessions") or []
         ) else "none"
+        for source in event.get("sources") or []:
+            if source.get("kind") == "curated_live":
+                source["label"] = "站内精调歌单" if event["setlist_status"] == "verified" else "站内精调资料"
         for session in event.get("sessions") or []:
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
