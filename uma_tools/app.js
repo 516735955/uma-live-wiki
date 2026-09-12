@@ -2260,13 +2260,13 @@ createApp({
       rows.forEach(function (r) {
         const m = r.match(/<td class="setlist-song">([^<]*)<\/td>/);
         if (!m) return;
-        const song = (m[1] || '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+        const song = (m[1] || '').replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
         if (!song) return;
         if (/^MC\d*$/.test(song) || song === '安可') return;
         const names = [];
         const re = /perf-name">([^<]+)<\/span>/g;
         let mm;
-        while ((mm = re.exec(r)) !== null) names.push(mm[1].replace(/&amp;/g, '&').trim());
+        while ((mm = re.exec(r)) !== null) names.push(mm[1].replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').trim());
         out.push({ song: song, names: names });
       });
       return out;
