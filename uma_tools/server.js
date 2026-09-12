@@ -438,58 +438,29 @@ function sendJson(res, code, obj) {
   }
 }
 
-function parseWindowArray(text, globalName) {
-  const match = String(text || '').match(new RegExp('window\\.' + globalName + '\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;'));
-  if (!match) throw new Error(globalName + ' data unavailable');
-  return JSON.parse(match[1]);
-}
-
-function countVoiceActors(characters, voiceList) {
-  const actors = new Set();
-  characters.forEach((character) => {
-    const current = character && (character.cv_zh || character.cv);
-    if (current) actors.add(current);
-    if (character && character.cv_former) actors.add(character.cv_former);
-  });
-  voiceList.forEach((voice) => {
-    const zh = String((voice && voice.zh) || '').trim();
-    const ja = String((voice && voice.ja) || '').trim();
-    if (!zh && !ja) return;
-    if (actors.has(zh) || (ja && actors.has(ja))) return;
-    actors.add(zh || ja);
-  });
-  return actors.size;
-}
-
 function handleHomeSummary(res) {
   if (homeSummaryCache.data && Date.now() - homeSummaryCache.at < HOME_SUMMARY_TTL) {
     sendJson(res, 200, homeSummaryCache.data);
     return;
   }
-  const files = ['albums.json', 'song_catalog.json', 'live_data.json', 'live_cat_data.json', 'events_catalog.json', 'character_index_data.js', 'voice_list_data.js', 'voice_actor_profiles.json'];
-  Promise.all(files.map((name) => fs.promises.readFile(path.join(DATA_DIR, name), 'utf8')))
-    .then((texts) => {
-      const albumsDoc = JSON.parse(texts[0]);
-      const songsDoc = JSON.parse(texts[1]);
-      const numberedDoc = JSON.parse(texts[2]);
-      const cats = JSON.parse(texts[3]) || {};
-      const eventsDoc = JSON.parse(texts[4]);
-      const characters = parseWindowArray(texts[5], 'CHAR_INDEX');
-      const voiceList = parseWindowArray(texts[6], 'VA_LIST');
-      const voiceProfilesDoc = JSON.parse(texts[7]);
+  fs.promises.readFile(path.join(DATA_DIR, 'catalog_manifest.json'), 'utf8')
+    .then((manifestText) => {
+      const manifest = JSON.parse(manifestText);
+      const files = ['song_catalog.json', 'events_catalog.json', 'appearance_index.json', 'voice_actor_profiles.json'];
+      return Promise.all(files.map((name) => fs.promises.readFile(path.join(DATA_DIR, name), 'utf8')))
+        .then((texts) => ({ manifest, texts }));
+    })
+    .then(({ manifest, texts }) => {
+      const songsDoc = JSON.parse(texts[0]);
+      const eventsDoc = JSON.parse(texts[1]);
+      const appearancesDoc = JSON.parse(texts[2]);
+      const voiceProfilesDoc = JSON.parse(texts[3]);
+      const buildIds = new Set([songsDoc.build_id, eventsDoc.build_id, appearancesDoc.build_id, voiceProfilesDoc.build_id]);
+      if (buildIds.size !== 1 || !buildIds.has(manifest.build_id)) throw new Error('catalog revision mismatch');
       const voiceProfiles = voiceProfilesDoc && Array.isArray(voiceProfilesDoc.voice_actors) ? voiceProfilesDoc.voice_actors : [];
-      const albums = Array.isArray(albumsDoc) ? albumsDoc : [];
-      const numbered = Array.isArray(numberedDoc) ? numberedDoc : [];
       const events = eventsDoc && Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
-      const sumGroups = (groups) => (groups || []).reduce((total, group) => total + ((group && group.subs) || []).length, 0);
-      let liveCount = numbered.reduce((total, group) => total + ((group && group.subs) || []).reduce(
-        (subtotal, sub) => subtotal + (sub && sub.days ? sub.days.length : 1), 0
-      ), 0);
-      if (cats.cd && Array.isArray(cats.cd.sections)) {
-        liveCount += cats.cd.sections.reduce((total, section) => total + sumGroups(section && section.groups), 0);
-      }
-      if (cats.twinkle) liveCount += sumGroups(cats.twinkle.groups);
-      if (cats.other) liveCount += sumGroups(cats.other.groups);
+      const liveEvents = events.filter((event) => event.kind === 'concert');
+      const liveCount = liveEvents.reduce((total, event) => total + Math.max(1, (event.sessions || []).length), 0);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       let nextEvent = null;
@@ -501,12 +472,12 @@ function handleHomeSummary(res) {
       });
       const data = {
         stats: {
-          songs: songsDoc && songsDoc.coverage ? songsDoc.coverage.songs : albums.reduce((total, album) => total + ((album && album.songs) || []).length, 0),
-          albums: albums.length,
+          songs: songsDoc.coverage.songs,
+          albums: songsDoc.coverage.albums,
           live: liveCount,
-          performances: numbered.length,
-          characters: characters.length,
-          voiceActors: voiceProfiles.length || countVoiceActors(characters, voiceList),
+          performances: liveEvents.length,
+          characters: Object.keys(appearancesDoc.characters || {}).length,
+          voiceActors: voiceProfiles.length,
           events: events.length
         },
         nextEvent: nextEvent
@@ -969,11 +940,9 @@ server.listen(PORT, () => {
     console.log('Automatic data refresh disabled (--no-crawl).');
     return;
   }
-  runDataRefresh('startup');
-  runAlbumsCrawl('startup');
+  runCatalogRefresh('startup');
   runLantisCrawl('startup');
-  setInterval(() => runDataRefresh('daily'), 24 * 60 * 60 * 1000);
-  setInterval(() => runAlbumsCrawl('auto'), 6 * 60 * 60 * 1000);
+  setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
   setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
 });
 
@@ -982,11 +951,21 @@ const { execFile } = require('child_process');
 const CRAWL_SCRIPT = path.join(__dirname, 'crawl_events.py');
 const EVENT_BUILD_SCRIPT = path.join(__dirname, 'update_events.py');
 let crawlRunning = false;
-let dataRefreshRunning = false;
-function runDataRefresh(reason) {
-  if (dataRefreshRunning) return;
-  dataRefreshRunning = true;
-  runCharsCrawl(reason, () => runEventsCrawl(reason, () => { dataRefreshRunning = false; }));
+let catalogRefreshRunning = false;
+let catalogRefreshQueued = false;
+function runCatalogRefresh(reason) {
+  if (catalogRefreshRunning) {
+    catalogRefreshQueued = true;
+    return;
+  }
+  catalogRefreshRunning = true;
+  runCharsCrawl(reason, () => runEventsCrawl(reason, () => runAlbumsCrawl(reason, () => runEventBuild(reason, () => {
+    catalogRefreshRunning = false;
+    if (catalogRefreshQueued) {
+      catalogRefreshQueued = false;
+      runCatalogRefresh('queued');
+    }
+  }))));
 }
 function runCharsCrawl(reason, done) {
   if (charsRunning) { if (done) done(); return; }
@@ -1013,13 +992,8 @@ function runEventsCrawl(reason, done) {
     } else {
       console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
     }
-    // Official programs and profile pages can still refresh when Eventernote
-    // is temporarily unavailable; the builder preserves the last verified
-    // remote snapshot and replaces generated files atomically.
-    runEventBuild(reason, () => {
-      crawlRunning = false;
-      if (done) done();
-    });
+    crawlRunning = false;
+    if (done) done();
   });
 }
 
@@ -1056,8 +1030,8 @@ function runLantisCrawl(reason) {
 // ---- Album auto-crawl (microCMS -> albums.json placeholders; netease enrich) ----
 const ALBUMS_SCRIPT = path.join(__dirname, 'auto_albums.py');
 let albumsRunning = false;
-function runAlbumsCrawl(reason) {
-  if (albumsRunning) return;
+function runAlbumsCrawl(reason, done) {
+  if (albumsRunning) { if (done) done(); return; }
   albumsRunning = true;
   const t0 = Date.now();
   execFile(PYTHON_BIN, [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
@@ -1069,5 +1043,6 @@ function runAlbumsCrawl(reason) {
       const lines = String(stdout || '').trim().split('\n');
       console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', lines[lines.length - 1]);
     }
+    if (done) done();
   });
 }
