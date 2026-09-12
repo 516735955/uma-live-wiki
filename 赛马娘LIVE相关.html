@@ -551,44 +551,39 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 返回歌曲列表
             </button>
-            <div class="song-detail">
-                <h1 class="song-detail-title">{{ songDetail.song.name }}</h1>
-                <div class="song-detail-meta" v-if="songDetail.song.artist">
-                    <span class="song-detail-label">演唱</span>
-                    <span class="song-detail-artist">{{ songDetail.song.artist }}</span>
-                </div>
-                <div class="song-detail-meta" v-if="songDetail.album">
-                    <span class="song-detail-label">收录专辑</span>
-                    <a class="song-detail-link" :href="'/zh-Hans/database/albums/' + encodeURIComponent(songDetail.album.name)" @click.prevent="openAlbumFromDb(songDetail.album)">{{ songDetail.album.name }}</a>
+            <div class="song-detail-header">
+                <div class="song-detail-thumb">{{ songDetail.song.name.charAt(0) }}</div>
+                <div class="song-detail-info">
+                    <div class="song-detail-sub">歌曲详情</div>
+                    <h1 class="song-detail-title">{{ songDetail.song.name }}</h1>
+                    <div class="song-detail-release" v-if="songAlbums.length > 0">
+                        发行：{{ songEarliestRelease }}
+                    </div>
                 </div>
             </div>
-            <div class="song-section" v-if="songAlbums.length > 1">
-                <h3 class="song-section-title">收录CD</h3>
+            <div class="song-section" v-if="songAlbums.length > 0">
+                <div class="song-section-head">
+                    <h3 class="song-section-title">收录CD</h3>
+                    <a class="song-section-more" href="/zh-Hans/database/albums" @click.prevent="goDbView('albums')">查看全部 →</a>
+                </div>
                 <ul class="song-list">
-                    <li v-for="(a,i) in songAlbums" :key="i" class="song-list-item">
+                    <li v-for="(a,i) in songAlbums" :key="i" class="song-list-item song-list-album" :class="{current: songDetail.album && a.name === songDetail.album.name}">
                         <span class="song-list-date">{{ a.release }}</span>
-                        <a class="song-list-link" :href="'/zh-Hans/database/albums/' + encodeURIComponent(a.name)" @click.prevent="openAlbumFromDb(a)">{{ a.name }} →</a>
+                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(a.name)" @click.prevent="openAlbumFromDb(a)">{{ a.name }} →</a>
                     </li>
                 </ul>
             </div>
             <div class="song-section" v-if="songLives.length > 0">
                 <h3 class="song-section-title">演出现场</h3>
                 <ul class="song-list">
-                    <li v-for="(ev,i) in songLives.slice(0,10)" :key="i" class="song-list-item">
-                        <span class="song-list-date">{{ ev.cat }}</span>
-                        <span class="song-list-name">{{ ev.songs ? ev.songs.length + '首' : '' }}</span>
+                    <li v-for="(ev,i) in songLivesVisible" :key="i" class="song-list-item">
+                        <span class="song-list-date">{{ ev.liveDate }}</span>
+                        <a class="song-list-link" :href="ev.liveUrl" @click.prevent="openLiveFromUrl(ev.liveUrl)">{{ ev.liveTitle }} →</a>
                     </li>
                 </ul>
-                <div v-if="songLives.length > 10" class="song-list-more">还有 {{ songLives.length - 10 }} 场演出</div>
-            </div>
-            <div class="song-section" v-if="songCharList.length > 0">
-                <h3 class="song-section-title">演出角色</h3>
-                <ul class="song-list">
-                    <li v-for="(c,i) in songCharList.slice(0,10)" :key="i" class="song-list-item">
-                        <span class="song-list-cnt">×{{ c.count }}</span>
-                        <a class="song-list-link" :href="'/zh-Hans/database/characters/' + c.zh" @click.prevent="openCharDetail({id:c.zh,zh:c.zh})">{{ c.zh }}</a>
-                    </li>
-                </ul>
+                <button v-if="songLives.length > 10 && !songLivesExpanded" class="song-list-toggle" type="button" @click="songLivesExpanded = true">
+                    展开其余 {{ songLives.length - 10 }} 场演出
+                </button>
             </div>
             </template>
         </div>

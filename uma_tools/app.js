@@ -1170,15 +1170,78 @@ createApp({
       });
       return out;
     });
+    const songEarliestRelease = computed(function () {
+      if (!songAlbums.value.length) return '';
+      var dates = songAlbums.value.map(function (a) { return a.release || ''; }).filter(Boolean).sort();
+      return dates[0] || '';
+    });
     const songLives = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
       var out = [];
       songEvData.value.forEach(function (ev) {
-        if (ev.songs && ev.songs.indexOf(name) !== -1) out.push(ev);
+        if (ev.songs && ev.songs.indexOf(name) !== -1) {
+          var liveDate = '';
+          var liveTitle = ev.title || '';
+          var liveUrl = ev.link || '';
+          if (liveUrl) {
+            var parts = liveUrl.split('/').filter(Boolean);
+            if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
+            if (parts[0] === 'live' && parts[1] === 'number_series_event' && parts[2]) {
+              var idx = seriesNoToIndex(parts[2]);
+              if (idx >= 0 && liveData.value && liveData.value[idx]) {
+                var live = liveData.value[idx];
+                var pi = parseInt(parts[3], 10) || 0;
+                var di = parseInt(parts[4], 10) || 0;
+                if (live.subs && live.subs[pi]) {
+                  liveDate = live.subs[pi].date || '';
+                  liveTitle = live.subs[pi].title || liveTitle;
+                }
+              }
+            } else if (parts[0] === 'live' && (parts[1] === 'cd' || parts[1] === 'twinkle' || parts[1] === 'other')) {
+              var type = parts[1];
+              var gi = parseInt(parts[2], 10) || 0;
+              var node = liveCatData.value && liveCatData.value[type];
+              if (node) {
+                var groups = node.groups || (node.sections && node.sections[0] && node.sections[0].groups) || [];
+                if (groups[gi]) {
+                  var sub = groups[gi].subs && groups[gi].subs[0];
+                  if (sub) {
+                    liveDate = sub.date || '';
+                    liveTitle = sub.title || groups[gi].group || liveTitle;
+                  }
+                }
+              }
+            }
+          }
+          out.push({ liveDate: liveDate, liveTitle: liveTitle, liveUrl: liveUrl, cat: ev.cat });
+        }
       });
       return out;
     });
+    const songLivesExpanded = ref(false);
+    const songLivesVisible = computed(function () {
+      return songLivesExpanded.value ? songLives.value : songLives.value.slice(0, 10);
+    });
+    function openLiveFromUrl(url) {
+      if (!url) return;
+      var parts = url.split('/').filter(Boolean);
+      if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
+      if (parts[0] === 'live') {
+        activeTab.value = 'live';
+        if (parts[1] === 'number_series_event' && parts[2]) {
+          var idx = seriesNoToIndex(parts[2]);
+          if (idx >= 0) {
+            liveView.value = 'liveDetail';
+            liveSeriesIndex.value = idx;
+            livePerf.value = parseInt(parts[3], 10) || 0;
+            liveDay.value = parseInt(parts[4], 10) || 0;
+            pushUrl();
+            window.scrollTo(0, 0);
+          }
+        }
+      }
+    }
     const songCharList = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
@@ -2490,6 +2553,7 @@ createApp({
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
       songDetail, songAlbums, songLives, songCharList, findSongByName,
+      songEarliestRelease, songLivesExpanded, songLivesVisible, openLiveFromUrl,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio
