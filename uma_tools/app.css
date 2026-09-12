@@ -2051,6 +2051,7 @@
         /* ---- character detail (moegirl intro block) ---- */
         #tab-characters .cio-detail { max-width: 1180px; margin: 0 auto; }
         #tab-characters .cio-detail-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        #tab-characters .cio-back-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
         #tab-characters .cio-back {
             flex-shrink: 0; border: 1px solid #e6e4ee; background: #fff; color: #2c3650;
             padding: 7px 14px; border-radius: 8px; font-size: 13px; cursor: pointer; font-family: inherit;

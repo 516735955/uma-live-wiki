@@ -698,7 +698,10 @@
                     </div>
                     <div class="cio-detail" id="cIntroDetail" v-if="charDetail" v-cloak>
                         <div class="cio-detail-top">
-                            <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : '← 返回角色列表' }}</button>
+                            <div class="cio-back-row">
+                                <button class="cio-back" type="button" @click="charBack()">{{ charDetailSource === 'voice' ? '← 返回声优' : '← 返回角色列表' }}</button>
+                                <button v-if="charBackUrl" class="cio-back" type="button" @click="charBackPrev()">← 返回之前页</button>
+                            </div>
                             <div>
                                 <h3 class="cio-detail-title">{{ charDetail.zh }}</h3>
                             </div>

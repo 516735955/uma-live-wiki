@@ -207,6 +207,7 @@ createApp({
     const dbView = ref('index');
     const voiceDetail = ref(null);
     const charDetailSource = ref('');
+    const charBackUrl = ref('');
     const charHasIntro = computed(function () {
       var id = charDetail.value && charDetail.value.id;
       return !!(window.CHAR_DETAIL && id && window.CHAR_DETAIL[id] && window.CHAR_DETAIL[id].html);
@@ -435,6 +436,26 @@ createApp({
         goCharSub('intro');
       }
     }
+    function consumeCharBack() {
+      charBackUrl.value = '';
+      try {
+        var raw = sessionStorage.getItem('uma-char-back');
+        if (!raw) return;
+        var data = JSON.parse(raw);
+        if (!data || !data.url || !data.target) return;
+        if (String(data.target) !== String((charDetail.value || {}).id || '')) return;
+        if (data.url === window.location.origin + window.location.pathname + window.location.search) return;
+        charBackUrl.value = data.url;
+      } catch (e) {
+        charBackUrl.value = '';
+      }
+    }
+    function charBackPrev() {
+      var url = charBackUrl.value;
+      charBackUrl.value = '';
+      try { sessionStorage.removeItem('uma-char-back'); } catch (e) {}
+      if (url) window.location.href = url;
+    }
     function switchTab(k) {
       albumDetail.value = null;
       artistDetail.value = null;
@@ -493,6 +514,7 @@ createApp({
         if (!found) return;
         if (!charDetail.value) charSavedScrollY.value = window.scrollY || 0;
         charDetail.value = found;
+        consumeCharBack();
         window.scrollTo(0, 0);
         pushUrl();
         Vue.nextTick(renderCharBlood);
@@ -917,7 +939,10 @@ createApp({
           } else {
             charSub.value = 'intro';
             const found = findCharById(csub);
-            if (found) charDetail.value = found;
+            if (found) {
+              charDetail.value = found;
+              consumeCharBack();
+            }
           }
         } else if (sub === 'events') {
           dbView.value = 'events';
@@ -2256,6 +2281,7 @@ createApp({
       setEventsPage, goEventsPage, pastEvent, onEvImgError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
       charSub, goCharSub, charDetail, openCharDetail, charBack, charDetailSource, charHasIntro,
+      charBackUrl, charBackPrev,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio

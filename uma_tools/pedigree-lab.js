@@ -314,6 +314,19 @@
       var close = sheet.querySelector('.sheet-close');
       if (close) close.focus();
     });
+    var charLink = sheetContent.querySelector('.character-link');
+    if (charLink) {
+      charLink.addEventListener('click', function () {
+        if (!embedded) return;
+        try {
+          var topUrl = window.top.location.origin + window.top.location.pathname + window.top.location.search;
+          sessionStorage.setItem('uma-char-back', JSON.stringify({
+            url: topUrl,
+            target: item.cid || ''
+          }));
+        } catch (e) {}
+      });
+    }
   }
 
   function syncPinnedSelection() {
