@@ -2146,8 +2146,11 @@ createApp({
               if (d.songs && d.songs.length) {
                 var dayLink = ev.link;
                 if (ev.link) {
-                  var lm = ev.link.match(/^(\/zh-Hans\/live\/number_series_event\/[^\/]+\/\d+)(\/\d+)?$/);
-                  if (lm) dayLink = lm[1] + '/' + dayIndex;
+                  var lp = ev.link.split('/').filter(Boolean);
+                  if (lp.length - 2 >= 4) {
+                    dayLink = ev.link.replace(/\/\d+$/, '');
+                  }
+                  dayLink = dayLink + '/' + dayIndex;
                 }
                 sEv.push({ cat: ev.cat, songs: d.songs, link: dayLink, title: ev.title, voice_actors: d.voice_actors });
               }
