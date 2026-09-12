@@ -1541,6 +1541,11 @@
         .song-list-item:last-child { border-bottom: none; }
         .song-list-item.current { background: var(--brand-light, #fff5e6); margin: 0 -8px; padding: 8px; border-radius: 6px; }
         .song-list-date { color: var(--text-3); font-size: 0.82em; min-width: 80px; }
+        .song-list-artist {
+            color: var(--text-2); font-size: 0.85em; flex: 0 1 auto;
+            min-width: 0; max-width: 260px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
         .song-list-cnt { color: var(--brand); font-weight: 700; min-width: 40px; }
         .song-list-link { color: var(--brand); text-decoration: none; font-weight: 600; }
         .song-list-link:hover { text-decoration: underline; }

@@ -1174,25 +1174,37 @@ createApp({
       if (o.indexOf(b) !== 0) return false;
       return /^[\s（(\-]/.test(o.slice(b.length));
     }
+    function stripHtml(s) {
+      if (!s) return '';
+      return String(s).replace(/<[^>]*>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
+    }
     const songAlbums = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
+      var mainArtist = songDetail.value.song.artist || '';
       var out = [];
       var seen = {};
       albums.value.forEach(function (a) {
         if (!a.songs) return;
         for (var i = 0; i < a.songs.length; i++) {
           if (songIsVariantOf(name, a.songs[i].name)) {
-            if (!seen[a.name]) { seen[a.name] = 1; out.push(a); }
+            if (!seen[a.name]) { seen[a.name] = 1; out.push({ a: a, artist: a.songs[i].artist || mainArtist }); }
             break;
           }
         }
+      });
+      out.sort(function (x, y) {
+        var a = String(x.a.release || ''), b = String(y.a.release || '');
+        if (!a && !b) return 0;
+        if (!a) return 1;
+        if (!b) return -1;
+        return b.localeCompare(a);
       });
       return out;
     });
     const songEarliestRelease = computed(function () {
       if (!songAlbums.value.length) return '';
-      var dates = songAlbums.value.map(function (a) { return a.release || ''; }).filter(Boolean).sort();
+      var dates = songAlbums.value.map(function (r) { return r.a.release || ''; }).filter(Boolean).sort();
       return dates[0] || '';
     });
     const songLives = computed(function () {
@@ -1204,6 +1216,7 @@ createApp({
           var liveDate = '';
           var liveTitle = ev.title || '';
           var liveUrl = ev.link || '';
+          var liveArtist = (ev.voice_actors && ev.voice_actors.length) ? ev.voice_actors.join('、') : '';
           if (liveUrl) {
             var parts = liveUrl.split('/').filter(Boolean);
             if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
@@ -1216,6 +1229,7 @@ createApp({
                 if (live.subs && live.subs[pi]) {
                   liveDate = live.subs[pi].date || '';
                   liveTitle = live.subs[pi].title || liveTitle;
+                  liveArtist = stripHtml(live.subs[pi].cast || '') || liveArtist;
                 }
               }
             } else if (parts[0] === 'live' && (parts[1] === 'cd' || parts[1] === 'twinkle' || parts[1] === 'other')) {
@@ -1229,13 +1243,21 @@ createApp({
                   if (sub) {
                     liveDate = sub.date || '';
                     liveTitle = sub.title || groups[gi].group || liveTitle;
+                    liveArtist = stripHtml(sub.cast || '') || liveArtist;
                   }
                 }
               }
             }
           }
-          out.push({ liveDate: liveDate, liveTitle: liveTitle, liveUrl: liveUrl, cat: ev.cat });
+          out.push({ liveDate: liveDate, liveTitle: liveTitle, liveUrl: liveUrl, cat: ev.cat, artist: liveArtist });
         }
+      });
+      out.sort(function (a, b) {
+        var x = String(a.liveDate || ''), y = String(b.liveDate || '');
+        if (!x && !y) return 0;
+        if (!x) return 1;
+        if (!y) return -1;
+        return y.localeCompare(x);
       });
       return out;
     });
@@ -2119,7 +2141,7 @@ createApp({
           var sEv = [];
           events.forEach(function (ev) {
             (ev.days || []).forEach(function (d) {
-              if (d.songs && d.songs.length) sEv.push({ cat: ev.cat, songs: d.songs, link: ev.link, title: ev.title });
+              if (d.songs && d.songs.length) sEv.push({ cat: ev.cat, songs: d.songs, link: ev.link, title: ev.title, voice_actors: d.voice_actors });
             });
           });
           songEvData.value = sEv;

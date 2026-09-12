@@ -567,9 +567,10 @@
                     <a class="song-section-more" href="/zh-Hans/database/albums" @click.prevent="goDbView('albums')">查看全部 →</a>
                 </div>
                 <ul class="song-list">
-                    <li v-for="(a,i) in songAlbums" :key="i" class="song-list-item song-list-album" :class="{current: songDetail.album && a.name === songDetail.album.name}">
-                        <span class="song-list-date">{{ a.release }}</span>
-                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(a.name)" @click.prevent="openAlbumFromDb(a)">{{ a.name }} →</a>
+                    <li v-for="(r,i) in songAlbums" :key="i" class="song-list-item song-list-album" :class="{current: songDetail.album && r.a.name === songDetail.album.name}">
+                        <span class="song-list-date">{{ r.a.release }}</span>
+                        <span class="song-list-artist" :title="r.artist" v-if="r.artist">{{ r.artist }}</span>
+                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a)">{{ r.a.name }} →</a>
                     </li>
                 </ul>
             </div>
@@ -578,6 +579,7 @@
                 <ul class="song-list">
                     <li v-for="(ev,i) in songLivesVisible" :key="i" class="song-list-item">
                         <span class="song-list-date">{{ ev.liveDate }}</span>
+                        <span class="song-list-artist" :title="ev.artist" v-if="ev.artist">{{ ev.artist }}</span>
                         <a class="song-list-link" :href="ev.liveUrl" @click.prevent="openLiveFromUrl(ev.liveUrl)">{{ ev.liveTitle }} →</a>
                     </li>
                 </ul>
