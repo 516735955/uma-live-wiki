@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T00:00:00+08:00",
+  "title": "Design System: Uma Musume Live Wiki",
+  "extensions": {
+    "colorMeta": {
+      "navy": {"role": "neutral", "displayName": "海军蓝", "canonical": "#20283b", "tonalRamp": ["#161b29", "#20283b", "#2c3650", "#526176", "#8695a8", "#b5c0cd", "#d9e0e7", "#f5f4f9"]},
+      "archive-blue": {"role": "primary", "displayName": "档案蓝", "canonical": "#d8e9f8", "tonalRamp": ["#183653", "#244f8c", "#5485b7", "#8db6dc", "#b8d5ed", "#d8e9f8", "#eaf3fb", "#f7fbff"]},
+      "table-blue": {"role": "primary", "displayName": "表头蓝", "canonical": "#cfe3f6", "tonalRamp": ["#183653", "#315985", "#5d87b2", "#91b8da", "#b2cfe8", "#cfe3f6", "#e6f1fa", "#f8fcff"]},
+      "link-blue": {"role": "secondary", "displayName": "导航蓝", "canonical": "#244f8c", "tonalRamp": ["#14294c", "#244f8c", "#3e68a1", "#6c91bd", "#a2bad4", "#d0ddea", "#e8f2fb", "#f7fbff"]},
+      "paper": {"role": "neutral", "displayName": "纸张灰", "canonical": "#f5f4f9", "tonalRamp": ["#20283b", "#48586c", "#79889a", "#aeb9c5", "#d0d8e0", "#e3e8ee", "#f0f3f7", "#f5f4f9"]}
+    },
+    "typographyMeta": {
+      "display": {"displayName": "档案标题", "purpose": "资料库页头和详情标题。"},
+      "body": {"displayName": "资料正文", "purpose": "表格、来源和关系记录的默认阅读文字。"},
+      "label": {"displayName": "控件标签", "purpose": "表头、筛选、按钮和结果数量。"}
+    },
+    "shadows": [],
+    "motion": [
+      {"name": "state-transition", "value": "background .15s, border-color .15s, color .15s", "purpose": "档案链接、筛选和表格行的轻量状态反馈，不移动布局。"}
+    ],
+    "breakpoints": [
+      {"name": "archive-mobile", "value": "760px"},
+      {"name": "archive-stack", "value": "560px"},
+      {"name": "archive-narrow", "value": "480px"}
+    ]
+  },
+  "components": [
+    {"name": "Archive Heading", "kind": "custom", "refersTo": "archive-heading", "description": "资料库和详情页的浅蓝标题栏。", "html": "<header class=\"ds-archive-heading\"><h1>歌曲资料库</h1><span>1,032 首</span></header>", "css": ".ds-archive-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border:1px solid #c7dcf0;border-radius:8px;background:#d8e9f8;color:#20283b}.ds-archive-heading h1{margin:0;font:800 clamp(1.3rem,3vw,1.8rem)/1.3 Microsoft YaHei,PingFang SC,sans-serif}.ds-archive-heading span{color:#485a70;font:700 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif}"},
+    {"name": "Archive Action", "kind": "button", "refersTo": "archive-action", "description": "页头或详情中的主要档案操作。", "html": "<button class=\"ds-archive-action\">查看来源</button>", "css": ".ds-archive-action{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 14px;border:1px solid #3159a5;border-radius:6px;background:#3159a5;color:#fff;font:700 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif;cursor:pointer;transition:background .15s,border-color .15s}.ds-archive-action:hover{background:#244a92;border-color:#244a92}.ds-archive-action:focus-visible{outline:2px solid rgba(214,0,28,.6);outline-offset:2px}"},
+    {"name": "Archive Search", "kind": "input", "refersTo": "archive-input", "description": "所有资料库共用的搜索输入。", "html": "<label class=\"ds-archive-search\"><span>⌕</span><input type=\"search\" placeholder=\"搜索曲名、活动或人物\"></label>", "css": ".ds-archive-search{position:relative;display:flex;align-items:center}.ds-archive-search span{position:absolute;left:12px;color:#718096;font:400 20px/1 Microsoft YaHei,sans-serif}.ds-archive-search input{width:100%;height:40px;padding:0 12px 0 40px;border:1px solid #cfd7e2;border-radius:6px;background:#fff;color:#26272b;font:400 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif;outline:0}.ds-archive-search input:hover{border-color:#9eb6d2}.ds-archive-search input:focus-visible{border-color:#3159a5;box-shadow:0 0 0 3px rgba(49,89,165,.1);outline:0}"},
+    {"name": "Archive Filter Chip", "kind": "chip", "refersTo": "archive-chip", "description": "资料范围和类型的统一筛选项。", "html": "<button class=\"ds-archive-chip ds-archive-chip-active\">全部</button>", "css": ".ds-archive-chip{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:6px 12px;border:1px solid transparent;border-radius:999px;background:transparent;color:#48586c;font:600 14px/1.25 Microsoft YaHei,PingFang SC,sans-serif;cursor:pointer;transition:background .15s,border-color .15s,color .15s}.ds-archive-chip:hover{border-color:#c7d8e9;background:#eff6fc;color:#234b86}.ds-archive-chip-active{border-color:#3159a5;background:#3159a5;color:#fff}.ds-archive-chip:focus-visible{outline:2px solid rgba(214,0,28,.6);outline-offset:2px}"},
+    {"name": "Archive Table", "kind": "custom", "refersTo": "archive-table", "description": "跨资料库和现场曲目表复用的核心信息表。", "html": "<div class=\"ds-archive-table-wrap\"><table class=\"ds-archive-table\"><thead><tr><th>曲名</th><th>演出</th></tr></thead><tbody><tr><td><a href=\"#\">うまぴょい伝説</a></td><td>3 场</td></tr></tbody></table></div>", "css": ".ds-archive-table-wrap{overflow-x:auto;border:1px solid #e6e4ee;border-radius:8px;background:#fff}.ds-archive-table{width:100%;border-collapse:collapse;background:#fff;color:#26272b;font:400 14px/1.45 Microsoft YaHei,PingFang SC,sans-serif}.ds-archive-table th{padding:12px 14px;background:#cfe3f6;color:#26364b;font-weight:800;text-align:left;white-space:nowrap}.ds-archive-table td{padding:11px 14px;border-top:1px solid #e4e9ef}.ds-archive-table tbody tr:hover td{background:#f3f8fd}.ds-archive-table a{color:#244f8c;font-weight:700;text-decoration:none}.ds-archive-table a:hover{text-decoration:underline}"}
+  ],
+  "narrative": {
+    "northStar": "可往返的浅蓝档案馆",
+    "overview": "资料库页面是一套连续的档案：用户可以从活动看到场次、曲目、出演者和来源，再进入歌曲、角色或声优，且返回时保留原来的浏览语境。视觉上沿用站内已有的浅蓝标题栏、白色资料表和蓝橙强调色，让信息本身成为主角，支持长列表的快速扫描和逐层深入。\n\n页面采用克制的平面层次和中等信息密度。活动、歌曲、专辑、角色、声优共用页头、搜索、筛选、表格、分节标题、链接和空状态；活动详情复用成熟的现场曲目表，版本、收录盘和出演关系通过真实链接继续展开。中文是界面语言，不用英文小标题、指标卡、装饰性注释或彩色侧边条制造层次。",
+    "keyCharacteristics": ["浅蓝标题栏与白底档案表构成统一骨架。", "14px 起的正文、稳定列结构和紧凑留白服务长资料阅读。", "蓝色链接承担跨库导航，橙色只用于强调和清除筛选等辅助动作。", "桌面优先，同时在 390px 宽度下转换为可读的纵向资料块。"],
+    "rules": [{"name":"The One Archive Rule","body":"同级资料页必须使用相同的浅蓝页头、工具栏、筛选、表格和分节结构；差异只来自内容关系，不来自另造一套界面。","section":"layout"},{"name":"The Readable Record Rule","body":"资料页正文和可点击记录不低于 14px；13px 只用于次要日期、类型或来源辅助信息，不能承担主要内容。","section":"typography"},{"name":"The Flat Archive Rule","body":"默认状态只用背景色和边界分层；交互反馈使用浅蓝底色或边界变深，不用发光、浮起或渐变来抢夺内容注意力。","section":"elevation"}],
+    "dos": ["Do 先复用已有档案表、页头、筛选和控件，再扩展数据关系。", "Do 把活动、歌曲、专辑、角色、声优的关系做成可点击的真实路径，并提供返回语境。", "Do 用浅蓝标题栏、白底资料表、蓝色链接和橙色辅助强调维持站内连续性。", "Do 在桌面和 390px 手机都保持 14px 以上的主要资料文字和 40px 控件。", "Do 为未发布、待补充和不适用信息保留明确状态，维护者可以据此继续更新。"],
+    "donts": ["Don't 为活动详情或任何同级资料页另造一套不兼容的布局。", "Don't 使用英文小标题、指标卡、装饰性说明、彩色侧边条或卡片堆叠制造 AI 味道。", "Don't 把同一实体分别维护在多个重复索引中，或为了“完整”推测没有证据的出演关系。", "Don't 把主要信息压缩成小字，也不要用阴影、渐变和浮起动画替代清楚的结构。", "Don't 改写或覆盖人工精调的现场曲目来源。"]
+  }
+}
