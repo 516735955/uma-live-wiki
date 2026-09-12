@@ -718,6 +718,7 @@
                             </div>
                         </div>
                         <div class="c-detail-block" id="cDetailBlock"></div>
+                        <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <section class="cio-songs" v-if="charSongsList.length">
                             <header class="cio-songs-head">
                                 <h3 class="cio-songs-title">演出曲目</h3>
@@ -733,7 +734,6 @@
                                 {{ charSongsDetailOpen ? '收起详情' : '展开详情（' + (charSongsList.length - 10) + '）' }}
                             </button>
                         </section>
-                        <div class="c-char-blood" id="cCharBlood" v-once></div>
                         <div class="cio-detail-foot">
                             角色资料：<a :href="charDetail.readMore" target="_blank" rel="noopener">萌娘百科</a>（CC BY-NC-SA 3.0 CN）
                         </div>
