@@ -16,6 +16,26 @@ SPEC.loader.exec_module(UPDATE_EVENTS)
 
 
 class EventPipelineTest(unittest.TestCase):
+    def test_curated_media_splits_parts_and_discards_incomplete_urls(self):
+        self.assertEqual(
+            UPDATE_EVENTS.curated_media(
+                [
+                    ["https://www.bilibili.com/video/BV1first", "D1"],
+                    [
+                        "上篇：https://www.bilibili.com/video/BV1upper\n"
+                        "下篇：https://ww",
+                        "D2",
+                    ],
+                    ["上篇：待补档\n下篇：https://www.bilibili.com/video/BV1lower", "D3"],
+                ]
+            ),
+            [
+                {"url": "https://www.bilibili.com/video/BV1first", "label": "D1"},
+                {"url": "https://www.bilibili.com/video/BV1upper", "label": "D2 · 上篇"},
+                {"url": "https://www.bilibili.com/video/BV1lower", "label": "D3 · 下篇"},
+            ],
+        )
+
     def test_voice_actor_ids_come_from_the_canonical_registry(self):
         with mock.patch.object(UPDATE_EVENTS, "read_json", wraps=UPDATE_EVENTS.read_json) as reader:
             built = UPDATE_EVENTS.build()

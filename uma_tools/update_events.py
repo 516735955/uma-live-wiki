@@ -80,6 +80,7 @@ PERFORMER_RE = re.compile(r'<span class="perf-name">([\s\S]*?)</span>')
 ROW_RE = re.compile(r"<tr\b[^>]*>([\s\S]*?)</tr>", re.I)
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 EVENTERNOTE_ID_RE = re.compile(r"/events/id/(\d+)")
+MEDIA_URL_RE = re.compile(r'https?://[^\s<>"\'\]\[）)]+', re.I)
 CAST_LINE_RE = re.compile(
     r'<div\b[^>]*class=["\'][^"\']*\bcast-line\b[^"\']*["\'][^>]*>([\s\S]*?)</div>', re.I
 )
@@ -88,6 +89,36 @@ CAST_LABEL_RE = re.compile(
 )
 FULL_CAST_RE = re.compile(r"(?:全员|全員)")
 NON_PERFORMER_CAST_LABEL_RE = re.compile(r"实况|實況|嘉宾|ゲスト|向导|案内|解说|解説|司会|MC", re.I)
+
+
+def curated_media(items: Iterable[list[Any] | tuple[Any, ...]]) -> list[dict[str, str]]:
+    """Turn hand-curated video cells into one card per usable URL.
+
+    Some legacy cells contain separate upper/lower-part links and editorial text
+    on multiple lines. The catalog stores only complete URLs so the frontend
+    never has to interpret source formatting or offer a broken media card.
+    """
+
+    media: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for item in items:
+        if not item:
+            continue
+        raw = str(item[0] or "")
+        base_label = str(item[1] if len(item) > 1 else "视频").strip() or "视频"
+        for line in raw.splitlines() or [raw]:
+            part = re.sub(r"[：:\s]+$", "", line.split("http", 1)[0]).strip()
+            for match in MEDIA_URL_RE.finditer(line):
+                url = match.group(0).rstrip(".,，。；;")
+                parsed = urllib.parse.urlparse(url)
+                if parsed.scheme not in {"http", "https"} or not parsed.hostname or "." not in parsed.hostname:
+                    continue
+                if url in seen:
+                    continue
+                seen.add(url)
+                label = f"{base_label} · {part}" if part else base_label
+                media.append({"url": url, "label": label})
+    return media
 SONG_VERSION_HINT_RE = re.compile(
     r"(?:ver(?:sion)?\.?|size|remaster|remix|mix|off[ -]?vocal|instrumental|"
     r"acoustic|symphonic|revision|arrange|edit|solo|feat\.|short|long|game|tv|"
@@ -1061,7 +1092,7 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
                 "end_date": sessions[-1]["date"] if sessions else date, "kind": "concert", "mode": "onsite",
                 "series_id": "numbered-live", "venue": venue_from_date_text(sub.get("date")) if date else "",
                 "cast_status": "verified" if event_cast else "partial", "cast": event_cast, "character_ids": [],
-                "sessions": sessions, "media": [{"url": item[0], "label": item[1] if len(item) > 1 else "视频"} for item in (sub.get("vids") or []) if item],
+                "sessions": sessions, "media": curated_media(sub.get("vids") or []),
                 "sources": [{"kind": "curated_live", "label": "站内精调歌单", "url": legacy}],
                 "legacy_url": legacy, "legacy_aliases": legacy_aliases, "image": "", "summary": sub.get("tips") or "",
             })
@@ -1133,7 +1164,7 @@ def category_events(data: dict[str, Any], identities: IdentityIndex, used: set[s
                         "kind": "concert" if category in ("cd", "twinkle") else "onsite", "mode": "onsite",
                         "series_id": cat_series_id(category, section.get("group") or "", group.get("group") or ""),
                         "venue": venue, "cast_status": "verified" if cast else "partial", "cast": cast, "character_ids": [],
-                        "sessions": sessions, "media": [{"url": item[0], "label": item[1] if len(item) > 1 else "视频"} for item in (sub.get("vids") or []) if item],
+                        "sessions": sessions, "media": curated_media(sub.get("vids") or []),
                         "sources": [{"kind": "curated_live", "label": "站内精调歌单", "url": legacy}],
                         "legacy_url": legacy, "legacy_aliases": legacy_aliases, "image": "", "summary": sub.get("tips") or "",
                     })
