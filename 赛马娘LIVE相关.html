@@ -109,21 +109,19 @@
                     </template>
                 </div>
 
-                <div class="news-filter-bar">
-                    <div class="news-filter-group">
-                        <span class="news-filter-label">时间</span>
-                        <button type="button" class="news-filter-chip" :class="{active: newsRange==='all'}" @click="newsRange='all'">全部</button>
-                        <button type="button" class="news-filter-chip" :class="{active: newsRange==='7'}" @click="newsRange='7'">7天内</button>
-                        <button type="button" class="news-filter-chip" :class="{active: newsRange==='30'}" @click="newsRange='30'">30天内</button>
-                        <button type="button" class="news-filter-chip" :class="{active: newsRange==='90'}" @click="newsRange='90'">90天内</button>
-                    </div>
-                    <div class="news-filter-group">
-                        <span class="news-filter-label">类型</span>
-                        <button type="button" class="news-filter-chip" :class="{active: newsType==='all'}" @click="newsType='all'">全部</button>
-                        <button type="button" class="news-filter-chip" :class="{active: newsType==='media'}" @click="newsType='media'">MEDIA</button>
-                        <button type="button" class="news-filter-chip" :class="{active: newsType==='game'}" @click="newsType='game'">GAME</button>
-                        <button type="button" class="news-filter-chip" :class="{active: newsType==='cd'}" @click="newsType='cd'">CD相关</button>
-                    </div>
+                <div class="archive-filter-row">
+                    <div class="ui-filter-group"><span>时间</span><div>
+                        <button type="button" :class="{active: newsRange==='all'}" @click="newsRange='all'">全部</button>
+                        <button type="button" :class="{active: newsRange==='7'}" @click="newsRange='7'">7天内</button>
+                        <button type="button" :class="{active: newsRange==='30'}" @click="newsRange='30'">30天内</button>
+                        <button type="button" :class="{active: newsRange==='90'}" @click="newsRange='90'">90天内</button>
+                    </div></div>
+                    <div class="ui-filter-group"><span>类型</span><div>
+                        <button type="button" :class="{active: newsType==='all'}" @click="newsType='all'">全部</button>
+                        <button type="button" :class="{active: newsType==='media'}" @click="newsType='media'">MEDIA</button>
+                        <button type="button" :class="{active: newsType==='game'}" @click="newsType='game'">GAME</button>
+                        <button type="button" :class="{active: newsType==='cd'}" @click="newsType='cd'">CD相关</button>
+                    </div></div>
                 </div>
 
                 <div id="news-list-top" class="news-rows">
@@ -434,10 +432,10 @@
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="relQuery" placeholder="搜索专辑、歌曲、歌手或商品编号" autocomplete="off"><button v-if="relQuery" type="button" @click.prevent="relQuery=''" aria-label="清空搜索">×</button></label>
                     <ui-select v-model="relSort" label="排序" :options="albumSortOptions"></ui-select>
                 </div>
-                <div class="news-filter-bar album-filter-bar">
-                    <div class="news-filter-group"><span class="news-filter-label">作品</span><button class="news-filter-chip" :class="{active:relWork===''}" @click="relWork=''">全部</button><button v-for="item in relWorkList" :key="item.key" class="news-filter-chip" :class="{active:relWork===item.key}" @click="relWork=item.key">{{ item.label }}</button></div>
-                    <div class="news-filter-group"><span class="news-filter-label">类型</span><button class="news-filter-chip" :class="{active:relFilter===''}" @click="relFilter=''">全部</button><button v-for="type in relTypeList" :key="type" class="news-filter-chip" :class="{active:relFilter===type}" @click="relFilter=type">{{ type }}</button></div>
-                    <div class="news-filter-group"><span class="news-filter-label">年份</span><button class="news-filter-chip" :class="{active:relYear===''}" @click="relYear=''">全部</button><button v-for="year in relYearList" :key="year" class="news-filter-chip" :class="{active:relYear===year}" @click="relYear=year">{{ year }}</button></div>
+                <div class="archive-filter-row">
+                    <div class="ui-filter-group"><span>作品</span><div><button type="button" :class="{active:relWork===''}" @click="relWork=''">全部</button><button v-for="item in relWorkList" :key="item.key" type="button" :class="{active:relWork===item.key}" @click="relWork=item.key">{{ item.label }}</button></div></div>
+                    <div class="ui-filter-group"><span>类型</span><div><button type="button" :class="{active:relFilter===''}" @click="relFilter=''">全部</button><button v-for="type in relTypeList" :key="type" type="button" :class="{active:relFilter===type}" @click="relFilter=type">{{ type }}</button></div></div>
+                    <div class="ui-filter-group"><span>年份</span><div><button type="button" :class="{active:relYear===''}" @click="relYear=''">全部</button><button v-for="year in relYearList" :key="year" type="button" :class="{active:relYear===year}" @click="relYear=year">{{ year }}</button></div></div>
                 </div>
                 <div class="albums-grid album-database-grid">
                     <button v-for="(album,index) in relPaged" :key="album.name" type="button" class="album-card" :style="coverStyle(album)" @click="openAlbumFromDb(album)">

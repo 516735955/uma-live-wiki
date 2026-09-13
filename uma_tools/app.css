@@ -31,7 +31,7 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', system-ui, sans-serif;
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', Meiryo, 'Noto Sans CJK SC', 'Noto Sans CJK JP', system-ui, sans-serif;
             color: var(--text);
             background-color: var(--bg);
             background-size: cover;
@@ -699,21 +699,6 @@
         }
         .news-skeleton-line.short { width: 38%; margin-top: 0; }
         @keyframes newsSkeleton { to { background-position-x: -200%; } }
-        .news-filter-bar {
-            display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;
-            padding: 14px 18px; margin-bottom: 18px; border-radius: var(--radius);
-            background: var(--card); border: 1px solid var(--border);
-        }
-        .news-filter-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .news-filter-label { font-size: 0.8em; font-weight: 700; color: var(--text-2); }
-        .news-filter-chip {
-            padding: 4px 12px; border-radius: 999px; cursor: pointer;
-            font-family: inherit; font-size: 0.78em; font-weight: 600; color: var(--text-2);
-            background: var(--bg-2, #f0eef6); border: 1px solid transparent;
-            transition: all 0.15s;
-        }
-        .news-filter-chip:hover { border-color: var(--brand); }
-        .news-filter-chip.active { color: #fff; background: var(--brand); border-color: var(--brand); }
         .news-rows { display: flex; flex-direction: column; }
         .news-row {
             display: grid;
@@ -1197,7 +1182,7 @@
         }
         .archive-surface button,
         .archive-surface input,
-        .archive-surface select { font: inherit; }
+        .archive-surface select { font-family: inherit; }
 
         #tab-characters .ui-search .c-search,
         #tab-db-voice .ui-search .va-search {
@@ -1396,27 +1381,22 @@
             white-space: nowrap;
         }
         .ui-filter-group > div { display: flex; gap: 4px; flex-wrap: wrap; }
-        .ui-filter-group button,
-        .news-filter-chip,
-        .filter-chip {
+        .ui-filter-group button {
             min-height: 34px;
             padding: 5px 14px;
             border: 1px solid #c7cad5;
             border-radius: 999px;
             background: #fff;
             color: var(--text-2);
+            font-family: inherit;
             font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
             box-shadow: 0 4px 9px rgba(32, 40, 59, 0.08);
             transition: transform 280ms cubic-bezier(.19, 1, .22, 1), background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
         }
-        .ui-filter-group button:hover,
-        .news-filter-chip:hover,
-        .filter-chip:hover { border-color: var(--brand); color: var(--brand-dark); transform: scale(.95); }
-        .ui-filter-group button.active,
-        .news-filter-chip.active,
-        .filter-chip.active {
+        .ui-filter-group button:hover { border-color: var(--brand); color: var(--brand-dark); transform: scale(.95); }
+        .ui-filter-group button.active {
             border-color: #3654b7;
             background: linear-gradient(105deg, #294cc2, #3f66db);
             color: #fff;
@@ -1768,39 +1748,6 @@
         .detail-meta dt { color: var(--navy); background: #f1f4fc; }
         .detail-meta dd { color: var(--text); }
 
-        .entity-chip-list { display: flex; align-items: center; gap: 10px 15px; flex-wrap: wrap; margin-top: 16px; }
-        .entity-chip-list.compact { gap: 7px 12px; margin-top: 0; }
-        .entity-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            max-width: 100%;
-            padding: 0;
-            border: 0;
-            background: transparent;
-            color: inherit;
-            font-size: 0.84rem;
-            font-weight: 750;
-            text-align: left;
-            cursor: pointer;
-        }
-        .entity-chip img {
-            width: 38px;
-            height: 38px;
-            border: 2px solid var(--chip-color, var(--brand));
-            border-radius: 50%;
-            background: #fff;
-            object-fit: cover;
-            object-position: top center;
-            flex: none;
-            transition: transform 150ms ease;
-        }
-        .entity-chip:hover img { transform: scale(1.08); }
-        .entity-chip > span { min-width: 0; overflow-wrap: anywhere; }
-        .entity-hero .entity-chip { margin-top: 18px; color: #fff; }
-        .entity-hero .entity-chip-list { margin-top: 18px; }
-        .entity-hero .entity-chip-list .entity-chip { margin-top: 0; }
-
         .data-table { width: 100%; min-width: 700px; border-spacing: 0; border-collapse: collapse; }
         .data-table th {
             padding: 12px 13px;
@@ -1936,9 +1883,7 @@
         .album-track-list > div > span { color: var(--text-3); font-size: 0.78rem; font-weight: 800; font-variant-numeric: tabular-nums; }
         .album-track-main { min-width: 0; }
         .album-track-main > small { display: block; margin-top: 5px; color: var(--text-2); font-size: 0.74rem; line-height: 1.5; }
-        .album-track-main .entity-chip-list { margin-top: 8px; }
-        .album-track-main .entity-chip { font-size: 0.72rem; }
-        .album-track-main .entity-chip img { width: 29px; height: 29px; border-width: 2px; }
+        .album-track-main .performer-chip-list { margin-top: 8px; }
         .track-play {
             display: grid;
             place-items: center;
@@ -2028,15 +1973,14 @@
         #tab-db-voice .va-card-txt { min-width: 0; }
         #tab-db-voice .va-name { margin: 0; color: var(--text); font-size: 1rem; font-weight: 900; }
         #tab-db-voice .va-kana { margin: 4px 0 0; color: var(--text-3); font-size: 0.7rem; }
-        #tab-db-voice .va-roles { margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--surface-line); color: var(--text-2); font-size: 0.73rem; line-height: 1.45; }
-        #tab-db-voice .va-roles b { color: var(--color-main); }
-        #tab-db-voice .va-orig { display: none; }
+        #tab-db-voice .va-card-roles { margin-top: 9px; }
+        #tab-db-voice .va-card-roles .performer-chip { margin: 0; font-size: 0.73rem; }
+        #tab-db-voice .va-card-roles .performer-chip img,
+        #tab-db-voice .va-card-roles .performer-chip-fallback { width: 28px; height: 28px; }
         #tab-db-voice .va-nodata { display: none; }
 
         .pedigree-section { overflow: visible; }
         .c-char-blood { min-height: 520px; }
-
-        .news-filter-bar { border-color: var(--border); border-radius: var(--radius); background: var(--card); }
 
         @media (max-width: 900px) {
             .song-entity-detail,
@@ -2118,8 +2062,6 @@
             .entity-section { padding: 16px 13px; }
             .detail-meta { grid-template-columns: 1fr; }
             .detail-meta > div:nth-child(2) { border-top: 1px solid var(--surface-line); }
-            .entity-chip { font-size: 0.78rem; }
-            .entity-chip img { width: 34px; height: 34px; }
             .history-list > button,
             .history-years section > button { grid-template-columns: 86px minmax(0, 1fr); }
             .history-list em,
@@ -2142,8 +2084,7 @@
             }
             .entity-hero { grid-template-columns: 100px minmax(0, 1fr); gap: 15px; }
             .entity-hero::before { right: -22%; width: 68%; }
-            .entity-hero .entity-chip-list { margin-top: 10px; }
-            .entity-hero .entity-chip img { width: 31px; height: 31px; }
+            .entity-hero .performer-chip-list { margin-top: 10px; }
             .event-video-grid,
             .video-library,
             .setting-book-list { grid-template-columns: 1fr; }
@@ -2395,7 +2336,7 @@ body.subpage-bg {
     align-items: center;
     padding-left: 14px;
     color: #657091;
-    font-size: .74rem;
+    font-size: .8rem;
     font-weight: 850;
     white-space: nowrap;
 }
@@ -2411,9 +2352,10 @@ body.subpage-bg {
     border: 0;
     background: transparent;
     color: var(--ui-navy);
-    font: inherit;
-    font-size: .84rem;
+    font-family: inherit;
+    font-size: .8rem;
     font-weight: 800;
+    line-height: 1.2;
     cursor: pointer;
 }
 .ui-select-trigger > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -2446,7 +2388,7 @@ body.subpage-bg {
     border-radius: 5px;
     background: transparent;
     color: #38425f;
-    font: inherit;
+    font-family: inherit;
     font-size: .78rem;
     font-weight: 700;
     text-align: left;
@@ -2456,8 +2398,7 @@ body.subpage-bg {
 .ui-select-menu button.active { background: #eef2ff; color: var(--ui-cobalt-deep); }
 .ui-select-menu button.selected { background: var(--ui-cobalt); color: #fff; }
 .ui-select-menu button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; }
-.archive-filter-row,
-.news-filter-bar {
+.archive-filter-row {
     display: flex;
     align-items: flex-start;
     gap: 10px 22px;
@@ -2467,30 +2408,23 @@ body.subpage-bg {
     border: 0;
     background: transparent;
 }
-.ui-filter-group button,
-.news-filter-chip,
-.filter-chip {
+.ui-filter-group button {
     min-height: 34px;
     padding: 5px 13px;
     border: 1px solid #cbd1e1;
     border-radius: 17px;
     background: #fff;
     box-shadow: none;
+    font-family: inherit;
 }
-.ui-filter-group button.active,
-.news-filter-chip.active,
-.filter-chip.active {
+.ui-filter-group button.active {
     border-color: var(--ui-cobalt);
     background: var(--ui-cobalt);
     color: #fff;
     box-shadow: none;
 }
-.ui-filter-group button:hover,
-.news-filter-chip:hover,
-.filter-chip:hover { border-color: var(--ui-orange); color: var(--ui-orange-deep); transform: scale(.96); }
-.ui-filter-group button.active:hover,
-.news-filter-chip.active:hover,
-.filter-chip.active:hover { border-color: var(--ui-cobalt); color: #fff; }
+.ui-filter-group button:hover { border-color: var(--ui-orange); color: var(--ui-orange-deep); transform: scale(.96); }
+.ui-filter-group button.active:hover { border-color: var(--ui-cobalt); color: #fff; }
 /* Crisp archive rows with purposeful movement. */
 .event-catalog,
 .song-catalog { border-top: 3px solid var(--ui-cobalt-deep); }
@@ -2505,8 +2439,6 @@ body.subpage-bg {
 .album-card { border-radius: 2px; box-shadow: 0 4px 14px rgba(24,31,70,.1); }
 .album-card:hover { border-color: var(--ui-orange); box-shadow: 0 10px 24px rgba(24,31,70,.15); transform: translateY(-4px); }
 .album-overlay { background: rgba(49,87,237,.84); }
-.album-filter-bar { align-items: flex-start; }
-.album-filter-bar .news-filter-group { width: 100%; }
 .news-row { grid-template-columns: 110px 82px minmax(0,1fr); }
 .news-detail-date { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .news-detail-date a { color: var(--ui-orange-deep); font-size: .82rem; font-weight: 800; text-decoration: none; }
@@ -2622,12 +2554,9 @@ body.subpage-bg {
 .voice-entity-detail .entity-tabs button.active { color: var(--entity-accent); box-shadow: inset 0 -3px 0 var(--entity-sub); }
 
 /* The setlist performer is the canonical person-link shape. */
-.performer-chip-list,
-.entity-chip-list { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; margin-top: 15px; }
-.performer-chip-list.compact,
-.entity-chip-list.compact { gap: 6px 11px; margin-top: 0; }
+.performer-chip-list { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; margin-top: 15px; }
+.performer-chip-list.compact { gap: 6px 11px; margin-top: 0; }
 .performer-chip,
-.entity-chip,
 .perf-item,
 .setlist-performer-link {
     display: inline-flex;
@@ -2644,10 +2573,8 @@ body.subpage-bg {
     white-space: nowrap;
 }
 button.performer-chip,
-button.entity-chip,
 button.setlist-performer-link { cursor: pointer; }
 .performer-chip img,
-.entity-chip img,
 .perf-item img {
     width: 34px;
     height: 34px;
@@ -2660,11 +2587,22 @@ button.setlist-performer-link { cursor: pointer; }
     transition: transform 300ms var(--ui-ease), box-shadow 160ms ease;
 }
 .performer-chip:hover img,
-.entity-chip:hover img,
 button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3px 9px rgba(20,29,63,.16); }
+.performer-chip-fallback {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: none;
+    place-items: center;
+    border: 2px solid var(--chip-color,#c7c2ba);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--ui-navy);
+    font-size: .72rem;
+    font-weight: 900;
+}
 .voice-chip img { background: #fff; }
-.entity-hero .performer-chip,
-.entity-hero .entity-chip { margin-top: 16px; color: #fff; }
+.entity-hero .performer-chip { margin-top: 16px; color: #fff; }
 .entity-hero .performer-chip-list .performer-chip { margin-top: 0; }
 .album-track-main .performer-chip { font-size: .72rem; }
 .album-track-main .performer-chip img { width: 29px; height: 29px; }
@@ -2834,8 +2772,7 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     .ui-search { flex-basis: 100%; }
     .ui-select-control,
     .ui-select-control.ui-select-wide { flex: 1 1 155px; min-width: 0; }
-    .archive-filter-row,
-    .news-filter-bar { flex-direction: column; gap: 10px; }
+    .archive-filter-row { flex-direction: column; gap: 10px; }
     .ui-filter-group { width: 100%; align-items: flex-start; }
     .ui-filter-group > span { width: 40px; padding-top: 8px; }
     .song-catalog-row { grid-template-columns: 58px minmax(0,1fr) 38px 20px; gap: 10px; }
@@ -2843,7 +2780,6 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     .catalog-play { grid-column: 3; }
     .song-catalog-row > svg { grid-column: 4; }
     .performer-chip img,
-    .entity-chip img,
     .perf-item img { width: 31px; height: 31px; }
     .event-entity-detail > .entity-hero,
     .character-entity-detail > .entity-hero,

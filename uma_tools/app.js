@@ -1357,7 +1357,7 @@ const umaApp = createApp({
       return linked.replace(/<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi, function (whole, image, alt, label) {
         var character = findCharByDisplayName(decodeHtml(alt));
         if (!character) return whole;
-        return '<button type="button" class="perf-item setlist-performer-link" data-character-id="' + character.id + '">' + image + '<span class="perf-name">' + label + '</span></button>';
+        return '<button type="button" class="perf-item setlist-performer-link" data-character-id="' + character.id + '" style="--chip-color:' + character.main + '">' + image + '<span class="perf-name">' + label + '</span></button>';
       });
     }
     function onEventSetlistClick(event) {
@@ -2604,7 +2604,7 @@ umaApp.mount('#app');
             slug: profile.slug || profile.id,
             zh: identity.zh || identity.ja || '', ja: identity.ja || identity.zh || '',
             photo: photo.url || '',
-            roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', orig: !!role.former, main: role.color_main || '#8c83ff' }; })
+            roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', image: role.image || '', main: role.color_main || '#8c83ff' }; })
           };
         });
       }
@@ -2628,6 +2628,10 @@ umaApp.mount('#app');
         card.href = '/zh-Hans/database/voice-actors/' + v.slug;
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
         var ph = v.photo ? { img: v.photo } : null;
+        var roleHtml = v.roles.map(function (role) {
+          var roleImage = role.image ? '<img src="' + role.image + '" alt="">' : '<span class="performer-chip-fallback" aria-hidden="true">' + (role.zh || '?').charAt(0) + '</span>';
+          return '<span class="performer-chip character-chip" style="--chip-color:' + role.main + '">' + roleImage + '<span>' + role.zh + '</span></span>';
+        }).join('');
         var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
         var imgHtml = ph
           ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'
@@ -2637,7 +2641,7 @@ umaApp.mount('#app');
           '<span class="va-card-txt">' +
             '<p class="va-name">' + v.zh + '</p>' +
             '<p class="va-kana">' + v.ja + '</p>' +
-            '<p class="va-roles' + (v.roles.length === 1 ? ' va-roles--single' : '') + '"><b>担当</b>' + v.roles.map(function (r) { return r.orig ? r.zh + '<i class="va-orig">原</i>' : r.zh; }).join(' / ') + '</p>' +
+            '<span class="performer-chip-list compact va-card-roles">' + roleHtml + '</span>' +
           '</span>';
         card.addEventListener('click', function (e) {
           e.preventDefault();

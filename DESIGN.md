@@ -27,23 +27,23 @@ spacing:
   xl: "24px"
 typography:
   display:
-    fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
+    fontFamily: "Microsoft YaHei, PingFang SC, Hiragino Sans, Yu Gothic UI, Yu Gothic, Meiryo, Noto Sans CJK SC, Noto Sans CJK JP, system-ui, sans-serif"
     fontSize: "clamp(2rem, 5vw, 3rem)"
     fontWeight: 900
     lineHeight: 1
     letterSpacing: "0.055em"
   title:
-    fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
+    fontFamily: "Microsoft YaHei, PingFang SC, Hiragino Sans, Yu Gothic UI, Yu Gothic, Meiryo, Noto Sans CJK SC, Noto Sans CJK JP, system-ui, sans-serif"
     fontSize: "clamp(1.55rem, 2.6vw, 2.35rem)"
     fontWeight: 900
     lineHeight: 1.18
   body:
-    fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
+    fontFamily: "Microsoft YaHei, PingFang SC, Hiragino Sans, Yu Gothic UI, Yu Gothic, Meiryo, Noto Sans CJK SC, Noto Sans CJK JP, system-ui, sans-serif"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.5
   label:
-    fontFamily: "Microsoft YaHei, PingFang SC, Noto Sans SC, system-ui, sans-serif"
+    fontFamily: "Microsoft YaHei, PingFang SC, Hiragino Sans, Yu Gothic UI, Yu Gothic, Meiryo, Noto Sans CJK SC, Noto Sans CJK JP, system-ui, sans-serif"
     fontSize: "14px"
     fontWeight: 800
     lineHeight: 1.3
@@ -119,7 +119,7 @@ components:
 
 ## Typography
 
-**Display Font:** Microsoft YaHei, with PingFang SC, Noto Sans SC and system sans-serif fallbacks.
+**Display Font:** Microsoft YaHei, with PingFang SC, Hiragino Sans, Yu Gothic, Meiryo, Noto Sans CJK and system sans-serif fallbacks.
 
 **Body Font:** 同一中文无衬线字体栈。
 
