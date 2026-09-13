@@ -1537,9 +1537,11 @@
         .song-list-item {
             display: flex; align-items: center; gap: 12px; padding: 8px 0;
             border-bottom: 1px solid var(--border); font-size: 0.88em;
+            transition: background 0.15s;
         }
         .song-list-item:last-child { border-bottom: none; }
         .song-list-item.current { background: var(--brand-light, #fff5e6); margin: 0 -8px; padding: 8px; border-radius: 6px; }
+        .song-list-item:hover { background: var(--bg-2); }
         .song-list-date { color: var(--text-3); font-size: 0.82em; min-width: 80px; }
         .song-list-artist {
             color: var(--text-2); font-size: 0.85em; flex: 0 1 auto;
@@ -1547,8 +1549,7 @@
             overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         }
         .song-list-cnt { color: var(--brand); font-weight: 700; min-width: 40px; }
-        .song-list-link { color: var(--brand); text-decoration: none; flex: 1; display: flex; align-items: center; gap: 12px; min-width: 0; }
-        .song-list-link:hover { text-decoration: underline; }
+.song-list-link { color: var(--brand); text-decoration: none; flex: 1; display: flex; align-items: center; gap: 12px; min-width: 0; }
         .song-list-name { color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .song-list-arrow { margin-left: auto; color: var(--brand); }
         .song-list-more { color: var(--text-3); font-size: 0.82em; margin-top: 8px; }
