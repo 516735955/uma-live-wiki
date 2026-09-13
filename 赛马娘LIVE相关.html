@@ -579,7 +579,7 @@
             <div class="song-section" v-if="songLives.length > 0">
                 <h3 class="song-section-title">演出现场</h3>
                 <ul class="song-list">
-                    <li v-for="(ev,i) in songLivesVisible" :key="i" class="song-list-item">
+                    <li v-for="(ev,i) in songLives.slice(0, 10)" :key="i" class="song-list-item">
                         <a class="song-list-link" :href="ev.liveUrl" @click.prevent="openLiveFromUrl(ev.liveUrl)">
                             <span class="song-list-date">{{ ev.liveDate }}</span>
                             <span class="song-list-name">{{ ev.liveTitle }}</span>
@@ -590,6 +590,15 @@
                 <button v-if="songLives.length > 10" class="song-list-toggle" type="button" @click="songLivesExpanded = !songLivesExpanded">
                     {{ songLivesExpanded ? '折叠' : ('展开其余 ' + (songLives.length - 10) + ' 场演出') }}
                 </button>
+                <ul v-if="songLivesExpanded && songLives.length > 10" class="song-list song-list-extra">
+                    <li v-for="(ev,i) in songLives.slice(10)" :key="i+10" class="song-list-item">
+                        <a class="song-list-link" :href="ev.liveUrl" @click.prevent="openLiveFromUrl(ev.liveUrl)">
+                            <span class="song-list-date">{{ ev.liveDate }}</span>
+                            <span class="song-list-name">{{ ev.liveTitle }}</span>
+                            <span class="song-list-arrow">→</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
             </template>
         </div>
