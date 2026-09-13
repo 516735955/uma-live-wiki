@@ -1832,6 +1832,13 @@ createApp({
       if (!g || livePerf.value < 0 || livePerf.value >= g.subs.length) return null;
       return g.subs[livePerf.value];
     });
+    const liveDetailTitle = computed(function () {
+      const g = currentGroup.value;
+      const s = currentSub.value;
+      if (!g) return '';
+      if (s && s.title) return g.group + ' ' + s.title;
+      return g.group;
+    });
     const liveInfoHtml = computed(function () {
       const s = currentSub.value;
       if (!s) return '<div class="live-setlist-placeholder">请在左侧选择一场公演</div>';
@@ -2683,7 +2690,7 @@ createApp({
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, newsBack, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
-      currentGroup, currentSub, liveInfoHtml, setlistTitle, setlistLinks, setlistTable,
+      currentGroup, currentSub, liveDetailTitle, liveInfoHtml, setlistTitle, setlistLinks, setlistTable,
       seriesGrid, syncFromUrl, prepareCurrentRoute, loadHomeSummaryIfNeeded,
       eventsCount, eventsMeta, eventsQuery, evTime, setEvTime, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,

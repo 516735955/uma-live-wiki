@@ -409,7 +409,7 @@
                 </button>
                 <div class="live-detail-layout">
                     <div class="live-left">
-                        <div class="live-left-title">{{ currentGroup && currentGroup.group }}</div>
+                        <div class="live-left-title">{{ liveDetailTitle }}</div>
                         <div class="live-perf-list" id="livePerfList">
                             <div v-for="(s,pi) in (currentGroup?currentGroup.subs:[])" :key="pi" class="live-perf-item" :class="{selected: pi===livePerf}" :id="'livePerf_'+pi">
                                 <div class="live-perf-head" @click="selectLivePerf(pi)"><span>{{ s.title }}</span><span class="live-perf-date">{{ s.date }}</span></div>
