@@ -1541,7 +1541,6 @@
             transition: background 0.15s;
         }
         .song-list-item:last-child { border-bottom: none; }
-        .song-list-item.current { background: var(--brand-light, #fff5e6); margin: 0 -8px; padding: 8px; border-radius: 6px; }
         .song-list-item:hover { background: var(--bg-2); }
         .song-list-date { color: var(--text-3); font-size: 0.82em; min-width: 80px; }
         .song-list-artist {

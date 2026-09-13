@@ -567,7 +567,7 @@
                     <a class="song-section-more" href="/zh-Hans/database/albums" @click.prevent="goDbView('albums')">查看全部 →</a>
                 </div>
                 <ul class="song-list">
-                    <li v-for="(r,i) in songAlbums" :key="i" class="song-list-item song-list-album" :class="{current: songDetail.album && r.a.name === songDetail.album.name}">
+                    <li v-for="(r,i) in songAlbums" :key="i" class="song-list-item song-list-album">
                         <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a)">
                             <span class="song-list-date">{{ r.a.release }}</span>
                             <span class="song-list-name">{{ r.a.name }}</span>
