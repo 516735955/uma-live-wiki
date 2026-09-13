@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>赛马娘综合站</title>
-<link rel="stylesheet" href="/uma_tools/app.css?v=20260912-3">
+<link rel="stylesheet" href="/uma_tools/app.css?v=20260913-11">
 <script defer src="/uma_tools/vendor/vue.global.prod.js"></script>
-<script defer src="/uma_tools/app.js?v=20260913-8"></script>
+<script defer src="/uma_tools/app.js?v=20260913-11"></script>
 </head>
 <body>
 
@@ -547,10 +547,16 @@
             </div>
             </template>
             <template v-else>
-            <button class="back-btn" type="button" @click="songDetail=null; goDbView('songs')">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                返回歌曲列表
-            </button>
+            <div class="song-back-row">
+                <button class="back-btn" type="button" @click="songDetail=null; songFromChar=null; goDbView('songs')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    返回歌曲列表
+                </button>
+                <button v-if="songFromChar" class="back-btn" type="button" @click="songBackPrev()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    返回上一页
+                </button>
+            </div>
             <div class="song-detail-header">
                 <div class="song-detail-thumb">{{ songDetail.song.name.charAt(0) }}</div>
                 <div class="song-detail-info">
@@ -567,8 +573,20 @@
                     <a class="song-section-more" href="/zh-Hans/database/albums" @click.prevent="goDbView('albums')">查看全部 →</a>
                 </div>
                 <ul class="song-list">
-                    <li v-for="(r,i) in songAlbums" :key="i" class="song-list-item song-list-album">
-                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a)">
+                    <li v-for="(r,i) in songAlbums.slice(0, 4)" :key="i" class="song-list-item song-list-album">
+                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a, 'songdetail')">
+                            <span class="song-list-date">{{ r.a.release }}</span>
+                            <span class="song-list-name">{{ r.a.name }}</span>
+                            <span class="song-list-arrow">→</span>
+                        </a>
+                    </li>
+                </ul>
+                <button v-if="songAlbums.length > 4" class="song-list-toggle" type="button" @click="songAlbumsExpanded = !songAlbumsExpanded">
+                    {{ songAlbumsExpanded ? '折叠' : ('展开其余 ' + (songAlbums.length - 4) + ' 张CD') }}
+                </button>
+                <ul v-if="songAlbumsExpanded && songAlbums.length > 4" class="song-list song-list-extra">
+                    <li v-for="(r,i) in songAlbums.slice(4)" :key="i+4" class="song-list-item song-list-album">
+                        <a class="song-list-link" :href="'/zh-Hans/music/' + encodeURIComponent(r.a.name)" @click.prevent="openAlbumFromDb(r.a, 'songdetail')">
                             <span class="song-list-date">{{ r.a.release }}</span>
                             <span class="song-list-name">{{ r.a.name }}</span>
                             <span class="song-list-arrow">→</span>

@@ -1,5 +1,5 @@
 
-console.log('[uma-live] build 20260913-8');
+console.log('[uma-live] build 20260913-11');
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
 const SERIES_GRID = [{"index":0,"no":"1st","title":"1st EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/471238a99eba4fc09b643fd77362e450/event_01.png"},{"index":1,"no":"2nd","title":"2nd EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/00cea361d13343d085477a7bdcae48fa/event_02.png"},{"index":2,"no":"3rd","title":"3rd EVENT","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/df69154e90b44827a691cc454f9c5279/event_03.png"},{"index":3,"no":"4th","title":"4th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/aba8419984df479d94896b3ba20c23fa/event_05.png"},{"index":4,"no":"4thExtra","title":"4th EVENT EXTRA STAGE","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e0aaca1a08bd49fa889fa22f6a402311/event_04.png"},{"index":5,"no":"5th","title":"5th EVENT","meta":"4 场公演 · 8 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8c98ef15165742ae8492fec00157a8c5/event_06.png"},{"index":6,"no":"6th","title":"6th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8e25390d779041fbb1b9485a043cd235/event_tnf.png"},{"index":7,"no":"7th","title":"7th EVENT","meta":"5 场公演 · 10 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e33a4cddf22d4bf69e5d3fa0edc9a52a/event_ts.png"}];
@@ -77,6 +77,8 @@ createApp({
     let eventsLoadPromise = null;
     let homeSummaryLoadPromise = null;
     const savedScrollY = ref(0);
+    const songSavedScrollY = ref(0);
+    const songFromChar = ref(null);
     const albumReturnView = ref('songs');
     const liveReturnSource = ref('live');
     const eventsSavedScrollY = ref(0);
@@ -981,6 +983,7 @@ createApp({
         } else if (sub === 'albums' || sub === 'songs') {
           dbView.value = sub;
           songDetail.value = null;
+          songFromChar.value = null;
           if (sub === 'songs') {
             if (seg[2]) {
               var songName = decodeURIComponent(seg[2]);
@@ -1172,12 +1175,35 @@ createApp({
       return { song: { name: name, artist: '' }, album: null };
     }
     function openSongFromChar(songTitle) {
+      if (charDetail.value && charDetail.value.id) {
+        songFromChar.value = { id: charDetail.value.id, sub: charSub.value, y: window.scrollY || 0 };
+      } else {
+        songFromChar.value = null;
+      }
       Promise.all([loadAlbums(), loadSongEvData(), loadLiveData(), loadLiveCatData()]).then(function () {
         songDetail.value = findSongByName(songTitle);
         activeTab.value = 'database';
         dbView.value = 'songs';
         window.scrollTo(0, 0);
         pushUrl();
+      });
+    }
+    function songBackPrev() {
+      var info = songFromChar.value;
+      songFromChar.value = null;
+      if (!info || !info.id) { songDetail.value = null; goDbView('songs'); return; }
+      var found = findCharById(info.id);
+      songDetail.value = null;
+      activeTab.value = 'database';
+      dbView.value = 'characters';
+      charSub.value = (info.sub === 'room' || info.sub === 'videos') ? info.sub : 'intro';
+      charDetail.value = found ? found : null;
+      if (found) { consumeCharBack(); loadCharSongs(); }
+      pushUrl();
+      var targetY = info.y || 0;
+      Vue.nextTick(function () {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        restoreLiveScroll(Math.min(Math.max(targetY, 0), Math.max(0, max)));
       });
     }
     function songIsVariantOf(base, other) {
@@ -1333,11 +1359,13 @@ createApp({
       return out;
     });
     const songLivesExpanded = ref(false);
+    const songAlbumsExpanded = ref(false);
     const songLivesVisible = computed(function () {
       return songLivesExpanded.value ? songLives.value : songLives.value.slice(0, 10);
     });
     function openLiveFromUrl(url) {
       if (!url) return;
+      songSavedScrollY.value = window.scrollY || 0;
       var parts = url.split('/').filter(Boolean);
       if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
       if (parts[0] === 'live') {
@@ -1373,6 +1401,7 @@ createApp({
             openCatSection(si2);
           }
         }
+        liveReturnSource.value = 'song';
       }
     }
     const songCharList = computed(function () {
@@ -1427,12 +1456,12 @@ createApp({
         list.scrollTop += (rr.top - lr.top) - (lr.height / 2 - rr.height / 2);
       });
     }
-    function openAlbumFromDb(a) {
+    function openAlbumFromDb(a, returnView) {
       activeTab.value = 'songs';
       artistDetail.value = null;
       albumDetail.value = null;
       openAlbum(a, null);
-      albumReturnView.value = 'albums';
+      albumReturnView.value = returnView || 'albums';
     }
     function albumBack() {
       albumDetail.value = null;
@@ -1444,6 +1473,9 @@ createApp({
         activeTab.value = 'database';
         dbView.value = 'songs';
         search.value = '';
+      } else if (albumReturnView.value === 'songdetail') {
+        activeTab.value = 'database';
+        dbView.value = 'songs';
       } else {
         activeTab.value = 'songs';
       }
@@ -1643,6 +1675,7 @@ createApp({
     function showLiveView(id) {
       liveView.value = id;
       if (id === 'liveDetail' || id === 'liveCatDetail') {
+        restoreLiveScroll(0);
         requestAnimationFrame(function () { const d = document.getElementById('liveDetail'); if (d) d.scrollTop = 0; });
       } else if (!restoreLiveScrollFromState(id)) {
         window.scrollTo(0, 0);
@@ -1693,6 +1726,21 @@ createApp({
       showLiveView('liveCatList');
     }
     function liveDetailBack() {
+      if (liveReturnSource.value === 'song') {
+        liveReturnSource.value = 'live';
+        liveSeriesIndex.value = -1;
+        livePerf.value = -1;
+        liveDay.value = 0;
+        activeTab.value = 'database';
+        dbView.value = 'songs';
+        pushUrl();
+        Vue.nextTick(function () {
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          var target = Math.min(songSavedScrollY.value, Math.max(0, max));
+          restoreLiveScroll(target);
+        });
+        return;
+      }
       if (liveReturnSource.value === 'home') {
         liveReturnSource.value = 'live';
         liveSeriesIndex.value = -1;
@@ -2709,7 +2757,8 @@ createApp({
       charBackUrl, charBackPrev,
       charSongsList, charSongsVisible, charSongsDetailOpen, toggleCharSongs,
       songDetail, songAlbums, songLives, songCharList, findSongByName, openSongFromChar, loadSongEvData,
-      songEarliestRelease, songLivesExpanded, songLivesVisible, openLiveFromUrl,
+      songEarliestRelease, songLivesExpanded, songLivesVisible, songAlbumsExpanded, openLiveFromUrl,
+      songFromChar, songBackPrev,
       voiceDetail, statVoiceActors, charCount, openVa, voiceBack, openCharFromVoice, LANG_PREFIX,
       relFilter, relAlbums, relTypesCount, relTypeList, relYearList, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage, setRelFilter, setRelYear, clearRelFilters, relIsSold,
       bindAudio
@@ -3313,6 +3362,7 @@ createApp({
       if (typeof app.loadLiveData === 'function') { app.loadLiveData(); }
       if (typeof app.loadLiveCatData === 'function') { app.loadLiveCatData(); }
       app.songDetail = app.findSongByName(song.name);
+      app.songFromChar = null;
       app.activeTab = 'database';
       app.dbView = 'songs';
       window.scrollTo(0, 0);

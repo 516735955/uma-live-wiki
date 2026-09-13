@@ -786,7 +786,7 @@
         }
         .live-left {
             flex: 0 0 320px; max-width: 320px;
-            padding-top: 0; position: sticky; top: 78px; z-index: 4;
+            padding-top: 0; position: sticky; top: 132px; z-index: 4;
             border-radius: var(--radius); overflow: hidden;
             background: #eaf2fb;
             border: 1px solid var(--border);
@@ -1507,6 +1507,8 @@
         }
 
         /* song detail page */
+        .song-back-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .song-back-row .back-btn { margin-bottom: 22px; }
         .song-detail-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
         .song-detail-thumb {
             flex: 0 0 80px; width: 80px; height: 80px; border-radius: 12px;
@@ -2185,7 +2187,8 @@
             flex: none; min-width: 42px; text-align: right; color: #8488a0; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
         }
         #tab-characters .cio-songs-times.top { color: #ff8c1a; }
-        #tab-characters .cio-songs-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2c3650; font-size: 13px; font-weight: 600; }
+        #tab-characters .cio-songs-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2c3650; font-size: 13px; font-weight: 600; text-decoration: none; border-bottom: 1px dotted transparent; transition: color .15s, border-color .15s; }
+        #tab-characters .cio-songs-item:hover .cio-songs-name { color: #23418f; border-bottom-color: #9fb2ee; }
         #tab-characters .cio-songs-toggle {
             display: block; width: 100%; margin-top: 10px; padding: 10px 14px; cursor: pointer;
             color: #23418f; border: 1px solid #cad4f2; border-radius: 9px; background: #f3f6ff;
