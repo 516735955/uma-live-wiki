@@ -245,7 +245,7 @@ const umaApp = createApp({
       return dataScriptPromises[src];
     }
     function loadCharacterIndexData() {
-      return loadDataScript('/data/character_index_data.js?v=20260904', 'CHAR_INDEX');
+      return loadDataScript('/data/character_index_data.js?v=20260913', 'CHAR_INDEX');
     }
     function loadCharacterDetailData() {
       return Promise.all([
@@ -2451,7 +2451,7 @@ umaApp.mount('#app');
       '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-15">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
       ';window.PEDIGREE_EMBEDDED=true;<\/script>' +
-      '<script defer src="/data/character_index_data.js?v=20260904"><\/script>' +
+      '<script defer src="/data/character_index_data.js?v=20260913"><\/script>' +
       '<script defer src="/data/pedigree_data.js?v=20260911-8"><\/script>' +
       '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-20"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +

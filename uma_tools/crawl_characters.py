@@ -78,6 +78,30 @@ def balanced_div(h, start):
             if depth == 0: return h[start:pos]
     return ''
 
+def profile_from_intro(block):
+    """Extract the localized profile facts from one Moegirl character block."""
+    table = re.search(r'<table[^>]*class="[^"]*uma-info-table[^"]*"[^>]*>(.*?)</table>', block, re.S)
+    if not table:
+        return {}
+    text = re.sub(r'<[^>]+>', ' ', table.group(1))
+    text = re.sub(r'\s+', ' ', text).strip()
+    labels = (
+        ('birth', '生日', '身高|体重|三围'),
+        ('height', '身高', '体重|三围'),
+        ('weight', '体重', '三围'),
+        ('sankak', '三围', '$'),
+    )
+    profile = {}
+    for field, label, next_labels in labels:
+        match = re.search(label + r'[：:]\s*(.*?)(?=\s*(?:' + next_labels + r')[：:]|$)', text)
+        value = match.group(1).strip() if match else ''
+        if field == 'height':
+            value = re.sub(r'\s*cm$', '', value, flags=re.I)
+        # Unknown placeholders do not count as published profile facts.
+        if value and not ('？' in value and not re.search(r'\d', value)):
+            profile[field] = value
+    return profile
+
 def main():
     import datetime
     today = datetime.date.today().isoformat()
@@ -245,7 +269,8 @@ def main():
                       'cv_zh': info['cv'], 'cv': info['cv'],
                       'img': '/uma_official/%s.png' % cid,
                       'page': 'https://zh.moegirl.org.cn/' + urllib.parse.quote(info['zh']),
-                      'main': official_main, 'sub': official_sub})
+                      'main': official_main, 'sub': official_sub,
+                      **profile_from_intro(info['block'])})
         va_targets.append(info['cv'])
 
     # 重排（官方顺序）+ 写回
