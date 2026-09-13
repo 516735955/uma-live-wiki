@@ -587,8 +587,8 @@
                         </a>
                     </li>
                 </ul>
-                <button v-if="songLives.length > 10 && !songLivesExpanded" class="song-list-toggle" type="button" @click="songLivesExpanded = true">
-                    展开其余 {{ songLives.length - 10 }} 场演出
+                <button v-if="songLives.length > 10" class="song-list-toggle" type="button" @click="songLivesExpanded = !songLivesExpanded">
+                    {{ songLivesExpanded ? '折叠' : ('展开其余 ' + (songLives.length - 10) + ' 场演出') }}
                 </button>
             </div>
             </template>
