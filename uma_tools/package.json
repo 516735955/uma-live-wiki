@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "node server.js --no-crawl",
     "serve:auto": "node server.js",
+    "test:catalog": "node test_catalog_store.js",
     "scrape": "node scrape.js",
     "apply": "node apply.js"
   }
