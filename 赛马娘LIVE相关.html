@@ -2,13 +2,23 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>赛马娘综合站</title>
-<link rel="stylesheet" href="/uma_tools/app.css">
-<script defer src="/uma_tools/vendor/vue.global.prod.js"></script>
-<script defer src="/uma_tools/app.js"></script>
+<style>
+html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK SC","Noto Sans CJK JP",system-ui,sans-serif}.app-boot{min-height:100vh;background:#f5f4f9}.app-boot-bar{height:76px;background:#3157e8 url('/uma_tools/img/bg_kv_nav.png') center/cover;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1280px)/2));color:#fff;font-size:22px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(24,39,93,.18)}.app-boot-main{width:min(1280px,calc(100% - 40px));margin:32px auto}.app-boot-line{height:46px;border-radius:8px;background:linear-gradient(100deg,#fff 20%,#eef1fa 38%,#fff 56%);background-size:220% 100%;animation:boot-shimmer 1.2s ease-in-out infinite}.app-boot-line+.app-boot-line{height:180px;margin-top:20px}@keyframes boot-shimmer{to{background-position-x:-220%}}@media(max-width:700px){.app-boot-bar{height:58px;padding:0 18px;font-size:17px}.app-boot-main{width:calc(100% - 28px);margin-top:20px}.app-boot-line{height:44px}.app-boot-line+.app-boot-line{height:136px}}@media(prefers-reduced-motion:reduce){.app-boot-line{animation:none;background:#fff}}
+</style>
+<link rel="stylesheet" href="/uma_tools/app.css?v=20260914-12">
+<script defer src="/uma_tools/vendor/vue.global.prod.js?v=3"></script>
+<script defer src="/uma_tools/app-api.js?v=20260914-12"></script>
+<script defer src="/uma_tools/ui-components.js?v=20260914-12"></script>
+<script defer src="/uma_tools/app.js?v=20260914-12"></script>
 </head>
 <body>
+
+<div id="app-boot" class="app-boot" aria-hidden="true">
+    <div class="app-boot-bar">赛马娘演出综合站</div>
+    <div class="app-boot-main"><div class="app-boot-line"></div><div class="app-boot-line"></div></div>
+</div>
 
 <div id="app" v-cloak>
 
@@ -60,7 +70,7 @@
         </nav>
     </header>
 
-    <div class="container" v-if="!home && routeReady">
+    <div class="container" v-if="!home">
         <nav v-if="breadcrumbItems.length" class="route-breadcrumb" aria-label="面包屑">
             <template v-for="(item,index) in breadcrumbItems" :key="index">
                 <span v-if="index" aria-hidden="true">›</span>
@@ -188,6 +198,9 @@
                 </div>
 
                 <div id="eventsRowsTop" class="event-catalog">
+                    <template v-if="eventsLoading && !eventsAll.length">
+                        <div v-for="i in 6" :key="'event-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+                    </template>
                     <button v-for="(event,i) in eventsPaged" :key="event.id" class="event-catalog-row" type="button" @click="openEvent(event)">
                         <span class="event-catalog-cover">
                             <img :src="event.image" :alt="event.title" :loading="i<4?'eager':'lazy'" @error="onEventImageError($event,event)">
@@ -199,13 +212,12 @@
                         </span>
                         <span class="event-catalog-facts">
                             <i>{{ eventKindLabel(event.kind) }}</i>
-                            <b>{{ event.cast.length }} 位出演</b>
+                            <b>{{ event.cast_count || 0 }} 位出演</b>
                             <b v-if="eventSongCount(event)">{{ eventSongCount(event) }} 首曲目</b>
                         </span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </button>
-                    <div v-if="eventsLoading && !eventsAll.length" class="ui-state">活动加载中</div>
-                    <div v-else-if="!eventsFiltered.length" class="ui-state">没有符合条件的活动</div>
+                    <div v-if="!eventsLoading && !eventsFiltered.length" class="ui-state">没有符合条件的活动</div>
                 </div>
                 <div v-if="eventsFiltered.length" class="ui-pager">
                     <span>{{ eventsPageStart }}–{{ eventsPageEnd }} / {{ eventsFiltered.length }}</span>
@@ -277,7 +289,13 @@
                         <header class="entity-section-title"><h2>节目影像</h2></header>
                         <div class="event-video-grid">
                             <div v-for="media in eventMediaCards" :key="media.key" class="event-video" :class="'event-video-'+media.platform">
-                                <iframe v-if="media.embedUrl" :src="media.embedUrl" :title="eventDetail.title+' · '+media.label" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe v-if="media.embedUrl && activeMediaKey===media.key" :src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+' · '+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <button v-else-if="media.embedUrl" class="event-video-launch" type="button" @click="activateEventMedia(media)">
+                                    <img :src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
+                                    <span class="event-video-platform">{{ media.platformLabel }}</span>
+                                    <span class="event-video-label">{{ media.label }}</span>
+                                    <span class="event-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></span>
+                                </button>
                                 <a v-else :href="media.url" target="_blank" rel="noopener noreferrer">
                                     <img :src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
                                     <span class="event-video-platform">{{ media.platformLabel }}</span>
@@ -297,6 +315,9 @@
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="songDbQuery" placeholder="搜索曲名、版本、歌手或专辑" autocomplete="off"><button v-if="songDbQuery" type="button" @click.prevent="songDbQuery=''" aria-label="清空搜索">×</button></label>
                 </div>
                 <div id="songArchiveTop" class="song-catalog">
+                    <template v-if="songCatalogLoading && !songCatalog.songs.length">
+                        <div v-for="i in 7" :key="'song-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+                    </template>
                     <div v-for="song in songDbPaged" :key="song.id" class="song-catalog-row" role="button" tabindex="0" @click="openSong(song)" @keydown.enter="openSong(song)">
                         <img :src="coverThumb(song.cover,128)" :alt="song.title" loading="lazy" @error="onCatalogImageError($event)">
                         <span><b>{{ song.title }}</b><span class="catalog-subline">{{ songSingerLabel(song) }}</span></span>
@@ -337,11 +358,11 @@
                             <table v-if="version.releases.length" class="data-table">
                                 <thead><tr><th>#</th><th>专辑</th><th>发售日</th><th>歌手</th><th>试听</th></tr></thead>
                                 <tbody><tr v-for="release in version.releases" :key="release.album_id+'-'+release.track_number">
-                                    <td>{{ release.track_number }}</td>
-                                    <td><button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,96)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.catalog || release.type }}</span></span></button></td>
-                                    <td>{{ release.release_date || '—' }}</td>
-                                    <td><div v-if="release.vocalists.length" class="performer-chip-list compact"><button v-for="vocalist in release.vocalists" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.character.color_main}" @click="openVoice(vocalist.voice_actor_id)"><img :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div><span v-else>{{ release.artist || '—' }}</span></td>
-                                    <td><button v-if="release.audio_url" class="track-play" type="button" :class="{playing:isActive(release.audio_url)}" @click="playSongRelease({version:version,release:release},$event)" :aria-label="isActive(release.audio_url)?'暂停':'播放'"><svg v-if="isActive(release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button><span v-else>—</span></td>
+                                    <td data-label="#">{{ release.track_number }}</td>
+                                    <td data-label="专辑"><button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,96)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.catalog || release.type }}</span></span></button></td>
+                                    <td data-label="发售日">{{ release.release_date || '—' }}</td>
+                                    <td data-label="歌手"><div v-if="release.vocalists.length" class="performer-chip-list compact"><button v-for="vocalist in release.vocalists" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.character.color_main}" @click="openVoice(vocalist.voice_actor_id)"><img :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div><span v-else>{{ release.artist || '—' }}</span></td>
+                                    <td data-label="试听"><button v-if="release.audio_url" class="track-play" type="button" :class="{playing:isActive(release.audio_url)}" @click="playSongRelease({version:version,release:release},$event)" :aria-label="isActive(release.audio_url)?'暂停':'播放'"><svg v-if="isActive(release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button><span v-else>—</span></td>
                                 </tr></tbody>
                             </table>
                             <div v-else class="ui-state compact">暂无收录信息</div>
@@ -353,10 +374,10 @@
                     <table v-if="songDetailPerformances.length" class="data-table">
                         <thead><tr><th>日期</th><th>活动 / 场次</th><th>版本</th><th>演唱角色</th></tr></thead>
                         <tbody><tr v-for="row in songDetailPerformances" :key="row.performance.session_id+'-'+row.performance.performance_index">
-                            <td>{{ row.performance.session_date || row.performance.event_date || '—' }}</td>
-                            <td><button class="text-link stacked" type="button" @click="openEventUrl(row.performance.event_url)"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }} · 第 {{ row.performance.performance_index }} 首</span></button></td>
-                            <td>{{ row.version.version_label || '原始版本' }}</td>
-                            <td><button v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)"><img :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></button></td>
+                            <td data-label="日期">{{ row.performance.session_date || row.performance.event_date || '—' }}</td>
+                            <td data-label="活动 / 场次"><button class="text-link stacked" type="button" @click="openEventUrl(row.performance.event_url)"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }} · 第 {{ row.performance.performance_index }} 首</span></button></td>
+                            <td data-label="版本">{{ row.version.version_label || '原始版本' }}</td>
+                            <td data-label="演唱角色"><button v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)"><img :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></button></td>
                         </tr></tbody>
                     </table>
                     <div v-else class="ui-state compact">暂无现场演出</div>
@@ -369,6 +390,7 @@
         <div id="tab-db-voice" v-if="activeTab==='database' && dbView==='voice'" class="tab-content active archive-surface">
             <template v-if="!voiceDetail">
                 <div class="archive-toolbar"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="va-search" id="vaSearch" placeholder="搜索声优名或角色名" autocomplete="off"></label></div>
+                <div v-if="voiceLoading && !voiceProfiles.length" class="archive-card-skeletons" aria-hidden="true"><span v-for="i in 8" :key="'voice-load-'+i"></span></div>
                 <ul class="va-grid" id="vaGrid"></ul>
                 <div class="ui-state" id="vaNoData">没有找到匹配的声优</div>
             </template>
@@ -395,12 +417,13 @@
                         <div><dt>生日</dt><dd>{{ voiceFieldLabel(voiceDetail,'birthday') }}</dd></div>
                         <div><dt>出身地</dt><dd>{{ voiceFieldLabel(voiceDetail,'birthplace') }}</dd></div>
                         <div><dt>事务所</dt><dd>{{ voiceFieldLabel(voiceDetail,'agency') }}</dd></div>
-                        <div><dt>歌曲</dt><dd>{{ voiceAppearance.songs.length }} 首</dd></div>
-                        <div><dt>出演</dt><dd>{{ voiceAppearance.events.length }} 场</dd></div>
+                        <div><dt>歌曲</dt><dd>{{ (voiceDetail.stats && voiceDetail.stats.songs) || 0 }} 首</dd></div>
+                        <div><dt>出演</dt><dd>{{ (voiceDetail.stats && voiceDetail.stats.events) || 0 }} 场</dd></div>
                     </dl>
                 </section>
                 <section v-else-if="voiceSection==='songs'" class="entity-section">
-                    <div v-if="voiceAppearance.songs.length" class="relation-song-list">
+                    <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">歌曲信息加载中</div>
+                    <div v-else-if="voiceAppearance.songs.length" class="relation-song-list">
                         <div v-for="song in voiceAppearance.songs" :key="song.song_id" class="relation-song-row" :class="{open:expandedRelationSongId===song.song_id}">
                             <button class="relation-song-summary" type="button" :aria-expanded="expandedRelationSongId===song.song_id" @click="toggleRelationSong(song.song_id)"><img :src="coverThumb((relationSong(song)||{}).cover,112)" alt=""><span><b>{{ song.name }}</b><span class="relation-song-meta">{{ song.releases }} 次收录 · {{ song.version_ids.length }} 个版本</span></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
                             <div v-if="expandedRelationSongId===song.song_id" class="relation-song-detail">
@@ -420,7 +443,8 @@
                 </section>
                 <section v-else class="entity-section">
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="voiceHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="voiceHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
-                    <div v-if="voicePastByYear.length" class="history-years"><section v-for="group in voicePastByYear" :key="group.year"><h2>{{ group.year }}</h2><button v-for="event in group.events" :key="event.event_id" @click="openEvent(event.event_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></section></div>
+                    <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
+                    <div v-else-if="voicePastByYear.length" class="history-years"><section v-for="group in voicePastByYear" :key="group.year"><h2>{{ group.year }}</h2><button v-for="event in group.events" :key="event.event_id" @click="openEvent(event.event_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></section></div>
                     <div v-else class="ui-state compact">暂无出演记录</div>
                 </section>
             </article>
@@ -438,6 +462,9 @@
                     <div class="ui-filter-group"><span>年份</span><div><button type="button" :class="{active:relYear===''}" @click="relYear=''">全部</button><button v-for="year in relYearList" :key="year" type="button" :class="{active:relYear===year}" @click="relYear=year">{{ year }}</button></div></div>
                 </div>
                 <div class="albums-grid album-database-grid">
+                    <template v-if="albumsLoading && !albums.length">
+                        <div v-for="i in 8" :key="'album-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div>
+                    </template>
                     <button v-for="(album,index) in relPaged" :key="album.name" type="button" class="album-card" :style="coverStyle(album)" @click="openAlbumFromDb(album)">
                         <img class="album-cover" :src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 6 ? 'eager' : 'lazy'" :fetchpriority="index < 2 ? 'high' : 'auto'" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
                         <div class="album-info">
@@ -506,7 +533,8 @@
                 </section>
                 <section v-show="charSection==='pedigree'" class="pedigree-section" id="cCharBlood"></section>
                 <section v-if="charSection==='songs'" class="entity-section">
-                    <div v-if="charAppearance.songs.length" class="relation-song-list">
+                    <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">歌曲信息加载中</div>
+                    <div v-else-if="charAppearance.songs.length" class="relation-song-list">
                         <div v-for="song in charAppearance.songs" :key="song.song_id" class="relation-song-row" :class="{open:expandedRelationSongId===song.song_id}">
                             <button class="relation-song-summary" type="button" :aria-expanded="expandedRelationSongId===song.song_id" @click="toggleRelationSong(song.song_id)"><img :src="coverThumb((relationSong(song)||{}).cover,112)" alt=""><span><b>{{ song.name }}</b><span class="relation-song-meta">{{ song.releases }} 次收录 · {{ song.version_ids.length }} 个版本</span></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
                             <div v-if="expandedRelationSongId===song.song_id" class="relation-song-detail">
@@ -526,7 +554,8 @@
                 </section>
                 <section v-if="charSection==='appearances'" class="entity-section">
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="charHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="charHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
-                    <div v-if="charHistoryEvents.length" class="history-list"><button v-for="event in charHistoryEvents" :key="event.event_id" @click="openEvent(event.event_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></div>
+                    <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
+                    <div v-else-if="charHistoryEvents.length" class="history-list"><button v-for="event in charHistoryEvents" :key="event.event_id" @click="openEvent(event.event_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></div>
                     <div v-else class="ui-state compact">暂无出演记录</div>
                 </section>
             </article>
