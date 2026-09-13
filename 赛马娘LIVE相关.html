@@ -6,7 +6,7 @@
 <title>赛马娘综合站</title>
 <link rel="stylesheet" href="/uma_tools/app.css?v=20260912-3">
 <script defer src="/uma_tools/vendor/vue.global.prod.js"></script>
-<script defer src="/uma_tools/app.js?v=20260913-4"></script>
+<script defer src="/uma_tools/app.js?v=20260913-6"></script>
 </head>
 <body>
 
@@ -412,7 +412,7 @@
                         <div class="live-left-title">{{ liveDetailTitle }}</div>
                         <div class="live-perf-list" id="livePerfList">
                             <div v-for="(s,pi) in (currentGroup?currentGroup.subs:[])" :key="pi" class="live-perf-item" :class="{selected: pi===livePerf}" :id="'livePerf_'+pi">
-                                <div class="live-perf-head" @click="selectLivePerf(pi)"><span>{{ s.title }}</span><span class="live-perf-date">{{ s.date }}</span></div>
+                                <div class="live-perf-head" @click="selectLivePerf(pi)"><span>{{ pi===livePerf ? liveDetailTitle : s.title }}</span><span class="live-perf-date">{{ s.date }}</span></div>
                                 <div v-if="s.nonlive && !!s.upcoming" class="live-perf-nodays">暂未开演</div>
                                 <div v-else-if="s.nonlive" class="live-perf-nodays">本活动 · 无私演歌单</div>
                                 <div v-else-if="s.days.length>1" class="live-day-btns">

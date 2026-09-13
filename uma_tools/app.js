@@ -1,5 +1,5 @@
 
-console.log('[uma-live] build 20260913-4');
+console.log('[uma-live] build 20260913-6');
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
 const SERIES_GRID = [{"index":0,"no":"1st","title":"1st EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/471238a99eba4fc09b643fd77362e450/event_01.png"},{"index":1,"no":"2nd","title":"2nd EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/00cea361d13343d085477a7bdcae48fa/event_02.png"},{"index":2,"no":"3rd","title":"3rd EVENT","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/df69154e90b44827a691cc454f9c5279/event_03.png"},{"index":3,"no":"4th","title":"4th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/aba8419984df479d94896b3ba20c23fa/event_05.png"},{"index":4,"no":"4thExtra","title":"4th EVENT EXTRA STAGE","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e0aaca1a08bd49fa889fa22f6a402311/event_04.png"},{"index":5,"no":"5th","title":"5th EVENT","meta":"4 场公演 · 8 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8c98ef15165742ae8492fec00157a8c5/event_06.png"},{"index":6,"no":"6th","title":"6th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8e25390d779041fbb1b9485a043cd235/event_tnf.png"},{"index":7,"no":"7th","title":"7th EVENT","meta":"5 场公演 · 10 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e33a4cddf22d4bf69e5d3fa0edc9a52a/event_ts.png"}];
@@ -1249,6 +1249,7 @@ createApp({
       }
       if (!oGroups || !cGroups || !oGroups[gi]) return gi;
       var gname = oGroups[gi].group;
+      if (cGroups[gi] && cGroups[gi].group === gname) return gi;
       for (var i = 0; i < cGroups.length; i++) {
         if (cGroups[i] && cGroups[i].group === gname) return i;
       }
@@ -1832,14 +1833,18 @@ createApp({
       if (!g || livePerf.value < 0 || livePerf.value >= g.subs.length) return null;
       return g.subs[livePerf.value];
     });
-    const liveDetailTitle = computed(function () {
-      const g = currentGroup.value;
-      const s = currentSub.value;
+    function catDetailTitle(g, s) {
       if (!g) return '';
-      if (s && s.title) return g.group + ' ' + s.title;
-      return g.group;
+      if (!s || !s.title) return g.group;
+      if (s.title === g.group) return g.group;
+      if (s.title.indexOf(g.group) === 0) return s.title;
+      return g.group + ' ' + s.title;
+    }
+    const liveDetailTitle = computed(function () {
+      return catDetailTitle(currentGroup.value, currentSub.value);
     });
     const liveInfoHtml = computed(function () {
+      const g = currentGroup.value;
       const s = currentSub.value;
       if (!s) return '<div class="live-setlist-placeholder">请在左侧选择一场公演</div>';
       const dp = (s.date || '').split(/\s+/);
@@ -1854,7 +1859,7 @@ createApp({
       }
       var srcHtml = (src || srcText) ?
         '<a class="live-info-date-src"' + (srcUrl ? ' href="' + srcUrl + '" target="_blank" rel="noopener" title="' + srcText + '"' : '') + '>出处：' + src + '</a>' : '';
-      let h = '<div class="live-info-title">' + (s.title||'') + '</div>';
+      let h = '<div class="live-info-title">' + catDetailTitle(g, s) + '</div>';
       h += '<div class="live-info-date"><span class="live-info-date-main">时间：' + dTime + '　地点：' + dPlace + '</span>' + srcHtml + '</div>';
       if (s.nonlive && !!s.upcoming) h += '<div class="live-info-cast"><div class="cast-line" style="color:var(--accent,#ff8c1a);font-weight:700;">暂未开演 · 歌单整理中</div></div>';
       if (s.cast) h += '<div class="live-info-cast">' + s.cast + '</div>';
@@ -1862,12 +1867,14 @@ createApp({
       return fixAvatarSrc(h);
     });
     const setlistTitle = computed(function () {
+      const g = currentGroup.value;
       const s = currentSub.value;
       if (!s) return '';
-      if (s.nonlive && !!s.upcoming) return s.title + ' · 暂未开演';
-      if (s.nonlive) return s.title + ' · 本活动';
+      const base = catDetailTitle(g, s);
+      if (s.nonlive && !!s.upcoming) return base + ' · 暂未开演';
+      if (s.nonlive) return base + ' · 本活动';
       if (liveDay.value >= s.days.length) return '';
-      return s.title + ' · ' + s.days[liveDay.value].label;
+      return base + ' · ' + s.days[liveDay.value].label;
     });
     const setlistLinks = computed(function () {
       const s = currentSub.value;
