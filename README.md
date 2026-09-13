@@ -19,18 +19,21 @@ uma-live-wiki/                    仓库根目录
 │   ├── albums.json                专辑与歌曲
 │   ├── live_data.json             编号系列公演与歌单
 │   ├── live_cat_data.json         其他演唱会分类/曲目
+│   ├── events/                    活动、节目、声优身份与人工订正源数据
+│   ├── events_catalog.json        统一活动目录（生成）
+│   ├── song_catalog.json          统一歌曲、版本与收录关系（生成）
+│   ├── appearance_index.json      角色、声优、歌曲出演关系（生成）
+│   ├── voice_actor_profiles.json  声优资料及其站内关系（生成）
+│   ├── catalog_manifest.json      本次生成物、覆盖率与输入摘要（生成）
 │   └── ...
 ├── album_covers/                  外部源较慢的专辑封面本地 WebP 副本
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
-├── role_svgs/                     单角色血统 SVG 历史资源
-├── pedigree_assets/               血统图静态历史资源
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
 │   ├── app.js                    SPA 逻辑
 │   ├── server.js                 静态文件与站内 API 服务（零依赖）
 │   ├── img/                       工具和页面共用的零散图片
 │   └── *.py *.js                  抓取/处理/校验脚本
-├── archive/                       不参与运行的历史页面、旧数据和诊断快照
 └── .gitignore
 ```
 
@@ -79,7 +82,7 @@ python3 uma_tools/build_pedigree.py
 
 当前 1223 条直接亲本记录均已完成来源核验：22 条来自 JBIS-Search，1201 条来自 netkeiba 的具体
 赛马血统页。source: "jbis" 与 source: "netkeiba" 表示对应核验来源，节点同时保存可访问的具体
-资料页。179 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按原创
+资料页。181 个角色页均有明确映射，其中 160 个赛马映射统一使用 kind: "horse"，其余角色按原创
 角色或非赛马角色维护
 
 160 个现实赛马角色页统一嵌入交互血统组件，默认展示三代祖先、已有角色页的同辈与两代内后代，
@@ -107,15 +110,28 @@ python3 uma_tools/build_pedigree.py
 | 数据 | 手动命令 | 主要输出 |
 |---|---|---|
 | Eventernote 活动 | `python3 uma_tools/crawl_events.py` | `data/events_data.json`；存在本地 Excel 镜像时会尝试同步 |
+| 官方节目源 | `python3 uma_tools/update_events.py --refresh-programs` | 刷新 `data/events/official_programs.json` 并重建统一活动数据 |
+| 声优资料源 | `python3 uma_tools/update_events.py --refresh-profiles` | 刷新 `data/events/voice_actor_details.json` 并重建声优档案 |
+| 统一活动、音乐与出演关系 | `python3 uma_tools/update_events.py` | `events_catalog.json`、`song_catalog.json`、`appearance_index.json`、`voice_actor_profiles.json`、`catalog_manifest.json` |
+| 全部远程源刷新 | `python3 uma_tools/update_events.py --refresh-all` | 刷新节目、声优资料并原子重建三份运行数据 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
 | 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
 | 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
 | Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
-| 出演统计 | `python3 uma_tools/gen_voice_part.py` | `data/actor_participation.json`、`data/voice_participation.json` |
+| 活动数据校验 | `python3 uma_tools/update_events.py --check` | 只读重建并核对已提交生成物，不写文件 |
 
 修改 `data/events_data.json`、`data/live_data.json` 或 `data/live_cat_data.json` 后，应再运行一次
-`python3 uma_tools/gen_voice_part.py`。出演统计只读取仓库内受版本控制的数据，不需要 `events_list.xlsx`，
-因此干净 clone 也能重建相同口径的结果。
+`python3 uma_tools/update_events.py`。它从仓库内受版本控制的源数据统一重建活动、歌曲与出演关系，
+不需要 `events_list.xlsx`。`live_data.json` 与 `live_cat_data.json` 是人工精调歌单的唯一来源：构建器只读，
+并在构建前后校验哈希；这两份文件没有记录的活动默认没有演出歌曲，程序不会从节目标题、出演阵容或其他来源猜歌。
+
+`data/events/voice_actor_identities.json` 是稳定声优 ID 与别名的唯一登记表；角色当前担当关系来自角色索引，
+活动、歌曲和声优页只消费统一生成物，不再各自维护一份映射。外部页面可以同时作为事实核验依据，但每个
+最终字段只由生成器选定一份规范值。
+
+正常启动 `uma_tools/server.js` 时，每 6 小时按“角色 → Eventernote → 专辑 → 官方节目/声优资料 → 统一生成”
+的顺序串行刷新一次；同一时刻只运行一条链路，刷新中收到的下一次请求会合并为一次后续运行。Lantis 新闻
+独立每 24 小时刷新。本地预览可使用 `--no-crawl` 关闭全部后台刷新。
 
 大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
 

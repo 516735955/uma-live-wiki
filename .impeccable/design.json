@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T00:00:00+08:00",
+  "title": "Design System: Uma Musume Live Wiki",
+  "extensions": {
+    "colorMeta": {
+      "navy": {"role":"neutral","displayName":"深海军蓝","canonical":"#20283b","tonalRamp":["#141a29","#20283b","#2c3650","#52639e","#7e8fba","#b2bdd5","#dce2ee","#f5f4f9"]},
+      "cobalt": {"role":"primary","displayName":"纹理钴蓝","canonical":"#3558d8","tonalRamp":["#18295f","#243e9e","#3558d8","#5f7be2","#8fa3ed","#bdc9f5","#dfe5fc","#f7f8ff"]},
+      "brand-orange": {"role":"secondary","displayName":"品牌橙","canonical":"#ff8c1a","tonalRamp":["#642800","#963e00","#b94c00","#d76500","#ed8012","#ff8c1a","#ffbd70","#fff0dc"]},
+      "paper": {"role":"neutral","displayName":"纸张灰","canonical":"#f5f4f9","tonalRamp":["#20283b","#48586c","#79889a","#aeb9c5","#d0d8e0","#e3e8ee","#f0f3f7","#f5f4f9"]},
+      "white": {"role":"neutral","displayName":"白色纸面","canonical":"#ffffff","tonalRamp":["#20283b","#48586c","#79889a","#aeb9c5","#d0d8e0","#e3e8ee","#f5f5f7","#ffffff"]}
+    },
+    "typographyMeta": {
+      "display": {"displayName":"中文档案标题","purpose":"中文主标题，配合蓝色底线。"},
+      "title": {"displayName":"实体 hero 标题","purpose":"活动、歌曲、专辑、角色和声优详情标题。"},
+      "body": {"displayName":"资料正文","purpose":"关系、表格、来源和说明的主要阅读文字。"}
+    },
+    "shadows": [
+      {"name":"capsule-rest","value":"0 5px 12px rgba(53,88,216,.10)","purpose":"白色搜索、下拉和分页胶囊从纸张背景中轻微分离。"},
+      {"name":"catalog-hover","value":"0 8px 20px rgba(53,88,216,.11)","purpose":"目录行和封面卡片悬停反馈。"},
+      {"name":"hero-cover-offset","value":"9px 10px 0 rgba(255,140,26,.88), 0 10px 24px rgba(22,40,92,.2)","purpose":"详情 hero 中封面与深蓝背景形成品牌橙偏移层。"}
+    ],
+    "motion": [
+      {"name":"official-ease","value":"cubic-bezier(.19,1,.22,1)","purpose":"目录封面缩放、按钮反馈和 hero 进入动画的主要缓动。"},
+      {"name":"state-transition","value":"180ms ease","purpose":"边界、颜色、背景和阴影的短状态变化。"}
+    ],
+    "breakpoints": [{"name":"tablet","value":"900px"},{"name":"mobile","value":"700px"},{"name":"stack","value":"480px"}]
+  },
+  "components": [
+    {"name":"Library Heading","kind":"custom","refersTo":"library-heading","description":"中文主标题与蓝色底线。","html":"<header class=\"ds-library-heading\"><h1>歌曲</h1><strong>1,032</strong></header>","css":".ds-library-heading{display:flex;align-items:flex-end;gap:16px;min-height:78px;padding:7px 2px 15px;border-bottom:3px solid #3654b7}.ds-library-heading h1{margin:0;color:#141a29;font:900 clamp(2rem,5vw,3rem)/1 Microsoft YaHei,PingFang SC,sans-serif;letter-spacing:.055em}.ds-library-heading strong{margin-left:auto;color:#20283b;font:900 1.55rem/1 Microsoft YaHei,PingFang SC,sans-serif}"},
+    {"name":"Capsule Search","kind":"input","refersTo":"capsule-search","description":"所有资料库共用的白色胶囊搜索。","html":"<label class=\"ds-capsule-search\"><span>⌕</span><input type=\"search\" placeholder=\"搜索曲名、活动或人物\"></label>","css":".ds-capsule-search{display:flex;align-items:center;min-height:44px;border:1px solid #a7b4d9;border-radius:999px;background:#fff;box-shadow:0 5px 12px rgba(53,88,216,.1)}.ds-capsule-search span{margin-left:14px;color:#20283b;font-size:20px}.ds-capsule-search input{width:100%;height:42px;padding:0 14px 0 11px;border:0;outline:0;background:transparent;font:400 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif}.ds-capsule-search:focus-within{border-color:#ff8c1a;box-shadow:0 0 0 3px rgba(255,140,26,.15),0 6px 14px rgba(53,88,216,.1)}"},
+    {"name":"Capsule Filter","kind":"chip","refersTo":"capsule-filter-active","description":"白色筛选胶囊与蓝色渐变 active 状态。","html":"<button class=\"ds-capsule-filter ds-capsule-filter-active\">全部</button>","css":".ds-capsule-filter{min-height:34px;padding:5px 14px;border:1px solid #c7cad5;border-radius:999px;background:#fff;color:#5f5f6a;font:700 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif;cursor:pointer;transition:transform 280ms cubic-bezier(.19,1,.22,1),background 180ms ease,border-color 180ms ease}.ds-capsule-filter:hover{border-color:#ff8c1a;color:#b94c00;transform:scale(.95)}.ds-capsule-filter-active{border-color:#3654b7;background:linear-gradient(105deg,#294cc2,#3f66db);color:#fff}"},
+    {"name":"Entity Hero","kind":"custom","refersTo":"entity-hero","description":"深蓝纹理详情 hero，承载封面、标题和关系。","html":"<article class=\"ds-entity-hero\"><div class=\"ds-entity-cover\"><span>♪</span></div><div><span class=\"ds-entity-kind\">歌曲</span><h1>うまぴょい伝説</h1></div></article>","css":".ds-entity-hero{display:grid;grid-template-columns:minmax(220px,34%) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:center;min-height:340px;padding:46px;overflow:hidden;border-radius:12px;background:linear-gradient(112deg,rgba(43,81,190,.84),rgba(62,101,217,.72)),url('/uma_tools/img/bg_blue.webp') center/cover;color:#fff;box-shadow:0 10px 24px rgba(37,67,156,.16)}.ds-entity-hero h1{margin:12px 0 0;font:900 clamp(1.8rem,4.2vw,3.35rem)/1.18 Microsoft YaHei,PingFang SC,sans-serif}.ds-entity-cover{display:grid;place-items:center;min-height:180px;border:4px solid #fff;border-radius:9px;background:#eef0f7;box-shadow:9px 10px 0 rgba(255,140,26,.88),0 10px 24px rgba(22,40,92,.2);color:#20283b;font-size:4rem}"},
+    {"name":"Archive Table","kind":"custom","refersTo":"data-table","description":"资料库、歌曲关系和现场曲目共同使用的表格。","html":"<div class=\"ds-table-frame\"><table class=\"ds-data-table\"><thead><tr><th>曲名</th><th>出演</th></tr></thead><tbody><tr><td><a href=\"#\">うまぴょい伝説</a></td><td>3 场</td></tr></tbody></table></div>","css":".ds-table-frame{overflow-x:auto;border-top:2px solid #20283b;background:#fff}.ds-data-table{width:100%;min-width:700px;border-spacing:0;border-collapse:collapse;color:#26272b;font:400 14px/1.5 Microsoft YaHei,PingFang SC,sans-serif}.ds-data-table th{padding:13px 12px;border-bottom:2px solid #20283b;background:#f5f6fb;color:#20283b;font-weight:900;text-align:left}.ds-data-table td{padding:12px;border-bottom:1px solid #e3e5ef}.ds-data-table tbody tr:hover td{background:#f4f7ff}.ds-data-table a{color:#20283b;font-weight:800;text-decoration:none}.ds-data-table a:hover{color:#b94c00}"}
+  ],
+  "narrative": {
+    "northStar":"深蓝纹理里的官方资料馆",
+    "overview":"这是一个围绕赛马娘 LIVE 资料建立的粉丝档案馆。官方 umamusume.jp 的深蓝纹理、强烈的中文标题和橙色品牌强调提供入口感；进入资料区后，白色纸张表面承载长列表和表格，让活动、歌曲、专辑、角色与声优之间的事实关系保持清楚。页面不是各自独立的仪表盘，而是一套可以沿关系连续浏览、随时返回的资料系统。\n\n资料库同级页面遵循同一套骨架：返回入口、中文大标题与蓝色底线、白色胶囊搜索/下拉/筛选、结果列表或资料表、详情 hero 与关系分节。活动详情直接承接已经精调的现场曲目表；专辑列表保留旧版封面卡片和 View more 悬停反馈，角色列表保留旧版彩色角色卡。信息优先于装饰，不使用粉色、暖色筛选面板、大红重置按钮、AI 式小字说明、英文微型副标题、侧边色条或嵌套卡片。",
+    "keyCharacteristics":["深蓝纹理导航和蓝色纹理详情 hero 建立站点识别，橙色只做导航、详情身份、角色卡和关键交互。","中文主标题和蓝色底线是资料页统一页头，不添加英文微型副标题。","搜索、下拉、筛选、分页和详情栏目使用统一的白底胶囊语言，筛选与分页 active 使用蓝色渐变。","白色纸张表面承载数据；关系 chip 由角色色圆形头像和中文名组成。","桌面端强调扫描，逐级收窄后 390px 仍保持清楚的主要文字。"],
+    "rules":[{"name":"The Blue Active Rule","body":"筛选和分页 active 统一使用深蓝到钴蓝的渐变；橙色只用于导航、详情身份、角色卡和关键交互，不使用粉色、暖色筛选容器或大红色重置动作抢占资料层级。","section":"colors"},{"name":"The Clear Record Rule","body":"主要资料文字不低于 14px；页头层级由中文标题和蓝色底线直接表达，不把关键内容藏进小字注释、侧边说明或仅供模型理解的标签。","section":"typography"},{"name":"The Texture-First Rule","body":"深度优先来自官方风格纹理、内容封面和白色纸张的对比；阴影只说明表面或交互状态，不替代信息结构。","section":"elevation"}],
+    "dos":["Do 使用深蓝纹理导航和详情 hero、橙色品牌强调、白色纸张表面。","Do 为所有同级资料库复用中文大标题、蓝底线和统一胶囊控件。","Do 延续专辑封面卡片与 View more hover，延续角色彩色卡和角色色头像 chip。","Do 让活动、歌曲、专辑、角色、声优通过真实关系互相跳转，并允许返回原浏览位置。","Do 让主要资料在桌面和 390px 手机都保持清晰可读，并尊重 prefers-reduced-motion。"],
+    "donts":["Don't 为同级资料库另造不同的页头、筛选、下拉或表格组件。","Don't 使用粉色、暖色筛选面板、大红重置、AI 式小字说明、英文微型副标题、侧边色条或嵌套卡片。","Don't 用指标卡、渐变大背景或装饰性统计替代真实资料和关系表。","Don't 把关系 chip 做成无头像的通用标签，也不要把角色色扩散成整页暖色背景。","Don't 覆盖人工精调的现场曲目来源，或推测没有证据的出演关系。"]
+  }
+}

@@ -524,9 +524,11 @@ button:focus-visible, a:focus-visible {
 .is-embedded body { min-height: 0; background: transparent; }
 .is-embedded .lab-header,
 .is-embedded .lab-controls,
-.is-embedded .lab-footnote { display: none; }
+.is-embedded .lab-footnote,
+.is-embedded .workspace-head { display: none; }
 .is-embedded .lab-page { width: 100%; margin: 0; }
 .is-embedded .lab-workspace { border: 0; border-radius: 0; box-shadow: none; }
+.is-embedded .workspace-body { height: min(680px, 100vh); }
 
 @media (max-width: 1100px) {
   .lab-controls { align-items: flex-start; }

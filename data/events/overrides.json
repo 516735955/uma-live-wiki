@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "stable_event_ids": {
+    "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-LONDON": "live-numbered-7th-event-3",
+    "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-SEOUL": "live-numbered-7th-event-4",
+    "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-YOKOHAMA": "live-numbered-7th-event-5"
+  },
+  "event_patches": {
+    "pakatube-20230401-lcpgkvi33w4": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20230402-msmggqxb6iq": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20230403-r4wedbhghtq": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20230404-vg5vsxyikf4": {
+      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+    },
+    "pakatube-20240215-8on-r5eeomk": {
+      "character_ids": ["goldship"]
+    },
+    "pakatube-20240318-p6mybsmi6o0": {
+      "character_ids": ["oguricap", "supercreek", "sakuralaurel", "naritabrian"]
+    },
+    "pakatube-20240531-granblue-fantasy-relink": {
+      "character_ids": ["goldship"]
+    },
+    "pakatube-20220616-shlgvtzq-c8": {
+      "character_ids": ["goldship"]
+    },
+    "pakatube-20250806-wb-shadowverse-worlds-beyond": {
+      "character_ids": ["fusaichipandora", "espoircity", "tosenjordan", "mejiropalmer", "goldcity"]
+    },
+    "pakatube-20251124-shadow-corridor": {
+      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+    },
+    "pakatube-20251125-shadow-corridor": {
+      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+    },
+    "pakatube-20251126-shadow-corridor": {
+      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+    },
+    "eventernote-2024-06-20": {
+      "cast_status": "verified",
+      "summary": "《TIF presents ONE SONG FES.》第1期的现场录制。",
+      "cast_add": [
+        {"name": "藤本侑里", "role": "ジャングルポケット", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
+        {"name": "福嶋晴菜", "role": "ダンツフレーム", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
+        {"name": "徳井青空", "role": "テイエムオペラオー", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+      ],
+      "sources_add": [
+        {"kind": "official_broadcaster", "label": "节目官方页", "url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+      ]
+    },
+    "live-other-2024-07-25-tif-presents-one-song-fes": {
+      "date": "2024-07-25",
+      "end_date": "2024-07-25",
+      "cast_status": "verified",
+      "cast_add": [
+        {"name": "藤本侑里", "role": "ジャングルポケット", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
+        {"name": "福嶋晴菜", "role": "ダンツフレーム", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
+        {"name": "徳井青空", "role": "テイエムオペラオー", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+      ],
+      "sources_add": [
+        {"kind": "official_broadcaster", "label": "节目官方页", "url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+      ]
+    },
+    "live-other-2024-03-16-venue101": {
+      "cast_status": "verified",
+      "cast_add": [
+        {"name": "和氣あず未", "role": "スペシャルウィーク", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
+        {"name": "Machico", "role": "トウカイテイオー", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
+        {"name": "Lynn", "role": "マルゼンスキー", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
+        {"name": "前田佳織里", "role": "ナイスネイチャ", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
+        {"name": "遠野ひかる", "role": "マチカネタンホイザ", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
+        {"name": "山根綺", "role": "ダイタクヘリオス", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
+        {"name": "秋奈", "role": "ドゥラメンテ", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"}
+      ]
+    },
+    "live-numbered-7th-event-3": {
+      "cast_status": "announced_tba",
+      "schedule_status": "announced_tba",
+      "metadata_status": "complete",
+      "summary": "伦敦站已由官方宣布，日期、场馆与出演阵容尚未公布。",
+      "sources_add": [
+        {"kind": "official_event_site", "label": "官方活动页", "url": "https://ts7th.umamusume.jp/"}
+      ]
+    },
+    "live-numbered-7th-event-4": {
+      "cast_status": "announced_tba",
+      "schedule_status": "announced_tba",
+      "metadata_status": "complete",
+      "summary": "首尔站已由官方宣布，日期、场馆与出演阵容尚未公布。",
+      "sources_add": [
+        {"kind": "official_event_site", "label": "官方活动页", "url": "https://ts7th.umamusume.jp/"}
+      ]
+    },
+    "live-numbered-7th-event-5": {
+      "cast_status": "announced_tba",
+      "schedule_status": "announced_tba",
+      "metadata_status": "complete",
+      "summary": "横滨站已由官方宣布，日期、场馆与出演阵容尚未公布。",
+      "sources_add": [
+        {"kind": "official_event_site", "label": "官方活动页", "url": "https://ts7th.umamusume.jp/"}
+      ]
+    }
+  },
+  "event_aliases": {
+    "official-special-20240316-venue101": "live-other-2024-03-16-venue101",
+    "official-special-20240303-venue101": "live-other-2024-03-16-venue101",
+    "official-special-20240724-tif-presents-one-song-fes": "live-other-2024-07-25-tif-presents-one-song-fes",
+    "live-other-2025-04-27-tv-vol-52": "paka-live-tv-052"
+  },
+  "voice_aliases": {
+    "佐伯伊織(NU-KO)": "佐伯伊織",
+    "高橋未奈美": "髙橋ミナミ",
+    "⻑江里加": "長江里加",
+    "浅見春那": "浅见春那",
+    "小西 克幸": "小西克幸",
+    "伊瀬 茉莉也": "伊瀬茉莉也"
+  },
+  "additional_voice_actors": [
+    {
+      "zh": "小西克幸",
+      "ja": "小西克幸",
+      "aliases": ["小西 克幸"]
+    },
+    {
+      "zh": "伊濑茉莉也",
+      "ja": "伊瀬茉莉也",
+      "aliases": ["伊瀬 茉莉也"]
+    },
+    {
+      "zh": "濑户桃子",
+      "ja": "瀬戸桃子",
+      "aliases": ["瀬戸 桃子"]
+    }
+  ],
+  "voice_actor_profile_overrides": {
+    "折原日菜": {
+      "birthday": "5月8日",
+      "birthplace": "東京都",
+      "agency": "フリーランス",
+      "official_profile": "https://hina-orihara.bitfan.id/",
+      "sources": [
+        {"kind": "official_profile", "label": "折原日菜官方网站", "url": "https://hina-orihara.bitfan.id/"},
+        {"kind": "reliable_media", "label": "事务所退所报道", "url": "https://encount.press/archives/935337/"}
+      ]
+    }
+  },
+  "non_voice_people": {
+    "project_staff": ["門田奈菜", "稲村梓", "舞台ウマ娘アンサンブル"],
+    "guest_artist": [
+      "オーイシマサヨシ", "蒼井翔太", "特邀嘉宾艺术家：［Alexandros］", "特邀嘉宾艺术家：影山ヒロノブ",
+      "中川翔子", "廣川奈々聖", "三品瑠香", "早﨑すずき", "金澤亜美", "中村朱里", "蛭田愛梨",
+      "小田柚葉", "杉浦優來", "工藤由愛", "松永里愛", "西川貴教", "伊藤美来", "高城れに",
+      "川上洋平", "白井眞輝"
+    ],
+    "virtual_guest": ["SIRO 魔界ノりりむ 天宮こころ", "天音かなた", "雪花ラミィ", "獅白ぼたん", "尾丸ポルカ"],
+    "media_guest": [
+      "荘口彰久", "伊藤隼之介", "石原章弘", "板津雄志", "角田晃一", "福原直英", "近藤智樹", "松本圭太", "浅川"
+    ]
+  },
+  "character_aliases": {
+    "贝尔诺莱特": "zankan_koukou",
+    "ベルノライト": "zankan_koukou",
+    "Belno Light": "zankan_koukou",
+    "シービー": "mrcb",
+    "エース": "katsuragiace",
+    "ローレル": "sakuralaurel",
+    "バブル": "bubblegumfellow",
+    "ファイン": "finemotion",
+    "シャカール": "airshakur",
+    "トップロード": "naritatoproad",
+    "ミラ子": "hishimiracle",
+    "スペ": "specialweek",
+    "グラス": "grasswonder",
+    "エル": "elcondorpasa",
+    "スカイ": "seiunsky",
+    "キング": "kinghalo",
+    "ファレノ": "phalaenopsis",
+    "アイ": "almondeye",
+    "ララ": "luckylilac",
+    "ブラスト": "blastonepiece",
+    "ブーケ": "currenbouquetdor",
+    "ラヴズ": "lovesonlyyou",
+    "マルシュ": "marchelorraine",
+    "パーマー": "mejiropalmer",
+    "ライアン": "mejiroryan",
+    "アルダン": "mejiroardan",
+    "ブライト": "mejirobright",
+    "ヴィルシーナ": "verxina",
+    "シュヴァル": "chevalgrand",
+    "ヴィブロス": "vivlos",
+    "フジ": "fujikiseki",
+    "パール": "seekingthepearl",
+    "フリオーソ": "furioso",
+    "アース": "soundsofearth",
+    "クラフト": "rheinkraft",
+    "シーザリオ": "cesario",
+    "スイープ": "sweeptosho",
+    "フラワー": "nishinoflower",
+    "メサイア": "airmessiah",
+    "ハート": "daringheart",
+    "ポッケ": "junglepocket",
+    "ダンツ": "dantsuflame",
+    "オペラオー": "tmoperao",
+    "ギムレット": "taninogimlet",
+    "クリスエス": "symbolikriss",
+    "ネイチャ": "nicenature",
+    "イクノ": "ikunodictus",
+    "タンホイザ": "matikanetannhauser",
+    "ロイス": "royceandroyce",
+    "ビリーヴ": "believe",
+    "ライトオ": "calstonelighto",
+    "デュランダル": "durandal",
+    "タイシン": "naritataishin",
+    "アケボノ": "hishiakebono",
+    "ライス": "riceshower",
+    "ヤン子": "foreveryoung",
+    "カジノ": "casinodrive",
+    "エピ": "epiphaneia",
+    "ロゴ": "logotype",
+    "フラッシュ": "eishinflash",
+    "ピサ": "victoirepisa",
+    "ローズ": "rosekingdom",
+    "ルーラー": "rulership",
+    "カレン": "currenchan",
+    "マーチャン": "astonmachan",
+    "ゼファー": "yamaninzephyr",
+    "タマモ": "tamamocross",
+    "アイネス": "inesfujin",
+    "シチー": "goldcity",
+    "リッキー": "copanorickey",
+    "タルマエ": "hokkotarumae",
+    "シオン": "winvariation",
+    "オルフェ": "orfevre",
+    "ジャーニー": "dreamjourney",
+    "ゴルシ": "goldship",
+    "ゴルシちゃん": "goldship"
+  },
+  "hidden_event_ids": []
+}

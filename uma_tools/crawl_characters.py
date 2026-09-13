@@ -21,6 +21,11 @@ MOE_LIST = ('https://mobile.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_De
 DATE_RE = re.compile(r'(19|20)\d{2}年\d{1,2}月\d{1,2}日')
 # 人工翻译/校对过角色介绍的白名单:爬虫不得覆盖这些角色的详情描述
 MANUAL_DESC = {'genuine', 'efforia', 'phalaenopsis'}
+OFFICIAL_COLOR_RE = re.compile(
+    r'href="/character/([a-z0-9_]+)/?"[^>]*'
+    r'style="[^"]*--color-main:\s*(#[0-9a-fA-F]{6});'
+    r'\s*--color-sub:\s*(#[0-9a-fA-F]{6});?"'
+)
 
 def write_text_atomic(path, content):
     fd, tmp = tempfile.mkstemp(prefix='.characters-', suffix='.tmp', dir=os.path.dirname(path))
@@ -90,10 +95,33 @@ def main():
     for m in re.finditer(r'href="/character/([a-z0-9_]+)/?"', off):
         if m.group(1) not in order:
             order.append(m.group(1))
+    official_colors = {
+        match.group(1): (match.group(2).upper(), match.group(3).upper())
+        for match in OFFICIAL_COLOR_RE.finditer(off)
+    }
+    color_updates = 0
+    for character in chars:
+        pair = official_colors.get(character['id'])
+        if not pair:
+            continue
+        if character.get('main', '').upper() != pair[0] or character.get('sub', '').upper() != pair[1]:
+            character['main'], character['sub'] = pair
+            color_updates += 1
     news_ids = [i for i in order if i not in existing]
-    print('官方角色:', len(order), '| 本地:', len(existing), '| 新增:', len(news_ids), flush=True)
+    print(
+        '官方角色:', len(order), '| 官方双色:', len(official_colors),
+        '| 本地:', len(existing), '| 颜色更新:', color_updates, '| 新增:', len(news_ids),
+        flush=True,
+    )
     if not news_ids:
-        print('无新角色，管线结束。', flush=True)
+        if color_updates:
+            pos = {character_id: index for index, character_id in enumerate(order)}
+            chars.sort(key=lambda character: pos.get(character['id'], 999))
+            write_text_atomic(
+                idx_path,
+                'window.CHAR_INDEX = ' + json.dumps(chars, ensure_ascii=False, separators=(',', ':')) + ';',
+            )
+        print('无新角色，官方双色同步完成。', flush=True)
         return 0
 
     # ---- 阶段0.5: 萌百登场人物门禁 ----
@@ -212,11 +240,12 @@ def main():
         add_detail.append("  '%s': %s" % (cid, json.dumps(obj, ensure_ascii=False)))
 
         # CHAR_INDEX 条目
+        official_main, official_sub = official_colors.get(cid, (info['color'] or '#8C83FF', '#FFFFFF'))
         chars.append({'id': cid, 'zh': info['zh'], 'ja': obj['ja'], 'en': obj['en'],
                       'cv_zh': info['cv'], 'cv': info['cv'],
                       'img': '/uma_official/%s.png' % cid,
                       'page': 'https://zh.moegirl.org.cn/' + urllib.parse.quote(info['zh']),
-                      'main': info['color'] or '#8c83ff', 'sub': '#ffffff'})
+                      'main': official_main, 'sub': official_sub})
         va_targets.append(info['cv'])
 
     # 重排（官方顺序）+ 写回
