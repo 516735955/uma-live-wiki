@@ -1,5 +1,5 @@
 
-console.log('[uma-live] build 20260912-6');
+console.log('[uma-live] build 20260913-3');
 const ALBUMS = [];
 let ALBUMS_LOADED = false;
 const SERIES_GRID = [{"index":0,"no":"1st","title":"1st EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/471238a99eba4fc09b643fd77362e450/event_01.png"},{"index":1,"no":"2nd","title":"2nd EVENT","meta":"1 场公演 · 1 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/00cea361d13343d085477a7bdcae48fa/event_02.png"},{"index":2,"no":"3rd","title":"3rd EVENT","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/df69154e90b44827a691cc454f9c5279/event_03.png"},{"index":3,"no":"4th","title":"4th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/aba8419984df479d94896b3ba20c23fa/event_05.png"},{"index":4,"no":"4thExtra","title":"4th EVENT EXTRA STAGE","meta":"1 场公演 · 2 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e0aaca1a08bd49fa889fa22f6a402311/event_04.png"},{"index":5,"no":"5th","title":"5th EVENT","meta":"4 场公演 · 8 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8c98ef15165742ae8492fec00157a8c5/event_06.png"},{"index":6,"no":"6th","title":"6th EVENT","meta":"2 场公演 · 4 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/8e25390d779041fbb1b9485a043cd235/event_tnf.png"},{"index":7,"no":"7th","title":"7th EVENT","meta":"5 场公演 · 10 个歌单","cover":"https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e33a4cddf22d4bf69e5d3fa0edc9a52a/event_ts.png"}];
@@ -793,10 +793,10 @@ createApp({
               }
               if (liveCatType.value === 'number_series_event') {
                 if (livePerf.value > 0 || liveDay.value > 0) path += '/' + livePerf.value + '/' + liveDay.value;
-              } else if (livePerf.value > 0) {
-                path += '/' + livePerf.value + '/' + liveDay.value;
-              } else if (liveDay.value > 0) {
-                path += '/' + liveDay.value;
+              } else {
+                var pf = livePerf.value >= 0 ? livePerf.value : 0;
+                var dy = liveDay.value >= 0 ? liveDay.value : 0;
+                path += '/' + pf + '/' + dy;
               }
             } else {
               path = LANG_PREFIX + '/live/' + liveCatType.value;
@@ -1221,6 +1221,11 @@ createApp({
       var dates = songAlbums.value.map(function (r) { return r.a.release || ''; }).filter(Boolean).sort();
       return dates[0] || '';
     });
+    function _liveDateNum(s) {
+      var m = String(s || '').match(/(\d{4})[.\-\/](\d{1,2})[.\-\/](\d{1,2})/);
+      if (!m) return 0;
+      return (+m[1]) * 10000 + (+m[2]) * 100 + (+m[3]);
+    }
     function _dayRangeSplit(dateStr, dayIdx) {
       var m = String(dateStr || '').match(/^(\d{4})[.\-\/](\d{1,2})[.\-\/](\d{1,2})\s*-\s*(\d{1,2})(?:\s|$)/);
       if (!m) return null;
@@ -1228,62 +1233,96 @@ createApp({
       var day = (dayIdx >= 1) ? d2 : d1;
       return { date: m[1] + '.' + parseInt(m[2], 10) + '.' + day, label: 'DAY' + (dayIdx + 1) };
     }
+    function _origToSortedCatIndex(cat, si, gi) {
+      var orig = liveCatDataOrig.value, cur = liveCatData.value;
+      if (!orig || !cur) return gi;
+      var oGroups, cGroups;
+      if (cat === 'cd') {
+        oGroups = orig.cd && orig.cd.sections && orig.cd.sections[si] && orig.cd.sections[si].groups;
+        cGroups = cur.cd && cur.cd.sections && cur.cd.sections[si] && cur.cd.sections[si].groups;
+      } else {
+        oGroups = orig[cat] && orig[cat].groups;
+        cGroups = cur[cat] && cur[cat].groups;
+      }
+      if (!oGroups || !cGroups || !oGroups[gi]) return gi;
+      var gname = oGroups[gi].group;
+      for (var i = 0; i < cGroups.length; i++) {
+        if (cGroups[i] && cGroups[i].group === gname) return i;
+      }
+      return gi;
+    }
     const songLives = computed(function () {
       if (!songDetail.value || !songDetail.value.song) return [];
       var name = songDetail.value.song.name;
       var out = [];
+      var seen = {};
       songEvData.value.forEach(function (ev) {
-        if (ev.songs && ev.songs.indexOf(name) !== -1) {
-          var liveDate = '';
-          var liveTitle = ev.title || '';
-          var liveUrl = ev.link || '';
-          if (liveUrl && !liveUrl.startsWith('/zh-Hans')) liveUrl = '/zh-Hans/live/' + liveUrl;
-          var liveArtist = (ev.voice_actors && ev.voice_actors.length) ? ev.voice_actors.join('、') : '';
-          var dayIdx = 0;
-          if (liveUrl) {
-            var parts = liveUrl.split('/').filter(Boolean);
-            if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
-            if (parts[0] === 'live' && parts[1] === 'number_series_event' && parts[2]) {
-              var idx = seriesNoToIndex(parts[2]);
-              if (idx >= 0 && liveData.value && liveData.value[idx]) {
-                var live = liveData.value[idx];
-                var pi = parseInt(parts[3], 10) || 0;
-                var di = parseInt(parts[4], 10) || 0;
-                dayIdx = di;
-                if (live.subs && live.subs[pi]) {
-                  liveDate = live.subs[pi].date || '';
-                  liveTitle = live.subs[pi].title || liveTitle;
-                  liveArtist = stripHtml(live.subs[pi].cast || '') || liveArtist;
-                }
-              }
-            } else if (parts[0] === 'live' && (parts[1] === 'cd' || parts[1] === 'twinkle' || parts[1] === 'other')) {
-              var type = parts[1];
-              var gi = parseInt(parts[2], 10) || 0;
-              var node = liveCatData.value && liveCatData.value[type];
-              if (node) {
-                var groups = node.groups || (node.sections && node.sections[0] && node.sections[0].groups) || [];
-                if (groups[gi]) {
-                  var sub = groups[gi].subs && groups[gi].subs[0];
-                  if (sub) {
-                    liveDate = sub.date || '';
-                    liveTitle = sub.title || groups[gi].group || liveTitle;
-                    liveArtist = stripHtml(sub.cast || '') || liveArtist;
-                  }
-                }
+        if (!ev.songs || ev.songs.indexOf(name) === -1) return;
+        var liveDate = '';
+        var liveTitle = ev.title || '';
+        var liveArtist = (ev.voice_actors && ev.voice_actors.length) ? ev.voice_actors.join('、') : '';
+        var dayIdx = ev.dayIndex || 0;
+        var liveUrl = '';
+        var parts = String(ev.link || '').split('/').filter(Boolean);
+        if (parts[0] && parts[0].toLowerCase() === 'zh-hans') parts = parts.slice(1);
+        if (parts[0] === 'live' && parts[1] === 'number_series_event' && parts[2]) {
+          var idx = seriesNoToIndex(parts[2]);
+          var pi = (parts.length >= 4) ? (parseInt(parts[3], 10) || 0) : 0;
+          liveUrl = '/zh-Hans/live/number_series_event/' + parts[2] + '/' + pi + '/' + dayIdx;
+          if (idx >= 0 && liveData.value && liveData.value[idx] && liveData.value[idx].subs && liveData.value[idx].subs[pi]) {
+            var sub = liveData.value[idx].subs[pi];
+            liveDate = sub.date || '';
+            liveTitle = sub.title || liveTitle;
+            liveArtist = stripHtml(sub.cast || '') || liveArtist;
+          }
+        } else if (parts[0] === 'live' && (parts[1] === 'cd' || parts[1] === 'twinkle' || parts[1] === 'other')) {
+          var type = parts[1];
+          var si = -1, giOrig = 0, pi2 = 0;
+          if (type === 'cd') {
+            if (parts.length >= 4) {
+              si = parseInt(parts[2], 10) || 0;
+              giOrig = parseInt(parts[3], 10) || 0;
+              pi2 = (parts.length >= 6) ? (parseInt(parts[4], 10) || 0) : 0;
+            } else {
+              si = 0;
+              giOrig = parseInt(parts[2], 10) || 0;
+              pi2 = 0;
+            }
+          } else {
+            giOrig = parseInt(parts[2], 10) || 0;
+            pi2 = (parts.length >= 5) ? (parseInt(parts[3], 10) || 0) : 0;
+          }
+          var giSorted = _origToSortedCatIndex(type, si, giOrig);
+          liveUrl = (type === 'cd')
+            ? '/zh-Hans/live/cd/' + si + '/' + giSorted + '/' + pi2 + '/0'
+            : '/zh-Hans/live/' + type + '/' + giSorted + '/' + pi2 + '/0';
+          var orig = liveCatDataOrig.value;
+          if (orig) {
+            var oGroups = (type === 'cd')
+              ? (orig.cd && orig.cd.sections && orig.cd.sections[si] && orig.cd.sections[si].groups)
+              : (orig[type] && orig[type].groups);
+            if (oGroups && oGroups[giOrig]) {
+              var subs = oGroups[giOrig].subs || [];
+              var sub2 = subs[pi2] || subs[0];
+              if (sub2) {
+                liveDate = sub2.date || '';
+                liveTitle = sub2.title || oGroups[giOrig].group || liveTitle;
+                liveArtist = stripHtml(sub2.cast || '') || liveArtist;
               }
             }
           }
-          var split = _dayRangeSplit(liveDate, dayIdx);
-          if (split) { liveDate = split.date; liveTitle = liveTitle + ' ' + split.label; }
-          out.push({ liveDate: liveDate, liveTitle: liveTitle, liveUrl: liveUrl, cat: ev.cat, artist: liveArtist });
+          dayIdx = 0;
+        } else {
+          liveUrl = ev.link || '';
+          if (liveUrl && !liveUrl.startsWith('/zh-Hans')) liveUrl = '/zh-Hans/live/' + liveUrl;
         }
+        var split = _dayRangeSplit(liveDate, dayIdx);
+        if (split) { liveDate = split.date; liveTitle = liveTitle + ' ' + split.label; }
+        if (liveUrl) { if (seen[liveUrl]) return; seen[liveUrl] = true; }
+        out.push({ liveDate: liveDate, liveTitle: liveTitle, liveUrl: liveUrl, cat: ev.cat, artist: liveArtist });
       });
       out.sort(function (a, b) {
-        var x = String(a.liveDate || ''), y = String(b.liveDate || '');
-        if (!x && !y) return 0;
-        if (!x) return 1;
-        if (!y) return -1;
-        return y.localeCompare(x);
+        return _liveDateNum(b.liveDate) - _liveDateNum(a.liveDate);
       });
       return out;
     });
@@ -2190,15 +2229,7 @@ createApp({
           events.forEach(function (ev) {
             (ev.days || []).forEach(function (d, dayIndex) {
               if (d.songs && d.songs.length) {
-                var dayLink = ev.link;
-                if (ev.link) {
-                  var lp = ev.link.split('/').filter(Boolean);
-                  if (lp.length - 2 >= 4) {
-                    dayLink = ev.link.replace(/\/\d+$/, '');
-                  }
-                  dayLink = dayLink + '/' + dayIndex;
-                }
-                sEv.push({ cat: ev.cat, songs: d.songs, link: dayLink, title: ev.title, voice_actors: d.voice_actors });
+                sEv.push({ cat: ev.cat, songs: d.songs, link: ev.link, dayIndex: dayIndex, title: ev.title, voice_actors: d.voice_actors });
               }
             });
           });
