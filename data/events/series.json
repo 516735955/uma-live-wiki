@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "series": [
-    {"id": "numbered-live", "name": "编号系列公演", "name_ja": "ナンバリングイベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/numbered-live.svg"},
-    {"id": "winning-live-release", "name": "WINNING LIVE 发售纪念活动", "name_ja": "WINNING LIVE 発売記念イベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/winning-live.svg"},
-    {"id": "starting-gate-release", "name": "STARTING GATE 发售纪念活动", "name_ja": "STARTING GATE 発売記念イベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/starting-gate.svg"},
-    {"id": "twinkle-circle", "name": "Twinkle Circle!", "name_ja": "Twinkle Circle!", "kind": "concert", "cover": "/uma_tools/img/event-covers/twinkle-circle.svg"},
-    {"id": "paka-live-tv", "name": "PakaLive TV", "name_ja": "ぱかライブTV", "kind": "official_program", "cover": "/uma_tools/img/event-covers/paka-live-tv.svg"},
-    {"id": "paka-live-tv-prime", "name": "PakaLive TV'", "name_ja": "ぱかライブTV'", "kind": "official_program", "cover": "/uma_tools/img/event-covers/paka-live-tv-prime.svg"},
-    {"id": "sokosoko-paka-live-tv", "name": "SokoSoko PakaLive TV", "name_ja": "そこそこぱかライブTV", "kind": "official_program", "cover": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg"},
-    {"id": "pakatube-character-program", "name": "PakaTube 角色节目", "name_ja": "ぱかチューブっ！キャラクター番組", "kind": "official_program", "cover": "/uma_tools/img/event-covers/pakatube.svg"},
-    {"id": "all-night-nippon-gold", "name": "赛马娘 All Night Nippon GOLD", "name_ja": "ウマ娘のオールナイトニッポンGOLD", "kind": "official_program", "cover": "/uma_tools/img/event-covers/ann-gold.svg"},
-    {"id": "official-special", "name": "官方特别节目", "name_ja": "公式特別番組", "kind": "official_program", "cover": "/uma_tools/img/event-covers/official-program.svg"}
+    {"id": "numbered-live", "name": "编号系列公演", "name_ja": "ナンバリングイベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/numbered-live.svg", "primary": "#315FC2", "secondary": "#FF8C1A"},
+    {"id": "winning-live-release", "name": "WINNING LIVE 发售纪念活动", "name_ja": "WINNING LIVE 発売記念イベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/winning-live.svg", "primary": "#4169D8", "secondary": "#FF8C1A"},
+    {"id": "starting-gate-release", "name": "STARTING GATE 发售纪念活动", "name_ja": "STARTING GATE 発売記念イベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/starting-gate.svg", "primary": "#219C9F", "secondary": "#B9D934"},
+    {"id": "twinkle-circle", "name": "Twinkle Circle!", "name_ja": "Twinkle Circle!", "kind": "concert", "cover": "/uma_tools/img/event-covers/twinkle-circle.svg", "primary": "#23AEB4", "secondary": "#FF8C1A"},
+    {"id": "paka-live-tv", "name": "PakaLive TV", "name_ja": "ぱかライブTV", "kind": "official_program", "cover": "/uma_tools/img/event-covers/paka-live-tv.svg", "primary": "#315FC2", "secondary": "#FF8C1A"},
+    {"id": "paka-live-tv-prime", "name": "PakaLive TV'", "name_ja": "ぱかライブTV'", "kind": "official_program", "cover": "/uma_tools/img/event-covers/paka-live-tv-prime.svg", "primary": "#4169D8", "secondary": "#34CED0"},
+    {"id": "sokosoko-paka-live-tv", "name": "SokoSoko PakaLive TV", "name_ja": "そこそこぱかライブTV", "kind": "official_program", "cover": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg", "primary": "#28A8AE", "secondary": "#B9D934"},
+    {"id": "pakatube-character-program", "name": "PakaTube 角色节目", "name_ja": "ぱかチューブっ！キャラクター番組", "kind": "official_program", "cover": "/uma_tools/img/event-covers/pakatube.svg", "primary": "#315FC2", "secondary": "#34CED0"},
+    {"id": "all-night-nippon-gold", "name": "赛马娘 All Night Nippon GOLD", "name_ja": "ウマ娘のオールナイトニッポンGOLD", "kind": "official_program", "cover": "/uma_tools/img/event-covers/ann-gold.svg", "primary": "#9B6B20", "secondary": "#F2C84B"},
+    {"id": "official-special", "name": "官方特别节目", "name_ja": "公式特別番組", "kind": "official_program", "cover": "/uma_tools/img/event-covers/official-program.svg", "primary": "#4169D8", "secondary": "#34CED0"}
   ]
 }

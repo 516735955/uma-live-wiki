@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T21:05:24+00:00",
+  "generated_at": "2026-09-13T04:46:52+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -6006,8 +6006,8 @@
           "name_ja": "ファレノプシス",
           "former": false,
           "image": "/uma_official/phalaenopsis.png",
-          "color_main": "#5ba4d9",
-          "color_sub": "#daeaf6"
+          "color_main": "#5BA4D9",
+          "color_sub": "#AE4555"
         }
       ],
       "stats": {
@@ -9734,8 +9734,8 @@
           "name_ja": "エフフォーリア",
           "former": false,
           "image": "/uma_official/efforia.png",
-          "color_main": "#3cbba7",
-          "color_sub": "#d4f0eb"
+          "color_main": "#3CBBA7",
+          "color_sub": "#B33137"
         }
       ],
       "stats": {
@@ -10306,5 +10306,5 @@
       }
     }
   ],
-  "build_id": "53724b61ff51060fe2ec"
+  "build_id": "9c82d86aceaa3f54e000"
 }
