@@ -647,7 +647,7 @@ function handleNewsIndex(res) {
       cacheControl: 'public, max-age=60, stale-while-revalidate=86400',
       etag: '"news-' + crypto.createHash('sha1').update(String(cached.generated_at || '')).digest('hex').slice(0, 12) + '"'
     });
-    if (Date.now() - newsIndexCache.at >= NEWS_TTL) refreshNewsIndex().catch(() => {});
+    if (!NO_AUTO_CRAWL && Date.now() - newsIndexCache.at >= NEWS_TTL) refreshNewsIndex().catch(() => {});
     return;
   }
   refreshNewsIndex()
