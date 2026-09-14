@@ -205,6 +205,14 @@ def build_export(source, characters):
             normalized["horse"] = canonical(normalized["horse"])
         normalized_mappings[character_id] = normalized
     character_order = [character["id"] for character in characters]
+    missing_mappings = [
+        character_id for character_id in character_order
+        if character_id not in normalized_mappings
+    ]
+    if missing_mappings:
+        raise ValueError("character mapping missing: %s" % ", ".join(
+            missing_mappings
+        ))
 
     children = defaultdict(list)
     for child_id, pair in parents.items():
