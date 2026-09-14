@@ -1,0 +1,68 @@
+name: sheet-sync
+
+# 定时从官方 Google Sheet（赛马娘LIVE歌单导出）同步新歌单到 live_cat_data.json，
+# 并重建活动目录。服务器只需 git pull（服务端没有 Python 也能自动更新歌单）。
+#
+# 流程：
+#   1. auto_setlists.py  下载 Sheet -> 找出新歌单 -> 全自动插入 live_cat_data.json
+#      （series 系列公演不自动改，写入 report 等人工）
+#   2. 仅当 Sheet 同步真的改了源数据时，才跑 update_events.py 重建目录
+#      （避免无变化时每天刷 generated_at 造成噪音提交）
+#   3. 有改动就自动 commit + push
+#
+# 依赖：Python 3.12 + openpyxl + Pillow（update_events 只用标准库）
+on:
+  schedule:
+    - cron: '16 2 * * *'        # 每天 02:16 UTC（北京时间 10:16）
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sheet-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl Pillow
+
+      - name: Sync setlists from official Google Sheet
+        run: python uma_tools/auto_setlists.py
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: Rebuild catalog if sheet sync changed sources
+        run: |
+          if git status --porcelain -- data/live_cat_data.json data/events_data.json | grep -q .; then
+            echo "Sheet sync changed sources; rebuilding catalog..."
+            python uma_tools/update_events.py
+          else
+            echo "No setlist changes; skipping rebuild."
+          fi
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: Commit generated data (if changed)
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(events): auto sync sheet setlists $(date -u +%Y-%m-%d)"
+            git push
+          fi
