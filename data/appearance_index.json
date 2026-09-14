@@ -8384,13 +8384,14 @@
           ]
         },
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -8970,6 +8971,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-numbered-6th-event-2025-10-18",
             "live-twinkle-2024-11-17-twinkle-circle-day2",
@@ -8990,7 +8992,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
+          "performances": 18
         },
         {
           "song_id": "song-glorious-moment-8308fce210",
@@ -9200,6 +9202,18 @@
           ],
           "version_ids": [
             "song-4e8cfa60e4-v-4e8cfa60e4"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 2
         },
@@ -9433,17 +9447,6 @@
           ],
           "version_ids": [
             "song-a6384dba1c-v-a6384dba1c"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -15422,8 +15425,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
             "eventernote"
           ]
@@ -16533,13 +16536,14 @@
           ]
         },
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -17256,6 +17260,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-6th-event-2025-10-18",
             "live-twinkle-2024-12-15-twinkle-circle",
             "live-twinkle-2024-12-15-twinkle-circle-2",
@@ -17281,7 +17286,7 @@
             "song-228f943b49-v-d8fa5ff1a4",
             "song-228f943b49-v-498bdf7439"
           ],
-          "performances": 23
+          "performances": 24
         },
         {
           "song_id": "song-4bfe85c283",
@@ -17729,6 +17734,17 @@
           ],
           "version_ids": [
             "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -18877,8 +18893,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
             "eventernote"
           ]
@@ -19677,13 +19693,14 @@
           ]
         },
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -19972,6 +19989,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-cd-2023-08-13-road-to-the-top",
             "live-numbered-5th-event-2023-07-15",
@@ -19982,7 +20000,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 7
+          "performances": 8
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -20079,6 +20097,18 @@
           ],
           "version_ids": [
             "song-11cbfce7df-v-11cbfce7df"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 2
         },
@@ -20257,17 +20287,6 @@
           ],
           "version_ids": [
             "song-happy-days-01845306a9-v-01845306a9"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -44739,13 +44758,14 @@
     "va-0089": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -44969,6 +44989,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-numbered-6th-event-2025-10-18",
             "live-numbered-6th-event-2025-05-24"
@@ -44976,7 +44997,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -45038,6 +45059,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-blow-my-gale-0d9e0c78df",
           "name": "BLOW my GALE",
           "event_ids": [
@@ -45067,6 +45100,17 @@
           ],
           "version_ids": [
             "song-o-ac4dfa58e3-v-ac4dfa58e3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-o-light-o-0864ec7338",
+          "name": "O-Light-O",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34"
+          ],
+          "version_ids": [
+            "song-o-light-o-0864ec7338-v-0864ec7338"
           ],
           "performances": 1
         },
@@ -45111,17 +45155,6 @@
           ],
           "version_ids": [
             "song-e05b91c506-v-e05b91c506"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -48245,13 +48278,14 @@
     "va-0098": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -48397,6 +48431,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-other-2025-11-15-animax-musix-2025-yokohama",
             "live-numbered-6th-event-2025-10-18"
@@ -48404,7 +48439,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-e05b91c506",
@@ -48417,6 +48452,18 @@
             "song-e05b91c506-v-e05b91c506"
           ],
           "performances": 3
+        },
+        {
+          "song_id": "song-gold-recollection-f1b218e1d0",
+          "name": "Gold-Recollection",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-gold-recollection-f1b218e1d0-v-f1b218e1d0"
+          ],
+          "performances": 2
         },
         {
           "song_id": "song-legend-changer-fcb0cca1c5",
@@ -48483,17 +48530,6 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-gold-recollection-f1b218e1d0",
-          "name": "Gold-Recollection",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-gold-recollection-f1b218e1d0-v-f1b218e1d0"
           ],
           "performances": 1
         },
@@ -48593,6 +48629,17 @@
           ],
           "version_ids": [
             "song-548d6d3907-v-548d6d3907"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -49065,13 +49112,14 @@
     "va-0102": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -49374,6 +49422,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-numbered-5th-event-2023-07-15",
             "live-cd-2023-05-07-winning-live-11",
@@ -49384,7 +49433,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 7
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -49445,6 +49494,18 @@
           ],
           "version_ids": [
             "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 2
         },
@@ -49604,17 +49665,6 @@
           ],
           "version_ids": [
             "song-e05b91c506-v-e05b91c506"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -50861,8 +50911,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
             "eventernote"
           ]
@@ -66864,8 +66914,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
             "eventernote"
           ]
@@ -79311,8 +79361,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
             "eventernote"
           ]
@@ -83053,8 +83103,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": "",
+          "kind": "concert",
+          "series_id": "winning-live-release",
           "evidence": [
             "eventernote"
           ]
@@ -105657,11 +105707,11 @@
     "finemotion": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "pakatube-20260712-overcooked-4",
@@ -105915,6 +105965,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-numbered-5th-event-2023-07-15",
             "live-cd-2023-05-07-winning-live-11",
@@ -105925,7 +105976,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 7
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -105986,6 +106037,18 @@
           ],
           "version_ids": [
             "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 2
         },
@@ -106145,17 +106208,6 @@
           ],
           "version_ids": [
             "song-e05b91c506-v-e05b91c506"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -115533,8 +115585,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "kind": "concert",
+          "series_id": "winning-live-release"
         }
       ],
       "songs": [
@@ -122331,11 +122383,11 @@
           "series_id": "numbered-live"
         },
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "paka-live-tv-prime-004",
@@ -122581,6 +122633,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-cd-2023-08-13-road-to-the-top",
             "live-numbered-5th-event-2023-07-15",
@@ -122591,7 +122644,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 7
+          "performances": 8
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -122688,6 +122741,18 @@
           ],
           "version_ids": [
             "song-11cbfce7df-v-11cbfce7df"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 2
         },
@@ -122866,17 +122931,6 @@
           ],
           "version_ids": [
             "song-happy-days-01845306a9-v-01845306a9"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -123434,11 +123488,11 @@
           "series_id": "numbered-live"
         },
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "paka-live-tv-prime-004",
@@ -124004,6 +124058,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-6th-event-2025-10-18",
             "live-twinkle-2024-12-15-twinkle-circle",
             "live-twinkle-2024-12-15-twinkle-circle-2",
@@ -124029,7 +124084,7 @@
             "song-228f943b49-v-d8fa5ff1a4",
             "song-228f943b49-v-498bdf7439"
           ],
-          "performances": 23
+          "performances": 24
         },
         {
           "song_id": "song-4bfe85c283",
@@ -124477,6 +124532,17 @@
           ],
           "version_ids": [
             "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -134313,11 +134379,11 @@
           "series_id": "numbered-live"
         },
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "pakatube-20260712-overcooked-4",
@@ -134769,6 +134835,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-numbered-6th-event-2025-10-18",
             "live-twinkle-2024-11-17-twinkle-circle-day2",
@@ -134789,7 +134856,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
+          "performances": 18
         },
         {
           "song_id": "song-glorious-moment-8308fce210",
@@ -134999,6 +135066,18 @@
           ],
           "version_ids": [
             "song-4e8cfa60e4-v-4e8cfa60e4"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 2
         },
@@ -135232,17 +135311,6 @@
           ],
           "version_ids": [
             "song-a6384dba1c-v-a6384dba1c"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -150540,8 +150608,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "eventernote-2026-09-20-2",
@@ -152674,11 +152742,11 @@
     "calstonelighto": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "paka-live-tv-prime-005",
@@ -152871,6 +152939,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-numbered-6th-event-2025-10-18",
             "live-numbered-6th-event-2025-05-24"
@@ -152878,7 +152947,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -152940,6 +153009,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-blow-my-gale-0d9e0c78df",
           "name": "BLOW my GALE",
           "event_ids": [
@@ -152969,6 +153050,17 @@
           ],
           "version_ids": [
             "song-o-ac4dfa58e3-v-ac4dfa58e3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-o-light-o-0864ec7338",
+          "name": "O-Light-O",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34"
+          ],
+          "version_ids": [
+            "song-o-light-o-0864ec7338-v-0864ec7338"
           ],
           "performances": 1
         },
@@ -153013,17 +153105,6 @@
           ],
           "version_ids": [
             "song-e05b91c506-v-e05b91c506"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-ee92751546",
-          "name": "トレセンラーメン列伝",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -156611,11 +156692,11 @@
     "staygold": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-13",
+          "event_id": "live-cd-2026-09-13-winning-live-34",
           "date": "2026-09-13",
-          "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "title": "WINNING LIVE 34 発売記念イベント",
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "paka-live-tv-prime-005",
@@ -156736,6 +156817,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
             "live-numbered-7th-event-2026-06-20",
             "live-other-2025-11-15-animax-musix-2025-yokohama",
             "live-numbered-6th-event-2025-10-18"
@@ -156743,7 +156825,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-e05b91c506",
@@ -156756,6 +156838,18 @@
             "song-e05b91c506-v-e05b91c506"
           ],
           "performances": 3
+        },
+        {
+          "song_id": "song-gold-recollection-f1b218e1d0",
+          "name": "Gold-Recollection",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-gold-recollection-f1b218e1d0-v-f1b218e1d0"
+          ],
+          "performances": 2
         },
         {
           "song_id": "song-legend-changer-fcb0cca1c5",
@@ -156822,17 +156916,6 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-gold-recollection-f1b218e1d0",
-          "name": "Gold-Recollection",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-gold-recollection-f1b218e1d0-v-f1b218e1d0"
           ],
           "performances": 1
         },
@@ -156932,6 +157015,17 @@
           ],
           "version_ids": [
             "song-548d6d3907-v-548d6d3907"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ee92751546",
+          "name": "トレセンラーメン列伝",
+          "event_ids": [
+            "live-cd-2026-09-13-winning-live-34"
+          ],
+          "version_ids": [
+            "song-ee92751546-v-ee92751546"
           ],
           "performances": 1
         },
@@ -157882,8 +157976,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "paka-live-tv-prime-006",
@@ -158769,8 +158863,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "paka-live-tv-prime-006",
@@ -158814,8 +158908,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "sokosoko-paka-live-tv-055",
@@ -158896,8 +158990,8 @@
           "event_id": "eventernote-2026-11-07",
           "date": "2026-11-07",
           "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-          "kind": "onsite",
-          "series_id": ""
+          "kind": "concert",
+          "series_id": "winning-live-release"
         },
         {
           "event_id": "pakatube-20260911-among-us-3d-6",
@@ -160179,6 +160273,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-09-13T06:51:09+00:00",
-  "build_id": "b26bc91b9bbf9e61e638"
+  "generated_at": "2026-09-14T16:16:09+00:00",
+  "build_id": "636fd7a47a5a842a005c"
 }

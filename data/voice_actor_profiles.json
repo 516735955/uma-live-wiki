@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T06:51:09+00:00",
+  "generated_at": "2026-09-14T16:16:09+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -664,7 +664,7 @@
       ],
       "stats": {
         "events": 39,
-        "concerts": 13,
+        "concerts": 14,
         "programs": 15,
         "songs": 14
       }
@@ -1720,7 +1720,7 @@
       ],
       "stats": {
         "events": 14,
-        "concerts": 4,
+        "concerts": 5,
         "programs": 6,
         "songs": 5
       }
@@ -1832,7 +1832,7 @@
       ],
       "stats": {
         "events": 45,
-        "concerts": 14,
+        "concerts": 15,
         "programs": 17,
         "songs": 20
       }
@@ -1943,7 +1943,7 @@
       ],
       "stats": {
         "events": 7,
-        "concerts": 2,
+        "concerts": 3,
         "programs": 3,
         "songs": 4
       }
@@ -2110,7 +2110,7 @@
       ],
       "stats": {
         "events": 14,
-        "concerts": 7,
+        "concerts": 8,
         "programs": 5,
         "songs": 13
       }
@@ -4844,7 +4844,7 @@
       ],
       "stats": {
         "events": 10,
-        "concerts": 3,
+        "concerts": 4,
         "programs": 5,
         "songs": 10
       }
@@ -5345,7 +5345,7 @@
       ],
       "stats": {
         "events": 8,
-        "concerts": 2,
+        "concerts": 3,
         "programs": 4,
         "songs": 5
       }
@@ -5567,7 +5567,7 @@
       ],
       "stats": {
         "events": 15,
-        "concerts": 6,
+        "concerts": 7,
         "programs": 8,
         "songs": 12
       }
@@ -6012,7 +6012,7 @@
       ],
       "stats": {
         "events": 3,
-        "concerts": 0,
+        "concerts": 1,
         "programs": 2,
         "songs": 2
       }
@@ -8183,7 +8183,7 @@
       ],
       "stats": {
         "events": 4,
-        "concerts": 1,
+        "concerts": 2,
         "programs": 2,
         "songs": 2
       }
@@ -9740,7 +9740,7 @@
       ],
       "stats": {
         "events": 2,
-        "concerts": 0,
+        "concerts": 1,
         "programs": 1,
         "songs": 2
       }
@@ -10076,7 +10076,7 @@
       ],
       "stats": {
         "events": 1,
-        "concerts": 0,
+        "concerts": 1,
         "programs": 0,
         "songs": 5
       }
@@ -10306,5 +10306,5 @@
       }
     }
   ],
-  "build_id": "b26bc91b9bbf9e61e638"
+  "build_id": "636fd7a47a5a842a005c"
 }

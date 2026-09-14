@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T06:51:09+00:00",
+  "generated_at": "2026-09-14T16:16:09+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "b7eb03fe490561e4e955a19566d134e425eb6efba4157249193a5c5c5e531c78",
+      "sha256": "b3a459d9a64a9608519cecddf1f99201e80d566be99ceceb6dd53acc6f6ee3f0",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "f86a6bb583664b15db2658861173e4c385f079bef8dc87b89a797f521eda2fad",
+      "sha256": "843c3111c76e934b40c68114041338fc957f7368f0ce5e042b53f74f43fcceb2",
       "preserved": true
     }
   },
   "coverage": {
     "events": 469,
     "by_kind": {
-      "concert": 79,
+      "concert": 81,
       "official_program": 226,
-      "onsite": 164
+      "onsite": 162
     },
     "by_mode": {
       "online": 226,
@@ -279,9 +279,9 @@
       "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
       "date": "2026-11-07",
       "end_date": "2026-11-07",
-      "kind": "onsite",
+      "kind": "concert",
       "mode": "onsite",
-      "series_id": "",
+      "series_id": "winning-live-release",
       "venue": "NEW PIER HALL(ニューピアホール)",
       "cast_status": "verified",
       "cast": [
@@ -393,7 +393,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "開場 15:00 開演 16:00 終演 17:00",
       "legacy_aliases": [],
       "setlist_status": "none"
@@ -1472,13 +1472,13 @@
       "setlist_status": "none"
     },
     {
-      "id": "eventernote-2026-09-13",
-      "title": "『ウマ娘 プリティーダービー』WINNING LIVE 34 発売記念イベント",
+      "id": "live-cd-2026-09-13-winning-live-34",
+      "title": "WINNING LIVE 34 発売記念イベント",
       "date": "2026-09-13",
       "end_date": "2026-09-13",
-      "kind": "onsite",
+      "kind": "concert",
       "mode": "onsite",
-      "series_id": "",
+      "series_id": "winning-live-release",
       "venue": "THE GRAND HALL",
       "cast_status": "verified",
       "cast": [
@@ -1487,13 +1487,21 @@
           "name": "桥本千波",
           "character_id": "finemotion",
           "role": "美妙姿势",
-          "evidence": "eventernote",
+          "evidence": "curated_live_cast",
           "source_url": "https://www.eventernote.com/events/483280",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
+              "kind": "curated_live_cast",
+              "url": ""
+            },
+            {
               "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/483280"
+            },
+            {
+              "kind": "curated_live_cast",
               "url": "https://www.eventernote.com/events/483280"
             }
           ]
@@ -1503,13 +1511,21 @@
           "name": "和多田美咲",
           "character_id": "meishodoto",
           "role": "名将怒涛",
-          "evidence": "eventernote",
+          "evidence": "curated_live_cast",
           "source_url": "https://www.eventernote.com/events/483280",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
+              "kind": "curated_live_cast",
+              "url": ""
+            },
+            {
               "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/483280"
+            },
+            {
+              "kind": "curated_live_cast",
               "url": "https://www.eventernote.com/events/483280"
             }
           ]
@@ -1519,13 +1535,21 @@
           "name": "前田佳织里",
           "character_id": "nicenature",
           "role": "优秀素质",
-          "evidence": "eventernote",
+          "evidence": "curated_live_cast",
           "source_url": "https://www.eventernote.com/events/483280",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
+              "kind": "curated_live_cast",
+              "url": ""
+            },
+            {
               "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/483280"
+            },
+            {
+              "kind": "curated_live_cast",
               "url": "https://www.eventernote.com/events/483280"
             }
           ]
@@ -1535,13 +1559,21 @@
           "name": "中村栞奈",
           "character_id": "naritatoproad",
           "role": "成田路",
-          "evidence": "eventernote",
+          "evidence": "curated_live_cast",
           "source_url": "https://www.eventernote.com/events/483280",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
+              "kind": "curated_live_cast",
+              "url": ""
+            },
+            {
               "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/483280"
+            },
+            {
+              "kind": "curated_live_cast",
               "url": "https://www.eventernote.com/events/483280"
             }
           ]
@@ -1551,13 +1583,21 @@
           "name": "望月裕美子",
           "character_id": "calstonelighto",
           "role": "金镇之光",
-          "evidence": "eventernote",
+          "evidence": "curated_live_cast",
           "source_url": "https://www.eventernote.com/events/483280",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
+              "kind": "curated_live_cast",
+              "url": ""
+            },
+            {
               "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/483280"
+            },
+            {
+              "kind": "curated_live_cast",
               "url": "https://www.eventernote.com/events/483280"
             }
           ]
@@ -1567,33 +1607,127 @@
           "name": "松田飒水",
           "character_id": "staygold",
           "role": "黄金旅程",
-          "evidence": "eventernote",
+          "evidence": "curated_live_cast",
           "source_url": "https://www.eventernote.com/events/483280",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
+              "kind": "curated_live_cast",
+              "url": ""
+            },
+            {
               "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/483280"
+            },
+            {
+              "kind": "curated_live_cast",
               "url": "https://www.eventernote.com/events/483280"
             }
           ]
         }
       ],
       "character_ids": [],
-      "sessions": [],
+      "sessions": [
+        {
+          "id": "live-cd-2026-09-13-winning-live-34-session-1",
+          "label": "本公演",
+          "date": "2026-09-13",
+          "songs": [
+            "トレセンラーメン列伝",
+            "O-Light-O",
+            "Gold-Recollection",
+            "うまぴょい伝説"
+          ],
+          "character_ids": [
+            "finemotion",
+            "meishodoto",
+            "nicenature",
+            "naritatoproad",
+            "calstonelighto",
+            "staygold"
+          ],
+          "performances": [
+            {
+              "song": "トレセンラーメン列伝",
+              "character_ids": [
+                "finemotion",
+                "meishodoto",
+                "nicenature",
+                "naritatoproad",
+                "calstonelighto",
+                "staygold"
+              ],
+              "song_id": "song-ee92751546",
+              "version_id": "song-ee92751546-v-ee92751546",
+              "song_title": "トレセンラーメン列伝"
+            },
+            {
+              "song": "O-Light-O",
+              "character_ids": [
+                "calstonelighto"
+              ],
+              "song_id": "song-o-light-o-0864ec7338",
+              "version_id": "song-o-light-o-0864ec7338-v-0864ec7338",
+              "song_title": "O-Light-O"
+            },
+            {
+              "song": "Gold-Recollection",
+              "character_ids": [
+                "staygold"
+              ],
+              "song_id": "song-gold-recollection-f1b218e1d0",
+              "version_id": "song-gold-recollection-f1b218e1d0-v-f1b218e1d0",
+              "song_title": "Gold-Recollection"
+            },
+            {
+              "song": "うまぴょい伝説",
+              "character_ids": [
+                "finemotion",
+                "meishodoto",
+                "nicenature",
+                "naritatoproad",
+                "calstonelighto",
+                "staygold"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセンラーメン列伝</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/FineMotion.png\" alt=\"美妙姿势\" title=\"美妙姿势\"><span class=\"perf-name\">美妙姿势</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MeishoDoto.png\" alt=\"名将怒涛\" title=\"名将怒涛\"><span class=\"perf-name\">名将怒涛</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NiceNature.png\" alt=\"优秀素质\" title=\"优秀素质\"><span class=\"perf-name\">优秀素质</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NaritaTopRoad.png\" alt=\"成田路\" title=\"成田路\"><span class=\"perf-name\">成田路</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/CalstoneLightO.png\" alt=\"金镇之光\" title=\"金镇之光\"><span class=\"perf-name\">金镇之光</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/StayGold.png\" alt=\"黄金旅程\" title=\"黄金旅程\"><span class=\"perf-name\">黄金旅程</span></span></td></tr><tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">O-Light-O</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/CalstoneLightO.png\" alt=\"金镇之光\" title=\"金镇之光\"><span class=\"perf-name\">金镇之光</span></span></td></tr><tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Gold-Recollection</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/StayGold.png\" alt=\"黄金旅程\" title=\"黄金旅程\"><span class=\"perf-name\">黄金旅程</span></span></td></tr><tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/FineMotion.png\" alt=\"美妙姿势\" title=\"美妙姿势\"><span class=\"perf-name\">美妙姿势</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MeishoDoto.png\" alt=\"名将怒涛\" title=\"名将怒涛\"><span class=\"perf-name\">名将怒涛</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NiceNature.png\" alt=\"优秀素质\" title=\"优秀素质\"><span class=\"perf-name\">优秀素质</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NaritaTopRoad.png\" alt=\"成田路\" title=\"成田路\"><span class=\"perf-name\">成田路</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/CalstoneLightO.png\" alt=\"金镇之光\" title=\"金镇之光\"><span class=\"perf-name\">金镇之光</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/StayGold.png\" alt=\"黄金旅程\" title=\"黄金旅程\"><span class=\"perf-name\">黄金旅程</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/live_cat_data.json",
+            "category": "cd",
+            "section": 0,
+            "group": 27,
+            "performance": 0,
+            "day": 0
+          },
+          "setlist_status": "verified"
+        }
+      ],
       "media": [],
       "sources": [
+        {
+          "kind": "curated_live",
+          "label": "站内精调歌单",
+          "url": "/zh-Hans/live/cd/0/27"
+        },
         {
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/483280"
         }
       ],
-      "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/onsite.svg",
-      "summary": "開場 16:00 開演 17:00 終演 18:00",
-      "legacy_aliases": [],
-      "setlist_status": "none"
+      "legacy_url": "/zh-Hans/live/cd/0/27",
+      "legacy_aliases": [
+        "/zh-Hans/live/cd/0/27",
+        "/zh-Hans/live/cd/0/27/0/0"
+      ],
+      "image": "/uma_tools/img/event-covers/winning-live.svg",
+      "summary": "",
+      "setlist_status": "verified"
     },
     {
       "id": "pakatube-20260911-among-us-3d-6",
@@ -69695,271 +69829,6 @@
       "setlist_status": "verified"
     },
     {
-      "id": "paka-live-tv-025",
-      "title": "ぱかライブTV Vol.25",
-      "date": "2023-01-28",
-      "end_date": "2023-01-28",
-      "kind": "official_program",
-      "mode": "online",
-      "series_id": "paka-live-tv",
-      "venue": "在线播出",
-      "cast_status": "verified",
-      "cast": [
-        {
-          "voice_actor_id": "va-0073",
-          "name": "德井青空",
-          "character_id": "tmoperao",
-          "role": "好歌剧",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0003",
-          "name": "Machico",
-          "character_id": "tokaiteio",
-          "role": "东海帝王",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0043",
-          "name": "土师亚文",
-          "character_id": "mejiroryan",
-          "role": "目白赖恩",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0168",
-          "name": "长江里加",
-          "character_id": "inesfujin",
-          "role": "艾尼斯风神",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0117",
-          "name": "田中爱美",
-          "character_id": "bikopegasus",
-          "role": "微光飞驹",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0055",
-          "name": "天海由梨奈",
-          "character_id": "mrcb",
-          "role": "千明代表",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0086",
-          "name": "春川芽生",
-          "character_id": "symbolikriss",
-          "role": "吉兆",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        }
-      ],
-      "character_ids": [],
-      "sessions": [
-        {
-          "id": "paka-live-tv-025-session-1",
-          "label": "本期节目",
-          "date": "2023-01-28",
-          "songs": [],
-          "character_ids": [],
-          "cast": [
-            {
-              "voice_actor_id": "va-0073",
-              "name": "德井青空",
-              "character_id": "tmoperao",
-              "role": "好歌剧",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0003",
-              "name": "Machico",
-              "character_id": "tokaiteio",
-              "role": "东海帝王",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0043",
-              "name": "土师亚文",
-              "character_id": "mejiroryan",
-              "role": "目白赖恩",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0168",
-              "name": "长江里加",
-              "character_id": "inesfujin",
-              "role": "艾尼斯风神",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0117",
-              "name": "田中爱美",
-              "character_id": "bikopegasus",
-              "role": "微光飞驹",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0055",
-              "name": "天海由梨奈",
-              "character_id": "mrcb",
-              "role": "千明代表",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0086",
-              "name": "春川芽生",
-              "character_id": "symbolikriss",
-              "role": "吉兆",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            }
-          ],
-          "setlist_status": "none"
-        }
-      ],
-      "media": [],
-      "sources": [
-        {
-          "kind": "community_archive",
-          "label": "Umamusume Wiki 补档",
-          "url": "https://umamusu.wiki/PakaLive_TV"
-        }
-      ],
-      "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/paka-live-tv.svg",
-      "summary": "\"Sweet Memories ♥ Tea Time\" event",
-      "schedule_status": "scheduled",
-      "metadata_status": "pending",
-      "legacy_aliases": [],
-      "setlist_status": "none"
-    },
-    {
       "id": "live-other-2023-01-28-1-28-18-00",
       "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
       "date": "2023-01-28",
@@ -70654,6 +70523,271 @@
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
       "setlist_status": "verified"
+    },
+    {
+      "id": "paka-live-tv-025",
+      "title": "ぱかライブTV Vol.25",
+      "date": "2023-01-28",
+      "end_date": "2023-01-28",
+      "kind": "official_program",
+      "mode": "online",
+      "series_id": "paka-live-tv",
+      "venue": "在线播出",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0073",
+          "name": "德井青空",
+          "character_id": "tmoperao",
+          "role": "好歌剧",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0003",
+          "name": "Machico",
+          "character_id": "tokaiteio",
+          "role": "东海帝王",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0043",
+          "name": "土师亚文",
+          "character_id": "mejiroryan",
+          "role": "目白赖恩",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0168",
+          "name": "长江里加",
+          "character_id": "inesfujin",
+          "role": "艾尼斯风神",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0117",
+          "name": "田中爱美",
+          "character_id": "bikopegasus",
+          "role": "微光飞驹",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0055",
+          "name": "天海由梨奈",
+          "character_id": "mrcb",
+          "role": "千明代表",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0086",
+          "name": "春川芽生",
+          "character_id": "symbolikriss",
+          "role": "吉兆",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "paka-live-tv-025-session-1",
+          "label": "本期节目",
+          "date": "2023-01-28",
+          "songs": [],
+          "character_ids": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0073",
+              "name": "德井青空",
+              "character_id": "tmoperao",
+              "role": "好歌剧",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0003",
+              "name": "Machico",
+              "character_id": "tokaiteio",
+              "role": "东海帝王",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0043",
+              "name": "土师亚文",
+              "character_id": "mejiroryan",
+              "role": "目白赖恩",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0168",
+              "name": "长江里加",
+              "character_id": "inesfujin",
+              "role": "艾尼斯风神",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0117",
+              "name": "田中爱美",
+              "character_id": "bikopegasus",
+              "role": "微光飞驹",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0055",
+              "name": "天海由梨奈",
+              "character_id": "mrcb",
+              "role": "千明代表",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0086",
+              "name": "春川芽生",
+              "character_id": "symbolikriss",
+              "role": "吉兆",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV"
+                }
+              ]
+            }
+          ],
+          "setlist_status": "none"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "community_archive",
+          "label": "Umamusume Wiki 补档",
+          "url": "https://umamusu.wiki/PakaLive_TV"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/paka-live-tv.svg",
+      "summary": "\"Sweet Memories ♥ Tea Time\" event",
+      "schedule_status": "scheduled",
+      "metadata_status": "pending",
+      "legacy_aliases": [],
+      "setlist_status": "none"
     },
     {
       "id": "live-other-2023-01-27-1-27-18-00",
@@ -117422,5 +117556,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "b26bc91b9bbf9e61e638"
+  "build_id": "636fd7a47a5a842a005c"
 }

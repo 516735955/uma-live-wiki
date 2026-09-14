@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T06:51:09+00:00",
+  "generated_at": "2026-09-14T16:16:09+00:00",
   "coverage": {
     "songs": 1032,
     "versions": 2119,
     "albums": 112,
     "release_tracks": 2230,
-    "live_performances": 1257
+    "live_performances": 1261
   },
   "songs": [
     {
@@ -29470,6 +29470,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-cd-2026-09-13-winning-live-34",
+              "event_title": "WINNING LIVE 34 発売記念イベント",
+              "event_date": "2026-09-13",
+              "kind": "concert",
+              "series_id": "winning-live-release",
+              "session_id": "live-cd-2026-09-13-winning-live-34-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-13",
+              "performance_index": 3,
+              "character_ids": [
+                "staygold"
+              ],
+              "voice_actor_ids": [
+                "va-0098"
+              ],
+              "event_url": "/zh-Hans/events/live-cd-2026-09-13-winning-live-34?session=live-cd-2026-09-13-winning-live-34-session-1"
+            },
+            {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
               "event_date": "2026-06-20",
@@ -29489,12 +29507,12 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1
+          "performance_count": 2
         }
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 1
+      "performance_count": 2
     },
     {
       "id": "song-gold-triumph-6a153359c1",
@@ -49386,8 +49404,12 @@
       "released_voice_actor_ids": [
         "va-0089"
       ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
+      "performed_character_ids": [
+        "calstonelighto"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0089"
+      ],
       "cover": "https://p1.music.126.net/1nK7g7Larj4DkSLAEK4oWw==/109951173537000972.jpg",
       "release_date": "2026-07-15",
       "versions": [
@@ -49429,14 +49451,33 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "live-cd-2026-09-13-winning-live-34",
+              "event_title": "WINNING LIVE 34 発売記念イベント",
+              "event_date": "2026-09-13",
+              "kind": "concert",
+              "series_id": "winning-live-release",
+              "session_id": "live-cd-2026-09-13-winning-live-34-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-13",
+              "performance_index": 2,
+              "character_ids": [
+                "calstonelighto"
+              ],
+              "voice_actor_ids": [
+                "va-0089"
+              ],
+              "event_url": "/zh-Hans/events/live-cd-2026-09-13-winning-live-34?session=live-cd-2026-09-13-winning-live-34-session-1"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0
+          "performance_count": 1
         }
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 0
+      "performance_count": 1
     },
     {
       "id": "song-o-ac4dfa58e3",
@@ -96287,6 +96328,34 @@
           ],
           "performances": [
             {
+              "event_id": "live-cd-2026-09-13-winning-live-34",
+              "event_title": "WINNING LIVE 34 発売記念イベント",
+              "event_date": "2026-09-13",
+              "kind": "concert",
+              "series_id": "winning-live-release",
+              "session_id": "live-cd-2026-09-13-winning-live-34-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-13",
+              "performance_index": 4,
+              "character_ids": [
+                "finemotion",
+                "meishodoto",
+                "nicenature",
+                "naritatoproad",
+                "calstonelighto",
+                "staygold"
+              ],
+              "voice_actor_ids": [
+                "va-0012",
+                "va-0034",
+                "va-0039",
+                "va-0089",
+                "va-0098",
+                "va-0102"
+              ],
+              "event_url": "/zh-Hans/events/live-cd-2026-09-13-winning-live-34?session=live-cd-2026-09-13-winning-live-34-session-1"
+            },
+            {
               "event_id": "live-cd-2026-08-16-winning-live-33",
               "event_title": "WINNING LIVE 33 発売記念イベント",
               "event_date": "2026-08-16",
@@ -101158,7 +101227,7 @@
             }
           ],
           "release_count": 49,
-          "performance_count": 139
+          "performance_count": 140
         },
         {
           "id": "song-228f943b49-v-b373901aa7",
@@ -114241,7 +114310,7 @@
       ],
       "version_count": 27,
       "release_count": 125,
-      "performance_count": 157
+      "performance_count": 158
     },
     {
       "id": "song-ufo-493c23dc67",
@@ -137314,7 +137383,8 @@
         "kitasanblack",
         "meishodoto",
         "naritatoproad",
-        "nicenature"
+        "nicenature",
+        "staygold"
       ],
       "voice_actor_ids": [
         "va-0012",
@@ -137322,6 +137392,7 @@
         "va-0039",
         "va-0041",
         "va-0089",
+        "va-0098",
         "va-0102",
         "va-0126",
         "va-0166"
@@ -137347,13 +137418,17 @@
         "finemotion",
         "kitasanblack",
         "meishodoto",
-        "naritatoproad"
+        "naritatoproad",
+        "nicenature",
+        "staygold"
       ],
       "performed_voice_actor_ids": [
         "va-0012",
+        "va-0034",
         "va-0039",
         "va-0041",
         "va-0089",
+        "va-0098",
         "va-0102",
         "va-0126",
         "va-0166"
@@ -137457,6 +137532,34 @@
           ],
           "performances": [
             {
+              "event_id": "live-cd-2026-09-13-winning-live-34",
+              "event_title": "WINNING LIVE 34 発売記念イベント",
+              "event_date": "2026-09-13",
+              "kind": "concert",
+              "series_id": "winning-live-release",
+              "session_id": "live-cd-2026-09-13-winning-live-34-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-13",
+              "performance_index": 1,
+              "character_ids": [
+                "finemotion",
+                "meishodoto",
+                "nicenature",
+                "naritatoproad",
+                "calstonelighto",
+                "staygold"
+              ],
+              "voice_actor_ids": [
+                "va-0012",
+                "va-0034",
+                "va-0039",
+                "va-0089",
+                "va-0098",
+                "va-0102"
+              ],
+              "event_url": "/zh-Hans/events/live-cd-2026-09-13-winning-live-34?session=live-cd-2026-09-13-winning-live-34-session-1"
+            },
+            {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
               "event_date": "2026-06-20",
@@ -137488,7 +137591,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1
+          "performance_count": 2
         },
         {
           "id": "song-ee92751546-v-6d642a0659",
@@ -137591,7 +137694,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 1
+      "performance_count": 2
     },
     {
       "id": "song-be4063b951",
@@ -190543,5 +190646,5 @@
       "performance_count": 0
     }
   ],
-  "build_id": "b26bc91b9bbf9e61e638"
+  "build_id": "636fd7a47a5a842a005c"
 }
