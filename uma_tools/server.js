@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const zlib = require('zlib');
+const { CatalogStore } = require('./catalog-store');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
@@ -44,6 +45,7 @@ const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
 const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
 const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
 const DATA_DIR = path.join(ROOT, 'data');
+const catalogStore = new CatalogStore(DATA_DIR);
 
 function isInsideRoot(filePath) {
   const relativePath = path.relative(ROOT, filePath);
@@ -64,10 +66,9 @@ try {
 
 const NEWS_INDEX_URL = 'https://umamusume.jp/api/ajax/pr_info_index?format=json';
 const NEWS_DETAIL_URL = 'https://umamusume.jp/api/ajax/pr_info_detail?format=json';
-const NEWS_TTL = 5 * 60 * 1000; // cache the full crawl for 5 minutes
+const NEWS_TTL = 15 * 60 * 1000; // refresh in background; visitors always receive the last complete snapshot
 const NEWS_MAX_CONC = 5;        // upstream request concurrency
-const HOME_SUMMARY_TTL = 60 * 1000;
-let homeSummaryCache = { at: 0, data: null };
+const NEWS_SNAPSHOT_FILE = path.join(DATA_DIR, 'news_snapshot.json');
 
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
 // Scraped by crawl_lantis_news.py into lantis_news.json. Merged into the news
@@ -103,6 +104,13 @@ function reloadLantis() {
 }
 
 let newsIndexCache = { at: 0, data: null };
+let newsRefreshPromise = null;
+try {
+  const snapshot = JSON.parse(fs.readFileSync(NEWS_SNAPSHOT_FILE, 'utf8'));
+  if (snapshot && Array.isArray(snapshot.information_list)) {
+    newsIndexCache = { at: Date.parse(snapshot.generated_at || '') || 0, data: snapshot };
+  }
+} catch (e) { /* the first successful refresh creates the snapshot */ }
 
 // ---- machine translation of news titles (Baidu Translate API, cached) ----
 const TRANS_CACHE_FILE = path.join(__dirname, 'trans_cache.json');
@@ -415,13 +423,20 @@ function httpsGetHtml(url, cb) {
   req.end();
 }
 
-function sendJson(res, code, obj) {
+function sendJson(res, code, obj, options) {
+  const settings = options || {};
   const body = Buffer.from(JSON.stringify(obj));
-  const headers = {
+  const headers = Object.assign({
     'Content-Type': 'application/json; charset=utf-8',
-    'Cache-Control': 'no-store',
+    'Cache-Control': settings.cacheControl || 'no-store',
     'Access-Control-Allow-Origin': '*'
-  };
+  }, settings.headers || {});
+  if (settings.etag) headers.ETag = settings.etag;
+  if (settings.etag && res.req && res.req.headers['if-none-match'] === settings.etag) {
+    res.writeHead(304, headers);
+    res.end();
+    return;
+  }
   const finish = (payload, compressed) => {
     if (compressed) {
       headers['Content-Encoding'] = 'gzip';
@@ -439,53 +454,55 @@ function sendJson(res, code, obj) {
 }
 
 function handleHomeSummary(res) {
-  if (homeSummaryCache.data && Date.now() - homeSummaryCache.at < HOME_SUMMARY_TTL) {
-    sendJson(res, 200, homeSummaryCache.data);
+  catalogStore.home()
+    .then((data) => sendJson(res, 200, data, {
+      cacheControl: 'public, max-age=60, stale-while-revalidate=600',
+      etag: '"catalog-' + data.build_id + '-home"'
+    }))
+    .catch(() => sendJson(res, 500, { error: 'home summary unavailable' }));
+}
+
+function catalogEtag(buildId, scope) {
+  const digest = crypto.createHash('sha1').update(String(scope || '')).digest('hex').slice(0, 12);
+  return '"catalog-' + buildId + '-' + digest + '"';
+}
+
+function sendCatalogResult(req, res, result, scope) {
+  if (!result) {
+    sendJson(res, 404, { error: 'catalog entry not found' });
     return;
   }
-  fs.promises.readFile(path.join(DATA_DIR, 'catalog_manifest.json'), 'utf8')
-    .then((manifestText) => {
-      const manifest = JSON.parse(manifestText);
-      const files = ['song_catalog.json', 'events_catalog.json', 'appearance_index.json', 'voice_actor_profiles.json'];
-      return Promise.all(files.map((name) => fs.promises.readFile(path.join(DATA_DIR, name), 'utf8')))
-        .then((texts) => ({ manifest, texts }));
-    })
-    .then(({ manifest, texts }) => {
-      const songsDoc = JSON.parse(texts[0]);
-      const eventsDoc = JSON.parse(texts[1]);
-      const appearancesDoc = JSON.parse(texts[2]);
-      const voiceProfilesDoc = JSON.parse(texts[3]);
-      const buildIds = new Set([songsDoc.build_id, eventsDoc.build_id, appearancesDoc.build_id, voiceProfilesDoc.build_id]);
-      if (buildIds.size !== 1 || !buildIds.has(manifest.build_id)) throw new Error('catalog revision mismatch');
-      const voiceProfiles = voiceProfilesDoc && Array.isArray(voiceProfilesDoc.voice_actors) ? voiceProfilesDoc.voice_actors : [];
-      const events = eventsDoc && Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
-      const liveEvents = events.filter((event) => event.kind === 'concert');
-      const liveCount = liveEvents.reduce((total, event) => total + Math.max(1, (event.sessions || []).length), 0);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      let nextEvent = null;
-      let nextTime = 0;
-      events.forEach((event) => {
-        const time = new Date(String(event.date || '') + 'T00:00:00').getTime();
-        if (isNaN(time) || time < today.getTime()) return;
-        if (!nextEvent || time < nextTime) { nextEvent = event; nextTime = time; }
-      });
-      const data = {
-        stats: {
-          songs: songsDoc.coverage.songs,
-          albums: songsDoc.coverage.albums,
-          live: liveCount,
-          performances: liveEvents.length,
-          characters: Object.keys(appearancesDoc.characters || {}).length,
-          voiceActors: voiceProfiles.length,
-          events: events.length
-        },
-        nextEvent: nextEvent
-      };
-      homeSummaryCache = { at: Date.now(), data: data };
-      sendJson(res, 200, data);
-    })
-    .catch(() => sendJson(res, 500, { error: 'home summary unavailable' }));
+  sendJson(res, 200, result, {
+    cacheControl: 'public, max-age=300, stale-while-revalidate=86400',
+    etag: catalogEtag(result.build_id, scope)
+  });
+}
+
+async function handleCatalogApi(req, res, urlPath, params) {
+  try {
+    let result;
+    if (urlPath === '/api/catalog/events') result = await catalogStore.events(params);
+    else if (urlPath === '/api/catalog/event') result = await catalogStore.event(params.get('id'), params.get('legacy'));
+    else if (urlPath === '/api/catalog/songs') result = await catalogStore.songs(params);
+    else if (urlPath === '/api/catalog/song') result = await catalogStore.song(params.get('id'));
+    else if (urlPath === '/api/catalog/albums') result = await catalogStore.albums(params);
+    else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('slug'), params.get('name'));
+    else if (urlPath === '/api/catalog/voice-actors') result = await catalogStore.voices();
+    else if (urlPath === '/api/catalog/appearance') {
+      const type = params.get('type');
+      if (type !== 'character' && type !== 'voice_actor') {
+        sendJson(res, 400, { error: 'invalid appearance type' });
+        return;
+      }
+      result = await catalogStore.appearance(type, params.get('id') || '');
+    } else {
+      sendJson(res, 404, { error: 'unknown catalog endpoint' });
+      return;
+    }
+    sendCatalogResult(req, res, result, req.url);
+  } catch (error) {
+    sendJson(res, 503, { error: 'catalog temporarily unavailable' });
+  }
 }
 
 function fetchNewsPage(page, cb) {
@@ -528,89 +545,114 @@ function backfillNewsImages(list, cb) {
   setTimeout(() => { if (!finished) finish(); }, BACKFILL_TIMEOUT);
 }
 
-function handleNewsIndex(res) {
-  if (newsIndexCache.data && Date.now() - newsIndexCache.at < NEWS_TTL) {
-    // Re-fill title_zh from transCache on every serve: background translations
-    // may have finished after this data was cached, so a 5-min-old response
-    // should still pick them up instead of showing stale Japanese titles.
-    const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
-    cached.information_list.forEach(function (n) {
-      if (transCache[n.title]) n.title_zh = transCache[n.title];
-    });
-    sendJson(res, 200, cached);
-    return;
-  }
-  // First learn the total page count, then crawl from the last page down to page 1.
-  fetchNewsPage(1, (err, first) => {
-    if (err) { sendJson(res, 502, { error: 'upstream news index failed' }); return; }
-    const total = parseInt(first.total_page_count, 10) || 1;
-    const slots = new Array(total);
-    let done = 0;
-    let failed = false;
-    let active = 0;
-    let cursor = total; // start at the last page
+function persistNewsSnapshot(data) {
+  const tempPath = NEWS_SNAPSHOT_FILE + '.' + process.pid + '.tmp';
+  fs.promises.writeFile(tempPath, JSON.stringify(data))
+    .then(() => fs.promises.rename(tempPath, NEWS_SNAPSHOT_FILE))
+    .catch(() => fs.promises.unlink(tempPath).catch(() => {}));
+}
 
-    function pump() {
-      while (active < NEWS_MAX_CONC && cursor >= 1) {
-        const page = cursor;
-        cursor--;
-        active++;
-        fetchNewsPage(page, (e, json) => {
-          active--;
-          if (failed) return;
-          if (e) {
-            failed = true;
-            sendJson(res, 502, { error: 'upstream news index failed' });
-            return;
-          }
-          slots[page - 1] = json.information_list || [];
-          done++;
-          if (done === total) {
-            const seen = new Set();
-            let list = [];
-            for (let p = 1; p <= total; p++) {
-              (slots[p - 1] || []).forEach((n) => {
-                if (!seen.has(n.announce_id)) { seen.add(n.announce_id); list.push(n); }
-              });
+function refreshNewsIndex() {
+  if (newsRefreshPromise) return newsRefreshPromise;
+  newsRefreshPromise = new Promise((resolve, reject) => {
+    fetchNewsPage(1, (err, first) => {
+      if (err) { reject(err); return; }
+      const total = parseInt(first.total_page_count, 10) || 1;
+      const slots = new Array(total);
+      slots[0] = first.information_list || [];
+      let done = 1;
+      let failed = false;
+      let active = 0;
+      let cursor = total;
+
+      function pump() {
+        if (done === total) {
+          publish();
+          return;
+        }
+        while (active < NEWS_MAX_CONC && cursor >= 2) {
+          const page = cursor--;
+          active++;
+          fetchNewsPage(page, (pageError, json) => {
+            active--;
+            if (failed) return;
+            if (pageError) {
+              failed = true;
+              reject(pageError);
+              return;
             }
-            list.sort((a, b) => {
-              const atA = a.update_at || a.post_at;
-              const atB = b.update_at || b.post_at;
-              return String(atB).localeCompare(String(atA));
-            });
-            const data = { response_code: 1, information_list: list, total_page_count: total };
-            // Merge Lantis (CD相关) items, then sort the combined set newest-first.
-            mergeLantis(data.information_list);
-            data.information_list.sort((a, b) => {
-              const atA = a.update_at || a.post_at;
-              const atB = b.update_at || b.post_at;
-              return String(atB).localeCompare(String(atA));
-            });
-            // Fill in cached translations immediately, kick off any missing ones in background.
-            const items = data.information_list;
-            items.forEach(function (n) {
-              if (transCache[n.title]) n.title_zh = transCache[n.title];
-            });
-            // Backfill missing images for MEDIA items from detail pages.
-            backfillNewsImages(items, () => {
-              newsIndexCache = { at: Date.now(), data: data };
-              sendJson(res, 200, data);
-            });
-            // Translate missing titles in the background for the next cached response.
-            items.forEach(function (n) {
-              if (!n.title_zh) translateTitle(n.title, function () {});
-            });
-            lantisList.forEach(function (n) {
-              if (!transCache[n.title]) translateTitle(n.title, function () {});
-            });
-            return;
-          }
-          pump();
+            slots[page - 1] = json.information_list || [];
+            done++;
+            if (done !== total) { pump(); return; }
+            publish();
+          });
+        }
+      }
+
+      function publish() {
+        const seen = new Set();
+        const list = [];
+        for (let index = 1; index <= total; index++) {
+          (slots[index - 1] || []).forEach((item) => {
+            if (!seen.has(item.announce_id)) {
+              seen.add(item.announce_id);
+              list.push(item);
+            }
+          });
+        }
+        mergeLantis(list);
+        list.sort((a, b) => String(b.update_at || b.post_at).localeCompare(String(a.update_at || a.post_at)));
+        list.forEach((item) => {
+          if (transCache[item.title]) item.title_zh = transCache[item.title];
+        });
+        const data = {
+          response_code: 1,
+          information_list: list,
+          total_page_count: total,
+          generated_at: new Date().toISOString()
+        };
+        newsIndexCache = { at: Date.now(), data };
+        persistNewsSnapshot(data);
+        resolve(data);
+
+        // Image discovery and translation improve the next response but never
+        // delay the list currently being read by a visitor.
+        backfillNewsImages(list, () => {
+          newsIndexCache = { at: Date.now(), data };
+          persistNewsSnapshot(data);
+        });
+        list.forEach((item) => {
+          if (!item.title_zh) translateTitle(item.title, function () {});
         });
       }
-    }
-    pump();
+      pump();
+    });
+  }).finally(() => { newsRefreshPromise = null; });
+  return newsRefreshPromise;
+}
+
+function newsResponseSnapshot() {
+  if (!newsIndexCache.data) return null;
+  const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
+  cached.information_list.forEach((item) => {
+    if (transCache[item.title]) item.title_zh = transCache[item.title];
   });
+  return cached;
+}
+
+function handleNewsIndex(res) {
+  const cached = newsResponseSnapshot();
+  if (cached) {
+    sendJson(res, 200, cached, {
+      cacheControl: 'public, max-age=60, stale-while-revalidate=86400',
+      etag: '"news-' + crypto.createHash('sha1').update(String(cached.generated_at || '')).digest('hex').slice(0, 12) + '"'
+    });
+    if (!NO_AUTO_CRAWL && Date.now() - newsIndexCache.at >= NEWS_TTL) refreshNewsIndex().catch(() => {});
+    return;
+  }
+  refreshNewsIndex()
+    .then((data) => sendJson(res, 200, data, { cacheControl: 'public, max-age=60, stale-while-revalidate=86400' }))
+    .catch(() => sendJson(res, 502, { error: 'upstream news index failed' }));
 }
 
 function handleNewsDetail(req, res, params) {
@@ -869,6 +911,7 @@ const server = http.createServer((req, res) => {
 
   if (req.method === 'GET' && urlPath === '/api/news-index') return handleNewsIndex(res);
   if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
+  if (req.method === 'GET' && urlPath.startsWith('/api/catalog/')) return handleCatalogApi(req, res, urlPath, params);
   if (req.method === 'GET' && urlPath === '/api/news-detail') return handleNewsDetail(req, res, params);
   if (req.method === 'GET' && urlPath === '/api/lantis-news') return handleLantisNews(res);
   if (req.method === 'GET' && urlPath === '/api/lantis-detail') return handleLantisDetail(req, res, params);
@@ -903,9 +946,18 @@ function serveFile(filePath, req, res) {
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
+    const requestUrl = new URL(req.url, 'http://x');
+    const versioned = requestUrl.searchParams.has('v');
+    const isHtml = ext === '.html' || ext === '.htm';
+    const isMedia = ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico'].includes(ext);
+    const cacheControl = isHtml
+      ? 'no-cache'
+      : (versioned || requestUrl.pathname.startsWith('/uma_tools/vendor/'))
+        ? 'public, max-age=31536000, immutable'
+        : isMedia ? 'public, max-age=2592000, stale-while-revalidate=86400' : 'no-cache';
     const headers = {
       'Content-Type': MIME[ext] || 'application/octet-stream',
-      'Cache-Control': 'no-cache',
+      'Cache-Control': cacheControl,
       'Last-Modified': st2.mtime.toUTCString()
     };
     const ifModifiedSince = Date.parse(req.headers['if-modified-since'] || '');
@@ -936,12 +988,14 @@ server.listen(PORT, () => {
   console.log('Serving ' + ROOT + '  ->  http://localhost:' + PORT + '/');
   console.log('News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...');
   reloadLantis();
+  catalogStore.get().catch((error) => console.error('[catalog:warm]', error.message));
   if (NO_AUTO_CRAWL) {
     console.log('Automatic data refresh disabled (--no-crawl).');
     return;
   }
-  runCatalogRefresh('startup');
-  runLantisCrawl('startup');
+  refreshNewsIndex().catch(() => {});
+  setTimeout(() => runCatalogRefresh('startup'), 60 * 1000);
+  setTimeout(() => runLantisCrawl('startup'), 90 * 1000);
   setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
   setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
 });

@@ -1,6 +1,6 @@
 # 赛马娘LIVE综合站
 
-一个零构建的赛马娘演唱会/LIVE 资讯站，由单页 HTML、浏览器版 Vue 3、按需加载的数据文件和零依赖 Node.js 服务驱动。
+一个零构建的赛马娘演唱会/LIVE 资讯站，由单页 HTML、浏览器版 Vue 3、按页面读取的目录接口和零依赖 Node.js 服务驱动。
 
 - 在线站点：https://umamusumelivewiki.top/zh-Hans
 - 本仓库：https://github.com/516735955/uma-live-wiki
@@ -12,7 +12,7 @@
 uma-live-wiki/                    仓库根目录
 ├── 赛马娘LIVE相关.html            SPA 页面结构
 ├── data/                          站点运行数据（JS / JSON）
-│   ├── character_index_data.js    角色索引（179 个角色）
+│   ├── character_index_data.js    角色索引（181 个角色）
 │   ├── character_detail_data.js   角色详情
 │   ├── pedigree_source.json       可维护的原型马、亲本与角色映射源数据
 │   ├── pedigree_data.js           由源数据生成的浏览器血统关系（window.PED_REL）
@@ -30,7 +30,11 @@ uma-live-wiki/                    仓库根目录
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
-│   ├── app.js                    SPA 逻辑
+│   ├── app.js                    SPA 路由与页面逻辑
+│   ├── app-api.js                目录请求去重与浏览器缓存
+│   ├── ui-components.js          全站共用交互组件
+│   ├── character-ui.js           角色/声优页按需加载逻辑
+│   ├── catalog-store.js          统一生成物的内存快照与查询投影
 │   ├── server.js                 静态文件与站内 API 服务（零依赖）
 │   ├── img/                       工具和页面共用的零散图片
 │   └── *.py *.js                  抓取/处理/校验脚本
@@ -69,7 +73,9 @@ PYTHON_BIN=/path/to/python3 node uma_tools/server.js
 ## 数据格式约定
 
 `data/*.js` 数据文件通过 `window.变量名 = {...}` 挂载，例如 `window.UMA_VIDEOS`、`window.PED_REL`；
-`data/*.json` 数据由页面按需请求。改动数据文件后**硬刷新**（Ctrl+F5）即可生效。
+`data/*.json` 由 `catalog-store.js` 作为一个版本一致的服务端快照读取，页面只请求列表摘要或当前详情，
+不再下载整份活动、歌曲和出演关系。改动数据文件后服务端会在下一次请求时原子切换到新版本；若生成过程
+尚未完成，则继续提供上一份完整快照。
 
 血统数据的维护入口是 data/pedigree_source.json，以下命令生成浏览器使用的 data/pedigree_data.js
 
@@ -131,7 +137,15 @@ python3 uma_tools/build_pedigree.py
 
 正常启动 `uma_tools/server.js` 时，每 6 小时按“角色 → Eventernote → 专辑 → 官方节目/声优资料 → 统一生成”
 的顺序串行刷新一次；同一时刻只运行一条链路，刷新中收到的下一次请求会合并为一次后续运行。Lantis 新闻
-独立每 24 小时刷新。本地预览可使用 `--no-crawl` 关闭全部后台刷新。
+独立每 24 小时刷新。`data/news_snapshot.json` 是最近一次完整新闻结果的发布快照，服务器启动后立即提供，
+再在后台更新；它不是可编辑资料源。本地预览可使用 `--no-crawl` 关闭全部后台刷新。
+
+生产环境可将 [`deploy/nginx-uma-live-wiki.conf`](deploy/nginx-uma-live-wiki.conf) 包含进 HTTPS server block，
+使文本资源启用 gzip、图片使用长期缓存，并将 `/api/` 交给 Node 服务。发布后可用以下命令校验目录投影：
+
+```bash
+npm --prefix uma_tools run test:catalog
+```
 
 大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
 

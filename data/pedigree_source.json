@@ -727,6 +727,14 @@
     "teppen_commentator_yamamoto": {
       "horse": null,
       "kind": "non_uma"
+    },
+    "kitaharajo": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "fujimasamarch": {
+      "horse": null,
+      "kind": "original"
     }
   },
   "nodes": [
@@ -23884,6 +23892,22 @@
       "zh": "《巅峰之路》解说",
       "ja": "《ウマ娘 プリティーダービー》実況（山本昌広）",
       "en": "Commentator (Yamamoto)",
+      "pure": true
+    },
+    {
+      "id": "kitaharajo",
+      "zh": "北原穰",
+      "ja": "北原穣",
+      "en": "Kitahara Jo",
+      "avatar": "uma_official/kitaharajo.svg",
+      "pure": true
+    },
+    {
+      "id": "fujimasamarch",
+      "zh": "藤正进行曲",
+      "ja": "フジマサマーチ",
+      "en": "Fujimasa March",
+      "avatar": "uma_official/fujimasamarch.svg",
       "pure": true
     },
     {

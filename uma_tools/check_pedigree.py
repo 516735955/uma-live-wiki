@@ -163,11 +163,15 @@ def main():
     for node_id in canonical_ids:
         visit(node_id, [])
 
-    expected = build_pedigree.build_export(source, characters)
+    try:
+        expected = build_pedigree.build_export(source, characters)
+    except ValueError as exc:
+        errors.append("pedigree build failed: %s" % exc)
+        expected = None
     actual = build_pedigree.load_wrapped_json(
         build_pedigree.EXPORT_PATH, build_pedigree.EXPORT_PREFIX
     )
-    if actual != expected:
+    if expected is not None and actual != expected:
         errors.append("pedigree_data.js is stale; run build_pedigree.py")
 
     runtime_ids = [node.get("cid") for node in actual]

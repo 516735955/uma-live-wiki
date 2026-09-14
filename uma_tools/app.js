@@ -3,80 +3,7 @@ const ALBUMS = [];
 let ALBUMS_LOADED = false;
 
 const { createApp, ref, reactive, computed, watch } = Vue;
-
-let uiSelectSequence = 0;
-const UiSelect = {
-  props: {
-    modelValue: { type: [String, Number], default: '' },
-    options: { type: Array, default: function () { return []; } },
-    label: { type: String, default: '' },
-    ariaLabel: { type: String, default: '' }
-  },
-  emits: ['update:modelValue', 'change'],
-  data: function () {
-    uiSelectSequence += 1;
-    return { open: false, activeIndex: -1, listId: 'ui-select-' + uiSelectSequence };
-  },
-  computed: {
-    selectedOption: function () {
-      const value = String(this.modelValue);
-      return this.options.find(function (option) { return String(option.value) === value; }) || this.options[0] || { label: '' };
-    }
-  },
-  mounted: function () { document.addEventListener('pointerdown', this.onOutside); },
-  beforeUnmount: function () { document.removeEventListener('pointerdown', this.onOutside); },
-  methods: {
-    onOutside: function (event) {
-      if (this.open && !this.$el.contains(event.target)) this.close();
-    },
-    close: function () { this.open = false; this.activeIndex = -1; },
-    toggle: function () {
-      this.open = !this.open;
-      this.activeIndex = this.open ? Math.max(0, this.options.findIndex(function (option) { return String(option.value) === String(this.modelValue); }, this)) : -1;
-    },
-    choose: function (option) {
-      if (!option || option.disabled) return;
-      this.$emit('update:modelValue', option.value);
-      this.$emit('change', option.value);
-      this.close();
-      this.$nextTick(() => {
-        if (this.$refs.trigger) this.$refs.trigger.focus();
-      });
-    },
-    onKeydown: function (event) {
-      if (event.key === 'Escape') { this.close(); return; }
-      if (event.key === 'Tab') { this.close(); return; }
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        if (!this.open) this.toggle();
-        else this.choose(this.options[this.activeIndex]);
-        return;
-      }
-      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
-      event.preventDefault();
-      if (!this.open) this.open = true;
-      const direction = event.key === 'ArrowDown' ? 1 : -1;
-      const total = this.options.length;
-      if (!total) return;
-      let next = this.activeIndex < 0 ? 0 : this.activeIndex;
-      do { next = (next + direction + total) % total; } while (this.options[next] && this.options[next].disabled);
-      this.activeIndex = next;
-    }
-  },
-  template: `
-    <div class="ui-select-control" :class="{open:open}">
-      <span v-if="label" class="ui-select-label">{{ label }}</span>
-      <button ref="trigger" class="ui-select-trigger" type="button" :aria-label="ariaLabel || label" :aria-expanded="open" :aria-controls="listId" @click="toggle" @keydown="onKeydown">
-        <span>{{ selectedOption.label }}</span>
-        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
-      </button>
-      <div v-show="open" :id="listId" class="ui-select-menu" role="listbox">
-        <button v-for="(option,index) in options" :key="String(option.value)" type="button" role="option" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
-          <span>{{ option.label }}</span><svg v-if="String(option.value)===String(modelValue)" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg>
-        </button>
-      </div>
-    </div>`
-};
+const api = window.UmaApi;
 
 const umaApp = createApp({
   setup() {
@@ -104,9 +31,10 @@ const umaApp = createApp({
     const audio = ref(null);
     const albums = ref([]);
     const albumsError = ref('');
+    const albumsLoading = ref(false);
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
-    const routeReady = ref(home.value || initialFirst === 'news');
+    const routeReady = ref(true);
     const openNavGroup = ref('');
     const navigationRevision = ref(0);
     const backTopVisible = ref(false);
@@ -143,13 +71,16 @@ const umaApp = createApp({
     const selectedEventSessionId = ref('');
     const songCatalog = ref({ coverage: {}, songs: [] });
     const songCatalogError = ref('');
+    const songCatalogLoading = ref(false);
     const songDetail = ref(null);
     const songSection = ref('releases');
     const songDbQuery = ref('');
     const songDbPage = ref(1);
     const songDbPerPage = 30;
     const appearanceIndex = ref({ voice_actors: {}, characters: {} });
+    const appearanceLoading = reactive({});
     const voiceProfiles = ref([]);
+    const voiceLoading = ref(false);
     const homeStats = reactive({ songs: null, albums: null, live: null, performances: null, characters: null, voiceActors: null, events: null });
     const homeNextEvent = ref(null);
     const eventsError = ref('');
@@ -244,53 +175,83 @@ const umaApp = createApp({
       });
       return dataScriptPromises[src];
     }
+    function loadCharacterUi() {
+      return loadDataScript('/uma_tools/character-ui.js?v=20260914-12', 'UmaCharacterUi').then(function () {
+        if (window.UmaCharacterUi) Vue.nextTick(window.UmaCharacterUi.init);
+      });
+    }
     function loadCharacterIndexData() {
       return loadDataScript('/data/character_index_data.js?v=20260913', 'CHAR_INDEX');
     }
     function loadCharacterDetailData() {
       return Promise.all([
         loadCharacterIndexData(),
-        loadDataScript('/data/character_detail_data.js?v=20260910-4', 'CHAR_DETAIL'),
-        loadDataScript('/data/pedigree_data.js?v=20260911-8', 'PED_REL'),
-        loadRelationshipData()
+        loadDataScript('/data/character_detail_data.js?v=20260910-4', 'CHAR_DETAIL')
       ]);
     }
     function loadVoiceData() {
-      return loadRelationshipData();
-    }
-    function loadRelationshipData() {
       if (relationshipLoadPromise) return relationshipLoadPromise;
-      relationshipLoadPromise = Promise.all([
-        fetch('/data/voice_actor_profiles.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }),
-        fetch('/data/appearance_index.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      ]).then(function (rows) {
-        voiceProfiles.value = (rows[0] && rows[0].voice_actors) || [];
-        appearanceIndex.value = rows[1] || { voice_actors: {}, characters: {} };
-      }).catch(function () {
-        relationshipLoadPromise = null;
-        voiceProfiles.value = [];
-        appearanceIndex.value = { voice_actors: {}, characters: {} };
-      });
+      voiceLoading.value = true;
+      relationshipLoadPromise = api.request('/api/catalog/voice-actors')
+        .then(function (data) {
+          voiceProfiles.value = (data && data.voice_actors) || [];
+          window.dispatchEvent(new CustomEvent('uma-voice-data'));
+        }).catch(function () {
+          relationshipLoadPromise = null;
+          voiceProfiles.value = [];
+        }).finally(function () {
+          voiceLoading.value = false;
+        });
       return relationshipLoadPromise;
+    }
+    const appearanceLoads = {};
+    function mergeSong(song) {
+      if (!song || !song.id) return;
+      const rows = songCatalog.value.songs || [];
+      const index = rows.findIndex(function (item) { return item.id === song.id; });
+      if (index >= 0) rows.splice(index, 1, song);
+      else rows.push(song);
+    }
+    function loadRelationshipData(type, id) {
+      if (!type || !id) return Promise.resolve();
+      const key = type + ':' + id;
+      if (appearanceLoads[key]) return appearanceLoads[key];
+      appearanceLoading[key] = true;
+      appearanceLoads[key] = api.request('/api/catalog/appearance' + api.query({ type: type, id: id }))
+        .then(function (data) {
+          const table = type === 'voice_actor' ? appearanceIndex.value.voice_actors : appearanceIndex.value.characters;
+          table[id] = (data && data.appearance) || { events: [], songs: [], performed_songs: [] };
+          ((data && data.songs) || []).forEach(mergeSong);
+        }).catch(function () {
+          delete appearanceLoads[key];
+        }).finally(function () {
+          appearanceLoading[key] = false;
+        });
+      return appearanceLoads[key];
+    }
+    function appearanceIsLoading(type, id) {
+      return !!appearanceLoading[type + ':' + id];
     }
     function loadSongCatalog() {
       if (songCatalogLoadPromise) return songCatalogLoadPromise;
       songCatalogError.value = '';
-      songCatalogLoadPromise = fetch('/data/song_catalog.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      songCatalogLoading.value = true;
+      songCatalogLoadPromise = api.request('/api/catalog/songs?page_size=2000')
         .then(function (data) {
-          songCatalog.value = data && Array.isArray(data.songs) ? data : { coverage: {}, songs: [] };
+          songCatalog.value = data && Array.isArray(data.items) ? { coverage: data.coverage || {}, songs: data.items } : { coverage: {}, songs: [] };
           if (!songCatalog.value.songs.length) songCatalogError.value = '歌曲资料为空。';
         })
         .catch(function () {
           songCatalogLoadPromise = null;
           songCatalog.value = { coverage: {}, songs: [] };
           songCatalogError.value = '无法加载歌曲资料（请确认 /data/song_catalog.json 已生成）。';
+        }).finally(function () {
+          songCatalogLoading.value = false;
         });
       return songCatalogLoadPromise;
     }
     function loadMusicRelations() {
-      return Promise.all([loadRelationshipData(), loadSongCatalog(), loadAlbums()]);
+      return Promise.all([loadVoiceData(), loadSongCatalog(), loadAlbums()]);
     }
     function prepareCurrentRoute() {
       const seg = routeSegments();
@@ -300,40 +261,41 @@ const umaApp = createApp({
         const newsReady = loadNews();
         return seg.length > 1 ? newsReady : Promise.resolve();
       }
-      if (first === 'music' || first === 'artist' || first === 'songs') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
-      if (first === 'live') return Promise.all([loadEvents(), loadRelationshipData(), loadSongCatalog(), loadCharacterIndexData()]);
+      if (first === 'music' || first === 'artist' || first === 'songs') {
+        const musicSection = (seg[1] || '').toLowerCase();
+        return musicSection === 'songs' || first !== 'music'
+          ? Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()])
+          : loadAlbums();
+      }
+      if (first === 'live') return loadEvents();
       if (first === 'characters') {
         const sub = (seg[1] || '').toLowerCase();
-        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos' ? loadCharacterDetailData() : loadCharacterIndexData();
-        return sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos'
-          ? Promise.all([characterReady, loadMusicRelations()])
-          : Promise.all([characterReady, loadHomeSummary()]);
+        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos'
+          ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
+        return Promise.resolve(characterReady).then(loadCharacterUi);
       }
-      if (first === 'events') return Promise.all([loadEvents(), loadRelationshipData(), loadSongCatalog(), loadCharacterIndexData()]);
+      if (first === 'events') return Promise.all([loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
-      if (!sub) return Promise.all([loadCharacterIndexData(), loadHomeSummary()]);
-      if (sub === 'albums') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
-      if (sub === 'songs') return Promise.all([loadAlbums(), loadSongCatalog(), loadVoiceData()]);
-      if (sub === 'events') return Promise.all([loadEvents(), loadRelationshipData()]);
+      if (!sub) return loadCharacterIndexData().then(loadCharacterUi);
+      if (sub === 'albums') return loadAlbums();
+      if (sub === 'songs') return Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()]);
+      if (sub === 'events') return loadEvents();
       if (sub === 'voice' || sub === 'voice-actors') {
-        return seg[2] ? loadMusicRelations() : Promise.all([loadVoiceData(), loadHomeSummary()]);
+        return loadVoiceData().then(loadCharacterUi);
       }
       if (sub === 'characters') {
         const charPath = (seg[2] || '').toLowerCase();
         const characterReady = charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos'
-          ? loadCharacterDetailData() : loadCharacterIndexData();
-        return charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos'
-          ? Promise.all([characterReady, loadMusicRelations()])
-          : Promise.all([characterReady, loadHomeSummary()]);
+          ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
+        return Promise.resolve(characterReady).then(loadCharacterUi);
       }
-      if (sub === 'other') return loadHomeSummary();
+      if (sub === 'other') return Promise.resolve();
       return Promise.resolve();
     }
     function loadHomeSummary() {
       if (homeSummaryLoadPromise) return homeSummaryLoadPromise;
-      homeSummaryLoadPromise = fetch('/api/home-summary', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      homeSummaryLoadPromise = api.request('/api/home-summary')
         .then(function (data) {
           const stats = (data && data.stats) || {};
           homeStats.songs = Number.isFinite(stats.songs) ? stats.songs : null;
@@ -539,17 +501,14 @@ const umaApp = createApp({
     function navigateTo(path, replace) {
       const method = replace ? 'replaceState' : 'pushState';
       const fromEntity = isAtomicView() && routeWillBeAtomic(path);
-      routeReady.value = /^\/zh-Hans\/news\/?(?:\?.*)?$/.test(path);
       if (currentUrlPath() !== path) history[method]({ umaInternal: true, entity: routeWillBeAtomic(path), fromEntity: fromEntity }, '', path);
+      syncFromUrl();
+      navigationRevision.value += 1;
       const ready = prepareCurrentRoute();
       Promise.resolve(ready).then(function () {
         syncFromUrl();
-        routeReady.value = true;
-        navigationRevision.value += 1;
       }, function () {
         syncFromUrl();
-        routeReady.value = true;
-        navigationRevision.value += 1;
       });
       resetPageScroll();
     }
@@ -573,12 +532,20 @@ const umaApp = createApp({
       if (['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) === -1) return;
       charSection.value = section;
       pushUrl(true);
-      if (section === 'pedigree') Vue.nextTick(renderCharBlood);
+      if (section === 'pedigree') {
+        loadDataScript('/data/pedigree_data.js?v=20260911-8', 'PED_REL').then(function () { Vue.nextTick(renderCharBlood); });
+      }
+      if ((section === 'songs' || section === 'appearances') && charDetail.value) {
+        loadRelationshipData('character', charDetail.value.id);
+      }
     }
     function setVoiceSection(section) {
       if (['profile', 'songs', 'appearances'].indexOf(section) === -1) return;
       voiceSection.value = section;
       pushUrl(true);
+      if ((section === 'songs' || section === 'appearances') && voiceDetail.value) {
+        loadRelationshipData('voice_actor', voiceDetail.value.id);
+      }
     }
     function setSongSection(section) {
       if (['releases', 'performances'].indexOf(section) === -1) return;
@@ -603,10 +570,10 @@ const umaApp = createApp({
         resetPageScroll();
         pushUrl();
         Vue.nextTick(function () {
-          if (typeof renderDetail === 'function') renderDetail(null);
+          if (typeof window.renderCharacterDetail === 'function') window.renderCharacterDetail(null);
         });
       };
-      return Promise.all([loadCharacterDetailData(), loadMusicRelations()]).then(show, show);
+      return Promise.all([loadCharacterDetailData(), loadVoiceData()]).then(loadCharacterUi).then(show, show);
     }
     function openCharDetail(id) {
       return openCharacter(id);
@@ -617,10 +584,10 @@ const umaApp = createApp({
       box.innerHTML = '';
       var id = charDetail.value && charDetail.value.id;
       if (!id) return;
-      if (typeof renderBloodGraphInDetail === 'function') renderBloodGraphInDetail(box, id);
+      if (typeof window.renderBloodGraphInDetail === 'function') window.renderBloodGraphInDetail(box, id);
     }
     Vue.watch(charDetail, function () {
-      if (typeof renderDetail === 'function') Vue.nextTick(function () { renderDetail(null); });
+      if (typeof window.renderCharacterDetail === 'function') Vue.nextTick(function () { window.renderCharacterDetail(null); });
       Vue.nextTick(renderCharBlood);
     });
     function goHome() {
@@ -728,7 +695,7 @@ const umaApp = createApp({
         resetPageScroll();
         pushUrl();
       };
-      return loadMusicRelations().then(show, show);
+      return loadVoiceData().then(loadCharacterUi).then(show, show);
     }
     function openVa(slug) {
       return openVoice(slug);
@@ -762,11 +729,8 @@ const umaApp = createApp({
       const query = String(songDbQuery.value || '').trim().toLowerCase();
       let rows = (songCatalog.value.songs || []).filter(function (song) {
         if (!query) return true;
-        const releaseText = (song.versions || []).reduce(function (out, version) {
-          return out.concat((version.releases || []).map(function (release) { return release.album_name; }));
-        }, []).join(' ');
-        return [song.title, (song.aliases || []).join(' '), (song.artists || []).join(' '), releaseText]
-          .join(' ').toLowerCase().indexOf(query) !== -1;
+        return String(song.search_text || [song.title, (song.aliases || []).join(' '), (song.artists || []).join(' ')].join(' '))
+          .toLowerCase().indexOf(query) !== -1;
       });
       rows = rows.slice().sort(function (a, b) {
         return a.title.localeCompare(b.title, 'ja');
@@ -811,6 +775,16 @@ const umaApp = createApp({
       });
     });
     function playableSongRelease(song) {
+      if (song && song.playable) {
+        return {
+          version: { id: song.playable.version_id, title: song.playable.version_title },
+          release: {
+            audio_url: song.playable.audio_url,
+            artist: song.playable.artist,
+            cover: song.playable.cover
+          }
+        };
+      }
       for (const version of ((song && song.versions) || [])) {
         for (const release of (version.releases || [])) {
           if (release.audio_url) return { version: version, release: release };
@@ -871,9 +845,11 @@ const umaApp = createApp({
     }
     function openSong(songOrId) {
       beginEntityNavigation();
-      const show = function () {
-        const found = findSong(songOrId);
+      const requested = typeof songOrId === 'string' ? songOrId : (songOrId && (songOrId.id || songOrId.song_id));
+      const show = function (data) {
+        const found = data && data.song;
         if (!found) return;
+        mergeSong(found);
         clearEntityDetails('song');
         songDetail.value = found;
         songSection.value = 'releases';
@@ -882,12 +858,16 @@ const umaApp = createApp({
         resetPageScroll();
         pushUrl();
       };
-      return Promise.all([loadSongCatalog(), loadVoiceData()]).then(show, show);
+      return Promise.all([
+        api.request('/api/catalog/song' + api.query({ id: requested })),
+        loadVoiceData(),
+        loadCharacterIndexData()
+      ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
     }
     function openAlbumFromSong(item) {
       const release = item && item.release ? item.release : item;
-      const album = albums.value.find(function (entry) { return entry.name === release.album_name; });
-      if (!album) return;
+      const album = albums.value.find(function (entry) { return entry.name === release.album_name; }) || { name: release.album_name };
+      if (!album.name) return;
       openAlbum(album);
     }
     function openEventUrl(path) {
@@ -1143,18 +1123,21 @@ const umaApp = createApp({
         if (musicSection === 'songs') {
           dbView.value = 'songs';
           const requestedSong = seg[2] ? decodeURIComponent(seg[2]) : '';
-          songDetail.value = requestedSong ? findSong(requestedSong) : null;
           const section = url.searchParams.get('section');
           songSection.value = ['releases', 'performances'].indexOf(section) >= 0 ? section : 'releases';
           songDbQuery.value = url.searchParams.get('q') || '';
           const songPageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
           songDbPage.value = isNaN(songPageFromUrl) || songPageFromUrl < 1 ? 1 : songPageFromUrl;
+          if (requestedSong) openSong(requestedSong).then(function () {
+            songSection.value = ['releases', 'performances'].indexOf(section) >= 0 ? section : 'releases';
+            pushUrl(true);
+          });
         } else {
           dbView.value = 'albums';
           const legacyAlbumSlug = musicSection && musicSection !== 'albums' ? seg[1] : '';
           const requestedAlbum = seg[2] ? decodeURIComponent(seg[2]) : (legacyAlbumSlug ? decodeURIComponent(legacyAlbumSlug) : '');
           const album = requestedAlbum ? findAlbumBySlug(requestedAlbum) : null;
-          if (album) albumDetail.value = { data: album, songs: album.songs || [], shown: (album.songs || []).length, total: (album.songs || []).length, query: '', targetName: null, note: '' };
+          if (album) openAlbum(album);
           if (!musicSection || legacyAlbumSlug) {
             const target = LANG_PREFIX + '/music/albums' + (album ? '/' + slugOfAlbum(album.name) : '');
             history.replaceState(history.state || {}, '', target);
@@ -1177,15 +1160,13 @@ const umaApp = createApp({
         activeTab.value = 'live';
         const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
         if (requested) {
-          const found = eventsAll.value.find(function (event) { return event.id === requested; });
-          if (found) {
-            eventDetail.value = found;
-            liveView.value = 'eventDetail';
-            const session = url.searchParams.get('session');
-            const sessions = found.sessions || [];
+          const session = url.searchParams.get('session');
+          openEvent(requested).then(function () {
+            const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
             selectedEventSessionId.value = sessions.some(function (item) { return item.id === session; })
               ? session : ((sessions[0] && sessions[0].id) || '');
-          }
+            pushUrl(true);
+          });
         } else {
           const time = url.searchParams.get('time');
           const kind = url.searchParams.get('kind');
@@ -1202,18 +1183,19 @@ const umaApp = createApp({
           eventsPage.value = isNaN(page) || page < 1 ? 1 : page;
         }
       } else if (first === 'live') {
+        // Keep the legacy path intact during the first render. Once the compact
+        // event index is ready, the second route pass can resolve it reliably.
+        activeTab.value = 'live';
+        liveView.value = 'eventHub';
+        if (!eventsAll.value.length) return;
         const requestedPath = '/' + raw.join('/');
         const legacy = eventsAll.value.find(function (event) {
           return event.legacy_url === requestedPath || (event.legacy_aliases || []).indexOf(requestedPath) !== -1;
         });
         const target = legacy ? LANG_PREFIX + '/events/' + encodeURIComponent(legacy.id) : LANG_PREFIX + '/events';
         history.replaceState(history.state || {}, '', target);
-        activeTab.value = 'live';
         liveView.value = legacy ? 'eventDetail' : 'eventHub';
-        if (legacy) {
-          eventDetail.value = legacy;
-          selectedEventSessionId.value = legacy.sessions && legacy.sessions[0] ? legacy.sessions[0].id : '';
-        }
+        if (legacy) openEvent(legacy.id);
       } else if (first === 'database') {
         activeTab.value = 'database';
         const sub = (seg[1] || '').toLowerCase();
@@ -1223,6 +1205,7 @@ const umaApp = createApp({
           charDetail.value = requested ? findCharById(requested) : null;
           const section = url.searchParams.get('section');
           charSection.value = ['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) >= 0 ? section : 'profile';
+          if (charDetail.value && charSection.value !== 'profile') setCharSection(charSection.value);
         } else if (sub === 'events') {
           const ft = url.searchParams.get('filter[time]');
           const target = LANG_PREFIX + '/events' + ((ft === 'upcoming' || ft === 'past') ? '?time=' + ft : '');
@@ -1235,6 +1218,7 @@ const umaApp = createApp({
           voiceDetail.value = findVaBySlug(seg[2] ? decodeURIComponent(seg[2]) : '');
           const section = url.searchParams.get('section');
           voiceSection.value = ['profile', 'songs', 'appearances'].indexOf(section) >= 0 ? section : 'profile';
+          if (voiceDetail.value && voiceSection.value !== 'profile') setVoiceSection(voiceSection.value);
         } else if (sub === 'albums') {
           const target = LANG_PREFIX + '/music/albums' + (seg[2] ? '/' + encodeURIComponent(decodeURIComponent(seg[2])) : '');
           history.replaceState(history.state || {}, '', target + url.search);
@@ -1275,12 +1259,18 @@ const umaApp = createApp({
     }
     function openAlbum(a) {
       beginEntityNavigation();
-      clearEntityDetails('album');
-      activeTab.value = 'database';
-      dbView.value = 'albums';
-      albumDetail.value = { data: a, songs: a.songs || [] };
-      resetPageScroll();
-      pushUrl();
+      const name = a && a.name;
+      if (!name) return Promise.resolve();
+      return api.request('/api/catalog/album' + api.query({ name: name })).then(function (data) {
+        if (!data || !data.album) return;
+        (data.catalog_songs || []).forEach(mergeSong);
+        clearEntityDetails('album');
+        activeTab.value = 'database';
+        dbView.value = 'albums';
+        albumDetail.value = { data: data.album, songs: data.album.songs || [] };
+        resetPageScroll();
+        pushUrl();
+      });
     }
     function openAlbumFromDb(a) { openAlbum(a); }
 
@@ -1388,10 +1378,9 @@ const umaApp = createApp({
       let out = albums.value.slice();
       const query = String(relQuery.value || '').trim().toLowerCase();
       if (query) out = out.filter(function (album) {
-        const tracks = (album.songs || []).map(function (song) { return (song.name || '') + ' ' + (song.artist || ''); }).join(' ');
-        return ((album.name || '') + ' ' + (album.catalog || '') + ' ' + tracks).toLowerCase().indexOf(query) !== -1;
+        return String(album.search_text || ((album.name || '') + ' ' + (album.catalog || ''))).toLowerCase().indexOf(query) !== -1;
       });
-      if (relWork.value) out = out.filter(function (album) { return albumWorkOf(album.name) === relWork.value; });
+      if (relWork.value) out = out.filter(function (album) { return (album.work || albumWorkOf(album.name)) === relWork.value; });
       if (relFilter.value) out = out.filter(function (a) { return a.type === relFilter.value; });
       if (relYear.value) out = out.filter(function (a) { return String(a.release).slice(0, 4) === relYear.value; });
       return out.slice().sort(function (a, b) {
@@ -1597,6 +1586,7 @@ const umaApp = createApp({
       const q = (eventsQuery.value || '').toLowerCase();
       let out = eventsAll.value.filter(function (e) {
         if (!q) return true;
+        if (String(e.search_text || '').toLowerCase().indexOf(q) !== -1) return true;
         if ((e.title || '').toLowerCase().indexOf(q) !== -1) return true;
         if ((e.venue || '').toLowerCase().indexOf(q) !== -1) return true;
         const series = eventSeriesMap.value[e.series_id] || {};
@@ -1706,6 +1696,7 @@ const umaApp = createApp({
       return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type !== 'voice_actor' && !item.voice_actor_id; });
     });
     function eventSongCount(event) {
+      if (Number.isFinite(event && event.song_count)) return event.song_count;
       return (event.sessions || []).reduce(function (total, session) { return total + (session.songs || []).length; }, 0);
     }
     const eventMediaCards = computed(function () {
@@ -1730,10 +1721,14 @@ const umaApp = createApp({
           platform: platform,
           platformLabel: isYouTube ? 'YouTube' : (isBilibili ? 'Bilibili' : (host || '外部平台')),
           label: item.label || ('节目影像 ' + (index + 1)),
-          image: item.thumbnail || (event && event.image) || '/uma_tools/img/event-covers/onsite.svg'
+          image: item.thumbnail || (videoId ? 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg' : '') || (event && event.image) || '/uma_tools/img/event-covers/onsite.svg'
         };
       }).filter(Boolean);
     });
+    const activeMediaKey = ref('');
+    function activateEventMedia(media) {
+      if (media && media.embedUrl) activeMediaKey.value = media.key;
+    }
     function voiceFieldLabel(voice, field) {
       if (!voice) return '——';
       const value = field === 'birthday' ? voice.birth : voice[field];
@@ -1752,19 +1747,23 @@ const umaApp = createApp({
     function openEvent(eventOrId) {
       beginEntityNavigation();
       const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
-      const show = function () {
-        const found = eventsAll.value.find(function (event) { return event.id === id; });
+      const show = function (data) {
+        const found = data && data.event;
         if (!found) return;
         clearEntityDetails('event');
         eventDetail.value = found;
+        activeMediaKey.value = '';
         selectedEventSessionId.value = found.sessions && found.sessions[0] ? found.sessions[0].id : '';
         liveView.value = 'eventDetail';
         activeTab.value = 'live';
         resetPageScroll();
         pushUrl();
       };
-      if (eventsAll.value.length) return show();
-      return loadEvents().then(show);
+      return Promise.all([
+        api.request('/api/catalog/event' + api.query({ id: id })),
+        loadCharacterIndexData(),
+        loadVoiceData()
+      ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
     }
     function eventPaletteStyle(event) {
       const series = eventSeriesMap.value[(event && event.series_id) || ''];
@@ -1814,10 +1813,9 @@ const umaApp = createApp({
       if (eventsLoadPromise) return eventsLoadPromise;
       eventsError.value = '';
       eventsLoading.value = true;
-      eventsLoadPromise = fetch('/data/events_catalog.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      eventsLoadPromise = api.request('/api/catalog/events?page_size=2000')
         .then(function (data) {
-          eventsAll.value = (data && Array.isArray(data.events)) ? data.events : [];
+          eventsAll.value = (data && Array.isArray(data.items)) ? data.items : [];
           eventSeries.value = (data && Array.isArray(data.series)) ? data.series : [];
           eventsLoading.value = false;
           eventsError.value = eventsAll.value.length ? '' : '活动数据为空。';
@@ -1976,8 +1974,7 @@ const umaApp = createApp({
       if (newsLoadPromise) return newsLoadPromise;
       newsError.value = '';
       newsLoading.value = true;
-      newsLoadPromise = fetch('/api/news-index', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      newsLoadPromise = api.request('/api/news-index')
         .then(function (d) {
           newsItems.value = (d && d.information_list) || [];
           newsLoading.value = false;
@@ -2051,12 +2048,14 @@ const umaApp = createApp({
     function loadAlbums() {
       if (albumsLoadPromise) return albumsLoadPromise;
       albumsError.value = '';
-      albumsLoadPromise = fetch('/data/albums.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) { albums.value = Array.isArray(data) ? data : []; })
+      albumsLoading.value = true;
+      albumsLoadPromise = api.request('/api/catalog/albums?page_size=500')
+        .then(function (data) { albums.value = data && Array.isArray(data.items) ? data.items : []; })
         .catch(function (e) {
           albumsLoadPromise = null;
           albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
+        }).finally(function () {
+          albumsLoading.value = false;
         });
       return albumsLoadPromise;
     }
@@ -2089,7 +2088,7 @@ const umaApp = createApp({
     }
 
     return {
-      audio, albums, albumsError, activeTab, home, routeReady, albumDetail, liveView, player, navItems, openNavGroup,
+      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, albumDetail, liveView, player, navItems, openNavGroup,
       navItemActive, toggleNavGroup, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
@@ -2104,10 +2103,10 @@ const umaApp = createApp({
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaCards, eventVoiceCast, eventGuestCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
-      songCatalog, songCatalogError, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailPerformances, songSingerLabel, playableSongRelease, playCatalogSong, playSongRelease, playRelationRelease, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
+      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, eventGuestCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
+      songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailPerformances, songSingerLabel, playableSongRelease, playCatalogSong, playSongRelease, playRelationRelease, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
-      voiceProfiles, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, LANG_PREFIX,
+      voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, LANG_PREFIX,
       otherSection, setOtherSection, curatedVideos,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
       historyKindOptions, albumSortOptions, fixTitleOptions,
@@ -2115,18 +2114,18 @@ const umaApp = createApp({
     };
   },
   mounted() {
+    const boot = document.getElementById('app-boot');
+    if (boot) boot.remove();
     this.bindAudio();
     const self = this;
     window.__uma_app = this;
     const syncPrepared = function () {
-      const segments = window.location.pathname.split('/').filter(Boolean).filter(function (part) { return part.toLowerCase() !== 'zh-hans'; });
-      self.routeReady = segments.length === 1 && segments[0].toLowerCase() === 'news';
+      self.routeReady = true;
+      self.syncFromUrl();
       self.prepareCurrentRoute().then(function () {
         self.syncFromUrl();
-        self.routeReady = true;
       }, function () {
         self.syncFromUrl();
-        self.routeReady = true;
       });
     };
     window.addEventListener('popstate', syncPrepared);
@@ -2135,536 +2134,5 @@ const umaApp = createApp({
     this.loadHomeSummaryIfNeeded();
   }
 });
-umaApp.component('ui-select', UiSelect);
+umaApp.component('ui-select', window.UmaUi.UiSelect);
 umaApp.mount('#app');
-
-
-
-(function () {
-  function renderIntro(root) {
-    var grid = (root || document).querySelector('#cIntroGrid');
-    var input = (root || document).querySelector('#cIntroSearch');
-    var listBox = (root || document).querySelector('#cIntroList');
-    if (!grid || !input || grid.getAttribute('data-c-inited')) return;
-    grid.setAttribute('data-c-inited', '1');
-    function norm(c) { return String(c || '').toLowerCase(); }
-    function data() {
-      return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
-    }
-    function render() {
-      var q = norm(input.value.trim());
-      var s = window.__uma_app ? window.__uma_app.charSort : 'default';
-      var list = data().filter(function (c) {
-        if (!q) return true;
-        return norm(c.zh).indexOf(q) >= 0 || norm(c.ja).indexOf(q) >= 0 ||
-               norm(c.en).indexOf(q) >= 0 || norm(c.cv_zh).indexOf(q) >= 0 || norm(c.cv).indexOf(q) >= 0;
-      });
-      if (s === 'zh') { list = list.slice().sort(function (a, b) { return norm(a.zh).localeCompare(norm(b.zh), 'zh'); }); }
-      else if (s === 'en') { list = list.slice().sort(function (a, b) { return norm(a.en).localeCompare(norm(b.en)); }); }
-      else if (s === 'cv') { list = list.slice().sort(function (a, b) { return norm(a.cv_zh).localeCompare(norm(b.cv_zh), 'zh'); }); }
-      grid.innerHTML = '';
-      list.forEach(function (c, i) {
-        var li = document.createElement('li');
-        var card = document.createElement('a');
-        card.className = 'cio-card';
-        card.href = '/zh-Hans/database/characters/' + encodeURIComponent(c.id);
-        card.addEventListener('click', function (e) {
-          e.preventDefault();
-          openCharDetailGlobal(c.id);
-        });
-        card.style.setProperty('--color-main', c.main || '#8c83ff');
-        card.style.setProperty('--color-sub', c.sub || '#ece9ff');
-        var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
-        card.innerHTML =
-          '<dl>' +
-            '<dt>' +
-              (c.img || c.av ? '<div class="cio-img"><img src="' + (c.img || c.av) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
-              '<div class="cio-bg"><p>' + (c.en || c.ja || '') + '</p></div>' +
-            '</dt>' +
-            '<dd>' +
-              '<p class="cio-name">' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '</p>' +
-              '<p class="cio-cv"><span>CV:</span>' + (c.cv_zh || c.cv || '') + '</p>' +
-            '</dd>' +
-          '</dl>' +
-          '<div class="cio-veil"><p>View more</p><span class="cio-arrow">&gt;</span></div>';
-        li.appendChild(card);
-        grid.appendChild(li);
-      });
-      var nodata = (root || document).querySelector('#cIntroNoData');
-      if (nodata) nodata.style.display = list.length ? 'none' : 'block';
-      if (listBox) listBox.classList.remove('loading');
-    }
-    input.addEventListener('input', render);
-    window.addEventListener('uma-character-sort', render);
-    render();
-  }
-
-  window.renderBloodGraphInDetail = renderBloodGraphInDetail;
-
-  function renderDetail(root) {
-    var box = (root || document).querySelector('#cDetailBlock');
-    if (!box) return;
-    function fill() {
-      refreshRelIndex();
-      var detail = window.__uma_app ? window.__uma_app.charDetail : null;
-      if (!detail || !detail.id || !window.CHAR_DETAIL) return;
-      if (box.getAttribute('data-d-filled') === detail.id) return;
-      var d = window.CHAR_DETAIL[detail.id];
-      if (!d || !d.html) return;
-      var source = document.createElement('div');
-      source.innerHTML = d.html;
-      var description = source.querySelector('.uma-description');
-      box.innerHTML = description && description.innerHTML.trim()
-        ? '<div class="character-description">' + description.innerHTML + '</div>'
-        : '';
-      box.setAttribute('data-d-filled', detail.id);
-    }
-    fill();
-  }
-
-  /* ---------- 血缘关系节点图（角色详情页下方） ---------- */
-  var relByCid = {};
-  var relSource = null;
-  window.addEventListener('message', function (event) {
-    if (!event.data || event.data.type !== 'uma-pedigree-height') return;
-    var frames = document.querySelectorAll('.c-pedigree-lens-frame');
-    frames.forEach(function (frame) {
-      if (frame.contentWindow !== event.source) return;
-      if (frame.dataset.pedigreeSample !== event.data.sample) return;
-      var height = Math.max(76, Math.min(3200, Number(event.data.height) || 0));
-      if (height) frame.style.height = height + 'px';
-    });
-  });
-  function refreshRelIndex() {
-    if (typeof PED_REL === 'undefined' || relSource === PED_REL) return;
-    relByCid = {};
-    PED_REL.forEach(function (n) { relByCid[n.cid] = n; });
-    relSource = PED_REL;
-  }
-  var UMA_VIDEOS = {
-  "sakurabakushino": [{"n":"短途领域的爆进之王","bv":"BV12K4y1N78N"}],
-  "haruurara": [{"n":"百战百败努力家，不胜传说乌拉拉","bv":"BV1xp4y1t7VS"}],
-  "symbolirudolf": [{"n":"我以不败身姿，傲立三冠之列（上）","bv":"BV1264y1m7qa"}, {"n":"七冠荣光退役，归来仍是皇帝（下）","bv":"BV1if4y1s71V"}],
-  "oguricap": [{"n":"传说的开始！芦毛怪物诞生！（上）","bv":"BV1BN411o7Nw"}, {"n":"芦毛怪物VS白色闪电！小栗帽三战玉藻十字（中）","bv":"BV1D64y1d7Rv"}, {"n":"平成三强的激斗，芦毛怪物有终之美！（下）","bv":"BV1nh411e7Y4"}],
-  "biwahayahide": [{"n":"傲立三强我以晨光之名，头顶青天高举芦毛终旗！","bv":"BV1YV411s7dg"}],
-  "mejiromcqueen": [{"n":"芦毛三代连霸G1，天皇赏春目白传说（上）","bv":"BV1gK4y1M7nE"}, {"n":"目白麦昆VS东海帝皇，92年春世纪之战！（下）","bv":"BV1Ro4y1X7pK"}],
-  "taikishuttle": [{"n":"漂亮的尾花栗，无败的英里王！（上）","bv":"BV1GU4y1H7uX"}, {"n":"风中疾走的金色闪电，雨下跃动的尾花栗毛！（下）","bv":"BV1Mq4y197Zv"}],
-  "inesfujin": [{"n":"20万人的日本德比，燃烧生命的一逃到底！","bv":"BV1JU4y1E7PJ"}],
-  "nicenature": [{"n":"有马三着的传说，独一无二的荣耀！","bv":"BV1tA411c79B"}],
-  "hishiamazon": [{"n":"狂气追走炸裂末脚！漆黑的女杰菱亚马逊","bv":"BV1b64y1a7uK"}],
-  "grasswonder": [{"n":"栗毛怪物再出世，踏雪无痕草上飞（上）","bv":"BV1gU4y1F7E6"}, {"n":"终点前草特交锋，毫厘间决定胜负（下）","bv":"BV1EL4y1q7Xx"}],
-  "seiunsky": [{"n":"划过青空的闪电，刻铭心中的逃亡！","bv":"BV1AQ4y1i7Dn"}],
-  "riceshower": [{"n":"虽无钢铁不坏躯，却有青岭英雄魂（上）","bv":"BV1hR4y1g7Gk"}, {"n":"跨越了肉体灵魂，疾驰于天堂彼岸（下）","bv":"BV1pT4y1m7z3"}],
-  "zennorobroy": [{"n":"秋行王道三冠征途，疾行荒漠善战英雄","bv":"BV1a44y1L7cV"}],
-  "fujikiseki": [{"n":"虽承父相终大器未完，无事名驹即富士奇石","bv":"BV1Wr4y1a7Gk"}],
-  "goldship": [{"n":"漂移过弯初露怪物锋芒 ，上坡加速尽显英雄本色（上）","bv":"BV1vb4y1s72Y"}, {"n":"黄金战舰开创伟大航路，连霸宝冢再续芦毛传说（中）","bv":"BV1AR4y157op"}, {"n":"三战天春不负麦昆血脉，奋身抬腿力劝马迷戒赌（下）","bv":"BV1DZ4y167Wg"}],
-  "supercreek": [{"n":"稚嫩天才邂逅初恋，此般相遇一生几何","bv":"BV16i4y1C7Tb"}],
-  "sakuralaurel": [{"n":"力战三冠势破两强，残樱终迎满开之时！","bv":"BV1fu411v7zq"}],
-  "kitasanblack": [{"n":"越战越勇终贯彻王道，彻夜高声奏祭典之歌！（上）","bv":"BV19B4y127p5"}, {"n":"满身泥泞斗伏兵强敌，身披七冠展最后英姿（下）","bv":"BV1bT4y1r7Eu"}],
-  "vodka": [{"n":"巾帼之身鏖战德比，反叛英姿勇斗强敌（上）","bv":"BV1qG411x7mU"}, {"n":"宿命之敌决战府中，女帝之名响彻东京（下）","bv":"BV1H34y1H768"}],
-  "sweeptosho": [{"n":"刁蛮任性大小姐，暴走狂气小魔女","bv":"BV19S4y177jQ"}],
-  "nakayamafesta": [{"n":"寥寥一生胜负，漫漫长路追梦","bv":"BV1VB4y187ns"}],
-  "silencesuzuka": [{"n":"半生起伏半生跌踉，乘风飞翔向梦的彼方（上）","bv":"BV1oW4y1b7CF"}, {"n":"一生速度一生梦幻，化作天马愿真心永恒（下）","bv":"BV1iV4y1W7vN"}],
-  "manhattancafe": [{"n":"不鸣则已，一鸣惊人！","bv":"BV1nG4y1Q74v"}],
-  "junglepocket": [{"n":"打开新时代之门","bv":"BV1mz4tzyERT"}],
-  "agnestachyon": [{"n":"他仅凭四场比赛便成为了传奇\"幻之三冠马","bv":"BV1ki421X7xq"}],
-  "mejiropalmer": [{"n":"跌宕起伏我仍不屈不挠，昂首高歌梦想追逐闪耀","bv":"BV13V4y1N7DB"}],
-  "tmoperao": [{"n":"天生耀眼神明为之嫉妒，连战不捷拉开传说序幕（上）","bv":"BV1Tg411i7CS"}, {"n":"创不败传说得万人景仰，奏霸王凯歌令群马俯首（中）","bv":"BV1x24y1a7Gp"}, {"n":"登上山巅直面七冠高墙，唯一无二王朝终将落幕（终）","bv":"BV16k4y1473R"}],
-  "mrcb": [{"n":"疾驰，飞驰，腾驰，在温暖的大地（上）","bv":"BV13H4y1o7iP"}, {"n":"丢弃，抛弃，舍弃，那仅剩的尊严（下）","bv":"BV1ke411X7GH"}],
-  "tamamocross": [{"n":"那悲哀的胆怯的马儿，早已随着故乡一起死去（上）","bv":"BV1WB421z7Dz"}, {"n":"那勇敢的迅疾的闪电，将最初的梦想不断延续（下）","bv":"BV1pD421j7z8"}],
-  "hishimiracle": [{"n":"以奇迹为名，令天地倒转","bv":"BV1Tx421S7E9"}],
-  "staygold": [{"n":"褪去昔日旧枷锁，今日方知我是我","bv":"BV1W9FSz8Eut"}],
-  "buenavista": [{"n":"名雌辈出，我依旧是正统女主角（上）","bv":"BV1kVZABWEzy"}, {"n":"屡次吃瘪，你仍然集一生所偏爱（下）","bv":"BV1t1AizuE8H"}],
-  "mejiroramonu": [{"n":"青鬃踏雪完美小姐驾到，一骑绝尘三冠女王登顶","bv":"BV1sbRbBtE2v"}],
-  "twinturbo": [{"n":"除了逃，再无其他活法","bv":"BV1d3VG68EBu"}],
-  "mayanotopgun": [{"n":"变幻自在的英里天才少女——摩耶重炮","bv":"BV1AT4y1Y7xd"}],
-  "agnesdigital": [{"n":"全能贵公子为何如此变态？——爱丽数码","bv":"BV1yR4y1p7Fz"}],
-  "specialweek": [{"n":"特能吃的外交总大将——特别周","bv":"BV1sL4y1e7wN"}],
-  "tokaiteio": [{"n":"三度骨折仍复活的奇迹不死鸟——东海帝王","bv":"BV1yq4y1s77y"}],
-  "nishinoflower": [{"n":"闪耀的短跑少女——西野花","bv":"BV1K64y1r7fa"}],
-  "matikanetannhauser": [{"n":"主角身后的努力家——待兼诗歌剧","bv":"BV1h54y1V79w"}],
-  "daiwascarlet": [{"n":"世纪死对头——大和赤骥","bv":"BV1uK4y1N7SX"}],
-  "akikawayayoi": [{"n":"理事长也是马娘？北方风味","bv":"BV1d64y1S7Lg"}],
-/* 马娘本体故事 by 浠月照耀下的奇迹 */
-  "mihonobourbon": [{"n":"凭努力硬刚血统，败于命运的挑战者——美浦波旁","bv":"BV1Hw4m1e7mg"}],
-  "casinodrive": [{"n":"CY为何选娱乐场作为远征引路人？","bv":"BV1iVDMBVErK"}],
-  "elcondorpasa": [{"n":"非冠即亚的天才！3G1进殿堂——神鹰","bv":"BV1LUZ7BdEdf"}],
-  "copanorickey": [{"n":"272倍赔率下取胜的传奇——小林历奇","bv":"BV18hrEBuEws"}],
-  "wonderacute": [{"n":"老骥伏枥，志在千里——奇锐骏","bv":"BV1C5BKBDEJV"}],
-  "luckylilac": [{"n":"若无杏目，她早已成为传奇——旺紫丁","bv":"BV1RDbpzmEoe"}],
-  "admiregroove": [{"n":"传承至未来的名血——爱慕律动","bv":"BV1vUn2zZEnP"}],
-  "chronogenesis": [{"n":"首位春秋三连霸母马——创世驹","bv":"BV1rSGAzfEfg"}],
-  "lovesonlyyou": [{"n":"发光→低谷→完全闪耀——唯独爱你","bv":"BV1mWLmzKEME"}],
-  "granalegria": [{"n":"其名为胜利的欢呼声——放声欢呼","bv":"BV1r9ZBYYEBq"}],
-  "fenomeno": [{"n":"并非无端COS承太郎——超常骏骥","bv":"BV1epR4Y5EjJ"}],
-  "durandal": [{"n":"以圣剑为名的短英强者——多旺达","bv":"BV1ivAnenE1Y"}],
-  "naritabrian": [{"n":"20世纪名马第一位——成田白仁","bv":"BV1cxkmYSEje"}],
-  "astonmachan": [{"n":"转瞬即逝的跑车","bv":"BV15N4y1w79e"}],
-  "rheinkraft": [{"n":"早逝的变则二冠母马——莱茵力量","bv":"BV1ueC1Y8EvC"}],
-  "cesario": [{"n":"来自日本的超级巨星——西沙里奥","bv":"BV1DS2JYPER9"}],
-  "daringtact": [{"n":"首位无败三冠母马——谋勇兼备","bv":"BV1oWtxe8Euf"}],
-  "neouniverse": [{"n":"神秘宇宙——新宇宙","bv":"BV1EwptedEPb"}],
-  "finemotion": [{"n":"与这样的马比赛，她对手太可怜——美妙姿势","bv":"BV1QHWPemEHS"}],
-  "dreamjourney": [{"n":"没有他，就没有黄金巨匠和黄金船——梦之旅","bv":"BV1WHY9ePEKE"}],
-  "symbolikriss": [{"n":"漆黑的帝王——吉兆","bv":"BV1Eb42177oK"}],
-  "daiichiruby": [{"n":"因想成为母亲而退役——第一红宝石","bv":"BV1eS42197aU"}],
-  "dantsuflame": [{"n":"电影主角团一员的悲剧原型——烈焰快驹","bv":"BV1wZ421s7Ty"}],
-  "noreason": [{"n":"名为莫名其妙的赛马有多莫名其妙？","bv":"BV1Vi421k7jh"}],
-  "chevalgrand": [{"n":"5分钟了解高尚骏逸的原型故事","bv":"BV1Lm41127vd"}],
-  "vivlos": [{"n":"5分钟了解强击的原型故事","bv":"BV1Vr421V7eS"}],
-  "verxina": [{"n":"极峰成为女版怒涛的背后玄机","bv":"BV1P1421U7HW"}],
-  "gentildonna": [{"n":"竟有这样的母马——贵妇人","bv":"BV1aD421L763"}],
-  "stillinlove": [{"n":"自带病娇属性的爱如往昔","bv":"BV1Gu4m137uE"}],
-  "hokkotarumae": [{"n":"能成为城市观光大使的北港火山","bv":"BV1sH4y1E7or"}],
-  "smartfalcon": [{"n":"连战连胜反而风评下降——醒目飞鹰","bv":"BV14K411h7bL"}],
-  "bamboomemory": [{"n":"初代短距离王者——青竹回忆","bv":"BV1va4y127fM"}],
-  "inarione": [{"n":"从地方转中央并青史留名——稻荷一","bv":"BV1Hw41147nz"}],
-  "satonocrown": [{"n":"北部玄驹真正的青梅竹马——里见皇冠","bv":"BV1we41197gZ"}],
-  "satonodiamond": [{"n":"6分钟了解里见光钻的原型故事","bv":"BV1nC4y1V78Y"}],
-  "duramente": [{"n":"未能复活的帝王——大鸣大放","bv":"BV1Ew411X7VU"}],
-  "maruzensky": [{"n":"充满遗憾的强者——丸善斯基","bv":"BV1Go4y1P7FG"}],
-  "meishodoto": [{"n":"世纪末倒霉蛋——名将怒涛","bv":"BV1mu411W74T"}],
-  "naritatoproad": [{"n":"三年未胜G1，得票仍是第一——成田路","bv":"BV13s4y1R7ou"}],
-  "currenchan": [{"n":"人爱马敬的闪光少女——真机伶","bv":"BV1NX4y1R7aH"}],
-  "airshakur": [{"n":"最惨准三冠马——空中神宫","bv":"BV1eG4y1P7op"}],
-  "shinkowindy": [{"n":"咬马是故意的——新光风","bv":"BV1ds4y1h7pQ"}],
-  "kawakamiprincess": [{"n":"凶暴又娇贵的实力派——川上公主","bv":"BV1aY411i7UJ"}],
-  "ksmiracle": [{"n":"被人为摧毁的奇迹——凯斯奇迹","bv":"BV1xD4y1N7s5"}],
-  "tosenjordan": [{"n":"苦心马，天不负——东瀛佐敦","bv":"BV1nG4y1U7RS"}],
-  "mejirobright": [{"n":"'庸才'的逆袭——目白光明","bv":"BV1Ky4y1X73x"}],
-  "matikanefukukitaru": [{"n":"承兄之福，弥兄之憾——待兼福来","bv":"BV1Y8411w7eg"}],
-  "hishiakebono": [{"n":"大体重的奇迹——菱曙","bv":"BV1MM411875C"}],
-  "sakurachiyonoo": [{"n":"燃尽一切的奇迹逆转——樱花千代王","bv":"BV12Y41197px"}],
-  "mejiroryan": [{"n":"目白赖恩与横山典弘的友情","bv":"BV1kx4y137cM"}],
-  "admirevega": [{"n":"燃尽一切，只为不负亡兄——爱慕织姬","bv":"BV1H14y1u7hy"}],
-  "katsuragiace": [{"n":"从'废马'到'日本的王牌'——葛城王牌","bv":"BV1pHcJeWEzn"}],
-  "foreveryoung": [{"n":"CY家的太子有多强？——青春永驻","bv":"BV1iQPVzfEqA"}],
-  "victoirepisa": [{"n":"他的胜利为日本带来了勇气和希望——比萨胜驹","bv":"BV1m2QFBkEgb"}],
-  "marchelorraine": [{"n":"人气倒数爆大冷，G1首胜创造历史——洛林军歌","bv":"BV1zdXsBiEct"}],
-
-/* 赛马科普 by 稚九鸟Kyutori */
-  "orfevre": [{"n":"黄金巨匠！脑子有问题的超强赛马","bv":"BV1PM411y7Zz"}],
-  "winningticket": [{"n":"纪念最近离世的胜利奖券","bv":"BV1sv4y1W7i8"}],
-  "almondeye": [{"n":"杏目，9个G1的母马三冠王","bv":"BV1MZ42187ds"}],
-  "titleholder": [{"n":"领衔！阪神竞马场的领跑王者","bv":"BV195HpzoE5K"}],
-  "venuspaques": [{"n":"卓芙！击碎日本马凯旋门冠军梦","bv":"BV18C4y1L79h"}],
-  "darleyarabian": [{"n":"达利阿拉伯 Darley Arabian","bv":"BV1WGfCBgEWK"}],
-  "godolphinbarb": [{"n":"高多芬阿拉伯 Godolphin Barb","bv":"BV1trNAzSEcn"}],
-  "byerleyturk": [{"n":"拜耶尔土耳其 Byerley Turk","bv":"BV1CcfqBWECy"}],
-  "haiseiko": [{"n":"20世纪的名马 第8位 海塞克","bv":"BV1Q7nAzcESe"}],
-  "airgroove": [{"n":"20世纪的名马 第9位 气槽","bv":"BV15XfdBhEdC"}],
-  "mejirodober": [{"n":"20世纪的名马 第19位 目白多伯","bv":"BV1yEZrBeEar"}],
-  "northflight": [{"n":"20世纪的名马 第35位 北方飞翔","bv":"BV1jqcTzNEvv"}],
-  "daitakuhelios": [{"n":"20世纪的名马 第73位 大拓太阳神","bv":"BV179PizoE5y"}],
-  "phalaenopsis": [{"n":"20世纪的名马 第85位 蝴蝶兰","bv":"BV18s8B6vEU9"}],
-  "hayakawatazuna": [{"n":"20世纪的名马 第44位 丰收时刻","bv":"BV1x44y1H7CJ"}],
-  "rigantona": [{"n":"名马传说--Dancing Brave 勇舞者","bv":"BV1E4JCzpEaY"}],
-  "sononelfie": [{"n":"原型马解说 暂无视频"}],
-  "saintlite": [{"n":"三冠马之路—圣烈特 ","bv":"BV1iS4y1c7WM"}],
-  "speedsymboli": [{"n":"时代的先驱，日本速度的象征！","bv":"BV1fJPueREut"}],
-  "bochuzoku": [{"n":"【世界の名马】望族(モンジュー Moutjeu)","bv":"BV1ZMt563Ezj"}],
-  "yukinobijin": [{"n":"雪之美人 专属特殊胜利实况","bv":"BV1614y1e78m"}],
-  "marveloussunday": [{"n":"瑰丽的强者灵魂！美丽周日原型介绍！","bv":"BV1gPy5YCEeB"}],
-  "yamaninzephyr": [{"n":"傲人的飓风 也文攝輝","bv":"BV1Vm4y1w7c8"}],
-  "siriussymboli": [{"n":"远征海外的先驱！-天狼星象征原型","bv":"BV1XhUZYmE2z"}],
-  "tapdancecity": [{"n":"继续与时间赛跑吧！-跳舞城原型介绍","bv":"BV1GPXVYAEUd"}],
-  "bikopegasus": [{"n":"与命运抗争的小小英雄—微光飞驹原型介绍","bv":"BV1GhMcz8Egb"}],
-  "ikunodictus": [{"n":"不屈的铁娘子—生野狄杜斯原型介绍","bv":"BV1V7grzEEYz"}],
-  "transcend": [{"n":"短暂制霸泥地的新星~创升原型介绍","bv":"BV1XPuBziEvg"}],
-  "soundsofearth": [{"n":"最强坠机王万老二是也～万籁争鸣原型介绍","bv":"BV1XZY4zPEzq"}],
-  "yaenomuteki": [{"n":"光辉与热忱并存的战士～八重无敌原型介绍","bv":"BV1X7anzVEvU"}],
-  "eishinflash": [{"n":"一匹在日本土生土长的德国马～荣进闪耀原型介绍","bv":"BV1jFSjBwETr"}],
-  "calstonelighto": [{"n":"学院里来了只傲娇猫娘～金镇之光原型介绍","bv":"BV1yDyuBLEEN"}],
-  "airmessiah": [{"n":"璀璨短暂的名门之后～空中救世主原型介绍","bv":"BV18zwXzWEWx"}],
-  "naritataishin": [{"n":"努力证明不被看好的自己～成田大进原型介绍","bv":"BV1qLNczfEiP"}],
-  "bubblegumfellow": [{"n":"看我如何两面包夹芝士～吹波糖原型介绍","bv":"BV1oxcvzLEbD"}],
-  "winvariation": [{"n":"舞动吧，草地上的奥杰塔～凯旋芭蕾原型介绍","bv":"BV1PTDvBAEqd"}],
-  "tsurumarutsuyoshi": [{"n":"好像斯佩酱也不是我的对手~鹤丸刚志原型介绍","bv":"BV1spEj6TEgS"}],
-  "furioso": [{"n":"泥地出了个奖项收集者~狂怒乐章原型介绍","bv":"BV17t5969EQA"}],
-  "kinghalo": [{"n":"我这一生如履薄冰～帝王光辉原型介绍","bv":"BV1sYJ9zFEQa"}],
-  "goldcity": [{"n":"百年难遇的梦幻美马！10分钟带你了解历史上的黄金城（ゴールドシチー）！","bv":"BV1fb4y1Z7QT"}],
-  "seekingthepearl": [{"n":"【赛马娘角色介绍＃8】采珠","bv":"BV1QpXYYDEW3"}],
-  "mejiroardan": [{"n":"被时代遮蔽的强者【目白阿尔丹】不屈的中国媳妇","bv":"BV1Vr4y1r7Yr"}],
-  "espoircity": [{"n":"【赛马娘】希望之城 专属特殊胜利实况","bv":"BV1BdpgzNEin"}],
-  "taninogimlet": [{"n":"将胜利的美酒传递给爱女——谷水琴蕾","bv":"BV1ubvRBREmX"}],
-  "believe": [{"n":"【赛马娘】信念 专属特殊胜利实况","bv":"BV17tW3zTEaz"}],
-  "samsonbig": [{"n":"下落不明史实马系列 大森逊传说","bv":"BV1eNbzzWExo"}],
-  "royceandroyce": [{"n":"【赛马娘】莱斯莱斯 专属特殊胜利实况","bv":"BV1ksKf6QEQb"}],
-  "daringheart": [{"n":"后冠之梦跨越时空——勇敢之心人物志","bv":"BV1M7yKB3EdP"}],
-  "fusaichipandora": [{"n":"【赛马娘】火神 专属特殊胜利实况","bv":"BV1uLbDzjEBg"}],
-  "genuine": [{"n":"20世纪的名马 第55位 真诚 ジェニュイン","bv":"BV1G1thzcEr9"}],
-  "sakurachitoseo": [{"n":"【20世纪の名胜负】1995年 天皇赏·秋——樱花千岁王","bv":"BV1NA411U7RS"}],
-  "blastonepiece": [{"n":"Blast onepiece 防爆装束 @Hooskey","bv":"BV19s3B6fEKE"}],
-  "currenbouquetdor": [{"n":"机伶金花：最强2胜马传奇","bv":"BV1gg4y1b7U5"}],
-  "reddesire": [{"n":"【赛马娘】红色梦想 专属特殊胜利实况","bv":"BV1tgLU6RELw"}],
-  "kiseki": [{"n":"【赛马娘】神业 特殊实况合集","bv":"BV1Joz7B1E53"}],
-  "epiphaneia": [{"n":"21世纪的名马 神威启示","bv":"BV19U4y1q7mE"}],
-  "logotype": [{"n":"21世纪的名马 标志名驹","bv":"BV1cv411W7vq"}],
-  "rosekingdom": [{"n":"2010.11.28 日本杯　玫瑰帝国","bv":"BV1P44y1s77p"}],
-  "rulership": [{"n":"【赛马娘】统治地位 专属特殊胜利实况","bv":"BV1qpgR6GE4p"}],
-  "efforia": [{"n":"21世纪的名马 乐透心","bv":"BV1k84y1K7yW"}],
-  "lighthello": [{"n":"原型马解说 暂无视频"}],
-  "zankan_koukou": [{"n":"原型马解说 暂无视频"}],
-};
-
-  function renderBloodGraphInDetail(box, root) {
-    if (!box) return;
-    refreshRelIndex();
-
-    var relation = relByCid[root];
-    var message = '';
-    if (relation && relation.mapping_kind === 'non_uma') {
-      message = '该角色非赛马娘，无现实原型，不提供血缘关系图。';
-    } else if (relation && (relation.mapping_kind === 'original' || relation.pure)) {
-      message = '该角色为纯原创赛马娘，无现实原型，不提供血缘关系图。';
-    }
-    if (message) {
-      var note = document.createElement('section');
-      note.className = 'c-blood c-blood-pure';
-      note.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
-        '<p class="c-blood-pure-note">' + message + '</p>';
-      box.appendChild(note);
-      return;
-    }
-
-    if (!relation) {
-      var missing = document.createElement('section');
-      missing.className = 'c-blood c-blood-pure';
-      missing.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
-        '<p class="c-blood-pure-note">血统数据载入失败。</p>' +
-        '<button type="button" class="c-blood-retry">重新载入</button>';
-      missing.querySelector('.c-blood-retry').addEventListener('click', function () {
-        window.location.reload();
-      });
-      box.appendChild(missing);
-      return;
-    }
-    var lens = document.createElement('section');
-    lens.className = 'c-pedigree-lens';
-    var frame = document.createElement('iframe');
-    var displayName = relation.zh || root;
-    var sampleId = String(root).replace(/[^a-z0-9_]/gi, '');
-    frame.className = 'c-pedigree-lens-frame';
-    frame.dataset.pedigreeSample = root;
-    frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
-      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-15">' +
-      '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
-      ';window.PEDIGREE_EMBEDDED=true;<\/script>' +
-      '<script defer src="/data/character_index_data.js?v=20260913"><\/script>' +
-      '<script defer src="/data/pedigree_data.js?v=20260911-8"><\/script>' +
-      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-20"><\/script></head>' +
-      '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
-      '<section class="lab-workspace" aria-labelledby="workspace-title">' +
-      '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +
-      '<div class="workspace-content"><div class="workspace-body">' +
-      '<div class="graph-viewport" id="graph-viewport" aria-label="血统关系图"><div class="graph-stage" id="graph-stage"></div></div>' +
-      '</div></div></section></main>' +
-      '<div class="mobile-sheet" id="mobile-sheet" aria-hidden="true">' +
-      '<button type="button" class="sheet-backdrop" data-sheet-close aria-label="关闭关系详情"></button>' +
-      '<section class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">' +
-      '<div class="sheet-grip"></div><button type="button" class="sheet-close" data-sheet-close aria-label="关闭">' +
-      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
-      '<div id="sheet-content"></div></section></div></body></html>';
-    frame.title = displayName + '的血统关系';
-    frame.loading = 'lazy';
-    lens.appendChild(frame);
-    box.appendChild(lens);
-  }
-
-  function openCharDetailGlobal(id) {
-    if (window.__uma_app && typeof window.__uma_app.openCharDetail === 'function') {
-      window.__uma_app.openCharDetail(id);
-    }
-  }
-
-  function roomDist(a, b) {
-    var dx = a.clientX - b.clientX, dy = a.clientY - b.clientY;
-    return Math.sqrt(dx * dx + dy * dy);
-  }
-  function closeRoomLightbox(ov) {
-    if (ov) { ov.style.display = 'none'; var im = ov.querySelector('img'); if (im) { im.style.transform = ''; } }
-  }
-  function initRoomPinch(ov) {
-    if (ov.getAttribute('data-pinch')) return;
-    ov.setAttribute('data-pinch', '1');
-    var img = ov.querySelector('img');
-    var st = { scale: 1, tx: 0, ty: 0 };
-    ov._roomSt = st;
-    var ges = null, multi = false, suppress = false;
-    function apply() {
-      if (st.scale > 1.01) img.classList.add('zoomed');
-      else img.classList.remove('zoomed');
-      img.style.transform = 'translate(' + st.tx + 'px,' + st.ty + 'px) scale(' + st.scale + ')';
-    }
-    ov.addEventListener('touchstart', function (e) {
-      if (e.touches.length >= 2) {
-        multi = true;
-        e.preventDefault();
-      }
-      if (e.touches.length === 2) {
-        ges = { type: 'pinch', d: roomDist(e.touches[0], e.touches[1]), s: st.scale, tx: st.tx, ty: st.ty, cx: (e.touches[0].clientX + e.touches[1].clientX) / 2, cy: (e.touches[0].clientY + e.touches[1].clientY) / 2 };
-      } else if (e.touches.length === 1 && !multi) {
-        ges = { type: 'pan', x: e.touches[0].clientX, y: e.touches[0].clientY, tx: st.tx, ty: st.ty };
-      }
-    }, { passive: false });
-    ov.addEventListener('touchmove', function (e) {
-      if (e.touches.length === 2 && ges && ges.type === 'pinch') {
-        e.preventDefault(); suppress = true;
-        var d = roomDist(e.touches[0], e.touches[1]);
-        if (d > 0) {
-          var ns = Math.max(1, Math.min(6, ges.s * d / ges.d));
-          var cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-          var cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-          var nx = (ges.cx - ges.tx) / ges.s, ny = (ges.cy - ges.ty) / ges.s;
-          st.scale = ns;
-          st.tx = cx - nx * ns; st.ty = cy - ny * ns;
-          apply();
-        }
-      } else if (e.touches.length === 1 && ges && ges.type === 'pan') {
-        e.preventDefault(); suppress = true;
-        var dx = e.touches[0].clientX - ges.x, dy = e.touches[0].clientY - ges.y;
-        st.tx = ges.tx + dx; st.ty = ges.ty + dy;
-        apply();
-      }
-    }, { passive: false });
-    ov.addEventListener('touchend', function (e) {
-      if (e.touches.length < 2) multi = false;
-      if (e.touches.length === 0) ges = null;
-    }, { passive: true });
-    ov.addEventListener('click', function (e) {
-      if (suppress) { suppress = false; e.preventDefault(); e.stopPropagation(); return; }
-      closeRoomLightbox(ov);
-    });
-    ov.addEventListener('dblclick', function () {
-      st.scale = 1; st.tx = 0; st.ty = 0; apply();
-    });
-    ov.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      var rect = ov.getBoundingClientRect();
-      var mx = e.clientX - rect.left, my = e.clientY - rect.top;
-      var factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-      var ns = Math.max(1, Math.min(6, st.scale * factor));
-      if (ns === st.scale) return;
-      var nx = (mx - st.tx) / st.scale, ny = (my - st.ty) / st.scale;
-      st.scale = ns;
-      st.tx = mx - nx * ns; st.ty = my - ny * ns;
-      apply();
-    }, { passive: false });
-  }
-  function openRoomLightbox(src) {
-    var ov = document.getElementById('c-lightbox');
-    if (!ov) {
-      ov = document.createElement('div');
-      ov.id = 'c-lightbox';
-      ov.className = 'c-lightbox';
-      var lightboxImage = document.createElement('img');
-      lightboxImage.alt = '宿舍室友图大图';
-      ov.appendChild(lightboxImage);
-      document.body.appendChild(ov);
-    }
-    initRoomPinch(ov);
-    if (ov._roomSt) { ov._roomSt.scale = 1; ov._roomSt.tx = 0; ov._roomSt.ty = 0; }
-    var im = ov.querySelector('img');
-    im.src = src;
-    im.style.transform = '';
-    ov.style.display = 'flex';
-  }
-
-  function initRoom(root) {
-    var img = (root || document).querySelector('.roommate-image');
-    if (!img || img.getAttribute('data-room-inited')) return;
-    img.setAttribute('data-room-inited', '1');
-    img.addEventListener('click', function () { openRoomLightbox(img.getAttribute('src') || img.src); });
-  }
-
-  function initCharTab() {
-    var tab = document.getElementById('tab-characters');
-    if (tab) {
-      renderIntro(tab);
-      renderDetail(tab);
-    }
-    initRoom(document);
-  }
-
-  /* ---------- 声优库列表 ---------- */
-  function renderVoiceList(root) {
-    var grid = (root || document).querySelector('#vaGrid');
-    var input = (root || document).querySelector('#vaSearch');
-    if (!grid || !input || grid.getAttribute('data-va-inited')) return;
-    grid.setAttribute('data-va-inited', '1');
-    function norm(v) { return String(v || '').toLowerCase(); }
-    function data() {
-      var generated = window.__uma_app && window.__uma_app.voiceProfiles;
-      if (generated && generated.length) {
-        return generated.map(function (profile) {
-          var identity = profile.identity || {}, photo = profile.photo || {};
-          return {
-            key: identity.zh || identity.ja || profile.id,
-            slug: profile.slug || profile.id,
-            zh: identity.zh || identity.ja || '', ja: identity.ja || identity.zh || '',
-            photo: photo.url || '',
-            roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', image: role.image || '', main: role.color_main || '#8c83ff' }; })
-          };
-        });
-      }
-      return [];
-    }
-    function render() {
-      var q = norm(input.value.trim());
-      var list = data().filter(function (v) {
-        if (!q) return true;
-        if (norm(v.zh).indexOf(q) >= 0 || norm(v.ja).indexOf(q) >= 0) return true;
-        for (var i = 0; i < v.roles.length; i++) {
-          if (norm(v.roles[i].zh).indexOf(q) >= 0) return true;
-        }
-        return false;
-      });
-      grid.innerHTML = '';
-      list.forEach(function (v, i) {
-        var li = document.createElement('li');
-        var card = document.createElement('a');
-        card.className = 'va-card';
-        card.href = '/zh-Hans/database/voice-actors/' + v.slug;
-        card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
-        var ph = v.photo ? { img: v.photo } : null;
-        var roleHtml = v.roles.map(function (role) {
-          var roleImage = role.image ? '<img src="' + role.image + '" alt="">' : '<span class="performer-chip-fallback" aria-hidden="true">' + (role.zh || '?').charAt(0) + '</span>';
-          return '<span class="performer-chip character-chip" style="--chip-color:' + role.main + '">' + roleImage + '<span>' + role.zh + '</span></span>';
-        }).join('');
-        var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
-        var imgHtml = ph
-          ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'
-          : '<span class="va-ph-fb">' + (v.zh || v.ja || '?').charAt(0) + '</span>';
-          card.innerHTML =
-          imgHtml +
-          '<span class="va-card-txt">' +
-            '<p class="va-name">' + v.zh + '</p>' +
-            '<p class="va-kana">' + v.ja + '</p>' +
-            '<span class="performer-chip-list compact va-card-roles">' + roleHtml + '</span>' +
-          '</span>';
-        card.addEventListener('click', function (e) {
-          e.preventDefault();
-          if (window.__uma_app && typeof window.__uma_app.openVa === 'function') window.__uma_app.openVa(v.slug);
-        });
-        li.appendChild(card);
-        grid.appendChild(li);
-      });
-      var nodata = (root || document).querySelector('#vaNoData');
-      if (nodata) nodata.style.display = list.length ? 'none' : 'block';
-    }
-    input.addEventListener('input', render);
-    render();
-  }
-
-  function initVoiceTab() {
-    var tab = document.getElementById('tab-db-voice');
-    if (!tab) return;
-    renderVoiceList(tab);
-  }
-
-var mo = new MutationObserver(function () { initCharTab(); initVoiceTab(); });
-mo.observe(document.body, { childList: true, subtree: true });
-initCharTab();
-initVoiceTab();
-})();
