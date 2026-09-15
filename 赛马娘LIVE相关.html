@@ -484,7 +484,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
                 <div class="media-content">
                     <section class="entity-section">
-                        <header class="entity-section-title"><h2>曲目</h2><span>{{ albumDetail.songs.length }} 首</span></header>
+                        <header class="entity-section-title"><h2>曲目</h2><div class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span><button v-if="albumPlayableCount(albumDetail)" type="button" class="album-enqueue-btn" @click="enqueueAlbum(albumDetail)" title="播放整个专辑并加入播放列表">添加到播放列表</button></div></header>
                         <div class="album-track-list">
                             <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
                                 <span>{{ String(index+1).padStart(2,'0') }}</span>

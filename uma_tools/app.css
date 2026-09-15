@@ -3027,3 +3027,17 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     .archive-card-skeleton > span,
     .archive-card-skeletons > span { animation: none; }
 }
+
+.entity-section-actions { display: flex; align-items: center; gap: 10px; }
+.album-enqueue-btn {
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--brand);
+    background: #fff;
+    color: var(--brand);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+.album-enqueue-btn:hover { background: var(--brand); color: #fff; }

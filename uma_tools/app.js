@@ -1305,10 +1305,30 @@ const umaApp = createApp({
     function playQueueAt(i) {
       const q = player.queue;
       if (!q || !q.length) return;
-      const idx = ((i % q.length) + q.length) % q.length;
-      player.queueIndex = idx;
-      const s = q[idx];
-      setAndPlay(s.url, s.name, s.artist, s.pic);
+      const n = q.length;
+      for (let step = 0; step < n; step++) {
+        const idx = (((i + step) % n) + n) % n;
+        const s = q[idx];
+        if (s && s.url) {
+          player.queueIndex = idx;
+          setAndPlay(s.url, s.name, s.artist, s.pic);
+          return;
+        }
+      }
+    }
+    function albumPlayableCount(album) {
+      return ((album && album.songs) || []).filter(function (song) { return !!song.url; }).length;
+    }
+    function enqueueAlbum(album) {
+      const songs = ((album && album.songs) || []).slice();
+      if (!songs.length) return;
+      player.queue = songs;
+      showQueue.value = true;
+      const i = songs.findIndex(function (song) { return !!song.url; });
+      if (i < 0) { player.queueIndex = 0; return; }
+      player.queueIndex = i;
+      const s = songs[i];
+      setAndPlay(s.url, s.name, s.artist, s.pic || (album.data && album.data.cover) || album.cover);
     }
     function nextSong() { playQueueAt(player.queueIndex + 1); }
     function prevSong() { playQueueAt(player.queueIndex - 1); }
@@ -2094,6 +2114,7 @@ const umaApp = createApp({
       fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
+      enqueueAlbum, albumPlayableCount,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, loadNews, newsHeroCover,
