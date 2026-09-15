@@ -265,7 +265,7 @@ const umaApp = createApp({
         const musicSection = (seg[1] || '').toLowerCase();
         return musicSection === 'songs' || first !== 'music'
           ? Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()])
-          : loadAlbums();
+          : Promise.all([loadAlbums(), loadVoiceData(), loadSongCatalog()]);
       }
       if (first === 'live') return loadEvents();
       if (first === 'characters') {
@@ -278,7 +278,7 @@ const umaApp = createApp({
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
       if (!sub) return loadCharacterIndexData().then(loadCharacterUi);
-      if (sub === 'albums') return loadAlbums();
+      if (sub === 'albums') return Promise.all([loadAlbums(), loadVoiceData(), loadSongCatalog()]);
       if (sub === 'songs') return Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()]);
       if (sub === 'events') return loadEvents();
       if (sub === 'voice' || sub === 'voice-actors') {
