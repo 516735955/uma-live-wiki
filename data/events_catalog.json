@@ -1,28 +1,28 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-19T14:08:04+00:00",
+  "generated_at": "2026-09-20T03:04:40+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "b3a459d9a64a9608519cecddf1f99201e80d566be99ceceb6dd53acc6f6ee3f0",
+      "sha256": "b7eb03fe490561e4e955a19566d134e425eb6efba4157249193a5c5c5e531c78",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "bfc226f5dac9b5fe84da17afc7bdba4b11b72c5eb9a06a465c3b5bd398e5f4e9",
+      "sha256": "7729c266f20b14648cc60344b4da079af5c052da0720403bf322913c2adaab68",
       "preserved": true
     }
   },
   "coverage": {
-    "events": 470,
+    "events": 469,
     "by_kind": {
       "concert": 81,
-      "official_program": 227,
+      "official_program": 226,
       "onsite": 162
     },
     "by_mode": {
-      "online": 227,
+      "online": 226,
       "onsite": 243
     },
-    "official_programs": 227,
+    "official_programs": 226,
     "unresolved_cast_names": 0
   },
   "series": [
@@ -787,276 +787,6 @@
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
-      "legacy_aliases": [],
-      "setlist_status": "none"
-    },
-    {
-      "id": "paka-live-tv-prime-007",
-      "title": "ぱかライブTV' #7",
-      "date": "2026-09-27",
-      "end_date": "2026-09-27",
-      "kind": "official_program",
-      "mode": "online",
-      "series_id": "paka-live-tv-prime",
-      "venue": "在线播出",
-      "cast_status": "verified",
-      "cast": [
-        {
-          "voice_actor_id": "va-0035",
-          "name": "前田玲奈",
-          "character_id": "grasswonder",
-          "role": "草上飞",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0155",
-          "name": "衣川里佳",
-          "character_id": "naritabrian",
-          "role": "成田白仁",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0118",
-          "name": "田所梓",
-          "character_id": "symbolirudolf",
-          "role": "鲁道夫象征",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0135",
-          "name": "秋奈",
-          "character_id": "duramente",
-          "role": "大鸣大放",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0166",
-          "name": "铃木日菜",
-          "character_id": "admiregroove",
-          "role": "爱慕律动",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0147",
-          "name": "菊池友莉菜",
-          "character_id": "rosekingdom",
-          "role": "玫瑰帝国",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0110",
-          "name": "浅见春那",
-          "character_id": "phalaenopsis",
-          "role": "蝴蝶兰",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
-        }
-      ],
-      "character_ids": [],
-      "sessions": [
-        {
-          "id": "paka-live-tv-prime-007-session-1",
-          "label": "本期节目",
-          "date": "2026-09-27",
-          "songs": [],
-          "character_ids": [],
-          "cast": [
-            {
-              "voice_actor_id": "va-0035",
-              "name": "前田玲奈",
-              "character_id": "grasswonder",
-              "role": "草上飞",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0155",
-              "name": "衣川里佳",
-              "character_id": "naritabrian",
-              "role": "成田白仁",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0118",
-              "name": "田所梓",
-              "character_id": "symbolirudolf",
-              "role": "鲁道夫象征",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0135",
-              "name": "秋奈",
-              "character_id": "duramente",
-              "role": "大鸣大放",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0166",
-              "name": "铃木日菜",
-              "character_id": "admiregroove",
-              "role": "爱慕律动",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0147",
-              "name": "菊池友莉菜",
-              "character_id": "rosekingdom",
-              "role": "玫瑰帝国",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0110",
-              "name": "浅见春那",
-              "character_id": "phalaenopsis",
-              "role": "蝴蝶兰",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            }
-          ],
-          "setlist_status": "none"
-        }
-      ],
-      "media": [],
-      "sources": [
-        {
-          "kind": "official_announcement",
-          "label": "官方公告",
-          "url": "https://umamusume.jp/news/detail?id=3462"
-        },
-        {
-          "kind": "community_archive",
-          "label": "Umamusume Wiki 补档",
-          "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-        }
-      ],
-      "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
-      "summary": "公式生配信番組「ぱかライブTV' #7」の出走者と放送日時が決定しました！10月に追加予定の新育成シナリオや、ガチャ更新情報、次回ストーリーイベントなど、ゲーム最新情報を発表！「ぱかライブTV' #7」放送終了後に配信するアニメ『うまゆる ふるげ～と！』最新情報や、『7th EVENT WORLD TOUR “THE STAGE” in LOS ANGELES』の続報もお届け！さらに、アニメ『うまゆる ふるげ～と！』の公開を記念して、うまゆる早押しクイズに挑戦します！放送日時：2026年9月27日（日）20:00",
-      "schedule_status": "scheduled",
-      "metadata_status": "complete",
       "legacy_aliases": [],
       "setlist_status": "none"
     },
@@ -52221,73 +51951,17 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "va-0008",
-          "name": "上坂堇",
-          "character_id": "agnestachyon",
-          "role": "爱丽速子",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0094",
-          "name": "东山奈央",
-          "character_id": "mejiroramonu",
-          "role": "目白高峰",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0143",
-          "name": "羊宫妃那",
-          "character_id": "daringtact",
-          "role": "谋勇兼备",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "伊藤美来",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
-      "character_ids": [],
+      "character_ids": [
+        "tokaiteio",
+        "vodka",
+        "mrcb",
+        "matikanetannhauser",
+        "kitasanblack",
+        "symbolikriss",
+        "katsuragiace"
+      ],
       "sessions": [
         {
           "id": "live-other-2023-11-18-animax-musix-2023-session-1",
@@ -52307,10 +51981,7 @@
             "matikanetannhauser",
             "kitasanblack",
             "symbolikriss",
-            "katsuragiace",
-            "agnestachyon",
-            "mejiroramonu",
-            "daringtact"
+            "katsuragiace"
           ],
           "performances": [
             {
@@ -52382,17 +52053,14 @@
                 "matikanetannhauser",
                 "kitasanblack",
                 "symbolikriss",
-                "katsuragiace",
-                "agnestachyon",
-                "mejiroramonu",
-                "daringtact"
+                "katsuragiace"
               ],
               "song_id": "song-f53f0c98a1",
               "version_id": "song-f53f0c98a1-v-f53f0c98a1",
               "song_title": "イマジネーション"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセン音頭</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">ソシテミンナノ</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Ms. VICTORIA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"perf-name\">伊藤美来</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">イマジネーション</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AgnesTachyon.png\" alt=\"爱丽速子\" title=\"爱丽速子\"><span class=\"perf-name\">爱丽速子</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\" title=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/DaringTact.png\" alt=\"谋勇兼备\" title=\"谋勇兼备\"><span class=\"perf-name\">谋勇兼备</span></span><span class=\"perf-name\">伊藤美来</span> <span class=\"perf-name\">其他出演者全员</span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセン音頭</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">ソシテミンナノ</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Ms. VICTORIA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"guest-performer\">伊藤美来</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">イマジネーション</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"guest-performer\">上坂すみれ</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">伊藤美来</span> <span class=\"guest-performer\">他出演キャスト全員</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
             "file": "data/live_cat_data.json",
             "category": "other",
@@ -52415,6 +52083,16 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/349821"
+        },
+        {
+          "kind": "official",
+          "label": "ウマ娘官方出演公告",
+          "url": "https://umamusume.jp/news/detail?id=1604"
+        },
+        {
+          "kind": "official",
+          "label": "ANIMAX 官方节目记录",
+          "url": "https://www.animax.co.jp/animaxmusix/archive/archive_2023.html"
         }
       ],
       "legacy_url": "/zh-Hans/live/other/40",
@@ -106730,5 +106408,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "26ab8a8613922ec33288"
+  "build_id": "f5f4381a43218900112e"
 }

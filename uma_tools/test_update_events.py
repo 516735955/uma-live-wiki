@@ -228,6 +228,17 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             ],
         )
 
+    def test_animax_guests_stay_in_songs_not_uma_cast(self):
+        catalog = UPDATE_EVENTS.read_json(ROOT / "data" / "events_catalog.json")
+        event = next(row for row in catalog["events"] if row["id"] == "live-other-2023-11-18-animax-musix-2023")
+        expected = {"tokaiteio", "vodka", "mrcb", "matikanetannhauser", "kitasanblack", "symbolikriss", "katsuragiace"}
+        self.assertEqual({item["character_id"] for item in event["cast"]}, expected)
+        self.assertEqual(len(event["cast"]), 7)
+        table = event["sessions"][0]["setlist_html"]
+        for guest in ("伊藤美来", "上坂すみれ", "東山奈央", "羊宮妃那"):
+            self.assertIn(f'class="guest-performer">{guest}</span>', table)
+        self.assertEqual(set(event["sessions"][0]["performances"][-1]["character_ids"]), expected)
+
     def test_setlist_song_versions_are_preserved(self):
         self.assertEqual(
             UPDATE_EVENTS.clean_song("winning the soul（GO BEYOND Mix Ver.）"),
