@@ -128,8 +128,11 @@ python3 uma_tools/build_pedigree.py
 
 修改 `data/events_data.json`、`data/live_data.json` 或 `data/live_cat_data.json` 后，应再运行一次
 `python3 uma_tools/update_events.py`。它从仓库内受版本控制的源数据统一重建活动、歌曲与出演关系，
-不需要 `events_list.xlsx`。`live_data.json` 与 `live_cat_data.json` 是人工精调歌单的唯一来源：构建器只读，
+不需要 `events_list.xlsx`。`live_data.json` 与 `live_cat_data.json` 是已发布歌单的唯一来源：构建器只读，
 并在构建前后校验哈希；这两份文件没有记录的活动默认没有演出歌曲，程序不会从节目标题、出演阵容或其他来源猜歌。
+Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 仅在标题、日期、场次唯一匹配且对应已发布歌单为空、
+出演信息完整时，补入 `live_cat_data.json` 的空白曲目表；已有非空歌单的曲目或歌手差异只写入工作流报告，
+留待人工处理，不自动覆盖、不发提醒邮件。服务器的常规资料刷新不运行这项任务。
 
 `data/events/voice_actor_identities.json` 是稳定声优 ID 与别名的唯一登记表；角色当前担当关系来自角色索引，
 活动、歌曲和声优页只消费统一生成物，不再各自维护一份映射。外部页面可以同时作为事实核验依据，但每个

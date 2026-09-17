@@ -28,7 +28,5 @@ uma_tools/goods_dump.json
 uma_tools/albums_auto_state.json
 __pycache__/
 
-# 歌单自动同步运行时状态（Google Sheet 快照 / 报告）
-# sheet_seen.json 需入库持久化（跨 CI 运行），用于增量比对基线
+# 歌单同步差异报告由工作流输出，不作为第二份数据源
 data/events/sheet_apply_report.json
-data/events/download_sheet_tmp.xlsx

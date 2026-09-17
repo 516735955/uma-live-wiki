@@ -1014,33 +1014,15 @@ function runCatalogRefresh(reason) {
     return;
   }
   catalogRefreshRunning = true;
-  runSheetSync(reason, () => runCharsCrawl(reason, () => runEventsCrawl(reason, () => runAlbumsCrawl(reason, () => runEventBuild(reason, () => {
+  runCharsCrawl(reason, () => runEventsCrawl(reason, () => runAlbumsCrawl(reason, () => runEventBuild(reason, () => {
     catalogRefreshRunning = false;
     if (catalogRefreshQueued) {
       catalogRefreshQueued = false;
       runCatalogRefresh('queued');
     }
-  })))));
+  }))));
 }
 
-// ---- Official setlist sheet sync (Google Sheet -> live_cat_data.json) ----
-// Pulls the official setlist Google Sheet and auto-inserts new live events into
-// live_cat_data.json. Runs first so the same-cycle event crawl can link `live`
-// fields. Never blocks the chain: failures/timeouts are logged and skipped.
-const SHEET_SCRIPT = path.join(__dirname, 'auto_setlists.py');
-let sheetRunning = false;
-function runSheetSync(reason, done) {
-  if (sheetRunning) { if (done) done(); return; }
-  sheetRunning = true;
-  const t0 = Date.now();
-  execFile(PYTHON_BIN, [SHEET_SCRIPT], { windowsHide: true, timeout: 5 * 60 * 1000 }, (err, stdout, stderr) => {
-    sheetRunning = false;
-    const tag = '[sheet-sync ' + reason + ']';
-    if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-    else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
-    if (done) done();
-  });
-}
 function runCharsCrawl(reason, done) {
   if (charsRunning) { if (done) done(); return; }
   charsRunning = true;
