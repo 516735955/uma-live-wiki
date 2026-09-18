@@ -733,8 +733,8 @@
       "kind": "non_uma"
     },
     "fujimasamarch": {
-      "horse": null,
-      "kind": "original"
+      "horse": "fujimasamarch",
+      "kind": "horse"
     }
   },
   "nodes": [
@@ -23908,7 +23908,20 @@
       "ja": "フジマサマーチ",
       "en": "Fujimasa March",
       "avatar": "uma_official/fujimasamarch.png",
-      "pure": true
+      "real_name_zh": "三月斗将",
+      "real_name": "マーチトウショウ",
+      "real_name_en": "March Tosho",
+      "parents": {
+        "sire": "jbis_0000072342",
+        "dam": "jbis_0000379017",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000180808/pedigree/"
+      },
+      "profile_url": "https://www.jbis.or.jp/horse/0000180808/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000180808/",
+      "sex": "male",
+      "born": 1985,
+      "country": "JPN"
     },
     {
       "id": "netkeiba_000a007f56",
@@ -30868,7 +30881,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a000936/",
       "sex": "male",
       "born": 1950,
-      "country": "JPN"
+      "country": "JPN",
+      "parents": {
+        "sire": "netkeiba_000a000293",
+        "dam": "jbis_0000000127",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000001199/pedigree/"
+      }
     },
     {
       "id": "netkeiba_000a002cba",
@@ -31056,6 +31075,309 @@
       "sex": "female",
       "born": 1960,
       "country": "JPN"
+    },
+    {
+      "id": "jbis_0000072342",
+      "zh": "普雷斯托科",
+      "ja": "プレストウコウ",
+      "en": "Presto Kou",
+      "profile_url": "https://www.jbis.or.jp/horse/0000072342/",
+      "sex": "male",
+      "born": 1974,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000072342/",
+      "parents": {
+        "sire": "jbis_0000333393",
+        "dam": "jbis_0000378749",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000072342/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000379017",
+      "zh": "马奇法斯特",
+      "ja": "マーチフアスト",
+      "en": "March Fast",
+      "profile_url": "https://www.jbis.or.jp/horse/0000379017/",
+      "sex": "female",
+      "born": 1966,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000379017/",
+      "parents": {
+        "sire": "jbis_0000333249",
+        "dam": "jbis_0000006150",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000379017/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000333393",
+      "zh": "古斯塔夫",
+      "ja": "グスタフ(GB)",
+      "en": "Gustav(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333393/",
+      "sex": "male",
+      "born": 1959,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333393/",
+      "parents": {
+        "sire": "grey_sovereign",
+        "dam": "jbis_0000387650",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333393/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000378749",
+      "zh": "桑皮由罗",
+      "ja": "サンピユロー",
+      "en": "Sanpiuro",
+      "profile_url": "https://www.jbis.or.jp/horse/0000378749/",
+      "sex": "female",
+      "born": 1964,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000378749/",
+      "parents": {
+        "sire": "jbis_0000333238",
+        "dam": "jbis_0000006174",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000378749/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000333249",
+      "zh": "三月之风",
+      "ja": "マーチウインド(IRE)",
+      "en": "March Wind(IRE)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333249/",
+      "sex": "male",
+      "born": 1959,
+      "country": "IRE",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333249/",
+      "parents": {
+        "sire": "jbis_0000334296",
+        "dam": "jbis_0000385638",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333249/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000006150",
+      "zh": "飞奔",
+      "ja": "ランフアスト",
+      "en": "Run Fast",
+      "profile_url": "https://www.jbis.or.jp/horse/0000006150/",
+      "sex": "female",
+      "born": 1958,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000006150/",
+      "parents": {
+        "sire": "netkeiba_000a000936",
+        "dam": "jbis_0000001286",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000006150/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387650",
+      "zh": "游戏女爵",
+      "ja": "Gamesmistress(GB)",
+      "en": "Gamesmistress(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387650/",
+      "sex": "female",
+      "born": 1945,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000387650/",
+      "parents": {
+        "sire": "netkeiba_000a000e88",
+        "dam": "jbis_0000389954",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000387650/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000333238",
+      "zh": "希夫尤利尤",
+      "ja": "シーフユリユー(GB)",
+      "en": "Seef Yuriyu(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333238/",
+      "sex": "male",
+      "born": 1957,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333238/",
+      "parents": {
+        "sire": "netkeiba_000a000ffd",
+        "dam": "jbis_0000387762",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333238/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000006174",
+      "zh": "健朝",
+      "ja": "健朝",
+      "en": "Kencho",
+      "profile_url": "https://www.jbis.or.jp/horse/0000006174/",
+      "sex": "female",
+      "born": 1958,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000006174/",
+      "parents": {
+        "sire": "jbis_0000333107",
+        "dam": "jbis_0000000830",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000006174/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334296",
+      "zh": "希尔盖尔",
+      "ja": "Hill Gail(USA)",
+      "en": "Hill Gail(USA)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334296/",
+      "sex": "male",
+      "born": 1949,
+      "country": "USA",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000334296/",
+      "parents": {
+        "sire": "bull_lea",
+        "dam": "jbis_0000387854",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000334296/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000385638",
+      "zh": "战利品",
+      "ja": "War Loot(FR)",
+      "en": "War Loot(FR)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000385638/",
+      "sex": "female",
+      "born": 1950,
+      "country": "FR",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000385638/",
+      "parents": {
+        "sire": "court_martial",
+        "dam": "jbis_0000389804",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000385638/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000001286",
+      "zh": "马鲁托",
+      "ja": "マルトオー(USA)",
+      "en": "Maruto O(USA)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000001286/",
+      "sex": "female",
+      "born": 1950,
+      "country": "USA",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000001286/",
+      "parents": {
+        "sire": "jbis_0000335235",
+        "dam": "jbis_0000386458",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000001286/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000389954",
+      "zh": "塔斯隆",
+      "ja": "Taslon(GB)",
+      "en": "Taslon(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389954/",
+      "sex": "female",
+      "born": 1925,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000389954/"
+    },
+    {
+      "id": "jbis_0000387762",
+      "zh": "地狱烈焰",
+      "ja": "Hell's Fury(GB)",
+      "en": "Hell's Fury(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387762/",
+      "sex": "female",
+      "born": 1949,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000387762/"
+    },
+    {
+      "id": "jbis_0000333107",
+      "zh": "维诺皮耶罗",
+      "ja": "ヴイーノーピユロー(ARG)",
+      "en": "Vino Piuro(ARG)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333107/",
+      "sex": "male",
+      "born": 1934,
+      "country": "ARG",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333107/"
+    },
+    {
+      "id": "jbis_0000000830",
+      "zh": "朝萩",
+      "ja": "アサハギ",
+      "en": "Asahagi",
+      "profile_url": "https://www.jbis.or.jp/horse/0000000830/",
+      "sex": "female",
+      "born": 1949,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000000830/"
+    },
+    {
+      "id": "jbis_0000387854",
+      "zh": "简盖尔",
+      "ja": "Jane Gail(USA)",
+      "en": "Jane Gail(USA)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387854/",
+      "sex": "female",
+      "born": 1944,
+      "country": "USA",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000387854/"
+    },
+    {
+      "id": "jbis_0000389804",
+      "zh": "珍宝",
+      "ja": "Treasure Trove(GB)",
+      "en": "Treasure Trove(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389804/",
+      "sex": "female",
+      "born": 1942,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000389804/"
+    },
+    {
+      "id": "jbis_0000335235",
+      "zh": "简洁",
+      "ja": "Brevity(USA)",
+      "en": "Brevity(USA)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335235/",
+      "sex": "male",
+      "born": 1933,
+      "country": "USA",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335235/"
+    },
+    {
+      "id": "jbis_0000386458",
+      "zh": "扭动者",
+      "ja": "Squirmer(GB)",
+      "en": "Squirmer(GB)",
+      "profile_url": "https://www.jbis.or.jp/horse/0000386458/",
+      "sex": "female",
+      "born": 1940,
+      "country": "GB",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000386458/"
+    },
+    {
+      "id": "jbis_0000000127",
+      "zh": "第四贝茨卡纳姆美人",
+      "ja": "第四バツカナムビユーチー",
+      "en": "Fourth Batsukanamu Beauty",
+      "profile_url": "https://www.jbis.or.jp/horse/0000000127/",
+      "sex": "female",
+      "born": 1940,
+      "country": "JPN",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000000127/"
     }
   ]
 }
