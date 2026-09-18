@@ -396,6 +396,7 @@ function httpsGet(url, cb) {
     res.on('error', (e) => cb(e, null, null));
   });
   req.on('error', (e) => cb(e, null, null));
+  req.setTimeout(20000, function () { try { req.destroy(new Error('timeout')); } catch (e) {} });
   req.end();
 }
 
