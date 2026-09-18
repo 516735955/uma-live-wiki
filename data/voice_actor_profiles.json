@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-14T16:16:09+00:00",
+  "generated_at": "2026-09-16T10:56:24+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -10237,7 +10237,7 @@
           "name": "藤正进行曲",
           "name_ja": "フジマサマーチ",
           "former": false,
-          "image": "/uma_official/fujimasamarch.svg",
+          "image": "/uma_official/fujimasamarch.png",
           "color_main": "#6D3450",
           "color_sub": "#E15A97"
         }
@@ -10293,7 +10293,7 @@
           "name": "北原穰",
           "name_ja": "北原穣",
           "former": false,
-          "image": "/uma_official/kitaharajo.svg",
+          "image": "/uma_official/kitaharajo.png",
           "color_main": "#193B64",
           "color_sub": "#35B7B4"
         }
@@ -10306,5 +10306,5 @@
       }
     }
   ],
-  "build_id": "636fd7a47a5a842a005c"
+  "build_id": "e565636b409e80b22cc7"
 }
