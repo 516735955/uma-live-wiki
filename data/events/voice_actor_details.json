@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
-  "refreshed_at": "2026-09-12T13:55:42+00:00",
+  "refreshed_at": "2026-09-19T14:07:24+00:00",
   "coverage": {
     "records": 185,
     "source_pages": 185,
@@ -2893,7 +2893,9 @@
       "lookup_name": "瀬戸桃子",
       "name_zh": "濑户桃子",
       "name_ja": "瀬戸桃子",
-      "aliases": [],
+      "aliases": [
+        "瀬戸 桃子"
+      ],
       "kana": "せと ももこ",
       "birthday": "8月17日",
       "birthplace": "埼玉県",

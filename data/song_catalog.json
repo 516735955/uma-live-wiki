@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-14T16:16:09+00:00",
+  "generated_at": "2026-09-19T15:03:41+00:00",
   "coverage": {
-    "songs": 1032,
-    "versions": 2119,
-    "albums": 112,
-    "release_tracks": 2230,
-    "live_performances": 1261
+    "songs": 1033,
+    "versions": 2120,
+    "albums": 113,
+    "release_tracks": 2231,
+    "live_performances": 1265
   },
   "songs": [
     {
@@ -38319,6 +38319,7 @@
         "hishimiracle",
         "hokkotarumae",
         "ikunodictus",
+        "inarione",
         "katsuragiace",
         "kitasanblack",
         "ksmiracle",
@@ -38372,6 +38373,7 @@
         "va-0009",
         "va-0012",
         "va-0016",
+        "va-0018",
         "va-0022",
         "va-0025",
         "va-0029",
@@ -38473,6 +38475,7 @@
         "hishimiracle",
         "hokkotarumae",
         "ikunodictus",
+        "inarione",
         "katsuragiace",
         "kitasanblack",
         "ksmiracle",
@@ -38526,6 +38529,7 @@
         "va-0009",
         "va-0012",
         "va-0016",
+        "va-0018",
         "va-0022",
         "va-0025",
         "va-0029",
@@ -38628,6 +38632,28 @@
             }
           ],
           "performances": [
+            {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 1,
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "voice_actor_ids": [
+                "va-0018",
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
             {
               "event_id": "live-other-2024-11-08-idol-square-6",
               "event_title": "IDOL SQUARE 6",
@@ -39314,7 +39340,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 24
+          "performance_count": 25
         },
         {
           "id": "song-make-debut-2c6c00a71e-v-675a72a163",
@@ -40037,7 +40063,7 @@
       ],
       "version_count": 11,
       "release_count": 7,
-      "performance_count": 37
+      "performance_count": 38
     },
     {
       "id": "song-make-debut-e7ef7a5805",
@@ -48147,6 +48173,28 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 3,
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "voice_actor_ids": [
+                "va-0018",
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
+            {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
               "event_date": "2026-06-20",
@@ -48638,7 +48686,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 20
+          "performance_count": 21
         },
         {
           "id": "song-next-frontier-5267707c1b-v-c739868dd5",
@@ -49331,7 +49379,7 @@
       ],
       "version_count": 13,
       "release_count": 13,
-      "performance_count": 21
+      "performance_count": 22
     },
     {
       "id": "song-noizy-fanfare-0aa722f333",
@@ -69019,6 +69067,241 @@
               "image": "https://p1.music.126.net/X1P9iu19o_AO6nEEqNOudA==/109951170977687189.jpg",
               "instrumental": false,
               "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0
+    },
+    {
+      "id": "song-umapyoi-legend-e1d012a94c",
+      "title": "Umapyoi Legend",
+      "aliases": [
+        "Umapyoi Legend (English ver.)"
+      ],
+      "artists": [
+        "グラスワンダー (CV. 前田玲奈)、エルコンドルパサー (CV. 髙橋ミナミ)、キングヘイロー (CV. 佐伯伊織)、シュヴァルグラン (CV. 夏吉ゆうこ)、ヴィブロス (CV. 伊藤彩沙)、ケイエスミラクル (CV. 佐藤日向)、ナカヤマフェスタ (CV. 下地紫野)、メイショウドトウ (CV. 和多田美咲)、メジロパーマー (CV. のぐちゆり)、ドゥラメンテ (CV. 秋奈)"
+      ],
+      "character_ids": [
+        "chevalgrand",
+        "duramente",
+        "elcondorpasa",
+        "grasswonder",
+        "kinghalo",
+        "ksmiracle",
+        "meishodoto",
+        "mejiropalmer",
+        "nakayamafesta",
+        "vivlos"
+      ],
+      "voice_actor_ids": [
+        "va-0004",
+        "va-0010",
+        "va-0025",
+        "va-0027",
+        "va-0029",
+        "va-0035",
+        "va-0039",
+        "va-0047",
+        "va-0135",
+        "va-0180"
+      ],
+      "released_character_ids": [
+        "chevalgrand",
+        "duramente",
+        "elcondorpasa",
+        "grasswonder",
+        "kinghalo",
+        "ksmiracle",
+        "meishodoto",
+        "mejiropalmer",
+        "nakayamafesta",
+        "vivlos"
+      ],
+      "released_voice_actor_ids": [
+        "va-0004",
+        "va-0010",
+        "va-0025",
+        "va-0027",
+        "va-0029",
+        "va-0035",
+        "va-0039",
+        "va-0047",
+        "va-0135",
+        "va-0180"
+      ],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/62/c5/8f62c563-1710-d5bc-b32d-c4cc91a9009c/4540774746064.png/600x600bb.jpg",
+      "release_date": "2025-08-20",
+      "versions": [
+        {
+          "id": "song-umapyoi-legend-e1d012a94c-v-b91bed0839",
+          "title": "Umapyoi Legend (English ver.)",
+          "version_label": "English ver.",
+          "artists": [
+            "グラスワンダー (CV. 前田玲奈)、エルコンドルパサー (CV. 髙橋ミナミ)、キングヘイロー (CV. 佐伯伊織)、シュヴァルグラン (CV. 夏吉ゆうこ)、ヴィブロス (CV. 伊藤彩沙)、ケイエスミラクル (CV. 佐藤日向)、ナカヤマフェスタ (CV. 下地紫野)、メイショウドトウ (CV. 和多田美咲)、メジロパーマー (CV. のぐちゆり)、ドゥラメンテ (CV. 秋奈)"
+          ],
+          "releases": [
+            {
+              "album_id": "album-lzc-3255",
+              "album_name": "Umapyoi Legend (English ver.)",
+              "release_date": "2025-08-20",
+              "catalog": "LZC-3255",
+              "type": "单曲",
+              "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/62/c5/8f62c563-1710-d5bc-b32d-c4cc91a9009c/4540774746064.png/600x600bb.jpg",
+              "track_number": 1,
+              "artist": "グラスワンダー (CV. 前田玲奈)、エルコンドルパサー (CV. 髙橋ミナミ)、キングヘイロー (CV. 佐伯伊織)、シュヴァルグラン (CV. 夏吉ゆうこ)、ヴィブロス (CV. 伊藤彩沙)、ケイエスミラクル (CV. 佐藤日向)、ナカヤマフェスタ (CV. 下地紫野)、メイショウドトウ (CV. 和多田美咲)、メジロパーマー (CV. のぐちゆり)、ドゥラメンテ (CV. 秋奈)",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2725586600",
+              "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/62/c5/8f62c563-1710-d5bc-b32d-c4cc91a9009c/4540774746064.png/600x600bb.jpg",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0035",
+                  "voice_actor_name": "前田玲奈",
+                  "character_id": "grasswonder",
+                  "character": {
+                    "id": "grasswonder",
+                    "name": "草上飞",
+                    "name_ja": "グラスワンダー",
+                    "name_en": "Grass Wonder",
+                    "image": "/uma_official/grasswonder.png",
+                    "color_main": "#3A34AC",
+                    "color_sub": "#E3493F"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0180",
+                  "voice_actor_name": "高桥未奈美",
+                  "character_id": "elcondorpasa",
+                  "character": {
+                    "id": "elcondorpasa",
+                    "name": "神鹰",
+                    "name_ja": "エルコンドルパサー",
+                    "name_en": "El Condor Pasa",
+                    "image": "/uma_official/elcondorpasa.png",
+                    "color_main": "#DD4E31",
+                    "color_sub": "#EFDB28"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0027",
+                  "voice_actor_name": "佐伯伊织",
+                  "character_id": "kinghalo",
+                  "character": {
+                    "id": "kinghalo",
+                    "name": "圣王光环",
+                    "name_ja": "キングヘイロー",
+                    "name_en": "King Halo",
+                    "image": "/uma_official/kinghalo.png",
+                    "color_main": "#0E9451",
+                    "color_sub": "#1C57A5"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0047",
+                  "voice_actor_name": "夏吉优子",
+                  "character_id": "chevalgrand",
+                  "character": {
+                    "id": "chevalgrand",
+                    "name": "高尚骏逸",
+                    "name_ja": "シュヴァルグラン",
+                    "name_en": "Cheval Grand",
+                    "image": "/uma_official/chevalgrand.png",
+                    "color_main": "#64C3C1",
+                    "color_sub": "#1E3872"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0025",
+                  "voice_actor_name": "伊藤彩沙",
+                  "character_id": "vivlos",
+                  "character": {
+                    "id": "vivlos",
+                    "name": "强击",
+                    "name_ja": "ヴィブロス",
+                    "name_en": "Vivlos",
+                    "image": "/uma_official/vivlos.png",
+                    "color_main": "#404fb1",
+                    "color_sub": "#84d4e3"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0029",
+                  "voice_actor_name": "佐藤日向",
+                  "character_id": "ksmiracle",
+                  "character": {
+                    "id": "ksmiracle",
+                    "name": "凯斯奇迹",
+                    "name_ja": "ケイエスミラクル",
+                    "name_en": "K.S.Miracle",
+                    "image": "/uma_official/ksmiracle.png",
+                    "color_main": "#85aae1",
+                    "color_sub": "#ebd64a"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0010",
+                  "voice_actor_name": "下地紫野",
+                  "character_id": "nakayamafesta",
+                  "character": {
+                    "id": "nakayamafesta",
+                    "name": "中山庆典",
+                    "name_ja": "ナカヤマフェスタ",
+                    "name_en": "Nakayama Festa",
+                    "image": "/uma_official/nakayamafesta.png",
+                    "color_main": "#C0453F",
+                    "color_sub": "#236192"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0039",
+                  "voice_actor_name": "和多田美咲",
+                  "character_id": "meishodoto",
+                  "character": {
+                    "id": "meishodoto",
+                    "name": "名将怒涛",
+                    "name_ja": "メイショウドトウ",
+                    "name_en": "Meisho Doto",
+                    "image": "/uma_official/meishodoto.png",
+                    "color_main": "#46449B",
+                    "color_sub": "#D64388"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0004",
+                  "voice_actor_name": "野口百合",
+                  "character_id": "mejiropalmer",
+                  "character": {
+                    "id": "mejiropalmer",
+                    "name": "目白善信",
+                    "name_ja": "メジロパーマー",
+                    "name_en": "Mejiro Palmer",
+                    "image": "/uma_official/mejiropalmer.png",
+                    "color_main": "#27c79c",
+                    "color_sub": "#865432"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0135",
+                  "voice_actor_name": "秋奈",
+                  "character_id": "duramente",
+                  "character": {
+                    "id": "duramente",
+                    "name": "大鸣大放",
+                    "name_ja": "ドゥラメンテ",
+                    "name_en": "Duramente",
+                    "image": "/uma_official/duramente.png",
+                    "color_main": "#bf3344",
+                    "color_sub": "#4e4e4e"
+                  }
+                }
+              ]
             }
           ],
           "performances": [],
@@ -96328,6 +96611,28 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 4,
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "voice_actor_ids": [
+                "va-0018",
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
+            {
               "event_id": "live-cd-2026-09-13-winning-live-34",
               "event_title": "WINNING LIVE 34 発売記念イベント",
               "event_date": "2026-09-13",
@@ -101227,7 +101532,7 @@
             }
           ],
           "release_count": 49,
-          "performance_count": 140
+          "performance_count": 141
         },
         {
           "id": "song-228f943b49-v-b373901aa7",
@@ -114310,7 +114615,7 @@
       ],
       "version_count": 27,
       "release_count": 125,
-      "performance_count": 158
+      "performance_count": 159
     },
     {
       "id": "song-ufo-493c23dc67",
@@ -119798,6 +120103,26 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 2,
+              "character_ids": [
+                "oguricap",
+                "tamamocross"
+              ],
+              "voice_actor_ids": [
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
+            {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
               "event_date": "2026-06-20",
@@ -119837,7 +120162,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2
+          "performance_count": 3
         },
         {
           "id": "song-864b1bb2e9-v-2af8136a85",
@@ -119869,7 +120194,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 2
+      "performance_count": 3
     },
     {
       "id": "song-slowly-6ed058ab53",
@@ -190646,5 +190971,5 @@
       "performance_count": 0
     }
   ],
-  "build_id": "636fd7a47a5a842a005c"
+  "build_id": "1ca3f91caf261e7747e9"
 }

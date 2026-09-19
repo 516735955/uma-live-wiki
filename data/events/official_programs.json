@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-09-12T13:38:35+00:00",
+  "refreshed_at": "2026-09-19T14:05:49+00:00",
   "coverage": {
-    "official_youtube_refresh": "verified",
-    "expected_regular_episodes": 123,
-    "records": 226,
-    "source_verified_regular_episodes": 123,
+    "official_youtube_refresh": "tool_unavailable",
+    "expected_regular_episodes": 124,
+    "records": 227,
+    "source_verified_regular_episodes": 124,
     "metadata_pending_ids": [],
     "pakatube_character_programs": 82,
     "official_special_programs": 15
@@ -6596,6 +6596,80 @@
           "kind": "official_youtube",
           "label": "官方 YouTube",
           "url": "https://www.youtube.com/watch?v=604WzTEF4is"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "paka-live-tv-prime-007",
+      "series_id": "paka-live-tv-prime",
+      "title": "ぱかライブTV' #7",
+      "date": "2026-09-27",
+      "end_date": "2026-09-27",
+      "video_id": "",
+      "url": "",
+      "thumbnail": "",
+      "duration": null,
+      "cast_status": "verified",
+      "cast": [
+        {
+          "name": "前田玲奈",
+          "role": "グラスワンダー",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "衣川里佳",
+          "role": "ナリタブライアン",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "田所あずさ",
+          "role": "シンボリルドルフ",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "秋奈",
+          "role": "ドゥラメンテ",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "鈴木日菜",
+          "role": "アドマイヤグルーヴ",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "菊池ゆりな",
+          "role": "ローズキングダム",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "浅见春那",
+          "role": "ファレノプシス",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        }
+      ],
+      "characters": [],
+      "sessions": [],
+      "summary": "公式生配信番組「ぱかライブTV' #7」の出走者と放送日時が決定しました！10月に追加予定の新育成シナリオや、ガチャ更新情報、次回ストーリーイベントなど、ゲーム最新情報を発表！「ぱかライブTV' #7」放送終了後に配信するアニメ『うまゆる ふるげ～と！』最新情報や、『7th EVENT WORLD TOUR “THE STAGE” in LOS ANGELES』の続報もお届け！さらに、アニメ『うまゆる ふるげ～と！』の公開を記念して、うまゆる早押しクイズに挑戦します！放送日時：2026年9月27日（日）20:00 ",
+      "source_kind": "community_archive",
+      "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "官方公告",
+          "url": "https://umamusume.jp/news/detail?id=3462"
+        },
+        {
+          "kind": "community_archive",
+          "label": "Umamusume Wiki 补档",
+          "url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "media": []
