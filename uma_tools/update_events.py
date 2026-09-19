@@ -1186,8 +1186,12 @@ def attach_eventernote(events: list[dict[str, Any]], eventernote_doc: dict[str, 
         if match:
             eventernote_id = match.group(1)
         if linked:
-            linked["cast"] = merge_cast_records([*linked["cast"], *cast])
-            linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
+            has_curated = any(s.get("kind") == "curated_live" for s in linked.get("sources") or [])
+            if has_curated:
+                linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
+            else:
+                linked["cast"] = merge_cast_records([*linked["cast"], *cast])
+                linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
             linked["sources"].append({"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""})
             linked["image"] = linked.get("image") or source.get("img") or ""
             linked["venue"] = linked.get("venue") or source.get("venue") or ""

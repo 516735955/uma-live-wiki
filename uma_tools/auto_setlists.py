@@ -88,6 +88,65 @@ def norm(s):
     return s.rstrip(' @').strip()
 
 
+_KATAKANA_TO_ROMAJI = {
+    '\u30a2': 'a', '\u30a4': 'i', '\u30a6': 'u', '\u30a8': 'e', '\u30aa': 'o',
+    '\u30ab': 'ka', '\u30ad': 'ki', '\u30af': 'ku', '\u30b1': 'ke', '\u30b3': 'ko',
+    '\u30b5': 'sa', '\u30b7': 'si', '\u30b9': 'su', '\u30bb': 'se', '\u30bd': 'so',
+    '\u30bf': 'ta', '\u30c1': 'ti', '\u30c4': 'tu', '\u30c6': 'te', '\u30c8': 'to',
+    '\u30ca': 'na', '\u30cb': 'ni', '\u30cc': 'nu', '\u30cd': 'ne', '\u30ce': 'no',
+    '\u30cf': 'ha', '\u30d2': 'hi', '\u30d5': 'fu', '\u30d8': 'he', '\u30db': 'ho',
+    '\u30de': 'ma', '\u30df': 'mi', '\u30e0': 'mu', '\u30e1': 'me', '\u30e2': 'mo',
+    '\u30e4': 'ya', '\u30e6': 'yu', '\u30e8': 'yo',
+    '\u30e9': 'ra', '\u30ea': 'ri', '\u30eb': 'ru', '\u30ec': 're', '\u30ed': 'ro',
+    '\u30ef': 'wa', '\u30f2': 'wo', '\u30f3': 'n',
+    '\u30ac': 'ga', '\u30ae': 'gi', '\u30b0': 'gu', '\u30b2': 'ge', '\u30b4': 'go',
+    '\u30b6': 'za', '\u30b8': 'ji', '\u30ba': 'zu', '\u30bc': 'ze', '\u30be': 'zo',
+    '\u30c0': 'da', '\u30c2': 'di', '\u30c5': 'du', '\u30c7': 'de', '\u30c9': 'do',
+    '\u30d0': 'ba', '\u30d3': 'bi', '\u30d6': 'bu', '\u30d9': 'be', '\u30dc': 'bo',
+    '\u30d1': 'pa', '\u30d4': 'pi', '\u30d7': 'pu', '\u30da': 'pe', '\u30dd': 'po',
+    '\u30f4': 'vu', '\u30f5': 'ka', '\u30f6': 'ke',
+    '\u30c3': 'tu',  # small tsu = geminate (double next consonant)
+}
+_SMALL_KATAKANA = set('\u30f5\u30f6\u3041\u3043\u3045\u3047\u3049\u3083\u3085\u3087\u308e\u30a1\u30a3\u30a5\u30a7\u30a9\u30e3\u30e5\u30e7\u30ee')
+_FULLWIDTH_ALPHA = {chr(c): chr(c - 0xFEE0) for c in range(0xFF21, 0xFF3B)}
+_FULLWIDTH_ALPHA.update({chr(c): chr(c - 0xFEE0) for c in range(0xFF41, 0xFF5B)})
+
+
+def katakana_to_romaji(s):
+    """Convert katakana characters to romaji; leave non-katakana as-is (lowered)."""
+    result = []
+    i = 0
+    while i < len(s):
+        ch = s[i]
+        if ch in _FULLWIDTH_ALPHA:
+            result.append(_FULLWIDTH_ALPHA[ch])
+        elif ch in _SMALL_KATAKANA and result:
+            pass  # small ya/yu/yo/e — skip
+        elif ch in _KATAKANA_TO_ROMAJI:
+            rom = _KATAKANA_TO_ROMAJI[ch]
+            if ch == '\u30c3' and i + 1 < len(s):
+                nxt = s[i + 1]
+                nxt_rom = _KATAKANA_TO_ROMAJI.get(nxt, '')
+                if nxt_rom:
+                    result.append(nxt_rom[0])
+                    i += 1
+                else:
+                    result.append(rom)
+            else:
+                result.append(rom)
+        elif '\u30a0' <= ch <= '\u30ff':
+            result.append(ch)
+        else:
+            result.append(ch.lower())
+        i += 1
+    return ''.join(result)
+
+
+def norm_romaji(s):
+    """Normalize + convert katakana to romaji for cross-script comparison."""
+    return norm(katakana_to_romaji(norm(s)))
+
+
 def bigrams(s):
     return set(s[i:i + 2] for i in range(len(s) - 1)) if len(s) > 1 else {s}
 
@@ -384,6 +443,7 @@ def attempt_live_link(events_data, title, date, url):
     except Exception:
         tord = None
     tkey = norm(title)
+    tkey_r = norm_romaji(title)
     hits = 0
     for ev in (events_data or {}).get('events') or []:
         if ev.get('live'):
@@ -394,8 +454,12 @@ def attempt_live_link(events_data, title, date, url):
             eord = None
         if tord is not None and eord is not None and abs(eord - tord) > 2:
             continue
-        if sim(tkey, norm(ev.get('title') or '')) < 0.5:
-            continue
+        ekey = norm(ev.get('title') or '')
+        s = sim(tkey, ekey)
+        if s < 0.5:
+            s_r = sim(tkey_r, norm_romaji(ev.get('title') or ''))
+            if s_r < 0.5:
+                continue
         ev['live'] = url
         hits += 1
     return hits
