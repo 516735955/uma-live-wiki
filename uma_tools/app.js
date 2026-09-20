@@ -1710,10 +1710,7 @@ const umaApp = createApp({
       return series ? series.name : '';
     }
     const eventVoiceCast = computed(function () {
-      return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type === 'voice_actor' || item.voice_actor_id; });
-    });
-    const eventGuestCast = computed(function () {
-      return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.person_type !== 'voice_actor' && !item.voice_actor_id; });
+      return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.voice_actor_id && item.character_id; });
     });
     function eventSongCount(event) {
       if (Number.isFinite(event && event.song_count)) return event.song_count;
@@ -2124,7 +2121,7 @@ const umaApp = createApp({
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, eventGuestCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
+      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailPerformances, songSingerLabel, playableSongRelease, playCatalogSong, playSongRelease, playRelationRelease, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
       voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, LANG_PREFIX,

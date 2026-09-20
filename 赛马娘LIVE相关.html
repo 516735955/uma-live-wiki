@@ -7,11 +7,11 @@
 <style>
 html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK SC","Noto Sans CJK JP",system-ui,sans-serif}.app-boot{min-height:100vh;background:#f5f4f9}.app-boot-bar{height:76px;background:#3157e8 url('/uma_tools/img/bg_kv_nav.png') center/cover;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1280px)/2));color:#fff;font-size:22px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(24,39,93,.18)}.app-boot-main{width:min(1280px,calc(100% - 40px));margin:32px auto}.app-boot-line{height:46px;border-radius:8px;background:linear-gradient(100deg,#fff 20%,#eef1fa 38%,#fff 56%);background-size:220% 100%;animation:boot-shimmer 1.2s ease-in-out infinite}.app-boot-line+.app-boot-line{height:180px;margin-top:20px}@keyframes boot-shimmer{to{background-position-x:-220%}}@media(max-width:700px){.app-boot-bar{height:58px;padding:0 18px;font-size:17px}.app-boot-main{width:calc(100% - 28px);margin-top:20px}.app-boot-line{height:44px}.app-boot-line+.app-boot-line{height:136px}}@media(prefers-reduced-motion:reduce){.app-boot-line{animation:none;background:#fff}}
 </style>
-<link rel="stylesheet" href="/uma_tools/app.css?v=20260914-12">
+<link rel="stylesheet" href="/uma_tools/app.css?v=20260920-1">
 <script defer src="/uma_tools/vendor/vue.global.prod.js?v=3"></script>
 <script defer src="/uma_tools/app-api.js?v=20260914-12"></script>
 <script defer src="/uma_tools/ui-components.js?v=20260914-12"></script>
-<script defer src="/uma_tools/app.js?v=20260914-12"></script>
+<script defer src="/uma_tools/app.js?v=20260920-1"></script>
 </head>
 <body>
 
@@ -263,12 +263,12 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <table v-else-if="selectedEventSession.performances && selectedEventSession.performances.length" class="data-table setlist-table">
                             <thead><tr><th>#</th><th>曲名</th><th>出演者</th><th>出处</th></tr></thead>
                             <tbody><tr v-for="(performance,index) in selectedEventSession.performances" :key="performance.version_id || performance.song">
-                                <td>{{ index + 1 }}</td>
-                                <td><button class="text-link" type="button" @click="openSong(performance.song_id)">{{ performance.song }}</button></td>
-                                <td><button v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" type="button" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)">
+                                <td class="setlist-no">{{ index + 1 }}</td>
+                                <td class="setlist-song"><button class="text-link setlist-song-link" type="button" @click="openSong(performance.song_id)">{{ performance.song }}</button></td>
+                                <td class="setlist-perf"><button v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" type="button" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)">
                                     <img :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span>
-                                </button></td>
-                                <td>{{ performance.source || '现场演唱' }}</td>
+                                </button><span v-for="guest in (performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></td>
+                                <td class="setlist-src">{{ performance.source || '现场演唱' }}</td>
                             </tr></tbody>
                         </table>
                         <div v-else class="ui-state compact">无演出曲目</div>
@@ -282,7 +282,6 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                             </button>
                         </div>
                         <div v-else class="ui-state compact">暂无出演阵容</div>
-                        <div v-if="eventGuestCast.length" class="guest-line"><b>嘉宾</b><span v-for="cast in eventGuestCast" :key="cast.name">{{ cast.name }}</span></div>
                     </section>
 
                     <section v-if="eventMediaCards.length" class="entity-section">

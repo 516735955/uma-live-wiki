@@ -1812,6 +1812,7 @@
             white-space: nowrap;
         }
         .perf-item img { width: 30px; height: 30px; border: 2px solid #c7c2ba; border-radius: 50%; object-fit: cover; object-position: top center; }
+        .guest-performer { display: inline-flex; align-items: center; margin: 3px 8px 3px 0; padding: 4px 8px; border: 1px solid var(--ui-line); border-radius: 999px; color: var(--text-2); background: var(--ui-soft); font-size: .79rem; white-space: nowrap; }
         button.setlist-performer-link { cursor: pointer; }
         button.setlist-performer-link:hover { color: var(--brand-dark); }
 
@@ -3041,3 +3042,77 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     transition: background 0.15s, color 0.15s;
 }
 .album-enqueue-btn:hover { background: var(--brand); color: #fff; }
+
+@media (max-width: 700px) {
+    .ui-filter-group.fix-chips { display: block; }
+    .ui-filter-group.fix-chips > div { display: flex; max-width: none; flex-wrap: wrap; overflow: visible; }
+
+    /* Event setlists become one readable vertical stream on phones. */
+    .event-entity-detail .setlist-frame { overflow: visible; }
+    .event-entity-detail .setlist-frame .setlist-table,
+    .event-entity-detail .data-table.setlist-table,
+    .event-entity-detail .setlist-table tbody {
+        display: block;
+        width: 100%;
+        min-width: 0;
+    }
+    .event-entity-detail .setlist-table thead { display: none; }
+    .event-entity-detail .setlist-table tbody tr {
+        display: grid;
+        grid-template-columns: 32px minmax(0,1fr);
+        gap: 0 8px;
+        padding: 9px 0 11px;
+        border-bottom: 1px solid var(--ui-line);
+        background: transparent;
+    }
+    .event-entity-detail .setlist-table tbody tr:hover { background: transparent; }
+    .event-entity-detail .setlist-frame .setlist-table td,
+    .event-entity-detail .data-table.setlist-table td {
+        display: block;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+    .event-entity-detail .setlist-frame .setlist-table td.setlist-no,
+    .event-entity-detail .data-table.setlist-table td.setlist-no {
+        grid-column: 1;
+        width: auto;
+        padding-top: 12px;
+        color: var(--text-3);
+        text-align: right;
+        font-size: .76rem;
+        font-weight: 800;
+    }
+    .event-entity-detail .setlist-frame .setlist-table td.setlist-song,
+    .event-entity-detail .data-table.setlist-table td.setlist-song {
+        grid-column: 2;
+        min-width: 0;
+        font-size: .9rem;
+        line-height: 1.45;
+    }
+    .event-entity-detail .setlist-song-link,
+    .event-entity-detail button.setlist-song-link {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        white-space: normal;
+    }
+    .event-entity-detail .setlist-frame .setlist-table td.setlist-perf,
+    .event-entity-detail .data-table.setlist-table td.setlist-perf,
+    .event-entity-detail .setlist-frame .setlist-table td.setlist-src,
+    .event-entity-detail .data-table.setlist-table td.setlist-src {
+        grid-column: 1 / -1;
+        margin: 3px 0 0 40px;
+        padding: 0;
+        border: 0;
+        font-size: .8rem;
+        line-height: 1.65;
+    }
+    .event-entity-detail .setlist-perf::before { content: '演唱'; margin-right: 9px; color: var(--text-3); font-weight: 800; }
+    .event-entity-detail .setlist-src::before { content: '歌曲信息'; margin-right: 9px; color: var(--text-3); font-weight: 800; }
+    .event-entity-detail .setlist-src:empty { display: none; }
+    .event-entity-detail .perf-item,
+    .event-entity-detail .setlist-performer-link,
+    .event-entity-detail .guest-performer { max-width: 100%; white-space: normal; }
+}
