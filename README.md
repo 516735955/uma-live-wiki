@@ -148,7 +148,12 @@ Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 
 
 ```bash
 npm --prefix uma_tools run test:catalog
+npm --prefix uma_tools run check:deployment -- https://umamusumelivewiki.top
 ```
+
+第二条命令会读取实际页面引用的带版本 CSS、JS，核对 gzip、长期缓存及新闻 API 响应头；若 nginx
+配置未被当前 HTTPS server block 引用，会以非零状态退出并指出缺失的响应头。修改长期缓存的入口文件时，
+必须同步更新页面或加载器中的 `?v=` 版本。
 
 大部分抓取脚本只使用 Python 标准库。角色图片管线需要 Pillow：
 
