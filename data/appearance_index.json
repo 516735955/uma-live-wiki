@@ -13692,7 +13692,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13752,7 +13753,8 @@
           "kind": "concert",
           "series_id": "twinkle-circle",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13762,7 +13764,8 @@
           "kind": "concert",
           "series_id": "twinkle-circle",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13782,7 +13785,8 @@
           "kind": "concert",
           "series_id": "winning-live-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13792,7 +13796,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13812,7 +13817,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13822,7 +13828,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13842,7 +13849,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13862,7 +13870,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13882,7 +13891,8 @@
           "kind": "concert",
           "series_id": "winning-live-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13892,7 +13902,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13902,7 +13913,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13922,7 +13934,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13932,7 +13945,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13952,7 +13966,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13962,7 +13977,8 @@
           "kind": "concert",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13972,7 +13988,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -13982,7 +13999,8 @@
           "kind": "concert",
           "series_id": "winning-live-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -14210,7 +14228,486 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1",
+            "live-cd-2024-05-12-winning-live-15",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-cd-2022-04-02-cd-winning-live-03",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-2022-01-01-cdtv-2021-2022",
+            "live-other-2021-12-31-z-5",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-cd-2021-08-04-title-3968b924ad22",
+            "live-other-2021-07-11-twinkle-holiday",
+            "live-cd-2021-04-04-winning-live-01"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-d8fa5ff1a4",
+            "song-228f943b49-v-498bdf7439"
+          ],
+          "performances": 19
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29",
+            "song-we-are-dreamers-77f071fc29-v-5d237a28f5"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-cdf2727e54",
+          "name": "ぴょいっと♪はれるや！",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-cd-2021-08-04-title-3968b924ad22",
+            "live-other-2021-07-11-twinkle-holiday"
+          ],
+          "version_ids": [
+            "song-cdf2727e54-v-cdf2727e54"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-0cbb64e37a",
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-other-2021-07-11-twinkle-holiday",
+            "live-cd-2021-04-04-winning-live-01"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f",
+            "song-winning-the-soul-7eddcf2b7f-v-ace83b3c10"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-87be3723c2",
+          "name": "本能スピード",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-87be3723c2-v-87be3723c2"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-dc87532b05",
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "event_ids": [
+            "live-cd-2024-05-12-winning-live-15",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-exercise-the-right-317ac0dc78",
+          "name": "Exercise the Right",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-cd-2022-04-02-cd-winning-live-03",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-exercise-the-right-317ac0dc78-v-937476bbfa",
+            "song-exercise-the-right-317ac0dc78-v-317ac0dc78"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-15e2b8f183",
+          "name": "グロウアップ・シャイン！",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-never-looking-back-d2ca0c4311",
+          "name": "Never Looking Back",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-u-m-a-new-world-ca9ae685ae",
+          "name": "U.M.A. NEW WORLD!!",
+          "event_ids": [
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-summer-d7e35f6a48",
+          "name": "UMA Summer",
+          "event_ids": [
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-winnin-5-86278c7b9d",
+          "name": "WINnin' 5 -ウイニング☆ファイヴ-",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-cd-2022-04-02-cd-winning-live-03"
+          ],
+          "version_ids": [
+            "song-winnin-5-86278c7b9d-v-86278c7b9d"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-79f332ebdb",
+          "name": "どどっと優勝！大感謝祭！！！",
+          "event_ids": [
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-79f332ebdb-v-79f332ebdb"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da",
+            "song-29e836f0da-v-b98368e836"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-4bfe85c283",
+          "name": "ユメヲカケル！",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-other-2021-07-11-twinkle-holiday"
+          ],
+          "version_ids": [
+            "song-4bfe85c283-v-4bfe85c283"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-endless-dream-eabbcc4d12",
+          "name": "ENDLESS DREAM!!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-endless-dream-eabbcc4d12-v-eabbcc4d12"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-find-my-only-way-46f68c23ae",
+          "name": "Find My Only Way",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-go-this-way-d4bbb66dce",
+          "name": "Go This Way",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-go-this-way-d4bbb66dce-v-d4bbb66dce"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ms-victoria-8fdfbbf2a8",
+          "name": "Ms. VICTORIA",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-run-run-70769b632a",
+          "name": "RUN×RUN！",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-run-run-70769b632a-v-70769b632a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ring-ring-c9bdb0e414",
+          "name": "Ring Ring ダイアリー",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-ring-ring-c9bdb0e414-v-c9bdb0e414"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-starting-force-c0c6c398c4",
+          "name": "STARTING FORCE",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-starting-force-c0c6c398c4-v-c0c6c398c4"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-shake-the-world-6a204b97d3",
+          "name": "Shake The World!!",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-shake-the-world-6a204b97d3-v-6a204b97d3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-e05b91c506",
+          "name": "めにしゅき♡ラッシュっしゅ！",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-e05b91c506-v-e05b91c506"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-be4063b951",
+          "name": "トレセン体操",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-be4063b951-v-be4063b951"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-81800f8f29",
+          "name": "三百六十五歩のマーチ",
+          "event_ids": [
+            "live-other-2021-12-31-z-5"
+          ],
+          "version_ids": [
+            "song-81800f8f29-v-81800f8f29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-83ba2e8f7c",
+          "name": "嗚呼それが我が宿命",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-83ba2e8f7c-v-dd311bc473"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-beyond-the-future-aaed329475",
+          "name": "笑顔の宝物 -Beyond The Future!-",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-beyond-the-future-aaed329475-v-aaed329475"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-pom-pon-1fe868e5e6",
+          "name": "限界までPom Pon！！",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-pom-pon-1fe868e5e6-v-1fe868e5e6"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0028": {
       "events": [
@@ -19097,7 +19594,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -19117,7 +19615,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -19127,7 +19626,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         }
       ],
@@ -19168,7 +19668,183 @@
           "releases": 1
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-8081baf369",
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-15e2b8f183",
+          "name": "グロウアップ・シャイン！",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dance-2-endless-beat-8c6c92b99d",
+          "name": "Dance 2 Endless Beat",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-dance-2-endless-beat-8c6c92b99d-v-8c6c92b99d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enjoy-and-join-a69ea32e1c",
+          "name": "Enjoy and Join",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-gaze-on-me-90b0b1d78a",
+          "name": "Gaze on Me!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ms-victoria-8fdfbbf2a8",
+          "name": "Ms. VICTORIA",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-phantasia-81aafc5f7e",
+          "name": "彩 Phantasia",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-phantasia-81aafc5f7e-v-81aafc5f7e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-87be3723c2",
+          "name": "本能スピード",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-87be3723c2-v-87be3723c2"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0038": {
       "events": [
@@ -36385,12 +37061,102 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         }
       ],
       "songs": [],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enjoy-and-join-a69ea32e1c",
+          "name": "Enjoy and Join",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-winnin-5-86278c7b9d",
+          "name": "WINnin' 5 -ウイニング☆ファイヴ-",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-winnin-5-86278c7b9d-v-86278c7b9d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0069": {
       "events": [
@@ -47714,7 +48480,8 @@
           "kind": "concert",
           "series_id": "twinkle-circle",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47724,7 +48491,8 @@
           "kind": "concert",
           "series_id": "twinkle-circle",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47734,7 +48502,8 @@
           "kind": "concert",
           "series_id": "twinkle-circle",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47744,7 +48513,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47764,7 +48534,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47774,7 +48545,8 @@
           "kind": "concert",
           "series_id": "winning-live-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47794,7 +48566,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47804,7 +48577,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47824,7 +48598,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -47844,7 +48619,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         }
       ],
@@ -47939,7 +48715,322 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1",
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-02-12-2023-2",
+            "live-other-2022-12-31-6-2022-2023",
+            "live-other-2022-11-19-animax-musix-2022",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 11
+        },
+        {
+          "song_id": "song-u-m-a-new-world-ca9ae685ae",
+          "name": "U.M.A. NEW WORLD!!",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1",
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-ce7108320c",
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-gochiso-7f9f47a066",
+          "name": "GOCHISO様",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-gochiso-7f9f47a066-v-7f9f47a066"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-gaze-on-me-90b0b1d78a",
+          "name": "Gaze on Me!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-other-2022-11-19-animax-musix-2022",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-ready-steady-derby-7e8ed0ad57",
+          "name": "Ready!!! Steady!!! Derby!!!",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-happy-days-01845306a9",
+          "name": "ゆるパカHAPPY DAYS！",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-other-2022-11-19-animax-musix-2022",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-happy-days-01845306a9-v-01845306a9"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-destroy-for-dasein-0a0bd0d7bb",
+          "name": "Destroy for Dasein",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10"
+          ],
+          "version_ids": [
+            "song-destroy-for-dasein-0a0bd0d7bb-v-0a0bd0d7bb"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-other-2023-02-12-2023-2"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-c94aa30a59",
+            "song-winning-the-soul-7eddcf2b7f-v-ace83b3c10"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-catch-the-victory-e56a0d6f90",
+          "name": "CATCH THE VICTORY!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-catch-the-victory-e56a0d6f90-v-584efeda73"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enter-enter-mission-a943e59d91",
+          "name": "Enter Enter MISSION!",
+          "event_ids": [
+            "live-other-2022-11-19-animax-musix-2022"
+          ],
+          "version_ids": [
+            "song-enter-enter-mission-a943e59d91-v-a943e59d91"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2023-02-12-2023-2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ms-victoria-8fdfbbf2a8",
+          "name": "Ms. VICTORIA",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-the-super-strong-s-e250f72e41",
+          "name": "THE SUPER STRONG S",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-the-super-strong-s-e250f72e41-v-33648d7d69"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-challenge-dash-b7a5610844",
+          "name": "アコガレChallenge Dash!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-challenge-dash-b7a5610844-v-b7a5610844"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-f4ab00a70a",
+          "name": "ミッドナイト・エピローグ",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-f4ab00a70a-v-f4ab00a70a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-4bfe85c283",
+          "name": "ユメヲカケル！",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-4bfe85c283-v-369d1e6bc1"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-81800f8f29",
+          "name": "三百六十五歩のマーチ",
+          "event_ids": [
+            "live-other-2022-12-31-6-2022-2023"
+          ],
+          "version_ids": [
+            "song-81800f8f29-v-81800f8f29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-496f508d38",
+          "name": "永遠の色彩",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-496f508d38-v-496f508d38"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-other-2022-12-31-6-2022-2023"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-bbeb742937"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0097": {
       "events": [
@@ -53043,7 +54134,8 @@
           "kind": "concert",
           "series_id": "winning-live-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53073,7 +54165,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53123,7 +54216,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53143,7 +54237,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53153,7 +54248,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53163,7 +54259,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53173,7 +54270,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53183,7 +54281,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53193,7 +54292,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53203,7 +54303,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53213,7 +54314,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53223,7 +54325,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53233,7 +54336,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53273,7 +54377,8 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53293,7 +54398,8 @@
           "kind": "concert",
           "series_id": "starting-gate-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53303,7 +54409,8 @@
           "kind": "concert",
           "series_id": "starting-gate-release",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -53313,7 +54420,8 @@
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         }
       ],
@@ -53575,7 +54683,323 @@
           "releases": 3
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-cd-2025-08-24-winning-live-26",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-2022-01-01-cdtv-2021-2022",
+            "live-other-2021-12-31-z-5",
+            "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
+            "live-other-2021-10-06-fns",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2021-07-17-title-120f9f043a5b",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-cd-2017-05-13-starting-gate-06-2",
+            "live-cd-2017-05-13-starting-gate-06-1",
+            "live-other-2016-08-21-cygames-next-2016-3"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-498bdf7439"
+          ],
+          "performances": 15
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05",
+            "live-cd-2017-05-13-starting-gate-06-2",
+            "live-cd-2017-05-13-starting-gate-06-1",
+            "live-other-2016-08-21-cygames-next-2016-3"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785",
+            "song-cdbc25c785-v-75f39677ad"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
+            "live-other-2021-10-09-and-more-fes-2021",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
+            "song-girls-legend-u-a4a797abe1-v-4d468322a9"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-seven-a00bbe560e",
+          "name": "SEVEN",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-seven-a00bbe560e-v-a00bbe560e"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29",
+            "song-we-are-dreamers-77f071fc29-v-5d237a28f5"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-236e41ab4c",
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-15e2b8f183",
+          "name": "グロウアップ・シャイン！",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-empress-game-c140ff5898",
+          "name": "EMPRESS GAME",
+          "event_ids": [
+            "live-cd-2017-05-13-starting-gate-06-2",
+            "live-cd-2017-05-13-starting-gate-06-1"
+          ],
+          "version_ids": [
+            "song-empress-game-c140ff5898-v-c140ff5898"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-never-looking-back-d2ca0c4311",
+          "name": "Never Looking Back",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-4bfe85c283",
+          "name": "ユメヲカケル！",
+          "event_ids": [
+            "live-other-2021-12-01-2021-fns",
+            "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival"
+          ],
+          "version_ids": [
+            "song-4bfe85c283-v-9adb4918e2"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-bright-melody-bd728589b5",
+          "name": "Bright Melody",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-bright-melody-bd728589b5-v-bd728589b5"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-fanfare-for-future-7b77e575ce",
+          "name": "Fanfare for Future!",
+          "event_ids": [
+            "live-other-2016-08-21-cygames-next-2016-3"
+          ],
+          "version_ids": [
+            "song-fanfare-for-future-7b77e575ce-v-5bb8c45c4a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-find-my-only-way-46f68c23ae",
+          "name": "Find My Only Way",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-legend-changer-fcb0cca1c5",
+          "name": "Legend-Changer",
+          "event_ids": [
+            "live-cd-2025-08-24-winning-live-26"
+          ],
+          "version_ids": [
+            "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2022-03-20-sp"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ring-ring-c9bdb0e414",
+          "name": "Ring Ring ダイアリー",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-ring-ring-c9bdb0e414-v-c9bdb0e414"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-81800f8f29",
+          "name": "三百六十五歩のマーチ",
+          "event_ids": [
+            "live-other-2021-12-31-z-5"
+          ],
+          "version_ids": [
+            "song-81800f8f29-v-81800f8f29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0119": {
       "events": [
@@ -54773,12 +56197,102 @@
           "kind": "concert",
           "series_id": "numbered-live",
           "evidence": [
-            "curated_live_cast"
+            "curated_live_cast",
+            "setlist_character"
           ]
         }
       ],
       "songs": [],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enjoy-and-join-a69ea32e1c",
+          "name": "Enjoy and Join",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-winnin-5-86278c7b9d",
+          "name": "WINnin' 5 -ウイニング☆ファイヴ-",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-winnin-5-86278c7b9d-v-86278c7b9d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0123": {
       "events": [
@@ -103343,7 +104857,323 @@
           "releases": 3
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-cd-2025-08-24-winning-live-26",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-2022-01-01-cdtv-2021-2022",
+            "live-other-2021-12-31-z-5",
+            "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
+            "live-other-2021-10-06-fns",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2021-07-17-title-120f9f043a5b",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-cd-2017-05-13-starting-gate-06-2",
+            "live-cd-2017-05-13-starting-gate-06-1",
+            "live-other-2016-08-21-cygames-next-2016-3"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-498bdf7439"
+          ],
+          "performances": 15
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05",
+            "live-cd-2017-05-13-starting-gate-06-2",
+            "live-cd-2017-05-13-starting-gate-06-1",
+            "live-other-2016-08-21-cygames-next-2016-3"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785",
+            "song-cdbc25c785-v-75f39677ad"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
+            "live-other-2021-10-09-and-more-fes-2021",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
+            "song-girls-legend-u-a4a797abe1-v-4d468322a9"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-seven-a00bbe560e",
+          "name": "SEVEN",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-seven-a00bbe560e-v-a00bbe560e"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29",
+            "song-we-are-dreamers-77f071fc29-v-5d237a28f5"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-236e41ab4c",
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-15e2b8f183",
+          "name": "グロウアップ・シャイン！",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-empress-game-c140ff5898",
+          "name": "EMPRESS GAME",
+          "event_ids": [
+            "live-cd-2017-05-13-starting-gate-06-2",
+            "live-cd-2017-05-13-starting-gate-06-1"
+          ],
+          "version_ids": [
+            "song-empress-game-c140ff5898-v-c140ff5898"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-never-looking-back-d2ca0c4311",
+          "name": "Never Looking Back",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-4bfe85c283",
+          "name": "ユメヲカケル！",
+          "event_ids": [
+            "live-other-2021-12-01-2021-fns",
+            "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival"
+          ],
+          "version_ids": [
+            "song-4bfe85c283-v-9adb4918e2"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-bright-melody-bd728589b5",
+          "name": "Bright Melody",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-bright-melody-bd728589b5-v-bd728589b5"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-fanfare-for-future-7b77e575ce",
+          "name": "Fanfare for Future!",
+          "event_ids": [
+            "live-other-2016-08-21-cygames-next-2016-3"
+          ],
+          "version_ids": [
+            "song-fanfare-for-future-7b77e575ce-v-5bb8c45c4a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-find-my-only-way-46f68c23ae",
+          "name": "Find My Only Way",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-legend-changer-fcb0cca1c5",
+          "name": "Legend-Changer",
+          "event_ids": [
+            "live-cd-2025-08-24-winning-live-26"
+          ],
+          "version_ids": [
+            "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2022-03-20-sp"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ring-ring-c9bdb0e414",
+          "name": "Ring Ring ダイアリー",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-ring-ring-c9bdb0e414-v-c9bdb0e414"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-81800f8f29",
+          "name": "三百六十五歩のマーチ",
+          "event_ids": [
+            "live-other-2021-12-31-z-5"
+          ],
+          "version_ids": [
+            "song-81800f8f29-v-81800f8f29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "airgroove": {
       "events": [
@@ -124737,7 +126567,486 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1",
+            "live-cd-2024-05-12-winning-live-15",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-cd-2022-04-02-cd-winning-live-03",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-2022-01-01-cdtv-2021-2022",
+            "live-other-2021-12-31-z-5",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-cd-2021-08-04-title-3968b924ad22",
+            "live-other-2021-07-11-twinkle-holiday",
+            "live-cd-2021-04-04-winning-live-01"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-d8fa5ff1a4",
+            "song-228f943b49-v-498bdf7439"
+          ],
+          "performances": 19
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29",
+            "song-we-are-dreamers-77f071fc29-v-5d237a28f5"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-cdf2727e54",
+          "name": "ぴょいっと♪はれるや！",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-cd-2021-08-04-title-3968b924ad22",
+            "live-other-2021-07-11-twinkle-holiday"
+          ],
+          "version_ids": [
+            "song-cdf2727e54-v-cdf2727e54"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-0cbb64e37a",
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-other-2021-07-11-twinkle-holiday",
+            "live-cd-2021-04-04-winning-live-01"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f",
+            "song-winning-the-soul-7eddcf2b7f-v-ace83b3c10"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-87be3723c2",
+          "name": "本能スピード",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-87be3723c2-v-87be3723c2"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-dc87532b05",
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "event_ids": [
+            "live-cd-2024-05-12-winning-live-15",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-exercise-the-right-317ac0dc78",
+          "name": "Exercise the Right",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-cd-2022-04-02-cd-winning-live-03",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-exercise-the-right-317ac0dc78-v-937476bbfa",
+            "song-exercise-the-right-317ac0dc78-v-317ac0dc78"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-15e2b8f183",
+          "name": "グロウアップ・シャイン！",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-never-looking-back-d2ca0c4311",
+          "name": "Never Looking Back",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-u-m-a-new-world-ca9ae685ae",
+          "name": "U.M.A. NEW WORLD!!",
+          "event_ids": [
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-summer-d7e35f6a48",
+          "name": "UMA Summer",
+          "event_ids": [
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-winnin-5-86278c7b9d",
+          "name": "WINnin' 5 -ウイニング☆ファイヴ-",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-cd-2022-04-02-cd-winning-live-03"
+          ],
+          "version_ids": [
+            "song-winnin-5-86278c7b9d-v-86278c7b9d"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-79f332ebdb",
+          "name": "どどっと優勝！大感謝祭！！！",
+          "event_ids": [
+            "live-twinkle-2024-09-01-twinkle-circle-day2",
+            "live-twinkle-2024-08-31-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-79f332ebdb-v-79f332ebdb"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da",
+            "song-29e836f0da-v-b98368e836"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-4bfe85c283",
+          "name": "ユメヲカケル！",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-other-2021-07-11-twinkle-holiday"
+          ],
+          "version_ids": [
+            "song-4bfe85c283-v-4bfe85c283"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-endless-dream-eabbcc4d12",
+          "name": "ENDLESS DREAM!!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-endless-dream-eabbcc4d12-v-eabbcc4d12"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-find-my-only-way-46f68c23ae",
+          "name": "Find My Only Way",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-go-this-way-d4bbb66dce",
+          "name": "Go This Way",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-go-this-way-d4bbb66dce-v-d4bbb66dce"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ms-victoria-8fdfbbf2a8",
+          "name": "Ms. VICTORIA",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-run-run-70769b632a",
+          "name": "RUN×RUN！",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-run-run-70769b632a-v-70769b632a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ring-ring-c9bdb0e414",
+          "name": "Ring Ring ダイアリー",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-ring-ring-c9bdb0e414-v-c9bdb0e414"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-starting-force-c0c6c398c4",
+          "name": "STARTING FORCE",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-starting-force-c0c6c398c4-v-c0c6c398c4"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-shake-the-world-6a204b97d3",
+          "name": "Shake The World!!",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-shake-the-world-6a204b97d3-v-6a204b97d3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-e05b91c506",
+          "name": "めにしゅき♡ラッシュっしゅ！",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-e05b91c506-v-e05b91c506"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-be4063b951",
+          "name": "トレセン体操",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-be4063b951-v-be4063b951"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-81800f8f29",
+          "name": "三百六十五歩のマーチ",
+          "event_ids": [
+            "live-other-2021-12-31-z-5"
+          ],
+          "version_ids": [
+            "song-81800f8f29-v-81800f8f29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-83ba2e8f7c",
+          "name": "嗚呼それが我が宿命",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-83ba2e8f7c-v-dd311bc473"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-beyond-the-future-aaed329475",
+          "name": "笑顔の宝物 -Beyond The Future!-",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-beyond-the-future-aaed329475-v-aaed329475"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-pom-pon-1fe868e5e6",
+          "name": "限界までPom Pon！！",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-pom-pon-1fe868e5e6-v-1fe868e5e6"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "matikanetannhauser": {
       "events": [
@@ -137957,7 +140266,322 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1",
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-02-12-2023-2",
+            "live-other-2022-12-31-6-2022-2023",
+            "live-other-2022-11-19-animax-musix-2022",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 11
+        },
+        {
+          "song_id": "song-u-m-a-new-world-ca9ae685ae",
+          "name": "U.M.A. NEW WORLD!!",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1",
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-ce7108320c",
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-gochiso-7f9f47a066",
+          "name": "GOCHISO様",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-gochiso-7f9f47a066-v-7f9f47a066"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-gaze-on-me-90b0b1d78a",
+          "name": "Gaze on Me!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-other-2022-11-19-animax-musix-2022",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-ready-steady-derby-7e8ed0ad57",
+          "name": "Ready!!! Steady!!! Derby!!!",
+          "event_ids": [
+            "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+            "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+            "live-twinkle-2024-10-19-twinkle-circle-day1"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-happy-days-01845306a9",
+          "name": "ゆるパカHAPPY DAYS！",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-other-2022-11-19-animax-musix-2022",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-happy-days-01845306a9-v-01845306a9"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-destroy-for-dasein-0a0bd0d7bb",
+          "name": "Destroy for Dasein",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10"
+          ],
+          "version_ids": [
+            "song-destroy-for-dasein-0a0bd0d7bb-v-0a0bd0d7bb"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-other-2023-02-12-2023-2"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-c94aa30a59",
+            "song-winning-the-soul-7eddcf2b7f-v-ace83b3c10"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-catch-the-victory-e56a0d6f90",
+          "name": "CATCH THE VICTORY!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-catch-the-victory-e56a0d6f90-v-584efeda73"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enter-enter-mission-a943e59d91",
+          "name": "Enter Enter MISSION!",
+          "event_ids": [
+            "live-other-2022-11-19-animax-musix-2022"
+          ],
+          "version_ids": [
+            "song-enter-enter-mission-a943e59d91-v-a943e59d91"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2023-02-12-2023-2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ms-victoria-8fdfbbf2a8",
+          "name": "Ms. VICTORIA",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-the-super-strong-s-e250f72e41",
+          "name": "THE SUPER STRONG S",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-the-super-strong-s-e250f72e41-v-33648d7d69"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-challenge-dash-b7a5610844",
+          "name": "アコガレChallenge Dash!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-challenge-dash-b7a5610844-v-b7a5610844"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-f4ab00a70a",
+          "name": "ミッドナイト・エピローグ",
+          "event_ids": [
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-f4ab00a70a-v-f4ab00a70a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-4bfe85c283",
+          "name": "ユメヲカケル！",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-4bfe85c283-v-369d1e6bc1"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-81800f8f29",
+          "name": "三百六十五歩のマーチ",
+          "event_ids": [
+            "live-other-2022-12-31-6-2022-2023"
+          ],
+          "version_ids": [
+            "song-81800f8f29-v-81800f8f29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-496f508d38",
+          "name": "永遠の色彩",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-496f508d38-v-496f508d38"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-other-2022-12-31-6-2022-2023"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-bbeb742937"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "daiichiruby": {
       "events": [
@@ -158656,7 +161280,183 @@
           "releases": 1
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-8081baf369",
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-15e2b8f183",
+          "name": "グロウアップ・シャイン！",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-15e2b8f183-v-15e2b8f183"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-dramatic-journey-60664c4bb2",
+          "name": "DRAMATIC JOURNEY",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dance-2-endless-beat-8c6c92b99d",
+          "name": "Dance 2 Endless Beat",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-dance-2-endless-beat-8c6c92b99d-v-8c6c92b99d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enjoy-and-join-a69ea32e1c",
+          "name": "Enjoy and Join",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-gaze-on-me-90b0b1d78a",
+          "name": "Gaze on Me!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ms-victoria-8fdfbbf2a8",
+          "name": "Ms. VICTORIA",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-phantasia-81aafc5f7e",
+          "name": "彩 Phantasia",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-phantasia-81aafc5f7e-v-81aafc5f7e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-87be3723c2",
+          "name": "本能スピード",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-87be3723c2-v-87be3723c2"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "bitterglasse": {
       "events": [
@@ -158669,7 +161469,96 @@
         }
       ],
       "songs": [],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enjoy-and-join-a69ea32e1c",
+          "name": "Enjoy and Join",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-winnin-5-86278c7b9d",
+          "name": "WINnin' 5 -ウイニング☆ファイヴ-",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-winnin-5-86278c7b9d-v-86278c7b9d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "littlecocon": {
       "events": [
@@ -158682,7 +161571,96 @@
         }
       ],
       "songs": [],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-enjoy-and-join-a69ea32e1c",
+          "name": "Enjoy and Join",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-winnin-5-86278c7b9d",
+          "name": "WINnin' 5 -ウイニング☆ファイヴ-",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-winnin-5-86278c7b9d-v-86278c7b9d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-we-are-dreamers-77f071fc29",
+          "name": "We are DREAMERS!!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-cdbc25c785",
+          "name": "大好きのタカラバコ",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "venuspaques": {
       "events": [],
@@ -159753,6 +162731,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-09-20T13:53:27+00:00",
-  "build_id": "3f137b1de909df4c001f"
+  "generated_at": "2026-09-20T15:27:37+00:00",
+  "build_id": "fa605dc9a45890ab00ab"
 }
