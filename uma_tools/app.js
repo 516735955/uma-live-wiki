@@ -1003,18 +1003,27 @@ const umaApp = createApp({
       }
       return null;
     }
+    function normName(value) {
+      return String(value || '').replace(/\s+/g, '').toLowerCase();
+    }
     function findCharByDisplayName(name) {
-      var target = String(name || '').replace(/\s+/g, '').toLowerCase();
+      var target = normName(name);
       if (!target) return null;
       var arr = (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
       for (var i = 0; i < arr.length; i++) {
         var candidate = arr[i];
         var names = [candidate.zh, candidate.ja, candidate.name, candidate.en];
-        if (names.some(function (value) { return String(value || '').replace(/\s+/g, '').toLowerCase() === target; })) {
+        if (names.some(function (value) { return normName(value) === target; })) {
           return findCharById(candidate.id);
         }
       }
       return null;
+    }
+    function findCharByAvatar(src) {
+      var path = String(src || '').split('?')[0];
+      var base = path.split('/').pop().replace(/\.[A-Za-z0-9]+$/, '');
+      if (!base) return null;
+      return findCharById(base.replace(/\s+/g, '').toLowerCase()) || findCharByDisplayName(base);
     }
     function slugOfAlbum(name) {
       const latin = String(name || '')
@@ -1514,9 +1523,11 @@ const umaApp = createApp({
         return start + '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + LANG_PREFIX + '/music/songs/' + encodeURIComponent(song.id) + '">' + body + '</a>' + end;
       });
       return linked.replace(/<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi, function (whole, image, alt, label) {
-        var character = findCharByDisplayName(decodeHtml(alt));
+        var srcMatch = image.match(/\bsrc=["']([^"']+)["']/i);
+        var character = findCharByAvatar(srcMatch ? srcMatch[1] : '') || findCharByDisplayName(decodeHtml(alt));
         if (!character) return whole;
-        return '<button type="button" class="perf-item setlist-performer-link" data-character-id="' + character.id + '" style="--chip-color:' + character.main + '">' + image + '<span class="perf-name">' + label + '</span></button>';
+        var shown = [character.zh, character.ja, character.en].some(function (value) { return normName(value) === normName(label); }) ? label : character.zh;
+        return '<button type="button" class="perf-item setlist-performer-link" data-character-id="' + character.id + '" style="--chip-color:' + character.main + '">' + image + '<span class="perf-name">' + shown + '</span></button>';
       });
     }
     function onEventSetlistClick(event) {
