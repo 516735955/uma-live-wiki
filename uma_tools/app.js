@@ -819,7 +819,14 @@ const umaApp = createApp({
       if (!songDetail.value) return [];
       const rows = [];
       (songDetail.value.versions || []).forEach(function (version) {
-        (version.performances || []).forEach(function (performance) { rows.push({ version: version, performance: performance }); });
+        (version.performances || []).forEach(function (performance) {
+          const setlistNo = performance.setlist_no;
+          let displayNo = String(performance.performance_index || '');
+          if (setlistNo !== null && setlistNo !== undefined) {
+            displayNo = String(setlistNo);
+          }
+          rows.push({ version: version, performance: performance, display_no: displayNo });
+        });
       });
       return rows.sort(function (a, b) {
         return String(b.performance.session_date || b.performance.event_date).localeCompare(String(a.performance.session_date || a.performance.event_date));

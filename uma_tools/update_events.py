@@ -83,6 +83,7 @@ NUMBERED_EVENT_COVERS = {
 VFOLD = str.maketrans({"髙": "高", "﨑": "崎", "祥": "祥", "塚": "塚", "濱": "浜", "諸": "諸"})
 DATE_RE = re.compile(r"(20\d{2})[.年/-](\d{1,2})[.月/-](\d{1,2})")
 SONG_RE = re.compile(r'<td class="setlist-song">([\s\S]*?)</td>')
+SETLIST_NO_RE = re.compile(r'<td class="setlist-no">([\s\S]*?)</td>')
 PERFORMER_RE = re.compile(r'<span class="perf-name">([\s\S]*?)</span>')
 GUEST_PERFORMER_RE = re.compile(
     r'<span\b[^>]*class=["\'][^"\']*\bguest-performer\b[^"\']*["\'][^>]*>([\s\S]*?)</span>',
@@ -284,6 +285,8 @@ def table_performances(
         if FULL_CAST_RE.search(clean_text(row)):
             character_ids = list(dict.fromkeys([*full_cast, *character_ids]))
         performance = {"song": song, "character_ids": character_ids}
+        if SETLIST_NO_RE.search(row):
+            performance["setlist_no"] = clean_text(SETLIST_NO_RE.search(row).group(1)).strip()
         guest_performers = list(dict.fromkeys(
             clean_text(match.group(1))
             for match in GUEST_PERFORMER_RE.finditer(row)
@@ -538,6 +541,7 @@ def build_song_catalog(
                     "kind": event.get("kind") or "", "series_id": event.get("series_id") or "",
                     "session_id": session.get("id") or "", "session_label": session.get("label") or "",
                     "session_date": session.get("date") or "", "performance_index": performance_index,
+                    "setlist_no": performance.get("setlist_no") if "setlist_no" in performance else None,
                     "character_ids": character_ids, "voice_actor_ids": sorted(voice_actor_ids),
                     **({"guest_performers": list(performance.get("guest_performers") or [])} if performance.get("guest_performers") else {}),
                     "event_url": f"/zh-Hans/events/{urllib.parse.quote(str(event.get('id') or ''))}?session={urllib.parse.quote(str(session.get('id') or ''))}",
