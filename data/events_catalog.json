@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T03:47:46+00:00",
+  "generated_at": "2026-09-20T04:02:48+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "b7eb03fe490561e4e955a19566d134e425eb6efba4157249193a5c5c5e531c78",
@@ -12,17 +12,17 @@
     }
   },
   "coverage": {
-    "events": 469,
+    "events": 470,
     "by_kind": {
       "concert": 81,
-      "official_program": 226,
+      "official_program": 227,
       "onsite": 162
     },
     "by_mode": {
-      "online": 226,
+      "online": 227,
       "onsite": 243
     },
-    "official_programs": 226,
+    "official_programs": 227,
     "unresolved_cast_names": 0
   },
   "series": [
@@ -787,6 +787,276 @@
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/onsite.svg",
       "summary": "",
+      "legacy_aliases": [],
+      "setlist_status": "none"
+    },
+    {
+      "id": "paka-live-tv-prime-007",
+      "title": "ぱかライブTV' #7",
+      "date": "2026-09-27",
+      "end_date": "2026-09-27",
+      "kind": "official_program",
+      "mode": "online",
+      "series_id": "paka-live-tv-prime",
+      "venue": "在线播出",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0035",
+          "name": "前田玲奈",
+          "character_id": "grasswonder",
+          "role": "草上飞",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0155",
+          "name": "衣川里佳",
+          "character_id": "naritabrian",
+          "role": "成田白仁",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0118",
+          "name": "田所梓",
+          "character_id": "symbolirudolf",
+          "role": "鲁道夫象征",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0135",
+          "name": "秋奈",
+          "character_id": "duramente",
+          "role": "大鸣大放",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0166",
+          "name": "铃木日菜",
+          "character_id": "admiregroove",
+          "role": "爱慕律动",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0147",
+          "name": "菊池友莉菜",
+          "character_id": "rosekingdom",
+          "role": "玫瑰帝国",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0110",
+          "name": "浅见春那",
+          "character_id": "phalaenopsis",
+          "role": "蝴蝶兰",
+          "evidence": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "community_archive",
+              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "paka-live-tv-prime-007-session-1",
+          "label": "本期节目",
+          "date": "2026-09-27",
+          "songs": [],
+          "character_ids": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0035",
+              "name": "前田玲奈",
+              "character_id": "grasswonder",
+              "role": "草上飞",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0155",
+              "name": "衣川里佳",
+              "character_id": "naritabrian",
+              "role": "成田白仁",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0118",
+              "name": "田所梓",
+              "character_id": "symbolirudolf",
+              "role": "鲁道夫象征",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0135",
+              "name": "秋奈",
+              "character_id": "duramente",
+              "role": "大鸣大放",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0166",
+              "name": "铃木日菜",
+              "character_id": "admiregroove",
+              "role": "爱慕律动",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0147",
+              "name": "菊池友莉菜",
+              "character_id": "rosekingdom",
+              "role": "玫瑰帝国",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0110",
+              "name": "浅见春那",
+              "character_id": "phalaenopsis",
+              "role": "蝴蝶兰",
+              "evidence": "community_archive",
+              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "community_archive",
+                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+                }
+              ]
+            }
+          ],
+          "setlist_status": "none"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "官方公告",
+          "url": "https://umamusume.jp/news/detail?id=3462"
+        },
+        {
+          "kind": "community_archive",
+          "label": "Umamusume Wiki 补档",
+          "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
+      "summary": "公式生配信番組「ぱかライブTV' #7」の出走者と放送日時が決定しました！10月に追加予定の新育成シナリオや、ガチャ更新情報、次回ストーリーイベントなど、ゲーム最新情報を発表！「ぱかライブTV' #7」放送終了後に配信するアニメ『うまゆる ふるげ～と！』最新情報や、『7th EVENT WORLD TOUR “THE STAGE” in LOS ANGELES』の続報もお届け！さらに、アニメ『うまゆる ふるげ～と！』の公開を記念して、うまゆる早押しクイズに挑戦します！放送日時：2026年9月27日（日）20:00",
+      "schedule_status": "scheduled",
+      "metadata_status": "complete",
       "legacy_aliases": [],
       "setlist_status": "none"
     },
@@ -105090,5 +105360,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "f5f4381a43218900112e"
+  "build_id": "f22c200656deb8fbf947"
 }

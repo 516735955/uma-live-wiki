@@ -219,6 +219,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 "title": "人工确认标题",
                 "date": "",
                 "cast": [{"name": "确认声优"}],
+                "source_kind": "community_archive",
+                "source_url": "https://example.com/archive",
                 "sources": [{"kind": "official_announcement", "url": "https://example.com/old"}],
             }],
         }
@@ -232,6 +234,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                     "title": "自动发现的不同标题",
                     "date": "2026-09-20",
                     "cast": [{"name": "自动发现的不同出演者"}],
+                    "source_kind": "official_announcement",
+                    "source_url": "https://example.com/announcement",
                     "sources": [{"kind": "official_youtube", "url": "https://example.com/new"}],
                 },
                 {"id": "program-2", "series_id": "official-special", "title": "新节目", "date": "2026-09-21"},
@@ -242,9 +246,14 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(first["title"], "人工确认标题")
         self.assertEqual(first["cast"], [{"name": "确认声优"}])
         self.assertEqual(first["date"], "2026-09-20")
+        self.assertEqual(first["source_kind"], "official_announcement")
+        self.assertEqual(first["source_url"], "https://example.com/announcement")
         self.assertEqual(len(first["sources"]), 2)
         self.assertEqual(report["added_ids"], ["program-2"])
-        self.assertEqual(report["filled"], [{"id": "program-1", "fields": ["date", "sources"]}])
+        self.assertEqual(
+            report["filled"],
+            [{"id": "program-1", "fields": ["date", "source_kind", "source_url", "sources"]}],
+        )
         self.assertEqual(
             {(row["id"], row["field"]) for row in report["conflicts"]},
             {("program-1", "cast"), ("program-1", "title")},

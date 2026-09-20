@@ -42,6 +42,12 @@ EVENTS_DIR = DATA_DIR / "events"
 PROGRAM_REFRESH_REPORT = EVENTS_DIR / "program_refresh_report.json"
 OFFICIAL_CHANNEL_ID = "UCAWxPGGuIfWME2KTLUmSCHw"
 REGULAR_PROGRAM_BASELINES = {"paka-live-tv": 62, "paka-live-tv-prime": 6, "sokosoko-paka-live-tv": 55}
+PROGRAM_SOURCE_PRIORITY = {
+    "community_archive": 1,
+    "official_broadcaster": 2,
+    "official_announcement": 3,
+    "official_youtube": 4,
+}
 PAKALIVE_ARCHIVE_PAGES = {
     "paka-live-tv": "https://umamusu.wiki/PakaLive_TV",
     "paka-live-tv-prime": "https://umamusu.wiki/PakaLive_TV_Dash",
@@ -2850,7 +2856,12 @@ def refresh_programs() -> dict[str, Any]:
             by_id[event_id]["sources"] = implicit_sources(program)
             continue
         target = by_id[event_id]
-        richer = bool(program.get("cast")) or bool(program.get("video_id"))
+        target_priority = PROGRAM_SOURCE_PRIORITY.get(str(target.get("source_kind") or ""), 0)
+        program_priority = PROGRAM_SOURCE_PRIORITY.get(str(program.get("source_kind") or ""), 0)
+        richer = program_priority > target_priority or (
+            program_priority == target_priority
+            and (bool(program.get("cast")) or bool(program.get("video_id")))
+        )
         if richer:
             for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status"):
                 if program.get(field):
@@ -2972,6 +2983,9 @@ def apply_additive_program_refresh(
         assert existing is not None and discovered is not None
         merged = dict(existing)
         filled_fields: list[str] = []
+        source_upgrade = PROGRAM_SOURCE_PRIORITY.get(str(discovered.get("source_kind") or ""), 0) > PROGRAM_SOURCE_PRIORITY.get(
+            str(existing.get("source_kind") or ""), 0
+        )
         for field, discovered_value in discovered.items():
             if field == "id":
                 continue
@@ -2986,6 +3000,11 @@ def apply_additive_program_refresh(
                     merged[field] = combined
                     filled_fields.append(field)
                 continue
+            if field in ("source_kind", "source_url") and source_upgrade and value_is_present(discovered_value):
+                if comparable(existing_value) != comparable(discovered_value):
+                    merged[field] = discovered_value
+                    filled_fields.append(field)
+                continue
             if not value_is_present(existing_value) and value_is_present(discovered_value):
                 merged[field] = discovered_value
                 filled_fields.append(field)
@@ -2994,7 +3013,12 @@ def apply_additive_program_refresh(
                 and value_is_present(discovered_value)
                 and comparable(existing_value) != comparable(discovered_value)
             ):
-                conflicts.append({"id": program_id, "field": field})
+                conflicts.append({
+                    "id": program_id,
+                    "field": field,
+                    "existing": existing_value,
+                    "discovered": discovered_value,
+                })
         if filled_fields:
             filled.append({"id": program_id, "fields": sorted(set(filled_fields))})
         programs.append(merged)
