@@ -1,0 +1,17 @@
+[Unit]
+Description=Uma Musume Live Wiki
+After=network.target
+
+[Service]
+Type=simple
+User=alaemiryoung
+Group=alaemiryoung
+WorkingDirectory=/var/www/umamusume
+ExecStart=/usr/bin/node /var/www/umamusume/uma_tools/server.js 8080 /var/www/umamusume --no-crawl
+Restart=on-failure
+RestartSec=3
+Environment=NODE_ENV=production
+ReadOnlyPaths=/var/www/umamusume/data
+
+[Install]
+WantedBy=multi-user.target

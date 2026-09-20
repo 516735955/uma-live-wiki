@@ -54,14 +54,15 @@ node uma_tools/server.js --no-crawl
 `index.html` 或 `赛马娘LIVE相关.html`。`--no-crawl` 只关闭后台抓取，页面与站内 API 均可正常预览，
 也不会在启动时改写数据文件。
 
-需要长期运行并自动刷新活动、角色、专辑和 Lantis 新闻时，使用：
+需要在维护工作树中显式刷新活动、角色、专辑和 Lantis 新闻时，使用：
 
 ```bash
 node uma_tools/server.js
 # 或：npm --prefix uma_tools run serve:auto
 ```
 
-服务器在 Windows 上默认调用 `python`，在 macOS/Linux 上默认调用 `python3`。如果 Python 3
+该模式会修改仓库数据，不应用作生产站点的启动命令。服务器在 Windows 上默认调用 `python`，
+在 macOS/Linux 上默认调用 `python3`。如果 Python 3
 使用其他命令名，可在启用自动刷新时通过 `PYTHON_BIN` 指定，例如：
 
 ```bash
@@ -145,6 +146,17 @@ Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 
 
 生产环境可将 [`deploy/nginx-uma-live-wiki.conf`](deploy/nginx-uma-live-wiki.conf) 包含进 HTTPS server block，
 使文本资源启用 gzip、图片使用长期缓存，并将 `/api/` 交给 Node 服务。发布后可用以下命令校验目录投影：
+
+生产 Node 服务使用 [`deploy/umamusume.service`](deploy/umamusume.service)。该单元固定启用
+`--no-crawl`，并将仓库内 `data/` 挂为只读：部署、重启与故障恢复只发布 Git 中已经审核的数据，
+不会顺带运行抓取器或改写资料。需要刷新资料时，应在维护工作树中显式运行上表中的对应命令，检查 Git diff
+并提交后再部署，不要在生产服务进程内执行自动刷新。
+
+```bash
+sudo install -m 0644 deploy/umamusume.service /etc/systemd/system/umamusume.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now umamusume.service
+```
 
 ```bash
 npm --prefix uma_tools run test:catalog
