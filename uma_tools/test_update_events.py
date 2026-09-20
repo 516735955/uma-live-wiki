@@ -408,6 +408,30 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             [{"song": "Song A", "character_ids": ["specialweek", "silencesuzuka"]}],
         )
 
+    def test_numbered_event_appearances_use_the_matching_session_date(self):
+        built = UPDATE_EVENTS.build()
+        event_id = "live-numbered-6th-event-2025-10-18"
+        event = next(row for row in built["catalog"]["events"] if row["id"] == event_id)
+        day_one, day_two = event["sessions"]
+        self.assertNotIn("bikopegasus", day_one["character_ids"])
+        self.assertIn("bikopegasus", day_two["character_ids"])
+        self.assertIn('uma_avatars/BikoPegasus.png" alt="微光飞驹"', day_two["setlist_html"])
+        self.assertNotIn('uma_avatars/ShinkoWindy.png" alt="微光飞驹"', day_two["setlist_html"])
+
+        character_events = [
+            row for row in built["appearances"]["characters"]["bikopegasus"]["events"]
+            if row["event_id"] == event_id
+        ]
+        actor_events = [
+            row for row in built["appearances"]["voice_actors"]["va-0117"]["events"]
+            if row["event_id"] == event_id
+        ]
+        for rows in (character_events, actor_events):
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["date"], "2025-10-19")
+            self.assertEqual(rows[0]["session_id"], day_two["id"])
+            self.assertEqual(rows[0]["session_label"], "DAY2")
+
     def test_unlabelled_performers_survive_an_auxiliary_labeled_cast_line(self):
         class Identities:
             @staticmethod
