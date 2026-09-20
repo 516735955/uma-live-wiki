@@ -7,11 +7,12 @@
 <style>
 html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK SC","Noto Sans CJK JP",system-ui,sans-serif}.app-boot{min-height:100vh;background:#f5f4f9}.app-boot-bar{height:76px;background:#3157e8 url('/uma_tools/img/bg_kv_nav.png') center/cover;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1280px)/2));color:#fff;font-size:22px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(24,39,93,.18)}.app-boot-main{width:min(1280px,calc(100% - 40px));margin:32px auto}.app-boot-line{height:46px;border-radius:8px;background:linear-gradient(100deg,#fff 20%,#eef1fa 38%,#fff 56%);background-size:220% 100%;animation:boot-shimmer 1.2s ease-in-out infinite}.app-boot-line+.app-boot-line{height:180px;margin-top:20px}@keyframes boot-shimmer{to{background-position-x:-220%}}@media(max-width:700px){.app-boot-bar{height:58px;padding:0 18px;font-size:17px}.app-boot-main{width:calc(100% - 28px);margin-top:20px}.app-boot-line{height:44px}.app-boot-line+.app-boot-line{height:136px}}@media(prefers-reduced-motion:reduce){.app-boot-line{animation:none;background:#fff}}
 </style>
-    <link rel="stylesheet" href="/uma_tools/app.css?v=20260920-8">
+    <link rel="stylesheet" href="/uma_tools/app.css?v=20260920-9">
 <script defer src="/uma_tools/vendor/vue.global.prod.js?v=3"></script>
 <script defer src="/uma_tools/app-api.js?v=20260914-12"></script>
-<script defer src="/uma_tools/ui-components.js?v=20260914-12"></script>
-<script defer src="/uma_tools/app.js?v=20260920-4"></script>
+<script defer src="/uma_tools/ui-components.js?v=20260920-13"></script>
+<script defer src="/uma_tools/player-controller.js?v=20260920-1"></script>
+<script defer src="/uma_tools/app.js?v=20260920-5"></script>
 </head>
 <body>
 
@@ -485,7 +486,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
                 <div class="media-content">
                     <section class="entity-section">
-                        <header class="entity-section-title"><h2>曲目</h2><div class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span><button v-if="albumPlayableCount(albumDetail)" type="button" class="album-enqueue-btn" @click="enqueueAlbum(albumDetail)" title="播放整个专辑并加入播放列表">添加到播放列表</button></div></header>
+                        <header class="entity-section-title"><h2>曲目</h2><div class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span><button v-if="albumPlayableCount(albumDetail)" type="button" class="album-enqueue-btn" @click="enqueueAlbum(albumDetail)" title="从第一首可试听曲目开始播放">播放整张专辑</button></div></header>
                         <div class="album-track-list">
                             <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
                                 <span>{{ String(index+1).padStart(2,'0') }}</span>
@@ -496,7 +497,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                                     </div>
                                     <span v-else class="secondary-line">{{ song.artist || '—' }}</span>
                                 </div>
-                                <button v-if="song.url" class="track-play" :class="{playing:isActive(song.url)}" @click="playSong(song.url,song.name,song.artist,song.pic || albumDetail.data.cover)" :aria-label="isActive(song.url)?'暂停':'播放'"><svg v-if="isActive(song.url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
+                                <button v-if="song.url" class="track-play" :class="{playing:isActive(song.url)}" @click="playAlbumTrack(albumDetail,index)" :aria-label="isActive(song.url)?'暂停':'播放'"><svg v-if="isActive(song.url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
                             </div>
                         </div>
                     </section>
@@ -901,48 +902,11 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
     </footer>
 
-    <audio ref="audio" id="audioPlayer"></audio>
-
-    <div class="player" id="player" :class="{show: player.shown}">
-        <button class="player-hide" type="button" title="隐藏播放器" aria-label="隐藏播放器" @click="player.shown=false">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
-        </button>
-        <div class="mini-row">
-            <img class="player-cover" :src="coverThumb(player.cover, 96)" alt="" @error="onCatalogImageError($event)">
-            <div class="player-info">
-                <div class="player-song">{{ player.name }}</div>
-                <div class="player-artist" :title="player.artist">{{ player.artist }}</div>
-            </div>
-            <div class="player-controls">
-                <button class="player-btn" type="button" title="上一首" aria-label="上一首" :disabled="!player.queue.length" @click="prevSong">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-                </button>
-                <button class="player-btn player-btn-primary" id="playPauseBtn" type="button" :title="player.playing?'暂停':'播放'" :aria-label="player.playing?'暂停':'播放'" @click="togglePlay"><svg v-if="player.shown && player.playing" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg></button>
-                <button class="player-btn" type="button" title="下一首" aria-label="下一首" :disabled="!player.queue.length" @click="nextSong">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
-                </button>
-                <button class="player-btn" type="button" title="播放列表" aria-label="播放列表" :class="{active: showQueue}" @click="showQueue=!showQueue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
-                </button>
-            </div>
-        </div>
-        <div v-if="showQueue && player.queue.length" class="player-queue">
-            <div class="player-queue-head">播放列表（{{ player.queue.length }}）</div>
-            <div class="player-queue-list">
-                <button v-for="(s,qi) in player.queue" :key="'q'+qi" type="button" class="player-queue-item" :class="{active: qi===player.queueIndex}" @click="playQueueAt(qi)">
-                    <span class="player-queue-no">{{ qi+1 }}</span>
-                    <span class="player-queue-name">{{ s.name }}</span>
-                    <span class="player-queue-artist" :title="s.artist">{{ s.artist }}</span>
-                </button>
-            </div>
-        </div>
-        <div class="progress-bar" id="progressBar" @click="seek($event)">
-            <div class="progress" :style="styleWidth"></div>
-        </div>
-    </div>
-    <button class="player-restore" type="button" title="展开播放器" aria-label="展开播放器" :class="{show: !player.shown && !!player.url}" @click="player.shown=true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
-    </button>
+    <audio ref="audio" id="audioPlayer" preload="metadata"></audio>
+    <audio-dock :player="player"
+        @toggle-play="togglePlay" @previous="prevSong" @next="nextSong" @seek="seek"
+        @play-at="playQueueAt" @toggle-panel="togglePlayerPanel" @close-panel="closePlayerPanel"
+        @retry="retryPlayer" @remove-item="removeQueueItem" @move-item="moveQueueItem" @open-voice="openVoice"></audio-dock>
     <button v-if="backTopVisible && !home" class="back-to-top" type="button" @click="backToTop" aria-label="返回顶部"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button>
 
 </div>

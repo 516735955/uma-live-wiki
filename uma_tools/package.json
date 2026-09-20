@@ -8,6 +8,7 @@
     "serve:auto": "node server.js",
     "check:deployment": "node check_deployment.js",
     "test:catalog": "node test_catalog_store.js",
+    "test:player": "node test_player_controller.js",
     "scrape": "node scrape.js",
     "apply": "node apply.js"
   }

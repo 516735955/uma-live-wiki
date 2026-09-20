@@ -356,14 +356,18 @@ const umaApp = createApp({
       if (home.value) loadHomeSummary();
     }
 
-    const player = reactive({
-      shown: false, url: null, playing: false,
-      cover: '', name: '', artist: '',
-      currentTime: 0, duration: 0,
-      queue: [], queueIndex: -1
+    let playerStorage = null;
+    try { playerStorage = window.sessionStorage; } catch (error) {}
+    const playerController = window.UmaPlayer.createPlayerController({
+      reactive: reactive,
+      getAudio: function () { return audio.value; },
+      proxyUrl: proxySongUrl,
+      storage: playerStorage
     });
-
-    const showQueue = ref(false);
+    const player = playerController.state;
+    watch(function () { return !!player.current; }, function (active) {
+      document.body.classList.toggle('audio-dock-active', active);
+    }, { immediate: true });
 
     const navItems = [
       { key: 'news', label: '新闻', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>', path: '/zh-Hans/news' },
@@ -828,7 +832,10 @@ const umaApp = createApp({
           release: {
             audio_url: song.playable.audio_url,
             artist: song.playable.artist,
-            cover: song.playable.cover
+            cover: song.playable.cover,
+            album_id: song.playable.album_id,
+            album_name: song.playable.album_name,
+            voice_actor_ids: song.playable.voice_actor_ids || song.voice_actor_ids || []
           }
         };
       }
@@ -843,12 +850,12 @@ const umaApp = createApp({
       if (event && event.stopPropagation) event.stopPropagation();
       const row = playableSongRelease(song);
       if (!row) return;
-      playSong(row.release.audio_url, song.title, row.release.artist || songSingerLabel(song), row.release.cover || song.cover);
+      playSongTrack(song, row.version, row.release);
     }
     function playSongRelease(row, event) {
       if (event && event.stopPropagation) event.stopPropagation();
       if (!row || !row.release || !row.release.audio_url) return;
-      playSong(row.release.audio_url, row.version.title, row.release.artist || songSingerLabel(songDetail.value), row.release.cover || songDetail.value.cover);
+      playSongTrack(songDetail.value, row.version, row.release);
     }
     function relationSong(reference) { return findSong(reference && (reference.song_id || reference.name)); }
     function relationSongVersions(reference, entityType, entityId) {
@@ -879,7 +886,7 @@ const umaApp = createApp({
     function playRelationRelease(song, version, release, event) {
       if (event && event.stopPropagation) event.stopPropagation();
       if (!release || !release.audio_url) return;
-      playSong(release.audio_url, version.title || song.title, release.artist || songSingerLabel(song), release.cover || song.cover);
+      playSongTrack(song, version, release);
     }
     function songSingerLabel(song) {
       const names = ((song && song.voice_actor_ids) || []).map(function (actorId) {
@@ -1322,7 +1329,9 @@ const umaApp = createApp({
     function openAlbumFromDb(a) { openAlbum(a); }
 
     // player
-    function isActive(url) { return player.url === url && player.playing; }
+    function isActive(url) {
+      return !!(player.current && player.current.url === url && playerController.isPlaying());
+    }
     function proxySongUrl(url) {
       if (!url) return url;
       if (url.indexOf('/api/audio') === 0) return url;
@@ -1330,71 +1339,156 @@ const umaApp = createApp({
       if (/^https?:\/\//i.test(url)) return '/api/audio?url=' + encodeURIComponent(url);
       return url;
     }
-    function playSong(url, name, artist, pic) {
-      if (player.url === url) { togglePlay(); return; }
-      setAndPlay(url, name, artist, pic);
+    function playerVocalistsFromIds(ids) {
+      return Array.from(new Set(ids || [])).map(function (actorId) {
+        const voice = findVaBySlug(actorId);
+        const role = voice && voice.roles && voice.roles[0];
+        return voice ? {
+          id: voice.id,
+          name: voice.zh || voice.ja || actorId,
+          image: voice.photo || '',
+          color: (role && role.main) || '#3157e8'
+        } : null;
+      }).filter(Boolean);
     }
-    function setAndPlay(url, name, artist, pic) {
-      player.url = url; player.cover = pic; player.name = name; player.artist = artist;
-      player.shown = true; player.playing = true;
-      if (audio.value) { audio.value.src = proxySongUrl(url); audio.value.play().catch(function () {}); }
+    function playerVocalistsFromArtist(artist) {
+      const names = String(artist || '').split(/[、,，/／・]+/).map(function (name) {
+        const trimmed = name.trim();
+        const cv = trimmed.match(/(?:CV\s*[.．:：]?\s*)([^)）]+)/i);
+        return cv ? cv[1].trim() : trimmed;
+      }).filter(Boolean);
+      return names.map(function (name) {
+        const profile = voiceProfileForName(name);
+        const voice = profile && findVaBySlug(profile.id);
+        const role = voice && voice.roles && voice.roles[0];
+        return {
+          id: voice ? voice.id : '',
+          name: voice ? (voice.zh || voice.ja || name) : name,
+          image: voice ? (voice.photo || '') : '',
+          color: (role && role.main) || '#3157e8'
+        };
+      });
     }
-    function playAlbumAt(album, index) {
-      const songs = album.songs || [];
-      if (!songs.length) return;
-      const i = Math.max(0, Math.min(index, songs.length - 1));
-      const s = songs[i];
-      if (player.url === s.url) { player.queueIndex = i; player.queue = songs; togglePlay(); return; }
-      player.queue = songs;
-      player.queueIndex = i;
-      setAndPlay(s.url, s.name, s.artist, s.pic || album.cover || s.pic);
+    function mergePlayerVocalists(exactRows, artistRows) {
+      const exact = (exactRows || []).map(function (row) {
+        return Object.assign({}, row, { id: row.id || row.voice_actor_id || '' });
+      });
+      const credits = artistRows || [];
+      if (!exact.length) return credits;
+      if (!credits.length) return exact;
+      // Curated release vocalist rows are authoritative. Artist text is only
+      // needed when it contains additional guest credits without a site page.
+      if (credits.length <= exact.length) return exact;
+      const used = new Set();
+      const merged = credits.map(function (credit) {
+        const matchIndex = exact.findIndex(function (row, index) {
+          if (used.has(index)) return false;
+          if (credit.id && row.id) return credit.id === row.id;
+          return String(credit.name || '').trim() === String(row.name || '').trim();
+        });
+        if (matchIndex < 0) return credit;
+        used.add(matchIndex);
+        return exact[matchIndex];
+      });
+      exact.forEach(function (row, index) { if (!used.has(index)) merged.push(row); });
+      return merged;
     }
-    function playQueueAt(i) {
-      const q = player.queue;
-      if (!q || !q.length) return;
-      const n = q.length;
-      for (let step = 0; step < n; step++) {
-        const idx = (((i + step) % n) + n) % n;
-        const s = q[idx];
-        if (s && s.url) {
-          player.queueIndex = idx;
-          setAndPlay(s.url, s.name, s.artist, s.pic);
-          return;
-        }
+    function playerVocalistsFromRelease(release, fallbackIds) {
+      const rows = ((release && release.vocalists) || []).map(function (vocalist) {
+        const voice = findVaBySlug(vocalist.voice_actor_id);
+        return {
+          id: vocalist.voice_actor_id || '',
+          name: voiceName(vocalist.voice_actor_id, vocalist.voice_actor_name),
+          image: (voice && voice.photo) || '',
+          color: (vocalist.character && vocalist.character.color_main) || (voice && voice.roles && voice.roles[0] && voice.roles[0].main) || '#3157e8'
+        };
+      });
+      const artistRows = playerVocalistsFromArtist(release && release.artist);
+      if (rows.length) return mergePlayerVocalists(rows, artistRows);
+      const byId = playerVocalistsFromIds((release && release.voice_actor_ids) || fallbackIds || []);
+      return byId.length ? mergePlayerVocalists(byId, artistRows) : artistRows;
+    }
+    function buildPlayerTrack(data) {
+      return {
+        id: data.id || data.songId || data.url,
+        songId: data.songId || '',
+        url: data.url,
+        name: data.name,
+        artist: data.artist || '—',
+        cover: data.cover || '',
+        album: data.album || '',
+        albumId: data.albumId || '',
+        vocalists: data.vocalists || [],
+        sourceContext: data.sourceContext || ''
+      };
+    }
+    function buildReleasePlayerTrack(song, version, release) {
+      return buildPlayerTrack({
+        id: [song && song.id, version && version.id, release && release.album_id, release && release.track_number].filter(Boolean).join('-') || release.audio_url,
+        songId: (song && song.id) || '',
+        url: release.audio_url,
+        name: (version && version.title) || (song && song.title) || '未命名曲目',
+        artist: release.artist || songSingerLabel(song),
+        cover: release.cover || (song && song.cover) || '',
+        album: release.album_name || '',
+        albumId: release.album_id || '',
+        vocalists: playerVocalistsFromRelease(release, song && song.voice_actor_ids),
+        sourceContext: release.album_name || '歌曲试听'
+      });
+    }
+    function playSongTrack(song, version, release) {
+      if (!release || !release.audio_url) return;
+      playerController.playTrack(buildReleasePlayerTrack(song, version, release));
+    }
+    function buildAlbumPlayerTracks(album) {
+      const detail = album && album.data ? album.data : album;
+      const songs = (album && album.songs) || (detail && detail.songs) || [];
+      return songs.map(function (song, index) {
+        const found = findSong(song.name);
+        return buildPlayerTrack({
+          id: [(detail && (detail.catalog || detail.name)), index + 1, found && found.id].filter(Boolean).join('-'),
+          songId: (found && found.id) || '',
+          url: song.url,
+          name: song.name,
+          artist: song.artist,
+          cover: song.pic || (detail && detail.cover) || '',
+          album: (detail && detail.name) || '',
+          albumId: (detail && (detail.id || detail.catalog)) || '',
+          vocalists: mergePlayerVocalists(albumTrackVocalists(song, index), playerVocalistsFromArtist(song.artist)),
+          sourceContext: (detail && detail.name) || '专辑'
+        });
+      });
+    }
+    function playAlbumTrack(album, index) {
+      const tracks = buildAlbumPlayerTracks(album);
+      const playable = tracks.filter(function (track) { return !!track.url; });
+      const selected = tracks[index];
+      if (!selected || !selected.url) return;
+      const playableIndex = playable.findIndex(function (track) { return track.url === selected.url; });
+      if (player.current && player.current.url === selected.url && player.contextLabel === selected.sourceContext) {
+        togglePlay();
+        return;
       }
+      playerController.setQueue(playable, playableIndex, selected.sourceContext, true);
     }
+    function playQueueAt(index) { return playerController.playQueueAt(index); }
     function albumPlayableCount(album) {
       return ((album && album.songs) || []).filter(function (song) { return !!song.url; }).length;
     }
     function enqueueAlbum(album) {
-      const songs = ((album && album.songs) || []).slice();
-      if (!songs.length) return;
-      player.queue = songs;
-      showQueue.value = true;
-      const i = songs.findIndex(function (song) { return !!song.url; });
-      if (i < 0) { player.queueIndex = 0; return; }
-      player.queueIndex = i;
-      const s = songs[i];
-      setAndPlay(s.url, s.name, s.artist, s.pic || (album.data && album.data.cover) || album.cover);
+      const tracks = buildAlbumPlayerTracks(album).filter(function (track) { return !!track.url; });
+      if (!tracks.length) return;
+      playerController.setQueue(tracks, 0, tracks[0].sourceContext, true);
     }
-    function nextSong() { playQueueAt(player.queueIndex + 1); }
-    function prevSong() { playQueueAt(player.queueIndex - 1); }
-    function togglePlay() {
-      if (!audio.value) return;
-      if (audio.value.paused) { audio.value.play().catch(function () {}); player.playing = true; }
-      else { audio.value.pause(); player.playing = false; }
-    }
-    function seek(e) {
-      if (!audio.value || !player.duration) return;
-      const rect = e.currentTarget.getBoundingClientRect();
-      const ratio = (e.clientX - rect.left) / rect.width;
-      audio.value.currentTime = ratio * player.duration;
-    }
-    const styleWidth = computed(function () {
-      if (!player.duration) return 'width:0%';
-      const pct = Math.min(100, (player.currentTime / player.duration) * 100);
-      return 'width:' + pct + '%';
-    });
+    function nextSong() { return playerController.next(); }
+    function prevSong() { return playerController.previous(); }
+    function togglePlay() { return playerController.togglePlay(); }
+    function seek(seconds) { playerController.seekTo(seconds); }
+    function togglePlayerPanel() { playerController.togglePanel(); }
+    function closePlayerPanel() { playerController.closePanel(); }
+    function retryPlayer() { return playerController.retry(); }
+    function removeQueueItem(index) { playerController.removeQueueItem(index); }
+    function moveQueueItem(index, direction) { playerController.moveQueueItem(index, direction); }
 
     // The generated event catalog carries the exact validated curated table.
     function fixAvatarSrc(html) {
@@ -2137,18 +2231,7 @@ const umaApp = createApp({
 
     // audio events
     function bindAudio() {
-      const a = audio.value;
-      if (!a) return;
-      a.addEventListener('play', function () { player.playing = true; });
-      a.addEventListener('pause', function () { player.playing = false; });
-      a.addEventListener('ended', function () {
-        player.playing = false; player.currentTime = 0; player.duration = 0;
-        if (player.queue && player.queue.length && player.queueIndex >= 0 && player.queueIndex < player.queue.length - 1) {
-          nextSong();
-        }
-      });
-      a.addEventListener('timeupdate', function () { player.currentTime = a.currentTime; });
-      a.addEventListener('loadedmetadata', function () { player.duration = a.duration; });
+      playerController.bind();
     }
 
     return {
@@ -2156,8 +2239,9 @@ const umaApp = createApp({
       navItemActive, toggleNavGroup, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
-      isActive, playSong, togglePlay, seek, styleWidth,
-      nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
+      isActive, togglePlay, seek,
+      nextSong, prevSong, playQueueAt, playAlbumTrack,
+      togglePlayerPanel, closePlayerPanel, retryPlayer, removeQueueItem, moveQueueItem,
       enqueueAlbum, albumPlayableCount,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
@@ -2201,4 +2285,5 @@ const umaApp = createApp({
   }
 });
 umaApp.component('ui-select', window.UmaUi.UiSelect);
+umaApp.component('audio-dock', window.UmaUi.AudioDock);
 umaApp.mount('#app');
