@@ -365,7 +365,7 @@ const umaApp = createApp({
       storage: playerStorage
     });
     const player = playerController.state;
-    watch(function () { return !!player.current; }, function (active) {
+    watch(function () { return !!player.current && player.visible; }, function (active) {
       document.body.classList.toggle('audio-dock-active', active);
     }, { immediate: true });
 
@@ -1486,9 +1486,10 @@ const umaApp = createApp({
     function seek(seconds) { playerController.seekTo(seconds); }
     function togglePlayerPanel() { playerController.togglePanel(); }
     function closePlayerPanel() { playerController.closePanel(); }
+    function cyclePlayerMode() { return playerController.cyclePlaybackMode(); }
+    function dismissPlayer() { playerController.dismiss(); }
     function retryPlayer() { return playerController.retry(); }
     function removeQueueItem(index) { playerController.removeQueueItem(index); }
-    function moveQueueItem(index, direction) { playerController.moveQueueItem(index, direction); }
 
     // The generated event catalog carries the exact validated curated table.
     function fixAvatarSrc(html) {
@@ -2241,7 +2242,7 @@ const umaApp = createApp({
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, togglePlay, seek,
       nextSong, prevSong, playQueueAt, playAlbumTrack,
-      togglePlayerPanel, closePlayerPanel, retryPlayer, removeQueueItem, moveQueueItem,
+      togglePlayerPanel, closePlayerPanel, cyclePlayerMode, dismissPlayer, retryPlayer, removeQueueItem,
       enqueueAlbum, albumPlayableCount,
       newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,

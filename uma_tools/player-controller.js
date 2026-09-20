@@ -8,6 +8,7 @@
 
   const STORAGE_KEY = 'uma-live-player-v2';
   const PLAYING_STATES = new Set(['playing', 'buffering']);
+  const PLAYBACK_MODES = ['list', 'one', 'shuffle'];
 
   function clamp(value, min, max) {
     return Math.min(max, Math.max(min, Number(value) || 0));
@@ -78,7 +79,9 @@
         queue: queue,
         queueIndex: index,
         currentTime: Math.max(0, Number(parsed.currentTime) || 0),
-        contextLabel: String(parsed.contextLabel || '')
+        contextLabel: String(parsed.contextLabel || ''),
+        visible: parsed.visible !== false,
+        playbackMode: PLAYBACK_MODES.includes(parsed.playbackMode) ? parsed.playbackMode : 'list'
       };
     } catch (error) {
       return null;
@@ -90,6 +93,7 @@
     const reactive = options.reactive || function (value) { return value; };
     const getAudio = options.getAudio || function () { return null; };
     const proxyUrl = options.proxyUrl || function (url) { return url; };
+    const random = options.random || Math.random;
     const storage = safeStorage(options.storage);
     const restored = restoreSnapshot(storage);
     const state = reactive({
@@ -99,6 +103,8 @@
       contextLabel: restored ? restored.contextLabel : '',
       status: restored ? 'paused' : 'idle',
       panelOpen: false,
+      visible: restored ? restored.visible : false,
+      playbackMode: restored ? restored.playbackMode : 'list',
       currentTime: restored ? restored.currentTime : 0,
       duration: 0,
       buffered: 0,
@@ -108,6 +114,7 @@
     let boundAudio = null;
     let handlers = [];
     let lastPersistSecond = -1;
+    let shuffleHistory = [];
 
     function isPlaying() {
       return PLAYING_STATES.has(state.status);
@@ -124,7 +131,9 @@
           queue: state.queue,
           queueIndex: state.queueIndex,
           currentTime: state.currentTime,
-          contextLabel: state.contextLabel
+          contextLabel: state.contextLabel,
+          visible: state.visible,
+          playbackMode: state.playbackMode
         }));
       } catch (error) {}
     }
@@ -165,6 +174,7 @@
     function requestPlay() {
       const audio = getAudio();
       if (!audio || !state.current) return Promise.resolve(false);
+      state.visible = true;
       state.error = '';
       if (state.status === 'ended' && state.duration) audio.currentTime = 0;
       state.status = audio.readyState >= 3 ? 'ready' : 'loading';
@@ -214,6 +224,9 @@
       state.queueIndex = index;
       state.contextLabel = String(contextLabel || '播放列表');
       state.current = playable[index];
+      state.visible = true;
+      state.panelOpen = false;
+      shuffleHistory = [];
       return loadCurrent(autoplay !== false);
     }
 
@@ -224,18 +237,23 @@
       return setQueue([normalized], 0, normalized.sourceContext || '单曲试听', true);
     }
 
-    function playQueueAt(index) {
+    function playQueueAt(index, rememberShuffle) {
       if (!state.queue.length) return Promise.resolve(false);
       const next = clamp(index, 0, state.queue.length - 1);
       if (state.current && next === state.queueIndex && state.current.url === state.queue[next].url) return togglePlay();
+      if (rememberShuffle !== false && state.playbackMode === 'shuffle' && state.queueIndex >= 0) {
+        shuffleHistory.push(state.queueIndex);
+      }
       state.queueIndex = next;
       state.current = state.queue[next];
+      state.visible = true;
       return loadCurrent(true);
     }
 
     function togglePlay() {
       const audio = getAudio();
       if (!audio || !state.current) return Promise.resolve(false);
+      state.visible = true;
       if (isPlaying() || !audio.paused) {
         audio.pause();
         return Promise.resolve(true);
@@ -243,9 +261,43 @@
       return requestPlay();
     }
 
+    function randomQueueIndex() {
+      if (state.queue.length < 2) return state.queueIndex;
+      const offset = 1 + Math.floor(clamp(random(), 0, 0.999999) * (state.queue.length - 1));
+      return (state.queueIndex + offset) % state.queue.length;
+    }
+
+    function advance(automatic) {
+      if (state.queueIndex < 0 || !state.queue.length) return Promise.resolve(false);
+      if (automatic && state.playbackMode === 'one') {
+        const audio = getAudio();
+        if (audio) audio.currentTime = 0;
+        state.currentTime = 0;
+        return requestPlay();
+      }
+      if (state.playbackMode === 'shuffle') {
+        const nextIndex = randomQueueIndex();
+        if (nextIndex === state.queueIndex) {
+          const audio = getAudio();
+          if (audio) audio.currentTime = 0;
+          state.currentTime = 0;
+          return requestPlay();
+        }
+        shuffleHistory.push(state.queueIndex);
+        return playQueueAt(nextIndex, false);
+      }
+      const nextIndex = (state.queueIndex + 1) % state.queue.length;
+      if (nextIndex === state.queueIndex) {
+        const audio = getAudio();
+        if (audio) audio.currentTime = 0;
+        state.currentTime = 0;
+        return requestPlay();
+      }
+      return playQueueAt(nextIndex, false);
+    }
+
     function next() {
-      if (state.queueIndex < 0 || state.queueIndex >= state.queue.length - 1) return Promise.resolve(false);
-      return playQueueAt(state.queueIndex + 1);
+      return advance(false);
     }
 
     function previous() {
@@ -256,8 +308,18 @@
         persist(true);
         return Promise.resolve(true);
       }
-      if (state.queueIndex <= 0) return Promise.resolve(false);
-      return playQueueAt(state.queueIndex - 1);
+      if (state.playbackMode === 'shuffle' && shuffleHistory.length) {
+        return playQueueAt(shuffleHistory.pop(), false);
+      }
+      if (!state.queue.length || state.queueIndex < 0) return Promise.resolve(false);
+      const previousIndex = (state.queueIndex - 1 + state.queue.length) % state.queue.length;
+      if (previousIndex === state.queueIndex) {
+        if (audio) audio.currentTime = 0;
+        state.currentTime = 0;
+        persist(true);
+        return Promise.resolve(true);
+      }
+      return playQueueAt(previousIndex, false);
     }
 
     function seekTo(seconds) {
@@ -272,7 +334,25 @@
 
     function retry() {
       if (!state.current) return Promise.resolve(false);
+      state.visible = true;
       return loadCurrent(true);
+    }
+
+    function cyclePlaybackMode() {
+      const index = PLAYBACK_MODES.indexOf(state.playbackMode);
+      state.playbackMode = PLAYBACK_MODES[(index + 1) % PLAYBACK_MODES.length];
+      if (state.playbackMode !== 'shuffle') shuffleHistory = [];
+      persist(true);
+      return state.playbackMode;
+    }
+
+    function dismiss() {
+      const audio = getAudio();
+      if (audio) audio.pause();
+      state.visible = false;
+      state.panelOpen = false;
+      if (state.current && state.status !== 'error') state.status = 'paused';
+      persist(true);
     }
 
     function removeQueueItem(index) {
@@ -296,6 +376,7 @@
         return;
       }
       if (index < state.queueIndex) state.queueIndex -= 1;
+      shuffleHistory = [];
       if (wasCurrent) {
         state.queueIndex = Math.min(index, state.queue.length - 1);
         state.current = state.queue[state.queueIndex];
@@ -312,6 +393,7 @@
       const row = state.queue.splice(index, 1)[0];
       state.queue.splice(target, 0, row);
       state.queueIndex = state.queue.findIndex(function (track) { return currentId && track.id === currentId; });
+      shuffleHistory = [];
       persist(true);
     }
 
@@ -360,13 +442,7 @@
       on('seeked', function () { state.currentTime = audio.currentTime || 0; persist(true); });
       on('error', function () { markError('试听资源暂时无法载入，请稍后重试。'); });
       on('ended', function () {
-        if (state.queueIndex >= 0 && state.queueIndex < state.queue.length - 1) {
-          next();
-          return;
-        }
-        state.status = 'ended';
-        state.currentTime = state.duration;
-        persist(true);
+        advance(true);
       });
       if (typeof navigator !== 'undefined' && navigator.mediaSession) {
         const actions = {
@@ -409,6 +485,8 @@
       previous: previous,
       seekTo: seekTo,
       retry: retry,
+      cyclePlaybackMode: cyclePlaybackMode,
+      dismiss: dismiss,
       removeQueueItem: removeQueueItem,
       moveQueueItem: moveQueueItem,
       openPanel: openPanel,

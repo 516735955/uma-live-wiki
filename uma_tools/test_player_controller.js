@@ -64,12 +64,13 @@ function track(id) {
   };
 }
 
-function setup(storage) {
+function setup(storage, random) {
   const audio = new FakeAudio();
   const controller = createPlayerController({
     getAudio: function () { return audio; },
     proxyUrl: function (url) { return '/proxy?url=' + encodeURIComponent(url); },
-    storage: storage || new FakeStorage()
+    storage: storage || new FakeStorage(),
+    random: random
   });
   controller.bind();
   return { audio: audio, controller: controller, state: controller.state };
@@ -89,6 +90,11 @@ async function run() {
   first.audio.emit('timeupdate');
   assert.equal(first.state.currentTime, 42);
   assert.equal(first.state.duration, 180);
+  first.audio.currentTime = 1;
+  first.audio.emit('timeupdate');
+  await first.controller.previous();
+  assert.equal(first.audio.currentTime, 0, 'previous restarts a one-track queue');
+  assert.equal(first.audio.paused, false, 'restarting a one-track queue does not pause it');
 
   const queue = setup();
   await queue.controller.setQueue([track('a'), track('b'), track('c')], 1, 'Album', true);
@@ -96,20 +102,45 @@ async function run() {
   assert.equal(queue.state.contextLabel, 'Album');
   await queue.controller.next();
   assert.equal(queue.state.current.id, 'c');
-  assert.equal(await queue.controller.next(), false, 'the queue does not wrap at the end');
+  assert.equal(await queue.controller.next(), true, 'list loop wraps at the end');
+  assert.equal(queue.state.current.id, 'a');
   queue.audio.currentTime = 8;
   assert.equal(await queue.controller.previous(), true);
-  assert.equal(queue.state.current.id, 'c', 'previous restarts the current track after three seconds');
+  assert.equal(queue.state.current.id, 'a', 'previous restarts the current track after three seconds');
   assert.equal(queue.audio.currentTime, 0);
   queue.audio.currentTime = 2;
   await queue.controller.previous();
-  assert.equal(queue.state.current.id, 'b');
+  assert.equal(queue.state.current.id, 'c', 'previous wraps to the end of a looping list');
 
-  queue.controller.moveQueueItem(1, -1);
-  assert.equal(queue.state.current.id, 'b');
-  assert.equal(queue.state.queueIndex, 0, 'moving the queue keeps the current track selected');
-  queue.controller.removeQueueItem(0);
-  assert.equal(queue.state.current.id, 'a', 'removing the current track selects the row now occupying its place');
+  queue.controller.moveQueueItem(2, -1);
+  assert.equal(queue.state.current.id, 'c');
+  assert.equal(queue.state.queueIndex, 1, 'moving the queue keeps the current track selected');
+  queue.controller.removeQueueItem(1);
+  assert.equal(queue.state.current.id, 'b', 'removing the current track selects the row now occupying its place');
+
+  const modes = setup(null, function () { return 0; });
+  await modes.controller.setQueue([track('a'), track('b'), track('c')], 0, 'Modes', true);
+  assert.equal(modes.state.playbackMode, 'list');
+  assert.equal(modes.controller.cyclePlaybackMode(), 'one');
+  modes.audio.emit('ended');
+  await Promise.resolve();
+  assert.equal(modes.state.current.id, 'a', 'repeat-one replays the same track after it ends');
+  await modes.controller.next();
+  assert.equal(modes.state.current.id, 'b', 'manual next still advances in repeat-one mode');
+  assert.equal(modes.controller.cyclePlaybackMode(), 'shuffle');
+  await modes.controller.next();
+  assert.equal(modes.state.current.id, 'c', 'shuffle chooses a different track');
+  modes.audio.currentTime = 0;
+  await modes.controller.previous();
+  assert.equal(modes.state.current.id, 'b', 'shuffle previous follows actual playback history');
+
+  modes.controller.dismiss();
+  assert.equal(modes.state.visible, false, 'dismiss hides the player');
+  assert.equal(modes.state.queue.length, 3, 'dismiss keeps the queue');
+  assert.equal(modes.state.current.id, 'b', 'dismiss keeps the current track');
+  assert.equal(modes.audio.paused, true, 'dismiss stops playback');
+  await modes.controller.togglePlay();
+  assert.equal(modes.state.visible, true, 'playing again restores the dock');
 
   const duplicateUrls = setup();
   const firstVersion = track('same-a');
@@ -129,7 +160,9 @@ async function run() {
     queue: [track('saved')],
     queueIndex: 0,
     currentTime: 31,
-    contextLabel: 'Saved album'
+    contextLabel: 'Saved album',
+    visible: false,
+    playbackMode: 'shuffle'
   };
   const restored = setup(new FakeStorage({ 'uma-live-player-v2': JSON.stringify(snapshot) }));
   restored.audio.metadata(120);
@@ -137,6 +170,8 @@ async function run() {
   assert.equal(restored.state.status, 'paused', 'a restored session never autoplays');
   assert.equal(restored.audio.currentTime, 31);
   assert.equal(restored.state.contextLabel, 'Saved album');
+  assert.equal(restored.state.visible, false, 'a dismissed dock stays hidden after restoration');
+  assert.equal(restored.state.playbackMode, 'shuffle');
 
   console.log('player controller tests passed');
 }
