@@ -96,6 +96,20 @@ async function run() {
   assert.equal(first.audio.currentTime, 0, 'previous restarts a one-track queue');
   assert.equal(first.audio.paused, false, 'restarting a one-track queue does not pause it');
 
+  await first.controller.playTrack(track('b'));
+  assert.deepEqual(first.state.queue.map(function (row) { return row.id; }), ['a', 'b'], 'playing another track appends it');
+  assert.equal(first.state.current.id, 'b');
+  await first.controller.playTrack(track('a'));
+  assert.deepEqual(first.state.queue.map(function (row) { return row.id; }), ['a', 'b'], 'replaying a queued track does not duplicate it');
+  assert.equal(first.state.current.id, 'a');
+
+  const appendedAlbum = setup();
+  await appendedAlbum.controller.playTrack(track('a'));
+  await appendedAlbum.controller.enqueueTracks([track('b'), track('c'), track('a')], 0, 'Album', true);
+  assert.deepEqual(appendedAlbum.state.queue.map(function (row) { return row.id; }), ['a', 'b', 'c']);
+  assert.equal(appendedAlbum.state.current.id, 'b');
+  assert.equal(appendedAlbum.state.contextLabel, '播放列表', 'mixed sources use the generic queue label');
+
   const queue = setup();
   await queue.controller.setQueue([track('a'), track('b'), track('c')], 1, 'Album', true);
   assert.equal(queue.state.current.id, 'b');

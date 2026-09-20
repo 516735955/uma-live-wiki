@@ -1477,15 +1477,9 @@ const umaApp = createApp({
     }
     function playAlbumTrack(album, index) {
       const tracks = buildAlbumPlayerTracks(album);
-      const playable = tracks.filter(function (track) { return !!track.url; });
       const selected = tracks[index];
       if (!selected || !selected.url) return;
-      const playableIndex = playable.findIndex(function (track) { return track.url === selected.url; });
-      if (player.current && player.current.url === selected.url && player.contextLabel === selected.sourceContext) {
-        togglePlay();
-        return;
-      }
-      playerController.setQueue(playable, playableIndex, selected.sourceContext, true);
+      playerController.playTrack(selected);
     }
     function playQueueAt(index) { return playerController.playQueueAt(index); }
     function albumPlayableCount(album) {
@@ -1494,7 +1488,7 @@ const umaApp = createApp({
     function enqueueAlbum(album) {
       const tracks = buildAlbumPlayerTracks(album).filter(function (track) { return !!track.url; });
       if (!tracks.length) return;
-      playerController.setQueue(tracks, 0, tracks[0].sourceContext, true);
+      playerController.enqueueTracks(tracks, 0, tracks[0].sourceContext, true);
     }
     function nextSong() { return playerController.next(); }
     function prevSong() { return playerController.previous(); }
@@ -1870,7 +1864,16 @@ const umaApp = createApp({
       return series ? series.name : '';
     }
     const eventVoiceCast = computed(function () {
-      return ((eventDetail.value && eventDetail.value.cast) || []).filter(function (item) { return item.voice_actor_id && item.character_id; });
+      const event = eventDetail.value;
+      const all = ((event && event.cast) || []).filter(function (item) { return item.voice_actor_id && item.character_id; });
+      const session = selectedEventSession.value;
+      const explicit = ((session && session.cast) || []).filter(function (item) { return item.voice_actor_id && item.character_id; });
+      if (explicit.length) return explicit;
+      const allowed = new Set((session && session.character_ids) || []);
+      if ((event && event.sessions || []).length > 1 && allowed.size) {
+        return all.filter(function (item) { return allowed.has(item.character_id); });
+      }
+      return all;
     });
     function eventSongCount(event) {
       if (Number.isFinite(event && event.song_count)) return event.song_count;
@@ -1921,7 +1924,7 @@ const umaApp = createApp({
       selectedEventSessionId.value = sessionId;
       pushUrl(true);
     }
-    function openEvent(eventOrId) {
+    function openEvent(eventOrId, requestedSessionId) {
       beginEntityNavigation();
       const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
       const show = function (data) {
@@ -1930,7 +1933,9 @@ const umaApp = createApp({
         clearEntityDetails('event');
         eventDetail.value = found;
         activeMediaKey.value = '';
-        selectedEventSessionId.value = found.sessions && found.sessions[0] ? found.sessions[0].id : '';
+        const sessions = found.sessions || [];
+        selectedEventSessionId.value = sessions.some(function (session) { return session.id === requestedSessionId; })
+          ? requestedSessionId : ((sessions[0] && sessions[0].id) || '');
         liveView.value = 'eventDetail';
         activeTab.value = 'live';
         resetPageScroll();

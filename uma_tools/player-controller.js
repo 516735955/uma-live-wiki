@@ -230,11 +230,38 @@
       return loadCurrent(autoplay !== false);
     }
 
+    function enqueueTracks(tracks, selectedIndex, contextLabel, autoplay) {
+      const incoming = (Array.isArray(tracks) ? tracks : []).map(normalizeTrack).filter(Boolean);
+      if (!incoming.length) {
+        markError('没有可加入播放列表的曲目。');
+        return Promise.resolve(false);
+      }
+      const selected = incoming[clamp(selectedIndex, 0, incoming.length - 1)];
+      const wasEmpty = !state.queue.length;
+      incoming.forEach(function (track) {
+        if (state.queue.some(function (queued) { return queued.id === track.id; })) return;
+        state.queue.push(track);
+      });
+      const nextIndex = state.queue.findIndex(function (track) { return track.id === selected.id; });
+      if (nextIndex < 0) return Promise.resolve(false);
+      if (wasEmpty) {
+        state.contextLabel = String(contextLabel || selected.sourceContext || '播放列表');
+      } else if (contextLabel && state.contextLabel && state.contextLabel !== contextLabel) {
+        state.contextLabel = '播放列表';
+      }
+      state.queueIndex = nextIndex;
+      state.current = state.queue[nextIndex];
+      state.visible = true;
+      state.panelOpen = false;
+      shuffleHistory = [];
+      return loadCurrent(autoplay !== false);
+    }
+
     function playTrack(track) {
       const normalized = normalizeTrack(track);
       if (!normalized) return Promise.resolve(false);
       if (state.current && state.current.id === normalized.id) return togglePlay();
-      return setQueue([normalized], 0, normalized.sourceContext || '单曲试听', true);
+      return enqueueTracks([normalized], 0, normalized.sourceContext || '单曲试听', true);
     }
 
     function playQueueAt(index, rememberShuffle) {
@@ -479,6 +506,7 @@
       isPlaying: isPlaying,
       playTrack: playTrack,
       setQueue: setQueue,
+      enqueueTracks: enqueueTracks,
       playQueueAt: playQueueAt,
       togglePlay: togglePlay,
       next: next,

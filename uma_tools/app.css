@@ -3217,6 +3217,24 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     }
     .song-version-list .data-table td:hover,
     .song-entity-detail .entity-section > .data-table td:hover { background: transparent; }
+    .song-performance-cast {
+        display: grid;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 8px 10px;
+    }
+    .song-performance-cast .performer-chip {
+        min-width: 0;
+        margin: 0;
+        white-space: normal;
+        text-align: left;
+    }
+    .song-performance-cast .performer-chip span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        line-height: 1.25;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3247,6 +3265,10 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
         font-size: .72rem;
     }
     .footer-main { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+@media (max-width: 360px) {
+    .song-performance-cast { grid-template-columns: minmax(0,1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {
