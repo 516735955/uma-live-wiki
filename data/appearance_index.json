@@ -4818,16 +4818,6 @@
           ]
         },
         {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "eventernote-2024-05-24",
           "date": "2024-05-24",
           "title": "劇場版『ウマ娘 プリティーダービー 新時代の扉』 初日舞台挨拶",
@@ -4860,16 +4850,6 @@
           ]
         },
         {
-          "event_id": "live-other-2024-02-25-2024-day2",
-          "date": "2024-02-25",
-          "title": "オダイバ!!超次元音楽祭 フユフェス2024 Day2",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "paka-live-tv-036",
           "date": "2023-12-27",
           "title": "ぱかライブTV Vol.36",
@@ -4877,17 +4857,6 @@
           "series_id": "paka-live-tv",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "curated_live_cast",
-            "setlist_character"
           ]
         },
         {
@@ -4909,16 +4878,6 @@
           "series_id": "paka-live-tv",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2021-12-31-z-5",
-          "date": "2021-12-31",
-          "title": "ももいろクローバーZ 第5回ももいろ歌合戦 ~届け！希望の彼方へ~",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -5336,17 +5295,6 @@
           ],
           "version_ids": [
             "song-e05b91c506-v-e05b91c506"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-f53f0c98a1",
-          "name": "イマジネーション",
-          "event_ids": [
-            "live-other-2023-11-18-animax-musix-2023"
-          ],
-          "version_ids": [
-            "song-f53f0c98a1-v-f53f0c98a1"
           ],
           "performances": 1
         },
@@ -8073,26 +8021,6 @@
           "evidence": [
             "community_archive"
           ]
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
-          "date": "2021-11-20",
-          "title": "ANIMAX MUSIX 2021 YOKOHAMA Part2",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
         }
       ],
       "songs": [
@@ -10209,26 +10137,6 @@
           "evidence": [
             "official_character_credit"
           ]
-        },
-        {
-          "event_id": "live-other-2022-11-19-animax-musix-2022",
-          "date": "2022-11-19",
-          "title": "ANIMAX MUSIX 2022",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
         }
       ],
       "songs": [
@@ -11112,13 +11020,14 @@
     "va-0018": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
+          "event_id": "live-other-2026-09-19-2026",
           "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
+          "title": "ナガノアニエラフェスタ2026",
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -11359,6 +11268,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-other-2026-09-19-2026",
             "live-cd-2026-01-31-winning-live-30",
             "live-twinkle-2024-09-29-twinkle-circle-day2-2",
             "live-twinkle-2024-09-29-twinkle-circle-day2-1",
@@ -11371,7 +11281,7 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-d8fa5ff1a4"
           ],
-          "performances": 7
+          "performances": 8
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -11383,6 +11293,19 @@
           ],
           "version_ids": [
             "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 3
         },
@@ -11437,18 +11360,6 @@
           "performances": 2
         },
         {
-          "song_id": "song-next-frontier-5267707c1b",
-          "name": "NEXT FRONTIER",
-          "event_ids": [
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-5267707c1b"
-          ],
-          "performances": 2
-        },
-        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -11480,6 +11391,17 @@
           ],
           "version_ids": [
             "song-kirari-magic-show-f860f91ed3-v-f860f91ed3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 1
         },
@@ -12779,16 +12701,6 @@
           ]
         },
         {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "sokosoko-paka-live-tv-034",
           "date": "2024-06-14",
           "title": "そこそこぱかライブTV Vol.34",
@@ -12848,16 +12760,6 @@
           "series_id": "sokosoko-paka-live-tv",
           "evidence": [
             "official_youtube"
-          ]
-        },
-        {
-          "event_id": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
-          "date": "2018-08-25",
-          "title": "Animelo Summer Live 2018 “OK!” 2日目",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -14466,16 +14368,6 @@
           "series_id": "paka-live-tv",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
-          "date": "2018-08-25",
-          "title": "Animelo Summer Live 2018 “OK!” 2日目",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -17807,6 +17699,16 @@
           ]
         },
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
+          ]
+        },
+        {
           "event_id": "pakatube-20260911-among-us-3d-6",
           "date": "2026-09-11",
           "title": "【Among Us 3D】スペ、グラス、エル、スカイ、キング、ファレノの6人でゲーム実況だ！",
@@ -19358,16 +19260,6 @@
           "series_id": "paka-live-tv",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -27946,16 +27838,6 @@
           ]
         },
         {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "live-cd-2024-11-10-winning-live-21",
           "date": "2024-11-10",
           "title": "WINNING LIVE 21 発売記念イベント",
@@ -29169,13 +29051,14 @@
     "va-0052": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
+          "event_id": "live-other-2026-09-19-2026",
           "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
+          "title": "ナガノアニエラフェスタ2026",
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -29637,6 +29520,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-other-2026-09-19-2026",
             "live-numbered-7th-event-2026-06-20",
             "live-cd-2025-11-02-winning-live-28",
             "live-numbered-6th-event-2025-05-24",
@@ -29652,7 +29536,7 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-498bdf7439"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -29696,6 +29580,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-other-2022-03-20-sp"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-my-against-fight-7a3344525e",
           "name": "My Against Fight",
           "event_ids": [
@@ -29704,6 +29601,18 @@
           ],
           "version_ids": [
             "song-my-against-fight-7a3344525e-v-7a3344525e"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 2
         },
@@ -29717,6 +29626,18 @@
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29",
             "song-we-are-dreamers-77f071fc29-v-5d237a28f5"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-864b1bb2e9",
+          "name": "ふたり",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-864b1bb2e9-v-864b1bb2e9"
           ],
           "performances": 2
         },
@@ -29751,28 +29672,6 @@
           ],
           "version_ids": [
             "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2022-03-20-sp"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-78a529de86"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-next-frontier-5267707c1b",
-          "name": "NEXT FRONTIER",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 1
         },
@@ -29861,17 +29760,6 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-864b1bb2e9",
-          "name": "ふたり",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-864b1bb2e9-v-864b1bb2e9"
           ],
           "performances": 1
         },
@@ -33490,16 +33378,6 @@
           "evidence": [
             "community_archive"
           ]
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
         }
       ],
       "songs": [
@@ -34872,16 +34750,6 @@
             "curated_live_cast",
             "setlist_character"
           ]
-        },
-        {
-          "event_id": "live-other-2024-12-31-8",
-          "date": "2024-12-31",
-          "title": "第8回 ももいろ歌合戦 ～愛の大晦日～",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
         }
       ],
       "songs": [
@@ -35296,16 +35164,6 @@
     },
     "va-0063": {
       "events": [
-        {
-          "event_id": "live-other-2024-12-31-8",
-          "date": "2024-12-31",
-          "title": "第8回 ももいろ歌合戦 ～愛の大晦日～",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
         {
           "event_id": "paka-live-tv-037",
           "date": "2024-01-29",
@@ -38990,26 +38848,6 @@
     "va-0074": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
-          "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "live-numbered-7th-event-2026-06-20",
           "date": "2026-06-20",
           "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
@@ -39048,26 +38886,6 @@
           "series_id": "paka-live-tv",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -40215,16 +40033,6 @@
     },
     "va-0079": {
       "events": [
-        {
-          "event_id": "eventernote-2026-09-19",
-          "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
         {
           "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
           "date": "2025-11-15",
@@ -43978,16 +43786,6 @@
     "va-0087": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
-          "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "pakatube-20260712-overcooked-4",
           "date": "2026-07-12",
           "title": "【Overcooked! おまけ動画】ファイン、シャカール、トップロード、ミラ子の4人でゲーム実況だ！",
@@ -44005,26 +43803,6 @@
           "series_id": "pakatube-character-program",
           "evidence": [
             "official_character_credit"
-          ]
-        },
-        {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2025-08-02-tokyo-idol-festival-2025-day2",
-          "date": "2025-08-02",
-          "title": "TOKYO IDOL FESTIVAL 2025 DAY2",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         },
         {
@@ -47005,16 +46783,6 @@
           ]
         },
         {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "live-cd-2025-08-24-winning-live-26",
           "date": "2025-08-24",
           "title": "WINNING LIVE 26 発売記念イベント",
@@ -47042,17 +46810,6 @@
           "title": "WINNING LIVE 21 発売記念イベント",
           "kind": "concert",
           "series_id": "winning-live-release",
-          "evidence": [
-            "curated_live_cast",
-            "setlist_character"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": "",
           "evidence": [
             "curated_live_cast",
             "setlist_character"
@@ -47205,17 +46962,6 @@
           ],
           "version_ids": [
             "song-79f332ebdb-v-79f332ebdb"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-f53f0c98a1",
-          "name": "イマジネーション",
-          "event_ids": [
-            "live-other-2023-11-18-animax-musix-2023"
-          ],
-          "version_ids": [
-            "song-f53f0c98a1-v-f53f0c98a1"
           ],
           "performances": 1
         },
@@ -47854,16 +47600,6 @@
     "va-0096": {
       "events": [
         {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "paka-live-tv-051",
           "date": "2025-03-29",
           "title": "ぱかライブTV Vol.51",
@@ -47921,16 +47657,6 @@
           "series_id": "numbered-live",
           "evidence": [
             "curated_live_cast"
-          ]
-        },
-        {
-          "event_id": "live-numbered-5th-event-2024-02-03",
-          "date": "2024-02-03",
-          "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "evidence": [
-            "eventernote"
           ]
         },
         {
@@ -50918,6 +50644,16 @@
           ]
         },
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
+          ]
+        },
+        {
           "event_id": "pakatube-20260911-among-us-3d-6",
           "date": "2026-09-11",
           "title": "【Among Us 3D】スペ、グラス、エル、スカイ、キング、ファレノの6人でゲーム実況だ！",
@@ -52723,26 +52459,6 @@
     "va-0115": {
       "events": [
         {
-          "event_id": "live-cd-2025-07-26-1-2",
-          "date": "2025-07-26",
-          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
-          "kind": "concert",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-cd-2025-07-26-1-1",
-          "date": "2025-07-26",
-          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
-          "kind": "concert",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "sokosoko-paka-live-tv-046",
           "date": "2025-07-03",
           "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
@@ -53222,6 +52938,16 @@
     },
     "va-0118": {
       "events": [
+        {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
+          ]
+        },
         {
           "event_id": "live-cd-2025-08-24-winning-live-26",
           "date": "2025-08-24",
@@ -57843,16 +57569,6 @@
           "evidence": [
             "community_archive"
           ]
-        },
-        {
-          "event_id": "live-other-2022-08-27-animelo-summer-live-2022-sparkle",
-          "date": "2022-08-27",
-          "title": "Animelo Summer Live 2022 -Sparkle-",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
         }
       ],
       "songs": [
@@ -60309,76 +60025,6 @@
             "curated_live_cast",
             "setlist_character"
           ]
-        },
-        {
-          "event_id": "live-other-2023-01-29-1-29-18-00",
-          "date": "2023-01-29",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-01-29-1-29-13-00",
-          "date": "2023-01-29",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-01-28-1-28-18-00",
-          "date": "2023-01-28",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-01-28-1-28-13-00",
-          "date": "2023-01-28",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-01-27-1-27-18-00",
-          "date": "2023-01-27",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-01-15-1-15-18-00",
-          "date": "2023-01-15",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2023-01-15-1-15-13-00",
-          "date": "2023-01-15",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
         }
       ],
       "songs": [
@@ -60764,6 +60410,16 @@
     "va-0135": {
       "events": [
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
+          ]
+        },
+        {
           "event_id": "paka-live-tv-prime-006",
           "date": "2026-08-22",
           "title": "「ウマ娘 プリティーダービー」ぱかライブTV' #6 5.5周年スペシャル！",
@@ -61016,16 +60672,6 @@
           "series_id": "sokosoko-paka-live-tv",
           "evidence": [
             "official_youtube"
-          ]
-        },
-        {
-          "event_id": "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
-          "date": "2021-11-20",
-          "title": "ANIMAX MUSIX 2021 YOKOHAMA Part2",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -64587,17 +64233,6 @@
             "curated_live_cast",
             "setlist_character"
           ]
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "curated_live_cast",
-            "setlist_character"
-          ]
         }
       ],
       "songs": [
@@ -64770,17 +64405,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-f53f0c98a1",
-          "name": "イマジネーション",
-          "event_ids": [
-            "live-other-2023-11-18-animax-musix-2023"
-          ],
-          "version_ids": [
-            "song-f53f0c98a1-v-f53f0c98a1"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-phantasia-81aafc5f7e",
           "name": "彩 Phantasia",
           "event_ids": [
@@ -64800,16 +64424,6 @@
     },
     "va-0145": {
       "events": [
-        {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
         {
           "event_id": "live-numbered-5th-event-2024-03-22",
           "date": "2024-03-22",
@@ -65513,16 +65127,6 @@
           ]
         },
         {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "live-numbered-7th-event-2026-06-20",
           "date": "2026-06-20",
           "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
@@ -65634,26 +65238,6 @@
           "series_id": "paka-live-tv",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2022-11-19-animax-musix-2022",
-          "date": "2022-11-19",
-          "title": "ANIMAX MUSIX 2022",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         }
       ],
@@ -65944,6 +65528,16 @@
           "series_id": "",
           "evidence": [
             "eventernote"
+          ]
+        },
+        {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
           ]
         },
         {
@@ -67143,16 +66737,6 @@
           "series_id": "official-special",
           "evidence": [
             "community_archive"
-          ]
-        },
-        {
-          "event_id": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
-          "date": "2018-08-25",
-          "title": "Animelo Summer Live 2018 “OK!” 2日目",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
           ]
         },
         {
@@ -69218,6 +68802,16 @@
     "va-0155": {
       "events": [
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
+          ]
+        },
+        {
           "event_id": "eventernote-2025-12-27",
           "date": "2025-12-27",
           "title": "ウマ娘×ウィナーズレディコラボ in 中山競馬場 2025年12月27日",
@@ -69241,16 +68835,6 @@
           "event_id": "eventernote-2025-11-30",
           "date": "2025-11-30",
           "title": "『佐賀競馬場presents ウマ娘 プリティーダービー×ゾンビランドサガ コラボイベント』トークショー①",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
           "kind": "onsite",
           "series_id": "",
           "evidence": [
@@ -70432,18 +70016,7 @@
       ]
     },
     "va-0157": {
-      "events": [
-        {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        }
-      ],
+      "events": [],
       "songs": [],
       "performed_songs": []
     },
@@ -74125,16 +73698,6 @@
           ]
         },
         {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        },
-        {
           "event_id": "eventernote-2018-12-16",
           "date": "2018-12-16",
           "title": "CygamesFes2018 2日目 エンディングステージ",
@@ -74527,6 +74090,16 @@
     },
     "va-0166": {
       "events": [
+        {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "evidence": [
+            "community_archive"
+          ]
+        },
         {
           "event_id": "sokosoko-paka-live-tv-055",
           "date": "2026-08-28",
@@ -79407,18 +78980,7 @@
       "performed_songs": []
     },
     "va-0178": {
-      "events": [
-        {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": "",
-          "evidence": [
-            "eventernote"
-          ]
-        }
-      ],
+      "events": [],
       "songs": [],
       "performed_songs": []
     },
@@ -79435,13 +78997,14 @@
           ]
         },
         {
-          "event_id": "eventernote-2026-09-19",
+          "event_id": "live-other-2026-09-19-2026",
           "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
+          "title": "ナガノアニエラフェスタ2026",
           "kind": "onsite",
           "series_id": "",
           "evidence": [
-            "eventernote"
+            "curated_live_cast",
+            "setlist_character"
           ]
         },
         {
@@ -80730,6 +80293,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-other-2026-09-19-2026",
             "live-numbered-7th-event-2026-06-20",
             "live-other-2026-04-25-2026",
             "live-other-2025-11-15-animax-musix-2025-yokohama",
@@ -80775,7 +80339,7 @@
             "song-228f943b49-v-498bdf7439",
             "song-228f943b49-v-d8fa5ff1a4"
           ],
-          "performances": 43
+          "performances": 44
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -80803,6 +80367,26 @@
           "performances": 15
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-other-2024-11-08-idol-square-6",
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp",
+            "live-other-2019-04-14-2",
+            "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-2018-08-25-animelo-summer-live-2018-ok-2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+            "song-make-debut-2c6c00a71e-v-8081baf369",
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 8
+        },
+        {
           "song_id": "song-unbreakable-8c599c4256",
           "name": "unbreakable",
           "event_ids": [
@@ -80821,21 +80405,19 @@
           "performances": 8
         },
         {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
           "event_ids": [
-            "live-other-2024-11-08-idol-square-6",
+            "live-other-2026-09-19-2026",
+            "live-other-2025-07-24-atc-special-stage-pretty-derby",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
             "live-numbered-5th-event-2023-07-15",
-            "live-numbered-4th-event-2022-05-04",
-            "live-other-2022-03-20-sp",
-            "live-other-2019-04-14-2",
-            "live-other-2019-01-19-animax-musix-2019-osaka",
-            "live-other-2018-08-25-animelo-summer-live-2018-ok-2"
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
-            "song-make-debut-2c6c00a71e-v-8081baf369",
-            "song-make-debut-2c6c00a71e-v-78a529de86"
+            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 7
         },
@@ -80869,22 +80451,6 @@
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-eabbcc4d12"
-          ],
-          "performances": 6
-        },
-        {
-          "song_id": "song-next-frontier-5267707c1b",
-          "name": "NEXT FRONTIER",
-          "event_ids": [
-            "live-other-2025-07-24-atc-special-stage-pretty-derby",
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-5th-event-2023-07-15",
-            "live-numbered-4th-event-extra-2022-11-05",
-            "live-numbered-4th-event-2022-03-05"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 6
         },
@@ -81131,6 +80697,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-864b1bb2e9",
+          "name": "ふたり",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-7th-event-2026-06-20",
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-864b1bb2e9-v-864b1bb2e9"
+          ],
+          "performances": 3
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -81226,18 +80805,6 @@
           ],
           "version_ids": [
             "song-winnin-5-86278c7b9d-v-86278c7b9d"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-864b1bb2e9",
-          "name": "ふたり",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-6th-event-2025-10-18"
-          ],
-          "version_ids": [
-            "song-864b1bb2e9-v-864b1bb2e9"
           ],
           "performances": 2
         },
@@ -91392,9 +90959,9 @@
           "series_id": "numbered-live"
         },
         {
-          "event_id": "eventernote-2026-09-19",
+          "event_id": "live-other-2026-09-19-2026",
           "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
+          "title": "ナガノアニエラフェスタ2026",
           "kind": "onsite",
           "series_id": ""
         },
@@ -92384,6 +91951,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-other-2026-09-19-2026",
             "live-numbered-7th-event-2026-06-20",
             "live-other-2026-04-25-2026",
             "live-other-2025-11-15-animax-musix-2025-yokohama",
@@ -92429,7 +91997,7 @@
             "song-228f943b49-v-498bdf7439",
             "song-228f943b49-v-d8fa5ff1a4"
           ],
-          "performances": 43
+          "performances": 44
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -92457,6 +92025,26 @@
           "performances": 15
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-other-2024-11-08-idol-square-6",
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp",
+            "live-other-2019-04-14-2",
+            "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-2018-08-25-animelo-summer-live-2018-ok-2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+            "song-make-debut-2c6c00a71e-v-8081baf369",
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 8
+        },
+        {
           "song_id": "song-unbreakable-8c599c4256",
           "name": "unbreakable",
           "event_ids": [
@@ -92475,21 +92063,19 @@
           "performances": 8
         },
         {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
           "event_ids": [
-            "live-other-2024-11-08-idol-square-6",
+            "live-other-2026-09-19-2026",
+            "live-other-2025-07-24-atc-special-stage-pretty-derby",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
             "live-numbered-5th-event-2023-07-15",
-            "live-numbered-4th-event-2022-05-04",
-            "live-other-2022-03-20-sp",
-            "live-other-2019-04-14-2",
-            "live-other-2019-01-19-animax-musix-2019-osaka",
-            "live-other-2018-08-25-animelo-summer-live-2018-ok-2"
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
-            "song-make-debut-2c6c00a71e-v-8081baf369",
-            "song-make-debut-2c6c00a71e-v-78a529de86"
+            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 7
         },
@@ -92523,22 +92109,6 @@
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-eabbcc4d12"
-          ],
-          "performances": 6
-        },
-        {
-          "song_id": "song-next-frontier-5267707c1b",
-          "name": "NEXT FRONTIER",
-          "event_ids": [
-            "live-other-2025-07-24-atc-special-stage-pretty-derby",
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-5th-event-2023-07-15",
-            "live-numbered-4th-event-extra-2022-11-05",
-            "live-numbered-4th-event-2022-03-05"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 6
         },
@@ -92785,6 +92355,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-864b1bb2e9",
+          "name": "ふたり",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-7th-event-2026-06-20",
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-864b1bb2e9-v-864b1bb2e9"
+          ],
+          "performances": 3
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -92880,18 +92463,6 @@
           ],
           "version_ids": [
             "song-winnin-5-86278c7b9d-v-86278c7b9d"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-864b1bb2e9",
-          "name": "ふたり",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-6th-event-2025-10-18"
-          ],
-          "version_ids": [
-            "song-864b1bb2e9-v-864b1bb2e9"
           ],
           "performances": 2
         },
@@ -95005,13 +94576,6 @@
           "title": "そこそこぱかライブTV Vol.43",
           "kind": "official_program",
           "series_id": "sokosoko-paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": ""
         },
         {
           "event_id": "live-cd-2024-11-10-winning-live-21",
@@ -97915,6 +97479,13 @@
           "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-LOS ANGELES",
           "kind": "concert",
           "series_id": "numbered-live"
+        },
+        {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
         },
         {
           "event_id": "pakatube-20260911-among-us-3d-6",
@@ -102205,6 +101776,13 @@
     "naritabrian": {
       "events": [
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
+        },
+        {
           "event_id": "eventernote-2025-12-27",
           "date": "2025-12-27",
           "title": "ウマ娘×ウィナーズレディコラボ in 中山競馬場 2025年12月27日",
@@ -102222,13 +101800,6 @@
           "event_id": "eventernote-2025-11-30",
           "date": "2025-11-30",
           "title": "『佐賀競馬場presents ウマ娘 プリティーダービー×ゾンビランドサガ コラボイベント』トークショー①",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
           "kind": "onsite",
           "series_id": ""
         },
@@ -103178,6 +102749,13 @@
     },
     "symbolirudolf": {
       "events": [
+        {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
+        },
         {
           "event_id": "live-cd-2025-08-24-winning-live-26",
           "date": "2025-08-24",
@@ -104196,13 +103774,6 @@
           "series_id": "sokosoko-paka-live-tv"
         },
         {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "eventernote-2018-12-16",
           "date": "2018-12-16",
           "title": "CygamesFes2018 2日目 エンディングステージ",
@@ -105034,9 +104605,9 @@
     "tamamocross": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
+          "event_id": "live-other-2026-09-19-2026",
           "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
+          "title": "ナガノアニエラフェスタ2026",
           "kind": "onsite",
           "series_id": ""
         },
@@ -105420,6 +104991,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-other-2026-09-19-2026",
             "live-numbered-7th-event-2026-06-20",
             "live-cd-2025-11-02-winning-live-28",
             "live-numbered-6th-event-2025-05-24",
@@ -105435,7 +105007,7 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-498bdf7439"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -105479,6 +105051,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-other-2022-03-20-sp"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+            "song-make-debut-2c6c00a71e-v-78a529de86"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-my-against-fight-7a3344525e",
           "name": "My Against Fight",
           "event_ids": [
@@ -105487,6 +105072,18 @@
           ],
           "version_ids": [
             "song-my-against-fight-7a3344525e-v-7a3344525e"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 2
         },
@@ -105500,6 +105097,18 @@
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29",
             "song-we-are-dreamers-77f071fc29-v-5d237a28f5"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-864b1bb2e9",
+          "name": "ふたり",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-864b1bb2e9-v-864b1bb2e9"
           ],
           "performances": 2
         },
@@ -105534,28 +105143,6 @@
           ],
           "version_ids": [
             "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2022-03-20-sp"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-78a529de86"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-next-frontier-5267707c1b",
-          "name": "NEXT FRONTIER",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 1
         },
@@ -105644,17 +105231,6 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-864b1bb2e9",
-          "name": "ふたり",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-864b1bb2e9-v-864b1bb2e9"
           ],
           "performances": 1
         },
@@ -107802,13 +107378,6 @@
           "title": "ぱかライブTV Vol.10",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -109575,13 +109144,6 @@
     "yukinobijin": {
       "events": [
         {
-          "event_id": "live-other-2024-12-31-8",
-          "date": "2024-12-31",
-          "title": "第8回 ももいろ歌合戦 ～愛の大晦日～",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "paka-live-tv-037",
           "date": "2024-01-29",
           "title": "ぱかライブTV Vol.37",
@@ -110689,13 +110251,6 @@
           "series_id": "sokosoko-paka-live-tv"
         },
         {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "eventernote-2024-05-24",
           "date": "2024-05-24",
           "title": "劇場版『ウマ娘 プリティーダービー 新時代の扉』 初日舞台挨拶",
@@ -110717,25 +110272,11 @@
           "series_id": "numbered-live"
         },
         {
-          "event_id": "live-other-2024-02-25-2024-day2",
-          "date": "2024-02-25",
-          "title": "オダイバ!!超次元音楽祭 フユフェス2024 Day2",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "paka-live-tv-036",
           "date": "2023-12-27",
           "title": "ぱかライブTV Vol.36",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": ""
         },
         {
           "event_id": "live-numbered-5th-event-2023-07-15",
@@ -110750,13 +110291,6 @@
           "title": "ぱかライブTV Vol.29",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2021-12-31-z-5",
-          "date": "2021-12-31",
-          "title": "ももいろクローバーZ 第5回ももいろ歌合戦 ~届け！希望の彼方へ~",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -111173,17 +110707,6 @@
           ],
           "version_ids": [
             "song-e05b91c506-v-e05b91c506"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-f53f0c98a1",
-          "name": "イマジネーション",
-          "event_ids": [
-            "live-other-2023-11-18-animax-musix-2023"
-          ],
-          "version_ids": [
-            "song-f53f0c98a1-v-f53f0c98a1"
           ],
           "performances": 1
         },
@@ -111984,9 +111507,9 @@
     "inarione": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
+          "event_id": "live-other-2026-09-19-2026",
           "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
+          "title": "ナガノアニエラフェスタ2026",
           "kind": "onsite",
           "series_id": ""
         },
@@ -112185,6 +111708,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "live-other-2026-09-19-2026",
             "live-cd-2026-01-31-winning-live-30",
             "live-twinkle-2024-09-29-twinkle-circle-day2-2",
             "live-twinkle-2024-09-29-twinkle-circle-day2-1",
@@ -112197,7 +111721,7 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-d8fa5ff1a4"
           ],
-          "performances": 7
+          "performances": 8
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -112209,6 +111733,19 @@
           ],
           "version_ids": [
             "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-5267707c1b"
           ],
           "performances": 3
         },
@@ -112263,18 +111800,6 @@
           "performances": 2
         },
         {
-          "song_id": "song-next-frontier-5267707c1b",
-          "name": "NEXT FRONTIER",
-          "event_ids": [
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-5267707c1b"
-          ],
-          "performances": 2
-        },
-        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -112306,6 +111831,17 @@
           ],
           "version_ids": [
             "song-kirari-magic-show-f860f91ed3-v-f860f91ed3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 1
         },
@@ -128178,13 +127714,6 @@
     "twinturbo": {
       "events": [
         {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "live-numbered-5th-event-2024-03-22",
           "date": "2024-03-22",
           "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
@@ -132148,13 +131677,6 @@
     "yaenomuteki": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
-          "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
           "date": "2025-11-15",
           "title": "ANIMAX MUSIX 2025 YOKOHAMA",
@@ -133533,13 +133055,6 @@
           "title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
           "kind": "concert",
           "series_id": "numbered-live"
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -133708,17 +133223,6 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-f53f0c98a1",
-          "name": "イマジネーション",
-          "event_ids": [
-            "live-other-2023-11-18-animax-musix-2023"
-          ],
-          "version_ids": [
-            "song-f53f0c98a1-v-f53f0c98a1"
           ],
           "performances": 1
         },
@@ -138074,13 +137578,6 @@
     "taninogimlet": {
       "events": [
         {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "paka-live-tv-051",
           "date": "2025-03-29",
           "title": "ぱかライブTV Vol.51",
@@ -138119,13 +137616,6 @@
           "event_id": "live-numbered-5th-event-2024-03-22",
           "date": "2024-03-22",
           "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
-          "kind": "concert",
-          "series_id": "numbered-live"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2024-02-03",
-          "date": "2024-02-03",
-          "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
           "kind": "concert",
           "series_id": "numbered-live"
         },
@@ -138755,13 +138245,6 @@
           "series_id": ""
         },
         {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "live-cd-2025-08-24-winning-live-26",
           "date": "2025-08-24",
           "title": "WINNING LIVE 26 発売記念イベント",
@@ -138781,13 +138264,6 @@
           "title": "WINNING LIVE 21 発売記念イベント",
           "kind": "concert",
           "series_id": "winning-live-release"
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -138936,17 +138412,6 @@
           ],
           "version_ids": [
             "song-79f332ebdb-v-79f332ebdb"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-f53f0c98a1",
-          "name": "イマジネーション",
-          "event_ids": [
-            "live-other-2023-11-18-animax-musix-2023"
-          ],
-          "version_ids": [
-            "song-f53f0c98a1-v-f53f0c98a1"
           ],
           "performances": 1
         },
@@ -141064,13 +140529,6 @@
           "series_id": "winning-live-release"
         },
         {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "sokosoko-paka-live-tv-034",
           "date": "2024-06-14",
           "title": "そこそこぱかライブTV Vol.34",
@@ -141111,13 +140569,6 @@
           "title": "そこそこぱかライブTV Vol.29",
           "kind": "official_program",
           "series_id": "sokosoko-paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
-          "date": "2018-08-25",
-          "title": "Animelo Summer Live 2018 “OK!” 2日目",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -141757,55 +141208,6 @@
           "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
           "kind": "concert",
           "series_id": "numbered-live"
-        },
-        {
-          "event_id": "live-other-2023-01-29-1-29-18-00",
-          "date": "2023-01-29",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2023-01-29-1-29-13-00",
-          "date": "2023-01-29",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2023-01-28-1-28-18-00",
-          "date": "2023-01-28",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2023-01-28-1-28-13-00",
-          "date": "2023-01-28",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2023-01-27-1-27-18-00",
-          "date": "2023-01-27",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2023-01-15-1-15-18-00",
-          "date": "2023-01-15",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2023-01-15-1-15-13-00",
-          "date": "2023-01-15",
-          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -142301,13 +141703,6 @@
           "title": "ぱかライブTV Vol.22",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
-          "date": "2018-08-25",
-          "title": "Animelo Summer Live 2018 “OK!” 2日目",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -147154,13 +146549,6 @@
     "hishimiracle": {
       "events": [
         {
-          "event_id": "eventernote-2026-09-19",
-          "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "pakatube-20260712-overcooked-4",
           "date": "2026-07-12",
           "title": "【Overcooked! おまけ動画】ファイン、シャカール、トップロード、ミラ子の4人でゲーム実況だ！",
@@ -147173,20 +146561,6 @@
           "title": "【Overcooked!】ファイン、シャカール、トップロード、ミラ子の4人でゲーム実況だ！",
           "kind": "official_program",
           "series_id": "pakatube-character-program"
-        },
-        {
-          "event_id": "live-other-2025-11-15-animax-musix-2025-yokohama",
-          "date": "2025-11-15",
-          "title": "ANIMAX MUSIX 2025 YOKOHAMA",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2025-08-02-tokyo-idol-festival-2025-day2",
-          "date": "2025-08-02",
-          "title": "TOKYO IDOL FESTIVAL 2025 DAY2",
-          "kind": "onsite",
-          "series_id": ""
         },
         {
           "event_id": "sokosoko-paka-live-tv-035",
@@ -147938,6 +147312,13 @@
     "duramente": {
       "events": [
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
+        },
+        {
           "event_id": "paka-live-tv-prime-006",
           "date": "2026-08-22",
           "title": "「ウマ娘 プリティーダービー」ぱかライブTV' #6 5.5周年スペシャル！",
@@ -148104,13 +147485,6 @@
           "title": "そこそこぱかライブTV Vol.28",
           "kind": "official_program",
           "series_id": "sokosoko-paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
-          "date": "2021-11-20",
-          "title": "ANIMAX MUSIX 2021 YOKOHAMA Part2",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -151355,13 +150729,6 @@
           "series_id": ""
         },
         {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
           "event_id": "live-numbered-7th-event-2026-06-20",
           "date": "2026-06-20",
           "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
@@ -151437,20 +150804,6 @@
           "title": "ぱかライブTV Vol.44",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2022-11-19-animax-musix-2022",
-          "date": "2022-11-19",
-          "title": "ANIMAX MUSIX 2022",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -152068,6 +151421,13 @@
     "admiregroove": {
       "events": [
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
+        },
+        {
           "event_id": "sokosoko-paka-live-tv-055",
           "date": "2026-08-28",
           "title": "そこそこぱかライブTV Vol.55",
@@ -152421,13 +151781,6 @@
           "title": "ぱかライブTV Vol.42",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -154348,13 +153701,6 @@
           "title": "ぱかライブTV Vol.50",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2022-08-27-animelo-summer-live-2022-sparkle",
-          "date": "2022-08-27",
-          "title": "Animelo Summer Live 2022 -Sparkle-",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -154785,20 +154131,6 @@
           "title": "ぱかライブTV Vol.50",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2023-11-18-animax-musix-2023",
-          "date": "2023-11-18",
-          "title": "ANIMAX MUSIX 2023",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
-          "date": "2021-11-20",
-          "title": "ANIMAX MUSIX 2021 YOKOHAMA Part2",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -155516,20 +154848,6 @@
           "title": "【お絵かき配信】ラヴズがイラストを描きながら雑談するぞ！",
           "kind": "official_program",
           "series_id": "pakatube-character-program"
-        },
-        {
-          "event_id": "live-other-2022-11-19-animax-musix-2022",
-          "date": "2022-11-19",
-          "title": "ANIMAX MUSIX 2022",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -158586,6 +157904,13 @@
           "series_id": ""
         },
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
+        },
+        {
           "event_id": "live-numbered-7th-event-2026-06-20",
           "date": "2026-06-20",
           "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
@@ -158994,6 +158319,13 @@
           "series_id": "winning-live-release"
         },
         {
+          "event_id": "paka-live-tv-prime-007",
+          "date": "2026-09-27",
+          "title": "ぱかライブTV' #7",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime"
+        },
+        {
           "event_id": "pakatube-20260911-among-us-3d-6",
           "date": "2026-09-11",
           "title": "【Among Us 3D】スペ、グラス、エル、スカイ、キング、ファレノの6人でゲーム実況だ！",
@@ -159216,13 +158548,6 @@
           "title": "Abemaステークス 第6R",
           "kind": "official_program",
           "series_id": "official-special"
-        },
-        {
-          "event_id": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
-          "date": "2018-08-25",
-          "title": "Animelo Summer Live 2018 “OK!” 2日目",
-          "kind": "onsite",
-          "series_id": ""
         },
         {
           "event_id": "official-special-abema-stakes-05",
@@ -159470,13 +158795,6 @@
           "title": "ウマ娘 6th EVENT「The New Frontier」—秋公演",
           "kind": "concert",
           "series_id": "numbered-live"
-        },
-        {
-          "event_id": "live-other-2024-12-31-8",
-          "date": "2024-12-31",
-          "title": "第8回 ももいろ歌合戦 ～愛の大晦日～",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [
@@ -159508,47 +158826,17 @@
       ]
     },
     "hoshinakiyoko": {
-      "events": [
-        {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": ""
-        }
-      ],
+      "events": [],
       "songs": [],
       "performed_songs": []
     },
     "yunohanabloom": {
-      "events": [
-        {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": ""
-        }
-      ],
+      "events": [],
       "songs": [],
       "performed_songs": []
     },
     "casinodrive": {
       "events": [
-        {
-          "event_id": "eventernote-2026-09-19",
-          "date": "2026-09-19",
-          "title": "NAGANO ANIERA FESTA 2026 DAY1",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
-          "date": "2026-07-12",
-          "title": "Animelo Summer Live 2026 -Messenger- DAY3",
-          "kind": "onsite",
-          "series_id": ""
-        },
         {
           "event_id": "live-numbered-7th-event-2026-06-20",
           "date": "2026-06-20",
@@ -159576,20 +158864,6 @@
           "title": "ぱかライブTV Vol.62",
           "kind": "official_program",
           "series_id": "paka-live-tv"
-        },
-        {
-          "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
-          "date": "2024-11-23",
-          "title": "Lemino presents ANIMAX MUSIX 2024 FALL",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2019-01-19-animax-musix-2019-osaka",
-          "date": "2019-01-19",
-          "title": "ANIMAX MUSIX 2019 OSAKA",
-          "kind": "onsite",
-          "series_id": ""
         }
       ],
       "songs": [],
@@ -160130,20 +159404,6 @@
     "zankan_koukou": {
       "events": [
         {
-          "event_id": "live-cd-2025-07-26-1-2",
-          "date": "2025-07-26",
-          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
-          "kind": "concert",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-cd-2025-07-26-1-1",
-          "date": "2025-07-26",
-          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
-          "kind": "concert",
-          "series_id": ""
-        },
-        {
           "event_id": "sokosoko-paka-live-tv-046",
           "date": "2025-07-03",
           "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
@@ -160273,6 +159533,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-09-14T16:16:09+00:00",
-  "build_id": "636fd7a47a5a842a005c"
+  "generated_at": "2026-09-20T04:02:48+00:00",
+  "build_id": "f22c200656deb8fbf947"
 }

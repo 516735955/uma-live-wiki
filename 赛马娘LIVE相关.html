@@ -7,11 +7,12 @@
 <style>
 html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK SC","Noto Sans CJK JP",system-ui,sans-serif}.app-boot{min-height:100vh;background:#f5f4f9}.app-boot-bar{height:76px;background:#3157e8 url('/uma_tools/img/bg_kv_nav.png') center/cover;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1280px)/2));color:#fff;font-size:22px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(24,39,93,.18)}.app-boot-main{width:min(1280px,calc(100% - 40px));margin:32px auto}.app-boot-line{height:46px;border-radius:8px;background:linear-gradient(100deg,#fff 20%,#eef1fa 38%,#fff 56%);background-size:220% 100%;animation:boot-shimmer 1.2s ease-in-out infinite}.app-boot-line+.app-boot-line{height:180px;margin-top:20px}@keyframes boot-shimmer{to{background-position-x:-220%}}@media(max-width:700px){.app-boot-bar{height:58px;padding:0 18px;font-size:17px}.app-boot-main{width:calc(100% - 28px);margin-top:20px}.app-boot-line{height:44px}.app-boot-line+.app-boot-line{height:136px}}@media(prefers-reduced-motion:reduce){.app-boot-line{animation:none;background:#fff}}
 </style>
-<link rel="stylesheet" href="/uma_tools/app.css?v=20260914-12">
+    <link rel="stylesheet" href="/uma_tools/app.css?v=20260920-10">
 <script defer src="/uma_tools/vendor/vue.global.prod.js?v=3"></script>
 <script defer src="/uma_tools/app-api.js?v=20260914-12"></script>
-<script defer src="/uma_tools/ui-components.js?v=20260914-12"></script>
-<script defer src="/uma_tools/app.js?v=20260914-12"></script>
+<script defer src="/uma_tools/ui-components.js?v=20260920-14"></script>
+<script defer src="/uma_tools/player-controller.js?v=20260920-2"></script>
+<script defer src="/uma_tools/app.js?v=20260920-6"></script>
 </head>
 <body>
 
@@ -98,7 +99,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div v-if="newsItems.length || newsLoading" class="news-hero-grid">
                     <template v-if="newsItems.length">
                         <div v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" @click="openNews(n.announce_id)">
-                            <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" :loading="i < 2 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'">
+                            <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" :loading="i === 0 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" decoding="async">
                             <div class="news-hero-body">
                                 <div class="news-hero-meta">
                                     <span class="news-hero-tag" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>
@@ -203,7 +204,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     </template>
                     <button v-for="(event,i) in eventsPaged" :key="event.id" class="event-catalog-row" type="button" @click="openEvent(event)">
                         <span class="event-catalog-cover">
-                            <img :src="event.image" :alt="event.title" :loading="i<4?'eager':'lazy'" @error="onEventImageError($event,event)">
+                            <img :src="event.image" :alt="event.title" :loading="i===0?'eager':'lazy'" :fetchpriority="i===0?'high':'auto'" decoding="async" @error="onEventImageError($event,event)">
                         </span>
                         <time>{{ event.date || '待公布' }}</time>
                         <span class="event-catalog-main">
@@ -263,12 +264,12 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <table v-else-if="selectedEventSession.performances && selectedEventSession.performances.length" class="data-table setlist-table">
                             <thead><tr><th>#</th><th>曲名</th><th>出演者</th><th>出处</th></tr></thead>
                             <tbody><tr v-for="(performance,index) in selectedEventSession.performances" :key="performance.version_id || performance.song">
-                                <td>{{ index + 1 }}</td>
-                                <td><button class="text-link" type="button" @click="openSong(performance.song_id)">{{ performance.song }}</button></td>
-                                <td><button v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" type="button" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)">
+                                <td class="setlist-no">{{ index + 1 }}</td>
+                                <td class="setlist-song"><button class="text-link setlist-song-link" type="button" @click="openSong(performance.song_id)">{{ performance.song }}</button></td>
+                                <td class="setlist-perf"><button v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" type="button" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)">
                                     <img :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span>
-                                </button></td>
-                                <td>{{ performance.source || '现场演唱' }}</td>
+                                </button><span v-for="guest in (performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></td>
+                                <td class="setlist-src">{{ performance.source || '现场演唱' }}</td>
                             </tr></tbody>
                         </table>
                         <div v-else class="ui-state compact">无演出曲目</div>
@@ -282,7 +283,6 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                             </button>
                         </div>
                         <div v-else class="ui-state compact">暂无出演阵容</div>
-                        <div v-if="eventGuestCast.length" class="guest-line"><b>嘉宾</b><span v-for="cast in eventGuestCast" :key="cast.name">{{ cast.name }}</span></div>
                     </section>
 
                     <section v-if="eventMediaCards.length" class="entity-section">
@@ -423,6 +423,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </section>
                 <section v-else-if="voiceSection==='songs'" class="entity-section">
                     <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">歌曲信息加载中</div>
+                    <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
                     <div v-else-if="voiceAppearance.songs.length" class="relation-song-list">
                         <div v-for="song in voiceAppearance.songs" :key="song.song_id" class="relation-song-row" :class="{open:expandedRelationSongId===song.song_id}">
                             <button class="relation-song-summary" type="button" :aria-expanded="expandedRelationSongId===song.song_id" @click="toggleRelationSong(song.song_id)"><img :src="coverThumb((relationSong(song)||{}).cover,112)" alt=""><span><b>{{ song.name }}</b><span class="relation-song-meta">{{ song.releases }} 次收录 · {{ song.version_ids.length }} 个版本</span></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -444,6 +445,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <section v-else class="entity-section">
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="voiceHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="voiceHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
+                    <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
                     <div v-else-if="voicePastByYear.length" class="history-years"><section v-for="group in voicePastByYear" :key="group.year"><h2>{{ group.year }}</h2><button v-for="event in group.events" :key="event.event_id" @click="openEvent(event.event_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></section></div>
                     <div v-else class="ui-state compact">暂无出演记录</div>
                 </section>
@@ -466,7 +468,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <div v-for="i in 8" :key="'album-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div>
                     </template>
                     <button v-for="(album,index) in relPaged" :key="album.name" type="button" class="album-card" :style="coverStyle(album)" @click="openAlbumFromDb(album)">
-                        <img class="album-cover" :src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 6 ? 'eager' : 'lazy'" :fetchpriority="index < 2 ? 'high' : 'auto'" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
+                            <img class="album-cover" :src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 2 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" decoding="async" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
                         <div class="album-info">
                             <div class="album-name">{{ album.name }}</div>
                             <div class="album-count">{{ album.release || '日期待补' }} · {{ album.type }}</div>
@@ -484,7 +486,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
                 <div class="media-content">
                     <section class="entity-section">
-                        <header class="entity-section-title"><h2>曲目</h2><div class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span><button v-if="albumPlayableCount(albumDetail)" type="button" class="album-enqueue-btn" @click="enqueueAlbum(albumDetail)" title="播放整个专辑并加入播放列表">添加到播放列表</button></div></header>
+                        <header class="entity-section-title"><h2>曲目</h2><div class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span><button v-if="albumPlayableCount(albumDetail)" type="button" class="album-enqueue-btn" @click="enqueueAlbum(albumDetail)" title="从第一首可试听曲目开始播放">播放整张专辑</button></div></header>
                         <div class="album-track-list">
                             <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
                                 <span>{{ String(index+1).padStart(2,'0') }}</span>
@@ -495,7 +497,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                                     </div>
                                     <span v-else class="secondary-line">{{ song.artist || '—' }}</span>
                                 </div>
-                                <button v-if="song.url" class="track-play" :class="{playing:isActive(song.url)}" @click="playSong(song.url,song.name,song.artist,song.pic || albumDetail.data.cover)" :aria-label="isActive(song.url)?'暂停':'播放'"><svg v-if="isActive(song.url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
+                                <button v-if="song.url" class="track-play" :class="{playing:isActive(song.url)}" @click="playAlbumTrack(albumDetail,index)" :aria-label="isActive(song.url)?'暂停':'播放'"><svg v-if="isActive(song.url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
                             </div>
                         </div>
                     </section>
@@ -531,9 +533,14 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     </dl>
                     <div class="c-detail-block" id="cDetailBlock"></div>
                 </section>
-                <section v-show="charSection==='pedigree'" class="pedigree-section" id="cCharBlood"></section>
+                <section v-show="charSection==='pedigree'" class="pedigree-section">
+                    <div v-if="pedigreeStatus==='loading' || pedigreeStatus==='idle'" class="ui-state ui-state-loading" role="status">血统关系加载中</div>
+                    <div v-else-if="pedigreeStatus==='error'" class="ui-state ui-state-error" role="alert"><span>{{ pedigreeError }}</span><button type="button" class="ui-retry" @click="retryPedigree">重试</button></div>
+                    <div v-else id="cCharBlood"></div>
+                </section>
                 <section v-if="charSection==='songs'" class="entity-section">
                     <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">歌曲信息加载中</div>
+                    <div v-else-if="appearanceError('character',charDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('character',charDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('character',charDetail.id)">重试</button></div>
                     <div v-else-if="charAppearance.songs.length" class="relation-song-list">
                         <div v-for="song in charAppearance.songs" :key="song.song_id" class="relation-song-row" :class="{open:expandedRelationSongId===song.song_id}">
                             <button class="relation-song-summary" type="button" :aria-expanded="expandedRelationSongId===song.song_id" @click="toggleRelationSong(song.song_id)"><img :src="coverThumb((relationSong(song)||{}).cover,112)" alt=""><span><b>{{ song.name }}</b><span class="relation-song-meta">{{ song.releases }} 次收录 · {{ song.version_ids.length }} 个版本</span></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -555,6 +562,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <section v-if="charSection==='appearances'" class="entity-section">
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="charHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="charHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
+                    <div v-else-if="appearanceError('character',charDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('character',charDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('character',charDetail.id)">重试</button></div>
                     <div v-else-if="charHistoryEvents.length" class="history-list"><button v-for="event in charHistoryEvents" :key="event.event_id" @click="openEvent(event.event_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></div>
                     <div v-else class="ui-state compact">暂无出演记录</div>
                 </section>
@@ -607,10 +615,8 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
 
         <div id="tab-contribute-fix" v-if="activeTab==='contribute'" class="tab-content active">
-            <div class="fix-wrap">
-                <div class="fix-crumb">资料库 / 参与共建 / 资料订正</div>
-                <h1 class="fix-title">提交订正</h1>
-                <p class="fix-desc">发现了错误信息？告诉我们哪里不对、正确的应该是什么。维护者会进行审核——<b>提交后数据不会立即更改</b>。</p>
+            <div class="fix-wrap info-page">
+                <header class="info-page-head"><span class="info-page-kicker">参与共建 · CONTRIBUTE</span><h1 class="fix-title">提交订正</h1><p class="fix-desc">发现资料有误或缺漏？请说明条目、建议内容和依据。维护者核实后处理，提交不会直接改动已发布资料。</p></header>
 
                 <form class="fix-card" @submit.prevent="submitFix">
                     <div class="fix-row">
@@ -621,14 +627,14 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
                     <div class="fix-row">
                         <span class="fix-label">问题类型</span>
-                        <div class="fix-chips">
-                            <button type="button" class="fix-chip" :class="{on: fix.kind==='k1'}" @click="fix.kind='k1'">资料错误</button>
-                            <button type="button" class="fix-chip" :class="{on: fix.kind==='k2'}" @click="fix.kind='k2'">缺少资料</button>
-                            <button type="button" class="fix-chip" :class="{on: fix.kind==='k3'}" @click="fix.kind='k3'">翻译问题</button>
-                            <button type="button" class="fix-chip" :class="{on: fix.kind==='k4'}" @click="fix.kind='k4'">图片问题</button>
-                            <button type="button" class="fix-chip" :class="{on: fix.kind==='k5'}" @click="fix.kind='k5'">链接问题</button>
-                            <button type="button" class="fix-chip" :class="{on: fix.kind==='k6'}" @click="fix.kind='k6'">其他</button>
-                        </div>
+                        <div class="ui-filter-group fix-chips"><div>
+                            <button type="button" :class="{active: fix.kind==='k1'}" @click="fix.kind='k1'">资料错误</button>
+                            <button type="button" :class="{active: fix.kind==='k2'}" @click="fix.kind='k2'">缺少资料</button>
+                            <button type="button" :class="{active: fix.kind==='k3'}" @click="fix.kind='k3'">翻译问题</button>
+                            <button type="button" :class="{active: fix.kind==='k4'}" @click="fix.kind='k4'">图片问题</button>
+                            <button type="button" :class="{active: fix.kind==='k5'}" @click="fix.kind='k5'">链接问题</button>
+                            <button type="button" :class="{active: fix.kind==='k6'}" @click="fix.kind='k6'">其他</button>
+                        </div></div>
                     </div>
 
                     <div class="fix-row">
@@ -656,44 +662,27 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                             placeholder="仅在审核者需要跟进时使用，不会公开显示。">
                     </div>
 
-                    <div class="fix-row">
+                    <div class="fix-row fix-agreement">
                         <label class="fix-check">
                             <input type="checkbox" v-model="fix.agree">
-                            <span>提交即表示我已阅读并同意《使用条款》，且确认我有权分享所提交的内容。</span>
+                            <span>我已阅读并同意使用条款，且确认有权分享所提交的内容。</span>
                         </label>
+                        <button type="button" class="info-inline-action" @click="goLegal('terms')">阅读使用条款 ↗</button>
                     </div>
 
-                    <button class="fix-submit" type="submit" :disabled="!fix.page || !fix.body || !fix.agree || fixSendState==='sending'">
+                    <button class="fix-submit" type="submit" :disabled="!fix.page || !fix.body || !fix.agree || fixSendState==='sending' || fixSendState==='ok'">
                         {{ fixSendState==='sending' ? '正在提交…' : '提交订正' }}
                     </button>
-                    <p class="fix-note">提交后将通过邮件发送给维护者；若已禁用 JavaScript，可通过站页脚中的联系方式联系我们。</p>
+                    <p class="fix-note">表单由 FormSubmit 转发给两位维护者。请勿提交他人的非公开个人信息；如发送失败，你可以保留当前内容并重试，或自行发送邮件。</p>
+                    <div v-if="fixSendState==='error'" class="fix-feedback error" role="alert">本次未确认发送成功，内容仍保留在表单中。<button type="button" class="info-inline-action" @click="submitFix()">重试</button><a :href="fixMailto">改用邮件发送 ↗</a></div>
+                    <div v-if="fixDone" class="fix-feedback success" role="status">订正已提交。维护者核实后才会更新资料，感谢反馈！</div>
                 </form>
-
-                <div class="fix-card" v-if="fixDone" style="margin-top:20px;">
-                    <div class="fix-done">
-                        <div class="fix-done-ico">{{ fixSendState==='mailto' ? '📮' : '✅' }}</div>
-                        <div class="fix-done-title">{{ fixSendState==='mailto' ? '已生成订正邮件草稿' : '订正已提交' }}</div>
-                        <div class="fix-done-sub" v-if="fixSendState==='mailto'">
-                            自动发送失败，已为你打开一封预填好的邮件草稿。<br>
-                            请手动发送至 <b>516735955@qq.com</b>。<br>
-                            <a :href="'mailto:516735955@qq.com'">再次打开邮件草稿 →</a>
-                        </div>
-                        <div class="fix-done-sub" v-else>
-                            你的订正已提交，维护者会在核实后处理，感谢反馈！<br>
-                            （首次使用需确认订阅：请检查 516735955@qq.com 的激活邮件并点击确认。）
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
         <div id="tab-contribute-contact" v-if="activeTab==='contribute-contact'" class="tab-content active">
-            <div class="contact-wrap">
-                <div class="fix-crumb">资料库 / 参与共建 / 联系我们</div>
-                <h1 class="contact-title">联系我们</h1>
-                <p class="contact-intro">
-                    本站由个人粉丝义工运营，以下渠道为本站对外唯一窗口。若您是版权方、官方资料来源方，或希望就资料准确性反馈，请按下文渠道联系。
-                </p>
+            <div class="contact-wrap info-page">
+                <header class="info-page-head"><span class="info-page-kicker">参与共建 · CONTACT</span><h1 class="contact-title">联系我们</h1><p class="contact-intro">本站由个人粉丝自愿维护，并非官方运营渠道。资料订正请使用表单；版权、来源和其他站务事项可以直接邮件联系两位维护者。</p></header>
 
                 <div class="contact-section">
                     <div class="contact-sec-head">
@@ -701,9 +690,8 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <span class="contact-sec-title">邮件</span>
                     </div>
                     <div class="contact-card">
-                        <div class="contact-row"><div class="contact-k">联系邮箱</div><div class="contact-v"><a href="mailto:516735955@qq.com">516735955@qq.com</a></div></div>
-                        <div class="contact-row"><div class="contact-k">响应时间</div><div class="contact-v">通常 72 小时内回复</div></div>
-                        <div class="contact-row"><div class="contact-k">适用情形</div><div class="contact-v">版权咨询、删改请求、媒体联络、合作申请</div></div>
+                        <div class="contact-row"><div class="contact-k">联系邮箱</div><div class="contact-v"><a v-for="email in contactEmails" :key="email" :href="'mailto:'+email">{{ email }}</a></div></div>
+                        <div class="contact-row"><div class="contact-k">适用情形</div><div class="contact-v">版权与来源咨询、删改请求、媒体联络、合作申请</div></div>
                     </div>
                 </div>
 
@@ -713,9 +701,8 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <span class="contact-sec-title">资料订正</span>
                     </div>
                     <div class="contact-card">
-                        <div class="contact-row"><div class="contact-k">页面入口</div><div class="contact-v">页脚「资料订正表单」 → <a href="#" @click.prevent="goContributeFix()">/contribute/fix</a></div></div>
-                        <div class="contact-row"><div class="contact-k">处理时长</div><div class="contact-v">3–7 个工作日（节假日或高峰期可能延迟）</div></div>
-                        <div class="contact-row"><div class="contact-k">处理结果</div><div class="contact-v">由义工在内部审核，采纳的订正会更新到数据中。本站没有公开的订正记录页，也不会单独标注投稿者署名。</div></div>
+                        <div class="contact-row"><div class="contact-k">页面入口</div><div class="contact-v"><button type="button" class="info-inline-action" @click="goContributeFix()">打开资料订正表单 ↗</button></div></div>
+                        <div class="contact-row"><div class="contact-k">处理方式</div><div class="contact-v">维护者核实来源后处理。表单不会直接更改已发布资料；处理时间视核实难度而定。</div></div>
                     </div>
                 </div>
 
@@ -725,7 +712,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <span class="contact-sec-title">准确性免责</span>
                     </div>
                     <p class="contact-text">
-                        本站的资讯由个人粉丝整合自官方公开来源，力求准确，但不对信息的完整性或时效性作任何保证。官方公告与本站资料之间可能存在更新延迟（通常为数小时至数天）。在需要准确信息的场合（如购票、出行安排），请以各官方渠道的最新公告为准。
+                        本站整合公开资料，仍可能存在遗漏或更新延迟。购票、出行等重要事项，请以官方最新公告与售票渠道为准。
                     </p>
                 </div>
 
@@ -745,88 +732,79 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <span class="contact-sec-title">删改请求</span>
                     </div>
                     <p class="contact-text">
-                        若版权方认为本站内容侵犯了其权利，请通过上述邮件渠道提出删改请求。本站承诺在 72 小时内响应，并视情况删除、修正或注明争议内容。版权方提出的紧急下架请求，优先于其他通道处理。<br>
-                        本站不开通付费会员、不接受捐款、不开放广告位。粉丝运营组成员名单不公开，以保护成员隐私。
+                        权利方、资料来源方或当事人可通过上述邮箱提供相关页面与说明。维护者收到后会优先核实并处理；紧急请求请在邮件主题中注明。
                     </p>
                 </div>
 
-                <p class="contact-updated">最后更新：2026-08-30</p>
+                <p class="contact-updated">最后更新：2026-09-20</p>
             </div>
         </div>
 
         <div id="tab-legal-privacy" v-if="activeTab==='legal-privacy'" class="tab-content active">
-            <div class="legal-wrap">
-                <div class="fix-crumb">资料库 / 法律告知 / 隐私政策</div>
-                <h1 class="legal-title">隐私政策</h1>
-                <p class="legal-intro">
-                    本站是由个人粉丝自愿维护的非官方资料站。本页面说明本站收集、使用、保留哪些与访问者相关的信息，以及第三方服务带来的数据流向。日文与英文版为中文版的对照翻译；以中文版为准。
-                </p>
+            <div class="legal-wrap info-page">
+                <header class="info-page-head"><span class="info-page-kicker">站点说明 · PRIVACY</span><h1 class="legal-title">隐私政策</h1><p class="legal-intro">本站是由个人粉丝自愿维护的非官方资料站。本页说明浏览本站、打开外部媒体或主动提交订正时可能涉及的信息与第三方服务。</p></header>
 
                 <div class="legal-section">
-                    <div class="legal-sec-head"><span class="legal-sec-no">一、</span><span class="legal-sec-title">可选账户注册</span></div>
-                    <p class="legal-text">浏览本站所有页面仍然无需账户、登录或个人信息。本站不提供账户注册功能，因此不会为任何访问者建立持久身份。</p>
+                    <div class="legal-sec-head"><span class="legal-sec-no">一、</span><span class="legal-sec-title">浏览与账户</span></div>
+                    <p class="legal-text">浏览本站无需注册或登录。本站目前不提供访问者账户，也不会要求您提供姓名或联系方式才能查看公开资料。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">二、</span><span class="legal-sec-title">自动产生的访问记录</span></div>
-                    <p class="legal-text">为保障站点稳定与排查异常请求，本站托管方会按行业惯例记录访问 IP、User-Agent、请求时间与响应状态等基础字段。这些日志由托管方按其各自的保留策略管理，本站运营者仅在排障与防滥用时短期查阅，不与任何第三方共享。</p>
-                    <p class="legal-text">本站不向页面注入广告、分析、行为追踪、社交插件、像素或指纹脚本。页面所需的字体、图片均自有托管，不嵌入任何第三方追踪请求。</p>
+                    <p class="legal-text">托管服务器为提供页面和排查故障，可能记录请求时间、访问 IP、浏览器标识、请求路径和响应状态等访问日志。维护者仅在排障、防滥用或处理安全问题时查看相关记录；日志保存方式和期限取决于实际托管环境。</p>
+                    <p class="legal-text">本站目前未接入广告或站内行为分析服务。部分图片、视频缩略图及您主动打开的媒体播放器可能由外部服务提供；浏览器向这些服务请求资源时，相关服务可能按其自身政策处理访问数据。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">三、</span><span class="legal-sec-title">Cookie 与本地存储</span></div>
-                    <p class="legal-text">本站几乎不写入 Cookie 或 localStorage。仅当您主动调整界面偏好（如主题）时，才会在浏览器中写入少量第一方设置值，且仅用于按您的设置渲染页面，不会与第三方共享，也不会用于跨站追踪。</p>
-                    <p class="legal-text">如需清除，请通过浏览器自带的「清除站点数据」功能即可，本站不会就此功能弹出额外提示。</p>
+                    <p class="legal-text">本站当前不要求使用 Cookie 才能浏览公开内容，也未使用浏览器本地存储建立访问者档案。外部服务在您使用其表单、媒体或链接时，可能按其自身政策使用 Cookie 或类似技术。</p>
+                    <p class="legal-text">您可以通过浏览器设置管理或清除站点数据；清除后，相关页面偏好或外部服务状态可能需要重新设置。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">四、</span><span class="legal-sec-title">用户主动提交的内容</span></div>
-                    <p class="legal-text">若您通过「资料订正」表单或邮件提交资料修订，本站会保留您所填写的字段（以及可能用于限流和防滥用的 IP 地址）以便审核与处理。提交时请勿包含他人非公开身份信息。提交内容由义工审核后才会更新数据；本站不会发布逐条公示记录，也不会单独标注投稿者署名。</p>
+                    <p class="legal-text">若您提交资料订正，页面 URL、问题描述、依据链接及您自愿填写的联系方式会通过 FormSubmit 转发到两位维护者的邮箱，用于核实与回复。表单内容不会自动发布。FormSubmit 作为第三方服务会处理这些字段；其公开文档说明提交记录可在其归档中保留 30 天。邮件副本的保留取决于维护者所用邮箱服务及处理需要。</p>
+                    <p class="legal-text">请勿在表单或邮件中提交他人的非公开个人信息。若希望查询、更正或删除您提交的内容，请通过下方邮箱说明提交时间与相关内容。</p>
                 </div>
 
                 <div class="legal-section">
-                    <div class="legal-sec-head"><span class="legal-sec-no">五、</span><span class="legal-sec-title">向官方资料来源的请求</span></div>
-                    <p class="legal-text">本站的业务数据（事件、角色、演出等）通过本站爬虫定期向公开来源发起结构性数据请求。该过程不携带访问者的任何信息；您的浏览行为不会经由本站抵达上述官方域名。</p>
+                    <div class="legal-sec-head"><span class="legal-sec-no">五、</span><span class="legal-sec-title">资料来源与外部链接</span></div>
+                    <p class="legal-text">站点的资料更新任务会从公开来源整理活动、角色与音乐信息。该后台采集不以访问者身份向来源站点发送请求。若您点击外部来源链接、播放外部媒体，或浏览页面中直接来自第三方的资源，则由您的浏览器连接相应服务。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">六、</span><span class="legal-sec-title">未成年人</span></div>
-                    <p class="legal-text">公开站点面向一般受众。请勿通过任何贡献渠道提交未成年人的个人信息；若您为未成年人，请在贡献内容或创建账户前取得父母或监护人的同意。</p>
+                    <p class="legal-text">本站面向一般受众。请勿提交未成年人的个人信息；未成年人提交资料前，请先取得监护人同意。</p>
                 </div>
 
                 <div class="legal-section">
-                    <div class="legal-sec-head"><span class="legal-sec-no">七、</span><span class="legal-sec-title">欧盟、中国及其他地区的访问者</span></div>
-                    <p class="legal-text">本站服务于全球受众，包括欧盟（GDPR）与中国（PIPL）的访问者。本站本着善意将数据收集降至最低：标准的托管访问日志、您贡献时填写的字段，以及用于防滥用的 IP 地址。本站不出售个人数据，亦不将其用于广告。若您身处欧盟、中国或其他享有数据访问或删除权利的司法管辖区，可通过下方渠道联系请求访问、订正或删除。</p>
+                    <div class="legal-sec-head"><span class="legal-sec-no">七、</span><span class="legal-sec-title">访问、更正与删除请求</span></div>
+                    <p class="legal-text">本站不出售提交内容，也不将其用于广告。若您希望查询、更正或删除您向本站提交的信息，请通过下方邮箱联系我们。维护者会核对请求所指内容，并在能够控制的范围内处理；第三方服务保存的数据可能还需依其政策另行申请。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">八、</span><span class="legal-sec-title">版权方与资料来源方的删改请求</span></div>
-                    <p class="legal-text">若您是版权方、原始资料来源方或当事人，认为本站某条目侵犯了您的权利，请通过下方渠道提出删改请求；本站承诺在 72 小时内响应。详细资料来源声明见「使用条款」页面。</p>
+                    <p class="legal-text">若您是权利方、资料来源方或当事人，认为某条目涉及权利问题，请提供页面链接和说明并通过下方邮箱联系我们。维护者会优先核实并处理。相关内容使用说明见「使用条款」。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">九、</span><span class="legal-sec-title">联系方式</span></div>
-                    <p class="legal-text">邮件：<a href="mailto:516735955@qq.com">516735955@qq.com</a>　·　响应时间：72 小时内回复　·　其他渠道：页脚「资料订正」入口。</p>
-                    <p class="legal-text">本政策随站点功能演进可能调整；实质性变更将在页脚「联系我们」页面公示。</p>
+                    <p class="legal-text">联系邮箱：<a v-for="email in contactEmails" :key="email" :href="'mailto:'+email">{{ email }}</a>。资料订正也可使用页脚表单。</p>
+                    <p class="legal-text">本政策可能随站点功能与实际服务变化而更新；变更会在本页注明日期。</p>
                 </div>
 
-                <p class="legal-updated">最后更新：2026-08-30</p>
-                <span class="legal-back" @click="goHome()">← 返回首页</span>
+                <p class="legal-updated">最后更新：2026-09-20</p>
             </div>
         </div>
 
         <div id="tab-legal-terms" v-if="activeTab==='legal-terms'" class="tab-content active">
-            <div class="legal-wrap">
-                <div class="fix-crumb">资料库 / 法律告知 / 使用条款</div>
-                <h1 class="legal-title">使用条款</h1>
-                <p class="legal-intro">
-                    本页面说明本站的法律地位、与版权方的关系、内容许可与归因方式，以及使用与贡献本站的规则。以中文版为准。
-                </p>
+            <div class="legal-wrap info-page">
+                <header class="info-page-head"><span class="info-page-kicker">站点说明 · TERMS</span><h1 class="legal-title">使用条款</h1><p class="legal-intro">本站是由个人粉丝自愿维护的非官方、非商业资料站。本页说明本站与权利方的关系、资料与素材使用、用户提交及联系方式。</p></header>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">一、</span><span class="legal-sec-title">法律地位与运营性质</span></div>
-                    <p class="legal-text">本站（下称「本站」）是一个由个人粉丝自愿维护的非官方网站，服务于《赛马娘 Pretty Derby》系列的社区受众。本站不以任何商业目的运营，不产生广告收入，不隶属于任何法人或企业实体。本站运营者以个人粉丝身份行事，不具备法人资格，亦不代表任何公司、协会或组织。</p>
-                    <p class="legal-text">访问或使用本站，即表示您同意本使用条款及独立的隐私政策。若您不同意，请勿使用本站。本条款适用于所有访问者、读者与贡献者。</p>
+                    <p class="legal-text">本站是由个人粉丝自愿维护的非官方、非商业资料站，供《赛马娘 Pretty Derby》同好查阅活动与音乐信息。本站不代表任何权利方或艺人。</p>
+                    <p class="legal-text">浏览公开资料无需注册。若您使用资料订正表单，请先阅读本条款与隐私政策，并在表单中确认同意。</p>
                 </div>
 
                 <div class="legal-section">
@@ -842,13 +820,13 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">四、</span><span class="legal-sec-title">本站原创内容的许可</span></div>
-                    <p class="legal-text">本站创作的原创内容——包括页面布局、视觉设计、数据库结构、数据的组织与选取、原创说明文字，以及由本项目及其贡献者制作的翻译——除另有说明外，适用 CC BY-NC-SA 4.0（知识共享 署名-非商业性使用-相同方式共享 4.0 国际）许可协议。您可在非商业前提下、以署名本站并采用相同许可的方式重用上述原创内容。本许可仅适用于本站自身的原创内容，不适用于第三节所述的任何权利方素材。</p>
+                    <p class="legal-text">本站有权许可的原创说明文字、原创整理与页面设计，除另有说明外，按 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 提供。重用时请依该许可署名、标明修改并以相同方式共享。本许可不涵盖角色立绘、封面、摄影、音频、商标或其他本站无权许可的第三方素材。</p>
                 </div>
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">五、</span><span class="legal-sec-title">用户提交内容与授权</span></div>
-                    <p class="legal-text">本站接受公开贡献：访问者可通过「资料订正表单」提交订正、日程数据、翻译及其他材料（统称「提交内容」）。在提交前，您须勾选必填的「我同意使用条款」选项，以此表示您对本条款的同意。</p>
-                    <p class="legal-text">(a) 著作权与授权。您保留您对提交内容所享有的任何权利。提交内容即表示您授予本站一项全球性、非独占、免版税的许可，允许本站为运营和维护本站之目的，以任一语言、在任何现有或未来媒介上使用、存储、复制、修改、翻译、改编、合并、发布并展示您的提交内容。</p>
+                    <p class="legal-text">访问者可通过资料订正表单提交事实订正、来源链接及原创说明。提交前须勾选使用条款确认项；提交内容不会自动发布。</p>
+                    <p class="legal-text">(a) 权利与使用。您保留对原创提交内容的权利，并允许维护者为核实、修订、翻译和展示本站资料而存储、编辑及使用该内容。本站不会因收到提交而取得第三方素材的权利。</p>
                     <p class="legal-text">(b) 您的保证。您声明并保证：该提交内容为您本人创作，或您拥有提交它并授予上述许可所需的全部权利与许可；您的提交内容不侵犯任何第三方的著作权、商标权、隐私权或其他权利；您仅提交事实性信息、您本人的原创文字，或您有权分享的材料，且不会上传您不拥有的大量受著作权保护的内容；您不会提交他人的非公开个人信息。</p>
                     <p class="legal-text">(c) 未成年人。您声明您已达到在您所在司法管辖区订立有约束力协议的年龄，或已取得父母或监护人同意。请勿提交未成年人的个人信息。</p>
                 </div>
@@ -856,7 +834,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">六、</span><span class="legal-sec-title">可接受使用与内容管理</span></div>
                     <p class="legal-text">(a) 禁止行为。您同意不利用本站从事下列行为：提交违法、侵权、诽谤、骚扰、仇恨或欺诈性内容；破坏、刷屏或蓄意伪造条目；冒充他人；上传恶意软件或试图入侵本站；或以加重服务负担的方式、或出于商业目的，系统性地抓取、批量下载、采集本站的数据。</p>
-                    <p class="legal-text">(b) 本站的内容管理权。本站及其义工编辑可（但无义务）随时、无需通知、出于任何理由或无理由地审核、编辑、订正、翻译、重组、合并、拒绝或移除任何提交内容或内容。本站没有发布、展示、保留或署名任何提交内容的义务。</p>
+                    <p class="legal-text">(b) 内容审核。维护者会按来源与资料准确性判断是否采用提交内容，可订正、合并、拒绝或移除不适合发布的内容。提交不保证一定被采纳或署名。</p>
                     <p class="legal-text">(c) 重复滥用。本站可在适当情形下，封禁或限制反复提交侵权、滥用或虚假材料的贡献者。</p>
                 </div>
 
@@ -867,7 +845,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">八、</span><span class="legal-sec-title">图片政策</span></div>
-                    <p class="legal-text">本站不托管任何受著作权保护的插图、角色立绘或官方摄影图片。如涉及演出或专辑的封面/碟面缩略图，仅在符合「合理引用」惯例的范围内、出于识别与资讯目的使用，并附带原始来源链接。若权利方认为某图片的使用超出合理范围，请通过下文的联系方式告知，本站将在 72 小时内响应。</p>
+                    <p class="legal-text">本站展示的角色图、活动与专辑封面、人物照片等可能来自权利方或公开资料来源，也可能以本地文件形式提供。它们仅用于识别和说明相应条目；展示不代表本站拥有这些素材，也不授予访问者转载许可。若您认为某素材使用不当，请提供页面链接及权利说明，维护者会核实并处理。</p>
                 </div>
 
                 <div class="legal-section">
@@ -879,12 +857,11 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">十、</span><span class="legal-sec-title">条款变更、联系方式</span></div>
-                    <p class="legal-text">本站可不时更新本条款。本站将更新页面底部的「最后更新」日期，并对实质性变更在站内予以说明。变更生效后您继续使用本站，即表示接受修订后的条款。</p>
-                    <p class="legal-text">联系方式：<a href="mailto:516735955@qq.com">516735955@qq.com</a>。订正/贡献：网站页脚的「资料订正表单」入口。本站力求在 72 小时内响应。</p>
+                    <p class="legal-text">本条款可能随站点功能变化而更新；变更会在本页注明日期。重要资料在用于购票、出行或转载前，请另行核对官方来源与相应权利条件。</p>
+                    <p class="legal-text">联系邮箱：<a v-for="email in contactEmails" :key="email" :href="'mailto:'+email">{{ email }}</a>。资料订正可使用页脚表单；权利相关请求请在邮件中附上页面链接与说明。</p>
                 </div>
 
-                <p class="legal-updated">最后更新：2026-08-30</p>
-                <span class="legal-back" @click="goHome()">← 返回首页</span>
+                <p class="legal-updated">最后更新：2026-09-20</p>
             </div>
         </div>
 
@@ -901,13 +878,13 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div class="footer-cols">
                 <div class="footer-col">
                     <div class="footer-col-title">参与共建</div>
-                    <a class="footer-link" href="#" @click.prevent="goContributeFix()">资料订正表单</a>
-                    <a class="footer-link" href="#" @click.prevent="goContributeContact()">联系我们</a>
+                    <a class="footer-link" href="/zh-Hans/contribute/fix" @click.prevent="goContributeFix()">资料订正表单</a>
+                    <a class="footer-link" href="/zh-Hans/contribute/contact" @click.prevent="goContributeContact()">联系我们</a>
                 </div>
                 <div class="footer-col">
                     <div class="footer-col-title">法律</div>
-                    <a class="footer-link" href="#" @click.prevent="goLegal('privacy')">隐私政策</a>
-                    <a class="footer-link" href="#" @click.prevent="goLegal('terms')">使用条款</a>
+                    <a class="footer-link" href="/zh-Hans/legal/privacy" @click.prevent="goLegal('privacy')">隐私政策</a>
+                    <a class="footer-link" href="/zh-Hans/legal/terms" @click.prevent="goLegal('terms')">使用条款</a>
                 </div>
                 </div>
                 <div class="footer-community">
@@ -919,54 +896,18 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             </div>
 
             <div class="footer-note">
-                本站为 赛马娘系列的非官方粉丝站点。与株式会社Cygames 及其关联公司无任何关系。不保证信息完全准确，欢迎通过上方资料订正表单提交订正。
+                本站是由个人粉丝自愿维护的《赛马娘 Pretty Derby》非官方资料站，与株式会社 Cygames 及其关联公司无任何关系。不保证信息完全准确，欢迎通过上方资料订正表单提交订正。
             </div>
             <div class="footer-copy" style="display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;">© 2026–2027 umamusumelivewiki / 粉丝运营 · 非营利 · 非官方<a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.85);text-decoration:none;">鄂ICP备2026046237号</a></div>
         </div>
     </footer>
 
-    <audio ref="audio" id="audioPlayer"></audio>
-
-    <div class="player" id="player" :class="{show: player.shown}">
-        <button class="player-hide" type="button" title="隐藏播放器" aria-label="隐藏播放器" @click="player.shown=false">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
-        </button>
-        <div class="mini-row">
-            <img class="player-cover" :src="coverThumb(player.cover, 96)" alt="" @error="onCatalogImageError($event)">
-            <div class="player-info">
-                <div class="player-song">{{ player.name }}</div>
-                <div class="player-artist" :title="player.artist">{{ player.artist }}</div>
-            </div>
-            <div class="player-controls">
-                <button class="player-btn" type="button" title="上一首" aria-label="上一首" :disabled="!player.queue.length" @click="prevSong">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-                </button>
-                <button class="player-btn" id="playPauseBtn" @click="togglePlay"><svg v-if="player.shown && player.playing" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg></button>
-                <button class="player-btn" type="button" title="下一首" aria-label="下一首" :disabled="!player.queue.length" @click="nextSong">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
-                </button>
-                <button class="player-btn" type="button" title="播放列表" aria-label="播放列表" :class="{active: showQueue}" @click="showQueue=!showQueue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
-                </button>
-            </div>
-        </div>
-        <div v-if="showQueue && player.queue.length" class="player-queue">
-            <div class="player-queue-head">播放列表（{{ player.queue.length }}）</div>
-            <div class="player-queue-list">
-                <div v-for="(s,qi) in player.queue" :key="'q'+qi" class="player-queue-item" :class="{active: qi===player.queueIndex}" @click="playQueueAt(qi)">
-                    <span class="player-queue-no">{{ qi+1 }}</span>
-                    <span class="player-queue-name">{{ s.name }}</span>
-                    <span class="player-queue-artist" :title="s.artist">{{ s.artist }}</span>
-                </div>
-            </div>
-        </div>
-        <div class="progress-bar" id="progressBar" @click="seek($event)">
-            <div class="progress" :style="styleWidth"></div>
-        </div>
-    </div>
-    <button class="player-restore" type="button" title="展开播放器" aria-label="展开播放器" :class="{show: !player.shown && !!player.url}" @click="player.shown=true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
-    </button>
+    <audio ref="audio" id="audioPlayer" preload="metadata"></audio>
+    <audio-dock :player="player"
+        @toggle-play="togglePlay" @previous="prevSong" @next="nextSong" @seek="seek"
+        @play-at="playQueueAt" @toggle-panel="togglePlayerPanel" @close-panel="closePlayerPanel"
+        @cycle-mode="cyclePlayerMode" @dismiss="dismissPlayer" @retry="retryPlayer"
+        @remove-item="removeQueueItem" @open-voice="openVoice"></audio-dock>
     <button v-if="backTopVisible && !home" class="back-to-top" type="button" @click="backToTop" aria-label="返回顶部"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button>
 
 </div>

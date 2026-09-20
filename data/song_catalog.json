@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-14T16:16:09+00:00",
+  "generated_at": "2026-09-20T04:02:48+00:00",
   "coverage": {
     "songs": 1032,
     "versions": 2119,
     "albums": 112,
     "release_tracks": 2230,
-    "live_performances": 1261
+    "live_performances": 1265
   },
   "songs": [
     {
@@ -38319,6 +38319,7 @@
         "hishimiracle",
         "hokkotarumae",
         "ikunodictus",
+        "inarione",
         "katsuragiace",
         "kitasanblack",
         "ksmiracle",
@@ -38372,6 +38373,7 @@
         "va-0009",
         "va-0012",
         "va-0016",
+        "va-0018",
         "va-0022",
         "va-0025",
         "va-0029",
@@ -38473,6 +38475,7 @@
         "hishimiracle",
         "hokkotarumae",
         "ikunodictus",
+        "inarione",
         "katsuragiace",
         "kitasanblack",
         "ksmiracle",
@@ -38526,6 +38529,7 @@
         "va-0009",
         "va-0012",
         "va-0016",
+        "va-0018",
         "va-0022",
         "va-0025",
         "va-0029",
@@ -38628,6 +38632,28 @@
             }
           ],
           "performances": [
+            {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 1,
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "voice_actor_ids": [
+                "va-0018",
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
             {
               "event_id": "live-other-2024-11-08-idol-square-6",
               "event_title": "IDOL SQUARE 6",
@@ -39314,7 +39340,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 24
+          "performance_count": 25
         },
         {
           "id": "song-make-debut-2c6c00a71e-v-675a72a163",
@@ -40037,7 +40063,7 @@
       ],
       "version_count": 11,
       "release_count": 7,
-      "performance_count": 37
+      "performance_count": 38
     },
     {
       "id": "song-make-debut-e7ef7a5805",
@@ -48147,6 +48173,28 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 3,
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "voice_actor_ids": [
+                "va-0018",
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
+            {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
               "event_date": "2026-06-20",
@@ -48638,7 +48686,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 20
+          "performance_count": 21
         },
         {
           "id": "song-next-frontier-5267707c1b-v-c739868dd5",
@@ -49331,7 +49379,7 @@
       ],
       "version_count": 13,
       "release_count": 13,
-      "performance_count": 21
+      "performance_count": 22
     },
     {
       "id": "song-noizy-fanfare-0aa722f333",
@@ -96328,6 +96376,28 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 4,
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "voice_actor_ids": [
+                "va-0018",
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
+            {
               "event_id": "live-cd-2026-09-13-winning-live-34",
               "event_title": "WINNING LIVE 34 発売記念イベント",
               "event_date": "2026-09-13",
@@ -98380,6 +98450,9 @@
                 "va-0126",
                 "va-0152",
                 "va-0161"
+              ],
+              "guest_performers": [
+                "伊藤美来"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-11-18-animax-musix-2023?session=live-other-2023-11-18-animax-musix-2023-session-1"
             },
@@ -101227,7 +101300,7 @@
             }
           ],
           "release_count": 49,
-          "performance_count": 140
+          "performance_count": 141
         },
         {
           "id": "song-228f943b49-v-b373901aa7",
@@ -114310,7 +114383,7 @@
       ],
       "version_count": 27,
       "release_count": 125,
-      "performance_count": 158
+      "performance_count": 159
     },
     {
       "id": "song-ufo-493c23dc67",
@@ -119798,6 +119871,26 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2026-09-19-2026",
+              "event_title": "ナガノアニエラフェスタ2026",
+              "event_date": "2026-09-19",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2026-09-19-2026-session-1",
+              "session_label": "本公演",
+              "session_date": "2026-09-19",
+              "performance_index": 2,
+              "character_ids": [
+                "oguricap",
+                "tamamocross"
+              ],
+              "voice_actor_ids": [
+                "va-0052",
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2026-09-19-2026?session=live-other-2026-09-19-2026-session-1"
+            },
+            {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
               "event_date": "2026-06-20",
@@ -119837,7 +119930,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2
+          "performance_count": 3
         },
         {
           "id": "song-864b1bb2e9-v-2af8136a85",
@@ -119869,7 +119962,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 2
+      "performance_count": 3
     },
     {
       "id": "song-slowly-6ed058ab53",
@@ -126789,12 +126882,9 @@
       ],
       "artists": [],
       "character_ids": [
-        "agnestachyon",
-        "daringtact",
         "katsuragiace",
         "kitasanblack",
         "matikanetannhauser",
-        "mejiroramonu",
         "mrcb",
         "symbolikriss",
         "tokaiteio",
@@ -126802,25 +126892,19 @@
       ],
       "voice_actor_ids": [
         "va-0003",
-        "va-0008",
         "va-0051",
         "va-0055",
         "va-0086",
-        "va-0094",
         "va-0126",
-        "va-0143",
         "va-0152",
         "va-0161"
       ],
       "released_character_ids": [],
       "released_voice_actor_ids": [],
       "performed_character_ids": [
-        "agnestachyon",
-        "daringtact",
         "katsuragiace",
         "kitasanblack",
         "matikanetannhauser",
-        "mejiroramonu",
         "mrcb",
         "symbolikriss",
         "tokaiteio",
@@ -126828,13 +126912,10 @@
       ],
       "performed_voice_actor_ids": [
         "va-0003",
-        "va-0008",
         "va-0051",
         "va-0055",
         "va-0086",
-        "va-0094",
         "va-0126",
-        "va-0143",
         "va-0152",
         "va-0161"
       ],
@@ -126865,22 +126946,23 @@
                 "matikanetannhauser",
                 "kitasanblack",
                 "symbolikriss",
-                "katsuragiace",
-                "agnestachyon",
-                "mejiroramonu",
-                "daringtact"
+                "katsuragiace"
               ],
               "voice_actor_ids": [
                 "va-0003",
-                "va-0008",
                 "va-0051",
                 "va-0055",
                 "va-0086",
-                "va-0094",
                 "va-0126",
-                "va-0143",
                 "va-0152",
                 "va-0161"
+              ],
+              "guest_performers": [
+                "上坂すみれ",
+                "東山奈央",
+                "羊宮妃那",
+                "伊藤美来",
+                "他出演キャスト全員"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-11-18-animax-musix-2023?session=live-other-2023-11-18-animax-musix-2023-session-1"
             }
@@ -190646,5 +190728,5 @@
       "performance_count": 0
     }
   ],
-  "build_id": "636fd7a47a5a842a005c"
+  "build_id": "f22c200656deb8fbf947"
 }

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-19T14:08:04+00:00",
+  "generated_at": "2026-09-20T04:02:48+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "b3a459d9a64a9608519cecddf1f99201e80d566be99ceceb6dd53acc6f6ee3f0",
+      "sha256": "b7eb03fe490561e4e955a19566d134e425eb6efba4157249193a5c5c5e531c78",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "bfc226f5dac9b5fe84da17afc7bdba4b11b72c5eb9a06a465c3b5bd398e5f4e9",
+      "sha256": "7729c266f20b14648cc60344b4da079af5c052da0720403bf322913c2adaab68",
       "preserved": true
     }
   },
@@ -1118,22 +1118,6 @@
               "url": "https://www.allnightnippon.com/umamusume/"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "荘口彰久",
-          "character_id": "",
-          "role": "アシスタント",
-          "evidence": "official_broadcaster",
-          "source_url": "https://www.allnightnippon.com/umamusume/",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "official_broadcaster",
-              "url": "https://www.allnightnippon.com/umamusume/"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -1186,22 +1170,6 @@
               "source_url": "https://www.allnightnippon.com/umamusume/",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_broadcaster",
-                  "url": "https://www.allnightnippon.com/umamusume/"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "荘口彰久",
-              "character_id": "",
-              "role": "アシスタント",
-              "evidence": "official_broadcaster",
-              "source_url": "https://www.allnightnippon.com/umamusume/",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "official_broadcaster",
@@ -2823,22 +2791,6 @@
               "url": "https://www.youtube.com/watch?v=604WzTEF4is"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "浅川",
-          "character_id": "",
-          "role": "Netkeiba Editorial Team writer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -3959,22 +3911,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "松本圭太",
-          "character_id": "",
-          "role": "Ramen Walker Magazine Producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -4097,22 +4033,6 @@
                   "url": "https://umamusu.wiki/PakaLive_TV_Dash"
                 }
               ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "松本圭太",
-              "character_id": "",
-              "role": "Ramen Walker Magazine Producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
             }
           ],
           "setlist_status": "none"
@@ -4197,22 +4117,6 @@
               "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "オーイシマサヨシ",
-          "character_id": "",
-          "role": "ゲスト",
-          "evidence": "official_youtube",
-          "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "official_youtube",
-              "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -4265,22 +4169,6 @@
               "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_youtube",
-                  "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "オーイシマサヨシ",
-              "character_id": "",
-              "role": "ゲスト",
-              "evidence": "official_youtube",
-              "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "official_youtube",
@@ -4594,22 +4482,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "オーイシマサヨシ",
-          "character_id": "",
-          "role": "大石昌良",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -5297,22 +5169,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "近藤智樹",
-          "character_id": "",
-          "role": "Ramen Walker Magazine Editor-in-Chief",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -5429,22 +5285,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "近藤智樹",
-              "character_id": "",
-              "role": "Ramen Walker Magazine Editor-in-Chief",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -7656,22 +7496,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "福原直英",
-          "character_id": "",
-          "role": "Former FujiTV Color Commentator",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -7794,22 +7618,6 @@
                   "url": "https://umamusu.wiki/PakaLive_TV_Dash"
                 }
               ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "福原直英",
-              "character_id": "",
-              "role": "Former FujiTV Color Commentator",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
             }
           ],
           "setlist_status": "none"
@@ -7894,22 +7702,6 @@
               "url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "荘口彰久",
-          "character_id": "",
-          "role": "アシスタント",
-          "evidence": "official_broadcaster",
-          "source_url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "official_broadcaster",
-              "url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -7962,22 +7754,6 @@
               "source_url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_broadcaster",
-                  "url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "荘口彰久",
-              "character_id": "",
-              "role": "アシスタント",
-              "evidence": "official_broadcaster",
-              "source_url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "official_broadcaster",
@@ -8279,22 +8055,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "角田晃一",
-          "character_id": "",
-          "role": "Jockey for Fuji Kiseki and Jungle Pocket",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -8411,22 +8171,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "角田晃一",
-              "character_id": "",
-              "role": "Jockey for Fuji Kiseki and Jungle Pocket",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -9231,22 +8975,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "板津雄志",
-          "character_id": "",
-          "role": "Sankei Sports Journalist",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -9363,22 +9091,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "板津雄志",
-              "character_id": "",
-              "role": "Sankei Sports Journalist",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -13378,22 +13090,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "蒼井翔太",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -14746,38 +14442,6 @@
           ]
         },
         {
-          "voice_actor_id": "",
-          "name": "特邀嘉宾艺术家：［Alexandros］",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "オーイシマサヨシ",
-          "character_id": "",
-          "role": "大石昌良",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
           "voice_actor_id": "va-0043",
           "name": "土师亚文",
           "character_id": "mejiroryan",
@@ -15090,22 +14754,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "特邀嘉宾艺术家：影山ヒロノブ",
-          "character_id": "",
-          "role": "影山浩宣",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -23722,38 +23370,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "川上洋平",
-          "character_id": "",
-          "role": "[Alexandros]",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "白井眞輝",
-          "character_id": "",
-          "role": "[Alexandros]",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -23890,38 +23506,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "川上洋平",
-              "character_id": "",
-              "role": "[Alexandros]",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "白井眞輝",
-              "character_id": "",
-              "role": "[Alexandros]",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -29824,38 +29408,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "オーイシマサヨシ",
-          "character_id": "",
-          "role": "大石昌良",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "中川翔子",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -31295,166 +30847,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "廣川奈々聖",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "三品瑠香",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "早﨑すずき",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "金澤亜美",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "中村朱里",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "蛭田愛梨",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "小田柚葉",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "杉浦優來",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "工藤由愛",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "松永里愛",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -35490,22 +34882,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "西川貴教",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -52221,73 +51597,17 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "va-0008",
-          "name": "上坂堇",
-          "character_id": "agnestachyon",
-          "role": "爱丽速子",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0094",
-          "name": "东山奈央",
-          "character_id": "mejiroramonu",
-          "role": "目白高峰",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0143",
-          "name": "羊宫妃那",
-          "character_id": "daringtact",
-          "role": "谋勇兼备",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "伊藤美来",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
-      "character_ids": [],
+      "character_ids": [
+        "tokaiteio",
+        "vodka",
+        "mrcb",
+        "matikanetannhauser",
+        "kitasanblack",
+        "symbolikriss",
+        "katsuragiace"
+      ],
       "sessions": [
         {
           "id": "live-other-2023-11-18-animax-musix-2023-session-1",
@@ -52307,10 +51627,7 @@
             "matikanetannhauser",
             "kitasanblack",
             "symbolikriss",
-            "katsuragiace",
-            "agnestachyon",
-            "mejiroramonu",
-            "daringtact"
+            "katsuragiace"
           ],
           "performances": [
             {
@@ -52369,6 +51686,9 @@
                 "symbolikriss",
                 "katsuragiace"
               ],
+              "guest_performers": [
+                "伊藤美来"
+              ],
               "song_id": "song-228f943b49",
               "version_id": "song-228f943b49-v-228f943b49",
               "song_title": "うまぴょい伝説"
@@ -52382,17 +51702,21 @@
                 "matikanetannhauser",
                 "kitasanblack",
                 "symbolikriss",
-                "katsuragiace",
-                "agnestachyon",
-                "mejiroramonu",
-                "daringtact"
+                "katsuragiace"
+              ],
+              "guest_performers": [
+                "上坂すみれ",
+                "東山奈央",
+                "羊宮妃那",
+                "伊藤美来",
+                "他出演キャスト全員"
               ],
               "song_id": "song-f53f0c98a1",
               "version_id": "song-f53f0c98a1-v-f53f0c98a1",
               "song_title": "イマジネーション"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセン音頭</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">ソシテミンナノ</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Ms. VICTORIA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"perf-name\">伊藤美来</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">イマジネーション</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AgnesTachyon.png\" alt=\"爱丽速子\" title=\"爱丽速子\"><span class=\"perf-name\">爱丽速子</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\" title=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/DaringTact.png\" alt=\"谋勇兼备\" title=\"谋勇兼备\"><span class=\"perf-name\">谋勇兼备</span></span><span class=\"perf-name\">伊藤美来</span> <span class=\"perf-name\">其他出演者全员</span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセン音頭</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">ソシテミンナノ</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Ms. VICTORIA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"guest-performer\">伊藤美来</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">イマジネーション</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TokaiTeio.png\" alt=\"东海帝王\" title=\"东海帝王\"><span class=\"perf-name\">东海帝王</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Vodka.png\" alt=\"伏特加\" title=\"伏特加\"><span class=\"perf-name\">伏特加</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MrCB.png\" alt=\"千明代表\" title=\"千明代表\"><span class=\"perf-name\">千明代表</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/Matikanetannhauser.png\" alt=\"待兼诗歌剧\" title=\"待兼诗歌剧\"><span class=\"perf-name\">待兼诗歌剧</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KitasanBlack.png\" alt=\"北部玄驹\" title=\"北部玄驹\"><span class=\"perf-name\">北部玄驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SymboliKrisS.png\" alt=\"吉兆\" title=\"吉兆\"><span class=\"perf-name\">吉兆</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/KatsuragiAce.png\" alt=\"葛城王牌\" title=\"葛城王牌\"><span class=\"perf-name\">葛城王牌</span></span><span class=\"guest-performer\">上坂すみれ</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">伊藤美来</span> <span class=\"guest-performer\">他出演キャスト全員</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
             "file": "data/live_cat_data.json",
             "category": "other",
@@ -52415,6 +51739,16 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/349821"
+        },
+        {
+          "kind": "official",
+          "label": "ウマ娘官方出演公告",
+          "url": "https://umamusume.jp/news/detail?id=1604"
+        },
+        {
+          "kind": "official",
+          "label": "ANIMAX 官方节目记录",
+          "url": "https://www.animax.co.jp/animaxmusix/archive/archive_2023.html"
         }
       ],
       "legacy_url": "/zh-Hans/live/other/40",
@@ -57256,22 +56590,6 @@
           ]
         },
         {
-          "voice_actor_id": "",
-          "name": "舞台ウマ娘アンサンブル",
-          "character_id": "",
-          "role": "舞台剧赛马娘合奏",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
           "voice_actor_id": "va-0160",
           "name": "进藤尚美",
           "character_id": "darleyarabian",
@@ -57312,38 +56630,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -62824,38 +62110,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -63118,38 +62372,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -63424,38 +62646,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -63718,38 +62908,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -64289,38 +63447,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -64589,38 +63715,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -64883,38 +63977,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "稲村梓",
-          "character_id": "",
-          "role": "舞台剧赛马娘解说",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "門田奈菜",
-          "character_id": "",
-          "role": "舞台剧赛马娘比赛播报",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "project_staff",
-          "resolution": "project_staff",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -67314,22 +66376,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "オーイシマサヨシ",
-          "character_id": "",
-          "role": "大石昌良",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -74689,22 +73735,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "SIRO 魔界ノりりむ 天宮こころ",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "virtual_guest",
-          "resolution": "virtual_guest",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -77108,70 +76138,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "天音かなた",
-          "character_id": "",
-          "role": "天音彼方",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "virtual_guest",
-          "resolution": "virtual_guest",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "雪花ラミィ",
-          "character_id": "",
-          "role": "雪花菈米",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "virtual_guest",
-          "resolution": "virtual_guest",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "獅白ぼたん",
-          "character_id": "",
-          "role": "狮白牡丹",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "virtual_guest",
-          "resolution": "virtual_guest",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "尾丸ポルカ",
-          "character_id": "",
-          "role": "尾丸波尔卡",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "virtual_guest",
-          "resolution": "virtual_guest",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -81987,22 +80953,6 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "curated_live_cast",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "高城れに",
-          "character_id": "",
-          "role": "",
-          "evidence": "curated_live_cast",
-          "source_url": "",
-          "person_type": "guest_artist",
-          "resolution": "guest_artist",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -96585,22 +95535,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "石原章弘",
-          "character_id": "",
-          "role": "Cygames, Umamusume game producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -96701,22 +95635,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "石原章弘",
-              "character_id": "",
-              "role": "Cygames, Umamusume game producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -97698,38 +96616,6 @@
           ]
         },
         {
-          "voice_actor_id": "",
-          "name": "石原章弘",
-          "character_id": "",
-          "role": "Cygames, Umamusume game producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "伊藤隼之介",
-          "character_id": "",
-          "role": "Toho Animation, anime Season 1 producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
           "voice_actor_id": "va-0105",
           "name": "冲野晃司",
           "character_id": "spica_trainer",
@@ -97828,38 +96714,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "石原章弘",
-              "character_id": "",
-              "role": "Cygames, Umamusume game producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "伊藤隼之介",
-              "character_id": "",
-              "role": "Toho Animation, anime Season 1 producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -98581,38 +97435,6 @@
           ]
         },
         {
-          "voice_actor_id": "",
-          "name": "石原章弘",
-          "character_id": "",
-          "role": "Cygames, Umamusume game producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "伊藤隼之介",
-          "character_id": "",
-          "role": "Toho Animation, anime Season 1 producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
           "voice_actor_id": "va-0105",
           "name": "冲野晃司",
           "character_id": "spica_trainer",
@@ -98727,38 +97549,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "石原章弘",
-              "character_id": "",
-              "role": "Cygames, Umamusume game producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "伊藤隼之介",
-              "character_id": "",
-              "role": "Toho Animation, anime Season 1 producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -99468,38 +98258,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "石原章弘",
-          "character_id": "",
-          "role": "Cygames, Umamusume game producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "伊藤隼之介",
-          "character_id": "",
-          "role": "Toho Animation, anime Season 1 producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -99552,38 +98310,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "石原章弘",
-              "character_id": "",
-              "role": "Cygames, Umamusume game producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "伊藤隼之介",
-              "character_id": "",
-              "role": "Toho Animation, anime Season 1 producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -100375,38 +99101,6 @@
           ]
         },
         {
-          "voice_actor_id": "",
-          "name": "石原章弘",
-          "character_id": "",
-          "role": "Cygames, Umamusume game producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "伊藤隼之介",
-          "character_id": "",
-          "role": "Toho Animation, anime Season 1 producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
           "voice_actor_id": "va-0105",
           "name": "冲野晃司",
           "character_id": "spica_trainer",
@@ -100553,38 +99247,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "石原章弘",
-              "character_id": "",
-              "role": "Cygames, Umamusume game producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "伊藤隼之介",
-              "character_id": "",
-              "role": "Toho Animation, anime Season 1 producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -101012,22 +99674,6 @@
           ]
         },
         {
-          "voice_actor_id": "",
-          "name": "伊藤隼之介",
-          "character_id": "",
-          "role": "伊藤隼之介, Toho Animation, anime Season 1 producer",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV",
-          "person_type": "external_guest",
-          "resolution": "external_guest",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV"
-            }
-          ]
-        },
-        {
           "voice_actor_id": "va-0105",
           "name": "冲野晃司",
           "character_id": "spica_trainer",
@@ -101110,22 +99756,6 @@
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
               "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "community_archive",
-                  "url": "https://umamusu.wiki/PakaLive_TV"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "",
-              "name": "伊藤隼之介",
-              "character_id": "",
-              "role": "伊藤隼之介, Toho Animation, anime Season 1 producer",
-              "evidence": "community_archive",
-              "source_url": "https://umamusu.wiki/PakaLive_TV",
-              "person_type": "external_guest",
-              "resolution": "external_guest",
               "evidence_sources": [
                 {
                   "kind": "community_archive",
@@ -106730,5 +105360,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "26ab8a8613922ec33288"
+  "build_id": "f22c200656deb8fbf947"
 }
