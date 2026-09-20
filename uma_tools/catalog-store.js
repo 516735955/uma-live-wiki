@@ -67,7 +67,10 @@ function firstPlayableRelease(song) {
           version_title: version.title,
           audio_url: release.audio_url,
           artist: release.artist || '',
-          cover: release.cover || song.cover || ''
+          cover: release.cover || song.cover || '',
+          album_id: release.album_id || '',
+          album_name: release.album_name || '',
+          voice_actor_ids: [...new Set((release.vocalists || []).map((vocalist) => vocalist.voice_actor_id).filter(Boolean))]
         };
       }
     }

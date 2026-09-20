@@ -6,7 +6,7 @@ Generated files live one directory above and must not be edited by hand.
 ## Files
 
 - `series.json`: stable identities and display names for recurring event/program series.
-- `official_programs.json`: official broadcast metadata collected from the official YouTube channel and official portal announcements. It is refreshed explicitly with `python3 uma_tools/update_events.py --refresh-programs` and remains usable offline after it is committed.
+- `official_programs.json`: official broadcast metadata collected from the official YouTube channel and official portal announcements. It is refreshed through the canonical builder with `python3 uma_tools/crawl_official_programs.py` and remains usable offline after it is committed.
 - `voice_actor_details.json`: cited biographical fields refreshed from Japanese Wikipedia, official-agency portrait fallbacks for people absent from the local photo index, and reviewed per-person corrections in `overrides.json`.
 - `voice_actor_identities.json`: the canonical registry of stable voice-actor IDs, names, and aliases. Generated catalogs never read their previous output to recover an identity.
 - `overrides.json`: small, reviewed corrections for source conflicts, aliases, missing cast, or intentionally hidden records. This is the only hand-edited event correction layer.
@@ -38,9 +38,24 @@ The command records SHA-256 digests of `live_data.json` and
 `live_cat_data.json` before and after every build and fails if either changes.
 Their hand-tuned setlist HTML is never normalized or rewritten.
 
+Run `python3 uma_tools/crawl_official_programs.py --dry-run` before an official
+program update. The same implementation used by the server discovers known
+program series, validates a complete in-memory catalog, and writes an ignored
+`program_refresh_report.json`. Discovery may add a new stable program or fill
+an empty field. A different value for an existing nonempty field is reported
+for review and is not applied automatically. Existing records that temporarily
+disappear from an upstream listing are retained. Sources and media links are
+additive. Running the command without `--dry-run` applies the safe result and
+atomically rebuilds all generated catalogs; it does not refresh voice-actor
+biographies.
+
 ## Evidence rules
 
-Every cast relationship carries its evidence kind. The order of preference is:
+Every published event cast relationship carries its evidence kind and resolves
+to exactly one canonical Uma Musume voice-actor/character pair. Festival
+artists, presenters, staff, and other people remain in source snapshots rather
+than the event cast. A non-Uma singer on a collaboration song is retained only
+on that exact setlist row. The order of preference is:
 official announcement, official YouTube metadata, curated official-source
 confirmation, then Eventernote. External sources may corroborate the same fact,
 but the builder publishes one canonical value for each event field and one

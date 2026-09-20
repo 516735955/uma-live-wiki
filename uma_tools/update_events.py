@@ -39,8 +39,15 @@ TOOLS_DIR = Path(__file__).resolve().parent
 ROOT = TOOLS_DIR.parent
 DATA_DIR = ROOT / "data"
 EVENTS_DIR = DATA_DIR / "events"
+PROGRAM_REFRESH_REPORT = EVENTS_DIR / "program_refresh_report.json"
 OFFICIAL_CHANNEL_ID = "UCAWxPGGuIfWME2KTLUmSCHw"
 REGULAR_PROGRAM_BASELINES = {"paka-live-tv": 62, "paka-live-tv-prime": 6, "sokosoko-paka-live-tv": 55}
+PROGRAM_SOURCE_PRIORITY = {
+    "community_archive": 1,
+    "official_broadcaster": 2,
+    "official_announcement": 3,
+    "official_youtube": 4,
+}
 PAKALIVE_ARCHIVE_PAGES = {
     "paka-live-tv": "https://umamusu.wiki/PakaLive_TV",
     "paka-live-tv-prime": "https://umamusu.wiki/PakaLive_TV_Dash",
@@ -77,6 +84,10 @@ VFOLD = str.maketrans({"髙": "高", "﨑": "崎", "祥": "祥", "塚": "塚", "
 DATE_RE = re.compile(r"(20\d{2})[.年/-](\d{1,2})[.月/-](\d{1,2})")
 SONG_RE = re.compile(r'<td class="setlist-song">([\s\S]*?)</td>')
 PERFORMER_RE = re.compile(r'<span class="perf-name">([\s\S]*?)</span>')
+GUEST_PERFORMER_RE = re.compile(
+    r'<span\b[^>]*class=["\'][^"\']*\bguest-performer\b[^"\']*["\'][^>]*>([\s\S]*?)</span>',
+    re.I,
+)
 ROW_RE = re.compile(r"<tr\b[^>]*>([\s\S]*?)</tr>", re.I)
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 EVENTERNOTE_ID_RE = re.compile(r"/events/id/(\d+)")
@@ -272,7 +283,15 @@ def table_performances(
                 character_ids.append(character_id)
         if FULL_CAST_RE.search(clean_text(row)):
             character_ids = list(dict.fromkeys([*full_cast, *character_ids]))
-        performances.append({"song": song, "character_ids": character_ids})
+        performance = {"song": song, "character_ids": character_ids}
+        guest_performers = list(dict.fromkeys(
+            clean_text(match.group(1))
+            for match in GUEST_PERFORMER_RE.finditer(row)
+            if clean_text(match.group(1))
+        ))
+        if guest_performers:
+            performance["guest_performers"] = guest_performers
+        performances.append(performance)
     return performances
 
 
@@ -520,6 +539,7 @@ def build_song_catalog(
                     "session_id": session.get("id") or "", "session_label": session.get("label") or "",
                     "session_date": session.get("date") or "", "performance_index": performance_index,
                     "character_ids": character_ids, "voice_actor_ids": sorted(voice_actor_ids),
+                    **({"guest_performers": list(performance.get("guest_performers") or [])} if performance.get("guest_performers") else {}),
                     "event_url": f"/zh-Hans/events/{urllib.parse.quote(str(event.get('id') or ''))}?session={urllib.parse.quote(str(session.get('id') or ''))}",
                 })
 
@@ -978,20 +998,21 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
         name = str(item.get("name") or "").strip()
         role = str(item.get("role") or "").strip()
         actor_id = identities.voice_id(name)
+        # The public event cast has one precise meaning: an Uma Musume voice
+        # actor appearing as their canonical character. Festival guests,
+        # presenters, staff, and other performers remain in the source record;
+        # singers outside the franchise are retained on the exact song row.
+        if not actor_id:
+            continue
         item_evidence = str(item.get("source_kind") or evidence)
         item_source_url = str(item.get("source_url") or source_url)
-        person_type = "voice_actor" if actor_id else str(item.get("person_type") or identities.non_voice_person_type(name) or "unresolved")
-        # Eventernote event pages often list every artist at a mixed festival.
-        # Only names connected to this project's voice-actor identity table are
-        # a supported Uma Musume relationship; unknown festival guests are not
-        # shown as franchise cast.
-        if item_evidence == "eventernote" and not actor_id:
+        character_id = identities.current_character_id(actor_id)
+        if not character_id:
             continue
         # A voice-actor identity has exactly one canonical role in this archive.
         # Source-side role labels may be missing, translated differently, or
         # attached to the wrong same-named commentator; never let them create a
         # second actor-to-character relationship at runtime.
-        character_id = identities.current_character_id(actor_id) if actor_id else identities.character_id(role)
         profile = identities.profile_by_id.get(actor_id) or {}
         character = identities.character_by_id.get(character_id) or {}
         out.append({
@@ -1001,8 +1022,8 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
             "role": character.get("zh") or role,
             "evidence": item_evidence,
             "source_url": item_source_url,
-            "person_type": person_type,
-            "resolution": "resolved" if actor_id else person_type,
+            "person_type": "voice_actor",
+            "resolution": "resolved",
         })
     return merge_cast_records(out)
 
@@ -1653,10 +1674,12 @@ def validate(
         cast_keys = []
         for cast in event.get("cast") or []:
             person_type = cast.get("person_type")
-            if person_type == "unresolved" or not person_type:
-                errors.append(f"event {event['id']} has unresolved person {cast.get('name')}")
-            if person_type == "voice_actor" and not cast.get("voice_actor_id"):
-                errors.append(f"event {event['id']} has voice actor without identity {cast.get('name')}")
+            if person_type != "voice_actor":
+                errors.append(f"event {event['id']} publishes non-Uma cast {cast.get('name')}")
+            if not cast.get("voice_actor_id"):
+                errors.append(f"event {event['id']} has cast without voice-actor identity {cast.get('name')}")
+            if not cast.get("character_id"):
+                errors.append(f"event {event['id']} has cast without canonical character {cast.get('name')}")
             if cast.get("voice_actor_id") and cast["voice_actor_id"] not in known_actors:
                 errors.append(f"event {event['id']} references unknown actor {cast['voice_actor_id']}")
             if cast.get("voice_actor_id") and not cast.get("character_id"):
@@ -2833,7 +2856,12 @@ def refresh_programs() -> dict[str, Any]:
             by_id[event_id]["sources"] = implicit_sources(program)
             continue
         target = by_id[event_id]
-        richer = bool(program.get("cast")) or bool(program.get("video_id"))
+        target_priority = PROGRAM_SOURCE_PRIORITY.get(str(target.get("source_kind") or ""), 0)
+        program_priority = PROGRAM_SOURCE_PRIORITY.get(str(program.get("source_kind") or ""), 0)
+        richer = program_priority > target_priority or (
+            program_priority == target_priority
+            and (bool(program.get("cast")) or bool(program.get("video_id")))
+        )
         if richer:
             for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status"):
                 if program.get(field):
@@ -2891,6 +2919,134 @@ def refresh_programs() -> dict[str, Any]:
     }
 
 
+def value_is_present(value: Any) -> bool:
+    return value not in (None, "", [], {})
+
+
+def merge_program_list(field: str, existing: list[Any], discovered: list[Any]) -> list[Any]:
+    """Union additive evidence without rewriting an existing record."""
+    if field == "sources":
+        key = lambda item: (item.get("kind"), item.get("url")) if isinstance(item, dict) else json.dumps(item, ensure_ascii=False, sort_keys=True)
+    elif field == "media":
+        key = lambda item: (item.get("video_id") or item.get("url")) if isinstance(item, dict) else json.dumps(item, ensure_ascii=False, sort_keys=True)
+    else:
+        key = lambda item: json.dumps(item, ensure_ascii=False, sort_keys=True)
+    merged: list[Any] = []
+    seen: set[Any] = set()
+    for item in [*existing, *discovered]:
+        item_key = key(item)
+        if not item_key or item_key in seen:
+            continue
+        seen.add(item_key)
+        merged.append(item)
+    return merged
+
+
+def apply_additive_program_refresh(
+    existing_doc: dict[str, Any],
+    discovered_doc: dict[str, Any],
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Accept new records and blank-field fills, but never rewrite known data.
+
+    Official-program discovery is unattended on the server. Existing nonempty
+    values may include reviewed corrections, so a differing discovery becomes
+    a report entry for a maintainer instead of an automatic overwrite.
+    Evidence URLs and media cards are additive and may safely accumulate.
+    """
+    existing_by_id = {
+        str(row.get("id") or ""): row
+        for row in existing_doc.get("programs") or []
+        if row.get("id")
+    }
+    discovered_by_id = {
+        str(row.get("id") or ""): row
+        for row in discovered_doc.get("programs") or []
+        if row.get("id")
+    }
+    added_ids: list[str] = []
+    retained_missing_ids: list[str] = []
+    filled: list[dict[str, Any]] = []
+    conflicts: list[dict[str, Any]] = []
+    programs: list[dict[str, Any]] = []
+
+    for program_id in sorted(set(existing_by_id) | set(discovered_by_id)):
+        existing = existing_by_id.get(program_id)
+        discovered = discovered_by_id.get(program_id)
+        if existing is None and discovered is not None:
+            programs.append(dict(discovered))
+            added_ids.append(program_id)
+            continue
+        if discovered is None and existing is not None:
+            programs.append(dict(existing))
+            retained_missing_ids.append(program_id)
+            continue
+        assert existing is not None and discovered is not None
+        merged = dict(existing)
+        filled_fields: list[str] = []
+        source_upgrade = PROGRAM_SOURCE_PRIORITY.get(str(discovered.get("source_kind") or ""), 0) > PROGRAM_SOURCE_PRIORITY.get(
+            str(existing.get("source_kind") or ""), 0
+        )
+        for field, discovered_value in discovered.items():
+            if field == "id":
+                continue
+            existing_value = existing.get(field)
+            if field in ("sources", "media"):
+                combined = merge_program_list(
+                    field,
+                    list(existing_value or []),
+                    list(discovered_value or []),
+                )
+                if comparable(combined) != comparable(existing_value or []):
+                    merged[field] = combined
+                    filled_fields.append(field)
+                continue
+            if field in ("source_kind", "source_url") and source_upgrade and value_is_present(discovered_value):
+                if comparable(existing_value) != comparable(discovered_value):
+                    merged[field] = discovered_value
+                    filled_fields.append(field)
+                continue
+            if not value_is_present(existing_value) and value_is_present(discovered_value):
+                merged[field] = discovered_value
+                filled_fields.append(field)
+            elif (
+                value_is_present(existing_value)
+                and value_is_present(discovered_value)
+                and comparable(existing_value) != comparable(discovered_value)
+            ):
+                conflicts.append({
+                    "id": program_id,
+                    "field": field,
+                    "existing": existing_value,
+                    "discovered": discovered_value,
+                })
+        if filled_fields:
+            filled.append({"id": program_id, "fields": sorted(set(filled_fields))})
+        programs.append(merged)
+
+    merged_doc = {
+        **discovered_doc,
+        "programs": sorted(programs, key=lambda row: (str(row.get("series_id") or ""), str(row.get("id") or ""))),
+    }
+    report = {
+        "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+        "policy": "add new records and fill blank fields; preserve conflicting nonempty values",
+        "counts": {
+            "existing": len(existing_by_id),
+            "discovered": len(discovered_by_id),
+            "result": len(programs),
+            "added": len(added_ids),
+            "filled": len(filled),
+            "conflicts": len(conflicts),
+            "retained_missing": len(retained_missing_ids),
+        },
+        "added_ids": added_ids,
+        "filled": filled,
+        "conflicts": conflicts,
+        "retained_missing_ids": retained_missing_ids,
+    }
+    return merged_doc, report
+
+
 def shutil_which(name: str) -> str | None:
     paths = os.environ.get("PATH", "").split(os.pathsep)
     extensions = [""] if os.name != "nt" else os.environ.get("PATHEXT", ".EXE").split(os.pathsep)
@@ -2924,6 +3080,20 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     add_programs(events, programs, identities, used)
     events = apply_overrides(events, overrides, identities)
     events = dedupe_events(events)
+    for event in events:
+        # Source snapshots may retain every named participant. The public cast
+        # has one narrower meaning: a verified Uma voice actor appearing as
+        # their one canonical character.
+        event["cast"] = [
+            item for item in event.get("cast") or []
+            if item.get("voice_actor_id") and item.get("character_id")
+        ]
+        if event["cast"]:
+            event["cast_status"] = "verified"
+        elif event.get("character_ids"):
+            event["cast_status"] = "character_only"
+        elif event.get("cast_status") != "announced_tba":
+            event["cast_status"] = "partial"
     series_by_id = series_lookup(series)
     for event in events:
         event.pop("image_fallback", None)
@@ -2995,18 +3165,25 @@ def comparable(value: Any) -> Any:
     return value
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--refresh-programs", action="store_true", help="refresh regular, character, and special programs from official sources")
     mode.add_argument("--refresh-profiles", action="store_true", help="refresh voice-actor biographical fields and cited profile links")
     mode.add_argument("--refresh-all", action="store_true", help="refresh programs and voice-actor profiles, then rebuild all indexes")
     mode.add_argument("--check", action="store_true", help="validate sources and committed generated files without writing")
-    args = parser.parse_args()
+    parser.add_argument("--dry-run", action="store_true", help="run network discovery and validation without changing source or generated catalogs")
+    parser.add_argument("--report", type=Path, default=PROGRAM_REFRESH_REPORT, help="write the ignored official-program refresh report here")
+    args = parser.parse_args(argv)
+    if args.dry_run and not (args.refresh_programs or args.refresh_all or args.refresh_profiles):
+        parser.error("--dry-run requires a refresh mode")
     refreshed_programs = None
+    program_report = None
     refreshed_details = None
     if args.refresh_programs or args.refresh_all:
-        refreshed_programs = refresh_programs()
+        existing_programs = read_json(EVENTS_DIR / "official_programs.json")
+        discovered_programs = refresh_programs()
+        refreshed_programs, program_report = apply_additive_program_refresh(existing_programs, discovered_programs)
     if args.refresh_profiles or args.refresh_all:
         refreshed_details = refresh_voice_actor_details()
     built = build(refreshed_programs, refreshed_details)
@@ -3019,6 +3196,21 @@ def main() -> int:
             print("generated files are stale: " + ", ".join(mismatches), file=sys.stderr)
             return 1
         print(f"event data valid: {len(built['catalog']['events'])} events, {len(built['profiles']['voice_actors'])} voice actors")
+        return 0
+    if program_report is not None:
+        program_report["dry_run"] = bool(args.dry_run)
+        atomic_json(args.report, program_report)
+    if args.dry_run:
+        if program_report is not None:
+            counts = program_report["counts"]
+            print(
+                "official program dry run: "
+                f"{counts['added']} new, {counts['filled']} filled, "
+                f"{counts['conflicts']} conflicts, {counts['retained_missing']} retained"
+            )
+            print(f"report written: {args.report}")
+        if refreshed_details is not None:
+            print(f"voice actor profile dry run: {len(refreshed_details['records'])} records")
         return 0
     if refreshed_programs is not None:
         atomic_json(EVENTS_DIR / "official_programs.json", refreshed_programs)

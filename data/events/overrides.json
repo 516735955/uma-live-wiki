@@ -37,6 +37,13 @@
       "kind": "concert",
       "series_id": "winning-live-release"
     },
+    "live-other-2023-11-18-animax-musix-2023": {
+      "character_ids": ["tokaiteio", "vodka", "mrcb", "matikanetannhauser", "kitasanblack", "symbolikriss", "katsuragiace"],
+      "sources_add": [
+        {"kind": "official", "label": "ウマ娘官方出演公告", "url": "https://umamusume.jp/news/detail?id=1604"},
+        {"kind": "official", "label": "ANIMAX 官方节目记录", "url": "https://www.animax.co.jp/animaxmusix/archive/archive_2023.html"}
+      ]
+    },
     "pakatube-20230401-lcpgkvi33w4": {
       "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
     },

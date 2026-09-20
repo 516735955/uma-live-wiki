@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-19T15:03:41+00:00",
+  "generated_at": "2026-09-20T04:02:48+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -220,7 +220,7 @@
         "events": 20,
         "concerts": 8,
         "programs": 7,
-        "songs": 9
+        "songs": 8
       }
     },
     {
@@ -441,7 +441,7 @@
         }
       ],
       "stats": {
-        "events": 9,
+        "events": 8,
         "concerts": 3,
         "programs": 3,
         "songs": 18
@@ -554,7 +554,7 @@
         "events": 6,
         "concerts": 4,
         "programs": 2,
-        "songs": 12
+        "songs": 11
       }
     },
     {
@@ -1334,7 +1334,7 @@
         "events": 12,
         "concerts": 5,
         "programs": 7,
-        "songs": 11
+        "songs": 10
       }
     },
     {
@@ -1446,7 +1446,7 @@
         "events": 34,
         "concerts": 13,
         "programs": 10,
-        "songs": 17
+        "songs": 16
       }
     },
     {
@@ -1556,7 +1556,7 @@
         "events": 16,
         "concerts": 4,
         "programs": 4,
-        "songs": 7
+        "songs": 6
       }
     },
     {
@@ -1889,7 +1889,7 @@
         "events": 37,
         "concerts": 15,
         "programs": 14,
-        "songs": 20
+        "songs": 19
       }
     },
     {
@@ -2112,7 +2112,7 @@
         "events": 14,
         "concerts": 8,
         "programs": 5,
-        "songs": 14
+        "songs": 13
       }
     },
     {
@@ -2558,7 +2558,7 @@
         "events": 26,
         "concerts": 10,
         "programs": 7,
-        "songs": 13
+        "songs": 12
       }
     },
     {
@@ -5120,7 +5120,7 @@
         }
       ],
       "stats": {
-        "events": 5,
+        "events": 4,
         "concerts": 3,
         "programs": 0,
         "songs": 5
@@ -7406,7 +7406,7 @@
         "events": 25,
         "concerts": 11,
         "programs": 8,
-        "songs": 8
+        "songs": 7
       }
     },
     {
@@ -7848,7 +7848,7 @@
         }
       ],
       "stats": {
-        "events": 5,
+        "events": 4,
         "concerts": 3,
         "programs": 1,
         "songs": 3
@@ -9910,7 +9910,7 @@
         "events": 41,
         "concerts": 14,
         "programs": 8,
-        "songs": 18
+        "songs": 17
       }
     },
     {
@@ -10306,5 +10306,5 @@
       }
     }
   ],
-  "build_id": "1ca3f91caf261e7747e9"
+  "build_id": "f22c200656deb8fbf947"
 }

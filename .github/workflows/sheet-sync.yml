@@ -1,16 +1,7 @@
 name: sheet-sync
 
-# 定时从官方 Google Sheet（赛马娘LIVE歌单导出）同步新歌单到 live_cat_data.json，
-# 并重建活动目录。服务器只需 git pull（服务端没有 Python 也能自动更新歌单）。
-#
-# 流程：
-#   1. auto_setlists.py  下载 Sheet -> 找出新歌单 -> 全自动插入 live_cat_data.json
-#      （series 系列公演不自动改，写入 report 等人工）
-#   2. 仅当 Sheet 同步真的改了源数据时，才跑 update_events.py 重建目录
-#      （避免无变化时每天刷 generated_at 造成噪音提交）
-#   3. 有改动就自动 commit + push
-#
-# 依赖：Python 3.12 + openpyxl + Pillow（update_events 只用标准库）
+# 唯一的 Google Sheet 写入链路：仅补唯一匹配的空白歌单。
+# 已有非空资料的差异只记录到工作流报告，留待人工处理；不发邮件。
 on:
   schedule:
     - cron: '16 2 * * *'        # 每天 02:16 UTC（北京时间 10:16）
@@ -44,9 +35,9 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
 
-      - name: Rebuild catalog if sheet sync changed sources
+      - name: Rebuild catalog if sheet sync filled a blank setlist
         run: |
-          if git status --porcelain -- data/live_cat_data.json data/events_data.json | grep -q .; then
+          if git status --porcelain -- data/live_cat_data.json | grep -q .; then
             echo "Sheet sync changed sources; rebuilding catalog..."
             python uma_tools/update_events.py
           else
@@ -55,9 +46,16 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
 
+      - name: Review skipped and conflicting rows
+        if: always()
+        run: |
+          if test -f data/events/sheet_apply_report.json; then
+            python -c "import json; r=json.load(open('data/events/sheet_apply_report.json')); print('Filled:',len(r['filled']),'Review:',len(r['review'])); [print(x) for x in r['review']]"
+          fi
+
       - name: Commit generated data (if changed)
         run: |
-          git add -A
+          git add data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
