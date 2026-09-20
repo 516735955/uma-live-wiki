@@ -65,6 +65,7 @@ const umaApp = createApp({
     let songCatalogLoadPromise = null;
     let relationshipLoadPromise = null;
     let homeSummaryLoadPromise = null;
+    let pedigreeLoadPromise = null;
     const eventsAll = ref([]);
     const eventSeries = ref([]);
     const eventDetail = ref(null);
@@ -79,6 +80,7 @@ const umaApp = createApp({
     const songDbPerPage = 30;
     const appearanceIndex = ref({ voice_actors: {}, characters: {} });
     const appearanceLoading = reactive({});
+    const appearanceErrors = reactive({});
     const voiceProfiles = ref([]);
     const voiceLoading = ref(false);
     const homeStats = reactive({ songs: null, albums: null, live: null, performances: null, characters: null, voiceActors: null, events: null });
@@ -109,6 +111,8 @@ const umaApp = createApp({
     const dbView = ref(initialDatabaseView);
     const voiceDetail = ref(null);
     const charSection = ref('profile');
+    const pedigreeStatus = ref('idle');
+    const pedigreeError = ref('');
     const voiceSection = ref('profile');
     const otherSection = ref('relationships');
     const expandedRelationSongId = ref('');
@@ -176,7 +180,7 @@ const umaApp = createApp({
       return dataScriptPromises[src];
     }
     function loadCharacterUi() {
-      return loadDataScript('/uma_tools/character-ui.js?v=20260914-12', 'UmaCharacterUi').then(function () {
+      return loadDataScript('/uma_tools/character-ui.js?v=20260920-2', 'UmaCharacterUi').then(function () {
         if (window.UmaCharacterUi) Vue.nextTick(window.UmaCharacterUi.init);
       });
     }
@@ -216,6 +220,7 @@ const umaApp = createApp({
       if (!type || !id) return Promise.resolve();
       const key = type + ':' + id;
       if (appearanceLoads[key]) return appearanceLoads[key];
+      appearanceErrors[key] = '';
       appearanceLoading[key] = true;
       appearanceLoads[key] = api.request('/api/catalog/appearance' + api.query({ type: type, id: id }))
         .then(function (data) {
@@ -224,6 +229,7 @@ const umaApp = createApp({
           ((data && data.songs) || []).forEach(mergeSong);
         }).catch(function () {
           delete appearanceLoads[key];
+          appearanceErrors[key] = '资料暂时无法载入，请重试。';
         }).finally(function () {
           appearanceLoading[key] = false;
         });
@@ -231,6 +237,39 @@ const umaApp = createApp({
     }
     function appearanceIsLoading(type, id) {
       return !!appearanceLoading[type + ':' + id];
+    }
+    function appearanceError(type, id) {
+      return appearanceErrors[type + ':' + id] || '';
+    }
+    function retryAppearance(type, id) {
+      return loadRelationshipData(type, id);
+    }
+    function loadPedigreeData() {
+      if (window.PED_REL && window.PED_REL.length) {
+        pedigreeStatus.value = 'ready';
+        pedigreeError.value = '';
+        return Promise.resolve();
+      }
+      if (pedigreeLoadPromise) return pedigreeLoadPromise;
+      pedigreeStatus.value = 'loading';
+      pedigreeError.value = '';
+      const source = '/data/pedigree_data.js?v=20260920-1';
+      pedigreeLoadPromise = Promise.all([loadCharacterUi(), loadDataScript(source, 'PED_REL')])
+        .then(function () {
+          if (!window.PED_REL || !window.PED_REL.length) throw new Error('empty pedigree data');
+          pedigreeStatus.value = 'ready';
+          Vue.nextTick(renderCharBlood);
+        })
+        .catch(function () {
+          pedigreeLoadPromise = null;
+          delete dataScriptPromises[source];
+          pedigreeStatus.value = 'error';
+          pedigreeError.value = '血统资料暂时无法载入，请重试。';
+        });
+      return pedigreeLoadPromise;
+    }
+    function retryPedigree() {
+      loadPedigreeData();
     }
     function loadSongCatalog() {
       if (songCatalogLoadPromise) return songCatalogLoadPromise;
@@ -370,29 +409,31 @@ const umaApp = createApp({
     ];
 
     // 资料订正表单状态
+    const contactEmails = ['516735955@qq.com', 'alaemiryoung@163.com'];
+    const contactMailto = 'mailto:' + contactEmails[0] + '?cc=' + encodeURIComponent(contactEmails[1]);
     const fix = reactive({ page: '', kind: '', title: '', body: '', src: '', contact: '', agree: false });
     const fixDone = ref(false);
     const fixSendState = ref('');
+    const fixMailto = computed(function () {
+      const kind = { k1: '资料错误', k2: '缺少资料', k3: '翻译问题', k4: '图片问题', k5: '链接问题', k6: '其他' }[fix.kind] || '其他';
+      const subject = '【资料订正】' + (fix.title || '未分类') + ' - ' + kind;
+      const body = '页面 URL：' + fix.page + '\n问题类型：' + kind + '\n条目类型：' + (fix.title || '未选择') +
+        '\n正确内容应为：' + fix.body + '\n来源 / 依据 URL：' + (fix.src || '（无）') +
+        '\n联系方式：' + (fix.contact || '（无）');
+      return contactMailto + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
     function submitFix() {
-      if (!fix.page || !fix.body || !fix.agree || fixSendState.value === 'sending') return;
+      if (!fix.page || !fix.body || !fix.agree || fixSendState.value === 'sending' || fixSendState.value === 'ok') return;
       fixSendState.value = 'sending';
       const k = { k1: '资料错误', k2: '缺少资料', k3: '翻译问题', k4: '图片问题', k5: '链接问题', k6: '其他' };
       const kindText = k[fix.kind] || '其他';
-      const body =
-        '【资料订正报告】\n\n' +
-        '页面 URL：' + fix.page + '\n' +
-        '问题类型：' + kindText + '\n' +
-        '条目类型：' + (fix.title || '未选择') + '\n' +
-        '正确内容应为：' + fix.body + '\n' +
-        '来源 / 依据 URL：' + (fix.src || '（无）') + '\n' +
-        '联系方式：' + (fix.contact || '（无）');
       const subject = '【资料订正】' + (fix.title || '未分类') + ' - ' + kindText;
-      // 真实发送：POST 到 FormSubmit（第三方转发到 516735955@qq.com）
-      fetch('https://formsubmit.co/ajax/516735955@qq.com', {
+      fetch('https://formsubmit.co/ajax/' + contactEmails[0], {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           _subject: subject,
+          _cc: contactEmails[1],
           _template: 'table',
           _captcha: 'false',
           '页面 URL': fix.page,
@@ -404,17 +445,18 @@ const umaApp = createApp({
         })
       }).then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(function (result) {
+        if (!result || result.success === false || result.success === 'false' || !result.success) throw new Error('FormSubmit rejected the request');
         fixDone.value = true;
         fixSendState.value = 'ok';
       }).catch(function () {
-        // 发送失败则降级为 mailto 草稿
-        fixDone.value = true;
-        fixSendState.value = 'mailto';
-        window.location.href = 'mailto:516735955@qq.com?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent(body);
+        fixDone.value = false;
+        fixSendState.value = 'error';
       });
     }
     function goContributeFix() {
+      if (!fix.page && isAtomicView()) fix.page = window.location.href;
       home.value = false;
       activeTab.value = 'contribute';
       albumDetail.value = null;
@@ -430,24 +472,16 @@ const umaApp = createApp({
     function goContributeContact() {
       home.value = false;
       activeTab.value = 'contribute-contact';
-      albumDetail.value = null;
-      songDetail.value = null;
-      newsDetail.value = null;
-      liveView.value = 'eventHub';
+      clearEntityDetails();
       dbView.value = 'index';
-      charDetail.value = null; voiceDetail.value = null;
       resetPageScroll();
       pushUrl();
     }
     function goLegal(page) {
       home.value = false;
       activeTab.value = page === 'privacy' ? 'legal-privacy' : 'legal-terms';
-      albumDetail.value = null;
-      songDetail.value = null;
-      newsDetail.value = null;
-      liveView.value = 'eventHub';
+      clearEntityDetails();
       dbView.value = 'index';
-      charDetail.value = null; voiceDetail.value = null;
       resetPageScroll();
       pushUrl();
     }
@@ -518,8 +552,12 @@ const umaApp = createApp({
     });
     function contextBack() { history.back(); }
     const breadcrumbItems = computed(function () {
-      if (!isAtomicView()) return [];
       const items = [{ label: '首页', path: LANG_PREFIX }];
+      if (activeTab.value === 'contribute') return items.concat([{ label: '参与共建' }, { label: '资料订正' }]);
+      if (activeTab.value === 'contribute-contact') return items.concat([{ label: '参与共建' }, { label: '联系我们' }]);
+      if (activeTab.value === 'legal-privacy') return items.concat([{ label: '法律告知' }, { label: '隐私政策' }]);
+      if (activeTab.value === 'legal-terms') return items.concat([{ label: '法律告知' }, { label: '使用条款' }]);
+      if (!isAtomicView()) return [];
       if (newsDetail.value) return items.concat([{ label: '新闻', path: LANG_PREFIX + '/news' }, { label: newsTitle(newsDetail.value) }]);
       if (eventDetail.value) return items.concat([{ label: '活动', path: LANG_PREFIX + '/events' }, { label: eventDetail.value.title }]);
       if (albumDetail.value) return items.concat([{ label: '音乐' }, { label: '专辑', path: LANG_PREFIX + '/music/albums' }, { label: albumDetail.value.data.name }]);
@@ -533,7 +571,7 @@ const umaApp = createApp({
       charSection.value = section;
       pushUrl(true);
       if (section === 'pedigree') {
-        loadDataScript('/data/pedigree_data.js?v=20260911-8', 'PED_REL').then(function () { Vue.nextTick(renderCharBlood); });
+        loadPedigreeData();
       }
       if ((section === 'songs' || section === 'appearances') && charDetail.value) {
         loadRelationshipData('character', charDetail.value.id);
@@ -583,8 +621,17 @@ const umaApp = createApp({
       if (!box) return;
       box.innerHTML = '';
       var id = charDetail.value && charDetail.value.id;
-      if (!id) return;
-      if (typeof window.renderBloodGraphInDetail === 'function') window.renderBloodGraphInDetail(box, id);
+      if (!id || pedigreeStatus.value !== 'ready') return;
+      if (typeof window.renderBloodGraphInDetail !== 'function') {
+        pedigreeStatus.value = 'error';
+        pedigreeError.value = '血统组件暂时无法载入，请重试。';
+        return;
+      }
+      if (window.renderBloodGraphInDetail(box, id) === false) {
+        box.innerHTML = '';
+        pedigreeStatus.value = 'error';
+        pedigreeError.value = '该角色的血统资料尚未收录。';
+      }
     }
     Vue.watch(charDetail, function () {
       if (typeof window.renderCharacterDetail === 'function') Vue.nextTick(function () { window.renderCharacterDetail(null); });
@@ -2108,7 +2155,7 @@ const umaApp = createApp({
       audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, albumDetail, liveView, player, navItems, openNavGroup,
       navItemActive, toggleNavGroup, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
-      fix, fixDone, fixSendState, submitFix, goContributeFix, goContributeContact, goLegal,
+      fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, playSong, togglePlay, seek, styleWidth,
       nextSong, prevSong, playQueueAt, playAlbumAt, showQueue,
       enqueueAlbum, albumPlayableCount,
@@ -2124,7 +2171,8 @@ const umaApp = createApp({
       eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailPerformances, songSingerLabel, playableSongRelease, playCatalogSong, playSongRelease, playRelationRelease, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
-      voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, LANG_PREFIX,
+      voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
+      pedigreeStatus, pedigreeError, retryPedigree,
       otherSection, setOtherSection, curatedVideos,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
       historyKindOptions, albumSortOptions, fixTitleOptions,

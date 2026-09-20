@@ -32,7 +32,7 @@
         });
         card.style.setProperty('--color-main', c.main || '#8c83ff');
         card.style.setProperty('--color-sub', c.sub || '#ece9ff');
-        var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
+        var imageAttrs = (i < 2 ? ' loading="eager"' : ' loading="lazy"') + (i === 0 ? ' fetchpriority="high"' : '') + ' decoding="async"';
         card.innerHTML =
           '<dl>' +
             '<dt>' +
@@ -113,26 +113,14 @@
       message = '该角色为纯原创赛马娘，无现实原型，不提供血缘关系图。';
     }
     if (message) {
-      var note = document.createElement('section');
-      note.className = 'c-blood c-blood-pure';
-      note.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
-        '<p class="c-blood-pure-note">' + message + '</p>';
+      var note = document.createElement('p');
+      note.className = 'pedigree-empty';
+      note.textContent = message;
       box.appendChild(note);
-      return;
+      return true;
     }
 
-    if (!relation) {
-      var missing = document.createElement('section');
-      missing.className = 'c-blood c-blood-pure';
-      missing.innerHTML = '<div class="c-blood-head"><h3 class="c-blood-title">血缘关系图</h3></div>' +
-        '<p class="c-blood-pure-note">血统数据载入失败。</p>' +
-        '<button type="button" class="c-blood-retry">重新载入</button>';
-      missing.querySelector('.c-blood-retry').addEventListener('click', function () {
-        window.location.reload();
-      });
-      box.appendChild(missing);
-      return;
-    }
+    if (!relation) return false;
     var lens = document.createElement('section');
     lens.className = 'c-pedigree-lens';
     var frame = document.createElement('iframe');
@@ -144,9 +132,9 @@
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
       '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-15">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
-      ';window.PEDIGREE_EMBEDDED=true;<\/script>' +
-      '<script defer src="/data/character_index_data.js?v=20260913"><\/script>' +
-      '<script defer src="/data/pedigree_data.js?v=20260911-8"><\/script>' +
+      ';window.PEDIGREE_EMBEDDED=true;' +
+      'window.CHAR_INDEX=window.parent.CHAR_INDEX||[];' +
+      'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
       '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-20"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
       '<section class="lab-workspace" aria-labelledby="workspace-title">' +
@@ -164,6 +152,7 @@
     frame.loading = 'lazy';
     lens.appendChild(frame);
     box.appendChild(lens);
+    return true;
   }
 
   function openCharDetailGlobal(id) {
@@ -326,7 +315,7 @@
           var roleImage = role.image ? '<img src="' + role.image + '" alt="">' : '<span class="performer-chip-fallback" aria-hidden="true">' + (role.zh || '?').charAt(0) + '</span>';
           return '<span class="performer-chip character-chip" style="--chip-color:' + role.main + '">' + roleImage + '<span>' + role.zh + '</span></span>';
         }).join('');
-        var imageAttrs = i < 4 ? ' loading="eager"' + (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"';
+        var imageAttrs = (i < 2 ? ' loading="eager"' : ' loading="lazy"') + (i === 0 ? ' fetchpriority="high"' : '') + ' decoding="async"';
         var imgHtml = ph
           ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'
           : '<span class="va-ph-fb">' + (v.zh || v.ja || '?').charAt(0) + '</span>';
