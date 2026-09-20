@@ -30,3 +30,4 @@ __pycache__/
 
 # 歌单同步差异报告由工作流输出，不作为第二份数据源
 data/events/sheet_apply_report.json
+data/events/program_refresh_report.json

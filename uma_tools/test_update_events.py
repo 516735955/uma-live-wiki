@@ -210,6 +210,46 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         )
         self.assertFalse(UPDATE_EVENTS.is_official_special_video("【ラジオ切り抜き】レースの模様をお届け！"))
 
+    def test_program_refresh_is_additive_and_preserves_reviewed_values(self):
+        existing = {
+            "schema_version": 2,
+            "programs": [{
+                "id": "program-1",
+                "series_id": "official-special",
+                "title": "人工确认标题",
+                "date": "",
+                "cast": [{"name": "确认声优"}],
+                "sources": [{"kind": "official_announcement", "url": "https://example.com/old"}],
+            }],
+        }
+        discovered = {
+            "schema_version": 2,
+            "coverage": {"records": 2},
+            "programs": [
+                {
+                    "id": "program-1",
+                    "series_id": "official-special",
+                    "title": "自动发现的不同标题",
+                    "date": "2026-09-20",
+                    "cast": [{"name": "自动发现的不同出演者"}],
+                    "sources": [{"kind": "official_youtube", "url": "https://example.com/new"}],
+                },
+                {"id": "program-2", "series_id": "official-special", "title": "新节目", "date": "2026-09-21"},
+            ],
+        }
+        merged, report = UPDATE_EVENTS.apply_additive_program_refresh(existing, discovered)
+        first = next(row for row in merged["programs"] if row["id"] == "program-1")
+        self.assertEqual(first["title"], "人工确认标题")
+        self.assertEqual(first["cast"], [{"name": "确认声优"}])
+        self.assertEqual(first["date"], "2026-09-20")
+        self.assertEqual(len(first["sources"]), 2)
+        self.assertEqual(report["added_ids"], ["program-2"])
+        self.assertEqual(report["filled"], [{"id": "program-1", "fields": ["date", "sources"]}])
+        self.assertEqual(
+            {(row["id"], row["field"]) for row in report["conflicts"]},
+            {("program-1", "cast"), ("program-1", "title")},
+        )
+
     def test_setlist_relationships_are_parsed_per_song_row(self):
         class Identities:
             @staticmethod
@@ -226,6 +266,26 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 {"song": "Song A", "character_ids": ["specialweek"]},
                 {"song": "Song B", "character_ids": ["silencesuzuka"]},
             ],
+        )
+
+    def test_non_uma_singers_are_kept_on_their_song_row(self):
+        class Identities:
+            @staticmethod
+            def character_id(name):
+                return {"特别周": "specialweek"}.get(name, "")
+
+        table = """<table><tbody><tr>
+        <td class="setlist-song">Song C</td>
+        <td class="setlist-perf"><span class="perf-name">特别周</span>
+        <span class="guest-performer">外部歌手</span></td>
+        </tr></tbody></table>"""
+        self.assertEqual(
+            UPDATE_EVENTS.table_performances(table, Identities()),
+            [{
+                "song": "Song C",
+                "character_ids": ["specialweek"],
+                "guest_performers": ["外部歌手"],
+            }],
         )
 
     def test_animax_guests_stay_in_songs_not_uma_cast(self):
@@ -600,6 +660,28 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(len(cast), 1)
         self.assertEqual(cast[0]["character_id"], "character-a")
         self.assertEqual(cast[0]["role"], "角色甲")
+
+    def test_non_uma_people_never_enter_public_event_cast(self):
+        class Identities:
+            profile_by_id = {}
+            character_by_id = {}
+
+            @staticmethod
+            def voice_id(_name):
+                return ""
+
+            @staticmethod
+            def current_character_id(_actor_id):
+                return ""
+
+        self.assertEqual(
+            UPDATE_EVENTS.make_cast(
+                [{"name": "外部歌手", "role": "嘉宾", "person_type": "guest_artist"}],
+                Identities(),
+                "curated_live_cast",
+            ),
+            [],
+        )
 
     def test_wikipedia_search_identity_rejects_unrelated_people(self):
         self.assertEqual(UPDATE_EVENTS.wikipedia_title_key("中島由貴 (声優)"), UPDATE_EVENTS.wikipedia_title_key("中島由貴"))

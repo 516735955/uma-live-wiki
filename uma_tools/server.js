@@ -1004,7 +1004,7 @@ server.listen(PORT, () => {
 // ---- Events auto-crawl (Eventernote -> events_data.json) ----
 const { execFile } = require('child_process');
 const CRAWL_SCRIPT = path.join(__dirname, 'crawl_events.py');
-const EVENT_BUILD_SCRIPT = path.join(__dirname, 'update_events.py');
+const OFFICIAL_PROGRAM_SCRIPT = path.join(__dirname, 'crawl_official_programs.py');
 let crawlRunning = false;
 let catalogRefreshRunning = false;
 let catalogRefreshQueued = false;
@@ -1055,7 +1055,10 @@ function runEventsCrawl(reason, done) {
 
 function runEventBuild(reason, done) {
   const t0 = Date.now();
-  execFile(PYTHON_BIN, [EVENT_BUILD_SCRIPT, '--refresh-all'], { windowsHide: true }, (err, stdout, stderr) => {
+  // Program discovery rebuilds and validates the unified catalogs itself.
+  // Voice-actor biographies are a slower, separately reviewed maintenance job
+  // and must not be re-scraped by every six-hour event refresh.
+  execFile(PYTHON_BIN, [OFFICIAL_PROGRAM_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
     const tag = '[events-build ' + reason + ']';
     if (err) {
       console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
