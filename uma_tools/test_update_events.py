@@ -362,6 +362,45 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(character_version["version_label"], "Game Size / 角色独唱：スペシャルウィーク")
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
 
+    def test_song_version_override_folds_alias_into_base_work(self):
+        class Identities:
+            @staticmethod
+            def character_id(_name):
+                return ""
+
+            @staticmethod
+            def voice_id(_name):
+                return ""
+
+            @staticmethod
+            def current_character_id(_actor_id):
+                return ""
+
+            profile_by_id = {}
+            character_by_id = {}
+
+            @staticmethod
+            def character_payload(_character_id):
+                return {}
+
+        albums = [{
+            "name": "Album A", "catalog": "ABC-1", "release": "2024-01-01", "type": "专辑", "cover": "cover.jpg",
+            "songs": [{"name": "Song A", "artist": "Singer", "url": "a"}],
+        }]
+        events = [{
+            "id": "event-a", "title": "Event A", "date": "2024-02-01", "kind": "concert", "series_id": "test",
+            "sessions": [{"id": "event-a-session-1", "label": "DAY1", "date": "2024-02-01", "performances": [{"song": "Song B", "character_ids": []}]}],
+        }]
+        overrides = {"song_versions": {"Song B": "Song A"}}
+        catalog = UPDATE_EVENTS.build_song_catalog(albums, events, Identities(), "2024-02-02T00:00:00+00:00", overrides)
+        self.assertEqual(catalog["coverage"]["songs"], 1)
+        self.assertEqual(catalog["songs"][0]["title"], "Song A")
+        version = next(row for row in catalog["songs"][0]["versions"] if row["title"] == "Song B")
+        self.assertEqual(version["version_label"], "Song B")
+        self.assertEqual(version["release_count"], 0)
+        self.assertEqual(version["performance_count"], 1)
+        self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
+
     def test_release_credits_resolve_to_one_actor_and_character(self):
         built = UPDATE_EVENTS.build()
         special_week = next(

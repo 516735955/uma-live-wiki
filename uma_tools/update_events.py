@@ -375,6 +375,26 @@ def split_song_version(title: str, identities: "IdentityIndex", known_titles: se
     return base or clean_song(title), " / ".join(label for label in labels if label)
 
 
+def song_version_override(title: str, overrides: dict[str, Any] | None) -> tuple[str, str] | None:
+    """Resolve an explicit base/label split declared in overrides['song_versions']."""
+    table = (overrides or {}).get("song_versions") or {}
+    if not table:
+        return None
+    key = fold_song_key(title)
+    for alias, target in table.items():
+        if fold_song_key(str(alias)) != key:
+            continue
+        if isinstance(target, dict):
+            base = str(target.get("base") or "").strip()
+            label = str(target.get("label") or title).strip()
+        else:
+            base = str(target or "").strip()
+            label = clean_song(title)
+        if base:
+            return base, label
+    return None
+
+
 def stable_song_id(title: str) -> str:
     normalized = unicodedata.normalize("NFKC", title or "").strip()
     readable = stable_suffix(normalized)[:40]
@@ -443,6 +463,7 @@ def build_song_catalog(
     events: list[dict[str, Any]],
     identities: "IdentityIndex",
     generated_at: str,
+    overrides: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build one canonical work with explicit release/performance variants."""
     raw_titles = {
@@ -462,7 +483,11 @@ def build_song_catalog(
 
     def ensure_version(exact_title: str) -> tuple[dict[str, Any], dict[str, Any]]:
         title = clean_song(exact_title)
-        base, version_label = split_song_version(title, identities, raw_titles)
+        override = song_version_override(title, overrides)
+        if override:
+            base, version_label = override
+        else:
+            base, version_label = split_song_version(title, identities, raw_titles)
         work_key = fold_song_key(base)
         work = works.setdefault(work_key, {
             "id": stable_song_id(base), "title": base, "aliases": set(), "artists": set(),
@@ -3168,7 +3193,7 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     generated_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
-    songs_catalog = build_song_catalog(albums, events, identities, generated_at)
+    songs_catalog = build_song_catalog(albums, events, identities, generated_at, overrides)
     appearances = build_appearance_index(events, songs_catalog, identities)
     profiles = enrich_profiles(identities.profiles, appearances)
     current_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T18:17:04+00:00",
+  "generated_at": "2026-09-21T14:03:17+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "2ee7b52e5cd555c739f561000b2ef54446527f2555d1740145409f83d0a38c5c",
+      "sha256": "01ea65060a1e9dcddafc66a296ad6ef9c6d7ad67262f5b618f67af97dac88dad",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "0b45cc28db8379fea524259a26538d549a3a5f88727f6858c40a60d32867638d",
+      "sha256": "0afa1f599269b5da08baf403e670ceb26566c31524188a709edbda89bd1fa89d",
       "preserved": true
     }
   },
@@ -4553,7 +4553,7 @@
           "label": "本公演",
           "date": "2026-07-12",
           "songs": [
-            "UMA IN TOKYO",
+            "UMA IN AMERICA",
             "UMA Summer",
             "Ready!!! Steady!!! Derby!!!",
             "うまぴょい伝説",
@@ -4569,7 +4569,7 @@
           ],
           "performances": [
             {
-              "song": "UMA IN TOKYO",
+              "song": "UMA IN AMERICA",
               "character_ids": [
                 "espoircity",
                 "almondeye",
@@ -4579,9 +4579,9 @@
                 "foreveryoung"
               ],
               "setlist_no": "1",
-              "song_id": "song-uma-in-tokyo-80e6f40caa",
-              "version_id": "song-uma-in-tokyo-80e6f40caa-v-80e6f40caa",
-              "song_title": "UMA IN TOKYO"
+              "song_id": "song-uma-in-america-b359c2cb83",
+              "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
+              "song_title": "UMA IN AMERICA"
             },
             {
               "song": "UMA Summer",
@@ -4644,7 +4644,7 @@
               "song_title": "ONENESS"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">UMA IN TOKYO</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">UMA Summer</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Ready!!! Steady!!! Derby!!!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span><span class=\"perf-name\">オーイシマサヨシ（大石昌良）</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">ONENESS</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">UMA Summer</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Ready!!! Steady!!! Derby!!!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span><span class=\"perf-name\">オーイシマサヨシ（大石昌良）</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">ONENESS</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/EspoirCity.png\" alt=\"希望之城\" title=\"希望之城\"><span class=\"perf-name\">希望之城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
             "file": "data/live_cat_data.json",
             "category": "other",
@@ -6689,9 +6689,9 @@
                 "rulership"
               ],
               "setlist_no": "1",
-              "song_id": "song-uma-in-tokyo-80e6f40caa",
-              "version_id": "song-uma-in-tokyo-80e6f40caa-v-80e6f40caa",
-              "song_title": "UMA IN TOKYO"
+              "song_id": "song-uma-in-america-b359c2cb83",
+              "version_id": "song-uma-in-america-b359c2cb83-v-80e6f40caa",
+              "song_title": "UMA IN AMERICA"
             },
             {
               "song": "トレセン音頭",
@@ -106985,5 +106985,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "37640486b11c6fb754ee"
+  "build_id": "5b479110258d7bf8c72a"
 }
