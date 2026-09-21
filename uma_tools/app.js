@@ -1231,10 +1231,7 @@ const umaApp = createApp({
         const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
         if (requested) {
           const session = url.searchParams.get('session');
-          openEvent(requested).then(function () {
-            const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
-            selectedEventSessionId.value = sessions.some(function (item) { return item.id === session; })
-              ? session : ((sessions[0] && sessions[0].id) || '');
+          openEvent(requested, session).then(function () {
             pushUrl(true);
           });
         } else {
@@ -1265,7 +1262,7 @@ const umaApp = createApp({
         const target = legacy ? LANG_PREFIX + '/events/' + encodeURIComponent(legacy.id) : LANG_PREFIX + '/events';
         history.replaceState(history.state || {}, '', target);
         liveView.value = legacy ? 'eventDetail' : 'eventHub';
-        if (legacy) openEvent(legacy.id);
+        if (legacy) openEvent(legacy.id, url.searchParams.get('session'));
       } else if (first === 'database') {
         activeTab.value = 'database';
         const sub = (seg[1] || '').toLowerCase();
