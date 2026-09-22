@@ -147,39 +147,27 @@ Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 
 生产环境可将 [`deploy/nginx-uma-live-wiki.conf`](deploy/nginx-uma-live-wiki.conf) 包含进 HTTPS server block，
 使文本资源启用 gzip、图片使用长期缓存，并将 `/api/` 交给 Node 服务。发布后可用以下命令校验目录投影：
 
-生产 Node 服务使用 [`deploy/umamusume.service`](deploy/umamusume.service)。该单元固定启用
-`--no-crawl`，并将仓库内 `data/` 挂为只读：部署、重启与故障恢复只发布 Git 中已经审核的数据，
-不会顺带运行抓取器或改写资料。需要刷新资料时，应在维护工作树中显式运行上表中的对应命令，检查 Git diff
-并提交后再部署，不要在生产服务进程内执行自动刷新。
+生产 Node 服务使用 [`deploy/umamusume.service`](deploy/umamusume.service)，启用服务内自动刷新：启动即抓新闻，
+访问新闻接口时缓存超过 15 分钟会在后台更新；活动、角色、专辑与官方节目每 6 小时串行刷新一次，Lantis 新闻每天刷新。
+刷新结果写回仓库内 `data/`，而运行中的服务读取的是启动时的目录缓存，因此用
+[`deploy/umamusume-restart.timer`](deploy/umamusume-restart.timer) 每天凌晨 2 点重启一次，让目录改动生效；
+新闻不依赖重启（会实时更新）。
 
 ```bash
 sudo install -m 0644 deploy/umamusume.service /etc/systemd/system/umamusume.service
+sudo install -m 0644 deploy/umamusume-restart.service /etc/systemd/system/umamusume-restart.service
+sudo install -m 0644 deploy/umamusume-restart.timer /etc/systemd/system/umamusume-restart.timer
 sudo systemctl daemon-reload
 sudo systemctl enable --now umamusume.service
+sudo systemctl enable --now umamusume-restart.timer
 ```
 
-需要让生产数据（新闻、活动、专辑、Lantis 等）定期自动更新时，使用 [`deploy/umamusume-refresh.sh`](deploy/umamusume-refresh.sh)
-配合 `deploy/umamusume-refresh.service` 与 `deploy/umamusume-refresh.timer`。定时任务在一个可写的维护工作树中
-执行 `server.js --refresh-once`（新闻、目录、Lantis 各刷新一次后进程退出，不监听端口），把受版本控制的数据改动
-提交并推送，再把生产检出快进到最新提交并重启 `umamusume.service`。生产服务进程本身始终保持 `--no-crawl`，不参与抓取。
-
-```bash
-# 维护工作树（脚本会在缺失时按生产远端自动 clone；也可先手动准备）
-git clone --branch main <repo-url> /var/www/umamusume-maintenance
-sudo install -m 0755 deploy/umamusume-refresh.sh /usr/local/bin/umamusume-refresh
-sudo install -m 0644 deploy/umamusume-refresh.service /etc/systemd/system/umamusume-refresh.service
-sudo install -m 0644 deploy/umamusume-refresh.timer /etc/systemd/system/umamusume-refresh.timer
-# 允许刷新用户重启站点服务
-echo 'alaemiryoung ALL=(root) NOPASSWD: /bin/systemctl restart umamusume.service' | sudo tee /etc/sudoers.d/umamusume-refresh
-sudo systemctl daemon-reload
-sudo systemctl enable --now umamusume-refresh.timer
-```
-
-维护工作树需要能向远端推送（部署密钥或 token）；`uma_tools/lantis_news.json` 等被 gitignore 的运行时缓存
-会由脚本直接复制到生产目录。手动触发一次可运行 `sudo systemctl start umamusume-refresh.service`。
+自动刷新会改写生产检出中的 `data/`，这些改动不属于 Git；下次部署新提交前请先处理本地改动
+（例如 `git checkout -- data` 或 `git stash`），避免与 `git pull` 冲突。本地预览仍可用 `--no-crawl` 关闭全部后台刷新。
 
 ```bash
 npm --prefix uma_tools run test:catalog
+npm --prefix uma_tools run check:deployment -- https://umamusumelivewiki.top
 ```
 
 第二条命令会读取实际页面引用的带版本 CSS、JS，核对 gzip、长期缓存及新闻 API 响应头；若 nginx

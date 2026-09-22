@@ -1,0 +1,6 @@
+[Unit]
+Description=Restart Uma Musume Live Wiki to publish refreshed data
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart umamusume.service

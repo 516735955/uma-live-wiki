@@ -7,11 +7,13 @@ Type=simple
 User=alaemiryoung
 Group=alaemiryoung
 WorkingDirectory=/var/www/umamusume
-ExecStart=/usr/bin/node /var/www/umamusume/uma_tools/server.js 8080 /var/www/umamusume --no-crawl
+# Auto-refresh enabled: news refreshes on startup and on demand, catalogs every
+# 6 hours, Lantis daily. Refreshed data is written back into the checkout, so a
+# periodic restart (deploy/umamusume-restart.timer) makes catalog changes visible.
+ExecStart=/usr/bin/node /var/www/umamusume/uma_tools/server.js 8080 /var/www/umamusume
 Restart=on-failure
 RestartSec=3
 Environment=NODE_ENV=production
-ReadOnlyPaths=/var/www/umamusume/data
 
 [Install]
 WantedBy=multi-user.target
