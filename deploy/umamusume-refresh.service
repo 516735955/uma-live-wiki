@@ -1,0 +1,19 @@
+[Unit]
+Description=Uma Musume Live Wiki scheduled data refresh
+Documentation=file:///var/www/umamusume/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Runs as the deploy user that owns both checkouts and may restart the web unit.
+User=alaemiryoung
+Group=alaemiryoung
+Environment=PROD_DIR=/var/www/umamusume
+Environment=MAINT_DIR=/var/www/umamusume-maintenance
+Environment=BRANCH=main
+Environment=SERVICE=umamusume.service
+Environment=RESTART_CMD=sudo systemctl restart umamusume.service
+# A full refresh (characters + events + albums + programs + news) can take a while.
+TimeoutStartSec=3600
+ExecStart=/usr/local/bin/umamusume-refresh

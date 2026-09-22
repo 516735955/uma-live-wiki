@@ -1,6 +1,8 @@
 // Zero-dependency static file server for the 赛马娘 page.
-// Usage: node server.js [port] [root] [--no-crawl]
+// Usage: node server.js [port] [root] [--no-crawl | --refresh-once]
 //   --no-crawl disables background data refresh for ordinary local preview.
+//   --refresh-once runs one full refresh cycle (news + catalog + Lantis) and then
+//   exits; it never opens a listening socket. Used by scheduled maintenance jobs.
 // News proxy endpoints (official umamusume API lacks CORS headers, front-end calls same-origin):
 //   GET /api/news-index            -> merged fresh news list (pages 1..NEWS_TOP)
 //   GET /api/news-detail?id=<id>   -> single news detail
@@ -41,7 +43,8 @@ function requestAcceptsGzip(req) {
 
 const CLI_ARGS = process.argv.slice(2);
 const NO_AUTO_CRAWL = CLI_ARGS.includes('--no-crawl');
-const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
+const REFRESH_ONCE = CLI_ARGS.includes('--refresh-once');
+const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl' && arg !== '--refresh-once');
 const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
 const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
 const DATA_DIR = path.join(ROOT, 'data');
@@ -105,6 +108,7 @@ function reloadLantis() {
 
 let newsIndexCache = { at: 0, data: null };
 let newsRefreshPromise = null;
+let newsPersistPromise = Promise.resolve();
 try {
   const snapshot = JSON.parse(fs.readFileSync(NEWS_SNAPSHOT_FILE, 'utf8'));
   if (snapshot && Array.isArray(snapshot.information_list)) {
@@ -548,7 +552,7 @@ function backfillNewsImages(list, cb) {
 
 function persistNewsSnapshot(data) {
   const tempPath = NEWS_SNAPSHOT_FILE + '.' + process.pid + '.tmp';
-  fs.promises.writeFile(tempPath, JSON.stringify(data))
+  return fs.promises.writeFile(tempPath, JSON.stringify(data))
     .then(() => fs.promises.rename(tempPath, NEWS_SNAPSHOT_FILE))
     .catch(() => fs.promises.unlink(tempPath).catch(() => {}));
 }
@@ -613,14 +617,14 @@ function refreshNewsIndex() {
           generated_at: new Date().toISOString()
         };
         newsIndexCache = { at: Date.now(), data };
-        persistNewsSnapshot(data);
+        newsPersistPromise = persistNewsSnapshot(data);
         resolve(data);
 
         // Image discovery and translation improve the next response but never
         // delay the list currently being read by a visitor.
         backfillNewsImages(list, () => {
           newsIndexCache = { at: Date.now(), data };
-          persistNewsSnapshot(data);
+          newsPersistPromise = persistNewsSnapshot(data);
         });
         list.forEach((item) => {
           if (!item.title_zh) translateTitle(item.title, function () {});
@@ -985,21 +989,31 @@ function serveFile(filePath, req, res) {
   });
 }
 
-server.listen(PORT, () => {
-  console.log('Serving ' + ROOT + '  ->  http://localhost:' + PORT + '/');
-  console.log('News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...');
-  reloadLantis();
-  catalogStore.get().catch((error) => console.error('[catalog:warm]', error.message));
-  if (NO_AUTO_CRAWL) {
-    console.log('Automatic data refresh disabled (--no-crawl).');
-    return;
-  }
-  refreshNewsIndex().catch(() => {});
-  setTimeout(() => runCatalogRefresh('startup'), 60 * 1000);
-  setTimeout(() => runLantisCrawl('startup'), 90 * 1000);
-  setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
-  setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
-});
+if (REFRESH_ONCE) {
+  // Scheduled maintenance entrypoint: refresh once, then exit. No listening socket.
+  setImmediate(() => {
+    runRefreshOnce('maintenance').then(
+      () => process.exit(0),
+      (error) => { console.error('[refresh-once] fatal:', (error && error.stack) || error); process.exit(1); }
+    );
+  });
+} else {
+  server.listen(PORT, () => {
+    console.log('Serving ' + ROOT + '  ->  http://localhost:' + PORT + '/');
+    console.log('News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...');
+    reloadLantis();
+    catalogStore.get().catch((error) => console.error('[catalog:warm]', error.message));
+    if (NO_AUTO_CRAWL) {
+      console.log('Automatic data refresh disabled (--no-crawl).');
+      return;
+    }
+    refreshNewsIndex().catch(() => {});
+    setTimeout(() => runCatalogRefresh('startup'), 60 * 1000);
+    setTimeout(() => runLantisCrawl('startup'), 90 * 1000);
+    setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
+    setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
+  });
+}
 
 // ---- Events auto-crawl (Eventernote -> events_data.json) ----
 const { execFile } = require('child_process');
@@ -1073,8 +1087,8 @@ function runEventBuild(reason, done) {
 // ---- Lantis auto-crawl (umamusume.lantis.jp -> lantis_news.json) ----
 const LANTIS_SCRIPT = path.join(__dirname, 'crawl_lantis_news.py');
 let lantisRunning = false;
-function runLantisCrawl(reason) {
-  if (lantisRunning) return;
+function runLantisCrawl(reason, done) {
+  if (lantisRunning) { if (done) done(); return; }
   lantisRunning = true;
   const t0 = Date.now();
   execFile(PYTHON_BIN, [LANTIS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
@@ -1083,6 +1097,7 @@ function runLantisCrawl(reason) {
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
     else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's');
     reloadLantis();
+    if (done) done();
   });
 }
 
@@ -1104,4 +1119,25 @@ function runAlbumsCrawl(reason, done) {
     }
     if (done) done();
   });
+}
+
+// ---- One-shot maintenance refresh (--refresh-once -> deploy/umamusume-refresh.sh) ----
+// Runs the same steps as the automatic startup chain, sequentially, then resolves.
+// Individual step failures are logged but do not abort the remaining steps so a
+// scheduled job still commits whatever data it managed to refresh.
+function runRefreshOnce(reason) {
+  const tag = '[refresh-once]';
+  const attempt = (label, promise) => Promise.resolve(promise).then(
+    () => console.log(tag, label, 'ok'),
+    (error) => console.log(tag, label, 'FAILED:', String((error && error.message) || error))
+  );
+  const catalog = new Promise((resolve) => {
+    runCharsCrawl(reason, () => runEventsCrawl(reason, () => runAlbumsCrawl(reason, () => runEventBuild(reason, resolve))));
+  });
+  const lantis = new Promise((resolve) => runLantisCrawl(reason, resolve));
+  return attempt('news', refreshNewsIndex())
+    .then(() => newsPersistPromise)
+    .then(() => attempt('catalog', catalog))
+    .then(() => attempt('lantis', lantis))
+    .then(() => newsPersistPromise);
 }

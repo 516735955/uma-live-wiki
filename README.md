@@ -158,9 +158,28 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now umamusume.service
 ```
 
+需要让生产数据（新闻、活动、专辑、Lantis 等）定期自动更新时，使用 [`deploy/umamusume-refresh.sh`](deploy/umamusume-refresh.sh)
+配合 `deploy/umamusume-refresh.service` 与 `deploy/umamusume-refresh.timer`。定时任务在一个可写的维护工作树中
+执行 `server.js --refresh-once`（新闻、目录、Lantis 各刷新一次后进程退出，不监听端口），把受版本控制的数据改动
+提交并推送，再把生产检出快进到最新提交并重启 `umamusume.service`。生产服务进程本身始终保持 `--no-crawl`，不参与抓取。
+
+```bash
+# 维护工作树（脚本会在缺失时按生产远端自动 clone；也可先手动准备）
+git clone --branch main <repo-url> /var/www/umamusume-maintenance
+sudo install -m 0755 deploy/umamusume-refresh.sh /usr/local/bin/umamusume-refresh
+sudo install -m 0644 deploy/umamusume-refresh.service /etc/systemd/system/umamusume-refresh.service
+sudo install -m 0644 deploy/umamusume-refresh.timer /etc/systemd/system/umamusume-refresh.timer
+# 允许刷新用户重启站点服务
+echo 'alaemiryoung ALL=(root) NOPASSWD: /bin/systemctl restart umamusume.service' | sudo tee /etc/sudoers.d/umamusume-refresh
+sudo systemctl daemon-reload
+sudo systemctl enable --now umamusume-refresh.timer
+```
+
+维护工作树需要能向远端推送（部署密钥或 token）；`uma_tools/lantis_news.json` 等被 gitignore 的运行时缓存
+会由脚本直接复制到生产目录。手动触发一次可运行 `sudo systemctl start umamusume-refresh.service`。
+
 ```bash
 npm --prefix uma_tools run test:catalog
-npm --prefix uma_tools run check:deployment -- https://umamusumelivewiki.top
 ```
 
 第二条命令会读取实际页面引用的带版本 CSS、JS，核对 gzip、长期缓存及新闻 API 响应头；若 nginx
