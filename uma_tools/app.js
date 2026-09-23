@@ -115,6 +115,31 @@ const umaApp = createApp({
     const pedigreeError = ref('');
     const voiceSection = ref('profile');
     const otherSection = ref('relationships');
+    const horsesList = ref([]);
+    const horsesListError = ref('');
+    const horseDetail = ref(null);
+    const horseQuery = ref('');
+    const horsePage = ref(1);
+    const horsesPerPage = 30;
+    let horsesDataPromise = null;
+    let horsesListPromise = null;
+    function loadHorsesListData() {
+      if (window.HORSES && window.HORSES.length) {
+        horsesList.value = window.HORSES;
+        return Promise.resolve();
+      }
+      if (horsesListPromise) return horsesListPromise;
+      const source = '/data/horses_list.js?v=20260923-6';
+      horsesListPromise = loadDataScript(source, 'HORSES').then(function () {
+        if (!window.HORSES || !window.HORSES.length) throw new Error('empty horses list');
+        horsesList.value = window.HORSES;
+      }).catch(function () {
+        horsesListPromise = null;
+        delete dataScriptPromises[source];
+        throw new Error('horses list load failed');
+      });
+      return horsesListPromise;
+    }
     const expandedRelationSongId = ref('');
     const curatedVideos = [
       { id: 'BV1N83n6YEyT', title: '“笨蛋，我一直都认可你啊！”' },
@@ -271,6 +296,30 @@ const umaApp = createApp({
     function retryPedigree() {
       loadPedigreeData();
     }
+    function loadHorsesData() {
+      if (window.HORSES && window.HORSES.length && window.HORSES_DETAIL) {
+        horsesList.value = window.HORSES;
+        horsesListError.value = '';
+        return Promise.resolve();
+      }
+      if (horsesDataPromise) return horsesDataPromise;
+      horsesListError.value = '';
+      const detailSource = '/data/horses_details.js?v=20260923-6';
+      horsesDataPromise = Promise.all([
+        loadHorsesListData(),
+        loadDataScript(detailSource, 'HORSES_DETAIL')
+      ]).then(function () {
+        if (!window.HORSES_DETAIL) throw new Error('empty horses data');
+      }).catch(function () {
+        horsesDataPromise = null;
+        delete dataScriptPromises[detailSource];
+        horsesListError.value = '原型马资料暂时无法载入，请重试。';
+      });
+      return horsesDataPromise;
+    }
+    function retryHorses() {
+      loadHorsesData();
+    }
     function loadSongCatalog() {
       if (songCatalogLoadPromise) return songCatalogLoadPromise;
       songCatalogError.value = '';
@@ -311,7 +360,7 @@ const umaApp = createApp({
         const sub = (seg[1] || '').toLowerCase();
         const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos'
           ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
-        return Promise.resolve(characterReady).then(loadCharacterUi);
+        return Promise.all([Promise.resolve(characterReady), loadHorsesListData()]).then(loadCharacterUi);
       }
       if (first === 'events') return Promise.all([loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
       if (first !== 'database') return Promise.resolve();
@@ -327,9 +376,9 @@ const umaApp = createApp({
         const charPath = (seg[2] || '').toLowerCase();
         const characterReady = charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos'
           ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
-        return Promise.resolve(characterReady).then(loadCharacterUi);
+        return Promise.all([Promise.resolve(characterReady), loadHorsesListData()]).then(loadCharacterUi);
       }
-      if (sub === 'other') return Promise.resolve();
+      if (sub === 'other') return Promise.all([loadHorsesData(), loadCharacterIndexData()]);
       return Promise.resolve();
     }
     function loadHomeSummary() {
@@ -506,7 +555,7 @@ const umaApp = createApp({
       navigateTo(path);
     }
     function isAtomicView() {
-      return !!(newsDetail.value || eventDetail.value || albumDetail.value || songDetail.value || charDetail.value || voiceDetail.value);
+      return !!(newsDetail.value || eventDetail.value || albumDetail.value || songDetail.value || charDetail.value || voiceDetail.value || horseDetail.value);
     }
     function clearEntityDetails(except) {
       if (except !== 'news') {
@@ -522,12 +571,14 @@ const umaApp = createApp({
       if (except !== 'song') songDetail.value = null;
       if (except !== 'character') charDetail.value = null;
       if (except !== 'voice') voiceDetail.value = null;
+      if (except !== 'horse') horseDetail.value = null;
     }
     function routeWillBeAtomic(path) {
       const clean = String(path || '').split('?')[0].replace(/^\/zh-Hans/i, '');
       return /^\/(?:news|events)\/[^/]+$/.test(clean) ||
         /^\/music\/(?:songs|albums)\/[^/]+$/.test(clean) ||
-        /^\/database\/(?:characters|voice-actors)\/[^/]+$/.test(clean);
+        /^\/database\/(?:characters|voice-actors)\/[^/]+$/.test(clean) ||
+        /^\/database\/other\/horses\/[^/]+$/.test(clean);
     }
     function beginEntityNavigation() { pendingEntitySource = isAtomicView(); }
     function resetPageScroll() {
@@ -566,6 +617,7 @@ const umaApp = createApp({
       if (eventDetail.value) return items.concat([{ label: '活动', path: LANG_PREFIX + '/events' }, { label: eventDetail.value.title }]);
       if (albumDetail.value) return items.concat([{ label: '音乐' }, { label: '专辑', path: LANG_PREFIX + '/music/albums' }, { label: albumDetail.value.data.name }]);
       if (songDetail.value) return items.concat([{ label: '音乐' }, { label: '歌曲', path: LANG_PREFIX + '/music/songs' }, { label: songDetail.value.title }]);
+      if (horseDetail.value) return items.concat([{ label: '资料库' }, { label: '其他', path: LANG_PREFIX + '/database/other' }, { label: '原型马', path: LANG_PREFIX + '/database/other/horses' }, { label: horseDetail.value.zh || horseDetail.value.en || horseDetail.value.id }]);
       if (charDetail.value) return items.concat([{ label: '资料库' }, { label: '角色', path: LANG_PREFIX + '/database/characters' }, { label: charDetail.value.zh }]);
       if (voiceDetail.value) return items.concat([{ label: '资料库' }, { label: '声优', path: LANG_PREFIX + '/database/voice-actors' }, { label: voiceDetail.value.zh }]);
       return [];
@@ -595,8 +647,10 @@ const umaApp = createApp({
       pushUrl(true);
     }
     function setOtherSection(section) {
-      if (section !== 'relationships' && section !== 'videos') return;
+      if (['relationships', 'videos', 'horses', 'jockeys'].indexOf(section) === -1) return;
       otherSection.value = section;
+      horseDetail.value = null;
+      if (section === 'horses') loadHorsesData();
       pushUrl();
     }
     function openCharacter(id) {
@@ -620,6 +674,127 @@ const umaApp = createApp({
     function openCharDetail(id) {
       return openCharacter(id);
     }
+    function findHorseById(id) {
+      if (!id) return null;
+      const arr = (window.HORSES && window.HORSES.length) ? window.HORSES : horsesList.value;
+      const norm = String(id).toLowerCase();
+      for (let i = 0; i < arr.length; i++) {
+        if (String(arr[i].id || '').toLowerCase() === norm) return arr[i];
+      }
+      return null;
+    }
+    const horseFiltered = computed(function () {
+      let rows = horsesList.value.slice();
+      const query = String(horseQuery.value || '').trim().toLowerCase();
+      if (query) {
+        rows = rows.filter(function (horse) {
+          return String(horse.zh || '').toLowerCase().indexOf(query) !== -1 ||
+            String(horse.ja || '').toLowerCase().indexOf(query) !== -1 ||
+            String(horse.en || '').toLowerCase().indexOf(query) !== -1 ||
+            String(horse.birthdate || '').indexOf(query) !== -1;
+        });
+      }
+      return rows;
+    });
+    const horsePaged = computed(function () {
+      const start = (horsePage.value - 1) * horsesPerPage;
+      return horseFiltered.value.slice(start, start + horsesPerPage);
+    });
+    const horsePageCount = computed(function () {
+      return Math.max(1, Math.ceil(horseFiltered.value.length / horsesPerPage));
+    });
+    const horsePageStart = computed(function () {
+      return horseFiltered.value.length ? (horsePage.value - 1) * horsesPerPage + 1 : 0;
+    });
+    const horsePageEnd = computed(function () {
+      return Math.min(horsePage.value * horsesPerPage, horseFiltered.value.length);
+    });
+    const horsePageList = computed(function () {
+      return pagerList(horsePage.value, horsePageCount.value);
+    });
+    function setHorsePage(page) {
+      const next = Math.min(Math.max(1, Number(page) || 1), horsePageCount.value);
+      horsePage.value = next;
+      resetPageScroll();
+      pushUrl();
+    }
+    function goHorsePage(page) {
+      setHorsePage(page);
+    }
+    function openHorse(id) {
+      beginEntityNavigation();
+      const show = function () {
+        if (!window.HORSES_DETAIL || !window.HORSES_DETAIL[id]) return;
+        clearEntityDetails('horse');
+        activeTab.value = 'database';
+        dbView.value = 'other';
+        otherSection.value = 'horses';
+        horseDetail.value = window.HORSES_DETAIL[id];
+        horseQuery.value = '';
+        resetPageScroll();
+        pushUrl();
+      };
+      return Promise.resolve(loadHorsesData()).then(show, show);
+    }
+    const horseFacts = computed(function () {
+      const facts = (horseDetail.value && horseDetail.value.facts) || {};
+      const defs = [
+        ['sire', '父系'], ['dam', '母系'], ['damsire', '外祖父'],
+        ['owner', '马主'], ['breeder', '生产牧场'], ['farm', '牧场'], ['trainer', '调教师'], ['stable', '厩舍'],
+        ['record', '战绩'], ['earnings', '总赏金'], ['registration', '登记'], ['country', '产地']
+      ];
+      return defs.filter(function (entry) {
+        return String(facts[entry[0]] || '').trim();
+      }).map(function (entry) {
+        return { name: entry[1], value: String(facts[entry[0]]).trim() };
+      });
+    });
+    function horseSexLabel(horse) {
+      const sex = horse && horse.sex;
+      if (sex === 'male') return '牡马';
+      if (sex === 'female') return '牝马';
+      return '—';
+    }
+    function horseForCharacter(characterId) {
+      const normalized = String(characterId || '').toLowerCase();
+      let pool = (window.HORSES && window.HORSES.length) ? window.HORSES : [];
+      if (!pool.length && window.HORSES_DETAIL) pool = Object.keys(window.HORSES_DETAIL).map(function (key) { return window.HORSES_DETAIL[key]; });
+      for (let i = 0; i < pool.length; i++) {
+        const horse = pool[i];
+        if (String(horse.id || '').toLowerCase() === normalized) return horse;
+        if ((horse.cids || []).some(function (cid) { return String(cid || '').toLowerCase() === normalized; })) return horse;
+      }
+      return null;
+    }
+    function horseUrlForCharacter(characterId) {
+      const horse = horseForCharacter(characterId);
+      return horse ? LANG_PREFIX + '/database/other/horses/' + encodeURIComponent(horse.id) : '';
+    }
+    function openHorseForCharacter(characterId) {
+      const horse = horseForCharacter(characterId);
+      if (horse) openHorse(horse.id);
+    }
+    function horseChars(horse) {
+      return (horse && horse.cids || []).map(function (cid) {
+        const character = findCharById(cid);
+        return { id: cid, zh: character ? character.zh : cid };
+      });
+    }
+    function horseSourceName(url) {
+      const value = String(url || '');
+      if (value.indexOf('jbis.or.jp') !== -1) return 'JBIS（轻井泽赛马信息）';
+      if (value.indexOf('db.netkeiba.com') !== -1) return 'netkeiba';
+      if (value.indexOf('zh.wikipedia.org') !== -1) return '中文维基百科';
+      if (value.indexOf('ja.wikipedia.org') !== -1) return '日文维基百科';
+      return value;
+    }
+    function onHorseImageError(event) {
+      const image = event && event.currentTarget;
+      if (!image) return;
+      const replaced = '/uma_tools/img/album-placeholder.svg';
+      if (!String(image.src || '').endsWith('album-placeholder.svg')) image.src = replaced;
+    }
+    watch(horseQuery, function () { horsePage.value = 1; });
     function renderCharBlood() {
       var box = document.getElementById('cCharBlood');
       if (!box) return;
@@ -1115,7 +1290,19 @@ const umaApp = createApp({
               if (params.length) path += '?' + params.join('&');
             }
           } else if (dbView.value === 'other') {
-            path = LANG_PREFIX + '/database/other/' + otherSection.value;
+            if (otherSection.value === 'horses') {
+              path = LANG_PREFIX + '/database/other/horses';
+              if (horseDetail.value && horseDetail.value.id) {
+                path += '/' + encodeURIComponent(horseDetail.value.id);
+              } else {
+                const params = [];
+                if (horseQuery.value) params.push('q=' + encodeURIComponent(horseQuery.value));
+                if (horsePage.value > 1) params.push('page=' + horsePage.value);
+                if (params.length) path += '?' + params.join('&');
+              }
+            } else {
+              path = LANG_PREFIX + '/database/other/' + otherSection.value;
+            }
           } else {
             path = LANG_PREFIX + '/database/characters';
           }
@@ -1157,6 +1344,7 @@ const umaApp = createApp({
       voiceDetail.value = null;
       charDetail.value = null;
       songDetail.value = null;
+      horseDetail.value = null;
       liveView.value = 'eventHub';
       selectedEventSessionId.value = '';
       activeTab.value = 'database';
@@ -1296,7 +1484,21 @@ const umaApp = createApp({
           return syncFromUrl();
         } else if (sub === 'other') {
           dbView.value = 'other';
-          otherSection.value = seg[2] === 'videos' ? 'videos' : 'relationships';
+          const sec = seg[2] ? decodeURIComponent(seg[2]) : '';
+          if (sec === 'horses') {
+            otherSection.value = 'horses';
+            horseDetail.value = (seg[3] && window.HORSES_DETAIL) ? window.HORSES_DETAIL[decodeURIComponent(seg[3])] || null : null;
+            horseQuery.value = url.searchParams.get('q') || '';
+            const horsePageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
+            horsePage.value = (isNaN(horsePageFromUrl) || horsePageFromUrl < 1) ? 1 : horsePageFromUrl;
+            loadHorsesData();
+          } else if (sec === 'videos' || sec === 'jockeys') {
+            otherSection.value = sec;
+            horseDetail.value = null;
+          } else {
+            otherSection.value = 'relationships';
+            horseDetail.value = null;
+          }
         } else {
           dbView.value = 'characters';
           history.replaceState(history.state || {}, '', LANG_PREFIX + '/database/characters');
@@ -2276,9 +2478,11 @@ const umaApp = createApp({
       eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailPerformances, songSingerLabel, playableSongRelease, playCatalogSong, playSongRelease, playRelationRelease, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
+      horseUrlForCharacter, openHorseForCharacter,
       voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,
-      otherSection, setOtherSection, curatedVideos,
+      otherSection, setOtherSection, curatedVideos, horseFacts,
+      horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
       historyKindOptions, albumSortOptions, fixTitleOptions,
       backTopVisible, updateBackTop, backToTop, bindAudio
