@@ -319,6 +319,7 @@ _PHOTO_EXT = ('.jpg', '.jpeg', '.png', '.webp')
 # 纪念物/非主体图特征（铜像/墓/勋章/logo 等不算马匹照片）
 _NON_HORSE_PHOTO = re.compile(
     r'statue|tomb|grave|monument|memorial|bust|logo|crest|jockey|owner|pedigree|'
+    r'requestpicture|nuvola|placeholder|question|wikipedia|commons|ambox|icon|\.svg|'
     r'墓|銅像|像$|記念|記章|ロゴ', re.I
 )
 # netkeiba 无图时的默认占位照
@@ -560,6 +561,14 @@ def field_match(fields, aliases):
     return ''
 
 
+def valid_date(value):
+    """日期字段须含 4 位年份，滤掉 p=0 等解析杂串与 JBIS 龄数后缀。"""
+    text = strip_markup(value or '')
+    if not re.search(r'\d{4}', text):
+        return ''
+    return re.sub(r'\s*\(?\d+歳\)?\s*$', '', text).strip()
+
+
 def split_top_level(text, separator='|'):
     """按顶层分隔符切分（避开 {{...}} 内层）。"""
     parts = []
@@ -717,10 +726,12 @@ def trim_paragraphs(items, limit, width):
 
 # ------------------------------------------------------------------- jbis --
 
-def search_jbis_url(name):
-    """按马名在 JBIS 搜索马档案页，返回 URL；找不到返回 ''。"""
+def search_jbis_url(name, born=''):
+    """按马名在 JBIS 搜索马档案页，返回 URL；找不到返回 ''。
+    同名多匹时按档案页生年月日与 born 年份消歧。"""
     if not name:
         return ''
+    want_year = re.sub(r'\D', '', str(born or ''))[:4]
     for mode in ('exact', 'prefix'):
         url = ('https://www.jbis.or.jp/horse/result/?sid=horse&match=%s&keyword=%s'
                % (mode, urllib.parse.quote(name)))
@@ -728,16 +739,35 @@ def search_jbis_url(name):
             html = http_get(url)
         except Exception:  # noqa: BLE001
             continue
-        prefix_hit = ''
-        for match in re.finditer(r'<a href="(/horse/[0-9a-f]+/)"[^>]*>([^<]+)</a>', html):
-            label = html_lib.unescape(match.group(2)).strip()
+        ids = []
+        prefix_id = ''
+        # 卡片标题链接 class 精确为 txt-link（父母行是 txt-link txt-overflow，不匹配）
+        for match in re.finditer(r'<a href="(/horse/([0-9a-f]+)/)" class="txt-link">([^<]+)</a>', html):
+            label = html_lib.unescape(match.group(3)).strip()
             base = re.sub(r'\([^)]*\)\s*$', '', label).strip()
+            hid = match.group(2)
             if label == name or base == name:
-                return 'https://www.jbis.or.jp' + match.group(1)
-            if mode == 'prefix' and not prefix_hit and (base.startswith(name) or name.startswith(base)):
-                prefix_hit = 'https://www.jbis.or.jp' + match.group(1)
-        if prefix_hit:
-            return prefix_hit
+                if hid not in ids:
+                    ids.append(hid)
+            elif mode == 'prefix' and not prefix_id and (base.startswith(name) or name.startswith(base)):
+                prefix_id = hid
+        if not ids and prefix_id:
+            ids = [prefix_id]
+        if not ids:
+            continue
+        if len(ids) == 1 or not want_year:
+            return 'https://www.jbis.or.jp/horse/%s/' % ids[0]
+        # 同名多匹：按生年消歧
+        for hid in ids:
+            try:
+                page = http_get('https://www.jbis.or.jp/horse/%s/' % hid)
+                m = re.search(r'生年月日</dt>\s*<dd[^>]*>([^<]+)', page)
+                birth = html_lib.unescape(m.group(1)).strip() if m else ''
+            except Exception:  # noqa: BLE001
+                continue
+            if want_year in re.sub(r'\D', '', birth):
+                return 'https://www.jbis.or.jp/horse/%s/' % hid
+        return 'https://www.jbis.or.jp/horse/%s/' % ids[0]
     return ''
 
 
@@ -952,7 +982,10 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             print('  [wiki info fail] %s %s' % (horse['id'], exc))
         time.sleep(WIKI_SLEEP)
         wikitext = wiki_wikitext(lang, title) if use_wiki else ''
-        record['photo'] = info['photo']
+        # wiki 首图须像马匹照片（拒绝求图占位/马主纹章/logo 等；只查文件名防误伤 wikimedia 域名）
+        photo_name = urllib.parse.unquote((info['photo'] or '').split('/')[-1])
+        if info['photo'] and not _NON_HORSE_PHOTO.search(photo_name):
+            record['photo'] = info['photo']
         record['wiki'] = {'lang': lang, 'zh': title if lang == 'zh' else '',
                           'ja': title if lang == 'ja' else ''}
         record['sources'].append({
@@ -966,7 +999,7 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
         record['facts']['damsire'] = field_match(fields, FIELD_ALIASES['damsire'])
         record['facts']['sex'] = field_match(fields, FIELD_ALIASES['sex'])
         if not record.get('birthdate'):
-            record['birthdate'] = field_match(fields, FIELD_ALIASES['foaled'])
+            record['birthdate'] = valid_date(field_match(fields, FIELD_ALIASES['foaled']))
         record['death'] = field_match(fields, FIELD_ALIASES['death'])
         record['colour'] = field_match(fields, FIELD_ALIASES['colour'])
         record['facts']['owner'] = field_match(fields, FIELD_ALIASES['owner'])
@@ -993,7 +1026,8 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
 
     # ---- JBIS ----
     if use_jbis and not (record['jbis'] and 'jbis.or.jp' in record['jbis']):
-        jbis_url = search_jbis_url(record['ja']) or search_jbis_url(record['en'])
+        jbis_url = (search_jbis_url(record['ja'], record['born'])
+                    or search_jbis_url(record['en'], record['born']))
         if jbis_url:
             record['jbis'] = jbis_url
             print('  [jbis found] %s %s' % (horse['id'], jbis_url))
@@ -1027,7 +1061,7 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             if not facts.get('earnings'):
                 facts['earnings'] = profile.get('総賞金', '')
             if not record.get('birthdate'):
-                record['birthdate'] = profile.get('生年月日', '')
+                record['birthdate'] = valid_date(profile.get('生年月日', ''))
             if not record.get('colour'):
                 record['colour'] = profile.get('毛色', '')
             if not facts.get('country'):
@@ -1038,6 +1072,13 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             record['jbis_pedigree'] = parsed.get('pedigree') or []
     if not record['photo']:
         record['photo'] = fill_missing_photo(record)
+    # 生年终检：birthdate 年份与源数据 born 冲突时丢弃（防同名 JBIS 错配日期）
+    born_year = re.sub(r'\D', '', str(record.get('born') or ''))[:4]
+    birth_year = re.sub(r'\D', '', str(record.get('birthdate') or ''))[:4]
+    if born_year and birth_year and born_year != birth_year:
+        print('  [birth year mismatch] %s born=%s bd=%s -> drop bd' % (
+            record['id'], record.get('born'), record.get('birthdate')))
+        record['birthdate'] = ''
     return record
 
 
