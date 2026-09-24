@@ -76,7 +76,7 @@ def http_get(url, binary=False, timeout=60):
             data = handle.read()
         return data if binary else data.decode('utf-8', 'replace')
     os.makedirs(CACHE_DIR, exist_ok=True)
-    needs_proxy = ('wikipedia.org' in url) or ('upload.wikimedia.org' in url)
+    needs_proxy = ('wikipedia.org' in url) or ('wikimedia.org' in url) or ('netkeiba.com' in url)
     order = [True, False] if needs_proxy else [False, True]
     last_error = None
     for attempt in range(3):
@@ -168,13 +168,48 @@ def born_sort(value):
 # -------------------------------------------------------------- wikipedia --
 
 def api_get(lang, params):
-    url = 'https://%s.wikipedia.org/w/api.php?%s' % (
-        lang, urllib.parse.urlencode(params))
+    host = 'commons.wikimedia.org' if lang == 'commons' else '%s.wikipedia.org' % lang
+    url = 'https://%s/w/api.php?%s' % (host, urllib.parse.urlencode(params))
     return json.loads(http_get(url))
 
 
 def normalize_title(value):
     return re.sub(r'[\s_（）()]', '', value or '').upper()
+
+
+# 非赛马词条的特征（歌曲/游戏/消歧义等误匹配）
+_NON_HORSE_TITLE = re.compile(
+    r'の曲|歌曲|のアルバム|アルバム|ゲーム|漫画|小説|映画|曖昧さ回避|曖昧さ一覧|一覧表'
+)
+_NON_HORSE_WIKI = re.compile(
+    r'\[\[(?:Category|カテゴリ|分类|分類):[^\]]*(?:の曲|歌曲|ゲーム|ソフトウェア|楽曲|アルバム|映画|漫画|小説|曖昧さ)'
+)
+_RACEHORSE_MARK = re.compile(
+    r'Infobox\s*(?:racehorse|horse)|競走馬インフォボックス'
+    r'|\[\[(?:Category|カテゴリ|分类|分類):[^\]]*(?:競走馬|竞赛马|赛马|racehorse)'
+    r'|戦績|重賞|GI競走|ダービー|オークス|有馬記念|天皇賞|战绩|一级赛|日本德比|日本打吡'
+)
+
+
+def page_score(lang, title):
+    """2 = 明确赛马词条, 0 = 不确定, 1 = 明确非赛马（歌曲/游戏/消歧义等）。"""
+    if not title:
+        return 0
+    if _NON_HORSE_TITLE.search(title):
+        return 1
+    try:
+        wikitext = wiki_wikitext(lang, title) or ''
+    except Exception:  # noqa: BLE001
+        return 0
+    if re.search(r'\{\{\s*(?:曖昧さ回避|曖昧さ一覧|消歧义|消歧義|Disambig|Disambiguation)', wikitext, re.I):
+        return 1
+    if re.search(r'可以指[：:]', wikitext[:300]):
+        return 1
+    if _NON_HORSE_WIKI.search(wikitext):
+        return 1
+    if _RACEHORSE_MARK.search(wikitext):
+        return 2
+    return 0
 
 
 def resolve_wikipedia(horse):
@@ -188,13 +223,18 @@ def resolve_wikipedia(horse):
     candidates = []
     for lang in ('zh', 'ja'):
         for name in names:
-            if normalize_title(name) in seen:
+            base = normalize_title(name)
+            if not base or (lang, base) in seen:
                 continue
             if not re.search(r'[\u4e00-\u9fff\u30a0-\u30ff]', name):
                 continue
-            seen.add(normalize_title(name))
+            seen.add((lang, base))
+            # 带 (競走馬)/(赛马) 消歧后缀的标题优先于裸名（裸名常被歌曲/游戏占用）
+            for suffix in (' (競走馬)', ' (赛马)', ' (賽馬)'):
+                candidates.append((lang, name + suffix))
             candidates.append((lang, name))
 
+    resolved = []
     for lang, title in candidates:
         data = api_get(lang, {
             'action': 'query', 'format': 'json', 'formatversion': '2',
@@ -203,9 +243,15 @@ def resolve_wikipedia(horse):
         page = data['query']['pages'][0]
         if 'missing' in page or 'invalid' in page:
             continue
-        return {'lang': lang, 'title': page['title']}
+        real = page.get('title') or title
+        resolved.append({'lang': lang, 'title': real, 'score': page_score(lang, real)})
+    # 优先明确赛马词条，其次不确定项；明确非赛马丢弃
+    for target in (2, 0):
+        for item in resolved:
+            if item['score'] == target:
+                return {'lang': item['lang'], 'title': item['title']}
 
-    # 兜底：ja 维基全文搜索，要求命中名包含日文名
+    # 兜底：ja 维基全文搜索，要求命中名等于日文名（防子串误配歌曲标题）
     ja = horse.get('ja') or ''
     if ja:
         data = api_get('ja', {
@@ -215,9 +261,11 @@ def resolve_wikipedia(horse):
         expected = normalize_title(ja)
         for result in data['query']['search']:
             title = result['title']
-            if expected and expected != normalize_title(title) and expected not in normalize_title(title):
+            score = page_score('ja', title)
+            if score == 1:
                 continue
-            if not re.search(r'[\u30a0-\u30ff]', title):
+            # 仅接受与马名同名/消歧形式的命中
+            if normalize_title(title) != expected and normalize_title(title) != expected + normalize_title('(競走馬)'):
                 continue
             return {'lang': 'ja', 'title': title}
     return None
@@ -262,6 +310,173 @@ def wiki_wikitext(lang, title):
         return page['revisions'][0]['slots']['main']['content']
     except (KeyError, IndexError):
         return ''
+
+
+# ------------------------------------------------------------- photos ----
+
+PHOTO_DIR = os.path.join(TOOLS_DIR, 'img', 'horses')
+_PHOTO_EXT = ('.jpg', '.jpeg', '.png', '.webp')
+# 纪念物/非主体图特征（铜像/墓/勋章/logo 等不算马匹照片）
+_NON_HORSE_PHOTO = re.compile(
+    r'statue|tomb|grave|monument|memorial|bust|logo|crest|jockey|owner|pedigree|'
+    r'墓|銅像|像$|記念|記章|ロゴ', re.I
+)
+# netkeiba 无图时的默认占位照
+_PLACEHOLDER_MD5 = {'2A396AB5A03C93BDF76D222C157D3239'}
+
+
+def _image_md5(path):
+    with open(path, 'rb') as handle:
+        return hashlib.md5(handle.read()).hexdigest().upper()
+
+
+def _photo_tokens(value):
+    return [t for t in re.split(r'[^0-9A-Za-z\u3040-\u30ff\u4e00-\u9fff]+', value or '') if t]
+
+
+def _name_in_photo(name, filename):
+    """马名须完整出现在文件名开头（拒绝 Twin Bee 飞机、Believe Guy 等同单词子串）。"""
+    name_tokens = [t.lower() for t in _photo_tokens(name)]
+    file_tokens = [t.lower() for t in _photo_tokens(filename.split(':', 1)[-1])]
+    if not name_tokens or len(file_tokens) < len(name_tokens):
+        return False
+    return file_tokens[:len(name_tokens)] == name_tokens
+
+
+def _usable_photo(name, file_title):
+    base = file_title.split(':', 1)[-1]
+    return (base.lower().endswith(_PHOTO_EXT)
+            and not _NON_HORSE_PHOTO.search(base)
+            and _name_in_photo(name, base))
+
+
+def imageinfo_url(lang, title):
+    """取 File: 标题的实际图片 URL（缩略宽度 800）。"""
+    data = api_get(lang, {
+        'action': 'query', 'format': 'json', 'formatversion': '2',
+        'redirects': '1', 'prop': 'imageinfo', 'iiprop': 'url|mime',
+        'iiurlwidth': '800', 'titles': title,
+    })
+    page = data['query']['pages'][0]
+    info = (page.get('imageinfo') or [{}])[0]
+    return clean_photo_url(info.get('thumburl') or info.get('url') or '')
+
+
+def photo_from_wikitext(lang, title, names):
+    """词条 wikitext 里的图片（Infobox 图优先；正文图须文件名含马名）。"""
+    try:
+        wikitext = wiki_wikitext(lang, title) or ''
+    except Exception:  # noqa: BLE001
+        return ''
+    body_files = re.findall(r'\[\[(?:ファイル|File|文件|文件):([^|\]]+)', wikitext)
+    field = re.search(r'\|\s*(?:image|画像)\s*=\s*([^|\]\n]+)', wikitext, re.I)
+    field_file = field.group(1).strip() if field else ''
+    if field_file and not _NON_HORSE_PHOTO.search(field_file):
+        try:
+            url = imageinfo_url(lang, 'File:' + field_file)
+        except Exception:  # noqa: BLE001
+            url = ''
+        if url:
+            return url
+    for name in body_files:
+        name = name.strip()
+        if not any(_usable_photo(n, name) for n in names):
+            continue
+        try:
+            url = imageinfo_url(lang, 'File:' + name)
+        except Exception:  # noqa: BLE001
+            continue
+        if url:
+            return url
+    return ''
+
+
+def _url_matches(name, url):
+    """校验图片 URL 文件名含马名（防 Commons 重定向到他人同名图）。"""
+    if not name:
+        return False
+    decoded = urllib.parse.unquote(url)
+    return _name_in_photo(name, decoded)
+
+
+def photo_from_commons(names):
+    """Wikimedia Commons 文件名含马名（词边界）的图片。"""
+    for name in names:
+        if not name:
+            continue
+        try:
+            data = json.loads(http_get(
+                'https://commons.wikimedia.org/w/api.php?action=query&format=json&formatversion=2'
+                '&list=search&srnamespace=6&srlimit=8&srsearch=' + urllib.parse.quote(name)))
+        except Exception:  # noqa: BLE001
+            continue
+        for hit in data.get('query', {}).get('search', []):
+            file_title = hit.get('title') or ''
+            if not _usable_photo(name, file_title):
+                continue
+            try:
+                url = imageinfo_url('commons', file_title)
+            except Exception:  # noqa: BLE001
+                continue
+            if url and (_url_matches(name, url) or any(_url_matches(n, url) for n in names)):
+                return url
+    return ''
+
+
+def photo_from_netkeiba(record):
+    """netkeiba show_photo.php（走代理）取头图并本地保存，返回站内路径。"""
+    nk = record.get('netkeiba') or ''
+    match = re.search(r'/horse/([0-9a-z]+)', nk)
+    if not match:
+        return ''
+    horse_id = match.group(1)
+    local_name = '%s.jpg' % record['id']
+    local_path = os.path.join(PHOTO_DIR, local_name)
+    if os.path.isfile(local_path) and os.path.getsize(local_path) > 5000:
+        if _image_md5(local_path) not in _PLACEHOLDER_MD5:
+            return '/uma_tools/img/horses/' + local_name
+    nos = []
+    try:
+        page = http_get('https://db.netkeiba.com/horse/%s/' % horse_id)
+        nos = sorted({int(n) for n in re.findall(
+            r'show_photo\.php\?[^"\'\s>]*?\bno=(\d+)', page)})
+    except Exception:  # noqa: BLE001
+        pass
+    for no in nos[:6]:
+        url = ('https://db.netkeiba.com/show_photo.php?horse_id=%s&no=%d&tn=yes&tmp=no'
+               % (horse_id, no))
+        try:
+            data = http_get(url, binary=True)
+        except Exception:  # noqa: BLE001
+            continue
+        if not isinstance(data, (bytes, bytearray)) or len(data) < 5000:
+            continue
+        if not (data.startswith(b'\xff\xd8') or data.startswith(b'\x89PNG')):
+            continue
+        if hashlib.md5(data).hexdigest().upper() in _PLACEHOLDER_MD5:
+            continue  # netkeiba 无图时的默认占位照
+        os.makedirs(PHOTO_DIR, exist_ok=True)
+        with open(local_path, 'wb') as handle:
+            handle.write(data)
+        return '/uma_tools/img/horses/' + local_name
+    return ''
+
+
+def fill_missing_photo(record):
+    """photo 为空时的补图链：netkeiba 档案照 → wikitext 图 → Commons，均需防误配校验。"""
+    names = [n for n in (record.get('ja'), record.get('en')) if n]
+    url = photo_from_netkeiba(record)
+    if url:
+        return url
+    wiki = record.get('wiki') or {}
+    lang = wiki.get('lang') or ''
+    title = wiki.get(lang) if lang else ''
+    # 词条必须确认是赛马主题才可取 wikitext 图（防歌曲/游戏误配取错封面）
+    if title and page_score(lang, title) == 2:
+        url = photo_from_wikitext(lang, title, names)
+        if url:
+            return url
+    return photo_from_commons(names)
 
 
 # ------------------------------------------------------------------ parse --
@@ -821,6 +1036,8 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             record['major'] = parsed.get('major') or record['major']
             record['awards'] = parsed.get('awards') or record['awards']
             record['jbis_pedigree'] = parsed.get('pedigree') or []
+    if not record['photo']:
+        record['photo'] = fill_missing_photo(record)
     return record
 
 
@@ -850,6 +1067,8 @@ def main():
     parser.add_argument('--no-wiki', action='store_true', help='跳过 Wikipedia 抓取')
     parser.add_argument('--no-jbis', action='store_true', help='跳过 JBIS 抓取')
     parser.add_argument('--resume', action='store_true', help='跳过已有详情缓存的马')
+    parser.add_argument('--photos-only', action='store_true',
+                        help='只给缺图的马补 photo 字段（不重抓正文）')
     args = parser.parse_args()
 
     source = load_pedigree_source()
@@ -863,7 +1082,31 @@ def main():
     details = {}
     for index, horse in enumerate(horses, 1):
         done_path = os.path.join(CACHE_DIR, 'detail_%s.json' % horse['id'])
-        if args.resume and os.path.isfile(done_path):
+        if args.photos_only:
+            if not os.path.isfile(done_path):
+                continue
+            with open(done_path, encoding='utf-8') as handle:
+                record = json.load(handle)
+            if record.get('photo'):
+                details[horse['id']] = record
+                list_rows.append({
+                    'id': record['id'], 'zh': record['zh'], 'ja': record['ja'],
+                    'en': record['en'], 'sex': record['sex'], 'born': record['born'],
+                    'country': record['country'],
+                    'birthdate': record.get('birthdate', ''),
+                    'photo': record.get('photo', ''),
+                    'cids': record.get('cids', []),
+                })
+                continue
+            photo = fill_missing_photo(record)
+            if photo:
+                record['photo'] = photo
+                with open(done_path, 'w', encoding='utf-8') as handle:
+                    json.dump(record, handle, ensure_ascii=False)
+                print('[photo] %s -> %s' % (horse['id'], photo))
+            else:
+                print('[photo miss] %s' % horse['id'])
+        elif args.resume and os.path.isfile(done_path):
             with open(done_path, encoding='utf-8') as handle:
                 record = json.load(handle)
         else:
