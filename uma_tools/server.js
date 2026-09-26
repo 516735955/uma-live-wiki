@@ -597,8 +597,14 @@ function persistNewsSnapshot(data) {
 function refreshNewsIndex() {
   if (newsRefreshPromise) return newsRefreshPromise;
   newsRefreshPromise = new Promise((resolve, reject) => {
+    // On failure, push the freshness marker forward so visitor traffic cannot
+    // hammer the upstream while it is down (retry at most once per NEWS_TTL).
+    const fail = (err) => {
+      newsIndexCache = { at: Date.now(), data: newsIndexCache.data };
+      reject(err);
+    };
     fetchNewsPageRetry(1, (err, first) => {
-      if (err) { reject(err); return; }
+      if (err) { fail(err); return; }
       const total = parseInt(first.total_page_count, 10) || 1;
       const slots = new Array(total);
       slots[0] = first.information_list || [];
@@ -620,7 +626,7 @@ function refreshNewsIndex() {
             if (failed) return;
             if (pageError) {
               failed = true;
-              reject(pageError);
+              fail(pageError);
               return;
             }
             slots[page - 1] = json.information_list || [];
