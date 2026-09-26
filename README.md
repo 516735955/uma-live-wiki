@@ -153,7 +153,20 @@ Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 
 [`deploy/umamusume-restart.timer`](deploy/umamusume-restart.timer) 每天凌晨 2 点重启一次，让目录改动生效；
 新闻不依赖重启（会实时更新）。
 
+推荐使用一键更新脚本（服务器无需安装 git，任意目录执行）：
+
 ```bash
+curl -fsSL https://raw.githubusercontent.com/516735955/uma-live-wiki/main/deploy/update.sh | sudo bash
+```
+
+脚本会下载 main 分支快照同步到 `/var/www/umamusume`（可用首参数改为其他目录，`UMA_USER` 指定服务用户，
+默认 `alaemiryoung`）、修正 `data/` 属主、安装并启用上述 systemd 单元、重启服务，最后跑一次部署自检。
+无法访问 GitHub 时可把 `deploy/update.sh` 手工拷到服务器后 `sudo bash update.sh` 执行。
+
+手工安装单元（不更新代码，仅装定时重启）时：
+
+```bash
+cd /var/www/umamusume
 sudo install -m 0644 deploy/umamusume.service /etc/systemd/system/umamusume.service
 sudo install -m 0644 deploy/umamusume-restart.service /etc/systemd/system/umamusume-restart.service
 sudo install -m 0644 deploy/umamusume-restart.timer /etc/systemd/system/umamusume-restart.timer
@@ -162,7 +175,7 @@ sudo systemctl enable --now umamusume.service
 sudo systemctl enable --now umamusume-restart.timer
 ```
 
-自动刷新会改写生产检出中的 `data/`，这些改动不属于 Git；下次部署新提交前请先处理本地改动
+用 git 维护生产检出时，自动刷新会改写其中的 `data/`（改动不属于 Git）；下次部署新提交前请先处理本地改动
 （例如 `git checkout -- data` 或 `git stash`），避免与 `git pull` 冲突。本地预览仍可用 `--no-crawl` 关闭全部后台刷新。
 
 ```bash

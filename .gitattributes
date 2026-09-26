@@ -1,0 +1,2 @@
+# shell 脚本必须 LF，CRLF 在 Linux 上会报 bad interpreter
+*.sh text eol=lf
