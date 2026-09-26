@@ -70,6 +70,18 @@ async function main() {
   check(news.status === 200, '新闻 API 不可用', 'HTTP ' + news.status);
   check(header(news, 'content-encoding') === 'gzip', '新闻 API 未 gzip', header(news, 'content-encoding') || '无 Content-Encoding');
   check(/max-age=\d+/.test(header(news, 'cache-control')), '新闻 API 缺少短缓存', header(news, 'cache-control') || '无 Cache-Control');
+  const swr = /stale-while-revalidate=(\d+)/.exec(header(news, 'cache-control'));
+  check(!swr || Number(swr[1]) <= 900, '新闻 API 陈旧窗过长（浏览器可缓存过期新闻）', (swr && swr[0]) || '');
+  try {
+    const payload = JSON.parse(news.body);
+    const generatedAt = Date.parse(payload.generated_at || '');
+    const ageMin = generatedAt ? Math.round((Date.now() - generatedAt) / 60000) : -1;
+    check(ageMin >= 0 && ageMin <= 120, '新闻数据过期',
+      (payload.generated_at || '无 generated_at') + '（' + (ageMin >= 0 ? ageMin + ' 分钟前' : '无法解析') + '）');
+    check(Array.isArray(payload.information_list) && payload.information_list.length > 0, '新闻列表为空');
+  } catch (error) {
+    check(false, '新闻 API 响应不是 JSON', error.message);
+  }
 
   if (findings.length) {
     console.error('部署检查失败：');
@@ -78,7 +90,7 @@ async function main() {
     return;
   }
 
-  console.log('部署检查通过：HTML 可即时更新，' + assets.length + ' 个版本化资源已 gzip 并长期缓存，新闻 API 可用。');
+  console.log('部署检查通过：HTML 可即时更新，' + assets.length + ' 个版本化资源已 gzip 并长期缓存，新闻 API 可用且数据新鲜。');
 }
 
 main().catch((error) => {

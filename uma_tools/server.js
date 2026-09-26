@@ -67,7 +67,7 @@ try {
 const NEWS_INDEX_URL = 'https://umamusume.jp/api/ajax/pr_info_index?format=json';
 const NEWS_DETAIL_URL = 'https://umamusume.jp/api/ajax/pr_info_detail?format=json';
 const NEWS_TTL = 15 * 60 * 1000; // refresh in background; visitors always receive the last complete snapshot
-const NEWS_MAX_CONC = 5;        // upstream request concurrency
+const NEWS_MAX_CONC = 3;        // upstream request concurrency (keep low: CloudFront rate-limits bursts)
 const NEWS_SNAPSHOT_FILE = path.join(DATA_DIR, 'news_snapshot.json');
 
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
@@ -105,11 +105,37 @@ function reloadLantis() {
 
 let newsIndexCache = { at: 0, data: null };
 let newsRefreshPromise = null;
-try {
-  const snapshot = JSON.parse(fs.readFileSync(NEWS_SNAPSHOT_FILE, 'utf8'));
-  if (snapshot && Array.isArray(snapshot.information_list)) {
-    newsIndexCache = { at: Date.parse(snapshot.generated_at || '') || 0, data: snapshot };
+let newsSnapshotMtime = 0;
+
+// Adopt a snapshot only when it is newer than what memory already holds, so a
+// git deploy of data/news_snapshot.json becomes visible without a service
+// restart and a late write never rolls the list backwards.
+function adoptNewsSnapshot(snapshot) {
+  if (!snapshot || !Array.isArray(snapshot.information_list)) return false;
+  const currentAt = Date.parse((newsIndexCache.data && newsIndexCache.data.generated_at) || '') || 0;
+  const incomingAt = Date.parse(snapshot.generated_at || '') || 0;
+  if (!newsIndexCache.data || incomingAt > currentAt) {
+    newsIndexCache = { at: Math.max(newsIndexCache.at || 0, incomingAt), data: snapshot };
+    return true;
   }
+  return false;
+}
+
+function reloadNewsSnapshotIfNewer() {
+  try {
+    const stat = fs.statSync(NEWS_SNAPSHOT_FILE);
+    if (stat.mtimeMs <= newsSnapshotMtime) return;
+    newsSnapshotMtime = stat.mtimeMs;
+    if (adoptNewsSnapshot(JSON.parse(fs.readFileSync(NEWS_SNAPSHOT_FILE, 'utf8')))) {
+      console.log('[news] adopted snapshot', newsIndexCache.data.generated_at);
+    }
+  } catch (error) { /* keep serving the in-memory cache */ }
+}
+
+try {
+  const stat = fs.statSync(NEWS_SNAPSHOT_FILE);
+  newsSnapshotMtime = stat.mtimeMs;
+  adoptNewsSnapshot(JSON.parse(fs.readFileSync(NEWS_SNAPSHOT_FILE, 'utf8')));
 } catch (e) { /* the first successful refresh creates the snapshot */ }
 
 // ---- machine translation of news titles (Baidu Translate API, cached) ----
@@ -513,6 +539,18 @@ function fetchNewsPage(page, cb) {
   });
 }
 
+// One flaky page must not reject the whole index refresh; retry before giving up.
+function fetchNewsPageRetry(page, cb, attempt) {
+  fetchNewsPage(page, (err, json) => {
+    if (!err) { cb(null, json); return; }
+    if ((attempt || 0) < 2) {
+      setTimeout(() => fetchNewsPageRetry(page, cb, (attempt || 0) + 1), 800 * ((attempt || 0) + 1));
+      return;
+    }
+    cb(new Error('page ' + page + ': ' + ((err && err.message) || err)));
+  });
+}
+
 function extractFirstImage(html) {
   if (!html || typeof html !== 'string') return '';
   const m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
@@ -550,13 +588,16 @@ function persistNewsSnapshot(data) {
   const tempPath = NEWS_SNAPSHOT_FILE + '.' + process.pid + '.tmp';
   fs.promises.writeFile(tempPath, JSON.stringify(data))
     .then(() => fs.promises.rename(tempPath, NEWS_SNAPSHOT_FILE))
-    .catch(() => fs.promises.unlink(tempPath).catch(() => {}));
+    .catch((error) => {
+      console.error('[news] snapshot write failed:', (error && error.message) || error);
+      fs.promises.unlink(tempPath).catch(() => {});
+    });
 }
 
 function refreshNewsIndex() {
   if (newsRefreshPromise) return newsRefreshPromise;
   newsRefreshPromise = new Promise((resolve, reject) => {
-    fetchNewsPage(1, (err, first) => {
+    fetchNewsPageRetry(1, (err, first) => {
       if (err) { reject(err); return; }
       const total = parseInt(first.total_page_count, 10) || 1;
       const slots = new Array(total);
@@ -574,7 +615,7 @@ function refreshNewsIndex() {
         while (active < NEWS_MAX_CONC && cursor >= 2) {
           const page = cursor--;
           active++;
-          fetchNewsPage(page, (pageError, json) => {
+          fetchNewsPageRetry(page, (pageError, json) => {
             active--;
             if (failed) return;
             if (pageError) {
@@ -633,6 +674,7 @@ function refreshNewsIndex() {
 }
 
 function newsResponseSnapshot() {
+  reloadNewsSnapshotIfNewer();
   if (!newsIndexCache.data) return null;
   const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
   cached.information_list.forEach((item) => {
@@ -645,15 +687,22 @@ function handleNewsIndex(res) {
   const cached = newsResponseSnapshot();
   if (cached) {
     sendJson(res, 200, cached, {
-      cacheControl: 'public, max-age=60, stale-while-revalidate=86400',
+      cacheControl: 'public, max-age=60, stale-while-revalidate=300',
       etag: '"news-' + crypto.createHash('sha1').update(String(cached.generated_at || '')).digest('hex').slice(0, 12) + '"'
     });
-    if (!NO_AUTO_CRAWL && Date.now() - newsIndexCache.at >= NEWS_TTL) refreshNewsIndex().catch(() => {});
+    if (!NO_AUTO_CRAWL && Date.now() - newsIndexCache.at >= NEWS_TTL) {
+      refreshNewsIndex().catch((error) => {
+        console.error('[news] background refresh failed:', (error && error.message) || error);
+      });
+    }
     return;
   }
   refreshNewsIndex()
-    .then((data) => sendJson(res, 200, data, { cacheControl: 'public, max-age=60, stale-while-revalidate=86400' }))
-    .catch(() => sendJson(res, 502, { error: 'upstream news index failed' }));
+    .then((data) => sendJson(res, 200, data, { cacheControl: 'public, max-age=60, stale-while-revalidate=300' }))
+    .catch((error) => {
+      console.error('[news] refresh failed:', (error && error.message) || error);
+      sendJson(res, 502, { error: 'upstream news index failed' });
+    });
 }
 
 function handleNewsDetail(req, res, params) {
@@ -994,7 +1043,9 @@ server.listen(PORT, () => {
     console.log('Automatic data refresh disabled (--no-crawl).');
     return;
   }
-  refreshNewsIndex().catch(() => {});
+  refreshNewsIndex().catch((error) => {
+    console.error('[news] startup refresh failed:', (error && error.message) || error);
+  });
   setTimeout(() => runCatalogRefresh('startup'), 60 * 1000);
   setTimeout(() => runLantisCrawl('startup'), 90 * 1000);
   setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
