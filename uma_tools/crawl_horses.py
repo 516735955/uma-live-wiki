@@ -480,6 +480,34 @@ def fill_missing_photo(record):
     return photo_from_commons(names)
 
 
+def localize_photo(record):
+    """把远端照片下载到本地 PHOTO_DIR，返回站内路径；失败返回 ''（防 wikimedia 国内不可达）。"""
+    url = record.get('photo') or ''
+    if not url or url.startswith('/uma_tools/'):
+        return ''
+    try:
+        data = http_get(url, binary=True)
+    except Exception:  # noqa: BLE001
+        return ''
+    if not isinstance(data, (bytes, bytearray)) or len(data) < 3000:
+        return ''
+    if hashlib.md5(data).hexdigest().upper() in _PLACEHOLDER_MD5:
+        return ''
+    if data.startswith(b'\xff\xd8'):
+        ext = '.jpg'
+    elif data.startswith(b'\x89PNG'):
+        ext = '.png'
+    elif data[:4] == b'RIFF' and data[8:12] == b'WEBP':
+        ext = '.webp'
+    else:
+        return ''
+    os.makedirs(PHOTO_DIR, exist_ok=True)
+    local_name = '%s%s' % (record['id'], ext)
+    with open(os.path.join(PHOTO_DIR, local_name), 'wb') as handle:
+        handle.write(data)
+    return '/uma_tools/img/horses/' + local_name
+
+
 # ------------------------------------------------------------------ parse --
 
 def strip_markup(text):
@@ -1072,6 +1100,8 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             record['jbis_pedigree'] = parsed.get('pedigree') or []
     if not record['photo']:
         record['photo'] = fill_missing_photo(record)
+    if record['photo'] and not record['photo'].startswith('/uma_tools/'):
+        record['photo'] = localize_photo(record) or record['photo']
     # 生年终检：birthdate 年份与源数据 born 冲突时丢弃（防同名 JBIS 错配日期）
     born_year = re.sub(r'\D', '', str(record.get('born') or ''))[:4]
     birth_year = re.sub(r'\D', '', str(record.get('birthdate') or ''))[:4]
@@ -1110,6 +1140,8 @@ def main():
     parser.add_argument('--resume', action='store_true', help='跳过已有详情缓存的马')
     parser.add_argument('--photos-only', action='store_true',
                         help='只给缺图的马补 photo 字段（不重抓正文）')
+    parser.add_argument('--localize-photos', action='store_true',
+                        help='把远端照片下载到本地 img/horses 并改写 photo 字段')
     args = parser.parse_args()
 
     source = load_pedigree_source()
@@ -1123,7 +1155,22 @@ def main():
     details = {}
     for index, horse in enumerate(horses, 1):
         done_path = os.path.join(CACHE_DIR, 'detail_%s.json' % horse['id'])
-        if args.photos_only:
+        if args.localize_photos:
+            if not os.path.isfile(done_path):
+                continue
+            with open(done_path, encoding='utf-8') as handle:
+                record = json.load(handle)
+            photo = record.get('photo') or ''
+            if photo and not photo.startswith('/uma_tools/'):
+                local = localize_photo(record)
+                if local:
+                    record['photo'] = local
+                    with open(done_path, 'w', encoding='utf-8') as handle:
+                        json.dump(record, handle, ensure_ascii=False)
+                    print('[localize] %s -> %s' % (horse['id'], local))
+                else:
+                    print('[localize fail] %s %s' % (horse['id'], photo[:70]))
+        elif args.photos_only:
             if not os.path.isfile(done_path):
                 continue
             with open(done_path, encoding='utf-8') as handle:

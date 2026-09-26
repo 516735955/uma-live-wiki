@@ -129,7 +129,7 @@ const umaApp = createApp({
         return Promise.resolve();
       }
       if (horsesListPromise) return horsesListPromise;
-      const source = '/data/horses_list.js?v=20260923-8';
+      const source = '/data/horses_list.js?v=20260923-9';
       horsesListPromise = loadDataScript(source, 'HORSES').then(function () {
         if (!window.HORSES || !window.HORSES.length) throw new Error('empty horses list');
         horsesList.value = window.HORSES;
@@ -304,7 +304,7 @@ const umaApp = createApp({
       }
       if (horsesDataPromise) return horsesDataPromise;
       horsesListError.value = '';
-      const detailSource = '/data/horses_details.js?v=20260923-8';
+      const detailSource = '/data/horses_details.js?v=20260923-9';
       horsesDataPromise = Promise.all([
         loadHorsesListData(),
         loadDataScript(detailSource, 'HORSES_DETAIL')
