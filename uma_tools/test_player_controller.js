@@ -60,6 +60,8 @@ function track(id) {
     url: 'https://audio.example/' + id + '.mp3',
     name: 'Track ' + id,
     artist: 'Singer ' + id,
+    songId: 'song-' + id,
+    versionId: 'version-' + id,
     vocalists: [{ voice_actor_id: 'va-' + id, voice_actor_name: 'Singer ' + id }]
   };
 }
@@ -79,6 +81,7 @@ function setup(storage, random) {
 async function run() {
   const normalized = normalizeTrack(track('a'));
   assert.equal(normalized.vocalists[0].id, 'va-a', 'voice actor IDs are normalized for clickable credits');
+  assert.equal(normalized.versionId, 'version-a', 'recording version identity is kept for synchronized lyrics');
 
   const first = setup();
   await first.controller.playTrack(track('a'));

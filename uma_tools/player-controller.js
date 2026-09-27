@@ -38,6 +38,7 @@
     return {
       id: String(track.id || track.songId || track.url),
       songId: String(track.songId || ''),
+      versionId: String(track.versionId || ''),
       url: String(track.url),
       name: name,
       artist: String(track.artist || '—'),
