@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-27T13:19:42.794Z",
+        "reason": "Agent: audio bars render only while playback is active and communicate live changing state"
+      }
+    ]
+  }
+}
