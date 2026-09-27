@@ -1163,6 +1163,17 @@ def cat_series_id(category: str, section_name: str, group_name: str) -> str:
     return ""
 
 
+def title_series_id(title: str) -> str:
+    """按活动名归类系列（eventernote 等无系列来源的兜底）：
+    标题含 WINNING LIVE / STARTING GATE 即归入对应发售纪念系列。"""
+    text = (title or "").upper()
+    if "WINNING LIVE" in text:
+        return "winning-live-release"
+    if "STARTING GATE" in text:
+        return "starting-gate-release"
+    return ""
+
+
 def category_events(data: dict[str, Any], identities: IdentityIndex, used: set[str]) -> list[dict[str, Any]]:
     out = []
     for category, root in data.items():
@@ -1256,7 +1267,9 @@ def attach_eventernote(events: list[dict[str, Any]], eventernote_doc: dict[str, 
         event_id = unique_id(f"eventernote-{eventernote_id or date or 'undated'}", used)
         events.append({
             "id": event_id, "title": source.get("title") or "", "date": date, "end_date": date,
-            "kind": "onsite", "mode": "onsite", "series_id": "", "venue": source.get("venue") or "",
+            "kind": "onsite", "mode": "onsite",
+            "series_id": title_series_id(source.get("title") or ""),
+            "venue": source.get("venue") or "",
             "cast_status": "verified" if cast else "pending", "cast": cast, "character_ids": [], "sessions": [], "media": [],
             "sources": [{"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""}],
             "legacy_url": "", "image": source.get("img") or "", "summary": source.get("times") or "",
@@ -3199,6 +3212,11 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     current_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}
     if current_hashes != source_hashes:
         raise RuntimeError("curated live sources changed during event build")
+    for event in events:
+        if not event.get("series_id"):
+            derived = title_series_id(event.get("title") or "")
+            if derived:
+                event["series_id"] = derived
     kinds = Counter(event.get("kind") or "unknown" for event in events)
     modes = Counter(event.get("mode") or "unknown" for event in events)
     catalog = {

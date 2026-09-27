@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27T13:10:17+00:00",
+  "generated_at": "2026-09-27T14:41:21+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "01ea65060a1e9dcddafc66a296ad6ef9c6d7ad67262f5b618f67af97dac88dad",
@@ -12,15 +12,15 @@
     }
   },
   "coverage": {
-    "events": 470,
+    "events": 472,
     "by_kind": {
       "concert": 81,
       "official_program": 227,
-      "onsite": 162
+      "onsite": 164
     },
     "by_mode": {
       "online": 227,
-      "onsite": 243
+      "onsite": 245
     },
     "official_programs": 227,
     "unresolved_cast_names": 0
@@ -118,6 +118,254 @@
     }
   ],
   "events": [
+    {
+      "id": "eventernote-2026-12-12",
+      "title": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント",
+      "date": "2026-12-12",
+      "end_date": "2026-12-12",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "winning-live-release",
+      "venue": "新宿住友ホール",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0020",
+          "name": "亚咲花",
+          "character_id": "espoircity",
+          "role": "希望之城",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0086",
+          "name": "春川芽生",
+          "character_id": "symbolikriss",
+          "role": "吉兆",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0163",
+          "name": "野木奏",
+          "character_id": "durandal",
+          "role": "多旺达",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0127",
+          "name": "石原夏织",
+          "character_id": "almondeye",
+          "role": "杏目",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0084",
+          "name": "星希成奏",
+          "character_id": "kiseki",
+          "role": "神业",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0111",
+          "name": "海弓首里",
+          "character_id": "foreveryoung",
+          "role": "青春永驻",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0110",
+          "name": "浅见春那",
+          "character_id": "phalaenopsis",
+          "role": "蝴蝶兰",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494410",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494410"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [],
+      "media": [],
+      "sources": [
+        {
+          "kind": "eventernote",
+          "label": "Eventernote",
+          "url": "https://www.eventernote.com/events/494410"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/winning-live.svg",
+      "summary": "開場 16:30 開演 17:30 終演 18:30",
+      "legacy_aliases": [],
+      "setlist_status": "none"
+    },
+    {
+      "id": "eventernote-2026-12-05",
+      "title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント",
+      "date": "2026-12-05",
+      "end_date": "2026-12-05",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "ユナイテッド・シネマ アクアシティお台場",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0179",
+          "name": "高柳知叶",
+          "character_id": "oguricap",
+          "role": "小栗帽",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494412",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494412"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0056",
+          "name": "奥野香耶",
+          "character_id": "verxina",
+          "role": "极峰",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494412",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494412"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0032",
+          "name": "佳原萌枝",
+          "character_id": "fusaichipandora",
+          "role": "房一潘多拉",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494412",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494412"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0124",
+          "name": "真名濑日和",
+          "character_id": "chronogenesis",
+          "role": "创世驹",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494412",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494412"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0098",
+          "name": "松田飒水",
+          "character_id": "staygold",
+          "role": "黄金旅程",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/494412",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/494412"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [],
+      "media": [],
+      "sources": [
+        {
+          "kind": "eventernote",
+          "label": "Eventernote",
+          "url": "https://www.eventernote.com/events/494412"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "summary": "開場 16:30 開演 17:00 終演 19:00",
+      "legacy_aliases": [],
+      "setlist_status": "none"
+    },
     {
       "id": "eventernote-2026-11-21",
       "title": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
@@ -101766,7 +102014,7 @@
       "end_date": "2017-10-08",
       "kind": "onsite",
       "mode": "onsite",
-      "series_id": "",
+      "series_id": "starting-gate-release",
       "venue": "しんまちボードウォーク(パラソルショップ)",
       "cast_status": "verified",
       "cast": [
@@ -101878,7 +102126,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image": "/uma_tools/img/event-covers/starting-gate.svg",
       "summary": "開場 - 開演 14:00 終演 14:30",
       "legacy_aliases": [],
       "setlist_status": "none"
@@ -106985,5 +107233,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "3ff9e998c81c778b371f"
+  "build_id": "14a1b5f16115cfc5e604"
 }
