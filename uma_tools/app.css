@@ -3490,6 +3490,26 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     box-shadow: 0 6px 16px color-mix(in srgb, var(--entity-accent) 38%, transparent);
     transform: translateY(-1px);
 }
+.news-refresh-btn {
+    margin-left: 10px;
+    padding: 6px 18px;
+    border: 1.5px solid color-mix(in srgb, var(--brand, #3157e8) 55%, #dfe3ee);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--brand, #3157e8);
+    font-size: .82rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, opacity .15s ease;
+}
+.news-refresh-btn:hover:not(:disabled) {
+    background: var(--brand, #3157e8);
+    color: #fff;
+}
+.news-refresh-btn:disabled {
+    opacity: .55;
+    cursor: default;
+}
 .horse-link-chip {
     display: inline-flex;
     align-items: center;

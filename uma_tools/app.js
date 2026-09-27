@@ -2431,8 +2431,9 @@ const umaApp = createApp({
       if (newsLoadPromise) return newsLoadPromise;
       newsError.value = '';
       newsLoading.value = true;
-      newsLoadPromise = api.request('/api/news-index')
+      newsLoadPromise = api.request('/api/news-index', { fresh: true })
         .then(function (d) {
+          newsLoadPromise = null;
           newsItems.value = (d && d.information_list) || [];
           newsLoading.value = false;
         })
@@ -2443,6 +2444,10 @@ const umaApp = createApp({
           newsError.value = '无法加载新闻数据（请通过本地服务访问，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
         });
       return newsLoadPromise;
+    }
+    function refreshNews() {
+      if (newsLoading) return;
+      loadNews();
     }
     function newsHeroCover(n) {
       if (!n) return newsDefaultCover;
@@ -2542,7 +2547,7 @@ const umaApp = createApp({
       nextSong, prevSong, playQueueAt, playAlbumTrack,
       togglePlayerPanel, closePlayerPanel, cyclePlayerMode, dismissPlayer, retryPlayer, removeQueueItem,
       enqueueAlbum, albumPlayableCount,
-      newsItems, newsError, newsLoading, newsRange, newsType, newsFiltered, newsHero,
+      newsItems, newsError, newsLoading, refreshNews, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,

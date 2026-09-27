@@ -23,7 +23,7 @@
     if (!settings.fresh && pending.has(cacheKey)) return pending.get(cacheKey);
     const promise = fetch(path, {
       headers: { Accept: 'application/json' },
-      cache: 'default',
+      cache: settings.fresh ? 'no-cache' : 'default',
       signal: settings.signal
     }).then(function (response) {
       if (!response.ok) throw new Error('HTTP ' + response.status);
