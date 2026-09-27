@@ -221,8 +221,9 @@ const umaApp = createApp({
     function loadVoiceData() {
       if (relationshipLoadPromise) return relationshipLoadPromise;
       voiceLoading.value = true;
-      relationshipLoadPromise = api.request('/api/catalog/voice-actors')
+      relationshipLoadPromise = api.request('/api/catalog/voice-actors', { fresh: true })
         .then(function (data) {
+          relationshipLoadPromise = null;
           voiceProfiles.value = (data && data.voice_actors) || [];
           window.dispatchEvent(new CustomEvent('uma-voice-data'));
         }).catch(function () {
@@ -324,8 +325,9 @@ const umaApp = createApp({
       if (songCatalogLoadPromise) return songCatalogLoadPromise;
       songCatalogError.value = '';
       songCatalogLoading.value = true;
-      songCatalogLoadPromise = api.request('/api/catalog/songs?page_size=2000')
+      songCatalogLoadPromise = api.request('/api/catalog/songs?page_size=2000', { fresh: true })
         .then(function (data) {
+          songCatalogLoadPromise = null;
           songCatalog.value = data && Array.isArray(data.items) ? { coverage: data.coverage || {}, songs: data.items } : { coverage: {}, songs: [] };
           if (!songCatalog.value.songs.length) songCatalogError.value = '歌曲资料为空。';
         })
@@ -383,8 +385,9 @@ const umaApp = createApp({
     }
     function loadHomeSummary() {
       if (homeSummaryLoadPromise) return homeSummaryLoadPromise;
-      homeSummaryLoadPromise = api.request('/api/home-summary')
+      homeSummaryLoadPromise = api.request('/api/home-summary', { fresh: true })
         .then(function (data) {
+          homeSummaryLoadPromise = null;
           const stats = (data && data.stats) || {};
           homeStats.songs = Number.isFinite(stats.songs) ? stats.songs : null;
           homeStats.albums = Number.isFinite(stats.albums) ? stats.albums : null;
@@ -2270,8 +2273,9 @@ const umaApp = createApp({
       if (eventsLoadPromise) return eventsLoadPromise;
       eventsError.value = '';
       eventsLoading.value = true;
-      eventsLoadPromise = api.request('/api/catalog/events?page_size=2000')
+      eventsLoadPromise = api.request('/api/catalog/events?page_size=2000', { fresh: true })
         .then(function (data) {
+          eventsLoadPromise = null;
           eventsAll.value = (data && Array.isArray(data.items)) ? data.items : [];
           eventSeries.value = (data && Array.isArray(data.series)) ? data.series : [];
           eventsLoading.value = false;
@@ -2511,8 +2515,8 @@ const umaApp = createApp({
       if (albumsLoadPromise) return albumsLoadPromise;
       albumsError.value = '';
       albumsLoading.value = true;
-      albumsLoadPromise = api.request('/api/catalog/albums?page_size=500')
-        .then(function (data) { albums.value = data && Array.isArray(data.items) ? data.items : []; })
+      albumsLoadPromise = api.request('/api/catalog/albums?page_size=500', { fresh: true })
+        .then(function (data) { albumsLoadPromise = null; albums.value = data && Array.isArray(data.items) ? data.items : []; })
         .catch(function (e) {
           albumsLoadPromise = null;
           albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';

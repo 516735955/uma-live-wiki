@@ -500,7 +500,7 @@ function sendCatalogResult(req, res, result, scope) {
     return;
   }
   sendJson(res, 200, result, {
-    cacheControl: 'public, max-age=300, stale-while-revalidate=86400',
+    cacheControl: 'public, max-age=300, stale-while-revalidate=300',
     etag: catalogEtag(result.build_id, scope)
   });
 }
