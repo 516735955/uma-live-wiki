@@ -3471,6 +3471,25 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     cursor: pointer;
 }
 .horse-back:hover { color: var(--ui-orange-deep); }
+.horse-expand-btn {
+    display: block;
+    margin: 12px auto 0;
+    padding: 8px 22px;
+    border: 1.5px solid color-mix(in srgb, var(--entity-accent) 55%, #dfe3ee);
+    border-radius: 999px;
+    background: #fff;
+    color: color-mix(in srgb, var(--entity-accent) 78%, #1c2b4a);
+    font-size: .82rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.horse-expand-btn:hover {
+    background: var(--entity-accent);
+    color: #fff;
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--entity-accent) 38%, transparent);
+    transform: translateY(-1px);
+}
 .horse-link-chip {
     display: inline-flex;
     align-items: center;

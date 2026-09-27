@@ -736,6 +736,40 @@ const umaApp = createApp({
       };
       return Promise.resolve(loadHorsesData()).then(show, show);
     }
+    const horseMajorExpanded = ref(false);
+    watch(horseDetail, function () { horseMajorExpanded.value = false; });
+    const horseMajorTotal = computed(function () {
+      const detail = horseDetail.value || {};
+      return (detail.races && detail.races.length) ? detail.races.length : ((detail.major || []).length);
+    });
+    const horseMajorRows = computed(function () {
+      const detail = horseDetail.value || {};
+      const grades = {};
+      (detail.major || []).forEach(function (row) {
+        grades[row.date + '|' + row.race] = row.grade || '';
+      });
+      const source = (detail.races && detail.races.length) ? detail.races : (detail.major || []);
+      const rows = source.map(function (row) {
+        const place = String(row.place == null ? '' : row.place).trim();
+        const distance = String(row.distance || '');
+        return {
+          date: row.date || '',
+          track: row.track || '',
+          race: row.race || '',
+          grade: row.grade || grades[row.date + '|' + row.race] || '',
+          placeLabel: /^\d+$/.test(place) ? place + '着' : (place || '—'),
+          surface: row.surface || '',
+          distance: distance ? (/[mM]$/.test(distance) ? distance : distance + 'm') : '',
+          top: row.winner || row.beaten || '',
+          prize: row.prize || ''
+        };
+      });
+      rows.sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
+      return horseMajorExpanded.value ? rows : rows.slice(0, 10);
+    });
+    function toggleHorseMajor() {
+      horseMajorExpanded.value = !horseMajorExpanded.value;
+    }
     const horseFacts = computed(function () {
       const facts = (horseDetail.value && horseDetail.value.facts) || {};
       const defs = [
@@ -2481,7 +2515,7 @@ const umaApp = createApp({
       horseUrlForCharacter, openHorseForCharacter,
       voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,
-      otherSection, setOtherSection, curatedVideos, horseFacts,
+      otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
       historyKindOptions, albumSortOptions, fixTitleOptions,

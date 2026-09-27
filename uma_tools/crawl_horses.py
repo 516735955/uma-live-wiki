@@ -962,6 +962,55 @@ def _grade_like(token):
     return bool(re.search(r'\bG\s*I{1,3}\b|\bG[123]\b|\bOP\b|\bL\b|重賞', text))
 
 
+def parse_races(html_text):
+    """从 JBIS /horse/<id>/record/ 提取完整逐场战绩。
+    行以日付单元格起头的 div 块；用「人気+骑师链」双重特征排除年度/主要成绩表混入。
+    返回 [{date, track, race, place, surface, distance, condition, field, number,
+           popularity, jockey, weight, time, margin, winner, bodyweight, prize}]。"""
+    races = []
+    starts = [m.start() for m in re.finditer(r'<div>(\d{4}\.\d\d\.\d\d)</div>', html_text)]
+    for pos, start in enumerate(starts):
+        chunk = html_text[start: starts[pos + 1] if pos + 1 < len(starts) else len(html_text)]
+        if not re.search(r'\d+人気', chunk) or '/horse/jockey/' not in chunk:
+            continue
+        head = re.match(r'<div>(\d{4}\.\d\d\.\d\d)</div>\s*<div>([^<]*)</div>', chunk)
+        race_m = re.search(r'data-6__tag">\s*<a[^>]*>([^<]+)</a>', chunk)
+        place = ''
+        place_m = re.search(r'number-\d+">([^<]*)</span>', chunk)
+        if place_m:
+            place = strip_markup(place_m.group(1))
+        else:
+            odd = re.search(r'<div>\s*(中止|取消|除外|失格)\s*</div>', chunk)
+            place = odd.group(1) if odd else ''
+        time_margin = re.search(
+            r'data-6__lyt-1 jc-right">\s*<span class="ta-right">([^<]*)</span>\s*<span class="ta-right">([^<]*)</span>',
+            chunk)
+        winner = ''
+        win_m = re.search(r'<div class="jc-left">(.*?)</div>', chunk, re.S)
+        if win_m:
+            winner = strip_markup(win_m.group(1))
+        races.append({
+            'date': head.group(1) if head else '',
+            'track': strip_markup(head.group(2)) if head else '',
+            'race': strip_markup(race_m.group(1)) if race_m else '',
+            'place': place,
+            'surface': (re.search(r'<div>(芝|ダ)</div>', chunk) or [None, ''])[1],
+            'distance': (re.search(r'(\d+)m', chunk) or [None, ''])[1],
+            'condition': strip_markup((re.search(r'<div>(良|稍重|重|不良)', chunk) or [None, ''])[1]),
+            'field': (re.search(r'(\d+)頭', chunk) or [None, ''])[1],
+            'number': (re.search(r'(\d+)番', chunk) or [None, ''])[1],
+            'popularity': (re.search(r'(\d+)人気', chunk) or [None, ''])[1],
+            'jockey': strip_markup((re.search(r'/horse/jockey/[^"]*"[^>]*>([^<]+)<', chunk) or [None, ''])[1]),
+            'weight': strip_markup((re.search(r'ta-right">\s*([\d.]+)', chunk) or [None, ''])[1]),
+            'time': strip_markup(time_margin.group(1)) if time_margin else '',
+            'margin': strip_markup(time_margin.group(2)) if time_margin else '',
+            'winner': winner,
+            'bodyweight': (re.search(r'(\d+（[+\-]\d+）)', chunk) or [None, ''])[1],
+            'prize': (re.search(r'([\d.]+万円)', chunk) or [None, ''])[1],
+        })
+    return races
+
+
 def strip_tags(value):
     return re.sub(r'\s+', ' ', html_lib.unescape(re.sub(r'<[^>]+>', '', value or ''))).strip()
 
@@ -997,6 +1046,7 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
         'wins': [],
         'yearly': [],
         'major': [],
+        'races': [],
         'awards': [],
         'career': [],
         'retirement': [],
@@ -1111,6 +1161,11 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             record['major'] = parsed.get('major') or record['major']
             record['awards'] = parsed.get('awards') or record['awards']
             record['jbis_pedigree'] = parsed.get('pedigree') or []
+        try:
+            time.sleep(JBIS_SLEEP)
+            record['races'] = parse_races(http_get(record['jbis'].rstrip('/') + '/record/'))
+        except Exception as exc:  # noqa: BLE001
+            print('  [jbis record fail] %s %s' % (horse['id'], exc))
     if not record['photo']:
         record['photo'] = fill_missing_photo(record)
     if record['photo'] and not record['photo'].startswith('/uma_tools/'):
@@ -1155,6 +1210,8 @@ def main():
                         help='只给缺图的马补 photo 字段（不重抓正文）')
     parser.add_argument('--localize-photos', action='store_true',
                         help='把远端照片下载到本地 img/horses 并改写 photo 字段')
+    parser.add_argument('--races-only', action='store_true',
+                        help='只补 JBIS 逐场战绩 races 字段（不重抓正文）')
     args = parser.parse_args()
 
     source = load_pedigree_source()
@@ -1168,7 +1225,25 @@ def main():
     details = {}
     for index, horse in enumerate(horses, 1):
         done_path = os.path.join(CACHE_DIR, 'detail_%s.json' % horse['id'])
-        if args.localize_photos:
+        if args.races_only:
+            if not os.path.isfile(done_path):
+                continue
+            with open(done_path, encoding='utf-8') as handle:
+                record = json.load(handle)
+            if (not record.get('races')
+                    or not all((r.get('place') or '').strip() for r in record['races'])) \
+                    and record.get('jbis') and 'jbis.or.jp' in record['jbis']:
+                try:
+                    time.sleep(JBIS_SLEEP)
+                    record['races'] = parse_races(http_get(record['jbis'].rstrip('/') + '/record/'))
+                    with open(done_path, 'w', encoding='utf-8') as handle:
+                        json.dump(record, handle, ensure_ascii=False)
+                    print('[races] %s -> %d 场' % (horse['id'], len(record['races'])))
+                except Exception as exc:  # noqa: BLE001
+                    print('[races fail] %s %s' % (horse['id'], exc))
+            elif not record.get('races'):
+                print('[races skip] %s (no jbis)' % horse['id'])
+        elif args.localize_photos:
             if not os.path.isfile(done_path):
                 continue
             with open(done_path, encoding='utf-8') as handle:
