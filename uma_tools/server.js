@@ -512,6 +512,8 @@ async function handleCatalogApi(req, res, urlPath, params) {
     else if (urlPath === '/api/catalog/event') result = await catalogStore.event(params.get('id'), params.get('legacy'));
     else if (urlPath === '/api/catalog/songs') result = await catalogStore.songs(params);
     else if (urlPath === '/api/catalog/song') result = await catalogStore.song(params.get('id'));
+    else if (urlPath === '/api/catalog/creators') result = await catalogStore.creators(params);
+    else if (urlPath === '/api/catalog/creator') result = await catalogStore.creator(params.get('id'));
     else if (urlPath === '/api/catalog/albums') result = await catalogStore.albums(params);
     else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('slug'), params.get('name'));
     else if (urlPath === '/api/catalog/voice-actors') result = await catalogStore.voices();

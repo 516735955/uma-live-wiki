@@ -7,6 +7,7 @@ const CATALOG_FILES = [
   'catalog_manifest.json',
   'events_catalog.json',
   'song_catalog.json',
+  'creator_catalog.json',
   'appearance_index.json',
   'voice_actor_profiles.json',
   'albums.json'
@@ -138,11 +139,34 @@ function songSearchText(song) {
     release.catalog,
     release.artist
   ].filter(Boolean).join(' ')));
+  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => credit.name));
+  const lyrics = (song.versions || []).flatMap((version) => {
+    const lyric = version.lyrics || {};
+    return [...(lyric.lines || []), ...(lyric.translation_lines || [])];
+  });
   return normalize([
     song.title,
     ...(song.aliases || []),
     ...(song.artists || []),
-    ...releases
+    ...releases,
+    ...creators,
+    ...lyrics
+  ].join(' '));
+}
+
+function songSummarySearchText(song) {
+  const releases = (song.versions || []).flatMap((version) => (version.releases || []).map((release) => [
+    release.album_name,
+    release.catalog,
+    release.artist
+  ].filter(Boolean).join(' ')));
+  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => credit.name));
+  return normalize([
+    song.title,
+    ...(song.aliases || []),
+    ...(song.artists || []),
+    ...releases,
+    ...creators
   ].join(' '));
 }
 
@@ -159,8 +183,36 @@ function songSummary(song, searchText) {
     version_count: song.version_count || 0,
     release_count: song.release_count || 0,
     performance_count: song.performance_count || 0,
+    creator_ids: song.creator_ids || [],
+    has_lyrics: !!song.has_lyrics,
     playable: firstPlayableRelease(song),
-    search_text: searchText || songSearchText(song)
+    // Full lyrics remain in the server-only row index.  List responses carry a
+    // compact search string; lyric searches use the q-filtered API response.
+    search_text: songSummarySearchText(song)
+  };
+}
+
+function creatorSearchText(creator) {
+  return normalize([
+    creator.name,
+    ...(creator.aliases || []),
+    ...(creator.affiliations || []),
+    ...(creator.roles || []).map((role) => role.label),
+    ...(creator.works || []).map((work) => work.title)
+  ].join(' '));
+}
+
+function creatorSummary(creator, searchText) {
+  return {
+    id: creator.id,
+    name: creator.name,
+    aliases: creator.aliases || [],
+    type: creator.type || 'person',
+    affiliations: creator.affiliations || [],
+    roles: creator.roles || [],
+    work_count: creator.work_count || 0,
+    version_count: creator.version_count || 0,
+    search_text: searchText || creatorSearchText(creator)
   };
 }
 
@@ -239,12 +291,14 @@ class CatalogStore {
     const manifest = JSON.parse(texts[0]);
     const eventsDoc = JSON.parse(texts[1]);
     const songsDoc = JSON.parse(texts[2]);
-    const appearancesDoc = JSON.parse(texts[3]);
-    const voicesDoc = JSON.parse(texts[4]);
-    const albums = JSON.parse(texts[5]);
+    const creatorsDoc = JSON.parse(texts[3]);
+    const appearancesDoc = JSON.parse(texts[4]);
+    const voicesDoc = JSON.parse(texts[5]);
+    const albums = JSON.parse(texts[6]);
     const buildIds = new Set([
       eventsDoc.build_id,
       songsDoc.build_id,
+      creatorsDoc.build_id,
       appearancesDoc.build_id,
       voicesDoc.build_id
     ]);
@@ -254,6 +308,7 @@ class CatalogStore {
 
     const events = Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
     const songs = Array.isArray(songsDoc.songs) ? songsDoc.songs : [];
+    const creators = Array.isArray(creatorsDoc.creators) ? creatorsDoc.creators : [];
     const voiceActors = Array.isArray(voicesDoc.voice_actors) ? voicesDoc.voice_actors : [];
     const albumRows = Array.isArray(albums) ? albums : [];
     const eventRows = events.map((event) => {
@@ -264,20 +319,27 @@ class CatalogStore {
       const search = songSearchText(song);
       return { data: song, summary: songSummary(song, search), search };
     });
+    const creatorRows = creators.map((creator) => {
+      const search = creatorSearchText(creator);
+      return { data: creator, summary: creatorSummary(creator, search), search };
+    });
     const albumRowsIndexed = albumRows.map((album) => ({ data: album, summary: albumSummary(album) }));
     const snapshot = {
       buildId: manifest.build_id,
       manifest,
       eventsDoc,
       songsDoc,
+      creatorsDoc,
       appearancesDoc,
       voicesDoc,
       albums: albumRows,
       eventRows,
       songRows,
+      creatorRows,
       albumRows: albumRowsIndexed,
       eventsById: new Map(events.map((event) => [String(event.id), event])),
       songsById: new Map(songs.map((song) => [String(song.id), song])),
+      creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
       songAliases: new Map(),
       albumsBySlug: new Map(),
       albumsByName: new Map()
@@ -396,6 +458,36 @@ class CatalogStore {
     const target = normalize(id).replace(/ /g, '');
     const song = store.songsById.get(String(id)) || store.songAliases.get(target);
     return song ? { build_id: store.buildId, song } : null;
+  }
+
+  async creators(params) {
+    const store = await this.get();
+    const query = normalize(params.get('q'));
+    const role = params.get('role') || '';
+    let rows = store.creatorRows.filter((row) => {
+      if (query && !row.search.includes(query)) return false;
+      if (role && !(row.data.roles || []).some((item) => item.role === role)) return false;
+      return true;
+    });
+    rows = rows.slice().sort((a, b) => String(a.data.name).localeCompare(String(b.data.name), 'ja'));
+    const total = rows.length;
+    const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 40));
+    const pageCount = Math.max(1, Math.ceil(total / pageSize));
+    const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
+    return {
+      build_id: store.buildId,
+      coverage: store.creatorsDoc.coverage || {},
+      items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),
+      total,
+      page,
+      page_size: pageSize
+    };
+  }
+
+  async creator(id) {
+    const store = await this.get();
+    const creator = store.creatorsById.get(String(id));
+    return creator ? { build_id: store.buildId, creator } : null;
   }
 
   async albums(params) {

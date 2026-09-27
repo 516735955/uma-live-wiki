@@ -10,6 +10,7 @@ async function main() {
   assert(snapshot.buildId, 'catalog build id is required');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
+  assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
   assert(snapshot.albumRows.length > 100, 'album catalog is unexpectedly small');
 
   const eventList = await store.events(new URLSearchParams('page_size=5000'));
@@ -27,6 +28,12 @@ async function main() {
   assert(songList.items.every((song) => !song.versions && !song.performances), 'song list leaked detail payloads');
   const song = await store.song(songList.items[0].id);
   assert(song && song.song && Array.isArray(song.song.versions), 'song detail is incomplete');
+
+  const creatorList = await store.creators(new URLSearchParams('page_size=5000'));
+  assert.strictEqual(creatorList.total, snapshot.creatorRows.length);
+  assert(creatorList.items.every((creator) => !creator.works && !creator.collaborators), 'creator list leaked detail payloads');
+  const creator = await store.creator(creatorList.items[0].id);
+  assert(creator && creator.creator && Array.isArray(creator.creator.works), 'creator detail is incomplete');
 
   const albumList = await store.albums(new URLSearchParams('page_size=5000'));
   assert.strictEqual(albumList.total, snapshot.albumRows.length);
