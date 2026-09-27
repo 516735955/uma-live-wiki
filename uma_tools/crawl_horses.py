@@ -1038,7 +1038,7 @@ def parse_wiki_races(wikitext, lang):
             condition = field = number = popularity = jockey = weight = ''
             time_ = margin = winner = bodyweight = ''
             dist_raw = ''
-            c0 = at(0)
+            c0 = re.sub(r'\s+', '', at(0))  # 容忍 '1941. 3.15' 这类带空格日期
             dm = re.fullmatch(r'(\d{1,2})/(\d{1,2})/(\d{4})', c0)
             dfull = re.fullmatch(r'(\d{4})\.(\d{1,2})\.(\d{1,2})', c0)
             dshort = re.fullmatch(r'(\d{1,2})\.(\d{1,2})', c0)
@@ -1050,7 +1050,7 @@ def parse_wiki_races(wikitext, lang):
                 number, field = at(8), at(9)
                 place = place_of(cells[10])
                 time_, winner = at(11), at(12)
-            elif dfull or dshort:  # ja 单行日期式：按距離列位置分派
+            elif dfull or dshort:  # ja 单行日期式：按着順/距離相对位置分派
                 if dfull:
                     year_hint = dfull.group(1)
                     date = '%s.%02d.%02d' % (dfull.group(1), int(dfull.group(2)), int(dfull.group(3)))
@@ -1061,17 +1061,34 @@ def parse_wiki_races(wikitext, lang):
                 track, race = at(1), at(2)
                 dist_idx = next((i for i, c in enumerate(cells)
                                  if re.search(r'(芝|草|ダ|泥|障)\s*\d+', cell_text(c))), -1)
-                if dist_idx == 4 and len(cells) <= 9:  # 外战紧凑列
-                    grade = grade_of(cells[3])
-                    dist_raw = at(4)
-                    place = place_of(cells[5])
-                    jockey, margin, winner = at(6), at(7), at(8)
-                else:  # 日式紧凑列（日期/場/賽/級/頭/枠/馬/人/着/騎/斤/距離/時/差/勝）
-                    grade = grade_of(cells[3])
-                    field, popularity = at(4), re.sub(r'\D', '', at(6))
-                    place = place_of(cells[7])
-                    jockey, weight = at(8), at(9)
-                    dist_raw, time_, margin, winner = at(10), at(11), at(12), at(13)
+                place_idx = next((i for i, c in enumerate(cells)
+                                  if re.search(r'\d+\s*着', cell_text(c))
+                                  or cell_text(c) in ('除外', '取消', '中止', '失格')), -1)
+                if dist_idx < 0 or place_idx < 0:
+                    continue
+                for c in cells:
+                    g = grade_of(c)
+                    if g:
+                        grade = g
+                        break
+                dist_raw = at(dist_idx)
+                place = place_of(cells[place_idx])
+                if place_idx >= 1 and re.match(r'\d+人', cell_text(cells[place_idx - 1])):
+                    popularity = re.sub(r'\D', '', cell_text(cells[place_idx - 1]))
+                gap = dist_idx - place_idx
+                if gap == -1:  # 外战紧凑列：距離/着順/騎手/着差/勝ち馬
+                    jockey, margin, winner = at(place_idx + 1), at(place_idx + 2), at(place_idx + 3)
+                elif gap == 1:  # 老式列：着順/距離/斤量/タイム/騎手/着差/勝ち馬
+                    weight = at(dist_idx + 1)
+                    time_ = at(dist_idx + 2)
+                    jockey, margin, winner = at(dist_idx + 3), at(dist_idx + 4), at(dist_idx + 5)
+                elif gap == 3:  # 日式紧凑列：着順/騎手/斤量/距離/タイム/着差/勝ち馬
+                    jockey, weight = at(place_idx + 1), at(place_idx + 2)
+                    time_, margin, winner = at(dist_idx + 1), at(dist_idx + 2), at(dist_idx + 3)
+                else:  # 地方竞马列：距離/頭数/枠/馬番/人気/着順/タイム/着差/騎手/斤量/勝ち馬
+                    field = at(dist_idx + 1)
+                    time_, margin = at(place_idx + 1), at(place_idx + 2)
+                    jockey, weight, winner = at(place_idx + 3), at(place_idx + 4), at(place_idx + 5)
             else:  # ja 分列式：[年]/月/日 分列，着順定位后按列距分派
                 ym = re.fullmatch(r'(\d{4})', c0)
                 if ym:
