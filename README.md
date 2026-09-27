@@ -223,12 +223,12 @@ gh pr create --base main --head <工作分支>
 PR 标题使用英文概括本批目标，正文使用中文说明改了什么、如何验证以及兼容性影响。没有仓库写权限的贡献者
 仍按 GitHub 的常规方式 Fork 仓库，从自己的功能分支向本仓库 `main` 提交 PR。
 
-## 环境变量与百度翻译凭据
+## 百度翻译配置
 
 `uma_tools/server.js` 内置百度翻译缓存接口，读取顺序：
 
-1. 环境变量 `BAIDU_APPID` / `BAIDU_SECRET`（优先级最高）
-2. `uma_tools/baidu.conf.json`（随仓库提交，拉取后开箱即用）
+1. 环境变量 `BAIDU_APPID` / `BAIDU_SECRET`（临时覆盖时优先）
+2. `uma_tools/baidu.conf.json`（项目默认配置，拉取后直接使用）
 
 macOS / Linux：
 
@@ -244,16 +244,13 @@ $env:BAIDU_SECRET = "你的SECRET"
 node uma_tools/server.js
 ```
 
-> 注意：`baidu.conf.json` 含真实密钥并已提交到仓库。若仓库是公开的，任何人可见并可能消耗你的翻译额度。
-> 请确认仓库访问范围是可控的，或通过环境变量覆盖/删除该文件。
-
 不配置时翻译功能自动降级（标题/正文保持日文），不影响其他功能。
 
 ## 常见问题
 
 - **改了数据看不到变化？** 硬刷新 Ctrl+F5，或确认服务器读取的是「赛马娘LIVE相关.html」而非其他旧版文件。
-- **文件很大/有 secrets？** 不要提交 `*.bak*`、`AI.rar`、`Default Project/`（官网抓取原始数据）、
-  `uma_tools` 下的日志与运行状态文件以及任何密钥；这些已在 `.gitignore` 中。翻译缓存
+- **文件很大/有临时产物？** 不要提交 `*.bak*`、`AI.rar`、`Default Project/`（官网抓取原始数据），
+  以及 `uma_tools` 下的日志与运行状态文件；这些已在 `.gitignore` 中。翻译缓存
   `uma_tools/trans_cache.json` 是例外，它是站点可复用的数据结果。
 - **想新增批量抓取的验证工具？** 放到 `uma_tools/` 下，命名如 `check_*.py`，并在提交前跑一遍语法检查。
 
