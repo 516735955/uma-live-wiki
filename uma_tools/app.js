@@ -129,7 +129,7 @@ const umaApp = createApp({
         return Promise.resolve();
       }
       if (horsesListPromise) return horsesListPromise;
-      const source = '/data/horses_list.js?v=20260923-10';
+      const source = '/data/horses_list.js?v=20260923-11';
       horsesListPromise = loadDataScript(source, 'HORSES').then(function () {
         if (!window.HORSES || !window.HORSES.length) throw new Error('empty horses list');
         horsesList.value = window.HORSES;
@@ -304,7 +304,7 @@ const umaApp = createApp({
       }
       if (horsesDataPromise) return horsesDataPromise;
       horsesListError.value = '';
-      const detailSource = '/data/horses_details.js?v=20260923-10';
+      const detailSource = '/data/horses_details.js?v=20260923-11';
       horsesDataPromise = Promise.all([
         loadHorsesListData(),
         loadDataScript(detailSource, 'HORSES_DETAIL')
@@ -742,12 +742,54 @@ const umaApp = createApp({
       const detail = horseDetail.value || {};
       return (detail.races && detail.races.length) ? detail.races.length : ((detail.major || []).length);
     });
+    // 全局级别索引：从所有马的主要赛事提取「赛事名 -> 年份 -> 级别」，
+    // 用于逐场战绩表的级别回填（如 7 着的京都大賞典不在任何马的主要赛事里）。
+    let horseGradeIndex = null;
+    function horseGradeFor(race, date) {
+      if (!window.HORSES_DETAIL) return '';
+      if (!horseGradeIndex) {
+        horseGradeIndex = {};
+        let found = false;
+        Object.keys(window.HORSES_DETAIL).forEach(function (id) {
+          (window.HORSES_DETAIL[id].major || []).forEach(function (m) {
+            if (!m.grade || !m.race) return;
+            found = true;
+            const year = String(m.date || '').slice(0, 4);
+            const core = m.race.replace(/（[^）]*）/g, '').trim();
+            [m.race, core].forEach(function (key) {
+              if (!key) return;
+              const slots = horseGradeIndex[key] || (horseGradeIndex[key] = {});
+              const slot = slots[year] || (slots[year] = {});
+              slot[m.grade] = (slot[m.grade] || 0) + 1;
+            });
+          });
+        });
+        if (!found) horseGradeIndex = null;
+      }
+      if (!horseGradeIndex) return '';
+      const key = String(race || '');
+      const core = key.replace(/（[^）]*）/g, '').trim();
+      const entry = horseGradeIndex[key] || horseGradeIndex[core];
+      if (!entry) return '';
+      const pick = function (slot) {
+        let best = '';
+        let bestN = 0;
+        Object.keys(slot).forEach(function (g) {
+          if (slot[g] > bestN) { best = g; bestN = slot[g]; }
+        });
+        return best;
+      };
+      const year = String(date || '').slice(0, 4);
+      if (entry[year]) return pick(entry[year]);
+      const years = Object.keys(entry);
+      if (!years.length) return '';
+      years.sort(function (a, b) {
+        return Math.abs(Number(a) - Number(year)) - Math.abs(Number(b) - Number(year));
+      });
+      return pick(entry[years[0]]);
+    }
     const horseMajorRows = computed(function () {
       const detail = horseDetail.value || {};
-      const grades = {};
-      (detail.major || []).forEach(function (row) {
-        grades[row.date + '|' + row.race] = row.grade || '';
-      });
       const source = (detail.races && detail.races.length) ? detail.races : (detail.major || []);
       const rows = source.map(function (row) {
         const place = String(row.place == null ? '' : row.place).trim();
@@ -756,7 +798,7 @@ const umaApp = createApp({
           date: row.date || '',
           track: row.track || '',
           race: row.race || '',
-          grade: row.grade || grades[row.date + '|' + row.race] || '',
+          grade: row.grade || horseGradeFor(row.race, row.date) || '',
           placeLabel: /^\d+$/.test(place) ? place + '着' : (place || '—'),
           surface: row.surface || '',
           distance: distance ? (/[mM]$/.test(distance) ? distance : distance + 'm') : '',

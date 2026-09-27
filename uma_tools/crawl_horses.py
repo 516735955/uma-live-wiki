@@ -962,6 +962,254 @@ def _grade_like(token):
     return bool(re.search(r'\bG\s*I{1,3}\b|\bG[123]\b|\bOP\b|\bL\b|重賞', text))
 
 
+def parse_wiki_races(wikitext, lang):
+    """从维基「競走成績/詳細賽績」表格提取逐场战绩（兼容 zh/ja 多种列式）。
+    统一输出：{date,track,race,place,surface,distance,condition,field,number,
+              popularity,jockey,weight,time,margin,winner,bodyweight,prize,grade}"""
+    headers = list(re.finditer(
+        r'^==+\s*(?:競走成績|詳細賽績|戰績|战绩|詳細戰績|成績|成绩|戦績|賽績|赛績)\s*==+\s*$',
+        wikitext, re.M))
+    bodies = []
+    for pos, h in enumerate(headers):
+        start_ = h.end()
+        end_ = headers[pos + 1].start() if pos + 1 < len(headers) else len(wikitext)
+        nxt = re.search(r'^==', wikitext[start_:], re.M)
+        if nxt:
+            end_ = min(end_, start_ + nxt.start())
+        bodies.append(wikitext[start_:end_])
+    if not bodies:
+        return []
+
+    def cell_text(value):
+        text = re.sub(r'^[^|]*=\s*"[^"]*"\s*\|', '', (value or '').strip())
+        text = re.sub(r'<ref[^>]*/>', '', text)
+        text = re.sub(r'<ref[^>]*/?>.*?</ref>', '', text, flags=re.S)
+        text = re.sub(r'\{\{\s*0\s*(?:\|[^{}]*)?\}\}', '', text)  # 隐藏填充 {{0}} / {{0|0000.}}
+        text = re.sub(r'\{\{\s*[Cc]olor\|[^|{}]*\|([^{}]*)\}\}', r'\1', text)
+        text = re.sub(r'\{\{\s*(?:small|nowrap)\s*\|([^{}]*)\}\}', r'\1', text)
+        return strip_markup(text)
+
+    def grade_of(raw):
+        text = strip_markup(raw)
+        m = re.search(r'G\s*(I{1,3}|[123])', text)
+        if m:
+            return {'1': 'G1', '2': 'G2', '3': 'G3', 'I': 'G1', 'II': 'G2', 'III': 'G3'}[m.group(1)]
+        if '八大競走' in text or text.strip() == '八':
+            return 'G1'
+        return ''
+
+    def place_of(raw):
+        text = cell_text(raw)
+        m = re.search(r'(\d+)\s*着', text)
+        if m:
+            return m.group(1)
+        if re.fullmatch(r'\d+', text):
+            return text
+        return text if text in ('除外', '取消', '中止', '失格', '除', '取消') else ''
+
+    def dist_of(raw):
+        m = re.search(r'(芝|草|ダ|泥|障)\s*(\d+)\s*([mf])?', raw)
+        if not m:
+            return '', '', ''
+        surface = {'草': '芝', '泥': 'ダ'}.get(m.group(1), m.group(1))
+        dist = int(m.group(2))
+        if (m.group(3) or '').lower() == 'f':
+            dist *= 200  # 8f = 1600m
+        return surface, str(dist), raw.replace(m.group(0), '')
+
+    races = []
+    for body in bodies:
+        year_hint = ''
+        for block in re.split(r'(?m)^\s*\|-\s*$', body):
+            cells = []
+            for line in block.splitlines():
+                line = line.strip()
+                if line.startswith('|') or line.startswith('!'):
+                    line = re.sub(r'\s+\|(?=\{\{|\[|\d)', '||', line)
+                    cells.extend(re.split(r'\|\||!!', line.lstrip('|!')))
+            cells = [c.strip() for c in cells]
+            if len(cells) < 6:
+                continue
+
+            def at(idx):
+                return cell_text(cells[idx]) if 0 <= idx < len(cells) else ''
+
+            date = track = race = grade = place = surface = distance = ''
+            condition = field = number = popularity = jockey = weight = ''
+            time_ = margin = winner = bodyweight = ''
+            dist_raw = ''
+            c0 = at(0)
+            dm = re.fullmatch(r'(\d{1,2})/(\d{1,2})/(\d{4})', c0)
+            dfull = re.fullmatch(r'(\d{4})\.(\d{1,2})\.(\d{1,2})', c0)
+            dshort = re.fullmatch(r'(\d{1,2})\.(\d{1,2})', c0)
+            if dm:  # zh：日期(D/M/Y)/國家/馬場/距離/級別/賽事/負重/騎師/馬號/出馬/名次/時間/頭馬（二馬）
+                date = '%s.%02d.%02d' % (dm.group(3), int(dm.group(2)), int(dm.group(1)))
+                track, dist_raw = at(2), at(3)
+                grade = grade_of(cells[4])
+                race, weight, jockey = at(5), at(6), at(7)
+                number, field = at(8), at(9)
+                place = place_of(cells[10])
+                time_, winner = at(11), at(12)
+            elif dfull or dshort:  # ja 单行日期式：按距離列位置分派
+                if dfull:
+                    year_hint = dfull.group(1)
+                    date = '%s.%02d.%02d' % (dfull.group(1), int(dfull.group(2)), int(dfull.group(3)))
+                elif year_hint:
+                    date = '%s.%02d.%02d' % (year_hint, int(dshort.group(1)), int(dshort.group(2)))
+                else:
+                    continue
+                track, race = at(1), at(2)
+                dist_idx = next((i for i, c in enumerate(cells)
+                                 if re.search(r'(芝|草|ダ|泥|障)\s*\d+', cell_text(c))), -1)
+                if dist_idx == 4 and len(cells) <= 9:  # 外战紧凑列
+                    grade = grade_of(cells[3])
+                    dist_raw = at(4)
+                    place = place_of(cells[5])
+                    jockey, margin, winner = at(6), at(7), at(8)
+                else:  # 日式紧凑列（日期/場/賽/級/頭/枠/馬/人/着/騎/斤/距離/時/差/勝）
+                    grade = grade_of(cells[3])
+                    field, popularity = at(4), re.sub(r'\D', '', at(6))
+                    place = place_of(cells[7])
+                    jockey, weight = at(8), at(9)
+                    dist_raw, time_, margin, winner = at(10), at(11), at(12), at(13)
+            else:  # ja 分列式：[年]/月/日 分列，着順定位后按列距分派
+                ym = re.fullmatch(r'(\d{4})', c0)
+                if ym:
+                    year_hint = ym.group(1)
+                    base = 1
+                else:
+                    base = 1 if c0 == '' else 0
+                month = re.sub(r'\D', '', at(base))
+                day = re.sub(r'\D', '', at(base + 1))
+                if not (year_hint and month and day):
+                    continue
+                date = '%s.%02d.%02d' % (year_hint, int(month), int(day))
+                track, race = at(base + 2), at(base + 3)
+                for c in cells[base + 4:]:
+                    g = grade_of(c)
+                    if g:
+                        grade = g
+                        break
+                place_idx = next((i for i, c in enumerate(cells)
+                                  if re.search(r'\d+\s*着', cell_text(c))
+                                  or cell_text(c) in ('除外', '取消', '中止', '失格')), -1)
+                dist_idx = next((i for i, c in enumerate(cells)
+                                 if re.search(r'(芝|草|ダ|泥|障)\s*\d+', cell_text(c))), -1)
+                if dist_idx < 0:
+                    continue
+                dist_raw = at(dist_idx)
+                gap = dist_idx - place_idx if place_idx >= 0 else -1
+                tail = len(cells) - (dist_idx + 1)
+                if gap == 3:  # 着順/騎手/斤量/距離（馬場）/タイム/着差/勝ち馬/馬体重
+                    jockey, weight = at(place_idx + 1), at(place_idx + 2)
+                    time_, margin, winner = at(dist_idx + 1), at(dist_idx + 2), at(dist_idx + 3)
+                elif tail >= 5:  # 着順/距離/タイム/着差/騎手/斤量/勝ち馬
+                    time_, margin = at(dist_idx + 1), at(dist_idx + 2)
+                    jockey, weight, winner = at(dist_idx + 3), at(dist_idx + 4), at(dist_idx + 5)
+                else:  # 着順/距離/タイム/騎手/着差/勝ち馬
+                    time_, jockey = at(dist_idx + 1), at(dist_idx + 2)
+                    margin, winner = at(dist_idx + 3), at(dist_idx + 4)
+                if place_idx >= 0:
+                    place = place_of(cells[place_idx])
+                    ninki_idx = place_idx - 1
+                    popularity = re.sub(r'\D', '', at(ninki_idx))
+                    field = at(ninki_idx - 3)
+            surface, distance, rest = dist_of(dist_raw)
+            cm = re.search(r'[（(]([^）)]*)[）)]', rest)
+            condition = cm.group(1) if cm else ''
+            if not date or not race or not date[:4].isdigit() or not (1850 <= int(date[:4]) <= 2100):
+                continue
+            if re.fullmatch(r'[\d.,:\s%]+', race):
+                continue  # 数值串（体重/均速等）不是赛事名，跳过
+            races.append({
+                'date': date, 'track': track, 'race': race, 'place': place,
+                'surface': surface, 'distance': distance, 'condition': condition,
+                'field': field, 'number': number, 'popularity': popularity,
+                'jockey': jockey, 'weight': weight, 'time': time_, 'margin': margin,
+                'winner': winner, 'bodyweight': bodyweight, 'prize': '', 'grade': grade,
+            })
+    return races
+
+
+def wiki_races_for(record):
+    """按缓存里的 wiki 词条（zh 优先）取逐场战绩表。"""
+    wiki = record.get('wiki') or {}
+    candidates = []
+    if wiki.get('lang'):
+        candidates.append((wiki['lang'], wiki.get(wiki['lang']) or ''))
+    for lang, key in (('zh', 'zh'), ('ja', 'ja')):
+        name = record.get(key) or ''
+        if name:
+            candidates.append((lang, name))
+            candidates.append((lang, name + (' (競走馬)' if lang == 'ja' else ' (賽馬)')))
+    seen = set()
+    for lang, title in candidates:
+        if not title or (lang, title) in seen:
+            continue
+        seen.add((lang, title))
+        try:
+            rows = parse_wiki_races(wiki_wikitext(lang, title) or '', lang)
+        except Exception:  # noqa: BLE001
+            continue
+        if rows:
+            return rows
+    return []
+
+
+def battle_count(record):
+    """从战绩文本取出赛数 N（「22戰10冠」「国内：1戦 | 海外：15戦」等分段求和）。"""
+    text = ((record.get('facts') or {}).get('record') or '')
+    parts = re.findall(r'(\d+)\s*[戰战戦]', text)
+    return sum(int(p) for p in parts) if parts else 0
+
+
+def jbis_birth_matches(record):
+    """JBIS 档案页的生年月日是否与源 born 年份一致（同名错马防线）。"""
+    url = record.get('jbis') or ''
+    if 'jbis.or.jp' not in url:
+        return True
+    born_raw = str(record.get('born') or '')
+    if '約' in born_raw or '约' in born_raw:
+        return True  # 约XXXX 年为考据值，不做生年校验
+    by = re.sub(r'\D', '', born_raw)[:4]
+    if len(by) < 4:
+        return True
+    try:
+        page = http_get(url)
+    except Exception:  # noqa: BLE001
+        return True
+    m = re.search(r'生年月日</dt>\s*<dd[^>]*>([^<]+)', page)
+    if not m:
+        return True
+    bb = re.sub(r'\D', '', html_lib.unescape(m.group(1)))[:4]
+    return (not bb) or bb == by
+
+
+def merge_races(base, extra):
+    """按日期去重合并（同日必同场，跨语言命名也能对上），base 优先。"""
+    def key(row):
+        return row.get('date') or ''
+    seen = {key(r) for r in base}
+    out = list(base)
+    for row in extra:
+        k = key(row)
+        if not k or k in seen:
+            continue
+        seen.add(k)
+        out.append(row)
+    out.sort(key=lambda r: r.get('date') or '')
+    return out
+
+
+def fill_races(record, jbis_rows):
+    """JBIS 行已覆盖大头时只信 JBIS（维基行常有日期/列位噪声）；
+    JBIS 缺/稀时才用维基出赛表补全。"""
+    target = battle_count(record)
+    if jbis_rows and (not target or len(jbis_rows) >= int(target * 0.6)):
+        return jbis_rows
+    return merge_races(jbis_rows, wiki_races_for(record))
+
+
 def parse_races(html_text):
     """从 JBIS /horse/<id>/record/ 提取完整逐场战绩。
     行以日付单元格起头的 div 块；用「人気+骑师链」双重特征排除年度/主要成绩表混入。
@@ -1170,6 +1418,8 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
         record['photo'] = fill_missing_photo(record)
     if record['photo'] and not record['photo'].startswith('/uma_tools/'):
         record['photo'] = localize_photo(record) or record['photo']
+    # 逐场战绩缺口：JBIS 缺/稀时用维基出赛表补全
+    record['races'] = fill_races(record, record.get('races') or [])
     # 生年终检：birthdate 年份与源数据 born 冲突时丢弃（防同名 JBIS 错配日期）
     born_year = re.sub(r'\D', '', str(record.get('born') or ''))[:4]
     birth_year = re.sub(r'\D', '', str(record.get('birthdate') or ''))[:4]
@@ -1230,19 +1480,47 @@ def main():
                 continue
             with open(done_path, encoding='utf-8') as handle:
                 record = json.load(handle)
-            if (not record.get('races')
-                    or not all((r.get('place') or '').strip() for r in record['races'])) \
-                    and record.get('jbis') and 'jbis.or.jp' in record['jbis']:
+            changed = False
+            if not jbis_birth_matches(record):
+                new = (search_jbis_url(record.get('ja') or '', record.get('born') or '')
+                       or search_jbis_url(record.get('en') or '', record.get('born') or ''))
+                if new and new != record.get('jbis'):
+                    print('[jbis fix] %s -> %s' % (horse['id'], new))
+                    record['jbis'] = new
+                    changed = True
+                    try:
+                        parsed = parse_tables(http_get(new))
+                        record['yearly'] = parsed.get('yearly') or record['yearly']
+                        record['major'] = parsed.get('major') or record['major']
+                        record['awards'] = parsed.get('awards') or record['awards']
+                        record['jbis_pedigree'] = parsed.get('pedigree') or []
+                    except Exception as exc:  # noqa: BLE001
+                        print('  [jbis refetch fail] %s %s' % (horse['id'], exc))
+                else:
+                    # 无替代：同名错马的档案与其派生数据一并丢弃
+                    print('[jbis dropped] %s 生年不符且无替代' % horse['id'])
+                    record['jbis'] = ''
+                    record['yearly'] = []
+                    record['major'] = []
+                    record['awards'] = []
+                    record['jbis_pedigree'] = []
+                    changed = True
+            rows = []
+            if record.get('jbis') and 'jbis.or.jp' in record['jbis']:
                 try:
                     time.sleep(JBIS_SLEEP)
-                    record['races'] = parse_races(http_get(record['jbis'].rstrip('/') + '/record/'))
-                    with open(done_path, 'w', encoding='utf-8') as handle:
-                        json.dump(record, handle, ensure_ascii=False)
-                    print('[races] %s -> %d 场' % (horse['id'], len(record['races'])))
+                    rows = parse_races(http_get(record['jbis'].rstrip('/') + '/record/'))
                 except Exception as exc:  # noqa: BLE001
-                    print('[races fail] %s %s' % (horse['id'], exc))
-            elif not record.get('races'):
-                print('[races skip] %s (no jbis)' % horse['id'])
+                    print('[races jbis fail] %s %s' % (horse['id'], exc))
+            merged = fill_races(record, rows)
+            if merged != record.get('races'):
+                record['races'] = merged
+                changed = True
+            target = battle_count(record)
+            print('[races] %s -> %d 场 (目标 %s)' % (horse['id'], len(merged), target or '?'))
+            if changed:
+                with open(done_path, 'w', encoding='utf-8') as handle:
+                    json.dump(record, handle, ensure_ascii=False)
         elif args.localize_photos:
             if not os.path.isfile(done_path):
                 continue

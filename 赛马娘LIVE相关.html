@@ -12,7 +12,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 <script defer src="/uma_tools/app-api.js?v=20260914-12"></script>
 <script defer src="/uma_tools/ui-components.js?v=20260920-14"></script>
 <script defer src="/uma_tools/player-controller.js?v=20260921-1"></script>
-<script defer src="/uma_tools/app.js?v=20260923-12"></script>
+<script defer src="/uma_tools/app.js?v=20260923-13"></script>
 </head>
 <body>
 
@@ -642,7 +642,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <p v-for="(paragraph,index) in horseDetail.career" :key="index" class="horse-paragraph">{{ paragraph }}</p>
                     </section>
                     <section v-if="horseDetail.yearly && horseDetail.yearly.length" class="entity-section">
-                        <header class="entity-section-title"><h2>比赛记录 · 年度成绩</h2></header>
+                        <header class="entity-section-title"><h2>年度成绩</h2></header>
                         <div class="horse-table-wrap">
                             <table class="horse-table">
                                 <thead><tr><th>年份</th><th>出场</th><th>胜</th><th>2着</th><th>3着</th><th>其他</th><th>赏金</th><th>办赛</th></tr></thead>
@@ -656,7 +656,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <header class="entity-section-title"><h2>比赛记录</h2></header>
                         <div class="horse-table-wrap">
                             <table class="horse-table major-table">
-                                <thead><tr><th>日期</th><th>场馆</th><th>赛事</th><th>格付</th><th>名次</th><th>场地</th><th>距离</th><th>头马（二马）</th><th>赏金</th></tr></thead>
+                                <thead><tr><th>日期</th><th>场馆</th><th>赛事</th><th>级别</th><th>名次</th><th>场地</th><th>距离</th><th>头马（二马）</th><th>赏金</th></tr></thead>
                                 <tbody>
                                     <tr v-for="(row,index) in horseMajorRows" :key="index"><td>{{ row.date }}</td><td>{{ row.track }}</td><td>{{ row.race || '—' }}</td><td><span class="horse-grade" :class="'horse-grade-' + String(row.grade||'').toLowerCase()">{{ row.grade || '—' }}</span></td><td>{{ row.placeLabel }}</td><td>{{ row.surface }}</td><td>{{ row.distance }}</td><td class="beaten">{{ row.top }}</td><td class="num">{{ row.prize || '—' }}</td></tr>
                                 </tbody>
