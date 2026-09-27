@@ -598,22 +598,35 @@ def valid_date(value):
 
 
 def split_top_level(text, separator='|'):
-    """按顶层分隔符切分（避开 {{...}} 内层）。"""
+    """按顶层分隔符切分（避开 {{...}} 模板与 [[链接|显示名]] 的内层竖线）。"""
     parts = []
     depth = 0
+    link = 0
     current = []
-    for char in text:
+    i = 0
+    while i < len(text):
+        if text.startswith('[[', i):
+            link += 1
+            current.append('[[')
+            i += 2
+            continue
+        if text.startswith(']]', i):
+            link = max(link - 1, 0)
+            current.append(']]')
+            i += 2
+            continue
+        char = text[i]
         if char == '{':
             depth += 1
-            current.append(char)
         elif char == '}':
             depth -= 1
-            current.append(char)
-        elif char == separator and depth == 0:
+        elif char == separator and depth == 0 and link == 0:
             parts.append(''.join(current).strip())
             current = []
-        else:
-            current.append(char)
+            i += 1
+            continue
+        current.append(char)
+        i += 1
     parts.append(''.join(current).strip())
     return parts
 
