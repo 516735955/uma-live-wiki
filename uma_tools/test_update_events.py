@@ -355,7 +355,10 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             "sessions": [{"id": "event-a-session-1", "label": "DAY1", "date": "2024-02-01", "performances": [{"song": "Song A ※Short ver.", "character_ids": ["specialweek"]}]}],
         }]
         catalog = UPDATE_EVENTS.build_song_catalog(albums, events, Identities(), "2024-02-02T00:00:00+00:00")
-        self.assertEqual(catalog["coverage"], {"songs": 1, "versions": 7, "albums": 1, "release_tracks": 6, "live_performances": 1})
+        self.assertEqual(catalog["coverage"], {
+            "songs": 1, "versions": 7, "albums": 1, "release_tracks": 6, "live_performances": 1,
+            "credited_songs": 0, "lyric_songs": 0, "credited_versions": 0, "lyric_versions": 0,
+        })
         self.assertEqual(catalog["songs"][0]["title"], "Song A")
         self.assertEqual(len(catalog["songs"][0]["versions"]), 7)
         character_version = next(version for version in catalog["songs"][0]["versions"] if "スペシャルウィーク" in version["title"])
@@ -779,12 +782,46 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             UPDATE_EVENTS.fetch_json_url = original_json
             UPDATE_EVENTS.fetch_text_url = original_text
 
+    def test_version_metadata_inherits_without_copying_full_lyrics_to_short_or_instrumental(self):
+        work = {
+            "title": "Test Song",
+            "versions": {
+                "original": {
+                    "id": "original", "title": "Test Song", "version_label": "", "instrumental": False,
+                    "releases": [{"release_date": "2024-01-01"}],
+                },
+                "alternate": {
+                    "id": "alternate", "title": "Test Song Another Ver.", "version_label": "Another Ver.", "instrumental": False,
+                    "releases": [{"release_date": "2024-02-01"}],
+                },
+                "short": {
+                    "id": "short", "title": "Test Song (Game Size)", "version_label": "Game Size", "instrumental": False,
+                    "releases": [{"release_date": "2024-03-01"}],
+                },
+                "off-vocal": {
+                    "id": "off-vocal", "title": "Test Song (Off Vocal)", "version_label": "Off Vocal", "instrumental": True,
+                    "releases": [{"release_date": "2024-04-01"}],
+                },
+            },
+        }
+        credits = {"versions": {"original": {"credits": [
+            {"role": "composer", "name": "Composer", "creator_id": "creator-composer"},
+        ]}}}
+        lyrics = {"versions": {"original": {"language": "ja", "lines": ["原曲歌词"]}}}
+        original_id = UPDATE_EVENTS.effective_music_metadata(work, credits, lyrics, {"versions": {}}, {"versions": {}})
+        self.assertEqual(original_id, "original")
+        self.assertEqual(work["versions"]["alternate"]["credits"], work["versions"]["original"]["credits"])
+        self.assertEqual(work["versions"]["alternate"]["lyrics"]["lines"], ["原曲歌词"])
+        self.assertIsNone(work["versions"]["short"]["lyrics"])
+        self.assertIsNone(work["versions"]["off-vocal"]["lyrics"])
+
     def test_committed_relationships_reference_known_records(self):
         catalog = json.loads((ROOT / "data" / "events_catalog.json").read_text(encoding="utf-8"))
         songs = json.loads((ROOT / "data" / "song_catalog.json").read_text(encoding="utf-8"))
+        creators = json.loads((ROOT / "data" / "creator_catalog.json").read_text(encoding="utf-8"))
         appearances = json.loads((ROOT / "data" / "appearance_index.json").read_text(encoding="utf-8"))
         profiles = json.loads((ROOT / "data" / "voice_actor_profiles.json").read_text(encoding="utf-8"))["voice_actors"]
-        self.assertEqual(UPDATE_EVENTS.validate(catalog, songs, appearances, profiles), [])
+        self.assertEqual(UPDATE_EVENTS.validate(catalog, songs, creators, appearances, profiles), [])
 
 
 if __name__ == "__main__":

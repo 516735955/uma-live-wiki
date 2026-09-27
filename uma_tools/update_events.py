@@ -39,6 +39,7 @@ TOOLS_DIR = Path(__file__).resolve().parent
 ROOT = TOOLS_DIR.parent
 DATA_DIR = ROOT / "data"
 EVENTS_DIR = DATA_DIR / "events"
+MUSIC_DIR = DATA_DIR / "music"
 PROGRAM_REFRESH_REPORT = EVENTS_DIR / "program_refresh_report.json"
 OFFICIAL_CHANNEL_ID = "UCAWxPGGuIfWME2KTLUmSCHw"
 REGULAR_PROGRAM_BASELINES = {"paka-live-tv": 62, "paka-live-tv-prime": 6, "sokosoko-paka-live-tv": 55}
@@ -59,10 +60,21 @@ IMMUTABLE_LIVE_FILES = (DATA_DIR / "live_data.json", DATA_DIR / "live_cat_data.j
 OUTPUT_FILES = {
     "catalog": DATA_DIR / "events_catalog.json",
     "songs": DATA_DIR / "song_catalog.json",
+    "creators": DATA_DIR / "creator_catalog.json",
     "appearances": DATA_DIR / "appearance_index.json",
     "profiles": DATA_DIR / "voice_actor_profiles.json",
     "manifest": DATA_DIR / "catalog_manifest.json",
 }
+
+MUSIC_SOURCE_FILES = {
+    "creators": MUSIC_DIR / "creators.json",
+    "credits": MUSIC_DIR / "credits.json",
+    "lyrics": MUSIC_DIR / "lyrics.json",
+    "timings": MUSIC_DIR / "lyric_timings.json",
+    "overrides": MUSIC_DIR / "version_overrides.json",
+}
+CREATOR_ROLE_LABELS = {"lyricist": "作词", "composer": "作曲", "arranger": "编曲"}
+CREATOR_ROLE_ORDER = {"lyricist": 0, "composer": 1, "arranger": 2}
 
 EVENT_COVER_BY_KIND = {
     "concert": "/uma_tools/img/event-covers/concert.svg",
@@ -420,6 +432,181 @@ def is_instrumental_track(title: str, artist: str) -> bool:
     return bool(re.search(r"(?:off[ -]?vocal|instrumental|inst\.?|纯音乐|伴奏)", value, re.I))
 
 
+def is_short_recording(title: str, label: str = "") -> bool:
+    value = unicodedata.normalize("NFKC", f"{title} {label}")
+    return bool(re.search(r"(?:game|tv|anime|short|1\s*chorus|ワンコーラス|ゲーム|アニメ)\s*(?:size|ver(?:sion)?\.?)?", value, re.I))
+
+
+def select_original_version(work: dict[str, Any], overrides: dict[str, Any]) -> str:
+    versions = list(work["versions"].values())
+    version_overrides = overrides.get("versions") or {}
+    marked = [version for version in versions if (version_overrides.get(version["id"]) or {}).get("original_for_song")]
+    if marked:
+        return marked[0]["id"]
+    exact = [
+        version for version in versions
+        if fold_song_key(version["title"]) == fold_song_key(work["title"])
+        and not version.get("instrumental")
+        and version.get("releases")
+    ]
+    if exact:
+        return min(
+            exact,
+            key=lambda row: min((release.get("release_date") or "9999-99-99") for release in row["releases"]),
+        )["id"]
+    released = [version for version in versions if not version.get("instrumental") and version.get("releases")]
+    if released:
+        return min(
+            released,
+            key=lambda row: min((release.get("release_date") or "9999-99-99") for release in row["releases"]),
+        )["id"]
+    vocal = [version for version in versions if not version.get("instrumental")]
+    return (vocal or versions)[0]["id"] if versions else ""
+
+
+def effective_music_metadata(
+    work: dict[str, Any],
+    credits_doc: dict[str, Any],
+    lyrics_doc: dict[str, Any],
+    timings_doc: dict[str, Any],
+    overrides_doc: dict[str, Any],
+) -> str:
+    versions = list(work["versions"].values())
+    versions_by_id = {version["id"]: version for version in versions}
+    source_credits = credits_doc.get("versions") or {}
+    source_lyrics = lyrics_doc.get("versions") or {}
+    source_timings = timings_doc.get("versions") or {}
+    overrides = overrides_doc.get("versions") or {}
+    original_id = select_original_version(work, overrides_doc)
+    original_credits = list((source_credits.get(original_id) or {}).get("credits") or [])
+
+    for version in versions:
+        version_id = version["id"]
+        version_override = overrides.get(version_id) or {}
+        parent_id = version_override.get("parent_version_id") or original_id
+        parent_credits = list((source_credits.get(parent_id) or {}).get("credits") or original_credits)
+        explicit = list((source_credits.get(version_id) or {}).get("credits") or [])
+        explicit_roles = {row.get("role") for row in explicit if row.get("role")}
+        credits = explicit + [row for row in parent_credits if row.get("role") not in explicit_roles]
+        deduped: list[dict[str, Any]] = []
+        seen_credit: set[tuple[str, str]] = set()
+        for credit in credits:
+            key = (str(credit.get("role") or ""), str(credit.get("creator_id") or credit.get("name") or ""))
+            if not key[0] or not key[1] or key in seen_credit:
+                continue
+            seen_credit.add(key)
+            deduped.append({
+                "role": credit["role"],
+                "role_label": CREATOR_ROLE_LABELS.get(credit["role"], credit["role"]),
+                "creator_id": credit.get("creator_id") or "",
+                "name": credit.get("name") or "",
+                **({"affiliation": credit["affiliation"]} if credit.get("affiliation") else {}),
+            })
+        deduped.sort(key=lambda row: (CREATOR_ROLE_ORDER.get(row["role"], 99), fold_name(row["name"])))
+        version["credits"] = deduped
+        version["creator_ids"] = sorted({row["creator_id"] for row in deduped if row.get("creator_id")})
+
+        lyric_source_id = str(version_override.get("lyrics_from") or version_id)
+        lyric = source_lyrics.get(lyric_source_id)
+        timing = source_timings.get(lyric_source_id)
+        if (
+            not lyric
+            and not version.get("instrumental")
+            and not is_short_recording(version.get("title") or "", version.get("version_label") or "")
+        ):
+            lyric_source_id = str(version_override.get("lyrics_from") or parent_id)
+            lyric = source_lyrics.get(lyric_source_id)
+            timing = source_timings.get(lyric_source_id)
+        if version.get("instrumental") or version_override.get("no_lyrics"):
+            lyric = None
+            timing = None
+        if lyric and lyric.get("lines"):
+            version["lyrics"] = {
+                "language": lyric.get("language") or "ja",
+                "lines": list(lyric.get("lines") or []),
+                **({"translation_language": lyric["translation_language"], "translation_lines": list(lyric.get("translation_lines") or [])}
+                   if lyric.get("translation_lines") else {}),
+                **({"timings": list(timing.get("lines") or [])} if timing and timing.get("lines") else {}),
+            }
+        else:
+            version["lyrics"] = None
+    return original_id
+
+
+def build_creator_catalog(songs_catalog: dict[str, Any], creators_doc: dict[str, Any], generated_at: str) -> dict[str, Any]:
+    source_by_id = {str(row.get("id") or ""): row for row in creators_doc.get("creators") or [] if row.get("id")}
+    relations: dict[str, dict[str, Any]] = defaultdict(lambda: {"works": {}, "versions": set(), "roles": Counter(), "collaborators": defaultdict(lambda: {"versions": set(), "works": set()})})
+    for song in songs_catalog.get("songs") or []:
+        for version in song.get("versions") or []:
+            credits = [row for row in version.get("credits") or [] if row.get("creator_id")]
+            creator_ids = sorted({row["creator_id"] for row in credits})
+            roles_by_creator: dict[str, set[str]] = defaultdict(set)
+            for credit in credits:
+                creator_id = credit["creator_id"]
+                role = credit["role"]
+                roles_by_creator[creator_id].add(role)
+                relations[creator_id]["versions"].add(version["id"])
+                relations[creator_id]["roles"][role] += 1
+                work = relations[creator_id]["works"].setdefault(song["id"], {
+                    "song_id": song["id"], "title": song["title"], "cover": song.get("cover") or "",
+                    "release_date": song.get("release_date") or "", "roles": set(), "version_ids": set(),
+                })
+                work["roles"].add(role)
+                work["version_ids"].add(version["id"])
+            for creator_id in creator_ids:
+                for collaborator_id in creator_ids:
+                    if collaborator_id == creator_id:
+                        continue
+                    relations[creator_id]["collaborators"][collaborator_id]["versions"].add(version["id"])
+                    relations[creator_id]["collaborators"][collaborator_id]["works"].add(song["id"])
+
+    creators: list[dict[str, Any]] = []
+    for creator_id, relation in relations.items():
+        source = source_by_id.get(creator_id) or {"id": creator_id, "name": creator_id}
+        works = []
+        for work in relation["works"].values():
+            works.append({
+                **{key: value for key, value in work.items() if key not in ("roles", "version_ids")},
+                "roles": sorted(work["roles"], key=lambda role: CREATOR_ROLE_ORDER.get(role, 99)),
+                "version_ids": sorted(work["version_ids"]),
+            })
+        works.sort(key=lambda row: (row["release_date"] or "9999-99-99", fold_song_key(row["title"]), row["song_id"]))
+        collaborators = []
+        for collaborator_id, shared in relation["collaborators"].items():
+            collaborator = source_by_id.get(collaborator_id) or {}
+            collaborators.append({
+                "creator_id": collaborator_id,
+                "name": collaborator.get("name") or collaborator_id,
+                "shared_version_count": len(shared["versions"]),
+                "shared_work_count": len(shared["works"]),
+            })
+        collaborators.sort(key=lambda row: (-row["shared_work_count"], -row["shared_version_count"], fold_name(row["name"])))
+        creators.append({
+            "id": creator_id,
+            "name": source.get("name") or creator_id,
+            "aliases": list(source.get("aliases") or []),
+            "type": source.get("type") or "person",
+            "affiliations": list(source.get("affiliations") or []),
+            "roles": [{"role": role, "label": CREATOR_ROLE_LABELS.get(role, role), "count": count}
+                      for role, count in sorted(relation["roles"].items(), key=lambda item: CREATOR_ROLE_ORDER.get(item[0], 99))],
+            "work_count": len(works),
+            "version_count": len(relation["versions"]),
+            "works": works,
+            "collaborators": collaborators,
+        })
+    creators.sort(key=lambda row: (fold_name(row["name"]), row["id"]))
+    return {
+        "schema_version": 1,
+        "generated_at": generated_at,
+        "coverage": {
+            "creators": len(creators),
+            "credited_works": len({work["song_id"] for creator in creators for work in creator["works"]}),
+            "credited_versions": len({version_id for creator in creators for work in creator["works"] for version_id in work["version_ids"]}),
+        },
+        "creators": creators,
+    }
+
+
 def release_vocalists(artist: str, identities: "IdentityIndex") -> list[dict[str, Any]]:
     """Resolve release credits once; pages never reinterpret artist strings."""
     credits: list[dict[str, Any]] = []
@@ -464,6 +651,7 @@ def build_song_catalog(
     identities: "IdentityIndex",
     generated_at: str,
     overrides: dict[str, Any] | None = None,
+    music_sources: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Build one canonical work with explicit release/performance variants."""
     raw_titles = {
@@ -501,6 +689,7 @@ def build_song_catalog(
         version = work["versions"].setdefault(version_key, {
             "id": stable_version_id(work["id"], title), "title": title,
             "version_label": version_label, "artists": set(), "releases": [], "performances": [],
+            "instrumental": False,
         })
         return work, version
 
@@ -512,6 +701,7 @@ def build_song_catalog(
             work, version = ensure_version(str(track.get("name") or ""))
             artist = str(track.get("artist") or "").strip()
             instrumental = is_instrumental_track(str(track.get("name") or ""), artist)
+            version["instrumental"] = bool(version["instrumental"] or instrumental)
             vocalists = [] if instrumental else release_vocalists(artist, identities)
             if artist:
                 work["artists"].add(artist)
@@ -573,7 +763,15 @@ def build_song_catalog(
                 })
 
     songs = []
+    sources = music_sources or {}
     for work in works.values():
+        original_version_id = effective_music_metadata(
+            work,
+            sources.get("credits") or {},
+            sources.get("lyrics") or {},
+            sources.get("timings") or {},
+            sources.get("overrides") or {},
+        )
         versions = []
         for version in work["versions"].values():
             releases = sorted(version["releases"], key=lambda row: (row["release_date"] or "9999-99-99", row["album_name"], row["track_number"]))
@@ -582,6 +780,10 @@ def build_song_catalog(
                 "id": version["id"], "title": version["title"], "version_label": version["version_label"],
                 "artists": sorted(version["artists"]), "releases": releases, "performances": performances,
                 "release_count": len(releases), "performance_count": len(performances),
+                "instrumental": bool(version.get("instrumental")),
+                "credits": list(version.get("credits") or []),
+                "creator_ids": list(version.get("creator_ids") or []),
+                "lyrics": version.get("lyrics"),
             })
         versions.sort(key=lambda row: (bool(row["version_label"]), row["version_label"], row["title"]))
         release_count = sum(version["release_count"] for version in versions)
@@ -603,6 +805,9 @@ def build_song_catalog(
             "release_date": (first_release or {}).get("release_date") or "",
             "versions": versions, "version_count": len(versions), "release_count": release_count,
             "performance_count": performance_count,
+            "original_version_id": original_version_id,
+            "creator_ids": sorted({creator_id for version in versions for creator_id in version.get("creator_ids") or []}),
+            "has_lyrics": any(bool(version.get("lyrics")) for version in versions),
         })
     songs.sort(key=lambda row: (fold_song_key(row["title"]), row["id"]))
     return {
@@ -612,6 +817,10 @@ def build_song_catalog(
             "albums": len(albums),
             "release_tracks": sum(row["release_count"] for row in songs),
             "live_performances": sum(row["performance_count"] for row in songs),
+            "credited_songs": sum(bool(row.get("creator_ids")) for row in songs),
+            "lyric_songs": sum(bool(row.get("has_lyrics")) for row in songs),
+            "credited_versions": sum(bool(version.get("creator_ids")) for row in songs for version in row.get("versions") or []),
+            "lyric_versions": sum(bool(version.get("lyrics")) for row in songs for version in row.get("versions") or []),
         },
         "songs": songs,
     }
@@ -1693,6 +1902,7 @@ def enrich_profiles(profiles: list[dict[str, Any]], appearance_index: dict[str, 
 def validate(
     catalog: dict[str, Any],
     songs_catalog: dict[str, Any],
+    creators_catalog: dict[str, Any],
     appearances: dict[str, Any],
     profiles: list[dict[str, Any]],
 ) -> list[str]:
@@ -1738,6 +1948,32 @@ def validate(
         errors.append("duplicate song IDs")
     if len(version_ids) != len(known_versions):
         errors.append("duplicate song version IDs")
+    creator_ids = [creator.get("id") for creator in creators_catalog.get("creators") or []]
+    known_creators = set(creator_ids)
+    if len(creator_ids) != len(known_creators):
+        errors.append("duplicate creator IDs")
+    for song in songs_catalog.get("songs") or []:
+        if song.get("original_version_id") not in {version.get("id") for version in song.get("versions") or []}:
+            errors.append(f"song {song.get('id')} has an invalid original version")
+        for version in song.get("versions") or []:
+            if version.get("instrumental") and version.get("lyrics"):
+                errors.append(f"instrumental version {version.get('id')} publishes lyrics")
+            for credit in version.get("credits") or []:
+                if credit.get("creator_id") not in known_creators:
+                    errors.append(f"version {version.get('id')} references unknown creator {credit.get('creator_id')}")
+            timings = ((version.get("lyrics") or {}).get("timings") or [])
+            if any(int(timings[index].get("start_ms") or 0) > int(timings[index + 1].get("start_ms") or 0) for index in range(len(timings) - 1)):
+                errors.append(f"version {version.get('id')} has unsorted lyric timing")
+    for creator in creators_catalog.get("creators") or []:
+        for work in creator.get("works") or []:
+            if work.get("song_id") not in known_songs:
+                errors.append(f"creator {creator.get('id')} references unknown song {work.get('song_id')}")
+            for version_id in work.get("version_ids") or []:
+                if version_id not in known_versions:
+                    errors.append(f"creator {creator.get('id')} references unknown version {version_id}")
+        for collaborator in creator.get("collaborators") or []:
+            if collaborator.get("creator_id") not in known_creators:
+                errors.append(f"creator {creator.get('id')} references unknown collaborator {collaborator.get('creator_id')}")
     semantic_events: dict[tuple[str, str], list[str]] = defaultdict(list)
     all_session_ids: list[str] = []
     for event in catalog.get("events") or []:
@@ -3170,6 +3406,7 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     voice_list = read_window_data(DATA_DIR / "voice_list_data.js", "VA_LIST")
     photos = read_window_data(DATA_DIR / "va_photos_data.js", "VA_PHOTOS")
     identity_registry = read_json(VOICE_IDENTITIES_FILE)
+    music_sources = {key: read_json(path) for key, path in MUSIC_SOURCE_FILES.items()}
     identities = IdentityIndex(characters, voice_list, photos, overrides, identity_registry, details)
     used: set[str] = set()
     events = numbered_events(live_data, identities, used, overrides.get("stable_event_ids") or {})
@@ -3206,7 +3443,8 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     generated_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
-    songs_catalog = build_song_catalog(albums, events, identities, generated_at, overrides)
+    songs_catalog = build_song_catalog(albums, events, identities, generated_at, overrides, music_sources)
+    creators_catalog = build_creator_catalog(songs_catalog, music_sources["creators"], generated_at)
     appearances = build_appearance_index(events, songs_catalog, identities)
     profiles = enrich_profiles(identities.profiles, appearances)
     current_hashes = {path.name: sha256(path) for path in IMMUTABLE_LIVE_FILES}
@@ -3237,11 +3475,12 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
         "eventernote": eventernote, "series": series, "programs": programs,
         "voice_details": details, "overrides": overrides, "characters": characters,
         "voice_list": voice_list, "voice_photos": photos, "voice_identities": identity_registry,
+        "music_sources": music_sources,
     }
     build_id = hashlib.sha256(
         json.dumps(build_material, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
     ).hexdigest()[:20]
-    for document in (catalog, songs_catalog, appearances, profiles_doc):
+    for document in (catalog, songs_catalog, creators_catalog, appearances, profiles_doc):
         document["build_id"] = build_id
     manifest = {
         "schema_version": 1,
@@ -3250,14 +3489,15 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
         "files": {
             "events": "/data/events_catalog.json",
             "songs": "/data/song_catalog.json",
+            "creators": "/data/creator_catalog.json",
             "appearances": "/data/appearance_index.json",
             "voice_actors": "/data/voice_actor_profiles.json",
         },
     }
-    errors = validate(catalog, songs_catalog, appearances, profiles)
+    errors = validate(catalog, songs_catalog, creators_catalog, appearances, profiles)
     if errors:
         raise RuntimeError("validation failed:\n- " + "\n- ".join(errors[:30]))
-    return {"catalog": catalog, "songs": songs_catalog, "appearances": appearances, "profiles": profiles_doc, "manifest": manifest}
+    return {"catalog": catalog, "songs": songs_catalog, "creators": creators_catalog, "appearances": appearances, "profiles": profiles_doc, "manifest": manifest}
 
 
 def comparable(value: Any) -> Any:
