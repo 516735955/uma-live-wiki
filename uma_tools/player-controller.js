@@ -27,7 +27,7 @@
         id: id,
         name: name || id,
         image: String(row.image || row.photo || ''),
-        color: String(row.color || row.color_main || '#3157e8')
+        color: String(row.color || row.color_main || '#3558d8')
       };
     }).filter(Boolean);
   }
@@ -63,18 +63,19 @@
     if (!storage) return null;
     try {
       const parsed = JSON.parse(storage.getItem(STORAGE_KEY) || 'null');
-      if (!parsed || !parsed.current) return null;
+      if (!parsed) return null;
       const queue = (parsed.queue || []).map(normalizeTrack).filter(Boolean);
       const current = normalizeTrack(parsed.current);
-      if (!current) return null;
+      if (!queue.length && !current) return null;
       let index = Number(parsed.queueIndex);
-      if (!Number.isInteger(index) || index < 0 || index >= queue.length || queue[index].id !== current.id) {
+      if (current && (!Number.isInteger(index) || index < 0 || index >= queue.length || queue[index].id !== current.id)) {
         index = queue.findIndex(function (track) { return track.id === current.id; });
       }
-      if (index < 0) {
+      if (current && index < 0) {
         queue.splice(0, queue.length, current);
         index = 0;
       }
+      if (!current) index = -1;
       return {
         current: current,
         queue: queue,
@@ -82,7 +83,9 @@
         currentTime: Math.max(0, Number(parsed.currentTime) || 0),
         contextLabel: String(parsed.contextLabel || ''),
         visible: parsed.visible !== false,
-        playbackMode: PLAYBACK_MODES.includes(parsed.playbackMode) ? parsed.playbackMode : 'list'
+        playbackMode: PLAYBACK_MODES.includes(parsed.playbackMode) ? parsed.playbackMode : 'list',
+        volume: clamp(parsed.volume == null ? 1 : parsed.volume, 0, 1),
+        muted: !!parsed.muted
       };
     } catch (error) {
       return null;
@@ -106,6 +109,8 @@
       panelOpen: false,
       visible: restored ? restored.visible : false,
       playbackMode: restored ? restored.playbackMode : 'list',
+      volume: restored ? restored.volume : 1,
+      muted: restored ? restored.muted : false,
       currentTime: restored ? restored.currentTime : 0,
       duration: 0,
       buffered: 0,
@@ -116,13 +121,14 @@
     let handlers = [];
     let lastPersistSecond = -1;
     let shuffleHistory = [];
+    let prefetchAudio = null;
 
     function isPlaying() {
       return PLAYING_STATES.has(state.status);
     }
 
     function persist(force) {
-      if (!storage || !state.current) return;
+      if (!storage || (!state.current && !state.queue.length)) return;
       const second = Math.floor(state.currentTime || 0);
       if (!force && second === lastPersistSecond) return;
       lastPersistSecond = second;
@@ -134,7 +140,9 @@
           currentTime: state.currentTime,
           contextLabel: state.contextLabel,
           visible: state.visible,
-          playbackMode: state.playbackMode
+          playbackMode: state.playbackMode,
+          volume: state.volume,
+          muted: state.muted
         }));
       } catch (error) {}
     }
@@ -164,6 +172,26 @@
           position: clamp(state.currentTime, 0, Math.max(0, state.duration - 0.001))
         });
       } catch (error) {}
+    }
+
+    function nextQueueIndex() {
+      if (!state.queue.length) return -1;
+      if (state.playbackMode === 'shuffle') return randomQueueIndex();
+      return state.queueIndex < 0 ? 0 : (state.queueIndex + 1) % state.queue.length;
+    }
+
+    function prefetchNextMetadata() {
+      const connection = typeof navigator !== 'undefined' && navigator.connection;
+      if (connection && connection.saveData) return;
+      const index = nextQueueIndex();
+      const track = index >= 0 ? state.queue[index] : null;
+      if (!track || (state.current && track.id === state.current.id) || typeof Audio === 'undefined') return;
+      try {
+        prefetchAudio = new Audio();
+        prefetchAudio.preload = 'metadata';
+        prefetchAudio.src = proxyUrl(track.url);
+        if (typeof prefetchAudio.load === 'function') prefetchAudio.load();
+      } catch (error) { prefetchAudio = null; }
     }
 
     function markError(message) {
@@ -204,11 +232,15 @@
       state.pendingSeek = 0;
       state.status = 'loading';
       audio.pause();
+      audio.volume = state.volume;
+      audio.muted = state.muted;
       audio.src = proxyUrl(state.current.url);
       if (typeof audio.load === 'function') audio.load();
       updateMediaSession();
       persist(true);
-      return autoplay ? requestPlay() : Promise.resolve(true);
+      const result = autoplay ? requestPlay() : Promise.resolve(true);
+      Promise.resolve(result).then(function () { prefetchNextMetadata(); });
+      return result;
     }
 
     function setQueue(tracks, selectedIndex, contextLabel, autoplay) {
@@ -231,38 +263,46 @@
       return loadCurrent(autoplay !== false);
     }
 
-    function enqueueTracks(tracks, selectedIndex, contextLabel, autoplay) {
+    function enqueueTracks(tracks, selectedIndex, contextLabel) {
       const incoming = (Array.isArray(tracks) ? tracks : []).map(normalizeTrack).filter(Boolean);
       if (!incoming.length) {
         markError('没有可加入播放列表的曲目。');
         return Promise.resolve(false);
       }
-      const selected = incoming[clamp(selectedIndex, 0, incoming.length - 1)];
       const wasEmpty = !state.queue.length;
+      let added = 0;
       incoming.forEach(function (track) {
         if (state.queue.some(function (queued) { return queued.id === track.id; })) return;
         state.queue.push(track);
+        added += 1;
       });
-      const nextIndex = state.queue.findIndex(function (track) { return track.id === selected.id; });
-      if (nextIndex < 0) return Promise.resolve(false);
       if (wasEmpty) {
-        state.contextLabel = String(contextLabel || selected.sourceContext || '播放列表');
+        state.contextLabel = String(contextLabel || incoming[0].sourceContext || '播放列表');
       } else if (contextLabel && state.contextLabel && state.contextLabel !== contextLabel) {
         state.contextLabel = '播放列表';
       }
-      state.queueIndex = nextIndex;
-      state.current = state.queue[nextIndex];
       state.visible = true;
-      state.panelOpen = false;
+      if (!state.current) state.panelOpen = true;
       shuffleHistory = [];
-      return loadCurrent(autoplay !== false);
+      persist(true);
+      return Promise.resolve(added > 0);
     }
 
     function playTrack(track) {
       const normalized = normalizeTrack(track);
       if (!normalized) return Promise.resolve(false);
       if (state.current && state.current.id === normalized.id) return togglePlay();
-      return enqueueTracks([normalized], 0, normalized.sourceContext || '单曲试听', true);
+      const queuedIndex = state.queue.findIndex(function (queued) { return queued.id === normalized.id; });
+      if (queuedIndex >= 0) return playQueueAt(queuedIndex);
+      const insertAt = state.queueIndex >= 0 ? state.queueIndex + 1 : state.queue.length;
+      state.queue.splice(insertAt, 0, normalized);
+      state.queueIndex = insertAt;
+      state.current = normalized;
+      state.contextLabel = state.queue.length === 1 ? (normalized.sourceContext || '单曲试听') : '播放列表';
+      state.visible = true;
+      state.panelOpen = false;
+      shuffleHistory = [];
+      return loadCurrent(true);
     }
 
     function playQueueAt(index, rememberShuffle) {
@@ -360,6 +400,30 @@
       persist(true);
     }
 
+    function seekBy(seconds) {
+      if (!state.current) return;
+      seekTo((state.currentTime || 0) + Number(seconds || 0));
+    }
+
+    function setVolume(value) {
+      const audio = getAudio();
+      state.volume = clamp(value, 0, 1);
+      if (state.volume > 0) state.muted = false;
+      if (audio) {
+        audio.volume = state.volume;
+        audio.muted = state.muted;
+      }
+      persist(true);
+    }
+
+    function toggleMute() {
+      const audio = getAudio();
+      state.muted = !state.muted;
+      if (audio) audio.muted = state.muted;
+      persist(true);
+      return state.muted;
+    }
+
     function retry() {
       if (!state.current) return Promise.resolve(false);
       state.visible = true;
@@ -414,6 +478,30 @@
       }
     }
 
+    function clearQueue() {
+      const audio = getAudio();
+      if (audio) {
+        audio.pause();
+        audio.removeAttribute && audio.removeAttribute('src');
+        if (typeof audio.load === 'function') audio.load();
+      }
+      state.queue.splice(0, state.queue.length);
+      state.current = null;
+      state.queueIndex = -1;
+      state.status = 'idle';
+      state.panelOpen = false;
+      state.visible = false;
+      state.currentTime = 0;
+      state.duration = 0;
+      state.buffered = 0;
+      state.error = '';
+      shuffleHistory = [];
+      if (storage) {
+        try { storage.removeItem(STORAGE_KEY); }
+        catch (error) {}
+      }
+    }
+
     function moveQueueItem(index, direction) {
       const target = index + direction;
       if (index < 0 || target < 0 || index >= state.queue.length || target >= state.queue.length) return;
@@ -425,7 +513,17 @@
       persist(true);
     }
 
-    function openPanel() { if (state.current) state.panelOpen = true; }
+    function moveQueueItemTo(index, target) {
+      if (index === target || index < 0 || target < 0 || index >= state.queue.length || target >= state.queue.length) return;
+      const currentId = state.current && state.current.id;
+      const row = state.queue.splice(index, 1)[0];
+      state.queue.splice(target, 0, row);
+      state.queueIndex = state.queue.findIndex(function (track) { return currentId && track.id === currentId; });
+      shuffleHistory = [];
+      persist(true);
+    }
+
+    function openPanel() { if (state.current || state.queue.length) { state.visible = true; state.panelOpen = true; } }
     function closePanel() { state.panelOpen = false; }
     function togglePanel() { state.panelOpen ? closePanel() : openPanel(); }
 
@@ -479,8 +577,8 @@
           previoustrack: previous,
           nexttrack: next,
           seekto: function (details) { if (details && Number.isFinite(details.seekTime)) seekTo(details.seekTime); },
-          seekbackward: function (details) { seekTo(state.currentTime - ((details && details.seekOffset) || 10)); },
-          seekforward: function (details) { seekTo(state.currentTime + ((details && details.seekOffset) || 10)); }
+          seekbackward: function (details) { seekTo(state.currentTime - ((details && details.seekOffset) || 15)); },
+          seekforward: function (details) { seekTo(state.currentTime + ((details && details.seekOffset) || 15)); }
         };
         Object.keys(actions).forEach(function (action) {
           try { navigator.mediaSession.setActionHandler(action, actions[action]); }
@@ -488,6 +586,8 @@
         });
       }
       if (state.current) {
+        audio.volume = state.volume;
+        audio.muted = state.muted;
         audio.src = proxyUrl(state.current.url);
         if (typeof audio.load === 'function') audio.load();
         updateMediaSession();
@@ -498,6 +598,7 @@
       if (boundAudio) handlers.forEach(function (entry) { boundAudio.removeEventListener(entry[0], entry[1]); });
       handlers = [];
       boundAudio = null;
+      prefetchAudio = null;
     }
 
     return {
@@ -513,11 +614,16 @@
       next: next,
       previous: previous,
       seekTo: seekTo,
+      seekBy: seekBy,
+      setVolume: setVolume,
+      toggleMute: toggleMute,
       retry: retry,
       cyclePlaybackMode: cyclePlaybackMode,
       dismiss: dismiss,
       removeQueueItem: removeQueueItem,
+      clearQueue: clearQueue,
       moveQueueItem: moveQueueItem,
+      moveQueueItemTo: moveQueueItemTo,
       openPanel: openPanel,
       closePanel: closePanel,
       togglePanel: togglePanel

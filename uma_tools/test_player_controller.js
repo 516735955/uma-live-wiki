@@ -108,10 +108,18 @@ async function run() {
 
   const appendedAlbum = setup();
   await appendedAlbum.controller.playTrack(track('a'));
-  await appendedAlbum.controller.enqueueTracks([track('b'), track('c'), track('a')], 0, 'Album', true);
+  await appendedAlbum.controller.enqueueTracks([track('b'), track('c'), track('a')], 0, 'Album');
   assert.deepEqual(appendedAlbum.state.queue.map(function (row) { return row.id; }), ['a', 'b', 'c']);
-  assert.equal(appendedAlbum.state.current.id, 'b');
+  assert.equal(appendedAlbum.state.current.id, 'a', 'adding to the queue never changes the current track');
+  assert.equal(appendedAlbum.audio.paused, false, 'adding to the queue never interrupts playback');
   assert.equal(appendedAlbum.state.contextLabel, '播放列表', 'mixed sources use the generic queue label');
+
+  const queuedOnly = setup();
+  await queuedOnly.controller.enqueueTracks([track('a'), track('b')], 0, 'Album');
+  assert.equal(queuedOnly.state.current, null, 'adding to an empty queue does not load a track');
+  assert.equal(queuedOnly.state.queue.length, 2);
+  assert.equal(queuedOnly.audio.src, '');
+  assert.equal(queuedOnly.state.panelOpen, true, 'a queue with no current track opens for selection');
 
   const queue = setup();
   await queue.controller.setQueue([track('a'), track('b'), track('c')], 1, 'Album', true);
@@ -134,6 +142,17 @@ async function run() {
   assert.equal(queue.state.queueIndex, 1, 'moving the queue keeps the current track selected');
   queue.controller.removeQueueItem(1);
   assert.equal(queue.state.current.id, 'b', 'removing the current track selects the row now occupying its place');
+  queue.controller.moveQueueItemTo(1, 0);
+  assert.equal(queue.state.queueIndex, 0, 'drag reordering keeps the current item identity');
+
+  queue.controller.setVolume(0.45);
+  assert.equal(queue.audio.volume, 0.45);
+  assert.equal(queue.state.volume, 0.45);
+  assert.equal(queue.controller.toggleMute(), true);
+  assert.equal(queue.audio.muted, true);
+  queue.audio.metadata(120);
+  queue.controller.seekBy(15);
+  assert.equal(queue.audio.currentTime, 15);
 
   const modes = setup(null, function () { return 0; });
   await modes.controller.setQueue([track('a'), track('b'), track('c')], 0, 'Modes', true);
@@ -189,6 +208,25 @@ async function run() {
   assert.equal(restored.state.contextLabel, 'Saved album');
   assert.equal(restored.state.visible, false, 'a dismissed dock stays hidden after restoration');
   assert.equal(restored.state.playbackMode, 'shuffle');
+
+  const queueSnapshot = {
+    current: null,
+    queue: [track('saved-a'), track('saved-b')],
+    queueIndex: -1,
+    currentTime: 0,
+    visible: false,
+    playbackMode: 'list',
+    volume: 0.3,
+    muted: true
+  };
+  const restoredQueue = setup(new FakeStorage({ 'uma-live-player-v2': JSON.stringify(queueSnapshot) }));
+  assert.equal(restoredQueue.state.current, null);
+  assert.equal(restoredQueue.state.queue.length, 2, 'a queue-only session is restored');
+  assert.equal(restoredQueue.state.volume, 0.3);
+  assert.equal(restoredQueue.state.muted, true);
+  restoredQueue.controller.clearQueue();
+  assert.equal(restoredQueue.state.queue.length, 0);
+  assert.equal(restoredQueue.state.visible, false);
 
   console.log('player controller tests passed');
 }
