@@ -449,6 +449,11 @@
           "role": "composer",
           "name": "山本恭平",
           "creator_id": "creator-22a01c071a"
+        },
+        {
+          "role": "remixer",
+          "name": "TeddyLoid",
+          "creator_id": "creator-teddyloid-6f23df07ec"
         }
       ],
       "source": "netease_recording_metadata",
@@ -1034,9 +1039,15 @@
         },
         {
           "role": "arranger",
-          "name": "内田哲也)・滝澤俊輔 (TRYTONELABO",
+          "name": "内田哲也)",
           "affiliation": "Cygames",
-          "creator_id": "creator-trytonelabo-f1dfd9e061"
+          "creator_id": "creator-0b181270ba"
+        },
+        {
+          "role": "arranger",
+          "name": "滝澤俊輔 (TRYTONELABO",
+          "affiliation": "Cygames",
+          "creator_id": "creator-trytonelabo-93114bdfec"
         }
       ],
       "source": "netease_recording_metadata",
@@ -1057,9 +1068,15 @@
         },
         {
           "role": "arranger",
-          "name": "内田哲也)・滝澤俊輔 (TRYTONELABO",
+          "name": "内田哲也)",
           "affiliation": "Cygames",
-          "creator_id": "creator-trytonelabo-f1dfd9e061"
+          "creator_id": "creator-0b181270ba"
+        },
+        {
+          "role": "arranger",
+          "name": "滝澤俊輔 (TRYTONELABO",
+          "affiliation": "Cygames",
+          "creator_id": "creator-trytonelabo-93114bdfec"
         }
       ],
       "source": "netease_recording_metadata",
@@ -1096,9 +1113,15 @@
         },
         {
           "role": "arranger",
-          "name": "内田哲也)・滝澤俊輔 (TRYTONELABO",
+          "name": "内田哲也)",
           "affiliation": "Cygames",
-          "creator_id": "creator-trytonelabo-f1dfd9e061"
+          "creator_id": "creator-0b181270ba"
+        },
+        {
+          "role": "arranger",
+          "name": "滝澤俊輔 (TRYTONELABO",
+          "affiliation": "Cygames",
+          "creator_id": "creator-trytonelabo-93114bdfec"
         }
       ],
       "source": "netease_recording_metadata",
@@ -1297,6 +1320,11 @@
           "role": "arranger",
           "name": "Menma The Cat",
           "creator_id": "creator-menma-the-cat-6d58706210"
+        },
+        {
+          "role": "remixer",
+          "name": "Menma The Cat",
+          "creator_id": "creator-menma-the-cat-6d58706210"
         }
       ],
       "source": "official_lantis_catalog",
@@ -1357,6 +1385,11 @@
         },
         {
           "role": "arranger",
+          "name": "maeshima soshi",
+          "creator_id": "creator-maeshima-soshi-7807cc5c25"
+        },
+        {
+          "role": "remixer",
           "name": "maeshima soshi",
           "creator_id": "creator-maeshima-soshi-7807cc5c25"
         }
@@ -2191,8 +2224,13 @@
         },
         {
           "role": "arranger",
-          "name": "新田目駿・廣澤優也",
-          "creator_id": "creator-a35a5cde56"
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        },
+        {
+          "role": "arranger",
+          "name": "廣澤優也",
+          "creator_id": "creator-a0d84fd99d"
         }
       ],
       "source": "netease_recording_metadata",
@@ -2464,6 +2502,11 @@
         },
         {
           "role": "arranger",
+          "name": "fox capture plan",
+          "creator_id": "creator-fox-capture-plan-026b7d1aca"
+        },
+        {
+          "role": "remixer",
           "name": "fox capture plan",
           "creator_id": "creator-fox-capture-plan-026b7d1aca"
         }
@@ -2951,14 +2994,14 @@
         {
           "role": "lyricist",
           "name": "Apis",
-          "creator_id": "creator-apis-7e6674d509",
-          "affiliation": "TRYTONELABO"
+          "affiliation": "TRYTONELABO",
+          "creator_id": "creator-apis-7e6674d509"
         },
         {
           "role": "composer",
           "name": "TAKT",
-          "creator_id": "creator-takt-04e4ec1684",
-          "affiliation": "TRYTONELABO"
+          "affiliation": "TRYTONELABO",
+          "creator_id": "creator-takt-04e4ec1684"
         },
         {
           "role": "arranger",
@@ -3892,6 +3935,11 @@
           "role": "composer",
           "name": "宮崎 誠",
           "creator_id": "creator-340e11375e"
+        },
+        {
+          "role": "remixer",
+          "name": "PandaBoY",
+          "creator_id": "creator-pandaboy-4b3e2b1ab5"
         }
       ],
       "source": "netease_recording_metadata",
@@ -4021,8 +4069,8 @@
         {
           "role": "lyricist",
           "name": "Apis",
-          "creator_id": "creator-apis-7e6674d509",
-          "affiliation": "TRYTONELABO"
+          "affiliation": "TRYTONELABO",
+          "creator_id": "creator-apis-7e6674d509"
         },
         {
           "role": "composer",
@@ -5348,18 +5396,14 @@
         {
           "role": "arranger",
           "name": "加藤慶久",
+          "affiliation": "Cygames",
           "creator_id": "creator-0a12f443ae"
         },
         {
           "role": "arranger",
           "name": "本田晃弘",
-          "creator_id": "creator-eaf94340d3"
-        },
-        {
-          "role": "arranger",
-          "name": "本田晃弘(Cygames) , 加藤慶久",
           "affiliation": "Cygames",
-          "creator_id": "creator-cygames-3e6f050099"
+          "creator_id": "creator-eaf94340d3"
         }
       ],
       "source": "netease_recording_metadata",
@@ -6293,20 +6337,20 @@
         {
           "role": "lyricist",
           "name": "Aira",
-          "creator_id": "creator-aira-f4bc4d87cd",
-          "affiliation": "Dream Monster"
+          "affiliation": "Dream Monster",
+          "creator_id": "creator-aira-f4bc4d87cd"
         },
         {
           "role": "composer",
           "name": "Aira",
-          "creator_id": "creator-aira-f4bc4d87cd",
-          "affiliation": "Dream Monster"
+          "affiliation": "Dream Monster",
+          "creator_id": "creator-aira-f4bc4d87cd"
         },
         {
           "role": "arranger",
           "name": "Aira",
-          "creator_id": "creator-aira-f4bc4d87cd",
-          "affiliation": "Dream Monster"
+          "affiliation": "Dream Monster",
+          "creator_id": "creator-aira-f4bc4d87cd"
         }
       ],
       "source": "netease_recording_metadata",
@@ -6634,6 +6678,11 @@
         },
         {
           "role": "arranger",
+          "name": "DÉ DÉ MOUSE",
+          "creator_id": "creator-d-d-mouse-6c2a1136ab"
+        },
+        {
+          "role": "remixer",
           "name": "DÉ DÉ MOUSE",
           "creator_id": "creator-d-d-mouse-6c2a1136ab"
         }
@@ -7418,6 +7467,11 @@
           "role": "arranger",
           "name": "AJURIKA",
           "creator_id": "creator-ajurika-e2947b5d62"
+        },
+        {
+          "role": "remixer",
+          "name": "AJURIKA",
+          "creator_id": "creator-ajurika-e2947b5d62"
         }
       ],
       "source": "official_lantis_catalog",
@@ -7494,8 +7548,8 @@
         {
           "role": "arranger",
           "name": "MEG",
-          "creator_id": "creator-meg-8fdc871351",
-          "affiliation": "MEGMETAL"
+          "affiliation": "MEGMETAL",
+          "creator_id": "creator-meg-8fdc871351"
         }
       ],
       "source": "netease_recording_metadata",
@@ -7657,14 +7711,14 @@
         {
           "role": "lyricist",
           "name": "mitsu",
-          "creator_id": "creator-mitsu-f9df3de487",
-          "affiliation": "TRYTONELABO"
+          "affiliation": "TRYTONELABO",
+          "creator_id": "creator-mitsu-f9df3de487"
         },
         {
           "role": "composer",
           "name": "Lucas",
-          "creator_id": "creator-lucas-10c25665e4",
-          "affiliation": "TRYTONELABO"
+          "affiliation": "TRYTONELABO",
+          "creator_id": "creator-lucas-10c25665e4"
         },
         {
           "role": "arranger",
@@ -7857,6 +7911,11 @@
         },
         {
           "role": "arranger",
+          "name": "YUC'e",
+          "creator_id": "creator-yuc-e-1a5fbe8fc4"
+        },
+        {
+          "role": "remixer",
           "name": "YUC'e",
           "creator_id": "creator-yuc-e-1a5fbe8fc4"
         }
@@ -8157,6 +8216,11 @@
           "role": "arranger",
           "name": "YMCK",
           "creator_id": "creator-ymck-7e3f017575"
+        },
+        {
+          "role": "remixer",
+          "name": "YMCK",
+          "creator_id": "creator-ymck-7e3f017575"
         }
       ],
       "source": "official_lantis_catalog",
@@ -8180,6 +8244,11 @@
           "name": "detch",
           "affiliation": "CANDYGIRL",
           "creator_id": "creator-detch-c6c359547d"
+        },
+        {
+          "role": "remixer",
+          "name": "detch",
+          "creator_id": "creator-detch-c6c359547d"
         }
       ],
       "source": "official_lantis_catalog",
@@ -8201,6 +8270,11 @@
           "role": "arranger",
           "name": "大沢伸一",
           "creator_id": "creator-97a497a21e"
+        },
+        {
+          "role": "remixer",
+          "name": "Shinichi Osawa",
+          "creator_id": "creator-shinichi-osawa-8c364b883c"
         }
       ],
       "source": "official_lantis_catalog",
@@ -8227,6 +8301,11 @@
           "role": "arranger",
           "name": "Shuhei Takahashi",
           "creator_id": "creator-shuhei-takahashi-ab0679e51a"
+        },
+        {
+          "role": "remixer",
+          "name": "Shuhei Takahashi",
+          "creator_id": "creator-shuhei-takahashi-ab0679e51a"
         }
       ],
       "source": "official_lantis_catalog",
@@ -8249,6 +8328,11 @@
           "role": "arranger",
           "name": "Sasuke Haraguchi",
           "creator_id": "creator-sasuke-haraguchi-b35f958bea"
+        },
+        {
+          "role": "remixer",
+          "name": "Sasuke Haraguchi",
+          "creator_id": "creator-sasuke-haraguchi-b35f958bea"
         }
       ],
       "source": "official_lantis_catalog",
@@ -8268,6 +8352,11 @@
         },
         {
           "role": "arranger",
+          "name": "yasushi",
+          "creator_id": "creator-yasushi-2d372dfe42"
+        },
+        {
+          "role": "remixer",
           "name": "yasushi",
           "creator_id": "creator-yasushi-2d372dfe42"
         }
@@ -8646,21 +8735,27 @@
       "credits": [
         {
           "role": "lyricist",
-          "name": "ONJUICY,米内山陽子",
-          "creator_id": "creator-onjuicy-897dd92247",
-          "affiliation": "Pita Inc."
+          "name": "ONJUICY",
+          "affiliation": "Pita Inc.",
+          "creator_id": "creator-onjuicy-5b418df921"
+        },
+        {
+          "role": "lyricist",
+          "name": "米内山陽子",
+          "affiliation": "Pita Inc.",
+          "creator_id": "creator-1cfdc14407"
         },
         {
           "role": "composer",
           "name": "BAKU",
-          "creator_id": "creator-baku-c8c0e30f92",
-          "affiliation": "KAIKOO"
+          "affiliation": "KAIKOO",
+          "creator_id": "creator-baku-c8c0e30f92"
         },
         {
           "role": "arranger",
           "name": "BAKU",
-          "creator_id": "creator-baku-c8c0e30f92",
-          "affiliation": "KAIKOO"
+          "affiliation": "KAIKOO",
+          "creator_id": "creator-baku-c8c0e30f92"
         }
       ],
       "source": "utaten",
@@ -9074,6 +9169,76 @@
       ],
       "source": "oshikatsu_techo_catalog",
       "source_url": "https://oshikatsu-techo.com/games/umamusume/songs"
+    },
+    "song-girls-legend-u-a4a797abe1-v-d1d6900f43": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "tofubeats",
+          "creator_id": "creator-tofubeats-4013db11f2"
+        }
+      ],
+      "source": "recording_title"
+    },
+    "song-never-looking-back-d2ca0c4311-v-82de45b51d": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "PandaBoY",
+          "creator_id": "creator-pandaboy-4b3e2b1ab5"
+        }
+      ],
+      "source": "recording_title"
+    },
+    "song-we-are-dreamers-77f071fc29-v-a882d91214": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "☆Taku Takahashi",
+          "creator_id": "creator-taku-takahashi-677199e9da"
+        }
+      ],
+      "source": "recording_title"
+    },
+    "song-228f943b49-v-291bb1c8c0": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "Sasuke Haraguchi",
+          "creator_id": "creator-sasuke-haraguchi-b35f958bea"
+        }
+      ],
+      "source": "recording_title"
+    },
+    "song-228f943b49-v-df88301c97": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "TAKU INOUE",
+          "creator_id": "creator-taku-inoue-7553565d84"
+        }
+      ],
+      "source": "recording_title"
+    },
+    "song-4bfe85c283-v-c9905eca6f": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "Takeshi Nakatsuka",
+          "creator_id": "creator-takeshi-nakatsuka-6c43b10a9b"
+        }
+      ],
+      "source": "recording_title"
+    },
+    "song-beyond-the-future-aaed329475-v-07e239cf1f": {
+      "credits": [
+        {
+          "role": "remixer",
+          "name": "invisible manners",
+          "creator_id": "creator-invisible-manners-b99188e1c2"
+        }
+      ],
+      "source": "recording_title"
     }
   }
 }

@@ -61,13 +61,33 @@ ROLE_LABELS = {
     "編曲": "arranger",
     "编曲": "arranger",
     "arranger": "arranger",
+    "リミックス": "remixer",
+    "remix": "remixer",
+    "remixer": "remixer",
+    "ミックス": "mix_engineer",
+    "mix": "mix_engineer",
+    "mixing": "mix_engineer",
+    "mix engineer": "mix_engineer",
+    "マスタリング": "mastering_engineer",
+    "mastering": "mastering_engineer",
+    "mastering engineer": "mastering_engineer",
+    "プロデュース": "producer",
+    "producer": "producer",
+    "オーケストレーション": "orchestrator",
+    "orchestration": "orchestrator",
+    "orchestrator": "orchestrator",
 }
-ROLE_ORDER = {"lyricist": 0, "composer": 1, "arranger": 2}
-TIMED_LINE_RE = re.compile(r"^\[(\d{1,3}):(\d{1,2})(?:[.:](\d{1,3}))?\](.*)$")
-CREDIT_LINE_RE = re.compile(
-    r"^\s*(作詞|作词|詞|词|作曲|編曲|编曲|lyricist|lyrics|composer|arranger)\s*[:：]\s*(.+?)\s*$",
-    re.I,
+ROLE_ORDER = {
+    "lyricist": 0, "composer": 1, "arranger": 2, "remixer": 3,
+    "mix_engineer": 4, "mastering_engineer": 5, "producer": 6, "orchestrator": 7,
+}
+ROLE_SOURCE_LABEL = (
+    r"作詞|作词|詞|词|作曲|編曲|编曲|リミックス|ミックス|マスタリング|"
+    r"プロデュース|オーケストレーション|lyricist|lyrics|composer|arranger|"
+    r"remixer?|mix(?:ing| engineer)?|mastering(?: engineer)?|producer|orchestrat(?:ion|or)"
 )
+TIMED_LINE_RE = re.compile(r"^\[(\d{1,3}):(\d{1,2})(?:[.:](\d{1,3}))?\](.*)$")
+CREDIT_LINE_RE = re.compile(rf"^\s*({ROLE_SOURCE_LABEL})\s*[:：]\s*(.+?)\s*$", re.I)
 COMBINED_CREDIT_RE = re.compile(r"^\s*(作詞|作词|作曲|編曲|编曲)(?:[・/&、](作詞|作词|作曲|編曲|编曲))+\s*[:：]\s*(.+?)\s*$", re.I)
 NO_LYRIC_RE = re.compile(r"^(?:纯音乐|純音楽|instrumental|off\s*vocal|暂无歌词|暂无歌詞)$", re.I)
 NAME_VARIANTS = str.maketrans({
@@ -132,6 +152,38 @@ def split_creators(value: str) -> list[str]:
         if part and part not in out:
             out.append(part)
     return out
+
+
+def normalize_automatic_credit_rows(credits_doc: dict[str, Any]) -> None:
+    """Split combined source names and deduplicate them without touching manual rows."""
+    for row in (credits_doc.get("versions") or {}).values():
+        if row.get("manual"):
+            continue
+        normalized: list[dict[str, Any]] = []
+        seen: dict[tuple[str, str], dict[str, Any]] = {}
+        for credit in row.get("credits") or []:
+            raw_name = str(credit.get("name") or "").strip()
+            names = split_creators(raw_name) or [raw_name]
+            for raw_part in names:
+                name, affiliations = creator_identity(raw_part)
+                key = (str(credit.get("role") or ""), normalized_name(name))
+                if not key[0] or not key[1]:
+                    continue
+                existing = seen.get(key)
+                affiliation = str(credit.get("affiliation") or "") or (affiliations[0] if affiliations else "")
+                if existing:
+                    if affiliation and not existing.get("affiliation"):
+                        existing["affiliation"] = affiliation
+                    continue
+                clean = {key_name: value for key_name, value in credit.items() if key_name != "creator_id"}
+                clean["name"] = name
+                if affiliation:
+                    clean["affiliation"] = affiliation
+                else:
+                    clean.pop("affiliation", None)
+                normalized.append(clean)
+                seen[key] = clean
+        row["credits"] = normalized
 
 
 def milliseconds(minutes: str, seconds: str, fraction: str | None) -> int:
@@ -248,13 +300,13 @@ def parse_credit_text(value: str) -> list[dict[str, str]]:
     text = text.replace("\n", "　")
     text = re.sub(r"(?:ファンファーレ)?作曲\s*[・/&]\s*編曲", "作曲・編曲", text)
     text = re.sub(r"(?:ストリングス|ブラス|ファンファーレ)\s*(?:アレンジ|編曲)", "編曲", text, flags=re.I)
-    label_pattern = r"(?:作詞|作词|作曲|編曲|编曲)(?:\s*[・/&、]\s*(?:作詞|作词|作曲|編曲|编曲))*"
+    label_pattern = rf"(?:{ROLE_SOURCE_LABEL})(?:\s*[・/&、]\s*(?:{ROLE_SOURCE_LABEL}))*"
     matches = list(re.finditer(rf"({label_pattern})\s*[:：]\s*(.*?)(?=\s+{label_pattern}\s*[:：]|$)", text, re.I))
     credits: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
     for match in matches:
-        labels = re.findall(r"作詞|作词|作曲|編曲|编曲", match.group(1), re.I)
-        roles = list(dict.fromkeys(ROLE_LABELS.get(label, "") for label in labels))
+        labels = re.findall(ROLE_SOURCE_LABEL, match.group(1), re.I)
+        roles = list(dict.fromkeys(ROLE_LABELS.get(label.lower(), ROLE_LABELS.get(label, "")) for label in labels))
         for raw_name in split_creators(match.group(2).strip(" 　")):
             name, affiliations = creator_identity(raw_name)
             for role in roles:
@@ -268,6 +320,24 @@ def parse_credit_text(value: str) -> list[dict[str, str]]:
                 credits.append(credit)
     credits.sort(key=lambda row: (ROLE_ORDER.get(row["role"], 99), normalized_name(row["name"])))
     return credits
+
+
+def inferred_remix_credit(title: str) -> dict[str, str] | None:
+    """Infer only an explicitly named remix credit from the recording title."""
+    value = unicodedata.normalize("NFKC", title or "")
+    matches = re.findall(r"(?:\(|\[|\{|[-–—]\s*)([^()\[\]{}]+?)\s+Remix(?:er)?\s*(?:\)|\]|\}|$)", value, re.I)
+    if not matches:
+        return None
+    raw_name = matches[-1].strip(" -–—:：")
+    if not raw_name or normalized_name(raw_name) in {"remix", "remixver", "remixversion"}:
+        return None
+    name, affiliations = creator_identity(raw_name)
+    if not name or normalized_name(name) in {"ver", "version"}:
+        return None
+    credit = {"role": "remixer", "name": name}
+    if affiliations:
+        credit["affiliation"] = affiliations[0]
+    return credit
 
 
 def official_credit_rows(goods: list[dict[str, Any]], recordings: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -805,6 +875,9 @@ def build_documents(
     timing_versions = timings.setdefault("versions", {})
     for version_id, recording in recordings.items():
         source_track, lines, credit_rows = choose_candidate(recording, fetched)
+        inferred = inferred_remix_credit(recording.get("version_title") or "")
+        if inferred and not any(row.get("role") == "remixer" for row in credit_rows):
+            credit_rows.append(inferred)
         if credit_rows and (version_id not in credit_versions or version_id in refresh):
             credit_versions[version_id] = {
                 "credits": credit_rows,
@@ -825,6 +898,7 @@ def build_documents(
                 "source": "netease_recording_metadata",
                 "source_track_id": source_track,
             }
+    normalize_automatic_credit_rows(credits)
     creators["creators"] = creator_rows(credits, creators)
     return creators, credits, lyrics, timings
 
@@ -861,6 +935,7 @@ def apply_utaten_results(
                 "source": "utaten",
                 "source_url": result["source_url"],
             }
+    normalize_automatic_credit_rows(credits)
     creators["creators"] = creator_rows(credits, creators)
     return creators, credits, lyrics, timings
 
@@ -888,6 +963,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--lrclib-only", action="store_true", help="skip other network sources and only run the LRCLIB timing fallback")
     parser.add_argument("--community", action="store_true", help="also fill exact matches from the community music catalog and Umamusume Wiki")
     parser.add_argument("--community-only", action="store_true", help="skip other network sources and only run the community fallbacks")
+    parser.add_argument("--infer-remixers-only", action="store_true", help="offline: add only explicit name-from-title remixer credits")
     parser.add_argument("--revalidate-utaten", action="store_true", help="remove prior UtaTen matches whose credited artist does not match this recording")
     parser.add_argument("--skip-official", action="store_true", help="skip the official Lantis credit refresh")
     parser.add_argument("--check", action="store_true", help="validate committed music source documents without network access")
@@ -930,6 +1006,22 @@ def main(argv: list[str] | None = None) -> int:
         })
         if missing_creator_ids:
             raise RuntimeError("music credits reference unknown creators: " + ", ".join(missing_creator_ids[:10]))
+        combined_names = sorted({
+            str(credit.get("name") or "")
+            for row in (credits.get("versions") or {}).values()
+            if not row.get("manual")
+            for credit in row.get("credits") or []
+            if len(split_creators(str(credit.get("name") or ""))) > 1
+        })
+        if combined_names:
+            raise RuntimeError("automatic music credits contain combined creator names: " + ", ".join(combined_names[:10]))
+        duplicate_credits = []
+        for version_id, row in (credits.get("versions") or {}).items():
+            keys = [(credit.get("role"), normalized_name(str(credit.get("name") or ""))) for credit in row.get("credits") or []]
+            if len(keys) != len(set(keys)):
+                duplicate_credits.append(version_id)
+        if duplicate_credits:
+            raise RuntimeError("music versions contain duplicate creator credits: " + ", ".join(duplicate_credits[:10]))
         instrumental_lyrics = sorted(
             version_id for version_id in lyrics.get("versions") or {}
             if (recordings.get(version_id) or {}).get("instrumental")
@@ -956,6 +1048,17 @@ def main(argv: list[str] | None = None) -> int:
     credits = read_json(CREDITS_FILE, {"schema_version": 1, "versions": {}})
     lyrics = read_json(LYRICS_FILE, {"schema_version": 1, "versions": {}})
     timings = read_json(TIMINGS_FILE, {"schema_version": 1, "versions": {}})
+
+    inferred_count = 0
+    for version_id, recording in recordings.items():
+        inferred = inferred_remix_credit(recording.get("version_title") or "")
+        current = (credits.get("versions") or {}).get(version_id) or {}
+        if not inferred or current.get("manual") or any(row.get("role") == "remixer" for row in current.get("credits") or []):
+            continue
+        if version_id not in credits.setdefault("versions", {}):
+            credits["versions"][version_id] = {"credits": [], "source": "recording_title"}
+        credits["versions"][version_id].setdefault("credits", []).append(inferred)
+        inferred_count += 1
 
     if args.revalidate_utaten:
         source_urls: dict[str, str] = {}
@@ -986,14 +1089,14 @@ def main(argv: list[str] | None = None) -> int:
             f"{len(mismatches)} rejected, {len(audit_errors)} retryable errors"
         )
 
-    if not args.skip_official and not args.lrclib_only and not args.community_only:
+    if not args.skip_official and not args.lrclib_only and not args.community_only and not args.infer_remixers_only:
         from auto_albums import get_official_goods
         official = official_credit_rows(get_official_goods(), recordings)
         merge_credit_rows(credits, official, refresh)
         print(f"official credits matched: {len(official)} versions")
 
     errors: list[tuple[str, str]] = []
-    if not args.utaten_only and not args.lrclib_only and not args.community_only:
+    if not args.utaten_only and not args.lrclib_only and not args.community_only and not args.infer_remixers_only:
         existing_credits = credits.get("versions") or {}
         existing_lyrics = lyrics.get("versions") or {}
         target_versions = {
@@ -1121,6 +1224,7 @@ def main(argv: list[str] | None = None) -> int:
                     print(f"LRCLIB checked: {index}/{len(futures)}", flush=True)
         apply_lrclib_results(results, timings)
 
+    normalize_automatic_credit_rows(credits)
     creators["creators"] = creator_rows(credits, creators)
     for row in (credits.get("versions") or {}).values():
         if row.get("source") == "oshikatsu_techo_catalog":
@@ -1142,7 +1246,8 @@ def main(argv: list[str] | None = None) -> int:
     })
     print(
         f"music metadata written: {len(credits['versions'])} credited versions, "
-        f"{len(lyrics['versions'])} lyric versions, {len(creators['creators'])} creators"
+        f"{len(lyrics['versions'])} lyric versions, {len(creators['creators'])} creators, "
+        f"{inferred_count} title-inferred remixers added"
     )
     if errors:
         print(f"metadata requests failed: {len(errors)} (rerun retries only unresolved network errors)")

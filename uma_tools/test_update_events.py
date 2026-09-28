@@ -356,14 +356,15 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         }]
         catalog = UPDATE_EVENTS.build_song_catalog(albums, events, Identities(), "2024-02-02T00:00:00+00:00")
         self.assertEqual(catalog["coverage"], {
-            "songs": 1, "versions": 7, "albums": 1, "release_tracks": 6, "live_performances": 1,
+            "songs": 1, "versions": 6, "albums": 1, "release_tracks": 6, "live_performances": 1,
             "credited_songs": 0, "lyric_songs": 0, "credited_versions": 0, "lyric_versions": 0,
         })
         self.assertEqual(catalog["songs"][0]["title"], "Song A")
-        self.assertEqual(len(catalog["songs"][0]["versions"]), 7)
+        self.assertEqual(len(catalog["songs"][0]["versions"]), 6)
         character_version = next(version for version in catalog["songs"][0]["versions"] if "スペシャルウィーク" in version["title"])
         self.assertEqual(character_version["version_label"], "Game Size / 角色独唱：スペシャルウィーク")
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
+        self.assertEqual(events[0]["sessions"][0]["performances"][0]["performance_variant"]["label"], "Short Ver.")
 
     def test_song_version_override_folds_alias_into_base_work(self):
         class Identities:
@@ -398,10 +399,11 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         catalog = UPDATE_EVENTS.build_song_catalog(albums, events, Identities(), "2024-02-02T00:00:00+00:00", overrides)
         self.assertEqual(catalog["coverage"]["songs"], 1)
         self.assertEqual(catalog["songs"][0]["title"], "Song A")
-        version = next(row for row in catalog["songs"][0]["versions"] if row["title"] == "Song B")
-        self.assertEqual(version["version_label"], "Song B")
-        self.assertEqual(version["release_count"], 0)
+        self.assertEqual(len(catalog["songs"][0]["versions"]), 1)
+        version = catalog["songs"][0]["versions"][0]
+        self.assertEqual(version["title"], "Song A")
         self.assertEqual(version["performance_count"], 1)
+        self.assertEqual(version["performances"][0]["performance_variant"]["title"], "Song B")
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
 
     def test_release_credits_resolve_to_one_actor_and_character(self):
@@ -811,9 +813,12 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         original_id = UPDATE_EVENTS.effective_music_metadata(work, credits, lyrics, {"versions": {}}, {"versions": {}})
         self.assertEqual(original_id, "original")
         self.assertEqual(work["versions"]["alternate"]["credits"], work["versions"]["original"]["credits"])
-        self.assertEqual(work["versions"]["alternate"]["lyrics"]["lines"], ["原曲歌词"])
-        self.assertIsNone(work["versions"]["short"]["lyrics"])
-        self.assertIsNone(work["versions"]["off-vocal"]["lyrics"])
+        self.assertEqual(work["versions"]["alternate"]["lyrics_ref"], "original")
+        self.assertTrue(work["versions"]["alternate"]["has_lyrics"])
+        self.assertEqual(work["versions"]["short"]["lyrics_ref"], "")
+        self.assertFalse(work["versions"]["short"]["has_lyrics"])
+        self.assertEqual(work["versions"]["off-vocal"]["lyrics_ref"], "")
+        self.assertFalse(work["versions"]["off-vocal"]["has_lyrics"])
 
     def test_committed_relationships_reference_known_records(self):
         catalog = json.loads((ROOT / "data" / "events_catalog.json").read_text(encoding="utf-8"))

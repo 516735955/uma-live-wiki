@@ -99,6 +99,36 @@ class MusicMetadataSyncTest(unittest.TestCase):
         self.assertEqual(credits["versions"]["original"]["credits"][0]["name"], "Heart's Cry")
         self.assertEqual(credits["versions"]["original"]["credits"][0]["creator_id"], "creator-heart")
 
+    def test_remixer_is_inferred_only_from_an_explicit_named_title(self):
+        self.assertEqual(
+            SYNC.inferred_remix_credit("GIRLS' LEGEND U (AJURIKA Remix)"),
+            {"role": "remixer", "name": "AJURIKA"},
+        )
+        self.assertIsNone(SYNC.inferred_remix_credit("GIRLS' LEGEND U (Remix Ver.)"))
+        self.assertIsNone(SYNC.inferred_remix_credit("GIRLS' LEGEND U"))
+
+    def test_automatic_combined_names_are_split_and_deduplicated(self):
+        credits = {"versions": {
+            "recording": {
+                "credits": [
+                    {"role": "arranger", "name": "本田晃弘", "affiliation": "Cygames"},
+                    {"role": "arranger", "name": "本田晃弘(Cygames) , 加藤慶久"},
+                ]
+            },
+            "manual": {
+                "manual": True,
+                "credits": [{"role": "lyricist", "name": "A, B"}],
+            },
+        }}
+
+        SYNC.normalize_automatic_credit_rows(credits)
+
+        self.assertEqual(credits["versions"]["recording"]["credits"], [
+            {"role": "arranger", "name": "本田晃弘", "affiliation": "Cygames"},
+            {"role": "arranger", "name": "加藤慶久"},
+        ])
+        self.assertEqual(credits["versions"]["manual"]["credits"][0]["name"], "A, B")
+
 
 if __name__ == "__main__":
     unittest.main()
