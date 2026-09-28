@@ -12,6 +12,11 @@ const CATALOG_FILES = [
   'voice_actor_profiles.json',
   'albums.json'
 ];
+const MUSIC_SOURCE_FILES = [
+  'music/creators.json',
+  'music/lyrics.json',
+  'music/lyric_timings.json'
+];
 
 function normalize(value) {
   return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
@@ -133,15 +138,45 @@ function eventSummary(event, searchText) {
   };
 }
 
-function songSearchText(song) {
+function musicCreatorName(music, creatorId) {
+  const creator = music && music.creatorsById && music.creatorsById.get(String(creatorId || ''));
+  return creator ? creator.name : '';
+}
+
+function lyricDocument(music, reference) {
+  return (music && music.lyrics && music.lyrics[String(reference || '')]) || null;
+}
+
+function timingDocument(music, reference) {
+  return (music && music.timings && music.timings[String(reference || '')]) || null;
+}
+
+function hydrateSong(song, music) {
+  return Object.assign({}, song, {
+    versions: (song.versions || []).map((version) => {
+      const lyric = version.has_lyrics ? lyricDocument(music, version.lyrics_ref) : null;
+      const timing = lyric ? timingDocument(music, version.lyrics_ref) : null;
+      return Object.assign({}, version, {
+        credits: (version.credits || []).map((credit) => Object.assign({}, credit, {
+          name: musicCreatorName(music, credit.creator_id) || credit.name || credit.creator_id || ''
+        })),
+        lyrics: lyric ? Object.assign({}, lyric, {
+          timings: timing && Array.isArray(timing.lines) ? timing.lines : []
+        }) : null
+      });
+    })
+  });
+}
+
+function songSearchText(song, music) {
   const releases = (song.versions || []).flatMap((version) => (version.releases || []).map((release) => [
     release.album_name,
     release.catalog,
     release.artist
   ].filter(Boolean).join(' ')));
-  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => credit.name));
+  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => musicCreatorName(music, credit.creator_id) || credit.name));
   const lyrics = (song.versions || []).flatMap((version) => {
-    const lyric = version.lyrics || {};
+    const lyric = lyricDocument(music, version.lyrics_ref) || {};
     return [...(lyric.lines || []), ...(lyric.translation_lines || [])];
   });
   return normalize([
@@ -154,13 +189,13 @@ function songSearchText(song) {
   ].join(' '));
 }
 
-function songSummarySearchText(song) {
+function songSummarySearchText(song, music) {
   const releases = (song.versions || []).flatMap((version) => (version.releases || []).map((release) => [
     release.album_name,
     release.catalog,
     release.artist
   ].filter(Boolean).join(' ')));
-  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => credit.name));
+  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => musicCreatorName(music, credit.creator_id) || credit.name));
   return normalize([
     song.title,
     ...(song.aliases || []),
@@ -170,7 +205,7 @@ function songSummarySearchText(song) {
   ].join(' '));
 }
 
-function songSummary(song, searchText) {
+function songSummary(song, searchText, music) {
   return {
     id: song.id,
     title: song.title,
@@ -188,7 +223,7 @@ function songSummary(song, searchText) {
     playable: firstPlayableRelease(song),
     // Full lyrics remain in the server-only row index.  List responses carry a
     // compact search string; lyric searches use the q-filtered API response.
-    search_text: songSummarySearchText(song)
+    search_text: songSummarySearchText(song, music)
   };
 }
 
@@ -208,6 +243,7 @@ function creatorSummary(creator, searchText) {
     name: creator.name,
     aliases: creator.aliases || [],
     type: creator.type || 'person',
+    image: creator.image || '',
     affiliations: creator.affiliations || [],
     roles: creator.roles || [],
     work_count: creator.work_count || 0,
@@ -265,7 +301,7 @@ class CatalogStore {
   }
 
   async fileSignature() {
-    const stats = await Promise.all(CATALOG_FILES.map((name) => fs.promises.stat(path.join(this.dataDir, name))));
+    const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
     return stats.map((stat) => stat.size + ':' + Math.floor(stat.mtimeMs)).join('|');
   }
 
@@ -287,7 +323,7 @@ class CatalogStore {
   }
 
   async load(signature) {
-    const texts = await Promise.all(CATALOG_FILES.map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
+    const texts = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES).map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
     const manifest = JSON.parse(texts[0]);
     const eventsDoc = JSON.parse(texts[1]);
     const songsDoc = JSON.parse(texts[2]);
@@ -295,6 +331,14 @@ class CatalogStore {
     const appearancesDoc = JSON.parse(texts[4]);
     const voicesDoc = JSON.parse(texts[5]);
     const albums = JSON.parse(texts[6]);
+    const musicCreatorsDoc = JSON.parse(texts[7]);
+    const lyricsDoc = JSON.parse(texts[8]);
+    const timingsDoc = JSON.parse(texts[9]);
+    const music = {
+      creatorsById: new Map((musicCreatorsDoc.creators || []).map((creator) => [String(creator.id), creator])),
+      lyrics: lyricsDoc.versions || {},
+      timings: timingsDoc.versions || {}
+    };
     const buildIds = new Set([
       eventsDoc.build_id,
       songsDoc.build_id,
@@ -316,8 +360,8 @@ class CatalogStore {
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {
-      const search = songSearchText(song);
-      return { data: song, summary: songSummary(song, search), search };
+      const search = songSearchText(song, music);
+      return { data: song, summary: songSummary(song, search, music), search };
     });
     const creatorRows = creators.map((creator) => {
       const search = creatorSearchText(creator);
@@ -336,6 +380,7 @@ class CatalogStore {
       eventRows,
       songRows,
       creatorRows,
+      music,
       albumRows: albumRowsIndexed,
       eventsById: new Map(events.map((event) => [String(event.id), event])),
       songsById: new Map(songs.map((song) => [String(song.id), song])),
@@ -457,7 +502,7 @@ class CatalogStore {
     const store = await this.get();
     const target = normalize(id).replace(/ /g, '');
     const song = store.songsById.get(String(id)) || store.songAliases.get(target);
-    return song ? { build_id: store.buildId, song } : null;
+    return song ? { build_id: store.buildId, song: hydrateSong(song, store.music) } : null;
   }
 
   async creators(params) {

@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-09-27T13:19:42.794Z",
         "reason": "Agent: audio bars render only while playback is active and communicate live changing state"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "uma_tools/app.js"
+        ],
+        "createdAt": "2026-09-28T04:46:42.029Z",
+        "reason": "Agent: detector matched the avatar-sanitizing regular expression, not a rendered image element"
       }
     ]
   }
