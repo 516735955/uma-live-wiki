@@ -119,6 +119,15 @@
         ],
         "createdAt": "2026-09-29T10:19:17.887Z",
         "reason": "Agent: detector matched the three link-card-head structural header rows inside link anchors; browser inspection confirms they have no independent border, background, radius, or elevation and are not nested visual cards"
+      },
+      {
+        "rule": "repeated-container-text",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-29T13:40:42.411Z",
+        "reason": "Agent: this Vue section uses mutually exclusive link/plain-text branches for each credit and separate original/variant lists; each visible credit name appears once per record"
       }
     ]
   }
