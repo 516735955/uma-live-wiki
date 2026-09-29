@@ -657,8 +657,7 @@ const umaApp = createApp({
       const clean = String(path || '').split('?')[0].replace(/^\/zh-Hans/i, '');
       return /^\/(?:news|events)\/[^/]+$/.test(clean) ||
         /^\/music\/(?:songs|albums|creators)\/[^/]+$/.test(clean) ||
-        /^\/database\/(?:characters|voice-actors)\/[^/]+$/.test(clean) ||
-        /^\/database\/other\/horses\/[^/]+$/.test(clean);
+        /^\/database\/(?:characters|voice-actors|horses)\/[^/]+$/.test(clean);
     }
     function beginEntityNavigation() { pendingEntitySource = isAtomicView(); }
     function resetPageScroll() {
@@ -1262,12 +1261,12 @@ const umaApp = createApp({
       if (!original) return [];
       const key = function (credit) { return [credit.role, credit.creator_id || credit.name].join(':'); };
       const originalKeys = new Set((original.credits || []).map(key));
-      const rows = [Object.assign({}, original, { display_credits: original.credits || [], credit_heading: '原作署名' })];
+      const rows = [Object.assign({}, original, { display_credits: original.credits || [], is_original: true })];
       versions.forEach(function (version) {
         if (version.id === original.id || !version.credits || !version.credits.length) return;
         const changed = version.credits.filter(function (credit) { return !originalKeys.has(key(credit)); });
         if (!changed.length) return;
-        rows.push(Object.assign({}, version, { display_credits: changed, credit_heading: version.version_label || version.title }));
+        rows.push(Object.assign({}, version, { display_credits: changed, credit_heading: version.version_label || version.title, is_original: false }));
       });
       return rows;
     });
@@ -1427,7 +1426,7 @@ const umaApp = createApp({
         songDetail.value = found;
         songSection.value = 'releases';
         expandedSongReleaseId.value = ((found.versions || []).find(function (version) { return version.releases && version.releases.length; }) || {}).id || '';
-        expandedSongCreditId.value = found.original_version_id || '';
+        expandedSongCreditId.value = '';
         const lyricVersion = (found.versions || []).find(function (version) { return version.id === found.original_version_id && version.lyrics; }) ||
           (found.versions || []).find(function (version) { return !!version.lyrics; });
         songLyricVersionId.value = lyricVersion ? lyricVersion.id : '';

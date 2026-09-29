@@ -169,6 +169,23 @@ class MusicMetadataSyncTest(unittest.TestCase):
         ])
         self.assertEqual(credits["versions"]["manual"]["credits"][0]["name"], "A, B")
 
+    def test_unbalanced_affiliation_parentheses_are_repaired(self):
+        credits = {"versions": {
+            "recording": {
+                "credits": [
+                    {"role": "arranger", "name": "内田哲也)", "affiliation": "Cygames"},
+                    {"role": "arranger", "name": "滝澤俊輔 (TRYTONELABO", "affiliation": "Cygames"},
+                ]
+            }
+        }}
+
+        SYNC.normalize_automatic_credit_rows(credits)
+
+        self.assertEqual(credits["versions"]["recording"]["credits"], [
+            {"role": "arranger", "name": "内田哲也", "affiliation": "Cygames"},
+            {"role": "arranger", "name": "滝澤俊輔", "affiliation": "TRYTONELABO"},
+        ])
+
 
 if __name__ == "__main__":
     unittest.main()

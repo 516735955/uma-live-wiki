@@ -336,6 +336,7 @@ def creator_identity(raw_name: str) -> tuple[str, list[str]]:
     affiliations: list[str] = []
     prefix = re.match(r"^(Cygames|MONACA|Arte Refact|Lantis)\s*[（(](.+?)[）)]$", name, re.I)
     suffix = re.match(r"^(.+?)\s*[（(]([^()（）]+)[）)]$", name, re.I)
+    unclosed_suffix = re.match(r"^(.+?)\s*\(([^()]+)$", name)
     if prefix:
         affiliations.append(prefix.group(1))
         name = prefix.group(2).strip()
@@ -344,6 +345,13 @@ def creator_identity(raw_name: str) -> tuple[str, list[str]]:
         affiliation = re.sub(r"^from\s+", "", suffix.group(2).strip(), flags=re.I)
         if affiliation:
             affiliations.append(affiliation)
+    elif unclosed_suffix:
+        name = unclosed_suffix.group(1).strip()
+        affiliation = re.sub(r"^from\s+", "", unclosed_suffix.group(2).strip(), flags=re.I)
+        if affiliation:
+            affiliations.append(affiliation)
+    elif name.count("(") < name.count(")"):
+        name = name.rstrip(" )")
     return name, affiliations
 
 
@@ -380,7 +388,7 @@ def normalize_automatic_credit_rows(credits_doc: dict[str, Any]) -> None:
                 if not key[0] or not key[1]:
                     continue
                 existing = seen.get(key)
-                affiliation = str(credit.get("affiliation") or "") or (affiliations[0] if affiliations else "")
+                affiliation = (affiliations[0] if affiliations else "") or str(credit.get("affiliation") or "")
                 if existing:
                     if affiliation and not existing.get("affiliation"):
                         existing["affiliation"] = affiliation

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-29T09:48:28+00:00",
+  "generated_at": "2026-09-29T13:18:23+00:00",
   "coverage": {
-    "creators": 275,
+    "creators": 273,
     "credited_works": 241,
     "credited_versions": 1201
   },
@@ -16994,7 +16994,7 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 10
+          "count": 20
         }
       ],
       "work_count": 4,
@@ -17042,7 +17042,8 @@
           "release_date": "2017-11-22",
           "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 00 ENDLESS DREAM!!",
           "roles": [
-            "composer"
+            "composer",
+            "arranger"
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-2899af7e2c",
@@ -17062,7 +17063,8 @@
               "title": "ENDLESS DREAM!!",
               "version_label": "",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17070,7 +17072,8 @@
               "title": "ENDLESS DREAM!! (2021 Remastered Version)",
               "version_label": "2021 Remastered Version",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17078,7 +17081,8 @@
               "title": "ENDLESS DREAM!! (Off Vocal) (2021 Remastered Version)",
               "version_label": "Off Vocal / 2021 Remastered Version",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17086,7 +17090,8 @@
               "title": "ENDLESS DREAM!! (Short Size)",
               "version_label": "Short Size",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17094,7 +17099,8 @@
               "title": "ENDLESS DREAM!! (Short Size) (2021 Remastered Version)",
               "version_label": "Short Size / 2021 Remastered Version",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17102,7 +17108,8 @@
               "title": "ENDLESS DREAM!! (サイレンススズカ Ver.)",
               "version_label": "サイレンススズカ Ver.",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17110,7 +17117,8 @@
               "title": "ENDLESS DREAM!! (サイレンススズカ ver.) (2021 Remastered Version)",
               "version_label": "サイレンススズカ ver. / 2021 Remastered Version",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17118,7 +17126,8 @@
               "title": "ENDLESS DREAM!! (スペシャルウィーク Ver.)",
               "version_label": "スペシャルウィーク Ver.",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17126,7 +17135,8 @@
               "title": "ENDLESS DREAM!! (スペシャルウィーク ver.) (2021 Remastered Version)",
               "version_label": "スペシャルウィーク ver. / 2021 Remastered Version",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -17134,7 +17144,8 @@
               "title": "ENDLESS DREAM!! (トウカイテイオー ver.) (2021 Remastered Version)",
               "version_label": "トウカイテイオー ver. / 2021 Remastered Version",
               "roles": [
-                "composer"
+                "composer",
+                "arranger"
               ]
             }
           ]
@@ -18025,17 +18036,18 @@
       ],
       "collaborators": [
         {
-          "creator_id": "creator-13d17e7497",
-          "name": "大熊淳生",
-          "shared_version_count": 86,
-          "shared_work_count": 1,
+          "creator_id": "creator-27a7191e7e",
+          "name": "滝澤俊輔",
+          "shared_version_count": 96,
+          "shared_work_count": 2,
           "shared_song_ids": [
-            "song-dramatic-journey-60664c4bb2"
+            "song-dramatic-journey-60664c4bb2",
+            "song-endless-dream-eabbcc4d12"
           ]
         },
         {
-          "creator_id": "creator-27a7191e7e",
-          "name": "滝澤俊輔",
+          "creator_id": "creator-13d17e7497",
+          "name": "大熊淳生",
           "shared_version_count": 86,
           "shared_work_count": 1,
           "shared_song_ids": [
@@ -18049,24 +18061,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-dramatic-journey-60664c4bb2"
-          ]
-        },
-        {
-          "creator_id": "creator-0b181270ba",
-          "name": "内田哲也)",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
-          ]
-        },
-        {
-          "creator_id": "creator-trytonelabo-93114bdfec",
-          "name": "滝澤俊輔 (TRYTONELABO",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
           ]
         },
         {
@@ -18094,159 +18088,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-e850058adb"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "creator-0b181270ba",
-      "name": "内田哲也)",
-      "aliases": [],
-      "type": "person",
-      "affiliations": [
-        "Cygames"
-      ],
-      "roles": [
-        {
-          "role": "arranger",
-          "label": "编曲",
-          "count": 10
-        }
-      ],
-      "work_count": 1,
-      "version_count": 10,
-      "works": [
-        {
-          "song_id": "song-endless-dream-eabbcc4d12",
-          "title": "ENDLESS DREAM!!",
-          "cover": "/album_covers/LACM-14688.webp",
-          "release_date": "2017-11-22",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 00 ENDLESS DREAM!!",
-          "roles": [
-            "arranger"
-          ],
-          "version_ids": [
-            "song-endless-dream-eabbcc4d12-v-2899af7e2c",
-            "song-endless-dream-eabbcc4d12-v-2b499782e2",
-            "song-endless-dream-eabbcc4d12-v-492d9ff424",
-            "song-endless-dream-eabbcc4d12-v-70b529d27e",
-            "song-endless-dream-eabbcc4d12-v-89df536c58",
-            "song-endless-dream-eabbcc4d12-v-925179b1d8",
-            "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
-            "song-endless-dream-eabbcc4d12-v-b805c956a8",
-            "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
-            "song-endless-dream-eabbcc4d12-v-fa16f85e80"
-          ],
-          "versions": [
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
-              "title": "ENDLESS DREAM!!",
-              "version_label": "",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-2b499782e2",
-              "title": "ENDLESS DREAM!! (2021 Remastered Version)",
-              "version_label": "2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-925179b1d8",
-              "title": "ENDLESS DREAM!! (Off Vocal) (2021 Remastered Version)",
-              "version_label": "Off Vocal / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-fa16f85e80",
-              "title": "ENDLESS DREAM!! (Short Size)",
-              "version_label": "Short Size",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
-              "title": "ENDLESS DREAM!! (Short Size) (2021 Remastered Version)",
-              "version_label": "Short Size / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-89df536c58",
-              "title": "ENDLESS DREAM!! (サイレンススズカ Ver.)",
-              "version_label": "サイレンススズカ Ver.",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-2899af7e2c",
-              "title": "ENDLESS DREAM!! (サイレンススズカ ver.) (2021 Remastered Version)",
-              "version_label": "サイレンススズカ ver. / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-70b529d27e",
-              "title": "ENDLESS DREAM!! (スペシャルウィーク Ver.)",
-              "version_label": "スペシャルウィーク Ver.",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-492d9ff424",
-              "title": "ENDLESS DREAM!! (スペシャルウィーク ver.) (2021 Remastered Version)",
-              "version_label": "スペシャルウィーク ver. / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-b805c956a8",
-              "title": "ENDLESS DREAM!! (トウカイテイオー ver.) (2021 Remastered Version)",
-              "version_label": "トウカイテイオー ver. / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            }
-          ]
-        }
-      ],
-      "collaborators": [
-        {
-          "creator_id": "creator-9be9261917",
-          "name": "内田哲也",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
-          ]
-        },
-        {
-          "creator_id": "creator-trytonelabo-93114bdfec",
-          "name": "滝澤俊輔 (TRYTONELABO",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
-          ]
-        },
-        {
-          "creator_id": "creator-16e2e72a5f",
-          "name": "磯谷佳江",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
           ]
         }
       ]
@@ -37795,12 +37636,116 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 152
+          "count": 162
         }
       ],
-      "work_count": 5,
-      "version_count": 152,
+      "work_count": 6,
+      "version_count": 162,
       "works": [
+        {
+          "song_id": "song-endless-dream-eabbcc4d12",
+          "title": "ENDLESS DREAM!!",
+          "cover": "/album_covers/LACM-14688.webp",
+          "release_date": "2017-11-22",
+          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 00 ENDLESS DREAM!!",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-endless-dream-eabbcc4d12-v-2899af7e2c",
+            "song-endless-dream-eabbcc4d12-v-2b499782e2",
+            "song-endless-dream-eabbcc4d12-v-492d9ff424",
+            "song-endless-dream-eabbcc4d12-v-70b529d27e",
+            "song-endless-dream-eabbcc4d12-v-89df536c58",
+            "song-endless-dream-eabbcc4d12-v-925179b1d8",
+            "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
+            "song-endless-dream-eabbcc4d12-v-b805c956a8",
+            "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
+            "song-endless-dream-eabbcc4d12-v-fa16f85e80"
+          ],
+          "versions": [
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
+              "title": "ENDLESS DREAM!!",
+              "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-2b499782e2",
+              "title": "ENDLESS DREAM!! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-925179b1d8",
+              "title": "ENDLESS DREAM!! (Off Vocal) (2021 Remastered Version)",
+              "version_label": "Off Vocal / 2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-fa16f85e80",
+              "title": "ENDLESS DREAM!! (Short Size)",
+              "version_label": "Short Size",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
+              "title": "ENDLESS DREAM!! (Short Size) (2021 Remastered Version)",
+              "version_label": "Short Size / 2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-89df536c58",
+              "title": "ENDLESS DREAM!! (サイレンススズカ Ver.)",
+              "version_label": "サイレンススズカ Ver.",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-2899af7e2c",
+              "title": "ENDLESS DREAM!! (サイレンススズカ ver.) (2021 Remastered Version)",
+              "version_label": "サイレンススズカ ver. / 2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-70b529d27e",
+              "title": "ENDLESS DREAM!! (スペシャルウィーク Ver.)",
+              "version_label": "スペシャルウィーク Ver.",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-492d9ff424",
+              "title": "ENDLESS DREAM!! (スペシャルウィーク ver.) (2021 Remastered Version)",
+              "version_label": "スペシャルウィーク ver. / 2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-endless-dream-eabbcc4d12-v-b805c956a8",
+              "title": "ENDLESS DREAM!! (トウカイテイオー ver.) (2021 Remastered Version)",
+              "version_label": "トウカイテイオー ver. / 2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
+        },
         {
           "song_id": "song-2425ea19eb",
           "title": "硝子のエトワール",
@@ -39335,10 +39280,11 @@
         {
           "creator_id": "creator-9be9261917",
           "name": "内田哲也",
-          "shared_version_count": 86,
-          "shared_work_count": 1,
+          "shared_version_count": 96,
+          "shared_work_count": 2,
           "shared_song_ids": [
-            "song-dramatic-journey-60664c4bb2"
+            "song-dramatic-journey-60664c4bb2",
+            "song-endless-dream-eabbcc4d12"
           ]
         },
         {
@@ -39384,6 +39330,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-we-are-dreamers-77f071fc29"
+          ]
+        },
+        {
+          "creator_id": "creator-16e2e72a5f",
+          "name": "磯谷佳江",
+          "shared_version_count": 10,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-endless-dream-eabbcc4d12"
           ]
         },
         {
@@ -39447,159 +39402,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-a470359a05"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "creator-trytonelabo-93114bdfec",
-      "name": "滝澤俊輔 (TRYTONELABO",
-      "aliases": [],
-      "type": "person",
-      "affiliations": [
-        "Cygames"
-      ],
-      "roles": [
-        {
-          "role": "arranger",
-          "label": "编曲",
-          "count": 10
-        }
-      ],
-      "work_count": 1,
-      "version_count": 10,
-      "works": [
-        {
-          "song_id": "song-endless-dream-eabbcc4d12",
-          "title": "ENDLESS DREAM!!",
-          "cover": "/album_covers/LACM-14688.webp",
-          "release_date": "2017-11-22",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 00 ENDLESS DREAM!!",
-          "roles": [
-            "arranger"
-          ],
-          "version_ids": [
-            "song-endless-dream-eabbcc4d12-v-2899af7e2c",
-            "song-endless-dream-eabbcc4d12-v-2b499782e2",
-            "song-endless-dream-eabbcc4d12-v-492d9ff424",
-            "song-endless-dream-eabbcc4d12-v-70b529d27e",
-            "song-endless-dream-eabbcc4d12-v-89df536c58",
-            "song-endless-dream-eabbcc4d12-v-925179b1d8",
-            "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
-            "song-endless-dream-eabbcc4d12-v-b805c956a8",
-            "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
-            "song-endless-dream-eabbcc4d12-v-fa16f85e80"
-          ],
-          "versions": [
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
-              "title": "ENDLESS DREAM!!",
-              "version_label": "",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-2b499782e2",
-              "title": "ENDLESS DREAM!! (2021 Remastered Version)",
-              "version_label": "2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-925179b1d8",
-              "title": "ENDLESS DREAM!! (Off Vocal) (2021 Remastered Version)",
-              "version_label": "Off Vocal / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-fa16f85e80",
-              "title": "ENDLESS DREAM!! (Short Size)",
-              "version_label": "Short Size",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
-              "title": "ENDLESS DREAM!! (Short Size) (2021 Remastered Version)",
-              "version_label": "Short Size / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-89df536c58",
-              "title": "ENDLESS DREAM!! (サイレンススズカ Ver.)",
-              "version_label": "サイレンススズカ Ver.",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-2899af7e2c",
-              "title": "ENDLESS DREAM!! (サイレンススズカ ver.) (2021 Remastered Version)",
-              "version_label": "サイレンススズカ ver. / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-70b529d27e",
-              "title": "ENDLESS DREAM!! (スペシャルウィーク Ver.)",
-              "version_label": "スペシャルウィーク Ver.",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-492d9ff424",
-              "title": "ENDLESS DREAM!! (スペシャルウィーク ver.) (2021 Remastered Version)",
-              "version_label": "スペシャルウィーク ver. / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-endless-dream-eabbcc4d12-v-b805c956a8",
-              "title": "ENDLESS DREAM!! (トウカイテイオー ver.) (2021 Remastered Version)",
-              "version_label": "トウカイテイオー ver. / 2021 Remastered Version",
-              "roles": [
-                "arranger"
-              ]
-            }
-          ]
-        }
-      ],
-      "collaborators": [
-        {
-          "creator_id": "creator-9be9261917",
-          "name": "内田哲也",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
-          ]
-        },
-        {
-          "creator_id": "creator-0b181270ba",
-          "name": "内田哲也)",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
-          ]
-        },
-        {
-          "creator_id": "creator-16e2e72a5f",
-          "name": "磯谷佳江",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
           ]
         }
       ]
@@ -46958,17 +46760,8 @@
           ]
         },
         {
-          "creator_id": "creator-0b181270ba",
-          "name": "内田哲也)",
-          "shared_version_count": 10,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-endless-dream-eabbcc4d12"
-          ]
-        },
-        {
-          "creator_id": "creator-trytonelabo-93114bdfec",
-          "name": "滝澤俊輔 (TRYTONELABO",
+          "creator_id": "creator-27a7191e7e",
+          "name": "滝澤俊輔",
           "shared_version_count": 10,
           "shared_work_count": 1,
           "shared_song_ids": [
@@ -51529,5 +51322,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "a418b2bbc9b0c54cdda4"
+  "build_id": "76b727e5e2b59d325b6a"
 }

@@ -603,10 +603,12 @@
 /* Desktop is the primary reading surface. Keep records compact and use the full
    content width instead of centring database fragments in decorative frames. */
 .song-credit-list { width: 100%; max-width: none; margin: 0; }
-.song-credit-version { grid-template-columns: 210px minmax(0,1fr); gap: 22px; padding: 0; }
-.song-credit-version > .ui-disclosure-summary { min-height: 92px; height: 100%; align-content: center; padding: 18px; background: #f3f5fb; }
+.song-credit-original { padding: 4px 10px; border-block: 1px solid #aebdec; }
+.song-credit-variants { margin-top: 14px; }
+.song-credit-version { display: block; padding: 0; }
+.song-credit-version > .ui-disclosure-summary { min-height: 64px; height: auto; padding: 12px 14px; background: #f7f8fc; }
 .song-credit-version.open > .ui-disclosure-summary { background: #eef2ff; }
-.song-credit-version > .ui-disclosure-detail { margin: 0; padding: 6px 0 6px 4px; border: 0; border-radius: 0; background: transparent; }
+.song-credit-version > .ui-disclosure-detail { margin: 0; padding: 6px 10px 10px; border: 0; border-radius: 0; background: transparent; }
 .song-credit-version .credit-ledger { grid-template-columns: minmax(0,1fr); }
 .credit-ledger > div { grid-template-columns: 82px minmax(0,1fr); gap: 18px; padding: 12px 10px; }
 .credit-ledger dt { font-size: .84rem; }
@@ -658,7 +660,6 @@
 }
 
 @media (max-width: 760px) {
-    .song-credit-version { grid-template-columns: minmax(0,1fr); gap: 0; }
     .song-credit-version > .ui-disclosure-summary { min-height: 64px; }
     .song-credit-version > .ui-disclosure-detail { padding: 4px 0; }
     .lyrics-sheet { width: 100%; padding-inline: 0; }
