@@ -73,6 +73,7 @@ const umaApp = createApp({
     let relationshipLoadPromise = null;
     let homeSummaryLoadPromise = null;
     let pedigreeLoadPromise = null;
+    let pedigreeMetaLoadPromise = null;
     const eventsAll = ref([]);
     const eventSeries = ref([]);
     const eventDetail = ref(null);
@@ -137,6 +138,11 @@ const umaApp = createApp({
     const charSection = ref('profile');
     const pedigreeStatus = ref('idle');
     const pedigreeError = ref('');
+    const charHasPedigree = computed(function () {
+      const id = charDetail.value && charDetail.value.id;
+      const meta = window.CHARACTER_PEDIGREE_META || {};
+      return !!id && (meta.available || []).indexOf(id) >= 0;
+    });
     const voiceSection = ref('profile');
     const otherSection = ref('relationships');
     const horsesList = ref([]);
@@ -229,12 +235,23 @@ const umaApp = createApp({
       return dataScriptPromises[src];
     }
     function loadCharacterUi() {
-      return loadDataScript('/uma_tools/character-ui.js?v=20260920-2', 'UmaCharacterUi').then(function () {
+      return loadDataScript('/uma_tools/character-ui.js?v=20260929-1', 'UmaCharacterUi').then(function () {
         if (window.UmaCharacterUi) Vue.nextTick(window.UmaCharacterUi.init);
       });
     }
     function loadCharacterIndexData() {
       return loadDataScript('/data/character_index_data.js?v=20260913', 'CHAR_INDEX');
+    }
+    function loadPedigreeMeta() {
+      if (window.CHARACTER_PEDIGREE_META) return Promise.resolve();
+      if (pedigreeMetaLoadPromise) return pedigreeMetaLoadPromise;
+      const source = '/data/character_pedigree_meta.js?v=20260929-1';
+      pedigreeMetaLoadPromise = loadDataScript(source, 'CHARACTER_PEDIGREE_META')
+        .catch(function () {
+          delete dataScriptPromises[source];
+          window.CHARACTER_PEDIGREE_META = { available: [] };
+        });
+      return pedigreeMetaLoadPromise;
     }
     function loadCharacterDetailData() {
       return Promise.all([
@@ -319,7 +336,9 @@ const umaApp = createApp({
       return pedigreeLoadPromise;
     }
     function retryPedigree() {
-      loadPedigreeData();
+      loadPedigreeData().then(function () {
+        Vue.nextTick(renderCharBlood);
+      });
     }
     function loadHorsesData() {
       if (window.HORSES && window.HORSES.length && window.HORSES_DETAIL) {
@@ -414,7 +433,11 @@ const umaApp = createApp({
         const charPath = (seg[2] || '').toLowerCase();
         const characterReady = charPath && charPath !== 'intro' && charPath !== 'room' && charPath !== 'videos'
           ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
-        return Promise.all([Promise.resolve(characterReady), loadHorsesListData()]).then(loadCharacterUi);
+        return Promise.all([
+          Promise.resolve(characterReady),
+          loadHorsesListData(),
+          loadPedigreeMeta()
+        ]).then(loadCharacterUi);
       }
       if (sub === 'horses') return Promise.all([loadHorsesData(), loadCharacterIndexData()]);
       return Promise.resolve();
@@ -682,10 +705,13 @@ const umaApp = createApp({
     });
     function setCharSection(section) {
       if (['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) === -1) return;
+      if (section === 'pedigree' && !charHasPedigree.value) section = 'profile';
       charSection.value = section;
       pushUrl(true);
       if (section === 'pedigree') {
-        loadPedigreeData();
+        loadPedigreeData().then(function () {
+          Vue.nextTick(renderCharBlood);
+        });
       }
       if ((section === 'songs' || section === 'appearances') && charDetail.value) {
         loadRelationshipData('character', charDetail.value.id);
@@ -732,7 +758,11 @@ const umaApp = createApp({
           if (typeof window.renderCharacterDetail === 'function') window.renderCharacterDetail(null);
         });
       };
-      return Promise.all([loadCharacterDetailData(), loadVoiceData()]).then(loadCharacterUi).then(show, show);
+      return Promise.all([
+        loadCharacterDetailData(),
+        loadVoiceData(),
+        loadPedigreeMeta()
+      ]).then(loadCharacterUi).then(show, show);
     }
     function openCharDetail(id) {
       return openCharacter(id);
@@ -939,7 +969,7 @@ const umaApp = createApp({
       if (!box) return;
       box.innerHTML = '';
       var id = charDetail.value && charDetail.value.id;
-      if (!id || pedigreeStatus.value !== 'ready') return;
+      if (!id || charSection.value !== 'pedigree' || !charHasPedigree.value || pedigreeStatus.value !== 'ready') return;
       if (typeof window.renderBloodGraphInDetail !== 'function') {
         pedigreeStatus.value = 'error';
         pedigreeError.value = '血统组件暂时无法载入，请重试。';
@@ -947,8 +977,8 @@ const umaApp = createApp({
       }
       if (window.renderBloodGraphInDetail(box, id) === false) {
         box.innerHTML = '';
-        pedigreeStatus.value = 'error';
-        pedigreeError.value = '该角色的血统资料尚未收录。';
+        charSection.value = 'profile';
+        pushUrl(true);
       }
     }
     Vue.watch(charDetail, function () {
@@ -3051,7 +3081,7 @@ const umaApp = createApp({
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
       songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, toggleSongRelease, toggleSongCredit,
       creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, creatorPortrait, expandedCreatorWorkId, expandedCollaboratorId, toggleCreatorWork, toggleCollaborator, collaboratorWorks, loadCreatorCatalog,
-      charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
+      charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, charHasPedigree, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
       horseUrlForCharacter, openHorseForCharacter,
       voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,

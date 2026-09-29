@@ -13,8 +13,10 @@ ROOT = os.path.dirname(TOOLS_DIR)
 SOURCE_PATH = os.path.join(ROOT, "data", "pedigree_source.json")
 CHARACTER_PATH = os.path.join(ROOT, "data", "character_index_data.js")
 EXPORT_PATH = os.path.join(ROOT, "data", "pedigree_data.js")
+META_PATH = os.path.join(ROOT, "data", "character_pedigree_meta.js")
 CHARACTER_PREFIX = "window.CHAR_INDEX = "
 EXPORT_PREFIX = "window.PED_REL = "
+META_PREFIX = "window.CHARACTER_PEDIGREE_META = "
 
 
 def load_wrapped_json(path, prefix):
@@ -349,6 +351,33 @@ def serialize_export(nodes):
     ) + ";\n"
 
 
+def build_character_meta(nodes):
+    available = []
+    for node in nodes:
+        kind = node.get("mapping_kind")
+        if kind != "horse":
+            continue
+        character_id = node.get("character_id") or node.get("cid")
+        relations = node.get("character_relations") or {}
+        has_relation = any(relations.get(key) for key in (
+            "siblings", "descendants", "partners"
+        ))
+        parents = node.get("parents") or {}
+        has_lineage = bool(parents.get("sire") or parents.get("dam"))
+        has_lineage = has_lineage or bool(node.get("children"))
+        has_lineage = has_lineage or bool(node.get("grandchildren"))
+        has_lineage = has_lineage or bool(node.get("breeding_partners"))
+        if has_lineage or has_relation:
+            available.append(character_id)
+    return {"available": available}
+
+
+def serialize_meta(meta):
+    return META_PREFIX + json.dumps(
+        meta, ensure_ascii=False, separators=(",", ":")
+    ) + ";\n"
+
+
 def atomic_write(path, content):
     directory = os.path.dirname(path)
     fd, temp_path = tempfile.mkstemp(prefix=".pedigree-", suffix=".tmp", dir=directory)
@@ -372,16 +401,26 @@ def main():
         help="fail when the checked-in browser export is not current",
     )
     args = parser.parse_args()
-    output = serialize_export(build_export(load_source(), load_characters()))
+    nodes = build_export(load_source(), load_characters())
+    output = serialize_export(nodes)
+    meta_output = serialize_meta(build_character_meta(nodes))
     if args.check:
         with open(EXPORT_PATH, encoding="utf-8") as handle:
             current = handle.read()
         if current != output:
             raise SystemExit("pedigree_data.js is stale; run build_pedigree.py")
-        print("pedigree export is current")
+        with open(META_PATH, encoding="utf-8") as handle:
+            current_meta = handle.read()
+        if current_meta != meta_output:
+            raise SystemExit(
+                "character_pedigree_meta.js is stale; run build_pedigree.py"
+            )
+        print("pedigree exports are current")
         return
     atomic_write(EXPORT_PATH, output)
+    atomic_write(META_PATH, meta_output)
     print("wrote %s" % os.path.relpath(EXPORT_PATH, ROOT))
+    print("wrote %s" % os.path.relpath(META_PATH, ROOT))
 
 
 if __name__ == "__main__":
