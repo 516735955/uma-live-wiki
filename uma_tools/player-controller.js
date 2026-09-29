@@ -98,6 +98,12 @@
     const getAudio = options.getAudio || function () { return null; };
     const proxyUrl = options.proxyUrl || function (url) { return url; };
     const random = options.random || Math.random;
+    const schedule = options.setTimeout || setTimeout;
+    const cancelSchedule = options.clearTimeout || clearTimeout;
+    const now = options.now || Date.now;
+    const stallTimeout = Number(options.stallTimeout) || 4000;
+    const stablePlaybackWindow = Number(options.stablePlaybackWindow) || 8000;
+    const retryDelays = Array.isArray(options.retryDelays) ? options.retryDelays : [1500, 3000, 6000];
     const storage = safeStorage(options.storage);
     const restored = restoreSnapshot(storage);
     const state = reactive({
@@ -122,9 +128,40 @@
     let lastPersistSecond = -1;
     let shuffleHistory = [];
     let prefetchAudio = null;
+    let sourceGeneration = 0;
+    let intendedPlay = false;
+    let recoveryTimer = null;
+    let stableTimer = null;
+    let retryCount = 0;
+    let lastProgressAt = now();
+    let lastProgressTime = 0;
+
+    function scheduleTask(callback, delay) {
+      const timer = schedule(callback, delay);
+      if (timer && typeof timer.unref === 'function') timer.unref();
+      return timer;
+    }
 
     function isPlaying() {
       return PLAYING_STATES.has(state.status);
+    }
+
+    function clearRecoveryTimer() {
+      if (recoveryTimer !== null) cancelSchedule(recoveryTimer);
+      recoveryTimer = null;
+    }
+
+    function clearStableTimer() {
+      if (stableTimer !== null) cancelSchedule(stableTimer);
+      stableTimer = null;
+    }
+
+    function resetRecovery() {
+      clearRecoveryTimer();
+      clearStableTimer();
+      retryCount = 0;
+      lastProgressAt = now();
+      lastProgressTime = state.currentTime || 0;
     }
 
     function persist(force) {
@@ -195,6 +232,9 @@
     }
 
     function markError(message) {
+      clearRecoveryTimer();
+      clearStableTimer();
+      intendedPlay = false;
       state.status = 'error';
       state.error = message || '试听暂时无法播放，请稍后重试。';
       persist(true);
@@ -203,6 +243,8 @@
     function requestPlay() {
       const audio = getAudio();
       if (!audio || !state.current) return Promise.resolve(false);
+      const generation = sourceGeneration;
+      intendedPlay = true;
       state.visible = true;
       state.error = '';
       if (state.status === 'ended' && state.duration) audio.currentTime = 0;
@@ -214,22 +256,30 @@
         return Promise.resolve(false);
       }
       return Promise.resolve(result).then(function () {
+        if (generation !== sourceGeneration) return false;
         return true;
       }).catch(function (error) {
+        if (generation !== sourceGeneration) return false;
         if (error && error.name === 'AbortError') return false;
         markError('试听启动失败，请检查网络后重试。');
         return false;
       });
     }
 
-    function loadCurrent(autoplay) {
+    function loadCurrent(autoplay, recovery) {
       const audio = getAudio();
       if (!audio || !state.current) return Promise.resolve(false);
+      sourceGeneration += 1;
+      clearRecoveryTimer();
+      clearStableTimer();
+      if (!recovery) retryCount = 0;
+      intendedPlay = autoplay !== false;
       state.error = '';
-      state.currentTime = 0;
+      const resumeTime = recovery ? Math.max(0, Number(recovery.resumeTime) || 0) : 0;
+      state.currentTime = resumeTime;
       state.duration = 0;
       state.buffered = 0;
-      state.pendingSeek = 0;
+      state.pendingSeek = resumeTime;
       state.status = 'loading';
       audio.pause();
       audio.volume = state.volume;
@@ -243,15 +293,24 @@
       return result;
     }
 
+    function uniqueTracks(tracks) {
+      const seen = new Set();
+      return (Array.isArray(tracks) ? tracks : []).map(normalizeTrack).filter(function (track) {
+        if (!track || seen.has(track.id)) return false;
+        seen.add(track.id);
+        return true;
+      });
+    }
+
     function setQueue(tracks, selectedIndex, contextLabel, autoplay) {
       const raw = (Array.isArray(tracks) ? tracks : []).map(normalizeTrack);
       const selected = raw[clamp(selectedIndex, 0, Math.max(0, raw.length - 1))];
-      const playable = raw.filter(Boolean);
+      const playable = uniqueTracks(raw);
       if (!playable.length) {
         markError('当前列表没有可试听的曲目。');
         return Promise.resolve(false);
       }
-      let index = selected ? playable.indexOf(selected) : -1;
+      let index = selected ? playable.findIndex(function (track) { return track.id === selected.id; }) : -1;
       if (index < 0) index = 0;
       state.queue = playable;
       state.queueIndex = index;
@@ -264,7 +323,7 @@
     }
 
     function enqueueTracks(tracks, selectedIndex, contextLabel) {
-      const incoming = (Array.isArray(tracks) ? tracks : []).map(normalizeTrack).filter(Boolean);
+      const incoming = uniqueTracks(tracks);
       if (!incoming.length) {
         markError('没有可加入播放列表的曲目。');
         return Promise.resolve(false);
@@ -281,11 +340,43 @@
       } else if (contextLabel && state.contextLabel && state.contextLabel !== contextLabel) {
         state.contextLabel = '播放列表';
       }
-      state.visible = true;
-      if (!state.current) state.panelOpen = true;
+      if (added > 0) {
+        state.visible = true;
+        if (!state.current) state.panelOpen = true;
+      }
       shuffleHistory = [];
       persist(true);
       return Promise.resolve(added > 0);
+    }
+
+    function appendBlock(tracks, contextLabel) {
+      const incoming = uniqueTracks(tracks);
+      if (!incoming.length) {
+        markError('没有可加入播放列表的曲目。');
+        return Promise.resolve(false);
+      }
+      const currentId = state.current && state.current.id;
+      const incomingIds = new Set(incoming.map(function (track) { return track.id; }));
+      const retained = state.queue.filter(function (track) { return !incomingIds.has(track.id); });
+      const nextQueue = retained.concat(incoming);
+      const changed = nextQueue.length !== state.queue.length || nextQueue.some(function (track, index) {
+        return !state.queue[index] || state.queue[index].id !== track.id;
+      });
+      if (!changed) return Promise.resolve(false);
+      state.queue = nextQueue;
+      state.queueIndex = currentId ? state.queue.findIndex(function (track) { return track.id === currentId; }) : -1;
+      if (currentId && state.queueIndex >= 0) state.current = state.queue[state.queueIndex];
+      if (!state.current) {
+        state.queueIndex = -1;
+        state.panelOpen = true;
+        state.contextLabel = String(contextLabel || incoming[0].sourceContext || '播放列表');
+      } else if (contextLabel && state.contextLabel !== contextLabel) {
+        state.contextLabel = '播放列表';
+      }
+      state.visible = true;
+      shuffleHistory = [];
+      persist(true);
+      return Promise.resolve(true);
     }
 
     function playTrack(track) {
@@ -323,6 +414,9 @@
       if (!audio || !state.current) return Promise.resolve(false);
       state.visible = true;
       if (isPlaying() || !audio.paused) {
+        intendedPlay = false;
+        clearRecoveryTimer();
+        clearStableTimer();
         audio.pause();
         return Promise.resolve(true);
       }
@@ -396,6 +490,10 @@
       const target = clamp(seconds, 0, state.duration);
       audio.currentTime = target;
       state.currentTime = target;
+      lastProgressTime = target;
+      lastProgressAt = now();
+      clearRecoveryTimer();
+      if (intendedPlay) scheduleStallCheck('seek');
       updatePositionState();
       persist(true);
     }
@@ -440,6 +538,9 @@
 
     function dismiss() {
       const audio = getAudio();
+      intendedPlay = false;
+      clearRecoveryTimer();
+      clearStableTimer();
       if (audio) audio.pause();
       state.visible = false;
       state.panelOpen = false;
@@ -455,6 +556,8 @@
       if (!state.queue.length) {
         const audio = getAudio();
         if (audio) audio.pause();
+        intendedPlay = false;
+        resetRecovery();
         state.current = null;
         state.queueIndex = -1;
         state.status = 'idle';
@@ -495,6 +598,9 @@
       state.duration = 0;
       state.buffered = 0;
       state.error = '';
+      intendedPlay = false;
+      sourceGeneration += 1;
+      resetRecovery();
       shuffleHistory = [];
       if (storage) {
         try { storage.removeItem(STORAGE_KEY); }
@@ -527,6 +633,65 @@
     function closePanel() { state.panelOpen = false; }
     function togglePanel() { state.panelOpen ? closePanel() : openPanel(); }
 
+    function scheduleStableReset() {
+      clearStableTimer();
+      if (!retryCount) return;
+      stableTimer = scheduleTask(function () {
+        stableTimer = null;
+        if (intendedPlay && state.status === 'playing') retryCount = 0;
+      }, stablePlaybackWindow);
+    }
+
+    function recoverPlayback(reason) {
+      const audio = getAudio();
+      if (!audio || !state.current || !intendedPlay) return;
+      if (retryCount >= retryDelays.length) {
+        markError('试听连接多次中断，请点击重试。');
+        return;
+      }
+      const generation = sourceGeneration;
+      const delay = Number(retryDelays[retryCount]) || 0;
+      retryCount += 1;
+      clearRecoveryTimer();
+      state.status = 'buffering';
+      recoveryTimer = scheduleTask(function () {
+        recoveryTimer = null;
+        if (!intendedPlay || generation !== sourceGeneration || !state.current) return;
+        const resumeTime = Math.max(0, Number(audio.currentTime) || state.currentTime || 0);
+        const bufferedAhead = state.buffered - resumeTime;
+        if (reason !== 'error' && bufferedAhead > 0.75) {
+          try { audio.currentTime = Math.min(resumeTime + 0.05, state.duration || resumeTime + 0.05); }
+          catch (error) {}
+          requestPlay().then(function (played) {
+            if (played) scheduleStallCheck('resume');
+          });
+          return;
+        }
+        loadCurrent(true, { resumeTime: resumeTime });
+      }, delay);
+    }
+
+    function scheduleStallCheck(reason) {
+      clearRecoveryTimer();
+      if (!intendedPlay || !state.current) return;
+      const generation = sourceGeneration;
+      const elapsed = Math.max(0, now() - lastProgressAt);
+      const delay = Math.max(1, stallTimeout - elapsed);
+      recoveryTimer = scheduleTask(function () {
+        recoveryTimer = null;
+        if (!intendedPlay || generation !== sourceGeneration || !state.current) return;
+        const audio = getAudio();
+        const position = audio ? Number(audio.currentTime) || 0 : state.currentTime;
+        if (position > lastProgressTime + 0.2) {
+          lastProgressTime = position;
+          lastProgressAt = now();
+          scheduleStallCheck('progress');
+          return;
+        }
+        recoverPlayback(reason || 'stalled');
+      }, delay);
+    }
+
     function bind() {
       const audio = getAudio();
       if (!audio || audio === boundAudio) return;
@@ -547,17 +712,48 @@
         updatePositionState();
       });
       on('durationchange', function () { state.duration = Number.isFinite(audio.duration) ? audio.duration : 0; });
-      on('play', function () { state.status = 'playing'; state.error = ''; persist(true); });
-      on('playing', function () { state.status = 'playing'; state.error = ''; });
+      on('play', function () { state.status = 'playing'; state.error = ''; intendedPlay = true; persist(true); });
+      on('playing', function () {
+        state.status = 'playing';
+        state.error = '';
+        lastProgressAt = now();
+        lastProgressTime = audio.currentTime || 0;
+        scheduleStallCheck('playing');
+        scheduleStableReset();
+      });
       on('pause', function () {
+        if (state.status !== 'loading' && state.status !== 'buffering') intendedPlay = false;
+        if (!intendedPlay) {
+          clearRecoveryTimer();
+          clearStableTimer();
+        }
         if (state.status !== 'ended' && state.status !== 'error' && state.current) state.status = 'paused';
         persist(true);
       });
-      on('waiting', function () { if (!audio.paused) state.status = 'buffering'; });
-      on('stalled', function () { if (!audio.paused) state.status = 'buffering'; });
-      on('canplay', function () { if (!audio.paused) state.status = 'playing'; else if (state.status !== 'error') state.status = 'paused'; });
+      on('waiting', function () {
+        if (!audio.paused) {
+          state.status = 'buffering';
+          lastProgressTime = Number(audio.currentTime) || state.currentTime || 0;
+          lastProgressAt = now();
+          scheduleStallCheck('waiting');
+        }
+      });
+      on('stalled', function () {
+        if (!audio.paused) {
+          state.status = 'buffering';
+          lastProgressTime = Number(audio.currentTime) || state.currentTime || 0;
+          lastProgressAt = now();
+          scheduleStallCheck('stalled');
+        }
+      });
+      on('canplay', function () { if (!audio.paused) { state.status = 'playing'; scheduleStallCheck('canplay'); } else if (state.status !== 'error') state.status = 'paused'; });
       on('timeupdate', function () {
         state.currentTime = audio.currentTime || 0;
+        if (state.currentTime > lastProgressTime + 0.2) {
+          lastProgressTime = state.currentTime;
+          lastProgressAt = now();
+          if (intendedPlay) scheduleStallCheck('timeupdate');
+        }
         if (audio.buffered && audio.buffered.length) state.buffered = audio.buffered.end(audio.buffered.length - 1);
         updatePositionState();
         persist(false);
@@ -565,15 +761,23 @@
       on('progress', function () {
         state.buffered = audio.buffered && audio.buffered.length ? audio.buffered.end(audio.buffered.length - 1) : 0;
       });
-      on('seeked', function () { state.currentTime = audio.currentTime || 0; persist(true); });
-      on('error', function () { markError('试听资源暂时无法载入，请稍后重试。'); });
+      on('seeked', function () { state.currentTime = audio.currentTime || 0; lastProgressTime = state.currentTime; lastProgressAt = now(); if (intendedPlay) scheduleStallCheck('seeked'); persist(true); });
+      on('error', function () {
+        if (intendedPlay && state.current) recoverPlayback('error');
+        else markError('试听资源暂时无法载入，请稍后重试。');
+      });
+      on('abort', function () {
+        if (intendedPlay && state.current && state.status !== 'loading') recoverPlayback('abort');
+      });
       on('ended', function () {
+        clearRecoveryTimer();
+        clearStableTimer();
         advance(true);
       });
       if (typeof navigator !== 'undefined' && navigator.mediaSession) {
         const actions = {
           play: requestPlay,
-          pause: function () { audio.pause(); },
+          pause: function () { intendedPlay = false; audio.pause(); },
           previoustrack: previous,
           nexttrack: next,
           seekto: function (details) { if (details && Number.isFinite(details.seekTime)) seekTo(details.seekTime); },
@@ -585,6 +789,13 @@
           catch (error) {}
         });
       }
+      if (typeof document !== 'undefined') {
+        const onVisibility = function () {
+          if (!document.hidden && intendedPlay && state.current) scheduleStallCheck('visibility');
+        };
+        document.addEventListener('visibilitychange', onVisibility);
+        handlers.push(['document:visibilitychange', onVisibility]);
+      }
       if (state.current) {
         audio.volume = state.volume;
         audio.muted = state.muted;
@@ -595,7 +806,15 @@
     }
 
     function destroy() {
-      if (boundAudio) handlers.forEach(function (entry) { boundAudio.removeEventListener(entry[0], entry[1]); });
+      clearRecoveryTimer();
+      clearStableTimer();
+      if (boundAudio) handlers.forEach(function (entry) {
+        if (entry[0] === 'document:visibilitychange') {
+          if (typeof document !== 'undefined') document.removeEventListener('visibilitychange', entry[1]);
+        } else {
+          boundAudio.removeEventListener(entry[0], entry[1]);
+        }
+      });
       handlers = [];
       boundAudio = null;
       prefetchAudio = null;
@@ -609,6 +828,7 @@
       playTrack: playTrack,
       setQueue: setQueue,
       enqueueTracks: enqueueTracks,
+      appendBlock: appendBlock,
       playQueueAt: playQueueAt,
       togglePlay: togglePlay,
       next: next,

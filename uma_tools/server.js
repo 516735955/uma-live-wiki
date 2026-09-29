@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const zlib = require('zlib');
+const { pipeline } = require('stream');
 const { CatalogStore } = require('./catalog-store');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
@@ -908,6 +909,7 @@ function handleAudioProxy(req, res, params) {
   const candidates = metingCandidates(target);
   let idx = 0;
   let activeUpstream = null;
+  let activeResponse = null;
   let clientClosed = false;
 
   function tryNext() {
@@ -925,7 +927,8 @@ function handleAudioProxy(req, res, params) {
       const ct = String(r.headers['content-type'] || '');
       const isAudio = /audio\//i.test(ct) || /octet-stream/i.test(ct);
       const bad = r.statusCode >= 400 || (!isAudio && /html|json|text/i.test(ct));
-      if (bad) {
+      const invalidRange = r.statusCode === 206 && !r.headers['content-range'];
+      if (bad || invalidRange) {
         r.resume(); // drain
         try { if (pref) pref.destroy(); } catch (e) {}
         tryNext();
@@ -942,12 +945,19 @@ function handleAudioProxy(req, res, params) {
       if (r.headers['content-range']) h['Content-Range'] = r.headers['content-range'];
       try {
         res.writeHead(r.statusCode || 200, h);
-        r.pipe(res);
+        activeResponse = r;
+        pipeline(r, res, function (streamError) {
+          activeResponse = null;
+          if (streamError && !clientClosed && !res.writableEnded) {
+            try { res.destroy(streamError); } catch (e) {}
+          }
+        });
       } catch (e) { try { if (pref) pref.destroy(); } catch (e2) {} }
     }, 0, function (pref) { activeUpstream = pref; });
   }
   res.on('close', () => {
     clientClosed = true;
+    try { if (activeResponse) activeResponse.destroy(); } catch (e) {}
     try { if (activeUpstream) activeUpstream.destroy(); } catch (e) {}
   });
   tryNext();

@@ -14,6 +14,8 @@ class FakeAudio {
     this.playbackRate = 1;
     this.buffered = { length: 0, end: function () { return 0; } };
     this.rejectPlay = false;
+    this.loadCount = 0;
+    this.playCount = 0;
   }
   addEventListener(type, handler) {
     if (!this.listeners.has(type)) this.listeners.set(type, new Set());
@@ -26,10 +28,12 @@ class FakeAudio {
     (this.listeners.get(type) || []).forEach(function (handler) { handler(); });
   }
   load() {
+    this.loadCount += 1;
     this.readyState = 0;
     this.emit('loadstart');
   }
   play() {
+    this.playCount += 1;
     if (this.rejectPlay) return Promise.reject(Object.assign(new Error('blocked'), { name: 'NotAllowedError' }));
     this.paused = false;
     this.emit('play');
@@ -54,6 +58,30 @@ class FakeStorage {
   removeItem(key) { delete this.values[key]; }
 }
 
+class FakeClock {
+  constructor() { this.time = 0; this.nextId = 1; this.tasks = new Map(); }
+  now() { return this.time; }
+  setTimeout(callback, delay) {
+    const id = this.nextId++;
+    this.tasks.set(id, { at: this.time + Math.max(0, Number(delay) || 0), callback: callback });
+    return id;
+  }
+  clearTimeout(id) { this.tasks.delete(id); }
+  advance(milliseconds) {
+    const target = this.time + milliseconds;
+    while (true) {
+      const due = Array.from(this.tasks.entries())
+        .filter(function (entry) { return entry[1].at <= target; })
+        .sort(function (left, right) { return left[1].at - right[1].at || left[0] - right[0]; })[0];
+      if (!due) break;
+      this.time = due[1].at;
+      this.tasks.delete(due[0]);
+      due[1].callback();
+    }
+    this.time = target;
+  }
+}
+
 function track(id) {
   return {
     id: id,
@@ -66,14 +94,14 @@ function track(id) {
   };
 }
 
-function setup(storage, random) {
+function setup(storage, random, options) {
   const audio = new FakeAudio();
-  const controller = createPlayerController({
+  const controller = createPlayerController(Object.assign({
     getAudio: function () { return audio; },
     proxyUrl: function (url) { return '/proxy?url=' + encodeURIComponent(url); },
     storage: storage || new FakeStorage(),
     random: random
-  });
+  }, options || {}));
   controller.bind();
   return { audio: audio, controller: controller, state: controller.state };
 }
@@ -113,6 +141,24 @@ async function run() {
   assert.equal(appendedAlbum.state.current.id, 'a', 'adding to the queue never changes the current track');
   assert.equal(appendedAlbum.audio.paused, false, 'adding to the queue never interrupts playback');
   assert.equal(appendedAlbum.state.contextLabel, '播放列表', 'mixed sources use the generic queue label');
+
+  const movedBlock = setup();
+  await movedBlock.controller.setQueue([track('a'), track('b'), track('c'), track('d')], 1, 'Mixed', true);
+  movedBlock.audio.currentTime = 37;
+  movedBlock.audio.emit('timeupdate');
+  const loadBeforeMove = movedBlock.audio.loadCount;
+  await movedBlock.controller.appendBlock([track('d'), track('b'), track('e'), track('d')], 'Album block');
+  assert.deepEqual(movedBlock.state.queue.map(function (row) { return row.id; }), ['a', 'c', 'd', 'b', 'e'], 'adding a group moves duplicates into one ordered block');
+  assert.equal(movedBlock.state.current.id, 'b', 'moving the current track keeps its identity');
+  assert.equal(movedBlock.state.queueIndex, 3, 'moving the current track updates its queue position');
+  assert.equal(movedBlock.audio.currentTime, 37, 'moving a current track does not restart playback');
+  assert.equal(movedBlock.audio.loadCount, loadBeforeMove, 'moving a current track does not reload its source');
+
+  movedBlock.controller.dismiss();
+  await movedBlock.controller.enqueueTracks([track('e')], 0, 'Duplicate');
+  assert.equal(movedBlock.state.visible, false, 'adding only an existing single track does not reopen a dismissed dock');
+  await movedBlock.controller.appendBlock([track('e'), track('f')], 'New block');
+  assert.equal(movedBlock.state.visible, true, 'a successful group addition reopens a dismissed dock');
 
   const queuedOnly = setup();
   await queuedOnly.controller.enqueueTracks([track('a'), track('b')], 0, 'Album');
@@ -227,6 +273,108 @@ async function run() {
   restoredQueue.controller.clearQueue();
   assert.equal(restoredQueue.state.queue.length, 0);
   assert.equal(restoredQueue.state.visible, false);
+
+  const clock = new FakeClock();
+  const recovering = setup(null, null, {
+    stallTimeout: 20,
+    retryDelays: [0, 0, 0],
+    stablePlaybackWindow: 80,
+    now: clock.now.bind(clock),
+    setTimeout: clock.setTimeout.bind(clock),
+    clearTimeout: clock.clearTimeout.bind(clock)
+  });
+  await recovering.controller.playTrack(track('recover'));
+  recovering.audio.metadata(120);
+  recovering.audio.currentTime = 20;
+  recovering.audio.buffered = { length: 1, end: function () { return 80; } };
+  recovering.audio.emit('progress');
+  recovering.audio.emit('waiting');
+  clock.advance(21);
+  await Promise.resolve();
+  assert.ok(recovering.audio.currentTime > 20, 'a silent buffered stall nudges the playhead and resumes');
+  assert.equal(recovering.state.status, 'playing');
+  recovering.controller.destroy();
+
+  const reloadClock = new FakeClock();
+  const reloading = setup(null, null, {
+    stallTimeout: 20,
+    retryDelays: [0, 0, 0],
+    stablePlaybackWindow: 1000,
+    now: reloadClock.now.bind(reloadClock),
+    setTimeout: reloadClock.setTimeout.bind(reloadClock),
+    clearTimeout: reloadClock.clearTimeout.bind(reloadClock)
+  });
+  await reloading.controller.playTrack(track('reload'));
+  reloading.audio.metadata(120);
+  reloading.audio.currentTime = 33;
+  reloading.audio.emit('timeupdate');
+  reloading.audio.buffered = { length: 1, end: function () { return 33; } };
+  const loadsBeforeStall = reloading.audio.loadCount;
+  reloading.audio.emit('waiting');
+  reloadClock.advance(21);
+  await Promise.resolve();
+  assert.equal(reloading.audio.loadCount, loadsBeforeStall + 1, 'a stall without buffered audio reloads the source once');
+  assert.equal(reloading.state.currentTime, 33, 'a source reload keeps the last playback position');
+  reloading.audio.metadata(120);
+  assert.equal(reloading.audio.currentTime, 33, 'metadata restoration seeks back to the saved position');
+  reloading.controller.destroy();
+
+  const retryClock = new FakeClock();
+  const bounded = setup(null, null, {
+    stallTimeout: 1000,
+    retryDelays: [0, 0, 0],
+    stablePlaybackWindow: 10000,
+    now: retryClock.now.bind(retryClock),
+    setTimeout: retryClock.setTimeout.bind(retryClock),
+    clearTimeout: retryClock.clearTimeout.bind(retryClock)
+  });
+  await bounded.controller.playTrack(track('bounded'));
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    bounded.audio.emit('error');
+    retryClock.advance(0);
+    await Promise.resolve();
+  }
+  bounded.audio.emit('error');
+  assert.equal(bounded.state.status, 'error', 'recovery stops after the configured retry budget');
+  assert.match(bounded.state.error, /多次中断/);
+  bounded.controller.destroy();
+
+  const pauseClock = new FakeClock();
+  const cancelled = setup(null, null, {
+    stallTimeout: 1000,
+    retryDelays: [50],
+    stablePlaybackWindow: 10000,
+    now: pauseClock.now.bind(pauseClock),
+    setTimeout: pauseClock.setTimeout.bind(pauseClock),
+    clearTimeout: pauseClock.clearTimeout.bind(pauseClock)
+  });
+  await cancelled.controller.playTrack(track('cancelled'));
+  const loadsBeforePause = cancelled.audio.loadCount;
+  cancelled.audio.emit('error');
+  await cancelled.controller.togglePlay();
+  pauseClock.advance(60);
+  assert.equal(cancelled.audio.loadCount, loadsBeforePause, 'an explicit pause cancels a scheduled recovery');
+  assert.equal(cancelled.state.status, 'paused');
+  cancelled.controller.destroy();
+
+  const switchClock = new FakeClock();
+  const switched = setup(null, null, {
+    stallTimeout: 1000,
+    retryDelays: [50],
+    stablePlaybackWindow: 10000,
+    now: switchClock.now.bind(switchClock),
+    setTimeout: switchClock.setTimeout.bind(switchClock),
+    clearTimeout: switchClock.clearTimeout.bind(switchClock)
+  });
+  await switched.controller.playTrack(track('old'));
+  switched.audio.emit('error');
+  await switched.controller.playTrack(track('new'));
+  const loadsAfterSwitch = switched.audio.loadCount;
+  switchClock.advance(60);
+  await Promise.resolve();
+  assert.equal(switched.state.current.id, 'new', 'a stale recovery cannot replace a newer track');
+  assert.equal(switched.audio.loadCount, loadsAfterSwitch, 'switching tracks cancels the previous source recovery');
+  switched.controller.destroy();
 
   console.log('player controller tests passed');
 }
