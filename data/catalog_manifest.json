@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "build_id": "14a1b5f16115cfc5e604",
-  "generated_at": "2026-09-27T14:41:21+00:00",
+  "build_id": "76b727e5e2b59d325b6a",
+  "generated_at": "2026-09-29T13:18:23+00:00",
   "files": {
     "events": "/data/events_catalog.json",
     "songs": "/data/song_catalog.json",
     "appearances": "/data/appearance_index.json",
-    "voice_actors": "/data/voice_actor_profiles.json"
+    "voice_actors": "/data/voice_actor_profiles.json",
+    "creators": "/data/creator_catalog.json"
   }
 }

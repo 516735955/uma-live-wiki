@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..');
 const source = path.resolve(process.argv[2] || path.join(ROOT, '赛马娘LIVE相关.html'));
 const output = path.resolve(process.argv[3] || path.join(ROOT, 'data', 'albums.json'));
@@ -12,6 +13,11 @@ if (!Array.isArray(albums) || !albums.length) {
   console.error('ALBUMS is empty; refusing to overwrite ' + output);
   process.exit(1);
 }
-// add an "id" derivation + keep shape used by the page
+albums.forEach((album) => {
+  if (album.id) return;
+  const catalog = String(album.catalog || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  album.id = catalog || ('untitled-' + crypto.createHash('sha1').update(String(album.name || '').normalize('NFKC')).digest('hex').slice(0, 12));
+  album.id = 'album-' + album.id;
+});
 fs.writeFileSync(output, JSON.stringify(albums, null, 2), 'utf8');
 console.log('wrote ' + output + ' albums:', albums.length, 'songs:', albums.reduce((n, a) => n + a.songs.length, 0));

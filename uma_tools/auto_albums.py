@@ -3,7 +3,7 @@
 #   1) sync: 抓官网 microCMS 音乐商品 -> 未收录的新专辑登记为占位条目（品番/发售日/封面）
 #   2) enrich: 对「已发售但还没曲目」的专辑，从网易云补全曲目/封面/专辑ID
 # 用法: python uma_tools/auto_albums.py
-import json, os, re, sys, io, time, urllib.request
+import hashlib, json, os, re, sys, io, time, unicodedata, urllib.request
 
 if sys.version_info[0] == 2:
     sys.exit('requires python3')
@@ -28,6 +28,17 @@ UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like 
 MAX_ENRICH_PER_RUN = 6      # 每次运行最多补全几张（网易云限流）
 RETRY_SKIP_HOURS = 12       # 同一张失败/空结果后，至少隔多久再试
 SLEEP_AFTER_CALL = 1.0      # 网易云调用间隔（秒）
+
+
+def stable_album_id(album):
+    current = str(album.get('id') or '').strip()
+    if current:
+        return current
+    catalog = re.sub(r'[^a-z0-9]+', '-', str(album.get('catalog') or '').lower()).strip('-')
+    if catalog:
+        return 'album-' + catalog
+    title = unicodedata.normalize('NFKC', str(album.get('name') or '')).strip().lower()
+    return 'album-' + hashlib.sha1(title.encode('utf-8')).hexdigest()[:12]
 
 
 def log(msg):
@@ -328,6 +339,11 @@ def main():
             log('未匹配网易云(稍后重试): %s' % ent.get('name'))
 
     save_atomic(STATE_JSON, state)
+
+    for ent in albums:
+        if not ent.get('id'):
+            ent['id'] = stable_album_id(ent)
+            changed = True
 
     if changed:
         save_atomic(ALBUMS_JSON, albums)

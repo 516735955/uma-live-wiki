@@ -2,18 +2,36 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+
+const CATALOG_RESPONSE_SCHEMA = 2;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
   'events_catalog.json',
   'song_catalog.json',
+  'creator_catalog.json',
   'appearance_index.json',
   'voice_actor_profiles.json',
   'albums.json'
 ];
+const MUSIC_SOURCE_FILES = [
+  'music/creators.json',
+  'music/lyrics.json',
+  'music/lyric_timings.json'
+];
 
 function normalize(value) {
   return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
+}
+
+function songIdentityKey(value) {
+  return normalize(value)
+    .replace(/[\ufe0e\ufe0f]/g, '')
+    .replace(/[‘’]/g, "'")
+    .replace(/[‐‑‒–—−－]/g, '-')
+    .replace(/・/g, '·')
+    .replace(/ /g, '');
 }
 
 function pageNumber(value, fallback) {
@@ -40,6 +58,13 @@ function albumSlug(name) {
     .replace(/[\/\\&+=?#%<>]/g, '_')
     .replace(/\s+/g, '_')
     .replace(/_+/g, '_');
+}
+
+function stableAlbumId(album) {
+  if (album && album.id) return String(album.id);
+  const catalog = String((album && album.catalog) || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  if (catalog) return 'album-' + catalog;
+  return 'album-' + crypto.createHash('sha1').update(normalize(album && album.name).replace(/ /g, '')).digest('hex').slice(0, 12);
 }
 
 function albumWork(name) {
@@ -132,21 +157,95 @@ function eventSummary(event, searchText) {
   };
 }
 
-function songSearchText(song) {
+function musicCreatorName(music, creatorId) {
+  const creator = music && music.creatorsById && music.creatorsById.get(String(creatorId || ''));
+  return creator ? creator.name : '';
+}
+
+function lyricDocument(music, reference) {
+  const row = (music && music.lyrics && music.lyrics[String(reference || '')]) || null;
+  if (!row) return null;
+  if (Array.isArray(row.lines)) return row;
+  const document = music.lyricDocuments && music.lyricDocuments[String(row.document_id || '')];
+  if (!document) return null;
+  const byId = new Map((document.lines || []).map((line) => [String(line.id || ''), String(line.text || '')]));
+  const sourceLineIds = (row.line_ids && row.line_ids.length) ? row.line_ids : (row.uses_all_lines ? (document.lines || []).map((line) => line.id) : []);
+  const lineIds = sourceLineIds.map(String).filter((lineId) => byId.has(lineId));
+  return Object.assign({}, row, {
+    language: row.language || document.language || '',
+    document_id: row.document_id || '',
+    line_ids: lineIds,
+    lines: lineIds.map((lineId) => byId.get(lineId))
+  });
+}
+
+function timingDocument(music, reference) {
+  const row = (music && music.timings && music.timings[String(reference || '')]) || null;
+  if (!row) return null;
+  const document = music.lyricDocuments && music.lyricDocuments[String(row.lyric_document_id || '')];
+  const byId = new Map(((document && document.lines) || []).map((line) => [String(line.id || ''), String(line.text || '')]));
+  return Object.assign({}, row, {
+    lines: (row.lines || []).map((line) => Object.assign({}, line, {
+      text: byId.get(String(line.line_id || '')) || line.source_text || line.text || ''
+    }))
+  });
+}
+
+function hydrateSong(song, music) {
+  return Object.assign({}, song, {
+    versions: (song.versions || []).map((version) => {
+      const lyric = version.has_lyrics ? lyricDocument(music, version.lyrics_ref) : null;
+      const timing = lyric ? timingDocument(music, version.lyrics_ref) : null;
+      return Object.assign({}, version, {
+        credits: (version.credits || []).map((credit) => Object.assign({}, credit, {
+          name: musicCreatorName(music, credit.creator_id) || credit.name || credit.creator_id || ''
+        })),
+        lyrics: lyric ? Object.assign({}, lyric, {
+          timings: timing && Array.isArray(timing.lines) ? timing.lines : []
+        }) : null
+      });
+    })
+  });
+}
+
+function songSearchText(song, music) {
   const releases = (song.versions || []).flatMap((version) => (version.releases || []).map((release) => [
     release.album_name,
     release.catalog,
     release.artist
   ].filter(Boolean).join(' ')));
+  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => musicCreatorName(music, credit.creator_id) || credit.name));
+  const lyrics = (song.versions || []).flatMap((version) => {
+    const lyric = lyricDocument(music, version.lyrics_ref) || {};
+    return [...(lyric.lines || []), ...(lyric.translation_lines || [])];
+  });
   return normalize([
     song.title,
     ...(song.aliases || []),
     ...(song.artists || []),
-    ...releases
+    ...releases,
+    ...creators,
+    ...lyrics
   ].join(' '));
 }
 
-function songSummary(song, searchText) {
+function songSummarySearchText(song, music) {
+  const releases = (song.versions || []).flatMap((version) => (version.releases || []).map((release) => [
+    release.album_name,
+    release.catalog,
+    release.artist
+  ].filter(Boolean).join(' ')));
+  const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => musicCreatorName(music, credit.creator_id) || credit.name));
+  return normalize([
+    song.title,
+    ...(song.aliases || []),
+    ...(song.artists || []),
+    ...releases,
+    ...creators
+  ].join(' '));
+}
+
+function songSummary(song, searchText, music) {
   return {
     id: song.id,
     title: song.title,
@@ -159,8 +258,37 @@ function songSummary(song, searchText) {
     version_count: song.version_count || 0,
     release_count: song.release_count || 0,
     performance_count: song.performance_count || 0,
+    creator_ids: song.creator_ids || [],
+    has_lyrics: !!song.has_lyrics,
     playable: firstPlayableRelease(song),
-    search_text: searchText || songSearchText(song)
+    // Full lyrics remain in the server-only row index.  List responses carry a
+    // compact search string; lyric searches use the q-filtered API response.
+    search_text: songSummarySearchText(song, music)
+  };
+}
+
+function creatorSearchText(creator) {
+  return normalize([
+    creator.name,
+    ...(creator.aliases || []),
+    ...(creator.affiliations || []),
+    ...(creator.roles || []).map((role) => role.label),
+    ...(creator.works || []).map((work) => work.title)
+  ].join(' '));
+}
+
+function creatorSummary(creator, searchText) {
+  return {
+    id: creator.id,
+    name: creator.name,
+    aliases: creator.aliases || [],
+    type: creator.type || 'person',
+    image: creator.image || '',
+    affiliations: creator.affiliations || [],
+    roles: creator.roles || [],
+    work_count: creator.work_count || 0,
+    version_count: creator.version_count || 0,
+    search_text: searchText || creatorSearchText(creator)
   };
 }
 
@@ -190,8 +318,8 @@ function songForAppearance(song, type, id) {
 function albumSummary(album) {
   const tracks = (album.songs || []).map((song) => [song.name, song.artist].filter(Boolean).join(' '));
   return {
+    id: stableAlbumId(album),
     name: album.name,
-    slug: albumSlug(album.name),
     count: album.count,
     cover: album.cover,
     release: album.release,
@@ -213,7 +341,7 @@ class CatalogStore {
   }
 
   async fileSignature() {
-    const stats = await Promise.all(CATALOG_FILES.map((name) => fs.promises.stat(path.join(this.dataDir, name))));
+    const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
     return stats.map((stat) => stat.size + ':' + Math.floor(stat.mtimeMs)).join('|');
   }
 
@@ -235,25 +363,41 @@ class CatalogStore {
   }
 
   async load(signature) {
-    const texts = await Promise.all(CATALOG_FILES.map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
+    const texts = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES).map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
     const manifest = JSON.parse(texts[0]);
     const eventsDoc = JSON.parse(texts[1]);
     const songsDoc = JSON.parse(texts[2]);
-    const appearancesDoc = JSON.parse(texts[3]);
-    const voicesDoc = JSON.parse(texts[4]);
-    const albums = JSON.parse(texts[5]);
+    const creatorsDoc = JSON.parse(texts[3]);
+    const appearancesDoc = JSON.parse(texts[4]);
+    const voicesDoc = JSON.parse(texts[5]);
+    const albums = JSON.parse(texts[6]);
+    const musicCreatorsDoc = JSON.parse(texts[7]);
+    const lyricsDoc = JSON.parse(texts[8]);
+    const timingsDoc = JSON.parse(texts[9]);
+    const music = {
+      creatorsById: new Map((musicCreatorsDoc.creators || []).map((creator) => [String(creator.id), creator])),
+      lyrics: lyricsDoc.versions || {},
+      lyricDocuments: lyricsDoc.documents || {},
+      timings: timingsDoc.versions || {}
+    };
     const buildIds = new Set([
       eventsDoc.build_id,
       songsDoc.build_id,
+      creatorsDoc.build_id,
       appearancesDoc.build_id,
       voicesDoc.build_id
     ]);
     if (buildIds.size !== 1 || !buildIds.has(manifest.build_id)) {
       throw new Error('catalog revision mismatch');
     }
+    const sourceRevision = crypto.createHash('sha1')
+      .update(texts.slice(CATALOG_FILES.length).join('\u0000'))
+      .digest('hex')
+      .slice(0, 12);
 
     const events = Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
     const songs = Array.isArray(songsDoc.songs) ? songsDoc.songs : [];
+    const creators = Array.isArray(creatorsDoc.creators) ? creatorsDoc.creators : [];
     const voiceActors = Array.isArray(voicesDoc.voice_actors) ? voicesDoc.voice_actors : [];
     const albumRows = Array.isArray(albums) ? albums : [];
     const eventRows = events.map((event) => {
@@ -261,35 +405,43 @@ class CatalogStore {
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {
-      const search = songSearchText(song);
-      return { data: song, summary: songSummary(song, search), search };
+      const search = songSearchText(song, music);
+      return { data: song, summary: songSummary(song, search, music), search };
+    });
+    const creatorRows = creators.map((creator) => {
+      const search = creatorSearchText(creator);
+      return { data: creator, summary: creatorSummary(creator, search), search };
     });
     const albumRowsIndexed = albumRows.map((album) => ({ data: album, summary: albumSummary(album) }));
     const snapshot = {
-      buildId: manifest.build_id,
+      buildId: manifest.build_id + '-api' + CATALOG_RESPONSE_SCHEMA + '-' + sourceRevision,
       manifest,
       eventsDoc,
       songsDoc,
+      creatorsDoc,
       appearancesDoc,
       voicesDoc,
       albums: albumRows,
       eventRows,
       songRows,
+      creatorRows,
+      music,
       albumRows: albumRowsIndexed,
       eventsById: new Map(events.map((event) => [String(event.id), event])),
       songsById: new Map(songs.map((song) => [String(song.id), song])),
+      creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
       songAliases: new Map(),
-      albumsBySlug: new Map(),
+      albumsById: new Map(),
       albumsByName: new Map()
     };
     songRows.forEach((row) => {
-      [row.data.id, row.data.title, ...(row.data.aliases || [])].forEach((key) => {
-        const normalized = normalize(key).replace(/ /g, '');
+      [row.data.id, ...(row.data.legacy_ids || []), row.data.title, ...(row.data.aliases || [])].forEach((key) => {
+        const normalized = songIdentityKey(key);
         if (normalized) snapshot.songAliases.set(normalized, row.data);
       });
     });
     albumRowsIndexed.forEach((row) => {
-      snapshot.albumsBySlug.set(row.summary.slug, row.data);
+      snapshot.albumsById.set(row.summary.id, row.data);
       snapshot.albumsByName.set(String(row.data.name), row.data);
     });
     this.snapshot = snapshot;
@@ -395,7 +547,37 @@ class CatalogStore {
     const store = await this.get();
     const target = normalize(id).replace(/ /g, '');
     const song = store.songsById.get(String(id)) || store.songAliases.get(target);
-    return song ? { build_id: store.buildId, song } : null;
+    return song ? { build_id: store.buildId, song: hydrateSong(song, store.music) } : null;
+  }
+
+  async creators(params) {
+    const store = await this.get();
+    const query = normalize(params.get('q'));
+    const role = params.get('role') || '';
+    let rows = store.creatorRows.filter((row) => {
+      if (query && !row.search.includes(query)) return false;
+      if (role && !(row.data.roles || []).some((item) => item.role === role)) return false;
+      return true;
+    });
+    rows = rows.slice().sort((a, b) => String(a.data.name).localeCompare(String(b.data.name), 'ja'));
+    const total = rows.length;
+    const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 40));
+    const pageCount = Math.max(1, Math.ceil(total / pageSize));
+    const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
+    return {
+      build_id: store.buildId,
+      coverage: store.creatorsDoc.coverage || {},
+      items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),
+      total,
+      page,
+      page_size: pageSize
+    };
+  }
+
+  async creator(id) {
+    const store = await this.get();
+    const creator = store.creatorsById.get(String(id));
+    return creator ? { build_id: store.buildId, creator } : null;
   }
 
   async albums(params) {
@@ -433,12 +615,12 @@ class CatalogStore {
     };
   }
 
-  async album(slug, name) {
+  async album(id, name) {
     const store = await this.get();
-    const album = (slug && store.albumsBySlug.get(String(slug))) || (name && store.albumsByName.get(String(name)));
+    const album = (id && store.albumsById.get(String(id))) || (name && store.albumsByName.get(String(name)));
     if (!album) return null;
     const songs = (album.songs || []).map((track) => {
-      const key = normalize(track.name).replace(/ /g, '');
+      const key = songIdentityKey(track.name);
       return store.songAliases.get(key);
     }).filter(Boolean);
     return { build_id: store.buildId, album, catalog_songs: songs };
@@ -462,4 +644,4 @@ class CatalogStore {
   }
 }
 
-module.exports = { CatalogStore, albumSlug };
+module.exports = { CatalogStore, albumSlug, stableAlbumId };

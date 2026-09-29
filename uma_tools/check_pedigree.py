@@ -171,8 +171,14 @@ def main():
     actual = build_pedigree.load_wrapped_json(
         build_pedigree.EXPORT_PATH, build_pedigree.EXPORT_PREFIX
     )
+    actual_meta = build_pedigree.load_wrapped_json(
+        build_pedigree.META_PATH, build_pedigree.META_PREFIX
+    )
     if expected is not None and actual != expected:
         errors.append("pedigree_data.js is stale; run build_pedigree.py")
+    expected_meta = build_pedigree.build_character_meta(expected or [])
+    if actual_meta != expected_meta:
+        errors.append("character_pedigree_meta.js is stale; run build_pedigree.py")
 
     runtime_ids = [node.get("cid") for node in actual]
     runtime_by_id = {node.get("cid"): node for node in actual}
@@ -184,6 +190,12 @@ def main():
             errors.append("duplicate runtime cid: %s" % node_id)
     if set(runtime_ids) != source_ids:
         errors.append("runtime/source node sets differ")
+    available_ids = actual_meta.get("available") or []
+    if len(available_ids) != len(set(available_ids)):
+        errors.append("duplicate character pedigree availability ids")
+    for character_id in available_ids:
+        if character_id not in character_id_set:
+            errors.append("pedigree metadata has no character page: %s" % character_id)
     for character_id in character_ids:
         if character_id not in runtime_by_id:
             errors.append("character has no runtime pedigree node: %s" % character_id)

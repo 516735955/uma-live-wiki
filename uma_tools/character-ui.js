@@ -90,7 +90,10 @@
     frames.forEach(function (frame) {
       if (frame.contentWindow !== event.source) return;
       if (frame.dataset.pedigreeSample !== event.data.sample) return;
-      var height = Math.max(76, Math.min(3200, Number(event.data.height) || 0));
+      var reportedHeight = Number(event.data.height) || 0;
+      if (reportedHeight < 320 || frame.getClientRects().length === 0) return;
+      var minimumHeight = window.matchMedia('(max-width: 700px)').matches ? 460 : 520;
+      var height = Math.max(minimumHeight, Math.min(3200, reportedHeight));
       if (height) frame.style.height = height + 'px';
     });
   });

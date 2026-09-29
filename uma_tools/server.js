@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const zlib = require('zlib');
+const { pipeline } = require('stream');
 const { CatalogStore } = require('./catalog-store');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
@@ -512,8 +513,10 @@ async function handleCatalogApi(req, res, urlPath, params) {
     else if (urlPath === '/api/catalog/event') result = await catalogStore.event(params.get('id'), params.get('legacy'));
     else if (urlPath === '/api/catalog/songs') result = await catalogStore.songs(params);
     else if (urlPath === '/api/catalog/song') result = await catalogStore.song(params.get('id'));
+    else if (urlPath === '/api/catalog/creators') result = await catalogStore.creators(params);
+    else if (urlPath === '/api/catalog/creator') result = await catalogStore.creator(params.get('id'));
     else if (urlPath === '/api/catalog/albums') result = await catalogStore.albums(params);
-    else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('slug'), params.get('name'));
+    else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('id'), params.get('name'));
     else if (urlPath === '/api/catalog/voice-actors') result = await catalogStore.voices();
     else if (urlPath === '/api/catalog/appearance') {
       const type = params.get('type');
@@ -906,6 +909,7 @@ function handleAudioProxy(req, res, params) {
   const candidates = metingCandidates(target);
   let idx = 0;
   let activeUpstream = null;
+  let activeResponse = null;
   let clientClosed = false;
 
   function tryNext() {
@@ -923,7 +927,8 @@ function handleAudioProxy(req, res, params) {
       const ct = String(r.headers['content-type'] || '');
       const isAudio = /audio\//i.test(ct) || /octet-stream/i.test(ct);
       const bad = r.statusCode >= 400 || (!isAudio && /html|json|text/i.test(ct));
-      if (bad) {
+      const invalidRange = r.statusCode === 206 && !r.headers['content-range'];
+      if (bad || invalidRange) {
         r.resume(); // drain
         try { if (pref) pref.destroy(); } catch (e) {}
         tryNext();
@@ -940,12 +945,19 @@ function handleAudioProxy(req, res, params) {
       if (r.headers['content-range']) h['Content-Range'] = r.headers['content-range'];
       try {
         res.writeHead(r.statusCode || 200, h);
-        r.pipe(res);
+        activeResponse = r;
+        pipeline(r, res, function (streamError) {
+          activeResponse = null;
+          if (streamError && !clientClosed && !res.writableEnded) {
+            try { res.destroy(streamError); } catch (e) {}
+          }
+        });
       } catch (e) { try { if (pref) pref.destroy(); } catch (e2) {} }
     }, 0, function (pref) { activeUpstream = pref; });
   }
   res.on('close', () => {
     clientClosed = true;
+    try { if (activeResponse) activeResponse.destroy(); } catch (e) {}
     try { if (activeUpstream) activeUpstream.destroy(); } catch (e) {}
   });
   tryNext();
@@ -974,7 +986,16 @@ const server = http.createServer((req, res) => {
   if (req.method === 'GET' && urlPath === '/api/audio') return handleAudioProxy(req, res, params);
   if (urlPath.startsWith('/api/')) return sendJson(res, 404, { error: 'unknown api endpoint' });
 
-  if (urlPath === '/') urlPath = '/' + INDEX_FILE;
+  if (urlPath === '/') {
+    res.writeHead(302, { Location: '/zh-Hans/', 'Cache-Control': 'no-cache' });
+    res.end();
+    return;
+  }
+  if (urlPath === '/zh-Hans') {
+    res.writeHead(301, { Location: '/zh-Hans/', 'Cache-Control': 'no-cache' });
+    res.end();
+    return;
+  }
   let filePath = path.normalize(path.join(ROOT, urlPath));
   if (!isInsideRoot(filePath)) { res.writeHead(403); res.end('Forbidden'); return; }
 

@@ -22,6 +22,8 @@ uma-live-wiki/                    仓库根目录
 │   ├── events/                    活动、节目、声优身份与人工订正源数据
 │   ├── events_catalog.json        统一活动目录（生成）
 │   ├── song_catalog.json          统一歌曲、版本与收录关系（生成）
+│   ├── creator_catalog.json       创作者、参与歌曲与合作关系（生成）
+│   ├── music/                     版本级创作署名、歌词、时间轴与人工订正源数据
 │   ├── appearance_index.json      角色、声优、歌曲出演关系（生成）
 │   ├── voice_actor_profiles.json  声优资料及其站内关系（生成）
 │   ├── catalog_manifest.json      本次生成物、覆盖率与输入摘要（生成）
@@ -30,6 +32,7 @@ uma-live-wiki/                    仓库根目录
 ├── uma_avatars/ uma_moe/ uma_official/ uma_va/ video_thumbs/  图片资源
 ├── uma_tools/                    工具脚本
 │   ├── app.css                   站点样式
+│   ├── music-components.css      音乐域卡片、详情与播放器组合样式
 │   ├── app.js                    SPA 路由与页面逻辑
 │   ├── app-api.js                目录请求去重与浏览器缓存
 │   ├── ui-components.js          全站共用交互组件
@@ -120,6 +123,8 @@ python3 uma_tools/build_pedigree.py
 | 官方节目源 | `python3 uma_tools/update_events.py --refresh-programs` | 刷新 `data/events/official_programs.json` 并重建统一活动数据 |
 | 声优资料源 | `python3 uma_tools/update_events.py --refresh-profiles` | 刷新 `data/events/voice_actor_details.json` 并重建声优档案 |
 | 统一活动、音乐与出演关系 | `python3 uma_tools/update_events.py` | `events_catalog.json`、`song_catalog.json`、`appearance_index.json`、`voice_actor_profiles.json`、`catalog_manifest.json` |
+| 音乐版本、创作者与歌词 | `python3 uma_tools/sync_music_metadata.py` | 增量合并 `data/music/`；已有非空人工资料不被空值或低置信结果覆盖 |
+| 仅重建音乐目录 | `python3 uma_tools/update_events.py --music-only` | 重建歌曲、创作者及关联索引，不刷新或改写活动、节目、角色与声优源数据 |
 | 全部远程源刷新 | `python3 uma_tools/update_events.py --refresh-all` | 刷新节目、声优资料并原子重建三份运行数据 |
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
 | 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
@@ -134,6 +139,18 @@ python3 uma_tools/build_pedigree.py
 Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 仅在标题、日期、场次唯一匹配且对应已发布歌单为空、
 出演信息完整时，补入 `live_cat_data.json` 的空白曲目表；已有非空歌单的曲目或歌手差异只写入工作流报告，
 留待人工处理，不自动覆盖、不发提醒邮件。服务器的常规资料刷新不运行这项任务。
+
+音乐资料按“歌曲作品 → 录音版本 → 专辑收录 / 现场演出”组织。`data/music/credits.json`、`lyrics.json`、
+`lyric_timings.json` 和 `version_overrides.json` 是可维护源；`song_catalog.json` 与 `creator_catalog.json` 是生成物。
+普通短版、现场标注等没有独立录音依据的名称只作为演出版本说明，不凭空生成“0 张收录”的录音版本；已确认的
+署名和歌词按版本继承，明确的版本级资料优先。只调整音乐资料时使用 `--music-only`，避免无关数据产生大面积 diff。
+
+## 前端组件复用
+
+筛选下拉、分页、加载状态和底部播放器等交互由 `uma_tools/ui-components.js` 统一提供；新增页面应先复用
+`UiSelect`、既有筛选按钮、实体标签和人物圆形链接，不在页面模板内复制另一套交互。全站 token、布局基线和
+通用实体详情写在 `app.css`，音乐页只在 `music-components.css` 组合歌曲卡片、创作者关系、歌词和批量入队样式。
+领域样式可以独立维护，但不得重新定义全站颜色、字号、按钮和下拉框基础规则。
 
 `data/events/voice_actor_identities.json` 是稳定声优 ID 与别名的唯一登记表；角色当前担当关系来自角色索引，
 活动、歌曲和声优页只消费统一生成物，不再各自维护一份映射。外部页面可以同时作为事实核验依据，但每个
@@ -223,12 +240,12 @@ gh pr create --base main --head <工作分支>
 PR 标题使用英文概括本批目标，正文使用中文说明改了什么、如何验证以及兼容性影响。没有仓库写权限的贡献者
 仍按 GitHub 的常规方式 Fork 仓库，从自己的功能分支向本仓库 `main` 提交 PR。
 
-## 环境变量与百度翻译凭据
+## 百度翻译配置
 
 `uma_tools/server.js` 内置百度翻译缓存接口，读取顺序：
 
-1. 环境变量 `BAIDU_APPID` / `BAIDU_SECRET`（优先级最高）
-2. `uma_tools/baidu.conf.json`（随仓库提交，拉取后开箱即用）
+1. 环境变量 `BAIDU_APPID` / `BAIDU_SECRET`（临时覆盖时优先）
+2. `uma_tools/baidu.conf.json`（项目默认配置，拉取后直接使用）
 
 macOS / Linux：
 
@@ -244,16 +261,13 @@ $env:BAIDU_SECRET = "你的SECRET"
 node uma_tools/server.js
 ```
 
-> 注意：`baidu.conf.json` 含真实密钥并已提交到仓库。若仓库是公开的，任何人可见并可能消耗你的翻译额度。
-> 请确认仓库访问范围是可控的，或通过环境变量覆盖/删除该文件。
-
 不配置时翻译功能自动降级（标题/正文保持日文），不影响其他功能。
 
 ## 常见问题
 
 - **改了数据看不到变化？** 硬刷新 Ctrl+F5，或确认服务器读取的是「赛马娘LIVE相关.html」而非其他旧版文件。
-- **文件很大/有 secrets？** 不要提交 `*.bak*`、`AI.rar`、`Default Project/`（官网抓取原始数据）、
-  `uma_tools` 下的日志与运行状态文件以及任何密钥；这些已在 `.gitignore` 中。翻译缓存
+- **文件很大/有临时产物？** 不要提交 `*.bak*`、`AI.rar`、`Default Project/`（官网抓取原始数据），
+  以及 `uma_tools` 下的日志与运行状态文件；这些已在 `.gitignore` 中。翻译缓存
   `uma_tools/trans_cache.json` 是例外，它是站点可复用的数据结果。
 - **想新增批量抓取的验证工具？** 放到 `uma_tools/` 下，命名如 `check_*.py`，并在提交前跑一遍语法检查。
 

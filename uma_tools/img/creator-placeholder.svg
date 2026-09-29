@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="创作者资料图占位">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2549c7"/>
+      <stop offset="1" stop-color="#4169ef"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#f37a18"/>
+      <stop offset="1" stop-color="#ffad48"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" fill="#f7f9ff"/>
+  <path d="M0 0h238L0 238z" fill="url(#blue)"/>
+  <path d="M320 320H82l238-238z" fill="url(#orange)"/>
+  <path d="M44 258 258 44" fill="none" stroke="#fff" stroke-opacity=".82" stroke-width="18"/>
+  <circle cx="160" cy="148" r="54" fill="#fff" fill-opacity=".96"/>
+  <path d="M111 247c5-42 22-65 49-65s44 23 49 65" fill="#fff" fill-opacity=".96"/>
+  <path d="M133 145c0-21 12-35 27-35s27 14 27 35-12 37-27 37-27-16-27-37z" fill="#3157d9" fill-opacity=".22"/>
+</svg>

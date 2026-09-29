@@ -1,0 +1,134 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-27T13:19:42.794Z",
+        "reason": "Agent: audio bars render only while playback is active and communicate live changing state"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "uma_tools/app.js"
+        ],
+        "createdAt": "2026-09-28T04:46:42.029Z",
+        "reason": "Agent: detector matched the avatar-sanitizing regular expression, not a rendered image element"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:01.617Z",
+        "reason": "Agent: Vue binds every flagged image through :src or a guarded v-if; browser QA confirmed no empty image source"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:01.634Z",
+        "reason": "Agent: flagged nodes are intentional edge-to-edge media/avatar frames or separator wrappers whose text-bearing children already provide padding"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.155Z",
+        "reason": "Agent: all flagged instances are short navigation or metadata labels at the sanctioned 0.05em boundary, not paragraph body copy"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.173Z",
+        "reason": "Agent: scanner combines dynamic theme colors and inactive/overlay states; existing brand palette is a sanctioned project design constraint outside PR10 scope"
+      },
+      {
+        "rule": "gpt-thin-border-wide-shadow",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.189Z",
+        "reason": "Agent: event media cards intentionally combine a defined media frame with restrained hover elevation in the established design system"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.205Z",
+        "reason": "Agent: initial boot header is a short display label rendered before the app stylesheet loads"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "17px",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.222Z",
+        "reason": "Agent: responsive initial boot header is a short display label rendered before the app stylesheet loads"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.239Z",
+        "reason": "Agent: the character-color stripe is an established hand-tuned identity treatment explicitly preserved by the project design system"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-28T04:58:22.256Z",
+        "reason": "Agent: the dark navigation elevation is an established textured-header treatment rather than a decorative content glow"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "uma_tools/app.css"
+        ],
+        "createdAt": "2026-09-29T10:18:34.043Z",
+        "reason": "Agent: the 5px strip belongs to the collaborator hand-tuned legacy character card identity treatment; PR10 preserves that existing role-specific component unchanged"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-29T10:19:17.887Z",
+        "reason": "Agent: detector matched the three link-card-head structural header rows inside link anchors; browser inspection confirms they have no independent border, background, radius, or elevation and are not nested visual cards"
+      },
+      {
+        "rule": "repeated-container-text",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-29T13:40:42.411Z",
+        "reason": "Agent: this Vue section uses mutually exclusive link/plain-text branches for each credit and separate original/variant lists; each visible credit name appears once per record"
+      }
+    ]
+  }
+}
