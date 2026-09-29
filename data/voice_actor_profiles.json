@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-28T04:37:07+00:00",
+  "generated_at": "2026-09-29T08:15:07+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -54,7 +54,7 @@
         "events": 22,
         "concerts": 9,
         "programs": 6,
-        "songs": 15
+        "songs": 14
       }
     },
     {
@@ -164,7 +164,7 @@
         "events": 121,
         "concerts": 40,
         "programs": 38,
-        "songs": 33
+        "songs": 32
       }
     },
     {
@@ -2168,7 +2168,7 @@
         "events": 105,
         "concerts": 33,
         "programs": 27,
-        "songs": 35
+        "songs": 34
       }
     },
     {
@@ -9854,7 +9854,7 @@
         "events": 94,
         "concerts": 32,
         "programs": 28,
-        "songs": 29
+        "songs": 28
       }
     },
     {
@@ -10133,7 +10133,7 @@
         "events": 67,
         "concerts": 20,
         "programs": 13,
-        "songs": 26
+        "songs": 25
       }
     },
     {
@@ -10306,5 +10306,5 @@
       }
     }
   ],
-  "build_id": "d3fb93724df2336d5730"
+  "build_id": "b8d358b1a7f76a534358"
 }

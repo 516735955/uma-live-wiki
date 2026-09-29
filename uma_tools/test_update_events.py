@@ -406,6 +406,35 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(version["performances"][0]["performance_variant"]["title"], "Song B")
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
 
+    def test_song_version_override_preserves_explicit_recording_and_legacy_song_id(self):
+        class Identities:
+            character_by_id = {}
+            profile_by_id = {}
+            character_id = staticmethod(lambda _name: "")
+            voice_id = staticmethod(lambda _name: "")
+            current_character_id = staticmethod(lambda _actor_id: "")
+            character_payload = staticmethod(lambda _character_id: {})
+
+        albums = [{
+            "name": "Album A", "catalog": "ABC-1", "release": "2024-01-01", "type": "专辑", "cover": "cover.jpg",
+            "songs": [
+                {"name": "Song A", "artist": "Singer", "url": "a"},
+                {"name": "Song A - Special -", "artist": "Singer", "url": "b"},
+            ],
+        }]
+        old_song_id = UPDATE_EVENTS.stable_song_id("Song A - Special -")
+        old_version_id = UPDATE_EVENTS.stable_version_id(old_song_id, "Song A - Special -")
+        overrides = {"song_versions": {"Song A - Special -": {
+            "base": "Song A", "label": "Special", "version_id": old_version_id,
+            "legacy_song_ids": [old_song_id],
+        }}}
+
+        catalog = UPDATE_EVENTS.build_song_catalog(albums, [], Identities(), "2024-02-02T00:00:00+00:00", overrides)
+
+        self.assertEqual(catalog["coverage"]["songs"], 1)
+        self.assertIn(old_song_id, catalog["songs"][0]["legacy_ids"])
+        self.assertIn(old_version_id, [version["id"] for version in catalog["songs"][0]["versions"]])
+
     def test_release_credits_resolve_to_one_actor_and_character(self):
         built = UPDATE_EVENTS.build()
         special_week = next(

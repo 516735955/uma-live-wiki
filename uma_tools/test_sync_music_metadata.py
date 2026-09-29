@@ -13,6 +13,46 @@ SPEC.loader.exec_module(SYNC)
 
 
 class MusicMetadataSyncTest(unittest.TestCase):
+    def test_lyric_normalization_unifies_source_punctuation(self):
+        self.assertEqual(
+            SYNC.normalize_lyric_lines([
+                "Don’t stop！ No,don’t stop’til finish！！，",
+                "やっとみんな会えたね，",
+            ]),
+            [
+                "Don't stop！ No, don't stop 'til finish！！",
+                "やっとみんな会えたね",
+            ],
+        )
+
+    def test_canonical_lyrics_share_lines_and_keep_recording_timings(self):
+        recordings = {
+            "full": {"song_id": "song-one"},
+            "short": {"song_id": "song-one"},
+        }
+        lyrics = {"schema_version": 1, "versions": {
+            "full": {"language": "ja", "lines": ["A", "B", "C"], "source": "one"},
+            "short": {"language": "ja", "lines": ["A，", "C，"], "source": "two"},
+        }}
+        timings = {"schema_version": 1, "versions": {
+            "short": {"lines": [
+                {"start_ms": 100, "text": "A，"},
+                {"start_ms": 300, "text": "C，"},
+            ], "source": "two"},
+        }}
+
+        migrated_lyrics, migrated_timings = SYNC.canonicalize_lyrics(recordings, lyrics, timings)
+
+        self.assertEqual(migrated_lyrics["schema_version"], 2)
+        self.assertEqual(
+            migrated_lyrics["versions"]["full"]["document_id"],
+            migrated_lyrics["versions"]["short"]["document_id"],
+        )
+        self.assertEqual(len(migrated_lyrics["documents"]), 1)
+        self.assertEqual(len(migrated_lyrics["versions"]["short"]["line_ids"]), 2)
+        self.assertEqual([line["start_ms"] for line in migrated_timings["versions"]["short"]["lines"]], [100, 300])
+        self.assertEqual(migrated_timings["versions"]["short"]["alignment"], "complete")
+
     def test_credit_merge_only_fills_blank_roles(self):
         existing = {"versions": {"recording": {
             "credits": [{"role": "composer", "name": "人工确认作曲"}],

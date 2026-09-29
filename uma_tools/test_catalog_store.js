@@ -8,6 +8,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
+  assert(snapshot.buildId.includes('-api2-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -28,6 +29,10 @@ async function main() {
   assert(songList.items.every((song) => !song.versions && !song.performances), 'song list leaked detail payloads');
   const song = await store.song(songList.items[0].id);
   assert(song && song.song && Array.isArray(song.song.versions), 'song detail is incomplete');
+  const girlsLegend = await store.song('song-girls-legend-u-a4a797abe1');
+  assert(girlsLegend.song.versions.some((version) => version.lyrics && version.lyrics.lines.length > 0), 'canonical lyric documents were not hydrated');
+  const girlsLegendLegacy = await store.song('song-girls-legend-u-68f74d7b92');
+  assert.strictEqual(girlsLegendLegacy.song.id, girlsLegend.song.id, 'merged song legacy IDs must keep resolving');
 
   const creatorList = await store.creators(new URLSearchParams('page_size=5000'));
   assert.strictEqual(creatorList.total, snapshot.creatorRows.length);

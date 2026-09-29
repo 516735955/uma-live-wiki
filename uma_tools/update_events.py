@@ -78,8 +78,6 @@ CREATOR_ROLE_LABELS = {
     "composer": "作曲",
     "arranger": "编曲",
     "remixer": "混音改编",
-    "mix_engineer": "混音",
-    "mastering_engineer": "母带",
     "producer": "制作",
     "orchestrator": "配器",
 }
@@ -420,6 +418,19 @@ def song_version_override(title: str, overrides: dict[str, Any] | None) -> tuple
     return None
 
 
+def song_version_config(title: str, overrides: dict[str, Any] | None) -> dict[str, Any]:
+    """Return the full exact-title override while keeping the tuple API stable."""
+    table = (overrides or {}).get("song_versions") or {}
+    key = fold_song_key(title)
+    for alias, target in table.items():
+        if fold_song_key(str(alias)) != key:
+            continue
+        if isinstance(target, dict):
+            return dict(target)
+        return {"base": str(target or ""), "label": clean_song(title)}
+    return {}
+
+
 def stable_song_id(title: str) -> str:
     normalized = unicodedata.normalize("NFKC", title or "").strip()
     readable = stable_suffix(normalized)[:40]
@@ -534,7 +545,7 @@ def effective_music_metadata(
         if version.get("instrumental") or version_override.get("no_lyrics"):
             lyric = None
             timing = None
-        version["lyrics_ref"] = lyric_source_id if lyric and lyric.get("lines") else ""
+        version["lyrics_ref"] = lyric_source_id if lyric and (lyric.get("uses_all_lines") or lyric.get("line_ids") or lyric.get("lines")) else ""
         version["has_lyrics"] = bool(version["lyrics_ref"])
         version["has_timing"] = bool(version["lyrics_ref"] and timing and timing.get("lines"))
     return original_id
@@ -674,6 +685,11 @@ def build_song_catalog(
     music_sources: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Build one canonical work with explicit release/performance variants."""
+    title_overrides = dict(overrides or {})
+    title_overrides["song_versions"] = {
+        **((overrides or {}).get("song_versions") or {}),
+        **(((music_sources or {}).get("overrides") or {}).get("song_versions") or {}),
+    }
     raw_titles = {
         fold_song_key(str(song.get("name") or ""))
         for album in albums
@@ -691,7 +707,8 @@ def build_song_catalog(
 
     def ensure_version(exact_title: str) -> tuple[dict[str, Any], dict[str, Any]]:
         title = clean_song(exact_title)
-        override = song_version_override(title, overrides)
+        override_config = song_version_config(title, title_overrides)
+        override = song_version_override(title, title_overrides)
         if override:
             base, version_label = override
         else:
@@ -699,15 +716,17 @@ def build_song_catalog(
         work_key = fold_song_key(base)
         work = works.setdefault(work_key, {
             "id": stable_song_id(base), "title": base, "aliases": set(), "artists": set(),
+            "legacy_ids": set(),
             "character_ids": set(), "voice_actor_ids": set(),
             "released_character_ids": set(), "released_voice_actor_ids": set(),
             "performed_character_ids": set(), "performed_voice_actor_ids": set(),
             "versions": {},
         })
+        work["legacy_ids"].update(str(value) for value in override_config.get("legacy_song_ids") or [] if value)
         work["aliases"].add(title)
         version_key = fold_song_key(title)
         version = work["versions"].setdefault(version_key, {
-            "id": stable_version_id(work["id"], title), "title": title,
+            "id": str(override_config.get("version_id") or stable_version_id(work["id"], title)), "title": title,
             "version_label": version_label, "artists": set(), "releases": [], "performances": [],
             "instrumental": False,
         })
@@ -854,6 +873,7 @@ def build_song_catalog(
         first_release = release_rows[0] if release_rows else None
         songs.append({
             "id": work["id"], "title": work["title"], "aliases": sorted(work["aliases"]),
+            "legacy_ids": sorted(work["legacy_ids"]),
             "artists": sorted(work["artists"]), "character_ids": sorted(work["character_ids"]),
             "voice_actor_ids": sorted(work["voice_actor_ids"]),
             "released_character_ids": sorted(work["released_character_ids"]),

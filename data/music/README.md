@@ -21,6 +21,8 @@
 
 创作者使用稳定 ID；同一人的别名和所属信息在 `creators.json` 中合并。署名落在录音版本上，缺失字段在构建时直接继承原版，前端不额外标记继承状态。
 
+`lyrics.json` 使用共享歌词文档：规范正文中的每一行拥有稳定 `lyric_line_id`，录音版本只引用自己实际唱到的行。完整录音、Game Size 和 Short Version 可以共用正文，但各自保留独立行序列。来源文本若与规范展示文本不同，只在 `raw_line_overrides` 中保存差异。`lyric_timings.json` 仍按真实录音保存时间轴，以 `recording_id`、`lyric_document_id` 和 `lyric_line_id` 关联，不因标点归一或正文去重丢失时间。
+
 ## 维护命令
 
 ```bash
@@ -37,8 +39,11 @@ python3 uma_tools/sync_music_metadata.py --lrclib-only
 # 从结构化社区目录补空白署名，并从 Wiki 补唯一匹配的原文歌词
 python3 uma_tools/sync_music_metadata.py --community-only
 
-# 重新构建派生目录
-python3 uma_tools/update_events.py
+# 不访问网络，只重建规范歌词、录音行序列和时间轴引用
+python3 uma_tools/sync_music_metadata.py --normalize-lyrics-only
+
+# 只重新构建音乐及其关联索引，不刷新活动、节目和声优来源
+python3 uma_tools/update_events.py --music-only
 ```
 
 `source_status.json` 仅记录已成功查询过的资料源 ID，重复运行只查询新版本或上次网络失败的项目。需要重新获取单个版本时使用 `--refresh VERSION_ID`。

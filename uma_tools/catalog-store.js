@@ -2,6 +2,9 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+
+const CATALOG_RESPONSE_SCHEMA = 2;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -144,11 +147,32 @@ function musicCreatorName(music, creatorId) {
 }
 
 function lyricDocument(music, reference) {
-  return (music && music.lyrics && music.lyrics[String(reference || '')]) || null;
+  const row = (music && music.lyrics && music.lyrics[String(reference || '')]) || null;
+  if (!row) return null;
+  if (Array.isArray(row.lines)) return row;
+  const document = music.lyricDocuments && music.lyricDocuments[String(row.document_id || '')];
+  if (!document) return null;
+  const byId = new Map((document.lines || []).map((line) => [String(line.id || ''), String(line.text || '')]));
+  const sourceLineIds = (row.line_ids && row.line_ids.length) ? row.line_ids : (row.uses_all_lines ? (document.lines || []).map((line) => line.id) : []);
+  const lineIds = sourceLineIds.map(String).filter((lineId) => byId.has(lineId));
+  return Object.assign({}, row, {
+    language: row.language || document.language || '',
+    document_id: row.document_id || '',
+    line_ids: lineIds,
+    lines: lineIds.map((lineId) => byId.get(lineId))
+  });
 }
 
 function timingDocument(music, reference) {
-  return (music && music.timings && music.timings[String(reference || '')]) || null;
+  const row = (music && music.timings && music.timings[String(reference || '')]) || null;
+  if (!row) return null;
+  const document = music.lyricDocuments && music.lyricDocuments[String(row.lyric_document_id || '')];
+  const byId = new Map(((document && document.lines) || []).map((line) => [String(line.id || ''), String(line.text || '')]));
+  return Object.assign({}, row, {
+    lines: (row.lines || []).map((line) => Object.assign({}, line, {
+      text: byId.get(String(line.line_id || '')) || line.source_text || line.text || ''
+    }))
+  });
 }
 
 function hydrateSong(song, music) {
@@ -337,6 +361,7 @@ class CatalogStore {
     const music = {
       creatorsById: new Map((musicCreatorsDoc.creators || []).map((creator) => [String(creator.id), creator])),
       lyrics: lyricsDoc.versions || {},
+      lyricDocuments: lyricsDoc.documents || {},
       timings: timingsDoc.versions || {}
     };
     const buildIds = new Set([
@@ -349,6 +374,10 @@ class CatalogStore {
     if (buildIds.size !== 1 || !buildIds.has(manifest.build_id)) {
       throw new Error('catalog revision mismatch');
     }
+    const sourceRevision = crypto.createHash('sha1')
+      .update(texts.slice(CATALOG_FILES.length).join('\u0000'))
+      .digest('hex')
+      .slice(0, 12);
 
     const events = Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
     const songs = Array.isArray(songsDoc.songs) ? songsDoc.songs : [];
@@ -369,7 +398,7 @@ class CatalogStore {
     });
     const albumRowsIndexed = albumRows.map((album) => ({ data: album, summary: albumSummary(album) }));
     const snapshot = {
-      buildId: manifest.build_id,
+      buildId: manifest.build_id + '-api' + CATALOG_RESPONSE_SCHEMA + '-' + sourceRevision,
       manifest,
       eventsDoc,
       songsDoc,
@@ -390,7 +419,7 @@ class CatalogStore {
       albumsByName: new Map()
     };
     songRows.forEach((row) => {
-      [row.data.id, row.data.title, ...(row.data.aliases || [])].forEach((key) => {
+      [row.data.id, ...(row.data.legacy_ids || []), row.data.title, ...(row.data.aliases || [])].forEach((key) => {
         const normalized = normalize(key).replace(/ /g, '');
         if (normalized) snapshot.songAliases.set(normalized, row.data);
       });

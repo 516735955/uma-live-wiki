@@ -64,13 +64,6 @@ ROLE_LABELS = {
     "リミックス": "remixer",
     "remix": "remixer",
     "remixer": "remixer",
-    "ミックス": "mix_engineer",
-    "mix": "mix_engineer",
-    "mixing": "mix_engineer",
-    "mix engineer": "mix_engineer",
-    "マスタリング": "mastering_engineer",
-    "mastering": "mastering_engineer",
-    "mastering engineer": "mastering_engineer",
     "プロデュース": "producer",
     "producer": "producer",
     "オーケストレーション": "orchestrator",
@@ -79,13 +72,14 @@ ROLE_LABELS = {
 }
 ROLE_ORDER = {
     "lyricist": 0, "composer": 1, "arranger": 2, "remixer": 3,
-    "mix_engineer": 4, "mastering_engineer": 5, "producer": 6, "orchestrator": 7,
+    "producer": 4, "orchestrator": 5,
 }
 ROLE_SOURCE_LABEL = (
-    r"作詞|作词|詞|词|作曲|編曲|编曲|リミックス|ミックス|マスタリング|"
+    r"作詞|作词|詞|词|作曲|編曲|编曲|リミックス|"
     r"プロデュース|オーケストレーション|lyricist|lyrics|composer|arranger|"
-    r"remixer?|mix(?:ing| engineer)?|mastering(?: engineer)?|producer|orchestrat(?:ion|or)"
+    r"remixer?|producer|orchestrat(?:ion|or)"
 )
+SUPPORTED_ROLES = frozenset(ROLE_ORDER)
 TIMED_LINE_RE = re.compile(r"^\[(\d{1,3}):(\d{1,2})(?:[.:](\d{1,3}))?\](.*)$")
 CREDIT_LINE_RE = re.compile(rf"^\s*({ROLE_SOURCE_LABEL})\s*[:：]\s*(.+?)\s*$", re.I)
 COMBINED_CREDIT_RE = re.compile(r"^\s*(作詞|作词|作曲|編曲|编曲)(?:[・/&、](作詞|作词|作曲|編曲|编曲))+\s*[:：]\s*(.+?)\s*$", re.I)
@@ -94,6 +88,222 @@ NAME_VARIANTS = str.maketrans({
     "髙": "高", "﨑": "崎", "祥": "祥", "塚": "塚", "濱": "浜", "諸": "諸",
     "’": "'", "‘": "'", "`": "'",
 })
+
+
+def normalize_lyric_line(value: str) -> str:
+    """Normalize source typography without changing lyric wording or casing."""
+    text = unicodedata.normalize("NFC", html.unescape(str(value or "")))
+    text = text.translate(str.maketrans({
+        chr(code): chr(code - 0xFEE0)
+        for code in [*range(ord("０"), ord("９") + 1), *range(ord("Ａ"), ord("Ｚ") + 1), *range(ord("ａ"), ord("ｚ") + 1)]
+    }))
+    text = text.translate(str.maketrans({"’": "'", "‘": "'", "`": "'", "´": "'"}))
+    text = re.sub(r"(?:\.{3,}|…{2,})", "…", text)
+    text = text.replace("!", "！").replace("?", "？")
+    text = re.sub(r"[\t\r\n\u00a0 ]+", " ", text).strip()
+    text = re.sub(r"\s+([,，。.!！?？:：;；])", r"\1", text)
+    text = re.sub(r"[,，]\s*", ", ", text).rstrip()
+    text = re.sub(r"(?i)([A-Za-z])'(til|cause|em)\b", r"\1 '\2", text)
+    return text
+
+
+def normalize_lyric_lines(lines: list[str]) -> list[str]:
+    raw = [str(line or "").strip() for line in lines if str(line or "").strip()]
+    if not raw:
+        return []
+    appended_punctuation = sum(bool(re.search(r"[,，。.]\s*$", line)) for line in raw) / len(raw) >= 0.8
+    normalized = []
+    for line in raw:
+        value = normalize_lyric_line(line)
+        if appended_punctuation:
+            value = re.sub(r"[,，。.]\s*$", "", value).rstrip()
+        if value:
+            normalized.append(value)
+    return normalized
+
+
+def lyric_document_lines(lyrics: dict[str, Any], version_id: str) -> list[str]:
+    row = (lyrics.get("versions") or {}).get(version_id) or {}
+    if isinstance(row.get("lines"), list):
+        return normalize_lyric_lines([str(line) for line in row.get("lines") or []])
+    document = (lyrics.get("documents") or {}).get(str(row.get("document_id") or "")) or {}
+    document_lines = list(document.get("lines") or [])
+    by_id = {str(line.get("id") or ""): str(line.get("text") or "") for line in document_lines}
+    line_ids = row.get("line_ids") or ([line.get("id") for line in document_lines] if row.get("uses_all_lines") else [])
+    return [by_id[line_id] for line_id in line_ids if line_id in by_id]
+
+
+def lyric_line_key(value: str) -> str:
+    return re.sub(r"[^0-9a-zぁ-んァ-ヶ一-龯]+", "", unicodedata.normalize("NFKC", value).lower())
+
+
+def lyric_subsequence(needle: list[str], haystack: list[str]) -> list[int] | None:
+    """Return the occurrence-aware positions of one exact lyric sequence."""
+    positions: list[int] = []
+    cursor = 0
+    haystack_keys = [lyric_line_key(line) for line in haystack]
+    for line in needle:
+        key = lyric_line_key(line)
+        try:
+            index = haystack_keys.index(key, cursor)
+        except ValueError:
+            return None
+        positions.append(index)
+        cursor = index + 1
+    return positions
+
+
+def stable_lyric_line_id(document_id: str, text: str, occurrence: int) -> str:
+    digest = hashlib.sha1(f"{document_id}\0{text}\0{occurrence}".encode("utf-8")).hexdigest()[:12]
+    return f"lyric-line-{digest}"
+
+
+def canonicalize_lyrics(
+    recordings: dict[str, dict[str, Any]],
+    lyrics: dict[str, Any],
+    timings: dict[str, Any],
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Build shared lyric documents and migrate per-recording timing references."""
+    source_versions = lyrics.get("versions") or {}
+    source_documents = lyrics.get("documents") or {}
+    raw_by_version: dict[str, list[str]] = {}
+    metadata_by_version: dict[str, dict[str, Any]] = {}
+    for version_id, row in source_versions.items():
+        raw_lines = list(row.get("raw_lines") or [])
+        if not raw_lines:
+            if isinstance(row.get("lines"), list):
+                raw_lines = [str(line) for line in row.get("lines") or []]
+            else:
+                document = source_documents.get(str(row.get("document_id") or "")) or {}
+                document_lines = list(document.get("lines") or [])
+                by_id = {str(line.get("id") or ""): str(line.get("text") or "") for line in document_lines}
+                line_ids = row.get("line_ids") or ([line.get("id") for line in document_lines] if row.get("uses_all_lines") else [])
+                raw_lines = [by_id[line_id] for line_id in line_ids if line_id in by_id]
+                for index, text in (row.get("raw_line_overrides") or {}).items():
+                    position = int(index)
+                    if 0 <= position < len(raw_lines):
+                        raw_lines[position] = str(text)
+        raw_by_version[version_id] = raw_lines
+        metadata_by_version[version_id] = {
+            key: value for key, value in row.items()
+            if key not in {"lines", "raw_lines", "raw_line_overrides", "document_id", "line_ids", "uses_all_lines"}
+        }
+
+    versions_by_song: dict[str, list[str]] = {}
+    for version_id in raw_by_version:
+        recording = recordings.get(version_id) or {}
+        song_id = str(recording.get("song_id") or version_id)
+        versions_by_song.setdefault(song_id, []).append(version_id)
+
+    documents: dict[str, dict[str, Any]] = {}
+    migrated_versions: dict[str, dict[str, Any]] = {}
+    for song_id, version_ids in sorted(versions_by_song.items()):
+        ordered = sorted(version_ids, key=lambda item: (-len(normalize_lyric_lines(raw_by_version[item])), item))
+        clusters: list[dict[str, Any]] = []
+        for version_id in ordered:
+            normalized = normalize_lyric_lines(raw_by_version[version_id])
+            if not normalized:
+                continue
+            match = next((cluster for cluster in clusters if lyric_subsequence(normalized, cluster["lines"]) is not None), None)
+            if match is None:
+                match = {"lines": normalized, "versions": []}
+                clusters.append(match)
+            match["versions"].append(version_id)
+
+        for cluster_index, cluster in enumerate(clusters):
+            normalized = cluster["lines"]
+            if cluster_index == 0:
+                document_id = f"{song_id}-lyrics"
+            else:
+                digest = hashlib.sha1("\n".join(normalized).encode("utf-8")).hexdigest()[:10]
+                document_id = f"{song_id}-lyrics-{digest}"
+            occurrences: dict[str, int] = {}
+            document_lines = []
+            for text in normalized:
+                occurrences[text] = occurrences.get(text, 0) + 1
+                document_lines.append({
+                    "id": stable_lyric_line_id(document_id, text, occurrences[text]),
+                    "text": text,
+                })
+            documents[document_id] = {
+                "language": metadata_by_version[cluster["versions"][0]].get("language") or "",
+                "lines": document_lines,
+            }
+            for version_id in cluster["versions"]:
+                source_lines = normalize_lyric_lines(raw_by_version[version_id])
+                positions = lyric_subsequence(source_lines, normalized)
+                if positions is None:
+                    continue
+                row = dict(metadata_by_version[version_id])
+                row["document_id"] = document_id
+                selected_ids = [document_lines[index]["id"] for index in positions]
+                if positions == list(range(len(document_lines))):
+                    row["uses_all_lines"] = True
+                else:
+                    row["line_ids"] = selected_ids
+                raw_lines = raw_by_version[version_id]
+                canonical_lines = [document_lines[index]["text"] for index in positions]
+                raw_overrides = {
+                    str(index): raw
+                    for index, (raw, canonical) in enumerate(zip(raw_lines, canonical_lines))
+                    if raw != canonical
+                }
+                if raw_overrides:
+                    row["raw_line_overrides"] = raw_overrides
+                migrated_versions[version_id] = row
+
+    timing_versions: dict[str, Any] = {}
+    for version_id, source in (timings.get("versions") or {}).items():
+        lyric_row = migrated_versions.get(version_id) or {}
+        document_id = str(lyric_row.get("document_id") or "")
+        document = documents.get(document_id) or {}
+        text_by_id = {str(line.get("id") or ""): str(line.get("text") or "") for line in document.get("lines") or []}
+        expected_ids = list(lyric_row.get("line_ids") or ([line.get("id") for line in document.get("lines") or []] if lyric_row.get("uses_all_lines") else []))
+        expected_text = [text_by_id.get(line_id, "") for line_id in expected_ids]
+        raw_timing_lines = list(source.get("lines") or [])
+        previous_document = source_documents.get(str(source.get("lyric_document_id") or "")) or {}
+        previous_text_by_id = {
+            str(line.get("id") or ""): str(line.get("text") or "")
+            for line in previous_document.get("lines") or []
+        }
+        raw_timing_text = [
+            str(
+                line.get("text")
+                or line.get("source_text")
+                or previous_text_by_id.get(str(line.get("line_id") or ""))
+                or ""
+            )
+            for line in raw_timing_lines
+        ]
+        normalized_timing = normalize_lyric_lines(raw_timing_text)
+        positions = lyric_subsequence(normalized_timing, expected_text) if expected_text else None
+        aligned_ids = [expected_ids[index] for index in positions] if positions is not None else []
+        lines = []
+        for index, item in enumerate(raw_timing_lines):
+            raw_text = raw_timing_text[index]
+            normalized_text = normalized_timing[index] if index < len(normalized_timing) else ""
+            line_id = aligned_ids[index] if index < len(aligned_ids) else ""
+            migrated = {"start_ms": int(item.get("start_ms") or 0), "line_id": line_id}
+            canonical_text = text_by_id.get(line_id, "")
+            if not line_id or not normalized_text or normalized_text != canonical_text or raw_text != canonical_text:
+                migrated["source_text"] = raw_text
+            lines.append(migrated)
+        starts = [line["start_ms"] for line in lines]
+        monotonic = all(current >= previous for previous, current in zip(starts, starts[1:]))
+        matched = sum(bool(line.get("line_id")) for line in lines)
+        alignment = "complete" if lines and matched == len(lines) and monotonic else ("partial" if matched else "review")
+        timing_versions[version_id] = {
+            **{key: value for key, value in source.items() if key != "lines"},
+            "recording_id": version_id,
+            "lyric_document_id": document_id,
+            "alignment": alignment,
+            "lines": lines,
+        }
+
+    return (
+        {"schema_version": 2, "documents": documents, "versions": migrated_versions},
+        {"schema_version": 2, "versions": timing_versions},
+    )
 
 
 def read_json(path: Path, fallback: Any) -> Any:
@@ -964,6 +1174,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--community", action="store_true", help="also fill exact matches from the community music catalog and Umamusume Wiki")
     parser.add_argument("--community-only", action="store_true", help="skip other network sources and only run the community fallbacks")
     parser.add_argument("--infer-remixers-only", action="store_true", help="offline: add only explicit name-from-title remixer credits")
+    parser.add_argument("--normalize-lyrics-only", action="store_true", help="offline: rebuild canonical lyric documents and stable timing references")
     parser.add_argument("--revalidate-utaten", action="store_true", help="remove prior UtaTen matches whose credited artist does not match this recording")
     parser.add_argument("--skip-official", action="store_true", help="skip the official Lantis credit refresh")
     parser.add_argument("--check", action="store_true", help="validate committed music source documents without network access")
@@ -1022,12 +1233,50 @@ def main(argv: list[str] | None = None) -> int:
                 duplicate_credits.append(version_id)
         if duplicate_credits:
             raise RuntimeError("music versions contain duplicate creator credits: " + ", ".join(duplicate_credits[:10]))
+        unsupported_roles = sorted({
+            str(credit.get("role") or "")
+            for row in (credits.get("versions") or {}).values()
+            for credit in row.get("credits") or []
+            if credit.get("role") not in SUPPORTED_ROLES
+        })
+        if unsupported_roles:
+            raise RuntimeError("unsupported music credit roles: " + ", ".join(unsupported_roles))
         instrumental_lyrics = sorted(
             version_id for version_id in lyrics.get("versions") or {}
             if (recordings.get(version_id) or {}).get("instrumental")
         )
         if instrumental_lyrics:
             raise RuntimeError("instrumental versions must not contain lyrics: " + ", ".join(instrumental_lyrics[:10]))
+        if lyrics.get("schema_version") != 2 or timings.get("schema_version") != 2:
+            raise RuntimeError("lyrics and lyric timings must use schema version 2")
+        documents = lyrics.get("documents") or {}
+        all_line_ids = [
+            str(line.get("id") or "")
+            for document in documents.values()
+            for line in document.get("lines") or []
+        ]
+        if not all(all_line_ids) or len(all_line_ids) != len(set(all_line_ids)):
+            raise RuntimeError("canonical lyric documents contain blank or duplicate line IDs")
+        for version_id, row in (lyrics.get("versions") or {}).items():
+            document_id = str(row.get("document_id") or "")
+            document = documents.get(document_id)
+            if not document:
+                raise RuntimeError(f"lyric version {version_id} references unknown document {document_id}")
+            known_lines = {str(line.get("id") or "") for line in document.get("lines") or []}
+            line_ids = row.get("line_ids") or ([line.get("id") for line in document.get("lines") or []] if row.get("uses_all_lines") else [])
+            if not line_ids or any(str(line_id) not in known_lines for line_id in line_ids):
+                raise RuntimeError(f"lyric version {version_id} contains unknown canonical line references")
+        for version_id, row in (timings.get("versions") or {}).items():
+            lyric_row = (lyrics.get("versions") or {}).get(version_id) or {}
+            if row.get("recording_id") != version_id or row.get("lyric_document_id") != lyric_row.get("document_id"):
+                raise RuntimeError(f"timing version {version_id} has inconsistent recording or lyric document identity")
+            document = documents.get(str(lyric_row.get("document_id") or "")) or {}
+            known_lines = set(lyric_row.get("line_ids") or ([line.get("id") for line in document.get("lines") or []] if lyric_row.get("uses_all_lines") else []))
+            starts = [int(line.get("start_ms") or 0) for line in row.get("lines") or []]
+            if any(value < 0 for value in starts) or any(current < previous for previous, current in zip(starts, starts[1:])):
+                raise RuntimeError(f"timing version {version_id} has invalid line order")
+            if any(line.get("line_id") and line.get("line_id") not in known_lines for line in row.get("lines") or []):
+                raise RuntimeError(f"timing version {version_id} references a lyric line outside its recording sequence")
         unknown_override_refs = sorted({
             str(reference)
             for version_id, row in (overrides.get("versions") or {}).items()
@@ -1089,14 +1338,14 @@ def main(argv: list[str] | None = None) -> int:
             f"{len(mismatches)} rejected, {len(audit_errors)} retryable errors"
         )
 
-    if not args.skip_official and not args.lrclib_only and not args.community_only and not args.infer_remixers_only:
+    if not args.skip_official and not args.lrclib_only and not args.community_only and not args.infer_remixers_only and not args.normalize_lyrics_only:
         from auto_albums import get_official_goods
         official = official_credit_rows(get_official_goods(), recordings)
         merge_credit_rows(credits, official, refresh)
         print(f"official credits matched: {len(official)} versions")
 
     errors: list[tuple[str, str]] = []
-    if not args.utaten_only and not args.lrclib_only and not args.community_only and not args.infer_remixers_only:
+    if not args.utaten_only and not args.lrclib_only and not args.community_only and not args.infer_remixers_only and not args.normalize_lyrics_only:
         existing_credits = credits.get("versions") or {}
         existing_lyrics = lyrics.get("versions") or {}
         target_versions = {
@@ -1201,7 +1450,7 @@ def main(argv: list[str] | None = None) -> int:
         lyric_versions = lyrics.get("versions") or {}
         timing_versions = timings.get("versions") or {}
         target_lrclib = [
-            (row, list((lyric_versions.get(version_id) or {}).get("lines") or []))
+            (row, lyric_document_lines(lyrics, version_id))
             for version_id, row in recordings.items()
             if not row["instrumental"]
             and (version_id in refresh or version_id not in lrclib_checked)
@@ -1233,6 +1482,7 @@ def main(argv: list[str] | None = None) -> int:
         if recording["instrumental"]:
             (lyrics.get("versions") or {}).pop(version_id, None)
             (timings.get("versions") or {}).pop(version_id, None)
+    lyrics, timings = canonicalize_lyrics(recordings, lyrics, timings)
     write_json(CREATORS_FILE, creators)
     write_json(CREDITS_FILE, credits)
     write_json(LYRICS_FILE, lyrics)

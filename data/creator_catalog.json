@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-28T04:37:07+00:00",
+  "generated_at": "2026-09-29T08:15:07+00:00",
   "coverage": {
     "creators": 275,
-    "credited_works": 242,
+    "credited_works": 241,
     "credited_versions": 1201
   },
   "creators": [
@@ -13927,7 +13927,7 @@
           "count": 18
         }
       ],
-      "work_count": 3,
+      "work_count": 2,
       "version_count": 18,
       "works": [
         {
@@ -13939,6 +13939,7 @@
             "lyricist"
           ],
           "version_ids": [
+            "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
             "song-girls-legend-u-a4a797abe1-v-d1d6900f43",
             "song-girls-legend-u-a4a797abe1-v-f06d6ce534"
@@ -13964,6 +13965,14 @@
               "id": "song-girls-legend-u-a4a797abe1-v-d1d6900f43",
               "title": "GIRLS' LEGEND U (tofubeats Remix)",
               "version_label": "tofubeats Remix",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
+              "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
+              "version_label": "やっとみんな会えたね",
               "roles": [
                 "lyricist"
               ]
@@ -14108,28 +14117,6 @@
               ]
             }
           ]
-        },
-        {
-          "song_id": "song-girls-legend-u-68f74d7b92",
-          "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-          "cover": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
-          "release_date": "2022-04-27",
-          "roles": [
-            "lyricist"
-          ],
-          "version_ids": [
-            "song-girls-legend-u-68f74d7b92-v-68f74d7b92"
-          ],
-          "versions": [
-            {
-              "id": "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
-              "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-              "version_label": "",
-              "roles": [
-                "lyricist"
-              ]
-            }
-          ]
         }
       ],
       "collaborators": [
@@ -14137,21 +14124,10 @@
           "creator_id": "creator-eaf94340d3",
           "name": "本田晃弘",
           "shared_version_count": 18,
-          "shared_work_count": 3,
-          "shared_song_ids": [
-            "song-girls-legend-u-68f74d7b92",
-            "song-girls-legend-u-a4a797abe1",
-            "song-phantasia-81aafc5f7e"
-          ]
-        },
-        {
-          "creator_id": "creator-647bf144a4",
-          "name": "東大路憲太",
-          "shared_version_count": 4,
           "shared_work_count": 2,
           "shared_song_ids": [
-            "song-girls-legend-u-68f74d7b92",
-            "song-girls-legend-u-a4a797abe1"
+            "song-girls-legend-u-a4a797abe1",
+            "song-phantasia-81aafc5f7e"
           ]
         },
         {
@@ -14161,6 +14137,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-phantasia-81aafc5f7e"
+          ]
+        },
+        {
+          "creator_id": "creator-647bf144a4",
+          "name": "東大路憲太",
+          "shared_version_count": 4,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-girls-legend-u-a4a797abe1"
           ]
         },
         {
@@ -29498,7 +29483,7 @@
           "count": 89
         }
       ],
-      "work_count": 13,
+      "work_count": 12,
       "version_count": 139,
       "works": [
         {
@@ -29927,6 +29912,7 @@
             "composer"
           ],
           "version_ids": [
+            "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
             "song-girls-legend-u-a4a797abe1-v-d1d6900f43",
             "song-girls-legend-u-a4a797abe1-v-f06d6ce534"
@@ -29952,6 +29938,14 @@
               "id": "song-girls-legend-u-a4a797abe1-v-d1d6900f43",
               "title": "GIRLS' LEGEND U (tofubeats Remix)",
               "version_label": "tofubeats Remix",
+              "roles": [
+                "composer"
+              ]
+            },
+            {
+              "id": "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
+              "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
+              "version_label": "やっとみんな会えたね",
               "roles": [
                 "composer"
               ]
@@ -30091,28 +30085,6 @@
               "id": "song-phantasia-81aafc5f7e-v-fc6b608d53",
               "title": "彩 Phantasia (YMCK Remix)",
               "version_label": "YMCK Remix",
-              "roles": [
-                "composer"
-              ]
-            }
-          ]
-        },
-        {
-          "song_id": "song-girls-legend-u-68f74d7b92",
-          "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-          "cover": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
-          "release_date": "2022-04-27",
-          "roles": [
-            "composer"
-          ],
-          "version_ids": [
-            "song-girls-legend-u-68f74d7b92-v-68f74d7b92"
-          ],
-          "versions": [
-            {
-              "id": "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
-              "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-              "version_label": "",
               "roles": [
                 "composer"
               ]
@@ -31072,28 +31044,6 @@
       ],
       "collaborators": [
         {
-          "creator_id": "creator-647bf144a4",
-          "name": "東大路憲太",
-          "shared_version_count": 28,
-          "shared_work_count": 3,
-          "shared_song_ids": [
-            "song-a6384dba1c",
-            "song-girls-legend-u-68f74d7b92",
-            "song-girls-legend-u-a4a797abe1"
-          ]
-        },
-        {
-          "creator_id": "creator-85bf4015b4",
-          "name": "五十嵐萌",
-          "shared_version_count": 18,
-          "shared_work_count": 3,
-          "shared_song_ids": [
-            "song-girls-legend-u-68f74d7b92",
-            "song-girls-legend-u-a4a797abe1",
-            "song-phantasia-81aafc5f7e"
-          ]
-        },
-        {
           "creator_id": "creator-9f5bcba5ee",
           "name": "丹下めえな",
           "shared_version_count": 60,
@@ -31111,6 +31061,26 @@
           "shared_song_ids": [
             "song-29e836f0da",
             "song-548d6d3907"
+          ]
+        },
+        {
+          "creator_id": "creator-647bf144a4",
+          "name": "東大路憲太",
+          "shared_version_count": 28,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-a6384dba1c",
+            "song-girls-legend-u-a4a797abe1"
+          ]
+        },
+        {
+          "creator_id": "creator-85bf4015b4",
+          "name": "五十嵐萌",
+          "shared_version_count": 18,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-girls-legend-u-a4a797abe1",
+            "song-phantasia-81aafc5f7e"
           ]
         },
         {
@@ -31401,7 +31371,7 @@
           "count": 61
         }
       ],
-      "work_count": 6,
+      "work_count": 5,
       "version_count": 62,
       "works": [
         {
@@ -31587,6 +31557,7 @@
             "arranger"
           ],
           "version_ids": [
+            "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
             "song-girls-legend-u-a4a797abe1-v-d1d6900f43",
             "song-girls-legend-u-a4a797abe1-v-f06d6ce534"
@@ -31615,25 +31586,11 @@
               "roles": [
                 "arranger"
               ]
-            }
-          ]
-        },
-        {
-          "song_id": "song-girls-legend-u-68f74d7b92",
-          "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-          "cover": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
-          "release_date": "2022-04-27",
-          "roles": [
-            "arranger"
-          ],
-          "version_ids": [
-            "song-girls-legend-u-68f74d7b92-v-68f74d7b92"
-          ],
-          "versions": [
+            },
             {
               "id": "song-girls-legend-u-68f74d7b92-v-68f74d7b92",
               "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-              "version_label": "",
+              "version_label": "やっとみんな会えたね",
               "roles": [
                 "arranger"
               ]
@@ -32078,17 +32035,6 @@
       ],
       "collaborators": [
         {
-          "creator_id": "creator-eaf94340d3",
-          "name": "本田晃弘",
-          "shared_version_count": 28,
-          "shared_work_count": 3,
-          "shared_song_ids": [
-            "song-a6384dba1c",
-            "song-girls-legend-u-68f74d7b92",
-            "song-girls-legend-u-a4a797abe1"
-          ]
-        },
-        {
           "creator_id": "creator-3b78b1a677",
           "name": "マイクスギヤマ",
           "shared_version_count": 33,
@@ -32099,12 +32045,12 @@
           ]
         },
         {
-          "creator_id": "creator-85bf4015b4",
-          "name": "五十嵐萌",
-          "shared_version_count": 4,
+          "creator_id": "creator-eaf94340d3",
+          "name": "本田晃弘",
+          "shared_version_count": 28,
           "shared_work_count": 2,
           "shared_song_ids": [
-            "song-girls-legend-u-68f74d7b92",
+            "song-a6384dba1c",
             "song-girls-legend-u-a4a797abe1"
           ]
         },
@@ -32151,6 +32097,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-a6384dba1c"
+          ]
+        },
+        {
+          "creator_id": "creator-85bf4015b4",
+          "name": "五十嵐萌",
+          "shared_version_count": 4,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-girls-legend-u-a4a797abe1"
           ]
         },
         {
@@ -51025,5 +50980,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "d3fb93724df2336d5730"
+  "build_id": "b8d358b1a7f76a534358"
 }
