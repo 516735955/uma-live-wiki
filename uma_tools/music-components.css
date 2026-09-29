@@ -573,7 +573,7 @@
         gap: 18px;
         padding: 18px 16px;
     }
-    .entity-detail > .entity-hero::before,.music-archive-hero::before { width: 145px; }
+    .entity-detail > .entity-hero::before,.music-archive-hero::before { width: 124px; }
     .entity-detail .entity-cover,.music-archive-hero .entity-cover,.horse-entity-detail .entity-cover,.event-entity-detail .entity-cover,.character-entity-detail .entity-cover,.voice-entity-detail .entity-cover { width: 96px; max-width: 96px; }
     .entity-detail .event-cover,.horse-entity-detail .horse-cover { width: 104px; max-width: 104px; }
     .entity-detail .entity-intro h1,.music-archive-hero .entity-intro h1 { font-size: clamp(1.18rem,5.5vw,1.55rem); }
@@ -589,6 +589,7 @@
 
 @media (max-width: 430px) {
     .entity-detail > .entity-hero,.song-entity-detail > .music-archive-hero,.album-entity-detail > .music-archive-hero,.creator-entity-detail > .music-archive-hero,.horse-entity-detail > .entity-hero,.event-entity-detail > .entity-hero,.character-entity-detail > .entity-hero,.voice-entity-detail > .entity-hero { grid-template-columns: 88px minmax(0,1fr); gap: 14px; padding: 16px 13px; }
+    .entity-detail > .entity-hero::before,.music-archive-hero::before { width: 108px; }
     .entity-detail .entity-cover,.music-archive-hero .entity-cover,.horse-entity-detail .entity-cover,.event-entity-detail .entity-cover,.character-entity-detail .entity-cover,.voice-entity-detail .entity-cover { width: 84px; max-width: 84px; }
     .entity-detail .entity-kind { margin-bottom: 7px; font-size: .75rem; }
     .entity-actions { margin-top: 10px; }
@@ -624,13 +625,13 @@
     .character-entity-detail > .entity-hero,
     .voice-entity-detail > .entity-hero {
         min-height: 0;
-        grid-template-columns: 124px minmax(0,1fr);
-        gap: 26px;
+        grid-template-columns: 150px minmax(0,1fr);
+        gap: 28px;
         margin-bottom: 16px;
         padding: 18px 24px;
     }
     .entity-detail > .entity-hero::before,
-    .music-archive-hero::before { width: 192px; }
+    .music-archive-hero::before { width: 184px; }
     .entity-detail .entity-cover,
     .music-archive-hero .entity-cover,
     .horse-entity-detail .entity-cover,

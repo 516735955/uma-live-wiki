@@ -235,8 +235,12 @@
         const artist = this.$refs.artistViewport;
         this.titleOverflow = !!(title && title.scrollWidth > title.clientWidth + 2);
         this.artistOverflow = !!(artist && artist.scrollWidth > artist.clientWidth + 2);
-        if (title) title.style.setProperty('--overflow-distance', Math.max(0, title.scrollWidth - title.clientWidth) + 'px');
-        if (artist) artist.style.setProperty('--overflow-distance', Math.max(0, artist.scrollWidth - artist.clientWidth) + 'px');
+        [title, artist].forEach(function (viewport) {
+          if (!viewport) return;
+          const distance = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+          viewport.style.setProperty('--overflow-distance', distance + 'px');
+          viewport.style.setProperty('--marquee-duration', Math.min(45, Math.max(18, distance / 24)) + 's');
+        });
       },
       refreshOverflowObservers: function () {
         if (this.resizeObserver) {

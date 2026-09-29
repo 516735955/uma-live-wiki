@@ -65,6 +65,7 @@ const umaApp = createApp({
     const liveView = ref('eventHub');
     const dataScriptPromises = {};
     let newsLoadPromise = null;
+    let newsDetailRequest = null;
     let albumsLoadPromise = null;
     let eventsLoadPromise = null;
     let songCatalogLoadPromise = null;
@@ -585,6 +586,22 @@ const umaApp = createApp({
     }
     function toggleNavGroup(key) {
       openNavGroup.value = openNavGroup.value === key ? '' : key;
+    }
+    function pointerCanHover() {
+      return !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+    }
+    function openNavGroupForPointer(key) {
+      if (pointerCanHover() && navItems.some(function (item) { return item.key === key && item.children; })) openNavGroup.value = key;
+    }
+    function closeNavGroupForPointer(key) {
+      if (pointerCanHover() && openNavGroup.value === key) openNavGroup.value = '';
+    }
+    function activateNavGroup(key, event) {
+      if (pointerCanHover() && event && event.detail > 0) {
+        if (event.currentTarget && event.currentTarget.blur) event.currentTarget.blur();
+        return;
+      }
+      toggleNavGroup(key);
     }
     function closeNavGroup() { openNavGroup.value = ''; }
     function updateBackTop() { backTopVisible.value = window.scrollY > 680; }
@@ -1594,6 +1611,7 @@ const umaApp = createApp({
         history[replace ? 'replaceState' : 'pushState'](nextState, '', path);
         navigationRevision.value += 1;
       }
+      if (newsDetailRequest && newsDetailRequest.path !== path) cancelNewsDetailRequest();
       pendingEntitySource = false;
     }
     function legacySyncFromUrl() {
@@ -1811,6 +1829,7 @@ const umaApp = createApp({
       const canonicalLanguage = raw[0] === routes.language;
       const seg = canonicalLanguage ? raw.slice(1) : [];
       const first = (seg[0] || '').toLowerCase();
+      if (!(first === 'news' && seg[1])) cancelNewsDetailRequest();
 
       albumDetail.value = null;
       newsDetail.value = null;
@@ -2883,32 +2902,65 @@ const umaApp = createApp({
       if (!n) return newsDefaultCover;
       return n.image || newsDefaultCover;
     }
+    function cancelNewsDetailRequest() {
+      if (newsDetailRequest && newsDetailRequest.controller) newsDetailRequest.controller.abort();
+      newsDetailRequest = null;
+    }
+    function newsDetailPlaceholder(id, source) {
+      const key = String(id);
+      const item = newsItems.value.find(function (candidate) { return String(candidate.announce_id) === key; }) || null;
+      return {
+        announce_id: id,
+        title: (item && item.title) || '',
+        title_zh: (item && item.title_zh) || '',
+        post_at: (item && item.post_at) || '',
+        source: source || (item && item.source) || '',
+        url: (item && item.url) || '',
+        image: (item && item.image) || '',
+        image_big: (item && (item.image_big || item.image)) || ''
+      };
+    }
+    function startNewsDetailRequest(id) {
+      const key = String(id);
+      const path = routes.news(key);
+      if (newsDetailRequest && newsDetailRequest.key === key && newsDetailRequest.path === path) return null;
+      cancelNewsDetailRequest();
+      const request = {
+        key: key,
+        path: path,
+        controller: typeof AbortController !== 'undefined' ? new AbortController() : null
+      };
+      newsDetailRequest = request;
+      return request;
+    }
+    function newsDetailRequestIsCurrent(request) {
+      return newsDetailRequest === request && currentUrlPath().split('?')[0] === request.path && activeTab.value === 'news';
+    }
     function openNews(id) {
       if (!id) return;
       beginEntityNavigation();
       clearEntityDetails('news');
-      if (String(id).indexOf('lantis-') === 0) {
+      const isLantis = String(id).indexOf('lantis-') === 0;
+      newsError.value = '';
+      activeTab.value = 'news';
+      newsDetail.value = newsDetailPlaceholder(id, isLantis ? 'lantis' : '');
+      newsDetailBody.value = '';
+      newsPrevId.value = 0;
+      newsNextId.value = 0;
+      resetPageScroll();
+      pushUrl();
+      const request = startNewsDetailRequest(id);
+      if (!request) return newsDetailRequest && newsDetailRequest.promise;
+      const requestOptions = { cache: 'no-cache' };
+      if (request.controller) requestOptions.signal = request.controller.signal;
+      if (isLantis) {
         // Lantis CD-related item: crawl body via the proxy server.
-        let item = null;
-        newsItems.value.forEach(function (n) { if (n.announce_id === id) item = n; });
-        newsDetail.value = {
-          announce_id: id,
-          title: (item && item.title) || '',
-          title_zh: (item && item.title_zh) || '',
-          post_at: (item && item.post_at) || '',
-          source: 'lantis',
-          url: (item && item.url) || '',
-          image: (item && item.image) || ''
-        };
-        newsDetailBody.value = '';
-        newsPrevId.value = 0;
-        newsNextId.value = 0;
-        resetPageScroll();
-        pushUrl();
-        fetch('/api/lantis-detail?id=' + encodeURIComponent(id), { cache: 'no-cache' })
+        const item = newsDetail.value;
+        request.promise = fetch('/api/lantis-detail?id=' + encodeURIComponent(id), requestOptions)
           .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
           .then(function (d) {
             if (!d || !d.detail || !d.detail.announce_id) throw new Error('no detail');
+            if (!newsDetailRequestIsCurrent(request)) return;
             const dd = d.detail;
             newsDetail.value = {
               announce_id: dd.announce_id,
@@ -2921,21 +2973,30 @@ const umaApp = createApp({
             };
             newsDetailBody.value = cleanNewsBody(dd.message_zh || dd.message);
           })
-          .catch(function () { /* keep the header-only view on failure */ });
-        return;
+          .catch(function (error) {
+            if (error && error.name === 'AbortError') return;
+            /* keep the header-only view on failure */
+          })
+          .finally(function () { if (newsDetailRequest === request) newsDetailRequest = null; });
+        return request.promise;
       }
-      fetch('/api/news-detail?id=' + id, { cache: 'no-cache' })
+      request.promise = fetch('/api/news-detail?id=' + encodeURIComponent(id), requestOptions)
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (d) {
           if (!d || !d.detail || !d.detail.announce_id) throw new Error('no detail');
+          if (!newsDetailRequestIsCurrent(request)) return;
           newsDetail.value = d.detail;
           newsDetailBody.value = cleanNewsBody(d.detail.message_zh || d.detail.message);
           newsPrevId.value = d.prev_announce_id || 0;
           newsNextId.value = d.next_announce_id || 0;
-          resetPageScroll();
-          pushUrl();
         })
-        .catch(function () { newsError.value = '详情加载失败'; });
+        .catch(function (error) {
+          if (!error || error.name !== 'AbortError') {
+            if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载失败';
+          }
+        })
+        .finally(function () { if (newsDetailRequest === request) newsDetailRequest = null; });
+      return request.promise;
     }
     function loadAlbums() {
       if (albumsLoadPromise) return albumsLoadPromise;
@@ -2970,7 +3031,7 @@ const umaApp = createApp({
 
     return {
       audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup,
-      navItemActive, toggleNavGroup, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
+      navItemActive, activateNavGroup, openNavGroupForPointer, closeNavGroupForPointer, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, togglePlay, seek, skipPlayer, setPlayerVolume, togglePlayerMute,

@@ -2653,7 +2653,7 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
 .audio-title { display: inline-block; min-width: max-content; font-size: clamp(.82rem,1vw,.94rem); font-weight: 850; white-space: nowrap; transition: color 160ms ease; }
 .audio-overflow-viewport { display: block; min-width: 0; max-width: 100%; overflow: hidden; white-space: nowrap; }
 .audio-overflow-track { width: max-content; }
-.audio-overflow-viewport.is-overflowing .audio-overflow-track { animation: audioMarquee 8s linear infinite alternate; }
+.audio-overflow-viewport.is-overflowing .audio-overflow-track { animation: audioMarquee var(--marquee-duration,18s) linear infinite alternate; }
 .audio-artist-viewport { color: rgba(255,255,255,.78); }
 .audio-dock-vocalists { display: flex; min-width: max-content; gap: 0; color: rgba(255,255,255,.78); white-space: nowrap; }
 .audio-dock-vocalists button,
@@ -2954,13 +2954,22 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
 .fix-check input:checked { border-color: var(--ui-cobalt); background: var(--ui-cobalt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m4 10 4 4 8-8' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E") center/14px no-repeat; }
 
 @media (max-width: 980px) {
-    .sub-brand { flex-basis: 240px; padding-inline: 20px; font-size: 1rem; }
+    .sub-brand { flex-basis: clamp(190px,25vw,240px); padding-inline: 20px; font-size: 1rem; }
     .site-nav-sub .site-nav-item { min-width: 102px; }
     .site-nav-sub .site-nav-trigger { padding-inline: 14px; }
     .footer-main { grid-template-columns: 1fr 1fr; gap: 34px; }
     .footer-community { grid-column: 1 / -1; }
     .song-catalog-row { grid-template-columns: 58px minmax(0,1fr) 80px 80px 40px 22px; }
     .song-catalog-row > i:last-of-type { display: none; }
+}
+
+/* Keep the tablet header compact and horizontal until the mobile navigation
+   takes over at the content-driven breakpoint below. */
+@media (min-width: 701px) and (max-width: 768px) {
+    .sub-header { flex-direction: row; flex-wrap: nowrap; }
+    .sub-brand { flex: 0 0 190px; width: auto; min-width: 190px; }
+    .site-nav-sub .site-nav-item { min-width: 0; }
+    .site-nav-sub .site-nav-trigger { padding-inline: 8px; font-size: .82rem; }
 }
 
 @media (min-width: 701px) and (max-width: 1100px) {
