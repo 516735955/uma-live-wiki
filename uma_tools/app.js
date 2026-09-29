@@ -47,7 +47,6 @@ const umaApp = createApp({
     syncBodyBackground(home.value);
     watch(home, syncBodyBackground);
     const albumDetail = ref(null);
-    const selectedAlbumTrackIndexes = ref([]);
     const newsItems = ref([]);
     const newsError = ref('');
     const newsLoading = ref(false);
@@ -74,7 +73,6 @@ const umaApp = createApp({
     const eventSeries = ref([]);
     const eventDetail = ref(null);
     const selectedEventSessionId = ref('');
-    const selectedEventTrackKeys = ref([]);
     const songCatalog = ref({ coverage: {}, songs: [] });
     const songCatalogError = ref('');
     const songCatalogLoading = ref(false);
@@ -82,6 +80,8 @@ const umaApp = createApp({
     const songSection = ref('releases');
     const songLyricVersionId = ref('');
     const songLyricTranslation = ref(false);
+    const expandedSongReleaseId = ref('');
+    const expandedSongCreditId = ref('');
     const songDbQuery = ref('');
     const songRemoteQuery = ref('');
     const songRemoteResults = ref([]);
@@ -450,7 +450,7 @@ const umaApp = createApp({
     }
 
     let playerStorage = null;
-    try { playerStorage = window.sessionStorage; } catch (error) {}
+    try { playerStorage = window.localStorage; } catch (error) {}
     const playerController = window.UmaPlayer.createPlayerController({
       reactive: reactive,
       getAudio: function () { return audio.value; },
@@ -467,8 +467,7 @@ const umaApp = createApp({
       { key: 'music', label: '音乐', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12M9 10l10-2"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>', children: [
         { key: 'songs', label: '歌曲', path: '/zh-Hans/music/songs' },
         { key: 'albums', label: '专辑', path: '/zh-Hans/music/albums' },
-        { key: 'creators', label: '创作者', path: '/zh-Hans/music/creators' },
-        { key: 'now-playing', label: '当前播放', path: 'player' }
+        { key: 'creators', label: '创作者', path: '/zh-Hans/music/creators' }
       ] },
       { key: 'live', label: '活动', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>', path: '/zh-Hans/events' },
       { key: 'database', label: '资料库', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>', children: [
@@ -598,10 +597,6 @@ const umaApp = createApp({
     function backToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     function navNavigate(path) {
       closeNavGroup();
-      if (path === 'player') {
-        playerController.openPanel();
-        return;
-      }
       navigateTo(path);
     }
     function isAtomicView() {
@@ -1184,7 +1179,7 @@ const umaApp = createApp({
     function creatorRoleLabel(role) {
       return {
         lyricist: '作词', composer: '作曲', arranger: '编曲', remixer: '混音改编',
-        mix_engineer: '混音', mastering_engineer: '母带', producer: '制作', orchestrator: '配器'
+        producer: '制作', orchestrator: '配器'
       }[role] || role || '';
     }
     function creatorWorkRoleLabels(roles) {
@@ -1254,35 +1249,20 @@ const umaApp = createApp({
         return String(b.performance.session_date || b.performance.event_date).localeCompare(String(a.performance.session_date || a.performance.event_date));
       });
     });
-    function normalizedLyricText(version) {
-      return ((version && version.lyrics && version.lyrics.lines) || []).join('\n').normalize('NFKC').toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, '');
-    }
-    function lyricSimilarity(left, right) {
-      if (!left || !right) return 0;
-      if (left === right) return 1;
-      if (Math.min(left.length, right.length) / Math.max(left.length, right.length) < 0.97) return 0;
-      const pairs = new Map();
-      for (let index = 0; index < left.length - 1; index += 1) {
-        const pair = left.slice(index, index + 2);
-        pairs.set(pair, (pairs.get(pair) || 0) + 1);
-      }
-      let matches = 0;
-      for (let index = 0; index < right.length - 1; index += 1) {
-        const pair = right.slice(index, index + 2);
-        const count = pairs.get(pair) || 0;
-        if (count) { matches += 1; pairs.set(pair, count - 1); }
-      }
-      return 2 * matches / Math.max(1, left.length + right.length - 2);
-    }
     const songLyricVersions = computed(function () {
       const accepted = [];
+      const seenSequences = new Set();
       ((songDetail.value && songDetail.value.versions) || []).forEach(function (version) {
         if (!version.lyrics || version.instrumental) return;
-        const text = normalizedLyricText(version);
-        if (accepted.some(function (row) { return lyricSimilarity(text, row.text) >= 0.985; })) return;
-        accepted.push({ version: version, text: text });
+        const lyric = version.lyrics;
+        const sequence = lyric.document_id && lyric.line_ids && lyric.line_ids.length
+          ? lyric.document_id + ':' + lyric.line_ids.join(',')
+          : (lyric.lines || []).join('\n');
+        if (!sequence || seenSequences.has(sequence)) return;
+        seenSequences.add(sequence);
+        accepted.push(version);
       });
-      return accepted.map(function (row) { return row.version; });
+      return accepted;
     });
     const songLyricVersionOptions = computed(function () {
       return songLyricVersions.value.map(function (version) { return { value: version.id, label: version.title }; });
@@ -1301,28 +1281,9 @@ const umaApp = createApp({
         return { text: text, start_ms: timings[index] && timings[index].start_ms, index: index };
       });
     });
-    const activeSongLyricLine = computed(function () {
-      const version = selectedSongLyricVersion.value;
-      if (!version || !version.lyrics || !version.lyrics.timings || !player.current || player.current.songId !== songDetail.value.id || player.current.versionId !== version.id) return -1;
-      const now = Math.max(0, Number(player.currentTime) || 0) * 1000;
-      let active = -1;
-      version.lyrics.timings.forEach(function (line, index) { if (Number(line.start_ms) <= now) active = index; });
-      return active;
-    });
-    const selectedSongLyricSeekable = computed(function () {
-      const version = selectedSongLyricVersion.value;
-      return !!(version && version.lyrics && version.lyrics.timings && version.lyrics.timings.length && player.current &&
-        songDetail.value && player.current.songId === songDetail.value.id && player.current.versionId === version.id);
-    });
     function setSongLyricVersion(versionId) {
       songLyricVersionId.value = versionId;
       songLyricTranslation.value = false;
-    }
-    function seekSongLyricLine(line) {
-      if (!Number.isFinite(line && line.start_ms)) return;
-      const version = selectedSongLyricVersion.value;
-      if (!version || !player.current || player.current.songId !== songDetail.value.id || player.current.versionId !== version.id) return;
-      seek(line.start_ms / 1000);
     }
     function playableSongRelease(song) {
       if (song && song.playable) {
@@ -1414,6 +1375,8 @@ const umaApp = createApp({
         clearEntityDetails('song');
         songDetail.value = found;
         songSection.value = 'releases';
+        expandedSongReleaseId.value = ((found.versions || []).find(function (version) { return version.releases && version.releases.length; }) || {}).id || '';
+        expandedSongCreditId.value = found.original_version_id || '';
         const lyricVersion = (found.versions || []).find(function (version) { return version.id === found.original_version_id && version.lyrics; }) ||
           (found.versions || []).find(function (version) { return !!version.lyrics; });
         songLyricVersionId.value = lyricVersion ? lyricVersion.id : '';
@@ -1428,6 +1391,12 @@ const umaApp = createApp({
         loadVoiceData(),
         loadCharacterIndexData()
       ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
+    }
+    function toggleSongRelease(versionId) {
+      expandedSongReleaseId.value = expandedSongReleaseId.value === versionId ? '' : versionId;
+    }
+    function toggleSongCredit(versionId) {
+      expandedSongCreditId.value = expandedSongCreditId.value === versionId ? '' : versionId;
     }
     function openAlbumFromSong(item) {
       const release = item && item.release ? item.release : item;
@@ -1736,7 +1705,7 @@ const umaApp = createApp({
           dbView.value = 'creators';
           const requestedCreator = seg[2] ? decodeURIComponent(seg[2]) : '';
           creatorQuery.value = url.searchParams.get('q') || '';
-          creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'mix_engineer', 'mastering_engineer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
+          creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
           const creatorPageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
           creatorPage.value = isNaN(creatorPageFromUrl) || creatorPageFromUrl < 1 ? 1 : creatorPageFromUrl;
           if (requestedCreator) openCreator(requestedCreator).then(function () {
@@ -1891,7 +1860,6 @@ const umaApp = createApp({
         activeTab.value = 'database';
         dbView.value = 'albums';
         albumDetail.value = { data: data.album, songs: data.album.songs || [] };
-        selectedAlbumTrackIndexes.value = [];
         resetPageScroll();
         pushUrl();
       });
@@ -1995,7 +1963,7 @@ const umaApp = createApp({
     }
     function buildReleasePlayerTrack(song, version, release) {
       return buildPlayerTrack({
-        id: [song && song.id, version && version.id, release && release.album_id, release && release.track_number].filter(Boolean).join('-') || release.audio_url,
+        id: (version && version.id) || [song && song.id, release && release.audio_url].filter(Boolean).join('-') || release.audio_url,
         songId: (song && song.id) || '',
         versionId: (version && version.id) || '',
         url: release.audio_url,
@@ -2036,7 +2004,7 @@ const umaApp = createApp({
           return true;
         });
         return buildPlayerTrack({
-          id: [(detail && (detail.catalog || detail.name)), index + 1, found && found.id, matchedVersion && matchedVersion.id].filter(Boolean).join('-'),
+          id: (matchedVersion && matchedVersion.id) || song.url || [(detail && (detail.catalog || detail.name)), index + 1, found && found.id].filter(Boolean).join('-'),
           songId: (found && found.id) || '',
           versionId: (matchedVersion && matchedVersion.id) || '',
           url: song.url,
@@ -2058,33 +2026,24 @@ const umaApp = createApp({
       if (!selected || !selected.url) return;
       playerController.playTrack(selected);
     }
+    function addAlbumTrack(album, index) {
+      const track = buildAlbumPlayerTracks(album)[index];
+      if (!track || !track.url) return;
+      playerController.enqueueTracks([track], 0, track.sourceContext);
+    }
     function playQueueAt(index) { return playerController.playQueueAt(index); }
     function albumPlayableCount(album) {
       return ((album && album.songs) || []).filter(function (song) { return !!song.url; }).length;
     }
-    function albumTrackSelected(index) { return selectedAlbumTrackIndexes.value.indexOf(index) >= 0; }
-    function toggleAlbumTrack(index) {
-      const selected = selectedAlbumTrackIndexes.value.slice();
-      const position = selected.indexOf(index);
-      if (position >= 0) selected.splice(position, 1);
-      else selected.push(index);
-      selectedAlbumTrackIndexes.value = selected.sort(function (a, b) { return a - b; });
-    }
-    function selectAllAlbumTracks() {
-      const tracks = buildAlbumPlayerTracks(albumDetail.value);
-      const playable = tracks.map(function (track, index) { return track && track.url ? index : -1; }).filter(function (index) { return index >= 0; });
-      selectedAlbumTrackIndexes.value = selectedAlbumTrackIndexes.value.length === playable.length ? [] : playable;
-    }
-    function enqueueAlbumSelection() {
-      const tracks = buildAlbumPlayerTracks(albumDetail.value);
-      const selected = selectedAlbumTrackIndexes.value.map(function (index) { return tracks[index]; }).filter(function (track) { return track && track.url; });
-      if (!selected.length) return;
-      playerController.enqueueTracks(selected, 0, (albumDetail.value.data && albumDetail.value.data.name) || '专辑');
+    function playAlbum(album) {
+      const tracks = buildAlbumPlayerTracks(album).filter(function (track) { return !!track.url; });
+      if (!tracks.length) return;
+      playerController.setQueue(tracks, 0, tracks[0].sourceContext, true);
     }
     function enqueueAlbum(album) {
       const tracks = buildAlbumPlayerTracks(album).filter(function (track) { return !!track.url; });
       if (!tracks.length) return;
-      playerController.enqueueTracks(tracks, 0, tracks[0].sourceContext);
+      playerController.appendBlock(tracks, tracks[0].sourceContext);
     }
     function nextSong() { return playerController.next(); }
     function prevSong() { return playerController.previous(); }
@@ -2101,6 +2060,11 @@ const umaApp = createApp({
     function removeQueueItem(index) { playerController.removeQueueItem(index); }
     function moveQueueItem(index, target) { playerController.moveQueueItemTo(index, target); }
     function clearQueue() { playerController.clearQueue(); }
+    function openPlayerSong(songId) {
+      if (!songId) return;
+      playerController.closePanel();
+      openSong(songId);
+    }
 
     // The generated event catalog carries the exact validated curated table.
     function fixAvatarSrc(html) {
@@ -2125,11 +2089,10 @@ const umaApp = createApp({
           : findSong(title);
         if (!song || /<a\b/i.test(body)) return start + body + end;
         const queueKey = matchedPerformance ? eventPerformanceKey(matchedPerformance) : '';
-        const selected = queueKey && selectedEventTrackKeys.value.indexOf(queueKey) >= 0;
-        const queueButton = queueKey && playableSongRelease(song)
-          ? '<button type="button" class="setlist-queue-toggle' + (selected ? ' selected' : '') + '" data-queue-key="' + queueKey + '" aria-pressed="' + (selected ? 'true' : 'false') + '" aria-label="选择加入播放列表"><span></span></button>'
+        const queueButtons = queueKey && playableSongRelease(song)
+          ? '<span class="setlist-track-actions"><button type="button" data-play-key="' + queueKey + '" aria-label="立即播放"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button><button type="button" data-add-key="' + queueKey + '" aria-label="加入播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>'
           : '';
-        return start + queueButton + '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + LANG_PREFIX + '/music/songs/' + encodeURIComponent(song.id) + '">' + body + '</a>' + end;
+        return start + '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + LANG_PREFIX + '/music/songs/' + encodeURIComponent(song.id) + '">' + body + '</a>' + queueButtons + end;
       });
       return linked.replace(/<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi, function (whole, image, alt, label) {
         var srcMatch = image.match(/\bsrc=["']([^"']+)["']/i);
@@ -2140,9 +2103,14 @@ const umaApp = createApp({
       });
     }
     function onEventSetlistClick(event) {
-      var queueToggle = event.target.closest('button[data-queue-key]');
-      if (queueToggle) {
-        toggleEventTrack(queueToggle.getAttribute('data-queue-key'));
+      var playButton = event.target.closest('button[data-play-key]');
+      if (playButton) {
+        playEventTrackByKey(playButton.getAttribute('data-play-key'));
+        return;
+      }
+      var addButton = event.target.closest('button[data-add-key]');
+      if (addButton) {
+        addEventTrackByKey(addButton.getAttribute('data-add-key'));
         return;
       }
       var songLink = event.target.closest('a[data-song-id]');
@@ -2554,27 +2522,31 @@ const umaApp = createApp({
         } : null;
       }).filter(Boolean);
     });
-    function eventTrackSelected(performance) { return selectedEventTrackKeys.value.indexOf(eventPerformanceKey(performance)) >= 0; }
-    function toggleEventTrack(key) {
-      const selected = selectedEventTrackKeys.value.slice();
-      const index = selected.indexOf(key);
-      if (index >= 0) selected.splice(index, 1);
-      else selected.push(key);
-      selectedEventTrackKeys.value = selected;
+    function eventPlayableRow(key) {
+      return eventPlayableRows.value.find(function (row) { return row.key === key; }) || null;
     }
-    function selectAllEventTracks() {
-      const keys = eventPlayableRows.value.map(function (row) { return row.key; });
-      selectedEventTrackKeys.value = selectedEventTrackKeys.value.length === keys.length ? [] : keys;
+    function playEventTrackByKey(key) {
+      const row = eventPlayableRow(key);
+      if (row) playerController.playTrack(row.track);
     }
-    function enqueueEventSelection() {
-      const selected = new Set(selectedEventTrackKeys.value);
-      const tracks = eventPlayableRows.value.filter(function (row) { return selected.has(row.key); }).map(function (row) { return row.track; });
+    function addEventTrackByKey(key) {
+      const row = eventPlayableRow(key);
+      if (row) playerController.enqueueTracks([row.track], 0, (eventDetail.value && eventDetail.value.title) || '活动歌单');
+    }
+    function playEventTrack(performance) { playEventTrackByKey(eventPerformanceKey(performance)); }
+    function addEventTrack(performance) { addEventTrackByKey(eventPerformanceKey(performance)); }
+    function playEventSession() {
+      const tracks = eventPlayableRows.value.map(function (row) { return row.track; });
       if (!tracks.length) return;
-      playerController.enqueueTracks(tracks, 0, (eventDetail.value && eventDetail.value.title) || '活动歌单');
+      playerController.setQueue(tracks, 0, (eventDetail.value && eventDetail.value.title) || '活动歌单', true);
+    }
+    function enqueueEventSession() {
+      const tracks = eventPlayableRows.value.map(function (row) { return row.track; });
+      if (!tracks.length) return;
+      playerController.appendBlock(tracks, (eventDetail.value && eventDetail.value.title) || '活动歌单');
     }
     function selectEventSession(sessionId) {
       selectedEventSessionId.value = sessionId;
-      selectedEventTrackKeys.value = [];
       pushUrl(true);
     }
     function openEvent(eventOrId, requestedSessionId) {
@@ -2589,7 +2561,6 @@ const umaApp = createApp({
         const sessions = found.sessions || [];
         selectedEventSessionId.value = sessions.some(function (session) { return session.id === requestedSessionId; })
           ? requestedSessionId : ((sessions[0] && sessions[0].id) || '');
-        selectedEventTrackKeys.value = [];
         liveView.value = 'eventDetail';
         activeTab.value = 'live';
         resetPageScroll();
@@ -2925,9 +2896,9 @@ const umaApp = createApp({
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, togglePlay, seek, skipPlayer, setPlayerVolume, togglePlayerMute,
-      nextSong, prevSong, playQueueAt, playAlbumTrack, selectedAlbumTrackIndexes, albumTrackSelected, toggleAlbumTrack, selectAllAlbumTracks, enqueueAlbumSelection,
+      nextSong, prevSong, playQueueAt, playAlbumTrack, addAlbumTrack, playAlbum,
       togglePlayerPanel, closePlayerPanel, cyclePlayerMode, dismissPlayer, retryPlayer, removeQueueItem, moveQueueItem, clearQueue,
-      enqueueAlbum, albumPlayableCount,
+      enqueueAlbum, albumPlayableCount, openPlayerSong,
       newsItems, newsError, newsLoading, refreshNews, newsRange, newsType, newsFiltered, newsHero,
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, loadNews, newsHeroCover,
@@ -2937,9 +2908,9 @@ const umaApp = createApp({
       eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, selectedEventTrackKeys, eventPerformanceKey, eventTrackSelected, toggleEventTrack, selectAllEventTracks, enqueueEventSelection, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
+      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, eventPerformanceKey, playEventTrack, addEventTrack, playEventSession, enqueueEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
-      songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, activeSongLyricLine, selectedSongLyricSeekable, songLyricVersionId, songLyricTranslation, setSongLyricVersion, seekSongLyricLine,
+      songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, toggleSongRelease, toggleSongCredit,
       creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, creatorPortrait, expandedCreatorWorkId, expandedCollaboratorId, toggleCreatorWork, toggleCollaborator, collaboratorWorks, loadCreatorCatalog,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
       horseUrlForCharacter, openHorseForCharacter,
@@ -2974,5 +2945,6 @@ const umaApp = createApp({
   }
 });
 umaApp.component('ui-select', window.UmaUi.UiSelect);
+umaApp.component('ui-disclosure', window.UmaUi.UiDisclosure);
 umaApp.component('audio-dock', window.UmaUi.AudioDock);
 umaApp.mount('#app');

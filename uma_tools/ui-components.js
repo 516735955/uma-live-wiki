@@ -81,12 +81,30 @@
       </div>`
   };
 
+  const UiDisclosure = {
+    props: {
+      open: { type: Boolean, default: false },
+      disabled: { type: Boolean, default: false }
+    },
+    emits: ['toggle'],
+    template: `
+      <article class="ui-disclosure" :class="{open:open,disabled:disabled}">
+        <button class="ui-disclosure-summary" type="button" :disabled="disabled" :aria-expanded="open" @click="$emit('toggle')">
+          <span v-if="$slots.leading" class="ui-disclosure-leading"><slot name="leading"></slot></span>
+          <span class="ui-disclosure-copy"><slot name="title"></slot><small v-if="$slots.subtitle"><slot name="subtitle"></slot></small></span>
+          <span v-if="$slots.meta" class="ui-disclosure-meta"><slot name="meta"></slot></span>
+          <svg class="ui-disclosure-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5"/></svg>
+        </button>
+        <div v-show="open" class="ui-disclosure-detail"><slot></slot></div>
+      </article>`
+  };
+
   const AudioDock = {
     props: {
       player: { type: Object, required: true }
     },
-    emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice'],
-    data: function () { return { draggingIndex: -1, pointerId: null }; },
+    emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice', 'open-song'],
+    data: function () { return { draggingIndex: -1, pointerId: null, titleOverflow: false, artistOverflow: false, resizeObserver: null }; },
     computed: {
       current: function () { return this.player.current || null; },
       playing: function () { return this.player.status === 'playing' || this.player.status === 'buffering'; },
@@ -120,11 +138,22 @@
       },
       'player.queueIndex': function () {
         if (this.player.panelOpen) this.$nextTick(this.scrollCurrentIntoView);
+        this.$nextTick(this.measureOverflow);
+      },
+      'player.current.name': function () {
+        this.$nextTick(this.refreshOverflowObservers);
+      },
+      'player.visible': function (visible) {
+        if (visible) this.$nextTick(this.refreshOverflowObservers);
       }
     },
     mounted: function () {
       document.addEventListener('keydown', this.onDocumentKeydown);
       document.addEventListener('pointerdown', this.onDocumentPointerdown);
+      if (typeof ResizeObserver !== 'undefined') {
+        this.resizeObserver = new ResizeObserver(this.measureOverflow);
+      }
+      this.$nextTick(this.refreshOverflowObservers);
     },
     beforeUnmount: function () {
       document.removeEventListener('keydown', this.onDocumentKeydown);
@@ -132,6 +161,7 @@
       document.removeEventListener('pointermove', this.onDragMove);
       document.removeEventListener('pointerup', this.onDragEnd);
       document.removeEventListener('pointercancel', this.onDragEnd);
+      if (this.resizeObserver) this.resizeObserver.disconnect();
     },
     methods: {
       formatTime: function (seconds) {
@@ -178,6 +208,26 @@
         this.$emit('close-panel');
         this.$emit('open-voice', vocalist.id);
       },
+      openSong: function (track) {
+        if (!track || !track.songId) return;
+        this.$emit('open-song', track.songId);
+      },
+      measureOverflow: function () {
+        const title = this.$refs.titleViewport;
+        const artist = this.$refs.artistViewport;
+        this.titleOverflow = !!(title && title.scrollWidth > title.clientWidth + 2);
+        this.artistOverflow = !!(artist && artist.scrollWidth > artist.clientWidth + 2);
+        if (title) title.style.setProperty('--overflow-distance', Math.max(0, title.scrollWidth - title.clientWidth) + 'px');
+        if (artist) artist.style.setProperty('--overflow-distance', Math.max(0, artist.scrollWidth - artist.clientWidth) + 'px');
+      },
+      refreshOverflowObservers: function () {
+        if (this.resizeObserver) {
+          this.resizeObserver.disconnect();
+          if (this.$refs.titleViewport) this.resizeObserver.observe(this.$refs.titleViewport);
+          if (this.$refs.artistViewport) this.resizeObserver.observe(this.$refs.artistViewport);
+        }
+        this.measureOverflow();
+      },
       startDrag: function (event, index) {
         if (this.player.queue.length < 2) return;
         event.preventDefault();
@@ -218,11 +268,11 @@
           <div ref="queueList" class="audio-queue" role="list" aria-label="播放列表">
             <div v-for="(track,index) in player.queue" :key="track.id+'-'+index" class="audio-queue-row" :class="{active:index===player.queueIndex,dragging:index===draggingIndex}" role="listitem" :data-index="index" :aria-current="index===player.queueIndex?'true':undefined">
               <button class="audio-queue-drag" type="button" aria-label="拖动调整顺序" title="拖动调整顺序" @pointerdown="startDrag($event,index)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 5h8M6 10h8M6 15h8"/></svg></button>
-              <button class="audio-queue-select" type="button" @click="$emit('play-at',index)">
+              <button class="audio-queue-play" type="button" :aria-label="'播放 '+track.name" @click="$emit('play-at',index)">
                 <span class="audio-queue-number">{{ index + 1 }}</span>
-                <span class="audio-queue-copy"><b>{{ track.name }}</b><small>{{ queueArtist(track) }}</small></span>
                 <span v-if="index===player.queueIndex && playing" class="audio-playing-bars" aria-label="当前曲目"><i></i><i></i><i></i></span>
               </button>
+              <button class="audio-queue-copy" type="button" :disabled="!track.songId" @click="openSong(track)"><b>{{ track.name }}</b><small>{{ queueArtist(track) }}</small></button>
               <button class="audio-queue-remove" type="button" aria-label="从播放列表移除" title="移除" @click="$emit('remove-item',index)"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15"/></svg></button>
             </div>
           </div>
@@ -235,14 +285,16 @@
               <span v-if="current && playing" class="audio-playing-bars" aria-hidden="true"><i></i><i></i><i></i></span>
             </div>
             <div class="audio-dock-copy">
-              <b class="audio-title">{{ current ? current.name : '播放列表' }}</b>
-              <div v-if="current && current.vocalists.length" class="audio-dock-vocalists" aria-label="演唱声优">
-                <template v-for="vocalist in current.vocalists" :key="vocalist.id || vocalist.name">
-                  <button v-if="vocalist.id" type="button" @click="openVoice(vocalist)">{{ vocalist.name }}</button>
-                  <span v-else>{{ vocalist.name }}</span>
-                </template>
+              <button class="audio-title-link" type="button" :disabled="!current || !current.songId" @click="openSong(current)"><span ref="titleViewport" class="audio-overflow-viewport" :class="{'is-overflowing':titleOverflow}"><b class="audio-title audio-overflow-track">{{ current ? current.name : '播放列表' }}</b></span></button>
+              <div ref="artistViewport" class="audio-overflow-viewport audio-artist-viewport" :class="{'is-overflowing':artistOverflow}">
+                <div v-if="current && current.vocalists.length" class="audio-dock-vocalists audio-overflow-track" aria-label="演唱声优">
+                  <template v-for="vocalist in current.vocalists" :key="vocalist.id || vocalist.name">
+                    <button v-if="vocalist.id" type="button" @click="openVoice(vocalist)">{{ vocalist.name }}</button>
+                    <span v-else>{{ vocalist.name }}</span>
+                  </template>
+                </div>
+                <span v-else class="audio-dock-artist audio-overflow-track">{{ current ? current.artist : '选择一首开始播放' }}</span>
               </div>
-              <span v-else class="audio-dock-artist">{{ current ? current.artist : '选择一首开始播放' }}</span>
             </div>
             <div class="audio-dock-controls">
               <button class="audio-control audio-mode" type="button" :aria-label="modeLabel" :title="modeLabel" @click="$emit('cycle-mode')">
@@ -250,13 +302,13 @@
                 <svg v-else viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3l3 3-3 3M4 6h16M7 21l-3-3 3-3M20 18H4"/><path v-if="player.playbackMode==='one'" d="M11 10h2v5"/></svg>
               </button>
               <button class="audio-control" type="button" :disabled="!current" aria-label="上一首" title="上一首" @click="$emit('previous')"><svg class="audio-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM18 6 9 12l9 6z"/></svg></button>
-              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="后退 15 秒" title="后退 15 秒" @click="$emit('skip',-15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8H4V4M4.6 8.2A8 8 0 1 1 4 14"/><text x="8" y="16">15</text></svg></button>
+              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="后退 15 秒" title="后退 15 秒" @click="$emit('skip',-15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7H4V3M4.5 7.5a8 8 0 1 1-.3 8.4M9 11h1v5M15 11h-3v2h1.4a1.5 1.5 0 0 1 0 3H12"/></svg></button>
               <button class="audio-control audio-control-primary" type="button" :disabled="!current" :aria-label="playing?'暂停':'播放'" :title="playing?'暂停':'播放'" @click="$emit('toggle-play')">
-                <span v-if="loading" class="audio-hoof-loader" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4v7a7 7 0 0 0 14 0V4h-4v7a3 3 0 0 1-6 0V4z"/><circle cx="7" cy="7" r=".8"/><circle cx="17" cy="7" r=".8"/></svg></span>
+                <span v-if="loading" class="audio-arc-loader" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="8"/></svg></span>
                 <svg v-else-if="playing" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg>
                 <svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg>
               </button>
-              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="前进 15 秒" title="前进 15 秒" @click="$emit('skip',15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8h4V4m-.6 4.2A8 8 0 1 0 20 14"/><text x="7" y="16">15</text></svg></button>
+              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="前进 15 秒" title="前进 15 秒" @click="$emit('skip',15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7h4V3m-.5 4.5a8 8 0 1 0 .3 8.4M9 11h1v5M15 11h-3v2h1.4a1.5 1.5 0 0 1 0 3H12"/></svg></button>
               <button class="audio-control" type="button" :disabled="!current" aria-label="下一首" title="下一首" @click="$emit('next')"><svg class="audio-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM6 6l9 6-9 6z"/></svg></button>
             </div>
             <div class="audio-dock-progress">
@@ -280,5 +332,5 @@
       </template>`
   };
 
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, AudioDock: AudioDock });
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, AudioDock: AudioDock });
 })();
