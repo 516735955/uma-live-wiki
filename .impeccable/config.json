@@ -101,6 +101,24 @@
         ],
         "createdAt": "2026-09-28T04:58:22.256Z",
         "reason": "Agent: the dark navigation elevation is an established textured-header treatment rather than a decorative content glow"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "uma_tools/app.css"
+        ],
+        "createdAt": "2026-09-29T10:18:34.043Z",
+        "reason": "Agent: the 5px strip belongs to the collaborator hand-tuned legacy character card identity treatment; PR10 preserves that existing role-specific component unchanged"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "赛马娘LIVE相关.html"
+        ],
+        "createdAt": "2026-09-29T10:19:17.887Z",
+        "reason": "Agent: detector matched the three link-card-head structural header rows inside link anchors; browser inspection confirms they have no independent border, background, radius, or elevation and are not nested visual cards"
       }
     ]
   }
