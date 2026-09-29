@@ -99,6 +99,24 @@
       </article>`
   };
 
+  const EntityActions = {
+    props: {
+      playLabel: { type: String, default: '播放' },
+      addLabel: { type: String, default: '加入播放列表' },
+      size: { type: String, default: 'regular' }
+    },
+    emits: ['play', 'add'],
+    template: `
+      <span class="entity-actions" :class="'entity-actions-' + size">
+        <button class="entity-action entity-action-play" type="button" :aria-label="playLabel" :title="playLabel" @click="$emit('play')">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+        </button>
+        <button class="entity-action entity-action-add" type="button" :aria-label="addLabel" :title="addLabel" @click="$emit('add')">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </span>`
+  };
+
   const AudioDock = {
     props: {
       player: { type: Object, required: true }
@@ -332,5 +350,5 @@
       </template>`
   };
 
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, AudioDock: AudioDock });
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock });
 })();

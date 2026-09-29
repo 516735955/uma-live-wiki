@@ -4,6 +4,8 @@ let ALBUMS_LOADED = false;
 
 const { createApp, ref, reactive, computed, watch } = Vue;
 const api = window.UmaApi;
+const routes = window.UmaRoutes;
+const LANG_PREFIX = routes.prefix;
 
 const umaApp = createApp({
   setup() {
@@ -37,6 +39,7 @@ const umaApp = createApp({
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
     const routeReady = ref(true);
+    const notFound = ref(false);
     const openNavGroup = ref('');
     const navigationRevision = ref(0);
     const backTopVisible = ref(false);
@@ -391,28 +394,19 @@ const umaApp = createApp({
         const newsReady = loadNews();
         return seg.length > 1 ? newsReady : Promise.resolve();
       }
-      if (first === 'music' || first === 'artist' || first === 'songs') {
+      if (first === 'music') {
         const musicSection = (seg[1] || '').toLowerCase();
         if (first === 'music' && musicSection === 'creators') return loadCreatorCatalog();
-        return musicSection === 'songs' || first !== 'music'
+        return musicSection === 'songs'
           ? Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()])
           : Promise.all([loadAlbums(), loadVoiceData(), loadSongCatalog()]);
       }
-      if (first === 'live') return loadEvents();
-      if (first === 'characters') {
-        const sub = (seg[1] || '').toLowerCase();
-        const characterReady = sub && sub !== 'intro' && sub !== 'room' && sub !== 'videos'
-          ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
-        return Promise.all([Promise.resolve(characterReady), loadHorsesListData()]).then(loadCharacterUi);
-      }
       if (first === 'events') return Promise.all([loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
+      if (first === 'resources') return Promise.resolve();
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
       if (!sub) return loadCharacterIndexData().then(loadCharacterUi);
-      if (sub === 'albums') return Promise.all([loadAlbums(), loadVoiceData(), loadSongCatalog()]);
-      if (sub === 'songs') return Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()]);
-      if (sub === 'events') return loadEvents();
-      if (sub === 'voice' || sub === 'voice-actors') {
+      if (sub === 'voice-actors') {
         return loadVoiceData().then(loadCharacterUi);
       }
       if (sub === 'characters') {
@@ -421,7 +415,7 @@ const umaApp = createApp({
           ? Promise.all([loadCharacterDetailData(), loadVoiceData()]) : loadCharacterIndexData();
         return Promise.all([Promise.resolve(characterReady), loadHorsesListData()]).then(loadCharacterUi);
       }
-      if (sub === 'other') return Promise.all([loadHorsesData(), loadCharacterIndexData()]);
+      if (sub === 'horses') return Promise.all([loadHorsesData(), loadCharacterIndexData()]);
       return Promise.resolve();
     }
     function loadHomeSummary() {
@@ -463,19 +457,19 @@ const umaApp = createApp({
     }, { immediate: true });
 
     const navItems = [
-      { key: 'news', label: '新闻', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>', path: '/zh-Hans/news' },
+      { key: 'news', label: '新闻', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>', path: routes.news() },
       { key: 'music', label: '音乐', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12M9 10l10-2"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>', children: [
-        { key: 'songs', label: '歌曲', path: '/zh-Hans/music/songs' },
-        { key: 'albums', label: '专辑', path: '/zh-Hans/music/albums' },
-        { key: 'creators', label: '创作者', path: '/zh-Hans/music/creators' }
+        { key: 'songs', label: '歌曲', path: routes.songs() },
+        { key: 'albums', label: '专辑', path: routes.albums() },
+        { key: 'creators', label: '创作者', path: routes.creators() }
       ] },
-      { key: 'live', label: '活动', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>', path: '/zh-Hans/events' },
+      { key: 'live', label: '活动', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>', path: routes.events() },
       { key: 'database', label: '资料库', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>', children: [
-        { key: 'characters', label: '角色', path: '/zh-Hans/database/characters' },
-        { key: 'voice', label: '声优', path: '/zh-Hans/database/voice-actors' },
-        { key: 'other', label: '其他', path: '/zh-Hans/database/other' }
+        { key: 'characters', label: '角色', path: routes.characters() },
+        { key: 'voice', label: '声优', path: routes.voiceActors() },
+        { key: 'other', label: '其他', path: routes.other() }
       ] },
-      { key: 'links', label: '友链', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M7.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0M16.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0"/></svg>', path: '/zh-Hans/links' }
+      { key: 'links', label: '友链', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M7.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0M16.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0"/></svg>', path: routes.links() }
     ];
 
     const historyKindOptions = [
@@ -653,20 +647,20 @@ const umaApp = createApp({
     });
     function contextBack() { history.back(); }
     const breadcrumbItems = computed(function () {
-      const items = [{ label: '首页', path: LANG_PREFIX }];
+      const items = [{ label: '首页', path: routes.home() }];
       if (activeTab.value === 'contribute') return items.concat([{ label: '参与共建' }, { label: '资料订正' }]);
       if (activeTab.value === 'contribute-contact') return items.concat([{ label: '参与共建' }, { label: '联系我们' }]);
       if (activeTab.value === 'legal-privacy') return items.concat([{ label: '法律告知' }, { label: '隐私政策' }]);
       if (activeTab.value === 'legal-terms') return items.concat([{ label: '法律告知' }, { label: '使用条款' }]);
       if (!isAtomicView()) return [];
-      if (newsDetail.value) return items.concat([{ label: '新闻', path: LANG_PREFIX + '/news' }, { label: newsTitle(newsDetail.value) }]);
-      if (eventDetail.value) return items.concat([{ label: '活动', path: LANG_PREFIX + '/events' }, { label: eventDetail.value.title }]);
-      if (albumDetail.value) return items.concat([{ label: '音乐' }, { label: '专辑', path: LANG_PREFIX + '/music/albums' }, { label: albumDetail.value.data.name }]);
-      if (songDetail.value) return items.concat([{ label: '音乐' }, { label: '歌曲', path: LANG_PREFIX + '/music/songs' }, { label: songDetail.value.title }]);
-      if (creatorDetail.value) return items.concat([{ label: '音乐' }, { label: '创作者', path: LANG_PREFIX + '/music/creators' }, { label: creatorDetail.value.name }]);
-      if (horseDetail.value) return items.concat([{ label: '资料库' }, { label: '其他', path: LANG_PREFIX + '/database/other' }, { label: '原型马', path: LANG_PREFIX + '/database/other/horses' }, { label: horseDetail.value.zh || horseDetail.value.en || horseDetail.value.id }]);
-      if (charDetail.value) return items.concat([{ label: '资料库' }, { label: '角色', path: LANG_PREFIX + '/database/characters' }, { label: charDetail.value.zh }]);
-      if (voiceDetail.value) return items.concat([{ label: '资料库' }, { label: '声优', path: LANG_PREFIX + '/database/voice-actors' }, { label: voiceDetail.value.zh }]);
+      if (newsDetail.value) return items.concat([{ label: '新闻', path: routes.news() }, { label: newsTitle(newsDetail.value) }]);
+      if (eventDetail.value) return items.concat([{ label: '活动', path: routes.events() }, { label: eventDetail.value.title }]);
+      if (albumDetail.value) return items.concat([{ label: '音乐' }, { label: '专辑', path: routes.albums() }, { label: albumDetail.value.data.name }]);
+      if (songDetail.value) return items.concat([{ label: '音乐' }, { label: '歌曲', path: routes.songs() }, { label: songDetail.value.title }]);
+      if (creatorDetail.value) return items.concat([{ label: '音乐' }, { label: '创作者', path: routes.creators() }, { label: creatorDetail.value.name }]);
+      if (horseDetail.value) return items.concat([{ label: '资料库' }, { label: '原型马', path: routes.horses() }, { label: horseDetail.value.zh || horseDetail.value.en || horseDetail.value.id }]);
+      if (charDetail.value) return items.concat([{ label: '资料库' }, { label: '角色', path: routes.characters() }, { label: charDetail.value.zh }]);
+      if (voiceDetail.value) return items.concat([{ label: '资料库' }, { label: '声优', path: routes.voiceActors() }, { label: voiceDetail.value.zh }]);
       return [];
     });
     function setCharSection(section) {
@@ -896,7 +890,7 @@ const umaApp = createApp({
     }
     function horseUrlForCharacter(characterId) {
       const horse = horseForCharacter(characterId);
-      return horse ? LANG_PREFIX + '/database/other/horses/' + encodeURIComponent(horse.id) : '';
+      return horse ? routes.horses(horse.id) : '';
     }
     function openHorseForCharacter(characterId) {
       const horse = horseForCharacter(characterId);
@@ -972,7 +966,7 @@ const umaApp = createApp({
       var n = String(name || '');
       if (!n) return n;
       var profile = voiceProfileForName(n);
-      if (profile) return '<a href="' + LANG_PREFIX + '/database/voice-actors/' + encodeURIComponent(profile.id) + '">' + n + '</a>';
+      if (profile) return '<a href="' + routes.voiceActors(profile.id) + '">' + n + '</a>';
       return n;
     };
     function vaList() {
@@ -1065,7 +1059,7 @@ const umaApp = createApp({
       const map = {};
       (songCatalog.value.songs || []).forEach(function (song) {
         [song.title].concat(song.aliases || []).forEach(function (title) {
-          const key = String(title || '').normalize('NFKC').toLowerCase().replace(/\s+/g, '');
+          const key = normName(title);
           if (key) map[key] = song;
         });
       });
@@ -1076,7 +1070,7 @@ const umaApp = createApp({
       if (!target) return null;
       const direct = (songCatalog.value.songs || []).find(function (song) { return song.id === target; });
       if (direct) return direct;
-      const key = String(target).normalize('NFKC').toLowerCase().replace(/\s+/g, '');
+      const key = normName(target);
       return songAliasMap.value[key] || null;
     }
     const songDbFiltered = computed(function () {
@@ -1161,7 +1155,7 @@ const umaApp = createApp({
       const requested = typeof creatorOrId === 'string' ? creatorOrId : (creatorOrId && creatorOrId.id);
       return api.request('/api/catalog/creator' + api.query({ id: requested, revision: creatorCatalog.value.build_id }), { fresh: true }).then(function (data) {
         const found = data && data.creator;
-        if (!found) return;
+        if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         clearEntityDetails('creator');
         creatorDetail.value = found;
         creatorSection.value = 'works';
@@ -1216,13 +1210,23 @@ const umaApp = createApp({
     const songCreditVersions = computed(function () {
       if (!songDetail.value) return [];
       const originalId = songDetail.value.original_version_id;
-      return (songDetail.value.versions || []).filter(function (version) {
-        return version.credits && version.credits.length && (version.id === originalId || (version.releases && version.releases.length));
-      }).sort(function (a, b) { return a.id === originalId ? -1 : b.id === originalId ? 1 : String(a.title).localeCompare(String(b.title), 'ja'); });
+      const versions = songDetail.value.versions || [];
+      const original = versions.find(function (version) { return version.id === originalId; }) || versions.find(function (version) { return version.credits && version.credits.length; });
+      if (!original) return [];
+      const key = function (credit) { return [credit.role, credit.creator_id || credit.name].join(':'); };
+      const originalKeys = new Set((original.credits || []).map(key));
+      const rows = [Object.assign({}, original, { display_credits: original.credits || [], credit_heading: '原作署名' })];
+      versions.forEach(function (version) {
+        if (version.id === original.id || !version.credits || !version.credits.length) return;
+        const changed = version.credits.filter(function (credit) { return !originalKeys.has(key(credit)); });
+        if (!changed.length) return;
+        rows.push(Object.assign({}, version, { display_credits: changed, credit_heading: version.version_label || version.title }));
+      });
+      return rows;
     });
     function creditRoleGroups(version) {
       const groups = [];
-      (version && version.credits || []).forEach(function (credit) {
+      (version && (version.display_credits || version.credits) || []).forEach(function (credit) {
         let group = groups.find(function (row) { return row.role === credit.role; });
         if (!group) {
           group = { role: credit.role, label: credit.role_label || creatorRoleLabel(credit.role), credits: [] };
@@ -1370,7 +1374,7 @@ const umaApp = createApp({
       const requested = typeof songOrId === 'string' ? songOrId : (songOrId && (songOrId.id || songOrId.song_id));
       const show = function (data) {
         const found = data && data.song;
-        if (!found) return;
+        if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         mergeSong(found);
         clearEntityDetails('song');
         songDetail.value = found;
@@ -1417,7 +1421,7 @@ const umaApp = createApp({
     }
     function characterColor(characterId) {
       const character = findCharById(characterId);
-      return character ? character.main : '#ff8c1a';
+      return character ? character.main : '#3157ed';
     }
     function voiceName(actorId, fallback) {
       const voice = findVaBySlug(actorId);
@@ -1425,7 +1429,7 @@ const umaApp = createApp({
     }
     function voicePaletteStyle(voice) {
       const role = voice && voice.roles && voice.roles[0];
-      return { '--entity-accent': (role && role.main) || '#315FC2', '--entity-sub': (role && role.sub) || '#FF8C1A' };
+      return { '--entity-accent': (role && role.main) || '#3157ed', '--entity-sub': (role && role.sub) || '#ffa932' };
     }
     function voicePhoto(actorId) {
       const voice = findVaBySlug(actorId);
@@ -1456,6 +1460,15 @@ const umaApp = createApp({
       }
       return [];
     }
+    function albumTrackSecondary(track) {
+      const title = String((track && track.name) || '').normalize('NFKC');
+      if (/(?:off[ -]?vocal|instrumental|inst\.?|BGM|伴奏|纯音乐)/i.test(title)) return '';
+      return (track && track.artist) || '';
+    }
+    function releaseSingerLabel(version, release) {
+      if (version && version.instrumental) return '';
+      return (release && release.artist) || '';
+    }
     function albumName(a) { return a.name; }
     // ---- client-side routing (history mode) ----
     function findCharById(id) {
@@ -1477,7 +1490,12 @@ const umaApp = createApp({
       return null;
     }
     function normName(value) {
-      return String(value || '').replace(/\s+/g, '').toLowerCase();
+      return String(value || '').normalize('NFKC').toLowerCase()
+        .replace(/[\ufe0e\ufe0f]/g, '')
+        .replace(/[‘’]/g, "'")
+        .replace(/[‐‑‒–—−－]/g, '-')
+        .replace(/・/g, '·')
+        .replace(/[\s　]+/g, '');
     }
     function findCharByDisplayName(name) {
       var target = normName(name);
@@ -1498,137 +1516,75 @@ const umaApp = createApp({
       if (!base) return null;
       return findCharById(base.replace(/\s+/g, '').toLowerCase()) || findCharByDisplayName(base);
     }
-    function slugOfAlbum(name) {
-      const latin = String(name || '')
-        .replace(/[‘’`'"「」『』\[\]（）()]/g, ' ')
-        .split(/\s+/)
-        .filter(Boolean)
-        .map(function (s) {
-          var m = s.match(/[A-Za-z0-9]+/g);
-          return m ? m.join('') : '';
-        })
-        .filter(Boolean)
-        .join('_')
-        .toUpperCase();
-      if (latin) return latin;
-      return String(name || '')
-        .replace(/[‘’`'"「」『』\[\]（）()]/g, ' ')
-        .replace(/[\/\\&+=?#%<>]/g, '_')
-        .replace(/\s+/g, '_')
-        .replace(/_+/g, '_');
+    function findAlbumById(id) {
+      const target = String(id || '');
+      return target ? albums.value.find(function (album) { return String(album.id || '') === target; }) || null : null;
     }
-    function findAlbumBySlug(slug) {
-      const target = String(slug || '');
-      if (!target) return null;
-      const direct = albums.value.find(function (a) { return slugOfAlbum(a.name) === target; });
-      if (direct) return direct;
-      let decoded = '';
-      try { decoded = decodeURIComponent(target); } catch (e) {}
-      if (decoded && decoded !== target) {
-        const d2 = albums.value.find(function (a) { return slugOfAlbum(a.name) === decoded; });
-        if (d2) return d2;
-      }
-      return albums.value.find(function (a) { return a.name === decoded || a.name === target; }) || null;
-    }
-    const LANG_PREFIX = '/zh-Hans';
     function currentUrlPath() {
       return window.location.pathname + window.location.search;
     }
     function pushUrl(replace) {
-      let path = '/';
+      let path = routes.home();
       if (!home.value) {
         if (activeTab.value === 'news') {
           if (newsDetail.value) {
-            path = LANG_PREFIX + '/news/' + newsDetail.value.announce_id;
+            path = routes.news(newsDetail.value.announce_id);
           } else {
-            path = LANG_PREFIX + '/news';
-            if (newsPage.value > 1) path += '?page=' + newsPage.value;
+            path = routes.query(routes.news(), { page: newsPage.value });
           }
         } else if (activeTab.value === 'live') {
           if (liveView.value === 'eventDetail' && eventDetail.value) {
-            path = LANG_PREFIX + '/events/' + encodeURIComponent(eventDetail.value.id);
-            if (selectedEventSessionId.value) path += '?session=' + encodeURIComponent(selectedEventSessionId.value);
+            path = routes.events(eventDetail.value.id, selectedEventSessionId.value);
           } else {
-            path = LANG_PREFIX + '/events';
-            const params = [];
-            if (eventsQuery.value) params.push('q=' + encodeURIComponent(eventsQuery.value));
-            if (evTime.value !== 'all') params.push('time=' + encodeURIComponent(evTime.value));
-            if (evKind.value !== 'all') params.push('kind=' + encodeURIComponent(evKind.value));
-            if (evMode.value !== 'all') params.push('mode=' + encodeURIComponent(evMode.value));
-            if (evYear.value !== 'all') params.push('year=' + encodeURIComponent(evYear.value));
-            if (evSeries.value !== 'all') params.push('series=' + encodeURIComponent(evSeries.value));
-            if (eventsPage.value > 1) params.push('page=' + eventsPage.value);
-            if (params.length) path += '?' + params.join('&');
+            path = routes.query(routes.events(), { q: eventsQuery.value, time: evTime.value, kind: evKind.value, mode: evMode.value, year: evYear.value, series: evSeries.value, page: eventsPage.value });
           }
         } else if (activeTab.value === 'database') {
           if (dbView.value === 'characters') {
-            path = LANG_PREFIX + '/database/characters';
-            if (charDetail.value && charDetail.value.id) {
-              path += '/' + encodeURIComponent(charDetail.value.id);
-              if (charSection.value !== 'profile') path += '?section=' + encodeURIComponent(charSection.value);
-            }
+            path = routes.characters(charDetail.value && charDetail.value.id, charSection.value);
           } else if (dbView.value === 'voice') {
-            path = LANG_PREFIX + '/database/voice-actors';
-            if (voiceDetail.value) {
-              path += '/' + encodeURIComponent(voiceDetail.value.slug);
-              if (voiceSection.value !== 'profile') path += '?section=' + encodeURIComponent(voiceSection.value);
-            }
+            path = routes.voiceActors(voiceDetail.value && voiceDetail.value.id, voiceSection.value);
           } else if (dbView.value === 'albums') {
-            path = LANG_PREFIX + '/music/albums';
-            if (albumDetail.value) path += '/' + slugOfAlbum(albumDetail.value.data.name);
+            path = routes.albums(albumDetail.value && albumDetail.value.data.id);
           } else if (dbView.value === 'songs') {
-            path = LANG_PREFIX + '/music/songs';
+            path = routes.songs(songDetail.value && songDetail.value.id, songSection.value);
             if (songDetail.value) {
-              path += '/' + encodeURIComponent(songDetail.value.id);
-              if (songSection.value !== 'releases') path += '?section=' + encodeURIComponent(songSection.value);
             } else {
-              const params = [];
-              if (songDbQuery.value) params.push('q=' + encodeURIComponent(songDbQuery.value));
-              if (songDbPage.value > 1) params.push('page=' + songDbPage.value);
-              if (params.length) path += '?' + params.join('&');
+              path = routes.query(routes.songs(), { q: songDbQuery.value, page: songDbPage.value });
             }
           } else if (dbView.value === 'creators') {
-            path = LANG_PREFIX + '/music/creators';
+            path = routes.creators(creatorDetail.value && creatorDetail.value.id, creatorSection.value);
             if (creatorDetail.value) {
-              path += '/' + encodeURIComponent(creatorDetail.value.id);
-              if (creatorSection.value !== 'works') path += '?section=' + encodeURIComponent(creatorSection.value);
             } else {
-              const params = [];
-              if (creatorQuery.value) params.push('q=' + encodeURIComponent(creatorQuery.value));
-              if (creatorRole.value !== 'all') params.push('role=' + encodeURIComponent(creatorRole.value));
-              if (creatorPage.value > 1) params.push('page=' + creatorPage.value);
-              if (params.length) path += '?' + params.join('&');
+              path = routes.query(routes.creators(), { q: creatorQuery.value, role: creatorRole.value, page: creatorPage.value });
             }
           } else if (dbView.value === 'other') {
-            if (otherSection.value === 'horses') {
-              path = LANG_PREFIX + '/database/other/horses';
-              if (horseDetail.value && horseDetail.value.id) {
-                path += '/' + encodeURIComponent(horseDetail.value.id);
-              } else {
-                const params = [];
-                if (horseQuery.value) params.push('q=' + encodeURIComponent(horseQuery.value));
-                if (horsePage.value > 1) params.push('page=' + horsePage.value);
-                if (params.length) path += '?' + params.join('&');
-              }
+            if (!horseDetail.value && otherSection.value === 'relationships') {
+              path = routes.other();
+            } else if (otherSection.value === 'horses') {
+              path = routes.query(routes.horses(horseDetail.value && horseDetail.value.id), { q: horseQuery.value, page: horsePage.value });
+            } else if (otherSection.value === 'videos') {
+              path = routes.videos();
+            } else if (otherSection.value === 'jockeys') {
+              path = routes.jockeys();
             } else {
-              path = LANG_PREFIX + '/database/other/' + otherSection.value;
+              path = routes.relationships();
             }
           } else {
-            path = LANG_PREFIX + '/database/characters';
+            path = routes.characters();
           }
         } else if (activeTab.value === 'contribute') {
-          path = LANG_PREFIX + '/contribute/fix';
+          path = routes.contribute('fix');
         } else if (activeTab.value === 'contribute-contact') {
-          path = LANG_PREFIX + '/contribute/contact';
+          path = routes.contribute('contact');
         } else if (activeTab.value === 'legal-privacy') {
-          path = LANG_PREFIX + '/legal/privacy';
+          path = routes.legal('privacy');
         } else if (activeTab.value === 'legal-terms') {
-          path = LANG_PREFIX + '/legal/terms';
+          path = routes.legal('terms');
+        } else if (activeTab.value === 'links') {
+          path = routes.links();
         } else {
           path = LANG_PREFIX + '/' + activeTab.value;
         }
-      } else {
-        path = LANG_PREFIX;
       }
       if (currentUrlPath() !== path) {
         const targetEntity = isAtomicView();
@@ -1640,7 +1596,7 @@ const umaApp = createApp({
       }
       pendingEntitySource = false;
     }
-    function syncFromUrl() {
+    function legacySyncFromUrl() {
       const url = new URL(window.location.href);
       const raw = url.pathname.split('/').filter(Boolean);
       // strip optional language prefix (zh-Hans for now)
@@ -1849,11 +1805,133 @@ const umaApp = createApp({
       }
       Vue.nextTick(renderCharBlood);
     }
+    function syncFromUrl() {
+      const url = new URL(window.location.href);
+      const raw = url.pathname.split('/').filter(Boolean);
+      const canonicalLanguage = raw[0] === routes.language;
+      const seg = canonicalLanguage ? raw.slice(1) : [];
+      const first = (seg[0] || '').toLowerCase();
+
+      albumDetail.value = null;
+      newsDetail.value = null;
+      eventDetail.value = null;
+      voiceDetail.value = null;
+      charDetail.value = null;
+      songDetail.value = null;
+      creatorDetail.value = null;
+      horseDetail.value = null;
+      liveView.value = 'eventHub';
+      selectedEventSessionId.value = '';
+      activeTab.value = 'database';
+      dbView.value = 'index';
+      home.value = canonicalLanguage && seg.length === 0;
+      notFound.value = !canonicalLanguage;
+      if (home.value || notFound.value) return;
+
+      function reject() {
+        notFound.value = true;
+        activeTab.value = 'not-found';
+        dbView.value = 'index';
+      }
+
+      if (first === 'news' && seg.length <= 2) {
+        activeTab.value = 'news';
+        if (seg[1]) openNews(decodeURIComponent(seg[1]));
+        else newsPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+      } else if (first === 'events' && (seg.length === 1 || seg.length === 2 || (seg.length === 4 && seg[2] === 'sessions'))) {
+        activeTab.value = 'live';
+        const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
+        if (requested) openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : '').then(function () { pushUrl(true); });
+        else {
+          eventsQuery.value = url.searchParams.get('q') || '';
+          evTime.value = ['upcoming', 'past'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
+          evKind.value = ['concert', 'onsite', 'official_program'].indexOf(url.searchParams.get('kind')) >= 0 ? url.searchParams.get('kind') : 'all';
+          evMode.value = ['onsite', 'online'].indexOf(url.searchParams.get('mode')) >= 0 ? url.searchParams.get('mode') : 'all';
+          evYear.value = /^20\d{2}$/.test(url.searchParams.get('year') || '') ? url.searchParams.get('year') : 'all';
+          evSeries.value = url.searchParams.get('series') || 'all';
+          eventsPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        }
+      } else if (first === 'music' && seg[1] === 'songs' && seg.length <= 4) {
+        activeTab.value = 'database';
+        dbView.value = 'songs';
+        const requested = seg[2] ? decodeURIComponent(seg[2]) : '';
+        const section = seg[3] || 'releases';
+        if (requested && routes.sections.song.indexOf(section) < 0) return reject();
+        songSection.value = section;
+        songDbQuery.value = url.searchParams.get('q') || '';
+        songDbPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        if (requested) openSong(requested).then(function () { songSection.value = section; pushUrl(true); });
+      } else if (first === 'music' && seg[1] === 'creators' && seg.length <= 4) {
+        activeTab.value = 'database';
+        dbView.value = 'creators';
+        const requested = seg[2] ? decodeURIComponent(seg[2]) : '';
+        const section = seg[3] || 'works';
+        if (requested && routes.sections.creator.indexOf(section) < 0) return reject();
+        creatorSection.value = section;
+        creatorQuery.value = url.searchParams.get('q') || '';
+        creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
+        creatorPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        if (requested) openCreator(requested).then(function () { creatorSection.value = section; pushUrl(true); });
+      } else if (first === 'music' && seg[1] === 'albums' && seg.length <= 3) {
+        activeTab.value = 'database';
+        dbView.value = 'albums';
+        const album = seg[2] ? findAlbumById(decodeURIComponent(seg[2])) : null;
+        if (album) openAlbum(album);
+        else if (seg[2] && albums.value.length) reject();
+      } else if (first === 'database' && seg[1] === 'characters' && seg.length <= 4) {
+        activeTab.value = 'database';
+        dbView.value = 'characters';
+        const requested = seg[2] ? decodeURIComponent(seg[2]) : '';
+        const section = seg[3] || 'profile';
+        if (requested && routes.sections.character.indexOf(section) < 0) return reject();
+        charDetail.value = requested ? findCharById(requested) : null;
+        charSection.value = section;
+        if (requested && !charDetail.value && window.CHAR_INDEX) reject();
+        else if (charDetail.value && section !== 'profile') setCharSection(section);
+      } else if (first === 'database' && seg[1] === 'voice-actors' && seg.length <= 4) {
+        activeTab.value = 'database';
+        dbView.value = 'voice';
+        const requested = seg[2] ? decodeURIComponent(seg[2]) : '';
+        const section = seg[3] || 'profile';
+        if (requested && routes.sections.voiceActor.indexOf(section) < 0) return reject();
+        voiceDetail.value = requested ? findVaBySlug(requested) : null;
+        voiceSection.value = section;
+        if (requested && !voiceDetail.value && voiceProfiles.value.length) reject();
+        else if (voiceDetail.value && section !== 'profile') setVoiceSection(section);
+      } else if (first === 'database' && seg[1] === 'other' && seg.length === 2) {
+        activeTab.value = 'database'; dbView.value = 'other'; otherSection.value = 'relationships';
+      } else if (first === 'database' && seg[1] === 'horses' && seg.length <= 3) {
+        activeTab.value = 'database';
+        dbView.value = 'other';
+        otherSection.value = 'horses';
+        horseQuery.value = url.searchParams.get('q') || '';
+        horsePage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        horseDetail.value = seg[2] && window.HORSES_DETAIL ? window.HORSES_DETAIL[decodeURIComponent(seg[2])] || null : null;
+        if (seg[2] && !horseDetail.value && window.HORSES_DETAIL) reject();
+      } else if (first === 'database' && seg[1] === 'relationships' && seg.length === 2) {
+        activeTab.value = 'database'; dbView.value = 'other'; otherSection.value = 'relationships';
+      } else if (first === 'database' && seg[1] === 'jockeys' && seg.length <= 3) {
+        activeTab.value = 'database'; dbView.value = 'other'; otherSection.value = 'jockeys';
+      } else if (first === 'resources' && seg[1] === 'videos' && seg.length === 2) {
+        activeTab.value = 'database'; dbView.value = 'other'; otherSection.value = 'videos';
+      } else if (first === 'contribute' && (seg[1] === 'fix' || seg[1] === 'contact') && seg.length === 2) {
+        activeTab.value = seg[1] === 'contact' ? 'contribute-contact' : 'contribute';
+        fixDone.value = false;
+      } else if (first === 'legal' && (seg[1] === 'privacy' || seg[1] === 'terms') && seg.length === 2) {
+        activeTab.value = seg[1] === 'privacy' ? 'legal-privacy' : 'legal-terms';
+      } else if (first === 'links' && seg.length === 1) {
+        activeTab.value = 'links';
+      } else {
+        reject();
+      }
+      Vue.nextTick(renderCharBlood);
+    }
+
     function openAlbum(a) {
       beginEntityNavigation();
       const name = a && a.name;
       if (!name) return Promise.resolve();
-      return api.request('/api/catalog/album' + api.query({ name: name })).then(function (data) {
+      return api.request('/api/catalog/album' + api.query({ id: a.id, name: name })).then(function (data) {
         if (!data || !data.album) return;
         (data.catalog_songs || []).forEach(mergeSong);
         clearEntityDetails('album');
@@ -1885,7 +1963,7 @@ const umaApp = createApp({
           id: voice.id,
           name: voice.zh || voice.ja || actorId,
           image: voice.photo || '',
-          color: (role && role.main) || '#3558d8'
+          color: (role && role.main) || '#3157ed'
         } : null;
       }).filter(Boolean);
     }
@@ -1903,7 +1981,7 @@ const umaApp = createApp({
           id: voice ? voice.id : '',
           name: voice ? (voice.zh || voice.ja || name) : name,
           image: voice ? (voice.photo || '') : '',
-          color: (role && role.main) || '#3558d8'
+          color: (role && role.main) || '#3157ed'
         };
       });
     }
@@ -1938,7 +2016,7 @@ const umaApp = createApp({
           id: vocalist.voice_actor_id || '',
           name: voiceName(vocalist.voice_actor_id, vocalist.voice_actor_name),
           image: (voice && voice.photo) || '',
-          color: (vocalist.character && vocalist.character.color_main) || (voice && voice.roles && voice.roles[0] && voice.roles[0].main) || '#3558d8'
+          color: (vocalist.character && vocalist.character.color_main) || (voice && voice.roles && voice.roles[0] && voice.roles[0].main) || '#3157ed'
         };
       });
       const artistRows = playerVocalistsFromArtist(release && release.artist);
@@ -2092,7 +2170,7 @@ const umaApp = createApp({
         const queueButtons = queueKey && playableSongRelease(song)
           ? '<span class="setlist-track-actions"><button type="button" data-play-key="' + queueKey + '" aria-label="立即播放"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button><button type="button" data-add-key="' + queueKey + '" aria-label="加入播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>'
           : '';
-        return start + '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + LANG_PREFIX + '/music/songs/' + encodeURIComponent(song.id) + '">' + body + '</a>' + queueButtons + end;
+        return start + '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + routes.songs(song.id) + '">' + body + '</a>' + queueButtons + end;
       });
       return linked.replace(/<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi, function (whole, image, alt, label) {
         var srcMatch = image.match(/\bsrc=["']([^"']+)["']/i);
@@ -2554,7 +2632,7 @@ const umaApp = createApp({
       const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
       const show = function (data) {
         const found = data && data.event;
-        if (!found) return;
+        if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         clearEntityDetails('event');
         eventDetail.value = found;
         activeMediaKey.value = '';
@@ -2576,17 +2654,17 @@ const umaApp = createApp({
     function eventPaletteStyle(event) {
       const series = eventSeriesMap.value[(event && event.series_id) || ''];
       const fallback = {
-        concert: ['#315FC2', '#FF8C1A'],
+        concert: ['#3157ed', '#ff7b16'],
         onsite: ['#28A8AE', '#B9D934'],
         official_program: ['#4169D8', '#34CED0']
-      }[(event && event.kind) || ''] || ['#315FC2', '#FF8C1A'];
+      }[(event && event.kind) || ''] || ['#3157ed', '#ff7b16'];
       return {
         '--entity-accent': (series && series.primary) || fallback[0],
         '--entity-sub': (series && series.secondary) || fallback[1]
       };
     }
     function eventKindColor(kind) {
-      return { concert: '#315FC2', onsite: '#28A8AE', official_program: '#4169D8' }[kind] || '#315FC2';
+      return { concert: '#3157ed', onsite: '#28A8AE', official_program: '#4169D8' }[kind] || '#3157ed';
     }
     const nextUpcomingEvent = computed(function () {
       if (homeNextEvent.value) return homeNextEvent.value;
@@ -2604,7 +2682,7 @@ const umaApp = createApp({
     });
     const nextUpcomingHref = computed(function () {
       const e = nextUpcomingEvent.value;
-      return e ? LANG_PREFIX + '/events/' + encodeURIComponent(e.id) : null;
+      return e ? routes.events(e.id) : null;
     });
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
@@ -2891,7 +2969,7 @@ const umaApp = createApp({
     }
 
     return {
-      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, albumDetail, liveView, player, navItems, openNavGroup,
+      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup,
       navItemActive, toggleNavGroup, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
@@ -2909,7 +2987,7 @@ const umaApp = createApp({
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
       eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, eventPerformanceKey, playEventTrack, addEventTrack, playEventSession, enqueueEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
-      songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists,
+      songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
       songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, toggleSongRelease, toggleSongCredit,
       creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, creatorPortrait, expandedCreatorWorkId, expandedCollaboratorId, toggleCreatorWork, toggleCollaborator, collaboratorWorks, loadCreatorCatalog,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
@@ -2946,5 +3024,7 @@ const umaApp = createApp({
 });
 umaApp.component('ui-select', window.UmaUi.UiSelect);
 umaApp.component('ui-disclosure', window.UmaUi.UiDisclosure);
+umaApp.component('entity-actions', window.UmaUi.EntityActions);
+umaApp.component('creator-network', window.UmaCreatorNetwork.CreatorNetwork);
 umaApp.component('audio-dock', window.UmaUi.AudioDock);
 umaApp.mount('#app');
