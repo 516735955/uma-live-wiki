@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const path = require('path');
-const { CatalogStore, albumSlug } = require('./catalog-store');
+const { CatalogStore, stableAlbumId } = require('./catalog-store');
 
 async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
@@ -42,8 +42,10 @@ async function main() {
 
   const albumList = await store.albums(new URLSearchParams('page_size=5000'));
   assert.strictEqual(albumList.total, snapshot.albumRows.length);
-  assert.strictEqual(albumList.items[0].slug, albumSlug(albumList.items[0].name), 'album URL slug must match the browser route');
-  const album = await store.album(albumList.items[0].slug, '');
+  assert.strictEqual(new Set(albumList.items.map((item) => item.id)).size, albumList.items.length, 'album URL ids must be unique');
+  assert(albumList.items.every((item) => /^album-[a-z0-9-]+$/.test(item.id)), 'album URL ids must use the canonical format');
+  assert.strictEqual(albumList.items[0].id, stableAlbumId(albumList.items[0]), 'album URL id must be stable');
+  const album = await store.album(albumList.items[0].id, '');
   assert(album && album.album && Array.isArray(album.catalog_songs), 'album detail is incomplete');
 
   const appearance = await store.appearance('character', 'specialweek');

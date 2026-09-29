@@ -444,6 +444,9 @@ def stable_version_id(song_id: str, title: str) -> str:
 
 
 def stable_album_id(album: dict[str, Any]) -> str:
+    persisted = str(album.get("id") or "").strip()
+    if persisted:
+        return persisted
     catalog = re.sub(r"[^a-z0-9]+", "-", str(album.get("catalog") or "").lower()).strip("-")
     if catalog:
         return "album-" + catalog
@@ -568,9 +571,15 @@ def build_creator_catalog(songs_catalog: dict[str, Any], creators_doc: dict[str,
                 work = relations[creator_id]["works"].setdefault(song["id"], {
                     "song_id": song["id"], "title": song["title"], "cover": song.get("cover") or "",
                     "release_date": song.get("release_date") or "", "roles": set(), "version_ids": set(), "versions": {},
+                    "album_names": set(),
                 })
                 work["roles"].add(role)
                 work["version_ids"].add(version["id"])
+                work["album_names"].update(
+                    str(release.get("album_name") or "").strip()
+                    for release in version.get("releases") or []
+                    if str(release.get("album_name") or "").strip()
+                )
                 version_row = work["versions"].setdefault(version["id"], {
                     "id": version["id"], "title": version.get("title") or song["title"],
                     "version_label": version.get("version_label") or "", "roles": set(),
@@ -589,7 +598,8 @@ def build_creator_catalog(songs_catalog: dict[str, Any], creators_doc: dict[str,
         works = []
         for work in relation["works"].values():
             works.append({
-                **{key: value for key, value in work.items() if key not in ("roles", "version_ids", "versions")},
+                **{key: value for key, value in work.items() if key not in ("roles", "version_ids", "versions", "album_names")},
+                "album_name": sorted(work["album_names"])[0] if work["album_names"] else "",
                 "roles": sorted(work["roles"], key=lambda role: CREATOR_ROLE_ORDER.get(role, 99)),
                 "version_ids": sorted(work["version_ids"]),
                 "versions": [

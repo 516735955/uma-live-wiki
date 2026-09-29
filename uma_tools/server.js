@@ -516,7 +516,7 @@ async function handleCatalogApi(req, res, urlPath, params) {
     else if (urlPath === '/api/catalog/creators') result = await catalogStore.creators(params);
     else if (urlPath === '/api/catalog/creator') result = await catalogStore.creator(params.get('id'));
     else if (urlPath === '/api/catalog/albums') result = await catalogStore.albums(params);
-    else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('slug'), params.get('name'));
+    else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('id'), params.get('name'));
     else if (urlPath === '/api/catalog/voice-actors') result = await catalogStore.voices();
     else if (urlPath === '/api/catalog/appearance') {
       const type = params.get('type');
@@ -986,7 +986,16 @@ const server = http.createServer((req, res) => {
   if (req.method === 'GET' && urlPath === '/api/audio') return handleAudioProxy(req, res, params);
   if (urlPath.startsWith('/api/')) return sendJson(res, 404, { error: 'unknown api endpoint' });
 
-  if (urlPath === '/') urlPath = '/' + INDEX_FILE;
+  if (urlPath === '/') {
+    res.writeHead(302, { Location: '/zh-Hans/', 'Cache-Control': 'no-cache' });
+    res.end();
+    return;
+  }
+  if (urlPath === '/zh-Hans') {
+    res.writeHead(301, { Location: '/zh-Hans/', 'Cache-Control': 'no-cache' });
+    res.end();
+    return;
+  }
   let filePath = path.normalize(path.join(ROOT, urlPath));
   if (!isInsideRoot(filePath)) { res.writeHead(403); res.end('Forbidden'); return; }
 

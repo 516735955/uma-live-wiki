@@ -25,6 +25,15 @@ function normalize(value) {
   return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
 }
 
+function songIdentityKey(value) {
+  return normalize(value)
+    .replace(/[\ufe0e\ufe0f]/g, '')
+    .replace(/[‘’]/g, "'")
+    .replace(/[‐‑‒–—−－]/g, '-')
+    .replace(/・/g, '·')
+    .replace(/ /g, '');
+}
+
 function pageNumber(value, fallback) {
   const number = parseInt(value, 10);
   return Number.isFinite(number) && number > 0 ? number : fallback;
@@ -49,6 +58,13 @@ function albumSlug(name) {
     .replace(/[\/\\&+=?#%<>]/g, '_')
     .replace(/\s+/g, '_')
     .replace(/_+/g, '_');
+}
+
+function stableAlbumId(album) {
+  if (album && album.id) return String(album.id);
+  const catalog = String((album && album.catalog) || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  if (catalog) return 'album-' + catalog;
+  return 'album-' + crypto.createHash('sha1').update(normalize(album && album.name).replace(/ /g, '')).digest('hex').slice(0, 12);
 }
 
 function albumWork(name) {
@@ -302,8 +318,8 @@ function songForAppearance(song, type, id) {
 function albumSummary(album) {
   const tracks = (album.songs || []).map((song) => [song.name, song.artist].filter(Boolean).join(' '));
   return {
+    id: stableAlbumId(album),
     name: album.name,
-    slug: albumSlug(album.name),
     count: album.count,
     cover: album.cover,
     release: album.release,
@@ -415,17 +431,17 @@ class CatalogStore {
       songsById: new Map(songs.map((song) => [String(song.id), song])),
       creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
       songAliases: new Map(),
-      albumsBySlug: new Map(),
+      albumsById: new Map(),
       albumsByName: new Map()
     };
     songRows.forEach((row) => {
       [row.data.id, ...(row.data.legacy_ids || []), row.data.title, ...(row.data.aliases || [])].forEach((key) => {
-        const normalized = normalize(key).replace(/ /g, '');
+        const normalized = songIdentityKey(key);
         if (normalized) snapshot.songAliases.set(normalized, row.data);
       });
     });
     albumRowsIndexed.forEach((row) => {
-      snapshot.albumsBySlug.set(row.summary.slug, row.data);
+      snapshot.albumsById.set(row.summary.id, row.data);
       snapshot.albumsByName.set(String(row.data.name), row.data);
     });
     this.snapshot = snapshot;
@@ -599,12 +615,12 @@ class CatalogStore {
     };
   }
 
-  async album(slug, name) {
+  async album(id, name) {
     const store = await this.get();
-    const album = (slug && store.albumsBySlug.get(String(slug))) || (name && store.albumsByName.get(String(name)));
+    const album = (id && store.albumsById.get(String(id))) || (name && store.albumsByName.get(String(name)));
     if (!album) return null;
     const songs = (album.songs || []).map((track) => {
-      const key = normalize(track.name).replace(/ /g, '');
+      const key = songIdentityKey(track.name);
       return store.songAliases.get(key);
     }).filter(Boolean);
     return { build_id: store.buildId, album, catalog_songs: songs };
@@ -628,4 +644,4 @@ class CatalogStore {
   }
 }
 
-module.exports = { CatalogStore, albumSlug };
+module.exports = { CatalogStore, albumSlug, stableAlbumId };
