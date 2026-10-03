@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T13:34:56+00:00",
+  "generated_at": "2026-10-03T17:07:43+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "01ea65060a1e9dcddafc66a296ad6ef9c6d7ad67262f5b618f67af97dac88dad",
@@ -58295,8 +58295,8 @@
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
               "song_title": "奇跡",
               "performance_variant": {
-                "title": "奇跡（舞台剧中曲）",
-                "label": "舞台剧中曲"
+                "title": "奇跡",
+                "label": ""
               }
             },
             {
@@ -63506,7 +63506,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -63822,7 +63826,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -64138,7 +64146,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -64454,7 +64466,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -65035,7 +65051,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -65351,7 +65371,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -65667,7 +65691,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -107893,5 +107921,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "afdf2de7ef94b0704b7b"
+  "build_id": "fcc78f6ea8cbfda50342"
 }

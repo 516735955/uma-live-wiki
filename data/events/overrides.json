@@ -38,58 +38,138 @@
       "series_id": "winning-live-release"
     },
     "live-other-2023-11-18-animax-musix-2023": {
-      "character_ids": ["tokaiteio", "vodka", "mrcb", "matikanetannhauser", "kitasanblack", "symbolikriss", "katsuragiace"],
+      "character_ids": [
+        "tokaiteio",
+        "vodka",
+        "mrcb",
+        "matikanetannhauser",
+        "kitasanblack",
+        "symbolikriss",
+        "katsuragiace"
+      ],
       "sources_add": [
-        {"kind": "official", "label": "ウマ娘官方出演公告", "url": "https://umamusume.jp/news/detail?id=1604"},
-        {"kind": "official", "label": "ANIMAX 官方节目记录", "url": "https://www.animax.co.jp/animaxmusix/archive/archive_2023.html"}
+        {
+          "kind": "official",
+          "label": "ウマ娘官方出演公告",
+          "url": "https://umamusume.jp/news/detail?id=1604"
+        },
+        {
+          "kind": "official",
+          "label": "ANIMAX 官方节目记录",
+          "url": "https://www.animax.co.jp/animaxmusix/archive/archive_2023.html"
+        }
       ]
     },
     "pakatube-20230401-lcpgkvi33w4": {
-      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+      "character_ids": [
+        "sakurabakushino",
+        "sakurachiyonoo",
+        "sakuralaurel"
+      ]
     },
     "pakatube-20230402-msmggqxb6iq": {
-      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+      "character_ids": [
+        "sakurabakushino",
+        "sakurachiyonoo",
+        "sakuralaurel"
+      ]
     },
     "pakatube-20230403-r4wedbhghtq": {
-      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+      "character_ids": [
+        "sakurabakushino",
+        "sakurachiyonoo",
+        "sakuralaurel"
+      ]
     },
     "pakatube-20230404-vg5vsxyikf4": {
-      "character_ids": ["sakurabakushino", "sakurachiyonoo", "sakuralaurel"]
+      "character_ids": [
+        "sakurabakushino",
+        "sakurachiyonoo",
+        "sakuralaurel"
+      ]
     },
     "pakatube-20240215-8on-r5eeomk": {
-      "character_ids": ["goldship"]
+      "character_ids": [
+        "goldship"
+      ]
     },
     "pakatube-20240318-p6mybsmi6o0": {
-      "character_ids": ["oguricap", "supercreek", "sakuralaurel", "naritabrian"]
+      "character_ids": [
+        "oguricap",
+        "supercreek",
+        "sakuralaurel",
+        "naritabrian"
+      ]
     },
     "pakatube-20240531-granblue-fantasy-relink": {
-      "character_ids": ["goldship"]
+      "character_ids": [
+        "goldship"
+      ]
     },
     "pakatube-20220616-shlgvtzq-c8": {
-      "character_ids": ["goldship"]
+      "character_ids": [
+        "goldship"
+      ]
     },
     "pakatube-20250806-wb-shadowverse-worlds-beyond": {
-      "character_ids": ["fusaichipandora", "espoircity", "tosenjordan", "mejiropalmer", "goldcity"]
+      "character_ids": [
+        "fusaichipandora",
+        "espoircity",
+        "tosenjordan",
+        "mejiropalmer",
+        "goldcity"
+      ]
     },
     "pakatube-20251124-shadow-corridor": {
-      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+      "character_ids": [
+        "verxina",
+        "chevalgrand",
+        "vivlos"
+      ]
     },
     "pakatube-20251125-shadow-corridor": {
-      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+      "character_ids": [
+        "verxina",
+        "chevalgrand",
+        "vivlos"
+      ]
     },
     "pakatube-20251126-shadow-corridor": {
-      "character_ids": ["verxina", "chevalgrand", "vivlos"]
+      "character_ids": [
+        "verxina",
+        "chevalgrand",
+        "vivlos"
+      ]
     },
     "eventernote-2024-06-20": {
       "cast_status": "verified",
       "summary": "《TIF presents ONE SONG FES.》第1期的现场录制。",
       "cast_add": [
-        {"name": "藤本侑里", "role": "ジャングルポケット", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
-        {"name": "福嶋晴菜", "role": "ダンツフレーム", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
-        {"name": "徳井青空", "role": "テイエムオペラオー", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+        {
+          "name": "藤本侑里",
+          "role": "ジャングルポケット",
+          "source_kind": "official_broadcaster",
+          "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        },
+        {
+          "name": "福嶋晴菜",
+          "role": "ダンツフレーム",
+          "source_kind": "official_broadcaster",
+          "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        },
+        {
+          "name": "徳井青空",
+          "role": "テイエムオペラオー",
+          "source_kind": "official_broadcaster",
+          "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        }
       ],
       "sources_add": [
-        {"kind": "official_broadcaster", "label": "节目官方页", "url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+        {
+          "kind": "official_broadcaster",
+          "label": "节目官方页",
+          "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        }
       ]
     },
     "live-other-2024-07-25-tif-presents-one-song-fes": {
@@ -97,24 +177,78 @@
       "end_date": "2024-07-25",
       "cast_status": "verified",
       "cast_add": [
-        {"name": "藤本侑里", "role": "ジャングルポケット", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
-        {"name": "福嶋晴菜", "role": "ダンツフレーム", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"},
-        {"name": "徳井青空", "role": "テイエムオペラオー", "source_kind": "official_broadcaster", "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+        {
+          "name": "藤本侑里",
+          "role": "ジャングルポケット",
+          "source_kind": "official_broadcaster",
+          "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        },
+        {
+          "name": "福嶋晴菜",
+          "role": "ダンツフレーム",
+          "source_kind": "official_broadcaster",
+          "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        },
+        {
+          "name": "徳井青空",
+          "role": "テイエムオペラオー",
+          "source_kind": "official_broadcaster",
+          "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        }
       ],
       "sources_add": [
-        {"kind": "official_broadcaster", "label": "节目官方页", "url": "https://official.idolfes.com/s/tif2024/page/broadcast"}
+        {
+          "kind": "official_broadcaster",
+          "label": "节目官方页",
+          "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        }
       ]
     },
     "live-other-2024-03-16-venue101": {
       "cast_status": "verified",
       "cast_add": [
-        {"name": "和氣あず未", "role": "スペシャルウィーク", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
-        {"name": "Machico", "role": "トウカイテイオー", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
-        {"name": "Lynn", "role": "マルゼンスキー", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
-        {"name": "前田佳織里", "role": "ナイスネイチャ", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
-        {"name": "遠野ひかる", "role": "マチカネタンホイザ", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
-        {"name": "山根綺", "role": "ダイタクヘリオス", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"},
-        {"name": "秋奈", "role": "ドゥラメンテ", "source_kind": "official_announcement", "source_url": "https://umamusume.jp/news/detail?id=1805"}
+        {
+          "name": "和氣あず未",
+          "role": "スペシャルウィーク",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        },
+        {
+          "name": "Machico",
+          "role": "トウカイテイオー",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        },
+        {
+          "name": "Lynn",
+          "role": "マルゼンスキー",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        },
+        {
+          "name": "前田佳織里",
+          "role": "ナイスネイチャ",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        },
+        {
+          "name": "遠野ひかる",
+          "role": "マチカネタンホイザ",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        },
+        {
+          "name": "山根綺",
+          "role": "ダイタクヘリオス",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        },
+        {
+          "name": "秋奈",
+          "role": "ドゥラメンテ",
+          "source_kind": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=1805"
+        }
       ]
     },
     "live-numbered-7th-event-3": {
@@ -123,7 +257,11 @@
       "metadata_status": "complete",
       "summary": "伦敦站已由官方宣布，日期、场馆与出演阵容尚未公布。",
       "sources_add": [
-        {"kind": "official_event_site", "label": "官方活动页", "url": "https://ts7th.umamusume.jp/"}
+        {
+          "kind": "official_event_site",
+          "label": "官方活动页",
+          "url": "https://ts7th.umamusume.jp/"
+        }
       ]
     },
     "live-numbered-7th-event-4": {
@@ -132,7 +270,11 @@
       "metadata_status": "complete",
       "summary": "首尔站已由官方宣布，日期、场馆与出演阵容尚未公布。",
       "sources_add": [
-        {"kind": "official_event_site", "label": "官方活动页", "url": "https://ts7th.umamusume.jp/"}
+        {
+          "kind": "official_event_site",
+          "label": "官方活动页",
+          "url": "https://ts7th.umamusume.jp/"
+        }
       ]
     },
     "live-numbered-7th-event-5": {
@@ -141,7 +283,11 @@
       "metadata_status": "complete",
       "summary": "横滨站已由官方宣布，日期、场馆与出演阵容尚未公布。",
       "sources_add": [
-        {"kind": "official_event_site", "label": "官方活动页", "url": "https://ts7th.umamusume.jp/"}
+        {
+          "kind": "official_event_site",
+          "label": "官方活动页",
+          "url": "https://ts7th.umamusume.jp/"
+        }
       ]
     }
   },
@@ -163,17 +309,144 @@
     {
       "zh": "小西克幸",
       "ja": "小西克幸",
-      "aliases": ["小西 克幸"]
+      "aliases": [
+        "小西 克幸"
+      ]
     },
     {
       "zh": "伊濑茉莉也",
       "ja": "伊瀬茉莉也",
-      "aliases": ["伊瀬 茉莉也"]
+      "aliases": [
+        "伊瀬 茉莉也"
+      ]
     },
     {
       "zh": "濑户桃子",
       "ja": "瀬戸桃子",
-      "aliases": ["瀬戸 桃子"]
+      "aliases": [
+        "瀬戸 桃子"
+      ]
+    },
+    {
+      "zh": "八百屋杏",
+      "ja": "八百屋杏",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/06/"
+      ]
+    },
+    {
+      "zh": "安斋龙太",
+      "ja": "安齋龍太",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/06/"
+      ]
+    },
+    {
+      "zh": "野椛ゆうか",
+      "ja": "野椛ゆうか",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/12/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/11/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/10/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/09/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/07/"
+      ]
+    },
+    {
+      "zh": "莲田美纪",
+      "ja": "蓮田美紀",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/12/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/11/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/10/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/09/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/07/"
+      ]
+    },
+    {
+      "zh": "新川爱实",
+      "ja": "新川愛実",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/12/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/11/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/10/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/09/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/07/"
+      ]
+    },
+    {
+      "zh": "大泽风香",
+      "ja": "大澤風香",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/12/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/11/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/10/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/09/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/07/"
+      ]
+    },
+    {
+      "zh": "得能ありさ",
+      "ja": "得能ありさ",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/umayuru/episodes/15/",
+        "https://umamusume.jp/contents/anime/umayuru/episodes/13/"
+      ]
+    },
+    {
+      "zh": "樱井美雪",
+      "ja": "櫻井みゆき",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://movie-umamusume.jp/caststaff/"
+      ]
+    },
+    {
+      "zh": "伊驹友里绘",
+      "ja": "伊駒ゆりえ",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://movie-umamusume.jp/caststaff/"
+      ]
+    },
+    {
+      "zh": "仁见纱绫",
+      "ja": "仁見紗綾",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://movie-umamusume.jp/caststaff/"
+      ]
+    },
+    {
+      "zh": "绪方贤一",
+      "ja": "緒方賢一",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://movie-umamusume.jp/caststaff/"
+      ]
+    },
+    {
+      "zh": "丰口惠美",
+      "ja": "豊口めぐみ",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://anime-umamusume.jp/archive/1st/caststaff/"
+      ]
+    },
+    {
+      "zh": "土田大",
+      "ja": "土田大",
+      "aliases": [],
+      "anime_credit_sources": [
+        "https://umamusume.jp/contents/anime/roadtothetop/"
+      ]
     }
   ],
   "voice_actor_profile_overrides": {
@@ -183,31 +456,356 @@
       "agency": "フリーランス",
       "official_profile": "https://hina-orihara.bitfan.id/",
       "sources": [
-        {"kind": "official_profile", "label": "折原日菜官方网站", "url": "https://hina-orihara.bitfan.id/"},
-        {"kind": "reliable_media", "label": "事务所退所报道", "url": "https://encount.press/archives/935337/"}
+        {
+          "kind": "official_profile",
+          "label": "折原日菜官方网站",
+          "url": "https://hina-orihara.bitfan.id/"
+        },
+        {
+          "kind": "reliable_media",
+          "label": "事务所退所报道",
+          "url": "https://encount.press/archives/935337/"
+        }
+      ]
+    },
+    "くじら": {
+      "birthday": "4月1日",
+      "birthplace": "東京都",
+      "agency": "81プロデュース",
+      "official_profile": "https://www.81produce.co.jp/actor.html",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "81 Produce 俳优目录",
+          "url": "https://www.81produce.co.jp/actor.html"
+        }
+      ]
+    },
+    "久次米渚": {
+      "birthday": "10月6日",
+      "birthplace": "徳島県",
+      "agency": "81プロデュース",
+      "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?cell003=%E3%81%8B%E8%A1%8C&cell004=&cell028=&cell029=%E5%A5%B3%E6%80%A7&id=420&keyword=&label=1&name=%E4%B9%85%E6%AC%A1%E7%B1%B3%E3%80%80%E6%B8%9A",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "81 Produce 官方资料",
+          "url": "https://www.81produce.co.jp/actor_search/index.php/item?cell003=%E3%81%8B%E8%A1%8C&cell004=&cell028=&cell029=%E5%A5%B3%E6%80%A7&id=420&keyword=&label=1&name=%E4%B9%85%E6%AC%A1%E7%B1%B3%E3%80%80%E6%B8%9A"
+        }
+      ]
+    },
+    "大久保瑠美": {
+      "birthday": "9月27日",
+      "birthplace": "埼玉県",
+      "agency": "81プロデュース",
+      "official_profile": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=169",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "81 Produce 官方资料",
+          "url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=169"
+        }
+      ]
+    },
+    "大地葉": {
+      "birthday": "8月6日",
+      "birthplace": "埼玉県",
+      "agency": "VIMS",
+      "official_profile": "https://www.vims.co.jp/talent/351/",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "VIMS 官方资料",
+          "url": "https://www.vims.co.jp/talent/351/"
+        }
+      ]
+    },
+    "大塚芳忠": {
+      "birthday": "5月19日",
+      "birthplace": "岡山県",
+      "agency": "クレイジーボックス",
+      "official_profile": "https://crazy-box.co.jp/talent/%E5%A4%A7%E5%A1%9A%E8%8A%B3%E5%BF%A0/",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "Crazy Box 官方资料",
+          "url": "https://crazy-box.co.jp/talent/%E5%A4%A7%E5%A1%9A%E8%8A%B3%E5%BF%A0/"
+        }
+      ]
+    },
+    "宝亀克寿": {
+      "birthday": "10月30日",
+      "birthplace": "長崎県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/houki-katsuhisa.html",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "青二 Production 官方资料",
+          "url": "https://www.aoni.co.jp/search/houki-katsuhisa.html"
+        }
+      ]
+    },
+    "富田美憂": {
+      "birthday": "11月15日",
+      "birthplace": "埼玉県",
+      "agency": "アミューズクリエイティブスタジオ",
+      "official_profile": "https://www.amuse.co.jp/artist/A8701/",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "Amuse 官方资料",
+          "url": "https://www.amuse.co.jp/artist/A8701/"
+        }
+      ]
+    },
+    "山村響": {
+      "birthday": "2月10日",
+      "birthplace": "福岡県",
+      "agency": "東京俳優生活協同組合",
+      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12759",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "俳协官方资料",
+          "url": "https://haikyo.co.jp/profile/profile.php?ActorID=12759"
+        }
+      ]
+    },
+    "嶋村侑": {
+      "birthday": "4月18日",
+      "birthplace": "東京都",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/262",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "贤 Production 官方资料",
+          "url": "https://www.kenproduction.co.jp/talent/262"
+        }
+      ]
+    },
+    "榎木淳弥": {
+      "birthday": "10月19日",
+      "birthplace": "東京都",
+      "agency": "asleben",
+      "official_profile": "https://asleben.jp/talents/junya-enoki",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "asleben 官方资料",
+          "url": "https://asleben.jp/talents/junya-enoki"
+        }
+      ]
+    },
+    "浪川大輔": {
+      "birthday": "4月2日",
+      "birthplace": "東京都",
+      "agency": "ステイラック",
+      "official_profile": "https://www.namikawadaisuke.com/",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "浪川大辅官方网站",
+          "url": "https://www.namikawadaisuke.com/"
+        }
+      ]
+    },
+    "渋谷彩乃": {
+      "birthday": "5月18日",
+      "birthplace": "東京都",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/169",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "贤 Production 官方资料",
+          "url": "https://www.kenproduction.co.jp/talent/169"
+        }
+      ]
+    },
+    "生天目仁美": {
+      "birthday": "8月4日",
+      "birthplace": "神奈川県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/66",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "贤 Production 官方资料",
+          "url": "https://www.kenproduction.co.jp/talent/66"
+        }
+      ]
+    },
+    "田村睦心": {
+      "birthday": "6月19日",
+      "birthplace": "東京都",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=62",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "I'm Enterprise 官方资料",
+          "url": "https://www.imenterprise.jp/profile.php?id=62"
+        }
+      ]
+    },
+    "甲斐田裕子": {
+      "birthday": "1月14日",
+      "birthplace": "神奈川県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://yuhko-kaida.com/profile.html",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "甲斐田裕子官方网站",
+          "url": "https://yuhko-kaida.com/profile.html"
+        }
+      ]
+    },
+    "白石涼子": {
+      "birthday": "9月7日",
+      "birthplace": "奈良県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/shiraishi-ryoko.html",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "青二 Production 官方资料",
+          "url": "https://www.aoni.co.jp/search/shiraishi-ryoko.html"
+        }
+      ]
+    },
+    "石上静香": {
+      "birthday": "9月14日",
+      "birthplace": "東京都",
+      "agency": "大沢事務所",
+      "official_profile": "https://osawa-inc.co.jp/women/ishigamishizuka/",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "大泽事务所官方资料",
+          "url": "https://osawa-inc.co.jp/women/ishigamishizuka/"
+        }
+      ]
+    },
+    "竹内良太": {
+      "birthday": "9月22日",
+      "birthplace": "兵庫県",
+      "agency": "青二プロダクション",
+      "official_profile": "https://www.aoni.co.jp/search/takeuchi-ryota.html",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "青二 Production 官方资料",
+          "url": "https://www.aoni.co.jp/search/takeuchi-ryota.html"
+        }
+      ]
+    },
+    "花守ゆみり": {
+      "birthday": "9月29日",
+      "birthplace": "神奈川県",
+      "agency": "tomorrow jam",
+      "official_profile": "https://tomorrowjam.jp/talent/hanamori-yumiri/",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "tomorrow jam 官方资料",
+          "url": "https://tomorrowjam.jp/talent/hanamori-yumiri/"
+        }
+      ]
+    },
+    "関根明良": {
+      "birthday": "12月16日",
+      "birthplace": "東京都",
+      "agency": "アプトプロ",
+      "official_profile": "https://aptepro.jp/talents/a_sekine.html",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "Apte Pro 官方资料",
+          "url": "https://aptepro.jp/talents/a_sekine.html"
+        }
+      ]
+    },
+    "風間万裕子": {
+      "birthday": "10月2日",
+      "birthplace": "東京都",
+      "agency": "アイムエンタープライズ",
+      "official_profile": "https://www.imenterprise.jp/profile.php?id=103",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "I'm Enterprise 官方资料",
+          "url": "https://www.imenterprise.jp/profile.php?id=103"
+        }
+      ]
+    },
+    "鷄冠井美智子": {
+      "birthday": "6月24日",
+      "birthplace": "青森県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/154",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "贤 Production 官方资料",
+          "url": "https://www.kenproduction.co.jp/talent/154"
+        }
       ]
     }
   },
   "non_voice_people": {
-    "project_staff": ["門田奈菜", "稲村梓", "舞台ウマ娘アンサンブル"],
-    "guest_artist": [
-      "オーイシマサヨシ", "蒼井翔太", "特邀嘉宾艺术家：［Alexandros］", "特邀嘉宾艺术家：影山ヒロノブ",
-      "中川翔子", "廣川奈々聖", "三品瑠香", "早﨑すずき", "金澤亜美", "中村朱里", "蛭田愛梨",
-      "小田柚葉", "杉浦優來", "工藤由愛", "松永里愛", "西川貴教", "伊藤美来", "高城れに",
-      "川上洋平", "白井眞輝"
+    "project_staff": [
+      "門田奈菜",
+      "稲村梓",
+      "舞台ウマ娘アンサンブル"
     ],
-    "virtual_guest": ["SIRO 魔界ノりりむ 天宮こころ", "天音かなた", "雪花ラミィ", "獅白ぼたん", "尾丸ポルカ"],
+    "guest_artist": [
+      "オーイシマサヨシ",
+      "蒼井翔太",
+      "特邀嘉宾艺术家：［Alexandros］",
+      "特邀嘉宾艺术家：影山ヒロノブ",
+      "中川翔子",
+      "廣川奈々聖",
+      "三品瑠香",
+      "早﨑すずき",
+      "金澤亜美",
+      "中村朱里",
+      "蛭田愛梨",
+      "小田柚葉",
+      "杉浦優來",
+      "工藤由愛",
+      "松永里愛",
+      "西川貴教",
+      "伊藤美来",
+      "高城れに",
+      "川上洋平",
+      "白井眞輝"
+    ],
+    "virtual_guest": [
+      "SIRO 魔界ノりりむ 天宮こころ",
+      "天音かなた",
+      "雪花ラミィ",
+      "獅白ぼたん",
+      "尾丸ポルカ"
+    ],
     "media_guest": [
-      "荘口彰久", "伊藤隼之介", "石原章弘", "板津雄志", "角田晃一", "福原直英", "近藤智樹", "松本圭太", "浅川"
+      "荘口彰久",
+      "伊藤隼之介",
+      "石原章弘",
+      "板津雄志",
+      "角田晃一",
+      "福原直英",
+      "近藤智樹",
+      "松本圭太",
+      "浅川"
     ]
   },
   "character_aliases": {
     "帝王光辉": "kinghalo",
     "鲁铎象征": "symbolirudolf",
     "谷水琴蕾": "taninogimlet",
-    "快乐温顺": "happymeek",
-    "小巧圆茧": "littlecocon",
-    "微苦糖渍": "bitterglasse",
     "快乐温顺": "happymeek",
     "小巧圆茧": "littlecocon",
     "微苦糖渍": "bitterglasse",

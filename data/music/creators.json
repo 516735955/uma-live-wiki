@@ -78,7 +78,7 @@
       "id": "creator-cygames-f5bc529953",
       "name": "Cygames",
       "aliases": [],
-      "type": "person",
+      "type": "organization",
       "affiliations": []
     },
     {
@@ -2131,6 +2131,39 @@
       "aliases": [],
       "type": "person",
       "affiliations": []
+    },
+    {
+      "id": "creator-e5ed3b7ed8",
+      "name": "川井憲次",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "anime_staff": true,
+      "sources": [
+        "https://anime-cinderellagray.com/staffcast/"
+      ]
+    },
+    {
+      "id": "creator-af5e5cc3e5",
+      "name": "横山克",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "anime_staff": true,
+      "sources": [
+        "https://movie-umamusume.jp/caststaff/"
+      ]
+    },
+    {
+      "id": "creator-5e4fd345c6",
+      "name": "岩代太郎",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "anime_staff": true,
+      "sources": [
+        "https://anime-umamusume.jp/archive/1st/caststaff/"
+      ]
     }
   ]
 }

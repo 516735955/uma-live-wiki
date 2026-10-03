@@ -528,6 +528,8 @@ def effective_music_metadata(
                 "role": credit["role"],
                 "role_label": CREATOR_ROLE_LABELS.get(credit["role"], credit["role"]),
                 "creator_id": credit.get("creator_id") or "",
+                **({"institution": credit["affiliation"]} if credit.get("affiliation") else {}),
+                **({"organization": credit["organization"]} if credit.get("organization") else {}),
             })
         deduped.sort(key=lambda row: (CREATOR_ROLE_ORDER.get(row["role"], 99), row.get("creator_id") or ""))
         # The catalog stores compact stable references. Creator names and the
@@ -594,6 +596,11 @@ def build_creator_catalog(songs_catalog: dict[str, Any], creators_doc: dict[str,
                     relations[creator_id]["collaborators"][collaborator_id]["versions"].add(version["id"])
                     relations[creator_id]["collaborators"][collaborator_id]["works"].add(song["id"])
 
+    # Animation music staff share creator pages even when no individual song
+    # credit has been published. Their animation credits remain scoped there.
+    for creator_id, source in source_by_id.items():
+        if source.get("anime_staff"):
+            relations[creator_id]
     creators: list[dict[str, Any]] = []
     for creator_id, relation in relations.items():
         source = source_by_id.get(creator_id) or {"id": creator_id, "name": creator_id}
@@ -717,7 +724,7 @@ def build_song_catalog(
     )
     works: dict[str, dict[str, Any]] = {}
 
-    def ensure_version(exact_title: str) -> tuple[dict[str, Any], dict[str, Any]]:
+    def ensure_version(exact_title: str, release_variant: str = "", work_context: str = "") -> tuple[dict[str, Any], dict[str, Any]]:
         title = clean_song(exact_title)
         override_config = song_version_config(title, title_overrides)
         override = song_version_override(title, title_overrides)
@@ -725,9 +732,10 @@ def build_song_catalog(
             base, version_label = override
         else:
             base, version_label = split_song_version(title, identities, raw_titles)
-        work_key = fold_song_key(base)
+        work_identity = base + (f" ({work_context})" if work_context else "")
+        work_key = fold_song_key(work_identity)
         work = works.setdefault(work_key, {
-            "id": stable_song_id(base), "title": base, "aliases": set(), "artists": set(),
+            "id": stable_song_id(work_identity), "title": base, "aliases": set(), "artists": set(),
             "legacy_ids": set(),
             "character_ids": set(), "voice_actor_ids": set(),
             "released_character_ids": set(), "released_voice_actor_ids": set(),
@@ -736,10 +744,11 @@ def build_song_catalog(
         })
         work["legacy_ids"].update(str(value) for value in override_config.get("legacy_song_ids") or [] if value)
         work["aliases"].add(title)
-        version_key = fold_song_key(title)
+        identity_title = title + (f" ({release_variant})" if release_variant else "")
+        version_key = fold_song_key(identity_title)
         version = work["versions"].setdefault(version_key, {
-            "id": str(override_config.get("version_id") or stable_version_id(work["id"], title)), "title": title,
-            "version_label": version_label, "artists": set(), "releases": [], "performances": [],
+            "id": str(override_config.get("version_id") or stable_version_id(work["id"], identity_title)), "title": title,
+            "version_label": release_variant or version_label, "artists": set(), "releases": [], "performances": [],
             "instrumental": False,
         })
         return work, version
@@ -749,9 +758,9 @@ def build_song_catalog(
         for track_number, track in enumerate(album.get("songs") or [], 1):
             if not clean_song(str(track.get("name") or "")):
                 continue
-            work, version = ensure_version(str(track.get("name") or ""))
+            work, version = ensure_version(str(track.get("name") or ""), str(track.get("version_label") or ""), str(track.get("work_context") or ""))
             artist = str(track.get("artist") or "").strip()
-            instrumental = is_instrumental_track(str(track.get("name") or ""), artist)
+            instrumental = bool(track.get("instrumental")) or is_instrumental_track(str(track.get("name") or ""), artist)
             version["instrumental"] = bool(version["instrumental"] or instrumental)
             vocalists = [] if instrumental else release_vocalists(artist, identities)
             if artist:
@@ -769,7 +778,8 @@ def build_song_catalog(
             release = {
                 "album_id": album_id, "album_name": album.get("name") or "", "release_date": album.get("release") or "",
                 "catalog": album.get("catalog") or "", "type": album.get("type") or "", "cover": album.get("cover") or "",
-                "track_number": track_number, "artist": artist, "audio_url": track.get("url") or "", "image": track.get("pic") or "",
+                "track_number": track_number, "disc_number": track.get("disc_number"), "disc_track_number": track.get("disc_track_number"),
+                "artist": artist, "audio_url": track.get("url") or "", "image": track.get("pic") or "",
                 "instrumental": instrumental, "vocalists": vocalists,
             }
             version["releases"].append(release)
@@ -1029,15 +1039,18 @@ class IdentityIndex:
         self.profiles = self._build_profiles()
         self.profile_by_id = {item["id"]: item for item in self.profiles}
         self.current_role_by_voice_id: dict[str, dict[str, Any]] = {}
+        self.current_roles_by_voice_id: dict[str, list[dict[str, Any]]] = {}
         self.current_voice_by_character_id: dict[str, str] = {}
         for profile in self.profiles:
             current_roles = [
                 role for role in profile.get("roles") or []
                 if role.get("character_id") and not role.get("former")
             ]
+            self.current_roles_by_voice_id[profile["id"]] = current_roles
             if len(current_roles) == 1:
                 self.current_role_by_voice_id[profile["id"]] = current_roles[0]
-                self.current_voice_by_character_id[current_roles[0]["character_id"]] = profile["id"]
+            for role in current_roles:
+                self.current_voice_by_character_id[role["character_id"]] = profile["id"]
 
     def _build_profiles(self) -> list[dict[str, Any]]:
         grouped: dict[str, dict[str, Any]] = {}
@@ -1062,6 +1075,7 @@ class IdentityIndex:
                 continue
             record = grouped.setdefault(key, {"zh": zh or ja, "ja": ja or zh, "aliases": set(), "roles": []})
             record["aliases"].update(name for name in aliases if name)
+            record.setdefault("anime_credit_sources", []).extend(row.get("anime_credit_sources") or [])
             for name in aliases:
                 if name:
                     alias_to_group[fold_name(name)] = key
@@ -1168,6 +1182,7 @@ class IdentityIndex:
                     "source_title": photo.get("title") or detail.get("photo_source_title") or "",
                 },
                 "roles": sorted(record["roles"], key=lambda role: (role["former"], role["name"])),
+                **({"anime_credit_sources": record["anime_credit_sources"]} if record.get("anime_credit_sources") else {}),
             })
         profiles.sort(key=lambda item: item["id"])
         for profile in profiles:
@@ -1194,11 +1209,23 @@ class IdentityIndex:
         text = re.sub(r"役$", "", str(value or "")).strip()
         return self.character_by_alias.get(fold_name(text), "")
 
-    def current_character_id(self, voice_actor_id: str) -> str:
+    def current_character_id(self, voice_actor_id: str, role_label: str = "") -> str:
+        roles = [
+            role for role in (self.profile_by_id.get(voice_actor_id) or {}).get("roles") or []
+            if role.get("character_id")
+        ]
+        if role_label:
+            matching = [role for role in roles if fold_name(role_label) in {
+                fold_name(role.get("name") or ""), fold_name(role.get("name_ja") or "")
+            }]
+            if len(matching) == 1:
+                return str(matching[0]["character_id"])
+            requested = self.character_id(role_label)
+            if requested:
+                return requested if any(str(role.get("character_id") or "") == requested for role in roles) else ""
         current = str((self.current_role_by_voice_id.get(voice_actor_id) or {}).get("character_id") or "")
         if current:
             return current
-        roles = [role for role in (self.profile_by_id.get(voice_actor_id) or {}).get("roles") or [] if role.get("character_id")]
         return str(roles[0]["character_id"]) if len(roles) == 1 else ""
 
     def current_voice_id(self, character_id: str) -> str:
@@ -1335,13 +1362,12 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
             continue
         item_evidence = str(item.get("source_kind") or evidence)
         item_source_url = str(item.get("source_url") or source_url)
-        character_id = identities.current_character_id(actor_id)
+        character_id = identities.current_character_id(actor_id, role)
         if not character_id:
             continue
-        # A voice-actor identity has exactly one canonical role in this archive.
-        # Source-side role labels may be missing, translated differently, or
-        # attached to the wrong same-named commentator; never let them create a
-        # second actor-to-character relationship at runtime.
+        # A source-side role label disambiguates actors who voice more than one
+        # franchise character. Ambiguous rows stay unpublished instead of
+        # selecting whichever role happens to sort first.
         profile = identities.profile_by_id.get(actor_id) or {}
         character = identities.character_by_id.get(character_id) or {}
         out.append({
@@ -2011,16 +2037,14 @@ def validate(
     known_actors = set(actor_ids)
     known_characters = set(appearances.get("characters") or {})
     current_voice_by_character: dict[str, list[str]] = defaultdict(list)
-    character_by_voice: dict[str, str] = {}
+    characters_by_voice: dict[str, set[str]] = defaultdict(set)
     for profile in profiles:
         roles = [role for role in profile.get("roles") or [] if role.get("character_id")]
-        if len(roles) != 1:
-            errors.append(f"voice actor {profile.get('id')} has {len(roles)} canonical characters")
+        if not roles and not profile.get("anime_credit_sources"):
+            errors.append(f"voice actor {profile.get('id')} has no canonical character")
         elif profile.get("id"):
-            character_by_voice[str(profile["id"])] = str(roles[0]["character_id"])
+            characters_by_voice[str(profile["id"])].update(str(role["character_id"]) for role in roles)
         current_roles = [role for role in profile.get("roles") or [] if not role.get("former")]
-        if len(current_roles) > 1:
-            errors.append(f"voice actor {profile.get('id')} has multiple current characters")
         for role in current_roles:
             current_voice_by_character[str(role.get("character_id") or "")].append(str(profile.get("id") or ""))
     for character_id in known_characters:
@@ -2108,7 +2132,7 @@ def validate(
                 errors.append(f"event {event['id']} has actor without canonical character {cast['voice_actor_id']}")
             if cast.get("character_id") and cast["character_id"] not in known_characters:
                 errors.append(f"event {event['id']} references unknown character {cast['character_id']}")
-            if cast.get("voice_actor_id") and cast.get("character_id") != character_by_voice.get(str(cast["voice_actor_id"])):
+            if cast.get("voice_actor_id") and cast.get("character_id") not in characters_by_voice.get(str(cast["voice_actor_id"]), set()):
                 errors.append(
                     f"event {event['id']} maps actor {cast['voice_actor_id']} to noncanonical character {cast.get('character_id')}"
                 )
@@ -2172,7 +2196,7 @@ def validate(
             if row.get("song_id") not in known_songs:
                 errors.append(f"character {character_id} references unknown song {row.get('song_id')}")
     identity_owners: dict[str, str] = {}
-    allowed_field_statuses = {"verified", "not_published", "not_applicable"}
+    allowed_field_statuses = {"verified", "not_published", "not_applicable", "source_unavailable"}
     for profile in profiles:
         identity = profile.get("identity") or {}
         for name in (identity.get("zh"), identity.get("ja"), *(identity.get("aliases") or [])):
@@ -2183,10 +2207,7 @@ def validate(
             if owner != profile.get("id"):
                 errors.append(f"voice actor identity {name} belongs to both {owner} and {profile.get('id')}")
         details = profile.get("profile") or {}
-        current_roles = [role for role in profile.get("roles") or [] if role.get("character_id") and not role.get("former")]
-        if len(current_roles) > 1:
-            errors.append(f"voice actor {profile.get('id')} has multiple current characters")
-        if not details.get("sources"):
+        if not details.get("sources") and details.get("status") != "source_unavailable":
             errors.append(f"voice actor {profile.get('id')} has no profile source")
         field_status = details.get("field_status") or {}
         for field in ("birthday", "birthplace", "agency", "official_profile"):
@@ -2882,6 +2903,9 @@ def official_profile_photo(profile_url: str) -> dict[str, str]:
                 break
     if not image_url:
         return {}
+    image_name = Path(urllib.parse.urlparse(image_url).path).name.lower()
+    if re.search(r"(?:^|[-_])(ogp|ogimage|logo|og)(?:[-_.]|$)", image_name):
+        return {}
     return {
         "photo_url": image_url,
         "photo_source_url": profile_url,
@@ -2896,6 +2920,16 @@ def refresh_voice_actor_details() -> dict[str, Any]:
     overrides = read_json(EVENTS_DIR / "overrides.json")
     identity_registry = read_json(VOICE_IDENTITIES_FILE)
     previous_details = read_json(VOICE_DETAILS_FILE).get("records") or [] if VOICE_DETAILS_FILE.exists() else []
+
+    def has_generic_photo(record: dict[str, Any]) -> bool:
+        image_name = Path(urllib.parse.urlparse(str(record.get("photo_url") or "")).path).name.lower()
+        return bool(image_name and re.search(r"(?:^|[-_])(ogp|ogimage|logo|og)(?:[-_.]|$)", image_name))
+
+    accepted_lookups = {
+        fold_name(str(record.get("lookup_name") or record.get("name_ja") or record.get("name_zh") or ""))
+        for record in previous_details
+        if record.get("status") != "source_unavailable" and not has_generic_photo(record)
+    }
     previous_by_lookup = {
         fold_name(str(record.get("lookup_name") or "")): record
         for record in previous_details
@@ -2913,15 +2947,31 @@ def refresh_voice_actor_details() -> dict[str, Any]:
     def fetch(profile: dict[str, Any]) -> dict[str, Any]:
         identity = profile["identity"]
         aliases = [*identity.get("aliases", []), *reverse_aliases.get(fold_name(identity.get("ja") or ""), [])]
-        record = voice_detail_from_wikipedia(identity.get("zh") or "", identity.get("ja") or "", aliases)
-        if not record.get("sources"):
-            previous = previous_by_lookup.get(fold_name(identity.get("ja") or ""))
-            if previous:
-                record = dict(previous)
         patch = next(
             (profile_overrides.get(fold_name(name)) for name in (identity.get("ja"), identity.get("zh"), *aliases) if profile_overrides.get(fold_name(name))),
             None,
         )
+        if patch:
+            record = {
+                "lookup_name": identity.get("ja") or "",
+                "name_zh": identity.get("zh") or "",
+                "name_ja": identity.get("ja") or "",
+                "aliases": list(dict.fromkeys(alias for alias in aliases if alias and alias not in (identity.get("zh"), identity.get("ja")))),
+                "kana": "",
+                "birthday": "",
+                "birthplace": "",
+                "agency": "",
+                "official_profile": "",
+                "field_status": {field: "source_unavailable" for field in ("birthday", "birthplace", "agency", "official_profile")},
+                "status": "source_unavailable",
+                "sources": [],
+            }
+        else:
+            record = voice_detail_from_wikipedia(identity.get("zh") or "", identity.get("ja") or "", aliases)
+            if not record.get("sources"):
+                previous = previous_by_lookup.get(fold_name(identity.get("ja") or ""))
+                if previous:
+                    record = dict(previous)
         if patch:
             record.update({key: value for key, value in patch.items() if key != "sources"})
             record["sources"] = list({
@@ -2946,8 +2996,12 @@ def refresh_voice_actor_details() -> dict[str, Any]:
         return record
 
     records = []
+    profiles_to_fetch = [
+        profile for profile in identities.profiles
+        if fold_name(str((profile.get("identity") or {}).get("ja") or "")) not in accepted_lookups
+    ]
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-        for record in executor.map(fetch, identities.profiles):
+        for record in executor.map(fetch, profiles_to_fetch):
             records.append(record)
     records.sort(key=lambda row: fold_name(row.get("name_ja") or row.get("name_zh") or ""))
     return {
@@ -2966,6 +3020,59 @@ def refresh_voice_actor_details() -> dict[str, Any]:
                 field: sum((row.get("field_status") or {}).get(field) in ("verified", "not_published", "not_applicable", "source_unavailable") for row in records)
                 for field in ("birthday", "birthplace", "agency", "official_profile")
             },
+        },
+        "records": records,
+    }
+
+
+def apply_additive_voice_detail_refresh(existing: dict[str, Any], discovered: dict[str, Any]) -> dict[str, Any]:
+    """Add profiles and replace only explicit source-unavailable placeholders."""
+    existing_records = list(existing.get("records") or [])
+    by_lookup = {
+        fold_name(str(record.get("lookup_name") or record.get("name_ja") or record.get("name_zh") or "")): record
+        for record in existing_records
+    }
+    added = 0
+    upgraded = 0
+    repaired_photos = 0
+
+    def has_generic_photo(record: dict[str, Any]) -> bool:
+        image_name = Path(urllib.parse.urlparse(str(record.get("photo_url") or "")).path).name.lower()
+        return bool(image_name and re.search(r"(?:^|[-_])(ogp|ogimage|logo|og)(?:[-_.]|$)", image_name))
+
+    for record in discovered.get("records") or []:
+        lookup = fold_name(str(record.get("lookup_name") or record.get("name_ja") or record.get("name_zh") or ""))
+        previous = by_lookup.get(lookup)
+        if previous is None:
+            by_lookup[lookup] = record
+            added += 1
+        elif previous.get("status") == "source_unavailable" and record.get("status") != "source_unavailable":
+            by_lookup[lookup] = record
+            upgraded += 1
+        elif has_generic_photo(previous) and not has_generic_photo(record):
+            by_lookup[lookup] = record
+            repaired_photos += 1
+    records = sorted(by_lookup.values(), key=lambda row: fold_name(row.get("name_ja") or row.get("name_zh") or ""))
+    return {
+        "schema_version": max(int(existing.get("schema_version") or 1), int(discovered.get("schema_version") or 1)),
+        "source": existing.get("source") or discovered.get("source") or "",
+        "refreshed_at": discovered.get("refreshed_at") or existing.get("refreshed_at") or "",
+        "refresh_policy": "add new records; upgrade source-unavailable placeholders; preserve every accepted sourced record",
+        "coverage": {
+            "records": len(records),
+            "source_pages": sum(bool(row.get("sources")) for row in records),
+            "complete_fields": {
+                field: sum(bool(row.get(field)) for row in records)
+                for field in ("birthday", "birthplace", "agency", "official_profile")
+            },
+            "official_profile_photos": sum(bool(row.get("photo_url")) for row in records),
+            "accounted_fields": {
+                field: sum((row.get("field_status") or {}).get(field) in ("verified", "not_published", "not_applicable", "source_unavailable") for row in records)
+                for field in ("birthday", "birthplace", "agency", "official_profile")
+            },
+            "added_in_refresh": added,
+            "upgraded_in_refresh": upgraded,
+            "repaired_profile_photos": repaired_photos,
         },
         "records": records,
     }
@@ -3684,7 +3791,9 @@ def main(argv: list[str] | None = None) -> int:
         discovered_programs = refresh_programs()
         refreshed_programs, program_report = apply_additive_program_refresh(existing_programs, discovered_programs)
     if args.refresh_profiles or args.refresh_all:
-        refreshed_details = refresh_voice_actor_details()
+        discovered_details = refresh_voice_actor_details()
+        existing_details = read_json(VOICE_DETAILS_FILE) if VOICE_DETAILS_FILE.exists() else {"records": []}
+        refreshed_details = apply_additive_voice_detail_refresh(existing_details, discovered_details)
     built = build_music_only() if args.music_only else build(refreshed_programs, refreshed_details)
     if args.check:
         mismatches = []

@@ -361,13 +361,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -405,6 +407,8 @@
             "album-lzc-1956",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -415,9 +419,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 14
+          "releases": 16
         },
         {
           "song_id": "song-8afe5eda32",
@@ -2556,14 +2561,16 @@
           "name": "ENDLESS DREAM!!",
           "album_ids": [
             "album-lzc-1967",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-2b499782e2",
+            "song-endless-dream-eabbcc4d12-v-fa16f85e80",
             "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
             "song-endless-dream-eabbcc4d12-v-b805c956a8"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-everlasting-beats-3a805703a6",
@@ -2598,13 +2605,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -2638,13 +2647,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -2688,13 +2699,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -2747,6 +2760,7 @@
             "album-lzc-1955",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -2762,7 +2776,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 23
+          "releases": 24
         },
         {
           "song_id": "song-79f332ebdb",
@@ -2832,13 +2846,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -4162,14 +4178,16 @@
             "album-laca-25069",
             "album-laca-19014",
             "album-laca-25080",
-            "album-laca-25119"
+            "album-laca-25119",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-61ea3bc114",
@@ -5044,7 +5062,8 @@
             "album-laca-19014",
             "album-laca-25235",
             "album-lzc-1964",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
@@ -5052,9 +5071,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 11
+          "releases": 12
         },
         {
           "song_id": "song-29e836f0da",
@@ -7066,13 +7086,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -7145,13 +7167,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -7207,13 +7231,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -7287,6 +7313,8 @@
             "album-lzc-1957",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -7297,10 +7325,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 34
+          "releases": 36
         },
         {
           "song_id": "song-79f332ebdb",
@@ -7356,13 +7385,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-it-s-f1b1c06b6b",
@@ -10460,15 +10491,18 @@
             "album-lacm-24249",
             "album-laca-25001",
             "album-laca-25109",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 12
+          "releases": 14
         },
         {
           "song_id": "song-79f332ebdb",
@@ -12106,6 +12140,7 @@
             "album-laca-25055",
             "album-laca-25235",
             "album-laca-9973",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -12113,9 +12148,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-7427a5b772",
@@ -15191,6 +15227,7 @@
             "album-laca-25235",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -15200,9 +15237,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 16
+          "releases": 17
         },
         {
           "song_id": "song-79f332ebdb",
@@ -17660,6 +17698,7 @@
             "album-laca-25177",
             "album-lzc-1961",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -17669,9 +17708,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 12
+          "releases": 13
         },
         {
           "song_id": "song-slowly-6ed058ab53",
@@ -18876,6 +18916,8 @@
             "album-laca-25276",
             "album-lzc-1966",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -18885,10 +18927,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 21
+          "releases": 23
         },
         {
           "song_id": "song-621055f139",
@@ -20156,13 +20199,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-uma-in-america-b359c2cb83",
@@ -20210,6 +20255,8 @@
             "album-lzc-1958",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -20220,9 +20267,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 17
+          "releases": 19
         },
         {
           "song_id": "song-7427a5b772",
@@ -22060,15 +22108,18 @@
             "album-laca-25098",
             "album-laca-25276",
             "album-laca-9973",
-            "album-laca-9983"
+            "album-laca-9983",
+            "album-laca-9637",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 8
+          "releases": 10
         },
         {
           "song_id": "song-621055f139",
@@ -23842,14 +23893,16 @@
           "album_ids": [
             "album-lacm-14779",
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-46f68c23ae",
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -23884,16 +23937,18 @@
           "album_ids": [
             "album-lacm-14741",
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971",
             "album-laca-25048"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e",
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7",
             "song-make-debut-2c6c00a71e-v-5c84704b7c"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -24160,14 +24215,16 @@
           "album_ids": [
             "album-lacm-14742",
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-15e2b8f183",
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-a6384dba1c",
@@ -24244,6 +24301,18 @@
             "song-beyond-the-future-aaed329475-v-07e239cf1f"
           ],
           "releases": 4
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         },
         {
           "song_id": "song-2d2a6742e3",
@@ -26486,6 +26555,8 @@
             "album-laca-25163",
             "album-lzc-1963",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -26495,9 +26566,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 17
+          "releases": 19
         },
         {
           "song_id": "song-s-55b78ed439",
@@ -27985,9 +28057,10 @@
           "version_ids": [
             "song-a6384dba1c-v-a6384dba1c",
             "song-a6384dba1c-v-ca18756125",
-            "song-a6384dba1c-v-6d52bbecd2"
+            "song-a6384dba1c-v-6d52bbecd2",
+            "song-a6384dba1c-v-41ab41ca81"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-29e836f0da",
@@ -30272,6 +30345,7 @@
             "album-laca-25269",
             "album-lzc-1958",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -30281,9 +30355,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-be4063b951",
@@ -31126,13 +31201,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -31192,13 +31269,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -31230,13 +31309,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -31264,6 +31345,7 @@
             "album-lzc-1957",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -31279,7 +31361,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-79f332ebdb",
@@ -31338,13 +31420,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -32333,6 +32417,7 @@
             "album-laca-25163",
             "album-laca-25269",
             "album-lzc-1964",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -32340,9 +32425,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 16
+          "releases": 17
         },
         {
           "song_id": "song-864b1bb2e9",
@@ -32951,13 +33037,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -32978,13 +33066,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -33044,13 +33134,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-waiting-for-tomorrow-5144cde439",
@@ -33099,6 +33191,8 @@
             "album-lzc-1959",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -33109,10 +33203,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 24
+          "releases": 26
         },
         {
           "song_id": "song-79f332ebdb",
@@ -33157,13 +33252,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -35143,6 +35240,18 @@
             "song-phantasia-81aafc5f7e-v-d3871ef58d"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -39103,14 +39212,16 @@
             "album-laca-25034",
             "album-laca-25069",
             "album-laca-19014",
-            "album-laca-25119"
+            "album-laca-25119",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-29e836f0da",
@@ -40309,13 +40420,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-uma-in-america-b359c2cb83",
@@ -40347,6 +40460,7 @@
             "album-laca-25100",
             "album-laca-25269",
             "album-lzc-1958",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -40354,9 +40468,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 7
+          "releases": 8
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -41813,13 +41928,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-voltage-cb8dbfb97b",
@@ -41861,6 +41978,7 @@
             "album-lzc-1959",
             "album-laca-9973",
             "album-laca-9983",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -41869,9 +41987,10 @@
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-7427a5b772",
@@ -43336,7 +43455,9 @@
             "album-laca-25235",
             "album-lzc-1961",
             "album-laca-9973",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
@@ -43345,9 +43466,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 18
+          "releases": 20
         },
         {
           "song_id": "song-79f332ebdb",
@@ -46374,16 +46496,18 @@
             "album-laca-25055",
             "album-laca-25156",
             "album-laca-9973",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
-            "song-228f943b49-v-df88301c97"
+            "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 20
+          "releases": 21
         },
         {
           "song_id": "song-2752ee7923",
@@ -48418,6 +48542,18 @@
           "releases": 1
         },
         {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
+        },
+        {
           "song_id": "song-pom-pon-1fe868e5e6",
           "name": "限界までPom Pon！！",
           "album_ids": [
@@ -49878,13 +50014,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -49911,6 +50049,7 @@
             "album-lzc-1957",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -49926,7 +50065,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 20
+          "releases": 21
         },
         {
           "song_id": "song-79f332ebdb",
@@ -51581,13 +51720,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -51622,15 +51763,17 @@
           "album_ids": [
             "album-laca-25098",
             "album-lzc-1956",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-8afe5eda32",
@@ -52617,13 +52760,15 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25100"
+            "album-laca-25100",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
-            "song-228f943b49-v-7006bca4f7"
+            "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -53074,7 +53219,20 @@
     },
     "va-0099": {
       "events": [],
-      "songs": [],
+      "songs": [
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
+        }
+      ],
       "performed_songs": []
     },
     "va-0100": {
@@ -55538,6 +55696,18 @@
             "song-228f943b49-v-7006bca4f7"
           ],
           "releases": 2
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": []
@@ -56453,6 +56623,8 @@
             "album-lzc-1965",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -56463,9 +56635,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 18
+          "releases": 20
         },
         {
           "song_id": "song-7427a5b772",
@@ -56535,6 +56708,18 @@
             "song-beyond-the-future-aaed329475-v-07e239cf1f"
           ],
           "releases": 4
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -57178,15 +57363,17 @@
             "album-laca-15879",
             "album-laca-25135",
             "album-lzc-1965",
-            "album-laca-9973"
+            "album-laca-9973",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-115f12d608",
-            "song-228f943b49-v-7006bca4f7"
+            "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 7
+          "releases": 8
         },
         {
           "song_id": "song-7427a5b772",
@@ -58444,14 +58631,16 @@
             "album-laca-15756",
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -58502,6 +58691,8 @@
             "album-lzc-1960",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -58512,10 +58703,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 24
+          "releases": 26
         },
         {
           "song_id": "song-79f332ebdb",
@@ -59217,14 +59409,16 @@
             "album-laca-15938",
             "album-laca-25055",
             "album-laca-19014",
-            "album-laca-25086"
+            "album-laca-25086",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-a6384dba1c",
@@ -59749,6 +59943,18 @@
             "song-a6384dba1c-v-5b44e6dbcf"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -60314,13 +60520,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-228f943b49",
@@ -60328,15 +60536,17 @@
           "album_ids": [
             "album-laca-15626",
             "album-lzc-1960",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-5c948cafdd",
@@ -62523,14 +62733,16 @@
             "album-laca-25080",
             "album-laca-25083",
             "album-laca-25109",
-            "album-laca-25151"
+            "album-laca-25151",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-79f332ebdb",
@@ -64246,7 +64458,8 @@
             "album-laca-25100",
             "album-laca-25151",
             "album-laca-9983",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
@@ -64254,9 +64467,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-18aa53485d",
@@ -68418,14 +68632,16 @@
             "album-laca-19014",
             "album-laca-25080",
             "album-laca-25083",
-            "album-laca-25109"
+            "album-laca-25109",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 19
+          "releases": 20
         },
         {
           "song_id": "song-79f332ebdb",
@@ -68460,10 +68676,9 @@
           "version_ids": [
             "song-a6384dba1c-v-a6384dba1c",
             "song-a6384dba1c-v-5d252afc7a",
-            "song-a6384dba1c-v-6d52bbecd2",
-            "song-a6384dba1c-v-41ab41ca81"
+            "song-a6384dba1c-v-6d52bbecd2"
           ],
-          "releases": 4
+          "releases": 3
         },
         {
           "song_id": "song-29e836f0da",
@@ -71098,14 +71313,16 @@
             "album-lacm-24249",
             "album-lacm-24348",
             "album-laca-25055",
-            "album-laca-19014"
+            "album-laca-19014",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-a6384dba1c",
@@ -75295,15 +75512,17 @@
             "album-laca-15938",
             "album-laca-25069",
             "album-laca-25100",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-44ace72bfc",
@@ -75994,13 +76213,15 @@
             "album-laca-25083",
             "album-laca-25151",
             "album-laca-25177",
-            "album-laca-25294"
+            "album-laca-25294",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
-            "song-228f943b49-v-7006bca4f7"
+            "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-29e836f0da",
@@ -77140,13 +77361,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -77169,6 +77392,8 @@
             "album-laca-25177",
             "album-laca-25294",
             "album-lzc-1965",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -77176,9 +77401,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 13
+          "releases": 15
         },
         {
           "song_id": "song-4bfe85c283",
@@ -78411,14 +78637,16 @@
             "album-lacm-24249",
             "album-laca-25055",
             "album-laca-19014",
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-e05b91c506",
@@ -79517,6 +79745,18 @@
             "song-29e836f0da-v-1d3ad2a369"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -82697,14 +82937,16 @@
             "album-laca-25099",
             "album-laca-25100",
             "album-laca-25151",
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-548d6d3907",
@@ -84059,13 +84301,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -84101,6 +84345,8 @@
             "album-lzc-1960",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -84111,10 +84357,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 16
+          "releases": 18
         },
         {
           "song_id": "song-79f332ebdb",
@@ -85374,6 +85621,7 @@
             "album-laca-9973",
             "album-laca-9983",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -85384,9 +85632,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 15
+          "releases": 16
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -87527,13 +87776,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -87644,6 +87895,7 @@
             "album-laca-9973",
             "album-laca-9983",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -87654,9 +87906,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 25
+          "releases": 26
         },
         {
           "song_id": "song-79f332ebdb",
@@ -89190,14 +89443,16 @@
             "album-laca-15757",
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-uma-in-america-b359c2cb83",
@@ -89245,6 +89500,8 @@
             "album-lzc-1959",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -89255,9 +89512,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 17
+          "releases": 19
         },
         {
           "song_id": "song-79f332ebdb",
@@ -91167,16 +91425,18 @@
           "name": "ENDLESS DREAM!!",
           "album_ids": [
             "album-lzc-1967",
+            "album-laca-9637",
             "album-lzc-1971",
             "album-lacm-14688"
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-2b499782e2",
+            "song-endless-dream-eabbcc4d12-v-fa16f85e80",
             "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
             "song-endless-dream-eabbcc4d12-v-89df536c58",
             "song-endless-dream-eabbcc4d12-v-2899af7e2c"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-fanfare-for-future-7b77e575ce",
@@ -91197,13 +91457,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -91237,13 +91499,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -91317,13 +91581,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -91370,6 +91636,7 @@
             "album-lzc-1955",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -91385,7 +91652,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 23
+          "releases": 24
         },
         {
           "song_id": "song-79f332ebdb",
@@ -91418,13 +91685,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -92146,6 +92415,8 @@
             "album-laca-25156",
             "album-lzc-1962",
             "album-laca-9973",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -92154,9 +92425,10 @@
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 10
+          "releases": 12
         },
         {
           "song_id": "song-79f332ebdb",
@@ -92438,6 +92710,227 @@
           ]
         }
       ],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-00c2247ac66e": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-03ee50ed3b6b": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-10dd0a2a1bbb": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-1555471f8cc3": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-1ac0301bdf7a": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-1b3a55a3e220": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-29a6c69a6b12": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-31471c207961": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-356d6ec0945d": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-38cfe745829f": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-3be3a848962e": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-43122d95b7c6": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-4ad570514d62": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-5c2b071708e5": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-67850db55746": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-6c0f2bfe17ce": {
+      "events": [],
+      "songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "album_ids": [
+            "album-laca-15756",
+            "album-lzc-1974"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-b373901aa7"
+          ],
+          "releases": 2
+        }
+      ],
+      "performed_songs": []
+    },
+    "va-auto-805291d37cf7": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-873fe7412650": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-900dcdc66979": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-90456990babd": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-98f48eb876f9": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-9bdb3b50fc49": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-9f83e0788e00": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-a0e01fb2cb54": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-a911ce2a3ef9": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-afa298a8ba3a": {
+      "events": [],
+      "songs": [
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "album_ids": [
+            "album-laca-19146"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-c739868dd5"
+          ],
+          "releases": 1
+        }
+      ],
+      "performed_songs": []
+    },
+    "va-auto-b14eb86e37e0": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-b4ae4ea59e05": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-b7f0989af659": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-ba6a8799ef2c": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-c45399b5b48f": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-cc13155a7121": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-e21b1a56a55a": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-e81cc9ac9cf4": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-ea28ad32bf70": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-f669e91b2058": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-f6aa98817cf1": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-f7864faeef50": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "va-auto-f9b86c68630c": {
+      "events": [],
       "songs": [],
       "performed_songs": []
     }
@@ -93440,14 +93933,16 @@
           "album_ids": [
             "album-lacm-14779",
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-46f68c23ae",
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -93482,16 +93977,18 @@
           "album_ids": [
             "album-lacm-14741",
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971",
             "album-laca-25048"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e",
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7",
             "song-make-debut-2c6c00a71e-v-5c84704b7c"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -93758,14 +94255,16 @@
           "album_ids": [
             "album-lacm-14742",
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-15e2b8f183",
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-a6384dba1c",
@@ -93842,6 +94341,18 @@
             "song-beyond-the-future-aaed329475-v-07e239cf1f"
           ],
           "releases": 4
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         },
         {
           "song_id": "song-2d2a6742e3",
@@ -95024,16 +95535,18 @@
           "name": "ENDLESS DREAM!!",
           "album_ids": [
             "album-lzc-1967",
+            "album-laca-9637",
             "album-lzc-1971",
             "album-lacm-14688"
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-2b499782e2",
+            "song-endless-dream-eabbcc4d12-v-fa16f85e80",
             "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
             "song-endless-dream-eabbcc4d12-v-89df536c58",
             "song-endless-dream-eabbcc4d12-v-2899af7e2c"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-fanfare-for-future-7b77e575ce",
@@ -95054,13 +95567,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -95094,13 +95609,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -95174,13 +95691,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -95227,6 +95746,7 @@
             "album-lzc-1955",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -95242,7 +95762,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 23
+          "releases": 24
         },
         {
           "song_id": "song-79f332ebdb",
@@ -95275,13 +95795,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -96845,14 +97367,16 @@
           "name": "ENDLESS DREAM!!",
           "album_ids": [
             "album-lzc-1967",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-2b499782e2",
+            "song-endless-dream-eabbcc4d12-v-fa16f85e80",
             "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
             "song-endless-dream-eabbcc4d12-v-b805c956a8"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-everlasting-beats-3a805703a6",
@@ -96887,13 +97411,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -96927,13 +97453,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -96977,13 +97505,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -97036,6 +97566,7 @@
             "album-lzc-1955",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -97051,7 +97582,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 23
+          "releases": 24
         },
         {
           "song_id": "song-79f332ebdb",
@@ -97121,13 +97652,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -98392,13 +98925,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -98436,6 +98971,8 @@
             "album-lzc-1956",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -98446,9 +98983,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 14
+          "releases": 16
         },
         {
           "song_id": "song-8afe5eda32",
@@ -99029,13 +99567,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -99070,15 +99610,17 @@
           "album_ids": [
             "album-laca-25098",
             "album-lzc-1956",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-8afe5eda32",
@@ -100251,13 +100793,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -100368,6 +100912,7 @@
             "album-laca-9973",
             "album-laca-9983",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -100378,9 +100923,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 25
+          "releases": 26
         },
         {
           "song_id": "song-79f332ebdb",
@@ -102239,13 +102785,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -102318,13 +102866,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -102380,13 +102930,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -102460,6 +103012,8 @@
             "album-lzc-1957",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -102470,10 +103024,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 34
+          "releases": 36
         },
         {
           "song_id": "song-79f332ebdb",
@@ -102529,13 +103084,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-it-s-f1b1c06b6b",
@@ -103664,13 +104221,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -103730,13 +104289,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -103768,13 +104329,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -103802,6 +104365,7 @@
             "album-lzc-1957",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -103817,7 +104381,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-79f332ebdb",
@@ -103876,13 +104440,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -105067,13 +105633,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -105100,6 +105668,7 @@
             "album-lzc-1957",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
@@ -105115,7 +105684,7 @@
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 20
+          "releases": 21
         },
         {
           "song_id": "song-79f332ebdb",
@@ -106050,6 +106619,7 @@
             "album-laca-25269",
             "album-lzc-1958",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -106059,9 +106629,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-be4063b951",
@@ -106889,13 +107460,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-uma-in-america-b359c2cb83",
@@ -106943,6 +107516,8 @@
             "album-lzc-1958",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -106953,9 +107528,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 17
+          "releases": 19
         },
         {
           "song_id": "song-7427a5b772",
@@ -107638,13 +108214,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-uma-in-america-b359c2cb83",
@@ -107676,6 +108254,7 @@
             "album-laca-25100",
             "album-laca-25269",
             "album-lzc-1958",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -107683,9 +108262,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 7
+          "releases": 8
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -108036,13 +108616,15 @@
           "name": "Find My Only Way",
           "album_ids": [
             "album-lzc-1970",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-b2ee9cff23",
+            "song-find-my-only-way-46f68c23ae-v-526b1f9727",
             "song-find-my-only-way-46f68c23ae-v-bb53995001"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -108063,13 +108645,15 @@
           "name": "Make debut!",
           "album_ids": [
             "album-lzc-1968",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-675a72a163",
+            "song-make-debut-2c6c00a71e-v-aa0647857b",
             "song-make-debut-2c6c00a71e-v-cd15de31a7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -108129,13 +108713,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1973",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-waiting-for-tomorrow-5144cde439",
@@ -108184,6 +108770,8 @@
             "album-lzc-1959",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -108194,10 +108782,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 24
+          "releases": 26
         },
         {
           "song_id": "song-79f332ebdb",
@@ -108242,13 +108831,15 @@
           "name": "グロウアップ・シャイン！",
           "album_ids": [
             "album-lzc-1969",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-15e2b8f183-v-8d5a9d98da",
+            "song-15e2b8f183-v-876d9eafa4",
             "song-15e2b8f183-v-4014467ec7"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-a6384dba1c",
@@ -109057,14 +109648,16 @@
             "album-laca-15757",
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-uma-in-america-b359c2cb83",
@@ -109112,6 +109705,8 @@
             "album-lzc-1959",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -109122,9 +109717,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 17
+          "releases": 19
         },
         {
           "song_id": "song-79f332ebdb",
@@ -110342,13 +110938,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1975",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-voltage-cb8dbfb97b",
@@ -110390,6 +110988,7 @@
             "album-lzc-1959",
             "album-laca-9973",
             "album-laca-9983",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -110398,9 +110997,10 @@
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-7427a5b772",
@@ -111471,13 +112071,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -111541,6 +112143,8 @@
             "album-laca-25177",
             "album-laca-25294",
             "album-lzc-1960",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -111548,9 +112152,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 26
+          "releases": 28
         },
         {
           "song_id": "song-5c948cafdd",
@@ -112487,14 +113092,16 @@
             "album-laca-15756",
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 4
+          "releases": 5
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -112545,6 +113152,8 @@
             "album-lzc-1960",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -112555,10 +113164,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 24
+          "releases": 26
         },
         {
           "song_id": "song-79f332ebdb",
@@ -113137,13 +113747,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -113179,6 +113791,8 @@
             "album-lzc-1960",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -113189,10 +113803,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 16
+          "releases": 18
         },
         {
           "song_id": "song-79f332ebdb",
@@ -114104,6 +114719,8 @@
             "album-laca-25156",
             "album-lzc-1962",
             "album-laca-9973",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -114112,9 +114729,10 @@
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 10
+          "releases": 12
         },
         {
           "song_id": "song-79f332ebdb",
@@ -114677,6 +115295,7 @@
             "album-laca-25163",
             "album-laca-25269",
             "album-lzc-1964",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -114684,9 +115303,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 16
+          "releases": 17
         },
         {
           "song_id": "song-864b1bb2e9",
@@ -115911,13 +116531,15 @@
           "album_ids": [
             "album-lzc-1970",
             "album-lzc-1974",
+            "album-laca-9637",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-fefb8d2174",
+            "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-7850562b7e"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -115940,6 +116562,8 @@
             "album-laca-25177",
             "album-laca-25294",
             "album-lzc-1965",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -115947,9 +116571,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 13
+          "releases": 15
         },
         {
           "song_id": "song-4bfe85c283",
@@ -116733,16 +117358,18 @@
             "album-laca-25055",
             "album-laca-25156",
             "album-laca-9973",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
-            "song-228f943b49-v-df88301c97"
+            "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 20
+          "releases": 21
         },
         {
           "song_id": "song-2752ee7923",
@@ -118050,14 +118677,16 @@
             "album-laca-25099",
             "album-laca-25100",
             "album-laca-25151",
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-548d6d3907",
@@ -118677,6 +119306,8 @@
             "album-laca-25163",
             "album-lzc-1963",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -118686,9 +119317,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 17
+          "releases": 19
         },
         {
           "song_id": "song-s-55b78ed439",
@@ -119155,13 +119787,15 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25100"
+            "album-laca-25100",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
-            "song-228f943b49-v-7006bca4f7"
+            "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 2
+          "releases": 3
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -119708,7 +120342,8 @@
             "album-laca-25100",
             "album-laca-25151",
             "album-laca-9983",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
@@ -119716,9 +120351,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-18aa53485d",
@@ -121858,6 +122494,7 @@
             "album-laca-25055",
             "album-laca-25235",
             "album-laca-9973",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -121865,9 +122502,10 @@
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-7427a5b772",
@@ -122482,6 +123120,8 @@
             "album-lzc-1965",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -122492,9 +123132,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 18
+          "releases": 20
         },
         {
           "song_id": "song-7427a5b772",
@@ -122564,6 +123205,18 @@
             "song-beyond-the-future-aaed329475-v-07e239cf1f"
           ],
           "releases": 4
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -123555,15 +124208,17 @@
             "album-laca-15938",
             "album-laca-25069",
             "album-laca-25100",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-44ace72bfc",
@@ -125064,7 +125719,8 @@
             "album-laca-19014",
             "album-laca-25235",
             "album-lzc-1964",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
@@ -125072,9 +125728,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 11
+          "releases": 12
         },
         {
           "song_id": "song-29e836f0da",
@@ -126283,6 +126940,7 @@
             "album-laca-25177",
             "album-lzc-1961",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -126292,9 +126950,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 12
+          "releases": 13
         },
         {
           "song_id": "song-slowly-6ed058ab53",
@@ -129164,15 +129823,17 @@
             "album-laca-15879",
             "album-laca-25135",
             "album-lzc-1965",
-            "album-laca-9973"
+            "album-laca-9973",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-b373901aa7",
             "song-228f943b49-v-115f12d608",
-            "song-228f943b49-v-7006bca4f7"
+            "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6"
           ],
-          "releases": 7
+          "releases": 8
         },
         {
           "song_id": "song-7427a5b772",
@@ -130161,6 +130822,7 @@
             "album-laca-9973",
             "album-laca-9983",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -130171,9 +130833,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 15
+          "releases": 16
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -131497,7 +132160,9 @@
             "album-laca-25235",
             "album-lzc-1961",
             "album-laca-9973",
-            "album-laca-25048"
+            "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
@@ -131506,9 +132171,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 18
+          "releases": 20
         },
         {
           "song_id": "song-79f332ebdb",
@@ -132933,15 +133599,18 @@
             "album-laca-25098",
             "album-laca-25276",
             "album-laca-9973",
-            "album-laca-9983"
+            "album-laca-9983",
+            "album-laca-9637",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 8
+          "releases": 10
         },
         {
           "song_id": "song-621055f139",
@@ -133537,15 +134206,18 @@
             "album-lacm-24249",
             "album-laca-25001",
             "album-laca-25109",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 12
+          "releases": 14
         },
         {
           "song_id": "song-79f332ebdb",
@@ -134434,6 +135106,8 @@
             "album-laca-25276",
             "album-lzc-1966",
             "album-laca-25048",
+            "album-laca-9637",
+            "album-laca-9814",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -134443,10 +135117,11 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 21
+          "releases": 23
         },
         {
           "song_id": "song-621055f139",
@@ -135552,6 +136227,7 @@
             "album-laca-25235",
             "album-laca-9973",
             "album-laca-25048",
+            "album-laca-9637",
             "album-lzc-1970",
             "album-lzc-1971"
           ],
@@ -135561,9 +136237,10 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-291bb1c8c0",
             "song-228f943b49-v-df88301c97",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-29206e2b41"
           ],
-          "releases": 16
+          "releases": 17
         },
         {
           "song_id": "song-79f332ebdb",
@@ -136555,14 +137232,16 @@
             "album-lacm-24249",
             "album-laca-25055",
             "album-laca-19014",
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-e05b91c506",
@@ -137473,14 +138152,16 @@
             "album-laca-15938",
             "album-laca-25055",
             "album-laca-19014",
-            "album-laca-25086"
+            "album-laca-25086",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-a6384dba1c",
@@ -138186,14 +138867,16 @@
             "album-laca-25069",
             "album-laca-19014",
             "album-laca-25080",
-            "album-laca-25119"
+            "album-laca-25119",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-61ea3bc114",
@@ -138892,14 +139575,16 @@
             "album-laca-25034",
             "album-laca-25069",
             "album-laca-19014",
-            "album-laca-25119"
+            "album-laca-25119",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-29e836f0da",
@@ -139710,14 +140395,16 @@
             "album-lacm-24249",
             "album-lacm-24348",
             "album-laca-25055",
-            "album-laca-19014"
+            "album-laca-19014",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-a6384dba1c",
@@ -140543,14 +141230,16 @@
             "album-laca-19014",
             "album-laca-25080",
             "album-laca-25083",
-            "album-laca-25109"
+            "album-laca-25109",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 19
+          "releases": 20
         },
         {
           "song_id": "song-79f332ebdb",
@@ -140585,10 +141274,9 @@
           "version_ids": [
             "song-a6384dba1c-v-a6384dba1c",
             "song-a6384dba1c-v-5d252afc7a",
-            "song-a6384dba1c-v-6d52bbecd2",
-            "song-a6384dba1c-v-41ab41ca81"
+            "song-a6384dba1c-v-6d52bbecd2"
           ],
-          "releases": 4
+          "releases": 3
         },
         {
           "song_id": "song-29e836f0da",
@@ -141723,14 +142411,16 @@
             "album-laca-25080",
             "album-laca-25083",
             "album-laca-25109",
-            "album-laca-25151"
+            "album-laca-25151",
+            "album-laca-9814"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7",
+            "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-0fe15a8ebf"
           ],
-          "releases": 22
+          "releases": 23
         },
         {
           "song_id": "song-79f332ebdb",
@@ -142810,6 +143500,18 @@
             "song-29e836f0da-v-1d3ad2a369"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -152301,9 +153003,10 @@
           "version_ids": [
             "song-a6384dba1c-v-a6384dba1c",
             "song-a6384dba1c-v-ca18756125",
-            "song-a6384dba1c-v-6d52bbecd2"
+            "song-a6384dba1c-v-6d52bbecd2",
+            "song-a6384dba1c-v-41ab41ca81"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-29e836f0da",
@@ -153036,6 +153739,18 @@
             "song-phantasia-81aafc5f7e-v-d3871ef58d"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -158726,7 +159441,20 @@
     },
     "samsonbig": {
       "events": [],
-      "songs": [],
+      "songs": [
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
+        }
+      ],
       "performed_songs": []
     },
     "soundsofearth": {
@@ -159090,6 +159818,18 @@
             "song-a6384dba1c-v-5b44e6dbcf"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": [
@@ -165087,6 +165827,18 @@
             "song-c56140a402-v-c56140a402"
           ],
           "releases": 1
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         },
         {
           "song_id": "song-pom-pon-1fe868e5e6",
@@ -172741,6 +173493,18 @@
             "song-228f943b49-v-7006bca4f7"
           ],
           "releases": 2
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "name": "芝生えるわ～",
+          "album_ids": [
+            "album-lzc-3651"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-aed14a1a3a",
+            "song-aed14a1a3a-v-2954ef1177"
+          ],
+          "releases": 2
         }
       ],
       "performed_songs": []
@@ -174014,6 +174778,220 @@
       "songs": [],
       "performed_songs": []
     },
+    "bochuzoku": {
+      "events": [
+        {
+          "event_id": "live-numbered-5th-event-2023-09-16",
+          "date": "2023-09-16",
+          "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+          "kind": "concert",
+          "series_id": "numbered-live"
+        }
+      ],
+      "songs": [],
+      "performed_songs": []
+    },
+    "zankan_koukou": {
+      "events": [
+        {
+          "event_id": "sokosoko-paka-live-tv-046",
+          "date": "2025-07-03",
+          "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-046-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-054",
+          "date": "2025-06-25",
+          "title": "ぱかライブTV Vol.54",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-054-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-6th-event-2025-05-24",
+          "date": "2025-05-24",
+          "title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-6th-event-2025-05-24-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "paka-live-tv-048",
+          "date": "2024-12-25",
+          "title": "ぱかライブTV Vol.48",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-048-session-1",
+          "session_label": "本期节目"
+        }
+      ],
+      "songs": [],
+      "performed_songs": [
+        {
+          "song_id": "song-brightest-heart-dd824b4715",
+          "name": "BRIGHTEST HEART",
+          "event_ids": [
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-brightest-heart-dd824b4715-v-dd824b4715"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-38f64525a9",
+          "name": "∞",
+          "event_ids": [
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-38f64525a9-v-38f64525a9"
+          ],
+          "performances": 1
+        }
+      ]
+    },
+    "kitaharajo": {
+      "events": [
+        {
+          "event_id": "sokosoko-paka-live-tv-046",
+          "date": "2025-07-03",
+          "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-046-session-1",
+          "session_label": "本期节目"
+        }
+      ],
+      "songs": [],
+      "performed_songs": []
+    },
+    "fujimasamarch": {
+      "events": [
+        {
+          "event_id": "sokosoko-paka-live-tv-046",
+          "date": "2025-07-03",
+          "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-046-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-048",
+          "date": "2024-12-25",
+          "title": "ぱかライブTV Vol.48",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-048-session-1",
+          "session_label": "本期节目"
+        }
+      ],
+      "songs": [],
+      "performed_songs": []
+    },
+    "norn_ace": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "rudy_lemono": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "minnie_the_lady": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "dicta_striker": {
+      "events": [],
+      "songs": [
+        {
+          "song_id": "song-next-frontier-5267707c1b",
+          "name": "NEXT FRONTIER",
+          "album_ids": [
+            "album-laca-19146"
+          ],
+          "version_ids": [
+            "song-next-frontier-5267707c1b-v-c739868dd5"
+          ],
+          "releases": 1
+        }
+      ],
+      "performed_songs": []
+    },
+    "toni_bianca": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "obey_your_master": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "moonlight_lunacy": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "michelle_my_baby": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "ellerslie_pride": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "blacky_ale": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "meikun_tsukasa": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "kraft_univer": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "god_hannibal": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "akitsu_teio": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "dynam_heroine": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "lord_royal": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "yamano_southern": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
     "spica_trainer": {
       "events": [
         {
@@ -174234,84 +175212,6 @@
         }
       ]
     },
-    "bochuzoku": {
-      "events": [
-        {
-          "event_id": "live-numbered-5th-event-2023-09-16",
-          "date": "2023-09-16",
-          "title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-          "kind": "concert",
-          "series_id": "numbered-live"
-        }
-      ],
-      "songs": [],
-      "performed_songs": []
-    },
-    "zankan_koukou": {
-      "events": [
-        {
-          "event_id": "sokosoko-paka-live-tv-046",
-          "date": "2025-07-03",
-          "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
-          "kind": "official_program",
-          "series_id": "sokosoko-paka-live-tv",
-          "session_id": "sokosoko-paka-live-tv-046-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-054",
-          "date": "2025-06-25",
-          "title": "ぱかライブTV Vol.54",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-054-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-numbered-6th-event-2025-05-24",
-          "date": "2025-05-24",
-          "title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-6th-event-2025-05-24-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "paka-live-tv-048",
-          "date": "2024-12-25",
-          "title": "ぱかライブTV Vol.48",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-048-session-1",
-          "session_label": "本期节目"
-        }
-      ],
-      "songs": [],
-      "performed_songs": [
-        {
-          "song_id": "song-brightest-heart-dd824b4715",
-          "name": "BRIGHTEST HEART",
-          "event_ids": [
-            "live-numbered-6th-event-2025-05-24"
-          ],
-          "version_ids": [
-            "song-brightest-heart-dd824b4715-v-dd824b4715"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-38f64525a9",
-          "name": "∞",
-          "event_ids": [
-            "live-numbered-6th-event-2025-05-24"
-          ],
-          "version_ids": [
-            "song-38f64525a9-v-38f64525a9"
-          ],
-          "performances": 1
-        }
-      ]
-    },
     "teppen_commentator_honizumi": {
       "events": [
         {
@@ -174352,47 +175252,63 @@
       "songs": [],
       "performed_songs": []
     },
-    "kitaharajo": {
-      "events": [
-        {
-          "event_id": "sokosoko-paka-live-tv-046",
-          "date": "2025-07-03",
-          "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
-          "kind": "official_program",
-          "series_id": "sokosoko-paka-live-tv",
-          "session_id": "sokosoko-paka-live-tv-046-session-1",
-          "session_label": "本期节目"
-        }
-      ],
+    "musaka_ginjiro": {
+      "events": [],
       "songs": [],
       "performed_songs": []
     },
-    "fujimasamarch": {
-      "events": [
-        {
-          "event_id": "sokosoko-paka-live-tv-046",
-          "date": "2025-07-03",
-          "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
-          "kind": "official_program",
-          "series_id": "sokosoko-paka-live-tv",
-          "session_id": "sokosoko-paka-live-tv-046-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-048",
-          "date": "2024-12-25",
-          "title": "ぱかライブTV Vol.48",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-048-session-1",
-          "session_label": "本期节目"
-        }
-      ],
+    "shibasaki_koichi": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "kawamura_hiyori": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "iwao_tadaichi": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "shihandai": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "komiyama_masami": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "nase_fumino": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "kouchi_tadashi": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "yuzuhara_ryuko": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "yuzuhara_taro": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "fujii_sensuke": {
+      "events": [],
       "songs": [],
       "performed_songs": []
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-08T13:34:56+00:00",
-  "build_id": "afdf2de7ef94b0704b7b"
+  "generated_at": "2026-10-03T19:12:34+00:00",
+  "build_id": "fcc78f6ea8cbfda50342"
 }
