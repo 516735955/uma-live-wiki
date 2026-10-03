@@ -883,6 +883,18 @@
             content-visibility: auto;
             contain-intrinsic-size: auto 324px;
         }
+        #tab-characters .cio-list ul.cio-grid .cio-group-title {
+            grid-column: 1 / -1;
+            margin-top: 24px;
+            padding: 18px 2px 10px;
+            border-top: 1px solid var(--ui-line);
+            color: var(--ui-navy);
+            font-size: .98rem;
+            font-weight: 900;
+            letter-spacing: .04em;
+            content-visibility: visible;
+            contain-intrinsic-size: auto;
+        }
         #tab-characters .cio-card { display: block; text-decoration: none; color: inherit; --color-main: #8c83ff; --color-sub: #ece9ff; background-color: var(--color-sub); box-shadow: 0 3px 7px rgba(0, 0, 0, .2); position: relative; overflow: hidden; transition: transform .16s ease; }
         #tab-characters .cio-card:hover { transform: translateY(-3px); }
         #tab-characters .cio-card dl { background: #fff; margin: 0; position: relative; display: flex; flex-direction: column; }

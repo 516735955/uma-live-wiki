@@ -25,8 +25,19 @@
       if (s === 'zh') { list = list.slice().sort(function (a, b) { return norm(a.zh).localeCompare(norm(b.zh), 'zh'); }); }
       else if (s === 'en') { list = list.slice().sort(function (a, b) { return norm(a.en).localeCompare(norm(b.en)); }); }
       else if (s === 'cv') { list = list.slice().sort(function (a, b) { return norm(a.cv_zh).localeCompare(norm(b.cv_zh), 'zh'); }); }
+      var pedigreeMeta = window.CHARACTER_PEDIGREE_META || {};
+      var nonUmaIds = new Set(pedigreeMeta.non_uma || []);
+      var umaCharacters = list.filter(function (c) { return c.role_type !== 'human' && !nonUmaIds.has(c.id); });
+      var otherCharacters = list.filter(function (c) { return c.role_type === 'human' || nonUmaIds.has(c.id); });
+      list = umaCharacters.concat(otherCharacters);
       grid.innerHTML = '';
       list.forEach(function (c, i) {
+        if (otherCharacters.length && i === umaCharacters.length) {
+          var divider = document.createElement('li');
+          divider.className = 'cio-group-title';
+          divider.textContent = '非赛马娘角色';
+          grid.appendChild(divider);
+        }
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'cio-card';
@@ -71,16 +82,26 @@
     function fill() {
       refreshRelIndex();
       var detail = window.__uma_app ? window.__uma_app.charDetail : null;
-      if (!detail || !detail.id || !window.CHAR_DETAIL) return;
+      if (!detail || !detail.id) return;
       if (box.getAttribute('data-d-filled') === detail.id) return;
-      var d = window.CHAR_DETAIL[detail.id];
-      if (!d || !d.html) return;
-      var source = document.createElement('div');
-      source.innerHTML = d.html;
-      var description = source.querySelector('.uma-description');
-      box.innerHTML = description && description.innerHTML.trim()
-        ? '<div class="character-description">' + description.innerHTML + '</div>'
-        : '';
+      var d = window.CHAR_DETAIL && window.CHAR_DETAIL[detail.id];
+      if (d && d.html) {
+        var source = document.createElement('div');
+        source.innerHTML = d.html;
+        var description = source.querySelector('.uma-description');
+        box.innerHTML = description && description.innerHTML.trim()
+          ? '<div class="character-description">' + description.innerHTML + '</div>'
+          : '';
+      } else if (detail.summary_zh) {
+        var fallback = document.createElement('div');
+        fallback.className = 'character-description';
+        var paragraph = document.createElement('p');
+        paragraph.textContent = detail.summary_zh;
+        fallback.appendChild(paragraph);
+        box.replaceChildren(fallback);
+      } else {
+        box.innerHTML = '';
+      }
       box.setAttribute('data-d-filled', detail.id);
     }
     fill();

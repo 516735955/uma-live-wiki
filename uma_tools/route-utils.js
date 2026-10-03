@@ -47,6 +47,11 @@
     creators: function (id, section) { return entity('/music/creators', id, section, sections.creator, 'works'); },
     characters: function (id, section) { return entity('/database/characters', id, section, sections.character, 'profile'); },
     voiceActors: function (id, section) { return entity('/database/voice-actors', id, section, sections.voiceActor, 'profile'); },
+    anime: function (workId, unitId) {
+      const base = prefix + '/database/anime' + (workId ? '/' + part(workId) : '');
+      return workId && unitId ? base + '/episodes/' + part(unitId) : base;
+    },
+    staff: function (id) { return prefix + '/database/staff' + (id ? '/' + part(id) : ''); },
     other: function () { return prefix + '/database/other'; },
     horses: function (id) { return prefix + '/database/horses' + (id ? '/' + part(id) : ''); },
     jockeys: function (id) { return prefix + '/database/jockeys' + (id ? '/' + part(id) : ''); },

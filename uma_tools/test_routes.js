@@ -12,6 +12,10 @@ assert.strictEqual(routes.albums('album-laca-25001'), '/zh-Hans/music/albums/alb
 assert.strictEqual(routes.creators('creator-1', 'collaborators'), '/zh-Hans/music/creators/creator-1/collaborators');
 assert.strictEqual(routes.characters('specialweek', 'pedigree'), '/zh-Hans/database/characters/specialweek/pedigree');
 assert.strictEqual(routes.voiceActors('waki-azumi', 'songs'), '/zh-Hans/database/voice-actors/waki-azumi/songs');
+assert.strictEqual(routes.anime(), '/zh-Hans/database/anime');
+assert.strictEqual(routes.anime('anime-s1'), '/zh-Hans/database/anime/anime-s1');
+assert.strictEqual(routes.anime('anime-s1', 'anime-s1-e01'), '/zh-Hans/database/anime/anime-s1/episodes/anime-s1-e01');
+assert.strictEqual(routes.staff('staff-1'), '/zh-Hans/database/staff/staff-1');
 assert.strictEqual(routes.other(), '/zh-Hans/database/other');
 assert.strictEqual(routes.horses('special-week'), '/zh-Hans/database/horses/special-week');
 assert.strictEqual(routes.relationships(), '/zh-Hans/database/relationships');
