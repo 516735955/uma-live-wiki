@@ -8,6 +8,7 @@
     "serve:auto": "node server.js",
     "check:deployment": "node check_deployment.js",
     "check:music": "python3 sync_music_metadata.py --check",
+    "check:anime": "python3 build_anime_catalog.py --check && python3 sync_anime_assets.py --check && python3 apply_cingray_character_additions.py --check",
     "test:music": "python3 -m unittest test_sync_music_metadata",
     "test:catalog": "node test_catalog_store.js",
     "test:routes": "node test_routes.js",
