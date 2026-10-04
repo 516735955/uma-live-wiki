@@ -3325,7 +3325,8 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     .catalog-play { width: 36px; height: 36px; }
     .entity-section { padding-inline: 11px; }
     .entity-tabs { justify-content: flex-start; flex-wrap: wrap; overflow: visible; }
-    .entity-tabs button { flex: 1 1 calc(50% - 3px); min-width: 0; padding-inline: 8px; white-space: normal; }
+    .entity-tabs button { flex: 1 1 calc(50% - 4px); min-width: 0; padding-inline: 8px; white-space: normal; }
+    .anime-entity-detail .entity-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .character-entity-detail .entity-tabs,
     .voice-entity-detail .entity-tabs,
     .song-entity-detail .entity-tabs { overflow: visible; }

@@ -289,10 +289,6 @@
     html += '</div></div>';
     html += '<dl class="horse-details">' + information.html + '</dl>';
     html += '<div class="inspector-actions">';
-    if (item.sourceUrl) {
-      html += '<a class="inspector-link source-link" href="' + escapeHtml(item.sourceUrl) +
-        '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.sourceName) + '</a>';
-    }
     if (item.role && !item.isCurrent) {
       html += '<a class="inspector-link character-link" href="' + characterRoute(item.cid) + '"' +
         (embedded ? ' target="_top"' : '') + '>前往' +
@@ -316,14 +312,13 @@
     });
     var charLink = sheetContent.querySelector('.character-link');
     if (charLink) {
-      charLink.addEventListener('click', function () {
-        if (!embedded) return;
+      charLink.addEventListener('click', function (event) {
+        if (!embedded || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         try {
-          var topUrl = window.top.location.origin + window.top.location.pathname + window.top.location.search;
-          sessionStorage.setItem('uma-char-back', JSON.stringify({
-            url: topUrl,
-            target: item.cid || ''
-          }));
+          if (typeof window.top.umaNavigate === 'function') {
+            event.preventDefault();
+            window.top.umaNavigate(characterRoute(item.cid));
+          }
         } catch (e) {}
       });
     }

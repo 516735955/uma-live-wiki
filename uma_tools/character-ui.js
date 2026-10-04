@@ -165,7 +165,7 @@
       ';window.PEDIGREE_EMBEDDED=true;' +
       'window.CHAR_INDEX=window.parent.CHAR_INDEX||[];' +
       'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
-      '<script defer src="/uma_tools/pedigree-lab.js"><\/script></head>' +
+      '<script defer src="/uma_tools/pedigree-lab.js?v=20261004-1"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
       '<section class="lab-workspace" aria-labelledby="workspace-title">' +
       '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +
