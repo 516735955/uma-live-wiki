@@ -2,6 +2,77 @@
   "schema_version": 1,
   "credits": [
     {
+      "work_id": "anime-s2",
+      "role": "制作プロデューサー",
+      "name": "増尾将史",
+      "person_id": "staff-増尾将史",
+      "order": 500,
+      "source_ref": "official-kai-s2-roundtable-2021"
+    },
+    {
+      "work_id": "anime-s3",
+      "role": "原画",
+      "group": "オープニング",
+      "name": "冨永一仁",
+      "person_id": "staff-冨永一仁",
+      "order": 501,
+      "source_ref": "official-kai-tominaga-2026"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e07",
+      "role": "制作進行",
+      "name": "近藤光",
+      "person_id": "staff-近藤光-kai",
+      "order": 502,
+      "source_ref": "official-kai-kondo-2026"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第二原画",
+      "name": "ハニュー",
+      "person_id": "staff-ハニュー",
+      "order": 503,
+      "source_ref": "official-kai-s2-roundtable-2021"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第二原画",
+      "name": "福田佳太",
+      "person_id": "staff-福田佳太",
+      "order": 504,
+      "source_ref": "official-kai-s2-roundtable-2021"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第二原画",
+      "name": "宗圓祐輔",
+      "person_id": "staff-宗圓祐輔",
+      "order": 505,
+      "source_ref": "official-kai-s2-roundtable-2021"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第二原画",
+      "name": "中島順",
+      "person_id": "staff-中島順",
+      "order": 506,
+      "source_ref": "official-kai-s2-roundtable-2021"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第二原画",
+      "name": "椛島洋介",
+      "person_id": "staff-椛島洋介",
+      "order": 507,
+      "source_ref": "official-kai-s2-roundtable-2021"
+    },
+    {
       "work_id": "anime-umayuru",
       "role": "导演",
       "name": "宮嶋星矢",

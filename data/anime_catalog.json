@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-91594400710ec3e6",
+  "build_id": "anime-fa0c5101012aa337",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -9,8 +9,8 @@
     "scheduled_units": 0,
     "watch_resources": 135,
     "relations": 2038,
-    "staff_credits": 10795,
-    "staff_people": 2515
+    "staff_credits": 10803,
+    "staff_people": 2516
   },
   "works": [
     {
@@ -6627,10 +6627,11 @@
         }
       ],
       "source_refs": [
-        "official-story-anime-s3-e07"
+        "official-story-anime-s3-e07",
+        "official-kai-kondo-2026"
       ],
       "summary_ja": "有マ記念のファン投票に選ばれたキタサンとダイヤ。\nふたりは幼い頃に見たトウカイテイオーの有マ記念に感動し、いつかこんな大きなレースで一緒に走ろうと約束していた。\nお互い強い思いを胸に、運命のレースのゲートが開く。",
-      "staff_status": "main_only",
+      "staff_status": "partial_public",
       "music_cues": [
         {
           "title": "ウマ娘 ファンファーレ I GI",
@@ -45280,6 +45281,100 @@
   ],
   "staff": [
     {
+      "work_id": "anime-s2",
+      "role": "动画制片人",
+      "name": "増尾将史",
+      "person_id": "staff-増尾将史",
+      "order": 500,
+      "source_ref": "official-kai-s2-roundtable-2021",
+      "role_raw": "制作プロデューサー",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "role": "原画",
+      "group": "片头动画",
+      "name": "冨永一仁",
+      "person_id": "staff-冨永一仁",
+      "order": 501,
+      "source_ref": "official-kai-tominaga-2026",
+      "role_raw": "原画",
+      "group_raw": "オープニング"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e07",
+      "role": "制作统筹",
+      "name": "近藤光",
+      "person_id": "staff-近藤光-kai",
+      "order": 502,
+      "source_ref": "official-kai-kondo-2026",
+      "role_raw": "制作進行",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第第二原画画",
+      "name": "ハニュー",
+      "person_id": "staff-ハニュー",
+      "order": 503,
+      "source_ref": "official-kai-s2-roundtable-2021",
+      "role_raw": "第二原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第第二原画画",
+      "name": "福田佳太",
+      "person_id": "staff-福田佳太",
+      "order": 504,
+      "source_ref": "official-kai-s2-roundtable-2021",
+      "role_raw": "第二原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第第二原画画",
+      "name": "宗圓祐輔",
+      "person_id": "staff-宗圓祐輔",
+      "order": 505,
+      "source_ref": "official-kai-s2-roundtable-2021",
+      "role_raw": "第二原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第第二原画画",
+      "name": "中島順",
+      "person_id": "staff-中島順",
+      "order": 506,
+      "source_ref": "official-kai-s2-roundtable-2021",
+      "role_raw": "第二原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e13",
+      "role": "第第二原画画",
+      "name": "椛島洋介",
+      "person_id": "staff-椛島洋介",
+      "order": 507,
+      "source_ref": "official-kai-s2-roundtable-2021",
+      "role_raw": "第二原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
       "work_id": "anime-umayuru",
       "role": "导演",
       "name": "宮嶋星矢",
@@ -51313,7 +51408,7 @@
     {
       "work_id": "anime-umayuru-fullgate",
       "unit_id": "anime-umayuru-fullgate-e01",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "小木曾悠太",
       "group": "音响",
       "order": 25,
@@ -52015,7 +52110,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e13",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 27,
       "source_ref": "official-ending-anime-umayuru-e13",
@@ -52648,7 +52743,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e14",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 28,
       "source_ref": "official-ending-anime-umayuru-e14",
@@ -53269,7 +53364,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e16",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 27,
       "source_ref": "official-ending-anime-umayuru-e16",
@@ -53926,7 +54021,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e17",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 30,
       "source_ref": "official-ending-anime-umayuru-e17",
@@ -54547,7 +54642,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e18",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 28,
       "source_ref": "official-ending-anime-umayuru-e18",
@@ -55192,7 +55287,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e19",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 30,
       "source_ref": "official-ending-anime-umayuru-e19",
@@ -55801,7 +55896,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e20",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 27,
       "source_ref": "official-ending-anime-umayuru-e20",
@@ -56410,7 +56505,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e21",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 27,
       "source_ref": "official-ending-anime-umayuru-e21",
@@ -57046,7 +57141,7 @@
     {
       "work_id": "anime-umayuru",
       "unit_id": "anime-umayuru-e23",
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "name": "水村淳一",
       "order": 29,
       "source_ref": "official-ending-anime-umayuru-e23",
@@ -160723,7 +160818,7 @@
       "unit_id": "anime-umayuru-e01",
       "source_ref": "official-ending-anime-umayuru-e01",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -161546,7 +161641,7 @@
       "unit_id": "anime-umayuru-e02",
       "source_ref": "official-ending-anime-umayuru-e02",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -162366,7 +162461,7 @@
       "unit_id": "anime-umayuru-e03",
       "source_ref": "official-ending-anime-umayuru-e03",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -163237,7 +163332,7 @@
       "unit_id": "anime-umayuru-e04",
       "source_ref": "official-ending-anime-umayuru-e04",
       "order": 29,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -164057,7 +164152,7 @@
       "unit_id": "anime-umayuru-e06",
       "source_ref": "official-ending-anime-umayuru-e06",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 160,
@@ -164845,7 +164940,7 @@
       "unit_id": "anime-umayuru-e08",
       "source_ref": "official-ending-anime-umayuru-e08",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 160,
@@ -165665,7 +165760,7 @@
       "unit_id": "anime-umayuru-e11",
       "source_ref": "official-ending-anime-umayuru-e11",
       "order": 28,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 162,
@@ -166466,7 +166561,7 @@
       "unit_id": "anime-umayuru-e12",
       "source_ref": "official-ending-anime-umayuru-e12",
       "order": 27,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 162,
@@ -167251,7 +167346,7 @@
       "unit_id": "anime-umayuru-e15",
       "source_ref": "official-ending-anime-umayuru-e15",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 160,
@@ -168068,7 +168163,7 @@
       "unit_id": "anime-umayuru-e22",
       "source_ref": "official-ending-anime-umayuru-e22",
       "order": 28,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 162,
@@ -168821,7 +168916,7 @@
       "unit_id": "anime-umayuru-e24",
       "source_ref": "official-ending-anime-umayuru-e24",
       "order": 31,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -169516,7 +169611,7 @@
       "unit_id": "anime-umayuru-e05",
       "source_ref": "official-ending-anime-umayuru-e05",
       "order": 27,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 160,
@@ -170304,7 +170399,7 @@
       "unit_id": "anime-umayuru-e07",
       "source_ref": "official-ending-anime-umayuru-e07",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 160,
@@ -171108,7 +171203,7 @@
       "unit_id": "anime-umayuru-e09",
       "source_ref": "official-ending-anime-umayuru-e09",
       "order": 27,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 162,
@@ -171893,7 +171988,7 @@
       "unit_id": "anime-umayuru-e10",
       "source_ref": "official-ending-anime-umayuru-e10",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 162,
@@ -172624,7 +172719,7 @@
       "unit_id": "anime-umayuru-prettygray-e01",
       "source_ref": "official-ending-anime-umayuru-prettygray-e01",
       "order": 31,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -173150,7 +173245,7 @@
       "unit_id": "anime-umayuru-prettygray-e02",
       "source_ref": "official-ending-anime-umayuru-prettygray-e02",
       "order": 26,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -173750,7 +173845,7 @@
       "unit_id": "anime-umayuru-prettygray-e03",
       "source_ref": "official-ending-anime-umayuru-prettygray-e03",
       "order": 31,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -174308,7 +174403,7 @@
       "unit_id": "anime-umayuru-prettygray-e04",
       "source_ref": "official-ending-anime-umayuru-prettygray-e04",
       "order": 28,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "水村淳一",
       "source_time": 165,
@@ -186975,7 +187070,7 @@
       "unit_id": "anime-umayuru-fullgate-e02",
       "source_ref": "official-ending-anime-umayuru-fullgate-e02",
       "order": 27,
-      "role": "音响制作制片人",
+      "role": "音响动画制片人",
       "group": "",
       "name": "小木曾悠太",
       "source_time": 161,
@@ -199177,6 +199272,26 @@
   ],
   "people": [
     {
+      "id": "staff-近藤光-kai",
+      "name": "近藤光",
+      "aliases": [],
+      "bio": "动画制作进度管理人员，参与《赛马娘 Pretty Derby Season 3》第7话的制作。",
+      "photo": "https://st-kai.jp/wp-content/uploads/2026/05/kondo-683x1024.jpg",
+      "photo_kind": "portrait",
+      "photo_source_ref": "official-kai-kondo-2026",
+      "profile_source_refs": [
+        "official-kai-kondo-2026"
+      ],
+      "source_refs": [
+        "official-kai-kondo-2026"
+      ],
+      "roles": [
+        "制作统筹"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
       "id": "staff-廖程芝",
       "name": "廖程芝",
       "bio": "动画导演、摄影监督。2015年进入动画工房，曾担任《珈百璃的堕落》《干物妹！小埋R》的摄影监督助理，并在《Anima Yell!》中担任摄影监督。她执导了《赛马娘 Pretty Derby ROAD TO THE TOP》。",
@@ -200037,6 +200152,7 @@
         "official-ending-anime-s1-e01"
       ],
       "roles": [
+        "第第二原画画",
         "作画监督",
         "主要动画师",
         "原画"
@@ -200054,6 +200170,7 @@
         "official-ending-anime-s2-e01"
       ],
       "roles": [
+        "第第二原画画",
         "作画监督",
         "原画",
         "总作画监督助理",
@@ -200183,9 +200300,9 @@
         "official-ending-anime-s2-e01"
       ],
       "roles": [
+        "第第二原画画",
         "作画监督",
-        "原画",
-        "第第二原画画"
+        "原画"
       ],
       "work_count": 3,
       "unit_count": 11
@@ -200204,6 +200321,7 @@
         "official-ending-anime-s2-e01"
       ],
       "roles": [
+        "第第二原画画",
         "作画监督",
         "总作画监督",
         "原画"
@@ -200747,11 +200865,19 @@
     {
       "id": "staff-冨永一仁",
       "name": "冨永一仁",
+      "bio": "原画师、作画监督，参与《赛马娘 Pretty Derby Season 3》的片头动画及逐集作画。",
+      "photo": "https://st-kai.jp/wp-content/uploads/2026/05/tominaga_01-1024x683.jpg",
+      "photo_kind": "portrait",
+      "photo_source_ref": "official-kai-tominaga-2026",
+      "profile_source_refs": [
+        "official-kai-tominaga-2026"
+      ],
       "aliases": [],
       "source_refs": [
         "official-story-anime-s3-e02"
       ],
       "roles": [
+        "原画",
         "作画监督"
       ],
       "work_count": 1,
@@ -200960,11 +201086,11 @@
         "official-ending-anime-s1-e01"
       ],
       "roles": [
+        "第第二原画画",
         "作画监督",
         "角色设计／总作画监督",
         "角色设计",
         "过场动画原画",
-        "第第二原画画",
         "毛笔字",
         "原画",
         "总作画监督"
@@ -205473,9 +205599,13 @@
     {
       "id": "staff-増尾将史",
       "name": "増尾将史",
+      "photo": "https://st-kai.jp/wp-content/uploads/2026/05/masuo-2-683x1024.jpg",
+      "photo_kind": "portrait",
+      "photo_source_ref": "official-kai-masuo-2026",
       "bio": "动画制片人。参与第一季特别篇《BNW的誓言》的制作，并在《赛马娘 Pretty Derby Season 2》中担任动画制片人。",
       "profile_source_refs": [
-        "interview-anime-s2-staff-2021"
+        "interview-anime-s2-staff-2021",
+        "official-kai-masuo-2026"
       ],
       "aliases": [],
       "source_refs": [
@@ -205488,7 +205618,7 @@
         "动画制片人",
         "负责制作"
       ],
-      "work_count": 3,
+      "work_count": 4,
       "unit_count": 2
     },
     {
@@ -222931,7 +223061,7 @@
         "official-ending-anime-umayuru-fullgate-e02"
       ],
       "roles": [
-        "音响制作制片人",
+        "音响动画制片人",
         "音响制作负责"
       ],
       "work_count": 2,
@@ -223342,7 +223472,7 @@
         "official-ending-anime-umayuru-prettygray-e04"
       ],
       "roles": [
-        "音响制作制片人"
+        "音响动画制片人"
       ],
       "work_count": 2,
       "unit_count": 28
@@ -235250,6 +235380,34 @@
     }
   ],
   "sources": [
+    {
+      "id": "official-kai-masuo-2026",
+      "kind": "official",
+      "label": "STUDIO KAI 増尾将史访谈",
+      "url": "https://st-kai.jp/special/%e5%a2%97%e5%b0%be%e5%b0%86%e5%8f%b2%ef%bc%88%e7%ac%ac%ef%bc%91%e5%88%b6%e4%bd%9c%e9%83%a8%e6%89%80%e5%b1%9e%e3%83%bb%e3%82%a2%e3%83%8b%e3%83%a1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%83%97%e3%83%ad/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-tominaga-2026",
+      "kind": "official",
+      "label": "STUDIO KAI 冨永一仁访谈",
+      "url": "https://st-kai.jp/special/%e5%86%a8%e6%b0%b8%e4%b8%80%e4%bb%81%ef%bc%88%e7%ac%ac%ef%bc%91%e5%88%b6%e4%bd%9c%e8%aa%b2%e3%80%80%e7%ac%ac%ef%bc%92%e4%bd%9c%e7%94%bb%e8%aa%b2%e6%89%80%e5%b1%9e%e3%80%80%e8%aa%b2%e9%95%b7%ef%bc%89/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-kondo-2026",
+      "kind": "official",
+      "label": "STUDIO KAI 近藤光访谈",
+      "url": "https://st-kai.jp/special/%e8%bf%91%e8%97%a4%e5%85%89%ef%bc%88%e7%ac%ac%ef%bc%92%e5%88%b6%e4%bd%9c%e9%83%a8%e6%89%80%e5%b1%9e%e3%80%80%e5%88%b6%e4%bd%9c%e9%80%b2%e8%a1%8c%ef%bc%89%e3%81%ab%e8%81%9e%e3%81%8f%e3%80%81%e5%88%b6/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-s2-roundtable-2021",
+      "kind": "official",
+      "label": "STUDIO KAI 第二季制作座谈",
+      "url": "https://st-kai.jp/special/umamusume-001/",
+      "observed_at": "2026-10-05"
+    },
     {
       "id": "official-anime-portal",
       "kind": "official",

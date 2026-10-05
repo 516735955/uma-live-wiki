@@ -2,6 +2,17 @@
   "schema_version": 1,
   "people": [
     {
+      "id": "staff-近藤光-kai",
+      "name": "近藤光",
+      "aliases": [],
+      "bio": "动画制作进度管理人员，参与《赛马娘 Pretty Derby Season 3》第7话的制作。",
+      "photo": "https://st-kai.jp/wp-content/uploads/2026/05/kondo-683x1024.jpg",
+      "photo_kind": "portrait",
+      "photo_source_ref": "official-kai-kondo-2026",
+      "profile_source_refs": ["official-kai-kondo-2026"],
+      "source_refs": ["official-kai-kondo-2026"]
+    },
+    {
       "id": "staff-廖程芝",
       "name": "廖程芝",
       "bio": "动画导演、摄影监督。2015年进入动画工房，曾担任《珈百璃的堕落》《干物妹！小埋R》的摄影监督助理，并在《Anima Yell!》中担任摄影监督。她执导了《赛马娘 Pretty Derby ROAD TO THE TOP》。",
@@ -1003,6 +1014,11 @@
     {
       "id": "staff-冨永一仁",
       "name": "冨永一仁",
+      "bio": "原画师、作画监督，参与《赛马娘 Pretty Derby Season 3》的片头动画及逐集作画。",
+      "photo": "https://st-kai.jp/wp-content/uploads/2026/05/tominaga_01-1024x683.jpg",
+      "photo_kind": "portrait",
+      "photo_source_ref": "official-kai-tominaga-2026",
+      "profile_source_refs": ["official-kai-tominaga-2026"],
       "aliases": [],
       "source_refs": [
         "official-story-anime-s3-e02"
@@ -3983,9 +3999,13 @@
     {
       "id": "staff-増尾将史",
       "name": "増尾将史",
+      "photo": "https://st-kai.jp/wp-content/uploads/2026/05/masuo-2-683x1024.jpg",
+      "photo_kind": "portrait",
+      "photo_source_ref": "official-kai-masuo-2026",
       "bio": "动画制片人。参与第一季特别篇《BNW的誓言》的制作，并在《赛马娘 Pretty Derby Season 2》中担任动画制片人。",
       "profile_source_refs": [
-        "interview-anime-s2-staff-2021"
+        "interview-anime-s2-staff-2021",
+        "official-kai-masuo-2026"
       ],
       "aliases": [],
       "source_refs": [
