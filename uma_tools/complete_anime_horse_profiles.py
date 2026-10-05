@@ -9,6 +9,18 @@ from collect_anime_official import fetch
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {
+    "fujino_northern": {
+        "photo": "/uma_tools/img/horses/fujino_northern.jpg",
+        "photo_original_url": "https://thumbnail.image.shashinkan.rakuten.co.jp/shashinkan-core/showPhoto/?pkey=d2e65965c1c4fbc763422be52960c3d04c297419.63.2.2.2a1.jpg",
+        "photo_credit": "大黒社（保存影像截图）",
+        "photo_source": {"label": "大黒社的1988年东海德比回顾", "url": "https://plaza.rakuten.co.jp/daikokusya/diary/202106140000/"},
+    },
+    "my_big_boy": {
+        "photo": "/uma_tools/img/horses/my_big_boy.jpg",
+        "photo_original_url": "https://stat.ameba.jp/user_images/20200421/14/hanyarikunyari/bb/05/j/o1080060714746901493.jpg",
+        "photo_credit": "はにゃりくにゃり富来笑競馬",
+        "photo_source": {"label": "摄影者的1988年日本杯马场照片", "url": "https://ameblo.jp/hanyarikunyari/entry-12591294611.html"},
+    },
     "dyna_actress": {
         "photo": "/uma_tools/img/horses/dyna_actress.jpg",
         "photo_original_url": "https://cdnv2.netkeiba.com/img.en/db/show_photo.html?horse_id=1983104087&no=12164&tn=&tmp=no",

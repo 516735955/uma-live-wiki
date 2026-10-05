@@ -1501,10 +1501,7 @@ const umaApp = createApp({
       if (horse) openHorse(horse.id);
     }
     function horseChars(horse) {
-      return (horse && horse.cids || []).map(function (cid) {
-        const character = findCharById(cid);
-        return { id: cid, zh: character ? character.zh : cid };
-      });
+      return (horse && horse.cids || []).map(findCharById).filter(Boolean);
     }
     function horseSourceName(url) {
       const value = String(url || '');
