@@ -78,7 +78,8 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
     </header>
 
     <div class="container" v-if="!home">
-        <section v-if="notFound" class="not-found-page" aria-labelledby="not-found-title">
+        <div v-if="!routeReady" class="ui-state loading">正在加载资料…</div>
+        <section v-else-if="notFound" class="not-found-page" aria-labelledby="not-found-title">
             <span>404</span>
             <h1 id="not-found-title">没有找到这个页面</h1>
             <p>请从当前站点的正式栏目重新进入。</p>
@@ -750,7 +751,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
 
         <div id="tab-db-staff" v-if="activeTab==='database' && dbView==='staff'" class="tab-content active archive-surface">
-            <div v-if="animeLoading" class="ui-state loading">正在加载制作人员资料…</div>
+            <div v-if="animeLoading || !routeReady" class="ui-state loading">正在加载制作人员资料…</div>
             <div v-else-if="animeError" class="ui-state error">{{ animeError }}<button class="state-retry" @click="retryAnime()">重试</button></div>
             <template v-else>
             <template v-if="!staffDetail"><div class="archive-toolbar" id="staffArchiveTop"><label class="ui-search"><input type="search" v-model.trim="staffQuery" placeholder="搜索制作人员姓名或职务"></label><span>{{ staffFiltered.length }} 位制作人员</span></div><div v-if="animeError" class="ui-state ui-state-error"><span>{{ animeError }}</span><button class="ui-retry" @click="retryAnime">重试</button></div><div class="staff-index-list"><article v-for="person in staffPaged" :key="person.id" class="staff-index-entry"><a class="staff-index-link" :href="staffHref(person)" @click="animeLink($event,staffHref(person))"><img v-if="person.photo" :src="person.photo" alt="" loading="lazy"><span class="music-card-copy"><b>{{ person.name }}</b><small>{{ person.work_count }} 部作品</small><span class="role-tag-row"><em v-for="role in person.roles.slice(0,3)" :key="role" class="credit-role-tag">{{ role }}</em></span></span></a></article></div><div v-if="staffFiltered.length" class="ui-pager"><span>{{ (staffPage-1)*40+1 }}–{{ Math.min(staffPage*40,staffFiltered.length) }} / {{ staffFiltered.length }}</span><div><button :disabled="staffPage===1" @click="setStaffPage(staffPage-1)">上一页</button><button v-for="page in staffPageList" :key="page" :class="{active:page===staffPage}" :disabled="page==='…'" @click="setStaffPage(page)">{{ page }}</button><button :disabled="staffPage===staffPageCount" @click="setStaffPage(staffPage+1)">下一页</button></div></div></template>

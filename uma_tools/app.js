@@ -37,6 +37,7 @@ const umaApp = createApp({
     const albumsLoading = ref(false);
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
+    const routeReady = ref(false);
     const notFound = ref(false);
     const openNavGroup = ref('');
     const navigationRevision = ref(0);
@@ -1090,13 +1091,17 @@ const umaApp = createApp({
       return function () { return revision === entityRequestRevision && sourcePath === currentUrlPath(); };
     }
     function applyCurrentRoute() {
+      routeReady.value = false;
       const revision = ++navigationRevision.value;
       entityRequestRevision += 1;
       clearEntityDetails();
       const sourcePath = currentUrlPath();
       return Promise.resolve(prepareCurrentRoute()).then(apply, apply);
       function apply() {
-        if (revision === navigationRevision.value && sourcePath === currentUrlPath()) syncFromUrl();
+        if (revision === navigationRevision.value && sourcePath === currentUrlPath()) {
+          syncFromUrl();
+          routeReady.value = true;
+        }
       }
     }
     function resetPageScroll() {
@@ -3375,7 +3380,7 @@ const umaApp = createApp({
     }
 
     return {
-      audio, albums, albumsError, albumsLoading, activeTab, home, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup, navigationError,
+      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup, navigationError,
       navItemActive, activateNavGroup, openNavGroupForPointer, closeNavGroupForPointer, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
@@ -3422,7 +3427,16 @@ const umaApp = createApp({
     this.bindAudio();
     const self = this;
     window.__uma_app = this;
-    const syncPrepared = function () { self.applyCurrentRoute(); };
+    let popRevision = 0;
+    const syncPrepared = function (event) {
+      const revision = ++popRevision;
+      const scrollY = event && event.type === 'popstate' ? Number((history.state || {}).scrollY || 0) : null;
+      const preparedPath = window.location.pathname + window.location.search;
+      self.applyCurrentRoute().then(function () {
+        if (revision !== popRevision || window.location.pathname + window.location.search !== preparedPath) return;
+        if (scrollY !== null) Vue.nextTick(() => window.requestAnimationFrame(() => window.scrollTo(0,scrollY)));
+      });
+    };
     window.addEventListener('popstate', syncPrepared);
     window.addEventListener('scroll', this.updateBackTop, { passive: true });
     syncPrepared();
