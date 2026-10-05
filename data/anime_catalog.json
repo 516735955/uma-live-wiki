@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-3f0f24d249a132e4",
+  "build_id": "anime-ced8f640bde1b279",
   "generated_at": "2026-10-06T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -10,7 +10,7 @@
     "watch_resources": 135,
     "relations": 1827,
     "staff_credits": 10816,
-    "staff_people": 2514
+    "staff_people": 2512
   },
   "works": [
     {
@@ -89936,7 +89936,7 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e05",
-      "person_id": "staff-GirardinSolal",
+      "person_id": "staff-SolalGirardin",
       "institutions": [
         "CygamesPictures"
       ],
@@ -94699,7 +94699,7 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e07",
-      "person_id": "staff-GirardinSolal",
+      "person_id": "staff-SolalGirardin",
       "institutions": [
         "CygamesPictures"
       ],
@@ -106691,7 +106691,7 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e12",
-      "person_id": "staff-GirardinSolal",
+      "person_id": "staff-SolalGirardin",
       "institutions": [
         "CygamesPictures"
       ],
@@ -118420,6 +118420,9 @@
       "unit_id": "anime-cinderella-gray-e17",
       "person_id": "staff-小山冬真",
       "institutions": [
+        "CygamesPictures"
+      ],
+      "credited_institutions": [
         "CygamesPitucres"
       ],
       "role_raw": "第二原画",
@@ -118433,8 +118436,11 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e17",
-      "person_id": "staff-GirardinSolal",
+      "person_id": "staff-SolalGirardin",
       "institutions": [
+        "CygamesPictures"
+      ],
+      "credited_institutions": [
         "CygamesPitucres"
       ],
       "role_raw": "第二原画",
@@ -118450,6 +118456,9 @@
       "unit_id": "anime-cinderella-gray-e17",
       "person_id": "staff-伊藤正士",
       "institutions": [
+        "CygamesPictures"
+      ],
+      "credited_institutions": [
         "CygamesPitucres"
       ],
       "role_raw": "第二原画",
@@ -130317,7 +130326,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分分镜",
+      "role": "舞台动画分镜",
       "name": "平山孝成",
       "order": 2,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -130329,7 +130338,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分动画演出／剪辑",
+      "role": "舞台动画动画演出／剪辑",
       "name": "平山孝成",
       "order": 6,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -130602,7 +130611,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分作画监督",
+      "role": "舞台动画作画监督",
       "name": "村田駿",
       "order": 29,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -130638,7 +130647,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分制作统筹",
+      "role": "舞台动画制作统筹",
       "name": "魏星",
       "order": 32,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131314,7 +131323,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "伊藤史華",
       "order": 86,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131326,7 +131335,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "若山和人",
       "order": 87,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131342,7 +131351,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "岡崎滉",
       "order": 88,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131354,7 +131363,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "池上たろう",
       "order": 89,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131366,7 +131375,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "Kay Yu",
       "order": 90,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131378,7 +131387,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "町野倫太",
       "order": 91,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131390,7 +131399,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "藍崎灯",
       "order": 92,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131402,7 +131411,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "dong hoon",
       "order": 93,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131414,7 +131423,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "飯田悠一郎",
       "order": 94,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131426,7 +131435,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "二値社",
       "order": 95,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131438,7 +131447,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "范言新",
       "order": 96,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131453,7 +131462,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "蔣平翊",
       "order": 97,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131468,7 +131477,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "CygamesPictures",
       "order": 98,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131480,7 +131489,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "村田駿",
       "order": 99,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131495,7 +131504,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "村田春人",
       "order": 100,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131510,7 +131519,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "Chen Zitu",
       "order": 101,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -131525,13 +131534,13 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分原画",
+      "role": "舞台动画原画",
       "name": "Girardin Solal",
       "order": 102,
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e22",
-      "person_id": "staff-GirardinSolal",
+      "person_id": "staff-SolalGirardin",
       "role_raw": "ライブパート原画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -132353,7 +132362,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出舞台部分色彩指定／上色检查",
+      "role": "舞台动画色彩指定／上色检查",
       "name": "田中千春",
       "order": 165,
       "source_ref": "staff-transcript-anime-cinderella-gray",
@@ -144625,7 +144634,7 @@
     },
     {
       "work_id": "anime-movie-beginning-new-era",
-      "role": "演出舞台场景分镜／动画演出",
+      "role": "舞台场景分镜／动画演出",
       "name": "中山直哉",
       "order": 10,
       "source_ref": "staff-transcript-anime-movie-beginning-new-era",
@@ -145652,7 +145661,7 @@
       "source_ref": "staff-transcript-anime-movie-beginning-new-era",
       "group": "",
       "unit_id": "anime-movie-beginning-new-era-e01",
-      "person_id": "staff-GirardinSolal",
+      "person_id": "staff-SolalGirardin",
       "role_raw": "原画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -170680,7 +170689,7 @@
       "group": "",
       "name": "Nainemoutou Lucas",
       "source_time": 165,
-      "person_id": "staff-NainemoutouLucas",
+      "person_id": "staff-LucasNainemoutou",
       "evidence_refs": [
         "official-ending-anime-umayuru-prettygray-e03"
       ],
@@ -198280,7 +198289,7 @@
       ],
       "roles": [
         "作画监督",
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 2,
       "unit_count": 2
@@ -203148,8 +203157,8 @@
       ],
       "roles": [
         "原画",
-        "演出舞台部分作画监督",
-        "演出舞台部分原画",
+        "舞台动画作画监督",
+        "舞台动画原画",
         "第二原画"
       ],
       "work_count": 2,
@@ -206112,7 +206121,7 @@
       "roles": [
         "中间动画",
         "原画",
-        "演出舞台部分原画",
+        "舞台动画原画",
         "舞台动画第二原画",
         "中间动画检查",
         "第二原画"
@@ -206468,7 +206477,7 @@
       ],
       "roles": [
         "原画",
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 2
@@ -208900,7 +208909,7 @@
       ],
       "roles": [
         "原画",
-        "演出舞台部分原画",
+        "舞台动画原画",
         "第二原画"
       ],
       "work_count": 2,
@@ -209748,7 +209757,7 @@
       ],
       "roles": [
         "色彩指定／上色检查",
-        "演出舞台部分色彩指定／上色检查"
+        "舞台动画色彩指定／上色检查"
       ],
       "work_count": 1,
       "unit_count": 2
@@ -211242,7 +211251,7 @@
       ],
       "roles": [
         "原画",
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 3,
       "unit_count": 4
@@ -213120,8 +213129,8 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分分镜",
-        "演出舞台部分动画演出／剪辑"
+        "舞台动画分镜",
+        "舞台动画动画演出／剪辑"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -213223,7 +213232,7 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分制作统筹"
+        "舞台动画制作统筹"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -213342,7 +213351,7 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -213355,7 +213364,7 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -213368,7 +213377,7 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -213381,7 +213390,7 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -215182,7 +215191,7 @@
         "staff-transcript-anime-movie-beginning-new-era"
       ],
       "roles": [
-        "演出舞台场景分镜／动画演出",
+        "舞台场景分镜／动画演出",
         "作画监督"
       ],
       "work_count": 1,
@@ -220654,19 +220663,26 @@
     {
       "id": "staff-LucasNainemoutou",
       "name": "Lucas Nainemoutou",
-      "aliases": [],
+      "aliases": [
+        "Nainemoutou Lucas"
+      ],
       "source_refs": [
         "official-ending-anime-umayuru-e16",
         "staff-transcript-anime-s1",
-        "official-ending-anime-umayon-e13"
+        "official-ending-anime-umayon-e13",
+        "official-ending-anime-umayuru-prettygray-e03",
+        "production-lucas-nainemoutou-profile"
       ],
       "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
+      "alias_ids": [
+        "staff-NainemoutouLucas"
+      ],
       "roles": [
         "音乐",
         "法语监修"
       ],
-      "work_count": 3,
-      "unit_count": 5
+      "work_count": 4,
+      "unit_count": 6
     },
     {
       "id": "staff-長谷部翔",
@@ -222744,7 +222760,7 @@
         "第二原画",
         "原画",
         "作画监督",
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 7
@@ -223117,22 +223133,6 @@
         "背景"
       ],
       "work_count": 1,
-      "unit_count": 6
-    },
-    {
-      "id": "staff-GirardinSolal",
-      "name": "Girardin Solal",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray",
-        "staff-transcript-anime-movie-beginning-new-era"
-      ],
-      "roles": [
-        "第二原画",
-        "原画",
-        "演出舞台部分原画"
-      ],
-      "work_count": 2,
       "unit_count": 6
     },
     {
@@ -224583,7 +224583,7 @@
       ],
       "roles": [
         "原画",
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 2
@@ -224872,7 +224872,7 @@
       ],
       "roles": [
         "原画",
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -224885,7 +224885,7 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "roles": [
-        "演出舞台部分原画"
+        "舞台动画原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -227322,19 +227322,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-NainemoutouLucas",
-      "name": "Nainemoutou Lucas",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-umayuru-prettygray-e03"
-      ],
-      "roles": [
-        "音乐"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-加藤康久",
       "name": "加藤康久",
       "aliases": [],
@@ -227497,15 +227484,25 @@
     {
       "id": "staff-SolalGirardin",
       "name": "Solal Girardin",
-      "aliases": [],
+      "aliases": [
+        "Girardin Solal"
+      ],
       "source_refs": [
-        "official-ending-anime-rttt-e03"
+        "official-ending-anime-rttt-e03",
+        "staff-transcript-anime-cinderella-gray",
+        "staff-transcript-anime-movie-beginning-new-era",
+        "production-solal-girardin-profile"
+      ],
+      "alias_ids": [
+        "staff-GirardinSolal"
       ],
       "roles": [
-        "原画"
+        "第二原画",
+        "原画",
+        "舞台动画原画"
       ],
-      "work_count": 1,
-      "unit_count": 1
+      "work_count": 3,
+      "unit_count": 7
     },
     {
       "id": "staff-はつが",
@@ -232390,6 +232387,20 @@
     }
   ],
   "sources": [
+    {
+      "id": "production-lucas-nainemoutou-profile",
+      "kind": "production",
+      "label": "Lucas Naïnemoutou本人公开制作履历",
+      "url": "https://jp.linkedin.com/in/lucasnainemoutou",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "production-solal-girardin-profile",
+      "kind": "production",
+      "label": "Solal Girardin本人公开动画履历",
+      "url": "https://jp.linkedin.com/in/solal-girardin-93388a166",
+      "observed_at": "2026-10-06"
+    },
     {
       "id": "official-graphinica-company",
       "kind": "official",

@@ -10,7 +10,15 @@ from build_anime_catalog import atomic_json
 DATA = Path(__file__).resolve().parents[1] / "data/anime"
 
 # The RTTT episode ending and official master list identify these signatures.
-PERSON_ALIASES = {"staff-阿部億人": "staff-阿部憶人", "staff-狭田修": "staff-狹田修"}
+PERSON_ALIASES = {
+    "staff-阿部億人": "staff-阿部憶人", "staff-狭田修": "staff-狹田修",
+    "staff-NainemoutouLucas": "staff-LucasNainemoutou",
+    "staff-GirardinSolal": "staff-SolalGirardin",
+}
+IDENTITY_SOURCES = {
+    "staff-LucasNainemoutou": "production-lucas-nainemoutou-profile",
+    "staff-SolalGirardin": "production-solal-girardin-profile",
+}
 # Official credits already identify these names as organizations.
 ORGANIZATION_PEOPLE = {"staff-" + name for name in (
     "スノーライトスタッフ", "コスモス・アーツ", "ラッドプラス", "チップチューン",
@@ -33,6 +41,9 @@ def main():
         canonical["aliases"] = list(dict.fromkeys([*canonical.get("aliases", []), alias["name"], *alias.get("aliases", [])]))
         canonical["alias_ids"] = list(dict.fromkeys([*canonical.get("alias_ids", []), alias_id, *alias.get("alias_ids", [])]))
         canonical["source_refs"] = list(dict.fromkeys([*canonical.get("source_refs", []), *alias.get("source_refs", [])]))
+        if canonical_id in IDENTITY_SOURCES:
+            canonical["source_refs"] = list(dict.fromkeys(
+                [*canonical["source_refs"], IDENTITY_SOURCES[canonical_id]]))
     result, seen = [], {}
     removed_headers = 0
     heading_people = {"staff-フランス語監修", "staff-色指定", "staff-筆文字", "staff-予告編演出"}
@@ -40,6 +51,10 @@ def main():
     # A standalone heading starts a new role and ends the previous institution.
     active_heading = {}
     for row in document["credits"]:
+        if "CygamesPitucres" in row.get("institutions", []):
+            row["credited_institutions"] = row["institutions"]
+            row["institutions"] = ["CygamesPictures" if name == "CygamesPitucres" else name
+                                   for name in row["institutions"]]
         if (row.get("person_id") in music_only_people
                 and row["source_ref"] == "staff-transcript-anime-cinderella-gray"
                 and row["role"] in {"アイキャッチ原画", "レイアウト協力"}):

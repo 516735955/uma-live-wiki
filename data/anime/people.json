@@ -15412,13 +15412,20 @@
     {
       "id": "staff-LucasNainemoutou",
       "name": "Lucas Nainemoutou",
-      "aliases": [],
+      "aliases": [
+        "Nainemoutou Lucas"
+      ],
       "source_refs": [
         "official-ending-anime-umayuru-e16",
         "staff-transcript-anime-s1",
-        "official-ending-anime-umayon-e13"
+        "official-ending-anime-umayon-e13",
+        "official-ending-anime-umayuru-prettygray-e03",
+        "production-lucas-nainemoutou-profile"
       ],
-      "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+      "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
+      "alias_ids": [
+        "staff-NainemoutouLucas"
+      ]
     },
     {
       "id": "staff-長谷部翔",
@@ -16944,15 +16951,6 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray"
-      ]
-    },
-    {
-      "id": "staff-GirardinSolal",
-      "name": "Girardin Solal",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray",
-        "staff-transcript-anime-movie-beginning-new-era"
       ]
     },
     {
@@ -19603,14 +19601,6 @@
       ]
     },
     {
-      "id": "staff-NainemoutouLucas",
-      "name": "Nainemoutou Lucas",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-umayuru-prettygray-e03"
-      ]
-    },
-    {
       "id": "staff-加藤康久",
       "name": "加藤康久",
       "aliases": [],
@@ -19711,9 +19701,17 @@
     {
       "id": "staff-SolalGirardin",
       "name": "Solal Girardin",
-      "aliases": [],
+      "aliases": [
+        "Girardin Solal"
+      ],
       "source_refs": [
-        "official-ending-anime-rttt-e03"
+        "official-ending-anime-rttt-e03",
+        "staff-transcript-anime-cinderella-gray",
+        "staff-transcript-anime-movie-beginning-new-era",
+        "production-solal-girardin-profile"
+      ],
+      "alias_ids": [
+        "staff-GirardinSolal"
       ]
     },
     {
