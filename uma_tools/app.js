@@ -721,6 +721,15 @@ const umaApp = createApp({
       });
     }
     const staffCredits = computed(() => groupAnimeParticipation(staffDetail.value ? (animeCatalog.value.staff || []).filter(entry => entry.person_id === staffDetail.value.id).map(entry => ({entry,work:findAnimeWork(entry.work_id),unit:findAnimeUnit(entry.unit_id)})) : []));
+    const staffDisplayAliases = computed(() => {
+      const person = staffDetail.value;
+      if (!person) return [];
+      const compact = value => value.normalize('NFKC').replace(/\s+/g,'').toLowerCase();
+      const redundant = new Set([compact(person.name)]);
+      const words = person.name.trim().split(/\s+/);
+      if (words.length === 2 && words.every(word => /^[A-Za-zÀ-ž-]+$/.test(word))) redundant.add(compact(words.reverse().join('')));
+      return (person.aliases || []).filter(alias => !redundant.has(compact(alias)));
+    });
     const creatorAnimeWorks = computed(() => groupAnimeParticipation(creatorAnimeStaff.value));
     const creatorAnimeCueWorks = computed(() => {
       if (!creatorDetail.value) return [];
@@ -3529,7 +3538,7 @@ const umaApp = createApp({
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref,
       animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffExpanded, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
-      staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffPortrait, staffCredits, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
+      staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
