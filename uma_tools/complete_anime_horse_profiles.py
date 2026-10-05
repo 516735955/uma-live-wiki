@@ -18,6 +18,9 @@ PROFILES = {
         "source": {"label": "Auckland Thoroughbred Racing", "url": "https://www.aucklandracing.co.nz/remembering-bonecrusher-the-great-bonecrusher-stakes-day/"},
     },
     "pay_the_butler": {
+        "photo": "/uma_tools/img/horses/pay_the_butler.jpg",
+        "photo_original_url": "https://taw.or.jp/wp/wp-content/themes/taw/assets/img/page/taw-gallery/202510/img08-origin.jpg",
+        "photo_source": {"label": "TAW", "url": "https://taw.or.jp/column/taw-gallery/article-16/"},
         "intro": ["管家侍从于1984年出生在美国，先后在法国、美国与日本出赛，生涯40战5胜。1988年日本杯击败玉藻十字、小栗帽等对手夺冠，同年赢得美国二级赛红史密斯让赛。"],
         "breeding": ["1991年在日本开始种牡马生涯，同年因事故去世，仅留下一个世代的后代。其中Pal Bright赢得函馆纪念、大井纪念及东京三岁优骏牝马。"],
         "death": "1991-07-01",
@@ -56,12 +59,12 @@ def main():
                     raise ValueError(f"JBIS major results lost existing rows: {identifier}")
                 record["major"] = major
         for key, value in profile.items():
-            if key != "source":
+            if key not in {"source", "photo_source"}:
                 # Existing independently maintained text remains intact.
                 if not record.get(key) or record[key] == value:
                     record[key] = value
         sources = record.setdefault("sources", [])
-        for source in [*([profile["source"]] if profile.get("source") else []), {"label": "JBIS", "url": record["jbis"]}]:
+        for source in [*(profile[key] for key in ("source", "photo_source") if profile.get(key)), {"label": "JBIS", "url": record["jbis"]}]:
             if not any(item.get("url") == source["url"] for item in sources):
                 sources.append(source)
         if record.get("photo"):
