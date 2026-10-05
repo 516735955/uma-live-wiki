@@ -1,6 +1,8 @@
 'use strict';
 
 const assert = require('assert');
+const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const { CatalogStore, stableAlbumId } = require('./catalog-store');
 
@@ -79,6 +81,24 @@ async function main() {
       });
     });
   });
+
+  // A curated profile edit must invalidate HTTP caches even when the generated
+  // batch ID stays the same; otherwise removed actors remain visible.
+  const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-catalog-profile-'));
+  try {
+    fs.cpSync(path.join(__dirname, '..', 'data'), temporary, { recursive: true });
+    const editedStore = new CatalogStore(temporary);
+    const before = await editedStore.voices();
+    const filename = path.join(temporary, 'voice_actor_profiles.json');
+    const profiles = JSON.parse(fs.readFileSync(filename, 'utf8'));
+    profiles.voice_actors.pop();
+    fs.writeFileSync(filename, JSON.stringify(profiles));
+    const after = await editedStore.voices();
+    assert.strictEqual(after.voice_actors.length, before.voice_actors.length - 1);
+    assert.notStrictEqual(after.build_id, before.build_id, 'profile edits must change the HTTP catalog revision');
+  } finally {
+    fs.rmSync(temporary, { recursive: true, force: true });
+  }
 
   console.log('catalog store ok:', snapshot.eventRows.length, 'events,', snapshot.songRows.length, 'songs,', snapshot.albumRows.length, 'albums');
 }

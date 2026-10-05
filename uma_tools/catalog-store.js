@@ -393,7 +393,7 @@ class CatalogStore {
       throw new Error('catalog revision mismatch');
     }
     const sourceRevision = crypto.createHash('sha1')
-      .update(texts.slice(CATALOG_FILES.length - 1).join('\u0000'))
+      .update(texts.join('\u0000'))
       .digest('hex')
       .slice(0, 12);
 
