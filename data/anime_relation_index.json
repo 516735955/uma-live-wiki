@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-dead5ecbc114fa18",
+  "build_id": "anime-5d760d51cbd0880f",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "targets": {
     "event": {
@@ -34907,6 +34907,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e03",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e02-insert-song-endless-dream-eabbcc4d12",
+          "relation_type": "uses_song",
+          "label": "插入曲",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e02",
+          "work_id": "anime-s1"
         }
       ],
       "song-3dc019b31d": [
@@ -35617,6 +35628,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-s2-e11",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e13-insert-song-b90b0841b4",
+          "relation_type": "uses_song",
+          "label": "插入曲",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e13",
           "work_id": "anime-s2"
         }
       ],
@@ -36378,6 +36400,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-e23",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e22-ed-song-496f508d38",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e22",
+          "work_id": "anime-umayuru"
         }
       ],
       "song-bright-melody-bd728589b5": [
@@ -36481,6 +36514,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-e16",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e15-ed-song-rap-24bd84173c",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e15",
+          "work_id": "anime-umayuru"
         }
       ],
       "song-7427a5b772": [
@@ -36507,6 +36551,50 @@
           "source_type": "anime_work",
           "source_id": "anime-umayuru",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e09-ed-song-dance-2-endless-beat-8c6c92b99d",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e09",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e10-ed-song-dance-2-endless-beat-8c6c92b99d",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e10",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e11-ed-song-dance-2-endless-beat-8c6c92b99d",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e11",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e12-ed-song-dance-2-endless-beat-8c6c92b99d",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e12",
+          "work_id": "anime-umayuru"
         }
       ],
       "song-f4ab00a70a": [
@@ -36520,6 +36608,50 @@
           "source_type": "anime_work",
           "source_id": "anime-umayuru",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e05-ed-song-f4ab00a70a",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e05",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e06-ed-song-f4ab00a70a",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e06",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e07-ed-song-f4ab00a70a",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e07",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e08-ed-song-f4ab00a70a",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e08",
+          "work_id": "anime-umayuru"
         }
       ],
       "song-happy-days-01845306a9": [
@@ -36532,6 +36664,50 @@
           "voice_actor_id": "",
           "source_type": "anime_work",
           "source_id": "anime-umayuru",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e01-ed-song-happy-days-01845306a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e01",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e02-ed-song-happy-days-01845306a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e02",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e03-ed-song-happy-days-01845306a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e03",
+          "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-umayuru-e04-ed-song-happy-days-01845306a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-e04",
           "work_id": "anime-umayuru"
         }
       ],
@@ -38651,6 +38827,50 @@
           "source_type": "anime_work",
           "source_id": "anime-umayon",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e01-ed-song-cdf2727e54",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e01",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e02-ed-song-cdf2727e54",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e02",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e03-ed-song-cdf2727e54",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e03",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e04-ed-song-cdf2727e54",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e04",
+          "work_id": "anime-umayon"
         }
       ],
       "song-ring-ring-c9bdb0e414": [
@@ -38664,6 +38884,50 @@
           "source_type": "anime_work",
           "source_id": "anime-umayon",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e05-ed-song-ring-ring-c9bdb0e414",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e05",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e06-ed-song-ring-ring-c9bdb0e414",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e06",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e07-ed-song-ring-ring-c9bdb0e414",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e07",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e08-ed-song-ring-ring-c9bdb0e414",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e08",
+          "work_id": "anime-umayon"
         }
       ],
       "song-fallin-love-9a20ebe280": [
@@ -38676,6 +38940,39 @@
           "voice_actor_id": "",
           "source_type": "anime_work",
           "source_id": "anime-umayon",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e09-ed-song-fallin-love-9a20ebe280",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e09",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e10-ed-song-fallin-love-9a20ebe280",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e10",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e12-ed-song-fallin-love-9a20ebe280",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e12",
           "work_id": "anime-umayon"
         }
       ],
@@ -38753,6 +39050,149 @@
           "source_type": "anime_work",
           "source_id": "anime-cinderella-gray",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e01-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e01",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e02-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e02",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e03-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e03",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e04-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e04",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e05-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e05",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e06-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e06",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e07-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e07",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e08-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e08",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e09-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e09",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e10-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e10",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e11-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e11",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e12-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e12",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e13-op-song-82faef5370",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e13",
+          "work_id": "anime-cinderella-gray"
         }
       ],
       "song-38f64525a9": [
@@ -38766,6 +39206,149 @@
           "source_type": "anime_work",
           "source_id": "anime-cinderella-gray",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e01-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e01",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e02-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e02",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e03-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e03",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e04-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e04",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e05-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e05",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e06-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e06",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e07-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e07",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e08-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e08",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e09-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e09",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e10-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e10",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e11-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e11",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e12-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e12",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e13-ed-song-38f64525a9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e13",
+          "work_id": "anime-cinderella-gray"
         }
       ],
       "song-864b1bb2e9": [
@@ -38778,6 +39361,105 @@
           "voice_actor_id": "",
           "source_type": "anime_work",
           "source_id": "anime-cinderella-gray",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e14-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e14",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e15-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e15",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e16-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e16",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e17-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e17",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e18-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e18",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e19-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e19",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e20-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e20",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e21-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e21",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e23-ed-song-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "片尾曲",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e23",
           "work_id": "anime-cinderella-gray"
         }
       ],
@@ -38899,6 +39581,179 @@
           "source_type": "anime_work",
           "source_id": "anime-cinderella-gray",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e14-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e14",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e15-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e15",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e16-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e16",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e17-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e17",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e18-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e18",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e19-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e19",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e20-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e20",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e21-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e21",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e22-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e22",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e23-op-song-42bd0bc92d",
+          "relation_type": "uses_song",
+          "label": "片头曲",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e23",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "song-1aba5caa02": [
+        {
+          "relation_id": "anime-cinderella-gray-e03-insert-song-1aba5caa02",
+          "relation_type": "uses_song",
+          "label": "插入曲",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e03",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "song-brightest-heart-dd824b4715": [
+        {
+          "relation_id": "anime-cinderella-gray-e04-insert-song-brightest-heart-dd824b4715",
+          "relation_type": "uses_song",
+          "label": "插入曲",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e04",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e06-insert-song-brightest-heart-dd824b4715",
+          "relation_type": "uses_song",
+          "label": "插入曲",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e06",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "song-next-frontier-5267707c1b": [
+        {
+          "relation_id": "anime-cinderella-gray-e22-winning_live-song-next-frontier-5267707c1b",
+          "relation_type": "uses_song",
+          "label": "胜者舞台",
+          "usage_type": "winning_live",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e22",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "song-bd297fdbbe": [
+        {
+          "relation_id": "anime-s3-e01-bgm-song-bd297fdbbe",
+          "relation_type": "uses_song",
+          "label": "背景配乐",
+          "usage_type": "bgm",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e01",
+          "work_id": "anime-s3"
         }
       ]
     },

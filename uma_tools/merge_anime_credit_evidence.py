@@ -36,9 +36,17 @@ def main():
     result, seen = [], {}
     removed_headers = 0
     heading_people = {"staff-フランス語監修", "staff-色指定", "staff-筆文字", "staff-予告編演出"}
+    music_only_people = {"staff-挿入曲", "staff-三橋美智也"}
     # A standalone heading starts a new role and ends the previous institution.
     active_heading = {}
     for row in document["credits"]:
+        if (row.get("person_id") in music_only_people
+                and row["source_ref"] == "staff-transcript-anime-cinderella-gray"
+                and row["role"] in {"アイキャッチ原画", "レイアウト協力"}):
+            # The transcript's song heading and singer follow the animation
+            # section; neither signature credits an animation job.
+            removed_headers += 1
+            continue
         if row.get("person_id") in ORGANIZATION_PEOPLE:
             row.pop("person_id")
             row["organization"] = row["name"]
@@ -71,18 +79,29 @@ def main():
             row.pop("institutions", None)
         key = (row["work_id"], row.get("unit_id"), row.get("edition"),
                role_label(row["role"]), group_label(row.get("group", "")),
-               row.get("person_id") or person_label(row.get("organization") or row["name"]),
-               tuple(sorted(row.get("institutions", []))))
-        previous = seen.get(key)
-        if previous is None or previous["source_ref"] == row["source_ref"]:
+               row.get("person_id") or person_label(row.get("organization") or row["name"]))
+        institutions = set(row.get("institutions", []))
+        candidates = [previous for previous in seen.get(key, [])
+                      if row["source_ref"] not in [previous["source_ref"], *previous.get("evidence_refs", [])]
+                      and (not institutions or not previous.get("institutions")
+                           or institutions == set(previous["institutions"]))]
+        # An unreported institution can supplement one matching signature;
+        # conflicting institutions and repeated signatures in one source remain separate.
+        if len(candidates) != 1:
             result.append(row)
-            seen[key] = row
+            seen.setdefault(key, []).append(row)
         else:
+            previous = candidates[0]
+            if institutions and not previous.get("institutions"):
+                previous["institutions"] = row["institutions"]
             previous["evidence_refs"] = list(dict.fromkeys(
                 [previous["source_ref"], *previous.get("evidence_refs", []),
                  row["source_ref"], *row.get("evidence_refs", [])]))
+    referenced_people = {row.get("person_id") for row in result}
     people["people"] = [p for p in people["people"] if p["id"] not in heading_people
                         and p["id"] not in PERSON_ALIASES and p["id"] not in ORGANIZATION_PEOPLE]
+    people["people"] = [p for p in people["people"]
+                        if p["id"] not in music_only_people or p["id"] in referenced_people]
     print("Merged repeated source observations:", len(document["credits"]) - len(result) - removed_headers)
     print("Removed non-person headings:", removed_headers)
     document["credits"] = result

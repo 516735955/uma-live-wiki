@@ -2178,6 +2178,66 @@
       "aliases": [],
       "type": "person",
       "affiliations": []
+    },
+    {
+      "id": "creator-ff7b158325",
+      "name": "高田龙一",
+      "aliases": [
+        "高田龍一",
+        "髙田龍一"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "manual": true,
+      "source_urls": [
+        "https://monaca.jp/news/9126",
+        "https://monaca.jp/en/member/takada"
+      ],
+      "anime_music": true,
+      "anime_music_roles": [
+        "composer",
+        "arranger"
+      ],
+      "image": "/uma_tools/img/creators/ryuichi-takada.jpg",
+      "image_source_url": "https://monaca.jp/en/member/takada",
+      "image_original_url": "https://monaca.jp/test_newmncHP_test/wp-content/uploads/2023/03/230222-1_2371-edited-scaled.jpg"
+    },
+    {
+      "id": "creator-2fe5af8610",
+      "name": "椎名豪",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "manual": true,
+      "source_urls": [
+        "https://www.dokkyo-mejiro.com/wp/wp-content/uploads/2021/06/96.pdf"
+      ],
+      "anime_music": true,
+      "anime_music_roles": [
+        "composer",
+        "arranger"
+      ]
+    },
+    {
+      "id": "creator-e5820c57bd",
+      "name": "小林启树",
+      "aliases": [
+        "小林啓樹"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "manual": true,
+      "source_urls": [
+        "https://www.bandainamcoent.co.jp/asobimotto/page/ac_symphony.html"
+      ],
+      "anime_music": true,
+      "anime_music_roles": [
+        "composer",
+        "arranger"
+      ],
+      "image": "/uma_tools/img/creators/keiki-kobayashi.jpg",
+      "image_source_url": "https://ace7.acecombat.jp/special/message.php",
+      "image_original_url": "https://ace7.acecombat.jp/assets/images/special/message/ph_28.jpg"
     }
   ]
 }

@@ -680,7 +680,14 @@
       "order": 2,
       "source_ref": "official-story-anime-cinderella-gray-e13",
       "unit_id": "anime-cinderella-gray-e13",
-      "person_id": "staff-榎本直央"
+      "person_id": "staff-榎本直央",
+      "institutions": [
+        "ROLL2"
+      ],
+      "evidence_refs": [
+        "official-story-anime-cinderella-gray-e13",
+        "staff-transcript-anime-cinderella-gray"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -954,7 +961,14 @@
       "order": 1,
       "source_ref": "official-story-anime-cinderella-gray-e18",
       "unit_id": "anime-cinderella-gray-e18",
-      "person_id": "staff-松本顕吾"
+      "person_id": "staff-松本顕吾",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "evidence_refs": [
+        "official-story-anime-cinderella-gray-e18",
+        "staff-transcript-anime-cinderella-gray"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -2326,7 +2340,14 @@
       "order": 3,
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
-      "person_id": "staff-Kim Eun-sun"
+      "person_id": "staff-Kim Eun-sun",
+      "institutions": [
+        "DRMOVIE"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
@@ -2335,7 +2356,14 @@
       "order": 3,
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
-      "person_id": "staff-Kim Yu-seon"
+      "person_id": "staff-Kim Yu-seon",
+      "institutions": [
+        "DRMOVIE"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
@@ -2344,7 +2372,14 @@
       "order": 3,
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
-      "person_id": "staff-Shin Jae-hee"
+      "person_id": "staff-Shin Jae-hee",
+      "institutions": [
+        "DRMOVIE"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
@@ -2353,7 +2388,14 @@
       "order": 3,
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
-      "person_id": "staff-Lee Sang Jin"
+      "person_id": "staff-Lee Sang Jin",
+      "institutions": [
+        "Jcube"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
@@ -35995,26 +36037,6 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "アイキャッチ原画",
-      "name": "挿入曲",
-      "order": 171,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e03",
-      "person_id": "staff-挿入曲"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "アイキャッチ原画",
-      "name": "三橋美智也",
-      "order": 172,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e03",
-      "person_id": "staff-三橋美智也"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
       "role": "ライブ振付",
       "name": "春日麻里",
       "order": 173,
@@ -38512,16 +38534,6 @@
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e04",
       "person_id": "staff-工藤康平"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "アイキャッチ原画",
-      "name": "挿入曲",
-      "order": 224,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e04",
-      "person_id": "staff-挿入曲"
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -42555,16 +42567,6 @@
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e06",
       "person_id": "staff-工藤康平"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "アイキャッチ原画",
-      "name": "挿入曲",
-      "order": 218,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e06",
-      "person_id": "staff-挿入曲"
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -54840,19 +54842,6 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "演出",
-      "name": "榎本直央",
-      "order": 5,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e13",
-      "person_id": "staff-榎本直央",
-      "institutions": [
-        "ROLL2"
-      ]
-    },
-    {
-      "work_id": "anime-cinderella-gray",
       "role": "作画監督",
       "name": "髙田晃",
       "order": 7,
@@ -64668,19 +64657,6 @@
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e18",
       "organization": "CygamesPictures"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "コンテ",
-      "name": "松本顕吾",
-      "order": 3,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e18",
-      "person_id": "staff-松本顕吾",
-      "institutions": [
-        "CygamesPictures"
-      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -76179,16 +76155,6 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "レイアウト協力",
-      "name": "挿入曲",
-      "order": 254,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-cinderella-gray-e22",
-      "person_id": "staff-挿入曲"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
       "role": "音楽制作協力",
       "name": "牧泰雅",
       "order": 256,
@@ -81619,64 +81585,12 @@
     {
       "work_id": "anime-s2",
       "role": "作画監督",
-      "name": "Kim Eun-sun",
-      "order": 5,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Kim Eun-sun",
-      "institutions": [
-        "DRMOVIE"
-      ]
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画監督",
-      "name": "Kim Yu-seon",
-      "order": 6,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Kim Yu-seon",
-      "institutions": [
-        "DRMOVIE"
-      ]
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画監督",
-      "name": "Shin Jae-hee",
-      "order": 7,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Shin Jae-hee",
-      "institutions": [
-        "DRMOVIE"
-      ]
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画監督",
       "name": "Jcube",
       "order": 8,
       "source_ref": "staff-transcript-anime-s2",
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-s2-e11",
       "organization": "Jcube"
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画監督",
-      "name": "Lee Sang Jin",
-      "order": 9,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Lee Sang Jin",
-      "institutions": [
-        "Jcube"
-      ]
     },
     {
       "work_id": "anime-s2",

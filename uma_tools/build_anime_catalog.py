@@ -41,12 +41,12 @@ def compact_hash(payload: Any) -> str:
     return hashlib.sha256(encoded).hexdigest()[:16]
 
 
-def atomic_json(path: Path, payload: Any) -> None:
+def atomic_json(path: Path, payload: Any, *, indent: int = 2) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temporary = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=path.parent)
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as handle:
-            json.dump(payload, handle, ensure_ascii=False, indent=2)
+            json.dump(payload, handle, ensure_ascii=False, indent=indent)
             handle.write("\n")
         os.replace(temporary, path)
     except Exception:
@@ -163,6 +163,11 @@ def validate(
             errors.append(f"unit {unit.get('id')} references unknown work")
         if unit.get("status") not in {"released", "scheduled"}:
             errors.append(f"unit {unit.get('id')} has invalid status")
+        for cue in unit.get("music_cues", []):
+            if not cue.get("title") or cue.get("usage_type") != "fanfare":
+                errors.append(f"unit {unit.get('id')} has an invalid music cue")
+            if not cue.get("source_refs") or any(ref not in source_ids for ref in cue["source_refs"]):
+                errors.append(f"unit {unit.get('id')} has a music cue without registered evidence")
     for resource in resources:
         scope = resource.get("scope") or {}
         target_set = work_ids if scope.get("type") == "work" else unit_ids
@@ -210,7 +215,15 @@ def validate(
         "voice_actor": {row["id"] for row in read_json(ROOT / "data/voice_actor_profiles.json")["voice_actors"]},
         "album": {row["id"] for row in read_json(ROOT / "data/albums.json")},
         "event": {row["id"] for row in read_json(ROOT / "data/events_catalog.json")["events"]},
+        "creator": {row["id"] for row in read_json(ROOT / "data/creator_catalog.json")["creators"]},
     }
+    for unit in units:
+        for cue in unit.get("music_cues", []):
+            for credit in cue.get("credits", []):
+                creator_ids = credit.get("creator_ids", [])
+                if creator_ids and (len(creator_ids) != len(credit.get("names", []))
+                                    or any(value not in targets["creator"] for value in creator_ids)):
+                    errors.append(f"unit {unit['id']} has invalid cue creator links")
     for relation in relations:
         kind = relation.get("target_type")
         if kind in targets and relation.get("target_id") not in targets[kind]:

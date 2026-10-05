@@ -7208,7 +7208,8 @@
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1833819311",
     "pic": "https://p2.music.126.net/KMJIHnnnWd8KrT8-BTv6cg==/109951170973880598.jpg",
     "disc_number": 2,
-    "disc_track_number": 8
+    "disc_track_number": 8,
+    "version_label": "TV Size / 第二季第13话"
    },
    {
     "name": "Enjoy and Join",
@@ -10237,39 +10238,42 @@
   "songs": [
    {
     "name": "Special Record!",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織、高橋未奈美、前田玲奈、田所あずさ、青木瑠璃子、巽悠衣子、松井恵理子、Lynn、徳井青空、近藤唯、相坂優歌、高柳知葉",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1294889603",
     "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg"
    },
    {
     "name": "Find My Only Way",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1294889604",
     "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg"
    },
    {
     "name": "うまぴょい伝説 (TV Size)",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織、高橋未奈美、前田玲奈、鬼頭明里、佐伯伊織、首藤志奈、田所あずさ、大坪由佳、青木瑠璃子、巽悠衣子、松井恵理子、Lynn、徳井青空、近藤唯、相坂優歌、高柳知葉、優木かな、大空直美、井上遥乃、渡部優衣、土師亜文、久保田ひかり、前田佳織里、藤野彩水、新田ひより、和多田美咲",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1294889605",
     "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg"
    },
    {
     "name": "Special Record! (Off Vocal)",
-    "artist": "和氣あず未",
+    "artist": "",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1294910585",
-    "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg"
+    "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg",
+    "instrumental": true
    },
    {
     "name": "Find My Only Way (Off Vocal)",
-    "artist": "和氣あず未",
+    "artist": "",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1294910586",
-    "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg"
+    "pic": "https://p2.music.126.net/yHGGLyJk7aXSX7AW71h9dw==/109951163423343316.jpg",
+    "instrumental": true
    }
   ],
   "neteaseAlbumId": "71856015",
   "catalog": "LACM-14779",
   "type": "单曲",
-  "subtitle": "スペシャルED"
+  "subtitle": "スペシャルED",
+  "source_url": "https://anime-umamusume.jp/archive/1st/music/derby03.html"
  },
  {
   "name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 04 Original Soundtrack",

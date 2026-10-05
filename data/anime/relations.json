@@ -4800,7 +4800,8 @@
       "label": "插入曲",
       "usage_type": "insert",
       "evidence_refs": [
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ],
       "display_order": 20
     },
@@ -4917,7 +4918,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e13",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -4935,7 +4937,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e14",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -4953,7 +4956,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e16",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -4971,7 +4975,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e17",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -4989,7 +4994,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e18",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -5007,7 +5013,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e19",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -5025,7 +5032,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e20",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -5043,7 +5051,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e21",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -5061,7 +5070,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e23",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -7899,7 +7909,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "official-ost-anime-umayuru"
+        "official-ost-anime-umayuru",
+        "moegirl-umayuru-episode-music"
       ],
       "display_order": 20
     },
@@ -10171,7 +10182,8 @@
       "label": "插入曲",
       "usage_type": "insert",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "moegirl-tv-episode-music"
       ],
       "display_order": 20
     },
@@ -10199,9 +10211,9 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-228f943b49",
-      "version_id": "song-228f943b49-v-6303aaaad6",
+      "version_id": "song-228f943b49-v-5d0c6ea225",
       "release_id": "album-laca-9814",
-      "version_label": "TV Size",
+      "version_label": "TV Size / 第二季第13话",
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
@@ -30151,6 +30163,1089 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-umayuru-fullgate-e02"
+      ]
+    },
+    {
+      "id": "anime-umayon-e01-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e02-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e03-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e04-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e05-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e06-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e07-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e08-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e09-ed-song-fallin-love-9a20ebe280",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e10-ed-song-fallin-love-9a20ebe280",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e12-ed-song-fallin-love-9a20ebe280",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e01-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e02-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e03-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e04-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e05-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e06-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e07-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e08-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e09-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e10-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e11-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e11",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e12-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e15-ed-song-rap-24bd84173c",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-rap-24bd84173c",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e22-ed-song-496f508d38",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-496f508d38",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e03-insert-song-1aba5caa02",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-1aba5caa02",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-cingray-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e04-insert-song-brightest-heart-dd824b4715",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-brightest-heart-dd824b4715",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-cingray-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e06-insert-song-brightest-heart-dd824b4715",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-brightest-heart-dd824b4715",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-cingray-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e01-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e02-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e03-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e04-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e05-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e06-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e07-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e08-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e09-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e10-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e11-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e11",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e12-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e13-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e13",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e01-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e02-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e03-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e04-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e05-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e06-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e07-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e08-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e09-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e10-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e11-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e11",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e12-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e13-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e13",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e14-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e15-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e16-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e17-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e18-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e18",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e19-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e19",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e20-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e20",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e21-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e21",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e22-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e23-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e23",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e14-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e15-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e16-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e17-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e18-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e18",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e19-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e19",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e20-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e20",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e21-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e21",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e23-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e23",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e22-winning_live-song-next-frontier-5267707c1b",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-next-frontier-5267707c1b",
+      "usage_type": "winning_live",
+      "label": "胜者舞台",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray",
+        "official-cingray-e22-winning-live",
+        "official-ost-anime-cinderella-gray"
+      ],
+      "version_id": "song-next-frontier-5267707c1b-v-c739868dd5",
+      "version_label": "Anime Size",
+      "release_id": "album-laca-19146"
+    },
+    {
+      "id": "anime-s1-e02-insert-song-endless-dream-eabbcc4d12",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-endless-dream-eabbcc4d12",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-tv-episode-music"
+      ]
+    },
+    {
+      "id": "anime-s2-e13-insert-song-b90b0841b4",
+      "source_type": "anime_unit",
+      "source_id": "anime-s2-e13",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-b90b0841b4",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-tv-episode-music"
+      ]
+    },
+    {
+      "id": "anime-s3-e01-bgm-song-bd297fdbbe",
+      "source_type": "anime_unit",
+      "source_id": "anime-s3-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-bd297fdbbe",
+      "usage_type": "bgm",
+      "label": "背景配乐",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-tv-episode-music"
       ]
     }
   ]

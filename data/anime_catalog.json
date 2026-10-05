@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-dead5ecbc114fa18",
+  "build_id": "anime-5d760d51cbd0880f",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -8,9 +8,9 @@
     "released_units": 125,
     "scheduled_units": 0,
     "watch_resources": 135,
-    "relations": 1929,
-    "staff_credits": 10138,
-    "staff_people": 2207
+    "relations": 2006,
+    "staff_credits": 10127,
+    "staff_people": 2205
   },
   "works": [
     {
@@ -79,6 +79,28 @@
             "date": "2018-12-19",
             "display": "2018-12-19",
             "timezone": "JST"
+          }
+        ],
+        "music_cues": [
+          {
+            "title": "ウマ娘 ファンファーレ II GI",
+            "usage_type": "fanfare",
+            "credits": [
+              {
+                "role": "作曲／编曲",
+                "names": [
+                  "小林启树"
+                ],
+                "institutions": [],
+                "creator_ids": [
+                  "creator-e5820c57bd"
+                ]
+              }
+            ],
+            "institutions": [],
+            "source_refs": [
+              "moegirl-tv-episode-music"
+            ]
           }
         ]
       },
@@ -235,7 +257,31 @@
             "timezone": "JST"
           }
         ],
-        "staff_status": "partial_transcript"
+        "staff_status": "partial_transcript",
+        "music_cues": [
+          {
+            "title": "ウマ娘 ファンファーレ I GI",
+            "usage_type": "fanfare",
+            "credits": [
+              {
+                "role": "作曲／编曲",
+                "names": [
+                  "高田龙一"
+                ],
+                "institutions": [
+                  "MONACA"
+                ],
+                "creator_ids": [
+                  "creator-ff7b158325"
+                ]
+              }
+            ],
+            "institutions": [],
+            "source_refs": [
+              "moegirl-tv-episode-music"
+            ]
+          }
+        ]
       },
       "next_unit": null,
       "main_character_ids": [
@@ -719,7 +765,31 @@
           "official-story-anime-s3-e13"
         ],
         "summary_ja": "ラストランの有マ記念を目前にしたキタサンは激しいトレーニングを続けていた。\n必死に走るキタサンの姿は、周囲のウマ娘の心にも火をつけていく。\n仲間たちに見送られ、多くのファンの興奮と熱気に包まれる中での最後の有マ記念。\n全力で走り続けてきた先に、キタサンが見た景色は――\n",
-        "staff_status": "partial_public"
+        "staff_status": "partial_public",
+        "music_cues": [
+          {
+            "title": "ウマ娘 ファンファーレ I GI",
+            "usage_type": "fanfare",
+            "credits": [
+              {
+                "role": "作曲／编曲",
+                "names": [
+                  "高田龙一"
+                ],
+                "institutions": [
+                  "MONACA"
+                ],
+                "creator_ids": [
+                  "creator-ff7b158325"
+                ]
+              }
+            ],
+            "institutions": [],
+            "source_refs": [
+              "moegirl-tv-episode-music"
+            ]
+          }
+        ]
       },
       "next_unit": null,
       "main_character_ids": [
@@ -1160,6 +1230,30 @@
           "display": "2018-04-01 24:00（初回1小时，第1・2话）",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I 一般",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1228,6 +1322,30 @@
           "display": "2018-04-08 24:00",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1261,6 +1379,30 @@
           "date": "2018-04-15",
           "display": "2018-04-15 24:00",
           "timezone": "JST"
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
         }
       ]
     },
@@ -1296,6 +1438,30 @@
           "display": "2018-04-22 24:00",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1330,6 +1496,30 @@
           "display": "2018-04-29 24:00",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I 重賞",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1363,6 +1553,30 @@
           "date": "2018-05-06",
           "display": "2018-05-06 24:00",
           "timezone": "JST"
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
         }
       ]
     },
@@ -1466,6 +1680,30 @@
           "display": "2018-05-27 24:00",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1500,6 +1738,30 @@
           "display": "2018-06-03 24:00",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1533,6 +1795,30 @@
           "date": "2018-06-10",
           "display": "2018-06-10 24:00",
           "timezone": "JST"
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
         }
       ]
     },
@@ -1636,6 +1922,30 @@
           "display": "2018-12-19",
           "timezone": "JST"
         }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I 一般",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
       ]
     },
     {
@@ -1669,6 +1979,28 @@
           "date": "2018-12-19",
           "display": "2018-12-19",
           "timezone": "JST"
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
         }
       ]
     },
@@ -1779,7 +2111,31 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s2-e02",
@@ -1883,7 +2239,29 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s2-e03",
@@ -1992,7 +2370,29 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II 重賞",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s2-e04",
@@ -2101,7 +2501,31 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s2-e05",
@@ -2210,7 +2634,29 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s2-e06",
@@ -2537,7 +2983,29 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s2-e09",
@@ -3082,7 +3550,31 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-umayon-e01",
@@ -5581,7 +6073,31 @@
         "official-story-anime-s3-e01"
       ],
       "summary_ja": "憧れのトウカイテイオーのようなウマ娘を目指して、トレセン学園に入学したキタサンブラック。\nテイオーと同じチーム＜スピカ＞に加入し、デビューから無傷の３連勝で勢いに乗るキタサンは、無敗の三冠ウマ娘へ向けて『皐月賞』に出走する！",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e02",
@@ -5650,7 +6166,29 @@
         "official-story-anime-s3-e02"
       ],
       "summary_ja": "ドゥラメンテに惨敗してしまったキタサンは、自信を失い落ち込んだ日々を過ごしていた。\nテイオーのようなキラキラ輝くウマ娘になれないかもしれない……そんな気持ちを抱いたまま、トレーニングを続けるキタサン。\nそんなある日、キタサンの耳にあるニュースが飛び込む。\n",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e03",
@@ -5719,7 +6257,31 @@
         "official-story-anime-s3-e03"
       ],
       "summary_ja": "菊花賞に勝ったキタサンは有マ記念に出走することに。\n憧れのレースに出られると喜ぶその一方で、ゴールドシップは柄にもなく思いつめた様子でいた。\nレースも差し迫った冬のある日、突如記者会見を開いたゴールドシップは驚きの発表をする。",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e04",
@@ -5857,7 +6419,29 @@
         "official-story-anime-s3-e05"
       ],
       "summary_ja": "天皇賞（春）に勝利し、少しずつ自信を持ち始めたキタサン。\nしかし、次走の宝塚記念にドゥラメンテも出走するというニュースを耳にし、せっかくの自信が揺らいでしまう。\n＜スピカ＞のメンバーに背中を押され、前向きな気持ちを取り戻すキタサンだったが、ドゥラメンテとばったり鉢合わせてしまい――",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ VI GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "椎名豪"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-2fe5af8610"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e06",
@@ -5926,7 +6510,29 @@
         "official-story-anime-s3-e06"
       ],
       "summary_ja": "サトノ家の悲願、ＧⅠ勝利……その期待を背負うウマ娘・サトノダイヤモンドは、十分な素質と実力を持ちながらも、あと少しのところで勝ちきれないレースが続いていた。\n『サトノのウマ娘はＧⅠに勝てない』――そんな言葉に抗おうと、ダイヤはジンクス破りの特訓を始める。",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e07",
@@ -5995,7 +6601,31 @@
         "official-story-anime-s3-e07"
       ],
       "summary_ja": "有マ記念のファン投票に選ばれたキタサンとダイヤ。\nふたりは幼い頃に見たトウカイテイオーの有マ記念に感動し、いつかこんな大きなレースで一緒に走ろうと約束していた。\nお互い強い思いを胸に、運命のレースのゲートが開く。",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e08",
@@ -6133,7 +6763,29 @@
         "official-story-anime-s3-e09"
       ],
       "summary_ja": "ある朝突然、キタサンはダイヤを誘って旅に出る。\nじゃんけんで行先を決めながらの目的地のない旅。\n道中で観光をしたり、おやつを食べたりとあてのない旅を楽しんだふたりは、最後に夕日の沈む灯台へとたどり着く。\n茜色に染まる岬でキタサンはダイヤに、胸に抱えたある思いを告白する。",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ II GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "小林启树"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-e5820c57bd"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e10",
@@ -6202,7 +6854,29 @@
         "official-story-anime-s3-e10"
       ],
       "summary_ja": "地域と学園の合同イベントの実行委員長となったキタサン。\n人々の賑わいと沢山の笑顔に包まれた光景を目にして喜んでいたキタサンは、学園の一角でドゥラメンテと出会う。\nドゥラメンテとの語らいの中、キタサンの胸にある感情が芽生え始める。",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ VI GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "椎名豪"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-2fe5af8610"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e11",
@@ -6271,7 +6945,31 @@
         "official-story-anime-s3-e11"
       ],
       "summary_ja": "凱旋門賞に向けてフランスに旅立つダイヤ。\n見送りに行ったキタサンはどこか上の空。\nその理由は、宝塚記念以来、自分の体がイメージ通りに動かないという戸惑いからだった。\n大丈夫だと自分に言い聞かせながら、トレーニングを続けるキタサンだったが……",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e12",
@@ -6340,7 +7038,31 @@
         "official-story-anime-s3-e12"
       ],
       "summary_ja": "マスコミを集めて会見を開いたキタサンはある決意を発表する。\n多くのファンやウマ娘たちが驚きながらも、そのことを受け入れていく中、キタサンの同期であるシュヴァルグランは消化できない複雑な思いを抱えていた。",
-      "staff_status": "main_only"
+      "staff_status": "main_only",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-s3-e13",
@@ -6409,7 +7131,31 @@
         "official-story-anime-s3-e13"
       ],
       "summary_ja": "ラストランの有マ記念を目前にしたキタサンは激しいトレーニングを続けていた。\n必死に走るキタサンの姿は、周囲のウマ娘の心にも火をつけていく。\n仲間たちに見送られ、多くのファンの興奮と熱気に包まれる中での最後の有マ記念。\n全力で走り続けてきた先に、キタサンが見た景色は――\n",
-      "staff_status": "partial_public"
+      "staff_status": "partial_public",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-tv-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-movie-beginning-new-era-e01",
@@ -6768,7 +7514,20 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "summary_ja": "金華山の山頂で勝負の約束を交わしたオグリキャップとフジマサマーチは、ついに対決の日を迎える。\n準重賞レースの『ジュニアクラウン』。\nマーチから目標について問われた時、答えることができなかったオグリ。\nライバルとの対決の中で、オグリは自分が目指すべき『頂上』を見出す。",
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "笠松競馬 ファンファーレ（重賞）",
+          "usage_type": "fanfare",
+          "credits": [],
+          "institutions": [
+            "笠松赛马场"
+          ],
+          "source_refs": [
+            "moegirl-cingray-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-cinderella-gray-e05",
@@ -6918,7 +7677,20 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "summary_ja": "シンボリルドルフから『中央』へスカウトされたオグリ。\n北原は、次の『ゴールドジュニア』に勝てば中央に移籍、負ければ東海ダービーを目指せ、と条件を突きつける。\nライバルであるマーチとの再戦も果たされるレースであったが、オグリは自分がどうすべきなのか、その答えを見出せぬままレースに臨む。",
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "笠松競馬 ファンファーレ（重賞）",
+          "usage_type": "fanfare",
+          "credits": [],
+          "institutions": [
+            "笠松赛马场"
+          ],
+          "source_refs": [
+            "moegirl-cingray-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-cinderella-gray-e07",
@@ -7143,7 +7915,31 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "summary_ja": "シンボリルドルフは望んでいた——トゥインクル・シリーズをけん引する新たなスターの誕生を。\n彼女はその眼で見た——地方から現れたウマ娘が中央の強敵たちをその剛脚でねじ伏せていく姿を。\n本当に大切なのは『規定（ルール）』か、それとも——。\nその想いを胸に、『日本ダービー』に奇跡を起こすべく、皇帝は立ち上がる。",
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-cingray-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-cinderella-gray-e10",
@@ -7218,7 +8014,29 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "summary_ja": "『日本ダービー』に出走できなかったオグリ。\nこれからのレースを戦っていく為にも『次の目標』を見つけることが重要と考えた六平は、オグリとベルノをＧⅠ『宝塚記念』の観戦に連れていく。\nファン投票で選出された実力者たちが揃うグランプリレース。\nそこでオグリは『最強』を目撃する。",
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ VI GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "椎名豪"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-2fe5af8610"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-cingray-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-cinderella-gray-e11",
@@ -7293,7 +8111,31 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "summary_ja": "『毎日王冠』に挑むオグリ。\nこれに勝利しなければ、タマモクロスも出走する『天皇賞（秋）』には出さないと六平に条件を出されるが、今回のレースは今までとは違っていた。\n連勝し続けたオグリは、もはや周囲にとって一番の要注意選手であり、対戦相手全員から標的とされる。\n『10対1』という圧倒的不利の中、レースが始まる。",
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I 重賞",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-cingray-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-cinderella-gray-e12",
@@ -7368,7 +8210,31 @@
         "staff-transcript-anime-cinderella-gray"
       ],
       "summary_ja": "ついに迎えた『天皇賞（秋）』の開催日。\n奇しくも同じ芦毛のウマ娘、タマモクロスとの直接対決。\nオグリは『最強』に勝ち、日本一となるべくターフヘ向かう。\nタマモもまた日本一を目指して、レースに臨む。\nその胸に、大切な人への想いを秘めて——。",
-      "staff_status": "partial_transcript"
+      "staff_status": "partial_transcript",
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "usage_type": "fanfare",
+          "credits": [
+            {
+              "role": "作曲／编曲",
+              "names": [
+                "高田龙一"
+              ],
+              "institutions": [
+                "MONACA"
+              ],
+              "creator_ids": [
+                "creator-ff7b158325"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "moegirl-cingray-episode-music"
+          ]
+        }
+      ]
     },
     {
       "id": "anime-cinderella-gray-e13",
@@ -17376,7 +18242,8 @@
       "label": "插入曲",
       "usage_type": "insert",
       "evidence_refs": [
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ],
       "display_order": 20
     },
@@ -17493,7 +18360,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e13",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17511,7 +18379,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e14",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17529,7 +18398,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e16",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17547,7 +18417,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e17",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17565,7 +18436,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e18",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17583,7 +18455,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e19",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17601,7 +18474,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e20",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17619,7 +18493,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e21",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -17637,7 +18512,8 @@
       "display_order": 20,
       "evidence_refs": [
         "official-ending-anime-umayuru-e23",
-        "official-umayuru-music"
+        "official-umayuru-music",
+        "moegirl-umayuru-episode-music"
       ]
     },
     {
@@ -20475,7 +21351,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "official-ost-anime-umayuru"
+        "official-ost-anime-umayuru",
+        "moegirl-umayuru-episode-music"
       ],
       "display_order": 20
     },
@@ -22747,7 +23624,8 @@
       "label": "插入曲",
       "usage_type": "insert",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "moegirl-tv-episode-music"
       ],
       "display_order": 20
     },
@@ -22775,9 +23653,9 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-228f943b49",
-      "version_id": "song-228f943b49-v-6303aaaad6",
+      "version_id": "song-228f943b49-v-5d0c6ea225",
       "release_id": "album-laca-9814",
-      "version_label": "TV Size",
+      "version_label": "TV Size / 第二季第13话",
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
@@ -42728,6 +43606,1089 @@
       "evidence_refs": [
         "official-ending-anime-umayuru-fullgate-e02"
       ]
+    },
+    {
+      "id": "anime-umayon-e01-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e02-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e03-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e04-ed-song-cdf2727e54",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e05-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e06-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e07-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e08-ed-song-ring-ring-c9bdb0e414",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e09-ed-song-fallin-love-9a20ebe280",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e10-ed-song-fallin-love-9a20ebe280",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayon-e12-ed-song-fallin-love-9a20ebe280",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayon-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e01-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e02-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e03-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e04-ed-song-happy-days-01845306a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-happy-days-01845306a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e05-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e06-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e07-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e08-ed-song-f4ab00a70a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-f4ab00a70a",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e09-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e10-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e11-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e11",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e12-ed-song-dance-2-endless-beat-8c6c92b99d",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-dance-2-endless-beat-8c6c92b99d",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e15-ed-song-rap-24bd84173c",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-rap-24bd84173c",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e22-ed-song-496f508d38",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-496f508d38",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-umayuru-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e03-insert-song-1aba5caa02",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-1aba5caa02",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-cingray-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e04-insert-song-brightest-heart-dd824b4715",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-brightest-heart-dd824b4715",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-cingray-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e06-insert-song-brightest-heart-dd824b4715",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-brightest-heart-dd824b4715",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-cingray-episode-music"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e01-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e02-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e03-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e04-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e05-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e06-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e07-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e08-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e09-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e10-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e11-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e11",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e12-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e13-op-song-82faef5370",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e13",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-82faef5370",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e01-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e02-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e03-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e04-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e04",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e05-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e05",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e06-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e06",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e07-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e08-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e08",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e09-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e09",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e10-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e10",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e11-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e11",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e12-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e13-ed-song-38f64525a9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e13",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-38f64525a9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e14-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e15-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e16-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e17-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e18-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e18",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e19-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e19",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e20-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e20",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e21-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e21",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e22-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e23-op-song-42bd0bc92d",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e23",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-42bd0bc92d",
+      "usage_type": "op",
+      "label": "片头曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e14-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e15-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e16-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e17-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e18-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e18",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e19-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e19",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e20-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e20",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e21-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e21",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e23-ed-song-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e23",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "usage_type": "ed",
+      "label": "片尾曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e22-winning_live-song-next-frontier-5267707c1b",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-next-frontier-5267707c1b",
+      "usage_type": "winning_live",
+      "label": "胜者舞台",
+      "display_order": 20,
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray",
+        "official-cingray-e22-winning-live",
+        "official-ost-anime-cinderella-gray"
+      ],
+      "version_id": "song-next-frontier-5267707c1b-v-c739868dd5",
+      "version_label": "Anime Size",
+      "release_id": "album-laca-19146"
+    },
+    {
+      "id": "anime-s1-e02-insert-song-endless-dream-eabbcc4d12",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e02",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-endless-dream-eabbcc4d12",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-tv-episode-music"
+      ]
+    },
+    {
+      "id": "anime-s2-e13-insert-song-b90b0841b4",
+      "source_type": "anime_unit",
+      "source_id": "anime-s2-e13",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-b90b0841b4",
+      "usage_type": "insert",
+      "label": "插入曲",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-tv-episode-music"
+      ]
+    },
+    {
+      "id": "anime-s3-e01-bgm-song-bd297fdbbe",
+      "source_type": "anime_unit",
+      "source_id": "anime-s3-e01",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-bd297fdbbe",
+      "usage_type": "bgm",
+      "label": "背景配乐",
+      "display_order": 20,
+      "evidence_refs": [
+        "moegirl-tv-episode-music"
+      ]
     }
   ],
   "staff": [
@@ -43573,6 +45534,13 @@
       "source_ref": "official-story-anime-cinderella-gray-e13",
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-榎本直央",
+      "institutions": [
+        "ROLL2"
+      ],
+      "evidence_refs": [
+        "official-story-anime-cinderella-gray-e13",
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "role_raw": "演出",
       "group_raw": "",
       "group": ""
@@ -43913,6 +45881,13 @@
       "source_ref": "official-story-anime-cinderella-gray-e18",
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-松本顕吾",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "evidence_refs": [
+        "official-story-anime-cinderella-gray-e18",
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "role_raw": "コンテ",
       "group_raw": "",
       "group": ""
@@ -45609,6 +47584,13 @@
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
       "person_id": "staff-Kim Eun-sun",
+      "institutions": [
+        "DRMOVIE"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ],
       "role_raw": "作画監督",
       "group_raw": "",
       "group": ""
@@ -45621,6 +47603,13 @@
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
       "person_id": "staff-Kim Yu-seon",
+      "institutions": [
+        "DRMOVIE"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ],
       "role_raw": "作画監督",
       "group_raw": "",
       "group": ""
@@ -45633,6 +47622,13 @@
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
       "person_id": "staff-Shin Jae-hee",
+      "institutions": [
+        "DRMOVIE"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ],
       "role_raw": "作画監督",
       "group_raw": "",
       "group": ""
@@ -45645,6 +47641,13 @@
       "source_ref": "official-story-anime-s2-e11",
       "unit_id": "anime-s2-e11",
       "person_id": "staff-Lee Sang Jin",
+      "institutions": [
+        "Jcube"
+      ],
+      "evidence_refs": [
+        "official-story-anime-s2-e11",
+        "staff-transcript-anime-s2"
+      ],
       "role_raw": "作画監督",
       "group_raw": "",
       "group": ""
@@ -55636,7 +57639,7 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "漫画企划構成",
+      "role": "漫画企划构成",
       "name": "伊藤隼之介",
       "order": 3,
       "group": "",
@@ -85454,30 +87457,6 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "过场动画原画",
-      "name": "挿入曲",
-      "order": 171,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e03",
-      "person_id": "staff-挿入曲",
-      "role_raw": "アイキャッチ原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "过场动画原画",
-      "name": "三橋美智也",
-      "order": 172,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e03",
-      "person_id": "staff-三橋美智也",
-      "role_raw": "アイキャッチ原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
       "role": "舞台编舞",
       "name": "春日麻里",
       "order": 173,
@@ -88423,18 +90402,6 @@
       "group": "",
       "unit_id": "anime-cinderella-gray-e04",
       "person_id": "staff-工藤康平",
-      "role_raw": "アイキャッチ原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "过场动画原画",
-      "name": "挿入曲",
-      "order": 224,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e04",
-      "person_id": "staff-挿入曲",
       "role_raw": "アイキャッチ原画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -93198,18 +95165,6 @@
       "group": "",
       "unit_id": "anime-cinderella-gray-e06",
       "person_id": "staff-工藤康平",
-      "role_raw": "アイキャッチ原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "过场动画原画",
-      "name": "挿入曲",
-      "order": 218,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e06",
-      "person_id": "staff-挿入曲",
       "role_raw": "アイキャッチ原画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -107687,21 +109642,6 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "动画演出",
-      "name": "榎本直央",
-      "order": 5,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e13",
-      "person_id": "staff-榎本直央",
-      "institutions": [
-        "ROLL2"
-      ],
-      "role_raw": "演出",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
       "role": "作画监督",
       "name": "髙田晃",
       "order": 7,
@@ -119257,21 +121197,6 @@
       "group": "",
       "unit_id": "anime-cinderella-gray-e18",
       "organization": "CygamesPictures",
-      "role_raw": "コンテ",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "role": "分镜",
-      "name": "松本顕吾",
-      "order": 3,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e18",
-      "person_id": "staff-松本顕吾",
-      "institutions": [
-        "CygamesPictures"
-      ],
       "role_raw": "コンテ",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -132822,18 +134747,6 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "role": "构图协力",
-      "name": "挿入曲",
-      "order": 254,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
-      "group": "",
-      "unit_id": "anime-cinderella-gray-e22",
-      "person_id": "staff-挿入曲",
-      "role_raw": "レイアウト協力",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
       "role": "音乐制作协力",
       "name": "牧泰雅",
       "order": 256,
@@ -139248,72 +141161,12 @@
     {
       "work_id": "anime-s2",
       "role": "作画监督",
-      "name": "Kim Eun-sun",
-      "order": 5,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Kim Eun-sun",
-      "institutions": [
-        "DRMOVIE"
-      ],
-      "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画监督",
-      "name": "Kim Yu-seon",
-      "order": 6,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Kim Yu-seon",
-      "institutions": [
-        "DRMOVIE"
-      ],
-      "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画监督",
-      "name": "Shin Jae-hee",
-      "order": 7,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Shin Jae-hee",
-      "institutions": [
-        "DRMOVIE"
-      ],
-      "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画监督",
       "name": "Jcube",
       "order": 8,
       "source_ref": "staff-transcript-anime-s2",
       "group": "",
       "unit_id": "anime-s2-e11",
       "organization": "Jcube",
-      "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "作画监督",
-      "name": "Lee Sang Jin",
-      "order": 9,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "",
-      "unit_id": "anime-s2-e11",
-      "person_id": "staff-Lee Sang Jin",
-      "institutions": [
-        "Jcube"
-      ],
       "role_raw": "作画監督",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -192528,33 +194381,6 @@
       "unit_count": 1
     },
     {
-      "id": "staff-挿入曲",
-      "name": "挿入曲",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ],
-      "roles": [
-        "过场动画原画",
-        "构图协力"
-      ],
-      "work_count": 1,
-      "unit_count": 4
-    },
-    {
-      "id": "staff-三橋美智也",
-      "name": "三橋美智也",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ],
-      "roles": [
-        "过场动画原画"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-春日麻里",
       "name": "春日麻里",
       "aliases": [],
@@ -208785,7 +210611,7 @@
         "official-master-cg-cour1"
       ],
       "roles": [
-        "漫画企划構成"
+        "漫画企划构成"
       ],
       "work_count": 1,
       "unit_count": 0
@@ -217290,6 +219116,41 @@
       "kind": "official",
       "label": "STUDIO KASA逐集制作记录",
       "url": "https://www.studiokasa.net/works",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-umayon-episode-music",
+      "kind": "community",
+      "label": "赛马娘四格逐集音乐",
+      "url": "https://moegirl.icu/赛马娘四格",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-umayuru-episode-music",
+      "kind": "community",
+      "label": "摇曳马娘逐集音乐",
+      "url": "https://moegirl.icu/摇曳马娘",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-cingray-episode-music",
+      "kind": "community",
+      "label": "芦毛灰姑娘逐集音乐",
+      "url": "https://moegirl.uk/赛马娘_芦毛灰姑娘",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-cingray-e22-winning-live",
+      "kind": "official",
+      "label": "芦灰第22话胜者舞台官方视频",
+      "url": "https://www.youtube.com/watch?v=167895lxqW4",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-tv-episode-music",
+      "kind": "community",
+      "label": "电视动画逐集音乐",
+      "url": "https://moegirl.uk/赛马娘_Pretty_Derby/动画",
       "observed_at": "2026-10-05"
     }
   ]

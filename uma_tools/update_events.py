@@ -596,10 +596,10 @@ def build_creator_catalog(songs_catalog: dict[str, Any], creators_doc: dict[str,
                     relations[creator_id]["collaborators"][collaborator_id]["versions"].add(version["id"])
                     relations[creator_id]["collaborators"][collaborator_id]["works"].add(song["id"])
 
-    # Animation music staff share creator pages even when no individual song
-    # credit has been published. Their animation credits remain scoped there.
+    # Animation music staff and authors of identified, unreleased cues share
+    # creator pages. Their episode credits do not fabricate song recordings.
     for creator_id, source in source_by_id.items():
-        if source.get("anime_staff"):
+        if source.get("anime_staff") or source.get("anime_music"):
             relations[creator_id]
     creators: list[dict[str, Any]] = []
     for creator_id, relation in relations.items():
@@ -638,7 +638,8 @@ def build_creator_catalog(songs_catalog: dict[str, Any], creators_doc: dict[str,
             "affiliations": list(source.get("affiliations") or []),
             **({"image": source["image"]} if source.get("image") else {}),
             "roles": [{"role": role, "label": CREATOR_ROLE_LABELS.get(role, role), "count": count}
-                      for role, count in sorted(relation["roles"].items(), key=lambda item: CREATOR_ROLE_ORDER.get(item[0], 99))],
+                      for role, count in sorted({**{role: 0 for role in source.get("anime_music_roles", [])},
+                                               **relation["roles"]}.items(), key=lambda item: CREATOR_ROLE_ORDER.get(item[0], 99))],
             "work_count": len(works),
             "version_count": len(relation["versions"]),
             "works": works,

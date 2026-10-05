@@ -78,8 +78,10 @@
           "creator_id": "creator-eaf94340d3"
         }
       ],
-      "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source": "official_release",
+      "source_catalog": "LACM-14779",
+      "source_url": "https://anime-umamusume.jp/archive/1st/music/derby03.html",
+      "manual": true
     },
     "song-rap-24bd84173c-v-d95a63dfa3": {
       "credits": [
@@ -10358,6 +10360,32 @@
           "source_url": "https://www.youtube.com/watch?v=4KzUSqUW9LU"
         }
       ]
+    },
+    "song-228f943b49-v-5d0c6ea225": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "official_release",
+      "source_url": "https://anime-umamusume.jp/archive/2nd/music/detail_936.html",
+      "source_catalog": "LACA-9814",
+      "manual": true
     }
   }
 }

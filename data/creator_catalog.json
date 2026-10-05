@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-04T22:39:19+00:00",
+  "generated_at": "2026-10-05T03:10:28+00:00",
   "coverage": {
-    "creators": 278,
+    "creators": 281,
     "credited_works": 332,
-    "credited_versions": 1294
+    "credited_versions": 1295
   },
   "creators": [
     {
@@ -24142,6 +24142,32 @@
       ]
     },
     {
+      "id": "creator-e5820c57bd",
+      "name": "小林启树",
+      "aliases": [
+        "小林啓樹"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "image": "/uma_tools/img/creators/keiki-kobayashi.jpg",
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
+    },
+    {
       "id": "creator-ae75b645e1",
       "name": "小森昭宏",
       "aliases": [],
@@ -31419,17 +31445,17 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 51
+          "count": 52
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 138
+          "count": 139
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 89
+          "count": 90
         },
         {
           "role": "producer",
@@ -31438,7 +31464,7 @@
         }
       ],
       "work_count": 13,
-      "version_count": 142,
+      "version_count": 143,
       "works": [
         {
           "song_id": "song-228f943b49",
@@ -31461,6 +31487,7 @@
             "song-228f943b49-v-2c21c72e4a",
             "song-228f943b49-v-4a308b7364",
             "song-228f943b49-v-4f4504cb6c",
+            "song-228f943b49-v-5d0c6ea225",
             "song-228f943b49-v-623e5032d4",
             "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-64d2a75db1",
@@ -31701,6 +31728,16 @@
               "id": "song-228f943b49-v-29206e2b41",
               "title": "うまぴょい伝説 (TV Size) (2021 Remastered Version)",
               "version_label": "TV Size / 2021 Remastered Version",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-5d0c6ea225",
+              "title": "うまぴょい伝説 (TV Size)",
+              "version_label": "TV Size / 第二季第13话",
               "roles": [
                 "lyricist",
                 "composer",
@@ -36901,6 +36938,29 @@
           ]
         }
       ]
+    },
+    {
+      "id": "creator-2fe5af8610",
+      "name": "椎名豪",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
     },
     {
       "id": "creator-8ccf39ae29",
@@ -53711,6 +53771,33 @@
       ]
     },
     {
+      "id": "creator-ff7b158325",
+      "name": "高田龙一",
+      "aliases": [
+        "高田龍一",
+        "髙田龍一"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "image": "/uma_tools/img/creators/ryuichi-takada.jpg",
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
+    },
+    {
       "id": "creator-fb22884a81",
       "name": "鶴﨑輝一",
       "aliases": [],
@@ -53767,5 +53854,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "f113a9604856fb46e210"
+  "build_id": "a78d89cd214ac839900d"
 }
