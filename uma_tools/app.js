@@ -710,19 +710,24 @@ const umaApp = createApp({
     const animeMusicGroups = computed(() => {
       const labels = animeMusicUsageLabels;
       return Object.entries(labels).map(([kind,label]) => ({kind,label,rows:animeCurrentRelations.value.filter(row =>
-        row.target_type === 'album' ? kind === 'album' : row.target_type === 'song' && (row.usage_type || 'other') === kind
+        row.target_type === 'album' ? kind === 'album' : row.target_type === 'song' && (row.usage_type || 'other') === kind &&
+          !animeMusicCues.value.some(cue=>cue.song_id===row.target_id && cue.units.some(unit=>unit.id===row.source_id))
       )})).filter(group => group.rows.length);
     });
     const animeMusicCues = computed(() => {
       const units = animeContentUnit.value ? [animeContentUnit.value] : animeWorkUnits.value;
       const cues = new Map();
       units.forEach(unit => (unit.music_cues || []).forEach(cue => {
-        const key = [cue.title,JSON.stringify(cue.credits),JSON.stringify(cue.institutions)].join(':');
+        const key = [cue.title,cue.usage_type,JSON.stringify(cue.credits),JSON.stringify(cue.institutions)].join(':');
         if (!cues.has(key)) cues.set(key,{...cue,units:[]});
         if (!cues.get(key).units.some(item => item.id===unit.id)) cues.get(key).units.push(unit);
       }));
       return Array.from(cues.values());
     });
+    const animeMusicCueGroups = computed(() => [
+      {kind:'fanfare',label:'比赛号角'}, {kind:'insert',label:'插入曲'}, {kind:'bgm',label:'背景配乐'}
+    ].map(group => ({...group,rows:animeMusicCues.value.filter(cue=>cue.usage_type===group.kind)}))
+      .filter(group=>group.rows.length));
     function relatedAnimeRows(targetType, targetIds) {
       const ids = new Set((Array.isArray(targetIds) ? targetIds : [targetIds]).filter(Boolean));
       if (!ids.size) return [];
@@ -843,7 +848,7 @@ const umaApp = createApp({
       pushUrl();
     }
     function loadMusicRelations() {
-      return Promise.all([loadVoiceData(), loadSongCatalog(), loadAlbums()]);
+      return Promise.all([loadVoiceData(), loadCharacterIndexData(), loadSongCatalog(), loadAlbums()]);
     }
     function prepareCurrentRoute() {
       const seg = routeSegments();
@@ -865,7 +870,7 @@ const umaApp = createApp({
       const sub = (seg[1] || '').toLowerCase();
       if (!sub) return loadCharacterIndexData().then(loadCharacterUi);
       if (sub === 'voice-actors') {
-        return Promise.all([loadVoiceData(), loadAnimeCatalogOptional()]).then(loadCharacterUi);
+        return Promise.all([loadVoiceData(), loadCharacterIndexData(), loadAnimeCatalogOptional()]).then(loadCharacterUi);
       }
       if (sub === 'characters') {
         const charPath = (seg[2] || '').toLowerCase();
@@ -1592,7 +1597,7 @@ const umaApp = createApp({
         resetPageScroll();
         pushUrl();
       };
-      return Promise.all([loadVoiceData(), loadAnimeCatalogOptional()]).then(loadCharacterUi).then(show, show);
+      return Promise.all([loadVoiceData(), loadCharacterIndexData(), loadAnimeCatalogOptional()]).then(loadCharacterUi).then(show, show);
     }
     function openVa(slug) {
       return openVoice(slug);
@@ -3481,7 +3486,7 @@ const umaApp = createApp({
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref,
       animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffExpanded, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
-      staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffCredits, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues,
+      staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffCredits, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
