@@ -633,7 +633,15 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <article v-else id="cIntroDetail" class="entity-detail character-entity-detail" :style="{'--entity-accent':charDetail.main || '#3157ed','--entity-sub':charDetail.sub || '#ffa932'}">
                 <div class="entity-hero" :class="{'entity-hero-text':!charDetail.img}">
                     <div v-if="charDetail.img" class="entity-cover character-cover"><img :src="charDetail.img" :alt="charDetail.zh" fetchpriority="high"></div>
-                    <div class="entity-intro"><span class="entity-kind">角色</span><h1>{{ charDetail.zh }}</h1><p class="entity-reading">{{ charDetail.ja }}<template v-if="charDetail.en"> · {{ charDetail.en }}</template></p><div v-if="charDetail.cv_zh || horseUrlForCharacter(charDetail.id)" class="hero-chip-row"><button v-if="charDetail.cv_zh" class="performer-chip voice-chip" :style="{'--chip-color':charDetail.main}" @click="openVoiceByName(charDetail.cv_zh)"><img v-if="voicePhotoByName(charDetail.cv_zh)" :src="voicePhotoByName(charDetail.cv_zh)" alt=""><span>{{ charDetail.cv_zh }}</span></button><a v-if="horseUrlForCharacter(charDetail.id)" class="horse-link-chip" :href="horseUrlForCharacter(charDetail.id)" @click.prevent="openHorseForCharacter(charDetail.id)">原型马 <em>↗</em></a></div></div>
+                    <div class="entity-intro">
+                        <span class="entity-kind">角色</span><h1>{{ charDetail.zh }}</h1>
+                        <p class="entity-reading">{{ charDetail.ja }}<template v-if="charDetail.en"> · {{ charDetail.en }}</template></p>
+                        <div v-if="charDetail.cv_zh || horseUrlForCharacter(charDetail.id)" class="hero-chip-row">
+                            <a v-if="voiceHrefByName(charDetail.cv_zh)" class="performer-chip voice-chip" :style="{'--chip-color':charDetail.main}" :href="voiceHrefByName(charDetail.cv_zh)" @click="animeLink($event,voiceHrefByName(charDetail.cv_zh))"><img v-if="voicePhotoByName(charDetail.cv_zh)" :src="voicePhotoByName(charDetail.cv_zh)" alt=""><span>{{ charDetail.cv_zh }}</span></a>
+                            <span v-else-if="charDetail.cv_zh" class="performer-chip voice-chip" :style="{'--chip-color':charDetail.main}">{{ charDetail.cv_zh }}</span>
+                            <a v-if="horseUrlForCharacter(charDetail.id)" class="horse-link-chip" :href="horseUrlForCharacter(charDetail.id)" @click="animeLink($event,horseUrlForCharacter(charDetail.id))">原型马 <em>↗</em></a>
+                        </div>
+                    </div>
                 </div>
                 <nav class="entity-tabs" aria-label="角色栏目">
                     <button :class="{active:charSection==='profile'}" @click="setCharSection('profile')">角色信息</button>

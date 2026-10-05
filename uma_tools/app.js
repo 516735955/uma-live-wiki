@@ -1367,6 +1367,7 @@ const umaApp = createApp({
       const sex = horse && horse.sex;
       if (sex === 'male') return '牡马';
       if (sex === 'female') return '牝马';
+      if (sex === 'gelding') return '阉马';
       return '—';
     }
     function horseForCharacter(characterId) {
@@ -1928,6 +1929,10 @@ const umaApp = createApp({
     function voicePhotoByName(name) {
       const profile = voiceProfileForName(name);
       return profile && profile.photo ? profile.photo.url : '';
+    }
+    function voiceHrefByName(name) {
+      const profile = voiceProfileForName(name);
+      return profile ? routes.voiceActors(profile.id) : '';
     }
     function findAlbumTrackSong(track, trackIndex, album) {
       const number = Number(trackIndex) + 1;
@@ -3393,6 +3398,7 @@ const umaApp = createApp({
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
       syncFromUrl, prepareCurrentRoute, applyCurrentRoute, loadHomeSummaryIfNeeded, navigateTo, showContextBack, contextBack, breadcrumbItems,
+      voiceHrefByName,
       eventsQuery, evTime, evKind, evMode, evYear, evSeries, eventYears, eventYearOptions, eventSeriesOptions, setEvTime, setEvKind, setEvMode, setEvYear, setEvSeries, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsTotal, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
