@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-05T03:10:28+00:00",
+  "generated_at": "2026-10-05T08:18:48+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -10410,6 +10410,61 @@
       }
     },
     {
+      "id": "va-arizumi-tooru",
+      "slug": "va-arizumi-tooru",
+      "identity": {
+        "zh": "有隅融",
+        "ja": "有隅融",
+        "kana": "",
+        "aliases": [
+          "有隅融"
+        ]
+      },
+      "profile": {
+        "birthday": "4月3日",
+        "birthplace": "埼玉県",
+        "agency": "81プロデュース",
+        "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?id=371",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "81プロデュース",
+            "url": "https://www.81produce.co.jp/actor_search/index.php/item?id=371"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.81produce.co.jp/dcms_media/image/arizumi_tooru.jpg",
+        "source_url": "https://www.81produce.co.jp/actor_search/index.php/item?id=371",
+        "source_title": "81プロデュース"
+      },
+      "roles": [
+        {
+          "character_id": "masuo",
+          "name": "益男",
+          "name_ja": "ますお",
+          "former": false,
+          "image": "",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
       "id": "va-auto-00c2247ac66e",
       "slug": "va-auto-00c2247ac66e",
       "identity": {
@@ -12926,6 +12981,61 @@
       }
     },
     {
+      "id": "va-uenishi-teppei",
+      "slug": "va-uenishi-teppei",
+      "identity": {
+        "zh": "上西哲平",
+        "ja": "上西哲平",
+        "kana": "",
+        "aliases": [
+          "上西哲平"
+        ]
+      },
+      "profile": {
+        "birthday": "9月1日",
+        "birthplace": "山梨県",
+        "agency": "81プロデュース",
+        "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?id=12",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "81プロデュース",
+            "url": "https://www.81produce.co.jp/actor_search/index.php/item?id=12"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.81produce.co.jp/dcms_media/image/uenishi_teppei.jpg",
+        "source_url": "https://www.81produce.co.jp/actor_search/index.php/item?id=12",
+        "source_title": "81プロデュース"
+      },
+      "roles": [
+        {
+          "character_id": "minami",
+          "name": "南",
+          "name_ja": "みなみ",
+          "former": false,
+          "image": "",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
       "id": "va-urushiyama-yuki",
       "slug": "va-urushiyama-yuki",
       "identity": {
@@ -13228,5 +13338,5 @@
       }
     }
   ],
-  "build_id": "a78d89cd214ac839900d"
+  "build_id": "fde44ce8862123caa0dc"
 }

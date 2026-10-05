@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 from build_anime_catalog import atomic_json
@@ -16,6 +17,7 @@ DATA = ROOT / "data/anime"
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write", action="store_true")
+    parser.add_argument("--unit", action="append", help="Import only these unit IDs; repeat to select several.")
     args = parser.parse_args()
     documents = {name: json.loads((DATA / (name + ".json")).read_text(encoding="utf-8"))
                  for name in ("ending_credits", "people", "staff", "units", "relations", "source_registry")}
@@ -32,16 +34,24 @@ def main():
     versions = {v["id"]: song["id"] for song in song_doc["songs"] for v in song["versions"]}
     character_names = {normalized(name): c for c in characters for name in (c["ja"], *c.get("aliases", []))}
     character_names["沖田トレーナー"] = next(c for c in characters if c["id"] == "narita_trainer")
+    character_names[normalized("実況(赤坂美聡)")] = next(c for c in characters if c["id"] == "akasakamisato")
     voice_names = {normalized(name): v for v in voices
                    for name in (v["identity"]["ja"], *v["identity"].get("aliases", []))}
     voice_names[normalized("高橋未奈美")] = next(v for v in voices if v["id"] == "va-0180")
     creator_names = {normalized(name): c["id"] for c in creators if c["type"] != "organization"
                      for name in (c["name"], *c.get("aliases", []))}
     people_names = {normalized(name): p for p in people for name in (p["name"], *p.get("aliases", []))}
+    latin_names = {}
+    for name, person in people_names.items():
+        if re.fullmatch(r"[A-Za-z-]+", name):
+            key = name.casefold().replace("-", "")
+            latin_names.setdefault(key, {})[person["id"]] = person
     added = 0
     for episode in documents["ending_credits"]["episodes"]:
         work = episode["work_id"]
         unit = f"{work}-e{episode['number']:02d}"
+        if args.unit and unit not in args.unit:
+            continue
         ref = "official-ending-" + unit
         if not any(s["id"] == ref for s in sources):
             sources.append({"id": ref, "kind": "official", "label": "官方单集片尾职员表", "url": episode["url"],
@@ -61,10 +71,18 @@ def main():
             else:
                 name = normalized(signature["name"])
                 person = people_names.get(name)
+                if person is None and re.fullmatch(r"[A-Za-z-]+", name):
+                    candidates = latin_names.get(name.casefold().replace("-", ""), {})
+                    if len(candidates) == 1:
+                        person = next(iter(candidates.values()))
+                        if signature["name"] not in person.setdefault("aliases", []):
+                            person["aliases"].append(signature["name"])
                 if person is None:
                     person = {"id": "staff-" + name, "name": signature["name"], "aliases": [], "source_refs": []}
                     people.append(person)
                     people_names[name] = person
+                    if re.fullmatch(r"[A-Za-z-]+", name):
+                        latin_names.setdefault(name.casefold().replace("-", ""), {})[person["id"]] = person
                 if name in creator_names and "音乐" in role_label(signature["role"]):
                     person["creator_id"] = creator_names[name]
                 if ref not in person.setdefault("source_refs", []):
@@ -86,24 +104,52 @@ def main():
                 credits.append(row)
                 added += 1
         for order, (signature, actor) in enumerate(episode["cast"]):
-            if signature == "トレーナー" and work == "anime-1st-anniversary":
+            narrator = signature == "ナレーション"
+            if signature == "トレーナー" and work in {"anime-s1", "anime-s2", "anime-s3", "anime-1st-anniversary"}:
                 character = next(c for c in characters if c["id"] == "spica_trainer")
             else:
-                character = character_names[normalized(signature)]
+                character = None if narrator else character_names[normalized(signature)]
             voice = voice_names[normalized(actor)]
+            target = character["id"] if character else voice["id"]
             existing = next((r for r in relations if r["source_id"] == unit and r.get("relation_type") == "credited_cast"
-                             and r.get("target_id") == character["id"] and r.get("voice_actor_id") == voice["id"]), None)
+                             and r.get("target_id") == target and r.get("voice_actor_id") == voice["id"]), None)
             if existing:
                 existing["evidence_refs"] = list(dict.fromkeys([*existing.get("evidence_refs", []), ref]))
             else:
                 relations.append({"id": f"{unit}-official-ending-cast-{order:02d}", "source_type": "anime_unit", "source_id": unit,
-                                  "relation_type": "credited_cast", "target_type": "character", "target_id": character["id"],
+                                  "relation_type": "credited_cast", "target_type": "character" if character else "voice_actor", "target_id": target,
                                   "voice_actor_id": voice["id"], "signature": signature, "display_order": order,
                                   "label": "", "evidence_refs": [ref]})
+                if narrator:
+                    relations[-1].update(label="旁白", role_name="旁白")
         series = next(s for s in documents["units"]["series"] if s["work_id"] == work)
         detail = series.setdefault("details", {}).setdefault(str(episode["number"]), {})
         detail["staff_status"] = episode["staff_status"]
         detail["source_refs"] = list(dict.fromkeys([*detail.get("source_refs", []), ref]))
+        for cue in episode.get("music_cues", []):
+            usage = cue.get("usage_type") or ("fanfare" if "ファンファーレ" in cue["title"] else "insert")
+            if cue.get("song_id"):
+                for relation in relations:
+                    if relation["source_id"] == unit and relation.get("relation_type") == "uses_song" and relation.get("target_id") == cue["song_id"]:
+                        relation.update(usage_type=usage, label="")
+                        relation["evidence_refs"] = list(dict.fromkeys([*relation.get("evidence_refs", []), ref]))
+            matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])]
+            if matches:
+                for row in matches:
+                    row["source_refs"] = list(dict.fromkeys([*row.get("source_refs", []), ref]))
+                    row["usage_type"] = usage
+                    if cue.get("song_id"):
+                        row["song_id"] = cue["song_id"]
+                continue
+            names = cue.get("names", [])
+            creator_ids = [creator_names[normalized(name)] for name in names]
+            detail.setdefault("music_cues", []).append({
+                "title": cue["title"], "usage_type": usage,
+                "credits": [{"role": role_label(cue["role"]), "names": names,
+                             "institutions": cue.get("institutions", []), "creator_ids": creator_ids}],
+                "institutions": [], "source_refs": [ref], "source_time": cue["time"]})
+            if cue.get("song_id"):
+                detail["music_cues"][-1]["song_id"] = cue["song_id"]
         # Recording mappings are reviewed explicitly; titles and album order
         # never establish an episode's music use by themselves.
         for usage in episode.get("music_uses", []):

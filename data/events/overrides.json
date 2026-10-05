@@ -686,6 +686,44 @@
     }
   ],
   "voice_actor_profile_overrides": {
+    "有隅融": {
+      "name_zh": "有隅融",
+      "name_ja": "有隅融",
+      "birthday": "4月3日",
+      "birthplace": "埼玉県",
+      "agency": "81プロデュース",
+      "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?id=371",
+      "photo_url": "https://www.81produce.co.jp/dcms_media/image/arizumi_tooru.jpg",
+      "photo_source_url": "https://www.81produce.co.jp/actor_search/index.php/item?id=371",
+      "photo_source_title": "81プロデュース",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "81プロデュース",
+          "url": "https://www.81produce.co.jp/actor_search/index.php/item?id=371"
+        }
+      ],
+      "status": "complete"
+    },
+    "上西哲平": {
+      "name_zh": "上西哲平",
+      "name_ja": "上西哲平",
+      "birthday": "9月1日",
+      "birthplace": "山梨県",
+      "agency": "81プロデュース",
+      "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?id=12",
+      "photo_url": "https://www.81produce.co.jp/dcms_media/image/uenishi_teppei.jpg",
+      "photo_source_url": "https://www.81produce.co.jp/actor_search/index.php/item?id=12",
+      "photo_source_title": "81プロデュース",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "81プロデュース",
+          "url": "https://www.81produce.co.jp/actor_search/index.php/item?id=12"
+        }
+      ],
+      "status": "complete"
+    },
     "折原日菜": {
       "birthday": "5月8日",
       "birthplace": "東京都",

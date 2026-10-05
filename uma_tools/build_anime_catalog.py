@@ -164,7 +164,7 @@ def validate(
         if unit.get("status") not in {"released", "scheduled"}:
             errors.append(f"unit {unit.get('id')} has invalid status")
         for cue in unit.get("music_cues", []):
-            if not cue.get("title") or cue.get("usage_type") != "fanfare":
+            if not cue.get("title") or cue.get("usage_type") not in {"fanfare", "insert", "bgm"}:
                 errors.append(f"unit {unit.get('id')} has an invalid music cue")
             if not cue.get("source_refs") or any(ref not in source_ids for ref in cue["source_refs"]):
                 errors.append(f"unit {unit.get('id')} has a music cue without registered evidence")
@@ -219,6 +219,8 @@ def validate(
     }
     for unit in units:
         for cue in unit.get("music_cues", []):
+            if cue.get("song_id") and cue["song_id"] not in targets["song"]:
+                errors.append(f"unit {unit['id']} references a missing cue song")
             for credit in cue.get("credits", []):
                 creator_ids = credit.get("creator_ids", [])
                 if creator_ids and (len(creator_ids) != len(credit.get("names", []))

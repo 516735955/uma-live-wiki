@@ -3967,7 +3967,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.bilibili.com/bangumi/play/ep374306"
+        }
+      ]
     },
     "song-you-know-me-09aaa89225-v-09aaa89225": {
       "source_track_id": "2703851069",
@@ -5893,7 +5899,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-19014"
+      "source_catalog": "LACA-19014",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.bilibili.com/bangumi/play/ep780851"
+        }
+      ]
     },
     "song-bcf0fb77db-v-bcf0fb77db": {
       "source_track_id": "557583195",

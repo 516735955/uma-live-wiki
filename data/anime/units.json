@@ -83,7 +83,8 @@
           "source_refs": [
             "official-story-anime-s1-e01",
             "staff-transcript-anime-s1",
-            "official-s1-broadcast"
+            "official-s1-broadcast",
+            "official-ending-anime-s1-e01"
           ],
           "stills": [
             {
@@ -92,7 +93,7 @@
               "source_ref": "official-story-anime-s1-e01"
             }
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "TOKYO MX・BS11放送",
@@ -787,7 +788,8 @@
           "summary_ja": "シンボリルドルフに憧れて無敗の三冠を目指すトウカイテイオーは、次走の日本ダービーを目前に日本中の注目を集めていた。そして迎えた本番、入場規制が敷かれるほど盛り上がる中、トウカイテイオーは一番運のあるウマ娘が勝つとされるレースに挑む！",
           "source_refs": [
             "official-story-anime-s2-e01",
-            "staff-transcript-anime-s2"
+            "staff-transcript-anime-s2",
+            "official-ending-anime-s2-e01"
           ],
           "stills": [
             {
@@ -880,7 +882,7 @@
               "timezone": "JST"
             }
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "summary_zh": "憧憬鲁道夫象征、志在无败三冠的东海帝王，成为日本德比前备受瞩目的选手。比赛当天，她在热烈的关注中挑战这场被称为最幸运者才能获胜的赛事。",
           "music_cues": [
             {
@@ -902,7 +904,8 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
+                "moegirl-tv-episode-music",
+                "official-ending-anime-s2-e01"
               ]
             }
           ]
@@ -4521,7 +4524,8 @@
         "1": {
           "summary_ja": "憧れのトウカイテイオーのようなウマ娘を目指して、トレセン学園に入学したキタサンブラック。\nテイオーと同じチーム＜スピカ＞に加入し、デビューから無傷の３連勝で勢いに乗るキタサンは、無敗の三冠ウマ娘へ向けて『皐月賞』に出走する！",
           "source_refs": [
-            "official-story-anime-s3-e01"
+            "official-story-anime-s3-e01",
+            "official-ending-anime-s3-e01"
           ],
           "stills": [
             {
@@ -4577,7 +4581,7 @@
           ],
           "title_ja": "憧れた景色",
           "summary_zh": "北部玄驹为成为东海帝王那样的赛马娘进入特雷森学园，并加入 Spica。出道三连胜后，她带着挑战不败三冠的愿望参加皋月赏。",
-          "staff_status": "main_only",
+          "staff_status": "complete",
           "music_cues": [
             {
               "title": "ウマ娘 ファンファーレ I GI",
@@ -4598,8 +4602,33 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
+                "moegirl-tv-episode-music",
+                "official-ending-anime-s3-e01"
               ]
+            },
+            {
+              "title": "学級委員長ですから",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作曲／编曲",
+                  "names": [
+                    "多田彰文"
+                  ],
+                  "institutions": [
+                    "イマジン"
+                  ],
+                  "creator_ids": [
+                    "creator-6a67bd9755"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-s3-e01"
+              ],
+              "source_time": 1409,
+              "song_id": "song-bd297fdbbe"
             }
           ]
         },
@@ -5724,7 +5753,8 @@
           "summary_ja": "寂れた地方のカサマツトレセン学園。\nそこでトレーナーを務める北原穣は、活気を失いつつある地方レースの現状に対してどうにもできない日々を送っていた。\nそんなある日、1人のウマ娘と出会う。\n芦毛の髪をなびかせて走るその姿を見た時、彼は長年待ちわびていた『スター』が現れたと直感する——。",
           "source_refs": [
             "official-story-anime-cinderella-gray-e01",
-            "staff-transcript-anime-cinderella-gray"
+            "staff-transcript-anime-cinderella-gray",
+            "official-ending-anime-cinderella-gray-e01"
           ],
           "stills": [
             {
@@ -5784,7 +5814,7 @@
             }
           ],
           "title_ja": "ここにいる",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "summary_zh": "笠松特雷森学园逐渐失去活力，训练员北原穰对此束手无策。直到他遇见一位披着芦毛长发奔跑的赛马娘，直觉告诉他，等待已久的明星终于出现了。"
         },
         "2": {

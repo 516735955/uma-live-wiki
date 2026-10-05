@@ -943,6 +943,14 @@
     "fuyuno_nakasumi": {
       "horse": null,
       "kind": "original"
+    },
+    "masuo": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "minami": {
+      "horse": null,
+      "kind": "non_uma"
     }
   },
   "nodes": [
@@ -33948,6 +33956,22 @@
       "ja": "フユノナカスミ",
       "en": "",
       "avatar": "https://umamusu.wiki/w/images/c/cc/Fuyuno_Nakasumi_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "masuo",
+      "zh": "益男",
+      "ja": "ますお",
+      "en": "",
+      "avatar": "",
+      "pure": true
+    },
+    {
+      "id": "minami",
+      "zh": "南",
+      "ja": "みなみ",
+      "en": "",
+      "avatar": "",
       "pure": true
     }
   ]

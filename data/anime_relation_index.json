@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-5d760d51cbd0880f",
+  "build_id": "anime-91594400710ec3e6",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "targets": {
     "event": {
@@ -16951,6 +16951,362 @@
           "source_type": "anime_unit",
           "source_id": "anime-s2-e13",
           "work_id": "anime-s2"
+        }
+      ],
+      "minami": [
+        {
+          "relation_id": "anime-s2-e04-broadcast-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e04",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e05-broadcast-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e05",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e08-broadcast-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e08",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e09-broadcast-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e09",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e10-broadcast-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e10",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e13-broadcast-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e13",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s3-e01-broadcast-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e01",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e02-broadcast-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e02",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e03-broadcast-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e03",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e05-broadcast-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e05",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e06-broadcast-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e06",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e07-broadcast-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e07",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e09-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e09",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e11-broadcast-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e11",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e12-broadcast-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e12",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e13-broadcast-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e13",
+          "work_id": "anime-s3"
+        }
+      ],
+      "masuo": [
+        {
+          "relation_id": "anime-s2-e04-broadcast-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e04",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e05-broadcast-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e05",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e08-broadcast-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e08",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e09-broadcast-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e09",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e10-broadcast-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e10",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e13-broadcast-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e13",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s3-e01-broadcast-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e01",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e02-broadcast-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e02",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e03-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e03",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e05-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e05",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e06-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e06",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e07-broadcast-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e07",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e09-broadcast-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e09",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e11-broadcast-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e11",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e12-broadcast-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e12",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e13-broadcast-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e13",
+          "work_id": "anime-s3"
         }
       ]
     },
@@ -33951,6 +34307,362 @@
           "source_id": "anime-s2-e13",
           "work_id": "anime-s2"
         }
+      ],
+      "va-uenishi-teppei": [
+        {
+          "relation_id": "anime-s2-e04-broadcast-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e04",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e05-broadcast-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e05",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e08-broadcast-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e08",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e09-broadcast-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e09",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e10-broadcast-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e10",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e13-broadcast-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e13",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s3-e01-broadcast-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e01",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e02-broadcast-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e02",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e03-broadcast-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e03",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e05-broadcast-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e05",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e06-broadcast-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e06",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e07-broadcast-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e07",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e09-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e09",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e11-broadcast-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e11",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e12-broadcast-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e12",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e13-broadcast-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "みなみ",
+          "voice_actor_id": "va-uenishi-teppei",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e13",
+          "work_id": "anime-s3"
+        }
+      ],
+      "va-arizumi-tooru": [
+        {
+          "relation_id": "anime-s2-e04-broadcast-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e04",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e05-broadcast-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e05",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e08-broadcast-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e08",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e09-broadcast-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e09",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e10-broadcast-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e10",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e13-broadcast-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e13",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s3-e01-broadcast-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e01",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e02-broadcast-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e02",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e03-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e03",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e05-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e05",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e06-broadcast-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e06",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e07-broadcast-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e07",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e09-broadcast-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e09",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e11-broadcast-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e11",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e12-broadcast-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e12",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-s3-e13-broadcast-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ますお",
+          "voice_actor_id": "va-arizumi-tooru",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e13",
+          "work_id": "anime-s3"
+        }
       ]
     },
     "song": {
@@ -39747,8 +40459,8 @@
         {
           "relation_id": "anime-s3-e01-bgm-song-bd297fdbbe",
           "relation_type": "uses_song",
-          "label": "背景配乐",
-          "usage_type": "bgm",
+          "label": "",
+          "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
           "source_type": "anime_unit",

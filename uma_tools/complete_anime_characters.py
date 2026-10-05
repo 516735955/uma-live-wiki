@@ -34,6 +34,8 @@ def sync_character_pedigree_mappings(characters):
 # These are distinct named characters, not generic background signatures.
 # Their casting is taken from the individual episode credit snapshot.
 NAMED = {
+    "ますお": ("masuo", "益男", "human"),
+    "みなみ": ("minami", "南", "human"),
     "南坂": ("minamisaka", "南坂", "human"),
     "黒沼": ("kuronuma", "黑沼", "human"),
     "ブロワイエ": ("broye", "ブロワイエ", "umamusume"),
@@ -55,6 +57,8 @@ NAMED = {
 }
 
 VOICE_PROFILES = {
+    "有隅融": ("arizumi-tooru", "有隅融", "4月3日", "埼玉県", "81プロデュース", "https://www.81produce.co.jp/actor_search/index.php/item?id=371", "https://www.81produce.co.jp/dcms_media/image/arizumi_tooru.jpg"),
+    "上西哲平": ("uenishi-teppei", "上西哲平", "9月1日", "山梨県", "81プロデュース", "https://www.81produce.co.jp/actor_search/index.php/item?id=12", "https://www.81produce.co.jp/dcms_media/image/uenishi_teppei.jpg"),
     "池澤春菜": ("ikezawa-haruna", "池泽春菜", "12月15日", "ギリシャ", "アクロス エンタテインメント", "https://across-ent.com/voice_actor/detail.html?id=111", "https://across-ent.com/assets/media/aa9e63b595238cd3850c852ada78e6870e1ed0a8.jpg"),
     "古川慎": ("furukawa-makoto", "古川慎", "9月29日", "熊本県", "TOY'S FACTORY", "https://www.toysfactory.co.jp/sp/artist/makotofurukawa/bio", "https://www.toysfactory.co.jp/artist_images/007902_X831fYdf2xjsZI1lykCTbG_spzWEQr.jpg"),
     "赤崎千夏": ("akasaki-chinatsu", "赤崎千夏", "8月10日", "鹿児島県", "81プロデュース", "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=148", "https://www.81produce.co.jp/dcms_media/image/akasaki_chinatsu.jpg"),
@@ -72,6 +76,8 @@ VOICE_PROFILES = {
 PUBLIC_PROFILES = {"原優子"}
 
 CHARACTER_PROFILES = {
+    "ますお": ("https://www.bilibili.com/bangumi/play/ep780851", "", "赛马娘竞赛的爱好者，常与南一起到场观赛。"),
+    "みなみ": ("https://www.bilibili.com/bangumi/play/ep780851", "", "赛马娘竞赛的爱好者，常与益男一起到场观赛。"),
     "スプリングシング": ("https://times.abema.tv/articles/-/10169707", "", "参加岐阜王冠赏的赛马娘，在《芦灰》第14话登场。"),
     "黒沼": ("Kuronuma", "https://umamusu.wiki/w/images/9/9c/Kuronuma.png", "美浦波旁的训练员，身材魁梧，常戴着墨镜。他以严格的训练方式指导波旁。"),
     "ブロワイエ": ("Broye", "https://umamusu.wiki/w/images/0/0b/Broye_%28Main%29.png", "来自法国的强大赛马娘，以出色的竞技实力闻名。她在第一季中与神鹰和特别周展开较量。"),
@@ -94,6 +100,7 @@ CHARACTER_PROFILES = {
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write", action="store_true")
+    parser.add_argument("--character", action="append", help="Complete only these credited character names.")
     args = parser.parse_args()
     path = ROOT / "data/character_index_data.js"
     characters = json.loads(path.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
@@ -104,7 +111,12 @@ def main():
     voice_names = {normalized(v["identity"]["ja"]): v for v in voices}
     existing = {normalized(c["ja"]): c for c in characters}
     additions = []
+    selected = set(args.character or NAMED)
+    selected_actors = {normalized(actor) for episode in episodes for role, actor in episode["cast"]
+                       if role in selected}
     for actor_name, profile in VOICE_PROFILES.items():
+        if args.character and actor_name not in selected_actors:
+            continue
         voice = voice_names.get(actor_name)
         if not voice:
             continue
@@ -119,6 +131,8 @@ def main():
             voice["profile"].setdefault("sources", []).append(source)
         voice["photo"] = {"url": profile[6], "source_url": profile[5], "source_title": "人物照片"}
     for name, (cid, zh, kind) in NAMED.items():
+        if name not in selected:
+            continue
         signatures = [(episode, actor) for episode in episodes for role, actor in episode["cast"] if normalized(role) == normalized(name)]
         if not signatures:
             raise ValueError("no individual signature for " + name)
@@ -151,16 +165,19 @@ def main():
         existing[normalized(name)] = character
         additions.append(cid)
     # The site's public browser configuration supplies the current profiles.
-    url = "https://anime-umamusume.jp/character/"
-    html = fetch(url)
-    domain = re.search(r'serviceDomain:"([^\"]+)"', html).group(1)
-    key = re.search(r'apiKey:"([^\"]+)"', html).group(1)
-    profile = next(row for row in cms(domain, key, "character")["contents"] if row["name"] == "南坂")
-    existing["南坂"].update(img=profile["detail_img"][0]["url"], page=url,
-                           summary_zh="Canopus队的训练员，待人温和，内心怀有对胜利的热情。他尊重队员的跑法，温柔地守护着个性鲜明的她们。")
+    if "南坂" in selected:
+        url = "https://anime-umamusume.jp/character/"
+        html = fetch(url)
+        domain = re.search(r'serviceDomain:"([^\"]+)"', html).group(1)
+        key = re.search(r'apiKey:"([^\"]+)"', html).group(1)
+        profile = next(row for row in cms(domain, key, "character")["contents"] if row["name"] == "南坂")
+        existing["南坂"].update(img=profile["detail_img"][0]["url"], page=url,
+                               summary_zh="Canopus队的训练员，待人温和，内心怀有对胜利的热情。他尊重队员的跑法，温柔地守护着个性鲜明的她们。")
     # Public character pages identify these animation frames. Their speculative
     # real-horse matches are excluded from the database relationships.
     for name, (page, image, summary) in CHARACTER_PROFILES.items():
+        if name not in selected:
+            continue
         character = existing[normalized(name)]
         source = page if page.startswith("https://") else "https://umamusu.wiki/" + page
         character.update(img=image, page=source, summary_zh=summary)
