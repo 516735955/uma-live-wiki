@@ -606,8 +606,8 @@ const umaApp = createApp({
     const animeStaffAggregate = computed(() => {
       if (!animeDetail.value || animeUnitDetail.value || animeSingle.value) return [];
       const rows = [], q = animeStaffQuery.value.trim().toLowerCase();
-      (animeCatalog.value.staff || []).filter(entry => entry.work_id === animeDetail.value.id && entry.unit_id && entry.person_id).forEach(entry => {
-        const key = [entry.person_id,entry.group || '',entry.role,...(entry.institutions || [])].join(':');
+      (animeCatalog.value.staff || []).filter(entry => entry.work_id === animeDetail.value.id && entry.unit_id && (entry.person_id || entry.organization)).forEach(entry => {
+        const key = [entry.person_id || entry.organization,entry.group || '',entry.role,...(entry.institutions || [])].join(':');
         let row = rows.find(item => item.key === key);
         if (!row) { row = {key,entry,units:[]}; rows.push(row); }
         const unit = findAnimeUnit(entry.unit_id);
