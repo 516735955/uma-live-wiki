@@ -38,6 +38,7 @@ const umaApp = createApp({
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
     const routeReady = ref(false);
+    const routeError = ref('');
     const notFound = ref(false);
     const openNavGroup = ref('');
     const navigationRevision = ref(0);
@@ -302,8 +303,9 @@ const umaApp = createApp({
       voiceError.value = '';
       relationshipLoadPromise = api.request('/api/catalog/voice-actors')
         .then(function (data) {
+          if (!data || !Array.isArray(data.voice_actors) || !data.voice_actors.length) throw new Error('声优资料暂时无法载入。');
           relationshipLoadPromise = null;
-          voiceProfiles.value = (data && data.voice_actors) || [];
+          voiceProfiles.value = data.voice_actors;
           window.dispatchEvent(new CustomEvent('uma-voice-data'));
         }).catch(function () {
           relationshipLoadPromise = null;
@@ -1092,11 +1094,17 @@ const umaApp = createApp({
     }
     function applyCurrentRoute() {
       routeReady.value = false;
+      routeError.value = '';
       const revision = ++navigationRevision.value;
       entityRequestRevision += 1;
       clearEntityDetails();
       const sourcePath = currentUrlPath();
-      return Promise.resolve(prepareCurrentRoute()).then(apply, apply);
+      return Promise.resolve(prepareCurrentRoute()).then(apply, function () {
+        if (revision === navigationRevision.value && sourcePath === currentUrlPath()) {
+          routeError.value = '资料暂时无法载入，请重试。';
+          routeReady.value = true;
+        }
+      });
       function apply() {
         if (revision === navigationRevision.value && sourcePath === currentUrlPath()) {
           syncFromUrl();
@@ -1124,6 +1132,7 @@ const umaApp = createApp({
       return isAtomicView() && !!(history.state && history.state.fromEntity);
     });
     function contextBack() { history.back(); }
+    function retryCurrentRoute() { navigateTo(currentUrlPath(), true); }
     window.umaNavigate = navigateTo;
     const breadcrumbItems = computed(function () {
       const items = [{ label: '首页', path: routes.home() }];
@@ -3385,7 +3394,7 @@ const umaApp = createApp({
     }
 
     return {
-      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup, navigationError,
+      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, routeError, retryCurrentRoute, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup, navigationError,
       navItemActive, activateNavGroup, openNavGroupForPointer, closeNavGroupForPointer, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,

@@ -79,6 +79,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
     <div class="container" v-if="!home">
         <div v-if="!routeReady" class="ui-state loading">正在加载资料…</div>
+        <div v-else-if="routeError" class="ui-state ui-state-error"><span>{{ routeError }}</span><button class="ui-retry" @click="retryCurrentRoute">重试</button></div>
         <section v-else-if="notFound" class="not-found-page" aria-labelledby="not-found-title">
             <span>404</span>
             <h1 id="not-found-title">没有找到这个页面</h1>
