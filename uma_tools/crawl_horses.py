@@ -906,36 +906,22 @@ def parse_tables(html_text):
                 'venue': ' '.join(venue),
             })
 
-    # --- 主要成绩（按日期行切分重建）---
+    # --- 主要成绩（每个直接子 div 是一场比赛，海外行可能只有年份）---
     major_seg = re.search(r'主な成績</h2>(.*?)(?:<footer|トップへ|</main>)', html_text, re.S)
     if major_seg:
-        rows = []
-        current = None
-        for line in plain_lines(major_seg.group(1)):
-            if re.fullmatch(r'\d{4}\.\d\d\.\d\d', line):
-                if current is not None:
-                    rows.append(current)
-                current = [line]
-            elif current is not None:
-                current.append(line)
-        if current is not None:
-            rows.append(current)
-        for parts in rows:
-            tokens = parts
-            try:
-                place_index = next(i for i, token in enumerate(tokens) if re.fullmatch(r'\d+', token))
-            except StopIteration:
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(major_seg.group(1), 'html.parser')
+        for row in soup.select('.data-6-2 > div'):
+            cells = row.find_all('div', recursive=False)
+            if len(cells) != 7:
                 continue
-            grade_token = tokens[place_index - 1] if place_index - 1 >= 2 else ''
-            race = ' '.join(tokens[2:max(2, place_index - 1)])
-            if not race and grade_token and not _grade_like(grade_token):
-                race = grade_token
-                grade_token = ''
-            place = int(tokens[place_index])
-            tail = tokens[place_index + 1:]
-            surface = tail[0] if tail else ''
-            distance = tail[1] if len(tail) > 1 else ''
-            beaten = ' '.join(tail[2:]).split(' ※')[0].strip()
+            values = [cell.get_text(' ', strip=True) for cell in cells]
+            if not re.fullmatch(r'\d{4}(?:\.\d\d\.\d\d)?', values[0]) or not values[3].isdigit():
+                continue
+            race_link = cells[2].find('a')
+            grade_element = cells[2].find('span')
+            race = race_link.get_text(' ', strip=True) if race_link else values[2]
+            grade_token = grade_element.get_text(strip=True) if grade_element else ''
             grade = ''
             for grade_idx, chars in (
                 (1, ('Ⅰ', '１', '1')), (2, ('Ⅱ', '２', '2')), (3, ('Ⅲ', '３', '3')),
@@ -944,14 +930,14 @@ def parse_tables(html_text):
                     grade = 'G%d' % grade_idx
                     break
             data['major'].append({
-                'date': tokens[0],
-                'track': tokens[1],
+                'date': values[0],
+                'track': values[1],
                 'race': race,
                 'grade': grade,
-                'place': place,
-                'surface': surface,
-                'distance': distance,
-                'beaten': beaten,
+                'place': int(values[3]),
+                'surface': values[4],
+                'distance': values[5],
+                'beaten': values[6],
             })
     return data
 
