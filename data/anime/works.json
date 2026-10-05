@@ -32,7 +32,8 @@
           "display": "2018-04-01 24:00（初回1小时，第1・2话）",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover_original": "https://anime-umamusume.jp/archive/1st/assets/images/ogp4.jpg"
     },
     {
       "id": "anime-s2",
@@ -68,7 +69,8 @@
           "display": "2021-01-05 12:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/c87869bc63883138e9f561a7c303284f6ed1dc89.png"
     },
     {
       "id": "anime-umayon",
@@ -89,7 +91,8 @@
       "source_refs": [
         "official-anime-portal",
         "official-umayon"
-      ]
+      ],
+      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/01782413655c3bedb874ad64625ca2e500aeca8c.png"
     },
     {
       "id": "anime-1st-anniversary",
@@ -110,7 +113,8 @@
       "source_refs": [
         "official-anime-portal",
         "official-1st-anniversary"
-      ]
+      ],
+      "cover_original": "https://i.ytimg.com/vi/RKVWLnVqnP0/maxresdefault.jpg"
     },
     {
       "id": "anime-umayuru",
@@ -144,7 +148,8 @@
           "date": "2022-10-16",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover_original": "https://i1.hdslb.com/bfs/archive/2e02abba7e6867371f1925b9f32c5c2b23ce3731.jpg"
     },
     {
       "id": "anime-rttt",
@@ -185,7 +190,63 @@
           "label": "ぱかチューブっ！配信",
           "date": "2023-04-16",
           "display": "2023-04-16 21:00",
-          "timezone": "JST"
+          "timezone": "JST",
+          "edition": "web"
+        },
+        {
+          "label": "剧场上映",
+          "date": "2024-05-10",
+          "edition": "film"
+        },
+        {
+          "label": "Blu-ray发行",
+          "date": "2025-01-22",
+          "edition": "film"
+        }
+      ],
+      "cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg",
+      "film_duration": "99分钟",
+      "film_cover": "https://movie-umamusume.jp/assets/images/rttt/img_rttt01.jpg",
+      "film_stills": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
+          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
+          "source_ref": "official-toho-film-release"
         }
       ]
     },
@@ -209,7 +270,8 @@
       "source_refs": [
         "official-anime-portal",
         "official-anime-s3"
-      ]
+      ],
+      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/a6d2fbcca2f1956bbe718670d1e7cefb785bf4c3.png"
     },
     {
       "id": "anime-movie-beginning-new-era",
@@ -238,7 +300,9 @@
           "url": "https://movie-umamusume.jp/blu-ray/",
           "source_ref": "official-new-era-bd"
         }
-      ]
+      ],
+      "cover_original": "https://movie-umamusume.jp/assets/images/index/img_kv01.jpg",
+      "duration": "108分钟"
     },
     {
       "id": "anime-cinderella-gray",
@@ -261,7 +325,8 @@
       "source_refs": [
         "official-anime-portal",
         "official-cingray"
-      ]
+      ],
+      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/1fcc34fa384070888e246ae4fc04095815d790d1.png"
     },
     {
       "id": "anime-umayuru-prettygray",
@@ -290,7 +355,8 @@
           "display": "2025-04-30 12:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover_original": "https://umamusume.jp/contents/anime/umayuru-prettygray/assets/images/ogp.png"
     },
     {
       "id": "anime-umayuru-fullgate",
@@ -320,7 +386,8 @@
           "display": "2026-09-27 22:30",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover_original": "https://umamusume.jp/contents/anime/umayuru-fullgate/assets/images/ogp.png"
     }
   ]
 }

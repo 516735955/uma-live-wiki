@@ -9340,7 +9340,13 @@
       ],
       "source": "official_production",
       "source_url": "https://prtimes.jp/main/html/rd/p/000001308.000005593.html",
-      "source_catalog": "LZC-3651"
+      "source_catalog": "LZC-3651",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=COwezDS-R3s"
+        }
+      ]
     },
     "song-twinkle-miracle-3a84a8b8eb-v-3a84a8b8eb": {
       "credits": [
@@ -10320,6 +10326,38 @@
       ],
       "source": "official_soundtrack_catalog",
       "source_url": "https://catalog.bandainamcomusiclive.co.jp/release/84649/"
+    },
+    "song-5fcd96ba46-v-5fcd96ba46": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "土屋裕一",
+          "creator_id": "creator-69641a01cd"
+        },
+        {
+          "role": "arranger",
+          "name": "土屋裕一",
+          "creator_id": "creator-69641a01cd"
+        },
+        {
+          "role": "arranger",
+          "name": "秋田真典",
+          "creator_id": "creator-fb9599021b"
+        },
+        {
+          "role": "lyricist",
+          "name": "櫻木咲子",
+          "creator_id": "creator-a8e068c1f5"
+        }
+      ],
+      "source": "official_ending",
+      "manual": true,
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=4KzUSqUW9LU"
+        }
+      ]
     }
   }
 }

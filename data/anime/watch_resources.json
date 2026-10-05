@@ -3654,13 +3654,14 @@
         "type": "work",
         "id": "anime-umayuru-fullgate"
       },
-      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/1/",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
       "platform": "official_site",
       "publisher": "Cygames",
       "authority": "official",
       "content_type": "series",
       "unit_ids": [
-        "anime-umayuru-fullgate-e01"
+        "anime-umayuru-fullgate-e01",
+        "anime-umayuru-fullgate-e02"
       ],
       "languages": {
         "audio": [
@@ -3914,6 +3915,34 @@
       "status": "active",
       "verified_at": "2026-10-04",
       "source_ref": "official-rttt"
+    },
+    {
+      "id": "umayon-extra-preview-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e13"
+      },
+      "authority": "official",
+      "status": "active",
+      "content_type": "full_episode",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
+      "source_ref": "official-umayon-extra-preview"
+    },
+    {
+      "id": "watch-official-anime-umayuru-fullgate-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e02"
+      },
+      "platform": "youtube",
+      "authority": "official",
+      "content_type": "full_episode",
+      "status": "active",
+      "access": "free",
+      "url": "https://www.youtube.com/watch?v=COwezDS-R3s",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02",
+      "verified_at": "2026-10-05"
     }
   ]
 }

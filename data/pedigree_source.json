@@ -847,6 +847,102 @@
     "fujii_sensuke": {
       "horse": null,
       "kind": "non_uma"
+    },
+    "tojo_hana": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "tanabe_trainer": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "roux": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "shima": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "mei": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "izumimoto_nana": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "minamisaka": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "kuronuma": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "broye": {
+      "horse": null,
+      "kind": "original"
+    },
+    "sun_visor": {
+      "horse": null,
+      "kind": "original"
+    },
+    "queen_berry": {
+      "horse": null,
+      "kind": "original"
+    },
+    "rionatal": {
+      "horse": null,
+      "kind": "original"
+    },
+    "daisangen": {
+      "horse": null,
+      "kind": "original"
+    },
+    "relic_earth": {
+      "horse": null,
+      "kind": "original"
+    },
+    "merry_beauty": {
+      "horse": null,
+      "kind": "original"
+    },
+    "luna_swallow": {
+      "horse": null,
+      "kind": "original"
+    },
+    "nanto_ichiban": {
+      "horse": null,
+      "kind": "original"
+    },
+    "south_heroine": {
+      "horse": null,
+      "kind": "original"
+    },
+    "sekai_toha": {
+      "horse": null,
+      "kind": "original"
+    },
+    "walk_dancer": {
+      "horse": null,
+      "kind": "original"
+    },
+    "spring_sing": {
+      "horse": null,
+      "kind": "original"
+    },
+    "faith_no_more": {
+      "horse": null,
+      "kind": "original"
+    },
+    "romance_bubbly": {
+      "horse": null,
+      "kind": "original"
+    },
+    "fuyuno_nakasumi": {
+      "horse": null,
+      "kind": "original"
     }
   },
   "nodes": [
@@ -15230,9 +15326,9 @@
       "ja": "セントクレスピン",
       "en": "Saint Crespin",
       "profile_url": "https://db.netkeiba.com/horse/000a0004b5/",
-      "sex": "gelding",
+      "sex": "male",
       "born": 1956,
-      "metadata_source_url": "https://db.netkeiba.com/horse/000a0004b5/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333371/",
       "country": "GB",
       "parents": {
         "sire": "netkeiba_000a000dc0",
@@ -31707,7 +31803,7 @@
       },
       "profile_url": "https://www.jbis.or.jp/horse/0000151253/",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000151253/",
-      "sex": "male",
+      "sex": "gelding",
       "born": 1982,
       "country": "NZ"
     },
@@ -33661,6 +33757,198 @@
       "country": "JPN",
       "profile_url": "https://www.jbis.or.jp/horse/0000376803/",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+    },
+    {
+      "id": "tojo_hana",
+      "zh": "东条华",
+      "ja": "東条ハナ",
+      "en": "",
+      "avatar": "https://anime-umamusume.jp/archive/2nd/app/wp-content/uploads/2020/12/24f861fbaa28d9b7b2e6d598546b60df.png",
+      "pure": true
+    },
+    {
+      "id": "tanabe_trainer",
+      "zh": "田边训练员",
+      "ja": "タナベトレーナー",
+      "en": "",
+      "avatar": "https://movie-umamusume.jp/assets/images/character/img_main09.png",
+      "pure": true
+    },
+    {
+      "id": "roux",
+      "zh": "卢",
+      "ja": "ルー",
+      "en": "",
+      "avatar": "https://movie-umamusume.jp/assets/images/character/img_main10.png",
+      "pure": true
+    },
+    {
+      "id": "shima",
+      "zh": "岛",
+      "ja": "シマ",
+      "en": "",
+      "avatar": "https://movie-umamusume.jp/assets/images/character/img_main10.png",
+      "pure": true
+    },
+    {
+      "id": "mei",
+      "zh": "梅",
+      "ja": "メイ",
+      "en": "",
+      "avatar": "https://movie-umamusume.jp/assets/images/character/img_main10.png",
+      "pure": true
+    },
+    {
+      "id": "izumimoto_nana",
+      "zh": "泉本奈奈",
+      "ja": "泉本奈々",
+      "en": "",
+      "avatar": "https://movie-umamusume.jp/assets/images/character/img_main11.png",
+      "pure": true
+    },
+    {
+      "id": "minamisaka",
+      "zh": "南坂",
+      "ja": "南坂",
+      "en": "",
+      "avatar": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/3df496c07e45451b9cf83a0bc5d90a81/img_trainer2.png",
+      "pure": true
+    },
+    {
+      "id": "kuronuma",
+      "zh": "黑沼",
+      "ja": "黒沼",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/9/9c/Kuronuma.png",
+      "pure": true
+    },
+    {
+      "id": "broye",
+      "zh": "ブロワイエ",
+      "ja": "ブロワイエ",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/0/0b/Broye_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "sun_visor",
+      "zh": "サンバイザー",
+      "ja": "サンバイザー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/6/6a/Sunvisor.png",
+      "pure": true
+    },
+    {
+      "id": "queen_berry",
+      "zh": "クイーンベレー",
+      "ja": "クイーンベレー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/3/31/Queen_Berry.png",
+      "pure": true
+    },
+    {
+      "id": "rionatal",
+      "zh": "リオナタール",
+      "ja": "リオナタール",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/1/10/Rionatal_Race_Outfit.png",
+      "pure": true
+    },
+    {
+      "id": "daisangen",
+      "zh": "ダイサンゲン",
+      "ja": "ダイサンゲン",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/3/35/DaisangenFullbody.jpeg",
+      "pure": true
+    },
+    {
+      "id": "relic_earth",
+      "zh": "レリックアース",
+      "ja": "レリックアース",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/9/96/Relic_Earth_Main.png",
+      "pure": true
+    },
+    {
+      "id": "merry_beauty",
+      "zh": "メリービューティー",
+      "ja": "メリービューティー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/a/ab/Merry_Beauty_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "luna_swallow",
+      "zh": "ルナスワロー",
+      "ja": "ルナスワロー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/d/d6/Luna_Swallow_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "nanto_ichiban",
+      "zh": "ナントウイチバン",
+      "ja": "ナントウイチバン",
+      "en": "",
+      "avatar": "",
+      "pure": true
+    },
+    {
+      "id": "south_heroine",
+      "zh": "サウスヒロイン",
+      "ja": "サウスヒロイン",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/7/72/South_Heroine_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "sekai_toha",
+      "zh": "セカイトーハー",
+      "ja": "セカイトーハー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/8/8c/Sekai_Touha_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "walk_dancer",
+      "zh": "ウォークダンサー",
+      "ja": "ウォークダンサー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/d/d6/Walk_Dancer_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "spring_sing",
+      "zh": "スプリングシング",
+      "ja": "スプリングシング",
+      "en": "",
+      "avatar": "",
+      "pure": true
+    },
+    {
+      "id": "faith_no_more",
+      "zh": "フェイスノーモア",
+      "ja": "フェイスノーモア",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/a/ac/Faith_No_More_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "romance_bubbly",
+      "zh": "ロマンスバブリー",
+      "ja": "ロマンスバブリー",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/8/84/Romance_Bubbly_%28Main%29.png",
+      "pure": true
+    },
+    {
+      "id": "fuyuno_nakasumi",
+      "zh": "フユノナカスミ",
+      "ja": "フユノナカスミ",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/c/cc/Fuyuno_Nakasumi_%28Main%29.png",
+      "pure": true
     }
   ]
 }

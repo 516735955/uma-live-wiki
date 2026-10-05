@@ -12,6 +12,7 @@ import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
+from anime_labels import role_label, person_label, group_label
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,7 +76,7 @@ def unit_label(unit_type: str, number: int) -> str:
     labels = {
         "episode": f"第 {number} 话",
         "short": f"第 {number} 话",
-        "bd_short": f"蓝光新作短篇 {number}",
+        "bd_short": f"第 {number} 话",
         "ova": f"OVA {number}",
         "special": "特别动画",
         "movie": "电影正片",
@@ -244,7 +245,10 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
     for credit in staff:
         if credit.get("person_id") and credit["person_id"] not in person_ids:
             raise ValueError(f"unknown staff person {credit['person_id']}")
-    people = [{**person,
+    staff = [{**credit, "role_raw": credit["role"], "role": role_label(credit["role"]),
+              "group_raw": credit.get("group", ""), "group": group_label(credit.get("group", ""))}
+             for credit in staff]
+    people = [{**person, "name": person_label(person["name"]),
                "aliases": person.get("aliases") or [],
                "roles": list(dict.fromkeys(credit["role"] for credit in staff if credit.get("person_id") == person["id"])),
                "work_count": len({credit["work_id"] for credit in staff if credit.get("person_id") == person["id"]}),
@@ -316,6 +320,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "relation_type": relation["relation_type"],
             "label": relation.get("label") or "",
             "usage_type": relation.get("usage_type") or "",
+            "signature": relation.get("signature") or "",
+            "voice_actor_id": relation.get("voice_actor_id") or "",
             "source_type": relation["source_type"],
             "source_id": relation["source_id"],
             "work_id": relation["source_id"] if relation["source_type"] == "anime_work" else next(

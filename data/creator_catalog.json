@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-03T19:12:34+00:00",
+  "generated_at": "2026-10-04T22:39:19+00:00",
   "coverage": {
-    "creators": 276,
-    "credited_works": 331,
-    "credited_versions": 1293
+    "creators": 278,
+    "credited_works": 332,
+    "credited_versions": 1294
   },
   "creators": [
     {
@@ -20636,6 +20636,74 @@
       "collaborators": []
     },
     {
+      "id": "creator-69641a01cd",
+      "name": "土屋裕一",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 1
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-5fcd96ba46",
+          "title": "ヤマヲカケル！",
+          "cover": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
+          "release_date": "2023-03-29",
+          "album_name": "アニメ『うまゆる』アルバム",
+          "roles": [
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-5fcd96ba46-v-5fcd96ba46"
+          ],
+          "versions": [
+            {
+              "id": "song-5fcd96ba46-v-5fcd96ba46",
+              "title": "ヤマヲカケル！",
+              "version_label": "",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-a8e068c1f5",
+          "name": "櫻木咲子",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        },
+        {
+          "creator_id": "creator-fb9599021b",
+          "name": "秋田真典",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        }
+      ]
+    },
+    {
       "id": "creator-9df1809a60",
       "name": "坪田修平",
       "aliases": [],
@@ -37428,6 +37496,67 @@
       ]
     },
     {
+      "id": "creator-a8e068c1f5",
+      "name": "櫻木咲子",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-5fcd96ba46",
+          "title": "ヤマヲカケル！",
+          "cover": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
+          "release_date": "2023-03-29",
+          "album_name": "アニメ『うまゆる』アルバム",
+          "roles": [
+            "lyricist"
+          ],
+          "version_ids": [
+            "song-5fcd96ba46-v-5fcd96ba46"
+          ],
+          "versions": [
+            {
+              "id": "song-5fcd96ba46-v-5fcd96ba46",
+              "title": "ヤマヲカケル！",
+              "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-69641a01cd",
+          "name": "土屋裕一",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        },
+        {
+          "creator_id": "creator-fb9599021b",
+          "name": "秋田真典",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        }
+      ]
+    },
+    {
       "id": "creator-91a95f9664",
       "name": "武宮 健",
       "aliases": [],
@@ -49093,11 +49222,11 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 13
+          "count": 14
         }
       ],
-      "work_count": 1,
-      "version_count": 13,
+      "work_count": 2,
+      "version_count": 14,
       "works": [
         {
           "song_id": "song-phantasia-81aafc5f7e",
@@ -49229,6 +49358,29 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-5fcd96ba46",
+          "title": "ヤマヲカケル！",
+          "cover": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
+          "release_date": "2023-03-29",
+          "album_name": "アニメ『うまゆる』アルバム",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-5fcd96ba46-v-5fcd96ba46"
+          ],
+          "versions": [
+            {
+              "id": "song-5fcd96ba46-v-5fcd96ba46",
+              "title": "ヤマヲカケル！",
+              "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
@@ -49248,6 +49400,24 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-phantasia-81aafc5f7e"
+          ]
+        },
+        {
+          "creator_id": "creator-69641a01cd",
+          "name": "土屋裕一",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        },
+        {
+          "creator_id": "creator-a8e068c1f5",
+          "name": "櫻木咲子",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
           ]
         }
       ]
@@ -53597,5 +53767,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "fcc78f6ea8cbfda50342"
+  "build_id": "f113a9604856fb46e210"
 }

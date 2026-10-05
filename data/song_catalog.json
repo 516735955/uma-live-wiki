@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-03T19:12:34+00:00",
+  "generated_at": "2026-10-04T22:39:19+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2050,
     "albums": 115,
     "release_tracks": 2235,
     "live_performances": 1265,
-    "credited_songs": 331,
+    "credited_songs": 332,
     "lyric_songs": 244,
-    "credited_versions": 1293,
+    "credited_versions": 1294,
     "lyric_versions": 454
   },
   "songs": [
@@ -8422,7 +8422,6 @@
         "tmoperao",
         "tokaiteio",
         "tosenjordan",
-        "tsurumarutsuyoshi",
         "twinturbo",
         "verxina",
         "vivlos",
@@ -8510,8 +8509,7 @@
         "sakuralaurel",
         "smartfalcon",
         "specialweek",
-        "tosenjordan",
-        "tsurumarutsuyoshi"
+        "tosenjordan"
       ],
       "released_voice_actor_ids": [
         "va-0004",
@@ -8788,16 +8786,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0125",
@@ -24337,7 +24327,6 @@
         "symbolirudolf",
         "taninogimlet",
         "tokaiteio",
-        "tsurumarutsuyoshi",
         "vodka"
       ],
       "released_voice_actor_ids": [
@@ -24534,16 +24523,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0096",
@@ -24961,16 +24942,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0096",
@@ -25684,16 +25657,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -54467,9 +54432,7 @@
       "voice_actor_ids": [
         "va-0048"
       ],
-      "released_character_ids": [
-        "granalegria"
-      ],
+      "released_character_ids": [],
       "released_voice_actor_ids": [
         "va-0048"
       ],
@@ -54508,16 +54471,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -70437,9 +70392,7 @@
       "voice_actor_ids": [
         "va-0172"
       ],
-      "released_character_ids": [
-        "tsurumarutsuyoshi"
-      ],
+      "released_character_ids": [],
       "released_voice_actor_ids": [
         "va-0172"
       ],
@@ -70478,16 +70431,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -78246,7 +78191,6 @@
         "blastonepiece",
         "chronogenesis",
         "currenbouquetdor",
-        "granalegria",
         "lovesonlyyou",
         "luckylilac"
       ],
@@ -78472,16 +78416,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -83139,7 +83075,6 @@
         "fenomeno",
         "fusaichipandora",
         "goldship",
-        "granalegria",
         "grasswonder",
         "lovesonlyyou",
         "luckylilac",
@@ -83496,16 +83431,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -84045,16 +83972,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -84570,16 +84489,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -116537,6 +116448,7 @@
         "tapdancecity",
         "titleholder",
         "tmoperao",
+        "tojo_hana",
         "tokaiteio",
         "tosenjordan",
         "transcend",
@@ -116756,7 +116668,6 @@
         "gentildonna",
         "goldcity",
         "goldship",
-        "granalegria",
         "grasswonder",
         "happymeek",
         "haruurara",
@@ -116838,10 +116749,10 @@
         "tapdancecity",
         "titleholder",
         "tmoperao",
+        "tojo_hana",
         "tokaiteio",
         "tosenjordan",
         "transcend",
-        "tsurumarutsuyoshi",
         "twinturbo",
         "verxina",
         "victoirepisa",
@@ -117828,8 +117739,16 @@
                 {
                   "voice_actor_id": "va-auto-6c0f2bfe17ce",
                   "voice_actor_name": "丰口惠美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "tojo_hana",
+                  "character": {
+                    "id": "tojo_hana",
+                    "name": "东条华",
+                    "name_ja": "東条ハナ",
+                    "name_en": "",
+                    "image": "https://anime-umamusume.jp/archive/2nd/app/wp-content/uploads/2020/12/24f861fbaa28d9b7b2e6d598546b60df.png",
+                    "color_main": "#3157ed",
+                    "color_sub": "#ffa932"
+                  }
                 }
               ]
             },
@@ -120019,16 +119938,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0022",
@@ -120330,16 +120241,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0125",
@@ -121846,16 +121749,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0125",
@@ -123376,16 +123271,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0054",
@@ -124057,16 +123944,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -124679,16 +124558,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -124934,16 +124805,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -132391,8 +132254,16 @@
                 {
                   "voice_actor_id": "va-auto-6c0f2bfe17ce",
                   "voice_actor_name": "丰口惠美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "tojo_hana",
+                  "character": {
+                    "id": "tojo_hana",
+                    "name": "东条华",
+                    "name_ja": "東条ハナ",
+                    "name_en": "",
+                    "image": "https://anime-umamusume.jp/archive/2nd/app/wp-content/uploads/2020/12/24f861fbaa28d9b7b2e6d598546b60df.png",
+                    "color_main": "#3157ed",
+                    "color_sub": "#ffa932"
+                  }
                 }
               ]
             },
@@ -135964,16 +135835,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0022",
@@ -136275,16 +136138,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0125",
@@ -137547,16 +137402,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0125",
@@ -138836,16 +138683,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0054",
@@ -139517,16 +139356,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -140139,16 +139970,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -140394,16 +140217,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -150403,7 +150218,6 @@
         "symbolikriss",
         "symbolirudolf",
         "tokaiteio",
-        "tsurumarutsuyoshi",
         "vodka"
       ],
       "voice_actor_ids": [
@@ -150461,7 +150275,6 @@
         "sweeptosho",
         "symbolirudolf",
         "tokaiteio",
-        "tsurumarutsuyoshi",
         "vodka"
       ],
       "released_voice_actor_ids": [
@@ -150824,16 +150637,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0054",
@@ -157855,7 +157660,6 @@
         "daiwascarlet",
         "symbolikriss",
         "taninogimlet",
-        "tsurumarutsuyoshi",
         "vodka"
       ],
       "released_voice_actor_ids": [
@@ -157970,16 +157774,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0086",
@@ -158296,16 +158092,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0086",
@@ -177767,8 +177555,7 @@
         "specialweek",
         "taikishuttle",
         "tmoperao",
-        "tokaiteio",
-        "tsurumarutsuyoshi"
+        "tokaiteio"
       ],
       "voice_actor_ids": [
         "va-0001",
@@ -177797,8 +177584,7 @@
         "nicenature",
         "sakurachiyonoo",
         "taikishuttle",
-        "tokaiteio",
-        "tsurumarutsuyoshi"
+        "tokaiteio"
       ],
       "released_voice_actor_ids": [
         "va-0001",
@@ -177975,16 +177761,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -190946,16 +190724,41 @@
               "artist": "ELLEY",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703867300",
               "image": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
-              "instrumental": true,
+              "instrumental": false,
               "vocalists": []
             }
           ],
           "performances": [],
           "release_count": 1,
           "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-a8e068c1f5"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-69641a01cd"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-69641a01cd"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-fb9599021b"
+            }
+          ],
+          "creator_ids": [
+            "creator-69641a01cd",
+            "creator-a8e068c1f5",
+            "creator-fb9599021b"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -190965,7 +190768,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-5fcd96ba46-v-5fcd96ba46",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-69641a01cd",
+        "creator-a8e068c1f5",
+        "creator-fb9599021b"
+      ],
       "has_lyrics": false
     },
     {
@@ -221767,7 +221574,6 @@
         "calstonelighto",
         "durandal",
         "elcondorpasa",
-        "granalegria",
         "kinghalo",
         "nicenature",
         "northflight",
@@ -223100,16 +222906,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             },
@@ -223131,16 +222929,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -228126,7 +227916,6 @@
         "tmoperao",
         "tosenjordan",
         "transcend",
-        "tsurumarutsuyoshi",
         "twinturbo",
         "winningticket",
         "wonderacute",
@@ -228181,7 +227970,6 @@
         "naritatoproad",
         "sononelfie",
         "tosenjordan",
-        "tsurumarutsuyoshi",
         "winningticket",
         "wonderacute",
         "yaenomuteki"
@@ -229215,16 +229003,8 @@
                 {
                   "voice_actor_id": "va-0172",
                   "voice_actor_name": "青山吉能",
-                  "character_id": "tsurumarutsuyoshi",
-                  "character": {
-                    "id": "tsurumarutsuyoshi",
-                    "name": "鹤丸刚志",
-                    "name_ja": "ツルマルツヨシ",
-                    "name_en": "Tsurumaru Tsuyoshi",
-                    "image": "/uma_official/tsurumarutsuyoshi.png",
-                    "color_main": "#8F4DAC",
-                    "color_sub": "#F5CD47"
-                  }
+                  "character_id": "",
+                  "character": null
                 }
               ]
             }
@@ -246661,7 +246441,6 @@
         "chronogenesis",
         "daringtact",
         "gentildonna",
-        "granalegria",
         "lovesonlyyou",
         "luckylilac",
         "mejiroramonu",
@@ -246693,7 +246472,6 @@
         "chronogenesis",
         "daringtact",
         "gentildonna",
-        "granalegria",
         "lovesonlyyou",
         "mejiroramonu",
         "stillinlove",
@@ -246849,16 +246627,8 @@
                 {
                   "voice_actor_id": "va-0048",
                   "voice_actor_name": "夏目妃菜",
-                  "character_id": "granalegria",
-                  "character": {
-                    "id": "granalegria",
-                    "name": "放声欢呼",
-                    "name_ja": "グランアレグリア",
-                    "name_en": "Gran Alegria",
-                    "image": "/uma_official/granalegria.png",
-                    "color_main": "#53565a",
-                    "color_sub": "#ef4d60"
-                  }
+                  "character_id": "",
+                  "character": null
                 },
                 {
                   "voice_actor_id": "va-0015",
@@ -247170,5 +246940,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "fcc78f6ea8cbfda50342"
+  "build_id": "f113a9604856fb46e210"
 }

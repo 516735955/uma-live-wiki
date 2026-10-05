@@ -407,7 +407,8 @@
           "source_refs": [
             "staff-transcript-anime-s1",
             "official-bnw-preview",
-            "official-bnw-bd"
+            "official-bnw-bd",
+            "reference-bnw-e01"
           ],
           "staff_status": "partial_transcript",
           "dates": [
@@ -423,13 +424,15 @@
               "display": "2018-12-19",
               "timezone": "JST"
             }
-          ]
+          ],
+          "summary_zh": "Spica队受命协助筹办学园感谢祭。为了让疏远的琵琶晨光、成田大进和胜利奖券重拾奔跑的热情，学生会安排了BNW接力赛，队员们分头展开劝说。"
         },
         "15": {
           "source_refs": [
             "staff-transcript-anime-s1",
             "official-bnw-preview",
-            "official-bnw-bd"
+            "official-bnw-bd",
+            "reference-bnw-e02"
           ],
           "staff_status": "partial_transcript",
           "dates": [
@@ -445,13 +448,15 @@
               "display": "2018-12-19",
               "timezone": "JST"
             }
-          ]
+          ],
+          "summary_zh": "BNW接力赛开始宣传。无法参赛的大和赤骥受学生会委托走访三支队伍，了解各队准备情况并收集BNW三人的感想，却发现成田大进仍未归队。"
         },
         "16": {
           "source_refs": [
             "staff-transcript-anime-s1",
             "official-bnw-preview",
-            "official-bnw-bd"
+            "official-bnw-bd",
+            "reference-bnw-e03"
           ],
           "staff_status": "partial_transcript",
           "dates": [
@@ -467,7 +472,8 @@
               "display": "2018-12-19",
               "timezone": "JST"
             }
-          ]
+          ],
+          "summary_zh": "BNW接力赛正式开跑，琵琶晨光、成田大进与胜利奖券各自的队伍展开激烈争夺。成田大进及时与队友重聚，重新踏上奔跑的舞台。"
         }
       }
     },
@@ -1858,45 +1864,327 @@
         "24": "bd_short"
       },
       "labels": {
-        "13": "蓝光新作短篇 1",
-        "14": "蓝光新作短篇 2",
-        "15": "蓝光新作短篇 3",
-        "16": "蓝光新作短篇 4",
-        "17": "蓝光新作短篇 5",
-        "18": "蓝光新作短篇 6",
-        "19": "蓝光新作短篇 7",
-        "20": "蓝光新作短篇 8",
-        "21": "蓝光新作短篇 9",
-        "22": "蓝光新作短篇 10",
-        "23": "蓝光新作短篇 11",
-        "24": "蓝光新作短篇 12"
+        "13": "第 13 话",
+        "14": "第 14 话",
+        "15": "第 15 话",
+        "16": "第 16 话",
+        "17": "第 17 话",
+        "18": "第 18 话",
+        "19": "第 19 话",
+        "20": "第 20 话",
+        "21": "第 21 话",
+        "22": "第 22 话",
+        "23": "第 23 话",
+        "24": "第 24 话"
       },
       "details": {
-        "1": {},
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
-        "6": {},
-        "7": {},
-        "8": {},
-        "9": {},
-        "10": {},
-        "11": {},
-        "12": {},
-        "13": {},
-        "14": {},
-        "15": {},
-        "16": {},
-        "17": {},
-        "18": {},
-        "19": {},
-        "20": {},
-        "21": {},
-        "22": {},
-        "23": {},
-        "24": {}
-      }
+        "1": {
+          "summary_zh": "特别周、神鹰和草上飞参加补考。特别周拿出待兼福来的骰子铅笔，试图靠运气完成试卷。",
+          "source_refs": [
+            "reference-umayon-e01",
+            "official-ending-anime-umayon-e01"
+          ],
+          "staff_status": "complete"
+        },
+        "2": {
+          "summary_zh": "鲁道夫象征、东海帝王和气槽观看学园介绍影片。影片展示课堂、训练设施与学生生活，东海帝王却频频抢镜。",
+          "source_refs": [
+            "reference-umayon-e02",
+            "official-ending-anime-umayon-e02"
+          ],
+          "staff_status": "complete"
+        },
+        "3": {
+          "summary_zh": "雪之美人与重炮向往黄金城市的模特工作。黄金城市带她们来到拍摄现场，鼓励她们迈出追逐梦想的第一步。",
+          "source_refs": [
+            "reference-umayon-e03"
+          ]
+        },
+        "4": {
+          "summary_zh": "好歌剧、丸善斯基、富士奇石与醒目飞鹰登上剧场舞台，展开一场关于爱情与决斗的华丽演出。",
+          "source_refs": [
+            "reference-umayon-e04"
+          ]
+        },
+        "5": {
+          "summary_zh": "小栗帽、特别周与大树快车挑战巨碗拉面。面对堆成山的面条与配菜，三人各有自己的攻略方法。",
+          "source_refs": [
+            "reference-umayon-e05",
+            "official-ending-anime-umayon-e05"
+          ],
+          "staff_status": "complete"
+        },
+        "6": {
+          "summary_zh": "帝王光辉、美妙姿势与目白麦昆来到牛肉盖饭店，艾尼斯风神向她们介绍点餐与用餐的方法。",
+          "source_refs": [
+            "reference-umayon-e06"
+          ]
+        },
+        "7": {
+          "summary_zh": "胜利奖券拉着琵琶晨光与成田大进，在合宿期间替当地孩子寻找独角仙。一次踢树行动带来了意料之外的追兵。",
+          "source_refs": [
+            "reference-umayon-e07"
+          ]
+        },
+        "8": {
+          "summary_zh": "微光飞驹率领赛马娘战队，迎战爱丽速子与曼城茶座。队员们的颜色、配合与秘密武器成为这场战斗的关键。",
+          "source_refs": [
+            "reference-umayon-e08"
+          ]
+        },
+        "9": {
+          "summary_zh": "醒目飞鹰想为逃切姐妹寻找新成员。她与无声铃鹿、美浦波旁追上忙碌的艾尼斯风神，又遇到了主动报名的丸善斯基。",
+          "source_refs": [
+            "reference-umayon-e09"
+          ]
+        },
+        "10": {
+          "summary_zh": "伏特加与大和赤骥争论谁更胆小，决定在试胆大会上一决胜负。森林里的岔路和熟悉的身影让事情变得更加诡异。",
+          "source_refs": [
+            "reference-umayon-e10"
+          ]
+        },
+        "11": {
+          "summary_zh": "优秀素质与目白赖恩调查骏川手纲遇袭案，在悬崖上追问荣进闪耀的行程与不在场证明。",
+          "source_refs": [
+            "reference-umayon-e11"
+          ]
+        },
+        "12": {
+          "summary_zh": "玉藻十字、菱亚马逊与超级溪流参加障碍赛，依次挑战糖果、换装与寻人关卡。主持比赛的黄金船却也加入了争夺。",
+          "source_refs": [
+            "reference-umayon-e12"
+          ]
+        },
+        "13": {
+          "original_number": 1,
+          "summary_zh": "目白麦昆看见特别周与无声铃鹿享用芭菲，却努力坚持节食。东海帝王的劝诱与肚子的叫声让她难以继续维持体面。",
+          "source_refs": [
+            "reference-umayon-e13",
+            "official-umayon-extra-preview",
+            "official-ending-anime-umayon-e13"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "先行公开",
+              "date": "2021-10-19"
+            },
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ],
+          "release_date": "2021-10-19",
+          "staff_status": "complete"
+        },
+        "14": {
+          "original_number": 2,
+          "summary_zh": "重炮与东海帝王、雪之美人谈论成熟与时髦的女性。她对丸善斯基的一句评价，招来了本人特别的指导。",
+          "source_refs": [
+            "reference-umayon-e14"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "15": {
+          "original_number": 3,
+          "summary_zh": "黄金船让特别周拿手机去找气槽合影。气槽察觉了拍照设置中的机关，反过来留下了一条给黄金船的讯息。",
+          "source_refs": [
+            "reference-umayon-e15"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "16": {
+          "original_number": 4,
+          "summary_zh": "特别周好奇领跑时的无声铃鹿是否担心身后，于是在吃饭、训练和休息时都紧紧跟着她，进行自己的实验。",
+          "source_refs": [
+            "reference-umayon-e16"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "17": {
+          "original_number": 5,
+          "summary_zh": "小栗帽发现玉藻十字在食堂里吃得很少。玉藻十字知道食物可以自由取用，却仍难以改变过去节省的习惯。",
+          "source_refs": [
+            "reference-umayon-e17"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "18": {
+          "original_number": 6,
+          "summary_zh": "超级溪流听说玉藻十字吃得少，便用妈妈般的口吻和喂饭办法来帮忙，结果引来了玉藻十字的抗议。",
+          "source_refs": [
+            "reference-umayon-e18"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "19": {
+          "original_number": 7,
+          "summary_zh": "春丽把胡萝卜形状的冰棒挂在无声铃鹿前方，想用它激励奔跑。无声铃鹿跑得太快，春丽只好等她绕场回来。",
+          "source_refs": [
+            "reference-umayon-e19"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "20": {
+          "original_number": 8,
+          "summary_zh": "东海帝王缠着鲁道夫象征一起跑步。鲁道夫提出先在大胃王比赛中战胜小栗帽，才接受这次挑战。",
+          "source_refs": [
+            "reference-umayon-e20"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "21": {
+          "original_number": 9,
+          "summary_zh": "爱丽速子实验时被药品伤到手臂，只得剪掉制服袖子并缠上绷带。伏特加看到后，建议再加上一条帅气的链子。",
+          "source_refs": [
+            "reference-umayon-e21"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "22": {
+          "original_number": 10,
+          "summary_zh": "醒目飞鹰邀请荣进闪耀参加棒球活动，却听她把棒球称作敌人：棒球转播曾打乱了她按时收看新闻的计划。",
+          "source_refs": [
+            "reference-umayon-e22"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "23": {
+          "original_number": 11,
+          "summary_zh": "菱亚马逊发现寮里的怪谈总以曼城茶座作结，便请她亲自讲一个故事。曼城茶座说，她在夜晚的走廊里看见了自己。",
+          "source_refs": [
+            "reference-umayon-e23"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        },
+        "24": {
+          "original_number": 12,
+          "summary_zh": "黄金船在夏季合宿时抓来海蟑螂，想吓唬特别周。特别周却说自己害怕的是鼠妇，两人为这些虫子的区别争论起来。",
+          "source_refs": [
+            "reference-umayon-e24"
+          ],
+          "duration": "90秒",
+          "dates": [
+            {
+              "label": "发行日期",
+              "date": "2021-12-08"
+            }
+          ]
+        }
+      },
+      "titles_ja": [
+        "40点下！トレセン学園追試特別",
+        "出来立て！トレセン学園案内ＶＴＲ",
+        "憧れの世界はホラここに",
+        "オペラ劇場・『嗚呼それが我が宿命』",
+        "大激戦！？ラーメン杯（ＧII）",
+        "お嬢様たちの優雅なランチ",
+        "カブトムシとりだよ！ＢＮＷ",
+        "ヒーロー劇場・ウマソルジャーV！！",
+        "夢を叶えよう！逃げ切りシスターズ☆",
+        "ビビったら負け！肝試し対決！",
+        "うまよんサスペンス劇場",
+        "本日のメインレース！金船障害（ＧI）",
+        "食い気より気品なのです！",
+        "大人のオンナになりた〜い",
+        "隙のない女帝",
+        "後ろは気にならない？",
+        "もっと食べよう！タマ！",
+        "大きくなれませんよ〜？",
+        "目指せ一等賞大作戦！",
+        "皇帝に挑む資格",
+        "袖を千切った制服と包帯",
+        "私の計画を狂わせる敵",
+        "美浦寮怪談大会！",
+        "浜辺のD？"
+      ],
+      "titles_zh": [
+        "40分以下！特雷森学园补考特别赛",
+        "新鲜出炉！特雷森学园介绍影片",
+        "向往的世界就在眼前",
+        "歌剧剧场·《啊，这就是我的宿命》",
+        "大激战！？拉面杯（GII）",
+        "大小姐们的优雅午餐",
+        "去抓独角仙吧！BNW",
+        "英雄剧场·赛马娘战队V！！",
+        "实现梦想吧！逃切姐妹☆",
+        "害怕就输了！试胆对决！",
+        "赛马娘四格悬疑剧场",
+        "今日主赛！黄金船障碍赛（GI）",
+        "比食欲更重要的是气度！",
+        "想成为成熟的女人",
+        "无懈可击的女帝",
+        "不会在意身后吗？",
+        "再多吃一点吧！小玉！",
+        "这样可长不大哦？",
+        "冲向第一名大作战！",
+        "挑战皇帝的资格",
+        "撕掉袖子的制服与绷带",
+        "打乱我计划的敌人",
+        "美浦寮怪谈大会！",
+        "海边的D？"
+      ]
     },
     {
       "work_id": "anime-1st-anniversary",
@@ -1922,8 +2210,10 @@
         "1": {
           "summary_zh": "春天，特雷森学园迎来入学式。北部玄驹怀着对憧憬的追逐，里见光钻背负着家族赢得 GⅠ 的夙愿；两人满怀希望地踏上尚未可知的未来。",
           "source_refs": [
-            "official-anniversary-production"
-          ]
+            "official-anniversary-production",
+            "official-ending-anime-1st-anniversary-e01"
+          ],
+          "staff_status": "complete"
         }
       }
     },
@@ -2021,7 +2311,8 @@
           "title_ja": "嵐を呼ぶウマ娘(たち)",
           "summary_ja": "いつものようにトレーニングするウオッカとダイワスカーレット。 すると突然の嵐！そして最強っぽいウマ娘がふたり……！あれは！？",
           "source_refs": [
-            "official-story-anime-umayuru-e01"
+            "official-story-anime-umayuru-e01",
+            "official-ending-anime-umayuru-e01"
           ],
           "stills": [
             {
@@ -2069,13 +2360,15 @@
             }
           ],
           "release_date": "2022-10-16",
-          "summary_zh": "伏特加与大和赤骥照常训练时，突然刮起暴风。两位看起来强得惊人的赛马娘出现在她们面前。"
+          "summary_zh": "伏特加与大和赤骥照常训练时，突然刮起暴风。两位看起来强得惊人的赛马娘出现在她们面前。",
+          "staff_status": "complete"
         },
         "2": {
           "title_ja": "静かなる漆黒",
           "summary_ja": "カフェテリアで食事に熱中するスペシャルウィーク。 すると背後から鋭い視線が！ あなたはシンボリクリスエスさん！？",
           "source_refs": [
-            "official-story-anime-umayuru-e02"
+            "official-story-anime-umayuru-e02",
+            "official-ending-anime-umayuru-e02"
           ],
           "stills": [
             {
@@ -2118,13 +2411,15 @@
             }
           ],
           "release_date": "2022-10-16",
-          "summary_zh": "特别周在食堂专心享用美食，却察觉背后有一道锐利的视线。注视着她的，是吉兆。"
+          "summary_zh": "特别周在食堂专心享用美食，却察觉背后有一道锐利的视线。注视着她的，是吉兆。",
+          "staff_status": "complete"
         },
         "3": {
           "title_ja": "今宵、BARでカクテルを",
           "summary_ja": "今宵も『Bar細純』で羽を休めるウマ娘達。 そこにはギムレット（？）をかたむけるタニノギムレットの姿があった。",
           "source_refs": [
-            "official-story-anime-umayuru-e03"
+            "official-story-anime-umayuru-e03",
+            "official-ending-anime-umayuru-e03"
           ],
           "stills": [
             {
@@ -2172,13 +2467,15 @@
             }
           ],
           "release_date": "2022-10-16",
-          "summary_zh": "赛马娘们今晚也在细纯酒吧休息。谷野美酒坐在其中，举起了一杯似乎叫做吉姆雷特的饮品。"
+          "summary_zh": "赛马娘们今晚也在细纯酒吧休息。谷野美酒坐在其中，举起了一杯似乎叫做吉姆雷特的饮品。",
+          "staff_status": "complete"
         },
         "4": {
           "title_ja": "ツヨシ、びるどあっぷ！",
           "summary_ja": "虚弱体質を何とかしたいツルマルツヨシ。 試行錯誤した結果、 彼女が手に入れた「強さ」とは……？",
           "source_refs": [
-            "official-story-anime-umayuru-e04"
+            "official-story-anime-umayuru-e04",
+            "official-ending-anime-umayuru-e04"
           ],
           "stills": [
             {
@@ -2226,13 +2523,15 @@
             }
           ],
           "release_date": "2022-10-23",
-          "summary_zh": "鹤丸刚志想改善自己虚弱的体质。反复尝试之后，她终于获得了某种属于自己的强大。"
+          "summary_zh": "鹤丸刚志想改善自己虚弱的体质。反复尝试之后，她终于获得了某种属于自己的强大。",
+          "staff_status": "complete"
         },
         "5": {
           "title_ja": "絶対絶交宣言！？",
           "summary_ja": "全然仲良しのつもりはないのに「仲良し」と記事に書かれてしまうウオッカとダイワスカーレット。 対策のために一計を案じるが……？",
           "source_refs": [
-            "official-story-anime-umayuru-e05"
+            "official-story-anime-umayuru-e05",
+            "official-ending-anime-umayuru-e05"
           ],
           "stills": [
             {
@@ -2280,13 +2579,15 @@
             }
           ],
           "release_date": "2022-10-30",
-          "summary_zh": "伏特加与大和赤骥明明不承认彼此要好，却被报道写成好朋友。两人商量起了应对之策。"
+          "summary_zh": "伏特加与大和赤骥明明不承认彼此要好，却被报道写成好朋友。两人商量起了应对之策。",
+          "staff_status": "complete"
         },
         "6": {
           "title_ja": "謎解きは朝食の前に",
           "summary_ja": "温泉旅館に残された謎のメッセージ！　ムム、これは事件の予感！ 颯爽と現れたトウカイテイオー率いる探偵ウマ娘たち！　これにて一件落着！？",
           "source_refs": [
-            "official-story-anime-umayuru-e06"
+            "official-story-anime-umayuru-e06",
+            "official-ending-anime-umayuru-e06"
           ],
           "stills": [
             {
@@ -2344,13 +2645,15 @@
             }
           ],
           "release_date": "2022-11-05",
-          "summary_zh": "温泉旅馆留下了谜样的信息，似乎预示着一场事件。由东海帝王带领的侦探赛马娘们登场，准备解决谜团。"
+          "summary_zh": "温泉旅馆留下了谜样的信息，似乎预示着一场事件。由东海帝王带领的侦探赛马娘们登场，准备解决谜团。",
+          "staff_status": "complete"
         },
         "7": {
           "title_ja": "シリウスさんのお気に入り",
           "summary_ja": "シリウスシンボリに憧れて、弟子入りを志願するウオッカ。 果たしてウオッカは『カッケーウマ娘』になれるのか！？",
           "source_refs": [
-            "official-story-anime-umayuru-e07"
+            "official-story-anime-umayuru-e07",
+            "official-ending-anime-umayuru-e07"
           ],
           "stills": [
             {
@@ -2403,13 +2706,15 @@
             }
           ],
           "release_date": "2022-11-13",
-          "summary_zh": "憧憬天狼星象征的伏特加请求拜师，希望自己也能成为帅气的赛马娘。"
+          "summary_zh": "憧憬天狼星象征的伏特加请求拜师，希望自己也能成为帅气的赛马娘。",
+          "staff_status": "complete"
         },
         "8": {
           "title_ja": "取材ですよ！乙名史さん！",
           "summary_ja": "月刊トゥインクル次号の特集は「今キてるウマ娘」！ 取材に燃える乙名史記者はウオッカとダイワスカーレットに話を聞くが……？",
           "source_refs": [
-            "official-story-anime-umayuru-e08"
+            "official-story-anime-umayuru-e08",
+            "official-ending-anime-umayuru-e08"
           ],
           "stills": [
             {
@@ -2457,13 +2762,15 @@
             }
           ],
           "release_date": "2022-11-20",
-          "summary_zh": "月刊 Twinkle 下期将介绍当下热门的赛马娘。热情满满的乙名史记者采访伏特加与大和赤骥，却遇到意外状况。"
+          "summary_zh": "月刊 Twinkle 下期将介绍当下热门的赛马娘。热情满满的乙名史记者采访伏特加与大和赤骥，却遇到意外状况。",
+          "staff_status": "complete"
         },
         "9": {
           "title_ja": "ヤマヲカケル！",
           "summary_ja": "闇に染まる峠を攻める4人のウマ娘。 エンジン全開！？ドリフト走行！？ 勝利の行方はまさかの……！？",
           "source_refs": [
-            "official-story-anime-umayuru-e09"
+            "official-story-anime-umayuru-e09",
+            "official-ending-anime-umayuru-e09"
           ],
           "stills": [
             {
@@ -2521,13 +2828,15 @@
             }
           ],
           "release_date": "2022-11-27",
-          "summary_zh": "四位赛马娘在漆黑的山路展开竞速。全速前进与漂移过弯之后，胜负迎来出人意料的发展。"
+          "summary_zh": "四位赛马娘在漆黑的山路展开竞速。全速前进与漂移过弯之后，胜负迎来出人意料的发展。",
+          "staff_status": "complete"
         },
         "10": {
           "title_ja": "ウマ娘百物語",
           "summary_ja": "合宿所で百物語中のセイウンスカイ・スペシャルウィーク・キングヘイロー。 蝋燭がまたひとつ消えたとき、怪異が訪れる……！",
           "source_refs": [
-            "official-story-anime-umayuru-e10"
+            "official-story-anime-umayuru-e10",
+            "official-ending-anime-umayuru-e10"
           ],
           "stills": [
             {
@@ -2580,13 +2889,15 @@
             }
           ],
           "release_date": "2022-12-04",
-          "summary_zh": "青云天空、特别周与圣王光环在合宿地讲述百物语。又一支蜡烛熄灭之时，怪异的事情发生了。"
+          "summary_zh": "青云天空、特别周与圣王光环在合宿地讲述百物语。又一支蜡烛熄灭之时，怪异的事情发生了。",
+          "staff_status": "complete"
         },
         "11": {
           "title_ja": "竜虎相搏",
           "summary_ja": "トレセン学園の廊下で一触即発な雰囲気を醸し出す シンボリクリスエスとタニノギムレット。 争いの原因は…？",
           "source_refs": [
-            "official-story-anime-umayuru-e11"
+            "official-story-anime-umayuru-e11",
+            "official-ending-anime-umayuru-e11"
           ],
           "stills": [
             {
@@ -2644,13 +2955,15 @@
             }
           ],
           "release_date": "2022-12-11",
-          "summary_zh": "吉兆与谷野美酒在学园走廊剑拔弩张。两人争执的缘由，究竟是什么？"
+          "summary_zh": "吉兆与谷野美酒在学园走廊剑拔弩张。两人争执的缘由，究竟是什么？",
+          "staff_status": "complete"
         },
         "12": {
           "title_ja": "鎖威拒宇血夷武！波羅離螺！（さいきょうちいむ！ぱらりら！）",
           "summary_ja": "特攻服（トップク）！短ラン！ツッパリ上等！ ウマ娘たちがヤンキーに！？ 学園の覇権はうちらが貰う！そこんとこ夜露死苦！",
           "source_refs": [
-            "official-story-anime-umayuru-e12"
+            "official-story-anime-umayuru-e12",
+            "official-ending-anime-umayuru-e12"
           ],
           "stills": [
             {
@@ -2718,7 +3031,8 @@
             }
           ],
           "release_date": "2022-12-20",
-          "summary_zh": "特攻服、短款制服与不良少女气势登场。赛马娘们为了争夺学园霸权，化身各自的硬派队伍。"
+          "summary_zh": "特攻服、短款制服与不良少女气势登场。赛马娘们为了争夺学园霸权，化身各自的硬派队伍。",
+          "staff_status": "complete"
         },
         "13": {
           "title_ja": "うまゆるラップでプチョヘンザ",
@@ -2861,7 +3175,8 @@
           "title_ja": "さく！サク！柵！",
           "summary_ja": "己の美学を磨くため、今日も柵を破壊するタニノギムレット。 しかし柵が足りない！ファインモーションの力が必要だ！",
           "source_refs": [
-            "official-story-anime-umayuru-e15"
+            "official-story-anime-umayuru-e15",
+            "official-ending-anime-umayuru-e15"
           ],
           "stills": [
             {
@@ -2919,7 +3234,8 @@
             }
           ],
           "release_date": "2023-01-22",
-          "summary_zh": "谷野美酒为磨炼自己的美学，再一次破坏围栏。可围栏已经不够用了，她需要美妙姿势的帮助。"
+          "summary_zh": "谷野美酒为磨炼自己的美学，再一次破坏围栏。可围栏已经不够用了，她需要美妙姿势的帮助。",
+          "staff_status": "complete"
         },
         "16": {
           "title_ja": "迫りくる魔の手",
@@ -3351,7 +3667,8 @@
           "title_ja": "スペとオグリのうまうまキッチン",
           "summary_ja": "スペシャルウィーク＆オグリキャップ先生 withマチカネタンホイザのお料理番組。 あのにんじんハンバーグレシピを大公開！ お楽しみに！",
           "source_refs": [
-            "official-story-anime-umayuru-e22"
+            "official-story-anime-umayuru-e22",
+            "official-ending-anime-umayuru-e22"
           ],
           "stills": [
             {
@@ -3414,7 +3731,8 @@
             }
           ],
           "release_date": "2023-03-12",
-          "summary_zh": "特别周、小栗帽与待兼诗歌剧带来料理节目，公开介绍胡萝卜汉堡排的做法。"
+          "summary_zh": "特别周、小栗帽与待兼诗歌剧带来料理节目，公开介绍胡萝卜汉堡排的做法。",
+          "staff_status": "complete"
         },
         "23": {
           "title_ja": "Shall we ダービー？",
@@ -3501,7 +3819,8 @@
           "title_ja": "ヒカリ差す場所へ",
           "summary_ja": "ダービーは一生に一度……。 ターフに向かうシンボリクリスエスとタニノギムレットの胸に、これまでの日々が去来する……",
           "source_refs": [
-            "official-story-anime-umayuru-e24"
+            "official-story-anime-umayuru-e24",
+            "official-ending-anime-umayuru-e24"
           ],
           "stills": [
             {
@@ -3579,7 +3898,8 @@
             }
           ],
           "release_date": "2023-03-26",
-          "summary_zh": "德比一生只能参加一次。走向草地的吉兆与谷野美酒，回想起一路走来共同经历的时光。"
+          "summary_zh": "德比一生只能参加一次。走向草地的吉兆与谷野美酒，回想起一路走来共同经历的时光。",
+          "staff_status": "complete"
         }
       }
     },
@@ -3610,10 +3930,11 @@
       ],
       "details": {
         "1": {
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "source_refs": [
             "staff-transcript-anime-rttt",
-            "official-story-anime-rttt-e01"
+            "official-story-anime-rttt-e01",
+            "official-ending-anime-rttt-e01"
           ],
           "summary_zh": "经典三冠赛的首战皋月赏即将到来。被看好的成田路和爱慕织姬做好了准备，而好歌剧也燃起了对首次大赛的斗志。",
           "stills": [
@@ -3642,7 +3963,8 @@
         "2": {
           "summary_zh": "皋月赏由好歌剧夺冠。距离日本德比还有六周，爱慕织姬把亡妹的愿望牢记在心；好歌剧期盼展现自己，成田路则带着对训练员的约定继续挑战。",
           "source_refs": [
-            "official-story-anime-rttt-e02"
+            "official-story-anime-rttt-e02",
+            "official-ending-anime-rttt-e02"
           ],
           "stills": [
             {
@@ -3665,12 +3987,14 @@
               "display": "2023-04-23 21:00",
               "timezone": "JST"
             }
-          ]
+          ],
+          "staff_status": "complete"
         },
         "3": {
           "summary_zh": "夏季集训中，成田路仍因德比落败而失去自信。训练员试着让她重新振作，三位劲敌各自寻找继续奔跑的理由。",
           "source_refs": [
-            "official-story-anime-rttt-e03"
+            "official-story-anime-rttt-e03",
+            "official-ending-anime-rttt-e03"
           ],
           "stills": [
             {
@@ -3693,12 +4017,14 @@
               "display": "2023-04-30 21:00",
               "timezone": "JST"
             }
-          ]
+          ],
+          "staff_status": "complete"
         },
         "4": {
           "summary_zh": "成田路在集训中重新找回信心。秋天的菊花赏临近，伙伴们的支持伴随她走上赛场，向三冠赛的最后一战发起挑战。",
           "source_refs": [
-            "official-story-anime-rttt-e04"
+            "official-story-anime-rttt-e04",
+            "official-ending-anime-rttt-e04"
           ],
           "stills": [
             {
@@ -3721,7 +4047,8 @@
               "display": "2023-05-07 21:00",
               "timezone": "JST"
             }
-          ]
+          ],
+          "staff_status": "complete"
         }
       }
     },
@@ -4560,7 +4887,7 @@
           ],
           "title_ja": "そしてあなたの……",
           "summary_zh": "最后一场有马纪念临近，北部玄驹的拼命训练也点燃了周围伙伴的斗志。她在大家的送行与粉丝的热情中，迎来全力奔跑至今的最后舞台。",
-          "staff_status": "main_only"
+          "staff_status": "partial_public"
         }
       }
     },
@@ -4591,7 +4918,49 @@
             "staff-transcript-anime-movie-beginning-new-era",
             "official-new-era"
           ],
-          "summary_zh": "在自由竞跑中追求最强的森林宝穴，因富士奇石在闪光系列中的奔跑而受到震撼。进入特雷森学园后，她在田边训练员的指导下挑战经典三冠，并与烈焰快驹、曼城茶座和爱丽速子等同世代劲敌展开竞争。"
+          "summary_zh": "在自由竞跑中追求最强的森林宝穴，因富士奇石在闪光系列中的奔跑而受到震撼。进入特雷森学园后，她在田边训练员的指导下挑战经典三冠，并与烈焰快驹、曼城茶座和爱丽速子等同世代劲敌展开竞争。",
+          "stills": [
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
+              "source_ref": "official-toho-film-release"
+            },
+            {
+              "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
+              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
+              "source_ref": "official-toho-film-release"
+            }
+          ]
         }
       }
     },
@@ -6349,7 +6718,8 @@
           "summary_ja": "聖蹄祭を一番盛り上げるのはウチや！とたこ焼き屋台で熱気溢れるタマモクロス達。\nところが、隣に焼きそば屋台のゴールドシップ達が現れて…！？",
           "release_date": "2025-04-30",
           "source_refs": [
-            "official-story-anime-umayuru-prettygray-e01"
+            "official-story-anime-umayuru-prettygray-e01",
+            "official-ending-anime-umayuru-prettygray-e01"
           ],
           "stills": [
             {
@@ -6392,7 +6762,7 @@
             }
           ],
           "summary_zh": "玉藻十字等人在章鱼烧摊上热情地准备为圣蹄祭助兴，旁边却出现了黄金船等人的炒面摊。两方的摊位竞争就此展开。",
-          "staff_status": "main_only"
+          "staff_status": "complete"
         },
         "2": {
           "title_ja": "八つ橋村〜名探偵セイちゃんの事件簿〜",
@@ -6400,7 +6770,8 @@
           "summary_ja": "山奥の静かな村で神隠し事件が発生。\n探偵セイウンスカイは刑事キングヘイローと共に現地に赴き、村人たちの隠された真実に迫る─。",
           "release_date": "2025-05-02",
           "source_refs": [
-            "official-story-anime-umayuru-prettygray-e02"
+            "official-story-anime-umayuru-prettygray-e02",
+            "official-ending-anime-umayuru-prettygray-e02"
           ],
           "stills": [
             {
@@ -6443,7 +6814,7 @@
             }
           ],
           "summary_zh": "深山里宁静的村庄发生了神隐事件。侦探青云天空与刑警圣王光环前往当地，追查村民隐瞒的真相。",
-          "staff_status": "main_only"
+          "staff_status": "complete"
         },
         "3": {
           "title_ja": "波乱必至！リレーはデスティニー",
@@ -6451,7 +6822,8 @@
           "summary_ja": "ビワハヤヒデはヒシミラクル達を集め、春のファン大感謝祭に向けた練習をすることに。\n前代未聞のハチャメチャなリレーが始まる！",
           "release_date": "2025-05-04",
           "source_refs": [
-            "official-story-anime-umayuru-prettygray-e03"
+            "official-story-anime-umayuru-prettygray-e03",
+            "official-ending-anime-umayuru-prettygray-e03"
           ],
           "stills": [
             {
@@ -6494,7 +6866,7 @@
             }
           ],
           "summary_zh": "琵琶晨光召集菱钻奇宝等人为春季粉丝大感谢祭训练。一场前所未有、状况百出的接力由此开始。",
-          "staff_status": "main_only"
+          "staff_status": "complete"
         },
         "4": {
           "title_ja": "レース観戦の美学",
@@ -6502,7 +6874,8 @@
           "summary_ja": "レース観戦の素晴らしさを伝えるため、カレンチャンはクロノジェネシス達と共にレース場へ！\nたくさんのカワイイをお届けしよ〜♪",
           "release_date": "2025-05-06",
           "source_refs": [
-            "official-story-anime-umayuru-prettygray-e04"
+            "official-story-anime-umayuru-prettygray-e04",
+            "official-ending-anime-umayuru-prettygray-e04"
           ],
           "stills": [
             {
@@ -6545,7 +6918,7 @@
             }
           ],
           "summary_zh": "真机伶为了分享观赛的乐趣，与创世驹等伙伴来到赛场，准备为大家送上许多可爱的瞬间。",
-          "staff_status": "main_only"
+          "staff_status": "complete"
         }
       }
     },
@@ -6553,13 +6926,20 @@
       "work_id": "anime-umayuru-fullgate",
       "count": 26,
       "unit_type": "short",
-      "released_count": 1,
+      "released_count": 2,
       "date_blocks": [
         {
           "from": 1,
           "to": 1,
           "dates": [
             "2026-09-27"
+          ]
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "dates": [
+            "2026-10-04"
           ]
         }
       ],
@@ -6620,6 +7000,54 @@
           ],
           "staff_status": "complete",
           "summary_zh": "圣蹄祭即将到来，特别周与黄金世代的伙伴们商量要准备什么节目。她们提出的点子，也像各自的性格一样丰富多彩。"
+        },
+        "2": {
+          "title_ja": "白熱！ジェスチャーゲーム対決！",
+          "title_zh": "白热化！比手画脚对决！",
+          "summary_ja": "聖蹄祭当日―ジェスチャーゲームで対戦するのはBNWとサクラチヨノオーら3強！\n同期の絆が、ハイレベルな戦いへと至らしめる！",
+          "summary_zh": "圣蹄祭当天，BNW与樱花千代王等三强展开比手画脚比赛。同期伙伴之间的默契，让这场对决变成了高水平的较量。",
+          "release_date": "2026-10-04",
+          "duration": "3分04秒",
+          "dates": [
+            {
+              "label": "YouTube公开",
+              "date": "2026-10-04",
+              "display": "2026-10-04 21:00",
+              "timezone": "JST"
+            }
+          ],
+          "source_refs": [
+            "official-story-anime-umayuru-fullgate-e02",
+            "official-ending-anime-umayuru-fullgate-e02"
+          ],
+          "stills": [
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
+              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
+              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
+              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
+              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+            }
+          ],
+          "staff_status": "complete"
         }
       }
     }

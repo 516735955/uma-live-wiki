@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-03T19:12:34+00:00",
+  "generated_at": "2026-10-04T22:39:19+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -2603,6 +2603,24 @@
       },
       "roles": [
         {
+          "character_id": "south_heroine",
+          "name": "サウスヒロイン",
+          "name_ja": "サウスヒロイン",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/7/72/South_Heroine_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        },
+        {
+          "character_id": "luna_swallow",
+          "name": "ルナスワロー",
+          "name_ja": "ルナスワロー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/d/d6/Luna_Swallow_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        },
+        {
           "character_id": "granalegria",
           "name": "放声欢呼",
           "name_ja": "グランアレグリア",
@@ -4953,6 +4971,15 @@
           "image": "",
           "color_main": "#7A6FF0",
           "color_sub": "#E2DEFA"
+        },
+        {
+          "character_id": "izumimoto_nana",
+          "name": "泉本奈奈",
+          "name_ja": "泉本奈々",
+          "former": false,
+          "image": "https://movie-umamusume.jp/assets/images/character/img_main11.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
         }
       ],
       "stats": {
@@ -9455,6 +9482,15 @@
       },
       "roles": [
         {
+          "character_id": "rionatal",
+          "name": "リオナタール",
+          "name_ja": "リオナタール",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/1/10/Rionatal_Race_Outfit.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        },
+        {
           "character_id": "tsurumarutsuyoshi",
           "name": "鹤丸刚志",
           "name_ja": "ツルマルツヨシ",
@@ -10318,6 +10354,62 @@
       }
     },
     {
+      "id": "va-akasaki-chinatsu",
+      "slug": "va-akasaki-chinatsu",
+      "identity": {
+        "zh": "赤崎千夏",
+        "ja": "赤﨑千夏",
+        "kana": "",
+        "aliases": [
+          "赤崎千夏",
+          "赤﨑千夏"
+        ]
+      },
+      "profile": {
+        "birthday": "8月10日",
+        "birthplace": "鹿児島県",
+        "agency": "81プロデュース",
+        "official_profile": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=148",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=148"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.81produce.co.jp/dcms_media/image/akasaki_chinatsu.jpg",
+        "source_url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=148",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "queen_berry",
+          "name": "クイーンベレー",
+          "name_ja": "クイーンベレー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/3/31/Queen_Berry.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
       "id": "va-auto-00c2247ac66e",
       "slug": "va-auto-00c2247ac66e",
       "identity": {
@@ -10351,9 +10443,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.aoni.co.jp/search/items/houki-katsuhisa.jpg",
+        "source_url": "https://www.aoni.co.jp/search/houki-katsuhisa.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -10412,11 +10504,21 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://movie-umamusume.jp/assets/images/caststaff/img_cast09.jpg",
+        "source_url": "https://movie-umamusume.jp/caststaff/",
+        "source_title": "新时代之门官方人物照片"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "tanabe_trainer",
+          "name": "田边训练员",
+          "name_ja": "タナベトレーナー",
+          "former": false,
+          "image": "https://movie-umamusume.jp/assets/images/character/img_main09.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
       "anime_credit_sources": [
         "https://movie-umamusume.jp/caststaff/"
       ],
@@ -10460,9 +10562,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.81produce.co.jp/dcms_media/image/okubo_rumi.jpg",
+        "source_url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=169",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -10516,9 +10618,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://seigura.com/wp-content/uploads/2024/05/974f1b7dac7a5f94229858dc92cb3cd1.jpg",
+        "source_url": "https://seigura.com/directory/484/",
+        "source_title": "人物照片"
       },
       "roles": [
         {
@@ -10571,9 +10673,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://asleben.s3.ap-northeast-1.amazonaws.com/wp-content/uploads/2025/06/01021745/%E6%A6%8E%E6%9C%A8%E6%B7%B3%E5%BC%A5_%E3%83%A1%E3%82%A4%E3%83%B3-scaled.jpg",
+        "source_url": "https://asleben.jp/talents/junya-enoki",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -10627,9 +10729,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.imenterprise.jp/files/img/KAZAMAMAYUKO20210112025616.jpg",
+        "source_url": "https://www.imenterprise.jp/profile.php?id=103",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -10687,7 +10789,17 @@
         "source_url": "https://rushstyle.net/talent/miyuki_sakurai/",
         "source_title": "事务所官方资料"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "roux",
+          "name": "卢",
+          "name_ja": "ルー",
+          "former": false,
+          "image": "https://movie-umamusume.jp/assets/images/character/img_main10.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
       "anime_credit_sources": [
         "https://movie-umamusume.jp/caststaff/"
       ],
@@ -10732,9 +10844,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://columbia.jp/artist-info/photo/tomitamiyu09.jpg",
+        "source_url": "https://columbia.jp/artist-info/tomitamiyu/prof.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -10825,7 +10937,7 @@
         "birthday": "4月2日",
         "birthplace": "東京都",
         "agency": "ステイラック",
-        "official_profile": "https://www.namikawadaisuke.com/",
+        "official_profile": "https://stay-luck.com/talent/namikawa-daisuke/",
         "social": [],
         "field_status": {
           "birthday": "verified",
@@ -10843,9 +10955,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://stay-luck.com/files/namikawa.png",
+        "source_url": "https://stay-luck.com/talent/namikawa-daisuke/",
+        "source_title": "人物照片"
       },
       "roles": [
         {
@@ -10952,9 +11064,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.vims.co.jp/wp-content/uploads/2024/06/大地＿HP.jpg",
+        "source_url": "https://www.vims.co.jp/talent/351/",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11063,9 +11175,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://osawa-inc.co.jp/wordpress/wp-content/themes/osawa/talent/women/IshigamiShizuka/ishigamishizuka.jpg",
+        "source_url": "https://osawa-inc.co.jp/women/ishigamishizuka/",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11118,11 +11230,29 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.81produce.co.jp/dcms_media/image/kujime_nagisa.jpg",
+        "source_url": "https://www.81produce.co.jp/actor_search/index.php/item?cell003=%E3%81%8B%E8%A1%8C&cell004=&cell028=&cell029=%E5%A5%B3%E6%80%A7&id=420&keyword=&label=1&name=%E4%B9%85%E6%AC%A1%E7%B1%B3%E3%80%80%E6%B8%9A",
+        "source_title": "官方人物照片"
       },
       "roles": [
+        {
+          "character_id": "sekai_toha",
+          "name": "セカイトーハー",
+          "name_ja": "セカイトーハー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/8/8c/Sekai_Touha_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        },
+        {
+          "character_id": "merry_beauty",
+          "name": "メリービューティー",
+          "name_ja": "メリービューティー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/a/ab/Merry_Beauty_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        },
         {
           "character_id": "akitsu_teio",
           "name": "秋津帝王",
@@ -11178,7 +11308,17 @@
         "source_url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
         "source_title": "事务所官方资料"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "tojo_hana",
+          "name": "东条华",
+          "name_ja": "東条ハナ",
+          "former": false,
+          "image": "https://anime-umamusume.jp/archive/2nd/app/wp-content/uploads/2020/12/24f861fbaa28d9b7b2e6d598546b60df.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
       "anime_credit_sources": [
         "https://anime-umamusume.jp/archive/1st/caststaff/"
       ],
@@ -11376,11 +11516,21 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://movie-umamusume.jp/assets/images/caststaff/img_cast12.jpg",
+        "source_url": "https://movie-umamusume.jp/caststaff/",
+        "source_title": "新时代之门官方人物照片"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "mei",
+          "name": "梅",
+          "name_ja": "メイ",
+          "former": false,
+          "image": "https://movie-umamusume.jp/assets/images/character/img_main10.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
       "anime_credit_sources": [
         "https://movie-umamusume.jp/caststaff/"
       ],
@@ -11474,9 +11624,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://crazy-box.co.jp/wp/wp-content/uploads/2025/01/大塚芳忠＿HP用タテ-scaled.jpg",
+        "source_url": "https://crazy-box.co.jp/talent/%E5%A4%A7%E5%A1%9A%E8%8A%B3%E5%BF%A0/",
+        "source_title": "人物照片"
       },
       "roles": [
         {
@@ -11585,9 +11735,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.aoni.co.jp/search/items/azakami-yohei.jpg",
+        "source_url": "https://www.aoni.co.jp/search/azakami-yohei.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11641,9 +11791,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://voicekit.jp/wp-content/uploads/2022/04/e7418d930265beba80f1e4bcaf3cdb63-scaled.jpg",
+        "source_url": "https://voicekit.jp/talent/izawashiori/",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11806,9 +11956,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://haikyo.co.jp/photo/12759.jpg",
+        "source_url": "https://haikyo.co.jp/profile/profile.php?ActorID=12759",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11861,9 +12011,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.imenterprise.jp/files/img/TAMURAMUTSUMI20190330054420.jpg",
+        "source_url": "https://www.imenterprise.jp/profile.php?id=62",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11916,9 +12066,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://yuhko-kaida.com/images/profile.jpg",
+        "source_url": "https://yuhko-kaida.com/profile.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -11976,7 +12126,17 @@
         "source_url": "https://www.81produce.co.jp/actor_search/index.php/item?id=395",
         "source_title": "事务所官方资料"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "shima",
+          "name": "岛",
+          "name_ja": "シマ",
+          "former": false,
+          "image": "https://movie-umamusume.jp/assets/images/character/img_main10.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
       "anime_credit_sources": [
         "https://movie-umamusume.jp/caststaff/"
       ],
@@ -12021,9 +12181,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://haikyo.co.jp/photo/12956.jpg",
+        "source_url": "https://haikyo.co.jp/profile/profile.php?ActorID=12956",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -12077,9 +12237,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://mausu.net/talent/content/S__466722826.jpg",
+        "source_url": "https://mausu.net/talent/tanaka-takako.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -12294,9 +12454,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://aptepro.jp/gzxu8uexqbeb/wp-content/uploads/2023/06/talents-photo-05-634x1024.jpg",
+        "source_url": "https://aptepro.jp/talents/a_sekine.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -12349,9 +12509,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.aoni.co.jp/search/items/takeuchi-ryota.jpg",
+        "source_url": "https://www.aoni.co.jp/search/takeuchi-ryota.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -12405,9 +12565,9 @@
         "status": "complete"
       },
       "photo": {
-        "url": "",
-        "source_url": "",
-        "source_title": ""
+        "url": "https://www.aoni.co.jp/search/items/shiraishi-ryoko.jpg",
+        "source_url": "https://www.aoni.co.jp/search/shiraishi-ryoko.html",
+        "source_title": "官方人物照片"
       },
       "roles": [
         {
@@ -12426,7 +12586,647 @@
         "programs": 0,
         "songs": 0
       }
+    },
+    {
+      "id": "va-furukawa-makoto",
+      "slug": "va-furukawa-makoto",
+      "identity": {
+        "zh": "古川慎",
+        "ja": "古川慎",
+        "kana": "",
+        "aliases": [
+          "古川慎"
+        ]
+      },
+      "profile": {
+        "birthday": "9月29日",
+        "birthplace": "熊本県",
+        "agency": "TOY'S FACTORY",
+        "official_profile": "https://www.toysfactory.co.jp/sp/artist/makotofurukawa/bio",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://www.toysfactory.co.jp/sp/artist/makotofurukawa/bio"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.toysfactory.co.jp/artist_images/007902_X831fYdf2xjsZI1lykCTbG_spzWEQr.jpg",
+        "source_url": "https://www.toysfactory.co.jp/sp/artist/makotofurukawa/bio",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "minamisaka",
+          "name": "南坂",
+          "name_ja": "南坂",
+          "former": false,
+          "image": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/3df496c07e45451b9cf83a0bc5d90a81/img_trainer2.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-kawakami-asuka",
+      "slug": "va-kawakami-asuka",
+      "identity": {
+        "zh": "河上明日香",
+        "ja": "河上明日香",
+        "kana": "",
+        "aliases": [
+          "河上明日香"
+        ]
+      },
+      "profile": {
+        "birthday": "9月25日",
+        "birthplace": "広島県",
+        "agency": "アトミックモンキー",
+        "official_profile": "https://www.atomicmonkey.jp/talent/kawakamiasuka",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://www.atomicmonkey.jp/talent/kawakamiasuka"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.atomicmonkey.jp/atmnadmin-corporate/wp-content/uploads/2015/12/62e772068b6a1d64c227ff9f8ae55df5.jpg",
+        "source_url": "https://www.atomicmonkey.jp/talent/kawakamiasuka",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "relic_earth",
+          "name": "レリックアース",
+          "name_ja": "レリックアース",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/9/96/Relic_Earth_Main.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-komatsu-mikako",
+      "slug": "va-komatsu-mikako",
+      "identity": {
+        "zh": "小松未可子",
+        "ja": "小松未可子",
+        "kana": "",
+        "aliases": [
+          "小松未可子"
+        ]
+      },
+      "profile": {
+        "birthday": "11月11日",
+        "birthplace": "三重県",
+        "agency": "ヒラタオフィス",
+        "official_profile": "https://hirata-office.jp/talent_profile/woman/mikako_komatsu.html",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://hirata-office.jp/talent_profile/woman/mikako_komatsu.html"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://hirata-office.jp/talent_profile/img/mikako_komatsu.jpg",
+        "source_url": "https://hirata-office.jp/talent_profile/woman/mikako_komatsu.html",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "faith_no_more",
+          "name": "フェイスノーモア",
+          "name_ja": "フェイスノーモア",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/a/ac/Faith_No_More_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-kugimiya-rie",
+      "slug": "va-kugimiya-rie",
+      "identity": {
+        "zh": "钉宫理惠",
+        "ja": "釘宮理恵",
+        "kana": "",
+        "aliases": [
+          "钉宫理惠",
+          "釘宮理恵"
+        ]
+      },
+      "profile": {
+        "birthday": "5月30日",
+        "birthplace": "熊本県",
+        "agency": "アイムエンタープライズ",
+        "official_profile": "https://imenterprise.jp/profile.php?id=52",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://imenterprise.jp/profile.php?id=52"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://imenterprise.jp/files/img/KUGIMIYARIE20190330054353.jpg",
+        "source_url": "https://imenterprise.jp/profile.php?id=52",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "sun_visor",
+          "name": "サンバイザー",
+          "name_ja": "サンバイザー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/6/6a/Sunvisor.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-kuroda-takaya",
+      "slug": "va-kuroda-takaya",
+      "identity": {
+        "zh": "黑田崇矢",
+        "ja": "黒田崇矢",
+        "kana": "",
+        "aliases": [
+          "黑田崇矢",
+          "黒田崇矢"
+        ]
+      },
+      "profile": {
+        "birthday": "4月17日",
+        "birthplace": "東京都",
+        "agency": "HIYUSE（灯唯世）",
+        "official_profile": "https://talent.hiyuse.jp/talent-kuroda.html",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "public_profile",
+            "label": "人物资料",
+            "url": "https://seigura.com/directory/501/"
+          },
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://talent.hiyuse.jp/talent-kuroda.html"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://talent.hiyuse.jp/assets/img/kuroda.jpg",
+        "source_url": "https://talent.hiyuse.jp/talent-kuroda.html",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "kuronuma",
+          "name": "黑沼",
+          "name_ja": "黒沼",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/9/9c/Kuronuma.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-miyako-fuka",
+      "slug": "va-miyako-fuka",
+      "identity": {
+        "zh": "宫古风佳",
+        "ja": "宮古風佳",
+        "kana": "",
+        "aliases": [
+          "宫古风佳",
+          "宮古風佳"
+        ]
+      },
+      "profile": {
+        "birthday": "8月26日",
+        "birthplace": "大阪府",
+        "agency": "賢プロダクション",
+        "official_profile": "https://www.kenproduction.co.jp/talent/246",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://www.kenproduction.co.jp/talent/246"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.kenproduction.co.jp/img/talent/246/1.jpg",
+        "source_url": "https://www.kenproduction.co.jp/talent/246",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "fuyuno_nakasumi",
+          "name": "フユノナカスミ",
+          "name_ja": "フユノナカスミ",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/c/cc/Fuyuno_Nakasumi_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-urushiyama-yuki",
+      "slug": "va-urushiyama-yuki",
+      "identity": {
+        "zh": "漆山ゆうき",
+        "ja": "漆山ゆうき",
+        "kana": "",
+        "aliases": [
+          "漆山ゆうき"
+        ]
+      },
+      "profile": {
+        "birthday": "11月24日",
+        "birthplace": "山形県",
+        "agency": "賢プロダクション",
+        "official_profile": "https://www.kenproduction.co.jp/talent/211",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://www.kenproduction.co.jp/talent/211"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.kenproduction.co.jp/img/talent/211/1.jpg",
+        "source_url": "https://www.kenproduction.co.jp/talent/211",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "romance_bubbly",
+          "name": "ロマンスバブリー",
+          "name_ja": "ロマンスバブリー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/8/84/Romance_Bubbly_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-yamada-keina",
+      "slug": "va-yamada-keina",
+      "identity": {
+        "zh": "山田京奈",
+        "ja": "山田京奈",
+        "kana": "",
+        "aliases": [
+          "山田京奈"
+        ]
+      },
+      "profile": {
+        "birthday": "12月25日",
+        "birthplace": "埼玉県",
+        "agency": "青二プロダクション",
+        "official_profile": "https://www.aoni.co.jp/search/yamada-keina.html",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://www.aoni.co.jp/search/yamada-keina.html"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://www.aoni.co.jp/search/items/yamada-keina.jpg",
+        "source_url": "https://www.aoni.co.jp/search/yamada-keina.html",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "walk_dancer",
+          "name": "ウォークダンサー",
+          "name_ja": "ウォークダンサー",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/d/d6/Walk_Dancer_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        },
+        {
+          "character_id": "nanto_ichiban",
+          "name": "ナントウイチバン",
+          "name_ja": "ナントウイチバン",
+          "former": false,
+          "image": "",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-原優子",
+      "slug": "va-原優子",
+      "identity": {
+        "zh": "原优子",
+        "ja": "原優子",
+        "kana": "",
+        "aliases": [
+          "原优子",
+          "原優子"
+        ]
+      },
+      "profile": {
+        "birthday": "6月13日",
+        "birthplace": "埼玉県",
+        "agency": "円企画",
+        "official_profile": "",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "source_unavailable"
+        },
+        "sources": [
+          {
+            "kind": "credit_transcription",
+            "label": "单集配音署名",
+            "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/4"
+          },
+          {
+            "kind": "public_profile",
+            "label": "人物资料",
+            "url": "https://seigura.com/directory/39386/"
+          }
+        ],
+        "status": "partial"
+      },
+      "photo": {
+        "url": "https://seigura.com/wp-content/uploads/2026/05/e1617024f9c5ccb26b46021f7acdf218.jpg",
+        "source_url": "https://seigura.com/directory/39386/",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "daisangen",
+          "name": "ダイサンゲン",
+          "name_ja": "ダイサンゲン",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/3/35/DaisangenFullbody.jpeg",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-東城日沙子",
+      "slug": "va-東城日沙子",
+      "identity": {
+        "zh": "东城日沙子",
+        "ja": "東城日沙子",
+        "kana": "",
+        "aliases": [
+          "东城日沙子",
+          "東城日沙子"
+        ]
+      },
+      "profile": {
+        "birthday": "8月21日",
+        "birthplace": "埼玉県",
+        "agency": "HIGH PINE",
+        "official_profile": "https://highpine.co.jp/talent/tojo-hisako.html",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "credit_transcription",
+            "label": "单集配音署名",
+            "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/14"
+          },
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://highpine.co.jp/talent/tojo-hisako.html"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://highpine.co.jp/image/tojo_hisako.jpg",
+        "source_url": "https://highpine.co.jp/talent/tojo-hisako.html",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "spring_sing",
+          "name": "スプリングシング",
+          "name_ja": "スプリングシング",
+          "former": false,
+          "image": "",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
+      "id": "va-池澤春菜",
+      "slug": "va-池澤春菜",
+      "identity": {
+        "zh": "池泽春菜",
+        "ja": "池澤春菜",
+        "kana": "",
+        "aliases": [
+          "池泽春菜",
+          "池澤春菜"
+        ]
+      },
+      "profile": {
+        "birthday": "12月15日",
+        "birthplace": "ギリシャ",
+        "agency": "アクロス エンタテインメント",
+        "official_profile": "https://across-ent.com/voice_actor/detail.html?id=111",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "credit_transcription",
+            "label": "单集配音署名",
+            "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/9"
+          },
+          {
+            "kind": "official_profile",
+            "label": "人物资料",
+            "url": "https://across-ent.com/voice_actor/detail.html?id=111"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://across-ent.com/assets/media/aa9e63b595238cd3850c852ada78e6870e1ed0a8.jpg",
+        "source_url": "https://across-ent.com/voice_actor/detail.html?id=111",
+        "source_title": "人物照片"
+      },
+      "roles": [
+        {
+          "character_id": "broye",
+          "name": "ブロワイエ",
+          "name_ja": "ブロワイエ",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/0/0b/Broye_%28Main%29.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
     }
   ],
-  "build_id": "fcc78f6ea8cbfda50342"
+  "build_id": "f113a9604856fb46e210"
 }

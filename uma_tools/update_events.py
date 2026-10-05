@@ -1161,11 +1161,11 @@ class IdentityIndex:
                     if profile_patch.get(field):
                         statuses[field] = "verified"
                 detail["field_status"] = statuses
-                detail["status"] = "complete"
+                detail["status"] = profile_patch.get("status") or detail.get("status") or "partial"
             profiles.append({
                 "id": actor_id,
                 "slug": actor_id,
-                "identity": {"zh": record["zh"], "ja": detail.get("name_ja") or record["ja"], "kana": detail.get("kana") or "", "aliases": aliases},
+                "identity": {"zh": detail.get("name_zh") or record["zh"], "ja": detail.get("name_ja") or record["ja"], "kana": detail.get("kana") or "", "aliases": aliases},
                 "profile": {
                     "birthday": detail.get("birthday") or photo.get("birth") or "",
                     "birthplace": detail.get("birthplace") or "",
@@ -1177,9 +1177,9 @@ class IdentityIndex:
                     "status": detail.get("status") or "partial",
                 },
                 "photo": {
-                    "url": photo.get("img") or detail.get("photo_url") or "",
-                    "source_url": photo.get("page") or detail.get("photo_source_url") or "",
-                    "source_title": photo.get("title") or detail.get("photo_source_title") or "",
+                    "url": (profile_patch or {}).get("photo_url") or photo.get("img") or detail.get("photo_url") or "",
+                    "source_url": (profile_patch or {}).get("photo_source_url") or photo.get("page") or detail.get("photo_source_url") or "",
+                    "source_title": (profile_patch or {}).get("photo_source_title") or photo.get("title") or detail.get("photo_source_title") or "",
                 },
                 "roles": sorted(record["roles"], key=lambda role: (role["former"], role["name"])),
                 **({"anime_credit_sources": record["anime_credit_sources"]} if record.get("anime_credit_sources") else {}),

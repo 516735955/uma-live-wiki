@@ -1328,7 +1328,10 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
     wiki = None
     if use_wiki:
         time.sleep(WIKI_SLEEP)
-        wiki = resolve_wikipedia(horse)
+        try:
+            wiki = resolve_wikipedia(horse)
+        except RuntimeError as exc:
+            print('  [wiki unavailable] %s %s' % (horse['id'], exc))
     if wiki:
         lang, title = wiki['lang'], wiki['title']
         try:
@@ -1474,6 +1477,7 @@ def main():
     parser.add_argument('--no-wiki', action='store_true', help='跳过 Wikipedia 抓取')
     parser.add_argument('--no-jbis', action='store_true', help='跳过 JBIS 抓取')
     parser.add_argument('--resume', action='store_true', help='跳过已有详情缓存的马')
+    parser.add_argument('--missing', action='store_true', help='保留现有详情，只补新增原型马和角色映射')
     parser.add_argument('--photos-only', action='store_true',
                         help='只给缺图的马补 photo 字段（不重抓正文）')
     parser.add_argument('--localize-photos', action='store_true',
@@ -1491,7 +1495,19 @@ def main():
     total = len(horses)
     list_rows = []
     details = {}
+    if args.missing:
+        with open(OUT_DETAIL, encoding='utf-8') as handle:
+            details = json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
+        with open(OUT_LIST, encoding='utf-8') as handle:
+            list_rows = json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
     for index, horse in enumerate(horses, 1):
+        if args.missing and horse['id'] in details:
+            record = details[horse['id']]
+            record['cids'] = sorted(set(record.get('cids', []) + horse['cids']))
+            for row in list_rows:
+                if row['id'] == horse['id']:
+                    row['cids'] = record['cids']
+            continue
         done_path = os.path.join(CACHE_DIR, 'detail_%s.json' % horse['id'])
         if args.races_only:
             if not os.path.isfile(done_path):
