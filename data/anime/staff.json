@@ -1,19 +1,130 @@
 {
   "schema_version": 1,
   "credits": [
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e02", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e04", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e04", "role": "原画", "group": "エンディング", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 501, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e05", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e07", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e08", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e09", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e11", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e13", "role": "原画", "name": "式地幸喜", "person_id": "staff-式地幸喜", "order": 500, "source_ref": "public-shikiji-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e09", "role": "原画", "name": "光田史亮", "person_id": "staff-光田史亮", "order": 501, "source_ref": "public-mitsuda-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e13", "role": "原画", "name": "光田史亮", "person_id": "staff-光田史亮", "order": 501, "source_ref": "public-mitsuda-filmography"},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e08", "role": "原画", "name": "新垣重文", "person_id": "staff-新垣重文", "order": 502, "source_ref": "public-shingaki-s3-post", "evidence_refs": ["production-shingaki-s3-post"]},
-    {"work_id": "anime-s3", "unit_id": "anime-s3-e13", "role": "原画", "name": "新垣重文", "person_id": "staff-新垣重文", "order": 502, "source_ref": "public-shingaki-s3-post", "evidence_refs": ["production-shingaki-s3-post"]},
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e02",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e04",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e04",
+      "role": "原画",
+      "group": "エンディング",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 501,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e05",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e07",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e08",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e09",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e11",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e13",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e09",
+      "role": "原画",
+      "name": "光田史亮",
+      "person_id": "staff-光田史亮",
+      "order": 501,
+      "source_ref": "public-mitsuda-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e13",
+      "role": "原画",
+      "name": "光田史亮",
+      "person_id": "staff-光田史亮",
+      "order": 501,
+      "source_ref": "public-mitsuda-filmography"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e08",
+      "role": "原画",
+      "name": "新垣重文",
+      "person_id": "staff-新垣重文",
+      "order": 502,
+      "source_ref": "public-shingaki-s3-post",
+      "evidence_refs": [
+        "production-shingaki-s3-post"
+      ]
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e13",
+      "role": "原画",
+      "name": "新垣重文",
+      "person_id": "staff-新垣重文",
+      "order": 502,
+      "source_ref": "public-shingaki-s3-post",
+      "evidence_refs": [
+        "production-shingaki-s3-post"
+      ]
+    },
     {
       "work_id": "anime-s2",
       "role": "制作プロデューサー",
@@ -45753,7 +45864,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e07",
-      "person_id": "staff-グラフィニカ"
+      "organization": "グラフィニカ",
+      "evidence_refs": [
+        "official-graphinica-company"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -51320,7 +51434,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e10",
-      "person_id": "staff-グラフィニカ"
+      "organization": "グラフィニカ",
+      "evidence_refs": [
+        "official-graphinica-company"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-fe3c757059d89e8e",
-  "generated_at": "2026-10-05T00:00:00+08:00",
+  "build_id": "anime-3f0f24d249a132e4",
+  "generated_at": "2026-10-06T00:00:00+08:00",
   "coverage": {
     "works": 11,
     "units": 125,
@@ -10,7 +10,7 @@
     "watch_resources": 135,
     "relations": 1827,
     "staff_credits": 10816,
-    "staff_people": 2515
+    "staff_people": 2514
   },
   "works": [
     {
@@ -96226,7 +96226,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e07",
-      "person_id": "staff-グラフィニカ",
+      "organization": "グラフィニカ",
+      "evidence_refs": [
+        "official-graphinica-company"
+      ],
       "role_raw": "3Dアニメーション協力",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -102791,7 +102794,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e10",
-      "person_id": "staff-グラフィニカ",
+      "organization": "グラフィニカ",
+      "evidence_refs": [
+        "official-graphinica-company"
+      ],
       "role_raw": "3Dアニメーション協力",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -208207,19 +208213,6 @@
       "unit_count": 1
     },
     {
-      "id": "staff-グラフィニカ",
-      "name": "グラフィニカ",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ],
-      "roles": [
-        "3D动画协力"
-      ],
-      "work_count": 1,
-      "unit_count": 2
-    },
-    {
       "id": "staff-山本英史",
       "name": "山本英史",
       "aliases": [],
@@ -232397,6 +232390,13 @@
     }
   ],
   "sources": [
+    {
+      "id": "official-graphinica-company",
+      "kind": "official",
+      "label": "Graphinica公司资料（机构身份确认）",
+      "url": "https://www.graphinica.com/service/index.html",
+      "observed_at": "2026-10-06"
+    },
     {
       "id": "public-shikiji-filmography",
       "kind": "reference",

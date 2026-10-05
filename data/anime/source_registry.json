@@ -2,6 +2,13 @@
   "schema_version": 1,
   "sources": [
     {
+      "id": "official-graphinica-company",
+      "kind": "official",
+      "label": "Graphinica公司资料（机构身份确认）",
+      "url": "https://www.graphinica.com/service/index.html",
+      "observed_at": "2026-10-06"
+    },
+    {
       "id": "public-shikiji-filmography",
       "kind": "reference",
       "label": "式地幸喜逐集制作履历（公开转录）",
