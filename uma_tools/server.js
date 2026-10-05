@@ -1165,9 +1165,9 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, st) => {
     if (err || !st.isFile()) {
-      // History-mode fallback: if the path looks like a client route (no file extension),
-      // serve the SPA index so deep links / refreshes work.
-      if (!path.extname(urlPath)) {
+      // Localized client routes may contain dots in entity names and IDs.
+      // Serve the SPA for that namespace, including direct opens and refreshes.
+      if (urlPath.startsWith('/zh-Hans/') || !path.extname(urlPath)) {
         filePath = path.join(ROOT, INDEX_FILE);
         return serveFile(filePath, req, res);
       }
