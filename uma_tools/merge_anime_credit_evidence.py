@@ -14,10 +14,12 @@ PERSON_ALIASES = {
     "staff-阿部億人": "staff-阿部憶人", "staff-狭田修": "staff-狹田修",
     "staff-NainemoutouLucas": "staff-LucasNainemoutou",
     "staff-GirardinSolal": "staff-SolalGirardin",
+    "staff-MeNex00": "staff-MeNeX00",
 }
 IDENTITY_SOURCES = {
     "staff-LucasNainemoutou": "production-lucas-nainemoutou-profile",
     "staff-SolalGirardin": "production-solal-girardin-profile",
+    "staff-MeNeX00": "production-menex00-cg15-post",
 }
 # Official credits already identify these names as organizations.
 ORGANIZATION_PEOPLE = {"staff-" + name for name in (

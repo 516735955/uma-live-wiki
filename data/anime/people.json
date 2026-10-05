@@ -17307,14 +17307,6 @@
       ]
     },
     {
-      "id": "staff-MeNex00",
-      "name": "MeNex00",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ]
-    },
-    {
       "id": "staff-meto",
       "name": "meto",
       "aliases": [],
@@ -17517,9 +17509,15 @@
     {
       "id": "staff-MeNeX00",
       "name": "MeNeX00",
-      "aliases": [],
+      "aliases": [
+        "MeNex00"
+      ],
       "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
+        "staff-transcript-anime-cinderella-gray",
+        "production-menex00-cg15-post"
+      ],
+      "alias_ids": [
+        "staff-MeNex00"
       ]
     },
     {

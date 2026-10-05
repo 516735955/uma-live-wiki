@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-ced8f640bde1b279",
+  "build_id": "anime-768d8bd5f61dc2c0",
   "generated_at": "2026-10-06T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -10,7 +10,7 @@
     "watch_resources": 135,
     "relations": 1827,
     "staff_credits": 10816,
-    "staff_people": 2512
+    "staff_people": 2511
   },
   "works": [
     {
@@ -108522,7 +108522,7 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e13",
-      "person_id": "staff-MeNex00",
+      "person_id": "staff-MeNeX00",
       "role_raw": "作画監督",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -223710,19 +223710,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-MeNex00",
-      "name": "MeNex00",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ],
-      "roles": [
-        "作画监督"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-meto",
       "name": "meto",
       "aliases": [],
@@ -224045,15 +224032,21 @@
     {
       "id": "staff-MeNeX00",
       "name": "MeNeX00",
-      "aliases": [],
+      "aliases": [
+        "MeNex00"
+      ],
       "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
+        "staff-transcript-anime-cinderella-gray",
+        "production-menex00-cg15-post"
+      ],
+      "alias_ids": [
+        "staff-MeNex00"
       ],
       "roles": [
         "作画监督"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-Jungchulho",
@@ -232387,6 +232380,20 @@
     }
   ],
   "sources": [
+    {
+      "id": "production-menex00-cg15-post",
+      "kind": "production",
+      "label": "MeNeX00本人对芦灰第15话的发文及姓名写法（由公开引用核对）",
+      "url": "https://x.com/oomdish00/status/1978072508445368835",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "public-menex00-cg15-post",
+      "kind": "reference",
+      "label": "芦灰第15话MeNeX00本人发文的公开引用",
+      "url": "https://k-ani.com/anime/741/episode/15",
+      "observed_at": "2026-10-06"
+    },
     {
       "id": "production-lucas-nainemoutou-profile",
       "kind": "production",

@@ -2,6 +2,20 @@
   "schema_version": 1,
   "sources": [
     {
+      "id": "production-menex00-cg15-post",
+      "kind": "production",
+      "label": "MeNeX00本人对芦灰第15话的发文及姓名写法（由公开引用核对）",
+      "url": "https://x.com/oomdish00/status/1978072508445368835",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "public-menex00-cg15-post",
+      "kind": "reference",
+      "label": "芦灰第15话MeNeX00本人发文的公开引用",
+      "url": "https://k-ani.com/anime/741/episode/15",
+      "observed_at": "2026-10-06"
+    },
+    {
       "id": "production-lucas-nainemoutou-profile",
       "kind": "production",
       "label": "Lucas Naïnemoutou本人公开制作履历",
