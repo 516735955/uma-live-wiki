@@ -9,6 +9,24 @@ from collect_anime_official import fetch
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {
+    "dyna_actress": {
+        "photo": "/uma_tools/img/horses/dyna_actress.jpg",
+        "photo_original_url": "https://cdnv2.netkeiba.com/img.en/db/show_photo.html?horse_id=1983104087&no=12164&tn=&tmp=no",
+        "photo_credit": "Seabirdfly / netkeiba",
+        "photo_source": {"label": "netkeiba", "url": "https://en.netkeiba.com/db/horse/horse_photo_detail.html?horse_id=1983104087&photo_id=12164"},
+    },
+    "moon_madness": {
+        "photo": "/uma_tools/img/horses/moon_madness.jpg",
+        "photo_original_url": "https://cdnv2.netkeiba.com/img.en/db/show_photo.html?horse_id=1983109003&no=11142&tn=&tmp=no",
+        "photo_credit": "Yassy / netkeiba",
+        "photo_source": {"label": "netkeiba", "url": "https://en.netkeiba.com/db/horse/horse_photo_detail.html?horse_id=1983109003&photo_id=11142"},
+    },
+    "legend_teio": {
+        "photo": "/uma_tools/img/horses/legend_teio.jpg",
+        "photo_original_url": "https://cdnv2.netkeiba.com/img.en/db/show_photo.html?horse_id=1983105000&no=11482&tn=&tmp=no",
+        "photo_credit": "アデ夫 / netkeiba",
+        "photo_source": {"label": "netkeiba", "url": "https://en.netkeiba.com/db/horse/horse_photo_detail.html?horse_id=1983105000&photo_id=11482"},
+    },
     "bonecrusher": {
         "intro": ["碎骨机是新西兰出生的栗毛赛马，由弗兰克·里奇训练，生涯44战18胜，其中包括9场一级赛。1986年考克斯碟与Waverley Star的激烈争夺，是其代表性比赛。"],
         "retirement": ["退役后曾多次公开亮相，2015年去世，享年32岁。安葬于艾勒斯利赛马场，场内以铜像纪念。"],
@@ -44,7 +62,7 @@ def main():
     changed = []
     identifiers = list(PROFILES)
     if args.refresh_major:
-        identifiers += ["moon_madness", "my_big_boy", "dyna_actress", "rugger_black", "fujino_northern", "legend_teio"]
+        identifiers = list(dict.fromkeys([*identifiers, "moon_madness", "my_big_boy", "dyna_actress", "rugger_black", "fujino_northern", "legend_teio"]))
     for identifier in identifiers:
         profile = PROFILES.get(identifier, {})
         record = details[identifier]
