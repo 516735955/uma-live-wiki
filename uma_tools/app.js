@@ -671,7 +671,7 @@ const umaApp = createApp({
         const key = [label,...institutions].join(':');
         let role = group.roles.find(role => role.key === key);
         if (!role) {role = {key,label,institutions,units:[]}; group.roles.push(role);}
-        if (row.unit && !role.units.some(unit => unit.id === row.unit.id)) role.units.push(row.unit);
+        if (row.unit && !['movie','special'].includes(row.work.format) && !role.units.some(unit => unit.id === row.unit.id)) role.units.push(row.unit);
       });
       return Array.from(works.values()).sort((a,b) => String(a.work.start_date).localeCompare(String(b.work.start_date))).map(group => {
         group.roles.forEach(role => role.units.sort((a,b) => a.number-b.number)); return group;
@@ -1971,7 +1971,7 @@ const umaApp = createApp({
     }
     function characterName(characterId) {
       const character = findCharById(characterId);
-      return character ? character.zh : characterId;
+      return character ? character.zh : '—';
     }
     function characterImage(characterId) {
       const character = findCharById(characterId);
