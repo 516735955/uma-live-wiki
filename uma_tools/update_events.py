@@ -1357,27 +1357,25 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
         name = str(item.get("name") or "").strip()
         role = str(item.get("role") or "").strip()
         actor_id = identities.voice_id(name)
-        # The public event cast has one precise meaning: an Uma Musume voice
-        # actor appearing as their canonical character. Festival guests,
-        # presenters, staff, and other performers remain in the source record;
-        # singers outside the franchise are retained on the exact song row.
+        # Known franchise actors can participate without a catalogued character.
+        # Actors with character roles still require an unambiguous casting link.
         if not actor_id:
             continue
         item_evidence = str(item.get("source_kind") or evidence)
         item_source_url = str(item.get("source_url") or source_url)
         character_id = identities.current_character_id(actor_id, role)
-        if not character_id:
+        profile = identities.profile_by_id.get(actor_id) or {}
+        if not character_id and profile.get("roles"):
             continue
         # A source-side role label disambiguates actors who voice more than one
         # franchise character. Ambiguous rows stay unpublished instead of
         # selecting whichever role happens to sort first.
-        profile = identities.profile_by_id.get(actor_id) or {}
         character = identities.character_by_id.get(character_id) or {}
         out.append({
             "voice_actor_id": actor_id,
             "name": (profile.get("identity") or {}).get("zh") or name,
             "character_id": character_id,
-            "role": character.get("zh") or role,
+            "role": character.get("zh") or "",
             "evidence": item_evidence,
             "source_url": item_source_url,
             "person_type": "voice_actor",
@@ -2041,10 +2039,14 @@ def validate(
     known_characters = set(appearances.get("characters") or {})
     current_voice_by_character: dict[str, list[str]] = defaultdict(list)
     characters_by_voice: dict[str, set[str]] = defaultdict(set)
+    character_optional_actors: set[str] = set()
     for profile in profiles:
         roles = [role for role in profile.get("roles") or [] if role.get("character_id")]
-        if not roles and not profile.get("anime_credit_sources"):
-            errors.append(f"voice actor {profile.get('id')} has no canonical character")
+        participation = (appearances.get("voice_actors") or {}).get(profile.get("id"), {})
+        if not roles and (profile.get("anime_credit_sources") or participation.get("events") or participation.get("songs")):
+            character_optional_actors.add(str(profile.get("id") or ""))
+        if not roles and str(profile.get("id") or "") not in character_optional_actors:
+            errors.append(f"voice actor {profile.get('id')} has no character or documented participation")
         elif profile.get("id"):
             characters_by_voice[str(profile["id"])].update(str(role["character_id"]) for role in roles)
         current_roles = [role for role in profile.get("roles") or [] if not role.get("former")]
@@ -2127,15 +2129,13 @@ def validate(
                 errors.append(f"event {event['id']} publishes non-Uma cast {cast.get('name')}")
             if not cast.get("voice_actor_id"):
                 errors.append(f"event {event['id']} has cast without voice-actor identity {cast.get('name')}")
-            if not cast.get("character_id"):
+            if not cast.get("character_id") and cast.get("voice_actor_id") not in character_optional_actors:
                 errors.append(f"event {event['id']} has cast without canonical character {cast.get('name')}")
             if cast.get("voice_actor_id") and cast["voice_actor_id"] not in known_actors:
                 errors.append(f"event {event['id']} references unknown actor {cast['voice_actor_id']}")
-            if cast.get("voice_actor_id") and not cast.get("character_id"):
-                errors.append(f"event {event['id']} has actor without canonical character {cast['voice_actor_id']}")
             if cast.get("character_id") and cast["character_id"] not in known_characters:
                 errors.append(f"event {event['id']} references unknown character {cast['character_id']}")
-            if cast.get("voice_actor_id") and cast.get("character_id") not in characters_by_voice.get(str(cast["voice_actor_id"]), set()):
+            if cast.get("voice_actor_id") and cast.get("character_id") and cast["character_id"] not in characters_by_voice.get(str(cast["voice_actor_id"]), set()):
                 errors.append(
                     f"event {event['id']} maps actor {cast['voice_actor_id']} to noncanonical character {cast.get('character_id')}"
                 )
@@ -3614,12 +3614,12 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     events = apply_overrides(events, overrides, identities)
     events = dedupe_events(events)
     for event in events:
-        # Source snapshots may retain every named participant. The public cast
-        # has one narrower meaning: a verified Uma voice actor appearing as
-        # their one canonical character.
+        # Preserve known franchise actors with documented participation even
+        # when their character is outside the curated character catalogue.
         event["cast"] = [
             item for item in event.get("cast") or []
-            if item.get("voice_actor_id") and item.get("character_id")
+            if item.get("voice_actor_id") in identities.profile_by_id
+            and (item.get("character_id") or not identities.profile_by_id[item["voice_actor_id"]].get("roles"))
         ]
         if event["cast"]:
             event["cast_status"] = "verified"

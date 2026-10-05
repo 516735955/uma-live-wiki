@@ -119,7 +119,7 @@ def main():
     selected_actors = {normalized(actor) for episode in episodes for role, actor in episode["cast"]
                        if role in selected}
     for actor_name, profile in VOICE_PROFILES.items():
-        if args.character and actor_name not in selected_actors:
+        if actor_name not in selected_actors:
             continue
         voice = voice_names.get(actor_name)
         if not voice:
