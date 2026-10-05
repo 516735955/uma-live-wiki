@@ -31804,6 +31804,21 @@
       "evidence_refs": [
         "broadcast-cast-anime-s3-e13"
       ]
+    },
+    {
+      "id": "anime-s3-e05-broadcast-cast-19",
+      "source_type": "anime_unit",
+      "source_id": "anime-s3-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tsuukaa",
+      "voice_actor_id": "va-isaka-hitomi",
+      "signature": "ツウカア",
+      "label": "",
+      "display_order": 19,
+      "evidence_refs": [
+        "broadcast-cast-anime-s3-e05"
+      ]
     }
   ]
 }

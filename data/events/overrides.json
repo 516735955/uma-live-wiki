@@ -307,6 +307,12 @@
   },
   "additional_voice_actors": [
     {
+      "zh": "井坂瞳",
+      "ja": "井坂瞳",
+      "aliases": [],
+      "anime_credit_sources": ["https://firstwind.co.jp/talentpage/isaka_hitomi/", "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/5"]
+    },
+    {
       "zh": "小西克幸",
       "ja": "小西克幸",
       "aliases": [
@@ -686,6 +692,19 @@
     }
   ],
   "voice_actor_profile_overrides": {
+    "井坂瞳": {
+      "name_zh": "井坂瞳",
+      "name_ja": "井坂瞳",
+      "birthday": "6月21日",
+      "birthplace": "茨城県",
+      "agency": "FIRST WIND production",
+      "official_profile": "https://firstwind.co.jp/talentpage/isaka_hitomi/",
+      "photo_url": "https://firstwind.co.jp/wp-content/uploads/2019/11/isaka_hitomi.jpeg",
+      "photo_source_url": "https://firstwind.co.jp/talentpage/isaka_hitomi/",
+      "photo_source_title": "FIRST WIND production",
+      "sources": [{"kind": "official_profile", "label": "FIRST WIND production", "url": "https://firstwind.co.jp/talentpage/isaka_hitomi/"}],
+      "status": "complete"
+    },
     "有隅融": {
       "name_zh": "有隅融",
       "name_ja": "有隅融",

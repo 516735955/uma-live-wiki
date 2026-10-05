@@ -951,6 +951,10 @@
     "minami": {
       "horse": null,
       "kind": "non_uma"
+    },
+    "tsuukaa": {
+      "horse": null,
+      "kind": "original"
     }
   },
   "nodes": [
@@ -33972,6 +33976,14 @@
       "ja": "みなみ",
       "en": "",
       "avatar": "",
+      "pure": true
+    },
+    {
+      "id": "tsuukaa",
+      "zh": "默契之交",
+      "ja": "ツウカア",
+      "en": "",
+      "avatar": "https://umamusu.wiki/w/images/f/f0/To-Car.png",
       "pure": true
     }
   ]

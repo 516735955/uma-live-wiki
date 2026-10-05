@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-05T08:18:48+00:00",
+  "generated_at": "2026-10-05T11:02:08+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -12698,6 +12698,65 @@
       }
     },
     {
+      "id": "va-isaka-hitomi",
+      "slug": "va-isaka-hitomi",
+      "identity": {
+        "zh": "井坂瞳",
+        "ja": "井坂瞳",
+        "kana": "",
+        "aliases": [
+          "井坂瞳"
+        ]
+      },
+      "profile": {
+        "birthday": "6月21日",
+        "birthplace": "茨城県",
+        "agency": "FIRST WIND production",
+        "official_profile": "https://firstwind.co.jp/talentpage/isaka_hitomi/",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "FIRST WIND production",
+            "url": "https://firstwind.co.jp/talentpage/isaka_hitomi/"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "https://firstwind.co.jp/wp-content/uploads/2019/11/isaka_hitomi.jpeg",
+        "source_url": "https://firstwind.co.jp/talentpage/isaka_hitomi/",
+        "source_title": "FIRST WIND production"
+      },
+      "roles": [
+        {
+          "character_id": "tsuukaa",
+          "name": "默契之交",
+          "name_ja": "ツウカア",
+          "former": false,
+          "image": "https://umamusu.wiki/w/images/f/f0/To-Car.png",
+          "color_main": "#3157ed",
+          "color_sub": "#ffa932"
+        }
+      ],
+      "anime_credit_sources": [
+        "https://firstwind.co.jp/talentpage/isaka_hitomi/",
+        "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/5"
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
       "id": "va-kawakami-asuka",
       "slug": "va-kawakami-asuka",
       "identity": {
@@ -13338,5 +13397,5 @@
       }
     }
   ],
-  "build_id": "fde44ce8862123caa0dc"
+  "build_id": "a635002c0662c834ab32"
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-fa0c5101012aa337",
+  "build_id": "anime-04cb5d94c1b30658",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "targets": {
     "event": {
@@ -17306,6 +17306,19 @@
           "voice_actor_id": "va-arizumi-tooru",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e13",
+          "work_id": "anime-s3"
+        }
+      ],
+      "tsuukaa": [
+        {
+          "relation_id": "anime-s3-e05-broadcast-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ツウカア",
+          "voice_actor_id": "va-isaka-hitomi",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e05",
           "work_id": "anime-s3"
         }
       ]
@@ -34661,6 +34674,19 @@
           "voice_actor_id": "va-arizumi-tooru",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e13",
+          "work_id": "anime-s3"
+        }
+      ],
+      "va-isaka-hitomi": [
+        {
+          "relation_id": "anime-s3-e05-broadcast-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ツウカア",
+          "voice_actor_id": "va-isaka-hitomi",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e05",
           "work_id": "anime-s3"
         }
       ]

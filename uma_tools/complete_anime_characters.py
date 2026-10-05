@@ -34,6 +34,7 @@ def sync_character_pedigree_mappings(characters):
 # These are distinct named characters, not generic background signatures.
 # Their casting is taken from the individual episode credit snapshot.
 NAMED = {
+    "ツウカア": ("tsuukaa", "默契之交", "umamusume"),
     "ますお": ("masuo", "益男", "human"),
     "みなみ": ("minami", "南", "human"),
     "南坂": ("minamisaka", "南坂", "human"),
@@ -57,6 +58,7 @@ NAMED = {
 }
 
 VOICE_PROFILES = {
+    "井坂瞳": ("isaka-hitomi", "井坂瞳", "6月21日", "茨城県", "FIRST WIND production", "https://firstwind.co.jp/talentpage/isaka_hitomi/", "https://firstwind.co.jp/wp-content/uploads/2019/11/isaka_hitomi.jpeg"),
     "有隅融": ("arizumi-tooru", "有隅融", "4月3日", "埼玉県", "81プロデュース", "https://www.81produce.co.jp/actor_search/index.php/item?id=371", "https://www.81produce.co.jp/dcms_media/image/arizumi_tooru.jpg"),
     "上西哲平": ("uenishi-teppei", "上西哲平", "9月1日", "山梨県", "81プロデュース", "https://www.81produce.co.jp/actor_search/index.php/item?id=12", "https://www.81produce.co.jp/dcms_media/image/uenishi_teppei.jpg"),
     "池澤春菜": ("ikezawa-haruna", "池泽春菜", "12月15日", "ギリシャ", "アクロス エンタテインメント", "https://across-ent.com/voice_actor/detail.html?id=111", "https://across-ent.com/assets/media/aa9e63b595238cd3850c852ada78e6870e1ed0a8.jpg"),
@@ -76,6 +78,7 @@ VOICE_PROFILES = {
 PUBLIC_PROFILES = {"原優子"}
 
 CHARACTER_PROFILES = {
+    "ツウカア": ("To-Car", "https://umamusu.wiki/w/images/f/f0/To-Car.png", "第三季中登场的赛马娘，在日本德比中与里见光钻争夺胜利。"),
     "ますお": ("https://www.bilibili.com/bangumi/play/ep780851", "", "赛马娘竞赛的爱好者，常与南一起到场观赛。"),
     "みなみ": ("https://www.bilibili.com/bangumi/play/ep780851", "", "赛马娘竞赛的爱好者，常与益男一起到场观赛。"),
     "スプリングシング": ("https://times.abema.tv/articles/-/10169707", "", "参加岐阜王冠赏的赛马娘，在《芦灰》第14话登场。"),
@@ -156,8 +159,10 @@ def main():
         if normalized(name) in existing:
             existing[normalized(name)]["cv"] = voice["identity"]["ja"]
             existing[normalized(name)]["cv_zh"] = voice["identity"]["zh"]
+            if zh != name:
+                existing[normalized(name)]["zh"] = zh
             continue
-        character = {"id": cid, "zh": zh if kind == 'human' else name, "ja": name, "en": "", "cv": voice["identity"]["ja"],
+        character = {"id": cid, "zh": zh, "ja": name, "en": "", "cv": voice["identity"]["ja"],
                      "cv_zh": voice["identity"]["zh"], "img": "", "page": "", "main": "#3157ed", "sub": "#ffa932",
                      "role_type": kind, "summary_zh": "", "birth": "", "height": "", "weight": "", "sankak": "",
                      "source_urls": list(dict.fromkeys(episode["url"] for episode, _ in signatures))}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-fa0c5101012aa337",
+  "build_id": "anime-04cb5d94c1b30658",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -8,7 +8,7 @@
     "released_units": 125,
     "scheduled_units": 0,
     "watch_resources": 135,
-    "relations": 2038,
+    "relations": 2039,
     "staff_credits": 10803,
     "staff_people": 2516
   },
@@ -45276,6 +45276,21 @@
       "display_order": 27,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e13"
+      ]
+    },
+    {
+      "id": "anime-s3-e05-broadcast-cast-19",
+      "source_type": "anime_unit",
+      "source_id": "anime-s3-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tsuukaa",
+      "voice_actor_id": "va-isaka-hitomi",
+      "signature": "ツウカア",
+      "label": "",
+      "display_order": 19,
+      "evidence_refs": [
+        "broadcast-cast-anime-s3-e05"
       ]
     }
   ],
