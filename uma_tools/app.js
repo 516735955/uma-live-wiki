@@ -584,6 +584,14 @@ const umaApp = createApp({
       const person = entry.id ? entry : (animeCatalog.value.people || []).find(row => row.id === entry.person_id);
       return person ? (person.creator_id ? routes.creators(person.creator_id) : routes.staff(person.id)) : '';
     }
+    const animeLeadRoles = ['导演', '副导演', '助理导演', '系列构成', '脚本', '分镜', '动画演出', '角色设计', '总作画监督', '作画监督'];
+    function animeStaffRoleRank(role) {
+      const index = animeLeadRoles.findIndex(name => role.includes(name));
+      return index < 0 ? animeLeadRoles.length : index;
+    }
+    function animeStaffCollapsible(role, count) {
+      return count > 6 && animeStaffRoleRank(role) === animeLeadRoles.length;
+    }
     const animeStaffGroups = computed(() => {
       const q = animeStaffQuery.value.trim().toLowerCase(), groups = [];
       animeCurrentStaff.value.forEach(entry => {
@@ -593,7 +601,7 @@ const umaApp = createApp({
         if (!group) { group = {key,role:entry.role,group:entry.group || '',credits:[]}; groups.push(group); }
         group.credits.push(entry);
       });
-      return groups;
+      return groups.map(group => ({...group,collapsible:animeStaffCollapsible(group.role,group.credits.length)}));
     });
     const animeStaffAggregate = computed(() => {
       if (!animeDetail.value || animeUnitDetail.value || animeSingle.value) return [];
@@ -614,7 +622,8 @@ const umaApp = createApp({
         if (!groups.has(role)) groups.set(role,{role,rows:[]});
         groups.get(role).rows.push(row);
       });
-      return Array.from(groups.values());
+      return Array.from(groups.values()).sort((a,b) => animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
+        .map(group => ({...group,collapsible:animeStaffCollapsible(group.role,group.rows.length)}));
     });
     const staffFiltered = computed(() => {
       const q = staffQuery.value.trim().toLowerCase();
