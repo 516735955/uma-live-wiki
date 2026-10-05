@@ -598,7 +598,7 @@ const umaApp = createApp({
       return index < 0 ? animeLeadRoles.length : index;
     }
     function animeStaffCollapsible(role, count) {
-      return count > 6 && animeStaffRoleRank(role) === animeLeadRoles.length;
+      return count > 6;
     }
     const animeStaffGroups = computed(() => {
       const q = animeStaffQuery.value.trim().toLowerCase(), groups = [];
