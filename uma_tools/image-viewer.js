@@ -25,6 +25,8 @@
   function show(next) {
     index = Math.max(0, Math.min(items.length - 1, next));
     scale = 1; x = y = 0; transform(); error.hidden = true;
+    stage.classList.add('is-loading');
+    stage.setAttribute('aria-busy', 'true');
     image.src = original(items[index]); image.alt = items[index].alt;
     dialog.querySelector('.image-viewer-original').href = image.src;
     dialog.querySelector('.image-viewer-count').textContent = (index + 1) + ' / ' + items.length;
@@ -67,7 +69,12 @@
     if (event.key === '+' || event.key === '=') zoom(scale + .5);
     if (event.key === '-') zoom(scale - .5);
   });
-  image.addEventListener('error', function () { error.hidden = false; });
+  function finishLoading() {
+    stage.classList.remove('is-loading');
+    stage.setAttribute('aria-busy', 'false');
+  }
+  image.addEventListener('load', finishLoading);
+  image.addEventListener('error', function () { finishLoading(); error.hidden = false; });
   stage.addEventListener('wheel', function (event) { event.preventDefault(); zoom(scale + (event.deltaY < 0 ? .25 : -.25)); }, {passive:false});
   stage.addEventListener('pointerdown', function (event) {
     if (scale <= 1 || event.target !== image) return;
