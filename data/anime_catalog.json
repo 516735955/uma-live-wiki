@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-04cb5d94c1b30658",
+  "build_id": "anime-71606f0f859f23d9",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -112390,6 +112390,13 @@
       "group": "",
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-久保大翔",
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray",
+        "production-studio-kasa-works"
+      ],
+      "institutions": [
+        "STUDIO KASA"
+      ],
       "role_raw": "第二原画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -137547,6 +137554,13 @@
       "group": "",
       "unit_id": "anime-cinderella-gray-e23",
       "person_id": "staff-久保大翔",
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray",
+        "production-studio-kasa-works"
+      ],
+      "institutions": [
+        "STUDIO KASA"
+      ],
       "role_raw": "第二原画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -213043,6 +213057,10 @@
     {
       "id": "staff-久保大翔",
       "name": "久保大翔",
+      "bio": "1999年生于神奈川县伊势原市。2018年开始从事动画制作，参与原画、第二原画及中间动画工作，是STUDIO KASA的代表。",
+      "profile_source_refs": [
+        "production-studio-kasa-about"
+      ],
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
@@ -237654,6 +237672,13 @@
       "kind": "official",
       "label": "官方单集片尾职员表",
       "url": "https://www.bilibili.com/bangumi/play/ep199681",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "production-studio-kasa-about",
+      "kind": "official",
+      "label": "STUDIO KASA人员介绍",
+      "url": "https://www.studiokasa.net/about",
       "observed_at": "2026-10-05"
     }
   ]
