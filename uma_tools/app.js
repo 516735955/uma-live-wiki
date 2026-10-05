@@ -476,22 +476,28 @@ const umaApp = createApp({
     function findAnimeUnit(id) {
       return (animeCatalog.value.units || []).find(function (unit) { return unit.id === id; }) || null;
     }
-    const animeYears = computed(function () {
-      return Array.from(new Set((animeCatalog.value.works || []).map(function (work) {
-        return String(work.start_date || '').slice(0, 4);
-      }).filter(Boolean))).sort().reverse();
-    });
+    function animeWorkFormats(work) {
+      return work.film_cover ? Array.from(new Set([work.format,'movie'])) : [work.format];
+    }
+    function animeWorkYears(work) {
+      const dates = [work.start_date,...(work.dates || []).filter(row => row.edition === 'film' && row.label === '剧场上映').map(row => row.date)];
+      return Array.from(new Set(dates.filter(Boolean).map(date => date.slice(0,4))));
+    }
+    const animeYears = computed(() => Array.from(new Set((animeCatalog.value.works || []).flatMap(animeWorkYears))).sort().reverse());
     const animeFiltered = computed(function () {
       const query = String(animeQuery.value || '').trim().toLowerCase();
       return (animeCatalog.value.works || []).filter(function (work) {
-        if (animeFormat.value !== 'all' && work.format !== animeFormat.value) return false;
+        if (animeFormat.value !== 'all' && !animeWorkFormats(work).includes(animeFormat.value)) return false;
         if (animeStatus.value !== 'all' && work.status !== animeStatus.value) return false;
-        if (animeYear.value !== 'all' && String(work.start_date || '').slice(0, 4) !== animeYear.value) return false;
+        if (animeYear.value !== 'all' && !animeWorkYears(work).includes(animeYear.value)) return false;
         if (!query) return true;
         return [work.title_zh, work.title_ja].concat(work.aliases || []).some(function (value) {
           return String(value || '').toLowerCase().indexOf(query) !== -1;
         });
       });
+    });
+    watch([animeQuery,animeFormat,animeStatus,animeYear], () => {
+      if (routeReady.value && activeTab.value === 'database' && dbView.value === 'anime' && !animeDetail.value) pushUrl(true);
     });
     const animeWorkUnits = computed(function () {
       const id = animeDetail.value && animeDetail.value.id;
@@ -627,6 +633,29 @@ const umaApp = createApp({
       return Array.from(groups.values()).sort((a,b) => animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
         .map(group => ({...group,collapsible:animeStaffCollapsible(group.role,group.rows.length)}));
     });
+    const staffAvatarCache = new Map();
+    function staffPortrait(person) {
+      if (person.photo) return person.photo;
+      if (staffAvatarCache.has(person.id)) return staffAvatarCache.get(person.id);
+      const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+      const letters = Array.from(person.name.replace(/\s+/g, ''));
+      const roles = (person.roles || []).join(' ');
+      const motifs = {
+        sound: '<path d="M48 15v18m-7-14v10m14-10v10m-21-8v6m28-6v6"/>',
+        camera: '<rect x="34" y="18" width="28" height="16" rx="3"/><circle cx="48" cy="26" r="5"/><path d="m40 18 3-4h10l3 4"/>',
+        drawing: '<path d="m36 31 4-9 15-9 5 7-15 9-9 2Zm4-9 5 7m9-15 5 7"/>',
+        film: '<rect x="34" y="14" width="28" height="20" rx="2"/><path d="M39 14v20m18-20v20M34 20h5m-5 8h5m18-8h5m-5 8h5"/>'
+      };
+      const motif = /音乐|音响|配音|录音|混音/.test(roles) ? 'sound' : /摄影|3D|CG/.test(roles) ? 'camera' : /画|设计|分镜|上色|美术/.test(roles) ? 'drawing' : 'film';
+      const colors = ['#3157ed','#264983','#297387','#5263a0','#735a8b','#42766b'];
+      const color = colors[letters.reduce((sum,c) => sum + c.codePointAt(0),0) % colors.length];
+      const marks = letters.map((c,i) => `<path d="M${8+i*80/letters.length} 88v-${3+c.codePointAt(0)%7}"/>`).join('');
+      const monogram = letters.slice(0,2).join('');
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><title>${escape(person.name)}</title><rect width="96" height="96" rx="8" fill="#f2f5ff"/><path d="M0 0h96v6H0Z" fill="${color}"/><path d="m74 96 22-22v22Z" fill="#ffa932"/><g fill="none" stroke="${color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${motifs[motif]}${marks}</g><text x="48" y="62" text-anchor="middle" fill="${color}" font-family="sans-serif" font-size="24" font-weight="700">${escape(monogram)}</text><text x="48" y="75" text-anchor="middle" fill="${color}" font-family="sans-serif" font-size="${Math.min(9,80/Math.max(letters.length,1))}">${escape(person.name)}</text></svg>`;
+      const image = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      staffAvatarCache.set(person.id,image);
+      return image;
+    }
     const staffFiltered = computed(() => {
       const q = staffQuery.value.trim().toLowerCase();
       return (animeCatalog.value.people || []).filter(person => !q || [person.name,...(person.aliases || []),...(person.roles || [])].some(value => value.toLowerCase().includes(q)));
@@ -640,7 +669,10 @@ const umaApp = createApp({
       const top = document.getElementById('staffArchiveTop');
       if (top) top.scrollIntoView({behavior:'smooth',block:'start'});
     }
-    watch(staffQuery, () => { staffPage.value = 1; pushUrl(true); });
+    watch(staffQuery, () => {
+      staffPage.value = 1;
+      if (routeReady.value && activeTab.value === 'database' && dbView.value === 'staff' && !staffDetail.value) pushUrl(true);
+    }, {flush:'sync'});
     const creatorAnimeStaff = computed(() => {
       if (!creatorDetail.value) return [];
       const ids = new Set((animeCatalog.value.people || []).filter(p => p.creator_id === creatorDetail.value.id).map(p => p.id));
@@ -3491,13 +3523,13 @@ const umaApp = createApp({
       voiceProfiles, voiceLoading, voiceError, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,
       animeCatalog, animeLoading, animeError, animeDetail, animeUnitDetail, animeView, animeQuery, animeFormat, animeStatus, animeYear, animeYears, animeFiltered,
-      animeWorkUnits, animeCurrentRelations, animeCurrentWatch, animeCurrentStaff, animeRelationsFor, animeFormatLabel, animeStatusLabel, animeUnitStatusLabel,
+      animeWorkUnits, animeWorkFormats, animeWorkYears, animeCurrentRelations, animeCurrentWatch, animeCurrentStaff, animeRelationsFor, animeFormatLabel, animeStatusLabel, animeUnitStatusLabel,
       animePlatformLabel, animeAuthorityLabel, animeAccessLabel, animeRegionLabel, animeRelationTargetLabel, animeRelationVoiceLabel, animeRelationHref, openAnimeRelation,
       characterAnimeRelations, voiceAnimeRelations, songAnimeRelations, albumAnimeRelations, eventAnimeRelations, animeRelationContext, relatedAnimeHref,
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref,
       animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffExpanded, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
-      staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffCredits, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
+      staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffPortrait, staffCredits, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
