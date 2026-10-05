@@ -7,6 +7,7 @@ import unicodedata
 from pathlib import Path
 
 from build_anime_catalog import atomic_json
+from character_scope import excluded_signature
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/anime"
@@ -30,8 +31,6 @@ def main():
     character_names.update({normalized(name): next(character for character in characters if character["id"] == cid) for name, cid in {
         "沖田トレーナー": "narita_trainer", "ウィニングチケット": "winningticket",
         "乙名史悦子記者": "otonashietsuko", "秋川やよい理事長": "akikawayayoi",
-        "泉本奈々(実況)": "izumimoto_nana",
-        "実況(赤坂美聡)": "akasakamisato",
     }.items()})
     relations_doc = json.loads((DATA / "relations.json").read_text(encoding="utf-8"))
     relations = relations_doc["relations"]
@@ -49,6 +48,8 @@ def main():
             source_doc["sources"].append({"id": source_id, "kind": "credit_transcription", "label": "单集播出署名转录", "url": episode["url"], "observed_at": snapshot["observed_at"]})
             source_ids.add(source_id)
         for order, (signature, actor) in enumerate(episode["cast"]):
+            if excluded_signature(signature):
+                continue
             name = normalized(signature)
             character = character_names.get(name)
             if name == "トレーナー" and episode["work"] in {"anime-s1", "anime-s2", "anime-s3"}:

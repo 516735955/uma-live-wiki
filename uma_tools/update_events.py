@@ -1081,6 +1081,8 @@ class IdentityIndex:
                 if name:
                     alias_to_group[fold_name(name)] = key
             for role in row.get("roles") or []:
+                if role.get("character_id") and role["character_id"] not in self.character_by_id:
+                    continue
                 record["roles"].append({
                     "character_id": str(role.get("character_id") or ""),
                     "name": str(role.get("name") or role.get("name_ja") or ""),

@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from collect_anime_official import fetch
 from build_anime_catalog import atomic_json
 from anime_labels import person_label
+from character_scope import selected_characters, excluded_signature
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/anime"
@@ -134,6 +135,8 @@ def main():
     ]
     added = 0
     for cid, zh, ja, cv, summary, image in new_characters:
+        if not selected_characters([{"id": cid}]):
+            continue
         if any(character["id"] == cid for character in characters):
             continue
         voice = voice_names[norm(cv)]
@@ -149,13 +152,12 @@ def main():
                             "沖田トレーナー": next(c for c in characters if c["id"] == "narita_trainer")})
     # These are named characters already maintained by the main database.
     character_names.update({"乙名史悦子記者": next(c for c in characters if c["id"] == "otonashietsuko"),
-                            "秋川やよい理事長": next(c for c in characters if c["id"] == "akikawayayoi"),
-                            "泉本奈々(実況)": next(c for c in characters if c["id"] == "izumimoto_nana")})
+                            "秋川やよい理事長": next(c for c in characters if c["id"] == "akikawayayoi")})
     sources = read("source_registry.json", "sources")
     character_source = "official-cingray-character-roster"
     if not any(s["id"] == character_source for s in sources):
         sources.append({"id": character_source, "kind": "official", "label": "芦毛灰姑娘角色资料", "url": "https://anime-cinderellagray.com/character/", "observed_at": "2026-10-04"})
-    additions = read("cingray_character_additions.json", "characters")
+    additions = selected_characters(read("cingray_character_additions.json", "characters"))
     for character in additions:
         if any(r["source_id"] == "anime-cinderella-gray" and r["target_type"] == "character" and r["target_id"] == character["id"] for r in relations):
             continue
@@ -188,9 +190,6 @@ def main():
             continue
         if photo:
             voice["photo"] = photo
-    hana = next(c for c in characters if c["id"] == "tojo_hana")
-    hana.update(img="https://anime-umamusume.jp/archive/2nd/app/wp-content/uploads/2020/12/24f861fbaa28d9b7b2e6d598546b60df.png",
-                summary_zh="Rigil队的训练员，指导方式严格，善于收集数据并制定比赛策略。她与Spica训练员是相识多年的旧友。")
     soup = BeautifulSoup(fetch("https://anime-umamusume.jp/archive/2nd/caststaff/"), "html.parser")
     sections = soup.select(".caststaff__contents")
     cast_rows = [(dl.dt.get_text(strip=True), dl.dd.get_text(strip=True)) for dl in sections[0].select("dl")]
@@ -198,6 +197,8 @@ def main():
     if not cast_rows or not staff_rows:
         raise ValueError("official Cast/Staff sections could not be parsed")
     for order, (role, actor) in enumerate(cast_rows):
+        if excluded_signature(role):
+            continue
         character, voice = character_names[norm(role)], voice_names[norm(actor)]
         existing = next((r for r in relations if r["source_id"] == "anime-s2" and r["target_type"] == "character" and r["target_id"] == character["id"]), None)
         if existing:

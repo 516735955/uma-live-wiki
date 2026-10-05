@@ -4,20 +4,20 @@
   "refreshed_at": "2026-10-02T21:12:51+00:00",
   "refresh_policy": "add new records; upgrade source-unavailable placeholders; preserve every accepted sourced record",
   "coverage": {
-    "records": 219,
-    "source_pages": 219,
+    "records": 195,
+    "source_pages": 195,
     "complete_fields": {
-      "birthday": 218,
-      "birthplace": 218,
-      "agency": 213,
-      "official_profile": 190
+      "birthday": 194,
+      "birthplace": 194,
+      "agency": 190,
+      "official_profile": 167
     },
-    "official_profile_photos": 14,
+    "official_profile_photos": 5,
     "accounted_fields": {
-      "birthday": 219,
-      "birthplace": 219,
-      "agency": 219,
-      "official_profile": 219
+      "birthday": 195,
+      "birthplace": 195,
+      "agency": 195,
+      "official_profile": 195
     },
     "added_in_refresh": 0,
     "upgraded_in_refresh": 0,
@@ -96,31 +96,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/Machico"
-        }
-      ]
-    },
-    {
-      "lookup_name": "くじら",
-      "name_zh": "鲸",
-      "name_ja": "くじら",
-      "aliases": [],
-      "kana": "",
-      "birthday": "4月1日",
-      "birthplace": "東京都",
-      "agency": "81プロデュース",
-      "official_profile": "https://www.81produce.co.jp/actor.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "81 Produce 俳优目录",
-          "url": "https://www.81produce.co.jp/actor.html"
         }
       ]
     },
@@ -421,31 +396,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BF%9D%E7%94%B0%E6%9C%AA%E5%A4%A2"
-        }
-      ]
-    },
-    {
-      "lookup_name": "久次米渚",
-      "name_zh": "久次米渚",
-      "name_ja": "久次米渚",
-      "aliases": [],
-      "kana": "",
-      "birthday": "10月6日",
-      "birthplace": "徳島県",
-      "agency": "81プロデュース",
-      "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?cell003=%E3%81%8B%E8%A1%8C&cell004=&cell028=&cell029=%E5%A5%B3%E6%80%A7&id=420&keyword=&label=1&name=%E4%B9%85%E6%AC%A1%E7%B1%B3%E3%80%80%E6%B8%9A",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "81 Produce 官方资料",
-          "url": "https://www.81produce.co.jp/actor_search/index.php/item?cell003=%E3%81%8B%E8%A1%8C&cell004=&cell028=&cell029=%E5%A5%B3%E6%80%A7&id=420&keyword=&label=1&name=%E4%B9%85%E6%AC%A1%E7%B1%B3%E3%80%80%E6%B8%9A"
         }
       ]
     },
@@ -1307,31 +1257,6 @@
       ]
     },
     {
-      "lookup_name": "大久保瑠美",
-      "name_zh": "大久保瑠美",
-      "name_ja": "大久保瑠美",
-      "aliases": [],
-      "kana": "",
-      "birthday": "9月27日",
-      "birthplace": "埼玉県",
-      "agency": "81プロデュース",
-      "official_profile": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=169",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "81 Produce 官方资料",
-          "url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=169"
-        }
-      ]
-    },
-    {
       "lookup_name": "大和田仁美",
       "name_zh": "大和田仁美",
       "name_ja": "大和田仁美",
@@ -1578,31 +1503,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E9%87%8E%E9%A6%99%E8%80%B6"
-        }
-      ]
-    },
-    {
-      "lookup_name": "宝亀克寿",
-      "name_zh": "宝龟克寿",
-      "name_ja": "宝亀克寿",
-      "aliases": [],
-      "kana": "",
-      "birthday": "10月30日",
-      "birthplace": "長崎県",
-      "agency": "青二プロダクション",
-      "official_profile": "https://www.aoni.co.jp/search/houki-katsuhisa.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "青二 Production 官方资料",
-          "url": "https://www.aoni.co.jp/search/houki-katsuhisa.html"
         }
       ]
     },
@@ -1864,31 +1764,6 @@
       ]
     },
     {
-      "lookup_name": "山村響",
-      "name_zh": "山村响",
-      "name_ja": "山村響",
-      "aliases": [],
-      "kana": "",
-      "birthday": "2月10日",
-      "birthplace": "福岡県",
-      "agency": "東京俳優生活協同組合",
-      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12759",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "俳协官方资料",
-          "url": "https://haikyo.co.jp/profile/profile.php?ActorID=12759"
-        }
-      ]
-    },
-    {
       "lookup_name": "山根綺",
       "name_zh": "山根绮",
       "name_ja": "山根綺",
@@ -1962,34 +1837,6 @@
           "url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E7%94%B0%E6%84%9B%E9%87%8E"
         }
       ]
-    },
-    {
-      "lookup_name": "嶋村侑",
-      "name_zh": "岛村侑",
-      "name_ja": "嶋村侑",
-      "aliases": [],
-      "kana": "",
-      "birthday": "4月18日",
-      "birthplace": "東京都",
-      "agency": "賢プロダクション",
-      "official_profile": "https://www.kenproduction.co.jp/talent/262",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "贤 Production 官方资料",
-          "url": "https://www.kenproduction.co.jp/talent/262"
-        }
-      ],
-      "photo_url": "https://www.kenproduction.co.jp/img/talent/262/1.jpg",
-      "photo_source_url": "https://www.kenproduction.co.jp/talent/262",
-      "photo_source_title": "官方事务所资料页"
     },
     {
       "lookup_name": "嶋野花",
@@ -2797,34 +2644,6 @@
       ]
     },
     {
-      "lookup_name": "森なな子",
-      "name_zh": "森奈奈子",
-      "name_ja": "森なな子",
-      "aliases": [],
-      "kana": "もり ななこ",
-      "birthday": "2月13日",
-      "birthplace": "福岡県福岡市",
-      "agency": "マウスプロモーション",
-      "official_profile": "https://mausu.net/talent/mori-nanako.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "wikipedia",
-          "label": "日文维基百科",
-          "url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E3%81%AA%E3%81%AA%E5%AD%90"
-        }
-      ],
-      "photo_url": "https://mausu.net/talent/content/dc9f57d712c3449149bb37427b462bb8efeafb7f.jpg",
-      "photo_source_url": "https://mausu.net/talent/mori-nanako.html",
-      "photo_source_title": "官方事务所资料页"
-    },
-    {
       "lookup_name": "植田佳奈",
       "name_zh": "植田佳奈",
       "name_ja": "植田佳奈",
@@ -2846,31 +2665,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E6%A4%8D%E7%94%B0%E4%BD%B3%E5%A5%88"
-        }
-      ]
-    },
-    {
-      "lookup_name": "榎木淳弥",
-      "name_zh": "榎木淳弥",
-      "name_ja": "榎木淳弥",
-      "aliases": [],
-      "kana": "",
-      "birthday": "10月19日",
-      "birthplace": "東京都",
-      "agency": "asleben",
-      "official_profile": "https://asleben.jp/talents/junya-enoki",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "asleben 官方资料",
-          "url": "https://asleben.jp/talents/junya-enoki"
         }
       ]
     },
@@ -3100,31 +2894,6 @@
       ]
     },
     {
-      "lookup_name": "浪川大輔",
-      "name_zh": "浪川大辅",
-      "name_ja": "浪川大輔",
-      "aliases": [],
-      "kana": "",
-      "birthday": "4月2日",
-      "birthplace": "東京都",
-      "agency": "ステイラック",
-      "official_profile": "https://www.namikawadaisuke.com/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "浪川大辅官方网站",
-          "url": "https://www.namikawadaisuke.com/"
-        }
-      ]
-    },
-    {
       "lookup_name": "海弓シュリ",
       "name_zh": "海弓首里",
       "name_ja": "海弓シュリ",
@@ -3305,34 +3074,6 @@
       ]
     },
     {
-      "lookup_name": "生天目仁美",
-      "name_zh": "生天目仁美",
-      "name_ja": "生天目仁美",
-      "aliases": [],
-      "kana": "",
-      "birthday": "8月4日",
-      "birthplace": "神奈川県",
-      "agency": "賢プロダクション",
-      "official_profile": "https://www.kenproduction.co.jp/talent/66",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "贤 Production 官方资料",
-          "url": "https://www.kenproduction.co.jp/talent/66"
-        }
-      ],
-      "photo_url": "https://www.kenproduction.co.jp/img/talent/66/1.jpg",
-      "photo_source_url": "https://www.kenproduction.co.jp/talent/66",
-      "photo_source_title": "官方事务所资料页"
-    },
-    {
       "lookup_name": "田中あいみ",
       "name_zh": "田中爱美",
       "name_ja": "田中あいみ",
@@ -3358,31 +3099,6 @@
       ]
     },
     {
-      "lookup_name": "田中貴子",
-      "name_zh": "田中贵子",
-      "name_ja": "田中貴子",
-      "aliases": [],
-      "kana": "たなか たかこ",
-      "birthday": "10月5日",
-      "birthplace": "福井県",
-      "agency": "マウスプロモーション",
-      "official_profile": "https://mausu.net/talent/tanaka-takako.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "wikipedia",
-          "label": "日文维基百科",
-          "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E8%B2%B4%E5%AD%90_%28%E5%A3%B0%E5%84%AA%29"
-        }
-      ]
-    },
-    {
       "lookup_name": "田所あずさ",
       "name_zh": "田所梓",
       "name_ja": "田所あずさ",
@@ -3404,31 +3120,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%89%80%E3%81%82%E3%81%9A%E3%81%95"
-        }
-      ]
-    },
-    {
-      "lookup_name": "田村睦心",
-      "name_zh": "田村睦心",
-      "name_ja": "田村睦心",
-      "aliases": [],
-      "kana": "",
-      "birthday": "6月19日",
-      "birthplace": "東京都",
-      "agency": "アイムエンタープライズ",
-      "official_profile": "https://www.imenterprise.jp/profile.php?id=62",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "I'm Enterprise 官方资料",
-          "url": "https://www.imenterprise.jp/profile.php?id=62"
         }
       ]
     },
@@ -3529,31 +3220,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%9F%B3%E6%99%B4%E9%A6%99"
-        }
-      ]
-    },
-    {
-      "lookup_name": "白石涼子",
-      "name_zh": "白石凉子",
-      "name_ja": "白石涼子",
-      "aliases": [],
-      "kana": "",
-      "birthday": "9月7日",
-      "birthplace": "奈良県",
-      "agency": "青二プロダクション",
-      "official_profile": "https://www.aoni.co.jp/search/shiraishi-ryoko.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "青二 Production 官方资料",
-          "url": "https://www.aoni.co.jp/search/shiraishi-ryoko.html"
         }
       ]
     },
@@ -4004,31 +3670,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E8%8A%B1%E6%97%A5%E8%8F%9C"
-        }
-      ]
-    },
-    {
-      "lookup_name": "竹内良太",
-      "name_zh": "竹内良太",
-      "name_ja": "竹内良太",
-      "aliases": [],
-      "kana": "",
-      "birthday": "9月22日",
-      "birthplace": "兵庫県",
-      "agency": "青二プロダクション",
-      "official_profile": "https://www.aoni.co.jp/search/takeuchi-ryota.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "青二 Production 官方资料",
-          "url": "https://www.aoni.co.jp/search/takeuchi-ryota.html"
         }
       ]
     },
@@ -4888,31 +4529,6 @@
       ]
     },
     {
-      "lookup_name": "阿座上洋平",
-      "name_zh": "阿座上洋平",
-      "name_ja": "阿座上洋平",
-      "aliases": [],
-      "kana": "あざかみ ようへい",
-      "birthday": "8月7日",
-      "birthplace": "群馬県",
-      "agency": "青二プロダクション",
-      "official_profile": "https://www.aoni.co.jp/search/azakami-yohei.html",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "wikipedia",
-          "label": "日文维基百科",
-          "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E5%BA%A7%E4%B8%8A%E6%B4%8B%E5%B9%B3"
-        }
-      ]
-    },
-    {
       "lookup_name": "陶山恵実里",
       "name_zh": "陶山惠实里",
       "name_ja": "陶山恵実里",
@@ -5009,31 +4625,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E8%97%A4%E5%8F%B6%E5%B8%8C"
-        }
-      ]
-    },
-    {
-      "lookup_name": "風間万裕子",
-      "name_zh": "风间万裕子",
-      "name_ja": "風間万裕子",
-      "aliases": [],
-      "kana": "",
-      "birthday": "10月2日",
-      "birthplace": "東京都",
-      "agency": "アイムエンタープライズ",
-      "official_profile": "https://www.imenterprise.jp/profile.php?id=103",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "I'm Enterprise 官方资料",
-          "url": "https://www.imenterprise.jp/profile.php?id=103"
         }
       ]
     },
@@ -5190,31 +4781,6 @@
       ]
     },
     {
-      "lookup_name": "高橋大輔",
-      "name_zh": "高桥大辅",
-      "name_ja": "高橋大輔",
-      "aliases": [],
-      "kana": "たかはし だいすけ",
-      "birthday": "2月20日",
-      "birthplace": "奈良県",
-      "agency": "東京俳優生活協同組合",
-      "official_profile": "https://haikyo.co.jp/profile/profile.php?ActorID=12956",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "wikipedia",
-          "label": "日文维基百科",
-          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A9%8B%E5%A4%A7%E8%BC%94_%28%E5%A3%B0%E5%84%AA%29"
-        }
-      ]
-    },
-    {
       "lookup_name": "髙橋美空",
       "name_zh": "高桥美空",
       "name_ja": "髙橋美空",
@@ -5336,338 +4902,6 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E9%A0%AD%E6%98%8E%E9%87%8C"
-        }
-      ]
-    },
-    {
-      "lookup_name": "鷄冠井美智子",
-      "name_zh": "鸡冠井美智子",
-      "name_ja": "鷄冠井美智子",
-      "aliases": [],
-      "kana": "",
-      "birthday": "6月24日",
-      "birthplace": "青森県",
-      "agency": "賢プロダクション",
-      "official_profile": "https://www.kenproduction.co.jp/talent/154",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "贤 Production 官方资料",
-          "url": "https://www.kenproduction.co.jp/talent/154"
-        }
-      ],
-      "photo_url": "https://www.kenproduction.co.jp/img/talent/154/1.jpg",
-      "photo_source_url": "https://www.kenproduction.co.jp/talent/154",
-      "photo_source_title": "官方事务所资料页"
-    },
-    {
-      "lookup_name": "八百屋杏",
-      "name_zh": "八百屋杏",
-      "name_ja": "八百屋杏",
-      "aliases": [],
-      "kana": "",
-      "birthday": "3月3日",
-      "birthplace": "東京都",
-      "agency": "リマックス",
-      "official_profile": "https://remax-web.jp/talent/yaoya-k/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://remax-web.jp/talent/yaoya-k/"
-        }
-      ],
-      "photo_url": "https://remax-web.jp/wp-content/uploads/2020/03/八百屋杏_1-819x1024.webp",
-      "photo_source_url": "https://remax-web.jp/talent/yaoya-k/",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "安齋龍太",
-      "name_zh": "安斋龙太",
-      "name_ja": "安齋龍太",
-      "aliases": [],
-      "kana": "",
-      "birthday": "8月17日",
-      "birthplace": "東京都",
-      "agency": "リマックス",
-      "official_profile": "https://remax-web.jp/talent/anzai-r/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://remax-web.jp/talent/anzai-r/"
-        }
-      ],
-      "photo_url": "https://remax-web.jp/wp-content/uploads/2020/03/安齋龍太-2.jpg",
-      "photo_source_url": "https://remax-web.jp/talent/anzai-r/",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "野椛ゆうか",
-      "name_zh": "野椛ゆうか",
-      "name_ja": "野椛ゆうか",
-      "aliases": [],
-      "kana": "",
-      "birthday": "8月5日",
-      "birthplace": "兵庫県",
-      "agency": "リマックス",
-      "official_profile": "https://remax-web.jp/talent/nohana-y/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://remax-web.jp/talent/nohana-y/"
-        }
-      ],
-      "photo_url": "https://remax-web.jp/wp-content/uploads/2020/03/野椛ゆうか_1-819x1024.webp",
-      "photo_source_url": "https://remax-web.jp/talent/nohana-y/",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "蓮田美紀",
-      "name_zh": "莲田美纪",
-      "name_ja": "蓮田美紀",
-      "aliases": [],
-      "kana": "",
-      "birthday": "11月22日",
-      "birthplace": "埼玉県",
-      "agency": "リマックス",
-      "official_profile": "https://remax-web.jp/talent/hasuda-m/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://remax-web.jp/talent/hasuda-m/"
-        }
-      ],
-      "photo_url": "https://remax-web.jp/wp-content/uploads/2020/03/蓮田美紀_1.webp",
-      "photo_source_url": "https://remax-web.jp/talent/hasuda-m/",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "新川愛実",
-      "name_zh": "新川爱实",
-      "name_ja": "新川愛実",
-      "aliases": [],
-      "kana": "",
-      "birthday": "2月7日",
-      "birthplace": "千葉県",
-      "agency": "EARLY WING",
-      "official_profile": "https://www.earlywing.co.jp/actordb/catea/talent_arakawamegumi",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://www.earlywing.co.jp/actordb/catea/talent_arakawamegumi"
-        }
-      ],
-      "photo_url": "https://www.earlywing.co.jp/dcms_media/image/25_ArakawaMegumi.jpg",
-      "photo_source_url": "https://www.earlywing.co.jp/actordb/catea/talent_arakawamegumi",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "大澤風香",
-      "name_zh": "大泽风香",
-      "name_ja": "大澤風香",
-      "aliases": [],
-      "kana": "",
-      "birthday": "10月25日",
-      "birthplace": "埼玉県",
-      "agency": "EARLY WING",
-      "official_profile": "https://www.earlywing.co.jp/actordb/catea/talent_osawafuuka",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://www.earlywing.co.jp/actordb/catea/talent_osawafuuka"
-        }
-      ],
-      "photo_url": "https://www.earlywing.co.jp/dcms_media/image/24_OsawaFuka.jpeg",
-      "photo_source_url": "https://www.earlywing.co.jp/actordb/catea/talent_osawafuuka",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "得能ありさ",
-      "name_zh": "得能ありさ",
-      "name_ja": "得能ありさ",
-      "aliases": [],
-      "kana": "",
-      "birthday": "5月17日",
-      "birthplace": "和歌山県",
-      "agency": "",
-      "official_profile": "",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "source_unavailable",
-        "official_profile": "source_unavailable"
-      },
-      "status": "source_unavailable",
-      "sources": [
-        {
-          "kind": "public_profile",
-          "label": "WEBザテレビジョン公开资料",
-          "url": "https://thetv.jp/person/2000084983/"
-        }
-      ]
-    },
-    {
-      "lookup_name": "櫻井みゆき",
-      "name_zh": "樱井美雪",
-      "name_ja": "櫻井みゆき",
-      "aliases": [],
-      "kana": "",
-      "birthday": "12月16日",
-      "birthplace": "東京都",
-      "agency": "Rush Style",
-      "official_profile": "https://rushstyle.net/talent/miyuki_sakurai/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://rushstyle.net/talent/miyuki_sakurai/"
-        }
-      ],
-      "photo_url": "https://rushstyle.net/assets/img/talent/sakurai.jpg",
-      "photo_source_url": "https://rushstyle.net/talent/miyuki_sakurai/",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "伊駒ゆりえ",
-      "name_zh": "伊驹友里绘",
-      "name_ja": "伊駒ゆりえ",
-      "aliases": [],
-      "kana": "",
-      "birthday": "2月24日",
-      "birthplace": "東京都",
-      "agency": "81 Produce",
-      "official_profile": "https://www.81produce.co.jp/actor_search/index.php/item?id=395",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://www.81produce.co.jp/actor_search/index.php/item?id=395"
-        }
-      ],
-      "photo_url": "https://www.81produce.co.jp/dcms_media/image/igoma_yurie.jpg",
-      "photo_source_url": "https://www.81produce.co.jp/actor_search/index.php/item?id=395",
-      "photo_source_title": "事务所官方资料"
-    },
-    {
-      "lookup_name": "仁見紗綾",
-      "name_zh": "仁见纱绫",
-      "name_ja": "仁見紗綾",
-      "aliases": [],
-      "kana": "",
-      "birthday": "2月4日",
-      "birthplace": "山口県",
-      "agency": "BLACK SHIP",
-      "official_profile": "https://www.blackship.jp/female/sayahitomi/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://www.blackship.jp/female/sayahitomi/"
-        }
-      ]
-    },
-    {
-      "lookup_name": "緒方賢一",
-      "name_zh": "绪方贤一",
-      "name_ja": "緒方賢一",
-      "aliases": [],
-      "kana": "",
-      "birthday": "3月29日",
-      "birthplace": "福岡県",
-      "agency": "オフィス海風",
-      "official_profile": "https://zimusyo-umikaze.com/",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官网",
-          "url": "https://zimusyo-umikaze.com/"
-        },
-        {
-          "kind": "public_profile",
-          "label": "日本タレント名鑑",
-          "url": "https://www.vip-times.co.jp/?talent_id=M93-0665"
         }
       ]
     },

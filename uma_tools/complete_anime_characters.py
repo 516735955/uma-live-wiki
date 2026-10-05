@@ -8,6 +8,7 @@ from pathlib import Path
 from collect_anime_official import fetch, cms
 from build_anime_catalog import atomic_json
 from import_anime_episode_cast import normalized
+from character_scope import excluded_signature
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -114,7 +115,7 @@ def main():
     voice_names = {normalized(v["identity"]["ja"]): v for v in voices}
     existing = {normalized(c["ja"]): c for c in characters}
     additions = []
-    selected = set(args.character or NAMED)
+    selected = {name for name in (args.character or NAMED) if not excluded_signature(name)}
     selected_actors = {normalized(actor) for episode in episodes for role, actor in episode["cast"]
                        if role in selected}
     for actor_name, profile in VOICE_PROFILES.items():

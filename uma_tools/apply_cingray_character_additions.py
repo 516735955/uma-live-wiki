@@ -10,6 +10,7 @@ import time
 import urllib.request
 
 from PIL import Image
+from character_scope import selected_characters
 
 
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,7 +32,7 @@ def load_wrapped_json(path):
 def load_additions():
     with open(SOURCE_PATH, encoding="utf-8") as handle:
         payload = json.load(handle)
-    return payload.get("characters") or []
+    return selected_characters(payload.get("characters") or [])
 
 
 def browser_record(source):

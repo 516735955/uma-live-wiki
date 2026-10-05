@@ -122,7 +122,7 @@ def build_horses(source):
             seen.add(node_id)
         return node_id
 
-    horse_cids = {}
+    horse_cids = {canonical(hid): [] for hid in source.get('horse_pages', [])}
     for cid, mapping in (source.get('character_mappings') or {}).items():
         horse = mapping.get('horse')
         if not horse:

@@ -9,6 +9,7 @@ from build_anime_catalog import atomic_json
 from import_anime_episode_cast import normalized
 from sync_music_metadata import stable_creator_id
 from anime_labels import role_label, group_label
+from character_scope import excluded_signature
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/anime"
@@ -34,7 +35,6 @@ def main():
     versions = {v["id"]: song["id"] for song in song_doc["songs"] for v in song["versions"]}
     character_names = {normalized(name): c for c in characters for name in (c["ja"], *c.get("aliases", []))}
     character_names["沖田トレーナー"] = next(c for c in characters if c["id"] == "narita_trainer")
-    character_names[normalized("実況(赤坂美聡)")] = next(c for c in characters if c["id"] == "akasakamisato")
     voice_names = {normalized(name): v for v in voices
                    for name in (v["identity"]["ja"], *v["identity"].get("aliases", []))}
     voice_names[normalized("高橋未奈美")] = next(v for v in voices if v["id"] == "va-0180")
@@ -104,6 +104,8 @@ def main():
                 credits.append(row)
                 added += 1
         for order, (signature, actor) in enumerate(episode["cast"]):
+            if excluded_signature(signature):
+                continue
             narrator = signature == "ナレーション"
             if signature == "トレーナー" and work in {"anime-s1", "anime-s2", "anime-s3", "anime-1st-anniversary"}:
                 character = next(c for c in characters if c["id"] == "spica_trainer")

@@ -626,21 +626,6 @@
       ]
     },
     {
-      "id": "anime-umayuru-e03-cast-2",
-      "source_type": "anime_unit",
-      "source_id": "anime-umayuru-e03",
-      "relation_type": "credited_cast",
-      "target_type": "voice_actor",
-      "target_id": "va-0142",
-      "voice_actor_id": "va-0142",
-      "signature": "細江さん",
-      "label": "单集署名",
-      "display_order": 2,
-      "evidence_refs": [
-        "official-story-anime-umayuru-e03"
-      ]
-    },
-    {
       "id": "anime-umayuru-e03-cast-3",
       "source_type": "anime_unit",
       "source_id": "anime-umayuru-e03",
@@ -2153,21 +2138,6 @@
       "signature": "ファインモーション",
       "label": "单集署名",
       "display_order": 7,
-      "evidence_refs": [
-        "official-story-anime-umayuru-e24"
-      ]
-    },
-    {
-      "id": "anime-umayuru-e24-cast-8",
-      "source_type": "anime_unit",
-      "source_id": "anime-umayuru-e24",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "赤坂美聡",
-      "label": "单集署名",
-      "display_order": 8,
       "evidence_refs": [
         "official-story-anime-umayuru-e24"
       ]
@@ -8298,21 +8268,6 @@
       ]
     },
     {
-      "id": "anime-s1-official-cast-13",
-      "source_type": "anime_work",
-      "source_id": "anime-s1",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条ハナ",
-      "label": "作品署名",
-      "display_order": 13,
-      "evidence_refs": [
-        "official-master-anime-s1"
-      ]
-    },
-    {
       "id": "anime-s2-official-cast-0",
       "source_type": "anime_work",
       "source_id": "anime-s2",
@@ -8668,81 +8623,6 @@
       "signature": "メイショウドトウ",
       "label": "作品署名",
       "display_order": 7,
-      "evidence_refs": [
-        "official-movie-caststaff"
-      ]
-    },
-    {
-      "id": "anime-movie-beginning-new-era-official-cast-8",
-      "source_type": "anime_work",
-      "source_id": "anime-movie-beginning-new-era",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tanabe_trainer",
-      "voice_actor_id": "va-auto-03ee50ed3b6b",
-      "signature": "タナベトレーナー",
-      "label": "作品署名",
-      "display_order": 8,
-      "evidence_refs": [
-        "official-movie-caststaff"
-      ]
-    },
-    {
-      "id": "anime-movie-beginning-new-era-official-cast-9",
-      "source_type": "anime_work",
-      "source_id": "anime-movie-beginning-new-era",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "roux",
-      "voice_actor_id": "va-auto-29a6c69a6b12",
-      "signature": "ルー",
-      "label": "作品署名",
-      "display_order": 9,
-      "evidence_refs": [
-        "official-movie-caststaff"
-      ]
-    },
-    {
-      "id": "anime-movie-beginning-new-era-official-cast-10",
-      "source_type": "anime_work",
-      "source_id": "anime-movie-beginning-new-era",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shima",
-      "voice_actor_id": "va-auto-c45399b5b48f",
-      "signature": "シマ",
-      "label": "作品署名",
-      "display_order": 10,
-      "evidence_refs": [
-        "official-movie-caststaff"
-      ]
-    },
-    {
-      "id": "anime-movie-beginning-new-era-official-cast-11",
-      "source_type": "anime_work",
-      "source_id": "anime-movie-beginning-new-era",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "mei",
-      "voice_actor_id": "va-auto-90456990babd",
-      "signature": "メイ",
-      "label": "作品署名",
-      "display_order": 11,
-      "evidence_refs": [
-        "official-movie-caststaff"
-      ]
-    },
-    {
-      "id": "anime-movie-beginning-new-era-official-cast-12",
-      "source_type": "anime_work",
-      "source_id": "anime-movie-beginning-new-era",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "izumimoto_nana",
-      "voice_actor_id": "va-0091",
-      "signature": "泉本奈々（実況）",
-      "label": "作品署名",
-      "display_order": 12,
       "evidence_refs": [
         "official-movie-caststaff"
       ]
@@ -11321,273 +11201,6 @@
       ]
     },
     {
-      "id": "s2-official-cast-tojo_hana",
-      "source_type": "anime_work",
-      "source_id": "anime-s2",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条ハナ",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "official-master-anime-s2"
-      ]
-    },
-    {
-      "id": "cg-character-roster-blacky_ale",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "blacky_ale",
-      "label": "",
-      "display_order": 675,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-9f83e0788e00"
-    },
-    {
-      "id": "cg-character-roster-meikun_tsukasa",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "meikun_tsukasa",
-      "label": "",
-      "display_order": 676,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-1b3a55a3e220"
-    },
-    {
-      "id": "cg-character-roster-kraft_univer",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "kraft_univer",
-      "label": "",
-      "display_order": 677,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-e21b1a56a55a"
-    },
-    {
-      "id": "cg-character-roster-god_hannibal",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "god_hannibal",
-      "label": "",
-      "display_order": 678,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-ea28ad32bf70"
-    },
-    {
-      "id": "cg-character-roster-akitsu_teio",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "akitsu_teio",
-      "label": "",
-      "display_order": 679,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-67850db55746"
-    },
-    {
-      "id": "cg-character-roster-dynam_heroine",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "dynam_heroine",
-      "label": "",
-      "display_order": 680,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-10dd0a2a1bbb"
-    },
-    {
-      "id": "cg-character-roster-lord_royal",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "lord_royal",
-      "label": "",
-      "display_order": 681,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-b4ae4ea59e05"
-    },
-    {
-      "id": "cg-character-roster-yamano_southern",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "yamano_southern",
-      "label": "",
-      "display_order": 682,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-b7f0989af659"
-    },
-    {
-      "id": "cg-character-roster-shibasaki_koichi",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "label": "",
-      "display_order": 683,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-38cfe745829f"
-    },
-    {
-      "id": "cg-character-roster-kawamura_hiyori",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "label": "",
-      "display_order": 684,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-356d6ec0945d"
-    },
-    {
-      "id": "cg-character-roster-iwao_tadaichi",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "iwao_tadaichi",
-      "label": "",
-      "display_order": 685,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-f7864faeef50"
-    },
-    {
-      "id": "cg-character-roster-shihandai",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "shihandai",
-      "label": "",
-      "display_order": 686,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-00c2247ac66e"
-    },
-    {
-      "id": "cg-character-roster-komiyama_masami",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "label": "",
-      "display_order": 687,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-f9b86c68630c"
-    },
-    {
-      "id": "cg-character-roster-nase_fumino",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "label": "",
-      "display_order": 688,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-900dcdc66979"
-    },
-    {
-      "id": "cg-character-roster-kouchi_tadashi",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "kouchi_tadashi",
-      "label": "",
-      "display_order": 689,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-a0e01fb2cb54"
-    },
-    {
-      "id": "cg-character-roster-yuzuhara_ryuko",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "yuzuhara_ryuko",
-      "label": "",
-      "display_order": 690,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-1555471f8cc3"
-    },
-    {
-      "id": "cg-character-roster-yuzuhara_taro",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "yuzuhara_taro",
-      "label": "",
-      "display_order": 691,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-1ac0301bdf7a"
-    },
-    {
-      "id": "cg-character-roster-fujii_sensuke",
-      "source_type": "anime_work",
-      "source_id": "anime-cinderella-gray",
-      "relation_type": "work_character",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "label": "",
-      "display_order": 692,
-      "evidence_refs": [
-        "official-cingray-character-roster"
-      ],
-      "voice_actor_id": "va-auto-cc13155a7121"
-    },
-    {
       "id": "anime-s2-e01-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s2-e01",
@@ -11902,22 +11515,6 @@
       "signature": "マチカネフクキタル",
       "label": "",
       "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e01",
-        "official-ending-anime-s2-e01"
-      ]
-    },
-    {
-      "id": "anime-s2-e01-broadcast-cast-28",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 28,
       "evidence_refs": [
         "broadcast-cast-anime-s2-e01",
         "official-ending-anime-s2-e01"
@@ -13365,21 +12962,6 @@
       ]
     },
     {
-      "id": "anime-s2-e06-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e06",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e06"
-      ]
-    },
-    {
       "id": "anime-s2-e07-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s2-e07",
@@ -14475,21 +14057,6 @@
       ]
     },
     {
-      "id": "anime-s2-e10-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e10"
-      ]
-    },
-    {
       "id": "anime-s2-e11-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s2-e11",
@@ -15240,21 +14807,6 @@
       ]
     },
     {
-      "id": "anime-s2-e13-broadcast-cast-29",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 29,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
-      ]
-    },
-    {
       "id": "anime-s1-e01-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e01",
@@ -15473,22 +15025,6 @@
       "signature": "キングヘイロー",
       "label": "",
       "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e01",
-        "official-ending-anime-s1-e01"
-      ]
-    },
-    {
-      "id": "anime-s1-e01-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 14,
       "evidence_refs": [
         "broadcast-cast-anime-s1-e01",
         "official-ending-anime-s1-e01"
@@ -15766,21 +15302,6 @@
       ]
     },
     {
-      "id": "anime-s1-e02-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
-      ]
-    },
-    {
       "id": "anime-s1-e02-broadcast-cast-18",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e02",
@@ -16006,21 +15527,6 @@
       ]
     },
     {
-      "id": "anime-s1-e03-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
-      ]
-    },
-    {
       "id": "anime-s1-e04-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e04",
@@ -16241,21 +15747,6 @@
       "signature": "タイキシャトル",
       "label": "",
       "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e04"
-      ]
-    },
-    {
-      "id": "anime-s1-e04-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 15,
       "evidence_refs": [
         "broadcast-cast-anime-s1-e04"
       ]
@@ -16496,21 +15987,6 @@
       "signature": "タイキシャトル",
       "label": "",
       "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e05"
-      ]
-    },
-    {
-      "id": "anime-s1-e05-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 16,
       "evidence_refs": [
         "broadcast-cast-anime-s1-e05"
       ]
@@ -16876,21 +16352,6 @@
       ]
     },
     {
-      "id": "anime-s1-e06-broadcast-cast-24",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e06",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 24,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e06"
-      ]
-    },
-    {
       "id": "anime-s1-e07-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e07",
@@ -17161,21 +16622,6 @@
       ]
     },
     {
-      "id": "anime-s1-e07-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e07"
-      ]
-    },
-    {
       "id": "anime-s1-e08-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e08",
@@ -17381,21 +16827,6 @@
       "signature": "ハルウララ",
       "label": "",
       "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e08"
-      ]
-    },
-    {
-      "id": "anime-s1-e08-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 14,
       "evidence_refs": [
         "broadcast-cast-anime-s1-e08"
       ]
@@ -17666,21 +17097,6 @@
       "signature": "ヒシアマゾン",
       "label": "",
       "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
-      ]
-    },
-    {
-      "id": "anime-s1-e09-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 19,
       "evidence_refs": [
         "broadcast-cast-anime-s1-e09"
       ]
@@ -18241,21 +17657,6 @@
       ]
     },
     {
-      "id": "anime-s1-e11-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e11"
-      ]
-    },
-    {
       "id": "anime-s1-e11-broadcast-cast-21",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e11",
@@ -18586,21 +17987,6 @@
       ]
     },
     {
-      "id": "anime-s1-e12-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e12"
-      ]
-    },
-    {
       "id": "anime-s1-e13-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s1-e13",
@@ -18926,21 +18312,6 @@
       "signature": "イナリワン",
       "label": "",
       "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e13"
-      ]
-    },
-    {
-      "id": "anime-s1-e13-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 22,
       "evidence_refs": [
         "broadcast-cast-anime-s1-e13"
       ]
@@ -21150,21 +20521,6 @@
       ]
     },
     {
-      "id": "anime-s3-e10-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tojo_hana",
-      "voice_actor_id": "va-auto-6c0f2bfe17ce",
-      "signature": "東条 ハナ",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e10"
-      ]
-    },
-    {
       "id": "anime-s3-e11-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-s3-e11",
@@ -22166,54 +21522,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "voice_actor_id": "va-auto-356d6ec0945d",
-      "signature": "川村 日和",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "iwao_tadaichi",
-      "voice_actor_id": "va-auto-f7864faeef50",
-      "signature": "巌 唯一",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e01-broadcast-cast-21",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e01",
@@ -22331,51 +21639,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 6,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e02"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e02-broadcast-cast-07",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 7,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e02"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e02-broadcast-cast-08",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "voice_actor_id": "va-auto-356d6ec0945d",
-      "signature": "川村 日和",
-      "label": "",
-      "display_order": 8,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e02"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e02-broadcast-cast-09",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "iwao_tadaichi",
-      "voice_actor_id": "va-auto-f7864faeef50",
-      "signature": "巌 唯一",
-      "label": "",
-      "display_order": 9,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e02"
       ]
@@ -22512,51 +21775,6 @@
       "signature": "タマモクロス",
       "label": "",
       "display_order": 8,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e03"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e03-broadcast-cast-09",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 9,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e03"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e03-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "voice_actor_id": "va-auto-356d6ec0945d",
-      "signature": "川村 日和",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e03"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e03-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "iwao_tadaichi",
-      "voice_actor_id": "va-auto-f7864faeef50",
-      "signature": "巌 唯一",
-      "label": "",
-      "display_order": 11,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e03"
       ]
@@ -22727,21 +21945,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e04-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e04"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e05-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e05",
@@ -22902,21 +22105,6 @@
       "signature": "マルゼンスキー",
       "label": "",
       "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e05"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e05-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 11,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e05"
       ]
@@ -23087,36 +22275,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e06-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e06",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e06"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e06-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e06",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "voice_actor_id": "va-auto-356d6ec0945d",
-      "signature": "川村 日和",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e06"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e07-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e07",
@@ -23282,66 +22440,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "blacky_ale",
-      "voice_actor_id": "va-auto-9f83e0788e00",
-      "signature": "ブラッキーエール",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "meikun_tsukasa",
-      "voice_actor_id": "va-auto-1b3a55a3e220",
-      "signature": "メイクンツカサ",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kraft_univer",
-      "voice_actor_id": "va-auto-e21b1a56a55a",
-      "signature": "クラフトユニヴァ",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "god_hannibal",
-      "voice_actor_id": "va-auto-ea28ad32bf70",
-      "signature": "ゴッドハンニバル",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e07-broadcast-cast-15",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e07",
@@ -23397,36 +22495,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "voice_actor_id": "va-auto-356d6ec0945d",
-      "signature": "川村 日和",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 20,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e07"
       ]
@@ -23597,51 +22665,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e08-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "blacky_ale",
-      "voice_actor_id": "va-auto-9f83e0788e00",
-      "signature": "ブラッキーエール",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e08"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e08-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shihandai",
-      "voice_actor_id": "va-auto-00c2247ac66e",
-      "signature": "師範代",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e08"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e08-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e08"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e09-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e09",
@@ -23792,21 +22815,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e09-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e09"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e10-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e10",
@@ -23942,21 +22950,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e10-broadcast-cast-09",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akitsu_teio",
-      "voice_actor_id": "va-auto-67850db55746",
-      "signature": "アキツテイオー",
-      "label": "",
-      "display_order": 9,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e10"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e10-broadcast-cast-10",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e10",
@@ -24012,36 +23005,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e10"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e10-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e10"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e10-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 15,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e10"
       ]
@@ -24227,81 +23190,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "dynam_heroine",
-      "voice_actor_id": "va-auto-10dd0a2a1bbb",
-      "signature": "ダイナムヒロイン",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "lord_royal",
-      "voice_actor_id": "va-auto-b4ae4ea59e05",
-      "signature": "ロードロイヤル",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "meikun_tsukasa",
-      "voice_actor_id": "va-auto-1b3a55a3e220",
-      "signature": "メイクンツカサ",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kraft_univer",
-      "voice_actor_id": "va-auto-e21b1a56a55a",
-      "signature": "クラフトユニヴァ",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "god_hannibal",
-      "voice_actor_id": "va-auto-ea28ad32bf70",
-      "signature": "ゴッドハンニバル",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e11-broadcast-cast-18",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e11",
@@ -24357,66 +23245,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-23",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 23,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-24",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kawamura_hiyori",
-      "voice_actor_id": "va-auto-356d6ec0945d",
-      "signature": "川村 日和",
-      "label": "",
-      "display_order": 24,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-25",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 25,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e11"
       ]
@@ -24557,36 +23385,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e12-broadcast-cast-09",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "dynam_heroine",
-      "voice_actor_id": "va-auto-10dd0a2a1bbb",
-      "signature": "ダイナムヒロイン",
-      "label": "",
-      "display_order": 9,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e12"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e12-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "lord_royal",
-      "voice_actor_id": "va-auto-b4ae4ea59e05",
-      "signature": "ロードロイヤル",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e12"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e12-broadcast-cast-11",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e12",
@@ -24672,36 +23470,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e12"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e12-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e12"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e12-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 18,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e12"
       ]
@@ -24872,36 +23640,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e13-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "dynam_heroine",
-      "voice_actor_id": "va-auto-10dd0a2a1bbb",
-      "signature": "ダイナムヒロイン",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e13"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e13-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "lord_royal",
-      "voice_actor_id": "va-auto-b4ae4ea59e05",
-      "signature": "ロードロイヤル",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e13"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e13-broadcast-cast-13",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e13",
@@ -24987,36 +23725,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e13"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e13-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e13"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e13-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 20,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e13"
       ]
@@ -25202,51 +23910,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e14-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e14",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "yamano_southern",
-      "voice_actor_id": "va-auto-b7f0989af659",
-      "signature": "ヤマノサウザン",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e14"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e14-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e14",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e14"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e14-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e14",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shihandai",
-      "voice_actor_id": "va-auto-00c2247ac66e",
-      "signature": "師範代",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e14"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e14-broadcast-cast-16",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e14",
@@ -25408,36 +24071,6 @@
       "signature": "エラズリープライド",
       "label": "",
       "display_order": 9,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e16"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e16-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e16",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e16"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e16-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e16",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 11,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e16"
       ]
@@ -25653,51 +24286,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e17-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e17",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e17-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e17",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e17-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e17",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e18-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e18",
@@ -25908,51 +24496,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e18-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e18",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e18"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e18-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e18",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e18"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e18-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e18",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e18"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e19-broadcast-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e19",
@@ -26103,21 +24646,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e19-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e19",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "blacky_ale",
-      "voice_actor_id": "va-auto-9f83e0788e00",
-      "signature": "ブラッキーエール",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e19"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e19-broadcast-cast-11",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e19",
@@ -26173,66 +24701,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e19"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e19-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e19",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e19"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e19-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e19",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shihandai",
-      "voice_actor_id": "va-auto-00c2247ac66e",
-      "signature": "師範代",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e19"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e19-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e19",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e19"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e19-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e19",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 18,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e19"
       ]
@@ -26368,51 +24836,6 @@
       "signature": "フジマサマーチ",
       "label": "",
       "display_order": 9,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e20"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e20-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e20",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e20"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e20-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e20",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e20"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e20-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e20",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kouchi_tadashi",
-      "voice_actor_id": "va-auto-a0e01fb2cb54",
-      "signature": "小内 忠",
-      "label": "",
-      "display_order": 12,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e20"
       ]
@@ -26568,21 +24991,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e21-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e21",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "lord_royal",
-      "voice_actor_id": "va-auto-b4ae4ea59e05",
-      "signature": "ロードロイヤル",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e21"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e21-broadcast-cast-11",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e21",
@@ -26653,66 +25061,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e21"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e21-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e21",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e21"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e21-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e21",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e21"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e21-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e21",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kouchi_tadashi",
-      "voice_actor_id": "va-auto-a0e01fb2cb54",
-      "signature": "小内 忠",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e21"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e21-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e21",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 19,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e21"
       ]
@@ -26823,21 +25171,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e22-broadcast-cast-07",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "lord_royal",
-      "voice_actor_id": "va-auto-b4ae4ea59e05",
-      "signature": "ロードロイヤル",
-      "label": "",
-      "display_order": 7,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e22"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e22-broadcast-cast-08",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e22",
@@ -26923,66 +25256,6 @@
       "signature": "ミニーザレディ",
       "label": "",
       "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e22"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e22-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e22"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e22-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e22"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e22-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kouchi_tadashi",
-      "voice_actor_id": "va-auto-a0e01fb2cb54",
-      "signature": "小内 忠",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e22"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e22-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fujii_sensuke",
-      "voice_actor_id": "va-auto-cc13155a7121",
-      "signature": "藤井 泉助",
-      "label": "",
-      "display_order": 17,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e22"
       ]
@@ -27153,21 +25426,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "blacky_ale",
-      "voice_actor_id": "va-auto-9f83e0788e00",
-      "signature": "ブラッキーエール",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
       "id": "anime-cinderella-gray-e23-broadcast-cast-12",
       "source_type": "anime_unit",
       "source_id": "anime-cinderella-gray-e23",
@@ -27208,66 +25466,6 @@
       "signature": "ミスターシービー",
       "label": "",
       "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "komiyama_masami",
-      "voice_actor_id": "va-auto-f9b86c68630c",
-      "signature": "小宮山 勝美",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shibasaki_koichi",
-      "voice_actor_id": "va-auto-38cfe745829f",
-      "signature": "柴崎 宏壱",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "yuzuhara_ryuko",
-      "voice_actor_id": "va-auto-1555471f8cc3",
-      "signature": "檮原 龍子",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "yuzuhara_taro",
-      "voice_actor_id": "va-auto-1ac0301bdf7a",
-      "signature": "檮原 太郎",
-      "label": "",
-      "display_order": 21,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e23"
       ]
@@ -28943,881 +27141,6 @@
       ]
     },
     {
-      "id": "anime-cinderella-gray-e15-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e15",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "shihandai",
-      "voice_actor_id": "va-auto-00c2247ac66e",
-      "signature": "師範代",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e15"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e15-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e15",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nase_fumino",
-      "voice_actor_id": "va-auto-900dcdc66979",
-      "signature": "奈瀬 文乃",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e15"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e05-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e05"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e07-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e07"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e08-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e08"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e09-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e09"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e10-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e10"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-27",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 27,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e12-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e12"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e13-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e13"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e14-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e14",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e14"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e15-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e15",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e15"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e16-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e16",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e16"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e17-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e17",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e18-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e18",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e18"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e19-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e19",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e19"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e20-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e20",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e20"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e21-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e21",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e21"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e22-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "akasakamisato",
-      "voice_actor_id": "va-0082",
-      "signature": "実況(赤坂 美聡)",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e22"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "merry_beauty",
-      "voice_actor_id": "va-auto-67850db55746",
-      "signature": "メリービューティー",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "luna_swallow",
-      "voice_actor_id": "va-0048",
-      "signature": "ルナスワロー",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e01-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nanto_ichiban",
-      "voice_actor_id": "va-yamada-keina",
-      "signature": "ナントウイチバン",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e02-broadcast-cast-10",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "south_heroine",
-      "voice_actor_id": "va-0048",
-      "signature": "サウスヒロイン",
-      "label": "",
-      "display_order": 10,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e02"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e02-broadcast-cast-11",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "sekai_toha",
-      "voice_actor_id": "va-auto-67850db55746",
-      "signature": "セカイトーハー",
-      "label": "",
-      "display_order": 11,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e02"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e02-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "walk_dancer",
-      "voice_actor_id": "va-yamada-keina",
-      "signature": "ウォークダンサー",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e02"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e03-broadcast-cast-07",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "south_heroine",
-      "voice_actor_id": "va-0048",
-      "signature": "サウスヒロイン",
-      "label": "",
-      "display_order": 7,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e03"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e11-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "merry_beauty",
-      "voice_actor_id": "va-auto-67850db55746",
-      "signature": "メリービューティー",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e11"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e14-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e14",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "spring_sing",
-      "voice_actor_id": "va-東城日沙子",
-      "signature": "スプリングシング",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e14"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e20-broadcast-cast-07",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e20",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "merry_beauty",
-      "voice_actor_id": "va-auto-67850db55746",
-      "signature": "メリービューティー",
-      "label": "",
-      "display_order": 7,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e20"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "faith_no_more",
-      "voice_actor_id": "va-komatsu-mikako",
-      "signature": "フェイスノーモア",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "romance_bubbly",
-      "voice_actor_id": "va-urushiyama-yuki",
-      "signature": "ロマンスバブリー",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e23-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e23",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "fuyuno_nakasumi",
-      "voice_actor_id": "va-miyako-fuka",
-      "signature": "フユノナカスミ",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e23"
-      ]
-    },
-    {
-      "id": "anime-s1-e02-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "queen_berry",
-      "voice_actor_id": "va-akasaki-chinatsu",
-      "signature": "クイーンベレー",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
-      ]
-    },
-    {
-      "id": "anime-s1-e09-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "broye",
-      "voice_actor_id": "va-池澤春菜",
-      "signature": "ブロワイエ",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
-      ]
-    },
-    {
-      "id": "anime-s1-e11-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "broye",
-      "voice_actor_id": "va-池澤春菜",
-      "signature": "ブロワイエ",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e11"
-      ]
-    },
-    {
-      "id": "anime-s1-e11-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "sun_visor",
-      "voice_actor_id": "va-kugimiya-rie",
-      "signature": "サンバイザー",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e11"
-      ]
-    },
-    {
-      "id": "anime-s1-e12-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-s1-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "broye",
-      "voice_actor_id": "va-池澤春菜",
-      "signature": "ブロワイエ",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s1-e12"
-      ]
-    },
-    {
-      "id": "anime-s2-e01-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "rionatal",
-      "voice_actor_id": "va-0172",
-      "signature": "リオナタール",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e01",
-        "official-ending-anime-s2-e01"
-      ]
-    },
-    {
-      "id": "anime-s2-e02-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "rionatal",
-      "voice_actor_id": "va-0172",
-      "signature": "リオナタール",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e02"
-      ]
-    },
-    {
-      "id": "anime-s2-e02-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e02"
-      ]
-    },
-    {
-      "id": "anime-s2-e03-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e03"
-      ]
-    },
-    {
-      "id": "anime-s2-e04-broadcast-cast-24",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "daisangen",
-      "voice_actor_id": "va-原優子",
-      "signature": "ダイサンゲン",
-      "label": "",
-      "display_order": 24,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e04"
-      ]
-    },
-    {
-      "id": "anime-s2-e04-broadcast-cast-29",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kuronuma",
-      "voice_actor_id": "va-kuroda-takaya",
-      "signature": "黒沼",
-      "label": "",
-      "display_order": 29,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e04"
-      ]
-    },
-    {
-      "id": "anime-s2-e04-broadcast-cast-30",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 30,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e04"
-      ]
-    },
-    {
-      "id": "anime-s2-e05-broadcast-cast-24",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "daisangen",
-      "voice_actor_id": "va-原優子",
-      "signature": "ダイサンゲン",
-      "label": "",
-      "display_order": 24,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e05"
-      ]
-    },
-    {
-      "id": "anime-s2-e05-broadcast-cast-29",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kuronuma",
-      "voice_actor_id": "va-kuroda-takaya",
-      "signature": "黒沼",
-      "label": "",
-      "display_order": 29,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e05"
-      ]
-    },
-    {
-      "id": "anime-s2-e05-broadcast-cast-30",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 30,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e05"
-      ]
-    },
-    {
-      "id": "anime-s2-e07-broadcast-cast-18",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kuronuma",
-      "voice_actor_id": "va-kuroda-takaya",
-      "signature": "黒沼",
-      "label": "",
-      "display_order": 18,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e07"
-      ]
-    },
-    {
-      "id": "anime-s2-e08-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kuronuma",
-      "voice_actor_id": "va-kuroda-takaya",
-      "signature": "黒沼",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e08"
-      ]
-    },
-    {
-      "id": "anime-s2-e08-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e08"
-      ]
-    },
-    {
-      "id": "anime-s2-e09-broadcast-cast-28",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 28,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e09"
-      ]
-    },
-    {
-      "id": "anime-s2-e10-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e10"
-      ]
-    },
-    {
-      "id": "anime-s2-e13-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "relic_earth",
-      "voice_actor_id": "va-kawakami-asuka",
-      "signature": "レリックアース",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
-      ]
-    },
-    {
-      "id": "anime-s2-e13-broadcast-cast-30",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 30,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
-      ]
-    },
-    {
-      "id": "anime-s3-e10-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minamisaka",
-      "voice_actor_id": "va-furukawa-makoto",
-      "signature": "南坂",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e10"
-      ]
-    },
-    {
-      "id": "anime-s3-e10-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kuronuma",
-      "voice_actor_id": "va-kuroda-takaya",
-      "signature": "黒沼",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e10"
-      ]
-    },
-    {
-      "id": "anime-s3-e13-broadcast-cast-25",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "kuronuma",
-      "voice_actor_id": "va-kuroda-takaya",
-      "signature": "黒沼",
-      "label": "",
-      "display_order": 25,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e13"
-      ]
-    },
-    {
       "id": "anime-umayon-e13-official-ending-cast-00",
       "source_type": "anime_unit",
       "source_id": "anime-umayon-e13",
@@ -31321,503 +28644,6 @@
       "evidence_refs": [
         "moegirl-tv-episode-music",
         "official-ending-anime-s3-e01"
-      ]
-    },
-    {
-      "id": "anime-s2-e04-broadcast-cast-27",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 27,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e04"
-      ]
-    },
-    {
-      "id": "anime-s2-e04-broadcast-cast-28",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 28,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e04"
-      ]
-    },
-    {
-      "id": "anime-s2-e05-broadcast-cast-27",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 27,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e05"
-      ]
-    },
-    {
-      "id": "anime-s2-e05-broadcast-cast-28",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 28,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e05"
-      ]
-    },
-    {
-      "id": "anime-s2-e08-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e08"
-      ]
-    },
-    {
-      "id": "anime-s2-e08-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e08"
-      ]
-    },
-    {
-      "id": "anime-s2-e09-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e09"
-      ]
-    },
-    {
-      "id": "anime-s2-e09-broadcast-cast-23",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 23,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e09"
-      ]
-    },
-    {
-      "id": "anime-s2-e10-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e10"
-      ]
-    },
-    {
-      "id": "anime-s2-e10-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e10",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e10"
-      ]
-    },
-    {
-      "id": "anime-s2-e13-broadcast-cast-24",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 24,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
-      ]
-    },
-    {
-      "id": "anime-s2-e13-broadcast-cast-25",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 25,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
-      ]
-    },
-    {
-      "id": "anime-s3-e01-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e01",
-        "official-ending-anime-s3-e01"
-      ]
-    },
-    {
-      "id": "anime-s3-e01-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e01",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e01",
-        "official-ending-anime-s3-e01"
-      ]
-    },
-    {
-      "id": "anime-s3-e02-broadcast-cast-14",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 14,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e02"
-      ]
-    },
-    {
-      "id": "anime-s3-e02-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e02",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e02"
-      ]
-    },
-    {
-      "id": "anime-s3-e03-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e03"
-      ]
-    },
-    {
-      "id": "anime-s3-e03-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e03",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e03"
-      ]
-    },
-    {
-      "id": "anime-s3-e05-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e05"
-      ]
-    },
-    {
-      "id": "anime-s3-e05-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e05"
-      ]
-    },
-    {
-      "id": "anime-s3-e06-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e06",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e06"
-      ]
-    },
-    {
-      "id": "anime-s3-e06-broadcast-cast-17",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e06",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 17,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e06"
-      ]
-    },
-    {
-      "id": "anime-s3-e07-broadcast-cast-20",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 20,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
-      ]
-    },
-    {
-      "id": "anime-s3-e07-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e07",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
-      ]
-    },
-    {
-      "id": "anime-s3-e09-broadcast-cast-15",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 15,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e09"
-      ]
-    },
-    {
-      "id": "anime-s3-e09-broadcast-cast-16",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e09",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 16,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e09"
-      ]
-    },
-    {
-      "id": "anime-s3-e11-broadcast-cast-12",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 12,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e11"
-      ]
-    },
-    {
-      "id": "anime-s3-e11-broadcast-cast-13",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e11",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 13,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e11"
-      ]
-    },
-    {
-      "id": "anime-s3-e12-broadcast-cast-21",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 21,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e12"
-      ]
-    },
-    {
-      "id": "anime-s3-e12-broadcast-cast-22",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e12",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 22,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e12"
-      ]
-    },
-    {
-      "id": "anime-s3-e13-broadcast-cast-26",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "minami",
-      "voice_actor_id": "va-uenishi-teppei",
-      "signature": "みなみ",
-      "label": "",
-      "display_order": 26,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e13"
-      ]
-    },
-    {
-      "id": "anime-s3-e13-broadcast-cast-27",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "masuo",
-      "voice_actor_id": "va-arizumi-tooru",
-      "signature": "ますお",
-      "label": "",
-      "display_order": 27,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e13"
-      ]
-    },
-    {
-      "id": "anime-s3-e05-broadcast-cast-19",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e05",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "tsuukaa",
-      "voice_actor_id": "va-isaka-hitomi",
-      "signature": "ツウカア",
-      "label": "",
-      "display_order": 19,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e05"
       ]
     }
   ]
