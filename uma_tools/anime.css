@@ -34,6 +34,10 @@
 .anime-staff-participation > div > div { display: flex; flex-wrap: wrap; gap: 8px 12px; }
 .anime-related-list a { display: grid; grid-template-columns: 150px minmax(0,1fr) auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--ui-line); }
 .anime-related-list span, .anime-related-list small { color: var(--text-2); }
+.anime-music-list a { grid-template-columns: minmax(0,1fr) auto; }
+.anime-music-list b small { margin-left: 12px; font-weight: 400; }
+.anime-music-cues article { padding: 14px 0; border-bottom: 1px solid var(--ui-line); }
+.anime-music-cues h3 { margin: 0 0 12px; font-size: 1rem; }
 .anime-music-disclosure { margin-top: 24px; border-top: 2px solid var(--ui-cobalt); }
 .anime-music-disclosure > summary { padding: 18px 0; font-size: 1.25rem; font-weight: 700; cursor: pointer; }
 .anime-crosslink-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
