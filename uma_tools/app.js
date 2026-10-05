@@ -454,8 +454,10 @@ const umaApp = createApp({
           return response.json();
         })
         .then(function (data) {
-          animeCatalog.value = data && Array.isArray(data.works) ? data : animeCatalog.value;
-          if (!animeCatalog.value.works.length) animeError.value = '动漫资料为空。';
+          if (!data || !['works','units','staff','people','relations','watch_resources'].every(key => Array.isArray(data[key])) || !data.works.length) {
+            throw new Error('Invalid anime catalog');
+          }
+          animeCatalog.value = data;
           return animeCatalog.value;
         })
         .catch(function () {

@@ -29,7 +29,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 <script defer src="/uma_tools/ui-components.js?v=20260929-10v6"></script>
 <script defer src="/uma_tools/creator-network.js?v=20260929-10v5"></script>
 <script defer src="/uma_tools/player-controller.js?v=20260929-10v5"></script>
-<script defer src="/uma_tools/app.js?v=20261005-v3-24"></script>
+<script defer src="/uma_tools/app.js?v=20261005-v3-25"></script>
 <script defer src="/uma_tools/image-viewer.js?v=20261005-v3-2"></script>
 </head>
 <body>
@@ -318,6 +318,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <div v-else class="ui-state compact">暂无出演阵容</div>
                     </section>
 
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="eventAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <header class="entity-section-title"><h2>动画关联</h2><span>{{ eventAnimeRelations.length }} 部作品</span></header>
                         <div class="anime-crosslink-grid"><a v-for="row in eventAnimeRelations" :key="row.relation.id" :href="relatedAnimeHref(row)" @click="animeLink($event, relatedAnimeHref(row))"><img :src="row.work.cover" alt=""><span><b>{{ row.work.title_zh }}</b><small>{{ animeRelationContext(row) }}</small></span><em><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></em></a></div>
@@ -380,6 +381,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     </div>
                 </div>
                 <div class="media-content">
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <header class="entity-section-title"><h2>动画关联</h2><span>{{ songAnimeWorks.length }} 部作品</span></header>
                         <anime-participation :works="songAnimeWorks" section="music"></anime-participation>
@@ -503,6 +505,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <nav v-if="creatorDetail.works.length" class="entity-tabs" aria-label="创作者栏目"><button :class="{active:creatorSection==='works'}" @click="setCreatorSection('works')">参与歌曲</button><button v-if="creatorDetail.collaborators.length" :class="{active:creatorSection==='collaborators'}" @click="setCreatorSection('collaborators')">常见合作</button></nav>
                     <section v-if="creatorDetail.works.length && (creatorSection==='works' || !creatorDetail.collaborators.length)" class="entity-section"><div class="creator-relation-list ui-disclosure-list"><ui-disclosure v-for="work in creatorDetail.works" :key="work.song_id" :open="expandedCreatorWorkId===work.song_id" @toggle="toggleCreatorWork(work.song_id)"><template #leading><img :src="coverThumb(work.cover,128)" alt="" loading="lazy" @error="onCatalogImageError($event)"></template><template #title><b>{{ work.title }}</b></template><template #subtitle>{{ creatorWorkRoleLabels(work.roles) }}</template><template #meta>{{ work.release_date || '—' }}</template><div class="creator-relation-detail"><div v-for="version in work.versions" :key="version.id"><b>{{ version.version_label || '原始版本' }}</b><span class="role-tag-row"><em v-for="role in version.roles" :key="role" class="credit-role-tag">{{ creatorRoleLabel(role) }}</em></span></div><button type="button" class="relation-detail-link" @click="openSong(work.song_id)">查看歌曲详情</button></div></ui-disclosure></div></section>
                     <section v-else-if="creatorDetail.collaborators.length" class="entity-section"><creator-network :creator="creatorDetail" :catalog="creatorCatalog.creators" @open-creator="openCreator" @open-song="openSong"></creator-network></section>
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="creatorAnimeWorks.length" class="entity-section"><header class="entity-section-title"><h2>动画制作</h2></header><anime-participation :works="creatorAnimeWorks" section="staff"></anime-participation></section>
                     <section v-if="creatorAnimeCueWorks.length" class="entity-section"><header class="entity-section-title"><h2>动画音乐</h2></header><anime-participation :works="creatorAnimeCueWorks" section="music"></anime-participation></section>
                 </div>
@@ -566,13 +569,14 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div v-else class="ui-state compact">暂无演唱歌曲</div>
                 </section>
                 <section v-else class="entity-section">
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <template v-if="voiceAnimeWorks.length"><header class="entity-section-title"><h2>动画作品</h2><span>{{ voiceAnimeWorks.length }} 部</span></header><anime-participation :works="voiceAnimeWorks"></anime-participation></template>
                     <header class="entity-section-title"><h2>演出活动</h2></header>
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="voiceHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="voiceHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
                     <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
                     <div v-else-if="voicePastByYear.length" class="history-years"><section v-for="group in voicePastByYear" :key="group.year"><h2>{{ group.year }}</h2><button v-for="event in group.events" :key="event.event_id+'-'+(event.session_id||'event')" @click="openEvent(event.event_id,event.session_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></section></div>
-                    <div v-else class="ui-state compact">暂无出演记录</div>
+                    <div v-else class="ui-state compact">暂无演出活动</div>
                 </section>
             </article>
         </div>
@@ -612,6 +616,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
                 <div class="media-content">
                     <dl v-if="albumDetail.data.company" class="entity-overview album-release-overview"><div><dt>发行</dt><dd>{{ albumDetail.data.company }}</dd></div></dl>
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <header class="entity-section-title"><h2>动画关联</h2><span>{{ albumAnimeWorks.length }} 部作品</span></header>
                         <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
@@ -699,13 +704,14 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div v-else class="ui-state compact">暂无演唱歌曲</div>
                 </section>
                 <section v-if="charSection==='appearances'" class="entity-section">
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <template v-if="characterAnimeWorks.length"><header class="entity-section-title"><h2>动画作品</h2><span>{{ characterAnimeWorks.length }} 部</span></header><anime-participation :works="characterAnimeWorks"></anime-participation></template>
                     <header class="entity-section-title"><h2>演出活动</h2></header>
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="charHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="charHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
                     <div v-else-if="appearanceError('character',charDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('character',charDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('character',charDetail.id)">重试</button></div>
                     <div v-else-if="charHistoryEvents.length" class="history-list"><button v-for="event in charHistoryEvents" :key="event.event_id+'-'+(event.session_id||'event')" @click="openEvent(event.event_id,event.session_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></div>
-                    <div v-else class="ui-state compact">暂无出演记录</div>
+                    <div v-else class="ui-state compact">暂无演出活动</div>
                 </section>
             </article>
         </div>
