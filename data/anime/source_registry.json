@@ -2,6 +2,13 @@
   "schema_version": 1,
   "sources": [
     {
+      "id": "official-wish-company",
+      "kind": "official",
+      "label": "Wish公司资料（机构身份确认）",
+      "url": "https://wish-ltd.jp/",
+      "observed_at": "2026-10-05"
+    },
+    {
       "id": "official-kai-masuo-2026",
       "kind": "official",
       "label": "STUDIO KAI 増尾将史访谈",

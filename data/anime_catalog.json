@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-71606f0f859f23d9",
+  "build_id": "anime-ee7a0708d81cce1c",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -10,7 +10,7 @@
     "watch_resources": 135,
     "relations": 2039,
     "staff_credits": 10803,
-    "staff_people": 2516
+    "staff_people": 2514
   },
   "works": [
     {
@@ -66615,7 +66615,10 @@
       "source_ref": "staff-transcript-anime-s1",
       "group": "",
       "unit_id": "anime-s1-e06",
-      "person_id": "staff-wish",
+      "organization": "wish",
+      "evidence_refs": [
+        "official-wish-company"
+      ],
       "role_raw": "仕上げ",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -95697,7 +95700,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e06",
-      "person_id": "staff-Wish",
+      "organization": "Wish",
+      "evidence_refs": [
+        "official-wish-company"
+      ],
       "role_raw": "動画",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -95841,7 +95847,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "",
       "unit_id": "anime-cinderella-gray-e06",
-      "person_id": "staff-Wish",
+      "organization": "Wish",
+      "evidence_refs": [
+        "official-wish-company"
+      ],
       "role_raw": "仕上げ",
       "group_raw": "片尾署名（公开转录）"
     },
@@ -225306,19 +225315,6 @@
       "unit_count": 1
     },
     {
-      "id": "staff-wish",
-      "name": "wish",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s1"
-      ],
-      "roles": [
-        "上色"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-PAX",
       "name": "PAX",
       "aliases": [],
@@ -226219,20 +226215,6 @@
       ],
       "roles": [
         "第二原画"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-Wish",
-      "name": "Wish",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ],
-      "roles": [
-        "中间动画",
-        "上色"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -235413,6 +235395,13 @@
     }
   ],
   "sources": [
+    {
+      "id": "official-wish-company",
+      "kind": "official",
+      "label": "Wish公司资料（机构身份确认）",
+      "url": "https://wish-ltd.jp/",
+      "observed_at": "2026-10-05"
+    },
     {
       "id": "official-kai-masuo-2026",
       "kind": "official",

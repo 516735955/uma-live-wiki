@@ -14,7 +14,7 @@ PERSON_ALIASES = {"staff-阿部億人": "staff-阿部憶人", "staff-狭田修":
 # Official credits already identify these names as organizations.
 ORGANIZATION_PEOPLE = {"staff-" + name for name in (
     "スノーライトスタッフ", "コスモス・アーツ", "ラッドプラス", "チップチューン",
-    "リバイバル", "月面", "寿門堂",
+    "リバイバル", "月面", "寿門堂", "Wish", "wish",
 )}
 
 
@@ -50,6 +50,9 @@ def main():
         if row.get("person_id") in ORGANIZATION_PEOPLE:
             row.pop("person_id")
             row["organization"] = row["name"]
+        if row.get("organization") in {"Wish", "wish"}:
+            row["evidence_refs"] = list(dict.fromkeys(
+                [*row.get("evidence_refs", []), "official-wish-company"]))
         if (row.get("unit_id") == "anime-cinderella-gray-e13"
                 and row.get("person_id") == "staff-森下智美"
                 and row["role"] == "第二原画"):

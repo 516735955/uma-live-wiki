@@ -9,8 +9,12 @@
       "photo": "https://st-kai.jp/wp-content/uploads/2026/05/kondo-683x1024.jpg",
       "photo_kind": "portrait",
       "photo_source_ref": "official-kai-kondo-2026",
-      "profile_source_refs": ["official-kai-kondo-2026"],
-      "source_refs": ["official-kai-kondo-2026"]
+      "profile_source_refs": [
+        "official-kai-kondo-2026"
+      ],
+      "source_refs": [
+        "official-kai-kondo-2026"
+      ]
     },
     {
       "id": "staff-廖程芝",
@@ -1018,7 +1022,9 @@
       "photo": "https://st-kai.jp/wp-content/uploads/2026/05/tominaga_01-1024x683.jpg",
       "photo_kind": "portrait",
       "photo_source_ref": "official-kai-tominaga-2026",
-      "profile_source_refs": ["official-kai-tominaga-2026"],
+      "profile_source_refs": [
+        "official-kai-tominaga-2026"
+      ],
       "aliases": [],
       "source_refs": [
         "official-story-anime-s3-e02"
@@ -8585,7 +8591,9 @@
       "id": "staff-久保大翔",
       "name": "久保大翔",
       "bio": "1999年生于神奈川县伊势原市。2018年开始从事动画制作，参与原画、第二原画及中间动画工作，是STUDIO KASA的代表。",
-      "profile_source_refs": ["production-studio-kasa-about"],
+      "profile_source_refs": [
+        "production-studio-kasa-about"
+      ],
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
@@ -16442,14 +16450,6 @@
       ]
     },
     {
-      "id": "staff-wish",
-      "name": "wish",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s1"
-      ]
-    },
-    {
       "id": "staff-PAX",
       "name": "PAX",
       "aliases": [],
@@ -16997,14 +16997,6 @@
     {
       "id": "staff-Celest",
       "name": "Celest",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ]
-    },
-    {
-      "id": "staff-Wish",
-      "name": "Wish",
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray"

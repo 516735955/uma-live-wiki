@@ -17921,7 +17921,10 @@
       "source_ref": "staff-transcript-anime-s1",
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-s1-e06",
-      "person_id": "staff-wish"
+      "organization": "wish",
+      "evidence_refs": [
+        "official-wish-company"
+      ]
     },
     {
       "work_id": "anime-s1",
@@ -42731,7 +42734,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e06",
-      "person_id": "staff-Wish"
+      "organization": "Wish",
+      "evidence_refs": [
+        "official-wish-company"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -42851,7 +42857,10 @@
       "source_ref": "staff-transcript-anime-cinderella-gray",
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e06",
-      "person_id": "staff-Wish"
+      "organization": "Wish",
+      "evidence_refs": [
+        "official-wish-company"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -56886,8 +56895,13 @@
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-久保大翔",
-      "evidence_refs": ["staff-transcript-anime-cinderella-gray", "production-studio-kasa-works"],
-      "institutions": ["STUDIO KASA"]
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray",
+        "production-studio-kasa-works"
+      ],
+      "institutions": [
+        "STUDIO KASA"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
@@ -78245,8 +78259,13 @@
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e23",
       "person_id": "staff-久保大翔",
-      "evidence_refs": ["staff-transcript-anime-cinderella-gray", "production-studio-kasa-works"],
-      "institutions": ["STUDIO KASA"]
+      "evidence_refs": [
+        "staff-transcript-anime-cinderella-gray",
+        "production-studio-kasa-works"
+      ],
+      "institutions": [
+        "STUDIO KASA"
+      ]
     },
     {
       "work_id": "anime-cinderella-gray",
