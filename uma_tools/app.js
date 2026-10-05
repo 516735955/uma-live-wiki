@@ -595,18 +595,18 @@ const umaApp = createApp({
       if (!animeDetail.value || animeUnitDetail.value || animeSingle.value) return [];
       const rows = [], q = animeStaffQuery.value.trim().toLowerCase();
       (animeCatalog.value.staff || []).filter(entry => entry.work_id === animeDetail.value.id && entry.unit_id && entry.person_id).forEach(entry => {
-        const key = entry.person_id + ':' + entry.role;
+        const key = entry.person_id + ':' + (entry.group || '') + ':' + entry.role;
         let row = rows.find(item => item.key === key);
         if (!row) { row = {key,entry,units:[]}; rows.push(row); }
         const unit = findAnimeUnit(entry.unit_id);
         if (unit && !row.units.some(item => item.id === unit.id)) row.units.push(unit);
       });
-      return rows.filter(row => !q || [staffName(row.entry),row.entry.role].some(value => value.toLowerCase().includes(q))).map(row => ({...row,units:row.units.sort((a,b)=>a.number-b.number)}));
+      return rows.filter(row => !q || [staffName(row.entry),row.entry.role,row.entry.group || ''].some(value => value.toLowerCase().includes(q))).map(row => ({...row,units:row.units.sort((a,b)=>a.number-b.number)}));
     });
     const animeStaffAggregateGroups = computed(() => {
       const groups = new Map();
       animeStaffAggregate.value.forEach(row => {
-        const role = row.entry.role;
+        const role = [row.entry.group,row.entry.role].filter(Boolean).join(' · ');
         if (!groups.has(role)) groups.set(role,{role,rows:[]});
         groups.get(role).rows.push(row);
       });
@@ -656,7 +656,7 @@ const umaApp = createApp({
         if (!row.work) return;
         let group = works.get(row.work.id);
         if (!group) {group = {work:row.work,roles:[]}; works.set(row.work.id,group);}
-        const label = row.entry ? row.entry.role : (row.relation.target_type === 'character' ? characterName(row.relation.target_id) : row.relation.role_name || row.relation.signature || row.relation.label || '');
+        const label = row.entry ? [row.entry.group,row.entry.role].filter(Boolean).join(' · ') : (row.relation.target_type === 'character' ? characterName(row.relation.target_id) : row.relation.role_name || row.relation.signature || row.relation.label || '');
         let role = group.roles.find(role => role.label === label);
         if (!role) {role = {label,units:[]}; group.roles.push(role);}
         if (row.unit && !role.units.some(unit => unit.id === row.unit.id)) role.units.push(row.unit);
@@ -3437,10 +3437,15 @@ umaApp.component('audio-dock', window.UmaUi.AudioDock);
 umaApp.component('anime-participation', {
   props: {works:{type:Array,default:()=>[]},section:{type:String,default:'characters'}},
   methods: {
-    href(work,unit) { return routes.query(routes.anime(work.id,unit && unit.id),{section:this.section}); },
+    href(work,unit,group) {
+      const units = group ? group.roles.flatMap(role=>role.units) : [];
+      const web = unit ? unit.unit_type !== 'movie' : units.length && units.every(item=>item.unit_type!=='movie');
+      const edition = work.id === 'anime-rttt' ? (web ? 'web' : 'film') : '';
+      return routes.query(routes.anime(work.id,unit && !['movie','special'].includes(unit.unit_type) && unit.id),{section:this.section,edition});
+    },
     follow(event,path) {if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
   },
-  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work)" @click="follow($event,href(group.work))"><img :src="group.work.cover" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><dl class="credit-ledger"><div v-for="role in group.roles" :key="role.label"><dt>{{role.label}}</dt><dd class="role-tag-row"><a v-for="unit in role.units" :key="unit.id" class="credit-role-tag episode-tag" :href="href(group.work,unit)" @click="follow($event,href(group.work,unit))">{{unit.label}}</a></dd></div></dl></article></div>`
+  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="group.work.cover" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><dl class="credit-ledger"><div v-for="role in group.roles" :key="role.label"><dt>{{role.label}}</dt><dd class="role-tag-row"><a v-for="unit in role.units" :key="unit.id" class="credit-role-tag episode-tag" :href="href(group.work,unit)" @click="follow($event,href(group.work,unit))">{{unit.label}}</a></dd></div></dl></article></div>`
 });
 umaApp.component('staff-credit-list', {
   props:{credits:{type:Array,default:()=>[]}},
