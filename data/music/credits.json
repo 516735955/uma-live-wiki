@@ -4867,7 +4867,8 @@
         {
           "role": "composer",
           "name": "桑原 聖",
-          "creator_id": "creator-4f0b2872a5"
+          "creator_id": "creator-4f0b2872a5",
+          "affiliation": "Arte Refact"
         },
         {
           "role": "arranger",
@@ -4877,7 +4878,17 @@
         }
       ],
       "source": "netease_recording_metadata",
-      "source_track_id": "2119695397"
+      "source_track_id": "2119695397",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=X2ZPbEKM6m0"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=FVS4stbxqO8"
+        }
+      ]
     },
     "song-4e8cfa60e4-v-4e8cfa60e4": {
       "source_track_id": "2047753451",
@@ -5230,7 +5241,21 @@
         }
       ],
       "source": "netease_recording_metadata",
-      "source_track_id": "2119695393"
+      "source_track_id": "2119695393",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=X2ZPbEKM6m0"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=FVS4stbxqO8"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=7ovru57kSNs"
+        }
+      ]
     },
     "song-s-55b78ed439-v-55b78ed439": {
       "source_track_id": "2713936408",
@@ -7615,7 +7640,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-19014"
+      "source_catalog": "LACA-19014",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=7ovru57kSNs"
+        }
+      ]
     },
     "song-2b5335a8e0-v-2b5335a8e0": {
       "source_track_id": "1992357879",

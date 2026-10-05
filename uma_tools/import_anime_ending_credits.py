@@ -98,6 +98,8 @@ def main():
                 row["evidence_refs"] = list(dict.fromkeys([ref, *[source for c in matches for source in
                     [c.get("source_ref"), *c.get("evidence_refs", [])] if source]]))
                 existing.update(row)
+                if "institutions" not in row:
+                    existing.pop("institutions", None)
                 duplicate_ids = {id(c) for c in matches[1:]}
                 credits[:] = [c for c in credits if id(c) not in duplicate_ids]
             else:
