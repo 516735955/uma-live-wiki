@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-ee7a0708d81cce1c",
+  "build_id": "anime-d8b73f003d4497a3",
   "generated_at": "2026-10-05T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -9,8 +9,8 @@
     "scheduled_units": 0,
     "watch_resources": 135,
     "relations": 2039,
-    "staff_credits": 10803,
-    "staff_people": 2514
+    "staff_credits": 10816,
+    "staff_people": 2515
   },
   "works": [
     {
@@ -6195,7 +6195,7 @@
         "official-story-anime-s3-e02"
       ],
       "summary_ja": "ドゥラメンテに惨敗してしまったキタサンは、自信を失い落ち込んだ日々を過ごしていた。\nテイオーのようなキラキラ輝くウマ娘になれないかもしれない……そんな気持ちを抱いたまま、トレーニングを続けるキタサン。\nそんなある日、キタサンの耳にあるニュースが飛び込む。\n",
-      "staff_status": "main_only",
+      "staff_status": "partial_public",
       "music_cues": [
         {
           "title": "ウマ娘 ファンファーレ II GI",
@@ -6379,7 +6379,7 @@
         "official-story-anime-s3-e04"
       ],
       "summary_ja": "直近のレースで２着、３着と惜敗の続いたキタサン。\n自分にはレースに勝ち切るための何かが足りないと思い悩み、ナイスネイチャに相談していると、ひょんなことから自分の長所は丈夫な体だと気付く。\n早速トレーナーに頼み込み、キタサンはかつてない猛特訓を始めるが……",
-      "staff_status": "main_only"
+      "staff_status": "partial_public"
     },
     {
       "id": "anime-s3-e05",
@@ -6448,7 +6448,7 @@
         "official-story-anime-s3-e05"
       ],
       "summary_ja": "天皇賞（春）に勝利し、少しずつ自信を持ち始めたキタサン。\nしかし、次走の宝塚記念にドゥラメンテも出走するというニュースを耳にし、せっかくの自信が揺らいでしまう。\n＜スピカ＞のメンバーに背中を押され、前向きな気持ちを取り戻すキタサンだったが、ドゥラメンテとばったり鉢合わせてしまい――",
-      "staff_status": "main_only",
+      "staff_status": "partial_public",
       "music_cues": [
         {
           "title": "ウマ娘 ファンファーレ VI GI",
@@ -6724,7 +6724,7 @@
         "official-story-anime-s3-e08"
       ],
       "summary_ja": "新年を迎え、ダイヤと初詣に出かけたキタサン。\nダイヤの願いが、凱旋門賞に勝利して日本のウマ娘界に貢献したいというものと知る。\nそんなダイヤに、いつかのドゥラメンテの姿を重ね見るキタサン。\n勝利の先にあるものを見ているふたりと、目標を持てないでいる自分との差に落ち込むキタサンだったが……",
-      "staff_status": "main_only"
+      "staff_status": "partial_public"
     },
     {
       "id": "anime-s3-e09",
@@ -6793,7 +6793,7 @@
         "official-story-anime-s3-e09"
       ],
       "summary_ja": "ある朝突然、キタサンはダイヤを誘って旅に出る。\nじゃんけんで行先を決めながらの目的地のない旅。\n道中で観光をしたり、おやつを食べたりとあてのない旅を楽しんだふたりは、最後に夕日の沈む灯台へとたどり着く。\n茜色に染まる岬でキタサンはダイヤに、胸に抱えたある思いを告白する。",
-      "staff_status": "main_only",
+      "staff_status": "partial_public",
       "music_cues": [
         {
           "title": "ウマ娘 ファンファーレ II GI",
@@ -6975,7 +6975,7 @@
         "official-story-anime-s3-e11"
       ],
       "summary_ja": "凱旋門賞に向けてフランスに旅立つダイヤ。\n見送りに行ったキタサンはどこか上の空。\nその理由は、宝塚記念以来、自分の体がイメージ通りに動かないという戸惑いからだった。\n大丈夫だと自分に言い聞かせながら、トレーニングを続けるキタサンだったが……",
-      "staff_status": "main_only",
+      "staff_status": "partial_public",
       "music_cues": [
         {
           "title": "ウマ娘 ファンファーレ I GI",
@@ -45295,6 +45295,168 @@
     }
   ],
   "staff": [
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e02",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e04",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e04",
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 501,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "エンディング"
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e05",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e07",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e08",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e09",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e11",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e13",
+      "role": "原画",
+      "name": "式地幸喜",
+      "person_id": "staff-式地幸喜",
+      "order": 500,
+      "source_ref": "public-shikiji-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e09",
+      "role": "原画",
+      "name": "光田史亮",
+      "person_id": "staff-光田史亮",
+      "order": 501,
+      "source_ref": "public-mitsuda-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e13",
+      "role": "原画",
+      "name": "光田史亮",
+      "person_id": "staff-光田史亮",
+      "order": 501,
+      "source_ref": "public-mitsuda-filmography",
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e08",
+      "role": "原画",
+      "name": "新垣重文",
+      "person_id": "staff-新垣重文",
+      "order": 502,
+      "source_ref": "public-shingaki-s3-post",
+      "evidence_refs": [
+        "production-shingaki-s3-post"
+      ],
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-s3",
+      "unit_id": "anime-s3-e13",
+      "role": "原画",
+      "name": "新垣重文",
+      "person_id": "staff-新垣重文",
+      "order": 502,
+      "source_ref": "public-shingaki-s3-post",
+      "evidence_refs": [
+        "production-shingaki-s3-post"
+      ],
+      "role_raw": "原画",
+      "group_raw": "",
+      "group": ""
+    },
     {
       "work_id": "anime-s2",
       "role": "动画制片人",
@@ -199310,6 +199472,20 @@
   ],
   "people": [
     {
+      "id": "staff-新垣重文",
+      "name": "新垣重文",
+      "aliases": [],
+      "source_refs": [
+        "public-shingaki-s3-post",
+        "production-shingaki-s3-post"
+      ],
+      "roles": [
+        "原画"
+      ],
+      "work_count": 1,
+      "unit_count": 2
+    },
+    {
       "id": "staff-近藤光-kai",
       "name": "近藤光",
       "aliases": [],
@@ -201190,12 +201366,12 @@
         "official-ending-anime-s3-e01"
       ],
       "roles": [
+        "原画",
         "分镜",
-        "动画演出",
-        "原画"
+        "动画演出"
       ],
       "work_count": 2,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-坂友加里",
@@ -223876,12 +224052,12 @@
         "official-ending-anime-s2-e01"
       ],
       "roles": [
-        "主要动画师",
         "原画",
+        "主要动画师",
         "动作作画监督"
       ],
       "work_count": 2,
-      "unit_count": 10
+      "unit_count": 18
     },
     {
       "id": "staff-飯村真一",
@@ -235395,6 +235571,34 @@
     }
   ],
   "sources": [
+    {
+      "id": "public-shikiji-filmography",
+      "kind": "reference",
+      "label": "式地幸喜逐集制作履历（公开转录）",
+      "url": "https://w.atwiki.jp/sakuga/pages/1686.html",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "public-mitsuda-filmography",
+      "kind": "reference",
+      "label": "光田史亮逐集制作履历（公开转录）",
+      "url": "https://w.atwiki.jp/sakuga/pages/623.html",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "public-shingaki-s3-post",
+      "kind": "reference",
+      "label": "新垣重文第三季第8、13话原画参与说明的公开引用",
+      "url": "https://umamusume.net/archives/148214",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "production-shingaki-s3-post",
+      "kind": "production",
+      "label": "新垣重文第8、13话原画参与说明（由公开引用核对）",
+      "url": "https://twitter.com/gakisige/status/1740053835853529215",
+      "observed_at": "2026-10-05"
+    },
     {
       "id": "official-wish-company",
       "kind": "official",

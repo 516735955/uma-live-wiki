@@ -2,6 +2,34 @@
   "schema_version": 1,
   "sources": [
     {
+      "id": "public-shikiji-filmography",
+      "kind": "reference",
+      "label": "式地幸喜逐集制作履历（公开转录）",
+      "url": "https://w.atwiki.jp/sakuga/pages/1686.html",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "public-mitsuda-filmography",
+      "kind": "reference",
+      "label": "光田史亮逐集制作履历（公开转录）",
+      "url": "https://w.atwiki.jp/sakuga/pages/623.html",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "public-shingaki-s3-post",
+      "kind": "reference",
+      "label": "新垣重文第三季第8、13话原画参与说明的公开引用",
+      "url": "https://umamusume.net/archives/148214",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "production-shingaki-s3-post",
+      "kind": "production",
+      "label": "新垣重文第8、13话原画参与说明（由公开引用核对）",
+      "url": "https://twitter.com/gakisige/status/1740053835853529215",
+      "observed_at": "2026-10-05"
+    },
+    {
       "id": "official-wish-company",
       "kind": "official",
       "label": "Wish公司资料（机构身份确认）",
