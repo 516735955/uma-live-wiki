@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-92ac831ae12b987e",
+  "build_id": "anime-f850a320744fbc5d",
   "generated_at": "2026-10-07T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -9,8 +9,8 @@
     "scheduled_units": 0,
     "watch_resources": 135,
     "relations": 1819,
-    "staff_credits": 16178,
-    "staff_people": 2769
+    "staff_credits": 16321,
+    "staff_people": 2770
   },
   "works": [
     {
@@ -1647,10 +1647,11 @@
       "source_refs": [
         "official-story-anime-s1-e09",
         "staff-transcript-anime-s1",
-        "official-s1-broadcast"
+        "official-s1-broadcast",
+        "official-ending-anime-s1-e09"
       ],
       "summary_ja": "トレーナーは少しでも＜スピカ＞メンバーの刺激になればと、夏の合宿を企画する。だが、互いに気遣いをするスペシャルウィークとサイレンススズカを見て、トレーナーは一計を案じ賭けに出るのだが……。",
-      "staff_status": "partial_transcript",
+      "staff_status": "complete",
       "dates": [
         {
           "label": "TOKYO MX・BS11放送",
@@ -22953,7 +22954,8 @@
       "label": "片头曲",
       "usage_type": "op",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e09"
       ],
       "display_order": 10
     },
@@ -23143,7 +23145,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e09"
       ],
       "display_order": 20
     },
@@ -30438,7 +30441,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30453,7 +30457,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30468,7 +30473,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30483,7 +30489,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30498,7 +30505,8 @@
       "label": "",
       "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30513,7 +30521,8 @@
       "label": "",
       "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30528,7 +30537,8 @@
       "label": "",
       "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30543,7 +30553,8 @@
       "label": "",
       "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30558,7 +30569,8 @@
       "label": "",
       "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30573,7 +30585,8 @@
       "label": "",
       "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30588,7 +30601,8 @@
       "label": "",
       "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30603,7 +30617,8 @@
       "label": "",
       "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30618,7 +30633,8 @@
       "label": "",
       "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30633,7 +30649,8 @@
       "label": "",
       "display_order": 13,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30648,7 +30665,8 @@
       "label": "",
       "display_order": 14,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30663,7 +30681,8 @@
       "label": "",
       "display_order": 15,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30678,7 +30697,8 @@
       "label": "",
       "display_order": 16,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -30693,7 +30713,8 @@
       "label": "",
       "display_order": 17,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e09"
+        "broadcast-cast-anime-s1-e09",
+        "official-ending-anime-s1-e09"
       ]
     },
     {
@@ -69417,1471 +69438,1899 @@
       "work_id": "anime-s1",
       "role": "脚本",
       "name": "杉浦理史",
-      "order": 0,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 31,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-杉浦理史",
+      "source_time": 1358.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "脚本",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "分镜",
       "name": "今泉賢一",
-      "order": 1,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 32,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-今泉賢一",
+      "source_time": 1358.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "画コンテ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "动画演出",
       "name": "今泉賢一",
-      "order": 2,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 33,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-今泉賢一",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "演出",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "椛島洋介",
-      "order": 3,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 34,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-椛島洋介",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "井上裕亮",
-      "order": 4,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 35,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-井上裕亮",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "宮崎司",
-      "order": 5,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 36,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-宮崎司",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "辻智子",
-      "order": 6,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 37,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-辻智子",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "宮下雄次",
-      "order": 7,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 38,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-宮下雄次",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "村長由紀",
-      "order": 8,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 39,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-村長由紀",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "阿部美佐緒",
-      "order": 9,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 40,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-阿部美佐緒",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "作画监督",
       "name": "池津寿恵",
-      "order": 10,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 41,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-池津寿恵",
+      "source_time": 1361.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "作画監督",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "山方春香",
-      "order": 11,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 42,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-山方春香",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "水野紗世",
-      "order": 12,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 43,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-水野紗世",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "渡辺志歩紀",
-      "order": 13,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 44,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-渡辺志歩紀",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "三好有香",
-      "order": 14,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 45,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-三好有香",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "村上華帆",
-      "order": 15,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 46,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-村上華帆",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "齋藤千尋",
-      "order": 16,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 47,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-齋藤千尋",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "瀬川亜沙美",
-      "order": 17,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 48,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-瀬川亜沙美",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "岡田夏実",
-      "order": 18,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 49,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-岡田夏実",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "鈴木奈々美",
-      "order": 19,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 50,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-鈴木奈々美",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
-      "name": "島﨑琴美",
-      "order": 20,
-      "source_ref": "staff-transcript-anime-s1",
+      "name": "島崎琴美",
+      "order": 51,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "credited_name": "島琴美",
       "person_id": "staff-島﨑琴美",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "臼井沙帆",
-      "order": 21,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 52,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-臼井沙帆",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "飯沼篤哉",
-      "order": 22,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 53,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-飯沼篤哉",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "田中未来",
-      "order": 23,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 54,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-田中未来",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "米本えり",
-      "order": 24,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 55,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-米本えり",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "降矢瑞生",
-      "order": 25,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 56,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-降矢瑞生",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "辻彩夏",
-      "order": 26,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 57,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-辻彩夏",
+      "source_time": 1373.5,
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "鍋田香代子",
-      "order": 27,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 58,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-鍋田香代子",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "宮下雄次",
-      "order": 28,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 59,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-宮下雄次",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "三浦菜奈",
-      "order": 29,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 60,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-三浦菜奈",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "石井かおり",
-      "order": 30,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 61,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-石井かおり",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "柴田ユウジ",
-      "order": 31,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 62,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-柴田ユウジ",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "松崎嘉克",
-      "order": 32,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 63,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-松崎嘉克",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "岩崎亮",
-      "order": 33,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 64,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-岩崎亮",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "重松晋一",
-      "order": 34,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 65,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-重松晋一",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "谷本馨",
-      "order": 35,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 66,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-谷本馨",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "李民九",
-      "order": 36,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 67,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-李民九",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "原画",
       "name": "李聖淵",
-      "order": 37,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 68,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-李聖淵",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "第二原画",
-      "name": "P.A.WORKS",
-      "order": 38,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "P.A.WORKS",
-      "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "冨田真理",
-      "order": 39,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 69,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-冨田真理",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "矢野康平",
-      "order": 40,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 70,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-矢野康平",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "足立佑紀",
-      "order": 41,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 71,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-足立佑紀",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "西澤皓人",
-      "order": 42,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 72,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-西澤皓人",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "東雲春奈",
-      "order": 43,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 73,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-東雲春奈",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "三宮哲太",
-      "order": 44,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 74,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-三宮哲太",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "松宮杏実",
-      "order": 45,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 75,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-松宮杏実",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "合田麻美",
-      "order": 46,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 76,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-合田麻美",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "菊地智子",
-      "order": 47,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 77,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-菊地智子",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "上田恵未",
-      "order": 48,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 78,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-上田恵未",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "第二原画",
-      "name": "林隆祥",
-      "order": 49,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "person_id": "staff-林隆祥",
-      "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "髙橋瑞紀",
-      "order": 50,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 80,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "credited_name": "橋瑞紀",
       "person_id": "staff-高橋瑞紀",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "野澤隆",
-      "order": 51,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 81,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-野澤隆",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "塩澤枢",
-      "order": 52,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 82,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-塩澤枢",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "田中綾子",
-      "order": 53,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 83,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-田中綾子",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "第二原画",
-      "name": "權熹哉",
-      "order": 54,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "person_id": "staff-權熹哉",
-      "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "バイブリーアニメーション",
-      "order": 55,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 85,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "バイブリーアニメーション",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "玩拓アニメーション",
-      "order": 56,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 86,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "玩拓アニメーション",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "FAIインターナショナル",
-      "order": 57,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 87,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "FAIインターナショナル",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "グレーン",
-      "order": 58,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 88,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "グレーン",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "第二原画",
       "name": "鉄人動画",
-      "order": 59,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 89,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "鉄人動画",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "第二原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "过场动画原画",
       "name": "大東百合恵",
-      "order": 60,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 90,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-大東百合恵",
+      "source_time": 1373.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "アイキャッチ原画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "中间动画",
       "name": "FAIインターナショナル",
-      "order": 61,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 91,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "FAIインターナショナル",
+      "source_time": 1376.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "動画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "中间动画",
       "name": "玩拓アニメーション",
-      "order": 62,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 92,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "玩拓アニメーション",
+      "source_time": 1376.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "動画",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "中间动画",
       "name": "神龍",
-      "order": 63,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 93,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "神龍",
+      "source_time": 1376.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "動画",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "色彩指定",
-      "name": "stella road",
-      "order": 65,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "stella road",
-      "role_raw": "色指定",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "色彩指定",
       "name": "越田侑子",
-      "order": 66,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 95,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-越田侑子",
       "institutions": [
         "stella road"
       ],
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "色指定",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "上色检查",
-      "name": "stella road",
-      "order": 67,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "stella road",
-      "role_raw": "仕上げ検査",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色检查",
       "name": "菊地慶翔",
-      "order": 68,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 96,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-菊地慶翔",
+      "source_time": 1382.5,
+      "institutions": [
+        "stella road"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ検査",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "上色",
-      "name": "stella road",
-      "order": 69,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "stella road",
-      "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "中野尚美",
-      "order": 70,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 97,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-中野尚美",
       "institutions": [
         "stella road"
       ],
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "門松諭生",
-      "order": 71,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 98,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-門松諭生",
       "institutions": [
         "stella road"
       ],
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "遠藤花歩",
-      "order": 72,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 99,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-遠藤花歩",
       "institutions": [
         "stella road"
       ],
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "永井唯香",
-      "order": 73,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 100,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-永井唯香",
       "institutions": [
         "stella road"
       ],
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "FAIインターナショナル",
-      "order": 74,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 101,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "FAIインターナショナル",
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "玩拓アニメーション",
-      "order": 75,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 102,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "玩拓アニメーション",
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "上色",
       "name": "神龍",
-      "order": 76,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 103,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "organization": "神龍",
+      "source_time": 1382.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "仕上げ",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "背景",
-      "name": "草薙",
-      "order": 77,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "草薙",
-      "credited_name": "草薙(KUSANAGI)",
-      "role_raw": "背景",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景",
       "name": "伊藤弘",
-      "order": 78,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 107,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-伊藤弘",
       "institutions": [
         "草薙(KUSANAGI)"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景",
       "name": "池田真依子",
-      "order": 79,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 108,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-池田真依子",
       "institutions": [
         "草薙(KUSANAGI)"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景",
       "name": "岡本綾乃",
-      "order": 80,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 109,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-岡本綾乃",
       "institutions": [
         "草薙(KUSANAGI)"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景",
       "name": "田島裕",
-      "order": 81,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 110,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-田島裕",
       "institutions": [
         "草薙(KUSANAGI)"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景",
       "name": "本橋果林",
-      "order": 82,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 111,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-本橋果林",
       "institutions": [
         "草薙(KUSANAGI)"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "CG模型设定",
       "name": "相原誠",
-      "order": 83,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 104,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-相原誠",
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "CGモデル設定",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "CG模型设定",
       "name": "品田理紗",
-      "order": 84,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 105,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-品田理紗",
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "CGモデル設定",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "吉田美和",
-      "order": 85,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 112,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-吉田美和",
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "背景协力",
-      "name": "NAM HAI ART",
-      "order": 86,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "NAM HAI ART",
-      "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "NGOC XUAN",
-      "order": 87,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 113,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-NGOCXUAN",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "NHU THAO",
-      "order": 88,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 114,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-NHUTHAO",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "TRA GIANG",
-      "order": 89,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 115,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-TRAGIANG",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "PHUONG NHI",
-      "order": 90,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 116,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-PHUONGNHI",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "BAO CHAU",
-      "order": 91,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 117,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-BAOCHAU",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "VAN TOAN",
-      "order": 92,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 118,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-VANTOAN",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "THANH THAO",
-      "order": 93,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 119,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-THANHTHAO",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "THUY NHUNG",
-      "order": 94,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 120,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-THUYNHUNG",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "NGOC THO",
-      "order": 95,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 121,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-NGOCTHO",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "背景协力",
       "name": "THU YEN",
-      "order": 96,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 122,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-THUYEN",
       "institutions": [
         "NAM HAI ART"
       ],
+      "source_time": 1388.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "背景協力",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "摄影",
-      "name": "T2 studio",
-      "order": 97,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "T2 studio",
-      "role_raw": "撮影",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "摄影",
       "name": "並木智",
-      "order": 98,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 123,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-並木智",
       "institutions": [
         "T2 studio"
       ],
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "撮影",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "摄影",
       "name": "富田喜允",
-      "order": 99,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 124,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-富田喜允",
       "institutions": [
         "T2 studio"
       ],
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "撮影",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "摄影",
       "name": "高橋智弘",
-      "order": 100,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 125,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-高橋智弘",
       "institutions": [
         "T2 studio"
       ],
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "撮影",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "摄影",
       "name": "渡部達也",
-      "order": 101,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 126,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-渡部達也",
       "institutions": [
         "T2 studio"
       ],
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "撮影",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "摄影",
       "name": "朝日康平",
-      "order": 102,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 127,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-朝日康平",
       "institutions": [
         "T2 studio"
       ],
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "撮影",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "二维制作",
       "name": "加藤千恵",
-      "order": 103,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 128,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-加藤千恵",
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "2D works",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "二维制作",
       "name": "加藤絵梨",
-      "order": 104,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 129,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-加藤絵梨",
+      "source_time": 1391.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "2D works",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "3DCG",
-      "name": "P.A.WORKS",
-      "order": 105,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "P.A.WORKS",
-      "role_raw": "3DCG",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "3DCG",
       "name": "森重柚香",
-      "order": 106,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 144,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-森重柚香",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1397.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "3DCG",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "3DCG",
       "name": "市川元成",
-      "order": 107,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 145,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-市川元成",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1397.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "3DCG",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "3DCG",
       "name": "大野陽生",
-      "order": 108,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 146,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-大野陽生",
       "institutions": [
         "P.A.WORKS"
       ],
+      "source_time": 1397.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "3DCG",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "法语监修",
       "name": "Lucas Nainemoutou",
-      "order": 110,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 153,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-LucasNainemoutou",
+      "source_time": 1400.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "フランス語監修",
-      "group_raw": "片尾署名（公开转录）"
-    },
-    {
-      "work_id": "anime-s1",
-      "role": "联机剪辑",
-      "name": "キュー・テック",
-      "order": 111,
-      "source_ref": "staff-transcript-anime-s1",
-      "group": "",
-      "unit_id": "anime-s1-e09",
-      "organization": "キュー・テック",
-      "role_raw": "オンライン編集",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "联机剪辑",
       "name": "大関悠",
-      "order": 112,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 213,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-大関悠",
       "institutions": [
         "キュー・テック"
       ],
+      "source_time": 1412.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "オンライン編集",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "联机剪辑",
       "name": "清水裕貴",
-      "order": 113,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 214,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-清水裕貴",
       "institutions": [
         "キュー・テック"
       ],
+      "source_time": 1412.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "オンライン編集",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
       "role": "制作统筹",
       "name": "鶴見優介",
-      "order": 114,
-      "source_ref": "staff-transcript-anime-s1",
+      "order": 247,
+      "source_ref": "official-ending-anime-s1-e09",
       "group": "",
       "unit_id": "anime-s1-e09",
       "person_id": "staff-鶴見優介",
+      "source_time": 1424.5,
+      "evidence_refs": [
+        "official-ending-anime-s1-e09",
+        "staff-transcript-anime-s1"
+      ],
       "role_raw": "担当制作",
-      "group_raw": "片尾署名（公开转录）"
+      "group_raw": ""
     },
     {
       "work_id": "anime-s1",
@@ -285431,6 +285880,2143 @@
       "organization": "アニメ「ウマ娘 プリティーダービー」製作委員会",
       "role_raw": "製作",
       "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 79.5,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 1,
+      "role": "出品",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 85.5,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 2,
+      "role": "出品",
+      "group": "",
+      "name": "大田圭二",
+      "source_time": 85.5,
+      "person_id": "staff-大田圭二",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 3,
+      "role": "出品",
+      "group": "",
+      "name": "櫻井優香",
+      "source_time": 85.5,
+      "person_id": "staff-櫻井優香",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 4,
+      "role": "出品",
+      "group": "",
+      "name": "岡田美穂",
+      "source_time": 85.5,
+      "person_id": "staff-岡田美穂",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 5,
+      "role": "执行制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 106.5,
+      "person_id": "staff-竹中信広",
+      "role_raw": "エグゼクティブプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 6,
+      "role": "执行制片人",
+      "group": "",
+      "name": "古澤佳寛",
+      "source_time": 106.5,
+      "person_id": "staff-古澤佳寛",
+      "role_raw": "エグゼクティブプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 7,
+      "role": "制片人",
+      "group": "",
+      "name": "伊藤隼之介",
+      "source_time": 112.5,
+      "person_id": "staff-伊藤隼之介",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 8,
+      "role": "制片人",
+      "group": "",
+      "name": "辻充仁",
+      "source_time": 112.5,
+      "person_id": "staff-辻充仁",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 9,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 112.5,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 10,
+      "role": "制片人",
+      "group": "",
+      "name": "関根陽一",
+      "source_time": 112.5,
+      "person_id": "staff-関根陽一",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 11,
+      "role": "制片人",
+      "group": "",
+      "name": "尾上太基",
+      "source_time": 112.5,
+      "person_id": "staff-尾上太基",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 12,
+      "role": "系列构成",
+      "group": "",
+      "name": "石原章弘",
+      "source_time": 118.5,
+      "person_id": "staff-石原章弘",
+      "role_raw": "シリーズ構成",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 13,
+      "role": "系列构成",
+      "group": "",
+      "name": "杉浦理史",
+      "source_time": 118.5,
+      "person_id": "staff-杉浦理史",
+      "role_raw": "シリーズ構成",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 14,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "椛島洋介",
+      "source_time": 124.5,
+      "person_id": "staff-椛島洋介",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 15,
+      "role": "角色设计",
+      "group": "",
+      "name": "辻智子",
+      "source_time": 124.5,
+      "person_id": "staff-辻智子",
+      "role_raw": "キャラクターデザイン",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 16,
+      "role": "主要动画师",
+      "group": "",
+      "name": "宮下雄次",
+      "source_time": 124.5,
+      "person_id": "staff-宮下雄次",
+      "role_raw": "メインアニメーター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 17,
+      "role": "美术监督",
+      "group": "",
+      "name": "伊藤弘",
+      "source_time": 130.5,
+      "person_id": "staff-伊藤弘",
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 18,
+      "role": "色彩设计",
+      "group": "",
+      "name": "中野尚美",
+      "source_time": 130.5,
+      "person_id": "staff-中野尚美",
+      "role_raw": "色彩設計",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 19,
+      "role": "摄影监督",
+      "group": "",
+      "name": "並木智",
+      "source_time": 133.5,
+      "person_id": "staff-並木智",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 20,
+      "role": "3D监督",
+      "group": "",
+      "name": "市川元成",
+      "source_time": 133.5,
+      "person_id": "staff-市川元成",
+      "role_raw": "3D監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 21,
+      "role": "剪辑",
+      "group": "",
+      "name": "高橋歩",
+      "source_time": 133.5,
+      "person_id": "staff-高橋歩",
+      "role_raw": "編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 22,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 136.5,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 23,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "保坂拓也",
+      "source_time": 136.5,
+      "person_id": "staff-保坂拓也",
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 24,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 136.5,
+      "person_id": "staff-内田哲也",
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 25,
+      "role": "音乐制作策划",
+      "group": "",
+      "name": "岩代太郎",
+      "source_time": 145.5,
+      "person_id": "staff-岩代太郎",
+      "role_raw": "音楽プロデュース",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 26,
+      "role": "音乐",
+      "group": "",
+      "name": "UTAMARO movement",
+      "source_time": 145.5,
+      "organization": "UTAMARO movement",
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 27,
+      "role": "制片主任",
+      "group": "",
+      "name": "橋本真英",
+      "source_time": 148.5,
+      "person_id": "staff-橋本真英",
+      "role_raw": "ラインプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 255,
+      "role": "动画制作",
+      "group": "",
+      "name": "P.A.WORKS",
+      "source_time": 1430.5,
+      "organization": "P.A.WORKS",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 29,
+      "role": "副导演",
+      "group": "",
+      "name": "太田知章",
+      "source_time": 157.5,
+      "person_id": "staff-太田知章",
+      "role_raw": "副監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 30,
+      "role": "导演",
+      "group": "",
+      "name": "及川啓",
+      "source_time": 160.5,
+      "person_id": "staff-及川啓",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 79,
+      "role": "第二原画",
+      "group": "",
+      "name": "林隆洋",
+      "source_time": 1373.5,
+      "person_id": "staff-林隆洋",
+      "role_raw": "第二原画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 84,
+      "role": "第二原画",
+      "group": "",
+      "name": "権豪哉",
+      "source_time": 1373.5,
+      "person_id": "staff-権豪哉",
+      "role_raw": "第二原画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 94,
+      "role": "现场经理",
+      "group": "",
+      "name": "毛利健太郎",
+      "source_time": 1376.5,
+      "person_id": "staff-毛利健太郎",
+      "role_raw": "フロアマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 106,
+      "role": "背景统筹",
+      "group": "",
+      "name": "平田浩章",
+      "source_time": 1388.5,
+      "person_id": "staff-平田浩章",
+      "role_raw": "背景進行",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 130,
+      "role": "字体协力",
+      "group": "",
+      "name": "フォントワークス",
+      "source_time": 1391.5,
+      "organization": "フォントワークス",
+      "role_raw": "フォント協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 131,
+      "role": "3D建模",
+      "group": "",
+      "name": "井上佑紀",
+      "source_time": 1397.5,
+      "person_id": "staff-井上佑紀",
+      "role_raw": "3Dモデリング",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 132,
+      "role": "建模协力",
+      "group": "",
+      "name": "石田龍樹",
+      "source_time": 1397.5,
+      "person_id": "staff-石田龍樹",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 133,
+      "role": "建模协力",
+      "group": "",
+      "name": "佐藤良樹",
+      "source_time": 1397.5,
+      "person_id": "staff-佐藤良樹",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 134,
+      "role": "建模协力",
+      "group": "",
+      "name": "渡部里奈",
+      "source_time": 1397.5,
+      "person_id": "staff-渡部里奈",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 135,
+      "role": "建模协力",
+      "group": "",
+      "name": "池添敦彦",
+      "source_time": 1397.5,
+      "person_id": "staff-池添敦彦",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 136,
+      "role": "建模协力",
+      "group": "",
+      "name": "上野雄大",
+      "source_time": 1397.5,
+      "person_id": "staff-上野雄大",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 137,
+      "role": "建模协力",
+      "group": "",
+      "name": "奥村優子",
+      "source_time": 1397.5,
+      "person_id": "staff-奥村優子",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 138,
+      "role": "建模协力",
+      "group": "",
+      "name": "濱中裕",
+      "source_time": 1397.5,
+      "person_id": "staff-濱中裕",
+      "institutions": [
+        "株式会社IKIF+"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 139,
+      "role": "建模协力",
+      "group": "",
+      "name": "早川孝之",
+      "source_time": 1397.5,
+      "person_id": "staff-早川孝之",
+      "institutions": [
+        "studio51"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 140,
+      "role": "建模协力",
+      "group": "",
+      "name": "袁蓓蓓",
+      "source_time": 1397.5,
+      "person_id": "staff-袁蓓蓓",
+      "institutions": [
+        "studio51"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 141,
+      "role": "建模协力",
+      "group": "",
+      "name": "翟晨妤",
+      "source_time": 1397.5,
+      "person_id": "staff-翟晨妤",
+      "institutions": [
+        "studio51"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 142,
+      "role": "建模协力",
+      "group": "",
+      "name": "肖陽",
+      "source_time": 1397.5,
+      "person_id": "staff-肖陽",
+      "institutions": [
+        "studio51"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 143,
+      "role": "建模协力",
+      "group": "",
+      "name": "楊惠玲",
+      "source_time": 1397.5,
+      "person_id": "staff-楊惠玲",
+      "institutions": [
+        "studio51"
+      ],
+      "role_raw": "モデリング協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 147,
+      "role": "美术设定",
+      "group": "",
+      "name": "須江信人",
+      "source_time": 1400.5,
+      "person_id": "staff-須江信人",
+      "role_raw": "美術設定",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 148,
+      "role": "美术设定",
+      "group": "",
+      "name": "綱頭瑛子",
+      "source_time": 1400.5,
+      "person_id": "staff-綱頭瑛子",
+      "role_raw": "美術設定",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 149,
+      "role": "美术设定",
+      "group": "",
+      "name": "岩澤美翠",
+      "source_time": 1400.5,
+      "person_id": "staff-岩澤美翠",
+      "role_raw": "美術設定",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 150,
+      "role": "道具设计",
+      "group": "",
+      "name": "宮岡真弓",
+      "source_time": 1400.5,
+      "person_id": "staff-宮岡真弓",
+      "role_raw": "プロップデザイン",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 151,
+      "role": "特效",
+      "group": "",
+      "name": "入佐芽詠美",
+      "source_time": 1400.5,
+      "person_id": "staff-入佐芽詠美",
+      "role_raw": "特殊効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 152,
+      "role": "过场动画与副标题设计",
+      "group": "",
+      "name": "大岩裕樹",
+      "source_time": 1400.5,
+      "person_id": "staff-大岩裕樹",
+      "institutions": [
+        "牧印刷株式会社"
+      ],
+      "role_raw": "アイキャッチ・サブタイトルデザイン",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 154,
+      "role": "分镜／动画演出",
+      "group": "片头动画",
+      "name": "吉原正行",
+      "source_time": 1404.5,
+      "person_id": "staff-吉原正行",
+      "role_raw": "画コンテ・演出",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 155,
+      "role": "总作画监督",
+      "group": "片头动画",
+      "name": "椛島洋介",
+      "source_time": 1404.5,
+      "person_id": "staff-椛島洋介",
+      "role_raw": "総作画監督",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 156,
+      "role": "作画监督",
+      "group": "片头动画",
+      "name": "川面恒介",
+      "source_time": 1404.5,
+      "person_id": "staff-川面恒介",
+      "role_raw": "作画監督",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 157,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "福元陽介",
+      "source_time": 1404.5,
+      "person_id": "staff-福元陽介",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 158,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "水野紗世",
+      "source_time": 1404.5,
+      "person_id": "staff-水野紗世",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 159,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "天野和子",
+      "source_time": 1404.5,
+      "person_id": "staff-天野和子",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 160,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "村上華帆",
+      "source_time": 1404.5,
+      "person_id": "staff-村上華帆",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 161,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "山方春香",
+      "source_time": 1404.5,
+      "person_id": "staff-山方春香",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 162,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "栗田香菜子",
+      "source_time": 1404.5,
+      "person_id": "staff-栗田香菜子",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 163,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "西川実希",
+      "source_time": 1404.5,
+      "person_id": "staff-西川実希",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 164,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "矢野康平",
+      "source_time": 1404.5,
+      "person_id": "staff-矢野康平",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 165,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "冨田真理",
+      "source_time": 1404.5,
+      "person_id": "staff-冨田真理",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 166,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "柳原一義",
+      "source_time": 1404.5,
+      "person_id": "staff-柳原一義",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 167,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "西澤皓人",
+      "source_time": 1404.5,
+      "person_id": "staff-西澤皓人",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 168,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "島崎琴美",
+      "source_time": 1404.5,
+      "person_id": "staff-島﨑琴美",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 169,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "笠原由博",
+      "source_time": 1404.5,
+      "person_id": "staff-笠原由博",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 170,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "辻彩夏",
+      "source_time": 1404.5,
+      "person_id": "staff-辻彩夏",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 171,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "臼井沙帆",
+      "source_time": 1404.5,
+      "person_id": "staff-臼井沙帆",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 172,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "降矢瑞生",
+      "source_time": 1404.5,
+      "person_id": "staff-降矢瑞生",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 173,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "足立裕貴",
+      "source_time": 1404.5,
+      "person_id": "staff-足立裕貴",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 174,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "米本えり",
+      "source_time": 1404.5,
+      "person_id": "staff-米本えり",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 175,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "飯沼篤哉",
+      "source_time": 1404.5,
+      "person_id": "staff-飯沼篤哉",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 176,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "岡田夏実",
+      "source_time": 1404.5,
+      "person_id": "staff-岡田夏実",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 177,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "櫛田拳作",
+      "source_time": 1404.5,
+      "person_id": "staff-櫛田拳作",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 178,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "三宮哲太",
+      "source_time": 1404.5,
+      "person_id": "staff-三宮哲太",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 179,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "鈴木奈々美",
+      "source_time": 1404.5,
+      "person_id": "staff-鈴木奈々美",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 180,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "瀬川亜沙美",
+      "source_time": 1404.5,
+      "person_id": "staff-瀬川亜沙美",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 181,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "田中未来",
+      "source_time": 1404.5,
+      "person_id": "staff-田中未来",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 182,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "松宮杏実",
+      "source_time": 1404.5,
+      "person_id": "staff-松宮杏実",
+      "institutions": [
+        "P.A.WORKS"
+      ],
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 183,
+      "role": "色彩指定／上色检查",
+      "group": "片头动画",
+      "name": "中野尚美",
+      "source_time": 1404.5,
+      "person_id": "staff-中野尚美",
+      "role_raw": "色指定・仕上げ検査",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 184,
+      "role": "背景",
+      "group": "片头动画",
+      "name": "草薙(KUSANAGI)",
+      "source_time": 1404.5,
+      "organization": "草薙(KUSANAGI)",
+      "role_raw": "背景",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 185,
+      "role": "摄影",
+      "group": "片头动画",
+      "name": "T2 studio",
+      "source_time": 1404.5,
+      "organization": "T2 studio",
+      "role_raw": "撮影",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 186,
+      "role": "二维制作",
+      "group": "片头动画",
+      "name": "加藤千恵",
+      "source_time": 1404.5,
+      "person_id": "staff-加藤千恵",
+      "role_raw": "2D works",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 187,
+      "role": "3DCG",
+      "group": "片头动画",
+      "name": "市川元成",
+      "source_time": 1404.5,
+      "person_id": "staff-市川元成",
+      "role_raw": "3DCG",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 188,
+      "role": "3DCG",
+      "group": "片头动画",
+      "name": "森重柚香",
+      "source_time": 1404.5,
+      "person_id": "staff-森重柚香",
+      "role_raw": "3DCG",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 189,
+      "role": "制作统筹",
+      "group": "片头动画",
+      "name": "毛利健太郎",
+      "source_time": 1404.5,
+      "person_id": "staff-毛利健太郎",
+      "role_raw": "担当制作",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 190,
+      "role": "制作统筹",
+      "group": "片头动画",
+      "name": "福澤祐也",
+      "source_time": 1404.5,
+      "person_id": "staff-福澤祐也",
+      "role_raw": "担当制作",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 191,
+      "role": "分镜／动画演出／设计",
+      "group": "片尾动画",
+      "name": "内古閑智之",
+      "source_time": 1406.5,
+      "person_id": "staff-内古閑智之",
+      "institutions": [
+        "CHP"
+      ],
+      "role_raw": "画コンテ・演出・デザイン",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 192,
+      "role": "动态图形",
+      "group": "片尾动画",
+      "name": "神田智隆",
+      "source_time": 1406.5,
+      "person_id": "staff-神田智隆",
+      "role_raw": "モーショングラフィックス",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 193,
+      "role": "分镜协力",
+      "group": "片尾动画",
+      "name": "ms",
+      "source_time": 1406.5,
+      "person_id": "staff-ms",
+      "role_raw": "画コンテ協力",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 194,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "椛島洋介",
+      "source_time": 1406.5,
+      "person_id": "staff-椛島洋介",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 195,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "石井百合子",
+      "source_time": 1406.5,
+      "person_id": "staff-石井百合子",
+      "role_raw": "原画",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 196,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "奥田陽介",
+      "source_time": 1406.5,
+      "person_id": "staff-奥田陽介",
+      "role_raw": "原画",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 197,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "大東百合恵",
+      "source_time": 1406.5,
+      "person_id": "staff-大東百合恵",
+      "role_raw": "原画",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 198,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "夏住愛子",
+      "source_time": 1406.5,
+      "person_id": "staff-夏住愛子",
+      "role_raw": "原画",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 199,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "川元まりこ",
+      "source_time": 1406.5,
+      "person_id": "staff-川元まりこ",
+      "role_raw": "原画",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 200,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "大倉佳苗",
+      "source_time": 1406.5,
+      "person_id": "staff-大倉佳苗",
+      "role_raw": "原画",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 201,
+      "role": "中间动画／中间动画检查",
+      "group": "片尾动画",
+      "name": "高田彩",
+      "source_time": 1406.5,
+      "person_id": "staff-高田彩",
+      "role_raw": "動画・動画検査",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 202,
+      "role": "色彩指定／上色检查",
+      "group": "片尾动画",
+      "name": "中野尚美",
+      "source_time": 1406.5,
+      "person_id": "staff-中野尚美",
+      "role_raw": "色指定・仕上げ検査",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 203,
+      "role": "后期收尾",
+      "group": "片尾动画",
+      "name": "粟田涼子",
+      "source_time": 1406.5,
+      "person_id": "staff-粟田涼子",
+      "institutions": [
+        "CHP"
+      ],
+      "role_raw": "フィニッシュワーク",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 204,
+      "role": "制作统筹",
+      "group": "片尾动画",
+      "name": "福澤祐也",
+      "source_time": 1406.5,
+      "person_id": "staff-福澤祐也",
+      "role_raw": "担当制作",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 205,
+      "role": "声音混音",
+      "group": "",
+      "name": "徳久智成",
+      "source_time": 1412.5,
+      "person_id": "staff-徳久智成",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 206,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "關このみ",
+      "source_time": 1412.5,
+      "person_id": "staff-關このみ",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 207,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 1412.5,
+      "person_id": "staff-宅間麻姫",
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 208,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 1412.5,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 209,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 1412.5,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 210,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 1412.5,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 211,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 1412.5,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 212,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "ジェイ・フィルム",
+      "source_time": 1412.5,
+      "organization": "ジェイ・フィルム",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 215,
+      "role": "联机剪辑管理",
+      "group": "",
+      "name": "片田悠介",
+      "source_time": 1412.5,
+      "person_id": "staff-片田悠介",
+      "role_raw": "オンライン編集デスク",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 216,
+      "role": "宣传制片人",
+      "group": "",
+      "name": "高野朋子",
+      "source_time": 1421.5,
+      "person_id": "staff-高野朋子",
+      "role_raw": "宣伝プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 217,
+      "role": "宣传",
+      "group": "",
+      "name": "前川亮",
+      "source_time": 1421.5,
+      "person_id": "staff-前川亮",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 218,
+      "role": "宣传",
+      "group": "",
+      "name": "小栗晋",
+      "source_time": 1421.5,
+      "person_id": "staff-小栗晋",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 219,
+      "role": "宣传",
+      "group": "",
+      "name": "木立己百花",
+      "source_time": 1421.5,
+      "person_id": "staff-木立己百花",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 220,
+      "role": "宣传协力",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 1421.5,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 221,
+      "role": "宣传协力",
+      "group": "",
+      "name": "原田有永",
+      "source_time": 1421.5,
+      "person_id": "staff-原田有永",
+      "role_raw": "宣伝協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 222,
+      "role": "宣传协力",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 1421.5,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 223,
+      "role": "宣传协力",
+      "group": "",
+      "name": "今岡佐知子",
+      "source_time": 1421.5,
+      "person_id": "staff-今岡佐知子",
+      "role_raw": "宣伝協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 224,
+      "role": "宣传协力",
+      "group": "",
+      "name": "小島猛",
+      "source_time": 1421.5,
+      "person_id": "staff-小島猛",
+      "role_raw": "宣伝協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 225,
+      "role": "销售推广",
+      "group": "",
+      "name": "石山竜也",
+      "source_time": 1421.5,
+      "person_id": "staff-石山竜也",
+      "role_raw": "販売促進",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 226,
+      "role": "销售推广",
+      "group": "",
+      "name": "奥田卓司",
+      "source_time": 1421.5,
+      "person_id": "staff-奥田卓司",
+      "role_raw": "販売促進",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 227,
+      "role": "授权",
+      "group": "",
+      "name": "田畑あすか",
+      "source_time": 1421.5,
+      "person_id": "staff-田畑あすか",
+      "role_raw": "ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 228,
+      "role": "授权",
+      "group": "",
+      "name": "斉藤奈緒子",
+      "source_time": 1421.5,
+      "person_id": "staff-斉藤奈緒子",
+      "role_raw": "ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 229,
+      "role": "海外授权",
+      "group": "",
+      "name": "竹田晃洋",
+      "source_time": 1421.5,
+      "person_id": "staff-竹田晃洋",
+      "role_raw": "海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 230,
+      "role": "日本上线",
+      "group": "",
+      "name": "臼井優",
+      "source_time": 1421.5,
+      "person_id": "staff-臼井優",
+      "role_raw": "国内配信",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 231,
+      "role": "合同管理",
+      "group": "",
+      "name": "黒岩康文",
+      "source_time": 1421.5,
+      "person_id": "staff-黒岩康文",
+      "role_raw": "契約管理",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 232,
+      "role": "合同管理",
+      "group": "",
+      "name": "有馬里実",
+      "source_time": 1421.5,
+      "person_id": "staff-有馬里実",
+      "role_raw": "契約管理",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 233,
+      "role": "包装制作",
+      "group": "",
+      "name": "黒岩真貴子",
+      "source_time": 1421.5,
+      "person_id": "staff-黒岩真貴子",
+      "role_raw": "パッケージ制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 234,
+      "role": "宣传影片",
+      "group": "",
+      "name": "キュー・テック",
+      "source_time": 1421.5,
+      "organization": "キュー・テック",
+      "role_raw": "プロモーションムービー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 235,
+      "role": "网站制作",
+      "group": "",
+      "name": "山本和男",
+      "source_time": 1421.5,
+      "person_id": "staff-山本和男",
+      "institutions": [
+        "SALT Inc."
+      ],
+      "role_raw": "WEB制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 236,
+      "role": "网站制作",
+      "group": "",
+      "name": "渡辺裕一",
+      "source_time": 1421.5,
+      "person_id": "staff-渡辺裕一",
+      "institutions": [
+        "SALT Inc."
+      ],
+      "role_raw": "WEB制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 237,
+      "role": "网站制作",
+      "group": "",
+      "name": "菅原祐介",
+      "source_time": 1421.5,
+      "person_id": "staff-菅原祐介",
+      "institutions": [
+        "SALT Inc."
+      ],
+      "role_raw": "WEB制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 238,
+      "role": "宣传设计协力",
+      "group": "",
+      "name": "KOME WORKS",
+      "source_time": 1421.5,
+      "organization": "KOME WORKS",
+      "role_raw": "宣伝デザイン協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 239,
+      "role": "企划协力",
+      "group": "",
+      "name": "成田真大",
+      "source_time": 1421.5,
+      "person_id": "staff-成田真大",
+      "role_raw": "企画協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 240,
+      "role": "企划协力",
+      "group": "",
+      "name": "齋藤里枝",
+      "source_time": 1421.5,
+      "person_id": "staff-齋藤里枝",
+      "role_raw": "企画協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 241,
+      "role": "企划协力",
+      "group": "",
+      "name": "土屋翔音",
+      "source_time": 1421.5,
+      "person_id": "staff-土屋翔音",
+      "role_raw": "企画協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 242,
+      "role": "制作庶务",
+      "group": "",
+      "name": "田島美奈",
+      "source_time": 1421.5,
+      "person_id": "staff-田島美奈",
+      "role_raw": "制作庶務",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 243,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 1421.5,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 244,
+      "role": "协力",
+      "group": "",
+      "name": "サラブレ編集部",
+      "source_time": 1421.5,
+      "organization": "サラブレ編集部",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 245,
+      "role": "制作管理",
+      "group": "",
+      "name": "橘内諒太",
+      "source_time": 1424.5,
+      "person_id": "staff-橘内諒太",
+      "role_raw": "制作デスク",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 246,
+      "role": "设定制作",
+      "group": "",
+      "name": "福澤祐也",
+      "source_time": 1424.5,
+      "person_id": "staff-福澤祐也",
+      "role_raw": "設定制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 248,
+      "role": "出品委员会",
+      "group": "",
+      "name": "大島孝幸",
+      "source_time": 1427.5,
+      "person_id": "staff-大島孝幸",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 249,
+      "role": "出品委员会",
+      "group": "",
+      "name": "高橋亜希人",
+      "source_time": 1427.5,
+      "person_id": "staff-高橋亜希人",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 250,
+      "role": "出品委员会",
+      "group": "",
+      "name": "山中一孝",
+      "source_time": 1427.5,
+      "person_id": "staff-山中一孝",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 251,
+      "role": "出品委员会",
+      "group": "",
+      "name": "櫻井優香",
+      "source_time": 1427.5,
+      "person_id": "staff-櫻井優香",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 252,
+      "role": "出品委员会",
+      "group": "",
+      "name": "堀切八郎",
+      "source_time": 1427.5,
+      "person_id": "staff-堀切八郎",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 253,
+      "role": "出品委员会",
+      "group": "",
+      "name": "池田篤史",
+      "source_time": 1427.5,
+      "person_id": "staff-池田篤史",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 254,
+      "role": "出品委员会",
+      "group": "",
+      "name": "糀嶋麻菜美",
+      "source_time": 1427.5,
+      "person_id": "staff-糀嶋麻菜美",
+      "role_raw": "製作委員会",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-s1",
+      "unit_id": "anime-s1-e09",
+      "source_ref": "official-ending-anime-s1-e09",
+      "order": 256,
+      "role": "出品",
+      "group": "",
+      "name": "アニメ「ウマ娘 プリティーダービー」製作委員会",
+      "source_time": 1433.5,
+      "organization": "アニメ「ウマ娘 プリティーダービー」製作委員会",
+      "role_raw": "製作",
+      "group_raw": ""
     }
   ],
   "people": [
@@ -285619,7 +288205,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "总作画监督",
@@ -285630,7 +288217,7 @@
         "作画监督助理"
       ],
       "work_count": 4,
-      "unit_count": 25
+      "unit_count": 26
     },
     {
       "id": "staff-佐久間貴史",
@@ -286276,7 +288863,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "脚本",
@@ -286321,7 +288909,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "分镜",
@@ -286330,7 +288919,7 @@
         "舞台动画演出"
       ],
       "work_count": 4,
-      "unit_count": 34
+      "unit_count": 35
     },
     {
       "id": "staff-成田巧",
@@ -286645,7 +289234,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "动画演出",
@@ -286653,7 +289243,7 @@
         "动画演出助理"
       ],
       "work_count": 2,
-      "unit_count": 12
+      "unit_count": 13
     },
     {
       "id": "staff-関口可奈味",
@@ -286796,7 +289386,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督",
@@ -286879,7 +289470,8 @@
         "staff-transcript-anime-s1",
         "staff-transcript-anime-s2",
         "official-ending-anime-s1-e04",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督",
@@ -286897,7 +289489,8 @@
         "official-story-anime-s2-e06",
         "staff-transcript-anime-s1",
         "staff-transcript-anime-s2",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督",
@@ -286914,7 +289507,8 @@
         "official-story-anime-s2-e06",
         "staff-transcript-anime-s1",
         "staff-transcript-anime-s2",
-        "official-ending-anime-s1-e06"
+        "official-ending-anime-s1-e06",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督",
@@ -287570,7 +290164,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288027,7 +290622,8 @@
         "official-ending-anime-s3-e12",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "摄影监督",
@@ -288035,7 +290631,7 @@
         "动态图形"
       ],
       "work_count": 3,
-      "unit_count": 15
+      "unit_count": 16
     },
     {
       "id": "staff-本田晃弘",
@@ -288348,13 +290944,14 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 2,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-宮下雄次",
@@ -288367,7 +290964,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -288389,7 +290987,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -288514,7 +291113,8 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-s1",
-        "official-ending-anime-s1-e01"
+        "official-ending-anime-s1-e01",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -288668,7 +291268,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288688,7 +291289,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288706,7 +291308,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288729,7 +291332,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288751,7 +291355,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288771,7 +291376,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288792,7 +291398,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288812,14 +291419,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 8
+      "unit_count": 9
     },
     {
       "id": "staff-瀬川亜沙美",
@@ -288832,7 +291440,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -288931,7 +291540,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "色彩设计",
@@ -288969,7 +291579,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "上色",
@@ -289001,7 +291612,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "上色",
@@ -289023,7 +291635,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "上色",
@@ -289088,7 +291701,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "上色",
@@ -289120,7 +291734,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "上色",
@@ -289222,7 +291837,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "美术监督",
@@ -289259,7 +291875,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景"
@@ -289279,7 +291896,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "CG模型设定",
@@ -289300,7 +291918,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "CG模型设定",
@@ -289338,7 +291957,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "摄影监督",
@@ -289358,7 +291978,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "摄影"
@@ -289378,7 +291999,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "摄影",
@@ -289399,7 +292021,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "摄影"
@@ -289424,7 +292047,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "摄影"
@@ -289471,7 +292095,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "二维制作"
@@ -289491,7 +292116,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "3D监督",
@@ -289511,7 +292137,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "3DCG"
@@ -289564,7 +292191,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "联机剪辑"
@@ -289583,7 +292211,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "联机剪辑"
@@ -289669,7 +292298,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e04",
-        "official-ending-anime-s1-e05"
+        "official-ending-anime-s1-e05",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289689,7 +292319,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289705,7 +292336,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e04",
-        "official-ending-anime-s1-e05"
+        "official-ending-anime-s1-e05",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289724,7 +292356,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289745,7 +292378,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289806,7 +292440,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "二维制作"
@@ -289836,7 +292471,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督",
@@ -289856,7 +292492,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289872,7 +292509,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "staff-transcript-anime-s2",
-        "official-ending-anime-s1-e05"
+        "official-ending-anime-s1-e05",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -289891,7 +292529,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -289922,7 +292561,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景",
@@ -289940,7 +292580,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景"
@@ -289958,7 +292599,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景"
@@ -290000,7 +292642,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e04",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督助理",
@@ -290021,7 +292664,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -290056,7 +292700,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力"
@@ -290107,7 +292752,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-橋内諒太"
@@ -290117,7 +292763,7 @@
         "制作管理"
       ],
       "work_count": 1,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-毛利健太郎",
@@ -290130,14 +292776,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制作统筹",
         "现场经理"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-三浦菜奈",
@@ -290145,7 +292792,8 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-s1",
-        "official-ending-anime-s1-e06"
+        "official-ending-anime-s1-e06",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督助理",
@@ -290177,7 +292825,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -290197,7 +292846,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -290230,7 +292880,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-櫛田華作"
@@ -290239,7 +292890,7 @@
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-西川実希",
@@ -290252,14 +292903,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
         "第二原画"
       ],
       "work_count": 1,
-      "unit_count": 9
+      "unit_count": 10
     },
     {
       "id": "staff-天野和子",
@@ -290273,14 +292925,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
         "第二原画"
       ],
       "work_count": 2,
-      "unit_count": 13
+      "unit_count": 14
     },
     {
       "id": "staff-矢野康平",
@@ -290294,7 +292947,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -290315,7 +292969,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -290336,7 +292991,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -290356,7 +293012,8 @@
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-柳原一慶"
@@ -290365,7 +293022,7 @@
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 8
+      "unit_count": 9
     },
     {
       "id": "staff-海野有希",
@@ -290458,7 +293115,8 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-s1",
-        "official-ending-anime-s1-e07"
+        "official-ending-anime-s1-e07",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "分镜",
@@ -290544,7 +293202,8 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "3DCG"
@@ -290978,7 +293637,8 @@
       "name": "阿部美佐緒",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督"
@@ -290991,7 +293651,8 @@
       "name": "池津寿恵",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督"
@@ -291004,7 +293665,8 @@
       "name": "石井かおり",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -291017,7 +293679,8 @@
       "name": "松崎嘉克",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -291030,7 +293693,8 @@
       "name": "重松晋一",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -291043,7 +293707,8 @@
       "name": "谷本馨",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -291056,7 +293721,8 @@
       "name": "李民九",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -291069,7 +293735,8 @@
       "name": "李聖淵",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
@@ -291082,7 +293749,8 @@
       "name": "合田麻美",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画"
@@ -291095,7 +293763,8 @@
       "name": "菊地智子",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画"
@@ -291108,7 +293777,8 @@
       "name": "上田恵未",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画"
@@ -291126,11 +293796,10 @@
         "official-ending-anime-rttt-e03"
       ],
       "roles": [
-        "第二原画",
         "原画"
       ],
       "work_count": 3,
-      "unit_count": 5
+      "unit_count": 4
     },
     {
       "id": "staff-野澤隆",
@@ -291138,7 +293807,8 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-s1",
-        "staff-transcript-anime-s2"
+        "staff-transcript-anime-s2",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -291152,7 +293822,8 @@
       "name": "塩澤枢",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画"
@@ -291165,20 +293836,8 @@
       "name": "田中綾子",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
-      ],
-      "roles": [
-        "第二原画"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-權熹哉",
-      "name": "權熹哉",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画"
@@ -291191,7 +293850,8 @@
       "name": "鶴見優介",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制作统筹"
@@ -291307,7 +293967,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-足立祐貴"
@@ -291318,7 +293979,7 @@
         "作画监督"
       ],
       "work_count": 4,
-      "unit_count": 12
+      "unit_count": 13
     },
     {
       "id": "staff-降旗秀吉",
@@ -291344,14 +294005,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "3DCG",
         "3D建模"
       ],
       "work_count": 1,
-      "unit_count": 10
+      "unit_count": 11
     },
     {
       "id": "staff-松岡謙治",
@@ -291642,14 +294304,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制作统筹",
         "设定制作"
       ],
       "work_count": 1,
-      "unit_count": 8
+      "unit_count": 9
     },
     {
       "id": "staff-伊礼えり",
@@ -291782,13 +294445,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "作画监督"
       ],
       "work_count": 1,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-若山正志",
@@ -292738,7 +295402,8 @@
       "name": "高橋瑞紀",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-s1"
+        "staff-transcript-anime-s1",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "第二原画",
@@ -292877,14 +295542,15 @@
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "中间动画",
         "中间动画／中间动画检查"
       ],
       "work_count": 1,
-      "unit_count": 4
+      "unit_count": 5
     },
     {
       "id": "staff-小島真喜子",
@@ -304674,7 +307340,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景统筹",
@@ -304682,7 +307349,7 @@
         "背景统筹助理"
       ],
       "work_count": 6,
-      "unit_count": 26
+      "unit_count": 27
     },
     {
       "id": "staff-神谷宣幸",
@@ -305157,7 +307824,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "媒体统筹",
@@ -305165,7 +307833,7 @@
         "宣传协力"
       ],
       "work_count": 8,
-      "unit_count": 54
+      "unit_count": 55
     },
     {
       "id": "staff-大杉憲蔵",
@@ -305262,7 +307930,8 @@
         "official-ending-anime-s3-e12",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "标题标志",
@@ -305270,7 +307939,7 @@
         "分镜／动画演出／设计"
       ],
       "work_count": 4,
-      "unit_count": 16
+      "unit_count": 17
     },
     {
       "id": "staff-長谷部駿也",
@@ -309226,14 +311895,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "creator_id": "creator-9be9261917",
       "roles": [
         "音乐制片人"
       ],
       "work_count": 7,
-      "unit_count": 48
+      "unit_count": 49
     },
     {
       "id": "staff-新舞美",
@@ -309342,14 +312012,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "企划",
         "出品"
       ],
       "work_count": 5,
-      "unit_count": 24
+      "unit_count": 25
     },
     {
       "id": "staff-竹中信広",
@@ -309380,7 +312051,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "企划",
@@ -309390,7 +312062,7 @@
         "执行制片人"
       ],
       "work_count": 5,
-      "unit_count": 25
+      "unit_count": 26
     },
     {
       "id": "staff-江上智彦",
@@ -310246,14 +312918,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "协力",
         "出品委员会"
       ],
       "work_count": 4,
-      "unit_count": 20
+      "unit_count": 21
     },
     {
       "id": "staff-高橋敦司",
@@ -310361,13 +313034,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制片人"
       ],
       "work_count": 7,
-      "unit_count": 49
+      "unit_count": 50
     },
     {
       "id": "staff-佐藤慧介",
@@ -310745,7 +313419,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制片人",
@@ -310753,7 +313428,7 @@
         "联机剪辑管理"
       ],
       "work_count": 3,
-      "unit_count": 11
+      "unit_count": 12
     },
     {
       "id": "staff-青木泰寛",
@@ -311248,7 +313923,8 @@
         "staff-transcript-anime-s1",
         "official-ending-anime-umayon-e13",
         "official-ending-anime-umayuru-prettygray-e03",
-        "production-lucas-nainemoutou-profile"
+        "production-lucas-nainemoutou-profile",
+        "official-ending-anime-s1-e09"
       ],
       "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
       "alias_ids": [
@@ -312419,13 +315095,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "系列构成"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-高橋歩",
@@ -312454,14 +315131,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "剪辑",
         "离线剪辑"
       ],
       "work_count": 4,
-      "unit_count": 20
+      "unit_count": 21
     },
     {
       "id": "staff-岩代太郎",
@@ -312487,14 +315165,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "creator_id": "creator-5e4fd345c6",
       "roles": [
         "音乐制作策划"
       ],
       "work_count": 3,
-      "unit_count": 18
+      "unit_count": 19
     },
     {
       "id": "staff-森田祐一",
@@ -312527,13 +315206,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "音响监督"
       ],
       "work_count": 5,
-      "unit_count": 23
+      "unit_count": 24
     },
     {
       "id": "staff-吉良柾成",
@@ -312698,14 +315378,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "漫画企划构成",
         "制片人"
       ],
       "work_count": 2,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-佐々木啓悟",
@@ -312844,7 +315525,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力",
@@ -312865,7 +315547,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力",
@@ -312899,7 +315582,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力"
@@ -312919,7 +315603,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力"
@@ -312954,7 +315639,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力",
@@ -312974,7 +315660,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力"
@@ -313007,7 +315694,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力"
@@ -313026,7 +315714,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力",
@@ -313063,7 +315752,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力",
@@ -313084,7 +315774,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "背景协力"
@@ -317036,7 +319727,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画",
@@ -317302,13 +319994,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "音响效果"
       ],
       "work_count": 5,
-      "unit_count": 25
+      "unit_count": 26
     },
     {
       "id": "staff-武藤雅人",
@@ -317369,13 +320062,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "音响制作负责"
       ],
       "work_count": 2,
-      "unit_count": 10
+      "unit_count": 11
     },
     {
       "id": "staff-衣谷ソーシ",
@@ -317423,7 +320117,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传",
@@ -317431,7 +320126,7 @@
         "宣传协力"
       ],
       "work_count": 3,
-      "unit_count": 11
+      "unit_count": 12
     },
     {
       "id": "staff-RegnaultTristan",
@@ -319358,14 +322053,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "录音调音",
         "声音混音"
       ],
       "work_count": 4,
-      "unit_count": 21
+      "unit_count": 22
     },
     {
       "id": "staff-關このみ",
@@ -319379,14 +322075,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "录音助理",
         "声音剪辑"
       ],
       "work_count": 3,
-      "unit_count": 8
+      "unit_count": 9
     },
     {
       "id": "staff-小室亜紗子",
@@ -319416,14 +322113,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "音响制作负责",
         "配音选角管理"
       ],
       "work_count": 5,
-      "unit_count": 24
+      "unit_count": 25
     },
     {
       "id": "staff-金丸紘平",
@@ -323091,14 +325789,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "过场动画设计",
         "过场动画与副标题设计"
       ],
       "work_count": 2,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-鑓山千代",
@@ -323150,13 +325849,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "销售推广"
       ],
       "work_count": 2,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-田中亮史",
@@ -323208,13 +325908,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "包装制作"
       ],
       "work_count": 2,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-渡邉和義",
@@ -323265,13 +325966,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品委员会"
       ],
       "work_count": 2,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-齋藤雅哉",
@@ -323544,14 +326246,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传",
         "宣传协力"
       ],
       "work_count": 2,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-小野崎風香",
@@ -324148,13 +326851,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-佐藤良樹",
@@ -324166,13 +326870,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-渡部里奈",
@@ -324184,13 +326889,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-池添敦彦",
@@ -324202,13 +326908,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-上野雄大",
@@ -324220,13 +326927,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-奥村優子",
@@ -324238,13 +326946,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-濱中裕",
@@ -324256,13 +326965,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-早川孝之",
@@ -324274,13 +326984,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-袁倍倍",
@@ -324318,7 +327029,8 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-楊恵玲"
@@ -324327,7 +327039,7 @@
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-須江信人",
@@ -324339,13 +327051,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "美术设定"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-綱頭瑛子",
@@ -324357,13 +327070,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "美术设定"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-岩澤美翠",
@@ -324375,13 +327089,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "美术设定"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-宮岡真弓",
@@ -324393,13 +327108,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "道具设计"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-入佐芽詠美",
@@ -324411,13 +327127,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "特效"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-吉原正行",
@@ -324429,13 +327146,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "分镜／动画演出"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-栗田香菜子",
@@ -324447,13 +327165,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-高野朋子",
@@ -324465,13 +327184,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传制片人"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-前川亮",
@@ -324483,13 +327203,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-小栗晋",
@@ -324501,13 +327222,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-木立己百花",
@@ -324519,13 +327241,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-原田有永",
@@ -324537,13 +327260,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-小島猛",
@@ -324555,13 +327279,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "宣传协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-奥田卓司",
@@ -324573,13 +327298,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "销售推广"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-田畑あすか",
@@ -324591,13 +327317,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "授权"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-竹田晃洋",
@@ -324609,13 +327336,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "海外授权"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-臼井優",
@@ -324627,13 +327355,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "日本上线"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-黒岩康文",
@@ -324645,13 +327374,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "合同管理"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-山本利男",
@@ -324676,13 +327406,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "网站制作"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-菅原祐介",
@@ -324694,13 +327425,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "网站制作"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-成田真大",
@@ -324712,13 +327444,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "企划协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-齋藤里枝",
@@ -324730,13 +327463,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "企划协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-土屋翔音",
@@ -324748,13 +327482,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "企划协力"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-田島美奈",
@@ -324766,13 +327501,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制作庶务"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-大田圭二",
@@ -324796,13 +327532,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品"
       ],
       "work_count": 2,
-      "unit_count": 18
+      "unit_count": 19
     },
     {
       "id": "staff-櫻井優香",
@@ -324814,14 +327551,15 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品",
         "出品委员会"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-岡田美穂",
@@ -324833,13 +327571,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-古澤佳寛",
@@ -324851,13 +327590,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "执行制片人"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-保坂拓也",
@@ -324869,13 +327609,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "音乐制片人"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-橋本真英",
@@ -324887,13 +327628,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制片主任"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-辻充仁",
@@ -324905,13 +327647,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制片人"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-関根陽一",
@@ -324935,13 +327678,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制片人"
       ],
       "work_count": 2,
-      "unit_count": 18
+      "unit_count": 19
     },
     {
       "id": "staff-尾上太基",
@@ -324953,13 +327697,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "制片人"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-黒田学",
@@ -325936,13 +328681,14 @@
         "official-ending-anime-s3-e12",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 2,
-      "unit_count": 11
+      "unit_count": 12
     },
     {
       "id": "staff-石川佳代子",
@@ -328692,13 +331438,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-翟晨妤",
@@ -328709,13 +331456,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-肖陽",
@@ -328726,13 +331474,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "建模协力"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-ms",
@@ -328741,13 +331490,14 @@
       "source_refs": [
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "分镜协力"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-石井百合子",
@@ -328756,13 +331506,14 @@
       "source_refs": [
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-奥田陽介",
@@ -328771,13 +331522,14 @@
       "source_refs": [
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-大倉佳苗",
@@ -328786,13 +331538,14 @@
       "source_refs": [
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-斉藤奈緒子",
@@ -328804,7 +331557,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-斉藤奈緖子"
@@ -328813,7 +331567,7 @@
         "授权"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-有馬里実",
@@ -328825,7 +331579,8 @@
         "official-ending-anime-s1-e01",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "alias_ids": [
         "staff-有馬里晏"
@@ -328834,7 +331589,7 @@
         "合同管理"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-山本和男",
@@ -328845,13 +331600,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "网站制作"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-大島孝幸",
@@ -328862,13 +331618,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品委员会"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-堀切八郎",
@@ -328879,13 +331636,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品委员会"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-池田篤史",
@@ -328896,13 +331654,14 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品委员会"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-糀嶋麻菜美",
@@ -328913,23 +331672,51 @@
         "official-ending-anime-s1-e06",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e07",
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "出品委员会"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 6
     },
     {
       "id": "staff-粟田涼子",
       "name": "粟田涼子",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-s1-e08"
+        "official-ending-anime-s1-e08",
+        "official-ending-anime-s1-e09"
       ],
       "roles": [
         "后期收尾"
+      ],
+      "work_count": 1,
+      "unit_count": 2
+    },
+    {
+      "id": "staff-林隆洋",
+      "name": "林隆洋",
+      "aliases": [],
+      "source_refs": [
+        "official-ending-anime-s1-e09"
+      ],
+      "roles": [
+        "第二原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-権豪哉",
+      "name": "権豪哉",
+      "aliases": [],
+      "source_refs": [
+        "official-ending-anime-s1-e09"
+      ],
+      "roles": [
+        "第二原画"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -331398,6 +334185,13 @@
       "kind": "official",
       "label": "官方单集片尾职员表",
       "url": "https://www.youtube.com/watch?v=XojBcU5L8yA",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e09",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=SPtArDJspFU",
       "observed_at": "2026-10-07"
     }
   ]
