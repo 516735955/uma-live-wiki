@@ -4909,6 +4909,14 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=SY_xWq4Zc7o"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=WgP6ZaPfC3Q"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=CZwPcfOBZQk"
         }
       ]
     },
@@ -5296,6 +5304,14 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=SY_xWq4Zc7o"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=WgP6ZaPfC3Q"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=CZwPcfOBZQk"
         }
       ]
     },
@@ -6320,10 +6336,21 @@
           "name": "池田健仁",
           "affiliation": "Cygames",
           "creator_id": "creator-14a2ce8737"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-19014"
+      "source_catalog": "LACA-19014",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=CZwPcfOBZQk"
+        }
+      ]
     },
     "song-87c8f0bb6b-v-cd8ef97db3": {
       "credits": [
@@ -8530,7 +8557,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-19014"
+      "source_catalog": "LACA-19014",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=5KJ1sXlFaHg"
+        }
+      ]
     },
     "song-228f943b49-v-0fe15a8ebf": {
       "credits": [
@@ -8554,7 +8587,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-19014"
+      "source_catalog": "LACA-19014",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=5KJ1sXlFaHg"
+        }
+      ]
     },
     "song-32ce030f79-v-32ce030f79": {
       "credits": [

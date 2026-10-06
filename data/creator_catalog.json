@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-05T11:02:08+00:00",
+  "generated_at": "2026-10-06T07:15:19+00:00",
   "coverage": {
     "creators": 281,
     "credited_works": 332,
@@ -24043,6 +24043,15 @@
           ]
         },
         {
+          "creator_id": "creator-cf49f62a1e",
+          "name": "市橋卓也",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-eb8499138b"
+          ]
+        },
+        {
           "creator_id": "creator-14a2ce8737",
           "name": "池田健仁",
           "shared_version_count": 2,
@@ -24067,15 +24076,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-1bd7539454"
-          ]
-        },
-        {
-          "creator_id": "creator-cf49f62a1e",
-          "name": "市橋卓也",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-eb8499138b"
           ]
         }
       ]
@@ -28343,11 +28343,11 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 39
+          "count": 40
         }
       ],
       "work_count": 12,
-      "version_count": 44,
+      "version_count": 45,
       "works": [
         {
           "song_id": "song-eb8499138b",
@@ -28359,6 +28359,7 @@
             "arranger"
           ],
           "version_ids": [
+            "song-eb8499138b-v-754ae481e7",
             "song-eb8499138b-v-eb8499138b"
           ],
           "versions": [
@@ -28366,6 +28367,14 @@
               "id": "song-eb8499138b-v-eb8499138b",
               "title": "光の後ろ姿",
               "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-eb8499138b-v-754ae481e7",
+              "title": "光の後ろ姿 (TV Size) [12話挿入歌]",
+              "version_label": "TV Size / 12話挿入歌",
               "roles": [
                 "arranger"
               ]
@@ -29004,7 +29013,7 @@
         {
           "creator_id": "creator-14a2ce8737",
           "name": "池田健仁",
-          "shared_version_count": 3,
+          "shared_version_count": 4,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-3223dc5541",
@@ -29030,6 +29039,15 @@
           ]
         },
         {
+          "creator_id": "creator-d06a6eed0a",
+          "name": "宮嶋淳子",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-eb8499138b"
+          ]
+        },
+        {
           "creator_id": "creator-500b86dc49",
           "name": "真崎エリカ",
           "shared_version_count": 2,
@@ -29045,15 +29063,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-o-light-o-0864ec7338"
-          ]
-        },
-        {
-          "creator_id": "creator-d06a6eed0a",
-          "name": "宮嶋淳子",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-eb8499138b"
           ]
         },
         {
@@ -38682,6 +38691,16 @@
           ]
         },
         {
+          "creator_id": "creator-cf49f62a1e",
+          "name": "市橋卓也",
+          "shared_version_count": 4,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-3223dc5541",
+            "song-eb8499138b"
+          ]
+        },
+        {
           "creator_id": "creator-eaf94340d3",
           "name": "本田晃弘",
           "shared_version_count": 4,
@@ -38689,16 +38708,6 @@
           "shared_song_ids": [
             "song-a470359a05",
             "song-aed14a1a3a"
-          ]
-        },
-        {
-          "creator_id": "creator-cf49f62a1e",
-          "name": "市橋卓也",
-          "shared_version_count": 3,
-          "shared_work_count": 2,
-          "shared_song_ids": [
-            "song-3223dc5541",
-            "song-eb8499138b"
           ]
         },
         {
@@ -53854,5 +53863,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "a635002c0662c834ab32"
+  "build_id": "a5cbed0fff7599f07943"
 }

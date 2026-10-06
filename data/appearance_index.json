@@ -45243,7 +45243,6 @@
           "session_id": "paka-live-tv-prime-006-session-1",
           "session_label": "本期节目",
           "evidence": [
-            "community_archive",
             "official_youtube"
           ]
         },
@@ -145244,7 +145243,104 @@
           "session_label": "本期节目"
         }
       ],
-      "songs": [],
+      "songs": [
+        {
+          "song_id": "song-comeback-story-v-33f3540048",
+          "name": "Comeback Story V",
+          "album_ids": [
+            "album-laca-25080"
+          ],
+          "version_ids": [
+            "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-everlasting-beats-3a805703a6",
+          "name": "Everlasting BEATS",
+          "album_ids": [
+            "album-lacm-24348",
+            "album-lacz-10175"
+          ],
+          "version_ids": [
+            "song-everlasting-beats-3a805703a6-v-3a805703a6",
+            "song-everlasting-beats-3a805703a6-v-14c914a225",
+            "song-everlasting-beats-3a805703a6-v-810f77494e"
+          ],
+          "releases": 3
+        },
+        {
+          "song_id": "song-play-again-e9dab471fd",
+          "name": "Play Again",
+          "album_ids": [
+            "album-laca-25034"
+          ],
+          "version_ids": [
+            "song-play-again-e9dab471fd-v-e9dab471fd"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "album_ids": [
+            "album-laca-25034",
+            "album-lacm-24348",
+            "album-laca-25080",
+            "album-laca-25109"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-7006bca4f7"
+          ],
+          "releases": 8
+        },
+        {
+          "song_id": "song-79f332ebdb",
+          "name": "どどっと優勝！大感謝祭！！！",
+          "album_ids": [
+            "album-laca-25109"
+          ],
+          "version_ids": [
+            "song-79f332ebdb-v-79f332ebdb"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-happy-days-01845306a9",
+          "name": "ゆるパカHAPPY DAYS！",
+          "album_ids": [
+            "album-laca-9973"
+          ],
+          "version_ids": [
+            "song-happy-days-01845306a9-v-01845306a9",
+            "song-happy-days-01845306a9-v-629ab795ae"
+          ],
+          "releases": 2
+        },
+        {
+          "song_id": "song-be4063b951",
+          "name": "トレセン体操",
+          "album_ids": [
+            "album-laca-25034"
+          ],
+          "version_ids": [
+            "song-be4063b951-v-be4063b951"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-461862b933",
+          "name": "爆熱マイソウル",
+          "album_ids": [
+            "album-lacz-10312"
+          ],
+          "version_ids": [
+            "song-461862b933-v-24bb2d9b8e"
+          ],
+          "releases": 1
+        }
+      ],
       "performed_songs": [
         {
           "song_id": "song-228f943b49",
@@ -169272,7 +169368,81 @@
           "session_label": "本期节目"
         }
       ],
-      "songs": [],
+      "songs": [
+        {
+          "song_id": "song-mile-rule-star-a762de1504",
+          "name": "Mile×Rule Star",
+          "album_ids": [
+            "album-laca-25156"
+          ],
+          "version_ids": [
+            "song-mile-rule-star-a762de1504-v-a762de1504"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-starting-force-c0c6c398c4",
+          "name": "STARTING FORCE",
+          "album_ids": [
+            "album-laca-35146",
+            "album-lacz-10288"
+          ],
+          "version_ids": [
+            "song-starting-force-c0c6c398c4-v-c0c6c398c4",
+            "song-starting-force-c0c6c398c4-v-e1b18171d9",
+            "song-starting-force-c0c6c398c4-v-f4e3a825e2"
+          ],
+          "releases": 3
+        },
+        {
+          "song_id": "song-shake-the-world-6a204b97d3",
+          "name": "Shake The World!!",
+          "album_ids": [
+            "album-laca-25156"
+          ],
+          "version_ids": [
+            "song-shake-the-world-6a204b97d3-v-6a204b97d3"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "album_ids": [
+            "album-laca-35146",
+            "album-laca-25156",
+            "album-laca-25163"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-7006bca4f7"
+          ],
+          "releases": 6
+        },
+        {
+          "song_id": "song-87be3723c2",
+          "name": "本能スピード",
+          "album_ids": [
+            "album-lacz-10368",
+            "album-lacz-10370"
+          ],
+          "version_ids": [
+            "song-87be3723c2-v-a80b14df99"
+          ],
+          "releases": 2
+        },
+        {
+          "song_id": "song-41a5f3cfb9",
+          "name": "黎明に咲く華",
+          "album_ids": [
+            "album-laca-25163"
+          ],
+          "version_ids": [
+            "song-41a5f3cfb9-v-41a5f3cfb9"
+          ],
+          "releases": 1
+        }
+      ],
       "performed_songs": [
         {
           "song_id": "song-228f943b49",
@@ -174713,6 +174883,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-05T11:02:08+00:00",
-  "build_id": "a635002c0662c834ab32"
+  "generated_at": "2026-10-06T07:15:19+00:00",
+  "build_id": "a5cbed0fff7599f07943"
 }

@@ -188,7 +188,9 @@ def main():
                 if signature["title"] != usage["title"]:
                     continue
                 roles = {"作詞": ("lyricist",), "作曲": ("composer",), "編曲": ("arranger",),
-                         "作曲・編曲": ("composer", "arranger")}.get(signature["role"], ())
+                         "作曲・編曲": ("composer", "arranger"),
+                         "作詞・作曲・編曲": ("lyricist", "composer", "arranger"),
+                         "ストリングスアレンジ": ("arranger",)}.get(signature["role"], ())
                 if not roles:
                     continue
                 for name in signature["names"]:
