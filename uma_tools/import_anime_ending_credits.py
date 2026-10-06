@@ -62,7 +62,19 @@ def main():
             common = {key: block[key] for key in ("role", "time", "group", "institutions") if key in block}
             signatures.extend({**common, "organization": name} for name in block.get("organizations", []))
             signatures.extend({**common, "name": name} for name in block.get("names", []))
+        affiliations = {}
+        for signature in signatures:
+            if signature.get("name") and signature.get("institutions"):
+                key = (normalized(signature["name"]), role_label(signature["role"]), group_label(signature.get("group", "")))
+                affiliations.setdefault(key, {})[tuple(signature["institutions"])] = signature
         for order, signature in enumerate(signatures):
+            # Repeated opening and ending credits retain the explicit affiliation for this unit and role.
+            if signature.get("name") and not signature.get("institutions"):
+                key = (normalized(signature["name"]), role_label(signature["role"]), group_label(signature.get("group", "")))
+                declared = affiliations.get(key, {})
+                if len(declared) == 1:
+                    signature = {**signature, **{key: value for key, value in next(iter(declared.values())).items()
+                                                if key in ("institutions", "time")}}
             row = {"work_id": work, "unit_id": unit, "source_ref": ref, "order": order,
                    "role": signature["role"], "group": signature.get("group", ""),
                    "name": signature.get("name", signature.get("organization")),
@@ -99,7 +111,12 @@ def main():
                 existing = matches[0]
                 row["evidence_refs"] = list(dict.fromkeys([ref, *[source for c in matches for source in
                     [c.get("source_ref"), *c.get("evidence_refs", [])] if source]]))
+                if row["evidence_refs"] == [ref] and not any(c.get("evidence_refs") for c in matches):
+                    row.pop("evidence_refs")
                 existing.update(row)
+                for key in ("organization", "person_id"):
+                    if key not in row:
+                        existing.pop(key, None)
                 if "institutions" not in row:
                     existing.pop("institutions", None)
                 duplicate_ids = {id(c) for c in matches[1:]}
