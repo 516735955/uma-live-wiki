@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-06T07:15:19+00:00",
+  "generated_at": "2026-10-06T19:28:45+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -169193,12 +169193,14 @@
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-4f0b2872a5"
+              "creator_id": "creator-4f0b2872a5",
+              "institution": "Arte Refact"
             },
             {
               "role": "arranger",
               "role_label": "编曲",
-              "creator_id": "creator-89616fb5dd"
+              "creator_id": "creator-89616fb5dd",
+              "institution": "Arte Refact"
             }
           ],
           "creator_ids": [
@@ -247952,5 +247954,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "a5cbed0fff7599f07943"
+  "build_id": "207efcb0e555822b3a7f"
 }

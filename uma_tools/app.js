@@ -594,8 +594,15 @@ const umaApp = createApp({
     }
     const animeLeadRoles = ['导演', '副导演', '助理导演', '系列构成', '脚本', '分镜', '动画演出', '角色设计', '总作画监督', '作画监督'];
     function animeStaffRoleRank(role) {
-      const index = animeLeadRoles.findIndex(name => role.includes(name));
+      const roles = role.split('／');
+      const index = animeLeadRoles.findIndex(name => roles.includes(name));
       return index < 0 ? animeLeadRoles.length : index;
+    }
+    function animeStaffSectionRank(group) {
+      if (!group) return 0;
+      if (group === '片头动画') return 1;
+      if (group === '片尾动画') return 2;
+      return 3;
     }
     function animeStaffMatches(entry, query) {
       return !query || [entry.role,entry.group,staffName(entry),entry.organization,...(entry.institutions || [])]
@@ -610,7 +617,9 @@ const umaApp = createApp({
         if (!group) { group = {key,role:entry.role,group:entry.group || '',credits:[]}; groups.push(group); }
         group.credits.push(entry);
       });
-      return groups.map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.credits)}));
+      return groups.sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
+        || animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
+        .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.credits)}));
     });
     const animeStaffAggregate = computed(() => {
       if (!animeDetail.value || animeUnitDetail.value || animeSingle.value) return [];
@@ -628,10 +637,11 @@ const umaApp = createApp({
       const groups = new Map();
       animeStaffAggregate.value.forEach(row => {
         const role = [row.entry.group,row.entry.role].filter(Boolean).join(' · ');
-        if (!groups.has(role)) groups.set(role,{key:role,role,rows:[]});
+        if (!groups.has(role)) groups.set(role,{key:role,role,group:row.entry.group || '',rows:[]});
         groups.get(role).rows.push(row);
       });
-      return Array.from(groups.values()).sort((a,b) => animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
+      return Array.from(groups.values()).sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
+        || animeStaffRoleRank(a.rows[0].entry.role)-animeStaffRoleRank(b.rows[0].entry.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.rows,row=>row.entry)}));
     });
     function animeStaffGroupOpen(group, aggregate = false) {

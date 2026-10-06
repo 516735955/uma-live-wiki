@@ -48,6 +48,7 @@ def main():
             latin_names.setdefault(key, {})[person["id"]] = person
     added = 0
     superseded_cast = 0
+    superseded_staff = 0
     for episode in documents["ending_credits"]["episodes"]:
         work = episode["work_id"]
         unit = f"{work}-e{episode['number']:02d}"
@@ -124,6 +125,15 @@ def main():
             else:
                 credits.append(row)
                 added += 1
+        if episode.get("staff_status") == "complete":
+            # A checked full credit roll supersedes unmatched partial transcriptions.
+            obsolete = [c for c in credits if c.get("unit_id") == unit
+                        and c.get("source_ref", "").startswith("staff-transcript-")]
+            if obsolete:
+                episode.setdefault("superseded_transcript", []).extend(obsolete)
+            superseded_staff += len(obsolete)
+            obsolete_rows = {id(c) for c in obsolete}
+            credits[:] = [c for c in credits if id(c) not in obsolete_rows]
         checked_cast = set()
         for order, (signature, actor) in enumerate(episode["cast"]):
             if excluded_signature(signature):
@@ -205,6 +215,7 @@ def main():
                 if signature["title"] != usage["title"]:
                     continue
                 roles = {"作詞": ("lyricist",), "作曲": ("composer",), "編曲": ("arranger",),
+                         "作詞・作曲": ("lyricist", "composer"),
                          "作曲・編曲": ("composer", "arranger"),
                          "作詞・作曲・編曲": ("lyricist", "composer", "arranger"),
                          "ストリングスアレンジ": ("arranger",)}.get(signature["role"], ())
@@ -228,9 +239,10 @@ def main():
             if source not in music.setdefault("supplemental_sources", []):
                 music["supplemental_sources"].append(source)
     print("New individually checked ending credits:", added)
+    print("Superseded partial staff observations:", superseded_staff)
     print("Superseded cast relations:", superseded_cast)
     if args.write:
-        for name in ("people", "staff", "units", "relations", "source_registry"):
+        for name in ("ending_credits", "people", "staff", "units", "relations", "source_registry"):
             atomic_json(DATA / (name + ".json"), documents[name])
         atomic_json(ROOT / "data/music/creators.json", creator_doc)
         atomic_json(ROOT / "data/music/credits.json", music_doc)

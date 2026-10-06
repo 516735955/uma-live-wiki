@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-1b2553c4be24a957",
-  "generated_at": "2026-10-06T00:00:00+08:00",
+  "build_id": "anime-00e1f1f9bbe27506",
+  "generated_at": "2026-10-07T00:00:00+08:00",
   "targets": {
     "event": {
       "live-other-2024-05-06-title-7caa082310e6": [
@@ -14475,17 +14475,6 @@
           "source_type": "anime_unit",
           "source_id": "anime-s2-e11",
           "work_id": "anime-s2"
-        },
-        {
-          "relation_id": "anime-s1-e06-broadcast-cast-15",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ナリタブライアン",
-          "voice_actor_id": "va-0123",
-          "source_type": "anime_unit",
-          "source_id": "anime-s1-e06",
-          "work_id": "anime-s1"
         },
         {
           "relation_id": "anime-s1-e09-broadcast-cast-16",
@@ -29576,18 +29565,31 @@
           "work_id": "anime-umayon"
         }
       ],
-      "va-0123": [
+      "va-0154": [
         {
-          "relation_id": "anime-s1-e06-broadcast-cast-15",
+          "relation_id": "anime-s1-e06-broadcast-cast-19",
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "ナリタブライアン",
-          "voice_actor_id": "va-0123",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
           "source_type": "anime_unit",
           "source_id": "anime-s1-e06",
           "work_id": "anime-s1"
         },
+        {
+          "relation_id": "anime-umayon-e11-broadcast-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e11",
+          "work_id": "anime-umayon"
+        }
+      ],
+      "va-0123": [
         {
           "relation_id": "anime-s1-e09-broadcast-cast-16",
           "relation_type": "credited_cast",
@@ -29631,30 +29633,6 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e13",
           "work_id": "anime-s1"
-        }
-      ],
-      "va-0154": [
-        {
-          "relation_id": "anime-s1-e06-broadcast-cast-19",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "エイシンフラッシュ",
-          "voice_actor_id": "va-0154",
-          "source_type": "anime_unit",
-          "source_id": "anime-s1-e06",
-          "work_id": "anime-s1"
-        },
-        {
-          "relation_id": "anime-umayon-e11-broadcast-cast-00",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "エイシンフラッシュ",
-          "voice_actor_id": "va-0154",
-          "source_type": "anime_unit",
-          "source_id": "anime-umayon-e11",
-          "work_id": "anime-umayon"
         }
       ],
       "va-0137": [

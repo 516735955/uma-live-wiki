@@ -207,7 +207,8 @@
           "source_refs": [
             "official-story-anime-s1-e04",
             "staff-transcript-anime-s1",
-            "official-s1-broadcast"
+            "official-s1-broadcast",
+            "official-ending-anime-s1-e04"
           ],
           "stills": [
             {
@@ -216,7 +217,7 @@
               "source_ref": "official-story-anime-s1-e04"
             }
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "TOKYO MX・BS11放送",
@@ -228,13 +229,13 @@
           "summary_zh": "特别周以日本德比为目标，在 Spica 伙伴的协助下开始训练。为了提高获胜的把握，训练员也着手为她做准备。",
           "music_cues": [
             {
-              "title": "ウマ娘 ファンファーレ I GI",
+              "title": "ウマ娘 ファンファーレ I GII",
               "usage_type": "fanfare",
               "credits": [
                 {
                   "role": "作曲／编曲",
                   "names": [
-                    "高田龙一"
+                    "高田龍一"
                   ],
                   "institutions": [
                     "MONACA"
@@ -246,8 +247,9 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
-              ]
+                "official-ending-anime-s1-e04"
+              ],
+              "source_time": 1420.5
             }
           ]
         },
@@ -305,7 +307,8 @@
           "source_refs": [
             "official-story-anime-s1-e06",
             "staff-transcript-anime-s1",
-            "official-s1-broadcast"
+            "official-s1-broadcast",
+            "official-ending-anime-s1-e06"
           ],
           "stills": [
             {
@@ -314,7 +317,7 @@
               "source_ref": "official-story-anime-s1-e06"
             }
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "TOKYO MX・BS11放送",
@@ -344,7 +347,8 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
+                "moegirl-tv-episode-music",
+                "official-ending-anime-s1-e06"
               ]
             }
           ]
