@@ -10190,7 +10190,8 @@
       "label": "片头曲",
       "usage_type": "op",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s3-e07"
       ],
       "display_order": 10
     },
@@ -10207,7 +10208,8 @@
       "label": "片头曲",
       "usage_type": "op",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s3-e08"
       ],
       "display_order": 10
     },
@@ -10346,7 +10348,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s3-e07"
       ],
       "display_order": 20
     },
@@ -10363,7 +10366,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s3-e08"
       ],
       "display_order": 20
     },
@@ -18539,9 +18543,9 @@
       "target_type": "character",
       "target_id": "hayakawatazuna",
       "voice_actor_id": "va-0151",
-      "signature": "駿川 たづな",
+      "signature": "駿川たづな",
       "label": "",
-      "display_order": 22,
+      "display_order": 13,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e01",
         "official-ending-anime-s3-e01"
@@ -19060,21 +19064,6 @@
       ]
     },
     {
-      "id": "anime-s3-e04-broadcast-cast-02",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e04",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "silencesuzuka",
-      "voice_actor_id": "va-0184",
-      "signature": "サイレンススズカ",
-      "label": "",
-      "display_order": 2,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e04"
-      ]
-    },
-    {
       "id": "anime-s3-e04-broadcast-cast-03",
       "source_type": "anime_unit",
       "source_id": "anime-s3-e04",
@@ -19084,7 +19073,7 @@
       "voice_actor_id": "va-0105",
       "signature": "トレーナー",
       "label": "",
-      "display_order": 3,
+      "display_order": 2,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19100,7 +19089,7 @@
       "voice_actor_id": "va-0003",
       "signature": "トウカイテイオー",
       "label": "",
-      "display_order": 4,
+      "display_order": 3,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19116,7 +19105,7 @@
       "voice_actor_id": "va-0034",
       "signature": "ナイスネイチャ",
       "label": "",
-      "display_order": 5,
+      "display_order": 4,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19132,7 +19121,7 @@
       "voice_actor_id": "va-0164",
       "signature": "サトノクラウン",
       "label": "",
-      "display_order": 6,
+      "display_order": 5,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19148,7 +19137,7 @@
       "voice_actor_id": "va-0169",
       "signature": "ミホノブルボン",
       "label": "",
-      "display_order": 7,
+      "display_order": 6,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19164,7 +19153,7 @@
       "voice_actor_id": "va-0129",
       "signature": "ライスシャワー",
       "label": "",
-      "display_order": 8,
+      "display_order": 7,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19180,7 +19169,7 @@
       "voice_actor_id": "va-0173",
       "signature": "エアグルーヴ",
       "label": "",
-      "display_order": 9,
+      "display_order": 8,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19196,7 +19185,7 @@
       "voice_actor_id": "va-0065",
       "signature": "ダイタクヘリオス",
       "label": "",
-      "display_order": 10,
+      "display_order": 9,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19212,7 +19201,7 @@
       "voice_actor_id": "va-0004",
       "signature": "メジロパーマー",
       "label": "",
-      "display_order": 11,
+      "display_order": 10,
       "evidence_refs": [
         "broadcast-cast-anime-s3-e04",
         "official-ending-anime-s3-e04"
@@ -19726,7 +19715,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19741,7 +19731,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19756,7 +19747,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19771,7 +19763,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19786,7 +19779,8 @@
       "label": "",
       "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19801,7 +19795,8 @@
       "label": "",
       "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19816,7 +19811,8 @@
       "label": "",
       "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19831,7 +19827,8 @@
       "label": "",
       "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19846,7 +19843,8 @@
       "label": "",
       "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19861,7 +19859,8 @@
       "label": "",
       "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19876,7 +19875,8 @@
       "label": "",
       "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19891,7 +19891,8 @@
       "label": "",
       "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19906,7 +19907,8 @@
       "label": "",
       "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19921,7 +19923,8 @@
       "label": "",
       "display_order": 13,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19936,7 +19939,8 @@
       "label": "",
       "display_order": 14,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19951,7 +19955,8 @@
       "label": "",
       "display_order": 15,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19966,7 +19971,8 @@
       "label": "",
       "display_order": 16,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19981,7 +19987,8 @@
       "label": "",
       "display_order": 17,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -19996,7 +20003,8 @@
       "label": "",
       "display_order": 18,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e07"
+        "broadcast-cast-anime-s3-e07",
+        "official-ending-anime-s3-e07"
       ]
     },
     {
@@ -20011,7 +20019,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
+        "broadcast-cast-anime-s3-e08",
+        "official-ending-anime-s3-e08"
       ]
     },
     {
@@ -20026,7 +20035,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
+        "broadcast-cast-anime-s3-e08",
+        "official-ending-anime-s3-e08"
       ]
     },
     {
@@ -20041,82 +20051,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
-      ]
-    },
-    {
-      "id": "anime-s3-e08-broadcast-cast-03",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "nicenature",
-      "voice_actor_id": "va-0034",
-      "signature": "ナイスネイチャ",
-      "label": "",
-      "display_order": 3,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
-      ]
-    },
-    {
-      "id": "anime-s3-e08-broadcast-cast-04",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "duramente",
-      "voice_actor_id": "va-0135",
-      "signature": "ドゥラメンテ",
-      "label": "",
-      "display_order": 4,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
-      ]
-    },
-    {
-      "id": "anime-s3-e08-broadcast-cast-05",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "chevalgrand",
-      "voice_actor_id": "va-0047",
-      "signature": "シュヴァルグラン",
-      "label": "",
-      "display_order": 5,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
-      ]
-    },
-    {
-      "id": "anime-s3-e08-broadcast-cast-06",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "verxina",
-      "voice_actor_id": "va-0056",
-      "signature": "ヴィルシーナ",
-      "label": "",
-      "display_order": 6,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
-      ]
-    },
-    {
-      "id": "anime-s3-e08-broadcast-cast-07",
-      "source_type": "anime_unit",
-      "source_id": "anime-s3-e08",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "matikanefukukitaru",
-      "voice_actor_id": "va-0078",
-      "signature": "マチカネフクキタル",
-      "label": "",
-      "display_order": 7,
-      "evidence_refs": [
-        "broadcast-cast-anime-s3-e08"
+        "broadcast-cast-anime-s3-e08",
+        "official-ending-anime-s3-e08"
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-3ce7f435dbe27475",
+  "build_id": "anime-c9e7a249241b555c",
   "generated_at": "2026-10-06T00:00:00+08:00",
   "targets": {
     "event": {
@@ -6471,17 +6471,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-07",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "マチカネフクキタル",
-          "voice_actor_id": "va-0078",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-umayon-e09-broadcast-cast-05",
           "relation_type": "credited_cast",
           "label": "",
@@ -7081,7 +7070,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e01",
@@ -7395,17 +7384,6 @@
           "voice_actor_id": "va-0184",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e03",
-          "work_id": "anime-s3"
-        },
-        {
-          "relation_id": "anime-s3-e04-broadcast-cast-02",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "サイレンススズカ",
-          "voice_actor_id": "va-0184",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e04",
           "work_id": "anime-s3"
         },
         {
@@ -10125,17 +10103,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-03",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ナイスネイチャ",
-          "voice_actor_id": "va-0034",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-s3-e09-broadcast-cast-09",
           "relation_type": "credited_cast",
           "label": "",
@@ -10891,17 +10858,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-05",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "シュヴァルグラン",
-          "voice_actor_id": "va-0047",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-s3-e09-broadcast-cast-11",
           "relation_type": "credited_cast",
           "label": "",
@@ -11038,17 +10994,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-04",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ドゥラメンテ",
-          "voice_actor_id": "va-0135",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-s3-e10-broadcast-cast-14",
           "relation_type": "credited_cast",
           "label": "",
@@ -11103,17 +11048,6 @@
           "voice_actor_id": "va-0056",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e07",
-          "work_id": "anime-s3"
-        },
-        {
-          "relation_id": "anime-s3-e08-broadcast-cast-06",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ヴィルシーナ",
-          "voice_actor_id": "va-0056",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
           "work_id": "anime-s3"
         },
         {
@@ -20306,7 +20240,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e01",
@@ -21557,17 +21491,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-07",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "マチカネフクキタル",
-          "voice_actor_id": "va-0078",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-umayon-e09-broadcast-cast-05",
           "relation_type": "credited_cast",
           "label": "",
@@ -22325,17 +22248,6 @@
           "voice_actor_id": "va-0184",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e03",
-          "work_id": "anime-s3"
-        },
-        {
-          "relation_id": "anime-s3-e04-broadcast-cast-02",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "サイレンススズカ",
-          "voice_actor_id": "va-0184",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e04",
           "work_id": "anime-s3"
         },
         {
@@ -25077,17 +24989,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-03",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ナイスネイチャ",
-          "voice_actor_id": "va-0034",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-s3-e09-broadcast-cast-09",
           "relation_type": "credited_cast",
           "label": "",
@@ -25843,17 +25744,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-05",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "シュヴァルグラン",
-          "voice_actor_id": "va-0047",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-s3-e09-broadcast-cast-11",
           "relation_type": "credited_cast",
           "label": "",
@@ -25990,17 +25880,6 @@
           "work_id": "anime-s3"
         },
         {
-          "relation_id": "anime-s3-e08-broadcast-cast-04",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ドゥラメンテ",
-          "voice_actor_id": "va-0135",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
-          "work_id": "anime-s3"
-        },
-        {
           "relation_id": "anime-s3-e10-broadcast-cast-14",
           "relation_type": "credited_cast",
           "label": "",
@@ -26055,17 +25934,6 @@
           "voice_actor_id": "va-0056",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e07",
-          "work_id": "anime-s3"
-        },
-        {
-          "relation_id": "anime-s3-e08-broadcast-cast-06",
-          "relation_type": "credited_cast",
-          "label": "",
-          "usage_type": "",
-          "signature": "ヴィルシーナ",
-          "voice_actor_id": "va-0056",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e08",
           "work_id": "anime-s3"
         },
         {

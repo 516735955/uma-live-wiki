@@ -47,6 +47,7 @@ def main():
             key = name.casefold().replace("-", "")
             latin_names.setdefault(key, {})[person["id"]] = person
     added = 0
+    superseded_cast = 0
     for episode in documents["ending_credits"]["episodes"]:
         work = episode["work_id"]
         unit = f"{work}-e{episode['number']:02d}"
@@ -90,8 +91,9 @@ def main():
                 row["person_id"] = person["id"]
                 if signature.get("institutions"):
                     row["institutions"] = signature["institutions"]
+            checked_roles = set(role_label(row["role"]).split("／"))
             matches = [c for c in credits if c.get("unit_id") == unit and
-                       role_label(c["role"]) == role_label(row["role"]) and normalized(c["name"]) == normalized(row["name"]) and
+                       set(role_label(c["role"]).split("／")) <= checked_roles and normalized(c["name"]) == normalized(row["name"]) and
                        group_label(c.get("group", "")) == group_label(row["group"])]
             if matches:
                 existing = matches[0]
@@ -105,6 +107,7 @@ def main():
             else:
                 credits.append(row)
                 added += 1
+        checked_cast = set()
         for order, (signature, actor) in enumerate(episode["cast"]):
             if excluded_signature(signature):
                 continue
@@ -115,10 +118,12 @@ def main():
                 character = None if narrator else character_names[normalized(signature)]
             voice = voice_names[normalized(actor)]
             target = character["id"] if character else voice["id"]
+            checked_cast.add((target, voice["id"]))
             existing = next((r for r in relations if r["source_id"] == unit and r.get("relation_type") == "credited_cast"
                              and r.get("target_id") == target and r.get("voice_actor_id") == voice["id"]), None)
             if existing:
                 existing["evidence_refs"] = list(dict.fromkeys([*existing.get("evidence_refs", []), ref]))
+                existing.update(signature=signature, display_order=order)
             else:
                 relations.append({"id": f"{unit}-official-ending-cast-{order:02d}", "source_type": "anime_unit", "source_id": unit,
                                   "relation_type": "credited_cast", "target_type": "character" if character else "voice_actor", "target_id": target,
@@ -126,6 +131,13 @@ def main():
                                   "label": "", "evidence_refs": [ref]})
                 if narrator:
                     relations[-1].update(label="旁白", role_name="旁白")
+        if episode.get("cast_status") == "complete":
+            obsolete = [r for r in relations if r["source_id"] == unit and
+                        r.get("relation_type") == "credited_cast" and
+                        (r.get("target_id"), r.get("voice_actor_id")) not in checked_cast]
+            superseded_cast += len(obsolete)
+            obsolete_ids = {r["id"] for r in obsolete}
+            relations[:] = [r for r in relations if r["id"] not in obsolete_ids]
         series = next(s for s in documents["units"]["series"] if s["work_id"] == work)
         detail = series.setdefault("details", {}).setdefault(str(episode["number"]), {})
         detail["staff_status"] = episode["staff_status"]
@@ -197,6 +209,7 @@ def main():
             if source not in music.setdefault("supplemental_sources", []):
                 music["supplemental_sources"].append(source)
     print("New individually checked ending credits:", added)
+    print("Superseded cast relations:", superseded_cast)
     if args.write:
         for name in ("people", "staff", "units", "relations", "source_registry"):
             atomic_json(DATA / (name + ".json"), documents[name])

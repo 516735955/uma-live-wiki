@@ -22,6 +22,9 @@ def main():
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
     snapshot = json.loads((DATA / "episode_cast.json").read_text(encoding="utf-8"))
+    endings = json.loads((DATA / "ending_credits.json").read_text(encoding="utf-8"))
+    checked_units = {f"{e['work_id']}-e{e['number']:02d}" for e in endings["episodes"]
+                     if e.get("cast_status") == "complete"}
     characters = json.loads((ROOT / "data/character_index_data.js").read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
     voice_document = json.loads((ROOT / "data/voice_actor_profiles.json").read_text(encoding="utf-8"))
     voices = voice_document["voice_actors"]
@@ -41,6 +44,8 @@ def main():
     unresolved = {}
     for episode in snapshot["episodes"]:
         unit = f"{episode['work']}-e{episode['number']:02d}"
+        if unit in checked_units:
+            continue
         source_id = "broadcast-cast-" + unit
         if not episode["cast"]:
             raise ValueError("empty episode transcription: " + unit)
