@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-56e421387f10bae3",
+  "build_id": "anime-3ce7f435dbe27475",
   "generated_at": "2026-10-06T00:00:00+08:00",
   "targets": {
     "event": {
@@ -32045,17 +32045,6 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-s3-e05",
-          "work_id": "anime-s3"
-        },
-        {
-          "relation_id": "anime-s3-e06-music-song-a6384dba1c-v-6d52bbecd2-op",
-          "relation_type": "uses_song",
-          "label": "片头曲",
-          "usage_type": "op",
-          "signature": "",
-          "voice_actor_id": "",
-          "source_type": "anime_unit",
-          "source_id": "anime-s3-e06",
           "work_id": "anime-s3"
         },
         {

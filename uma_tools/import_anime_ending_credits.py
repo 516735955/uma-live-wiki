@@ -175,8 +175,9 @@ def main():
             for signature in episode.get("music_signatures", []):
                 if signature["title"] != usage["title"]:
                     continue
-                role = {"作詞": "lyricist", "作曲": "composer", "編曲": "arranger"}.get(signature["role"])
-                if not role:
+                roles = {"作詞": ("lyricist",), "作曲": ("composer",), "編曲": ("arranger",),
+                         "作曲・編曲": ("composer", "arranger")}.get(signature["role"], ())
+                if not roles:
                     continue
                 for name in signature["names"]:
                     key = normalized(name)
@@ -185,12 +186,13 @@ def main():
                         creator_id = stable_creator_id(name)
                         creators.append({"id": creator_id, "name": name, "aliases": [], "type": "person", "affiliations": []})
                         creator_names[key] = creator_id
-                    credit = next((c for c in music["credits"] if c["role"] == role and normalized(c["name"]) == key), None)
-                    if credit is None:
-                        credit = {"role": role, "name": name, "creator_id": creator_id}
-                        music["credits"].append(credit)
-                    if signature.get("institutions"):
-                        credit["affiliation"] = signature["institutions"][0]
+                    for role in roles:
+                        credit = next((c for c in music["credits"] if c["role"] == role and normalized(c["name"]) == key), None)
+                        if credit is None:
+                            credit = {"role": role, "name": name, "creator_id": creator_id}
+                            music["credits"].append(credit)
+                        if signature.get("institutions"):
+                            credit["affiliation"] = signature["institutions"][0]
             source = {"source": "official_ending", "source_url": episode["url"]}
             if source not in music.setdefault("supplemental_sources", []):
                 music["supplemental_sources"].append(source)
