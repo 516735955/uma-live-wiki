@@ -15,6 +15,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 <script defer src="/uma_tools/ui-components.js"></script>
 <script defer src="/uma_tools/creator-network.js"></script>
 <script defer src="/uma_tools/player-controller.js"></script>
+<script defer src="/uma_tools/anime-staff.js"></script>
 <script defer src="/uma_tools/app.js"></script>
 <link rel="stylesheet" href="/uma_tools/anime.css">
 <link rel="stylesheet" href="/uma_tools/image-viewer.css">
@@ -757,11 +758,24 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <template v-if="animeCastHorses.length"><header class="entity-section-title"><h2>角色原型马</h2></header><div class="anime-related-list"><a v-for="row in animeCastHorses" :key="row.horse.id" :href="routes.horses(row.horse.id)" @click="animeLink($event,routes.horses(row.horse.id))"><span>{{ characterName(row.characterId) }}</span><b>{{ row.horse.zh || row.horse.en }}</b><em><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></em></a></div></template>
                     </section>
                     <section v-if="animeSection==='staff'" class="entity-section">
-                        <header class="entity-section-title"><h2>制作人员</h2><button v-if="animeStaffGroups.some(group=>group.collapsible) || animeStaffAggregateGroups.some(group=>group.collapsible)" class="text-link" @click="animeStaffExpanded=!animeStaffExpanded">{{ animeStaffExpanded?'收起长名单':'展开全部' }}</button></header>
-<label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeStaffQuery" placeholder="查找姓名或职务" @input="setAnimeSection('staff')"></label>
-                        <div v-if="animeStaffGroups.length" class="anime-credit-ledger"><template v-for="group in animeStaffGroups" :key="group.key"><details v-if="group.collapsible" class="anime-staff-disclosure" :open="animeStaffExpanded || !!animeStaffQuery"><summary>{{ group.group ? group.group+' · ' : '' }}{{ group.role }}<span>{{ group.credits.length }}</span></summary><staff-credit-list :credits="group.credits"></staff-credit-list></details><div v-else class="anime-credit-row"><div class="anime-credit-role">{{ group.group ? group.group+' · ' : '' }}{{ group.role }}</div><staff-credit-list :credits="group.credits"></staff-credit-list></div></template></div>
+                        <header class="entity-section-title"><h2>制作人员</h2><button v-if="animeStaffGroups.length || animeStaffAggregateGroups.length" type="button" class="text-link" @click="toggleAnimeStaffAll">{{ animeStaffAllOpen?'收起全部':'展开全部' }}</button></header>
+                        <label class="ui-search anime-staff-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeStaffQuery" placeholder="查找姓名、职务或机构" @input="setAnimeSection('staff')"><button v-if="animeStaffQuery" type="button" @click.prevent="animeStaffQuery='';setAnimeSection('staff')" aria-label="清空搜索">×</button></label>
+                        <div v-if="animeStaffGroups.length" class="anime-credit-ledger ui-disclosure-list">
+                            <ui-disclosure v-for="group in animeStaffGroups" :key="group.key" class="anime-staff-disclosure" :open="animeStaffGroupOpen(group)" @toggle="toggleAnimeStaffGroup(group)">
+                                <template #title><b>{{ group.group ? group.group+' · ' : '' }}{{ group.role }}</b></template><template #meta>{{ group.count }}</template>
+                                <staff-credit-list :credits="group.credits"></staff-credit-list>
+                            </ui-disclosure>
+                        </div>
                         <div v-else-if="animeStaffQuery && !animeStaffAggregate.length" class="ui-state compact">没有符合条件的制作人员</div>
-                        <template v-if="!animeUnitDetail && animeStaffAggregate.length"><header class="entity-section-title"><h2>剧集制作</h2></header><component v-for="group in animeStaffAggregateGroups" :key="group.role" :is="group.collapsible ? 'details' : 'div'" class="anime-staff-disclosure" :open="group.collapsible && (animeStaffExpanded || !!animeStaffQuery)"><summary v-if="group.collapsible">{{ group.role }}<span>{{ group.rows.length }}</span></summary><h3 v-else class="anime-credit-role">{{ group.role }}</h3><div class="anime-staff-participation"><div v-for="row in group.rows" :key="row.key"><component :is="staffHref(row.entry) ? 'a' : 'span'" :class="staffHref(row.entry) ? 'text-link' : 'credit-role-tag'" :href="staffHref(row.entry) || undefined" @click="animeLink($event,staffHref(row.entry))">{{ staffName(row.entry) }}</component><div class="role-tag-row"><em v-for="institution in row.entry.institutions || []" :key="institution" class="credit-role-tag">{{ institution }}</em><a v-for="unit in row.units" :key="unit.id" class="credit-role-tag episode-tag" :href="routes.query(routes.anime(animeDetail.id,unit.id),{section:'staff'})" @click="animeLink($event,$event.currentTarget.href)">{{ unit.label }}</a></div></div></div></component></template>
+                        <template v-if="!animeUnitDetail && animeStaffAggregate.length">
+                            <header class="entity-section-title"><h2>剧集制作</h2></header>
+                            <div class="anime-credit-ledger ui-disclosure-list">
+                                <ui-disclosure v-for="group in animeStaffAggregateGroups" :key="group.key" class="anime-staff-disclosure" :open="animeStaffGroupOpen(group,true)" @toggle="toggleAnimeStaffGroup(group,true)">
+                                    <template #title><b>{{ group.role }}</b></template><template #meta>{{ group.count }}</template>
+                                    <staff-credit-list :credits="group.rows" participation></staff-credit-list>
+                                </ui-disclosure>
+                            </div>
+                        </template>
                     </section>
                 </div>
             </article>

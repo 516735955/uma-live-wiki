@@ -162,7 +162,7 @@ const umaApp = createApp({
     const animeSection = ref('episodes');
     const animeEdition = ref('film');
     const animeStillUnit = ref('');
-    const animeStaffExpanded = ref(false);
+    const animeStaffOpen = reactive({});
     const staffQuery = ref('');
     const staffPage = ref(1);
     const staffDetail = ref(null);
@@ -597,19 +597,20 @@ const umaApp = createApp({
       const index = animeLeadRoles.findIndex(name => role.includes(name));
       return index < 0 ? animeLeadRoles.length : index;
     }
-    function animeStaffCollapsible(role, count) {
-      return count > 6;
+    function animeStaffMatches(entry, query) {
+      return !query || [entry.role,entry.group,staffName(entry),entry.organization,...(entry.institutions || [])]
+        .some(value => String(value || '').toLowerCase().includes(query));
     }
     const animeStaffGroups = computed(() => {
       const q = animeStaffQuery.value.trim().toLowerCase(), groups = [];
       animeCurrentStaff.value.forEach(entry => {
-        if (q && ![entry.role,entry.group,staffName(entry)].some(value => String(value || '').toLowerCase().includes(q))) return;
+        if (!animeStaffMatches(entry,q)) return;
         const key = (entry.group || '') + ':' + entry.role;
         let group = groups.find(row => row.key === key);
         if (!group) { group = {key,role:entry.role,group:entry.group || '',credits:[]}; groups.push(group); }
         group.credits.push(entry);
       });
-      return groups.map(group => ({...group,collapsible:animeStaffCollapsible(group.role,group.credits.length)}));
+      return groups.map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.credits)}));
     });
     const animeStaffAggregate = computed(() => {
       if (!animeDetail.value || animeUnitDetail.value || animeSingle.value) return [];
@@ -621,17 +622,34 @@ const umaApp = createApp({
         const unit = findAnimeUnit(entry.unit_id);
         if (unit && !row.units.some(item => item.id === unit.id)) row.units.push(unit);
       });
-      return rows.filter(row => !q || [staffName(row.entry),row.entry.role,row.entry.group || ''].some(value => value.toLowerCase().includes(q))).map(row => ({...row,units:row.units.sort((a,b)=>a.number-b.number)}));
+      return rows.filter(row => animeStaffMatches(row.entry,q)).map(row => ({...row,units:row.units.sort((a,b)=>a.number-b.number)}));
     });
     const animeStaffAggregateGroups = computed(() => {
       const groups = new Map();
       animeStaffAggregate.value.forEach(row => {
         const role = [row.entry.group,row.entry.role].filter(Boolean).join(' · ');
-        if (!groups.has(role)) groups.set(role,{role,rows:[]});
+        if (!groups.has(role)) groups.set(role,{key:role,role,rows:[]});
         groups.get(role).rows.push(row);
       });
       return Array.from(groups.values()).sort((a,b) => animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
-        .map(group => ({...group,collapsible:animeStaffCollapsible(group.role,group.rows.length)}));
+        .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.rows,row=>row.entry)}));
+    });
+    function animeStaffGroupOpen(group, aggregate = false) {
+      const key = (aggregate ? 'episodes:' : 'content:') + group.key;
+      return animeStaffOpen[key] ?? (!!animeStaffQuery.value || (aggregate ? group.rows : group.credits).length <= 6);
+    }
+    function toggleAnimeStaffGroup(group, aggregate = false) {
+      animeStaffOpen[(aggregate ? 'episodes:' : 'content:') + group.key] = !animeStaffGroupOpen(group,aggregate);
+    }
+    const animeStaffAllOpen = computed(() => [...animeStaffGroups.value.map(group => animeStaffGroupOpen(group)),
+      ...animeStaffAggregateGroups.value.map(group => animeStaffGroupOpen(group,true))].every(Boolean));
+    function toggleAnimeStaffAll() {
+      const open = !animeStaffAllOpen.value;
+      animeStaffGroups.value.forEach(group => { animeStaffOpen['content:' + group.key] = open; });
+      animeStaffAggregateGroups.value.forEach(group => { animeStaffOpen['episodes:' + group.key] = open; });
+    }
+    watch([animeContentUnit,animeDetail,animeEdition,animeStaffQuery], () => {
+      Object.keys(animeStaffOpen).forEach(key => { delete animeStaffOpen[key]; });
     });
     const staffAvatarCache = new Map();
     function staffPortrait(person) {
@@ -3534,7 +3552,7 @@ const umaApp = createApp({
       characterAnimeRelations, voiceAnimeRelations, songAnimeRelations, albumAnimeRelations, eventAnimeRelations, animeRelationContext, relatedAnimeHref,
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref,
-      animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffExpanded, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
+      animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffGroupOpen, toggleAnimeStaffGroup, animeStaffAllOpen, toggleAnimeStaffAll, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
       staffQuery, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
@@ -3584,8 +3602,37 @@ umaApp.component('anime-participation', {
   template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="group.work.cover" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><dl class="credit-ledger"><div v-for="role in group.roles" :key="role.key"><dt>{{role.label}}</dt><dd class="role-tag-row"><em v-for="institution in role.institutions" :key="institution" class="credit-role-tag">{{institution}}</em><a v-for="unit in role.units" :key="unit.id" class="credit-role-tag episode-tag" :href="href(group.work,unit)" @click="follow($event,href(group.work,unit))">{{unit.label}}</a></dd></div></dl></article></div>`
 });
 umaApp.component('staff-credit-list', {
-  props:{credits:{type:Array,default:()=>[]}},
-  methods:{name(entry){return ((window.__uma_app.animeCatalog.people || []).find(p=>p.id===entry.person_id)||{}).name || entry.name;},href(entry){const p=(window.__uma_app.animeCatalog.people || []).find(p=>p.id===entry.person_id);return p ? (p.creator_id?routes.creators(p.creator_id):routes.staff(p.id)):'';},follow(event,path){if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}},
-  template:`<div class="anime-credit-people"><span v-for="(entry,index) in credits" :key="index" class="anime-credit"><a v-if="href(entry)" class="text-link" :href="href(entry)" @click="follow($event,href(entry))">{{name(entry)}}</a><span v-else-if="!entry.organization">{{name(entry)}}</span><em v-if="entry.organization" class="credit-role-tag">{{entry.organization}}</em><em v-for="institution in entry.institutions || []" :key="institution" class="credit-role-tag">{{institution}}</em></span></div>`
+  props:{credits:{type:Array,default:()=>[]},participation:{type:Boolean,default:false}},
+  computed:{groups(){
+    const groups = window.UmaAnimeStaff.groupInstitutions(this.credits,row=>this.entry(row));
+    if (this.participation) return groups;
+    const compact = [];
+    groups.forEach(group => {
+      const previous = compact[compact.length-1];
+      if (previous && !previous.rows.length && !group.rows.length) {
+        previous.institutions.push(...group.institutions);
+      } else compact.push({...group,institutions:[...group.institutions]});
+    });
+    return compact;
+  }},
+  methods:{
+    entry(row){return this.participation ? row.entry : row;},
+    name(entry){return ((window.__uma_app.animeCatalog.people || []).find(p=>p.id===entry.person_id)||{}).name || entry.name;},
+    href(entry){const p=(window.__uma_app.animeCatalog.people || []).find(p=>p.id===entry.person_id);return p ? (p.creator_id?routes.creators(p.creator_id):routes.staff(p.id)):'';},
+    unitHref(unit){return routes.query(routes.anime(unit.work_id,unit.id),{section:'staff',edition:unit.work_id==='anime-rttt'?'web':''});},
+    follow(event,path){if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
+  },
+  template:`<div class="anime-staff-teams">
+    <div v-for="group in groups" :key="group.key" class="anime-staff-team" :class="{'anime-staff-team-labelled':!participation && group.institutions.length && group.rows.length}">
+      <div v-if="group.institutions.length" class="role-tag-row anime-staff-institutions"><em v-for="institution in group.institutions" :key="institution" class="credit-role-tag">{{institution}}</em></div>
+      <div v-if="group.rows.length" :class="participation?'anime-staff-participation':'anime-credit-people'">
+        <div v-for="(row,index) in group.rows" :key="index" class="anime-credit">
+          <a v-if="href(entry(row))" class="text-link" :href="href(entry(row))" @click="follow($event,href(entry(row)))">{{name(entry(row))}}</a><span v-else>{{name(entry(row))}}</span>
+          <div v-if="participation" class="role-tag-row"><a v-for="unit in row.units" :key="unit.id" class="credit-role-tag episode-tag" :href="unitHref(unit)" @click="follow($event,unitHref(unit))">{{unit.label}}</a></div>
+        </div>
+      </div>
+      <div v-if="participation && group.organizationUnits.length" class="role-tag-row"><a v-for="unit in group.organizationUnits" :key="unit.id" class="credit-role-tag episode-tag" :href="unitHref(unit)" @click="follow($event,unitHref(unit))">{{unit.label}}</a></div>
+    </div>
+  </div>`
 });
 umaApp.mount('#app');
