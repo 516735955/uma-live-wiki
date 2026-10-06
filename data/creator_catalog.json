@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-06T19:28:45+00:00",
+  "generated_at": "2026-10-06T19:57:45+00:00",
   "coverage": {
     "creators": 281,
     "credited_works": 332,
@@ -611,7 +611,7 @@
         {
           "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
           "name": "Lucas Nainemoutou",
-          "shared_version_count": 6,
+          "shared_version_count": 5,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-66e8f91931"
@@ -624,6 +624,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-seven-a00bbe560e"
+          ]
+        },
+        {
+          "creator_id": "creator-lucas-10c25665e4",
+          "name": "Lucas",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-66e8f91931"
           ]
         },
         {
@@ -642,15 +651,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-87c8f0bb6b"
-          ]
-        },
-        {
-          "creator_id": "creator-lucas-10c25665e4",
-          "name": "Lucas",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-66e8f91931"
           ]
         }
       ]
@@ -2751,16 +2751,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 3
+          "count": 4
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 1
+          "count": 2
         }
       ],
       "work_count": 3,
-      "version_count": 4,
+      "version_count": 5,
       "works": [
         {
           "song_id": "song-8f0d72cf0d",
@@ -2799,14 +2799,25 @@
           "title": "ありがとう、神様",
           "cover": "/album_covers/LACM-14742.webp",
           "release_date": "2018-05-09",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 04 Original Soundtrack (2021 Remastered Version)",
+          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 04 Original Soundtrack",
           "roles": [
-            "composer"
+            "composer",
+            "arranger"
           ],
           "version_ids": [
+            "song-66e8f91931-v-66130e0288",
             "song-66e8f91931-v-74d9dc52ea"
           ],
           "versions": [
+            {
+              "id": "song-66e8f91931-v-66130e0288",
+              "title": "ありがとう、神様 (TV Size)",
+              "version_label": "TV Size",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            },
             {
               "id": "song-66e8f91931-v-74d9dc52ea",
               "title": "ありがとう、神様 (TV Size) (2021 Remastered Version)",
@@ -2843,6 +2854,15 @@
       ],
       "collaborators": [
         {
+          "creator_id": "creator-apis-7e6674d509",
+          "name": "Apis",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-66e8f91931"
+          ]
+        },
+        {
           "creator_id": "creator-mitsu-f9df3de487",
           "name": "mitsu",
           "shared_version_count": 2,
@@ -2858,15 +2878,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-8f0d72cf0d"
-          ]
-        },
-        {
-          "creator_id": "creator-apis-7e6674d509",
-          "name": "Apis",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-66e8f91931"
           ]
         },
         {
@@ -2933,16 +2944,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 39
+          "count": 38
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 16
+          "count": 15
         }
       ],
       "work_count": 5,
-      "version_count": 40,
+      "version_count": 39,
       "works": [
         {
           "song_id": "song-66e8f91931",
@@ -2958,7 +2969,6 @@
             "song-66e8f91931-v-12a67d0842",
             "song-66e8f91931-v-360718b369",
             "song-66e8f91931-v-47fc3bbde3",
-            "song-66e8f91931-v-66130e0288",
             "song-66e8f91931-v-66e8f91931",
             "song-66e8f91931-v-74d9dc52ea"
           ],
@@ -2985,15 +2995,6 @@
               "id": "song-66e8f91931-v-360718b369",
               "title": "ありがとう、神様 (Off Vocal) (2021 Remastered Version)",
               "version_label": "Off Vocal / 2021 Remastered Version",
-              "roles": [
-                "composer",
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-66e8f91931-v-66130e0288",
-              "title": "ありがとう、神様 (TV Size)",
-              "version_label": "TV Size",
               "roles": [
                 "composer",
                 "arranger"
@@ -3463,7 +3464,7 @@
         {
           "creator_id": "creator-apis-7e6674d509",
           "name": "Apis",
-          "shared_version_count": 6,
+          "shared_version_count": 5,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-66e8f91931"
@@ -53863,5 +53864,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "207efcb0e555822b3a7f"
+  "build_id": "f1a6a525c5be4b3345c2"
 }

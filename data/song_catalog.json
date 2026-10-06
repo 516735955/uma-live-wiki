@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-06T19:28:45+00:00",
+  "generated_at": "2026-10-06T19:57:45+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -115564,17 +115564,19 @@
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+              "creator_id": "creator-lucas-10c25665e4",
+              "institution": "TRYTONELABO"
             },
             {
               "role": "arranger",
               "role_label": "编曲",
-              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+              "creator_id": "creator-lucas-10c25665e4",
+              "institution": "TRYTONELABO"
             }
           ],
           "creator_ids": [
             "creator-apis-7e6674d509",
-            "creator-lucas-nainemoutou-2d8686f23a"
+            "creator-lucas-10c25665e4"
           ],
           "lyrics_ref": "",
           "has_lyrics": false,
@@ -247954,5 +247956,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "207efcb0e555822b3a7f"
+  "build_id": "f1a6a525c5be4b3345c2"
 }

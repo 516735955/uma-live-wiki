@@ -178,7 +178,7 @@
             "米本えり",
             "村上華帆",
             "田中未来",
-            "足立祐貴",
+            "足立裕貴",
             "笠原由博",
             "瀬川亜沙美",
             "降籏秀吉",
@@ -558,18 +558,18 @@
             "西川実希",
             "矢野康平",
             "冨田真理",
-            "柳原一慶",
+            "柳原一義",
             "西澤皓人",
             "島崎琴美",
             "笠原由博",
             "辻彩夏",
             "臼井沙帆",
             "降矢瑞生",
-            "足立祐貴",
+            "足立裕貴",
             "米本えり",
             "飯沼篤哉",
             "岡田夏美",
-            "櫛田華作",
+            "櫛田拳作",
             "三宮哲太",
             "鈴木奈々美",
             "瀬川亜沙美",
@@ -666,7 +666,7 @@
           "time": 1325,
           "names": [
             "田畑あすか",
-            "斉藤奈緖子"
+            "斉藤奈緒子"
           ]
         },
         {
@@ -688,7 +688,7 @@
           "time": 1325,
           "names": [
             "黒岩康文",
-            "有馬里晏"
+            "有馬里実"
           ]
         },
         {
@@ -752,7 +752,7 @@
           "role": "制作デスク",
           "time": 1337,
           "names": [
-            "橋内諒太"
+            "橘内諒太"
           ]
         },
         {
@@ -892,8 +892,8 @@
           ]
         },
         {
-          "role": "音楽プロデューサー",
-          "time": 1413,
+          "role": "音楽プロデュース",
+          "time": 1411,
           "names": [
             "岩代太郎"
           ]
@@ -932,6 +932,37 @@
           "names": [
             "及川啓"
           ]
+        }
+      ],
+      "transcription_corrections": [
+        {
+          "from": "足立祐貴",
+          "to": "足立裕貴",
+          "source_ref": "official-ending-anime-s1-e01"
+        },
+        {
+          "from": "櫛田華作",
+          "to": "櫛田拳作",
+          "source_ref": "official-ending-anime-s1-e01"
+        },
+        {
+          "from": "橋内諒太",
+          "to": "橘内諒太",
+          "source_ref": "official-ending-anime-s1-e01"
+        },
+        {
+          "from": "斉藤奈緖子",
+          "to": "斉藤奈緒子",
+          "source_ref": "official-ending-anime-s1-e01"
+        },
+        {
+          "from": "有馬里晏",
+          "to": "有馬里実",
+          "source_ref": "official-ending-anime-s1-e01"
+        },
+        {
+          "from": "柳原一慶",
+          "to": "柳原一義"
         }
       ]
     },
@@ -35701,7 +35732,7 @@
             "袁蓓蓓",
             "翟晨妤",
             "肖陽",
-            "楊恵玲"
+            "楊惠玲"
           ],
           "institutions": [
             "studio51"
@@ -35777,7 +35808,7 @@
             "西川実希",
             "矢野康平",
             "冨田真理",
-            "柳原一慶",
+            "柳原一義",
             "西澤皓人",
             "島崎琴美",
             "笠原由博",
@@ -36576,6 +36607,16 @@
           "unit_id": "anime-s1-e04",
           "organization": "キュー・テック"
         }
+      ],
+      "transcription_corrections": [
+        {
+          "from": "楊恵玲",
+          "to": "楊惠玲"
+        },
+        {
+          "from": "柳原一慶",
+          "to": "柳原一義"
+        }
       ]
     },
     {
@@ -37025,7 +37066,7 @@
             "袁蓓蓓",
             "翟晨妤",
             "肖陽",
-            "楊恵玲"
+            "楊惠玲"
           ],
           "institutions": [
             "studio51"
@@ -37122,7 +37163,7 @@
             "西川実希",
             "矢野康平",
             "冨田真理",
-            "柳原一慶",
+            "柳原一義",
             "西澤皓人",
             "島崎琴美",
             "笠原由博",
@@ -37859,6 +37900,2335 @@
           "source_ref": "staff-transcript-anime-s1",
           "group": "片尾署名（公开转录）",
           "unit_id": "anime-s1-e06",
+          "organization": "キュー・テック"
+        }
+      ],
+      "transcription_corrections": [
+        {
+          "from": "楊恵玲",
+          "to": "楊惠玲"
+        },
+        {
+          "from": "柳原一慶",
+          "to": "柳原一義"
+        }
+      ]
+    },
+    {
+      "work_id": "anime-s1",
+      "number": 5,
+      "url": "https://www.youtube.com/watch?v=JHzJNmOKtc4",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "staff_groups": [
+        {
+          "role": "原作",
+          "time": 67.5,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 73.5,
+          "names": [
+            "渡邊耕一",
+            "大田圭二",
+            "櫻井優香",
+            "岡田美穂"
+          ]
+        },
+        {
+          "role": "エグゼクティブプロデューサー",
+          "time": 97.5,
+          "names": [
+            "竹中信広",
+            "古澤佳寛"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 100.5,
+          "names": [
+            "伊藤隼之介",
+            "辻充仁",
+            "秋田穣",
+            "関根陽一",
+            "尾上太基"
+          ]
+        },
+        {
+          "role": "シリーズ構成",
+          "time": 106.5,
+          "names": [
+            "石原章弘",
+            "杉浦理史"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン・総作画監督",
+          "time": 109.5,
+          "names": [
+            "椛島洋介"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン",
+          "time": 109.5,
+          "names": [
+            "辻智子"
+          ]
+        },
+        {
+          "role": "メインアニメーター",
+          "time": 109.5,
+          "names": [
+            "宮下雄次"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 118.5,
+          "names": [
+            "伊藤弘"
+          ]
+        },
+        {
+          "role": "色彩設計",
+          "time": 118.5,
+          "names": [
+            "中野尚美"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 121.5,
+          "names": [
+            "並木智"
+          ]
+        },
+        {
+          "role": "3D監督",
+          "time": 121.5,
+          "names": [
+            "市川元成"
+          ]
+        },
+        {
+          "role": "編集",
+          "time": 121.5,
+          "names": [
+            "高橋歩"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 124.5,
+          "names": [
+            "森田祐一"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 124.5,
+          "names": [
+            "保坂拓也",
+            "内田哲也"
+          ]
+        },
+        {
+          "role": "音楽プロデュース",
+          "time": 130.5,
+          "names": [
+            "岩代太郎"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 130.5,
+          "organizations": [
+            "UTAMARO movement"
+          ]
+        },
+        {
+          "role": "ラインプロデューサー",
+          "time": 136.5,
+          "names": [
+            "橋本真英"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 139.5,
+          "organizations": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "副監督",
+          "time": 145.5,
+          "names": [
+            "太田知章"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 148.5,
+          "names": [
+            "及川啓"
+          ]
+        },
+        {
+          "role": "脚本",
+          "time": 1348.5,
+          "names": [
+            "杉浦理史"
+          ]
+        },
+        {
+          "role": "画コンテ",
+          "time": 1348.5,
+          "names": [
+            "及川啓"
+          ]
+        },
+        {
+          "role": "演出",
+          "time": 1351.5,
+          "names": [
+            "許琮"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 1351.5,
+          "names": [
+            "宮崎司",
+            "小島明日香"
+          ]
+        },
+        {
+          "role": "作画監督補佐",
+          "time": 1351.5,
+          "names": [
+            "渥美智也"
+          ]
+        },
+        {
+          "role": "原画",
+          "time": 1363.5,
+          "names": [
+            "山方春香",
+            "村上華帆",
+            "渡辺志歩紀",
+            "降矢瑞生",
+            "米本えり",
+            "辻彩夏",
+            "田中未来",
+            "飯沼篤哉"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1363.5,
+          "names": [
+            "水野紗世",
+            "三好有香",
+            "臼井沙帆",
+            "齋藤千尋",
+            "島崎琴美",
+            "岡田夏実",
+            "鈴木奈々美",
+            "瀬川亜沙美",
+            "笠原由博"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "アイキャッチ原画",
+          "time": 1363.5,
+          "names": [
+            "大東百合恵"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1369.5,
+          "organizations": [
+            "玩拓アニメーション",
+            "Revival",
+            "FAIインターナショナル",
+            "鉄人動画",
+            "神龍",
+            "スタジオCL",
+            "Big Owl"
+          ]
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1372.5,
+          "names": [
+            "遠藤花歩"
+          ],
+          "institutions": [
+            "stella road"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1372.5,
+          "names": [
+            "越田侑子",
+            "門松諭生",
+            "江口亜紗美",
+            "菊地慶翔",
+            "永井唯香",
+            "早川歩",
+            "奥智恵",
+            "新井理恵"
+          ],
+          "institutions": [
+            "stella road"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1372.5,
+          "organizations": [
+            "J-cube",
+            "D-COLORS",
+            "玩拓アニメーション",
+            "Revival",
+            "FAIインターナショナル",
+            "鉄人動画",
+            "神龍",
+            "Big Owl"
+          ]
+        },
+        {
+          "role": "CGモデル設定",
+          "time": 1375.5,
+          "names": [
+            "相原誠",
+            "品田理紗"
+          ]
+        },
+        {
+          "role": "背景進行",
+          "time": 1375.5,
+          "names": [
+            "平田浩章"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 1375.5,
+          "names": [
+            "伊藤弘",
+            "川本亜夕",
+            "池田真依子",
+            "田島裕",
+            "本橋果林"
+          ],
+          "institutions": [
+            "草薙(KUSANAGI)"
+          ]
+        },
+        {
+          "role": "背景協力",
+          "time": 1375.5,
+          "names": [
+            "NGOC XUAN",
+            "NHU THAO",
+            "TRA GIANG",
+            "PHUONG NHI",
+            "BAO CHAU",
+            "VAN TOAN",
+            "THANH THAO",
+            "THUY NHUNG",
+            "QUOC DUY",
+            "NGOC THO",
+            "THU YEN"
+          ],
+          "institutions": [
+            "NAM HAI ART"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 1381.5,
+          "names": [
+            "並木智",
+            "富田喜允",
+            "高橋智弘",
+            "渡部達也",
+            "朝日康平"
+          ],
+          "institutions": [
+            "T2 studio"
+          ]
+        },
+        {
+          "role": "2D works",
+          "time": 1381.5,
+          "names": [
+            "加藤千恵",
+            "加藤絵梨"
+          ]
+        },
+        {
+          "role": "フォント協力",
+          "time": 1381.5,
+          "organizations": [
+            "フォントワークス"
+          ]
+        },
+        {
+          "role": "3DCG",
+          "time": 1384.5,
+          "names": [
+            "市川元成",
+            "森重柚香"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "3Dモデリング",
+          "time": 1384.5,
+          "names": [
+            "井上佑紀"
+          ]
+        },
+        {
+          "role": "モデリング協力",
+          "time": 1384.5,
+          "names": [
+            "石田龍樹",
+            "佐藤良樹",
+            "渡部里奈",
+            "池添敦彦",
+            "上野雄大",
+            "奥村優子",
+            "濱中裕"
+          ],
+          "institutions": [
+            "株式会社IKIF+"
+          ]
+        },
+        {
+          "role": "モデリング協力",
+          "time": 1384.5,
+          "names": [
+            "早川孝之",
+            "袁蓓蓓",
+            "翟晨妤",
+            "肖陽",
+            "楊惠玲"
+          ],
+          "institutions": [
+            "studio51"
+          ]
+        },
+        {
+          "role": "美術設定",
+          "time": 1387.5,
+          "names": [
+            "須江信人",
+            "綱頭瑛子",
+            "岩澤美翠"
+          ]
+        },
+        {
+          "role": "プロップデザイン",
+          "time": 1387.5,
+          "names": [
+            "宮岡真弓"
+          ]
+        },
+        {
+          "role": "特殊効果",
+          "time": 1387.5,
+          "names": [
+            "入佐芽詠美"
+          ]
+        },
+        {
+          "role": "アイキャッチ・サブタイトルデザイン",
+          "time": 1387.5,
+          "names": [
+            "大岩裕樹"
+          ],
+          "institutions": [
+            "牧印刷株式会社"
+          ]
+        },
+        {
+          "role": "画コンテ・演出",
+          "time": 1390.5,
+          "names": [
+            "吉原正行"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "総作画監督",
+          "time": 1390.5,
+          "names": [
+            "椛島洋介"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "作画監督",
+          "time": 1390.5,
+          "names": [
+            "川面恒介"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "原画",
+          "time": 1390.5,
+          "names": [
+            "福元陽介",
+            "水野紗世",
+            "天野和子",
+            "村上華帆",
+            "山方春香",
+            "栗田香菜子",
+            "西川実希",
+            "矢野康平",
+            "冨田真理",
+            "柳原一義",
+            "西澤皓人",
+            "島崎琴美",
+            "笠原由博",
+            "辻彩夏",
+            "臼井沙帆",
+            "降矢瑞生",
+            "足立裕貴",
+            "米本えり",
+            "飯沼篤哉",
+            "岡田夏実",
+            "櫛田拳作",
+            "三宮哲太",
+            "鈴木奈々美",
+            "瀬川亜沙美",
+            "田中未来",
+            "松宮杏実"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1390.5,
+          "names": [
+            "中野尚美"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 1390.5,
+          "group": "オープニングアニメーション",
+          "organizations": [
+            "草薙(KUSANAGI)"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 1390.5,
+          "group": "オープニングアニメーション",
+          "organizations": [
+            "T2 studio"
+          ]
+        },
+        {
+          "role": "2D works",
+          "time": 1390.5,
+          "names": [
+            "加藤千恵"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "3DCG",
+          "time": 1390.5,
+          "names": [
+            "市川元成",
+            "森重柚香"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "担当制作",
+          "time": 1390.5,
+          "names": [
+            "毛利健太郎",
+            "福澤祐也"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "サウンドミキサー",
+          "time": 1396.5,
+          "names": [
+            "徳久智成"
+          ]
+        },
+        {
+          "role": "サウンドエディター",
+          "time": 1396.5,
+          "names": [
+            "關このみ"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 1396.5,
+          "names": [
+            "宅間麻姫"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 1396.5,
+          "organizations": [
+            "スリーエススタジオ"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 1396.5,
+          "names": [
+            "小野勝弘"
+          ]
+        },
+        {
+          "role": "キャスティングマネージャー",
+          "time": 1396.5,
+          "names": [
+            "小室亜紗子"
+          ],
+          "institutions": [
+            "スタージャムコーポレーション"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 1396.5,
+          "organizations": [
+            "HALF H・P STUDIO"
+          ]
+        },
+        {
+          "role": "オフライン編集",
+          "time": 1396.5,
+          "organizations": [
+            "ジェイ・フィルム"
+          ]
+        },
+        {
+          "role": "オンライン編集",
+          "time": 1396.5,
+          "names": [
+            "大関悠",
+            "清水裕貴"
+          ],
+          "institutions": [
+            "キュー・テック"
+          ]
+        },
+        {
+          "role": "オンライン編集デスク",
+          "time": 1396.5,
+          "names": [
+            "片田悠介"
+          ]
+        },
+        {
+          "role": "宣伝プロデューサー",
+          "time": 1399.5,
+          "names": [
+            "高野朋子"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 1399.5,
+          "names": [
+            "前川亮",
+            "小栗晋",
+            "木立己百花"
+          ]
+        },
+        {
+          "role": "宣伝協力",
+          "time": 1399.5,
+          "names": [
+            "秋葉隆史",
+            "原田有永",
+            "竹之内葉南",
+            "今岡佐知子",
+            "小島猛"
+          ]
+        },
+        {
+          "role": "販売促進",
+          "time": 1399.5,
+          "names": [
+            "石山竜也",
+            "奥田卓司"
+          ]
+        },
+        {
+          "role": "ライセンス",
+          "time": 1399.5,
+          "names": [
+            "田畑あすか",
+            "斉藤奈緒子"
+          ]
+        },
+        {
+          "role": "海外ライセンス",
+          "time": 1399.5,
+          "names": [
+            "竹田晃洋"
+          ]
+        },
+        {
+          "role": "国内配信",
+          "time": 1399.5,
+          "names": [
+            "臼井優"
+          ]
+        },
+        {
+          "role": "契約管理",
+          "time": 1399.5,
+          "names": [
+            "黒岩康文",
+            "有馬里実"
+          ]
+        },
+        {
+          "role": "パッケージ制作",
+          "time": 1399.5,
+          "names": [
+            "黒岩真貴子"
+          ]
+        },
+        {
+          "role": "プロモーションムービー",
+          "time": 1399.5,
+          "organizations": [
+            "キュー・テック"
+          ]
+        },
+        {
+          "role": "WEB制作",
+          "time": 1405.5,
+          "names": [
+            "山本和男",
+            "渡辺裕一",
+            "菅原祐介"
+          ],
+          "institutions": [
+            "SALT Inc."
+          ]
+        },
+        {
+          "role": "宣伝デザイン協力",
+          "time": 1405.5,
+          "organizations": [
+            "KOME WORKS"
+          ]
+        },
+        {
+          "role": "企画協力",
+          "time": 1405.5,
+          "names": [
+            "成田真大",
+            "齋藤里枝",
+            "土屋翔音"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 1405.5,
+          "organizations": [
+            "トレーナーの皆様",
+            "サラブレ編集部"
+          ]
+        },
+        {
+          "role": "制作庶務",
+          "time": 1405.5,
+          "names": [
+            "田島美奈"
+          ]
+        },
+        {
+          "role": "制作デスク",
+          "time": 1414.5,
+          "names": [
+            "橘内諒太"
+          ]
+        },
+        {
+          "role": "設定制作",
+          "time": 1414.5,
+          "names": [
+            "福澤祐也"
+          ]
+        },
+        {
+          "role": "担当制作",
+          "time": 1414.5,
+          "names": [
+            "橘内諒太",
+            "毛利健太郎"
+          ]
+        },
+        {
+          "role": "製作委員会",
+          "time": 1420.5,
+          "names": [
+            "大島孝幸",
+            "高橋亜希人",
+            "山中一孝",
+            "櫻井優香",
+            "堀切八郎",
+            "池田篤史",
+            "糀嶋麻菜美"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 1426.5,
+          "organizations": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 1432.5,
+          "organizations": [
+            "アニメ「ウマ娘 プリティーダービー」製作委員会"
+          ]
+        }
+      ],
+      "cast": [
+        [
+          "スペシャルウィーク",
+          "和氣あず未"
+        ],
+        [
+          "サイレンススズカ",
+          "高野麻里佳"
+        ],
+        [
+          "トレーナー",
+          "沖野晃司"
+        ],
+        [
+          "トウカイテイオー",
+          "Machico"
+        ],
+        [
+          "ウオッカ",
+          "大橋彩香"
+        ],
+        [
+          "ダイワスカーレット",
+          "木村千咲"
+        ],
+        [
+          "ゴールドシップ",
+          "上田瞳"
+        ],
+        [
+          "エルコンドルパサー",
+          "高橋未奈美"
+        ],
+        [
+          "グラスワンダー",
+          "前田玲奈"
+        ],
+        [
+          "セイウンスカイ",
+          "鬼頭明里"
+        ],
+        [
+          "メジロマックイーン",
+          "大西沙織"
+        ],
+        [
+          "シンボリルドルフ",
+          "田所あずさ"
+        ],
+        [
+          "エアグルーヴ",
+          "青木瑠璃子"
+        ],
+        [
+          "キングヘイロー",
+          "佐伯伊織"
+        ],
+        [
+          "マルゼンスキー",
+          "Lynn"
+        ],
+        [
+          "タイキシャトル",
+          "大坪由佳"
+        ],
+        [
+          "東条ハナ",
+          "豊口めぐみ"
+        ]
+      ],
+      "excluded_cast": [
+        [
+          "お母ちゃん",
+          "斉藤佑圭"
+        ],
+        [
+          "実況",
+          "明坂聡美"
+        ],
+        [
+          "記者",
+          "こばたけまさふみ"
+        ],
+        [
+          "記者",
+          "駒田航"
+        ],
+        [
+          "記者",
+          "白石兼斗"
+        ],
+        [
+          "解説",
+          "武豊"
+        ]
+      ],
+      "music_uses": [
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
+          "release_id": "album-laca-9637",
+          "title": "Make debut!",
+          "usage_type": "op"
+        },
+        {
+          "song_id": "song-66e8f91931",
+          "version_id": "song-66e8f91931-v-66130e0288",
+          "release_id": "album-laca-9637",
+          "title": "ありがとう、神様",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "title": "Make debut!",
+          "role": "作詞・作曲",
+          "names": [
+            "新田目駿"
+          ]
+        },
+        {
+          "title": "Make debut!",
+          "role": "編曲",
+          "names": [
+            "廣澤優也",
+            "新田目駿"
+          ]
+        },
+        {
+          "title": "ありがとう、神様",
+          "role": "作詞",
+          "names": [
+            "Apis"
+          ],
+          "institutions": [
+            "TRYTONELABO"
+          ]
+        },
+        {
+          "title": "ありがとう、神様",
+          "role": "作曲・編曲",
+          "names": [
+            "Lucas"
+          ],
+          "institutions": [
+            "TRYTONELABO"
+          ]
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "role": "作曲・編曲",
+          "names": [
+            "高田龍一"
+          ],
+          "institutions": [
+            "MONACA"
+          ],
+          "time": 1411.5
+        }
+      ],
+      "superseded_transcript": [
+        {
+          "work_id": "anime-s1",
+          "role": "原画",
+          "name": "P.A.WORKS",
+          "order": 6,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "P.A.WORKS"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "第二原画",
+          "name": "P.A.WORKS",
+          "order": 15,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "P.A.WORKS"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "色指定･仕上げ検査",
+          "name": "stella road",
+          "order": 33,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "stella road"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "仕上げ",
+          "name": "stella road",
+          "order": 35,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "stella road"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "背景",
+          "name": "草薙",
+          "order": 52,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "草薙",
+          "credited_name": "草薙(KUSANAGI)"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "背景協力",
+          "name": "NAM HAI ART",
+          "order": 60,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "NAM HAI ART"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "撮影",
+          "name": "T2 studio",
+          "order": 72,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "T2 studio"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "3DCG",
+          "name": "P.A.WORKS",
+          "order": 80,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "P.A.WORKS"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "オンライン編集",
+          "name": "キュー・テック",
+          "order": 83,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e05",
+          "organization": "キュー・テック"
+        }
+      ]
+    },
+    {
+      "work_id": "anime-s1",
+      "number": 7,
+      "url": "https://www.youtube.com/watch?v=Dr_4U4boKzE",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "staff_groups": [
+        {
+          "role": "原作",
+          "time": 118.5,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 124.5,
+          "names": [
+            "渡邊耕一",
+            "大田圭二",
+            "櫻井優香",
+            "岡田美穂"
+          ]
+        },
+        {
+          "role": "エグゼクティブプロデューサー",
+          "time": 145.5,
+          "names": [
+            "竹中信広",
+            "古澤佳寛"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 148.5,
+          "names": [
+            "伊藤隼之介",
+            "辻充仁",
+            "秋田穣",
+            "関根陽一",
+            "尾上太基"
+          ]
+        },
+        {
+          "role": "シリーズ構成",
+          "time": 157.5,
+          "names": [
+            "石原章弘",
+            "杉浦理史"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン・総作画監督",
+          "time": 160.5,
+          "names": [
+            "椛島洋介"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン",
+          "time": 160.5,
+          "names": [
+            "辻智子"
+          ]
+        },
+        {
+          "role": "メインアニメーター",
+          "time": 160.5,
+          "names": [
+            "宮下雄次"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 169.5,
+          "names": [
+            "伊藤弘"
+          ]
+        },
+        {
+          "role": "色彩設計",
+          "time": 169.5,
+          "names": [
+            "中野尚美"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 172.5,
+          "names": [
+            "並木智"
+          ]
+        },
+        {
+          "role": "3D監督",
+          "time": 172.5,
+          "names": [
+            "市川元成"
+          ]
+        },
+        {
+          "role": "編集",
+          "time": 172.5,
+          "names": [
+            "高橋歩"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 175.5,
+          "names": [
+            "森田祐一"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 175.5,
+          "names": [
+            "保坂拓也",
+            "内田哲也"
+          ]
+        },
+        {
+          "role": "音楽プロデュース",
+          "time": 184.5,
+          "names": [
+            "岩代太郎"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 184.5,
+          "organizations": [
+            "UTAMARO movement"
+          ]
+        },
+        {
+          "role": "ラインプロデューサー",
+          "time": 187.5,
+          "names": [
+            "橋本真英"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 189,
+          "organizations": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "副監督",
+          "time": 193.5,
+          "names": [
+            "太田知章"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 196.5,
+          "names": [
+            "及川啓"
+          ]
+        },
+        {
+          "role": "脚本",
+          "time": 1339.5,
+          "names": [
+            "杉浦理史"
+          ]
+        },
+        {
+          "role": "画コンテ",
+          "time": 1339.5,
+          "names": [
+            "今泉賢一"
+          ]
+        },
+        {
+          "role": "演出",
+          "time": 1342.5,
+          "names": [
+            "藤井康雄"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 1342.5,
+          "names": [
+            "村長由紀",
+            "岩崎亮",
+            "宮下雄次",
+            "市原圭子",
+            "小島明日香",
+            "宮崎司",
+            "井上裕亮",
+            "Kim Eun-seon",
+            "Kwon Hyeok-jeong",
+            "Park Ae-ri"
+          ]
+        },
+        {
+          "role": "原画",
+          "time": 1357.5,
+          "names": [
+            "天野和子",
+            "西川実希",
+            "栗田香菜子",
+            "冨田真理",
+            "福元陽介",
+            "矢野康平",
+            "西澤皓人",
+            "足立佑紀",
+            "高橋沙江子",
+            "東雲春奈",
+            "柳原一義",
+            "笠原由博",
+            "櫛田拳作",
+            "松宮杏実",
+            "三宮哲太"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "アイキャッチ原画",
+          "time": 1357.5,
+          "names": [
+            "大東百合恵"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1360.5,
+          "names": [
+            "藤嶋未央",
+            "髙田友美",
+            "白敷桃子"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1360.5,
+          "names": [
+            "Ho Seong-jin",
+            "Kim Seong-beom",
+            "Lee Yong-seok",
+            "Park Chae-sik",
+            "Han Dong-yi",
+            "Kim Seo-jin",
+            "Yoon Eun-ju",
+            "Ham Kyeong-mi",
+            "Cho Yoon-seong",
+            "Choi Ju-yi",
+            "Kwack Hee-eok",
+            "Lee Seong-yeon"
+          ],
+          "institutions": [
+            "DRmovie"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1360.5,
+          "organizations": [
+            "玩拓アニメーション",
+            "Revival",
+            "神龍",
+            "鉄人動画",
+            "グレーン",
+            "FAIインターナショナル"
+          ]
+        },
+        {
+          "role": "フロアマネージャー",
+          "time": 1360.5,
+          "names": [
+            "毛利健太郎"
+          ]
+        },
+        {
+          "role": "色指定",
+          "time": 1366.5,
+          "names": [
+            "中野尚美"
+          ],
+          "institutions": [
+            "stella road"
+          ]
+        },
+        {
+          "role": "仕上げ検査",
+          "time": 1366.5,
+          "names": [
+            "永井唯香"
+          ],
+          "institutions": [
+            "stella road"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1366.5,
+          "names": [
+            "越田侑子",
+            "門松諭生",
+            "遠藤花歩",
+            "江口亜紗美",
+            "菊地慶翔",
+            "早川歩",
+            "奥智恵",
+            "新井理恵"
+          ],
+          "institutions": [
+            "stella road"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1366.5,
+          "names": [
+            "山中真紀子",
+            "曽根久美子",
+            "和田舞奈",
+            "永井舞",
+            "五十嵐遥"
+          ],
+          "institutions": [
+            "studio road"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1366.5,
+          "names": [
+            "Lee Jin-hee",
+            "Park Yoon-hee",
+            "Lee Jeong-eun",
+            "Kim Min-jeong",
+            "Park Se-na",
+            "Yoo Yeong-hye",
+            "Cho Yoo-jin"
+          ],
+          "institutions": [
+            "DRmovie"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1366.5,
+          "organizations": [
+            "玩拓アニメーション",
+            "Revival",
+            "神龍",
+            "鉄人動画",
+            "グレーン",
+            "FAIインターナショナル"
+          ]
+        },
+        {
+          "role": "CGモデル設定",
+          "time": 1372.5,
+          "names": [
+            "相原誠",
+            "品田理紗"
+          ]
+        },
+        {
+          "role": "背景進行",
+          "time": 1372.5,
+          "names": [
+            "平田浩章"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 1372.5,
+          "names": [
+            "伊藤弘",
+            "川本亜夕",
+            "岡本綾乃",
+            "田島裕",
+            "本橋果林"
+          ],
+          "institutions": [
+            "草薙(KUSANAGI)"
+          ]
+        },
+        {
+          "role": "背景協力",
+          "time": 1372.5,
+          "names": [
+            "吉田美和",
+            "鶴岡宏賢"
+          ]
+        },
+        {
+          "role": "背景協力",
+          "time": 1372.5,
+          "names": [
+            "NGOC XUAN",
+            "NHU THAO",
+            "TRA GIANG",
+            "PHUONG NHI",
+            "BAO CHAU",
+            "VAN TOAN",
+            "THANH THAO",
+            "THUY NHUNG",
+            "NGOC THO",
+            "THU YEN"
+          ],
+          "institutions": [
+            "NAM HAI ART"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 1375.5,
+          "names": [
+            "並木智",
+            "富田喜允",
+            "高橋智弘",
+            "渡部達也",
+            "朝日康平"
+          ],
+          "institutions": [
+            "T2 studio"
+          ]
+        },
+        {
+          "role": "2D works",
+          "time": 1375.5,
+          "names": [
+            "加藤千恵",
+            "加藤絵梨"
+          ]
+        },
+        {
+          "role": "フォント協力",
+          "time": 1375.5,
+          "organizations": [
+            "フォントワークス"
+          ]
+        },
+        {
+          "role": "3Dモデリング",
+          "time": 1381.5,
+          "names": [
+            "井上佑紀"
+          ]
+        },
+        {
+          "role": "モデリング協力",
+          "time": 1381.5,
+          "names": [
+            "石田龍樹",
+            "佐藤良樹",
+            "渡部里奈",
+            "池添敦彦",
+            "上野雄大",
+            "奥村優子",
+            "濱中裕"
+          ],
+          "institutions": [
+            "株式会社IKIF+"
+          ]
+        },
+        {
+          "role": "モデリング協力",
+          "time": 1381.5,
+          "names": [
+            "早川孝之",
+            "袁蓓蓓",
+            "翟晨妤",
+            "肖陽",
+            "楊惠玲"
+          ],
+          "institutions": [
+            "studio51"
+          ]
+        },
+        {
+          "role": "3DCG",
+          "time": 1381.5,
+          "names": [
+            "森重柚香",
+            "市川元成",
+            "大野陽生"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "美術設定",
+          "time": 1393.5,
+          "names": [
+            "須江信人",
+            "綱頭瑛子",
+            "岩澤美翠"
+          ]
+        },
+        {
+          "role": "プロップデザイン",
+          "time": 1393.5,
+          "names": [
+            "宮岡真弓"
+          ]
+        },
+        {
+          "role": "特殊効果",
+          "time": 1393.5,
+          "names": [
+            "入佐芽詠美"
+          ]
+        },
+        {
+          "role": "アイキャッチ・サブタイトルデザイン",
+          "time": 1393.5,
+          "names": [
+            "大岩裕樹"
+          ],
+          "institutions": [
+            "牧印刷株式会社"
+          ]
+        },
+        {
+          "role": "画コンテ・演出",
+          "time": 1396.5,
+          "names": [
+            "吉原正行"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "総作画監督",
+          "time": 1396.5,
+          "names": [
+            "椛島洋介"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "作画監督",
+          "time": 1396.5,
+          "names": [
+            "川面恒介"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "原画",
+          "time": 1396.5,
+          "names": [
+            "福元陽介",
+            "水野紗世",
+            "天野和子",
+            "村上華帆",
+            "山方春香",
+            "栗田香菜子",
+            "西川実希",
+            "矢野康平",
+            "冨田真理",
+            "柳原一義",
+            "西澤皓人",
+            "島崎琴美",
+            "笠原由博",
+            "辻彩夏",
+            "臼井沙帆",
+            "降矢瑞生",
+            "足立裕貴",
+            "米本えり",
+            "飯沼篤哉",
+            "岡田夏実",
+            "櫛田拳作",
+            "三宮哲太",
+            "鈴木奈々美",
+            "瀬川亜沙美",
+            "田中未来",
+            "松宮杏実"
+          ],
+          "institutions": [
+            "P.A.WORKS"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1396.5,
+          "names": [
+            "中野尚美"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 1396.5,
+          "group": "オープニングアニメーション",
+          "organizations": [
+            "草薙(KUSANAGI)"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 1396.5,
+          "group": "オープニングアニメーション",
+          "organizations": [
+            "T2 studio"
+          ]
+        },
+        {
+          "role": "2D works",
+          "time": 1396.5,
+          "names": [
+            "加藤千恵"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "3DCG",
+          "time": 1396.5,
+          "names": [
+            "市川元成",
+            "森重柚香"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "担当制作",
+          "time": 1396.5,
+          "names": [
+            "毛利健太郎",
+            "福澤祐也"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "画コンテ",
+          "time": 1402.5,
+          "names": [
+            "及川啓"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "作画監督",
+          "time": 1402.5,
+          "names": [
+            "椛島洋介"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "原画",
+          "time": 1402.5,
+          "names": [
+            "辻智子"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "動画",
+          "time": 1402.5,
+          "organizations": [
+            "玩拓アニメーション"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1402.5,
+          "names": [
+            "中野尚美"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 1402.5,
+          "organizations": [
+            "草薙(KUSANAGI)"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "撮影",
+          "time": 1402.5,
+          "names": [
+            "並木智"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "宣伝プロデューサー",
+          "time": 1408.5,
+          "names": [
+            "高野朋子"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 1408.5,
+          "names": [
+            "前川亮",
+            "小栗晋",
+            "木立己百花"
+          ]
+        },
+        {
+          "role": "宣伝協力",
+          "time": 1408.5,
+          "names": [
+            "秋葉隆史",
+            "原田有永",
+            "竹之内葉南",
+            "今岡佐知子",
+            "小島猛"
+          ]
+        },
+        {
+          "role": "販売促進",
+          "time": 1408.5,
+          "names": [
+            "石山竜也",
+            "奥田卓司"
+          ]
+        },
+        {
+          "role": "ライセンス",
+          "time": 1408.5,
+          "names": [
+            "田畑あすか",
+            "斉藤奈緒子"
+          ]
+        },
+        {
+          "role": "海外ライセンス",
+          "time": 1408.5,
+          "names": [
+            "竹田晃洋"
+          ]
+        },
+        {
+          "role": "国内配信",
+          "time": 1408.5,
+          "names": [
+            "臼井優"
+          ]
+        },
+        {
+          "role": "契約管理",
+          "time": 1408.5,
+          "names": [
+            "黒岩康文",
+            "有馬里実"
+          ]
+        },
+        {
+          "role": "パッケージ制作",
+          "time": 1408.5,
+          "names": [
+            "黒岩真貴子"
+          ]
+        },
+        {
+          "role": "プロモーションムービー",
+          "time": 1408.5,
+          "organizations": [
+            "キュー・テック"
+          ]
+        },
+        {
+          "role": "WEB制作",
+          "time": 1408.5,
+          "names": [
+            "山本和男",
+            "渡辺裕一",
+            "菅原祐介"
+          ],
+          "institutions": [
+            "SALT Inc."
+          ]
+        },
+        {
+          "role": "宣伝デザイン協力",
+          "time": 1408.5,
+          "organizations": [
+            "KOME WORKS"
+          ]
+        },
+        {
+          "role": "企画協力",
+          "time": 1408.5,
+          "names": [
+            "成田真大",
+            "齋藤里枝",
+            "土屋翔音"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 1408.5,
+          "organizations": [
+            "トレーナーの皆様",
+            "サラブレ編集部"
+          ]
+        },
+        {
+          "role": "制作庶務",
+          "time": 1408.5,
+          "names": [
+            "田島美奈"
+          ]
+        },
+        {
+          "role": "サウンドミキサー",
+          "time": 1411.5,
+          "names": [
+            "徳久智成"
+          ]
+        },
+        {
+          "role": "サウンドエディター",
+          "time": 1411.5,
+          "names": [
+            "關このみ"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 1411.5,
+          "names": [
+            "宅間麻姫"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 1411.5,
+          "organizations": [
+            "スリーエススタジオ"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 1411.5,
+          "names": [
+            "小野勝弘"
+          ]
+        },
+        {
+          "role": "キャスティングマネージャー",
+          "time": 1411.5,
+          "names": [
+            "小室亜紗子"
+          ],
+          "institutions": [
+            "スタージャムコーポレーション"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 1411.5,
+          "organizations": [
+            "HALF H・P STUDIO"
+          ]
+        },
+        {
+          "role": "オフライン編集",
+          "time": 1411.5,
+          "organizations": [
+            "ジェイ・フィルム"
+          ]
+        },
+        {
+          "role": "オンライン編集",
+          "time": 1411.5,
+          "names": [
+            "大関悠",
+            "清水裕貴"
+          ],
+          "institutions": [
+            "キュー・テック"
+          ]
+        },
+        {
+          "role": "オンライン編集デスク",
+          "time": 1411.5,
+          "names": [
+            "片田悠介"
+          ]
+        },
+        {
+          "role": "制作デスク",
+          "time": 1417.5,
+          "names": [
+            "橘内諒太"
+          ]
+        },
+        {
+          "role": "設定制作",
+          "time": 1417.5,
+          "names": [
+            "福澤祐也"
+          ]
+        },
+        {
+          "role": "担当制作",
+          "time": 1417.5,
+          "names": [
+            "菅原至正"
+          ]
+        },
+        {
+          "role": "製作委員会",
+          "time": 1420.5,
+          "names": [
+            "大島孝幸",
+            "高橋亜希人",
+            "山中一孝",
+            "櫻井優香",
+            "堀切八郎",
+            "池田篤史",
+            "糀嶋麻菜美"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 1426.5,
+          "organizations": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 1432.5,
+          "organizations": [
+            "アニメ「ウマ娘 プリティーダービー」製作委員会"
+          ]
+        }
+      ],
+      "cast": [
+        [
+          "スペシャルウィーク",
+          "和氣あず未"
+        ],
+        [
+          "サイレンススズカ",
+          "高野麻里佳"
+        ],
+        [
+          "トレーナー",
+          "沖野晃司"
+        ],
+        [
+          "トウカイテイオー",
+          "Machico"
+        ],
+        [
+          "ウオッカ",
+          "大橋彩香"
+        ],
+        [
+          "ダイワスカーレット",
+          "木村千咲"
+        ],
+        [
+          "ゴールドシップ",
+          "上田瞳"
+        ],
+        [
+          "メジロマックイーン",
+          "大西沙織"
+        ],
+        [
+          "エルコンドルパサー",
+          "高橋未奈美"
+        ],
+        [
+          "グラスワンダー",
+          "前田玲奈"
+        ],
+        [
+          "エアグルーヴ",
+          "青木瑠璃子"
+        ],
+        [
+          "ヒシアマゾン",
+          "巽悠衣子"
+        ],
+        [
+          "テイエムオペラオー",
+          "徳井青空"
+        ],
+        [
+          "マルゼンスキー",
+          "Lynn"
+        ],
+        [
+          "セイウンスカイ",
+          "鬼頭明里"
+        ],
+        [
+          "ナイスネイチャ",
+          "前田佳織里"
+        ],
+        [
+          "メジロライアン",
+          "土師亜文"
+        ],
+        [
+          "ウイニングチケット",
+          "渡部優衣"
+        ],
+        [
+          "東条ハナ",
+          "豊口めぐみ"
+        ]
+      ],
+      "excluded_cast": [
+        [
+          "実況",
+          "明坂聡美"
+        ],
+        [
+          "観客",
+          "藤井隼"
+        ],
+        [
+          "解説",
+          "細江純子"
+        ]
+      ],
+      "music_uses": [
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
+          "release_id": "album-laca-9637",
+          "title": "Make debut!",
+          "usage_type": "op"
+        },
+        {
+          "song_id": "song-silent-star-5582fe43d4",
+          "version_id": "song-silent-star-5582fe43d4-v-f24295f050",
+          "release_id": "album-laca-9637",
+          "title": "Silent Star",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "title": "Make debut!",
+          "role": "作詞・作曲",
+          "names": [
+            "新田目駿"
+          ]
+        },
+        {
+          "title": "Make debut!",
+          "role": "編曲",
+          "names": [
+            "廣澤優也",
+            "新田目駿"
+          ]
+        },
+        {
+          "title": "Silent Star",
+          "role": "作詞",
+          "names": [
+            "corochi"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "title": "Silent Star",
+          "role": "作曲・編曲",
+          "names": [
+            "田中秀和"
+          ],
+          "institutions": [
+            "MONACA"
+          ]
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "ウマ娘 ファンファーレ I GI",
+          "role": "作曲・編曲",
+          "names": [
+            "高田龍一"
+          ],
+          "institutions": [
+            "MONACA"
+          ],
+          "time": 1387.5
+        }
+      ],
+      "superseded_transcript": [
+        {
+          "work_id": "anime-s1",
+          "role": "原画",
+          "name": "P.A.WORKS",
+          "order": 13,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "P.A.WORKS"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "原画",
+          "name": "粟田香菜子",
+          "order": 16,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "person_id": "staff-粟田香菜子",
+          "institutions": [
+            "P.A.WORKS"
+          ]
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "動画",
+          "name": "P.A.WORKS",
+          "order": 30,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "P.A.WORKS"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "動画",
+          "name": "DRmovie",
+          "order": 34,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "DRmovie"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "色指定",
+          "name": "stella road",
+          "order": 54,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "stella road"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "仕上げ検査",
+          "name": "stella road",
+          "order": 56,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "stella road"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "仕上げ",
+          "name": "stella road",
+          "order": 58,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "stella road"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "仕上げ",
+          "name": "studio road",
+          "order": 67,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "studio road"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "仕上げ",
+          "name": "DRmovie",
+          "order": 73,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "DRmovie"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "背景",
+          "name": "草薙",
+          "order": 87,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "草薙",
+          "credited_name": "草薙(KUSANAGI)"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "背景協力",
+          "name": "NAM HAI ART",
+          "order": 97,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "NAM HAI ART"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "撮影",
+          "name": "T2 studio",
+          "order": 108,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "T2 studio"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "3DCG",
+          "name": "P.A.WORKS",
+          "order": 116,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
+          "organization": "P.A.WORKS"
+        },
+        {
+          "work_id": "anime-s1",
+          "role": "オンライン編集",
+          "name": "キュー・テック",
+          "order": 120,
+          "source_ref": "staff-transcript-anime-s1",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-s1-e07",
           "organization": "キュー・テック"
         }
       ]
