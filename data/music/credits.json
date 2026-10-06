@@ -232,7 +232,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-15938"
+      "source_catalog": "LACA-15938",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=cVYM2ZTzjGg"
+        }
+      ]
     },
     "song-ambitious-world-d3e9adbb88-v-7b2ce70bc0": {
       "source_track_id": "2162858406",
@@ -4899,6 +4905,10 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=5SVCqFclV60"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=SY_xWq4Zc7o"
         }
       ]
     },
@@ -5278,6 +5288,14 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=5SVCqFclV60"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=cVYM2ZTzjGg"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=SY_xWq4Zc7o"
         }
       ]
     },
