@@ -36,6 +36,7 @@ def main():
     version_labels = {v["id"]: v.get("version_label", "") for song in song_doc["songs"] for v in song["versions"]}
     character_names = {normalized(name): c for c in characters for name in (c["ja"], *c.get("aliases", []))}
     character_names["沖田トレーナー"] = next(c for c in characters if c["id"] == "narita_trainer")
+    character_names["ウィニングチケット"] = next(c for c in characters if c["id"] == "winningticket")
     voice_names = {normalized(name): v for v in voices
                    for name in (v["identity"]["ja"], *v["identity"].get("aliases", []))}
     voice_names[normalized("高橋未奈美")] = next(v for v in voices if v["id"] == "va-0180")
