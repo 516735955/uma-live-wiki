@@ -414,8 +414,8 @@
       "id": "creator-shilo-86c6f3b3cf",
       "name": "Shilo",
       "aliases": [
-        "shiLo",
-        "shilo"
+        "shilo",
+        "shiLo"
       ],
       "type": "person",
       "affiliations": []
@@ -1107,6 +1107,13 @@
       "affiliations": []
     },
     {
+      "id": "creator-69641a01cd",
+      "name": "土屋裕一",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-9df1809a60",
       "name": "坪田修平",
       "aliases": [],
@@ -1243,6 +1250,27 @@
       ]
     },
     {
+      "id": "creator-e5820c57bd",
+      "name": "小林启树",
+      "aliases": [
+        "小林啓樹"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "manual": true,
+      "source_urls": [
+        "https://www.bandainamcoent.co.jp/asobimotto/page/ac_symphony.html"
+      ],
+      "anime_music": true,
+      "anime_music_roles": [
+        "composer",
+        "arranger"
+      ],
+      "image": "/uma_tools/img/creators/keiki-kobayashi.jpg",
+      "image_source_url": "https://ace7.acecombat.jp/special/message.php",
+      "image_original_url": "https://ace7.acecombat.jp/assets/images/special/message/ph_28.jpg"
+    },
+    {
       "id": "creator-ae75b645e1",
       "name": "小森昭宏",
       "aliases": [],
@@ -1319,6 +1347,17 @@
       ]
     },
     {
+      "id": "creator-5e4fd345c6",
+      "name": "岩代太郎",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "anime_staff": true,
+      "sources": [
+        "https://anime-umamusume.jp/archive/1st/caststaff/"
+      ]
+    },
+    {
       "id": "creator-5b93eb96dd",
       "name": "岩嵜壮志",
       "aliases": [],
@@ -1338,6 +1377,17 @@
       "aliases": [],
       "type": "person",
       "affiliations": []
+    },
+    {
+      "id": "creator-e5ed3b7ed8",
+      "name": "川井憲次",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "anime_staff": true,
+      "sources": [
+        "https://anime-cinderellagray.com/staffcast/"
+      ]
     },
     {
       "id": "creator-cf49f62a1e",
@@ -1588,6 +1638,22 @@
       ]
     },
     {
+      "id": "creator-2fe5af8610",
+      "name": "椎名豪",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "manual": true,
+      "source_urls": [
+        "https://www.dokkyo-mejiro.com/wp/wp-content/uploads/2021/06/96.pdf"
+      ],
+      "anime_music": true,
+      "anime_music_roles": [
+        "composer",
+        "arranger"
+      ]
+    },
+    {
       "id": "creator-8ccf39ae29",
       "name": "椿山日南子",
       "aliases": [],
@@ -1597,8 +1663,26 @@
       ]
     },
     {
+      "id": "creator-af5e5cc3e5",
+      "name": "横山克",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "anime_staff": true,
+      "sources": [
+        "https://movie-umamusume.jp/caststaff/"
+      ]
+    },
+    {
       "id": "creator-f3641b769f",
       "name": "櫻井詩郎",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-a8e068c1f5",
+      "name": "櫻木咲子",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -2126,65 +2210,11 @@
       "affiliations": []
     },
     {
-      "id": "creator-fb22884a81",
-      "name": "鶴﨑輝一",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-e5ed3b7ed8",
-      "name": "川井憲次",
-      "aliases": [],
-      "type": "person",
-      "affiliations": [],
-      "anime_staff": true,
-      "sources": [
-        "https://anime-cinderellagray.com/staffcast/"
-      ]
-    },
-    {
-      "id": "creator-af5e5cc3e5",
-      "name": "横山克",
-      "aliases": [],
-      "type": "person",
-      "affiliations": [],
-      "anime_staff": true,
-      "sources": [
-        "https://movie-umamusume.jp/caststaff/"
-      ]
-    },
-    {
-      "id": "creator-5e4fd345c6",
-      "name": "岩代太郎",
-      "aliases": [],
-      "type": "person",
-      "affiliations": [],
-      "anime_staff": true,
-      "sources": [
-        "https://anime-umamusume.jp/archive/1st/caststaff/"
-      ]
-    },
-    {
-      "id": "creator-69641a01cd",
-      "name": "土屋裕一",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-a8e068c1f5",
-      "name": "櫻木咲子",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
       "id": "creator-ff7b158325",
       "name": "高田龙一",
       "aliases": [
-        "高田龍一",
-        "髙田龍一"
+        "髙田龍一",
+        "高田龍一"
       ],
       "type": "person",
       "affiliations": [],
@@ -2203,41 +2233,11 @@
       "image_original_url": "https://monaca.jp/test_newmncHP_test/wp-content/uploads/2023/03/230222-1_2371-edited-scaled.jpg"
     },
     {
-      "id": "creator-2fe5af8610",
-      "name": "椎名豪",
+      "id": "creator-fb22884a81",
+      "name": "鶴﨑輝一",
       "aliases": [],
       "type": "person",
-      "affiliations": [],
-      "manual": true,
-      "source_urls": [
-        "https://www.dokkyo-mejiro.com/wp/wp-content/uploads/2021/06/96.pdf"
-      ],
-      "anime_music": true,
-      "anime_music_roles": [
-        "composer",
-        "arranger"
-      ]
-    },
-    {
-      "id": "creator-e5820c57bd",
-      "name": "小林启树",
-      "aliases": [
-        "小林啓樹"
-      ],
-      "type": "person",
-      "affiliations": [],
-      "manual": true,
-      "source_urls": [
-        "https://www.bandainamcoent.co.jp/asobimotto/page/ac_symphony.html"
-      ],
-      "anime_music": true,
-      "anime_music_roles": [
-        "composer",
-        "arranger"
-      ],
-      "image": "/uma_tools/img/creators/keiki-kobayashi.jpg",
-      "image_source_url": "https://ace7.acecombat.jp/special/message.php",
-      "image_original_url": "https://ace7.acecombat.jp/assets/images/special/message/ph_28.jpg"
+      "affiliations": []
     }
   ]
 }
