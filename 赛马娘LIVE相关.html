@@ -191,7 +191,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div class="archive-toolbar">
                     <label class="ui-search">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-                        <input type="search" v-model.trim="eventsQuery" placeholder="搜索活动、系列、出演者、角色或歌曲" autocomplete="off">
+                        <input type="search" v-model.trim="eventsQuery" aria-label="搜索活动、系列、出演者、角色或歌曲" placeholder="搜索活动、系列、出演者、角色或歌曲" autocomplete="off">
                         <button v-if="eventsQuery" type="button" @click.prevent="eventsQuery=''" aria-label="清空搜索">×</button>
                     </label>
                     <ui-select v-model="evYear" label="年份" :options="eventYearOptions" @change="setEvYear"></ui-select>
@@ -341,7 +341,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <div v-if="songCatalogError" class="ui-state ui-state-error">{{ songCatalogError }}</div>
             <template v-if="!songDetail">
                 <div class="archive-toolbar">
-                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="songDbQuery" placeholder="搜索曲名、版本、创作者或歌词" autocomplete="off"><button v-if="songDbQuery" type="button" @click.prevent="songDbQuery=''" aria-label="清空搜索">×</button></label>
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="songDbQuery" aria-label="搜索曲名、版本、创作者或歌词" placeholder="搜索曲名、版本、创作者或歌词" autocomplete="off"><button v-if="songDbQuery" type="button" @click.prevent="songDbQuery=''" aria-label="清空搜索">×</button></label>
                 </div>
                 <div id="songArchiveTop" class="music-card-grid song-card-grid">
                     <template v-if="songCatalogLoading && !songCatalog.songs.length">
@@ -461,7 +461,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <div v-if="creatorCatalogError" class="ui-state ui-state-error">{{ creatorCatalogError }}</div>
             <template v-if="!creatorDetail">
                 <div class="archive-toolbar creator-toolbar">
-                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="creatorQuery" placeholder="搜索创作者或歌曲" autocomplete="off"><button v-if="creatorQuery" type="button" @click.prevent="creatorQuery=''" aria-label="清空搜索">×</button></label>
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="creatorQuery" aria-label="搜索创作者或歌曲" placeholder="搜索创作者或歌曲" autocomplete="off"><button v-if="creatorQuery" type="button" @click.prevent="creatorQuery=''" aria-label="清空搜索">×</button></label>
                     <div class="filter-pill-group" aria-label="创作分工">
                         <button v-for="option in [{value:'all',label:'全部'},{value:'lyricist',label:'作词'},{value:'composer',label:'作曲'},{value:'arranger',label:'编曲'},{value:'remixer',label:'混音改编'},{value:'producer',label:'制作'},{value:'orchestrator',label:'配器'}]" :key="option.value" class="filter-pill" :class="{active:creatorRole===option.value}" type="button" @click="setCreatorRole(option.value)">{{ option.label }}</button>
                     </div>
@@ -504,7 +504,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         <div id="tab-db-voice" v-if="activeTab==='database' && dbView==='voice'" class="tab-content active archive-surface">
             <div v-if="voiceError" class="ui-state ui-state-error">{{ voiceError }}</div>
             <template v-if="!voiceDetail">
-                <div class="archive-toolbar"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="va-search" id="vaSearch" placeholder="搜索声优名或角色名" autocomplete="off"></label></div>
+                <div class="archive-toolbar"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="va-search" id="vaSearch" aria-label="搜索声优名或角色名" placeholder="搜索声优名或角色名" autocomplete="off"></label></div>
                 <div v-if="voiceLoading && !voiceProfiles.length" class="archive-card-skeletons" aria-hidden="true"><span v-for="i in 8" :key="'voice-load-'+i"></span></div>
                 <ul class="va-grid" id="vaGrid"></ul>
                 <div class="ui-state" id="vaNoData">没有找到匹配的声优</div>
@@ -561,7 +561,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <template v-if="voiceAnimeWorks.length"><header class="entity-section-title"><h2>动画作品</h2><span>{{ voiceAnimeWorks.length }} 部</span></header><anime-participation :works="voiceAnimeWorks"></anime-participation></template>
                     <header class="entity-section-title"><h2>演出活动</h2></header>
-                    <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="voiceHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="voiceHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
+                    <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="voiceHistoryQuery" aria-label="搜索活动或年份" placeholder="搜索活动或年份"></label><ui-select v-model="voiceHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
                     <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
                     <div v-else-if="voicePastByYear.length" class="history-years"><section v-for="group in voicePastByYear" :key="group.year"><h2>{{ group.year }}</h2><button v-for="event in group.events" :key="event.event_id+'-'+(event.session_id||'event')" @click="openEvent(event.event_id,event.session_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></section></div>
@@ -574,7 +574,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <div v-if="albumsError" class="ui-state ui-state-error">{{ albumsError }}</div>
             <template v-if="!albumDetail">
                 <div class="archive-toolbar">
-                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="relQuery" placeholder="搜索专辑、歌曲、歌手或商品编号" autocomplete="off"><button v-if="relQuery" type="button" @click.prevent="relQuery=''" aria-label="清空搜索">×</button></label>
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="relQuery" aria-label="搜索专辑、歌曲、歌手或商品编号" placeholder="搜索专辑、歌曲、歌手或商品编号" autocomplete="off"><button v-if="relQuery" type="button" @click.prevent="relQuery=''" aria-label="清空搜索">×</button></label>
                     <ui-select v-model="relSort" label="排序" :options="albumSortOptions"></ui-select>
                 </div>
                 <div class="archive-filter-row">
@@ -633,7 +633,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         <div id="tab-characters" v-if="activeTab==='database' && dbView==='characters'" class="tab-content active archive-surface">
             <template v-if="!charDetail">
                 <div class="archive-toolbar">
-                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="c-search" id="cIntroSearch" placeholder="搜索角色名或声优名" autocomplete="off"></label>
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="c-search" id="cIntroSearch" aria-label="搜索角色名或声优名" placeholder="搜索角色名或声优名" autocomplete="off"></label>
                     <ui-select v-model="charSort" label="排序" :options="characterSortOptions"></ui-select>
                 </div>
                 <div class="cio-list loading" id="cIntroList"><ul class="cio-grid" id="cIntroGrid"></ul><div class="ui-state" id="cIntroNoData">没有找到匹配的角色</div></div>
@@ -696,7 +696,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <template v-if="characterAnimeWorks.length"><header class="entity-section-title"><h2>动画作品</h2><span>{{ characterAnimeWorks.length }} 部</span></header><anime-participation :works="characterAnimeWorks"></anime-participation></template>
                     <header class="entity-section-title"><h2>演出活动</h2></header>
-                    <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="charHistoryQuery" placeholder="搜索活动或年份"></label><ui-select v-model="charHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
+                    <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="charHistoryQuery" aria-label="搜索活动或年份" placeholder="搜索活动或年份"></label><ui-select v-model="charHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
                     <div v-else-if="appearanceError('character',charDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('character',charDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('character',charDetail.id)">重试</button></div>
                     <div v-else-if="charHistoryEvents.length" class="history-list"><button v-for="event in charHistoryEvents" :key="event.event_id+'-'+(event.session_id||'event')" @click="openEvent(event.event_id,event.session_id)"><time>{{ event.date || '待公布' }}</time><span>{{ event.title }}</span><em>{{ eventKindLabel(event.kind) }}</em></button></div>
@@ -708,7 +708,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         <div id="tab-db-anime" v-if="activeTab==='database' && dbView==='anime'" class="tab-content active archive-surface anime-surface">
             <template v-if="!animeDetail">
                 <div class="archive-toolbar">
-                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeQuery" placeholder="搜索作品名" autocomplete="off"></label>
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeQuery" aria-label="搜索作品名" placeholder="搜索作品名" autocomplete="off"></label>
                     <span class="archive-result-count">{{ animeFiltered.length }} 部作品</span>
                 </div>
                 <div class="archive-filter-row">
@@ -759,7 +759,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     </section>
                     <section v-if="animeSection==='staff'" class="entity-section">
                         <header class="entity-section-title"><h2>制作人员</h2><button v-if="animeStaffGroups.length || animeStaffAggregateGroups.length" type="button" class="text-link" @click="toggleAnimeStaffAll">{{ animeStaffAllOpen?'收起全部':'展开全部' }}</button></header>
-                        <label class="ui-search anime-staff-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeStaffQuery" placeholder="查找姓名、职务或机构" @input="setAnimeSection('staff')"><button v-if="animeStaffQuery" type="button" @click.prevent="animeStaffQuery='';setAnimeSection('staff')" aria-label="清空搜索">×</button></label>
+                        <label class="ui-search anime-staff-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeStaffQuery" aria-label="查找姓名、职务或机构" placeholder="查找姓名、职务或机构" @input="setAnimeSection('staff')"><button v-if="animeStaffQuery" type="button" @click.prevent="animeStaffQuery='';setAnimeSection('staff')" aria-label="清空搜索">×</button></label>
                         <div v-if="animeStaffGroups.length" class="anime-credit-ledger ui-disclosure-list">
                             <ui-disclosure v-for="group in animeStaffGroups" :key="group.key" class="anime-staff-disclosure" :open="animeStaffGroupOpen(group)" @toggle="toggleAnimeStaffGroup(group)">
                                 <template #title><b>{{ group.group ? group.group+' · ' : '' }}{{ group.role }}</b></template><template #meta>{{ group.count }}</template>
@@ -785,7 +785,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <div v-if="animeLoading || !routeReady" class="ui-state loading">正在加载制作人员资料…</div>
             <div v-else-if="animeError" class="ui-state error">{{ animeError }}<button class="state-retry" @click="retryAnime()">重试</button></div>
             <template v-else>
-<template v-if="!staffDetail"><div class="archive-toolbar" id="staffArchiveTop"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="staffQuery" placeholder="搜索制作人员姓名或职务" autocomplete="off"><button v-if="staffQuery" type="button" @click.prevent="staffQuery=''" aria-label="清空搜索">×</button></label><span>{{ staffFiltered.length }} 位制作人员</span></div><div v-if="animeError" class="ui-state ui-state-error"><span>{{ animeError }}</span><button class="ui-retry" @click="retryAnime">重试</button></div><div class="music-card-grid staff-card-grid"><template v-if="animeLoading && !animeCatalog.people.length"><div v-for="i in 8" :key="'staff-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div></template><article v-for="person in staffPaged" :key="person.id" class="music-card creator-card staff-card"><a class="music-card-main staff-card-main" :href="staffHref(person)" @click="animeLink($event,staffHref(person))"><img :src="staffPortrait(person)" alt="" loading="lazy" @error="person.photo=''"><span class="music-card-copy"><b>{{ person.name }}</b><small>{{ person.work_count }} 部作品</small></span><span class="role-tag-row"><em v-for="role in person.roles.slice(0,2)" :key="role" class="credit-role-tag">{{ role }}</em></span></a></article><div v-if="!animeLoading && !animeError && !staffFiltered.length" class="ui-state">没有符合条件的制作人员</div></div><div v-if="staffFiltered.length" class="ui-pager"><span>{{ (staffPage-1)*40+1 }}–{{ Math.min(staffPage*40,staffFiltered.length) }} / {{ staffFiltered.length }}</span><div><button :disabled="staffPage===1" @click="setStaffPage(staffPage-1)">上一页</button><button v-for="page in staffPageList" :key="page" :class="{active:page===staffPage}" :disabled="page==='…'" @click="setStaffPage(page)">{{ page }}</button><button :disabled="staffPage===staffPageCount" @click="setStaffPage(staffPage+1)">下一页</button></div></div></template>
+<template v-if="!staffDetail"><div class="archive-toolbar" id="staffArchiveTop"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="staffQuery" aria-label="搜索制作人员姓名或职务" placeholder="搜索制作人员姓名或职务" autocomplete="off"><button v-if="staffQuery" type="button" @click.prevent="staffQuery=''" aria-label="清空搜索">×</button></label><span>{{ staffFiltered.length }} 位制作人员</span></div><div v-if="animeError" class="ui-state ui-state-error"><span>{{ animeError }}</span><button class="ui-retry" @click="retryAnime">重试</button></div><div class="music-card-grid staff-card-grid"><template v-if="animeLoading && !animeCatalog.people.length"><div v-for="i in 8" :key="'staff-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div></template><article v-for="person in staffPaged" :key="person.id" class="music-card creator-card staff-card"><a class="music-card-main staff-card-main" :href="staffHref(person)" @click="animeLink($event,staffHref(person))"><img :src="staffPortrait(person)" alt="" loading="lazy" @error="person.photo=''"><span class="music-card-copy"><b>{{ person.name }}</b><small>{{ person.work_count }} 部作品</small></span><span class="role-tag-row"><em v-for="role in person.roles.slice(0,2)" :key="role" class="credit-role-tag">{{ role }}</em></span></a></article><div v-if="!animeLoading && !animeError && !staffFiltered.length" class="ui-state">没有符合条件的制作人员</div></div><div v-if="staffFiltered.length" class="ui-pager"><span>{{ (staffPage-1)*40+1 }}–{{ Math.min(staffPage*40,staffFiltered.length) }} / {{ staffFiltered.length }}</span><div><button :disabled="staffPage===1" @click="setStaffPage(staffPage-1)">上一页</button><button v-for="page in staffPageList" :key="page" :class="{active:page===staffPage}" :disabled="page==='…'" @click="setStaffPage(page)">{{ page }}</button><button :disabled="staffPage===staffPageCount" @click="setStaffPage(staffPage+1)">下一页</button></div></div></template>
             <article v-else class="entity-detail"><div class="entity-hero creator-hero music-archive-hero"><div class="entity-cover"><img :src="staffPortrait(staffDetail)" :alt="staffDetail.name" @error="staffDetail.photo=''"></div><div class="entity-intro"><span class="entity-kind">制作人员</span><h1>{{ staffDetail.name }}</h1><p v-if="staffDisplayAliases.length" class="entity-reading">{{ staffDisplayAliases.join(' / ') }}</p><p v-if="staffDetail.bio">{{ staffDetail.bio }}</p><dl class="entity-meta"><div v-if="staffDetail.birthday"><dt>生日</dt><dd>{{ staffDetail.birthday }}</dd></div><div><dt>参与作品</dt><dd>{{ staffDetail.work_count }} 部</dd></div></dl></div></div><div class="media-content"><section class="entity-section"><header class="entity-section-title"><h2>参与作品</h2></header><anime-participation :works="staffCredits" section="staff"></anime-participation></section></div></article>
             </template>
         </div>
@@ -812,7 +812,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <template v-if="!horseDetail">
                     <header class="entity-section-title"><h2>原型马</h2></header>
                     <div class="archive-toolbar">
-                        <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="horseQuery" placeholder="搜索马名或出生日期…" autocomplete="off"></label>
+                        <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="horseQuery" aria-label="搜索马名或出生日期…" placeholder="搜索马名或出生日期…" autocomplete="off"></label>
                     </div>
                     <div v-if="horsesListError" class="ui-state ui-state-error" role="alert"><span>{{ horsesListError }}</span><button type="button" class="ui-retry" @click="retryHorses">重试</button></div>
                     <div v-else-if="horsePaged.length" class="horse-list">
