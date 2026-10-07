@@ -207,9 +207,16 @@ def main():
                         "version_id": version, "release_id": usage["release_id"], "version_label": version_labels[version],
                         "usage_type": usage["usage_type"], "label": "", "evidence_refs": [ref]}
             existing = next((r for r in relations if r["source_id"] == unit and
-                             r.get("relation_type") == "uses_song" and r.get("version_id") == version), None)
+                             r.get("relation_type") == "uses_song" and r.get("version_id") == version and
+                             r.get("usage_type", usage["usage_type"]) == usage["usage_type"]), None)
+            if existing is None:
+                existing = next((r for r in relations if r["source_id"] == unit and
+                                 r.get("relation_type") == "uses_song" and not r.get("version_id") and
+                                 r.get("target_id") == usage["song_id"] and
+                                 r.get("usage_type") == usage["usage_type"]), None)
             if existing:
-                existing["version_label"] = version_labels[version]
+                existing.update(version_id=version, release_id=usage["release_id"],
+                                version_label=version_labels[version], usage_type=usage["usage_type"], label="")
                 existing["evidence_refs"] = list(dict.fromkeys([*existing.get("evidence_refs", []), ref]))
             else:
                 relations.append(relation)

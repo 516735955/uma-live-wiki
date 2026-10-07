@@ -5911,7 +5911,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=yF4Mw5EHXzw"
+        }
+      ]
     },
     "song-c76d985829-v-c76d985829": {
       "source_track_id": "1981788649",
@@ -7144,6 +7150,10 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=qyAOxavyXDU"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=yF4Mw5EHXzw"
         }
       ]
     },
@@ -10611,7 +10621,13 @@
       "source": "official_release",
       "source_url": "https://anime-umamusume.jp/archive/2nd/music/detail_936.html",
       "source_catalog": "LACA-9814",
-      "manual": true
+      "manual": true,
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=yF4Mw5EHXzw"
+        }
+      ]
     },
     "song-make-debut-2c6c00a71e-v-aa0647857b": {
       "credits": [

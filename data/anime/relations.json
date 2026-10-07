@@ -3888,10 +3888,11 @@
       "version_id": "song-4bfe85c283-v-235dae4c76",
       "release_id": "album-laca-9814",
       "version_label": "TV Size / 13話Ver.",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
-        "official-ost-anime-s2"
+        "official-ost-anime-s2",
+        "official-ending-anime-s2-e13"
       ],
       "display_order": 20
     },
@@ -10143,10 +10144,11 @@
       "version_id": "song-228f943b49-v-5d0c6ea225",
       "release_id": "album-laca-9814",
       "version_label": "TV Size / 第二季第13话",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s2-e13"
       ],
       "display_order": 20
     },
@@ -14725,7 +14727,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14740,7 +14743,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14755,7 +14759,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14770,22 +14775,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
-      ]
-    },
-    {
-      "id": "anime-s2-e13-broadcast-cast-04",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e13",
-      "relation_type": "credited_cast",
-      "target_type": "character",
-      "target_id": "silencesuzuka",
-      "voice_actor_id": "va-0184",
-      "signature": "サイレンススズカ",
-      "label": "",
-      "display_order": 4,
-      "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14798,9 +14789,10 @@
       "voice_actor_id": "va-0009",
       "signature": "ゴールドシップ",
       "label": "",
-      "display_order": 5,
+      "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14813,9 +14805,10 @@
       "voice_actor_id": "va-0051",
       "signature": "ウオッカ",
       "label": "",
-      "display_order": 6,
+      "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14828,9 +14821,10 @@
       "voice_actor_id": "va-0090",
       "signature": "ダイワスカーレット",
       "label": "",
-      "display_order": 7,
+      "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14843,9 +14837,10 @@
       "voice_actor_id": "va-0118",
       "signature": "シンボリルドルフ",
       "label": "",
-      "display_order": 8,
+      "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14858,9 +14853,10 @@
       "voice_actor_id": "va-0126",
       "signature": "キタサンブラック",
       "label": "",
-      "display_order": 9,
+      "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14873,9 +14869,10 @@
       "voice_actor_id": "va-0138",
       "signature": "サトノダイヤモンド",
       "label": "",
-      "display_order": 10,
+      "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14888,9 +14885,10 @@
       "voice_actor_id": "va-0034",
       "signature": "ナイスネイチャ",
       "label": "",
-      "display_order": 11,
+      "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14903,9 +14901,10 @@
       "voice_actor_id": "va-0145",
       "signature": "ツインターボ",
       "label": "",
-      "display_order": 12,
+      "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14918,9 +14917,10 @@
       "voice_actor_id": "va-0161",
       "signature": "マチカネタンホイザ",
       "label": "",
-      "display_order": 13,
+      "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14933,9 +14933,10 @@
       "voice_actor_id": "va-0119",
       "signature": "イクノディクタス",
       "label": "",
-      "display_order": 14,
+      "display_order": 13,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14948,9 +14949,10 @@
       "voice_actor_id": "va-0004",
       "signature": "メジロパーマー",
       "label": "",
-      "display_order": 15,
+      "display_order": 14,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14963,9 +14965,10 @@
       "voice_actor_id": "va-0065",
       "signature": "ダイタクヘリオス",
       "label": "",
-      "display_order": 16,
+      "display_order": 15,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14978,9 +14981,10 @@
       "voice_actor_id": "va-0129",
       "signature": "ライスシャワー",
       "label": "",
-      "display_order": 17,
+      "display_order": 16,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -14993,9 +14997,10 @@
       "voice_actor_id": "va-0158",
       "signature": "ビワハヤヒデ",
       "label": "",
-      "display_order": 18,
+      "display_order": 17,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -15008,9 +15013,10 @@
       "voice_actor_id": "va-0113",
       "signature": "ウイニングチケット",
       "label": "",
-      "display_order": 19,
+      "display_order": 18,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e13"
+        "broadcast-cast-anime-s2-e13",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -29093,11 +29099,15 @@
       "target_type": "song",
       "target_id": "song-b90b0841b4",
       "usage_type": "insert",
-      "label": "插入曲",
+      "label": "",
       "display_order": 20,
       "evidence_refs": [
-        "moegirl-tv-episode-music"
-      ]
+        "moegirl-tv-episode-music",
+        "official-ending-anime-s2-e13"
+      ],
+      "version_id": "song-b90b0841b4-v-698ddfd6cc",
+      "release_id": "album-laca-9814",
+      "version_label": "TV Size"
     },
     {
       "id": "anime-s3-e01-bgm-song-bd297fdbbe",
