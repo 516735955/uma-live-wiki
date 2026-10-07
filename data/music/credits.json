@@ -4306,7 +4306,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=oTYb-yRgdGI"
+        }
+      ]
     },
     "song-1c6c40dd5a-v-1c6c40dd5a": {
       "credits": [
@@ -5854,6 +5860,10 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=LNjn2lNEHoQ"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=oTYb-yRgdGI"
         }
       ]
     },
