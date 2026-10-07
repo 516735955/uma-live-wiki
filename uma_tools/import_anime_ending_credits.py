@@ -33,6 +33,7 @@ def main():
     music_doc = json.loads((ROOT / "data/music/credits.json").read_text(encoding="utf-8"))
     song_doc = json.loads((ROOT / "data/song_catalog.json").read_text(encoding="utf-8"))
     versions = {v["id"]: song["id"] for song in song_doc["songs"] for v in song["versions"]}
+    version_labels = {v["id"]: v.get("version_label", "") for song in song_doc["songs"] for v in song["versions"]}
     character_names = {normalized(name): c for c in characters for name in (c["ja"], *c.get("aliases", []))}
     character_names["沖田トレーナー"] = next(c for c in characters if c["id"] == "narita_trainer")
     voice_names = {normalized(name): v for v in voices
@@ -202,11 +203,12 @@ def main():
             relation_id = f"{unit}-ending-music-{version}"
             relation = {"id": relation_id, "source_type": "anime_unit", "source_id": unit,
                         "relation_type": "uses_song", "target_type": "song", "target_id": usage["song_id"],
-                        "version_id": version, "release_id": usage["release_id"], "version_label": usage["title"],
+                        "version_id": version, "release_id": usage["release_id"], "version_label": version_labels[version],
                         "usage_type": usage["usage_type"], "label": "", "evidence_refs": [ref]}
             existing = next((r for r in relations if r["source_id"] == unit and
                              r.get("relation_type") == "uses_song" and r.get("version_id") == version), None)
             if existing:
+                existing["version_label"] = version_labels[version]
                 existing["evidence_refs"] = list(dict.fromkeys([*existing.get("evidence_refs", []), ref]))
             else:
                 relations.append(relation)

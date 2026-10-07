@@ -5876,6 +5876,10 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=90PawU5MZM8"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=xwceVb3Lp4s"
         }
       ]
     },
@@ -8211,7 +8215,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=xwceVb3Lp4s"
+        }
+      ]
     },
     "song-3397eaf282-v-3397eaf282": {
       "source_track_id": "2732035581",
@@ -10805,6 +10815,11 @@
           "name": "本田晃弘",
           "creator_id": "creator-eaf94340d3",
           "affiliation": "Cygames"
+        },
+        {
+          "role": "arranger",
+          "name": "中西亮輔",
+          "creator_id": "creator-e9c5e6c554"
         }
       ],
       "source": "official_ending",
@@ -10813,6 +10828,10 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=v91Gd795wj0"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=xwceVb3Lp4s"
         }
       ]
     },
