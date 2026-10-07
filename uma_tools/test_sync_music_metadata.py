@@ -155,6 +155,20 @@ class MusicMetadataSyncTest(unittest.TestCase):
         self.assertEqual(credits["versions"]["original"]["credits"][0]["name"], "Heart's Cry")
         self.assertEqual(credits["versions"]["original"]["credits"][0]["creator_id"], "creator-heart")
 
+    def test_creator_sync_preserves_animation_profiles_without_song_credits(self):
+        credited = {"id": "creator-music", "name": "音楽担当", "aliases": [],
+                    "anime_staff": True, "sources": ["https://example.com/staff"],
+                    "image": "/portrait.jpg", "bio": "动画音乐担当。"}
+        uncredited = {"id": "creator-producer", "name": "音楽制作", "aliases": [],
+                      "type": "person", "anime_staff": True}
+        credits = {"versions": {"song": {"credits": [{"role": "composer", "name": "音楽担当"}]}}}
+
+        rows = {row["id"]: row for row in SYNC.creator_rows(credits, {"creators": [credited, uncredited]})}
+
+        for key in ("anime_staff", "sources", "image", "bio"):
+            self.assertEqual(rows["creator-music"][key], credited[key])
+        self.assertTrue(rows["creator-producer"]["anime_staff"])
+
     def test_remixer_is_inferred_only_from_an_explicit_named_title(self):
         self.assertEqual(
             SYNC.inferred_remix_credit("GIRLS' LEGEND U (AJURIKA Remix)"),
