@@ -5841,7 +5841,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=DVS7ZNlKw8s"
+        }
+      ]
     },
     "song-4bfe85c283-v-235dae4c76": {
       "source_track_id": "1833817510",
@@ -7067,7 +7073,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=DVS7ZNlKw8s"
+        }
+      ]
     },
     "song-b90b0841b4-v-d639c1dc59": {
       "source_track_id": "1833819313",
