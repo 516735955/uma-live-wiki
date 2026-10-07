@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-0f63b6d4b9bcf123",
+  "build_id": "anime-cee5f5bd980c07f1",
   "generated_at": "2026-10-07T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -9,7 +9,7 @@
     "scheduled_units": 0,
     "watch_resources": 135,
     "relations": 1820,
-    "staff_credits": 19162,
+    "staff_credits": 19164,
     "staff_people": 2873
   },
   "works": [
@@ -91955,7 +91955,10 @@
       "role": "原画",
       "name": "島本勇太",
       "order": 46,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-shimamoto-yuta-profile",
+      "source_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "group": "",
       "unit_id": "anime-cinderella-gray-e04",
       "person_id": "staff-島本勇太",
@@ -97020,7 +97023,10 @@
       "role": "第二原画",
       "name": "溝渕美穂",
       "order": 60,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-mizobuchi-miho-worklog",
+      "source_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "group": "",
       "unit_id": "anime-cinderella-gray-e06",
       "person_id": "staff-溝渕美穂",
@@ -99662,7 +99668,10 @@
       "role": "第二原画",
       "name": "溝渕美穂",
       "order": 46,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-mizobuchi-miho-worklog",
+      "source_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "group": "",
       "unit_id": "anime-cinderella-gray-e07",
       "person_id": "staff-溝渕美穂",
@@ -108930,7 +108939,13 @@
       "role": "原画",
       "name": "吉田乃亜",
       "order": 32,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-rhinokino-worklog",
+      "source_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ],
+      "institutions": [
+        "rhinokino"
+      ],
       "group": "",
       "unit_id": "anime-cinderella-gray-e11",
       "person_id": "staff-吉田乃亜",
@@ -118637,6 +118652,30 @@
     },
     {
       "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e15",
+      "role": "构图",
+      "name": "溝渕美穂",
+      "person_id": "staff-溝渕美穂",
+      "order": 33,
+      "source_ref": "production-mizobuchi-miho-worklog",
+      "role_raw": "L/O",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e15",
+      "role": "第二原画",
+      "name": "溝渕美穂",
+      "person_id": "staff-溝渕美穂",
+      "order": 33,
+      "source_ref": "production-mizobuchi-miho-worklog",
+      "role_raw": "第二原画",
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
       "role": "原画",
       "name": "POZA",
       "order": 34,
@@ -125652,7 +125691,10 @@
       "role": "原画",
       "name": "島本勇太",
       "order": 46,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-shimamoto-yuta-profile",
+      "source_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "group": "",
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-島本勇太",
@@ -126291,7 +126333,10 @@
       "role": "中间动画检查",
       "name": "島本勇太",
       "order": 98,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-shimamoto-yuta-profile",
+      "source_refs": [
+        "staff-transcript-anime-cinderella-gray"
+      ],
       "group": "",
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-島本勇太",
@@ -343771,11 +343816,18 @@
     {
       "id": "staff-島本勇太",
       "name": "島本勇太",
-      "aliases": [],
+      "aliases": [
+        "やけん"
+      ],
+      "bio": "动画师，以岛本勇太署名从事原画、中间动画检查及数字作画修正工作。参与《芦毛灰姑娘》第4话、第18话的原画与第18话的中间动画检查。",
+      "profile_source_refs": [
+        "production-shimamoto-yuta-profile"
+      ],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
         "official-ending-anime-s2-e08",
-        "official-ending-anime-s2-e13"
+        "official-ending-anime-s2-e13",
+        "production-shimamoto-yuta-profile"
       ],
       "roles": [
         "原画",
@@ -344947,13 +344999,21 @@
     {
       "id": "staff-溝渕美穂",
       "name": "溝渕美穂",
-      "aliases": [],
+      "aliases": [
+        "ぶちこ"
+      ],
+      "bio": "动画师、插画师，出身于秋田县横手市。主要从事作画监督、总作画监督、构图原画及中间动画检查工作；参与《芦毛灰姑娘》第6、7话的第二原画，以及第15话的构图与第二原画。",
+      "profile_source_refs": [
+        "production-mizobuchi-miho-worklog"
+      ],
       "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
+        "staff-transcript-anime-cinderella-gray",
+        "production-mizobuchi-miho-worklog"
       ],
       "roles": [
         "第二原画",
-        "原画"
+        "原画",
+        "构图"
       ],
       "work_count": 1,
       "unit_count": 3
@@ -347161,8 +347221,13 @@
       "id": "staff-吉田乃亜",
       "name": "吉田乃亜",
       "aliases": [],
+      "bio": "原画师，参与《芦毛灰姑娘》第11话的原画制作。",
+      "profile_source_refs": [
+        "production-rhinokino-worklog"
+      ],
       "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
+        "staff-transcript-anime-cinderella-gray",
+        "production-rhinokino-worklog"
       ],
       "roles": [
         "原画"
@@ -382638,6 +382703,27 @@
       "kind": "official",
       "label": "官方单集片尾职员表",
       "url": "https://www.youtube.com/watch?v=yF4Mw5EHXzw",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-rhinokino-worklog",
+      "kind": "production",
+      "label": "rhinokino公开制作履历：芦毛灰姑娘第11话",
+      "url": "https://rhinokino-crd.com/2026/08/11/%E4%BD%9C%E7%94%BB%E5%8D%94%E5%8A%9B/",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-mizobuchi-miho-worklog",
+      "kind": "production",
+      "label": "溝渕美穂本人公开制作履历",
+      "url": "https://note.com/acryl_soldier/n/nf7e67ecf5bc0",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-shimamoto-yuta-profile",
+      "kind": "production",
+      "label": "島本勇太本人公开人物资料与制作履历",
+      "url": "https://twpf.jp/kine_tougen",
       "observed_at": "2026-10-07"
     }
   ]

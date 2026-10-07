@@ -42908,7 +42908,8 @@
       "role": "原画",
       "name": "島本勇太",
       "order": 46,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-shimamoto-yuta-profile",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e04",
       "person_id": "staff-島本勇太"
@@ -47203,7 +47204,8 @@
       "role": "第二原画",
       "name": "溝渕美穂",
       "order": 60,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-mizobuchi-miho-worklog",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e06",
       "person_id": "staff-溝渕美穂"
@@ -49437,7 +49439,8 @@
       "role": "第二原画",
       "name": "溝渕美穂",
       "order": 46,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-mizobuchi-miho-worklog",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e07",
       "person_id": "staff-溝渕美穂"
@@ -57303,7 +57306,9 @@
       "role": "原画",
       "name": "吉田乃亜",
       "order": 32,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-rhinokino-worklog",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
+      "institutions": ["rhinokino"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e11",
       "person_id": "staff-吉田乃亜"
@@ -65538,6 +65543,24 @@
     },
     {
       "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e15",
+      "role": "L/O",
+      "name": "溝渕美穂",
+      "person_id": "staff-溝渕美穂",
+      "order": 33,
+      "source_ref": "production-mizobuchi-miho-worklog"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e15",
+      "role": "第二原画",
+      "name": "溝渕美穂",
+      "person_id": "staff-溝渕美穂",
+      "order": 33,
+      "source_ref": "production-mizobuchi-miho-worklog"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
       "role": "原画",
       "name": "POZA",
       "order": 34,
@@ -71497,7 +71520,8 @@
       "role": "原画",
       "name": "島本勇太",
       "order": 46,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-shimamoto-yuta-profile",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-島本勇太"
@@ -72032,7 +72056,8 @@
       "role": "動画検査",
       "name": "島本勇太",
       "order": 98,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-shimamoto-yuta-profile",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-島本勇太"
