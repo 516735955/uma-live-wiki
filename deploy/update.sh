@@ -17,7 +17,7 @@ UMA_USER="${UMA_USER:-alaemiryoung}"
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
-fetch() { curl -fL --connect-timeout 15 --max-time 900 "$@"; }
+fetch() { curl -fL --connect-timeout 15 --max-time 3600 "$@"; }
 
 if [ -n "$ARCHIVE" ]; then
   echo "==> 使用本地压缩包 $ARCHIVE"
