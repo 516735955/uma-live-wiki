@@ -2878,93 +2878,114 @@
     {
       "work_id": "anime-s2",
       "role": "脚本",
-      "name": "永井 真吾",
-      "order": 0,
-      "source_ref": "official-story-anime-s2-e12",
+      "name": "永井真吾",
+      "order": 33,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-永井真吾",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1357.5
     },
     {
       "work_id": "anime-s2",
-      "role": "絵コンテ",
-      "name": "堀米 健二",
-      "order": 1,
-      "source_ref": "official-story-anime-s2-e12",
+      "role": "画コンテ",
+      "name": "堀米健二",
+      "order": 34,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-堀米健二",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1357.5
     },
     {
       "work_id": "anime-s2",
       "role": "演出",
-      "name": "佃 泰佑",
-      "order": 2,
-      "source_ref": "official-story-anime-s2-e12",
+      "name": "佃泰佑",
+      "order": 35,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-佃泰佑",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1360.5
     },
     {
       "work_id": "anime-s2",
       "role": "演出",
-      "name": "及川 啓",
-      "order": 2,
-      "source_ref": "official-story-anime-s2-e12",
+      "name": "及川啓",
+      "order": 36,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-及川啓",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1360.5
     },
     {
       "work_id": "anime-s2",
       "role": "作画監督",
-      "name": "辻 智子",
-      "order": 3,
-      "source_ref": "official-story-anime-s2-e12",
+      "name": "辻智子",
+      "order": 37,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-辻智子",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1360.5
     },
     {
       "work_id": "anime-s2",
       "role": "作画監督",
-      "name": "桐谷 真咲",
-      "order": 3,
-      "source_ref": "official-story-anime-s2-e12",
+      "name": "桐谷真咲",
+      "order": 38,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-桐谷真咲",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1360.5
     },
     {
       "work_id": "anime-s2",
       "role": "作画監督",
-      "name": "坂本 俊太",
-      "order": 3,
-      "source_ref": "official-story-anime-s2-e12",
+      "name": "坂本俊太",
+      "order": 39,
+      "source_ref": "official-ending-anime-s2-e12",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-坂本俊太",
       "evidence_refs": [
+        "official-ending-anime-s2-e12",
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2"
-      ]
+      ],
+      "group": "",
+      "source_time": 1360.5
     },
     {
       "work_id": "anime-s2",
@@ -89105,251 +89126,346 @@
       "work_id": "anime-s2",
       "role": "作画監督補佐",
       "name": "谷口りつ子",
-      "order": 7,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 40,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-谷口りつ子"
+      "person_id": "staff-谷口りつ子",
+      "source_time": 1360.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "作画監督補佐",
       "name": "平馬浩司",
-      "order": 8,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 41,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-平馬浩司"
+      "person_id": "staff-平馬浩司",
+      "source_time": 1360.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
-      "role": "総作画監督",
+      "role": "キャラクターデザイン・総作画監督",
       "name": "椛島洋介",
-      "order": 9,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 10,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-椛島洋介"
+      "person_id": "staff-椛島洋介",
+      "source_time": 85.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "担当制作",
       "name": "高崎慎",
-      "order": 10,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 43,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-高崎慎"
+      "person_id": "staff-高崎慎",
+      "source_time": 1360.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "小林優子",
-      "order": 11,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 44,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-小林優子"
+      "person_id": "staff-小林優子",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "大森理恵",
-      "order": 12,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 45,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-大森理恵"
+      "person_id": "staff-大森理恵",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "山崎千絵",
-      "order": 13,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 46,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-山崎千絵"
+      "person_id": "staff-山崎千絵",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "よっけ",
-      "order": 14,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 47,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-よっけ"
+      "person_id": "staff-よっけ",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "中村与史子",
-      "order": 15,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 48,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-中村与史子"
+      "person_id": "staff-中村与史子",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "吉田翔太",
-      "order": 16,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 49,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-吉田翔太"
-    },
-    {
-      "work_id": "anime-s2",
-      "role": "原画",
-      "name": "スタジオKAI",
-      "order": 17,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
-      "unit_id": "anime-s2-e12",
-      "organization": "スタジオKAI"
+      "person_id": "staff-吉田翔太",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "挽本敦子",
-      "order": 18,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 50,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-挽本敦子",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "大森亘",
-      "order": 19,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 51,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-大森亘",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "木村和貴",
-      "order": 20,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 52,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-木村和貴",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "國松聖士",
-      "order": 21,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 53,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-國松聖士",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "坂友加里",
-      "order": 22,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 54,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-坂友加里",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "坂本俊太",
-      "order": 23,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 55,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-坂本俊太",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "谷口りつ子",
-      "order": 24,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 56,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-谷口りつ子",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "米井大稀",
-      "order": 25,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 57,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-米井大稀",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "畑智司",
-      "order": 26,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 58,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-畑智司",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "井上英紀",
-      "order": 27,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 59,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
       "person_id": "staff-井上英紀",
       "institutions": [
         "スタジオKAI"
+      ],
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
       ]
     },
     {
       "work_id": "anime-s2",
       "role": "原画",
       "name": "中島順",
-      "order": 28,
-      "source_ref": "staff-transcript-anime-s2",
-      "group": "片尾署名（公开转录）",
+      "order": 60,
+      "source_ref": "official-ending-anime-s2-e12",
+      "group": "",
       "unit_id": "anime-s2-e12",
-      "person_id": "staff-中島順"
+      "person_id": "staff-中島順",
+      "source_time": 1372.5,
+      "evidence_refs": [
+        "official-ending-anime-s2-e12",
+        "staff-transcript-anime-s2"
+      ]
     },
     {
       "work_id": "anime-s2",
@@ -245171,6 +245287,3042 @@
       "institutions": [
         "株式会社Marco"
       ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 49.5,
+      "organization": "Cygames"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 1,
+      "role": "製作",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 73.5,
+      "person_id": "staff-渡邊耕一"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 2,
+      "role": "製作",
+      "group": "",
+      "name": "大田圭二",
+      "source_time": 73.5,
+      "person_id": "staff-大田圭二"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 3,
+      "role": "製作",
+      "group": "",
+      "name": "櫻井優香",
+      "source_time": 73.5,
+      "person_id": "staff-櫻井優香"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 4,
+      "role": "製作",
+      "group": "",
+      "name": "岡田美穂",
+      "source_time": 73.5,
+      "person_id": "staff-岡田美穂"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 5,
+      "role": "プロデューサー",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 76.5,
+      "person_id": "staff-秋田穣"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 6,
+      "role": "プロデューサー",
+      "group": "",
+      "name": "小野田壮吉",
+      "source_time": 76.5,
+      "person_id": "staff-小野田壮吉"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 7,
+      "role": "プロデューサー",
+      "group": "",
+      "name": "庄司夕紀",
+      "source_time": 76.5,
+      "person_id": "staff-庄司夕紀"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 8,
+      "role": "プロデューサー",
+      "group": "",
+      "name": "松村尚",
+      "source_time": 76.5,
+      "person_id": "staff-松村尚"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 9,
+      "role": "シリーズ構成",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 82.5,
+      "organization": "Cygames"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 11,
+      "role": "キャラクターデザイン",
+      "group": "",
+      "name": "辻智子",
+      "source_time": 85.5,
+      "person_id": "staff-辻智子"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 12,
+      "role": "総作画監督",
+      "group": "",
+      "name": "藤本さとる",
+      "source_time": 85.5,
+      "person_id": "staff-藤本さとる"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 13,
+      "role": "プロップデザイン",
+      "group": "",
+      "name": "宗圓祐輔",
+      "source_time": 85.5,
+      "person_id": "staff-宗圓祐輔"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 14,
+      "role": "メインアニメーター",
+      "group": "",
+      "name": "式地幸喜",
+      "source_time": 85.5,
+      "person_id": "staff-式地幸喜"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 15,
+      "role": "メインアニメーター",
+      "group": "",
+      "name": "小畑賢",
+      "source_time": 85.5,
+      "person_id": "staff-小畑賢"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 16,
+      "role": "メインアニメーター",
+      "group": "",
+      "name": "中島順",
+      "source_time": 85.5,
+      "person_id": "staff-中島順"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 17,
+      "role": "メインアニメーター",
+      "group": "",
+      "name": "宗圓祐輔",
+      "source_time": 85.5,
+      "person_id": "staff-宗圓祐輔"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 122,
+      "role": "美術監督",
+      "group": "",
+      "name": "岡本穂高",
+      "source_time": 1384.5,
+      "person_id": "staff-岡本穂高",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 121,
+      "role": "美術設定",
+      "group": "",
+      "name": "伊良波理沙",
+      "source_time": 1384.5,
+      "person_id": "staff-伊良波理沙",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 20,
+      "role": "色彩設計",
+      "group": "",
+      "name": "中野尚美",
+      "source_time": 91.5,
+      "person_id": "staff-中野尚美"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 150,
+      "role": "撮影監督",
+      "group": "",
+      "name": "並木智",
+      "source_time": 1387.5,
+      "person_id": "staff-並木智",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 22,
+      "role": "3D監督",
+      "group": "",
+      "name": "吉良柾成",
+      "source_time": 91.5,
+      "person_id": "staff-吉良柾成"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 23,
+      "role": "編集",
+      "group": "",
+      "name": "髙橋歩",
+      "source_time": 91.5,
+      "person_id": "staff-高橋歩"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 24,
+      "role": "音響監督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 97.5,
+      "person_id": "staff-森田祐一"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 25,
+      "role": "音楽プロデューサー",
+      "group": "",
+      "name": "関根陽一",
+      "source_time": 97.5,
+      "person_id": "staff-関根陽一"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 26,
+      "role": "音楽プロデューサー",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 97.5,
+      "person_id": "staff-内田哲也"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 27,
+      "role": "音楽プロデュース",
+      "group": "",
+      "name": "岩代太郎",
+      "source_time": 103.5,
+      "person_id": "staff-岩代太郎"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 28,
+      "role": "音楽",
+      "group": "",
+      "name": "UTAMARO movement",
+      "source_time": 103.5,
+      "organization": "UTAMARO movement"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 29,
+      "role": "アニメーション制作統括",
+      "group": "",
+      "name": "金子文雄",
+      "source_time": 118.5,
+      "person_id": "staff-金子文雄"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 30,
+      "role": "アニメーションプロデューサー",
+      "group": "",
+      "name": "増尾将史",
+      "source_time": 118.5,
+      "person_id": "staff-増尾将史"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 272,
+      "role": "アニメーション制作",
+      "group": "",
+      "name": "STUDIO KAI",
+      "source_time": 1429.5,
+      "organization": "STUDIO KAI"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 32,
+      "role": "監督",
+      "group": "",
+      "name": "及川啓",
+      "source_time": 127.5,
+      "person_id": "staff-及川啓"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 42,
+      "role": "総作画監督",
+      "group": "",
+      "name": "椛島洋介",
+      "source_time": 1360.5,
+      "person_id": "staff-椛島洋介"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 61,
+      "role": "第二原画",
+      "group": "",
+      "name": "森下晴隆",
+      "source_time": 1372.5,
+      "person_id": "staff-森下晴隆"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 62,
+      "role": "第二原画",
+      "group": "",
+      "name": "五十川久史",
+      "source_time": 1372.5,
+      "person_id": "staff-五十川久史"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 63,
+      "role": "第二原画",
+      "group": "",
+      "name": "斉藤準一",
+      "source_time": 1372.5,
+      "person_id": "staff-斉藤準一"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 64,
+      "role": "第二原画",
+      "group": "",
+      "name": "玉川陽莉",
+      "source_time": 1372.5,
+      "person_id": "staff-玉川陽莉"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 65,
+      "role": "第二原画",
+      "group": "",
+      "name": "大平一樹",
+      "source_time": 1372.5,
+      "person_id": "staff-大平一樹"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 66,
+      "role": "第二原画",
+      "group": "",
+      "name": "キムソンジュン",
+      "source_time": 1372.5,
+      "person_id": "staff-キムソンジュン"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 67,
+      "role": "第二原画",
+      "group": "",
+      "name": "木佐貫直矢",
+      "source_time": 1372.5,
+      "person_id": "staff-木佐貫直矢"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 68,
+      "role": "第二原画",
+      "group": "",
+      "name": "工藤葉瑠香",
+      "source_time": 1372.5,
+      "person_id": "staff-工藤葉瑠香"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 69,
+      "role": "第二原画",
+      "group": "",
+      "name": "土井田竜健",
+      "source_time": 1372.5,
+      "person_id": "staff-土井田竜健",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 70,
+      "role": "第二原画",
+      "group": "",
+      "name": "舩倉悠羽",
+      "source_time": 1372.5,
+      "person_id": "staff-舩倉悠羽",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 71,
+      "role": "第二原画",
+      "group": "",
+      "name": "白濱穂積",
+      "source_time": 1372.5,
+      "person_id": "staff-白濱穂積",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 72,
+      "role": "第二原画",
+      "group": "",
+      "name": "桐谷真咲",
+      "source_time": 1372.5,
+      "person_id": "staff-桐谷真咲",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 73,
+      "role": "第二原画",
+      "group": "",
+      "name": "大貫舞夏",
+      "source_time": 1372.5,
+      "person_id": "staff-大貫舞夏",
+      "institutions": [
+        "PRA"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 74,
+      "role": "第二原画",
+      "group": "",
+      "name": "新井達郎",
+      "source_time": 1372.5,
+      "person_id": "staff-新井達郎",
+      "institutions": [
+        "すたじおガッシュ"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 75,
+      "role": "第二原画",
+      "group": "",
+      "name": "スタジオノイン",
+      "source_time": 1372.5,
+      "organization": "スタジオノイン"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 76,
+      "role": "第二原画",
+      "group": "",
+      "name": "スタジオギガ",
+      "source_time": 1372.5,
+      "organization": "スタジオギガ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 77,
+      "role": "第二原画",
+      "group": "",
+      "name": "FAI",
+      "source_time": 1372.5,
+      "organization": "FAI"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 78,
+      "role": "第二原画",
+      "group": "",
+      "name": "暁",
+      "source_time": 1372.5,
+      "organization": "暁"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 79,
+      "role": "第二原画",
+      "group": "",
+      "name": "Triple A",
+      "source_time": 1372.5,
+      "organization": "Triple A"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 80,
+      "role": "第二原画",
+      "group": "",
+      "name": "エリアル",
+      "source_time": 1372.5,
+      "organization": "エリアル"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 81,
+      "role": "第二原画",
+      "group": "",
+      "name": "月面",
+      "source_time": 1372.5,
+      "organization": "月面"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 82,
+      "role": "アイキャッチ原画",
+      "group": "",
+      "name": "畑智司",
+      "source_time": 1372.5,
+      "person_id": "staff-畑智司"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 83,
+      "role": "動画検査",
+      "group": "",
+      "name": "木下あすな",
+      "source_time": 1375.5,
+      "person_id": "staff-木下あすな"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 84,
+      "role": "動画",
+      "group": "",
+      "name": "山本恭将",
+      "source_time": 1375.5,
+      "person_id": "staff-山本恭将",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 89,
+      "role": "動画",
+      "group": "",
+      "name": "小田悠希恵",
+      "source_time": 1375.5,
+      "person_id": "staff-小田悠希恵",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 86,
+      "role": "動画",
+      "group": "",
+      "name": "福江あゆ",
+      "source_time": 1375.5,
+      "person_id": "staff-福江あゆ",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 87,
+      "role": "動画",
+      "group": "",
+      "name": "土井田竜健",
+      "source_time": 1375.5,
+      "person_id": "staff-土井田竜健",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 88,
+      "role": "動画",
+      "group": "",
+      "name": "森島未紗紀",
+      "source_time": 1375.5,
+      "person_id": "staff-森島未紗紀",
+      "institutions": [
+        "スタジオKAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 90,
+      "role": "動画",
+      "group": "",
+      "name": "FAI",
+      "source_time": 1375.5,
+      "organization": "FAI"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 91,
+      "role": "動画",
+      "group": "",
+      "name": "月面",
+      "source_time": 1375.5,
+      "organization": "月面"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 92,
+      "role": "動画",
+      "group": "",
+      "name": "暁",
+      "source_time": 1375.5,
+      "organization": "暁"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 93,
+      "role": "動画",
+      "group": "",
+      "name": "セブンシーズ",
+      "source_time": 1375.5,
+      "organization": "セブンシーズ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 94,
+      "role": "動画",
+      "group": "",
+      "name": "シード",
+      "source_time": 1375.5,
+      "organization": "シード"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 95,
+      "role": "動画",
+      "group": "",
+      "name": "スタジオエル",
+      "source_time": 1375.5,
+      "organization": "スタジオエル"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 96,
+      "role": "動画",
+      "group": "",
+      "name": "スタジオ・ミュウ",
+      "source_time": 1375.5,
+      "organization": "スタジオ・ミュウ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 97,
+      "role": "動画",
+      "group": "",
+      "name": "リバイバル",
+      "source_time": 1375.5,
+      "organization": "リバイバル"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 98,
+      "role": "動画",
+      "group": "",
+      "name": "ONE ORDER",
+      "source_time": 1375.5,
+      "organization": "ONE ORDER"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 99,
+      "role": "動画",
+      "group": "",
+      "name": "reboot",
+      "source_time": 1375.5,
+      "organization": "reboot"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 100,
+      "role": "動画",
+      "group": "",
+      "name": "STUDIO CL",
+      "source_time": 1375.5,
+      "organization": "STUDIO CL"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 101,
+      "role": "動画",
+      "group": "",
+      "name": "デファー",
+      "source_time": 1375.5,
+      "organization": "デファー"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 102,
+      "role": "色指定",
+      "group": "",
+      "name": "江口亜紗美",
+      "source_time": 1381.5,
+      "person_id": "staff-江口亜紗美",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 103,
+      "role": "仕上げ検査",
+      "group": "",
+      "name": "遠藤花歩",
+      "source_time": 1381.5,
+      "person_id": "staff-遠藤花歩",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 104,
+      "role": "仕上げ検査補佐",
+      "group": "",
+      "name": "越田侑子",
+      "source_time": 1381.5,
+      "person_id": "staff-越田侑子",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 105,
+      "role": "仕上げ検査補佐",
+      "group": "",
+      "name": "門松諭生",
+      "source_time": 1381.5,
+      "person_id": "staff-門松諭生",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 106,
+      "role": "仕上げ検査補佐",
+      "group": "",
+      "name": "菊地慶翔",
+      "source_time": 1381.5,
+      "person_id": "staff-菊地慶翔",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 107,
+      "role": "仕上げ検査補佐",
+      "group": "",
+      "name": "永井唯香",
+      "source_time": 1381.5,
+      "person_id": "staff-永井唯香",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 108,
+      "role": "仕上げ",
+      "group": "",
+      "name": "FAI",
+      "source_time": 1381.5,
+      "organization": "FAI"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 109,
+      "role": "仕上げ",
+      "group": "",
+      "name": "月面",
+      "source_time": 1381.5,
+      "organization": "月面"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 110,
+      "role": "仕上げ",
+      "group": "",
+      "name": "暁",
+      "source_time": 1381.5,
+      "organization": "暁"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 111,
+      "role": "仕上げ",
+      "group": "",
+      "name": "セブンシーズ",
+      "source_time": 1381.5,
+      "organization": "セブンシーズ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 112,
+      "role": "仕上げ",
+      "group": "",
+      "name": "シード",
+      "source_time": 1381.5,
+      "organization": "シード"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 113,
+      "role": "仕上げ",
+      "group": "",
+      "name": "スタジオエル",
+      "source_time": 1381.5,
+      "organization": "スタジオエル"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 114,
+      "role": "仕上げ",
+      "group": "",
+      "name": "スタジオ・ミュウ",
+      "source_time": 1381.5,
+      "organization": "スタジオ・ミュウ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 115,
+      "role": "仕上げ",
+      "group": "",
+      "name": "リバイバル",
+      "source_time": 1381.5,
+      "organization": "リバイバル"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 116,
+      "role": "仕上げ",
+      "group": "",
+      "name": "ONE ORDER",
+      "source_time": 1381.5,
+      "organization": "ONE ORDER"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 117,
+      "role": "仕上げ",
+      "group": "",
+      "name": "reboot",
+      "source_time": 1381.5,
+      "organization": "reboot"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 118,
+      "role": "仕上げ",
+      "group": "",
+      "name": "STUDIO CL",
+      "source_time": 1381.5,
+      "organization": "STUDIO CL"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 119,
+      "role": "仕上げ",
+      "group": "",
+      "name": "デファー",
+      "source_time": 1381.5,
+      "organization": "デファー"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 120,
+      "role": "背景",
+      "group": "",
+      "name": "草薙(KUSANAGI)",
+      "source_time": 1384.5,
+      "organization": "草薙(KUSANAGI)"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 123,
+      "role": "背景統括",
+      "group": "",
+      "name": "畠山佑貴",
+      "source_time": 1384.5,
+      "person_id": "staff-畠山佑貴",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 124,
+      "role": "背景美術",
+      "group": "",
+      "name": "岡本穂高",
+      "source_time": 1384.5,
+      "person_id": "staff-岡本穂高",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 125,
+      "role": "3D美術",
+      "group": "",
+      "name": "柿木彩花",
+      "source_time": 1384.5,
+      "person_id": "staff-柿木彩花",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 126,
+      "role": "3D美術",
+      "group": "",
+      "name": "相原誠",
+      "source_time": 1384.5,
+      "person_id": "staff-相原誠",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 127,
+      "role": "3D美術",
+      "group": "",
+      "name": "品田理紗",
+      "source_time": 1384.5,
+      "person_id": "staff-品田理紗",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 128,
+      "role": "背景進行",
+      "group": "",
+      "name": "竹村美音",
+      "source_time": 1384.5,
+      "person_id": "staff-竹村美音",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 129,
+      "role": "背景進行補佐",
+      "group": "",
+      "name": "平田浩章",
+      "source_time": 1384.5,
+      "person_id": "staff-平田浩章",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 130,
+      "role": "背景進行補佐",
+      "group": "",
+      "name": "NGOC THO",
+      "source_time": 1384.5,
+      "person_id": "staff-NGOCTHO"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 131,
+      "role": "背景進行補佐",
+      "group": "",
+      "name": "CONG TRI",
+      "source_time": 1384.5,
+      "person_id": "staff-CONGTRI"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 132,
+      "role": "背景協力",
+      "group": "",
+      "name": "THAO NGUYEN",
+      "source_time": 1384.5,
+      "person_id": "staff-THAONGUYEN",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 133,
+      "role": "背景協力",
+      "group": "",
+      "name": "TUAN ANH",
+      "source_time": 1384.5,
+      "person_id": "staff-TUANANH",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 134,
+      "role": "背景協力",
+      "group": "",
+      "name": "MINH TRANG",
+      "source_time": 1384.5,
+      "person_id": "staff-MINHTRANG",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 135,
+      "role": "背景協力",
+      "group": "",
+      "name": "NGOC HUONG",
+      "source_time": 1384.5,
+      "person_id": "staff-NGOCHUONG",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 136,
+      "role": "背景協力",
+      "group": "",
+      "name": "THUY DUONG",
+      "source_time": 1384.5,
+      "person_id": "staff-THUYDUONG",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 137,
+      "role": "背景協力",
+      "group": "",
+      "name": "NHU THUY",
+      "source_time": 1384.5,
+      "person_id": "staff-NHUTHUY",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 138,
+      "role": "背景協力",
+      "group": "",
+      "name": "THI TOAN",
+      "source_time": 1384.5,
+      "person_id": "staff-THITOAN",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 139,
+      "role": "背景協力",
+      "group": "",
+      "name": "THAI VU",
+      "source_time": 1384.5,
+      "person_id": "staff-THAIVU",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 140,
+      "role": "背景協力",
+      "group": "",
+      "name": "DUC DAT",
+      "source_time": 1384.5,
+      "person_id": "staff-DUCDAT",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 141,
+      "role": "背景協力",
+      "group": "",
+      "name": "TA ASA",
+      "source_time": 1384.5,
+      "person_id": "staff-TAASA",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 142,
+      "role": "背景協力",
+      "group": "",
+      "name": "PHUONG NHI",
+      "source_time": 1384.5,
+      "person_id": "staff-PHUONGNHI",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 143,
+      "role": "背景協力",
+      "group": "",
+      "name": "DUC THANH",
+      "source_time": 1384.5,
+      "person_id": "staff-DUCTHANH",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 144,
+      "role": "背景協力",
+      "group": "",
+      "name": "QUYNH NHU",
+      "source_time": 1384.5,
+      "person_id": "staff-QUYNHNHU",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 145,
+      "role": "背景協力",
+      "group": "",
+      "name": "HOANG MINH",
+      "source_time": 1384.5,
+      "person_id": "staff-HOANGMINH",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 146,
+      "role": "背景協力",
+      "group": "",
+      "name": "YEN NHI",
+      "source_time": 1384.5,
+      "person_id": "staff-YENNHI",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 147,
+      "role": "背景協力",
+      "group": "",
+      "name": "THI BICH",
+      "source_time": 1384.5,
+      "person_id": "staff-THIBICH",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 148,
+      "role": "背景協力",
+      "group": "",
+      "name": "HONG DAO",
+      "source_time": 1384.5,
+      "person_id": "staff-HONGDAO",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 149,
+      "role": "背景協力",
+      "group": "",
+      "name": "MINH NHAT",
+      "source_time": 1384.5,
+      "person_id": "staff-MINHNHAT",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 151,
+      "role": "撮影監督補佐",
+      "group": "",
+      "name": "高橋智弘",
+      "source_time": 1387.5,
+      "person_id": "staff-高橋智弘",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 152,
+      "role": "撮影",
+      "group": "",
+      "name": "朴昌善",
+      "source_time": 1387.5,
+      "person_id": "staff-朴昌善",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 153,
+      "role": "撮影",
+      "group": "",
+      "name": "朝日康平",
+      "source_time": 1387.5,
+      "person_id": "staff-朝日康平",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 154,
+      "role": "撮影",
+      "group": "",
+      "name": "兼久卓",
+      "source_time": 1387.5,
+      "person_id": "staff-兼久卓",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 155,
+      "role": "2D works",
+      "group": "",
+      "name": "加藤千恵",
+      "source_time": 1387.5,
+      "person_id": "staff-加藤千恵"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 156,
+      "role": "フォント協力",
+      "group": "",
+      "name": "フォントワークス",
+      "source_time": 1387.5,
+      "organization": "フォントワークス"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 157,
+      "role": "CGプロデューサー",
+      "group": "",
+      "name": "服部豊和",
+      "source_time": 1390.5,
+      "person_id": "staff-服部豊和"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 158,
+      "role": "CGアシスタントディレクター",
+      "group": "",
+      "name": "西山匠",
+      "source_time": 1390.5,
+      "person_id": "staff-西山匠"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 159,
+      "role": "CGレイアウター",
+      "group": "",
+      "name": "崔嘉誠",
+      "source_time": 1390.5,
+      "person_id": "staff-崔嘉誠"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 160,
+      "role": "CG制作進行",
+      "group": "",
+      "name": "隈元拓也",
+      "source_time": 1390.5,
+      "person_id": "staff-隈元拓也"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 161,
+      "role": "CG協力",
+      "group": "",
+      "name": "株式会社タイプゼロ",
+      "source_time": 1390.5,
+      "organization": "株式会社タイプゼロ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 162,
+      "role": "プロジェクトマネージャー",
+      "group": "",
+      "name": "岡本大輔",
+      "source_time": 1390.5,
+      "person_id": "staff-岡本大輔"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 163,
+      "role": "特殊効果",
+      "group": "",
+      "name": "飯田彩佳",
+      "source_time": 1390.5,
+      "person_id": "staff-飯田彩佳",
+      "institutions": [
+        "サテライト"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 164,
+      "role": "アイキャッチデザイン",
+      "group": "",
+      "name": "大岩裕樹",
+      "source_time": 1390.5,
+      "person_id": "staff-大岩裕樹",
+      "institutions": [
+        "牧印刷株式会社"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 165,
+      "role": "画コンテ・演出",
+      "group": "オープニングアニメーション",
+      "name": "藤本さとる",
+      "source_time": 1393.5,
+      "person_id": "staff-藤本さとる"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 166,
+      "role": "作画監督",
+      "group": "オープニングアニメーション",
+      "name": "椛島洋介",
+      "source_time": 1393.5,
+      "person_id": "staff-椛島洋介"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 167,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "式地幸喜",
+      "source_time": 1393.5,
+      "person_id": "staff-式地幸喜"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 168,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "小畑賢",
+      "source_time": 1393.5,
+      "person_id": "staff-小畑賢"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 169,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "中島順",
+      "source_time": 1393.5,
+      "person_id": "staff-中島順"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 170,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "米井大稀",
+      "source_time": 1393.5,
+      "person_id": "staff-米井大稀"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 171,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "木村和貴",
+      "source_time": 1393.5,
+      "person_id": "staff-木村和貴"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 172,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "坂本俊太",
+      "source_time": 1393.5,
+      "person_id": "staff-坂本俊太"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 173,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "國松聖士",
+      "source_time": 1393.5,
+      "person_id": "staff-國松聖士"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 174,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "ハニュー",
+      "source_time": 1393.5,
+      "person_id": "staff-ハニュー"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 175,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "髙嶋宏之",
+      "source_time": 1393.5,
+      "person_id": "staff-高嶋宏之"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 176,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "福田佳太",
+      "source_time": 1393.5,
+      "person_id": "staff-福田佳太"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 177,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "N/S[DE]≠SIGNER",
+      "source_time": 1393.5,
+      "person_id": "staff-N/S[DE]≠SIGNER"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 178,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "中小路佳毅",
+      "source_time": 1393.5,
+      "person_id": "staff-中小路佳毅"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 179,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "畑智司",
+      "source_time": 1393.5,
+      "person_id": "staff-畑智司"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 180,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "大森亘",
+      "source_time": 1393.5,
+      "person_id": "staff-大森亘"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 181,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "宗圓祐輔",
+      "source_time": 1393.5,
+      "person_id": "staff-宗圓祐輔"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 182,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "桐谷真咲",
+      "source_time": 1393.5,
+      "person_id": "staff-桐谷真咲"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 183,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "吉田亘良",
+      "source_time": 1393.5,
+      "person_id": "staff-吉田亘良"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 184,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "椛島洋介",
+      "source_time": 1393.5,
+      "person_id": "staff-椛島洋介"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 185,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "六月女泰河",
+      "source_time": 1393.5,
+      "person_id": "staff-六月女泰河"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 186,
+      "role": "原画",
+      "group": "オープニングアニメーション",
+      "name": "杉江敏治",
+      "source_time": 1393.5,
+      "person_id": "staff-杉江敏治"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 187,
+      "role": "動画検査",
+      "group": "オープニングアニメーション",
+      "name": "木下あすな",
+      "source_time": 1393.5,
+      "person_id": "staff-木下あすな"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 188,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "森島未紗紀",
+      "source_time": 1393.5,
+      "person_id": "staff-森島未紗紀"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 189,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "福江あゆ",
+      "source_time": 1393.5,
+      "person_id": "staff-福江あゆ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 190,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "大井寿樹",
+      "source_time": 1393.5,
+      "person_id": "staff-大井寿樹"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 191,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "土井田竜健",
+      "source_time": 1393.5,
+      "person_id": "staff-土井田竜健"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 192,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "小田悠希恵",
+      "source_time": 1393.5,
+      "person_id": "staff-小田悠希恵"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 193,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "山本恭将",
+      "source_time": 1393.5,
+      "person_id": "staff-山本恭将"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 194,
+      "role": "動画",
+      "group": "オープニングアニメーション",
+      "name": "船倉裕羽",
+      "source_time": 1393.5,
+      "person_id": "staff-船倉裕羽"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 195,
+      "role": "色指定・仕上げ検査",
+      "group": "オープニングアニメーション",
+      "name": "中野尚美",
+      "source_time": 1393.5,
+      "person_id": "staff-中野尚美",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 196,
+      "role": "色指定・仕上げ検査",
+      "group": "オープニングアニメーション",
+      "name": "菊地慶翔",
+      "source_time": 1393.5,
+      "person_id": "staff-菊地慶翔",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 197,
+      "role": "仕上げ",
+      "group": "オープニングアニメーション",
+      "name": "越田侑子",
+      "source_time": 1393.5,
+      "person_id": "staff-越田侑子",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 198,
+      "role": "仕上げ",
+      "group": "オープニングアニメーション",
+      "name": "門松諭生",
+      "source_time": 1393.5,
+      "person_id": "staff-門松諭生",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 199,
+      "role": "仕上げ",
+      "group": "オープニングアニメーション",
+      "name": "遠藤花歩",
+      "source_time": 1393.5,
+      "person_id": "staff-遠藤花歩",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 200,
+      "role": "仕上げ",
+      "group": "オープニングアニメーション",
+      "name": "江口亜紗美",
+      "source_time": 1393.5,
+      "person_id": "staff-江口亜紗美",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 201,
+      "role": "仕上げ",
+      "group": "オープニングアニメーション",
+      "name": "永井唯香",
+      "source_time": 1393.5,
+      "person_id": "staff-永井唯香",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 202,
+      "role": "仕上げ",
+      "group": "オープニングアニメーション",
+      "name": "新井理恵",
+      "source_time": 1393.5,
+      "person_id": "staff-新井理恵",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 203,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "岡本穂高",
+      "source_time": 1393.5,
+      "person_id": "staff-岡本穂高",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 204,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "THAO NGUYEN",
+      "source_time": 1393.5,
+      "person_id": "staff-THAONGUYEN",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 205,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "NGOC HUONG",
+      "source_time": 1393.5,
+      "person_id": "staff-NGOCHUONG",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 206,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "PHUONG NHI",
+      "source_time": 1393.5,
+      "person_id": "staff-PHUONGNHI",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 207,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "TA ASA",
+      "source_time": 1393.5,
+      "person_id": "staff-TAASA",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 211,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "QUYNH NHU",
+      "source_time": 1393.5,
+      "person_id": "staff-QUYNHNHU",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 209,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "HOANG MINH",
+      "source_time": 1393.5,
+      "person_id": "staff-HOANGMINH",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 210,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "NGOC GIAU",
+      "source_time": 1393.5,
+      "person_id": "staff-NGOCGIAU",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 212,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "THI BICH",
+      "source_time": 1393.5,
+      "person_id": "staff-THIBICH",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 213,
+      "role": "背景",
+      "group": "オープニングアニメーション",
+      "name": "THI TOAN",
+      "source_time": 1393.5,
+      "person_id": "staff-THITOAN",
+      "institutions": [
+        "NAM HAI"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 214,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "並木智",
+      "source_time": 1393.5,
+      "person_id": "staff-並木智",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 215,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "高橋智弘",
+      "source_time": 1393.5,
+      "person_id": "staff-高橋智弘",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 216,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "鳥山将司",
+      "source_time": 1393.5,
+      "person_id": "staff-鳥山将司",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 217,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "渡部達也",
+      "source_time": 1393.5,
+      "person_id": "staff-渡部達也",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 218,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "佐々木景子",
+      "source_time": 1393.5,
+      "person_id": "staff-佐々木景子",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 219,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "朴昌善",
+      "source_time": 1393.5,
+      "person_id": "staff-朴昌善",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 220,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "上田茜",
+      "source_time": 1393.5,
+      "person_id": "staff-上田茜",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 221,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "李啓豪",
+      "source_time": 1393.5,
+      "person_id": "staff-李啓豪",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 222,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "朝日康平",
+      "source_time": 1393.5,
+      "person_id": "staff-朝日康平",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 223,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "兼久卓",
+      "source_time": 1393.5,
+      "person_id": "staff-兼久卓",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 224,
+      "role": "撮影",
+      "group": "オープニングアニメーション",
+      "name": "池田未歩",
+      "source_time": 1393.5,
+      "person_id": "staff-池田未歩",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 225,
+      "role": "2D works",
+      "group": "オープニングアニメーション",
+      "name": "加藤千恵",
+      "source_time": 1393.5,
+      "person_id": "staff-加藤千恵"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 226,
+      "role": "担当制作",
+      "group": "オープニングアニメーション",
+      "name": "増尾将史",
+      "source_time": 1393.5,
+      "person_id": "staff-増尾将史"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 227,
+      "role": "担当補佐",
+      "group": "オープニングアニメーション",
+      "name": "金子拓矢",
+      "source_time": 1393.5,
+      "person_id": "staff-金子拓矢"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 228,
+      "role": "サウンドミキサー",
+      "group": "",
+      "name": "徳久智成",
+      "source_time": 1402.5,
+      "person_id": "staff-徳久智成"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 229,
+      "role": "サウンドエディター",
+      "group": "",
+      "name": "關このみ",
+      "source_time": 1402.5,
+      "person_id": "staff-關このみ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 230,
+      "role": "音響効果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 1402.5,
+      "person_id": "staff-宅間麻姫"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 231,
+      "role": "録音スタジオ",
+      "group": "",
+      "name": "スタジオトロン",
+      "source_time": 1402.5,
+      "organization": "スタジオトロン"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 232,
+      "role": "音響制作担当",
+      "group": "",
+      "name": "鑓山千代",
+      "source_time": 1402.5,
+      "person_id": "staff-鑓山千代"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 233,
+      "role": "音響制作担当",
+      "group": "",
+      "name": "齋藤月帆",
+      "source_time": 1402.5,
+      "person_id": "staff-齋藤月帆"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 234,
+      "role": "キャスティングマネージャー",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 1402.5,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 235,
+      "role": "音響制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 1402.5,
+      "organization": "HALF H・P STUDIO"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 236,
+      "role": "オフライン編集",
+      "group": "",
+      "name": "ジェイ・フィルム",
+      "source_time": 1408.5,
+      "organization": "ジェイ・フィルム"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 237,
+      "role": "編集助手",
+      "group": "",
+      "name": "金丸紘平",
+      "source_time": 1408.5,
+      "person_id": "staff-金丸紘平"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 238,
+      "role": "オンライン編集",
+      "group": "",
+      "name": "柴田香澄",
+      "source_time": 1408.5,
+      "person_id": "staff-柴田香澄",
+      "institutions": [
+        "IMAGICA Lab."
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 239,
+      "role": "オンライン編集デスク",
+      "group": "",
+      "name": "小川輝",
+      "source_time": 1408.5,
+      "person_id": "staff-小川輝"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 240,
+      "role": "オンライン編集デスク",
+      "group": "",
+      "name": "吉村公志",
+      "source_time": 1408.5,
+      "person_id": "staff-吉村公志"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 241,
+      "role": "メディア統括",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 1414.5,
+      "person_id": "staff-秋葉隆史"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 242,
+      "role": "宣伝プロデューサー",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 1414.5,
+      "person_id": "staff-竹之内葉南"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 243,
+      "role": "販売促進",
+      "group": "",
+      "name": "石山竜也",
+      "source_time": 1414.5,
+      "person_id": "staff-石山竜也"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 244,
+      "role": "販売促進",
+      "group": "",
+      "name": "森田陽",
+      "source_time": 1414.5,
+      "person_id": "staff-森田陽"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 245,
+      "role": "ライセンス",
+      "group": "",
+      "name": "田中亮史",
+      "source_time": 1414.5,
+      "person_id": "staff-田中亮史"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 246,
+      "role": "海外ライセンス",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 1414.5,
+      "person_id": "staff-二瓶茂人"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 247,
+      "role": "海外ライセンス",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 1414.5,
+      "person_id": "staff-RegnaultTristan"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 248,
+      "role": "国内配信",
+      "group": "",
+      "name": "岩橋康平",
+      "source_time": 1414.5,
+      "person_id": "staff-岩橋康平"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 249,
+      "role": "国内配信",
+      "group": "",
+      "name": "川島啓太",
+      "source_time": 1414.5,
+      "person_id": "staff-川島啓太"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 250,
+      "role": "国内配信",
+      "group": "",
+      "name": "大田健吾",
+      "source_time": 1414.5,
+      "person_id": "staff-大田健吾"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 251,
+      "role": "パッケージ制作",
+      "group": "",
+      "name": "黒岩真貴子",
+      "source_time": 1414.5,
+      "person_id": "staff-黒岩真貴子"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 252,
+      "role": "PV制作",
+      "group": "",
+      "name": "渡邉和義",
+      "source_time": 1417.5,
+      "person_id": "staff-渡邉和義"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 253,
+      "role": "PV制作",
+      "group": "",
+      "name": "中川啓",
+      "source_time": 1417.5,
+      "person_id": "staff-中川啓"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 254,
+      "role": "WEB制作",
+      "group": "",
+      "name": "松本遼祐",
+      "source_time": 1417.5,
+      "person_id": "staff-松本遼祐"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 255,
+      "role": "企画協力",
+      "group": "",
+      "name": "「ウマ娘 プリティーダービー」ゲーム開発チーム",
+      "source_time": 1417.5,
+      "organization": "「ウマ娘 プリティーダービー」ゲーム開発チーム"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 256,
+      "role": "企画協力",
+      "group": "",
+      "name": "秋津琢磨",
+      "source_time": 1417.5,
+      "person_id": "staff-秋津琢磨"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 257,
+      "role": "企画協力",
+      "group": "",
+      "name": "小針哲也",
+      "source_time": 1417.5,
+      "person_id": "staff-小針哲也"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 258,
+      "role": "企画協力",
+      "group": "",
+      "name": "清永みなみ",
+      "source_time": 1417.5,
+      "person_id": "staff-清永みなみ"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 259,
+      "role": "協力",
+      "group": "",
+      "name": "阿部憶人",
+      "source_time": 1417.5,
+      "person_id": "staff-阿部憶人",
+      "institutions": [
+        "OCT"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 260,
+      "role": "協力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 1417.5,
+      "organization": "トレーナーの皆様"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 261,
+      "role": "協力",
+      "group": "",
+      "name": "久保武史",
+      "source_time": 1417.5,
+      "person_id": "staff-久保武史",
+      "institutions": [
+        "ゲームアディクト"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 262,
+      "role": "制作協力",
+      "group": "",
+      "name": "P.A.WORKS",
+      "source_time": 1417.5,
+      "organization": "P.A.WORKS"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 263,
+      "role": "製作委員会",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 1426.5,
+      "person_id": "staff-竹中信広"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 264,
+      "role": "製作委員会",
+      "group": "",
+      "name": "上田太地",
+      "source_time": 1426.5,
+      "person_id": "staff-上田太地"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 265,
+      "role": "製作委員会",
+      "group": "",
+      "name": "堀田秀彦",
+      "source_time": 1426.5,
+      "person_id": "staff-堀田秀彦"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 266,
+      "role": "製作委員会",
+      "group": "",
+      "name": "高橋亜希人",
+      "source_time": 1426.5,
+      "person_id": "staff-高橋亜希人"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 267,
+      "role": "製作委員会",
+      "group": "",
+      "name": "山中一孝",
+      "source_time": 1426.5,
+      "person_id": "staff-山中一孝"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 268,
+      "role": "製作委員会",
+      "group": "",
+      "name": "齋藤雅哉",
+      "source_time": 1426.5,
+      "person_id": "staff-齋藤雅哉"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 269,
+      "role": "製作委員会",
+      "group": "",
+      "name": "中畠義之",
+      "source_time": 1426.5,
+      "person_id": "staff-中畠義之"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 270,
+      "role": "制作デスク",
+      "group": "",
+      "name": "金子拓矢",
+      "source_time": 1420.5,
+      "person_id": "staff-金子拓矢"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 271,
+      "role": "設定制作",
+      "group": "",
+      "name": "南幸大",
+      "source_time": 1420.5,
+      "person_id": "staff-南幸大"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 273,
+      "role": "製作",
+      "group": "",
+      "name": "アニメ「ウマ娘 プリティーダービー Season 2」製作委員会",
+      "source_time": 1432.5,
+      "organization": "アニメ「ウマ娘 プリティーダービー Season 2」製作委員会"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 274,
+      "role": "画コンテ・演出",
+      "group": "エンディングアニメーション",
+      "name": "及川啓",
+      "source_time": 1399.5,
+      "person_id": "staff-及川啓"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 275,
+      "role": "作画監督",
+      "group": "エンディングアニメーション",
+      "name": "椛島洋介",
+      "source_time": 1399.5,
+      "person_id": "staff-椛島洋介"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 276,
+      "role": "原画",
+      "group": "エンディングアニメーション",
+      "name": "辻智子",
+      "source_time": 1399.5,
+      "person_id": "staff-辻智子"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 277,
+      "role": "第二原画",
+      "group": "エンディングアニメーション",
+      "name": "白濱穂積",
+      "source_time": 1399.5,
+      "person_id": "staff-白濱穂積"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 278,
+      "role": "第二原画",
+      "group": "エンディングアニメーション",
+      "name": "土井田竜健",
+      "source_time": 1399.5,
+      "person_id": "staff-土井田竜健"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 279,
+      "role": "動画検査",
+      "group": "エンディングアニメーション",
+      "name": "白濱穂積",
+      "source_time": 1399.5,
+      "person_id": "staff-白濱穂積"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 280,
+      "role": "動画検査",
+      "group": "エンディングアニメーション",
+      "name": "木下あすな",
+      "source_time": 1399.5,
+      "person_id": "staff-木下あすな"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 281,
+      "role": "色指定・仕上げ検査",
+      "group": "エンディングアニメーション",
+      "name": "中野尚美",
+      "source_time": 1399.5,
+      "person_id": "staff-中野尚美",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 282,
+      "role": "仕上げ",
+      "group": "エンディングアニメーション",
+      "name": "中野尚美",
+      "source_time": 1399.5,
+      "person_id": "staff-中野尚美",
+      "institutions": [
+        "stella road"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 283,
+      "role": "背景",
+      "group": "エンディングアニメーション",
+      "name": "岡本穂高",
+      "source_time": 1399.5,
+      "person_id": "staff-岡本穂高",
+      "institutions": [
+        "草薙(KUSANAGI)"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 284,
+      "role": "撮影",
+      "group": "エンディングアニメーション",
+      "name": "朝日康平",
+      "source_time": 1399.5,
+      "person_id": "staff-朝日康平",
+      "institutions": [
+        "T2 studio"
+      ]
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 285,
+      "role": "担当制作",
+      "group": "エンディングアニメーション",
+      "name": "南出空良",
+      "source_time": 1399.5,
+      "person_id": "staff-南出空良"
     }
   ]
 }

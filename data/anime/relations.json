@@ -9912,7 +9912,8 @@
       "label": "片头曲",
       "usage_type": "op",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s2-e12"
       ],
       "display_order": 10
     },
@@ -14515,7 +14516,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14530,7 +14532,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14545,7 +14548,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14560,7 +14564,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14575,7 +14580,8 @@
       "label": "",
       "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14590,7 +14596,8 @@
       "label": "",
       "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14605,7 +14612,8 @@
       "label": "",
       "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14620,7 +14628,8 @@
       "label": "",
       "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14635,7 +14644,8 @@
       "label": "",
       "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14650,7 +14660,8 @@
       "label": "",
       "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14665,7 +14676,8 @@
       "label": "",
       "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14680,7 +14692,8 @@
       "label": "",
       "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -14695,7 +14708,8 @@
       "label": "",
       "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-s2-e12"
+        "broadcast-cast-anime-s2-e12",
+        "official-ending-anime-s2-e12"
       ]
     },
     {
@@ -29129,6 +29143,22 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-s2-e10"
+      ]
+    },
+    {
+      "id": "anime-s2-e12-ending-music-song-b90b0841b4-v-698ddfd6cc",
+      "source_type": "anime_unit",
+      "source_id": "anime-s2-e12",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-b90b0841b4",
+      "version_id": "song-b90b0841b4-v-698ddfd6cc",
+      "release_id": "album-laca-9814",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s2-e12"
       ]
     }
   ]

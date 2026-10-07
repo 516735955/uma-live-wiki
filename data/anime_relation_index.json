@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-76ebaf18e2377b42",
+  "build_id": "anime-8d570e8950d90468",
   "generated_at": "2026-10-07T00:00:00+08:00",
   "targets": {
     "event": {
@@ -31418,6 +31418,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-s2-e13",
+          "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s2-e12-ending-music-song-b90b0841b4-v-698ddfd6cc",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s2-e12",
           "work_id": "anime-s2"
         }
       ],
