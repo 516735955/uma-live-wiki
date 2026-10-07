@@ -81,7 +81,13 @@
       "source": "official_release",
       "source_catalog": "LACM-14779",
       "source_url": "https://anime-umamusume.jp/archive/1st/music/derby03.html",
-      "manual": true
+      "manual": true,
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=4KfcB097aVo"
+        }
+      ]
     },
     "song-rap-24bd84173c-v-d95a63dfa3": {
       "credits": [
@@ -10578,6 +10584,10 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=AEsIFiJDlAw"
+        },
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=4KfcB097aVo"
         }
       ]
     },
@@ -10772,6 +10782,43 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=AEsIFiJDlAw"
+        }
+      ]
+    },
+    "song-special-record-c828cf2dc0-v-c63435c8b8": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        },
+        {
+          "role": "composer",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        },
+        {
+          "role": "arranger",
+          "name": "廣澤優也",
+          "creator_id": "creator-a0d84fd99d"
+        },
+        {
+          "role": "arranger",
+          "name": "谷ナオキ",
+          "creator_id": "creator-ce924538d1"
+        },
+        {
+          "role": "arranger",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        }
+      ],
+      "source": "official_ending",
+      "manual": true,
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=4KfcB097aVo"
         }
       ]
     }

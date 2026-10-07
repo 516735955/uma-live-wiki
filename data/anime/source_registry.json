@@ -2,6 +2,13 @@
   "schema_version": 1,
   "sources": [
     {
+      "id": "official-cyberagent-kabashima-manami",
+      "kind": "official",
+      "label": "CyberAgent公布的椛嶋麻菜美姓名及活动参与",
+      "url": "https://www.cyberagent.co.jp/news/detail/id=31989",
+      "observed_at": "2026-10-07"
+    },
+    {
       "id": "production-menex00-cg15-post",
       "kind": "production",
       "label": "MeNeX00本人对芦灰第15话的发文及姓名写法（由公开引用核对）",
@@ -2491,6 +2498,13 @@
       "kind": "official",
       "label": "官方单集片尾职员表",
       "url": "https://www.youtube.com/watch?v=AEsIFiJDlAw",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e13",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=4KfcB097aVo",
       "observed_at": "2026-10-07"
     }
   ]
