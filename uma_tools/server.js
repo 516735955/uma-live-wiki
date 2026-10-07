@@ -72,36 +72,53 @@ const NEWS_MAX_CONC = 3;        // upstream request concurrency (keep low: Cloud
 const NEWS_SNAPSHOT_FILE = path.join(DATA_DIR, 'news_snapshot.json');
 
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
-// Scraped by crawl_lantis_news.py into lantis_news.json. Merged into the news
+// Scraped by crawl_lantis_news.py into data/lantis_news.json. Merged into the news
 // index with type "cd" (CD相关). Each item: {id, date, url, title, category}.
-const LANTIS_FILE = path.join(__dirname, 'lantis_news.json');
+// 与官网新闻同一套机制：data/lantis_news.json 是 CD相关 的发布快照（随仓库部署、热加载），
+// 服务内按需 TTL 后台补抓，抓取结果合并进 data/news_snapshot.json，失败保留旧数据并按 TTL 退避。
+const LANTIS_FILE = path.join(DATA_DIR, 'lantis_news.json');
+const LANTIS_TTL = 30 * 60 * 1000;
+const LANTIS_CRAWL_TIMEOUT = 10 * 60 * 1000;
 let lantisList = [];
-try { lantisList = JSON.parse(fs.readFileSync(LANTIS_FILE, 'utf8')); } catch (e) { lantisList = []; }
+let lantisAt = 0;
+let lantisSnapshotMtime = 0;
+try {
+  lantisList = JSON.parse(fs.readFileSync(LANTIS_FILE, 'utf8'));
+  lantisSnapshotMtime = fs.statSync(LANTIS_FILE).mtimeMs;
+} catch (e) { lantisList = []; }
 function normalizeLantisDate(d) {
   if (!d) return '';
   const m = String(d).match(/^(\d{4})\.(\d{1,2})\.(\d{1,2})/);
   if (m) return m[1] + '-' + String(m[2]).padStart(2, '0') + '-' + String(m[3]).padStart(2, '0');
   return String(d);
 }
-function mergeLantis(list) {
-  lantisList.forEach(function (it) {
-    const zh = transCache[it.title] || '';
-    list.push({
+function lantisNewsItems() {
+  return lantisList.map(function (it) {
+    return {
       announce_id: it.id,
       title: it.title,
-      title_zh: zh || '',
+      title_zh: transCache[it.title] || '',
       post_at: normalizeLantisDate(it.date),
       announce_label: 4,
       source: 'lantis',
       url: it.url,
       news_type_display: 'CD相关',
       image: it.image || ''
-    });
+    };
   });
+}
+function mergeLantis(list) {
+  lantisNewsItems().forEach(function (n) { list.push(n); });
   return list;
 }
 function reloadLantis() {
-  try { lantisList = JSON.parse(fs.readFileSync(LANTIS_FILE, 'utf8')); } catch (e) {}
+  let stat = null;
+  try { stat = fs.statSync(LANTIS_FILE); } catch (e) { return; }
+  try {
+    const parsed = JSON.parse(fs.readFileSync(LANTIS_FILE, 'utf8'));
+    if (Array.isArray(parsed)) lantisList = parsed;
+  } catch (e) { /* keep the last good list */ }
+  lantisSnapshotMtime = stat.mtimeMs;
 }
 
 let newsIndexCache = { at: 0, data: null };
@@ -407,6 +424,14 @@ function translateHtmlMessage(html, cb) {
 
 function httpsGet(url, cb) {
   const u = new URL(url);
+  // cb 只允许调一次：timeout destroy 会同时触发 req/res 的 error 事件，
+  // 双回调会让新闻刷新的页计数错乱，造成 promise 永久挂死（所有后续刷新被挡）。
+  let settled = false;
+  const done = (err, json, body) => {
+    if (settled) return;
+    settled = true;
+    cb(err, json, body);
+  };
   const req = https.request(u, {
     method: 'GET',
     family: 4,
@@ -418,12 +443,15 @@ function httpsGet(url, cb) {
       const body = Buffer.concat(chunks).toString('utf8');
       let json = null;
       try { json = JSON.parse(body); } catch (e) { /* keep null */ }
-      cb(null, json, body);
+      done(null, json, body);
     });
-    res.on('error', (e) => cb(e, null, null));
+    res.on('error', (e) => done(e, null, null));
   });
-  req.on('error', (e) => cb(e, null, null));
-  req.setTimeout(20000, function () { try { req.destroy(new Error('timeout')); } catch (e) {} });
+  req.on('error', (e) => done(e, null, null));
+  req.setTimeout(20000, function () {
+    try { req.destroy(new Error('timeout')); } catch (e) {}
+    done(new Error('timeout'), null, null);
+  });
   req.end();
 }
 
@@ -597,15 +625,65 @@ function persistNewsSnapshot(data) {
     });
 }
 
+// CD相关 合并进快照：用当前快照里的官网条目 + 最新 CD相关 条目重建合并列表，
+// 与 refreshNewsIndex 的 publish() 同一套排序与翻译回填，然后原子写回 news_snapshot.json。
+// 不重抓官网接口，也不推进 newsIndexCache.at（新闻 TTL 与 CD TTL 各自独立）。
+function publishLantisMerge() {
+  const current = newsIndexCache.data;
+  if (!current || !Array.isArray(current.information_list)) return false;
+  const official = current.information_list.filter((n) => n.source !== 'lantis');
+  const merged = official.concat(lantisNewsItems());
+  merged.sort((a, b) => String(b.update_at || b.post_at).localeCompare(String(a.update_at || a.post_at)));
+  merged.forEach((item) => {
+    if (transCache[item.title]) item.title_zh = transCache[item.title];
+  });
+  if (JSON.stringify(merged) === JSON.stringify(current.information_list)) return false;
+  const data = Object.assign({}, current, {
+    information_list: merged,
+    generated_at: new Date().toISOString()
+  });
+  newsIndexCache = { at: newsIndexCache.at, data };
+  // --no-crawl 预览只并入内存，不改写数据文件；自动刷新模式才落盘发布。
+  if (!NO_AUTO_CRAWL) persistNewsSnapshot(data);
+  console.log('[lantis] merged', lantisList.length, 'cd items into news snapshot', data.generated_at);
+  return true;
+}
+
+// 与 news_snapshot.json 相同的热加载：data/lantis_news.json 被 git 部署/手工更新后免重启生效，
+// 并把 CD相关 直接合并进新闻快照。
+function reloadLantisIfNewer() {
+  try {
+    const stat = fs.statSync(LANTIS_FILE);
+    if (stat.mtimeMs <= lantisSnapshotMtime) return;
+    reloadLantis();
+    // 部署进来的快照视为“刚抓过”，避免立刻又触发一轮 TTL 补抓。
+    lantisAt = Math.max(lantisAt, stat.mtimeMs);
+    console.log('[lantis] adopted snapshot', lantisList.length, 'items');
+    publishLantisMerge();
+  } catch (e) { /* keep serving the in-memory list */ }
+}
+
 function refreshNewsIndex() {
   if (newsRefreshPromise) return newsRefreshPromise;
+  // 看门狗：即使底层挂死，也在 3 分钟后强制落地并释放 promise，
+  // 否则一次挂死会永久挡住所有后续刷新（且不留任何日志）。
+  let rejectRef = null;
+  const watchdog = setTimeout(() => {
+    if (rejectRef) {
+      console.error('[news] refresh watchdog fired (180s), aborting');
+      const reject = rejectRef;
+      rejectRef = null;
+      reject(new Error('refresh watchdog (180s)'));
+    }
+  }, 180000);
   newsRefreshPromise = new Promise((resolve, reject) => {
     // On failure, push the freshness marker forward so visitor traffic cannot
     // hammer the upstream while it is down (retry at most once per NEWS_TTL).
     const fail = (err) => {
       newsIndexCache = { at: Date.now(), data: newsIndexCache.data };
-      reject(err);
+      if (rejectRef) { const r = rejectRef; rejectRef = null; r(err); }
     };
+    rejectRef = reject;
     fetchNewsPageRetry(1, (err, first) => {
       if (err) { fail(err); return; }
       const total = parseInt(first.total_page_count, 10) || 1;
@@ -664,6 +742,7 @@ function refreshNewsIndex() {
         };
         newsIndexCache = { at: Date.now(), data };
         persistNewsSnapshot(data);
+        console.log('[news] refreshed', list.length, 'items', data.generated_at);
         resolve(data);
 
         // Image discovery and translation improve the next response but never
@@ -678,12 +757,13 @@ function refreshNewsIndex() {
       }
       pump();
     });
-  }).finally(() => { newsRefreshPromise = null; });
+  }).finally(() => { clearTimeout(watchdog); newsRefreshPromise = null; });
   return newsRefreshPromise;
 }
 
 function newsResponseSnapshot() {
   reloadNewsSnapshotIfNewer();
+  reloadLantisIfNewer();
   if (!newsIndexCache.data) return null;
   const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
   cached.information_list.forEach((item) => {
@@ -699,10 +779,14 @@ function handleNewsIndex(res) {
       cacheControl: 'public, max-age=60, stale-while-revalidate=300',
       etag: '"news-' + crypto.createHash('sha1').update(String(cached.generated_at || '')).digest('hex').slice(0, 12) + '"'
     });
-    if (!NO_AUTO_CRAWL && Date.now() - newsIndexCache.at >= NEWS_TTL) {
-      refreshNewsIndex().catch((error) => {
-        console.error('[news] background refresh failed:', (error && error.message) || error);
-      });
+    if (!NO_AUTO_CRAWL) {
+      // CD相关 与官网新闻各自按需 TTL 补抓，互不牵制。
+      ensureLantisFresh();
+      if (Date.now() - newsIndexCache.at >= NEWS_TTL) {
+        refreshNewsIndex().catch((error) => {
+          console.error('[news] background refresh failed:', (error && error.message) || error);
+        });
+      }
     }
     return;
   }
@@ -746,23 +830,21 @@ function handleNewsDetail(req, res, params) {
 }
 
 // ---- Lantis news: re-run the scraper on demand, then return the merged list ----
+function ensureLantisFresh() {
+  if (NO_AUTO_CRAWL || lantisRunning) return;
+  if (Date.now() - lantisAt < LANTIS_TTL) return;
+  runLantisCrawl('auto');
+}
+
 function handleLantisNews(res) {
-  runLantisCrawl('manual');
-  // return current (already-loaded) Lantis items with zh translations filled in
-  const items = lantisList.map(function (it) {
-    return {
-      announce_id: it.id,
-      title: it.title,
-      title_zh: transCache[it.title] || '',
-      post_at: normalizeLantisDate(it.date),
-      announce_label: 4,
-      source: 'lantis',
-      url: it.url,
-      news_type_display: 'CD相关',
-      image: it.image || ''
-    };
+  reloadLantisIfNewer();
+  ensureLantisFresh();
+  // Serve the last complete CD snapshot immediately (same shape as the news index).
+  const items = lantisNewsItems();
+  sendJson(res, 200, { response_code: 1, information_list: items }, {
+    cacheControl: 'public, max-age=60, stale-while-revalidate=300',
+    etag: '"lantis-' + crypto.createHash('sha1').update(JSON.stringify(items)).digest('hex').slice(0, 12) + '"'
   });
-  sendJson(res, 200, { response_code: 1, information_list: items });
 }
 
 // ---- Lantis detail: crawl the article page and return title + body (+ zh translation) ----
@@ -1074,9 +1156,15 @@ server.listen(PORT, () => {
     console.error('[news] startup refresh failed:', (error && error.message) || error);
   });
   setTimeout(() => runCatalogRefresh('startup'), 60 * 1000);
-  setTimeout(() => runLantisCrawl('startup'), 90 * 1000);
+  setTimeout(() => ensureLantisFresh(), 5 * 1000);
   setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
-  setInterval(() => runLantisCrawl('daily'), 24 * 60 * 60 * 1000);
+  // 定时自愈：访客触发之外每 30 分钟主动刷一次新闻/CD相关，挂死/失败也能自行恢复
+  setInterval(() => {
+    ensureLantisFresh();
+    refreshNewsIndex().catch((error) => {
+      console.error('[news] scheduled refresh failed:', (error && error.message) || error);
+    });
+  }, 30 * 60 * 1000);
 });
 
 // ---- Events auto-crawl (Eventernote -> events_data.json) ----
@@ -1148,19 +1236,23 @@ function runEventBuild(reason, done) {
   });
 }
 
-// ---- Lantis auto-crawl (umamusume.lantis.jp -> lantis_news.json) ----
+// ---- Lantis auto-crawl (umamusume.lantis.jp -> data/lantis_news.json) ----
 const LANTIS_SCRIPT = path.join(__dirname, 'crawl_lantis_news.py');
 let lantisRunning = false;
 function runLantisCrawl(reason) {
   if (lantisRunning) return;
   lantisRunning = true;
   const t0 = Date.now();
-  execFile(PYTHON_BIN, [LANTIS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [LANTIS_SCRIPT], { windowsHide: true, timeout: LANTIS_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
     lantisRunning = false;
     const tag = '[lantis-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
     else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's');
     reloadLantis();
+    // 失败同样推进 TTL 标记（与新闻 fail() 相同的退避）：上游挂掉时最多每个 TTL 重试一次。
+    lantisAt = Date.now();
+    // 抓取结果直接合并进 news_snapshot.json，不再重抓官网新闻来完成合并。
+    if (!err) publishLantisMerge();
   });
 }
 

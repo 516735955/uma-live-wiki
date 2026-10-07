@@ -129,7 +129,7 @@ python3 uma_tools/build_pedigree.py
 | 角色增量 | `python3 uma_tools/crawl_characters.py` | 角色索引、详情与图片；人工步骤见 `uma_tools/角色与声优爬取流程.md` |
 | 血统关系 | `python3 uma_tools/build_pedigree.py` | `data/pedigree_data.js`；完成后运行 `python3 uma_tools/check_pedigree.py` |
 | 专辑与歌曲 | `python3 uma_tools/auto_albums.py` | `data/albums.json` |
-| Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `uma_tools/lantis_news.json`（运行时缓存） |
+| Lantis 新闻 | `python3 uma_tools/crawl_lantis_news.py` | `data/lantis_news.json`（CD相关快照，随仓库部署并热加载；服务内按需 TTL 补抓后合并进 `news_snapshot.json`，失败保留旧数据） |
 | 活动数据校验 | `python3 uma_tools/update_events.py --check` | 只读重建并核对已提交生成物，不写文件 |
 
 修改 `data/events_data.json`、`data/live_data.json` 或 `data/live_cat_data.json` 后，应再运行一次
@@ -157,15 +157,17 @@ Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 
 最终字段只由生成器选定一份规范值。
 
 正常启动 `uma_tools/server.js` 时，每 6 小时按“角色 → Eventernote → 专辑 → 官方节目/声优资料 → 统一生成”
-的顺序串行刷新一次；同一时刻只运行一条链路，刷新中收到的下一次请求会合并为一次后续运行。Lantis 新闻
-独立每 24 小时刷新。`data/news_snapshot.json` 是最近一次完整新闻结果的发布快照，服务器启动后立即提供，
-再在后台更新；它不是可编辑资料源。本地预览可使用 `--no-crawl` 关闭全部后台刷新。
+的顺序串行刷新一次；同一时刻只运行一条链路，刷新中收到的下一次请求会合并为一次后续运行。CD相关（Lantis）
+与官网新闻同一套机制：按需 TTL（官网 15 分钟、CD 30 分钟）在后台自动补抓，抓取结果合并进
+`data/news_snapshot.json` 发布快照——CD 更新只重建合并列表，不重抓官网接口；失败保留旧数据并按 TTL 退避，
+`data/lantis_news.json` 被 git 部署或手工更新后也会热加载并自动并入快照。`data/news_snapshot.json` 是最近一次
+完整新闻结果（含 CD相关）的发布快照，服务器启动后立即提供，再在后台更新；它不是可编辑资料源。本地预览可使用 `--no-crawl` 关闭全部后台刷新。
 
 生产环境可将 [`deploy/nginx-uma-live-wiki.conf`](deploy/nginx-uma-live-wiki.conf) 包含进 HTTPS server block，
 使文本资源启用 gzip、图片使用长期缓存，并将 `/api/` 交给 Node 服务。发布后可用以下命令校验目录投影：
 
 生产 Node 服务使用 [`deploy/umamusume.service`](deploy/umamusume.service)，启用服务内自动刷新：启动即抓新闻，
-访问新闻接口时缓存超过 15 分钟会在后台更新；活动、角色、专辑与官方节目每 6 小时串行刷新一次，Lantis 新闻每天刷新。
+访问新闻接口时官网新闻缓存超过 15 分钟、CD相关 超过 30 分钟会在后台补抓并合并进快照；活动、角色、专辑与官方节目每 6 小时串行刷新一次。
 刷新结果写回仓库内 `data/`，而运行中的服务读取的是启动时的目录缓存，因此用
 [`deploy/umamusume-restart.timer`](deploy/umamusume-restart.timer) 每天凌晨 2 点重启一次，让目录改动生效；
 新闻不依赖重启（会实时更新）。
@@ -212,7 +214,7 @@ python3 -m pip install Pillow
 
 `openpyxl` 仅用于 `crawl_events.py` 对本地 `events_list.xlsx` / `voice_list.xlsx` 镜像的可选同步；
 缺少这些文件或依赖不会阻止站点使用 JSON 数据。翻译结果缓存 `uma_tools/trans_cache.json`
-随仓库维护；抓取日志、运行状态和 `lantis_news.json` 仍是本地产物，不提交。
+随仓库维护；抓取日志与运行状态仍是本地产物，不提交。
 
 ## 协作流程
 

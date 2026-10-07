@@ -5,7 +5,7 @@
 # then <a href="url">title</a> inside <ul class="news_list"><li>...</li>.
 import re, io, json, sys, time, urllib.request, ssl, os, tempfile
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lantis_news.json')
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'lantis_news.json')
 MAX_PAGES = 30  # upper bound safety
 
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
@@ -158,6 +158,14 @@ def main():
             p.append('00')
         return [int(x) for x in p[:3]]
     uniq.sort(key=date_key, reverse=True)
+    if not uniq and old:
+        print('crawl returned no items; keeping', len(old), 'existing ->', OUT)
+        return
+    # 与旧数据合并：部分页抓取失败时也不丢已有条目（新条目覆盖同 id 旧条目）
+    merged = {it['id']: it for it in old.values()}
+    for it in uniq:
+        merged[it['id']] = it
+    uniq = sorted(merged.values(), key=date_key, reverse=True)
     # Fetch article images (bounded to the newest few on this run; cached across runs).
     ensure_images(uniq, max_fetch=40)
     write_json_atomic(OUT, uniq)
