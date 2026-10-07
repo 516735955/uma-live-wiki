@@ -3873,7 +3873,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "official-ost-anime-s2"
+        "official-ost-anime-s2",
+        "official-ending-anime-s2-e12"
       ],
       "display_order": 20
     },
@@ -29143,22 +29144,6 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-s2-e10"
-      ]
-    },
-    {
-      "id": "anime-s2-e12-ending-music-song-b90b0841b4-v-698ddfd6cc",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e12",
-      "relation_type": "uses_song",
-      "target_type": "song",
-      "target_id": "song-b90b0841b4",
-      "version_id": "song-b90b0841b4-v-698ddfd6cc",
-      "release_id": "album-laca-9814",
-      "version_label": "TV Size",
-      "usage_type": "ed",
-      "label": "",
-      "evidence_refs": [
-        "official-ending-anime-s2-e12"
       ]
     }
   ]

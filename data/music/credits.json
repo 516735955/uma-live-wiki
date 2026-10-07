@@ -7169,7 +7169,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=qyAOxavyXDU"
+        }
+      ]
     },
     "song-87be3723c2-v-87be3723c2": {
       "source_track_id": "1830409074",

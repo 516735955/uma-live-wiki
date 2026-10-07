@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-8d570e8950d90468",
+  "build_id": "anime-6c702ddea96985f7",
   "generated_at": "2026-10-07T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -8,7 +8,7 @@
     "released_units": 125,
     "scheduled_units": 0,
     "watch_resources": 135,
-    "relations": 1822,
+    "relations": 1821,
     "staff_credits": 18937,
     "staff_people": 2857
   },
@@ -17400,7 +17400,8 @@
       "label": "片尾曲",
       "usage_type": "ed",
       "evidence_refs": [
-        "official-ost-anime-s2"
+        "official-ost-anime-s2",
+        "official-ending-anime-s2-e12"
       ],
       "display_order": 20
     },
@@ -42670,22 +42671,6 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-s2-e10"
-      ]
-    },
-    {
-      "id": "anime-s2-e12-ending-music-song-b90b0841b4-v-698ddfd6cc",
-      "source_type": "anime_unit",
-      "source_id": "anime-s2-e12",
-      "relation_type": "uses_song",
-      "target_type": "song",
-      "target_id": "song-b90b0841b4",
-      "version_id": "song-b90b0841b4-v-698ddfd6cc",
-      "release_id": "album-laca-9814",
-      "version_label": "TV Size",
-      "usage_type": "ed",
-      "label": "",
-      "evidence_refs": [
-        "official-ending-anime-s2-e12"
       ]
     }
   ],
@@ -325938,19 +325923,6 @@
       "work_id": "anime-s2",
       "unit_id": "anime-s2-e12",
       "source_ref": "official-ending-anime-s2-e12",
-      "order": 42,
-      "role": "总作画监督",
-      "group": "",
-      "name": "椛島洋介",
-      "source_time": 1360.5,
-      "person_id": "staff-椛島洋介",
-      "role_raw": "総作画監督",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-s2",
-      "unit_id": "anime-s2-e12",
-      "source_ref": "official-ending-anime-s2-e12",
       "order": 61,
       "role": "第二原画",
       "group": "",
@@ -329048,6 +329020,19 @@
       "person_id": "staff-南出空良",
       "role_raw": "担当制作",
       "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-s2",
+      "unit_id": "anime-s2-e12",
+      "source_ref": "official-ending-anime-s2-e12",
+      "order": 42,
+      "role": "总作画监督",
+      "group": "",
+      "name": "椛島洋介",
+      "source_time": 1360.5,
+      "person_id": "staff-椛島洋介",
+      "role_raw": "総作画監督",
+      "group_raw": ""
     }
   ],
   "people": [
