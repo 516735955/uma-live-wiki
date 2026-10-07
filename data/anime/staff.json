@@ -43331,7 +43331,8 @@
       "role": "第二原画",
       "name": "スタジオピーコック",
       "order": 87,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-peacock-cinderella-gray-2025",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e04",
       "organization": "スタジオピーコック"
@@ -75991,7 +75992,8 @@
       "role": "原画",
       "name": "Andraft Inc.",
       "order": 51,
-      "source_ref": "staff-transcript-anime-cinderella-gray",
+      "source_ref": "production-andraft-cinderella-gray-2025",
+      "source_refs": ["staff-transcript-anime-cinderella-gray"],
       "group": "片尾署名（公开转录）",
       "unit_id": "anime-cinderella-gray-e20",
       "organization": "Andraft Inc."
@@ -251321,6 +251323,60 @@
       "name": "椛島洋介",
       "source_time": 1351.5,
       "person_id": "staff-椛島洋介"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e16",
+      "role": "L/O",
+      "name": "Andraft Inc.",
+      "organization": "Andraft Inc.",
+      "order": 24,
+      "source_ref": "production-andraft-cinderella-gray-2025"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e16",
+      "role": "原画",
+      "name": "Andraft Inc.",
+      "organization": "Andraft Inc.",
+      "order": 24,
+      "source_ref": "production-andraft-cinderella-gray-2025"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e20",
+      "role": "L/O",
+      "name": "Andraft Inc.",
+      "organization": "Andraft Inc.",
+      "order": 51,
+      "source_ref": "production-andraft-cinderella-gray-2025"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "role": "L/O",
+      "name": "Andraft Inc.",
+      "organization": "Andraft Inc.",
+      "group": "片头动画",
+      "order": 0,
+      "source_ref": "production-andraft-cinderella-gray-2025"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "role": "原画",
+      "name": "Andraft Inc.",
+      "organization": "Andraft Inc.",
+      "group": "片头动画",
+      "order": 1,
+      "source_ref": "production-andraft-cinderella-gray-2025"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e08",
+      "role": "第二原画",
+      "name": "スタジオピーコック",
+      "organization": "スタジオピーコック",
+      "order": 90,
+      "source_ref": "production-peacock-cinderella-gray-2025"
     }
   ]
 }
