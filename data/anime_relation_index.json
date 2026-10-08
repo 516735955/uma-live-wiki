@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-131ca9589f62b75e",
-  "generated_at": "2026-10-07T00:00:00+08:00",
+  "build_id": "anime-d410a2375063c9d7",
+  "generated_at": "2026-10-08T00:00:00+08:00",
   "targets": {
     "event": {
       "live-other-2024-05-06-title-7caa082310e6": [
@@ -300,6 +300,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e15",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-umayon-e18-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タマモクロス",
+          "voice_actor_id": "va-0052",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
         }
       ],
       "oguricap": [
@@ -643,6 +654,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e15",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-umayon-e18-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "goldship": [
@@ -1151,6 +1184,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e15-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
         }
       ],
       "mejiromcqueen": [
@@ -3251,6 +3295,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e15-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
         }
       ],
       "grasswonder": [
@@ -4372,6 +4427,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e21-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
+          "work_id": "anime-umayon"
         }
       ],
       "daiwascarlet": [
@@ -5526,6 +5592,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e21-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
+          "work_id": "anime-umayon"
         }
       ],
       "anshinzawasasami": [
@@ -6113,6 +6190,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "twinturbo": [
@@ -7864,6 +7952,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e12",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e15-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "tmoperao": [
@@ -8768,6 +8878,17 @@
           "voice_actor_id": "va-0118",
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e02",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
           "work_id": "anime-umayon"
         }
       ],
@@ -10482,6 +10603,17 @@
           "voice_actor_id": "va-0058",
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e10",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e21-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
         }
       ],
@@ -13275,6 +13407,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e15",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-umayon-e18-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
         }
       ],
       "dicta_striker": [
@@ -15076,6 +15219,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e15",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-umayon-e18-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タマモクロス",
+          "voice_actor_id": "va-0052",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0179": [
@@ -15419,6 +15573,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e15",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-umayon-e18-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0009": [
@@ -15927,6 +16103,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e15-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0053": [
@@ -18027,6 +18214,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e15-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0035": [
@@ -19148,6 +19346,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e21-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0090": [
@@ -20524,6 +20733,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e21-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0017": [
@@ -21111,6 +21331,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0145": [
@@ -22706,6 +22937,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e12",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e15-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "va-0073": [
@@ -23610,6 +23863,17 @@
           "voice_actor_id": "va-0118",
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e02",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
           "work_id": "anime-umayon"
         }
       ],
@@ -25346,6 +25610,17 @@
           "voice_actor_id": "va-0058",
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e10",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e21-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
         }
       ],
@@ -28139,6 +28414,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e15",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-umayon-e18-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
         }
       ],
       "va-auto-afa298a8ba3a": [
@@ -34617,6 +34903,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e04",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e15-ending-music-song-cdf2727e54-v-37d066fbc9",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e15",
+          "work_id": "anime-umayon"
         }
       ],
       "song-ring-ring-c9bdb0e414": [
@@ -34674,6 +34971,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e18-ending-music-song-ring-ring-c9bdb0e414-v-088800b80a",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e18",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e20-ending-music-song-ring-ring-c9bdb0e414-v-088800b80a",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e20",
+          "work_id": "anime-umayon"
         }
       ],
       "song-fallin-love-9a20ebe280": [
@@ -34719,6 +35038,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e12",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayon-e21-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
         }
       ],

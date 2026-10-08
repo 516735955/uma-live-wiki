@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-07",
+  "observed_at": "2026-10-08",
   "episodes": [
     {
       "work_id": "anime-s1",
@@ -5651,7 +5651,7 @@
         },
         {
           "role": "キャスティングマネージャー",
-          "name": "小室亜沙子",
+          "name": "小室亜紗子",
           "institutions": [
             "スタージャムコーポレーション"
           ],
@@ -60742,6 +60742,1375 @@
           "person_id": "staff-坂友加里",
           "institutions": [
             "スタジオKAI"
+          ]
+        }
+      ]
+    },
+    {
+      "work_id": "anime-umayon",
+      "number": 18,
+      "source_kind": "credit_recording",
+      "url": "https://www.yinhuadm.cc/p/12632-1-18.html",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "cast": [
+        [
+          "スーパークリーク",
+          "優木かな"
+        ],
+        [
+          "タマモクロス",
+          "大空直美"
+        ],
+        [
+          "オグリキャップ",
+          "高柳知葉"
+        ]
+      ],
+      "staff_groups": [
+        {
+          "role": "原作",
+          "time": 66,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 66,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 66,
+          "names": [
+            "伊藤仁",
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン・総作画監督",
+          "time": 66,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 66,
+          "names": [
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 66,
+          "names": [
+            "雛田ゆいち",
+            "森永志保"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 69,
+          "names": [
+            "山口雅範"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 69,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 69,
+          "names": [
+            "林昌宏"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 69,
+          "names": [
+            "林昌宏",
+            "大図佑"
+          ]
+        },
+        {
+          "role": "オフライン編集",
+          "time": 71,
+          "organizations": [
+            "DMM.futureworks"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 73,
+          "names": [
+            "内田哲也"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 73,
+          "names": [
+            "本田晃弘",
+            "久保早瑠菜",
+            "千葉梓",
+            "池田健仁",
+            "Lucas Nainemoutou"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 73,
+          "names": [
+            "森田祐一"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 73,
+          "names": [
+            "宅間麻姫"
+          ],
+          "institutions": [
+            "スワラプロ"
+          ]
+        },
+        {
+          "role": "サウンドミキサー",
+          "time": 73,
+          "names": [
+            "武藤雅人"
+          ]
+        },
+        {
+          "role": "サウンドエディター",
+          "time": 73,
+          "names": [
+            "服部稜"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 73,
+          "organizations": [
+            "スリーエススタジオ"
+          ]
+        },
+        {
+          "role": "キャスティングマネージャー",
+          "time": 73,
+          "names": [
+            "小室亜紗子"
+          ],
+          "institutions": [
+            "スタージャムコーポレーション"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 73,
+          "names": [
+            "小野勝弘"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 73,
+          "organizations": [
+            "HALF H・P STUDIO"
+          ]
+        },
+        {
+          "role": "絵コンテ・作画監督",
+          "time": 78,
+          "names": [
+            "宮嶋星矢"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 78,
+          "names": [
+            "衣谷ソーシ",
+            "田村ヒロ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 78,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "撮影",
+          "time": 78,
+          "names": [
+            "林昌宏",
+            "福井友里恵",
+            "大図佑"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "企画",
+          "time": 81,
+          "names": [
+            "渡邊耕一"
+          ]
+        },
+        {
+          "role": "チーフプロデューサー",
+          "time": 81,
+          "names": [
+            "竹中信広"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 81,
+          "names": [
+            "熊ジェット",
+            "秋田穣"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 81,
+          "names": [
+            "秋葉隆史",
+            "竹之内葉南"
+          ]
+        },
+        {
+          "role": "国内配信・海外ライセンス",
+          "time": 81,
+          "names": [
+            "二瓶茂人",
+            "Regnault Tristan"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 81,
+          "organizations": [
+            "トレーナーの皆様"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 83,
+          "organizations": [
+            "DMM.futureworks／ダブトゥーンスタジオ"
+          ]
+        },
+        {
+          "role": "アニメーションプロデューサー",
+          "time": 83,
+          "names": [
+            "内海洋"
+          ]
+        },
+        {
+          "role": "アシスタントプロデューサー",
+          "time": 83,
+          "names": [
+            "青木泰寛"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 85,
+          "organizations": [
+            "Cygames"
+          ]
+        }
+      ],
+      "music_uses": [
+        {
+          "title": "Ring Ring ダイアリー",
+          "song_id": "song-ring-ring-c9bdb0e414",
+          "version_id": "song-ring-ring-c9bdb0e414-v-088800b80a",
+          "release_id": "album-laca-15873",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "title": "Ring Ring ダイアリー",
+          "role": "作詞",
+          "names": [
+            "國土佳音"
+          ]
+        },
+        {
+          "title": "Ring Ring ダイアリー",
+          "role": "作曲",
+          "names": [
+            "櫻井詩郎"
+          ]
+        },
+        {
+          "title": "Ring Ring ダイアリー",
+          "role": "編曲",
+          "names": [
+            "佐々木聡作"
+          ]
+        }
+      ]
+    },
+    {
+      "work_id": "anime-umayon",
+      "number": 15,
+      "source_kind": "credit_recording",
+      "url": "https://www.yinhuadm.cc/p/12632-1-15.html",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "cast": [
+        [
+          "エアグルーヴ",
+          "青木瑠璃子"
+        ],
+        [
+          "スペシャルウィーク",
+          "和氣あず未"
+        ],
+        [
+          "ゴールドシップ",
+          "上田瞳"
+        ]
+      ],
+      "staff_groups": [
+        {
+          "role": "原作",
+          "time": 68,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 68,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 68,
+          "names": [
+            "伊藤仁",
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン・総作画監督",
+          "time": 68,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 68,
+          "names": [
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 68,
+          "names": [
+            "森永志保",
+            "井口エリ"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 71,
+          "names": [
+            "山口雅範"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 71,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 71,
+          "names": [
+            "林昌宏"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 71,
+          "names": [
+            "林昌宏",
+            "大図佑"
+          ]
+        },
+        {
+          "role": "オフライン編集",
+          "time": 74,
+          "organizations": [
+            "DMM.futureworks"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 76,
+          "names": [
+            "内田哲也"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 76,
+          "names": [
+            "本田晃弘",
+            "久保早瑠菜",
+            "千葉梓",
+            "池田健仁",
+            "Lucas Nainemoutou"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 76,
+          "names": [
+            "森田祐一"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 76,
+          "names": [
+            "宅間麻姫"
+          ],
+          "institutions": [
+            "スワラプロ"
+          ]
+        },
+        {
+          "role": "サウンドミキサー",
+          "time": 76,
+          "names": [
+            "武藤雅人"
+          ]
+        },
+        {
+          "role": "サウンドエディター",
+          "time": 76,
+          "names": [
+            "服部稜"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 76,
+          "organizations": [
+            "スリーエススタジオ"
+          ]
+        },
+        {
+          "role": "キャスティングマネージャー",
+          "time": 76,
+          "names": [
+            "小室亜紗子"
+          ],
+          "institutions": [
+            "スタージャムコーポレーション"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 76,
+          "names": [
+            "小野勝弘"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 76,
+          "organizations": [
+            "HALF H・P STUDIO"
+          ]
+        },
+        {
+          "role": "絵コンテ・作画監督",
+          "time": 78,
+          "names": [
+            "宮嶋星矢"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 78,
+          "names": [
+            "衣谷ソーシ",
+            "暇木けい",
+            "鴉羽839",
+            "石原充菜",
+            "雛田ゆいち",
+            "湯野さわこ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 78,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "撮影",
+          "time": 78,
+          "names": [
+            "林昌宏",
+            "福井友里恵",
+            "大図佑"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "企画",
+          "time": 83,
+          "names": [
+            "渡邊耕一"
+          ]
+        },
+        {
+          "role": "チーフプロデューサー",
+          "time": 83,
+          "names": [
+            "竹中信広"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 83,
+          "names": [
+            "熊ジェット",
+            "秋田穣"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 83,
+          "names": [
+            "秋葉隆史",
+            "竹之内葉南"
+          ]
+        },
+        {
+          "role": "国内配信・海外ライセンス",
+          "time": 83,
+          "names": [
+            "二瓶茂人",
+            "Regnault Tristan"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 83,
+          "organizations": [
+            "トレーナーの皆様"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 85,
+          "organizations": [
+            "DMM.futureworks／ダブトゥーンスタジオ"
+          ]
+        },
+        {
+          "role": "アニメーションプロデューサー",
+          "time": 85,
+          "names": [
+            "内海洋"
+          ]
+        },
+        {
+          "role": "アシスタントプロデューサー",
+          "time": 85,
+          "names": [
+            "青木泰寛"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 86,
+          "organizations": [
+            "Cygames"
+          ]
+        }
+      ],
+      "music_uses": [
+        {
+          "title": "ぴょいっと♪はれるや！",
+          "song_id": "song-cdf2727e54",
+          "version_id": "song-cdf2727e54-v-37d066fbc9",
+          "release_id": "album-laca-15873",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "title": "ぴょいっと♪はれるや！",
+          "role": "作詞",
+          "names": [
+            "corochi"
+          ]
+        },
+        {
+          "title": "ぴょいっと♪はれるや！",
+          "role": "作曲・編曲",
+          "names": [
+            "内田哲也"
+          ]
+        }
+      ]
+    },
+    {
+      "work_id": "anime-umayon",
+      "number": 20,
+      "source_kind": "credit_recording",
+      "url": "https://www.yinhuadm.cc/p/12632-1-20.html",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "cast": [
+        [
+          "シンボリルドルフ",
+          "田所あずさ"
+        ],
+        [
+          "トウカイテイオー",
+          "Machico"
+        ],
+        [
+          "エアグルーヴ",
+          "青木瑠璃子"
+        ],
+        [
+          "オグリキャップ",
+          "高柳知葉"
+        ]
+      ],
+      "staff_groups": [
+        {
+          "role": "原作",
+          "time": 66,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 66,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 66,
+          "names": [
+            "伊藤仁",
+            "雛田ゆいち"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン・総作画監督",
+          "time": 66,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 66,
+          "names": [
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 66,
+          "names": [
+            "森永志保"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 69,
+          "names": [
+            "山口雅範"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 69,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 69,
+          "names": [
+            "林昌宏"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 69,
+          "names": [
+            "林昌宏",
+            "大図佑"
+          ]
+        },
+        {
+          "role": "オフライン編集",
+          "time": 71,
+          "organizations": [
+            "DMM.futureworks"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 73,
+          "names": [
+            "内田哲也"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 73,
+          "names": [
+            "本田晃弘",
+            "久保早瑠菜",
+            "千葉梓",
+            "池田健仁",
+            "Lucas Nainemoutou"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 73,
+          "names": [
+            "森田祐一"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 73,
+          "names": [
+            "宅間麻姫"
+          ],
+          "institutions": [
+            "スワラプロ"
+          ]
+        },
+        {
+          "role": "サウンドミキサー",
+          "time": 73,
+          "names": [
+            "武藤雅人"
+          ]
+        },
+        {
+          "role": "サウンドエディター",
+          "time": 73,
+          "names": [
+            "服部稜"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 73,
+          "organizations": [
+            "スリーエススタジオ"
+          ]
+        },
+        {
+          "role": "キャスティングマネージャー",
+          "time": 73,
+          "names": [
+            "小室亜紗子"
+          ],
+          "institutions": [
+            "スタージャムコーポレーション"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 73,
+          "names": [
+            "小野勝弘"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 73,
+          "organizations": [
+            "HALF H・P STUDIO"
+          ]
+        },
+        {
+          "role": "絵コンテ・作画監督",
+          "time": 78,
+          "names": [
+            "宮嶋星矢"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 78,
+          "names": [
+            "衣谷ソーシ",
+            "田村ヒロ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 78,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "撮影",
+          "time": 78,
+          "names": [
+            "林昌宏",
+            "福井友里恵",
+            "大図佑"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "企画",
+          "time": 81,
+          "names": [
+            "渡邊耕一"
+          ]
+        },
+        {
+          "role": "チーフプロデューサー",
+          "time": 81,
+          "names": [
+            "竹中信広"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 81,
+          "names": [
+            "熊ジェット",
+            "秋田穣"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 81,
+          "names": [
+            "秋葉隆史",
+            "竹之内葉南"
+          ]
+        },
+        {
+          "role": "国内配信・海外ライセンス",
+          "time": 81,
+          "names": [
+            "二瓶茂人",
+            "Regnault Tristan"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 81,
+          "organizations": [
+            "トレーナーの皆様"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 83,
+          "organizations": [
+            "DMM.futureworks／ダブトゥーンスタジオ"
+          ]
+        },
+        {
+          "role": "アニメーションプロデューサー",
+          "time": 83,
+          "names": [
+            "内海洋"
+          ]
+        },
+        {
+          "role": "アシスタントプロデューサー",
+          "time": 83,
+          "names": [
+            "青木泰寛"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 85,
+          "organizations": [
+            "Cygames"
+          ]
+        }
+      ],
+      "music_uses": [
+        {
+          "title": "Ring Ring ダイアリー",
+          "song_id": "song-ring-ring-c9bdb0e414",
+          "version_id": "song-ring-ring-c9bdb0e414-v-088800b80a",
+          "release_id": "album-laca-15873",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "title": "Ring Ring ダイアリー",
+          "role": "作詞",
+          "names": [
+            "國土佳音"
+          ]
+        },
+        {
+          "title": "Ring Ring ダイアリー",
+          "role": "作曲",
+          "names": [
+            "櫻井詩郎"
+          ]
+        },
+        {
+          "title": "Ring Ring ダイアリー",
+          "role": "編曲",
+          "names": [
+            "佐々木聡作"
+          ]
+        }
+      ]
+    },
+    {
+      "work_id": "anime-umayon",
+      "number": 21,
+      "source_kind": "credit_recording",
+      "url": "https://www.yinhuadm.cc/p/12632-1-21.html",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "cast": [
+        [
+          "アグネスタキオン",
+          "上坂すみれ"
+        ],
+        [
+          "マンハッタンカフェ",
+          "小倉唯"
+        ],
+        [
+          "ウオッカ",
+          "大橋彩香"
+        ]
+      ],
+      "staff_groups": [
+        {
+          "role": "原作",
+          "time": 66,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 66,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 66,
+          "names": [
+            "伊藤仁",
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン・総作画監督",
+          "time": 66,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 66,
+          "names": [
+            "暇木けい"
+          ]
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 66,
+          "names": [
+            "暇木けい",
+            "湯野さわこ"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 70,
+          "names": [
+            "山口雅範"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 70,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 70,
+          "names": [
+            "林昌宏"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 70,
+          "names": [
+            "林昌宏",
+            "大図佑"
+          ]
+        },
+        {
+          "role": "オフライン編集",
+          "time": 70,
+          "organizations": [
+            "DMM.futureworks"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 72,
+          "names": [
+            "内田哲也"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 72,
+          "names": [
+            "本田晃弘",
+            "久保早瑠菜",
+            "千葉梓",
+            "池田健仁",
+            "Lucas Nainemoutou"
+          ],
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 72,
+          "names": [
+            "森田祐一"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 72,
+          "names": [
+            "宅間麻姫"
+          ],
+          "institutions": [
+            "スワラプロ"
+          ]
+        },
+        {
+          "role": "サウンドミキサー",
+          "time": 72,
+          "names": [
+            "武藤雅人"
+          ]
+        },
+        {
+          "role": "サウンドエディター",
+          "time": 72,
+          "names": [
+            "服部稜"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 72,
+          "organizations": [
+            "スリーエススタジオ"
+          ]
+        },
+        {
+          "role": "キャスティングマネージャー",
+          "time": 72,
+          "names": [
+            "小室亜紗子"
+          ],
+          "institutions": [
+            "スタージャムコーポレーション"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 72,
+          "names": [
+            "小野勝弘"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 72,
+          "organizations": [
+            "HALF H・P STUDIO"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 77,
+          "names": [
+            "宮嶋星矢"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "作画監督",
+          "time": 77,
+          "names": [
+            "宮嶋星矢",
+            "衣谷ソーシ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "原画・動画・仕上げ",
+          "time": 77,
+          "names": [
+            "衣谷ソーシ",
+            "渡辺千尋",
+            "鴉羽839",
+            "石原充菜",
+            "田村ヒロ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 77,
+          "names": [
+            "山口雅範",
+            "松尾祈実香",
+            "二条なで"
+          ],
+          "institutions": [
+            "スタジオホワイト"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "撮影",
+          "time": 77,
+          "names": [
+            "林昌宏",
+            "大図佑"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "企画",
+          "time": 80,
+          "names": [
+            "渡邊耕一"
+          ]
+        },
+        {
+          "role": "チーフプロデューサー",
+          "time": 80,
+          "names": [
+            "竹中信広"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 80,
+          "names": [
+            "熊ジェット",
+            "秋田穣"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 80,
+          "names": [
+            "秋葉隆史",
+            "竹之内葉南"
+          ]
+        },
+        {
+          "role": "国内配信・海外ライセンス",
+          "time": 80,
+          "names": [
+            "二瓶茂人",
+            "Regnault Tristan"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 80,
+          "organizations": [
+            "トレーナーの皆様"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 82,
+          "organizations": [
+            "DMM.futureworks／ダブトゥーンスタジオ"
+          ]
+        },
+        {
+          "role": "アニメーションプロデューサー",
+          "time": 82,
+          "names": [
+            "内海洋"
+          ]
+        },
+        {
+          "role": "アシスタントプロデューサー",
+          "time": 82,
+          "names": [
+            "青木泰寛"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 85,
+          "organizations": [
+            "Cygames"
+          ]
+        }
+      ],
+      "music_uses": [
+        {
+          "title": "逃げ切りっ！Fallin' Love",
+          "song_id": "song-fallin-love-9a20ebe280",
+          "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+          "release_id": "album-laca-15873",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "title": "逃げ切りっ！Fallin' Love",
+          "role": "作詞・作曲・編曲",
+          "names": [
+            "lull"
           ]
         }
       ]
