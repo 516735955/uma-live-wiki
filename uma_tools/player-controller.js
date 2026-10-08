@@ -255,6 +255,12 @@
         markError('浏览器未能启动试听，请重试。');
         return Promise.resolve(false);
       }
+      // Initial play can remain pending without emitting waiting/stalled.
+      if (!recoveryTimer) {
+        lastProgressAt = now();
+        lastProgressTime = audio.currentTime || 0;
+        scheduleStallCheck('initial-play');
+      }
       return Promise.resolve(result).then(function () {
         if (generation !== sourceGeneration) return false;
         return true;
@@ -382,9 +388,16 @@
     function playTrack(track) {
       const normalized = normalizeTrack(track);
       if (!normalized) return Promise.resolve(false);
-      if (state.current && state.current.id === normalized.id) return togglePlay();
       const queuedIndex = state.queue.findIndex(function (queued) { return queued.id === normalized.id; });
-      if (queuedIndex >= 0) return playQueueAt(queuedIndex);
+      if (state.current && state.current.id === normalized.id && state.current.url === normalized.url) return togglePlay();
+      if (queuedIndex >= 0) {
+        state.queue[queuedIndex] = normalized;
+        if (queuedIndex === state.queueIndex) {
+          state.current = normalized;
+          return loadCurrent(true);
+        }
+        return playQueueAt(queuedIndex);
+      }
       const insertAt = state.queueIndex >= 0 ? state.queueIndex + 1 : state.queue.length;
       state.queue.splice(insertAt, 0, normalized);
       state.queueIndex = insertAt;
@@ -554,20 +567,7 @@
       const wasPlaying = isPlaying();
       state.queue.splice(index, 1);
       if (!state.queue.length) {
-        const audio = getAudio();
-        if (audio) audio.pause();
-        intendedPlay = false;
-        resetRecovery();
-        state.current = null;
-        state.queueIndex = -1;
-        state.status = 'idle';
-        state.panelOpen = false;
-        state.currentTime = 0;
-        state.duration = 0;
-        if (storage) {
-          try { storage.removeItem(STORAGE_KEY); }
-          catch (error) {}
-        }
+        clearQueue();
         return;
       }
       if (index < state.queueIndex) state.queueIndex -= 1;
@@ -697,8 +697,9 @@
       if (!audio || audio === boundAudio) return;
       boundAudio = audio;
       function on(type, handler) {
-        audio.addEventListener(type, handler);
-        handlers.push([type, handler]);
+        const guarded = function () { if (state.current) handler(); };
+        audio.addEventListener(type, guarded);
+        handlers.push([type, guarded]);
       }
       on('loadstart', function () { state.status = 'loading'; state.error = ''; });
       on('loadedmetadata', function () {

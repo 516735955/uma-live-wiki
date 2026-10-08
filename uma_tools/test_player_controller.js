@@ -44,6 +44,7 @@ class FakeAudio {
     this.paused = true;
     this.emit('pause');
   }
+  removeAttribute(name) { if (name === 'src') this.src = ''; }
   metadata(duration) {
     this.duration = duration;
     this.readyState = 3;
@@ -133,6 +134,19 @@ async function run() {
   await first.controller.playTrack(track('a'));
   assert.deepEqual(first.state.queue.map(function (row) { return row.id; }), ['a', 'b'], 'replaying a queued track does not duplicate it');
   assert.equal(first.state.current.id, 'a');
+  const alternate = Object.assign({}, track('a'), { url: 'https://audio.example/alternate.mp3' });
+  await first.controller.playTrack(alternate);
+  assert.equal(first.state.current.url, alternate.url, 'another release URL replaces the queued source for the same recording');
+  assert(first.audio.src.includes('alternate.mp3'));
+  assert.equal(first.state.queue.length, 2);
+
+  const emptied = setup();
+  await emptied.controller.playTrack(track('last'));
+  emptied.controller.removeQueueItem(0);
+  assert.equal(emptied.audio.src, '', 'removing the last row releases the audio source');
+  assert.equal(emptied.state.current, null);
+  emptied.audio.emit('error');
+  assert.notEqual(emptied.state.status, 'error', 'late audio events cannot revive an empty session');
 
   const appendedAlbum = setup();
   await appendedAlbum.controller.playTrack(track('a'));
@@ -275,6 +289,19 @@ async function run() {
   assert.equal(restoredQueue.state.visible, false);
 
   const clock = new FakeClock();
+  const initialClock = new FakeClock();
+  const pendingInitial = setup(null, null, {
+    stallTimeout: 20, retryDelays: [0],
+    now: initialClock.now.bind(initialClock),
+    setTimeout: initialClock.setTimeout.bind(initialClock),
+    clearTimeout: initialClock.clearTimeout.bind(initialClock)
+  });
+  pendingInitial.audio.play = function () { this.playCount += 1; return new Promise(() => {}); };
+  pendingInitial.controller.playTrack(track('pending'));
+  const initialLoads = pendingInitial.audio.loadCount;
+  initialClock.advance(21);
+  assert(pendingInitial.audio.loadCount > initialLoads, 'an unresolved initial play promise still starts recovery');
+  pendingInitial.controller.destroy();
   const recovering = setup(null, null, {
     stallTimeout: 20,
     retryDelays: [0, 0, 0],

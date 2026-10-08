@@ -12,6 +12,7 @@
         width: 960,
         selectedId: '',
         selectedDetail: null,
+        selectionRequest: null,
         loading: false,
         hoverId: '',
         observer: null
@@ -130,15 +131,17 @@
         return { lyricist: '作词', composer: '作曲', arranger: '编曲', remixer: '混音改编', producer: '制作', orchestrator: '配器' }[role] || role;
       },
       choose: function (person) {
+        const selection = {};
+        this.selectionRequest = selection;
         this.selectedId = person.creator_id;
         this.selectedDetail = null;
         this.loading = true;
-        window.UmaApi.request('/api/catalog/creator' + window.UmaApi.query({ id: person.creator_id }), { fresh: true })
-          .then((data) => { this.selectedDetail = data && data.creator; })
+        return window.UmaApi.request('/api/catalog/creator' + window.UmaApi.query({ id: person.creator_id }))
+          .then((data) => { if (this.selectionRequest === selection) this.selectedDetail = data && data.creator; })
           .catch(function () {})
-          .finally(() => { this.loading = false; });
+          .finally(() => { if (this.selectionRequest === selection) this.loading = false; });
       },
-      close: function () { this.selectedId = ''; this.selectedDetail = null; },
+      close: function () { this.selectionRequest = null; this.selectedId = ''; this.selectedDetail = null; this.loading = false; },
       onNodeKey: function (event, person) {
         if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.choose(person); }
       }

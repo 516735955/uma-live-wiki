@@ -1,7 +1,4 @@
 
-const ALBUMS = [];
-let ALBUMS_LOADED = false;
-
 const { createApp, ref, reactive, computed, watch } = Vue;
 const api = window.UmaApi;
 const routes = window.UmaRoutes;
@@ -38,12 +35,16 @@ const umaApp = createApp({
     const albumsLoading = ref(false);
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
-    const routeReady = ref(true);
     const notFound = ref(false);
     const openNavGroup = ref('');
     const navigationRevision = ref(0);
     const backTopVisible = ref(false);
     let pendingEntitySource = false;
+    let entityRequestRevision = 0;
+    let restoringRoute = false;
+    const songsById = reactive({});
+    const appearanceSongs = reactive({});
+    const eventSongs = ref([]);
     function syncBodyBackground(isHome) {
       document.body.classList.toggle('subpage-bg', !isHome);
     }
@@ -67,14 +68,15 @@ const umaApp = createApp({
     let newsLoadPromise = null;
     let newsDetailRequest = null;
     let albumsLoadPromise = null;
-    let eventsLoadPromise = null;
-    let songCatalogLoadPromise = null;
     let creatorCatalogLoadPromise = null;
     let relationshipLoadPromise = null;
     let homeSummaryLoadPromise = null;
     let pedigreeLoadPromise = null;
     let pedigreeMetaLoadPromise = null;
     const eventsAll = ref([]);
+    const eventsTotal = ref(0);
+    const eventYearValues = ref([]);
+    let eventListRevision = 0;
     const eventSeries = ref([]);
     const eventDetail = ref(null);
     const selectedEventSessionId = ref('');
@@ -88,8 +90,8 @@ const umaApp = createApp({
     const expandedSongReleaseId = ref('');
     const expandedSongCreditId = ref('');
     const songDbQuery = ref('');
-    const songRemoteQuery = ref('');
-    const songRemoteResults = ref([]);
+    const songTotal = ref(0);
+    let songListRevision = 0;
     const songDbPage = ref(1);
     const songDbPerPage = 30;
     const creatorCatalog = ref({ coverage: {}, creators: [] });
@@ -98,7 +100,6 @@ const umaApp = createApp({
     const creatorDetail = ref(null);
     const creatorSection = ref('works');
     const expandedCreatorWorkId = ref('');
-    const expandedCollaboratorId = ref('');
     const creatorQuery = ref('');
     const creatorRole = ref('all');
     const creatorPage = ref(1);
@@ -249,7 +250,7 @@ const umaApp = createApp({
       pedigreeMetaLoadPromise = loadDataScript(source, 'CHARACTER_PEDIGREE_META')
         .catch(function () {
           delete dataScriptPromises[source];
-          window.CHARACTER_PEDIGREE_META = { available: [] };
+          pedigreeMetaLoadPromise = null;
         });
       return pedigreeMetaLoadPromise;
     }
@@ -262,7 +263,7 @@ const umaApp = createApp({
     function loadVoiceData() {
       if (relationshipLoadPromise) return relationshipLoadPromise;
       voiceLoading.value = true;
-      relationshipLoadPromise = api.request('/api/catalog/voice-actors', { fresh: true })
+      relationshipLoadPromise = api.request('/api/catalog/voice-actors')
         .then(function (data) {
           relationshipLoadPromise = null;
           voiceProfiles.value = (data && data.voice_actors) || [];
@@ -278,10 +279,7 @@ const umaApp = createApp({
     const appearanceLoads = {};
     function mergeSong(song) {
       if (!song || !song.id) return;
-      const rows = songCatalog.value.songs || [];
-      const index = rows.findIndex(function (item) { return item.id === song.id; });
-      if (index >= 0) rows.splice(index, 1, song);
-      else rows.push(song);
+      if (!songsById[song.id] || song.versions) songsById[song.id] = song;
     }
     function loadRelationshipData(type, id) {
       if (!type || !id) return Promise.resolve();
@@ -293,11 +291,12 @@ const umaApp = createApp({
         .then(function (data) {
           const table = type === 'voice_actor' ? appearanceIndex.value.voice_actors : appearanceIndex.value.characters;
           table[id] = (data && data.appearance) || { events: [], songs: [], performed_songs: [] };
-          ((data && data.songs) || []).forEach(mergeSong);
+          appearanceSongs[key] = (data && data.songs) || [];
         }).catch(function () {
           delete appearanceLoads[key];
           appearanceErrors[key] = '资料暂时无法载入，请重试。';
         }).finally(function () {
+          delete appearanceLoads[key];
           appearanceLoading[key] = false;
         });
       return appearanceLoads[key];
@@ -364,24 +363,26 @@ const umaApp = createApp({
     function retryHorses() {
       loadHorsesData();
     }
-    function loadSongCatalog() {
-      if (songCatalogLoadPromise) return songCatalogLoadPromise;
+    function listParamsFromUrl() {
+      const params = new URL(window.location.href).searchParams;
+      return Object.fromEntries(params.entries());
+    }
+    function loadSongCatalog(params) {
+      const query = params || { q: songDbQuery.value, page: songDbPage.value };
+      const revision = ++songListRevision;
       songCatalogError.value = '';
       songCatalogLoading.value = true;
-      songCatalogLoadPromise = api.request('/api/catalog/songs?page_size=2000', { fresh: true })
+      return api.request('/api/catalog/songs' + api.query({ q: query.q, page: query.page, page_size: songDbPerPage }))
         .then(function (data) {
-          songCatalogLoadPromise = null;
-          songCatalog.value = data && Array.isArray(data.items) ? { build_id: data.build_id || '', coverage: data.coverage || {}, songs: data.items } : { build_id: '', coverage: {}, songs: [] };
-          if (!songCatalog.value.songs.length) songCatalogError.value = '歌曲资料为空。';
-        })
-        .catch(function () {
-          songCatalogLoadPromise = null;
-          songCatalog.value = { coverage: {}, songs: [] };
-          songCatalogError.value = '无法加载歌曲资料（请确认 /data/song_catalog.json 已生成）。';
+          if (revision !== songListRevision) return;
+          songCatalog.value = { build_id: data.build_id || '', coverage: data.coverage || {}, songs: data.items || [] };
+          songTotal.value = data.total || 0;
+          songDbPage.value = data.page || 1;
+        }).catch(function () {
+          if (revision === songListRevision) songCatalogError.value = '歌曲资料暂时无法载入，请重试。';
         }).finally(function () {
-          songCatalogLoading.value = false;
+          if (revision === songListRevision) songCatalogLoading.value = false;
         });
-      return songCatalogLoadPromise;
     }
     function loadCreatorCatalog() {
       if (creatorCatalogLoadPromise) return creatorCatalogLoadPromise;
@@ -399,12 +400,10 @@ const umaApp = createApp({
           creatorCatalog.value = { coverage: {}, creators: [] };
           creatorCatalogError.value = '创作者资料暂时无法载入。';
         }).finally(function () {
+          creatorCatalogLoadPromise = null;
           creatorCatalogLoading.value = false;
         });
       return creatorCatalogLoadPromise;
-    }
-    function loadMusicRelations() {
-      return Promise.all([loadVoiceData(), loadSongCatalog(), loadAlbums()]);
     }
     function prepareCurrentRoute() {
       const seg = routeSegments();
@@ -412,16 +411,15 @@ const umaApp = createApp({
       const first = (seg[0] || '').toLowerCase();
       if (first === 'news') {
         const newsReady = loadNews();
-        return seg.length > 1 ? newsReady : Promise.resolve();
+        return newsReady;
       }
       if (first === 'music') {
         const musicSection = (seg[1] || '').toLowerCase();
-        if (first === 'music' && musicSection === 'creators') return loadCreatorCatalog();
-        return musicSection === 'songs'
-          ? Promise.all([loadSongCatalog(), loadVoiceData(), loadCharacterIndexData()])
-          : Promise.all([loadAlbums(), loadVoiceData(), loadSongCatalog()]);
+        if (musicSection === 'creators') return seg.length > 2 ? Promise.resolve() : loadCreatorCatalog();
+        if (musicSection === 'songs') return seg.length > 2 ? Promise.resolve() : loadSongCatalog(listParamsFromUrl());
+        return loadAlbums();
       }
-      if (first === 'events') return Promise.all([loadEvents(), loadCharacterIndexData(), loadVoiceData()]);
+      if (first === 'events') return seg.length > 1 ? Promise.resolve() : loadEvents(listParamsFromUrl());
       if (first === 'resources') return Promise.resolve();
       if (first !== 'database') return Promise.resolve();
       const sub = (seg[1] || '').toLowerCase();
@@ -659,7 +657,25 @@ const umaApp = createApp({
         /^\/music\/(?:songs|albums|creators)\/[^/]+$/.test(clean) ||
         /^\/database\/(?:characters|voice-actors|horses)\/[^/]+$/.test(clean);
     }
-    function beginEntityNavigation() { pendingEntitySource = isAtomicView(); }
+    function beginEntityNavigation() {
+      navigationRevision.value += 1;
+      pendingEntitySource = isAtomicView();
+      home.value = false;
+      notFound.value = false;
+      const revision = ++entityRequestRevision;
+      const sourcePath = currentUrlPath();
+      return function () { return revision === entityRequestRevision && sourcePath === currentUrlPath(); };
+    }
+    function applyCurrentRoute() {
+      const revision = ++navigationRevision.value;
+      entityRequestRevision += 1;
+      clearEntityDetails();
+      const sourcePath = currentUrlPath();
+      return Promise.resolve(prepareCurrentRoute()).then(apply, apply);
+      function apply() {
+        if (revision === navigationRevision.value && sourcePath === currentUrlPath()) syncFromUrl();
+      }
+    }
     function resetPageScroll() {
       window.scrollTo(0, 0);
       Vue.nextTick(function () {
@@ -670,14 +686,7 @@ const umaApp = createApp({
       const method = replace ? 'replaceState' : 'pushState';
       const fromEntity = isAtomicView() && routeWillBeAtomic(path);
       if (currentUrlPath() !== path) history[method]({ umaInternal: true, entity: routeWillBeAtomic(path), fromEntity: fromEntity }, '', path);
-      syncFromUrl();
-      navigationRevision.value += 1;
-      const ready = prepareCurrentRoute();
-      Promise.resolve(ready).then(function () {
-        syncFromUrl();
-      }, function () {
-        syncFromUrl();
-      });
+      applyCurrentRoute();
       resetPageScroll();
     }
     const showContextBack = computed(function () {
@@ -742,8 +751,9 @@ const umaApp = createApp({
       pushUrl();
     }
     function openCharacter(id) {
-      beginEntityNavigation();
+      const isCurrent = beginEntityNavigation();
       const show = function () {
+        if (!isCurrent()) return;
         const found = findCharById(id);
         if (!found) return;
         clearEntityDetails('character');
@@ -814,8 +824,9 @@ const umaApp = createApp({
       setHorsePage(page);
     }
     function openHorse(id) {
-      beginEntityNavigation();
+      const isCurrent = beginEntityNavigation();
       const show = function () {
+        if (!isCurrent()) return;
         if (!window.HORSES_DETAIL || !window.HORSES_DETAIL[id]) return;
         clearEntityDetails('horse');
         activeTab.value = 'database';
@@ -962,7 +973,7 @@ const umaApp = createApp({
       const replaced = '/uma_tools/img/album-placeholder.svg';
       if (!String(image.src || '').endsWith('album-placeholder.svg')) image.src = replaced;
     }
-    watch(horseQuery, function () { horsePage.value = 1; });
+    watch(horseQuery, function () { if (!restoringRoute) { horsePage.value = 1; pushUrl(true); } }, { flush: 'sync' });
     function renderCharBlood() {
       var box = document.getElementById('cCharBlood');
       if (!box) return;
@@ -1077,8 +1088,9 @@ const umaApp = createApp({
       return groups;
     });
     function openVoice(actorId) {
-      beginEntityNavigation();
+      const isCurrent = beginEntityNavigation();
       const show = function () {
+        if (!isCurrent()) return;
         const found = findVaBySlug(actorId);
         if (!found) return;
         clearEntityDetails('voice');
@@ -1103,7 +1115,7 @@ const umaApp = createApp({
     }
     const songAliasMap = computed(function () {
       const map = {};
-      (songCatalog.value.songs || []).forEach(function (song) {
+      (songCatalog.value.songs || []).concat(eventSongs.value, Object.values(songsById)).forEach(function (song) {
         [song.title].concat(song.aliases || []).forEach(function (title) {
           const key = normName(title);
           if (key) map[key] = song;
@@ -1114,31 +1126,16 @@ const umaApp = createApp({
     function findSong(songOrId) {
       const target = typeof songOrId === 'string' ? songOrId : (songOrId && (songOrId.id || songOrId.song_id));
       if (!target) return null;
-      const direct = (songCatalog.value.songs || []).find(function (song) { return song.id === target; });
+      const direct = songsById[target] || eventSongs.value.find(function (song) { return song.id === target; }) || (songCatalog.value.songs || []).find(function (song) { return song.id === target; });
       if (direct) return direct;
       const key = normName(target);
       return songAliasMap.value[key] || null;
     }
-    const songDbFiltered = computed(function () {
-      const query = String(songDbQuery.value || '').trim().toLowerCase();
-      const sourceRows = query && songRemoteQuery.value === query ? songRemoteResults.value : (songCatalog.value.songs || []);
-      let rows = sourceRows.filter(function (song) {
-        if (!query) return true;
-        return String(song.search_text || [song.title, (song.aliases || []).join(' '), (song.artists || []).join(' ')].join(' '))
-          .toLowerCase().indexOf(query) !== -1;
-      });
-      rows = rows.slice().sort(function (a, b) {
-        return a.title.localeCompare(b.title, 'ja');
-      });
-      return rows;
-    });
-    const songDbPageCount = computed(function () { return Math.max(1, Math.ceil(songDbFiltered.value.length / songDbPerPage)); });
-    const songDbPaged = computed(function () {
-      const start = (songDbPage.value - 1) * songDbPerPage;
-      return songDbFiltered.value.slice(start, start + songDbPerPage);
-    });
-    const songDbPageStart = computed(function () { return songDbFiltered.value.length ? (songDbPage.value - 1) * songDbPerPage + 1 : 0; });
-    const songDbPageEnd = computed(function () { return Math.min(songDbPage.value * songDbPerPage, songDbFiltered.value.length); });
+    const songDbFiltered = computed(function () { return songCatalog.value.songs || []; });
+    const songDbPageCount = computed(function () { return Math.max(1, Math.ceil(songTotal.value / songDbPerPage)); });
+    const songDbPaged = computed(function () { return songDbFiltered.value; });
+    const songDbPageStart = computed(function () { return songTotal.value ? (songDbPage.value - 1) * songDbPerPage + 1 : 0; });
+    const songDbPageEnd = computed(function () { return Math.min(songDbPage.value * songDbPerPage, songTotal.value); });
     const songDbPageList = computed(function () { return pagerList(songDbPage.value, songDbPageCount.value); });
     function setSongDbPage(page) {
       if (page === '…') return;
@@ -1146,28 +1143,19 @@ const umaApp = createApp({
       if (isNaN(next) || next < 1 || next > songDbPageCount.value) return;
       songDbPage.value = next;
       pushUrl();
+      loadSongCatalog();
       const top = document.getElementById('songArchiveTop');
       if (top) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     function goSongDbPage(delta) { setSongDbPage(songDbPage.value + delta); }
     let songSearchTimer = 0;
-    watch(function () { return songDbQuery.value; }, function (value) {
+    watch(songDbQuery, function () {
+      if (restoringRoute) return;
       songDbPage.value = 1;
+      pushUrl(true);
       window.clearTimeout(songSearchTimer);
-      const query = String(value || '').trim();
-      if (!query) {
-        songRemoteQuery.value = '';
-        songRemoteResults.value = [];
-        return;
-      }
-      songSearchTimer = window.setTimeout(function () {
-        api.request('/api/catalog/songs' + api.query({ q: query, page_size: 2000 })).then(function (data) {
-          if (String(songDbQuery.value || '').trim() !== query) return;
-          songRemoteQuery.value = query.toLowerCase();
-          songRemoteResults.value = data && Array.isArray(data.items) ? data.items : [];
-        }).catch(function () {});
-      }, 180);
-    });
+      songSearchTimer = window.setTimeout(function () { loadSongCatalog(); }, 180);
+    }, { flush: 'sync' });
     const creatorFiltered = computed(function () {
       const query = String(creatorQuery.value || '').trim().toLowerCase();
       return (creatorCatalog.value.creators || []).filter(function (creator) {
@@ -1195,18 +1183,18 @@ const umaApp = createApp({
     }
     function goCreatorPage(delta) { setCreatorPage(creatorPage.value + delta); }
     function setCreatorRole(role) { creatorRole.value = role; creatorPage.value = 1; pushUrl(); }
-    watch(creatorQuery, function () { creatorPage.value = 1; });
-    function openCreator(creatorOrId) {
-      beginEntityNavigation();
+    watch(creatorQuery, function () { if (!restoringRoute) { creatorPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    function openCreator(creatorOrId, section) {
+      const isCurrent = beginEntityNavigation();
       const requested = typeof creatorOrId === 'string' ? creatorOrId : (creatorOrId && creatorOrId.id);
-      return api.request('/api/catalog/creator' + api.query({ id: requested, revision: creatorCatalog.value.build_id }), { fresh: true }).then(function (data) {
+      return api.request('/api/catalog/creator' + api.query({ id: requested, revision: creatorCatalog.value.build_id })).then(function (data) {
+        if (!isCurrent()) return;
         const found = data && data.creator;
         if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         clearEntityDetails('creator');
         creatorDetail.value = found;
-        creatorSection.value = 'works';
+        creatorSection.value = section || 'works';
         expandedCreatorWorkId.value = '';
-        expandedCollaboratorId.value = '';
         activeTab.value = 'database';
         dbView.value = 'creators';
         resetPageScroll();
@@ -1225,22 +1213,11 @@ const umaApp = createApp({
     function creatorWorkRoleLabels(roles) {
       return (roles || []).map(creatorRoleLabel).join(' · ');
     }
-    function creatorMonogram(creator) {
-      const name = String((creator && creator.name) || '音').trim();
-      return name.slice(0, 2);
-    }
     function creatorPortrait(creator) {
       return (creator && (creator.image || creator.photo)) || '/uma_tools/img/creator-placeholder.svg';
     }
     function toggleCreatorWork(workId) {
       expandedCreatorWorkId.value = expandedCreatorWorkId.value === workId ? '' : workId;
-    }
-    function toggleCollaborator(creatorId) {
-      expandedCollaboratorId.value = expandedCollaboratorId.value === creatorId ? '' : creatorId;
-    }
-    function collaboratorWorks(person) {
-      const ids = new Set((person && person.shared_song_ids) || []);
-      return ((creatorDetail.value && creatorDetail.value.works) || []).filter(function (work) { return ids.has(work.song_id); });
     }
     const songDetailReleases = computed(function () {
       if (!songDetail.value) return [];
@@ -1335,7 +1312,10 @@ const umaApp = createApp({
       songLyricVersionId.value = versionId;
       songLyricTranslation.value = false;
     }
-    function playableSongRelease(song) {
+    function playableSongRelease(song, versionId) {
+      const exact = ((song && song.versions) || []).find(function (version) { return version.id === versionId; });
+      const exactRelease = exact && (exact.releases || []).find(function (release) { return !!release.audio_url; });
+      if (exactRelease) return { version: exact, release: exactRelease };
       if (song && song.playable) {
         return {
           version: { id: song.playable.version_id, title: song.playable.version_title },
@@ -1375,7 +1355,11 @@ const umaApp = createApp({
       if (!row || !row.release || !row.release.audio_url) return;
       playSongTrack(songDetail.value, row.version, row.release);
     }
-    function relationSong(reference) { return findSong(reference && (reference.song_id || reference.name)); }
+    function relationSong(reference) {
+      const key = charDetail.value ? 'character:' + charDetail.value.id : 'voice_actor:' + (voiceDetail.value && voiceDetail.value.id);
+      const target = reference && (reference.song_id || reference.name);
+      return (appearanceSongs[key] || []).find(function (song) { return song.id === target; }) || findSong(target);
+    }
     function relationSongVersions(reference, entityType, entityId) {
       const song = relationSong(reference);
       if (!song) return [];
@@ -1412,19 +1396,20 @@ const umaApp = createApp({
         return voice && voice.zh;
       }).filter(Boolean);
       if (names.length) return names.join(' / ');
-      const credits = Array.from(new Set((song && song.artists) || [])).filter(Boolean);
+      const credits = Array.from(new Set((song && song.artist_names && song.artist_names.length ? song.artist_names : song && song.artists) || [])).filter(Boolean);
       return credits.length ? credits.join(' / ') : '—';
     }
-    function openSong(songOrId) {
-      beginEntityNavigation();
+    function openSong(songOrId, section) {
+      const isCurrent = beginEntityNavigation();
       const requested = typeof songOrId === 'string' ? songOrId : (songOrId && (songOrId.id || songOrId.song_id));
       const show = function (data) {
+        if (!isCurrent()) return;
         const found = data && data.song;
         if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         mergeSong(found);
         clearEntityDetails('song');
         songDetail.value = found;
-        songSection.value = 'releases';
+        songSection.value = section || 'releases';
         expandedSongReleaseId.value = ((found.versions || []).find(function (version) { return version.releases && version.releases.length; }) || {}).id || '';
         expandedSongCreditId.value = '';
         const lyricVersion = (found.versions || []).find(function (version) { return version.id === found.original_version_id && version.lyrics; }) ||
@@ -1437,7 +1422,7 @@ const umaApp = createApp({
         pushUrl();
       };
       return Promise.all([
-        api.request('/api/catalog/song' + api.query({ id: requested, revision: songCatalog.value.build_id }), { fresh: true }),
+        api.request('/api/catalog/song' + api.query({ id: requested, revision: songCatalog.value.build_id })),
         loadVoiceData(),
         loadCharacterIndexData()
       ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
@@ -1576,7 +1561,7 @@ const umaApp = createApp({
           if (newsDetail.value) {
             path = routes.news(newsDetail.value.announce_id);
           } else {
-            path = routes.query(routes.news(), { page: newsPage.value });
+            path = routes.query(routes.news(), { range: newsRange.value, type: newsType.value, page: newsPage.value });
           }
         } else if (activeTab.value === 'live') {
           if (liveView.value === 'eventDetail' && eventDetail.value) {
@@ -1590,17 +1575,15 @@ const umaApp = createApp({
           } else if (dbView.value === 'voice') {
             path = routes.voiceActors(voiceDetail.value && voiceDetail.value.id, voiceSection.value);
           } else if (dbView.value === 'albums') {
-            path = routes.albums(albumDetail.value && albumDetail.value.data.id);
+            path = albumDetail.value ? routes.albums(albumDetail.value.data.id) : routes.query(routes.albums(), { q: relQuery.value, work: relWork.value, type: relFilter.value, year: relYear.value, sort: relSort.value === 'newest' ? '' : relSort.value, page: relPage.value });
           } else if (dbView.value === 'songs') {
             path = routes.songs(songDetail.value && songDetail.value.id, songSection.value);
-            if (songDetail.value) {
-            } else {
+            if (!songDetail.value) {
               path = routes.query(routes.songs(), { q: songDbQuery.value, page: songDbPage.value });
             }
           } else if (dbView.value === 'creators') {
             path = routes.creators(creatorDetail.value && creatorDetail.value.id, creatorSection.value);
-            if (creatorDetail.value) {
-            } else {
+            if (!creatorDetail.value) {
               path = routes.query(routes.creators(), { q: creatorQuery.value, role: creatorRole.value, page: creatorPage.value });
             }
           } else if (dbView.value === 'other') {
@@ -1643,216 +1626,10 @@ const umaApp = createApp({
       if (newsDetailRequest && newsDetailRequest.path !== path) cancelNewsDetailRequest();
       pendingEntitySource = false;
     }
-    function legacySyncFromUrl() {
-      const url = new URL(window.location.href);
-      const raw = url.pathname.split('/').filter(Boolean);
-      // strip optional language prefix (zh-Hans for now)
-      const seg = raw.slice();
-      if (seg.length && (seg[0].toLowerCase() === 'zh-hans')) seg.shift();
-      const first = (seg[0] || '').toLowerCase();
-      home.value = seg.length === 0;
-      albumDetail.value = null;
-      newsDetail.value = null;
-      eventDetail.value = null;
-      voiceDetail.value = null;
-      charDetail.value = null;
-      songDetail.value = null;
-      creatorDetail.value = null;
-      horseDetail.value = null;
-      liveView.value = 'eventHub';
-      selectedEventSessionId.value = '';
-      activeTab.value = 'database';
-      dbView.value = 'index';
-      if (home.value) return;
-      if (first === 'news') {
-        activeTab.value = 'news';
-        if (seg.length >= 2) {
-          const raw = decodeURIComponent(seg[1]);
-          if (raw && raw.indexOf('lantis-') === 0) {
-            openNews(raw);
-          } else {
-            const id = parseInt(raw, 10);
-            if (!isNaN(id)) openNews(id);
-          }
-        } else {
-          const p = parseInt(url.searchParams.get('page') || '1', 10);
-          newsPage.value = (isNaN(p) || p < 1) ? 1 : p;
-        }
-      } else if (first === 'contribute') {
-        const subFix = (seg[1] || '').toLowerCase();
-        if (subFix === 'contact') {
-          activeTab.value = 'contribute-contact';
-        } else {
-          activeTab.value = 'contribute';
-          fixDone.value = false;
-        }
-      } else if (first === 'legal') {
-        const subLegal = (seg[1] || '').toLowerCase();
-        activeTab.value = subLegal === 'privacy' ? 'legal-privacy' : 'legal-terms';
-      } else if (first === 'music') {
-        activeTab.value = 'database';
-        const musicSection = (seg[1] || '').toLowerCase();
-        if (musicSection === 'songs') {
-          dbView.value = 'songs';
-          const requestedSong = seg[2] ? decodeURIComponent(seg[2]) : '';
-          const section = url.searchParams.get('section');
-          songSection.value = ['releases', 'credits', 'lyrics', 'performances'].indexOf(section) >= 0 ? section : 'releases';
-          songDbQuery.value = url.searchParams.get('q') || '';
-          const songPageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
-          songDbPage.value = isNaN(songPageFromUrl) || songPageFromUrl < 1 ? 1 : songPageFromUrl;
-          if (requestedSong) openSong(requestedSong).then(function () {
-            songSection.value = ['releases', 'credits', 'lyrics', 'performances'].indexOf(section) >= 0 ? section : 'releases';
-            pushUrl(true);
-          });
-        } else if (musicSection === 'creators') {
-          dbView.value = 'creators';
-          const requestedCreator = seg[2] ? decodeURIComponent(seg[2]) : '';
-          creatorQuery.value = url.searchParams.get('q') || '';
-          creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
-          const creatorPageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
-          creatorPage.value = isNaN(creatorPageFromUrl) || creatorPageFromUrl < 1 ? 1 : creatorPageFromUrl;
-          if (requestedCreator) openCreator(requestedCreator).then(function () {
-            const section = url.searchParams.get('section');
-            creatorSection.value = section === 'collaborators' ? 'collaborators' : 'works';
-            pushUrl(true);
-          });
-        } else {
-          dbView.value = 'albums';
-          const legacyAlbumSlug = musicSection && musicSection !== 'albums' ? seg[1] : '';
-          const requestedAlbum = seg[2] ? decodeURIComponent(seg[2]) : (legacyAlbumSlug ? decodeURIComponent(legacyAlbumSlug) : '');
-          const album = requestedAlbum ? findAlbumBySlug(requestedAlbum) : null;
-          if (album) openAlbum(album);
-          if (!musicSection || legacyAlbumSlug) {
-            const target = LANG_PREFIX + '/music/albums' + (album ? '/' + slugOfAlbum(album.name) : '');
-            history.replaceState(history.state || {}, '', target);
-          }
-        }
-      } else if (first === 'artist') {
-        activeTab.value = 'database';
-        dbView.value = 'songs';
-        let target = LANG_PREFIX + '/music/songs';
-        if (seg.length >= 2) {
-          songDbQuery.value = decodeURIComponent(seg[1]);
-          target += '?q=' + encodeURIComponent(songDbQuery.value);
-        }
-        history.replaceState(history.state || {}, '', target);
-      } else if (first === 'songs') {
-        activeTab.value = 'database';
-        dbView.value = 'songs';
-        history.replaceState(history.state || {}, '', LANG_PREFIX + '/music/songs');
-      } else if (first === 'events') {
-        activeTab.value = 'live';
-        const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
-        if (requested) {
-          const session = url.searchParams.get('session');
-          openEvent(requested, session).then(function () {
-            pushUrl(true);
-          });
-        } else {
-          const time = url.searchParams.get('time');
-          const kind = url.searchParams.get('kind');
-          const mode = url.searchParams.get('mode');
-          const year = url.searchParams.get('year');
-          const series = url.searchParams.get('series');
-          const page = parseInt(url.searchParams.get('page') || '1', 10);
-          eventsQuery.value = url.searchParams.get('q') || '';
-          evTime.value = ['upcoming', 'past'].indexOf(time) >= 0 ? time : 'all';
-          evKind.value = ['concert', 'onsite', 'official_program'].indexOf(kind) >= 0 ? kind : 'all';
-          evMode.value = ['onsite', 'online'].indexOf(mode) >= 0 ? mode : 'all';
-          evYear.value = /^20\d{2}$/.test(year || '') ? year : 'all';
-          evSeries.value = series && (series === 'unclassified' || eventSeries.value.some(function (item) { return item.id === series; })) ? series : 'all';
-          eventsPage.value = isNaN(page) || page < 1 ? 1 : page;
-        }
-      } else if (first === 'live') {
-        // Keep the legacy path intact during the first render. Once the compact
-        // event index is ready, the second route pass can resolve it reliably.
-        activeTab.value = 'live';
-        liveView.value = 'eventHub';
-        if (!eventsAll.value.length) return;
-        const requestedPath = '/' + raw.join('/');
-        const legacy = eventsAll.value.find(function (event) {
-          return event.legacy_url === requestedPath || (event.legacy_aliases || []).indexOf(requestedPath) !== -1;
-        });
-        const target = legacy ? LANG_PREFIX + '/events/' + encodeURIComponent(legacy.id) : LANG_PREFIX + '/events';
-        history.replaceState(history.state || {}, '', target);
-        liveView.value = legacy ? 'eventDetail' : 'eventHub';
-        if (legacy) openEvent(legacy.id, url.searchParams.get('session'));
-      } else if (first === 'database') {
-        activeTab.value = 'database';
-        const sub = (seg[1] || '').toLowerCase();
-        if (sub === 'characters') {
-          dbView.value = 'characters';
-          const requested = seg[2] ? decodeURIComponent(seg[2]) : '';
-          charDetail.value = requested ? findCharById(requested) : null;
-          const section = url.searchParams.get('section');
-          charSection.value = ['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) >= 0 ? section : 'profile';
-          if (charDetail.value && charSection.value !== 'profile') setCharSection(charSection.value);
-        } else if (sub === 'events') {
-          const ft = url.searchParams.get('filter[time]');
-          const target = LANG_PREFIX + '/events' + ((ft === 'upcoming' || ft === 'past') ? '?time=' + ft : '');
-          history.replaceState(history.state || {}, '', target);
-          activeTab.value = 'live';
-          liveView.value = 'eventHub';
-          evTime.value = (ft === 'upcoming' || ft === 'past') ? ft : 'all';
-        } else if (sub === 'voice' || sub === 'voice-actors') {
-          dbView.value = 'voice';
-          voiceDetail.value = findVaBySlug(seg[2] ? decodeURIComponent(seg[2]) : '');
-          const section = url.searchParams.get('section');
-          voiceSection.value = ['profile', 'songs', 'appearances'].indexOf(section) >= 0 ? section : 'profile';
-          if (voiceDetail.value && voiceSection.value !== 'profile') setVoiceSection(voiceSection.value);
-        } else if (sub === 'albums') {
-          const target = LANG_PREFIX + '/music/albums' + (seg[2] ? '/' + encodeURIComponent(decodeURIComponent(seg[2])) : '');
-          history.replaceState(history.state || {}, '', target + url.search);
-          return syncFromUrl();
-        } else if (sub === 'songs') {
-          const target = LANG_PREFIX + '/music/songs' + (seg[2] ? '/' + encodeURIComponent(decodeURIComponent(seg[2])) : '');
-          history.replaceState(history.state || {}, '', target + url.search);
-          return syncFromUrl();
-        } else if (sub === 'other') {
-          dbView.value = 'other';
-          const sec = seg[2] ? decodeURIComponent(seg[2]) : '';
-          if (sec === 'horses') {
-            otherSection.value = 'horses';
-            horseDetail.value = (seg[3] && window.HORSES_DETAIL) ? window.HORSES_DETAIL[decodeURIComponent(seg[3])] || null : null;
-            horseQuery.value = url.searchParams.get('q') || '';
-            const horsePageFromUrl = parseInt(url.searchParams.get('page') || '1', 10);
-            horsePage.value = (isNaN(horsePageFromUrl) || horsePageFromUrl < 1) ? 1 : horsePageFromUrl;
-            loadHorsesData();
-          } else if (sec === 'videos' || sec === 'jockeys') {
-            otherSection.value = sec;
-            horseDetail.value = null;
-          } else {
-            otherSection.value = 'relationships';
-            horseDetail.value = null;
-          }
-        } else {
-          dbView.value = 'characters';
-          history.replaceState(history.state || {}, '', LANG_PREFIX + '/database/characters');
-        }
-      } else if (first === 'characters') {
-        const sub = (seg[1] || '').toLowerCase();
-        let target = LANG_PREFIX + '/database/characters';
-        if (sub === 'room') target = LANG_PREFIX + '/database/other/relationships';
-        else if (sub === 'videos') target = LANG_PREFIX + '/database/other/videos';
-        else if (sub && sub !== 'intro') target += '/' + encodeURIComponent(sub);
-        history.replaceState(history.state || {}, '', target);
-        activeTab.value = 'database';
-        if (sub === 'room' || sub === 'videos') {
-          dbView.value = 'other';
-          otherSection.value = sub === 'videos' ? 'videos' : 'relationships';
-        } else {
-          dbView.value = 'characters';
-          charDetail.value = sub && sub !== 'intro' ? findCharById(sub) : null;
-        }
-      } else if (first === 'links') {
-        activeTab.value = 'links';
-      } else {
-        activeTab.value = 'database';
-        dbView.value = 'index';
-      }
-      Vue.nextTick(renderCharBlood);
-    }
     function syncFromUrl() {
+      entityRequestRevision += 1;
+      restoringRoute = true;
+      try {
       const url = new URL(window.location.href);
       const raw = url.pathname.split('/').filter(Boolean);
       const canonicalLanguage = raw[0] === routes.language;
@@ -1885,11 +1662,15 @@ const umaApp = createApp({
       if (first === 'news' && seg.length <= 2) {
         activeTab.value = 'news';
         if (seg[1]) openNews(decodeURIComponent(seg[1]));
-        else newsPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        else {
+          newsRange.value = ['7', '30', '90'].includes(url.searchParams.get('range')) ? url.searchParams.get('range') : 'all';
+          newsType.value = ['media', 'game', 'cd'].includes(url.searchParams.get('type')) ? url.searchParams.get('type') : 'all';
+          newsPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        }
       } else if (first === 'events' && (seg.length === 1 || seg.length === 2 || (seg.length === 4 && seg[2] === 'sessions'))) {
         activeTab.value = 'live';
         const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
-        if (requested) openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : '').then(function () { pushUrl(true); });
+        if (requested) openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : '');
         else {
           eventsQuery.value = url.searchParams.get('q') || '';
           evTime.value = ['upcoming', 'past'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
@@ -1908,7 +1689,7 @@ const umaApp = createApp({
         songSection.value = section;
         songDbQuery.value = url.searchParams.get('q') || '';
         songDbPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
-        if (requested) openSong(requested).then(function () { songSection.value = section; pushUrl(true); });
+        if (requested) openSong(requested, section);
       } else if (first === 'music' && seg[1] === 'creators' && seg.length <= 4) {
         activeTab.value = 'database';
         dbView.value = 'creators';
@@ -1919,10 +1700,18 @@ const umaApp = createApp({
         creatorQuery.value = url.searchParams.get('q') || '';
         creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
         creatorPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
-        if (requested) openCreator(requested).then(function () { creatorSection.value = section; pushUrl(true); });
+        if (requested) openCreator(requested, section);
       } else if (first === 'music' && seg[1] === 'albums' && seg.length <= 3) {
         activeTab.value = 'database';
         dbView.value = 'albums';
+        if (!seg[2]) {
+          relQuery.value = url.searchParams.get('q') || '';
+          relWork.value = url.searchParams.get('work') || '';
+          relFilter.value = url.searchParams.get('type') || '';
+          relYear.value = url.searchParams.get('year') || '';
+          relSort.value = url.searchParams.get('sort') === 'name' ? 'name' : 'newest';
+          relPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+        }
         const album = seg[2] ? findAlbumById(decodeURIComponent(seg[2])) : null;
         if (album) openAlbum(album);
         else if (seg[2] && albums.value.length) reject();
@@ -1973,13 +1762,20 @@ const umaApp = createApp({
         reject();
       }
       Vue.nextTick(renderCharBlood);
+      } finally { restoringRoute = false; }
+      clampLocalPages();
     }
 
     function openAlbum(a) {
-      beginEntityNavigation();
+      const isCurrent = beginEntityNavigation();
       const name = a && a.name;
       if (!name) return Promise.resolve();
-      return api.request('/api/catalog/album' + api.query({ id: a.id, name: name })).then(function (data) {
+      return Promise.all([
+        api.request('/api/catalog/album' + api.query({ id: a.id, name: name })),
+        loadVoiceData(), loadCharacterIndexData()
+      ]).then(function (rows) {
+        if (!isCurrent()) return;
+        const data = rows[0];
         if (!data || !data.album) return;
         (data.catalog_songs || []).forEach(mergeSong);
         clearEntityDetails('album');
@@ -1988,7 +1784,7 @@ const umaApp = createApp({
         albumDetail.value = { data: data.album, songs: data.album.songs || [] };
         resetPageScroll();
         pushUrl();
-      });
+      }).catch(function () { if (isCurrent()) albumsError.value = '专辑资料暂时无法载入，请重试。'; });
     }
     function openAlbumFromDb(a) { openAlbum(a); }
 
@@ -2343,11 +2139,11 @@ const umaApp = createApp({
     function goRelPage(dir) {
       setRelPage(relPage.value + dir);
     }
-    watch(function () { return relQuery.value; }, function () { relPage.value = 1; });
-    watch(function () { return relWork.value; }, function () { relPage.value = 1; });
-    watch(function () { return relFilter.value; }, function () { relPage.value = 1; });
-    watch(function () { return relYear.value; }, function () { relPage.value = 1; });
-    watch(function () { return relSort.value; }, function () { relPage.value = 1; });
+    watch(relQuery, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    watch(relWork, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    watch(relFilter, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    watch(relYear, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    watch(relSort, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
     const statLive = computed(function () {
       if (homeStats.live !== null) return homeStats.live;
       return eventsAll.value.filter(function (event) { return event.kind === 'concert'; }).length;
@@ -2443,20 +2239,16 @@ const umaApp = createApp({
     function goNewsPage(dir) {
       setNewsPage(newsPage.value + dir);
     }
-    watch(function () { return newsRange.value; }, function () { newsPage.value = 1; });
-    watch(function () { return newsType.value; }, function () { newsPage.value = 1; });
-    watch(function () { return newsItems.value.length; }, function () { newsPage.value = 1; });
+    watch(newsRange, function () { if (!restoringRoute) { newsPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    watch(newsType, function () { if (!restoringRoute) { newsPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+
 
     const eventSeriesMap = computed(function () {
       const map = {};
       eventSeries.value.forEach(function (series) { map[series.id] = series; });
       return map;
     });
-    const eventYears = computed(function () {
-      const years = new Set();
-      eventsAll.value.forEach(function (event) { if (/^20\d{2}/.test(event.date || '')) years.add(event.date.slice(0, 4)); });
-      return Array.from(years).sort().reverse();
-    });
+    const eventYears = computed(function () { return eventYearValues.value; });
     const eventYearOptions = computed(function () {
       return [{ value: 'all', label: '全部年份' }].concat(eventYears.value.map(function (year) { return { value: year, label: year }; }));
     });
@@ -2470,65 +2262,11 @@ const umaApp = createApp({
       rows.push({ value: 'unclassified', label: '其他活动' });
       return rows;
     });
-    const eventsFiltered = computed(function () {
-      const q = (eventsQuery.value || '').toLowerCase();
-      let out = eventsAll.value.filter(function (e) {
-        if (!q) return true;
-        if (String(e.search_text || '').toLowerCase().indexOf(q) !== -1) return true;
-        if ((e.title || '').toLowerCase().indexOf(q) !== -1) return true;
-        if ((e.venue || '').toLowerCase().indexOf(q) !== -1) return true;
-        const series = eventSeriesMap.value[e.series_id] || {};
-        if (((series.name || '') + ' ' + (series.name_ja || '')).toLowerCase().indexOf(q) !== -1) return true;
-        if ((e.cast || []).some(function (a) { return ((a.name || '') + ' ' + (a.role || '')).toLowerCase().indexOf(q) !== -1; })) return true;
-        const characterIds = [];
-        (e.character_ids || []).forEach(function (id) { if (characterIds.indexOf(id) === -1) characterIds.push(id); });
-        (e.cast || []).forEach(function (cast) { if (cast.character_id && characterIds.indexOf(cast.character_id) === -1) characterIds.push(cast.character_id); });
-        (e.sessions || []).forEach(function (session) {
-          (session.character_ids || []).forEach(function (id) { if (characterIds.indexOf(id) === -1) characterIds.push(id); });
-          (session.performances || []).forEach(function (performance) {
-            (performance.character_ids || []).forEach(function (id) { if (characterIds.indexOf(id) === -1) characterIds.push(id); });
-          });
-        });
-        if (characterIds.some(function (id) {
-          const character = findCharById(id) || {};
-          return ((character.zh || '') + ' ' + (character.ja || '') + ' ' + (character.en || '')).toLowerCase().indexOf(q) !== -1;
-        })) return true;
-        return (e.sessions || []).some(function (session) { return (session.songs || []).some(function (song) { return song.toLowerCase().indexOf(q) !== -1; }); });
-      });
-      if (evTime.value !== 'all') {
-        const now = Date.now();
-        out = out.filter(function (e) {
-          var t = new Date(e.date + 'T00:00:00').getTime();
-          if (isNaN(t)) return true;
-          if (evTime.value === 'upcoming') return t >= now - 86400000;
-          return t < now - 86400000;
-        });
-      }
-      if (evKind.value !== 'all') out = out.filter(function (event) { return event.kind === evKind.value; });
-      if (evMode.value !== 'all') out = out.filter(function (event) { return event.mode === evMode.value; });
-      if (evYear.value !== 'all') out = out.filter(function (event) { return (event.date || '').slice(0, 4) === evYear.value; });
-      if (evSeries.value !== 'all') {
-        out = out.filter(function (event) {
-          return evSeries.value === 'unclassified' ? !event.series_id : event.series_id === evSeries.value;
-        });
-      }
-      return out;
-    });
-    const eventsPageCount = computed(function () {
-      return Math.max(1, Math.ceil(eventsFiltered.value.length / eventsPerPage));
-    });
-    const eventsPaged = computed(function () {
-      const s = (eventsPage.value - 1) * eventsPerPage;
-      return eventsFiltered.value.slice(s, s + eventsPerPage);
-    });
-    const eventsPageStart = computed(function () {
-      if (!eventsFiltered.value.length) return 0;
-      return (eventsPage.value - 1) * eventsPerPage + 1;
-    });
-    const eventsPageEnd = computed(function () {
-      if (!eventsFiltered.value.length) return 0;
-      return Math.min(eventsFiltered.value.length, eventsPage.value * eventsPerPage);
-    });
+    const eventsFiltered = computed(function () { return eventsAll.value; });
+    const eventsPageCount = computed(function () { return Math.max(1, Math.ceil(eventsTotal.value / eventsPerPage)); });
+    const eventsPaged = computed(function () { return eventsAll.value; });
+    const eventsPageStart = computed(function () { return eventsTotal.value ? (eventsPage.value - 1) * eventsPerPage + 1 : 0; });
+    const eventsPageEnd = computed(function () { return Math.min(eventsTotal.value, eventsPage.value * eventsPerPage); });
     const eventsPageList = computed(function () {
       const total = eventsPageCount.value;
       const cur = eventsPage.value;
@@ -2548,6 +2286,7 @@ const umaApp = createApp({
       if (n < 1 || n > eventsPageCount.value) return;
       eventsPage.value = n;
       pushUrl();
+      loadEvents();
       const el = document.getElementById('eventsRowsTop');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -2640,7 +2379,7 @@ const umaApp = createApp({
     const eventPlayableRows = computed(function () {
       return ((selectedEventSession.value && selectedEventSession.value.performances) || []).map(function (performance) {
         const song = findSong(performance.song_id || performance.song);
-        const playable = playableSongRelease(song);
+        const playable = playableSongRelease(song, performance.version_id);
         return playable ? {
           key: eventPerformanceKey(performance),
           performance: performance,
@@ -2676,13 +2415,15 @@ const umaApp = createApp({
       pushUrl(true);
     }
     function openEvent(eventOrId, requestedSessionId) {
-      beginEntityNavigation();
+      const isCurrent = beginEntityNavigation();
       const id = typeof eventOrId === 'string' ? eventOrId : (eventOrId && eventOrId.id);
       const show = function (data) {
+        if (!isCurrent()) return;
         const found = data && data.event;
         if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         clearEntityDetails('event');
         eventDetail.value = found;
+        eventSongs.value = data.catalog_songs || [];
         activeMediaKey.value = '';
         const sessions = found.sessions || [];
         selectedEventSessionId.value = sessions.some(function (session) { return session.id === requestedSessionId; })
@@ -2693,10 +2434,9 @@ const umaApp = createApp({
         pushUrl();
       };
       return Promise.all([
-        api.request('/api/catalog/event' + api.query({ id: id }), { fresh: true }),
+        api.request('/api/catalog/event' + api.query({ id: id })),
         loadCharacterIndexData(),
-        loadVoiceData(),
-        loadSongCatalog()
+        loadVoiceData()
       ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
     }
     function eventPaletteStyle(event) {
@@ -2735,7 +2475,7 @@ const umaApp = createApp({
     function openNextUpcoming() {
       const e = nextUpcomingEvent.value;
       if (!e) return;
-      loadEvents().then(function () { home.value = false; openEvent(e.id); });
+      openEvent(e.id);
     }
     function onEventImageError(ev, event) {
       const image = ev && ev.target;
@@ -2743,26 +2483,24 @@ const umaApp = createApp({
       image.setAttribute('data-fallback', '1');
       image.src = '/uma_tools/img/event-covers/onsite.svg';
     }
-    function loadEvents() {
-      if (eventsLoadPromise) return eventsLoadPromise;
+    function loadEvents(params) {
+      const query = params || { q: eventsQuery.value, time: evTime.value, kind: evKind.value, mode: evMode.value, year: evYear.value, series: evSeries.value, page: eventsPage.value };
+      const revision = ++eventListRevision;
       eventsError.value = '';
       eventsLoading.value = true;
-      eventsLoadPromise = api.request('/api/catalog/events?page_size=2000', { fresh: true })
+      return api.request('/api/catalog/events' + api.query(Object.assign({}, query, { page_size: eventsPerPage })))
         .then(function (data) {
-          eventsLoadPromise = null;
-          eventsAll.value = (data && Array.isArray(data.items)) ? data.items : [];
-          eventSeries.value = (data && Array.isArray(data.series)) ? data.series : [];
-          eventsLoading.value = false;
-          eventsError.value = eventsAll.value.length ? '' : '活动数据为空。';
-        })
-        .catch(function () {
-          eventsLoadPromise = null;
-          eventsAll.value = [];
-          eventSeries.value = [];
-          eventsLoading.value = false;
-          eventsError.value = '无法加载统一活动目录（请确认 data/events_catalog.json 已生成，并通过本地服务访问本页）。';
+          if (revision !== eventListRevision) return;
+          eventsAll.value = data.items || [];
+          eventSeries.value = data.series || [];
+          eventYearValues.value = data.years || [];
+          eventsTotal.value = data.total || 0;
+          eventsPage.value = data.page || 1;
+        }).catch(function () {
+          if (revision === eventListRevision) eventsError.value = '活动资料暂时无法载入，请重试。';
+        }).finally(function () {
+          if (revision === eventListRevision) eventsLoading.value = false;
         });
-      return eventsLoadPromise;
     }
     function decodeHtml(s) {
       if (!s) return '';
@@ -2780,12 +2518,14 @@ const umaApp = createApp({
     function setEvMode(value) { evMode.value = value; eventsPage.value = 1; pushUrl(); }
     function setEvYear(value) { evYear.value = value; eventsPage.value = 1; pushUrl(); }
     function setEvSeries(value) { evSeries.value = value; eventsPage.value = 1; pushUrl(); }
-    watch(function () { return eventsQuery.value; }, function () { eventsPage.value = 1; });
-    watch(function () { return evTime.value; }, function () { eventsPage.value = 1; });
-    watch(function () { return evKind.value; }, function () { eventsPage.value = 1; });
-    watch(function () { return evMode.value; }, function () { eventsPage.value = 1; });
-    watch(function () { return evYear.value; }, function () { eventsPage.value = 1; });
-    watch(function () { return evSeries.value; }, function () { eventsPage.value = 1; });
+    let eventSearchTimer = 0;
+    watch([eventsQuery, evTime, evKind, evMode, evYear, evSeries], function () {
+      if (restoringRoute) return;
+      eventsPage.value = 1;
+      pushUrl(true);
+      window.clearTimeout(eventSearchTimer);
+      eventSearchTimer = window.setTimeout(function () { loadEvents(); }, 180);
+    }, { flush: 'sync' });
     const coverTint = reactive({});
     const tintSet = new Set();
     const catalogCoverFallback = '/uma_tools/img/album-placeholder.svg';
@@ -2905,11 +2645,11 @@ const umaApp = createApp({
       });
       return doc.body.innerHTML;
     }
-    function loadNews() {
+    function loadNews(fresh) {
       if (newsLoadPromise) return newsLoadPromise;
       newsError.value = '';
       newsLoading.value = true;
-      newsLoadPromise = api.request('/api/news-index', { fresh: true })
+      newsLoadPromise = api.request('/api/news-index', { fresh: !!fresh })
         .then(function (d) {
           newsLoadPromise = null;
           newsItems.value = (d && d.information_list) || [];
@@ -2924,8 +2664,8 @@ const umaApp = createApp({
       return newsLoadPromise;
     }
     function refreshNews() {
-      if (newsLoading) return;
-      loadNews();
+      if (newsLoading.value) return;
+      return loadNews(true);
     }
     function newsHeroCover(n) {
       if (!n) return newsDefaultCover;
@@ -3031,7 +2771,7 @@ const umaApp = createApp({
       if (albumsLoadPromise) return albumsLoadPromise;
       albumsError.value = '';
       albumsLoading.value = true;
-      albumsLoadPromise = api.request('/api/catalog/albums?page_size=500', { fresh: true })
+      albumsLoadPromise = api.request('/api/catalog/albums?page_size=500')
         .then(function (data) { albumsLoadPromise = null; albums.value = data && Array.isArray(data.items) ? data.items : []; })
         .catch(function (e) {
           albumsLoadPromise = null;
@@ -3053,13 +2793,34 @@ const umaApp = createApp({
     });
     watch(charSort, function () { window.dispatchEvent(new CustomEvent('uma-character-sort')); });
 
+    function clampLocalPages() {
+      let changed = false;
+      const music = activeTab.value === 'database';
+      [[songDbPage, songDbPageCount, routes.songs(), music && dbView.value === 'songs'],
+        [eventsPage, eventsPageCount, routes.events(), activeTab.value === 'live'],
+        [creatorPage, creatorPageCount, routes.creators(), music && dbView.value === 'creators'],
+        [newsPage, newsPageCount, routes.news(), activeTab.value === 'news'],
+        [horsePage, horsePageCount, routes.horses(), music && dbView.value === 'other' && otherSection.value === 'horses'],
+        [relPage, relPageCount, routes.albums(), music && dbView.value === 'albums']].forEach(function (pair) {
+        const page = Math.min(Math.max(1, pair[0].value), pair[1].value);
+        if (pair[0].value !== page) {
+          pair[0].value = page;
+          if (pair[3] && pair[2] === window.location.pathname) changed = true;
+        }
+      });
+      if (changed && !restoringRoute && !isAtomicView()) pushUrl(true);
+    }
+    watch([newsPageCount, creatorPageCount, horsePageCount, relPageCount], function () {
+      if (!restoringRoute) clampLocalPages();
+    });
+
     // audio events
     function bindAudio() {
       playerController.bind();
     }
 
     return {
-      audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup,
+      audio, albums, albumsError, albumsLoading, activeTab, home, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup,
       navItemActive, activateNavGroup, openNavGroupForPointer, closeNavGroupForPointer, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
@@ -3071,15 +2832,15 @@ const umaApp = createApp({
       newsDetail, newsDetailBody, newsPrevId, newsNextId,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
-      syncFromUrl, prepareCurrentRoute, loadHomeSummaryIfNeeded, navigateTo, showContextBack, contextBack, breadcrumbItems,
+      syncFromUrl, prepareCurrentRoute, applyCurrentRoute, loadHomeSummaryIfNeeded, navigateTo, showContextBack, contextBack, breadcrumbItems,
       eventsQuery, evTime, evKind, evMode, evYear, evSeries, eventYears, eventYearOptions, eventSeriesOptions, setEvTime, setEvKind, setEvMode, setEvYear, setEvSeries, eventsPaged, eventsFiltered,
-      eventsPage, eventsPageCount, eventsPageStart, eventsPageEnd, eventsPageList,
+      eventsPage, eventsPageCount, eventsTotal, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
       eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, eventPerformanceKey, playEventTrack, addEventTrack, playEventSession, enqueueEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
-      songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
+      songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songTotal, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
       songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, toggleSongRelease, toggleSongCredit,
-      creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, creatorPortrait, expandedCreatorWorkId, expandedCollaboratorId, toggleCreatorWork, toggleCollaborator, collaboratorWorks, loadCreatorCatalog,
+      creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorPortrait, expandedCreatorWorkId, toggleCreatorWork, loadCreatorCatalog,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, charHasPedigree, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
       horseUrlForCharacter, openHorseForCharacter,
       voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
@@ -3097,15 +2858,7 @@ const umaApp = createApp({
     this.bindAudio();
     const self = this;
     window.__uma_app = this;
-    const syncPrepared = function () {
-      self.routeReady = true;
-      self.syncFromUrl();
-      self.prepareCurrentRoute().then(function () {
-        self.syncFromUrl();
-      }, function () {
-        self.syncFromUrl();
-      });
-    };
+    const syncPrepared = function () { self.applyCurrentRoute(); };
     window.addEventListener('popstate', syncPrepared);
     window.addEventListener('scroll', this.updateBackTop, { passive: true });
     syncPrepared();
