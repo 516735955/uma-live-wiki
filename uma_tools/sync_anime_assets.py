@@ -48,6 +48,8 @@ def write_cover(asset):
         source_url = urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(query)))
     body = fetch(source_url)
     source = Image.open(io.BytesIO(body)).convert("RGB")
+    if asset.get("mode") == "still" and (source.width < 1280 or source.height < 720):
+        raise ValueError("official still has no HD original: %s" % asset["output"])
     focus_y = max(0.0, min(1.0, float(asset.get("focus_y", 0.5))))
     if asset.get("mode") == "still":
         cover = source.copy()
@@ -79,6 +81,8 @@ def validate(assets):
             with Image.open(output_path) as image:
                 if (asset.get("mode") != "still" and image.size != TARGET_SIZE) or image.format != "WEBP":
                     errors.append("unexpected cover format: %s" % asset["output"])
+                if asset.get("mode") == "still" and (image.width < 1280 or image.height < 720):
+                    errors.append("low-resolution still: %s" % asset["output"])
         except Exception as caught:
             errors.append("invalid cover %s: %s" % (asset["output"], caught))
     if errors:
