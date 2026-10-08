@@ -61,7 +61,9 @@ async function checkJson(pathname, validate) {
 
 async function main() {
   const root = await request('/');
-  check([301, 302, 307, 308].includes(root.status) && header(root, 'location') === '/zh-Hans/',
+  const homeLocation = header(root, 'location');
+  check([301, 302, 307, 308].includes(root.status) &&
+    [ '/zh-Hans/', new URL('/zh-Hans/', base).href ].includes(homeLocation),
     '根地址未跳转到首页', 'HTTP ' + root.status + ' ' + header(root, 'location'));
   const home = await request('/zh-Hans/');
   check(home.status === 200 && /id=["']app["']/.test(home.body), '首页不可用', 'HTTP ' + home.status);
