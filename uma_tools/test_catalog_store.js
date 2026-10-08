@@ -8,7 +8,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api2-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(snapshot.buildId.includes('-api3-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -17,12 +17,22 @@ async function main() {
   const eventList = await store.events(new URLSearchParams('page_size=5000'));
   assert.strictEqual(eventList.total, snapshot.eventRows.length);
   assert(eventList.items.every((event) => !event.cast && !event.sessions), 'event list leaked detail payloads');
+  assert((await store.events(new URLSearchParams('q=PakaLive+TV'))).total > 0, 'server pagination retains series-name search');
+  assert((await store.events(new URLSearchParams('q=Tokai+Teio'))).total > 0, 'server pagination retains character aliases');
 
   const knownEventId = 'live-numbered-6th-event-2025-10-18';
   const knownEvent = await store.event(knownEventId);
   assert(knownEvent && knownEvent.event, 'known hand-checked live is missing');
   assert.strictEqual(knownEvent.event.sessions.length, 2);
   assert.deepStrictEqual(knownEvent.event.sessions.map((session) => session.performances.length), [27, 27]);
+  assert(knownEvent.catalog_songs.length > 0, 'event playback needs scoped recording versions');
+  for (const session of knownEvent.event.sessions) {
+    for (const performance of session.performances) {
+      if (!performance.song_id || !performance.version_id) continue;
+      const projected = knownEvent.catalog_songs.find((song) => song.id === performance.song_id);
+      assert(projected && projected.versions.some((version) => version.id === performance.version_id), 'event projection lost its performed recording version');
+    }
+  }
 
   const songList = await store.songs(new URLSearchParams('page_size=5000'));
   assert.strictEqual(songList.total, snapshot.songRows.length);
@@ -47,6 +57,17 @@ async function main() {
   assert.strictEqual(albumList.items[0].id, stableAlbumId(albumList.items[0]), 'album URL id must be stable');
   const album = await store.album(albumList.items[0].id, '');
   assert(album && album.album && Array.isArray(album.catalog_songs), 'album detail is incomplete');
+  const solo = await store.album('album-lacz-10116', '');
+  assert.strictEqual(solo.catalog_songs.length, new Set(solo.catalog_songs.map((song) => song.id)).size, 'solo tracks must not duplicate full song objects');
+  assert.strictEqual(solo.album.songs.length, 77, 'all solo recordings remain present');
+  const lastPage = await store.songs(new URLSearchParams('page=999&page_size=30'));
+  assert.strictEqual(lastPage.page, Math.ceil(lastPage.total / 30), 'invalid pages clamp to the last real page');
+  const lyricsMatch = await store.songs(new URLSearchParams('q=アタシたちは必ず掴む勝利'));
+  assert(lyricsMatch.items.some((song) => song.title.includes('ウマRAP')), 'lyrics search results must survive list projection');
+
+  store.fileSignature = async () => { throw new Error('file being replaced'); };
+  const fallbacks = await Promise.all([store.get(), store.get()]);
+  assert(fallbacks.every((value) => value === snapshot), 'every concurrent reader keeps the last complete snapshot');
 
   const appearance = await store.appearance('character', 'specialweek');
   assert(appearance.appearance.songs.length > 0, 'known character songs are missing');

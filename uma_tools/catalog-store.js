@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const CATALOG_RESPONSE_SCHEMA = 2;
+const CATALOG_RESPONSE_SCHEMA = 3;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -20,6 +20,7 @@ const MUSIC_SOURCE_FILES = [
   'music/lyrics.json',
   'music/lyric_timings.json'
 ];
+const CHARACTER_INDEX_FILE = 'character_index_data.js';
 
 function normalize(value) {
   return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
@@ -341,29 +342,30 @@ class CatalogStore {
   }
 
   async fileSignature() {
-    const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
+    const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
     return stats.map((stat) => stat.size + ':' + Math.floor(stat.mtimeMs)).join('|');
   }
 
   async get() {
-    const signature = await this.fileSignature();
-    if (this.snapshot && signature === this.signature) return this.snapshot;
     if (this.loading) return this.loading;
-    this.loading = this.load(signature);
-    try {
-      return await this.loading;
-    } catch (error) {
-      // A refresh writes several generated files in sequence. Keep serving the
-      // last internally consistent revision until the new revision is complete.
-      if (this.snapshot) return this.snapshot;
-      throw error;
-    } finally {
+    this.loading = (async () => {
+      try {
+        const signature = await this.fileSignature();
+        if (this.snapshot && signature === this.signature) return this.snapshot;
+        return await this.load(signature);
+      } catch (error) {
+        // All readers keep the last complete revision during a refresh.
+        if (this.snapshot) return this.snapshot;
+        throw error;
+      }
+    })().finally(() => {
       this.loading = null;
-    }
+    });
+    return this.loading;
   }
 
   async load(signature) {
-    const texts = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES).map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
+    const texts = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
     const manifest = JSON.parse(texts[0]);
     const eventsDoc = JSON.parse(texts[1]);
     const songsDoc = JSON.parse(texts[2]);
@@ -400,13 +402,26 @@ class CatalogStore {
     const creators = Array.isArray(creatorsDoc.creators) ? creatorsDoc.creators : [];
     const voiceActors = Array.isArray(voicesDoc.voice_actors) ? voicesDoc.voice_actors : [];
     const albumRows = Array.isArray(albums) ? albums : [];
+    const characters = JSON.parse(texts[10].replace(/^window\.CHAR_INDEX\s*=\s*/, '').replace(/;\s*$/, ''));
+    const charactersById = new Map(characters.map((character) => [character.id, character]));
+    const seriesById = new Map((eventsDoc.series || []).map((series) => [series.id, series]));
     const eventRows = events.map((event) => {
-      const search = eventSearchText(event);
+      const series = seriesById.get(event.series_id) || {};
+      const names = (event.character_ids || []).map((id) => {
+        const character = charactersById.get(id) || {};
+        return [character.zh, character.ja, character.en].filter(Boolean).join(' ');
+      });
+      const search = normalize([eventSearchText(event), series.name, series.name_ja, ...names].filter(Boolean).join(' '));
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {
       const search = songSearchText(song, music);
-      return { data: song, summary: songSummary(song, search, music), search };
+      const summary = songSummary(song, search, music);
+      summary.artist_names = (song.voice_actor_ids || []).map((id) => {
+        const actor = voiceActors.find((item) => item.id === id);
+        return actor && actor.identity && (actor.identity.zh || actor.identity.ja);
+      }).filter(Boolean);
+      return { data: song, summary, search };
     });
     const creatorRows = creators.map((creator) => {
       const search = creatorSearchText(creator);
@@ -516,12 +531,25 @@ class CatalogStore {
 
   async event(id, legacy) {
     const store = await this.get();
-    if (id && store.eventsById.has(String(id))) return { build_id: store.buildId, event: store.eventsById.get(String(id)) };
-    if (legacy) {
-      const event = (store.eventsDoc.events || []).find((item) => item.legacy_url === legacy || (item.legacy_aliases || []).includes(legacy));
-      if (event) return { build_id: store.buildId, event };
-    }
-    return null;
+    const event = (id && store.eventsById.get(String(id))) || (legacy && (store.eventsDoc.events || [])
+      .find((item) => item.legacy_url === legacy || (item.legacy_aliases || []).includes(legacy)));
+    if (!event) return null;
+    const versionsBySong = new Map();
+    (event.sessions || []).forEach((session) => (session.performances || []).forEach((performance) => {
+      if (!versionsBySong.has(performance.song_id)) versionsBySong.set(performance.song_id, new Set());
+      versionsBySong.get(performance.song_id).add(performance.version_id);
+    }));
+    const songs = Array.from(versionsBySong, ([songId, versionIds]) => {
+      const song = store.songsById.get(songId);
+      if (!song) return null;
+      return Object.assign(songSummary(song, '', store.music), {
+        versions: (song.versions || []).filter((version) => versionIds.has(version.id)).map((version) => ({
+          id: version.id, title: version.title, version_label: version.version_label,
+          releases: (version.releases || []).filter((release) => release.audio_url).slice(0, 1)
+        }))
+      });
+    }).filter(Boolean);
+    return { build_id: store.buildId, event, catalog_songs: songs };
   }
 
   async songs(params) {
@@ -623,7 +651,7 @@ class CatalogStore {
       const key = songIdentityKey(track.name);
       return store.songAliases.get(key);
     }).filter(Boolean);
-    return { build_id: store.buildId, album, catalog_songs: songs };
+    return { build_id: store.buildId, album, catalog_songs: Array.from(new Map(songs.map((song) => [song.id, song])).values()) };
   }
 
   async voices() {

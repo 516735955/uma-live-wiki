@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 一键更新生产：不需要 git。同步代码到站点目录 → 安装 systemd 单元（含每日 02:00
-# 重启定时器）→ 重启服务 → 部署自检。
+# 重启定时器）→ 重载 nginx / 重启服务 → 部署自检。
 #
 # 用法（服务器上执行，任意目录均可）：
 #   ① 能访问 GitHub：curl -fsSL https://raw.githubusercontent.com/516735955/uma-live-wiki/main/deploy/update.sh | sudo bash
@@ -8,12 +8,15 @@
 #      sudo bash update.sh /var/www/umamusume /root/uma-live-wiki-main.tgz
 #   ③ 仅本文件在手：sudo bash update.sh [站点目录] [本地压缩包]
 #
-# 可用环境变量：UMA_USER 运行 node 服务的系统用户（默认 alaemiryoung）
+# 站点目录和运行用户与随仓库发布的 systemd/nginx 配置一致。
 set -euo pipefail
 
 ROOT="${1:-/var/www/umamusume}"
 ARCHIVE="${2:-}"
 UMA_USER="${UMA_USER:-alaemiryoung}"
+[ "$ROOT" = /var/www/umamusume ] && [ "$UMA_USER" = alaemiryoung ] || {
+  echo '站点配置使用 /var/www/umamusume 和 alaemiryoung；其他部署请同时修改 systemd/nginx 配置。'; exit 1;
+}
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
@@ -53,11 +56,35 @@ fi
 
 echo "==> 同步到 $ROOT（保留服务器本地生成的缓存/日志）"
 mkdir -p "$ROOT"
+# 已在服务器更新过的新闻和翻译缓存优先于仓库中的初始快照。
+for file in data/news_snapshot.json data/lantis_news.json uma_tools/trans_cache.json; do
+  if [ -f "$ROOT/$file" ] && [ -f "$SRC/$file" ]; then
+    rm "$SRC/$file"
+  fi
+done
 cp -a "$SRC/." "$ROOT/"
+if [ -f "$ROOT/uma_tools/extract_albums.js" ]; then
+  rm "$ROOT/uma_tools/extract_albums.js"
+fi
 
 if [ "$(id -u)" = "0" ]; then
   echo "==> 修正属主为 $UMA_USER（否则服务写不了 data/ 快照）"
   chown -R "$UMA_USER:$UMA_USER" "$ROOT"
+fi
+
+# A root-run generator can leave 0600 output owned by root. Both Node and nginx
+# need to read the published data after deployment.
+find "$ROOT/data" -type d -exec chmod 0755 {} +
+find "$ROOT/data" -type f \( -name '*.json' -o -name '*.js' \) -exec chmod 0644 {} +
+
+if ! python3 -c 'import PIL' >/dev/null 2>&1; then
+  echo "==> 安装角色图片管线依赖 Pillow"
+  if command -v apt-get >/dev/null 2>&1; then
+    apt-get update
+    apt-get install -y python3-pil
+  else
+    python3 -m pip install Pillow
+  fi
 fi
 
 echo "==> 安装 systemd 单元"
@@ -68,16 +95,25 @@ systemctl daemon-reload
 systemctl enable --now umamusume.service
 systemctl enable --now umamusume-restart.timer
 
+# The HTTPS server includes the repository's nginx config. Copying the file
+# alone does not update nginx's in-memory locations or cache rules.
+echo "==> 校验并重载 nginx"
+nginx -t
+systemctl reload nginx
+
 echo "==> 重启服务载入新代码"
 systemctl restart umamusume.service
-echo "    等待启动抓取完成（新闻 20+ 页）..."
-sleep 15
+echo "    等待服务响应..."
+for attempt in {1..30}; do
+  if curl -fsS --max-time 2 http://127.0.0.1:8080/api/home-summary >/dev/null; then break; fi
+  sleep 1
+done
 
 echo "==> 自检"
 if command -v node >/dev/null 2>&1; then
-  node "$ROOT/uma_tools/check_deployment.js" http://127.0.0.1:8080 || echo "（自检未完全通过，请查看上方条目）"
+  node "$ROOT/uma_tools/check_deployment.js" "${UMA_PUBLIC_URL:-https://umamusumelivewiki.top}"
 fi
-systemctl is-active umamusume.service || true
+systemctl is-active umamusume.service
 systemctl list-timers | grep -F umamusume || true
 
 echo "==> 完成。外网复核：npm --prefix uma_tools run check:deployment -- https://umamusumelivewiki.top"

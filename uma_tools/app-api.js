@@ -18,6 +18,10 @@
     const settings = options || {};
     const cacheKey = settings.cacheKey || path;
     const maxAge = Number.isFinite(settings.maxAge) ? settings.maxAge : 5 * 60 * 1000;
+    const now = Date.now();
+    resolved.forEach(function (entry, key) {
+      if (now >= entry.expiresAt) resolved.delete(key);
+    });
     const cached = resolved.get(cacheKey);
     if (!settings.fresh && cached && Date.now() - cached.at < maxAge) return Promise.resolve(cached.data);
     if (!settings.fresh && pending.has(cacheKey)) return pending.get(cacheKey);
@@ -29,11 +33,13 @@
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
     }).then(function (data) {
-      resolved.set(cacheKey, { at: Date.now(), data: data });
-      pending.delete(cacheKey);
+      if (pending.get(cacheKey) === promise) {
+        resolved.set(cacheKey, { at: Date.now(), expiresAt: Date.now() + maxAge, data: data });
+        pending.delete(cacheKey);
+      }
       return data;
     }).catch(function (error) {
-      pending.delete(cacheKey);
+      if (pending.get(cacheKey) === promise) pending.delete(cacheKey);
       throw error;
     });
     pending.set(cacheKey, promise);

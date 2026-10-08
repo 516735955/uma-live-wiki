@@ -1457,6 +1457,7 @@ def atomic_write(path, content):
     try:
         with os.fdopen(fd, 'w', encoding='utf-8', newline='\n') as handle:
             handle.write(content)
+        os.chmod(temp_path, 0o644)
         os.replace(temp_path, path)
     except Exception:
         try:

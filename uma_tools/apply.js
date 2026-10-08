@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { spawnSync } = require('child_process');
 
 // apply.js - 把待审核(pending.json)中已确认的候选并入 albums.json
 // 用法: 先审阅 uma_tools/pending.json（删掉不要的项，或把 candidate 留空即跳过），再运行:
@@ -33,13 +34,27 @@ for (const p of report.candidates || []) {
   added++;
 }
 
-fs.writeFileSync(ALBUMS_JSON, JSON.stringify(albums, null, 2), 'utf8');
+function writeJson(file, value) {
+  const temporary = file + '.tmp-' + process.pid;
+  fs.writeFileSync(temporary, JSON.stringify(value, null, 2), { encoding: 'utf8', mode: 0o644 });
+  fs.renameSync(temporary, file);
+}
+if (added) {
+  writeJson(ALBUMS_JSON, albums);
+  const python = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
+  const build = spawnSync(python, [path.join(__dirname, 'update_events.py'), '--music-only'], { cwd: ROOT, stdio: 'inherit', windowsHide: true });
+  if (build.error || build.status !== 0) {
+    console.error('专辑已保存，目录重建失败，请运行 uma_tools/update_events.py --music-only。');
+    process.exitCode = 1;
+    return;
+  }
+}
 // 标记已应用并落盘
 report.appliedAt = new Date().toISOString();
 report.applied = added;
-fs.writeFileSync(PENDING_JSON, JSON.stringify(report, null, 2), 'utf8');
+writeJson(PENDING_JSON, report);
 
 console.log('已并入新专辑:', added);
 console.log('跳过(无候选):', skippedEmpty, ' 跳过(已存在):', skippedDup);
-console.log('albums.json 现有专辑:', albums.length, '曲目:', albums.reduce((n, a) => n + a.songs.length, 0));
-console.log('刷新页面(重载 http://localhost:8080/)即可看到新专辑。');
+console.log('albums.json 现有专辑:', albums.length, '曲目:', albums.reduce((n, a) => n + (a.songs || []).length, 0));
+console.log('音乐目录已同步，刷新专辑页面即可查看。');

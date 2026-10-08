@@ -12,7 +12,9 @@
         width: 960,
         selectedId: '',
         selectedDetail: null,
+        selectionRequest: 0,
         loading: false,
+        loadError: '',
         hoverId: '',
         observer: null
       };
@@ -94,7 +96,7 @@
         this.observer.observe(this.$el);
       }
     },
-    beforeUnmount: function () { if (this.observer) this.observer.disconnect(); },
+    beforeUnmount: function () { this.selectionRequest += 1; if (this.observer) this.observer.disconnect(); },
     methods: {
       measure: function () { this.width = Math.max(320, Math.round(this.$el.clientWidth || 960)); },
       portrait: function (person) { return person.image || person.photo || '/uma_tools/img/creator-placeholder.svg'; },
@@ -130,15 +132,17 @@
         return { lyricist: '作词', composer: '作曲', arranger: '编曲', remixer: '混音改编', producer: '制作', orchestrator: '配器' }[role] || role;
       },
       choose: function (person) {
+        const selection = ++this.selectionRequest;
         this.selectedId = person.creator_id;
         this.selectedDetail = null;
         this.loading = true;
-        window.UmaApi.request('/api/catalog/creator' + window.UmaApi.query({ id: person.creator_id }), { fresh: true })
-          .then((data) => { this.selectedDetail = data && data.creator; })
-          .catch(function () {})
-          .finally(() => { this.loading = false; });
+        this.loadError = '';
+        return window.UmaApi.request('/api/catalog/creator' + window.UmaApi.query({ id: person.creator_id }))
+          .then((data) => { if (this.selectionRequest === selection) this.selectedDetail = data && data.creator; })
+          .catch(() => { if (this.selectionRequest === selection) this.loadError = '共同作品暂时无法载入，请重试。'; })
+          .finally(() => { if (this.selectionRequest === selection) this.loading = false; });
       },
-      close: function () { this.selectedId = ''; this.selectedDetail = null; },
+      close: function () { this.selectionRequest += 1; this.selectedId = ''; this.selectedDetail = null; this.loading = false; this.loadError = ''; },
       onNodeKey: function (event, person) {
         if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.choose(person); }
       }
@@ -168,6 +172,7 @@
             </header>
             <button class="creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
             <div v-if="loading" class="ui-state compact">共同作品加载中</div>
+            <div v-else-if="loadError" class="ui-state compact">{{ loadError }}<button class="creator-profile-link" type="button" @click="choose(selected)">重新加载</button></div>
             <ol v-else-if="sharedWorks.length" class="collaboration-timeline">
               <li v-for="work in sharedWorks" :key="work.song_id">
                 <time>{{ work.release_date || '日期待补' }}</time>

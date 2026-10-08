@@ -8,8 +8,8 @@ User=alaemiryoung
 Group=alaemiryoung
 WorkingDirectory=/var/www/umamusume
 # Auto-refresh enabled: news refreshes on startup and on demand, catalogs every
-# 6 hours, Lantis daily. Refreshed data is written back into the checkout, so a
-# periodic restart (deploy/umamusume-restart.timer) makes catalog changes visible.
+# 6 hours, Lantis daily. Catalog requests adopt complete refreshed snapshots
+# without restarting; deploy/umamusume-restart.timer restarts the process daily.
 ExecStart=/usr/bin/node /var/www/umamusume/uma_tools/server.js 8080 /var/www/umamusume
 Restart=on-failure
 RestartSec=3
