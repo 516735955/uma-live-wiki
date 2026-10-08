@@ -4147,7 +4147,8 @@
           "summary_ja": "フジマサマーチとの壮絶なレースを終えたオグリキャップ。\n『走ること』だけを考えてきたオグリに、初めてのレースを通じてこれまで感じたことの無い感情が沸き起こる。\n次のレースに向けて準備を進めるが、対戦相手にはノルンエースがいた。\n以前からオグリのことが気に食わないノルンたちは、彼女に対してある策を思いつく。",
           "source_refs": [
             "official-story-anime-cinderella-gray-e03",
-            "staff-transcript-anime-cinderella-gray"
+            "staff-transcript-anime-cinderella-gray",
+            "official-ending-anime-cinderella-gray-e03"
           ],
           "stills": [
             {
@@ -4207,8 +4208,32 @@
             }
           ],
           "title_ja": "頂の景色",
-          "staff_status": "partial_transcript",
-          "summary_zh": "与藤正进行曲激战之后，小栗帽体会到从未有过的情绪。她为下一场比赛做准备，而一直看她不顺眼的诺伦王牌等人想出了一个对策。"
+          "staff_status": "complete",
+          "summary_zh": "与藤正进行曲激战之后，小栗帽体会到从未有过的情绪。她为下一场比赛做准备，而一直看她不顺眼的诺伦王牌等人想出了一个对策。",
+          "music_cues": [
+            {
+              "title": "新笠松音頭",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作词",
+                  "names": [
+                    "堀悦二"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-9e7f43f4b6"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-cinderella-gray-e03"
+              ],
+              "source_time": 1321.647,
+              "song_id": "song-1aba5caa02"
+            }
+          ]
         },
         "4": {
           "summary_ja": "金華山の山頂で勝負の約束を交わしたオグリキャップとフジマサマーチは、ついに対決の日を迎える。\n準重賞レースの『ジュニアクラウン』。\nマーチから目標について問われた時、答えることができなかったオグリ。\nライバルとの対決の中で、オグリは自分が目指すべき『頂上』を見出す。",
@@ -5082,7 +5107,8 @@
           "source_refs": [
             "official-story-anime-cinderella-gray-e15",
             "staff-transcript-anime-cinderella-gray",
-            "official-cg-cour2-onair"
+            "official-cg-cour2-onair",
+            "official-ending-anime-cinderella-gray-e15"
           ],
           "stills": [
             {
@@ -5142,7 +5168,7 @@
             }
           ],
           "title_ja": "僕達の物語",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "release_date": "2025-10-12",
           "dates": [
             {
