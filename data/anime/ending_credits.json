@@ -82166,7 +82166,7 @@
           ]
         },
         {
-          "role": "背景制作",
+          "role": "背景",
           "time": 1301.647,
           "names": [
             "CONG TRI"
@@ -82573,7 +82573,7 @@
           "role": "フィニッシング",
           "time": 1325.647,
           "names": [
-            "斉藤亮"
+            "斉藤寛"
           ],
           "institutions": [
             "Pinapics"
@@ -83235,6 +83235,38 @@
           "name": "新井重太",
           "source_time": 232,
           "person_id": "staff-新井重太"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "背景制作",
+          "name": "CONG TRI",
+          "order": 114,
+          "source_ref": "official-ending-anime-cinderella-gray-e03",
+          "group": "",
+          "unit_id": "anime-cinderella-gray-e03",
+          "person_id": "staff-CONGTRI",
+          "source_time": 1301.647,
+          "institutions": [
+            "NAM HAI ART"
+          ],
+          "evidence_refs": [
+            "official-ending-anime-cinderella-gray-e03",
+            "staff-transcript-anime-cinderella-gray"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "unit_id": "anime-cinderella-gray-e03",
+          "source_ref": "official-ending-anime-cinderella-gray-e03",
+          "order": 212,
+          "role": "フィニッシング",
+          "group": "オープニングアニメーション",
+          "name": "斉藤亮",
+          "source_time": 1325.647,
+          "person_id": "staff-斉藤亮",
+          "institutions": [
+            "Pinapics"
+          ]
         }
       ]
     },
@@ -84878,6 +84910,1768 @@
           "group": "片尾署名（公开转录）",
           "unit_id": "anime-cinderella-gray-e15",
           "organization": "CygamesPictures"
+        }
+      ]
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "number": 4,
+      "url": "https://www.yinhuadm.cc/p/26633-1-4.html",
+      "source_kind": "credit_recording",
+      "staff_status": "complete",
+      "cast": [
+        [
+          "オグリキャップ",
+          "高柳知葉"
+        ],
+        [
+          "ベルノライト",
+          "瀬戸桃子"
+        ],
+        [
+          "北原穣",
+          "小西克幸"
+        ],
+        [
+          "六平銀次郎",
+          "大塚芳忠"
+        ],
+        [
+          "フジマサマーチ",
+          "伊瀬茉莉也"
+        ],
+        [
+          "ノルンエース",
+          "渋谷彩乃"
+        ],
+        [
+          "ルディレモーノ",
+          "大地葉"
+        ],
+        [
+          "ミニーザレディ",
+          "井澤詩織"
+        ],
+        [
+          "タマモクロス",
+          "大空直美"
+        ],
+        [
+          "シンボリルドルフ",
+          "田所あずさ"
+        ],
+        [
+          "マルゼンスキー",
+          "Lynn"
+        ]
+      ],
+      "staff_groups": [
+        {
+          "role": "脚本",
+          "time": 1263.768006,
+          "names": [
+            "金田一士"
+          ]
+        },
+        {
+          "role": "コンテ・演出",
+          "time": 1263.768006,
+          "names": [
+            "清水雄大"
+          ]
+        },
+        {
+          "role": "作画監督",
+          "time": 1263.768006,
+          "names": [
+            "二松真理",
+            "谷口義明",
+            "橋口隼人",
+            "佐藤悠己",
+            "佐藤綾香"
+          ]
+        },
+        {
+          "role": "作画監督補佐",
+          "time": 1263.768006,
+          "names": [
+            "朝井聖子",
+            "Fundo",
+            "浅見日香留",
+            "ねぎ"
+          ]
+        },
+        {
+          "role": "作画監督補佐",
+          "time": 1263.768006,
+          "names": [
+            "益野翔太",
+            "泉美咲",
+            "工藤康平"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "作画監督補佐",
+          "time": 1263.768006,
+          "names": [
+            "山田龍太郎",
+            "モリタユーシ"
+          ],
+          "organizations": [
+            "すすきのアニメーション"
+          ]
+        },
+        {
+          "role": "制作進行",
+          "time": 1263.768006,
+          "names": [
+            "前川知里"
+          ]
+        },
+        {
+          "role": "デザイン協力",
+          "time": 1271.768006,
+          "names": [
+            "髙田晃",
+            "田畑壽之",
+            "松本圭太",
+            "朝井聖子",
+            "降矢瑞生"
+          ]
+        },
+        {
+          "role": "デザイン協力",
+          "time": 1271.768006,
+          "names": [
+            "泉美咲",
+            "工藤康平"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "シナリオ監修",
+          "time": 1271.768006,
+          "names": [
+            "近藤由梨"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン監修",
+          "time": 1271.768006,
+          "names": [
+            "橋野翼"
+          ]
+        },
+        {
+          "role": "原画",
+          "time": 1277.768006,
+          "names": [
+            "朝井聖子",
+            "浅見日香留",
+            "二松真理",
+            "叶将暉",
+            "澤田博範",
+            "ケーエム",
+            "相澤歩",
+            "吉田翔太",
+            "島本勇太",
+            "垣内彩子",
+            "藤田晋也",
+            "佐藤かおる",
+            "松原一之",
+            "吉田一喜",
+            "横田瞳",
+            "黒江レイ",
+            "三戸萌々恵",
+            "久納彩代",
+            "竹内一将",
+            "山北貴大",
+            "時乃キノ"
+          ]
+        },
+        {
+          "role": "原画",
+          "time": 1277.768006,
+          "names": [
+            "Miya",
+            "鈴木友也"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "names": [
+            "今野彩華",
+            "石丸夕海",
+            "真田真",
+            "栗原なつ未",
+            "元土肥凌汰",
+            "柴田淳",
+            "栗西祐輔",
+            "藤森大志",
+            "武永一輝",
+            "大橋七海",
+            "松尾慎也",
+            "仲上仁望",
+            "鄭宏緯",
+            "あんこ餅",
+            "NAM SANG-TAE",
+            "appu",
+            "Kaien Jin",
+            "Levii",
+            "NAKGAE",
+            "皇このん",
+            "船橋翼",
+            "山崎梨楽",
+            "北岡希",
+            "丸山杏慈",
+            "関川亨",
+            "沈玥",
+            "うしゃく",
+            "めろま",
+            "ひめち"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "names": [
+            "小山冬馬"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "names": [
+            "中嶋和奏"
+          ],
+          "organizations": [
+            "スタジオエイトカラーズ"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "スタジオピーコック"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "ライジングフォース"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "WHITE FOX伊豆高原スタジオ"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "スタジオリングス"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "月虹"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "ルラフォート"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "MSJ武蔵野制作所"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "セブンシーズ"
+          ]
+        },
+        {
+          "role": "第二原画",
+          "time": 1279.768006,
+          "organizations": [
+            "CJT"
+          ]
+        },
+        {
+          "role": "動画検査",
+          "time": 1283.768006,
+          "names": [
+            "水口大輔"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1283.768006,
+          "names": [
+            "紗枝憧",
+            "松田奈々",
+            "碓井遥仁",
+            "新家新芽",
+            "楊詩蘋",
+            "村田春人",
+            "吉田泰斗",
+            "泉美咲",
+            "松本顕吾"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1283.768006,
+          "names": [
+            "井上高宏",
+            "野中愛",
+            "藤森大志",
+            "島本勇太",
+            "平山央利恵",
+            "横田瞳",
+            "吉井琴葉",
+            "吉田一喜"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1283.768006,
+          "organizations": [
+            "ルラフォート"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1283.768006,
+          "organizations": [
+            "MSJ武蔵野制作所"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1283.768006,
+          "organizations": [
+            "セブンシーズ"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1283.768006,
+          "organizations": [
+            "CJT"
+          ]
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1287.768006,
+          "names": [
+            "いばたなおや"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1287.768006,
+          "names": [
+            "成毛久美子",
+            "丸尾悠稀乃",
+            "古谷凌"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1287.768006,
+          "organizations": [
+            "ルラフォート"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1287.768006,
+          "organizations": [
+            "MSJ武蔵野制作所"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1287.768006,
+          "organizations": [
+            "セブンシーズ"
+          ]
+        },
+        {
+          "role": "仕上げ",
+          "time": 1287.768006,
+          "organizations": [
+            "CJT"
+          ]
+        },
+        {
+          "role": "美術設定",
+          "time": 1291.768006,
+          "names": [
+            "岡部美緒",
+            "狹田修",
+            "王寒",
+            "今村優美",
+            "張思遠",
+            "岡本朗",
+            "佐藤里咲",
+            "北山竜太"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 1291.768006,
+          "names": [
+            "岡部美緒",
+            "今村優美",
+            "張思遠",
+            "岡本朗",
+            "佐藤里咲",
+            "並川颯",
+            "Roychoudhury Rupam"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "2Dワークス",
+          "time": 1291.768006,
+          "names": [
+            "永良雄亮",
+            "津江優里"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "3Dアニメーター",
+          "time": 1299.768006,
+          "names": [
+            "森本実稚",
+            "西脇弥",
+            "寺田達磨"
+          ]
+        },
+        {
+          "role": "3Dアニメーション協力",
+          "time": 1299.768006,
+          "names": [
+            "安保英樹",
+            "高橋輝",
+            "上田駿",
+            "今村花鈴",
+            "中川淳",
+            "本多桃羽",
+            "荻野宏和",
+            "小若寛満",
+            "佐藤喜幸",
+            "桑田和栄",
+            "平泉真友香",
+            "山内綾乃",
+            "曽我部凜華"
+          ],
+          "institutions": [
+            "株式会社アレクト"
+          ]
+        },
+        {
+          "role": "3Dリードモデラー",
+          "time": 1299.768006,
+          "names": [
+            "阿達里紗"
+          ]
+        },
+        {
+          "role": "3Dモデラー",
+          "time": 1299.768006,
+          "names": [
+            "竹中悠悟",
+            "深谷明日香"
+          ]
+        },
+        {
+          "role": "3Dモデリング協力",
+          "time": 1303.768006,
+          "names": [
+            "西谷直人",
+            "福土檀",
+            "小川喬右",
+            "会田純也",
+            "伊東真衣",
+            "奥智弘",
+            "塚本倫基",
+            "伊藤なつめ",
+            "手塚寿明",
+            "庄司圭佑",
+            "黒田遥希",
+            "今井吉希",
+            "問谷凛",
+            "丸田悠朔",
+            "茂木邦夫",
+            "中西賢之",
+            "横田一平",
+            "若林大武"
+          ],
+          "institutions": [
+            "株式会社サブリメイション"
+          ]
+        },
+        {
+          "role": "3Dレイアウト協力",
+          "time": 1303.768006,
+          "names": [
+            "清水雄大"
+          ]
+        },
+        {
+          "role": "3Dプロデューサー",
+          "time": 1303.768006,
+          "names": [
+            "中野祥典"
+          ]
+        },
+        {
+          "role": "3D制作進行",
+          "time": 1303.768006,
+          "names": [
+            "望月智哉"
+          ]
+        },
+        {
+          "role": "撮影監督補佐",
+          "time": 1305.768006,
+          "names": [
+            "継岡夢月"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 1305.768006,
+          "names": [
+            "萩原美佳",
+            "小勝智裕",
+            "玄美玲",
+            "齊藤敦朗",
+            "大滝玲可",
+            "長谷川千夏",
+            "井上洋志"
+          ],
+          "institutions": [
+            "MADBOX"
+          ]
+        },
+        {
+          "role": "撮影",
+          "time": 1305.768006,
+          "names": [
+            "加賀美帆"
+          ],
+          "institutions": [
+            "A-1 Pictures"
+          ]
+        },
+        {
+          "role": "特殊効果",
+          "time": 1305.768006,
+          "names": [
+            "継岡夢月"
+          ]
+        },
+        {
+          "role": "撮影管理",
+          "time": 1305.768006,
+          "names": [
+            "渡部美由起"
+          ]
+        },
+        {
+          "role": "アイキャッチ原画",
+          "time": 1305.768006,
+          "names": [
+            "工藤康平"
+          ]
+        },
+        {
+          "role": "録音調整",
+          "time": 1309.768006,
+          "names": [
+            "平圭介"
+          ]
+        },
+        {
+          "role": "録音助手",
+          "time": 1309.768006,
+          "names": [
+            "佐藤喬花"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 1309.768006,
+          "names": [
+            "武藤晶子"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 1309.768006,
+          "organizations": [
+            "デルファイサウンド"
+          ]
+        },
+        {
+          "role": "音響制作担当",
+          "time": 1309.768006,
+          "names": [
+            "内村友祐"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 1309.768006,
+          "organizations": [
+            "ビットグルーヴプロモーション"
+          ]
+        },
+        {
+          "role": "オンライン編集",
+          "time": 1309.768006,
+          "names": [
+            "大関悠",
+            "岡晃永"
+          ],
+          "institutions": [
+            "qooop"
+          ]
+        },
+        {
+          "role": "オンライン編集デスク",
+          "time": 1309.768006,
+          "names": [
+            "武石良平"
+          ]
+        },
+        {
+          "role": "コンテ・演出",
+          "time": 1317.768006,
+          "names": [
+            "タムラコータロー"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "作画監督",
+          "time": 1317.768006,
+          "names": [
+            "福元陽介"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "原画",
+          "time": 1317.768006,
+          "names": [
+            "米澤優",
+            "橋口隼人",
+            "松尾光",
+            "椛沢祥平",
+            "辻智子",
+            "福永智子"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "原画",
+          "time": 1317.768006,
+          "names": [
+            "伊藤正士",
+            "井上廉太",
+            "西願宏子",
+            "愛甲剣士",
+            "泉美咲",
+            "Miya",
+            "村田駿",
+            "落合良亮",
+            "おだし"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "第二原画",
+          "time": 1317.768006,
+          "names": [
+            "吉井琴葉",
+            "マルグリット",
+            "NAM SANG-TAE",
+            "水口大輔",
+            "米田有希"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "動画検査",
+          "time": 1317.768006,
+          "names": [
+            "楊詩蘋"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "動画",
+          "time": 1317.768006,
+          "names": [
+            "新家新芽",
+            "吉田泰斗"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1317.768006,
+          "names": [
+            "野口幸恵"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "仕上げ",
+          "time": 1317.768006,
+          "names": [
+            "成毛久美子",
+            "丸尾悠稀乃",
+            "古谷凌"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "仕上げ",
+          "time": 1317.768006,
+          "organizations": [
+            "セブンシーズ"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 1317.768006,
+          "names": [
+            "今村優美",
+            "張思遠",
+            "岡本朗",
+            "佐藤里咲",
+            "並川颯"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "3D CG",
+          "time": 1317.768006,
+          "names": [
+            "西脇弥",
+            "Qin Ziao"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "撮影監督",
+          "time": 1317.768006,
+          "names": [
+            "岡﨑正春"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "撮影",
+          "time": 1317.768006,
+          "names": [
+            "許庭禎",
+            "入江夏未",
+            "伊藤茜",
+            "菊池優太郎",
+            "南川創"
+          ],
+          "institutions": [
+            "CygamesPictures"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "フィニッシング",
+          "time": 1317.768006,
+          "names": [
+            "斉藤寛"
+          ],
+          "institutions": [
+            "Pinapics"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "制作進行",
+          "time": 1317.768006,
+          "names": [
+            "西口拓人"
+          ],
+          "group": "オープニングアニメーション"
+        },
+        {
+          "role": "コンテ・演出・原画",
+          "time": 1319.768006,
+          "names": [
+            "松本顕吾"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "動画検査",
+          "time": 1319.768006,
+          "names": [
+            "宮本真衣"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "動画",
+          "time": 1319.768006,
+          "names": [
+            "碓井遥仁"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "色指定・仕上げ検査",
+          "time": 1319.768006,
+          "names": [
+            "岡崎菜々子"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "仕上げ",
+          "time": 1319.768006,
+          "names": [
+            "丸尾悠稀乃",
+            "古谷凌"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 1319.768006,
+          "names": [
+            "狹田修"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "撮影監督",
+          "time": 1319.768006,
+          "names": [
+            "許庭禎"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "特殊効果",
+          "time": 1319.768006,
+          "names": [
+            "山田可奈子"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "制作進行",
+          "time": 1319.768006,
+          "names": [
+            "最上陸"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "アソシエイトプロデューサー",
+          "time": 1323.768006,
+          "names": [
+            "郡司一貴",
+            "深田有紀"
+          ]
+        },
+        {
+          "role": "宣伝プロデューサー",
+          "time": 1323.768006,
+          "names": [
+            "郡司一貴"
+          ]
+        },
+        {
+          "role": "宣伝",
+          "time": 1323.768006,
+          "names": [
+            "中澤貴大",
+            "林尚賢",
+            "今岡佐知子",
+            "小野崎風香"
+          ]
+        },
+        {
+          "role": "宣伝協力",
+          "time": 1323.768006,
+          "names": [
+            "金牧智広",
+            "伊東美於",
+            "長尾つゆ美"
+          ]
+        },
+        {
+          "role": "番組宣伝",
+          "time": 1323.768006,
+          "names": [
+            "遠西高幸",
+            "糸井桂子"
+          ]
+        },
+        {
+          "role": "編成",
+          "time": 1323.768006,
+          "names": [
+            "森岡梢",
+            "中野翔貴"
+          ]
+        },
+        {
+          "role": "国内ライセンス",
+          "time": 1323.768006,
+          "names": [
+            "八木正忠",
+            "松本竜也",
+            "大竹優樹",
+            "小出英南子",
+            "中村朱里",
+            "飯田竜太",
+            "森賀滝人",
+            "宮原奨偉",
+            "江戸勇太",
+            "中野正幸",
+            "清水基央"
+          ]
+        },
+        {
+          "role": "海外ライセンス",
+          "time": 1323.768006,
+          "names": [
+            "二瓶茂人",
+            "戒能大樹",
+            "山本義将",
+            "西野翔子"
+          ]
+        },
+        {
+          "role": "国内配信",
+          "time": 1323.768006,
+          "names": [
+            "二瓶茂人",
+            "鹿嶌舜"
+          ]
+        },
+        {
+          "role": "ビデオグラム制作・宣伝",
+          "time": 1323.768006,
+          "names": [
+            "城戸宏幸",
+            "高橋秀美",
+            "松村有子",
+            "松浦麻貴"
+          ]
+        },
+        {
+          "role": "タイトルロゴデザイン",
+          "time": 1327.768006,
+          "names": [
+            "東野裕隆"
+          ]
+        },
+        {
+          "role": "PV制作",
+          "time": 1327.768006,
+          "names": [
+            "寺原泰地",
+            "中川啓"
+          ]
+        },
+        {
+          "role": "WEB制作",
+          "time": 1327.768006,
+          "names": [
+            "鶴岡翔理",
+            "吉田桃子",
+            "今岡茉央",
+            "伊原萌夏",
+            "安部昭彦"
+          ]
+        },
+        {
+          "role": "宣伝デザイン",
+          "time": 1327.768006,
+          "names": [
+            "岩井康陽",
+            "小西遼平",
+            "日野良能"
+          ]
+        },
+        {
+          "role": "企画協力",
+          "time": 1327.768006,
+          "names": [
+            "薄井勝太郎",
+            "長谷川友紀",
+            "渡辺信也"
+          ],
+          "institutions": [
+            "ウマ娘 プリティーダービー ゲーム開発・運営チーム"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 1327.768006,
+          "organizations": [
+            "岐阜県地方競馬組合"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 1327.768006,
+          "names": [
+            "阿部憶人",
+            "久保武史",
+            "石井貢",
+            "宇都優弥"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 1327.768006,
+          "organizations": [
+            "トレーナーの皆様"
+          ]
+        },
+        {
+          "role": "プロダクションマネージャー",
+          "time": 1331.768006,
+          "names": [
+            "蟹江寛之"
+          ]
+        },
+        {
+          "role": "作画指導",
+          "time": 1331.768006,
+          "names": [
+            "重国勇二"
+          ]
+        },
+        {
+          "role": "制作事務",
+          "time": 1331.768006,
+          "names": [
+            "小川杏里沙",
+            "水越拓馬"
+          ]
+        },
+        {
+          "role": "制作デスク",
+          "time": 1331.768006,
+          "names": [
+            "濵田豊"
+          ]
+        },
+        {
+          "role": "設定制作",
+          "time": 1331.768006,
+          "names": [
+            "河潤盛",
+            "栗林昌輝"
+          ]
+        },
+        {
+          "role": "2D制作",
+          "time": 1331.768006,
+          "names": [
+            "石川貴海"
+          ]
+        },
+        {
+          "role": "制作",
+          "time": 1331.768006,
+          "organizations": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 1339.768006,
+          "organizations": [
+            "ウマ娘 シンデレラグレイ製作委員会"
+          ]
+        },
+        {
+          "role": "動画",
+          "time": 1319.768,
+          "organizations": [
+            "セブンシーズ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "仕上げ",
+          "time": 1319.768,
+          "organizations": [
+            "セブンシーズ"
+          ],
+          "group": "エンディングアニメーション"
+        },
+        {
+          "role": "背景",
+          "time": 1291.768,
+          "names": [
+            "QUANG ANH",
+            "HOANG ANH",
+            "THANH THUY",
+            "PHUOC HUNG",
+            "BAO VY",
+            "THANH BINH",
+            "BAO CHAU",
+            "THI DUNG",
+            "MAI CHI",
+            "KIM DUNG",
+            "MINH HANG",
+            "NHU THAO",
+            "BAO TRAN",
+            "THUONG THUONG",
+            "CONG TRI"
+          ],
+          "institutions": [
+            "NAM HAI ART"
+          ]
+        },
+        {
+          "role": "2Dワークス",
+          "time": 1291.768,
+          "names": [
+            "中村倫子",
+            "田中宏昂"
+          ]
+        },
+        {
+          "role": "3Dモデリング協力",
+          "time": 1303.768,
+          "names": [
+            "笹山真聖",
+            "田中美紅乃"
+          ]
+        },
+        {
+          "role": "ライブ振付",
+          "time": 1313.768,
+          "names": [
+            "春日麻里"
+          ]
+        },
+        {
+          "role": "振付協力",
+          "time": 1313.768,
+          "names": [
+            "Jakko"
+          ],
+          "institutions": [
+            "ソリッド・キューブ"
+          ]
+        },
+        {
+          "role": "音楽制作協力",
+          "time": 1313.768,
+          "names": [
+            "池田健仁"
+          ]
+        },
+        {
+          "role": "漫画",
+          "time": 55,
+          "names": [
+            "久住太陽"
+          ]
+        },
+        {
+          "role": "脚本",
+          "time": 55,
+          "names": [
+            "杉浦理史"
+          ]
+        },
+        {
+          "role": "漫画企画構成",
+          "time": 55,
+          "names": [
+            "伊藤隼之介"
+          ]
+        },
+        {
+          "role": "企画",
+          "time": 62,
+          "names": [
+            "渡邊耕一",
+            "菊野浩樹",
+            "鶴丸智康",
+            "楮本昌裕"
+          ]
+        },
+        {
+          "role": "シリーズ構成",
+          "time": 65,
+          "names": [
+            "金田一士"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン",
+          "time": 65,
+          "names": [
+            "宮原拓也",
+            "佐々木啓悟"
+          ]
+        },
+        {
+          "role": "総作画監督",
+          "time": 69,
+          "names": [
+            "福元陽介",
+            "髙田晃",
+            "小森篤"
+          ]
+        },
+        {
+          "role": "副監督",
+          "time": 69,
+          "names": [
+            "清水雄大"
+          ]
+        },
+        {
+          "role": "色彩設計",
+          "time": 77,
+          "names": [
+            "岡崎菜々子"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 77,
+          "names": [
+            "狹田修"
+          ]
+        },
+        {
+          "role": "3DCGディレクター",
+          "time": 77,
+          "names": [
+            "神谷宣幸"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 77,
+          "names": [
+            "伏原あかね"
+          ]
+        },
+        {
+          "role": "編集",
+          "time": 79,
+          "names": [
+            "三嶋章紀"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 79,
+          "names": [
+            "郷文裕貴"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 79,
+          "names": [
+            "川井憲次"
+          ]
+        },
+        {
+          "role": "エグゼクティブプロデューサー",
+          "time": 94,
+          "names": [
+            "二瓶茂人"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 94,
+          "names": [
+            "清田穣二",
+            "伊藤將彦",
+            "新井皐太",
+            "山本麻樹"
+          ]
+        },
+        {
+          "role": "原作編集協力",
+          "time": 98,
+          "names": [
+            "増澤吉和",
+            "塚本剛平"
+          ]
+        },
+        {
+          "role": "原作担当編集",
+          "time": 98,
+          "names": [
+            "中山航一"
+          ]
+        },
+        {
+          "role": "アニメーションプロデューサー",
+          "time": 117,
+          "names": [
+            "近松拓也",
+            "町口漱汰"
+          ]
+        },
+        {
+          "role": "制作統括",
+          "time": 117,
+          "names": [
+            "竹中信広",
+            "清田穣二"
+          ]
+        },
+        {
+          "role": "監督",
+          "time": 122,
+          "names": [
+            "伊藤祐毅",
+            "みうらたけひろ"
+          ]
+        },
+        {
+          "role": "原作",
+          "time": 48,
+          "organizations": [
+            "Cygames"
+          ]
+        }
+      ],
+      "cast_status": "complete",
+      "music_signatures": [
+        {
+          "title": "BRIGHTEST HEART",
+          "role": "作詞",
+          "names": [
+            "真崎エリカ"
+          ],
+          "time": 1313.768006
+        },
+        {
+          "title": "BRIGHTEST HEART",
+          "role": "作曲",
+          "names": [
+            "市橋卓也"
+          ],
+          "time": 1313.768006,
+          "institutions": [
+            "Cygames"
+          ]
+        },
+        {
+          "title": "BRIGHTEST HEART",
+          "role": "編曲",
+          "names": [
+            "中野領太"
+          ],
+          "time": 1313.768006
+        }
+      ],
+      "music_cues": [
+        {
+          "title": "BRIGHTEST HEART",
+          "song_id": "song-brightest-heart-dd824b4715",
+          "usage_type": "insert",
+          "role": "作詞",
+          "names": [
+            "真崎エリカ"
+          ],
+          "time": 1313.768006
+        },
+        {
+          "title": "笠松競馬 ファンファーレ（重賞）",
+          "usage_type": "fanfare",
+          "role": "音源協力",
+          "names": [],
+          "institutions": [
+            "笠松競馬場"
+          ],
+          "time": 1313.768006
+        }
+      ],
+      "superseded_transcript": [
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "作監補佐",
+          "order": 7,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-作監補佐"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "朝井聖子",
+          "order": 8,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-朝井聖子"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "Fundo",
+          "order": 9,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-Fundo"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "浅見日香留",
+          "order": 10,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-浅見日香留"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "ねぎ",
+          "order": 11,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-ねぎ"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "CygamesPictures",
+          "order": 12,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "益野翔太",
+          "order": 13,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-益野翔太",
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "泉美咲",
+          "order": 14,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-泉美咲",
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "工藤康平",
+          "order": 15,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-工藤康平",
+          "institutions": [
+            "CygamesPictures"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "すすきのアニメーション",
+          "order": 16,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "すすきのアニメーション"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "山田龍太郎",
+          "order": 17,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-山田龍太郎",
+          "institutions": [
+            "すすきのアニメーション"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "作画監督",
+          "name": "モリタユーシ",
+          "order": 18,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-モリタユーシ",
+          "institutions": [
+            "すすきのアニメーション"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "デザイン協力",
+          "name": "CygamesPictures",
+          "order": 25,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "原画",
+          "name": "黒絵レイ",
+          "order": 39,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-黒絵レイ"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "原画",
+          "name": "CygamesPictures",
+          "order": 51,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "第二原画",
+          "name": "CygamesPictures",
+          "order": 83,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "動画",
+          "name": "CygamesPictures",
+          "order": 97,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "仕上げ",
+          "name": "CygamesPictures",
+          "order": 120,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "美術設定",
+          "name": "CygamesPictures",
+          "order": 128,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "背景",
+          "name": "CygamesPictures",
+          "order": 137,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "背景",
+          "name": "NAM HAI ART",
+          "order": 145,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "NAM HAI ART"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "2Dワークス",
+          "name": "CygamesPictures",
+          "order": 161,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "CygamesPictures"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "3Dアニメーション協力",
+          "name": "株式会社アレクト",
+          "order": 169,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "株式会社アレクト"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "3Dアニメーション協力",
+          "name": "萩野宏和",
+          "order": 176,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-萩野宏和",
+          "institutions": [
+            "株式会社アレクト"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "3Dアニメーション協力",
+          "name": "小岩寛満",
+          "order": 177,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "person_id": "staff-小岩寛満",
+          "institutions": [
+            "株式会社アレクト"
+          ]
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "3Dモデリング協力",
+          "name": "株式会社サブリメイション",
+          "order": 186,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "株式会社サブリメイション"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "撮影",
+          "name": "MADBOX",
+          "order": 211,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "MADBOX"
+        },
+        {
+          "work_id": "anime-cinderella-gray",
+          "role": "撮影",
+          "name": "A-1 Pictures",
+          "order": 219,
+          "source_ref": "staff-transcript-anime-cinderella-gray",
+          "group": "片尾署名（公开转录）",
+          "unit_id": "anime-cinderella-gray-e04",
+          "organization": "A-1 Pictures"
         }
       ]
     }

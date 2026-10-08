@@ -4239,7 +4239,8 @@
           "summary_ja": "金華山の山頂で勝負の約束を交わしたオグリキャップとフジマサマーチは、ついに対決の日を迎える。\n準重賞レースの『ジュニアクラウン』。\nマーチから目標について問われた時、答えることができなかったオグリ。\nライバルとの対決の中で、オグリは自分が目指すべき『頂上』を見出す。",
           "source_refs": [
             "official-story-anime-cinderella-gray-e04",
-            "staff-transcript-anime-cinderella-gray"
+            "staff-transcript-anime-cinderella-gray",
+            "official-ending-anime-cinderella-gray-e04"
           ],
           "stills": [
             {
@@ -4299,7 +4300,7 @@
             }
           ],
           "title_ja": "ジュニアクラウン",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "summary_zh": "小栗帽与藤正进行曲在金华山顶许下的对决约定，终于将在 Junior Crown 实现。尚说不清自己目标的小栗帽，要在这场比赛中寻找想攀登的顶点。",
           "music_cues": [
             {
@@ -4310,8 +4311,31 @@
                 "笠松赛马场"
               ],
               "source_refs": [
-                "moegirl-cingray-episode-music"
+                "moegirl-cingray-episode-music",
+                "official-ending-anime-cinderella-gray-e04"
               ]
+            },
+            {
+              "title": "BRIGHTEST HEART",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作词",
+                  "names": [
+                    "真崎エリカ"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-500b86dc49"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-cinderella-gray-e04"
+              ],
+              "source_time": 1313.768006,
+              "song_id": "song-brightest-heart-dd824b4715"
             }
           ]
         },
