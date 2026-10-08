@@ -2,7 +2,7 @@
 
 一个零构建的赛马娘演唱会/LIVE 资讯站，由单页 HTML、浏览器版 Vue 3、按页面读取的目录接口和零依赖 Node.js 服务驱动。
 
-- 在线站点：https://umamusumelivewiki.top/zh-Hans
+- 在线站点：https://umamusumelivewiki.top/
 - 本仓库：https://github.com/516735955/uma-live-wiki
 - 技术栈：HTML/CSS/JS + Vue 3 浏览器运行时 + Node.js + Python（抓取/数据处理脚本）
 
@@ -168,9 +168,9 @@ Google Sheet 的定时任务是唯一的歌单补录入口：`auto_setlists.py` 
 
 生产 Node 服务使用 [`deploy/umamusume.service`](deploy/umamusume.service)，启用服务内自动刷新：启动即抓新闻，
 访问新闻接口时官网新闻缓存超过 15 分钟、CD相关 超过 30 分钟会在后台补抓并合并进快照；活动、角色、专辑与官方节目每 6 小时串行刷新一次。
-刷新结果写回仓库内 `data/`，而运行中的服务读取的是启动时的目录缓存，因此用
-[`deploy/umamusume-restart.timer`](deploy/umamusume-restart.timer) 每天凌晨 2 点重启一次，让目录改动生效；
-新闻不依赖重启（会实时更新）。
+刷新结果写回仓库内 `data/`，目录服务会按文件变化加载完整的新快照，无需等待重启。
+[`deploy/umamusume-restart.timer`](deploy/umamusume-restart.timer) 每天凌晨 2 点重启服务；新闻与目录更新均不依赖此定时器。
+生成的公开 JS/JSON 文件使用 `0644` 权限，供 Node 和 nginx 读取。
 
 推荐使用一键更新脚本（服务器无需安装 git，任意目录执行）：
 
@@ -179,7 +179,9 @@ curl -fsSL https://raw.githubusercontent.com/516735955/uma-live-wiki/main/deploy
 ```
 
 脚本会下载 main 分支快照同步到 `/var/www/umamusume`（可用首参数改为其他目录，`UMA_USER` 指定服务用户，
-默认 `alaemiryoung`）、修正 `data/` 属主、安装并启用上述 systemd 单元、重启服务，最后跑一次部署自检。
+默认 `alaemiryoung`）、修正 `data/` 属主与读取权限、补齐 Pillow、安装并启用上述 systemd 单元、
+校验并重载 nginx、重启服务，最后通过公网 HTTPS 跑部署自检。HTTPS server block 应包含
+`/var/www/umamusume/deploy/nginx-uma-live-wiki.conf`；仅复制配置文件不会改变 nginx 当前运行的路由。
 无法访问 GitHub 时可把 `deploy/update.sh` 手工拷到服务器后 `sudo bash update.sh` 执行。
 
 手工安装单元（不更新代码，仅装定时重启）时：
@@ -202,7 +204,8 @@ npm --prefix uma_tools run test:catalog
 npm --prefix uma_tools run check:deployment -- https://umamusumelivewiki.top
 ```
 
-第二条命令会读取实际页面引用的带版本 CSS、JS，核对 gzip、长期缓存及新闻 API 响应头；若 nginx
+第二条命令会检查根地址跳转、页面直链、主页与活动/音乐目录 API，并读取实际页面引用的带版本 CSS、JS，
+核对 gzip、长期缓存及新闻 API 响应头；若 nginx
 配置未被当前 HTTPS server block 引用，会以非零状态退出并指出缺失的响应头。修改长期缓存的入口文件时，
 必须同步更新页面或加载器中的 `?v=` 版本。
 

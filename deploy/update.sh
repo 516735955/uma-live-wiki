@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 一键更新生产：不需要 git。同步代码到站点目录 → 安装 systemd 单元（含每日 02:00
-# 重启定时器）→ 重启服务 → 部署自检。
+# 重启定时器）→ 重载 nginx / 重启服务 → 部署自检。
 #
 # 用法（服务器上执行，任意目录均可）：
 #   ① 能访问 GitHub：curl -fsSL https://raw.githubusercontent.com/516735955/uma-live-wiki/main/deploy/update.sh | sudo bash
@@ -60,6 +60,21 @@ if [ "$(id -u)" = "0" ]; then
   chown -R "$UMA_USER:$UMA_USER" "$ROOT"
 fi
 
+# A root-run generator can leave 0600 output owned by root. Both Node and nginx
+# need to read the published data after deployment.
+find "$ROOT/data" -type d -exec chmod 0755 {} +
+find "$ROOT/data" -type f \( -name '*.json' -o -name '*.js' \) -exec chmod 0644 {} +
+
+if ! python3 -c 'import PIL' >/dev/null 2>&1; then
+  echo "==> 安装角色图片管线依赖 Pillow"
+  if command -v apt-get >/dev/null 2>&1; then
+    apt-get update
+    apt-get install -y python3-pil
+  else
+    python3 -m pip install Pillow
+  fi
+fi
+
 echo "==> 安装 systemd 单元"
 install -m 0644 "$ROOT/deploy/umamusume.service" /etc/systemd/system/umamusume.service
 install -m 0644 "$ROOT/deploy/umamusume-restart.service" /etc/systemd/system/umamusume-restart.service
@@ -68,6 +83,12 @@ systemctl daemon-reload
 systemctl enable --now umamusume.service
 systemctl enable --now umamusume-restart.timer
 
+# The HTTPS server includes the repository's nginx config. Copying the file
+# alone does not update nginx's in-memory locations or cache rules.
+echo "==> 校验并重载 nginx"
+nginx -t
+systemctl reload nginx
+
 echo "==> 重启服务载入新代码"
 systemctl restart umamusume.service
 echo "    等待启动抓取完成（新闻 20+ 页）..."
@@ -75,9 +96,9 @@ sleep 15
 
 echo "==> 自检"
 if command -v node >/dev/null 2>&1; then
-  node "$ROOT/uma_tools/check_deployment.js" http://127.0.0.1:8080 || echo "（自检未完全通过，请查看上方条目）"
+  node "$ROOT/uma_tools/check_deployment.js" "${UMA_PUBLIC_URL:-https://umamusumelivewiki.top}"
 fi
-systemctl is-active umamusume.service || true
+systemctl is-active umamusume.service
 systemctl list-timers | grep -F umamusume || true
 
 echo "==> 完成。外网复核：npm --prefix uma_tools run check:deployment -- https://umamusumelivewiki.top"
