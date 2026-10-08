@@ -185,6 +185,8 @@ def atomic_json(path: Path, value: Any) -> None:
         with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as stream:
             json.dump(value, stream, ensure_ascii=False, indent=2)
             stream.write("\n")
+        # mkstemp creates 0600 files; nginx and Node may use different users.
+        os.chmod(temp_name, 0o644)
         os.replace(temp_name, path)
     except Exception:
         try:

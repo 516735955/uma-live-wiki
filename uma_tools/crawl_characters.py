@@ -32,6 +32,7 @@ def write_text_atomic(path, content):
     try:
         with os.fdopen(fd, 'w', encoding='utf-8') as f:
             f.write(content)
+        os.chmod(tmp, 0o644)
         os.replace(tmp, path)
     except Exception:
         try:

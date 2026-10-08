@@ -15,6 +15,7 @@ def write_json_atomic(path, value):
     try:
         with os.fdopen(fd, 'w', encoding='utf-8') as f:
             json.dump(value, f, ensure_ascii=False, indent=1)
+        os.chmod(tmp, 0o644)
         os.replace(tmp, path)
     except Exception:
         try:
