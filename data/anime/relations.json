@@ -29495,6 +29495,418 @@
       "evidence_refs": [
         "official-ending-anime-umayon-e21"
       ]
+    },
+    {
+      "id": "anime-umayon-e14-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mayanotopgun",
+      "voice_actor_id": "va-0085",
+      "signature": "マヤノトップガン",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tokaiteio",
+      "voice_actor_id": "va-0003",
+      "signature": "トウカイテイオー",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "maruzensky",
+      "voice_actor_id": "va-0001",
+      "signature": "マルゼンスキー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-ending-music-song-cdf2727e54-v-37d066fbc9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "version_id": "song-cdf2727e54-v-37d066fbc9",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e16-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e16"
+      ]
+    },
+    {
+      "id": "anime-umayon-e16-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e16"
+      ]
+    },
+    {
+      "id": "anime-umayon-e16-ending-music-song-cdf2727e54-v-37d066fbc9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "version_id": "song-cdf2727e54-v-37d066fbc9",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e16"
+      ]
+    },
+    {
+      "id": "anime-umayon-e17-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e17",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tamamocross",
+      "voice_actor_id": "va-0052",
+      "signature": "タマモクロス",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e17"
+      ]
+    },
+    {
+      "id": "anime-umayon-e17-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e17",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "oguricap",
+      "voice_actor_id": "va-0179",
+      "signature": "オグリキャップ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e17"
+      ]
+    },
+    {
+      "id": "anime-umayon-e17-ending-music-song-ring-ring-c9bdb0e414-v-088800b80a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "version_id": "song-ring-ring-c9bdb0e414-v-088800b80a",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e17"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "haruurara",
+      "voice_actor_id": "va-0175",
+      "signature": "ハルウララ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-ending-music-song-ring-ring-c9bdb0e414-v-088800b80a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "version_id": "song-ring-ring-c9bdb0e414-v-088800b80a",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "eishinflash",
+      "voice_actor_id": "va-0154",
+      "signature": "エイシンフラッシュ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "smartfalcon",
+      "voice_actor_id": "va-0049",
+      "signature": "スマートファルコン",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "manhattancafe",
+      "voice_actor_id": "va-0058",
+      "signature": "マンハッタンカフェ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "hishiamazon",
+      "voice_actor_id": "va-0071",
+      "signature": "ヒシアマゾン",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "taikishuttle",
+      "voice_actor_id": "va-0050",
+      "signature": "タイキシャトル",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-03",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
     }
   ]
 }

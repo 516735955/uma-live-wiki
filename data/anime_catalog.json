@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-4188439a69e2e796",
+  "build_id": "anime-4047685ff48c9405",
   "generated_at": "2026-10-08T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -8,8 +8,8 @@
     "released_units": 125,
     "scheduled_units": 0,
     "watch_resources": 130,
-    "relations": 1837,
-    "staff_credits": 19912,
+    "relations": 1864,
+    "staff_credits": 20292,
     "staff_people": 2874
   },
   "works": [
@@ -253,7 +253,8 @@
         "status": "released",
         "stills": [],
         "source_refs": [
-          "reference-umayon-e24"
+          "reference-umayon-e24",
+          "official-ending-anime-umayon-e24"
         ],
         "original_number": 12,
         "duration": "90秒",
@@ -262,7 +263,8 @@
             "label": "发行日期",
             "date": "2021-12-08"
           }
-        ]
+        ],
+        "staff_status": "complete"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -2677,7 +2679,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e14"
+        "reference-umayon-e14",
+        "official-ending-anime-umayon-e14"
       ],
       "original_number": 2,
       "duration": "90秒",
@@ -2686,7 +2689,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-umayon-e15",
@@ -2727,7 +2731,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e16"
+        "reference-umayon-e16",
+        "official-ending-anime-umayon-e16"
       ],
       "original_number": 4,
       "duration": "90秒",
@@ -2736,7 +2741,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-umayon-e17",
@@ -2751,7 +2757,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e17"
+        "reference-umayon-e17",
+        "official-ending-anime-umayon-e17"
       ],
       "original_number": 5,
       "duration": "90秒",
@@ -2760,7 +2767,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-umayon-e18",
@@ -2801,7 +2809,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e19"
+        "reference-umayon-e19",
+        "official-ending-anime-umayon-e19"
       ],
       "original_number": 7,
       "duration": "90秒",
@@ -2810,7 +2819,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-umayon-e20",
@@ -2877,7 +2887,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e22"
+        "reference-umayon-e22",
+        "official-ending-anime-umayon-e22"
       ],
       "original_number": 10,
       "duration": "90秒",
@@ -2886,7 +2897,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-umayon-e23",
@@ -2901,7 +2913,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e23"
+        "reference-umayon-e23",
+        "official-ending-anime-umayon-e23"
       ],
       "original_number": 11,
       "duration": "90秒",
@@ -2910,7 +2923,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-umayon-e24",
@@ -2925,7 +2939,8 @@
       "status": "released",
       "stills": [],
       "source_refs": [
-        "reference-umayon-e24"
+        "reference-umayon-e24",
+        "official-ending-anime-umayon-e24"
       ],
       "original_number": 12,
       "duration": "90秒",
@@ -2934,7 +2949,8 @@
           "label": "发行日期",
           "date": "2021-12-08"
         }
-      ]
+      ],
+      "staff_status": "complete"
     },
     {
       "id": "anime-1st-anniversary-e01",
@@ -40692,6 +40708,418 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-umayon-e21"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mayanotopgun",
+      "voice_actor_id": "va-0085",
+      "signature": "マヤノトップガン",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tokaiteio",
+      "voice_actor_id": "va-0003",
+      "signature": "トウカイテイオー",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "maruzensky",
+      "voice_actor_id": "va-0001",
+      "signature": "マルゼンスキー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e14-ending-music-song-cdf2727e54-v-37d066fbc9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "version_id": "song-cdf2727e54-v-37d066fbc9",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e14"
+      ]
+    },
+    {
+      "id": "anime-umayon-e16-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e16"
+      ]
+    },
+    {
+      "id": "anime-umayon-e16-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e16"
+      ]
+    },
+    {
+      "id": "anime-umayon-e16-ending-music-song-cdf2727e54-v-37d066fbc9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-cdf2727e54",
+      "version_id": "song-cdf2727e54-v-37d066fbc9",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e16"
+      ]
+    },
+    {
+      "id": "anime-umayon-e17-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e17",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tamamocross",
+      "voice_actor_id": "va-0052",
+      "signature": "タマモクロス",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e17"
+      ]
+    },
+    {
+      "id": "anime-umayon-e17-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e17",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "oguricap",
+      "voice_actor_id": "va-0179",
+      "signature": "オグリキャップ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e17"
+      ]
+    },
+    {
+      "id": "anime-umayon-e17-ending-music-song-ring-ring-c9bdb0e414-v-088800b80a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "version_id": "song-ring-ring-c9bdb0e414-v-088800b80a",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e17"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "haruurara",
+      "voice_actor_id": "va-0175",
+      "signature": "ハルウララ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e19-ending-music-song-ring-ring-c9bdb0e414-v-088800b80a",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e19",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-ring-ring-c9bdb0e414",
+      "version_id": "song-ring-ring-c9bdb0e414-v-088800b80a",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e19"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "eishinflash",
+      "voice_actor_id": "va-0154",
+      "signature": "エイシンフラッシュ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "smartfalcon",
+      "voice_actor_id": "va-0049",
+      "signature": "スマートファルコン",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e22-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e22",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e22"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "manhattancafe",
+      "voice_actor_id": "va-0058",
+      "signature": "マンハッタンカフェ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "hishiamazon",
+      "voice_actor_id": "va-0071",
+      "signature": "ヒシアマゾン",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "taikishuttle",
+      "voice_actor_id": "va-0050",
+      "signature": "タイキシャトル",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-official-ending-cast-03",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e23-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e23",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e23"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-umayon-e24-ending-music-song-fallin-love-9a20ebe280-v-4189e897bb",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e24",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-fallin-love-9a20ebe280",
+      "version_id": "song-fallin-love-9a20ebe280-v-4189e897bb",
+      "release_id": "album-laca-15873",
+      "version_label": "TV Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayon-e24"
       ]
     }
   ],
@@ -340806,6 +341234,5261 @@
       "organization": "Cygames",
       "role_raw": "製作",
       "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 67,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 67,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 67,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "雛田ゆいち",
+      "source_time": 67,
+      "person_id": "staff-雛田ゆいち",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 67,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 67,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "雛田ゆいち",
+      "source_time": 67,
+      "person_id": "staff-雛田ゆいち",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 7,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 71,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 8,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 71,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 71,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 71,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 11,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 71,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 12,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 71,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 71,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 14,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 74,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 15,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 75,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 16,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 75,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 75,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 75,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 75,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 75,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 21,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 75,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 22,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 75,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 23,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 75,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 24,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 75,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 25,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 75,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 26,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 75,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 27,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 75,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 28,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 75,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 29,
+      "role": "分镜／作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ・作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 30,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 31,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "暇木けい",
+      "source_time": 78,
+      "person_id": "staff-暇木けい",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 32,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "鴉羽839",
+      "source_time": 78,
+      "person_id": "staff-鴉羽839",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 33,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "石原充菜",
+      "source_time": 78,
+      "person_id": "staff-石原充菜",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 34,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "雛田ゆいち",
+      "source_time": 78,
+      "person_id": "staff-雛田ゆいち",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 35,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "湯野さわこ",
+      "source_time": 78,
+      "person_id": "staff-湯野さわこ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 36,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 37,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 38,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 39,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 40,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "福井友里恵",
+      "source_time": 78,
+      "person_id": "staff-福井友里恵",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 41,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 42,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 43,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 44,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 45,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 46,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 47,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 48,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 49,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 50,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 51,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 52,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 53,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e14",
+      "source_ref": "official-ending-anime-umayon-e14",
+      "order": 54,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 67,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 67,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 67,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 67,
+      "person_id": "staff-暇木けい",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 67,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 67,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 67,
+      "person_id": "staff-暇木けい",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 7,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 71,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 8,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 71,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 71,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 71,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 11,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 71,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 12,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 71,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 71,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 14,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 74,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 15,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 75,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 16,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 75,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 75,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 75,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 75,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 75,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 21,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 75,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 22,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 75,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 23,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 75,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 24,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 75,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 25,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 75,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 26,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 75,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 27,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 75,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 28,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 75,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 29,
+      "role": "分镜／作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ・作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 30,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 31,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "暇木けい",
+      "source_time": 78,
+      "person_id": "staff-暇木けい",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 32,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "鴉羽839",
+      "source_time": 78,
+      "person_id": "staff-鴉羽839",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 33,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "石原充菜",
+      "source_time": 78,
+      "person_id": "staff-石原充菜",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 34,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "雛田ゆいち",
+      "source_time": 78,
+      "person_id": "staff-雛田ゆいち",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 35,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "湯野さわこ",
+      "source_time": 78,
+      "person_id": "staff-湯野さわこ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 36,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 37,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 38,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 39,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 40,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "福井友里恵",
+      "source_time": 78,
+      "person_id": "staff-福井友里恵",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 41,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 42,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 43,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 44,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 45,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 46,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 47,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 48,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 49,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 50,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 51,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 52,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 53,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e16",
+      "source_ref": "official-ending-anime-umayon-e16",
+      "order": 54,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 66,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 66,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "森永志保",
+      "source_time": 66,
+      "person_id": "staff-森永志保",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 7,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "井口エリ",
+      "source_time": 66,
+      "person_id": "staff-井口エリ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 8,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 69,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 11,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 69,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 12,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 14,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 69,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 15,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 71,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 16,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 73,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 73,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 73,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 73,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 73,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 21,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 73,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 22,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 73,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 23,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 73,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 24,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 73,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 25,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 73,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 26,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 73,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 27,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 73,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 28,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 73,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 29,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 73,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 30,
+      "role": "分镜／作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ・作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 31,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 32,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "田村ヒロ",
+      "source_time": 78,
+      "person_id": "staff-田村ヒロ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 33,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 34,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 35,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 36,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 37,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "福井友里恵",
+      "source_time": 78,
+      "person_id": "staff-福井友里恵",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 38,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 39,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 40,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 41,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 42,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 43,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 44,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 45,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 46,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 47,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 48,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 49,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 50,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e17",
+      "source_ref": "official-ending-anime-umayon-e17",
+      "order": 51,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 66,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 66,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 7,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "森永志保",
+      "source_time": 66,
+      "person_id": "staff-森永志保",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 8,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 69,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 11,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 69,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 12,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 14,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 69,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 15,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 71,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 16,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 73,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 73,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 73,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 73,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 73,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 21,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 73,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 22,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 73,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 23,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 73,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 24,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 73,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 25,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 73,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 26,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 73,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 27,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 73,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 28,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 73,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 29,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 73,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 30,
+      "role": "分镜／作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ・作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 31,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 32,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "田村ヒロ",
+      "source_time": 78,
+      "person_id": "staff-田村ヒロ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 33,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 34,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 35,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 36,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 37,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "福井友里恵",
+      "source_time": 78,
+      "person_id": "staff-福井友里恵",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 38,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 39,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 40,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 41,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 42,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 43,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 44,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 45,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 46,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 47,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 48,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 49,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 50,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e19",
+      "source_ref": "official-ending-anime-umayon-e19",
+      "order": 51,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 66,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 66,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 7,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 8,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 69,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 69,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 11,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 12,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "福井友里恵",
+      "source_time": 69,
+      "person_id": "staff-福井友里恵",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 14,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 69,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 15,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 69,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 16,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 72,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 72,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 72,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 72,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 72,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 21,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 72,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 22,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 72,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 23,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 72,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 24,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 72,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 25,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 72,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 26,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 72,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 27,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 72,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 28,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 72,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 29,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 72,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 30,
+      "role": "分镜",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 31,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 32,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 33,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 34,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "渡辺千尋",
+      "source_time": 78,
+      "person_id": "staff-渡辺千尋",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 35,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "鴉羽839",
+      "source_time": 78,
+      "person_id": "staff-鴉羽839",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 36,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "石原充菜",
+      "source_time": 78,
+      "person_id": "staff-石原充菜",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 37,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "田村ヒロ",
+      "source_time": 78,
+      "person_id": "staff-田村ヒロ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 38,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 39,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 40,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 41,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 42,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 43,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 44,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 45,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 46,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 47,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 48,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 49,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 50,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 51,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 52,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 53,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 54,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e22",
+      "source_ref": "official-ending-anime-umayon-e22",
+      "order": 55,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 66,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 66,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "鈴木将",
+      "source_time": 66,
+      "person_id": "staff-鈴木将",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 7,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 8,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 69,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 69,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 11,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 12,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 69,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 14,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 69,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 15,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 72,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 16,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 72,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 72,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 72,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 72,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 72,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 21,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 72,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 22,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 72,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 23,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 72,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 24,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 72,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 25,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 72,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 26,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 72,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 27,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 72,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 28,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 72,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 29,
+      "role": "分镜",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 30,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 31,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 32,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 33,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "渡辺千尋",
+      "source_time": 78,
+      "person_id": "staff-渡辺千尋",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 34,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "鴉羽839",
+      "source_time": 78,
+      "person_id": "staff-鴉羽839",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 35,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "石原充菜",
+      "source_time": 78,
+      "person_id": "staff-石原充菜",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 36,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "田村ヒロ",
+      "source_time": 78,
+      "person_id": "staff-田村ヒロ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 37,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 38,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 39,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 40,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 41,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 42,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 43,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 44,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 45,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 46,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 47,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 48,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 49,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 50,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 51,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 52,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 53,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e23",
+      "source_ref": "official-ending-anime-umayon-e23",
+      "order": 54,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 0,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 66,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 1,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 2,
+      "role": "分镜",
+      "group": "",
+      "name": "伊藤仁",
+      "source_time": 66,
+      "person_id": "staff-伊藤仁",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 3,
+      "role": "分镜",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 4,
+      "role": "角色设计／总作画监督",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 66,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン・総作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 5,
+      "role": "作画监督",
+      "group": "",
+      "name": "暇木けい",
+      "source_time": 66,
+      "person_id": "staff-暇木けい",
+      "role_raw": "作画監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 6,
+      "role": "原画／中间动画／上色",
+      "group": "",
+      "name": "鴉羽839",
+      "source_time": 66,
+      "person_id": "staff-鴉羽839",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 7,
+      "role": "美术监督",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "美術監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 8,
+      "role": "背景",
+      "group": "",
+      "name": "山口雅範",
+      "source_time": 69,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 9,
+      "role": "背景",
+      "group": "",
+      "name": "松尾祈実香",
+      "source_time": 69,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 10,
+      "role": "背景",
+      "group": "",
+      "name": "二条なで",
+      "source_time": 69,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 11,
+      "role": "摄影监督",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 12,
+      "role": "摄影",
+      "group": "",
+      "name": "林昌宏",
+      "source_time": 69,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 13,
+      "role": "摄影",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 69,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 14,
+      "role": "离线剪辑",
+      "group": "",
+      "name": "DMM.futureworks",
+      "source_time": 69,
+      "organization": "DMM.futureworks",
+      "role_raw": "オフライン編集",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 15,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "内田哲也",
+      "source_time": 72,
+      "person_id": "staff-内田哲也",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 16,
+      "role": "音乐",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 72,
+      "person_id": "staff-本田晃弘",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 17,
+      "role": "音乐",
+      "group": "",
+      "name": "久保早瑠菜",
+      "source_time": 72,
+      "person_id": "staff-久保早瑠菜",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 18,
+      "role": "音乐",
+      "group": "",
+      "name": "千葉梓",
+      "source_time": 72,
+      "person_id": "staff-千葉梓",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 19,
+      "role": "音乐",
+      "group": "",
+      "name": "池田健仁",
+      "source_time": 72,
+      "person_id": "staff-池田健仁",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 20,
+      "role": "音乐",
+      "group": "",
+      "name": "Lucas Nainemoutou",
+      "source_time": 72,
+      "person_id": "staff-LucasNainemoutou",
+      "institutions": [
+        "Cygames"
+      ],
+      "role_raw": "音楽",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 21,
+      "role": "音响监督",
+      "group": "",
+      "name": "森田祐一",
+      "source_time": 72,
+      "person_id": "staff-森田祐一",
+      "role_raw": "音響監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 22,
+      "role": "音响效果",
+      "group": "",
+      "name": "宅間麻姫",
+      "source_time": 72,
+      "person_id": "staff-宅間麻姫",
+      "institutions": [
+        "スワラプロ"
+      ],
+      "role_raw": "音響効果",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 23,
+      "role": "声音混音",
+      "group": "",
+      "name": "武藤雅人",
+      "source_time": 72,
+      "person_id": "staff-武藤雅人",
+      "role_raw": "サウンドミキサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 24,
+      "role": "声音剪辑",
+      "group": "",
+      "name": "服部稜",
+      "source_time": 72,
+      "person_id": "staff-服部稜",
+      "role_raw": "サウンドエディター",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 25,
+      "role": "录音室",
+      "group": "",
+      "name": "スリーエススタジオ",
+      "source_time": 72,
+      "organization": "スリーエススタジオ",
+      "role_raw": "録音スタジオ",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 26,
+      "role": "配音选角管理",
+      "group": "",
+      "name": "小室亜紗子",
+      "source_time": 72,
+      "person_id": "staff-小室亜紗子",
+      "institutions": [
+        "スタージャムコーポレーション"
+      ],
+      "role_raw": "キャスティングマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 27,
+      "role": "音响制作负责",
+      "group": "",
+      "name": "小野勝弘",
+      "source_time": 72,
+      "person_id": "staff-小野勝弘",
+      "role_raw": "音響制作担当",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 28,
+      "role": "音响制作",
+      "group": "",
+      "name": "HALF H・P STUDIO",
+      "source_time": 72,
+      "organization": "HALF H・P STUDIO",
+      "role_raw": "音響制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 29,
+      "role": "分镜",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 30,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 78,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 31,
+      "role": "作画监督",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "作画監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 32,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "衣谷ソーシ",
+      "source_time": 78,
+      "person_id": "staff-衣谷ソーシ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 33,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "渡辺千尋",
+      "source_time": 78,
+      "person_id": "staff-渡辺千尋",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 34,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "鴉羽839",
+      "source_time": 78,
+      "person_id": "staff-鴉羽839",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 35,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "石原充菜",
+      "source_time": 78,
+      "person_id": "staff-石原充菜",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 36,
+      "role": "原画／中间动画／上色",
+      "group": "片尾动画",
+      "name": "田村ヒロ",
+      "source_time": 78,
+      "person_id": "staff-田村ヒロ",
+      "role_raw": "原画・動画・仕上げ",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 37,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "山口雅範",
+      "source_time": 78,
+      "person_id": "staff-山口雅範",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 38,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "松尾祈実香",
+      "source_time": 78,
+      "person_id": "staff-松尾祈実香",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 39,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "二条なで",
+      "source_time": 78,
+      "person_id": "staff-二条なで",
+      "institutions": [
+        "スタジオホワイト"
+      ],
+      "role_raw": "背景",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 40,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "林昌宏",
+      "source_time": 78,
+      "person_id": "staff-林昌宏",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 41,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 78,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 42,
+      "role": "企划",
+      "group": "",
+      "name": "渡邊耕一",
+      "source_time": 81,
+      "person_id": "staff-渡邊耕一",
+      "role_raw": "企画",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 43,
+      "role": "首席制片人",
+      "group": "",
+      "name": "竹中信広",
+      "source_time": 81,
+      "person_id": "staff-竹中信広",
+      "role_raw": "チーフプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 44,
+      "role": "制片人",
+      "group": "",
+      "name": "熊ジェット",
+      "source_time": 81,
+      "person_id": "staff-熊ジェット",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 45,
+      "role": "制片人",
+      "group": "",
+      "name": "秋田穣",
+      "source_time": 81,
+      "person_id": "staff-秋田穣",
+      "role_raw": "プロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 46,
+      "role": "宣传",
+      "group": "",
+      "name": "秋葉隆史",
+      "source_time": 81,
+      "person_id": "staff-秋葉隆史",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 47,
+      "role": "宣传",
+      "group": "",
+      "name": "竹之内葉南",
+      "source_time": 81,
+      "person_id": "staff-竹之内葉南",
+      "role_raw": "宣伝",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 48,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "二瓶茂人",
+      "source_time": 81,
+      "person_id": "staff-二瓶茂人",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 49,
+      "role": "日本上线／海外授权",
+      "group": "",
+      "name": "Regnault Tristan",
+      "source_time": 81,
+      "person_id": "staff-RegnaultTristan",
+      "role_raw": "国内配信・海外ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 50,
+      "role": "协力",
+      "group": "",
+      "name": "トレーナーの皆様",
+      "source_time": 81,
+      "organization": "トレーナーの皆様",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 51,
+      "role": "动画制作",
+      "group": "",
+      "name": "DMM.futureworks／ダブトゥーンスタジオ",
+      "source_time": 83,
+      "organization": "DMM.futureworks／ダブトゥーンスタジオ",
+      "role_raw": "アニメーション制作",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 52,
+      "role": "动画制片人",
+      "group": "",
+      "name": "内海洋",
+      "source_time": 83,
+      "person_id": "staff-内海洋",
+      "role_raw": "アニメーションプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 53,
+      "role": "助理制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 83,
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アシスタントプロデューサー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayon",
+      "unit_id": "anime-umayon-e24",
+      "source_ref": "official-ending-anime-umayon-e24",
+      "order": 54,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 85,
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "group_raw": ""
     }
   ],
   "people": [
@@ -343476,7 +349159,9 @@
         "official-ending-anime-umayon-e03",
         "official-ending-anime-umayon-e04",
         "official-ending-anime-umayon-e09",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16"
       ],
       "roles": [
         "导演／角色设计／总作画监督",
@@ -343489,7 +349174,7 @@
         "导演"
       ],
       "work_count": 3,
-      "unit_count": 34
+      "unit_count": 36
     },
     {
       "id": "staff-三岳真希",
@@ -343668,7 +349353,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-eaf94340d3",
       "roles": [
@@ -343676,7 +349368,7 @@
         "音乐"
       ],
       "work_count": 3,
-      "unit_count": 23
+      "unit_count": 30
     },
     {
       "id": "staff-神保直史",
@@ -343768,7 +349460,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "导演",
@@ -343782,7 +349481,7 @@
         "作画监督"
       ],
       "work_count": 3,
-      "unit_count": 43
+      "unit_count": 50
     },
     {
       "id": "staff-髙橋沙織",
@@ -343874,7 +349573,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "摄影监督",
@@ -343883,7 +349589,7 @@
         "背景"
       ],
       "work_count": 3,
-      "unit_count": 43
+      "unit_count": 50
     },
     {
       "id": "staff-加藤慶久",
@@ -352773,7 +358479,14 @@
         "official-ending-anime-umayon-e15",
         "official-ending-anime-umayon-e20",
         "official-ending-anime-umayon-e21",
-        "official-ending-anime-umayon-e08"
+        "official-ending-anime-umayon-e08",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-14a2ce8737",
       "roles": [
@@ -352781,7 +358494,7 @@
         "音乐"
       ],
       "work_count": 2,
-      "unit_count": 10
+      "unit_count": 17
     },
     {
       "id": "staff-波部崇",
@@ -361493,7 +367206,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "媒体统筹",
@@ -361501,7 +367221,7 @@
         "宣传协力"
       ],
       "work_count": 8,
-      "unit_count": 82
+      "unit_count": 89
     },
     {
       "id": "staff-大杉憲蔵",
@@ -365123,13 +370843,18 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22"
       ],
       "roles": [
         "摄影"
       ],
       "work_count": 2,
-      "unit_count": 17
+      "unit_count": 22
     },
     {
       "id": "staff-津野陽平",
@@ -365616,14 +371341,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-9be9261917",
       "roles": [
         "音乐制片人"
       ],
       "work_count": 8,
-      "unit_count": 76
+      "unit_count": 83
     },
     {
       "id": "staff-新舞美",
@@ -365760,14 +371492,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "企划",
         "出品"
       ],
       "work_count": 6,
-      "unit_count": 52
+      "unit_count": 59
     },
     {
       "id": "staff-竹中信広",
@@ -365826,7 +371565,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "企划",
@@ -365836,7 +371582,7 @@
         "执行制片人"
       ],
       "work_count": 5,
-      "unit_count": 53
+      "unit_count": 60
     },
     {
       "id": "staff-江上智彦",
@@ -366445,7 +372191,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "海外与流媒体销售",
@@ -366454,7 +372207,7 @@
         "日本上线"
       ],
       "work_count": 5,
-      "unit_count": 43
+      "unit_count": 50
     },
     {
       "id": "staff-秋津琢磨",
@@ -366923,13 +372676,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "制片人"
       ],
       "work_count": 8,
-      "unit_count": 77
+      "unit_count": 84
     },
     {
       "id": "staff-佐藤慧介",
@@ -367170,14 +372930,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "美术监督",
         "背景"
       ],
       "work_count": 2,
-      "unit_count": 41
+      "unit_count": 48
     },
     {
       "id": "staff-よよよ",
@@ -367304,7 +373071,9 @@
         "official-ending-anime-umayon-e08",
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16"
       ],
       "roles": [
         "原画",
@@ -367314,7 +373083,7 @@
         "原画／中间动画／上色"
       ],
       "work_count": 3,
-      "unit_count": 40
+      "unit_count": 42
     },
     {
       "id": "staff-片田悠介",
@@ -367402,14 +373171,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "动画制片人",
         "助理制片人"
       ],
       "work_count": 3,
-      "unit_count": 43
+      "unit_count": 50
     },
     {
       "id": "staff-渡邉杏奈",
@@ -367498,7 +373274,12 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "原画／中间动画／上色",
@@ -367506,7 +373287,7 @@
         "作画监督"
       ],
       "work_count": 2,
-      "unit_count": 35
+      "unit_count": 40
     },
     {
       "id": "staff-田村ヒロ",
@@ -367547,13 +373328,18 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "原画／中间动画／上色"
       ],
       "work_count": 2,
-      "unit_count": 35
+      "unit_count": 40
     },
     {
       "id": "staff-篠宮よう",
@@ -367618,7 +373404,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "摄影／上色",
@@ -367626,7 +373419,7 @@
         "摄影"
       ],
       "work_count": 2,
-      "unit_count": 23
+      "unit_count": 30
     },
     {
       "id": "staff-田中直也",
@@ -367854,14 +373647,21 @@
         "official-ending-anime-umayon-e03",
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
-        "official-ending-anime-umayon-e11"
+        "official-ending-anime-umayon-e11",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-3e35bf54dc",
       "roles": [
         "音乐"
       ],
       "work_count": 2,
-      "unit_count": 11
+      "unit_count": 18
     },
     {
       "id": "staff-暇木けい",
@@ -367891,7 +373691,14 @@
         "official-ending-anime-umayon-e08",
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "原画／中间动画／上色",
@@ -367899,7 +373706,7 @@
         "作画监督"
       ],
       "work_count": 2,
-      "unit_count": 24
+      "unit_count": 31
     },
     {
       "id": "staff-LucasNainemoutou",
@@ -367921,7 +373728,14 @@
         "official-ending-anime-umayon-e20",
         "official-ending-anime-umayon-e21",
         "official-ending-anime-umayon-e06",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
       "alias_ids": [
@@ -367932,7 +373746,7 @@
         "法语监修"
       ],
       "work_count": 4,
-      "unit_count": 12
+      "unit_count": 19
     },
     {
       "id": "staff-長谷部翔",
@@ -367965,14 +373779,21 @@
         "official-ending-anime-umayon-e20",
         "official-ending-anime-umayon-e21",
         "official-ending-anime-umayon-e04",
-        "official-ending-anime-umayon-e07"
+        "official-ending-anime-umayon-e07",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-70bf07a860",
       "roles": [
         "音乐"
       ],
       "work_count": 3,
-      "unit_count": 13
+      "unit_count": 20
     },
     {
       "id": "staff-東大路憲太",
@@ -369429,13 +375250,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "音响监督"
       ],
       "work_count": 5,
-      "unit_count": 51
+      "unit_count": 58
     },
     {
       "id": "staff-吉良柾成",
@@ -369734,14 +375562,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "漫画作画",
         "制片人"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-伊藤仁",
@@ -369765,7 +375600,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "creator_id": "creator-577ecb2e25",
       "roles": [
@@ -369773,7 +375615,7 @@
         "分镜"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-NHUTHAO",
@@ -374298,13 +380140,15 @@
         "official-ending-anime-umayon-e08",
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19"
       ],
       "roles": [
         "原画／中间动画／上色"
       ],
       "work_count": 1,
-      "unit_count": 15
+      "unit_count": 17
     },
     {
       "id": "staff-井口エリ",
@@ -374323,13 +380167,14 @@
         "official-ending-anime-umayon-e08",
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e17"
       ],
       "roles": [
         "原画／中间动画／上色"
       ],
       "work_count": 1,
-      "unit_count": 13
+      "unit_count": 14
     },
     {
       "id": "staff-松尾祈実香",
@@ -374352,13 +380197,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "背景"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-二条なで",
@@ -374381,13 +380233,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "背景"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-宅間麻姫",
@@ -374446,13 +380305,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "音响效果"
       ],
       "work_count": 5,
-      "unit_count": 53
+      "unit_count": 60
     },
     {
       "id": "staff-武藤雅人",
@@ -374475,13 +380341,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "声音混音"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-服部稜",
@@ -374504,13 +380377,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "声音剪辑"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-小野勝弘",
@@ -374544,13 +380424,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "音响制作负责"
       ],
       "work_count": 2,
-      "unit_count": 28
+      "unit_count": 35
     },
     {
       "id": "staff-衣谷ソーシ",
@@ -374573,14 +380460,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "原画／中间动画／上色",
         "作画监督"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-石原充菜",
@@ -374597,13 +380491,18 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "原画／中间动画／上色"
       ],
       "work_count": 1,
-      "unit_count": 11
+      "unit_count": 16
     },
     {
       "id": "staff-竹之内葉南",
@@ -374648,7 +380547,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "宣传",
@@ -374656,7 +380562,7 @@
         "宣传协力"
       ],
       "work_count": 3,
-      "unit_count": 39
+      "unit_count": 46
     },
     {
       "id": "staff-RegnaultTristan",
@@ -374690,14 +380596,21 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "日本上线／海外授权",
         "海外授权"
       ],
       "work_count": 2,
-      "unit_count": 28
+      "unit_count": 35
     },
     {
       "id": "staff-内海洋",
@@ -374720,13 +380633,20 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "动画制片人"
       ],
       "work_count": 1,
-      "unit_count": 17
+      "unit_count": 24
     },
     {
       "id": "staff-UMP",
@@ -376795,7 +382715,14 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e14",
+        "official-ending-anime-umayon-e16",
+        "official-ending-anime-umayon-e17",
+        "official-ending-anime-umayon-e19",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "alias_ids": [
         "staff-小室亜沙子"
@@ -376805,7 +382732,7 @@
         "音响制作负责"
       ],
       "work_count": 5,
-      "unit_count": 53
+      "unit_count": 60
     },
     {
       "id": "staff-金丸紘平",
@@ -388910,13 +394837,16 @@
         "official-ending-anime-umayon-e09",
         "official-ending-anime-umayon-e10",
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e22",
+        "official-ending-anime-umayon-e23",
+        "official-ending-anime-umayon-e24"
       ],
       "roles": [
         "原画／中间动画／上色"
       ],
       "work_count": 1,
-      "unit_count": 5
+      "unit_count": 8
     },
     {
       "id": "staff-鈴木将",
@@ -388924,13 +394854,14 @@
       "aliases": [],
       "source_refs": [
         "official-ending-anime-umayon-e11",
-        "official-ending-anime-umayon-e12"
+        "official-ending-anime-umayon-e12",
+        "official-ending-anime-umayon-e23"
       ],
       "roles": [
         "原画／中间动画／上色"
       ],
       "work_count": 1,
-      "unit_count": 2
+      "unit_count": 3
     }
   ],
   "sources": [
@@ -391634,6 +397565,55 @@
       "kind": "credit_recording",
       "label": "单集原始片尾职员表",
       "url": "https://www.yinhuadm.cc/p/12632-3-12.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e14",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-14.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e16",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-16.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e17",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-17.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e19",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-19.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e22",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-22.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e23",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-23.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e24",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-24.html",
       "observed_at": "2026-10-08"
     }
   ]
