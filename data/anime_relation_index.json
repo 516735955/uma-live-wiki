@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-cadf3cd9e3806a49",
+  "build_id": "anime-c8ff052550c6af1b",
   "generated_at": "2026-10-08T00:00:00+08:00",
   "targets": {
     "event": {
@@ -731,6 +731,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "goldship": [
@@ -2202,6 +2213,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e06",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "キングヘイロー",
+          "voice_actor_id": "va-0027",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "mejirobright": [
@@ -2463,6 +2485,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-prettygray-e03",
           "work_id": "anime-umayuru-prettygray"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシミラクル",
+          "voice_actor_id": "va-0087",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "naritataishin": [
@@ -2926,6 +2959,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "カレンチャン",
+          "voice_actor_id": "va-0139",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "lovesonlyyou": [
@@ -5474,6 +5518,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "matikanetannhauser": [
@@ -5852,6 +5907,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メイショウドトウ",
+          "voice_actor_id": "va-0039",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "haruurara": [
@@ -6052,6 +6118,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "agnestachyon": [
@@ -6153,6 +6230,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "anshinzawasasami": [
@@ -7309,6 +7397,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-e08",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "乙名史悦子",
+          "voice_actor_id": "va-0171",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "happymeek": [
@@ -7401,6 +7500,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアシャカール",
+          "voice_actor_id": "va-0109",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "maruzensky": [
@@ -8412,6 +8522,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e03",
           "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トーセンジョーダン",
+          "voice_actor_id": "va-0167",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "airgroove": [
@@ -8922,6 +9043,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "yukinobijin": [
@@ -8979,6 +9111,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "daitakuhelios": [
@@ -9216,6 +9359,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-e23",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスデジタル",
+          "voice_actor_id": "va-0165",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "finemotion": [
@@ -11526,6 +11680,17 @@
           "source_type": "anime_work",
           "source_id": "anime-movie-beginning-new-era",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ジャングルポケット",
+          "voice_actor_id": "va-0153",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "manhattancafe": [
@@ -11605,6 +11770,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "dantsuflame": [
@@ -11617,6 +11793,17 @@
           "voice_actor_id": "va-0134",
           "source_type": "anime_work",
           "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダンツフレーム",
+          "voice_actor_id": "va-0134",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
         }
       ],
@@ -11741,6 +11928,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フジキセキ",
+          "voice_actor_id": "va-0095",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "naritatoproad": [
@@ -11809,6 +12007,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタトップロード",
+          "voice_actor_id": "va-0012",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "satonocrown": [
@@ -14753,6 +14962,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "mrcb": [
@@ -15119,6 +15339,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "narita_trainer": [
@@ -15176,6 +15407,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "沖田トレーナー",
+          "voice_actor_id": "va-0044",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "riceshower": [
@@ -15365,6 +15607,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ライスシャワー",
+          "voice_actor_id": "va-0129",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "mejiropalmer": [
@@ -16316,6 +16569,32 @@
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
         }
+      ],
+      "kashimotoriko": [
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "樫本理子",
+          "voice_actor_id": "va-0092",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "kiryuinaoi": [
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "桐生院葵",
+          "voice_actor_id": "va-0066",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
+        }
       ]
     },
     "voice_actor": {
@@ -17003,6 +17282,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0009": [
@@ -18474,6 +18764,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e06",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "キングヘイロー",
+          "voice_actor_id": "va-0027",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0054": [
@@ -18735,6 +19036,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-prettygray-e03",
           "work_id": "anime-umayuru-prettygray"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシミラクル",
+          "voice_actor_id": "va-0087",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0114": [
@@ -19198,6 +19510,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "カレンチャン",
+          "voice_actor_id": "va-0139",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0015": [
@@ -21746,6 +22069,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0161": [
@@ -22124,6 +22458,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メイショウドトウ",
+          "voice_actor_id": "va-0039",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0151": [
@@ -22346,6 +22691,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "旁白",
+          "usage_type": "",
+          "signature": "ナレーション",
+          "voice_actor_id": "va-0151",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0175": [
@@ -22546,6 +22902,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0008": [
@@ -22647,6 +23014,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0017": [
@@ -23803,6 +24181,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-e08",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "乙名史悦子",
+          "voice_actor_id": "va-0171",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0037": [
@@ -23895,6 +24284,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアシャカール",
+          "voice_actor_id": "va-0109",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0001": [
@@ -24750,6 +25150,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e03",
           "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トーセンジョーダン",
+          "voice_actor_id": "va-0167",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0173": [
@@ -25260,6 +25671,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0063": [
@@ -25317,6 +25739,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0065": [
@@ -25554,6 +25987,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-e23",
           "work_id": "anime-umayuru"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスデジタル",
+          "voice_actor_id": "va-0165",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0102": [
@@ -27886,6 +28330,17 @@
           "source_type": "anime_work",
           "source_id": "anime-movie-beginning-new-era",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ジャングルポケット",
+          "voice_actor_id": "va-0153",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0058": [
@@ -27965,6 +28420,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0134": [
@@ -27977,6 +28443,17 @@
           "voice_actor_id": "va-0134",
           "source_type": "anime_work",
           "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダンツフレーム",
+          "voice_actor_id": "va-0134",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
         }
       ],
@@ -28101,6 +28578,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フジキセキ",
+          "voice_actor_id": "va-0095",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0012": [
@@ -28169,6 +28657,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタトップロード",
+          "voice_actor_id": "va-0012",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0164": [
@@ -31113,6 +31612,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0055": [
@@ -31479,6 +31989,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0044": [
@@ -31536,6 +32057,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "沖田トレーナー",
+          "voice_actor_id": "va-0044",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0129": [
@@ -31725,6 +32257,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ライスシャワー",
+          "voice_actor_id": "va-0129",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "va-0004": [
@@ -32678,6 +33221,32 @@
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
         }
+      ],
+      "va-0092": [
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "樫本理子",
+          "voice_actor_id": "va-0092",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "va-0066": [
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "桐生院葵",
+          "voice_actor_id": "va-0066",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
+        }
       ]
     },
     "song": {
@@ -32848,6 +33417,17 @@
           "source_type": "anime_work",
           "source_id": "anime-s1",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-movie-beginning-new-era-e01-ending-cue-song-957bf9f007-bgm",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "bgm",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-movie-beginning-new-era-e01",
+          "work_id": "anime-movie-beginning-new-era"
         }
       ],
       "song-816f8bc3e9": [
@@ -33839,8 +34419,8 @@
         {
           "relation_id": "anime-movie-beginning-new-era-e01-music-song-228f943b49-v-228f943b49",
           "relation_type": "uses_song",
-          "label": "插入曲",
-          "usage_type": "insert",
+          "label": "",
+          "usage_type": "ending",
           "signature": "",
           "voice_actor_id": "",
           "source_type": "anime_unit",
@@ -37885,7 +38465,7 @@
         {
           "relation_id": "anime-movie-beginning-new-era-e01-music-song-beyond-the-finale-7429c4eae3-v-7429c4eae3",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -37898,7 +38478,7 @@
         {
           "relation_id": "anime-movie-beginning-new-era-e01-music-song-prismatic-spurt-5d848409a4-v-5d848409a4",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",

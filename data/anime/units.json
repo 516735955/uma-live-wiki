@@ -3759,10 +3759,11 @@
       ],
       "details": {
         "1": {
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "source_refs": [
             "staff-transcript-anime-movie-beginning-new-era",
-            "official-new-era"
+            "official-new-era",
+            "official-ending-anime-movie-beginning-new-era-e01"
           ],
           "summary_zh": "在自由竞跑中追求最强的森林宝穴，因富士奇石在闪光系列中的奔跑而受到震撼。进入特雷森学园后，她在田边训练员的指导下挑战经典三冠，并与烈焰快驹、曼城茶座和爱丽速子等同世代劲敌展开竞争。",
           "stills": [
@@ -3805,6 +3806,122 @@
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
               "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
               "source_ref": "official-toho-film-release"
+            }
+          ],
+          "music_cues": [
+            {
+              "title": "寂しくなんかなかった",
+              "usage_type": "bgm",
+              "credits": [
+                {
+                  "role": "作曲／编曲",
+                  "names": [],
+                  "institutions": [
+                    "UTAMARO movement"
+                  ],
+                  "creator_ids": []
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-movie-beginning-new-era-e01"
+              ],
+              "source_time": 6393.800998,
+              "song_id": "song-957bf9f007"
+            },
+            {
+              "title": "ウマ娘 ファンファーレⅠ GⅠ",
+              "usage_type": "fanfare",
+              "credits": [
+                {
+                  "role": "作曲／编曲",
+                  "names": [
+                    "高田龍一"
+                  ],
+                  "institutions": [
+                    "MONACA"
+                  ],
+                  "creator_ids": [
+                    "creator-ff7b158325"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-movie-beginning-new-era-e01"
+              ],
+              "source_time": 6395.800998
+            },
+            {
+              "title": "ウマ娘 ファンファーレⅠ 重賞",
+              "usage_type": "fanfare",
+              "credits": [
+                {
+                  "role": "作曲／编曲",
+                  "names": [
+                    "高田龍一"
+                  ],
+                  "institutions": [
+                    "MONACA"
+                  ],
+                  "creator_ids": [
+                    "creator-ff7b158325"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-movie-beginning-new-era-e01"
+              ],
+              "source_time": 6397.800998
+            },
+            {
+              "title": "Beyond the Finale",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作词",
+                  "names": [
+                    "アッシュ井上",
+                    "柿沼雅美"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-b115947141",
+                    "creator-998ddf144b"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-movie-beginning-new-era-e01"
+              ],
+              "source_time": 6399.800998,
+              "song_id": "song-beyond-the-finale-7429c4eae3"
+            },
+            {
+              "title": "PRISMATIC SPURT!!!!",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作曲／编曲",
+                  "names": [
+                    "佐藤厚仁"
+                  ],
+                  "institutions": [
+                    "Dream Monster"
+                  ],
+                  "creator_ids": [
+                    "creator-6bda92a2cb"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-movie-beginning-new-era-e01"
+              ],
+              "source_time": 6401.800998,
+              "song_id": "song-prismatic-spurt-5d848409a4"
             }
           ]
         }

@@ -4186,7 +4186,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-15621"
+      "source_catalog": "LACA-15621",
+      "supplemental_sources": [
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/26358-2-1.html"
+        }
+      ]
     },
     "song-228f943b49-v-b373901aa7": {
       "credits": [

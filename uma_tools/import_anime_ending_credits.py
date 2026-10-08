@@ -99,7 +99,7 @@ def main():
                     people_names[name] = person
                     if re.fullmatch(r"[A-Za-z-]+", name):
                         latin_names.setdefault(name.casefold().replace("-", ""), {})[person["id"]] = person
-                if name in creator_names and "音乐" in role_label(signature["role"]):
+                if name in creator_names and ("音乐" in role_label(signature["role"]) or group_label(signature.get("group", "")) == "音乐"):
                     person["creator_id"] = creator_names[name]
                 if ref not in person.setdefault("source_refs", []):
                     person["source_refs"].append(ref)
