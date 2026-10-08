@@ -8,12 +8,15 @@
 #      sudo bash update.sh /var/www/umamusume /root/uma-live-wiki-main.tgz
 #   ③ 仅本文件在手：sudo bash update.sh [站点目录] [本地压缩包]
 #
-# 可用环境变量：UMA_USER 运行 node 服务的系统用户（默认 alaemiryoung）
+# 站点目录和运行用户与随仓库发布的 systemd/nginx 配置一致。
 set -euo pipefail
 
 ROOT="${1:-/var/www/umamusume}"
 ARCHIVE="${2:-}"
 UMA_USER="${UMA_USER:-alaemiryoung}"
+[ "$ROOT" = /var/www/umamusume ] && [ "$UMA_USER" = alaemiryoung ] || {
+  echo '站点配置使用 /var/www/umamusume 和 alaemiryoung；其他部署请同时修改 systemd/nginx 配置。'; exit 1;
+}
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
@@ -53,7 +56,16 @@ fi
 
 echo "==> 同步到 $ROOT（保留服务器本地生成的缓存/日志）"
 mkdir -p "$ROOT"
+# 已在服务器更新过的新闻和翻译缓存优先于仓库中的初始快照。
+for file in data/news_snapshot.json data/lantis_news.json uma_tools/trans_cache.json; do
+  if [ -f "$ROOT/$file" ] && [ -f "$SRC/$file" ]; then
+    rm "$SRC/$file"
+  fi
+done
 cp -a "$SRC/." "$ROOT/"
+if [ -f "$ROOT/uma_tools/extract_albums.js" ]; then
+  rm "$ROOT/uma_tools/extract_albums.js"
+fi
 
 if [ "$(id -u)" = "0" ]; then
   echo "==> 修正属主为 $UMA_USER（否则服务写不了 data/ 快照）"
@@ -91,8 +103,11 @@ systemctl reload nginx
 
 echo "==> 重启服务载入新代码"
 systemctl restart umamusume.service
-echo "    等待启动抓取完成（新闻 20+ 页）..."
-sleep 15
+echo "    等待服务响应..."
+for attempt in {1..30}; do
+  if curl -fsS --max-time 2 http://127.0.0.1:8080/api/home-summary >/dev/null; then break; fi
+  sleep 1
+done
 
 echo "==> 自检"
 if command -v node >/dev/null 2>&1; then

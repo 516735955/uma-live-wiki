@@ -3651,7 +3651,13 @@ def build_music_only() -> dict[str, Any]:
 
 def comparable(value: Any) -> Any:
     if isinstance(value, dict):
-        return {key: comparable(item) for key, item in value.items() if key not in ("generated_at", "build_id")}
+        # Byte digests describe this checkout's LF/CRLF representation. The
+        # build still verifies unchanged source bytes before and after reading.
+        return {
+            key: ({name: {"preserved": info.get("preserved")} for name, info in item.items()}
+                  if key == "source_integrity" else comparable(item))
+            for key, item in value.items() if key not in ("generated_at", "build_id")
+        }
     if isinstance(value, list):
         return [comparable(item) for item in value]
     return value

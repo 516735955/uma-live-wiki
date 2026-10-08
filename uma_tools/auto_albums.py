@@ -8,7 +8,8 @@ import hashlib, json, os, re, sys, io, time, unicodedata, urllib.request
 if sys.version_info[0] == 2:
     sys.exit('requires python3')
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+if __name__ == '__main__':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BASE)
@@ -74,7 +75,7 @@ def norm(s):
 
 
 def norm_key(s):
-    return re.sub(r'20\d\d\s*remastered\s*version|remastered\s*version|op主題歌|ed主題歌|【通常盤】|【bd付限定盤】|【bd版】|remix|season\d+',
+    return re.sub(r'op主題歌|ed主題歌|【通常盤】|【bd付限定盤】|【bd版】',
                   '', norm(s), flags=re.I)
 
 
@@ -87,15 +88,18 @@ SERIES_PREFIXES = [
 
 
 def core_title_key(s):
-    """标题归一化作‘核心键’，忽略系列前缀/盘种/remaster 后缀差异，用于去重比较"""
+    """核心键忽略系列前缀和盘种，保留季数及录音版本。"""
     t = s or ''
     for p in SERIES_PREFIXES:
         if t.startswith(p):
             t = t[len(p):]
             break
     t = norm_key(t)
-    t = re.sub(r'20\d\dremaster($|edversion$)|remaster$', '', t)
     return t
+
+
+def version_key(title):
+    return re.findall(r'season\d+|(?:20\d\d)?remaster(?:ed)?(?:version)?|remix', norm(title))
 
 
 def local_today():
@@ -170,6 +174,8 @@ def search_queries(title):
 
 
 def score_album(title, a_name):
+    if version_key(title) != version_key(a_name):
+        return 0
     target = norm_key(title)
     s = norm_key(a_name)
     if target and s == target:
@@ -209,14 +215,29 @@ def netease_detail(album_id):
     return alb
 
 
+def full_audio_ids(tracks):
+    ids = [t.get('id') for t in tracks if t.get('id')]
+    if not ids:
+        return set()
+    result = http_json('https://music.163.com/api/song/enhance/player/url?' +
+                       urllib.parse.urlencode({'ids': json.dumps(ids), 'br': 320000}),
+                       {'user-agent': UA, 'referer': 'https://music.163.com/'}, tries=2)
+    durations = {t.get('id'): t.get('dt') or t.get('duration') or 0 for t in tracks}
+    return {item.get('id') for item in (result or {}).get('data') or []
+            if item.get('code') == 200 and item.get('url') and not item.get('freeTrialInfo')
+            and durations.get(item.get('id'), 0) > 0
+            and (item.get('time') or 0) >= durations[item.get('id')] - 2000}
+
+
 def build_songs(tracks, cover):
+    playable = full_audio_ids(tracks)
     out = []
     for t in tracks:
         arts = [a.get('name', '') for a in (t.get('ar') or t.get('artists') or [])]
         out.append({
             'name': t.get('name'),
             'artist': u'、'.join(a for a in arts if a),
-            'url': METING + str(t.get('id')),
+            'url': METING + str(t.get('id')) if t.get('id') in playable else '',
             'pic': cover})
     return out
 

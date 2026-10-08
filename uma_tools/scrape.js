@@ -19,7 +19,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function fetchJson(url, opts = {}, tries = 3) {
   for (let i = 1; i <= tries; i++) {
     try {
-      const r = await fetch(url, opts);
+      const r = await fetch(url, { ...opts, signal: AbortSignal.timeout(25000) });
       if (r.status === 200) return await r.json();
       if (r.status === 429) { await sleep(1200 * i); continue; }
       throw new Error('HTTP ' + r.status);
@@ -33,9 +33,16 @@ async function fetchJson(url, opts = {}, tries = 3) {
 function norm(s) {
   return String(s || '').replace(/[『』（）()\[\]「」・ー\u3000\s]/g, '').toLowerCase();
 }
-// 弱化版本/限定盘/主题歌/season 等包装，提升与网易云命中与库存去重的容错（norm 已去掉括号与空格）
+// 只忽略盘种包装；季数与录音版本参与匹配。
 function normKey(s) {
-  return norm(s).replace(/20\d\d\s*remastered\s*version|remastered\s*version|op主題歌|ed主題歌|【通常盤】|【bd付限定盤】|【bd版】|remix|season\d+/gi, '');
+  return norm(s).replace(/op主題歌|ed主題歌|【通常盤】|【bd付限定盤】|【bd版】/gi, '');
+}
+const versionKey = (title) => (norm(title).match(/season\d+|(?:20\d\d)?remaster(?:ed)?(?:version)?|remix/g) || []).join('|');
+function scoreAlbum(title, name) {
+  if (versionKey(title) !== versionKey(name)) return 0;
+  const target = normKey(title), candidate = normKey(name);
+  if (target && candidate === target) return 100;
+  return target.length >= 8 && candidate.length >= 8 && (target.includes(candidate) || candidate.includes(target)) ? 80 : 0;
 }
 function dateOf(ms) {
   if (!ms) return '';
@@ -81,13 +88,9 @@ async function neteaseSearchAlbum(title) {
     headers: { 'user-agent': UA, 'referer': 'https://music.163.com/' }
   });
   const albums = (j.result && j.result.albums) || [];
-  const target = normKey(title);
   let best = null, bestScore = 0;
   for (const a of albums) {
-    const s = normKey(a.name);
-    let score = 0;
-    if (s === target) score = 100;
-    else if (target.length >= 8 && s.length >= 8 && (s.indexOf(target) !== -1 || target.indexOf(s) !== -1)) score = 80;
+    const score = scoreAlbum(title, a.name);
     if (score > bestScore) { bestScore = score; best = a; }
   }
   return { best, score: bestScore };
@@ -99,6 +102,14 @@ async function neteaseAlbumDetail(album) {
   });
   if (!j || !j.album) return null;
   const tracks = (j.album.songs) || [];
+  let playable = new Set();
+  try {
+    const availability = await neteaseJson('https://music.163.com/api/song/enhance/player/url?' + new URLSearchParams({ ids: JSON.stringify(tracks.map((t) => t.id)), br: '320000' }), {
+      headers: { 'user-agent': UA, 'referer': 'https://music.163.com/' }
+    });
+    const durations = new Map(tracks.map((t) => [t.id, t.dt || t.duration || 0]));
+    playable = new Set((availability.data || []).filter((t) => t.code === 200 && t.url && !t.freeTrialInfo && durations.get(t.id) > 0 && t.time >= durations.get(t.id) - 2000).map((t) => t.id));
+  } catch (_) { /* 无法确认完整音源时只导入曲目信息。 */ }
   return {
     name: j.album.name || album.name,
     cover: (album.picUrl || album.blurPicUrl || ''),
@@ -107,7 +118,8 @@ async function neteaseAlbumDetail(album) {
     tracks: tracks.map((t) => ({
       name: t.name,
       artist: (t.ar || t.artists || []).map((a) => a.name).join('/'),
-      id: t.id
+      id: t.id,
+      playable: playable.has(t.id)
     }))
   };
 }
@@ -123,13 +135,13 @@ function buildCandidate(official, det) {
     songs: det.tracks.map((t) => ({
       name: t.name,
       artist: t.artist,
-      url: METING + t.id,
+      url: t.playable ? METING + t.id : '',
       pic: cover
     }))
   };
 }
 
-(async () => {
+async function main() {
   console.log('读取现有 albums.json ...');
   const existing = JSON.parse(fs.readFileSync(ALBUMS_JSON, 'utf8'));
   const existingNames = existing.map((a) => normKey(a.name));
@@ -143,7 +155,7 @@ function buildCandidate(official, det) {
   let found = 0, missing = 0;
   function isAlreadyInStock(key) {
     if (key.length < 12) return existingNames.includes(key);
-    return existingNames.some((e) => e === key || e.includes(key));
+    return existingNames.some((e) => e === key || (versionKey(e) === versionKey(key) && e.includes(key)));
   }
   for (const g of goods) {
     const title = g.title;
@@ -209,4 +221,6 @@ function buildCandidate(official, det) {
   console.log('新候选:', pending.length, '(可匹配:' + (pending.length - missing) + ', 未匹配:' + missing + ')');
   console.log('待审核文件: ' + PENDING_JSON);
   console.log('预览:      ' + PREVIEW_MD);
-})();
+}
+module.exports = { normKey, scoreAlbum, buildCandidate };
+if (require.main === module) main().catch((error) => { console.error(error.message); process.exitCode = 1; });

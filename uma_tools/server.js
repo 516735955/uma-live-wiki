@@ -123,6 +123,7 @@ function reloadLantis() {
 
 let newsIndexCache = { at: 0, data: null };
 let newsRefreshPromise = null;
+let newsRefreshRevision = 0;
 let newsSnapshotMtime = 0;
 
 // Adopt a snapshot only when it is newer than what memory already holds, so a
@@ -206,7 +207,7 @@ function sanitizeSensitive(text) {
   return out;
 }
 
-function translateOne(text, attempt) {
+function translateOne(text, attempt, sensitiveAttempt) {
   return new Promise((resolve) => {
     const salt = String(Date.now() + Math.floor(Math.random() * 1000));
     const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
@@ -227,12 +228,12 @@ function translateOne(text, attempt) {
           if ((code === '54003' || code === '54000') && (attempt || 0) < 3) {
             // rate-limited: wait and retry
             setTimeout(function () {
-              translateOne(text, (attempt || 0) + 1).then(resolve);
+              translateOne(text, (attempt || 0) + 1, sensitiveAttempt).then(resolve);
             }, 1200 * ((attempt || 0) + 1));
             return;
           }
           if (code === '20003') {
-            // sensitive word hit: try pre-replacing known terms, else segment-by-segment
+            if (sensitiveAttempt) { resolve(''); return; }
             translateSensitiveSafe(text).then(resolve);
             return;
           }
@@ -248,7 +249,7 @@ function translateSensitiveSafe(text) {
   return new Promise((resolve) => {
     const safe = sanitizeSensitive(text);
     if (safe !== text) {
-      translateOne(safe, 0).then(resolve);
+      translateOne(safe, 0, true).then(resolve);
       return;
     }
     // split on punctuation/space; translate each segment, keep failed ones as-is
@@ -267,7 +268,7 @@ function translateSensitiveSafe(text) {
     let done = 0;
     segs.forEach(function (seg, i) {
       if (!seg.trim()) { out[i] = seg; done++; if (done === segs.length) finish(); return; }
-      translateOne(seg, 0).then(function (zh) {
+      translateOne(seg, 0, true).then(function (zh) {
         out[i] = (zh && zh !== seg) ? zh : seg;
         done++;
         if (done === segs.length) finish();
@@ -309,8 +310,10 @@ function hasCjk(s) {
 }
 
 function translateBatchLines(lines, cb) {
+  let completed = false;
+  const finish = (value) => { if (!completed) { completed = true; cb(value); } };
   // translate multiple short text runs in one Baidu request (newline-joined)
-  if (!lines.length) return cb([]);
+  if (!lines.length) return finish([]);
   const text = lines.join('\n');
   const salt = String(Date.now() + Math.floor(Math.random() * 1000));
   const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
@@ -327,12 +330,12 @@ function translateBatchLines(lines, cb) {
           for (let i = 0; i < lines.length; i++) {
             out.push((j.trans_result[i] && j.trans_result[i].dst) || lines[i]);
           }
-          return cb(out);
+          return finish(out);
         }
         const code = j && j.error_code;
         if (code === '54003' || code === '54000') {
           // rate-limited: after a pause, caller retries by translating one by one
-          return cb(null);
+          return finish(null);
         }
         if (code === '20003') {
           // a line in this batch hit a sensitive word; translate each line via
@@ -340,7 +343,7 @@ function translateBatchLines(lines, cb) {
           let n = 0;
           const out = [];
           const walk = function (i) {
-            if (i >= lines.length) return cb(out);
+            if (i >= lines.length) return finish(out);
             translateSensitiveSafe(lines[i]).then(function (zh) {
               out[i] = (zh && zh !== lines[i]) ? zh : lines[i];
               walk(i + 1);
@@ -349,11 +352,11 @@ function translateBatchLines(lines, cb) {
           walk(0);
           return;
         }
-        cb(lines);
-      } catch (e) { cb(lines); }
+        finish(null);
+      } catch (e) { finish(null); }
     });
-  }).on('error', () => cb(lines))
-    .setTimeout(20000, function () { this.destroy(); cb(null); });
+  }).on('error', () => finish(null))
+    .setTimeout(20000, function () { this.destroy(); finish(null); });
 }
 
 function translateHtmlMessage(html, cb) {
@@ -361,7 +364,7 @@ function translateHtmlMessage(html, cb) {
   if (!src) return cb('');
   const hash = crypto.createHash('md5').update(src).digest('hex');
   const key = 'msg_' + hash;
-  if (transCache[key]) return cb(transCache[key]);
+  if (transCache[key] && transCache[key] !== src) return cb(transCache[key]);
   if (!BAIDU_APPID || !BAIDU_SECRET) return cb(src);
   // tokenize: alternates text / tag
   const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
@@ -396,6 +399,7 @@ function translateHtmlMessage(html, cb) {
         const chain = function (i) {
           if (i >= chunk.length) { done++; if (done === chunks.length) finish(); return; }
           translateOne(chunk[i].text, 0).then(function (zh) {
+            if (!zh || zh === chunk[i].text) failed = true;
             translated[chunk[i].idx] = zh || chunk[i].text;
             chain(i + 1);
           });
@@ -404,6 +408,7 @@ function translateHtmlMessage(html, cb) {
         return;
       }
       outs.forEach(function (zh, k) {
+        if (!zh || zh === chunk[k].text) failed = true;
         translated[chunk[k].idx] = zh || chunk[k].text;
       });
       done++;
@@ -415,9 +420,11 @@ function translateHtmlMessage(html, cb) {
       if (translated[i] !== undefined) return translated[i];
       return tok;
     }).join('');
-    transCache[key] = out;
-    transDirty = true;
-    saveTransCache();
+    if (!failed) {
+      transCache[key] = out;
+      transDirty = true;
+      saveTransCache();
+    }
     cb(out);
   }
 }
@@ -600,6 +607,7 @@ function backfillNewsImages(list, cb) {
       active++;
       httpsGet(NEWS_DETAIL_URL + '&announce_id=' + item.announce_id, (err, json) => {
         active--;
+        if (finished) return;
         if (!err && json && json.detail) {
           const d = json.detail;
           const img = d.image || d.image_big || extractFirstImage(d.message) || '';
@@ -615,14 +623,20 @@ function backfillNewsImages(list, cb) {
   setTimeout(() => { if (!finished) finish(); }, BACKFILL_TIMEOUT);
 }
 
+let newsSnapshotWrite = Promise.resolve();
 function persistNewsSnapshot(data) {
-  const tempPath = NEWS_SNAPSHOT_FILE + '.' + process.pid + '.tmp';
-  fs.promises.writeFile(tempPath, JSON.stringify(data))
-    .then(() => fs.promises.rename(tempPath, NEWS_SNAPSHOT_FILE))
-    .catch((error) => {
-      console.error('[news] snapshot write failed:', (error && error.message) || error);
-      fs.promises.unlink(tempPath).catch(() => {});
-    });
+  const body = JSON.stringify(data);
+  newsSnapshotWrite = newsSnapshotWrite.then(async () => {
+    const tempPath = NEWS_SNAPSHOT_FILE + '.' + process.pid + '.tmp';
+    try {
+      await fs.promises.writeFile(tempPath, body, { mode: 0o644 });
+      await fs.promises.rename(tempPath, NEWS_SNAPSHOT_FILE);
+    } catch (error) {
+      console.error('[news] snapshot write failed:', error.message || error);
+      await fs.promises.unlink(tempPath).catch(() => {});
+    }
+  });
+  return newsSnapshotWrite;
 }
 
 // CD相关 合并进快照：用当前快照里的官网条目 + 最新 CD相关 条目重建合并列表，
@@ -665,26 +679,31 @@ function reloadLantisIfNewer() {
 
 function refreshNewsIndex() {
   if (newsRefreshPromise) return newsRefreshPromise;
+  const revision = ++newsRefreshRevision;
   // 看门狗：即使底层挂死，也在 3 分钟后强制落地并释放 promise，
   // 否则一次挂死会永久挡住所有后续刷新（且不留任何日志）。
   let rejectRef = null;
   const watchdog = setTimeout(() => {
     if (rejectRef) {
+      newsRefreshRevision += 1;
+      newsIndexCache = { at: Date.now(), data: newsIndexCache.data };
       console.error('[news] refresh watchdog fired (180s), aborting');
       const reject = rejectRef;
       rejectRef = null;
       reject(new Error('refresh watchdog (180s)'));
     }
   }, 180000);
-  newsRefreshPromise = new Promise((resolve, reject) => {
+  const refresh = new Promise((resolve, reject) => {
     // On failure, push the freshness marker forward so visitor traffic cannot
     // hammer the upstream while it is down (retry at most once per NEWS_TTL).
     const fail = (err) => {
+      if (revision !== newsRefreshRevision) return;
       newsIndexCache = { at: Date.now(), data: newsIndexCache.data };
       if (rejectRef) { const r = rejectRef; rejectRef = null; r(err); }
     };
     rejectRef = reject;
     fetchNewsPageRetry(1, (err, first) => {
+      if (revision !== newsRefreshRevision) return;
       if (err) { fail(err); return; }
       const total = parseInt(first.total_page_count, 10) || 1;
       const slots = new Array(total);
@@ -704,7 +723,7 @@ function refreshNewsIndex() {
           active++;
           fetchNewsPageRetry(page, (pageError, json) => {
             active--;
-            if (failed) return;
+            if (failed || revision !== newsRefreshRevision) return;
             if (pageError) {
               failed = true;
               fail(pageError);
@@ -719,6 +738,7 @@ function refreshNewsIndex() {
       }
 
       function publish() {
+        if (revision !== newsRefreshRevision) return;
         const seen = new Set();
         const list = [];
         for (let index = 1; index <= total; index++) {
@@ -747,9 +767,23 @@ function refreshNewsIndex() {
 
         // Image discovery and translation improve the next response but never
         // delay the list currently being read by a visitor.
-        backfillNewsImages(list, () => {
-          newsIndexCache = { at: Date.now(), data };
-          persistNewsSnapshot(data);
+        const imageRows = list.map((item) => Object.assign({}, item));
+        backfillNewsImages(imageRows, () => {
+          const current = newsIndexCache.data;
+          if (!current) return;
+          const images = new Map(imageRows.filter((item) => item.image).map((item) => [String(item.announce_id), item.image]));
+          let changed = false;
+          const items = current.information_list.map((item) => {
+            const image = images.get(String(item.announce_id));
+            if (item.image || !image) return item;
+            changed = true;
+            return Object.assign({}, item, { image });
+          });
+          if (changed) {
+            const updated = Object.assign({}, current, { information_list: items });
+            newsIndexCache = { at: newsIndexCache.at, data: updated };
+            persistNewsSnapshot(updated);
+          }
         });
         list.forEach((item) => {
           if (!item.title_zh) translateTitle(item.title, function () {});
@@ -757,8 +791,9 @@ function refreshNewsIndex() {
       }
       pump();
     });
-  }).finally(() => { clearTimeout(watchdog); newsRefreshPromise = null; });
-  return newsRefreshPromise;
+  }).finally(() => { clearTimeout(watchdog); if (newsRefreshPromise === refresh) newsRefreshPromise = null; });
+  newsRefreshPromise = refresh;
+  return refresh;
 }
 
 function newsResponseSnapshot() {
@@ -777,7 +812,7 @@ function handleNewsIndex(res) {
   if (cached) {
     sendJson(res, 200, cached, {
       cacheControl: 'public, max-age=60, stale-while-revalidate=300',
-      etag: '"news-' + crypto.createHash('sha1').update(String(cached.generated_at || '')).digest('hex').slice(0, 12) + '"'
+      etag: '"news-' + crypto.createHash('sha1').update(JSON.stringify(cached)).digest('hex').slice(0, 12) + '"'
     });
     if (!NO_AUTO_CRAWL) {
       // CD相关 与官网新闻各自按需 TTL 补抓，互不牵制。
@@ -1138,8 +1173,8 @@ function serveFile(filePath, req, res) {
       return;
     }
     const input = fs.createReadStream(filePath);
-    if (shouldCompress) input.pipe(zlib.createGzip()).pipe(res);
-    else input.pipe(res);
+    const streams = shouldCompress ? [input, zlib.createGzip(), res] : [input, res];
+    pipeline(...streams, (error) => { if (error && !res.destroyed) res.destroy(error); });
   });
 }
 
@@ -1171,6 +1206,7 @@ server.listen(PORT, () => {
 const { execFile } = require('child_process');
 const CRAWL_SCRIPT = path.join(__dirname, 'crawl_events.py');
 const OFFICIAL_PROGRAM_SCRIPT = path.join(__dirname, 'crawl_official_programs.py');
+const CATALOG_CRAWL_TIMEOUT = 60 * 60 * 1000;
 let crawlRunning = false;
 let catalogRefreshRunning = false;
 let catalogRefreshQueued = false;
@@ -1193,7 +1229,7 @@ function runCharsCrawl(reason, done) {
   if (charsRunning) { if (done) done(); return; }
   charsRunning = true;
   const t0 = Date.now();
-  execFile(PYTHON_BIN, [CHARS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [CHARS_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
     charsRunning = false;
     const tag = '[chars-crawl ' + reason + ']';
     if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -1207,7 +1243,7 @@ function runEventsCrawl(reason, done) {
   if (crawlRunning) { if (done) done(); return; }
   crawlRunning = true;
   const t0 = Date.now();
-  execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
     const tag = '[events-crawl ' + reason + ']';
     if (err) {
       console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -1224,7 +1260,7 @@ function runEventBuild(reason, done) {
   // Program discovery rebuilds and validates the unified catalogs itself.
   // Voice-actor biographies are a slower, separately reviewed maintenance job
   // and must not be re-scraped by every six-hour event refresh.
-  execFile(PYTHON_BIN, [OFFICIAL_PROGRAM_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [OFFICIAL_PROGRAM_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
     const tag = '[events-build ' + reason + ']';
     if (err) {
       console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
@@ -1263,7 +1299,7 @@ function runAlbumsCrawl(reason, done) {
   if (albumsRunning) { if (done) done(); return; }
   albumsRunning = true;
   const t0 = Date.now();
-  execFile(PYTHON_BIN, [ALBUMS_SCRIPT], { windowsHide: true }, (err, stdout, stderr) => {
+  execFile(PYTHON_BIN, [ALBUMS_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
     albumsRunning = false;
     const tag = '[albums-crawl ' + reason + ']';
     if (err) {
