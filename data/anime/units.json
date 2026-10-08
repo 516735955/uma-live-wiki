@@ -4306,7 +4306,16 @@
             {
               "title": "笠松競馬 ファンファーレ（重賞）",
               "usage_type": "fanfare",
-              "credits": [],
+              "credits": [
+                {
+                  "role": "音源协力",
+                  "names": [],
+                  "institutions": [
+                    "笠松競馬場"
+                  ],
+                  "creator_ids": []
+                }
+              ],
               "institutions": [
                 "笠松赛马场"
               ],
@@ -4327,6 +4336,28 @@
                   "institutions": [],
                   "creator_ids": [
                     "creator-500b86dc49"
+                  ]
+                },
+                {
+                  "role": "作曲",
+                  "names": [
+                    "市橋卓也"
+                  ],
+                  "institutions": [
+                    "Cygames"
+                  ],
+                  "creator_ids": [
+                    "creator-cf49f62a1e"
+                  ]
+                },
+                {
+                  "role": "编曲",
+                  "names": [
+                    "中野領太"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-6908c87649"
                   ]
                 }
               ],

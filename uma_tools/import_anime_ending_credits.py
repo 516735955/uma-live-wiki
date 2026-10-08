@@ -198,6 +198,10 @@ def main():
                                       "relation_type": "uses_song", "target_type": "song",
                                       "target_id": cue["song_id"], "usage_type": usage,
                                       "label": "", "evidence_refs": [ref]})
+            names = cue.get("names", [])
+            creator_ids = [creator_names[normalized(name)] for name in names]
+            credit = {"role": role_label(cue["role"]), "names": names,
+                      "institutions": cue.get("institutions", []), "creator_ids": creator_ids}
             matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])]
             if matches:
                 for row in matches:
@@ -205,13 +209,12 @@ def main():
                     row["usage_type"] = usage
                     if cue.get("song_id"):
                         row["song_id"] = cue["song_id"]
+                    if credit not in row.setdefault("credits", []):
+                        row["credits"].append(credit)
                 continue
-            names = cue.get("names", [])
-            creator_ids = [creator_names[normalized(name)] for name in names]
             detail.setdefault("music_cues", []).append({
                 "title": cue["title"], "usage_type": usage,
-                "credits": [{"role": role_label(cue["role"]), "names": names,
-                             "institutions": cue.get("institutions", []), "creator_ids": creator_ids}],
+                "credits": [credit],
                 "institutions": [], "source_refs": [ref], "source_time": cue["time"]})
             if cue.get("song_id"):
                 detail["music_cues"][-1]["song_id"] = cue["song_id"]

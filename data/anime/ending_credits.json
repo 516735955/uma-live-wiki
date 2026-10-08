@@ -86352,13 +86352,36 @@
       "music_cues": [
         {
           "title": "BRIGHTEST HEART",
-          "song_id": "song-brightest-heart-dd824b4715",
-          "usage_type": "insert",
           "role": "作詞",
           "names": [
             "真崎エリカ"
           ],
-          "time": 1313.768006
+          "time": 1313.768006,
+          "song_id": "song-brightest-heart-dd824b4715",
+          "usage_type": "insert"
+        },
+        {
+          "title": "BRIGHTEST HEART",
+          "role": "作曲",
+          "names": [
+            "市橋卓也"
+          ],
+          "time": 1313.768006,
+          "institutions": [
+            "Cygames"
+          ],
+          "song_id": "song-brightest-heart-dd824b4715",
+          "usage_type": "insert"
+        },
+        {
+          "title": "BRIGHTEST HEART",
+          "role": "編曲",
+          "names": [
+            "中野領太"
+          ],
+          "time": 1313.768006,
+          "song_id": "song-brightest-heart-dd824b4715",
+          "usage_type": "insert"
         },
         {
           "title": "笠松競馬 ファンファーレ（重賞）",
