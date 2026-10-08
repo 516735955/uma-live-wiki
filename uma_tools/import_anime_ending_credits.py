@@ -144,7 +144,14 @@ def main():
             if signature == "トレーナー" and work in {"anime-s1", "anime-s2", "anime-s3", "anime-1st-anniversary"}:
                 character = next(c for c in characters if c["id"] == "spica_trainer")
             else:
-                character = None if narrator else character_names[normalized(signature)]
+                if narrator:
+                    character = None
+                else:
+                    key = normalized(signature)
+                    # A credited costume name follows the explicitly named character.
+                    if key not in character_names:
+                        key = re.split(r"[（(]", key, maxsplit=1)[0]
+                    character = character_names[key]
             voice = voice_names[normalized(actor)]
             target = character["id"] if character else voice["id"]
             checked_cast.add((target, voice["id"]))
