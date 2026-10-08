@@ -526,6 +526,7 @@ const umaApp = createApp({
       const unitId = animeContentUnit.value && animeContentUnit.value.id;
       const resources = (animeCatalog.value.watch_resources || []).filter(function (resource) {
         const scope = resource.scope || {};
+        if (!['official','licensed'].includes(resource.authority)) return false;
         if (!['active','region_limited'].includes(resource.status)) return false;
         if (!['full_episode','playlist','series'].includes(resource.content_type)) return false;
         if (workId === 'anime-rttt' && animeEdition.value === 'film' && resource.edition !== 'film') return false;
@@ -533,7 +534,7 @@ const umaApp = createApp({
         return scope.id === workId && (!unitId || (resource.unit_ids || []).includes(unitId));
       });
       return resources.filter(resource => !unitId || resource.scope.type === 'unit' || !resources.some(other => other.scope.type === 'unit' && other.platform === resource.platform && other.authority === resource.authority)).sort(function (a, b) {
-        const score = { official: 0, licensed: 1, community: 2 };
+        const score = { official: 0, licensed: 1 };
         return (score[a.authority] ?? 9) - (score[b.authority] ?? 9);
       });
     });

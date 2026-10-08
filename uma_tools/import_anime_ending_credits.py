@@ -1,4 +1,4 @@
-"""Import manually checked official ending credits with individual scope."""
+"""Import manually checked on-screen credits with individual scope."""
 
 import argparse
 import json
@@ -58,7 +58,7 @@ def main():
             continue
         ref = "official-ending-" + unit
         if not any(s["id"] == ref for s in sources):
-            sources.append({"id": ref, "kind": "official", "label": "官方单集片尾职员表", "url": episode["url"],
+            sources.append({"id": ref, "kind": episode.get("source_kind", "official"), "label": "单集原始片尾职员表", "url": episode["url"],
                             "observed_at": documents["ending_credits"]["observed_at"]})
         signatures = list(episode.get("staff", []))
         for block in episode.get("staff_groups", []):
