@@ -1330,6 +1330,12 @@
             font-weight: 800;
             font-variant-numeric: tabular-nums;
         }
+        .event-catalog-row > time.event-date-range {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        .event-catalog-row > time.event-date-range > span:nth-child(2) { text-align: center; }
         .event-catalog-main,
         .song-catalog-row > span,
         .album-catalog-row > span { min-width: 0; }
@@ -1881,6 +1887,7 @@
             }
             .event-catalog-cover { grid-row: 1 / 4; width: 92px; }
             .event-catalog-row > time { grid-column: 2; grid-row: 1; }
+            .event-catalog-row > time.event-date-range { flex-direction: row; gap: 6px; }
             .event-catalog-main { grid-column: 2; grid-row: 2; }
             .event-catalog-facts { grid-column: 2; grid-row: 3; justify-content: flex-start; }
             .event-catalog-row > svg { grid-column: 3; grid-row: 1 / 4; }
