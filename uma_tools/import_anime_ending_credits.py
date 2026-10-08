@@ -128,9 +128,14 @@ def main():
                 credits.append(row)
                 added += 1
         if episode.get("staff_status") == "complete":
-            # A checked full credit roll supersedes unmatched partial transcriptions.
+            # A corrected full roll replaces stale spellings from its own earlier transcription.
+            checked_staff = {(role_label(s["role"]), normalized(s.get("name", s.get("organization", ""))),
+                              group_label(s.get("group", ""))) for s in signatures}
             obsolete = [c for c in credits if c.get("unit_id") == unit
-                        and c.get("source_ref", "").startswith("staff-transcript-")]
+                        and (c.get("source_ref", "").startswith("staff-transcript-") or
+                             c.get("source_ref") == ref and
+                             (role_label(c["role"]), normalized(c["name"]), group_label(c.get("group", "")))
+                             not in checked_staff)]
             if obsolete:
                 episode.setdefault("superseded_transcript", []).extend(obsolete)
             superseded_staff += len(obsolete)

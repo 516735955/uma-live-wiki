@@ -57,7 +57,7 @@ ROLES = {
     "Directed by": "指导", "Mixed at": "混音场所", "Recorded at": "录音场所",
     "Music Recording & Mixing Engineer": "音乐录音与混音工程师",
     "Music Scoring Recordist": "配乐录音师", "Musician's Coordinate": "乐手协调",
-    "Orchestrator": "管弦乐编配", "Production Assistait": "制作助理",
+    "Orchestrator": "管弦乐编配", "Production Assistait": "制作助理", "Production Assistant": "制作助理",
     "Programming & All Other Instruments": "程序编曲与其他乐器",
     "Score, Programming & Sampling Team": "乐谱、程序编曲与采样团队",
     "Special Thanks": "特别鸣谢", "Strings": "弦乐", "Artist Management": "艺人管理",
@@ -101,5 +101,5 @@ def group_label(raw):
         return "片头动画"
     if raw.startswith("エンディング"):
         return "片尾动画"
-    return {"本編": "本篇", "音響": "音响", "ライブパート": "舞台动画",
+    return {"本編": "本篇", "音響": "音响", "音楽": "音乐", "資料協力": "资料协力", "ライブパート": "舞台动画",
             "モーションキャプチャー": "动作捕捉"}.get(raw, raw)

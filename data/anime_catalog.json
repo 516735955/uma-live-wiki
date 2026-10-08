@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-e8f8a8a9850f2827",
+  "build_id": "anime-cadf3cd9e3806a49",
   "generated_at": "2026-10-08T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -9,8 +9,8 @@
     "scheduled_units": 0,
     "watch_resources": 130,
     "relations": 1971,
-    "staff_credits": 21612,
-    "staff_people": 2891
+    "staff_credits": 21614,
+    "staff_people": 2876
   },
   "works": [
     {
@@ -33290,7 +33290,7 @@
       "target_type": "character",
       "target_id": "kitaharajo",
       "voice_actor_id": "va-0187",
-      "signature": "北原 穣",
+      "signature": "北原穣",
       "label": "",
       "display_order": 2,
       "evidence_refs": [
@@ -33436,7 +33436,7 @@
       "voice_actor_id": "va-0151",
       "signature": "ナレーション",
       "label": "旁白",
-      "display_order": 21,
+      "display_order": 18,
       "evidence_refs": [
         "broadcast-cast-anime-cinderella-gray-e01",
         "official-ending-anime-cinderella-gray-e01"
@@ -200156,38 +200156,6 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 154,
-      "role": "录音调音",
-      "group": "",
-      "name": "平佳介",
-      "source_time": 1385,
-      "person_id": "staff-平佳介",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "録音調整",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 155,
-      "role": "录音助理",
-      "group": "",
-      "name": "佐藤希花",
-      "source_time": 1385,
-      "person_id": "staff-佐藤希花",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "録音助手",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
       "order": 156,
       "role": "音响效果",
       "group": "",
@@ -200434,7 +200402,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 171,
+      "order": 172,
       "role": "原画",
       "group": "片头动画",
       "name": "伊藤正士",
@@ -200453,7 +200421,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 172,
+      "order": 173,
       "role": "原画",
       "group": "片头动画",
       "name": "井上廉太",
@@ -200472,7 +200440,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 173,
+      "order": 174,
       "role": "原画",
       "group": "片头动画",
       "name": "村田駿",
@@ -200491,7 +200459,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 174,
+      "order": 175,
       "role": "原画",
       "group": "片头动画",
       "name": "西願宏子",
@@ -200510,7 +200478,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 175,
+      "order": 176,
       "role": "原画",
       "group": "片头动画",
       "name": "愛甲剣士",
@@ -200529,7 +200497,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 176,
+      "order": 177,
       "role": "原画",
       "group": "片头动画",
       "name": "落合良亮",
@@ -200548,7 +200516,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 177,
+      "order": 178,
       "role": "原画",
       "group": "片头动画",
       "name": "泉美咲",
@@ -200567,7 +200535,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 178,
+      "order": 179,
       "role": "原画",
       "group": "片头动画",
       "name": "Miya",
@@ -200586,7 +200554,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 179,
+      "order": 180,
       "role": "原画",
       "group": "片头动画",
       "name": "おだし",
@@ -200605,7 +200573,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 180,
+      "order": 181,
       "role": "第二原画",
       "group": "片头动画",
       "name": "吉井琴葉",
@@ -200621,7 +200589,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 181,
+      "order": 182,
       "role": "第二原画",
       "group": "片头动画",
       "name": "水口大輔",
@@ -200637,7 +200605,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 182,
+      "order": 183,
       "role": "第二原画",
       "group": "片头动画",
       "name": "NAM SANG-TAE",
@@ -200653,7 +200621,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 183,
+      "order": 184,
       "role": "第二原画",
       "group": "片头动画",
       "name": "米田有希",
@@ -200672,7 +200640,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 184,
+      "order": 185,
       "role": "中间动画检查",
       "group": "片头动画",
       "name": "楊詩蘋",
@@ -200688,45 +200656,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 185,
-      "role": "中间动画",
-      "group": "片头动画",
-      "name": "新家航芽",
-      "source_time": 1391,
-      "person_id": "staff-新家航芽",
-      "institutions": [
-        "CygamesPictures"
-      ],
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "動画",
-      "group_raw": "オープニングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 186,
-      "role": "中间动画",
-      "group": "片头动画",
-      "name": "吉田珠斗",
-      "source_time": 1391,
-      "person_id": "staff-吉田珠斗",
-      "institutions": [
-        "CygamesPictures"
-      ],
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "動画",
-      "group_raw": "オープニングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 187,
+      "order": 188,
       "role": "中间动画",
       "group": "片头动画",
       "name": "セブンシーズ",
@@ -200742,7 +200672,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 188,
+      "order": 189,
       "role": "色彩指定／上色检查",
       "group": "片头动画",
       "name": "野口幸恵",
@@ -200758,7 +200688,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 189,
+      "order": 190,
       "role": "上色",
       "group": "片头动画",
       "name": "成毛久美子",
@@ -200777,7 +200707,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 190,
+      "order": 191,
       "role": "上色",
       "group": "片头动画",
       "name": "丸尾悠稀乃",
@@ -200796,7 +200726,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 191,
+      "order": 192,
       "role": "上色",
       "group": "片头动画",
       "name": "古谷凌",
@@ -200815,7 +200745,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 193,
+      "order": 194,
       "role": "上色",
       "group": "片头动画",
       "name": "セブンシーズ",
@@ -200831,7 +200761,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 194,
+      "order": 195,
       "role": "背景",
       "group": "片头动画",
       "name": "今村優美",
@@ -200850,7 +200780,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 195,
+      "order": 196,
       "role": "背景",
       "group": "片头动画",
       "name": "張思遠",
@@ -200869,7 +200799,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 196,
+      "order": 197,
       "role": "背景",
       "group": "片头动画",
       "name": "岡本朗",
@@ -200888,7 +200818,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 197,
+      "order": 198,
       "role": "背景",
       "group": "片头动画",
       "name": "佐藤里咲",
@@ -200907,7 +200837,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 198,
+      "order": 199,
       "role": "背景",
       "group": "片头动画",
       "name": "並川颯",
@@ -200926,7 +200856,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 199,
+      "order": 200,
       "role": "3D CG",
       "group": "片头动画",
       "name": "西脇弥",
@@ -200945,7 +200875,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 200,
+      "order": 201,
       "role": "3D CG",
       "group": "片头动画",
       "name": "Qin Ziao",
@@ -200964,7 +200894,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 201,
+      "order": 202,
       "role": "摄影监督",
       "group": "片头动画",
       "name": "岡崎正春",
@@ -200980,39 +200910,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 202,
-      "role": "摄影",
-      "group": "片头动画",
-      "name": "佐藤紋",
-      "source_time": 1391,
-      "person_id": "staff-佐藤紋",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "撮影",
-      "group_raw": "オープニングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 203,
-      "role": "摄影",
-      "group": "片头动画",
-      "name": "林江里紗",
-      "source_time": 1391,
-      "person_id": "staff-林江里紗",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "撮影",
-      "group_raw": "オープニングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 204,
+      "order": 205,
       "role": "摄影",
       "group": "片头动画",
       "name": "伊藤茜",
@@ -201021,21 +200919,8 @@
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
       ],
-      "role_raw": "撮影",
-      "group_raw": "オープニングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 205,
-      "role": "摄影",
-      "group": "片头动画",
-      "name": "菊池優太郎",
-      "source_time": 1391,
-      "person_id": "staff-菊池優太郎",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
+      "institutions": [
+        "CygamesPictures"
       ],
       "role_raw": "撮影",
       "group_raw": "オープニングアニメーション"
@@ -201047,11 +200932,14 @@
       "order": 206,
       "role": "摄影",
       "group": "片头动画",
-      "name": "岡崎剛",
+      "name": "菊池優太郎",
       "source_time": 1391,
-      "person_id": "staff-岡崎剛",
+      "person_id": "staff-菊池優太郎",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
+      ],
+      "institutions": [
+        "CygamesPictures"
       ],
       "role_raw": "撮影",
       "group_raw": "オープニングアニメーション"
@@ -201060,26 +200948,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 207,
-      "role": "灯光",
-      "group": "片头动画",
-      "name": "斉藤亮",
-      "source_time": 1391,
-      "person_id": "staff-斉藤亮",
-      "institutions": [
-        "Pinapics"
-      ],
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "ライティング",
-      "group_raw": "オープニングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 208,
+      "order": 209,
       "role": "制作统筹",
       "group": "片头动画",
       "name": "西口拓人",
@@ -201095,7 +200964,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 209,
+      "order": 210,
       "role": "分镜／动画演出／原画",
       "group": "片尾动画",
       "name": "松本顕吾",
@@ -201111,7 +200980,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 210,
+      "order": 211,
       "role": "中间动画检查",
       "group": "片尾动画",
       "name": "宮本真衣",
@@ -201127,7 +200996,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 211,
+      "order": 212,
       "role": "中间动画",
       "group": "片尾动画",
       "name": "セブンシーズ",
@@ -201143,7 +201012,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 212,
+      "order": 213,
       "role": "中间动画",
       "group": "片尾动画",
       "name": "硴井遥仁",
@@ -201159,7 +201028,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 213,
+      "order": 214,
       "role": "色彩指定／上色检查",
       "group": "片尾动画",
       "name": "岡崎菜々子",
@@ -201175,7 +201044,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 214,
+      "order": 215,
       "role": "上色",
       "group": "片尾动画",
       "name": "セブンシーズ",
@@ -201191,7 +201060,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 215,
+      "order": 216,
       "role": "上色",
       "group": "片尾动画",
       "name": "丸尾悠稀乃",
@@ -201207,7 +201076,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 216,
+      "order": 217,
       "role": "上色",
       "group": "片尾动画",
       "name": "古谷凌",
@@ -201223,7 +201092,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 217,
+      "order": 218,
       "role": "背景",
       "group": "片尾动画",
       "name": "狹田修",
@@ -201239,23 +201108,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 218,
-      "role": "摄影监督",
-      "group": "片尾动画",
-      "name": "許展禎",
-      "source_time": 1394,
-      "person_id": "staff-許展禎",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "撮影監督",
-      "group_raw": "エンディングアニメーション"
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 219,
+      "order": 220,
       "role": "特效",
       "group": "片尾动画",
       "name": "山田可奈子",
@@ -201271,7 +201124,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 220,
+      "order": 221,
       "role": "制作统筹",
       "group": "片尾动画",
       "name": "最上陸",
@@ -201287,7 +201140,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 221,
+      "order": 222,
       "role": "联合制片人",
       "group": "",
       "name": "郡司一貴",
@@ -201303,7 +201156,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 222,
+      "order": 223,
       "role": "联合制片人",
       "group": "",
       "name": "深田有紀",
@@ -201319,7 +201172,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 223,
+      "order": 224,
       "role": "宣传制片人",
       "group": "",
       "name": "郡司一貴",
@@ -201335,7 +201188,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 224,
+      "order": 225,
       "role": "宣传",
       "group": "",
       "name": "中澤貴大",
@@ -201351,7 +201204,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 225,
+      "order": 226,
       "role": "宣传",
       "group": "",
       "name": "林尚賢",
@@ -201367,7 +201220,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 226,
+      "order": 227,
       "role": "宣传",
       "group": "",
       "name": "今岡佐知子",
@@ -201383,7 +201236,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 227,
+      "order": 228,
       "role": "宣传",
       "group": "",
       "name": "小野崎風香",
@@ -201399,7 +201252,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 228,
+      "order": 229,
       "role": "宣传协力",
       "group": "",
       "name": "金牧智広",
@@ -201415,7 +201268,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 229,
+      "order": 230,
       "role": "宣传协力",
       "group": "",
       "name": "伊東美於",
@@ -201431,7 +201284,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 230,
+      "order": 231,
       "role": "宣传协力",
       "group": "",
       "name": "長尾つゆ美",
@@ -201447,7 +201300,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 231,
+      "order": 232,
       "role": "节目宣传",
       "group": "",
       "name": "遠西亮幸",
@@ -201463,7 +201316,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 232,
+      "order": 233,
       "role": "节目宣传",
       "group": "",
       "name": "糸井桂子",
@@ -201479,7 +201332,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 233,
+      "order": 234,
       "role": "编排",
       "group": "",
       "name": "森岡梢",
@@ -201495,7 +201348,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 234,
+      "order": 235,
       "role": "编排",
       "group": "",
       "name": "中野翔貴",
@@ -201511,7 +201364,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 235,
+      "order": 236,
       "role": "日本授权",
       "group": "",
       "name": "八木正忠",
@@ -201527,23 +201380,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 236,
-      "role": "日本授权",
-      "group": "",
-      "name": "松本章也",
-      "source_time": 1397,
-      "person_id": "staff-松本章也",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "国内ライセンス",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 237,
+      "order": 238,
       "role": "日本授权",
       "group": "",
       "name": "大竹優樹",
@@ -201559,7 +201396,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 238,
+      "order": 239,
       "role": "日本授权",
       "group": "",
       "name": "小出英南子",
@@ -201575,7 +201412,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 239,
+      "order": 240,
       "role": "日本授权",
       "group": "",
       "name": "中村朱里",
@@ -201591,7 +201428,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 240,
+      "order": 241,
       "role": "日本授权",
       "group": "",
       "name": "飯田竜太",
@@ -201607,7 +201444,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 241,
+      "order": 242,
       "role": "日本授权",
       "group": "",
       "name": "森賀滝人",
@@ -201623,7 +201460,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 242,
+      "order": 243,
       "role": "日本授权",
       "group": "",
       "name": "宮原瑛偉",
@@ -201639,7 +201476,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 243,
+      "order": 244,
       "role": "日本授权",
       "group": "",
       "name": "江戸勇太",
@@ -201655,7 +201492,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 244,
+      "order": 245,
       "role": "日本授权",
       "group": "",
       "name": "中野正幸",
@@ -201671,23 +201508,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 245,
-      "role": "日本授权",
-      "group": "",
-      "name": "清水哲史",
-      "source_time": 1397,
-      "person_id": "staff-清水哲史",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "国内ライセンス",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 246,
+      "order": 247,
       "role": "海外授权",
       "group": "",
       "name": "二瓶茂人",
@@ -201703,7 +201524,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 247,
+      "order": 248,
       "role": "海外授权",
       "group": "",
       "name": "戒能大樹",
@@ -201719,7 +201540,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 248,
+      "order": 249,
       "role": "海外授权",
       "group": "",
       "name": "山本義将",
@@ -201735,7 +201556,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 249,
+      "order": 250,
       "role": "海外授权",
       "group": "",
       "name": "西野翔子",
@@ -201751,7 +201572,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 250,
+      "order": 251,
       "role": "日本上线",
       "group": "",
       "name": "二瓶茂人",
@@ -201767,7 +201588,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 251,
+      "order": 252,
       "role": "日本上线",
       "group": "",
       "name": "鹿嶌舞",
@@ -201783,7 +201604,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 252,
+      "order": 253,
       "role": "影碟制作与宣传",
       "group": "",
       "name": "城戸宏幸",
@@ -201799,7 +201620,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 253,
+      "order": 254,
       "role": "影碟制作与宣传",
       "group": "",
       "name": "高橋秀美",
@@ -201815,7 +201636,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 254,
+      "order": 255,
       "role": "影碟制作与宣传",
       "group": "",
       "name": "松村育子",
@@ -201831,7 +201652,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 255,
+      "order": 256,
       "role": "影碟制作与宣传",
       "group": "",
       "name": "松浦麻貴",
@@ -201847,7 +201668,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 256,
+      "order": 257,
       "role": "标题标志",
       "group": "",
       "name": "東野裕隆",
@@ -201863,7 +201684,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 257,
+      "order": 258,
       "role": "宣传片制作",
       "group": "",
       "name": "寺原泰地",
@@ -201879,7 +201700,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 258,
+      "order": 259,
       "role": "宣传片制作",
       "group": "",
       "name": "中川啓",
@@ -201895,7 +201716,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 259,
+      "order": 260,
       "role": "网站",
       "group": "",
       "name": "亀岡翔理",
@@ -201911,7 +201732,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 260,
+      "order": 261,
       "role": "网站",
       "group": "",
       "name": "吉田桃子",
@@ -201927,7 +201748,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 261,
+      "order": 262,
       "role": "网站",
       "group": "",
       "name": "今岡菜央",
@@ -201943,7 +201764,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 262,
+      "order": 263,
       "role": "网站",
       "group": "",
       "name": "伊原萌夏",
@@ -201959,7 +201780,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 263,
+      "order": 264,
       "role": "网站",
       "group": "",
       "name": "安部昭彦",
@@ -201975,7 +201796,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 264,
+      "order": 265,
       "role": "宣传设计",
       "group": "",
       "name": "岩井康陽",
@@ -201991,7 +201812,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 265,
+      "order": 266,
       "role": "宣传设计",
       "group": "",
       "name": "小西遼平",
@@ -202007,7 +201828,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 266,
+      "order": 267,
       "role": "宣传设计",
       "group": "",
       "name": "日野良輔",
@@ -202023,52 +201844,14 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 267,
-      "role": "企划协力",
-      "group": "",
-      "name": "浅井康太郎",
-      "source_time": 1403,
-      "person_id": "staff-浅井康太郎",
-      "institutions": [
-        "ウマ娘ゲームチーム"
-      ],
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "企画協力",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 268,
+      "order": 269,
       "role": "企划协力",
       "group": "",
       "name": "佐藤泰太",
       "source_time": 1403,
       "person_id": "staff-佐藤泰太",
       "institutions": [
-        "ウマ娘ゲームチーム"
-      ],
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "企画協力",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 269,
-      "role": "企划协力",
-      "group": "",
-      "name": "渡辺信也",
-      "source_time": 1403,
-      "person_id": "staff-渡辺信也",
-      "institutions": [
-        "ウマ娘ゲームチーム"
+        "ウマ娘 プリティーダービー ゲーム開発・運営チーム"
       ],
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
@@ -202081,6 +201864,25 @@
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
       "order": 270,
+      "role": "企划协力",
+      "group": "",
+      "name": "渡辺信也",
+      "source_time": 1403,
+      "person_id": "staff-渡辺信也",
+      "institutions": [
+        "ウマ娘 プリティーダービー ゲーム開発・運営チーム"
+      ],
+      "evidence_refs": [
+        "official-ending-anime-cinderella-gray-e01"
+      ],
+      "role_raw": "企画協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 271,
       "role": "协力",
       "group": "",
       "name": "トレーナーの皆様",
@@ -202096,34 +201898,12 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 271,
+      "order": 272,
       "role": "协力",
       "group": "",
       "name": "阿部憶人",
       "source_time": 1403,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "協力",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 272,
-      "role": "协力",
-      "group": "",
-      "name": "久保武史",
-      "source_time": 1403,
-      "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
       ],
@@ -202137,12 +201917,9 @@
       "order": 273,
       "role": "协力",
       "group": "",
-      "name": "石井貢",
+      "name": "久保武史",
       "source_time": 1403,
-      "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
+      "person_id": "staff-久保武史",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
       ],
@@ -202156,12 +201933,9 @@
       "order": 274,
       "role": "协力",
       "group": "",
-      "name": "宇都恒弥",
+      "name": "石井貢",
       "source_time": 1403,
-      "person_id": "staff-宇都恒弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
+      "person_id": "staff-石井貢",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
       ],
@@ -202173,38 +201947,22 @@
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
       "order": 275,
-      "role": "制作管理",
+      "role": "协力",
       "group": "",
-      "name": "蟹江貴之",
-      "source_time": 1409,
-      "person_id": "staff-蟹江貴之",
+      "name": "宇都恒弥",
+      "source_time": 1403,
+      "person_id": "staff-宇都恒弥",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e01"
       ],
-      "role_raw": "プロダクションマネージャー",
+      "role_raw": "協力",
       "group_raw": ""
     },
     {
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 276,
-      "role": "作画指导",
-      "group": "",
-      "name": "垂園勇二",
-      "source_time": 1409,
-      "person_id": "staff-垂園勇二",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "作画指導",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 277,
+      "order": 278,
       "role": "制作事务",
       "group": "",
       "name": "小川杏里沙",
@@ -202220,23 +201978,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 278,
-      "role": "制作事务",
-      "group": "",
-      "name": "永松拓馬",
-      "source_time": 1409,
-      "person_id": "staff-永松拓馬",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "role_raw": "制作事務",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e01",
-      "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 279,
+      "order": 280,
       "role": "制作管理",
       "group": "",
       "name": "濱田豊",
@@ -202252,7 +201994,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 280,
+      "order": 281,
       "role": "设定制作",
       "group": "",
       "name": "河潤盛",
@@ -202268,7 +202010,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 281,
+      "order": 282,
       "role": "设定制作",
       "group": "",
       "name": "栗林昌輝",
@@ -202284,7 +202026,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 282,
+      "order": 283,
       "role": "2D制作",
       "group": "",
       "name": "石川貴海",
@@ -202300,7 +202042,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 283,
+      "order": 284,
       "role": "制作",
       "group": "",
       "name": "CygamesPictures",
@@ -202316,7 +202058,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 284,
+      "order": 285,
       "role": "出品",
       "group": "",
       "name": "ウマ娘 シンデレラグレイ製作委員会",
@@ -204448,7 +204190,7 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e01",
       "source_ref": "official-ending-anime-cinderella-gray-e01",
-      "order": 192,
+      "order": 193,
       "role": "上色",
       "group": "片头动画",
       "name": "デファー",
@@ -369703,19 +369445,6 @@
       "work_id": "anime-cinderella-gray",
       "unit_id": "anime-cinderella-gray-e02",
       "source_ref": "official-ending-anime-cinderella-gray-e02",
-      "order": 253,
-      "role": "作画指导",
-      "group": "",
-      "name": "垂田勇二",
-      "source_time": 1405.685,
-      "person_id": "staff-垂田勇二",
-      "role_raw": "作画指導",
-      "group_raw": ""
-    },
-    {
-      "work_id": "anime-cinderella-gray",
-      "unit_id": "anime-cinderella-gray-e02",
-      "source_ref": "official-ending-anime-cinderella-gray-e02",
       "order": 254,
       "role": "制作事务",
       "group": "",
@@ -370132,6 +369861,261 @@
       "source_time": 171,
       "person_id": "staff-みうらたけひろ",
       "role_raw": "監督",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 154,
+      "role": "录音调音",
+      "group": "",
+      "name": "平圭介",
+      "source_time": 1385,
+      "person_id": "staff-平圭介",
+      "role_raw": "録音調整",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 155,
+      "role": "录音助理",
+      "group": "",
+      "name": "佐藤喬花",
+      "source_time": 1385,
+      "person_id": "staff-佐藤喬花",
+      "role_raw": "録音助手",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 171,
+      "role": "原画",
+      "group": "片头动画",
+      "name": "福永智子",
+      "source_time": 1391,
+      "person_id": "staff-福永智子",
+      "role_raw": "原画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 186,
+      "role": "中间动画",
+      "group": "片头动画",
+      "name": "新家新芽",
+      "source_time": 1391,
+      "person_id": "staff-新家新芽",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "role_raw": "動画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 187,
+      "role": "中间动画",
+      "group": "片头动画",
+      "name": "吉田泰斗",
+      "source_time": 1391,
+      "person_id": "staff-吉田泰斗",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "role_raw": "動画",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 203,
+      "role": "摄影",
+      "group": "片头动画",
+      "name": "許庭禎",
+      "source_time": 1391,
+      "person_id": "staff-許庭禎",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "role_raw": "撮影",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 204,
+      "role": "摄影",
+      "group": "片头动画",
+      "name": "入江夏未",
+      "source_time": 1391,
+      "person_id": "staff-入江夏未",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "role_raw": "撮影",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 207,
+      "role": "摄影",
+      "group": "片头动画",
+      "name": "南川創",
+      "source_time": 1391,
+      "person_id": "staff-南川創",
+      "institutions": [
+        "CygamesPictures"
+      ],
+      "role_raw": "撮影",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 208,
+      "role": "后期收尾",
+      "group": "片头动画",
+      "name": "斉藤亮",
+      "source_time": 1391,
+      "person_id": "staff-斉藤亮",
+      "institutions": [
+        "Pinapics"
+      ],
+      "role_raw": "フィニッシング",
+      "group_raw": "オープニングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 219,
+      "role": "摄影监督",
+      "group": "片尾动画",
+      "name": "許庭禎",
+      "source_time": 1394,
+      "person_id": "staff-許庭禎",
+      "role_raw": "撮影監督",
+      "group_raw": "エンディングアニメーション"
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 237,
+      "role": "日本授权",
+      "group": "",
+      "name": "松本竜也",
+      "source_time": 1397,
+      "person_id": "staff-松本竜也",
+      "role_raw": "国内ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 246,
+      "role": "日本授权",
+      "group": "",
+      "name": "清水基央",
+      "source_time": 1397,
+      "person_id": "staff-清水基央",
+      "role_raw": "国内ライセンス",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 268,
+      "role": "企划协力",
+      "group": "",
+      "name": "浅井勝太郎",
+      "source_time": 1403,
+      "person_id": "staff-浅井勝太郎",
+      "institutions": [
+        "ウマ娘 プリティーダービー ゲーム開発・運営チーム"
+      ],
+      "role_raw": "企画協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 276,
+      "role": "制作管理",
+      "group": "",
+      "name": "蟹江寛之",
+      "source_time": 1409,
+      "person_id": "staff-蟹江寛之",
+      "role_raw": "プロダクションマネージャー",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 277,
+      "role": "作画指导",
+      "group": "",
+      "name": "重国勇二",
+      "source_time": 1409,
+      "person_id": "staff-重国勇二",
+      "role_raw": "作画指導",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 279,
+      "role": "制作事务",
+      "group": "",
+      "name": "水越拓馬",
+      "source_time": 1409,
+      "person_id": "staff-水越拓馬",
+      "role_raw": "制作事務",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_ref": "official-ending-anime-cinderella-gray-e01",
+      "order": 286,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1403,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_ref": "official-ending-anime-cinderella-gray-e02",
+      "order": 253,
+      "role": "作画指导",
+      "group": "",
+      "name": "重国勇二",
+      "source_time": 1405.685,
+      "person_id": "staff-重国勇二",
+      "role_raw": "作画指導",
       "group_raw": ""
     }
   ],
@@ -380984,13 +380968,14 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "中间动画"
       ],
       "work_count": 1,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-紗枝憧",
@@ -381726,7 +381711,8 @@
         "staff-transcript-anime-rttt",
         "official-ending-anime-rttt-e03",
         "official-ending-anime-rttt-e01",
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "第二原画",
@@ -381734,7 +381720,7 @@
         "原画"
       ],
       "work_count": 2,
-      "unit_count": 16
+      "unit_count": 17
     },
     {
       "id": "staff-西村旺",
@@ -387391,13 +387377,14 @@
         "official-ending-anime-rttt-e03",
         "official-ending-anime-rttt-e04",
         "official-ending-anime-rttt-e01",
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "摄影"
       ],
       "work_count": 3,
-      "unit_count": 15
+      "unit_count": 16
     },
     {
       "id": "staff-倉本一輝",
@@ -391033,14 +391020,15 @@
         "official-ending-anime-rttt-e03",
         "official-ending-anime-rttt-e04",
         "official-ending-anime-rttt-e01",
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "摄影监督",
         "摄影"
       ],
       "work_count": 3,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-張子英",
@@ -392371,13 +392359,16 @@
       "name": "重国勇二",
       "aliases": [],
       "source_refs": [
-        "staff-transcript-anime-movie-beginning-new-era"
+        "staff-transcript-anime-movie-beginning-new-era",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02"
       ],
       "roles": [
-        "原画"
+        "原画",
+        "作画指导"
       ],
-      "work_count": 1,
-      "unit_count": 1
+      "work_count": 2,
+      "unit_count": 3
     },
     {
       "id": "staff-恩田尚之",
@@ -395192,13 +395183,14 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-movie-beginning-new-era",
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "摄影"
       ],
       "work_count": 2,
-      "unit_count": 2
+      "unit_count": 3
     },
     {
       "id": "staff-岡﨑正春",
@@ -411822,32 +411814,6 @@
       "unit_count": 1
     },
     {
-      "id": "staff-平佳介",
-      "name": "平佳介",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "录音调音"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-佐藤希花",
-      "name": "佐藤希花",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "录音助理"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-武藤晶子",
       "name": "武藤晶子",
       "aliases": [],
@@ -411904,58 +411870,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-新家航芽",
-      "name": "新家航芽",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "中间动画"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-吉田珠斗",
-      "name": "吉田珠斗",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "中间动画"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-佐藤紋",
-      "name": "佐藤紋",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "摄影"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-林江里紗",
-      "name": "林江里紗",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "摄影"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-菊池優太郎",
       "name": "菊池優太郎",
       "aliases": [],
@@ -411970,19 +411884,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-岡崎剛",
-      "name": "岡崎剛",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "摄影"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-斉藤亮",
       "name": "斉藤亮",
       "aliases": [],
@@ -411991,7 +411892,6 @@
         "official-ending-anime-cinderella-gray-e02"
       ],
       "roles": [
-        "灯光",
         "后期收尾"
       ],
       "work_count": 1,
@@ -412010,19 +411910,6 @@
       ],
       "work_count": 1,
       "unit_count": 2
-    },
-    {
-      "id": "staff-許展禎",
-      "name": "許展禎",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "摄影监督"
-      ],
-      "work_count": 1,
-      "unit_count": 1
     },
     {
       "id": "staff-山田可奈子",
@@ -412210,19 +412097,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-松本章也",
-      "name": "松本章也",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "日本授权"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-大竹優樹",
       "name": "大竹優樹",
       "aliases": [],
@@ -412333,19 +412207,6 @@
       ],
       "work_count": 1,
       "unit_count": 2
-    },
-    {
-      "id": "staff-清水哲史",
-      "name": "清水哲史",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "日本授权"
-      ],
-      "work_count": 1,
-      "unit_count": 1
     },
     {
       "id": "staff-戒能大樹",
@@ -412564,19 +412425,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-浅井康太郎",
-      "name": "浅井康太郎",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "企划协力"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-佐藤泰太",
       "name": "佐藤泰太",
       "aliases": [],
@@ -412633,32 +412481,6 @@
       "unit_count": 2
     },
     {
-      "id": "staff-蟹江貴之",
-      "name": "蟹江貴之",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "制作管理"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-垂園勇二",
-      "name": "垂園勇二",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "作画指导"
-      ],
-      "work_count": 1,
-      "unit_count": 1
-    },
-    {
       "id": "staff-小川杏里沙",
       "name": "小川杏里沙",
       "aliases": [],
@@ -412671,19 +412493,6 @@
       ],
       "work_count": 1,
       "unit_count": 2
-    },
-    {
-      "id": "staff-永松拓馬",
-      "name": "永松拓馬",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01"
-      ],
-      "roles": [
-        "制作事务"
-      ],
-      "work_count": 1,
-      "unit_count": 1
     },
     {
       "id": "staff-濱田豊",
@@ -420087,117 +419896,112 @@
       "name": "平圭介",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "录音调音"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-佐藤喬花",
       "name": "佐藤喬花",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "录音助理"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-福永智子",
       "name": "福永智子",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-松本竜也",
       "name": "松本竜也",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "日本授权"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-清水基央",
       "name": "清水基央",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "日本授权"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-浅井勝太郎",
       "name": "浅井勝太郎",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "企划协力"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-蟹江寛之",
       "name": "蟹江寛之",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "制作管理"
       ],
       "work_count": 1,
-      "unit_count": 1
-    },
-    {
-      "id": "staff-垂田勇二",
-      "name": "垂田勇二",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
-      ],
-      "roles": [
-        "作画指导"
-      ],
-      "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-水越拓馬",
       "name": "水越拓馬",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-cinderella-gray-e02"
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e01"
       ],
       "roles": [
         "制作事务"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-伊藤將彦",
