@@ -77,8 +77,6 @@
 .music-card-play svg { width: 18px; height: 18px; fill: currentColor; }
 .music-card-play:hover,.music-card-play.playing { border-color: var(--ui-orange); color: #fff; background: var(--ui-orange); transform: scale(1.08); }
 .song-card .music-card-meta { padding-right: 42px; }
-.creator-card .music-card-main > img { object-fit: cover; }
-.creator-card .role-tag-row { align-self: end; }
 .credit-role-tag {
     display: inline-flex;
     min-height: 24px;

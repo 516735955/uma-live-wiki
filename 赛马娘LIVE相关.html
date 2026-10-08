@@ -7,8 +7,8 @@
 <style>
 html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK SC","Noto Sans CJK JP",system-ui,sans-serif}.app-boot{min-height:100vh;background:#f5f4f9}.app-boot-bar{height:76px;background:#3157ed url('/uma_tools/img/bg_kv_nav.png') center/cover;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1280px)/2));color:#fff;font-size:22px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(24,39,93,.18)}.app-boot-main{width:min(1280px,calc(100% - 40px));margin:32px auto}.app-boot-line{height:46px;border-radius:8px;background:linear-gradient(100deg,#fff 20%,#eef1fa 38%,#fff 56%);background-size:220% 100%;animation:boot-shimmer 1.2s ease-in-out infinite}.app-boot-line+.app-boot-line{height:180px;margin-top:20px}@keyframes boot-shimmer{to{background-position-x:-220%}}@media(max-width:700px){.app-boot-bar{height:58px;padding:0 18px;font-size:17px}.app-boot-main{width:calc(100% - 28px);margin-top:20px}.app-boot-line{height:44px}.app-boot-line+.app-boot-line{height:136px}}@media(prefers-reduced-motion:reduce){.app-boot-line{animation:none;background:#fff}}
 </style>
-<link rel="stylesheet" href="/uma_tools/app.css?v=20260929-12">
-<link rel="stylesheet" href="/uma_tools/music-components.css?v=20260929-10v7">
+<link rel="stylesheet" href="/uma_tools/app.css?v=20261007-1">
+<link rel="stylesheet" href="/uma_tools/music-components.css?v=20261007-1">
 <script defer src="/uma_tools/vendor/vue.global.prod.js?v=3"></script>
 <script defer src="/uma_tools/app-api.js?v=20260927-1"></script>
 <script defer src="/uma_tools/route-utils.js?v=20260929-10v6"></script>
@@ -445,11 +445,15 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <button v-for="option in [{value:'all',label:'全部'},{value:'lyricist',label:'作词'},{value:'composer',label:'作曲'},{value:'arranger',label:'编曲'},{value:'remixer',label:'混音改编'},{value:'producer',label:'制作'},{value:'orchestrator',label:'配器'}]" :key="option.value" class="filter-pill" :class="{active:creatorRole===option.value}" type="button" @click="setCreatorRole(option.value)">{{ option.label }}</button>
                     </div>
                 </div>
-                <div id="creatorArchiveTop" class="music-card-grid creator-card-grid">
-                    <template v-if="creatorCatalogLoading && !creatorCatalog.creators.length"><div v-for="i in 8" :key="'creator-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div></template>
-                    <article v-for="creator in creatorPaged" :key="creator.id" class="music-card creator-card">
-                        <button class="music-card-main" type="button" @click="openCreator(creator)"><img :src="creatorPortrait(creator)" :alt="creator.name" loading="lazy" @error="onCatalogImageError($event)"><span class="music-card-copy"><b>{{ creator.name }}</b><small>{{ creator.work_count }} 首歌曲 · {{ creator.version_count }} 个版本</small></span><span class="role-tag-row"><em v-for="role in creator.roles.slice(0,3)" :key="role.role" class="credit-role-tag">{{ role.label }}</em></span></button>
-                    </article>
+                <div id="creatorArchiveTop" class="creator-catalog">
+                    <template v-if="creatorCatalogLoading && !creatorCatalog.creators.length"><div v-for="i in 8" :key="'creator-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div></template>
+                    <button v-for="creator in creatorPaged" :key="creator.id" class="creator-catalog-row" type="button" @click="openCreator(creator)">
+                        <span class="creator-monogram">{{ creatorMonogram(creator) }}</span>
+                        <span class="creator-catalog-name"><b>{{ creator.name }}</b><small v-if="creator.affiliations.length">{{ creator.affiliations.join(' · ') }}</small></span>
+                        <span class="creator-catalog-roles">{{ creatorRoleLabels(creator.roles) }}</span>
+                        <span class="creator-catalog-count">{{ creator.work_count }} 首歌曲 · {{ creator.version_count }} 个版本</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
                     <div v-if="creatorCatalogError" class="ui-state ui-state-error">{{ creatorCatalogError }}</div>
                     <div v-else-if="!creatorFiltered.length" class="ui-state">没有符合条件的创作者</div>
                 </div>
