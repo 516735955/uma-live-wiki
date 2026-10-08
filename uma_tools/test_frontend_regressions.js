@@ -145,14 +145,30 @@ async function main() {
   const graphContext = vm.createContext({ window: { UmaApi: window.UmaApi }, console });
   vm.runInContext(source('creator-network.js'), graphContext);
   const component = graphContext.window.UmaCreatorNetwork.CreatorNetwork;
-  const selection = Object.assign(component.data(), { creator: { id: 'root' }, catalog: [] });
+  const selection = context.Vue.reactive(Object.assign(component.data(), { creator: { id: 'root' }, catalog: [] }));
   const graphA = deferred(), graphB = deferred();
   graphContext.window.UmaApi = { request: (url) => url.includes('id=a') ? graphA.promise : graphB.promise, query: window.UmaApi.query };
   const firstSelection = component.methods.choose.call(selection, { creator_id: 'a' });
   const secondSelection = component.methods.choose.call(selection, { creator_id: 'b' });
   graphB.resolve({ creator: { id: 'b' } }); await secondSelection;
+  assert.strictEqual(selection.loading, false, 'reactive graph selection exits its loading state');
   graphA.resolve({ creator: { id: 'a' } }); await firstSelection;
   assert.strictEqual(selection.selectedDetail.id, 'b', 'graph selection ignores late responses');
+  const closed = deferred();
+  graphContext.window.UmaApi.request = () => closed.promise;
+  const closingSelection = component.methods.choose.call(selection, { creator_id: 'a' });
+  component.methods.close.call(selection);
+  closed.resolve({ creator: { id: 'a' } }); await closingSelection;
+  assert.strictEqual(selection.selectedDetail, null, 'closing the inspector invalidates its pending response');
+  assert.strictEqual(selection.loading, false);
+  graphContext.window.UmaApi.request = () => Promise.reject(new Error('HTTP 503'));
+  await component.methods.choose.call(selection, { creator_id: 'a' });
+  assert.strictEqual(selection.loading, false);
+  assert(selection.loadError.includes('重试'), 'failed requests expose a retry instead of remaining busy');
+  graphContext.window.UmaApi.request = () => Promise.resolve({ creator: { id: 'a' } });
+  await component.methods.choose.call(selection, { creator_id: 'a' });
+  assert.strictEqual(selection.selectedDetail.id, 'a');
+  assert.strictEqual(selection.loadError, '');
   console.log('frontend regressions passed');
 }
 
