@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-4047685ff48c9405",
+  "build_id": "anime-2c2e20eb7741f2a8",
   "generated_at": "2026-10-08T00:00:00+08:00",
   "targets": {
     "event": {
@@ -698,6 +698,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e17",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "goldship": [
@@ -1239,6 +1272,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e24",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "mejiromcqueen": [
@@ -1714,6 +1780,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "seiunsky": [
@@ -1925,6 +2024,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "セイウンスカイ",
+          "voice_actor_id": "va-0185",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "セイウンスカイ",
+          "voice_actor_id": "va-0185",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "kinghalo": [
@@ -2296,6 +2417,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビワハヤヒデ",
+          "voice_actor_id": "va-0158",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビワハヤヒデ",
+          "voice_actor_id": "va-0158",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビワハヤヒデ",
+          "voice_actor_id": "va-0158",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "hishimiracle": [
@@ -2377,6 +2531,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタタイシン",
+          "voice_actor_id": "va-0114",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタタイシン",
+          "voice_actor_id": "va-0114",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタタイシン",
+          "voice_actor_id": "va-0114",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "noreason": [
@@ -2524,6 +2711,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウイニングチケット",
+          "voice_actor_id": "va-0113",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウイニングチケット",
+          "voice_actor_id": "va-0113",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウイニングチケット",
+          "voice_actor_id": "va-0113",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "taninogimlet": [
@@ -3383,6 +3603,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e24",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "grasswonder": [
@@ -3627,6 +3880,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e01",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "グラスワンダー",
+          "voice_actor_id": "va-0035",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-36",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "グラスワンダー",
+          "voice_actor_id": "va-0035",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-32",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "グラスワンダー",
+          "voice_actor_id": "va-0035",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "elcondorpasa": [
@@ -3860,6 +4146,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e24",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エルコンドルパサー",
+          "voice_actor_id": "va-0180",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-35",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エルコンドルパサー",
+          "voice_actor_id": "va-0180",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-31",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エルコンドルパサー",
+          "voice_actor_id": "va-0180",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "phalaenopsis": [
@@ -4537,6 +4856,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "daiwascarlet": [
@@ -5089,6 +5441,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "matikanetannhauser": [
@@ -5634,6 +6019,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e19",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "agnestachyon": [
@@ -5713,6 +6131,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "anshinzawasasami": [
@@ -6322,6 +6762,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e14",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "twinturbo": [
@@ -6700,6 +7173,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e10",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マチカネフクキタル",
+          "voice_actor_id": "va-0078",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マチカネフクキタル",
+          "voice_actor_id": "va-0078",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "siriussymboli": [
@@ -6884,6 +7379,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e11",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアシャカール",
+          "voice_actor_id": "va-0109",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアシャカール",
+          "voice_actor_id": "va-0109",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "maruzensky": [
@@ -7172,6 +7689,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e14",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マルゼンスキー",
+          "voice_actor_id": "va-0001",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
         }
       ],
       "hayakawatazuna": [
@@ -7257,7 +7785,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s1-e02",
@@ -7748,6 +8276,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e19",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サイレンススズカ",
+          "voice_actor_id": "va-0184",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サイレンススズカ",
+          "voice_actor_id": "va-0184",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "mayanotopgun": [
@@ -7816,6 +8366,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e14",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マヤノトップガン",
+          "voice_actor_id": "va-0085",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マヤノトップガン",
+          "voice_actor_id": "va-0085",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "tosenjordan": [
@@ -8139,6 +8711,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e20",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "tmoperao": [
@@ -8295,6 +8900,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e04",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "yukinobijin": [
@@ -8319,6 +8946,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e03",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "daitakuhelios": [
@@ -8499,6 +9159,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e23",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-39",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イナリワン",
+          "voice_actor_id": "va-0018",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-35",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イナリワン",
+          "voice_actor_id": "va-0018",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "agnesdigital": [
@@ -8602,6 +9284,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e06",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ファインモーション",
+          "voice_actor_id": "va-0102",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-31",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ファインモーション",
+          "voice_actor_id": "va-0102",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "symbolirudolf": [
@@ -9055,6 +9759,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e20",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "akikawayayoi": [
@@ -9545,6 +10282,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トレーナー",
+          "voice_actor_id": "va-0105",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トレーナー",
+          "voice_actor_id": "va-0105",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トレーナー",
+          "voice_actor_id": "va-0105",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "kitasanblack": [
@@ -10721,6 +11491,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-37",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラバクシンオー",
+          "voice_actor_id": "va-0007",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-33",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラバクシンオー",
+          "voice_actor_id": "va-0007",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "junglepocket": [
@@ -10791,6 +11583,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e23",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "dantsuflame": [
@@ -10905,6 +11719,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e04",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-32",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フジキセキ",
+          "voice_actor_id": "va-0095",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フジキセキ",
+          "voice_actor_id": "va-0095",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "naritatoproad": [
@@ -13594,6 +14430,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e18",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "dicta_striker": [
@@ -13851,6 +14720,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e03",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "mrcb": [
@@ -14195,6 +15097,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "narita_trainer": [
@@ -14430,6 +15354,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ライスシャワー",
+          "voice_actor_id": "va-0129",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "mejiropalmer": [
@@ -14654,6 +15589,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e09",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ミホノブルボン",
+          "voice_actor_id": "va-0169",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "hishiakebono": [
@@ -14667,6 +15613,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s2-e01",
           "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアケボノ",
+          "voice_actor_id": "va-0097",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
         }
       ],
       "mejiroryan": [
@@ -14827,6 +15784,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e13",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタブライアン",
+          "voice_actor_id": "va-0123",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタブライアン",
+          "voice_actor_id": "va-0123",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタブライアン",
+          "voice_actor_id": "va-0123",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "hishiamazon": [
@@ -14972,6 +15962,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e23",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアマゾン",
+          "voice_actor_id": "va-0071",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-33",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアマゾン",
+          "voice_actor_id": "va-0071",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-29",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアマゾン",
+          "voice_actor_id": "va-0071",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "taikishuttle": [
@@ -15062,6 +16085,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e23",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-34",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タイキシャトル",
+          "voice_actor_id": "va-0050",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-30",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タイキシャトル",
+          "voice_actor_id": "va-0050",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "eishinflash": [
@@ -15097,6 +16142,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e22",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "copanorickey": [
@@ -15145,6 +16223,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e22",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-38",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スマートファルコン",
+          "voice_actor_id": "va-0049",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-34",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スマートファルコン",
+          "voice_actor_id": "va-0049",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "inesfujin": [
@@ -15169,6 +16269,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e09",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アイネスフウジン",
+          "voice_actor_id": "va-0070",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "bikopegasus": [
@@ -15182,6 +16293,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビコーペガサス",
+          "voice_actor_id": "va-0117",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-29",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビコーペガサス",
+          "voice_actor_id": "va-0117",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ]
     },
@@ -15837,6 +16970,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e17",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0009": [
@@ -16378,6 +17544,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e24",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0053": [
@@ -16853,6 +18052,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0185": [
@@ -17064,6 +18296,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "セイウンスカイ",
+          "voice_actor_id": "va-0185",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "セイウンスカイ",
+          "voice_actor_id": "va-0185",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "va-0027": [
@@ -17435,6 +18689,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビワハヤヒデ",
+          "voice_actor_id": "va-0158",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビワハヤヒデ",
+          "voice_actor_id": "va-0158",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビワハヤヒデ",
+          "voice_actor_id": "va-0158",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0087": [
@@ -17516,6 +18803,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタタイシン",
+          "voice_actor_id": "va-0114",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタタイシン",
+          "voice_actor_id": "va-0114",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタタイシン",
+          "voice_actor_id": "va-0114",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0108": [
@@ -17663,6 +18983,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
           "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウイニングチケット",
+          "voice_actor_id": "va-0113",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-09",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウイニングチケット",
+          "voice_actor_id": "va-0113",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウイニングチケット",
+          "voice_actor_id": "va-0113",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0096": [
@@ -18522,6 +19875,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e24",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0035": [
@@ -18766,6 +20152,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e01",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-27",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "グラスワンダー",
+          "voice_actor_id": "va-0035",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-36",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "グラスワンダー",
+          "voice_actor_id": "va-0035",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-32",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "グラスワンダー",
+          "voice_actor_id": "va-0035",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0180": [
@@ -18999,6 +20418,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e24",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エルコンドルパサー",
+          "voice_actor_id": "va-0180",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-35",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エルコンドルパサー",
+          "voice_actor_id": "va-0180",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-31",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エルコンドルパサー",
+          "voice_actor_id": "va-0180",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0110": [
@@ -19676,6 +21128,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウオッカ",
+          "voice_actor_id": "va-0051",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0090": [
@@ -20228,6 +21713,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ダイワスカーレット",
+          "voice_actor_id": "va-0090",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0161": [
@@ -20713,7 +22231,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s1-e02",
@@ -20995,6 +22513,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e19",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ハルウララ",
+          "voice_actor_id": "va-0175",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0008": [
@@ -21074,6 +22625,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e21",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アグネスタキオン",
+          "voice_actor_id": "va-0008",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0017": [
@@ -21683,6 +23256,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e14",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トウカイテイオー",
+          "voice_actor_id": "va-0003",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0145": [
@@ -22061,6 +23667,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e10",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マチカネフクキタル",
+          "voice_actor_id": "va-0078",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マチカネフクキタル",
+          "voice_actor_id": "va-0078",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0005": [
@@ -22245,6 +23873,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e11",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアシャカール",
+          "voice_actor_id": "va-0109",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアシャカール",
+          "voice_actor_id": "va-0109",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0001": [
@@ -22533,6 +24183,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e14",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マルゼンスキー",
+          "voice_actor_id": "va-0001",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
         }
       ],
       "va-0184": [
@@ -22953,6 +24614,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e19",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サイレンススズカ",
+          "voice_actor_id": "va-0184",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サイレンススズカ",
+          "voice_actor_id": "va-0184",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0085": [
@@ -23021,6 +24704,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e14",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マヤノトップガン",
+          "voice_actor_id": "va-0085",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マヤノトップガン",
+          "voice_actor_id": "va-0085",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0167": [
@@ -23344,6 +25049,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e20",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エアグルーヴ",
+          "voice_actor_id": "va-0173",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0073": [
@@ -23500,6 +25238,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e04",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0063": [
@@ -23524,6 +25284,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e03",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ユキノビジン",
+          "voice_actor_id": "va-0063",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0065": [
@@ -23704,6 +25497,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e23",
           "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-39",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イナリワン",
+          "voice_actor_id": "va-0018",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-35",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イナリワン",
+          "voice_actor_id": "va-0018",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0165": [
@@ -23807,6 +25622,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e06",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-25",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ファインモーション",
+          "voice_actor_id": "va-0102",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-31",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ファインモーション",
+          "voice_actor_id": "va-0102",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "va-0118": [
@@ -24260,6 +26097,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e20",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-10",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-11",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "シンボリルドルフ",
+          "voice_actor_id": "va-0118",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0104": [
@@ -24772,6 +26642,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トレーナー",
+          "voice_actor_id": "va-0105",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トレーナー",
+          "voice_actor_id": "va-0105",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "トレーナー",
+          "voice_actor_id": "va-0105",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0126": [
@@ -25948,6 +27851,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-37",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラバクシンオー",
+          "voice_actor_id": "va-0007",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-33",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラバクシンオー",
+          "voice_actor_id": "va-0007",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0153": [
@@ -26018,6 +27943,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e23",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-16",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マンハッタンカフェ",
+          "voice_actor_id": "va-0058",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0134": [
@@ -26132,6 +28079,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e04",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-32",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フジキセキ",
+          "voice_actor_id": "va-0095",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フジキセキ",
+          "voice_actor_id": "va-0095",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0012": [
@@ -28821,6 +30790,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e18",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-23",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-auto-afa298a8ba3a": [
@@ -29078,6 +31080,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e03",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-28",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-26",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0055": [
@@ -29422,6 +31457,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-15",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0044": [
@@ -29657,6 +31714,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-18",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ライスシャワー",
+          "voice_actor_id": "va-0129",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "va-0004": [
@@ -29881,6 +31949,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e09",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ミホノブルボン",
+          "voice_actor_id": "va-0169",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "va-0097": [
@@ -29894,6 +31973,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s2-e01",
           "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-21",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアケボノ",
+          "voice_actor_id": "va-0097",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
         }
       ],
       "va-0043": [
@@ -30155,6 +32245,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e23",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-19",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアマゾン",
+          "voice_actor_id": "va-0071",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-33",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアマゾン",
+          "voice_actor_id": "va-0071",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-29",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヒシアマゾン",
+          "voice_actor_id": "va-0071",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0050": [
@@ -30245,6 +32368,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e23",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-34",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タイキシャトル",
+          "voice_actor_id": "va-0050",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-30",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タイキシャトル",
+          "voice_actor_id": "va-0050",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0154": [
@@ -30280,6 +32425,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e22",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-24",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-14",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "エイシンフラッシュ",
+          "voice_actor_id": "va-0154",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0123": [
@@ -30325,6 +32503,39 @@
           "voice_actor_id": "va-0123",
           "source_type": "anime_unit",
           "source_id": "anime-s1-e13",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタブライアン",
+          "voice_actor_id": "va-0123",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタブライアン",
+          "voice_actor_id": "va-0123",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタブライアン",
+          "voice_actor_id": "va-0123",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
         }
       ],
@@ -30374,6 +32585,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e22",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-38",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スマートファルコン",
+          "voice_actor_id": "va-0049",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-official-ending-cast-34",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スマートファルコン",
+          "voice_actor_id": "va-0049",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "va-0070": [
@@ -30398,6 +32631,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e09",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-13",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アイネスフウジン",
+          "voice_actor_id": "va-0070",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ],
       "va-0117": [
@@ -30411,6 +32655,28 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e08",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-s1-e14-official-ending-cast-20",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビコーペガサス",
+          "voice_actor_id": "va-0117",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-official-ending-cast-29",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ビコーペガサス",
+          "voice_actor_id": "va-0117",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
         }
       ]
     },
@@ -31080,7 +33346,7 @@
         {
           "relation_id": "anime-s1-e02-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -31091,7 +33357,7 @@
         {
           "relation_id": "anime-s1-e03-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -31219,6 +33485,39 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e13",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e14-ending-music-song-make-debut-2c6c00a71e-v-aa0647857b",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e15-ending-music-song-make-debut-2c6c00a71e-v-aa0647857b",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-s1-e16-ending-music-song-make-debut-2c6c00a71e-v-aa0647857b",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ],
       "song-15e2b8f183": [
@@ -31236,7 +33535,7 @@
         {
           "relation_id": "anime-s1-e02-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -31247,7 +33546,7 @@
         {
           "relation_id": "anime-s1-e03-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -31324,7 +33623,7 @@
         {
           "relation_id": "anime-s1-e14-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -31335,7 +33634,7 @@
         {
           "relation_id": "anime-s1-e15-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -31361,7 +33660,7 @@
         {
           "relation_id": "anime-s1-e03-music-song-endless-dream-eabbcc4d12-v-fa16f85e80",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -31372,7 +33671,7 @@
         {
           "relation_id": "anime-s1-e02-insert-song-endless-dream-eabbcc4d12",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -31385,7 +33684,7 @@
         {
           "relation_id": "anime-s1-e03-music-song-3dc019b31d-v-74f4a6d347",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -32129,7 +34428,7 @@
         {
           "relation_id": "anime-s1-e16-music-song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -36347,6 +38646,19 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e01",
           "work_id": "anime-s3"
+        }
+      ],
+      "song-blue-d4b4826cc5": [
+        {
+          "relation_id": "anime-s1-e16-ending-cue-song-blue-d4b4826cc5-insert",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
         }
       ]
     },

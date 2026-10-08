@@ -1180,7 +1180,13 @@
         }
       ],
       "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9814"
+      "source_catalog": "LACA-9814",
+      "supplemental_sources": [
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12631-2-3.html"
+        }
+      ]
     },
     "song-everlasting-beats-3a805703a6-v-3a805703a6": {
       "source_track_id": "2703851024",
@@ -10751,6 +10757,26 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=4KfcB097aVo"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12634-3-2.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12634-3-3.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12631-2-1.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12631-2-2.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12631-2-3.html"
         }
       ]
     },
@@ -10800,6 +10826,22 @@
         {
           "source": "official_ending",
           "source_url": "https://www.youtube.com/watch?v=-lMSoDA83jE"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12634-3-2.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12634-3-3.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12631-2-1.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/12631-2-2.html"
         }
       ]
     },

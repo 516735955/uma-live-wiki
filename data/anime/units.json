@@ -127,10 +127,11 @@
           "source_refs": [
             "official-story-anime-s1-e02",
             "staff-transcript-anime-s1",
-            "official-s1-broadcast"
+            "official-s1-broadcast",
+            "official-ending-anime-s1-e02"
           ],
           "stills": [],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "TOKYO MX・BS11放送",
@@ -139,17 +140,44 @@
               "timezone": "JST"
             }
           ],
-          "summary_zh": "特别周临时得知，自己的出道战就在一周之后。她向无声铃鹿与学生会长鲁道夫象征请教初次比赛的心得，却依然紧张不安；第一次正式训练随之开始。"
+          "summary_zh": "特别周临时得知，自己的出道战就在一周之后。她向无声铃鹿与学生会长鲁道夫象征请教初次比赛的心得，却依然紧张不安；第一次正式训练随之开始。",
+          "music_cues": [
+            {
+              "title": "ENDLESS DREAM!!",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作曲",
+                  "names": [
+                    "内田哲也"
+                  ],
+                  "institutions": [
+                    "Cygames"
+                  ],
+                  "creator_ids": [
+                    "creator-9be9261917"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-s1-e02"
+              ],
+              "source_time": 1418.608116,
+              "song_id": "song-endless-dream-eabbcc4d12"
+            }
+          ]
         },
         "3": {
           "summary_ja": "デビュー戦を終えたスペシャルウィークは、良くも悪くもクラスメイトの注目の的に。スピカの面々と棒立ちに終わってしまったウイニングライブの練習に励む。そんな中トレーナーから日本一のウマ娘になる為の提案が…",
           "source_refs": [
             "official-story-anime-s1-e03",
             "staff-transcript-anime-s1",
-            "official-s1-broadcast"
+            "official-s1-broadcast",
+            "official-ending-anime-s1-e03"
           ],
           "stills": [],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "TOKYO MX・BS11放送",
@@ -179,8 +207,57 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
+                "moegirl-tv-episode-music",
+                "official-ending-anime-s1-e03"
               ]
+            },
+            {
+              "title": "ENDLESS DREAM!!",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作曲",
+                  "names": [
+                    "内田哲也"
+                  ],
+                  "institutions": [
+                    "Cygames"
+                  ],
+                  "creator_ids": [
+                    "creator-9be9261917"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-s1-e03"
+              ],
+              "source_time": 1418.608076,
+              "song_id": "song-endless-dream-eabbcc4d12"
+            },
+            {
+              "title": "恋はダービー☆",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作曲",
+                  "names": [
+                    "本田晃弘"
+                  ],
+                  "institutions": [
+                    "Cygames"
+                  ],
+                  "creator_ids": [
+                    "creator-eaf94340d3"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-s1-e03"
+              ],
+              "source_time": 1418.608076,
+              "song_id": "song-3dc019b31d"
             }
           ]
         },
@@ -564,9 +641,10 @@
             "staff-transcript-anime-s1",
             "official-bnw-preview",
             "official-bnw-bd",
-            "reference-bnw-e01"
+            "reference-bnw-e01",
+            "official-ending-anime-s1-e14"
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "先行上映",
@@ -588,9 +666,10 @@
             "staff-transcript-anime-s1",
             "official-bnw-preview",
             "official-bnw-bd",
-            "reference-bnw-e02"
+            "reference-bnw-e02",
+            "official-ending-anime-s1-e15"
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "先行上映",
@@ -626,7 +705,8 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
+                "moegirl-tv-episode-music",
+                "official-ending-anime-s1-e15"
               ]
             }
           ]
@@ -636,9 +716,10 @@
             "staff-transcript-anime-s1",
             "official-bnw-preview",
             "official-bnw-bd",
-            "reference-bnw-e03"
+            "reference-bnw-e03",
+            "official-ending-anime-s1-e16"
           ],
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "dates": [
             {
               "label": "先行上映",
@@ -672,8 +753,31 @@
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-tv-episode-music"
+                "moegirl-tv-episode-music",
+                "official-ending-anime-s1-e16"
               ]
+            },
+            {
+              "title": "春空BLUE",
+              "usage_type": "insert",
+              "credits": [
+                {
+                  "role": "作曲",
+                  "names": [
+                    "shilo"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-shilo-86c6f3b3cf"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-s1-e16"
+              ],
+              "source_time": 1401.6750180000001,
+              "song_id": "song-blue-d4b4826cc5"
             }
           ]
         }

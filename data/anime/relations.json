@@ -3203,10 +3203,11 @@
       "version_id": "song-endless-dream-eabbcc4d12-v-fa16f85e80",
       "release_id": "album-laca-9637",
       "version_label": "Short Size",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
-        "official-ost-anime-s1"
+        "official-ost-anime-s1",
+        "official-ending-anime-s1-e03"
       ],
       "display_order": 20
     },
@@ -3220,10 +3221,11 @@
       "version_id": "song-3dc019b31d-v-74f4a6d347",
       "release_id": "album-laca-9637",
       "version_label": "TV Edit",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
-        "official-ost-anime-s1"
+        "official-ost-anime-s1",
+        "official-ending-anime-s1-e03"
       ],
       "display_order": 20
     },
@@ -3905,11 +3907,12 @@
       "target_id": "song-enjoy-and-join-a69ea32e1c",
       "version_id": "song-enjoy-and-join-a69ea32e1c-v-a69ea32e1c",
       "release_id": "album-laca-9814",
-      "version_label": "Enjoy and Join",
-      "label": "片尾曲",
+      "version_label": "",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "official-ost-anime-s2"
+        "official-ost-anime-s2",
+        "official-ending-anime-s1-e16"
       ],
       "display_order": 20
     },
@@ -9326,10 +9329,11 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e02"
       ],
       "display_order": 10
     },
@@ -9343,10 +9347,11 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e03"
       ],
       "display_order": 10
     },
@@ -9557,10 +9562,11 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e02"
       ],
       "display_order": 20
     },
@@ -9574,10 +9580,11 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e03"
       ],
       "display_order": 20
     },
@@ -9699,10 +9706,11 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e14"
       ],
       "display_order": 20
     },
@@ -9716,10 +9724,11 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "moegirl-tv-music"
+        "moegirl-tv-music",
+        "official-ending-anime-s1-e15"
       ],
       "display_order": 20
     },
@@ -15271,7 +15280,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15286,7 +15296,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15301,7 +15312,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15316,7 +15328,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15331,7 +15344,8 @@
       "label": "",
       "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15346,7 +15360,8 @@
       "label": "",
       "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15361,7 +15376,8 @@
       "label": "",
       "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15376,7 +15392,8 @@
       "label": "",
       "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15391,7 +15408,8 @@
       "label": "",
       "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15406,7 +15424,8 @@
       "label": "",
       "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15421,7 +15440,8 @@
       "label": "",
       "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15436,7 +15456,8 @@
       "label": "",
       "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15451,7 +15472,8 @@
       "label": "",
       "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15466,7 +15488,8 @@
       "label": "",
       "display_order": 13,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15481,7 +15504,8 @@
       "label": "",
       "display_order": 14,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15496,7 +15520,8 @@
       "label": "",
       "display_order": 15,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15511,7 +15536,8 @@
       "label": "",
       "display_order": 16,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15522,11 +15548,12 @@
       "target_type": "character",
       "target_id": "hayakawatazuna",
       "voice_actor_id": "va-0151",
-      "signature": "駿川 たづな",
+      "signature": "駿川たづな",
       "label": "",
       "display_order": 18,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e02"
+        "broadcast-cast-anime-s1-e02",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -15541,7 +15568,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15556,7 +15584,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15571,7 +15600,8 @@
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15586,7 +15616,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15601,7 +15632,8 @@
       "label": "",
       "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15616,7 +15648,8 @@
       "label": "",
       "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15631,7 +15664,8 @@
       "label": "",
       "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15646,7 +15680,8 @@
       "label": "",
       "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15661,7 +15696,8 @@
       "label": "",
       "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15676,7 +15712,8 @@
       "label": "",
       "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15691,7 +15728,8 @@
       "label": "",
       "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15706,7 +15744,8 @@
       "label": "",
       "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15721,7 +15760,8 @@
       "label": "",
       "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -15736,7 +15776,8 @@
       "label": "",
       "display_order": 13,
       "evidence_refs": [
-        "broadcast-cast-anime-s1-e03"
+        "broadcast-cast-anime-s1-e03",
+        "official-ending-anime-s1-e03"
       ]
     },
     {
@@ -29166,10 +29207,11 @@
       "target_type": "song",
       "target_id": "song-endless-dream-eabbcc4d12",
       "usage_type": "insert",
-      "label": "插入曲",
+      "label": "",
       "display_order": 20,
       "evidence_refs": [
-        "moegirl-tv-episode-music"
+        "moegirl-tv-episode-music",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -29906,6 +29948,1612 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-umayon-e24"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "spica_trainer",
+      "voice_actor_id": "va-0105",
+      "signature": "トレーナー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-03",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tokaiteio",
+      "voice_actor_id": "va-0003",
+      "signature": "トウカイテイオー",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-04",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "vodka",
+      "voice_actor_id": "va-0051",
+      "signature": "ウオッカ",
+      "display_order": 4,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-05",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "daiwascarlet",
+      "voice_actor_id": "va-0090",
+      "signature": "ダイワスカーレット",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-06",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 6,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-07",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiromcqueen",
+      "voice_actor_id": "va-0053",
+      "signature": "メジロマックイーン",
+      "display_order": 7,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-08",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "biwahayahide",
+      "voice_actor_id": "va-0158",
+      "signature": "ビワハヤヒデ",
+      "display_order": 8,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-09",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritataishin",
+      "voice_actor_id": "va-0114",
+      "signature": "ナリタタイシン",
+      "display_order": 9,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-10",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "winningticket",
+      "voice_actor_id": "va-0113",
+      "signature": "ウイニングチケット",
+      "display_order": 10,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-11",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "symbolirudolf",
+      "voice_actor_id": "va-0118",
+      "signature": "シンボリルドルフ",
+      "display_order": 11,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-12",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "airgroove",
+      "voice_actor_id": "va-0173",
+      "signature": "エアグルーヴ",
+      "display_order": 12,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-13",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritabrian",
+      "voice_actor_id": "va-0123",
+      "signature": "ナリタブライアン",
+      "display_order": 13,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-14",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "maruzensky",
+      "voice_actor_id": "va-0001",
+      "signature": "マルゼンスキー",
+      "display_order": 14,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-15",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "haruurara",
+      "voice_actor_id": "va-0175",
+      "signature": "ハルウララ",
+      "display_order": 15,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-16",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "yukinobijin",
+      "voice_actor_id": "va-0063",
+      "signature": "ユキノビジン",
+      "display_order": 16,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-17",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "oguricap",
+      "voice_actor_id": "va-0179",
+      "signature": "オグリキャップ",
+      "display_order": 17,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-18",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldcity",
+      "voice_actor_id": "va-0176",
+      "signature": "ゴールドシチー",
+      "display_order": 18,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-19",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "hishiamazon",
+      "voice_actor_id": "va-0071",
+      "signature": "ヒシアマゾン",
+      "display_order": 19,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-20",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "bikopegasus",
+      "voice_actor_id": "va-0117",
+      "signature": "ビコーペガサス",
+      "display_order": 20,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-21",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "hishiakebono",
+      "voice_actor_id": "va-0097",
+      "signature": "ヒシアケボノ",
+      "display_order": 21,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-22",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "manhattancafe",
+      "voice_actor_id": "va-0058",
+      "signature": "マンハッタンカフェ",
+      "display_order": 22,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-23",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "supercreek",
+      "voice_actor_id": "va-0033",
+      "signature": "スーパークリーク",
+      "display_order": 23,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-24",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "eishinflash",
+      "voice_actor_id": "va-0154",
+      "signature": "エイシンフラッシュ",
+      "display_order": 24,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-25",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "finemotion",
+      "voice_actor_id": "va-0102",
+      "signature": "ファインモーション",
+      "display_order": 25,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-26",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 26,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-27",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "grasswonder",
+      "voice_actor_id": "va-0035",
+      "signature": "グラスワンダー",
+      "display_order": 27,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-official-ending-cast-28",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "seiunsky",
+      "voice_actor_id": "va-0185",
+      "signature": "セイウンスカイ",
+      "display_order": 28,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e14-ending-music-song-make-debut-2c6c00a71e-v-aa0647857b",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-make-debut-2c6c00a71e",
+      "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
+      "release_id": "album-laca-9637",
+      "version_label": "TV Size",
+      "usage_type": "op",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e14"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "spica_trainer",
+      "voice_actor_id": "va-0105",
+      "signature": "トレーナー",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tokaiteio",
+      "voice_actor_id": "va-0003",
+      "signature": "トウカイテイオー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-03",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "vodka",
+      "voice_actor_id": "va-0051",
+      "signature": "ウオッカ",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-04",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "daiwascarlet",
+      "voice_actor_id": "va-0090",
+      "signature": "ダイワスカーレット",
+      "display_order": 4,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-05",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-06",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiromcqueen",
+      "voice_actor_id": "va-0053",
+      "signature": "メジロマックイーン",
+      "display_order": 6,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-07",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "biwahayahide",
+      "voice_actor_id": "va-0158",
+      "signature": "ビワハヤヒデ",
+      "display_order": 7,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-08",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritataishin",
+      "voice_actor_id": "va-0114",
+      "signature": "ナリタタイシン",
+      "display_order": 8,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-09",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "winningticket",
+      "voice_actor_id": "va-0113",
+      "signature": "ウイニングチケット",
+      "display_order": 9,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-10",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "symbolirudolf",
+      "voice_actor_id": "va-0118",
+      "signature": "シンボリルドルフ",
+      "display_order": 10,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-11",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "airgroove",
+      "voice_actor_id": "va-0173",
+      "signature": "エアグルーヴ",
+      "display_order": 11,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-12",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritabrian",
+      "voice_actor_id": "va-0123",
+      "signature": "ナリタブライアン",
+      "display_order": 12,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-13",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "inesfujin",
+      "voice_actor_id": "va-0070",
+      "signature": "アイネスフウジン",
+      "display_order": 13,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-14",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "eishinflash",
+      "voice_actor_id": "va-0154",
+      "signature": "エイシンフラッシュ",
+      "display_order": 14,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-15",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "admirevega",
+      "voice_actor_id": "va-0042",
+      "signature": "アドマイヤベガ",
+      "display_order": 15,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-16",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "matikanefukukitaru",
+      "voice_actor_id": "va-0078",
+      "signature": "マチカネフクキタル",
+      "display_order": 16,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-17",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "supercreek",
+      "voice_actor_id": "va-0033",
+      "signature": "スーパークリーク",
+      "display_order": 17,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-18",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "riceshower",
+      "voice_actor_id": "va-0129",
+      "signature": "ライスシャワー",
+      "display_order": 18,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-19",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mayanotopgun",
+      "voice_actor_id": "va-0085",
+      "signature": "マヤノトップガン",
+      "display_order": 19,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-20",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mihonobourbon",
+      "voice_actor_id": "va-0169",
+      "signature": "ミホノブルボン",
+      "display_order": 20,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-21",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "seiunsky",
+      "voice_actor_id": "va-0185",
+      "signature": "セイウンスカイ",
+      "display_order": 21,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-22",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "agnestachyon",
+      "voice_actor_id": "va-0008",
+      "signature": "アグネスタキオン",
+      "display_order": 22,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-23",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tmoperao",
+      "voice_actor_id": "va-0073",
+      "signature": "テイエムオペラオー",
+      "display_order": 23,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-24",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "airshakur",
+      "voice_actor_id": "va-0109",
+      "signature": "エアシャカール",
+      "display_order": 24,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-25",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "haruurara",
+      "voice_actor_id": "va-0175",
+      "signature": "ハルウララ",
+      "display_order": 25,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-26",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "yukinobijin",
+      "voice_actor_id": "va-0063",
+      "signature": "ユキノビジン",
+      "display_order": 26,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-27",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "oguricap",
+      "voice_actor_id": "va-0179",
+      "signature": "オグリキャップ",
+      "display_order": 27,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-28",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldcity",
+      "voice_actor_id": "va-0176",
+      "signature": "ゴールドシチー",
+      "display_order": 28,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-29",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "bikopegasus",
+      "voice_actor_id": "va-0117",
+      "signature": "ビコーペガサス",
+      "display_order": 29,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-31",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "finemotion",
+      "voice_actor_id": "va-0102",
+      "signature": "ファインモーション",
+      "display_order": 31,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-32",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "fujikiseki",
+      "voice_actor_id": "va-0095",
+      "signature": "フジキセキ",
+      "display_order": 32,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-33",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "hishiamazon",
+      "voice_actor_id": "va-0071",
+      "signature": "ヒシアマゾン",
+      "display_order": 33,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-34",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "taikishuttle",
+      "voice_actor_id": "va-0050",
+      "signature": "タイキシャトル",
+      "display_order": 34,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-35",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 35,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-36",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "grasswonder",
+      "voice_actor_id": "va-0035",
+      "signature": "グラスワンダー",
+      "display_order": 36,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-37",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "sakurabakushino",
+      "voice_actor_id": "va-0007",
+      "signature": "サクラバクシンオー",
+      "display_order": 37,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-38",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "smartfalcon",
+      "voice_actor_id": "va-0049",
+      "signature": "スマートファルコン",
+      "display_order": 38,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-official-ending-cast-39",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "inarione",
+      "voice_actor_id": "va-0018",
+      "signature": "イナリワン",
+      "display_order": 39,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e15-ending-music-song-make-debut-2c6c00a71e-v-aa0647857b",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-make-debut-2c6c00a71e",
+      "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
+      "release_id": "album-laca-9637",
+      "version_label": "TV Size",
+      "usage_type": "op",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e15"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "spica_trainer",
+      "voice_actor_id": "va-0105",
+      "signature": "トレーナー",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-03",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tokaiteio",
+      "voice_actor_id": "va-0003",
+      "signature": "トウカイテイオー",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-04",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "vodka",
+      "voice_actor_id": "va-0051",
+      "signature": "ウオッカ",
+      "display_order": 4,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-05",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "daiwascarlet",
+      "voice_actor_id": "va-0090",
+      "signature": "ダイワスカーレット",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-06",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 6,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-07",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiromcqueen",
+      "voice_actor_id": "va-0053",
+      "signature": "メジロマックイーン",
+      "display_order": 7,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-08",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "biwahayahide",
+      "voice_actor_id": "va-0158",
+      "signature": "ビワハヤヒデ",
+      "display_order": 8,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-09",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritataishin",
+      "voice_actor_id": "va-0114",
+      "signature": "ナリタタイシン",
+      "display_order": 9,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-10",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "winningticket",
+      "voice_actor_id": "va-0113",
+      "signature": "ウイニングチケット",
+      "display_order": 10,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-11",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "symbolirudolf",
+      "voice_actor_id": "va-0118",
+      "signature": "シンボリルドルフ",
+      "display_order": 11,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-12",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "airgroove",
+      "voice_actor_id": "va-0173",
+      "signature": "エアグルーヴ",
+      "display_order": 12,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-13",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritabrian",
+      "voice_actor_id": "va-0123",
+      "signature": "ナリタブライアン",
+      "display_order": 13,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-14",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "eishinflash",
+      "voice_actor_id": "va-0154",
+      "signature": "エイシンフラッシュ",
+      "display_order": 14,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-15",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "admirevega",
+      "voice_actor_id": "va-0042",
+      "signature": "アドマイヤベガ",
+      "display_order": 15,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-16",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "manhattancafe",
+      "voice_actor_id": "va-0058",
+      "signature": "マンハッタンカフェ",
+      "display_order": 16,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-17",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "matikanefukukitaru",
+      "voice_actor_id": "va-0078",
+      "signature": "マチカネフクキタル",
+      "display_order": 17,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-18",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "supercreek",
+      "voice_actor_id": "va-0033",
+      "signature": "スーパークリーク",
+      "display_order": 18,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-19",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mayanotopgun",
+      "voice_actor_id": "va-0085",
+      "signature": "マヤノトップガン",
+      "display_order": 19,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-20",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "agnestachyon",
+      "voice_actor_id": "va-0008",
+      "signature": "アグネスタキオン",
+      "display_order": 20,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-21",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tmoperao",
+      "voice_actor_id": "va-0073",
+      "signature": "テイエムオペラオー",
+      "display_order": 21,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-22",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "airshakur",
+      "voice_actor_id": "va-0109",
+      "signature": "エアシャカール",
+      "display_order": 22,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-23",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "haruurara",
+      "voice_actor_id": "va-0175",
+      "signature": "ハルウララ",
+      "display_order": 23,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-24",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "yukinobijin",
+      "voice_actor_id": "va-0063",
+      "signature": "ユキノビジン",
+      "display_order": 24,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-25",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "oguricap",
+      "voice_actor_id": "va-0179",
+      "signature": "オグリキャップ",
+      "display_order": 25,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-26",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldcity",
+      "voice_actor_id": "va-0176",
+      "signature": "ゴールドシチー",
+      "display_order": 26,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-28",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "fujikiseki",
+      "voice_actor_id": "va-0095",
+      "signature": "フジキセキ",
+      "display_order": 28,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-29",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "hishiamazon",
+      "voice_actor_id": "va-0071",
+      "signature": "ヒシアマゾン",
+      "display_order": 29,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-30",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "taikishuttle",
+      "voice_actor_id": "va-0050",
+      "signature": "タイキシャトル",
+      "display_order": 30,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-31",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "elcondorpasa",
+      "voice_actor_id": "va-0180",
+      "signature": "エルコンドルパサー",
+      "display_order": 31,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-32",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "grasswonder",
+      "voice_actor_id": "va-0035",
+      "signature": "グラスワンダー",
+      "display_order": 32,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-33",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "sakurabakushino",
+      "voice_actor_id": "va-0007",
+      "signature": "サクラバクシンオー",
+      "display_order": 33,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-34",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "smartfalcon",
+      "voice_actor_id": "va-0049",
+      "signature": "スマートファルコン",
+      "display_order": 34,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-official-ending-cast-35",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "inarione",
+      "voice_actor_id": "va-0018",
+      "signature": "イナリワン",
+      "display_order": 35,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-ending-music-song-make-debut-2c6c00a71e-v-aa0647857b",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-make-debut-2c6c00a71e",
+      "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
+      "release_id": "album-laca-9637",
+      "version_label": "TV Size",
+      "usage_type": "op",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
+      ]
+    },
+    {
+      "id": "anime-s1-e16-ending-cue-song-blue-d4b4826cc5-insert",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-blue-d4b4826cc5",
+      "usage_type": "insert",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-s1-e16"
       ]
     }
   ]

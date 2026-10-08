@@ -181,10 +181,18 @@ def main():
         for cue in episode.get("music_cues", []):
             usage = cue.get("usage_type") or ("fanfare" if "ファンファーレ" in cue["title"] else "insert")
             if cue.get("song_id"):
+                linked = False
                 for relation in relations:
                     if relation["source_id"] == unit and relation.get("relation_type") == "uses_song" and relation.get("target_id") == cue["song_id"]:
                         relation.update(usage_type=usage, label="")
                         relation["evidence_refs"] = list(dict.fromkeys([*relation.get("evidence_refs", []), ref]))
+                        linked = True
+                if not linked:
+                    relations.append({"id": f"{unit}-ending-cue-{cue['song_id']}-{usage}",
+                                      "source_type": "anime_unit", "source_id": unit,
+                                      "relation_type": "uses_song", "target_type": "song",
+                                      "target_id": cue["song_id"], "usage_type": usage,
+                                      "label": "", "evidence_refs": [ref]})
             matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])]
             if matches:
                 for row in matches:
@@ -227,7 +235,8 @@ def main():
                 existing["evidence_refs"] = list(dict.fromkeys([*existing.get("evidence_refs", []), ref]))
             else:
                 relations.append(relation)
-            music = music_doc["versions"].setdefault(version, {"credits": [], "source": "official_ending", "manual": True})
+            source_kind = episode.get("source_kind", "official_ending")
+            music = music_doc["versions"].setdefault(version, {"credits": [], "source": source_kind, "manual": True})
             for signature in episode.get("music_signatures", []):
                 if signature["title"] != usage["title"]:
                     continue
@@ -252,9 +261,13 @@ def main():
                             music["credits"].append(credit)
                         if signature.get("institutions"):
                             credit["affiliation"] = signature["institutions"][0]
-            source = {"source": "official_ending", "source_url": episode["url"]}
-            if source not in music.setdefault("supplemental_sources", []):
-                music["supplemental_sources"].append(source)
+            source = {"source": source_kind, "source_url": episode["url"]}
+            supplements = music.setdefault("supplemental_sources", [])
+            for entry in supplements:
+                if entry.get("source_url") == episode["url"]:
+                    entry["source"] = source_kind
+            if source not in supplements:
+                supplements.append(source)
     print("New individually checked ending credits:", added)
     print("Superseded partial staff observations:", superseded_staff)
     print("Superseded cast relations:", superseded_cast)
