@@ -86,7 +86,7 @@ async function main() {
     check(/max-age=31536000/.test(cacheControl) && /immutable/.test(cacheControl), '版本化资源未长期缓存', asset + ' ' + (cacheControl || '无 Cache-Control'));
   }
 
-  const missingAsset = await request('/uma_tools/__deployment_missing__.js');
+  const missingAsset = await request('/__deployment_missing__.js');
   check(missingAsset.status === 404, '不存在的静态资源未返回 404', 'HTTP ' + missingAsset.status);
   for (const route of ['/zh-Hans/music/songs', '/zh-Hans/music/albums', '/zh-Hans/database/characters']) {
     const result = await request(route);
