@@ -511,12 +511,19 @@ const umaApp = createApp({
       animeStillUnit.value = '';
       pushUrl(true);
     }
+    function animeRowEditions(row) {
+      return Array.isArray(row.editions) && row.editions.length ? row.editions : (row.edition ? [row.edition] : []);
+    }
+    function animeRowMatchesEdition(row, edition) {
+      const editions = animeRowEditions(row);
+      return !editions.length || editions.includes(edition);
+    }
     const animeCurrentRelations = computed(function () {
       const unit = animeContentUnit.value;
       const sourceType = unit ? 'anime_unit' : 'anime_work';
       const sourceId = unit ? unit.id : (animeDetail.value && animeDetail.value.id);
       return (animeCatalog.value.relations || []).filter(function (relation) {
-        if (animeDetail.value && animeDetail.value.id === 'anime-rttt' && relation.source_type === 'anime_work' && relation.edition && relation.edition !== animeEdition.value) return false;
+        if (animeDetail.value && animeDetail.value.id === 'anime-rttt' && relation.source_type === 'anime_work' && !animeRowMatchesEdition(relation, animeEdition.value)) return false;
         return (relation.source_type === sourceType && relation.source_id === sourceId) ||
           (animeSingle.value && relation.source_type === 'anime_work' && relation.source_id === animeDetail.value.id);
       }).sort(function (a, b) { return (a.display_order || 0) - (b.display_order || 0); });
@@ -543,7 +550,7 @@ const umaApp = createApp({
       const unitId = animeContentUnit.value && animeContentUnit.value.id;
       const seen = new Set();
       return (animeCatalog.value.staff || []).filter(function (entry) {
-        if (entry.work_id !== workId || (entry.edition && workId === 'anime-rttt' && entry.edition !== animeEdition.value)) return false;
+        if (entry.work_id !== workId || (workId === 'anime-rttt' && !animeRowMatchesEdition(entry, animeEdition.value))) return false;
         if (!((entry.unit_id || null) === (unitId || null) || (animeSingle.value && !entry.unit_id))) return false;
         const key = [entry.role,entry.group || '',entry.person_id || entry.organization || entry.name,(entry.institutions || []).join('|')].join(':');
         if (seen.has(key)) return false;
@@ -599,6 +606,55 @@ const umaApp = createApp({
       const index = animeLeadRoles.findIndex(name => roles.includes(name));
       return index < 0 ? animeLeadRoles.length : index;
     }
+    function animeStaffRoleTokens(role) {
+      return new Set(String(role || '').split('／').filter(Boolean));
+    }
+    function animeStaffRoleContains(a, b) {
+      const left = animeStaffRoleTokens(a), right = animeStaffRoleTokens(b);
+      return [...left].every(token => right.has(token)) || [...right].every(token => left.has(token));
+    }
+    function animeStaffIdentity(entry) {
+      return entry.person_id || entry.organization || entry.name || '';
+    }
+    function animeStaffInstitutionKey(entry) {
+      return [entry.organization || '', ...(entry.institutions || [])].sort().join('|');
+    }
+    function animeStaffSamePersonAndInstitution(a, b) {
+      return animeStaffIdentity(a) === animeStaffIdentity(b) && animeStaffInstitutionKey(a) === animeStaffInstitutionKey(b);
+    }
+    function animeStaffDisplayEntry(entry) {
+      const copy = {...entry, institutions:[...(entry.institutions || [])]};
+      if (copy.group === '动作捕捉' && copy.role === '录音室助理') copy.role = '动作捕捉工作室助理';
+      if (copy.group === '动作捕捉' && copy.role === '录音室经理') copy.role = '动作捕捉工作室经理';
+      return copy;
+    }
+    function animeStaffMoveNarrowEntries(groups, listKey) {
+      groups.forEach(narrow => {
+        const narrowRole = narrow.rawRole || narrow.role;
+        const candidates = groups.filter(broad => broad !== narrow && broad.group === narrow.group &&
+          animeStaffRoleTokens(broad.rawRole || broad.role).size > animeStaffRoleTokens(narrowRole).size &&
+          animeStaffRoleContains(broad.rawRole || broad.role, narrowRole));
+        const kept = [];
+        narrow[listKey].forEach(item => {
+          const entry = listKey === 'credits' ? item : item.entry;
+          const broad = candidates.find(candidate => candidate[listKey].some(candidateItem => {
+            const candidateEntry = listKey === 'credits' ? candidateItem : candidateItem.entry;
+            return animeStaffSamePersonAndInstitution(candidateEntry, entry);
+          }));
+          if (!broad) {
+            kept.push(item);
+            return;
+          }
+          const match = broad[listKey].find(candidateItem => {
+            const candidateEntry = listKey === 'credits' ? candidateItem : candidateItem.entry;
+            return animeStaffSamePersonAndInstitution(candidateEntry, entry);
+          });
+          if (listKey === 'rows' && match) match.units = [...new Map([...match.units, ...item.units].map(unit => [unit.id, unit])).values()];
+        });
+        narrow[listKey] = kept;
+      });
+      return groups.filter(group => group[listKey].length);
+    }
     function animeStaffSectionRank(group) {
       if (!group) return 0;
       if (group === '片头动画') return 1;
@@ -612,13 +668,13 @@ const umaApp = createApp({
     const animeStaffGroups = computed(() => {
       const q = animeStaffQuery.value.trim().toLowerCase(), groups = [];
       animeCurrentStaff.value.forEach(entry => {
-        if (!animeStaffMatches(entry,q)) return;
-        const key = (entry.group || '') + ':' + entry.role;
-        let group = groups.find(row => row.key === key);
-        if (!group) { group = {key,role:entry.role,group:entry.group || '',credits:[]}; groups.push(group); }
-        group.credits.push(entry);
+        const displayEntry = animeStaffDisplayEntry(entry);
+        if (!animeStaffMatches(displayEntry,q)) return;
+        let group = groups.find(row => row.group === (displayEntry.group || '') && row.role === displayEntry.role);
+        if (!group) { group = {key: (displayEntry.group || '') + ':' + displayEntry.role,role:displayEntry.role,group:displayEntry.group || '',credits:[]}; groups.push(group); }
+        if (!group.credits.some(credit => animeStaffSamePersonAndInstitution(credit, displayEntry))) group.credits.push(displayEntry);
       });
-      return groups.sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
+      return animeStaffMoveNarrowEntries(groups, 'credits').sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
         || animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.credits)}));
     });
@@ -632,16 +688,21 @@ const umaApp = createApp({
         const unit = findAnimeUnit(entry.unit_id);
         if (unit && !row.units.some(item => item.id === unit.id)) row.units.push(unit);
       });
-      return rows.filter(row => animeStaffMatches(row.entry,q)).map(row => ({...row,units:row.units.sort((a,b)=>a.number-b.number)}));
+      return rows.filter(row => animeStaffMatches(animeStaffDisplayEntry(row.entry),q)).map(row => ({...row,units:row.units.sort((a,b)=>a.number-b.number)}));
     });
     const animeStaffAggregateGroups = computed(() => {
       const groups = new Map();
       animeStaffAggregate.value.forEach(row => {
-        const role = [row.entry.group,row.entry.role].filter(Boolean).join(' · ');
-        if (!groups.has(role)) groups.set(role,{key:role,role,group:row.entry.group || '',rows:[]});
-        groups.get(role).rows.push(row);
+        const entry = animeStaffDisplayEntry(row.entry);
+        let group = Array.from(groups.values()).find(candidate => candidate.group === (entry.group || '') && candidate.rawRole === entry.role);
+        if (!group) {
+          const role = [entry.group,entry.role].filter(Boolean).join(' · ');
+          group = {key:role,role,rawRole:entry.role,group:entry.group || '',rows:[]};
+          groups.set(role,group);
+        }
+        if (!group.rows.some(item => animeStaffSamePersonAndInstitution(item.entry, entry))) group.rows.push({...row,entry,units:[...row.units]});
       });
-      return Array.from(groups.values()).sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
+      return animeStaffMoveNarrowEntries(Array.from(groups.values()), 'rows').sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
         || animeStaffRoleRank(a.rows[0].entry.role)-animeStaffRoleRank(b.rows[0].entry.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.rows,row=>row.entry)}));
     });

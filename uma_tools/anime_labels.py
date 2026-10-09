@@ -5,6 +5,8 @@ import re
 
 
 ROLES = {
+    "アフレコスタジオ": "配音录音室", "ダビングスタジオ": "混音录音室",
+    "コーディネート": "协调", "モーションキャプチャー エンジニア": "动作捕捉工程师",
     "担当制作": "制作统筹",
     "担当補佐": "制作统筹助理",
     "背景進行": "背景制作进行", "背景進行補佐": "背景制作进行助理",
@@ -87,6 +89,17 @@ def role_label(raw):
     # Longest phrases first prevent overlapping job names from being split.
     pattern = "|".join(re.escape(key) for key in sorted(ROLES, key=len, reverse=True))
     return re.sub(pattern, lambda match: ROLES[match.group()], value).replace("･", "／").replace("・", "／").replace("/", "／")
+
+
+def role_label_for_group(raw, group=""):
+    """Translate roles whose meaning depends on the credit section."""
+    value = role_label(raw)
+    if group in ("モーションキャプチャー", "动作捕捉"):
+        if value == "录音室助理":
+            return "动作捕捉工作室助理"
+        if value == "录音室经理":
+            return "动作捕捉工作室经理"
+    return value
 
 
 def person_label(raw):

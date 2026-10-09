@@ -12,7 +12,7 @@ import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
-from anime_labels import role_label, person_label, group_label
+from anime_labels import role_label_for_group, person_label, group_label
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -260,7 +260,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
     for credit in staff:
         if credit.get("person_id") and credit["person_id"] not in person_ids:
             raise ValueError(f"unknown staff person {credit['person_id']}")
-    staff = [{**credit, "role_raw": credit["role"], "role": role_label(credit["role"]),
+    staff = [{**credit, "role_raw": credit["role"], "role": role_label_for_group(credit["role"], credit.get("group", "")),
               "group_raw": credit.get("group", ""), "group": group_label(credit.get("group", ""))}
              for credit in staff]
     people = [{**person, "name": person_label(person["name"]),

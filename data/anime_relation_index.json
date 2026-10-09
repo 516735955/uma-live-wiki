@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-60c0db901fa7dd8e",
+  "build_id": "anime-00d3fe58f9687a1e",
   "generated_at": "2026-10-09T00:00:00+08:00",
   "targets": {
     "event": {
@@ -742,6 +742,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "goldship": [
@@ -2057,6 +2068,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "セイウンスカイ",
+          "voice_actor_id": "va-0185",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "kinghalo": [
@@ -2224,6 +2246,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "キングヘイロー",
+          "voice_actor_id": "va-0027",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "mejirobright": [
@@ -3680,6 +3713,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "grasswonder": [
@@ -17293,6 +17337,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "va-0009": [
@@ -18608,6 +18663,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-08",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "セイウンスカイ",
+          "voice_actor_id": "va-0185",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "va-0027": [
@@ -18775,6 +18841,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-07",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "キングヘイロー",
+          "voice_actor_id": "va-0027",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "va-0054": [
@@ -20231,6 +20308,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-06",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スペシャルウィーク",
+          "voice_actor_id": "va-0040",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "va-0035": [
@@ -22702,6 +22790,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-rttt-film-official-ending-cast-12",
+          "relation_type": "credited_cast",
+          "label": "旁白",
+          "usage_type": "",
+          "signature": "ナレーション",
+          "voice_actor_id": "va-0151",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "va-0175": [
@@ -34437,6 +34536,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s2-e13",
           "work_id": "anime-s2"
+        },
+        {
+          "relation_id": "anime-rttt-film-ending-cue-song-228f943b49-ed",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "song-a2dfee41c0": [
@@ -38152,6 +38262,17 @@
           "source_type": "anime_work",
           "source_id": "anime-rttt",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-rttt-film-ending-cue-song-glorious-moment-8308fce210-op",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "op",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
+          "work_id": "anime-rttt"
         }
       ],
       "song-4e8cfa60e4": [
@@ -38164,6 +38285,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-rttt-e04",
+          "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-rttt-film-ending-cue-song-4e8cfa60e4-insert",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "insert",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-rttt",
           "work_id": "anime-rttt"
         }
       ],

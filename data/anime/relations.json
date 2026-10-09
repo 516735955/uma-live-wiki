@@ -7794,10 +7794,7 @@
         "official-toho-film-release"
       ],
       "display_order": 10,
-      "editions": [
-        "web",
-        "film"
-      ]
+      "edition": "web"
     },
     {
       "id": "anime-rttt-e01-music-song-0f2dac248c-v-0f2dac248c",
@@ -10625,7 +10622,8 @@
       "display_order": 0,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10645,7 +10643,8 @@
       "display_order": 1,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10665,7 +10664,8 @@
       "display_order": 2,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10682,10 +10682,11 @@
       "voice_actor_id": "va-0044",
       "signature": "沖田トレーナー",
       "label": "作品署名",
-      "display_order": 3,
+      "display_order": 11,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10702,10 +10703,11 @@
       "voice_actor_id": "va-0129",
       "signature": "ライスシャワー",
       "label": "作品署名",
-      "display_order": 4,
+      "display_order": 10,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10722,10 +10724,11 @@
       "voice_actor_id": "va-0139",
       "signature": "カレンチャン",
       "label": "作品署名",
-      "display_order": 5,
+      "display_order": 4,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10742,10 +10745,11 @@
       "voice_actor_id": "va-0039",
       "signature": "メイショウドトウ",
       "label": "作品署名",
-      "display_order": 6,
+      "display_order": 3,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -10762,10 +10766,11 @@
       "voice_actor_id": "va-0175",
       "signature": "ハルウララ",
       "label": "作品署名",
-      "display_order": 7,
+      "display_order": 9,
       "evidence_refs": [
         "official-master-rttt",
-        "official-toho-film-release"
+        "official-toho-film-release",
+        "official-ending-anime-rttt-film"
       ],
       "editions": [
         "web",
@@ -32124,6 +32129,129 @@
       "evidence_refs": [
         "official-ending-anime-movie-beginning-new-era-e01"
       ]
+    },
+    {
+      "id": "anime-rttt-film-official-ending-cast-05",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "oguricap",
+      "voice_actor_id": "va-0179",
+      "signature": "オグリキャップ",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
+    },
+    {
+      "id": "anime-rttt-film-official-ending-cast-06",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "specialweek",
+      "voice_actor_id": "va-0040",
+      "signature": "スペシャルウィーク",
+      "display_order": 6,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
+    },
+    {
+      "id": "anime-rttt-film-official-ending-cast-07",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "kinghalo",
+      "voice_actor_id": "va-0027",
+      "signature": "キングヘイロー",
+      "display_order": 7,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
+    },
+    {
+      "id": "anime-rttt-film-official-ending-cast-08",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "seiunsky",
+      "voice_actor_id": "va-0185",
+      "signature": "セイウンスカイ",
+      "display_order": 8,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
+    },
+    {
+      "id": "anime-rttt-film-official-ending-cast-12",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-0151",
+      "voice_actor_id": "va-0151",
+      "signature": "ナレーション",
+      "display_order": 12,
+      "label": "旁白",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film",
+      "role_name": "旁白"
+    },
+    {
+      "id": "anime-rttt-film-ending-cue-song-glorious-moment-8308fce210-op",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-glorious-moment-8308fce210",
+      "usage_type": "op",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
+    },
+    {
+      "id": "anime-rttt-film-ending-cue-song-228f943b49-ed",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-228f943b49",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
+    },
+    {
+      "id": "anime-rttt-film-ending-cue-song-4e8cfa60e4-insert",
+      "source_type": "anime_work",
+      "source_id": "anime-rttt",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-4e8cfa60e4",
+      "usage_type": "insert",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-rttt-film"
+      ],
+      "edition": "film"
     }
   ]
 }

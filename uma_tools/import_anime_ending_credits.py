@@ -53,12 +53,16 @@ def main():
     superseded_staff = 0
     for episode in documents["ending_credits"]["episodes"]:
         work = episode["work_id"]
+        edition = episode.get("edition", "")
+        work_scope = episode.get("scope") == "work" or (episode.get("number") == 0 and edition)
         unit = f"{work}-e{episode['number']:02d}"
-        if args.unit and unit not in args.unit:
+        scope_id = f"{work}-{edition}" if work_scope else unit
+        if args.unit and scope_id not in args.unit and unit not in args.unit:
             continue
-        ref = "official-ending-" + unit
+        ref = "official-ending-" + scope_id
         if not any(s["id"] == ref for s in sources):
-            sources.append({"id": ref, "kind": episode.get("source_kind", "official"), "label": "单集原始片尾职员表", "url": episode["url"],
+            sources.append({"id": ref, "kind": episode.get("source_kind", "official"),
+                            "label": "作品版原始片尾职员表" if work_scope else "单集原始片尾职员表", "url": episode["url"],
                             "observed_at": documents["ending_credits"]["observed_at"]})
         signatures = list(episode.get("staff", []))
         for block in episode.get("staff_groups", []):
@@ -81,10 +85,14 @@ def main():
             signature_ref = signature.get("source_ref", ref)
             if not any(source["id"] == signature_ref for source in sources):
                 raise ValueError(f"{unit}: unknown credit source {signature_ref}")
-            row = {"work_id": work, "unit_id": unit, "source_ref": signature_ref, "order": order,
+            row = {"work_id": work, "source_ref": signature_ref, "order": order,
                    "role": signature["role"], "group": signature.get("group", ""),
                    "name": signature.get("name", signature.get("organization")),
                    "source_time": signature["time"]}
+            if work_scope:
+                row["edition"] = edition
+            else:
+                row["unit_id"] = unit
             if "organization" in signature:
                 row["organization"] = signature["organization"]
             else:
@@ -110,7 +118,10 @@ def main():
                 if signature.get("institutions"):
                     row["institutions"] = signature["institutions"]
             checked_roles = set(role_label(row["role"]).split("／"))
-            matches = [c for c in credits if c.get("unit_id") == unit and
+            matches = [c for c in credits if c.get("work_id") == work and
+                       ((not work_scope and c.get("unit_id") == unit) or
+                        (work_scope and not c.get("unit_id") and
+                         (c.get("edition") == edition or edition in c.get("editions", [])))) and
                        set(role_label(c["role"]).split("／")) <= checked_roles and normalized(c["name"]) == normalized(row["name"]) and
                        group_label(c.get("group", "")) == group_label(row["group"])]
             if matches:
@@ -136,6 +147,7 @@ def main():
                               group_label(s.get("group", ""))) for s in signatures}
             checked_sources = {ref, *(s.get("source_ref", ref) for s in signatures)}
             obsolete = [c for c in credits if c.get("unit_id") == unit
+                        and not work_scope
                         and (c.get("source_ref", "").startswith("staff-transcript-") or
                              c.get("source_ref") in checked_sources and
                              (role_label(c["role"]), normalized(c["name"]), group_label(c.get("group", "")))
@@ -143,6 +155,13 @@ def main():
             if obsolete:
                 episode.setdefault("superseded_transcript", []).extend(obsolete)
             superseded_staff += len(obsolete)
+            if work_scope:
+                obsolete = [c for c in credits if c.get("work_id") == work and not c.get("unit_id") and
+                            (c.get("edition") == edition or edition in c.get("editions", [])) and
+                            (c.get("source_ref", "").startswith("staff-transcript-") or
+                             c.get("source_ref") in checked_sources and
+                             (role_label(c["role"]), normalized(c["name"]), group_label(c.get("group", ""))) not in checked_staff)]
+                superseded_staff += len(obsolete)
             obsolete_rows = {id(c) for c in obsolete}
             credits[:] = [c for c in credits if id(c) not in obsolete_rows]
         checked_cast = set()
@@ -164,49 +183,68 @@ def main():
             voice = voice_names[normalized(actor)]
             target = character["id"] if character else voice["id"]
             checked_cast.add((target, voice["id"]))
-            existing = next((r for r in relations if r["source_id"] == unit and r.get("relation_type") == "credited_cast"
+            existing = next((r for r in relations if r["source_id"] == (work if work_scope else unit) and
+                             r.get("relation_type") == "credited_cast" and
+                             ((not work_scope and r.get("source_type") == "anime_unit") or
+                              (work_scope and r.get("source_type") == "anime_work" and
+                               (r.get("edition") == edition or edition in r.get("editions", []))))
                              and r.get("target_id") == target and r.get("voice_actor_id") == voice["id"]), None)
             if existing:
                 existing["evidence_refs"] = list(dict.fromkeys([*existing.get("evidence_refs", []), ref]))
                 existing.update(signature=signature, display_order=order)
+                if work_scope and not existing.get("editions"):
+                    existing["edition"] = edition
             else:
-                relations.append({"id": f"{unit}-official-ending-cast-{order:02d}", "source_type": "anime_unit", "source_id": unit,
+                relations.append({"id": f"{scope_id}-official-ending-cast-{order:02d}",
+                                  "source_type": "anime_work" if work_scope else "anime_unit",
+                                  "source_id": work if work_scope else unit,
                                   "relation_type": "credited_cast", "target_type": "character" if character else "voice_actor", "target_id": target,
                                   "voice_actor_id": voice["id"], "signature": signature, "display_order": order,
-                                  "label": "", "evidence_refs": [ref]})
+                                  "label": "", "evidence_refs": [ref], **({"edition": edition} if work_scope else {})})
                 if narrator:
                     relations[-1].update(label="旁白", role_name="旁白")
         if episode.get("cast_status") == "complete":
-            obsolete = [r for r in relations if r["source_id"] == unit and
+            obsolete = [r for r in relations if r["source_id"] == (work if work_scope else unit) and
                         r.get("relation_type") == "credited_cast" and
+                        ((not work_scope and r.get("source_type") == "anime_unit") or
+                         (work_scope and r.get("source_type") == "anime_work" and
+                          (r.get("edition") == edition or edition in r.get("editions", [])))) and
+                        (not work_scope or r.get("source_ref", "").startswith("staff-transcript-") or
+                         r.get("source_ref") in {ref, *checked_sources} or
+                         any(source.startswith("staff-transcript-") or source in {ref, *checked_sources}
+                             for source in r.get("evidence_refs", []))) and
                         (r.get("target_id"), r.get("voice_actor_id")) not in checked_cast]
             superseded_cast += len(obsolete)
             obsolete_ids = {r["id"] for r in obsolete}
             relations[:] = [r for r in relations if r["id"] not in obsolete_ids]
-        series = next(s for s in documents["units"]["series"] if s["work_id"] == work)
-        detail = series.setdefault("details", {}).setdefault(str(episode["number"]), {})
-        detail["staff_status"] = episode["staff_status"]
-        detail["source_refs"] = list(dict.fromkeys([*detail.get("source_refs", []), ref]))
+        detail = None
+        if not work_scope:
+            series = next(s for s in documents["units"]["series"] if s["work_id"] == work)
+            detail = series.setdefault("details", {}).setdefault(str(episode["number"]), {})
+            detail["staff_status"] = episode["staff_status"]
+            detail["source_refs"] = list(dict.fromkeys([*detail.get("source_refs", []), ref]))
         for cue in episode.get("music_cues", []):
             usage = cue.get("usage_type") or ("fanfare" if "ファンファーレ" in cue["title"] else "insert")
+            relation_source = work if work_scope else unit
+            relation_type = "anime_work" if work_scope else "anime_unit"
             if cue.get("song_id"):
                 linked = False
                 for relation in relations:
-                    if relation["source_id"] == unit and relation.get("relation_type") == "uses_song" and relation.get("target_id") == cue["song_id"]:
+                    if relation["source_id"] == relation_source and relation.get("source_type") == relation_type and relation.get("relation_type") == "uses_song" and relation.get("target_id") == cue["song_id"] and (not work_scope or relation.get("edition") == edition):
                         relation.update(usage_type=usage, label="")
                         relation["evidence_refs"] = list(dict.fromkeys([*relation.get("evidence_refs", []), ref]))
                         linked = True
                 if not linked:
-                    relations.append({"id": f"{unit}-ending-cue-{cue['song_id']}-{usage}",
-                                      "source_type": "anime_unit", "source_id": unit,
+                    relations.append({"id": f"{scope_id}-ending-cue-{cue['song_id']}-{usage}",
+                                      "source_type": relation_type, "source_id": relation_source,
                                       "relation_type": "uses_song", "target_type": "song",
                                       "target_id": cue["song_id"], "usage_type": usage,
-                                      "label": "", "evidence_refs": [ref]})
+                                      "label": "", "evidence_refs": [ref], **({"edition": edition} if work_scope else {})})
             names = cue.get("names", [])
             creator_ids = [creator_names[normalized(name)] for name in names]
             credit = {"role": role_label(cue["role"]), "names": names,
                       "institutions": cue.get("institutions", []), "creator_ids": creator_ids}
-            matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])]
+            matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])] if detail is not None else []
             if matches:
                 for row in matches:
                     row["source_refs"] = list(dict.fromkeys([*row.get("source_refs", []), ref]))
@@ -216,31 +254,36 @@ def main():
                     if credit not in row.setdefault("credits", []):
                         row["credits"].append(credit)
                 continue
-            detail.setdefault("music_cues", []).append({
-                "title": cue["title"], "usage_type": usage,
-                "credits": [credit],
-                "institutions": [], "source_refs": [ref], "source_time": cue["time"]})
-            if cue.get("song_id"):
-                detail["music_cues"][-1]["song_id"] = cue["song_id"]
+            if detail is not None:
+                detail.setdefault("music_cues", []).append({
+                    "title": cue["title"], "usage_type": usage,
+                    "credits": [credit],
+                    "institutions": [], "source_refs": [ref], "source_time": cue["time"]})
+                if cue.get("song_id"):
+                    detail["music_cues"][-1]["song_id"] = cue["song_id"]
         # Recording mappings are reviewed explicitly; titles and album order
         # never establish an episode's music use by themselves.
         for usage in episode.get("music_uses", []):
             version = usage["version_id"]
             if versions.get(version) != usage["song_id"]:
                 raise ValueError("unknown recording mapping: " + version)
-            relation_id = f"{unit}-ending-music-{version}"
-            relation = {"id": relation_id, "source_type": "anime_unit", "source_id": unit,
+            relation_id = f"{scope_id}-ending-music-{version}"
+            relation = {"id": relation_id, "source_type": "anime_work" if work_scope else "anime_unit", "source_id": work if work_scope else unit,
                         "relation_type": "uses_song", "target_type": "song", "target_id": usage["song_id"],
                         "version_id": version, "release_id": usage["release_id"], "version_label": version_labels[version],
-                        "usage_type": usage["usage_type"], "label": "", "evidence_refs": [ref]}
-            existing = next((r for r in relations if r["source_id"] == unit and
+                        "usage_type": usage["usage_type"], "label": "", "evidence_refs": [ref], **({"edition": edition} if work_scope else {})}
+            existing = next((r for r in relations if r["source_id"] == (work if work_scope else unit) and
+                             r.get("source_type") == ("anime_work" if work_scope else "anime_unit") and
                              r.get("relation_type") == "uses_song" and r.get("version_id") == version and
-                             r.get("usage_type", usage["usage_type"]) == usage["usage_type"]), None)
+                             r.get("usage_type", usage["usage_type"]) == usage["usage_type"] and
+                             (not work_scope or r.get("edition") == edition)), None)
             if existing is None:
-                existing = next((r for r in relations if r["source_id"] == unit and
+                existing = next((r for r in relations if r["source_id"] == (work if work_scope else unit) and
+                                 r.get("source_type") == ("anime_work" if work_scope else "anime_unit") and
                                  r.get("relation_type") == "uses_song" and not r.get("version_id") and
                                  r.get("target_id") == usage["song_id"] and
-                                 r.get("usage_type") == usage["usage_type"]), None)
+                                 r.get("usage_type") == usage["usage_type"] and
+                                 (not work_scope or r.get("edition") == edition)), None)
             if existing:
                 existing.update(version_id=version, release_id=usage["release_id"],
                                 version_label=version_labels[version], usage_type=usage["usage_type"], label="")
@@ -280,6 +323,21 @@ def main():
                     entry["source"] = source_kind
             if source not in supplements:
                 supplements.append(source)
+        if work_scope and episode.get("staff_status") == "complete":
+            checked_music = {(usage.get("song_id"), usage.get("usage_type"))
+                             for usage in episode.get("music_uses", [])}
+            checked_music.update((cue.get("song_id"), cue.get("usage_type"))
+                                 for cue in episode.get("music_cues", []) if cue.get("song_id"))
+            obsolete_music = [r for r in relations
+                              if r.get("source_type") == "anime_work" and r.get("source_id") == work
+                              and r.get("relation_type") == "uses_song" and r.get("edition") == edition
+                              and (r.get("target_id"), r.get("usage_type")) not in checked_music
+                              and (r.get("source_ref", "").startswith("staff-transcript-") or
+                                   r.get("source_ref") in {ref, *checked_sources} or
+                                   any(source.startswith("staff-transcript-") or source in {ref, *checked_sources}
+                                       for source in r.get("evidence_refs", [])))]
+            obsolete_ids = {r["id"] for r in obsolete_music}
+            relations[:] = [r for r in relations if r["id"] not in obsolete_ids]
     print("New individually checked ending credits:", added)
     print("Superseded partial staff observations:", superseded_staff)
     print("Superseded cast relations:", superseded_cast)
