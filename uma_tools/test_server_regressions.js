@@ -31,11 +31,14 @@ async function main() {
   const failed = abandoned.catch(() => {});
   timers[0]();
   await failed;
+  context.newsIndexCache.data = { information_list: [{ announce_id: 2, title: 'new', image: 'manual.webp', title_zh: '人工译文' }] };
   const replacement = context.refreshNewsIndex();
   pages[1](null, { total_page_count: 1, information_list: [{ announce_id: 2, title: 'new', post_at: '2026-10-08' }] });
   await replacement;
   pages[0](null, { total_page_count: 1, information_list: [{ announce_id: 1, title: 'expired' }] });
   assert.strictEqual(context.newsIndexCache.data.information_list[0].announce_id, 2, 'timed-out refresh cannot publish later');
+  assert.strictEqual(context.newsIndexCache.data.information_list[0].image, 'manual.webp', 'refresh preserves an enriched image');
+  assert.strictEqual(context.newsIndexCache.data.information_list[0].title_zh, '人工译文', 'unchanged titles preserve translations');
   context.newsIndexCache.data = { generated_at: 'same', information_list: [
     { announce_id: 2, title: 'new' }, { announce_id: 'lantis-new', title: 'new CD' }
   ] };
@@ -49,9 +52,33 @@ async function main() {
   context.handleNewsIndex(second);
   assert.notStrictEqual(first.options.etag, second.options.etag, 'ETag changes when translation changes');
 
+  const articles = vm.createContext({ AbortController, Date, Map, Set,
+    sendJson(response, status, body) { response.status = status; response.body = body; }
+  });
+  vm.runInContext(section('const articleCache =', 'function handleNewsDetail('), articles);
+  const subscriberA = new EventEmitter(), subscriberB = new EventEmitter();
+  let articleLoads = 0, complete, signal;
+  const load = (token, done) => { articleLoads += 1; signal = token; complete = done; };
+  articles.serveArticle('one', subscriberA, load);
+  articles.serveArticle('one', subscriberB, load);
+  assert.strictEqual(articleLoads, 1, 'concurrent readers share an upstream article request');
+  subscriberA.emit('close');
+  assert.strictEqual(signal.aborted, false, 'one closed reader does not cancel another');
+  complete(200, { detail: { title: 'article' } });
+  assert.strictEqual(subscriberB.status, 200);
+  articles.serveArticle('one', new EventEmitter(), load);
+  assert.strictEqual(articleLoads, 1, 'a completed article is served from cache');
+  const cancelled = new EventEmitter();
+  articles.serveArticle('two', cancelled, load);
+  cancelled.emit('close');
+  assert.strictEqual(signal.aborted, true, 'the last closed reader cancels upstream work');
+  articles.serveArticle('two', new EventEmitter(), load);
+  assert.strictEqual(articleLoads, 3, 'cancelled article requests remain retryable');
+
   let requestCount = 0;
   const sensitive = vm.createContext({
     crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', sanitizeSensitive: (text) => text,
+    fetchTranslation: async () => { requestCount += 1; return { error_code: '20003' }; },
     https: { get(url, options, callback) {
       requestCount += 1;
       const request = new EventEmitter();
@@ -67,13 +94,13 @@ async function main() {
   await sensitive.translateOne('拒绝', 0);
   assert.strictEqual(requestCount, 2, 'sensitive-word fallback is bounded');
 
-  let pendingTimeout;
   const translation = vm.createContext({
     crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {}, transDirty: false,
     saveTransCache() {}, hasCjk: () => true,
+    fetchTranslation: () => Promise.reject(new Error('timeout')),
     https: { get() {
       const request = new EventEmitter();
-      request.setTimeout = (unused, callback) => { pendingTimeout = callback.bind(request); return request; };
+      request.setTimeout = () => request;
       request.destroy = () => request.emit('error', new Error('timeout'));
       return request;
     } }
@@ -81,7 +108,7 @@ async function main() {
   vm.runInContext(section('function translateBatchLines(', 'function httpsGet('), translation);
   let callbacks = 0;
   translation.translateBatchLines(['原文'], () => { callbacks += 1; });
-  pendingTimeout();
+  await tick();
   assert.strictEqual(callbacks, 1, 'timeout plus error invokes translation callback once');
   translation.translateBatchLines = (lines, callback) => callback(null);
   translation.translateOne = async () => '';

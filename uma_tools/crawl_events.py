@@ -432,9 +432,9 @@ def main():
         try:
             for row in json.load(io.open(man_path, encoding='utf-8')):
                 k = row.get('link')
-                if k and k not in all_events:
+                if k:
                     r = {kk: vv for kk, vv in row.items() if kk != '_manual'}
-                    all_events[k] = r
+                    all_events[k] = dict(all_events.get(k) or {}, **r)
             print('manual events merged:', flush=True)
         except Exception as ex:
             print('manual events load failed:', str(ex)[:80], flush=True)

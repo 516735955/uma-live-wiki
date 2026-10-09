@@ -56,15 +56,22 @@ fi
 
 echo "==> 同步到 $ROOT（保留服务器本地生成的缓存/日志）"
 mkdir -p "$ROOT"
-# 已在服务器更新过的新闻和翻译缓存优先于仓库中的初始快照。
-for file in data/news_snapshot.json data/lantis_news.json uma_tools/trans_cache.json; do
-  if [ -f "$ROOT/$file" ] && [ -f "$SRC/$file" ]; then
-    rm "$SRC/$file"
-  fi
-done
+# 常规更新只发布代码；已有运行资料保留，首次部署才安装仓库底库。
+if [ -d "$ROOT/data" ] && [ -d "$SRC/data" ]; then
+  find "$SRC/data" -type f -print0 2>/dev/null | while IFS= read -r -d '' file; do
+    relative="${file#"$SRC/"}"
+    if [ -f "$ROOT/$relative" ]; then rm "$file"; fi
+  done
+fi
+if [ -f "$ROOT/uma_tools/trans_cache.json" ] && [ -f "$SRC/uma_tools/trans_cache.json" ]; then
+  rm "$SRC/uma_tools/trans_cache.json"
+fi
 cp -a "$SRC/." "$ROOT/"
 if [ -f "$ROOT/uma_tools/extract_albums.js" ]; then
   rm "$ROOT/uma_tools/extract_albums.js"
+fi
+if [ -f "$ROOT/uma_tools/img/creator-placeholder.svg" ]; then
+  rm "$ROOT/uma_tools/img/creator-placeholder.svg"
 fi
 
 if [ "$(id -u)" = "0" ]; then

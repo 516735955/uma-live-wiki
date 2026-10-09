@@ -393,7 +393,7 @@ class CatalogStore {
       throw new Error('catalog revision mismatch');
     }
     const sourceRevision = crypto.createHash('sha1')
-      .update(texts.slice(CATALOG_FILES.length).join('\u0000'))
+      .update(texts.slice(CATALOG_FILES.length - 1).join('\u0000'))
       .digest('hex')
       .slice(0, 12);
 
@@ -472,7 +472,7 @@ class CatalogStore {
     today.setHours(0, 0, 0, 0);
     const nextEvent = events
       .filter((event) => {
-        const time = new Date(String(event.date || '') + 'T00:00:00').getTime();
+        const time = new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime();
         return Number.isFinite(time) && time >= today.getTime();
       })
       .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
@@ -503,7 +503,7 @@ class CatalogStore {
     today.setHours(0, 0, 0, 0);
     let rows = store.eventRows.filter((row) => {
       const event = row.data;
-      const eventTime = new Date(String(event.date || '') + 'T00:00:00').getTime();
+      const eventTime = new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime();
       if (query && !row.search.includes(query)) return false;
       if (kind !== 'all' && event.kind !== kind) return false;
       if (mode !== 'all' && event.mode !== mode) return false;
@@ -573,7 +573,7 @@ class CatalogStore {
 
   async song(id) {
     const store = await this.get();
-    const target = normalize(id).replace(/ /g, '');
+    const target = songIdentityKey(id);
     const song = store.songsById.get(String(id)) || store.songAliases.get(target);
     return song ? { build_id: store.buildId, song: hydrateSong(song, store.music) } : null;
   }

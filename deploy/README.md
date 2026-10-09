@@ -22,7 +22,7 @@ git archive --format=tar.gz -o uma-live-wiki-main.tgz main
 sudo bash update.sh /var/www/umamusume /路径/uma-live-wiki-main.tgz
 ```
 
-更新保留服务器的新闻快照、Lantis 快照、翻译缓存及仓库外的图片和日志。只发布代码补丁时，压缩包可只包含已提交的运行文件；不附带 data 的源文件和生成目录，便不会覆盖线上刷新或人工资料。
+常规更新保留服务器已有的全部 data 文件、翻译缓存及仓库外的图片和日志；首次部署才安装仓库底库。确认过的数据订正单独合并并运行相关生成器，不通过代码发布覆盖线上资料。只发布代码补丁时，压缩包可只包含已提交的运行文件。
 
 脚本修正公开数据的读取权限，安装 systemd 单元，校验并重载 nginx，重启 Node，再通过公网运行部署检查。更换目录或用户需同时修改 systemd/nginx 配置，不能只改变脚本参数。
 
