@@ -15,6 +15,13 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/anime"
 
 
+def music_credit_key(credit):
+    creators = credit.get("creator_ids", [])
+    identity = tuple(sorted(creators)) if creators else tuple(sorted(normalized(name) for name in credit.get("names", [])))
+    return (role_label(credit["role"]), identity,
+            tuple(sorted(normalized(name) for name in credit.get("institutions", []))))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write", action="store_true")
@@ -253,7 +260,8 @@ def main():
                     row["usage_type"] = usage
                     if cue.get("song_id"):
                         row["song_id"] = cue["song_id"]
-                    if credit not in row.setdefault("credits", []):
+                    existing_credits = row.setdefault("credits", [])
+                    if not any(music_credit_key(existing) == music_credit_key(credit) for existing in existing_credits):
                         row["credits"].append(credit)
                 continue
             if detail is not None:
