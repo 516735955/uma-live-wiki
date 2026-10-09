@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-09T11:34:15+00:00",
+  "generated_at": "2026-10-09T17:25:16+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -66511,7 +66511,7 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-airi-f2725a845c"
+              "creator_id": "creator-f611e526aa"
             },
             {
               "role": "composer",
@@ -66526,7 +66526,7 @@
           ],
           "creator_ids": [
             "creator-724bd18b67",
-            "creator-airi-f2725a845c"
+            "creator-f611e526aa"
           ],
           "lyrics_ref": "song-next-frontier-5267707c1b-v-c739868dd5",
           "has_lyrics": true,
@@ -66650,7 +66650,7 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-airi-f2725a845c"
+              "creator_id": "creator-f611e526aa"
             },
             {
               "role": "composer",
@@ -66665,7 +66665,7 @@
           ],
           "creator_ids": [
             "creator-724bd18b67",
-            "creator-airi-f2725a845c"
+            "creator-f611e526aa"
           ],
           "lyrics_ref": "song-next-frontier-5267707c1b-v-d3b2462a1f",
           "has_lyrics": true,
@@ -67406,7 +67406,6 @@
       "original_version_id": "song-next-frontier-5267707c1b-v-5267707c1b",
       "creator_ids": [
         "creator-724bd18b67",
-        "creator-airi-f2725a845c",
         "creator-f611e526aa",
         "creator-fox-capture-plan-026b7d1aca"
       ],
@@ -247973,5 +247972,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "30a042199960ea000b8b"
+  "build_id": "f51d06771568d0cb6d81"
 }

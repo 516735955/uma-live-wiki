@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-09T11:34:15+00:00",
+  "generated_at": "2026-10-09T17:25:16+00:00",
   "coverage": {
     "creators": 283,
     "credited_works": 332,
@@ -243,44 +243,12 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 3
+          "count": 1
         }
       ],
-      "work_count": 2,
-      "version_count": 3,
+      "work_count": 1,
+      "version_count": 1,
       "works": [
-        {
-          "song_id": "song-next-frontier-5267707c1b",
-          "title": "NEXT FRONTIER",
-          "cover": "https://p2.music.126.net/NY9mDi616DjmE0BsFu9G2w==/109951170973866055.jpg",
-          "release_date": "2021-03-17",
-          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 01",
-          "roles": [
-            "lyricist"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-c739868dd5",
-            "song-next-frontier-5267707c1b-v-d3b2462a1f"
-          ],
-          "versions": [
-            {
-              "id": "song-next-frontier-5267707c1b-v-c739868dd5",
-              "title": "NEXT FRONTIER (Anime Size)",
-              "version_label": "Anime Size",
-              "roles": [
-                "lyricist"
-              ]
-            },
-            {
-              "id": "song-next-frontier-5267707c1b-v-d3b2462a1f",
-              "title": "NEXT FRONTIER (Game Size)",
-              "version_label": "Game Size",
-              "roles": [
-                "lyricist"
-              ]
-            }
-          ]
-        },
         {
           "song_id": "song-87be3723c2",
           "title": "本能スピード",
@@ -306,15 +274,6 @@
         }
       ],
       "collaborators": [
-        {
-          "creator_id": "creator-724bd18b67",
-          "name": "山口朗彦",
-          "shared_version_count": 2,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-next-frontier-5267707c1b"
-          ]
-        },
         {
           "creator_id": "creator-ajurika-e2947b5d62",
           "name": "AJURIKA",
@@ -8329,11 +8288,11 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 24
+          "count": 26
         }
       ],
       "work_count": 3,
-      "version_count": 24,
+      "version_count": 26,
       "works": [
         {
           "song_id": "song-next-frontier-5267707c1b",
@@ -8352,6 +8311,8 @@
             "song-next-frontier-5267707c1b-v-79bd87a5b6",
             "song-next-frontier-5267707c1b-v-914b6890b7",
             "song-next-frontier-5267707c1b-v-baf056055e",
+            "song-next-frontier-5267707c1b-v-c739868dd5",
+            "song-next-frontier-5267707c1b-v-d3b2462a1f",
             "song-next-frontier-5267707c1b-v-dd7e5274c3",
             "song-next-frontier-5267707c1b-v-ee240d3e1e",
             "song-next-frontier-5267707c1b-v-f73d79b758"
@@ -8361,6 +8322,22 @@
               "id": "song-next-frontier-5267707c1b-v-5267707c1b",
               "title": "NEXT FRONTIER",
               "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-next-frontier-5267707c1b-v-c739868dd5",
+              "title": "NEXT FRONTIER (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-next-frontier-5267707c1b-v-d3b2462a1f",
+              "title": "NEXT FRONTIER (Game Size)",
+              "version_label": "Game Size",
               "roles": [
                 "lyricist"
               ]
@@ -8598,7 +8575,7 @@
         {
           "creator_id": "creator-724bd18b67",
           "name": "山口朗彦",
-          "shared_version_count": 11,
+          "shared_version_count": 13,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-2752ee7923",
@@ -25411,19 +25388,10 @@
         {
           "creator_id": "creator-f611e526aa",
           "name": "うらん",
-          "shared_version_count": 11,
+          "shared_version_count": 13,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-2752ee7923",
-            "song-next-frontier-5267707c1b"
-          ]
-        },
-        {
-          "creator_id": "creator-airi-f2725a845c",
-          "name": "AiRI",
-          "shared_version_count": 2,
-          "shared_work_count": 1,
-          "shared_song_ids": [
             "song-next-frontier-5267707c1b"
           ]
         },
@@ -53960,5 +53928,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "30a042199960ea000b8b"
+  "build_id": "f51d06771568d0cb6d81"
 }

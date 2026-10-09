@@ -2478,33 +2478,55 @@
     "song-next-frontier-5267707c1b-v-c739868dd5": {
       "credits": [
         {
-          "role": "lyricist",
-          "name": "AiRI",
-          "creator_id": "creator-airi-f2725a845c"
+          "role": "composer",
+          "name": "山口朗彦",
+          "creator_id": "creator-724bd18b67"
         },
         {
-          "role": "composer",
+          "role": "lyricist",
+          "name": "うらん",
+          "creator_id": "creator-f611e526aa"
+        },
+        {
+          "role": "arranger",
           "name": "山口朗彦",
           "creator_id": "creator-724bd18b67"
         }
       ],
-      "source": "netease_recording_metadata",
-      "source_track_id": "3320361822"
+      "source": "official_lantis_catalog",
+      "source_catalog": "LACA-19146",
+      "source_url": "https://umamusume.lantis.jp/discography/アニメ『ウマ娘-シンデレラグレイ』オリジナル・/",
+      "manual": true,
+      "source_track_id": "3320361822",
+      "supplemental_sources": [
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/27123-1-9.html"
+        }
+      ]
     },
     "song-next-frontier-5267707c1b-v-d3b2462a1f": {
       "credits": [
         {
           "role": "lyricist",
-          "name": "AiRI",
-          "creator_id": "creator-airi-f2725a845c"
+          "name": "うらん",
+          "creator_id": "creator-f611e526aa"
         },
         {
           "role": "composer",
           "name": "山口朗彦",
           "creator_id": "creator-724bd18b67"
+        },
+        {
+          "role": "arranger",
+          "name": "山口朗彦",
+          "creator_id": "creator-724bd18b67"
         }
       ],
-      "source": "netease_recording_metadata",
+      "source": "official_lantis_catalog",
+      "source_catalog": "LACA-15859",
+      "source_url": "https://umamusume.lantis.jp/discography/winning-live-01/",
+      "manual": true,
       "source_track_id": "1830409082"
     },
     "song-next-frontier-5267707c1b-v-f73d79b758": {
@@ -4676,6 +4698,10 @@
         {
           "source": "credit_recording",
           "source_url": "https://www.yinhuadm.cc/p/27123-2-7.html"
+        },
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/27123-2-8.html"
         }
       ]
     },
