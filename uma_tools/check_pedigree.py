@@ -211,7 +211,9 @@ def main():
         avatar = node.get("av")
         if avatar and not str(avatar).startswith(("http://", "https://", "data:")):
             local = str(avatar).lstrip("/").replace("/", os.sep)
-            if not os.path.isfile(os.path.join(build_pedigree.ROOT, local)):
+            full_path = os.path.join(build_pedigree.ROOT, local)
+            if (not os.path.isfile(full_path) or
+                    os.path.basename(full_path) not in os.listdir(os.path.dirname(full_path))):
                 errors.append("missing avatar for %s: %s" % (node_id, avatar))
 
         relations = node.get("character_relations")
