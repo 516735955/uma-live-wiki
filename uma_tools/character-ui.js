@@ -112,8 +112,19 @@
   var relByCid = {};
   var relSource = null;
   window.addEventListener('message', function (event) {
-    if (!event.data || event.data.type !== 'uma-pedigree-height') return;
     var frames = document.querySelectorAll('.c-pedigree-lens-frame');
+    if (!event.data) return;
+    if (event.data.type === 'uma-pedigree-navigate') {
+      var targetPath = String(event.data.path || '');
+      var isCharacterPath = /^\/zh-Hans\/database\/characters\/[^/?#]+(?:[?#].*)?$/.test(targetPath);
+      var fromPedigreeFrame = Array.prototype.some.call(frames, function (frame) {
+        return frame.contentWindow === event.source;
+      });
+      if (!isCharacterPath || !fromPedigreeFrame || typeof window.umaNavigate !== 'function') return;
+      window.umaNavigate(targetPath);
+      return;
+    }
+    if (event.data.type !== 'uma-pedigree-height') return;
     frames.forEach(function (frame) {
       if (frame.contentWindow !== event.source) return;
       if (frame.dataset.pedigreeSample !== event.data.sample) return;

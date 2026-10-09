@@ -315,9 +315,12 @@
       charLink.addEventListener('click', function (event) {
         if (!embedded || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         try {
-          if (typeof window.top.umaNavigate === 'function') {
+          if (window.parent !== window) {
             event.preventDefault();
-            window.top.umaNavigate(characterRoute(item.cid));
+            window.parent.postMessage({
+              type: 'uma-pedigree-navigate',
+              path: characterRoute(item.cid)
+            }, '*');
           }
         } catch (e) {}
       });
