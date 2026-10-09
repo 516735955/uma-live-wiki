@@ -5353,7 +5353,8 @@
           "source_refs": [
             "official-story-anime-cinderella-gray-e17",
             "staff-transcript-anime-cinderella-gray",
-            "official-cg-schedule-17"
+            "official-cg-schedule-17",
+            "official-ending-anime-cinderella-gray-e17"
           ],
           "stills": [
             {
@@ -5413,7 +5414,7 @@
             }
           ],
           "title_ja": "ジャパンカップ",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "release_date": "2025-11-02",
           "dates": [
             {
@@ -5423,7 +5424,32 @@
               "timezone": "JST"
             }
           ],
-          "summary_zh": "日本杯即将开始，小栗帽与玉藻自秋季天皇赏后再次相遇。小栗帽带着成长后的决心请求再战；各位选手也怀着各自心愿，听命汝主露出了难以捉摸的笑容。"
+          "summary_zh": "日本杯即将开始，小栗帽与玉藻自秋季天皇赏后再次相遇。小栗帽带着成长后的决心请求再战；各位选手也怀着各自心愿，听命汝主露出了难以捉摸的笑容。",
+          "music_cues": [
+            {
+              "title": "ウマ娘ファンファーレ I GI",
+              "usage_type": "fanfare",
+              "credits": [
+                {
+                  "role": "作曲／编曲",
+                  "names": [
+                    "高田龍一"
+                  ],
+                  "institutions": [
+                    "MONACA"
+                  ],
+                  "creator_ids": [
+                    "creator-ff7b158325"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-cinderella-gray-e17"
+              ],
+              "source_time": 1389.726
+            }
+          ]
         },
         "18": {
           "summary_ja": "1人のウマ娘がいた。\n走ることに直向きで、努力に真摯な、ごく普通のウマ娘。\nしかし、その胸の中にある『勝利への渇望』は誰よりも熱く、何よりも強かった。\n勝つために己を捨て、全てを欺き、相応しき舞台を求めて海を越えてきた。\nそして彼女は——『道化』と成った。",

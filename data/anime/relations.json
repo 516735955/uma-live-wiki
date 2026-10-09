@@ -24823,7 +24823,8 @@
       "label": "",
       "display_order": 0,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24838,7 +24839,8 @@
       "label": "",
       "display_order": 1,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24849,11 +24851,12 @@
       "target_type": "character",
       "target_id": "musaka_ginjiro",
       "voice_actor_id": "va-auto-9bdb3b50fc49",
-      "signature": "六平 銀次郎",
+      "signature": "六平銀次郎",
       "label": "",
       "display_order": 2,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24868,7 +24871,8 @@
       "label": "",
       "display_order": 3,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24883,7 +24887,8 @@
       "label": "",
       "display_order": 4,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24898,7 +24903,8 @@
       "label": "",
       "display_order": 5,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24913,7 +24919,8 @@
       "label": "",
       "display_order": 6,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24928,7 +24935,8 @@
       "label": "",
       "display_order": 7,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24943,7 +24951,8 @@
       "label": "",
       "display_order": 8,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24958,7 +24967,8 @@
       "label": "",
       "display_order": 9,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24973,7 +24983,8 @@
       "label": "",
       "display_order": 10,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -24988,7 +24999,8 @@
       "label": "",
       "display_order": 11,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -25003,7 +25015,8 @@
       "label": "",
       "display_order": 12,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -25018,7 +25031,8 @@
       "label": "",
       "display_order": 13,
       "evidence_refs": [
-        "broadcast-cast-anime-cinderella-gray-e17"
+        "broadcast-cast-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -29233,7 +29247,8 @@
       "label": "片头曲",
       "display_order": 20,
       "evidence_refs": [
-        "staff-transcript-anime-cinderella-gray"
+        "staff-transcript-anime-cinderella-gray",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -29376,7 +29391,8 @@
       "label": "片尾曲",
       "display_order": 20,
       "evidence_refs": [
-        "staff-transcript-anime-cinderella-gray"
+        "staff-transcript-anime-cinderella-gray",
+        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -32355,6 +32371,22 @@
         "official-ending-anime-rttt-film"
       ],
       "edition": "film"
+    },
+    {
+      "id": "anime-cinderella-gray-e17-ending-music-song-864b1bb2e9-v-864b1bb2e9",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e17",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-864b1bb2e9",
+      "version_id": "song-864b1bb2e9-v-864b1bb2e9",
+      "release_id": "album-umcs-50001",
+      "version_label": "",
+      "usage_type": "ending_theme",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-cinderella-gray-e17"
+      ]
     }
   ]
 }
