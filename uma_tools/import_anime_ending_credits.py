@@ -62,7 +62,7 @@ def main():
                             "observed_at": documents["ending_credits"]["observed_at"]})
         signatures = list(episode.get("staff", []))
         for block in episode.get("staff_groups", []):
-            common = {key: block[key] for key in ("role", "time", "group", "institutions") if key in block}
+            common = {key: block[key] for key in ("role", "time", "group", "institutions", "source_ref") if key in block}
             signatures.extend({**common, "organization": name} for name in block.get("organizations", []))
             signatures.extend({**common, "name": name} for name in block.get("names", []))
         affiliations = {}
@@ -78,7 +78,10 @@ def main():
                 if len(declared) == 1:
                     signature = {**signature, **{key: value for key, value in next(iter(declared.values())).items()
                                                 if key in ("institutions", "time")}}
-            row = {"work_id": work, "unit_id": unit, "source_ref": ref, "order": order,
+            signature_ref = signature.get("source_ref", ref)
+            if not any(source["id"] == signature_ref for source in sources):
+                raise ValueError(f"{unit}: unknown credit source {signature_ref}")
+            row = {"work_id": work, "unit_id": unit, "source_ref": signature_ref, "order": order,
                    "role": signature["role"], "group": signature.get("group", ""),
                    "name": signature.get("name", signature.get("organization")),
                    "source_time": signature["time"]}
@@ -101,8 +104,8 @@ def main():
                         latin_names.setdefault(name.casefold().replace("-", ""), {})[person["id"]] = person
                 if name in creator_names and ("音乐" in role_label(signature["role"]) or group_label(signature.get("group", "")) == "音乐"):
                     person["creator_id"] = creator_names[name]
-                if ref not in person.setdefault("source_refs", []):
-                    person["source_refs"].append(ref)
+                if signature_ref not in person.setdefault("source_refs", []):
+                    person["source_refs"].append(signature_ref)
                 row["person_id"] = person["id"]
                 if signature.get("institutions"):
                     row["institutions"] = signature["institutions"]
@@ -112,9 +115,9 @@ def main():
                        group_label(c.get("group", "")) == group_label(row["group"])]
             if matches:
                 existing = matches[0]
-                row["evidence_refs"] = list(dict.fromkeys([ref, *[source for c in matches for source in
+                row["evidence_refs"] = list(dict.fromkeys([signature_ref, *[source for c in matches for source in
                     [c.get("source_ref"), *c.get("evidence_refs", [])] if source]]))
-                if row["evidence_refs"] == [ref] and not any(c.get("evidence_refs") for c in matches):
+                if row["evidence_refs"] == [signature_ref] and not any(c.get("evidence_refs") for c in matches):
                     row.pop("evidence_refs")
                 existing.update(row)
                 for key in ("organization", "person_id"):
@@ -131,9 +134,10 @@ def main():
             # A corrected full roll replaces stale spellings from its own earlier transcription.
             checked_staff = {(role_label(s["role"]), normalized(s.get("name", s.get("organization", ""))),
                               group_label(s.get("group", ""))) for s in signatures}
+            checked_sources = {ref, *(s.get("source_ref", ref) for s in signatures)}
             obsolete = [c for c in credits if c.get("unit_id") == unit
                         and (c.get("source_ref", "").startswith("staff-transcript-") or
-                             c.get("source_ref") == ref and
+                             c.get("source_ref") in checked_sources and
                              (role_label(c["role"]), normalized(c["name"]), group_label(c.get("group", "")))
                              not in checked_staff)]
             if obsolete:
