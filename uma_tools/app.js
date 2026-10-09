@@ -162,7 +162,7 @@ const umaApp = createApp({
         return Promise.resolve();
       }
       if (horsesListPromise) return horsesListPromise;
-      const source = '/data/horses_list.js?v=20260923-12';
+      const source = '/data/horses_list.js';
       horsesListPromise = loadDataScript(source, 'HORSES').then(function () {
         if (!window.HORSES || !window.HORSES.length) throw new Error('empty horses list');
         horsesList.value = window.HORSES;
@@ -247,17 +247,17 @@ const umaApp = createApp({
       return dataScriptPromises[src];
     }
     function loadCharacterUi() {
-      return loadDataScript('/uma_tools/character-ui.js?v=20261009-2', 'UmaCharacterUi').then(function () {
+      return loadDataScript('/uma_tools/character-ui.js', 'UmaCharacterUi').then(function () {
         if (window.UmaCharacterUi) Vue.nextTick(window.UmaCharacterUi.init);
       });
     }
     function loadCharacterIndexData() {
-      return loadDataScript('/data/character_index_data.js?v=20260913', 'CHAR_INDEX');
+      return loadDataScript('/data/character_index_data.js', 'CHAR_INDEX');
     }
     function loadPedigreeMeta() {
       if (window.CHARACTER_PEDIGREE_META) return Promise.resolve();
       if (pedigreeMetaLoadPromise) return pedigreeMetaLoadPromise;
-      const source = '/data/character_pedigree_meta.js?v=20260929-1';
+      const source = '/data/character_pedigree_meta.js';
       pedigreeMetaLoadPromise = loadDataScript(source, 'CHARACTER_PEDIGREE_META')
         .catch(function () {
           delete dataScriptPromises[source];
@@ -268,7 +268,7 @@ const umaApp = createApp({
     function loadCharacterDetailData() {
       return Promise.all([
         loadCharacterIndexData(),
-        loadDataScript('/data/character_detail_data.js?v=20260910-4', 'CHAR_DETAIL')
+        loadDataScript('/data/character_detail_data.js', 'CHAR_DETAIL')
       ]);
     }
     function loadVoiceData() {
@@ -331,7 +331,7 @@ const umaApp = createApp({
       if (pedigreeLoadPromise) return pedigreeLoadPromise;
       pedigreeStatus.value = 'loading';
       pedigreeError.value = '';
-      const source = '/data/pedigree_data.js?v=20260920-1';
+      const source = '/data/pedigree_data.js';
       pedigreeLoadPromise = Promise.all([loadCharacterUi(), loadDataScript(source, 'PED_REL')])
         .then(function () {
           if (!window.PED_REL || !window.PED_REL.length) throw new Error('empty pedigree data');
@@ -359,7 +359,7 @@ const umaApp = createApp({
       }
       if (horsesDataPromise) return horsesDataPromise;
       horsesListError.value = '';
-      const detailSource = '/data/horses_details.js?v=20260923-12';
+      const detailSource = '/data/horses_details.js';
       horsesDataPromise = Promise.all([
         loadHorsesListData(),
         loadDataScript(detailSource, 'HORSES_DETAIL')

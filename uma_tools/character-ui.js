@@ -139,12 +139,12 @@
     frame.dataset.pedigreeSample = root;
     frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-15">' +
+      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
       ';window.PEDIGREE_EMBEDDED=true;' +
       'window.CHAR_INDEX=window.parent.CHAR_INDEX||[];' +
       'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
-      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-20"><\/script></head>' +
+      '<script defer src="/uma_tools/pedigree-lab.js"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
       '<section class="lab-workspace" aria-labelledby="workspace-title">' +
       '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +

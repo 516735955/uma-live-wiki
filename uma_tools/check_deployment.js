@@ -6,6 +6,7 @@ const https = require('https');
 const zlib = require('zlib');
 
 const base = new URL(process.argv[2] || 'http://127.0.0.1:8080');
+const expectedCommit = process.argv[3] || '';
 const findings = [];
 
 function request(pathname) {
@@ -72,10 +73,18 @@ async function main() {
   check(page.status === 200, '新闻页不可用', 'HTTP ' + page.status);
   check(/no-cache|no-store/.test(header(page, 'cache-control')), 'HTML 缺少即时校验缓存策略', header(page, 'cache-control') || '无 Cache-Control');
 
-  const assetMatches = Array.from(page.body.matchAll(/(?:href|src)=["']([^"']*\/uma_tools\/[^"']+\.(?:css|js)\?v=[^"']+)["']/g));
+  const running = await request('/api/release');
+  const manifestResult = await request('/release.json');
+  const manifest = JSON.parse(manifestResult.body);
+  const commit = JSON.parse(running.body).commit;
+  check(running.status === 200 && /^[a-f0-9]{40}$/.test(commit), '缺少运行版本');
+  check(commit === manifest.commit && (!expectedCommit || commit === expectedCommit), '运行版本与发布包不一致', commit + ' / ' + manifest.commit + ' / ' + expectedCommit);
+  check(page.body.includes('name="uma-release" content="' + commit + '"'), 'HTML 与服务版本不一致');
+  const assetMatches = Array.from(page.body.matchAll(/(?:href|src)=["'](\/assets\/[a-f0-9]{16}\.(?:css|js))["']/g));
   const assets = Array.from(new Set(assetMatches.map((match) => match[1])));
   const required = ['app.css', 'app.js', 'vue.global.prod.js'];
-  required.forEach((name) => check(assets.some((asset) => asset.includes('/' + name + '?v=')), '页面缺少版本化资源', name));
+  required.forEach((name) => check(assets.includes(manifest.assets['/uma_tools/' + (name === 'vue.global.prod.js' ? 'vendor/' : '') + name]), '页面缺少版本化资源', name));
+  Object.values(manifest.assets).forEach((asset) => { if (!assets.includes(asset)) assets.push(asset); });
 
   for (const asset of assets) {
     const result = await request(asset);
@@ -122,7 +131,7 @@ async function main() {
     return;
   }
 
-  console.log('部署检查通过：根地址、页面直链、主页与目录 API 可用，' + assets.length + ' 个版本化资源已 gzip 并长期缓存，新闻数据新鲜。');
+  console.log('部署检查通过：提交 ' + commit + '，HTML/服务/发布包一致；根地址、页面直链、目录 API、' + assets.length + ' 个版本化资源和新闻快照正常。');
 }
 
 main().catch((error) => {
