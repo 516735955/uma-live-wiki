@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-f38b448da06f246c",
+  "build_id": "anime-d585e1663c903abb",
   "generated_at": "2026-10-09T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -8,7 +8,7 @@
     "released_units": 125,
     "scheduled_units": 0,
     "watch_resources": 130,
-    "relations": 2013,
+    "relations": 2012,
     "staff_credits": 25375,
     "staff_people": 2922
   },
@@ -44326,22 +44326,6 @@
       "label": "",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e20"
-      ]
-    },
-    {
-      "id": "anime-cinderella-gray-e22-ending-music-song-next-frontier-5267707c1b-v-c739868dd5",
-      "source_type": "anime_unit",
-      "source_id": "anime-cinderella-gray-e22",
-      "relation_type": "uses_song",
-      "target_type": "song",
-      "target_id": "song-next-frontier-5267707c1b",
-      "version_id": "song-next-frontier-5267707c1b-v-c739868dd5",
-      "release_id": "album-laca-19146",
-      "version_label": "Anime Size",
-      "usage_type": "insert",
-      "label": "",
-      "evidence_refs": [
-        "official-ending-anime-cinderella-gray-e22"
       ]
     },
     {

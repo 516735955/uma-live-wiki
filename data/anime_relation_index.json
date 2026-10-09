@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-f38b448da06f246c",
+  "build_id": "anime-d585e1663c903abb",
   "generated_at": "2026-10-09T00:00:00+08:00",
   "targets": {
     "event": {
@@ -39417,17 +39417,6 @@
           "relation_type": "uses_song",
           "label": "胜者舞台",
           "usage_type": "winning_live",
-          "signature": "",
-          "voice_actor_id": "",
-          "source_type": "anime_unit",
-          "source_id": "anime-cinderella-gray-e22",
-          "work_id": "anime-cinderella-gray"
-        },
-        {
-          "relation_id": "anime-cinderella-gray-e22-ending-music-song-next-frontier-5267707c1b-v-c739868dd5",
-          "relation_type": "uses_song",
-          "label": "",
-          "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
           "source_type": "anime_unit",
