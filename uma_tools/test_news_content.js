@@ -47,6 +47,8 @@ try {
   const numbered = terms.protect('トウカイテイオー、和氣あず未', '0004');
   assert(!/\d/.test(numbered.text), 'translation markers have no lossy numeric identifiers');
   assert.strictEqual(numbered.restore(numbered.text), '东海帝王、和气杏未');
+  const gacha = terms.protect('10回引く!（有償） / 10回引く!（通常） / 1回引く! / 有償ジュエル / 無償ジュエル');
+  assert.strictEqual(gacha.restore(gacha.text), '付费十连抽 / 普通十连抽 / 单抽 / 付费宝石 / 免费宝石');
   assert(officialImage('https://prd-info-umamusume.akamaized.net/announce/3469/Header/test.png?c=1'));
   assert.strictEqual(officialImage('https://example.com/test.png'), null);
   assert.strictEqual(officialImage('https://prd-info-umamusume.akamaized.net:8080/announce/1/Header/test.png'), null);
