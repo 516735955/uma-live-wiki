@@ -43,6 +43,18 @@
         }
         body.subpage-bg { background-image: url('/uma_tools/img/bg_texture_white.webp'); }
 
+        #app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+        #app[v-cloak] { display: none; }
+        #app > .container { flex: 1 0 auto; width: 100%; }
+        #app > .sub-header,
+        #app > .home-layout,
+        #app > .site-footer { flex-shrink: 0; }
+
         ::selection { background: rgba(255, 123, 22, 0.2); color: var(--navy-3); }
         :focus-visible { outline: 2px solid rgba(255, 123, 22, 0.72); outline-offset: 2px; }
 
