@@ -38,6 +38,7 @@ const umaApp = createApp({
     const notFound = ref(false);
     const openNavGroup = ref('');
     const navigationRevision = ref(0);
+    const navigationError = ref('');
     const backTopVisible = ref(false);
     let pendingEntitySource = false;
     let entityRequestRevision = 0;
@@ -109,6 +110,7 @@ const umaApp = createApp({
     const appearanceErrors = reactive({});
     const voiceProfiles = ref([]);
     const voiceLoading = ref(false);
+    const voiceError = ref('');
     const homeStats = reactive({ songs: null, albums: null, live: null, performances: null, characters: null, voiceActors: null, events: null });
     const homeNextEvent = ref(null);
     const eventsError = ref('');
@@ -224,19 +226,28 @@ const umaApp = createApp({
       if (dataScriptPromises[src]) return dataScriptPromises[src];
       dataScriptPromises[src] = new Promise(function (resolve, reject) {
         const script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = function () {
+        const fail = function () {
+          clearTimeout(timer);
+          script.onload = script.onerror = null;
+          if (script.parentNode) script.parentNode.removeChild(script);
           delete dataScriptPromises[src];
           reject(new Error('failed to load ' + src));
         };
+        const timer = setTimeout(fail, 25000);
+        script.src = src;
+        script.async = true;
+        script.onload = function () {
+          if (globalName && !window[globalName]) { fail(); return; }
+          clearTimeout(timer);
+          resolve();
+        };
+        script.onerror = fail;
         document.head.appendChild(script);
       });
       return dataScriptPromises[src];
     }
     function loadCharacterUi() {
-      return loadDataScript('/uma_tools/character-ui.js?v=20260929-1', 'UmaCharacterUi').then(function () {
+      return loadDataScript('/uma_tools/character-ui.js?v=20261009-2', 'UmaCharacterUi').then(function () {
         if (window.UmaCharacterUi) Vue.nextTick(window.UmaCharacterUi.init);
       });
     }
@@ -263,6 +274,7 @@ const umaApp = createApp({
     function loadVoiceData() {
       if (relationshipLoadPromise) return relationshipLoadPromise;
       voiceLoading.value = true;
+      voiceError.value = '';
       relationshipLoadPromise = api.request('/api/catalog/voice-actors')
         .then(function (data) {
           relationshipLoadPromise = null;
@@ -270,7 +282,7 @@ const umaApp = createApp({
           window.dispatchEvent(new CustomEvent('uma-voice-data'));
         }).catch(function () {
           relationshipLoadPromise = null;
-          voiceProfiles.value = [];
+          voiceError.value = '声优资料暂时无法载入，请重试。';
         }).finally(function () {
           voiceLoading.value = false;
         });
@@ -417,7 +429,7 @@ const umaApp = createApp({
         const musicSection = (seg[1] || '').toLowerCase();
         if (musicSection === 'creators') return seg.length > 2 ? Promise.resolve() : loadCreatorCatalog();
         if (musicSection === 'songs') return seg.length > 2 ? Promise.resolve() : loadSongCatalog(listParamsFromUrl());
-        return loadAlbums();
+        return seg.length > 2 ? Promise.resolve() : loadAlbums();
       }
       if (first === 'events') return seg.length > 1 ? Promise.resolve() : loadEvents(listParamsFromUrl());
       if (first === 'resources') return Promise.resolve();
@@ -437,7 +449,7 @@ const umaApp = createApp({
           loadPedigreeMeta()
         ]).then(loadCharacterUi);
       }
-      if (sub === 'horses') return Promise.all([loadHorsesData(), loadCharacterIndexData()]);
+      if (sub === 'horses') return Promise.all([seg.length > 2 ? loadHorsesData() : loadHorsesListData(), loadCharacterIndexData()]);
       return Promise.resolve();
     }
     function loadHomeSummary() {
@@ -571,19 +583,18 @@ const umaApp = createApp({
     }
     function goContributeFix() {
       if (!fix.page && isAtomicView()) fix.page = window.location.href;
+      beginEntityNavigation();
+      fixDone.value = false;
+      fixSendState.value = '';
       home.value = false;
       activeTab.value = 'contribute';
-      albumDetail.value = null;
-      songDetail.value = null;
-      newsDetail.value = null;
-      eventDetail.value = null;
-      liveView.value = 'eventHub';
+      clearEntityDetails();
       dbView.value = 'index';
-      charDetail.value = null; voiceDetail.value = null;
       resetPageScroll();
       pushUrl();
     }
     function goContributeContact() {
+      beginEntityNavigation();
       home.value = false;
       activeTab.value = 'contribute-contact';
       clearEntityDetails();
@@ -592,6 +603,7 @@ const umaApp = createApp({
       pushUrl();
     }
     function goLegal(page) {
+      beginEntityNavigation();
       home.value = false;
       activeTab.value = page === 'privacy' ? 'legal-privacy' : 'legal-terms';
       clearEntityDetails();
@@ -658,6 +670,8 @@ const umaApp = createApp({
         /^\/database\/(?:characters|voice-actors|horses)\/[^/]+$/.test(clean);
     }
     function beginEntityNavigation() {
+      navigationError.value = '';
+      cancelNewsDetailRequest();
       navigationRevision.value += 1;
       pendingEntitySource = isAtomicView();
       home.value = false;
@@ -747,7 +761,7 @@ const umaApp = createApp({
       if (['relationships', 'videos', 'horses', 'jockeys'].indexOf(section) === -1) return;
       otherSection.value = section;
       horseDetail.value = null;
-      if (section === 'horses') loadHorsesData();
+      if (section === 'horses') loadHorsesListData().catch(function () { horsesListError.value = '原型马目录暂时无法载入，请重试。'; });
       pushUrl();
     }
     function openCharacter(id) {
@@ -996,6 +1010,7 @@ const umaApp = createApp({
       Vue.nextTick(renderCharBlood);
     });
     function goHome() {
+      beginEntityNavigation();
       home.value = true;
       clearEntityDetails();
       activeTab.value = 'database';
@@ -1185,6 +1200,7 @@ const umaApp = createApp({
     function setCreatorRole(role) { creatorRole.value = role; creatorPage.value = 1; pushUrl(); }
     watch(creatorQuery, function () { if (!restoringRoute) { creatorPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
     function openCreator(creatorOrId, section) {
+      creatorCatalogError.value = '';
       const isCurrent = beginEntityNavigation();
       const requested = typeof creatorOrId === 'string' ? creatorOrId : (creatorOrId && creatorOrId.id);
       return api.request('/api/catalog/creator' + api.query({ id: requested, revision: creatorCatalog.value.build_id })).then(function (data) {
@@ -1199,7 +1215,7 @@ const umaApp = createApp({
         dbView.value = 'creators';
         resetPageScroll();
         pushUrl();
-      }).catch(function () {});
+      }).catch(function () { if (isCurrent()) navigationError.value = '创作者资料暂时无法载入，请重试。'; });
     }
     function creatorRoleLabels(roles) {
       return (roles || []).map(function (role) { return role.label || role.role; }).join(' · ');
@@ -1214,11 +1230,7 @@ const umaApp = createApp({
       return (roles || []).map(creatorRoleLabel).join(' · ');
     }
     function creatorMonogram(creator) {
-      const name = String((creator && creator.name) || '').trim();
-      return name.slice(0, 2);
-    }
-    function creatorPortrait(creator) {
-      return (creator && (creator.image || creator.photo)) || '/uma_tools/img/creator-placeholder.svg';
+      return window.UmaUi.creatorMonogram(creator);
     }
     function toggleCreatorWork(workId) {
       expandedCreatorWorkId.value = expandedCreatorWorkId.value === workId ? '' : workId;
@@ -1245,9 +1257,15 @@ const umaApp = createApp({
       const rows = [Object.assign({}, original, { display_credits: original.credits || [], is_original: true })];
       versions.forEach(function (version) {
         if (version.id === original.id || !version.credits || !version.credits.length) return;
-        const changed = version.credits.filter(function (credit) { return !originalKeys.has(key(credit)); });
-        if (!changed.length) return;
-        rows.push(Object.assign({}, version, { display_credits: changed, credit_heading: version.version_label || version.title, is_original: false }));
+        const versionKeys = new Set(version.credits.map(key));
+        if (versionKeys.size === originalKeys.size && Array.from(versionKeys).every(function (value) { return originalKeys.has(value); })) return;
+        const roles = new Set((original.credits || []).concat(version.credits).map(function (credit) { return credit.role; }));
+        const changedRoles = new Set(Array.from(roles).filter(function (role) {
+          const before = (original.credits || []).filter(function (credit) { return credit.role === role; }).map(key).sort().join('|');
+          const after = version.credits.filter(function (credit) { return credit.role === role; }).map(key).sort().join('|');
+          return before !== after;
+        }));
+        rows.push(Object.assign({}, version, { display_credits: version.credits.filter(function (credit) { return changedRoles.has(credit.role); }), credit_heading: version.version_label || version.title, is_original: false }));
       });
       return rows;
     });
@@ -1286,9 +1304,7 @@ const umaApp = createApp({
       ((songDetail.value && songDetail.value.versions) || []).forEach(function (version) {
         if (!version.lyrics || version.instrumental) return;
         const lyric = version.lyrics;
-        const sequence = lyric.document_id && lyric.line_ids && lyric.line_ids.length
-          ? lyric.document_id + ':' + lyric.line_ids.join(',')
-          : (lyric.lines || []).join('\n');
+        const sequence = (lyric.lines || []).join('').normalize('NFKC').replace(/[\p{P}\p{Z}\s]/gu, '').toLowerCase();
         if (!sequence || seenSequences.has(sequence)) return;
         seenSequences.add(sequence);
         accepted.push(version);
@@ -1307,9 +1323,10 @@ const umaApp = createApp({
       const lyric = version.lyrics;
       const translated = songLyricTranslation.value && lyric.translation_lines && lyric.translation_lines.length;
       const texts = translated ? lyric.translation_lines : lyric.lines;
-      const timings = lyric.timings || [];
+      const timings = new Map((lyric.timings || []).filter(function (line) { return !!line.line_id; }).map(function (line) { return [line.line_id, line]; }));
       return (texts || []).map(function (text, index) {
-        return { text: text, start_ms: timings[index] && timings[index].start_ms, index: index };
+        const timing = timings.get((lyric.line_ids || [])[index]);
+        return { text: text, start_ms: timing && timing.start_ms, index: index };
       });
     });
     function setSongLyricVersion(versionId) {
@@ -1348,7 +1365,7 @@ const umaApp = createApp({
     }
     function playSongPrimary() {
       const row = playableSongRelease(songDetail.value);
-      if (row) playSongTrack(songDetail.value, row.version, row.release);
+      if (row) playSongTrack(songDetail.value, row.version, row.release, false);
     }
     function addSongPrimary() {
       const row = playableSongRelease(songDetail.value);
@@ -1404,6 +1421,7 @@ const umaApp = createApp({
       return credits.length ? credits.join(' / ') : '—';
     }
     function openSong(songOrId, section) {
+      songCatalogError.value = '';
       const isCurrent = beginEntityNavigation();
       const requested = typeof songOrId === 'string' ? songOrId : (songOrId && (songOrId.id || songOrId.song_id));
       const show = function (data) {
@@ -1429,7 +1447,7 @@ const umaApp = createApp({
         api.request('/api/catalog/song' + api.query({ id: requested, revision: songCatalog.value.build_id })),
         loadVoiceData(),
         loadCharacterIndexData()
-      ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
+      ]).then(function (rows) { return show(rows[0]); }).catch(function () { if (isCurrent()) navigationError.value = '歌曲资料暂时无法载入，请重试。'; });
     }
     function toggleSongRelease(versionId) {
       expandedSongReleaseId.value = expandedSongReleaseId.value === versionId ? '' : versionId;
@@ -1631,6 +1649,7 @@ const umaApp = createApp({
       pendingEntitySource = false;
     }
     function syncFromUrl() {
+      navigationError.value = '';
       entityRequestRevision += 1;
       restoringRoute = true;
       try {
@@ -1674,7 +1693,7 @@ const umaApp = createApp({
       } else if (first === 'events' && (seg.length === 1 || seg.length === 2 || (seg.length === 4 && seg[2] === 'sessions'))) {
         activeTab.value = 'live';
         const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
-        if (requested) openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : '');
+        if (requested) openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : (url.searchParams.get('session') || ''));
         else {
           eventsQuery.value = url.searchParams.get('q') || '';
           evTime.value = ['upcoming', 'past'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
@@ -1716,9 +1735,7 @@ const umaApp = createApp({
           relSort.value = url.searchParams.get('sort') === 'name' ? 'name' : 'newest';
           relPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
         }
-        const album = seg[2] ? findAlbumById(decodeURIComponent(seg[2])) : null;
-        if (album) openAlbum(album);
-        else if (seg[2] && albums.value.length) reject();
+        if (seg[2]) openAlbum({ id: decodeURIComponent(seg[2]) });
       } else if (first === 'database' && seg[1] === 'characters' && seg.length <= 4) {
         activeTab.value = 'database';
         dbView.value = 'characters';
@@ -1771,16 +1788,17 @@ const umaApp = createApp({
     }
 
     function openAlbum(a) {
+      albumsError.value = '';
       const isCurrent = beginEntityNavigation();
       const name = a && a.name;
-      if (!name) return Promise.resolve();
+      if (!name && !(a && a.id)) return Promise.resolve();
       return Promise.all([
         api.request('/api/catalog/album' + api.query({ id: a.id, name: name })),
         loadVoiceData(), loadCharacterIndexData()
       ]).then(function (rows) {
         if (!isCurrent()) return;
         const data = rows[0];
-        if (!data || !data.album) return;
+        if (!data || !data.album) { notFound.value = true; activeTab.value = 'not-found'; return; }
         (data.catalog_songs || []).forEach(mergeSong);
         clearEntityDetails('album');
         activeTab.value = 'database';
@@ -1788,7 +1806,7 @@ const umaApp = createApp({
         albumDetail.value = { data: data.album, songs: data.album.songs || [] };
         resetPageScroll();
         pushUrl();
-      }).catch(function () { if (isCurrent()) albumsError.value = '专辑资料暂时无法载入，请重试。'; });
+      }).catch(function () { if (isCurrent()) navigationError.value = '专辑资料暂时无法载入，请重试。'; });
     }
     function openAlbumFromDb(a) { openAlbum(a); }
 
@@ -1902,14 +1920,15 @@ const umaApp = createApp({
         sourceContext: release.album_name || '歌曲试听'
       });
     }
-    function playSongTrack(song, version, release) {
+    function playSongTrack(song, version, release, toggle) {
       if (!release || !release.audio_url) return;
+      if (toggle !== false && isActive(release.audio_url)) { playerController.togglePlay(); return; }
       playerController.playTrack(buildReleasePlayerTrack(song, version, release));
     }
     function addSongTrack(song, version, release) {
       if (!release || !release.audio_url) return;
       const track = buildReleasePlayerTrack(song, version, release);
-      playerController.enqueueTracks([track], 0, track.sourceContext);
+      playerController.enqueueTracks([track], track.sourceContext);
     }
     function buildAlbumPlayerTracks(album) {
       const detail = album && album.data ? album.data : album;
@@ -1950,12 +1969,13 @@ const umaApp = createApp({
       const tracks = buildAlbumPlayerTracks(album);
       const selected = tracks[index];
       if (!selected || !selected.url) return;
+      if (isActive(selected.url)) { playerController.togglePlay(); return; }
       playerController.playTrack(selected);
     }
     function addAlbumTrack(album, index) {
       const track = buildAlbumPlayerTracks(album)[index];
       if (!track || !track.url) return;
-      playerController.enqueueTracks([track], 0, track.sourceContext);
+      playerController.enqueueTracks([track], track.sourceContext);
     }
     function playQueueAt(index) { return playerController.playQueueAt(index); }
     function albumPlayableCount(album) {
@@ -2043,7 +2063,7 @@ const umaApp = createApp({
       if (songLink) {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        openSong(songLink.getAttribute('data-song-id'), 'event');
+        openSong(songLink.getAttribute('data-song-id'), 'performances');
         return;
       }
       var performer = event.target.closest('button[data-character-id]');
@@ -2059,7 +2079,7 @@ const umaApp = createApp({
     const statSongs = computed(function () {
       if (songCatalog.value.coverage && Number.isFinite(songCatalog.value.coverage.songs)) return songCatalog.value.coverage.songs;
       if (homeStats.songs !== null) return homeStats.songs;
-      return albums.value.reduce(function (n, a) { return n + a.songs.length; }, 0);
+      return albums.value.reduce(function (n, a) { return n + (a.track_count || (a.songs || []).length); }, 0);
     });
     const statAlbums = computed(function () { return homeStats.albums !== null ? homeStats.albums : albums.value.length; });
     const relAlbums = computed(function () {
@@ -2137,6 +2157,7 @@ const umaApp = createApp({
       if (isNaN(n)) return;
       if (n < 1 || n > relPageCount.value) return;
       relPage.value = n;
+      pushUrl(true);
       const el = document.querySelector('#tab-db-albums .album-database-grid');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -2298,8 +2319,9 @@ const umaApp = createApp({
       setEventsPage(eventsPage.value + dir);
     }
     function pastEvent(e) {
-      var t = new Date(e.date + 'T00:00:00').getTime();
-      return !isNaN(t) && t < Date.now() - 86400000;
+      var t = new Date((e.end_date || e.date) + 'T00:00:00').getTime();
+      var today = new Date(); today.setHours(0, 0, 0, 0);
+      return !isNaN(t) && t < today.getTime();
     }
     function eventDateLabel(event) {
       if (!event || !event.date) return event && event.schedule_status === 'announced_tba' ? '官方待公布' : '日期待补';
@@ -2400,7 +2422,7 @@ const umaApp = createApp({
     }
     function addEventTrackByKey(key) {
       const row = eventPlayableRow(key);
-      if (row) playerController.enqueueTracks([row.track], 0, (eventDetail.value && eventDetail.value.title) || '活动歌单');
+      if (row) playerController.enqueueTracks([row.track], (eventDetail.value && eventDetail.value.title) || '活动歌单');
     }
     function playEventTrack(performance) { playEventTrackByKey(eventPerformanceKey(performance)); }
     function addEventTrack(performance) { addEventTrackByKey(eventPerformanceKey(performance)); }
@@ -2441,7 +2463,7 @@ const umaApp = createApp({
         api.request('/api/catalog/event' + api.query({ id: id })),
         loadCharacterIndexData(),
         loadVoiceData()
-      ]).then(function (rows) { return show(rows[0]); }).catch(function () {});
+      ]).then(function (rows) { return show(rows[0]); }).catch(function () { if (isCurrent()) navigationError.value = '活动资料暂时无法载入，请重试。'; });
     }
     function eventPaletteStyle(event) {
       const series = eventSeriesMap.value[(event && event.series_id) || ''];
@@ -2661,7 +2683,6 @@ const umaApp = createApp({
         })
         .catch(function () {
           newsLoadPromise = null;
-          newsItems.value = [];
           newsLoading.value = false;
           newsError.value = '无法加载新闻数据（请通过本地服务访问，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
         });
@@ -2676,6 +2697,7 @@ const umaApp = createApp({
       return n.image || newsDefaultCover;
     }
     function cancelNewsDetailRequest() {
+      if (newsDetailRequest) clearTimeout(newsDetailRequest.timer);
       if (newsDetailRequest && newsDetailRequest.controller) newsDetailRequest.controller.abort();
       newsDetailRequest = null;
     }
@@ -2703,6 +2725,11 @@ const umaApp = createApp({
         path: path,
         controller: typeof AbortController !== 'undefined' ? new AbortController() : null
       };
+      request.timer = setTimeout(function () {
+        request.timedOut = true;
+        if (request.controller) request.controller.abort();
+        if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载超时，请重试。';
+      }, 25000);
       newsDetailRequest = request;
       return request;
     }
@@ -2711,6 +2738,7 @@ const umaApp = createApp({
     }
     function openNews(id) {
       if (!id) return;
+      if (newsDetailRequest && newsDetailRequest.key === String(id) && newsDetailRequestIsCurrent(newsDetailRequest)) return newsDetailRequest.promise;
       beginEntityNavigation();
       clearEntityDetails('news');
       const isLantis = String(id).indexOf('lantis-') === 0;
@@ -2748,9 +2776,9 @@ const umaApp = createApp({
           })
           .catch(function (error) {
             if (error && error.name === 'AbortError') return;
-            /* keep the header-only view on failure */
+            if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载失败，请重试。';
           })
-          .finally(function () { if (newsDetailRequest === request) newsDetailRequest = null; });
+          .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) newsDetailRequest = null; });
         return request.promise;
       }
       request.promise = fetch('/api/news-detail?id=' + encodeURIComponent(id), requestOptions)
@@ -2768,7 +2796,7 @@ const umaApp = createApp({
             if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载失败';
           }
         })
-        .finally(function () { if (newsDetailRequest === request) newsDetailRequest = null; });
+        .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) newsDetailRequest = null; });
       return request.promise;
     }
     function loadAlbums() {
@@ -2824,7 +2852,7 @@ const umaApp = createApp({
     }
 
     return {
-      audio, albums, albumsError, albumsLoading, activeTab, home, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup,
+      audio, albums, albumsError, albumsLoading, activeTab, home, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup, navigationError,
       navItemActive, activateNavGroup, openNavGroupForPointer, closeNavGroupForPointer, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
@@ -2844,10 +2872,10 @@ const umaApp = createApp({
       eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, eventPerformanceKey, playEventTrack, addEventTrack, playEventSession, enqueueEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songTotal, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
       songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, toggleSongRelease, toggleSongCredit,
-      creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, creatorPortrait, expandedCreatorWorkId, toggleCreatorWork, loadCreatorCatalog,
+      creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, expandedCreatorWorkId, toggleCreatorWork, loadCreatorCatalog,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, charHasPedigree, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
       horseUrlForCharacter, openHorseForCharacter,
-      voiceProfiles, voiceLoading, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
+      voiceProfiles, voiceLoading, voiceError, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,

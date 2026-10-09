@@ -25,10 +25,17 @@
     const cached = resolved.get(cacheKey);
     if (!settings.fresh && cached && Date.now() - cached.at < maxAge) return Promise.resolve(cached.data);
     if (!settings.fresh && pending.has(cacheKey)) return pending.get(cacheKey);
+    const controller = new AbortController();
+    const cancel = function () { controller.abort(); };
+    if (settings.signal) {
+      if (settings.signal.aborted) cancel();
+      else settings.signal.addEventListener('abort', cancel, { once: true });
+    }
+    const timer = setTimeout(cancel, 25000);
     const promise = fetch(path, {
       headers: { Accept: 'application/json' },
       cache: settings.fresh ? 'no-cache' : 'default',
-      signal: settings.signal
+      signal: controller.signal
     }).then(function (response) {
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
@@ -43,7 +50,10 @@
       throw error;
     });
     pending.set(cacheKey, promise);
-    return promise;
+    return promise.finally(function () {
+      clearTimeout(timer);
+      if (settings.signal) settings.signal.removeEventListener('abort', cancel);
+    });
   }
 
   function invalidate(prefix) {

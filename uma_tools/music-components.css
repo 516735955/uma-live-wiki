@@ -190,7 +190,9 @@
 
 .creator-hero { min-height: 196px; grid-template-columns: 146px minmax(0,1fr); }
 .creator-cover { width: 146px; aspect-ratio: 1; }
-.creator-cover img { width: 100%; height: 100%; object-fit: cover; }
+.creator-entity-detail .entity-cover.creator-cover { border: 0; border-radius: 50%; background: transparent; box-shadow: none; }
+.creator-entity-detail .entity-cover.creator-cover::before,.creator-entity-detail .entity-cover.creator-cover::after { content: none; }
+.entity-cover.creator-cover > .creator-monogram { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--ui-cobalt-deep); font-size: clamp(1.35rem,3vw,2.2rem); white-space: nowrap; }
 .creator-intro h1 { color: var(--ui-navy); font-size: clamp(1.55rem,3.2vw,2.55rem); }
 .creator-intro .entity-reading { color: #657089; }
 .creator-role-tags { margin-top: 14px; }
@@ -506,8 +508,8 @@
 .creator-graph-node.selected { z-index: 6; border-color: var(--ui-orange); box-shadow: 0 8px 22px rgba(218,108,8,.2); }
 .creator-graph-node.muted { opacity: .3; }
 .creator-graph-node.is-root { grid-template-columns: 48px minmax(0,1fr); border: 2px solid var(--ui-orange); background: linear-gradient(145deg,#fff 0%,#fff8ed 100%); box-shadow: 0 11px 28px rgba(230,117,16,.19),0 0 0 5px rgba(255,140,26,.07); cursor: default; }
-.creator-graph-node img { width: 42px; height: 42px; border-radius: 8px; background: #eef2ff; object-fit: cover; }
-.creator-graph-node.is-root img { width: 48px; height: 48px; }
+.creator-graph-node .creator-monogram { --creator-avatar-size: 42px; }
+.creator-graph-node.is-root .creator-monogram { --creator-avatar-size: 48px; }
 .creator-graph-node > span { display: grid; min-width: 0; gap: 3px; }
 .creator-graph-node b,.creator-graph-node small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .creator-graph-node b { font-size: .82rem; }
@@ -530,7 +532,7 @@
 }
 @keyframes creatorInspectorIn { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
 .creator-network-inspector > header { display: flex; align-items: center; gap: 12px; padding-right: 34px; }
-.creator-network-inspector > header img { width: 58px; height: 58px; border: 2px solid #b7c5ed; border-radius: 9px; background: #eef2ff; object-fit: cover; }
+.creator-network-inspector > header .creator-monogram { --creator-avatar-size: 58px; --creator-avatar-font: 1.1rem; }
 .creator-network-inspector > header span { display: grid; min-width: 0; gap: 4px; }
 .creator-network-inspector > header b { color: var(--ui-navy); font-size: 1rem; }
 .creator-network-inspector > header small { color: #667089; font-size: .78rem; }

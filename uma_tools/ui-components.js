@@ -2,6 +2,9 @@
   'use strict';
 
   let sequence = 0;
+  function creatorMonogram(person) {
+    return Array.from(String((person && person.name) || '').trim()).slice(0, 2).join('');
+  }
   const UiSelect = {
     props: {
       modelValue: { type: [String, Number], default: '' },
@@ -56,7 +59,8 @@
         }
         if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
         event.preventDefault();
-        if (!this.open) this.open = true;
+        if (!this.options.some(function (option) { return !option.disabled; })) return;
+        if (!this.open) { this.toggle(); return; }
         const direction = event.key === 'ArrowDown' ? 1 : -1;
         const total = this.options.length;
         if (!total) return;
@@ -161,6 +165,8 @@
       'player.current.name': function () {
         this.$nextTick(this.refreshOverflowObservers);
       },
+      'player.current.artist': function () { this.$nextTick(this.measureOverflow); },
+      'player.current.vocalists': function () { this.$nextTick(this.measureOverflow); },
       'player.visible': function (visible) {
         if (visible) this.$nextTick(this.refreshOverflowObservers);
       }
@@ -209,6 +215,7 @@
         event.currentTarget.classList.add('is-missing');
         event.currentTarget.removeAttribute('src');
       },
+      onImageLoad: function (event) { event.currentTarget.classList.remove('is-missing'); },
       queueArtist: function (track) {
         if (track && track.vocalists && track.vocalists.length) {
           return track.vocalists.map(function (vocalist) { return vocalist.name; }).filter(Boolean).join(' / ');
@@ -303,7 +310,7 @@
         <section class="audio-dock" :class="['is-'+player.status,{expanded:player.panelOpen}]" role="region" aria-label="音频播放器" :style="progressStyle">
           <div class="audio-dock-inner">
             <div class="audio-cover">
-              <img v-if="current && current.cover" :src="current.cover" alt="" @error="onImageError">
+              <img v-if="current && current.cover" :src="current.cover" alt="" @error="onImageError" @load="onImageLoad">
               <span v-if="current && playing" class="audio-playing-bars" aria-hidden="true"><i></i><i></i><i></i></span>
             </div>
             <div class="audio-dock-copy">
@@ -354,5 +361,5 @@
       </template>`
   };
 
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock });
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, creatorMonogram: creatorMonogram });
 })();

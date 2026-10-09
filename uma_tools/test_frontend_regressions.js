@@ -89,6 +89,19 @@ async function main() {
   assert.strictEqual(app.songDetail.value.id, 'b', 'late entity responses never overwrite a newer detail');
   assert.strictEqual(app.songSection.value, 'credits');
 
+  const music = deferred(); details.set('music', music);
+  music.resolve({ song: { id: 'music', title: 'Music', versions: [
+    { id: 'original', credits: [{ role: 'composer', name: 'A' }, { role: 'composer', name: 'B' }],
+      lyrics: { lines: ['Hello', 'world!', 'Next'], line_ids: ['one', 'two', 'three'], timings: [{ line_id: 'one', start_ms: 100 }, { line_id: 'three', start_ms: 900 }] } },
+    { id: 'alternate', credits: [{ role: 'composer', name: 'A' }], lyrics: { lines: ['Hello world！', 'Next'] } }
+  ] } });
+  await app.openSong('music');
+  assert.strictEqual(app.songCreditVersions.value.length, 2, 'removed contributors still produce a visible version difference');
+  assert.strictEqual(app.songCreditVersions.value[1].display_credits[0].name, 'A');
+  assert.strictEqual(app.songLyricVersions.value.length, 1, 'punctuation and line wrapping do not create duplicate lyrics');
+  assert.strictEqual(app.selectedSongLyricLines.value[1].start_ms, undefined, 'a missing timing does not shift the next line');
+  assert.strictEqual(app.selectedSongLyricLines.value[2].start_ms, 900);
+
   location.href = 'http://localhost/zh-Hans/news?type=media&page=2';
   await app.applyCurrentRoute();
   assert.strictEqual(app.newsType.value, 'media');

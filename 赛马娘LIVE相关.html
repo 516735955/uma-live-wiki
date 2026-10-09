@@ -7,15 +7,15 @@
 <style>
 html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK SC","Noto Sans CJK JP",system-ui,sans-serif}.app-boot{min-height:100vh;background:#f5f4f9}.app-boot-bar{height:76px;background:#3157ed url('/uma_tools/img/bg_kv_nav.png') center/cover;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1280px)/2));color:#fff;font-size:22px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(24,39,93,.18)}.app-boot-main{width:min(1280px,calc(100% - 40px));margin:32px auto}.app-boot-line{height:46px;border-radius:8px;background:linear-gradient(100deg,#fff 20%,#eef1fa 38%,#fff 56%);background-size:220% 100%;animation:boot-shimmer 1.2s ease-in-out infinite}.app-boot-line+.app-boot-line{height:180px;margin-top:20px}@keyframes boot-shimmer{to{background-position-x:-220%}}@media(max-width:700px){.app-boot-bar{height:58px;padding:0 18px;font-size:17px}.app-boot-main{width:calc(100% - 28px);margin-top:20px}.app-boot-line{height:44px}.app-boot-line+.app-boot-line{height:136px}}@media(prefers-reduced-motion:reduce){.app-boot-line{animation:none;background:#fff}}
 </style>
-<link rel="stylesheet" href="/uma_tools/app.css?v=20261008-3">
-<link rel="stylesheet" href="/uma_tools/music-components.css?v=20261008-3">
+<link rel="stylesheet" href="/uma_tools/app.css?v=20261009-2">
+<link rel="stylesheet" href="/uma_tools/music-components.css?v=20261009-2">
 <script defer src="/uma_tools/vendor/vue.global.prod.js?v=3"></script>
-<script defer src="/uma_tools/app-api.js?v=20261008-2"></script>
+<script defer src="/uma_tools/app-api.js?v=20261009-2"></script>
 <script defer src="/uma_tools/route-utils.js?v=20260929-10v6"></script>
-<script defer src="/uma_tools/ui-components.js?v=20260929-10v6"></script>
-<script defer src="/uma_tools/creator-network.js?v=20261008-3"></script>
-<script defer src="/uma_tools/player-controller.js?v=20261008-2"></script>
-<script defer src="/uma_tools/app.js?v=20261009-1"></script>
+<script defer src="/uma_tools/ui-components.js?v=20261009-2"></script>
+<script defer src="/uma_tools/creator-network.js?v=20261009-2"></script>
+<script defer src="/uma_tools/player-controller.js?v=20261009-2"></script>
+<script defer src="/uma_tools/app.js?v=20261009-2"></script>
 </head>
 <body>
 
@@ -82,6 +82,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <button type="button" @click="navNavigate(routes.home())">返回首页</button>
         </section>
         <template v-else>
+        <div v-if="navigationError" class="ui-state ui-state-error">{{ navigationError }}</div>
         <nav v-if="breadcrumbItems.length" class="route-breadcrumb" aria-label="面包屑">
             <template v-for="(item,index) in breadcrumbItems" :key="index">
                 <span v-if="index" aria-hidden="true">›</span>
@@ -100,6 +101,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
                 <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">原文 ↗</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
                 <h2 class="news-detail-title">{{ newsDetail.title_zh || newsDetail.title }}</h2>
+                <div v-if="newsError" class="news-error">{{ newsError }}<button type="button" @click="openNews(newsDetail.announce_id)">重试</button></div>
                 <div class="news-detail-body" v-html="newsDetailBody"></div>
             </div>
 
@@ -324,6 +326,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
 
         <div id="tab-db-songs" v-if="activeTab==='database' && dbView==='songs'" class="tab-content active archive-surface">
+            <div v-if="songCatalogError" class="ui-state ui-state-error">{{ songCatalogError }}</div>
             <template v-if="!songDetail">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="songDbQuery" placeholder="搜索曲名、版本、创作者或歌词" autocomplete="off"><button v-if="songDbQuery" type="button" @click.prevent="songDbQuery=''" aria-label="清空搜索">×</button></label>
@@ -340,8 +343,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         </button>
                         <button v-if="playableSongRelease(song)" class="music-card-play" type="button" :class="{playing:isActive(playableSongRelease(song).release.audio_url)}" @click="playCatalogSong(song,$event)" :aria-label="isActive(playableSongRelease(song).release.audio_url)?'暂停':'立即播放'" title="立即播放"><svg v-if="isActive(playableSongRelease(song).release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
                     </article>
-                    <div v-if="songCatalogError" class="ui-state ui-state-error">{{ songCatalogError }}</div>
-                    <div v-else-if="!songDbFiltered.length" class="ui-state">没有符合条件的歌曲</div>
+                    <div v-if="!songCatalogError && !songCatalogLoading && !songDbFiltered.length" class="ui-state">没有符合条件的歌曲</div>
                 </div>
                 <div v-if="songDbFiltered.length" class="ui-pager"><span>{{ songDbPageStart }}–{{ songDbPageEnd }} / {{ songTotal }}</span><div><button :disabled="songDbPage<=1" @click="goSongDbPage(-1)">上一页</button><button v-for="(page,index) in songDbPageList" :key="index" :class="{active:page===songDbPage}" :disabled="page==='…'" @click="setSongDbPage(page)">{{ page }}</button><button :disabled="songDbPage>=songDbPageCount" @click="goSongDbPage(1)">下一页</button></div></div>
             </template>
@@ -428,7 +430,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                             <td data-label="日期">{{ row.performance.session_date || row.performance.event_date || '—' }}</td>
                             <td data-label="活动 / 场次"><button class="text-link stacked" type="button" @click="openEventUrl(row.performance.event_url)"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }}<template v-if="row.display_no"> · 第 {{ row.display_no }} 首</template></span></button></td>
                             <td data-label="版本">{{ (row.performance.performance_variant && (row.performance.performance_variant.label || row.performance.performance_variant.title)) || row.version.version_label || '原始版本' }}</td>
-                            <td data-label="演唱角色"><div class="performer-chip-list compact song-performance-cast"><button v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)"><img :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></button></div></td>
+                            <td data-label="演唱角色"><div class="performer-chip-list compact song-performance-cast"><button v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)"><img :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></button><span v-for="guest in (row.performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></div></td>
                         </tr></tbody>
                     </table>
                     <div v-else class="ui-state compact">暂无现场演出</div>
@@ -439,6 +441,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
 
         <div id="tab-db-creators" v-if="activeTab==='database' && dbView==='creators'" class="tab-content active archive-surface">
+            <div v-if="creatorCatalogError" class="ui-state ui-state-error">{{ creatorCatalogError }}</div>
             <template v-if="!creatorDetail">
                 <div class="archive-toolbar creator-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="creatorQuery" placeholder="搜索创作者或歌曲" autocomplete="off"><button v-if="creatorQuery" type="button" @click.prevent="creatorQuery=''" aria-label="清空搜索">×</button></label>
@@ -451,19 +454,18 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <button v-for="creator in creatorPaged" :key="creator.id" class="creator-catalog-row" type="button" @click="openCreator(creator)">
                         <span class="creator-monogram">{{ creatorMonogram(creator) }}</span>
                         <span class="creator-catalog-name"><b>{{ creator.name }}</b><small v-if="creator.affiliations.length">{{ creator.affiliations.join(' · ') }}</small></span>
-                        <span class="creator-catalog-roles">{{ creatorRoleLabels(creator.roles) }}</span>
+                        <span class="creator-catalog-roles role-tag-row"><em v-for="role in creator.roles" :key="role.role" class="credit-role-tag">{{ role.label || creatorRoleLabel(role.role) }}</em></span>
                         <span class="creator-catalog-count">{{ creator.work_count }} 首歌曲 · {{ creator.version_count }} 个版本</span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </button>
-                    <div v-if="creatorCatalogError" class="ui-state ui-state-error">{{ creatorCatalogError }}</div>
-                    <div v-else-if="!creatorFiltered.length" class="ui-state">没有符合条件的创作者</div>
+                    <div v-if="!creatorCatalogError && !creatorCatalogLoading && !creatorFiltered.length" class="ui-state">没有符合条件的创作者</div>
                 </div>
                 <div v-if="creatorFiltered.length" class="ui-pager"><span>{{ creatorPageStart }}–{{ creatorPageEnd }} / {{ creatorFiltered.length }}</span><div><button :disabled="creatorPage<=1" @click="goCreatorPage(-1)">上一页</button><button v-for="(page,index) in creatorPageList" :key="index" :class="{active:page===creatorPage}" :disabled="page==='…'" @click="setCreatorPage(page)">{{ page }}</button><button :disabled="creatorPage>=creatorPageCount" @click="goCreatorPage(1)">下一页</button></div></div>
             </template>
 
             <article v-else class="entity-detail creator-entity-detail">
                 <div class="entity-hero creator-hero music-archive-hero">
-                    <div class="entity-cover creator-cover"><img :src="creatorPortrait(creatorDetail)" :alt="creatorDetail.name" @error="onCatalogImageError($event)"></div>
+                    <div class="entity-cover creator-cover"><span class="creator-monogram">{{ creatorMonogram(creatorDetail) }}</span></div>
                     <div class="entity-intro creator-intro">
                         <span class="entity-kind">创作者</span>
                         <h1>{{ creatorDetail.name }}</h1>
@@ -480,6 +482,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
 
         <div id="tab-db-voice" v-if="activeTab==='database' && dbView==='voice'" class="tab-content active archive-surface">
+            <div v-if="voiceError" class="ui-state ui-state-error">{{ voiceError }}</div>
             <template v-if="!voiceDetail">
                 <div class="archive-toolbar"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="va-search" id="vaSearch" placeholder="搜索声优名或角色名" autocomplete="off"></label></div>
                 <div v-if="voiceLoading && !voiceProfiles.length" class="archive-card-skeletons" aria-hidden="true"><span v-for="i in 8" :key="'voice-load-'+i"></span></div>
@@ -545,6 +548,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
 
         <div id="tab-db-albums" v-if="activeTab==='database' && dbView==='albums'" class="tab-content active archive-surface">
+            <div v-if="albumsError" class="ui-state ui-state-error">{{ albumsError }}</div>
             <template v-if="!albumDetail">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="relQuery" placeholder="搜索专辑、歌曲、歌手或商品编号" autocomplete="off"><button v-if="relQuery" type="button" @click.prevent="relQuery=''" aria-label="清空搜索">×</button></label>

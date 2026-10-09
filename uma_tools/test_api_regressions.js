@@ -4,7 +4,7 @@ const fs = require('fs');
 const vm = require('vm');
 let now = 0, requests = 0;
 const context = vm.createContext({
-  window: {}, URLSearchParams, Date: { now: () => now },
+  window: {}, URLSearchParams, AbortController, setTimeout, clearTimeout, Date: { now: () => now },
   fetch: async () => { requests += 1; return { ok: true, json: async () => ({ requests }) }; }
 });
 // Read cache size in the test context without exposing it in the application.
