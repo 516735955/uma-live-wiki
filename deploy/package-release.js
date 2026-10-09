@@ -17,7 +17,8 @@ try {
   const ancestors = execFileSync('git', ['rev-list', commit], { cwd: root, encoding: 'utf8' }).trim().split('\n');
   // Use the committed release builder, not an uncommitted local implementation.
   require(path.join(stage, 'deploy/prepare-release')).prepareRelease(stage, commit, ancestors);
-  execFileSync('tar', ['-czf', target, '-C', stage, '.']);
+  // Do not serialize macOS extended attributes into Linux release packages.
+  execFileSync('tar', ['-czf', target, '-C', stage, '.'], { env: { ...process.env, COPYFILE_DISABLE: '1' } });
   console.log(target);
 } finally {
   fs.rmSync(temporary, { recursive: true, force: true });
