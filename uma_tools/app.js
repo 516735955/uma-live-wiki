@@ -1829,6 +1829,12 @@ const umaApp = createApp({
         const found = data && data.creator;
         if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
         if (found.type === 'organization') return openSong(found.works[0].song_id);
+        const requestedCreator = typeof creatorOrId === 'string' ? null : creatorOrId;
+        const catalogCreator = (creatorCatalog.value.creators || []).find(function (item) {
+          return String(item.id) === String(found.id);
+        });
+        found.image = found.image || (requestedCreator && requestedCreator.image) || (catalogCreator && catalogCreator.image);
+        found.photo = found.photo || (requestedCreator && requestedCreator.photo) || (catalogCreator && catalogCreator.photo);
         clearEntityDetails('creator');
         creatorDetail.value = found;
         creatorSection.value = section || 'works';
