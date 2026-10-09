@@ -1,6 +1,6 @@
 # 部署
 
-站点使用 `/var/www/umamusume`，服务用户为 `alaemiryoung`，Node 监听 8080。`current` 指向正在发布的代码目录；`shared/data`、翻译缓存和图片跨版本保留。
+站点使用 `/var/www/umamusume`，服务用户由部署配置指定，Node 监听 8080。`current` 指向正在发布的代码目录；`shared/data`、翻译缓存和图片跨版本保留。
 
 ## 更新
 
