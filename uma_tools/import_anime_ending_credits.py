@@ -250,6 +250,12 @@ def main():
                                       "target_id": cue["song_id"], "usage_type": usage,
                                       "label": "", "evidence_refs": [ref], **({"edition": edition} if work_scope else {})})
             names = cue.get("names", [])
+            for name in names:
+                key = normalized(name)
+                if key not in creator_names:
+                    creator_id = stable_creator_id(name)
+                    creators.append({"id": creator_id, "name": name, "aliases": [], "type": "person", "affiliations": []})
+                    creator_names[key] = creator_id
             creator_ids = [creator_names[normalized(name)] for name in names]
             credit = {"role": role_label(cue["role"]), "names": names,
                       "institutions": cue.get("institutions", []), "creator_ids": creator_ids}

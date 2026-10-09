@@ -4639,16 +4639,29 @@
         {
           "role": "lyricist",
           "name": "ひとみ",
+          "affiliation": "あたらよ",
           "creator_id": "creator-090f89ccf3"
         },
         {
           "role": "composer",
           "name": "ひとみ",
+          "affiliation": "あたらよ",
           "creator_id": "creator-090f89ccf3"
+        },
+        {
+          "role": "arranger",
+          "name": "れいらむる",
+          "creator_id": "creator-e61b9f1707"
         }
       ],
       "source": "netease_recording_metadata",
-      "source_track_id": "3321939957"
+      "source_track_id": "3321939957",
+      "supplemental_sources": [
+        {
+          "source": "credit_recording",
+          "source_url": "https://www.yinhuadm.cc/p/27123-1-5.html"
+        }
+      ]
     },
     "song-1427e58379-v-61026bde50": {
       "credits": [
