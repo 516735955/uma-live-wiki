@@ -18,7 +18,8 @@ try {
   // Use the committed release builder, not an uncommitted local implementation.
   require(path.join(stage, 'deploy/prepare-release')).prepareRelease(stage, commit, ancestors);
   // Do not serialize macOS extended attributes into Linux release packages.
-  execFileSync('tar', ['-czf', target, '-C', stage, '.'], { env: { ...process.env, COPYFILE_DISABLE: '1' } });
+  const tarOptions = process.platform === 'darwin' ? ['--no-xattrs'] : [];
+  execFileSync('tar', [...tarOptions, '-czf', target, '-C', stage, '.'], { env: { ...process.env, COPYFILE_DISABLE: '1' } });
   console.log(target);
 } finally {
   fs.rmSync(temporary, { recursive: true, force: true });
