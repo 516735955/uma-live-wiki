@@ -6,6 +6,7 @@ const path = require('path');
 const { mergeNews, NewsContent } = require('./news-content');
 const { TranslationCache } = require('./translation-cache');
 const { createTerms, loadTerms } = require('./translation-terms');
+const { officialImage } = require('./news-images');
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-news-test-'));
 try {
   const rows = mergeNews([
@@ -43,5 +44,17 @@ try {
   assert.strictEqual(protectedText.restore(protectedText.text), '东海帝王、和气杏未');
   assert.strictEqual(protectedText.restore('lost tokens'), null);
   assert.strictEqual(protectedText.restore(protectedText.text + protectedText.text), null);
+  const numbered = terms.protect('トウカイテイオー、和氣あず未', '0004');
+  assert(!/\d/.test(numbered.text), 'translation markers have no lossy numeric identifiers');
+  assert.strictEqual(numbered.restore(numbered.text), '东海帝王、和气杏未');
+  assert(officialImage('https://prd-info-umamusume.akamaized.net/announce/3469/Header/test.png?c=1'));
+  assert.strictEqual(officialImage('https://example.com/test.png'), null);
+  assert.strictEqual(officialImage('https://prd-info-umamusume.akamaized.net:8080/announce/1/Header/test.png'), null);
+  const articleSource = '原文正文';
+  const articleKey = 'msg_' + require('crypto').createHash('md5').update(articleSource).digest('hex');
+  fs.writeFileSync(edits, JSON.stringify({ titles: {}, messages: {}, news: { 1: { source_message: articleKey, message_zh: '订正正文' } } }));
+  fs.utimesSync(edits, new Date(), new Date(Date.now() + 2000));
+  assert.strictEqual(content.apply({ announce_id: 1, message: articleSource }).message_zh, '订正正文');
+  assert.strictEqual(content.apply({ announce_id: 1, message: '原文已更新' }).message_zh, undefined, 'a correction does not overwrite changed source content');
   console.log('news content, external cache edits and glossary regressions passed');
 } finally { fs.rmSync(temporary, { recursive: true, force: true }); }

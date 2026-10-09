@@ -111,6 +111,7 @@ async function main() {
   assert.strictEqual(newsCalls, beforeRefresh + 1, 'refresh issues a new request');
   assert.strictEqual(app.newsPage.value, 2);
   const pendingNews = app.openNews(1);
+  assert.strictEqual(app.newsDetailLoading.value, true, 'news loading is visible instead of an empty article');
   location.href = 'http://localhost/zh-Hans/music/albums?sort=name&page=2';
   await app.applyCurrentRoute();
   assert.strictEqual(app.relQuery.value, '');
@@ -119,6 +120,7 @@ async function main() {
   newsDetail.resolve({ ok: true, json: async () => ({ detail: { announce_id: 1, title: 'Stale news', message: 'Stale body' } }) });
   await pendingNews;
   assert.strictEqual(app.newsDetail.value, null, 'late news cannot replace a different page');
+  assert.strictEqual(app.newsDetailLoading.value, false, 'abandoned articles clear their loading state');
   assert.strictEqual(app.dbView.value, 'albums');
 
   const creatorLoads = calls.filter((url) => url.startsWith('/api/catalog/creators')).length;

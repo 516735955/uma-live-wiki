@@ -15,6 +15,7 @@ const { CatalogStore } = require('./catalog-store');
 const { mergeNews, NewsContent } = require('./news-content');
 const { TranslationCache } = require('./translation-cache');
 const { loadTerms, createTerms } = require('./translation-terms');
+const { imageStore } = require('./news-images');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
@@ -51,6 +52,7 @@ const ROOT = fs.realpathSync(path.resolve(POSITIONAL_ARGS[1] || path.join(__dirn
 const releaseInfo = fs.existsSync(path.join(ROOT, 'release.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'release.json'), 'utf8')) : { commit: 'development' };
 const DATA_DIR = path.join(ROOT, 'data');
 const catalogStore = new CatalogStore(DATA_DIR);
+const loadNewsImage = imageStore(path.join(DATA_DIR, 'news_image_cache'));
 
 function isInsideRoot(filePath) {
   const relativePath = path.relative(ROOT, filePath);
@@ -203,7 +205,7 @@ let transRunning = false;
 
 let translationRequests = Promise.resolve();
 let nextTranslationAt = 0;
-function fetchTranslation(url, signal) {
+function fetchTranslation(text, signal) {
   const result = translationRequests.then(async () => {
     if (signal && signal.aborted) return null;
     const delay = nextTranslationAt - Date.now();
@@ -211,6 +213,9 @@ function fetchTranslation(url, signal) {
     if (signal && signal.aborted) return null;
     nextTranslationAt = Date.now() + 1100;
     return new Promise((resolve) => {
+      const salt = String(Date.now());
+      const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
+      const form = new URLSearchParams({ q: text, from: 'jp', to: 'zh', appid: BAIDU_APPID, salt, sign }).toString();
       let settled = false;
       const abort = () => request.destroy(new Error('cancelled'));
       const finish = (data) => {
@@ -219,7 +224,10 @@ function fetchTranslation(url, signal) {
         if (signal) signal.removeEventListener('abort', abort);
         resolve(data);
       };
-      const request = https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, family: 4 }, (response) => {
+      const request = https.request('https://fanyi-api.baidu.com/api/trans/vip/translate', {
+        method: 'POST', family: 4,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': Buffer.byteLength(form) }
+      }, (response) => {
         let body = '';
         response.on('data', (chunk) => { body += chunk; });
         response.on('end', () => { try { finish(JSON.parse(body)); } catch (error) { finish(null); } });
@@ -232,6 +240,7 @@ function fetchTranslation(url, signal) {
         signal.addEventListener('abort', abort, { once: true });
         if (signal.aborted) abort();
       }
+      request.end(form);
     });
   });
   translationRequests = result.catch(() => null);
@@ -242,11 +251,7 @@ function translateOne(text, attempt, signal) {
   if (signal && signal.aborted) return Promise.resolve('');
   return new Promise((resolve) => {
     const protectedText = currentTerms().protect(text);
-    const salt = String(Date.now() + Math.floor(Math.random() * 1000));
-    const sign = crypto.createHash('md5').update(BAIDU_APPID + protectedText.text + salt + BAIDU_SECRET).digest('hex');
-    const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(protectedText.text) +
-      '&from=jp&to=zh&appid=' + BAIDU_APPID + '&salt=' + salt + '&sign=' + sign;
-    fetchTranslation(url, signal).then((j) => {
+    fetchTranslation(protectedText.text, signal).then((j) => {
         try {
           if (j && j.trans_result && j.trans_result.length) {
             const t = j.trans_result.map(function (x) { return x.dst; }).join('');
@@ -306,33 +311,36 @@ function hasCjk(s) {
   return /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff]/.test(s);
 }
 
-function translateBatchLines(lines, cb, signal) {
+function translateBatchLines(lines, cb, signal, attempt = 0) {
   let completed = false;
   const finish = (value) => { if (!completed) { completed = true; cb(value); } };
   // translate multiple short text runs in one Baidu request (newline-joined)
   if (!lines.length) return finish([]);
   const protectedLines = lines.map((line, index) => currentTerms().protect(line, String(index).padStart(4, '0')));
   const text = protectedLines.map((line) => line.text).join('\n');
-  const salt = String(Date.now() + Math.floor(Math.random() * 1000));
-  const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
-  const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(text) +
-    '&from=jp&to=zh&appid=' + BAIDU_APPID + '&salt=' + salt + '&sign=' + sign;
-  fetchTranslation(url, signal).then((j) => {
+  if (text.length > 950 || Buffer.byteLength(text) > 5500) return finish(null);
+  fetchTranslation(text, signal).then((j) => {
       try {
         if (j && j.trans_result && j.trans_result.length) {
           if (j.trans_result.length !== lines.length) return finish(null);
           const out = [];
           for (let i = 0; i < lines.length; i++) {
+            if (j.trans_result[i].src !== protectedLines[i].text) return finish(null);
             const restored = protectedLines[i].restore(j.trans_result[i].dst);
             if (!restored) return finish(null);
-            out.push(restored);
+            // Ratings are facts. Baidu sometimes adds a star to a leading ★★★.
+            const rating = lines[i].match(/^★+/);
+            const value = rating ? restored.replace(/^★+/, rating[0]) : restored;
+            const numbers = (value) => (value.match(/\d+(?:[/:.]\d+)*/g) || []).sort().join('|');
+            if (numbers(j.trans_result[i].dst) !== numbers(protectedLines[i].text)) return finish(null);
+            out.push(value);
           }
           return finish(out);
         }
         const code = j && j.error_code;
-        if (code === '54003' || code === '54000') {
-          // rate-limited: after a pause, caller retries by translating one by one
-          return finish(null);
+        if ((code === '54003' || code === '54000') && attempt < 2 && !(signal && signal.aborted)) {
+          setTimeout(() => translateBatchLines(lines, finish, signal, attempt + 1), 1200 * (attempt + 1));
+          return;
         }
         finish(null);
       } catch (e) { finish(null); }
@@ -341,72 +349,98 @@ function translateBatchLines(lines, cb, signal) {
 
 function translateHtmlMessage(html, cb, signal) {
   const src = String(html || '');
-  if (signal && signal.aborted) return cb(src);
+  if (signal && signal.aborted) return cb('');
   if (!src) return cb('');
   const hash = crypto.createHash('md5').update(src).digest('hex');
   const originalKey = 'msg_' + hash;
   const key = currentTerms().protect(src).count ? 'msg_terms_' + currentTerms().revision + '_' + hash : originalKey;
   const cached = newsContent.message(originalKey) || translations.get(key);
   if (cached && cached !== src) return cb(cached);
-  if (!BAIDU_APPID || !BAIDU_SECRET) return cb(src);
+  if (!BAIDU_APPID || !BAIDU_SECRET) return cb('');
   // tokenize: alternates text / tag
   const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
-  const runs = []; // {tokIndex, text}
+  const runs = []; // Each text node retains its index and ordered fragments.
   tokens.forEach(function (tok, i) {
-    if (tok[0] !== '<' && hasCjk(tok) && tok.trim()) runs.push({ idx: i, text: tok });
+    if (tok[0] !== '<' && hasCjk(tok) && tok.trim()) {
+      const text = tok.trim().replace(/\s*\r?\n\s*/g, ' ');
+      for (let start = 0; start < text.length;) {
+        let end = Math.min(start + 600, text.length);
+        if (end < text.length) {
+          const boundary = Math.max(...['。', '！', '？', '. ', ' '].map((mark) => text.lastIndexOf(mark, end - 1)));
+          if (boundary > start + 300) end = boundary + 1;
+        }
+        while (end > start + 1 && currentTerms().protect(text.slice(start, end), '99').text.length > 900) end = start + Math.floor((end - start) / 2);
+        runs.push({ idx: i, text: text.slice(start, end) });
+        start = end;
+      }
+    }
   });
   if (!runs.length) {
     translations.set(key, src);
     return cb(src);
   }
-  // translate in chunks (each request <= ~900 chars to be safe)
-  const CHUNK = 900;
+  // Limits apply to the protected query, not to the shorter original Japanese.
   const chunks = [];
   let cur = [];
-  let curLen = 0;
   runs.forEach(function (r) {
-    if (curLen + r.text.length > CHUNK && cur.length) {
-      chunks.push(cur); cur = []; curLen = 0;
+    const query = cur.concat(r).map((run, index) => currentTerms().protect(run.text, String(index)).text).join('\n');
+    if ((query.length > 950 || Buffer.byteLength(query) > 5500) && cur.length) {
+      chunks.push(cur); cur = [];
     }
-    cur.push(r); curLen += r.text.length;
+    cur.push(r);
   });
   if (cur.length) chunks.push(cur);
-  const translated = {};
+  const translated = new Map();
   let done = 0;
   let failed = false;
   chunks.forEach(function (chunk, ci) {
     translateBatchLines(chunk.map(function (r) { return r.text; }), function (outs) {
       if (outs === null) {
-        // rate limited on batch -> fall back to one-by-one for this chunk
-        const chain = function (i) {
-          if (i >= chunk.length) { done++; if (done === chunks.length) finish(); return; }
-          translateOne(chunk[i].text, 0, signal).then(function (zh) {
-            if (!zh || zh === chunk[i].text) failed = true;
-            translated[chunk[i].idx] = zh || chunk[i].text;
-            chain(i + 1);
-          });
-        };
-        chain(0);
+        failed = true;
+        done++;
+        if (done === chunks.length) finish();
         return;
       }
       outs.forEach(function (zh, k) {
-        if (!zh || zh === chunk[k].text) failed = true;
-        translated[chunk[k].idx] = zh || chunk[k].text;
+        if (!zh || (zh === chunk[k].text && /[\u3040-\u30ff]/.test(chunk[k].text))) failed = true;
+        translated.set(chunk[k], zh);
       });
       done++;
       if (done === chunks.length) finish();
     }, signal);
   });
   function finish() {
+    if (failed || (signal && signal.aborted)) return cb('');
+    const textNodes = new Map();
+    runs.forEach((run) => textNodes.set(run.idx, (textNodes.get(run.idx) || '') + translated.get(run)));
     const out = tokens.map(function (tok, i) {
-      if (translated[i] !== undefined) return translated[i];
+      if (textNodes.has(i)) return textNodes.get(i);
       return tok;
     }).join('');
-    if (!failed && !(signal && signal.aborted)) {
-      translations.set(key, out);
-    }
+    translations.set(key, out);
     cb(out);
   }
+}
+
+function translateArticle(detail, signal, finish) {
+  Object.assign(detail, newsContent.apply(detail));
+  let remaining = 2, failed = false;
+  const complete = () => {
+    if (--remaining) return;
+    finish(failed ? 503 : 200, failed ? { error: 'translation unavailable' } : { response_code: 1, detail });
+  };
+  if (detail.title_zh || !detail.title) complete();
+  else translateTitle(detail.title, (zh) => {
+    if (!zh || (zh === detail.title && /[\u3040-\u30ff]/.test(detail.title))) failed = true;
+    else detail.title_zh = zh;
+    complete();
+  }, signal);
+  if (detail.message_zh || !detail.message) complete();
+  else translateHtmlMessage(detail.message, (zh) => {
+    if (!zh) failed = true;
+    else detail.message_zh = zh;
+    complete();
+  }, signal);
 }
 
 function httpsGet(url, cb, signal) {
@@ -882,26 +916,8 @@ function handleNewsDetail(req, res, params) {
         finish(502, { error: 'upstream detail failed' });
         return;
       }
-      if (json.detail) {
-        const detail = json.detail;
-        Object.assign(detail, newsContent.apply(detail));
-        if (detail.title && !detail.title_zh) {
-          translateTitle(detail.title, function (zh) { if (zh) detail.title_zh = zh; }, signal);
-        }
-        if (detail.message) {
-          // translate the body, but never block the response for too long.
-          let responded = false;
-          const respond = function () { if (!responded) { responded = true; finish(200, json); } };
-          const timer = setTimeout(respond, 8000);
-          translateHtmlMessage(detail.message, function (zh) {
-            clearTimeout(timer);
-            if (zh) detail.message_zh = zh;
-            respond();
-          }, signal);
-          return;
-        }
-      }
-      finish(200, json);
+      if (!json.detail) return finish(502, { error: 'missing upstream detail' });
+      translateArticle(json.detail, signal, (status, data) => finish(status, status === 200 ? { ...json, detail: data.detail } : data));
     }, signal);
   });
 }
@@ -950,24 +966,7 @@ function handleLantisDetail(req, res, params) {
       if (tm) detail.title = cleanHtml(tm[1]).trim();
       const inner = extractInnercon(body) || '';
       detail.message = inner;
-      Object.assign(detail, newsContent.apply(detail));
-      const respond = function () { finish(200, { response_code: 1, detail: detail }); };
-      if (inner) {
-        let responded = false;
-        const r2 = function () { if (!responded) { responded = true; respond(); } };
-        const timer = setTimeout(r2, 8000);
-        translateHtmlMessage(inner, function (zh) {
-          if (zh) detail.message_zh = zh;
-          if (detail.title && !detail.title_zh) {
-            translateTitle(detail.title, function (t) { if (t) detail.title_zh = t; clearTimeout(timer); r2(); }, signal);
-          } else {
-            clearTimeout(timer);
-            r2();
-          }
-        }, signal);
-      } else {
-        respond();
-      }
+      translateArticle(detail, signal, finish);
     }, 0, signal);
   });
 }
@@ -1134,6 +1133,14 @@ const server = http.createServer((req, res) => {
   if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
   if (req.method === 'GET' && urlPath.startsWith('/api/catalog/')) return handleCatalogApi(req, res, urlPath, params);
   if (req.method === 'GET' && urlPath === '/api/news-detail') return handleNewsDetail(req, res, params);
+  if (req.method === 'GET' && urlPath === '/api/news-image') {
+    loadNewsImage(params.get('url')).then(({ bytes, extension }) => {
+      if (res.destroyed || res.writableEnded) return;
+      res.writeHead(200, { 'Content-Type': MIME[extension], 'Content-Length': bytes.length, 'Cache-Control': 'public, max-age=3600' });
+      res.end(bytes);
+    }).catch((error) => sendJson(res, error.message === 'unsupported news image' ? 400 : 502, { error: error.message }));
+    return;
+  }
   if (req.method === 'GET' && urlPath === '/api/lantis-news') return handleLantisNews(res);
   if (req.method === 'GET' && urlPath === '/api/lantis-detail') return handleLantisDetail(req, res, params);
   if (req.method === 'GET' && urlPath === '/api/audio') return handleAudioProxy(req, res, params);

@@ -97,11 +97,12 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         <div id="tab-news" v-if="activeTab==='news'" class="tab-content active">
             <div v-if="newsDetail" class="news-detail">
                 <div v-if="newsDetail.image_big" class="news-detail-cover-wrap">
-                    <img class="news-detail-cover" :src="newsDetail.image_big" :alt="newsDetail.title_zh || newsDetail.title">
+                    <img class="news-detail-cover" :src="newsImage(newsDetail.image_big)" :alt="newsDetail.title_zh || newsDetail.title">
                 </div>
                 <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">原文 ↗</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
                 <h2 class="news-detail-title">{{ newsDetail.title_zh || newsDetail.title }}</h2>
                 <div v-if="newsError" class="news-error">{{ newsError }}<button type="button" @click="openNews(newsDetail.announce_id)">重试</button></div>
+                <div v-else-if="newsDetailLoading" class="ui-state ui-state-loading" role="status">正文与中文翻译加载中</div>
                 <div class="news-detail-body" v-html="newsDetailBody"></div>
             </div>
 

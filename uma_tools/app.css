@@ -2535,7 +2535,7 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     --audio-safe-bottom: env(safe-area-inset-bottom, 0px);
     --audio-shadow: 0 -12px 34px rgba(15,20,35,.2);
 }
-body.audio-dock-active #app { padding-bottom: calc(var(--audio-dock-height) + var(--audio-safe-bottom)); }
+body.audio-dock-active .site-footer { padding-bottom: calc(28px + var(--audio-dock-height) + var(--audio-safe-bottom)); }
 body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-height) - var(--audio-safe-bottom)); min-height: 560px; }
 .audio-dock {
     position: fixed;

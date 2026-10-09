@@ -59,6 +59,7 @@ const umaApp = createApp({
     const newsType = ref('all');
     const newsDetail = ref(null);
     const newsDetailBody = ref('');
+    const newsDetailLoading = ref(false);
     const newsPrevId = ref(0);
     const newsNextId = ref(0);
     const newsPage = ref(1);
@@ -2662,7 +2663,17 @@ const umaApp = createApp({
           el.setAttribute('target', '_blank');
           el.setAttribute('rel', 'noopener noreferrer');
         }
-        if (el.tagName === 'IMG') el.setAttribute('loading', 'lazy');
+        if (el.tagName === 'IMG') {
+          el.setAttribute('loading', 'lazy');
+          if (el.hasAttribute('src')) el.setAttribute('src', newsImage(el.getAttribute('src')));
+        }
+        if (el.hasAttribute('srcset')) {
+          el.setAttribute('srcset', el.getAttribute('srcset').split(',').map(function (entry) {
+            const parts = entry.trim().split(/\s+/);
+            parts[0] = newsImage(parts[0]);
+            return parts.join(' ');
+          }).join(', '));
+        }
         if (el.tagName === 'IFRAME') {
           el.className = 'news-embed';
           el.setAttribute('loading', 'lazy');
@@ -2694,12 +2705,24 @@ const umaApp = createApp({
     }
     function newsHeroCover(n) {
       if (!n) return newsDefaultCover;
-      return n.image || newsDefaultCover;
+      return newsImage(n.image || newsDefaultCover);
+    }
+    function newsImage(value) {
+      if (!value) return '';
+      const base = newsDetail.value && newsDetail.value.source === 'lantis' ? 'https://umamusume.lantis.jp/' : 'https://umamusume.jp/';
+      try {
+        const url = new URL(value, base);
+        if (['prd-info-umamusume.akamaized.net', 'umamusume.lantis.jp'].includes(url.hostname)) {
+          return '/api/news-image?url=' + encodeURIComponent(url.href);
+        }
+        return value;
+      } catch (error) { return value; }
     }
     function cancelNewsDetailRequest() {
       if (newsDetailRequest) clearTimeout(newsDetailRequest.timer);
       if (newsDetailRequest && newsDetailRequest.controller) newsDetailRequest.controller.abort();
       newsDetailRequest = null;
+      newsDetailLoading.value = false;
     }
     function newsDetailPlaceholder(id, source) {
       const key = String(id);
@@ -2731,6 +2754,7 @@ const umaApp = createApp({
         if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载超时，请重试。';
       }, 25000);
       newsDetailRequest = request;
+      newsDetailLoading.value = true;
       return request;
     }
     function newsDetailRequestIsCurrent(request) {
@@ -2776,9 +2800,9 @@ const umaApp = createApp({
           })
           .catch(function (error) {
             if (error && error.name === 'AbortError') return;
-            if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载失败，请重试。';
+            if (newsDetailRequestIsCurrent(request)) newsError.value = '正文或中文翻译加载失败，请重试。';
           })
-          .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) newsDetailRequest = null; });
+          .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) { newsDetailRequest = null; newsDetailLoading.value = false; } });
         return request.promise;
       }
       request.promise = fetch('/api/news-detail?id=' + encodeURIComponent(id), requestOptions)
@@ -2793,10 +2817,10 @@ const umaApp = createApp({
         })
         .catch(function (error) {
           if (!error || error.name !== 'AbortError') {
-            if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载失败';
+            if (newsDetailRequestIsCurrent(request)) newsError.value = '正文或中文翻译加载失败，请重试。';
           }
         })
-        .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) newsDetailRequest = null; });
+        .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) { newsDetailRequest = null; newsDetailLoading.value = false; } });
       return request.promise;
     }
     function loadAlbums() {
@@ -2861,7 +2885,7 @@ const umaApp = createApp({
       togglePlayerPanel, closePlayerPanel, cyclePlayerMode, dismissPlayer, retryPlayer, removeQueueItem, moveQueueItem, clearQueue,
       enqueueAlbum, albumPlayableCount, openPlayerSong,
       newsItems, newsError, newsLoading, refreshNews, newsRange, newsType, newsFiltered, newsHero,
-      newsDetail, newsDetailBody, newsPrevId, newsNextId,
+      newsDetail, newsDetailBody, newsDetailLoading, newsPrevId, newsNextId, newsImage,
       newsDate, newsTypeOf, newsTypeLabel, newsTitle, openNews, loadNews, newsHeroCover,
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
       syncFromUrl, prepareCurrentRoute, applyCurrentRoute, loadHomeSummaryIfNeeded, navigateTo, showContextBack, contextBack, breadcrumbItems,

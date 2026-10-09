@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('fs');
+const crypto = require('crypto');
 
 function mergeNews(previous, incoming) {
   const rows = new Map(previous.map((item) => [String(item.announce_id), { ...item }]));
@@ -44,7 +45,10 @@ class NewsContent {
     const result = { ...item, title_zh: this.title(item.title, item.title_zh) };
     if (edit) {
       Object.entries(edit).forEach(([field, value]) => {
-        if (field !== 'source_title' && (field !== 'title_zh' || edit.source_title === item.title)) result[field] = value;
+        if (field === 'source_title' || field === 'source_message') return;
+        if (field === 'title_zh' && edit.source_title !== item.title) return;
+        if (field === 'message_zh' && edit.source_message !== 'msg_' + crypto.createHash('md5').update(item.message || '').digest('hex')) return;
+        result[field] = value;
       });
     }
     return result;

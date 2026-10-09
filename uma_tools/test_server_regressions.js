@@ -111,7 +111,7 @@ async function main() {
   assert.strictEqual(requestCount, 1, 'rejected translations are not split into context-free fragments');
 
   const translation = vm.createContext({
-    crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
+    crypto, Buffer, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
     hasCjk: () => true,
     currentTerms: () => emptyTerms, translationKey: (source) => source,
     newsContent: { message: () => '' },
@@ -134,12 +134,46 @@ async function main() {
   let result;
   translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   await tick();
-  assert.strictEqual(result, '<p>原文</p>');
+  assert.strictEqual(result, '', 'a failed translation is not presented as a Japanese or partially translated success');
   assert.strictEqual(Object.keys(translation.transCache).length, 0, 'failed translations remain retryable');
   translation.translateBatchLines = (lines, callback) => callback(['译文']);
   translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   assert.strictEqual(result, '<p>译文</p>');
   assert.strictEqual(Object.keys(translation.transCache).length, 1);
+
+  translation.fetchTranslation = async (text) => ({ trans_result: text.split('\n').map((src) => ({ src, dst: src.replace(/原文/g, '译文') })) });
+  vm.runInContext(section('function translateBatchLines(', 'function translateHtmlMessage('), translation);
+  let lines;
+  translation.translateHtmlMessage('<p>原文\n原文</p>', (value) => { result = value; });
+  await tick();
+  assert.strictEqual(result, '<p>译文 译文</p>', 'HTML whitespace does not create extra API translation rows');
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '★★★★译文1500' }] });
+  translation.translateBatchLines(['★★★原文1500'], (value) => { lines = value; });
+  await tick();
+  assert.strictEqual(lines[0], '★★★译文1500', 'a translated rating retains its original star count');
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '译文150' }] });
+  translation.translateBatchLines(['原文1500'], (value) => { lines = value; });
+  await tick();
+  assert.strictEqual(lines, null, 'a changed amount is rejected');
+  translation.translateBatchLines(['原文'.repeat(1000)], (value) => { lines = value; });
+  assert.strictEqual(lines, null, 'query length is checked before sending');
+
+  let titleDone, bodyDone, articleResult;
+  const completedArticles = vm.createContext({
+    newsContent: { apply: (detail) => detail },
+    translateTitle: (text, done) => { titleDone = done; },
+    translateHtmlMessage: (text, done) => { bodyDone = done; }
+  });
+  vm.runInContext(section('function translateArticle(', 'function httpsGet('), completedArticles);
+  completedArticles.translateArticle({ title: 'ニュース', message: '原文' }, null, (status, data) => { articleResult = { status, data }; });
+  bodyDone('译文');
+  assert.strictEqual(articleResult, undefined, 'an article waits for both title and body');
+  titleDone('新闻');
+  assert.strictEqual(articleResult.status, 200);
+  assert.strictEqual(articleResult.data.detail.message_zh, '译文');
+  completedArticles.translateArticle({ title: 'ニュース', message: '原文' }, null, (status, data) => { articleResult = { status, data }; });
+  titleDone('新闻'); bodyDone('');
+  assert.strictEqual(articleResult.status, 503, 'failed translation remains an explicit retryable failure');
   console.log('server regressions passed');
 }
 
