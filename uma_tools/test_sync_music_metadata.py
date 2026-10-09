@@ -13,6 +13,22 @@ SPEC.loader.exec_module(SYNC)
 
 
 class MusicMetadataSyncTest(unittest.TestCase):
+    def test_wrapping_deduplication_preserves_source_and_timestamps(self):
+        recordings = {"split": {"song_id": "one"}, "joined": {"song_id": "one"}}
+        lyrics = {"versions": {
+            "split": {"lines": ["Hello", "world！", "Next"]},
+            "joined": {"lines": ["Hello world!", "Next"]},
+        }}
+        timings = {"versions": {"joined": {"lines": [
+            {"text": "Hello world!", "start_ms": 100}, {"text": "Next", "start_ms": 900},
+        ]}}}
+        normalized, aligned = SYNC.canonicalize_lyrics(recordings, lyrics, timings)
+        self.assertEqual(len(normalized["documents"]), 1)
+        self.assertEqual(normalized["versions"]["joined"]["raw_lines"], ["Hello world!", "Next"])
+        self.assertEqual([line["start_ms"] for line in aligned["versions"]["joined"]["lines"]], [100, 900])
+        self.assertEqual(aligned["versions"]["joined"]["alignment"], "complete")
+        self.assertEqual(SYNC.timing_line_positions(["A", "missing", "C"], ["A", "B", "C"]), [0, None, 2])
+
     def test_lyric_normalization_unifies_source_punctuation(self):
         self.assertEqual(
             SYNC.normalize_lyric_lines([
