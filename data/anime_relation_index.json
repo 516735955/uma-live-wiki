@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-d6cebdf3dabe15e2",
+  "build_id": "anime-3326bcad2083c079",
   "generated_at": "2026-10-09T00:00:00+08:00",
   "targets": {
     "event": {
@@ -13021,7 +13021,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "北原 穣",
+          "signature": "北原穣",
           "voice_actor_id": "va-0187",
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e23",
@@ -13243,7 +13243,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "六平 銀次郎",
+          "signature": "六平銀次郎",
           "voice_actor_id": "va-auto-9bdb3b50fc49",
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e23",
@@ -29726,7 +29726,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "北原 穣",
+          "signature": "北原穣",
           "voice_actor_id": "va-0187",
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e23",
@@ -29948,7 +29948,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "六平 銀次郎",
+          "signature": "六平銀次郎",
           "voice_actor_id": "va-auto-9bdb3b50fc49",
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e23",
@@ -39075,6 +39075,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e17",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e23-ending-music-song-864b1bb2e9-v-864b1bb2e9",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ending_theme",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e23",
           "work_id": "anime-cinderella-gray"
         }
       ],

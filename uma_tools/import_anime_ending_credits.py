@@ -257,6 +257,14 @@ def main():
                     creators.append({"id": creator_id, "name": name, "aliases": [], "type": "person", "affiliations": []})
                     creator_names[key] = creator_id
             creator_ids = [creator_names[normalized(name)] for name in names]
+            cue_roles = {"作詞": ("lyricist",), "作曲": ("composer",), "編曲": ("arranger",),
+                         "作詞・作曲": ("lyricist", "composer"),
+                         "作曲・編曲": ("composer", "arranger")}.get(cue["role"], ())
+            for creator_id in creator_ids:
+                creator = next(row for row in creators if row["id"] == creator_id)
+                creator["anime_music"] = True
+                creator["anime_music_roles"] = list(dict.fromkeys([
+                    *creator.get("anime_music_roles", []), *cue_roles]))
             credit = {"role": role_label(cue["role"]), "names": names,
                       "institutions": cue.get("institutions", []), "creator_ids": creator_ids}
             matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])] if detail is not None else []

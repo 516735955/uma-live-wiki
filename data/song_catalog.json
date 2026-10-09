@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T09:21:56+00:00",
+  "generated_at": "2026-10-09T11:34:15+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -154098,16 +154098,24 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-090f89ccf3"
+              "creator_id": "creator-090f89ccf3",
+              "institution": "あたらよ"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-090f89ccf3"
+              "creator_id": "creator-090f89ccf3",
+              "institution": "あたらよ"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-e61b9f1707"
             }
           ],
           "creator_ids": [
-            "creator-090f89ccf3"
+            "creator-090f89ccf3",
+            "creator-e61b9f1707"
           ],
           "lyrics_ref": "song-864b1bb2e9-v-864b1bb2e9",
           "has_lyrics": true,
@@ -154146,16 +154154,24 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-090f89ccf3"
+              "creator_id": "creator-090f89ccf3",
+              "institution": "あたらよ"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-090f89ccf3"
+              "creator_id": "creator-090f89ccf3",
+              "institution": "あたらよ"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-e61b9f1707"
             }
           ],
           "creator_ids": [
-            "creator-090f89ccf3"
+            "creator-090f89ccf3",
+            "creator-e61b9f1707"
           ],
           "lyrics_ref": "",
           "has_lyrics": false,
@@ -154167,7 +154183,8 @@
       "performance_count": 3,
       "original_version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "creator_ids": [
-        "creator-090f89ccf3"
+        "creator-090f89ccf3",
+        "creator-e61b9f1707"
       ],
       "has_lyrics": true
     },
@@ -247956,5 +247973,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "a4d028fd8d095d2dad0d"
+  "build_id": "30a042199960ea000b8b"
 }

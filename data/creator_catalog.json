@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T09:21:56+00:00",
+  "generated_at": "2026-10-09T11:34:15+00:00",
   "coverage": {
-    "creators": 281,
+    "creators": 283,
     "credited_works": 332,
     "credited_versions": 1295
   },
@@ -4811,8 +4811,8 @@
       "id": "creator-shilo-86c6f3b3cf",
       "name": "Shilo",
       "aliases": [
-        "shilo",
-        "shiLo"
+        "shiLo",
+        "shilo"
       ],
       "type": "person",
       "affiliations": [],
@@ -8639,7 +8639,9 @@
       "name": "ひとみ",
       "aliases": [],
       "type": "person",
-      "affiliations": [],
+      "affiliations": [
+        "あたらよ"
+      ],
       "roles": [
         {
           "role": "lyricist",
@@ -8691,7 +8693,17 @@
           ]
         }
       ],
-      "collaborators": []
+      "collaborators": [
+        {
+          "creator_id": "creator-e61b9f1707",
+          "name": "れいらむる",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-864b1bb2e9"
+          ]
+        }
+      ]
     },
     {
       "id": "creator-29c23c234c",
@@ -9109,6 +9121,67 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-l-arc-de-gloire-aa7474ca7e"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-e61b9f1707",
+      "name": "れいらむる",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 2
+        }
+      ],
+      "work_count": 1,
+      "version_count": 2,
+      "works": [
+        {
+          "song_id": "song-864b1bb2e9",
+          "title": "ふたり",
+          "cover": "https://p1.music.126.net/_QwGg4OdbTo6ye-AiGme0A==/109951172345399338.jpg",
+          "release_date": "2025-11-26",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』第2クールエンディング主題歌 : 「ふたり」",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-864b1bb2e9-v-2af8136a85",
+            "song-864b1bb2e9-v-864b1bb2e9"
+          ],
+          "versions": [
+            {
+              "id": "song-864b1bb2e9-v-864b1bb2e9",
+              "title": "ふたり",
+              "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-864b1bb2e9-v-2af8136a85",
+              "title": "ふたり (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-090f89ccf3",
+          "name": "ひとみ",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-864b1bb2e9"
           ]
         }
       ]
@@ -43044,6 +43117,29 @@
       ]
     },
     {
+      "id": "creator-f8ce711c54",
+      "name": "田山里奈",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
+    },
+    {
       "id": "creator-095e4a5b84",
       "name": "田村ジュン",
       "aliases": [],
@@ -53784,8 +53880,8 @@
       "id": "creator-ff7b158325",
       "name": "高田龙一",
       "aliases": [
-        "髙田龍一",
-        "高田龍一"
+        "高田龍一",
+        "髙田龍一"
       ],
       "type": "person",
       "affiliations": [],
@@ -53864,5 +53960,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "a4d028fd8d095d2dad0d"
+  "build_id": "30a042199960ea000b8b"
 }
