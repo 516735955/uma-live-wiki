@@ -8,6 +8,9 @@ const { EventEmitter } = require('events');
 const source = fs.readFileSync(require.resolve('./server.js'), 'utf8');
 const section = (start, end) => source.slice(source.indexOf(start), source.indexOf(end));
 const tick = async () => { for (let i = 0; i < 5; i++) await Promise.resolve(); };
+const { mergeNews } = require('./news-content');
+const { createTerms } = require('./translation-terms');
+const emptyTerms = createTerms([{ ja: 'トウカイテイオー', zh: '东海帝王' }]);
 
 async function main() {
   const timers = [];
@@ -17,6 +20,7 @@ async function main() {
   const context = vm.createContext({
     newsRefreshPromise: null, newsRefreshRevision: 0,
     newsIndexCache: { at: 0, data: { information_list: [] } }, transCache: {},
+    mergeNews, newsContent: { apply: (item) => ({ ...item, title_zh: item.title_zh || context.transCache[item.title] || '' }), title: () => '' },
     NEWS_MAX_CONC: 3, NEWS_TTL: 900000, NO_AUTO_CRAWL: true,
     setTimeout(callback) { timers.push(callback); return timers.length; }, clearTimeout() {},
     fetchNewsPageRetry(page, callback) { pages.push(callback); },
@@ -52,7 +56,12 @@ async function main() {
   context.handleNewsIndex(second);
   assert.notStrictEqual(first.options.etag, second.options.etag, 'ETag changes when translation changes');
 
-  const articles = vm.createContext({ AbortController, Date, Map, Set,
+  let manualTitle = '', manualMessage = '';
+  const articles = vm.createContext({ AbortController, Date, Map, Set, crypto,
+    newsContent: {
+      apply: (item) => ({ ...item, title_zh: manualTitle || item.title_zh }),
+      message: () => manualMessage
+    },
     sendJson(response, status, body) { response.status = status; response.body = body; }
   });
   vm.runInContext(section('const articleCache =', 'function handleNewsDetail('), articles);
@@ -64,10 +73,16 @@ async function main() {
   assert.strictEqual(articleLoads, 1, 'concurrent readers share an upstream article request');
   subscriberA.emit('close');
   assert.strictEqual(signal.aborted, false, 'one closed reader does not cancel another');
-  complete(200, { detail: { title: 'article' } });
+  complete(200, { detail: { title: 'article', message: '<p>原文</p>' } });
   assert.strictEqual(subscriberB.status, 200);
   articles.serveArticle('one', new EventEmitter(), load);
   assert.strictEqual(articleLoads, 1, 'a completed article is served from cache');
+  manualTitle = '人工订正标题';
+  manualMessage = '<p>人工订正正文</p>';
+  const updated = new EventEmitter();
+  articles.serveArticle('one', updated, load);
+  assert.strictEqual(updated.body.detail.title_zh, manualTitle);
+  assert.strictEqual(updated.body.detail.message_zh, manualMessage, 'cached articles apply current manual corrections');
   const cancelled = new EventEmitter();
   articles.serveArticle('two', cancelled, load);
   cancelled.emit('close');
@@ -77,7 +92,8 @@ async function main() {
 
   let requestCount = 0;
   const sensitive = vm.createContext({
-    crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', sanitizeSensitive: (text) => text,
+    crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test',
+    currentTerms: () => emptyTerms,
     fetchTranslation: async () => { requestCount += 1; return { error_code: '20003' }; },
     https: { get(url, options, callback) {
       requestCount += 1;
@@ -92,11 +108,13 @@ async function main() {
   });
   vm.runInContext(section('function translateOne(', 'async function pumpTranslations()'), sensitive);
   await sensitive.translateOne('拒绝', 0);
-  assert.strictEqual(requestCount, 2, 'sensitive-word fallback is bounded');
+  assert.strictEqual(requestCount, 1, 'rejected translations are not split into context-free fragments');
 
   const translation = vm.createContext({
-    crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {}, transDirty: false,
-    saveTransCache() {}, hasCjk: () => true,
+    crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
+    hasCjk: () => true,
+    currentTerms: () => emptyTerms, translationKey: (source) => source,
+    newsContent: { message: () => '' },
     fetchTranslation: () => Promise.reject(new Error('timeout')),
     https: { get() {
       const request = new EventEmitter();
@@ -105,6 +123,7 @@ async function main() {
       return request;
     } }
   });
+  translation.translations = { get: (key) => translation.transCache[key], set: (key, value) => { translation.transCache[key] = value; } };
   vm.runInContext(section('function translateBatchLines(', 'function httpsGet('), translation);
   let callbacks = 0;
   translation.translateBatchLines(['原文'], () => { callbacks += 1; });

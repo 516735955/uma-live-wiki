@@ -20,6 +20,12 @@
 
 `server.js` 提供静态文件、新闻、翻译、目录 API 和自动刷新；`catalog-store.js` 加载一致的生成目录，刷新失败继续提供上一份完整快照。
 
+`news-content.js` 统一新闻增量合并与人工订正优先级。`news-overrides.json` 的 `titles` 按日文原题保存订正；`messages` 按原文已有的 `msg_…` 标识保存订正文；`news` 按新闻 ID 保存图片等字段。原题或正文变化后，不套用旧译文。
+
+`translation-terms.js` 从角色索引和声优资料取得统一名称，保护专名后调用百度 API，再恢复中文名。标记缺失或重复的结果不入缓存；HTML 标签和链接不参与翻译。`translation-cache.js` 合并单条结果，不用旧内存整份覆盖磁盘。人工订正独立于缓存；无需逐条审核新闻。后台补译每轮最多 20 条，交互请求优先。
+
+实际 API 小样本检查：`node uma_tools/smoke_translation.js`。该命令不修改缓存，只输出原文和译文。
+
 ```bash
 node uma_tools/server.js --no-crawl
 node uma_tools/server.js

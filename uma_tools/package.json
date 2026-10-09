@@ -13,7 +13,7 @@
     "test:routes": "node test_routes.js",
     "test:brand": "node test_brand_tokens.js",
     "test:player": "node test_player_controller.js",
-    "test:regressions": "node test_frontend_regressions.js && node test_server_regressions.js && node test_api_regressions.js",
+    "test:regressions": "node test_frontend_regressions.js && node test_server_regressions.js && node test_api_regressions.js && node test_news_content.js",
     "scrape": "node scrape.js",
     "apply": "node apply.js"
   }

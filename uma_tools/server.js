@@ -12,6 +12,9 @@ const crypto = require('crypto');
 const zlib = require('zlib');
 const { pipeline } = require('stream');
 const { CatalogStore } = require('./catalog-store');
+const { mergeNews, NewsContent } = require('./news-content');
+const { TranslationCache } = require('./translation-cache');
+const { loadTerms, createTerms } = require('./translation-terms');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
@@ -44,7 +47,8 @@ const CLI_ARGS = process.argv.slice(2);
 const NO_AUTO_CRAWL = CLI_ARGS.includes('--no-crawl');
 const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
 const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
-const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
+const ROOT = fs.realpathSync(path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..')));
+const releaseInfo = fs.existsSync(path.join(ROOT, 'release.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'release.json'), 'utf8')) : { commit: 'development' };
 const DATA_DIR = path.join(ROOT, 'data');
 const catalogStore = new CatalogStore(DATA_DIR);
 
@@ -74,7 +78,7 @@ const NEWS_SNAPSHOT_FILE = path.join(DATA_DIR, 'news_snapshot.json');
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
 // Scraped by crawl_lantis_news.py into data/lantis_news.json. Merged into the news
 // index with type "cd" (CD相关). Each item: {id, date, url, title, category}.
-// 与官网新闻同一套机制：data/lantis_news.json 是 CD相关 的发布快照（随仓库部署、热加载），
+// 与官网新闻同一套机制：data/lantis_news.json 是 CD相关 的持久快照（增量维护、热加载），
 // 服务内按需 TTL 后台补抓，抓取结果合并进 data/news_snapshot.json，失败保留旧数据并按 TTL 退避。
 const LANTIS_FILE = path.join(DATA_DIR, 'lantis_news.json');
 const LANTIS_TTL = 30 * 60 * 1000;
@@ -97,7 +101,7 @@ function lantisNewsItems() {
     return {
       announce_id: it.id,
       title: it.title,
-      title_zh: transCache[it.title] || '',
+      title_zh: newsContent.title(it.title, it.title_zh),
       post_at: normalizeLantisDate(it.date),
       announce_label: 4,
       source: 'lantis',
@@ -127,7 +131,7 @@ let newsRefreshRevision = 0;
 let newsSnapshotMtime = 0;
 
 // Adopt a snapshot only when it is newer than what memory already holds, so a
-// git deploy of data/news_snapshot.json becomes visible without a service
+// an incrementally maintained data/news_snapshot.json becomes visible without a service
 // restart and a late write never rolls the list backwards.
 function adoptNewsSnapshot(snapshot) {
   if (!snapshot || !Array.isArray(snapshot.information_list)) return false;
@@ -178,34 +182,24 @@ function loadBaiduCreds() {
 const _baiduCreds = loadBaiduCreds();
 const BAIDU_APPID = _baiduCreds.appid;
 const BAIDU_SECRET = _baiduCreds.secret;
-let transCache = {};
-try { transCache = JSON.parse(fs.readFileSync(TRANS_CACHE_FILE, 'utf8')); } catch (e) {}
+const translations = new TranslationCache(TRANS_CACHE_FILE);
+let termStamp = '', translationTerms;
+function currentTerms() {
+  const stamp = ['character_index_data.js', 'voice_actor_profiles.json'].map((file) => fs.statSync(path.join(DATA_DIR, file)).mtimeMs).join(':');
+  if (stamp !== termStamp) {
+    translationTerms = createTerms(loadTerms(ROOT));
+    termStamp = stamp;
+  }
+  return translationTerms;
+}
+function translationKey(source) {
+  const terms = currentTerms();
+  return terms.protect(source).count ? 'terms_' + terms.revision + ':' + source : source;
+}
+const newsContent = new NewsContent(path.join(__dirname, 'news-overrides.json'), (source) => translations.get(translationKey(source)), (source) => translations.get(source));
 let transQueue = [];
 let transRunning = false;
-let transDirty = false;
 
-function saveTransCache() {
-  if (!transDirty) return;
-  const tempPath = TRANS_CACHE_FILE + '.' + process.pid + '.tmp';
-  try {
-    fs.writeFileSync(tempPath, JSON.stringify(transCache, null, 1));
-    fs.renameSync(tempPath, TRANS_CACHE_FILE);
-    transDirty = false;
-  } catch (e) {
-    try { fs.unlinkSync(tempPath); } catch (e2) {}
-  }
-}
-
-// 百度翻译会将部分日文词组判定为敏感词(error 20003, 如「育成シナリオ」)。
-// 处理方式:预先替换成已确认的中文对照词后重试;若仍失败,按标点分段逐个翻译,失败段保留原文。
-const SENSITIVE_REPLACE = [
-  { jp: '育成シナリオ', zh: '育成剧本' }
-];
-function sanitizeSensitive(text) {
-  let out = String(text || '');
-  SENSITIVE_REPLACE.forEach(function (r) { out = out.split(r.jp).join(r.zh); });
-  return out;
-}
 
 let translationRequests = Promise.resolve();
 let nextTranslationAt = 0;
@@ -244,31 +238,27 @@ function fetchTranslation(url, signal) {
   return result;
 }
 
-function translateOne(text, attempt, sensitiveAttempt, signal) {
+function translateOne(text, attempt, signal) {
   if (signal && signal.aborted) return Promise.resolve('');
   return new Promise((resolve) => {
+    const protectedText = currentTerms().protect(text);
     const salt = String(Date.now() + Math.floor(Math.random() * 1000));
-    const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
-    const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(text) +
+    const sign = crypto.createHash('md5').update(BAIDU_APPID + protectedText.text + salt + BAIDU_SECRET).digest('hex');
+    const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(protectedText.text) +
       '&from=jp&to=zh&appid=' + BAIDU_APPID + '&salt=' + salt + '&sign=' + sign;
     fetchTranslation(url, signal).then((j) => {
         try {
           if (j && j.trans_result && j.trans_result.length) {
             const t = j.trans_result.map(function (x) { return x.dst; }).join('');
-            resolve(t);
+            resolve(protectedText.restore(t) || '');
             return;
           }
           const code = j && j.error_code;
           if ((code === '54003' || code === '54000') && (attempt || 0) < 3) {
             // rate-limited: wait and retry
             setTimeout(function () {
-              translateOne(text, (attempt || 0) + 1, sensitiveAttempt, signal).then(resolve);
+              translateOne(text, (attempt || 0) + 1, signal).then(resolve);
             }, 1200 * ((attempt || 0) + 1));
-            return;
-          }
-          if (code === '20003') {
-            if (sensitiveAttempt) { resolve(''); return; }
-            translateSensitiveSafe(text, signal).then(resolve);
             return;
           }
           resolve('');
@@ -277,38 +267,6 @@ function translateOne(text, attempt, sensitiveAttempt, signal) {
   });
 }
 
-function translateSensitiveSafe(text, signal) {
-  return new Promise((resolve) => {
-    const safe = sanitizeSensitive(text);
-    if (safe !== text) {
-      translateOne(safe, 0, true, signal).then(resolve);
-      return;
-    }
-    // split on punctuation/space; translate each segment, keep failed ones as-is
-    const parts = String(text).split(/([「」『』」。、,，。！？\s])/).filter(function (s) { return s !== ''; });
-    const segs = [];
-    let cur = '';
-    parts.forEach(function (p) {
-      if (/^[「」『』」。、,，。！？\s]$/.test(p)) {
-        if (cur) { segs.push(cur); cur = ''; }
-        segs.push(p);
-      } else { cur += p; }
-    });
-    if (cur) segs.push(cur);
-    if (!segs.length) { resolve(String(text)); return; }
-    const out = [];
-    let done = 0;
-    segs.forEach(function (seg, i) {
-      if (!seg.trim()) { out[i] = seg; done++; if (done === segs.length) finish(); return; }
-      translateOne(seg, 0, true, signal).then(function (zh) {
-        out[i] = (zh && zh !== seg) ? zh : seg;
-        done++;
-        if (done === segs.length) finish();
-      });
-    });
-    function finish() { resolve(out.join('')); }
-  });
-}
 
 async function pumpTranslations() {
   if (transRunning) return;
@@ -316,11 +274,10 @@ async function pumpTranslations() {
   while (transQueue.length) {
     const item = transQueue.shift();
     // Baidu free tier is ~1 QPS; translate serially with a small delay.
-    const zh = await translateOne(item.text, 0, false, item.signal);
+    const key = translationKey(item.text);
+    const zh = await translateOne(item.text, 0, item.signal);
     if (zh && zh !== item.text) {
-      transCache[item.text] = zh;
-      transDirty = true;
-      saveTransCache();
+      translations.set(key, zh);
     }
     item.cb(zh || item.text);
     await new Promise((r) => setTimeout(r, 250));
@@ -328,11 +285,19 @@ async function pumpTranslations() {
   transRunning = false;
 }
 
-function translateTitle(text, cb, signal) {
+function translateTitle(text, cb, signal, background = false) {
   if (!text) return cb(text || '');
-  if (transCache[text]) return cb(transCache[text]);
+  const cached = newsContent.title(text);
+  if (cached) return cb(cached);
   if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
-  transQueue.push({ text: text, cb: cb, signal: signal });
+  const duplicate = transQueue.find((item) => item.text === text && item.signal === signal);
+  if (duplicate) {
+    const previous = duplicate.cb;
+    duplicate.cb = (value) => { previous(value); cb(value); };
+    return;
+  }
+  const item = { text, cb, signal };
+  if (background) transQueue.push(item); else transQueue.unshift(item);
   pumpTranslations();
 }
 
@@ -346,7 +311,8 @@ function translateBatchLines(lines, cb, signal) {
   const finish = (value) => { if (!completed) { completed = true; cb(value); } };
   // translate multiple short text runs in one Baidu request (newline-joined)
   if (!lines.length) return finish([]);
-  const text = lines.join('\n');
+  const protectedLines = lines.map((line, index) => currentTerms().protect(line, String(index).padStart(4, '0')));
+  const text = protectedLines.map((line) => line.text).join('\n');
   const salt = String(Date.now() + Math.floor(Math.random() * 1000));
   const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
   const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(text) +
@@ -354,9 +320,12 @@ function translateBatchLines(lines, cb, signal) {
   fetchTranslation(url, signal).then((j) => {
       try {
         if (j && j.trans_result && j.trans_result.length) {
+          if (j.trans_result.length !== lines.length) return finish(null);
           const out = [];
           for (let i = 0; i < lines.length; i++) {
-            out.push((j.trans_result[i] && j.trans_result[i].dst) || lines[i]);
+            const restored = protectedLines[i].restore(j.trans_result[i].dst);
+            if (!restored) return finish(null);
+            out.push(restored);
           }
           return finish(out);
         }
@@ -364,20 +333,6 @@ function translateBatchLines(lines, cb, signal) {
         if (code === '54003' || code === '54000') {
           // rate-limited: after a pause, caller retries by translating one by one
           return finish(null);
-        }
-        if (code === '20003') {
-          // a line in this batch hit a sensitive word; translate each line via
-          // the sensitive-safe path instead of dropping the whole chunk.
-          const out = [];
-          const walk = function (i) {
-            if (i >= lines.length) return finish(out);
-            translateSensitiveSafe(lines[i], signal).then(function (zh) {
-              out[i] = (zh && zh !== lines[i]) ? zh : lines[i];
-              walk(i + 1);
-            });
-          };
-          walk(0);
-          return;
         }
         finish(null);
       } catch (e) { finish(null); }
@@ -389,8 +344,10 @@ function translateHtmlMessage(html, cb, signal) {
   if (signal && signal.aborted) return cb(src);
   if (!src) return cb('');
   const hash = crypto.createHash('md5').update(src).digest('hex');
-  const key = 'msg_' + hash;
-  if (transCache[key] && transCache[key] !== src) return cb(transCache[key]);
+  const originalKey = 'msg_' + hash;
+  const key = currentTerms().protect(src).count ? 'msg_terms_' + currentTerms().revision + '_' + hash : originalKey;
+  const cached = newsContent.message(originalKey) || translations.get(key);
+  if (cached && cached !== src) return cb(cached);
   if (!BAIDU_APPID || !BAIDU_SECRET) return cb(src);
   // tokenize: alternates text / tag
   const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
@@ -399,8 +356,7 @@ function translateHtmlMessage(html, cb, signal) {
     if (tok[0] !== '<' && hasCjk(tok) && tok.trim()) runs.push({ idx: i, text: tok });
   });
   if (!runs.length) {
-    transCache[key] = src;
-    transDirty = true; saveTransCache();
+    translations.set(key, src);
     return cb(src);
   }
   // translate in chunks (each request <= ~900 chars to be safe)
@@ -424,7 +380,7 @@ function translateHtmlMessage(html, cb, signal) {
         // rate limited on batch -> fall back to one-by-one for this chunk
         const chain = function (i) {
           if (i >= chunk.length) { done++; if (done === chunks.length) finish(); return; }
-          translateOne(chunk[i].text, 0, false, signal).then(function (zh) {
+          translateOne(chunk[i].text, 0, signal).then(function (zh) {
             if (!zh || zh === chunk[i].text) failed = true;
             translated[chunk[i].idx] = zh || chunk[i].text;
             chain(i + 1);
@@ -447,9 +403,7 @@ function translateHtmlMessage(html, cb, signal) {
       return tok;
     }).join('');
     if (!failed && !(signal && signal.aborted)) {
-      transCache[key] = out;
-      transDirty = true;
-      saveTransCache();
+      translations.set(key, out);
     }
     cb(out);
   }
@@ -694,12 +648,8 @@ function persistNewsSnapshot(data) {
 function publishLantisMerge() {
   const current = newsIndexCache.data;
   if (!current || !Array.isArray(current.information_list)) return false;
-  const official = current.information_list.filter((n) => n.source !== 'lantis');
-  const merged = official.concat(lantisNewsItems());
+  const merged = mergeNews(current.information_list, lantisNewsItems()).map((item) => newsContent.apply(item));
   merged.sort((a, b) => String(b.update_at || b.post_at).localeCompare(String(a.update_at || a.post_at)));
-  merged.forEach((item) => {
-    if (transCache[item.title]) item.title_zh = transCache[item.title];
-  });
   if (JSON.stringify(merged) === JSON.stringify(current.information_list)) return false;
   const data = Object.assign({}, current, {
     information_list: merged,
@@ -788,26 +738,19 @@ function refreshNewsIndex() {
 
       function publish() {
         if (revision !== newsRefreshRevision) return;
-        const previous = new Map(((newsIndexCache.data && newsIndexCache.data.information_list) || []).map((item) => [String(item.announce_id), item]));
         const seen = new Set();
-        const list = [];
+        const incoming = [];
         for (let index = 1; index <= total; index++) {
           (slots[index - 1] || []).forEach((item) => {
-            if (!seen.has(item.announce_id)) {
-              seen.add(item.announce_id);
-              const old = previous.get(String(item.announce_id));
-              list.push(Object.assign({}, item, {
-                image: item.image || (old && old.image) || '',
-                title_zh: item.title_zh || (old && old.title === item.title && old.title_zh) || ''
-              }));
+            if (!seen.has(String(item.announce_id))) {
+              seen.add(String(item.announce_id));
+              incoming.push(item);
             }
           });
         }
-        mergeLantis(list);
+        mergeLantis(incoming);
+        const list = mergeNews((newsIndexCache.data && newsIndexCache.data.information_list) || [], incoming).map((item) => newsContent.apply(item));
         list.sort((a, b) => String(b.update_at || b.post_at).localeCompare(String(a.update_at || a.post_at)));
-        list.forEach((item) => {
-          if (transCache[item.title]) item.title_zh = transCache[item.title];
-        });
         const data = {
           response_code: 1,
           information_list: list,
@@ -839,8 +782,8 @@ function refreshNewsIndex() {
             persistNewsSnapshot(updated);
           }
         });
-        list.forEach((item) => {
-          if (!item.title_zh) translateTitle(item.title, function () {});
+        list.filter((item) => !newsContent.title(item.title)).slice(0, 20).forEach((item) => {
+          translateTitle(item.title, function () {}, undefined, true);
         });
       }
       pump();
@@ -855,9 +798,7 @@ function newsResponseSnapshot() {
   reloadLantisIfNewer();
   if (!newsIndexCache.data) return null;
   const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
-  cached.information_list.forEach((item) => {
-    if (transCache[item.title]) item.title_zh = transCache[item.title];
-  });
+  cached.information_list = cached.information_list.map((item) => newsContent.apply(item));
   return cached;
 }
 
@@ -890,9 +831,19 @@ function handleNewsIndex(res) {
 
 const articleCache = new Map();
 const articleRequests = new Map();
+function applyArticleEdits(data) {
+  if (!data.detail) return data;
+  const detail = newsContent.apply(data.detail);
+  if (detail.message) {
+    const key = 'msg_' + crypto.createHash('md5').update(detail.message).digest('hex');
+    const edited = newsContent.message(key);
+    if (edited) detail.message_zh = edited;
+  }
+  return { ...data, detail };
+}
 function serveArticle(key, res, load) {
   const cached = articleCache.get(key);
-  if (cached && Date.now() - cached.at < 15 * 60 * 1000) { sendJson(res, 200, cached.data); return; }
+  if (cached && Date.now() - cached.at < 15 * 60 * 1000) { sendJson(res, 200, applyArticleEdits(cached.data)); return; }
   if (cached) articleCache.delete(key);
   let pending = articleRequests.get(key);
   const fresh = !pending;
@@ -916,7 +867,8 @@ function serveArticle(key, res, load) {
       articleCache.set(key, { at: Date.now(), data });
       if (articleCache.size > 128) articleCache.delete(articleCache.keys().next().value);
     }
-    pending.responses.forEach((response) => sendJson(response, status, data));
+    const result = status === 200 ? applyArticleEdits(data) : data;
+    pending.responses.forEach((response) => sendJson(response, status, result));
     pending.responses.clear();
   });
 }
@@ -932,8 +884,8 @@ function handleNewsDetail(req, res, params) {
       }
       if (json.detail) {
         const detail = json.detail;
-        if (detail.title && transCache[detail.title]) detail.title_zh = transCache[detail.title];
-        if (detail.title && !transCache[detail.title]) {
+        Object.assign(detail, newsContent.apply(detail));
+        if (detail.title && !detail.title_zh) {
           translateTitle(detail.title, function (zh) { if (zh) detail.title_zh = zh; }, signal);
         }
         if (detail.message) {
@@ -998,7 +950,7 @@ function handleLantisDetail(req, res, params) {
       if (tm) detail.title = cleanHtml(tm[1]).trim();
       const inner = extractInnercon(body) || '';
       detail.message = inner;
-      if (detail.title && transCache[detail.title]) detail.title_zh = transCache[detail.title];
+      Object.assign(detail, newsContent.apply(detail));
       const respond = function () { finish(200, { response_code: 1, detail: detail }); };
       if (inner) {
         let responded = false;
@@ -1177,6 +1129,7 @@ const server = http.createServer((req, res) => {
   }
   const params = urlObj.searchParams;
 
+  if (req.method === 'GET' && urlPath === '/api/release') return sendJson(res, 200, { commit: releaseInfo.commit }, { cacheControl: 'no-store' });
   if (req.method === 'GET' && urlPath === '/api/news-index') return handleNewsIndex(res);
   if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
   if (req.method === 'GET' && urlPath.startsWith('/api/catalog/')) return handleCatalogApi(req, res, urlPath, params);
@@ -1224,14 +1177,14 @@ function serveFile(filePath, req, res) {
     }
     const ext = path.extname(filePath).toLowerCase();
     const requestUrl = new URL(req.url, 'http://x');
-    const versioned = requestUrl.searchParams.has('v');
+    const versioned = /^\/assets\/[a-f0-9]{16}\.(?:js|css)$/.test(requestUrl.pathname);
     const isHtml = ext === '.html' || ext === '.htm';
     const isMedia = ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico'].includes(ext);
     const cacheControl = isHtml
       ? 'no-cache'
-      : requestUrl.pathname.startsWith('/data/')
+      : requestUrl.pathname.startsWith('/data/') && ext !== '.js'
         ? 'public, max-age=3600, stale-while-revalidate=86400'
-      : (versioned || requestUrl.pathname.startsWith('/uma_tools/vendor/'))
+      : versioned
         ? 'public, max-age=31536000, immutable'
         : isMedia ? 'public, max-age=2592000, stale-while-revalidate=86400' : 'no-cache';
     const headers = {
