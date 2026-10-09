@@ -4948,7 +4948,8 @@
           "summary_ja": "ついに迎えた『天皇賞（秋）』の開催日。\n奇しくも同じ芦毛のウマ娘、タマモクロスとの直接対決。\nオグリは『最強』に勝ち、日本一となるべくターフヘ向かう。\nタマモもまた日本一を目指して、レースに臨む。\nその胸に、大切な人への想いを秘めて——。",
           "source_refs": [
             "official-story-anime-cinderella-gray-e12",
-            "staff-transcript-anime-cinderella-gray"
+            "staff-transcript-anime-cinderella-gray",
+            "official-ending-anime-cinderella-gray-e12"
           ],
           "stills": [
             {
@@ -5008,7 +5009,7 @@
             }
           ],
           "title_ja": "天皇賞（秋）",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "summary_zh": "秋季天皇赏终于到来，同为芦毛的小栗帽与玉藻十字直接交锋。她们各自带着成为日本第一的愿望，以及对重要之人的思念走上草地。",
           "music_cues": [
             {
@@ -5026,11 +5027,24 @@
                   "creator_ids": [
                     "creator-ff7b158325"
                   ]
+                },
+                {
+                  "role": "作曲／编曲",
+                  "names": [
+                    "高田龍一"
+                  ],
+                  "institutions": [
+                    "MONACA"
+                  ],
+                  "creator_ids": [
+                    "creator-ff7b158325"
+                  ]
                 }
               ],
               "institutions": [],
               "source_refs": [
-                "moegirl-cingray-episode-music"
+                "moegirl-cingray-episode-music",
+                "official-ending-anime-cinderella-gray-e12"
               ]
             }
           ]
@@ -5039,7 +5053,8 @@
           "summary_ja": "『天皇賞（秋）』で繰り広げられた熾烈な戦いは、ついに最後の直線を迎える。\nラスト400Mに向けて全員が残った力を振り絞る中、タマモを追う『怪物』オグリキャップ。\n体力が尽きかけたタマモは、オグリに迫られる中、自らの過去を思い出す。\nそのかけがえのない光景と想いを胸に、ついに『限界の壁』を超える。",
           "source_refs": [
             "official-story-anime-cinderella-gray-e13",
-            "staff-transcript-anime-cinderella-gray"
+            "staff-transcript-anime-cinderella-gray",
+            "official-ending-anime-cinderella-gray-e13"
           ],
           "stills": [
             {
@@ -5099,7 +5114,7 @@
             }
           ],
           "title_ja": "日本一",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "summary_zh": "秋季天皇赏进入最后直线，小栗帽追赶体力渐渐耗尽的玉藻十字。回忆起珍贵往事的玉藻，将带着这些心意突破极限。"
         },
         "14": {
@@ -5107,7 +5122,8 @@
           "source_refs": [
             "official-story-anime-cinderella-gray-e14",
             "staff-transcript-anime-cinderella-gray",
-            "official-cg-cour2-onair"
+            "official-cg-cour2-onair",
+            "official-ending-anime-cinderella-gray-e14"
           ],
           "stills": [
             {
@@ -5167,7 +5183,7 @@
             }
           ],
           "title_ja": "新たな山",
-          "staff_status": "partial_transcript",
+          "staff_status": "complete",
           "release_date": "2025-10-05",
           "dates": [
             {
@@ -5177,7 +5193,28 @@
               "timezone": "JST"
             }
           ],
-          "summary_zh": "败给玉藻后，小栗帽投入训练，准备下一次获胜。狄杜射手却向她宣战，提醒她不能只盯着玉藻；小栗帽也开始选择下一场赛事。"
+          "summary_zh": "败给玉藻后，小栗帽投入训练，准备下一次获胜。狄杜射手却向她宣战，提醒她不能只盯着玉藻；小栗帽也开始选择下一场赛事。",
+          "music_cues": [
+            {
+              "title": "笠松競馬 ファンファーレ（重賞）",
+              "usage_type": "fanfare",
+              "credits": [
+                {
+                  "role": "号角音源协力",
+                  "names": [],
+                  "institutions": [
+                    "笠松競馬場"
+                  ],
+                  "creator_ids": []
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-cinderella-gray-e14"
+              ],
+              "source_time": 1393.604
+            }
+          ]
         },
         "15": {
           "summary_ja": "若いながらも天才と評されるほどの実力を持つトレーナーの奈瀬文乃は、担当するスーパークリークと共に『菊花賞』に臨む。\nその天才タッグと競うのは皐月賞勝者のヤエノムテキ。\n距離3000Mの長距離レースで、2人のウマ娘が激突する。",

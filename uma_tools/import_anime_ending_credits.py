@@ -168,6 +168,8 @@ def main():
         for order, (signature, actor) in enumerate(episode["cast"]):
             if excluded_signature(signature):
                 continue
+            if signature == "トレーナー" and work == "anime-cinderella-gray":
+                continue
             narrator = signature == "ナレーション"
             if signature == "トレーナー" and work in {"anime-s1", "anime-s2", "anime-s3", "anime-1st-anniversary"}:
                 character = next(c for c in characters if c["id"] == "spica_trainer")
