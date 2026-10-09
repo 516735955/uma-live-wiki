@@ -2750,8 +2750,8 @@ const umaApp = createApp({
       };
       request.timer = setTimeout(function () {
         request.timedOut = true;
+        leaveFailedNewsDetail(request, new Error('detail request timed out'));
         if (request.controller) request.controller.abort();
-        if (newsDetailRequestIsCurrent(request)) newsError.value = '详情加载超时，请重试。';
       }, 25000);
       newsDetailRequest = request;
       newsDetailLoading.value = true;
@@ -2759,6 +2759,18 @@ const umaApp = createApp({
     }
     function newsDetailRequestIsCurrent(request) {
       return newsDetailRequest === request && currentUrlPath().split('?')[0] === request.path && activeTab.value === 'news';
+    }
+    function leaveFailedNewsDetail(request, error) {
+      if (!newsDetailRequestIsCurrent(request)) return;
+      console.error('[news] detail ' + request.key + ': ' + error.message);
+      cancelNewsDetailRequest();
+      newsDetail.value = null;
+      newsDetailBody.value = '';
+      newsError.value = '';
+      newsPrevId.value = 0;
+      newsNextId.value = 0;
+      pushUrl(true);
+      loadNews();
     }
     function openNews(id) {
       if (!id) return;
@@ -2800,7 +2812,7 @@ const umaApp = createApp({
           })
           .catch(function (error) {
             if (error && error.name === 'AbortError') return;
-            if (newsDetailRequestIsCurrent(request)) newsError.value = '正文或中文翻译加载失败，请重试。';
+            leaveFailedNewsDetail(request, error);
           })
           .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) { newsDetailRequest = null; newsDetailLoading.value = false; } });
         return request.promise;
@@ -2817,7 +2829,7 @@ const umaApp = createApp({
         })
         .catch(function (error) {
           if (!error || error.name !== 'AbortError') {
-            if (newsDetailRequestIsCurrent(request)) newsError.value = '正文或中文翻译加载失败，请重试。';
+            leaveFailedNewsDetail(request, error);
           }
         })
         .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) { newsDetailRequest = null; newsDetailLoading.value = false; } });

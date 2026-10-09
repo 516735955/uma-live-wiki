@@ -912,6 +912,10 @@ function handleNewsDetail(req, res, params) {
   if (!id) { sendJson(res, 400, { error: 'missing id' }); return; }
   serveArticle('official-' + id, res, (signal, finish) => {
     httpsGet(NEWS_DETAIL_URL + '&announce_id=' + id, (err, json) => {
+      if (!err && json && json.detail && Number(json.detail.announce_id) === 0) {
+        finish(404, { error: 'news not found' });
+        return;
+      }
       if (err || !json || json.response_code !== 1) {
         finish(502, { error: 'upstream detail failed' });
         return;

@@ -12,7 +12,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const calls = [];
   const details = new Map();
-  const newsDetail = deferred();
+  let newsDetail = deferred();
   let newsCalls = 0;
   let pedigreeAttempts = 0;
   let pendingNewsIndex = null;
@@ -122,6 +122,14 @@ async function main() {
   assert.strictEqual(app.newsDetail.value, null, 'late news cannot replace a different page');
   assert.strictEqual(app.newsDetailLoading.value, false, 'abandoned articles clear their loading state');
   assert.strictEqual(app.dbView.value, 'albums');
+
+  newsDetail = deferred();
+  const missingNews = app.openNews(999999);
+  newsDetail.resolve({ ok: false, status: 404 });
+  await missingNews;
+  assert.strictEqual(app.newsDetail.value, null, 'failed articles do not retain an empty placeholder');
+  assert.strictEqual(location.pathname, '/zh-Hans/news', 'failed articles return to the news list');
+  assert.strictEqual(app.newsError.value, '', 'no detail retry notice leaks into the list');
 
   const creatorLoads = calls.filter((url) => url.startsWith('/api/catalog/creators')).length;
   await app.loadCreatorCatalog();
