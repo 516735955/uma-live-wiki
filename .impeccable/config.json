@@ -128,6 +128,15 @@
         ],
         "createdAt": "2026-09-29T13:40:42.411Z",
         "reason": "Agent: this Vue section uses mutually exclusive link/plain-text branches for each credit and separate original/variant lists; each visible credit name appears once per record"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "uma_tools/server.js"
+        ],
+        "createdAt": "2026-10-10T05:21:52.128Z",
+        "reason": "Agent: line 631 is the extractFirstImage regular expression, not rendered markup. This rule has no extractable value; scope its exception to server.js only."
       }
     ]
   }

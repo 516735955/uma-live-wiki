@@ -12,7 +12,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const calls = [];
   const details = new Map();
-  const newsDetail = deferred();
+  let newsDetail = deferred();
   let newsCalls = 0;
   let pedigreeAttempts = 0;
   let pendingNewsIndex = null;
@@ -89,6 +89,19 @@ async function main() {
   assert.strictEqual(app.songDetail.value.id, 'b', 'late entity responses never overwrite a newer detail');
   assert.strictEqual(app.songSection.value, 'credits');
 
+  const music = deferred(); details.set('music', music);
+  music.resolve({ song: { id: 'music', title: 'Music', versions: [
+    { id: 'original', credits: [{ role: 'composer', name: 'A' }, { role: 'composer', name: 'B' }],
+      lyrics: { lines: ['Hello', 'world!', 'Next'], line_ids: ['one', 'two', 'three'], timings: [{ line_id: 'one', start_ms: 100 }, { line_id: 'three', start_ms: 900 }] } },
+    { id: 'alternate', credits: [{ role: 'composer', name: 'A' }], lyrics: { lines: ['Hello world！', 'Next'] } }
+  ] } });
+  await app.openSong('music');
+  assert.strictEqual(app.songCreditVersions.value.length, 2, 'removed contributors still produce a visible version difference');
+  assert.strictEqual(app.songCreditVersions.value[1].display_credits[0].name, 'A');
+  assert.strictEqual(app.songLyricVersions.value.length, 1, 'punctuation and line wrapping do not create duplicate lyrics');
+  assert.strictEqual(app.selectedSongLyricLines.value[1].start_ms, undefined, 'a missing timing does not shift the next line');
+  assert.strictEqual(app.selectedSongLyricLines.value[2].start_ms, 900);
+
   location.href = 'http://localhost/zh-Hans/news?type=media&page=2';
   await app.applyCurrentRoute();
   assert.strictEqual(app.newsType.value, 'media');
@@ -98,6 +111,7 @@ async function main() {
   assert.strictEqual(newsCalls, beforeRefresh + 1, 'refresh issues a new request');
   assert.strictEqual(app.newsPage.value, 2);
   const pendingNews = app.openNews(1);
+  assert.strictEqual(app.newsDetailLoading.value, true, 'news loading is visible instead of an empty article');
   location.href = 'http://localhost/zh-Hans/music/albums?sort=name&page=2';
   await app.applyCurrentRoute();
   assert.strictEqual(app.relQuery.value, '');
@@ -106,7 +120,16 @@ async function main() {
   newsDetail.resolve({ ok: true, json: async () => ({ detail: { announce_id: 1, title: 'Stale news', message: 'Stale body' } }) });
   await pendingNews;
   assert.strictEqual(app.newsDetail.value, null, 'late news cannot replace a different page');
+  assert.strictEqual(app.newsDetailLoading.value, false, 'abandoned articles clear their loading state');
   assert.strictEqual(app.dbView.value, 'albums');
+
+  newsDetail = deferred();
+  const missingNews = app.openNews(999999);
+  newsDetail.resolve({ ok: false, status: 404 });
+  await missingNews;
+  assert.strictEqual(app.newsDetail.value, null, 'failed articles do not retain an empty placeholder');
+  assert.strictEqual(location.pathname, '/zh-Hans/news', 'failed articles return to the news list');
+  assert.strictEqual(app.newsError.value, '', 'no detail retry notice leaks into the list');
 
   const creatorLoads = calls.filter((url) => url.startsWith('/api/catalog/creators')).length;
   await app.loadCreatorCatalog();

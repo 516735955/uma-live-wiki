@@ -1,4 +1,8 @@
 (function () {
+  var characterRender = null;
+  var voiceRender = null;
+  window.addEventListener('uma-character-sort', function () { if (characterRender) characterRender(); });
+  window.addEventListener('uma-voice-data', function () { if (voiceRender) voiceRender(); });
   function renderIntro(root) {
     var grid = (root || document).querySelector('#cIntroGrid');
     var input = (root || document).querySelector('#cIntroSearch');
@@ -10,6 +14,7 @@
       return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
     }
     function render() {
+      if (!grid.isConnected) { characterRender = null; return; }
       var q = norm(input.value.trim());
       var s = window.__uma_app ? window.__uma_app.charSort : 'default';
       var list = data().filter(function (c) {
@@ -27,6 +32,7 @@
         card.className = 'cio-card';
         card.href = '/zh-Hans/database/characters/' + encodeURIComponent(c.id);
         card.addEventListener('click', function (e) {
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           e.preventDefault();
           openCharDetailGlobal(c.id);
         });
@@ -53,7 +59,7 @@
       if (listBox) listBox.classList.remove('loading');
     }
     input.addEventListener('input', render);
-    window.addEventListener('uma-character-sort', render);
+    characterRender = render;
     render();
   }
 
@@ -133,12 +139,12 @@
     frame.dataset.pedigreeSample = root;
     frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css?v=20260911-15">' +
+      '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
       ';window.PEDIGREE_EMBEDDED=true;' +
       'window.CHAR_INDEX=window.parent.CHAR_INDEX||[];' +
       'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
-      '<script defer src="/uma_tools/pedigree-lab.js?v=20260911-20"><\/script></head>' +
+      '<script defer src="/uma_tools/pedigree-lab.js"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
       '<section class="lab-workspace" aria-labelledby="workspace-title">' +
       '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +
@@ -330,6 +336,7 @@
             '<span class="performer-chip-list compact va-card-roles">' + roleHtml + '</span>' +
           '</span>';
         card.addEventListener('click', function (e) {
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           e.preventDefault();
           if (window.__uma_app && typeof window.__uma_app.openVa === 'function') window.__uma_app.openVa(v.slug);
         });
@@ -340,7 +347,7 @@
       if (nodata) nodata.style.display = list.length ? 'none' : 'block';
     }
     input.addEventListener('input', render);
-    window.addEventListener('uma-voice-data', render);
+    voiceRender = function () { if (grid.isConnected) render(); else voiceRender = null; };
     render();
   }
 

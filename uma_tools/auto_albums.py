@@ -298,6 +298,8 @@ def main():
     goods = get_official_goods()
     log('官网音乐商品: %d 个' % len(goods))
     added = 0
+    tried = 0
+    enriched = 0
     for g in goods:
         title = (g.get('title') or '').strip()
         if not title:
@@ -326,8 +328,11 @@ def main():
         added += 1
         log('新增占位: %s (%s)' % (title, release or '?'))
         # 已发售的新登记条目，马上补全
-        if release and release <= local_today() and added <= MAX_ENRICH_PER_RUN:
+        if release and release <= local_today() and tried < MAX_ENRICH_PER_RUN:
+            tried += 1
+            state[norm_key(title)] = now_ts
             if enrich_entry(entry):
+                enriched += 1
                 log('  补全成功 -> %s 曲' % entry['count'])
             else:
                 log('  网易云未匹配，稍后自动重试')
@@ -335,10 +340,8 @@ def main():
         time.sleep(SLEEP_AFTER_CALL)
 
     # 2) 已发售但未补全 -> 网易云补全
-    enriched = 0
-    tried = 0
     for ent in albums:
-        if enriched >= MAX_ENRICH_PER_RUN:
+        if tried >= MAX_ENRICH_PER_RUN:
             break
         release = ent.get('release') or ''
         if not release or release > local_today():

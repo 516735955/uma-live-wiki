@@ -12,6 +12,10 @@ const crypto = require('crypto');
 const zlib = require('zlib');
 const { pipeline } = require('stream');
 const { CatalogStore } = require('./catalog-store');
+const { mergeNews, NewsContent } = require('./news-content');
+const { TranslationCache } = require('./translation-cache');
+const { loadTerms, createTerms } = require('./translation-terms');
+const { imageStore } = require('./news-images');
 const PYTHON_BIN = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
 
 const MIME = {
@@ -44,9 +48,11 @@ const CLI_ARGS = process.argv.slice(2);
 const NO_AUTO_CRAWL = CLI_ARGS.includes('--no-crawl');
 const POSITIONAL_ARGS = CLI_ARGS.filter((arg) => arg !== '--no-crawl');
 const PORT = parseInt(POSITIONAL_ARGS[0] || '8080', 10);
-const ROOT = path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..'));
+const ROOT = fs.realpathSync(path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, '..')));
+const releaseInfo = fs.existsSync(path.join(ROOT, 'release.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'release.json'), 'utf8')) : { commit: 'development' };
 const DATA_DIR = path.join(ROOT, 'data');
 const catalogStore = new CatalogStore(DATA_DIR);
+const loadNewsImage = imageStore(path.join(DATA_DIR, 'news_image_cache'));
 
 function isInsideRoot(filePath) {
   const relativePath = path.relative(ROOT, filePath);
@@ -74,7 +80,7 @@ const NEWS_SNAPSHOT_FILE = path.join(DATA_DIR, 'news_snapshot.json');
 // ---- Lantis (umamusume.lantis.jp) offline crawl ----
 // Scraped by crawl_lantis_news.py into data/lantis_news.json. Merged into the news
 // index with type "cd" (CD相关). Each item: {id, date, url, title, category}.
-// 与官网新闻同一套机制：data/lantis_news.json 是 CD相关 的发布快照（随仓库部署、热加载），
+// 与官网新闻同一套机制：data/lantis_news.json 是 CD相关 的持久快照（增量维护、热加载），
 // 服务内按需 TTL 后台补抓，抓取结果合并进 data/news_snapshot.json，失败保留旧数据并按 TTL 退避。
 const LANTIS_FILE = path.join(DATA_DIR, 'lantis_news.json');
 const LANTIS_TTL = 30 * 60 * 1000;
@@ -97,7 +103,7 @@ function lantisNewsItems() {
     return {
       announce_id: it.id,
       title: it.title,
-      title_zh: transCache[it.title] || '',
+      title_zh: newsContent.title(it.title, it.title_zh),
       post_at: normalizeLantisDate(it.date),
       announce_label: 4,
       source: 'lantis',
@@ -127,7 +133,7 @@ let newsRefreshRevision = 0;
 let newsSnapshotMtime = 0;
 
 // Adopt a snapshot only when it is newer than what memory already holds, so a
-// git deploy of data/news_snapshot.json becomes visible without a service
+// an incrementally maintained data/news_snapshot.json becomes visible without a service
 // restart and a late write never rolls the list backwards.
 function adoptNewsSnapshot(snapshot) {
   if (!snapshot || !Array.isArray(snapshot.information_list)) return false;
@@ -178,105 +184,94 @@ function loadBaiduCreds() {
 const _baiduCreds = loadBaiduCreds();
 const BAIDU_APPID = _baiduCreds.appid;
 const BAIDU_SECRET = _baiduCreds.secret;
-let transCache = {};
-try { transCache = JSON.parse(fs.readFileSync(TRANS_CACHE_FILE, 'utf8')); } catch (e) {}
+const translations = new TranslationCache(TRANS_CACHE_FILE);
+let termStamp = '', translationTerms;
+function currentTerms() {
+  const stamp = ['character_index_data.js', 'voice_actor_profiles.json'].map((file) => fs.statSync(path.join(DATA_DIR, file)).mtimeMs).join(':');
+  if (stamp !== termStamp) {
+    translationTerms = createTerms(loadTerms(ROOT));
+    termStamp = stamp;
+  }
+  return translationTerms;
+}
+function translationKey(source) {
+  const terms = currentTerms();
+  return terms.protect(source).count ? 'terms_' + terms.revision + ':' + source : source;
+}
+const newsContent = new NewsContent(path.join(__dirname, 'news-overrides.json'), (source) => translations.get(translationKey(source)), (source) => translations.get(source));
 let transQueue = [];
 let transRunning = false;
-let transDirty = false;
 
-function saveTransCache() {
-  if (!transDirty) return;
-  const tempPath = TRANS_CACHE_FILE + '.' + process.pid + '.tmp';
-  try {
-    fs.writeFileSync(tempPath, JSON.stringify(transCache, null, 1));
-    fs.renameSync(tempPath, TRANS_CACHE_FILE);
-    transDirty = false;
-  } catch (e) {
-    try { fs.unlinkSync(tempPath); } catch (e2) {}
-  }
+
+let translationRequests = Promise.resolve();
+let nextTranslationAt = 0;
+function fetchTranslation(text, signal) {
+  const result = translationRequests.then(async () => {
+    if (signal && signal.aborted) return null;
+    const delay = nextTranslationAt - Date.now();
+    if (delay > 0) await new Promise((resolve) => setTimeout(resolve, delay));
+    if (signal && signal.aborted) return null;
+    nextTranslationAt = Date.now() + 1100;
+    return new Promise((resolve) => {
+      const salt = String(Date.now());
+      const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
+      const form = new URLSearchParams({ q: text, from: 'jp', to: 'zh', appid: BAIDU_APPID, salt, sign }).toString();
+      let settled = false;
+      const abort = () => request.destroy(new Error('cancelled'));
+      const finish = (data) => {
+        if (settled) return;
+        settled = true;
+        if (signal) signal.removeEventListener('abort', abort);
+        resolve(data);
+      };
+      const request = https.request('https://fanyi-api.baidu.com/api/trans/vip/translate', {
+        method: 'POST', family: 4,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': Buffer.byteLength(form) }
+      }, (response) => {
+        let body = '';
+        response.on('data', (chunk) => { body += chunk; });
+        response.on('end', () => { try { finish(JSON.parse(body)); } catch (error) { finish(null); } });
+        response.on('error', () => finish(null));
+        response.on('aborted', () => finish(null));
+      });
+      request.on('error', () => finish(null));
+      request.setTimeout(20000, () => request.destroy(new Error('translation timeout')));
+      if (signal) {
+        signal.addEventListener('abort', abort, { once: true });
+        if (signal.aborted) abort();
+      }
+      request.end(form);
+    });
+  });
+  translationRequests = result.catch(() => null);
+  return result;
 }
 
-// 百度翻译会将部分日文词组判定为敏感词(error 20003, 如「育成シナリオ」)。
-// 处理方式:预先替换成已确认的中文对照词后重试;若仍失败,按标点分段逐个翻译,失败段保留原文。
-const SENSITIVE_REPLACE = [
-  { jp: '育成シナリオ', zh: '育成剧本' }
-];
-function sanitizeSensitive(text) {
-  let out = String(text || '');
-  SENSITIVE_REPLACE.forEach(function (r) { out = out.split(r.jp).join(r.zh); });
-  return out;
-}
-
-function translateOne(text, attempt, sensitiveAttempt) {
+function translateOne(text, attempt, signal) {
+  if (signal && signal.aborted) return Promise.resolve('');
   return new Promise((resolve) => {
-    const salt = String(Date.now() + Math.floor(Math.random() * 1000));
-    const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
-    const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(text) +
-      '&from=jp&to=zh&appid=' + BAIDU_APPID + '&salt=' + salt + '&sign=' + sign;
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, family: 4 }, (r) => {
-      let d = '';
-      r.on('data', (c) => d += c);
-      r.on('end', () => {
+    const protectedText = currentTerms().protect(text);
+    fetchTranslation(protectedText.text, signal).then((j) => {
         try {
-          const j = JSON.parse(d);
           if (j && j.trans_result && j.trans_result.length) {
             const t = j.trans_result.map(function (x) { return x.dst; }).join('');
-            resolve(t);
+            resolve(protectedText.restore(t) || '');
             return;
           }
           const code = j && j.error_code;
           if ((code === '54003' || code === '54000') && (attempt || 0) < 3) {
             // rate-limited: wait and retry
             setTimeout(function () {
-              translateOne(text, (attempt || 0) + 1, sensitiveAttempt).then(resolve);
+              translateOne(text, (attempt || 0) + 1, signal).then(resolve);
             }, 1200 * ((attempt || 0) + 1));
-            return;
-          }
-          if (code === '20003') {
-            if (sensitiveAttempt) { resolve(''); return; }
-            translateSensitiveSafe(text).then(resolve);
             return;
           }
           resolve('');
         } catch (e) { resolve(''); }
-      });
-    }).on('error', () => resolve(''))
-      .setTimeout(20000, function () { this.destroy(); resolve(''); });
+    }).catch(() => resolve(''));
   });
 }
 
-function translateSensitiveSafe(text) {
-  return new Promise((resolve) => {
-    const safe = sanitizeSensitive(text);
-    if (safe !== text) {
-      translateOne(safe, 0, true).then(resolve);
-      return;
-    }
-    // split on punctuation/space; translate each segment, keep failed ones as-is
-    const parts = String(text).split(/([「」『』」。、,，。！？\s])/).filter(function (s) { return s !== ''; });
-    const segs = [];
-    let cur = '';
-    parts.forEach(function (p) {
-      if (/^[「」『』」。、,，。！？\s]$/.test(p)) {
-        if (cur) { segs.push(cur); cur = ''; }
-        segs.push(p);
-      } else { cur += p; }
-    });
-    if (cur) segs.push(cur);
-    if (!segs.length) { resolve(String(text)); return; }
-    const out = [];
-    let done = 0;
-    segs.forEach(function (seg, i) {
-      if (!seg.trim()) { out[i] = seg; done++; if (done === segs.length) finish(); return; }
-      translateOne(seg, 0, true).then(function (zh) {
-        out[i] = (zh && zh !== seg) ? zh : seg;
-        done++;
-        if (done === segs.length) finish();
-      });
-    });
-    function finish() { resolve(out.join('')); }
-  });
-}
 
 async function pumpTranslations() {
   if (transRunning) return;
@@ -284,11 +279,10 @@ async function pumpTranslations() {
   while (transQueue.length) {
     const item = transQueue.shift();
     // Baidu free tier is ~1 QPS; translate serially with a small delay.
-    const zh = await translateOne(item.text, 0);
+    const key = translationKey(item.text);
+    const zh = await translateOne(item.text, 0, item.signal);
     if (zh && zh !== item.text) {
-      transCache[item.text] = zh;
-      transDirty = true;
-      saveTransCache();
+      translations.set(key, zh);
     }
     item.cb(zh || item.text);
     await new Promise((r) => setTimeout(r, 250));
@@ -296,11 +290,19 @@ async function pumpTranslations() {
   transRunning = false;
 }
 
-function translateTitle(text, cb) {
+function translateTitle(text, cb, signal, background = false) {
   if (!text) return cb(text || '');
-  if (transCache[text]) return cb(transCache[text]);
+  const cached = newsContent.title(text);
+  if (cached) return cb(cached);
   if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
-  transQueue.push({ text: text, cb: cb });
+  const duplicate = transQueue.find((item) => item.text === text && item.signal === signal);
+  if (duplicate) {
+    const previous = duplicate.cb;
+    duplicate.cb = (value) => { previous(value); cb(value); };
+    return;
+  }
+  const item = { text, cb, signal };
+  if (background) transQueue.push(item); else transQueue.unshift(item);
   pumpTranslations();
 }
 
@@ -309,127 +311,139 @@ function hasCjk(s) {
   return /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff]/.test(s);
 }
 
-function translateBatchLines(lines, cb) {
+function translateBatchLines(lines, cb, signal, attempt = 0) {
   let completed = false;
   const finish = (value) => { if (!completed) { completed = true; cb(value); } };
   // translate multiple short text runs in one Baidu request (newline-joined)
   if (!lines.length) return finish([]);
-  const text = lines.join('\n');
-  const salt = String(Date.now() + Math.floor(Math.random() * 1000));
-  const sign = crypto.createHash('md5').update(BAIDU_APPID + text + salt + BAIDU_SECRET).digest('hex');
-  const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(text) +
-    '&from=jp&to=zh&appid=' + BAIDU_APPID + '&salt=' + salt + '&sign=' + sign;
-  https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, family: 4 }, (r) => {
-    let d = '';
-    r.on('data', (c) => d += c);
-    r.on('end', () => {
+  const protectedLines = lines.map((line, index) => currentTerms().protect(line, String(index).padStart(4, '0')));
+  const text = protectedLines.map((line) => line.text).join('\n');
+  if (text.length > 950 || Buffer.byteLength(text) > 5500) return finish(null);
+  fetchTranslation(text, signal).then((j) => {
       try {
-        const j = JSON.parse(d);
         if (j && j.trans_result && j.trans_result.length) {
+          if (j.trans_result.length !== lines.length) return finish(null);
           const out = [];
           for (let i = 0; i < lines.length; i++) {
-            out.push((j.trans_result[i] && j.trans_result[i].dst) || lines[i]);
+            if (j.trans_result[i].src !== protectedLines[i].text) return finish(null);
+            const restored = protectedLines[i].restore(j.trans_result[i].dst);
+            if (!restored) return finish(null);
+            // Ratings are facts. Baidu sometimes adds a star to a leading ★★★.
+            const rating = lines[i].match(/^★+/);
+            const value = rating ? restored.replace(/^★+/, rating[0]) : restored;
+            const numbers = (value) => (value.match(/\d+(?:[/:.]\d+)*/g) || []).sort().join('|');
+            if (numbers(j.trans_result[i].dst) !== numbers(protectedLines[i].text)) return finish(null);
+            out.push(value);
           }
           return finish(out);
         }
         const code = j && j.error_code;
-        if (code === '54003' || code === '54000') {
-          // rate-limited: after a pause, caller retries by translating one by one
-          return finish(null);
-        }
-        if (code === '20003') {
-          // a line in this batch hit a sensitive word; translate each line via
-          // the sensitive-safe path instead of dropping the whole chunk.
-          let n = 0;
-          const out = [];
-          const walk = function (i) {
-            if (i >= lines.length) return finish(out);
-            translateSensitiveSafe(lines[i]).then(function (zh) {
-              out[i] = (zh && zh !== lines[i]) ? zh : lines[i];
-              walk(i + 1);
-            });
-          };
-          walk(0);
+        if ((code === '54003' || code === '54000') && attempt < 2 && !(signal && signal.aborted)) {
+          setTimeout(() => translateBatchLines(lines, finish, signal, attempt + 1), 1200 * (attempt + 1));
           return;
         }
         finish(null);
       } catch (e) { finish(null); }
-    });
-  }).on('error', () => finish(null))
-    .setTimeout(20000, function () { this.destroy(); finish(null); });
+  }).catch(() => finish(null));
 }
 
-function translateHtmlMessage(html, cb) {
+function translateHtmlMessage(html, cb, signal) {
   const src = String(html || '');
+  if (signal && signal.aborted) return cb('');
   if (!src) return cb('');
   const hash = crypto.createHash('md5').update(src).digest('hex');
-  const key = 'msg_' + hash;
-  if (transCache[key] && transCache[key] !== src) return cb(transCache[key]);
-  if (!BAIDU_APPID || !BAIDU_SECRET) return cb(src);
+  const originalKey = 'msg_' + hash;
+  const key = currentTerms().protect(src).count ? 'msg_terms_' + currentTerms().revision + '_' + hash : originalKey;
+  const cached = newsContent.message(originalKey) || translations.get(key);
+  if (cached && cached !== src) return cb(cached);
+  if (!BAIDU_APPID || !BAIDU_SECRET) return cb('');
   // tokenize: alternates text / tag
   const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
-  const runs = []; // {tokIndex, text}
+  const runs = []; // Each text node retains its index and ordered fragments.
   tokens.forEach(function (tok, i) {
-    if (tok[0] !== '<' && hasCjk(tok) && tok.trim()) runs.push({ idx: i, text: tok });
+    if (tok[0] !== '<' && hasCjk(tok) && tok.trim()) {
+      const text = tok.trim().replace(/\s*\r?\n\s*/g, ' ');
+      for (let start = 0; start < text.length;) {
+        let end = Math.min(start + 600, text.length);
+        if (end < text.length) {
+          const boundary = Math.max(...['。', '！', '？', '. ', ' '].map((mark) => text.lastIndexOf(mark, end - 1)));
+          if (boundary > start + 300) end = boundary + 1;
+        }
+        while (end > start + 1 && currentTerms().protect(text.slice(start, end), '99').text.length > 900) end = start + Math.floor((end - start) / 2);
+        runs.push({ idx: i, text: text.slice(start, end) });
+        start = end;
+      }
+    }
   });
   if (!runs.length) {
-    transCache[key] = src;
-    transDirty = true; saveTransCache();
+    translations.set(key, src);
     return cb(src);
   }
-  // translate in chunks (each request <= ~900 chars to be safe)
-  const CHUNK = 900;
+  // Limits apply to the protected query, not to the shorter original Japanese.
   const chunks = [];
   let cur = [];
-  let curLen = 0;
   runs.forEach(function (r) {
-    if (curLen + r.text.length > CHUNK && cur.length) {
-      chunks.push(cur); cur = []; curLen = 0;
+    const query = cur.concat(r).map((run, index) => currentTerms().protect(run.text, String(index)).text).join('\n');
+    if ((query.length > 950 || Buffer.byteLength(query) > 5500) && cur.length) {
+      chunks.push(cur); cur = [];
     }
-    cur.push(r); curLen += r.text.length;
+    cur.push(r);
   });
   if (cur.length) chunks.push(cur);
-  const translated = {};
+  const translated = new Map();
   let done = 0;
   let failed = false;
   chunks.forEach(function (chunk, ci) {
     translateBatchLines(chunk.map(function (r) { return r.text; }), function (outs) {
       if (outs === null) {
-        // rate limited on batch -> fall back to one-by-one for this chunk
-        const chain = function (i) {
-          if (i >= chunk.length) { done++; if (done === chunks.length) finish(); return; }
-          translateOne(chunk[i].text, 0).then(function (zh) {
-            if (!zh || zh === chunk[i].text) failed = true;
-            translated[chunk[i].idx] = zh || chunk[i].text;
-            chain(i + 1);
-          });
-        };
-        chain(0);
+        failed = true;
+        done++;
+        if (done === chunks.length) finish();
         return;
       }
       outs.forEach(function (zh, k) {
-        if (!zh || zh === chunk[k].text) failed = true;
-        translated[chunk[k].idx] = zh || chunk[k].text;
+        if (!zh || (zh === chunk[k].text && /[\u3040-\u30ff]/.test(chunk[k].text))) failed = true;
+        translated.set(chunk[k], zh);
       });
       done++;
       if (done === chunks.length) finish();
-    });
+    }, signal);
   });
   function finish() {
+    if (failed || (signal && signal.aborted)) return cb('');
+    const textNodes = new Map();
+    runs.forEach((run) => textNodes.set(run.idx, (textNodes.get(run.idx) || '') + translated.get(run)));
     const out = tokens.map(function (tok, i) {
-      if (translated[i] !== undefined) return translated[i];
+      if (textNodes.has(i)) return textNodes.get(i);
       return tok;
     }).join('');
-    if (!failed) {
-      transCache[key] = out;
-      transDirty = true;
-      saveTransCache();
-    }
+    translations.set(key, out);
     cb(out);
   }
 }
 
-function httpsGet(url, cb) {
+function translateArticle(detail, signal, finish) {
+  Object.assign(detail, newsContent.apply(detail));
+  let remaining = 2, failed = false;
+  const complete = () => {
+    if (--remaining) return;
+    finish(failed ? 503 : 200, failed ? { error: 'translation unavailable' } : { response_code: 1, detail });
+  };
+  if (detail.title_zh || !detail.title) complete();
+  else translateTitle(detail.title, (zh) => {
+    if (!zh || (zh === detail.title && /[\u3040-\u30ff]/.test(detail.title))) failed = true;
+    else detail.title_zh = zh;
+    complete();
+  }, signal);
+  if (detail.message_zh || !detail.message) complete();
+  else translateHtmlMessage(detail.message, (zh) => {
+    if (!zh) failed = true;
+    else detail.message_zh = zh;
+    complete();
+  }, signal);
+}
+
+function httpsGet(url, cb, signal) {
   const u = new URL(url);
   // cb 只允许调一次：timeout destroy 会同时触发 req/res 的 error 事件，
   // 双回调会让新闻刷新的页计数错乱，造成 promise 永久挂死（所有后续刷新被挡）。
@@ -437,6 +451,7 @@ function httpsGet(url, cb) {
   const done = (err, json, body) => {
     if (settled) return;
     settled = true;
+    if (signal) signal.removeEventListener('abort', abort);
     cb(err, json, body);
   };
   const req = https.request(u, {
@@ -453,8 +468,14 @@ function httpsGet(url, cb) {
       done(null, json, body);
     });
     res.on('error', (e) => done(e, null, null));
+    res.on('aborted', () => done(new Error('upstream response aborted'), null, null));
   });
+  const abort = () => req.destroy(new Error('cancelled'));
   req.on('error', (e) => done(e, null, null));
+  if (signal) {
+    signal.addEventListener('abort', abort, { once: true });
+    if (signal.aborted) abort();
+  }
   req.setTimeout(20000, function () {
     try { req.destroy(new Error('timeout')); } catch (e) {}
     done(new Error('timeout'), null, null);
@@ -463,9 +484,15 @@ function httpsGet(url, cb) {
 }
 
 // Fetch a page and return its raw HTML text (used by the Lantis detail crawler).
-function httpsGetHtml(url, cb) {
+function httpsGetHtml(url, cb, redirects, signal) {
+  let completed = false;
+  let abort;
+  const done = (err, body) => {
+    if (!completed) { completed = true; if (signal && abort) signal.removeEventListener('abort', abort); cb(err, body); }
+  };
+  if ((redirects || 0) > 5) { done(new Error('too many redirects')); return; }
   let u;
-  try { u = new URL(url); } catch (e) { cb(new Error('bad url')); return; }
+  try { u = new URL(url); } catch (e) { done(new Error('bad url')); return; }
   const req = https.request(u, {
     method: 'GET',
     family: 4,
@@ -473,20 +500,29 @@ function httpsGetHtml(url, cb) {
   }, (res) => {
     if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
       res.resume();
-      httpsGetHtml(new URL(res.headers.location, u).href, cb);
+      try { httpsGetHtml(new URL(res.headers.location, u).href, done, (redirects || 0) + 1, signal); }
+      catch (error) { done(error); }
       return;
     }
+    if (res.statusCode !== 200) { res.resume(); done(new Error('HTTP ' + res.statusCode)); return; }
     const chunks = [];
     res.on('data', (c) => chunks.push(c));
-    res.on('end', () => cb(null, Buffer.concat(chunks).toString('utf8')));
-    res.on('error', (e) => cb(e, null));
+    res.on('end', () => done(null, Buffer.concat(chunks).toString('utf8')));
+    res.on('error', (e) => done(e, null));
+    res.on('aborted', () => done(new Error('upstream response aborted')));
   });
-  req.on('error', (e) => cb(e, null));
+  abort = () => req.destroy(new Error('cancelled'));
+  req.on('error', (e) => done(e, null));
+  if (signal) {
+    signal.addEventListener('abort', abort, { once: true });
+    if (signal.aborted) abort();
+  }
   req.setTimeout(20000, function () { try { req.destroy(new Error('timeout')); } catch (e) {} });
   req.end();
 }
 
 function sendJson(res, code, obj, options) {
+  if (res.destroyed || res.writableEnded) return;
   const settings = options || {};
   const body = Buffer.from(JSON.stringify(obj));
   const headers = Object.assign({
@@ -501,6 +537,7 @@ function sendJson(res, code, obj, options) {
     return;
   }
   const finish = (payload, compressed) => {
+    if (res.destroyed || res.writableEnded) return;
     if (compressed) {
       headers['Content-Encoding'] = 'gzip';
       headers.Vary = 'Accept-Encoding';
@@ -520,7 +557,7 @@ function handleHomeSummary(res) {
   catalogStore.home()
     .then((data) => sendJson(res, 200, data, {
       cacheControl: 'public, max-age=60, stale-while-revalidate=600',
-      etag: '"catalog-' + data.build_id + '-home"'
+      etag: catalogEtag(data.build_id, 'home:' + new Date().toDateString())
     }))
     .catch(() => sendJson(res, 500, { error: 'home summary unavailable' }));
 }
@@ -537,7 +574,7 @@ function sendCatalogResult(req, res, result, scope) {
   }
   sendJson(res, 200, result, {
     cacheControl: 'public, max-age=300, stale-while-revalidate=300',
-    etag: catalogEtag(result.build_id, scope)
+    etag: catalogEtag(result.build_id, scope + (req.url.startsWith('/api/catalog/events') ? ':' + new Date().toDateString() : ''))
   });
 }
 
@@ -645,12 +682,8 @@ function persistNewsSnapshot(data) {
 function publishLantisMerge() {
   const current = newsIndexCache.data;
   if (!current || !Array.isArray(current.information_list)) return false;
-  const official = current.information_list.filter((n) => n.source !== 'lantis');
-  const merged = official.concat(lantisNewsItems());
+  const merged = mergeNews(current.information_list, lantisNewsItems()).map((item) => newsContent.apply(item));
   merged.sort((a, b) => String(b.update_at || b.post_at).localeCompare(String(a.update_at || a.post_at)));
-  merged.forEach((item) => {
-    if (transCache[item.title]) item.title_zh = transCache[item.title];
-  });
   if (JSON.stringify(merged) === JSON.stringify(current.information_list)) return false;
   const data = Object.assign({}, current, {
     information_list: merged,
@@ -740,20 +773,18 @@ function refreshNewsIndex() {
       function publish() {
         if (revision !== newsRefreshRevision) return;
         const seen = new Set();
-        const list = [];
+        const incoming = [];
         for (let index = 1; index <= total; index++) {
           (slots[index - 1] || []).forEach((item) => {
-            if (!seen.has(item.announce_id)) {
-              seen.add(item.announce_id);
-              list.push(item);
+            if (!seen.has(String(item.announce_id))) {
+              seen.add(String(item.announce_id));
+              incoming.push(item);
             }
           });
         }
-        mergeLantis(list);
+        mergeLantis(incoming);
+        const list = mergeNews((newsIndexCache.data && newsIndexCache.data.information_list) || [], incoming).map((item) => newsContent.apply(item));
         list.sort((a, b) => String(b.update_at || b.post_at).localeCompare(String(a.update_at || a.post_at)));
-        list.forEach((item) => {
-          if (transCache[item.title]) item.title_zh = transCache[item.title];
-        });
         const data = {
           response_code: 1,
           information_list: list,
@@ -785,8 +816,8 @@ function refreshNewsIndex() {
             persistNewsSnapshot(updated);
           }
         });
-        list.forEach((item) => {
-          if (!item.title_zh) translateTitle(item.title, function () {});
+        list.filter((item) => !newsContent.title(item.title)).slice(0, 20).forEach((item) => {
+          translateTitle(item.title, function () {}, undefined, true);
         });
       }
       pump();
@@ -801,9 +832,7 @@ function newsResponseSnapshot() {
   reloadLantisIfNewer();
   if (!newsIndexCache.data) return null;
   const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
-  cached.information_list.forEach((item) => {
-    if (transCache[item.title]) item.title_zh = transCache[item.title];
-  });
+  cached.information_list = cached.information_list.map((item) => newsContent.apply(item));
   return cached;
 }
 
@@ -825,6 +854,7 @@ function handleNewsIndex(res) {
     }
     return;
   }
+  if (NO_AUTO_CRAWL) { sendJson(res, 503, { error: 'news snapshot unavailable' }); return; }
   refreshNewsIndex()
     .then((data) => sendJson(res, 200, data, { cacheControl: 'public, max-age=60, stale-while-revalidate=300' }))
     .catch((error) => {
@@ -833,34 +863,66 @@ function handleNewsIndex(res) {
     });
 }
 
+const articleCache = new Map();
+const articleRequests = new Map();
+function applyArticleEdits(data) {
+  if (!data.detail) return data;
+  const detail = newsContent.apply(data.detail);
+  if (detail.message) {
+    const key = 'msg_' + crypto.createHash('md5').update(detail.message).digest('hex');
+    const edited = newsContent.message(key);
+    if (edited) detail.message_zh = edited;
+  }
+  return { ...data, detail };
+}
+function serveArticle(key, res, load) {
+  const cached = articleCache.get(key);
+  if (cached && Date.now() - cached.at < 15 * 60 * 1000) { sendJson(res, 200, applyArticleEdits(cached.data)); return; }
+  if (cached) articleCache.delete(key);
+  let pending = articleRequests.get(key);
+  const fresh = !pending;
+  if (!pending) {
+    pending = { controller: new AbortController(), responses: new Set() };
+    articleRequests.set(key, pending);
+  }
+  pending.responses.add(res);
+  res.once('close', () => {
+    pending.responses.delete(res);
+    if (articleRequests.get(key) === pending && !pending.responses.size) {
+      articleRequests.delete(key);
+      pending.controller.abort();
+    }
+  });
+  if (!fresh) return;
+  load(pending.controller.signal, (status, data) => {
+    if (articleRequests.get(key) !== pending) return;
+    articleRequests.delete(key);
+    if (status === 200) {
+      articleCache.set(key, { at: Date.now(), data });
+      if (articleCache.size > 128) articleCache.delete(articleCache.keys().next().value);
+    }
+    const result = status === 200 ? applyArticleEdits(data) : data;
+    pending.responses.forEach((response) => sendJson(response, status, result));
+    pending.responses.clear();
+  });
+}
+
 function handleNewsDetail(req, res, params) {
   const id = parseInt((params.get('id') || ''), 10);
   if (!id) { sendJson(res, 400, { error: 'missing id' }); return; }
-  httpsGet(NEWS_DETAIL_URL + '&announce_id=' + id, (err, json) => {
-    if (err || !json || json.response_code !== 1) {
-      sendJson(res, 502, { error: 'upstream detail failed' });
-      return;
-    }
-    if (json.detail) {
-      const detail = json.detail;
-      if (detail.title && transCache[detail.title]) detail.title_zh = transCache[detail.title];
-      if (detail.title && !transCache[detail.title]) {
-        translateTitle(detail.title, function (zh) { if (zh) detail.title_zh = zh; });
-      }
-      if (detail.message) {
-        // translate the body, but never block the response for too long.
-        let responded = false;
-        const respond = function () { if (!responded) { responded = true; sendJson(res, 200, json); } };
-        const timer = setTimeout(respond, 8000);
-        translateHtmlMessage(detail.message, function (zh) {
-          clearTimeout(timer);
-          if (zh) detail.message_zh = zh;
-          respond();
-        });
+  serveArticle('official-' + id, res, (signal, finish) => {
+    httpsGet(NEWS_DETAIL_URL + '&announce_id=' + id, (err, json) => {
+      if (!err && json && json.detail && Number(json.detail.announce_id) === 0) {
+        finish(404, { error: 'news not found' });
         return;
       }
-    }
-    sendJson(res, 200, json);
+      if (err || !json || json.response_code !== 1) {
+        finish(502, { error: 'upstream detail failed' });
+        return;
+      }
+      if (!json.detail) return finish(502, { error: 'missing upstream detail' });
+      translateArticle(json.detail, signal, (status, data) => finish(status, status === 200 ? { ...json, detail: data.detail } : data));
+    }, signal);
   });
 }
 
@@ -889,42 +951,27 @@ function handleLantisDetail(req, res, params) {
   if (!digits) { sendJson(res, 400, { error: 'missing id' }); return; }
   const it = lantisList.find(function (x) { return x.id === 'lantis-' + digits || x.id === raw; });
   const url = (it && it.url) || ('https://umamusume.lantis.jp/news/' + digits + '/');
-  httpsGetHtml(url, function (err, body) {
-    if (err || !body) { sendJson(res, 502, { error: 'upstream lantis detail failed' }); return; }
-    const detail = {
-      announce_id: 'lantis-' + digits,
-      title: '',
-      title_zh: '',
-      message: '',
-      message_zh: '',
-      post_at: it ? normalizeLantisDate(it.date) : '',
-      image: (it && it.image) || '',
-      source: 'lantis',
-      url: url
-    };
-    const tm = body.match(/<h2[^>]*class="newsin_title"[^>]*>([\s\S]*?)<\/h2>/i) ||
-               body.match(/<title>([^<]*)<\/title>/i);
-    if (tm) detail.title = cleanHtml(tm[1]).trim();
-    const inner = extractInnercon(body) || '';
-    detail.message = inner;
-    if (detail.title && transCache[detail.title]) detail.title_zh = transCache[detail.title];
-    const respond = function () { sendJson(res, 200, { response_code: 1, detail: detail }); };
-    if (inner) {
-      let responded = false;
-      const r2 = function () { if (!responded) { responded = true; respond(); } };
-      const timer = setTimeout(r2, 8000);
-      translateHtmlMessage(inner, function (zh) {
-        clearTimeout(timer);
-        if (zh) detail.message_zh = zh;
-        if (detail.title && !detail.title_zh) {
-          translateTitle(detail.title, function (t) { if (t) detail.title_zh = t; r2(); });
-        } else {
-          r2();
-        }
-      });
-    } else {
-      respond();
-    }
+  serveArticle('lantis-' + digits, res, (signal, finish) => {
+    httpsGetHtml(url, function (err, body) {
+      if (err || !body) { finish(502, { error: 'upstream lantis detail failed' }); return; }
+      const detail = {
+        announce_id: 'lantis-' + digits,
+        title: '',
+        title_zh: '',
+        message: '',
+        message_zh: '',
+        post_at: it ? normalizeLantisDate(it.date) : '',
+        image: (it && it.image) || '',
+        source: 'lantis',
+        url: url
+      };
+      const tm = body.match(/<h2[^>]*class="newsin_title"[^>]*>([\s\S]*?)<\/h2>/i) ||
+                 body.match(/<title>([^<]*)<\/title>/i);
+      if (tm) detail.title = cleanHtml(tm[1]).trim();
+      const inner = extractInnercon(body) || '';
+      detail.message = inner;
+      translateArticle(detail, signal, finish);
+    }, 0, signal);
   });
 }
 function cleanHtml(s) { return String(s || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim(); }
@@ -932,15 +979,6 @@ function extractInnercon(body) {
   const i = body.indexOf('class="innercon"');
   if (i === -1) return null;
   const start = body.indexOf('>', i) + 1;
-  const rest = body.slice(start);
-  // find matching end: the first true closing </div> that is followed by the article footer close
-  let depth = 1;
-  let j = 0;
-  const reOpen = /<div[\s>]/g;
-  const reClose = /<\/div>/g;
-  let lastSafe = -1;
-  reClose.lastIndex = 0;
-  let m;
   // simpler: capture up to the ban_more nav which follows the content div
   const endMarker = body.indexOf('<div class="ban_more">', start);
   if (endMarker !== -1) {
@@ -1094,10 +1132,19 @@ const server = http.createServer((req, res) => {
   }
   const params = urlObj.searchParams;
 
+  if (req.method === 'GET' && urlPath === '/api/release') return sendJson(res, 200, { commit: releaseInfo.commit }, { cacheControl: 'no-store' });
   if (req.method === 'GET' && urlPath === '/api/news-index') return handleNewsIndex(res);
   if (req.method === 'GET' && urlPath === '/api/home-summary') return handleHomeSummary(res);
   if (req.method === 'GET' && urlPath.startsWith('/api/catalog/')) return handleCatalogApi(req, res, urlPath, params);
   if (req.method === 'GET' && urlPath === '/api/news-detail') return handleNewsDetail(req, res, params);
+  if (req.method === 'GET' && urlPath === '/api/news-image') {
+    loadNewsImage(params.get('url')).then(({ bytes, extension }) => {
+      if (res.destroyed || res.writableEnded) return;
+      res.writeHead(200, { 'Content-Type': MIME[extension], 'Content-Length': bytes.length, 'Cache-Control': 'public, max-age=3600' });
+      res.end(bytes);
+    }).catch((error) => sendJson(res, error.message === 'unsupported news image' ? 400 : 502, { error: error.message }));
+    return;
+  }
   if (req.method === 'GET' && urlPath === '/api/lantis-news') return handleLantisNews(res);
   if (req.method === 'GET' && urlPath === '/api/lantis-detail') return handleLantisDetail(req, res, params);
   if (req.method === 'GET' && urlPath === '/api/audio') return handleAudioProxy(req, res, params);
@@ -1141,12 +1188,14 @@ function serveFile(filePath, req, res) {
     }
     const ext = path.extname(filePath).toLowerCase();
     const requestUrl = new URL(req.url, 'http://x');
-    const versioned = requestUrl.searchParams.has('v');
+    const versioned = /^\/assets\/[a-f0-9]{16}\.(?:js|css)$/.test(requestUrl.pathname);
     const isHtml = ext === '.html' || ext === '.htm';
     const isMedia = ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico'].includes(ext);
     const cacheControl = isHtml
       ? 'no-cache'
-      : (versioned || requestUrl.pathname.startsWith('/uma_tools/vendor/'))
+      : requestUrl.pathname.startsWith('/data/') && ext !== '.js'
+        ? 'public, max-age=3600, stale-while-revalidate=86400'
+      : versioned
         ? 'public, max-age=31536000, immutable'
         : isMedia ? 'public, max-age=2592000, stale-while-revalidate=86400' : 'no-cache';
     const headers = {
@@ -1265,7 +1314,6 @@ function runEventBuild(reason, done) {
     if (err) {
       console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
     } else {
-      homeSummaryCache = { at: 0, data: null };
       console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n')[0]);
     }
     if (done) done();

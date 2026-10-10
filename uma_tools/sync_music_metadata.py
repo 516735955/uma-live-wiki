@@ -158,6 +158,31 @@ def stable_lyric_line_id(document_id: str, text: str, occurrence: int) -> str:
     return f"lyric-line-{digest}"
 
 
+def timing_line_positions(lines: list[str], document: list[str]) -> list[int | None]:
+    """Match ordered timing text, including one source line split in the document."""
+    keys = [lyric_line_key(line) for line in document]
+    positions: list[int | None] = []
+    cursor = 0
+    for line in lines:
+        target = lyric_line_key(line)
+        found = None
+        if target:
+            for start in range(cursor, len(keys)):
+                joined = ""
+                for end in range(start, len(keys)):
+                    joined += keys[end]
+                    if joined == target:
+                        found = start
+                        cursor = end + 1
+                        break
+                    if not target.startswith(joined):
+                        break
+                if found is not None:
+                    break
+        positions.append(found)
+    return positions
+
+
 def canonicalize_lyrics(
     recordings: dict[str, dict[str, Any]],
     lyrics: dict[str, Any],
@@ -204,7 +229,10 @@ def canonicalize_lyrics(
             normalized = normalize_lyric_lines(raw_by_version[version_id])
             if not normalized:
                 continue
-            match = next((cluster for cluster in clusters if lyric_subsequence(normalized, cluster["lines"]) is not None), None)
+            sequence = lyric_line_key("".join(normalized))
+            match = next((cluster for cluster in clusters if
+                          sequence == lyric_line_key("".join(cluster["lines"]))
+                          or lyric_subsequence(normalized, cluster["lines"]) is not None), None)
             if match is None:
                 match = {"lines": normalized, "versions": []}
                 clusters.append(match)
@@ -232,6 +260,9 @@ def canonicalize_lyrics(
             for version_id in cluster["versions"]:
                 source_lines = normalize_lyric_lines(raw_by_version[version_id])
                 positions = lyric_subsequence(source_lines, normalized)
+                reflowed = positions is None and lyric_line_key("".join(source_lines)) == lyric_line_key("".join(normalized))
+                if reflowed:
+                    positions = list(range(len(normalized)))
                 if positions is None:
                     continue
                 row = dict(metadata_by_version[version_id])
@@ -248,7 +279,9 @@ def canonicalize_lyrics(
                     for index, (raw, canonical) in enumerate(zip(raw_lines, canonical_lines))
                     if raw != canonical
                 }
-                if raw_overrides:
+                if reflowed:
+                    row["raw_lines"] = raw_lines
+                elif raw_overrides:
                     row["raw_line_overrides"] = raw_overrides
                 migrated_versions[version_id] = row
 
@@ -276,8 +309,8 @@ def canonicalize_lyrics(
             for line in raw_timing_lines
         ]
         normalized_timing = normalize_lyric_lines(raw_timing_text)
-        positions = lyric_subsequence(normalized_timing, expected_text) if expected_text else None
-        aligned_ids = [expected_ids[index] for index in positions] if positions is not None else []
+        positions = timing_line_positions(normalized_timing, expected_text)
+        aligned_ids = [expected_ids[index] if index is not None else "" for index in positions]
         lines = []
         for index, item in enumerate(raw_timing_lines):
             raw_text = raw_timing_text[index]

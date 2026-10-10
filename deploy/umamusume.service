@@ -6,11 +6,11 @@ After=network.target
 Type=simple
 User=alaemiryoung
 Group=alaemiryoung
-WorkingDirectory=/var/www/umamusume
+WorkingDirectory=/var/www/umamusume/current
 # Auto-refresh enabled: news refreshes on startup and on demand, catalogs every
 # 6 hours, Lantis daily. Catalog requests adopt complete refreshed snapshots
 # without restarting; deploy/umamusume-restart.timer restarts the process daily.
-ExecStart=/usr/bin/node /var/www/umamusume/uma_tools/server.js 8080 /var/www/umamusume
+ExecStart=/usr/bin/node /var/www/umamusume/current/uma_tools/server.js 8080 /var/www/umamusume/current
 Restart=on-failure
 RestartSec=3
 Environment=NODE_ENV=production

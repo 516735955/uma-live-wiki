@@ -2275,7 +2275,7 @@
       "source_track_id": "2703854351",
       "recording_id": "song-a-no-ne-f2fe8f2091-v-fb20872d25",
       "lyric_document_id": "song-a-no-ne-f2fe8f2091-lyrics-cae399c18a",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 13040,
@@ -2356,11 +2356,13 @@
         },
         {
           "start_ms": 106990,
-          "line_id": "lyric-line-3117f2445609"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 110640,
-          "line_id": "lyric-line-2eeccb4c9a02"
+          "line_id": "lyric-line-3117f2445609",
+          "source_text": "「あんまり垢抜けてなくても、いいよって言ってくれる人」"
         },
         {
           "start_ms": 119880,
@@ -2385,19 +2387,23 @@
         },
         {
           "start_ms": 136830,
-          "line_id": "lyric-line-4aa620fca9dd"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 139230,
-          "line_id": "lyric-line-4b976439a050"
+          "line_id": "lyric-line-4aa620fca9dd",
+          "source_text": "「ソレが？"
         },
         {
           "start_ms": 139830,
-          "line_id": "lyric-line-14eff473feec"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 140840,
-          "line_id": "lyric-line-0813e840b0a0"
+          "line_id": "lyric-line-14eff473feec",
+          "source_text": "「それでね…」内緒トーク"
         },
         {
           "start_ms": 144360,
@@ -9336,7 +9342,7 @@
       "source_track_id": "2703854431",
       "recording_id": "song-endless-dream-eabbcc4d12-v-2899af7e2c",
       "lyric_document_id": "song-endless-dream-eabbcc4d12-lyrics",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 0,
@@ -9398,11 +9404,13 @@
         },
         {
           "start_ms": 61110,
-          "line_id": "lyric-line-a6287d1e1a6a"
+          "line_id": "",
+          "source_text": "）"
         },
         {
           "start_ms": 62320,
-          "line_id": "lyric-line-d28427cca52d"
+          "line_id": "lyric-line-a6287d1e1a6a",
+          "source_text": "風を切って駆け出す　もうコドウ止まらない"
         },
         {
           "start_ms": 64760,
@@ -9459,11 +9467,13 @@
         },
         {
           "start_ms": 122910,
-          "line_id": "lyric-line-e84b08dfe30a"
+          "line_id": "",
+          "source_text": "）"
         },
         {
           "start_ms": 124000,
-          "line_id": "lyric-line-6dbbbc157e95"
+          "line_id": "lyric-line-e84b08dfe30a",
+          "source_text": "大地蹴って駆けてく　追いつき　追いこせ"
         },
         {
           "start_ms": 129160,
@@ -9719,7 +9729,7 @@
       "source_track_id": "2703856206",
       "recording_id": "song-endless-dream-eabbcc4d12-v-492d9ff424",
       "lyric_document_id": "song-endless-dream-eabbcc4d12-lyrics",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 0,
@@ -9781,11 +9791,13 @@
         },
         {
           "start_ms": 61130,
-          "line_id": "lyric-line-a6287d1e1a6a"
+          "line_id": "",
+          "source_text": "）"
         },
         {
           "start_ms": 62300,
-          "line_id": "lyric-line-d28427cca52d"
+          "line_id": "lyric-line-a6287d1e1a6a",
+          "source_text": "風を切って駆け出す　もうコドウ止まらない"
         },
         {
           "start_ms": 66140,
@@ -9842,11 +9854,13 @@
         },
         {
           "start_ms": 122850,
-          "line_id": "lyric-line-e84b08dfe30a"
+          "line_id": "",
+          "source_text": "）"
         },
         {
           "start_ms": 123860,
-          "line_id": "lyric-line-6dbbbc157e95"
+          "line_id": "lyric-line-e84b08dfe30a",
+          "source_text": "大地蹴って駆けてく　追いつき　追いこせ"
         },
         {
           "start_ms": 129140,
@@ -15399,7 +15413,7 @@
       "source_track_id": "2616558778",
       "recording_id": "song-gochiso-7f9f47a066-v-8e74d05638",
       "lyric_document_id": "song-gochiso-7f9f47a066-lyrics-0a3d330a93",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 740,
@@ -15499,11 +15513,13 @@
         },
         {
           "start_ms": 47890,
-          "line_id": "lyric-line-81761e686c4d"
+          "line_id": "",
+          "source_text": "）"
         },
         {
           "start_ms": 49460,
-          "line_id": "lyric-line-f0b4d6afeb8a"
+          "line_id": "lyric-line-81761e686c4d",
+          "source_text": "てぇてぇ火加減でいこう yay"
         },
         {
           "start_ms": 52500,
@@ -17843,7 +17859,7 @@
       "source_track_id": "2012090615",
       "recording_id": "song-kirari-magic-show-f860f91ed3-v-5869aad090",
       "lyric_document_id": "song-kirari-magic-show-f860f91ed3-lyrics-9616896d3b",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 12480,
@@ -17879,11 +17895,13 @@
         },
         {
           "start_ms": 36310,
-          "line_id": "lyric-line-b35fa9a808fb"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 40720,
-          "line_id": "lyric-line-1fd94af00728"
+          "line_id": "lyric-line-b35fa9a808fb",
+          "source_text": "満天の空にさえ 勝てるような"
         },
         {
           "start_ms": 45240,
@@ -20188,213 +20206,214 @@
       "source": "netease_recording_metadata",
       "source_track_id": "554244296",
       "recording_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
-      "lyric_document_id": "song-make-debut-2c6c00a71e-lyrics-c631f9e253",
+      "lyric_document_id": "song-make-debut-2c6c00a71e-lyrics",
       "alignment": "complete",
       "lines": [
         {
           "start_ms": 10370,
-          "line_id": "lyric-line-b7663a8ba9e4"
+          "line_id": "lyric-line-5ea4f69e4823"
         },
         {
           "start_ms": 13400,
-          "line_id": "lyric-line-60a538615860"
+          "line_id": "lyric-line-1757ae5aa7e9"
         },
         {
           "start_ms": 15770,
-          "line_id": "lyric-line-3938d907db12"
+          "line_id": "lyric-line-ca66d8b82d23"
         },
         {
           "start_ms": 32610,
-          "line_id": "lyric-line-bf4212af3484"
+          "line_id": "lyric-line-d3b58a3d2b71"
         },
         {
           "start_ms": 37970,
-          "line_id": "lyric-line-f1e90f28c8a9"
+          "line_id": "lyric-line-1a84e61bf89e"
         },
         {
           "start_ms": 43260,
-          "line_id": "lyric-line-72ac07609a99"
+          "line_id": "lyric-line-ba1367cc5445"
         },
         {
           "start_ms": 48760,
-          "line_id": "lyric-line-37dca574e5c4"
+          "line_id": "lyric-line-549eea147a9e"
         },
         {
           "start_ms": 52190,
-          "line_id": "lyric-line-0c9b15ffd5ed"
+          "line_id": "lyric-line-49bc71a13bf6"
         },
         {
           "start_ms": 56310,
-          "line_id": "lyric-line-d1bca1635b79"
+          "line_id": "lyric-line-9f397b75368b"
         },
         {
           "start_ms": 61760,
-          "line_id": "lyric-line-ef261ed5f4f8"
+          "line_id": "lyric-line-93685d33b409"
         },
         {
           "start_ms": 66270,
-          "line_id": "lyric-line-dc2cf2679fc9"
+          "line_id": "lyric-line-dfabeb4e63bf"
         },
         {
           "start_ms": 69290,
-          "line_id": "lyric-line-0c84bb2cd7f9"
+          "line_id": "lyric-line-2151d4006815"
         },
         {
           "start_ms": 71860,
-          "line_id": "lyric-line-76b214e93911"
+          "line_id": "lyric-line-f347aa83d4f4"
         },
         {
           "start_ms": 74460,
-          "line_id": "lyric-line-f84e96816f90"
+          "line_id": "lyric-line-b91f0d2c2ed2"
         },
         {
           "start_ms": 79980,
-          "line_id": "lyric-line-0d044b7cfc8e"
+          "line_id": "lyric-line-f5a43c9f4d44"
         },
         {
           "start_ms": 85380,
-          "line_id": "lyric-line-636e155fe144"
+          "line_id": "lyric-line-0f7fe3b3642c"
         },
         {
           "start_ms": 88020,
-          "line_id": "lyric-line-d383feb86ceb"
+          "line_id": "lyric-line-98ab8f3dc0dc"
         },
         {
           "start_ms": 89520,
-          "line_id": "lyric-line-89052d3570c6"
+          "line_id": "lyric-line-79353c15ea3b"
         },
         {
           "start_ms": 102020,
-          "line_id": "lyric-line-09984902a00d"
+          "line_id": "lyric-line-f02e9799181c"
         },
         {
           "start_ms": 107440,
-          "line_id": "lyric-line-db42291ac47e"
+          "line_id": "lyric-line-3db1ed6e5207"
         },
         {
           "start_ms": 112440,
-          "line_id": "lyric-line-a8bfd6bb9cb9"
+          "line_id": "lyric-line-4db3af3cfe94"
         },
         {
           "start_ms": 117990,
-          "line_id": "lyric-line-35f41e8d23bd"
+          "line_id": "lyric-line-77f2b879d459"
         },
         {
           "start_ms": 121430,
-          "line_id": "lyric-line-64424c20b21d"
+          "line_id": "lyric-line-59526e3809fd"
         },
         {
           "start_ms": 125530,
-          "line_id": "lyric-line-031c6841a977"
+          "line_id": "lyric-line-d433f4d221fd"
         },
         {
           "start_ms": 131190,
-          "line_id": "lyric-line-cf4125d6a46b"
+          "line_id": "lyric-line-726669ae8391"
         },
         {
           "start_ms": 135600,
-          "line_id": "lyric-line-3392520f4411"
+          "line_id": "lyric-line-f2812f88bb08"
         },
         {
           "start_ms": 141180,
-          "line_id": "lyric-line-809a8b85c203"
+          "line_id": "lyric-line-3d38ccda69dc"
         },
         {
           "start_ms": 143890,
-          "line_id": "lyric-line-cf47705bd84a"
+          "line_id": "lyric-line-39e8dde16af7"
         },
         {
           "start_ms": 146410,
-          "line_id": "lyric-line-35a03321bf21"
+          "line_id": "lyric-line-714ae59776c3"
         },
         {
           "start_ms": 151890,
-          "line_id": "lyric-line-f28b0db0c145"
+          "line_id": "lyric-line-2120ee833d0e"
         },
         {
           "start_ms": 157310,
-          "line_id": "lyric-line-93a178aa85fb"
+          "line_id": "lyric-line-1bf9e7294435"
         },
         {
           "start_ms": 160100,
-          "line_id": "lyric-line-a9175ec28f65"
+          "line_id": "lyric-line-043fa427ba99"
         },
         {
           "start_ms": 161470,
-          "line_id": "lyric-line-e732ee24cc32"
+          "line_id": "lyric-line-6a0a82f0547b"
         },
         {
           "start_ms": 165280,
-          "line_id": "lyric-line-389378e3f77f"
+          "line_id": "lyric-line-521ddeac2221"
         },
         {
           "start_ms": 170460,
-          "line_id": "lyric-line-e3f6d7e42795"
+          "line_id": "lyric-line-cbe2a20b3b60"
         },
         {
           "start_ms": 174920,
-          "line_id": "lyric-line-52897ef5c108"
+          "line_id": "lyric-line-5405426ed376"
         },
         {
           "start_ms": 180240,
-          "line_id": "lyric-line-a6b781ca7341"
+          "line_id": "lyric-line-fbe9f5ee760b"
         },
         {
           "start_ms": 209190,
-          "line_id": "lyric-line-c0e97c7252ce"
+          "line_id": "lyric-line-e68d88c2fb18"
         },
         {
           "start_ms": 211950,
-          "line_id": "lyric-line-ef278e213cb3"
+          "line_id": "lyric-line-72f35bff83f9"
         },
         {
           "start_ms": 214450,
-          "line_id": "lyric-line-193c9a1c1c87"
+          "line_id": "lyric-line-a07e62793d0f"
         },
         {
           "start_ms": 219940,
-          "line_id": "lyric-line-7537f7381a9f"
+          "line_id": "lyric-line-a8d236fa9814"
         },
         {
           "start_ms": 225310,
-          "line_id": "lyric-line-8f843469bebe"
+          "line_id": "lyric-line-c9da547b67f0"
         },
         {
           "start_ms": 227990,
-          "line_id": "lyric-line-11f4735821af",
+          "line_id": "lyric-line-d923c0ceb068",
           "source_text": "I believe in..."
         },
         {
           "start_ms": 230630,
-          "line_id": "lyric-line-06e285c68e64"
+          "line_id": "lyric-line-30992ea46c44"
         },
         {
           "start_ms": 233280,
-          "line_id": "lyric-line-eb918dcbb87d"
+          "line_id": "lyric-line-3e451c8313cc"
         },
         {
           "start_ms": 235780,
-          "line_id": "lyric-line-17c7bc5543fb"
+          "line_id": "lyric-line-e07ba7745460"
         },
         {
           "start_ms": 241240,
-          "line_id": "lyric-line-8e68d0006efc"
+          "line_id": "lyric-line-0fe7938ef244"
         },
         {
           "start_ms": 246710,
-          "line_id": "lyric-line-b082c28a18be"
+          "line_id": "lyric-line-ffc69b0cd5c7"
         },
         {
           "start_ms": 252530,
-          "line_id": "lyric-line-1d73d79bdf1b"
+          "line_id": "lyric-line-f455c72c3124"
         },
         {
           "start_ms": 255180,
-          "line_id": "lyric-line-c2920f61acc2"
+          "line_id": "lyric-line-6d04860a46e3"
         },
         {
           "start_ms": 276190,
-          "line_id": "lyric-line-78e8d2c08cf7"
+          "line_id": "lyric-line-d28d9ab010d6",
+          "source_text": "I believe 夢の先まで"
         }
       ]
     },
@@ -24041,212 +24060,231 @@
       "source": "netease_recording_metadata",
       "source_track_id": "534542531",
       "recording_id": "song-present-march-c146648751-v-c146648751",
-      "lyric_document_id": "song-present-march-c146648751-lyrics-0b58abffc2",
+      "lyric_document_id": "song-present-march-c146648751-lyrics",
       "alignment": "complete",
       "lines": [
         {
           "start_ms": 8510,
-          "line_id": "lyric-line-135bf94fa034"
+          "line_id": "lyric-line-7ea855db947c",
+          "source_text": "さぁ、キミもおいで(Big Happiness！Present♪)"
         },
         {
           "start_ms": 16210,
-          "line_id": "lyric-line-bfdc7bac49c4"
+          "line_id": "lyric-line-c7b5774588c8"
         },
         {
           "start_ms": 20170,
-          "line_id": "lyric-line-281510a76de8"
+          "line_id": "lyric-line-50f2404a8e12"
         },
         {
           "start_ms": 22470,
-          "line_id": "lyric-line-060e929bd295"
+          "line_id": "lyric-line-4eec9912d476"
         },
         {
           "start_ms": 24670,
-          "line_id": "lyric-line-eabafff54c6d"
+          "line_id": "lyric-line-f1447ed15e62",
+          "source_text": "宝物をつかまえに行こう(Let's Searching For Our Treasure！)"
         },
         {
           "start_ms": 32480,
-          "line_id": "lyric-line-71eea6e3a075"
+          "line_id": "lyric-line-d545aafa4cc6",
+          "source_text": "ドコにあるかまだ不明でも(Let's Searching For Our Treasure！)"
         },
         {
           "start_ms": 40090,
-          "line_id": "lyric-line-16bdeee918cf"
+          "line_id": "lyric-line-86cb8aac990f",
+          "source_text": "待っているって分かるんですよ(Shaking Heart Beat…Open Your Days！)"
         },
         {
           "start_ms": 47640,
-          "line_id": "lyric-line-4bc89e69cd9d"
+          "line_id": "lyric-line-9811a6a3dbab"
         },
         {
           "start_ms": 50570,
-          "line_id": "lyric-line-59e71cc98ffb"
+          "line_id": "lyric-line-a2e51a7b8230",
+          "source_text": "冒険者になってGoing…"
         },
         {
           "start_ms": 53540,
-          "line_id": "lyric-line-4379b1835fb1"
+          "line_id": "lyric-line-f928aa0af991"
         },
         {
           "start_ms": 58160,
-          "line_id": "lyric-line-c4270365e156"
+          "line_id": "lyric-line-01150f854141",
+          "source_text": "想像の向こうの夢たちがホラね「ようこそ！」って手を振る"
         },
         {
           "start_ms": 66260,
-          "line_id": "lyric-line-956936be6558"
+          "line_id": "lyric-line-2b0235a42f0f",
+          "source_text": "おとぎ話よりも奇なリアル"
         },
         {
           "start_ms": 68910,
-          "line_id": "lyric-line-c1031a66d01d"
+          "line_id": "lyric-line-964ad341ff71"
         },
         {
           "start_ms": 73880,
-          "line_id": "lyric-line-1debd112950b"
+          "line_id": "lyric-line-c3bd866253e9"
         },
         {
           "start_ms": 77140,
-          "line_id": "lyric-line-1a350f607bb5"
+          "line_id": "lyric-line-9e77b31324d7",
+          "source_text": "なんかPoppin' Poppin'楽しいから"
         },
         {
           "start_ms": 81730,
-          "line_id": "lyric-line-4aad42e6bf69"
+          "line_id": "lyric-line-a30080d47a69"
         },
         {
           "start_ms": 83610,
-          "line_id": "lyric-line-04687089eeb9"
+          "line_id": "lyric-line-c41de1959ae2"
         },
         {
           "start_ms": 85780,
-          "line_id": "lyric-line-7bc96b38bc75"
+          "line_id": "lyric-line-a6ac23353613",
+          "source_text": "さぁ、キミもおいで(Big Happiness！Present♪)"
         },
         {
           "start_ms": 93380,
-          "line_id": "lyric-line-dedef8f9dfbe"
+          "line_id": "lyric-line-f033d102358d"
         },
         {
           "start_ms": 96750,
-          "line_id": "lyric-line-2b0f18a5cefa"
+          "line_id": "lyric-line-08b945e67ccb"
         },
         {
           "start_ms": 99270,
-          "line_id": "lyric-line-536c0839d1ab"
+          "line_id": "lyric-line-c42d25de3d80"
         },
         {
           "start_ms": 101230,
-          "line_id": "lyric-line-add86853b83c"
+          "line_id": "lyric-line-87a03355139b",
+          "source_text": "ジンクスのっとって手を繋ごうよ(Let's Seeking For Our Treasure！)"
         },
         {
           "start_ms": 109050,
-          "line_id": "lyric-line-0998163e91c2"
+          "line_id": "lyric-line-e8f215daa66a",
+          "source_text": "'どーにかなる'って思えば勝ち(Let's Seeking For Our Treasure！)"
         },
         {
           "start_ms": 116800,
-          "line_id": "lyric-line-5d99cd3c2c0a"
+          "line_id": "lyric-line-4209d4431f34",
+          "source_text": "ゆっくりも悪くないです(Yes, Step By Step…Open Your Days！)"
         },
         {
           "start_ms": 124310,
-          "line_id": "lyric-line-c017114ccbdc"
+          "line_id": "lyric-line-6de255e7d884"
         },
         {
           "start_ms": 127270,
-          "line_id": "lyric-line-c15a6d3de364"
+          "line_id": "lyric-line-fffb13700237"
         },
         {
           "start_ms": 130070,
-          "line_id": "lyric-line-9306fb188089"
+          "line_id": "lyric-line-26ac37b3af7d"
         },
         {
           "start_ms": 135150,
-          "line_id": "lyric-line-118c79ca4ff6"
+          "line_id": "lyric-line-bece578d2ed7",
+          "source_text": "だってハート溢れる期待がホラね「行こうよ！」って急かすの"
         },
         {
           "start_ms": 142920,
-          "line_id": "lyric-line-ba951a627bc2"
+          "line_id": "lyric-line-81459fb7c74e"
         },
         {
           "start_ms": 146350,
-          "line_id": "lyric-line-1a190c98e088"
+          "line_id": "lyric-line-ba509559fbe7"
         },
         {
           "start_ms": 150590,
-          "line_id": "lyric-line-1d657f7d2ce4"
+          "line_id": "lyric-line-cb7a7521b9b8"
         },
         {
           "start_ms": 154160,
-          "line_id": "lyric-line-0c4c83fe8ebd"
+          "line_id": "lyric-line-e63b17d234f9",
+          "source_text": "まるで Pleasant Pleasant　舞踏会場"
         },
         {
           "start_ms": 158300,
-          "line_id": "lyric-line-c22537d0f985"
+          "line_id": "lyric-line-c01e28536075"
         },
         {
           "start_ms": 160390,
-          "line_id": "lyric-line-9148e5443ad0"
+          "line_id": "lyric-line-1a069ead4e8b"
         },
         {
           "start_ms": 189310,
-          "line_id": "lyric-line-79e5c02f1c0d"
+          "line_id": "lyric-line-3dd98552c044",
+          "source_text": "踏み出したなら(Big Happiness！Present♪)"
         },
         {
           "start_ms": 197120,
-          "line_id": "lyric-line-2f37523e155b"
+          "line_id": "lyric-line-7f3dd334efde"
         },
         {
           "start_ms": 204790,
-          "line_id": "lyric-line-1f9a4d7695f3"
+          "line_id": "lyric-line-3ad34cfa0692"
         },
         {
           "start_ms": 206660,
-          "line_id": "lyric-line-491fbcbddcff"
+          "line_id": "lyric-line-740a6652f7c7"
         },
         {
           "start_ms": 208780,
-          "line_id": "lyric-line-4934e3d05c54"
+          "line_id": "lyric-line-e0dbefeee300",
+          "source_text": "おとぎ話よりも奇なリアル"
         },
         {
           "start_ms": 211390,
-          "line_id": "lyric-line-a22dbdbb4ff0"
+          "line_id": "lyric-line-7c72749e2057"
         },
         {
           "start_ms": 216750,
-          "line_id": "lyric-line-2c88d3dda65e"
+          "line_id": "lyric-line-5949cc6f9f6b"
         },
         {
           "start_ms": 219970,
-          "line_id": "lyric-line-c69900161580"
+          "line_id": "lyric-line-e75239213c02",
+          "source_text": "なんかPoppin' Poppin'楽しいから"
         },
         {
           "start_ms": 223890,
-          "line_id": "lyric-line-080ecc6c17a5"
+          "line_id": "lyric-line-c1e4732139d7"
         },
         {
           "start_ms": 225970,
-          "line_id": "lyric-line-9eafc0f08614"
+          "line_id": "lyric-line-a1fc629d044e"
         },
         {
           "start_ms": 228020,
-          "line_id": "lyric-line-89f03509a25c"
+          "line_id": "lyric-line-f9fe7594351e",
+          "source_text": "さぁ、キミもおいで(Big Happiness！Present♪)"
         },
         {
           "start_ms": 235080,
-          "line_id": "lyric-line-c08f0e09c8db"
+          "line_id": "lyric-line-5087e660584f"
         },
         {
           "start_ms": 239330,
-          "line_id": "lyric-line-3f747a8e9c20"
+          "line_id": "lyric-line-a2b3fd697551"
         },
         {
           "start_ms": 241750,
-          "line_id": "lyric-line-a5f67f27ac0e"
+          "line_id": "lyric-line-8bb43bdf0ff5"
         },
         {
           "start_ms": 243260,
-          "line_id": "lyric-line-ee776ff2543e"
+          "line_id": "lyric-line-7b82d964e142"
         },
         {
           "start_ms": 247160,
-          "line_id": "lyric-line-464caf362414"
+          "line_id": "lyric-line-44b5785bb48d"
         },
         {
           "start_ms": 247930,
-          "line_id": "lyric-line-b3309ed0a156"
+          "line_id": "lyric-line-35913016f3ed",
+          "source_text": "Welcome…PLEASURE MARCH！"
         }
       ]
     },
@@ -27283,132 +27321,145 @@
       "source": "netease_recording_metadata",
       "source_track_id": "505267118",
       "recording_id": "song-seven-a00bbe560e-v-a00bbe560e",
-      "lyric_document_id": "song-seven-a00bbe560e-lyrics-a08d8a9713",
+      "lyric_document_id": "song-seven-a00bbe560e-lyrics",
       "alignment": "complete",
       "lines": [
         {
           "start_ms": 330,
-          "line_id": "lyric-line-2179b232ccec"
+          "line_id": "lyric-line-425e1474e502"
         },
         {
           "start_ms": 14840,
-          "line_id": "lyric-line-6f8d8c3d82e3"
+          "line_id": "lyric-line-7091f0cdaf5f"
         },
         {
           "start_ms": 19770,
-          "line_id": "lyric-line-0ecd871da9a2"
+          "line_id": "lyric-line-7b0b728864ec"
         },
         {
           "start_ms": 25560,
-          "line_id": "lyric-line-40730dac5725"
+          "line_id": "lyric-line-47cc1a5caf4c"
         },
         {
           "start_ms": 30940,
-          "line_id": "lyric-line-918f5449d235"
+          "line_id": "lyric-line-6f7b31329fef",
+          "source_text": "7度目の歓喜は 揺るがない実力"
         },
         {
           "start_ms": 36690,
-          "line_id": "lyric-line-76c1acf6276a"
+          "line_id": "lyric-line-6bcdd89db5dd",
+          "source_text": "気高き勇姿も ためらいも壊して曝け出して"
         },
         {
           "start_ms": 44500,
-          "line_id": "lyric-line-34cd221404cf"
+          "line_id": "lyric-line-20afbbb1a9f9"
         },
         {
           "start_ms": 48080,
-          "line_id": "lyric-line-4f31d95e8ab4"
+          "line_id": "lyric-line-fbdde59bb783",
+          "source_text": "闘気を感じろ！ 限界など聞きたくはない"
         },
         {
           "start_ms": 53660,
-          "line_id": "lyric-line-3f1c92884045"
+          "line_id": "lyric-line-861179fe7e14",
+          "source_text": "幻想など意味が無くて 心を熱くさせろ"
         },
         {
           "start_ms": 59190,
-          "line_id": "lyric-line-4c4301efc0b8"
+          "line_id": "lyric-line-bc6cb21072c7",
+          "source_text": "己を信じろ！挑戦すると決めたなら Bring it on down！"
         },
         {
           "start_ms": 66080,
-          "line_id": "lyric-line-00ebbd206805"
+          "line_id": "lyric-line-a40d4054a9be"
         },
         {
           "start_ms": 67510,
-          "line_id": "lyric-line-4897dd06f0d5"
+          "line_id": "lyric-line-6da423aa1bb7",
+          "source_text": "勝利はこの手にあるのだから 決して負けない"
         },
         {
           "start_ms": 87490,
-          "line_id": "lyric-line-e999829a4218"
+          "line_id": "lyric-line-66ab194170e6"
         },
         {
           "start_ms": 92440,
-          "line_id": "lyric-line-1b39812892e0"
+          "line_id": "lyric-line-8196f892eb5e"
         },
         {
           "start_ms": 98260,
-          "line_id": "lyric-line-0c0e382a9cd6"
+          "line_id": "lyric-line-a3dee6b903ec",
+          "source_text": "7つの奇跡たち抱(いだ)き続け"
         },
         {
           "start_ms": 103530,
-          "line_id": "lyric-line-cc42cd0c5d57"
+          "line_id": "lyric-line-e5173f53ecbc"
         },
         {
           "start_ms": 109380,
-          "line_id": "lyric-line-e7cca20fe17b"
+          "line_id": "lyric-line-6faae4d6df63"
         },
         {
           "start_ms": 116920,
-          "line_id": "lyric-line-84ad4b1aa416"
+          "line_id": "lyric-line-5096eaddcfe7"
         },
         {
           "start_ms": 120550,
-          "line_id": "lyric-line-51f2b59c13a8"
+          "line_id": "lyric-line-3a42807da85f",
+          "source_text": "秘めたる闘志よ！ 距離を縮めて視線飛ばせ"
         },
         {
           "start_ms": 126090,
-          "line_id": "lyric-line-b781c51f8e6b"
+          "line_id": "lyric-line-56ea0b53c820"
         },
         {
           "start_ms": 131640,
-          "line_id": "lyric-line-720cc1f7eb36"
+          "line_id": "lyric-line-b1bb52240686",
+          "source_text": "己を信じろ！ 未知なる戦利へと繋ぐ Power of soul！"
         },
         {
           "start_ms": 138450,
-          "line_id": "lyric-line-9487cd14d027"
+          "line_id": "lyric-line-97f3eb9040b3"
         },
         {
           "start_ms": 139990,
-          "line_id": "lyric-line-f8e620359a83"
+          "line_id": "lyric-line-682142b6b769"
         },
         {
           "start_ms": 179430,
-          "line_id": "lyric-line-6a14ca377871"
+          "line_id": "lyric-line-4b1e490d9f39"
         },
         {
           "start_ms": 184500,
-          "line_id": "lyric-line-41bdccecbd37"
+          "line_id": "lyric-line-be00c1bbe7da"
         },
         {
           "start_ms": 193120,
-          "line_id": "lyric-line-e9f40d96e81d"
+          "line_id": "lyric-line-2a3762d03751"
         },
         {
           "start_ms": 196800,
-          "line_id": "lyric-line-9b50794b9f3c"
+          "line_id": "lyric-line-a84a0fec3e7c",
+          "source_text": "闘気を感じろ！ 限界など聞きたくない"
         },
         {
           "start_ms": 202160,
-          "line_id": "lyric-line-a742074217ba"
+          "line_id": "lyric-line-17d86156e212",
+          "source_text": "幻想など意味が無くて 心を熱くさせろ"
         },
         {
           "start_ms": 207710,
-          "line_id": "lyric-line-421eee9abe42"
+          "line_id": "lyric-line-8664e113ce55",
+          "source_text": "己を信じろ！ 挑戦すると決めたなら Bring it on down！"
         },
         {
           "start_ms": 214540,
-          "line_id": "lyric-line-8f5eef7b95c2"
+          "line_id": "lyric-line-2edc8d837f57"
         },
         {
           "start_ms": 216040,
-          "line_id": "lyric-line-deb64a17a845"
+          "line_id": "lyric-line-fb6ff9c13e4c",
+          "source_text": "勝利はこの手にあるのだから 決して負けない"
         }
       ]
     },
@@ -31733,7 +31784,7 @@
       "source_track_id": "2648922734",
       "recording_id": "song-uma-summer-d7e35f6a48-v-d7e35f6a48",
       "lyric_document_id": "song-uma-summer-d7e35f6a48-lyrics",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 350,
@@ -32318,7 +32369,8 @@
         },
         {
           "start_ms": 299873,
-          "line_id": "lyric-line-f63025f271ba"
+          "line_id": "",
+          "source_text": "♪"
         }
       ]
     },
@@ -32327,7 +32379,7 @@
       "source_track_id": "2648922738",
       "recording_id": "song-uma-summer-d7e35f6a48-v-bdc1129dd7",
       "lyric_document_id": "song-uma-summer-d7e35f6a48-lyrics",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 357,
@@ -32601,7 +32653,8 @@
         },
         {
           "start_ms": 135078,
-          "line_id": "lyric-line-f63025f271ba"
+          "line_id": "",
+          "source_text": "♪"
         }
       ]
     },
@@ -32858,200 +32911,219 @@
       "source": "netease_recording_metadata",
       "source_track_id": "2703854710",
       "recording_id": "song-unbreakable-8c599c4256-v-c15a5f0836",
-      "lyric_document_id": "song-unbreakable-8c599c4256-lyrics-3ff6071abf",
+      "lyric_document_id": "song-unbreakable-8c599c4256-lyrics",
       "alignment": "complete",
       "lines": [
         {
           "start_ms": 23770,
-          "line_id": "lyric-line-e60e3984441d"
+          "line_id": "lyric-line-1a3878f85325",
+          "source_text": "あの日をまだ 覚えてますか"
         },
         {
           "start_ms": 30220,
-          "line_id": "lyric-line-dec2851c7c98"
+          "line_id": "lyric-line-bd7a9208e76e",
+          "source_text": "青い月 浮かぶ夜 (忘れない)"
         },
         {
           "start_ms": 36520,
-          "line_id": "lyric-line-a3b336bdc180"
+          "line_id": "lyric-line-dea0c7130714",
+          "source_text": "あなたがそう 言ったんだ"
         },
         {
           "start_ms": 43070,
-          "line_id": "lyric-line-5326b499c0de"
+          "line_id": "lyric-line-418521fe8ad1"
         },
         {
           "start_ms": 46850,
-          "line_id": "lyric-line-db648c4a912d"
+          "line_id": "lyric-line-3054aa66080b"
         },
         {
           "start_ms": 50950,
-          "line_id": "lyric-line-163409168a2a"
+          "line_id": "lyric-line-bd8f8403b227",
+          "source_text": "届かない 届かない"
         },
         {
           "start_ms": 54490,
-          "line_id": "lyric-line-cb6c1905e293"
+          "line_id": "lyric-line-3d2914b06b41",
+          "source_text": "伸ばした手 空を切る"
         },
         {
           "start_ms": 57940,
-          "line_id": "lyric-line-a0a349578156"
+          "line_id": "lyric-line-75ad4488109c",
+          "source_text": "くやしくて 切なくて"
         },
         {
           "start_ms": 61390,
-          "line_id": "lyric-line-12509c2766ca"
+          "line_id": "lyric-line-e679a62e4ff8"
         },
         {
           "start_ms": 64990,
-          "line_id": "lyric-line-a50b74f18202"
+          "line_id": "lyric-line-432ff71732b0",
+          "source_text": "負けてもいい戦いなんてそんなの"
         },
         {
           "start_ms": 71740,
-          "line_id": "lyric-line-b36a8c561cfc"
+          "line_id": "lyric-line-b101d8a86390"
         },
         {
           "start_ms": 78190,
-          "line_id": "lyric-line-8c8c7975d5af"
+          "line_id": "lyric-line-d31bde534ff3"
         },
         {
           "start_ms": 81890,
-          "line_id": "lyric-line-f86b18dbd7f7"
+          "line_id": "lyric-line-24dc6b8a3cc1"
         },
         {
           "start_ms": 85590,
-          "line_id": "lyric-line-2775abae9158"
+          "line_id": "lyric-line-9fbd894ac55e"
         },
         {
           "start_ms": 92090,
-          "line_id": "lyric-line-1b372badac38"
+          "line_id": "lyric-line-047b4c334744"
         },
         {
           "start_ms": 95790,
-          "line_id": "lyric-line-ef16b764516d"
+          "line_id": "lyric-line-22138f68027f"
         },
         {
           "start_ms": 100090,
-          "line_id": "lyric-line-eef338209de4"
+          "line_id": "lyric-line-b24c7b43a761",
+          "source_text": "私は進んでいく 進んでいくから"
         },
         {
           "start_ms": 108340,
-          "line_id": "lyric-line-66f5ed0f05d1"
+          "line_id": "lyric-line-e37c2d66457d"
         },
         {
           "start_ms": 114740,
-          "line_id": "lyric-line-bcf0dde88938"
+          "line_id": "lyric-line-fab4438a37f5",
+          "source_text": "あなたはなぜ 歩み続ける"
         },
         {
           "start_ms": 121290,
-          "line_id": "lyric-line-43ae904f83c6"
+          "line_id": "lyric-line-935c90e00195"
         },
         {
           "start_ms": 127740,
-          "line_id": "lyric-line-3554ab207055"
+          "line_id": "lyric-line-ad0130af5b32",
+          "source_text": "信じられる 何一つないときでも"
         },
         {
           "start_ms": 134290,
-          "line_id": "lyric-line-86a54bc03ad7"
+          "line_id": "lyric-line-9edc2bf708bf",
+          "source_text": "希望 闇に輝いていた"
         },
         {
           "start_ms": 138490,
-          "line_id": "lyric-line-714aa5cadfca"
+          "line_id": "lyric-line-fdd6b131f4e7",
+          "source_text": "苦しくて 苦しくて"
         },
         {
           "start_ms": 142040,
-          "line_id": "lyric-line-7b6a7ec0f87e"
+          "line_id": "lyric-line-d9ab6c997925",
+          "source_text": "逃げるのも 悪くない"
         },
         {
           "start_ms": 145540,
-          "line_id": "lyric-line-57c63b72204c"
+          "line_id": "lyric-line-ae83171d591c",
+          "source_text": "だけどそう これだけは"
         },
         {
           "start_ms": 148990,
-          "line_id": "lyric-line-611534fd4d56"
+          "line_id": "lyric-line-7cc41f54ec41"
         },
         {
           "start_ms": 152490,
-          "line_id": "lyric-line-85bb40a5e2c4"
+          "line_id": "lyric-line-2c06ccdeaac9",
+          "source_text": "どんなに ねぇ 上手に隠れたって"
         },
         {
           "start_ms": 159290,
-          "line_id": "lyric-line-5fce91c90ee2"
+          "line_id": "lyric-line-4429475838bc"
         },
         {
           "start_ms": 165790,
-          "line_id": "lyric-line-b6a3a42ddff2"
+          "line_id": "lyric-line-09c5d11da5f8"
         },
         {
           "start_ms": 169490,
-          "line_id": "lyric-line-04dd64460ab2"
+          "line_id": "lyric-line-760aee20e480"
         },
         {
           "start_ms": 173190,
-          "line_id": "lyric-line-9b271d300471"
+          "line_id": "lyric-line-e4c0d319d9ac",
+          "source_text": "可能性 イチでもあるのなら"
         },
         {
           "start_ms": 179690,
-          "line_id": "lyric-line-d9fd61b57e64"
+          "line_id": "lyric-line-b11b83b4833b"
         },
         {
           "start_ms": 183440,
-          "line_id": "lyric-line-674507efba11"
+          "line_id": "lyric-line-8fbc695e0240"
         },
         {
           "start_ms": 187690,
-          "line_id": "lyric-line-15fd12e47365"
+          "line_id": "lyric-line-d2c9da69d567",
+          "source_text": "誓って見据えている 見据えている"
         },
         {
           "start_ms": 195840,
-          "line_id": "lyric-line-e4f6b2a71f4c"
+          "line_id": "lyric-line-aae1f7e5c9d6"
         },
         {
           "start_ms": 198590,
-          "line_id": "lyric-line-577cbc59d951"
+          "line_id": "lyric-line-9d6ad84abeb6"
         },
         {
           "start_ms": 202290,
-          "line_id": "lyric-line-36f3f9a48187"
+          "line_id": "lyric-line-e8f1661fc1e3"
         },
         {
           "start_ms": 205990,
-          "line_id": "lyric-line-029379b3fcd5"
+          "line_id": "lyric-line-83dca4f8d488"
         },
         {
           "start_ms": 212490,
-          "line_id": "lyric-line-f05a3ed51c25"
+          "line_id": "lyric-line-21c8743fd4ec"
         },
         {
           "start_ms": 216190,
-          "line_id": "lyric-line-37851ee3c5dc"
+          "line_id": "lyric-line-4efec6f08105"
         },
         {
           "start_ms": 220490,
-          "line_id": "lyric-line-1dd22be40643"
+          "line_id": "lyric-line-a47ebbf0f57f"
         },
         {
           "start_ms": 224290,
-          "line_id": "lyric-line-f63e08749913"
+          "line_id": "lyric-line-219930b40a0c"
         },
         {
           "start_ms": 227990,
-          "line_id": "lyric-line-f80cfd4030a5"
+          "line_id": "lyric-line-96f94624cb4c"
         },
         {
           "start_ms": 231690,
-          "line_id": "lyric-line-3e7a557f7f70"
+          "line_id": "lyric-line-0d457399f4a2",
+          "source_text": "可能性 イチでもあるのなら"
         },
         {
           "start_ms": 238190,
-          "line_id": "lyric-line-edd31db4b8ee"
+          "line_id": "lyric-line-6440f4e5c577"
         },
         {
           "start_ms": 241990,
-          "line_id": "lyric-line-c6056f3b094f"
+          "line_id": "lyric-line-52eb3b162b21"
         },
         {
           "start_ms": 246190,
-          "line_id": "lyric-line-125c6747ad8a"
+          "line_id": "lyric-line-cf6a090ac476",
+          "source_text": "誓って見据えている 見据えている"
         },
         {
           "start_ms": 254390,
-          "line_id": "lyric-line-824e4129e6b1"
+          "line_id": "lyric-line-349d61364ccb"
         }
       ]
     },
@@ -35474,116 +35546,125 @@
       "source": "netease_recording_metadata",
       "source_track_id": "1830409080",
       "recording_id": "song-winning-the-soul-7eddcf2b7f-v-d97229354f",
-      "lyric_document_id": "song-winning-the-soul-7eddcf2b7f-lyrics-bba5e5ca04",
-      "alignment": "complete",
+      "lyric_document_id": "song-winning-the-soul-7eddcf2b7f-lyrics-712dddb634",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 17350,
-          "line_id": "lyric-line-f4b5a505dada"
+          "line_id": "lyric-line-18509ac32152",
+          "source_text": "光の速さで駆け抜ける衝動は"
         },
         {
           "start_ms": 22690,
-          "line_id": "lyric-line-6f6bd981928a"
+          "line_id": "lyric-line-a915bba372e2",
+          "source_text": "何を犠牲にしても叶えたい強さの覚悟"
         },
         {
           "start_ms": 27520,
-          "line_id": "lyric-line-adb4146185e5"
+          "line_id": "lyric-line-5e4c7d5c52c3",
+          "source_text": "(no fear)"
         },
         {
           "start_ms": 28820,
-          "line_id": "lyric-line-b329d1d96bb3"
+          "line_id": "lyric-line-6684c01bc22e"
         },
         {
           "start_ms": 30080,
-          "line_id": "lyric-line-ecad9d92cfa9"
+          "line_id": "lyric-line-c6d2c7fa7aa1",
+          "source_text": "(trust you)"
         },
         {
           "start_ms": 31210,
-          "line_id": "lyric-line-c73eaee21527"
+          "line_id": "lyric-line-a43cea7b0998"
         },
         {
           "start_ms": 32540,
-          "line_id": "lyric-line-a87299092c52"
+          "line_id": "lyric-line-d30027b18cb6"
         },
         {
           "start_ms": 37620,
-          "line_id": "lyric-line-03ad7f65b44b"
+          "line_id": "lyric-line-3c64d8d93660"
         },
         {
           "start_ms": 42280,
-          "line_id": "lyric-line-2a47b4f54874"
+          "line_id": "lyric-line-367ff96c6a3c"
         },
         {
           "start_ms": 51750,
-          "line_id": "lyric-line-33ce995c9b4c"
+          "line_id": "lyric-line-b7f3ef7fa07e"
         },
         {
           "start_ms": 54840,
-          "line_id": "lyric-line-2e94e30f037a"
+          "line_id": "lyric-line-f4be4610072d"
         },
         {
           "start_ms": 58540,
-          "line_id": "lyric-line-caac45721739"
+          "line_id": "lyric-line-3ff75bb0f908"
         },
         {
           "start_ms": 61200,
-          "line_id": "lyric-line-2ff53e9e22a9"
+          "line_id": "lyric-line-36b46a61dd88"
         },
         {
           "start_ms": 67120,
-          "line_id": "lyric-line-1aa400b12090"
+          "line_id": "lyric-line-926100888aa9"
         },
         {
           "start_ms": 72410,
-          "line_id": "lyric-line-c573aed79b58"
+          "line_id": "lyric-line-9423108c892b",
+          "source_text": "果てしなく続くwinning the soul"
         },
         {
           "start_ms": 88160,
-          "line_id": "lyric-line-96273f3dbd91"
+          "line_id": "lyric-line-030ef7b69727"
         },
         {
           "start_ms": 91230,
-          "line_id": "lyric-line-d0bbaf8e2160"
+          "line_id": "lyric-line-406cc778207f"
         },
         {
           "start_ms": 95150,
-          "line_id": "lyric-line-51950f3cdd11"
+          "line_id": "lyric-line-dc74cc16f547"
         },
         {
           "start_ms": 98180,
-          "line_id": "lyric-line-00d5d0bfeb6d"
+          "line_id": "lyric-line-81ef4149a321"
         },
         {
           "start_ms": 101580,
-          "line_id": "lyric-line-984d590207a7"
+          "line_id": "lyric-line-d9bef7f6ca30"
         },
         {
           "start_ms": 104960,
-          "line_id": "lyric-line-6d673d99160d"
+          "line_id": "lyric-line-136df4ef64dc"
         },
         {
           "start_ms": 108070,
-          "line_id": "lyric-line-0cfe0f3d7fb8"
+          "line_id": "lyric-line-fd0c57321cac"
         },
         {
           "start_ms": 110050,
-          "line_id": "lyric-line-242e2abba0a2"
+          "line_id": "lyric-line-d257746b8945"
         },
         {
           "start_ms": 119030,
-          "line_id": "lyric-line-d12703f68953"
+          "line_id": "lyric-line-45639cc20a22",
+          "source_text": "果てしなく続くwinning the soul"
         },
         {
           "start_ms": 127950,
-          "line_id": "lyric-line-1400e9487935"
+          "line_id": "",
+          "source_text": "woh"
         },
         {
           "start_ms": 129080,
-          "line_id": "lyric-line-b92528c0377e"
+          "line_id": "",
+          "source_text": "woh"
         },
         {
           "start_ms": 130370,
-          "line_id": "lyric-line-27d7732726d9"
+          "line_id": "",
+          "source_text": "woh"
         }
       ]
     },
@@ -38540,7 +38621,7 @@
       "source_track_id": "2703854494",
       "recording_id": "song-228f943b49-v-29206e2b41",
       "lyric_document_id": "song-228f943b49-lyrics-46f8e71922",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 15320,
@@ -38577,19 +38658,23 @@
         },
         {
           "start_ms": 40470,
-          "line_id": "lyric-line-5c9369b9439e"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 40920,
-          "line_id": "lyric-line-4ba93be21c4d"
+          "line_id": "lyric-line-5c9369b9439e",
+          "source_text": "今日もめちゃめちゃはちゃめちゃだっ (ちゃー！"
         },
         {
           "start_ms": 41750,
-          "line_id": "lyric-line-3f8769294176"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 42720,
-          "line_id": "lyric-line-20b7ea30d82c"
+          "line_id": "lyric-line-3f8769294176",
+          "source_text": "がち追い込み (糖質カット)"
         },
         {
           "start_ms": 46000,
@@ -38597,11 +38682,13 @@
         },
         {
           "start_ms": 46670,
-          "line_id": "lyric-line-82d9ea12f284"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 47560,
-          "line_id": "lyric-line-76dc1f6646fe"
+          "line_id": "lyric-line-82d9ea12f284",
+          "source_text": "あのこは (ワッフォー) そのこは (ベイゴー)"
         },
         {
           "start_ms": 51920,
@@ -38617,11 +38704,13 @@
         },
         {
           "start_ms": 60270,
-          "line_id": "lyric-line-939033b85ed1"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 61960,
-          "line_id": "lyric-line-935208a1a06c"
+          "line_id": "lyric-line-939033b85ed1",
+          "source_text": "きょうの勝利の女神は"
         },
         {
           "start_ms": 62900,
@@ -38662,11 +38751,13 @@
         },
         {
           "start_ms": 77750,
-          "line_id": "lyric-line-5a7d36efb0c3"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 79440,
-          "line_id": "lyric-line-5c3e2ff69339"
+          "line_id": "lyric-line-5a7d36efb0c3",
+          "source_text": "ずきゅんどきゅん 胸が鳴り (ふっふー)"
         },
         {
           "start_ms": 81920,
@@ -38688,11 +38779,13 @@
         },
         {
           "start_ms": 92230,
-          "line_id": "lyric-line-c20e8812a8b4"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 93560,
-          "line_id": "lyric-line-e166bc3616b8"
+          "line_id": "lyric-line-c20e8812a8b4",
+          "source_text": "ずきゅんどきゅん 走り出しー (ふっふー)"
         },
         {
           "start_ms": 97640,
@@ -38705,11 +38798,13 @@
         },
         {
           "start_ms": 103190,
-          "line_id": "lyric-line-c6b33d74b8ae"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 104880,
-          "line_id": "lyric-line-c8a272436c54"
+          "line_id": "lyric-line-c6b33d74b8ae",
+          "source_text": "ずきゅんどきゅん 胸が鳴り (ふっふー)"
         },
         {
           "start_ms": 108920,
@@ -38731,7 +38826,8 @@
         },
         {
           "start_ms": 118140,
-          "line_id": "lyric-line-1c519b541c91"
+          "line_id": "",
+          "source_text": ")"
         }
       ]
     },
@@ -41563,7 +41659,7 @@
       "source_track_id": "2703857067",
       "recording_id": "song-1427e58379-v-61026bde50",
       "lyric_document_id": "song-1427e58379-lyrics-f79ee64e19",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 3750,
@@ -41580,11 +41676,13 @@
         },
         {
           "start_ms": 28720,
-          "line_id": "lyric-line-65e1f8826d47"
+          "line_id": "",
+          "source_text": "』"
         },
         {
           "start_ms": 31580,
-          "line_id": "lyric-line-a576dcc4c9dd"
+          "line_id": "lyric-line-65e1f8826d47",
+          "source_text": "トゥ　トゥルトゥ　ティ　タッタ"
         },
         {
           "start_ms": 33380,
@@ -41617,11 +41715,13 @@
         },
         {
           "start_ms": 57560,
-          "line_id": "lyric-line-b92feda82d0a"
+          "line_id": "",
+          "source_text": ")"
         },
         {
           "start_ms": 59870,
-          "line_id": "lyric-line-d221078658d2"
+          "line_id": "lyric-line-b92feda82d0a",
+          "source_text": "たった一言だけでいい"
         },
         {
           "start_ms": 62910,
@@ -41629,11 +41729,13 @@
         },
         {
           "start_ms": 63520,
-          "line_id": "lyric-line-ad6b17b9ed64"
+          "line_id": "",
+          "source_text": "』"
         },
         {
           "start_ms": 65150,
-          "line_id": "lyric-line-d3c2be21e919"
+          "line_id": "lyric-line-ad6b17b9ed64",
+          "source_text": "顔をあげたら　青空　笑え！"
         },
         {
           "start_ms": 73150,
@@ -41702,11 +41804,13 @@
         },
         {
           "start_ms": 142360,
-          "line_id": "lyric-line-b7f0d41482a4"
+          "line_id": "",
+          "source_text": "』"
         },
         {
           "start_ms": 146910,
-          "line_id": "lyric-line-b6de815af139"
+          "line_id": "lyric-line-b7f0d41482a4",
+          "source_text": "目と目合わせて　星空　笑え！"
         },
         {
           "start_ms": 151830,
@@ -41747,11 +41851,13 @@
         },
         {
           "start_ms": 208560,
-          "line_id": "lyric-line-33d2d2227a43"
+          "line_id": "",
+          "source_text": "』"
         },
         {
           "start_ms": 214310,
-          "line_id": "lyric-line-b45b3287e70a"
+          "line_id": "lyric-line-33d2d2227a43",
+          "source_text": "まわれ　まわれ　My Days"
         },
         {
           "start_ms": 217320,
@@ -41792,7 +41898,8 @@
         },
         {
           "start_ms": 247280,
-          "line_id": "lyric-line-6f8d2963a420"
+          "line_id": "",
+          "source_text": "』"
         }
       ]
     },
@@ -46162,222 +46269,241 @@
       "source": "netease_recording_metadata",
       "source_track_id": "2703856185",
       "recording_id": "song-15e2b8f183-v-8d5a9d98da",
-      "lyric_document_id": "song-15e2b8f183-lyrics-32005819aa",
+      "lyric_document_id": "song-15e2b8f183-lyrics",
       "alignment": "complete",
       "lines": [
         {
           "start_ms": 910,
-          "line_id": "lyric-line-40359fc4c1d4"
+          "line_id": "lyric-line-9c3a5c637405",
+          "source_text": "走れ 走れ もっと先まで"
         },
         {
           "start_ms": 4910,
-          "line_id": "lyric-line-31ce02552041"
+          "line_id": "lyric-line-1ad95b257eb7"
         },
         {
           "start_ms": 8530,
-          "line_id": "lyric-line-5066bb47ed24"
+          "line_id": "lyric-line-d23b7e6ba592"
         },
         {
           "start_ms": 12600,
-          "line_id": "lyric-line-6f6490142c2a",
+          "line_id": "lyric-line-c92faf12e4d2",
           "source_text": "だからみんな…Let’s Go Starting Gate!"
         },
         {
           "start_ms": 19460,
-          "line_id": "lyric-line-bdc195443920"
+          "line_id": "lyric-line-dd232cba61d6",
+          "source_text": "好奇心が見つけた ハロー 未来の尻尾"
         },
         {
           "start_ms": 26540,
-          "line_id": "lyric-line-b1da2625b031"
+          "line_id": "lyric-line-bf798d45d39f",
+          "source_text": "射程距離にとらえて つかまえちゃおう 今すぐ！"
         },
         {
           "start_ms": 33400,
-          "line_id": "lyric-line-62030c465033"
+          "line_id": "lyric-line-a640f6a6c90f",
+          "source_text": "教科書にも載ってない トクベツなExperience"
         },
         {
           "start_ms": 40400,
-          "line_id": "lyric-line-aabee52c1e1b"
+          "line_id": "lyric-line-4b31a4db8831",
+          "source_text": "追いかける準備なら とっくにオールオーケー！"
         },
         {
           "start_ms": 46400,
-          "line_id": "lyric-line-b8bd9ce3858d"
+          "line_id": "lyric-line-3f2f1903b48e",
+          "source_text": "じれったい じっくり ゆっくりなんてのは"
         },
         {
           "start_ms": 50080,
-          "line_id": "lyric-line-934f993ffbc5",
+          "line_id": "lyric-line-d337e16a63fd",
           "source_text": "（No Thank You! No Thank You!）"
         },
         {
           "start_ms": 51960,
-          "line_id": "lyric-line-1e2b636e43c3",
+          "line_id": "lyric-line-8dcc7d353c1a",
           "source_text": "微妙っぽい 雰囲気 やっぱり私たちは（Run! Run! Run!）"
         },
         {
           "start_ms": 56550,
-          "line_id": "lyric-line-380fd23f75dd",
+          "line_id": "lyric-line-c4527c9e6f54",
           "source_text": "全力がいいな（Ready…Go!）"
         },
         {
           "start_ms": 58780,
-          "line_id": "lyric-line-0024c1c4f5ec",
+          "line_id": "lyric-line-bfe0c5123a13",
           "source_text": "走れ 走れ もっと先まで（Dash! Dash!）"
         },
         {
           "start_ms": 62390,
-          "line_id": "lyric-line-067621ca4966",
+          "line_id": "lyric-line-b866e3c6d3cc",
           "source_text": "止まらない風みたいに（Byu-n! Byu-n!）"
         },
         {
           "start_ms": 66010,
-          "line_id": "lyric-line-6ec528a4c1b8"
+          "line_id": "lyric-line-66443224cc43",
+          "source_text": "トゥインクル 光を纏って（Only One）"
         },
         {
           "start_ms": 69680,
-          "line_id": "lyric-line-ba1d08cda422"
+          "line_id": "lyric-line-fd99a91ad33b",
+          "source_text": "ギューンと加速しよう（グロウアップ・シャイン！）"
         },
         {
           "start_ms": 73290,
-          "line_id": "lyric-line-fe309c9c75f9",
+          "line_id": "lyric-line-62356ead575a",
           "source_text": "早く 早く もっと先まで（Dash! Dash!）"
         },
         {
           "start_ms": 76940,
-          "line_id": "lyric-line-1a65ad432e43",
+          "line_id": "lyric-line-1cbf399c36b5",
           "source_text": "終わらない夢のなかを（Byu-n! Byu-n!）"
         },
         {
           "start_ms": 80610,
-          "line_id": "lyric-line-21fbe2172812"
+          "line_id": "lyric-line-cd259dde88f1"
         },
         {
           "start_ms": 84280,
-          "line_id": "lyric-line-5f40002530ce",
+          "line_id": "lyric-line-7b1446929669",
           "source_text": "行こうよみんな… Let’s Go Starting Gate!"
         },
         {
           "start_ms": 91250,
-          "line_id": "lyric-line-b8b6034d03fc"
+          "line_id": "lyric-line-e345dab9f564",
+          "source_text": "同じはずの街並み ハロー ざわつくのは"
         },
         {
           "start_ms": 98250,
-          "line_id": "lyric-line-4b24bd6a9e6b"
+          "line_id": "lyric-line-3c8ae58332b3",
+          "source_text": "この耳は分かるから スタート告げる 音色が！"
         },
         {
           "start_ms": 105140,
-          "line_id": "lyric-line-44d87af28df5"
+          "line_id": "lyric-line-2af2936a8619",
+          "source_text": "オハヨウのチャイムかな 正解はFanfare"
         },
         {
           "start_ms": 112170,
-          "line_id": "lyric-line-1b1f130ac429"
+          "line_id": "lyric-line-d8a8bfaa26d6",
+          "source_text": "テンションも踵もね 上がってく準備オーケー！"
         },
         {
           "start_ms": 118260,
-          "line_id": "lyric-line-ee8707126368"
+          "line_id": "lyric-line-831157d8ca82",
+          "source_text": "めいっぱい ビックリ ドッキリなんてのも"
         },
         {
           "start_ms": 121950,
-          "line_id": "lyric-line-22fc9ca9a10c",
+          "line_id": "lyric-line-18316ad30c56",
           "source_text": "（Yes Feeling Good! Yes Feeling Good!）"
         },
         {
           "start_ms": 123950,
-          "line_id": "lyric-line-28bc5ec97069",
+          "line_id": "lyric-line-dc54753fe5d5",
           "source_text": "具体的想像 正直つかなくても（Fun! Fun! Fun!）"
         },
         {
           "start_ms": 128470,
-          "line_id": "lyric-line-0422f4136f50",
+          "line_id": "lyric-line-1480d76b9336",
           "source_text": "感じていいよね？（Ready Go! Ready Go! Open The Gate!）"
         },
         {
           "start_ms": 130740,
-          "line_id": "lyric-line-c1ba758b142d",
+          "line_id": "lyric-line-f774d491f1e9",
           "source_text": "急げ 急げ 前を向いたら（Dash! Dash!）"
         },
         {
           "start_ms": 134390,
-          "line_id": "lyric-line-8162a389f01f",
+          "line_id": "lyric-line-c68208056552",
           "source_text": "砂埃気にしないで（Byu-n! Byu-n!）"
         },
         {
           "start_ms": 138060,
-          "line_id": "lyric-line-200ee0136010"
+          "line_id": "lyric-line-054e6e1d56ac",
+          "source_text": "巻き起こるドラマ楽しんで（Only One）"
         },
         {
           "start_ms": 141720,
-          "line_id": "lyric-line-3f6493d4c523"
+          "line_id": "lyric-line-f1f17fef4222",
+          "source_text": "凛と駆け抜けよう（グロウアップ・シャイン！）"
         },
         {
           "start_ms": 145390,
-          "line_id": "lyric-line-c1dd604a883b",
+          "line_id": "lyric-line-9ac15d31b9f7",
           "source_text": "進め 進め 前を向いたら（Dash! Dash!）"
         },
         {
           "start_ms": 149020,
-          "line_id": "lyric-line-df822296e087",
+          "line_id": "lyric-line-c0d593eea1d5",
           "source_text": "蹄鉄の音に似てる（Byu-n! Byu-n!）"
         },
         {
           "start_ms": 152690,
-          "line_id": "lyric-line-8e186606d41b"
+          "line_id": "lyric-line-12d616b7a473"
         },
         {
           "start_ms": 156400,
-          "line_id": "lyric-line-c477268b7d1d",
+          "line_id": "lyric-line-0efac7cdbbb9",
           "source_text": "行くっきゃない…Let’s Go Pretty Girls!"
         },
         {
           "start_ms": 165340,
-          "line_id": "lyric-line-e0fce5fbdccb"
+          "line_id": "lyric-line-dda1e85e17b9",
+          "source_text": "おいで おいで 聞こえている"
         },
         {
           "start_ms": 170050,
-          "line_id": "lyric-line-8dba8632fec3"
+          "line_id": "lyric-line-86aefa844f24",
+          "source_text": "予感という 内なる声（Welcome To My Road）"
         },
         {
           "start_ms": 175770,
-          "line_id": "lyric-line-fa913ddca405"
+          "line_id": "lyric-line-cde25d86f451"
         },
         {
           "start_ms": 177480,
-          "line_id": "lyric-line-a72a8759cfa1",
+          "line_id": "lyric-line-568108bac7ae",
           "source_text": "走れ 走れ もっと先まで（Dash! Dash!）"
         },
         {
           "start_ms": 181090,
-          "line_id": "lyric-line-f40063ecfd2d",
+          "line_id": "lyric-line-89db5f6e8162",
           "source_text": "止まらない風みたいに（Byu-n! Byu-n!）"
         },
         {
           "start_ms": 184760,
-          "line_id": "lyric-line-724931d3d232"
+          "line_id": "lyric-line-a3fd5c4c7aea",
+          "source_text": "トゥインクル 光を纏って（Only One）"
         },
         {
           "start_ms": 188420,
-          "line_id": "lyric-line-f9dbeec20d25"
+          "line_id": "lyric-line-1b65648a972b",
+          "source_text": "ギューンと加速しよう（グロウアップ・シャイン！）"
         },
         {
           "start_ms": 192090,
-          "line_id": "lyric-line-e272cbaf64b6",
+          "line_id": "lyric-line-73023965dc89",
           "source_text": "早く 早く もっと先まで（Dash! Dash!）"
         },
         {
           "start_ms": 195740,
-          "line_id": "lyric-line-c90558418876",
+          "line_id": "lyric-line-2df26694807e",
           "source_text": "終わらない夢のなかを（Byu-n! Byu-n!）"
         },
         {
           "start_ms": 199410,
-          "line_id": "lyric-line-0ed5dfced47d"
+          "line_id": "lyric-line-d65b789c0692"
         },
         {
           "start_ms": 203080,
-          "line_id": "lyric-line-63ae0deea5f2",
+          "line_id": "lyric-line-9d30cc73da62",
           "source_text": "行こうよみんな…Let’s Go Starting Gate!"
         },
         {
           "start_ms": 206540,
-          "line_id": "lyric-line-48cd19a72e9e",
+          "line_id": "lyric-line-e666194afff5",
           "source_text": "賭けてみよう…Let’s Go Starting Gate!"
         }
       ]
@@ -46387,7 +46513,7 @@
       "source_track_id": "2703860080",
       "recording_id": "song-15e2b8f183-v-4014467ec7",
       "lyric_document_id": "song-15e2b8f183-lyrics-0267e77985",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 500,
@@ -46486,11 +46612,12 @@
         },
         {
           "start_ms": 67250,
-          "line_id": "lyric-line-847fc46c7145"
+          "line_id": "",
+          "source_text": "）"
         },
         {
           "start_ms": 67900,
-          "line_id": "lyric-line-a65c36356424",
+          "line_id": "lyric-line-847fc46c7145",
           "source_text": "早く 早く もっと先まで（Dash!"
         },
         {
@@ -46881,153 +47008,156 @@
       "source": "netease_recording_metadata",
       "source_track_id": "505267116",
       "recording_id": "song-5c948cafdd-v-5c948cafdd",
-      "lyric_document_id": "song-5c948cafdd-lyrics-aec506dbbc",
+      "lyric_document_id": "song-5c948cafdd-lyrics",
       "alignment": "complete",
       "lines": [
         {
           "start_ms": 25760,
-          "line_id": "lyric-line-7fcc7fac8b62"
+          "line_id": "lyric-line-5caa77d4b96c",
+          "source_text": "下を向くことをやめると誓って"
         },
         {
           "start_ms": 30800,
-          "line_id": "lyric-line-12a52d9eb6d4"
+          "line_id": "lyric-line-3eb48f08c661"
         },
         {
           "start_ms": 37780,
-          "line_id": "lyric-line-812906011b1e"
+          "line_id": "lyric-line-e06b94dddb87",
+          "source_text": "誰かの足跡に興味などないから"
         },
         {
           "start_ms": 42980,
-          "line_id": "lyric-line-da8134a98ca7"
+          "line_id": "lyric-line-f64924791614"
         },
         {
           "start_ms": 48650,
-          "line_id": "lyric-line-f5beb078277c"
+          "line_id": "lyric-line-2c11b188b34f"
         },
         {
           "start_ms": 51690,
-          "line_id": "lyric-line-1ef8b2529fcb"
+          "line_id": "lyric-line-64ecef0fab2d"
         },
         {
           "start_ms": 55420,
-          "line_id": "lyric-line-86be45614320"
+          "line_id": "lyric-line-549aca4cc8b5"
         },
         {
           "start_ms": 62150,
-          "line_id": "lyric-line-ff396cfcd4aa",
+          "line_id": "lyric-line-83bcf76496f7",
           "source_text": "「負けない...！」"
         },
         {
           "start_ms": 63280,
-          "line_id": "lyric-line-186f03fcad6f"
+          "line_id": "lyric-line-495ce4479efa"
         },
         {
           "start_ms": 69450,
-          "line_id": "lyric-line-9eae686fd964"
+          "line_id": "lyric-line-8b9208fa63f8"
         },
         {
           "start_ms": 75560,
-          "line_id": "lyric-line-97a724fce271"
+          "line_id": "lyric-line-937bdde68d48"
         },
         {
           "start_ms": 78520,
-          "line_id": "lyric-line-657602bfcbfe"
+          "line_id": "lyric-line-ac47842bbda3"
         },
         {
           "start_ms": 81560,
-          "line_id": "lyric-line-bbce6348fdbf"
+          "line_id": "lyric-line-691c4864e2b1"
         },
         {
           "start_ms": 84630,
-          "line_id": "lyric-line-a53f9c1fa463"
+          "line_id": "lyric-line-4ff320ddd6b1"
         },
         {
           "start_ms": 100610,
-          "line_id": "lyric-line-fb9ced741b73"
+          "line_id": "lyric-line-f0b3fc0a68e6",
+          "source_text": "上を目指すほど何かに怯えて"
         },
         {
           "start_ms": 105660,
-          "line_id": "lyric-line-80cdcad177a8"
+          "line_id": "lyric-line-baafc8ebc6ee"
         },
         {
           "start_ms": 112740,
-          "line_id": "lyric-line-e9803d287656"
+          "line_id": "lyric-line-fbd1127a4a4d"
         },
         {
           "start_ms": 117780,
-          "line_id": "lyric-line-3a07d79e0d53"
+          "line_id": "lyric-line-432b3c2f525e"
         },
         {
           "start_ms": 123600,
-          "line_id": "lyric-line-af566bfad50e"
+          "line_id": "lyric-line-84cf56ea9409"
         },
         {
           "start_ms": 126520,
-          "line_id": "lyric-line-de26e7411a97"
+          "line_id": "lyric-line-0fe1d31a39e2"
         },
         {
           "start_ms": 130190,
-          "line_id": "lyric-line-80dddb892bb7"
+          "line_id": "lyric-line-90db96ef6bfb"
         },
         {
           "start_ms": 136920,
-          "line_id": "lyric-line-0005291aaaa0"
+          "line_id": "lyric-line-e5cb57b2e5d7"
         },
         {
           "start_ms": 138230,
-          "line_id": "lyric-line-f11647518a3b"
+          "line_id": "lyric-line-f093e8481571"
         },
         {
           "start_ms": 144120,
-          "line_id": "lyric-line-36d3ec32c1e3"
+          "line_id": "lyric-line-c184fe64228c"
         },
         {
           "start_ms": 150430,
-          "line_id": "lyric-line-2ce4c3b96f35"
+          "line_id": "lyric-line-61dc836530b8"
         },
         {
           "start_ms": 153380,
-          "line_id": "lyric-line-f37fc0c68c0e"
+          "line_id": "lyric-line-3f75b01bdc77"
         },
         {
           "start_ms": 156440,
-          "line_id": "lyric-line-e675f2af3fe5"
+          "line_id": "lyric-line-91de75e19ac9"
         },
         {
           "start_ms": 159480,
-          "line_id": "lyric-line-806f13581bc7"
+          "line_id": "lyric-line-cfd13ea5fc83"
         },
         {
           "start_ms": 190190,
-          "line_id": "lyric-line-dd732aa1dd30"
+          "line_id": "lyric-line-a5c3df0a5076"
         },
         {
           "start_ms": 196220,
-          "line_id": "lyric-line-51e1053cbf1e"
+          "line_id": "lyric-line-54b716f2bc3f"
         },
         {
           "start_ms": 204050,
-          "line_id": "lyric-line-c920b2d0d7eb"
+          "line_id": "lyric-line-56ad2da2e813"
         },
         {
           "start_ms": 209820,
-          "line_id": "lyric-line-7c3b44326d2c"
+          "line_id": "lyric-line-9808ff797982"
         },
         {
           "start_ms": 216050,
-          "line_id": "lyric-line-c621943f52e2"
+          "line_id": "lyric-line-d9e07cd1f24a"
         },
         {
           "start_ms": 219130,
-          "line_id": "lyric-line-00df8bd558d6"
+          "line_id": "lyric-line-7a21393b8047"
         },
         {
           "start_ms": 222200,
-          "line_id": "lyric-line-4123334179f3"
+          "line_id": "lyric-line-4a80320aca31"
         },
         {
           "start_ms": 225310,
-          "line_id": "lyric-line-a45e29f39a2f"
+          "line_id": "lyric-line-44ddaf643bc6"
         }
       ]
     },
@@ -53847,132 +53977,140 @@
       "source": "netease_recording_metadata",
       "source_track_id": "557583195",
       "recording_id": "song-bcf0fb77db-v-bcf0fb77db",
-      "lyric_document_id": "song-bcf0fb77db-lyrics-3cd9f9493c",
-      "alignment": "complete",
+      "lyric_document_id": "song-bcf0fb77db-lyrics",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 3400,
-          "line_id": "lyric-line-82916d8f5745"
+          "line_id": "",
+          "source_text": "-"
         },
         {
           "start_ms": 7500,
-          "line_id": "lyric-line-63d7da932339"
+          "line_id": "lyric-line-2e4d2470c922"
         },
         {
           "start_ms": 13440,
-          "line_id": "lyric-line-217e4f5221aa"
+          "line_id": "lyric-line-49e55aedb179"
         },
         {
           "start_ms": 20620,
-          "line_id": "lyric-line-21dca5e638dc"
+          "line_id": "lyric-line-0d3be58c963b"
         },
         {
           "start_ms": 24960,
-          "line_id": "lyric-line-b13dddfc1cf3"
+          "line_id": "lyric-line-ad8e3d74060b"
         },
         {
           "start_ms": 35670,
-          "line_id": "lyric-line-0080e47a7b22"
+          "line_id": "lyric-line-3adad7e76afa"
         },
         {
           "start_ms": 41990,
-          "line_id": "lyric-line-abd35da4076f"
+          "line_id": "lyric-line-02cf81f4be4b"
         },
         {
           "start_ms": 44990,
-          "line_id": "lyric-line-a4344b3c616b"
+          "line_id": "lyric-line-3a3923c151b0"
         },
         {
           "start_ms": 53250,
-          "line_id": "lyric-line-bff841e26a7e"
+          "line_id": "lyric-line-d568437013ef",
+          "source_text": "「アタシがついてるぞ！行けー！」"
         },
         {
           "start_ms": 56250,
-          "line_id": "lyric-line-b40364d99459"
+          "line_id": "lyric-line-b515f471c49c",
+          "source_text": "負けるな　まっすぐ　正義の鼓動つらぬけ！"
         },
         {
           "start_ms": 61890,
-          "line_id": "lyric-line-fc3e26bf98c1"
+          "line_id": "lyric-line-12e4ed2930db"
         },
         {
           "start_ms": 67800,
-          "line_id": "lyric-line-aeb422200577"
+          "line_id": "lyric-line-57da77399dc6"
         },
         {
           "start_ms": 73410,
-          "line_id": "lyric-line-65510287c7ac"
+          "line_id": "lyric-line-cc4504db7232"
         },
         {
           "start_ms": 80470,
-          "line_id": "lyric-line-15a4635d09cf"
+          "line_id": "lyric-line-f93537c8236e"
         },
         {
           "start_ms": 87860,
-          "line_id": "lyric-line-f69a87c264d9"
+          "line_id": "lyric-line-5f24afc6080a"
         },
         {
           "start_ms": 98570,
-          "line_id": "lyric-line-1ce246ced260"
+          "line_id": "lyric-line-cfe0f7e46434"
         },
         {
           "start_ms": 104810,
-          "line_id": "lyric-line-9ce46c8cd31c"
+          "line_id": "lyric-line-d0cbf02fcb67"
         },
         {
           "start_ms": 107740,
-          "line_id": "lyric-line-e3af50f852e0"
+          "line_id": "lyric-line-ff5a59b3e544"
         },
         {
           "start_ms": 116520,
-          "line_id": "lyric-line-116c379287c2"
+          "line_id": "",
+          "source_text": "-"
         },
         {
           "start_ms": 145010,
-          "line_id": "lyric-line-d527b8ea7909"
+          "line_id": "lyric-line-327b08110f42"
         },
         {
           "start_ms": 155750,
-          "line_id": "lyric-line-52515b9166ab"
+          "line_id": "lyric-line-460a298c0bfe"
         },
         {
           "start_ms": 161860,
-          "line_id": "lyric-line-9daf10fa1fa0"
+          "line_id": "lyric-line-3d17ad2d6026"
         },
         {
           "start_ms": 165130,
-          "line_id": "lyric-line-7ae31bb41ff9"
+          "line_id": "lyric-line-65403447a958"
         },
         {
           "start_ms": 173410,
-          "line_id": "lyric-line-330ccc91cc46"
+          "line_id": "lyric-line-380e7535ca8d",
+          "source_text": "「平和と君は…アタシが守る！」"
         },
         {
           "start_ms": 176360,
-          "line_id": "lyric-line-a8f50914739d"
+          "line_id": "lyric-line-3b6d7ed74757",
+          "source_text": "負けるな　まっすぐ　正義の鼓動つらぬけ！"
         },
         {
           "start_ms": 181980,
-          "line_id": "lyric-line-8a3bcf5b3358"
+          "line_id": "lyric-line-b8b1e5528023"
         },
         {
           "start_ms": 187800,
-          "line_id": "lyric-line-13da9e88b279"
+          "line_id": "lyric-line-eb6a06209ffe"
         },
         {
           "start_ms": 193500,
-          "line_id": "lyric-line-d77f421eca5e"
+          "line_id": "lyric-line-c4b547362c3d"
         },
         {
           "start_ms": 200420,
-          "line_id": "lyric-line-a4dd7b1a202e"
+          "line_id": "lyric-line-c688ea47ef0b"
         },
         {
           "start_ms": 205170,
-          "line_id": "lyric-line-9c732b8b02f5"
+          "line_id": "lyric-line-212c7fd88eb0",
+          "source_text": "「悪の思い通りになんか…させないんだからな！」"
         },
         {
           "start_ms": 208260,
-          "line_id": "lyric-line-0d935dc29255"
+          "line_id": "lyric-line-581a7300f794",
+          "source_text": "「一撃入魂☆ペガサスパンチ！」"
         }
       ]
     },
@@ -53981,7 +54119,7 @@
       "source_track_id": "2703854390",
       "recording_id": "song-bcf0fb77db-v-42d7f8b06b",
       "lyric_document_id": "song-bcf0fb77db-lyrics",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 7670,
@@ -54021,11 +54159,13 @@
         },
         {
           "start_ms": 44520,
-          "line_id": "lyric-line-b515f471c49c"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 50510,
-          "line_id": "lyric-line-4d6b53aec70e"
+          "line_id": "lyric-line-b515f471c49c",
+          "source_text": "負けるな　まっすぐ　正義の鼓動つらぬけ！"
         },
         {
           "start_ms": 56580,
@@ -54081,11 +54221,13 @@
         },
         {
           "start_ms": 173800,
-          "line_id": "lyric-line-3b6d7ed74757"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 175190,
-          "line_id": "lyric-line-0ff76f8b378e"
+          "line_id": "lyric-line-3b6d7ed74757",
+          "source_text": "負けるな　まっすぐ　正義の鼓動つらぬけ！"
         },
         {
           "start_ms": 182310,
@@ -54109,15 +54251,18 @@
         },
         {
           "start_ms": 206280,
-          "line_id": "lyric-line-581a7300f794"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 207950,
-          "line_id": "lyric-line-184ba864df9e"
+          "line_id": "lyric-line-581a7300f794",
+          "source_text": "「一撃入魂☆ペガサスパンチ！"
         },
         {
           "start_ms": 210420,
-          "line_id": "lyric-line-de8c415b4a3a"
+          "line_id": "",
+          "source_text": "」"
         }
       ]
     },
@@ -54460,7 +54605,7 @@
       "source_track_id": "1307379589",
       "recording_id": "song-c7cdb22480-v-c2dc77b1e7",
       "lyric_document_id": "song-c7cdb22480-lyrics-7f4fe51483",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 0,
@@ -54508,7 +54653,8 @@
         },
         {
           "start_ms": 85785,
-          "line_id": "lyric-line-bc8da4c75e78"
+          "line_id": "",
+          "source_text": "…"
         }
       ]
     },
@@ -54827,7 +54973,7 @@
       "source_track_id": "2703859265",
       "recording_id": "song-d735907039-v-24dca374b8",
       "lyric_document_id": "song-d735907039-lyrics",
-      "alignment": "complete",
+      "alignment": "partial",
       "lines": [
         {
           "start_ms": 14340,
@@ -54859,11 +55005,13 @@
         },
         {
           "start_ms": 40330,
-          "line_id": "lyric-line-a16cb9a87187"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 41540,
-          "line_id": "lyric-line-26d24b08533b"
+          "line_id": "lyric-line-a16cb9a87187",
+          "source_text": "振り返れば"
         },
         {
           "start_ms": 42460,
@@ -54947,11 +55095,13 @@
         },
         {
           "start_ms": 112890,
-          "line_id": "lyric-line-f45c58f469e2"
+          "line_id": "",
+          "source_text": "」"
         },
         {
           "start_ms": 118540,
-          "line_id": "lyric-line-1f576729f5f2"
+          "line_id": "lyric-line-f45c58f469e2",
+          "source_text": "走り出せば"
         },
         {
           "start_ms": 121800,
@@ -75129,227 +75279,184 @@
       "source_id": 26367625,
       "recording_id": "song-9b2c62c729-v-9b2c62c729",
       "lyric_document_id": "song-9b2c62c729-lyrics",
-      "alignment": "review",
+      "alignment": "complete",
       "lines": [
         {
           "start_ms": 35170,
-          "line_id": "",
-          "source_text": "あがる息に胸が震えてる"
+          "line_id": "lyric-line-0d6085dbb7a9"
         },
         {
           "start_ms": 41040,
-          "line_id": "",
-          "source_text": "いろんな気持ち くしゃくしゃの涙だ"
+          "line_id": "lyric-line-e47e1833e54f"
         },
         {
           "start_ms": 47170,
-          "line_id": "",
-          "source_text": "夢を探して見つけるより"
+          "line_id": "lyric-line-32268952f601"
         },
         {
           "start_ms": 52660,
-          "line_id": "",
-          "source_text": "見続けるのが大変なんだね"
+          "line_id": "lyric-line-9a10a6d3e680"
         },
         {
           "start_ms": 58420,
-          "line_id": "",
-          "source_text": "世間の風はさ 好きなこと言うけど"
+          "line_id": "lyric-line-1ce495a9d86b"
         },
         {
           "start_ms": 64490,
-          "line_id": "",
-          "source_text": "大切な人がいつも優しくて"
+          "line_id": "lyric-line-645bbeae1869"
         },
         {
           "start_ms": 70630,
-          "line_id": "",
-          "source_text": "頑張りすぎて 考えすぎでも"
+          "line_id": "lyric-line-ff4183897db2"
         },
         {
           "start_ms": 76420,
-          "line_id": "",
-          "source_text": "わたしたちの日々は 愛しい"
+          "line_id": "lyric-line-1e329a112757"
         },
         {
           "start_ms": 83770,
-          "line_id": "",
-          "source_text": "どんなに苦しくなっても"
+          "line_id": "lyric-line-9361d2e37823"
         },
         {
           "start_ms": 87920,
-          "line_id": "",
-          "source_text": "泣きそうになっても"
+          "line_id": "lyric-line-6f8dba72c838"
         },
         {
           "start_ms": 91030,
-          "line_id": "",
-          "source_text": "輝く瞬間を信じたから"
+          "line_id": "lyric-line-4b85dad87aac"
         },
         {
           "start_ms": 96640,
-          "line_id": "",
-          "source_text": "間違いじゃないよ 今この気持ちが"
+          "line_id": "lyric-line-b2e73b249653"
         },
         {
           "start_ms": 102740,
-          "line_id": "",
-          "source_text": "夢のこたえになってゆく"
+          "line_id": "lyric-line-a568c2b28a71"
         },
         {
           "start_ms": 107290,
-          "line_id": "",
-          "source_text": "これからも"
+          "line_id": "lyric-line-a4eecfd1e515"
         },
         {
           "start_ms": 120200,
-          "line_id": "",
-          "source_text": "生まれた時から気づいてたの"
+          "line_id": "lyric-line-5367cf83ead8"
         },
         {
           "start_ms": 125890,
-          "line_id": "",
-          "source_text": "やるべきことが わたしにもあったよね"
+          "line_id": "lyric-line-7bc889850fe7"
         },
         {
           "start_ms": 132160,
-          "line_id": "",
-          "source_text": "運命とはね 変えてくもの"
+          "line_id": "lyric-line-748ab9c3270f"
         },
         {
           "start_ms": 137560,
-          "line_id": "",
-          "source_text": "そうやって自分 励ましてきた"
+          "line_id": "lyric-line-a0829ce27d99"
         },
         {
           "start_ms": 143430,
-          "line_id": "",
-          "source_text": "弱気な横顔 見せられなかったよ"
+          "line_id": "lyric-line-432c464c8f0d"
         },
         {
           "start_ms": 149540,
-          "line_id": "",
-          "source_text": "期待と応援 背中に抱えて"
+          "line_id": "lyric-line-d252bc652f64"
         },
         {
           "start_ms": 155550,
-          "line_id": "",
-          "source_text": "大丈夫ってね 聞かれるたびにね"
+          "line_id": "lyric-line-6e259802a10b"
         },
         {
           "start_ms": 161330,
-          "line_id": "",
-          "source_text": "嬉しさと厳しさ 感じた"
+          "line_id": "lyric-line-357b9adf4fb3"
         },
         {
           "start_ms": 168570,
-          "line_id": "",
-          "source_text": "何回悔しくなっても"
+          "line_id": "lyric-line-3e95867a9cbe"
         },
         {
           "start_ms": 172780,
-          "line_id": "",
-          "source_text": "逃げないで来たの"
+          "line_id": "lyric-line-364376009036"
         },
         {
           "start_ms": 175900,
-          "line_id": "",
-          "source_text": "輝く姿を見せたかった"
+          "line_id": "lyric-line-a542990d95af"
         },
         {
           "start_ms": 181640,
-          "line_id": "",
-          "source_text": "大きな希望も 叶えられるんだ"
+          "line_id": "lyric-line-57a7fc14cf0b"
         },
         {
           "start_ms": 187810,
-          "line_id": "",
-          "source_text": "夢のこたえが待っていた"
+          "line_id": "lyric-line-926b61c80c8d"
         },
         {
           "start_ms": 192180,
-          "line_id": "",
-          "source_text": "この場所で"
+          "line_id": "lyric-line-6ae1e379127d"
         },
         {
           "start_ms": 216560,
-          "line_id": "",
-          "source_text": "わたしは誰よりも強いと"
+          "line_id": "lyric-line-6a27187797d5"
         },
         {
           "start_ms": 222470,
-          "line_id": "",
+          "line_id": "lyric-line-1ec4512d0b5a",
           "source_text": "いまなら いまなら 声にできる"
         },
         {
           "start_ms": 228380,
-          "line_id": "",
-          "source_text": "遠く 永すぎたゴールは"
+          "line_id": "lyric-line-3b69c079ec7e"
         },
         {
           "start_ms": 234030,
-          "line_id": "",
-          "source_text": "触れれば こんなに心が溢れる"
+          "line_id": "lyric-line-e236db3f4612"
         },
         {
           "start_ms": 245410,
-          "line_id": "",
-          "source_text": "ねぇ辿り着いたよ"
+          "line_id": "lyric-line-75ec81e104b8"
         },
         {
           "start_ms": 248830,
-          "line_id": "",
-          "source_text": "ここまで来れたよ"
+          "line_id": "lyric-line-d78bb58ae235"
         },
         {
           "start_ms": 252100,
-          "line_id": "",
-          "source_text": "輝くわたしになれたかな"
+          "line_id": "lyric-line-a12b02fbb518"
         },
         {
           "start_ms": 257720,
-          "line_id": "",
-          "source_text": "宝石のように光ってる涙を"
+          "line_id": "lyric-line-a66172cb4799"
         },
         {
           "start_ms": 263640,
-          "line_id": "",
-          "source_text": "大切にしてずっと明日も"
+          "line_id": "lyric-line-7c5e132a9d0f"
         },
         {
           "start_ms": 269250,
-          "line_id": "",
-          "source_text": "また苦しくなっても"
+          "line_id": "lyric-line-b7b639fae29b"
         },
         {
           "start_ms": 272440,
-          "line_id": "",
-          "source_text": "泣きそうになっても"
+          "line_id": "lyric-line-2fc9f7544dcf"
         },
         {
           "start_ms": 275410,
-          "line_id": "",
-          "source_text": "輝く瞬間を信じられるの"
+          "line_id": "lyric-line-b3d9e2675403"
         },
         {
           "start_ms": 281160,
-          "line_id": "",
-          "source_text": "間違いじゃないよ 今この気持ちが"
+          "line_id": "lyric-line-25e0d22451de"
         },
         {
           "start_ms": 287080,
-          "line_id": "",
-          "source_text": "夢のこたえになってゆく"
+          "line_id": "lyric-line-03127a10af96"
         },
         {
           "start_ms": 291660,
-          "line_id": "",
-          "source_text": "まぶたがこの景色を映してゆく"
+          "line_id": "lyric-line-5ea76585ee62"
         },
         {
           "start_ms": 297400,
-          "line_id": "",
-          "source_text": "これからも"
+          "line_id": "lyric-line-5af7fa2941bd"
         }
       ]
     }

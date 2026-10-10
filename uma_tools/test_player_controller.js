@@ -12,7 +12,7 @@ class FakeAudio {
     this.duration = 0;
     this.readyState = 0;
     this.playbackRate = 1;
-    this.buffered = { length: 0, end: function () { return 0; } };
+    this.buffered = { length: 0, start: function () { return 0; }, end: function () { return 0; } };
     this.rejectPlay = false;
     this.loadCount = 0;
     this.playCount = 0;
@@ -111,6 +111,12 @@ async function run() {
   const normalized = normalizeTrack(track('a'));
   assert.equal(normalized.vocalists[0].id, 'va-a', 'voice actor IDs are normalized for clickable credits');
   assert.equal(normalized.versionId, 'version-a', 'recording version identity is kept for synchronized lyrics');
+  const releases = setup();
+  await releases.controller.enqueueTracks([
+    Object.assign(track('a'), { id: 'version-a' }),
+    Object.assign(track('a'), { id: 'version-a', url: 'https://audio.example/alternate.mp3' })
+  ]);
+  assert.equal(releases.state.queue.length, 2, 'distinct recordings sharing a version are not dropped');
 
   const first = setup();
   await first.controller.playTrack(track('a'));
@@ -121,6 +127,9 @@ async function run() {
   first.audio.currentTime = 42;
   first.audio.emit('timeupdate');
   assert.equal(first.state.currentTime, 42);
+  first.audio.buffered = { length: 2, start: (i) => i ? 100 : 0, end: (i) => i ? 180 : 50 };
+  first.audio.emit('progress');
+  assert.equal(first.state.buffered, 50, 'buffer progress cannot jump across an unbuffered gap');
   assert.equal(first.state.duration, 180);
   first.audio.currentTime = 1;
   first.audio.emit('timeupdate');
@@ -150,8 +159,8 @@ async function run() {
 
   const appendedAlbum = setup();
   await appendedAlbum.controller.playTrack(track('a'));
-  await appendedAlbum.controller.enqueueTracks([track('b'), track('c'), track('a')], 0, 'Album');
-  assert.deepEqual(appendedAlbum.state.queue.map(function (row) { return row.id; }), ['a', 'b', 'c']);
+  await appendedAlbum.controller.enqueueTracks([track('b'), track('c'), track('a')], 'Album');
+  assert.deepEqual(appendedAlbum.state.queue.map(function (row) { return row.id; }), ['b', 'c', 'a']);
   assert.equal(appendedAlbum.state.current.id, 'a', 'adding to the queue never changes the current track');
   assert.equal(appendedAlbum.audio.paused, false, 'adding to the queue never interrupts playback');
   assert.equal(appendedAlbum.state.contextLabel, '播放列表', 'mixed sources use the generic queue label');
@@ -169,13 +178,13 @@ async function run() {
   assert.equal(movedBlock.audio.loadCount, loadBeforeMove, 'moving a current track does not reload its source');
 
   movedBlock.controller.dismiss();
-  await movedBlock.controller.enqueueTracks([track('e')], 0, 'Duplicate');
-  assert.equal(movedBlock.state.visible, false, 'adding only an existing single track does not reopen a dismissed dock');
+  await movedBlock.controller.enqueueTracks([track('e')], 'Duplicate');
+  assert.equal(movedBlock.state.visible, true, 'adding an existing track reopens a dismissed dock');
   await movedBlock.controller.appendBlock([track('e'), track('f')], 'New block');
   assert.equal(movedBlock.state.visible, true, 'a successful group addition reopens a dismissed dock');
 
   const queuedOnly = setup();
-  await queuedOnly.controller.enqueueTracks([track('a'), track('b')], 0, 'Album');
+  await queuedOnly.controller.enqueueTracks([track('a'), track('b')], 'Album');
   assert.equal(queuedOnly.state.current, null, 'adding to an empty queue does not load a track');
   assert.equal(queuedOnly.state.queue.length, 2);
   assert.equal(queuedOnly.audio.src, '');
@@ -313,7 +322,7 @@ async function run() {
   await recovering.controller.playTrack(track('recover'));
   recovering.audio.metadata(120);
   recovering.audio.currentTime = 20;
-  recovering.audio.buffered = { length: 1, end: function () { return 80; } };
+  recovering.audio.buffered = { length: 1, start: function () { return 0; }, end: function () { return 80; } };
   recovering.audio.emit('progress');
   recovering.audio.emit('waiting');
   clock.advance(21);
@@ -335,7 +344,7 @@ async function run() {
   reloading.audio.metadata(120);
   reloading.audio.currentTime = 33;
   reloading.audio.emit('timeupdate');
-  reloading.audio.buffered = { length: 1, end: function () { return 33; } };
+  reloading.audio.buffered = { length: 1, start: function () { return 0; }, end: function () { return 33; } };
   const loadsBeforeStall = reloading.audio.loadCount;
   reloading.audio.emit('waiting');
   reloadClock.advance(21);
