@@ -2,7 +2,7 @@
 
 连接歌曲、专辑、演出、角色、声优和原型马的中文资料站。前端使用浏览器版 Vue 3，Node 服务提供静态页面和按页目录接口，Python 工具维护源数据与生成目录。无需构建。
 
-[在线站点](https://umamusumelivewiki.top/) · [产品范围](PRODUCT.md) · [设计规范](DESIGN.md)
+[在线站点](https://umamusumelivewiki.top/) · [产品范围](PRODUCT.md) · [设计规范](DESIGN.md) · [后续计划](ROADMAP.md)
 
 ## 本地启动
 
