@@ -150,6 +150,8 @@ const umaApp = createApp({
     const pedigreeStatus = ref('idle');
     const pedigreeError = ref('');
     const animeCatalog = ref({ coverage: {}, works: [], units: [], watch_resources: [], relations: [], staff: [], people: [] });
+    const animeRelatedEvents = reactive({});
+    const animeMediaLoads = {};
     const animeLoading = ref(false);
     const animeError = ref('');
     const animeDetail = ref(null);
@@ -470,6 +472,33 @@ const umaApp = createApp({
     }
     function retryAnime() { loadAnimeCatalog().catch(function () {}); }
     function loadAnimeCatalogOptional() { return loadAnimeCatalog().catch(function () { return null; }); }
+    function loadAnimeRelatedMedia(workId) {
+      if (animeMediaLoads[workId]) return animeMediaLoads[workId];
+      animeMediaLoads[workId] = loadAnimeCatalog().then(function () {
+        const workUnits = (animeCatalog.value.units || []).filter(unit => unit.work_id === workId);
+        const unitIds = new Set(workUnits.map(unit => unit.id));
+        const relations = (animeCatalog.value.relations || []).filter(row =>
+          row.source_type === 'anime_work' ? row.source_id === workId : unitIds.has(row.source_id));
+        const songIds = [...new Set(relations.filter(row => row.target_type === 'song').map(row => row.target_id)
+          .concat(workUnits.flatMap(unit => (unit.music_cues || []).map(cue => cue.song_id).filter(Boolean))))];
+        const eventIds = [...new Set(relations.filter(row => row.target_type === 'event').map(row => row.target_id))];
+        return Promise.all([
+          loadAlbums(),
+          ...songIds.map(id => api.request('/api/catalog/song' + api.query({id: id})).then(data => {
+            if (!data || !data.song) throw new Error('missing related song');
+            mergeSong(data.song);
+          })),
+          ...eventIds.map(id => api.request('/api/catalog/event' + api.query({id: id})).then(data => {
+            if (!data || !data.event) throw new Error('missing related event');
+            animeRelatedEvents[id] = data.event;
+          }))
+        ]);
+      }).catch(function (error) {
+        delete animeMediaLoads[workId];
+        throw error;
+      });
+      return animeMediaLoads[workId];
+    }
     function findAnimeWork(id) {
       return (animeCatalog.value.works || []).find(function (work) { return work.id === id; }) || null;
     }
@@ -923,7 +952,7 @@ const umaApp = createApp({
     }
     function animeUnitStatusLabel(status) { return status === 'scheduled' ? '待更新' : '已发布'; }
     function animePlatformLabel(platform) {
-      return { youtube: 'YouTube', bilibili: '哔哩哔哩', bahamut: '巴哈姆特动画疯', abema: 'ABEMA', official: '官方网站', official_site: '官方网站' }[platform] || platform;
+      return { youtube: 'YouTube', bilibili: '哔哩哔哩', bahamut: '巴哈姆特动画疯', abema: 'ABEMA', unext: 'U-NEXT', official: '官方网站', official_site: '官方网站' }[platform] || platform;
     }
     function animeAuthorityLabel(authority) {
       return { official: '官方', licensed: '正版发行', community: '民间字幕' }[authority] || authority;
@@ -943,7 +972,7 @@ const umaApp = createApp({
         return song ? song.title : relation.target_id;
       }
       if (relation.target_type === 'event') {
-        const event = eventsAll.value.find(function (entry) { return entry.id === relation.target_id; });
+        const event = animeRelatedEvents[relation.target_id] || eventsAll.value.find(function (entry) { return entry.id === relation.target_id; });
         return event ? event.title : relation.target_id;
       }
       if (relation.target_type === 'voice_actor') return relation.signature || voiceName(relation.target_id);
@@ -1028,7 +1057,7 @@ const umaApp = createApp({
       if (sub === 'anime') {
         const animePath = (seg[2] || '').toLowerCase();
         if (!animePath) return loadAnimeCatalog();
-        return Promise.all([loadAnimeCatalog(), loadCharacterIndexData(), loadVoiceData(), loadSongCatalog(), loadEvents(), loadHorsesListData()]);
+        return Promise.all([loadAnimeRelatedMedia(animePath), loadCharacterIndexData(), loadVoiceData(), loadHorsesListData()]);
       }
       if (sub === 'staff') return loadAnimeCatalog();
       if (sub === 'horses') return Promise.all([seg.length > 2 ? loadHorsesData() : loadHorsesListData(), loadCharacterIndexData()]);
@@ -2055,6 +2084,8 @@ const umaApp = createApp({
       songCatalogError.value = '';
       const isCurrent = beginEntityNavigation();
       const requested = typeof songOrId === 'string' ? songOrId : (songOrId && (songOrId.id || songOrId.song_id));
+      const requestedUrl = new URL(window.location.href);
+      const recordingUrl = requestedUrl.pathname === routes.songs(requested) ? requestedUrl : null;
       const show = function (data) {
         if (!isCurrent()) return;
         const found = data && data.song;
@@ -2074,6 +2105,7 @@ const umaApp = createApp({
         activeTab.value = 'database';
         dbView.value = 'songs';
         resetPageScroll();
+        if (recordingUrl) restoreSongRecording(recordingUrl);
         pushUrl();
       };
       return Promise.all([
