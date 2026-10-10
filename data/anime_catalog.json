@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "build_id": "anime-d585e1663c903abb",
-  "generated_at": "2026-10-09T00:00:00+08:00",
+  "build_id": "anime-80f30bb2bb2f3e1a",
+  "generated_at": "2026-10-10T00:00:00+08:00",
   "coverage": {
     "works": 11,
     "units": 125,
     "released_units": 125,
     "scheduled_units": 0,
-    "watch_resources": 130,
+    "watch_resources": 132,
     "relations": 2012,
     "staff_credits": 25375,
     "staff_people": 2922
@@ -8225,7 +8225,10 @@
       "status": "active",
       "verified_at": "2026-10-03",
       "source_ref": "official-youtube",
-      "content_type": "full_episode"
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-1st-anniversary-e01"
+      ]
     },
     {
       "id": "watch-rttt-bilibili",
@@ -8460,6 +8463,64 @@
       "verified_at": "2026-10-03",
       "source_ref": "official-youtube",
       "content_type": "discovery"
+    },
+    {
+      "id": "watch-s1-bnw-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "platform": "unext",
+      "url": "https://www.video.unext.jp/title/SID0094265",
+      "publisher": "U-NEXT",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-10",
+      "source_ref": "unext-bnw",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-s1-e14",
+        "anime-s1-e15",
+        "anime-s1-e16"
+      ]
+    },
+    {
+      "id": "watch-movie-beginning-new-era-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-movie-beginning-new-era"
+      },
+      "platform": "unext",
+      "url": "https://www.video.unext.jp/title/SID0160058",
+      "publisher": "U-NEXT",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-10",
+      "source_ref": "unext-beginning-new-era",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-movie-beginning-new-era-e01"
+      ]
     },
     {
       "id": "watch-anime-umayuru-prettygray-e01",
@@ -506609,6 +506670,20 @@
       "label": "单集原始片尾职员表",
       "url": "https://www.yinhuadm.cc/p/27123-2-8.html",
       "observed_at": "2026-10-08"
+    },
+    {
+      "id": "unext-bnw",
+      "kind": "licensed",
+      "label": "U-NEXT《赛马娘 EXTRA R「BNW的誓言」》",
+      "url": "https://www.video.unext.jp/title/SID0094265",
+      "observed_at": "2026-10-10"
+    },
+    {
+      "id": "unext-beginning-new-era",
+      "kind": "licensed",
+      "label": "U-NEXT《赛马娘 Pretty Derby 新时代之门》",
+      "url": "https://www.video.unext.jp/title/SID0160058",
+      "observed_at": "2026-10-10"
     }
   ]
 }

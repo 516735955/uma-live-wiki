@@ -207,7 +207,10 @@
       "status": "active",
       "verified_at": "2026-10-03",
       "source_ref": "official-youtube",
-      "content_type": "full_episode"
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-1st-anniversary-e01"
+      ]
     },
     {
       "id": "watch-rttt-bilibili",
@@ -442,6 +445,64 @@
       "verified_at": "2026-10-03",
       "source_ref": "official-youtube",
       "content_type": "discovery"
+    },
+    {
+      "id": "watch-s1-bnw-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "platform": "unext",
+      "url": "https://www.video.unext.jp/title/SID0094265",
+      "publisher": "U-NEXT",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-10",
+      "source_ref": "unext-bnw",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-s1-e14",
+        "anime-s1-e15",
+        "anime-s1-e16"
+      ]
+    },
+    {
+      "id": "watch-movie-beginning-new-era-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-movie-beginning-new-era"
+      },
+      "platform": "unext",
+      "url": "https://www.video.unext.jp/title/SID0160058",
+      "publisher": "U-NEXT",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-10",
+      "source_ref": "unext-beginning-new-era",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-movie-beginning-new-era-e01"
+      ]
     },
     {
       "id": "watch-anime-umayuru-prettygray-e01",
