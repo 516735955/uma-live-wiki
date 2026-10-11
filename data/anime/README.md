@@ -1,7 +1,8 @@
 # 动漫资料主数据
 
-本目录保存 #11 动漫资料库的人工确认数据。运行时页面只读取由这些文件确定性生成的
-`data/anime_catalog.json` 和 `data/anime_relation_index.json`。
+本目录保存 #11 动漫资料库的人工确认数据。生成器产出完整的
+`data/anime_catalog.json` 和 `data/anime_relation_index.json`；服务端从完整目录提供按目录、
+作品、人物和关系范围读取的运行时接口，页面按需加载显示字段。证据与原始署名保留在主数据中。
 
 ## 数据边界
 
@@ -18,18 +19,34 @@
 - `overrides.json`：人工覆盖与已确认的角色排除名单，所有角色和逐集导入遵循相同范围。
 - `source_snapshots/` 与 `update_candidates.json`：自动观测层；采集器只能更新这两处，不能覆盖上述主数据。
 
+单集官方观测快照的 `field_status` 逐字段记录 `observed`（来源返回内容）、
+`confirmed_empty`（来源明确完成该字段核查且为空）或 `unknown`（来源未返回该字段、解析器未覆盖
+该字段或无法证明为空）。解析器得到的空字符串或空数组默认是 `unknown`，未知不等于没有资料。
+候选只提示来源字段变化；联网源失败时保留旧快照和未处理候选，不能据此覆盖已接受记录。
+候选文件中的 `accepted_coverage` 使用已展开的公开单元和现有关系统计标题、简介、音乐、角色、
+职员、官方观看入口和高清剧照；没有证据的字段记为 `unknown`。职员与配音的核查状态分别来自
+各自的资料，不由另一类资料推断，剧照缺少高清证据时也不补造图片。
+
 ## 维护命令
 
 ```bash
 python3 uma_tools/build_anime_catalog.py
 python3 uma_tools/build_anime_catalog.py --check
 python3 uma_tools/update_anime.py --check
+python3 uma_tools/update_anime.py --observe
+python3 uma_tools/update_anime.py --observe --check-links
 python3 uma_tools/complete_anime_music_relations.py --write
 python3 uma_tools/reconcile_anime_music_recordings.py --write
 python3 uma_tools/complete_anime_horse_profiles.py --refresh-major --write
 ```
 
 中文名称、简介、资源标签、正式关系与排序都是固定资产。自动更新只报告差异候选，应用候选必须人工修改对应主数据。
+
+`update_anime.py --check` 只检查本地目录、观测快照和候选文件，不联网；需要明确联网观察时使用
+`--observe`（`--refresh` 保留为同义的刷新命令）。观察只写入 `source_snapshots/` 和
+`update_candidates.json`，不会自动修改已接受主数据。`--check-links` 只检查官方观看链接的
+HTTP 可达性，并将结果区分为可达、需要登录或可能受地区/权限影响、临时失败、失效和未确认；
+HTTP 200 不代表完整播放可用，也不会因为检查结果自动删除观看入口。
 
 ## 资料口径
 

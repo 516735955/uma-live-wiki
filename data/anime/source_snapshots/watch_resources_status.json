@@ -1,0 +1,2767 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-11T21:04:32+00:00",
+  "resources": [
+    {
+      "resource_id": "watch-s1-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e01",
+        "anime-s1-e02",
+        "anime-s1-e03",
+        "anime-s1-e04",
+        "anime-s1-e05",
+        "anime-s1-e06",
+        "anime-s1-e07",
+        "anime-s1-e08",
+        "anime-s1-e09",
+        "anime-s1-e10",
+        "anime-s1-e11",
+        "anime-s1-e12",
+        "anime-s1-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/media/md77972",
+      "final_url": "https://www.bilibili.com/bangumi/media/md77972",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-s1-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [],
+      "url": "https://ani.gamer.com.tw/animeVideo.php?sn=21648",
+      "final_url": "https://ani.gamer.com.tw/animeVideo.php?sn=21648",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-s2-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-s2"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e01",
+        "anime-s2-e02",
+        "anime-s2-e03",
+        "anime-s2-e04",
+        "anime-s2-e05",
+        "anime-s2-e06",
+        "anime-s2-e07",
+        "anime-s2-e08",
+        "anime-s2-e09",
+        "anime-s2-e10",
+        "anime-s2-e11",
+        "anime-s2-e12",
+        "anime-s2-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ss36579",
+      "final_url": "https://www.bilibili.com/bangumi/play/ss36579",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-s2-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-s2"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [],
+      "url": "https://ani.gamer.com.tw/animeVideo.php?sn=42536",
+      "final_url": "https://ani.gamer.com.tw/animeVideo.php?sn=42536",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-umayon-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayon"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e01",
+        "anime-umayon-e02",
+        "anime-umayon-e03",
+        "anime-umayon-e04",
+        "anime-umayon-e05",
+        "anime-umayon-e06",
+        "anime-umayon-e07",
+        "anime-umayon-e08",
+        "anime-umayon-e09",
+        "anime-umayon-e10",
+        "anime-umayon-e11",
+        "anime-umayon-e12"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ss33806",
+      "final_url": "https://www.bilibili.com/bangumi/play/ss33806",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anniversary-youtube",
+      "scope": {
+        "type": "work",
+        "id": "anime-1st-anniversary"
+      },
+      "work_id": "anime-1st-anniversary",
+      "unit_ids": [
+        "anime-1st-anniversary-e01"
+      ],
+      "url": "https://www.youtube.com/watch?v=RKVWLnVqnP0",
+      "final_url": "https://www.youtube.com/watch?v=RKVWLnVqnP0",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-rttt-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-rttt"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e01",
+        "anime-rttt-e02",
+        "anime-rttt-e03",
+        "anime-rttt-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep765783",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep765783",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-s3-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-s3"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e01",
+        "anime-s3-e02",
+        "anime-s3-e03",
+        "anime-s3-e04",
+        "anime-s3-e05",
+        "anime-s3-e06",
+        "anime-s3-e07",
+        "anime-s3-e08",
+        "anime-s3-e09",
+        "anime-s3-e10",
+        "anime-s3-e11",
+        "anime-s3-e12",
+        "anime-s3-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ss46083",
+      "final_url": "https://www.bilibili.com/bangumi/play/ss46083",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-s3-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-s3"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [],
+      "url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+Pretty+Derby+%E7%AC%AC%E4%B8%89%E5%AD%A3",
+      "final_url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+Pretty+Derby+%E7%AC%AC%E4%B8%89%E5%AD%A3",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-cingray-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-cinderella-gray"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e01",
+        "anime-cinderella-gray-e02",
+        "anime-cinderella-gray-e03",
+        "anime-cinderella-gray-e04",
+        "anime-cinderella-gray-e05",
+        "anime-cinderella-gray-e06",
+        "anime-cinderella-gray-e07",
+        "anime-cinderella-gray-e08",
+        "anime-cinderella-gray-e09",
+        "anime-cinderella-gray-e10",
+        "anime-cinderella-gray-e11",
+        "anime-cinderella-gray-e12",
+        "anime-cinderella-gray-e13",
+        "anime-cinderella-gray-e14",
+        "anime-cinderella-gray-e15",
+        "anime-cinderella-gray-e16",
+        "anime-cinderella-gray-e17",
+        "anime-cinderella-gray-e18",
+        "anime-cinderella-gray-e19",
+        "anime-cinderella-gray-e20",
+        "anime-cinderella-gray-e21",
+        "anime-cinderella-gray-e22",
+        "anime-cinderella-gray-e23"
+      ],
+      "url": "https://www.bilibili.com/bangumi/media/md25581526",
+      "final_url": "https://www.bilibili.com/bangumi/media/md25581526",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-cingray-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-cinderella-gray"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [],
+      "url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+%E7%81%B0%E9%AB%AE%E7%81%B0%E5%A7%91%E5%A8%98",
+      "final_url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+%E7%81%B0%E9%AB%AE%E7%81%B0%E5%A7%91%E5%A8%98",
+      "http_status": null,
+      "status": "transient",
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "resource_id": "watch-cingray-abema",
+      "scope": {
+        "type": "work",
+        "id": "anime-cinderella-gray"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [],
+      "url": "https://abema.tv/search?q=%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%82%B7%E3%83%B3%E3%83%87%E3%83%AC%E3%83%A9%E3%82%B0%E3%83%AC%E3%82%A4",
+      "final_url": "https://abema.tv/search?q=%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%82%B7%E3%83%B3%E3%83%87%E3%83%AC%E3%83%A9%E3%82%B0%E3%83%AC%E3%82%A4",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-movie-trailer-youtube",
+      "scope": {
+        "type": "work",
+        "id": "anime-movie-beginning-new-era"
+      },
+      "work_id": "anime-movie-beginning-new-era",
+      "unit_ids": [],
+      "url": "https://www.youtube.com/@UMAMUSUME_official/search?query=%E6%96%B0%E6%99%82%E4%BB%A3%E3%81%AE%E6%89%89",
+      "final_url": "https://www.youtube.com/@UMAMUSUME_official/search?query=%E6%96%B0%E6%99%82%E4%BB%A3%E3%81%AE%E6%89%89",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-s1-bnw-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e14",
+        "anime-s1-e15",
+        "anime-s1-e16"
+      ],
+      "url": "https://www.video.unext.jp/title/SID0094265",
+      "final_url": "https://www.video.unext.jp/title/SID0094265",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-movie-beginning-new-era-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-movie-beginning-new-era"
+      },
+      "work_id": "anime-movie-beginning-new-era",
+      "unit_ids": [
+        "anime-movie-beginning-new-era-e01"
+      ],
+      "url": "https://www.video.unext.jp/title/SID0160058",
+      "final_url": "https://www.video.unext.jp/title/SID0160058",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-prettygray-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e01"
+      },
+      "work_id": "anime-umayuru-prettygray",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e01"
+      ],
+      "url": "https://www.youtube.com/watch?v=zxJXquB3YiM",
+      "final_url": "https://www.youtube.com/watch?v=zxJXquB3YiM",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-prettygray-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e02"
+      },
+      "work_id": "anime-umayuru-prettygray",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e02"
+      ],
+      "url": "https://www.youtube.com/watch?v=cb73PRzHo4w",
+      "final_url": "https://www.youtube.com/watch?v=cb73PRzHo4w",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-prettygray-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e03"
+      },
+      "work_id": "anime-umayuru-prettygray",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e03"
+      ],
+      "url": "https://www.youtube.com/watch?v=AGUgeelUUuo",
+      "final_url": "https://www.youtube.com/watch?v=AGUgeelUUuo",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-prettygray-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e04"
+      },
+      "work_id": "anime-umayuru-prettygray",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e04"
+      ],
+      "url": "https://www.youtube.com/watch?v=a1q3XU_6Jgk",
+      "final_url": "https://www.youtube.com/watch?v=a1q3XU_6Jgk",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-fullgate-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e01"
+      },
+      "work_id": "anime-umayuru-fullgate",
+      "unit_ids": [
+        "anime-umayuru-fullgate-e01"
+      ],
+      "url": "https://www.youtube.com/watch?v=vYaucJ1wvRg",
+      "final_url": "https://www.youtube.com/watch?v=vYaucJ1wvRg",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e01"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e01"
+      ],
+      "url": "https://www.youtube.com/watch?v=Q6ur7-o_YdI",
+      "final_url": "https://www.youtube.com/watch?v=Q6ur7-o_YdI",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e02"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e02"
+      ],
+      "url": "https://www.youtube.com/watch?v=7y4DpHsz6Wg",
+      "final_url": "https://www.youtube.com/watch?v=7y4DpHsz6Wg",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e03"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e03"
+      ],
+      "url": "https://www.youtube.com/watch?v=oD4nNApSrd0",
+      "final_url": "https://www.youtube.com/watch?v=oD4nNApSrd0",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e04"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e04"
+      ],
+      "url": "https://www.youtube.com/watch?v=2U2OTcgyubY",
+      "final_url": "https://www.youtube.com/watch?v=2U2OTcgyubY",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e05"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e05"
+      ],
+      "url": "https://www.youtube.com/watch?v=36NHQCYjBvs",
+      "final_url": "https://www.youtube.com/watch?v=36NHQCYjBvs",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e06"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e06"
+      ],
+      "url": "https://www.youtube.com/watch?v=sLV7WHXcOu0",
+      "final_url": "https://www.youtube.com/watch?v=sLV7WHXcOu0",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e07"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e07"
+      ],
+      "url": "https://www.youtube.com/watch?v=uXauD1uRZy0",
+      "final_url": "https://www.youtube.com/watch?v=uXauD1uRZy0",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e08"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e08"
+      ],
+      "url": "https://www.youtube.com/watch?v=u0LuV8HNd8k",
+      "final_url": "https://www.youtube.com/watch?v=u0LuV8HNd8k",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e09"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e09"
+      ],
+      "url": "https://www.youtube.com/watch?v=4KzUSqUW9LU",
+      "final_url": "https://www.youtube.com/watch?v=4KzUSqUW9LU",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e10"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e10"
+      ],
+      "url": "https://www.youtube.com/watch?v=proK-e-v3Eg",
+      "final_url": "https://www.youtube.com/watch?v=proK-e-v3Eg",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e11"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e11"
+      ],
+      "url": "https://www.youtube.com/watch?v=ag8dpHBhoCY",
+      "final_url": "https://www.youtube.com/watch?v=ag8dpHBhoCY",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e12"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e12"
+      ],
+      "url": "https://www.youtube.com/watch?v=aVK4qqhbMhA",
+      "final_url": "https://www.youtube.com/watch?v=aVK4qqhbMhA",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e13"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e13"
+      ],
+      "url": "https://www.youtube.com/watch?v=_XvzHdO7nrk",
+      "final_url": "https://www.youtube.com/watch?v=_XvzHdO7nrk",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e14",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e14"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e14"
+      ],
+      "url": "https://www.youtube.com/watch?v=xh3FU5NoCzQ",
+      "final_url": "https://www.youtube.com/watch?v=xh3FU5NoCzQ",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e15",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e15"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e15"
+      ],
+      "url": "https://www.youtube.com/watch?v=VfqRYC8_UPo",
+      "final_url": "https://www.youtube.com/watch?v=VfqRYC8_UPo",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e16",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e16"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e16"
+      ],
+      "url": "https://www.youtube.com/watch?v=Iz1xs-gZF-g",
+      "final_url": "https://www.youtube.com/watch?v=Iz1xs-gZF-g",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e17",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e17"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e17"
+      ],
+      "url": "https://www.youtube.com/watch?v=Vwbj7I47qas",
+      "final_url": "https://www.youtube.com/watch?v=Vwbj7I47qas",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e18",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e18"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e18"
+      ],
+      "url": "https://www.youtube.com/watch?v=EOhRP6r9SOQ",
+      "final_url": "https://www.youtube.com/watch?v=EOhRP6r9SOQ",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e19",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e19"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e19"
+      ],
+      "url": "https://www.youtube.com/watch?v=Moka2TV2eLs",
+      "final_url": "https://www.youtube.com/watch?v=Moka2TV2eLs",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e20",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e20"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e20"
+      ],
+      "url": "https://www.youtube.com/watch?v=WrymFqwvaoo",
+      "final_url": "https://www.youtube.com/watch?v=WrymFqwvaoo",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e21",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e21"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e21"
+      ],
+      "url": "https://www.youtube.com/watch?v=HmRbWlbXtIY",
+      "final_url": "https://www.youtube.com/watch?v=HmRbWlbXtIY",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e22",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e22"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e22"
+      ],
+      "url": "https://www.youtube.com/watch?v=2Jrb-wi87Dw",
+      "final_url": "https://www.youtube.com/watch?v=2Jrb-wi87Dw",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e23",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e23"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e23"
+      ],
+      "url": "https://www.youtube.com/watch?v=lS54NCyHxko",
+      "final_url": "https://www.youtube.com/watch?v=lS54NCyHxko",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-anime-umayuru-e24",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e24"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e24"
+      ],
+      "url": "https://www.youtube.com/watch?v=iGExuigHsUw",
+      "final_url": "https://www.youtube.com/watch?v=iGExuigHsUw",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e01"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e01"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199681",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199681",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e02"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e02"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199682",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199682",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e03"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e03"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199683",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199683",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e04"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199684",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199684",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e05"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e05"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199685",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199685",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e06"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e06"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199686",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199686",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e07"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e07"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199687",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199687",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e08"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e08"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199688",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199688",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e09"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e09"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199689",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199689",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e10"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e10"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199690",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199690",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e11"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e11"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199691",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199691",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e12"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e12"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199692",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199692",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s1-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e13"
+      },
+      "work_id": "anime-s1",
+      "unit_ids": [
+        "anime-s1-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep199693",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep199693",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e01"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e01"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374306",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374306",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e02"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e02"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374307",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374307",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e03"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e03"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374308",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374308",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e04"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374309",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374309",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e05"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e05"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374310",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374310",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e06"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e06"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374311",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374311",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e07"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e07"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374312",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374312",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e08"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e08"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374313",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374313",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e09"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e09"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374314",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374314",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e10"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e10"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374315",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374315",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e11"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e11"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374316",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374316",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e12"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e12"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep374317",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep374317",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s2-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e13"
+      },
+      "work_id": "anime-s2",
+      "unit_ids": [
+        "anime-s2-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep375012",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep375012",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e01"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e01"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780851",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780851",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e02"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e02"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780852",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780852",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e03"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e03"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780853",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780853",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e04"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780854",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780854",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e05"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e05"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780855",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780855",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e06"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e06"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780856",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780856",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e07"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e07"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep780857",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep780857",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e08"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e08"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep786073",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep786073",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e09"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e09"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep786074",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep786074",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e10"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e10"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep786075",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep786075",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e11"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e11"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep791086",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep791086",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e12"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e12"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep791087",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep791087",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-s3-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e13"
+      },
+      "work_id": "anime-s3",
+      "unit_ids": [
+        "anime-s3-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep791088",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep791088",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e01"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e01"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330747",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330747",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e02"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e02"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330748",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330748",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e03"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e03"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330749",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330749",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e04"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330750",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330750",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e05"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e05"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330751",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330751",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e06"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e06"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330752",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330752",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e07"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e07"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330753",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330753",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e08"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e08"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330754",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330754",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e09"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e09"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330755",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330755",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e10"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e10"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330756",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330756",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e11"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e11"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330757",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330757",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-umayon-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e12"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e12"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep330758",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep330758",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e01"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e01"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1655818",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1655818",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e02"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e02"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1655819",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1655819",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e03"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e03"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1655820",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1655820",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e04"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1655821",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1655821",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e05"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e05"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1728588",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1728588",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e06"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e06"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1728749",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1728749",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e07"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e07"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1728750",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1728750",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e08"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e08"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1792337",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1792337",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e09"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e09"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1792338",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1792338",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e10"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e10"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1792339",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1792339",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e11"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e11"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1864977",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1864977",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e12"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e12"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1864978",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1864978",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e13"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e13"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep1864979",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep1864979",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e14",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e14"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e14"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2348768",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2348768",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e15",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e15"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e15"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2348769",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2348769",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e16",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e16"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e16"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2348770",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2348770",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e17",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e17"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e17"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2348771",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2348771",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e18",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e18"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e18"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2455894",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2455894",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e19",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e19"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e19"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2455895",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2455895",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e20",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e20"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e20"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2455896",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2455896",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e21",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e21"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e21"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2586397",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2586397",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e22",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e22"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e22"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2586398",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2586398",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-cinderella-gray-e23",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e23"
+      },
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [
+        "anime-cinderella-gray-e23"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep2586399",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep2586399",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-rttt-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e01"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e01"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep765783",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep765783",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-rttt-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e02"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e02"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep765784",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep765784",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-rttt-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e03"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e03"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep765785",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep765785",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-bilibili-anime-rttt-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e04"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e04"
+      ],
+      "url": "https://www.bilibili.com/bangumi/play/ep765786",
+      "final_url": "https://www.bilibili.com/bangumi/play/ep765786",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-directory-anime-umayuru",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayuru"
+      },
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e01",
+        "anime-umayuru-prettygray-e02",
+        "anime-umayuru-prettygray-e03",
+        "anime-umayuru-prettygray-e04",
+        "anime-umayuru-fullgate-e01",
+        "anime-umayuru-e01",
+        "anime-umayuru-e02",
+        "anime-umayuru-e03",
+        "anime-umayuru-e04",
+        "anime-umayuru-e05",
+        "anime-umayuru-e06",
+        "anime-umayuru-e07",
+        "anime-umayuru-e08",
+        "anime-umayuru-e09",
+        "anime-umayuru-e10",
+        "anime-umayuru-e11",
+        "anime-umayuru-e12",
+        "anime-umayuru-e13",
+        "anime-umayuru-e14",
+        "anime-umayuru-e15",
+        "anime-umayuru-e16",
+        "anime-umayuru-e17",
+        "anime-umayuru-e18",
+        "anime-umayuru-e19",
+        "anime-umayuru-e20",
+        "anime-umayuru-e21",
+        "anime-umayuru-e22",
+        "anime-umayuru-e23",
+        "anime-umayuru-e24"
+      ],
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/01/",
+      "final_url": "https://umamusume.jp/contents/anime/umayuru/episodes/01/",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-directory-anime-umayuru-prettygray",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayuru-prettygray"
+      },
+      "work_id": "anime-umayuru-prettygray",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e01",
+        "anime-umayuru-prettygray-e02",
+        "anime-umayuru-prettygray-e03",
+        "anime-umayuru-prettygray-e04"
+      ],
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "final_url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-directory-anime-umayuru-fullgate",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayuru-fullgate"
+      },
+      "work_id": "anime-umayuru-fullgate",
+      "unit_ids": [
+        "anime-umayuru-fullgate-e01",
+        "anime-umayuru-fullgate-e02",
+        "anime-umayuru-fullgate-e03"
+      ],
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
+      "final_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-anime-rttt-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e01"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e01"
+      ],
+      "url": "https://www.youtube.com/watch?v=pjPXzJedwiA",
+      "final_url": "https://www.youtube.com/watch?v=pjPXzJedwiA",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-anime-rttt-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e02"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e02"
+      ],
+      "url": "https://www.youtube.com/watch?v=0jev2Uv37F8",
+      "final_url": "https://www.youtube.com/watch?v=0jev2Uv37F8",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-anime-rttt-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e03"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e03"
+      ],
+      "url": "https://www.youtube.com/watch?v=A42wNP1DJho",
+      "final_url": "https://www.youtube.com/watch?v=A42wNP1DJho",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-anime-rttt-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e04"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e04"
+      ],
+      "url": "https://www.youtube.com/watch?v=RIDl7x_gFGE",
+      "final_url": "https://www.youtube.com/watch?v=RIDl7x_gFGE",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-rttt-official-series",
+      "scope": {
+        "type": "work",
+        "id": "anime-rttt"
+      },
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e01",
+        "anime-rttt-e02",
+        "anime-rttt-e03",
+        "anime-rttt-e04"
+      ],
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "final_url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "error": ""
+    },
+    {
+      "resource_id": "umayon-extra-preview-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e13"
+      },
+      "work_id": "anime-umayon",
+      "unit_ids": [
+        "anime-umayon-e13"
+      ],
+      "url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
+      "final_url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
+      "http_status": 200,
+      "status": "reachable",
+      "access": null,
+      "regions": [],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-anime-umayuru-fullgate-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e02"
+      },
+      "work_id": "anime-umayuru-fullgate",
+      "unit_ids": [
+        "anime-umayuru-fullgate-e02"
+      ],
+      "url": "https://www.youtube.com/watch?v=COwezDS-R3s",
+      "final_url": "https://www.youtube.com/watch?v=COwezDS-R3s",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-official-anime-umayuru-fullgate-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e03"
+      },
+      "work_id": "anime-umayuru-fullgate",
+      "unit_ids": [
+        "anime-umayuru-fullgate-e03"
+      ],
+      "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
+      "final_url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
+      "http_status": 200,
+      "status": "reachable",
+      "access": "free",
+      "regions": [],
+      "error": ""
+    }
+  ],
+  "note": "HTTP reachability only; this does not establish full playback availability."
+}
