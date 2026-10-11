@@ -34,6 +34,7 @@
 .anime-staff-participation > div > div { display: flex; flex-wrap: wrap; gap: 8px 12px; }
 .anime-staff-participation > div + div { border-top: 1px solid var(--ui-line); }
 .anime-related-list a { display: grid; grid-template-columns: 150px minmax(0,1fr) auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--ui-line); }
+.anime-related-list a.anime-related-single { grid-template-columns: minmax(0,1fr) auto; }
 .anime-related-list span, .anime-related-list small { color: var(--text-2); }
 .anime-music-list a { grid-template-columns: minmax(0,1fr) auto; }
 .anime-music-list b small { margin-left: 12px; font-weight: 400; }

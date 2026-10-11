@@ -666,19 +666,19 @@ const umaApp = createApp({
         const kept = [];
         narrow[listKey].forEach(item => {
           const entry = listKey === 'credits' ? item : item.entry;
-          const broad = candidates.find(candidate => candidate[listKey].some(candidateItem => {
-            const candidateEntry = listKey === 'credits' ? candidateItem : candidateItem.entry;
-            return animeStaffSamePersonAndInstitution(candidateEntry, entry);
-          }));
-          if (!broad) {
-            kept.push(item);
-            return;
-          }
-          const match = broad[listKey].find(candidateItem => {
+          const covering = candidates.flatMap(candidate => candidate[listKey]).filter(candidateItem => {
             const candidateEntry = listKey === 'credits' ? candidateItem : candidateItem.entry;
             return animeStaffSamePersonAndInstitution(candidateEntry, entry);
           });
-          if (listKey === 'rows' && match) match.units = [...new Map([...match.units, ...item.units].map(unit => [unit.id, unit])).values()];
+          if (!covering.length) {
+            kept.push(item);
+            return;
+          }
+          if (listKey === 'rows') {
+            const coveredUnits = new Set(covering.flatMap(row => row.units).map(unit => unit.id));
+            const units = item.units.filter(unit => !coveredUnits.has(unit.id)).sort((a,b) => a.number-b.number);
+            if (units.length) kept.push({...item,units});
+          }
         });
         narrow[listKey] = kept;
       });
@@ -877,11 +877,15 @@ const umaApp = createApp({
       return animeCurrentRelations.value.filter(function (relation) { return relation.target_type === targetType; });
     }
     const animeMusicUsageLabels = {album:'原声专辑',op:'片头曲',ed:'片尾曲',theme:'主题曲',insert:'插入曲',winning_live:'胜者舞台',bgm:'背景配乐',other:'其他音乐'};
-    function animeMusicUsageLabel(kind) {return animeMusicUsageLabels[kind] || animeMusicUsageLabels.other;}
+    function animeMusicUsageKind(kind) {
+      const canonical = {ending:'ed',ending_theme:'ed',opening:'op',opening_theme:'op'}[kind] || kind;
+      return animeMusicUsageLabels[canonical] ? canonical : 'other';
+    }
+    function animeMusicUsageLabel(kind) {return animeMusicUsageLabels[animeMusicUsageKind(kind)];}
     const animeMusicGroups = computed(() => {
       const labels = animeMusicUsageLabels;
       return Object.entries(labels).map(([kind,label]) => ({kind,label,rows:animeCurrentRelations.value.filter(row =>
-        row.target_type === 'album' ? kind === 'album' : row.target_type === 'song' && (row.usage_type || 'other') === kind &&
+        row.target_type === 'album' ? kind === 'album' : row.target_type === 'song' && animeMusicUsageKind(row.usage_type) === kind &&
           !animeMusicCues.value.some(cue=>cue.song_id===row.target_id && cue.units.some(unit=>unit.id===row.source_id))
       )})).filter(group => group.rows.length);
     });
@@ -2481,9 +2485,13 @@ const umaApp = createApp({
           if ((animeCatalog.value.works || []).length && seg[4] && (!animeUnitDetail.value || animeUnitDetail.value.work_id !== requestedWork)) return reject();
           if (animeUnitDetail.value && animeDetail.value && ['movie','special'].includes(animeDetail.value.format)) {
             animeUnitDetail.value = null;
-            history.replaceState(history.state, '', routes.query(routes.anime(requestedWork), {section:animeSection.value}));
+            url.pathname = routes.anime(requestedWork);
+            url.searchParams.set('section', animeSection.value);
+            history.replaceState(history.state, '', url.pathname + url.search + url.hash);
           } else if (animeUnitDetail.value && requestedWork === 'anime-rttt') {
             animeEdition.value = 'web';
+            url.searchParams.set('edition', 'web');
+            history.replaceState(history.state, '', url.pathname + url.search + url.hash);
           }
           if ((animeCatalog.value.works || []).length && (!animeDetail.value || (seg[4] && !animeSingle.value && (!animeUnitDetail.value || animeUnitDetail.value.work_id !== requestedWork)))) reject();
         } else {
