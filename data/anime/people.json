@@ -27879,12 +27879,20 @@
     {
       "id": "staff-ump",
       "name": "ump",
-      "aliases": [],
+      "aliases": [
+        "UMP"
+      ],
+      "alias_ids": [
+        "staff-UMP"
+      ],
       "source_refs": [
         "staff-transcript-anime-rttt",
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-rttt-e01",
-        "official-ending-anime-movie-beginning-new-era-e01"
+        "official-ending-anime-movie-beginning-new-era-e01",
+        "official-ending-anime-rttt-e02",
+        "official-ending-anime-rttt-e04",
+        "official-ending-anime-rttt-film"
       ]
     },
     {
@@ -29130,16 +29138,6 @@
         "official-ending-anime-umayon-e22",
         "official-ending-anime-umayon-e23",
         "official-ending-anime-umayon-e24"
-      ]
-    },
-    {
-      "id": "staff-UMP",
-      "name": "UMP",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-rttt-e02",
-        "official-ending-anime-rttt-e04",
-        "official-ending-anime-rttt-film"
       ]
     },
     {

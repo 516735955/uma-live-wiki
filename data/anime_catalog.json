@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-348b6732922cbc5a",
+  "build_id": "anime-5682f2c3fa744bff",
   "generated_at": "2026-10-12T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -10,7 +10,7 @@
     "watch_resources": 133,
     "relations": 2019,
     "staff_credits": 25418,
-    "staff_people": 2923
+    "staff_people": 2922
   },
   "works": [
     {
@@ -177657,7 +177657,7 @@
       "group": "",
       "name": "UMP",
       "source_time": 1535,
-      "person_id": "staff-UMP",
+      "person_id": "staff-ump",
       "evidence_refs": [
         "official-ending-anime-rttt-e02"
       ],
@@ -199275,7 +199275,7 @@
       "group": "",
       "name": "UMP",
       "source_time": 1555,
-      "person_id": "staff-UMP",
+      "person_id": "staff-ump",
       "evidence_refs": [
         "official-ending-anime-rttt-e04"
       ],
@@ -411026,7 +411026,7 @@
       "name": "UMP",
       "source_time": 5750.5,
       "edition": "film",
-      "person_id": "staff-UMP",
+      "person_id": "staff-ump",
       "role_raw": "原画",
       "group_raw": ""
     },
@@ -485812,19 +485812,27 @@
     {
       "id": "staff-ump",
       "name": "ump",
-      "aliases": [],
+      "aliases": [
+        "UMP"
+      ],
+      "alias_ids": [
+        "staff-UMP"
+      ],
       "source_refs": [
         "staff-transcript-anime-rttt",
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-rttt-e01",
-        "official-ending-anime-movie-beginning-new-era-e01"
+        "official-ending-anime-movie-beginning-new-era-e01",
+        "official-ending-anime-rttt-e02",
+        "official-ending-anime-rttt-e04",
+        "official-ending-anime-rttt-film"
       ],
       "roles": [
         "第二原画",
         "原画"
       ],
       "work_count": 2,
-      "unit_count": 2
+      "unit_count": 4
     },
     {
       "id": "staff-フクロウP",
@@ -487421,21 +487429,6 @@
       ],
       "work_count": 1,
       "unit_count": 24
-    },
-    {
-      "id": "staff-UMP",
-      "name": "UMP",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-rttt-e02",
-        "official-ending-anime-rttt-e04",
-        "official-ending-anime-rttt-film"
-      ],
-      "roles": [
-        "原画"
-      ],
-      "work_count": 1,
-      "unit_count": 2
     },
     {
       "id": "staff-辛澤麟",

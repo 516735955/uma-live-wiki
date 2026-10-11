@@ -1,4 +1,4 @@
-"""Merge equivalent signatures from separate sources without merging identities."""
+"""Merge accepted identity aliases and equivalent credit observations."""
 
 import argparse
 import json
@@ -9,13 +9,14 @@ from build_anime_catalog import atomic_json
 
 DATA = Path(__file__).resolve().parents[1] / "data/anime"
 
-# Actual ending credits and public production profiles identify these names.
+# Accepted identities and spelling aliases retain their original credit names.
 PERSON_ALIASES = {
     "staff-阿部億人": "staff-阿部憶人", "staff-狭田修": "staff-狹田修",
     "staff-NainemoutouLucas": "staff-LucasNainemoutou",
     "staff-GirardinSolal": "staff-SolalGirardin",
     "staff-MeNex00": "staff-MeNeX00",
     "staff-フクロウp": "staff-フクロウP",
+    "staff-UMP": "staff-ump",
 }
 IDENTITY_SOURCES = {
     "staff-LucasNainemoutou": "production-lucas-nainemoutou-profile",
