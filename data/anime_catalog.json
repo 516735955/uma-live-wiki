@@ -19947,12 +19947,13 @@
       "release_id": "album-laca-25098",
       "version_label": "",
       "label": "",
-      "usage_type": "ending",
+      "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-movie-beginning-new-era",
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
-      "display_order": 20
+      "display_order": 20,
+      "usage_type_raw": "ending"
     },
     {
       "id": "anime-1st-anniversary-e01-music-song-ambitious-world-d3e9adbb88-v-8292b06f0d",
@@ -41405,7 +41406,7 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-864b1bb2e9",
-      "usage_type": "ending_theme",
+      "usage_type": "ed",
       "label": "",
       "display_order": 20,
       "evidence_refs": [
@@ -41414,7 +41415,8 @@
       ],
       "version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "release_id": "album-umcs-50001",
-      "version_label": ""
+      "version_label": "",
+      "usage_type_raw": "ending_theme"
     },
     {
       "id": "anime-cinderella-gray-e19-ed-song-864b1bb2e9",
@@ -44390,11 +44392,12 @@
       "version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "release_id": "album-umcs-50001",
       "version_label": "",
-      "usage_type": "ending_theme",
+      "usage_type": "ed",
       "label": "",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e17"
-      ]
+      ],
+      "usage_type_raw": "ending_theme"
     },
     {
       "id": "anime-cinderella-gray-e23-ending-music-song-864b1bb2e9-v-864b1bb2e9",
@@ -44406,11 +44409,12 @@
       "version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "release_id": "album-umcs-50001",
       "version_label": "",
-      "usage_type": "ending_theme",
+      "usage_type": "ed",
       "label": "",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e23"
-      ]
+      ],
+      "usage_type_raw": "ending_theme"
     },
     {
       "id": "anime-cinderella-gray-e19-official-ending-cast-12",
@@ -44437,11 +44441,12 @@
       "version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "release_id": "album-umcs-50001",
       "version_label": "",
-      "usage_type": "ending_theme",
+      "usage_type": "ed",
       "label": "",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e19"
-      ]
+      ],
+      "usage_type_raw": "ending_theme"
     },
     {
       "id": "anime-cinderella-gray-e20-ending-music-song-864b1bb2e9-v-864b1bb2e9",
@@ -44453,11 +44458,12 @@
       "version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "release_id": "album-umcs-50001",
       "version_label": "",
-      "usage_type": "ending_theme",
+      "usage_type": "ed",
       "label": "",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e20"
-      ]
+      ],
+      "usage_type_raw": "ending_theme"
     },
     {
       "id": "anime-cinderella-gray-e21-ending-music-song-864b1bb2e9-v-864b1bb2e9",
@@ -44469,11 +44475,12 @@
       "version_id": "song-864b1bb2e9-v-864b1bb2e9",
       "release_id": "album-umcs-50001",
       "version_label": "",
-      "usage_type": "ending_theme",
+      "usage_type": "ed",
       "label": "",
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e21"
-      ]
+      ],
+      "usage_type_raw": "ending_theme"
     },
     {
       "id": "anime-umayuru-fullgate-e03-official-ending-cast-00",
@@ -448497,8 +448504,7 @@
       "roles": [
         "导演",
         "动画演出",
-        "分镜",
-        "分镜／动画演出"
+        "分镜"
       ],
       "work_count": 2,
       "unit_count": 3
@@ -448868,7 +448874,6 @@
         "official-ending-anime-cinderella-gray-e21"
       ],
       "roles": [
-        "分镜／动画演出",
         "分镜",
         "动画演出",
         "副导演",
@@ -448889,7 +448894,8 @@
         "official-ending-anime-cinderella-gray-e05"
       ],
       "roles": [
-        "分镜／动画演出",
+        "分镜",
+        "动画演出",
         "原画",
         "中间动画",
         "3D建模协力",
@@ -448934,8 +448940,7 @@
         "分镜",
         "动画演出",
         "导演",
-        "原画",
-        "分镜／动画演出"
+        "原画"
       ],
       "work_count": 1,
       "unit_count": 22
@@ -448989,7 +448994,7 @@
       ],
       "roles": [
         "动画演出",
-        "分镜／动画演出",
+        "分镜",
         "第二原画",
         "原画"
       ],
@@ -449024,7 +449029,7 @@
       ],
       "roles": [
         "动画演出",
-        "分镜／动画演出",
+        "分镜",
         "构图协力"
       ],
       "work_count": 1,
@@ -449077,7 +449082,7 @@
       ],
       "roles": [
         "动画演出",
-        "分镜／动画演出",
+        "分镜",
         "构图协力",
         "动画演出协力",
         "第二原画"
@@ -449144,7 +449149,8 @@
         "official-ending-anime-cinderella-gray-e13"
       ],
       "roles": [
-        "分镜／动画演出",
+        "分镜",
+        "动画演出",
         "作画监督",
         "设计协力",
         "原画"
@@ -449415,7 +449421,7 @@
         "作画监督",
         "原画",
         "第二原画",
-        "分镜／动画演出／原画"
+        "动画演出"
       ],
       "work_count": 1,
       "unit_count": 23
@@ -449699,8 +449705,7 @@
         "分镜",
         "动画演出",
         "导演",
-        "舞台动画演出",
-        "分镜／动画演出"
+        "舞台动画演出"
       ],
       "work_count": 4,
       "unit_count": 43
@@ -449860,7 +449865,6 @@
       "creator_id": "creator-1cfdc14407",
       "roles": [
         "脚本",
-        "系列构成／脚本",
         "系列构成"
       ],
       "work_count": 3,
@@ -449938,10 +449942,10 @@
         "作画监督",
         "总作画监督",
         "原画",
-        "作画监督／总作画监督",
         "过场动画原画",
         "舞台动画作画监督",
-        "分镜／动画演出"
+        "分镜",
+        "动画演出"
       ],
       "work_count": 3,
       "unit_count": 25
@@ -450916,7 +450920,7 @@
         "official-ending-anime-s3-e13"
       ],
       "roles": [
-        "分镜／动画演出",
+        "分镜",
         "动画演出",
         "动画演出助理"
       ],
@@ -451224,12 +451228,11 @@
       "roles": [
         "第二原画",
         "作画监督",
-        "角色设计／总作画监督",
         "角色设计",
+        "总作画监督",
         "过场动画原画",
         "毛笔字",
-        "原画",
-        "总作画监督"
+        "原画"
       ],
       "work_count": 4,
       "unit_count": 43
@@ -451262,7 +451265,8 @@
         "official-ending-anime-s3-e08"
       ],
       "roles": [
-        "分镜／动画演出"
+        "分镜",
+        "动画演出"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -451298,7 +451302,8 @@
       ],
       "roles": [
         "原画",
-        "分镜／动画演出"
+        "分镜",
+        "动画演出"
       ],
       "work_count": 2,
       "unit_count": 4
@@ -451563,14 +451568,15 @@
         "official-ending-anime-umayon-e16"
       ],
       "roles": [
-        "导演／角色设计／总作画监督",
-        "原画／中间动画／上色",
-        "分镜／作画监督",
-        "背景",
+        "导演",
+        "角色设计",
+        "总作画监督",
+        "原画",
+        "中间动画",
+        "上色",
         "分镜",
         "作画监督",
-        "角色设计／作画监督",
-        "导演"
+        "背景"
       ],
       "work_count": 3,
       "unit_count": 36
@@ -451657,7 +451663,6 @@
         "official-ending-anime-umayuru-prettygray-e04"
       ],
       "roles": [
-        "系列构成／脚本",
         "系列构成",
         "脚本"
       ],
@@ -451756,7 +451761,8 @@
       ],
       "roles": [
         "摄影监督",
-        "剪辑／动态制作",
+        "剪辑",
+        "动态制作",
         "动态图形"
       ],
       "work_count": 3,
@@ -451912,11 +451918,11 @@
         "导演",
         "分镜",
         "角色设计",
-        "总作画监督／色彩设计",
-        "导演／角色设计／总作画监督",
-        "角色设计／总作画监督",
-        "原画／中间动画／上色",
-        "分镜／作画监督",
+        "总作画监督",
+        "色彩设计",
+        "原画",
+        "中间动画",
+        "上色",
         "作画监督"
       ],
       "work_count": 3,
@@ -452028,7 +452034,7 @@
       "roles": [
         "摄影监督",
         "摄影",
-        "摄影／上色",
+        "上色",
         "背景"
       ],
       "work_count": 3,
@@ -452930,10 +452936,9 @@
       ],
       "roles": [
         "色彩设计",
-        "色彩指定／上色检查",
-        "上色",
         "色彩指定",
         "上色检查",
+        "上色",
         "上色检查助理"
       ],
       "work_count": 4,
@@ -452988,8 +452993,8 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查",
         "色彩指定",
+        "上色检查",
         "色彩设计助理",
         "上色检查助理"
       ],
@@ -453041,7 +453046,6 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查",
         "色彩指定",
         "上色检查",
         "上色检查助理"
@@ -453084,7 +453088,6 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查",
         "色彩指定",
         "上色检查",
         "上色检查助理"
@@ -453134,7 +453137,6 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查",
         "色彩指定",
         "上色检查",
         "上色检查助理"
@@ -453192,7 +453194,7 @@
       "roles": [
         "上色",
         "上色检查",
-        "色彩指定／上色检查",
+        "色彩指定",
         "上色检查助理"
       ],
       "work_count": 4,
@@ -453246,7 +453248,6 @@
         "上色",
         "上色检查",
         "色彩指定",
-        "色彩指定／上色检查",
         "上色检查助理"
       ],
       "work_count": 4,
@@ -455491,7 +455492,8 @@
         "official-ending-anime-s1-e08"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -457456,7 +457458,8 @@
         "official-ending-anime-s1-e15"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -457806,7 +457809,7 @@
       ],
       "roles": [
         "中间动画",
-        "中间动画／中间动画检查"
+        "中间动画检查"
       ],
       "work_count": 1,
       "unit_count": 11
@@ -458864,7 +458867,8 @@
       ],
       "roles": [
         "中间动画",
-        "色彩指定／上色检查",
+        "色彩指定",
+        "上色检查",
         "上色"
       ],
       "work_count": 1,
@@ -461548,7 +461552,8 @@
         "official-ending-anime-cinderella-gray-e02"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -461562,7 +461567,8 @@
         "official-ending-anime-cinderella-gray-e02"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -461576,7 +461582,8 @@
         "official-ending-anime-cinderella-gray-e02"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -462198,7 +462205,8 @@
         "official-ending-anime-cinderella-gray-e17"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 4
@@ -463613,7 +463621,8 @@
         "official-ending-anime-cinderella-gray-e13"
       ],
       "roles": [
-        "色彩指定／上色检查",
+        "色彩指定",
+        "上色检查",
         "上色"
       ],
       "work_count": 1,
@@ -464277,7 +464286,9 @@
         "official-ending-anime-cinderella-gray-e06"
       ],
       "roles": [
-        "原画／中间动画／上色",
+        "原画",
+        "中间动画",
+        "上色",
         "第二原画"
       ],
       "work_count": 2,
@@ -464549,7 +464560,8 @@
         "official-ending-anime-cinderella-gray-e06"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -465356,7 +465368,8 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 2,
       "unit_count": 2
@@ -465375,7 +465388,8 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 2,
       "unit_count": 3
@@ -465392,7 +465406,8 @@
       ],
       "roles": [
         "上色",
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 2,
       "unit_count": 2
@@ -465754,7 +465769,8 @@
       "roles": [
         "上色检查助理",
         "上色",
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 3,
       "unit_count": 5
@@ -467184,8 +467200,9 @@
         "official-ending-anime-cinderella-gray-e22"
       ],
       "roles": [
-        "色彩指定／上色检查",
-        "舞台动画指定／上色检查"
+        "色彩指定",
+        "上色检查",
+        "舞台动画指定"
       ],
       "work_count": 1,
       "unit_count": 2
@@ -469669,7 +469686,8 @@
         "official-ending-anime-cinderella-gray-e18"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -469683,7 +469701,8 @@
         "official-ending-anime-cinderella-gray-e18"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -470257,7 +470276,8 @@
         "official-ending-anime-cinderella-gray-e20"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -470718,7 +470738,8 @@
         "official-ending-anime-cinderella-gray-e21"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -470777,7 +470798,8 @@
       ],
       "roles": [
         "舞台动画分镜",
-        "舞台动画动画演出／剪辑"
+        "舞台动画动画演出",
+        "剪辑"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -471178,7 +471200,8 @@
         "official-ending-anime-cinderella-gray-e22"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -471387,8 +471410,8 @@
         "official-ending-anime-cinderella-gray-e21"
       ],
       "roles": [
-        "色彩指定／上色检查",
-        "色彩指定"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 9
@@ -471507,11 +471530,11 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "角色设计／总作画监督",
+        "角色设计",
         "总作画监督",
-        "过场动画分镜／原画",
-        "作画监督",
-        "角色设计"
+        "过场动画分镜",
+        "原画",
+        "作画监督"
       ],
       "work_count": 2,
       "unit_count": 5
@@ -471610,7 +471633,6 @@
         "动画演出",
         "作画监督",
         "动作作画监督",
-        "分镜／动画演出",
         "分镜"
       ],
       "work_count": 2,
@@ -472174,9 +472196,8 @@
       ],
       "roles": [
         "美术监督",
-        "美术监督／美术背景",
-        "背景",
-        "美术背景"
+        "美术背景",
+        "背景"
       ],
       "work_count": 2,
       "unit_count": 3
@@ -472303,7 +472324,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "二维制作／特效"
+        "二维制作",
+        "特效"
       ],
       "work_count": 1,
       "unit_count": 3
@@ -472995,7 +473017,9 @@
       "roles": [
         "标题标志",
         "标题标志设计",
-        "分镜／动画演出／设计"
+        "分镜",
+        "动画演出",
+        "设计"
       ],
       "work_count": 4,
       "unit_count": 23
@@ -473141,11 +473165,10 @@
       ],
       "roles": [
         "剧本总监",
-        "剧本总监／故事构成",
-        "剧本总监／系列构成",
+        "故事构成",
+        "系列构成",
         "企划协力",
-        "脚本监修",
-        "系列构成"
+        "脚本监修"
       ],
       "work_count": 6,
       "unit_count": 51
@@ -473219,7 +473242,8 @@
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
       "roles": [
-        "舞台场景分镜／动画演出",
+        "舞台场景分镜",
+        "动画演出",
         "作画监督"
       ],
       "work_count": 1,
@@ -475865,7 +475889,8 @@
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -475879,7 +475904,8 @@
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -475893,7 +475919,8 @@
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -475909,7 +475936,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "色彩指定／上色检查",
+        "色彩指定",
+        "上色检查",
         "上色"
       ],
       "work_count": 2,
@@ -476248,7 +476276,7 @@
       ],
       "roles": [
         "美术监督",
-        "美术监督／美术设定"
+        "美术设定"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -478303,9 +478331,8 @@
       ],
       "roles": [
         "海外与流媒体销售",
-        "日本上线／海外授权",
-        "海外授权",
         "日本上线",
+        "海外授权",
         "执行制片人"
       ],
       "work_count": 5,
@@ -479214,7 +479241,8 @@
         "official-ending-anime-umayuru-fullgate-e03"
       ],
       "roles": [
-        "录音／调音"
+        "录音",
+        "调音"
       ],
       "work_count": 1,
       "unit_count": 3
@@ -479229,7 +479257,8 @@
         "official-ending-anime-umayuru-fullgate-e03"
       ],
       "roles": [
-        "录音／调音助理"
+        "录音",
+        "调音助理"
       ],
       "work_count": 1,
       "unit_count": 3
@@ -479313,7 +479342,8 @@
         "背景",
         "作画监督",
         "分镜",
-        "原画／中间动画／上色"
+        "中间动画",
+        "上色"
       ],
       "work_count": 3,
       "unit_count": 43
@@ -479468,9 +479498,10 @@
       ],
       "roles": [
         "分镜",
-        "原画／中间动画／上色",
+        "原画",
+        "中间动画",
+        "上色",
         "作画监督",
-        "分镜／作画监督",
         "背景"
       ],
       "work_count": 1,
@@ -479523,7 +479554,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "原画／中间动画／上色",
+        "原画",
+        "中间动画",
+        "上色",
         "分镜",
         "作画监督"
       ],
@@ -479577,7 +479610,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "原画／中间动画／上色"
+        "原画",
+        "中间动画",
+        "上色"
       ],
       "work_count": 2,
       "unit_count": 40
@@ -479655,9 +479690,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "摄影／上色",
-        "摄影监督",
-        "摄影"
+        "摄影",
+        "上色",
+        "摄影监督"
       ],
       "work_count": 2,
       "unit_count": 30
@@ -479697,7 +479732,8 @@
         "official-ending-anime-umayuru-prettygray-e04"
       ],
       "roles": [
-        "录音／调音"
+        "录音",
+        "调音"
       ],
       "work_count": 2,
       "unit_count": 28
@@ -479733,7 +479769,8 @@
         "official-ending-anime-umayuru-e10"
       ],
       "roles": [
-        "录音／调音助理"
+        "录音",
+        "调音助理"
       ],
       "work_count": 1,
       "unit_count": 24
@@ -479810,7 +479847,9 @@
         "official-ending-anime-umayuru-prettygray-e04"
       ],
       "roles": [
-        "原画／中间动画／上色",
+        "原画",
+        "中间动画",
+        "上色",
         "动画"
       ],
       "work_count": 2,
@@ -479942,7 +479981,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "原画／中间动画／上色",
+        "原画",
+        "中间动画",
+        "上色",
         "分镜",
         "作画监督"
       ],
@@ -481840,7 +481881,8 @@
       ],
       "roles": [
         "色彩设计",
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 23
@@ -486848,7 +486890,9 @@
         "official-ending-anime-umayon-e19"
       ],
       "roles": [
-        "原画／中间动画／上色"
+        "原画",
+        "中间动画",
+        "上色"
       ],
       "work_count": 1,
       "unit_count": 17
@@ -486874,7 +486918,9 @@
         "official-ending-anime-umayon-e17"
       ],
       "roles": [
-        "原画／中间动画／上色"
+        "原画",
+        "中间动画",
+        "上色"
       ],
       "work_count": 1,
       "unit_count": 14
@@ -487185,7 +487231,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "原画／中间动画／上色",
+        "原画",
+        "中间动画",
+        "上色",
         "作画监督"
       ],
       "work_count": 1,
@@ -487214,7 +487262,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "原画／中间动画／上色"
+        "原画",
+        "中间动画",
+        "上色"
       ],
       "work_count": 1,
       "unit_count": 16
@@ -487330,7 +487380,7 @@
         "official-ending-anime-s2-e06"
       ],
       "roles": [
-        "日本上线／海外授权",
+        "日本上线",
         "海外授权"
       ],
       "work_count": 2,
@@ -487915,7 +487965,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "二维制作／特效"
+        "二维制作",
+        "特效"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -487929,7 +487980,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "二维制作／特效"
+        "二维制作",
+        "特效"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -487942,7 +487994,8 @@
         "official-ending-anime-rttt-e02"
       ],
       "roles": [
-        "二维制作／特效"
+        "二维制作",
+        "特效"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -487957,7 +488010,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "二维制作／特效"
+        "二维制作",
+        "特效"
       ],
       "work_count": 1,
       "unit_count": 2
@@ -488346,7 +488400,8 @@
         "official-ending-anime-umayuru-prettygray-e04"
       ],
       "roles": [
-        "录音／调音助理"
+        "录音",
+        "调音助理"
       ],
       "work_count": 1,
       "unit_count": 4
@@ -488362,7 +488417,8 @@
         "official-ending-anime-umayuru-prettygray-e04"
       ],
       "roles": [
-        "分镜／动画"
+        "分镜",
+        "动画"
       ],
       "work_count": 1,
       "unit_count": 4
@@ -488433,7 +488489,6 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "分镜／动画演出",
         "分镜",
         "动画演出"
       ],
@@ -488650,7 +488705,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -488664,7 +488720,6 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "分镜／动画演出",
         "分镜",
         "动画演出"
       ],
@@ -488929,7 +488984,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "舞台／屏幕影像制作"
+        "舞台",
+        "屏幕影像制作"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -489795,7 +489851,8 @@
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
       "roles": [
-        "资料协力／写真"
+        "资料协力",
+        "写真"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -489809,7 +489866,8 @@
         "official-ending-anime-movie-beginning-new-era-e01"
       ],
       "roles": [
-        "资料协力／文"
+        "资料协力",
+        "文"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -493006,7 +493064,9 @@
         "official-ending-anime-s3-e13"
       ],
       "roles": [
-        "CG制作统筹／第二原画／中间动画管理"
+        "CG制作统筹",
+        "第二原画",
+        "中间动画管理"
       ],
       "work_count": 1,
       "unit_count": 13
@@ -494357,7 +494417,8 @@
         "official-ending-anime-cinderella-gray-e13"
       ],
       "roles": [
-        "分镜／动画演出"
+        "分镜",
+        "动画演出"
       ],
       "work_count": 1,
       "unit_count": 13
@@ -496164,7 +496225,8 @@
         "official-ending-anime-s1-e16"
       ],
       "roles": [
-        "分镜／动画演出"
+        "分镜",
+        "动画演出"
       ],
       "work_count": 1,
       "unit_count": 14
@@ -497935,7 +497997,8 @@
         "official-ending-anime-s3-e12"
       ],
       "roles": [
-        "服装／道具设计",
+        "服装",
+        "道具设计",
         "分镜协力"
       ],
       "work_count": 1,
@@ -502928,7 +502991,9 @@
         "official-ending-anime-umayon-e24"
       ],
       "roles": [
-        "原画／中间动画／上色"
+        "原画",
+        "中间动画",
+        "上色"
       ],
       "work_count": 1,
       "unit_count": 8
@@ -502943,7 +503008,9 @@
         "official-ending-anime-umayon-e23"
       ],
       "roles": [
-        "原画／中间动画／上色"
+        "原画",
+        "中间动画",
+        "上色"
       ],
       "work_count": 1,
       "unit_count": 3
@@ -505064,7 +505131,8 @@
         "official-ending-anime-rttt-film"
       ],
       "roles": [
-        "二维制作／特效"
+        "二维制作",
+        "特效"
       ],
       "work_count": 1,
       "unit_count": 0
@@ -505155,7 +505223,8 @@
         "official-ending-anime-cinderella-gray-e10"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -505513,7 +505582,8 @@
         "official-ending-anime-cinderella-gray-e23"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1
@@ -505708,7 +505778,8 @@
         "official-ending-anime-cinderella-gray-e22"
       ],
       "roles": [
-        "色彩指定／上色检查"
+        "色彩指定",
+        "上色检查"
       ],
       "work_count": 1,
       "unit_count": 1

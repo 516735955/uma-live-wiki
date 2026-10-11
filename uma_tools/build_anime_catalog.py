@@ -12,7 +12,7 @@ import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
-from anime_labels import role_label_for_group, person_label, group_label, organization_label
+from anime_labels import role_label_for_group, person_label, group_label, organization_label, music_usage
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -250,6 +250,9 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
     units = expand_units(list(documents["units.json"].get("series") or []), works_by_id)
     resources = list(documents["watch_resources.json"].get("resources") or [])
     relations = list(documents["relations.json"].get("relations") or [])
+    relations = [{**row, "usage_type_raw": row["usage_type"], "usage_type": music_usage(row["usage_type"])}
+                 if row.get("relation_type") == "uses_song" and row.get("usage_type") != music_usage(row.get("usage_type"))
+                 else row for row in relations]
     staff = list(documents["staff.json"].get("credits") or [])
     people = list(documents["people.json"].get("people") or [])
     sources = list(documents["source_registry.json"].get("sources") or [])
@@ -272,7 +275,9 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
              for credit in staff]
     people = [{**person, "name": person_label(person["name"]),
                "aliases": person.get("aliases") or [],
-               "roles": list(dict.fromkeys(credit["role"] for credit in staff if credit.get("person_id") == person["id"])),
+               "roles": list(dict.fromkeys(role.strip() for credit in staff
+                                           if credit.get("person_id") == person["id"]
+                                           for role in credit["role"].split("／") if role.strip())),
                "work_count": len({credit["work_id"] for credit in staff if credit.get("person_id") == person["id"]}),
                "unit_count": len({credit["unit_id"] for credit in staff if credit.get("person_id") == person["id"] and credit.get("unit_id")})}
               for person in people if any(credit.get("person_id") == person["id"] for credit in staff)]

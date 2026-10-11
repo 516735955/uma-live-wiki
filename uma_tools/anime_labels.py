@@ -126,6 +126,10 @@ def organization_label(raw):
     }.get(value, value)
 
 
+def music_usage(raw):
+    return {"ending": "ed", "ending_theme": "ed", "opening": "op", "opening_theme": "op"}.get(raw, raw)
+
+
 def group_label(raw):
     if any(token in raw for token in ("片尾署名", "片尾職員", "公式 Staff", "公式Staff", "官网单集", "官网作品")):
         return ""
