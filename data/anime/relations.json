@@ -32541,6 +32541,112 @@
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e21"
       ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-official-ending-cast-00",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "goldship",
+      "voice_actor_id": "va-0009",
+      "signature": "ゴールドシップ",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-official-ending-cast-01",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "verxina",
+      "voice_actor_id": "va-0056",
+      "signature": "ヴィルシーナ",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-official-ending-cast-02",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "orfevre",
+      "voice_actor_id": "va-0081",
+      "signature": "オルフェーヴル",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-official-ending-cast-03",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "gentildonna",
+      "voice_actor_id": "va-0146",
+      "signature": "ジェンティルドンナ",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-official-ending-cast-04",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "winvariation",
+      "voice_actor_id": "va-0088",
+      "signature": "ウインバリアシオン",
+      "display_order": 4,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-official-ending-cast-05",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "fenomeno",
+      "voice_actor_id": "va-0080",
+      "signature": "フェノーメノ",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e03-ending-music-song-aed14a1a3a-v-2954ef1177",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e03",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-aed14a1a3a",
+      "version_id": "song-aed14a1a3a-v-2954ef1177",
+      "release_id": "album-lzc-3651",
+      "version_label": "Anime Size",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e03"
+      ]
     }
   ]
 }

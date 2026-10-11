@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-80f30bb2bb2f3e1a",
-  "generated_at": "2026-10-10T00:00:00+08:00",
+  "build_id": "anime-348b6732922cbc5a",
+  "generated_at": "2026-10-12T00:00:00+08:00",
   "targets": {
     "event": {
       "live-other-2024-05-06-title-7caa082310e6": [
@@ -1327,6 +1327,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "mejiromcqueen": [
@@ -12479,6 +12490,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e13",
           "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヴィルシーナ",
+          "voice_actor_id": "va-0056",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "vivlos": [
@@ -16650,6 +16672,58 @@
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
         }
+      ],
+      "orfevre": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オルフェーヴル",
+          "voice_actor_id": "va-0081",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "gentildonna": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ジェンティルドンナ",
+          "voice_actor_id": "va-0146",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "winvariation": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウインバリアシオン",
+          "voice_actor_id": "va-0088",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "fenomeno": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フェノーメノ",
+          "voice_actor_id": "va-0080",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
       ]
     },
     "voice_actor": {
@@ -17933,6 +18007,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-00",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシップ",
+          "voice_actor_id": "va-0009",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0053": [
@@ -29195,6 +29280,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e13",
           "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-01",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ヴィルシーナ",
+          "voice_actor_id": "va-0056",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0025": [
@@ -33368,6 +33464,58 @@
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
         }
+      ],
+      "va-0081": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-02",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オルフェーヴル",
+          "voice_actor_id": "va-0081",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0146": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-03",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ジェンティルドンナ",
+          "voice_actor_id": "va-0146",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0088": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-04",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ウインバリアシオン",
+          "voice_actor_id": "va-0088",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0080": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-official-ending-cast-05",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "フェノーメノ",
+          "voice_actor_id": "va-0080",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        }
       ]
     },
     "song": {
@@ -36226,6 +36374,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e02",
+          "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e03-ending-music-song-aed14a1a3a-v-2954ef1177",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e03",
           "work_id": "anime-umayuru-fullgate"
         }
       ],

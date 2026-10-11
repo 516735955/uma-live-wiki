@@ -1,7 +1,367 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-08",
+  "observed_at": "2026-10-12",
   "episodes": [
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "number": 3,
+      "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
+      "staff_status": "complete",
+      "cast_status": "complete",
+      "cast": [
+        [
+          "ゴールドシップ",
+          "上田瞳"
+        ],
+        [
+          "ヴィルシーナ",
+          "奥野香耶"
+        ],
+        [
+          "オルフェーヴル",
+          "日笠陽子"
+        ],
+        [
+          "ジェンティルドンナ",
+          "芹澤優"
+        ],
+        [
+          "ウインバリアシオン",
+          "月城日花"
+        ],
+        [
+          "フェノーメノ",
+          "日比優理香"
+        ]
+      ],
+      "staff_groups": [
+        {
+          "role": "監督",
+          "time": 154,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "原作",
+          "time": 157,
+          "organizations": [
+            "Cygames"
+          ]
+        },
+        {
+          "role": "シナリオディレクター",
+          "time": 157,
+          "names": [
+            "三岳真希"
+          ]
+        },
+        {
+          "role": "シナリオ監修",
+          "time": 157,
+          "names": [
+            "松野芽衣子",
+            "髙橋沙織"
+          ]
+        },
+        {
+          "role": "シリーズ構成",
+          "time": 157,
+          "names": [
+            "市川十億衛門"
+          ]
+        },
+        {
+          "role": "脚本",
+          "time": 159,
+          "names": [
+            "木原梨花"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 159,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン監修",
+          "time": 159,
+          "names": [
+            "橋野翼",
+            "兼髙瑞穂"
+          ]
+        },
+        {
+          "role": "キャラクターデザイン",
+          "time": 159,
+          "names": [
+            "宮嶋星矢",
+            "よよよ"
+          ]
+        },
+        {
+          "role": "総作画監督・色彩設計",
+          "time": 159,
+          "names": [
+            "宮嶋星矢"
+          ]
+        },
+        {
+          "role": "原画",
+          "time": 159,
+          "names": [
+            "よよよ"
+          ]
+        },
+        {
+          "role": "動画・仕上げ",
+          "time": 159,
+          "organizations": [
+            "Studio ArcLine"
+          ]
+        },
+        {
+          "role": "美術監督",
+          "time": 159,
+          "names": [
+            "山本陽一郎"
+          ]
+        },
+        {
+          "role": "背景",
+          "time": 159,
+          "organizations": [
+            "studio Moonriver"
+          ]
+        },
+        {
+          "role": "撮影監督",
+          "time": 159,
+          "names": [
+            "大図佑"
+          ]
+        },
+        {
+          "role": "編集",
+          "time": 159,
+          "names": [
+            "早島苫"
+          ]
+        },
+        {
+          "role": "音楽",
+          "time": 160,
+          "names": [
+            "田山里奈"
+          ],
+          "institutions": [
+            "イマジン"
+          ]
+        },
+        {
+          "role": "音楽プロデューサー",
+          "time": 160,
+          "names": [
+            "本田晃弘"
+          ]
+        },
+        {
+          "role": "録音・調整",
+          "time": 160,
+          "names": [
+            "沼田陽由里"
+          ]
+        },
+        {
+          "role": "録音・調整助手",
+          "time": 160,
+          "names": [
+            "小林丈晃"
+          ]
+        },
+        {
+          "role": "音響監督",
+          "time": 160,
+          "names": [
+            "神保直史"
+          ]
+        },
+        {
+          "role": "音響効果",
+          "time": 160,
+          "names": [
+            "北方将実"
+          ]
+        },
+        {
+          "role": "録音スタジオ",
+          "time": 160,
+          "organizations": [
+            "美星"
+          ]
+        },
+        {
+          "role": "台本製作",
+          "time": 160,
+          "organizations": [
+            "NSP"
+          ]
+        },
+        {
+          "role": "音響制作プロデューサー",
+          "time": 160,
+          "names": [
+            "小木曾悠太"
+          ]
+        },
+        {
+          "role": "音響制作",
+          "time": 160,
+          "organizations": [
+            "REMAX"
+          ]
+        },
+        {
+          "role": "絵コンテ",
+          "time": 165,
+          "names": [
+            "宮嶋星矢"
+          ],
+          "group": "エンディングアニメーション制作"
+        },
+        {
+          "role": "原画",
+          "time": 165,
+          "names": [
+            "よよよ",
+            "雛田ゆいち"
+          ],
+          "group": "エンディングアニメーション制作"
+        },
+        {
+          "role": "動画・仕上げ",
+          "time": 165,
+          "organizations": [
+            "無錫市アニメ"
+          ],
+          "group": "エンディングアニメーション制作"
+        },
+        {
+          "role": "背景",
+          "time": 165,
+          "names": [
+            "雛田ゆいち"
+          ],
+          "group": "エンディングアニメーション制作"
+        },
+        {
+          "role": "撮影",
+          "time": 165,
+          "names": [
+            "大図佑"
+          ],
+          "group": "エンディングアニメーション制作"
+        },
+        {
+          "role": "企画協力",
+          "time": 177,
+          "organizations": [
+            "「ウマ娘 プリティーダービー」ゲーム開発・運営チーム"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 177,
+          "names": [
+            "阿部憶人"
+          ]
+        },
+        {
+          "role": "協力",
+          "time": 177,
+          "names": [
+            "久保武史"
+          ],
+          "institutions": [
+            "ゲームアディクト"
+          ]
+        },
+        {
+          "role": "プロデューサー",
+          "time": 180,
+          "names": [
+            "片田悠介"
+          ]
+        },
+        {
+          "role": "アニメーションプロデューサー",
+          "time": 180,
+          "names": [
+            "青木泰寛"
+          ]
+        },
+        {
+          "role": "アシスタントプロデューサー",
+          "time": 180,
+          "names": [
+            "渡邉杏奈"
+          ]
+        },
+        {
+          "role": "アニメーション制作",
+          "time": 182,
+          "organizations": [
+            "AtoriE"
+          ]
+        },
+        {
+          "role": "製作",
+          "time": 182,
+          "organizations": [
+            "Cygames"
+          ]
+        }
+      ],
+      "music_uses": [
+        {
+          "song_id": "song-aed14a1a3a",
+          "version_id": "song-aed14a1a3a-v-2954ef1177",
+          "release_id": "album-lzc-3651",
+          "title": "芝生えるわ～",
+          "usage_type": "ed"
+        }
+      ],
+      "music_signatures": [
+        {
+          "role": "作詞",
+          "time": 164,
+          "names": [
+            "池田健仁",
+            "前山田健一"
+          ],
+          "title": "芝生えるわ～"
+        },
+        {
+          "role": "作曲",
+          "time": 164,
+          "names": [
+            "池田健仁",
+            "前山田健一"
+          ],
+          "title": "芝生えるわ～"
+        },
+        {
+          "role": "編曲",
+          "time": 164,
+          "names": [
+            "池田健仁"
+          ],
+          "title": "芝生えるわ～"
+        }
+      ]
+    },
     {
       "work_id": "anime-s1",
       "number": 1,

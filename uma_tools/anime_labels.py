@@ -11,6 +11,7 @@ ROLES = {
     "担当補佐": "制作统筹助理",
     "背景進行": "背景制作进行", "背景進行補佐": "背景制作进行助理",
     "制作プロデューサー": "动画制片人",
+    "音響制作プロデューサー": "音响制作制片人",
     "録音スタジオ": "录音室", "製作委員会": "出品委员会", "第二原画": "第二原画", "二原": "第二原画",
     "ライブパート第二原画": "舞台动画第二原画",
     "LIVEパート演出": "舞台动画演出", "LIVEパート作画監督": "舞台动画作画监督",
@@ -105,6 +106,24 @@ def role_label_for_group(raw, group=""):
 def person_label(raw):
     value = html.unescape(re.sub(r"<[^>]*>", "", raw)).strip()
     return re.sub(r"(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])", "", value)
+
+
+def organization_label(raw):
+    """Unify verified spelling variants without changing the recorded signature."""
+    value = html.unescape(re.sub(r"<[^>]*>", "", raw)).strip()
+    return {
+        "Roll2": "ROLL2",
+        "Cygames Pictures": "CygamesPictures",
+        "Clover Works": "CloverWorks",
+        "WITSTUDIO": "WIT STUDIO",
+        "T2Studio": "T2 studio",
+        "T2studio": "T2 studio",
+        "フィズサウンド クリエイション": "フィズサウンドクリエイション",
+        "草薙(KUSANAGI)": "草薙（KUSANAGI）",
+        "WHITE FOX 伊豆高原スタジオ": "WHITE FOX伊豆高原スタジオ",
+        "Rebuilding Quanta 株式会社": "Rebuilding Quanta株式会社",
+        "DRmovie": "DRMOVIE",
+    }.get(value, value)
 
 
 def group_label(raw):

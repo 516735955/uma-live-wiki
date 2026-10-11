@@ -3769,43 +3769,43 @@
           "stills": [
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg"
             },
             {
               "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
-              "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
-              "source_ref": "official-toho-film-release"
+              "source_ref": "official-toho-film-release",
+              "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg"
             }
           ],
           "music_cues": [
@@ -6209,7 +6209,7 @@
       "work_id": "anime-umayuru-fullgate",
       "count": 26,
       "unit_type": "short",
-      "released_count": 2,
+      "released_count": 3,
       "date_blocks": [
         {
           "from": 1,
@@ -6223,6 +6223,13 @@
           "to": 2,
           "dates": [
             "2026-10-04"
+          ]
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "dates": [
+            "2026-10-11"
           ]
         }
       ],
@@ -6306,28 +6313,76 @@
           "stills": [
             {
               "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
-              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
-              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+              "source_ref": "official-story-anime-umayuru-fullgate-e02",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg"
             },
             {
               "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
-              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
-              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+              "source_ref": "official-story-anime-umayuru-fullgate-e02",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg"
             },
             {
               "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
-              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
-              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+              "source_ref": "official-story-anime-umayuru-fullgate-e02",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg"
             },
             {
               "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
-              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
-              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+              "source_ref": "official-story-anime-umayuru-fullgate-e02",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg"
             },
             {
               "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
-              "original_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
-              "source_ref": "official-story-anime-umayuru-fullgate-e02"
+              "source_ref": "official-story-anime-umayuru-fullgate-e02",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg"
+            }
+          ],
+          "staff_status": "complete"
+        },
+        "3": {
+          "title_ja": "誰にも負けない熱意をアートに！",
+          "title_zh": "把不输给任何人的热情化作艺术！",
+          "summary_ja": "ファンイベントに向けアート作品を作るウマ娘たちの前に、熱血ゴールドシップ師範代が登場！\n最も熱い作品を決める戦いが、今始まる―！",
+          "summary_zh": "赛马娘们为粉丝活动准备艺术作品时，热血的黄金船师范代现身。争夺最富热情作品的较量，就此开始！",
+          "release_date": "2026-10-11",
+          "duration": "3分04秒",
+          "dates": [
+            {
+              "label": "YouTube公开",
+              "date": "2026-10-11",
+              "display": "2026-10-11 21:00",
+              "timezone": "JST"
+            }
+          ],
+          "source_refs": [
+            "official-story-anime-umayuru-fullgate-e03",
+            "official-ending-anime-umayuru-fullgate-e03"
+          ],
+          "stills": [
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e03",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e03",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e03",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e03",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg"
+            },
+            {
+              "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg",
+              "source_ref": "official-story-anime-umayuru-fullgate-e03",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg"
             }
           ],
           "staff_status": "complete"

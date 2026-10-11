@@ -15,6 +15,7 @@ PERSON_ALIASES = {
     "staff-NainemoutouLucas": "staff-LucasNainemoutou",
     "staff-GirardinSolal": "staff-SolalGirardin",
     "staff-MeNex00": "staff-MeNeX00",
+    "staff-フクロウp": "staff-フクロウP",
 }
 IDENTITY_SOURCES = {
     "staff-LucasNainemoutou": "production-lucas-nainemoutou-profile",

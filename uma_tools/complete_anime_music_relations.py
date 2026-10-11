@@ -53,7 +53,7 @@ USES = [
     ("anime-s1", "song-endless-dream-eabbcc4d12", "insert", [2], "moegirl-tv-episode-music"),
     ("anime-s2", "song-18aa53485d", "insert", [8], "moegirl-tv-episode-music"),
     ("anime-s2", "song-b90b0841b4", "insert", [13], "moegirl-tv-episode-music"),
-    ("anime-s3", "song-bd297fdbbe", "bgm", [1], "moegirl-tv-episode-music"),
+    ("anime-s3", "song-bd297fdbbe", "insert", [1], "moegirl-tv-episode-music"),
 ]
 FANFARES = [
     ("anime-cinderella-gray", "笠松競馬 ファンファーレ（重賞）", [4, 6], [], ["笠松赛马场"], ""),

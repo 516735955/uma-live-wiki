@@ -3669,7 +3669,8 @@
       "content_type": "series",
       "unit_ids": [
         "anime-umayuru-fullgate-e01",
-        "anime-umayuru-fullgate-e02"
+        "anime-umayuru-fullgate-e02",
+        "anime-umayuru-fullgate-e03"
       ],
       "languages": {
         "audio": [
@@ -3843,6 +3844,21 @@
       "url": "https://www.youtube.com/watch?v=COwezDS-R3s",
       "source_ref": "official-story-anime-umayuru-fullgate-e02",
       "verified_at": "2026-10-05"
+    },
+    {
+      "id": "watch-official-anime-umayuru-fullgate-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e03"
+      },
+      "platform": "youtube",
+      "authority": "official",
+      "content_type": "full_episode",
+      "status": "active",
+      "access": "free",
+      "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03",
+      "verified_at": "2026-10-12"
     }
   ]
 }
