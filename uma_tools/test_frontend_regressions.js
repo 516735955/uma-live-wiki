@@ -5,11 +5,15 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 const { CatalogStore } = require('./catalog-store');
+const { AnimeStore } = require('./anime-store');
 const source = (name) => fs.readFileSync(path.join(__dirname, name), 'utf8');
 const deferred = () => { let resolve; const promise = new Promise((done) => { resolve = done; }); return { promise, resolve }; };
 
 async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
+  const animeStore = new AnimeStore(path.join(__dirname, '..', 'data'));
+  let animeFailure = '';
+  let delayedGraph = null;
   const calls = [];
   const details = new Map();
   let newsDetail = deferred();
@@ -22,8 +26,9 @@ async function main() {
     location, scrollTo() {}, requestAnimationFrame(callback) { callback(); },
     dispatchEvent() {}, setTimeout, clearTimeout,
     CHAR_INDEX: [{ id: 'mock', name: 'Mock' }], CHAR_DETAIL: {}, UmaCharacterUi: { init() {} },
+    HORSES: [{ id: 'mock-horse', zh: 'Mock Horse' }],
     UmaPlayer: require('./player-controller'), UmaRoutes: require('./route-utils'),
-    UmaUi: {}, UmaCreatorNetwork: {}
+    UmaUi: {}, UmaCreatorNetwork: {}, UmaAnimeLoader: require('./anime-loader'), UmaAnimeStaff: require('./anime-staff')
   };
   const history = {
     state: {}, pushState(state, unused, url) { this.state = state; location.href = new URL(url, location).href; },
@@ -45,6 +50,13 @@ async function main() {
       if (parsed.pathname === '/api/catalog/creators') return store.creators(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/voice-actors') return store.voices();
       if (parsed.pathname === '/api/catalog/appearance') return store.appearance(parsed.searchParams.get('type'), parsed.searchParams.get('id'));
+      if (parsed.pathname === '/api/catalog/anime') {
+        const scope = parsed.searchParams.get('scope');
+        if (scope === 'graph' && delayedGraph) return delayedGraph.promise;
+        if (animeFailure === scope) throw new Error('HTTP 503');
+        return animeStore.response(scope, parsed.searchParams.get('id'));
+      }
+      if (parsed.pathname === '/api/catalog/anime-media') return { songs: [], events: [] };
       if (parsed.pathname === '/api/catalog/song') return details.get(parsed.searchParams.get('id')).promise;
       return {};
     }
@@ -192,6 +204,79 @@ async function main() {
   await component.methods.choose.call(selection, { creator_id: 'a' });
   assert.strictEqual(selection.selectedDetail.id, 'a');
   assert.strictEqual(selection.loadError, '');
+  location.href = 'http://localhost/zh-Hans/database/anime?format=movie&year=2023';
+  await app.applyCurrentRoute();
+  assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id), ['anime-rttt']);
+  assert(app.animeWorkHref(app.animeFiltered.value[0]).includes('edition=film'));
+  location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeFiltered.value.length, 0, 'year always refers to first publication');
+  app.clearAnimeFilters();
+  app.animeQuery.value = '走向我们的舞台';
+  const actualUnit = (await animeStore.response('work', 'anime-s3')).units.find(unit => unit.number === 12);
+  app.animeQuery.value = actualUnit.title_ja;
+  assert(app.animeWorkHref(app.animeFiltered.value.find(work => work.id === 'anime-s3')).includes(actualUnit.id), 'a unique episode title opens that episode');
+
+  animeFailure = 'work';
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-s3/episodes/anime-s3-e11?section=staff&staff=' + encodeURIComponent('原画');
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeDetail.value, null);
+  assert(app.routeError.value, 'failed direct detail exposes a retry');
+  animeFailure = '';
+  await app.retryAnime();
+  assert.strictEqual(app.animeDetail.value.id, 'anime-s3', 'retry restores the requested detail rather than showing the archive');
+  assert.strictEqual(app.animeUnitDetail.value.id, 'anime-s3-e11');
+  assert.strictEqual(app.routeError.value, '');
+  assert(app.animeUnitHref(app.animeAdjacentUnits.value.next).includes('staff='));
+  const group = app.animeStaffGroups.value[0];
+  app.toggleAnimeStaffGroup(group);
+  const episodeGroupOpen = app.animeStaffGroupOpen(group);
+  location.href = 'http://localhost' + app.animeUnitHref(app.animeAdjacentUnits.value.next);
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeSection.value, 'staff');
+  assert.strictEqual(app.animeStaffQuery.value, '原画');
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-s3/episodes/anime-s3-e11?section=staff&staff=' + encodeURIComponent('原画');
+  await app.applyCurrentRoute();
+  assert(app.animeStaffGroups.value.some(row => row.key === group.key), 'same episode restores the same role: ' + group.key + ' / ' + app.animeStaffGroups.value.map(row => row.key).join(',') + ' query=' + app.animeStaffQuery.value + ' URL=' + location.href + ' detail=' + (app.animeDetail.value || {}).id + ' unit=' + (app.animeUnitDetail.value || {}).id + ' error=' + app.routeError.value + ' rows=' + app.animeCatalog.value.staff.length);
+  assert.strictEqual(app.animeStaffGroupOpen(app.animeStaffGroups.value.find(row => row.key === group.key)), episodeGroupOpen, 'returning restores only this episode’s disclosure state');
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-s3?section=episodes&episodes=12';
+  await app.applyCurrentRoute();
+  assert.deepStrictEqual(Array.from(app.animeUnitGroups.value.flatMap(row => row.units), unit => unit.number), [12], 'number search does not also match episode 1 or 2');
+  assert(app.animeUnitHref(app.animeUnitGroups.value[0].units[0], 'characters').includes('episodes=12'));
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-rttt?edition=web&section=staff';
+  await app.applyCurrentRoute();
+  app.setAnimeEdition('film');
+  assert.strictEqual(app.animeSection.value, 'staff');
+  app.setAnimeEdition('web');
+  assert.strictEqual(app.animeSection.value, 'staff');
+
+  location.href = 'http://localhost/zh-Hans/database/staff?page=2&sort=name';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.staffPage.value, 2, 'restoring a new sort must not reset the requested page');
+  location.href = 'http://localhost/zh-Hans/database/staff?q=UMP&sort=name';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.staffFiltered.value.length, 1);
+  assert.strictEqual(app.staffFiltered.value[0].id, 'staff-ump');
+  const thirdRolePerson = app.animeCatalog.value.people.find(person => person.roles.length > 2);
+  app.staffQuery.value = thirdRolePerson.roles[2];
+  assert(app.staffVisibleRoles(thirdRolePerson).includes(thirdRolePerson.roles[2]), 'the matching role is visible even when it is not a primary role');
+  animeFailure = 'person';
+  location.href = 'http://localhost/zh-Hans/database/staff/staff-UMP';
+  await app.applyCurrentRoute();
+  animeFailure = '';
+  await app.retryAnime();
+  assert.strictEqual(app.staffDetail.value.id, 'staff-ump', 'legacy person links survive detail failure and retry');
+
+  delayedGraph = deferred();
+  location.href = 'http://localhost/zh-Hans/database/voice-actors';
+  const oldGraphRoute = app.applyCurrentRoute();
+  await Promise.resolve();
+  location.href = 'http://localhost/zh-Hans/database/anime';
+  await app.applyCurrentRoute();
+  delayedGraph.resolve(null);
+  await oldGraphRoute;
+  delayedGraph = null;
+  assert.strictEqual(app.animeError.value, '', 'an abandoned graph failure does not replace the current page with an error');
   console.log('frontend regressions passed');
 }
 

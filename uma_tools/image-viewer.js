@@ -11,6 +11,7 @@
   const stage = dialog.querySelector('.image-viewer-stage');
   const error = dialog.querySelector('.image-viewer-error');
   let items = [], index = 0, scale = 1, x = 0, y = 0, drag = null, trigger = null;
+  let restoreScroll = null;
   function original(element) {
     const value = element.dataset.original || element.currentSrc || element.src;
     const url = new URL(value, location.href);
@@ -27,7 +28,7 @@
     scale = 1; x = y = 0; transform(); error.hidden = true;
     stage.classList.add('is-loading');
     stage.setAttribute('aria-busy', 'true');
-    image.src = original(items[index]); image.alt = items[index].alt;
+    image.src = original(items[index]); image.alt = items[index].alt || '';
     dialog.querySelector('.image-viewer-original').href = image.src;
     dialog.querySelector('.image-viewer-count').textContent = (index + 1) + ' / ' + items.length;
     dialog.querySelector('[data-action="previous"]').disabled = index === 0;
@@ -49,7 +50,8 @@
     event.preventDefault();
     const gallery = element.closest('.anime-stills');
     items = gallery ? Array.from(gallery.querySelectorAll('img')) : [element];
-    trigger = element.closest('button') || element;
+    trigger = element.closest('button, a, [tabindex]') || element;
+    restoreScroll = { x: window.scrollX, y: window.scrollY };
     show(items.indexOf(element)); dialog.showModal();
     document.body.classList.add('image-viewer-open');
   });
@@ -60,7 +62,12 @@
   });
   dialog.addEventListener('close', function () {
     document.body.classList.remove('image-viewer-open');
-    if (trigger && trigger.focus) trigger.focus();
+    const position = restoreScroll;
+    restoreScroll = null;
+    if (trigger && trigger.focus) {
+      try { trigger.focus({ preventScroll: true }); } catch (_) { trigger.focus(); }
+    }
+    if (position) window.requestAnimationFrame(function () { window.scrollTo(position.x, position.y); });
     image.removeAttribute('src');
   });
   dialog.addEventListener('keydown', function (event) {
