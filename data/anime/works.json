@@ -70,7 +70,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/c87869bc63883138e9f561a7c303284f6ed1dc89.png"
+      "cover_original": "https://anime-umamusume.jp/archive/2nd/assets/images/anime_umamusume_2nd.png"
     },
     {
       "id": "anime-umayon",
@@ -92,7 +92,7 @@
         "official-anime-portal",
         "official-umayon"
       ],
-      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/01782413655c3bedb874ad64625ca2e500aeca8c.png"
+      "cover_original": "https://umamusume.jp/_nuxt/assets/anime-umayon/images/kv-c27b70c.png"
     },
     {
       "id": "anime-1st-anniversary",
@@ -114,7 +114,7 @@
         "official-anime-portal",
         "official-1st-anniversary"
       ],
-      "cover_original": "https://i.ytimg.com/vi/RKVWLnVqnP0/maxresdefault.jpg"
+      "cover_original": "https://umamusume.jp/_nuxt/images/mv_slide01-9lTCkLJr.jpg"
     },
     {
       "id": "anime-umayuru",
@@ -124,7 +124,8 @@
         "Umayuru",
         "马娘悠哉日常"
       ],
-      "format": "web_short",
+      "format": "short",
+      "distribution": "web",
       "series": "short-animation",
       "status": "completed",
       "start_date": "2022-10-16",
@@ -149,7 +150,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://i1.hdslb.com/bfs/archive/2e02abba7e6867371f1925b9f32c5c2b23ce3731.jpg"
+      "cover_original": "https://umamusume.jp/_nuxt/assets/common/images/ogp_umayuru_02.jpg"
     },
     {
       "id": "anime-rttt",
@@ -210,43 +211,43 @@
       "film_stills": [
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
-          "original_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
-          "source_ref": "official-toho-film-release"
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg"
         }
       ]
     },
@@ -271,7 +272,7 @@
         "official-anime-portal",
         "official-anime-s3"
       ],
-      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/a6d2fbcca2f1956bbe718670d1e7cefb785bf4c3.png"
+      "cover_original": "https://anime-umamusume.jp/assets/images/ogp_3rd_1004.jpg"
     },
     {
       "id": "anime-movie-beginning-new-era",
@@ -326,7 +327,7 @@
         "official-anime-portal",
         "official-cingray"
       ],
-      "cover_original": "https://i0.hdslb.com/bfs/bangumi/image/1fcc34fa384070888e246ae4fc04095815d790d1.png"
+      "cover_original": "https://anime-cinderellagray.com/og_visual.jpg"
     },
     {
       "id": "anime-umayuru-prettygray",
@@ -336,7 +337,8 @@
         "Pretty Gray",
         "摇曳芦灰"
       ],
-      "format": "web_short",
+      "format": "short",
+      "distribution": "web",
       "series": "short-animation",
       "status": "completed",
       "start_date": "2025-04-30",
@@ -367,7 +369,8 @@
         "全员出闸",
         "ふるげーと"
       ],
-      "format": "web_short",
+      "format": "short",
+      "distribution": "web",
       "series": "short-animation",
       "status": "airing",
       "start_date": "2026-09-27",

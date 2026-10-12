@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-5682f2c3fa744bff",
+  "build_id": "anime-9718eac756082bc0",
   "generated_at": "2026-10-12T00:00:00+08:00",
   "targets": {
     "event": {
@@ -23,7 +23,7 @@
         {
           "relation_id": "prettygray-parent",
           "relation_type": "spin_off_from",
-          "label": "短篇衍生",
+          "label": "衍生自",
           "usage_type": "",
           "signature": "",
           "voice_actor_id": "",
@@ -36,7 +36,7 @@
         {
           "relation_id": "fullgate-follows-umayuru",
           "relation_type": "follows",
-          "label": "系列新作",
+          "label": "前作",
           "usage_type": "",
           "signature": "",
           "voice_actor_id": "",
@@ -7917,7 +7917,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s2-e01",
@@ -7939,7 +7939,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s1-e01",
@@ -22727,7 +22727,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s2-e01",
@@ -22749,7 +22749,7 @@
           "relation_type": "credited_cast",
           "label": "",
           "usage_type": "",
-          "signature": "駿川 たづな",
+          "signature": "駿川たづな",
           "voice_actor_id": "va-0151",
           "source_type": "anime_unit",
           "source_id": "anime-s1-e01",
@@ -34217,7 +34217,7 @@
         {
           "relation_id": "anime-s1-e04-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34228,7 +34228,7 @@
         {
           "relation_id": "anime-s1-e05-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34239,7 +34239,7 @@
         {
           "relation_id": "anime-s1-e06-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34250,7 +34250,7 @@
         {
           "relation_id": "anime-s1-e07-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34261,7 +34261,7 @@
         {
           "relation_id": "anime-s1-e08-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34272,7 +34272,7 @@
         {
           "relation_id": "anime-s1-e09-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34283,7 +34283,7 @@
         {
           "relation_id": "anime-s1-e10-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34294,7 +34294,7 @@
         {
           "relation_id": "anime-s1-e11-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34305,7 +34305,7 @@
         {
           "relation_id": "anime-s1-e12-music-song-make-debut-2c6c00a71e-v-aa0647857b-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -34327,7 +34327,7 @@
         {
           "relation_id": "anime-s1-e13-music-song-make-debut-2c6c00a71e-v-aa0647857b-insert",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -34406,7 +34406,7 @@
         {
           "relation_id": "anime-s1-e04-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34417,7 +34417,7 @@
         {
           "relation_id": "anime-s1-e06-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34428,7 +34428,7 @@
         {
           "relation_id": "anime-s1-e08-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34439,7 +34439,7 @@
         {
           "relation_id": "anime-s1-e09-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34450,7 +34450,7 @@
         {
           "relation_id": "anime-s1-e10-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34461,7 +34461,7 @@
         {
           "relation_id": "anime-s1-e11-music-song-15e2b8f183-v-876d9eafa4-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34544,7 +34544,7 @@
         {
           "relation_id": "anime-s1-e10-music-song-3dc019b31d-v-74f4a6d347",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -34568,7 +34568,7 @@
         {
           "relation_id": "anime-s1-e05-music-song-66e8f91931-v-66130e0288",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34581,7 +34581,7 @@
         {
           "relation_id": "anime-s1-e07-music-song-silent-star-5582fe43d4-v-f24295f050",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34594,7 +34594,7 @@
         {
           "relation_id": "anime-s1-e08-music-song-seven-a00bbe560e-v-9ff0d67fe8",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -34618,7 +34618,7 @@
         {
           "relation_id": "anime-s1-e12-music-song-find-my-only-way-46f68c23ae-v-526b1f9727",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34631,7 +34631,7 @@
         {
           "relation_id": "anime-s1-e13-music-song-special-record-c828cf2dc0-v-c63435c8b8",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -34644,7 +34644,7 @@
         {
           "relation_id": "anime-s1-e13-music-song-228f943b49-v-6303aaaad6",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -34655,7 +34655,7 @@
         {
           "relation_id": "anime-s3-e13-music-song-228f943b49-v-0fe15a8ebf",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35042,7 +35042,7 @@
         {
           "relation_id": "anime-s2-e02-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35053,7 +35053,7 @@
         {
           "relation_id": "anime-s2-e03-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35075,7 +35075,7 @@
         {
           "relation_id": "anime-s2-e05-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35097,7 +35097,7 @@
         {
           "relation_id": "anime-s2-e07-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35108,7 +35108,7 @@
         {
           "relation_id": "anime-s2-e08-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35119,7 +35119,7 @@
         {
           "relation_id": "anime-s2-e09-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35130,7 +35130,7 @@
         {
           "relation_id": "anime-s2-e10-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35141,7 +35141,7 @@
         {
           "relation_id": "anime-s2-e11-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35152,7 +35152,7 @@
         {
           "relation_id": "anime-s2-e12-music-song-4bfe85c283-v-6ba7c15c52-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35176,7 +35176,7 @@
         {
           "relation_id": "anime-s2-e12-music-song-b90b0841b4-v-d639c1dc59",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35187,7 +35187,7 @@
         {
           "relation_id": "anime-s2-e02-music-song-b90b0841b4-v-698ddfd6cc-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35198,7 +35198,7 @@
         {
           "relation_id": "anime-s2-e03-music-song-b90b0841b4-v-698ddfd6cc-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35220,7 +35220,7 @@
         {
           "relation_id": "anime-s2-e05-music-song-b90b0841b4-v-698ddfd6cc-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35242,7 +35242,7 @@
         {
           "relation_id": "anime-s2-e08-music-song-b90b0841b4-v-698ddfd6cc-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35253,7 +35253,7 @@
         {
           "relation_id": "anime-s2-e09-music-song-b90b0841b4-v-698ddfd6cc-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35264,7 +35264,7 @@
         {
           "relation_id": "anime-s2-e11-music-song-b90b0841b4-v-698ddfd6cc-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35726,7 +35726,7 @@
         {
           "relation_id": "anime-s3-e13-music-song-a6384dba1c-v-41ab41ca81",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -35737,7 +35737,7 @@
         {
           "relation_id": "anime-s3-e02-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35748,7 +35748,7 @@
         {
           "relation_id": "anime-s3-e03-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35759,7 +35759,7 @@
         {
           "relation_id": "anime-s3-e04-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35770,7 +35770,7 @@
         {
           "relation_id": "anime-s3-e05-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35781,7 +35781,7 @@
         {
           "relation_id": "anime-s3-e07-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35792,7 +35792,7 @@
         {
           "relation_id": "anime-s3-e08-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35803,7 +35803,7 @@
         {
           "relation_id": "anime-s3-e09-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35814,7 +35814,7 @@
         {
           "relation_id": "anime-s3-e10-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35825,7 +35825,7 @@
         {
           "relation_id": "anime-s3-e11-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35836,7 +35836,7 @@
         {
           "relation_id": "anime-s3-e12-music-song-a6384dba1c-v-6d52bbecd2-op",
           "relation_type": "uses_song",
-          "label": "片头曲",
+          "label": "",
           "usage_type": "op",
           "signature": "",
           "voice_actor_id": "",
@@ -35849,7 +35849,7 @@
         {
           "relation_id": "anime-s3-e01-music-song-cfec31b639-v-8f84bf3033",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35862,7 +35862,7 @@
         {
           "relation_id": "anime-s3-e04-music-song-dc9a83fcf8-v-98b497ee78",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35875,7 +35875,7 @@
         {
           "relation_id": "anime-s3-e06-music-song-9b2c62c729-v-90cb5a59c6",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35888,7 +35888,7 @@
         {
           "relation_id": "anime-s3-e12-music-song-eb8499138b-v-754ae481e7",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -35912,7 +35912,7 @@
         {
           "relation_id": "anime-s3-e02-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35923,7 +35923,7 @@
         {
           "relation_id": "anime-s3-e03-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35934,7 +35934,7 @@
         {
           "relation_id": "anime-s3-e05-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35945,7 +35945,7 @@
         {
           "relation_id": "anime-s3-e07-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35956,7 +35956,7 @@
         {
           "relation_id": "anime-s3-e08-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35967,7 +35967,7 @@
         {
           "relation_id": "anime-s3-e10-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35978,7 +35978,7 @@
         {
           "relation_id": "anime-s3-e11-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -35989,7 +35989,7 @@
         {
           "relation_id": "anime-s3-e12-music-song-challenge-dash-b7a5610844-v-0d5d1f263f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -36357,7 +36357,7 @@
         {
           "relation_id": "anime-umayuru-fullgate-e01-music-song-aed14a1a3a-v-2954ef1177",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -38815,7 +38815,7 @@
         {
           "relation_id": "anime-s3-e09-music-song-ambitious-world-d3e9adbb88-v-d3e9adbb88-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -39307,7 +39307,7 @@
         {
           "relation_id": "anime-s2-e01-music-song-winning-the-soul-7eddcf2b7f-v-07458a884f-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -39320,7 +39320,7 @@
         {
           "relation_id": "anime-s2-e07-music-song-18aa53485d-v-88327f851c-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -39331,7 +39331,7 @@
         {
           "relation_id": "anime-s2-e08-music-song-18aa53485d-v-88327f851c-insert",
           "relation_type": "uses_song",
-          "label": "插入曲",
+          "label": "",
           "usage_type": "insert",
           "signature": "",
           "voice_actor_id": "",
@@ -39344,7 +39344,7 @@
         {
           "relation_id": "anime-s2-e10-music-song-62adc02860-v-62adc02860-ed",
           "relation_type": "uses_song",
-          "label": "片尾曲",
+          "label": "",
           "usage_type": "ed",
           "signature": "",
           "voice_actor_id": "",
@@ -39574,7 +39574,7 @@
         {
           "relation_id": "anime-cinderella-gray-e22-winning_live-song-next-frontier-5267707c1b",
           "relation_type": "uses_song",
-          "label": "胜者舞台",
+          "label": "",
           "usage_type": "winning_live",
           "signature": "",
           "voice_actor_id": "",

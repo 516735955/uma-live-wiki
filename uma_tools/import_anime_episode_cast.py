@@ -3,18 +3,17 @@
 import argparse
 import json
 import re
-import unicodedata
 from pathlib import Path
 
 from build_anime_catalog import atomic_json
 from character_scope import excluded_signature
+from anime_labels import person_name_key
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/anime"
 
 
-def normalized(value):
-    return re.sub(r"\s+", "", unicodedata.normalize("NFKC", value)).translate(str.maketrans("髙﨑𠮷鷄", "高崎吉鶏"))
+normalized = person_name_key
 
 
 def main():

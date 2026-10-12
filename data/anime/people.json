@@ -1616,7 +1616,8 @@
         "official-ending-anime-s3-e10",
         "official-ending-anime-s3-e11",
         "official-ending-anime-s3-e12",
-        "official-ending-anime-s2-e08"
+        "official-ending-anime-s2-e08",
+        "official-ending-anime-s2-e10"
       ]
     },
     {
@@ -1764,7 +1765,8 @@
         "official-story-anime-s2-e12",
         "staff-transcript-anime-s2",
         "official-ending-anime-s3-e05",
-        "official-ending-anime-s2-e12"
+        "official-ending-anime-s2-e12",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -1880,7 +1882,8 @@
         "official-ending-anime-umayuru-fullgate-e02",
         "official-ending-anime-s3-e04",
         "official-ending-anime-s3-e08",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2159,8 +2162,14 @@
     {
       "id": "staff-坂友加里",
       "name": "坂友加里",
-      "aliases": [],
+      "aliases": [
+        "坂由加里"
+      ],
+      "alias_ids": [
+        "staff-坂由加里"
+      ],
       "source_refs": [
+        "identity-bangumi-saka-yukari",
         "official-story-anime-s3-e09",
         "staff-transcript-anime-s2",
         "official-ending-anime-1st-anniversary-e01",
@@ -2182,7 +2191,8 @@
         "official-ending-anime-s2-e05",
         "official-ending-anime-s2-e08",
         "official-ending-anime-s2-e10",
-        "official-ending-anime-s2-e12"
+        "official-ending-anime-s2-e12",
+        "official-ending-anime-s2-e13"
       ]
     },
     {
@@ -2371,7 +2381,8 @@
         "official-ending-anime-umayuru-prettygray-e03",
         "official-ending-anime-umayuru-prettygray-e04",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2467,7 +2478,8 @@
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
         "official-ending-anime-cinderella-gray-e21",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2547,7 +2559,8 @@
         "official-ending-anime-umayon-e22",
         "official-ending-anime-umayon-e23",
         "official-ending-anime-umayon-e24",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ],
       "creator_id": "creator-eaf94340d3"
     },
@@ -2586,7 +2599,8 @@
         "official-ending-anime-umayuru-prettygray-e03",
         "official-ending-anime-umayuru-prettygray-e04",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2645,7 +2659,8 @@
         "official-ending-anime-umayon-e22",
         "official-ending-anime-umayon-e23",
         "official-ending-anime-umayon-e24",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2655,7 +2670,8 @@
       "source_refs": [
         "official-story-anime-umayuru-fullgate-e01",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2665,7 +2681,8 @@
       "source_refs": [
         "official-story-anime-umayuru-fullgate-e01",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2675,7 +2692,8 @@
       "source_refs": [
         "official-story-anime-umayuru-fullgate-e01",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2733,7 +2751,8 @@
         "official-ending-anime-umayon-e22",
         "official-ending-anime-umayon-e23",
         "official-ending-anime-umayon-e24",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2746,7 +2765,8 @@
         "official-ending-anime-umayuru-e06",
         "official-ending-anime-umayuru-prettygray-e01",
         "official-ending-anime-umayuru-prettygray-e02",
-        "official-ending-anime-umayuru-prettygray-e04"
+        "official-ending-anime-umayuru-prettygray-e04",
+        "official-ending-anime-umayuru-fullgate-e01"
       ],
       "creator_id": "creator-0a12f443ae"
     },
@@ -2785,7 +2805,8 @@
         "official-ending-anime-umayuru-prettygray-e03",
         "official-ending-anime-umayuru-prettygray-e04",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -2887,8 +2908,12 @@
     {
       "id": "staff-垣内彩子",
       "name": "垣内彩子",
-      "aliases": [],
+      "aliases": [
+        "垣内綾子"
+      ],
       "source_refs": [
+        "identity-bangumi-kaito-ayako",
+        "identity-allcinema-kaito-ayako",
         "staff-transcript-anime-s1",
         "staff-transcript-anime-cinderella-gray",
         "staff-transcript-anime-s2",
@@ -2896,7 +2921,11 @@
         "official-ending-anime-s2-e09",
         "official-ending-anime-s1-e14",
         "official-ending-anime-s2-e06",
-        "official-ending-anime-cinderella-gray-e04"
+        "official-ending-anime-cinderella-gray-e04",
+        "official-ending-anime-s1-e11"
+      ],
+      "alias_ids": [
+        "staff-垣内綾子"
       ]
     },
     {
@@ -4408,22 +4437,35 @@
     {
       "id": "staff-齋藤千尋",
       "name": "齋藤千尋",
-      "aliases": [],
+      "aliases": [
+        "斎藤千尋"
+      ],
+      "alias_ids": [
+        "staff-斎藤千尋"
+      ],
       "source_refs": [
+        "identity-bangumi-saito-chihiro",
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e05",
         "official-ending-anime-s1-e09",
         "official-ending-anime-s1-e10",
         "official-ending-anime-s1-e12",
-        "official-ending-anime-s1-e13"
+        "official-ending-anime-s1-e13",
+        "official-ending-anime-s1-e02"
       ]
     },
     {
       "id": "staff-岡田夏実",
       "name": "岡田夏実",
-      "aliases": [],
+      "aliases": [
+        "岡田夏美"
+      ],
+      "alias_ids": [
+        "staff-岡田夏美"
+      ],
       "source_refs": [
+        "identity-bangumi-okada-natsumi",
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e04",
         "official-ending-anime-s1-e06",
@@ -4438,7 +4480,8 @@
         "official-ending-anime-s1-e03",
         "official-ending-anime-s1-e14",
         "official-ending-anime-s1-e15",
-        "official-ending-anime-s1-e16"
+        "official-ending-anime-s1-e16",
+        "official-ending-anime-s1-e01"
       ]
     },
     {
@@ -5684,13 +5727,21 @@
     {
       "id": "staff-太田宣貴",
       "name": "太田宣貴",
-      "aliases": [],
+      "aliases": [
+        "太田宜貴"
+      ],
       "source_refs": [
+        "identity-keyframe-ota-nobutaka",
+        "identity-allcinema-ota-nobutaka",
         "staff-transcript-anime-s1",
         "staff-transcript-anime-s2",
         "official-ending-anime-s1-e14",
         "official-ending-anime-s2-e04",
-        "official-ending-anime-s2-e06"
+        "official-ending-anime-s2-e06",
+        "official-ending-anime-s1-e10"
+      ],
+      "alias_ids": [
+        "staff-太田宜貴"
       ]
     },
     {
@@ -5848,15 +5899,6 @@
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-s1"
-      ]
-    },
-    {
-      "id": "staff-垣内綾子",
-      "name": "垣内綾子",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s1",
-        "official-ending-anime-s1-e11"
       ]
     },
     {
@@ -6124,15 +6166,6 @@
       "source_refs": [
         "staff-transcript-anime-s1",
         "official-ending-anime-s1-e13"
-      ]
-    },
-    {
-      "id": "staff-岡田夏美",
-      "name": "岡田夏美",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s1",
-        "official-ending-anime-s1-e01"
       ]
     },
     {
@@ -6897,6 +6930,7 @@
         "増尾将央"
       ],
       "source_refs": [
+        "identity-allcinema-masuo-masafumi",
         "staff-transcript-anime-s1",
         "official-anniversary-production",
         "official-master-anime-s3",
@@ -7748,7 +7782,6 @@
     {
       "id": "staff-椛沢祥平",
       "name": "椛沢祥平",
-      "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
         "official-ending-anime-cinderella-gray-e01",
@@ -7759,6 +7792,18 @@
         "official-ending-anime-cinderella-gray-e10",
         "official-ending-anime-cinderella-gray-e12",
         "official-ending-anime-cinderella-gray-e13"
+      ]
+    },
+    {
+      "id": "staff-枩沢祥平",
+      "name": "枩沢祥平",
+      "aliases": [],
+      "source_refs": [
+        "official-ending-anime-cinderella-gray-e05",
+        "official-ending-anime-cinderella-gray-e06",
+        "official-ending-anime-cinderella-gray-e07",
+        "official-ending-anime-cinderella-gray-e08",
+        "official-ending-anime-cinderella-gray-e09"
       ]
     },
     {
@@ -10382,14 +10427,6 @@
       ]
     },
     {
-      "id": "staff-山﨑あかり",
-      "name": "山﨑あかり",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray"
-      ]
-    },
-    {
       "id": "staff-とーの",
       "name": "とーの",
       "aliases": [],
@@ -12550,6 +12587,9 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e21"
+      ],
+      "alias_ids": [
+        "staff-山﨑あかり"
       ]
     },
     {
@@ -13303,8 +13343,11 @@
     {
       "id": "staff-斎藤晴輝",
       "name": "斎藤晴輝",
-      "aliases": [],
+      "aliases": [
+        "齋藤晴輝"
+      ],
       "source_refs": [
+        "identity-allcinema-saito-haruki",
         "staff-transcript-anime-cinderella-gray",
         "official-ending-anime-cinderella-gray-e12",
         "official-ending-anime-cinderella-gray-e18",
@@ -13312,7 +13355,11 @@
         "official-ending-anime-cinderella-gray-e23",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e09"
+      ],
+      "alias_ids": [
+        "staff-齋藤晴輝"
       ]
     },
     {
@@ -13955,16 +14002,26 @@
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
         "official-ending-anime-cinderella-gray-e12",
-        "official-ending-anime-cinderella-gray-e18"
+        "official-ending-anime-cinderella-gray-e18",
+        "official-ending-anime-cinderella-gray-e15"
+      ],
+      "alias_ids": [
+        "staff-杨可心"
       ]
     },
     {
       "id": "staff-章笔人",
       "name": "章笔人",
-      "aliases": [],
+      "aliases": [
+        "章筆人"
+      ],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
-        "official-ending-anime-cinderella-gray-e15"
+        "official-ending-anime-cinderella-gray-e15",
+        "official-ending-anime-cinderella-gray-e12"
+      ],
+      "alias_ids": [
+        "staff-章筆人"
       ]
     },
     {
@@ -13974,7 +14031,11 @@
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
         "official-ending-anime-cinderella-gray-e12",
-        "official-ending-anime-cinderella-gray-e18"
+        "official-ending-anime-cinderella-gray-e18",
+        "official-ending-anime-cinderella-gray-e15"
+      ],
+      "alias_ids": [
+        "staff-陶陈超"
       ]
     },
     {
@@ -14467,7 +14528,11 @@
         "staff-transcript-anime-cinderella-gray",
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-movie-beginning-new-era-e01",
-        "official-ending-anime-cinderella-gray-e13"
+        "official-ending-anime-cinderella-gray-e13",
+        "official-ending-anime-cinderella-gray-e16"
+      ],
+      "alias_ids": [
+        "staff-岩垂澄快"
       ]
     },
     {
@@ -14740,10 +14805,16 @@
     {
       "id": "staff-黃紫筠",
       "name": "黃紫筠",
-      "aliases": [],
+      "aliases": [
+        "黄紫筠"
+      ],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
-        "official-ending-anime-cinderella-gray-e15"
+        "official-ending-anime-cinderella-gray-e15",
+        "official-ending-anime-cinderella-gray-e14"
+      ],
+      "alias_ids": [
+        "staff-黄紫筠"
       ]
     },
     {
@@ -14841,15 +14912,6 @@
     {
       "id": "staff-王子健",
       "name": "王子健",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-cinderella-gray",
-        "official-ending-anime-cinderella-gray-e15"
-      ]
-    },
-    {
-      "id": "staff-陶陈超",
-      "name": "陶陈超",
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
@@ -15399,12 +15461,18 @@
     {
       "id": "staff-黃郁庭",
       "name": "黃郁庭",
-      "aliases": [],
+      "aliases": [
+        "黄郁庭"
+      ],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
         "official-ending-anime-cinderella-gray-e23",
         "official-ending-anime-cinderella-gray-e20",
-        "official-ending-anime-cinderella-gray-e22"
+        "official-ending-anime-cinderella-gray-e22",
+        "official-ending-anime-cinderella-gray-e17"
+      ],
+      "alias_ids": [
+        "staff-黄郁庭"
       ]
     },
     {
@@ -15518,10 +15586,14 @@
     {
       "id": "staff-鳥羽瑛仁",
       "name": "鳥羽瑛仁",
-      "aliases": [],
       "source_refs": [
         "staff-transcript-anime-cinderella-gray",
-        "official-ending-anime-cinderella-gray-e23"
+        "official-ending-anime-cinderella-gray-e23",
+        "official-ending-anime-cinderella-gray-e18",
+        "official-ending-anime-cinderella-gray-e17"
+      ],
+      "alias_ids": [
+        "staff-烏羽瑛仁"
       ]
     },
     {
@@ -17252,16 +17324,6 @@
       ]
     },
     {
-      "id": "staff-藤本雄一郎",
-      "name": "藤本雄一郎",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-rttt",
-        "official-ending-anime-rttt-e02",
-        "official-ending-anime-rttt-e01"
-      ]
-    },
-    {
       "id": "staff-淵本宗平",
       "name": "淵本宗平",
       "aliases": [],
@@ -17603,10 +17665,17 @@
     {
       "id": "staff-野田凛太朗",
       "name": "野田凛太朗",
-      "aliases": [],
+      "aliases": [
+        "野田凜太朗"
+      ],
       "source_refs": [
         "staff-transcript-anime-rttt",
-        "official-ending-anime-rttt-e01"
+        "official-ending-anime-rttt-e01",
+        "official-ending-anime-rttt-e03",
+        "official-ending-anime-rttt-film"
+      ],
+      "alias_ids": [
+        "staff-野田凜太朗"
       ]
     },
     {
@@ -18720,10 +18789,12 @@
       "name": "楊烈駿",
       "aliases": [],
       "source_refs": [
+        "identity-bangumi-yang-liejun",
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-movie-beginning-new-era-e01",
         "official-ending-anime-rttt-film"
-      ]
+      ],
+      "alias_ids": []
     },
     {
       "id": "staff-園田尚也",
@@ -18746,13 +18817,20 @@
     {
       "id": "staff-栁澤彼方",
       "name": "栁澤彼方",
-      "aliases": [],
+      "aliases": [
+        "柳澤彼方"
+      ],
       "source_refs": [
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-rttt-e03",
         "official-ending-anime-rttt-e04",
         "official-ending-anime-rttt-e01",
-        "official-ending-anime-rttt-film"
+        "official-ending-anime-rttt-film",
+        "official-ending-anime-rttt-e02",
+        "official-ending-anime-movie-beginning-new-era-e01"
+      ],
+      "alias_ids": [
+        "staff-柳澤彼方"
       ]
     },
     {
@@ -19169,13 +19247,23 @@
     {
       "id": "staff-藤本雄一朗",
       "name": "藤本雄一朗",
-      "aliases": [],
+      "aliases": [
+        "藤本雄一郎"
+      ],
       "source_refs": [
+        "identity-pocketmonsters-fujimoto-yuichiro",
+        "identity-dcaj-fujimoto-yuichiro",
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-rttt-e03",
         "official-ending-anime-rttt-e04",
         "official-ending-anime-movie-beginning-new-era-e01",
-        "official-ending-anime-rttt-film"
+        "official-ending-anime-rttt-film",
+        "staff-transcript-anime-rttt",
+        "official-ending-anime-rttt-e02",
+        "official-ending-anime-rttt-e01"
+      ],
+      "alias_ids": [
+        "staff-藤本雄一郎"
       ]
     },
     {
@@ -22375,7 +22463,8 @@
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
         "official-ending-anime-cinderella-gray-e21",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ],
       "alias_ids": [
         "staff-阿部億人"
@@ -22473,7 +22562,8 @@
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
         "official-ending-anime-cinderella-gray-e21",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -22935,9 +23025,14 @@
       ]
     },
     {
-      "id": "staff-小木曾悠太",
-      "name": "小木曾悠太",
-      "aliases": [],
+      "id": "staff-小木曽悠太",
+      "name": "小木曽悠太",
+      "aliases": [
+        "小木曾悠太"
+      ],
+      "alias_ids": [
+        "staff-小木曾悠太"
+      ],
       "source_refs": [
         "official-ending-anime-umayuru-fullgate-e01",
         "official-ending-anime-umayuru-e13",
@@ -22950,7 +23045,26 @@
         "official-ending-anime-umayuru-e21",
         "official-ending-anime-umayuru-e23",
         "official-ending-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-ending-anime-umayuru-e01",
+        "official-ending-anime-umayuru-e02",
+        "official-ending-anime-umayuru-e03",
+        "official-ending-anime-umayuru-e04",
+        "official-ending-anime-umayuru-e06",
+        "official-ending-anime-umayuru-e08",
+        "official-ending-anime-umayuru-e11",
+        "official-ending-anime-umayuru-e12",
+        "official-ending-anime-umayuru-e15",
+        "official-ending-anime-umayuru-e22",
+        "official-ending-anime-umayuru-e24",
+        "official-ending-anime-umayuru-e05",
+        "official-ending-anime-umayuru-e07",
+        "official-ending-anime-umayuru-e09",
+        "official-ending-anime-umayuru-e10",
+        "official-ending-anime-umayuru-prettygray-e01",
+        "official-ending-anime-umayuru-prettygray-e02",
+        "official-ending-anime-umayuru-prettygray-e03",
+        "official-ending-anime-umayuru-prettygray-e04"
       ]
     },
     {
@@ -23987,12 +24101,20 @@
       ]
     },
     {
-      "id": "staff-永田友香",
-      "name": "永田友香",
-      "aliases": [],
+      "id": "staff-永田有香",
+      "name": "永田有香",
+      "aliases": [
+        "永田友香"
+      ],
+      "alias_ids": [
+        "staff-永田友香"
+      ],
       "source_refs": [
+        "identity-fmdb-nagata-yuka",
         "staff-transcript-anime-s2",
-        "official-ending-anime-s2-e03"
+        "official-ending-anime-s2-e03",
+        "official-ending-anime-s2-e05",
+        "official-ending-anime-s2-e04"
       ]
     },
     {
@@ -24132,16 +24254,6 @@
       ]
     },
     {
-      "id": "staff-永田有香",
-      "name": "永田有香",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s2",
-        "official-ending-anime-s2-e05",
-        "official-ending-anime-s2-e04"
-      ]
-    },
-    {
       "id": "staff-寺田浩之",
       "name": "寺田浩之",
       "aliases": [],
@@ -24187,13 +24299,18 @@
       ]
     },
     {
-      "id": "staff-阿蒜晃一",
-      "name": "阿蒜晃一",
-      "aliases": [],
+      "id": "staff-阿蒜晃士",
+      "name": "阿蒜晃士",
+      "alias_ids": [
+        "staff-阿蒜晃一"
+      ],
       "source_refs": [
+        "identity-sakuga-abin-akito",
+        "identity-bangumi-abin-akito",
         "staff-transcript-anime-s2",
         "official-ending-anime-s2-e05",
-        "official-ending-anime-s2-e08"
+        "official-ending-anime-s2-e08",
+        "official-ending-anime-s2-e10"
       ]
     },
     {
@@ -24300,6 +24417,7 @@
         "種村綾鷹"
       ],
       "source_refs": [
+        "identity-namu-tanemura-ayataka",
         "staff-transcript-anime-s2",
         "official-ending-anime-s2-e10",
         "official-story-anime-s2-e10"
@@ -24330,15 +24448,6 @@
     {
       "id": "staff-増田清美",
       "name": "増田清美",
-      "aliases": [],
-      "source_refs": [
-        "staff-transcript-anime-s2",
-        "official-ending-anime-s2-e10"
-      ]
-    },
-    {
-      "id": "staff-阿蒜晃士",
-      "name": "阿蒜晃士",
       "aliases": [],
       "source_refs": [
         "staff-transcript-anime-s2",
@@ -24824,7 +24933,7 @@
     },
     {
       "id": "staff-久住太陽",
-      "name": "久住 太陽",
+      "name": "久住太陽",
       "aliases": [],
       "source_refs": [
         "official-master-cg-cour2",
@@ -28654,11 +28763,28 @@
     {
       "id": "staff-濵田豊",
       "name": "濵田豊",
-      "aliases": [],
+      "aliases": [
+        "濱田豊"
+      ],
       "source_refs": [
         "staff-transcript-anime-movie-beginning-new-era",
         "official-ending-anime-cinderella-gray-e03",
-        "official-ending-anime-cinderella-gray-e04"
+        "official-ending-anime-cinderella-gray-e04",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-movie-beginning-new-era-e01",
+        "official-ending-anime-cinderella-gray-e05",
+        "official-ending-anime-cinderella-gray-e06",
+        "official-ending-anime-cinderella-gray-e07",
+        "official-ending-anime-cinderella-gray-e08",
+        "official-ending-anime-cinderella-gray-e09",
+        "official-ending-anime-cinderella-gray-e11",
+        "official-ending-anime-cinderella-gray-e10",
+        "official-ending-anime-cinderella-gray-e12",
+        "official-ending-anime-cinderella-gray-e13"
+      ],
+      "alias_ids": [
+        "staff-濱田豊"
       ]
     },
     {
@@ -29582,41 +29708,6 @@
       ]
     },
     {
-      "id": "staff-柳澤彼方",
-      "name": "柳澤彼方",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-rttt-e02",
-        "official-ending-anime-movie-beginning-new-era-e01"
-      ]
-    },
-    {
-      "id": "staff-小木曽悠太",
-      "name": "小木曽悠太",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-umayuru-e01",
-        "official-ending-anime-umayuru-e02",
-        "official-ending-anime-umayuru-e03",
-        "official-ending-anime-umayuru-e04",
-        "official-ending-anime-umayuru-e06",
-        "official-ending-anime-umayuru-e08",
-        "official-ending-anime-umayuru-e11",
-        "official-ending-anime-umayuru-e12",
-        "official-ending-anime-umayuru-e15",
-        "official-ending-anime-umayuru-e22",
-        "official-ending-anime-umayuru-e24",
-        "official-ending-anime-umayuru-e05",
-        "official-ending-anime-umayuru-e07",
-        "official-ending-anime-umayuru-e09",
-        "official-ending-anime-umayuru-e10",
-        "official-ending-anime-umayuru-prettygray-e01",
-        "official-ending-anime-umayuru-prettygray-e02",
-        "official-ending-anime-umayuru-prettygray-e03",
-        "official-ending-anime-umayuru-prettygray-e04"
-      ]
-    },
-    {
       "id": "staff-田山里奈",
       "name": "田山里奈",
       "aliases": [],
@@ -29959,15 +30050,6 @@
       ]
     },
     {
-      "id": "staff-野田凜太朗",
-      "name": "野田凜太朗",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-rttt-e03",
-        "official-ending-anime-rttt-film"
-      ]
-    },
-    {
       "id": "staff-望月悠衣",
       "name": "望月悠衣",
       "aliases": [],
@@ -30046,14 +30128,6 @@
       "source_refs": [
         "official-ending-anime-rttt-e04",
         "official-ending-anime-rttt-film"
-      ]
-    },
-    {
-      "id": "staff-楊烈瞬",
-      "name": "楊烈瞬",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-rttt-e04"
       ]
     },
     {
@@ -34707,25 +34781,6 @@
       ]
     },
     {
-      "id": "staff-遠西亮幸",
-      "name": "遠西亮幸",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e02",
-        "official-ending-anime-cinderella-gray-e11",
-        "official-ending-anime-cinderella-gray-e10",
-        "official-ending-anime-cinderella-gray-e12",
-        "official-ending-anime-cinderella-gray-e13",
-        "official-ending-anime-cinderella-gray-e14",
-        "official-ending-anime-cinderella-gray-e23",
-        "official-ending-anime-cinderella-gray-e19",
-        "official-ending-anime-cinderella-gray-e20",
-        "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
-      ]
-    },
-    {
       "id": "staff-糸井桂子",
       "name": "糸井桂子",
       "aliases": [],
@@ -35210,20 +35265,6 @@
       ]
     },
     {
-      "id": "staff-松村育子",
-      "name": "松村育子",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e02",
-        "official-ending-anime-cinderella-gray-e23",
-        "official-ending-anime-cinderella-gray-e19",
-        "official-ending-anime-cinderella-gray-e20",
-        "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
-      ]
-    },
-    {
       "id": "staff-松浦麻貴",
       "name": "松浦麻貴",
       "aliases": [],
@@ -35281,15 +35322,6 @@
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
         "official-ending-anime-cinderella-gray-e21"
-      ]
-    },
-    {
-      "id": "staff-亀岡翔理",
-      "name": "亀岡翔理",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e02"
       ]
     },
     {
@@ -35383,19 +35415,6 @@
       ]
     },
     {
-      "id": "staff-日野良輔",
-      "name": "日野良輔",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e02",
-        "official-ending-anime-cinderella-gray-e03",
-        "official-ending-anime-cinderella-gray-e15",
-        "official-ending-anime-cinderella-gray-e18",
-        "official-ending-anime-cinderella-gray-e17"
-      ]
-    },
-    {
       "id": "staff-浅井康太郎",
       "name": "浅井康太郎",
       "aliases": [],
@@ -35464,17 +35483,6 @@
       ]
     },
     {
-      "id": "staff-宇都恒弥",
-      "name": "宇都恒弥",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e02",
-        "official-ending-anime-cinderella-gray-e03",
-        "official-ending-anime-cinderella-gray-e15"
-      ]
-    },
-    {
       "id": "staff-蟹江貴之",
       "name": "蟹江貴之",
       "aliases": [],
@@ -35526,25 +35534,6 @@
       "aliases": [],
       "source_refs": [
         "official-ending-anime-cinderella-gray-e01"
-      ]
-    },
-    {
-      "id": "staff-濱田豊",
-      "name": "濱田豊",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e02",
-        "official-ending-anime-movie-beginning-new-era-e01",
-        "official-ending-anime-cinderella-gray-e05",
-        "official-ending-anime-cinderella-gray-e06",
-        "official-ending-anime-cinderella-gray-e07",
-        "official-ending-anime-cinderella-gray-e08",
-        "official-ending-anime-cinderella-gray-e09",
-        "official-ending-anime-cinderella-gray-e11",
-        "official-ending-anime-cinderella-gray-e10",
-        "official-ending-anime-cinderella-gray-e12",
-        "official-ending-anime-cinderella-gray-e13"
       ]
     },
     {
@@ -39501,14 +39490,6 @@
       ]
     },
     {
-      "id": "staff-太田宜貴",
-      "name": "太田宜貴",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-s1-e10"
-      ]
-    },
-    {
       "id": "staff-小澤利則",
       "name": "小澤利則",
       "aliases": [],
@@ -40520,14 +40501,6 @@
       ]
     },
     {
-      "id": "staff-坂由加里",
-      "name": "坂由加里",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-s2-e13"
-      ]
-    },
-    {
       "id": "staff-冨永和代",
       "name": "冨永和代",
       "aliases": [],
@@ -40670,14 +40643,6 @@
         "official-ending-anime-umayon-e11",
         "official-ending-anime-umayon-e12",
         "official-ending-anime-umayon-e23"
-      ]
-    },
-    {
-      "id": "staff-斎藤千尋",
-      "name": "斎藤千尋",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-s1-e02"
       ]
     },
     {
@@ -40901,17 +40866,6 @@
       ]
     },
     {
-      "id": "staff-浅井勝太郎",
-      "name": "浅井勝太郎",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e02",
-        "official-ending-anime-cinderella-gray-e01",
-        "official-ending-anime-cinderella-gray-e03",
-        "official-ending-anime-cinderella-gray-e11"
-      ]
-    },
-    {
       "id": "staff-蟹江寛之",
       "name": "蟹江寛之",
       "aliases": [],
@@ -40982,8 +40936,11 @@
     {
       "id": "staff-伊藤將彦",
       "name": "伊藤將彦",
-      "aliases": [],
+      "aliases": [
+        "伊藤将彦"
+      ],
       "source_refs": [
+        "identity-tbs-ito-masahiko",
         "official-ending-anime-cinderella-gray-e02",
         "official-ending-anime-cinderella-gray-e04",
         "official-ending-anime-cinderella-gray-e05",
@@ -41003,7 +40960,12 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e03",
+        "official-ending-anime-cinderella-gray-e15"
+      ],
+      "alias_ids": [
+        "staff-伊藤将彦"
       ]
     },
     {
@@ -41296,7 +41258,22 @@
         "official-ending-anime-cinderella-gray-e08",
         "official-ending-anime-cinderella-gray-e09",
         "official-ending-anime-cinderella-gray-e18",
-        "official-ending-anime-cinderella-gray-e17"
+        "official-ending-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e11",
+        "official-ending-anime-cinderella-gray-e10",
+        "official-ending-anime-cinderella-gray-e12",
+        "official-ending-anime-cinderella-gray-e13",
+        "official-ending-anime-cinderella-gray-e14",
+        "official-ending-anime-cinderella-gray-e23",
+        "official-ending-anime-cinderella-gray-e19",
+        "official-ending-anime-cinderella-gray-e20",
+        "official-ending-anime-cinderella-gray-e22",
+        "official-ending-anime-cinderella-gray-e21"
+      ],
+      "alias_ids": [
+        "staff-遠西亮幸"
       ]
     },
     {
@@ -41319,7 +41296,17 @@
         "official-ending-anime-cinderella-gray-e13",
         "official-ending-anime-cinderella-gray-e14",
         "official-ending-anime-cinderella-gray-e18",
-        "official-ending-anime-cinderella-gray-e17"
+        "official-ending-anime-cinderella-gray-e17",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e23",
+        "official-ending-anime-cinderella-gray-e19",
+        "official-ending-anime-cinderella-gray-e20",
+        "official-ending-anime-cinderella-gray-e22",
+        "official-ending-anime-cinderella-gray-e21"
+      ],
+      "alias_ids": [
+        "staff-松村育子"
       ]
     },
     {
@@ -41347,7 +41334,12 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02"
+      ],
+      "alias_ids": [
+        "staff-亀岡翔理"
       ]
     },
     {
@@ -41386,15 +41378,6 @@
       ]
     },
     {
-      "id": "staff-伊藤将彦",
-      "name": "伊藤将彦",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e03",
-        "official-ending-anime-cinderella-gray-e15"
-      ]
-    },
-    {
       "id": "staff-新井重太",
       "name": "新井重太",
       "aliases": [],
@@ -41405,14 +41388,6 @@
     {
       "id": "staff-佐藤良隆",
       "name": "佐藤良隆",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e15"
-      ]
-    },
-    {
-      "id": "staff-杨可心",
-      "name": "杨可心",
       "aliases": [],
       "source_refs": [
         "official-ending-anime-cinderella-gray-e15"
@@ -41437,14 +41412,6 @@
     {
       "id": "staff-陸瑋",
       "name": "陸瑋",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e15"
-      ]
-    },
-    {
-      "id": "staff-烏山冬美",
-      "name": "烏山冬美",
       "aliases": [],
       "source_refs": [
         "official-ending-anime-cinderella-gray-e15"
@@ -41726,15 +41693,6 @@
       ]
     },
     {
-      "id": "staff-戎島翔太",
-      "name": "戎島翔太",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e15",
-        "official-ending-anime-cinderella-gray-e17"
-      ]
-    },
-    {
       "id": "staff-薄井勝太郎",
       "name": "薄井勝太郎",
       "aliases": [],
@@ -41758,7 +41716,13 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e03"
+      ],
+      "alias_ids": [
+        "staff-浅井勝太郎"
       ]
     },
     {
@@ -41946,7 +41910,16 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e03",
+        "official-ending-anime-cinderella-gray-e15",
+        "official-ending-anime-cinderella-gray-e18",
+        "official-ending-anime-cinderella-gray-e17"
+      ],
+      "alias_ids": [
+        "staff-日野良輔"
       ]
     },
     {
@@ -41972,7 +41945,14 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e01",
+        "official-ending-anime-cinderella-gray-e02",
+        "official-ending-anime-cinderella-gray-e03",
+        "official-ending-anime-cinderella-gray-e15"
+      ],
+      "alias_ids": [
+        "staff-宇都恒弥"
       ]
     },
     {
@@ -42044,18 +42024,6 @@
       ]
     },
     {
-      "id": "staff-枩沢祥平",
-      "name": "枩沢祥平",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e05",
-        "official-ending-anime-cinderella-gray-e06",
-        "official-ending-anime-cinderella-gray-e07",
-        "official-ending-anime-cinderella-gray-e08",
-        "official-ending-anime-cinderella-gray-e09"
-      ]
-    },
-    {
       "id": "staff-井上康太",
       "name": "井上康太",
       "aliases": [],
@@ -42099,18 +42067,11 @@
       ]
     },
     {
-      "id": "staff-岩垂澄快",
-      "name": "岩垂澄快",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e16"
-      ]
-    },
-    {
       "id": "staff-鳥山冬美",
       "name": "鳥山冬美",
       "aliases": [],
       "source_refs": [
+        "identity-allcinema-toriyama-fuyumi",
         "official-ending-anime-cinderella-gray-e16",
         "official-ending-anime-cinderella-gray-e14",
         "official-ending-anime-cinderella-gray-e18",
@@ -42118,7 +42079,11 @@
         "official-ending-anime-cinderella-gray-e23",
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e15"
+      ],
+      "alias_ids": [
+        "staff-烏山冬美"
       ]
     },
     {
@@ -42151,7 +42116,12 @@
         "official-ending-anime-cinderella-gray-e19",
         "official-ending-anime-cinderella-gray-e20",
         "official-ending-anime-cinderella-gray-e22",
-        "official-ending-anime-cinderella-gray-e21"
+        "official-ending-anime-cinderella-gray-e21",
+        "official-ending-anime-cinderella-gray-e15",
+        "official-ending-anime-cinderella-gray-e17"
+      ],
+      "alias_ids": [
+        "staff-戎島翔太"
       ]
     },
     {
@@ -42258,14 +42228,6 @@
       ]
     },
     {
-      "id": "staff-齋藤晴輝",
-      "name": "齋藤晴輝",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e09"
-      ]
-    },
-    {
       "id": "staff-辛浄麒",
       "name": "辛浄麒",
       "aliases": [],
@@ -42348,14 +42310,6 @@
       ]
     },
     {
-      "id": "staff-章筆人",
-      "name": "章筆人",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e12"
-      ]
-    },
-    {
       "id": "staff-西澤亘燿",
       "name": "西澤亘燿",
       "aliases": [],
@@ -42369,14 +42323,6 @@
       "aliases": [],
       "source_refs": [
         "official-ending-anime-cinderella-gray-e13"
-      ]
-    },
-    {
-      "id": "staff-黄紫筠",
-      "name": "黄紫筠",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e14"
       ]
     },
     {
@@ -42404,15 +42350,6 @@
       "aliases": [],
       "source_refs": [
         "official-ending-anime-cinderella-gray-e18"
-      ]
-    },
-    {
-      "id": "staff-烏羽瑛仁",
-      "name": "烏羽瑛仁",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e18",
-        "official-ending-anime-cinderella-gray-e17"
       ]
     },
     {
@@ -42462,14 +42399,6 @@
     {
       "id": "staff-吳亭頣",
       "name": "吳亭頣",
-      "aliases": [],
-      "source_refs": [
-        "official-ending-anime-cinderella-gray-e17"
-      ]
-    },
-    {
-      "id": "staff-黄郁庭",
-      "name": "黄郁庭",
       "aliases": [],
       "source_refs": [
         "official-ending-anime-cinderella-gray-e17"
@@ -42729,6 +42658,13 @@
       "aliases": [],
       "source_refs": [
         "official-ending-anime-umayuru-fullgate-e03"
+      ]
+    },
+    {
+      "id": "staff-楊烈瞬",
+      "name": "楊烈瞬",
+      "source_refs": [
+        "official-ending-anime-rttt-e04"
       ]
     }
   ]

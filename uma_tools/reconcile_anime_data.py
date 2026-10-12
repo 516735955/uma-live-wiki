@@ -10,7 +10,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 from collect_anime_official import fetch
 from build_anime_catalog import atomic_json
-from anime_labels import person_label
+from anime_labels import person_identity_lookup, person_label, person_name_key, role_key
 from character_scope import selected_characters, excluded_signature
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -90,6 +90,7 @@ def main():
     voices = json.loads((ROOT / "data/voice_actor_profiles.json").read_text(encoding="utf-8"))["voice_actors"]
     voice_names = {norm(name): voice for voice in voices for name in [voice["identity"]["ja"], voice["identity"]["zh"], *voice["identity"].get("aliases", [])]}
     people, staff, relations = read("people.json", "people"), read("staff.json", "credits"), read("relations.json", "relations")
+    find_person, people_by_name = person_identity_lookup(people, staff)
     decoded = 0
     for credit in staff:
         raw = credit.get("name", "")
@@ -99,10 +100,11 @@ def main():
         credit["credited_name"] = raw
         credit["name"] = name
         if not credit.get("organization"):
-            person = next((p for p in people if norm(p["name"]) == norm(name)), None)
+            person = find_person(name)
             if person is None:
                 person = {"id": "staff-" + person_label(name), "name": person_label(name), "aliases": [], "source_refs": [credit["source_ref"]]}
                 people.append(person)
+                people_by_name[person_name_key(person["name"])] = person
             credit["person_id"] = person["id"]
         decoded += 1
     # Collapse spelling differences caused solely by whitespace. Historical
@@ -125,6 +127,9 @@ def main():
     for credit in staff:
         if credit.get("person_id") in aliases:
             credit["person_id"] = aliases[credit["person_id"]]
+    # Rebuild lookup after whitespace merges so subsequent official imports
+    # cannot resolve a historical person object that was just retired.
+    find_person, people_by_name = person_identity_lookup(people, staff)
     new_characters = [
         ("tojo_hana", "东条华", "東条ハナ", "豊口めぐみ", "Spica训练员的前同事，担任Rigil队的训练员。", ""),
         ("tanabe_trainer", "田边训练员", "タナベトレーナー", "緒方賢一", "曾指导富士奇石的资深训练员。离开育成工作多年后，他相信森林宝穴的潜力，重新投入指导。", "img_main09.png"),
@@ -211,17 +216,25 @@ def main():
     organizations = {"Cygames", "P.A.WORKS", "UTAMARO movement", "スタジオKAI"}
     for order, (role, names) in enumerate(staff_rows):
         for name in names.split("・"):
-            if any(c["work_id"] == "anime-s2" and not c.get("unit_id") and c["role"] == role and norm(c.get("name") or c.get("organization") or "") == norm(name) for c in staff):
+            person = find_person(name)
+            if any(c["work_id"] == "anime-s2" and not c.get("unit_id") and
+                   role_key(c["role"], c.get("group", "")) == role_key(role) and
+                   ((person and c.get("person_id") == person["id"]) or
+                    (not person and norm(c.get("name") or c.get("organization") or "") == norm(name)))
+                   for c in staff):
                 continue
             credit = {"work_id": "anime-s2", "role": role, "name": name, "order": order, "source_ref": "official-master-anime-s2"}
             if name in organizations or "製作委員会" in name:
                 credit["organization"] = name
             else:
-                person = next((p for p in people if norm(p["name"]) == norm(name)), None)
                 if person is None:
                     person = {"id": "staff-" + person_label(name), "name": person_label(name), "aliases": [], "source_refs": ["official-master-anime-s2"]}
                     people.append(person)
+                    people_by_name[person_name_key(person["name"])] = person
                 credit["person_id"] = person["id"]
+                credit["name"] = person["name"]
+                if name != person["name"]:
+                    credit["credited_name"] = name
             staff.append(credit)
     excluded = []
     kept = []

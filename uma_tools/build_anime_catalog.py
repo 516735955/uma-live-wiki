@@ -12,7 +12,7 @@ import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
-from anime_labels import role_label_for_group, person_label, group_label, organization_label, music_usage
+from anime_labels import role_labels, person_label, group_label, organization_label, music_usage
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -146,7 +146,7 @@ def validate(
     unique(resources, "watch resources")
     unique(relations, "relations")
 
-    allowed_formats = {"tv", "movie", "web", "short", "web_short", "special"}
+    allowed_formats = {"tv", "movie", "web", "short", "special"}
     allowed_work_statuses = {"announced", "airing", "completed"}
     for work in works:
         if work.get("format") not in allowed_formats:
@@ -168,6 +168,12 @@ def validate(
                 errors.append(f"unit {unit.get('id')} has an invalid music cue")
             if not cue.get("source_refs") or any(ref not in source_ids for ref in cue["source_refs"]):
                 errors.append(f"unit {unit.get('id')} has a music cue without registered evidence")
+    still_groups = [(work["id"], work.get("film_stills", [])) for work in works]
+    still_groups.extend((unit["id"], unit.get("stills", [])) for unit in units)
+    for owner, stills in still_groups:
+        for still in stills:
+            if not isinstance(still, dict) or not still.get("url") or not still.get("original"):
+                errors.append(f"{owner} has a still without a display URL or original image")
     for resource in resources:
         scope = resource.get("scope") or {}
         target_set = work_ids if scope.get("type") == "work" else unit_ids
@@ -263,7 +269,9 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
     for credit in staff:
         if credit.get("person_id") and credit["person_id"] not in person_ids:
             raise ValueError(f"unknown staff person {credit['person_id']}")
-    staff = [{**credit, "role_raw": credit["role"], "role": role_label_for_group(credit["role"], credit.get("group", "")),
+    staff = [{**credit, "role_raw": credit["role"],
+              "roles": role_labels(credit["role"], credit.get("group", "")),
+              "role": "／".join(role_labels(credit["role"], credit.get("group", ""))),
               "group_raw": credit.get("group", ""), "group": group_label(credit.get("group", "")),
               **({"organization_raw": credit["organization"], "organization": organization_label(credit["organization"]),
                   "name": organization_label(credit["organization"])}
@@ -275,9 +283,10 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
              for credit in staff]
     people = [{**person, "name": person_label(person["name"]),
                "aliases": person.get("aliases") or [],
-               "roles": list(dict.fromkeys(role.strip() for credit in staff
+               "roles": list(dict.fromkeys(role for credit in staff
                                            if credit.get("person_id") == person["id"]
-                                           for role in credit["role"].split("／") if role.strip())),
+                                           for role in credit["roles"]
+                                           if role.strip())),
                "work_count": len({credit["work_id"] for credit in staff if credit.get("person_id") == person["id"]}),
                "unit_count": len({credit["unit_id"] for credit in staff if credit.get("person_id") == person["id"] and credit.get("unit_id")})}
               for person in people if any(credit.get("person_id") == person["id"] for credit in staff)]

@@ -6,20 +6,35 @@ import re
 from pathlib import Path
 
 from build_anime_catalog import atomic_json
-from import_anime_episode_cast import normalized
 from sync_music_metadata import stable_creator_id
-from anime_labels import role_label, group_label
+from anime_labels import (group_label, organization_label, person_identity_lookup,
+                          person_name_key, role_key, role_label, role_labels)
 from character_scope import excluded_signature
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/anime"
+normalized = person_name_key
 
 
 def music_credit_key(credit):
     creators = credit.get("creator_ids", [])
     identity = tuple(sorted(creators)) if creators else tuple(sorted(normalized(name) for name in credit.get("names", [])))
-    return (role_label(credit["role"]), identity,
-            tuple(sorted(normalized(name) for name in credit.get("institutions", []))))
+    return (role_key(credit["role"]), identity,
+            tuple(sorted(normalized(organization_label(name)) for name in credit.get("institutions", []))))
+
+
+def merge_music_credits(credits):
+    """Combine confirmed duties of the same credited people and institution."""
+    result = []
+    for credit in credits:
+        identity = music_credit_key(credit)[1:]
+        existing = next((row for row in result if music_credit_key(row)[1:] == identity), None)
+        if existing is None:
+            result.append(dict(credit))
+        else:
+            existing["role"] = "／".join(dict.fromkeys([
+                *role_labels(existing["role"]), *role_labels(credit["role"])]))
+    return result
 
 
 def main():
@@ -49,12 +64,18 @@ def main():
     voice_names[normalized("高橋未奈美")] = next(v for v in voices if v["id"] == "va-0180")
     creator_names = {normalized(name): c["id"] for c in creators if c["type"] != "organization"
                      for name in (c["name"], *c.get("aliases", []))}
-    people_names = {normalized(name): p for p in people for name in (p["name"], *p.get("aliases", []))}
-    latin_names = {}
-    for name, person in people_names.items():
-        if re.fullmatch(r"[A-Za-z-]+", name):
-            key = name.casefold().replace("-", "")
-            latin_names.setdefault(key, {})[person["id"]] = person
+    find_person, people_names = person_identity_lookup(people, credits)
+
+    def identity_key(entry):
+        """Stable identity for matching and stale-credit cleanup."""
+        if entry.get("organization"):
+            return ("organization", normalized(organization_label(entry["organization"])))
+        if entry.get("person_id"):
+            return ("person", entry["person_id"])
+        person = find_person(entry.get("name", ""))
+        if person:
+            return ("person", person["id"])
+        return ("name", normalized(entry.get("name", "")))
     added = 0
     superseded_cast = 0
     superseded_staff = 0
@@ -79,12 +100,12 @@ def main():
         affiliations = {}
         for signature in signatures:
             if signature.get("name") and signature.get("institutions"):
-                key = (normalized(signature["name"]), role_label(signature["role"]), group_label(signature.get("group", "")))
+                key = (normalized(signature["name"]), role_key(signature["role"], signature.get("group", "")), group_label(signature.get("group", "")))
                 affiliations.setdefault(key, {})[tuple(signature["institutions"])] = signature
         for order, signature in enumerate(signatures):
             # Repeated opening and ending credits retain the explicit affiliation for this unit and role.
             if signature.get("name") and not signature.get("institutions"):
-                key = (normalized(signature["name"]), role_label(signature["role"]), group_label(signature.get("group", "")))
+                key = (normalized(signature["name"]), role_key(signature["role"], signature.get("group", "")), group_label(signature.get("group", "")))
                 declared = affiliations.get(key, {})
                 if len(declared) == 1:
                     signature = {**signature, **{key: value for key, value in next(iter(declared.values())).items()
@@ -104,35 +125,45 @@ def main():
                 row["organization"] = signature["organization"]
             else:
                 name = normalized(signature["name"])
-                person = people_names.get(name)
-                if person is None and re.fullmatch(r"[A-Za-z-]+", name):
-                    candidates = latin_names.get(name.casefold().replace("-", ""), {})
-                    if len(candidates) == 1:
-                        person = next(iter(candidates.values()))
-                        if signature["name"] not in person.setdefault("aliases", []):
-                            person["aliases"].append(signature["name"])
+                person = find_person(signature["name"])
                 if person is None:
                     person = {"id": "staff-" + name, "name": signature["name"], "aliases": [], "source_refs": []}
                     people.append(person)
-                    people_names[name] = person
-                    if re.fullmatch(r"[A-Za-z-]+", name):
-                        latin_names.setdefault(name.casefold().replace("-", ""), {})[person["id"]] = person
-                if name in creator_names and ("音乐" in role_label(signature["role"]) or group_label(signature.get("group", "")) == "音乐"):
-                    person["creator_id"] = creator_names[name]
+                    # Keep the resolver's canonical map live for subsequent
+                    # rows in this import without promoting the new spelling
+                    # to an alias or applying heuristic Latin folding.
+                    people_names[person_name_key(person["name"])] = person
+                canonical_name = normalized(person["name"])
+                if canonical_name in creator_names and ("音乐" in role_label(signature["role"]) or group_label(signature.get("group", "")) == "音乐"):
+                    person["creator_id"] = creator_names[canonical_name]
                 if signature_ref not in person.setdefault("source_refs", []):
                     person["source_refs"].append(signature_ref)
                 row["person_id"] = person["id"]
+                row["name"] = person["name"]
+                if signature["name"] != person["name"]:
+                    row["credited_name"] = signature["name"]
                 if signature.get("institutions"):
                     row["institutions"] = signature["institutions"]
-            checked_roles = set(role_label(row["role"]).split("／"))
+            checked_roles = set(role_key(row["role"], row.get("group", "")))
             matches = [c for c in credits if c.get("work_id") == work and
                        ((not work_scope and c.get("unit_id") == unit) or
                         (work_scope and not c.get("unit_id") and
                          (c.get("edition") == edition or edition in c.get("editions", [])))) and
-                       set(role_label(c["role"]).split("／")) <= checked_roles and normalized(c["name"]) == normalized(row["name"]) and
+                       (set(role_key(c["role"], c.get("group", ""))) <= checked_roles or
+                        (c.get("source_ref") == signature_ref and checked_roles <= set(role_key(c["role"], c.get("group", ""))))) and
+                       identity_key(c) == identity_key(row) and
+                       {organization_label(value) for value in c.get("institutions", [])} ==
+                       {organization_label(value) for value in row.get("institutions", [])} and
                        group_label(c.get("group", "")) == group_label(row["group"])]
             if matches:
+                matches.sort(key=lambda credit: len(role_key(credit["role"], credit.get("group", ""))), reverse=True)
                 existing = matches[0]
+                if len(role_key(existing["role"], existing.get("group", ""))) > len(checked_roles):
+                    # The same roll may repeat a person under one duty and a
+                    # combined duty. Keep the complete original signature.
+                    for key in ("role", "order", "source_time"):
+                        if key in existing:
+                            row[key] = existing[key]
                 row["evidence_refs"] = list(dict.fromkeys([signature_ref, *[source for c in matches for source in
                     [c.get("source_ref"), *c.get("evidence_refs", [])] if source]]))
                 if row["evidence_refs"] == [signature_ref] and not any(c.get("evidence_refs") for c in matches):
@@ -150,14 +181,14 @@ def main():
                 added += 1
         if episode.get("staff_status") == "complete":
             # A corrected full roll replaces stale spellings from its own earlier transcription.
-            checked_staff = {(role_label(s["role"]), normalized(s.get("name", s.get("organization", ""))),
+            checked_staff = {(role_key(s["role"], s.get("group", "")), identity_key(s),
                               group_label(s.get("group", ""))) for s in signatures}
             checked_sources = {ref, *(s.get("source_ref", ref) for s in signatures)}
             obsolete = [c for c in credits if c.get("unit_id") == unit
                         and not work_scope
                         and (c.get("source_ref", "").startswith("staff-transcript-") or
                              c.get("source_ref") in checked_sources and
-                             (role_label(c["role"]), normalized(c["name"]), group_label(c.get("group", "")))
+                             (role_key(c["role"], c.get("group", "")), identity_key(c), group_label(c.get("group", "")))
                              not in checked_staff)]
             if obsolete:
                 episode.setdefault("superseded_transcript", []).extend(obsolete)
@@ -167,7 +198,7 @@ def main():
                             (c.get("edition") == edition or edition in c.get("editions", [])) and
                             (c.get("source_ref", "").startswith("staff-transcript-") or
                              c.get("source_ref") in checked_sources and
-                             (role_label(c["role"]), normalized(c["name"]), group_label(c.get("group", ""))) not in checked_staff)]
+                             (role_key(c["role"], c.get("group", "")), identity_key(c), group_label(c.get("group", ""))) not in checked_staff)]
                 superseded_staff += len(obsolete)
             obsolete_rows = {id(c) for c in obsolete}
             credits[:] = [c for c in credits if id(c) not in obsolete_rows]
@@ -239,7 +270,7 @@ def main():
             if cue.get("song_id"):
                 linked = False
                 for relation in relations:
-                    if relation["source_id"] == relation_source and relation.get("source_type") == relation_type and relation.get("relation_type") == "uses_song" and relation.get("target_id") == cue["song_id"] and (not work_scope or relation.get("edition") == edition):
+                    if relation["source_id"] == relation_source and relation.get("source_type") == relation_type and relation.get("relation_type") == "uses_song" and relation.get("target_id") == cue["song_id"] and relation.get("usage_type") == usage and (not work_scope or relation.get("edition") == edition):
                         relation.update(usage_type=usage, label="")
                         relation["evidence_refs"] = list(dict.fromkeys([*relation.get("evidence_refs", []), ref]))
                         linked = True
@@ -265,18 +296,17 @@ def main():
                 creator["anime_music"] = True
                 creator["anime_music_roles"] = list(dict.fromkeys([
                     *creator.get("anime_music_roles", []), *cue_roles]))
-            credit = {"role": role_label(cue["role"]), "names": names,
+            canonical_names = [next(row["name"] for row in creators if row["id"] == creator_id) for creator_id in creator_ids]
+            credit = {"role": "／".join(role_labels(cue["role"])), "names": canonical_names,
                       "institutions": cue.get("institutions", []), "creator_ids": creator_ids}
-            matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"])] if detail is not None else []
+            matches = [row for row in detail.get("music_cues", []) if normalized(row["title"]) == normalized(cue["title"]) and row.get("usage_type") == usage] if detail is not None else []
             if matches:
                 for row in matches:
                     row["source_refs"] = list(dict.fromkeys([*row.get("source_refs", []), ref]))
                     row["usage_type"] = usage
                     if cue.get("song_id"):
                         row["song_id"] = cue["song_id"]
-                    existing_credits = row.setdefault("credits", [])
-                    if not any(music_credit_key(existing) == music_credit_key(credit) for existing in existing_credits):
-                        row["credits"].append(credit)
+                    row["credits"] = merge_music_credits([*row.get("credits", []), credit])
                 continue
             if detail is not None:
                 detail.setdefault("music_cues", []).append({

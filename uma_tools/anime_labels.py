@@ -2,6 +2,8 @@
 
 import html
 import re
+import unicodedata
+from functools import lru_cache
 
 
 ROLES = {
@@ -10,8 +12,22 @@ ROLES = {
     "担当制作": "制作统筹",
     "担当補佐": "制作统筹助理",
     "背景進行": "背景制作进行", "背景進行補佐": "背景制作进行助理",
-    "制作プロデューサー": "动画制片人",
+    # Keep production and animation production as separate responsibilities.
+    # The raw Japanese credit is retained on every catalog row for later review.
+    "制作プロデューサー": "制作制片人",
+    "アニメーションプロデューサー": "动画制片人",
+    "音楽プロデューサー": "音乐制片人",
     "音響制作プロデューサー": "音响制作制片人",
+    "音響制作担当": "音响制作负责",
+    "宣伝プロデューサー": "宣传制片人",
+    "3Dプロデューサー": "3D制片人",
+    "CGプロデューサー": "CG制片人",
+    "3D CG": "3DCG",
+    "3DCGリードモデラー": "3D首席建模师",
+    "3DCGモデラー": "3D建模",
+    "3Dモデラー": "3D建模",
+    "3DCGアニメーター": "3D动画师",
+    "CGレイアウター": "CG构图",
     "録音スタジオ": "录音室", "製作委員会": "出品委员会", "第二原画": "第二原画", "二原": "第二原画",
     "ライブパート第二原画": "舞台动画第二原画",
     "LIVEパート演出": "舞台动画演出", "LIVEパート作画監督": "舞台动画作画监督",
@@ -44,11 +60,11 @@ ROLES = {
     "色指定": "色彩指定", "音響": "音响", "効果": "效果", "録音": "录音",
     "調整": "调音", "音楽": "音乐", "原作": "原作", "原画": "原画",
     "脚本": "脚本", "企画": "企划", "構成": "构成", "製作": "出品", "配給": "发行",
-    "宣伝": "宣传", "広告": "广告", "担当": "负责", "資料": "资料",
+    "宣伝": "宣传", "広告": "广告", "担当": "负责", "資料": "资料", "写真": "照片", "文": "文字",
     "設計": "设计", "振付": "编舞", "ライブ": "演出舞台", "パート": "部分",
     "シーン": "场景", "レイアウト": "构图", "L/O": "构图", "アイキャッチ": "过场动画",
     "サウンドアドバイザー": "声音顾问", "コンテンツ": "内容",
-    "タイトルロゴデザイン": "标题标志设计", "タイトルロゴ": "标题标志",
+    "タイトルロゴデザイン": "标题标志设计", "タイトルロゴ": "标题标志设计",
     "デザイン": "设计", "オンライン": "联机", "オフライン": "离线",
     "デジタルシネママスタリング": "数字电影母版制作", "デジタルラボ": "数字后期",
     "ラボコーディネーター": "后期协调", "ローカル": "地方", "予告編": "预告片",
@@ -85,15 +101,58 @@ ROLES = {
 }
 
 
+_ROLE_PATTERN = re.compile("|".join(re.escape(key) for key in sorted(ROLES, key=len, reverse=True)))
+
+
+@lru_cache(maxsize=512)
 def role_label(raw):
-    value = html.unescape(re.sub(r"<[^>]*>", "", raw)).strip()
+    value = re.sub(r"<[^>]*>", "", html.unescape(raw)).strip()
     # Longest phrases first prevent overlapping job names from being split.
-    pattern = "|".join(re.escape(key) for key in sorted(ROLES, key=len, reverse=True))
-    return re.sub(pattern, lambda match: ROLES[match.group()], value).replace("･", "／").replace("・", "／").replace("/", "／")
+    return _ROLE_PATTERN.sub(lambda match: ROLES[match.group()], value).replace("･", "／").replace("・", "／").replace("/", "／")
+
+
+ROLE_UNSPLIT = frozenset({
+    # The punctuation belongs to one published job name, not two credits.
+    "L/O", "アイキャッチ・サブタイトルデザイン", "海外・配信セールス", "ビデオグラム制作・宣伝",
+})
+
+# A trailing modifier can apply to every duty in the cell.  Do not interpret
+# ``録音・調整助手`` as a main recording engineer plus an assistant mixer.
+COMPOUND_ROLE_LABELS = {
+    "録音・調整助手": ("录音助理", "调音助理"),
+    "録音調整": ("录音", "调音"),
+}
+
+
+def role_labels(raw, group=""):
+    """Return canonical atomic jobs while retaining the source string elsewhere.
+
+    Japanese end credits commonly put two independently searchable jobs in one
+    cell (for example ``総作画監督／色彩設計``).  Split only on the explicit
+    credit separators after translating each component; phrases such as
+    ``Music Recording & Mixing Engineer`` remain one job.
+    """
+    source = re.sub(r"<[^>]*>", "", html.unescape(raw)).strip()
+    if source in COMPOUND_ROLE_LABELS:
+        return list(COMPOUND_ROLE_LABELS[source])
+    if source in ROLE_UNSPLIT:
+        return [role_label_for_group(source, group)]
+    # Split the source credit before translation.  Splitting the translated
+    # value would corrupt a translated single role containing punctuation.
+    parts = re.split(r"[／/･・]", source)
+    return list(dict.fromkeys(role_label_for_group(part.strip(), group) for part in parts if part.strip()))
+
+
+@lru_cache(maxsize=1024)
+def role_key(raw, group=""):
+    """Stable canonical key used by all import deduplication paths."""
+    return tuple(sorted(role_labels(raw, group)))
 
 
 def role_label_for_group(raw, group=""):
     """Translate roles whose meaning depends on the credit section."""
+    if raw == "Directed by" and group in ("音楽", "音乐"):
+        return "音乐制作指导"
     value = role_label(raw)
     if group in ("モーションキャプチャー", "动作捕捉"):
         if value == "录音室助理":
@@ -104,13 +163,90 @@ def role_label_for_group(raw, group=""):
 
 
 def person_label(raw):
-    value = html.unescape(re.sub(r"<[^>]*>", "", raw)).strip()
+    value = re.sub(r"<[^>]*>", "", html.unescape(raw)).strip()
     return re.sub(r"(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])", "", value)
+
+
+def person_name_key(value):
+    """Normalize a person spelling for exact identity lookups.
+
+    This is deliberately conservative: it normalizes Unicode presentation and
+    known glyph variants, but never folds Latin punctuation/case or guesses that
+    two otherwise different credited spellings are the same person.
+    """
+    value = person_label(value)
+    return re.sub(r"\s+", "", unicodedata.normalize("NFKC", value)).translate(
+        str.maketrans("髙﨑𠮷鷄", "高崎吉鶏")
+    )
+
+
+def person_identity_lookup(people, staff):
+    """Return a conservative canonical-person resolver shared by importers.
+
+    ``people`` is the authority. ``alias_ids`` resolve retired staff IDs, while
+    a credited spelling is usable only when exactly one existing canonical ID
+    has carried it. Ambiguous spellings and unseen OCR variants return None.
+    """
+    by_id = {person["id"]: person for person in people}
+    by_name = {}
+    name_conflicts = set()
+    for person in people:
+        for name in (person.get("name", ""), *person.get("aliases", [])):
+            key = person_name_key(name)
+            prior = by_name.get(key)
+            if prior and prior["id"] != person["id"]:
+                name_conflicts.add(key)
+            else:
+                by_name[key] = person
+    alias_candidates = {}
+    for person in people:
+        for alias_id in person.get("alias_ids", []):
+            alias_candidates.setdefault(alias_id, set()).add(person["id"])
+    alias_conflicts = {alias_id for alias_id, ids in alias_candidates.items() if len(ids) > 1}
+    by_alias_id = {
+        alias_id: next(person for person in people if person["id"] == next(iter(ids)))
+        for alias_id, ids in alias_candidates.items()
+        if alias_id not in alias_conflicts
+    }
+    credited_ids = {}
+    credited_conflicts = set()
+    for credit in staff:
+        person_id = credit.get("person_id")
+        credited_name = credit.get("credited_name")
+        if not person_id or person_id not in by_id or not credited_name:
+            continue
+        key = person_name_key(credited_name)
+        prior = credited_ids.get(key)
+        if prior and prior != person_id:
+            credited_conflicts.add(key)
+        else:
+            credited_ids[key] = person_id
+
+    def find(name):
+        key = person_name_key(name)
+        if key in name_conflicts:
+            raise ValueError(f"ambiguous canonical person spelling: {name}")
+        person = by_name.get(key)
+        if person:
+            return person
+        alias_id = "staff-" + key
+        if alias_id in alias_conflicts:
+            raise ValueError(f"ambiguous historical person ID: {alias_id}")
+        person = by_alias_id.get("staff-" + key)
+        if person:
+            return person
+        if key in credited_conflicts:
+            raise ValueError(f"ambiguous credited person spelling: {name}")
+        if key in credited_ids:
+            return by_id[credited_ids[key]]
+        return None
+
+    return find, by_name
 
 
 def organization_label(raw):
     """Unify verified spelling variants without changing the recorded signature."""
-    value = html.unescape(re.sub(r"<[^>]*>", "", raw)).strip()
+    value = re.sub(r"<[^>]*>", "", html.unescape(raw)).strip()
     return {
         "Roll2": "ROLL2",
         "Cygames Pictures": "CygamesPictures",
@@ -133,9 +269,11 @@ def music_usage(raw):
 def group_label(raw):
     if any(token in raw for token in ("片尾署名", "片尾職員", "公式 Staff", "公式Staff", "官网单集", "官网作品")):
         return ""
-    if raw.startswith("オープニング"):
+    if raw in ("片头动画", "片头动画制作") or raw.startswith("オープニング"):
         return "片头动画"
-    if raw.startswith("エンディング"):
+    if raw in ("片尾动画", "片尾动画制作") or raw.startswith("エンディング"):
         return "片尾动画"
-    return {"本編": "本篇", "音響": "音响", "音楽": "音乐", "資料協力": "资料协力", "ライブパート": "舞台动画",
+    # These are credit-sheet containers rather than duties.  Keeping them as a
+    # separate UI group made the same job appear multiple times in a season.
+    return {"本編": "", "本篇": "", "音響": "", "音响": "", "制作": "", "": "", "音楽": "音乐", "资料协力": "资料协力", "資料協力": "资料协力", "ライブパート": "舞台动画",
             "モーションキャプチャー": "动作捕捉"}.get(raw, raw)

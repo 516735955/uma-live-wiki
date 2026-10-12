@@ -4,31 +4,10 @@ import argparse
 import json
 from pathlib import Path
 
-from anime_labels import group_label, person_label, role_label
+from anime_labels import group_label, person_label, role_key
 from build_anime_catalog import atomic_json
 
 DATA = Path(__file__).resolve().parents[1] / "data/anime"
-
-# Accepted identities and spelling aliases retain their original credit names.
-PERSON_ALIASES = {
-    "staff-阿部億人": "staff-阿部憶人", "staff-狭田修": "staff-狹田修",
-    "staff-NainemoutouLucas": "staff-LucasNainemoutou",
-    "staff-GirardinSolal": "staff-SolalGirardin",
-    "staff-MeNex00": "staff-MeNeX00",
-    "staff-フクロウp": "staff-フクロウP",
-    "staff-UMP": "staff-ump",
-}
-IDENTITY_SOURCES = {
-    "staff-LucasNainemoutou": "production-lucas-nainemoutou-profile",
-    "staff-SolalGirardin": "production-solal-girardin-profile",
-    "staff-MeNeX00": "production-menex00-cg15-post",
-}
-# Official credits already identify these names as organizations.
-ORGANIZATION_PEOPLE = {"staff-" + name for name in (
-    "スノーライトスタッフ", "コスモス・アーツ", "ラッドプラス", "チップチューン",
-    "リバイバル", "月面", "寿門堂", "Wish", "wish", "グラフィニカ",
-)}
-
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -37,73 +16,18 @@ def main():
     document = json.loads((DATA / "staff.json").read_text(encoding="utf-8"))
     people = json.loads((DATA / "people.json").read_text(encoding="utf-8"))
     by_id = {person["id"]: person for person in people["people"]}
-    for alias_id, canonical_id in PERSON_ALIASES.items():
-        alias = by_id.get(alias_id)
-        if not alias:
-            continue
-        canonical = by_id[canonical_id]
-        canonical["aliases"] = list(dict.fromkeys([*canonical.get("aliases", []), alias["name"], *alias.get("aliases", [])]))
-        canonical["alias_ids"] = list(dict.fromkeys([*canonical.get("alias_ids", []), alias_id, *alias.get("alias_ids", [])]))
-        canonical["source_refs"] = list(dict.fromkeys([*canonical.get("source_refs", []), *alias.get("source_refs", [])]))
-        if canonical_id in IDENTITY_SOURCES:
-            canonical["source_refs"] = list(dict.fromkeys(
-                [*canonical["source_refs"], IDENTITY_SOURCES[canonical_id]]))
+    # Canonical people are the sole identity authority. Historical IDs are
+    # retained in alias_ids and never recreated as active people.
+    canonical_ids = {person["id"]: person["id"] for person in people["people"]}
+    for person in people["people"]:
+        for alias_id in person.get("alias_ids", []):
+            canonical_ids[alias_id] = person["id"]
     result, seen = [], {}
-    removed_headers = 0
-    heading_people = {"staff-フランス語監修", "staff-色指定", "staff-筆文字", "staff-予告編演出"}
-    music_only_people = {"staff-挿入曲", "staff-三橋美智也"}
-    # A standalone heading starts a new role and ends the previous institution.
-    active_heading = {}
     for row in document["credits"]:
-        if "CygamesPitucres" in row.get("institutions", []):
-            row["credited_institutions"] = row["institutions"]
-            row["institutions"] = ["CygamesPictures" if name == "CygamesPitucres" else name
-                                   for name in row["institutions"]]
-        if (row.get("person_id") in music_only_people
-                and row["source_ref"] == "staff-transcript-anime-cinderella-gray"
-                and row["role"] in {"アイキャッチ原画", "レイアウト協力"}):
-            # The transcript's song heading and singer follow the animation
-            # section; neither signature credits an animation job.
-            removed_headers += 1
-            continue
-        if row.get("person_id") in ORGANIZATION_PEOPLE:
-            row.pop("person_id")
-            row["organization"] = row["name"]
-        if row.get("organization") in {"Wish", "wish"}:
-            row["evidence_refs"] = list(dict.fromkeys(
-                [*row.get("evidence_refs", []), "official-wish-company"]))
-        if row.get("organization") == "グラフィニカ":
-            row["evidence_refs"] = list(dict.fromkeys(
-                [*row.get("evidence_refs", []), "official-graphinica-company"]))
-        if (row.get("unit_id") == "anime-cinderella-gray-e13"
-                and row.get("person_id") == "staff-森下智美"
-                and row["role"] == "第二原画"):
-            row["institutions"] = ["スノーライトスタッフ"]
-        if row.get("person_id") in PERSON_ALIASES:
-            row["person_id"] = PERSON_ALIASES[row["person_id"]]
-        scope = (row["source_ref"], row.get("unit_id"))
-        if row.get("person_id") in heading_people:
-            active_heading[scope] = (row["role"], row["name"])
-            removed_headers += 1
-            continue
-        heading = active_heading.get(scope)
-        if heading and row["role"] != heading[0]:
-            active_heading.pop(scope)
-            heading = None
-        if heading:
-            row["role"] = heading[1]
-            row.pop("institutions", None)
-            if heading[1] == "色指定" and row["work_id"] == "anime-s1" and row.get("person_id"):
-                row["institutions"] = ["stella road"]
-        if (row["source_ref"] == "staff-transcript-anime-s1"
-                and ((row.get("person_id") == "staff-LucasNainemoutou"
-                      and row.get("unit_id") in {"anime-s1-e09", "anime-s1-e11", "anime-s1-e12"})
-                     or (row.get("person_id") == "staff-EmilieBARRIERE"
-                         and row.get("unit_id") in {"anime-s1-e15", "anime-s1-e16"}))):
-            row["role"] = "フランス語監修"
-            row.pop("institutions", None)
+        if row.get("person_id") in canonical_ids:
+            row["person_id"] = canonical_ids[row["person_id"]]
         key = (row["work_id"], row.get("unit_id"), row.get("edition"),
-               role_label(row["role"]), group_label(row.get("group", "")),
+               role_key(row["role"], row.get("group", "")), group_label(row.get("group", "")),
                row.get("person_id") or person_label(row.get("organization") or row["name"]))
         institutions = set(row.get("institutions", []))
         candidates = [previous for previous in seen.get(key, [])
@@ -122,13 +46,10 @@ def main():
             previous["evidence_refs"] = list(dict.fromkeys(
                 [previous["source_ref"], *previous.get("evidence_refs", []),
                  row["source_ref"], *row.get("evidence_refs", [])]))
-    referenced_people = {row.get("person_id") for row in result}
-    people["people"] = [p for p in people["people"] if p["id"] not in heading_people
-                        and p["id"] not in PERSON_ALIASES and p["id"] not in ORGANIZATION_PEOPLE]
-    people["people"] = [p for p in people["people"]
-                        if p["id"] not in music_only_people or p["id"] in referenced_people]
-    print("Merged repeated source observations:", len(document["credits"]) - len(result) - removed_headers)
-    print("Removed non-person headings:", removed_headers)
+    retired_ids = {alias_id for alias_id in canonical_ids
+                   if alias_id in by_id and canonical_ids[alias_id] != alias_id}
+    people["people"] = [p for p in people["people"] if p["id"] not in retired_ids]
+    print("Merged repeated source observations:", len(document["credits"]) - len(result))
     document["credits"] = result
     if args.write:
         atomic_json(DATA / "staff.json", document)

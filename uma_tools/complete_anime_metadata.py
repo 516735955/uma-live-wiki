@@ -144,11 +144,11 @@ def main():
     images = list(dict.fromkeys(image["src"].split("?", 1)[0] for image in soup.select('img[src*="release_image"]') if "x1080.jpg" in image["src"] or any(size in image["src"] for size in ["1920x799", "2015x843", "2015x837", "2014x841", "2015x841", "1920x804", "2016x841"])))
     if len(images) != 16:
         raise ValueError("distributor film image groups changed")
-    rttt["film_stills"] = [{"url": url, "original_url": url, "source_ref": "official-toho-film-release"} for url in images[:8]]
+    rttt["film_stills"] = [{"url": url, "original": url, "source_ref": "official-toho-film-release"} for url in images[:8]]
     movie_unit = next(series for series in documents["units"]["series"] if series["work_id"] == movie["id"])["details"]["1"]
     stills = movie_unit.setdefault("stills", [])
     urls = {image["url"] for image in stills}
-    stills.extend({"url": url, "original_url": url, "source_ref": "official-toho-film-release"} for url in images[8:] if url not in urls)
+    stills.extend({"url": url, "original": url, "source_ref": "official-toho-film-release"} for url in images[8:] if url not in urls)
     print("Umayon: 24 researched titles and summaries; film press stills: 8 RTTT + 8 New Era")
     if args.write:
         for name, document in documents.items():

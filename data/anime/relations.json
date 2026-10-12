@@ -21,7 +21,7 @@
       "relation_type": "spin_off_from",
       "target_type": "anime_work",
       "target_id": "anime-cinderella-gray",
-      "label": "短篇衍生",
+      "label": "衍生自",
       "display_order": 10,
       "evidence_refs": [
         "official-prettygray"
@@ -34,7 +34,7 @@
       "relation_type": "follows",
       "target_type": "anime_work",
       "target_id": "anime-umayuru",
-      "label": "系列新作",
+      "label": "前作",
       "display_order": 10,
       "evidence_refs": [
         "official-fullgate"
@@ -322,7 +322,8 @@
       "label": "单集署名",
       "display_order": 0,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -337,7 +338,8 @@
       "label": "单集署名",
       "display_order": 1,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -352,7 +354,8 @@
       "label": "单集署名",
       "display_order": 2,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -367,7 +370,8 @@
       "label": "单集署名",
       "display_order": 3,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -382,7 +386,8 @@
       "label": "单集署名",
       "display_order": 4,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -397,7 +402,8 @@
       "label": "单集署名",
       "display_order": 5,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -412,7 +418,8 @@
       "label": "单集署名",
       "display_order": 6,
       "evidence_refs": [
-        "official-story-anime-umayuru-fullgate-e01"
+        "official-story-anime-umayuru-fullgate-e01",
+        "official-ending-anime-umayuru-fullgate-e01"
       ]
     },
     {
@@ -3239,7 +3246,7 @@
       "version_id": "song-3dc019b31d-v-74f4a6d347",
       "release_id": "album-laca-9637",
       "version_label": "TV Edit",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3257,7 +3264,7 @@
       "version_id": "song-66e8f91931-v-66130e0288",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3275,7 +3282,7 @@
       "version_id": "song-silent-star-5582fe43d4-v-f24295f050",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3293,7 +3300,7 @@
       "version_id": "song-seven-a00bbe560e-v-9ff0d67fe8",
       "release_id": "album-laca-9637",
       "version_label": "TV Edit",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3311,7 +3318,7 @@
       "version_id": "song-find-my-only-way-46f68c23ae-v-526b1f9727",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3329,7 +3336,7 @@
       "version_id": "song-special-record-c828cf2dc0-v-c63435c8b8",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3347,7 +3354,7 @@
       "version_id": "song-228f943b49-v-6303aaaad6",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s1",
@@ -3872,7 +3879,7 @@
       "version_id": "song-b90b0841b4-v-d639c1dc59",
       "release_id": "album-laca-9814",
       "version_label": "TV Size / 12話Ver.",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s2",
@@ -4596,7 +4603,7 @@
       "version_id": "song-cfec31b639-v-8f84bf3033",
       "release_id": "album-laca-19014",
       "version_label": "TV Size / 1話EDテーマ",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s3",
@@ -4614,7 +4621,7 @@
       "version_id": "song-dc9a83fcf8-v-98b497ee78",
       "release_id": "album-laca-19014",
       "version_label": "TV Size / 4話EDテーマ",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s3",
@@ -4632,7 +4639,7 @@
       "version_id": "song-9b2c62c729-v-90cb5a59c6",
       "release_id": "album-laca-19014",
       "version_label": "TV Size / 6話EDテーマ",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s3",
@@ -4650,7 +4657,7 @@
       "version_id": "song-eb8499138b-v-754ae481e7",
       "release_id": "album-laca-19014",
       "version_label": "TV Size / 12話挿入歌",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "official-ost-anime-s3",
@@ -4668,7 +4675,7 @@
       "version_id": "song-a6384dba1c-v-41ab41ca81",
       "release_id": "album-laca-19014",
       "version_label": "TV Size / 13話Ver.",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "official-ost-anime-s3",
@@ -4703,7 +4710,7 @@
       "version_id": "song-228f943b49-v-0fe15a8ebf",
       "release_id": "album-laca-19014",
       "version_label": "TV Size / 13話EDテーマ",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "official-ost-anime-s3",
@@ -4871,10 +4878,11 @@
       "version_id": "song-aed14a1a3a-v-2954ef1177",
       "release_id": "album-lzc-3651",
       "version_label": "Anime Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
-        "official-fullgate-music"
+        "official-fullgate-music",
+        "official-ending-anime-umayuru-fullgate-e01"
       ],
       "display_order": 10
     },
@@ -9365,7 +9373,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9383,7 +9391,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9401,7 +9409,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9419,7 +9427,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9437,7 +9445,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9455,7 +9463,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9473,7 +9481,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9491,7 +9499,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9509,7 +9517,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9544,7 +9552,7 @@
       "version_id": "song-make-debut-2c6c00a71e-v-aa0647857b",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9598,7 +9606,7 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9616,7 +9624,7 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9634,7 +9642,7 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9652,7 +9660,7 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9670,7 +9678,7 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9688,7 +9696,7 @@
       "version_id": "song-15e2b8f183-v-876d9eafa4",
       "release_id": "album-laca-9637",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9742,7 +9750,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9760,7 +9768,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9796,7 +9804,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9832,7 +9840,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9850,7 +9858,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9868,7 +9876,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9886,7 +9894,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9904,7 +9912,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9922,7 +9930,7 @@
       "version_id": "song-4bfe85c283-v-6ba7c15c52",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9940,7 +9948,7 @@
       "version_id": "song-b90b0841b4-v-698ddfd6cc",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9958,7 +9966,7 @@
       "version_id": "song-b90b0841b4-v-698ddfd6cc",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -9994,7 +10002,7 @@
       "version_id": "song-b90b0841b4-v-698ddfd6cc",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10030,7 +10038,7 @@
       "version_id": "song-b90b0841b4-v-698ddfd6cc",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10048,7 +10056,7 @@
       "version_id": "song-b90b0841b4-v-698ddfd6cc",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10066,7 +10074,7 @@
       "version_id": "song-b90b0841b4-v-698ddfd6cc",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10084,7 +10092,7 @@
       "version_id": "song-winning-the-soul-7eddcf2b7f-v-07458a884f",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10102,7 +10110,7 @@
       "version_id": "song-18aa53485d-v-88327f851c",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10120,7 +10128,7 @@
       "version_id": "song-18aa53485d-v-88327f851c",
       "release_id": "album-laca-9814",
       "version_label": "TV Size",
-      "label": "插入曲",
+      "label": "",
       "usage_type": "insert",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10139,7 +10147,7 @@
       "version_id": "song-62adc02860-v-62adc02860",
       "release_id": "album-laca-9814",
       "version_label": "",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10175,7 +10183,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10193,7 +10201,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10211,7 +10219,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10229,7 +10237,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10247,7 +10255,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10265,7 +10273,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10283,7 +10291,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10301,7 +10309,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10319,7 +10327,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10337,7 +10345,7 @@
       "version_id": "song-a6384dba1c-v-6d52bbecd2",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片头曲",
+      "label": "",
       "usage_type": "op",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10355,7 +10363,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10373,7 +10381,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10391,7 +10399,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10409,7 +10417,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10427,7 +10435,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10445,7 +10453,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10463,7 +10471,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10481,7 +10489,7 @@
       "version_id": "song-challenge-dash-b7a5610844-v-0d5d1f263f",
       "release_id": "album-laca-19014",
       "version_label": "TV Size",
-      "label": "片尾曲",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -10498,8 +10506,8 @@
       "target_id": "song-ambitious-world-d3e9adbb88",
       "version_id": "song-ambitious-world-d3e9adbb88-v-d3e9adbb88",
       "release_id": "album-laca-15938",
-      "version_label": "Ambitious World",
-      "label": "片尾曲",
+      "version_label": "",
+      "label": "",
       "usage_type": "ed",
       "evidence_refs": [
         "moegirl-tv-music",
@@ -11600,9 +11608,9 @@
       "target_type": "character",
       "target_id": "hayakawatazuna",
       "voice_actor_id": "va-0151",
-      "signature": "駿川 たづな",
+      "signature": "駿川たづな",
       "label": "",
-      "display_order": 29,
+      "display_order": 22,
       "evidence_refs": [
         "broadcast-cast-anime-s2-e01",
         "official-ending-anime-s2-e01"
@@ -15312,7 +15320,7 @@
       "target_type": "character",
       "target_id": "hayakawatazuna",
       "voice_actor_id": "va-0151",
-      "signature": "駿川 たづな",
+      "signature": "駿川たづな",
       "label": "",
       "display_order": 15,
       "evidence_refs": [
@@ -28322,7 +28330,7 @@
       "target_id": "song-5fcd96ba46",
       "version_id": "song-5fcd96ba46-v-5fcd96ba46",
       "release_id": "album-laca-9973",
-      "version_label": "ヤマヲカケル！",
+      "version_label": "",
       "usage_type": "bgm",
       "label": "",
       "evidence_refs": [
@@ -28443,7 +28451,7 @@
       "target_id": "song-aed14a1a3a",
       "version_id": "song-aed14a1a3a-v-2954ef1177",
       "release_id": "album-lzc-3651",
-      "version_label": "芝生えるわ～",
+      "version_label": "Anime Size",
       "usage_type": "ed",
       "label": "",
       "evidence_refs": [
@@ -29551,7 +29559,7 @@
       "target_type": "song",
       "target_id": "song-next-frontier-5267707c1b",
       "usage_type": "winning_live",
-      "label": "胜者舞台",
+      "label": "",
       "display_order": 20,
       "evidence_refs": [
         "staff-transcript-anime-cinderella-gray",
@@ -29620,7 +29628,7 @@
       "target_id": "song-seven-a00bbe560e",
       "version_id": "song-seven-a00bbe560e-v-9ff0d67fe8",
       "release_id": "album-laca-9637",
-      "version_label": "SEVEN",
+      "version_label": "TV Edit",
       "usage_type": "insert",
       "label": "",
       "evidence_refs": [

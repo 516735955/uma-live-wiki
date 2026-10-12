@@ -10,13 +10,16 @@ import time
 import urllib.request
 import urllib.parse
 
-from PIL import Image, ImageOps
+from PIL import Image
 
 
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS_DIR)
 SOURCE_PATH = os.path.join(ROOT, "data", "anime", "asset_sources.json")
-TARGET_SIZE = (720, 960)
+# Covers are source artwork, not a poster-shaped crop.  Keep the complete
+# composition while limiting the local derivative to a reasonable size for
+# cards and the detail hero.  The original URL remains available in metadata.
+MAX_COVER_SIZE = (1600, 1600)
 
 
 def load_assets():
@@ -50,12 +53,12 @@ def write_cover(asset):
     source = Image.open(io.BytesIO(body)).convert("RGB")
     if asset.get("mode") == "still" and (source.width < 1280 or source.height < 720):
         raise ValueError("official still has no HD original: %s" % asset["output"])
-    focus_y = max(0.0, min(1.0, float(asset.get("focus_y", 0.5))))
     if asset.get("mode") == "still":
         cover = source.copy()
         cover.thumbnail((1280, 1280), Image.Resampling.LANCZOS)
     else:
-        cover = ImageOps.fit(source, TARGET_SIZE, method=Image.Resampling.LANCZOS, centering=(0.5, focus_y))
+        cover = source.copy()
+        cover.thumbnail(MAX_COVER_SIZE, Image.Resampling.LANCZOS)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     fd, temp_path = tempfile.mkstemp(prefix=".anime-cover-", suffix=".webp", dir=os.path.dirname(output_path))
     os.close(fd)
@@ -79,7 +82,9 @@ def validate(assets):
             continue
         try:
             with Image.open(output_path) as image:
-                if (asset.get("mode") != "still" and image.size != TARGET_SIZE) or image.format != "WEBP":
+                if asset.get("mode") != "still" and (image.width < 1 or image.height < 1):
+                    errors.append("empty cover: %s" % asset["output"])
+                if image.format != "WEBP":
                     errors.append("unexpected cover format: %s" % asset["output"])
                 if asset.get("mode") == "still" and (image.width < 1280 or image.height < 720):
                     errors.append("low-resolution still: %s" % asset["output"])
@@ -92,10 +97,13 @@ def validate(assets):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true", help="download and rebuild every cover")
+    parser.add_argument("--covers-only", action="store_true", help="limit --write/--check to work cover assets")
     parser.add_argument("--check", action="store_true", help="validate local cover files")
     parser.add_argument("--missing", action="store_true", help="download only assets missing locally")
     args = parser.parse_args()
     assets = load_assets()
+    if args.covers_only:
+        assets = [asset for asset in assets if asset.get("work_id")]
     if args.write:
         from concurrent.futures import ThreadPoolExecutor, as_completed
         selected = [asset for asset in assets if not args.missing or not os.path.exists(os.path.join(ROOT, asset["output"]))]
