@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-9718eac756082bc0",
-  "generated_at": "2026-10-12T00:00:00+08:00",
+  "build_id": "anime-ceec901b05e63c7d",
+  "generated_at": "2026-10-13T00:00:00+08:00",
   "coverage": {
     "works": 11,
     "units": 126,
@@ -45,7 +45,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://anime-umamusume.jp/archive/1st/assets/images/ogp4.jpg",
+      "cover_original": "https://umamusu.wiki/w/images/5/53/S1Cover.jpg",
       "unit_count": 16,
       "released_count": 16,
       "latest_unit": {
@@ -126,7 +126,10 @@
             "source_time": 1401.6750180000001,
             "song_id": "song-blue-d4b4826cc5"
           }
-        ]
+        ],
+        "cover": "/uma_tools/img/anime/episodes/anime-s1-e16.webp",
+        "cover_original": "https://umamusu.wiki/w/images/1/1c/S1EXT3.png",
+        "cover_source_ref": "episode-artwork-anime-s1-e16"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -171,7 +174,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://anime-umamusume.jp/archive/2nd/assets/images/anime_umamusume_2nd.png",
+      "cover_original": "https://umamusu.wiki/w/images/f/fd/S2CoverwithLogo.png",
       "unit_count": 13,
       "released_count": 13,
       "latest_unit": {
@@ -231,7 +234,10 @@
               "official-ending-anime-s2-e13"
             ]
           }
-        ]
+        ],
+        "cover": "/uma_tools/img/anime/episodes/anime-s2-e13.webp",
+        "cover_original": "https://umamusu.wiki/w/images/0/06/S2E13Catch.PNG",
+        "cover_source_ref": "episode-artwork-anime-s2-e13"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -288,7 +294,10 @@
             "date": "2021-12-08"
           }
         ],
-        "staff_status": "complete"
+        "staff_status": "complete",
+        "cover": "/uma_tools/img/anime/episodes/anime-umayon-e24.webp",
+        "cover_original": "https://umamusu.wiki/w/images/c/ce/Umayon_24-1.png",
+        "cover_source_ref": "episode-artwork-anime-umayon-e24"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -337,7 +346,10 @@
           "official-anniversary-production",
           "official-ending-anime-1st-anniversary-e01"
         ],
-        "staff_status": "complete"
+        "staff_status": "complete",
+        "cover": "/uma_tools/img/anime/episodes/anime-1st-anniversary-e01.webp",
+        "cover_original": "https://i.ytimg.com/vi/RKVWLnVqnP0/maxresdefault.jpg",
+        "cover_source_ref": "official-youtube"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -381,7 +393,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://umamusume.jp/_nuxt/assets/common/images/ogp_umayuru_02.jpg",
+      "cover_original": "https://umamusu.wiki/w/images/b/b8/UmayuruCover.png",
       "unit_count": 24,
       "released_count": 24,
       "latest_unit": {
@@ -414,7 +426,10 @@
             "timezone": "JST"
           }
         ],
-        "staff_status": "complete"
+        "staff_status": "complete",
+        "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e24.webp",
+        "cover_original": "https://i.ytimg.com/vi/iGExuigHsUw/maxresdefault.jpg",
+        "cover_source_ref": "official-story-anime-umayuru-e24"
       },
       "next_unit": null,
       "main_character_ids": []
@@ -474,49 +489,50 @@
       ],
       "cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg",
       "film_duration": "99分钟",
-      "film_cover": "https://movie-umamusume.jp/assets/images/rttt/img_rttt01.jpg",
+      "film_cover": "/uma_tools/img/anime/anime-rttt.webp",
       "film_stills": [
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-01.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-02.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-03.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-04.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-05.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-06.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-07.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-08.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg"
         }
       ],
+      "film_cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg",
       "unit_count": 4,
       "released_count": 4,
       "latest_unit": {
@@ -556,7 +572,10 @@
             "timezone": "JST"
           }
         ],
-        "staff_status": "complete"
+        "staff_status": "complete",
+        "cover": "/uma_tools/img/anime/stills/anime-rttt-e04-01.webp",
+        "cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/040a55fec6dbedeb8e4b76559c766332-019ffaf.png",
+        "cover_source_ref": "official-story-anime-rttt-e04"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -587,7 +606,7 @@
         "official-anime-portal",
         "official-anime-s3"
       ],
-      "cover_original": "https://anime-umamusume.jp/assets/images/ogp_3rd_1004.jpg",
+      "cover_original": "https://umamusu.wiki/w/images/0/05/S3Cover.png",
       "unit_count": 13,
       "released_count": 13,
       "latest_unit": {
@@ -683,7 +702,10 @@
               "official-ending-anime-s3-e13"
             ]
           }
-        ]
+        ],
+        "cover": "/uma_tools/img/anime/stills/anime-s3-e13-01.webp",
+        "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/6c003990d7e94f0c9845016b33eb0509/%2313-1.png",
+        "cover_source_ref": "official-story-anime-s3-e13"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -706,7 +728,7 @@
       "status": "completed",
       "start_date": "2024-05-24",
       "end_date": "2024-05-24",
-      "summary_zh": "森林宝穴为成为最强而投身竞赛，与爱丽速子、曼城茶座和比萨胜驹共同迎向新时代的赛场。",
+      "summary_zh": "因富士奇石的奔跑而受到震撼，森林宝穴进入特雷森学园，向经典三冠发起挑战。她与烈焰快驹、曼城茶座和爱丽速子等同世代劲敌，一同追逐最强的目标。",
       "cover": "/uma_tools/img/anime/anime-movie-beginning-new-era.webp",
       "official_url": "https://movie-umamusume.jp/",
       "source_refs": [
@@ -738,42 +760,42 @@
         "status": "released",
         "stills": [
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-01.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-02.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-03.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-04.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-05.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-06.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-07.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg"
           },
           {
-            "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-08.webp",
             "source_ref": "official-toho-film-release",
             "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg"
           }
@@ -899,7 +921,10 @@
             "source_time": 6401.800998,
             "song_id": "song-prismatic-spurt-5d848409a4"
           }
-        ]
+        ],
+        "cover": "/uma_tools/img/anime/episodes/anime-movie-beginning-new-era-e01.webp",
+        "cover_original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+        "cover_source_ref": "official-toho-film-release"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -931,7 +956,7 @@
         "official-anime-portal",
         "official-cingray"
       ],
-      "cover_original": "https://anime-cinderellagray.com/og_visual.jpg",
+      "cover_original": "https://umamusu.wiki/w/images/e/ed/CGcour2poster.jpeg",
       "unit_count": 23,
       "released_count": 23,
       "latest_unit": {
@@ -1040,7 +1065,10 @@
             ],
             "source_time": 1386.7552
           }
-        ]
+        ],
+        "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e23-01.webp",
+        "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/523d83874f6d45e5888aba8ad1f98770/%2323-1.jpg",
+        "cover_source_ref": "official-story-anime-cinderella-gray-e23"
       },
       "next_unit": null,
       "main_character_ids": [
@@ -1079,7 +1107,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://umamusume.jp/contents/anime/umayuru-prettygray/assets/images/ogp.png",
+      "cover_original": "https://umamusu.wiki/w/images/0/0f/UmayuruPrettyGray-AnimeCover.png",
       "unit_count": 4,
       "released_count": 4,
       "latest_unit": {
@@ -1088,7 +1116,7 @@
         "number": 4,
         "label": "第 4 话",
         "unit_type": "short",
-        "title_zh": "レース観戦の美学",
+        "title_zh": "观赛的美学",
         "title_ja": "レース観戦の美学",
         "summary_zh": "真机伶为了分享观赛的乐趣，与创世驹等伙伴来到赛场，准备为大家送上许多可爱的瞬间。",
         "release_date": "2025-05-06",
@@ -1138,7 +1166,10 @@
             "timezone": "JST"
           }
         ],
-        "staff_status": "complete"
+        "staff_status": "complete",
+        "cover": "/uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-01.webp",
+        "cover_original": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/365e0f87b63c44c58717f40b104a103d/UGW_04_01.jpg",
+        "cover_source_ref": "official-story-anime-umayuru-prettygray-e04"
       },
       "next_unit": null,
       "main_character_ids": []
@@ -1173,7 +1204,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://umamusume.jp/contents/anime/umayuru-fullgate/assets/images/ogp.png",
+      "cover_original": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png",
       "unit_count": 3,
       "released_count": 3,
       "latest_unit": {
@@ -1189,27 +1220,27 @@
         "status": "released",
         "stills": [
           {
-            "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-01.webp",
             "source_ref": "official-story-anime-umayuru-fullgate-e03",
             "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg"
           },
           {
-            "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-02.webp",
             "source_ref": "official-story-anime-umayuru-fullgate-e03",
             "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg"
           },
           {
-            "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-03.webp",
             "source_ref": "official-story-anime-umayuru-fullgate-e03",
             "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg"
           },
           {
-            "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-04.webp",
             "source_ref": "official-story-anime-umayuru-fullgate-e03",
             "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg"
           },
           {
-            "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg",
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-05.webp",
             "source_ref": "official-story-anime-umayuru-fullgate-e03",
             "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg"
           }
@@ -1228,7 +1259,10 @@
             "timezone": "JST"
           }
         ],
-        "staff_status": "complete"
+        "staff_status": "complete",
+        "cover": "/uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
+        "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+        "cover_source_ref": "official-story-anime-umayuru-fullgate-e03"
       },
       "next_unit": null,
       "main_character_ids": []
@@ -1286,7 +1320,10 @@
             "moegirl-tv-episode-music"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e01.webp",
+      "cover_original": "https://umamusu.wiki/w/images/f/f5/S1E01-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e01"
     },
     {
       "id": "anime-s1-e02",
@@ -1341,7 +1378,10 @@
           "source_time": 1418.608116,
           "song_id": "song-endless-dream-eabbcc4d12"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e02.webp",
+      "cover_original": "https://umamusu.wiki/w/images/d/dd/S1E02-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e02"
     },
     {
       "id": "anime-s1-e03",
@@ -1443,7 +1483,10 @@
           "source_time": 1418.608076,
           "song_id": "song-3dc019b31d"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e03.webp",
+      "cover_original": "https://umamusu.wiki/w/images/4/44/S1E03-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e03"
     },
     {
       "id": "anime-s1-e04",
@@ -1497,7 +1540,10 @@
           ],
           "source_time": 1420.5
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e04.webp",
+      "cover_original": "https://umamusu.wiki/w/images/d/d7/S1E04-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e04"
     },
     {
       "id": "anime-s1-e05",
@@ -1551,7 +1597,10 @@
             "official-ending-anime-s1-e05"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e05.webp",
+      "cover_original": "https://umamusu.wiki/w/images/4/4e/S1E05-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e05"
     },
     {
       "id": "anime-s1-e06",
@@ -1605,7 +1654,10 @@
             "official-ending-anime-s1-e06"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e06.webp",
+      "cover_original": "https://umamusu.wiki/w/images/e/ec/S1E06-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e06"
     },
     {
       "id": "anime-s1-e07",
@@ -1659,7 +1711,10 @@
             "official-ending-anime-s1-e07"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e07.webp",
+      "cover_original": "https://umamusu.wiki/w/images/2/26/S1E07-01.jpg",
+      "cover_source_ref": "episode-artwork-anime-s1-e07"
     },
     {
       "id": "anime-s1-e08",
@@ -1688,7 +1743,10 @@
           "display": "2018-05-13 24:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e08.webp",
+      "cover_original": "https://umamusu.wiki/w/images/d/d2/S1EP8_5.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e08"
     },
     {
       "id": "anime-s1-e09",
@@ -1717,7 +1775,10 @@
           "display": "2018-05-20 24:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e09.webp",
+      "cover_original": "https://umamusu.wiki/w/images/f/fa/S1EP9_1.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e09"
     },
     {
       "id": "anime-s1-e10",
@@ -1771,7 +1832,10 @@
             "official-ending-anime-s1-e10"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e10.webp",
+      "cover_original": "https://umamusu.wiki/w/images/5/56/S1E10Catch.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e10"
     },
     {
       "id": "anime-s1-e11",
@@ -1825,7 +1889,10 @@
             "official-ending-anime-s1-e11"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e11.webp",
+      "cover_original": "https://umamusu.wiki/w/images/3/3b/S1E11Catch.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e11"
     },
     {
       "id": "anime-s1-e12",
@@ -1879,7 +1946,10 @@
             "official-ending-anime-s1-e12"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e12.webp",
+      "cover_original": "https://umamusu.wiki/w/images/1/1f/S1E12Catch.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e12"
     },
     {
       "id": "anime-s1-e13",
@@ -1908,7 +1978,10 @@
           "display": "2018-06-17 24:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e13.webp",
+      "cover_original": "https://umamusu.wiki/w/images/4/48/S1E13Catch.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e13"
     },
     {
       "id": "anime-s1-e14",
@@ -1943,7 +2016,10 @@
           "display": "2018-12-19",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e14.webp",
+      "cover_original": "https://umamusu.wiki/w/images/5/5b/Jkshoot_1764445598071.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e14"
     },
     {
       "id": "anime-s1-e15",
@@ -2003,7 +2079,10 @@
             "official-ending-anime-s1-e15"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e15.webp",
+      "cover_original": "https://umamusu.wiki/w/images/0/05/BNW_2-1.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e15"
     },
     {
       "id": "anime-s1-e16",
@@ -2083,7 +2162,10 @@
           "source_time": 1401.6750180000001,
           "song_id": "song-blue-d4b4826cc5"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s1-e16.webp",
+      "cover_original": "https://umamusu.wiki/w/images/1/1c/S1EXT3.png",
+      "cover_source_ref": "episode-artwork-anime-s1-e16"
     },
     {
       "id": "anime-s2-e01",
@@ -2142,7 +2224,10 @@
             "official-ending-anime-s2-e01"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e01.webp",
+      "cover_original": "https://umamusu.wiki/w/images/e/ec/S2E01Catch.png",
+      "cover_source_ref": "episode-artwork-anime-s2-e01"
     },
     {
       "id": "anime-s2-e02",
@@ -2199,7 +2284,10 @@
             "official-ending-anime-s2-e02"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e02.webp",
+      "cover_original": "https://umamusu.wiki/w/images/5/52/S2E02Catch.png",
+      "cover_source_ref": "episode-artwork-anime-s2-e02"
     },
     {
       "id": "anime-s2-e03",
@@ -2256,7 +2344,10 @@
             "official-ending-anime-s2-e03"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e03.webp",
+      "cover_original": "https://umamusu.wiki/w/images/c/cf/S2E03Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e03"
     },
     {
       "id": "anime-s2-e04",
@@ -2315,7 +2406,10 @@
             "official-ending-anime-s2-e04"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e04.webp",
+      "cover_original": "https://umamusu.wiki/w/images/a/a9/Image_2025-03-08_002116533.png",
+      "cover_source_ref": "episode-artwork-anime-s2-e04"
     },
     {
       "id": "anime-s2-e05",
@@ -2372,7 +2466,10 @@
             "official-ending-anime-s2-e05"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e05.webp",
+      "cover_original": "https://umamusu.wiki/w/images/a/ae/S2E05Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e05"
     },
     {
       "id": "anime-s2-e06",
@@ -2406,7 +2503,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e06.webp",
+      "cover_original": "https://umamusu.wiki/w/images/7/73/S2E06Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e06"
     },
     {
       "id": "anime-s2-e07",
@@ -2440,7 +2540,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e07.webp",
+      "cover_original": "https://umamusu.wiki/w/images/d/d2/S2E07Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e07"
     },
     {
       "id": "anime-s2-e08",
@@ -2497,7 +2600,10 @@
             "official-ending-anime-s2-e08"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e08.webp",
+      "cover_original": "https://umamusu.wiki/w/images/f/fd/S2E08Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e08"
     },
     {
       "id": "anime-s2-e09",
@@ -2531,7 +2637,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e09.webp",
+      "cover_original": "https://umamusu.wiki/w/images/9/92/S2E09Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e09"
     },
     {
       "id": "anime-s2-e10",
@@ -2565,7 +2674,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e10.webp",
+      "cover_original": "https://umamusu.wiki/w/images/3/3b/S2E10Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e10"
     },
     {
       "id": "anime-s2-e11",
@@ -2599,7 +2711,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e11.webp",
+      "cover_original": "https://umamusu.wiki/w/images/b/b0/S2E11Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e11"
     },
     {
       "id": "anime-s2-e12",
@@ -2633,7 +2748,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e12.webp",
+      "cover_original": "https://umamusu.wiki/w/images/6/63/S2E12Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e12"
     },
     {
       "id": "anime-s2-e13",
@@ -2692,7 +2810,10 @@
             "official-ending-anime-s2-e13"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-s2-e13.webp",
+      "cover_original": "https://umamusu.wiki/w/images/0/06/S2E13Catch.PNG",
+      "cover_source_ref": "episode-artwork-anime-s2-e13"
     },
     {
       "id": "anime-umayon-e01",
@@ -2710,7 +2831,10 @@
         "reference-umayon-e01",
         "official-ending-anime-umayon-e01"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e01.webp",
+      "cover_original": "https://umamusu.wiki/w/images/b/ba/Umayon_Main_1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e01"
     },
     {
       "id": "anime-umayon-e02",
@@ -2728,7 +2852,10 @@
         "reference-umayon-e02",
         "official-ending-anime-umayon-e02"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e02.webp",
+      "cover_original": "https://umamusu.wiki/w/images/5/52/Umayon_2-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e02"
     },
     {
       "id": "anime-umayon-e03",
@@ -2746,7 +2873,10 @@
         "reference-umayon-e03",
         "official-ending-anime-umayon-e03"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e03.webp",
+      "cover_original": "https://umamusu.wiki/w/images/e/eb/Umayon_3-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e03"
     },
     {
       "id": "anime-umayon-e04",
@@ -2764,7 +2894,10 @@
         "reference-umayon-e04",
         "official-ending-anime-umayon-e04"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e04.webp",
+      "cover_original": "https://umamusu.wiki/w/images/3/36/Umayon_4-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e04"
     },
     {
       "id": "anime-umayon-e05",
@@ -2782,7 +2915,10 @@
         "reference-umayon-e05",
         "official-ending-anime-umayon-e05"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e05.webp",
+      "cover_original": "https://umamusu.wiki/w/images/8/87/Umayon_5-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e05"
     },
     {
       "id": "anime-umayon-e06",
@@ -2792,7 +2928,7 @@
       "unit_type": "short",
       "title_zh": "大小姐们的优雅午餐",
       "title_ja": "お嬢様たちの優雅なランチ",
-      "summary_zh": "帝王光辉、美妙姿势与目白麦昆来到牛肉盖饭店，艾尼斯风神向她们介绍点餐与用餐的方法。",
+      "summary_zh": "圣王光环、美妙姿势与目白麦昆来到牛肉盖饭店，艾尼斯风神向她们介绍点餐与用餐的方法。",
       "release_date": "2020-08-11",
       "status": "released",
       "stills": [],
@@ -2800,7 +2936,10 @@
         "reference-umayon-e06",
         "official-ending-anime-umayon-e06"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e06.webp",
+      "cover_original": "https://umamusu.wiki/w/images/2/2f/Umayon_6-1..png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e06"
     },
     {
       "id": "anime-umayon-e07",
@@ -2818,7 +2957,10 @@
         "reference-umayon-e07",
         "official-ending-anime-umayon-e07"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e07.webp",
+      "cover_original": "https://umamusu.wiki/w/images/c/c8/Umayon_7-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e07"
     },
     {
       "id": "anime-umayon-e08",
@@ -2836,7 +2978,10 @@
         "reference-umayon-e08",
         "official-ending-anime-umayon-e08"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e08.webp",
+      "cover_original": "https://umamusu.wiki/w/images/4/4a/Umayon_8-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e08"
     },
     {
       "id": "anime-umayon-e09",
@@ -2854,7 +2999,10 @@
         "reference-umayon-e09",
         "official-ending-anime-umayon-e09"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e09.webp",
+      "cover_original": "https://umamusu.wiki/w/images/f/f1/Umayon_9-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e09"
     },
     {
       "id": "anime-umayon-e10",
@@ -2872,7 +3020,10 @@
         "reference-umayon-e10",
         "official-ending-anime-umayon-e10"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e10.webp",
+      "cover_original": "https://umamusu.wiki/w/images/2/21/Umayon_10-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e10"
     },
     {
       "id": "anime-umayon-e11",
@@ -2890,7 +3041,10 @@
         "reference-umayon-e11",
         "official-ending-anime-umayon-e11"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e11.webp",
+      "cover_original": "https://umamusu.wiki/w/images/1/15/Umayon_11-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e11"
     },
     {
       "id": "anime-umayon-e12",
@@ -2908,7 +3062,10 @@
         "reference-umayon-e12",
         "official-ending-anime-umayon-e12"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e12.webp",
+      "cover_original": "https://umamusu.wiki/w/images/1/10/Umayon_12-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e12"
     },
     {
       "id": "anime-umayon-e13",
@@ -2939,7 +3096,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e13.webp",
+      "cover_original": "https://umamusu.wiki/w/images/1/1c/Umayon_13-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e13"
     },
     {
       "id": "anime-umayon-e14",
@@ -2965,7 +3125,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e14.webp",
+      "cover_original": "https://umamusu.wiki/w/images/9/92/Umayon_14-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e14"
     },
     {
       "id": "anime-umayon-e15",
@@ -2991,7 +3154,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e15.webp",
+      "cover_original": "https://umamusu.wiki/w/images/f/f8/Umayon_15-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e15"
     },
     {
       "id": "anime-umayon-e16",
@@ -3017,7 +3183,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e16.webp",
+      "cover_original": "https://umamusu.wiki/w/images/7/7b/Umayon_16%28Real%29-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e16"
     },
     {
       "id": "anime-umayon-e17",
@@ -3043,7 +3212,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e17.webp",
+      "cover_original": "https://umamusu.wiki/w/images/6/61/Umayon_16-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e17"
     },
     {
       "id": "anime-umayon-e18",
@@ -3069,7 +3241,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e18.webp",
+      "cover_original": "https://umamusu.wiki/w/images/8/81/Umayon_18-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e18"
     },
     {
       "id": "anime-umayon-e19",
@@ -3095,7 +3270,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e19.webp",
+      "cover_original": "https://umamusu.wiki/w/images/5/53/Umayon_Main_19.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e19"
     },
     {
       "id": "anime-umayon-e20",
@@ -3121,7 +3299,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e20.webp",
+      "cover_original": "https://umamusu.wiki/w/images/b/b2/Umayon_Main_20.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e20"
     },
     {
       "id": "anime-umayon-e21",
@@ -3147,7 +3328,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e21.webp",
+      "cover_original": "https://umamusu.wiki/w/images/f/f3/Umayon_21-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e21"
     },
     {
       "id": "anime-umayon-e22",
@@ -3173,7 +3357,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e22.webp",
+      "cover_original": "https://umamusu.wiki/w/images/0/05/Umayon_22-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e22"
     },
     {
       "id": "anime-umayon-e23",
@@ -3199,7 +3386,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e23.webp",
+      "cover_original": "https://umamusu.wiki/w/images/1/14/Umayon_23-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e23"
     },
     {
       "id": "anime-umayon-e24",
@@ -3225,7 +3415,10 @@
           "date": "2021-12-08"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayon-e24.webp",
+      "cover_original": "https://umamusu.wiki/w/images/c/ce/Umayon_24-1.png",
+      "cover_source_ref": "episode-artwork-anime-umayon-e24"
     },
     {
       "id": "anime-1st-anniversary-e01",
@@ -3243,7 +3436,10 @@
         "official-anniversary-production",
         "official-ending-anime-1st-anniversary-e01"
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-1st-anniversary-e01.webp",
+      "cover_original": "https://i.ytimg.com/vi/RKVWLnVqnP0/maxresdefault.jpg",
+      "cover_source_ref": "official-youtube"
     },
     {
       "id": "anime-umayuru-e01",
@@ -3275,7 +3471,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e01.webp",
+      "cover_original": "https://i.ytimg.com/vi/Q6ur7-o_YdI/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e01"
     },
     {
       "id": "anime-umayuru-e02",
@@ -3307,7 +3506,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e02.webp",
+      "cover_original": "https://i.ytimg.com/vi/7y4DpHsz6Wg/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e02"
     },
     {
       "id": "anime-umayuru-e03",
@@ -3339,7 +3541,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e03.webp",
+      "cover_original": "https://i.ytimg.com/vi/oD4nNApSrd0/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e03"
     },
     {
       "id": "anime-umayuru-e04",
@@ -3371,7 +3576,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e04.webp",
+      "cover_original": "https://i.ytimg.com/vi/2U2OTcgyubY/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e04"
     },
     {
       "id": "anime-umayuru-e05",
@@ -3403,7 +3611,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e05.webp",
+      "cover_original": "https://i.ytimg.com/vi/36NHQCYjBvs/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e05"
     },
     {
       "id": "anime-umayuru-e06",
@@ -3435,7 +3646,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e06.webp",
+      "cover_original": "https://i.ytimg.com/vi/sLV7WHXcOu0/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e06"
     },
     {
       "id": "anime-umayuru-e07",
@@ -3467,7 +3681,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e07.webp",
+      "cover_original": "https://i.ytimg.com/vi/uXauD1uRZy0/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e07"
     },
     {
       "id": "anime-umayuru-e08",
@@ -3499,7 +3716,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e08.webp",
+      "cover_original": "https://i.ytimg.com/vi/u0LuV8HNd8k/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e08"
     },
     {
       "id": "anime-umayuru-e09",
@@ -3531,7 +3751,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e09.webp",
+      "cover_original": "https://i.ytimg.com/vi/4KzUSqUW9LU/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e09"
     },
     {
       "id": "anime-umayuru-e10",
@@ -3563,7 +3786,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e10.webp",
+      "cover_original": "https://i.ytimg.com/vi/proK-e-v3Eg/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e10"
     },
     {
       "id": "anime-umayuru-e11",
@@ -3595,7 +3821,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e11.webp",
+      "cover_original": "https://i.ytimg.com/vi/ag8dpHBhoCY/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e11"
     },
     {
       "id": "anime-umayuru-e12",
@@ -3627,7 +3856,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e12.webp",
+      "cover_original": "https://i.ytimg.com/vi/aVK4qqhbMhA/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e12"
     },
     {
       "id": "anime-umayuru-e13",
@@ -3659,7 +3891,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e13.webp",
+      "cover_original": "https://i.ytimg.com/vi/_XvzHdO7nrk/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e13"
     },
     {
       "id": "anime-umayuru-e14",
@@ -3691,7 +3926,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e14.webp",
+      "cover_original": "https://i.ytimg.com/vi/xh3FU5NoCzQ/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e14"
     },
     {
       "id": "anime-umayuru-e15",
@@ -3723,7 +3961,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e15.webp",
+      "cover_original": "https://i.ytimg.com/vi/VfqRYC8_UPo/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e15"
     },
     {
       "id": "anime-umayuru-e16",
@@ -3755,7 +3996,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e16.webp",
+      "cover_original": "https://i.ytimg.com/vi/Iz1xs-gZF-g/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e16"
     },
     {
       "id": "anime-umayuru-e17",
@@ -3787,7 +4031,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e17.webp",
+      "cover_original": "https://i.ytimg.com/vi/Vwbj7I47qas/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e17"
     },
     {
       "id": "anime-umayuru-e18",
@@ -3819,7 +4066,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e18.webp",
+      "cover_original": "https://i.ytimg.com/vi/EOhRP6r9SOQ/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e18"
     },
     {
       "id": "anime-umayuru-e19",
@@ -3851,7 +4101,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e19.webp",
+      "cover_original": "https://i.ytimg.com/vi/Moka2TV2eLs/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e19"
     },
     {
       "id": "anime-umayuru-e20",
@@ -3883,7 +4136,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e20.webp",
+      "cover_original": "https://i.ytimg.com/vi/WrymFqwvaoo/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e20"
     },
     {
       "id": "anime-umayuru-e21",
@@ -3915,7 +4171,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e21.webp",
+      "cover_original": "https://i.ytimg.com/vi/HmRbWlbXtIY/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e21"
     },
     {
       "id": "anime-umayuru-e22",
@@ -3947,7 +4206,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e22.webp",
+      "cover_original": "https://i.ytimg.com/vi/2Jrb-wi87Dw/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e22"
     },
     {
       "id": "anime-umayuru-e23",
@@ -3979,7 +4241,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e23.webp",
+      "cover_original": "https://i.ytimg.com/vi/lS54NCyHxko/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e23"
     },
     {
       "id": "anime-umayuru-e24",
@@ -4011,7 +4276,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e24.webp",
+      "cover_original": "https://i.ytimg.com/vi/iGExuigHsUw/maxresdefault.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-e24"
     },
     {
       "id": "anime-rttt-e01",
@@ -4027,7 +4295,8 @@
       "stills": [
         {
           "url": "/uma_tools/img/anime/stills/anime-rttt-e01-01.webp",
-          "original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png",
+          "original": "/uma_tools/img/anime/originals/anime-rttt-e01.png",
+          "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png",
           "source_ref": "official-story-anime-rttt-e01",
           "label": "第1話 「夢のはじまり」"
         }
@@ -4045,7 +4314,11 @@
           "display": "2023-04-16 21:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-rttt-e01-01.webp",
+      "cover_original": "/uma_tools/img/anime/originals/anime-rttt-e01.png",
+      "cover_source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png",
+      "cover_source_ref": "official-story-anime-rttt-e01"
     },
     {
       "id": "anime-rttt-e02",
@@ -4061,7 +4334,8 @@
       "stills": [
         {
           "url": "/uma_tools/img/anime/stills/anime-rttt-e02-01.webp",
-          "original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png",
+          "original": "/uma_tools/img/anime/originals/anime-rttt-e02.png",
+          "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png",
           "source_ref": "official-story-anime-rttt-e02",
           "label": "第2話 「栄光の舞台」"
         },
@@ -4084,7 +4358,11 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-rttt-e02-01.webp",
+      "cover_original": "/uma_tools/img/anime/originals/anime-rttt-e02.png",
+      "cover_source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png",
+      "cover_source_ref": "official-story-anime-rttt-e02"
     },
     {
       "id": "anime-rttt-e03",
@@ -4100,7 +4378,8 @@
       "stills": [
         {
           "url": "/uma_tools/img/anime/stills/anime-rttt-e03-01.webp",
-          "original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png",
+          "original": "/uma_tools/img/anime/originals/anime-rttt-e03.png",
+          "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png",
           "source_ref": "official-story-anime-rttt-e03",
           "label": "第3話 「走る理由」"
         },
@@ -4123,7 +4402,11 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-rttt-e03-01.webp",
+      "cover_original": "/uma_tools/img/anime/originals/anime-rttt-e03.png",
+      "cover_source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png",
+      "cover_source_ref": "official-story-anime-rttt-e03"
     },
     {
       "id": "anime-rttt-e04",
@@ -4162,7 +4445,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-rttt-e04-01.webp",
+      "cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/040a55fec6dbedeb8e4b76559c766332-019ffaf.png",
+      "cover_source_ref": "official-story-anime-rttt-e04"
     },
     {
       "id": "anime-s3-e01",
@@ -4281,7 +4567,10 @@
           "source_time": 1409,
           "song_id": "song-bd297fdbbe"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e01-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/e35b2391bd124f0bbf66e761aebf1abc/%231-1.png",
+      "cover_source_ref": "official-story-anime-s3-e01"
     },
     {
       "id": "anime-s3-e02",
@@ -4374,7 +4663,10 @@
             "official-ending-anime-s3-e02"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e02-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/589a5ef534da4558bd5cbd4ffae279a5/%232-1.png",
+      "cover_source_ref": "official-story-anime-s3-e02"
     },
     {
       "id": "anime-s3-e03",
@@ -4469,7 +4761,10 @@
             "official-ending-anime-s3-e03"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e03-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4def86a78cdc4b43a04690f1cc0031ac/%233-1.png",
+      "cover_source_ref": "official-story-anime-s3-e03"
     },
     {
       "id": "anime-s3-e04",
@@ -4539,7 +4834,10 @@
         "official-ending-anime-s3-e04"
       ],
       "summary_ja": "直近のレースで２着、３着と惜敗の続いたキタサン。\n自分にはレースに勝ち切るための何かが足りないと思い悩み、ナイスネイチャに相談していると、ひょんなことから自分の長所は丈夫な体だと気付く。\n早速トレーナーに頼み込み、キタサンはかつてない猛特訓を始めるが……",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e04-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4da58080fb1349b2ae255edd9a00c56d/%234-1.png",
+      "cover_source_ref": "official-story-anime-s3-e04"
     },
     {
       "id": "anime-s3-e05",
@@ -4632,7 +4930,10 @@
             "official-ending-anime-s3-e05"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e05-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/a6e6aed2951543f3a511916f1057079a/%235-1.png",
+      "cover_source_ref": "official-story-anime-s3-e05"
     },
     {
       "id": "anime-s3-e06",
@@ -4725,7 +5026,10 @@
             "official-ending-anime-s3-e06"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e06-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0f1409912aea4f36a9e2e329b517c803/%236-1.png",
+      "cover_source_ref": "official-story-anime-s3-e06"
     },
     {
       "id": "anime-s3-e07",
@@ -4821,7 +5125,10 @@
             "official-ending-anime-s3-e07"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e07-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/30a209ef7bc2423d8544005498f59415/%237-1.png",
+      "cover_source_ref": "official-story-anime-s3-e07"
     },
     {
       "id": "anime-s3-e08",
@@ -4891,7 +5198,10 @@
         "official-ending-anime-s3-e08"
       ],
       "summary_ja": "新年を迎え、ダイヤと初詣に出かけたキタサン。\nダイヤの願いが、凱旋門賞に勝利して日本のウマ娘界に貢献したいというものと知る。\nそんなダイヤに、いつかのドゥラメンテの姿を重ね見るキタサン。\n勝利の先にあるものを見ているふたりと、目標を持てないでいる自分との差に落ち込むキタサンだったが……",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e08-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4fcdb4ec52c741a685322b1625d33d8a/%238-1.png",
+      "cover_source_ref": "official-story-anime-s3-e08"
     },
     {
       "id": "anime-s3-e09",
@@ -4984,7 +5294,10 @@
             "official-ending-anime-s3-e09"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e09-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4f42ca59b3a2485ab6b0882749f66a83/%239-1.png",
+      "cover_source_ref": "official-story-anime-s3-e09"
     },
     {
       "id": "anime-s3-e10",
@@ -5077,7 +5390,10 @@
             "official-ending-anime-s3-e10"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e10-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/e5b6c1bce5214343bc36c0462fa9c340/%2310-1.png",
+      "cover_source_ref": "official-story-anime-s3-e10"
     },
     {
       "id": "anime-s3-e11",
@@ -5172,7 +5488,10 @@
             "official-ending-anime-s3-e11"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e11-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/b1eb01a62e8e44acb16c9bbcd1f48409/%2311-1.png",
+      "cover_source_ref": "official-story-anime-s3-e11"
     },
     {
       "id": "anime-s3-e12",
@@ -5267,7 +5586,10 @@
             "official-ending-anime-s3-e12"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e12-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0de1560b04ef4676bede7ebc93f758c1/%2312-1.png",
+      "cover_source_ref": "official-story-anime-s3-e12"
     },
     {
       "id": "anime-s3-e13",
@@ -5362,7 +5684,10 @@
             "official-ending-anime-s3-e13"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-s3-e13-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/6c003990d7e94f0c9845016b33eb0509/%2313-1.png",
+      "cover_source_ref": "official-story-anime-s3-e13"
     },
     {
       "id": "anime-movie-beginning-new-era-e01",
@@ -5377,42 +5702,42 @@
       "status": "released",
       "stills": [
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-01.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-02.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-03.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-04.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-05.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-06.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-07.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-08.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg"
         }
@@ -5538,7 +5863,10 @@
           "source_time": 6401.800998,
           "song_id": "song-prismatic-spurt-5d848409a4"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/episodes/anime-movie-beginning-new-era-e01.webp",
+      "cover_original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+      "cover_source_ref": "official-toho-film-release"
     },
     {
       "id": "anime-cinderella-gray-e01",
@@ -5614,7 +5942,10 @@
         "official-ending-anime-cinderella-gray-e01"
       ],
       "summary_ja": "寂れた地方のカサマツトレセン学園。\nそこでトレーナーを務める北原穣は、活気を失いつつある地方レースの現状に対してどうにもできない日々を送っていた。\nそんなある日、1人のウマ娘と出会う。\n芦毛の髪をなびかせて走るその姿を見た時、彼は長年待ちわびていた『スター』が現れたと直感する——。",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e01-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/db1e85e4d7194ae7852fbd51e1532828/%231-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e01"
     },
     {
       "id": "anime-cinderella-gray-e02",
@@ -5690,7 +6021,10 @@
         "official-ending-anime-cinderella-gray-e02"
       ],
       "summary_ja": "新入生のオグリキャップは、ベルノライトと共に北原のチームに勧誘される。\nレースに出走するためにはチームへの所属が必須条件であった。\nチームに入ることを決め、『デビューレース』に向けてトレーニングを開始するオグリであったが、\nその前に新入生一の実力と評される特待生フジマサマーチが立ちはだかる。",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e02-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6d110080329549959fbc9869d796deec/%232-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e02"
     },
     {
       "id": "anime-cinderella-gray-e03",
@@ -5790,7 +6124,10 @@
           "source_time": 1321.647,
           "song_id": "song-1aba5caa02"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e03-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/639b6e7e35d24de5b6efc161e05fa5e3/%233-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e03"
     },
     {
       "id": "anime-cinderella-gray-e04",
@@ -5933,7 +6270,10 @@
           "source_time": 1313.768006,
           "song_id": "song-brightest-heart-dd824b4715"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e04-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0524df9200d3410ebaa37dd12bf892bf/%234-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e04"
     },
     {
       "id": "anime-cinderella-gray-e05",
@@ -6009,7 +6349,10 @@
         "official-ending-anime-cinderella-gray-e05"
       ],
       "summary_ja": "『中京盃』に出走するため、中京レース場を訪れたオグリキャップたち。\nだが北原は、六平の忠告が心に引っ掛かっていた。\n言い知れぬ不安を拭ってレース場に入る北原。\nそこには中央からレースを観戦しに来たシンボリルドルフとマルゼンスキーの姿があった。",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e05-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/54197007fa474b52b666650225b25fba/%235-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e05"
     },
     {
       "id": "anime-cinderella-gray-e06",
@@ -6098,7 +6441,10 @@
             "moegirl-cingray-episode-music"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e06-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9cba68c6c24e455b88e32dcbe8ea2b26/%236-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e06"
     },
     {
       "id": "anime-cinderella-gray-e07",
@@ -6174,7 +6520,10 @@
         "official-ending-anime-cinderella-gray-e07"
       ],
       "summary_ja": "中央のトレセン学園に転入したオグリとベルノは、出迎えた六平の案内で広大な学園内を見て回る。\n新しい教室で、同級生であり新たな強敵となるウマ娘たちと顔を合わせるオグリ。\n次なる目標としてトゥインクル・シリーズのＧⅠ『クラシック三冠レース』を目指すことになるが、そこで大問題が発覚する。",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e07-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c8917aca1e2e48448aeaf93833b2f8fa/%237-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e07"
     },
     {
       "id": "anime-cinderella-gray-e08",
@@ -6250,7 +6599,10 @@
         "official-ending-anime-cinderella-gray-e08"
       ],
       "summary_ja": "クラシックレースの登録期限が、カサマツからの移籍時期と重なっていたことで登録手続きができていなかったオグリは、クラシックレースに出走できなくなってしまう。\n出走に相応しい実力があることをシンボリルドルフに示すべく、中央のレースに挑む。\n初戦はＧⅢ『ペガサスステークス』。だが、その対戦相手は現在4連勝中の強敵ブラッキーエールだった。",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e08-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4af6567d20e145d99f9322fca10f25c8/%238-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e08"
     },
     {
       "id": "anime-cinderella-gray-e09",
@@ -6351,7 +6703,10 @@
             "official-ending-anime-cinderella-gray-e09"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e09-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/808a1df015f240d4aa8f43ac5410b7ff/%239-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e09"
     },
     {
       "id": "anime-cinderella-gray-e10",
@@ -6450,7 +6805,10 @@
             "official-ending-anime-cinderella-gray-e10"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e10-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/92200aa814f14c5199a8b1e27cbe1a36/%2310-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e10"
     },
     {
       "id": "anime-cinderella-gray-e11",
@@ -6551,7 +6909,10 @@
             "official-ending-anime-cinderella-gray-e11"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e11-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f82e206fec0f4180969f66379ffa86f9/%2311-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e11"
     },
     {
       "id": "anime-cinderella-gray-e12",
@@ -6652,7 +7013,10 @@
             "official-ending-anime-cinderella-gray-e12"
           ]
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e12-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4e7d14c0ef434e2098c0ced6552afd7b/%2312-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e12"
     },
     {
       "id": "anime-cinderella-gray-e13",
@@ -6728,7 +7092,10 @@
         "official-ending-anime-cinderella-gray-e13"
       ],
       "summary_ja": "『天皇賞（秋）』で繰り広げられた熾烈な戦いは、ついに最後の直線を迎える。\nラスト400Mに向けて全員が残った力を振り絞る中、タマモを追う『怪物』オグリキャップ。\n体力が尽きかけたタマモは、オグリに迫られる中、自らの過去を思い出す。\nそのかけがえのない光景と想いを胸に、ついに『限界の壁』を超える。",
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e13-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/64c3fa9773a7496c9f703eb0c47dda3a/%2313-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e13"
     },
     {
       "id": "anime-cinderella-gray-e14",
@@ -6834,7 +7201,10 @@
           ],
           "source_time": 1393.604
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e14-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/359d88f8ee1e4c19a5fdb85628b0c4d0/%2314-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e14"
     },
     {
       "id": "anime-cinderella-gray-e15",
@@ -6919,7 +7289,10 @@
           "display": "2025-10-12 16:30",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e15-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6b80636df28a452097efe7f7ed812be6/%2315-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e15"
     },
     {
       "id": "anime-cinderella-gray-e16",
@@ -7004,7 +7377,10 @@
           "display": "2025-10-19 16:30",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e16-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a7754b10e97e4516ae976538656e351e/%2316-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e16"
     },
     {
       "id": "anime-cinderella-gray-e17",
@@ -7114,7 +7490,10 @@
           ],
           "source_time": 1389.726
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e17-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b2604afc59004c3e949e08fcabcbdc04/%2317-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e17"
     },
     {
       "id": "anime-cinderella-gray-e18",
@@ -7200,7 +7579,10 @@
           "timezone": "JST"
         }
       ],
-      "music_cues": []
+      "music_cues": [],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e18-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3073c13e15594624b4325cc33a9153e3/%2318-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e18"
     },
     {
       "id": "anime-cinderella-gray-e19",
@@ -7285,7 +7667,10 @@
           "display": "2025-11-23 17:00",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e19-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/26636577e8314d5c8fb531ac7f393860/%2319-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e19"
     },
     {
       "id": "anime-cinderella-gray-e20",
@@ -7370,7 +7755,10 @@
           "display": "2025-11-30 16:30",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e20-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d543eba0642b44989ee21c1963f967fa/%2320-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e20"
     },
     {
       "id": "anime-cinderella-gray-e21",
@@ -7480,7 +7868,10 @@
           ],
           "source_time": 1389.679
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e21-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/45abbaf877024efd9ddb2e39ad10656c/%2321-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e21"
     },
     {
       "id": "anime-cinderella-gray-e22",
@@ -7565,7 +7956,10 @@
           "display": "2025-12-14 16:30",
           "timezone": "JST"
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e22-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/dd573d68e5ee4b0da50d6934cf638280/%2322-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e22"
     },
     {
       "id": "anime-cinderella-gray-e23",
@@ -7673,7 +8067,10 @@
           ],
           "source_time": 1386.7552
         }
-      ]
+      ],
+      "cover": "/uma_tools/img/anime/stills/anime-cinderella-gray-e23-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/523d83874f6d45e5888aba8ad1f98770/%2323-1.jpg",
+      "cover_source_ref": "official-story-anime-cinderella-gray-e23"
     },
     {
       "id": "anime-umayuru-prettygray-e01",
@@ -7681,7 +8078,7 @@
       "number": 1,
       "label": "第 1 话",
       "unit_type": "short",
-      "title_zh": "鉄板ギラギラ！仁義なき屋台戦争",
+      "title_zh": "铁板闪闪！没有仁义的摊位战争",
       "title_ja": "鉄板ギラギラ！仁義なき屋台戦争",
       "summary_zh": "玉藻十字等人在章鱼烧摊上热情地准备为圣蹄祭助兴，旁边却出现了黄金船等人的炒面摊。两方的摊位竞争就此展开。",
       "release_date": "2025-04-30",
@@ -7731,7 +8128,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/415b4a7517a94129be33ffe5b8bbbfe2/UGW_01_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-prettygray-e01"
     },
     {
       "id": "anime-umayuru-prettygray-e02",
@@ -7739,7 +8139,7 @@
       "number": 2,
       "label": "第 2 话",
       "unit_type": "short",
-      "title_zh": "八つ橋村〜名探偵セイちゃんの事件簿〜",
+      "title_zh": "八桥村～名侦探小青的事件簿～",
       "title_ja": "八つ橋村〜名探偵セイちゃんの事件簿〜",
       "summary_zh": "深山里宁静的村庄发生了神隐事件。侦探青云天空与刑警圣王光环前往当地，追查村民隐瞒的真相。",
       "release_date": "2025-05-02",
@@ -7789,7 +8189,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/80478799b826488b8f565cc65107da66/UGW_02_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-prettygray-e02"
     },
     {
       "id": "anime-umayuru-prettygray-e03",
@@ -7797,7 +8200,7 @@
       "number": 3,
       "label": "第 3 话",
       "unit_type": "short",
-      "title_zh": "波乱必至！リレーはデスティニー",
+      "title_zh": "风波不断！接力即命运",
       "title_ja": "波乱必至！リレーはデスティニー",
       "summary_zh": "琵琶晨光召集菱钻奇宝等人为春季粉丝大感谢祭训练。一场前所未有、状况百出的接力由此开始。",
       "release_date": "2025-05-04",
@@ -7847,7 +8250,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/9a32a569d7974d0292d52c6ac24f54ec/UGW_03_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-prettygray-e03"
     },
     {
       "id": "anime-umayuru-prettygray-e04",
@@ -7855,7 +8261,7 @@
       "number": 4,
       "label": "第 4 话",
       "unit_type": "short",
-      "title_zh": "レース観戦の美学",
+      "title_zh": "观赛的美学",
       "title_ja": "レース観戦の美学",
       "summary_zh": "真机伶为了分享观赛的乐趣，与创世驹等伙伴来到赛场，准备为大家送上许多可爱的瞬间。",
       "release_date": "2025-05-06",
@@ -7905,7 +8311,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/365e0f87b63c44c58717f40b104a103d/UGW_04_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-prettygray-e04"
     },
     {
       "id": "anime-umayuru-fullgate-e01",
@@ -7964,7 +8373,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/dda58ed623c14dd0b5810444df08d5af/UFG_01_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-fullgate-e01"
     },
     {
       "id": "anime-umayuru-fullgate-e02",
@@ -7979,27 +8391,27 @@
       "status": "released",
       "stills": [
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-01.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e02",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-02.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e02",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-03.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e02",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-04.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e02",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-05.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e02",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg"
         }
@@ -8018,7 +8430,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-fullgate-e02.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-fullgate-e02"
     },
     {
       "id": "anime-umayuru-fullgate-e03",
@@ -8033,27 +8448,27 @@
       "status": "released",
       "stills": [
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-01.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e03",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-02.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e03",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-03.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e03",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-04.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e03",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg"
         },
         {
-          "url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-05.webp",
           "source_ref": "official-story-anime-umayuru-fullgate-e03",
           "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg"
         }
@@ -8072,7 +8487,10 @@
           "timezone": "JST"
         }
       ],
-      "staff_status": "complete"
+      "staff_status": "complete",
+      "cover": "/uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+      "cover_source_ref": "official-story-anime-umayuru-fullgate-e03"
     }
   ],
   "watch_resources": [
@@ -586576,6 +586994,377 @@
       "label": "DCAJ官方人物采访：藤本雄一朗本人履历",
       "url": "https://dcaj.or.jp/project/report/pdf/2008/animeguide.pdf",
       "observed_at": "2026-10-12"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e01",
+      "kind": "reference",
+      "label": "第 1 话·单集画面",
+      "url": "https://umamusu.wiki/Gate_of_Dreams!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e02",
+      "kind": "reference",
+      "label": "第 2 话·单集画面",
+      "url": "https://umamusu.wiki/The_Debut_Race_out_of_Nowhere",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e03",
+      "kind": "reference",
+      "label": "第 3 话·单集画面",
+      "url": "https://umamusu.wiki/First_Big_Win",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e04",
+      "kind": "reference",
+      "label": "第 4 话·单集画面",
+      "url": "https://umamusu.wiki/Special_Training!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e05",
+      "kind": "reference",
+      "label": "第 5 话·单集画面",
+      "url": "https://umamusu.wiki/The_Derby_With_Rivals",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e06",
+      "kind": "reference",
+      "label": "第 6 话·单集画面",
+      "url": "https://umamusu.wiki/Autumn_Skies_and_Horse_Girls",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e07",
+      "kind": "reference",
+      "label": "第 7 话·单集画面",
+      "url": "https://umamusu.wiki/Promise",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e08",
+      "kind": "reference",
+      "label": "第 8 话·单集画面",
+      "url": "https://umamusu.wiki/For_You",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e09",
+      "kind": "reference",
+      "label": "第 9 话·单集画面",
+      "url": "https://umamusu.wiki/Dreams_of_Spica",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e10",
+      "kind": "reference",
+      "label": "第 10 话·单集画面",
+      "url": "https://umamusu.wiki/No_Matter_How_Many_Times_I_Lose",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e11",
+      "kind": "reference",
+      "label": "第 11 话·单集画面",
+      "url": "https://umamusu.wiki/Welcome_Back!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e12",
+      "kind": "reference",
+      "label": "第 12 话·单集画面",
+      "url": "https://umamusu.wiki/Stage_of_Dreams",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e13",
+      "kind": "reference",
+      "label": "第 13 话·单集画面",
+      "url": "https://umamusu.wiki/Echo,_Fanfare!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e14",
+      "kind": "reference",
+      "label": "BNW的誓言 1·单集画面",
+      "url": "https://umamusu.wiki/BNW's_Oath_①",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e15",
+      "kind": "reference",
+      "label": "BNW的誓言 2·单集画面",
+      "url": "https://umamusu.wiki/BNW's_Oath_②",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e16",
+      "kind": "reference",
+      "label": "BNW的誓言 3·单集画面",
+      "url": "https://umamusu.wiki/BNW's_Oath_③",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e01",
+      "kind": "reference",
+      "label": "第 1 话·单集画面",
+      "url": "https://umamusu.wiki/Tokai_Teio_(Anime_Season_2)",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e02",
+      "kind": "reference",
+      "label": "第 2 话·单集画面",
+      "url": "https://umamusu.wiki/Never_Gonna_Give_It_Up!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e03",
+      "kind": "reference",
+      "label": "第 3 话·单集画面",
+      "url": "https://umamusu.wiki/Meetings",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e04",
+      "kind": "reference",
+      "label": "第 4 话·单集画面",
+      "url": "https://umamusu.wiki/TM_Showdown!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e05",
+      "kind": "reference",
+      "label": "第 5 话·单集画面",
+      "url": "https://umamusu.wiki/Unbeaten_Champion",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e06",
+      "kind": "reference",
+      "label": "第 6 话·单集画面",
+      "url": "https://umamusu.wiki/Searching_for_a_Reason",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e07",
+      "kind": "reference",
+      "label": "第 7 话·单集画面",
+      "url": "https://umamusu.wiki/A_Blessed_Name",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e08",
+      "kind": "reference",
+      "label": "第 8 话·单集画面",
+      "url": "https://umamusu.wiki/A_Small_Wish",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e09",
+      "kind": "reference",
+      "label": "第 9 话·单集画面",
+      "url": "https://umamusu.wiki/Stopwatch",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e10",
+      "kind": "reference",
+      "label": "第 10 话·单集画面",
+      "url": "https://umamusu.wiki/One_Day,_Without_a_Doubt",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e11",
+      "kind": "reference",
+      "label": "第 11 话·单集画面",
+      "url": "https://umamusu.wiki/What_I_Feel",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e12",
+      "kind": "reference",
+      "label": "第 12 话·单集画面",
+      "url": "https://umamusu.wiki/Together",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e13",
+      "kind": "reference",
+      "label": "第 13 话·单集画面",
+      "url": "https://umamusu.wiki/Galloping_After_Our_Dreams",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e01",
+      "kind": "reference",
+      "label": "第 1 话·单集画面",
+      "url": "https://umamusu.wiki/40%_And_Below!_Tracen_Academy_Special_Make-up_Exams",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e02",
+      "kind": "reference",
+      "label": "第 2 话·单集画面",
+      "url": "https://umamusu.wiki/Newly_Filmed!_The_Tracen_Academy_Video_Introduction",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e03",
+      "kind": "reference",
+      "label": "第 3 话·单集画面",
+      "url": "https://umamusu.wiki/The_World_You've_Dreamed_of_Is_Right_in_Front_of_You",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e04",
+      "kind": "reference",
+      "label": "第 4 话·单集画面",
+      "url": "https://umamusu.wiki/The_Opera:_\"Alas,_It_Is_My_Fate\"",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e05",
+      "kind": "reference",
+      "label": "第 5 话·单集画面",
+      "url": "https://umamusu.wiki/A_Major_Clash?!_The_Ramen_Cup_(GII)",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e06",
+      "kind": "reference",
+      "label": "第 6 话·单集画面",
+      "url": "https://umamusu.wiki/An_Elegant_Lunch_for_Elegant_Young_Ladies",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e07",
+      "kind": "reference",
+      "label": "第 7 话·单集画面",
+      "url": "https://umamusu.wiki/Time_to_Hunt_Rhinoceros_Beetles!_BNW",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e08",
+      "kind": "reference",
+      "label": "第 8 话·单集画面",
+      "url": "https://umamusu.wiki/Hero_Theater:_Uma_Soldier_V!!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e09",
+      "kind": "reference",
+      "label": "第 9 话·单集画面",
+      "url": "https://umamusu.wiki/Make_the_Dream_Come_True!_Getaway_Sisters",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e10",
+      "kind": "reference",
+      "label": "第 10 话·单集画面",
+      "url": "https://umamusu.wiki/You_Get_Spooked,_You_Lose!_Test_of_Courage_Showdown!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e11",
+      "kind": "reference",
+      "label": "第 11 话·单集画面",
+      "url": "https://umamusu.wiki/Umayon_Suspense_Theater",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e12",
+      "kind": "reference",
+      "label": "第 12 话·单集画面",
+      "url": "https://umamusu.wiki/Today's_Main_Race!_The_Gilded_Vessel_Obstacle_Course_(G1)",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e13",
+      "kind": "reference",
+      "label": "第 13 话·单集画面",
+      "url": "https://umamusu.wiki/It's_More_Elegant_Than_Eating!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e14",
+      "kind": "reference",
+      "label": "第 14 话·单集画面",
+      "url": "https://umamusu.wiki/I_Want_To_Be_An_Adult_Woman",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e15",
+      "kind": "reference",
+      "label": "第 15 话·单集画面",
+      "url": "https://umamusu.wiki/Empress_Without_A_Gap",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e16",
+      "kind": "reference",
+      "label": "第 16 话·单集画面",
+      "url": "https://umamusu.wiki/Don't_You_Care_About_The_Back?",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e17",
+      "kind": "reference",
+      "label": "第 17 话·单集画面",
+      "url": "https://umamusu.wiki/Let's_Eat_More!_Tama!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e18",
+      "kind": "reference",
+      "label": "第 18 话·单集画面",
+      "url": "https://umamusu.wiki/You_Can't_Grow_Up?",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e19",
+      "kind": "reference",
+      "label": "第 19 话·单集画面",
+      "url": "https://umamusu.wiki/Aim_For_The_First_Prize_Grand_Strategy!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e20",
+      "kind": "reference",
+      "label": "第 20 话·单集画面",
+      "url": "https://umamusu.wiki/Qualification_To_Challenge_The_Emperor",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e21",
+      "kind": "reference",
+      "label": "第 21 话·单集画面",
+      "url": "https://umamusu.wiki/Uniforms_With_Torn_Sleeves_And_Bandages",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e22",
+      "kind": "reference",
+      "label": "第 22 话·单集画面",
+      "url": "https://umamusu.wiki/Enemies_Who_Upset_My_Plan",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e23",
+      "kind": "reference",
+      "label": "第 23 话·单集画面",
+      "url": "https://umamusu.wiki/Miho_Dormitory_Ghost_Story_Competition!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e24",
+      "kind": "reference",
+      "label": "第 24 话·单集画面",
+      "url": "https://umamusu.wiki/D_On_The_Beach?",
+      "observed_at": "2026-10-13"
     }
   ]
 }

@@ -33,7 +33,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://anime-umamusume.jp/archive/1st/assets/images/ogp4.jpg"
+      "cover_original": "https://umamusu.wiki/w/images/5/53/S1Cover.jpg"
     },
     {
       "id": "anime-s2",
@@ -70,7 +70,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://anime-umamusume.jp/archive/2nd/assets/images/anime_umamusume_2nd.png"
+      "cover_original": "https://umamusu.wiki/w/images/f/fd/S2CoverwithLogo.png"
     },
     {
       "id": "anime-umayon",
@@ -150,7 +150,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://umamusume.jp/_nuxt/assets/common/images/ogp_umayuru_02.jpg"
+      "cover_original": "https://umamusu.wiki/w/images/b/b8/UmayuruCover.png"
     },
     {
       "id": "anime-rttt",
@@ -207,49 +207,50 @@
       ],
       "cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg",
       "film_duration": "99分钟",
-      "film_cover": "https://movie-umamusume.jp/assets/images/rttt/img_rttt01.jpg",
+      "film_cover": "/uma_tools/img/anime/anime-rttt.webp",
       "film_stills": [
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-01.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-02.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-03.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-04.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-05.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-06.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-07.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg"
         },
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
+          "url": "/uma_tools/img/anime/stills/anime-rttt-08.webp",
           "source_ref": "official-toho-film-release",
           "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg"
         }
-      ]
+      ],
+      "film_cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg"
     },
     {
       "id": "anime-s3",
@@ -272,7 +273,7 @@
         "official-anime-portal",
         "official-anime-s3"
       ],
-      "cover_original": "https://anime-umamusume.jp/assets/images/ogp_3rd_1004.jpg"
+      "cover_original": "https://umamusu.wiki/w/images/0/05/S3Cover.png"
     },
     {
       "id": "anime-movie-beginning-new-era",
@@ -287,7 +288,7 @@
       "status": "completed",
       "start_date": "2024-05-24",
       "end_date": "2024-05-24",
-      "summary_zh": "森林宝穴为成为最强而投身竞赛，与爱丽速子、曼城茶座和比萨胜驹共同迎向新时代的赛场。",
+      "summary_zh": "因富士奇石的奔跑而受到震撼，森林宝穴进入特雷森学园，向经典三冠发起挑战。她与烈焰快驹、曼城茶座和爱丽速子等同世代劲敌，一同追逐最强的目标。",
       "cover": "/uma_tools/img/anime/anime-movie-beginning-new-era.webp",
       "official_url": "https://movie-umamusume.jp/",
       "source_refs": [
@@ -327,7 +328,7 @@
         "official-anime-portal",
         "official-cingray"
       ],
-      "cover_original": "https://anime-cinderellagray.com/og_visual.jpg"
+      "cover_original": "https://umamusu.wiki/w/images/e/ed/CGcour2poster.jpeg"
     },
     {
       "id": "anime-umayuru-prettygray",
@@ -358,7 +359,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://umamusume.jp/contents/anime/umayuru-prettygray/assets/images/ogp.png"
+      "cover_original": "https://umamusu.wiki/w/images/0/0f/UmayuruPrettyGray-AnimeCover.png"
     },
     {
       "id": "anime-umayuru-fullgate",
@@ -390,7 +391,7 @@
           "timezone": "JST"
         }
       ],
-      "cover_original": "https://umamusume.jp/contents/anime/umayuru-fullgate/assets/images/ogp.png"
+      "cover_original": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png"
     }
   ]
 }

@@ -6,7 +6,7 @@ const path = require('path');
 const PRIVATE_FIELDS = new Set(['source_refs', 'source_ref', 'evidence_refs', 'source_time',
   'asset_sources', 'photo_source_ref', 'profile_source_refs', 'role_raw', 'group_raw',
   'institutions_raw', 'organization_raw', 'transcribed_name', 'credited_name',
-  'credited_institutions', 'staff_status', 'cast_status', 'note']);
+  'credited_institutions', 'staff_status', 'cast_status', 'cover_source_ref', 'note']);
 
 function displayData(value) {
   if (Array.isArray(value)) return value.map(displayData);
@@ -21,7 +21,7 @@ function select(row, keys) {
 
 function unitSummary(unit) {
   return select(unit, ['id', 'work_id', 'number', 'label', 'unit_type', 'title_zh', 'title_ja',
-    'release_date', 'status']);
+    'release_date', 'status', 'cover']);
 }
 
 function workSummary(work) {

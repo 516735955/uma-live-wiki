@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>#11 4.0 · SVG 与图片查看器预览</title>
-  <link rel="stylesheet" href="./vendor/photoswipe.css">
+  <link rel="stylesheet" href="/uma_tools/vendor/photoswipe/photoswipe.css">
   <style>
     :root{--blue:#3157ed;--navy:#20283b;--orange:#ff7b16;--paper:#f5f4f9;--line:#dfe3ee;--muted:#5f6576;--white:#fff;--ease:cubic-bezier(.22,1,.36,1)}
     *{box-sizing:border-box}body{margin:0;background:var(--paper) url('/uma_tools/img/bg_texture_white.webp');color:var(--navy);font:15px/1.6 system-ui,sans-serif}button,input,a{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--blue);text-underline-offset:4px}::selection{background:#d8e1ff;color:#182f85}:focus-visible{outline:3px solid var(--orange);outline-offset:4px}button:disabled{opacity:.45;cursor:default}button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -36,7 +36,7 @@
     </section>
   </main>
   <script type="module">
-    import PhotoSwipe from './vendor/photoswipe.esm.min.js';
+    import PhotoSwipe from '/uma_tools/vendor/photoswipe/photoswipe.esm.min.js';
     const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
     const choices=[{id:'a',title:'A 排印字章',description:'方章、清晰大字与蓝橙角标。姓名线索最直接；同姓仍靠全文区分。'},{id:'b',title:'B 几何织纹',description:'宽色面与负形，保持干净的小尺寸轮廓。没有姓名字形，也不假装个人官方标志。'},{id:'c',title:'C 中性人物剪影',description:'统一头肩符号，没有虚构面孔或职业装束。人物意味明确，个人辨识度较弱。'}];
     const examples=[{name:'山本健',role:'制作人员'},{name:'横山克',role:'创作者'},{name:'AJURIKA',role:'创作者'}];
@@ -53,15 +53,15 @@
     function update(){const name=document.querySelector('#sample-name').value.trim()||'姓名';document.querySelector('#hero-avatar').innerHTML=avatar(name,selected,104);document.querySelector('#hero-name').textContent=name;document.querySelector('#selection').textContent='当前试看：'+choices.find(c=>c.id===selected).title;document.querySelectorAll('[data-option]').forEach(e=>{e.classList.toggle('selected',e.dataset.option===selected);const b=e.querySelector('button');b.setAttribute('aria-pressed',e.dataset.option===selected);b.textContent=e.dataset.option===selected?'正在试看':'试看这个方向'});}
     document.querySelector('#options').addEventListener('click',e=>{const b=e.target.closest('[data-pick]');if(b){selected=b.dataset.pick;update()}});document.querySelector('#sample-name').addEventListener('input',update);update();
     const media=[
-      {name:'第 1 话 · 梦想的起点',file:'anime-rttt-e01.png',thumb:'/uma_tools/img/anime/stills/anime-rttt-e01-01.webp',source:'https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png'},
-      {name:'第 2 话 · 荣光的舞台',file:'anime-rttt-e02.png',thumb:'/uma_tools/img/anime/stills/anime-rttt-e02-01.webp',source:'https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png'},
-      {name:'第 3 话 · 奔跑的理由',file:'anime-rttt-e03.png',thumb:'/uma_tools/img/anime/stills/anime-rttt-e03-01.webp',source:'https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png'}
+      {name:'第 1 话 · 梦想的起点',file:'/uma_tools/img/anime/originals/anime-rttt-e01.png',thumb:'/uma_tools/img/anime/stills/anime-rttt-e01-01.webp',source:'https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png'},
+      {name:'第 2 话 · 荣光的舞台',file:'/uma_tools/img/anime/originals/anime-rttt-e02.png',thumb:'/uma_tools/img/anime/stills/anime-rttt-e02-01.webp',source:'https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png'},
+      {name:'第 3 话 · 奔跑的理由',file:'/uma_tools/img/anime/originals/anime-rttt-e03.png',thumb:'/uma_tools/img/anime/stills/anime-rttt-e03-01.webp',source:'https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png'}
     ];
-    document.querySelector('#gallery').innerHTML=media.map((m,i)=>`<a href="./${m.file}" data-image="${i}" aria-label="查看${m.name}原图"><img src="${m.thumb}" alt="ROAD TO THE TOP ${m.name}官方剧照" width="560" height="315"><b>${m.name}</b><span>ROAD TO THE TOP · 官方剧照</span></a>`).join('');
+    document.querySelector('#gallery').innerHTML=media.map((m,i)=>`<a href="${m.file}" data-image="${i}" aria-label="查看${m.name}原图"><img src="${m.thumb}" alt="ROAD TO THE TOP ${m.name}官方剧照" width="560" height="315"><b>${m.name}</b><span>ROAD TO THE TOP · 官方剧照</span></a>`).join('');
     const icon=path=>`<svg viewBox="0 0 24 24" aria-hidden="true" class="pswp__icn" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
     let failOnce=false;
     function openViewer(index,trigger){
-      const data=media.map(m=>({src:failOnce?'./missing-original.png':`./${m.file}`,msrc:m.thumb,width:1920,height:1080,alt:m.name,name:m.name,source:m.source,actual:`./${m.file}`,element:trigger}));
+      const data=media.map(m=>({src:failOnce?'./missing-original.png':`${m.file}`,msrc:m.thumb,width:1920,height:1080,alt:m.name,name:m.name,source:m.source,actual:`${m.file}`,element:trigger}));
       const pswp=new PhotoSwipe({dataSource:data,index,bgOpacity:.94,showAnimationDuration:270,hideAnimationDuration:200,easing:'cubic-bezier(.22,1,.36,1)',counter:false,zoom:false,returnFocus:false,preloaderDelay:450,preload:[0,1],initialZoomLevel:'fit',secondaryZoomLevel:1,maxZoomLevel:3,paddingFn:v=>({top:76,bottom:54,left:v.x<650?12:74,right:v.x<650?12:74}),closeSVG:icon('<path d="m6 6 12 12M18 6 6 18"/>'),arrowPrevSVG:icon('<path d="m14 5-7 7 7 7"/>'),arrowNextSVG:icon('<path d="m10 5 7 7-7 7"/>'),closeTitle:'关闭',arrowPrevTitle:'上一张',arrowNextTitle:'下一张'});
       const zoom=(factor)=>{const s=pswp.currSlide;s.zoomTo(Math.min(s.zoomLevels.max,Math.max(s.zoomLevels.fit,s.currZoomLevel*factor)),undefined,180)};
       const fit=()=>pswp.currSlide.zoomTo(pswp.currSlide.zoomLevels.fit,undefined,180);

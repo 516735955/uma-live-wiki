@@ -28,7 +28,7 @@ def load_assets():
 
 
 def fetch(url):
-    request = urllib.request.Request(url, headers={"User-Agent": "uma-live-wiki asset sync/1.0"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     error = None
     for attempt in range(4):
         try:
@@ -41,18 +41,28 @@ def fetch(url):
     raise error
 
 
-def write_cover(asset):
+def write_cover(asset, *, fetch_image=fetch):
     output_path = os.path.join(ROOT, asset["output"])
     source_url = asset["source_url"]
-    if asset.get("mode") == "still" and urllib.parse.urlparse(source_url).hostname == "images.microcms-assets.io":
+    if asset.get("mode") == "still" and not asset.get("original_output") and urllib.parse.urlparse(source_url).hostname == "images.microcms-assets.io":
         parts = urllib.parse.urlsplit(source_url)
         query = dict(urllib.parse.parse_qsl(parts.query))
         query.update({"w": "1280", "q": "90"})
         source_url = urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(query)))
-    body = fetch(source_url)
-    source = Image.open(io.BytesIO(body)).convert("RGB")
+    body = fetch_image(source_url)
+    image = Image.open(io.BytesIO(body)).convert("RGBA")
+    source = Image.new("RGB", image.size, "white")
+    source.paste(image, mask=image.getchannel("A"))
+    if asset.get("mode") == "episode" and (source.width < 300 or source.height < 160):
+        raise ValueError("episode artwork is unavailable: %s" % asset["output"])
     if asset.get("mode") == "still" and (source.width < 1280 or source.height < 720):
         raise ValueError("official still has no HD original: %s" % asset["output"])
+    if asset.get("original_output"):
+        original_path = os.path.join(ROOT, asset["original_output"])
+        os.makedirs(os.path.dirname(original_path), exist_ok=True)
+        with open(original_path + '.tmp', 'wb') as handle:
+            handle.write(body)
+        os.replace(original_path + '.tmp', original_path)
     if asset.get("mode") == "still":
         cover = source.copy()
         cover.thumbnail((1280, 1280), Image.Resampling.LANCZOS)
@@ -90,6 +100,8 @@ def validate(assets):
                     errors.append("low-resolution still: %s" % asset["output"])
         except Exception as caught:
             errors.append("invalid cover %s: %s" % (asset["output"], caught))
+        if asset.get("original_output") and not os.path.isfile(os.path.join(ROOT, asset["original_output"])):
+            errors.append("missing original: %s" % asset["original_output"])
     if errors:
         raise SystemExit("\n".join(errors))
 

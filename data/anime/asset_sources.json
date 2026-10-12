@@ -3,13 +3,15 @@
   "assets": [
     {
       "work_id": "anime-s1",
-      "source_url": "https://anime-umamusume.jp/archive/1st/assets/images/ogp4.jpg",
+      "source_url": "https://umamusu.wiki/w/images/5/53/S1Cover.jpg",
+      "source_page": "https://umamusu.wiki/File:S1Cover.jpg",
       "output": "uma_tools/img/anime/anime-s1.webp",
       "focus_y": 0.42
     },
     {
       "work_id": "anime-s2",
-      "source_url": "https://anime-umamusume.jp/archive/2nd/assets/images/anime_umamusume_2nd.png",
+      "source_url": "https://umamusu.wiki/w/images/f/fd/S2CoverwithLogo.png",
+      "source_page": "https://umamusu.wiki/File:S2CoverwithLogo.png",
       "output": "uma_tools/img/anime/anime-s2.webp"
     },
     {
@@ -24,7 +26,8 @@
     },
     {
       "work_id": "anime-umayuru",
-      "source_url": "https://umamusume.jp/_nuxt/assets/common/images/ogp_umayuru_02.jpg",
+      "source_url": "https://umamusu.wiki/w/images/b/b8/UmayuruCover.png",
+      "source_page": "https://umamusu.wiki/File:UmayuruCover.png",
       "output": "uma_tools/img/anime/anime-umayuru.webp"
     },
     {
@@ -35,7 +38,8 @@
     },
     {
       "work_id": "anime-s3",
-      "source_url": "https://anime-umamusume.jp/assets/images/ogp_3rd_1004.jpg",
+      "source_url": "https://umamusu.wiki/w/images/0/05/S3Cover.png",
+      "source_page": "https://umamusu.wiki/File:S3Cover.png",
       "output": "uma_tools/img/anime/anime-s3.webp"
     },
     {
@@ -46,18 +50,21 @@
     },
     {
       "work_id": "anime-cinderella-gray",
-      "source_url": "https://anime-cinderellagray.com/og_visual.jpg",
+      "source_url": "https://umamusu.wiki/w/images/e/ed/CGcour2poster.jpeg",
+      "source_page": "https://umamusu.wiki/File:CGcour2poster.jpeg",
       "output": "uma_tools/img/anime/anime-cinderella-gray.webp"
     },
     {
       "work_id": "anime-umayuru-prettygray",
-      "source_url": "https://umamusume.jp/contents/anime/umayuru-prettygray/assets/images/ogp.png",
+      "source_url": "https://umamusu.wiki/w/images/0/0f/UmayuruPrettyGray-AnimeCover.png",
+      "source_page": "https://umamusu.wiki/File:UmayuruPrettyGray-AnimeCover.png",
       "output": "uma_tools/img/anime/anime-umayuru-prettygray.webp",
       "focus_y": 0.5
     },
     {
       "work_id": "anime-umayuru-fullgate",
-      "source_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/assets/images/ogp.png",
+      "source_url": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png",
+      "source_page": "https://umamusu.wiki/File:UmayuruFullGate-AnimePromoCover.png",
       "output": "uma_tools/img/anime/anime-umayuru-fullgate.webp",
       "focus_y": 0.5
     },
@@ -2956,6 +2963,7 @@
       "unit_id": "anime-rttt-e01",
       "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png",
       "output": "uma_tools/img/anime/stills/anime-rttt-e01-01.webp",
+      "original_output": "uma_tools/img/anime/originals/anime-rttt-e01.png",
       "mode": "still",
       "source_ref": "official-story-anime-rttt-e01"
     },
@@ -2963,6 +2971,7 @@
       "unit_id": "anime-rttt-e02",
       "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png",
       "output": "uma_tools/img/anime/stills/anime-rttt-e02-01.webp",
+      "original_output": "uma_tools/img/anime/originals/anime-rttt-e02.png",
       "mode": "still",
       "source_ref": "official-story-anime-rttt-e02"
     },
@@ -2977,6 +2986,7 @@
       "unit_id": "anime-rttt-e03",
       "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png",
       "output": "uma_tools/img/anime/stills/anime-rttt-e03-01.webp",
+      "original_output": "uma_tools/img/anime/originals/anime-rttt-e03.png",
       "mode": "still",
       "source_ref": "official-story-anime-rttt-e03"
     },
@@ -3000,6 +3010,729 @@
       "output": "uma_tools/img/anime/stills/anime-rttt-e04-02.webp",
       "mode": "still",
       "source_ref": "official-story-anime-rttt-e04"
+    },
+    {
+      "unit_id": "anime-s1-e01",
+      "source_url": "https://umamusu.wiki/w/images/f/f5/S1E01-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e01.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e01"
+    },
+    {
+      "unit_id": "anime-s1-e02",
+      "source_url": "https://umamusu.wiki/w/images/d/dd/S1E02-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e02.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e02"
+    },
+    {
+      "unit_id": "anime-s1-e03",
+      "source_url": "https://umamusu.wiki/w/images/4/44/S1E03-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e03.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e03"
+    },
+    {
+      "unit_id": "anime-s1-e04",
+      "source_url": "https://umamusu.wiki/w/images/d/d7/S1E04-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e04.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e04"
+    },
+    {
+      "unit_id": "anime-s1-e05",
+      "source_url": "https://umamusu.wiki/w/images/4/4e/S1E05-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e05.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e05"
+    },
+    {
+      "unit_id": "anime-s1-e06",
+      "source_url": "https://umamusu.wiki/w/images/e/ec/S1E06-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e06.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e06"
+    },
+    {
+      "unit_id": "anime-s1-e07",
+      "source_url": "https://umamusu.wiki/w/images/2/26/S1E07-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e07.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e07"
+    },
+    {
+      "unit_id": "anime-s1-e08",
+      "source_url": "https://umamusu.wiki/w/images/d/d2/S1EP8_5.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e08.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e08"
+    },
+    {
+      "unit_id": "anime-s1-e09",
+      "source_url": "https://umamusu.wiki/w/images/f/fa/S1EP9_1.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e09.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e09"
+    },
+    {
+      "unit_id": "anime-s1-e10",
+      "source_url": "https://umamusu.wiki/w/images/5/56/S1E10Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e10.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e10"
+    },
+    {
+      "unit_id": "anime-s1-e11",
+      "source_url": "https://umamusu.wiki/w/images/3/3b/S1E11Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e11.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e11"
+    },
+    {
+      "unit_id": "anime-s1-e12",
+      "source_url": "https://umamusu.wiki/w/images/1/1f/S1E12Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e12.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e12"
+    },
+    {
+      "unit_id": "anime-s1-e13",
+      "source_url": "https://umamusu.wiki/w/images/4/48/S1E13Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e13.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e13"
+    },
+    {
+      "unit_id": "anime-s1-e14",
+      "source_url": "https://umamusu.wiki/w/images/5/5b/Jkshoot_1764445598071.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e14.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e14"
+    },
+    {
+      "unit_id": "anime-s1-e15",
+      "source_url": "https://umamusu.wiki/w/images/0/05/BNW_2-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e15.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e15"
+    },
+    {
+      "unit_id": "anime-s1-e16",
+      "source_url": "https://umamusu.wiki/w/images/1/1c/S1EXT3.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e16.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e16"
+    },
+    {
+      "unit_id": "anime-s2-e01",
+      "source_url": "https://umamusu.wiki/w/images/e/ec/S2E01Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e01.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e01"
+    },
+    {
+      "unit_id": "anime-s2-e02",
+      "source_url": "https://umamusu.wiki/w/images/5/52/S2E02Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e02.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e02"
+    },
+    {
+      "unit_id": "anime-s2-e03",
+      "source_url": "https://umamusu.wiki/w/images/c/cf/S2E03Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e03.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e03"
+    },
+    {
+      "unit_id": "anime-s2-e04",
+      "source_url": "https://umamusu.wiki/w/images/a/a9/Image_2025-03-08_002116533.png",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e04.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e04"
+    },
+    {
+      "unit_id": "anime-s2-e05",
+      "source_url": "https://umamusu.wiki/w/images/a/ae/S2E05Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e05.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e05"
+    },
+    {
+      "unit_id": "anime-s2-e06",
+      "source_url": "https://umamusu.wiki/w/images/7/73/S2E06Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e06.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e06"
+    },
+    {
+      "unit_id": "anime-s2-e07",
+      "source_url": "https://umamusu.wiki/w/images/d/d2/S2E07Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e07.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e07"
+    },
+    {
+      "unit_id": "anime-s2-e08",
+      "source_url": "https://umamusu.wiki/w/images/f/fd/S2E08Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e08.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e08"
+    },
+    {
+      "unit_id": "anime-s2-e09",
+      "source_url": "https://umamusu.wiki/w/images/9/92/S2E09Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e09.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e09"
+    },
+    {
+      "unit_id": "anime-s2-e10",
+      "source_url": "https://umamusu.wiki/w/images/3/3b/S2E10Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e10.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e10"
+    },
+    {
+      "unit_id": "anime-s2-e11",
+      "source_url": "https://umamusu.wiki/w/images/b/b0/S2E11Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e11.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e11"
+    },
+    {
+      "unit_id": "anime-s2-e12",
+      "source_url": "https://umamusu.wiki/w/images/6/63/S2E12Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e12.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e12"
+    },
+    {
+      "unit_id": "anime-s2-e13",
+      "source_url": "https://umamusu.wiki/w/images/0/06/S2E13Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e13.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e13"
+    },
+    {
+      "unit_id": "anime-umayon-e01",
+      "source_url": "https://umamusu.wiki/w/images/b/ba/Umayon_Main_1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e01.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e01"
+    },
+    {
+      "unit_id": "anime-umayon-e02",
+      "source_url": "https://umamusu.wiki/w/images/5/52/Umayon_2-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e02.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e02"
+    },
+    {
+      "unit_id": "anime-umayon-e03",
+      "source_url": "https://umamusu.wiki/w/images/e/eb/Umayon_3-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e03.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e03"
+    },
+    {
+      "unit_id": "anime-umayon-e04",
+      "source_url": "https://umamusu.wiki/w/images/3/36/Umayon_4-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e04.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e04"
+    },
+    {
+      "unit_id": "anime-umayon-e05",
+      "source_url": "https://umamusu.wiki/w/images/8/87/Umayon_5-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e05.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e05"
+    },
+    {
+      "unit_id": "anime-umayon-e06",
+      "source_url": "https://umamusu.wiki/w/images/2/2f/Umayon_6-1..png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e06.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e06"
+    },
+    {
+      "unit_id": "anime-umayon-e07",
+      "source_url": "https://umamusu.wiki/w/images/c/c8/Umayon_7-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e07.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e07"
+    },
+    {
+      "unit_id": "anime-umayon-e08",
+      "source_url": "https://umamusu.wiki/w/images/4/4a/Umayon_8-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e08.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e08"
+    },
+    {
+      "unit_id": "anime-umayon-e09",
+      "source_url": "https://umamusu.wiki/w/images/f/f1/Umayon_9-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e09.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e09"
+    },
+    {
+      "unit_id": "anime-umayon-e10",
+      "source_url": "https://umamusu.wiki/w/images/2/21/Umayon_10-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e10.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e10"
+    },
+    {
+      "unit_id": "anime-umayon-e11",
+      "source_url": "https://umamusu.wiki/w/images/1/15/Umayon_11-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e11.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e11"
+    },
+    {
+      "unit_id": "anime-umayon-e12",
+      "source_url": "https://umamusu.wiki/w/images/1/10/Umayon_12-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e12.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e12"
+    },
+    {
+      "unit_id": "anime-umayon-e13",
+      "source_url": "https://umamusu.wiki/w/images/1/1c/Umayon_13-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e13.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e13"
+    },
+    {
+      "unit_id": "anime-umayon-e14",
+      "source_url": "https://umamusu.wiki/w/images/9/92/Umayon_14-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e14.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e14"
+    },
+    {
+      "unit_id": "anime-umayon-e15",
+      "source_url": "https://umamusu.wiki/w/images/f/f8/Umayon_15-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e15.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e15"
+    },
+    {
+      "unit_id": "anime-umayon-e16",
+      "source_url": "https://umamusu.wiki/w/images/7/7b/Umayon_16%28Real%29-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e16.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e16"
+    },
+    {
+      "unit_id": "anime-umayon-e17",
+      "source_url": "https://umamusu.wiki/w/images/6/61/Umayon_16-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e17.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e17"
+    },
+    {
+      "unit_id": "anime-umayon-e18",
+      "source_url": "https://umamusu.wiki/w/images/8/81/Umayon_18-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e18.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e18"
+    },
+    {
+      "unit_id": "anime-umayon-e19",
+      "source_url": "https://umamusu.wiki/w/images/5/53/Umayon_Main_19.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e19.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e19"
+    },
+    {
+      "unit_id": "anime-umayon-e20",
+      "source_url": "https://umamusu.wiki/w/images/b/b2/Umayon_Main_20.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e20.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e20"
+    },
+    {
+      "unit_id": "anime-umayon-e21",
+      "source_url": "https://umamusu.wiki/w/images/f/f3/Umayon_21-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e21.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e21"
+    },
+    {
+      "unit_id": "anime-umayon-e22",
+      "source_url": "https://umamusu.wiki/w/images/0/05/Umayon_22-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e22.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e22"
+    },
+    {
+      "unit_id": "anime-umayon-e23",
+      "source_url": "https://umamusu.wiki/w/images/1/14/Umayon_23-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e23.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e23"
+    },
+    {
+      "unit_id": "anime-umayon-e24",
+      "source_url": "https://umamusu.wiki/w/images/c/ce/Umayon_24-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e24.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e24"
+    },
+    {
+      "unit_id": "anime-1st-anniversary-e01",
+      "source_url": "https://i.ytimg.com/vi/RKVWLnVqnP0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-1st-anniversary-e01.webp",
+      "mode": "episode",
+      "source_ref": "official-youtube"
+    },
+    {
+      "unit_id": "anime-umayuru-e01",
+      "source_url": "https://i.ytimg.com/vi/Q6ur7-o_YdI/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e01.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-e02",
+      "source_url": "https://i.ytimg.com/vi/7y4DpHsz6Wg/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-e03",
+      "source_url": "https://i.ytimg.com/vi/oD4nNApSrd0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-e04",
+      "source_url": "https://i.ytimg.com/vi/2U2OTcgyubY/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e04.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-e05",
+      "source_url": "https://i.ytimg.com/vi/36NHQCYjBvs/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e05.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e05"
+    },
+    {
+      "unit_id": "anime-umayuru-e06",
+      "source_url": "https://i.ytimg.com/vi/sLV7WHXcOu0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e06.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e06"
+    },
+    {
+      "unit_id": "anime-umayuru-e07",
+      "source_url": "https://i.ytimg.com/vi/uXauD1uRZy0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e07.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e07"
+    },
+    {
+      "unit_id": "anime-umayuru-e08",
+      "source_url": "https://i.ytimg.com/vi/u0LuV8HNd8k/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e08.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e08"
+    },
+    {
+      "unit_id": "anime-umayuru-e09",
+      "source_url": "https://i.ytimg.com/vi/4KzUSqUW9LU/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e09.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e09"
+    },
+    {
+      "unit_id": "anime-umayuru-e10",
+      "source_url": "https://i.ytimg.com/vi/proK-e-v3Eg/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e10.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e10"
+    },
+    {
+      "unit_id": "anime-umayuru-e11",
+      "source_url": "https://i.ytimg.com/vi/ag8dpHBhoCY/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e11.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e11"
+    },
+    {
+      "unit_id": "anime-umayuru-e12",
+      "source_url": "https://i.ytimg.com/vi/aVK4qqhbMhA/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e12.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e12"
+    },
+    {
+      "unit_id": "anime-umayuru-e13",
+      "source_url": "https://i.ytimg.com/vi/_XvzHdO7nrk/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e13.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e13"
+    },
+    {
+      "unit_id": "anime-umayuru-e14",
+      "source_url": "https://i.ytimg.com/vi/xh3FU5NoCzQ/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e14.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e14"
+    },
+    {
+      "unit_id": "anime-umayuru-e15",
+      "source_url": "https://i.ytimg.com/vi/VfqRYC8_UPo/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e15.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e15"
+    },
+    {
+      "unit_id": "anime-umayuru-e16",
+      "source_url": "https://i.ytimg.com/vi/Iz1xs-gZF-g/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e16.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e16"
+    },
+    {
+      "unit_id": "anime-umayuru-e17",
+      "source_url": "https://i.ytimg.com/vi/Vwbj7I47qas/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e17.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e17"
+    },
+    {
+      "unit_id": "anime-umayuru-e18",
+      "source_url": "https://i.ytimg.com/vi/EOhRP6r9SOQ/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e18.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e18"
+    },
+    {
+      "unit_id": "anime-umayuru-e19",
+      "source_url": "https://i.ytimg.com/vi/Moka2TV2eLs/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e19.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e19"
+    },
+    {
+      "unit_id": "anime-umayuru-e20",
+      "source_url": "https://i.ytimg.com/vi/WrymFqwvaoo/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e20.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e20"
+    },
+    {
+      "unit_id": "anime-umayuru-e21",
+      "source_url": "https://i.ytimg.com/vi/HmRbWlbXtIY/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e21.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e21"
+    },
+    {
+      "unit_id": "anime-umayuru-e22",
+      "source_url": "https://i.ytimg.com/vi/2Jrb-wi87Dw/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e22.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e22"
+    },
+    {
+      "unit_id": "anime-umayuru-e23",
+      "source_url": "https://i.ytimg.com/vi/lS54NCyHxko/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e23.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e23"
+    },
+    {
+      "unit_id": "anime-umayuru-e24",
+      "source_url": "https://i.ytimg.com/vi/iGExuigHsUw/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e24.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e24"
+    },
+    {
+      "unit_id": "anime-movie-beginning-new-era-e01",
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-movie-beginning-new-era-e01.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e02",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-fullgate-e02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e03",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-01.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-02.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-03.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-04.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-05.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-06.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-07.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-08.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-01.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-02.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-03.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-04.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-05.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-06.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-07.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-08.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-01.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-04.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-05.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-01.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-04.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-05.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
     }
   ]
 }
