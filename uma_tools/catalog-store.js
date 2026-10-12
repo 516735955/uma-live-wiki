@@ -296,11 +296,11 @@ function creatorSummary(creator, searchText) {
 function songForAppearance(song, type, id) {
   const versions = (song.versions || []).map((version) => {
     const releases = (version.releases || []).map((release) => {
-      const vocalists = (release.vocalists || []).filter((vocalist) => type === 'character'
+      const participates = (release.vocalists || []).some((vocalist) => type === 'character'
         ? vocalist.character_id === id
         : vocalist.voice_actor_id === id);
-      if (!vocalists.length) return null;
-      return Object.assign({}, release, { vocalists });
+      if (!participates) return null;
+      return Object.assign({}, release, { vocalists: (release.vocalists || []).slice() });
     }).filter(Boolean);
     if (!releases.length) return null;
     return {

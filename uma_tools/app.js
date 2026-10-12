@@ -939,8 +939,12 @@ const umaApp = createApp({
       {kind:'fanfare',label:'比赛号角'}, {kind:'insert',label:'插入曲'}, {kind:'bgm',label:'背景配乐'}
     ].map(group => ({...group,rows:animeMusicCues.value.filter(cue=>!cue.song_id && cue.usage_type===group.kind)}))
       .filter(group=>group.rows.length));
-    const animeUsefulRelations = computed(() => animeCurrentRelations.value.filter(row =>
-      ['event','race'].includes(row.target_type)));
+    const animeUsefulRelations = computed(() => animeCurrentRelations.value.filter(row => row.target_type==='race'));
+    const animeEventGroups = computed(() => [
+      {kind:'screening',label:'上映'}, {kind:'stage',label:'舞台见面会'}, {kind:'program',label:'作品专题'}
+    ].map(group => ({...group,rows:animeCurrentRelations.value.filter(row => row.target_type==='event' &&
+      (row.event_category || 'screening')===group.kind).map(relation => ({relation,event:animeRelatedEvents[relation.target_id]}))
+      .filter(row=>row.event).sort((a,b)=>String(a.event.date).localeCompare(String(b.event.date)))})).filter(group=>group.rows.length));
     function appearanceSessionLabel(event) {
       const label = String(event.session_label || '').trim();
       return label && !['本公演','本期节目'].includes(label) &&
@@ -1020,6 +1024,10 @@ const umaApp = createApp({
     const eventAnimeRelations = computed(function () {
       return relatedAnimeRows('event', eventDetail.value && eventDetail.value.id);
     });
+    const eventAnimeWorks = computed(() => {
+      const rows=eventAnimeRelations.value;
+      return groupAnimeParticipation(rows.filter(row=>row.unit || !rows.some(other=>other.unit && other.work.id===row.work.id)));
+    });
     function animeRelationContext(row) {
       if (!row) return '';
       return [row.unit && row.unit.label, row.relation.label].filter(Boolean).join(' · ');
@@ -1063,7 +1071,7 @@ const umaApp = createApp({
       if (relation.target_type === 'character') return routes.characters(relation.target_id);
       if (relation.target_type === 'song') return routes.query(routes.songs(relation.target_id, 'releases'), {version: relation.version_id, release: relation.release_id});
       if (relation.target_type === 'voice_actor') return routes.voiceActors(relation.target_id);
-      if (relation.target_type === 'event') return routes.events(relation.target_id);
+      if (relation.target_type === 'event') return routes.events(relation.target_id,relation.session_id);
       if (relation.target_type === 'anime_work') return routes.anime(relation.target_id);
       if (relation.target_type === 'horse') return routes.horses(relation.target_id);
       if (relation.target_type === 'race') return relation.url || '';
@@ -1346,22 +1354,23 @@ const umaApp = createApp({
     }
     function routeWillBeAtomic(path) {
       const clean = String(path || '').split('?')[0].replace(/^\/zh-Hans/i, '');
-      return /^\/(?:news|events)\/[^/]+$/.test(clean) ||
-        /^\/music\/(?:songs|albums|creators)\/[^/]+$/.test(clean) ||
+      return /^\/news\/[^/]+$/.test(clean) || /^\/events\/[^/]+(?:\/sessions\/[^/]+)?$/.test(clean) ||
+        /^\/music\/(?:songs|albums|creators)\/[^/]+(?:\/[^/]+)?$/.test(clean) ||
         /^\/database\/(?:characters|voice-actors|horses|staff)\/[^/]+(?:\/[^/]+)?$/.test(clean) ||
         /^\/database\/anime\/[^/]+(?:\/episodes\/[^/]+)?$/.test(clean);
     }
     function beginEntityNavigation() {
-      history.replaceState(Object.assign({}, history.state, {scrollY:window.scrollY}), '', currentUrlPath());
+      const fromRoute = restoringRoute;
+      if (!fromRoute) history.replaceState(Object.assign({}, history.state, {scrollY:window.scrollY}), '', currentUrlPath());
       navigationError.value = '';
       cancelNewsDetailRequest();
       navigationRevision.value += 1;
-      pendingEntitySource = true;
+      pendingEntitySource = !fromRoute && routeWillBeAtomic(currentUrlPath());
       home.value = false;
       notFound.value = false;
       const revision = ++entityRequestRevision;
       const sourcePath = currentUrlPath();
-      return function () { return revision === entityRequestRevision && sourcePath === currentUrlPath(); };
+      return Object.assign(function () { return revision === entityRequestRevision && sourcePath === currentUrlPath(); }, {fromRoute});
     }
     function applyCurrentRoute() {
       routeReady.value = false;
@@ -1378,8 +1387,11 @@ const umaApp = createApp({
       });
       function apply() {
         if (revision === navigationRevision.value && sourcePath === currentUrlPath()) {
-          syncFromUrl();
-          routeReady.value = true;
+          const pending = syncFromUrl();
+          const requestRevision = entityRequestRevision;
+          return Promise.resolve(pending).then(function () {
+            if (requestRevision === entityRequestRevision) routeReady.value = true;
+          });
         }
       }
     }
@@ -1393,10 +1405,11 @@ const umaApp = createApp({
       if (/^https?:/.test(path)) { const url = new URL(path); path = url.pathname + url.search; }
       const method = replace ? 'replaceState' : 'pushState';
       history.replaceState(Object.assign({}, history.state, {scrollY:window.scrollY}), '', currentUrlPath());
-      const fromEntity = routeWillBeAtomic(path);
+      const fromEntity = replace ? !!(history.state && history.state.fromEntity) : routeWillBeAtomic(currentUrlPath());
       if (currentUrlPath() !== path) history[method]({ umaInternal: true, entity: routeWillBeAtomic(path), fromEntity: fromEntity }, '', path);
-      applyCurrentRoute();
+      const pending = applyCurrentRoute();
       resetPageScroll();
+      return pending;
     }
     const showContextBack = computed(function () {
       navigationRevision.value;
@@ -1477,8 +1490,8 @@ const umaApp = createApp({
         dbView.value = 'characters';
         charDetail.value = found;
         charSection.value = 'profile';
-        resetPageScroll();
-        pushUrl();
+        if (!isCurrent.fromRoute) resetPageScroll();
+        pushUrl(isCurrent.fromRoute);
         Vue.nextTick(function () {
           if (typeof window.renderCharacterDetail === 'function') window.renderCharacterDetail(null);
         });
@@ -1825,8 +1838,8 @@ const umaApp = createApp({
         dbView.value = 'voice';
         voiceDetail.value = found;
         voiceSection.value = 'profile';
-        resetPageScroll();
-        pushUrl();
+        if (!isCurrent.fromRoute) resetPageScroll();
+        pushUrl(isCurrent.fromRoute);
       };
       return Promise.all([loadVoiceData(), loadCharacterIndexData(), loadAnimeCatalogOptional()]).then(loadCharacterUi).then(show, show);
     }
@@ -1920,7 +1933,7 @@ const umaApp = createApp({
         if (!isCurrent()) return;
         const found = data && data.creator;
         if (!found) { notFound.value = true; activeTab.value = 'not-found'; return; }
-        if (found.type === 'organization') return openSong(found.works[0].song_id);
+        if (found.type === 'organization') return navigateTo(routes.songs(found.works[0].song_id),isCurrent.fromRoute);
         const requestedCreator = typeof creatorOrId === 'string' ? null : creatorOrId;
         const catalogCreator = (creatorCatalog.value.creators || []).find(function (item) {
           return String(item.id) === String(found.id);
@@ -1933,8 +1946,8 @@ const umaApp = createApp({
         expandedCreatorWorkId.value = '';
         activeTab.value = 'database';
         dbView.value = 'creators';
-        resetPageScroll();
-        pushUrl();
+        if (!isCurrent.fromRoute) resetPageScroll();
+        pushUrl(isCurrent.fromRoute);
       }).catch(function () { if (isCurrent()) navigationError.value = '创作者资料暂时无法载入，请重试。'; });
     }
     function creatorRoleLabels(roles) {
@@ -2144,9 +2157,9 @@ const umaApp = createApp({
       }).filter(function (version) { return version.releases.length; });
     }
     function relationReleaseVocalists(release, entityType, entityId) {
-      return (release && release.vocalists || []).filter(function (vocalist) {
-        return entityType === 'character' ? vocalist.character_id === entityId : vocalist.voice_actor_id === entityId;
-      });
+      const vocalists = release && release.vocalists || [];
+      const matches = vocalist => entityType === 'character' ? vocalist.character_id === entityId : vocalist.voice_actor_id === entityId;
+      return vocalists.filter(matches).concat(vocalists.filter(vocalist => !matches(vocalist)));
     }
     function toggleRelationSong(songId) {
       expandedRelationSongId.value = expandedRelationSongId.value === songId ? '' : songId;
@@ -2189,9 +2202,9 @@ const umaApp = createApp({
         songLyricTranslation.value = false;
         activeTab.value = 'database';
         dbView.value = 'songs';
-        resetPageScroll();
+        if (!isCurrent.fromRoute) resetPageScroll();
         if (recordingUrl) restoreSongRecording(recordingUrl);
-        pushUrl();
+        pushUrl(isCurrent.fromRoute);
       };
       return Promise.all([
         api.request('/api/catalog/song' + api.query({ id: requested, revision: songCatalog.value.build_id })),
@@ -2360,6 +2373,7 @@ const umaApp = createApp({
       return window.location.pathname + window.location.search;
     }
     function pushUrl(replace) {
+      replace = replace || restoringRoute;
       let path = routes.home();
       if (!home.value) {
         if (activeTab.value === 'news') {
@@ -2482,7 +2496,7 @@ const umaApp = createApp({
 
       if (first === 'news' && seg.length <= 2) {
         activeTab.value = 'news';
-        if (seg[1]) openNews(decodeURIComponent(seg[1]));
+        if (seg[1]) return openNews(decodeURIComponent(seg[1]));
         else {
           newsRange.value = ['7', '30', '90'].includes(url.searchParams.get('range')) ? url.searchParams.get('range') : 'all';
           newsType.value = ['media', 'game', 'cd'].includes(url.searchParams.get('type')) ? url.searchParams.get('type') : 'all';
@@ -2491,7 +2505,7 @@ const umaApp = createApp({
       } else if (first === 'events' && (seg.length === 1 || seg.length === 2 || (seg.length === 4 && seg[2] === 'sessions'))) {
         activeTab.value = 'live';
         const requested = seg[1] ? decodeURIComponent(seg[1]) : '';
-        if (requested) openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : (url.searchParams.get('session') || ''));
+        if (requested) return openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : (url.searchParams.get('session') || ''));
         else {
           eventsQuery.value = url.searchParams.get('q') || '';
           evTime.value = ['upcoming', 'past'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
@@ -2510,7 +2524,7 @@ const umaApp = createApp({
         songSection.value = section;
         songDbQuery.value = url.searchParams.get('q') || '';
         songDbPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
-        if (requested) openSong(requested, section);
+        if (requested) return openSong(requested, section);
       } else if (first === 'music' && seg[1] === 'creators' && seg.length <= 4) {
         activeTab.value = 'database';
         dbView.value = 'creators';
@@ -2521,7 +2535,7 @@ const umaApp = createApp({
         creatorQuery.value = url.searchParams.get('q') || '';
         creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
         creatorPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
-        if (requested) openCreator(requested, section);
+        if (requested) return openCreator(requested, section);
       } else if (first === 'music' && seg[1] === 'albums' && seg.length <= 3) {
         activeTab.value = 'database';
         dbView.value = 'albums';
@@ -2533,7 +2547,7 @@ const umaApp = createApp({
           relSort.value = url.searchParams.get('sort') === 'name' ? 'name' : 'newest';
           relPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
         }
-        if (seg[2]) openAlbum({ id: decodeURIComponent(seg[2]) });
+        if (seg[2]) return openAlbum({ id: decodeURIComponent(seg[2]) });
       } else if (first === 'database' && seg[1] === 'characters' && seg.length <= 4) {
         activeTab.value = 'database';
         dbView.value = 'characters';
@@ -2639,8 +2653,8 @@ const umaApp = createApp({
         activeTab.value = 'database';
         dbView.value = 'albums';
         albumDetail.value = { data: data.album, songs: data.album.songs || [] };
-        resetPageScroll();
-        pushUrl();
+        if (!isCurrent.fromRoute) resetPageScroll();
+        pushUrl(isCurrent.fromRoute);
       }).catch(function () { if (isCurrent()) navigationError.value = '专辑资料暂时无法载入，请重试。'; });
     }
     function openAlbumFromDb(a) { openAlbum(a); }
@@ -2866,18 +2880,25 @@ const umaApp = createApp({
         const key = normName(performance.song || performance.song_title || '');
         if (key) (byTitle[key] || (byTitle[key] = [])).push(performance);
       });
-      var linked = String(table || '').replace(/(<td\s+class=["']setlist-song["'][^>]*>)([\s\S]*?)(<\/td>)/gi, function (_, start, body, end) {
+      var linked = String(table || '').replace(/<tr\b[^>]*>[\s\S]*?<\/tr>/gi, function (row) {
+        if (/<th\b/i.test(row)) return row.replace(/<\/tr>/i, '<th class="setlist-actions">试听</th></tr>');
+        let queueButtons = '';
+        row = row.replace(/(<td\s+class=["']setlist-song["'][^>]*>)([\s\S]*?)(<\/td>)/gi, function (_, start, body, end) {
         const title = decodeHtml(body).trim();
         const matchedPerformance = (byTitle[normName(title)] || []).shift();
         const song = matchedPerformance && matchedPerformance.song_id
           ? (findSong(matchedPerformance.song_id) || { id: matchedPerformance.song_id })
           : findSong(title);
-        if (!song || /<a\b/i.test(body)) return start + body + end;
+        if (!song) return start + body + end;
         const queueKey = matchedPerformance ? eventPerformanceKey(matchedPerformance) : '';
-        const queueButtons = queueKey && playableSongRelease(song)
-          ? '<span class="setlist-track-actions"><button type="button" data-play-key="' + queueKey + '" aria-label="立即播放"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button><button type="button" data-add-key="' + queueKey + '" aria-label="加入播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>'
+        const recording = playableSongRelease(song);
+        const playing = recording && isActive(recording.release.audio_url);
+        queueButtons = queueKey && recording
+          ? '<span class="entity-actions entity-actions-compact"><button class="entity-action entity-action-play" type="button" data-play-key="' + queueKey + '" aria-label="' + (playing ? '暂停' : '播放') + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + (playing ? 'M7 5h4v14H7zM14 5h4v14h-4z' : 'm8 5 11 7-11 7z') + '"/></svg></button><button class="entity-action entity-action-add" type="button" data-add-key="' + queueKey + '" aria-label="加入播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>'
           : '';
-        return start + '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + routes.songs(song.id) + '">' + body + '</a>' + queueButtons + end;
+        return start + (/<a\b/i.test(body) ? body : '<a class="setlist-song-link" data-song-id="' + song.id + '" href="' + routes.songs(song.id) + '">' + body + '</a>') + end;
+        });
+        return row.replace(/<\/tr>/i, '<td class="setlist-actions">' + queueButtons + '</td></tr>');
       });
       return linked.replace(/<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi, function (whole, image, alt, label) {
         var srcMatch = image.match(/\bsrc=["']([^"']+)["']/i);
@@ -2890,12 +2911,25 @@ const umaApp = createApp({
     function onEventSetlistClick(event) {
       var playButton = event.target.closest('button[data-play-key]');
       if (playButton) {
-        playEventTrackByKey(playButton.getAttribute('data-play-key'));
+        const key = playButton.getAttribute('data-play-key');
+        playEventTrackByKey(key);
+        Vue.nextTick(() => {
+          if (!playButton.isConnected) document.querySelector('button[data-play-key="' + key + '"]')?.focus({preventScroll:true});
+        });
         return;
       }
       var addButton = event.target.closest('button[data-add-key]');
       if (addButton) {
         addEventTrackByKey(addButton.getAttribute('data-add-key'));
+        addButton.classList.add('entity-action-added');
+        addButton.setAttribute('aria-label', '已加入播放列表');
+        addButton.querySelector('path').setAttribute('d', 'm5 12 4 4 10-10');
+        window.setTimeout(() => {
+          if (!addButton.isConnected) return;
+          addButton.classList.remove('entity-action-added');
+          addButton.setAttribute('aria-label', '加入播放列表');
+          addButton.querySelector('path').setAttribute('d', 'M12 5v14M5 12h14');
+        }, 900);
         return;
       }
       var songLink = event.target.closest('a[data-song-id]');
@@ -3295,8 +3329,8 @@ const umaApp = createApp({
           ? requestedSessionId : ((sessions[0] && sessions[0].id) || '');
         liveView.value = 'eventDetail';
         activeTab.value = 'live';
-        resetPageScroll();
-        pushUrl();
+        if (!isCurrent.fromRoute) resetPageScroll();
+        pushUrl(isCurrent.fromRoute);
       };
       return Promise.all([
         api.request('/api/catalog/event' + api.query({ id: id })),
@@ -3760,7 +3794,7 @@ const umaApp = createApp({
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref, animeUnitHref,
       animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
-      staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups, animeUsefulRelations, appearanceSessionLabel, animeMusicItems, animeMusicVersions, animeMusicCover, animeMusicSong,
+      staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups, animeUsefulRelations, animeEventGroups, eventAnimeWorks, appearanceSessionLabel, animeMusicItems, animeMusicVersions, animeMusicCover, animeMusicSong,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
@@ -3821,6 +3855,8 @@ umaApp.component('anime-participation', {
     editionHref(work,edition) {return routes.query(routes.anime(work.id),{section:this.section,edition});},
     scopeHref(work,unit,edition) {return routes.query(routes.anime(work.id,unit && !['movie','special'].includes(work.format) ? unit.id : null),{section:this.section,edition:work.id==='anime-rttt'?(unit?'web':edition):''});},
     roleLabel(role,group) {return this.selfCharacterId || (this.hideSingleRole && group.roles.length===1) ? '' : role.label;},
+    hasScopeContent(role) {return role.scopes.some(scope=>scope.units.length || scope.institutions.length);},
+    creditRoles(editionGroup,group) {return editionGroup.roles.filter(role=>this.roleLabel(role,group) || this.hasScopeContent(role));},
     editionGroups(group) {
       const editions = [...new Set(group.roles.flatMap(role=>role.scopes.map(scope=>scope.edition)))];
       return editions.sort((a,b)=>(a==='film'?0:a==='web'?1:2)-(b==='film'?0:b==='web'?1:2)).map(edition=>({edition,roles:group.roles.map(role=>({...role,scopes:role.scopes.filter(scope=>scope.edition===edition)})).filter(role=>role.scopes.length)}));
@@ -3828,7 +3864,61 @@ umaApp.component('anime-participation', {
     artwork(group) {return this.animeArtwork(group.work,group.work.id==='anime-rttt' && group.roles.some(role=>role.editions.includes('film')));},
     follow(event,path) {if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
   },
-  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="artwork(group)" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><div class="participation-editions"><div v-for="editionGroup in editionGroups(group)" :key="editionGroup.edition" class="participation-edition-group"><a v-if="editionGroup.edition" class="participation-edition" :href="editionHref(group.work,editionGroup.edition)" @click="follow($event,editionHref(group.work,editionGroup.edition))">{{editionGroup.edition==='film'?'剧场版':'网络版'}}</a><dl class="credit-ledger"><div v-for="role in editionGroup.roles" :key="role.key" :class="{'participation-unlabelled':!roleLabel(role,group)}"><dt v-if="roleLabel(role,group)">{{roleLabel(role,group)}}</dt><dd class="participation-scopes"><div v-for="scope in role.scopes" :key="scope.key" class="participation-scope"><span v-if="scope.institutions.length" class="participation-institution">机构：{{scope.institutions.join('、')}}</span><div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition)" @click="follow($event,scopeHref(group.work,unit,scope.edition))">{{unit.label}}</a></div></div></dd></div></dl></div></div></article></div>`
+  template: `<div class="anime-participation">
+    <article v-for="group in works" :key="group.work.id" class="anime-participation-work">
+      <a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))">
+        <img :src="artwork(group)" alt="" loading="lazy"><b>{{group.work.title_zh}}</b>
+        <svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+      <div class="participation-editions">
+        <div v-for="editionGroup in editionGroups(group)" :key="editionGroup.edition" class="participation-edition-group">
+          <a v-if="editionGroup.edition" class="participation-edition" :href="editionHref(group.work,editionGroup.edition)" @click="follow($event,editionHref(group.work,editionGroup.edition))">{{editionGroup.edition==='film'?'剧场版':'网络版'}}</a>
+          <dl v-if="creditRoles(editionGroup,group).length" class="credit-ledger">
+            <div v-for="role in creditRoles(editionGroup,group)" :key="role.key" :class="{'participation-unlabelled':!roleLabel(role,group),'participation-role-only':!hasScopeContent(role)}">
+              <dt v-if="roleLabel(role,group)">{{roleLabel(role,group)}}</dt>
+              <dd v-if="hasScopeContent(role)" class="participation-scopes">
+                <div v-for="scope in role.scopes.filter(scope=>scope.units.length || scope.institutions.length)" :key="scope.key" class="participation-scope">
+                  <span v-if="scope.institutions.length" class="participation-institution">机构：{{scope.institutions.join('、')}}</span>
+                  <div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition)" @click="follow($event,scopeHref(group.work,unit,scope.edition))">{{unit.label}}</a></div>
+                </div>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </article>
+  </div>`
+});
+umaApp.component('anime-event-links', {
+  props:{groups:{type:Array,default:()=>[]},workTitle:{type:String,default:''}},
+  data(){return {expanded:false};},
+  computed:{visibleGroups(){
+    if(this.expanded)return this.groups;
+    let remaining=3;
+    return this.groups.map(group=>{const rows=group.rows.slice(0,remaining);remaining-=rows.length;return {...group,rows};}).filter(group=>group.rows.length);
+  },hasMore(){return this.groups.reduce((n,group)=>n+group.rows.length,0)>3;}},
+  methods:{
+    href(row){return routes.events(row.relation.target_id,row.relation.session_id);},
+    title(row){
+      const title=row.event.title;
+      if(!this.workTitle)return title;
+      const prefixes=['劇場版','TVアニメ','アニメ',''].flatMap(type=>['『'+this.workTitle+'』','「'+this.workTitle+'」',this.workTitle].map(work=>type+work));
+      const prefix=prefixes.find(prefix=>title.startsWith(prefix));
+      return prefix?title.slice(prefix.length).trim() || title:title;
+    },
+    follow(event,path){if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
+  },
+  template:`<nav class="anime-event-links" aria-label="相关活动">
+    <div v-for="group in visibleGroups" :key="group.kind" class="anime-event-group">
+      <b v-if="visibleGroups.length>1" class="anime-event-category">{{group.label}}</b>
+      <a v-for="row in group.rows" :key="row.relation.id" :href="href(row)" :aria-label="row.event.title+' '+row.event.date" @click="follow($event,href(row))">
+        <span class="anime-event-kind">{{row.relation.label}}</span>
+        <span class="anime-event-copy"><span>{{title(row)}}</span><time>{{row.event.date}}</time></span>
+        <svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <button v-if="hasMore" type="button" class="anime-event-toggle" :aria-expanded="expanded" @click="expanded=!expanded">{{expanded?'收起相关活动':'展开相关活动'}}<svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path :d="expanded?'m6 14 6-6 6 6':'m6 10 6 6 6-6'"/></svg></button>
+  </nav>`
 });
 umaApp.component('staff-credit-list', {
   inject: ['animePeople'],
@@ -3854,7 +3944,7 @@ umaApp.component('staff-credit-list', {
   },
   template:`<div class="anime-staff-teams">
     <div v-for="group in groups" :key="group.key" class="anime-staff-team" :class="{'anime-staff-team-labelled':!participation && group.institutions.length && group.rows.length}">
-      <div v-if="group.institutions.length" class="role-tag-row anime-staff-institutions"><em v-for="institution in group.institutions" :key="institution" class="credit-role-tag">{{institution}}</em></div>
+      <div v-if="group.institutions.length" class="role-tag-row anime-staff-institutions"><span v-if="group.rows.length" class="anime-institution-label">机构：</span><em v-for="institution in group.institutions" :key="institution" class="credit-role-tag">{{institution}}</em></div>
       <div v-if="group.rows.length" :class="participation?'anime-staff-participation':'anime-credit-people'">
         <div v-for="(row,index) in group.rows" :key="index" class="anime-credit">
           <a v-if="href(entry(row))" class="text-link" :href="href(entry(row))" @click="follow($event,href(entry(row)))">{{name(entry(row))}}</a><span v-else>{{name(entry(row))}}</span>

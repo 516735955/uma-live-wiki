@@ -58,27 +58,9 @@
 .music-card-copy small { margin-top: 6px; color: #667189; font-size: .78rem; line-height: 1.4; white-space: nowrap; }
 .music-card-meta,.role-tag-row { display: flex; min-width: 0; flex-wrap: wrap; align-items: center; gap: 5px 9px; }
 .music-card-meta em { color: #64708b; font-size: .75rem; font-style: normal; font-weight: 750; }
-.music-card-play {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    display: grid;
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    border: 1px solid #d0d8ee;
-    border-radius: 50%;
-    color: var(--ui-cobalt-deep);
-    background: rgba(255,255,255,.96);
-    place-items: center;
-    cursor: pointer;
-    transition: color 160ms ease,background 160ms ease,transform 220ms var(--ui-ease);
-}
-.music-card-play svg { width: 18px; height: 18px; fill: currentColor; }
-.music-card-play:hover,.music-card-play.playing { border-color: var(--ui-orange); color: #fff; background: var(--ui-orange); transform: scale(1.08); }
 .song-card .music-card-meta { padding-right: 88px; }
 .song-card > .entity-actions { position: absolute; right: 10px; bottom: 10px; margin: 0; }
-.relation-release > .entity-actions { flex-shrink: 0; margin: 0 0 0 auto; }
+.relation-release > .entity-actions { flex-shrink: 0; margin: 0; justify-self: end; }
 .recording-list { display: grid; }
 .recording-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-top: 1px solid var(--ui-line); }
 .recording-copy { flex: 1; min-width: 0; }
@@ -103,26 +85,6 @@
     letter-spacing: 0;
 }
 
-.entity-play-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
-.entity-play-actions button {
-    display: inline-flex;
-    min-height: 42px;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border: 1px solid var(--ui-orange);
-    border-radius: 999px;
-    font: inherit;
-    font-size: .82rem;
-    font-weight: 850;
-    cursor: pointer;
-    transition: box-shadow 180ms ease,transform 220ms var(--ui-ease),background 160ms ease;
-}
-.entity-play-actions svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
-.entity-play-primary { color: #fff; background: var(--ui-orange); }
-.entity-play-primary svg { fill: currentColor; stroke: none; }
-.entity-play-secondary { color: var(--ui-orange-deep); background: #fff; }
-.entity-play-actions button:hover { box-shadow: 0 8px 18px rgba(155,75,12,.2); transform: translateY(-2px); }
 
 .music-archive-hero {
     isolation: isolate;
@@ -231,51 +193,10 @@
 .shared-work-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .shared-work-link small { color: #6a748b; }
 
-.group-play-btn,.group-queue-btn {
-    display: inline-flex;
-    min-height: 36px;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 13px;
-    border: 1px solid var(--ui-orange);
-    border-radius: 999px;
-    font: inherit;
-    font-size: .78rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: color 160ms ease,background 160ms ease,transform 180ms ease;
-}
-.group-play-btn { color: #fff; background: var(--ui-orange); }
-.group-queue-btn { color: var(--ui-orange-deep); background: #fff; }
-.group-play-btn:hover,.group-queue-btn:hover { transform: translateY(-1px); }
-.group-play-btn svg,.group-queue-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-.group-play-btn svg { fill: currentColor; stroke: none; }
-.track-row-actions,.setlist-track-actions {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 5px;
-}
-.track-add,.setlist-track-actions button {
-    display: inline-grid;
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    border: 1px solid #bdc8e5;
-    border-radius: 50%;
-    color: var(--ui-cobalt-deep);
-    background: #fff;
-    place-items: center;
-    cursor: pointer;
-    vertical-align: middle;
-    transition: color 160ms ease,border-color 160ms ease,background 160ms ease,transform 180ms ease;
-}
-.track-add:hover,.setlist-track-actions button:hover { border-color: var(--ui-orange); color: #fff; background: var(--ui-orange); transform: translateY(-1px); }
-.track-add svg,.setlist-track-actions svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.setlist-track-actions button:first-child svg { fill: currentColor; stroke: none; }
-.album-track-list > div { grid-template-columns: 38px minmax(0,1fr) 82px; }
+.album-track-list > div { grid-template-columns: 38px minmax(0,1fr) auto; }
 .setlist-song { min-width: 0; }
-.setlist-song > .setlist-track-actions { margin-left: 8px; vertical-align: middle; }
+.setlist-table .setlist-actions { width: 96px; text-align: right; }
+.setlist-table .setlist-actions .entity-actions { margin: 0; }
 
 @keyframes disclosureReveal { from { opacity: .35; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -288,7 +209,6 @@
     .music-card-main > img { width: 64px; height: 64px; }
     .music-card-copy b { font-size: .84rem; }
     .music-card-meta em:nth-child(n+2) { display: none; }
-    .music-card-play { right: 8px; bottom: 8px; width: 34px; height: 34px; }
     .music-archive-hero,.creator-hero { min-height: 0; grid-template-columns: 112px minmax(0,1fr); gap: 18px; padding: 20px 16px; }
     .music-archive-hero .entity-cover,
     .creator-cover { width: 112px; }
@@ -309,8 +229,7 @@
     .creator-intro h1 { font-size: 1.28rem; }
     .creator-role-tags { margin-top: 9px; }
     .creator-counts { margin-top: 8px; font-size: .75rem; }
-    .entity-play-actions button { flex: 1 1 auto; justify-content: center; }
-    .album-track-list > div { grid-template-columns: 26px minmax(0,1fr) 78px; gap: 7px; }
+    .album-track-list > div { grid-template-columns: 26px minmax(0,1fr) auto; gap: 7px; }
     .ui-disclosure-summary { gap: 10px; padding-inline: 10px; }
     .ui-disclosure-leading img { width: 46px; height: 46px; }
     .song-credit-version dl > div { grid-template-columns: minmax(0,1fr); gap: 7px; }
@@ -434,7 +353,7 @@
 .entity-detail .entity-meta dd { color: var(--ui-navy); }
 .entity-hero .performer-chip { color: var(--ui-navy); }
 
-.entity-actions { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; }
+.entity-actions { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; margin-top: 14px; }
 .entity-action {
     display: inline-grid;
     width: 40px;
@@ -446,7 +365,9 @@
     background: #fff;
     place-items: center;
     cursor: pointer;
-    transition: color 160ms ease,background 160ms ease,border-color 160ms ease,transform 220ms var(--ui-ease),box-shadow 220ms ease;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    transition: color 160ms ease,background 160ms ease,border-color 160ms ease;
 }
 .entity-actions-hero .entity-action { width: 44px; height: 44px; }
 .entity-actions-compact { margin-top: 0; }
@@ -454,8 +375,15 @@
 .entity-action svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .entity-action-play { border-color: transparent; color: #fff; background: linear-gradient(105deg,var(--ui-orange),var(--ui-orange-end)); }
 .entity-action-play svg { fill: currentColor; stroke: none; }
-.entity-action:hover { border-color: var(--ui-orange); color: #fff; background: var(--ui-cobalt); box-shadow: 0 7px 16px rgba(33,58,168,.2); transform: translateY(-2px) scale(1.04); }
-.entity-action:active { transform: translateY(0) scale(.96); }
+.entity-action-play:hover { border-color: transparent; color: #fff; background: var(--ui-action-orange-hover); }
+.entity-action-add:hover,.entity-action-added { border-color: var(--ui-cobalt); color: var(--ui-cobalt-deep); background: var(--ui-cobalt-soft); }
+.entity-action:focus-visible { outline: 2px solid var(--ui-cobalt); outline-offset: 3px; }
+.entity-action:active svg { transform: scale(.9); }
+.entity-action svg { transition: transform 100ms ease; }
+@media (pointer: coarse) {
+    .entity-actions-compact .entity-action { width: 44px; height: 44px; }
+    .song-card .music-card-meta { padding-right: 104px; }
+}
 
 .entity-overview {
     display: flex;

@@ -108,13 +108,23 @@
       playing: { type: Boolean, default: false }
     },
     emits: ['play', 'add'],
+    data() { return { added: false, addedTimer: null }; },
+    beforeUnmount() { window.clearTimeout(this.addedTimer); },
+    methods: {
+      add() {
+        this.$emit('add');
+        this.added = true;
+        window.clearTimeout(this.addedTimer);
+        this.addedTimer = window.setTimeout(() => { this.added = false; }, 900);
+      }
+    },
     template: `
       <span class="entity-actions" :class="'entity-actions-' + size">
         <button class="entity-action entity-action-play" type="button" :class="{playing:playing}" :aria-label="playing?'暂停':playLabel" :title="playing?'暂停':playLabel" @click.stop="$emit('play')">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="playing?'M7 5h4v14H7zM14 5h4v14h-4z':'m8 5 11 7-11 7z'"/></svg>
         </button>
-        <button class="entity-action entity-action-add" type="button" :aria-label="addLabel" :title="addLabel" @click.stop="$emit('add')">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <button class="entity-action entity-action-add" :class="{'entity-action-added':added}" type="button" :aria-label="added?'已加入播放列表':addLabel" :title="added?'已加入播放列表':addLabel" @click.stop="add">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="added?'m5 12 4 4 10-10':'M12 5v14M5 12h14'"/></svg>
         </button>
       </span>`
   };

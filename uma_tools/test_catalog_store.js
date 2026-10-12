@@ -77,10 +77,17 @@ async function main() {
     appearanceSong.versions.forEach((version) => {
       version.releases.forEach((release) => {
         assert(release.vocalists.length > 0);
-        assert(release.vocalists.every((vocalist) => vocalist.character_id === 'specialweek'));
+        assert(release.vocalists.some((vocalist) => vocalist.character_id === 'specialweek'));
       });
     });
   });
+
+  const ensembleId = 'song-umapyoi-legend-e1d012a94c';
+  const ensemble = (await store.song(ensembleId)).song.versions[0].releases[0].vocalists;
+  for (const [type,id] of [['voice_actor','va-0039'], ['character','meishodoto']]) {
+    const projected = (await store.appearance(type,id)).songs.find(song => song.id===ensembleId);
+    assert.deepStrictEqual(projected.versions[0].releases[0].vocalists, ensemble, 'person-specific recording selection preserves the complete ordered cast');
+  }
 
   // A curated profile edit must invalidate HTTP caches even when the generated
   // batch ID stays the same; otherwise removed actors remain visible.

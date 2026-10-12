@@ -1714,21 +1714,6 @@
         .album-track-main { min-width: 0; }
         .album-track-main > small { display: block; margin-top: 5px; color: var(--text-2); font-size: 0.74rem; line-height: 1.5; }
         .album-track-main .performer-chip-list { margin-top: 8px; }
-        .track-play {
-            display: grid;
-            place-items: center;
-            width: 37px;
-            height: 37px;
-            padding: 0;
-            border: 1px solid var(--navy);
-            border-radius: 50%;
-            background: transparent;
-            color: var(--navy);
-            cursor: pointer;
-        }
-        .track-play:hover,
-        .track-play.playing { border-color: var(--brand); background: var(--brand); color: #fff; }
-        .track-play svg { width: 17px; height: 17px; fill: currentColor; }
 
         .guest-line { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-top: 17px; padding-top: 14px; border-top: 1px solid var(--surface-line); }
         .guest-line b { color: var(--navy); font-size: 0.78rem; }
@@ -1935,10 +1920,12 @@
 :root {
     --ui-cobalt: #3157ed;
     --ui-cobalt-deep: #213aa8;
+    --ui-cobalt-soft: #edf2ff;
     --ui-navy: #151d3f;
     --ui-orange: #ff7b16;
     --ui-orange-end: #ffa932;
     --ui-orange-deep: #ff7b16;
+    --ui-action-orange-hover: #cf5200;
     --ui-line: #dfe3ee;
     --ui-soft: #f5f7fc;
     --ui-ease: cubic-bezier(.19, 1, .22, 1);
@@ -2455,7 +2442,7 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
 .relation-version > header span { color: #687086; font-size: .76rem; }
 .relation-release {
     display: grid;
-    grid-template-columns: minmax(250px,1fr) minmax(170px,.7fr) 38px;
+    grid-template-columns: minmax(0,1fr) minmax(0,.8fr) auto;
     align-items: center;
     gap: 12px;
     padding: 8px 0;
@@ -2854,8 +2841,6 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
 @keyframes audioArc { to { stroke-dashoffset: -52; } }
 @keyframes audioMarquee { 0%,12% { transform: translateX(0); } 88%,100% { transform: translateX(calc(-1 * var(--overflow-distance))); } }
 
-.track-play { transition: transform 300ms var(--ui-ease), background 160ms ease, border-color 160ms ease; }
-.track-play:hover { transform: scale(.92); }
 .back-to-top {
     position: fixed;
     right: 22px;
@@ -3004,9 +2989,10 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     .voice-entity-detail > .entity-hero { grid-template-columns: 112px minmax(0,1fr); gap: 18px; min-height: 0; padding: 20px 16px; }
     .event-entity-detail .entity-meta { grid-template-columns: 1fr; }
     .relation-song-detail { padding-left: 12px; padding-right: 6px; }
-    .relation-release { grid-template-columns: minmax(0,1fr) 38px; }
+    .relation-release { grid-template-columns: minmax(0,1fr) auto; }
+    .relation-release .album-inline { grid-column: 1 / -1; }
     .relation-release .performer-chip-list { grid-column: 1; }
-    .relation-release > .track-play { grid-column: 2; grid-row: 1 / 3; }
+    .relation-release > .entity-actions { grid-column: 2; grid-row: 2; align-self: start; }
     .footer-main { grid-template-columns: 1fr; }
     .footer-community { grid-column: auto; }
     .footer-cols { grid-template-columns: 1fr 1fr; }
@@ -3212,7 +3198,7 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     .site-nav-menu button,
     .ui-filter-group button,
     .ui-pager button,
-    .track-play { touch-action: manipulation; }
+    .entity-action { touch-action: manipulation; }
     .archive-filter-row { overflow: hidden; }
     .ui-filter-group { display: grid; grid-template-columns: 42px minmax(0,1fr); }
     .ui-filter-group > div {
@@ -3682,6 +3668,8 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
     .event-entity-detail .setlist-perf::before { content: '演唱'; margin-right: 9px; color: var(--text-3); font-weight: 800; }
     .event-entity-detail .setlist-src::before { content: '歌曲信息'; margin-right: 9px; color: var(--text-3); font-weight: 800; }
     .event-entity-detail .setlist-src:empty { display: none; }
+    .event-entity-detail .setlist-table td.setlist-actions { grid-column: 1 / -1; width: auto; margin: 8px 0 0 40px; text-align: right; }
+    .event-entity-detail .setlist-table td.setlist-actions:empty { display: none; }
     .event-entity-detail .perf-item,
     .event-entity-detail .setlist-performer-link,
     .event-entity-detail .guest-performer { max-width: 100%; white-space: normal; }

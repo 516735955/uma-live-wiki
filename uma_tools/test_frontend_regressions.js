@@ -31,8 +31,9 @@ async function main() {
     UmaUi: {}, UmaCreatorNetwork: {}, UmaAnimeLoader: require('./anime-loader'), UmaAnimeStaff: require('./anime-staff')
   };
   const history = {
-    state: {}, pushState(state, unused, url) { this.state = state; location.href = new URL(url, location).href; },
-    replaceState(state, unused, url) { this.pushState(state, unused, url); }
+    state: {}, pushes: [],
+    pushState(state, unused, url) { this.pushes.push(url); this.replaceState(state, unused, url); },
+    replaceState(state, unused, url) { this.state = state; location.href = new URL(url, location).href; }
   };
   window.UmaApi = {
     query: (params) => '?' + new URLSearchParams(Object.entries(params).filter((entry) => entry[1] !== undefined)).toString(),
@@ -46,8 +47,10 @@ async function main() {
       }
       if (parsed.pathname === '/api/catalog/songs') return store.songs(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/events') return store.events(parsed.searchParams);
+      if (parsed.pathname === '/api/catalog/event') return store.event(parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/albums') return store.albums(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/creators') return store.creators(parsed.searchParams);
+      if (parsed.pathname === '/api/catalog/creator') return store.creator(parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/voice-actors') return store.voices();
       if (parsed.pathname === '/api/catalog/appearance') return store.appearance(parsed.searchParams.get('type'), parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/anime') {
@@ -57,7 +60,10 @@ async function main() {
         return animeStore.response(scope, parsed.searchParams.get('id'));
       }
       if (parsed.pathname === '/api/catalog/anime-media') return { songs: [], events: [] };
-      if (parsed.pathname === '/api/catalog/song') return details.get(parsed.searchParams.get('id')).promise;
+      if (parsed.pathname === '/api/catalog/song') {
+        const id=parsed.searchParams.get('id');
+        return details.has(id)?details.get(id).promise:store.song(id);
+      }
       return {};
     }
   };
@@ -81,6 +87,30 @@ async function main() {
   await app.applyCurrentRoute();
   assert.strictEqual(app.songDbPaged.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');
+
+  const vocalists = [{voice_actor_id:'other-a'}, {voice_actor_id:'current'}, {voice_actor_id:'other-b'}];
+  assert.deepStrictEqual(Array.from(app.relationReleaseVocalists({vocalists}, 'voice_actor', 'current'), row => row.voice_actor_id),
+    ['current', 'other-a', 'other-b'], 'person recordings keep the whole ensemble with the current person first');
+  assert.deepStrictEqual(vocalists.map(row => row.voice_actor_id), ['other-a', 'current', 'other-b'], 'context sorting preserves canonical credits');
+  const premiere = 'live-other-2024-05-06-title-7caa082310e6';
+  location.href = 'http://localhost/zh-Hans/events/' + premiere;
+  history.state = {};
+  const initialPushes = history.pushes.length;
+  await app.applyCurrentRoute();
+  assert(location.pathname.includes('/sessions/'), 'a default event session has its canonical URL');
+  assert.strictEqual(history.pushes.length, initialPushes, 'restoring a default session never inserts a new history entry');
+  assert.strictEqual(app.showContextBack.value, false, 'direct events do not invent a context return');
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-movie-beginning-new-era';
+  await app.openEvent(premiere);
+  assert.strictEqual(history.pushes.length, initialPushes + 1, 'choosing an event creates one navigation entry');
+  assert.strictEqual(app.showContextBack.value, true);
+  location.href = 'http://localhost/zh-Hans/music/creators/creator-cygames-f5bc529953';
+  history.state = {};
+  const beforeRedirect = history.pushes.length;
+  await app.applyCurrentRoute();
+  assert(location.pathname.startsWith('/zh-Hans/music/songs/'), 'legacy organization credits resolve to their song');
+  assert.strictEqual(history.pushes.length,beforeRedirect,'canonical organization redirects replace the route without trapping Back');
+  assert.strictEqual(app.showContextBack.value,false);
 
   location.href = 'http://localhost/zh-Hans/music/songs?page=999';
   await app.applyCurrentRoute();

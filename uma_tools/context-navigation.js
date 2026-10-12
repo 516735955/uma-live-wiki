@@ -19,9 +19,10 @@
       if (surface.querySelector('.entity-detail')) return;
       const toolbar = surface.querySelector(':scope > .archive-toolbar');
       const filters = surface.querySelector(':scope > .archive-filter-row');
-      if (!toolbar || !filters || indexToolbars.has(toolbar)) return;
+      if (!toolbar || indexToolbars.has(toolbar)) return;
       indexToolbars.add(toolbar); toolbarSizes.observe(toolbar);
       surface.style.setProperty('--archive-toolbar-height', Math.ceil(toolbar.getBoundingClientRect().height) + 'px');
+      if (!filters) return;
       const button = document.createElement('button'); button.type='button';
       button.className='archive-filter-toggle';button.textContent='筛选';button.setAttribute('aria-expanded','false');
       button.onclick=()=>{
@@ -43,6 +44,13 @@
     const detail = app.querySelector('.entity-detail');
     const hero = detail?.querySelector('.entity-hero');
     const height = headerHeight();
+    const stickyStates = Array.from(indexToolbars, toolbar => ({
+      surface: toolbar.parentElement,
+      stuck: scrollY > 0 && toolbar.getBoundingClientRect().top <= parseFloat(getComputedStyle(toolbar).top) + 1
+    }));
+    stickyStates.forEach(({surface,stuck}) => {
+      if (surface.classList.contains('archive-toolbar-stuck') !== stuck) surface.classList.toggle('archive-toolbar-stuck',stuck);
+    });
     if (hero !== current) {
       observer?.disconnect();
       current = hero; signature = ''; bar.hidden = true;
@@ -91,5 +99,6 @@
   function schedule() { if (!pending) { pending = true; requestAnimationFrame(sync); } }
   new MutationObserver(schedule).observe(app,{subtree:true,childList:true,attributes:true,attributeFilter:['class','src']});
   addEventListener('resize', () => { current=null;schedule(); });
+  addEventListener('scroll', schedule, {passive:true});
   schedule();
 })();
