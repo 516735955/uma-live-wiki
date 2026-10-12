@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-ceec901b05e63c7d",
+  "build_id": "anime-3d2e2b6d72cd902b",
   "generated_at": "2026-10-13T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -8,7 +8,7 @@
     "released_units": 126,
     "scheduled_units": 0,
     "watch_resources": 133,
-    "relations": 2019,
+    "relations": 2050,
     "staff_credits": 25386,
     "staff_people": 2894
   },
@@ -12355,6 +12355,443 @@
     }
   ],
   "relations": [
+    {
+      "id": "s1-event-first-screening",
+      "source_type": "anime_work",
+      "source_id": "anime-s1",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-03-25-3",
+      "label": "第1、2话先行上映",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-s1-screening-20180325"
+      ]
+    },
+    {
+      "id": "s1-e01-event-first-screening",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e01",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-03-25-3",
+      "label": "先行上映",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-s1-screening-20180325"
+      ]
+    },
+    {
+      "id": "s1-e02-event-first-screening",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e02",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-03-25-3",
+      "label": "先行上映",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-s1-screening-20180325"
+      ]
+    },
+    {
+      "id": "s1-bnw-event-screening-1",
+      "source_type": "anime_work",
+      "source_id": "anime-s1",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04",
+      "label": "BNW先行上映 · 第1场",
+      "event_category": "screening",
+      "display_order": 41,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-bnw-event-screening-2",
+      "source_type": "anime_work",
+      "source_id": "anime-s1",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04-2",
+      "label": "BNW先行上映 · 第2场",
+      "event_category": "screening",
+      "display_order": 42,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-e14-bnw-screening-1",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04",
+      "label": "BNW先行上映 · 第1场",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-e15-bnw-screening-1",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04",
+      "label": "BNW先行上映 · 第1场",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-e16-bnw-screening-1",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04",
+      "label": "BNW先行上映 · 第1场",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-e14-bnw-screening-2",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e14",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04-2",
+      "label": "BNW先行上映 · 第2场",
+      "event_category": "screening",
+      "display_order": 41,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-e15-bnw-screening-2",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e15",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04-2",
+      "label": "BNW先行上映 · 第2场",
+      "event_category": "screening",
+      "display_order": 41,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-e16-bnw-screening-2",
+      "source_type": "anime_unit",
+      "source_id": "anime-s1-e16",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-11-04-2",
+      "label": "BNW先行上映 · 第2场",
+      "event_category": "screening",
+      "display_order": 41,
+      "evidence_refs": [
+        "official-bnw-screening-20181104"
+      ]
+    },
+    {
+      "id": "s1-event-animejapan-yellow",
+      "source_type": "anime_work",
+      "source_id": "anime-s1",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-03-25",
+      "label": "放送前专题舞台",
+      "event_category": "stage",
+      "display_order": 50,
+      "evidence_refs": [
+        "official-s1-animejapan-yellow"
+      ]
+    },
+    {
+      "id": "s1-event-animejapan-toho",
+      "source_type": "anime_work",
+      "source_id": "anime-s1",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2018-03-25-2",
+      "label": "动画专题舞台",
+      "event_category": "stage",
+      "display_order": 51,
+      "evidence_refs": [
+        "official-s1-animejapan-toho"
+      ]
+    },
+    {
+      "id": "cingray-event-first-screening",
+      "source_type": "anime_work",
+      "source_id": "anime-cinderella-gray",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "anime-cinderella-gray-screening-20250330",
+      "label": "第1、2话先行上映",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-cingray-screening-20250330",
+        "official-cingray-screening-report"
+      ]
+    },
+    {
+      "id": "cingray-e01-event-first-screening",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e01",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "anime-cinderella-gray-screening-20250330",
+      "label": "先行上映与谈话",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-cingray-screening-20250330",
+        "official-cingray-screening-report"
+      ]
+    },
+    {
+      "id": "cingray-e02-event-first-screening",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e02",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "anime-cinderella-gray-screening-20250330",
+      "label": "先行上映与谈话",
+      "event_category": "screening",
+      "display_order": 40,
+      "evidence_refs": [
+        "official-cingray-screening-20250330",
+        "official-cingray-screening-report"
+      ]
+    },
+    {
+      "id": "movie-event-opening",
+      "source_type": "anime_work",
+      "source_id": "anime-movie-beginning-new-era",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2024-05-24",
+      "label": "初日舞台见面会",
+      "event_category": "stage",
+      "display_order": 50,
+      "evidence_refs": [
+        "archive-movie-opening-20240524"
+      ]
+    },
+    {
+      "id": "movie-event-sapporo-1300",
+      "source_type": "anime_work",
+      "source_id": "anime-movie-beginning-new-era",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2024-06-14",
+      "label": "札幌舞台见面会 · 13:00",
+      "event_category": "stage",
+      "display_order": 52,
+      "evidence_refs": [
+        "official-movie-sapporo-20240614"
+      ]
+    },
+    {
+      "id": "movie-event-sapporo-1630",
+      "source_type": "anime_work",
+      "source_id": "anime-movie-beginning-new-era",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2024-06-14-2",
+      "label": "札幌舞台见面会 · 16:30",
+      "event_category": "stage",
+      "display_order": 53,
+      "evidence_refs": [
+        "official-movie-sapporo-20240614"
+      ]
+    },
+    {
+      "id": "movie-event-sapporo-1145",
+      "source_type": "anime_work",
+      "source_id": "anime-movie-beginning-new-era",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2024-06-14-3",
+      "label": "札幌舞台见面会 · 11:45",
+      "event_category": "stage",
+      "display_order": 51,
+      "evidence_refs": [
+        "official-movie-sapporo-20240614"
+      ]
+    },
+    {
+      "id": "movie-event-thanks",
+      "source_type": "anime_work",
+      "source_id": "anime-movie-beginning-new-era",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "eventernote-2024-06-25",
+      "label": "应援上映与致谢舞台",
+      "event_category": "stage",
+      "display_order": 54,
+      "evidence_refs": [
+        "official-movie-thanks-20240625"
+      ]
+    },
+    {
+      "id": "umayon-event-commentary-1",
+      "source_type": "anime_work",
+      "source_id": "anime-umayon",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "official-special-20200811-1",
+      "label": "官方音频评论 · 第1回",
+      "event_category": "program",
+      "display_order": 60,
+      "evidence_refs": [
+        "official-umayon-commentary-1"
+      ]
+    },
+    {
+      "id": "umayon-e01-event-commentary",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e01",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "official-special-20200811-1",
+      "label": "第1话音频评论",
+      "event_category": "program",
+      "display_order": 60,
+      "evidence_refs": [
+        "official-umayon-commentary-1"
+      ]
+    },
+    {
+      "id": "umayon-event-commentary-2",
+      "source_type": "anime_work",
+      "source_id": "anime-umayon",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "official-special-20200825-2",
+      "label": "官方音频评论 · 第2回",
+      "event_category": "program",
+      "display_order": 61,
+      "evidence_refs": [
+        "official-umayon-commentary-2"
+      ]
+    },
+    {
+      "id": "umayon-e02-event-commentary",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayon-e02",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "official-special-20200825-2",
+      "label": "第2话音频评论",
+      "event_category": "program",
+      "display_order": 61,
+      "evidence_refs": [
+        "official-umayon-commentary-2"
+      ]
+    },
+    {
+      "id": "umayon-event-commentary-5",
+      "source_type": "anime_work",
+      "source_id": "anime-umayon",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "official-special-20200908-5",
+      "label": "官方音频评论 · 第5回",
+      "event_category": "program",
+      "display_order": 62,
+      "evidence_refs": [
+        "official-umayon-commentary-5"
+      ]
+    },
+    {
+      "id": "s3-event-watchalong-e01",
+      "source_type": "anime_work",
+      "source_id": "anime-s3",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "pakatube-20231013-tv-3-1",
+      "label": "第1话同时观看",
+      "event_category": "program",
+      "display_order": 60,
+      "evidence_refs": [
+        "official-s3-watchalong-e01"
+      ]
+    },
+    {
+      "id": "s3-e01-event-watchalong",
+      "source_type": "anime_unit",
+      "source_id": "anime-s3-e01",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "pakatube-20231013-tv-3-1",
+      "label": "官方同时观看",
+      "event_category": "program",
+      "display_order": 60,
+      "evidence_refs": [
+        "official-s3-watchalong-e01"
+      ]
+    },
+    {
+      "id": "cingray-event-retrospective-1",
+      "source_type": "anime_work",
+      "source_id": "anime-cinderella-gray",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "sokosoko-paka-live-tv-046",
+      "label": "首季度回顾专题",
+      "event_category": "program",
+      "display_order": 60,
+      "evidence_refs": [
+        "official-cingray-retrospective-1"
+      ]
+    },
+    {
+      "id": "cingray-event-retrospective-2",
+      "source_type": "anime_work",
+      "source_id": "anime-cinderella-gray",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "sokosoko-paka-live-tv-051",
+      "label": "第二季度回顾专题",
+      "event_category": "program",
+      "display_order": 61,
+      "evidence_refs": [
+        "official-cingray-retrospective-2"
+      ]
+    },
+    {
+      "id": "movie-event-special",
+      "source_type": "anime_work",
+      "source_id": "anime-movie-beginning-new-era",
+      "relation_type": "related_event",
+      "target_type": "event",
+      "target_id": "sokosoko-paka-live-tv-042",
+      "label": "电影专题节目",
+      "event_category": "program",
+      "display_order": 60,
+      "evidence_refs": [
+        "official-movie-special-20250221"
+      ]
+    },
     {
       "id": "movie-event-premiere",
       "source_type": "anime_work",
@@ -583866,6 +584303,118 @@
     }
   ],
   "sources": [
+    {
+      "id": "official-s1-screening-20180325",
+      "kind": "official",
+      "label": "第一季第1、2话先行上映官方报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180327_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-bnw-screening-20181104",
+      "kind": "official",
+      "label": "BNW的誓言先行上映官方报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20181104_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s1-animejapan-yellow",
+      "kind": "official",
+      "label": "AnimeJapan 2018 YELLOW放送前专题舞台报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180325_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s1-animejapan-toho",
+      "kind": "official",
+      "label": "AnimeJapan 2018 TOHO动画专题舞台公告",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180316_02.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-screening-20250330",
+      "kind": "official",
+      "label": "Cygames芦毛灰姑娘先行上映及两场谈话公告",
+      "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-screening-report",
+      "kind": "official",
+      "label": "Cygames芦毛灰姑娘先行上映活动报道",
+      "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-sapporo-20240614",
+      "kind": "official",
+      "label": "电影札幌舞台见面会三场告知",
+      "url": "https://movie-umamusume.jp/news/article/index.html?post_id=970",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-thanks-20240625",
+      "kind": "official",
+      "label": "电影应援上映与大热致谢舞台见面会告知",
+      "url": "https://movie-umamusume.jp/news/article/index.html?post_id=1015",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "archive-movie-opening-20240524",
+      "kind": "reference",
+      "label": "Eventernote保存的东宝电影初日舞台见面会告知",
+      "url": "https://www.eventernote.com/events/379975",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-1",
+      "kind": "official",
+      "label": "赛马娘四格第1话官方音频评论节目",
+      "url": "https://www.youtube.com/watch?v=ytqhmfhd6aY",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-2",
+      "kind": "official",
+      "label": "赛马娘四格第2话官方音频评论节目",
+      "url": "https://www.youtube.com/watch?v=jjDII67gWIA",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-5",
+      "kind": "official",
+      "label": "赛马娘四格官方音频评论接力第5回",
+      "url": "https://www.youtube.com/watch?v=PGJh8LyFYZE",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s3-watchalong-e01",
+      "kind": "official",
+      "label": "第三季第1话官方同时观看节目",
+      "url": "https://www.youtube.com/watch?v=MAvx7FoG3_I",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-retrospective-1",
+      "kind": "official",
+      "label": "芦毛灰姑娘首季度回顾专题节目",
+      "url": "https://www.youtube.com/watch?v=EtyMt8pfEf8",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-retrospective-2",
+      "kind": "official",
+      "label": "芦毛灰姑娘第二季度回顾专题节目",
+      "url": "https://www.youtube.com/watch?v=gIwX-jwD2Sk",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-special-20250221",
+      "kind": "official",
+      "label": "新时代之门官方专题节目",
+      "url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
+      "observed_at": "2026-10-13"
+    },
     {
       "id": "official-cyberagent-kabashima-manami",
       "kind": "official",

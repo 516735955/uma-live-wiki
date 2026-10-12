@@ -1607,6 +1607,7 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
     for source in programs_doc.get("programs") or []:
         event_id = unique_id(source.get("id") or f"program-{source.get('date') or 'undated'}-{stable_suffix(source.get('title') or '')}", used)
         source_kind = source.get("source_kind") or "official_youtube"
+        kind = source.get("kind") or "official_program"
         source_url = source.get("source_url") or source.get("url") or ""
         source_sessions = source.get("sessions") or []
         source_cast = list(source.get("cast") or [])
@@ -1665,12 +1666,14 @@ def add_programs(events: list[dict[str, Any]], programs_doc: dict[str, Any], ide
                 "songs": [],
                 "character_ids": session_characters,
                 "cast": session_cast,
+                **({"start_time": source_session["start_time"]} if source_session.get("start_time") else {}),
+                **({"doors_time": source_session["doors_time"]} if source_session.get("doors_time") else {}),
             })
         if not sessions:
             sessions = [{"id": f"{event_id}-session-1", "label": "本期节目", "date": source.get("date") or "", "songs": [], "character_ids": characters, "cast": cast}]
         events.append({
             "id": event_id, "title": source.get("title") or "", "date": source.get("date") or "", "end_date": source.get("end_date") or source.get("date") or "",
-            "kind": "official_program", "mode": "online", "series_id": source.get("series_id") or "official-special", "venue": "在线播出",
+            "kind": kind, "mode": source.get("mode") or "online", "series_id": source.get("series_id") or ("official-special" if kind == "official_program" else ""), "venue": source.get("venue") or "在线播出",
             "cast_status": "verified" if cast else (source.get("cast_status") or "pending"), "cast": cast, "character_ids": characters,
             "sessions": sessions,
             "media": program_media,
@@ -3611,6 +3614,7 @@ def build(programs_override: dict[str, Any] | None = None, details_override: dic
     events.extend(category_events(live_cat_data, identities, used))
     attach_eventernote(events, eventernote, identities, used)
     add_programs(events, programs, identities, used)
+    add_programs(events, {"programs": overrides.get("additional_events") or []}, identities, used)
     events = apply_overrides(events, overrides, identities)
     events = dedupe_events(events)
     for event in events:

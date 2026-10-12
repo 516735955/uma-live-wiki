@@ -2,6 +2,118 @@
   "schema_version": 1,
   "sources": [
     {
+      "id": "official-s1-screening-20180325",
+      "kind": "official",
+      "label": "第一季第1、2话先行上映官方报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180327_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-bnw-screening-20181104",
+      "kind": "official",
+      "label": "BNW的誓言先行上映官方报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20181104_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s1-animejapan-yellow",
+      "kind": "official",
+      "label": "AnimeJapan 2018 YELLOW放送前专题舞台报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180325_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s1-animejapan-toho",
+      "kind": "official",
+      "label": "AnimeJapan 2018 TOHO动画专题舞台公告",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180316_02.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-screening-20250330",
+      "kind": "official",
+      "label": "Cygames芦毛灰姑娘先行上映及两场谈话公告",
+      "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-screening-report",
+      "kind": "official",
+      "label": "Cygames芦毛灰姑娘先行上映活动报道",
+      "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-sapporo-20240614",
+      "kind": "official",
+      "label": "电影札幌舞台见面会三场告知",
+      "url": "https://movie-umamusume.jp/news/article/index.html?post_id=970",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-thanks-20240625",
+      "kind": "official",
+      "label": "电影应援上映与大热致谢舞台见面会告知",
+      "url": "https://movie-umamusume.jp/news/article/index.html?post_id=1015",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "archive-movie-opening-20240524",
+      "kind": "reference",
+      "label": "Eventernote保存的东宝电影初日舞台见面会告知",
+      "url": "https://www.eventernote.com/events/379975",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-1",
+      "kind": "official",
+      "label": "赛马娘四格第1话官方音频评论节目",
+      "url": "https://www.youtube.com/watch?v=ytqhmfhd6aY",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-2",
+      "kind": "official",
+      "label": "赛马娘四格第2话官方音频评论节目",
+      "url": "https://www.youtube.com/watch?v=jjDII67gWIA",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-5",
+      "kind": "official",
+      "label": "赛马娘四格官方音频评论接力第5回",
+      "url": "https://www.youtube.com/watch?v=PGJh8LyFYZE",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s3-watchalong-e01",
+      "kind": "official",
+      "label": "第三季第1话官方同时观看节目",
+      "url": "https://www.youtube.com/watch?v=MAvx7FoG3_I",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-retrospective-1",
+      "kind": "official",
+      "label": "芦毛灰姑娘首季度回顾专题节目",
+      "url": "https://www.youtube.com/watch?v=EtyMt8pfEf8",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-retrospective-2",
+      "kind": "official",
+      "label": "芦毛灰姑娘第二季度回顾专题节目",
+      "url": "https://www.youtube.com/watch?v=gIwX-jwD2Sk",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-special-20250221",
+      "kind": "official",
+      "label": "新时代之门官方专题节目",
+      "url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
+      "observed_at": "2026-10-13"
+    },
+    {
       "id": "official-cyberagent-kabashima-manami",
       "kind": "official",
       "label": "CyberAgent公布的椛嶋麻菜美姓名及活动参与",

@@ -1,5 +1,33 @@
 {
   "schema_version": 1,
+  "additional_events": [
+    {
+      "id": "anime-cinderella-gray-screening-20250330",
+      "title": "アニメ『ウマ娘 シンデレラグレイ』先行上映会＆トークショー",
+      "date": "2025-03-30",
+      "kind": "onsite",
+      "mode": "onsite",
+      "venue": "ユナイテッド・シネマ アクアシティお台場",
+      "source_kind": "official_announcement",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+      "sources": [
+        {"kind": "official_announcement", "label": "Cygames 先行上映与场次公告", "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"},
+        {"kind": "official_announcement", "label": "Cygames 活动报道", "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html"}
+      ],
+      "thumbnail": "/uma_tools/img/anime/anime-cinderella-gray.webp",
+      "summary": "第1、2话先行上映及出演声优谈话。第1部12:00开演，第2部14:20开演；时间为官方公告所列计划。",
+      "cast": [
+        {"name": "高柳知葉", "role": "オグリキャップ"},
+        {"name": "瀬戸桃子", "role": "ベルノライト"},
+        {"name": "小西克幸", "role": "北原穣"},
+        {"name": "伊瀬茉莉也", "role": "フジマサマーチ"}
+      ],
+      "sessions": [
+        {"label": "第1部", "date": "2025-03-30", "doors_time": "11:30", "start_time": "12:00", "cast": [{"name": "高柳知葉", "role": "オグリキャップ"}, {"name": "瀬戸桃子", "role": "ベルノライト"}, {"name": "小西克幸", "role": "北原穣"}, {"name": "伊瀬茉莉也", "role": "フジマサマーチ"}]},
+        {"label": "第2部", "date": "2025-03-30", "doors_time": "13:50", "start_time": "14:20", "cast": [{"name": "高柳知葉", "role": "オグリキャップ"}, {"name": "瀬戸桃子", "role": "ベルノライト"}, {"name": "小西克幸", "role": "北原穣"}, {"name": "伊瀬茉莉也", "role": "フジマサマーチ"}]}
+      ]
+    }
+  ],
   "stable_event_ids": {
     "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-LONDON": "live-numbered-7th-event-3",
     "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-SEOUL": "live-numbered-7th-event-4",

@@ -1,9 +1,386 @@
 {
   "schema_version": 1,
-  "build_id": "anime-ceec901b05e63c7d",
+  "build_id": "anime-3d2e2b6d72cd902b",
   "generated_at": "2026-10-13T00:00:00+08:00",
   "targets": {
     "event": {
+      "eventernote-2018-03-25-3": [
+        {
+          "relation_id": "s1-event-first-screening",
+          "relation_type": "related_event",
+          "label": "第1、2话先行上映",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-s1",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e01-event-first-screening",
+          "relation_type": "related_event",
+          "label": "先行上映",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e01",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e02-event-first-screening",
+          "relation_type": "related_event",
+          "label": "先行上映",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e02",
+          "work_id": "anime-s1"
+        }
+      ],
+      "eventernote-2018-11-04": [
+        {
+          "relation_id": "s1-bnw-event-screening-1",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第1场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-s1",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e14-bnw-screening-1",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第1场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e15-bnw-screening-1",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第1场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e16-bnw-screening-1",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第1场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
+        }
+      ],
+      "eventernote-2018-11-04-2": [
+        {
+          "relation_id": "s1-bnw-event-screening-2",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第2场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-s1",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e14-bnw-screening-2",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第2场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e14",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e15-bnw-screening-2",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第2场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e15",
+          "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "s1-e16-bnw-screening-2",
+          "relation_type": "related_event",
+          "label": "BNW先行上映 · 第2场",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s1-e16",
+          "work_id": "anime-s1"
+        }
+      ],
+      "eventernote-2018-03-25": [
+        {
+          "relation_id": "s1-event-animejapan-yellow",
+          "relation_type": "related_event",
+          "label": "放送前专题舞台",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-s1",
+          "work_id": "anime-s1"
+        }
+      ],
+      "eventernote-2018-03-25-2": [
+        {
+          "relation_id": "s1-event-animejapan-toho",
+          "relation_type": "related_event",
+          "label": "动画专题舞台",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-s1",
+          "work_id": "anime-s1"
+        }
+      ],
+      "anime-cinderella-gray-screening-20250330": [
+        {
+          "relation_id": "cingray-event-first-screening",
+          "relation_type": "related_event",
+          "label": "第1、2话先行上映",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-cinderella-gray",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "cingray-e01-event-first-screening",
+          "relation_type": "related_event",
+          "label": "先行上映与谈话",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e01",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "cingray-e02-event-first-screening",
+          "relation_type": "related_event",
+          "label": "先行上映与谈话",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e02",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "eventernote-2024-05-24": [
+        {
+          "relation_id": "movie-event-opening",
+          "relation_type": "related_event",
+          "label": "初日舞台见面会",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "eventernote-2024-06-14": [
+        {
+          "relation_id": "movie-event-sapporo-1300",
+          "relation_type": "related_event",
+          "label": "札幌舞台见面会 · 13:00",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "eventernote-2024-06-14-2": [
+        {
+          "relation_id": "movie-event-sapporo-1630",
+          "relation_type": "related_event",
+          "label": "札幌舞台见面会 · 16:30",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "eventernote-2024-06-14-3": [
+        {
+          "relation_id": "movie-event-sapporo-1145",
+          "relation_type": "related_event",
+          "label": "札幌舞台见面会 · 11:45",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "eventernote-2024-06-25": [
+        {
+          "relation_id": "movie-event-thanks",
+          "relation_type": "related_event",
+          "label": "应援上映与致谢舞台",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
+      "official-special-20200811-1": [
+        {
+          "relation_id": "umayon-event-commentary-1",
+          "relation_type": "related_event",
+          "label": "官方音频评论 · 第1回",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-umayon",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "umayon-e01-event-commentary",
+          "relation_type": "related_event",
+          "label": "第1话音频评论",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e01",
+          "work_id": "anime-umayon"
+        }
+      ],
+      "official-special-20200825-2": [
+        {
+          "relation_id": "umayon-event-commentary-2",
+          "relation_type": "related_event",
+          "label": "官方音频评论 · 第2回",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-umayon",
+          "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "umayon-e02-event-commentary",
+          "relation_type": "related_event",
+          "label": "第2话音频评论",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayon-e02",
+          "work_id": "anime-umayon"
+        }
+      ],
+      "official-special-20200908-5": [
+        {
+          "relation_id": "umayon-event-commentary-5",
+          "relation_type": "related_event",
+          "label": "官方音频评论 · 第5回",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-umayon",
+          "work_id": "anime-umayon"
+        }
+      ],
+      "pakatube-20231013-tv-3-1": [
+        {
+          "relation_id": "s3-event-watchalong-e01",
+          "relation_type": "related_event",
+          "label": "第1话同时观看",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-s3",
+          "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "s3-e01-event-watchalong",
+          "relation_type": "related_event",
+          "label": "官方同时观看",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-s3-e01",
+          "work_id": "anime-s3"
+        }
+      ],
+      "sokosoko-paka-live-tv-046": [
+        {
+          "relation_id": "cingray-event-retrospective-1",
+          "relation_type": "related_event",
+          "label": "首季度回顾专题",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-cinderella-gray",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "sokosoko-paka-live-tv-051": [
+        {
+          "relation_id": "cingray-event-retrospective-2",
+          "relation_type": "related_event",
+          "label": "第二季度回顾专题",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-cinderella-gray",
+          "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "sokosoko-paka-live-tv-042": [
+        {
+          "relation_id": "movie-event-special",
+          "relation_type": "related_event",
+          "label": "电影专题节目",
+          "usage_type": "",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_work",
+          "source_id": "anime-movie-beginning-new-era",
+          "work_id": "anime-movie-beginning-new-era"
+        }
+      ],
       "live-other-2024-05-06-title-7caa082310e6": [
         {
           "relation_id": "movie-event-premiere",
