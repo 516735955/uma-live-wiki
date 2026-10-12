@@ -32,6 +32,8 @@
 ```bash
 python3 uma_tools/build_anime_catalog.py
 python3 uma_tools/build_anime_catalog.py --check
+python3 uma_tools/sync_anime_episode_artwork.py --write
+python3 uma_tools/sync_anime_assets.py --check
 python3 uma_tools/update_anime.py --check
 python3 uma_tools/update_anime.py --observe
 python3 uma_tools/update_anime.py --observe --check-links
@@ -62,7 +64,9 @@ HTTP 200 不代表完整播放可用，也不会因为检查结果自动删除�
 
 同名但不同作品的配乐按独立歌曲收录，发行录音按具体专辑区分，作曲署名不能跨作品或版本继承。公开转录中的脚注、停播说明和栏目标题不属于人员署名；机构分组在来源的分隔处结束。来源使用的未识别外字保留原署名，不据此创建或关联人物身份。
 
-官方剧情页、CMS 和公开视频提供作品信息、已公开剧集和署名。剧照仅收录官方发布的高清场景图，采用原图至少1280×720的尺寸要求；没有高清官方剧照时不展示该栏目。视频截帧、海报和宣传插画不充当官方剧照。公开职员表转录用于补充资料，保留来源并标明不完整；不能因转录条目很多就标记为完整片尾。图片来源登记在 `asset_sources` 中。
+官方剧情页、CMS 和公开视频提供作品信息、已公开剧集和署名。剧照栏目保留官方高清场景图，原图至少1280×720；没有高清官方剧照时不展示该栏目。单集封面独立于剧照栏目，优先使用官方该话剧照或视频缩略图，缺少时使用已核对单集归属的可追溯图库画面；视频缩略图、过场图和海报不冒充官方剧照。公开职员表转录用于补充资料，保留来源并标明不完整；不能因转录条目很多就标记为完整片尾。图片来源登记在 `asset_sources.json` 中。
+
+126个已发布单元均有本地封面及来源，作品使用完整正式主视觉与统一展示槽。RTTT两个版本使用共通作品主视觉，周年特别动画保留官方横向主视觉，不制作虚构竖版海报。`cover`是本地预览，`cover_original`保留原图入口，`cover_source_ref`对应登记来源。高频原图可由资产项的`original_output`保存完整同源副本；相应`source_url`保留实际来源。原创身份SVG不属于图片来源资产。
 
 ## 数据覆盖
 
