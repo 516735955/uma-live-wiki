@@ -233,8 +233,7 @@ async function main() {
   assert.strictEqual(app.routeError.value, '');
   assert(app.animeUnitHref(app.animeAdjacentUnits.value.next).includes('staff='));
   const group = app.animeStaffGroups.value[0];
-  app.toggleAnimeStaffGroup(group);
-  const episodeGroupOpen = app.animeStaffGroupOpen(group);
+  const roleOrder = app.animeStaffGroups.value.map(row => row.role).join('|');
   location.href = 'http://localhost' + app.animeUnitHref(app.animeAdjacentUnits.value.next);
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeSection.value, 'staff');
@@ -242,7 +241,7 @@ async function main() {
   location.href = 'http://localhost/zh-Hans/database/anime/anime-s3/episodes/anime-s3-e11?section=staff&staff=' + encodeURIComponent('原画');
   await app.applyCurrentRoute();
   assert(app.animeStaffGroups.value.some(row => row.key === group.key), 'same episode restores the same role: ' + group.key + ' / ' + app.animeStaffGroups.value.map(row => row.key).join(',') + ' query=' + app.animeStaffQuery.value + ' URL=' + location.href + ' detail=' + (app.animeDetail.value || {}).id + ' unit=' + (app.animeUnitDetail.value || {}).id + ' error=' + app.routeError.value + ' rows=' + app.animeCatalog.value.staff.length);
-  assert.strictEqual(app.animeStaffGroupOpen(app.animeStaffGroups.value.find(row => row.key === group.key)), episodeGroupOpen, 'returning restores only this episode’s disclosure state');
+  assert.strictEqual(app.animeStaffGroups.value.map(row => row.role).join('|'), roleOrder, 'returning preserves the shared job order');
   location.href = 'http://localhost/zh-Hans/database/anime/anime-s3?section=episodes&episodes=12';
   await app.applyCurrentRoute();
   assert.deepStrictEqual(Array.from(app.animeUnitGroups.value.flatMap(row => row.units), unit => unit.number), [12], 'number search does not also match episode 1 or 2');

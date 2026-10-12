@@ -201,105 +201,6 @@
     }
   }
 
-  function roomDist(a, b) {
-    var dx = a.clientX - b.clientX, dy = a.clientY - b.clientY;
-    return Math.sqrt(dx * dx + dy * dy);
-  }
-  function closeRoomLightbox(ov) {
-    if (ov) { ov.style.display = 'none'; var im = ov.querySelector('img'); if (im) { im.style.transform = ''; } }
-  }
-  function initRoomPinch(ov) {
-    if (ov.getAttribute('data-pinch')) return;
-    ov.setAttribute('data-pinch', '1');
-    var img = ov.querySelector('img');
-    var st = { scale: 1, tx: 0, ty: 0 };
-    ov._roomSt = st;
-    var ges = null, multi = false, suppress = false;
-    function apply() {
-      if (st.scale > 1.01) img.classList.add('zoomed');
-      else img.classList.remove('zoomed');
-      img.style.transform = 'translate(' + st.tx + 'px,' + st.ty + 'px) scale(' + st.scale + ')';
-    }
-    ov.addEventListener('touchstart', function (e) {
-      if (e.touches.length >= 2) {
-        multi = true;
-        e.preventDefault();
-      }
-      if (e.touches.length === 2) {
-        ges = { type: 'pinch', d: roomDist(e.touches[0], e.touches[1]), s: st.scale, tx: st.tx, ty: st.ty, cx: (e.touches[0].clientX + e.touches[1].clientX) / 2, cy: (e.touches[0].clientY + e.touches[1].clientY) / 2 };
-      } else if (e.touches.length === 1 && !multi) {
-        ges = { type: 'pan', x: e.touches[0].clientX, y: e.touches[0].clientY, tx: st.tx, ty: st.ty };
-      }
-    }, { passive: false });
-    ov.addEventListener('touchmove', function (e) {
-      if (e.touches.length === 2 && ges && ges.type === 'pinch') {
-        e.preventDefault(); suppress = true;
-        var d = roomDist(e.touches[0], e.touches[1]);
-        if (d > 0) {
-          var ns = Math.max(1, Math.min(6, ges.s * d / ges.d));
-          var cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-          var cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-          var nx = (ges.cx - ges.tx) / ges.s, ny = (ges.cy - ges.ty) / ges.s;
-          st.scale = ns;
-          st.tx = cx - nx * ns; st.ty = cy - ny * ns;
-          apply();
-        }
-      } else if (e.touches.length === 1 && ges && ges.type === 'pan') {
-        e.preventDefault(); suppress = true;
-        var dx = e.touches[0].clientX - ges.x, dy = e.touches[0].clientY - ges.y;
-        st.tx = ges.tx + dx; st.ty = ges.ty + dy;
-        apply();
-      }
-    }, { passive: false });
-    ov.addEventListener('touchend', function (e) {
-      if (e.touches.length < 2) multi = false;
-      if (e.touches.length === 0) ges = null;
-    }, { passive: true });
-    ov.addEventListener('click', function (e) {
-      if (suppress) { suppress = false; e.preventDefault(); e.stopPropagation(); return; }
-      closeRoomLightbox(ov);
-    });
-    ov.addEventListener('dblclick', function () {
-      st.scale = 1; st.tx = 0; st.ty = 0; apply();
-    });
-    ov.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      var rect = ov.getBoundingClientRect();
-      var mx = e.clientX - rect.left, my = e.clientY - rect.top;
-      var factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-      var ns = Math.max(1, Math.min(6, st.scale * factor));
-      if (ns === st.scale) return;
-      var nx = (mx - st.tx) / st.scale, ny = (my - st.ty) / st.scale;
-      st.scale = ns;
-      st.tx = mx - nx * ns; st.ty = my - ny * ns;
-      apply();
-    }, { passive: false });
-  }
-  function openRoomLightbox(src) {
-    var ov = document.getElementById('c-lightbox');
-    if (!ov) {
-      ov = document.createElement('div');
-      ov.id = 'c-lightbox';
-      ov.className = 'c-lightbox';
-      var lightboxImage = document.createElement('img');
-      lightboxImage.alt = '宿舍室友图大图';
-      ov.appendChild(lightboxImage);
-      document.body.appendChild(ov);
-    }
-    initRoomPinch(ov);
-    if (ov._roomSt) { ov._roomSt.scale = 1; ov._roomSt.tx = 0; ov._roomSt.ty = 0; }
-    var im = ov.querySelector('img');
-    im.src = src;
-    im.style.transform = '';
-    ov.style.display = 'flex';
-  }
-
-  function initRoom(root) {
-    var img = (root || document).querySelector('.roommate-image');
-    if (!img || img.getAttribute('data-room-inited')) return;
-    img.setAttribute('data-room-inited', '1');
-    img.addEventListener('click', function () { openRoomLightbox(img.getAttribute('src') || img.src); });
-  }
 
   function initCharTab() {
     var tab = document.getElementById('tab-characters');
@@ -307,7 +208,6 @@
       renderIntro(tab);
       renderDetail(tab);
     }
-    initRoom(document);
   }
 
   /* ---------- 声优库列表 ---------- */

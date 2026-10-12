@@ -166,7 +166,6 @@ const umaApp = createApp({
     const animeSection = ref('episodes');
     const animeEdition = ref('film');
     const animeStillUnit = ref('');
-    const animeStaffOpen = reactive({});
     const staffQuery = ref('');
     const staffSort = ref('works');
     const staffPage = ref(1);
@@ -604,6 +603,17 @@ const umaApp = createApp({
     });
     const animeSingle = computed(() => !!animeDetail.value && (['movie','special'].includes(animeDetail.value.format) || (!animeUnitDetail.value && animeDetail.value.id === 'anime-rttt' && animeEdition.value === 'film')));
     const animeContentUnit = computed(() => animeUnitDetail.value || (animeSingle.value && animeDetail.value.id !== 'anime-rttt' ? animeWorkUnits.value[0] : null));
+    const animeHeroArtwork = computed(() => {
+      const unit = animeUnitDetail.value;
+      return unit && (unit.cover || (unit.stills || [])[0]?.url) ||
+        animeArtwork(animeDetail.value, animeDetail.value?.id === 'anime-rttt' && animeEdition.value === 'film');
+    });
+    const animeHeroOriginal = computed(() => {
+      const unit = animeUnitDetail.value, work = animeDetail.value;
+      return unit && (unit.cover_original || (unit.stills || [])[0]?.original) ||
+        (work?.id === 'anime-rttt' && animeEdition.value === 'film' ? work.film_cover_original : work?.cover_original) ||
+        animeHeroArtwork.value;
+    });
     function setAnimeEdition(edition) {
       animeEdition.value = edition;
       animeStillUnit.value = '';
@@ -667,7 +677,9 @@ const umaApp = createApp({
       const content = animeContentUnit.value || animeDetail.value || {};
       const labels = {'ぱかチューブっ！配信':'YouTube上线','TOKYO MX・BS11放送':'TOKYO MX／BS11首播','TBS系放送':'TBS电视网首播','官网公开公告':'公开日期'};
       return (content.dates || []).filter(date => !date.edition || date.edition === animeEdition.value)
-        .map(date => Object.assign({}, date, {label: labels[date.label] || date.label.replace(/配信/g, '上线')}));
+        .map(date => Object.assign({}, date, {label: labels[date.label] || date.label.replace(/配信/g, '上线')}))
+        .filter((date,index,dates) => date.label !== '公开日期' || !dates.some((other,otherIndex) =>
+          otherIndex !== index && other.label !== '公开日期' && other.date === date.date));
     });
     const animeStillGroups = computed(() => {
       if (animeContentUnit.value) return [{unit:animeContentUnit.value,stills:animeContentUnit.value.stills || []}].filter(row => row.stills.length);
@@ -712,11 +724,6 @@ const umaApp = createApp({
       const person = entry.id ? entry : (animeCatalog.value.people || []).find(row => row.id === entry.person_id);
       return person ? (person.creator_id ? routes.creators(person.creator_id) : routes.staff(person.id)) : '';
     }
-    const animeLeadRoles = ['导演', '副导演', '助理导演', '系列构成', '脚本', '分镜', '动画演出', '角色设计', '总作画监督', '作画监督'];
-    function animeStaffRoleRank(role) {
-      const index = animeLeadRoles.indexOf(role);
-      return index < 0 ? animeLeadRoles.length : index;
-    }
     function animeStaffIdentity(entry) {
       return entry.person_id || entry.organization || entry.name || '';
     }
@@ -750,7 +757,7 @@ const umaApp = createApp({
         if (!group.credits.some(credit => animeStaffSamePersonAndInstitution(credit, displayEntry))) group.credits.push(displayEntry);
       });
       return groups.sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
-        || animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
+        || window.UmaAnimeStaff.compareRoles(a.role,b.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.credits)}));
     });
     const animeStaffAggregate = computed(() => {
@@ -778,53 +785,12 @@ const umaApp = createApp({
         if (!group.rows.some(item => animeStaffSamePersonAndInstitution(item.entry, entry))) group.rows.push({...row,entry,units:[...row.units]});
       });
       return Array.from(groups.values()).sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
-        || animeStaffRoleRank(a.rows[0].entry.role)-animeStaffRoleRank(b.rows[0].entry.role))
+        || window.UmaAnimeStaff.compareRoles(a.rows[0].entry.role,b.rows[0].entry.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.rows,row=>row.entry)}));
     });
-    function animeStaffScopeKey(aggregate) {
-      const work = animeDetail.value ? animeDetail.value.id : '';
-      const unit = animeUnitDetail.value ? animeUnitDetail.value.id : '';
-      return [work, unit, animeEdition.value, aggregate ? 'episodes' : 'content'].join('|');
-    }
-    function animeStaffOpenKey(group, aggregate) {
-      return animeStaffScopeKey(aggregate) + ':' + group.key + (animeStaffQuery.value ? '|search:' + animeSearchText(animeStaffQuery.value) : '');
-    }
-    function animeStaffGroupOpen(group, aggregate = false) {
-      const key = animeStaffOpenKey(group, aggregate);
-      return animeStaffOpen[key] ?? (!!animeStaffQuery.value || (aggregate ? group.rows : group.credits).length <= 6);
-    }
-    function toggleAnimeStaffGroup(group, aggregate = false) {
-      animeStaffOpen[animeStaffOpenKey(group, aggregate)] = !animeStaffGroupOpen(group,aggregate);
-    }
-    const animeStaffAllOpen = computed(() => [...animeStaffGroups.value.map(group => animeStaffGroupOpen(group)),
-      ...animeStaffAggregateGroups.value.map(group => animeStaffGroupOpen(group,true))].every(Boolean));
-    function toggleAnimeStaffAll() {
-      const open = !animeStaffAllOpen.value;
-      animeStaffGroups.value.forEach(group => { animeStaffOpen[animeStaffOpenKey(group, false)] = open; });
-      animeStaffAggregateGroups.value.forEach(group => { animeStaffOpen[animeStaffOpenKey(group, true)] = open; });
-    }
-    const staffAvatarCache = new Map();
     function staffPortrait(person) {
       if (person.photo) return person.photo;
-      if (staffAvatarCache.has(person.id)) return staffAvatarCache.get(person.id);
-      const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
-      const letters = Array.from(person.name.replace(/\s+/g, ''));
-      const roles = (person.roles || []).join(' ');
-      const motifs = {
-        sound: '<path d="M48 15v18m-7-14v10m14-10v10m-21-8v6m28-6v6"/>',
-        camera: '<rect x="34" y="18" width="28" height="16" rx="3"/><circle cx="48" cy="26" r="5"/><path d="m40 18 3-4h10l3 4"/>',
-        drawing: '<path d="m36 31 4-9 15-9 5 7-15 9-9 2Zm4-9 5 7m9-15 5 7"/>',
-        film: '<rect x="34" y="14" width="28" height="20" rx="2"/><path d="M39 14v20m18-20v20M34 20h5m-5 8h5m18-8h5m-5 8h5"/>'
-      };
-      const motif = /音乐|音响|配音|录音|混音/.test(roles) ? 'sound' : /摄影|3D|CG/.test(roles) ? 'camera' : /画|设计|分镜|上色|美术/.test(roles) ? 'drawing' : 'film';
-      const colors = ['#3157ed','#264983','#297387','#5263a0','#735a8b','#42766b'];
-      const color = colors[letters.reduce((sum,c) => sum + c.codePointAt(0),0) % colors.length];
-      const marks = letters.map((c,i) => `<path d="M${8+i*80/letters.length} 88v-${3+c.codePointAt(0)%7}"/>`).join('');
-      const monogram = letters.slice(0,2).join('');
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><title>${escape(person.name)}</title><rect width="96" height="96" rx="8" fill="#f2f5ff"/><path d="M0 0h96v6H0Z" fill="${color}"/><path d="m74 96 22-22v22Z" fill="#ffa932"/><g fill="none" stroke="${color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${motifs[motif]}${marks}</g><text x="48" y="62" text-anchor="middle" fill="${color}" font-family="sans-serif" font-size="24" font-weight="700">${escape(monogram)}</text><text x="48" y="75" text-anchor="middle" fill="${color}" font-family="sans-serif" font-size="${Math.min(9,80/Math.max(letters.length,1))}">${escape(person.name)}</text></svg>`;
-      const image = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-      staffAvatarCache.set(person.id,image);
-      return image;
+      return window.UmaUi.identityPortrait(person);
     }
     const staffSortOptions = [
       {value:'works', label:'参与作品数'},
@@ -838,10 +804,10 @@ const umaApp = createApp({
           : (Number(b.work_count) || 0) - (Number(a.work_count) || 0) || String(a.name || '').localeCompare(String(b.name || ''), 'zh'));
     });
     function staffVisibleRoles(person) {
-      const roles = Array.isArray(person.roles) ? person.roles : [];
+      const roles = (Array.isArray(person.roles) ? person.roles : []).slice().sort(window.UmaAnimeStaff.compareRoles);
       const q = staffQuery.value.trim().toLowerCase();
       if (!q) return roles.slice(0, 2);
-      return roles.filter(role => String(role || '').toLowerCase().includes(q)).concat(roles.filter(role => !String(role || '').toLowerCase().includes(q))).slice(0, 2);
+      return roles.filter(role => String(role || '').toLowerCase().includes(q)).concat(roles.filter(role => !String(role || '').toLowerCase().includes(q))).slice(0, 2).sort(window.UmaAnimeStaff.compareRoles);
     }
     const staffPageCount = computed(() => Math.max(1, Math.ceil(staffFiltered.value.length / creatorsPerPage)));
     const staffPaged = computed(() => staffFiltered.value.slice((staffPage.value-1)*creatorsPerPage, staffPage.value*creatorsPerPage));
@@ -885,9 +851,17 @@ const umaApp = createApp({
           label = [animeMusicUsageLabel(row.relation.usage_type),version].filter(Boolean).join(' · ');
         } else label = row.relation.role_name || row.relation.signature || row.relation.label || '';
         const institutions = row.entry ? row.entry.institutions || [] : [];
-        const key = [label,...institutions].join(':');
+        const key = label;
         let role = group.roles.find(role => role.key === key);
-        if (!role) {role = {key,label,institutions,units:[],editions:[]}; group.roles.push(role);}
+        if (!role) {role = {key,label,units:[],editions:[],scopes:[]}; group.roles.push(role);}
+        const editions = row.work.id === 'anime-rttt'
+          ? (row.unit ? ['web'] : animeRowEditions(row.entry || row.relation)) : [''];
+        (editions.length ? editions : ['']).forEach(edition => {
+          const scopeKey = JSON.stringify([edition,institutions]);
+          let scope = role.scopes.find(item => item.key === scopeKey);
+          if (!scope) {scope = {key:scopeKey,edition,institutions,units:[]}; role.scopes.push(scope);}
+          if (row.unit && !['movie','special'].includes(row.work.format) && !scope.units.some(unit=>unit.id===row.unit.id)) scope.units.push(row.unit);
+        });
         if (row.unit && !['movie','special'].includes(row.work.format) && !role.units.some(unit => unit.id === row.unit.id)) role.units.push(row.unit);
         if (row.work.id === 'anime-rttt' && !row.unit) {
           const editions = animeRowEditions(row.entry || row.relation);
@@ -897,7 +871,13 @@ const umaApp = createApp({
         }
       });
       return Array.from(works.values()).sort((a,b) => String(a.work.start_date).localeCompare(String(b.work.start_date))).map(group => {
-        group.roles.forEach(role => role.units.sort((a,b) => a.number-b.number)); return group;
+        group.roles.forEach(role => {
+          role.units.sort((a,b) => a.number-b.number);
+          role.scopes.forEach(scope => scope.units.sort((a,b)=>a.number-b.number));
+          role.scopes.sort((a,b)=>(a.edition==='film'?0:1)-(b.edition==='film'?0:1));
+        });
+        group.roles.sort((a,b)=>window.UmaAnimeStaff.compareRoles(a.label,b.label));
+        return group;
       });
     }
     const staffCredits = computed(() => groupAnimeParticipation(staffDetail.value ? animeDisplayStaff.value.filter(entry => entry.person_id === staffDetail.value.id).map(entry => ({entry,work:findAnimeWork(entry.work_id),unit:findAnimeUnit(entry.unit_id)})) : []));
@@ -960,7 +940,7 @@ const umaApp = createApp({
     ].map(group => ({...group,rows:animeMusicCues.value.filter(cue=>!cue.song_id && cue.usage_type===group.kind)}))
       .filter(group=>group.rows.length));
     const animeUsefulRelations = computed(() => animeCurrentRelations.value.filter(row =>
-      ['event','race','anime_work'].includes(row.target_type)));
+      ['event','race'].includes(row.target_type)));
     function appearanceSessionLabel(event) {
       const label = String(event.session_label || '').trim();
       return label && !['本公演','本期节目'].includes(label) &&
@@ -989,9 +969,9 @@ const umaApp = createApp({
     function animeMusicVersions(item) {
       const song = findSong(item.relation.target_id);
       if (!song) return [];
-      return (song.versions || []).filter(version => item.relations.some(relation =>
+      return (song.versions || []).filter(version => !item.relations.length || item.relations.some(relation =>
         !relation.version_id || relation.version_id === version.id)).map(version => ({...version,
-          releases: (version.releases || []).filter(release => item.relations.some(relation =>
+          releases: (version.releases || []).filter(release => !item.relations.length || item.relations.some(relation =>
             (!relation.version_id || relation.version_id === version.id) &&
             (!relation.release_id || relation.release_id === release.album_id)))
         }));
@@ -1969,14 +1949,36 @@ const umaApp = createApp({
     function creatorWorkRoleLabels(roles) {
       return (roles || []).map(creatorRoleLabel).join(' · ');
     }
-    function creatorMonogram(creator) {
-      return window.UmaUi.creatorMonogram(creator);
-    }
     function creatorPortrait(creator) {
-      return (creator && (creator.image || creator.photo)) || '';
+      return (creator && (creator.image || creator.photo)) || window.UmaUi.identityPortrait(creator);
+    }
+    const creatorRecordingLoading = reactive({});
+    const creatorRecordingErrors = reactive({});
+    function creatorWorkVersions(work) {
+      const song = findSong(work.song_id);
+      return (work.versions || []).map(credit => {
+        const version = (song?.versions || []).find(row => row.id === credit.id);
+        return {...credit,releases:version?.releases || []};
+      });
+    }
+    async function loadCreatorRecording(work) {
+      if (!work || creatorRecordingLoading[work.song_id]) return;
+      if (findSong(work.song_id)?.versions && !creatorRecordingErrors[work.song_id]) return;
+      creatorRecordingLoading[work.song_id] = true;
+      creatorRecordingErrors[work.song_id] = '';
+      try {
+        const data = await api.request('/api/catalog/song' + api.query({id:work.song_id}));
+        if (!data?.song) throw new Error('No song');
+        mergeSong(data.song);
+      } catch (_) {
+        creatorRecordingErrors[work.song_id] = '录音信息暂时无法载入';
+      } finally {
+        creatorRecordingLoading[work.song_id] = false;
+      }
     }
     function toggleCreatorWork(workId) {
       expandedCreatorWorkId.value = expandedCreatorWorkId.value === workId ? '' : workId;
+      if (expandedCreatorWorkId.value) loadCreatorRecording(creatorDetail.value.works.find(work=>work.song_id===workId));
     }
     const songDetailReleases = computed(function () {
       if (!songDetail.value) return [];
@@ -2108,7 +2110,7 @@ const umaApp = createApp({
     }
     function playSongPrimary() {
       const row = playableSongRelease(songDetail.value);
-      if (row) playSongTrack(songDetail.value, row.version, row.release, false);
+      if (row) playSongTrack(songDetail.value, row.version, row.release);
     }
     function addSongPrimary() {
       const row = playableSongRelease(songDetail.value);
@@ -2815,6 +2817,10 @@ const umaApp = createApp({
       return ((album && album.songs) || []).filter(function (song) { return !!song.url; }).length;
     }
     function playAlbum(album) {
+      const detail = album && (album.data || album);
+      if (player.current && player.current.albumId === (detail.id || detail.catalog)) {
+        playerController.togglePlay(); return;
+      }
       const tracks = buildAlbumPlayerTracks(album).filter(function (track) { return !!track.url; });
       if (!tracks.length) return;
       playerController.setQueue(tracks, 0, tracks[0].sourceContext, true);
@@ -3742,18 +3748,18 @@ const umaApp = createApp({
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songTotal, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
       albumTrackSongId,
       songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, songLinkVersion, songLinkRelease, toggleSongRelease, toggleSongCredit,
-      creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorMonogram, creatorPortrait, expandedCreatorWorkId, toggleCreatorWork, loadCreatorCatalog,
+      creatorCatalog, creatorCatalogError, creatorCatalogLoading, creatorDetail, creatorSection, setCreatorSection, creatorQuery, creatorRole, creatorFiltered, creatorPaged, creatorPage, creatorPageCount, creatorPageStart, creatorPageEnd, creatorPageList, setCreatorPage, goCreatorPage, setCreatorRole, openCreator, creatorRoleLabels, creatorRoleLabel, creatorWorkRoleLabels, creatorPortrait, creatorWorkVersions, creatorRecordingLoading, creatorRecordingErrors, loadCreatorRecording, expandedCreatorWorkId, toggleCreatorWork, loadCreatorCatalog,
       charDetail, charSort, characterSortOptions, openCharDetail, openCharacter, charSection, charHasPedigree, setCharSection, charAppearance, charHistoryQuery, charHistoryKind, charHistoryEvents,
       horseUrlForCharacter, openHorseForCharacter,
       voiceProfiles, voiceLoading, voiceError, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,
-      animeCatalog, animeLoading, animeError, animeDetail, animeUnitDetail, animeView, animeQuery, animeEpisodeQuery, animeSort, animeSortOptions, animeFormat, animeStatus, animeFormatOptions, animeStatusOptions, animeFiltered, animeWorkHref, animeArtwork, animeMatchedUnits, clearAnimeFilters,
+      animeCatalog, animeLoading, animeError, animeDetail, animeUnitDetail, animeView, animeQuery, animeEpisodeQuery, animeSort, animeSortOptions, animeFormat, animeStatus, animeFormatOptions, animeStatusOptions, animeFiltered, animeWorkHref, animeArtwork, animeHeroArtwork, animeHeroOriginal, animeMatchedUnits, clearAnimeFilters,
       animeWorkUnits, animeWorkFormats, animeWorkYears, animeCurrentRelations, animeCurrentWatch, animeCurrentStaff, animeFormatLabel, animeStatusLabel,
       animePlatformLabel, animeRelationTargetLabel, animeRelationHref,
       characterAnimeRelations, voiceAnimeRelations, songAnimeRelations, albumAnimeRelations, eventAnimeRelations, animeRelationContext, relatedAnimeHref,
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref, animeUnitHref,
-      animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffGroupOpen, toggleAnimeStaffGroup, animeStaffAllOpen, toggleAnimeStaffAll, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
+      animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
       staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups, animeUsefulRelations, appearanceSessionLabel, animeMusicItems, animeMusicVersions, animeMusicCover, animeMusicSong,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
@@ -3803,7 +3809,7 @@ umaApp.component('platform-mark', {
 });
 umaApp.component('anime-participation', {
   inject: ['animeArtwork'],
-  props: {works:{type:Array,default:()=>[]},section:{type:String,default:'characters'}},
+  props: {works:{type:Array,default:()=>[]},section:{type:String,default:'characters'},selfCharacterId:{type:String,default:''},hideSingleRole:{type:Boolean,default:false}},
   methods: {
     href(work,unit,group) {
       const units = group ? group.roles.flatMap(role=>role.units) : [];
@@ -3813,10 +3819,16 @@ umaApp.component('anime-participation', {
       return routes.query(routes.anime(work.id,unit && !['movie','special'].includes(unit.unit_type) && unit.id),{section:this.section,edition});
     },
     editionHref(work,edition) {return routes.query(routes.anime(work.id),{section:this.section,edition});},
+    scopeHref(work,unit,edition) {return routes.query(routes.anime(work.id,unit && !['movie','special'].includes(work.format) ? unit.id : null),{section:this.section,edition:work.id==='anime-rttt'?(unit?'web':edition):''});},
+    roleLabel(role,group) {return this.selfCharacterId || (this.hideSingleRole && group.roles.length===1) ? '' : role.label;},
+    editionGroups(group) {
+      const editions = [...new Set(group.roles.flatMap(role=>role.scopes.map(scope=>scope.edition)))];
+      return editions.sort((a,b)=>(a==='film'?0:a==='web'?1:2)-(b==='film'?0:b==='web'?1:2)).map(edition=>({edition,roles:group.roles.map(role=>({...role,scopes:role.scopes.filter(scope=>scope.edition===edition)})).filter(role=>role.scopes.length)}));
+    },
     artwork(group) {return this.animeArtwork(group.work,group.work.id==='anime-rttt' && group.roles.some(role=>role.editions.includes('film')));},
     follow(event,path) {if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
   },
-  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="artwork(group)" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><dl class="credit-ledger"><div v-for="role in group.roles" :key="role.key"><dt>{{role.label}}</dt><dd class="role-tag-row"><em v-for="institution in role.institutions" :key="institution" class="credit-role-tag">{{institution}}</em><a v-for="edition in role.editions" :key="edition" class="credit-role-tag episode-tag" :href="editionHref(group.work,edition)" @click="follow($event,editionHref(group.work,edition))">{{edition==='film'?'剧场版':'网络版'}}</a><a v-for="unit in role.units" :key="unit.id" class="credit-role-tag episode-tag" :href="href(group.work,unit)" @click="follow($event,href(group.work,unit))">{{unit.label}}</a></dd></div></dl></article></div>`
+  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="artwork(group)" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><div class="participation-editions"><div v-for="editionGroup in editionGroups(group)" :key="editionGroup.edition" class="participation-edition-group"><a v-if="editionGroup.edition" class="participation-edition" :href="editionHref(group.work,editionGroup.edition)" @click="follow($event,editionHref(group.work,editionGroup.edition))">{{editionGroup.edition==='film'?'剧场版':'网络版'}}</a><dl class="credit-ledger"><div v-for="role in editionGroup.roles" :key="role.key" :class="{'participation-unlabelled':!roleLabel(role,group)}"><dt v-if="roleLabel(role,group)">{{roleLabel(role,group)}}</dt><dd class="participation-scopes"><div v-for="scope in role.scopes" :key="scope.key" class="participation-scope"><span v-if="scope.institutions.length" class="participation-institution">机构：{{scope.institutions.join('、')}}</span><div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition)" @click="follow($event,scopeHref(group.work,unit,scope.edition))">{{unit.label}}</a></div></div></dd></div></dl></div></div></article></div>`
 });
 umaApp.component('staff-credit-list', {
   inject: ['animePeople'],

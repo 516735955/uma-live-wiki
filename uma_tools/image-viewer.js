@@ -1,95 +1,147 @@
-/* Shared original-image viewer for detail artwork and still galleries. */
-(function () {
-  'use strict';
-  const selector = '.entity-cover img, .image-view-trigger img';
-  const dialog = document.createElement('dialog');
-  dialog.className = 'image-viewer';
-  dialog.setAttribute('aria-label', '查看图片');
-  dialog.innerHTML = '<div class="image-viewer-toolbar"><button type="button" data-action="previous" aria-label="上一张">←</button><span class="image-viewer-count"></span><button type="button" data-action="next" aria-label="下一张">→</button><button type="button" data-action="out" aria-label="缩小">−</button><button type="button" data-action="reset">适应窗口</button><button type="button" data-action="in" aria-label="放大">＋</button><a target="_blank" rel="noopener" class="image-viewer-original">原图 ↗</a><button type="button" data-action="close" aria-label="关闭">×</button></div><div class="image-viewer-stage"><img alt=""><p class="image-viewer-error" hidden>图片未能载入，请重试。<button type="button" data-action="retry">重试</button></p></div>';
-  document.body.appendChild(dialog);
-  const image = dialog.querySelector('img');
-  const stage = dialog.querySelector('.image-viewer-stage');
-  const error = dialog.querySelector('.image-viewer-error');
-  let items = [], index = 0, scale = 1, x = 0, y = 0, drag = null, trigger = null;
-  let restoreScroll = null;
-  function original(element) {
-    const value = element.dataset.original || element.currentSrc || element.src;
-    const url = new URL(value, location.href);
-    if (url.hostname === 'images.microcms-assets.io') url.search = '';
-    return url.href;
-  }
-  function transform() {
-    image.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
-    stage.classList.toggle('is-zoomed', scale > 1);
-  }
-  function zoom(value) { scale = Math.max(1, Math.min(5, value)); if(scale === 1) x = y = 0; transform(); }
-  function show(next) {
-    index = Math.max(0, Math.min(items.length - 1, next));
-    scale = 1; x = y = 0; transform(); error.hidden = true;
-    stage.classList.add('is-loading');
-    stage.setAttribute('aria-busy', 'true');
-    image.src = original(items[index]); image.alt = items[index].alt || '';
-    dialog.querySelector('.image-viewer-original').href = image.src;
-    dialog.querySelector('.image-viewer-count').textContent = (index + 1) + ' / ' + items.length;
-    dialog.querySelector('[data-action="previous"]').disabled = index === 0;
-    dialog.querySelector('[data-action="next"]').disabled = index === items.length - 1;
-  }
-  function action(name) {
-    if (name === 'close') dialog.close();
-    else if (name === 'previous') show(index - 1);
-    else if (name === 'next') show(index + 1);
-    else if (name === 'in') zoom(scale + .5);
-    else if (name === 'out') zoom(scale - .5);
-    else if (name === 'reset') zoom(1);
-    else if (name === 'retry') show(index);
-  }
-  document.addEventListener('click', function (event) {
-    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    const element = event.target.closest(selector) ||
-      event.target.closest('.image-view-trigger')?.querySelector('img');
-    if (!element || !element.getAttribute('src') || element.src.includes('placeholder')) return;
-    event.preventDefault();
-    const gallery = element.closest('.anime-stills');
-    items = gallery ? Array.from(gallery.querySelectorAll('img')) : [element];
-    trigger = element.closest('button, a, [tabindex]') || element;
-    restoreScroll = { x: window.scrollX, y: window.scrollY };
-    show(items.indexOf(element)); dialog.showModal();
-    document.body.classList.add('image-viewer-open');
-  });
-  dialog.addEventListener('click', function (event) {
-    const button = event.target.closest('[data-action]');
-    if (button) action(button.dataset.action);
-    else if (event.target === dialog) dialog.close();
-  });
-  dialog.addEventListener('close', function () {
-    document.body.classList.remove('image-viewer-open');
-    const position = restoreScroll;
-    restoreScroll = null;
-    if (trigger && trigger.focus) {
-      try { trigger.focus({ preventScroll: true }); } catch (_) { trigger.focus(); }
+/* PhotoSwipe 5.4.4 adapter for real artwork; synthetic identity SVGs remain static. */
+import PhotoSwipe from './vendor/photoswipe/photoswipe.esm.min.js';
+
+const selector = '.entity-cover img, .image-view-trigger img, .roommate-image';
+const esc = value => String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = path => '<svg class="pswp__icn" viewBox="0 0 24 24" aria-hidden="true">' + path + '</svg>';
+let activeViewer = null;
+function original(img) {
+  const url = new URL(img.dataset.original || img.currentSrc || img.src, location.href);
+  if (url.hostname === 'images.microcms-assets.io') url.search = '';
+  return url.href;
+}
+function eligible(img) {
+  const value = img.getAttribute('src') || '';
+  return value && !/^(data:|blob:)|placeholder|\.svg(?:[?#]|$)/i.test(value) && !img.closest('.pswp');
+}
+function decorate() {
+  document.querySelectorAll(selector).forEach(img => {
+    const button = img.closest('button, a') || img;
+    if (!eligible(img)) {
+      if (button === img) {
+        img.removeAttribute('tabindex'); img.removeAttribute('role'); img.removeAttribute('aria-label');
+      }
+      img.classList.remove('original-image');
+      return;
     }
-    if (position) window.requestAnimationFrame(function () { window.scrollTo(position.x, position.y); });
-    image.removeAttribute('src');
+    img.classList.add('original-image');
+    if (button === img) {
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', '查看' + (img.alt || '图片') + '原图');
+    }
   });
-  dialog.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') { event.preventDefault(); action('previous'); }
-    if (event.key === 'ArrowRight') { event.preventDefault(); action('next'); }
-    if (event.key === '+' || event.key === '=') zoom(scale + .5);
-    if (event.key === '-') zoom(scale - .5);
+}
+function openViewer(img) {
+  if (activeViewer || !eligible(img)) return;
+  const gallery = img.closest('.anime-stills');
+  const images = gallery ? Array.from(gallery.querySelectorAll('img')).filter(eligible) : [img];
+  const trigger = img.closest('button, a') || img;
+  const data = images.map(element => ({
+    src: original(element), msrc: element.currentSrc || element.src,
+    width: Number(element.dataset.width) || element.naturalWidth || 1280,
+    height: Number(element.dataset.height) || element.naturalHeight || 720,
+    alt: element.alt || '', source: element.dataset.source || original(element),
+    element
+  }));
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pswp = new PhotoSwipe({
+    dataSource: data, index: images.indexOf(img), bgOpacity: .94,
+    showAnimationDuration: reduced ? 0 : 270, hideAnimationDuration: reduced ? 0 : 200,
+    easing: 'cubic-bezier(.22,1,.36,1)', counter: false, zoom: false, returnFocus: false,
+    preloaderDelay: 450, preload: [0,1], initialZoomLevel: 'fit', secondaryZoomLevel: 1,
+    maxZoomLevel: 4, paddingFn: v => ({top:76,bottom:54,left:v.x<650?12:74,right:v.x<650?12:74}),
+    closeSVG: icon('<path d="m6 6 12 12M18 6 6 18"/>'),
+    arrowPrevSVG: icon('<path d="m14 5-7 7 7 7"/>'),
+    arrowNextSVG: icon('<path d="m10 5 7 7-7 7"/>'),
+    closeTitle: '关闭', arrowPrevTitle: '上一张', arrowNextTitle: '下一张'
   });
-  function finishLoading() {
-    stage.classList.remove('is-loading');
-    stage.setAttribute('aria-busy', 'false');
+  activeViewer = pswp;
+  const zoom = factor => {
+    const s = pswp.currSlide;
+    s.zoomTo(Math.min(s.zoomLevels.max, Math.max(s.zoomLevels.fit,s.currZoomLevel*factor)), undefined, reduced?0:180);
+  };
+  const fit = () => pswp.currSlide.zoomTo(pswp.currSlide.zoomLevels.fit, undefined, reduced?0:180);
+  const actual = () => pswp.currSlide.zoomTo(1, undefined, reduced?0:180);
+  pswp.addFilter('thumbBounds', (_,item) => {
+    const rect = (item.element || img).getBoundingClientRect();
+    return {x:rect.x,y:rect.y,w:rect.width};
+  });
+  pswp.addFilter('contentErrorElement', (_,content) => {
+    const box = document.createElement('div');
+    box.className = 'viewer-failure';
+    box.innerHTML = '<img src="' + esc(content.data.msrc) + '" alt="' + esc(content.data.alt) +
+      '预览"><div class="viewer-failure-message"><p>大图未能载入，预览仍可查看。</p>' +
+      '<button type="button">重试</button><a target="_blank" rel="noopener">打开来源</a></div>';
+    box.querySelector('a').href = content.data.source;
+    box.querySelector('button').onclick = () => pswp.refreshSlideContent(content.index);
+    return box;
+  });
+  pswp.on('loadComplete', ({content}) => {
+    const element = content.element;
+    if (!element?.naturalWidth || content.data.width === element.naturalWidth) return;
+    content.data.width = element.naturalWidth;
+    content.data.height = element.naturalHeight;
+    // Preserve the fit view while correcting 100% to the actual original pixel size.
+    pswp.refreshSlideContent(content.index);
+  });
+  pswp.on('uiRegister', () => {
+    pswp.ui.registerElement({name:'title',order:1,isButton:false,className:'viewer-title',onInit:el=>{
+      const update = () => el.textContent = data[pswp.currIndex].alt || '查看原图';
+      pswp.on('change',update); update();
+    }});
+    pswp.ui.registerElement({name:'out',order:5,isButton:true,ariaLabel:'缩小',html:icon('<path d="M5 12h14"/>'),onClick:()=>zoom(.8)});
+    pswp.ui.registerElement({name:'in',order:6,isButton:true,ariaLabel:'放大',html:icon('<path d="M5 12h14M12 5v14"/>'),onClick:()=>zoom(1.25)});
+    pswp.ui.registerElement({name:'fit',order:7,isButton:true,ariaLabel:'适应窗口',html:'适应窗口',onClick:fit});
+    pswp.ui.registerElement({name:'actual',order:8,isButton:true,ariaLabel:'按原始尺寸查看',html:'100%',onClick:actual});
+    pswp.ui.registerElement({name:'original',order:9,isButton:false,tagName:'a',html:'打开原图 ↗',onInit:el=>{
+      el.classList.add('pswp__button','pswp__button--original'); el.target='_blank'; el.rel='noopener';
+      const update = () => el.href = data[pswp.currIndex].src;
+      pswp.on('change',update); update();
+    }});
+    pswp.ui.registerElement({name:'more',order:10,isButton:false,className:'viewer-more',
+      html:'<button type="button" aria-label="更多图片操作" aria-expanded="false">' +
+        icon('<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>') +
+        '</button><div class="viewer-menu" hidden><button type="button" data-action="fit">适应窗口</button>' +
+        '<button type="button" data-action="actual">原始尺寸 100%</button><a target="_blank" rel="noopener">打开原图</a></div>',
+      onInit:el=>{
+        const button=el.querySelector('button'), menu=el.querySelector('.viewer-menu');
+        const close=()=>{menu.hidden=true;button.setAttribute('aria-expanded','false')};
+        button.onclick=()=>{menu.hidden=!menu.hidden;button.setAttribute('aria-expanded',String(!menu.hidden))};
+        menu.querySelector('[data-action=fit]').onclick=()=>{fit();close()};
+        menu.querySelector('[data-action=actual]').onclick=()=>{actual();close()};
+        const update=()=>{menu.querySelector('a').href=data[pswp.currIndex].src;close()};
+        pswp.on('change',update); update();
+      }});
+    pswp.ui.registerElement({name:'caption',appendTo:'root',isButton:false,className:'viewer-caption',onInit:el=>{
+      const update=()=>el.textContent=pswp.currSlide?.content.isLoading()
+        ? '预览已显示，正在载入大图…'
+        : (matchMedia('(max-width:650px)').matches?'双指缩放 · 左右滑动切图':'拖动查看 · 双击放大 · Esc 关闭');
+      pswp.on('change',update);pswp.on('loadComplete',update);update();
+    }});
+  });
+  const position={x:scrollX,y:scrollY};
+  document.body.classList.add('image-viewer-open');
+  pswp.on('destroy',()=>{
+    activeViewer=null;document.body.classList.remove('image-viewer-open');
+    requestAnimationFrame(()=>{if(trigger.isConnected) trigger.focus({preventScroll:true});window.scrollTo(position.x,position.y)});
+  });
+  pswp.init();
+}
+document.addEventListener('click', event=>{
+  if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  const img=event.target.closest(selector) || event.target.closest('.image-view-trigger')?.querySelector('img');
+  if(!img || !eligible(img)) return;
+  event.preventDefault();openViewer(img);
+});
+document.addEventListener('keydown', event=>{
+  if(event.target.matches?.('img.original-image') && ['Enter',' '].includes(event.key)){
+    event.preventDefault();openViewer(event.target);
   }
-  image.addEventListener('load', finishLoading);
-  image.addEventListener('error', function () { finishLoading(); error.hidden = false; });
-  stage.addEventListener('wheel', function (event) { event.preventDefault(); zoom(scale + (event.deltaY < 0 ? .25 : -.25)); }, {passive:false});
-  stage.addEventListener('pointerdown', function (event) {
-    if (scale <= 1 || event.target !== image) return;
-    drag = {x:event.clientX-x,y:event.clientY-y}; stage.setPointerCapture(event.pointerId);
-  });
-  stage.addEventListener('pointermove', function (event) { if(drag) {x=event.clientX-drag.x;y=event.clientY-drag.y;transform();} });
-  stage.addEventListener('pointerup', function () {drag=null;});
-  stage.addEventListener('pointercancel', function () {drag=null;});
-  image.addEventListener('dragstart', function (event) {event.preventDefault();});
-})();
+});
+let pending=false;
+new MutationObserver(()=>{
+  if(pending)return;pending=true;
+  requestAnimationFrame(()=>{pending=false;decorate()});
+}).observe(document.getElementById('app') || document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['src','data-original']});
+decorate();

@@ -19,8 +19,11 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 <script defer src="/uma_tools/anime-loader.js"></script>
 <script defer src="/uma_tools/app.js"></script>
 <link rel="stylesheet" href="/uma_tools/anime.css">
+<link rel="stylesheet" href="/uma_tools/vendor/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/uma_tools/image-viewer.css">
-<script defer src="/uma_tools/image-viewer.js"></script>
+<script type="module" src="/uma_tools/image-viewer.js"></script>
+<link rel="stylesheet" href="/uma_tools/context-navigation.css">
+<script defer src="/uma_tools/context-navigation.js"></script>
 </head>
 <body>
 
@@ -309,7 +312,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="eventAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span><span>{{ eventAnimeRelations.length }} 部作品</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
                         <div class="anime-crosslink-grid"><a v-for="row in eventAnimeRelations" :key="row.relation.id" :href="relatedAnimeHref(row)" @click="animeLink($event, relatedAnimeHref(row))"><img :src="row.work.cover" alt=""><span><b>{{ row.work.title_zh }}</b><small>{{ animeRelationContext(row) }}</small></span><em><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></em></a></div>
                     </section>
 
@@ -353,7 +356,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                             <span class="music-card-copy"><b>{{ song.title }}</b><small>{{ songSingerLabel(song) }}</small></span>
                             <span class="music-card-meta"><em>{{ song.version_count }} 版本</em><em>{{ song.performance_count }} 场演出</em></span>
                         </button>
-                        <button v-if="playableSongRelease(song)" class="music-card-play" type="button" :class="{playing:isActive(playableSongRelease(song).release.audio_url)}" @click="playCatalogSong(song,$event)" :aria-label="isActive(playableSongRelease(song).release.audio_url)?'暂停':'立即播放'" title="立即播放"><svg v-if="isActive(playableSongRelease(song).release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
+                        <entity-actions v-if="playableSongRelease(song)" size="compact" :playing="isActive(playableSongRelease(song).release.audio_url)" @play="playCatalogSong(song)" @add="addSongTrack(song,playableSongRelease(song).version,playableSongRelease(song).release)"></entity-actions>
                     </article>
                     <div v-if="!songCatalogError && !songCatalogLoading && !songDbFiltered.length" class="ui-state">没有符合条件的歌曲</div>
                 </div>
@@ -366,13 +369,13 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div class="entity-intro">
                         <span class="entity-kind">歌曲</span>
                         <h1>{{ songDetail.title }}</h1>
-                        <entity-actions v-if="playableSongRelease(songDetail)" size="hero" play-label="播放这首歌" add-label="加入播放列表" @play="playSongPrimary" @add="addSongPrimary"></entity-actions>
+                        <entity-actions v-if="playableSongRelease(songDetail)" size="hero" :playing="isActive(playableSongRelease(songDetail).release.audio_url)" play-label="播放这首歌" add-label="加入播放列表" @play="playSongPrimary" @add="addSongPrimary"></entity-actions>
                     </div>
                 </div>
                 <div class="media-content">
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span><span>{{ songAnimeWorks.length }} 部作品</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
                         <anime-participation :works="songAnimeWorks" section="music"></anime-participation>
                     </section>
                     <nav class="entity-tabs" aria-label="歌曲栏目">
@@ -394,7 +397,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                                     <td data-label="专辑"><button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,96)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.catalog || release.type }}</span></span></button></td>
                                     <td data-label="发售日">{{ release.release_date || '—' }}</td>
                                     <td data-label="歌手"><div v-if="release.vocalists.length" class="performer-chip-list compact"><button v-for="vocalist in release.vocalists" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div><span v-else-if="releaseSingerLabel(version,release)">{{ releaseSingerLabel(version,release) }}</span><span v-else>—</span></td>
-                                    <td data-label="试听"><button v-if="release.audio_url" class="track-play" type="button" :class="{playing:isActive(release.audio_url)}" @click="playSongRelease({version:version,release:release},$event)" :aria-label="isActive(release.audio_url)?'暂停':'播放'"><svg v-if="isActive(release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button><span v-else>—</span></td>
+                                    <td data-label="试听"><entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playSongRelease({version:version,release:release})" @add="addSongTrack(songDetail,version,release)"></entity-actions><span v-else>—</span></td>
                                 </tr></tbody>
                             </table>
                         </ui-disclosure>
@@ -469,20 +472,20 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div id="creatorArchiveTop" class="creator-catalog">
                     <template v-if="creatorCatalogLoading && !creatorCatalog.creators.length"><div v-for="i in 8" :key="'creator-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div></template>
                     <button v-for="creator in creatorPaged" :key="creator.id" class="creator-catalog-row" type="button" @click="openCreator(creator)">
-                        <span class="creator-monogram">{{ creatorMonogram(creator) }}</span>
+                        <span class="identity-portrait"><img :src="creatorPortrait(creator)" alt="" loading="lazy" @error="creator.image='';creator.photo=''"></span>
                         <span class="creator-catalog-name"><b>{{ creator.name }}</b><small v-if="creator.affiliations.length">{{ creator.affiliations.join(' · ') }}</small></span>
                         <span class="creator-catalog-roles role-tag-row"><em v-for="role in creator.roles" :key="role.role" class="credit-role-tag">{{ role.label || creatorRoleLabel(role.role) }}</em></span>
-                        <span class="creator-catalog-count">{{ creator.work_count }} 首歌曲 · {{ creator.version_count }} 个版本</span>
+
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </button>
                     <div v-if="!creatorCatalogError && !creatorCatalogLoading && !creatorFiltered.length" class="ui-state">没有符合条件的创作者</div>
                 </div>
-                <div v-if="creatorFiltered.length" class="ui-pager"><span>{{ creatorPageStart }}–{{ creatorPageEnd }} / {{ creatorFiltered.length }}</span><div><button :disabled="creatorPage<=1" @click="goCreatorPage(-1)">上一页</button><button v-for="(page,index) in creatorPageList" :key="index" :class="{active:page===creatorPage}" :disabled="page==='…'" @click="setCreatorPage(page)">{{ page }}</button><button :disabled="creatorPage>=creatorPageCount" @click="goCreatorPage(1)">下一页</button></div></div>
+                <div v-if="creatorFiltered.length" class="ui-pager"><div><button :disabled="creatorPage<=1" @click="goCreatorPage(-1)">上一页</button><button v-for="(page,index) in creatorPageList" :key="index" :class="{active:page===creatorPage}" :disabled="page==='…'" @click="setCreatorPage(page)">{{ page }}</button><button :disabled="creatorPage>=creatorPageCount" @click="goCreatorPage(1)">下一页</button></div></div>
             </template>
 
             <article v-else class="entity-detail creator-entity-detail">
-                <div class="entity-hero creator-hero music-archive-hero" :class="{'entity-hero-text':!creatorDetail.image && !creatorDetail.photo}">
-                    <div class="entity-cover creator-cover"><img v-if="creatorDetail.image || creatorDetail.photo" :src="creatorPortrait(creatorDetail)" :alt="creatorDetail.name" @error="onCatalogImageError($event)"><span v-else class="creator-monogram">{{ creatorMonogram(creatorDetail) }}</span></div>
+                <div class="entity-hero creator-hero music-archive-hero">
+                    <div class="entity-cover creator-cover"><img :src="creatorPortrait(creatorDetail)" :alt="creatorDetail.name" @error="creatorDetail.image='';creatorDetail.photo=''"></div>
                     <div class="entity-intro creator-intro">
                         <span class="entity-kind">创作者</span>
                         <h1>{{ creatorDetail.name }}</h1>
@@ -492,7 +495,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
                 <div class="media-content">
                     <nav v-if="creatorDetail.works.length" class="entity-tabs" aria-label="创作者栏目"><button :class="{active:creatorSection==='works'}" @click="setCreatorSection('works')">参与歌曲</button><button v-if="creatorDetail.collaborators.length" :class="{active:creatorSection==='collaborators'}" @click="setCreatorSection('collaborators')">常见合作</button></nav>
-                    <section v-if="creatorDetail.works.length && (creatorSection==='works' || !creatorDetail.collaborators.length)" class="entity-section"><div class="creator-relation-list ui-disclosure-list"><ui-disclosure v-for="work in creatorDetail.works" :key="work.song_id" :open="expandedCreatorWorkId===work.song_id" @toggle="toggleCreatorWork(work.song_id)"><template #leading><img :src="coverThumb(work.cover,128)" alt="" loading="lazy" @error="onCatalogImageError($event)"></template><template #title><b>{{ work.title }}</b></template><template #subtitle>{{ creatorWorkRoleLabels(work.roles) }}</template><template #meta>{{ work.release_date || '—' }}</template><div class="creator-relation-detail"><div v-for="version in work.versions" :key="version.id"><b>{{ version.version_label || '原始版本' }}</b><span class="role-tag-row"><em v-for="role in version.roles" :key="role" class="credit-role-tag">{{ creatorRoleLabel(role) }}</em></span></div><button type="button" class="relation-detail-link" @click="openSong(work.song_id)">查看歌曲详情</button></div></ui-disclosure></div></section>
+                    <section v-if="creatorDetail.works.length && (creatorSection==='works' || !creatorDetail.collaborators.length)" class="entity-section"><div class="creator-relation-list ui-disclosure-list"><ui-disclosure v-for="work in creatorDetail.works" :key="work.song_id" :open="expandedCreatorWorkId===work.song_id" @toggle="toggleCreatorWork(work.song_id)"><template #leading><img :src="coverThumb(work.cover,128)" alt="" loading="lazy" @error="onCatalogImageError($event)"></template><template #title><b>{{ work.title }}</b></template><template #subtitle>{{ creatorWorkRoleLabels(work.roles) }}</template><template #meta>{{ work.release_date || '—' }}</template><div class="creator-relation-detail"><div v-for="version in creatorWorkVersions(work)" :key="version.id"><b>{{ version.version_label || '原始版本' }}</b><span class="role-tag-row"><em v-for="role in version.roles" :key="role" class="credit-role-tag">{{ creatorRoleLabel(role) }}</em></span><div v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" class="recording-row"><div class="recording-copy"><a class="text-link" :href="routes.albums(release.album_id)" @click="animeLink($event,$event.currentTarget.href)">{{ release.album_name }}</a><small>{{ release.release_date }}<template v-if="release.catalog"> · {{ release.catalog }}</template></small></div><entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playSongTrack(relationSong(work),version,release)" @add="addSongTrack(relationSong(work),version,release)"></entity-actions></div></div><p v-if="creatorRecordingLoading[work.song_id]" class="secondary-line">正在加载录音…</p><p v-if="creatorRecordingErrors[work.song_id]" class="secondary-line">{{ creatorRecordingErrors[work.song_id] }} <button type="button" class="state-retry" @click="loadCreatorRecording(work)">重试</button></p><button type="button" class="relation-detail-link" @click="openSong(work.song_id)">查看歌曲详情</button></div></ui-disclosure></div></section>
                     <section v-else-if="creatorDetail.collaborators.length" class="entity-section"><creator-network :creator="creatorDetail" :catalog="creatorCatalog.creators" @open-creator="openCreator" @open-song="openSong"></creator-network></section>
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="creatorAnimeWorks.length" class="entity-section"><div class="section-toolbar"><span class="credit-role-tag">动画制作</span></div><anime-participation :works="creatorAnimeWorks" section="staff"></anime-participation></section>
@@ -526,15 +529,15 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <button :class="{active:voiceSection==='events'}" @click="setVoiceSection('events')">活动出演</button>
                 </nav>
                 <section v-if="voiceSection==='profile'" class="entity-section">
-                    <dl class="entity-meta detail-meta">
+                    <dl class="profile-facts">
                         <div><dt>中文名</dt><dd>{{ voiceDetail.zh }}</dd></div>
                         <div><dt>日文名</dt><dd>{{ voiceDetail.ja }}</dd></div>
                         <div><dt>假名</dt><dd>{{ voiceDetail.kana || '—' }}</dd></div>
                         <div><dt>生日</dt><dd>{{ voiceFieldLabel(voiceDetail,'birthday') }}</dd></div>
                         <div><dt>出身地</dt><dd>{{ voiceFieldLabel(voiceDetail,'birthplace') }}</dd></div>
                         <div><dt>事务所</dt><dd>{{ voiceFieldLabel(voiceDetail,'agency') }}</dd></div>
-                        <div><dt>歌曲</dt><dd>{{ (voiceDetail.stats && voiceDetail.stats.songs) || 0 }} 首</dd></div>
-                        <div><dt>出演</dt><dd>{{ (voiceDetail.stats && voiceDetail.stats.events) || 0 }} 场</dd></div>
+
+
                     </dl>
                 </section>
                 <section v-else-if="voiceSection==='songs'" class="entity-section">
@@ -549,7 +552,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                                     <div v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" class="relation-release">
                                         <button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,88)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.release_date || '日期待补' }} · {{ release.catalog || release.type }}</span></span></button>
                                         <div class="performer-chip-list compact"><button v-for="vocalist in relationReleaseVocalists(release,'voice_actor',voiceDetail.id)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div>
-                                        <button v-if="release.audio_url" class="track-play" type="button" :class="{playing:isActive(release.audio_url)}" @click="playRelationRelease(relationSong(song),version,release,$event)" :aria-label="isActive(release.audio_url)?'暂停':'播放'"><svg v-if="isActive(release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
+                                        <entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playRelationRelease(relationSong(song),version,release)" @add="addSongTrack(relationSong(song),version,release)"></entity-actions>
                                     </div>
                                 </section>
 
@@ -560,7 +563,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </section>
                 <section v-else-if="voiceSection==='anime'" class="entity-section">
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
-                    <anime-participation v-else-if="voiceAnimeWorks.length" :works="voiceAnimeWorks"></anime-participation>
+                    <anime-participation v-else-if="voiceAnimeWorks.length" :works="voiceAnimeWorks" hide-single-role></anime-participation>
                     <div v-else class="ui-state compact">暂无动画出演</div>
                 </section>
                 <section v-else-if="voiceSection==='events'" class="entity-section">
@@ -604,13 +607,13 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <article v-else class="entity-detail album-entity-detail">
                 <div class="entity-hero music-archive-hero">
                     <div class="entity-cover album-cover-detail"><img :src="coverThumb(albumDetail.data.cover,720)" :data-original="albumDetail.data.cover" :alt="albumDetail.data.name" fetchpriority="high" @error="onCatalogImageError($event)"></div>
-                    <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
+                    <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
                 </div>
                 <div class="media-content">
                     <dl v-if="albumDetail.data.company" class="entity-overview album-release-overview"><div><dt>发行</dt><dd>{{ albumDetail.data.company }}</dd></div></dl>
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span><span>{{ albumAnimeWorks.length }} 部作品</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
                         <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
                     </section>
                     <section class="entity-section">
@@ -662,7 +665,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <button :class="{active:charSection==='events'}" @click="setCharSection('events')">活动出演</button>
                 </nav>
                 <section v-show="charSection==='profile'" class="entity-section character-profile">
-                    <dl v-if="charDetail.birth || charDetail.height || charDetail.weight || charDetail.sankak" class="entity-meta detail-meta simple-character-meta">
+                    <dl v-if="charDetail.birth || charDetail.height || charDetail.weight || charDetail.sankak" class="profile-facts">
                         <div v-if="charDetail.birth"><dt>生日</dt><dd>{{ charDetail.birth }}</dd></div>
                         <div v-if="charDetail.height"><dt>身高</dt><dd>{{ charDetail.height }}cm</dd></div>
                         <div v-if="charDetail.weight"><dt>体重</dt><dd>{{ charDetail.weight }}</dd></div>
@@ -687,7 +690,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                                     <div v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" class="relation-release">
                                         <button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,88)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.release_date || '日期待补' }} · {{ release.catalog || release.type }}</span></span></button>
                                         <div class="performer-chip-list compact"><button v-for="vocalist in relationReleaseVocalists(release,'character',charDetail.id)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div>
-                                        <button v-if="release.audio_url" class="track-play" type="button" :class="{playing:isActive(release.audio_url)}" @click="playRelationRelease(relationSong(song),version,release,$event)" :aria-label="isActive(release.audio_url)?'暂停':'播放'"><svg v-if="isActive(release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button>
+                                        <entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playRelationRelease(relationSong(song),version,release)" @add="addSongTrack(relationSong(song),version,release)"></entity-actions>
                                     </div>
                                 </section>
 
@@ -698,7 +701,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </section>
                 <section v-if="charSection==='anime'" class="entity-section">
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
-                    <anime-participation v-else-if="characterAnimeWorks.length" :works="characterAnimeWorks"></anime-participation>
+                    <anime-participation v-else-if="characterAnimeWorks.length" :works="characterAnimeWorks" :self-character-id="charDetail.id"></anime-participation>
                     <div v-else class="ui-state compact">暂无动画出演</div>
                 </section>
                 <section v-if="charSection==='events'" class="entity-section">
@@ -717,7 +720,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeQuery" aria-label="搜索作品名或单集标题" placeholder="搜索作品名或单集标题" autocomplete="off"><button v-if="animeQuery" type="button" @click.prevent="animeQuery=''" aria-label="清空搜索">×</button></label>
                     <ui-select v-model="animeSort" label="排序" :options="animeSortOptions"></ui-select>
                     <button v-if="animeFormat!=='all' || animeStatus!=='all'" class="state-retry" type="button" @click="clearAnimeFilters">清除筛选</button>
-                    <span class="archive-result-count">{{ animeFiltered.length }} 部作品</span>
+
                 </div>
                 <div class="archive-filter-row">
                     <div class="ui-filter-group"><span>形式</span><div><button :class="{active:animeFormat==='all'}" @click="animeFormat='all'">全部</button><button v-for="format in animeFormatOptions" :key="format" :class="{active:animeFormat===format}" @click="animeFormat=format">{{ animeFormatLabel(format) }}</button></div></div>
@@ -736,13 +739,13 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             </template>
             <article v-else class="entity-detail anime-entity-detail">
                 <div class="entity-hero music-archive-hero">
-                    <div class="entity-cover anime-cover-detail"><img :src="animeArtwork(animeDetail,animeDetail.id==='anime-rttt' && animeEdition==='film')" :data-original="animeDetail.id==='anime-rttt' && animeEdition==='film' ? animeDetail.film_cover : animeDetail.cover_original" :alt="animeDetail.title_zh" fetchpriority="high"></div>
+                    <div class="entity-cover anime-cover-detail" :class="{'episode-artwork':animeUnitDetail}"><img :src="animeHeroArtwork" :data-original="animeHeroOriginal" :data-source="animeUnitDetail && animeUnitDetail.cover_source_url" :alt="animeUnitDetail ? animeUnitDetail.title_zh : animeDetail.title_zh" fetchpriority="high"></div>
                     <div class="entity-intro">
                         <div class="hero-chip-row"><span class="entity-kind">{{ animeDetail.id==='anime-rttt' && animeEdition==='film' ? '剧场版' : animeFormatLabel(animeDetail.format) }}</span><span v-if="animeUnitDetail" class="credit-role-tag">{{ animeUnitDetail.label }}</span></div>
                         <p v-if="animeUnitDetail" class="entity-reading"><a class="text-link" :href="animeEpisodeDirectoryHref" @click="animeLink($event,animeEpisodeDirectoryHref)">{{ animeDetail.title_zh }}</a></p>
                         <h1>{{ animeUnitDetail ? (animeUnitDetail.title_zh===animeUnitDetail.label ? animeDetail.title_zh : animeUnitDetail.title_zh) : animeDetail.title_zh }}</h1>
                         <p v-if="(animeUnitDetail ? animeUnitDetail.title_ja : animeDetail.title_ja)" class="entity-reading">{{ animeUnitDetail ? animeUnitDetail.title_ja : animeDetail.title_ja }}</p>
-                        <dl class="entity-meta"><div v-if="!animeDates.length"><dt>公开日期</dt><dd>{{ animeUnitDetail ? animeUnitDetail.release_date : animeDetail.start_date }}</dd></div><div v-for="(date,index) in animeDates" :key="index"><dt>{{ date.label }}</dt><dd><span>{{ date.display || date.date }}</span><small v-if="date.timezone">{{ date.timezone }}</small></dd></div><div v-if="!animeUnitDetail"><dt>{{ animeSingle ? '片长' : '集数' }}</dt><dd>{{ animeSingle ? ((animeDetail.id==='anime-rttt' ? animeDetail.film_duration : animeDetail.duration) || '全片') : animeDetail.released_count+' 话' }}</dd></div></dl>
+                        <dl class="entity-meta"><div v-if="!animeDates.length"><dt>公开日期</dt><dd>{{ animeUnitDetail ? animeUnitDetail.release_date : animeDetail.start_date }}</dd></div><div v-for="(date,index) in animeDates" :key="index"><dt>{{ date.label }}</dt><dd><span>{{ date.display || date.date }}</span><small v-if="date.timezone">{{ date.timezone }}</small></dd></div><div v-if="!animeUnitDetail && animeSingle && (animeDetail.duration || animeDetail.film_duration)"><dt>片长</dt><dd>{{ animeDetail.id==='anime-rttt' ? animeDetail.film_duration : animeDetail.duration }}</dd></div></dl>
                         <p v-if="(animeUnitDetail || animeDetail).summary_zh" class="anime-summary">{{ (animeUnitDetail || animeDetail).summary_zh }}</p>
                         <p v-else-if="animeUnitDetail && animeUnitDetail.summary_ja" class="anime-summary" lang="ja">{{ animeUnitDetail.summary_ja }}</p>
                         <div v-if="animeDetail.id==='anime-rttt' && !animeUnitDetail" class="anime-version-switch" role="group" aria-label="动画版本"><button :aria-pressed="animeEdition==='film'" :class="{active:animeEdition==='film'}" @click="setAnimeEdition('film')">剧场版</button><button :aria-pressed="animeEdition==='web'" :class="{active:animeEdition==='web'}" @click="setAnimeEdition('web')">网络版</button></div>
@@ -757,10 +760,10 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div class="media-content">
                     <nav v-if="animeUsefulRelations.length" class="anime-context-links" aria-label="相关内容"><a v-for="relation in animeUsefulRelations" :key="relation.id" class="horse-link-chip" :href="animeRelationHref(relation)" @click="relation.target_type==='race' ? null : animeLink($event,animeRelationHref(relation))" :target="relation.target_type==='race'?'_blank':null" rel="noopener"><span class="credit-role-tag">{{ relation.label }}</span>{{ animeRelationTargetLabel(relation) }}<svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path :d="relation.target_type==='race'?'M7 17 17 7M7 7h10v10':'M5 12h14m-6-6 6 6-6 6'"/></svg></a></nav>
                     <nav class="entity-tabs" aria-label="动画栏目"><button v-for="tab in animeTabs" :key="tab.id" :class="{active:animeSection===tab.id}" @click="setAnimeSection(tab.id)">{{ tab.label }}</button></nav>
-                    <section v-if="animeSection==='stills'" class="entity-section"><div v-if="!animeContentUnit && !animeSingle" class="archive-toolbar compact"><ui-select v-model="animeStillUnit" :options="animeStillOptions" label="剧照集数"></ui-select></div><div v-for="group in animeVisibleStillGroups" :key="group.unit ? group.unit.id : 'film'"><span v-if="animeStillUnit==='all' && group.unit" class="credit-role-tag">{{ group.unit.label }}</span><div class="anime-stills"><button v-for="still in group.stills" :key="still.url" class="image-view-trigger" type="button" :aria-label="'查看'+((group.unit||animeDetail).title_zh)+'剧照'"><img :src="still.url" :data-original="still.original" :alt="(group.unit||animeDetail).title_zh" loading="lazy"></button></div></div></section>
+                    <section v-if="animeSection==='stills'" class="entity-section"><div v-if="!animeContentUnit && !animeSingle" class="archive-toolbar compact"><ui-select v-model="animeStillUnit" :options="animeStillOptions" label="剧照集数"></ui-select></div><div v-for="group in animeVisibleStillGroups" :key="group.unit ? group.unit.id : 'film'"><span v-if="animeStillUnit==='all' && group.unit" class="credit-role-tag">{{ group.unit.label }}</span><div class="anime-stills"><button v-for="still in group.stills" :key="still.url" class="image-view-trigger" type="button" :aria-label="'查看'+((group.unit||animeDetail).title_zh)+'剧照'"><img :src="still.url" :data-original="still.original" :data-source="still.source_url || still.original" :alt="(group.unit||animeDetail).title_zh" loading="lazy"></button></div></div></section>
                     <section v-if="animeSection==='episodes' && !animeSingle" class="entity-section">
                         <label class="ui-search anime-episode-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeEpisodeQuery" aria-label="搜索单集标题或话数" placeholder="搜索单集标题或话数" @input="setAnimeSection('episodes')"><button v-if="animeEpisodeQuery" type="button" aria-label="清空搜索" @click="animeEpisodeQuery='';setAnimeSection('episodes')">×</button></label>
-                        <div v-for="group in animeUnitGroups" :key="group.kind"><span v-if="animeUnitGroups.length>1" class="credit-role-tag">{{ group.label }}</span><div class="anime-episode-list"><a v-for="unit in group.units" :key="unit.id" :href="animeUnitHref(unit,'characters')" @click="animeLink($event,$event.currentTarget.href)"><img v-if="unit.stills && unit.stills.length" :src="unit.stills[0].url" alt="" loading="lazy"><span><span class="credit-role-tag">{{ unit.label }}</span><b>{{ unit.title_zh }}</b></span><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+                        <div v-for="group in animeUnitGroups" :key="group.kind"><span v-if="animeUnitGroups.length>1" class="credit-role-tag">{{ group.label }}</span><div class="anime-episode-list"><a v-for="unit in group.units" :key="unit.id" :href="animeUnitHref(unit,'characters')" @click="animeLink($event,$event.currentTarget.href)"><img v-if="unit.cover || (unit.stills && unit.stills.length)" :src="unit.cover || unit.stills[0].url" alt="" loading="lazy"><span><span class="credit-role-tag">{{ unit.label }}</span><b>{{ unit.title_zh }}</b></span><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
                         <div v-if="!animeUnitGroups.length" class="ui-state compact">没有符合条件的剧集<button class="state-retry" @click="animeEpisodeQuery='';setAnimeSection('episodes')">清除搜索</button></div>
                     </section>
                     <section v-if="animeSection==='characters' && animeCurrentCast.length" class="entity-section"><div class="anime-cast-list"><div v-for="relation in animeCurrentCast" :key="relation.id" class="performer-chip-list anime-cast-pair"><a v-if="relation.target_type==='character'" class="performer-chip character-chip" :style="{'--chip-color':characterColor(relation.target_id)}" :href="animeRelationHref(relation)" @click="animeLink($event,animeRelationHref(relation))"><img v-if="characterImage(relation.target_id)" :src="characterImage(relation.target_id)" alt="" loading="lazy"><span>{{ animeRelationTargetLabel(relation) }}</span></a><span v-else class="credit-role-tag">{{ relation.role_name || relation.label || relation.signature }}</span><a v-if="relation.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(relation.target_id)}" :href="routes.voiceActors(relation.voice_actor_id)" @click="animeLink($event,$event.currentTarget.href)"><img v-if="voicePhoto(relation.voice_actor_id)" :src="voicePhoto(relation.voice_actor_id)" alt="" loading="lazy"><span>{{ voiceName(relation.voice_actor_id) }}</span></a></div></div></section>
@@ -770,17 +773,17 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                                 <a v-if="item.relation.target_type==='album'" class="album-inline anime-album-record" :href="animeRelationHref(item.relation)" @click="animeLink($event,$event.currentTarget.href)"><img v-if="animeMusicCover(item)" :src="coverThumb(animeMusicCover(item),112)" alt="" loading="lazy"><span><b>{{ animeRelationTargetLabel(item.relation) }}</b><span class="role-tag-row"><em v-for="usage in item.usages" :key="usage" class="credit-role-tag">{{ usage }}</em></span></span></a>
                                 <ui-disclosure v-else class="relation-song-row" :open="expandedRelationSongId===item.key" @toggle="toggleRelationSong(item.key)">
                                     <template #leading v-if="animeMusicCover(item)"><img :src="coverThumb(animeMusicCover(item),112)" alt="" loading="lazy"></template><template #title><b>{{ animeRelationTargetLabel(item.relation) }}</b></template><template #subtitle><span class="role-tag-row"><em v-for="usage in item.usages" :key="usage" class="credit-role-tag">{{ usage }}</em></span></template>
-                                    <div class="relation-song-detail"><div v-for="cue in item.cues" :key="cue.title+cue.usage_type" class="anime-cue-credits"><dl class="credit-ledger"><div v-for="credit in cue.credits" :key="credit.role"><dt><span class="credit-role-tag">{{ credit.role }}</span></dt><dd class="role-tag-row"><template v-for="(name,index) in credit.names" :key="name"><a v-if="credit.creator_ids && credit.creator_ids[index]" class="text-link" :href="routes.creators(credit.creator_ids[index])" @click="animeLink($event,$event.currentTarget.href)">{{ name }}</a><span v-else>{{ name }}</span></template><em v-for="institution in credit.institutions" :key="institution" class="credit-role-tag">{{ institution }}</em></dd></div></dl><div v-if="!animeContentUnit" class="role-tag-row"><a v-for="unit in cue.units" :key="unit.id" class="credit-role-tag episode-tag" :href="animeUnitHref(unit,'music')" @click="animeLink($event,$event.currentTarget.href)">{{ unit.label }}</a></div></div><section v-for="version in animeMusicVersions(item)" :key="version.id" class="relation-version"><header><a class="text-link" :href="routes.query(routes.songs(item.relation.target_id),{version:version.id})" @click="animeLink($event,$event.currentTarget.href)">{{ version.title }}</a><span v-if="version.version_label" class="credit-role-tag">{{ version.version_label }}</span></header><div v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" class="relation-release"><a class="album-inline" :href="routes.albums(release.album_id)" @click="animeLink($event,$event.currentTarget.href)"><img :src="coverThumb(release.cover,88)" alt="" loading="lazy"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.release_date }}<template v-if="release.catalog"> · {{ release.catalog }}</template></span></span></a><button v-if="release.audio_url" class="track-play" type="button" :class="{playing:isActive(release.audio_url)}" @click="playRelationRelease(animeMusicSong(item),version,release,$event)" :aria-label="isActive(release.audio_url)?'暂停':'播放'"><svg v-if="isActive(release.audio_url)" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg><svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button></div></section><a v-if="!animeMusicVersions(item).length" class="text-link" :href="animeRelationHref(item.relation)" @click="animeLink($event,$event.currentTarget.href)">{{ animeRelationTargetLabel(item.relation) }} <svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+                                    <div class="relation-song-detail"><div v-for="cue in item.cues" :key="cue.title+cue.usage_type" class="anime-cue-credits"><dl class="credit-ledger"><div v-for="credit in cue.credits" :key="credit.role"><dt><span class="credit-role-tag">{{ credit.role }}</span></dt><dd class="role-tag-row"><template v-for="(name,index) in credit.names" :key="name"><a v-if="credit.creator_ids && credit.creator_ids[index]" class="text-link" :href="routes.creators(credit.creator_ids[index])" @click="animeLink($event,$event.currentTarget.href)">{{ name }}</a><span v-else>{{ name }}</span></template><em v-for="institution in credit.institutions" :key="institution" class="credit-role-tag">{{ institution }}</em></dd></div></dl><div v-if="!animeContentUnit" class="role-tag-row"><a v-for="unit in cue.units" :key="unit.id" class="credit-role-tag episode-tag" :href="animeUnitHref(unit,'music')" @click="animeLink($event,$event.currentTarget.href)">{{ unit.label }}</a></div></div><div v-for="version in animeMusicVersions(item)" :key="version.id" class="recording-list"><div v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" class="recording-row"><div class="recording-copy"><a class="text-link" :href="routes.query(routes.songs(item.relation.target_id),{version:version.id,release:release.album_id})" @click="animeLink($event,$event.currentTarget.href)">{{ version.version_label || version.title }}</a><small><a :href="routes.albums(release.album_id)" @click="animeLink($event,$event.currentTarget.href)">{{ release.album_name }}</a><span v-if="release.release_date"> · {{ release.release_date }}</span></small></div><entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playRelationRelease(animeMusicSong(item),version,release)" @add="addSongTrack(animeMusicSong(item),version,release)"></entity-actions></div></div><a v-if="!animeMusicVersions(item).length" class="text-link" :href="animeRelationHref(item.relation)" @click="animeLink($event,$event.currentTarget.href)">{{ animeRelationTargetLabel(item.relation) }} <svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
                                 </ui-disclosure>
                             </template>
                             <template v-for="group in animeMusicCueGroups" :key="group.kind"><ui-disclosure v-for="cue in group.rows" :key="cue.title" class="relation-song-row" :open="expandedRelationSongId===cue.title" @toggle="toggleRelationSong(cue.title)"><template #title><b>{{ cue.title }}</b></template><template #subtitle><em class="credit-role-tag">{{ group.label }}</em></template><div class="relation-song-detail"><a v-if="cue.song_id" class="text-link" :href="routes.songs(cue.song_id)" @click="animeLink($event,$event.currentTarget.href)">{{ cue.title }}</a><dl class="credit-ledger"><div v-for="credit in cue.credits" :key="credit.role"><dt><span class="credit-role-tag">{{ credit.role }}</span></dt><dd class="role-tag-row"><template v-for="(name,index) in credit.names" :key="name"><a v-if="credit.creator_ids && credit.creator_ids[index]" class="text-link" :href="routes.creators(credit.creator_ids[index])" @click="animeLink($event,$event.currentTarget.href)">{{ name }}</a><span v-else>{{ name }}</span></template><em v-for="institution in credit.institutions" :key="institution" class="credit-role-tag">{{ institution }}</em></dd></div></dl><div class="role-tag-row"><em v-for="institution in cue.institutions" :key="institution" class="credit-role-tag">{{ institution }}</em><template v-if="!animeContentUnit"><a v-for="unit in cue.units" :key="unit.id" class="credit-role-tag episode-tag" :href="animeUnitHref(unit,'music')" @click="animeLink($event,$event.currentTarget.href)">{{ unit.label }}</a></template></div></div></ui-disclosure></template>
                         </div>
                     </section>
                     <section v-if="animeSection==='staff'" class="entity-section">
-                        <div class="archive-toolbar compact"><label class="ui-search anime-staff-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeStaffQuery" aria-label="查找姓名、职务或机构" placeholder="查找姓名、职务或机构" @input="setAnimeSection('staff')"><button v-if="animeStaffQuery" type="button" @click.prevent="animeStaffQuery='';setAnimeSection('staff')" aria-label="清空搜索">×</button></label><button v-if="animeStaffGroups.length || animeStaffAggregateGroups.length" type="button" class="horse-link-chip" @click="toggleAnimeStaffAll">{{ animeStaffAllOpen?'收起全部':'展开全部' }}</button></div>
-                        <div v-if="animeStaffGroups.length" class="anime-credit-ledger ui-disclosure-list"><ui-disclosure v-for="group in animeStaffGroups" :key="group.key" class="anime-staff-disclosure" :open="animeStaffGroupOpen(group)" @toggle="toggleAnimeStaffGroup(group)"><template #title><span v-if="group.group" class="credit-role-tag">{{ group.group }}</span><b>{{ group.role }}</b></template><template #meta>{{ group.count }}</template><staff-credit-list :credits="group.credits"></staff-credit-list></ui-disclosure></div>
+                        <div class="archive-toolbar compact"><label class="ui-search anime-staff-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="animeStaffQuery" aria-label="查找姓名、职务或机构" placeholder="查找姓名、职务或机构" @input="setAnimeSection('staff')"><button v-if="animeStaffQuery" type="button" @click.prevent="animeStaffQuery='';setAnimeSection('staff')" aria-label="清空搜索">×</button></label></div>
+                        <dl v-if="animeStaffGroups.length" class="anime-credit-ledger staff-role-ledger"><div v-for="group in animeStaffGroups" :key="group.key"><dt><small v-if="group.group">{{ group.group }}</small>{{ group.role }}</dt><dd><staff-credit-list :credits="group.credits"></staff-credit-list></dd></div></dl>
                         <div v-else-if="animeStaffQuery && !animeStaffAggregate.length" class="ui-state compact">没有符合条件的制作人员<button type="button" class="state-retry" @click="animeStaffQuery='';setAnimeSection('staff')">清除搜索</button></div>
-                        <div v-if="!animeUnitDetail && animeStaffAggregate.length" class="anime-credit-ledger ui-disclosure-list"><ui-disclosure v-for="group in animeStaffAggregateGroups" :key="group.key" class="anime-staff-disclosure" :open="animeStaffGroupOpen(group,true)" @toggle="toggleAnimeStaffGroup(group,true)"><template #title><b>{{ group.role }}</b></template><template #meta>{{ group.count }}</template><staff-credit-list :credits="group.rows" participation></staff-credit-list></ui-disclosure></div>
+                        <dl v-if="!animeUnitDetail && animeStaffAggregate.length" class="anime-credit-ledger staff-role-ledger"><div v-for="group in animeStaffAggregateGroups" :key="group.key"><dt>{{ group.role }}</dt><dd><staff-credit-list :credits="group.rows" participation></staff-credit-list></dd></div></dl>
                     </section>
                 </div>
             </article>
@@ -794,21 +797,21 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div class="archive-toolbar" id="staffArchiveTop">
                         <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="staffQuery" aria-label="搜索制作人员姓名或职务" placeholder="搜索制作人员姓名或职务" autocomplete="off"><button v-if="staffQuery" type="button" @click.prevent="staffQuery=''" aria-label="清空搜索">×</button></label>
                         <ui-select v-model="staffSort" label="排序" :options="staffSortOptions"></ui-select>
-                        <span>{{ staffFiltered.length }} 位制作人员</span>
+
                     </div>
                     <div class="creator-catalog">
                         <a v-for="person in staffPaged" :key="person.id" class="creator-catalog-row" :href="staffHref(person)" @click="animeLink($event,staffHref(person))">
-                            <span class="creator-monogram staff-portrait"><img :src="staffPortrait(person)" alt="" loading="lazy" @error="person.photo=''"></span>
+                            <span class="identity-portrait staff-portrait"><img :src="staffPortrait(person)" alt="" loading="lazy" @error="person.photo=''"></span>
                             <span class="creator-catalog-name"><b>{{ person.name }}</b></span>
                             <span class="creator-catalog-roles role-tag-row"><em v-for="role in staffVisibleRoles(person)" :key="role" class="credit-role-tag">{{ role }}</em></span>
-                            <span class="creator-catalog-count">{{ person.work_count }} 部作品</span>
+
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                         <div v-if="!staffFiltered.length" class="ui-state">没有符合条件的制作人员<button type="button" class="state-retry" @click="staffQuery=''">清除搜索</button></div>
                     </div>
-                    <div v-if="staffFiltered.length" class="ui-pager"><span>{{ (staffPage-1)*40+1 }}–{{ Math.min(staffPage*40,staffFiltered.length) }} / {{ staffFiltered.length }}</span><div><button :disabled="staffPage===1" @click="setStaffPage(staffPage-1)">上一页</button><button v-for="page in staffPageList" :key="page" :class="{active:page===staffPage}" :disabled="page==='…'" @click="setStaffPage(page)">{{ page }}</button><button :disabled="staffPage===staffPageCount" @click="setStaffPage(staffPage+1)">下一页</button></div></div>
+                    <div v-if="staffFiltered.length" class="ui-pager"><div><button :disabled="staffPage===1" @click="setStaffPage(staffPage-1)">上一页</button><button v-for="page in staffPageList" :key="page" :class="{active:page===staffPage}" :disabled="page==='…'" @click="setStaffPage(page)">{{ page }}</button><button :disabled="staffPage===staffPageCount" @click="setStaffPage(staffPage+1)">下一页</button></div></div>
                 </template>
-            <article v-else class="entity-detail staff-entity-detail"><div class="entity-hero creator-hero music-archive-hero"><div class="entity-cover"><img :src="staffPortrait(staffDetail)" :alt="staffDetail.name" @error="staffDetail.photo=''"></div><div class="entity-intro"><span class="entity-kind">制作人员</span><h1>{{ staffDetail.name }}</h1><p v-if="staffDisplayAliases.length" class="entity-reading">{{ staffDisplayAliases.join(' / ') }}</p><p v-if="staffDetail.bio">{{ staffDetail.bio }}</p><dl class="entity-meta"><div v-if="staffDetail.birthday"><dt>生日</dt><dd>{{ staffDetail.birthday }}</dd></div><div><dt>参与作品</dt><dd>{{ staffDetail.work_count }} 部</dd></div></dl></div></div><div class="media-content"><section class="entity-section"><anime-participation :works="staffCredits" section="staff"></anime-participation></section></div></article>
+            <article v-else class="entity-detail staff-entity-detail"><div class="entity-hero creator-hero music-archive-hero"><div class="entity-cover"><img :src="staffPortrait(staffDetail)" :alt="staffDetail.name" @error="staffDetail.photo=''"></div><div class="entity-intro"><span class="entity-kind">制作人员</span><h1>{{ staffDetail.name }}</h1><p v-if="staffDisplayAliases.length" class="entity-reading">{{ staffDisplayAliases.join(' / ') }}</p><p v-if="staffDetail.bio">{{ staffDetail.bio }}</p><dl class="entity-meta"><div v-if="staffDetail.birthday"><dt>生日</dt><dd>{{ staffDetail.birthday }}</dd></div></dl></div></div><div class="media-content"><section class="entity-section"><anime-participation :works="staffCredits" section="staff"></anime-participation></section></div></article>
             </template>
         </div>
 
@@ -917,9 +920,9 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <div class="section-toolbar"><span class="credit-role-tag">退役 · 繁育 · 纪念</span></div>
                         <p v-for="(paragraph,index) in horseDetail.retirement" :key="index" class="horse-paragraph">{{ paragraph }}</p>
                     </section>
-                    
-                    
-                    
+
+
+
                 </article>
             </section>
             <section v-else class="entity-section other-section">
