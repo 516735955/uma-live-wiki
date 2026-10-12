@@ -170,9 +170,9 @@
               <i class="creator-monogram">{{ monogram(selected) }}</i>
               <span><b>{{ selected.name }}</b><small>{{ roleText(selected) }}</small></span>
             </header>
-            <button class="creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
+            <button class="horse-link-chip creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
             <div v-if="loading" class="ui-state compact">共同作品加载中</div>
-            <div v-else-if="loadError" class="ui-state compact">{{ loadError }}<button class="creator-profile-link" type="button" @click="choose(selected)">重新加载</button></div>
+            <div v-else-if="loadError" class="ui-state compact">{{ loadError }}<button class="horse-link-chip creator-profile-link" type="button" @click="choose(selected)">重新加载</button></div>
             <ol v-else-if="sharedWorks.length" class="collaboration-timeline">
               <li v-for="work in sharedWorks" :key="work.song_id">
                 <time>{{ work.release_date || '日期待补' }}</time>

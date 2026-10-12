@@ -178,8 +178,7 @@
       'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
       '<script defer src="/uma_tools/pedigree-lab.js"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
-      '<section class="lab-workspace" aria-labelledby="workspace-title">' +
-      '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +
+      '<section class="lab-workspace" aria-label="血统关系">' +
       '<div class="workspace-content"><div class="workspace-body">' +
       '<div class="graph-viewport" id="graph-viewport" aria-label="血统关系图"><div class="graph-stage" id="graph-stage"></div></div>' +
       '</div></div></section></main>' +

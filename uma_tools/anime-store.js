@@ -93,6 +93,8 @@ class AnimeStore {
       const unitIds = new Set(payload.units.map(unit => unit.id));
       payload.relations = displayData(data.relations.filter(row => row.source_type === 'anime_work'
         ? row.source_id === id : unitIds.has(row.source_id)));
+      const relatedWorkIds = new Set(payload.relations.filter(row => row.target_type === 'anime_work').map(row => row.target_id));
+      payload.works.push(...data.works.filter(row => row.id !== id && relatedWorkIds.has(row.id)).map(workSummary));
       payload.watch_resources = displayData(data.watch_resources.filter(row =>
         row.scope.type === 'work' ? row.scope.id === id : unitIds.has(row.scope.id)));
       payload.staff = this.staffByWork.get(id) || [];

@@ -45,7 +45,8 @@
   }
   document.addEventListener('click', function (event) {
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    const element = event.target.closest(selector);
+    const element = event.target.closest(selector) ||
+      event.target.closest('.image-view-trigger')?.querySelector('img');
     if (!element || !element.getAttribute('src') || element.src.includes('placeholder')) return;
     event.preventDefault();
     const gallery = element.closest('.anime-stills');

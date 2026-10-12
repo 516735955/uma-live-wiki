@@ -92,14 +92,14 @@
     },
     emits: ['toggle'],
     template: `
-      <article class="ui-disclosure" :class="{open:open,disabled:disabled}">
+      <article class="ui-disclosure" :class="{open:open,disabled:disabled,'has-leading':!!$slots.leading,'has-meta':!!$slots.meta}">
         <button class="ui-disclosure-summary" type="button" :disabled="disabled" :aria-expanded="open" @click="$emit('toggle')">
           <span v-if="$slots.leading" class="ui-disclosure-leading"><slot name="leading"></slot></span>
           <span class="ui-disclosure-copy"><slot name="title"></slot><small v-if="$slots.subtitle"><slot name="subtitle"></slot></small></span>
           <span v-if="$slots.meta" class="ui-disclosure-meta"><slot name="meta"></slot></span>
           <svg class="ui-disclosure-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5"/></svg>
         </button>
-        <div v-show="open" class="ui-disclosure-detail"><slot></slot></div>
+        <div v-if="open" class="ui-disclosure-detail"><slot></slot></div>
       </article>`
   };
 

@@ -1114,7 +1114,7 @@
     state.lockedItem = null;
     state.lockedKey = '';
     closeSheet();
-    document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
+    workspace.setAttribute('aria-label', currentModel.root.name + '的血统关系');
     backLink.href = characterRoute(state.sample);
     backLink.setAttribute('aria-label', '返回' + currentModel.root.name + '角色页');
     renderLens(currentModel);
@@ -1126,7 +1126,10 @@
     (window.PED_REL || []).forEach(function (node) { byId[node.cid] = node; });
     (window.CHAR_INDEX || []).forEach(function (character) { charById[character.id] = character; });
     if (!byId[state.sample]) {
-      document.getElementById('workspace-title').textContent = '血统关系暂不可用';
+      var message = document.createElement('p');
+      message.className = 'pedigree-empty';
+      message.textContent = '血统关系暂不可用';
+      stage.replaceChildren(message);
       return;
     }
     render();

@@ -671,7 +671,7 @@
         .song-detail-label { color: var(--text-3); font-weight: 600; }
         .song-detail-artist { color: var(--text-2); }
         .song-detail-link { color: var(--brand); text-decoration: none; font-weight: 600; }
-        .song-detail-link:hover { text-decoration: underline; }
+        .song-detail-link:hover { text-decoration: none; }
 
         .song-section { margin-bottom: 24px; }
         .song-section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
@@ -682,7 +682,7 @@
         .song-section-more {
             font-size: 0.88em; color: var(--brand); text-decoration: none; font-weight: 600;
         }
-        .song-section-more:hover { text-decoration: underline; }
+        .song-section-more:hover { text-decoration: none; }
         .song-list { list-style: none; margin: 0; padding: 0; }
         .song-list-item {
             display: flex; align-items: center; gap: 12px; padding: 8px 0;
@@ -760,7 +760,7 @@
             display: block; width: 100%; max-width: 720px; aspect-ratio: 16 / 9;
             height: auto; margin: 12px auto; border: 0; border-radius: 8px;
         }
-        .news-detail-body a { color: var(--brand-dark, #b94c00); text-decoration: underline; }
+        .news-detail-body a { color: var(--brand-dark, #b94c00); text-decoration: none; }
         .news-detail-body span[data-text-custom-color] { color: inherit; }
 
         /* ===== FRIEND LINKS TAB ===== */
@@ -847,7 +847,7 @@
         .fix-agreement { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 7px 14px; }
         .fix-check { display: flex; max-width: 610px; align-items: flex-start; gap: 9px; color: var(--text-2); font-size: .82rem; line-height: 1.6; cursor: pointer; }
         .info-inline-action, .fix-feedback a { border: 0; padding: 0; background: transparent; color: var(--ui-cobalt-deep); font: inherit; font-size: .82rem; font-weight: 800; text-decoration: none; cursor: pointer; }
-        .info-inline-action:hover, .fix-feedback a:hover, .contact-v a:hover, .legal-text a:hover { color: var(--ui-orange-deep); text-decoration: underline; }
+        .info-inline-action:hover, .fix-feedback a:hover, .contact-v a:hover, .legal-text a:hover { color: var(--ui-orange-deep); text-decoration: none; }
         .fix-submit { min-height: 46px; padding: 0 22px; border: 1px solid var(--ui-cobalt-deep); border-radius: 7px; background: var(--ui-cobalt); color: #fff; font: inherit; font-size: .86rem; font-weight: 850; cursor: pointer; transition: background 160ms ease, transform 220ms var(--ui-ease); }
         .fix-submit:hover:not(:disabled) { background: var(--ui-cobalt-deep); transform: translateY(-2px); }
         .fix-submit:disabled { opacity: .55; cursor: not-allowed; }
@@ -1574,17 +1574,6 @@
             background: var(--card);
             box-shadow: 0 7px 18px rgba(49, 87, 237, 0.09);
         }
-        .entity-section-title {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 16px;
-            margin: 0 0 19px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--surface-line);
-        }
-        .entity-section-title h2 { margin: 0; color: var(--navy-3); font-size: 1.2rem; font-weight: 900; letter-spacing: 0.04em; }
-        .entity-section-title span { color: var(--text-2); font-size: 0.78rem; font-weight: 700; }
         .detail-meta { margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--surface-line); }
         .detail-meta > div { border-top: 1px solid var(--surface-line); }
         .detail-meta > div:nth-child(-n+2) { border-top: 0; }
@@ -2290,7 +2279,7 @@ body.subpage-bg {
 .news-row { grid-template-columns: 110px 82px minmax(0,1fr); }
 .news-detail-date { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .news-detail-date a { color: var(--ui-orange-deep); font-size: .82rem; font-weight: 800; text-decoration: none; }
-.news-detail-date a:hover { text-decoration: underline; }
+.news-detail-date a:hover { text-decoration: none; }
 .catalog-subline,
 .secondary-line { display: block; margin-top: 4px; color: #687086; font-size: .78rem; font-weight: 550; line-height: 1.45; overflow-wrap: anywhere; }
 
@@ -2478,22 +2467,6 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
 .relation-release .album-inline { min-width: 0; }
 .relation-release .album-inline img { width: 44px; height: 44px; }
 .relation-release .performer-chip-list { min-width: 0; }
-.relation-song-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 0;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    background: transparent;
-    color: var(--ui-orange-deep);
-    font: inherit;
-    font-size: .78rem;
-    font-weight: 850;
-    cursor: pointer;
-}
-.relation-song-link span { transition: transform 220ms var(--ui-ease); }
-.relation-song-link:hover span { transform: translateX(4px); }
 
 /* Music credits, lyrics, and creator relations share the archive's row language. */
 .song-credit-list { border-top: 2px solid var(--ui-cobalt-deep); }
@@ -2657,7 +2630,7 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
 .audio-dock-vocalists > span { flex: 0 0 auto; padding: 0; border: 0; color: inherit; background: transparent; font: inherit; font-size: .75rem; }
 .audio-dock-vocalists button { text-underline-offset: 3px; cursor: pointer; transition: color 160ms ease,transform 220ms var(--ui-ease); }
 .audio-dock-vocalists > :not(:last-child)::after { content: ' / '; color: rgba(255,255,255,.38); white-space: pre; }
-.audio-dock-vocalists button:hover { color: #ffd09b; text-decoration: underline; transform: translateY(-1px); }
+.audio-dock-vocalists button:hover { color: #ffd09b; text-decoration: none; transform: translateY(-1px); }
 .audio-dock-artist { display: inline-block; color: rgba(255,255,255,.78); font-size: .75rem; white-space: nowrap; }
 .audio-dock-controls { display: flex; align-items: center; justify-content: center; gap: 2px; }
 .audio-control,
@@ -3536,7 +3509,7 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
 .horse-pedigree-links a,
 .horse-sources a { color: var(--ui-cobalt-deep); font-size: .84rem; font-weight: 750; text-decoration: none; }
 .horse-pedigree-links a:hover,
-.horse-sources a:hover { text-decoration: underline; }
+.horse-sources a:hover { text-decoration: none; }
 .horse-sources { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .horse-back {
     margin: 4px 0 16px;

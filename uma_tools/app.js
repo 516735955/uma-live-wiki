@@ -163,7 +163,6 @@ const umaApp = createApp({
     const animeSort = ref('newest');
     const animeFormat = ref('all');
     const animeStatus = ref('all');
-    const animeYear = ref('all');
     const animeSection = ref('episodes');
     const animeEdition = ref('film');
     const animeStillUnit = ref('');
@@ -538,8 +537,11 @@ const umaApp = createApp({
     function animeWorkYears(work) {
       return work && work.start_date ? [String(work.start_date).slice(0,4)] : [];
     }
-    const animeYears = computed(() => Array.from(new Set((animeCatalog.value.works || []).flatMap(animeWorkYears))).sort().reverse());
-    const animeFormatOptions = computed(() => ['tv','movie','web','short','web_short','special']
+    function animeArtwork(work, film = false) {
+      const url = film ? work.film_cover : work.cover;
+      return url && url.startsWith('/uma_tools/') ? routes.query(url, {v:animeCatalog.value.build_id}) : url;
+    }
+    const animeFormatOptions = computed(() => ['tv','movie','web','short','special']
       .filter(format => (animeCatalog.value.works || []).some(work => animeWorkFormats(work).includes(format))));
     const animeStatusOptions = computed(() => ['airing','completed']
       .filter(status => (animeCatalog.value.works || []).some(work => work.status === status)));
@@ -573,7 +575,7 @@ const umaApp = createApp({
         episodes: matched.length && animeFormat.value !== 'movie' ? animeQuery.value : ''
       });
     }
-    function clearAnimeFilters() { animeQuery.value = ''; animeFormat.value = 'all'; animeStatus.value = 'all'; animeYear.value = 'all'; }
+    function clearAnimeFilters() { animeQuery.value = ''; animeFormat.value = 'all'; animeStatus.value = 'all'; }
     function animeWorkMatchesQuery(work, query) {
       if (!query) return true;
       return animeWorkTitleMatches(work, query) || (animeCatalog.value.units || [])
@@ -584,7 +586,6 @@ const umaApp = createApp({
       const rows = (animeCatalog.value.works || []).filter(function (work) {
         if (animeFormat.value !== 'all' && !animeWorkFormats(work).includes(animeFormat.value)) return false;
         if (animeStatus.value !== 'all' && work.status !== animeStatus.value) return false;
-        if (animeYear.value !== 'all' && !animeWorkYears(work).includes(animeYear.value)) return false;
         if (!query) return true;
         return animeWorkMatchesQuery(work, query);
       });
@@ -594,7 +595,7 @@ const umaApp = createApp({
         return animeSort.value === 'oldest' ? aDate.localeCompare(bDate) : bDate.localeCompare(aDate);
       });
     });
-    watch([animeQuery,animeFormat,animeStatus,animeYear,animeSort], () => {
+    watch([animeQuery,animeFormat,animeStatus,animeSort], () => {
       if (routeReady.value && activeTab.value === 'database' && dbView.value === 'anime' && !animeDetail.value) pushUrl(true);
     });
     const animeWorkUnits = computed(function () {
@@ -643,11 +644,13 @@ const umaApp = createApp({
         return (score[a.authority] ?? 9) - (score[b.authority] ?? 9);
       });
     });
+    const animeDisplayStaff = computed(() => (animeCatalog.value.staff || []).flatMap(entry =>
+      entry.roles.map(role => ({...entry, role}))));
     const animeCurrentStaff = computed(function () {
       const workId = animeDetail.value && animeDetail.value.id;
       const unitId = animeContentUnit.value && animeContentUnit.value.id;
       const seen = new Set();
-      return (animeCatalog.value.staff || []).filter(function (entry) {
+      return animeDisplayStaff.value.filter(function (entry) {
         if (entry.work_id !== workId || (workId === 'anime-rttt' && !animeRowMatchesEdition(entry, animeEdition.value))) return false;
         if (!((entry.unit_id || null) === (unitId || null) || (animeSingle.value && !entry.unit_id))) return false;
         const key = [entry.role,entry.group || '',entry.person_id || entry.organization || entry.name,(entry.institutions || []).join('|')].join(':');
@@ -711,16 +714,8 @@ const umaApp = createApp({
     }
     const animeLeadRoles = ['导演', '副导演', '助理导演', '系列构成', '脚本', '分镜', '动画演出', '角色设计', '总作画监督', '作画监督'];
     function animeStaffRoleRank(role) {
-      const roles = role.split('／');
-      const index = animeLeadRoles.findIndex(name => roles.includes(name));
+      const index = animeLeadRoles.indexOf(role);
       return index < 0 ? animeLeadRoles.length : index;
-    }
-    function animeStaffRoleTokens(role) {
-      return new Set(String(role || '').split('／').filter(Boolean));
-    }
-    function animeStaffRoleContains(a, b) {
-      const left = animeStaffRoleTokens(a), right = animeStaffRoleTokens(b);
-      return [...left].every(token => right.has(token)) || [...right].every(token => left.has(token));
     }
     function animeStaffIdentity(entry) {
       return entry.person_id || entry.organization || entry.name || '';
@@ -733,36 +728,7 @@ const umaApp = createApp({
     }
     function animeStaffDisplayEntry(entry) {
       const copy = {...entry, institutions:[...(entry.institutions || [])]};
-      if (copy.group === '动作捕捉' && copy.role === '录音室助理') copy.role = '动作捕捉工作室助理';
-      if (copy.group === '动作捕捉' && copy.role === '录音室经理') copy.role = '动作捕捉工作室经理';
       return copy;
-    }
-    function animeStaffMoveNarrowEntries(groups, listKey) {
-      groups.forEach(narrow => {
-        const narrowRole = narrow.rawRole || narrow.role;
-        const candidates = groups.filter(broad => broad !== narrow && broad.group === narrow.group &&
-          animeStaffRoleTokens(broad.rawRole || broad.role).size > animeStaffRoleTokens(narrowRole).size &&
-          animeStaffRoleContains(broad.rawRole || broad.role, narrowRole));
-        const kept = [];
-        narrow[listKey].forEach(item => {
-          const entry = listKey === 'credits' ? item : item.entry;
-          const covering = candidates.flatMap(candidate => candidate[listKey]).filter(candidateItem => {
-            const candidateEntry = listKey === 'credits' ? candidateItem : candidateItem.entry;
-            return animeStaffSamePersonAndInstitution(candidateEntry, entry);
-          });
-          if (!covering.length) {
-            kept.push(item);
-            return;
-          }
-          if (listKey === 'rows') {
-            const coveredUnits = new Set(covering.flatMap(row => row.units).map(unit => unit.id));
-            const units = item.units.filter(unit => !coveredUnits.has(unit.id)).sort((a,b) => a.number-b.number);
-            if (units.length) kept.push({...item,units});
-          }
-        });
-        narrow[listKey] = kept;
-      });
-      return groups.filter(group => group[listKey].length);
     }
     function animeStaffSectionRank(group) {
       if (!group) return 0;
@@ -783,14 +749,14 @@ const umaApp = createApp({
         if (!group) { group = {key: (displayEntry.group || '') + ':' + displayEntry.role,role:displayEntry.role,group:displayEntry.group || '',credits:[]}; groups.push(group); }
         if (!group.credits.some(credit => animeStaffSamePersonAndInstitution(credit, displayEntry))) group.credits.push(displayEntry);
       });
-      return animeStaffMoveNarrowEntries(groups, 'credits').sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
+      return groups.sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
         || animeStaffRoleRank(a.role)-animeStaffRoleRank(b.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.credits)}));
     });
     const animeStaffAggregate = computed(() => {
       if (!animeDetail.value || animeUnitDetail.value || animeSingle.value) return [];
       const rows = [], q = animeStaffQuery.value.trim().toLowerCase();
-      (animeCatalog.value.staff || []).filter(entry => entry.work_id === animeDetail.value.id && entry.unit_id && (entry.person_id || entry.organization)).forEach(entry => {
+      animeDisplayStaff.value.filter(entry => entry.work_id === animeDetail.value.id && entry.unit_id && (entry.person_id || entry.organization)).forEach(entry => {
         const key = [entry.person_id || entry.organization,entry.group || '',entry.role,...(entry.institutions || [])].join(':');
         let row = rows.find(item => item.key === key);
         if (!row) { row = {key,entry,units:[]}; rows.push(row); }
@@ -811,7 +777,7 @@ const umaApp = createApp({
         }
         if (!group.rows.some(item => animeStaffSamePersonAndInstitution(item.entry, entry))) group.rows.push({...row,entry,units:[...row.units]});
       });
-      return animeStaffMoveNarrowEntries(Array.from(groups.values()), 'rows').sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
+      return Array.from(groups.values()).sort((a,b) => animeStaffSectionRank(a.group)-animeStaffSectionRank(b.group)
         || animeStaffRoleRank(a.rows[0].entry.role)-animeStaffRoleRank(b.rows[0].entry.role))
         .map(group => ({...group,count:window.UmaAnimeStaff.countLabel(group.rows,row=>row.entry)}));
     });
@@ -894,7 +860,7 @@ const umaApp = createApp({
     const creatorAnimeStaff = computed(() => {
       if (!creatorDetail.value) return [];
       const ids = new Set((animeCatalog.value.people || []).filter(p => p.creator_id === creatorDetail.value.id).map(p => p.id));
-      return (animeCatalog.value.staff || []).filter(entry => ids.has(entry.person_id)).map(entry => ({entry,work:findAnimeWork(entry.work_id),unit:findAnimeUnit(entry.unit_id)}));
+      return animeDisplayStaff.value.filter(entry => ids.has(entry.person_id)).map(entry => ({entry,work:findAnimeWork(entry.work_id),unit:findAnimeUnit(entry.unit_id)}));
     });
     const animeCurrentCast = computed(() => {
       let rows = animeCurrentRelations.value.filter(row => row.relation_type === 'credited_cast' || row.target_type === 'character');
@@ -904,16 +870,6 @@ const umaApp = createApp({
       }
       const seen = new Set();
       return rows.filter(row => {const key = row.target_type+':'+row.target_id+':'+row.voice_actor_id+':'+(row.role_name || ''); if (seen.has(key)) return false; seen.add(key); return true;});
-    });
-    const animeCastHorses = computed(() => {
-      const rows = [], seen = new Set();
-      animeCurrentCast.value.filter(row => row.target_type === 'character').forEach(row => {
-        const horse = horseForCharacter(row.target_id);
-        if (horse && !seen.has(horse.id)) {
-          seen.add(horse.id); rows.push({horse,characterId:row.target_id});
-        }
-      });
-      return rows;
     });
     function groupAnimeParticipation(rows) {
       const works = new Map();
@@ -931,14 +887,20 @@ const umaApp = createApp({
         const institutions = row.entry ? row.entry.institutions || [] : [];
         const key = [label,...institutions].join(':');
         let role = group.roles.find(role => role.key === key);
-        if (!role) {role = {key,label,institutions,units:[]}; group.roles.push(role);}
+        if (!role) {role = {key,label,institutions,units:[],editions:[]}; group.roles.push(role);}
         if (row.unit && !['movie','special'].includes(row.work.format) && !role.units.some(unit => unit.id === row.unit.id)) role.units.push(row.unit);
+        if (row.work.id === 'anime-rttt' && !row.unit) {
+          const editions = animeRowEditions(row.entry || row.relation);
+          editions.forEach(edition => {
+            if (!role.editions.includes(edition)) role.editions.push(edition);
+          });
+        }
       });
       return Array.from(works.values()).sort((a,b) => String(a.work.start_date).localeCompare(String(b.work.start_date))).map(group => {
         group.roles.forEach(role => role.units.sort((a,b) => a.number-b.number)); return group;
       });
     }
-    const staffCredits = computed(() => groupAnimeParticipation(staffDetail.value ? (animeCatalog.value.staff || []).filter(entry => entry.person_id === staffDetail.value.id).map(entry => ({entry,work:findAnimeWork(entry.work_id),unit:findAnimeUnit(entry.unit_id)})) : []));
+    const staffCredits = computed(() => groupAnimeParticipation(staffDetail.value ? animeDisplayStaff.value.filter(entry => entry.person_id === staffDetail.value.id).map(entry => ({entry,work:findAnimeWork(entry.work_id),unit:findAnimeUnit(entry.unit_id)})) : []));
     const staffDisplayAliases = computed(() => {
       const person = staffDetail.value;
       if (!person) return [];
@@ -969,16 +931,11 @@ const umaApp = createApp({
       {id:'characters',label:animeUnitDetail.value?'登场角色':'角色',show:animeCurrentCast.value.length},
       {id:'music',label:'音乐',show:animeMusicGroups.value.length || animeMusicCues.value.length},
       {id:'staff',label:'制作人员',show:animeCurrentStaff.value.length || animeStaffAggregate.value.length},
-      {id:'stills',label:'剧照',show:animeStillGroups.value.length},
-      {id:'related',label:'关联资料',show:animeCastHorses.value.length || animeCurrentRelations.value.some(r=>['event','horse','race','anime_work'].includes(r.target_type))}
+      {id:'stills',label:'剧照',show:animeStillGroups.value.length}
     ].filter(tab => tab.show));
-    function animeRelationsFor(targetType) {
-      return animeCurrentRelations.value.filter(function (relation) { return relation.target_type === targetType; });
-    }
     const animeMusicUsageLabels = {album:'原声专辑',op:'片头曲',ed:'片尾曲',theme:'主题曲',insert:'插入曲',winning_live:'胜者舞台',bgm:'背景配乐',other:'其他音乐'};
     function animeMusicUsageKind(kind) {
-      const canonical = {ending:'ed',ending_theme:'ed',opening:'op',opening_theme:'op'}[kind] || kind;
-      return animeMusicUsageLabels[canonical] ? canonical : 'other';
+      return animeMusicUsageLabels[kind] ? kind : 'other';
     }
     function animeMusicUsageLabel(kind) {return animeMusicUsageLabels[animeMusicUsageKind(kind)];}
     const animeMusicGroups = computed(() => {
@@ -1000,8 +957,51 @@ const umaApp = createApp({
     });
     const animeMusicCueGroups = computed(() => [
       {kind:'fanfare',label:'比赛号角'}, {kind:'insert',label:'插入曲'}, {kind:'bgm',label:'背景配乐'}
-    ].map(group => ({...group,rows:animeMusicCues.value.filter(cue=>cue.usage_type===group.kind)}))
+    ].map(group => ({...group,rows:animeMusicCues.value.filter(cue=>!cue.song_id && cue.usage_type===group.kind)}))
       .filter(group=>group.rows.length));
+    const animeUsefulRelations = computed(() => animeCurrentRelations.value.filter(row =>
+      ['event','race','anime_work'].includes(row.target_type)));
+    function appearanceSessionLabel(event) {
+      const label = String(event.session_label || '').trim();
+      return label && !['本公演','本期节目'].includes(label) &&
+        !String(event.title || '').toLowerCase().includes(label.toLowerCase()) ? label : '';
+    }
+    const animeMusicItems = computed(() => {
+      const items = new Map();
+      animeMusicGroups.value.forEach(group => group.rows.forEach(relation => {
+        const key = relation.target_type + ':' + relation.target_id;
+        if (!items.has(key)) items.set(key, {key, relation, usages:[], relations:[]});
+        const item = items.get(key);
+        if (!item.usages.includes(group.label)) item.usages.push(group.label);
+        item.relations.push(relation);
+      }));
+      animeMusicCues.value.filter(cue => cue.song_id).forEach(cue => {
+        const key = 'song:' + cue.song_id;
+        if (!items.has(key)) items.set(key, {key, relation:{target_type:'song',target_id:cue.song_id},usages:[],relations:[]});
+        const item = items.get(key);
+        if (!item.cues) item.cues = [];
+        item.cues.push(cue);
+        const label = cue.usage_type === 'fanfare' ? '比赛号角' : animeMusicUsageLabel(cue.usage_type);
+        if (!item.usages.includes(label)) item.usages.push(label);
+      });
+      return Array.from(items.values());
+    });
+    function animeMusicVersions(item) {
+      const song = findSong(item.relation.target_id);
+      if (!song) return [];
+      return (song.versions || []).filter(version => item.relations.some(relation =>
+        !relation.version_id || relation.version_id === version.id)).map(version => ({...version,
+          releases: (version.releases || []).filter(release => item.relations.some(relation =>
+            (!relation.version_id || relation.version_id === version.id) &&
+            (!relation.release_id || relation.release_id === release.album_id)))
+        }));
+    }
+    function animeMusicCover(item) {
+      if (item.relation.target_type === 'album') return (findAlbumById(item.relation.target_id) || {}).cover || '';
+      const version = animeMusicVersions(item)[0];
+      return version && version.releases.length ? version.releases[0].cover || '' : (findSong(item.relation.target_id) || {}).cover || '';
+    }
+    function animeMusicSong(item) { return findSong(item.relation.target_id); }
     function relatedAnimeRows(targetType, targetIds) {
       const ids = new Set((Array.isArray(targetIds) ? targetIds : [targetIds]).filter(Boolean));
       if (!ids.size) return [];
@@ -1048,24 +1048,13 @@ const umaApp = createApp({
       return routes.anime(row.work.id, row.unit && row.unit.id);
     }
     function animeFormatLabel(format) {
-      return { tv: '电视动画', movie: '剧场版', short: '短篇动画', web_short: '网络短篇', web: '网络动画', special: '特别动画' }[format] || '动画';
+      return { tv: '电视动画', movie: '剧场版', short: '短篇动画', web: '网络动画', special: '特别动画' }[format] || '动画';
     }
     function animeStatusLabel(status) {
       return { completed: '已完结', airing: '连载中', announced: '待播出' }[status] || status || '状态待补';
     }
-    function animeUnitStatusLabel(status) { return status === 'scheduled' ? '待更新' : '已发布'; }
     function animePlatformLabel(platform) {
       return { youtube: 'YouTube', bilibili: '哔哩哔哩', bahamut: '巴哈姆特动画疯', abema: 'ABEMA', unext: 'U-NEXT', official: '官方网站', official_site: '官方网站' }[platform] || platform;
-    }
-    function animeAuthorityLabel(authority) {
-      return { official: '官方', licensed: '正版发行', community: '民间字幕' }[authority] || authority;
-    }
-    function animeAccessLabel(access) {
-      return { free: '免费观看', membership: '会员观看', rental: '租看', purchase: '购买', mixed: '部分免费' }[access] || access;
-    }
-    function animeRegionLabel(regions) {
-      const labels = { CN: '中国大陆', TW: '中国台湾', HK: '中国香港', MO: '中国澳门', JP: '日本', GLOBAL: '全球', global: '全球' };
-      return (regions || []).map(function (region) { return labels[region] || region; }).join(' / ');
     }
     function animeRelationTargetLabel(relation) {
       if (!relation) return '';
@@ -1090,10 +1079,6 @@ const umaApp = createApp({
       }
       return relation.target_id;
     }
-    function animeRelationVoiceLabel(relation) {
-      if (!relation) return '';
-      return relation.voice_actor_id ? 'CV ' + voiceName(relation.voice_actor_id) : '';
-    }
     function animeRelationHref(relation) {
       if (relation.target_type === 'character') return routes.characters(relation.target_id);
       if (relation.target_type === 'song') return routes.query(routes.songs(relation.target_id, 'releases'), {version: relation.version_id, release: relation.release_id});
@@ -1104,13 +1089,6 @@ const umaApp = createApp({
       if (relation.target_type === 'race') return relation.url || '';
       if (relation.target_type === 'album') return routes.albums(relation.target_id);
       return relation.url || '';
-    }
-    function openAnimeRelation(relation) {
-      if (!relation) return;
-      if (relation.target_type === 'character') return openCharacter(relation.target_id);
-      if (relation.target_type === 'song') return openSong(relation.target_id);
-      if (relation.target_type === 'event') return openEvent(relation.target_id);
-      if (relation.target_type === 'anime_work') return openAnimeWork(relation.target_id);
     }
     function openAnimeWork(id) { return navigateTo(routes.anime(id)); }
     function openAnimeUnit(workId, unitId) { return navigateTo(routes.anime(workId, unitId)); }
@@ -1468,7 +1446,7 @@ const umaApp = createApp({
       return [];
     });
     function setCharSection(section) {
-      if (['profile', 'pedigree', 'songs', 'appearances'].indexOf(section) === -1) return;
+      if (['profile', 'pedigree', 'songs', 'anime', 'events'].indexOf(section) === -1) return;
       if (section === 'pedigree' && !charHasPedigree.value) section = 'profile';
       charSection.value = section;
       pushUrl(true);
@@ -1477,15 +1455,17 @@ const umaApp = createApp({
           Vue.nextTick(renderCharBlood);
         });
       }
-      if ((section === 'songs' || section === 'appearances') && charDetail.value) {
+      if (section === 'anime') loadAnimeCatalogOptional();
+      if ((section === 'songs' || section === 'events') && charDetail.value) {
         loadRelationshipData('character', charDetail.value.id);
       }
     }
     function setVoiceSection(section) {
-      if (['profile', 'songs', 'appearances'].indexOf(section) === -1) return;
+      if (['profile', 'songs', 'anime', 'events'].indexOf(section) === -1) return;
       voiceSection.value = section;
       pushUrl(true);
-      if ((section === 'songs' || section === 'appearances') && voiceDetail.value) {
+      if (section === 'anime') loadAnimeCatalogOptional();
+      if ((section === 'songs' || section === 'events') && voiceDetail.value) {
         loadRelationshipData('voice_actor', voiceDetail.value.id);
       }
     }
@@ -2415,7 +2395,7 @@ const umaApp = createApp({
             if (animeDetail.value) {
               path = routes.query(routes.anime(animeDetail.value.id, animeUnitDetail.value && animeUnitDetail.value.id), { section: animeSection.value, staff: animeStaffQuery.value, edition:animeDetail.value.id==='anime-rttt'?animeEdition.value:'', still:animeStillUnit.value, episodes:animeEpisodeQuery.value });
             } else {
-            path = routes.query(routes.anime(), { q: animeQuery.value, format: animeFormat.value, status: animeStatus.value, year: animeYear.value, sort: animeSort.value === 'newest' ? '' : animeSort.value });
+            path = routes.query(routes.anime(), { q: animeQuery.value, format: animeFormat.value, status: animeStatus.value, sort: animeSort.value === 'newest' ? '' : animeSort.value });
             }
           } else if (dbView.value === 'staff') {
             path = routes.query(routes.staff(staffDetail.value && staffDetail.value.id), { q: staffDetail.value ? '' : staffQuery.value, page: staffDetail.value ? '' : staffPage.value, sort: staffDetail.value || staffSort.value === 'works' ? '' : staffSort.value });
@@ -2460,6 +2440,8 @@ const umaApp = createApp({
       pendingEntitySource = false;
     }
     function syncFromUrl() {
+      const canonicalPath = routes.resolve(currentUrlPath());
+      if (canonicalPath !== currentUrlPath()) history.replaceState(history.state, '', canonicalPath);
       navigationError.value = '';
       entityRequestRevision += 1;
       restoringRoute = true;
@@ -2576,7 +2558,7 @@ const umaApp = createApp({
         const requestedWork = seg[2] ? decodeURIComponent(seg[2]) : '';
         animeEdition.value = url.searchParams.get('edition') === 'web' ? 'web' : 'film';
         animeStillUnit.value = url.searchParams.get('still') || '';
-        animeSection.value = ['episodes','characters','music','staff','related','stills'].includes(url.searchParams.get('section')) ? url.searchParams.get('section') : (seg[4] ? 'characters' : 'episodes');
+        animeSection.value = ['episodes','characters','music','staff','stills'].includes(url.searchParams.get('section')) ? url.searchParams.get('section') : (seg[4] ? 'characters' : 'episodes');
         animeStaffQuery.value = url.searchParams.get('staff') || '';
         animeEpisodeQuery.value = url.searchParams.get('episodes') || '';
         if (requestedWork) {
@@ -2596,9 +2578,8 @@ const umaApp = createApp({
           if ((animeCatalog.value.works || []).length && (!animeDetail.value || (seg[4] && !animeSingle.value && (!animeUnitDetail.value || animeUnitDetail.value.work_id !== requestedWork)))) reject();
         } else {
           animeQuery.value = url.searchParams.get('q') || '';
-          animeFormat.value = ['tv', 'movie', 'short', 'web_short', 'web', 'special'].indexOf(url.searchParams.get('format')) >= 0 ? url.searchParams.get('format') : 'all';
+          animeFormat.value = ['tv', 'movie', 'short', 'web', 'special'].indexOf(url.searchParams.get('format')) >= 0 ? url.searchParams.get('format') : 'all';
           animeStatus.value = ['completed', 'airing', 'announced'].indexOf(url.searchParams.get('status')) >= 0 ? url.searchParams.get('status') : 'all';
-          animeYear.value = /^20\d{2}$/.test(url.searchParams.get('year') || '') ? url.searchParams.get('year') : 'all';
           animeSort.value = ['oldest','name'].includes(url.searchParams.get('sort')) ? url.searchParams.get('sort') : 'newest';
         }
       } else if (first === 'database' && seg[1] === 'staff' && seg.length <= 3) {
@@ -3766,20 +3747,23 @@ const umaApp = createApp({
       horseUrlForCharacter, openHorseForCharacter,
       voiceProfiles, voiceLoading, voiceError, voiceDetail, voiceSection, setVoiceSection, voiceAppearance, voicePastByYear, voiceHistoryQuery, voiceHistoryKind, voiceFieldLabel, openVa, openVoice, openVoiceByName, openCharFromVoice, appearanceIsLoading, appearanceError, retryAppearance, LANG_PREFIX,
       pedigreeStatus, pedigreeError, retryPedigree,
-      animeCatalog, animeLoading, animeError, animeDetail, animeUnitDetail, animeView, animeQuery, animeEpisodeQuery, animeSort, animeSortOptions, animeFormat, animeStatus, animeYear, animeYears, animeFormatOptions, animeStatusOptions, animeFiltered, animeWorkHref, animeMatchedUnits, clearAnimeFilters,
-      animeWorkUnits, animeWorkFormats, animeWorkYears, animeCurrentRelations, animeCurrentWatch, animeCurrentStaff, animeRelationsFor, animeFormatLabel, animeStatusLabel, animeUnitStatusLabel,
-      animePlatformLabel, animeAuthorityLabel, animeAccessLabel, animeRegionLabel, animeRelationTargetLabel, animeRelationVoiceLabel, animeRelationHref, openAnimeRelation,
+      animeCatalog, animeLoading, animeError, animeDetail, animeUnitDetail, animeView, animeQuery, animeEpisodeQuery, animeSort, animeSortOptions, animeFormat, animeStatus, animeFormatOptions, animeStatusOptions, animeFiltered, animeWorkHref, animeArtwork, animeMatchedUnits, clearAnimeFilters,
+      animeWorkUnits, animeWorkFormats, animeWorkYears, animeCurrentRelations, animeCurrentWatch, animeCurrentStaff, animeFormatLabel, animeStatusLabel,
+      animePlatformLabel, animeRelationTargetLabel, animeRelationHref,
       characterAnimeRelations, voiceAnimeRelations, songAnimeRelations, albumAnimeRelations, eventAnimeRelations, animeRelationContext, relatedAnimeHref,
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref, animeUnitHref,
       animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, animeStaffGroupOpen, toggleAnimeStaffGroup, animeStaffAllOpen, toggleAnimeStaffAll, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
-      staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, animeCastHorses, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups,
+      staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups, animeUsefulRelations, appearanceSessionLabel, animeMusicItems, animeMusicVersions, animeMusicCover, animeMusicSong,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,
       historyKindOptions, albumSortOptions, fixTitleOptions,
       backTopVisible, updateBackTop, backToTop, bindAudio
     };
+  },
+  provide() {
+    return { animeArtwork: this.animeArtwork, animePeople: () => this.animeCatalog.people };
   },
   mounted() {
     const boot = document.getElementById('app-boot');
@@ -3808,22 +3792,36 @@ umaApp.component('ui-disclosure', window.UmaUi.UiDisclosure);
 umaApp.component('entity-actions', window.UmaUi.EntityActions);
 umaApp.component('creator-network', window.UmaCreatorNetwork.CreatorNetwork);
 umaApp.component('audio-dock', window.UmaUi.AudioDock);
+umaApp.component('platform-mark', {
+  props: {platform: String},
+  // Brand paths: Simple Icons (CC0), icons/bilibili.svg and icons/youtube.svg.
+  data() { return {paths:{
+    youtube:'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
+    bilibili:'M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z'
+  }};},
+  template:'<svg class="platform-mark" viewBox="0 0 24 24" aria-hidden="true"><path v-if="paths[platform]" :d="paths[platform]" fill="currentColor"/><g v-else fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><template v-if="platform===\'official\' || platform===\'official_site\'"><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></template><path v-else d="m10 8 6 4-6 4Z"/></g></svg>'
+});
 umaApp.component('anime-participation', {
+  inject: ['animeArtwork'],
   props: {works:{type:Array,default:()=>[]},section:{type:String,default:'characters'}},
   methods: {
     href(work,unit,group) {
       const units = group ? group.roles.flatMap(role=>role.units) : [];
-      const web = unit ? unit.unit_type !== 'movie' : units.length && units.every(item=>item.unit_type!=='movie');
+      const film = group && group.roles.some(role => role.editions.includes('film'));
+      const web = unit ? unit.unit_type !== 'movie' : !film && (units.length || group && group.roles.some(role=>role.editions.includes('web')));
       const edition = work.id === 'anime-rttt' ? (web ? 'web' : 'film') : '';
       return routes.query(routes.anime(work.id,unit && !['movie','special'].includes(unit.unit_type) && unit.id),{section:this.section,edition});
     },
+    editionHref(work,edition) {return routes.query(routes.anime(work.id),{section:this.section,edition});},
+    artwork(group) {return this.animeArtwork(group.work,group.work.id==='anime-rttt' && group.roles.some(role=>role.editions.includes('film')));},
     follow(event,path) {if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
   },
-  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="group.work.cover" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><dl class="credit-ledger"><div v-for="role in group.roles" :key="role.key"><dt>{{role.label}}</dt><dd class="role-tag-row"><em v-for="institution in role.institutions" :key="institution" class="credit-role-tag">{{institution}}</em><a v-for="unit in role.units" :key="unit.id" class="credit-role-tag episode-tag" :href="href(group.work,unit)" @click="follow($event,href(group.work,unit))">{{unit.label}}</a></dd></div></dl></article></div>`
+  template: `<div class="anime-participation"><article v-for="group in works" :key="group.work.id" class="anime-participation-work"><a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))"><img :src="artwork(group)" alt="" loading="lazy"><b>{{group.work.title_zh}}</b><span aria-hidden="true">→</span></a><dl class="credit-ledger"><div v-for="role in group.roles" :key="role.key"><dt>{{role.label}}</dt><dd class="role-tag-row"><em v-for="institution in role.institutions" :key="institution" class="credit-role-tag">{{institution}}</em><a v-for="edition in role.editions" :key="edition" class="credit-role-tag episode-tag" :href="editionHref(group.work,edition)" @click="follow($event,editionHref(group.work,edition))">{{edition==='film'?'剧场版':'网络版'}}</a><a v-for="unit in role.units" :key="unit.id" class="credit-role-tag episode-tag" :href="href(group.work,unit)" @click="follow($event,href(group.work,unit))">{{unit.label}}</a></dd></div></dl></article></div>`
 });
 umaApp.component('staff-credit-list', {
+  inject: ['animePeople'],
   props:{credits:{type:Array,default:()=>[]},participation:{type:Boolean,default:false}},
-  computed:{groups(){
+  computed:{peopleById(){ return new Map(this.animePeople().map(person => [person.id, person])); },groups(){
     const groups = window.UmaAnimeStaff.groupInstitutions(this.credits,row=>this.entry(row));
     if (this.participation) return groups;
     const compact = [];
@@ -3837,8 +3835,8 @@ umaApp.component('staff-credit-list', {
   }},
   methods:{
     entry(row){return this.participation ? row.entry : row;},
-    name(entry){return ((window.__uma_app.animeCatalog.people || []).find(p=>p.id===entry.person_id)||{}).name || entry.name;},
-    href(entry){const p=(window.__uma_app.animeCatalog.people || []).find(p=>p.id===entry.person_id);return p ? (p.creator_id?routes.creators(p.creator_id):routes.staff(p.id)):'';},
+    name(entry){return (this.peopleById.get(entry.person_id)||{}).name || entry.name;},
+    href(entry){const p=this.peopleById.get(entry.person_id);return p ? (p.creator_id?routes.creators(p.creator_id):routes.staff(p.id)):'';},
     unitHref(unit){return routes.query(routes.anime(unit.work_id,unit.id),{section:'staff',edition:unit.work_id==='anime-rttt'?'web':''});},
     follow(event,path){if(event.button!==0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();window.umaNavigate(path);}
   },

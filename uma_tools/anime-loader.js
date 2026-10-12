@@ -39,7 +39,8 @@
         .then(async data => {
           if (!data || !data.build_id || data.scope !== scope ||
             !fields.every(field => Array.isArray(data[field])) ||
-            !data.staff.every(row => Number.isInteger(row._row))) throw new Error('Invalid anime response');
+            !data.staff.every(row => Number.isInteger(row._row) && Array.isArray(row.roles) &&
+              row.roles.length && row.roles.every(role => typeof role === 'string' && role.length))) throw new Error('Invalid anime response');
           if (started !== revision && data.build_id !== buildId) {
             if (retry) throw new Error('Anime data changed during loading');
             if (pending.get(key) === promise) pending.delete(key);
