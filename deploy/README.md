@@ -47,6 +47,8 @@ python3 uma_tools/sync_knowledge.py --force --only characters pedigree-source pe
 
 Python 依赖为 Pillow、beautifulsoup4 与 openpyxl；发布脚本会检查并安装。普通本地预览仍使用 `--no-crawl`，不会后台修改源数据。
 
+Google 歌单表在服务器不可达时，读取已有 GitHub `sheet-sync` 工作流发布到 main 的资料；直连 GitHub 不可达时使用同仓库的 CDN 副本。备用入口同样只补唯一匹配、出演角色映射一致的空歌单，不替换线上已有歌单、日期或名单。
+
 ## 验证
 
 ```bash

@@ -3,7 +3,7 @@
 import copy
 import unittest
 
-from auto_setlists import compare
+from auto_setlists import compare, fill_from_published_catalog, song_table
 
 
 CAST = '<div class="cast-line">Machico（东海帝王）、大橋彩香（伏特加）</div>'
@@ -26,6 +26,23 @@ def sheet(songs=None):
 
 
 class SheetPublicationTests(unittest.TestCase):
+    def test_github_fallback_only_fills_matching_empty_tables(self):
+        table = song_table(sheet()[0], CAST)
+        source = catalog()
+        result = fill_from_published_catalog(catalog(table), source)
+        self.assertEqual(len(result['filled']), 1)
+        self.assertEqual(source['other']['groups'][0]['subs'][0]['days'][0]['table'], table)
+        existing = catalog('<table>human revision</table>')
+        self.assertEqual(fill_from_published_catalog(catalog(table), existing)['filled'], [])
+        self.assertEqual(existing['other']['groups'][0]['subs'][0]['days'][0]['table'], '<table>human revision</table>')
+
+    def test_github_fallback_requires_unique_identity_and_identical_cast(self):
+        table = song_table(sheet()[0], CAST)
+        self.assertEqual(fill_from_published_catalog(catalog(table, duplicate=True), catalog())['filled'], [])
+        published = catalog(table)
+        published['other']['groups'][0]['subs'][0]['cast'] = 'other cast'
+        self.assertEqual(fill_from_published_catalog(published, catalog())['filled'], [])
+
     def test_only_unique_blank_setlist_is_filled(self):
         source = catalog()
         report = compare(sheet(), source)

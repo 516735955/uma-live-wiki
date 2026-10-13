@@ -16,6 +16,7 @@ from pathlib import Path
 import re
 import tempfile
 import urllib.request
+import urllib.error
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -24,6 +25,10 @@ REPORT = ROOT / "data" / "events" / "sheet_apply_report.json"
 SHEET_URL = (
     "https://docs.google.com/spreadsheets/d/"
     "1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/export?format=xlsx"
+)
+PUBLISHED_URLS = (
+    'https://raw.githubusercontent.com/516735955/uma-live-wiki/main/data/live_cat_data.json',
+    'https://cdn.jsdelivr.net/gh/516735955/uma-live-wiki@main/data/live_cat_data.json',
 )
 SONG_RE = re.compile(r"^M\s*(\d+)[.\s]\s*(.*)$", re.I)
 TITLE_SPLIT_RE = re.compile(r"[＠@]", re.I)
@@ -198,6 +203,48 @@ def compare(blocks, catalog):
     return report
 
 
+def fill_from_published_catalog(published, catalog):
+    """Reuse the existing GitHub sheet job without replacing live curated tables."""
+    slots = curated_slots(catalog)
+    report = {'source': 'github-main', 'sheet_blocks': 0, 'filled': [], 'review': [], 'unchanged': 0}
+    incoming = curated_slots(published)
+    for slot in slots:
+        if (slot['day'].get('table') or '').strip():
+            report['unchanged'] += 1
+            continue
+        key = (normalized_title(slot['title']), slot['date'], slot['label'])
+        matches = [row for row in incoming if (normalized_title(row['title']), row['date'], row['label']) == key]
+        local_matches = [row for row in slots if (normalized_title(row['title']), row['date'], row['label']) == key]
+        if len(matches) != 1 or len(local_matches) != 1:
+            continue
+        row = matches[0]
+        table = row['day'].get('table') or ''
+        # Character-marked song rows have meaning only under the same confirmed
+        # performer-to-role mapping. A differing cast is not silently rewritten.
+        cast = confirmed_cast(slot['cast'])
+        if not cast or cast != confirmed_cast(row['cast']) or not table_summary(table):
+            continue
+        slot['day']['table'] = table
+        report['filled'].append({'published_title': slot['title'], 'date': slot['date'], 'session': slot['label'], 'songs': len(table_summary(table))})
+    report['sheet_blocks'] = len(incoming)
+    return report
+
+
+def published_catalog():
+    failure = None
+    for url in PUBLISHED_URLS:
+        try:
+            request = urllib.request.Request(url, headers={'User-Agent': 'uma-live-wiki sheet-sync'})
+            with urllib.request.urlopen(request, timeout=30) as response:
+                value = json.loads(response.read(20 * 1024 * 1024).decode('utf-8'))
+            if not curated_slots(value):
+                raise ValueError('published setlist catalog has no recognizable slots')
+            return value
+        except (OSError, ValueError) as error:
+            failure = error
+    raise RuntimeError('Google sheet and GitHub setlist fallback are unavailable') from failure
+
+
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temporary = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=str(path.parent))
@@ -219,19 +266,25 @@ def main():
     parser.add_argument("--report", type=Path, default=REPORT)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
-    if args.sheet_xlsx:
-        data = args.sheet_xlsx.read_bytes()
-    else:
-        request = urllib.request.Request(SHEET_URL, headers={"User-Agent": "uma-live-wiki sheet-sync"})
-        with urllib.request.urlopen(request, timeout=45) as response:
-            data = response.read()
-    if not data.startswith(b"PK"):
-        raise ValueError("Google sheet response is not an xlsx workbook")
-    blocks = parse_sheet(data)
-    if not blocks:
-        raise ValueError("Google sheet has no setlists; refusing to update curated data")
     catalog = json.loads(args.live_cat.read_text(encoding="utf-8"))
-    report = compare(blocks, catalog)
+    try:
+        if args.sheet_xlsx:
+            data = args.sheet_xlsx.read_bytes()
+        else:
+            request = urllib.request.Request(SHEET_URL, headers={"User-Agent": "uma-live-wiki sheet-sync"})
+            with urllib.request.urlopen(request, timeout=45) as response:
+                data = response.read()
+        if not data.startswith(b"PK"):
+            raise ValueError("Google sheet response is not an xlsx workbook")
+        blocks = parse_sheet(data)
+        if not blocks:
+            raise ValueError("Google sheet has no setlists; refusing to update curated data")
+        report = compare(blocks, catalog)
+    except (OSError, ValueError):
+        if args.sheet_xlsx:
+            raise
+        report = fill_from_published_catalog(published_catalog(), catalog)
+        print('sheet-sync: using the existing GitHub published setlists', flush=True)
     if report["filled"] and not args.dry_run:
         write_json(args.live_cat, catalog)
     write_json(args.report, report)
