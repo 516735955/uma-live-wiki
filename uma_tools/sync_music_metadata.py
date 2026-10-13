@@ -1546,7 +1546,7 @@ def main(argv: list[str] | None = None) -> int:
     if errors:
         print(f"metadata requests failed: {len(errors)} (rerun retries only unresolved network errors)")
         for identifier, error in errors[:5]:
-            print('metadata source unavailable: ' + str(identifier)[:100] + ': ' + str(error).replace('\n', ' ')[:200], file=sys.stderr)
+            print('metadata source unavailable: ' + str(identifier)[:100] + ': ' + str(error).replace('\n', ' ')[:200])
     return 1 if errors else 0
 
 
