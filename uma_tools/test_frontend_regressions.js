@@ -236,11 +236,11 @@ async function main() {
   assert.strictEqual(selection.loadError, '');
   location.href = 'http://localhost/zh-Hans/database/anime?format=movie&year=2023';
   await app.applyCurrentRoute();
-  assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id), ['anime-movie-beginning-new-era','anime-rttt'], 'retired year URLs do not apply hidden filters');
-  assert(app.animeWorkHref(app.animeFiltered.value.find(work => work.id === 'anime-rttt')).includes('edition=film'));
+  assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id), ['anime-movie-beginning-new-era'], 'primary formats are mutually exclusive and retired year URLs do not hide entries');
   location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeFiltered.value.length, 1, 'network format remains available without a year filter');
+  assert(app.animeWorkHref(app.animeFiltered.value[0]).includes('edition=web'), 'the primary network entry opens its network edition');
   location.href = 'http://localhost/zh-Hans/database/anime?format=web_short';
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeFormat.value, 'short');

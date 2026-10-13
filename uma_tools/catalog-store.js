@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const CATALOG_RESPONSE_SCHEMA = 3;
+const CATALOG_RESPONSE_SCHEMA = 4;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -81,7 +81,18 @@ function albumWork(name) {
   if (/STARTING GATE/.test(value)) return 'starting-gate';
   if (/Solo Vocal Tracks/.test(value)) return 'solo-vocal';
   if (/WINNING LIVE/.test(value)) return 'winning-live';
-  return '';
+  return 'other';
+}
+
+function albumType(value) {
+  const type = String(value || '').trim();
+  if (['数字单曲', 'デジタルシングル', 'Digital Single'].includes(type)) return '单曲';
+  return ['专辑', '单曲', '原声带', '精选辑'].includes(type) ? type : '其他';
+}
+
+function releaseYear(value) {
+  const year = String(value || '').slice(0, 4);
+  return /^\d{4}$/.test(year) ? year : 'unknown';
 }
 
 function firstPlayableRelease(song) {
@@ -401,7 +412,7 @@ class CatalogStore {
     const songs = Array.isArray(songsDoc.songs) ? songsDoc.songs : [];
     const creators = Array.isArray(creatorsDoc.creators) ? creatorsDoc.creators : [];
     const voiceActors = Array.isArray(voicesDoc.voice_actors) ? voicesDoc.voice_actors : [];
-    const albumRows = Array.isArray(albums) ? albums : [];
+    const albumRows = Array.isArray(albums) ? albums.map(album => ({...album, type: albumType(album.type)})) : [];
     const characters = JSON.parse(texts[10].replace(/^window\.CHAR_INDEX\s*=\s*/, '').replace(/;\s*$/, ''));
     const charactersById = new Map(characters.map((character) => [character.id, character]));
     const seriesById = new Map((eventsDoc.series || []).map((series) => [series.id, series]));
@@ -507,10 +518,11 @@ class CatalogStore {
       if (query && !row.search.includes(query)) return false;
       if (kind !== 'all' && event.kind !== kind) return false;
       if (mode !== 'all' && event.mode !== mode) return false;
-      if (year !== 'all' && String(event.date || '').slice(0, 4) !== year) return false;
+      if (year !== 'all' && releaseYear(event.date) !== year) return false;
       if (series !== 'all' && (event.series_id || 'unclassified') !== series) return false;
       if (time === 'upcoming' && (!Number.isFinite(eventTime) || eventTime < today.getTime())) return false;
-      if (time === 'past' && Number.isFinite(eventTime) && eventTime >= today.getTime()) return false;
+      if (time === 'past' && (!Number.isFinite(eventTime) || eventTime >= today.getTime())) return false;
+      if (time === 'announced' && Number.isFinite(eventTime)) return false;
       return true;
     });
     rows = rows.slice().sort((a, b) => String(b.data.date || '').localeCompare(String(a.data.date || '')) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
@@ -520,8 +532,10 @@ class CatalogStore {
     const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
     return {
       build_id: store.buildId,
-      series: store.eventsDoc.series || [],
-      years: Array.from(new Set(store.eventRows.map((row) => String(row.data.date || '').slice(0, 4)).filter((value) => /^\d{4}$/.test(value)))).sort().reverse(),
+      series: (store.eventsDoc.series || []).map(series => ({...series,
+        kinds: [...new Set(store.eventRows.filter(row => row.data.series_id === series.id).map(row => row.data.kind))]
+      })),
+      years: Array.from(new Set(store.eventRows.map((row) => releaseYear(row.data.date)))).sort().reverse(),
       items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),
       total,
       page,
@@ -612,7 +626,7 @@ class CatalogStore {
     const store = await this.get();
     const query = normalize(params.get('q'));
     const work = params.get('work') || '';
-    const type = params.get('type') || '';
+    const type = params.get('type') ? albumType(params.get('type')) : '';
     const year = params.get('year') || '';
     const sort = params.get('sort') || 'newest';
     let rows = store.albumRows.filter((row) => {
@@ -620,7 +634,7 @@ class CatalogStore {
       if (query && !album.search_text.includes(query)) return false;
       if (work && album.work !== work) return false;
       if (type && album.type !== type) return false;
-      if (year && String(album.release || '').slice(0, 4) !== year) return false;
+      if (year && releaseYear(album.release) !== year) return false;
       return true;
     });
     rows = rows.slice().sort((a, b) => sort === 'name'
@@ -631,7 +645,7 @@ class CatalogStore {
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
     const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
     const types = Array.from(new Set(store.albums.map((album) => album.type).filter(Boolean)));
-    const years = Array.from(new Set(store.albums.map((album) => String(album.release || '').slice(0, 4)).filter((value) => /^\d{4}$/.test(value)))).sort().reverse();
+    const years = Array.from(new Set(store.albums.map((album) => releaseYear(album.release)))).sort().reverse();
     return {
       build_id: store.buildId,
       items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),

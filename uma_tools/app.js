@@ -247,7 +247,7 @@ const umaApp = createApp({
       { key: 'movie', label: '新時代の扉' }, { key: 'cinderella', label: '芦毛灰姑娘' },
       { key: 'yon', label: '赛马娘四格' }, { key: 'yuru', label: '摇曳马娘' },
       { key: 'starting-gate', label: 'STARTING GATE' }, { key: 'winning-live', label: 'WINNING LIVE' },
-      { key: 'solo-vocal', label: 'Solo Vocal Tracks' }
+      { key: 'solo-vocal', label: 'Solo Vocal Tracks' }, { key:'other', label:'其他作品／独立发行' }
     ];
     const relPage = ref(1);
 
@@ -531,7 +531,7 @@ const umaApp = createApp({
       return (animeCatalog.value.units || []).find(function (unit) { return unit.id === id; }) || null;
     }
     function animeWorkFormats(work) {
-      return work.film_cover ? Array.from(new Set([work.format,'movie'])) : [work.format];
+      return [work.format || 'unknown'];
     }
     function animeWorkYears(work) {
       return work && work.start_date ? [String(work.start_date).slice(0,4)] : [];
@@ -540,9 +540,9 @@ const umaApp = createApp({
       const url = film ? work.film_cover : work.cover;
       return url && url.startsWith('/uma_tools/') ? routes.query(url, {v:animeCatalog.value.build_id}) : url;
     }
-    const animeFormatOptions = computed(() => ['tv','movie','web','short','special']
+    const animeFormatOptions = computed(() => ['tv','movie','web','short','special','unknown']
       .filter(format => (animeCatalog.value.works || []).some(work => animeWorkFormats(work).includes(format))));
-    const animeStatusOptions = computed(() => ['airing','completed']
+    const animeStatusOptions = computed(() => ['airing','completed','announced']
       .filter(status => (animeCatalog.value.works || []).some(work => work.status === status)));
     const animeSortOptions = [
       {value:'newest', label:'最新公开'},
@@ -569,7 +569,7 @@ const umaApp = createApp({
       if (matched.length === 1 && !['movie', 'special'].includes(work.format) &&
         !(work.id === 'anime-rttt' && animeFormat.value === 'movie')) return animeUnitHref(matched[0], 'characters');
       return routes.query(routes.anime(work.id), {
-        edition: work.id === 'anime-rttt' ? (animeFormat.value === 'movie' ? 'film' : animeFormat.value === 'web' || matched.length ? 'web' : '') : '',
+        edition: work.id === 'anime-rttt' ? 'web' : '',
         section: matched.length && animeFormat.value !== 'movie' ? 'episodes' : '',
         episodes: matched.length && animeFormat.value !== 'movie' ? animeQuery.value : ''
       });
@@ -1040,7 +1040,7 @@ const umaApp = createApp({
       return routes.anime(row.work.id, row.unit && row.unit.id);
     }
     function animeFormatLabel(format) {
-      return { tv: '电视动画', movie: '剧场版', short: '短篇动画', web: '网络动画', special: '特别动画' }[format] || '动画';
+      return { tv: '电视动画', movie: '剧场版', short: '短篇动画', web: '网络动画', special: '特别动画', unknown:'待公布' }[format] || '动画';
     }
     function animeStatusLabel(status) {
       return { completed: '已完结', airing: '连载中', announced: '待播出' }[status] || status || '状态待补';
@@ -2504,11 +2504,15 @@ const umaApp = createApp({
         if (requested) return openEvent(requested, seg[3] ? decodeURIComponent(seg[3]) : (url.searchParams.get('session') || ''));
         else {
           eventsQuery.value = url.searchParams.get('q') || '';
-          evTime.value = ['upcoming', 'past'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
+          evTime.value = ['upcoming', 'past', 'announced'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
           evKind.value = ['concert', 'onsite', 'official_program'].indexOf(url.searchParams.get('kind')) >= 0 ? url.searchParams.get('kind') : 'all';
           evMode.value = 'all';
-          evYear.value = /^20\d{2}$/.test(url.searchParams.get('year') || '') ? url.searchParams.get('year') : 'all';
+          evYear.value = /^20\d{2}$/.test(url.searchParams.get('year') || '') || url.searchParams.get('year') === 'unknown' ? url.searchParams.get('year') : 'all';
           evSeries.value = url.searchParams.get('series') || 'all';
+          if (evSeries.value !== 'all' && evKind.value === 'all') {
+            if (evSeries.value === 'unclassified') evSeries.value = 'all';
+            else evKind.value = eventSeriesMap.value[evSeries.value]?.kind || 'all';
+          }
           eventsPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
         }
       } else if (first === 'music' && seg[1] === 'songs' && seg.length <= 4) {
@@ -2538,7 +2542,7 @@ const umaApp = createApp({
         if (!seg[2]) {
           relQuery.value = url.searchParams.get('q') || '';
           relWork.value = url.searchParams.get('work') || '';
-          relFilter.value = url.searchParams.get('type') || '';
+          relFilter.value = url.searchParams.get('type') === '数字单曲' ? '单曲' : url.searchParams.get('type') || '';
           relYear.value = url.searchParams.get('year') || '';
           relSort.value = url.searchParams.get('sort') === 'name' ? 'name' : 'newest';
           relPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
@@ -2590,7 +2594,7 @@ const umaApp = createApp({
           if ((animeCatalog.value.works || []).length && (!animeDetail.value || (seg[4] && !animeSingle.value && (!animeUnitDetail.value || animeUnitDetail.value.work_id !== requestedWork)))) reject();
         } else {
           animeQuery.value = url.searchParams.get('q') || '';
-          animeFormat.value = ['tv', 'movie', 'short', 'web', 'special'].indexOf(url.searchParams.get('format')) >= 0 ? url.searchParams.get('format') : 'all';
+          animeFormat.value = ['tv', 'movie', 'short', 'web', 'special', 'unknown'].indexOf(url.searchParams.get('format')) >= 0 ? url.searchParams.get('format') : 'all';
           animeStatus.value = ['completed', 'airing', 'announced'].indexOf(url.searchParams.get('status')) >= 0 ? url.searchParams.get('status') : 'all';
           animeSort.value = ['oldest','name'].includes(url.searchParams.get('sort')) ? url.searchParams.get('sort') : 'newest';
         }
@@ -2959,7 +2963,7 @@ const umaApp = createApp({
       });
       if (relWork.value) out = out.filter(function (album) { return (album.work || albumWorkOf(album.name)) === relWork.value; });
       if (relFilter.value) out = out.filter(function (a) { return a.type === relFilter.value; });
-      if (relYear.value) out = out.filter(function (a) { return String(a.release).slice(0, 4) === relYear.value; });
+      if (relYear.value) out = out.filter(function (a) { return (/^\d{4}/.test(a.release || '') ? String(a.release).slice(0, 4) : 'unknown') === relYear.value; });
       return out.slice().sort(function (a, b) {
         if (relSort.value === 'name') return String(a.name).localeCompare(String(b.name), 'ja');
         return String(b.release).localeCompare(String(a.release)) || String(a.name).localeCompare(String(b.name), 'ja');
@@ -2978,16 +2982,16 @@ const umaApp = createApp({
       if (/STARTING GATE/.test(value)) return 'starting-gate';
       if (/Solo Vocal Tracks/.test(value)) return 'solo-vocal';
       if (/WINNING LIVE/.test(value)) return 'winning-live';
-      return '';
+      return 'other';
     }
     const relTypeList = computed(function () {
-      return ['专辑', '单曲', '原声带', '精选辑'].filter(function (t) {
+      return ['专辑', '单曲', '原声带', '精选辑', '其他'].filter(function (t) {
         return albums.value.some(function (a) { return a.type === t; });
       });
     });
     const relYearList = computed(function () {
-      const ys = albums.value.map(function (a) { return String(a.release).slice(0, 4); });
-      return Array.from(new Set(ys)).filter(function (y) { return /^\d{4}$/.test(y); }).sort().reverse();
+      const ys = albums.value.map(function (a) { return /^\d{4}/.test(a.release || '') ? String(a.release).slice(0, 4) : 'unknown'; });
+      return Array.from(new Set(ys)).sort().reverse();
     });
     const relFiltered = computed(function () {
       return relAlbums.value.slice();
@@ -3144,22 +3148,23 @@ const umaApp = createApp({
     });
     const eventYears = computed(function () { return eventYearValues.value; });
     const eventYearOptions = computed(function () {
-      return [{ value: 'all', label: '全部' }].concat(eventYears.value.map(function (year) { return { value: year, label: year }; }));
+      return [{ value: 'all', label: '全部' }].concat(eventYears.value.map(function (year) { return { value: year, label: year === 'unknown' ? '未知' : year }; }));
     });
     const eventTypeOptions = computed(function () {
       return [{value:'kind:all',label:'全部'}].concat([
         ['concert','音乐演出'], ['onsite','线下活动'], ['official_program','官方节目']
       ].map(([kind,label]) => ({value:'group:'+kind,label,children:[
         {value:'kind:'+kind,label:'全部'+label},
-        ...eventSeries.value.filter(series=>series.kind===kind).map(series=>({value:'series:'+series.id,label:series.name}))
-      ]})), [{value:'series:unclassified',label:'其他活动'}]);
+        ...eventSeries.value.filter(series=>(series.kinds || [series.kind]).includes(kind)).map(series=>({value:'series:'+kind+':'+series.id,label:series.name})),
+        {value:'series:'+kind+':unclassified',label:'其他'+label}
+      ]})));
     });
     const eventTypeSelection = computed({
-      get() { return evSeries.value !== 'all' ? 'series:'+evSeries.value : 'kind:'+evKind.value; },
+      get() { return evSeries.value !== 'all' ? 'series:'+evKind.value+':'+evSeries.value : 'kind:'+evKind.value; },
       set(value) {
-        const [type,id] = String(value).split(':');
+        const [type,kind,id] = String(value).split(':');
         evSeries.value = type === 'series' ? id : 'all';
-        evKind.value = type === 'series' ? (eventSeriesMap.value[id]?.kind || 'all') : id;
+        evKind.value = kind;
         evMode.value = 'all';
         eventsPage.value = 1;
         pushUrl();
@@ -3433,7 +3438,7 @@ const umaApp = createApp({
       return d.textContent || '';
     }
     function setEvTime(v) {
-      if (v !== 'all' && v !== 'upcoming' && v !== 'past') return;
+      if (!['all','upcoming','past','announced'].includes(v)) return;
       evTime.value = v;
       eventsPage.value = 1;
       pushUrl();

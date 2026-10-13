@@ -192,7 +192,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                         <button v-if="eventsQuery" type="button" @click.prevent="eventsQuery=''" aria-label="清空搜索">×</button>
                     </label>
                     <div class="archive-controls">
-                        <ui-select v-model="evTime" label="状态" :options="[{value:'all',label:'全部'},{value:'upcoming',label:'即将举办'},{value:'past',label:'已结束'}]" @change="setEvTime"></ui-select>
+                        <ui-select v-model="evTime" label="状态" :options="[{value:'all',label:'全部'},{value:'upcoming',label:'未结束'},{value:'past',label:'已结束'},{value:'announced',label:'日期未知'}]" @change="setEvTime"></ui-select>
                         <ui-select v-model="eventTypeSelection" label="类型" :options="eventTypeOptions"></ui-select>
                         <ui-select v-model="evYear" label="年份" :options="eventYearOptions" @change="setEvYear"></ui-select>
                     </div>
@@ -563,7 +563,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <div class="archive-controls">
                         <ui-select v-model="relFilter" label="类型" :options="[{value:'',label:'全部'},...relTypeList.map(type=>({value:type,label:type}))]"></ui-select>
                         <ui-select v-model="relWork" label="作品" :options="[{value:'',label:'全部'},...relWorkList.map(item=>({value:item.key,label:item.label}))]"></ui-select>
-                        <ui-select v-model="relYear" label="年份" :options="[{value:'',label:'全部'},...relYearList.map(year=>({value:year,label:year}))]"></ui-select>
+                        <ui-select v-model="relYear" label="年份" :options="[{value:'',label:'全部'},...relYearList.map(year=>({value:year,label:year==='unknown'?'未知':year}))]"></ui-select>
                         <ui-select v-model="relSort" label="排序" :options="albumSortOptions"></ui-select>
                     </div>
                 </div>
@@ -707,7 +707,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div v-else class="albums-grid album-database-grid anime-catalog-grid">
                     <div v-if="animeLoading" v-for="i in 8" :key="i" class="archive-card-skeleton"><span></span><span></span></div>
                     <a v-for="(work,index) in animeFiltered" :key="work.id" class="album-card" :href="animeWorkHref(work)" @click="animeLink($event,animeWorkHref(work))">
-                        <img class="album-cover" :src="animeArtwork(work,work.id==='anime-rttt' && animeFormat!=='web' && !animeMatchedUnits(work).length && !!work.film_cover)" :alt="work.title_zh" :loading="index<2?'eager':'lazy'" decoding="async">
+                        <img class="album-cover" :src="animeArtwork(work)" :alt="work.title_zh" :loading="index<2?'eager':'lazy'" decoding="async">
                         <div class="album-info"><div class="album-name">{{ work.title_zh }}</div><div class="album-count">{{ animeWorkYears(work).join(' / ') }} · {{ animeWorkFormats(work).map(animeFormatLabel).join(' / ') }} · {{ animeStatusLabel(work.status) }}</div><span v-if="animeMatchedUnits(work).length===1" class="credit-role-tag">{{ animeMatchedUnits(work)[0].label }}</span></div>
                         <div class="album-overlay"><span class="album-more">View more<i class="more-a">&nbsp;</i><b class="more-gr">&gt;</b><b class="more-wh">&gt;</b></span></div>
                     </a>
@@ -810,7 +810,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <a v-for="video in curatedVideos" :key="video.id" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener"><img :src="'/video_thumbs/'+video.id+'.jpg'" :alt="video.title" loading="lazy"><b>{{ video.title }}</b><span>观看 ↗</span></a>
                 </div>
             </section>
-            <section v-else-if="otherSection==='horses'" class="entity-section other-section horse-db-section">
+            <section v-else-if="otherSection==='horses'" class="horse-db-section">
                 <template v-if="!horseDetail">
                     <div class="archive-toolbar">
                         <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="horseQuery" aria-label="搜索马名或出生日期…" placeholder="搜索马名或出生日期…" autocomplete="off"></label>

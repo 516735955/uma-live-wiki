@@ -13,6 +13,7 @@
     if (!header && bar.parentElement !== document.body) document.body.appendChild(bar);
     const height = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
     document.documentElement.style.setProperty('--context-header-height', height + 'px');
+    document.documentElement.style.setProperty('--page-width', document.documentElement.clientWidth + 'px');
     return height;
   }
   function sync() {
