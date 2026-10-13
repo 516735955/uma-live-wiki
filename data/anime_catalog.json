@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-3d2e2b6d72cd902b",
+  "build_id": "anime-cc940c0f9dc3e235",
   "generated_at": "2026-10-13T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -9,7 +9,7 @@
     "scheduled_units": 0,
     "watch_resources": 133,
     "relations": 2050,
-    "staff_credits": 25386,
+    "staff_credits": 25405,
     "staff_people": 2894
   },
   "works": [
@@ -45456,6 +45456,310 @@
     }
   ],
   "staff": [
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_ref": "official-ending-anime-cinderella-gray-e06",
+      "order": 149,
+      "role": "第二原画",
+      "group": "",
+      "name": "スタジオエイトカラーズ",
+      "source_time": 1353.768,
+      "organization": "スタジオエイトカラーズ",
+      "role_raw": "第二原画",
+      "roles": [
+        "第二原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_ref": "official-ending-anime-cinderella-gray-e05",
+      "order": 294,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1401.61,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_ref": "official-ending-anime-cinderella-gray-e16",
+      "order": 311,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1405.65,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_ref": "official-ending-anime-cinderella-gray-e06",
+      "order": 361,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1399.768,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_ref": "official-ending-anime-cinderella-gray-e07",
+      "order": 374,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1347.767988,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_ref": "official-ending-anime-cinderella-gray-e08",
+      "order": 313,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1399.55,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_ref": "official-ending-anime-cinderella-gray-e09",
+      "order": 333,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1387.61,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_ref": "official-ending-anime-cinderella-gray-e11",
+      "order": 364,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1401.608,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_ref": "official-ending-anime-cinderella-gray-e10",
+      "order": 328,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1397.768,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_ref": "official-ending-anime-cinderella-gray-e12",
+      "order": 350,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1399.698,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_ref": "official-ending-anime-cinderella-gray-e13",
+      "order": 354,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1299.75,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_ref": "official-ending-anime-cinderella-gray-e14",
+      "order": 323,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1405.604,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_ref": "official-ending-anime-cinderella-gray-e18",
+      "order": 264,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1404.793,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_ref": "official-ending-anime-cinderella-gray-e17",
+      "order": 278,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1401.726,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_ref": "official-ending-anime-cinderella-gray-e23",
+      "order": 145,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1402.7552,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_ref": "official-ending-anime-cinderella-gray-e19",
+      "order": 360,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1405.77,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_ref": "official-ending-anime-cinderella-gray-e20",
+      "order": 104,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1401.569,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_ref": "official-ending-anime-cinderella-gray-e22",
+      "order": 320,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1333.686688,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_ref": "official-ending-anime-cinderella-gray-e21",
+      "order": 146,
+      "role": "协力",
+      "group": "",
+      "name": "岐阜県地方競馬組合",
+      "source_time": 1405.679,
+      "organization": "岐阜県地方競馬組合",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
     {
       "work_id": "anime-s3",
       "unit_id": "anime-s3-e02",
@@ -115398,9 +115702,6 @@
       "group": "",
       "unit_id": "anime-cinderella-gray-e06",
       "person_id": "staff-中嶋和奏",
-      "institutions": [
-        "スタジオエイトカラーズ"
-      ],
       "source_time": 1353.768,
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e06",
@@ -204591,9 +204892,6 @@
       "name": "木村佳史子",
       "source_time": 1547,
       "person_id": "staff-木村佳史子",
-      "institutions": [
-        "MADBOX"
-      ],
       "evidence_refs": [
         "official-ending-anime-rttt-e02"
       ],
@@ -204632,9 +204930,6 @@
       "name": "大関悠",
       "source_time": 1547,
       "person_id": "staff-大関悠",
-      "institutions": [
-        "qooop"
-      ],
       "evidence_refs": [
         "official-ending-anime-rttt-e02"
       ],
@@ -204654,9 +204949,6 @@
       "name": "中野夏美",
       "source_time": 1547,
       "person_id": "staff-中野夏美",
-      "institutions": [
-        "qooop"
-      ],
       "evidence_refs": [
         "official-ending-anime-rttt-e02"
       ],
@@ -464228,9 +464520,6 @@
       "name": "阿部憶人",
       "source_time": 1401.61,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -464247,9 +464536,6 @@
       "name": "久保武史",
       "source_time": 1401.61,
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -464266,9 +464552,6 @@
       "name": "石井貢",
       "source_time": 1401.61,
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -464285,9 +464568,6 @@
       "name": "宇都優弥",
       "source_time": 1401.61,
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -467559,9 +467839,6 @@
       "name": "阿部憶人",
       "source_time": 1405.65,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -467578,9 +467855,6 @@
       "name": "久保武史",
       "source_time": 1405.65,
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -467597,9 +467871,6 @@
       "name": "石井貢",
       "source_time": 1405.65,
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -467616,9 +467887,6 @@
       "name": "宇都優弥",
       "source_time": 1405.65,
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -470429,9 +470697,6 @@
       "name": "阿部憶人",
       "source_time": 1399.768,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -470448,9 +470713,6 @@
       "name": "久保武史",
       "source_time": 1399.768,
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -470467,9 +470729,6 @@
       "name": "石井貢",
       "source_time": 1399.768,
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -470486,9 +470745,6 @@
       "name": "宇都優弥",
       "source_time": 1399.768,
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -473710,9 +473966,6 @@
       "name": "阿部憶人",
       "source_time": 1347.767988,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -473729,9 +473982,6 @@
       "name": "久保武史",
       "source_time": 1347.767988,
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -473748,9 +473998,6 @@
       "name": "石井貢",
       "source_time": 1347.767988,
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -473767,9 +474014,6 @@
       "name": "宇都優弥",
       "source_time": 1347.767988,
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -476944,9 +477188,6 @@
       "name": "阿部憶人",
       "source_time": 1399.55,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -476963,9 +477204,6 @@
       "name": "久保武史",
       "source_time": 1399.55,
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -476982,9 +477220,6 @@
       "name": "石井貢",
       "source_time": 1399.55,
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -477001,9 +477236,6 @@
       "name": "宇都優弥",
       "source_time": 1399.55,
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -480230,9 +480462,6 @@
       "name": "阿部憶人",
       "source_time": 1387.61,
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -480249,9 +480478,6 @@
       "name": "久保武史",
       "source_time": 1387.61,
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -480268,9 +480494,6 @@
       "name": "石井貢",
       "source_time": 1387.61,
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -480287,9 +480510,6 @@
       "name": "宇都優弥",
       "source_time": 1387.61,
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -490197,9 +490417,6 @@
       "source_time": 1401.608,
       "unit_id": "anime-cinderella-gray-e11",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -490216,9 +490433,6 @@
       "source_time": 1401.608,
       "unit_id": "anime-cinderella-gray-e11",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -490235,9 +490449,6 @@
       "source_time": 1401.608,
       "unit_id": "anime-cinderella-gray-e11",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -490254,9 +490465,6 @@
       "source_time": 1401.608,
       "unit_id": "anime-cinderella-gray-e11",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -493304,9 +493512,6 @@
       "source_time": 1397.768,
       "unit_id": "anime-cinderella-gray-e10",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -493323,9 +493528,6 @@
       "source_time": 1397.768,
       "unit_id": "anime-cinderella-gray-e10",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -493342,9 +493544,6 @@
       "source_time": 1397.768,
       "unit_id": "anime-cinderella-gray-e10",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -493361,9 +493560,6 @@
       "source_time": 1397.768,
       "unit_id": "anime-cinderella-gray-e10",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -496787,9 +496983,6 @@
       "source_time": 1399.698,
       "unit_id": "anime-cinderella-gray-e12",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -496806,9 +496999,6 @@
       "source_time": 1399.698,
       "unit_id": "anime-cinderella-gray-e12",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -496825,9 +497015,6 @@
       "source_time": 1399.698,
       "unit_id": "anime-cinderella-gray-e12",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -496844,9 +497031,6 @@
       "source_time": 1399.698,
       "unit_id": "anime-cinderella-gray-e12",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -499935,9 +500119,6 @@
       "source_time": 1299.75,
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -499954,9 +500135,6 @@
       "source_time": 1299.75,
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -499973,9 +500151,6 @@
       "source_time": 1299.75,
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -499992,9 +500167,6 @@
       "source_time": 1299.75,
       "unit_id": "anime-cinderella-gray-e13",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -503279,9 +503451,6 @@
       "source_time": 1405.604,
       "unit_id": "anime-cinderella-gray-e14",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -503298,9 +503467,6 @@
       "source_time": 1405.604,
       "unit_id": "anime-cinderella-gray-e14",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -503317,9 +503483,6 @@
       "source_time": 1405.604,
       "unit_id": "anime-cinderella-gray-e14",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -503336,9 +503499,6 @@
       "source_time": 1405.604,
       "unit_id": "anime-cinderella-gray-e14",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -505240,9 +505400,6 @@
       "source_time": 1404.793,
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -505259,9 +505416,6 @@
       "source_time": 1404.793,
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -505278,9 +505432,6 @@
       "source_time": 1404.793,
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -505297,9 +505448,6 @@
       "source_time": 1404.793,
       "unit_id": "anime-cinderella-gray-e18",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -510160,9 +510308,6 @@
       "source_time": 1401.726,
       "unit_id": "anime-cinderella-gray-e17",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -510179,9 +510324,6 @@
       "source_time": 1401.726,
       "unit_id": "anime-cinderella-gray-e17",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -510198,9 +510340,6 @@
       "source_time": 1401.726,
       "unit_id": "anime-cinderella-gray-e17",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -510217,9 +510356,6 @@
       "source_time": 1401.726,
       "unit_id": "anime-cinderella-gray-e17",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -512092,9 +512228,6 @@
       "source_time": 1402.7552,
       "unit_id": "anime-cinderella-gray-e23",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -512111,9 +512244,6 @@
       "source_time": 1402.7552,
       "unit_id": "anime-cinderella-gray-e23",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -512130,9 +512260,6 @@
       "source_time": 1402.7552,
       "unit_id": "anime-cinderella-gray-e23",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -512149,9 +512276,6 @@
       "source_time": 1402.7552,
       "unit_id": "anime-cinderella-gray-e23",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -517111,9 +517235,6 @@
       "source_time": 1405.77,
       "unit_id": "anime-cinderella-gray-e19",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -517130,9 +517251,6 @@
       "source_time": 1405.77,
       "unit_id": "anime-cinderella-gray-e19",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -517149,9 +517267,6 @@
       "source_time": 1405.77,
       "unit_id": "anime-cinderella-gray-e19",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -517168,9 +517283,6 @@
       "source_time": 1405.77,
       "unit_id": "anime-cinderella-gray-e19",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -518804,9 +518916,6 @@
       "source_time": 1401.569,
       "unit_id": "anime-cinderella-gray-e20",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -518823,9 +518932,6 @@
       "source_time": 1401.569,
       "unit_id": "anime-cinderella-gray-e20",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -518842,9 +518948,6 @@
       "source_time": 1401.569,
       "unit_id": "anime-cinderella-gray-e20",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -518861,9 +518964,6 @@
       "source_time": 1401.569,
       "unit_id": "anime-cinderella-gray-e20",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -522602,9 +522702,6 @@
       "source_time": 1333.686688,
       "unit_id": "anime-cinderella-gray-e22",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -522621,9 +522718,6 @@
       "source_time": 1333.686688,
       "unit_id": "anime-cinderella-gray-e22",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -522640,9 +522734,6 @@
       "source_time": 1333.686688,
       "unit_id": "anime-cinderella-gray-e22",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -522659,9 +522750,6 @@
       "source_time": 1333.686688,
       "unit_id": "anime-cinderella-gray-e22",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -524478,9 +524566,6 @@
       "source_time": 1405.679,
       "unit_id": "anime-cinderella-gray-e21",
       "person_id": "staff-阿部憶人",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -524497,9 +524582,6 @@
       "source_time": 1405.679,
       "unit_id": "anime-cinderella-gray-e21",
       "person_id": "staff-久保武史",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -524516,9 +524598,6 @@
       "source_time": 1405.679,
       "unit_id": "anime-cinderella-gray-e21",
       "person_id": "staff-石井貢",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
@@ -524535,9 +524614,6 @@
       "source_time": 1405.679,
       "unit_id": "anime-cinderella-gray-e21",
       "person_id": "staff-宇都優弥",
-      "institutions": [
-        "岐阜県地方競馬組合"
-      ],
       "role_raw": "協力",
       "roles": [
         "协力"
