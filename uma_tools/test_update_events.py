@@ -44,6 +44,8 @@ class EventPipelineTest(unittest.TestCase):
         self.assertNotIn('乙', second)
         self.assertNotIn('細江純子', first)
         self.assertIn('細江純子', second)
+        guide = next(item for item in UPDATE_EVENTS.parse_cast_text(second) if item['name'] == '細江純子')
+        self.assertEqual(guide['participation_label'], '向导')
 
     def test_curated_media_splits_parts_and_discards_incomplete_urls(self):
         self.assertEqual(

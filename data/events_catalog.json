@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-13T08:48:29+00:00",
+  "generated_at": "2026-10-13T10:43:59+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "2ee7b52e5cd555c739f561000b2ef54446527f2555d1740145409f83d0a38c5c",
+      "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
       "preserved": true
     },
     "live_cat_data.json": {
@@ -6414,6 +6414,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -6686,6 +6687,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -6958,6 +6960,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -6974,6 +6977,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -7622,6 +7626,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -7894,6 +7899,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -8553,6 +8559,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -8825,6 +8832,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -8841,6 +8849,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -16030,6 +16039,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -16334,6 +16344,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -16350,6 +16361,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -16670,6 +16682,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -17291,6 +17304,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -17595,6 +17609,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -17611,6 +17626,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -18229,6 +18245,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -18549,6 +18566,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -23693,6 +23711,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -23965,6 +23984,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -24930,6 +24950,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -25202,6 +25223,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -25908,6 +25930,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -48015,6 +48038,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -48271,6 +48295,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -48527,6 +48552,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -48543,6 +48569,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -49337,6 +49364,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -49593,6 +49621,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -50345,6 +50374,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -50601,6 +50631,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -50617,6 +50648,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -52955,6 +52987,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -53147,6 +53180,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -53339,6 +53373,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -53355,6 +53390,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -53371,6 +53407,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -54085,6 +54122,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -54277,6 +54315,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -55149,6 +55188,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -55341,6 +55381,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -55357,6 +55398,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -55373,6 +55415,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -59923,6 +59966,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -60115,6 +60159,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -60307,6 +60352,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -60323,6 +60369,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -61031,6 +61078,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -61223,6 +61271,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -61998,6 +62047,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -62190,6 +62240,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -62206,6 +62257,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -63746,6 +63798,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -63986,6 +64039,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -64002,6 +64056,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -64018,6 +64073,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -64258,6 +64314,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -64274,6 +64331,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -64941,6 +64999,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -65181,6 +65240,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -65197,6 +65257,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -65213,6 +65274,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -65834,6 +65896,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -66074,6 +66137,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -66090,6 +66154,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -75988,6 +76053,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -76260,6 +76326,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -76532,6 +76599,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -76548,6 +76616,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -77398,6 +77467,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -77670,6 +77740,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -78582,6 +78653,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -78854,6 +78926,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -78870,6 +78943,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -84427,13 +84501,13 @@
           "character_id": "taikishuttle",
           "role": "大树快车",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84443,13 +84517,13 @@
           "character_id": "tmoperao",
           "role": "好歌剧",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84459,13 +84533,13 @@
           "character_id": "naritabrian",
           "role": "成田白仁",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84475,13 +84549,13 @@
           "character_id": "mayanotopgun",
           "role": "摩耶重炮",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84491,13 +84565,13 @@
           "character_id": "smartfalcon",
           "role": "醒目飞鹰",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84507,13 +84581,13 @@
           "character_id": "kitasanblack",
           "role": "北部玄驹",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84523,13 +84597,14 @@
           "character_id": "akasakamisato",
           "role": "赤坂美聡",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84539,13 +84614,13 @@
           "character_id": "tokaiteio",
           "role": "东海帝王",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84555,13 +84630,13 @@
           "character_id": "agnesdigital",
           "role": "爱丽数码",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84571,13 +84646,13 @@
           "character_id": "finemotion",
           "role": "美妙姿势",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84587,13 +84662,13 @@
           "character_id": "mejiroryan",
           "role": "目白赖恩",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84603,13 +84678,13 @@
           "character_id": "admirevega",
           "role": "爱慕织姬",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84619,13 +84694,13 @@
           "character_id": "currenchan",
           "role": "真机伶",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84635,13 +84710,13 @@
           "character_id": "supercreek",
           "role": "超级溪流",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84651,13 +84726,13 @@
           "character_id": "nishinoflower",
           "role": "西野花",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84667,13 +84742,13 @@
           "character_id": "haruurara",
           "role": "春乌拉拉",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84683,13 +84758,13 @@
           "character_id": "meishodoto",
           "role": "名将怒涛",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84699,13 +84774,13 @@
           "character_id": "mejirodober",
           "role": "目白多伯",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84715,13 +84790,13 @@
           "character_id": "nicenature",
           "role": "优秀素质",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84731,13 +84806,13 @@
           "character_id": "ikunodictus",
           "role": "生野狄杜斯",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84747,13 +84822,13 @@
           "character_id": "mejirobright",
           "role": "目白光明",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84763,13 +84838,13 @@
           "character_id": "naritatoproad",
           "role": "成田路",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84779,13 +84854,13 @@
           "character_id": "happymeek",
           "role": "快乐米可",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84795,13 +84870,13 @@
           "character_id": "bitterglasse",
           "role": "苦涩糖衣",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84811,13 +84886,13 @@
           "character_id": "littlecocon",
           "role": "小小圆茧",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84827,13 +84902,14 @@
           "character_id": "satonodiamond",
           "role": "里见光钻",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84843,13 +84919,14 @@
           "character_id": "kiryuinaoi",
           "role": "桐生院葵",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84859,13 +84936,13 @@
           "character_id": "specialweek",
           "role": "特别周",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84875,13 +84952,13 @@
           "character_id": "oguricap",
           "role": "小栗帽",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84891,13 +84968,13 @@
           "character_id": "goldship",
           "role": "黄金船",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84907,13 +84984,13 @@
           "character_id": "vodka",
           "role": "伏特加",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84923,13 +85000,13 @@
           "character_id": "daiwascarlet",
           "role": "大和赤骥",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84939,13 +85016,13 @@
           "character_id": "grasswonder",
           "role": "草上飞",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84955,13 +85032,13 @@
           "character_id": "elcondorpasa",
           "role": "神鹰",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84971,13 +85048,13 @@
           "character_id": "biwahayahide",
           "role": "琵琶晨光",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -84987,13 +85064,13 @@
           "character_id": "winningticket",
           "role": "胜利奖券",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85003,13 +85080,13 @@
           "character_id": "goldcity",
           "role": "黄金城市",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85019,13 +85096,13 @@
           "character_id": "tosenjordan",
           "role": "东瀛佐敦",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85035,13 +85112,13 @@
           "character_id": "naritataishin",
           "role": "成田大进",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85051,13 +85128,13 @@
           "character_id": "matikanefukukitaru",
           "role": "待兼福来",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85067,13 +85144,13 @@
           "character_id": "kinghalo",
           "role": "圣王光环",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85083,13 +85160,13 @@
           "character_id": "matikanetannhauser",
           "role": "待兼诗歌剧",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85099,13 +85176,13 @@
           "character_id": "sakurachiyonoo",
           "role": "樱花千代王",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85115,13 +85192,13 @@
           "character_id": "yaenomuteki",
           "role": "八重无敌",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85131,13 +85208,13 @@
           "character_id": "manhattancafe",
           "role": "曼城茶座",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         },
@@ -85147,13 +85224,14 @@
           "character_id": "hosoejunko",
           "role": "细江纯子",
           "evidence": "curated_live_cast",
-          "source_url": "",
+          "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "解说嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
-              "url": ""
+              "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
             }
           ]
         }
@@ -85637,13 +85715,13 @@
               "character_id": "taikishuttle",
               "role": "大树快车",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85653,13 +85731,13 @@
               "character_id": "tmoperao",
               "role": "好歌剧",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85669,13 +85747,13 @@
               "character_id": "naritabrian",
               "role": "成田白仁",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85685,13 +85763,13 @@
               "character_id": "mayanotopgun",
               "role": "摩耶重炮",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85701,13 +85779,13 @@
               "character_id": "smartfalcon",
               "role": "醒目飞鹰",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85717,13 +85795,13 @@
               "character_id": "kitasanblack",
               "role": "北部玄驹",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85733,13 +85811,14 @@
               "character_id": "akasakamisato",
               "role": "赤坂美聡",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85749,13 +85828,13 @@
               "character_id": "tokaiteio",
               "role": "东海帝王",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85765,13 +85844,13 @@
               "character_id": "agnesdigital",
               "role": "爱丽数码",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85781,13 +85860,13 @@
               "character_id": "finemotion",
               "role": "美妙姿势",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85797,13 +85876,13 @@
               "character_id": "mejiroryan",
               "role": "目白赖恩",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85813,13 +85892,13 @@
               "character_id": "admirevega",
               "role": "爱慕织姬",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85829,13 +85908,13 @@
               "character_id": "currenchan",
               "role": "真机伶",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85845,13 +85924,13 @@
               "character_id": "supercreek",
               "role": "超级溪流",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85861,13 +85940,13 @@
               "character_id": "nishinoflower",
               "role": "西野花",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85877,13 +85956,13 @@
               "character_id": "haruurara",
               "role": "春乌拉拉",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85893,13 +85972,13 @@
               "character_id": "meishodoto",
               "role": "名将怒涛",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85909,13 +85988,13 @@
               "character_id": "mejirodober",
               "role": "目白多伯",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85925,13 +86004,13 @@
               "character_id": "nicenature",
               "role": "优秀素质",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85941,13 +86020,13 @@
               "character_id": "ikunodictus",
               "role": "生野狄杜斯",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85957,13 +86036,13 @@
               "character_id": "mejirobright",
               "role": "目白光明",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85973,13 +86052,13 @@
               "character_id": "naritatoproad",
               "role": "成田路",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -85989,13 +86068,13 @@
               "character_id": "happymeek",
               "role": "快乐米可",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86005,13 +86084,13 @@
               "character_id": "bitterglasse",
               "role": "苦涩糖衣",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86021,13 +86100,13 @@
               "character_id": "littlecocon",
               "role": "小小圆茧",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86037,13 +86116,14 @@
               "character_id": "satonodiamond",
               "role": "里见光钻",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86053,13 +86133,14 @@
               "character_id": "kiryuinaoi",
               "role": "桐生院葵",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             }
@@ -86519,13 +86600,13 @@
               "character_id": "taikishuttle",
               "role": "大树快车",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86535,13 +86616,13 @@
               "character_id": "tmoperao",
               "role": "好歌剧",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86551,13 +86632,13 @@
               "character_id": "naritabrian",
               "role": "成田白仁",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86567,13 +86648,13 @@
               "character_id": "mayanotopgun",
               "role": "摩耶重炮",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86583,13 +86664,13 @@
               "character_id": "smartfalcon",
               "role": "醒目飞鹰",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86599,13 +86680,13 @@
               "character_id": "kitasanblack",
               "role": "北部玄驹",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86615,13 +86696,14 @@
               "character_id": "akasakamisato",
               "role": "赤坂美聡",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86631,13 +86713,13 @@
               "character_id": "specialweek",
               "role": "特别周",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86647,13 +86729,13 @@
               "character_id": "oguricap",
               "role": "小栗帽",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86663,13 +86745,13 @@
               "character_id": "goldship",
               "role": "黄金船",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86679,13 +86761,13 @@
               "character_id": "vodka",
               "role": "伏特加",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86695,13 +86777,13 @@
               "character_id": "daiwascarlet",
               "role": "大和赤骥",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86711,13 +86793,13 @@
               "character_id": "grasswonder",
               "role": "草上飞",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86727,13 +86809,13 @@
               "character_id": "elcondorpasa",
               "role": "神鹰",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86743,13 +86825,13 @@
               "character_id": "biwahayahide",
               "role": "琵琶晨光",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86759,13 +86841,13 @@
               "character_id": "winningticket",
               "role": "胜利奖券",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86775,13 +86857,13 @@
               "character_id": "goldcity",
               "role": "黄金城市",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86791,13 +86873,13 @@
               "character_id": "tosenjordan",
               "role": "东瀛佐敦",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86807,13 +86889,13 @@
               "character_id": "naritataishin",
               "role": "成田大进",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86823,13 +86905,13 @@
               "character_id": "matikanefukukitaru",
               "role": "待兼福来",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86839,13 +86921,13 @@
               "character_id": "kinghalo",
               "role": "圣王光环",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86855,13 +86937,13 @@
               "character_id": "matikanetannhauser",
               "role": "待兼诗歌剧",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86871,13 +86953,13 @@
               "character_id": "sakurachiyonoo",
               "role": "樱花千代王",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86887,13 +86969,13 @@
               "character_id": "yaenomuteki",
               "role": "八重无敌",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86903,13 +86985,13 @@
               "character_id": "manhattancafe",
               "role": "曼城茶座",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             },
@@ -86919,13 +87001,14 @@
               "character_id": "hosoejunko",
               "role": "细江纯子",
               "evidence": "curated_live_cast",
-              "source_url": "",
+              "source_url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "解说嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
-                  "url": ""
+                  "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
                 }
               ]
             }
@@ -86951,6 +87034,11 @@
           "kind": "curated_live",
           "label": "站内精调歌单",
           "url": "/zh-Hans/live/number_series_event/4th_EVENT/1/0"
+        },
+        {
+          "kind": "official_cast",
+          "label": "官方出演名单",
+          "url": "https://umamusume.jp/contents/event/sd4th/archive/about/?tab=1"
         },
         {
           "kind": "eventernote",
@@ -88748,6 +88836,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -88940,6 +89029,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -89132,6 +89222,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -89783,6 +89874,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -89975,6 +90067,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -90642,6 +90735,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -90834,6 +90928,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -96668,6 +96763,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -96860,6 +96956,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -97052,6 +97149,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -97068,6 +97166,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -97580,6 +97679,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -97772,6 +97872,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -98309,6 +98410,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -98501,6 +98603,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -98517,6 +98620,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -105555,6 +105659,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -107265,6 +107370,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -107281,6 +107387,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -108049,6 +108156,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "向导",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -108065,6 +108173,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "实况",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -108278,6 +108387,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "实况",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -111227,6 +111337,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -113168,6 +113279,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -114136,6 +114248,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -114152,6 +114265,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -114168,6 +114282,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "嘉宾",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -114777,6 +114892,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -114793,6 +114909,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -114809,6 +114926,7 @@
               "source_url": "",
               "person_type": "voice_actor",
               "resolution": "resolved",
+              "participation_label": "嘉宾",
               "evidence_sources": [
                 {
                   "kind": "curated_live_cast",
@@ -117419,6 +117537,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -117602,6 +117721,7 @@
           "source_url": "",
           "person_type": "voice_actor",
           "resolution": "resolved",
+          "participation_label": "向导",
           "evidence_sources": [
             {
               "kind": "curated_live_cast",
@@ -118957,5 +119077,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "10d613bc7006804a4f24"
+  "build_id": "c649ae45c7a0150c2b20"
 }

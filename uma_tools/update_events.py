@@ -930,6 +930,15 @@ def build_song_catalog(
 
 def parse_cast_text(value: str) -> list[dict[str, str]]:
     text = html.unescape(str(value or ""))
+    if 'cast-line' in text:
+        from bs4 import BeautifulSoup
+        lines = BeautifulSoup(text, 'html.parser').select('.cast-line')
+        if len(lines) > 1:
+            return [item for line in lines for item in parse_cast_text(str(line))]
+    label_match = CAST_LABEL_RE.search(text)
+    label = clean_text(label_match.group(1)).strip(' ：:') if label_match else ''
+    participation = label if NON_PERFORMER_CAST_LABEL_RE.search(label) else ''
+    text = CAST_LABEL_RE.sub('', text)
     text = re.sub(r"<br\s*/?>", "、", text, flags=re.I)
     text = re.sub(r"</div>", "、", text, flags=re.I)
     text = clean_text(text)
@@ -949,7 +958,10 @@ def parse_cast_text(value: str) -> list[dict[str, str]]:
         actor = re.sub(r"[【\[].*?[】\]]", "", actor).strip()
         actor = re.sub(r"^(?:(?:仅|僅)?\d+日|两日出演|出演|出走者|嘉宾|ゲスト|実況|实况|向导|司会|MC)[:：]\s*", "", actor).strip()
         if actor and len(actor) <= 30 and not re.search(r"全員|ほか|他\d|出演者", actor):
-            out.append({"name": actor, "role": role})
+            row = {"name": actor, "role": role}
+            if participation:
+                row['participation_label'] = participation
+            out.append(row)
     return out
 
 
@@ -1349,6 +1361,8 @@ def merge_cast_records(items: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
             existing["role"] = item["role"]
         if not existing.get("character_id") and item.get("character_id"):
             existing["character_id"] = item["character_id"]
+        if not existing.get('participation_label') and item.get('participation_label'):
+            existing['participation_label'] = item['participation_label']
 
     # Eventernote often confirms only the person while a hand-curated setlist
     # supplies that same person's character. When exactly one richer relation
@@ -1408,6 +1422,7 @@ def make_cast(items: Iterable[dict[str, Any]], identities: IdentityIndex, eviden
             "source_url": item_source_url,
             "person_type": "voice_actor",
             "resolution": "resolved",
+            **({'participation_label': item['participation_label']} if item.get('participation_label') else {}),
         })
     return merge_cast_records(out)
 
@@ -1462,7 +1477,7 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
             event_id = unique_id((stable_ids or {}).get(sub.get("title") or "") or f"live-numbered-{series_token}-{date or performance_index + 1}", used)
             sessions = []
             cast_source = parse_cast_text(sub.get("cast") or "")
-            event_cast = make_cast(cast_source, identities, "curated_live_cast")
+            event_cast = make_cast(cast_source, identities, "curated_live_cast", sub.get('cast_source_url') or '')
             for day_index, day in enumerate(sub.get("days") or []):
                 table = day.get("table") or ""
                 full_cast = cast_characters_for_session(
@@ -1481,7 +1496,7 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
                     "character_ids": characters,
                     "performances": performances,
                     "cast": make_cast([item for line in cast_lines_for_session(sub.get("cast") or "", sub.get("date"), day_index)
-                                       for item in parse_cast_text(line)], identities, "curated_live_cast"),
+                                       for item in parse_cast_text(line)], identities, "curated_live_cast", sub.get('cast_source_url') or ''),
                 }
                 if table:
                     session["setlist_html"] = table
@@ -1503,7 +1518,8 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
                 "series_id": "numbered-live", "venue": venue_from_date_text(sub.get("date")) if date else "",
                 "cast_status": "verified" if event_cast else "partial", "cast": event_cast, "character_ids": [],
                 "sessions": sessions, "media": curated_media(sub.get("vids") or []),
-                "sources": [{"kind": "curated_live", "label": "站内精调歌单", "url": legacy}],
+                "sources": [{"kind": "curated_live", "label": "站内精调歌单", "url": legacy}] +
+                    ([{'kind':'official_cast','label':'官方出演名单','url':sub['cast_source_url']}] if sub.get('cast_source_url') else []),
                 "legacy_url": legacy, "legacy_aliases": legacy_aliases, "image": "", "summary": sub.get("tips") or "",
             })
     return out
@@ -1975,6 +1991,9 @@ def build_appearance_index(events: list[dict[str, Any]], songs_catalog: dict[str
                 voice[actor_id]["events"].append({
                     **session_base,
                     "evidence": sorted(item for item in evidence if item),
+                    **({'participation_label': ' · '.join(dict.fromkeys(item['participation_label'] for item in session.get('cast', [])
+                        if item.get('voice_actor_id') == actor_id and item.get('participation_label')))}
+                       if any(item.get('voice_actor_id') == actor_id and item.get('participation_label') for item in session.get('cast', [])) else {}),
                 })
                 covered_actors.add(actor_id)
             for char_id in session_chars:
