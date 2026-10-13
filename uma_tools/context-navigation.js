@@ -7,31 +7,6 @@
   bar.hidden = true;
   document.body.appendChild(bar);
   let current = null, observer = null, signature = '', pending = false;
-  const indexToolbars = new Set();
-  const toolbarSizes = new ResizeObserver(entries => entries.forEach(({target}) => {
-    target.parentElement?.style.setProperty('--archive-toolbar-height', Math.ceil(target.getBoundingClientRect().height) + 'px');
-  }));
-  function indexFilters() {
-    indexToolbars.forEach(toolbar => {
-      if (!toolbar.isConnected) { toolbarSizes.unobserve(toolbar); indexToolbars.delete(toolbar); }
-    });
-    app.querySelectorAll('.archive-surface').forEach(surface => {
-      if (surface.querySelector('.entity-detail')) return;
-      const toolbar = surface.querySelector(':scope > .archive-toolbar');
-      const filters = surface.querySelector(':scope > .archive-filter-row');
-      if (!toolbar || indexToolbars.has(toolbar)) return;
-      indexToolbars.add(toolbar); toolbarSizes.observe(toolbar);
-      surface.style.setProperty('--archive-toolbar-height', Math.ceil(toolbar.getBoundingClientRect().height) + 'px');
-      if (!filters) return;
-      const button = document.createElement('button'); button.type='button';
-      button.className='archive-filter-toggle';button.textContent='筛选';button.setAttribute('aria-expanded','false');
-      button.onclick=()=>{
-        const open=surface.classList.toggle('archive-filters-open');
-        button.setAttribute('aria-expanded',String(open));
-      };
-      toolbar.appendChild(button);
-    });
-  }
   function headerHeight() {
     const header = document.querySelector('.sub-header');
     if (header && bar.parentElement !== header) header.appendChild(bar);
@@ -42,17 +17,9 @@
   }
   function sync() {
     pending = false;
-    indexFilters();
     const detail = app.querySelector('.entity-detail');
     const hero = detail?.querySelector('.entity-hero');
     const height = headerHeight();
-    const stickyStates = Array.from(indexToolbars, toolbar => ({
-      surface: toolbar.parentElement,
-      stuck: scrollY > 0 && toolbar.getBoundingClientRect().top <= parseFloat(getComputedStyle(toolbar).top) + 1
-    }));
-    stickyStates.forEach(({surface,stuck}) => {
-      if (surface.classList.contains('archive-toolbar-stuck') !== stuck) surface.classList.toggle('archive-toolbar-stuck',stuck);
-    });
     if (hero !== current) {
       observer?.disconnect();
       current = hero; signature = ''; bar.hidden = true;

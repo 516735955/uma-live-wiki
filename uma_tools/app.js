@@ -1181,12 +1181,16 @@ const umaApp = createApp({
         { key: 'albums', label: '专辑', path: routes.albums() },
         { key: 'creators', label: '创作者', path: routes.creators() }
       ] },
-      { key: 'live', label: '活动', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>', path: routes.events() },
-      { key: 'database', label: '资料库', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>', children: [
+      { key: 'project', label: '企划', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8 9h8M8 13h8M8 17h5"/></svg>', children: [
         { key: 'characters', label: '角色', path: routes.characters() },
         { key: 'voice', label: '声优', path: routes.voiceActors() },
         { key: 'anime', label: '动漫', path: routes.anime() },
-        { key: 'staff', label: '制作人员', path: routes.staff() },
+        { key: 'live', label: '活动', path: routes.events() },
+        { key: 'staff', label: '制作人员', path: routes.staff() }
+      ] },
+      { key: 'database', label: '资料库', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>', children: [
+        { key: 'horses', label: '原型马', path: routes.horses() },
+        { key: 'jockeys', label: '骑师', path: routes.jockeys() },
         { key: 'other', label: '其他', path: routes.other() }
       ] },
       { key: 'links', label: '友链', icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M7.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0M16.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0"/></svg>', path: routes.links() }
@@ -1205,8 +1209,8 @@ const umaApp = createApp({
       { value: 'cv', label: '按声优' }
     ];
     const albumSortOptions = [
-      { value: 'newest', label: '按发售时间' },
-      { value: 'name', label: '按名称' }
+      { value: 'newest', label: '发售时间' },
+      { value: 'name', label: '名称' }
     ];
     const fixTitleOptions = [
       { value: '', label: '选择条目类型…' },
@@ -1302,7 +1306,8 @@ const umaApp = createApp({
 
     function navItemActive(key) {
       if (key === 'music') return activeTab.value === 'database' && (dbView.value === 'songs' || dbView.value === 'albums' || dbView.value === 'creators');
-      if (key === 'database') return activeTab.value === 'database' && ['characters', 'voice', 'anime', 'staff', 'other'].indexOf(dbView.value) >= 0;
+      if (key === 'project') return activeTab.value === 'live' || activeTab.value === 'database' && ['characters', 'voice', 'anime', 'staff'].includes(dbView.value);
+      if (key === 'database') return activeTab.value === 'database' && dbView.value === 'other';
       return activeTab.value === key;
     }
     function toggleNavGroup(key) {
@@ -1417,16 +1422,16 @@ const umaApp = createApp({
       if (activeTab.value === 'legal-terms') return items.concat([{ label: '法律告知' }, { label: '使用条款' }]);
       if (!isAtomicView()) return [];
       if (newsDetail.value) return items.concat([{ label: '新闻', path: routes.news() }, { label: newsTitle(newsDetail.value) }]);
-      if (eventDetail.value) return items.concat([{ label: '活动', path: routes.events() }, { label: eventDetail.value.title }]);
+      if (eventDetail.value) return items.concat([{ label: '企划' }, { label: '活动', path: routes.events() }, { label: eventDetail.value.title }]);
       if (albumDetail.value) return items.concat([{ label: '音乐' }, { label: '专辑', path: routes.albums() }, { label: albumDetail.value.data.name }]);
       if (songDetail.value) return items.concat([{ label: '音乐' }, { label: '歌曲', path: routes.songs() }, { label: songDetail.value.title }]);
       if (creatorDetail.value) return items.concat([{ label: '音乐' }, { label: '创作者', path: routes.creators() }, { label: creatorDetail.value.name }]);
       if (horseDetail.value) return items.concat([{ label: '资料库' }, { label: '原型马', path: routes.horses() }, { label: horseDetail.value.zh || horseDetail.value.en || horseDetail.value.id }]);
-      if (charDetail.value) return items.concat([{ label: '资料库' }, { label: '角色', path: routes.characters() }, { label: charDetail.value.zh }]);
-      if (voiceDetail.value) return items.concat([{ label: '资料库' }, { label: '声优', path: routes.voiceActors() }, { label: voiceDetail.value.zh }]);
-      if (staffDetail.value) return items.concat([{ label: '资料库' }, { label: '制作人员', path: routes.staff() }, { label: staffDetail.value.name }]);
-      if (animeUnitDetail.value) return items.concat([{ label: '资料库' }, { label: '动漫', path: routes.anime() }, { label: animeDetail.value.title_zh, path: routes.anime(animeDetail.value.id) }, { label: animeUnitDetail.value.title_zh }]);
-      if (animeDetail.value) return items.concat([{ label: '资料库' }, { label: '动漫', path: routes.anime() }, { label: animeDetail.value.title_zh }]);
+      if (charDetail.value) return items.concat([{ label: '企划' }, { label: '角色', path: routes.characters() }, { label: charDetail.value.zh }]);
+      if (voiceDetail.value) return items.concat([{ label: '企划' }, { label: '声优', path: routes.voiceActors() }, { label: voiceDetail.value.zh }]);
+      if (staffDetail.value) return items.concat([{ label: '企划' }, { label: '制作人员', path: routes.staff() }, { label: staffDetail.value.name }]);
+      if (animeUnitDetail.value) return items.concat([{ label: '企划' }, { label: '动漫', path: routes.anime() }, { label: animeDetail.value.title_zh, path: routes.anime(animeDetail.value.id) }, { label: animeUnitDetail.value.title_zh }]);
+      if (animeDetail.value) return items.concat([{ label: '企划' }, { label: '动漫', path: routes.anime() }, { label: animeDetail.value.title_zh }]);
       return [];
     });
     function setCharSection(section) {
@@ -2396,7 +2401,7 @@ const umaApp = createApp({
           } else if (dbView.value === 'creators') {
             path = routes.creators(creatorDetail.value && creatorDetail.value.id, creatorSection.value);
             if (!creatorDetail.value) {
-              path = routes.query(routes.creators(), { q: creatorQuery.value, role: creatorRole.value, page: creatorPage.value });
+              path = routes.query(routes.creators(), { q: creatorQuery.value, page: creatorPage.value });
             }
           } else if (dbView.value === 'anime') {
             if (animeDetail.value) {
@@ -2501,7 +2506,7 @@ const umaApp = createApp({
           eventsQuery.value = url.searchParams.get('q') || '';
           evTime.value = ['upcoming', 'past'].indexOf(url.searchParams.get('time')) >= 0 ? url.searchParams.get('time') : 'all';
           evKind.value = ['concert', 'onsite', 'official_program'].indexOf(url.searchParams.get('kind')) >= 0 ? url.searchParams.get('kind') : 'all';
-          evMode.value = ['onsite', 'online'].indexOf(url.searchParams.get('mode')) >= 0 ? url.searchParams.get('mode') : 'all';
+          evMode.value = 'all';
           evYear.value = /^20\d{2}$/.test(url.searchParams.get('year') || '') ? url.searchParams.get('year') : 'all';
           evSeries.value = url.searchParams.get('series') || 'all';
           eventsPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
@@ -2524,7 +2529,7 @@ const umaApp = createApp({
         if (requested && routes.sections.creator.indexOf(section) < 0) return reject();
         creatorSection.value = section;
         creatorQuery.value = url.searchParams.get('q') || '';
-        creatorRole.value = ['lyricist', 'composer', 'arranger', 'remixer', 'producer', 'orchestrator'].indexOf(url.searchParams.get('role')) >= 0 ? url.searchParams.get('role') : 'all';
+        creatorRole.value = 'all';
         creatorPage.value = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
         if (requested) return openCreator(requested, section);
       } else if (first === 'music' && seg[1] === 'albums' && seg.length <= 3) {
@@ -2593,7 +2598,7 @@ const umaApp = createApp({
         activeTab.value = 'database'; dbView.value = 'staff';
         staffQuery.value = url.searchParams.get('q') || '';
         staffPage.value = Math.min(staffPageCount.value, Math.max(1, parseInt(url.searchParams.get('page') || '1',10) || 1));
-        staffSort.value = url.searchParams.get('sort') === 'name' ? 'name' : 'works';
+        staffSort.value = 'works';
         staffDetail.value = seg[2] ? (animeCatalog.value.people || []).find(person => person.id === decodeURIComponent(seg[2]) || (person.alias_ids || []).includes(decodeURIComponent(seg[2]))) || null : null;
         if (seg[2] && animeCatalog.value.works.length && !staffDetail.value) reject();
       } else if (first === 'database' && seg[1] === 'other' && seg.length === 2) {
@@ -3139,7 +3144,26 @@ const umaApp = createApp({
     });
     const eventYears = computed(function () { return eventYearValues.value; });
     const eventYearOptions = computed(function () {
-      return [{ value: 'all', label: '全部年份' }].concat(eventYears.value.map(function (year) { return { value: year, label: year }; }));
+      return [{ value: 'all', label: '全部' }].concat(eventYears.value.map(function (year) { return { value: year, label: year }; }));
+    });
+    const eventTypeOptions = computed(function () {
+      return [{value:'kind:all',label:'全部'}].concat([
+        ['concert','音乐演出'], ['onsite','线下活动'], ['official_program','官方节目']
+      ].map(([kind,label]) => ({value:'group:'+kind,label,children:[
+        {value:'kind:'+kind,label:'全部'+label},
+        ...eventSeries.value.filter(series=>series.kind===kind).map(series=>({value:'series:'+series.id,label:series.name}))
+      ]})), [{value:'series:unclassified',label:'其他活动'}]);
+    });
+    const eventTypeSelection = computed({
+      get() { return evSeries.value !== 'all' ? 'series:'+evSeries.value : 'kind:'+evKind.value; },
+      set(value) {
+        const [type,id] = String(value).split(':');
+        evSeries.value = type === 'series' ? id : 'all';
+        evKind.value = type === 'series' ? (eventSeriesMap.value[id]?.kind || 'all') : id;
+        evMode.value = 'all';
+        eventsPage.value = 1;
+        pushUrl();
+      }
     });
     const eventSeriesOptions = computed(function () {
       const rows = [{ value: 'all', label: '全部系列' }];
@@ -3775,7 +3799,7 @@ const umaApp = createApp({
       newsPage, newsPaged, newsPageCount, newsPageStart, newsPageEnd, newsPageList, setNewsPage, goNewsPage,
       syncFromUrl, prepareCurrentRoute, applyCurrentRoute, loadHomeSummaryIfNeeded, navigateTo, showContextBack, contextBack, breadcrumbItems,
       voiceHrefByName,
-      eventsQuery, evTime, evKind, evMode, evYear, evSeries, eventYears, eventYearOptions, eventSeriesOptions, setEvTime, setEvKind, setEvMode, setEvYear, setEvSeries, eventsPaged, eventsFiltered,
+      eventsQuery, evTime, evKind, evMode, evYear, evSeries, eventYears, eventYearOptions, eventTypeOptions, eventTypeSelection, eventSeriesOptions, setEvTime, setEvKind, setEvMode, setEvYear, setEvSeries, eventsPaged, eventsFiltered,
       eventsPage, eventsPageCount, eventsTotal, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,

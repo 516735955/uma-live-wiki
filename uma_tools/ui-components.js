@@ -12,15 +12,16 @@
     emits: ['update:modelValue', 'change'],
     data: function () {
       sequence += 1;
-      return { open: false, activeIndex: -1, listId: 'ui-select-' + sequence };
+      return { open: false, activeIndex: -1, group: null, listId: 'ui-select-' + sequence };
     },
     computed: {
       selectedOption: function () {
         const value = String(this.modelValue);
-        return this.options.find(function (option) {
+        return this.options.flatMap(option => [option, ...(option.children || [])]).find(function (option) {
           return String(option.value) === value;
         }) || this.options[0] || { label: '' };
-      }
+      },
+      visibleOptions: function () { return this.group ? this.group.children : this.options; }
     },
     mounted: function () { document.addEventListener('pointerdown', this.onOutside); },
     beforeUnmount: function () { document.removeEventListener('pointerdown', this.onOutside); },
@@ -28,17 +29,20 @@
       onOutside: function (event) {
         if (this.open && !this.$el.contains(event.target)) this.close();
       },
-      close: function () { this.open = false; this.activeIndex = -1; },
+      close: function () { this.open = false; this.activeIndex = -1; this.group = null; },
       toggle: function () {
-        this.open = !this.open;
+        if (this.open) { this.close(); return; }
+        this.open = true;
+        this.group = this.options.find(option => (option.children || []).some(child => String(child.value) === String(this.modelValue))) || null;
         this.activeIndex = this.open
-          ? Math.max(0, this.options.findIndex(function (option) {
+          ? Math.max(0, this.visibleOptions.findIndex(function (option) {
               return String(option.value) === String(this.modelValue);
             }, this))
           : -1;
       },
       choose: function (option) {
         if (!option || option.disabled) return;
+        if (option.children) { this.group = option; this.activeIndex = 0; return; }
         this.$emit('update:modelValue', option.value);
         this.$emit('change', option.value);
         this.close();
@@ -48,21 +52,23 @@
       },
       onKeydown: function (event) {
         if (event.key === 'Escape' || event.key === 'Tab') { this.close(); return; }
+        if (event.key === 'ArrowLeft' && this.group) { event.preventDefault(); this.group = null; this.activeIndex = 0; return; }
+        if (event.key === 'ArrowRight' && this.open) { event.preventDefault(); const option = this.visibleOptions[this.activeIndex]; if (option?.children) this.choose(option); return; }
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           if (!this.open) this.toggle();
-          else this.choose(this.options[this.activeIndex]);
+          else this.choose(this.visibleOptions[this.activeIndex]);
           return;
         }
         if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
         event.preventDefault();
-        if (!this.options.some(function (option) { return !option.disabled; })) return;
+        if (!this.visibleOptions.some(function (option) { return !option.disabled; })) return;
         if (!this.open) { this.toggle(); return; }
         const direction = event.key === 'ArrowDown' ? 1 : -1;
-        const total = this.options.length;
+        const total = this.visibleOptions.length;
         if (!total) return;
         let next = this.activeIndex < 0 ? 0 : this.activeIndex;
-        do { next = (next + direction + total) % total; } while (this.options[next] && this.options[next].disabled);
+        do { next = (next + direction + total) % total; } while (this.visibleOptions[next] && this.visibleOptions[next].disabled);
         this.activeIndex = next;
       }
     },
@@ -74,9 +80,11 @@
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
         </button>
         <div v-show="open" :id="listId" class="ui-select-menu" role="listbox">
-          <button v-for="(option,index) in options" :key="String(option.value)" type="button" role="option" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
+          <button v-if="group" class="ui-select-back" type="button" @click="group=null;activeIndex=0">‹ {{ label }} · {{ group.label }}</button>
+          <button v-for="(option,index) in visibleOptions" :key="String(option.value)" type="button" role="option" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
             <span>{{ option.label }}</span>
-            <svg v-if="String(option.value)===String(modelValue)" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg>
+            <svg v-if="option.children" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
+            <svg v-else-if="String(option.value)===String(modelValue)" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg>
           </button>
         </div>
       </div>`
