@@ -1304,20 +1304,7 @@ const umaApp = createApp({
     function toggleNavGroup(key) {
       openNavGroup.value = openNavGroup.value === key ? '' : key;
     }
-    function pointerCanHover() {
-      return !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
-    }
-    function openNavGroupForPointer(key) {
-      if (pointerCanHover() && navItems.some(function (item) { return item.key === key && item.children; })) openNavGroup.value = key;
-    }
-    function closeNavGroupForPointer(key) {
-      if (pointerCanHover() && openNavGroup.value === key) openNavGroup.value = '';
-    }
-    function activateNavGroup(key, event) {
-      if (pointerCanHover() && event && event.detail > 0) {
-        if (event.currentTarget && event.currentTarget.blur) event.currentTarget.blur();
-        return;
-      }
+    function activateNavGroup(key) {
       toggleNavGroup(key);
     }
     function closeNavGroup() { openNavGroup.value = ''; }
@@ -3761,7 +3748,7 @@ const umaApp = createApp({
 
     return {
       audio, albums, albumsError, albumsLoading, activeTab, home, routeReady, routeError, retryCurrentRoute, notFound, routes, albumDetail, liveView, player, navItems, openNavGroup, navigationError,
-      navItemActive, activateNavGroup, openNavGroupForPointer, closeNavGroupForPointer, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
+      navItemActive, activateNavGroup, closeNavGroup, navNavigate, goHome, dbView, albumName, openAlbum, openAlbumFromDb,
       statSongs, statAlbums, statLive, statGongyan, loadAlbums, coverStyle, coverThumb, onCatalogImageError, microCmsImage, sampleCover,
       fix, fixDone, fixSendState, fixMailto, contactEmails, contactMailto, submitFix, goContributeFix, goContributeContact, goLegal,
       isActive, togglePlay, seek, skipPlayer, setPlayerVolume, togglePlayerMute,
@@ -3822,6 +3809,15 @@ const umaApp = createApp({
       });
     };
     window.addEventListener('popstate', syncPrepared);
+    document.addEventListener('pointerdown', event => {
+      if (!event.target.closest('.site-nav')) self.closeNavGroup();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !self.openNavGroup) return;
+      const trigger = document.querySelector('.site-nav-item.open > .site-nav-trigger');
+      self.closeNavGroup();
+      trigger?.focus({preventScroll:true});
+    });
     window.addEventListener('scroll', this.updateBackTop, { passive: true });
     syncPrepared();
     this.loadHomeSummaryIfNeeded();

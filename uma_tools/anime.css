@@ -18,11 +18,11 @@
 .anime-event-links { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--ui-line); }
 .anime-event-group + .anime-event-group { margin-top: 12px; }
 .anime-event-category { display: block; margin-bottom: 4px; color: var(--ui-navy); font-size: .875rem; }
-.anime-event-group > a { display: grid; grid-template-columns: 100px minmax(0,1fr) 18px; align-items: baseline; gap: 8px 12px; padding: 8px 0; color: var(--ui-navy); text-decoration: none; font-size: .875rem; line-height: 1.55; }
-.anime-event-kind { color: var(--text-2); }
+.anime-event-group > a { display: grid; grid-template-columns: max-content minmax(0,1fr) 18px; align-items: baseline; gap: 8px 12px; padding: 8px 0; color: var(--ui-navy); text-decoration: none; font-size: .875rem; line-height: 1.55; }
+.anime-event-kind { color: var(--text-2); white-space: nowrap; }
 .anime-event-copy { min-width: 0; }
 .anime-event-copy > span { display: inline; }
-.anime-event-copy time { display: inline-block; margin-left: 12px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.anime-event-copy time { display: inline-block; margin-left: 12px; color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .anime-event-group > a > svg { align-self: center; color: var(--ui-orange); }
 .anime-event-group > a:hover .anime-event-copy > span { color: var(--ui-cobalt-deep); }
 .anime-event-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; margin-top: 4px; padding: 4px 0; border: 0; background: transparent; color: var(--ui-cobalt-deep); font: inherit; font-size: .875rem; cursor: pointer; }

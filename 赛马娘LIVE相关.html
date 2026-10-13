@@ -47,12 +47,12 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </div>
         <div class="home-nav">
             <nav class="site-nav site-nav-home" aria-label="主导航">
-                <div v-for="item in navItems" :key="item.key" class="site-nav-item" :class="{open:openNavGroup===item.key}" @mouseenter="openNavGroupForPointer(item.key)" @mouseleave="closeNavGroupForPointer(item.key)">
+                <div v-for="item in navItems" :key="item.key" class="site-nav-item" :class="{open:openNavGroup===item.key}">
                     <button v-if="item.children" class="site-nav-trigger" type="button" :aria-expanded="openNavGroup===item.key" @click="activateNavGroup(item.key,$event)">
                         <span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span><svg class="site-nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
                     </button>
                     <button v-else class="site-nav-trigger" type="button" @click="navNavigate(item.path)"><span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span></button>
-                    <div v-if="item.children" class="site-nav-menu">
+                    <div v-if="item.children" v-show="openNavGroup===item.key" class="site-nav-menu">
                         <button v-for="child in item.children" :key="child.key" type="button" @click="navNavigate(child.path)"><span>{{ child.label }}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
                     </div>
                 </div>
@@ -67,15 +67,15 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         </a>
     </div>
 
-    <header v-if="!home" class="sub-header" @mouseleave="closeNavGroup()">
+    <header v-if="!home" class="sub-header">
         <button class="sub-brand" type="button" @click="goHome()"><span>赛马娘演出综合站</span></button>
         <nav class="site-nav site-nav-sub" aria-label="主导航">
-            <div v-for="item in navItems" :key="item.key" class="site-nav-item" :class="{open:openNavGroup===item.key,active:navItemActive(item.key)}" @mouseenter="openNavGroupForPointer(item.key)" @mouseleave="closeNavGroupForPointer(item.key)">
+            <div v-for="item in navItems" :key="item.key" class="site-nav-item" :class="{open:openNavGroup===item.key,active:navItemActive(item.key)}">
                 <button v-if="item.children" class="site-nav-trigger" type="button" :aria-expanded="openNavGroup===item.key" @click="activateNavGroup(item.key,$event)">
                     <span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span><svg class="site-nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
                 </button>
                 <button v-else class="site-nav-trigger" type="button" @click="navNavigate(item.path)"><span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span></button>
-                <div v-if="item.children" class="site-nav-menu">
+                <div v-if="item.children" v-show="openNavGroup===item.key" class="site-nav-menu">
                     <button v-for="child in item.children" :key="child.key" type="button" @click="navNavigate(child.path)"><span>{{ child.label }}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
                 </div>
             </div>
