@@ -61,6 +61,16 @@ function openViewer(img) {
   });
   activeViewer = pswp;
   activeTrigger = trigger;
+  let closeAfterOpening = false;
+  const openingKey = event => {
+    if (event.key === 'Escape' && !pswp.opener.isOpen && !pswp.isDestroying) {
+      event.preventDefault();
+      closeAfterOpening = true;
+    }
+  };
+  document.addEventListener('keydown', openingKey, true);
+  pswp.on('openingAnimationEnd', () => { if (closeAfterOpening) pswp.close(); });
+  pswp.on('destroy', () => document.removeEventListener('keydown', openingKey, true));
   const fitLevel = () => Math.min(1, pswp.currSlide.zoomLevels.fit);
   const zoom = factor => {
     const s = pswp.currSlide;
