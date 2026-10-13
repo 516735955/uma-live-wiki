@@ -49,7 +49,7 @@ async function main() {
       assert.strictEqual(await page.locator('.viewer-failure').count(), 0, 'a successful retry removes its own failure panel');
       assert(await page.locator('.pswp__item[aria-hidden="false"] img.pswp__img').evaluate(image => image.naturalWidth > 0));
       await page.keyboard.press('Escape');
-      await page.waitForTimeout(250);
+      await page.locator('.pswp').waitFor({ state: 'detached', timeout: 4000 });
       assert.strictEqual(await page.locator('.pswp').count(), 0);
       assert.deepStrictEqual(errors, []);
       await page.close();
