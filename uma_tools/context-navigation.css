@@ -1,4 +1,5 @@
-.context-navigation { position: fixed; top: var(--context-header-height,56px); left: 0; right: 0; z-index: 1000; display: flex; align-items: center; gap: 24px; padding: 8px max(20px,calc((100vw - 1280px)/2)); background: var(--card,#fff); border-bottom: 1px solid var(--ui-line); box-shadow: 0 4px 12px #20283b12; }
+.context-navigation { position: absolute; top: 100%; left: 0; right: 0; z-index: 0; display: flex; align-items: center; gap: 24px; padding: 8px max(20px,calc((100vw - 1280px)/2)); background: var(--card,#fff); border-bottom: 1px solid var(--ui-line); box-shadow: 0 4px 12px #20283b12; }
+.sub-header > .site-nav, .sub-header > .sub-brand { position: relative; z-index: 1; }
 .context-navigation[hidden] { display: none; }
 .context-identity { display: flex; align-items: center; gap: 10px; min-width: 0; max-width: 40%; color: var(--ui-navy); background: none; border: 0; font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer; }
 .context-identity img { width: 32px; height: 36px; object-fit: contain; flex-shrink: 0; }

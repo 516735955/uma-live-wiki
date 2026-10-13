@@ -34,6 +34,8 @@
   }
   function headerHeight() {
     const header = document.querySelector('.sub-header');
+    if (header && bar.parentElement !== header) header.appendChild(bar);
+    if (!header && bar.parentElement !== document.body) document.body.appendChild(bar);
     const height = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
     document.documentElement.style.setProperty('--context-header-height', height + 'px');
     return height;
