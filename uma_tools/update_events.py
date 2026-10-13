@@ -2970,7 +2970,7 @@ def refresh_voice_actor_details() -> dict[str, Any]:
     accepted_lookups = {
         fold_name(str(record.get("lookup_name") or record.get("name_ja") or record.get("name_zh") or ""))
         for record in previous_details
-        if record.get("status") != "source_unavailable" and not has_generic_photo(record)
+        if record.get("status") == "complete" and not has_generic_photo(record)
     }
     previous_by_lookup = {
         fold_name(str(record.get("lookup_name") or "")): record

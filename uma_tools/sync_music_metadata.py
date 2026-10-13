@@ -1242,6 +1242,7 @@ def main(argv: list[str] | None = None) -> int:
     })
     netease_checked = set(source_state.get("netease_checked") or [])
     utaten_checked = set(source_state.get("utaten_checked") or [])
+    utaten_checked_at = dict(source_state.get('utaten_checked_at') or {})
     lrclib_checked = set(source_state.get("lrclib_checked") or [])
     umamusu_wiki_checked = {int(value) for value in source_state.get("umamusu_wiki_checked") or [] if str(value).isdigit()}
     overrides = read_json(OVERRIDES_FILE, {"schema_version": 1, "versions": {}})
@@ -1430,12 +1431,16 @@ def main(argv: list[str] | None = None) -> int:
         )
 
     if args.utaten or args.utaten_only:
+        now = time.time()
         target_utaten = [
             row for version_id, row in recordings.items()
             if not row["instrumental"]
-            and (version_id in refresh or version_id not in utaten_checked)
+            and (version_id in refresh or version_id not in utaten_checked or now - float(utaten_checked_at.get(version_id, 0)) >= 24 * 60 * 60)
             and (version_id not in (lyrics.get("versions") or {}) or version_id not in (credits.get("versions") or {}))
         ]
+        # Newly discovered recordings come first; older missing metadata rotates
+        # by its last attempt rather than permanently caching an absent lyric.
+        target_utaten.sort(key=lambda row: (row['version_id'] in utaten_checked, float(utaten_checked_at.get(row['version_id'], 0))))
         if args.limit:
             target_utaten = target_utaten[: max(0, args.limit)]
         results: dict[str, dict[str, Any] | None] = {}
@@ -1448,6 +1453,7 @@ def main(argv: list[str] | None = None) -> int:
                     errors.append((version_id, error))
                 else:
                     utaten_checked.add(version_id)
+                    utaten_checked_at[version_id] = now
                 if index % 50 == 0 or index == len(futures):
                     print(f"UtaTen checked: {index}/{len(futures)}", flush=True)
         creators, credits, lyrics, timings = apply_utaten_results(recordings, results, creators, credits, lyrics, timings)
@@ -1545,6 +1551,7 @@ def main(argv: list[str] | None = None) -> int:
         "schema_version": 1,
         "netease_checked": sorted(netease_checked),
         "utaten_checked": sorted(utaten_checked),
+        "utaten_checked_at": utaten_checked_at,
         "lrclib_checked": sorted(lrclib_checked),
         "umamusu_wiki_checked": sorted(umamusu_wiki_checked),
     })

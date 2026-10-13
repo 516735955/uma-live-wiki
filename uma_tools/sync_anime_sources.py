@@ -149,15 +149,25 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
             work['status'] = 'airing'
     # Existing curated stills remain intact. Source-only images are accepted
     # individually after real decoding and the same HD checks as manual imports.
-    if not detail.get('stills'):
+    if row.get('stills'):
+        known_images = {item['original'] for item in detail.get('stills', [])}
         for index, image in enumerate(row.get('stills', []), 1):
             original = image.get('original', image.get('url')) if isinstance(image, dict) else image
-            output = f'uma_tools/img/anime/stills/{uid}-auto-{index:02d}.webp'
+            if original in known_images:
+                continue
+            sequence = 1
+            outputs = {asset['output']: asset for asset in documents['asset_sources']['assets']}
+            while True:
+                output = f'uma_tools/img/anime/stills/{uid}-auto-{sequence:02d}.webp'
+                if output not in outputs or outputs[output].get('source_url') == original:
+                    break
+                sequence += 1
             asset = {'unit_id': uid, 'mode': 'still', 'output': output, 'source_url': original, 'source_ref': evidence}
             try:
-                if not (ROOT / output).exists():
+                if output not in outputs or not (ROOT / output).exists():
                     save_image(asset)
                 detail.setdefault('stills', []).append({'url': '/' + output, 'original': original, 'source_ref': evidence})
+                known_images.add(original)
                 if not any(item['output'] == output for item in documents['asset_sources']['assets']):
                     documents['asset_sources']['assets'].append(asset)
             except Exception as error:
