@@ -1,4 +1,7 @@
 # 备份 / 构建产物
+.DS_Store
+.impeccable/review/
+.impeccable/surfaces/
 *.bak
 *.bak_*
 *.rar
