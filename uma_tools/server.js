@@ -315,38 +315,46 @@ function hasCjk(s) {
 
 function translateBatchLines(lines, cb, signal, attempt = 0) {
   let completed = false;
-  const finish = (value) => { if (!completed) { completed = true; cb(value); } };
+  const finish = (out, dirty) => { if (!completed) { completed = true; cb(out, dirty); } };
+  const fallback = () => finish(lines.slice(), true);
   // translate multiple short text runs in one Baidu request (newline-joined)
-  if (!lines.length) return finish([]);
+  if (!lines.length) return finish([], false);
   const protectedLines = lines.map((line, index) => currentTerms().protect(line, String(index).padStart(4, '0')));
   const text = protectedLines.map((line) => line.text).join('\n');
-  if (text.length > 950 || Buffer.byteLength(text) > 5500) return finish(null);
+  if (text.length > 950 || Buffer.byteLength(text) > 5500) return fallback();
   fetchTranslation(text, signal).then((j) => {
       try {
         if (j && j.trans_result && j.trans_result.length) {
-          if (j.trans_result.length !== lines.length) return finish(null);
+          if (j.trans_result.length !== lines.length) return fallback();
           const out = [];
+          let dirty = false;
           for (let i = 0; i < lines.length; i++) {
-            if (j.trans_result[i].src !== protectedLines[i].text) return finish(null);
-            const restored = protectedLines[i].restore(j.trans_result[i].dst);
-            if (!restored) return finish(null);
-            // Ratings are facts. Baidu sometimes adds a star to a leading ★★★.
-            const rating = lines[i].match(/^★+/);
-            const value = rating ? restored.replace(/^★+/, rating[0]) : restored;
-            const numbers = (value) => (value.match(/\d+(?:[/:.]\d+)*/g) || []).sort().join('|');
-            if (numbers(j.trans_result[i].dst) !== numbers(protectedLines[i].text)) return finish(null);
+            let value = '';
+            if (j.trans_result[i].src === protectedLines[i].text) {
+              const restored = protectedLines[i].restore(j.trans_result[i].dst);
+              if (restored) {
+                // Ratings are facts. Baidu sometimes adds a star to a leading ★★★.
+                const rating = lines[i].match(/^★+/);
+                const candidate = rating ? restored.replace(/^★+/, rating[0]) : restored;
+                const normalizeDigits = (value) => String(value).replace(/[,，]/g, '').replace(/[\uFF10-\uFF19]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0)).replace(/[：／．]/g, (ch) => ({ '：': ':', '／': '/', '．': '.' }[ch]));
+                const numbers = (value) => (normalizeDigits(value).match(/\d+(?:[/:.]\d+)*/g) || []).sort().join('|');
+                const digitStream = (value) => normalizeDigits(value).replace(/\D/g, '');
+                if (numbers(j.trans_result[i].dst) === numbers(protectedLines[i].text) || digitStream(j.trans_result[i].dst) === digitStream(protectedLines[i].text)) value = candidate;
+              }
+            }
+            if (!value) { value = lines[i]; dirty = true; }
             out.push(value);
           }
-          return finish(out);
+          return finish(out, dirty);
         }
         const code = j && j.error_code;
         if ((code === '54003' || code === '54000') && attempt < 2 && !(signal && signal.aborted)) {
           setTimeout(() => translateBatchLines(lines, finish, signal, attempt + 1), 1200 * (attempt + 1));
           return;
         }
-        finish(null);
-      } catch (e) { finish(null); }
-  }).catch(() => finish(null));
+        fallback();
+      } catch (e) { fallback(); }
+  }).catch(() => fallback());
 }
 
 function translateHtmlMessage(html, cb, signal) {
@@ -394,53 +402,48 @@ function translateHtmlMessage(html, cb, signal) {
   if (cur.length) chunks.push(cur);
   const translated = new Map();
   let done = 0;
-  let failed = false;
+  let dirty = false;
   chunks.forEach(function (chunk, ci) {
-    translateBatchLines(chunk.map(function (r) { return r.text; }), function (outs) {
+    translateBatchLines(chunk.map(function (r) { return r.text; }), function (outs, chunkDirty) {
       if (outs === null) {
-        failed = true;
-        done++;
-        if (done === chunks.length) finish();
-        return;
+        dirty = true;
+        chunk.forEach(function (r) { translated.set(r, r.text); });
+      } else {
+        if (chunkDirty) dirty = true;
+        outs.forEach(function (zh, k) { translated.set(chunk[k], zh || chunk[k].text); });
       }
-      outs.forEach(function (zh, k) {
-        if (!zh || (zh === chunk[k].text && /[\u3040-\u30ff]/.test(chunk[k].text))) failed = true;
-        translated.set(chunk[k], zh);
-      });
       done++;
       if (done === chunks.length) finish();
     }, signal);
   });
   function finish() {
-    if (failed || (signal && signal.aborted)) return cb('');
+    if (signal && signal.aborted) return cb('');
     const textNodes = new Map();
-    runs.forEach((run) => textNodes.set(run.idx, (textNodes.get(run.idx) || '') + translated.get(run)));
+    runs.forEach((run) => textNodes.set(run.idx, (textNodes.get(run.idx) || '') + (translated.get(run) || run.text)));
     const out = tokens.map(function (tok, i) {
       if (textNodes.has(i)) return textNodes.get(i);
       return tok;
     }).join('');
-    translations.set(key, out);
+    if (!dirty) translations.set(key, out);
     cb(out);
   }
 }
 
 function translateArticle(detail, signal, finish) {
   Object.assign(detail, newsContent.apply(detail));
-  let remaining = 2, failed = false;
+  let remaining = 2;
   const complete = () => {
     if (--remaining) return;
-    finish(failed ? 503 : 200, failed ? { error: 'translation unavailable' } : { response_code: 1, detail });
+    finish(200, { response_code: 1, detail });
   };
   if (detail.title_zh || !detail.title) complete();
   else translateTitle(detail.title, (zh) => {
-    if (!zh || (zh === detail.title && /[\u3040-\u30ff]/.test(detail.title))) failed = true;
-    else detail.title_zh = zh;
+    detail.title_zh = zh && !(zh === detail.title && /[\u3040-\u30ff]/.test(detail.title)) ? zh : '';
     complete();
   }, signal);
   if (detail.message_zh || !detail.message) complete();
   else translateHtmlMessage(detail.message, (zh) => {
-    if (!zh) failed = true;
-    else detail.message_zh = zh;
+    detail.message_zh = zh || detail.message;
     complete();
   }, signal);
 }

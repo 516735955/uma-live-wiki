@@ -134,8 +134,8 @@ async function main() {
   let result;
   translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   await tick();
-  assert.strictEqual(result, '', 'a failed translation is not presented as a Japanese or partially translated success');
-  assert.strictEqual(Object.keys(translation.transCache).length, 0, 'failed translations remain retryable');
+  assert.strictEqual(result, '<p>原文</p>', 'a failed translation falls back to the original text instead of dropping the article');
+  assert.strictEqual(Object.keys(translation.transCache).length, 0, 'fallback results are not cached so translations remain retryable');
   translation.translateBatchLines = (lines, callback) => callback(['译文']);
   translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   assert.strictEqual(result, '<p>译文</p>');
@@ -143,7 +143,7 @@ async function main() {
 
   translation.fetchTranslation = async (text) => ({ trans_result: text.split('\n').map((src) => ({ src, dst: src.replace(/原文/g, '译文') })) });
   vm.runInContext(section('function translateBatchLines(', 'function translateHtmlMessage('), translation);
-  let lines;
+  let lines, linesDirty;
   translation.translateHtmlMessage('<p>原文\n原文</p>', (value) => { result = value; });
   await tick();
   assert.strictEqual(result, '<p>译文 译文</p>', 'HTML whitespace does not create extra API translation rows');
@@ -152,11 +152,25 @@ async function main() {
   await tick();
   assert.strictEqual(lines[0], '★★★译文1500', 'a translated rating retains its original star count');
   translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '译文150' }] });
-  translation.translateBatchLines(['原文1500'], (value) => { lines = value; });
+  translation.translateBatchLines(['原文1500'], (value, dirty) => { lines = value; linesDirty = dirty; });
   await tick();
-  assert.strictEqual(lines, null, 'a changed amount is rejected');
-  translation.translateBatchLines(['原文'.repeat(1000)], (value) => { lines = value; });
-  assert.strictEqual(lines, null, 'query length is checked before sending');
+  assert.strictEqual(lines[0], '原文1500', 'a changed amount keeps the original line');
+  assert.strictEqual(linesDirty, true);
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '票价：￥2000（含10%税）' }] });
+  translation.translateBatchLines(['チケット料金：￥2,000 (10%税込)'], (value) => { lines = value; });
+  await tick();
+  assert.strictEqual(lines[0], '票价：￥2000（含10%税）', 'thousands separators are formatting, not a changed amount');
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '【9/2817:50追记】' }] });
+  translation.translateBatchLines(['【9/28 17:50追記】'], (value) => { lines = value; });
+  await tick();
+  assert.strictEqual(lines[0], '【9/2817:50追记】', 'merged date-time spacing keeps the same digits in order');
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '开场12：00' }] });
+  translation.translateBatchLines(['開場12:00'], (value) => { lines = value; });
+  await tick();
+  assert.strictEqual(lines[0], '开场12：00', 'full-width colons are formatting, not a changed time');
+  translation.translateBatchLines(['原文'.repeat(1000)], (value, dirty) => { lines = value; linesDirty = dirty; });
+  assert.strictEqual(lines[0], '原文'.repeat(1000), 'query length is checked before sending and oversized lines keep the original');
+  assert.strictEqual(linesDirty, true);
 
   let titleDone, bodyDone, articleResult;
   const completedArticles = vm.createContext({
@@ -173,7 +187,12 @@ async function main() {
   assert.strictEqual(articleResult.data.detail.message_zh, '译文');
   completedArticles.translateArticle({ title: 'ニュース', message: '原文' }, null, (status, data) => { articleResult = { status, data }; });
   titleDone('新闻'); bodyDone('');
-  assert.strictEqual(articleResult.status, 503, 'failed translation remains an explicit retryable failure');
+  assert.strictEqual(articleResult.status, 200, 'a failed body falls back to the original text');
+  assert.strictEqual(articleResult.data.detail.message_zh, '原文');
+  completedArticles.translateArticle({ title: 'ニュース', message: '' }, null, (status, data) => { articleResult = { status, data }; });
+  titleDone('ニュース');
+  assert.strictEqual(articleResult.status, 200, 'an untranslated title falls back to the original');
+  assert.strictEqual(articleResult.data.detail.title_zh, '');
   console.log('server regressions passed');
 }
 
