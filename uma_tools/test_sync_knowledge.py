@@ -100,6 +100,18 @@ class KnowledgeTests(unittest.TestCase):
         anime.publish_episode({'work_id': 'work', 'number': 4, 'title_ja': '第四话', 'source_url': 'https://example.test/4'}, documents, {}, {})
         self.assertEqual(documents['units']['series'][0]['released_count'], 1)
 
+    def test_later_official_images_keep_existing_image_identity(self):
+        documents = self.documents()
+        output = 'uma_tools/img/anime/stills/work-e01-auto-01.webp'
+        documents['units']['series'][0]['details']['1']['stills'] = [{'url': '/' + output, 'original': 'https://example.test/old.jpg'}]
+        documents['asset_sources']['assets'] = [{'output': output, 'source_url': 'https://example.test/old.jpg'}]
+        saved = []
+        anime.publish_episode({'work_id': 'work', 'number': 1, 'title_ja': '第一话', 'source_url': 'https://example.test/1',
+            'stills': ['https://example.test/new.jpg', 'https://example.test/old.jpg']}, documents, {}, {}, save_image=saved.append)
+        self.assertEqual(len(saved), 1)
+        self.assertNotEqual(saved[0]['output'], output)
+        self.assertEqual(documents['units']['series'][0]['details']['1']['stills'][0]['original'], 'https://example.test/old.jpg')
+
     def test_structured_episode_does_not_create_cast_from_a_name_mention(self):
         markup = '<script type="application/ld+json">' + json.dumps({'@type': 'TVEpisode', 'name': '第二话', 'episodeNumber': 2, 'description': '剧情提到某人', 'actor': {'name': '演员', 'characterName': '角色'}}) + '</script>'
         rows = anime.structured_episodes(markup, 'work', 'https://example.test/2')
