@@ -14,6 +14,7 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 import tempfile
 import urllib.request
 import urllib.error
@@ -242,6 +243,16 @@ def published_catalog():
             return value
         except (OSError, ValueError) as error:
             failure = error
+            # curl's IPv4 transport handles hosts where urllib's TLS or IPv6
+            # route fails. The same public repository URL remains the source.
+            try:
+                response = subprocess.run(['curl', '--ipv4', '--fail', '--location', '--silent', '--show-error',
+                    '--connect-timeout', '10', '--max-time', '35', url], capture_output=True, check=True, timeout=40)
+                value = json.loads(response.stdout.decode('utf-8'))
+                if curated_slots(value):
+                    return value
+            except (OSError, ValueError, subprocess.SubprocessError) as current:
+                failure = current
     raise RuntimeError('Google sheet and GitHub setlist fallback are unavailable') from failure
 
 

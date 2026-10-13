@@ -17,7 +17,7 @@ RETRY = 60 * 60
 STEPS = [
     ('characters', ['sync_character_sources.py']),
     ('pedigree-source', ['sync_pedigree_sources.py']),
-    ('horse-profiles', ['crawl_horses.py', '--missing']),
+    ('horse-profiles', ['crawl_horses.py', '--missing', '--localize-photos']),
     ('pedigree-build', ['build_pedigree.py']),
     ('events', ['crawl_events.py']),
     ('programs', ['crawl_official_programs.py']),

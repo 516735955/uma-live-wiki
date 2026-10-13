@@ -972,8 +972,18 @@ def fetch_utaten(recording: dict[str, Any]) -> tuple[str, dict[str, Any] | None,
     try:
         search_url = UTATEN_SEARCH_URL.format(title=urllib.parse.quote(recording["version_title"]))
         request = urllib.request.Request(search_url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(request, timeout=25) as response:
-            search_page = response.read().decode("utf-8", errors="replace")
+        try:
+            with urllib.request.urlopen(request, timeout=25) as response:
+                search_page = response.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as error:
+            if error.code != 400:
+                raise
+            # Search operators in composite soundtrack titles may be rejected;
+            # the result matcher still checks the complete original title.
+            query = re.sub(r'[^\w\s\u3040-\u30ff\u3400-\u9fff]', ' ', recording['version_title'])
+            request = urllib.request.Request(UTATEN_SEARCH_URL.format(title=urllib.parse.quote(query.strip())), headers={'User-Agent': UA})
+            with urllib.request.urlopen(request, timeout=25) as response:
+                search_page = response.read().decode('utf-8', errors='replace')
         result_path = utaten_search_result(search_page, recording["version_title"])
         if not result_path:
             return version_id, None, ""
