@@ -6,11 +6,27 @@ const os = require('os');
 const path = require('path');
 const { CatalogStore, stableAlbumId } = require('./catalog-store');
 
+function copyDir(from, to) {
+  const stack = [[from, to]];
+  while (stack.length) {
+    const [src, dst] = stack.pop();
+    fs.mkdirSync(dst, { recursive: true });
+    for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+      const s = path.join(src, entry.name);
+      const d = path.join(dst, entry.name);
+      if (entry.isDirectory()) stack.push([s, d]);
+      else {
+        try { fs.copyFileSync(s, d); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+      }
+    }
+  }
+}
+
 async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api3-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(snapshot.buildId.includes('-api4-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -93,7 +109,7 @@ async function main() {
   // batch ID stays the same; otherwise removed actors remain visible.
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-catalog-profile-'));
   try {
-    fs.cpSync(path.join(__dirname, '..', 'data'), temporary, { recursive: true });
+    copyDir(path.join(__dirname, '..', 'data'), temporary);
     const editedStore = new CatalogStore(temporary);
     const before = await editedStore.voices();
     const filename = path.join(temporary, 'voice_actor_profiles.json');
