@@ -1,5 +1,5 @@
 /* PhotoSwipe 5.4.4 adapter for real artwork; synthetic identity SVGs remain static. */
-import PhotoSwipe from './vendor/photoswipe/photoswipe.esm.min.js';
+import PhotoSwipe from '/uma_tools/vendor/photoswipe/photoswipe.esm.min.js';
 
 const selector = '.entity-cover img, .image-view-trigger img, .roommate-image';
 const esc = value => String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
