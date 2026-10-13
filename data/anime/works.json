@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "works": [
+    {
+      "id": "anime-s1",
+      "title_zh": "赛马娘 Pretty Derby",
+      "title_ja": "ウマ娘 プリティーダービー",
+      "aliases": [
+        "动画第一季",
+        "Season 1",
+        "第一季"
+      ],
+      "format": "tv",
+      "series": "pretty-derby",
+      "status": "completed",
+      "start_date": "2018-04-02",
+      "end_date": "2018-12-19",
+      "summary_zh": "从乡下转入特雷森学园的特别周，与伙伴们一同追逐“日本第一赛马娘”的梦想。作品由电视正篇与《BNW的誓言》OVA 共同组成。",
+      "cover": "/uma_tools/img/anime/anime-s1.webp",
+      "official_url": "https://anime-umamusume.jp/archive/1st/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-anime-s1",
+        "official-s1-broadcast",
+        "official-bnw-bd",
+        "official-bnw-preview"
+      ],
+      "dates": [
+        {
+          "label": "TOKYO MX・BS11放送",
+          "date": "2018-04-01",
+          "display": "2018-04-01 24:00（初回1小时，第1・2话）",
+          "timezone": "JST"
+        }
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/5/53/S1Cover.jpg"
+    },
+    {
+      "id": "anime-s2",
+      "title_zh": "赛马娘 Pretty Derby Season 2",
+      "title_ja": "ウマ娘 プリティーダービー Season 2",
+      "aliases": [
+        "动画第二季",
+        "Season 2",
+        "第二季"
+      ],
+      "format": "tv",
+      "series": "pretty-derby",
+      "status": "completed",
+      "start_date": "2021-01-05",
+      "end_date": "2021-03-30",
+      "summary_zh": "以东海帝王与目白麦昆为中心，描绘她们在伤病、约定与梦想之间不断重新起跑的故事。",
+      "cover": "/uma_tools/img/anime/anime-s2.webp",
+      "official_url": "https://anime-umamusume.jp/archive/2nd/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-anime-s2"
+      ],
+      "dates": [
+        {
+          "label": "TOKYO MX 首播",
+          "date": "2021-01-04",
+          "display": "2021-01-04 24:00",
+          "timezone": "JST"
+        },
+        {
+          "label": "ABEMA 配信",
+          "date": "2021-01-05",
+          "display": "2021-01-05 12:00",
+          "timezone": "JST"
+        }
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/f/fd/S2CoverwithLogo.png"
+    },
+    {
+      "id": "anime-umayon",
+      "title_zh": "赛马娘四格",
+      "title_ja": "うまよん",
+      "aliases": [
+        "Umayon",
+        "马娘四格"
+      ],
+      "format": "short",
+      "series": "short-animation",
+      "status": "completed",
+      "start_date": "2020-07-07",
+      "end_date": "2021-12-08",
+      "summary_zh": "以三分钟短篇呈现特雷森学园里轻快、热闹又偶尔出人意料的日常；另含蓝光收录的新作短篇。",
+      "cover": "/uma_tools/img/anime/anime-umayon.webp",
+      "official_url": "https://umamusume.jp/contents/anime/umayon/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-umayon"
+      ],
+      "cover_original": "https://umamusume.jp/_nuxt/assets/anime-umayon/images/kv-c27b70c.png"
+    },
+    {
+      "id": "anime-1st-anniversary",
+      "title_zh": "1st Anniversary Special Animation",
+      "title_ja": "1st Anniversary Special Animation",
+      "aliases": [
+        "一周年特别动画",
+        "1周年动画"
+      ],
+      "format": "special",
+      "series": "pretty-derby",
+      "status": "completed",
+      "start_date": "2022-02-22",
+      "end_date": "2022-02-22",
+      "summary_zh": "为游戏一周年制作的特别动画，以新的训练与目标串联多位赛马娘。",
+      "cover": "/uma_tools/img/anime/anime-1st-anniversary.webp",
+      "official_url": "https://umamusume.jp/contents/anime/1st-anniversary/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-1st-anniversary"
+      ],
+      "cover_original": "https://umamusume.jp/_nuxt/images/mv_slide01-9lTCkLJr.jpg"
+    },
+    {
+      "id": "anime-umayuru",
+      "title_zh": "摇曳马娘",
+      "title_ja": "うまゆる",
+      "aliases": [
+        "Umayuru",
+        "马娘悠哉日常"
+      ],
+      "format": "short",
+      "distribution": "web",
+      "series": "short-animation",
+      "status": "completed",
+      "start_date": "2022-10-16",
+      "end_date": "2023-03-26",
+      "summary_zh": "小小的赛马娘们带来每话约三分钟的校园短篇，喜剧、比赛与音乐企划在轻松日常中交替展开。",
+      "cover": "/uma_tools/img/anime/anime-umayuru.webp",
+      "official_url": "https://umamusume.jp/contents/anime/umayuru/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-umayuru"
+      ],
+      "dates": [
+        {
+          "label": "ぱかチューブっ！配信",
+          "date": "2022-10-16",
+          "display": "2022-10-16 21:00",
+          "timezone": "JST"
+        },
+        {
+          "label": "官网公开公告",
+          "date": "2022-10-16",
+          "timezone": "JST"
+        }
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/b/b8/UmayuruCover.png"
+    },
+    {
+      "id": "anime-rttt",
+      "title_zh": "赛马娘 Pretty Derby ROAD TO THE TOP",
+      "title_ja": "ウマ娘 プリティーダービー ROAD TO THE TOP",
+      "aliases": [
+        "巅峰之路",
+        "RTTT"
+      ],
+      "format": "web",
+      "series": "pretty-derby",
+      "status": "completed",
+      "start_date": "2023-04-16",
+      "end_date": "2023-05-07",
+      "summary_zh": "成田路、爱慕织姬与好歌剧以经典三冠赛为目标，在同一时代彼此追逐、碰撞与成长。",
+      "cover": "/uma_tools/img/anime/anime-rttt.webp",
+      "official_url": "https://umamusume.jp/contents/anime/roadtothetop/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-rttt"
+      ],
+      "versions": [
+        {
+          "name": "剧场再编辑版",
+          "date": "2024-05-10",
+          "url": "https://movie-umamusume.jp/rttt/",
+          "source_ref": "official-rttt-recut"
+        },
+        {
+          "name": "剧场再编辑版 Blu-ray",
+          "date": "2025-01-22",
+          "url": "https://movie-umamusume.jp/rttt/blu-ray/",
+          "source_ref": "official-rttt-bd"
+        }
+      ],
+      "dates": [
+        {
+          "label": "ぱかチューブっ！配信",
+          "date": "2023-04-16",
+          "display": "2023-04-16 21:00",
+          "timezone": "JST",
+          "edition": "web"
+        },
+        {
+          "label": "剧场上映",
+          "date": "2024-05-10",
+          "edition": "film"
+        },
+        {
+          "label": "Blu-ray发行",
+          "date": "2025-01-22",
+          "edition": "film"
+        }
+      ],
+      "cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg",
+      "film_duration": "99分钟",
+      "film_cover": "/uma_tools/img/anime/anime-rttt.webp",
+      "film_stills": [
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-01.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-02.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-03.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-04.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-05.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-06.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-07.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-rttt-08.webp",
+          "source_ref": "official-toho-film-release",
+          "original": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg"
+        }
+      ],
+      "film_cover_original": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg"
+    },
+    {
+      "id": "anime-s3",
+      "title_zh": "赛马娘 Pretty Derby Season 3",
+      "title_ja": "ウマ娘 プリティーダービー Season 3",
+      "aliases": [
+        "动画第三季",
+        "Season 3",
+        "第三季"
+      ],
+      "format": "tv",
+      "series": "pretty-derby",
+      "status": "completed",
+      "start_date": "2023-10-05",
+      "end_date": "2023-12-28",
+      "summary_zh": "北部玄驹与里见光钻怀抱各自的憧憬，在强敌与时代更替中寻找属于自己的奔跑方式。",
+      "cover": "/uma_tools/img/anime/anime-s3.webp",
+      "official_url": "https://anime-umamusume.jp/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-anime-s3"
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/0/05/S3Cover.png"
+    },
+    {
+      "id": "anime-movie-beginning-new-era",
+      "title_zh": "赛马娘 Pretty Derby 新时代之门",
+      "title_ja": "ウマ娘 プリティーダービー 新時代の扉",
+      "aliases": [
+        "新时代之门",
+        "剧场版赛马娘"
+      ],
+      "format": "movie",
+      "series": "pretty-derby",
+      "status": "completed",
+      "start_date": "2024-05-24",
+      "end_date": "2024-05-24",
+      "summary_zh": "因富士奇石的奔跑而受到震撼，森林宝穴进入特雷森学园，向经典三冠发起挑战。她与烈焰快驹、曼城茶座和爱丽速子等同世代劲敌，一同追逐最强的目标。",
+      "cover": "/uma_tools/img/anime/anime-movie-beginning-new-era.webp",
+      "official_url": "https://movie-umamusume.jp/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-new-era"
+      ],
+      "versions": [
+        {
+          "name": "Blu-ray",
+          "date": "2025-02-19",
+          "url": "https://movie-umamusume.jp/blu-ray/",
+          "source_ref": "official-new-era-bd"
+        }
+      ],
+      "cover_original": "https://movie-umamusume.jp/assets/images/index/img_kv01.jpg",
+      "duration": "108分钟"
+    },
+    {
+      "id": "anime-cinderella-gray",
+      "title_zh": "赛马娘 芦毛灰姑娘",
+      "title_ja": "ウマ娘 シンデレラグレイ",
+      "aliases": [
+        "芦灰",
+        "灰发灰姑娘",
+        "Cinderella Gray",
+        "シングレ"
+      ],
+      "format": "tv",
+      "series": "cinderella-gray",
+      "status": "completed",
+      "start_date": "2025-04-06",
+      "end_date": "2025-12-21",
+      "summary_zh": "地方笠松出现了名为小栗帽的芦毛赛马娘。她以压倒性的奔跑打破常识，从地方赛场一路迈向中央并刻下新的传说。",
+      "cover": "/uma_tools/img/anime/anime-cinderella-gray.webp",
+      "official_url": "https://anime-cinderellagray.com/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-cingray"
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/e/ed/CGcour2poster.jpeg"
+    },
+    {
+      "id": "anime-umayuru-prettygray",
+      "title_zh": "摇曳马娘 Pretty Gray",
+      "title_ja": "うまゆる ぷりてぃ～ぐれい",
+      "aliases": [
+        "Pretty Gray",
+        "摇曳芦灰"
+      ],
+      "format": "short",
+      "distribution": "web",
+      "series": "short-animation",
+      "status": "completed",
+      "start_date": "2025-04-30",
+      "end_date": "2025-05-06",
+      "summary_zh": "玉藻十字、小栗帽、黄金船与目白麦昆等赛马娘，在圣蹄祭等日常场景中展开四集短篇故事。",
+      "cover": "/uma_tools/img/anime/anime-umayuru-prettygray.webp",
+      "official_url": "https://umamusume.jp/contents/anime/umayuru-prettygray/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-prettygray"
+      ],
+      "dates": [
+        {
+          "label": "ぱかチューブっ！配信",
+          "date": "2025-04-30",
+          "display": "2025-04-30 12:00",
+          "timezone": "JST"
+        }
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/0/0f/UmayuruPrettyGray-AnimeCover.png"
+    },
+    {
+      "id": "anime-umayuru-fullgate",
+      "title_zh": "摇曳马娘 Full Gate!",
+      "title_ja": "うまゆる ふるげ～と！",
+      "aliases": [
+        "Full Gate",
+        "全员出闸",
+        "ふるげーと"
+      ],
+      "format": "short",
+      "distribution": "web",
+      "series": "short-animation",
+      "status": "airing",
+      "start_date": "2026-09-27",
+      "end_date": "",
+      "summary_zh": "《摇曳马娘》系列的新短篇让更多赛马娘一同出闸，每周用约三分钟呈现全员参与的特雷森日常。",
+      "cover": "/uma_tools/img/anime/anime-umayuru-fullgate.webp",
+      "official_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
+      "source_refs": [
+        "official-anime-portal",
+        "official-fullgate"
+      ],
+      "dates": [
+        {
+          "label": "ぱかチューブっ！配信",
+          "date": "2026-09-27",
+          "display": "2026-09-27 22:30",
+          "timezone": "JST"
+        }
+      ],
+      "cover_original": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png"
+    }
+  ]
+}

@@ -696,14 +696,6 @@
       "horse": "casinodrive",
       "kind": "horse"
     },
-    "akasakamisato": {
-      "horse": null,
-      "kind": "non_uma"
-    },
-    "hosoejunko": {
-      "horse": null,
-      "kind": "non_uma"
-    },
     "spica_trainer": {
       "horse": null,
       "kind": "non_uma"
@@ -720,20 +712,52 @@
       "horse": "zankan_koukou",
       "kind": "horse"
     },
-    "teppen_commentator_honizumi": {
-      "horse": null,
-      "kind": "non_uma"
-    },
-    "teppen_commentator_yamamoto": {
-      "horse": null,
-      "kind": "non_uma"
-    },
     "kitaharajo": {
       "horse": null,
       "kind": "non_uma"
     },
     "fujimasamarch": {
       "horse": "fujimasamarch",
+      "kind": "horse"
+    },
+    "musaka_ginjiro": {
+      "horse": null,
+      "kind": "non_uma"
+    },
+    "norn_ace": {
+      "horse": null,
+      "kind": "original"
+    },
+    "rudy_lemono": {
+      "horse": null,
+      "kind": "original"
+    },
+    "minnie_the_lady": {
+      "horse": null,
+      "kind": "original"
+    },
+    "dicta_striker": {
+      "horse": "サッカーボーイ",
+      "kind": "horse"
+    },
+    "toni_bianca": {
+      "horse": "tony_bin",
+      "kind": "horse"
+    },
+    "obey_your_master": {
+      "horse": "pay_the_butler",
+      "kind": "horse"
+    },
+    "moonlight_lunacy": {
+      "horse": "moon_madness",
+      "kind": "horse"
+    },
+    "michelle_my_baby": {
+      "horse": "my_big_boy",
+      "kind": "horse"
+    },
+    "ellerslie_pride": {
+      "horse": "bonecrusher",
       "kind": "horse"
     }
   },
@@ -4426,22 +4450,6 @@
       "born": 2005,
       "country": "USA",
       "metadata_source_url": "https://db.netkeiba.com/horse/2005110112/"
-    },
-    {
-      "id": "akasakamisato",
-      "zh": "赤坂美聪",
-      "ja": "赤坂美聡",
-      "en": "Akasaka Misato",
-      "avatar": "uma_avatars/赤坂美聪.png",
-      "pure": true
-    },
-    {
-      "id": "hosoejunko",
-      "zh": "细江纯子",
-      "ja": "細江純子",
-      "en": "Hosoe Junko",
-      "avatar": "uma_avatars/细江纯子.png",
-      "pure": true
     },
     {
       "id": "sunday_silence",
@@ -15118,9 +15126,9 @@
       "ja": "セントクレスピン",
       "en": "Saint Crespin",
       "profile_url": "https://db.netkeiba.com/horse/000a0004b5/",
-      "sex": "gelding",
+      "sex": "male",
       "born": 1956,
-      "metadata_source_url": "https://db.netkeiba.com/horse/000a0004b5/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333371/",
       "country": "GB",
       "parents": {
         "sire": "netkeiba_000a000dc0",
@@ -23005,7 +23013,13 @@
       "sex": "female",
       "born": 1944,
       "country": "USA",
-      "metadata_source_url": "https://www.jbis.jp/horse/0000388169/"
+      "metadata_source_url": "https://www.jbis.jp/horse/0000388169/",
+      "parents": {
+        "sire": "discovery",
+        "dam": "jbis_0000388353",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+      }
     },
     {
       "id": "gainsborough",
@@ -23532,7 +23546,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a0003b1/",
       "sex": "male",
       "born": 1965,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "grey_sovereign",
+        "dam": "netkeiba_000a006dcd",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0003b1/"
+      }
     },
     {
       "id": "khairunissa",
@@ -23543,7 +23563,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a00830f/",
       "sex": "female",
       "born": 1960,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "prince_bio",
+        "dam": "netkeiba_000a007cf4",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00830f/"
+      }
     },
     {
       "id": "only_for_life",
@@ -23554,7 +23580,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a00048a/",
       "sex": "male",
       "born": 1960,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "chanteur",
+        "dam": "netkeiba_000a00776c",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00048a/"
+      }
     },
     {
       "id": "lorelei",
@@ -23565,7 +23597,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a008599/",
       "sex": "female",
       "born": 1950,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "netkeiba_000a000fc5",
+        "dam": "netkeiba_000a006cc3",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a008599/"
+      }
     },
     {
       "id": "thicket",
@@ -23576,7 +23614,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a007b17/",
       "sex": "female",
       "born": 1947,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "nasrullah",
+        "dam": "netkeiba_000a007b1a",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a007b17/"
+      }
     },
     {
       "id": "preciptic",
@@ -23587,7 +23631,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a001072/",
       "sex": "male",
       "born": 1942,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "netkeiba_000a000fbf",
+        "dam": "netkeiba_000a0072de",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a001072/"
+      }
     },
     {
       "id": "campanette",
@@ -23598,7 +23648,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a006997/",
       "sex": "female",
       "born": 1948,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "fair_trial",
+        "dam": "netkeiba_000a008266",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a006997/"
+      }
     },
     {
       "id": "kahyasi",
@@ -23682,7 +23738,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a0075ab/",
       "sex": "female",
       "born": 1952,
-      "country": "USA"
+      "country": "USA",
+      "parents": {
+        "sire": "alibhai",
+        "dam": "jbis_0000387589",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+      }
     },
     {
       "id": "hasty_road",
@@ -23852,10 +23914,14 @@
     },
     {
       "id": "chanteur",
-      "zh": "Chanteur",
+      "zh": "尚特尔",
       "ja": "シャントゥール",
       "en": "Chanteur",
-      "country": "FR"
+      "country": "FR",
+      "sex": "male",
+      "born": 1942,
+      "profile_url": "https://db.netkeiba.com/horse/000a000eaa/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a000eaa/"
     },
     {
       "id": "vertencia",
@@ -23878,20 +23944,6 @@
       "ja": "成田路のトレーナー",
       "en": "Narita Trainer",
       "avatar": "uma_official/narita_trainer.png",
-      "pure": true
-    },
-    {
-      "id": "teppen_commentator_honizumi",
-      "zh": "《巅峰之路》解说",
-      "ja": "《ウマ娘 プリティーダービー》実況（本泉莉奈）",
-      "en": "Commentator (Honizumi)",
-      "pure": true
-    },
-    {
-      "id": "teppen_commentator_yamamoto",
-      "zh": "《巅峰之路》解说",
-      "ja": "《ウマ娘 プリティーダービー》実況（山本昌広）",
-      "en": "Commentator (Yamamoto)",
       "pure": true
     },
     {
@@ -24407,7 +24459,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a000db5/",
       "sex": "male",
       "born": 1959,
-      "country": "FR"
+      "country": "FR",
+      "parents": {
+        "sire": "jbis_0000338897",
+        "dam": "jbis_0000389014",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
     },
     {
       "id": "netkeiba_000a007de3",
@@ -24970,7 +25028,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a006cf5/",
       "sex": "female",
       "born": 1957,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "netkeiba_000a000fc5",
+        "dam": "netkeiba_000a006d78",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a006cf5/"
+      }
     },
     {
       "id": "netkeiba_000a001039",
@@ -25975,7 +26039,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a000dab/",
       "sex": "male",
       "born": 1946,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "netkeiba_000a000fa4",
+        "dam": "netkeiba_000a0079e3",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000dab/"
+      }
     },
     {
       "id": "netkeiba_000a00704a",
@@ -25986,7 +26056,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a00704a/",
       "sex": "female",
       "born": 1947,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "netkeiba_000a000ecf",
+        "dam": "netkeiba_000a007c2d",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00704a/"
+      }
     },
     {
       "id": "netkeiba_000a00b1ae",
@@ -26877,7 +26953,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a000e3a/",
       "sex": "male",
       "born": 1958,
-      "country": "FR"
+      "country": "FR",
+      "parents": {
+        "sire": "netkeiba_000a000fa4",
+        "dam": "netkeiba_000a00731a",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a000e3a/"
+      }
     },
     {
       "id": "netkeiba_000a0082f5",
@@ -26888,7 +26970,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a0082f5/",
       "sex": "female",
       "born": 1953,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "court_martial",
+        "dam": "netkeiba_000a006c6d",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a0082f5/"
+      }
     },
     {
       "id": "netkeiba_000a000f98",
@@ -27152,7 +27240,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a001269/",
       "sex": "male",
       "born": 1948,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "hyperion",
+        "dam": "jbis_0000387248",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+      }
     },
     {
       "id": "netkeiba_000a007b49",
@@ -27196,7 +27290,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a00703e/",
       "sex": "female",
       "born": 1952,
-      "country": "USA"
+      "country": "USA",
+      "parents": {
+        "sire": "netkeiba_000a001499",
+        "dam": "netkeiba_000a00710d",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00703e/"
+      }
     },
     {
       "id": "netkeiba_000a000464",
@@ -27295,7 +27395,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a000ffd/",
       "sex": "male",
       "born": 1948,
-      "country": "FR"
+      "country": "FR",
+      "parents": {
+        "sire": "prince_bio",
+        "dam": "jbis_0000388698",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
     },
     {
       "id": "netkeiba_000a007f7d",
@@ -27449,7 +27555,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a007cae/",
       "sex": "female",
       "born": 1960,
-      "country": "FR"
+      "country": "FR",
+      "parents": {
+        "sire": "netkeiba_000a000f51",
+        "dam": "netkeiba_000a007caa",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a007cae/"
+      }
     },
     {
       "id": "netkeiba_000a007c8b",
@@ -27636,7 +27748,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a00752d/",
       "sex": "female",
       "born": 1964,
-      "country": "USA"
+      "country": "USA",
+      "parents": {
+        "sire": "nashua",
+        "dam": "netkeiba_000a007376",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/000a00752d/"
+      }
     },
     {
       "id": "netkeiba_000a002179",
@@ -27801,7 +27919,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/000a007306/",
       "sex": "female",
       "born": 1946,
-      "country": "GB"
+      "country": "GB",
+      "parents": {
+        "sire": "nasrullah",
+        "dam": "jbis_0000386951",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+      }
     },
     {
       "id": "netkeiba_000a001426",
@@ -30870,7 +30994,13 @@
       "metadata_source_url": "https://db.netkeiba.com/horse/1955101351/",
       "sex": "female",
       "born": 1967,
-      "country": "JPN"
+      "country": "JPN",
+      "parents": {
+        "sire": "netkeiba_000a0000ee",
+        "dam": "netkeiba_1955100059",
+        "source": "netkeiba",
+        "source_url": "https://db.netkeiba.com/horse/ped/1955101351/"
+      }
     },
     {
       "id": "netkeiba_000a000936",
@@ -31378,6 +31508,1889 @@
       "born": 1940,
       "country": "JPN",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000000127/"
+    },
+    {
+      "id": "pay_the_butler",
+      "zh": "管家侍从",
+      "ja": "ペイザバトラー",
+      "en": "Pay the Butler",
+      "avatar": "uma_official/cingray/obey_your_master.png",
+      "real_name_zh": "管家侍从",
+      "real_name": "ペイザバトラー",
+      "real_name_en": "Pay the Butler",
+      "parents": {
+        "sire": "val_de_lorne",
+        "dam": "princess_morvi",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000171988/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1984109004/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000171988/",
+      "sex": "male",
+      "born": 1984,
+      "country": "USA"
+    },
+    {
+      "id": "moon_madness",
+      "zh": "月光狂想",
+      "ja": "ムーンマッドネス",
+      "en": "Moon Madness",
+      "avatar": "uma_official/cingray/moonlight_lunacy.png",
+      "real_name_zh": "月光狂想",
+      "real_name": "ムーンマッドネス",
+      "real_name_en": "Moon Madness",
+      "parents": {
+        "sire": "vitiges",
+        "dam": "castle_moon",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000161737/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1983109003/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000161737/",
+      "sex": "male",
+      "born": 1983,
+      "country": "GB"
+    },
+    {
+      "id": "my_big_boy",
+      "zh": "大男孩",
+      "ja": "マイビッグボーイ",
+      "en": "My Big Boy",
+      "avatar": "uma_official/cingray/michelle_my_baby.png",
+      "real_name_zh": "大男孩",
+      "real_name": "マイビッグボーイ",
+      "real_name_en": "My Big Boy",
+      "parents": {
+        "sire": "our_hero",
+        "dam": "pretty_special",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000161741/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1983109007/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000161741/",
+      "sex": "male",
+      "born": 1983,
+      "country": "USA"
+    },
+    {
+      "id": "bonecrusher",
+      "zh": "碎骨机",
+      "ja": "ボーンクラッシャー",
+      "en": "Bonecrusher",
+      "avatar": "uma_official/cingray/ellerslie_pride.png",
+      "real_name_zh": "碎骨机",
+      "real_name": "ボーンクラッシャー",
+      "real_name_en": "Bonecrusher",
+      "parents": {
+        "sire": "pag_asa",
+        "dam": "imitation_nz",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000151253/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1982109005/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000151253/",
+      "sex": "gelding",
+      "born": 1982,
+      "country": "NZ"
+    },
+    {
+      "id": "rugger_black",
+      "zh": "黑色橄榄球员",
+      "ja": "ラガーブラック",
+      "en": "Rugger Black",
+      "avatar": "uma_official/cingray/blacky_ale.png",
+      "real_name_zh": "黑色橄榄球员",
+      "real_name": "ラガーブラック",
+      "real_name_en": "Rugger Black",
+      "parents": {
+        "sire": "steel_heart",
+        "dam": "san_moutiers",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000176354/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1985100871/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000176354/",
+      "sex": "male",
+      "born": 1985,
+      "country": "JPN"
+    },
+    {
+      "id": "dyna_actress",
+      "zh": "戴娜女演员",
+      "ja": "ダイナアクトレス",
+      "en": "Dyna Actress",
+      "avatar": "uma_official/cingray/dynam_heroine.png",
+      "real_name_zh": "戴娜女演员",
+      "real_name": "ダイナアクトレス",
+      "real_name_en": "Dyna Actress",
+      "parents": {
+        "sire": "northern_taste",
+        "dam": "model_sport",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000158545/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1983104087/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000158545/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000158545/broodmare/info/",
+      "breeding_partners": [],
+      "sex": "female",
+      "born": 1983,
+      "country": "JPN"
+    },
+    {
+      "id": "legend_teio",
+      "zh": "传奇帝王",
+      "ja": "レジェンドテイオー",
+      "en": "Legend Teio",
+      "avatar": "uma_official/cingray/lord_royal.png",
+      "real_name_zh": "传奇帝王",
+      "real_name": "レジェンドテイオー",
+      "real_name_en": "Legend Teio",
+      "parents": {
+        "sire": "northern_taste",
+        "dam": "royal_hive",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000159458/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1983105000/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000159458/",
+      "sex": "male",
+      "born": 1983,
+      "country": "JPN"
+    },
+    {
+      "id": "fujino_northern",
+      "zh": "藤野北方",
+      "ja": "フジノノーザン",
+      "en": "Fujino Northern",
+      "avatar": "uma_official/cingray/yamano_southern.png",
+      "real_name_zh": "藤野北方",
+      "real_name": "フジノノーザン",
+      "real_name_en": "Fujino Northern",
+      "parents": {
+        "sire": "ヤマニンスキー",
+        "dam": "new_remand",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000177981/pedigree/"
+      },
+      "profile_url": "https://db.netkeiba.com/horse/1985102498/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000177981/",
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0000177981/broodmare/info/",
+      "breeding_partners": [],
+      "sex": "female",
+      "born": 1985,
+      "country": "JPN"
+    },
+    {
+      "id": "val_de_lorne",
+      "zh": "奥恩山谷",
+      "ja": "ヴァルドロルヌ",
+      "en": "Val de l'Orne",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335803/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/",
+      "sex": "male",
+      "born": 1972,
+      "country": "FR",
+      "parents": {
+        "sire": "netkeiba_000a000db5",
+        "dam": "jbis_0000389143",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
+    },
+    {
+      "id": "princess_morvi",
+      "zh": "莫维公主",
+      "ja": "プリンセスモーヴィ",
+      "en": "Princess Morvi",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/",
+      "sex": "female",
+      "born": 1975,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392116/",
+      "parents": {
+        "sire": "graustark",
+        "dam": "jbis_0000392115",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+      }
+    },
+    {
+      "id": "vitiges",
+      "zh": "维蒂日",
+      "ja": "ヴィテージ",
+      "en": "Vitiges",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/",
+      "sex": "male",
+      "born": 1973,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333759/",
+      "parents": {
+        "sire": "jbis_0000335836",
+        "dam": "jbis_0000390706",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
+    },
+    {
+      "id": "our_hero",
+      "zh": "我们的英雄",
+      "ja": "アワヒーロー",
+      "en": "Our Hero",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/",
+      "sex": "male",
+      "born": 1972,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000336529/",
+      "parents": {
+        "sire": "bold_ruler",
+        "dam": "jbis_0000392110",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+      }
+    },
+    {
+      "id": "pretty_special",
+      "zh": "非凡佳人",
+      "ja": "プリティスペシャル",
+      "en": "Pretty Special",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392112/",
+      "sex": "female",
+      "born": 1977,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392112/",
+      "parents": {
+        "sire": "riverman",
+        "dam": "jbis_0000392111",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392112/pedigree/"
+      }
+    },
+    {
+      "id": "pag_asa",
+      "zh": "希望",
+      "ja": "パグアサ",
+      "en": "Pag-Asa",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/",
+      "sex": "male",
+      "born": 1975,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000339089/",
+      "parents": {
+        "sire": "jbis_0000337194",
+        "dam": "jbis_0000447787",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "imitation_nz",
+      "zh": "仿制品",
+      "ja": "イミテーション",
+      "en": "Imitation",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/",
+      "sex": "female",
+      "born": 1975,
+      "country": "NZ",
+      "profile_url": "https://www.jbis.or.jp/horse/0000402488/",
+      "parents": {
+        "sire": "jbis_0000339088",
+        "dam": "jbis_0000442171",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+      }
+    },
+    {
+      "id": "san_moutiers",
+      "zh": "圣穆捷",
+      "ja": "サンムーテイエ",
+      "en": "Sun Moutiers II",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/",
+      "sex": "female",
+      "born": 1973,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000060479/",
+      "parents": {
+        "sire": "jbis_0000333282",
+        "dam": "jbis_0000380191",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+      }
+    },
+    {
+      "id": "model_sport",
+      "zh": "模范体育",
+      "ja": "モデルスポート",
+      "en": "Model Sport",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/",
+      "sex": "female",
+      "born": 1975,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000078288/",
+      "parents": {
+        "sire": "jbis_0000333493",
+        "dam": "jbis_0000381127",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+      }
+    },
+    {
+      "id": "royal_hive",
+      "zh": "皇家蜂巢",
+      "ja": "ロイヤルハイブ",
+      "en": "Royal Hive",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/",
+      "sex": "female",
+      "born": 1974,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000382459/",
+      "parents": {
+        "sire": "jbis_0000334469",
+        "dam": "jbis_0000386286",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+      }
+    },
+    {
+      "id": "new_remand",
+      "zh": "新羁押令",
+      "ja": "ニューリマンド",
+      "en": "New Remand",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/",
+      "sex": "female",
+      "born": 1972,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000052964/",
+      "parents": {
+        "sire": "remand",
+        "dam": "jbis_0000378122",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+      }
+    },
+    {
+      "id": "musaka_ginjiro",
+      "zh": "六平银次郎",
+      "ja": "六平銀次郎",
+      "en": "Musaka Ginjiro",
+      "avatar": "uma_official/cingray/musaka_ginjiro.png",
+      "pure": true
+    },
+    {
+      "id": "norn_ace",
+      "zh": "诺伦王牌",
+      "ja": "ノルンエース",
+      "en": "Norn Ace",
+      "avatar": "uma_official/cingray/norn_ace.png",
+      "pure": true
+    },
+    {
+      "id": "rudy_lemono",
+      "zh": "卢迪雷莫诺",
+      "ja": "ルディレモーノ",
+      "en": "Rudy Lemono",
+      "avatar": "uma_official/cingray/rudy_lemono.png",
+      "pure": true
+    },
+    {
+      "id": "minnie_the_lady",
+      "zh": "玲珑淑女",
+      "ja": "ミニーザレディ",
+      "en": "Minnie the Lady",
+      "avatar": "uma_official/cingray/minnie_the_lady.png",
+      "pure": true
+    },
+    {
+      "id": "dicta_striker",
+      "zh": "狄杜前锋",
+      "ja": "ディクタストライカ",
+      "en": "Dicta Striker",
+      "avatar": "uma_official/cingray/dicta_striker.png",
+      "alias_of": "サッカーボーイ",
+      "real_name_zh": "足球少年",
+      "real_name": "サッカーボーイ",
+      "real_name_en": "Soccer Boy"
+    },
+    {
+      "id": "toni_bianca",
+      "zh": "东尼碧安卡",
+      "ja": "トニビアンカ",
+      "en": "Toni Bianca",
+      "avatar": "uma_official/cingray/toni_bianca.png",
+      "alias_of": "tony_bin",
+      "real_name_zh": "东来兵",
+      "real_name": "トニービン",
+      "real_name_en": "Tony Bin"
+    },
+    {
+      "id": "obey_your_master",
+      "zh": "谨遵主愿",
+      "ja": "オベイユアマスター",
+      "en": "Obey Your Master",
+      "avatar": "uma_official/cingray/obey_your_master.png",
+      "alias_of": "pay_the_butler",
+      "real_name_zh": "管家侍从",
+      "real_name": "ペイザバトラー",
+      "real_name_en": "Pay the Butler"
+    },
+    {
+      "id": "moonlight_lunacy",
+      "zh": "月光露娜希",
+      "ja": "ムーンライトルナシー",
+      "en": "Moonlight Lunacy",
+      "avatar": "uma_official/cingray/moonlight_lunacy.png",
+      "alias_of": "moon_madness",
+      "real_name_zh": "月光狂想",
+      "real_name": "ムーンマッドネス",
+      "real_name_en": "Moon Madness"
+    },
+    {
+      "id": "michelle_my_baby",
+      "zh": "米雪宝贝",
+      "ja": "ミシェルマイベイビー",
+      "en": "Michelle My Baby",
+      "avatar": "uma_official/cingray/michelle_my_baby.png",
+      "alias_of": "my_big_boy",
+      "real_name_zh": "大男孩",
+      "real_name": "マイビッグボーイ",
+      "real_name_en": "My Big Boy"
+    },
+    {
+      "id": "ellerslie_pride",
+      "zh": "艾城荣耀",
+      "ja": "エラズリープライド",
+      "en": "Ellerslie Pride",
+      "avatar": "uma_official/cingray/ellerslie_pride.png",
+      "alias_of": "bonecrusher",
+      "real_name_zh": "碎骨机",
+      "real_name": "ボーンクラッシャー",
+      "real_name_en": "Bonecrusher"
+    },
+    {
+      "id": "netkeiba_000a006dcd",
+      "zh": "瓦蕾塔",
+      "ja": "Vareta",
+      "en": "Vareta",
+      "profile_url": "https://db.netkeiba.com/horse/000a006dcd/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a0003b1/",
+      "sex": "female",
+      "born": 1953,
+      "country": "FR"
+    },
+    {
+      "id": "netkeiba_000a007cf4",
+      "zh": "帕拉里瓦",
+      "ja": "Palariva",
+      "en": "Palariva",
+      "profile_url": "https://db.netkeiba.com/horse/000a007cf4/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a00830f/",
+      "sex": "female",
+      "born": 1953,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a00776c",
+      "zh": "终身判决",
+      "ja": "Life Sentence",
+      "en": "Life Sentence",
+      "profile_url": "https://db.netkeiba.com/horse/000a00776c/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a00048a/",
+      "sex": "female",
+      "born": 1949,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a006cc3",
+      "zh": "岩石女神",
+      "ja": "Rock Goddess",
+      "en": "Rock Goddess",
+      "profile_url": "https://db.netkeiba.com/horse/000a006cc3/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a008599/",
+      "sex": "female",
+      "born": 1943,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a007b1a",
+      "zh": "荆棘林",
+      "ja": "Thorn Wood",
+      "en": "Thorn Wood",
+      "profile_url": "https://db.netkeiba.com/horse/000a007b1a/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a007b17/",
+      "sex": "female",
+      "born": 1942,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a0072de",
+      "zh": "艺术家",
+      "ja": "Artistic",
+      "en": "Artistic",
+      "profile_url": "https://db.netkeiba.com/horse/000a0072de/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a001072/",
+      "sex": "female",
+      "born": 1930,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a008266",
+      "zh": "石南",
+      "ja": "Calluna",
+      "en": "Calluna",
+      "profile_url": "https://db.netkeiba.com/horse/000a008266/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a006997/",
+      "sex": "female",
+      "born": 1943,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a006d78",
+      "zh": "西尔科",
+      "ja": "Sylko",
+      "en": "Sylko",
+      "profile_url": "https://db.netkeiba.com/horse/000a006d78/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a006cf5/",
+      "sex": "female",
+      "born": 1948,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a0079e3",
+      "zh": "鲁斯托姆玛哈尔",
+      "ja": "Rustom Mahal",
+      "en": "Rustom Mahal",
+      "profile_url": "https://db.netkeiba.com/horse/000a0079e3/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a000dab/",
+      "sex": "female",
+      "born": 1934,
+      "country": "FR"
+    },
+    {
+      "id": "netkeiba_000a000ecf",
+      "zh": "但丁",
+      "ja": "Dante",
+      "en": "Dante",
+      "profile_url": "https://db.netkeiba.com/horse/000a000ecf/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a00704a/",
+      "sex": "male",
+      "born": 1942,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a007c2d",
+      "zh": "布兰科",
+      "ja": "Blanco",
+      "en": "Blanco",
+      "profile_url": "https://db.netkeiba.com/horse/000a007c2d/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a00704a/",
+      "sex": "female",
+      "born": 1932,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a00731a",
+      "zh": "巴斯蒂亚",
+      "ja": "Bastia",
+      "en": "Bastia",
+      "profile_url": "https://db.netkeiba.com/horse/000a00731a/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a000e3a/",
+      "sex": "female",
+      "born": 1951,
+      "country": "FR"
+    },
+    {
+      "id": "netkeiba_000a006c6d",
+      "zh": "细条纹",
+      "ja": "Pin Stripe",
+      "en": "Pin Stripe",
+      "profile_url": "https://db.netkeiba.com/horse/000a006c6d/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a0082f5/",
+      "sex": "female",
+      "born": 1947,
+      "country": "GB"
+    },
+    {
+      "id": "netkeiba_000a00710d",
+      "zh": "野性美",
+      "ja": "Savage Beauty",
+      "en": "Savage Beauty",
+      "profile_url": "https://db.netkeiba.com/horse/000a00710d/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a00703e/",
+      "sex": "female",
+      "born": 1934,
+      "country": "USA"
+    },
+    {
+      "id": "netkeiba_000a007caa",
+      "zh": "卡利特卡",
+      "ja": "Kalitka",
+      "en": "Kalitka",
+      "profile_url": "https://db.netkeiba.com/horse/000a007caa/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a007cae/",
+      "sex": "female",
+      "born": 1954,
+      "country": "FR"
+    },
+    {
+      "id": "netkeiba_000a007376",
+      "zh": "蓝洞",
+      "ja": "Blue Grotto",
+      "en": "Blue Grotto",
+      "profile_url": "https://db.netkeiba.com/horse/000a007376/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/000a00752d/",
+      "sex": "female",
+      "born": 1957,
+      "country": "USA"
+    },
+    {
+      "id": "netkeiba_1955100059",
+      "zh": "大隼",
+      "ja": "オーハヤブサ",
+      "en": "O Hayabusa",
+      "profile_url": "https://db.netkeiba.com/horse/1955100059/",
+      "metadata_source_url": "https://db.netkeiba.com/horse/ped/1955101351/",
+      "sex": "female",
+      "born": 1959,
+      "country": "JPN"
+    },
+    {
+      "id": "jbis_0000338897",
+      "zh": "旧庄园",
+      "ja": "Vieux Manoir",
+      "en": "Vieux Manoir",
+      "sex": "male",
+      "born": 1947,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000338897/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334988",
+        "dam": "jbis_0000389053",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000389014",
+      "zh": "瓦利",
+      "ja": "Vali",
+      "en": "Vali",
+      "sex": "female",
+      "born": 1954,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389014/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334513",
+        "dam": "jbis_0000387770",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334988",
+      "zh": "布朗托姆",
+      "ja": "Brantome",
+      "en": "Brantome",
+      "sex": "male",
+      "born": 1931,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334988/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000389053",
+      "zh": "老宅",
+      "ja": "Vieille Maison",
+      "en": "Vieille Maison",
+      "sex": "female",
+      "born": 1936,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389053/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000334513",
+      "zh": "阳光少年",
+      "ja": "Sunny Boy",
+      "en": "Sunny Boy",
+      "sex": "male",
+      "born": 1944,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334513/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000387770",
+      "zh": "她的舞鞋",
+      "ja": "Her Slipper",
+      "en": "Her Slipper",
+      "sex": "female",
+      "born": 1936,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387770/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000389143",
+      "zh": "阿格拉埃",
+      "ja": "Aglae",
+      "en": "Aglae",
+      "sex": "female",
+      "born": 1965,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389143/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/",
+      "parents": {
+        "sire": "jbis_0000335759",
+        "dam": "jbis_0000386826",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000335759",
+      "zh": "停战协定",
+      "ja": "Armistice",
+      "en": "Armistice",
+      "sex": "male",
+      "born": 1959,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335759/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/",
+      "parents": {
+        "sire": "worden",
+        "dam": "jbis_0000393057",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000386826",
+      "zh": "阿格拉埃之恩",
+      "ja": "Aglae Grace",
+      "en": "Aglae Grace",
+      "sex": "female",
+      "born": 1947,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000386826/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/",
+      "parents": {
+        "sire": "jbis_0000335592",
+        "dam": "jbis_0000390600",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000393057",
+      "zh": "纪念礼",
+      "ja": "Commemoration",
+      "en": "Commemoration",
+      "sex": "female",
+      "born": 1953,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000393057/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000335592",
+      "zh": "穆松",
+      "ja": "Mousson",
+      "en": "Mousson",
+      "sex": "male",
+      "born": 1934,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335592/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000390600",
+      "zh": "阿加特",
+      "ja": "Agathe",
+      "en": "Agathe",
+      "sex": "female",
+      "born": 1936,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000390600/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000335803/pedigree/"
+    },
+    {
+      "id": "jbis_0000387589",
+      "zh": "花坛",
+      "ja": "Flower Bed",
+      "en": "Flower Bed",
+      "sex": "female",
+      "born": 1946,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387589/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+    },
+    {
+      "id": "jbis_0000392115",
+      "zh": "西拉娜",
+      "ja": "Silana",
+      "en": "Silana",
+      "sex": "female",
+      "born": 1965,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392115/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334488",
+        "dam": "jbis_0000392114",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334488",
+      "zh": "西尔内",
+      "ja": "Silnet",
+      "en": "Silnet",
+      "sex": "male",
+      "born": 1949,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334488/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334914",
+        "dam": "jbis_0000388710",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000392114",
+      "zh": "阿纳巴拉",
+      "ja": "Anabara",
+      "en": "Anabara",
+      "sex": "female",
+      "born": 1955,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392114/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334099",
+        "dam": "jbis_0000384783",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334914",
+      "zh": "法斯特内特",
+      "ja": "Fastnet",
+      "en": "Fastnet",
+      "sex": "male",
+      "born": 1933,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334914/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+    },
+    {
+      "id": "jbis_0000388710",
+      "zh": "银色吉尔",
+      "ja": "Silver Jill",
+      "en": "Silver Jill",
+      "sex": "female",
+      "born": 1939,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000388710/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+    },
+    {
+      "id": "jbis_0000334099",
+      "zh": "阿尔巴尔",
+      "ja": "Arbar",
+      "en": "Arbar",
+      "sex": "male",
+      "born": 1944,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334099/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+    },
+    {
+      "id": "jbis_0000384783",
+      "zh": "飞毯",
+      "ja": "Flying Carpet",
+      "en": "Flying Carpet",
+      "sex": "female",
+      "born": 1943,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000384783/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392116/pedigree/"
+    },
+    {
+      "id": "jbis_0000335836",
+      "zh": "法厄同",
+      "ja": "Phaeton",
+      "en": "Phaeton",
+      "sex": "male",
+      "born": 1964,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335836/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000ffd",
+        "dam": "jbis_0000389980",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000389980",
+      "zh": "讽刺诗",
+      "ja": "Pasquinade",
+      "en": "Pasquinade",
+      "sex": "female",
+      "born": 1957,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389980/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/",
+      "parents": {
+        "sire": "vandale",
+        "dam": "jbis_0000388059",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000388698",
+      "zh": "希芙",
+      "ja": "Sif",
+      "en": "Sif",
+      "sex": "female",
+      "born": 1936,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000388698/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+    },
+    {
+      "id": "jbis_0000388059",
+      "zh": "帕格尼尼小姐",
+      "ja": "Mademoiselle Paganini",
+      "en": "Mademoiselle Paganini",
+      "sex": "female",
+      "born": 1950,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000388059/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+    },
+    {
+      "id": "jbis_0000390706",
+      "zh": "山谷",
+      "ja": "Vale",
+      "en": "Vale",
+      "sex": "female",
+      "born": 1959,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000390706/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/",
+      "parents": {
+        "sire": "jbis_0000336119",
+        "dam": "jbis_0000390705",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000336119",
+      "zh": "韦里耶尔",
+      "ja": "Verrieres",
+      "en": "Verrieres",
+      "sex": "male",
+      "born": 1953,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000336119/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/",
+      "parents": {
+        "sire": "palestine",
+        "dam": "jbis_0000390703",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000390705",
+      "zh": "卡利奥普西斯",
+      "ja": "Calliopsis",
+      "en": "Calliopsis",
+      "sex": "female",
+      "born": 1954,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000390705/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000fc5",
+        "dam": "netkeiba_000a008266",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000390703",
+      "zh": "温室",
+      "ja": "Serre Chaude",
+      "en": "Serre Chaude",
+      "sex": "female",
+      "born": 1944,
+      "country": "GER",
+      "profile_url": "https://www.jbis.or.jp/horse/0000390703/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000333759/pedigree/"
+    },
+    {
+      "id": "jbis_0000388353",
+      "zh": "胜过前人",
+      "ja": "Outdone",
+      "en": "Outdone",
+      "sex": "female",
+      "born": 1936,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000388353/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+    },
+    {
+      "id": "jbis_0000392110",
+      "zh": "多琳",
+      "ja": "Dorine",
+      "en": "Dorine",
+      "sex": "female",
+      "born": 1958,
+      "country": "ARG",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392110/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a001269",
+        "dam": "jbis_0000384685",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000384685",
+      "zh": "多里亚",
+      "ja": "Doria",
+      "en": "Doria",
+      "sex": "female",
+      "born": 1949,
+      "country": "ARG",
+      "profile_url": "https://www.jbis.or.jp/horse/0000384685/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/",
+      "parents": {
+        "sire": "jbis_0000335133",
+        "dam": "jbis_0000392109",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387248",
+      "zh": "骚动",
+      "ja": "Commotion",
+      "en": "Commotion",
+      "sex": "female",
+      "born": 1938,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387248/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+    },
+    {
+      "id": "jbis_0000335133",
+      "zh": "辩护者",
+      "ja": "Advocate",
+      "en": "Advocate",
+      "sex": "male",
+      "born": 1940,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335133/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+    },
+    {
+      "id": "jbis_0000392109",
+      "zh": "多纳蒂拉",
+      "ja": "Donatila",
+      "en": "Donatila",
+      "sex": "female",
+      "born": 1933,
+      "country": "ARG",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392109/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000336529/pedigree/"
+    },
+    {
+      "id": "jbis_0000392111",
+      "zh": "势利之心",
+      "ja": "Snobishness",
+      "en": "Snobishness",
+      "sex": "female",
+      "born": 1970,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392111/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392112/pedigree/",
+      "parents": {
+        "sire": "forli",
+        "dam": "jbis_0000389415",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392112/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000389415",
+      "zh": "善于交际",
+      "ja": "So Social",
+      "en": "So Social",
+      "sex": "female",
+      "born": 1964,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389415/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392112/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a00102d",
+        "dam": "jbis_0000387784",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000392112/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387784",
+      "zh": "他的公爵夫人",
+      "ja": "His Duchess",
+      "en": "His Duchess",
+      "sex": "female",
+      "born": 1950,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387784/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000392112/pedigree/"
+    },
+    {
+      "id": "jbis_0000337194",
+      "zh": "薰之星",
+      "ja": "Kaoru Star",
+      "en": "Kaoru Star",
+      "sex": "male",
+      "born": 1965,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000337194/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334996",
+        "dam": "jbis_0000384956",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334996",
+      "zh": "星辰王国",
+      "ja": "Star Kingdom",
+      "en": "Star Kingdom",
+      "sex": "male",
+      "born": 1946,
+      "country": "IRE",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334996/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334505",
+        "dam": "jbis_0000387819",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000384956",
+      "zh": "薰",
+      "ja": "Kaoru",
+      "en": "Kaoru",
+      "sex": "female",
+      "born": 1955,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000384956/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/",
+      "parents": {
+        "sire": "jbis_0000337193",
+        "dam": "jbis_0000393884",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334505",
+      "zh": "星尘",
+      "ja": "Stardust",
+      "en": "Stardust",
+      "sex": "male",
+      "born": 1937,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334505/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000387819",
+      "zh": "即兴曲",
+      "ja": "Impromptu",
+      "en": "Impromptu",
+      "sex": "female",
+      "born": 1939,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387819/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000337193",
+      "zh": "帝王",
+      "ja": "Emperor",
+      "en": "Emperor",
+      "sex": "male",
+      "born": 1947,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000337193/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000393884",
+      "zh": "哑剧",
+      "ja": "Pantomime",
+      "en": "Pantomime",
+      "sex": "female",
+      "born": 1946,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000393884/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000447787",
+      "zh": "仰慕",
+      "ja": "Admire",
+      "en": "Admire",
+      "sex": "female",
+      "born": 1969,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000447787/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/",
+      "parents": {
+        "sire": "jbis_0000371874",
+        "dam": "jbis_0000392902",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000371874",
+      "zh": "灰色拖把",
+      "ja": "Grey Mop",
+      "en": "Grey Mop",
+      "sex": "male",
+      "born": 1959,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000371874/",
+      "metadata_source_url": "https://content.inglis.com.au/uploads/documents/sales/10SPT_catalogue.pdf",
+      "parents": {
+        "sire": "grey_sovereign",
+        "dam": "jbis_0000392821",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000392902",
+      "zh": "费利多玛",
+      "ja": "Felidoma",
+      "en": "Felidoma",
+      "sex": "female",
+      "born": 1954,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392902/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/",
+      "parents": {
+        "sire": "jbis_0000335537",
+        "dam": "jbis_0000392901",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000392821",
+      "zh": "莫普斯夫人",
+      "ja": "Mrs. Mops",
+      "en": "Mrs. Mops",
+      "sex": "female",
+      "born": 1941,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392821/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000335537",
+      "zh": "詹博",
+      "ja": "Jambo",
+      "en": "Jambo",
+      "sex": "male",
+      "born": 1944,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335537/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000392901",
+      "zh": "布鲁内斯",
+      "ja": "Bruness",
+      "en": "Bruness",
+      "sex": "female",
+      "born": 1942,
+      "country": "AUS",
+      "profile_url": "https://www.jbis.or.jp/horse/0000392901/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000339089/pedigree/"
+    },
+    {
+      "id": "jbis_0000339088",
+      "zh": "奥克维尔",
+      "ja": "Oakville",
+      "en": "Oakville",
+      "sex": "male",
+      "born": 1958,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000339088/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/",
+      "parents": {
+        "sire": "Tantieme",
+        "dam": "jbis_0000390674",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000390674",
+      "zh": "阵雪",
+      "ja": "Snow Shower",
+      "en": "Snow Shower",
+      "sex": "female",
+      "born": 1949,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000390674/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/",
+      "parents": {
+        "sire": "the_phoenix",
+        "dam": "jbis_0000389834",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000389834",
+      "zh": "雨夹雪",
+      "ja": "Sleet",
+      "en": "Sleet",
+      "sex": "female",
+      "born": 1941,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389834/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+    },
+    {
+      "id": "jbis_0000442171",
+      "zh": "雪鸟",
+      "ja": "Snow Bird",
+      "en": "Snow Bird",
+      "sex": "female",
+      "born": 1969,
+      "country": "NZ",
+      "profile_url": "https://www.jbis.or.jp/horse/0000442171/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334101",
+        "dam": "jbis_0000442172",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334101",
+      "zh": "北极探险家",
+      "ja": "Arctic Explorer",
+      "en": "Arctic Explorer",
+      "sex": "male",
+      "born": 1954,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334101/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000e6d",
+        "dam": "jbis_0000387584",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000442172",
+      "zh": "布伦特山丘",
+      "ja": "Brent Knoll",
+      "en": "Brent Knoll",
+      "sex": "female",
+      "born": 1962,
+      "country": "NZ",
+      "profile_url": "https://www.jbis.or.jp/horse/0000442172/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334607",
+        "dam": "jbis_0000950109",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387584",
+      "zh": "调情",
+      "ja": "Flirting",
+      "en": "Flirting",
+      "sex": "female",
+      "born": 1947,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387584/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+    },
+    {
+      "id": "jbis_0000334607",
+      "zh": "贝拉乔卡",
+      "ja": "Bellagioca",
+      "en": "Bellagioca",
+      "sex": "male",
+      "born": 1957,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334607/",
+      "metadata_source_url": "https://loveracing.nz/Breeding/46382/Birella-NZ-1962.aspx"
+    },
+    {
+      "id": "jbis_0000950109",
+      "zh": "金色银幕",
+      "ja": "Gold Screen",
+      "en": "Gold Screen",
+      "sex": "female",
+      "born": 1951,
+      "country": "NZ",
+      "profile_url": "https://www.jbis.or.jp/horse/0000950109/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000402488/pedigree/"
+    },
+    {
+      "id": "jbis_0000333282",
+      "zh": "穆捷",
+      "ja": "Moutiers",
+      "en": "Moutiers",
+      "sex": "male",
+      "born": 1958,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333282/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000ffd",
+        "dam": "netkeiba_000a007306",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000386951",
+      "zh": "巴利韦尔布罗克",
+      "ja": "Ballywellbroke",
+      "en": "Ballywellbroke",
+      "sex": "female",
+      "born": 1933,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000386951/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+    },
+    {
+      "id": "jbis_0000380191",
+      "zh": "被俘少女",
+      "ja": "Captive Maid",
+      "en": "Captive Maid",
+      "sex": "female",
+      "born": 1968,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000380191/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334423",
+        "dam": "jbis_0000385555",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334423",
+      "zh": "海盗之王",
+      "ja": "Pirate King",
+      "en": "Pirate King",
+      "sex": "male",
+      "born": 1953,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334423/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000fc5",
+        "dam": "netkeiba_000a00787b",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000385555",
+      "zh": "特莫萨",
+      "ja": "Temosa",
+      "en": "Temosa",
+      "sex": "female",
+      "born": 1960,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000385555/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334050",
+        "dam": "jbis_0000385554",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334050",
+      "zh": "莫斯伯勒",
+      "ja": "Mossborough",
+      "en": "Mossborough",
+      "sex": "male",
+      "born": 1947,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334050/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+    },
+    {
+      "id": "jbis_0000385554",
+      "zh": "特莫拉",
+      "ja": "Temora",
+      "en": "Temora",
+      "sex": "female",
+      "born": 1941,
+      "country": "FR",
+      "profile_url": "https://www.jbis.or.jp/horse/0000385554/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000060479/pedigree/"
+    },
+    {
+      "id": "jbis_0000333493",
+      "zh": "模范愚人",
+      "ja": "モデルフール",
+      "en": "Model Fool",
+      "sex": "male",
+      "born": 1963,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000333493/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/",
+      "parents": {
+        "sire": "tom_fool",
+        "dam": "jbis_0000388205",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000388205",
+      "zh": "模范欢愉",
+      "ja": "Model Joy",
+      "en": "Model Joy",
+      "sex": "female",
+      "born": 1959,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000388205/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/",
+      "parents": {
+        "sire": "jbis_0000335740",
+        "dam": "jbis_0000388204",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000335740",
+      "zh": "战地吉普",
+      "ja": "War Jeep",
+      "en": "War Jeep",
+      "sex": "male",
+      "born": 1942,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335740/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+    },
+    {
+      "id": "jbis_0000388204",
+      "zh": "模范佳人",
+      "ja": "Model Beauty",
+      "en": "Model Beauty",
+      "sex": "female",
+      "born": 1942,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000388204/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+    },
+    {
+      "id": "jbis_0000381127",
+      "zh": "魔法女神",
+      "ja": "マジツクゴデイス",
+      "en": "Magic Goddess",
+      "sex": "female",
+      "born": 1968,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000381127/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/",
+      "parents": {
+        "sire": "red_god",
+        "dam": "jbis_0000385015",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000385015",
+      "zh": "如同魔法",
+      "ja": "Like Magic",
+      "en": "Like Magic",
+      "sex": "female",
+      "born": 1955,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000385015/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/",
+      "parents": {
+        "sire": "jbis_0000335018",
+        "dam": "jbis_0000387717",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000335018",
+      "zh": "再见阳光",
+      "ja": "Sun Again",
+      "en": "Sun Again",
+      "sex": "male",
+      "born": 1939,
+      "country": "USA",
+      "profile_url": "https://www.jbis.or.jp/horse/0000335018/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+    },
+    {
+      "id": "jbis_0000387717",
+      "zh": "伟大联盟",
+      "ja": "Grand League",
+      "en": "Grand League",
+      "sex": "female",
+      "born": 1945,
+      "country": "来源未详",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387717/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000078288/pedigree/"
+    },
+    {
+      "id": "jbis_0000334469",
+      "zh": "皇家宫殿",
+      "ja": "Royal Palace",
+      "en": "Royal Palace",
+      "sex": "male",
+      "born": 1964,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334469/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334013",
+        "dam": "jbis_0000387301",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000334013",
+      "zh": "巴利莫斯",
+      "ja": "Ballymoss",
+      "en": "Ballymoss",
+      "sex": "male",
+      "born": 1954,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334013/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334050",
+        "dam": "jbis_0000387821",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387301",
+      "zh": "水晶宫",
+      "ja": "Crystal Palace",
+      "en": "Crystal Palace",
+      "sex": "female",
+      "born": 1956,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387301/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/",
+      "parents": {
+        "sire": "jbis_0000334494",
+        "dam": "jbis_0000385320",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387821",
+      "zh": "印度呼唤",
+      "ja": "Indian Call",
+      "en": "Indian Call",
+      "sex": "female",
+      "born": 1936,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387821/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+    },
+    {
+      "id": "jbis_0000334494",
+      "zh": "太阳舞鞋",
+      "ja": "Solar Slipper",
+      "en": "Solar Slipper",
+      "sex": "male",
+      "born": 1945,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334494/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+    },
+    {
+      "id": "jbis_0000385320",
+      "zh": "光之女王",
+      "ja": "Queen of Light",
+      "en": "Queen of Light",
+      "sex": "female",
+      "born": 1949,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000385320/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+    },
+    {
+      "id": "jbis_0000386286",
+      "zh": "亲爱的加油",
+      "ja": "Come on Honey",
+      "en": "Come on Honey",
+      "sex": "female",
+      "born": 1960,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000386286/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/",
+      "parents": {
+        "sire": "never_say_die",
+        "dam": "jbis_0000389270",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000389270",
+      "zh": "蜜色光芒",
+      "ja": "Honeylight",
+      "en": "Honeylight",
+      "sex": "female",
+      "born": 1953,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000389270/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000441",
+        "dam": "jbis_0000387294",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000387294",
+      "zh": "暮色",
+      "ja": "Crepuscule",
+      "en": "Crepuscule",
+      "sex": "female",
+      "born": 1948,
+      "country": "GB",
+      "profile_url": "https://www.jbis.or.jp/horse/0000387294/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000382459/pedigree/"
+    },
+    {
+      "id": "jbis_0000378122",
+      "zh": "美花女王",
+      "ja": "ミハナクイン",
+      "en": "Mihana Queen",
+      "sex": "female",
+      "born": 1962,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000378122/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/",
+      "parents": {
+        "sire": "jbis_0000000871",
+        "dam": "jbis_0000377255",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000000871",
+      "zh": "栗之花",
+      "ja": "クリノハナ",
+      "en": "Kurino Hana",
+      "sex": "male",
+      "born": 1949,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000000871/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/",
+      "parents": {
+        "sire": "netkeiba_000a000293",
+        "dam": "netkeiba_000a002645",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000377255",
+      "zh": "美花",
+      "ja": "ミハナ",
+      "en": "Mihana",
+      "sex": "female",
+      "born": 1955,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000377255/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/",
+      "parents": {
+        "sire": "jbis_0000000478",
+        "dam": "jbis_0000376803",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+      }
+    },
+    {
+      "id": "jbis_0000000478",
+      "zh": "一诚",
+      "ja": "イツセイ",
+      "en": "Issei",
+      "sex": "male",
+      "born": 1948,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000000478/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+    },
+    {
+      "id": "jbis_0000376803",
+      "zh": "明多公主",
+      "ja": "ヒメミンド",
+      "en": "Hime Mindo",
+      "sex": "female",
+      "born": 1943,
+      "country": "JPN",
+      "profile_url": "https://www.jbis.or.jp/horse/0000376803/",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
     }
+  ],
+  "horse_pages": [
+    "dyna_actress",
+    "fujino_northern",
+    "legend_teio",
+    "rugger_black",
+    "ニッポーテイオー"
   ]
 }

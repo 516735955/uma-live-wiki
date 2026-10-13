@@ -30,7 +30,7 @@
         });
       },
       layout: function () {
-        const nodeWidth = this.compact ? Math.max(250, this.width - 32) : 190;
+        const nodeWidth = this.compact ? Math.max(160, this.width - 32) : 190;
         const nodeHeight = 66;
         if (this.compact) {
           const top = 108;
@@ -98,8 +98,8 @@
     },
     beforeUnmount: function () { this.selectionRequest += 1; if (this.observer) this.observer.disconnect(); },
     methods: {
-      measure: function () { this.width = Math.max(320, Math.round(this.$el.clientWidth || 960)); },
-      monogram: function (person) { return window.UmaUi.creatorMonogram(person); },
+      measure: function () { this.width = Math.max(180, Math.round(this.$el.clientWidth || 960)); },
+      portrait: function (person) { return person.image || person.photo || window.UmaUi.identityPortrait(person); },
       roleText: function (person) {
         return ((person.roles || []).slice(0, 2).map(function (role) { return role.label || role.role; }).join(' · ')) || '创作者';
       },
@@ -155,24 +155,23 @@
               <path v-for="person in layout.nodes" :key="'edge-'+person.creator_id" :d="edgePath(person)" :class="edgeClass(person)"/>
             </svg>
             <button class="creator-graph-node is-root" type="button" :style="nodeStyle(layout.root)" aria-current="true">
-              <i class="creator-monogram">{{ monogram(creator) }}</i>
+              <i class="identity-portrait"><img :src="portrait(creator)" alt=""></i>
               <span><b>{{ creator.name }}</b><small>{{ roleText(creator) }}</small></span>
             </button>
             <button v-for="person in layout.nodes" :key="person.creator_id" class="creator-graph-node" :class="nodeClass(person)" type="button" :style="nodeStyle(person)" :aria-label="'查看与 '+person.name+' 的合作'" :aria-pressed="selectedId===person.creator_id" @mouseenter="hoverId=person.creator_id" @mouseleave="hoverId=''" @focus="hoverId=person.creator_id" @blur="hoverId=''" @click="choose(person)" @keydown="onNodeKey($event,person)">
-              <i class="creator-monogram">{{ monogram(person) }}</i>
-              <span><b>{{ person.name }}</b><small>{{ person.shared_work_count }} 首共同作品</small></span>
-              <em>{{ person.shared_version_count || person.shared_work_count }}</em>
+              <i class="identity-portrait"><img :src="portrait(person)" alt=""></i>
+              <span><b>{{ person.name }}</b><small>{{ roleText(person) }}</small></span>
             </button>
           </div>
           <aside v-if="selected" class="creator-network-inspector" aria-live="polite">
             <button class="creator-inspector-close" type="button" aria-label="关闭合作详情" @click="close"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
             <header>
-              <i class="creator-monogram">{{ monogram(selected) }}</i>
+              <i class="identity-portrait"><img :src="portrait(selected)" alt=""></i>
               <span><b>{{ selected.name }}</b><small>{{ roleText(selected) }}</small></span>
             </header>
-            <button class="creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
+            <button class="horse-link-chip creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
             <div v-if="loading" class="ui-state compact">共同作品加载中</div>
-            <div v-else-if="loadError" class="ui-state compact">{{ loadError }}<button class="creator-profile-link" type="button" @click="choose(selected)">重新加载</button></div>
+            <div v-else-if="loadError" class="ui-state compact">{{ loadError }}<button class="horse-link-chip creator-profile-link" type="button" @click="choose(selected)">重新加载</button></div>
             <ol v-else-if="sharedWorks.length" class="collaboration-timeline">
               <li v-for="work in sharedWorks" :key="work.song_id">
                 <time>{{ work.release_date || '日期待补' }}</time>

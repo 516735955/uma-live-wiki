@@ -12,6 +12,7 @@ const crypto = require('crypto');
 const zlib = require('zlib');
 const { pipeline } = require('stream');
 const { CatalogStore } = require('./catalog-store');
+const { AnimeStore } = require('./anime-store');
 const { mergeNews, NewsContent } = require('./news-content');
 const { TranslationCache } = require('./translation-cache');
 const { loadTerms, createTerms } = require('./translation-terms');
@@ -52,6 +53,7 @@ const ROOT = fs.realpathSync(path.resolve(POSITIONAL_ARGS[1] || path.join(__dirn
 const releaseInfo = fs.existsSync(path.join(ROOT, 'release.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'release.json'), 'utf8')) : { commit: 'development' };
 const DATA_DIR = path.join(ROOT, 'data');
 const catalogStore = new CatalogStore(DATA_DIR);
+const animeStore = new AnimeStore(DATA_DIR);
 const loadNewsImage = imageStore(path.join(DATA_DIR, 'news_image_cache'));
 
 function isInsideRoot(filePath) {
@@ -581,7 +583,27 @@ function sendCatalogResult(req, res, result, scope) {
 async function handleCatalogApi(req, res, urlPath, params) {
   try {
     let result;
-    if (urlPath === '/api/catalog/events') result = await catalogStore.events(params);
+    if (urlPath === '/api/catalog/anime') {
+      const scope = params.get('scope') || 'index';
+      if (!['index', 'graph', 'people', 'work', 'person'].includes(scope)) {
+        sendJson(res, 400, { error: 'invalid anime scope' });
+        return;
+      }
+      result = await animeStore.response(scope, params.get('id') || '');
+    }
+    else if (urlPath === '/api/catalog/anime-media') {
+      const work = await animeStore.response('work', params.get('id') || '');
+      if (!work) { sendCatalogResult(req, res, null, req.url); return; }
+      const songs = new Set(work.relations.filter(row => row.target_type === 'song').map(row => row.target_id));
+      work.units.forEach(unit => (unit.music_cues || []).forEach(cue => { if (cue.song_id) songs.add(cue.song_id); }));
+      const events = new Set(work.relations.filter(row => row.target_type === 'event').map(row => row.target_id));
+      const songRows = await Promise.all(Array.from(songs, id => catalogStore.song(id)));
+      const eventRows = await Promise.all(Array.from(events, id => catalogStore.event(id)));
+      if (songRows.some(row => !row) || eventRows.some(row => !row)) throw new Error('Missing anime media');
+      result = { build_id: work.build_id + ':' + ((songRows[0] || eventRows[0] || {}).build_id || ''),
+        songs: songRows.map(row => row.song), events: eventRows.map(row => row.event) };
+    }
+    else if (urlPath === '/api/catalog/events') result = await catalogStore.events(params);
     else if (urlPath === '/api/catalog/event') result = await catalogStore.event(params.get('id'), params.get('legacy'));
     else if (urlPath === '/api/catalog/songs') result = await catalogStore.songs(params);
     else if (urlPath === '/api/catalog/song') result = await catalogStore.song(params.get('id'));
@@ -1165,9 +1187,9 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, st) => {
     if (err || !st.isFile()) {
-      // History-mode fallback: if the path looks like a client route (no file extension),
-      // serve the SPA index so deep links / refreshes work.
-      if (!path.extname(urlPath)) {
+      // Localized client routes may contain dots in entity names and IDs.
+      // Serve the SPA for that namespace, including direct opens and refreshes.
+      if (urlPath.startsWith('/zh-Hans/') || !path.extname(urlPath)) {
         filePath = path.join(ROOT, INDEX_FILE);
         return serveFile(filePath, req, res);
       }

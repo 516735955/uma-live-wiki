@@ -1,0 +1,3617 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "official-s1-screening-20180325",
+      "kind": "official",
+      "label": "第一季第1、2话先行上映官方报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180327_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-bnw-screening-20181104",
+      "kind": "official",
+      "label": "BNW的誓言先行上映官方报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20181104_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s1-animejapan-yellow",
+      "kind": "official",
+      "label": "AnimeJapan 2018 YELLOW放送前专题舞台报道",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180325_01.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s1-animejapan-toho",
+      "kind": "official",
+      "label": "AnimeJapan 2018 TOHO动画专题舞台公告",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180316_02.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-screening-20250330",
+      "kind": "official",
+      "label": "Cygames芦毛灰姑娘先行上映及两场谈话公告",
+      "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-screening-report",
+      "kind": "official",
+      "label": "Cygames芦毛灰姑娘先行上映活动报道",
+      "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-sapporo-20240614",
+      "kind": "official",
+      "label": "电影札幌舞台见面会三场告知",
+      "url": "https://movie-umamusume.jp/news/article/index.html?post_id=970",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-thanks-20240625",
+      "kind": "official",
+      "label": "电影应援上映与大热致谢舞台见面会告知",
+      "url": "https://movie-umamusume.jp/news/article/index.html?post_id=1015",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "archive-movie-opening-20240524",
+      "kind": "reference",
+      "label": "Eventernote保存的东宝电影初日舞台见面会告知",
+      "url": "https://www.eventernote.com/events/379975",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-1",
+      "kind": "official",
+      "label": "赛马娘四格第1话官方音频评论节目",
+      "url": "https://www.youtube.com/watch?v=ytqhmfhd6aY",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-2",
+      "kind": "official",
+      "label": "赛马娘四格第2话官方音频评论节目",
+      "url": "https://www.youtube.com/watch?v=jjDII67gWIA",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-umayon-commentary-5",
+      "kind": "official",
+      "label": "赛马娘四格官方音频评论接力第5回",
+      "url": "https://www.youtube.com/watch?v=PGJh8LyFYZE",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-s3-watchalong-e01",
+      "kind": "official",
+      "label": "第三季第1话官方同时观看节目",
+      "url": "https://www.youtube.com/watch?v=MAvx7FoG3_I",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-retrospective-1",
+      "kind": "official",
+      "label": "芦毛灰姑娘首季度回顾专题节目",
+      "url": "https://www.youtube.com/watch?v=EtyMt8pfEf8",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cingray-retrospective-2",
+      "kind": "official",
+      "label": "芦毛灰姑娘第二季度回顾专题节目",
+      "url": "https://www.youtube.com/watch?v=gIwX-jwD2Sk",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-movie-special-20250221",
+      "kind": "official",
+      "label": "新时代之门官方专题节目",
+      "url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-cyberagent-kabashima-manami",
+      "kind": "official",
+      "label": "CyberAgent公布的椛嶋麻菜美姓名及活动参与",
+      "url": "https://www.cyberagent.co.jp/news/detail/id=31989",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-menex00-cg15-post",
+      "kind": "production",
+      "label": "MeNeX00本人对芦灰第15话的发文及姓名写法（由公开引用核对）",
+      "url": "https://x.com/oomdish00/status/1978072508445368835",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "public-menex00-cg15-post",
+      "kind": "reference",
+      "label": "芦灰第15话MeNeX00本人发文的公开引用",
+      "url": "https://k-ani.com/anime/741/episode/15",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "production-lucas-nainemoutou-profile",
+      "kind": "production",
+      "label": "Lucas Naïnemoutou本人公开制作履历",
+      "url": "https://jp.linkedin.com/in/lucasnainemoutou",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "production-solal-girardin-profile",
+      "kind": "production",
+      "label": "Solal Girardin本人公开动画履历",
+      "url": "https://jp.linkedin.com/in/solal-girardin-93388a166",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-graphinica-company",
+      "kind": "official",
+      "label": "Graphinica公司资料（机构身份确认）",
+      "url": "https://www.graphinica.com/service/index.html",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "public-shikiji-filmography",
+      "kind": "reference",
+      "label": "式地幸喜逐集制作履历（公开转录）",
+      "url": "https://w.atwiki.jp/sakuga/pages/1686.html",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "public-mitsuda-filmography",
+      "kind": "reference",
+      "label": "光田史亮逐集制作履历（公开转录）",
+      "url": "https://w.atwiki.jp/sakuga/pages/623.html",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "public-shingaki-s3-post",
+      "kind": "reference",
+      "label": "新垣重文第三季第8、13话原画参与说明的公开引用",
+      "url": "https://umamusume.net/archives/148214",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "production-shingaki-s3-post",
+      "kind": "production",
+      "label": "新垣重文第8、13话原画参与说明（由公开引用核对）",
+      "url": "https://twitter.com/gakisige/status/1740053835853529215",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-wish-company",
+      "kind": "official",
+      "label": "Wish公司资料（机构身份确认）",
+      "url": "https://wish-ltd.jp/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-masuo-2026",
+      "kind": "official",
+      "label": "STUDIO KAI 増尾将史访谈",
+      "url": "https://st-kai.jp/special/%e5%a2%97%e5%b0%be%e5%b0%86%e5%8f%b2%ef%bc%88%e7%ac%ac%ef%bc%91%e5%88%b6%e4%bd%9c%e9%83%a8%e6%89%80%e5%b1%9e%e3%83%bb%e3%82%a2%e3%83%8b%e3%83%a1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%83%97%e3%83%ad/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-tominaga-2026",
+      "kind": "official",
+      "label": "STUDIO KAI 冨永一仁访谈",
+      "url": "https://st-kai.jp/special/%e5%86%a8%e6%b0%b8%e4%b8%80%e4%bb%81%ef%bc%88%e7%ac%ac%ef%bc%91%e5%88%b6%e4%bd%9c%e8%aa%b2%e3%80%80%e7%ac%ac%ef%bc%92%e4%bd%9c%e7%94%bb%e8%aa%b2%e6%89%80%e5%b1%9e%e3%80%80%e8%aa%b2%e9%95%b7%ef%bc%89/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-kondo-2026",
+      "kind": "official",
+      "label": "STUDIO KAI 近藤光访谈",
+      "url": "https://st-kai.jp/special/%e8%bf%91%e8%97%a4%e5%85%89%ef%bc%88%e7%ac%ac%ef%bc%92%e5%88%b6%e4%bd%9c%e9%83%a8%e6%89%80%e5%b1%9e%e3%80%80%e5%88%b6%e4%bd%9c%e9%80%b2%e8%a1%8c%ef%bc%89%e3%81%ab%e8%81%9e%e3%81%8f%e3%80%81%e5%88%b6/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-kai-s2-roundtable-2021",
+      "kind": "official",
+      "label": "STUDIO KAI 第二季制作座谈",
+      "url": "https://st-kai.jp/special/umamusume-001/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-anime-portal",
+      "kind": "official",
+      "label": "赛马娘官方动画入口",
+      "url": "https://umamusume.jp/contents/anime/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-anime-s1",
+      "kind": "official",
+      "label": "电视动画第一季官网",
+      "url": "https://anime-umamusume.jp/archive/1st/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-anime-s2",
+      "kind": "official",
+      "label": "电视动画第二季官网",
+      "url": "https://anime-umamusume.jp/archive/2nd/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-umayon",
+      "kind": "official",
+      "label": "《赛马娘四格》官网",
+      "url": "https://umamusume.jp/contents/anime/umayon/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-1st-anniversary",
+      "kind": "official",
+      "label": "一周年特别动画官网",
+      "url": "https://umamusume.jp/contents/anime/1st-anniversary/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-umayuru",
+      "kind": "official",
+      "label": "《摇曳马娘》官网",
+      "url": "https://umamusume.jp/contents/anime/umayuru/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-rttt",
+      "kind": "official",
+      "label": "ROAD TO THE TOP 官网",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-anime-s3",
+      "kind": "official",
+      "label": "电视动画第三季官网",
+      "url": "https://anime-umamusume.jp/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-new-era",
+      "kind": "official",
+      "label": "剧场版《新时代之门》官网",
+      "url": "https://movie-umamusume.jp/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-cingray",
+      "kind": "official",
+      "label": "动画《芦毛灰姑娘》官网",
+      "url": "https://anime-cinderellagray.com/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-prettygray",
+      "kind": "official",
+      "label": "《摇曳马娘 Pretty Gray》官网",
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-fullgate",
+      "kind": "official",
+      "label": "《摇曳马娘 Full Gate!》官网",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-youtube",
+      "kind": "official",
+      "label": "ぱかチューブっ！",
+      "url": "https://www.youtube.com/@UMAMUSUME_official",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "bilibili-licensed",
+      "kind": "licensed",
+      "label": "bilibili 正版番剧",
+      "url": "https://www.bilibili.com/anime/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "bahamut-licensed",
+      "kind": "licensed",
+      "label": "巴哈姆特动画疯",
+      "url": "https://ani.gamer.com.tw/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e01",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e01 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=1",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e02",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e02 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=2",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e03",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e03 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=3",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e04",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e04 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=4",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e05",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e05 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=5",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e06",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e06 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=6",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e07",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e07 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=7",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e08",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e08 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=8",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e09",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e09 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=9",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e10",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e10 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=10",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e11",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e11 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=11",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e12",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e12 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=12",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e13",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e13 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=13",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e14",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e14 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=14",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e15",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e15 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=15",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e16",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e16 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=16",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e17",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e17 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=17",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e18",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e18 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=18",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e19",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e19 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=19",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e20",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e20 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=20",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e21",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e21 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=21",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e22",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e22 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=22",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-cinderella-gray-e23",
+      "kind": "official",
+      "label": "anime-cinderella-gray-e23 官方 Story",
+      "url": "https://anime-cinderellagray.com/story/?ep=23",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e01",
+      "kind": "official",
+      "label": "anime-s1-e01 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/01.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e02",
+      "kind": "official",
+      "label": "anime-s1-e02 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/02.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e03",
+      "kind": "official",
+      "label": "anime-s1-e03 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/03.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e04",
+      "kind": "official",
+      "label": "anime-s1-e04 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/04.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e05",
+      "kind": "official",
+      "label": "anime-s1-e05 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/05.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e06",
+      "kind": "official",
+      "label": "anime-s1-e06 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/06.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e07",
+      "kind": "official",
+      "label": "anime-s1-e07 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/07.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e08",
+      "kind": "official",
+      "label": "anime-s1-e08 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/08.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e09",
+      "kind": "official",
+      "label": "anime-s1-e09 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/09.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e10",
+      "kind": "official",
+      "label": "anime-s1-e10 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/10.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e11",
+      "kind": "official",
+      "label": "anime-s1-e11 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/11.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e12",
+      "kind": "official",
+      "label": "anime-s1-e12 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/12.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s1-e13",
+      "kind": "official",
+      "label": "anime-s1-e13 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/1st/story/extra.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e01",
+      "kind": "official",
+      "label": "anime-s2-e01 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_01.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e02",
+      "kind": "official",
+      "label": "anime-s2-e02 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_02.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e03",
+      "kind": "official",
+      "label": "anime-s2-e03 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_03.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e04",
+      "kind": "official",
+      "label": "anime-s2-e04 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_04.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e05",
+      "kind": "official",
+      "label": "anime-s2-e05 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_05.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e06",
+      "kind": "official",
+      "label": "anime-s2-e06 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_06.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e07",
+      "kind": "official",
+      "label": "anime-s2-e07 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_07.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e08",
+      "kind": "official",
+      "label": "anime-s2-e08 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_08.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e09",
+      "kind": "official",
+      "label": "anime-s2-e09 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_09.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e10",
+      "kind": "official",
+      "label": "anime-s2-e10 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_10.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e11",
+      "kind": "official",
+      "label": "anime-s2-e11 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_11.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e12",
+      "kind": "official",
+      "label": "anime-s2-e12 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_12.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s2-e13",
+      "kind": "official",
+      "label": "anime-s2-e13 官方 Story",
+      "url": "https://anime-umamusume.jp/archive/2nd/story/id_13.html",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e01",
+      "kind": "official",
+      "label": "anime-s3-e01 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=1",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e02",
+      "kind": "official",
+      "label": "anime-s3-e02 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=2",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e03",
+      "kind": "official",
+      "label": "anime-s3-e03 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=3",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e04",
+      "kind": "official",
+      "label": "anime-s3-e04 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=4",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e05",
+      "kind": "official",
+      "label": "anime-s3-e05 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=5",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e06",
+      "kind": "official",
+      "label": "anime-s3-e06 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=6",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e07",
+      "kind": "official",
+      "label": "anime-s3-e07 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=7",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e08",
+      "kind": "official",
+      "label": "anime-s3-e08 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=8",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e09",
+      "kind": "official",
+      "label": "anime-s3-e09 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=9",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e10",
+      "kind": "official",
+      "label": "anime-s3-e10 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=10",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e11",
+      "kind": "official",
+      "label": "anime-s3-e11 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=11",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e12",
+      "kind": "official",
+      "label": "anime-s3-e12 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=12",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-s3-e13",
+      "kind": "official",
+      "label": "anime-s3-e13 官方 Story",
+      "url": "https://anime-umamusume.jp/story/?ep=13",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-prettygray-e01",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "label": "うまゆる ぷりてぃ～ぐれい 第1話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-prettygray-e02",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "label": "うまゆる ぷりてぃ～ぐれい 第2話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-prettygray-e03",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "label": "うまゆる ぷりてぃ～ぐれい 第3話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-prettygray-e04",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "label": "うまゆる ぷりてぃ～ぐれい 第4話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-fullgate-e01",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/1/",
+      "label": "うまゆる ふるげ～と！ 第1話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "staff-transcript-anime-s1",
+      "kind": "credit_transcription",
+      "label": "アニメスタッフデータベース · anime-s1",
+      "url": "https://seesaawiki.jp/w/radioi_34/d/%a5%a6%a5%de%cc%bc%20%a5%d7%a5%ea%a5%c6%a5%a3%a1%bc%a5%c0%a1%bc%a5%d3%a1%bc",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "staff-transcript-anime-cinderella-gray",
+      "kind": "credit_transcription",
+      "label": "アニメスタッフデータベース · anime-cinderella-gray",
+      "url": "https://seesaawiki.jp/w/radioi_34/d/%a5%a6%a5%de%cc%bc%20%a5%b7%a5%f3%a5%c7%a5%ec%a5%e9%a5%b0%a5%ec%a5%a4",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "staff-transcript-anime-rttt",
+      "kind": "credit_transcription",
+      "label": "アニメスタッフデータベース · anime-rttt",
+      "url": "https://seesaawiki.jp/w/radioi_34/d/%a5%a6%a5%de%cc%bc%20%a5%d7%a5%ea%a5%c6%a5%a3%a1%bc%a5%c0%a1%bc%a5%d3%a1%bc%20ROAD%20TO%20THE%20TOP",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "staff-transcript-anime-movie-beginning-new-era",
+      "kind": "credit_transcription",
+      "label": "アニメスタッフデータベース · anime-movie-beginning-new-era",
+      "url": "https://seesaawiki.jp/w/radioi_34/d/%a5%a6%a5%de%cc%bc%20%a5%d7%a5%ea%a5%c6%a5%a3%a1%bc%a5%c0%a1%bc%a5%d3%a1%bc%20%bf%b7%bb%fe%c2%e5%a4%ce%c8%e2",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e01",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/01/",
+      "label": "うまゆる 第1話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e02",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/02/",
+      "label": "うまゆる 第2話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e03",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/03/",
+      "label": "うまゆる 第3話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e04",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/04/",
+      "label": "うまゆる 第4話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e05",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/05/",
+      "label": "うまゆる 第5話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e06",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/06/",
+      "label": "うまゆる 第6話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e07",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/07/",
+      "label": "うまゆる 第7話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e08",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/08/",
+      "label": "うまゆる 第8話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e09",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/09/",
+      "label": "うまゆる 第9話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e10",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/10/",
+      "label": "うまゆる 第10話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e11",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/11/",
+      "label": "うまゆる 第11話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e12",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/12/",
+      "label": "うまゆる 第12話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e13",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/13/",
+      "label": "うまゆる 第13話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e14",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/14/",
+      "label": "うまゆる 第14話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e15",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/15/",
+      "label": "うまゆる 第15話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e16",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/16/",
+      "label": "うまゆる 第16話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e17",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/17/",
+      "label": "うまゆる 第17話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e18",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/18/",
+      "label": "うまゆる 第18話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e19",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/19/",
+      "label": "うまゆる 第19話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e20",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/20/",
+      "label": "うまゆる 第20話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e21",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/21/",
+      "label": "うまゆる 第21話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e22",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/22/",
+      "label": "うまゆる 第22話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e23",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/23/",
+      "label": "うまゆる 第23話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-umayuru-e24",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/24/",
+      "label": "うまゆる 第24話",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-fullgate-e01",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=vYaucJ1wvRg",
+      "label": "ふるげ～と！第1話 片尾署名",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-s1-broadcast",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20180309_01.html",
+      "label": "第一季官方放送时间",
+      "kind": "official",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-bnw-bd",
+      "url": "https://anime-umamusume.jp/archive/1st/bd/vol4.html",
+      "label": "BNW的誓言 · 蓝光发行",
+      "kind": "official",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-bnw-preview",
+      "url": "https://anime-umamusume.jp/archive/1st/news/20181104_01.html",
+      "label": "BNW的誓言 · 先行上映",
+      "kind": "official",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-cg-schedule-17",
+      "kind": "official",
+      "label": "第17话官方放送调整",
+      "url": "https://anime-cinderellagray.com/news/rd054tba5/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-cg-schedule-19",
+      "kind": "official",
+      "label": "第19话官方放送调整",
+      "url": "https://anime-cinderellagray.com/news/ib91kjt_b/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-cg-cour2-onair",
+      "kind": "official",
+      "label": "第二季度官方放送信息",
+      "url": "https://anime-cinderellagray.com/news/5hvvhgvjuw9/",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ost-anime-s1",
+      "kind": "official",
+      "url": "https://anime-umamusume.jp/archive/1st/music/derby04.html",
+      "label": "S1 官方音乐及逐集使用说明",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ost-anime-s2",
+      "kind": "official",
+      "url": "https://anime-umamusume.jp/archive/2nd/music/detail_936.html",
+      "label": "S2 官方音乐及逐集使用说明",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ost-anime-s3",
+      "kind": "official",
+      "url": "https://anime-umamusume.jp/music/0003/",
+      "label": "S3 官方音乐及逐集使用说明",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-umayuru-music",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayuru/music/",
+      "label": "うまゆる 官方音乐资料",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-fullgate-music",
+      "kind": "official",
+      "url": "https://prtimes.jp/main/html/rd/p/000001308.000005593.html",
+      "label": "Cygames · 芝生えるわ～ 官方发行与歌曲署名",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "community-prettygray",
+      "kind": "community",
+      "label": "Pretty Gray 中文字幕正片合集（逐集核对）",
+      "url": "https://www.bilibili.com/video/BV1muGXzgEP6/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e13",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=_XvzHdO7nrk",
+      "label": "うまゆる 第13話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e14",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=xh3FU5NoCzQ",
+      "label": "うまゆる 第14話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e16",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=Iz1xs-gZF-g",
+      "label": "うまゆる 第16話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e17",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=Vwbj7I47qas",
+      "label": "うまゆる 第17話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e18",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=EOhRP6r9SOQ",
+      "label": "うまゆる 第18話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e19",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=Moka2TV2eLs",
+      "label": "うまゆる 第19話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e20",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=WrymFqwvaoo",
+      "label": "うまゆる 第20話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e21",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=HmRbWlbXtIY",
+      "label": "うまゆる 第21話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e23",
+      "kind": "official",
+      "url": "https://www.youtube.com/watch?v=lS54NCyHxko",
+      "label": "うまゆる 第23話 公式映像片尾",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-rttt-e01",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "label": "ROAD TO THE TOP 第1話 · 公式 Story / Gallery",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-rttt-e02",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "label": "ROAD TO THE TOP 第2話 · 公式 Story / Gallery",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-rttt-e03",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "label": "ROAD TO THE TOP 第3話 · 公式 Story / Gallery",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-story-anime-rttt-e04",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "label": "ROAD TO THE TOP 第4話 · 公式 Story / Gallery",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-rttt-recut",
+      "kind": "official",
+      "url": "https://movie-umamusume.jp/rttt/",
+      "label": "ROAD TO THE TOP 剧场再编辑版",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-rttt-bd",
+      "kind": "official",
+      "url": "https://movie-umamusume.jp/rttt/blu-ray/",
+      "label": "ROAD TO THE TOP 再编辑版 Blu-ray",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-new-era-bd",
+      "kind": "official",
+      "url": "https://movie-umamusume.jp/blu-ray/",
+      "label": "新时代之门 Blu-ray",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-fullgate-premiere",
+      "kind": "official",
+      "url": "https://dmg.umamusume.jp/news/detail/?id=3479",
+      "label": "Cygames · Full Gate 第1话公开时间",
+      "observed_at": "2026-10-03"
+    },
+    {
+      "id": "official-ost-anime-cinderella-gray",
+      "kind": "official",
+      "label": "芦毛灰姑娘官方原声专辑曲目",
+      "url": "https://catalog.bandainamcomusiclive.co.jp/release/84649/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ost-anime-rttt",
+      "kind": "official",
+      "url": "https://umamusume.lantis.jp/discography/アルバム/",
+      "label": "官方原声专辑 · アニメ「ウマ娘 プリティーダービー ROAD TO THE TOP」アルバム",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ost-anime-umayuru",
+      "kind": "official",
+      "url": "https://umamusume.lantis.jp/discography/アルバム-2/",
+      "label": "官方原声专辑 · アニメ『うまゆる』アルバム",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ost-anime-movie-beginning-new-era",
+      "kind": "official",
+      "url": "https://umamusume.lantis.jp/discography/オリジナル・サウンドトラック/",
+      "label": "官方原声专辑 · 劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ost-anime-umayon",
+      "kind": "official",
+      "url": "https://umamusume.lantis.jp/discography/ミニアルバム/",
+      "label": "官方原声专辑 · アニメ『うまよん』ミニアルバム",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "moegirl-rttt-music",
+      "kind": "moegirl",
+      "url": "https://moegirl.uk/赛马娘_Pretty_Derby_巅峰之路",
+      "label": "萌娘百科镜像 · RTTT 各话音乐",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-anniversary-music",
+      "kind": "official",
+      "url": "https://umamusume.lantis.jp/discography/winning-live-04",
+      "label": "WINNING LIVE 04 官方曲目与 PV Size",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-cg-music",
+      "kind": "official",
+      "url": "https://anime-cinderellagray.com/music/",
+      "label": "芦毛灰姑娘 官方音乐资料",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-movie-premiere",
+      "kind": "official",
+      "url": "https://www.toho.co.jp/movie/news/movie-umamusume_240506",
+      "label": "东宝 · 2024-05-06 完成披露首映",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "staff-transcript-anime-s2",
+      "kind": "credit_transcription",
+      "label": "アニメスタッフデータベース · Season 2",
+      "url": "https://seesaawiki.jp/w/radioi_34/d/%a5%a6%a5%de%cc%bc%20%a5%d7%a5%ea%a5%c6%a5%a3%a1%bc%a5%c0%a1%bc%a5%d3%a1%bc%20Season%202",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-anime-s1",
+      "kind": "official",
+      "url": "https://anime-umamusume.jp/archive/1st/caststaff/",
+      "label": "S1 作品官方 Cast & Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-anime-s2",
+      "kind": "official",
+      "url": "https://anime-umamusume.jp/archive/2nd/caststaff/",
+      "label": "S2 作品官方 Cast & Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-anniversary-production",
+      "kind": "official",
+      "url": "https://st-kai.jp/works/umamusume_1st-anniversary/",
+      "label": "Studio KAI · 一周年特别动画 Cast & Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-movie-caststaff",
+      "kind": "official",
+      "url": "https://movie-umamusume.jp/caststaff/",
+      "label": "新时代之门 官方 Cast & Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-anime-s3",
+      "kind": "official",
+      "url": "https://anime-umamusume.jp/caststaff/",
+      "label": "Season 3 官方 Cast & Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-cg-cour2",
+      "kind": "official",
+      "url": "https://anime-cinderellagray.com/staffcast/",
+      "label": "芦毛灰姑娘 第2クール官方 Staff / 作品 Cast",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-cg-cour1",
+      "kind": "official",
+      "url": "https://prtimes.jp/main/html/rd/p/000001130.000005593.html",
+      "label": "Cygames · 第1クール最终话官方作品 Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "moegirl-tv-music",
+      "kind": "moegirl",
+      "url": "https://moegirl.uk/赛马娘_Pretty_Derby/动画",
+      "label": "萌娘百科镜像 · 各话音乐",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-pg-music",
+      "kind": "official",
+      "url": "https://umamusume.lantis.jp/discography/winning-live-27/",
+      "label": "WINNING LIVE 27 官方各话 ED 版本",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-cg-op2",
+      "kind": "official",
+      "url": "https://10-feet.kyoto/musics/19506",
+      "label": "10-FEET 官方 · 第2クール OP 数字发行",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-rttt",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#caststaff",
+      "label": "ROAD TO THE TOP 官方作品 Cast & Staff",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "production-rttt-race-mapping",
+      "kind": "production_interview",
+      "label": "Cygames 制作方访谈 · 1999 经典三冠与分集构成",
+      "url": "https://febri.jp/topics/roadtothetop_1/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "race-fact-199906030811",
+      "kind": "race_record",
+      "label": "netkeiba · 1999 皋月赏 实际赛事记录",
+      "url": "https://db.netkeiba.com/race/199906030811/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "race-fact-199905030609",
+      "kind": "race_record",
+      "label": "netkeiba · 1999 日本德比 实际赛事记录",
+      "url": "https://db.netkeiba.com/race/199905030609/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "race-fact-199908050211",
+      "kind": "race_record",
+      "label": "netkeiba · 1999 菊花赏 实际赛事记录",
+      "url": "https://db.netkeiba.com/race/199908050211/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-master-umayon",
+      "kind": "official",
+      "url": "https://umamusume.jp/contents/anime/umayon/staff/",
+      "label": "うまよん 官方作品 Cast & Staff（原始署名图）",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-cingray-character-roster",
+      "kind": "official",
+      "label": "芦毛灰姑娘角色资料",
+      "url": "https://anime-cinderellagray.com/character/",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e01",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e02",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e03",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/3",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e04",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/4",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e05",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/5",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e06",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/6",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e07",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/7",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e08",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/8",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e09",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/9",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e10",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/10",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e11",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/11",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e12",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/12",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s2-e13",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-2/ep/13",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e01",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e02",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e03",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/3",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e04",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/4",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e05",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/5",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e06",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/6",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e07",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/7",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e08",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/8",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e09",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/9",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e10",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/10",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e11",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/11",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e12",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/12",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s1-e13",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby/ep/13",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e01",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e02",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e03",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/3",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e04",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/4",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e05",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/5",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e06",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/6",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e07",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/7",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e08",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/8",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e09",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/9",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e10",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/10",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e11",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/11",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e12",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/12",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-s3-e13",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderby-3/ep/13",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e01",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e02",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e03",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/3",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e04",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/4",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e05",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/5",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e06",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/6",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e07",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/7",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e08",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/8",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e09",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/9",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e10",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/10",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e11",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/11",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e12",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/12",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e13",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray/ep/13",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e14",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/14",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e16",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/16",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e17",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/17",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e18",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/18",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e19",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/19",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e20",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/20",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e21",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e22",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/22",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e23",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/23",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-rttt-e01",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderbyroadtothetop/ep/1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-rttt-e02",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderbyroadtothetop/ep/2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-rttt-e03",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderbyroadtothetop/ep/3",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-rttt-e04",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumeprettyderbyroadtothetop/ep/4",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e01",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e02",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e03",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/3",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e04",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/4",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e05",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/5",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e06",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/6",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e07",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/7",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e08",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/8",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e09",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/9",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e10",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/10",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e11",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/11",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-umayon-e12",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umayon/ep/12",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "broadcast-cast-anime-cinderella-gray-e15",
+      "kind": "credit_transcription",
+      "label": "单集播出署名转录",
+      "url": "https://www.mau2.com/anime/umamusumecinderellagray-2/ep/15",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e01",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/40%25_And_Below%21_Tracen_Academy_Special_Make-up_Exams",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e02",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Newly_Filmed%21_The_Tracen_Academy_Video_Introduction",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e03",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/The_World_You%27ve_Dreamed_of_Is_Right_in_Front_of_You",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e04",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/The_Opera%3A_%22Alas%2C_It_Is_My_Fate%22",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e05",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/A_Major_Clash%3F%21_The_Ramen_Cup_%28GII%29",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e06",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/An_Elegant_Lunch_for_Elegant_Young_Ladies",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e07",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Time_to_Hunt_Rhinoceros_Beetles%21_BNW",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e08",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Hero_Theater%3A_Uma_Soldier_V%21%21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e09",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Make_the_Dream_Come_True%21_Getaway_Sisters",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e10",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/You_Get_Spooked%2C_You_Lose%21_Test_of_Courage_Showdown%21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e11",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Umayon_Suspense_Theater",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e12",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Today%27s_Main_Race%21_The_Gilded_Vessel_Obstacle_Course_%28G1%29",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e13",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/It%27s_More_Elegant_Than_Eating%21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e14",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/I_Want_To_Be_An_Adult_Woman",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e15",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Empress_Without_A_Gap",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e16",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Don%27t_You_Care_About_The_Back%3F",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e17",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Let%27s_Eat_More%21_Tama%21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e18",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/You_Can%27t_Grow_Up%3F",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e19",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Aim_For_The_First_Prize_Grand_Strategy%21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e20",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Qualification_To_Challenge_The_Emperor",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e21",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Uniforms_With_Torn_Sleeves_And_Bandages",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e22",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Enemies_Who_Upset_My_Plan",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e23",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/Miho_Dormitory_Ghost_Story_Competition%21",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-umayon-e24",
+      "kind": "reference",
+      "label": "四格单集内容资料",
+      "url": "https://umamusu.wiki/D_On_The_Beach%3F",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-umayon-extra-preview",
+      "kind": "official",
+      "label": "四格新作第一话先行公开",
+      "url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-toho-film-release",
+      "kind": "official",
+      "label": "东宝电影发行与剧照",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000118823.html",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayon-e13",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-rttt-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=0jev2Uv37F8",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=Q6ur7-o_YdI",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=7y4DpHsz6Wg",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e03",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=oD4nNApSrd0",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e04",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=2U2OTcgyubY",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e06",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=sLV7WHXcOu0",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e08",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=u0LuV8HNd8k",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e11",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=ag8dpHBhoCY",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e12",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=aVK4qqhbMhA",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e15",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=VfqRYC8_UPo",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e22",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=2Jrb-wi87Dw",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e24",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=iGExuigHsUw",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e05",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=36NHQCYjBvs",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e07",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=uXauD1uRZy0",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e09",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=4KzUSqUW9LU",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-e10",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=proK-e-v3Eg",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-prettygray-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=zxJXquB3YiM",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-prettygray-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=cb73PRzHo4w",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-prettygray-e03",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=AGUgeelUUuo",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayuru-prettygray-e04",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=a1q3XU_6Jgk",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-rttt-e03",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=A42wNP1DJho",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-rttt-e04",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=RIDl7x_gFGE",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-1st-anniversary-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=RKVWLnVqnP0",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-rttt-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=pjPXzJedwiA",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayon-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=ytqhmfhd6aY",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayon-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=jjDII67gWIA",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-ending-anime-umayon-e05",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=PGJh8LyFYZE",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-bnw-e01",
+      "kind": "reference",
+      "label": "BNW单集剧情资料",
+      "url": "https://umamusu.wiki/BNW%27s_Oath_%E2%91%A0",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-bnw-e02",
+      "kind": "reference",
+      "label": "BNW单集剧情资料",
+      "url": "https://umamusu.wiki/BNW%27s_Oath_%E2%91%A1",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "reference-bnw-e03",
+      "kind": "reference",
+      "label": "BNW单集剧情资料",
+      "url": "https://umamusu.wiki/BNW%27s_Oath_%E2%91%A2",
+      "observed_at": "2026-10-04"
+    },
+    {
+      "id": "official-story-anime-umayuru-fullgate-e02",
+      "kind": "official",
+      "label": "Full Gate第2话官网剧情与署名",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/2/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-ending-anime-umayuru-fullgate-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=COwezDS-R3s",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "profile-yamamoto-ken-afj2024",
+      "kind": "official",
+      "label": "ANIME FANTASISTA JAPAN山本健人物资料与头像",
+      "url": "https://anime-fantasista-japan.jp/2024-2/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "profile-maenami-takeshi-afj2025",
+      "kind": "official",
+      "label": "ANIME FANTASISTA JAPAN前並武志人物资料",
+      "url": "https://anime-fantasista-japan.jp/2025-3/",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "interview-oikawa-kei-2026",
+      "kind": "reference",
+      "label": "anan及川啓访谈",
+      "url": "https://ananweb.jp/categories/entertainment/106746",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "interview-anime-s2-staff-2021",
+      "kind": "reference",
+      "label": "Animate Times第二季制作人员访谈",
+      "url": "https://www.animatetimes.com/news/details.php?id=1609142060",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "interview-liao-chengzhi-2018",
+      "kind": "reference",
+      "label": "Anitama廖程芝访谈",
+      "url": "https://www.gcores.com/articles/102967",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "production-studio-kasa-works",
+      "kind": "official",
+      "label": "STUDIO KASA逐集制作记录",
+      "url": "https://www.studiokasa.net/works",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-umayon-episode-music",
+      "kind": "community",
+      "label": "赛马娘四格逐集音乐",
+      "url": "https://moegirl.icu/赛马娘四格",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-umayuru-episode-music",
+      "kind": "community",
+      "label": "摇曳马娘逐集音乐",
+      "url": "https://moegirl.icu/摇曳马娘",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-cingray-episode-music",
+      "kind": "community",
+      "label": "芦毛灰姑娘逐集音乐",
+      "url": "https://moegirl.uk/赛马娘_芦毛灰姑娘",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-cingray-e22-winning-live",
+      "kind": "official",
+      "label": "芦灰第22话胜者舞台官方视频",
+      "url": "https://www.youtube.com/watch?v=167895lxqW4",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "moegirl-tv-episode-music",
+      "kind": "community",
+      "label": "电视动画逐集音乐",
+      "url": "https://moegirl.uk/赛马娘_Pretty_Derby/动画",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-ending-anime-s3-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.bilibili.com/bangumi/play/ep780851",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-ending-anime-s2-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.bilibili.com/bangumi/play/ep374306",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.bilibili.com/bangumi/play/ep1655818",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-ending-anime-s1-e01",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.bilibili.com/bangumi/play/ep199681",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "production-studio-kasa-about",
+      "kind": "official",
+      "label": "STUDIO KASA人员介绍",
+      "url": "https://www.studiokasa.net/about",
+      "observed_at": "2026-10-05"
+    },
+    {
+      "id": "official-ending-anime-s3-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=X2ZPbEKM6m0",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "production-kai-flower-rhapsody",
+      "kind": "official",
+      "label": "STUDIO KAI公开制作署名",
+      "url": "https://st-kai.jp/works/flower-rhapsody/",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e03",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=FVS4stbxqO8",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e04",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=7ovru57kSNs",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e05",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=mi8sMuIRauo",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e06",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=--57FSF-Uuo",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e07",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=n1DDyBvZscI",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e08",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=5SVCqFclV60",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e09",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=cVYM2ZTzjGg",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e10",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=SY_xWq4Zc7o",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e11",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=WgP6ZaPfC3Q",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e12",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=CZwPcfOBZQk",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s3-e13",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=5KJ1sXlFaHg",
+      "observed_at": "2026-10-06"
+    },
+    {
+      "id": "official-ending-anime-s1-e04",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=NXQ3B60eo58",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e06",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=_URUiWEtSwk",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e05",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=JHzJNmOKtc4",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e07",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=Dr_4U4boKzE",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e08",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=XojBcU5L8yA",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e09",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=SPtArDJspFU",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e10",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=v91Gd795wj0",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e11",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=-lMSoDA83jE",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e12",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=AEsIFiJDlAw",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s1-e13",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=4KfcB097aVo",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e02",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=DVS7ZNlKw8s",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e03",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=PRF_V9OBVEc",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e05",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=LNjn2lNEHoQ",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e07",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=oTYb-yRgdGI",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e08",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=APkkHCADEm0",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e09",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=90PawU5MZM8",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e10",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=xwceVb3Lp4s",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e11",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=7qY9FgrmUg0",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e12",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=qyAOxavyXDU",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-s2-e13",
+      "kind": "official",
+      "label": "官方单集片尾职员表",
+      "url": "https://www.youtube.com/watch?v=yF4Mw5EHXzw",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-rhinokino-worklog",
+      "kind": "production",
+      "label": "rhinokino公开制作履历：芦毛灰姑娘第11话",
+      "url": "https://rhinokino-crd.com/2026/08/11/%E4%BD%9C%E7%94%BB%E5%8D%94%E5%8A%9B/",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-mizobuchi-miho-worklog",
+      "kind": "production",
+      "label": "溝渕美穂本人公开制作履历",
+      "url": "https://note.com/acryl_soldier/n/nf7e67ecf5bc0",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-shimamoto-yuta-profile",
+      "kind": "production",
+      "label": "島本勇太本人公开人物资料与制作履历",
+      "url": "https://twpf.jp/kine_tougen",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-andraft-cinderella-gray-2025",
+      "kind": "production",
+      "label": "Andraft公开制作履历：芦毛灰姑娘片头及第16、20话",
+      "url": "https://andraft.com/works_ctg/animation/page/2/",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "production-peacock-cinderella-gray-2025",
+      "kind": "production",
+      "label": "STUDIO PEACOCK公开制作履历：芦毛灰姑娘第4、8话",
+      "url": "https://www.studio-peacock.co.jp/works",
+      "observed_at": "2026-10-07"
+    },
+    {
+      "id": "official-ending-anime-umayon-e18",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-18.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e15",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-15.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e20",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-20.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e21",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-21.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e03",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-3.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e04",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-4.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e06",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-6.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e07",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-7.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e08",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-8.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e09",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-9.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e10",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-10.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e11",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-11.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e12",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-3-12.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e14",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-14.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e16",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-16.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e17",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-17.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e19",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-19.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e22",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-22.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e23",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-23.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-umayon-e24",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12632-1-24.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s1-e02",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12634-3-2.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s1-e03",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12634-3-3.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s1-e14",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12631-2-1.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s1-e15",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12631-2-2.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s1-e16",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/12631-2-3.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s2-e04",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/18364-3-4.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-s2-e06",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/18364-3-6.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e02",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-1-2.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-movie-beginning-new-era-e01",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26358-2-1.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e03",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-3-3.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e15",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-1-2.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e04",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-1-4.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e05",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-3-5.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e16",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-2-3.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e06",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-1-6.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e07",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-1-7.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e08-alt-opening",
+      "kind": "credit_recording",
+      "label": "第8话片头导演原始署名",
+      "url": "https://www.yinhuadm.cc/p/26633-2-8.html",
+      "observed_at": "2026-10-09"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e08",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-3-8.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e09",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-3-9.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-rttt-film",
+      "kind": "credit_recording",
+      "label": "作品版原始片尾职员表",
+      "url": "https://nyaa.si/view/1945978",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e11",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-3-11.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e10",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-1-10.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e12",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-3-12.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e13",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/26633-1-13.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e14",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-2-1.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e18",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-1-5.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e17",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-1-4.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e23",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-1-10.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e19",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-1-6.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e20",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-2-7.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e22",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-1-9.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "official-ending-anime-cinderella-gray-e21",
+      "kind": "credit_recording",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.yinhuadm.cc/p/27123-2-8.html",
+      "observed_at": "2026-10-08"
+    },
+    {
+      "id": "unext-bnw",
+      "kind": "licensed",
+      "label": "U-NEXT《赛马娘 EXTRA R「BNW的誓言」》",
+      "url": "https://www.video.unext.jp/title/SID0094265",
+      "observed_at": "2026-10-10"
+    },
+    {
+      "id": "unext-beginning-new-era",
+      "kind": "licensed",
+      "label": "U-NEXT《赛马娘 Pretty Derby 新时代之门》",
+      "url": "https://www.video.unext.jp/title/SID0160058",
+      "observed_at": "2026-10-10"
+    },
+    {
+      "id": "official-story-anime-umayuru-fullgate-e03",
+      "kind": "official",
+      "label": "Full Gate第3话官网剧情与署名",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/3/",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "official-ending-anime-umayuru-fullgate-e03",
+      "kind": "official",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-bangumi-okada-natsumi",
+      "kind": "reference",
+      "label": "Bangumi：岡田夏実人物页（含岡田夏美别名）",
+      "url": "https://bgm.tv/person/61146",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-bangumi-saito-chihiro",
+      "kind": "reference",
+      "label": "Bangumi：齋藤千尋人物页（含斎藤千尋别名）",
+      "url": "https://bangumi.tv/person/42511",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-bangumi-saka-yukari",
+      "kind": "reference",
+      "label": "Bangumi：坂友加里人物页与动画履历",
+      "url": "https://bangumi.tv/person/43336/works/anime",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-fmdb-nagata-yuka",
+      "kind": "reference",
+      "label": "FMDb：永田有香人物页",
+      "url": "https://fmdb.mov/people/2940313",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-allcinema-toriyama-fuyumi",
+      "kind": "reference",
+      "label": "allcinema：鳥山冬美人物页及别名",
+      "url": "https://www.allcinema.net/person/858306",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-sakuga-abin-akito",
+      "kind": "reference",
+      "label": "作画@wiki：阿蒜晃士人物页及Season 2第5／8／10话履历",
+      "url": "https://w.atwiki.jp/sakuga/pages/1532.html",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-bangumi-abin-akito",
+      "kind": "reference",
+      "label": "Bangumi：阿蒜晃士动画履历",
+      "url": "https://bgm.tv/person/11607/works",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-allcinema-adachi-yuki",
+      "kind": "reference",
+      "label": "allcinema：足立裕貴人物页",
+      "url": "https://www.allcinema.net/person/1045846",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-allcinema-masuo-masafumi",
+      "kind": "reference",
+      "label": "allcinema：増尾将史人物页及Season 2／3履历",
+      "url": "https://www.allcinema.net/person/pdf/1032376",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-namu-tanemura-ayataka",
+      "kind": "reference",
+      "label": "Namu：種村綾隆人物页列出種村綾鷹别名",
+      "url": "https://namu.moe/w/%E3%82%BF%E3%83%8D%E3%83%A0%E3%83%A9%20%E3%82%A2%E3%83%A4%E3%82%BF%E3%82%AB",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-bangumi-kaito-ayako",
+      "kind": "reference",
+      "label": "Bangumi：垣内彩子人物页明确列出垣内綾子别名",
+      "url": "https://bangumi.tv/person/42968/works/anime?sort=date",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-allcinema-kaito-ayako",
+      "kind": "reference",
+      "label": "allcinema：垣内彩子动画履历",
+      "url": "https://www.allcinema.net/person/969395",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-keyframe-ota-nobutaka",
+      "kind": "reference",
+      "label": "Keyframe Staff List：太田宣貴人物页及太田宜貴别名",
+      "url": "https://keyframe-staff-list.com/person/140907",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-allcinema-ota-nobutaka",
+      "kind": "reference",
+      "label": "allcinema：太田宣貴动画履历",
+      "url": "https://www.allcinema.net/person/1014843",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-allcinema-saito-haruki",
+      "kind": "reference",
+      "label": "allcinema：斎藤晴輝人物页及齋藤晴輝别名",
+      "url": "https://www.allcinema.net/person/pdf/1042709",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-tbs-ito-masahiko",
+      "kind": "official",
+      "label": "TBS INNOVATION LAND：伊藤將彦本人履历",
+      "url": "https://innovation.tbs.co.jp/neo_interview/951/",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-pocketmonsters-fujimoto-yuichiro",
+      "kind": "reference",
+      "label": "PocketMonsters：藤本雄一郎人物页明确列出藤本雄一朗为别名",
+      "url": "https://pocketmonsters.net/index.php/staff/view/7579",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "identity-dcaj-fujimoto-yuichiro",
+      "kind": "reference",
+      "label": "DCAJ官方人物采访：藤本雄一朗本人履历",
+      "url": "https://dcaj.or.jp/project/report/pdf/2008/animeguide.pdf",
+      "observed_at": "2026-10-12"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e01",
+      "kind": "reference",
+      "label": "第 1 话·单集画面",
+      "url": "https://umamusu.wiki/Gate_of_Dreams!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e02",
+      "kind": "reference",
+      "label": "第 2 话·单集画面",
+      "url": "https://umamusu.wiki/The_Debut_Race_out_of_Nowhere",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e03",
+      "kind": "reference",
+      "label": "第 3 话·单集画面",
+      "url": "https://umamusu.wiki/First_Big_Win",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e04",
+      "kind": "reference",
+      "label": "第 4 话·单集画面",
+      "url": "https://umamusu.wiki/Special_Training!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e05",
+      "kind": "reference",
+      "label": "第 5 话·单集画面",
+      "url": "https://umamusu.wiki/The_Derby_With_Rivals",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e06",
+      "kind": "reference",
+      "label": "第 6 话·单集画面",
+      "url": "https://umamusu.wiki/Autumn_Skies_and_Horse_Girls",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e07",
+      "kind": "reference",
+      "label": "第 7 话·单集画面",
+      "url": "https://umamusu.wiki/Promise",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e08",
+      "kind": "reference",
+      "label": "第 8 话·单集画面",
+      "url": "https://umamusu.wiki/For_You",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e09",
+      "kind": "reference",
+      "label": "第 9 话·单集画面",
+      "url": "https://umamusu.wiki/Dreams_of_Spica",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e10",
+      "kind": "reference",
+      "label": "第 10 话·单集画面",
+      "url": "https://umamusu.wiki/No_Matter_How_Many_Times_I_Lose",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e11",
+      "kind": "reference",
+      "label": "第 11 话·单集画面",
+      "url": "https://umamusu.wiki/Welcome_Back!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e12",
+      "kind": "reference",
+      "label": "第 12 话·单集画面",
+      "url": "https://umamusu.wiki/Stage_of_Dreams",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e13",
+      "kind": "reference",
+      "label": "第 13 话·单集画面",
+      "url": "https://umamusu.wiki/Echo,_Fanfare!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e14",
+      "kind": "reference",
+      "label": "BNW的誓言 1·单集画面",
+      "url": "https://umamusu.wiki/BNW's_Oath_①",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e15",
+      "kind": "reference",
+      "label": "BNW的誓言 2·单集画面",
+      "url": "https://umamusu.wiki/BNW's_Oath_②",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s1-e16",
+      "kind": "reference",
+      "label": "BNW的誓言 3·单集画面",
+      "url": "https://umamusu.wiki/BNW's_Oath_③",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e01",
+      "kind": "reference",
+      "label": "第 1 话·单集画面",
+      "url": "https://umamusu.wiki/Tokai_Teio_(Anime_Season_2)",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e02",
+      "kind": "reference",
+      "label": "第 2 话·单集画面",
+      "url": "https://umamusu.wiki/Never_Gonna_Give_It_Up!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e03",
+      "kind": "reference",
+      "label": "第 3 话·单集画面",
+      "url": "https://umamusu.wiki/Meetings",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e04",
+      "kind": "reference",
+      "label": "第 4 话·单集画面",
+      "url": "https://umamusu.wiki/TM_Showdown!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e05",
+      "kind": "reference",
+      "label": "第 5 话·单集画面",
+      "url": "https://umamusu.wiki/Unbeaten_Champion",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e06",
+      "kind": "reference",
+      "label": "第 6 话·单集画面",
+      "url": "https://umamusu.wiki/Searching_for_a_Reason",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e07",
+      "kind": "reference",
+      "label": "第 7 话·单集画面",
+      "url": "https://umamusu.wiki/A_Blessed_Name",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e08",
+      "kind": "reference",
+      "label": "第 8 话·单集画面",
+      "url": "https://umamusu.wiki/A_Small_Wish",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e09",
+      "kind": "reference",
+      "label": "第 9 话·单集画面",
+      "url": "https://umamusu.wiki/Stopwatch",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e10",
+      "kind": "reference",
+      "label": "第 10 话·单集画面",
+      "url": "https://umamusu.wiki/One_Day,_Without_a_Doubt",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e11",
+      "kind": "reference",
+      "label": "第 11 话·单集画面",
+      "url": "https://umamusu.wiki/What_I_Feel",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e12",
+      "kind": "reference",
+      "label": "第 12 话·单集画面",
+      "url": "https://umamusu.wiki/Together",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-s2-e13",
+      "kind": "reference",
+      "label": "第 13 话·单集画面",
+      "url": "https://umamusu.wiki/Galloping_After_Our_Dreams",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e01",
+      "kind": "reference",
+      "label": "第 1 话·单集画面",
+      "url": "https://umamusu.wiki/40%_And_Below!_Tracen_Academy_Special_Make-up_Exams",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e02",
+      "kind": "reference",
+      "label": "第 2 话·单集画面",
+      "url": "https://umamusu.wiki/Newly_Filmed!_The_Tracen_Academy_Video_Introduction",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e03",
+      "kind": "reference",
+      "label": "第 3 话·单集画面",
+      "url": "https://umamusu.wiki/The_World_You've_Dreamed_of_Is_Right_in_Front_of_You",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e04",
+      "kind": "reference",
+      "label": "第 4 话·单集画面",
+      "url": "https://umamusu.wiki/The_Opera:_\"Alas,_It_Is_My_Fate\"",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e05",
+      "kind": "reference",
+      "label": "第 5 话·单集画面",
+      "url": "https://umamusu.wiki/A_Major_Clash?!_The_Ramen_Cup_(GII)",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e06",
+      "kind": "reference",
+      "label": "第 6 话·单集画面",
+      "url": "https://umamusu.wiki/An_Elegant_Lunch_for_Elegant_Young_Ladies",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e07",
+      "kind": "reference",
+      "label": "第 7 话·单集画面",
+      "url": "https://umamusu.wiki/Time_to_Hunt_Rhinoceros_Beetles!_BNW",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e08",
+      "kind": "reference",
+      "label": "第 8 话·单集画面",
+      "url": "https://umamusu.wiki/Hero_Theater:_Uma_Soldier_V!!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e09",
+      "kind": "reference",
+      "label": "第 9 话·单集画面",
+      "url": "https://umamusu.wiki/Make_the_Dream_Come_True!_Getaway_Sisters",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e10",
+      "kind": "reference",
+      "label": "第 10 话·单集画面",
+      "url": "https://umamusu.wiki/You_Get_Spooked,_You_Lose!_Test_of_Courage_Showdown!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e11",
+      "kind": "reference",
+      "label": "第 11 话·单集画面",
+      "url": "https://umamusu.wiki/Umayon_Suspense_Theater",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e12",
+      "kind": "reference",
+      "label": "第 12 话·单集画面",
+      "url": "https://umamusu.wiki/Today's_Main_Race!_The_Gilded_Vessel_Obstacle_Course_(G1)",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e13",
+      "kind": "reference",
+      "label": "第 13 话·单集画面",
+      "url": "https://umamusu.wiki/It's_More_Elegant_Than_Eating!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e14",
+      "kind": "reference",
+      "label": "第 14 话·单集画面",
+      "url": "https://umamusu.wiki/I_Want_To_Be_An_Adult_Woman",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e15",
+      "kind": "reference",
+      "label": "第 15 话·单集画面",
+      "url": "https://umamusu.wiki/Empress_Without_A_Gap",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e16",
+      "kind": "reference",
+      "label": "第 16 话·单集画面",
+      "url": "https://umamusu.wiki/Don't_You_Care_About_The_Back?",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e17",
+      "kind": "reference",
+      "label": "第 17 话·单集画面",
+      "url": "https://umamusu.wiki/Let's_Eat_More!_Tama!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e18",
+      "kind": "reference",
+      "label": "第 18 话·单集画面",
+      "url": "https://umamusu.wiki/You_Can't_Grow_Up?",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e19",
+      "kind": "reference",
+      "label": "第 19 话·单集画面",
+      "url": "https://umamusu.wiki/Aim_For_The_First_Prize_Grand_Strategy!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e20",
+      "kind": "reference",
+      "label": "第 20 话·单集画面",
+      "url": "https://umamusu.wiki/Qualification_To_Challenge_The_Emperor",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e21",
+      "kind": "reference",
+      "label": "第 21 话·单集画面",
+      "url": "https://umamusu.wiki/Uniforms_With_Torn_Sleeves_And_Bandages",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e22",
+      "kind": "reference",
+      "label": "第 22 话·单集画面",
+      "url": "https://umamusu.wiki/Enemies_Who_Upset_My_Plan",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e23",
+      "kind": "reference",
+      "label": "第 23 话·单集画面",
+      "url": "https://umamusu.wiki/Miho_Dormitory_Ghost_Story_Competition!",
+      "observed_at": "2026-10-13"
+    },
+    {
+      "id": "episode-artwork-anime-umayon-e24",
+      "kind": "reference",
+      "label": "第 24 话·单集画面",
+      "url": "https://umamusu.wiki/D_On_The_Beach?",
+      "observed_at": "2026-10-13"
+    }
+  ]
+}

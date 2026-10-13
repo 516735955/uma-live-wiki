@@ -1,23 +1,27 @@
 {
   "schema_version": 2,
   "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
-  "refreshed_at": "2026-09-19T14:07:24+00:00",
+  "refreshed_at": "2026-10-02T21:12:51+00:00",
+  "refresh_policy": "add new records; upgrade source-unavailable placeholders; preserve every accepted sourced record",
   "coverage": {
-    "records": 185,
-    "source_pages": 185,
+    "records": 195,
+    "source_pages": 195,
     "complete_fields": {
-      "birthday": 184,
-      "birthplace": 184,
-      "agency": 180,
-      "official_profile": 157
+      "birthday": 194,
+      "birthplace": 194,
+      "agency": 190,
+      "official_profile": 167
     },
-    "official_profile_photos": 2,
+    "official_profile_photos": 5,
     "accounted_fields": {
-      "birthday": 185,
-      "birthplace": 185,
-      "agency": 185,
-      "official_profile": 185
-    }
+      "birthday": 195,
+      "birthplace": 195,
+      "agency": 195,
+      "official_profile": 195
+    },
+    "added_in_refresh": 0,
+    "upgraded_in_refresh": 0,
+    "repaired_profile_photos": 5
   },
   "records": [
     {
@@ -492,6 +496,31 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E6%96%99%E6%84%9B%E8%89%AF"
+        }
+      ]
+    },
+    {
+      "lookup_name": "井澤詩織",
+      "name_zh": "井泽诗织",
+      "name_ja": "井澤詩織",
+      "aliases": [],
+      "kana": "いざわ しおり",
+      "birthday": "2月1日",
+      "birthplace": "埼玉県",
+      "agency": "ボイスキット",
+      "official_profile": "https://voicekit.jp/talent/izawashiori/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "wikipedia",
+          "label": "日文维基百科",
+          "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E6%BE%A4%E8%A9%A9%E7%B9%94"
         }
       ]
     },
@@ -1253,6 +1282,31 @@
       ]
     },
     {
+      "lookup_name": "大地葉",
+      "name_zh": "大地叶",
+      "name_ja": "大地葉",
+      "aliases": [],
+      "kana": "",
+      "birthday": "8月6日",
+      "birthplace": "埼玉県",
+      "agency": "VIMS",
+      "official_profile": "https://www.vims.co.jp/talent/351/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "VIMS 官方资料",
+          "url": "https://www.vims.co.jp/talent/351/"
+        }
+      ]
+    },
+    {
       "lookup_name": "大坪由佳",
       "name_zh": "大坪由佳",
       "name_ja": "大坪由佳",
@@ -1274,6 +1328,31 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%9D%AA%E7%94%B1%E4%BD%B3"
+        }
+      ]
+    },
+    {
+      "lookup_name": "大塚芳忠",
+      "name_zh": "大冢芳忠",
+      "name_ja": "大塚芳忠",
+      "aliases": [],
+      "kana": "",
+      "birthday": "5月19日",
+      "birthplace": "岡山県",
+      "agency": "クレイジーボックス",
+      "official_profile": "https://crazy-box.co.jp/talent/%E5%A4%A7%E5%A1%9A%E8%8A%B3%E5%BF%A0/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "Crazy Box 官方资料",
+          "url": "https://crazy-box.co.jp/talent/%E5%A4%A7%E5%A1%9A%E8%8A%B3%E5%BF%A0/"
         }
       ]
     },
@@ -1449,6 +1528,31 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E4%B8%8B%E6%97%A9%E7%B4%80"
+        }
+      ]
+    },
+    {
+      "lookup_name": "富田美憂",
+      "name_zh": "富田美忧",
+      "name_ja": "富田美憂",
+      "aliases": [],
+      "kana": "",
+      "birthday": "11月15日",
+      "birthplace": "埼玉県",
+      "agency": "アミューズクリエイティブスタジオ",
+      "official_profile": "https://www.amuse.co.jp/artist/A8701/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "Amuse 官方资料",
+          "url": "https://www.amuse.co.jp/artist/A8701/"
         }
       ]
     },
@@ -2840,6 +2944,34 @@
       ]
     },
     {
+      "lookup_name": "渋谷彩乃",
+      "name_zh": "涩谷彩乃",
+      "name_ja": "渋谷彩乃",
+      "aliases": [],
+      "kana": "",
+      "birthday": "5月18日",
+      "birthplace": "東京都",
+      "agency": "賢プロダクション",
+      "official_profile": "https://www.kenproduction.co.jp/talent/169",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "贤 Production 官方资料",
+          "url": "https://www.kenproduction.co.jp/talent/169"
+        }
+      ],
+      "photo_url": "https://www.kenproduction.co.jp/img/talent/169/1.jpg",
+      "photo_source_url": "https://www.kenproduction.co.jp/talent/169",
+      "photo_source_title": "官方事务所资料页"
+    },
+    {
       "lookup_name": "渡部優衣",
       "name_zh": "渡部优衣",
       "name_ja": "渡部優衣",
@@ -3042,6 +3174,31 @@
       ]
     },
     {
+      "lookup_name": "甲斐田裕子",
+      "name_zh": "甲斐田裕子",
+      "name_ja": "甲斐田裕子",
+      "aliases": [],
+      "kana": "",
+      "birthday": "1月14日",
+      "birthplace": "神奈川県",
+      "agency": "賢プロダクション",
+      "official_profile": "https://yuhko-kaida.com/profile.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "甲斐田裕子官方网站",
+          "url": "https://yuhko-kaida.com/profile.html"
+        }
+      ]
+    },
+    {
       "lookup_name": "白石晴香",
       "name_zh": "白石晴香",
       "name_ja": "白石晴香",
@@ -3188,6 +3345,31 @@
           "kind": "wikipedia",
           "label": "日文维基百科",
           "url": "https://ja.wikipedia.org/wiki/%E7%9F%A2%E9%87%8E%E5%A6%83%E8%8F%9C%E5%96%9C"
+        }
+      ]
+    },
+    {
+      "lookup_name": "石上静香",
+      "name_zh": "石上静香",
+      "name_ja": "石上静香",
+      "aliases": [],
+      "kana": "",
+      "birthday": "9月14日",
+      "birthplace": "東京都",
+      "agency": "大沢事務所",
+      "official_profile": "https://osawa-inc.co.jp/women/ishigamishizuka/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "大泽事务所官方资料",
+          "url": "https://osawa-inc.co.jp/women/ishigamishizuka/"
         }
       ]
     },
@@ -3665,6 +3847,34 @@
           "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E4%BA%95%E7%BE%8E%E6%98%A5"
         }
       ]
+    },
+    {
+      "lookup_name": "花守ゆみり",
+      "name_zh": "花守由美里",
+      "name_ja": "花守ゆみり",
+      "aliases": [],
+      "kana": "",
+      "birthday": "9月29日",
+      "birthplace": "神奈川県",
+      "agency": "tomorrow jam",
+      "official_profile": "https://tomorrowjam.jp/talent/hanamori-yumiri/",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "tomorrow jam 官方资料",
+          "url": "https://tomorrowjam.jp/talent/hanamori-yumiri/"
+        }
+      ],
+      "photo_url": "https://tomorrowjam.jp/uploads/hanamori1-1200x630.png",
+      "photo_source_url": "https://tomorrowjam.jp/talent/hanamori-yumiri/",
+      "photo_source_title": "官方事务所资料页"
     },
     {
       "lookup_name": "芹澤優",
@@ -4269,6 +4479,31 @@
       ]
     },
     {
+      "lookup_name": "関根明良",
+      "name_zh": "关根明良",
+      "name_ja": "関根明良",
+      "aliases": [],
+      "kana": "",
+      "birthday": "12月16日",
+      "birthplace": "東京都",
+      "agency": "アプトプロ",
+      "official_profile": "https://aptepro.jp/talents/a_sekine.html",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "Apte Pro 官方资料",
+          "url": "https://aptepro.jp/talents/a_sekine.html"
+        }
+      ]
+    },
+    {
       "lookup_name": "関根瞳",
       "name_zh": "关根瞳",
       "name_ja": "関根瞳",
@@ -4669,6 +4904,34 @@
           "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E9%A0%AD%E6%98%8E%E9%87%8C"
         }
       ]
+    },
+    {
+      "lookup_name": "豊口めぐみ",
+      "name_zh": "丰口惠美",
+      "name_ja": "豊口めぐみ",
+      "aliases": [],
+      "kana": "",
+      "birthday": "1月2日",
+      "birthplace": "東京都",
+      "agency": "81 Produce",
+      "official_profile": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "事务所官方资料",
+          "url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252"
+        }
+      ],
+      "photo_url": "https://www.81produce.co.jp/dcms_media/image/toyoguchi_megumi.jpg",
+      "photo_source_url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
+      "photo_source_title": "事务所官方资料"
     }
   ]
 }

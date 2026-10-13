@@ -122,7 +122,7 @@ def build_horses(source):
             seen.add(node_id)
         return node_id
 
-    horse_cids = {}
+    horse_cids = {canonical(hid): [] for hid in source.get('horse_pages', [])}
     for cid, mapping in (source.get('character_mappings') or {}).items():
         horse = mapping.get('horse')
         if not horse:
@@ -906,36 +906,22 @@ def parse_tables(html_text):
                 'venue': ' '.join(venue),
             })
 
-    # --- 主要成绩（按日期行切分重建）---
+    # --- 主要成绩（每个直接子 div 是一场比赛，海外行可能只有年份）---
     major_seg = re.search(r'主な成績</h2>(.*?)(?:<footer|トップへ|</main>)', html_text, re.S)
     if major_seg:
-        rows = []
-        current = None
-        for line in plain_lines(major_seg.group(1)):
-            if re.fullmatch(r'\d{4}\.\d\d\.\d\d', line):
-                if current is not None:
-                    rows.append(current)
-                current = [line]
-            elif current is not None:
-                current.append(line)
-        if current is not None:
-            rows.append(current)
-        for parts in rows:
-            tokens = parts
-            try:
-                place_index = next(i for i, token in enumerate(tokens) if re.fullmatch(r'\d+', token))
-            except StopIteration:
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(major_seg.group(1), 'html.parser')
+        for row in soup.select('.data-6-2 > div'):
+            cells = row.find_all('div', recursive=False)
+            if len(cells) != 7:
                 continue
-            grade_token = tokens[place_index - 1] if place_index - 1 >= 2 else ''
-            race = ' '.join(tokens[2:max(2, place_index - 1)])
-            if not race and grade_token and not _grade_like(grade_token):
-                race = grade_token
-                grade_token = ''
-            place = int(tokens[place_index])
-            tail = tokens[place_index + 1:]
-            surface = tail[0] if tail else ''
-            distance = tail[1] if len(tail) > 1 else ''
-            beaten = ' '.join(tail[2:]).split(' ※')[0].strip()
+            values = [cell.get_text(' ', strip=True) for cell in cells]
+            if not re.fullmatch(r'\d{4}(?:\.\d\d\.\d\d)?', values[0]) or not values[3].isdigit():
+                continue
+            race_link = cells[2].find('a')
+            grade_element = cells[2].find('span')
+            race = race_link.get_text(' ', strip=True) if race_link else values[2]
+            grade_token = grade_element.get_text(strip=True) if grade_element else ''
             grade = ''
             for grade_idx, chars in (
                 (1, ('Ⅰ', '１', '1')), (2, ('Ⅱ', '２', '2')), (3, ('Ⅲ', '３', '3')),
@@ -944,14 +930,14 @@ def parse_tables(html_text):
                     grade = 'G%d' % grade_idx
                     break
             data['major'].append({
-                'date': tokens[0],
-                'track': tokens[1],
+                'date': values[0],
+                'track': values[1],
                 'race': race,
                 'grade': grade,
-                'place': place,
-                'surface': surface,
-                'distance': distance,
-                'beaten': beaten,
+                'place': int(values[3]),
+                'surface': values[4],
+                'distance': values[5],
+                'beaten': values[6],
             })
     return data
 
@@ -1328,7 +1314,10 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
     wiki = None
     if use_wiki:
         time.sleep(WIKI_SLEEP)
-        wiki = resolve_wikipedia(horse)
+        try:
+            wiki = resolve_wikipedia(horse)
+        except RuntimeError as exc:
+            print('  [wiki unavailable] %s %s' % (horse['id'], exc))
     if wiki:
         lang, title = wiki['lang'], wiki['title']
         try:
@@ -1474,6 +1463,7 @@ def main():
     parser.add_argument('--no-wiki', action='store_true', help='跳过 Wikipedia 抓取')
     parser.add_argument('--no-jbis', action='store_true', help='跳过 JBIS 抓取')
     parser.add_argument('--resume', action='store_true', help='跳过已有详情缓存的马')
+    parser.add_argument('--missing', action='store_true', help='保留现有详情，只补新增原型马和角色映射')
     parser.add_argument('--photos-only', action='store_true',
                         help='只给缺图的马补 photo 字段（不重抓正文）')
     parser.add_argument('--localize-photos', action='store_true',
@@ -1491,7 +1481,19 @@ def main():
     total = len(horses)
     list_rows = []
     details = {}
+    if args.missing:
+        with open(OUT_DETAIL, encoding='utf-8') as handle:
+            details = json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
+        with open(OUT_LIST, encoding='utf-8') as handle:
+            list_rows = json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
     for index, horse in enumerate(horses, 1):
+        if args.missing and horse['id'] in details:
+            record = details[horse['id']]
+            record['cids'] = sorted(set(record.get('cids', []) + horse['cids']))
+            for row in list_rows:
+                if row['id'] == horse['id']:
+                    row['cids'] = record['cids']
+            continue
         done_path = os.path.join(CACHE_DIR, 'detail_%s.json' % horse['id'])
         if args.races_only:
             if not os.path.isfile(done_path):

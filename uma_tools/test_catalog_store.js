@@ -1,6 +1,8 @@
 'use strict';
 
 const assert = require('assert');
+const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const { CatalogStore, stableAlbumId } = require('./catalog-store');
 
@@ -75,10 +77,35 @@ async function main() {
     appearanceSong.versions.forEach((version) => {
       version.releases.forEach((release) => {
         assert(release.vocalists.length > 0);
-        assert(release.vocalists.every((vocalist) => vocalist.character_id === 'specialweek'));
+        assert(release.vocalists.some((vocalist) => vocalist.character_id === 'specialweek'));
       });
     });
   });
+
+  const ensembleId = 'song-umapyoi-legend-e1d012a94c';
+  const ensemble = (await store.song(ensembleId)).song.versions[0].releases[0].vocalists;
+  for (const [type,id] of [['voice_actor','va-0039'], ['character','meishodoto']]) {
+    const projected = (await store.appearance(type,id)).songs.find(song => song.id===ensembleId);
+    assert.deepStrictEqual(projected.versions[0].releases[0].vocalists, ensemble, 'person-specific recording selection preserves the complete ordered cast');
+  }
+
+  // A curated profile edit must invalidate HTTP caches even when the generated
+  // batch ID stays the same; otherwise removed actors remain visible.
+  const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-catalog-profile-'));
+  try {
+    fs.cpSync(path.join(__dirname, '..', 'data'), temporary, { recursive: true });
+    const editedStore = new CatalogStore(temporary);
+    const before = await editedStore.voices();
+    const filename = path.join(temporary, 'voice_actor_profiles.json');
+    const profiles = JSON.parse(fs.readFileSync(filename, 'utf8'));
+    profiles.voice_actors.pop();
+    fs.writeFileSync(filename, JSON.stringify(profiles));
+    const after = await editedStore.voices();
+    assert.strictEqual(after.voice_actors.length, before.voice_actors.length - 1);
+    assert.notStrictEqual(after.build_id, before.build_id, 'profile edits must change the HTTP catalog revision');
+  } finally {
+    fs.rmSync(temporary, { recursive: true, force: true });
+  }
 
   console.log('catalog store ok:', snapshot.eventRows.length, 'events,', snapshot.songRows.length, 'songs,', snapshot.albumRows.length, 'albums');
 }

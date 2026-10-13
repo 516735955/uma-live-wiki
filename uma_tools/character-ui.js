@@ -25,8 +25,19 @@
       if (s === 'zh') { list = list.slice().sort(function (a, b) { return norm(a.zh).localeCompare(norm(b.zh), 'zh'); }); }
       else if (s === 'en') { list = list.slice().sort(function (a, b) { return norm(a.en).localeCompare(norm(b.en)); }); }
       else if (s === 'cv') { list = list.slice().sort(function (a, b) { return norm(a.cv_zh).localeCompare(norm(b.cv_zh), 'zh'); }); }
+      var pedigreeMeta = window.CHARACTER_PEDIGREE_META || {};
+      var nonUmaIds = new Set(pedigreeMeta.non_uma || []);
+      var umaCharacters = list.filter(function (c) { return c.role_type !== 'human' && !nonUmaIds.has(c.id); });
+      var otherCharacters = list.filter(function (c) { return c.role_type === 'human' || nonUmaIds.has(c.id); });
+      list = umaCharacters.concat(otherCharacters);
       grid.innerHTML = '';
       list.forEach(function (c, i) {
+        if (otherCharacters.length && i === umaCharacters.length) {
+          var divider = document.createElement('li');
+          divider.className = 'cio-group-title';
+          divider.textContent = '非赛马娘角色';
+          grid.appendChild(divider);
+        }
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'cio-card';
@@ -71,16 +82,26 @@
     function fill() {
       refreshRelIndex();
       var detail = window.__uma_app ? window.__uma_app.charDetail : null;
-      if (!detail || !detail.id || !window.CHAR_DETAIL) return;
+      if (!detail || !detail.id) return;
       if (box.getAttribute('data-d-filled') === detail.id) return;
-      var d = window.CHAR_DETAIL[detail.id];
-      if (!d || !d.html) return;
-      var source = document.createElement('div');
-      source.innerHTML = d.html;
-      var description = source.querySelector('.uma-description');
-      box.innerHTML = description && description.innerHTML.trim()
-        ? '<div class="character-description">' + description.innerHTML + '</div>'
-        : '';
+      var d = window.CHAR_DETAIL && window.CHAR_DETAIL[detail.id];
+      if (d && d.html) {
+        var source = document.createElement('div');
+        source.innerHTML = d.html;
+        var description = source.querySelector('.uma-description');
+        box.innerHTML = description && description.innerHTML.trim()
+          ? '<div class="character-description">' + description.innerHTML + '</div>'
+          : '';
+      } else if (detail.summary_zh) {
+        var fallback = document.createElement('div');
+        fallback.className = 'character-description';
+        var paragraph = document.createElement('p');
+        paragraph.textContent = detail.summary_zh;
+        fallback.appendChild(paragraph);
+        box.replaceChildren(fallback);
+      } else {
+        box.innerHTML = '';
+      }
       box.setAttribute('data-d-filled', detail.id);
     }
     fill();
@@ -91,8 +112,19 @@
   var relByCid = {};
   var relSource = null;
   window.addEventListener('message', function (event) {
-    if (!event.data || event.data.type !== 'uma-pedigree-height') return;
     var frames = document.querySelectorAll('.c-pedigree-lens-frame');
+    if (!event.data) return;
+    if (event.data.type === 'uma-pedigree-navigate') {
+      var targetPath = String(event.data.path || '');
+      var isCharacterPath = /^\/zh-Hans\/database\/characters\/[^/?#]+(?:[?#].*)?$/.test(targetPath);
+      var fromPedigreeFrame = Array.prototype.some.call(frames, function (frame) {
+        return frame.contentWindow === event.source;
+      });
+      if (!isCharacterPath || !fromPedigreeFrame || typeof window.umaNavigate !== 'function') return;
+      window.umaNavigate(targetPath);
+      return;
+    }
+    if (event.data.type !== 'uma-pedigree-height') return;
     frames.forEach(function (frame) {
       if (frame.contentWindow !== event.source) return;
       if (frame.dataset.pedigreeSample !== event.data.sample) return;
@@ -146,8 +178,7 @@
       'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
       '<script defer src="/uma_tools/pedigree-lab.js"><\/script></head>' +
       '<body><a id="character-back-link" hidden></a><main class="lab-page">' +
-      '<section class="lab-workspace" aria-labelledby="workspace-title">' +
-      '<div class="workspace-head"><h2 id="workspace-title">血统关系</h2></div>' +
+      '<section class="lab-workspace" aria-label="血统关系">' +
       '<div class="workspace-content"><div class="workspace-body">' +
       '<div class="graph-viewport" id="graph-viewport" aria-label="血统关系图"><div class="graph-stage" id="graph-stage"></div></div>' +
       '</div></div></section></main>' +
@@ -170,105 +201,6 @@
     }
   }
 
-  function roomDist(a, b) {
-    var dx = a.clientX - b.clientX, dy = a.clientY - b.clientY;
-    return Math.sqrt(dx * dx + dy * dy);
-  }
-  function closeRoomLightbox(ov) {
-    if (ov) { ov.style.display = 'none'; var im = ov.querySelector('img'); if (im) { im.style.transform = ''; } }
-  }
-  function initRoomPinch(ov) {
-    if (ov.getAttribute('data-pinch')) return;
-    ov.setAttribute('data-pinch', '1');
-    var img = ov.querySelector('img');
-    var st = { scale: 1, tx: 0, ty: 0 };
-    ov._roomSt = st;
-    var ges = null, multi = false, suppress = false;
-    function apply() {
-      if (st.scale > 1.01) img.classList.add('zoomed');
-      else img.classList.remove('zoomed');
-      img.style.transform = 'translate(' + st.tx + 'px,' + st.ty + 'px) scale(' + st.scale + ')';
-    }
-    ov.addEventListener('touchstart', function (e) {
-      if (e.touches.length >= 2) {
-        multi = true;
-        e.preventDefault();
-      }
-      if (e.touches.length === 2) {
-        ges = { type: 'pinch', d: roomDist(e.touches[0], e.touches[1]), s: st.scale, tx: st.tx, ty: st.ty, cx: (e.touches[0].clientX + e.touches[1].clientX) / 2, cy: (e.touches[0].clientY + e.touches[1].clientY) / 2 };
-      } else if (e.touches.length === 1 && !multi) {
-        ges = { type: 'pan', x: e.touches[0].clientX, y: e.touches[0].clientY, tx: st.tx, ty: st.ty };
-      }
-    }, { passive: false });
-    ov.addEventListener('touchmove', function (e) {
-      if (e.touches.length === 2 && ges && ges.type === 'pinch') {
-        e.preventDefault(); suppress = true;
-        var d = roomDist(e.touches[0], e.touches[1]);
-        if (d > 0) {
-          var ns = Math.max(1, Math.min(6, ges.s * d / ges.d));
-          var cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-          var cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-          var nx = (ges.cx - ges.tx) / ges.s, ny = (ges.cy - ges.ty) / ges.s;
-          st.scale = ns;
-          st.tx = cx - nx * ns; st.ty = cy - ny * ns;
-          apply();
-        }
-      } else if (e.touches.length === 1 && ges && ges.type === 'pan') {
-        e.preventDefault(); suppress = true;
-        var dx = e.touches[0].clientX - ges.x, dy = e.touches[0].clientY - ges.y;
-        st.tx = ges.tx + dx; st.ty = ges.ty + dy;
-        apply();
-      }
-    }, { passive: false });
-    ov.addEventListener('touchend', function (e) {
-      if (e.touches.length < 2) multi = false;
-      if (e.touches.length === 0) ges = null;
-    }, { passive: true });
-    ov.addEventListener('click', function (e) {
-      if (suppress) { suppress = false; e.preventDefault(); e.stopPropagation(); return; }
-      closeRoomLightbox(ov);
-    });
-    ov.addEventListener('dblclick', function () {
-      st.scale = 1; st.tx = 0; st.ty = 0; apply();
-    });
-    ov.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      var rect = ov.getBoundingClientRect();
-      var mx = e.clientX - rect.left, my = e.clientY - rect.top;
-      var factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-      var ns = Math.max(1, Math.min(6, st.scale * factor));
-      if (ns === st.scale) return;
-      var nx = (mx - st.tx) / st.scale, ny = (my - st.ty) / st.scale;
-      st.scale = ns;
-      st.tx = mx - nx * ns; st.ty = my - ny * ns;
-      apply();
-    }, { passive: false });
-  }
-  function openRoomLightbox(src) {
-    var ov = document.getElementById('c-lightbox');
-    if (!ov) {
-      ov = document.createElement('div');
-      ov.id = 'c-lightbox';
-      ov.className = 'c-lightbox';
-      var lightboxImage = document.createElement('img');
-      lightboxImage.alt = '宿舍室友图大图';
-      ov.appendChild(lightboxImage);
-      document.body.appendChild(ov);
-    }
-    initRoomPinch(ov);
-    if (ov._roomSt) { ov._roomSt.scale = 1; ov._roomSt.tx = 0; ov._roomSt.ty = 0; }
-    var im = ov.querySelector('img');
-    im.src = src;
-    im.style.transform = '';
-    ov.style.display = 'flex';
-  }
-
-  function initRoom(root) {
-    var img = (root || document).querySelector('.roommate-image');
-    if (!img || img.getAttribute('data-room-inited')) return;
-    img.setAttribute('data-room-inited', '1');
-    img.addEventListener('click', function () { openRoomLightbox(img.getAttribute('src') || img.src); });
-  }
 
   function initCharTab() {
     var tab = document.getElementById('tab-characters');
@@ -276,7 +208,6 @@
       renderIntro(tab);
       renderDetail(tab);
     }
-    initRoom(document);
   }
 
   /* ---------- 声优库列表 ---------- */

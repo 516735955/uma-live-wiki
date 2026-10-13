@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T13:34:56+00:00",
+  "generated_at": "2026-10-12T20:48:42+00:00",
   "coverage": {
-    "creators": 273,
-    "credited_works": 241,
-    "credited_versions": 1201
+    "creators": 283,
+    "credited_works": 332,
+    "credited_versions": 1295
   },
   "creators": [
     {
@@ -243,44 +243,12 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 3
+          "count": 1
         }
       ],
-      "work_count": 2,
-      "version_count": 3,
+      "work_count": 1,
+      "version_count": 1,
       "works": [
-        {
-          "song_id": "song-next-frontier-5267707c1b",
-          "title": "NEXT FRONTIER",
-          "cover": "https://p2.music.126.net/NY9mDi616DjmE0BsFu9G2w==/109951170973866055.jpg",
-          "release_date": "2021-03-17",
-          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 01",
-          "roles": [
-            "lyricist"
-          ],
-          "version_ids": [
-            "song-next-frontier-5267707c1b-v-c739868dd5",
-            "song-next-frontier-5267707c1b-v-d3b2462a1f"
-          ],
-          "versions": [
-            {
-              "id": "song-next-frontier-5267707c1b-v-c739868dd5",
-              "title": "NEXT FRONTIER (Anime Size)",
-              "version_label": "Anime Size",
-              "roles": [
-                "lyricist"
-              ]
-            },
-            {
-              "id": "song-next-frontier-5267707c1b-v-d3b2462a1f",
-              "title": "NEXT FRONTIER (Game Size)",
-              "version_label": "Game Size",
-              "roles": [
-                "lyricist"
-              ]
-            }
-          ]
-        },
         {
           "song_id": "song-87be3723c2",
           "title": "本能スピード",
@@ -306,15 +274,6 @@
         }
       ],
       "collaborators": [
-        {
-          "creator_id": "creator-724bd18b67",
-          "name": "山口朗彦",
-          "shared_version_count": 2,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-next-frontier-5267707c1b"
-          ]
-        },
         {
           "creator_id": "creator-ajurika-e2947b5d62",
           "name": "AJURIKA",
@@ -611,7 +570,7 @@
         {
           "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
           "name": "Lucas Nainemoutou",
-          "shared_version_count": 6,
+          "shared_version_count": 5,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-66e8f91931"
@@ -624,6 +583,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-seven-a00bbe560e"
+          ]
+        },
+        {
+          "creator_id": "creator-lucas-10c25665e4",
+          "name": "Lucas",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-66e8f91931"
           ]
         },
         {
@@ -642,15 +610,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-87c8f0bb6b"
-          ]
-        },
-        {
-          "creator_id": "creator-lucas-10c25665e4",
-          "name": "Lucas",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-66e8f91931"
           ]
         }
       ]
@@ -1120,7 +1079,7 @@
       "id": "creator-cygames-f5bc529953",
       "name": "Cygames",
       "aliases": [],
-      "type": "person",
+      "type": "organization",
       "affiliations": [],
       "roles": [
         {
@@ -2751,16 +2710,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 3
+          "count": 4
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 1
+          "count": 2
         }
       ],
       "work_count": 3,
-      "version_count": 4,
+      "version_count": 5,
       "works": [
         {
           "song_id": "song-8f0d72cf0d",
@@ -2799,14 +2758,25 @@
           "title": "ありがとう、神様",
           "cover": "/album_covers/LACM-14742.webp",
           "release_date": "2018-05-09",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 04 Original Soundtrack (2021 Remastered Version)",
+          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 04 Original Soundtrack",
           "roles": [
-            "composer"
+            "composer",
+            "arranger"
           ],
           "version_ids": [
+            "song-66e8f91931-v-66130e0288",
             "song-66e8f91931-v-74d9dc52ea"
           ],
           "versions": [
+            {
+              "id": "song-66e8f91931-v-66130e0288",
+              "title": "ありがとう、神様 (TV Size)",
+              "version_label": "TV Size",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            },
             {
               "id": "song-66e8f91931-v-74d9dc52ea",
               "title": "ありがとう、神様 (TV Size) (2021 Remastered Version)",
@@ -2843,6 +2813,15 @@
       ],
       "collaborators": [
         {
+          "creator_id": "creator-apis-7e6674d509",
+          "name": "Apis",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-66e8f91931"
+          ]
+        },
+        {
           "creator_id": "creator-mitsu-f9df3de487",
           "name": "mitsu",
           "shared_version_count": 2,
@@ -2858,15 +2837,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-8f0d72cf0d"
-          ]
-        },
-        {
-          "creator_id": "creator-apis-7e6674d509",
-          "name": "Apis",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-66e8f91931"
           ]
         },
         {
@@ -2933,16 +2903,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 39
+          "count": 38
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 16
+          "count": 15
         }
       ],
       "work_count": 5,
-      "version_count": 40,
+      "version_count": 39,
       "works": [
         {
           "song_id": "song-66e8f91931",
@@ -2958,7 +2928,6 @@
             "song-66e8f91931-v-12a67d0842",
             "song-66e8f91931-v-360718b369",
             "song-66e8f91931-v-47fc3bbde3",
-            "song-66e8f91931-v-66130e0288",
             "song-66e8f91931-v-66e8f91931",
             "song-66e8f91931-v-74d9dc52ea"
           ],
@@ -2985,15 +2954,6 @@
               "id": "song-66e8f91931-v-360718b369",
               "title": "ありがとう、神様 (Off Vocal) (2021 Remastered Version)",
               "version_label": "Off Vocal / 2021 Remastered Version",
-              "roles": [
-                "composer",
-                "arranger"
-              ]
-            },
-            {
-              "id": "song-66e8f91931-v-66130e0288",
-              "title": "ありがとう、神様 (TV Size)",
-              "version_label": "TV Size",
               "roles": [
                 "composer",
                 "arranger"
@@ -3463,7 +3423,7 @@
         {
           "creator_id": "creator-apis-7e6674d509",
           "name": "Apis",
-          "shared_version_count": 6,
+          "shared_version_count": 5,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-66e8f91931"
@@ -8328,11 +8288,11 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 24
+          "count": 26
         }
       ],
       "work_count": 3,
-      "version_count": 24,
+      "version_count": 26,
       "works": [
         {
           "song_id": "song-next-frontier-5267707c1b",
@@ -8351,6 +8311,8 @@
             "song-next-frontier-5267707c1b-v-79bd87a5b6",
             "song-next-frontier-5267707c1b-v-914b6890b7",
             "song-next-frontier-5267707c1b-v-baf056055e",
+            "song-next-frontier-5267707c1b-v-c739868dd5",
+            "song-next-frontier-5267707c1b-v-d3b2462a1f",
             "song-next-frontier-5267707c1b-v-dd7e5274c3",
             "song-next-frontier-5267707c1b-v-ee240d3e1e",
             "song-next-frontier-5267707c1b-v-f73d79b758"
@@ -8360,6 +8322,22 @@
               "id": "song-next-frontier-5267707c1b-v-5267707c1b",
               "title": "NEXT FRONTIER",
               "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-next-frontier-5267707c1b-v-c739868dd5",
+              "title": "NEXT FRONTIER (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-next-frontier-5267707c1b-v-d3b2462a1f",
+              "title": "NEXT FRONTIER (Game Size)",
+              "version_label": "Game Size",
               "roles": [
                 "lyricist"
               ]
@@ -8597,7 +8575,7 @@
         {
           "creator_id": "creator-724bd18b67",
           "name": "山口朗彦",
-          "shared_version_count": 11,
+          "shared_version_count": 13,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-2752ee7923",
@@ -8638,7 +8616,9 @@
       "name": "ひとみ",
       "aliases": [],
       "type": "person",
-      "affiliations": [],
+      "affiliations": [
+        "あたらよ"
+      ],
       "roles": [
         {
           "role": "lyricist",
@@ -8690,7 +8670,17 @@
           ]
         }
       ],
-      "collaborators": []
+      "collaborators": [
+        {
+          "creator_id": "creator-e61b9f1707",
+          "name": "れいらむる",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-864b1bb2e9"
+          ]
+        }
+      ]
     },
     {
       "id": "creator-29c23c234c",
@@ -9108,6 +9098,67 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-l-arc-de-gloire-aa7474ca7e"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-e61b9f1707",
+      "name": "れいらむる",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 2
+        }
+      ],
+      "work_count": 1,
+      "version_count": 2,
+      "works": [
+        {
+          "song_id": "song-864b1bb2e9",
+          "title": "ふたり",
+          "cover": "https://p1.music.126.net/_QwGg4OdbTo6ye-AiGme0A==/109951172345399338.jpg",
+          "release_date": "2025-11-26",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』第2クールエンディング主題歌 : 「ふたり」",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-864b1bb2e9-v-2af8136a85",
+            "song-864b1bb2e9-v-864b1bb2e9"
+          ],
+          "versions": [
+            {
+              "id": "song-864b1bb2e9-v-864b1bb2e9",
+              "title": "ふたり",
+              "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-864b1bb2e9-v-2af8136a85",
+              "title": "ふたり (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-090f89ccf3",
+          "name": "ひとみ",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-864b1bb2e9"
           ]
         }
       ]
@@ -18102,16 +18153,16 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 3
+          "count": 6
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 3
+          "count": 6
         }
       ],
-      "work_count": 2,
-      "version_count": 3,
+      "work_count": 3,
+      "version_count": 6,
       "works": [
         {
           "song_id": "song-2b5335a8e0",
@@ -18172,9 +18223,72 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "title": "芝生えるわ～",
+          "cover": "/album_covers/LZC-3651.webp",
+          "release_date": "2026-09-28",
+          "album_name": "アニメ『うまゆる ふるげ～と！』第1弾主題歌「芝生えるわ～」",
+          "roles": [
+            "lyricist",
+            "composer"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-25beea36a0",
+            "song-aed14a1a3a-v-2954ef1177",
+            "song-aed14a1a3a-v-aed14a1a3a"
+          ],
+          "versions": [
+            {
+              "id": "song-aed14a1a3a-v-aed14a1a3a",
+              "title": "芝生えるわ～",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-aed14a1a3a-v-2954ef1177",
+              "title": "芝生えるわ～ (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-aed14a1a3a-v-25beea36a0",
+              "title": "芝生えるわ～ (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
+        {
+          "creator_id": "creator-eaf94340d3",
+          "name": "本田晃弘",
+          "shared_version_count": 3,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-aed14a1a3a"
+          ]
+        },
+        {
+          "creator_id": "creator-14a2ce8737",
+          "name": "池田健仁",
+          "shared_version_count": 3,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-aed14a1a3a"
+          ]
+        },
         {
           "creator_id": "creator-6f5b36ad80",
           "name": "三好啓太",
@@ -20571,6 +20685,74 @@
         }
       ],
       "collaborators": []
+    },
+    {
+      "id": "creator-69641a01cd",
+      "name": "土屋裕一",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 1
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-5fcd96ba46",
+          "title": "ヤマヲカケル！",
+          "cover": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
+          "release_date": "2023-03-29",
+          "album_name": "アニメ『うまゆる』アルバム",
+          "roles": [
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-5fcd96ba46-v-5fcd96ba46"
+          ],
+          "versions": [
+            {
+              "id": "song-5fcd96ba46-v-5fcd96ba46",
+              "title": "ヤマヲカケル！",
+              "version_label": "",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-a8e068c1f5",
+          "name": "櫻木咲子",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        },
+        {
+          "creator_id": "creator-fb9599021b",
+          "name": "秋田真典",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        }
+      ]
     },
     {
       "id": "creator-9df1809a60",
@@ -23912,6 +24094,15 @@
           ]
         },
         {
+          "creator_id": "creator-cf49f62a1e",
+          "name": "市橋卓也",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-eb8499138b"
+          ]
+        },
+        {
           "creator_id": "creator-14a2ce8737",
           "name": "池田健仁",
           "shared_version_count": 2,
@@ -23936,15 +24127,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-1bd7539454"
-          ]
-        },
-        {
-          "creator_id": "creator-cf49f62a1e",
-          "name": "市橋卓也",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-eb8499138b"
           ]
         }
       ]
@@ -24009,6 +24191,32 @@
           ]
         }
       ]
+    },
+    {
+      "id": "creator-e5820c57bd",
+      "name": "小林启树",
+      "aliases": [
+        "小林啓樹"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "image": "/uma_tools/img/creators/keiki-kobayashi.jpg",
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
     },
     {
       "id": "creator-ae75b645e1",
@@ -25180,19 +25388,10 @@
         {
           "creator_id": "creator-f611e526aa",
           "name": "うらん",
-          "shared_version_count": 11,
+          "shared_version_count": 13,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-2752ee7923",
-            "song-next-frontier-5267707c1b"
-          ]
-        },
-        {
-          "creator_id": "creator-airi-f2725a845c",
-          "name": "AiRI",
-          "shared_version_count": 2,
-          "shared_work_count": 1,
-          "shared_song_ids": [
             "song-next-frontier-5267707c1b"
           ]
         },
@@ -26206,6 +26405,18 @@
       ]
     },
     {
+      "id": "creator-5e4fd345c6",
+      "name": "岩代太郎",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
+    },
+    {
       "id": "creator-5b93eb96dd",
       "name": "岩嵜壮志",
       "aliases": [],
@@ -26524,6 +26735,1635 @@
       "collaborators": []
     },
     {
+      "id": "creator-e5ed3b7ed8",
+      "name": "川井憲次",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 70
+        }
+      ],
+      "work_count": 70,
+      "version_count": 70,
+      "works": [
+        {
+          "song_id": "song-a-6583bc1bb2",
+          "title": "アイキャッチ (A)",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-a-6583bc1bb2-v-6583bc1bb2"
+          ],
+          "versions": [
+            {
+              "id": "song-a-6583bc1bb2-v-6583bc1bb2",
+              "title": "アイキャッチ (A)",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-b-c4b95c2c41",
+          "title": "アイキャッチ (B)",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-b-c4b95c2c41-v-c4b95c2c41"
+          ],
+          "versions": [
+            {
+              "id": "song-b-c4b95c2c41-v-c4b95c2c41",
+              "title": "アイキャッチ (B)",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-5a2659d690",
+          "title": "ウチと走ろう",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-5a2659d690-v-5a2659d690"
+          ],
+          "versions": [
+            {
+              "id": "song-5a2659d690-v-5a2659d690",
+              "title": "ウチと走ろう",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-e734af065e",
+          "title": "グランプリ",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-e734af065e-v-e734af065e"
+          ],
+          "versions": [
+            {
+              "id": "song-e734af065e-v-e734af065e",
+              "title": "グランプリ",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-6eee24c301",
+          "title": "スターの走り",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-6eee24c301-v-6eee24c301"
+          ],
+          "versions": [
+            {
+              "id": "song-6eee24c301-v-6eee24c301",
+              "title": "スターの走り",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-fdcf2ac099",
+          "title": "ブリーフィング",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-fdcf2ac099-v-fdcf2ac099"
+          ],
+          "versions": [
+            {
+              "id": "song-fdcf2ac099-v-fdcf2ac099",
+              "title": "ブリーフィング",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-0a3c806218",
+          "title": "ポジション争い",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-0a3c806218-v-0a3c806218"
+          ],
+          "versions": [
+            {
+              "id": "song-0a3c806218-v-0a3c806218",
+              "title": "ポジション争い",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-0b2e11b631",
+          "title": "リサーチ",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-0b2e11b631-v-0b2e11b631"
+          ],
+          "versions": [
+            {
+              "id": "song-0b2e11b631-v-0b2e11b631",
+              "title": "リサーチ",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-4f9d3883c1",
+          "title": "一流",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-4f9d3883c1-v-4f9d3883c1"
+          ],
+          "versions": [
+            {
+              "id": "song-4f9d3883c1-v-4f9d3883c1",
+              "title": "一流",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-5d0631f8b4",
+          "title": "一番の選択",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-5d0631f8b4-v-5d0631f8b4"
+          ],
+          "versions": [
+            {
+              "id": "song-5d0631f8b4-v-5d0631f8b4",
+              "title": "一番の選択",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-0f8ca95bd7",
+          "title": "不安要素",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-0f8ca95bd7-v-0f8ca95bd7"
+          ],
+          "versions": [
+            {
+              "id": "song-0f8ca95bd7-v-0f8ca95bd7",
+              "title": "不安要素",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-fa8ef0cb18",
+          "title": "不穏",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-fa8ef0cb18-v-fa8ef0cb18"
+          ],
+          "versions": [
+            {
+              "id": "song-fa8ef0cb18-v-fa8ef0cb18",
+              "title": "不穏",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-892ebd7c51",
+          "title": "世界戦",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-892ebd7c51-v-892ebd7c51"
+          ],
+          "versions": [
+            {
+              "id": "song-892ebd7c51-v-892ebd7c51",
+              "title": "世界戦",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-0793a25a7c",
+          "title": "仕掛け",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-0793a25a7c-v-0793a25a7c"
+          ],
+          "versions": [
+            {
+              "id": "song-0793a25a7c-v-0793a25a7c",
+              "title": "仕掛け",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-f9fceb7e2a",
+          "title": "企み",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-f9fceb7e2a-v-f9fceb7e2a"
+          ],
+          "versions": [
+            {
+              "id": "song-f9fceb7e2a-v-f9fceb7e2a",
+              "title": "企み",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-3ca87196d1",
+          "title": "伏兵",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-3ca87196d1-v-3ca87196d1"
+          ],
+          "versions": [
+            {
+              "id": "song-3ca87196d1-v-3ca87196d1",
+              "title": "伏兵",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-febfa166ae",
+          "title": "休息は心の栄養",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-febfa166ae-v-febfa166ae"
+          ],
+          "versions": [
+            {
+              "id": "song-febfa166ae-v-febfa166ae",
+              "title": "休息は心の栄養",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-d75c1dcb05",
+          "title": "俺じゃない",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-d75c1dcb05-v-d75c1dcb05"
+          ],
+          "versions": [
+            {
+              "id": "song-d75c1dcb05-v-d75c1dcb05",
+              "title": "俺じゃない",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-a-7723be24f9",
+          "title": "出走 (A)",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-a-7723be24f9-v-7723be24f9"
+          ],
+          "versions": [
+            {
+              "id": "song-a-7723be24f9-v-7723be24f9",
+              "title": "出走 (A)",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-b-737f674bf3",
+          "title": "出走 (B)",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-b-737f674bf3-v-737f674bf3"
+          ],
+          "versions": [
+            {
+              "id": "song-b-737f674bf3-v-737f674bf3",
+              "title": "出走 (B)",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-40b435b56b",
+          "title": "剛脚",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-40b435b56b-v-40b435b56b"
+          ],
+          "versions": [
+            {
+              "id": "song-40b435b56b-v-40b435b56b",
+              "title": "剛脚",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-d305ab3a8e",
+          "title": "力ある者",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-d305ab3a8e-v-d305ab3a8e"
+          ],
+          "versions": [
+            {
+              "id": "song-d305ab3a8e-v-d305ab3a8e",
+              "title": "力ある者",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-9c48ac066a",
+          "title": "動揺",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-9c48ac066a-v-9c48ac066a"
+          ],
+          "versions": [
+            {
+              "id": "song-9c48ac066a-v-9c48ac066a",
+              "title": "動揺",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-b304f231f0",
+          "title": "危機",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-b304f231f0-v-b304f231f0"
+          ],
+          "versions": [
+            {
+              "id": "song-b304f231f0-v-b304f231f0",
+              "title": "危機",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-7e5d26d65c",
+          "title": "品格",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-7e5d26d65c-v-7e5d26d65c"
+          ],
+          "versions": [
+            {
+              "id": "song-7e5d26d65c-v-7e5d26d65c",
+              "title": "品格",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-8f85c3c3c1",
+          "title": "奇策",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-8f85c3c3c1-v-8f85c3c3c1"
+          ],
+          "versions": [
+            {
+              "id": "song-8f85c3c3c1-v-8f85c3c3c1",
+              "title": "奇策",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-2075e68569",
+          "title": "奇跡",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-2075e68569-v-2075e68569"
+          ],
+          "versions": [
+            {
+              "id": "song-2075e68569-v-2075e68569",
+              "title": "奇跡",
+              "version_label": "《芦毛灰姑娘》原声",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-39df125899",
+          "title": "好スタート",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-39df125899-v-39df125899"
+          ],
+          "versions": [
+            {
+              "id": "song-39df125899-v-39df125899",
+              "title": "好スタート",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-879b4fb484",
+          "title": "学園生活",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-879b4fb484-v-879b4fb484"
+          ],
+          "versions": [
+            {
+              "id": "song-879b4fb484-v-879b4fb484",
+              "title": "学園生活",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-322dab82e9",
+          "title": "強くなる",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-322dab82e9-v-322dab82e9"
+          ],
+          "versions": [
+            {
+              "id": "song-322dab82e9-v-322dab82e9",
+              "title": "強くなる",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-d812593a87",
+          "title": "強大な敵",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-d812593a87-v-d812593a87"
+          ],
+          "versions": [
+            {
+              "id": "song-d812593a87-v-d812593a87",
+              "title": "強大な敵",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-a339a2fe2f",
+          "title": "強者たち",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-a339a2fe2f-v-a339a2fe2f"
+          ],
+          "versions": [
+            {
+              "id": "song-a339a2fe2f-v-a339a2fe2f",
+              "title": "強者たち",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-aaaeaf8eb5",
+          "title": "弾む気持ち",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-aaaeaf8eb5-v-aaaeaf8eb5"
+          ],
+          "versions": [
+            {
+              "id": "song-aaaeaf8eb5-v-aaaeaf8eb5",
+              "title": "弾む気持ち",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-180e853b6a",
+          "title": "後退",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-180e853b6a-v-180e853b6a"
+          ],
+          "versions": [
+            {
+              "id": "song-180e853b6a-v-180e853b6a",
+              "title": "後退",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-d125352dec",
+          "title": "急げ",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-d125352dec-v-d125352dec"
+          ],
+          "versions": [
+            {
+              "id": "song-d125352dec-v-d125352dec",
+              "title": "急げ",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-4296673b8f",
+          "title": "愁い",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-4296673b8f-v-4296673b8f"
+          ],
+          "versions": [
+            {
+              "id": "song-4296673b8f-v-4296673b8f",
+              "title": "愁い",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-c3772cfc59",
+          "title": "戦う相手",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-c3772cfc59-v-c3772cfc59"
+          ],
+          "versions": [
+            {
+              "id": "song-c3772cfc59-v-c3772cfc59",
+              "title": "戦う相手",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-a-52fe415ee3",
+          "title": "戦略 (A)",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-a-52fe415ee3-v-52fe415ee3"
+          ],
+          "versions": [
+            {
+              "id": "song-a-52fe415ee3-v-52fe415ee3",
+              "title": "戦略 (A)",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-b-2a20beca31",
+          "title": "戦略 (B)",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-b-2a20beca31-v-2a20beca31"
+          ],
+          "versions": [
+            {
+              "id": "song-b-2a20beca31-v-2a20beca31",
+              "title": "戦略 (B)",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-817377d1b3",
+          "title": "手がかり",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-817377d1b3-v-817377d1b3"
+          ],
+          "versions": [
+            {
+              "id": "song-817377d1b3-v-817377d1b3",
+              "title": "手がかり",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-4750be50df",
+          "title": "拠り所",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-4750be50df-v-4750be50df"
+          ],
+          "versions": [
+            {
+              "id": "song-4750be50df-v-4750be50df",
+              "title": "拠り所",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-8d852b82d8",
+          "title": "支配",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-8d852b82d8-v-8d852b82d8"
+          ],
+          "versions": [
+            {
+              "id": "song-8d852b82d8-v-8d852b82d8",
+              "title": "支配",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-6e083a1c54",
+          "title": "敗色",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-6e083a1c54-v-6e083a1c54"
+          ],
+          "versions": [
+            {
+              "id": "song-6e083a1c54-v-6e083a1c54",
+              "title": "敗色",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-dbac8e3eb2",
+          "title": "時代を作れ",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-dbac8e3eb2-v-dbac8e3eb2"
+          ],
+          "versions": [
+            {
+              "id": "song-dbac8e3eb2-v-dbac8e3eb2",
+              "title": "時代を作れ",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-e7474e8654",
+          "title": "最強",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-e7474e8654-v-e7474e8654"
+          ],
+          "versions": [
+            {
+              "id": "song-e7474e8654-v-e7474e8654",
+              "title": "最強",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-152bc4c4eb",
+          "title": "最終局面",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-152bc4c4eb-v-152bc4c4eb"
+          ],
+          "versions": [
+            {
+              "id": "song-152bc4c4eb-v-152bc4c4eb",
+              "title": "最終局面",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-9755bd0fb1",
+          "title": "期待",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-9755bd0fb1-v-9755bd0fb1"
+          ],
+          "versions": [
+            {
+              "id": "song-9755bd0fb1-v-9755bd0fb1",
+              "title": "期待",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-1c8c3a8ab8",
+          "title": "次のレース",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-1c8c3a8ab8-v-1c8c3a8ab8"
+          ],
+          "versions": [
+            {
+              "id": "song-1c8c3a8ab8-v-1c8c3a8ab8",
+              "title": "次のレース",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-71ec7d8ac2",
+          "title": "決戦に臨んで",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-71ec7d8ac2-v-71ec7d8ac2"
+          ],
+          "versions": [
+            {
+              "id": "song-71ec7d8ac2-v-71ec7d8ac2",
+              "title": "決戦に臨んで",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-14b12abaff",
+          "title": "温かい思い出",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-14b12abaff-v-14b12abaff"
+          ],
+          "versions": [
+            {
+              "id": "song-14b12abaff-v-14b12abaff",
+              "title": "温かい思い出",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-95a7414f80",
+          "title": "灰の怪物",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-95a7414f80-v-95a7414f80"
+          ],
+          "versions": [
+            {
+              "id": "song-95a7414f80-v-95a7414f80",
+              "title": "灰の怪物",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-4e175991be",
+          "title": "牽制",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-4e175991be-v-4e175991be"
+          ],
+          "versions": [
+            {
+              "id": "song-4e175991be-v-4e175991be",
+              "title": "牽制",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-97a0e2fc01",
+          "title": "白熱",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-97a0e2fc01-v-97a0e2fc01"
+          ],
+          "versions": [
+            {
+              "id": "song-97a0e2fc01-v-97a0e2fc01",
+              "title": "白熱",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-858848cd05",
+          "title": "私たちの夢",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-858848cd05-v-858848cd05"
+          ],
+          "versions": [
+            {
+              "id": "song-858848cd05-v-858848cd05",
+              "title": "私たちの夢",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-0172df6e85",
+          "title": "競り合い",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-0172df6e85-v-0172df6e85"
+          ],
+          "versions": [
+            {
+              "id": "song-0172df6e85-v-0172df6e85",
+              "title": "競り合い",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-9f15047230",
+          "title": "答え",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-9f15047230-v-9f15047230"
+          ],
+          "versions": [
+            {
+              "id": "song-9f15047230-v-9f15047230",
+              "title": "答え",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-508b3f6c94",
+          "title": "約束",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-508b3f6c94-v-508b3f6c94"
+          ],
+          "versions": [
+            {
+              "id": "song-508b3f6c94-v-508b3f6c94",
+              "title": "約束",
+              "version_label": "《芦毛灰姑娘》原声",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-14b2b0b723",
+          "title": "緊迫",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-14b2b0b723-v-14b2b0b723"
+          ],
+          "versions": [
+            {
+              "id": "song-14b2b0b723-v-14b2b0b723",
+              "title": "緊迫",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-03d513324a",
+          "title": "若き天才",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-03d513324a-v-03d513324a"
+          ],
+          "versions": [
+            {
+              "id": "song-03d513324a-v-03d513324a",
+              "title": "若き天才",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-a202f9225e",
+          "title": "苦悩",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-a202f9225e-v-a202f9225e"
+          ],
+          "versions": [
+            {
+              "id": "song-a202f9225e-v-a202f9225e",
+              "title": "苦悩",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-237440d708",
+          "title": "葛藤",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-237440d708-v-237440d708"
+          ],
+          "versions": [
+            {
+              "id": "song-237440d708-v-237440d708",
+              "title": "葛藤",
+              "version_label": "《芦毛灰姑娘》原声",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-d1ceea6e18",
+          "title": "覚悟",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-d1ceea6e18-v-d1ceea6e18"
+          ],
+          "versions": [
+            {
+              "id": "song-d1ceea6e18-v-d1ceea6e18",
+              "title": "覚悟",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-fe73d89fb3",
+          "title": "走るために",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-fe73d89fb3-v-fe73d89fb3"
+          ],
+          "versions": [
+            {
+              "id": "song-fe73d89fb3-v-fe73d89fb3",
+              "title": "走るために",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-327e63c712",
+          "title": "足りないもの",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-327e63c712-v-327e63c712"
+          ],
+          "versions": [
+            {
+              "id": "song-327e63c712-v-327e63c712",
+              "title": "足りないもの",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-f5aab80caa",
+          "title": "蹄跡",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-f5aab80caa-v-f5aab80caa"
+          ],
+          "versions": [
+            {
+              "id": "song-f5aab80caa-v-f5aab80caa",
+              "title": "蹄跡",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-4b518d5a47",
+          "title": "限界の先の先",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-4b518d5a47-v-4b518d5a47"
+          ],
+          "versions": [
+            {
+              "id": "song-4b518d5a47-v-4b518d5a47",
+              "title": "限界の先の先",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-4b384e6971",
+          "title": "障壁",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-4b384e6971-v-4b384e6971"
+          ],
+          "versions": [
+            {
+              "id": "song-4b384e6971-v-4b384e6971",
+              "title": "障壁",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-7d4ffdcd52",
+          "title": "集中",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-7d4ffdcd52-v-7d4ffdcd52"
+          ],
+          "versions": [
+            {
+              "id": "song-7d4ffdcd52-v-7d4ffdcd52",
+              "title": "集中",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-d7a357f35c",
+          "title": "頂の景色",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-d7a357f35c-v-d7a357f35c"
+          ],
+          "versions": [
+            {
+              "id": "song-d7a357f35c-v-d7a357f35c",
+              "title": "頂の景色",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-0169fbb870",
+          "title": "駆け引き",
+          "cover": "https://p1.music.126.net/neIGDJXFsYbsZGrQCrPfiA==/109951172374016304.jpg",
+          "release_date": "2025-12-24",
+          "album_name": "アニメ『ウマ娘 シンデレラグレイ』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-0169fbb870-v-0169fbb870"
+          ],
+          "versions": [
+            {
+              "id": "song-0169fbb870-v-0169fbb870",
+              "title": "駆け引き",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": []
+    },
+    {
       "id": "creator-cf49f62a1e",
       "name": "市橋卓也",
       "aliases": [],
@@ -26545,11 +28385,11 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 39
+          "count": 40
         }
       ],
       "work_count": 12,
-      "version_count": 44,
+      "version_count": 45,
       "works": [
         {
           "song_id": "song-eb8499138b",
@@ -26561,6 +28401,7 @@
             "arranger"
           ],
           "version_ids": [
+            "song-eb8499138b-v-754ae481e7",
             "song-eb8499138b-v-eb8499138b"
           ],
           "versions": [
@@ -26568,6 +28409,14 @@
               "id": "song-eb8499138b-v-eb8499138b",
               "title": "光の後ろ姿",
               "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-eb8499138b-v-754ae481e7",
+              "title": "光の後ろ姿 (TV Size) [12話挿入歌]",
+              "version_label": "TV Size / 12話挿入歌",
               "roles": [
                 "arranger"
               ]
@@ -27206,7 +29055,7 @@
         {
           "creator_id": "creator-14a2ce8737",
           "name": "池田健仁",
-          "shared_version_count": 3,
+          "shared_version_count": 4,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-3223dc5541",
@@ -27232,6 +29081,15 @@
           ]
         },
         {
+          "creator_id": "creator-d06a6eed0a",
+          "name": "宮嶋淳子",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-eb8499138b"
+          ]
+        },
+        {
           "creator_id": "creator-500b86dc49",
           "name": "真崎エリカ",
           "shared_version_count": 2,
@@ -27247,15 +29105,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-o-light-o-0864ec7338"
-          ]
-        },
-        {
-          "creator_id": "creator-d06a6eed0a",
-          "name": "宮嶋淳子",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-eb8499138b"
           ]
         },
         {
@@ -29647,21 +31496,26 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 51
+          "count": 52
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 138
+          "count": 139
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 89
+          "count": 90
+        },
+        {
+          "role": "producer",
+          "label": "制作",
+          "count": 3
         }
       ],
-      "work_count": 12,
-      "version_count": 139,
+      "work_count": 13,
+      "version_count": 143,
       "works": [
         {
           "song_id": "song-228f943b49",
@@ -29684,6 +31538,7 @@
             "song-228f943b49-v-2c21c72e4a",
             "song-228f943b49-v-4a308b7364",
             "song-228f943b49-v-4f4504cb6c",
+            "song-228f943b49-v-5d0c6ea225",
             "song-228f943b49-v-623e5032d4",
             "song-228f943b49-v-6303aaaad6",
             "song-228f943b49-v-64d2a75db1",
@@ -29924,6 +31779,16 @@
               "id": "song-228f943b49-v-29206e2b41",
               "title": "うまぴょい伝説 (TV Size) (2021 Remastered Version)",
               "version_label": "TV Size / 2021 Remastered Version",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-5d0c6ea225",
+              "title": "うまぴょい伝説 (TV Size)",
+              "version_label": "TV Size / 第二季第13话",
               "roles": [
                 "lyricist",
                 "composer",
@@ -31229,6 +33094,47 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "title": "芝生えるわ～",
+          "cover": "/album_covers/LZC-3651.webp",
+          "release_date": "2026-09-28",
+          "album_name": "アニメ『うまゆる ふるげ～と！』第1弾主題歌「芝生えるわ～」",
+          "roles": [
+            "producer"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-25beea36a0",
+            "song-aed14a1a3a-v-2954ef1177",
+            "song-aed14a1a3a-v-aed14a1a3a"
+          ],
+          "versions": [
+            {
+              "id": "song-aed14a1a3a-v-aed14a1a3a",
+              "title": "芝生えるわ～",
+              "version_label": "",
+              "roles": [
+                "producer"
+              ]
+            },
+            {
+              "id": "song-aed14a1a3a-v-2954ef1177",
+              "title": "芝生えるわ～ (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "producer"
+              ]
+            },
+            {
+              "id": "song-aed14a1a3a-v-25beea36a0",
+              "title": "芝生えるわ～ (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "producer"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
@@ -31280,6 +33186,16 @@
           "shared_song_ids": [
             "song-3dc019b31d",
             "song-cdbc25c785"
+          ]
+        },
+        {
+          "creator_id": "creator-14a2ce8737",
+          "name": "池田健仁",
+          "shared_version_count": 4,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-a470359a05",
+            "song-aed14a1a3a"
           ]
         },
         {
@@ -31352,6 +33268,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-3dc019b31d"
+          ]
+        },
+        {
+          "creator_id": "creator-24ff9668ab",
+          "name": "前山田健一",
+          "shared_version_count": 3,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-aed14a1a3a"
           ]
         },
         {
@@ -31451,15 +33376,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-2d2a6742e3"
-          ]
-        },
-        {
-          "creator_id": "creator-14a2ce8737",
-          "name": "池田健仁",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-a470359a05"
           ]
         },
         {
@@ -35075,6 +36991,29 @@
       ]
     },
     {
+      "id": "creator-2fe5af8610",
+      "name": "椎名豪",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
+    },
+    {
       "id": "creator-8ccf39ae29",
       "name": "椿山日南子",
       "aliases": [],
@@ -35125,6 +37064,462 @@
                 "lyricist",
                 "composer",
                 "arranger"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "creator-af5e5cc3e5",
+      "name": "横山克",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 19
+        }
+      ],
+      "work_count": 19,
+      "version_count": 19,
+      "works": [
+        {
+          "song_id": "song-2-00-3-955482e0c4",
+          "title": "2.00.3",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-2-00-3-955482e0c4-v-955482e0c4"
+          ],
+          "versions": [
+            {
+              "id": "song-2-00-3-955482e0c4-v-955482e0c4",
+              "title": "2.00.3",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-2400m-proof-3caed22645",
+          "title": "2400m Proof",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-2400m-proof-3caed22645-v-3caed22645"
+          ],
+          "versions": [
+            {
+              "id": "song-2400m-proof-3caed22645-v-3caed22645",
+              "title": "2400m Proof",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-beginning-of-a-new-era-7c5c498e6e",
+          "title": "BEGINNING OF A NEW ERA",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-beginning-of-a-new-era-7c5c498e6e-v-7c5c498e6e"
+          ],
+          "versions": [
+            {
+              "id": "song-beginning-of-a-new-era-7c5c498e6e-v-7c5c498e6e",
+              "title": "BEGINNING OF A NEW ERA",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-g1-debut-09c57b0968",
+          "title": "G1 Debut",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-g1-debut-09c57b0968-v-09c57b0968"
+          ],
+          "versions": [
+            {
+              "id": "song-g1-debut-09c57b0968-v-09c57b0968",
+              "title": "G1 Debut",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-gold-ghost-bae175e9fe",
+          "title": "Gold Ghost",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-gold-ghost-bae175e9fe-v-bae175e9fe"
+          ],
+          "versions": [
+            {
+              "id": "song-gold-ghost-bae175e9fe-v-bae175e9fe",
+              "title": "Gold Ghost",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-hanabi-stride-067be63530",
+          "title": "Hanabi Stride",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-hanabi-stride-067be63530-v-067be63530"
+          ],
+          "versions": [
+            {
+              "id": "song-hanabi-stride-067be63530-v-067be63530",
+              "title": "Hanabi Stride",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-isudon-declaration-f8c0438451",
+          "title": "ISUDON DECLARATION",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-isudon-declaration-f8c0438451-v-f8c0438451"
+          ],
+          "versions": [
+            {
+              "id": "song-isudon-declaration-f8c0438451-v-f8c0438451",
+              "title": "ISUDON DECLARATION",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-jungle-bruise-81f3c77de3",
+          "title": "Jungle Bruise",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-jungle-bruise-81f3c77de3-v-81f3c77de3"
+          ],
+          "versions": [
+            {
+              "id": "song-jungle-bruise-81f3c77de3-v-81f3c77de3",
+              "title": "Jungle Bruise",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-lightnin-tachyon-92c434f74e",
+          "title": "LiGhTnIn' TaChYoN",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-lightnin-tachyon-92c434f74e-v-92c434f74e"
+          ],
+          "versions": [
+            {
+              "id": "song-lightnin-tachyon-92c434f74e-v-92c434f74e",
+              "title": "LiGhTnIn' TaChYoN",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-noizy-fanfare-0aa722f333",
+          "title": "NoiZy Fanfare",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-noizy-fanfare-0aa722f333-v-0aa722f333"
+          ],
+          "versions": [
+            {
+              "id": "song-noizy-fanfare-0aa722f333-v-0aa722f333",
+              "title": "NoiZy Fanfare",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-old-man-s-words-d382c9571f",
+          "title": "Old Man's Words",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-old-man-s-words-d382c9571f-v-d382c9571f"
+          ],
+          "versions": [
+            {
+              "id": "song-old-man-s-words-d382c9571f-v-d382c9571f",
+              "title": "Old Man's Words",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-phantom-star-e4fe6538ea",
+          "title": "Phantom Star",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-phantom-star-e4fe6538ea-v-e4fe6538ea"
+          ],
+          "versions": [
+            {
+              "id": "song-phantom-star-e4fe6538ea-v-e4fe6538ea",
+              "title": "Phantom Star",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-rgbreeze-44df5076f9",
+          "title": "RGBreeze",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-rgbreeze-44df5076f9-v-44df5076f9"
+          ],
+          "versions": [
+            {
+              "id": "song-rgbreeze-44df5076f9-v-44df5076f9",
+              "title": "RGBreeze",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-salty-tails-1741184229",
+          "title": "Salty Tails",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-salty-tails-1741184229-v-1741184229"
+          ],
+          "versions": [
+            {
+              "id": "song-salty-tails-1741184229-v-1741184229",
+              "title": "Salty Tails",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-the-japan-cup-4a9a77cd8c",
+          "title": "The Japan Cup",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-the-japan-cup-4a9a77cd8c-v-4a9a77cd8c"
+          ],
+          "versions": [
+            {
+              "id": "song-the-japan-cup-4a9a77cd8c-v-4a9a77cd8c",
+              "title": "The Japan Cup",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-triangle-relay-f7e6975b3d",
+          "title": "Triangle Relay",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-triangle-relay-f7e6975b3d-v-f7e6975b3d"
+          ],
+          "versions": [
+            {
+              "id": "song-triangle-relay-f7e6975b3d-v-f7e6975b3d",
+              "title": "Triangle Relay",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-twinkle-miracle-3a84a8b8eb",
+          "title": "Twinkle Miracle",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-twinkle-miracle-3a84a8b8eb-v-3a84a8b8eb"
+          ],
+          "versions": [
+            {
+              "id": "song-twinkle-miracle-3a84a8b8eb-v-3a84a8b8eb",
+              "title": "Twinkle Miracle",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-u-ma2-6745b8c77c",
+          "title": "U=ma2",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-u-ma2-6745b8c77c-v-6745b8c77c"
+          ],
+          "versions": [
+            {
+              "id": "song-u-ma2-6745b8c77c-v-6745b8c77c",
+              "title": "U=ma2",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-willow-promise-d0a871ab4e",
+          "title": "Willow Promise",
+          "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
+          "release_date": "2024-05-24",
+          "album_name": "劇場版『ウマ娘 プリティーダービー 新時代の扉』オリジナル・サウンドトラック",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-willow-promise-d0a871ab4e-v-d0a871ab4e"
+          ],
+          "versions": [
+            {
+              "id": "song-willow-promise-d0a871ab4e-v-d0a871ab4e",
+              "title": "Willow Promise",
+              "version_label": "",
+              "roles": [
+                "composer"
               ]
             }
           ]
@@ -35207,6 +37602,67 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-ring-ring-c9bdb0e414"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-a8e068c1f5",
+      "name": "櫻木咲子",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-5fcd96ba46",
+          "title": "ヤマヲカケル！",
+          "cover": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
+          "release_date": "2023-03-29",
+          "album_name": "アニメ『うまゆる』アルバム",
+          "roles": [
+            "lyricist"
+          ],
+          "version_ids": [
+            "song-5fcd96ba46-v-5fcd96ba46"
+          ],
+          "versions": [
+            {
+              "id": "song-5fcd96ba46-v-5fcd96ba46",
+              "title": "ヤマヲカケル！",
+              "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-69641a01cd",
+          "name": "土屋裕一",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        },
+        {
+          "creator_id": "creator-fb9599021b",
+          "name": "秋田真典",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
           ]
         }
       ]
@@ -35625,21 +38081,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 22
+          "count": 25
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 40
+          "count": 43
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 9
+          "count": 12
         }
       ],
-      "work_count": 10,
-      "version_count": 43,
+      "work_count": 11,
+      "version_count": 46,
       "works": [
         {
           "song_id": "song-a1bbf4d0db",
@@ -36204,6 +38660,55 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-aed14a1a3a",
+          "title": "芝生えるわ～",
+          "cover": "/album_covers/LZC-3651.webp",
+          "release_date": "2026-09-28",
+          "album_name": "アニメ『うまゆる ふるげ～と！』第1弾主題歌「芝生えるわ～」",
+          "roles": [
+            "lyricist",
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-aed14a1a3a-v-25beea36a0",
+            "song-aed14a1a3a-v-2954ef1177",
+            "song-aed14a1a3a-v-aed14a1a3a"
+          ],
+          "versions": [
+            {
+              "id": "song-aed14a1a3a-v-aed14a1a3a",
+              "title": "芝生えるわ～",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-aed14a1a3a-v-2954ef1177",
+              "title": "芝生えるわ～ (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-aed14a1a3a-v-25beea36a0",
+              "title": "芝生えるわ～ (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
@@ -36230,11 +38735,21 @@
         {
           "creator_id": "creator-cf49f62a1e",
           "name": "市橋卓也",
-          "shared_version_count": 3,
+          "shared_version_count": 4,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-3223dc5541",
             "song-eb8499138b"
+          ]
+        },
+        {
+          "creator_id": "creator-eaf94340d3",
+          "name": "本田晃弘",
+          "shared_version_count": 4,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-a470359a05",
+            "song-aed14a1a3a"
           ]
         },
         {
@@ -36301,6 +38816,15 @@
           ]
         },
         {
+          "creator_id": "creator-24ff9668ab",
+          "name": "前山田健一",
+          "shared_version_count": 3,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-aed14a1a3a"
+          ]
+        },
+        {
           "creator_id": "creator-no-my-eb478e9081",
           "name": "no_my",
           "shared_version_count": 2,
@@ -36352,15 +38876,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-4631f698b0"
-          ]
-        },
-        {
-          "creator_id": "creator-eaf94340d3",
-          "name": "本田晃弘",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-a470359a05"
           ]
         },
         {
@@ -40568,6 +43083,29 @@
           ]
         }
       ]
+    },
+    {
+      "id": "creator-f8ce711c54",
+      "name": "田山里奈",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
     },
     {
       "id": "creator-095e4a5b84",
@@ -46818,11 +49356,11 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 13
+          "count": 14
         }
       ],
-      "work_count": 1,
-      "version_count": 13,
+      "work_count": 2,
+      "version_count": 14,
       "works": [
         {
           "song_id": "song-phantasia-81aafc5f7e",
@@ -46954,6 +49492,29 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-5fcd96ba46",
+          "title": "ヤマヲカケル！",
+          "cover": "https://p1.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
+          "release_date": "2023-03-29",
+          "album_name": "アニメ『うまゆる』アルバム",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-5fcd96ba46-v-5fcd96ba46"
+          ],
+          "versions": [
+            {
+              "id": "song-5fcd96ba46-v-5fcd96ba46",
+              "title": "ヤマヲカケル！",
+              "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
@@ -46973,6 +49534,24 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-phantasia-81aafc5f7e"
+          ]
+        },
+        {
+          "creator_id": "creator-69641a01cd",
+          "name": "土屋裕一",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
+          ]
+        },
+        {
+          "creator_id": "creator-a8e068c1f5",
+          "name": "櫻木咲子",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-5fcd96ba46"
           ]
         }
       ]
@@ -51266,6 +53845,33 @@
       ]
     },
     {
+      "id": "creator-ff7b158325",
+      "name": "高田龙一",
+      "aliases": [
+        "高田龍一",
+        "髙田龍一"
+      ],
+      "type": "person",
+      "affiliations": [],
+      "image": "/uma_tools/img/creators/ryuichi-takada.jpg",
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 0
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 0
+        }
+      ],
+      "work_count": 0,
+      "version_count": 0,
+      "works": [],
+      "collaborators": []
+    },
+    {
       "id": "creator-fb22884a81",
       "name": "鶴﨑輝一",
       "aliases": [],
@@ -51322,5 +53928,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "afdf2de7ef94b0704b7b"
+  "build_id": "4d924cfce5735396e554"
 }

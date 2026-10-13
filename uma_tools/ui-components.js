@@ -2,9 +2,6 @@
   'use strict';
 
   let sequence = 0;
-  function creatorMonogram(person) {
-    return Array.from(String((person && person.name) || '').trim()).slice(0, 2).join('');
-  }
   const UiSelect = {
     props: {
       modelValue: { type: [String, Number], default: '' },
@@ -92,14 +89,14 @@
     },
     emits: ['toggle'],
     template: `
-      <article class="ui-disclosure" :class="{open:open,disabled:disabled}">
+      <article class="ui-disclosure" :class="{open:open,disabled:disabled,'has-leading':!!$slots.leading,'has-meta':!!$slots.meta}">
         <button class="ui-disclosure-summary" type="button" :disabled="disabled" :aria-expanded="open" @click="$emit('toggle')">
           <span v-if="$slots.leading" class="ui-disclosure-leading"><slot name="leading"></slot></span>
           <span class="ui-disclosure-copy"><slot name="title"></slot><small v-if="$slots.subtitle"><slot name="subtitle"></slot></small></span>
           <span v-if="$slots.meta" class="ui-disclosure-meta"><slot name="meta"></slot></span>
           <svg class="ui-disclosure-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5"/></svg>
         </button>
-        <div v-show="open" class="ui-disclosure-detail"><slot></slot></div>
+        <div v-if="open" class="ui-disclosure-detail"><slot></slot></div>
       </article>`
   };
 
@@ -107,16 +104,27 @@
     props: {
       playLabel: { type: String, default: '播放' },
       addLabel: { type: String, default: '加入播放列表' },
-      size: { type: String, default: 'regular' }
+      size: { type: String, default: 'regular' },
+      playing: { type: Boolean, default: false }
     },
     emits: ['play', 'add'],
+    data() { return { added: false, addedTimer: null }; },
+    beforeUnmount() { window.clearTimeout(this.addedTimer); },
+    methods: {
+      add() {
+        this.$emit('add');
+        this.added = true;
+        window.clearTimeout(this.addedTimer);
+        this.addedTimer = window.setTimeout(() => { this.added = false; }, 900);
+      }
+    },
     template: `
       <span class="entity-actions" :class="'entity-actions-' + size">
-        <button class="entity-action entity-action-play" type="button" :aria-label="playLabel" :title="playLabel" @click="$emit('play')">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+        <button class="entity-action entity-action-play" type="button" :class="{playing:playing}" :aria-label="playing?'暂停':playLabel" :title="playing?'暂停':playLabel" @click.stop="$emit('play')">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="playing?'M7 5h4v14H7zM14 5h4v14h-4z':'m8 5 11 7-11 7z'"/></svg>
         </button>
-        <button class="entity-action entity-action-add" type="button" :aria-label="addLabel" :title="addLabel" @click="$emit('add')">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <button class="entity-action entity-action-add" :class="{'entity-action-added':added}" type="button" :aria-label="added?'已加入播放列表':addLabel" :title="added?'已加入播放列表':addLabel" @click.stop="add">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="added?'m5 12 4 4 10-10':'M12 5v14M5 12h14'"/></svg>
         </button>
       </span>`
   };
@@ -361,5 +369,16 @@
       </template>`
   };
 
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, creatorMonogram: creatorMonogram });
+  const identityPortraitCache = new Map();
+  function identityPortrait(person) {
+    const name = String((person && person.name) || '人物').trim();
+    if (identityPortraitCache.has(name)) return identityPortraitCache.get(name);
+    const glyph = (Array.from(name)[0] || '人').toUpperCase();
+    const escaped = glyph.replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[character]));
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect x="4" y="4" width="88" height="88" rx="10" fill="#f4f6ff"/><path d="M16 28V16h12M68 80h12V68" fill="none" stroke="#264983" stroke-width="3"/><text x="48" y="66" text-anchor="middle" font-family="sans-serif" font-size="54" font-weight="800" fill="#264983">${escaped}</text><path d="M78 4h14v14Z" fill="#ff7b16"/></svg>`;
+    const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    identityPortraitCache.set(name,url);
+    return url;
+  }
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait });
 })();

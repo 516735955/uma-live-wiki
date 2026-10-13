@@ -1082,6 +1082,7 @@ def creator_rows(credits_doc: dict[str, Any], existing: dict[str, Any]) -> list[
             existing_creator = existing_by_key.get(key)
             creator_id = (existing_creator or {}).get("id") or stable_creator_id(name)
             creator = collected.setdefault(creator_id, {
+                **(existing_creator or {}),
                 "id": creator_id,
                 "name": (existing_creator or {}).get("name") or name,
                 "aliases": list((existing_creator or {}).get("aliases") or []),
@@ -1099,8 +1100,10 @@ def creator_rows(credits_doc: dict[str, Any], existing: dict[str, Any]) -> list[
                     credit["affiliation"] = affiliations[0]
             credit["creator_id"] = creator_id
     for creator in existing.get("creators") or []:
-        if creator.get("manual") and creator.get("id") not in collected:
-            collected[creator["id"]] = creator
+        canonical = existing_by_key.get(normalized_name(creator.get("name") or ""))
+        if creator.get("id") not in collected and (creator.get("manual") or canonical is creator):
+            collected[creator["id"]] = dict(creator)
+            collected[creator["id"]].setdefault("type", "person")
     rows = list(collected.values())
     for row in rows:
         row["aliases"] = sorted(set(row.get("aliases") or []), key=normalized_name)

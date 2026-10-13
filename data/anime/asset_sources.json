@@ -1,0 +1,3738 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "work_id": "anime-s1",
+      "source_url": "https://umamusu.wiki/w/images/5/53/S1Cover.jpg",
+      "source_page": "https://umamusu.wiki/File:S1Cover.jpg",
+      "output": "uma_tools/img/anime/anime-s1.webp",
+      "focus_y": 0.42
+    },
+    {
+      "work_id": "anime-s2",
+      "source_url": "https://umamusu.wiki/w/images/f/fd/S2CoverwithLogo.png",
+      "source_page": "https://umamusu.wiki/File:S2CoverwithLogo.png",
+      "output": "uma_tools/img/anime/anime-s2.webp"
+    },
+    {
+      "work_id": "anime-umayon",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-umayon/images/kv-c27b70c.png",
+      "output": "uma_tools/img/anime/anime-umayon.webp"
+    },
+    {
+      "work_id": "anime-1st-anniversary",
+      "source_url": "https://umamusume.jp/_nuxt/images/mv_slide01-9lTCkLJr.jpg",
+      "output": "uma_tools/img/anime/anime-1st-anniversary.webp"
+    },
+    {
+      "work_id": "anime-umayuru",
+      "source_url": "https://umamusu.wiki/w/images/b/b8/UmayuruCover.png",
+      "source_page": "https://umamusu.wiki/File:UmayuruCover.png",
+      "output": "uma_tools/img/anime/anime-umayuru.webp"
+    },
+    {
+      "work_id": "anime-rttt",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/kv_img-6212617.jpg",
+      "output": "uma_tools/img/anime/anime-rttt.webp",
+      "focus_y": 0.4
+    },
+    {
+      "work_id": "anime-s3",
+      "source_url": "https://umamusu.wiki/w/images/0/05/S3Cover.png",
+      "source_page": "https://umamusu.wiki/File:S3Cover.png",
+      "output": "uma_tools/img/anime/anime-s3.webp"
+    },
+    {
+      "work_id": "anime-movie-beginning-new-era",
+      "source_url": "https://movie-umamusume.jp/assets/images/index/img_kv01.jpg",
+      "output": "uma_tools/img/anime/anime-movie-beginning-new-era.webp",
+      "focus_y": 0.36
+    },
+    {
+      "work_id": "anime-cinderella-gray",
+      "source_url": "https://umamusu.wiki/w/images/e/ed/CGcour2poster.jpeg",
+      "source_page": "https://umamusu.wiki/File:CGcour2poster.jpeg",
+      "output": "uma_tools/img/anime/anime-cinderella-gray.webp"
+    },
+    {
+      "work_id": "anime-umayuru-prettygray",
+      "source_url": "https://umamusu.wiki/w/images/0/0f/UmayuruPrettyGray-AnimeCover.png",
+      "source_page": "https://umamusu.wiki/File:UmayuruPrettyGray-AnimeCover.png",
+      "output": "uma_tools/img/anime/anime-umayuru-prettygray.webp",
+      "focus_y": 0.5
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_url": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png",
+      "source_page": "https://umamusu.wiki/File:UmayuruFullGate-AnimePromoCover.png",
+      "output": "uma_tools/img/anime/anime-umayuru-fullgate.webp",
+      "focus_y": 0.5
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/db1e85e4d7194ae7852fbd51e1532828/%231-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6909e824a07443fa826a8b3e3e6184a9/%231-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/15c67ff5c5dd4f74ac20d1feaa641a1a/%231-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1babde98efe04c26916c3a02eb0d6d96/%231-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c3632803a9ef465cbb0302450472efcf/%231-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e536b0ac72eb4d229736cd061e937771/%231-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/763532014b854c3fba5fe652725050b3/%231-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4b0818e4faa4458987c21a0f18cc43d8/%231-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/81052344f9194d90a419cb237802a445/%231-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fd92848ca5b5474b9062130e2f166668/%231-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f6d7176a4b604810a323249a775809fc/%231-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e01-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e01"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6d110080329549959fbc9869d796deec/%232-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/bfebd85f76094a4b98d7cef2e23eedfa/%232-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4997baada4c24ddba35ed2987785f060/%232-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/da72cb005d9f451a9e57933cf6a7b9e6/%232-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0538b981acae4fe5a84fa31a0e02556c/%232-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/30ce8abf9f834edf93d3400cd45dadf3/%232-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ca0e3ef904a648c480bc71cb3ef458b8/%232-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ffa67f2ab2204ea080c43153114bd6f2/%232-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/53d5ddfc238d452786ec6470adfe7c59/%232-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7570639a40ad4fcd946c86d5bbd8f100/%232-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e9f52d22a50a43caa17926408018d7c2/%232-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e02-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e02"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/639b6e7e35d24de5b6efc161e05fa5e3/%233-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e1715147c2384d4eb6122bf8313ce920/%233-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/af38ffd81cf44c1f87f6f3a823e490f7/%233-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/708e63c4731a4fc3a679406cf42dc419/%233-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ea07c60577254678a7c426c8a159bada/%233-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/994db65123e44713931449a49d1e07fa/%233-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/951fbbdcfacb4b96a374ee3f9f60de62/%233-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/485d36aa6a1c44fe96f29a0bf2f24e4f/%233-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9f1da12b45bd48c9a28473990e37d6c1/%233-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ed677da0491b4436af2543fed4e18c52/%233-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4d23777e6e1f483fb4d76027b64f4271/%233-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e03-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e03"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0524df9200d3410ebaa37dd12bf892bf/%234-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/07b25ed1c2514858aa47572300c3b902/%234-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/2bd52160c0244cb986efb4fe9816a7cb/%234-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c6dce59305fb4671b29674b878b1f5c8/%234-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/21b26ad58ea84a209de9e4e079cb9b49/%234-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/99df3c791e77471eaed33f4903dcd467/%234-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/29a8422024d74d5485fc35bcbf6c9b62/%234-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4fa0f7975b384e7d9d42a2f8e782d26c/%234-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/de3d681c626046cb8dccbd14e7f2a5ba/%234-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/00d055504b514365a650a84c181c1edd/%234-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/274de77111024619b6293137c7260efd/%234-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e04-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e04"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/54197007fa474b52b666650225b25fba/%235-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/8125861ce3ff420ca403e8ab61168ed9/%235-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/417bc342c3714c5aa12cc7f69b981fbc/%235-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/af8f546c395042baafe95d980a8be50d/%235-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/5057481e0a244b99b268fa0d8fdc0a16/%235-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/143be591128940a0967500d34ebfd78f/%235-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4d83fdb36b28494493427ef25b9bcb59/%235-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7cf294f703fe45889570ba2656d99d23/%235-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d936b0072d5f41059c012e64ad724b8c/%235-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6abec2432b004051aac02c82f8994e58/%235-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e05",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7bf78e5d3bee4c3fb764b1ddeeb1e8f8/%235-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e05-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e05"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9cba68c6c24e455b88e32dcbe8ea2b26/%236-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/edbbd2c6499d41b2a98f8da1b2db2794/%236-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6d7aca5c8af340f8a177077712b90a86/%236-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/361df595641448a293fdcbd33f849fcc/%236-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/950815aa8e184e1cb44b4558a42b080b/%236-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ee8ac24133cc4880b87a81a14fae2472/%236-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/97ccc1a7895d436da4c7e5181270f3e6/%236-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a3d9c9824bbc40a387985c7fbb0bf610/%236-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b649d6fd4f0c400bacd7efcf8bd3a68e/%236-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/99aca4505bb44077add843cc68e0ef29/%236-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e06",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7fbb6ebb79b54beb8a6f117f2af3aa2b/%236-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e06-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e06"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c8917aca1e2e48448aeaf93833b2f8fa/%237-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c84d9cf7a75441529e7b3ab5dddd66eb/%237-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7a3e9554f81740908fc738d984ddf028/%237-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3b07032f4a3849029369764f9f58b51c/%237-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/600602fcd6134b1e99596df3ea4436e8/%237-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9478a54ff37e49e0bf9322eda5f7dcfb/%237-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6e91e41eb4e440c19592c9a62038bcf0/%237-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/991f7d684ec74e3395772037730dd172/%237-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c188c4ac9517466aba7c76bc62145f70/%237-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9e4d538fb2a045e983d6813551192667/%237-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e07",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/46170841718f46b6a1953e04f6760157/%237-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e07-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e07"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4af6567d20e145d99f9322fca10f25c8/%238-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/48e72ea4fc8f4db9bebe922cf6d6ec20/%238-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/93a6b1187f4049c69ecbe2b70c8aa86a/%238-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1b384922d97345098c4f9bf423739e8d/%238-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fb5adafdfdf9435983f6b5da5c8de450/%238-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d4439a14c71340239561dc1e090a2b6b/%238-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f1916dee84644fdcbb7410f89a645fed/%238-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9c89b9c1a0b84f57bf7b5175fb247d44/%238-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/dd45f6a65db84fc98bc766e6b66444ec/%238-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ee070306fe1d4159a152165286fccdf0/%238-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e08",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d35066a5ea754898a6d0e1435ee90607/%238-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e08-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e08"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/808a1df015f240d4aa8f43ac5410b7ff/%239-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ddb4430dddb54f55a1d194f8dfc5a812/%239-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/db7f3b32bac44deab65f86fef10f73ea/%239-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/46bd0653423c4976807c93bcf99c302a/%239-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/bfc3e56f81c24b51be027965ba627db0/%239-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/91d7fe1d472d48ddbed09df25bccda5e/%239-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f99f87a9dfec4b72a4ff8f1bf1c11c41/%239-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/22a379f4b95049448baaf440fe7a6293/%239-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1edf0be21aaf405aa2e8af17ea373e18/%239-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3edafcea1b9049838df9ee79e63ec0bc/%239-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e09",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a88651073cd7400ca1197d9a45737193/%239-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e09-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e09"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/92200aa814f14c5199a8b1e27cbe1a36/%2310-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/abe51f2244ee491e9e087634101504cd/%2310-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7b93541e3cb7480aa22cbedc231e83b8/%2310-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f25af9b62a284f7f924127da29094ee9/%2310-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1a35ecb75ac0448c9baa41dc47f7560a/%2310-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fb1ceecc70c2417683a12fd61cbdc713/%2310-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3c6cdd9cc6e84434bd96c722795e02a6/%2310-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fadcfbc21ff043cd956d3ea5b8c7cd76/%2310-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e9ba1da34a8642c1993880298974b64d/%2310-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1002bbfebd9f4dcaa3e54d936dd0b540/%2310-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e10",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/34faf8feef794481b8f775ae03c94170/%2310-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e10-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e10"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f82e206fec0f4180969f66379ffa86f9/%2311-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fa0bcc7ec59b4c8fa8c4bf56c3ae9ff2/%2311-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ca7acd70ee8c4793be7614449c5f066a/%2311-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fd9015012964460eb65b33c1a387ad86/%2311-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c38d399945c446d9a824ba058090e2fd/%2311-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7eefb4d68f704a54adc6ce5593fad47a/%2311-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c0b3ec25530246ef95afe11d47aa0a8d/%2311-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6032e72df6804d78b8c6d67c5a6b4bc5/%2311-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c56418acd2fc4fdbadb1d338a7de22b7/%2311-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4e0e6863d9a94473b338530be8f52a00/%2311-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e11",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f917afb875ae4e44a836c8ea98dbfa5b/%2311-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e11-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e11"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4e7d14c0ef434e2098c0ced6552afd7b/%2312-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4a5e2345dd9649a7b9dc2e20a6f929c9/%2312-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d79f9439f4804bbcb505d33067d3996f/%2312-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c1a80f2049af44b69029f02a5875d219/%2312-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7dcfbaa7cc51457d85876bb79ef36a21/%2312-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/42eddbd123cb4cd58d55f37f3c15ce5a/%2312-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/dd62645dec7345289559015ea782e9fb/%2312-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e5ee6ae528dc4d6e9903b82616cf1240/%2312-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/07c7eee764cc47d2b4420e72ae9a6bce/%2312-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9e9323943b3c4f0a874bde01181da92f/%2312-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e12",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/02d0c3dfa8bf43499c38d6e2668621d4/%2312-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e12-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e12"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/64c3fa9773a7496c9f703eb0c47dda3a/%2313-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/24e13ea8a97140bab2da2cee4f002eb6/%2313-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b4485b3af524419ea9bd6fcda8bcb6b4/%2313-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/5f92520b35dc47c3b71323d26736b963/%2313-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7689354640d74642b0e0fca5eb9bb3d3/%2313-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7621c8d82bbe45818ccdadb8fef647ae/%2313-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c07dccfeb56545c7bc907195edfcea7c/%2313-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/bb8fbf0a0ddc47ce9bd6a893d55c8dd3/%2313-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c736492fad4b4c839309f29de4ee7b29/%2313-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ed6b91ae1723421d8ab91e8acc099a1a/%2313-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e13",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/2c2e2f6145a94ef18498c9eaeb0880de/%2313-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e13-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e13"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/359d88f8ee1e4c19a5fdb85628b0c4d0/%2314-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/5baea6dc79624233a2dc07ad66b048df/%2314-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d1d0df2d1ac647c4b2a40f6f81e675c3/%2314-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0ddb67fd71234ce4b146017a59d1672c/%2314-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9169b183aef848bf820f2342370f34d9/%2314-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/399a096735664ece8ce4759dc3a30857/%2314-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1adbcba0d1d5456ab556051764627f86/%2314-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/15c9c54f6f554bacb47b991003f7a42b/%2314-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0765e706080d45beb2fb3fc682f31a65/%2314-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4c0d6bee030a4bcdb52d6db1ed85368f/%2314-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e14",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9efd117a2cb94097a716cdb856b7cb32/%2314-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e14-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e14"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6b80636df28a452097efe7f7ed812be6/%2315-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ecdbbf44c7ac43d6908d16295ae6b11f/%2315-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e04640e00e28478580e9b81ef7261a0f/%2315-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a85d8e4008964a4d9fc73a05b1701f55/%2315-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/85b0fac8c3404425a148a2ff5e47b86e/%2315-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3d7a8ab700cf4ca88b2108540bc26e91/%2315-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/83bc39f8696042e4913c1690731e4976/%2315-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/5081b673fe804954b8347df04969c5eb/%2315-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b67c957031ef4bccab19990f68811ee9/%2315-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/90fd2f4bacc44ecbb79a3b6f8a349fd9/%2315-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e15",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6ee88c6095af4413ae1eb9dc1cb41e13/%2315-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e15-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e15"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a7754b10e97e4516ae976538656e351e/%2316-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c943f6becb464407a9a212af1f0b0c0b/%2316-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/83ff4f0467284d29856d336f2f4b8871/%2316-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/125822c118e34f849119ee4c1dc3b3d3/%2316-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/853f64919cd64a1f812779a093febbff/%2316-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d8de3dc3945049dd83c2e8aaf9f1ad44/%2316-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7b2ae76a762c40e0b834356e6d41ec4c/%2316-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b76674f91b004588b5b84c0e7b4ad2b0/%2316-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/8ccbc24699a1478f88ed7d44dc2c4bea/%2316-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b1418550645944dd9c99367ee0b7a8d5/%2316-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e16",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/deeebca39f124750a019ea231308b9b2/%2316-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e16-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e16"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b2604afc59004c3e949e08fcabcbdc04/%2317-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7cb4fe624c8c4ca5b0a455b715c5f4cc/%2317-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/36477d0a5f03439099b0e3d0d53b05c1/%2317-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c5d3dc4f38f543379e0ad36f3a9548d1/%2317-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6ee1093a96a84e8c89867b291d84f7c8/%2317-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4ef982074d754e038a1e9fefbf954b66/%2317-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/34b0a7207d9e4b9e95aa7450b8371d14/%2317-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/72b0a574f748440e80735f967352ab94/%2317-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/69b4844de1484bb78e26b62cc41ec748/%2317-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/76e37ef6c5ec4844bad5f0e02b99ffc6/%2317-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e17",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b1a34199e2e64df2b17dc7e72e3ab871/%2317-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e17-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e17"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3073c13e15594624b4325cc33a9153e3/%2318-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/54b5efc4655c4de886909da312817560/%2318-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1900e23d251d4e7fa33a04f20092c47a/%2318-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0ec8969b49d448d2955dc83922ecd951/%2318-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/40f2ac7267b4424ea9c609bbafc057c5/%2318-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/78219d957b764d82949d78761d7ede61/%2318-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/71ea7a657d5f432bb2db87693f0c0e7d/%2318-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/fc0623e092984cc4acdcac3c49d04939/%2318-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/3d7cd3a7713a455ab3fcc297b95e3afd/%2318-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ba6f748449054fe5a7a10cc5904fe54c/%2318-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e18",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a60e8d4556aa46bd83827152cda7ebe8/%2318-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e18-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e18"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/26636577e8314d5c8fb531ac7f393860/%2319-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/6dc32650e9aa428384b6604a35dd19ff/%2319-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ed495c18d341445386f03dd2bbaf3c2b/%2319-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/998bf3df57f74fc385beca8aa31e9a13/%2319-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/61002f3dc948497c865bcc48a671f6d7/%2319-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d3ef69b50aec45cfbfba382f524e490a/%2319-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/31bc645db3c8424abf02bc4f5d75167c/%2319-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7d4f418302d94c21bd33e21466374ab2/%2319-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/18c2bcc949b540aea21270d61db475c4/%2319-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1f8872354f0e43468b0e6ac51445d16f/%2319-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e19",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4a3fa9dd0b3b4e13904f93891c15920c/%2319-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e19-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e19"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d543eba0642b44989ee21c1963f967fa/%2320-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/de0620ecaec6414ba58fce28bc1a8e81/%2320-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a9beae07ae344a59b7ef58b5e1c6a023/%2320-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/1c390acc5d44486c8518afefc004ff12/%2320-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f4ad50bb620f41bb98478af3e86aad53/%2320-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e85e506a98f54e5f9aedde8774511ee5/%2320-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c16e499e72fd44818830956db4603ba2/%2320-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/444f5d7b8ef44d47b17f023dd959680b/%2320-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/9b4b8e15283045b6be23248115055aa7/%2320-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/937809f35b7b424fb6d36f51f92622ab/%2320-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e20",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0960c9ac50e4404fbb53e4d77018a873/%2320-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e20-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e20"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/45abbaf877024efd9ddb2e39ad10656c/%2321-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/639a224af9814347ae87d9495c5340b5/%2321-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ad61471cc2034ed4bccea60767ba870b/%2321-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/e46db2a8427d4ff9bcfd938727b9a721/%2321-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/00f539459e874401ad865dd599dc5e4e/%2321-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/ea00118b3b274ffa8451a3225653b210/%2321-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4829fe725b2c42648e4b79d894bf63a3/%2321-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4c2d44809e9d4338bdb41563cb54bfb9/%2321-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a5c813c1d8704bc781d0700643ef540d/%2321-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/440a6cfd970c428faa8552282ac50bbe/%2321-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e21",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/37f38b83f2984c5c9178670b117013b5/%2321-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e21-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e21"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/dd573d68e5ee4b0da50d6934cf638280/%2322-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/c253dedcc4c24a2bbb94fa736f8bac4f/%2322-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d18d8014c7c44e62b8fa067c8ee659a0/%2322-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/74f951b229fb4a90982865ee23e8a6a4/%2322-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d0b9aa19f4cd4b4db3aa3613632e655d/%2322-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a56a2426ccfe4f4e8ea80a3105dd0cff/%2322-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/a763db77aea44ea2944917b39ef2118d/%2322-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f04435851ace47e7981945f7a0a9ec3f/%2322-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/4550fd02a8424906b9a9f33dadcb4389/%2322-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/47d540cc14d943ef96f5d6ff7bf3ec70/%2322-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e22",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/b739a80517cc4399aa68442236f4db6c/%2322-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e22-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e22"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/523d83874f6d45e5888aba8ad1f98770/%2323-1.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/7ec24b51c1c3477ca5f019bea3975e2b/%2323-2.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f56c04466fc2458288298b8e723687e9/%2323-3.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/47930be2781e4f628208957755e684b9/%2323-4.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/0d7f44215d0f405998dfff01a92341cd/%2323-5.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/464cc75e9c1a473686e9a3f1d2248132/%2323-6.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/f21d59e5c56e43b594fbcf65c63ed088/%2323-7.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/448e336ada994b648a9206d917a70cf2/%2323-8.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/d2331021c8d14501aa40a3cbfc2bc974/%2323-9.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/646cefa328904585bc9e51a9cec1497f/%2323-10.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-cinderella-gray-e23",
+      "source_url": "https://images.microcms-assets.io/assets/38fdaa7314784b2d8ae9c5f0b16c202d/81070d93b5bd46039f20d56229564ec0/%2323-11.jpg",
+      "output": "uma_tools/img/anime/stills/anime-cinderella-gray-e23-11.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-cinderella-gray-e23"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/e35b2391bd124f0bbf66e761aebf1abc/%231-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/2c59cb35845c422d9bf5a6673e61cb72/%231-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/93b7842424604879a338ae3ec0156dd6/%231-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/dc20ddd9aade45598e3859eb1502f3db/%231-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/9fb4d15704a64d0d9a0e6b051db6a525/%231-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/099292ac3e8243f4af7e926039cf5776/%231-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/e8ed0f6321bf426caa1dd82dddaf13eb/%231-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/9638a723bf5b4edaa4f7f87aee2cc591/%231-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/98c2308ea7314bf09704bd71264a1ad7/%231-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e01",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/1c17d68b702e43438409704f59b61df5/%231-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e01-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e01"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/589a5ef534da4558bd5cbd4ffae279a5/%232-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/72bbcde5289849a786594cfb61abfec7/%232-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/c639c746401e48ccb63871ae98f7746e/%232-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/35739bcda6ca4234a0bf89a31158bb2f/%232-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/68dc5bc94f814aa1ab56cd8c9df5ed14/%232-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/b2178115f44d45b0a913f6ce87ea80c2/%232-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/eb630c270ef341ea9011285ea8f60fea/%232-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/b1f7ba89add34071bdd75fadfafb620d/%232-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/400a6c0b52d145ac9ff504c95f1d6670/%232-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e02",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/a6cfc0996f8b4bc98dcee7fa55a7cc96/%232-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e02-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e02"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4def86a78cdc4b43a04690f1cc0031ac/%233-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4c50eab266f34e47be8e448e178fc7a6/%233-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/a6944155953547c4a6487747f4f5bf8e/%233-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/41a750e7c6f74d3dae4688706ff797b7/%233-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/3f32fd48e398402c8fbf521367389965/%233-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/964b6b5365dc415ea59de63d66db877a/%233-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/3729b0390208479683b7d2e475e61961/%233-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/231f08dbacd341428dc31aa325849cda/%233-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/c1612e83e7ff4b3ab2a5f45af310c7b9/%233-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e03",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/2f7cb309c56b4961837ab87692794669/%233-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e03-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e03"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4da58080fb1349b2ae255edd9a00c56d/%234-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/77cdd6a2e51a4ac5a100da4c5d15f2fb/%234-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d9bb75c9b20742caa5f65fc7cfe49af1/%234-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/83153e49711b4c4faadfc46745494dcc/%234-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/03a55b8e8f6e4b90a4303dee045a5591/%234-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/f30b322b657f4f71a1b7ac59cd2b742b/%234-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/2099129ec68b48cc83b43c299f45e566/%234-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0cd8a27960324e79900ab80ff57b44b1/%234-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4908112195854aeb8d80a5dd28289454/%234-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e04",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/29b0c1bc696a4355921fa1c043b6e1a2/%234-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e04-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e04"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/a6e6aed2951543f3a511916f1057079a/%235-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/882418ed884445fd88406b6d7ab8d6a7/%235-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/6973244511724dd69ccee77f1b44d401/%235-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/2ed2f7c4342e4471bf9590b361b09015/%235-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4000faf3406a425e8a3c5fd6bab35189/%235-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/c2bd2849e3434f3787361f5eeba314b7/%235-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/3fe6eb42b01b487e8a4272697cfea09c/%235-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/bd61367d4ab44b8c95967e45eea065fb/%235-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d6e0056c55ea489ea0fe98f90eea93e8/%235-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e05",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/e4aa05d1fc6f4533b9c975a44ac2428b/%235-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e05-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e05"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0f1409912aea4f36a9e2e329b517c803/%236-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/823e8eda5d5246589aa11a568474f2f0/%236-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/1b298d69955b474883b88d89ff159383/%236-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/04f6fec49bdd4de0bf00d55875b38e26/%236-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d535a7322f4f487abe171c681173d5aa/%236-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/cf1f8814d89d447da3ab04c1edbdfea9/%236-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/efb2111fcb134e84aae7cd95072f61f4/%236-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/38b31c60611c4ad1957e165da2caabbc/%236-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/6cc0dcbbd17740fdb2f997fd156544e8/%236-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e06",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/45affacbecf74f469c975a3475323d5d/%236-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e06-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e06"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/30a209ef7bc2423d8544005498f59415/%237-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/fbaf98c531744b9dae34634a07035ace/%237-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/45863eea940a4c9e838156e9536e12e1/%237-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/76690632adb34f90bd9c7adbd0efdec5/%237-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/468f9ae188374f54a6b540029321b5c2/%237-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/182b070aa5ee49dd9c9178d055d17403/%237-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0901eef3641f4b6f87ed8a3ec910f689/%237-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/24b63fb9258a451a9a76f8a94ea5da27/%237-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/ece60e5c2a98405e864b88bf89636580/%237-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e07",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/8f8199b6f68c430db190eb98f8e0d230/%237-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e07-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e07"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4fcdb4ec52c741a685322b1625d33d8a/%238-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/cacef8dc1f5d4a8eb8eb6ddd2568b6d4/%238-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d890513e8e1e4063851acefeea9ff400/%238-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/ef7bd9c652134ec5b2180a2a15993a25/%238-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d797a2d5dd6c4be49afe1fabefd92772/%238-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/16b71e41d89240f2859b0f165533fe48/%238-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/8c2df2e0cde6498db8623fbc8cb3fdbc/%238-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/3d27de73f6b142e89fec13ae94c5bae6/%238-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/66c02a5614744db1b546ade79891d343/%238-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e08",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/ce417744805847edbd13b1a1116b3499/%238-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e08-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e08"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/4f42ca59b3a2485ab6b0882749f66a83/%239-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/47bd4a5190614bf2a96cc36680439f36/%239-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/5cadd29c0a5148eaa95cd8f3f3072c7f/%239-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/58c5d987384945eda81cffeeff0e7d9f/%239-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/1a75f5c1330c45a68fc65baa0717e915/%239-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/f10959c5a38148c68758ebcb735acb57/%239-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/bdbeabd8759a426696f75d2ccd2ab1f5/%239-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/f1eb675d80764f2bbbe2421f96226855/%239-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d4c69342fb5b44cfba73f3b724f23fb9/%239-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e09",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/b963ed86722741ab9db73bf191bc5555/%239-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e09-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e09"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/e5b6c1bce5214343bc36c0462fa9c340/%2310-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/325bd55ee1b5424aae4d0d951cce7dbb/%2310-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/00905cb3fa0c409d83dd1e03949fb110/%2310-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/8d81b4b17d8546e6b8ae23ab341fd4e0/%2310-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/c9b209cee8ff4759bae08060a31b692a/%2310-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/863e99cee39b478599624373864c80e4/%2310-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/177019ef9b8047a9a9b6c55f7810eb9a/%2310-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/d83ba3946a71407f94f69444348f98ac/%2310-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/8f7347d195c54673899ab3b844c2c70a/%2310-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e10",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/6eabf8c3ffa9428a8880ad959e69cb37/%2310-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e10-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e10"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/b1eb01a62e8e44acb16c9bbcd1f48409/%2311-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/12184e22e4b04ecca56efd92a3ce6267/%2311-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/457bc06a69964e27a775536149cd0e26/%2311-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/24e09745914f4238aa51b4b7bdeedf70/%2311-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/47c6add945554664801a6fb84c84d0f2/%2311-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/c55ded91650c4518b7a3225b4a0ad0d4/%2311-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/ec2e4435f6da4d6788582ba0e414b931/%2311-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/53aa15832d3e449a8f92fadc177857a0/%2311-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/f117003c0fae409a8821d4d525537e98/%2311-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e11",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/38120f05be0543f2b3c177d9e4b04349/%2311-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e11-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e11"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0de1560b04ef4676bede7ebc93f758c1/%2312-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/aa9e879b3c9040a9841c01990a85a10f/%2312-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/58cba26294194472812938d1eabac26d/%2312-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/9437dcbcb61f40e4bc9b7ab0783c4da0/%2312-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/be44e0a9b29d4a37b9708edb04d594b1/%2312-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/11ecf34683cd494896cd1ea5a1ed3649/%2312-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/8bf476711fe644059594fceadf8d055e/%2312-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/23c87c04f0f441ac9e1a2cdb0e64c134/%2312-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/83ceebc9d6c041ffb6d2d61d86897d3f/%2312-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e12",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/a9a983fd3b3241b8ba0b45dfa0fd7dff/%2312-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e12-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e12"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/6c003990d7e94f0c9845016b33eb0509/%2313-1.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/41ee76cbc6774d3c869fd226c9c3c9f7/%2313-2.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/dc6265c0884e4f989539c8c539bc72f0/%2313-3.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0534a227790644c3baa99ef333de9e05/%2313-4.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/ed54dc7736a84c63aaf9aa925613f0a4/%2313-5.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/f98236360b6345cf88d525e088337d49/%2313-6.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/0eafd7f9af8148d3bdc43fca5a13a1aa/%2313-7.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-07.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/f91e2a385bc04f308cce193b14b96ed4/%2313-8.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-08.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/96bc11efc1e848c0b417087cabbaaf27/%2313-9.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-09.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-s3-e13",
+      "source_url": "https://images.microcms-assets.io/assets/a3a11d95526f49888a607fb580297622/51589e7d9cb1438a9b2be51cc66a2775/%2313-10.png",
+      "output": "uma_tools/img/anime/stills/anime-s3-e13-10.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-s3-e13"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/415b4a7517a94129be33ffe5b8bbbfe2/UGW_01_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e4a94b3eee114914a28f8047267de533/UGW_01_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/1419c4cda01847b19c124532e3921e39/UGW_01_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/b79689ce38b540e28242e57599a6c588/UGW_01_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/3896ce086a3942b18fb5538abd9b88e8/UGW_01_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e01",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/d422836cee2049cfb5c78e7403eeb6b5/UGW_01_06.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e01-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/80478799b826488b8f565cc65107da66/UGW_02_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/d97108d17908499ea66774549bea7d9b/UGW_02_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/b4f227187f0343d7b3ec78a30befd126/UGW_02_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/abe8637f9c2c456ea22820a674ff9395/UGW_02_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/768f29d64a104b30849e27da81571f16/UGW_02_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e02",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/ee77b24e1cc240aa8b9d5a5192bc6189/UGW_02_06.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e02-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/9a32a569d7974d0292d52c6ac24f54ec/UGW_03_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/e94e303ec5a9450fb0d8b17b16c35f9d/UGW_03_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/1e97962e2c9e46b2b989b9104ce9955d/UGW_03_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/5e0ae5dcc820489abb19340e9a8867c2/UGW_03_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/2570548e73974c239ffbdbb7c3636370/UGW_03_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e03",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/6453adb224b34d6bb81bce293ae6c5ec/UGW_03_06.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e03-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/365e0f87b63c44c58717f40b104a103d/UGW_04_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/212a7f0ae2ce464cb6fad3b7ef4159c2/UGW_04_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/7815253ba4054c65ae608beb7986803a/UGW_04_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/44ad13555416453e9a2f16a1898797d1/UGW_04_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/c05731abc42a481e8da5cbf059a2ac22/UGW_04_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-prettygray-e04",
+      "source_url": "https://images.microcms-assets.io/assets/973fc097984b400db8729642ddff5938/a3d0156b5b0547218bbea9ced5d6623e/UGW_04_06.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-prettygray-e04-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e01",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/dda58ed623c14dd0b5810444df08d5af/UFG_01_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e01",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fc3b3ba5aa4249eab99a3c71e617a540/UFG_01_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e01",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/67cd5014d7de4e1c813452cd434e4b4a/UFG_01_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-03.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e01",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/d88c3a94a73c46778a29a34316756bcf/UFG_01_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-04.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e01",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/8ebab41bf9f946e680f8590c8784beab/UFG_01_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-05.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e01",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/b1c816d3b09d46d8b900c63ee5f30167/UFG_01_06.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e01-06.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "unit_id": "anime-rttt-e01",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/95da0353ad2c12ea2bf7b5048a536643-e0d99f9.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e01-01.webp",
+      "original_output": "uma_tools/img/anime/originals/anime-rttt-e01.png",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e01"
+    },
+    {
+      "unit_id": "anime-rttt-e02",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/01a2b153646f0a96c94860b51e27c39a-2d88ee3.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e02-01.webp",
+      "original_output": "uma_tools/img/anime/originals/anime-rttt-e02.png",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e02"
+    },
+    {
+      "unit_id": "anime-rttt-e02",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/befb908d2190e9af91c1ebc1f7f73c07-e5db1e1.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e02-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e02"
+    },
+    {
+      "unit_id": "anime-rttt-e03",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/00c60312d41b135294f567c5cf6a2e4f-c498f59.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e03-01.webp",
+      "original_output": "uma_tools/img/anime/originals/anime-rttt-e03.png",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e03"
+    },
+    {
+      "unit_id": "anime-rttt-e03",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/05ad6f3c28f33b6c532b64050ef62da2-0a11db5.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e03-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e03"
+    },
+    {
+      "unit_id": "anime-rttt-e04",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/040a55fec6dbedeb8e4b76559c766332-019ffaf.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e04-01.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e04"
+    },
+    {
+      "unit_id": "anime-rttt-e04",
+      "source_url": "https://umamusume.jp/_nuxt/assets/anime-rttt/images/cf92baaa1bbbead7623422be27f3a73c-e654cfe.png",
+      "output": "uma_tools/img/anime/stills/anime-rttt-e04-02.webp",
+      "mode": "still",
+      "source_ref": "official-story-anime-rttt-e04"
+    },
+    {
+      "unit_id": "anime-s1-e01",
+      "source_url": "https://umamusu.wiki/w/images/f/f5/S1E01-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e01.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e01"
+    },
+    {
+      "unit_id": "anime-s1-e02",
+      "source_url": "https://umamusu.wiki/w/images/d/dd/S1E02-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e02.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e02"
+    },
+    {
+      "unit_id": "anime-s1-e03",
+      "source_url": "https://umamusu.wiki/w/images/4/44/S1E03-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e03.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e03"
+    },
+    {
+      "unit_id": "anime-s1-e04",
+      "source_url": "https://umamusu.wiki/w/images/d/d7/S1E04-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e04.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e04"
+    },
+    {
+      "unit_id": "anime-s1-e05",
+      "source_url": "https://umamusu.wiki/w/images/4/4e/S1E05-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e05.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e05"
+    },
+    {
+      "unit_id": "anime-s1-e06",
+      "source_url": "https://umamusu.wiki/w/images/e/ec/S1E06-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e06.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e06"
+    },
+    {
+      "unit_id": "anime-s1-e07",
+      "source_url": "https://umamusu.wiki/w/images/2/26/S1E07-01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e07.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e07"
+    },
+    {
+      "unit_id": "anime-s1-e08",
+      "source_url": "https://umamusu.wiki/w/images/d/d2/S1EP8_5.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e08.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e08"
+    },
+    {
+      "unit_id": "anime-s1-e09",
+      "source_url": "https://umamusu.wiki/w/images/f/fa/S1EP9_1.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e09.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e09"
+    },
+    {
+      "unit_id": "anime-s1-e10",
+      "source_url": "https://umamusu.wiki/w/images/5/56/S1E10Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e10.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e10"
+    },
+    {
+      "unit_id": "anime-s1-e11",
+      "source_url": "https://umamusu.wiki/w/images/3/3b/S1E11Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e11.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e11"
+    },
+    {
+      "unit_id": "anime-s1-e12",
+      "source_url": "https://umamusu.wiki/w/images/1/1f/S1E12Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e12.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e12"
+    },
+    {
+      "unit_id": "anime-s1-e13",
+      "source_url": "https://umamusu.wiki/w/images/4/48/S1E13Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e13.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e13"
+    },
+    {
+      "unit_id": "anime-s1-e14",
+      "source_url": "https://umamusu.wiki/w/images/5/5b/Jkshoot_1764445598071.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e14.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e14"
+    },
+    {
+      "unit_id": "anime-s1-e15",
+      "source_url": "https://umamusu.wiki/w/images/0/05/BNW_2-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e15.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e15"
+    },
+    {
+      "unit_id": "anime-s1-e16",
+      "source_url": "https://umamusu.wiki/w/images/1/1c/S1EXT3.png",
+      "output": "uma_tools/img/anime/episodes/anime-s1-e16.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s1-e16"
+    },
+    {
+      "unit_id": "anime-s2-e01",
+      "source_url": "https://umamusu.wiki/w/images/e/ec/S2E01Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e01.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e01"
+    },
+    {
+      "unit_id": "anime-s2-e02",
+      "source_url": "https://umamusu.wiki/w/images/5/52/S2E02Catch.png",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e02.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e02"
+    },
+    {
+      "unit_id": "anime-s2-e03",
+      "source_url": "https://umamusu.wiki/w/images/c/cf/S2E03Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e03.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e03"
+    },
+    {
+      "unit_id": "anime-s2-e04",
+      "source_url": "https://umamusu.wiki/w/images/a/a9/Image_2025-03-08_002116533.png",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e04.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e04"
+    },
+    {
+      "unit_id": "anime-s2-e05",
+      "source_url": "https://umamusu.wiki/w/images/a/ae/S2E05Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e05.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e05"
+    },
+    {
+      "unit_id": "anime-s2-e06",
+      "source_url": "https://umamusu.wiki/w/images/7/73/S2E06Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e06.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e06"
+    },
+    {
+      "unit_id": "anime-s2-e07",
+      "source_url": "https://umamusu.wiki/w/images/d/d2/S2E07Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e07.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e07"
+    },
+    {
+      "unit_id": "anime-s2-e08",
+      "source_url": "https://umamusu.wiki/w/images/f/fd/S2E08Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e08.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e08"
+    },
+    {
+      "unit_id": "anime-s2-e09",
+      "source_url": "https://umamusu.wiki/w/images/9/92/S2E09Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e09.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e09"
+    },
+    {
+      "unit_id": "anime-s2-e10",
+      "source_url": "https://umamusu.wiki/w/images/3/3b/S2E10Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e10.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e10"
+    },
+    {
+      "unit_id": "anime-s2-e11",
+      "source_url": "https://umamusu.wiki/w/images/b/b0/S2E11Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e11.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e11"
+    },
+    {
+      "unit_id": "anime-s2-e12",
+      "source_url": "https://umamusu.wiki/w/images/6/63/S2E12Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e12.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e12"
+    },
+    {
+      "unit_id": "anime-s2-e13",
+      "source_url": "https://umamusu.wiki/w/images/0/06/S2E13Catch.PNG",
+      "output": "uma_tools/img/anime/episodes/anime-s2-e13.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-s2-e13"
+    },
+    {
+      "unit_id": "anime-umayon-e01",
+      "source_url": "https://umamusu.wiki/w/images/b/ba/Umayon_Main_1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e01.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e01"
+    },
+    {
+      "unit_id": "anime-umayon-e02",
+      "source_url": "https://umamusu.wiki/w/images/5/52/Umayon_2-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e02.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e02"
+    },
+    {
+      "unit_id": "anime-umayon-e03",
+      "source_url": "https://umamusu.wiki/w/images/e/eb/Umayon_3-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e03.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e03"
+    },
+    {
+      "unit_id": "anime-umayon-e04",
+      "source_url": "https://umamusu.wiki/w/images/3/36/Umayon_4-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e04.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e04"
+    },
+    {
+      "unit_id": "anime-umayon-e05",
+      "source_url": "https://umamusu.wiki/w/images/8/87/Umayon_5-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e05.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e05"
+    },
+    {
+      "unit_id": "anime-umayon-e06",
+      "source_url": "https://umamusu.wiki/w/images/2/2f/Umayon_6-1..png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e06.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e06"
+    },
+    {
+      "unit_id": "anime-umayon-e07",
+      "source_url": "https://umamusu.wiki/w/images/c/c8/Umayon_7-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e07.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e07"
+    },
+    {
+      "unit_id": "anime-umayon-e08",
+      "source_url": "https://umamusu.wiki/w/images/4/4a/Umayon_8-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e08.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e08"
+    },
+    {
+      "unit_id": "anime-umayon-e09",
+      "source_url": "https://umamusu.wiki/w/images/f/f1/Umayon_9-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e09.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e09"
+    },
+    {
+      "unit_id": "anime-umayon-e10",
+      "source_url": "https://umamusu.wiki/w/images/2/21/Umayon_10-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e10.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e10"
+    },
+    {
+      "unit_id": "anime-umayon-e11",
+      "source_url": "https://umamusu.wiki/w/images/1/15/Umayon_11-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e11.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e11"
+    },
+    {
+      "unit_id": "anime-umayon-e12",
+      "source_url": "https://umamusu.wiki/w/images/1/10/Umayon_12-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e12.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e12"
+    },
+    {
+      "unit_id": "anime-umayon-e13",
+      "source_url": "https://umamusu.wiki/w/images/1/1c/Umayon_13-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e13.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e13"
+    },
+    {
+      "unit_id": "anime-umayon-e14",
+      "source_url": "https://umamusu.wiki/w/images/9/92/Umayon_14-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e14.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e14"
+    },
+    {
+      "unit_id": "anime-umayon-e15",
+      "source_url": "https://umamusu.wiki/w/images/f/f8/Umayon_15-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e15.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e15"
+    },
+    {
+      "unit_id": "anime-umayon-e16",
+      "source_url": "https://umamusu.wiki/w/images/7/7b/Umayon_16%28Real%29-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e16.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e16"
+    },
+    {
+      "unit_id": "anime-umayon-e17",
+      "source_url": "https://umamusu.wiki/w/images/6/61/Umayon_16-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e17.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e17"
+    },
+    {
+      "unit_id": "anime-umayon-e18",
+      "source_url": "https://umamusu.wiki/w/images/8/81/Umayon_18-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e18.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e18"
+    },
+    {
+      "unit_id": "anime-umayon-e19",
+      "source_url": "https://umamusu.wiki/w/images/5/53/Umayon_Main_19.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e19.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e19"
+    },
+    {
+      "unit_id": "anime-umayon-e20",
+      "source_url": "https://umamusu.wiki/w/images/b/b2/Umayon_Main_20.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e20.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e20"
+    },
+    {
+      "unit_id": "anime-umayon-e21",
+      "source_url": "https://umamusu.wiki/w/images/f/f3/Umayon_21-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e21.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e21"
+    },
+    {
+      "unit_id": "anime-umayon-e22",
+      "source_url": "https://umamusu.wiki/w/images/0/05/Umayon_22-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e22.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e22"
+    },
+    {
+      "unit_id": "anime-umayon-e23",
+      "source_url": "https://umamusu.wiki/w/images/1/14/Umayon_23-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e23.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e23"
+    },
+    {
+      "unit_id": "anime-umayon-e24",
+      "source_url": "https://umamusu.wiki/w/images/c/ce/Umayon_24-1.png",
+      "output": "uma_tools/img/anime/episodes/anime-umayon-e24.webp",
+      "mode": "episode",
+      "source_ref": "episode-artwork-anime-umayon-e24"
+    },
+    {
+      "unit_id": "anime-1st-anniversary-e01",
+      "source_url": "https://i.ytimg.com/vi/RKVWLnVqnP0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-1st-anniversary-e01.webp",
+      "mode": "episode",
+      "source_ref": "official-youtube"
+    },
+    {
+      "unit_id": "anime-umayuru-e01",
+      "source_url": "https://i.ytimg.com/vi/Q6ur7-o_YdI/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e01.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e01"
+    },
+    {
+      "unit_id": "anime-umayuru-e02",
+      "source_url": "https://i.ytimg.com/vi/7y4DpHsz6Wg/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-e03",
+      "source_url": "https://i.ytimg.com/vi/oD4nNApSrd0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e03"
+    },
+    {
+      "unit_id": "anime-umayuru-e04",
+      "source_url": "https://i.ytimg.com/vi/2U2OTcgyubY/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e04.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e04"
+    },
+    {
+      "unit_id": "anime-umayuru-e05",
+      "source_url": "https://i.ytimg.com/vi/36NHQCYjBvs/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e05.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e05"
+    },
+    {
+      "unit_id": "anime-umayuru-e06",
+      "source_url": "https://i.ytimg.com/vi/sLV7WHXcOu0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e06.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e06"
+    },
+    {
+      "unit_id": "anime-umayuru-e07",
+      "source_url": "https://i.ytimg.com/vi/uXauD1uRZy0/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e07.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e07"
+    },
+    {
+      "unit_id": "anime-umayuru-e08",
+      "source_url": "https://i.ytimg.com/vi/u0LuV8HNd8k/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e08.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e08"
+    },
+    {
+      "unit_id": "anime-umayuru-e09",
+      "source_url": "https://i.ytimg.com/vi/4KzUSqUW9LU/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e09.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e09"
+    },
+    {
+      "unit_id": "anime-umayuru-e10",
+      "source_url": "https://i.ytimg.com/vi/proK-e-v3Eg/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e10.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e10"
+    },
+    {
+      "unit_id": "anime-umayuru-e11",
+      "source_url": "https://i.ytimg.com/vi/ag8dpHBhoCY/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e11.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e11"
+    },
+    {
+      "unit_id": "anime-umayuru-e12",
+      "source_url": "https://i.ytimg.com/vi/aVK4qqhbMhA/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e12.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e12"
+    },
+    {
+      "unit_id": "anime-umayuru-e13",
+      "source_url": "https://i.ytimg.com/vi/_XvzHdO7nrk/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e13.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e13"
+    },
+    {
+      "unit_id": "anime-umayuru-e14",
+      "source_url": "https://i.ytimg.com/vi/xh3FU5NoCzQ/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e14.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e14"
+    },
+    {
+      "unit_id": "anime-umayuru-e15",
+      "source_url": "https://i.ytimg.com/vi/VfqRYC8_UPo/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e15.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e15"
+    },
+    {
+      "unit_id": "anime-umayuru-e16",
+      "source_url": "https://i.ytimg.com/vi/Iz1xs-gZF-g/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e16.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e16"
+    },
+    {
+      "unit_id": "anime-umayuru-e17",
+      "source_url": "https://i.ytimg.com/vi/Vwbj7I47qas/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e17.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e17"
+    },
+    {
+      "unit_id": "anime-umayuru-e18",
+      "source_url": "https://i.ytimg.com/vi/EOhRP6r9SOQ/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e18.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e18"
+    },
+    {
+      "unit_id": "anime-umayuru-e19",
+      "source_url": "https://i.ytimg.com/vi/Moka2TV2eLs/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e19.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e19"
+    },
+    {
+      "unit_id": "anime-umayuru-e20",
+      "source_url": "https://i.ytimg.com/vi/WrymFqwvaoo/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e20.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e20"
+    },
+    {
+      "unit_id": "anime-umayuru-e21",
+      "source_url": "https://i.ytimg.com/vi/HmRbWlbXtIY/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e21.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e21"
+    },
+    {
+      "unit_id": "anime-umayuru-e22",
+      "source_url": "https://i.ytimg.com/vi/2Jrb-wi87Dw/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e22.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e22"
+    },
+    {
+      "unit_id": "anime-umayuru-e23",
+      "source_url": "https://i.ytimg.com/vi/lS54NCyHxko/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e23.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e23"
+    },
+    {
+      "unit_id": "anime-umayuru-e24",
+      "source_url": "https://i.ytimg.com/vi/iGExuigHsUw/maxresdefault.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-e24.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-e24"
+    },
+    {
+      "unit_id": "anime-movie-beginning-new-era-e01",
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-movie-beginning-new-era-e01.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e02",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-fullgate-e02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "unit_id": "anime-umayuru-fullgate-e03",
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+      "output": "uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-15c826b2ec8068124d305a29ddc122d1-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-01.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-bdd1c2ad8ce21c7c48ac5286aa901f11-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-02.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cffdada58ce2861f7fa1c9c7f26199bf-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-03.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-4c141579a00d7035290eb4864e1d90ac-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-04.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-8a698e3322fde275390975c533fc7fb8-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-05.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-9a05072113d7294a7a7ffcfc1ab53216-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-06.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7f74b3b0dfdea34ef4703c93c6b82202-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-07.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-7fd50315b2700f5a971b333390c0ff25-1920x1080.jpg",
+      "output": "uma_tools/img/anime/stills/anime-rttt-08.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-450741524393a3a9ff00d57704fe74d6-1920x799.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-01.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-aef069b29527f4346c3fd72bed3a8f80-2015x843.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-02.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-19a514bfabc4315afdae40ecef9675b1-2015x837.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-03.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-043a7e9498f8d1d2fe974842412a41af-2014x841.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-04.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-45082e6fd99689bdb4fce0fcaa099baa-2015x841.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-05.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-5cc251e2b6a701369ee2b44b8411cf0d-1920x804.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-06.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-fa6c753bd96049b7ba22ec6c299815f5-2015x843.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-07.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://prcdn.freetls.fastly.net/release_image/118823/5/118823-5-cd7f8807493d4b879a6c57ac9ae0206c-2016x841.jpg",
+      "output": "uma_tools/img/anime/stills/anime-movie-beginning-new-era-e01-08.webp",
+      "mode": "episode",
+      "source_ref": "official-toho-film-release"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/fa77f2f1650f4b77821a4e6484e493ce/UFG_02_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-01.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/db60f8805f2245bea3149a9ceb3ecd72/UFG_02_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/12ef3cb612d24150800904db9cb1a9e3/UFG_02_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/34dad197c6f54fa0ac387811ae9c2e27/UFG_02_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-04.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/044a33c302764cc6a1a8a17bb7e01090/UFG_02_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e02-05.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-01.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-02.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-03.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-04.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "source_url": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg",
+      "output": "uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-05.webp",
+      "mode": "episode",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03"
+    }
+  ]
+}

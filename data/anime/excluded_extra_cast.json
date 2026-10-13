@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "relations": [
+    {
+      "id": "anime-umayuru-e06-cast-6",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e06",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-873fe7412650",
+      "voice_actor_id": "va-auto-873fe7412650",
+      "signature": "大将",
+      "label": "单集署名",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e06"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e06-cast-7",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e06",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-805291d37cf7",
+      "voice_actor_id": "va-auto-805291d37cf7",
+      "signature": "女将",
+      "label": "单集署名",
+      "display_order": 7,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e06"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e07-cast-2",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e07",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-b14eb86e37e0",
+      "voice_actor_id": "va-auto-b14eb86e37e0",
+      "signature": "ウマ娘A",
+      "label": "单集署名",
+      "display_order": 2,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e07-cast-3",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e07",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-e81cc9ac9cf4",
+      "voice_actor_id": "va-auto-e81cc9ac9cf4",
+      "signature": "ウマ娘B",
+      "label": "单集署名",
+      "display_order": 3,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e07-cast-4",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e07",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-f669e91b2058",
+      "voice_actor_id": "va-auto-f669e91b2058",
+      "signature": "ウマ娘C",
+      "label": "单集署名",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e07-cast-5",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e07",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-3be3a848962e",
+      "voice_actor_id": "va-auto-3be3a848962e",
+      "signature": "ウマ娘D",
+      "label": "单集署名",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e09-cast-5",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e09",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-b14eb86e37e0",
+      "voice_actor_id": "va-auto-b14eb86e37e0",
+      "signature": "観客",
+      "label": "单集署名",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e09"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e09-cast-6",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e09",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-e81cc9ac9cf4",
+      "voice_actor_id": "va-auto-e81cc9ac9cf4",
+      "signature": "観客",
+      "label": "单集署名",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e09"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e09-cast-7",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e09",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-f669e91b2058",
+      "voice_actor_id": "va-auto-f669e91b2058",
+      "signature": "観客",
+      "label": "单集署名",
+      "display_order": 7,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e09"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e09-cast-8",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e09",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-3be3a848962e",
+      "voice_actor_id": "va-auto-3be3a848962e",
+      "signature": "観客",
+      "label": "单集署名",
+      "display_order": 8,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e09"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e10-cast-4",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e10",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-b14eb86e37e0",
+      "voice_actor_id": "va-auto-b14eb86e37e0",
+      "signature": "霊の声",
+      "label": "单集署名",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e10"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e10-cast-5",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e10",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-e81cc9ac9cf4",
+      "voice_actor_id": "va-auto-e81cc9ac9cf4",
+      "signature": "霊の声",
+      "label": "单集署名",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e10"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e10-cast-6",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e10",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-f669e91b2058",
+      "voice_actor_id": "va-auto-f669e91b2058",
+      "signature": "霊の声",
+      "label": "单集署名",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e10"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e10-cast-7",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e10",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-3be3a848962e",
+      "voice_actor_id": "va-auto-3be3a848962e",
+      "signature": "霊の声",
+      "label": "单集署名",
+      "display_order": 7,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e10"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e11-cast-4",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e11",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-b14eb86e37e0",
+      "voice_actor_id": "va-auto-b14eb86e37e0",
+      "signature": "ウマ娘A",
+      "label": "单集署名",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e11"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e11-cast-5",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e11",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-e81cc9ac9cf4",
+      "voice_actor_id": "va-auto-e81cc9ac9cf4",
+      "signature": "ウマ娘B",
+      "label": "单集署名",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e11"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e11-cast-6",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e11",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-f669e91b2058",
+      "voice_actor_id": "va-auto-f669e91b2058",
+      "signature": "ウマ娘C",
+      "label": "单集署名",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e11"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e11-cast-7",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e11",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-3be3a848962e",
+      "voice_actor_id": "va-auto-3be3a848962e",
+      "signature": "ウマ娘D",
+      "label": "单集署名",
+      "display_order": 7,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e11"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e12-cast-10",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e12",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-b14eb86e37e0",
+      "voice_actor_id": "va-auto-b14eb86e37e0",
+      "signature": "ウマ娘A",
+      "label": "单集署名",
+      "display_order": 10,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e12"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e12-cast-11",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e12",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-e81cc9ac9cf4",
+      "voice_actor_id": "va-auto-e81cc9ac9cf4",
+      "signature": "ウマ娘B",
+      "label": "单集署名",
+      "display_order": 11,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e12"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e12-cast-12",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e12",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-f669e91b2058",
+      "voice_actor_id": "va-auto-f669e91b2058",
+      "signature": "ウマ娘C",
+      "label": "单集署名",
+      "display_order": 12,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e12"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e12-cast-13",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e12",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-3be3a848962e",
+      "voice_actor_id": "va-auto-3be3a848962e",
+      "signature": "ウマ娘D",
+      "label": "单集署名",
+      "display_order": 13,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e12"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e13-cast-8",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e13",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-0110",
+      "voice_actor_id": "va-0110",
+      "signature": "観客",
+      "label": "单集署名",
+      "display_order": 8,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e13"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e13-cast-9",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e13",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-98f48eb876f9",
+      "voice_actor_id": "va-auto-98f48eb876f9",
+      "signature": "観客",
+      "label": "单集署名",
+      "display_order": 9,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e13"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e14-cast-2",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e14",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-0110",
+      "voice_actor_id": "va-0110",
+      "signature": "幽霊",
+      "label": "单集署名",
+      "display_order": 2,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e14"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e15-cast-3",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e15",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-0110",
+      "voice_actor_id": "va-0110",
+      "signature": "ファインのSP",
+      "label": "单集署名",
+      "display_order": 3,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e15"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e15-cast-4",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e15",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-auto-98f48eb876f9",
+      "voice_actor_id": "va-auto-98f48eb876f9",
+      "signature": "ファインのSP",
+      "label": "单集署名",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e15"
+      ]
+    },
+    {
+      "id": "anime-umayuru-e17-cast-3",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-e17",
+      "relation_type": "credited_cast",
+      "target_type": "voice_actor",
+      "target_id": "va-0110",
+      "voice_actor_id": "va-0110",
+      "signature": "スタッフ",
+      "label": "单集署名",
+      "display_order": 3,
+      "evidence_refs": [
+        "official-story-anime-umayuru-e17"
+      ]
+    }
+  ]
+}

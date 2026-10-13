@@ -1,0 +1,3864 @@
+{
+  "schema_version": 1,
+  "resources": [
+    {
+      "id": "watch-s1-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/media/md77972",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-s1-e01",
+        "anime-s1-e02",
+        "anime-s1-e03",
+        "anime-s1-e04",
+        "anime-s1-e05",
+        "anime-s1-e06",
+        "anime-s1-e07",
+        "anime-s1-e08",
+        "anime-s1-e09",
+        "anime-s1-e10",
+        "anime-s1-e11",
+        "anime-s1-e12",
+        "anime-s1-e13"
+      ]
+    },
+    {
+      "id": "watch-s1-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "platform": "bahamut",
+      "url": "https://ani.gamer.com.tw/animeVideo.php?sn=21648",
+      "publisher": "Ani-One",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hant"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "status": "unverified",
+      "verified_at": "2026-10-03",
+      "source_ref": "bahamut-licensed",
+      "content_type": "discovery"
+    },
+    {
+      "id": "watch-s2-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-s2"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ss36579",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-s2-e01",
+        "anime-s2-e02",
+        "anime-s2-e03",
+        "anime-s2-e04",
+        "anime-s2-e05",
+        "anime-s2-e06",
+        "anime-s2-e07",
+        "anime-s2-e08",
+        "anime-s2-e09",
+        "anime-s2-e10",
+        "anime-s2-e11",
+        "anime-s2-e12",
+        "anime-s2-e13"
+      ]
+    },
+    {
+      "id": "watch-s2-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-s2"
+      },
+      "platform": "bahamut",
+      "url": "https://ani.gamer.com.tw/animeVideo.php?sn=42536",
+      "publisher": "Ani-One",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hant"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "status": "unverified",
+      "verified_at": "2026-10-03",
+      "source_ref": "bahamut-licensed",
+      "content_type": "discovery"
+    },
+    {
+      "id": "watch-umayon-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayon"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ss33806",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-umayon-e01",
+        "anime-umayon-e02",
+        "anime-umayon-e03",
+        "anime-umayon-e04",
+        "anime-umayon-e05",
+        "anime-umayon-e06",
+        "anime-umayon-e07",
+        "anime-umayon-e08",
+        "anime-umayon-e09",
+        "anime-umayon-e10",
+        "anime-umayon-e11",
+        "anime-umayon-e12"
+      ]
+    },
+    {
+      "id": "watch-anniversary-youtube",
+      "scope": {
+        "type": "work",
+        "id": "anime-1st-anniversary"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=RKVWLnVqnP0",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-youtube",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-1st-anniversary-e01"
+      ]
+    },
+    {
+      "id": "watch-rttt-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-rttt"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep765783",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-rttt-e01",
+        "anime-rttt-e02",
+        "anime-rttt-e03",
+        "anime-rttt-e04"
+      ]
+    },
+    {
+      "id": "watch-s3-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-s3"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ss46083",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-s3-e01",
+        "anime-s3-e02",
+        "anime-s3-e03",
+        "anime-s3-e04",
+        "anime-s3-e05",
+        "anime-s3-e06",
+        "anime-s3-e07",
+        "anime-s3-e08",
+        "anime-s3-e09",
+        "anime-s3-e10",
+        "anime-s3-e11",
+        "anime-s3-e12",
+        "anime-s3-e13"
+      ]
+    },
+    {
+      "id": "watch-s3-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-s3"
+      },
+      "platform": "bahamut",
+      "url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+Pretty+Derby+%E7%AC%AC%E4%B8%89%E5%AD%A3",
+      "publisher": "Ani-One",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hant"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "status": "unverified",
+      "verified_at": "2026-10-03",
+      "source_ref": "bahamut-licensed",
+      "content_type": "discovery"
+    },
+    {
+      "id": "watch-cingray-bilibili",
+      "scope": {
+        "type": "work",
+        "id": "anime-cinderella-gray"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/media/md25581526",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-cinderella-gray-e01",
+        "anime-cinderella-gray-e02",
+        "anime-cinderella-gray-e03",
+        "anime-cinderella-gray-e04",
+        "anime-cinderella-gray-e05",
+        "anime-cinderella-gray-e06",
+        "anime-cinderella-gray-e07",
+        "anime-cinderella-gray-e08",
+        "anime-cinderella-gray-e09",
+        "anime-cinderella-gray-e10",
+        "anime-cinderella-gray-e11",
+        "anime-cinderella-gray-e12",
+        "anime-cinderella-gray-e13",
+        "anime-cinderella-gray-e14",
+        "anime-cinderella-gray-e15",
+        "anime-cinderella-gray-e16",
+        "anime-cinderella-gray-e17",
+        "anime-cinderella-gray-e18",
+        "anime-cinderella-gray-e19",
+        "anime-cinderella-gray-e20",
+        "anime-cinderella-gray-e21",
+        "anime-cinderella-gray-e22",
+        "anime-cinderella-gray-e23"
+      ]
+    },
+    {
+      "id": "watch-cingray-bahamut",
+      "scope": {
+        "type": "work",
+        "id": "anime-cinderella-gray"
+      },
+      "platform": "bahamut",
+      "url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+%E7%81%B0%E9%AB%AE%E7%81%B0%E5%A7%91%E5%A8%98",
+      "publisher": "Ani-One",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hant"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "TW",
+        "HK",
+        "MO"
+      ],
+      "status": "unverified",
+      "verified_at": "2026-10-03",
+      "source_ref": "bahamut-licensed",
+      "content_type": "discovery"
+    },
+    {
+      "id": "watch-cingray-abema",
+      "scope": {
+        "type": "work",
+        "id": "anime-cinderella-gray"
+      },
+      "platform": "abema",
+      "url": "https://abema.tv/search?q=%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%82%B7%E3%83%B3%E3%83%87%E3%83%AC%E3%83%A9%E3%82%B0%E3%83%AC%E3%82%A4",
+      "publisher": "ABEMA",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "unverified",
+      "verified_at": "2026-10-03",
+      "content_type": "discovery"
+    },
+    {
+      "id": "watch-movie-trailer-youtube",
+      "scope": {
+        "type": "work",
+        "id": "anime-movie-beginning-new-era"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@UMAMUSUME_official/search?query=%E6%96%B0%E6%99%82%E4%BB%A3%E3%81%AE%E6%89%89",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "unverified",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-youtube",
+      "content_type": "discovery"
+    },
+    {
+      "id": "watch-s1-bnw-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-s1"
+      },
+      "platform": "unext",
+      "url": "https://www.video.unext.jp/title/SID0094265",
+      "publisher": "U-NEXT",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-10",
+      "source_ref": "unext-bnw",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-s1-e14",
+        "anime-s1-e15",
+        "anime-s1-e16"
+      ]
+    },
+    {
+      "id": "watch-movie-beginning-new-era-unext",
+      "scope": {
+        "type": "work",
+        "id": "anime-movie-beginning-new-era"
+      },
+      "platform": "unext",
+      "url": "https://www.video.unext.jp/title/SID0160058",
+      "publisher": "U-NEXT",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "membership",
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-10",
+      "source_ref": "unext-beginning-new-era",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-movie-beginning-new-era-e01"
+      ]
+    },
+    {
+      "id": "watch-anime-umayuru-prettygray-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e01"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=zxJXquB3YiM",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+    },
+    {
+      "id": "watch-anime-umayuru-prettygray-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e02"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=cb73PRzHo4w",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+    },
+    {
+      "id": "watch-anime-umayuru-prettygray-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e03"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=AGUgeelUUuo",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+    },
+    {
+      "id": "watch-anime-umayuru-prettygray-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-prettygray-e04"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=a1q3XU_6Jgk",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+    },
+    {
+      "id": "watch-anime-umayuru-fullgate-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e01"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=vYaucJ1wvRg",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+    },
+    {
+      "id": "watch-anime-umayuru-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e01"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Q6ur7-o_YdI",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e01"
+    },
+    {
+      "id": "watch-anime-umayuru-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e02"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=7y4DpHsz6Wg",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e02"
+    },
+    {
+      "id": "watch-anime-umayuru-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e03"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=oD4nNApSrd0",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e03"
+    },
+    {
+      "id": "watch-anime-umayuru-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e04"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=2U2OTcgyubY",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e04"
+    },
+    {
+      "id": "watch-anime-umayuru-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e05"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=36NHQCYjBvs",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e05"
+    },
+    {
+      "id": "watch-anime-umayuru-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e06"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=sLV7WHXcOu0",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e06"
+    },
+    {
+      "id": "watch-anime-umayuru-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e07"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=uXauD1uRZy0",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e07"
+    },
+    {
+      "id": "watch-anime-umayuru-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e08"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=u0LuV8HNd8k",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e08"
+    },
+    {
+      "id": "watch-anime-umayuru-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e09"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=4KzUSqUW9LU",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e09"
+    },
+    {
+      "id": "watch-anime-umayuru-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e10"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=proK-e-v3Eg",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e10"
+    },
+    {
+      "id": "watch-anime-umayuru-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e11"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=ag8dpHBhoCY",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e11"
+    },
+    {
+      "id": "watch-anime-umayuru-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e12"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=aVK4qqhbMhA",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e12"
+    },
+    {
+      "id": "watch-anime-umayuru-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e13"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=_XvzHdO7nrk",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e13"
+    },
+    {
+      "id": "watch-anime-umayuru-e14",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e14"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=xh3FU5NoCzQ",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e14"
+    },
+    {
+      "id": "watch-anime-umayuru-e15",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e15"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=VfqRYC8_UPo",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e15"
+    },
+    {
+      "id": "watch-anime-umayuru-e16",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e16"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Iz1xs-gZF-g",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e16"
+    },
+    {
+      "id": "watch-anime-umayuru-e17",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e17"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Vwbj7I47qas",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e17"
+    },
+    {
+      "id": "watch-anime-umayuru-e18",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e18"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=EOhRP6r9SOQ",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e18"
+    },
+    {
+      "id": "watch-anime-umayuru-e19",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e19"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Moka2TV2eLs",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e19"
+    },
+    {
+      "id": "watch-anime-umayuru-e20",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e20"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=WrymFqwvaoo",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e20"
+    },
+    {
+      "id": "watch-anime-umayuru-e21",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e21"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=HmRbWlbXtIY",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e21"
+    },
+    {
+      "id": "watch-anime-umayuru-e22",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e22"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=2Jrb-wi87Dw",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e22"
+    },
+    {
+      "id": "watch-anime-umayuru-e23",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e23"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=lS54NCyHxko",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e23"
+    },
+    {
+      "id": "watch-anime-umayuru-e24",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-e24"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=iGExuigHsUw",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "official-story-anime-umayuru-e24"
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e01"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199681",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e01"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e02"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199682",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e02"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e03"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199683",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e03"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e04"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199684",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e04"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e05"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199685",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e05"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e06"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199686",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e06"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e07"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199687",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e07"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e08"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199688",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e08"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e09"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199689",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e09"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e10"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199690",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e10"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e11"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199691",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e11"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e12"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199692",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e12"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s1-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s1-e13"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep199693",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s1-e13"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e01"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374306",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e01"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e02"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374307",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e02"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e03"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374308",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e03"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e04"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374309",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e04"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e05"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374310",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e05"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e06"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374311",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e06"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e07"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374312",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e07"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e08"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374313",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e08"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e09"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374314",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e09"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e10"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374315",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e10"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e11"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374316",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e11"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e12"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep374317",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e12"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s2-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s2-e13"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep375012",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s2-e13"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e01"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780851",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e01"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e02"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780852",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e02"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e03"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780853",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e03"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e04"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780854",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e04"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e05"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780855",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e05"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e06"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780856",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e06"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e07"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep780857",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e07"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e08"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep786073",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e08"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e09"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep786074",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e09"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e10"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep786075",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e10"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e11"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep791086",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e11"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e12"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep791087",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e12"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-s3-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-s3-e13"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep791088",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-s3-e13"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e01"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330747",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e01"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e02"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330748",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e02"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e03"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330749",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e03"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e04"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330750",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e04"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e05"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330751",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e05"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e06"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330752",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e06"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e07"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330753",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e07"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e08"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330754",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e08"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e09"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330755",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e09"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e10"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330756",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e10"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e11"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330757",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e11"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-umayon-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e12"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep330758",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-umayon-e12"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e01"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1655818",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e01"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e02"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1655819",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e02"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e03"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1655820",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e03"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e04"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1655821",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e04"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e05",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e05"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1728588",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e05"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e06",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e06"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1728749",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e06"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e07"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1728750",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e07"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e08",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e08"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1792337",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e08"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e09",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e09"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1792338",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e09"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e10",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e10"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1792339",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e10"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e11",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e11"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1864977",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e11"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e12",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e12"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1864978",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e12"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e13"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep1864979",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e13"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e14",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e14"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2348768",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e14"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e15",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e15"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2348769",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e15"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e16",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e16"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2348770",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e16"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e17",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e17"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2348771",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e17"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e18",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e18"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2455894",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e18"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e19",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e19"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2455895",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e19"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e20",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e20"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2455896",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e20"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e21",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e21"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2586397",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e21"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e22",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e22"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2586398",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e22"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-cinderella-gray-e23",
+      "scope": {
+        "type": "unit",
+        "id": "anime-cinderella-gray-e23"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep2586399",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "membership",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-cinderella-gray-e23"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-rttt-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e01"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep765783",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-rttt-e01"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-rttt-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e02"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep765784",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-rttt-e02"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-rttt-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e03"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep765785",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-rttt-e03"
+      ]
+    },
+    {
+      "id": "watch-bilibili-anime-rttt-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e04"
+      },
+      "platform": "bilibili",
+      "url": "https://www.bilibili.com/bangumi/play/ep765786",
+      "publisher": "bilibili 番剧",
+      "authority": "licensed",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": [
+          "zh-Hans"
+        ]
+      },
+      "access": "free",
+      "regions": [
+        "CN"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-03",
+      "source_ref": "bilibili-licensed",
+      "content_type": "full_episode",
+      "unit_ids": [
+        "anime-rttt-e04"
+      ]
+    },
+    {
+      "id": "watch-official-directory-anime-umayuru",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayuru"
+      },
+      "url": "https://umamusume.jp/contents/anime/umayuru/episodes/01/",
+      "platform": "official_site",
+      "publisher": "Cygames",
+      "authority": "official",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e01",
+        "anime-umayuru-prettygray-e02",
+        "anime-umayuru-prettygray-e03",
+        "anime-umayuru-prettygray-e04",
+        "anime-umayuru-fullgate-e01",
+        "anime-umayuru-e01",
+        "anime-umayuru-e02",
+        "anime-umayuru-e03",
+        "anime-umayuru-e04",
+        "anime-umayuru-e05",
+        "anime-umayuru-e06",
+        "anime-umayuru-e07",
+        "anime-umayuru-e08",
+        "anime-umayuru-e09",
+        "anime-umayuru-e10",
+        "anime-umayuru-e11",
+        "anime-umayuru-e12",
+        "anime-umayuru-e13",
+        "anime-umayuru-e14",
+        "anime-umayuru-e15",
+        "anime-umayuru-e16",
+        "anime-umayuru-e17",
+        "anime-umayuru-e18",
+        "anime-umayuru-e19",
+        "anime-umayuru-e20",
+        "anime-umayuru-e21",
+        "anime-umayuru-e22",
+        "anime-umayuru-e23",
+        "anime-umayuru-e24"
+      ],
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-umayuru"
+    },
+    {
+      "id": "watch-official-directory-anime-umayuru-prettygray",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayuru-prettygray"
+      },
+      "url": "https://umamusume.jp/contents/anime/umayuru-prettygray/#episode",
+      "platform": "official_site",
+      "publisher": "Cygames",
+      "authority": "official",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-umayuru-prettygray-e01",
+        "anime-umayuru-prettygray-e02",
+        "anime-umayuru-prettygray-e03",
+        "anime-umayuru-prettygray-e04"
+      ],
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-prettygray"
+    },
+    {
+      "id": "watch-official-directory-anime-umayuru-fullgate",
+      "scope": {
+        "type": "work",
+        "id": "anime-umayuru-fullgate"
+      },
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
+      "platform": "official_site",
+      "publisher": "Cygames",
+      "authority": "official",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-umayuru-fullgate-e01",
+        "anime-umayuru-fullgate-e02",
+        "anime-umayuru-fullgate-e03"
+      ],
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-fullgate"
+    },
+    {
+      "id": "watch-official-anime-rttt-e01",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e01"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=pjPXzJedwiA",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-story-anime-rttt-e01"
+    },
+    {
+      "id": "watch-official-anime-rttt-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e02"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=0jev2Uv37F8",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-story-anime-rttt-e02"
+    },
+    {
+      "id": "watch-official-anime-rttt-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e03"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=A42wNP1DJho",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-story-anime-rttt-e03"
+    },
+    {
+      "id": "watch-official-anime-rttt-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-rttt-e04"
+      },
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=RIDl7x_gFGE",
+      "publisher": "ぱかチューブっ！",
+      "authority": "official",
+      "content_type": "full_episode",
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-story-anime-rttt-e04"
+    },
+    {
+      "id": "watch-rttt-official-series",
+      "scope": {
+        "type": "work",
+        "id": "anime-rttt"
+      },
+      "platform": "official_site",
+      "url": "https://umamusume.jp/contents/anime/roadtothetop/#story",
+      "publisher": "Cygames",
+      "authority": "official",
+      "content_type": "series",
+      "unit_ids": [
+        "anime-rttt-e01",
+        "anime-rttt-e02",
+        "anime-rttt-e03",
+        "anime-rttt-e04"
+      ],
+      "languages": {
+        "audio": [
+          "ja"
+        ],
+        "subtitles": []
+      },
+      "access": "free",
+      "regions": [
+        "global"
+      ],
+      "status": "active",
+      "verified_at": "2026-10-04",
+      "source_ref": "official-rttt"
+    },
+    {
+      "id": "umayon-extra-preview-e13",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayon-e13"
+      },
+      "authority": "official",
+      "status": "active",
+      "content_type": "full_episode",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
+      "source_ref": "official-umayon-extra-preview"
+    },
+    {
+      "id": "watch-official-anime-umayuru-fullgate-e02",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e02"
+      },
+      "platform": "youtube",
+      "authority": "official",
+      "content_type": "full_episode",
+      "status": "active",
+      "access": "free",
+      "url": "https://www.youtube.com/watch?v=COwezDS-R3s",
+      "source_ref": "official-story-anime-umayuru-fullgate-e02",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "watch-official-anime-umayuru-fullgate-e03",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e03"
+      },
+      "platform": "youtube",
+      "authority": "official",
+      "content_type": "full_episode",
+      "status": "active",
+      "access": "free",
+      "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
+      "source_ref": "official-story-anime-umayuru-fullgate-e03",
+      "verified_at": "2026-10-12"
+    }
+  ]
+}

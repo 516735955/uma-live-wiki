@@ -329,7 +329,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 return ""
 
             @staticmethod
-            def current_character_id(_actor_id):
+            def current_character_id(_actor_id, _role=""):
                 return ""
 
             profile_by_id = {}
@@ -377,7 +377,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 return ""
 
             @staticmethod
-            def current_character_id(_actor_id):
+            def current_character_id(_actor_id, _role=""):
                 return ""
 
             profile_by_id = {}
@@ -751,7 +751,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 return "character-b"
 
             @staticmethod
-            def current_character_id(_actor_id):
+            def current_character_id(_actor_id, _role=""):
                 return "character-a"
 
             @staticmethod
@@ -788,6 +788,27 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             ),
             [],
         )
+
+    def test_known_franchise_actor_without_catalogued_role_keeps_event_participation(self):
+        class Identities:
+            profile_by_id = {"va-1": {"identity": {"zh": "声优甲"}, "roles": []}}
+            character_by_id = {}
+
+            @staticmethod
+            def voice_id(_name):
+                return "va-1"
+
+            @staticmethod
+            def current_character_id(_actor_id, _role=""):
+                return ""
+
+        cast = UPDATE_EVENTS.make_cast(
+            [{"name": "声优甲", "role": "已排除的角色"}], Identities(), "official_youtube",
+        )
+        self.assertEqual(len(cast), 1)
+        self.assertEqual(cast[0]["voice_actor_id"], "va-1")
+        self.assertEqual(cast[0]["character_id"], "")
+        self.assertEqual(cast[0]["role"], "")
 
     def test_wikipedia_search_identity_rejects_unrelated_people(self):
         self.assertEqual(UPDATE_EVENTS.wikipedia_title_key("中島由貴 (声優)"), UPDATE_EVENTS.wikipedia_title_key("中島由貴"))

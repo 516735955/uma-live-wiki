@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "works": {},
+  "units": {},
+  "watch_resources": {},
+  "relations": {},
+  "excluded_characters": [
+    {
+      "id": "akasakamisato",
+      "names": [
+        "赤坂美聪",
+        "赤坂美聡"
+      ]
+    },
+    {
+      "id": "hosoejunko",
+      "names": [
+        "细江纯子",
+        "細江純子"
+      ]
+    },
+    {
+      "id": "blacky_ale",
+      "names": [
+        "布莱奇应援",
+        "ブラッキーエール"
+      ]
+    },
+    {
+      "id": "meikun_tsukasa",
+      "names": [
+        "名君司",
+        "メイクンツカサ"
+      ]
+    },
+    {
+      "id": "kraft_univer",
+      "names": [
+        "克拉夫特宇宙",
+        "クラフトユニヴァ"
+      ]
+    },
+    {
+      "id": "god_hannibal",
+      "names": [
+        "神威汉尼拔",
+        "ゴッドハンニバル"
+      ]
+    },
+    {
+      "id": "akitsu_teio",
+      "names": [
+        "秋津帝王",
+        "アキツテイオー"
+      ]
+    },
+    {
+      "id": "dynam_heroine",
+      "names": [
+        "戴娜姆女杰",
+        "ダイナムヒロイン"
+      ]
+    },
+    {
+      "id": "lord_royal",
+      "names": [
+        "皇家之路",
+        "ロードロイヤル"
+      ]
+    },
+    {
+      "id": "yamano_southern",
+      "names": [
+        "山野南方",
+        "ヤマノサウザン"
+      ]
+    },
+    {
+      "id": "teppen_commentator_honizumi",
+      "names": [
+        "《巅峰之路》解说",
+        "《ウマ娘 プリティーダービー》実況（本泉莉奈）"
+      ]
+    },
+    {
+      "id": "teppen_commentator_yamamoto",
+      "names": [
+        "《巅峰之路》解说",
+        "《ウマ娘 プリティーダービー》実況（山本昌広）"
+      ]
+    },
+    {
+      "id": "shibasaki_koichi",
+      "names": [
+        "柴崎宏壹",
+        "柴崎宏壱"
+      ]
+    },
+    {
+      "id": "kawamura_hiyori",
+      "names": [
+        "川村日和",
+        "川村日和"
+      ]
+    },
+    {
+      "id": "iwao_tadaichi",
+      "names": [
+        "岩唯一",
+        "巌唯一"
+      ]
+    },
+    {
+      "id": "shihandai",
+      "names": [
+        "师范代",
+        "師範代"
+      ]
+    },
+    {
+      "id": "komiyama_masami",
+      "names": [
+        "小宫山胜美",
+        "小宮山勝美"
+      ]
+    },
+    {
+      "id": "nase_fumino",
+      "names": [
+        "奈濑文乃",
+        "奈瀬文乃"
+      ]
+    },
+    {
+      "id": "kouchi_tadashi",
+      "names": [
+        "小内忠",
+        "小内忠"
+      ]
+    },
+    {
+      "id": "yuzuhara_ryuko",
+      "names": [
+        "梼原龙子",
+        "檮原龍子"
+      ]
+    },
+    {
+      "id": "yuzuhara_taro",
+      "names": [
+        "梼原太郎",
+        "檮原太郎"
+      ]
+    },
+    {
+      "id": "fujii_sensuke",
+      "names": [
+        "藤井泉助",
+        "藤井泉助"
+      ]
+    },
+    {
+      "id": "tojo_hana",
+      "names": [
+        "东条华",
+        "東条ハナ"
+      ]
+    },
+    {
+      "id": "tanabe_trainer",
+      "names": [
+        "田边训练员",
+        "タナベトレーナー"
+      ]
+    },
+    {
+      "id": "roux",
+      "names": [
+        "卢",
+        "ルー"
+      ]
+    },
+    {
+      "id": "shima",
+      "names": [
+        "岛",
+        "シマ"
+      ]
+    },
+    {
+      "id": "mei",
+      "names": [
+        "梅",
+        "メイ"
+      ]
+    },
+    {
+      "id": "izumimoto_nana",
+      "names": [
+        "泉本奈奈",
+        "泉本奈々"
+      ]
+    },
+    {
+      "id": "minamisaka",
+      "names": [
+        "南坂",
+        "南坂"
+      ]
+    },
+    {
+      "id": "kuronuma",
+      "names": [
+        "黑沼",
+        "黒沼"
+      ]
+    },
+    {
+      "id": "broye",
+      "names": [
+        "ブロワイエ",
+        "ブロワイエ"
+      ]
+    },
+    {
+      "id": "sun_visor",
+      "names": [
+        "サンバイザー",
+        "サンバイザー"
+      ]
+    },
+    {
+      "id": "queen_berry",
+      "names": [
+        "クイーンベレー",
+        "クイーンベレー"
+      ]
+    },
+    {
+      "id": "rionatal",
+      "names": [
+        "リオナタール",
+        "リオナタール"
+      ]
+    },
+    {
+      "id": "daisangen",
+      "names": [
+        "ダイサンゲン",
+        "ダイサンゲン"
+      ]
+    },
+    {
+      "id": "relic_earth",
+      "names": [
+        "レリックアース",
+        "レリックアース"
+      ]
+    },
+    {
+      "id": "merry_beauty",
+      "names": [
+        "メリービューティー",
+        "メリービューティー"
+      ]
+    },
+    {
+      "id": "luna_swallow",
+      "names": [
+        "ルナスワロー",
+        "ルナスワロー"
+      ]
+    },
+    {
+      "id": "nanto_ichiban",
+      "names": [
+        "ナントウイチバン",
+        "ナントウイチバン"
+      ]
+    },
+    {
+      "id": "south_heroine",
+      "names": [
+        "サウスヒロイン",
+        "サウスヒロイン"
+      ]
+    },
+    {
+      "id": "sekai_toha",
+      "names": [
+        "セカイトーハー",
+        "セカイトーハー"
+      ]
+    },
+    {
+      "id": "walk_dancer",
+      "names": [
+        "ウォークダンサー",
+        "ウォークダンサー"
+      ]
+    },
+    {
+      "id": "spring_sing",
+      "names": [
+        "スプリングシング",
+        "スプリングシング"
+      ]
+    },
+    {
+      "id": "faith_no_more",
+      "names": [
+        "フェイスノーモア",
+        "フェイスノーモア"
+      ]
+    },
+    {
+      "id": "romance_bubbly",
+      "names": [
+        "ロマンスバブリー",
+        "ロマンスバブリー"
+      ]
+    },
+    {
+      "id": "fuyuno_nakasumi",
+      "names": [
+        "フユノナカスミ",
+        "フユノナカスミ"
+      ]
+    },
+    {
+      "id": "masuo",
+      "names": [
+        "益男",
+        "ますお"
+      ]
+    },
+    {
+      "id": "minami",
+      "names": [
+        "南",
+        "みなみ"
+      ]
+    },
+    {
+      "id": "tsuukaa",
+      "names": [
+        "默契之交",
+        "ツウカア"
+      ]
+    }
+  ]
+}

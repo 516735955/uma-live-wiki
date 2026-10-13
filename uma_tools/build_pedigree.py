@@ -353,11 +353,14 @@ def serialize_export(nodes):
 
 def build_character_meta(nodes):
     available = []
+    non_uma = []
     for node in nodes:
         kind = node.get("mapping_kind")
+        character_id = node.get("character_id") or node.get("cid")
+        if kind == "non_uma":
+            non_uma.append(character_id)
         if kind != "horse":
             continue
-        character_id = node.get("character_id") or node.get("cid")
         relations = node.get("character_relations") or {}
         has_relation = any(relations.get(key) for key in (
             "siblings", "descendants", "partners"
@@ -369,7 +372,7 @@ def build_character_meta(nodes):
         has_lineage = has_lineage or bool(node.get("breeding_partners"))
         if has_lineage or has_relation:
             available.append(character_id)
-    return {"available": available}
+    return {"available": available, "non_uma": non_uma}
 
 
 def serialize_meta(meta):

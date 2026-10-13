@@ -1,44 +1,247 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-29T18:30:00+08:00",
+  "generatedAt": "2026-10-12T00:00:00+08:00",
   "title": "Design System: Uma Musume Live Wiki",
   "extensions": {
     "colorMeta": {
-      "navy": {"role":"neutral","displayName":"深海军蓝","canonical":"#20283b","tonalRamp":["#141a29","#20283b","#2c3650","#52639e","#7e8fba","#b2bdd5","#dce2ee","#f5f4f9"]},
-      "cobalt": {"role":"primary","displayName":"品牌钴蓝","canonical":"#3157ed","tonalRamp":["#14215f","#213aa8","#3157ed","#5f7df2","#8fa4f6","#bdcaf9","#dfe6fd","#f7f8ff"]},
-      "brand-orange": {"role":"secondary","displayName":"品牌橙","canonical":"#ff7b16","tonalRamp":["#642700","#963b00","#c45100","#e56605","#ff7b16","#ffa932","#ffd28a","#fff0dc"]},
-      "paper": {"role":"neutral","displayName":"纸张灰","canonical":"#f5f4f9","tonalRamp":["#20283b","#48586c","#79889a","#aeb9c5","#d0d8e0","#e3e8ee","#f0f3f7","#f5f4f9"]},
-      "white": {"role":"neutral","displayName":"白色纸面","canonical":"#ffffff","tonalRamp":["#20283b","#48586c","#79889a","#aeb9c5","#d0d8e0","#e3e8ee","#f5f5f7","#ffffff"]}
+      "navy": {
+        "role": "neutral",
+        "displayName": "深海军蓝",
+        "canonical": "#20283b",
+        "tonalRamp": [
+          "#141a29",
+          "#20283b",
+          "#2c3650",
+          "#52639e",
+          "#7e8fba",
+          "#b2bdd5",
+          "#dce2ee",
+          "#f5f4f9"
+        ]
+      },
+      "cobalt": {
+        "role": "primary",
+        "displayName": "品牌钴蓝",
+        "canonical": "#3157ed",
+        "tonalRamp": [
+          "#14215f",
+          "#213aa8",
+          "#3157ed",
+          "#5f7df2",
+          "#8fa4f6",
+          "#bdcaf9",
+          "#dfe6fd",
+          "#f7f8ff"
+        ]
+      },
+      "brand-orange": {
+        "role": "secondary",
+        "displayName": "品牌橙",
+        "canonical": "#ff7b16",
+        "tonalRamp": [
+          "#642700",
+          "#963b00",
+          "#c45100",
+          "#e56605",
+          "#ff7b16",
+          "#ffa932",
+          "#ffd28a",
+          "#fff0dc"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "纸张灰",
+        "canonical": "#f5f4f9",
+        "tonalRamp": [
+          "#20283b",
+          "#48586c",
+          "#79889a",
+          "#aeb9c5",
+          "#d0d8e0",
+          "#e3e8ee",
+          "#f0f3f7",
+          "#f5f4f9"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "白色纸面",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#20283b",
+          "#48586c",
+          "#79889a",
+          "#aeb9c5",
+          "#d0d8e0",
+          "#e3e8ee",
+          "#f5f5f7",
+          "#ffffff"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": {"displayName":"中文档案标题","purpose":"中文主标题，配合蓝色底线。"},
-      "title": {"displayName":"实体 hero 标题","purpose":"活动、歌曲、专辑、角色和声优详情标题。"},
-      "body": {"displayName":"资料正文","purpose":"关系、表格、来源和说明的主要阅读文字。"}
+      "display": {
+        "displayName": "中文档案标题",
+        "purpose": "实体与首页主标题；资料目录和正文栏目不重复标题。"
+      },
+      "title": {
+        "displayName": "实体 hero 标题",
+        "purpose": "活动、歌曲、专辑、角色和声优详情标题。"
+      },
+      "body": {
+        "displayName": "资料正文",
+        "purpose": "关系、表格、来源和说明的主要阅读文字。"
+      }
     },
     "shadows": [
-      {"name":"capsule-rest","value":"0 5px 12px rgba(49,87,237,.10)","purpose":"白色搜索、下拉和分页胶囊从纸张背景中轻微分离。"},
-      {"name":"catalog-hover","value":"0 8px 20px rgba(49,87,237,.11)","purpose":"目录行和封面卡片悬停反馈。"},
-      {"name":"hero-cover-offset","value":"8px 8px 0 rgba(255,123,22,.88), 0 8px 20px rgba(22,40,92,.18)","purpose":"非人物详情 hero 中封面与品牌身份区形成橙色偏移层。"}
+      {
+        "name": "capsule-rest",
+        "value": "0 5px 12px rgba(49,87,237,.10)",
+        "purpose": "白色搜索、下拉和分页胶囊从纸张背景中轻微分离。"
+      },
+      {
+        "name": "catalog-hover",
+        "value": "0 8px 20px rgba(49,87,237,.11)",
+        "purpose": "目录行和封面卡片悬停反馈。"
+      },
+      {
+        "name": "hero-cover-offset",
+        "value": "8px 8px 0 rgba(255,123,22,.88), 0 8px 20px rgba(22,40,92,.18)",
+        "purpose": "非人物详情 hero 中封面与品牌身份区形成橙色偏移层。"
+      }
     ],
     "motion": [
-      {"name":"official-ease","value":"cubic-bezier(.19,1,.22,1)","purpose":"目录封面缩放、按钮反馈和 hero 进入动画的主要缓动。"},
-      {"name":"state-transition","value":"180ms ease","purpose":"边界、颜色、背景和阴影的短状态变化。"}
+      {
+        "name": "official-ease",
+        "value": "cubic-bezier(.19,1,.22,1)",
+        "purpose": "目录封面缩放、按钮反馈和 hero 进入动画的主要缓动。"
+      },
+      {
+        "name": "state-transition",
+        "value": "180ms ease",
+        "purpose": "边界、颜色、背景和阴影的短状态变化。"
+      }
     ],
-    "breakpoints": [{"name":"tablet","value":"900px"},{"name":"mobile","value":"700px"},{"name":"stack","value":"480px"}]
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      },
+      {
+        "name": "stack",
+        "value": "480px"
+      }
+    ]
   },
   "components": [
-    {"name":"Library Heading","kind":"custom","refersTo":"library-heading","description":"中文主标题与品牌蓝底线。","html":"<header class=\"ds-library-heading\"><h1>歌曲</h1><strong>1,032</strong></header>","css":".ds-library-heading{display:flex;align-items:flex-end;gap:16px;min-height:78px;padding:7px 2px 15px;border-bottom:3px solid #3157ed}.ds-library-heading h1{margin:0;color:#141a29;font:900 clamp(1.55rem,2.8vw,2.35rem)/1 Microsoft YaHei,PingFang SC,sans-serif}.ds-library-heading strong{margin-left:auto;color:#20283b;font:900 1.55rem/1 Microsoft YaHei,PingFang SC,sans-serif}"},
-    {"name":"Capsule Search","kind":"input","refersTo":"capsule-search","description":"所有资料库共用的白色胶囊搜索。","html":"<label class=\"ds-capsule-search\"><span>⌕</span><input type=\"search\" placeholder=\"搜索曲名、活动或人物\"></label>","css":".ds-capsule-search{display:flex;align-items:center;min-height:44px;border:1px solid #a7b4d9;border-radius:999px;background:#fff;box-shadow:0 5px 12px rgba(49,87,237,.1)}.ds-capsule-search span{margin-left:14px;color:#20283b;font-size:20px}.ds-capsule-search input{width:100%;height:42px;padding:0 14px 0 11px;border:0;outline:0;background:transparent;font:400 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif}.ds-capsule-search:focus-within{border-color:#ff7b16;box-shadow:0 0 0 3px rgba(255,123,22,.15),0 6px 14px rgba(49,87,237,.1)}"},
-    {"name":"Capsule Filter","kind":"chip","refersTo":"capsule-filter-active","description":"白色筛选胶囊与品牌蓝 active 状态。","html":"<button class=\"ds-capsule-filter ds-capsule-filter-active\">全部</button>","css":".ds-capsule-filter{min-height:34px;padding:5px 14px;border:1px solid #c7cad5;border-radius:999px;background:#fff;color:#5f5f6a;font:700 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif;cursor:pointer;transition:transform 280ms cubic-bezier(.19,1,.22,1),background 180ms ease,border-color 180ms ease}.ds-capsule-filter:hover{border-color:#ff7b16;color:#213aa8;transform:scale(.95)}.ds-capsule-filter-active{border-color:#3157ed;background:linear-gradient(105deg,#213aa8,#3157ed);color:#fff}"},
-    {"name":"Entity Hero","kind":"custom","refersTo":"entity-hero","description":"紧凑详情 hero；非人物使用品牌蓝橙，角色和声优使用规范角色双色。","html":"<article class=\"ds-entity-hero\"><div class=\"ds-entity-cover\"><span>♪</span></div><div><span class=\"ds-entity-kind\">歌曲</span><h1>うまぴょい伝説</h1></div></article>","css":".ds-entity-hero{display:grid;grid-template-columns:124px minmax(0,1fr);gap:24px;align-items:center;min-height:168px;padding:18px 24px;overflow:hidden;border:1px solid #b9c6ef;border-radius:12px;background:linear-gradient(118deg,#3157ed 0 16%,#ff7b16 16% 22%,#fff 22%);color:#141a29}.ds-entity-hero h1{margin:8px 0 0;max-width:38ch;font:900 clamp(1.35rem,2vw,1.85rem)/1.2 Microsoft YaHei,PingFang SC,sans-serif}.ds-entity-cover{display:grid;place-items:center;width:118px;aspect-ratio:1;border:4px solid #fff;border-radius:8px;background:#eef0f7;box-shadow:8px 8px 0 rgba(255,123,22,.88),0 8px 20px rgba(22,40,92,.18);color:#20283b}"},
-    {"name":"Archive Table","kind":"custom","refersTo":"data-table","description":"资料库、歌曲关系和现场曲目共同使用的表格。","html":"<div class=\"ds-table-frame\"><table class=\"ds-data-table\"><thead><tr><th>曲名</th><th>出演</th></tr></thead><tbody><tr><td><a href=\"#\">うまぴょい伝説</a></td><td>3 场</td></tr></tbody></table></div>","css":".ds-table-frame{overflow-x:auto;border-top:2px solid #20283b;background:#fff}.ds-data-table{width:100%;min-width:700px;border-spacing:0;border-collapse:collapse;color:#26272b;font:400 14px/1.5 Microsoft YaHei,PingFang SC,sans-serif}.ds-data-table th{padding:13px 12px;border-bottom:2px solid #20283b;background:#f5f6fb;color:#20283b;font-weight:900;text-align:left}.ds-data-table td{padding:12px;border-bottom:1px solid #e3e5ef}.ds-data-table tbody tr:hover td{background:#f4f7ff}.ds-data-table a{color:#20283b;font-weight:800;text-decoration:none}.ds-data-table a:hover{color:#213aa8}"}
+    {
+      "name": "Capsule Search",
+      "kind": "input",
+      "refersTo": "capsule-search",
+      "description": "所有资料库共用的白色胶囊搜索。",
+      "html": "<label class=\"ds-capsule-search\"><span>⌕</span><input type=\"search\" placeholder=\"搜索曲名、活动或人物\"></label>",
+      "css": ".ds-capsule-search{display:flex;align-items:center;min-height:44px;border:1px solid #a7b4d9;border-radius:999px;background:#fff;box-shadow:0 5px 12px rgba(49,87,237,.1)}.ds-capsule-search span{margin-left:14px;color:#20283b;font-size:20px}.ds-capsule-search input{width:100%;height:42px;padding:0 14px 0 11px;border:0;outline:0;background:transparent;font:400 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif}.ds-capsule-search:focus-within{border-color:#ff7b16;box-shadow:0 0 0 3px rgba(255,123,22,.15),0 6px 14px rgba(49,87,237,.1)}"
+    },
+    {
+      "name": "Capsule Filter",
+      "kind": "chip",
+      "refersTo": "capsule-filter-active",
+      "description": "白色筛选胶囊与品牌蓝 active 状态。",
+      "html": "<button class=\"ds-capsule-filter ds-capsule-filter-active\">全部</button>",
+      "css": ".ds-capsule-filter{min-height:34px;padding:5px 14px;border:1px solid #c7cad5;border-radius:999px;background:#fff;color:#5f5f6a;font:700 14px/1.3 Microsoft YaHei,PingFang SC,sans-serif;cursor:pointer;transition:transform 280ms cubic-bezier(.19,1,.22,1),background 180ms ease,border-color 180ms ease}.ds-capsule-filter:hover{border-color:#ff7b16;color:#213aa8;transform:scale(.95)}.ds-capsule-filter-active{border-color:#3157ed;background:linear-gradient(105deg,#213aa8,#3157ed);color:#fff}"
+    },
+    {
+      "name": "Entity Hero",
+      "kind": "custom",
+      "refersTo": "entity-hero",
+      "description": "紧凑详情 hero；非人物使用品牌蓝橙，角色和声优使用规范角色双色。",
+      "html": "<article class=\"ds-entity-hero\"><div class=\"ds-entity-cover\"><span>♪</span></div><div><span class=\"ds-entity-kind\">歌曲</span><h1>うまぴょい伝説</h1></div></article>",
+      "css": ".ds-entity-hero{display:grid;grid-template-columns:124px minmax(0,1fr);gap:24px;align-items:center;min-height:168px;padding:18px 24px;overflow:hidden;border:1px solid #b9c6ef;border-radius:12px;background:linear-gradient(118deg,#3157ed 0 16%,#ff7b16 16% 22%,#fff 22%);color:#141a29}.ds-entity-hero h1{margin:8px 0 0;max-width:38ch;font:900 clamp(1.35rem,2vw,1.85rem)/1.2 Microsoft YaHei,PingFang SC,sans-serif}.ds-entity-cover{display:grid;place-items:center;width:118px;aspect-ratio:1;border:4px solid #fff;border-radius:8px;background:#eef0f7;box-shadow:8px 8px 0 rgba(255,123,22,.88),0 8px 20px rgba(22,40,92,.18);color:#20283b}"
+    },
+    {
+      "name": "Archive Table",
+      "kind": "custom",
+      "refersTo": "data-table",
+      "description": "资料库、歌曲关系和现场曲目共同使用的表格。",
+      "html": "<div class=\"ds-table-frame\"><table class=\"ds-data-table\"><thead><tr><th>曲名</th><th>出演</th></tr></thead><tbody><tr><td><a href=\"#\">うまぴょい伝説</a></td><td>3 场</td></tr></tbody></table></div>",
+      "css": ".ds-table-frame{overflow-x:auto;border-top:2px solid #20283b;background:#fff}.ds-data-table{width:100%;min-width:700px;border-spacing:0;border-collapse:collapse;color:#26272b;font:400 14px/1.5 Microsoft YaHei,PingFang SC,sans-serif}.ds-data-table th{padding:13px 12px;border-bottom:2px solid #20283b;background:#f5f6fb;color:#20283b;font-weight:900;text-align:left}.ds-data-table td{padding:12px;border-bottom:1px solid #e3e5ef}.ds-data-table tbody tr:hover td{background:#f4f7ff}.ds-data-table a{color:#20283b;font-weight:800;text-decoration:none}.ds-data-table a:hover{color:#213aa8}"
+    },
+    {
+      "name": "Anime Work Card",
+      "kind": "card",
+      "description": "专辑网格与hover；完整主视觉按原比例显示，名称与年份位于图下。",
+      "html": "<a class=\"ds-anime-card\" href=\"#\"><div class=\"ds-anime-cover\"><svg viewBox=\"0 0 120 63\" aria-hidden=\"true\"><rect width=\"120\" height=\"63\" fill=\"#eef2ff\"/><path d=\"M20 44 44 18 68 44Z\" fill=\"#3157ed\"/><circle cx=\"91\" cy=\"23\" r=\"10\" fill=\"#ffa932\"/></svg></div><div class=\"ds-anime-copy\"><b>赛马娘 芦毛灰姑娘</b><span>2025 · 电视动画 · 已完结</span></div></a>",
+      "css": ".ds-anime-card{display:block;width:260px;border:1px solid #d7dceb;background:#fff;color:#172348;text-decoration:none;box-shadow:0 4px 14px rgba(24,31,70,.1);font:400 14px/1.5 Microsoft YaHei,PingFang SC,sans-serif;transition:transform 260ms ease,box-shadow 180ms ease}.ds-anime-cover{aspect-ratio:4/3;display:grid;place-items:center;padding:12px;background:#f2f5ff}.ds-anime-cover svg{width:100%;height:100%;object-fit:contain}.ds-anime-copy{display:grid;gap:4px;padding:12px 14px 16px}.ds-anime-copy b{font-size:16px;line-height:1.45}.ds-anime-copy span{color:#667189;font-size:14px}.ds-anime-card:hover{border-color:#ff7b16;box-shadow:0 10px 24px rgba(24,31,70,.15);transform:translateY(-4px)}.ds-anime-card:focus-visible{outline:2px solid #ff7b16;outline-offset:3px}"
+    },
+    {
+      "name": "Anime Detail Flow",
+      "kind": "custom",
+      "refersTo": "entity-hero",
+      "description": "平台图标按钮位于共享Hero；正文用途标签与折叠摘要，不重复栏目标题。共享摘要按实际封面与次要信息分配列，缺少内容不占空列；手机保留音乐用途标签，长名单展开时创建内容。",
+      "html": "<div class=\"ds-anime-detail\"><a class=\"ds-anime-watch\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m10 8 6 4-6 4Z\"/></svg>YouTube<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a><details class=\"ds-anime-staff\"><summary>原画 <span>22 位</span></summary><p><em>机构</em> 参与者　参与者</p></details></div>",
+      "css": ".ds-anime-detail{font:400 14px/1.5 Microsoft YaHei,PingFang SC,sans-serif;color:#20283b}.ds-anime-watch{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid #ffb881;border-radius:999px;background:#fff;color:inherit;text-decoration:none;font-weight:700}.ds-anime-watch svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}.ds-anime-watch:hover{border-color:#ff7b16;color:#213aa8}.ds-anime-watch:focus-visible{outline:2px solid #ff7b16;outline-offset:3px}.ds-anime-staff{margin-top:12px;border-bottom:1px solid #dfe3ee}.ds-anime-staff summary{padding:10px 12px;font-size:15px;font-weight:700;cursor:pointer}.ds-anime-staff summary span{margin-left:16px;color:#667189;font-size:14px;font-weight:400}.ds-anime-staff p{padding:2px 12px 14px;margin:0}.ds-anime-staff em{padding:4px 10px;border:1px solid #bfcaff;border-radius:999px;font-style:normal;color:#213aa8}.ds-anime-staff summary:hover{color:#3157ed}.ds-anime-staff summary:focus-visible{outline:2px solid #ff7b16;outline-offset:2px}"
+    },
+    {
+      "name": "Anime Staff Pager",
+      "kind": "custom",
+      "refersTo": "data-table",
+      "description": "制作人员直接使用创作者整行列表、姓名／职务搜索及共享分页。",
+      "html": "<div class=\"ds-anime-pager\"><span>1–40 / 120</span><div><button disabled>上一页</button><button class=\"active\">1</button><button>2</button><button>下一页</button></div></div>",
+      "css": ".ds-anime-pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;color:#5f5f6a;font:400 12px/1.4 Microsoft YaHei,PingFang SC,sans-serif;font-variant-numeric:tabular-nums}.ds-anime-pager div{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.ds-anime-pager button{min-width:35px;min-height:35px;padding:5px 10px;border:1px solid #d8d5e2;border-radius:999px;background:#fff;color:#20283b;font:700 12px/1.3 Microsoft YaHei,PingFang SC,sans-serif;cursor:pointer;box-shadow:0 3px 8px rgba(49,87,237,.08);transition:transform 280ms cubic-bezier(.19,1,.22,1),border-color 180ms ease,background 180ms ease}.ds-anime-pager button:not(:disabled):hover{border-color:#ff7b16;color:#213aa8;transform:scale(.94)}.ds-anime-pager button.active{border-color:#3157ed;background:linear-gradient(105deg,#213aa8,#3157ed);color:#fff}.ds-anime-pager button:disabled{opacity:.38;cursor:default}"
+    }
   ],
   "narrative": {
-    "northStar":"蓝橙结构里的官方资料馆",
-    "overview":"这是一个围绕赛马娘 LIVE 资料建立的粉丝档案馆。官方 umamusume.jp 的深蓝纹理、强烈的中文标题和橙色品牌强调提供入口感；进入资料区后，白色纸张表面承载长列表和表格，让活动、歌曲、专辑、角色与声优之间的事实关系保持清楚。页面不是各自独立的仪表盘，而是一套可以沿关系连续浏览、随时返回的资料系统。\n\n资料库同级页面遵循同一套骨架：返回入口、中文大标题与蓝色底线、白色胶囊搜索/下拉/筛选、结果列表或资料表、详情 hero 与关系分节。活动详情直接承接已经精调的现场曲目表；专辑列表保留旧版封面卡片和 View more 悬停反馈，角色列表保留旧版彩色角色卡。信息优先于装饰，不使用粉色、暖色筛选面板、大红重置按钮、AI 式小字说明、英文微型副标题、侧边色条或嵌套卡片。",
-    "keyCharacteristics":["顶部导航的品牌蓝橙是公共界面的唯一品牌来源；角色和声优 hero 使用角色数据中的规范双色。","中文主标题和蓝色底线是资料页统一页头，不添加英文微型副标题。","搜索、下拉、筛选、分页和详情栏目使用统一的白底胶囊语言，筛选与分页 active 使用蓝色渐变。","白色纸张表面承载数据；关系 chip 由角色色圆形头像和中文名组成。","桌面端 1440px 与 1920px 是主要验收面，逐级收窄后 390px 保持主要功能可用。"],
-    "rules":[{"name":"The Blue Active Rule","body":"筛选和分页 active 统一使用深蓝到钴蓝的渐变；橙色只用于导航、详情身份、角色卡和关键交互，不使用粉色、暖色筛选容器或大红色重置动作抢占资料层级。","section":"colors"},{"name":"The Clear Record Rule","body":"主要资料文字不低于 14px；页头层级由中文标题和蓝色底线直接表达，不把关键内容藏进小字注释、侧边说明或仅供模型理解的标签。","section":"typography"},{"name":"The Texture-First Rule","body":"深度优先来自官方风格纹理、内容封面和白色纸张的对比；阴影只说明表面或交互状态，不替代信息结构。","section":"elevation"}],
-    "dos":["Do 使用唯一品牌蓝橙、白色纸张表面和规范角色双色。","Do 为所有同级资料库复用中文大标题、蓝底线和统一胶囊控件。","Do 延续专辑封面卡片与 View more hover，延续角色彩色卡和角色色头像 chip。","Do 让活动、歌曲、专辑、角色、声优与创作者通过真实关系互相跳转，并允许返回原浏览位置。","Do 先在 1440px 与 1920px 验收，再确认 390px 主要功能可用。"],
-    "donts":["Don't 为同级资料库另造不同的页头、筛选、下拉或表格组件。","Don't 使用粉色、暖色筛选面板、大红重置、AI 式小字说明、英文微型副标题、侧边色条或嵌套卡片。","Don't 用指标卡、渐变大背景或装饰性统计替代真实资料和关系表。","Don't 将歌词、署名表、个人资料或共同作品居中成窄栏。","Don't 擅自改变角色、声优、其他的资料库总导航层级。","Don't 覆盖人工精调的现场曲目来源，或推测没有证据的出演关系。"]
+    "northStar": "蓝橙结构里的官方资料馆",
+    "overview": "这是一个围绕赛马娘 LIVE 资料建立的粉丝档案馆。顶部导航的品牌蓝橙是公共界面的唯一品牌来源；进入资料区后，白色纸张表面承载长列表和表格，让动漫、活动、歌曲、专辑、角色、声优与创作者之间的事实关系保持清楚。页面不是各自独立的仪表盘，而是一套可以沿关系连续浏览、随时返回的资料系统。\n\n资料库同级目录遵循同一套骨架：不设重复的标题、计数和返回区，页面直接从统一搜索、下拉与筛选组件开始，再进入结果列表或资料表。原子详情使用规范面包屑、详情 hero 与关系分节；只有从一个原子详情进入另一个原子详情时，才出现不占版面的上下文返回按钮。活动详情直接承接已经精调的现场曲目表；专辑列表保留封面卡片和 `View more` 悬停反馈，角色列表保留旧版彩色角色卡。信息优先于装饰，不使用粉色、暖色筛选面板、大红重置按钮、AI 式小字说明、侧边色条或嵌套卡片。",
+    "keyCharacteristics": [
+      "顶部导航使用唯一品牌蓝橙；非人物详情 hero 使用同一蓝橙身份区，角色与声优 hero 使用角色数据中的规范双色。",
+      "同级目录从同一套搜索、下拉和筛选控件开始，不再用页头重复表达导航中已有的信息。",
+      "搜索、下拉使用克制圆角白色表面；筛选、分页和详情栏目使用统一胶囊语言，active 使用蓝色渐变。",
+      "白色纸张表面承载数据；关系 chip 由角色色圆形头像和中文名组成。",
+      "桌面端是主要验收面，先在 1440px 与 1920px 保证完整扫描和关系阅读，再在 900px/700px/480px 逐级收窄，390px 保持主要功能可用。"
+    ],
+    "rules": [
+      {
+        "name": "The Blue Active Rule",
+        "body": "筛选和分页 active 统一使用深蓝到钴蓝的渐变；橙色只用于导航、详情身份、角色卡和关键交互，不使用粉色、暖色筛选容器或大红色重置动作抢占资料层级。",
+        "section": "colors"
+      },
+      {
+        "name": "The Clear Record Rule",
+        "body": "主要资料文字保持可读；实体名称由 Hero 标题表达，栏目与内容分组不重复制造标题和横线，不把关键内容藏进小字注释或侧边说明。",
+        "section": "typography"
+      },
+      {
+        "name": "The Texture-First Rule",
+        "body": "深度优先来自官方风格纹理、内容封面和白色纸张的对比；阴影只说明表面或交互状态，不替代信息结构。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 使用唯一品牌蓝橙、白色纸张表面和规范角色双色。",
+      "**Do** 先在 1440px 与 1920px 验收详情、关系图和长表，再检查移动端兼容。",
+      "**Do** 让所有同级目录直接从统一搜索、下拉和筛选组件开始。",
+      "**Do** 延续专辑封面卡片与 `View more` hover，延续角色彩色卡和角色色头像 chip。",
+      "**Do** 让动漫、活动、歌曲、专辑、角色、声优通过真实关系互相跳转，并允许返回原浏览位置。",
+      "**Do** 将概览与观看入口集中于 Hero，正文使用实际非空栏目、紧凑关系标签和共用折叠组件表达内容。",
+      "**Do** 让 Staff 的搜索、分页、作品参与和机构标签沿用已有创作者资料语言，并在数据中如实记录署名覆盖状态。",
+      "**Do** 让主要资料在桌面和 390px 手机都保持清晰可读，并尊重 `prefers-reduced-motion`。"
+    ],
+    "donts": [
+      "**Don't** 为同级资料库另造标题计数区、筛选、下拉或表格组件。",
+      "**Don't** 使用粉色、暖色筛选面板、大红重置、AI 式小字说明、英文微型副标题、侧边色条或嵌套卡片。",
+      "**Don't** 用指标卡、渐变大背景或装饰性统计替代真实资料和关系表。",
+      "**Don't** 把关系 chip 做成无头像的通用标签，也不要把角色色扩散成整页暖色背景。",
+      "**Don't** 将歌词、署名表、个人资料或共同作品居中成窄栏，也不要让桌面端为了迁就手机而失去正常阅读宽度。",
+      "**Don't** 擅自改变“角色 / 声优 / 动漫 / 制作人员 / 其他”的资料库总导航层级。",
+      "**Don't** 覆盖人工精调的现场曲目来源，或推测没有证据的出演关系。",
+      "**Don't** 把 Staff 机构标签扩展成组织目录或过滤器，也不要把仅有主要职员资料的单元写成完整片尾署名。",
+      "**Don't** 为动漫页面发明额外统计卡或独立分页结构；不把原生 disclosure 改造成自定义播放控件。"
+    ]
   }
 }

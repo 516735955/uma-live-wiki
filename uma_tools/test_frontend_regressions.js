@@ -5,11 +5,15 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 const { CatalogStore } = require('./catalog-store');
+const { AnimeStore } = require('./anime-store');
 const source = (name) => fs.readFileSync(path.join(__dirname, name), 'utf8');
 const deferred = () => { let resolve; const promise = new Promise((done) => { resolve = done; }); return { promise, resolve }; };
 
 async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
+  const animeStore = new AnimeStore(path.join(__dirname, '..', 'data'));
+  let animeFailure = '';
+  let delayedGraph = null;
   const calls = [];
   const details = new Map();
   let newsDetail = deferred();
@@ -22,12 +26,14 @@ async function main() {
     location, scrollTo() {}, requestAnimationFrame(callback) { callback(); },
     dispatchEvent() {}, setTimeout, clearTimeout,
     CHAR_INDEX: [{ id: 'mock', name: 'Mock' }], CHAR_DETAIL: {}, UmaCharacterUi: { init() {} },
+    HORSES: [{ id: 'mock-horse', zh: 'Mock Horse' }],
     UmaPlayer: require('./player-controller'), UmaRoutes: require('./route-utils'),
-    UmaUi: {}, UmaCreatorNetwork: {}
+    UmaUi: {}, UmaCreatorNetwork: {}, UmaAnimeLoader: require('./anime-loader'), UmaAnimeStaff: require('./anime-staff')
   };
   const history = {
-    state: {}, pushState(state, unused, url) { this.state = state; location.href = new URL(url, location).href; },
-    replaceState(state, unused, url) { this.pushState(state, unused, url); }
+    state: {}, pushes: [],
+    pushState(state, unused, url) { this.pushes.push(url); this.replaceState(state, unused, url); },
+    replaceState(state, unused, url) { this.state = state; location.href = new URL(url, location).href; }
   };
   window.UmaApi = {
     query: (params) => '?' + new URLSearchParams(Object.entries(params).filter((entry) => entry[1] !== undefined)).toString(),
@@ -41,11 +47,23 @@ async function main() {
       }
       if (parsed.pathname === '/api/catalog/songs') return store.songs(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/events') return store.events(parsed.searchParams);
+      if (parsed.pathname === '/api/catalog/event') return store.event(parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/albums') return store.albums(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/creators') return store.creators(parsed.searchParams);
+      if (parsed.pathname === '/api/catalog/creator') return store.creator(parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/voice-actors') return store.voices();
       if (parsed.pathname === '/api/catalog/appearance') return store.appearance(parsed.searchParams.get('type'), parsed.searchParams.get('id'));
-      if (parsed.pathname === '/api/catalog/song') return details.get(parsed.searchParams.get('id')).promise;
+      if (parsed.pathname === '/api/catalog/anime') {
+        const scope = parsed.searchParams.get('scope');
+        if (scope === 'graph' && delayedGraph) return delayedGraph.promise;
+        if (animeFailure === scope) throw new Error('HTTP 503');
+        return animeStore.response(scope, parsed.searchParams.get('id'));
+      }
+      if (parsed.pathname === '/api/catalog/anime-media') return { songs: [], events: [] };
+      if (parsed.pathname === '/api/catalog/song') {
+        const id=parsed.searchParams.get('id');
+        return details.has(id)?details.get(id).promise:store.song(id);
+      }
       return {};
     }
   };
@@ -69,6 +87,30 @@ async function main() {
   await app.applyCurrentRoute();
   assert.strictEqual(app.songDbPaged.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');
+
+  const vocalists = [{voice_actor_id:'other-a'}, {voice_actor_id:'current'}, {voice_actor_id:'other-b'}];
+  assert.deepStrictEqual(Array.from(app.relationReleaseVocalists({vocalists}, 'voice_actor', 'current'), row => row.voice_actor_id),
+    ['current', 'other-a', 'other-b'], 'person recordings keep the whole ensemble with the current person first');
+  assert.deepStrictEqual(vocalists.map(row => row.voice_actor_id), ['other-a', 'current', 'other-b'], 'context sorting preserves canonical credits');
+  const premiere = 'live-other-2024-05-06-title-7caa082310e6';
+  location.href = 'http://localhost/zh-Hans/events/' + premiere;
+  history.state = {};
+  const initialPushes = history.pushes.length;
+  await app.applyCurrentRoute();
+  assert(location.pathname.includes('/sessions/'), 'a default event session has its canonical URL');
+  assert.strictEqual(history.pushes.length, initialPushes, 'restoring a default session never inserts a new history entry');
+  assert.strictEqual(app.showContextBack.value, false, 'direct events do not invent a context return');
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-movie-beginning-new-era';
+  await app.openEvent(premiere);
+  assert.strictEqual(history.pushes.length, initialPushes + 1, 'choosing an event creates one navigation entry');
+  assert.strictEqual(app.showContextBack.value, true);
+  location.href = 'http://localhost/zh-Hans/music/creators/creator-cygames-f5bc529953';
+  history.state = {};
+  const beforeRedirect = history.pushes.length;
+  await app.applyCurrentRoute();
+  assert(location.pathname.startsWith('/zh-Hans/music/songs/'), 'legacy organization credits resolve to their song');
+  assert.strictEqual(history.pushes.length,beforeRedirect,'canonical organization redirects replace the route without trapping Back');
+  assert.strictEqual(app.showContextBack.value,false);
 
   location.href = 'http://localhost/zh-Hans/music/songs?page=999';
   await app.applyCurrentRoute();
@@ -192,6 +234,88 @@ async function main() {
   await component.methods.choose.call(selection, { creator_id: 'a' });
   assert.strictEqual(selection.selectedDetail.id, 'a');
   assert.strictEqual(selection.loadError, '');
+  location.href = 'http://localhost/zh-Hans/database/anime?format=movie&year=2023';
+  await app.applyCurrentRoute();
+  assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id), ['anime-movie-beginning-new-era','anime-rttt'], 'retired year URLs do not apply hidden filters');
+  assert(app.animeWorkHref(app.animeFiltered.value.find(work => work.id === 'anime-rttt')).includes('edition=film'));
+  location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeFiltered.value.length, 1, 'network format remains available without a year filter');
+  location.href = 'http://localhost/zh-Hans/database/anime?format=web_short';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeFormat.value, 'short');
+  assert.strictEqual(app.animeFiltered.value.length, 4, 'all television and network shorts share one filter');
+  app.clearAnimeFilters();
+  app.animeQuery.value = '走向我们的舞台';
+  const actualUnit = (await animeStore.response('work', 'anime-s3')).units.find(unit => unit.number === 12);
+  app.animeQuery.value = actualUnit.title_ja;
+  assert(app.animeWorkHref(app.animeFiltered.value.find(work => work.id === 'anime-s3')).includes(actualUnit.id), 'a unique episode title opens that episode');
+
+  animeFailure = 'work';
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-s3/episodes/anime-s3-e11?section=staff&staff=' + encodeURIComponent('原画');
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeDetail.value, null);
+  assert(app.routeError.value, 'failed direct detail exposes a retry');
+  animeFailure = '';
+  await app.retryAnime();
+  assert.strictEqual(app.animeDetail.value.id, 'anime-s3', 'retry restores the requested detail rather than showing the archive');
+  assert.strictEqual(app.animeUnitDetail.value.id, 'anime-s3-e11');
+  assert.strictEqual(app.routeError.value, '');
+  assert(app.animeUnitHref(app.animeAdjacentUnits.value.next).includes('staff='));
+  const group = app.animeStaffGroups.value[0];
+  const roleOrder = app.animeStaffGroups.value.map(row => row.role).join('|');
+  location.href = 'http://localhost' + app.animeUnitHref(app.animeAdjacentUnits.value.next);
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.animeSection.value, 'staff');
+  assert.strictEqual(app.animeStaffQuery.value, '原画');
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-s3/episodes/anime-s3-e11?section=staff&staff=' + encodeURIComponent('原画');
+  await app.applyCurrentRoute();
+  assert(app.animeStaffGroups.value.some(row => row.key === group.key), 'same episode restores the same role: ' + group.key + ' / ' + app.animeStaffGroups.value.map(row => row.key).join(',') + ' query=' + app.animeStaffQuery.value + ' URL=' + location.href + ' detail=' + (app.animeDetail.value || {}).id + ' unit=' + (app.animeUnitDetail.value || {}).id + ' error=' + app.routeError.value + ' rows=' + app.animeCatalog.value.staff.length);
+  assert.strictEqual(app.animeStaffGroups.value.map(row => row.role).join('|'), roleOrder, 'returning preserves the shared job order');
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-s3?section=episodes&episodes=12';
+  await app.applyCurrentRoute();
+  assert.deepStrictEqual(Array.from(app.animeUnitGroups.value.flatMap(row => row.units), unit => unit.number), [12], 'number search does not also match episode 1 or 2');
+  assert(app.animeUnitHref(app.animeUnitGroups.value[0].units[0], 'characters').includes('episodes=12'));
+  location.href = 'http://localhost/zh-Hans/database/anime/anime-rttt?edition=web&section=staff';
+  await app.applyCurrentRoute();
+  app.setAnimeEdition('film');
+  assert.strictEqual(app.animeSection.value, 'staff');
+  app.setAnimeEdition('web');
+  assert.strictEqual(app.animeSection.value, 'staff');
+
+  location.href = 'http://localhost/zh-Hans/database/staff?page=2&sort=name';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.staffPage.value, 2, 'restoring a new sort must not reset the requested page');
+  location.href = 'http://localhost/zh-Hans/database/staff?q=UMP&sort=name';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.staffFiltered.value.length, 1);
+  assert.strictEqual(app.staffFiltered.value[0].id, 'staff-ump');
+  const thirdRolePerson = app.animeCatalog.value.people.find(person => person.roles.length > 2);
+  app.staffQuery.value = thirdRolePerson.roles[2];
+  assert(app.staffVisibleRoles(thirdRolePerson).includes(thirdRolePerson.roles[2]), 'the matching role is visible even when it is not a primary role');
+  location.href = 'http://localhost/zh-Hans/database/staff/' + encodeURIComponent('staff-山本健');
+  await app.applyCurrentRoute();
+  const rtttParticipation = app.staffCredits.value.find(group => group.work.id === 'anime-rttt');
+  assert(rtttParticipation, 'the participant has RTTT credits');
+  assert(rtttParticipation.roles.some(role => role.editions.includes('film')), 'film participation remains visible alongside network episodes');
+  assert(rtttParticipation.roles.some(role => role.units.length), 'network episode tags remain individually available');
+  animeFailure = 'person';
+  location.href = 'http://localhost/zh-Hans/database/staff/staff-UMP';
+  await app.applyCurrentRoute();
+  animeFailure = '';
+  await app.retryAnime();
+  assert.strictEqual(app.staffDetail.value.id, 'staff-ump', 'legacy person links survive detail failure and retry');
+
+  delayedGraph = deferred();
+  location.href = 'http://localhost/zh-Hans/database/voice-actors';
+  const oldGraphRoute = app.applyCurrentRoute();
+  await Promise.resolve();
+  location.href = 'http://localhost/zh-Hans/database/anime';
+  await app.applyCurrentRoute();
+  delayedGraph.resolve(null);
+  await oldGraphRoute;
+  delayedGraph = null;
+  assert.strictEqual(app.animeError.value, '', 'an abandoned graph failure does not replace the current page with an error');
   console.log('frontend regressions passed');
 }
 

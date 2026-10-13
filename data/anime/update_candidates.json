@@ -1,0 +1,469 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-11T21:04:32+00:00",
+  "candidates": [
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-cingray-bahamut",
+      "work_id": "anime-cinderella-gray",
+      "unit_ids": [],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    }
+  ],
+  "observation_errors": [
+    {
+      "source": "watch-links",
+      "error": "1 link checks were transient or unknown"
+    }
+  ],
+  "accepted_coverage": {
+    "anime-s1": {
+      "units": 16,
+      "fields": {
+        "title_ja": {
+          "present": 16,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 3
+        },
+        "music": {
+          "present": 16,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 16,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 16,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 16,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 16
+        }
+      }
+    },
+    "anime-s2": {
+      "units": 13,
+      "fields": {
+        "title_ja": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "music": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 13
+        }
+      }
+    },
+    "anime-umayon": {
+      "units": 24,
+      "fields": {
+        "title_ja": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 24
+        },
+        "music": {
+          "present": 22,
+          "confirmed_empty": 0,
+          "unknown": 2
+        },
+        "cast": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 11
+        },
+        "hq_stills": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 24
+        }
+      }
+    },
+    "anime-1st-anniversary": {
+      "units": 1,
+      "fields": {
+        "title_ja": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 1
+        },
+        "music": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 1
+        }
+      }
+    },
+    "anime-umayuru": {
+      "units": 24,
+      "fields": {
+        "title_ja": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "music": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 24,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 24
+        }
+      }
+    },
+    "anime-rttt": {
+      "units": 4,
+      "fields": {
+        "title_ja": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 4
+        },
+        "music": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "anime-s3": {
+      "units": 13,
+      "fields": {
+        "title_ja": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "music": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 13,
+          "confirmed_empty": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "anime-movie-beginning-new-era": {
+      "units": 1,
+      "fields": {
+        "title_ja": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 0,
+          "confirmed_empty": 0,
+          "unknown": 1
+        },
+        "music": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 1,
+          "confirmed_empty": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "anime-cinderella-gray": {
+      "units": 23,
+      "fields": {
+        "title_ja": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "music": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 23,
+          "confirmed_empty": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "anime-umayuru-prettygray": {
+      "units": 4,
+      "fields": {
+        "title_ja": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "music": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 4,
+          "confirmed_empty": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "anime-umayuru-fullgate": {
+      "units": 3,
+      "fields": {
+        "title_ja": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "summary_ja": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "music": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "cast": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "staff": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "official_watch": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        },
+        "hq_stills": {
+          "present": 3,
+          "confirmed_empty": 0,
+          "unknown": 0
+        }
+      }
+    }
+  }
+}

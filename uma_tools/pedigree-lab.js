@@ -289,10 +289,6 @@
     html += '</div></div>';
     html += '<dl class="horse-details">' + information.html + '</dl>';
     html += '<div class="inspector-actions">';
-    if (item.sourceUrl) {
-      html += '<a class="inspector-link source-link" href="' + escapeHtml(item.sourceUrl) +
-        '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.sourceName) + '</a>';
-    }
     if (item.role && !item.isCurrent) {
       html += '<a class="inspector-link character-link" href="' + characterRoute(item.cid) + '"' +
         (embedded ? ' target="_top"' : '') + '>前往' +
@@ -316,14 +312,16 @@
     });
     var charLink = sheetContent.querySelector('.character-link');
     if (charLink) {
-      charLink.addEventListener('click', function () {
-        if (!embedded) return;
+      charLink.addEventListener('click', function (event) {
+        if (!embedded || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         try {
-          var topUrl = window.top.location.origin + window.top.location.pathname + window.top.location.search;
-          sessionStorage.setItem('uma-char-back', JSON.stringify({
-            url: topUrl,
-            target: item.cid || ''
-          }));
+          if (window.parent !== window) {
+            event.preventDefault();
+            window.parent.postMessage({
+              type: 'uma-pedigree-navigate',
+              path: characterRoute(item.cid)
+            }, '*');
+          }
         } catch (e) {}
       });
     }
@@ -1116,7 +1114,7 @@
     state.lockedItem = null;
     state.lockedKey = '';
     closeSheet();
-    document.getElementById('workspace-title').textContent = currentModel.root.name + '的血统关系';
+    workspace.setAttribute('aria-label', currentModel.root.name + '的血统关系');
     backLink.href = characterRoute(state.sample);
     backLink.setAttribute('aria-label', '返回' + currentModel.root.name + '角色页');
     renderLens(currentModel);
@@ -1128,7 +1126,10 @@
     (window.PED_REL || []).forEach(function (node) { byId[node.cid] = node; });
     (window.CHAR_INDEX || []).forEach(function (character) { charById[character.id] = character; });
     if (!byId[state.sample]) {
-      document.getElementById('workspace-title').textContent = '血统关系暂不可用';
+      var message = document.createElement('p');
+      message.className = 'pedigree-empty';
+      message.textContent = '血统关系暂不可用';
+      stage.replaceChildren(message);
       return;
     }
     render();

@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T13:34:56+00:00",
+  "generated_at": "2026-10-12T20:48:42+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "01ea65060a1e9dcddafc66a296ad6ef9c6d7ad67262f5b618f67af97dac88dad",
+      "sha256": "2ee7b52e5cd555c739f561000b2ef54446527f2555d1740145409f83d0a38c5c",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "0afa1f599269b5da08baf403e670ceb26566c31524188a709edbda89bd1fa89d",
+      "sha256": "595d4ad3c7679c56edf41542c13c8ae5935e6dc8931396fd862cabe8869fc73a",
       "preserved": true
     }
   },
   "coverage": {
-    "events": 472,
+    "events": 473,
     "by_kind": {
       "concert": 81,
       "official_program": 227,
-      "onsite": 164
+      "onsite": 165
     },
     "by_mode": {
       "online": 227,
-      "onsite": 245
+      "onsite": 246
     },
     "official_programs": 227,
     "unresolved_cast_names": 0
@@ -2899,8 +2899,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
           "person_type": "voice_actor",
@@ -3093,7 +3093,6 @@
           "date": "2026-08-22",
           "songs": [],
           "character_ids": [
-            "akasakamisato",
             "oguricap",
             "mrcb",
             "duramente",
@@ -3109,8 +3108,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "official_youtube",
               "source_url": "https://www.youtube.com/watch?v=604WzTEF4is",
               "person_type": "voice_actor",
@@ -3118,10 +3117,6 @@
               "evidence_sources": [
                 {
                   "kind": "official_youtube",
-                  "url": "https://www.youtube.com/watch?v=604WzTEF4is"
-                },
-                {
-                  "kind": "official_character_credit",
                   "url": "https://www.youtube.com/watch?v=604WzTEF4is"
                 }
               ]
@@ -5784,8 +5779,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -10090,8 +10085,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -10276,8 +10271,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -14516,8 +14511,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -17799,8 +17794,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -17985,8 +17980,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -21279,8 +21274,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -24287,6 +24282,300 @@
       "setlist_status": "none"
     },
     {
+      "id": "anime-cinderella-gray-screening-20250330",
+      "title": "アニメ『ウマ娘 シンデレラグレイ』先行上映会＆トークショー",
+      "date": "2025-03-30",
+      "end_date": "2025-03-30",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "ユナイテッド・シネマ アクアシティお台場",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0179",
+          "name": "高柳知叶",
+          "character_id": "oguricap",
+          "role": "小栗帽",
+          "evidence": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_announcement",
+              "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0115",
+          "name": "濑户桃子",
+          "character_id": "zankan_koukou",
+          "role": "崭新光辉",
+          "evidence": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_announcement",
+              "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0187",
+          "name": "小西克幸",
+          "character_id": "kitaharajo",
+          "role": "北原穰",
+          "evidence": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_announcement",
+              "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0186",
+          "name": "伊濑茉莉也",
+          "character_id": "fujimasamarch",
+          "role": "藤正进行曲",
+          "evidence": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_announcement",
+              "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "anime-cinderella-gray-screening-20250330-session-1",
+          "label": "第1部",
+          "date": "2025-03-30",
+          "songs": [],
+          "character_ids": [
+            "oguricap",
+            "zankan_koukou",
+            "kitaharajo",
+            "fujimasamarch"
+          ],
+          "cast": [
+            {
+              "voice_actor_id": "va-0179",
+              "name": "高柳知叶",
+              "character_id": "oguricap",
+              "role": "小栗帽",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0115",
+              "name": "濑户桃子",
+              "character_id": "zankan_koukou",
+              "role": "崭新光辉",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0187",
+              "name": "小西克幸",
+              "character_id": "kitaharajo",
+              "role": "北原穰",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0186",
+              "name": "伊濑茉莉也",
+              "character_id": "fujimasamarch",
+              "role": "藤正进行曲",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            }
+          ],
+          "start_time": "12:00",
+          "doors_time": "11:30",
+          "setlist_status": "none"
+        },
+        {
+          "id": "anime-cinderella-gray-screening-20250330-session-2",
+          "label": "第2部",
+          "date": "2025-03-30",
+          "songs": [],
+          "character_ids": [
+            "oguricap",
+            "zankan_koukou",
+            "kitaharajo",
+            "fujimasamarch"
+          ],
+          "cast": [
+            {
+              "voice_actor_id": "va-0179",
+              "name": "高柳知叶",
+              "character_id": "oguricap",
+              "role": "小栗帽",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0115",
+              "name": "濑户桃子",
+              "character_id": "zankan_koukou",
+              "role": "崭新光辉",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0187",
+              "name": "小西克幸",
+              "character_id": "kitaharajo",
+              "role": "北原穰",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0186",
+              "name": "伊濑茉莉也",
+              "character_id": "fujimasamarch",
+              "role": "藤正进行曲",
+              "evidence": "official_announcement",
+              "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+                }
+              ]
+            }
+          ],
+          "start_time": "14:20",
+          "doors_time": "13:50",
+          "setlist_status": "none"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 先行上映与场次公告",
+          "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 活动报道",
+          "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/anime/anime-cinderella-gray.webp",
+      "summary": "第1、2话先行上映及出演声优谈话。第1部12:00开演，第2部14:20开演；时间为官方公告所列计划。",
+      "schedule_status": "scheduled",
+      "metadata_status": "complete",
+      "legacy_aliases": [],
+      "setlist_status": "none"
+    },
+    {
       "id": "paka-live-tv-051",
       "title": "ぱかライブTV Vol.51",
       "date": "2025-03-29",
@@ -25290,8 +25579,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -25508,8 +25797,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -27753,8 +28042,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -27907,8 +28196,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -37376,8 +37665,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -37594,8 +37883,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -40115,8 +40404,8 @@
         {
           "voice_actor_id": "va-0091",
           "name": "本泉莉奈",
-          "character_id": "teppen_commentator_honizumi",
-          "role": "《巅峰之路》解说",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/383287",
           "person_type": "voice_actor",
@@ -41692,8 +41981,8 @@
         {
           "voice_actor_id": "va-0091",
           "name": "本泉莉奈",
-          "character_id": "teppen_commentator_honizumi",
-          "role": "《巅峰之路》解说",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/379975",
           "person_type": "voice_actor",
@@ -43580,8 +43869,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "official_announcement",
           "source_url": "https://umamusume.jp/news/detail?id=1827",
           "person_type": "voice_actor",
@@ -43698,7 +43987,6 @@
           "date": "2024-03-30",
           "songs": [],
           "character_ids": [
-            "akasakamisato",
             "mrcb",
             "matikanetannhauser",
             "symbolikriss"
@@ -43707,8 +43995,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "official_announcement",
               "source_url": "https://umamusume.jp/news/detail?id=1827",
               "person_type": "voice_actor",
@@ -43716,10 +44004,6 @@
               "evidence_sources": [
                 {
                   "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=1827"
-                },
-                {
-                  "kind": "official_character_credit",
                   "url": "https://umamusume.jp/news/detail?id=1827"
                 }
               ]
@@ -43793,7 +44077,6 @@
           "date": "2024-03-31",
           "songs": [],
           "character_ids": [
-            "akasakamisato",
             "admirevega",
             "kitasanblack",
             "sakuralaurel"
@@ -43802,8 +44085,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "official_announcement",
               "source_url": "https://umamusume.jp/news/detail?id=1827",
               "person_type": "voice_actor",
@@ -43811,10 +44094,6 @@
               "evidence_sources": [
                 {
                   "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=1827"
-                },
-                {
-                  "kind": "official_character_credit",
                   "url": "https://umamusume.jp/news/detail?id=1827"
                 }
               ]
@@ -44359,8 +44638,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -44887,8 +45166,8 @@
         {
           "voice_actor_id": "va-0064",
           "name": "山本昌广",
-          "character_id": "teppen_commentator_yamamoto",
-          "role": "《巅峰之路》解说",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -47066,8 +47345,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -47284,8 +47563,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -47842,8 +48121,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "official_announcement",
           "source_url": "https://umamusume.jp/news/detail?id=1768",
           "person_type": "voice_actor",
@@ -47960,7 +48239,6 @@
           "date": "2024-02-10",
           "songs": [],
           "character_ids": [
-            "akasakamisato",
             "mihonobourbon",
             "chevalgrand",
             "vivlos"
@@ -47969,8 +48247,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "official_announcement",
               "source_url": "https://umamusume.jp/news/detail?id=1768",
               "person_type": "voice_actor",
@@ -47978,10 +48256,6 @@
               "evidence_sources": [
                 {
                   "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=1768"
-                },
-                {
-                  "kind": "official_character_credit",
                   "url": "https://umamusume.jp/news/detail?id=1768"
                 }
               ]
@@ -48055,7 +48329,6 @@
           "date": "2024-02-11",
           "songs": [],
           "character_ids": [
-            "akasakamisato",
             "tokaiteio",
             "goldship",
             "tmoperao"
@@ -48064,8 +48337,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "official_announcement",
               "source_url": "https://umamusume.jp/news/detail?id=1768",
               "person_type": "voice_actor",
@@ -48073,10 +48346,6 @@
               "evidence_sources": [
                 {
                   "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=1768"
-                },
-                {
-                  "kind": "official_character_credit",
                   "url": "https://umamusume.jp/news/detail?id=1768"
                 }
               ]
@@ -48383,8 +48652,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -54483,8 +54752,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -56212,8 +56481,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -56430,8 +56699,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -57518,8 +57787,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -58046,8 +58315,8 @@
         {
           "voice_actor_id": "va-0091",
           "name": "本泉莉奈",
-          "character_id": "teppen_commentator_honizumi",
-          "role": "《巅峰之路》解说",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -58295,8 +58564,8 @@
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
               "song_title": "奇跡",
               "performance_variant": {
-                "title": "奇跡（舞台剧中曲）",
-                "label": "舞台剧中曲"
+                "title": "奇跡",
+                "label": ""
               }
             },
             {
@@ -60867,8 +61136,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/335635",
           "person_type": "voice_actor",
@@ -62019,8 +62288,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -62237,8 +62506,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -63506,7 +63775,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -63822,7 +64095,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -64138,7 +64415,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -64454,7 +64735,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -65035,7 +65320,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -65351,7 +65640,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -65667,7 +65960,11 @@
               "setlist_no": "7",
               "song_id": "song-0ec3138e2c",
               "version_id": "song-0ec3138e2c-v-0ec3138e2c",
-              "song_title": "奇跡"
+              "song_title": "奇跡",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "song": "SUNRISE",
@@ -68548,8 +68845,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/301815",
           "person_type": "voice_actor",
@@ -68912,8 +69209,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -71195,8 +71492,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/301814",
           "person_type": "voice_actor",
@@ -75328,8 +75625,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "official_youtube",
           "source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
           "person_type": "voice_actor",
@@ -75351,8 +75648,7 @@
           "songs": [],
           "character_ids": [
             "symbolirudolf",
-            "matikanetannhauser",
-            "akasakamisato"
+            "matikanetannhauser"
           ],
           "cast": [
             {
@@ -75398,8 +75694,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "official_youtube",
               "source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
               "person_type": "voice_actor",
@@ -75407,10 +75703,6 @@
               "evidence_sources": [
                 {
                   "kind": "official_youtube",
-                  "url": "https://www.youtube.com/watch?v=C_I-AURSOBw"
-                },
-                {
-                  "kind": "official_character_credit",
                   "url": "https://www.youtube.com/watch?v=C_I-AURSOBw"
                 }
               ]
@@ -76438,8 +76730,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -77062,8 +77354,8 @@
         {
           "voice_actor_id": "va-0142",
           "name": "细江纯子",
-          "character_id": "hosoejunko",
-          "role": "细江纯子",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -79808,8 +80100,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -84554,8 +84846,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -84692,8 +84984,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -86531,8 +86823,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -86653,8 +86945,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -86924,8 +87216,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -89956,8 +90248,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -90062,8 +90354,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -90984,8 +91276,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV",
           "person_type": "voice_actor",
@@ -91202,8 +91494,8 @@
             {
               "voice_actor_id": "va-0082",
               "name": "明坂聪美",
-              "character_id": "akasakamisato",
-              "role": "赤坂美聪",
+              "character_id": "",
+              "role": "",
               "evidence": "community_archive",
               "source_url": "https://umamusu.wiki/PakaLive_TV",
               "person_type": "voice_actor",
@@ -94819,8 +95111,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/186990",
           "person_type": "voice_actor",
@@ -95119,8 +95411,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -96845,8 +97137,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -97504,8 +97796,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "curated_live_cast",
           "source_url": "",
           "person_type": "voice_actor",
@@ -97718,8 +98010,8 @@
         {
           "voice_actor_id": "va-0082",
           "name": "明坂聪美",
-          "character_id": "akasakamisato",
-          "role": "赤坂美聪",
+          "character_id": "",
+          "role": "",
           "evidence": "eventernote",
           "source_url": "https://www.eventernote.com/events/177752",
           "person_type": "voice_actor",
@@ -107893,5 +108185,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "afdf2de7ef94b0704b7b"
+  "build_id": "4d924cfce5735396e554"
 }

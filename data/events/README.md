@@ -9,7 +9,7 @@ Generated files live one directory above and must not be edited by hand.
 - `official_programs.json`: official broadcast metadata collected from the official YouTube channel and official portal announcements. It is refreshed through the canonical builder with `python3 uma_tools/crawl_official_programs.py` and remains usable offline after it is committed.
 - `voice_actor_details.json`: cited biographical fields refreshed from Japanese Wikipedia, official-agency portrait fallbacks for people absent from the local photo index, and reviewed per-person corrections in `overrides.json`.
 - `voice_actor_identities.json`: the canonical registry of stable voice-actor IDs, names, and aliases. Generated catalogs never read their previous output to recover an identity.
-- `overrides.json`: small, reviewed corrections for source conflicts, aliases, missing cast, or intentionally hidden records. This is the only hand-edited event correction layer.
+- `overrides.json`: small, reviewed corrections for source conflicts, aliases, missing cast, or intentionally hidden records. `additional_events` holds cited events missing from the upstream snapshots, using the same structured cast and session fields as official programs, with explicit `kind`, `mode`, and `venue` for onsite activities. This is the only hand-edited event correction layer.
 
 ## Update workflow
 
