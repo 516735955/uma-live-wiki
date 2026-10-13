@@ -9,7 +9,7 @@
 .context-sections button.active { color: var(--ui-cobalt); box-shadow: inset 0 -3px var(--ui-orange); font-weight: 700; }
 body.subpage-bg { background-attachment: fixed; }
 .archive-surface:not(:has(.entity-detail)) .archive-toolbar { position: sticky; top: var(--context-header-height,56px); z-index: 20; padding-block: 12px; background: transparent; box-shadow: none; }
-.archive-surface:not(:has(.entity-detail)) .archive-toolbar::before { content: ''; position: absolute; inset-block: 0; left: 50%; width: var(--page-width,100vw); transform: translateX(-50%); z-index: -1; pointer-events: none; background: #f7f8fc url('/uma_tools/img/bg_texture_white.webp') center / cover no-repeat fixed; }
+.archive-surface:not(:has(.entity-detail)) .archive-toolbar::before { content: ''; position: absolute; inset-block: 0; left: calc(50% - var(--page-width,100vw) * .5); width: var(--page-width,100vw); z-index: -1; pointer-events: none; background: #f7f8fc url('/uma_tools/img/bg_texture_white.webp') center / cover no-repeat fixed; }
 .archive-controls { display: flex; flex: 0 1 auto; gap: 8px; min-width: 0; }
 .archive-controls > .ui-select-control { flex: 1 1 128px; min-width: 0; width: 140px; }
 .archive-controls .ui-select-menu { min-width: 180px; }
