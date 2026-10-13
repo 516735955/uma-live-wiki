@@ -92,6 +92,7 @@
 .anime-staff-disclosure { border: 0; border-bottom: 1px solid var(--ui-line); box-shadow: none; }
 .anime-staff-teams { display: grid; gap: 12px; }
 .anime-staff-team { min-width: 0; padding: 4px 0; }
+.anime-staff-team:not(.anime-staff-team-labelled) { display: grid; gap: 8px; }
 .anime-staff-team-labelled { display: grid; grid-template-columns: minmax(120px,180px) minmax(0,1fr); align-items: start; gap: 12px; }
 .anime-staff-institutions .credit-role-tag { max-width: 100%; overflow-wrap: break-word; white-space: normal; }
 .anime-staff-institutions { margin: 0; }

@@ -94,27 +94,66 @@ function openViewer(img) {
       '预览"><div class="viewer-failure-message"><p>大图未能载入，预览仍可查看。</p>' +
       '<button type="button">重试</button><a target="_blank" rel="noopener">打开来源</a></div>';
     box.querySelector('a').href = content.data.source;
-    box.querySelector('button').onclick = () => pswp.refreshSlideContent(content.index);
+    const retry = box.querySelector('button');
+    retry.onclick = () => {
+      if (retry.disabled || pswp.isDestroying) return;
+      retry.disabled = true;
+      retry.textContent = '加载中';
+      // Keep the working preview attached while a separate image retries the original.
+      const image = new Image();
+      retryImages.add(image);
+      const finish = () => { retryImages.delete(image); image.onload = image.onerror = null; };
+      image.onerror = () => {
+        finish();
+        if (pswp.isDestroying) return;
+        retry.disabled = false;
+        retry.textContent = '重试';
+      };
+      image.onload = () => {
+        finish();
+        if (pswp.isDestroying || !image.naturalWidth) return;
+        content.data.width = image.naturalWidth;
+        content.data.height = image.naturalHeight;
+        readySlides.add(content.index);
+        refreshReadySlide();
+      };
+      image.src = content.data.src;
+    };
     return box;
   });
-  const correctedSlides = new Set();
-  const refreshDimensions = () => requestAnimationFrame(() => {
-    if(pswp.isDestroying || !pswp.currSlide || !pswp.opener.isOpen || !correctedSlides.has(pswp.currIndex))return;
-    const index=pswp.currIndex;
-    correctedSlides.delete(index);
-    // Wait for the opener to finish installing adjacent slides before replacing content.
-    pswp.refreshSlideContent(index);
+  const retryImages = new Set();
+  const readySlides = new Set();
+  const refreshReadySlide = () => requestAnimationFrame(() => {
+    if (pswp.isDestroying || !pswp.opener.isOpen || pswp.mainScroll.isShifted() || !readySlides.has(pswp.currIndex)) return;
+    readySlides.delete(pswp.currIndex);
+    pswp.refreshSlideContent(pswp.currIndex);
   });
-  pswp.on('loadComplete', ({content}) => {
+  // PhotoSwipe's default activation retries an error by replacing its element,
+  // leaving the custom preview behind. Only the explicit retry replaces it.
+  pswp.on('contentActivate', event => {
+    if (event.content.isError()) event.preventDefault();
+  });
+  pswp.on('loadComplete', ({content, isError}) => {
     const element = content.element;
-    if (!element?.naturalWidth || (content.data.width === element.naturalWidth && content.data.height === element.naturalHeight)) return;
+    if (isError || !element?.naturalWidth || (content.data.width === element.naturalWidth && content.data.height === element.naturalHeight)) return;
     content.data.width = element.naturalWidth;
     content.data.height = element.naturalHeight;
-    correctedSlides.add(content.index);
-    refreshDimensions();
+    content.width = element.naturalWidth;
+    content.height = element.naturalHeight;
+    if (content.slide) {
+      content.slide.width = element.naturalWidth;
+      content.slide.height = element.naturalHeight;
+      content.slide.resize();
+    }
   });
-  pswp.on('openingAnimationEnd',refreshDimensions);
-  pswp.on('change',refreshDimensions);
+  pswp.on('openingAnimationEnd', refreshReadySlide);
+  pswp.on('change', refreshReadySlide);
+  pswp.on('mainScrollAnimComplete', refreshReadySlide);
+  pswp.on('destroy', () => {
+    retryImages.forEach(image => { image.onload = image.onerror = null; image.src = ''; });
+    retryImages.clear();
+    readySlides.clear();
+  });
   pswp.on('uiRegister', () => {
     pswp.ui.registerElement({name:'title',order:1,isButton:false,className:'viewer-title',onInit:el=>{
       const update = () => el.textContent = (data[pswp.currIndex].alt || '查看原图') + (data.length>1?' · '+(pswp.currIndex+1)+' / '+data.length:'');
