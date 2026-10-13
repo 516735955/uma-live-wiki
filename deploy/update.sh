@@ -87,6 +87,8 @@ if [ ! -d "$RELEASE" ]; then
   done
   rm -rf "$RELEASE/data"
   ln -s "$ROOT/shared/data" "$RELEASE/data"
+  # New source files must be available to new routes without replacing live records.
+  cp -an "$SRC/data/." "$ROOT/shared/data/"
   for name in album_covers uma_avatars uma_moe uma_official uma_va video_thumbs uma_tools/img; do
     shared="$ROOT/shared/$name"
     mkdir -p "$(dirname "$shared")"
