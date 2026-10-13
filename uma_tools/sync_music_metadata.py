@@ -1545,7 +1545,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     if errors:
         print(f"metadata requests failed: {len(errors)} (rerun retries only unresolved network errors)")
-    return 0
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":

@@ -48,9 +48,15 @@ node uma_tools/server.js
 | 音乐署名、歌词增量维护 | `python3 uma_tools/sync_music_metadata.py` |
 | 血统生成与核验 | `python3 uma_tools/build_pedigree.py`、`python3 uma_tools/check_pedigree.py` |
 | 专辑自动补全 | `python3 uma_tools/auto_albums.py` |
+| 每日知识增量与失败重试 | `python3 uma_tools/sync_knowledge.py` |
+| 最近一次自动更新状态 | `python3 uma_tools/sync_knowledge.py --status` |
 | 专辑候选审核 | `node uma_tools/scrape.js` → 审阅 pending.json → `node uma_tools/apply.js` |
 
 专辑导入保留季数和录音版本区别；新音源确认完整可播放后才写入链接。审核合并会同步重建音乐目录。角色和声优抓取细节见 [角色与声优爬取流程](角色与声优爬取流程.md)。
+
+每日流程使用 `sync_character_sources.py` 从官方分类和个人页补入马娘及有固定身份的学园关系者；不依赖社区词条先完成中文翻译。`sync_pedigree_sources.py` 按完全匹配的赛马词条补原型与明确亲本事实，未确定的映射使用 `unknown`，不标成原创角色或非马娘。`sync_anime_sources.py` 直接补官方公开剧集、署名、图片与明确关联，保留已有人工值；新官网的结构化剧集元数据可自动读取，未识别的结构保持未知。新记录缺少免费中文资料时显示来源原文。
+
+活动的具体场次保存完整出演名单，主持、实况、嘉宾和向导继承所属分组的日期。角色与声优出演索引使用同一份场次数据；只明确到整场活动的出演显示日期范围和“场次未明确”。
 
 ## 验证
 

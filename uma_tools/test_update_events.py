@@ -16,6 +16,35 @@ SPEC.loader.exec_module(UPDATE_EVENTS)
 
 
 class EventPipelineTest(unittest.TestCase):
+    def test_a_song_character_does_not_override_the_explicit_session_cast(self):
+        class Identities:
+            profiles = [{'id': 'va-a'}, {'id': 'va-b'}]
+            character_by_id = {'a': {'cv': '演员甲'}, 'b': {'cv': '演员乙'}}
+
+            @staticmethod
+            def voice_id(name):
+                return {'演员甲': 'va-a', '演员乙': 'va-b'}.get(name, '')
+
+        cast = {'voice_actor_id': 'va-b', 'character_id': 'b', 'evidence': 'official'}
+        event = {'id': 'event', 'date': '2026-10-13', 'title': '活动', 'cast': [cast], 'sessions': [{
+            'id': 'day1', 'label': 'DAY1', 'date': '2026-10-13', 'cast': [cast], 'character_ids': ['a', 'b'],
+            'performances': [{'song': '歌曲', 'song_id': 'song', 'version_id': 'recording', 'character_ids': ['a']}]}]}
+        index = UPDATE_EVENTS.build_appearance_index([event], {'songs': []}, Identities())
+        self.assertEqual(index['voice_actors']['va-a']['events'], [])
+        self.assertEqual(index['voice_actors']['va-a']['performed_songs'], [])
+        self.assertEqual(index['voice_actors']['va-b']['events'][0]['session_id'], 'day1')
+
+    def test_nested_guest_cast_inherits_the_parent_day(self):
+        value = '<div class="cast-line"><span class="cast-label">两日出演：</span>共同演员</div><div class="cast-group"><div class="cast-line"><span class="cast-label">仅4日：</span>甲</div><div class="cast-line"><span class="cast-label">嘉宾：</span>乙</div></div><div class="cast-group"><div class="cast-line"><span class="cast-label">仅5日：</span>丙</div><div class="cast-line"><span class="cast-label">向导：</span>細江純子</div></div>'
+        first = ''.join(UPDATE_EVENTS.cast_lines_for_session(value, '2022.5.4-5', 0))
+        second = ''.join(UPDATE_EVENTS.cast_lines_for_session(value, '2022.5.4-5', 1))
+        self.assertIn('共同演员', first)
+        self.assertIn('共同演员', second)
+        self.assertIn('乙', first)
+        self.assertNotIn('乙', second)
+        self.assertNotIn('細江純子', first)
+        self.assertIn('細江純子', second)
+
     def test_curated_media_splits_parts_and_discards_incomplete_urls(self):
         self.assertEqual(
             UPDATE_EVENTS.curated_media(

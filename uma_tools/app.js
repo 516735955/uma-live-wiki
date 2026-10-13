@@ -946,9 +946,13 @@ const umaApp = createApp({
       (row.event_category || 'screening')===group.kind).map(relation => ({relation,event:animeRelatedEvents[relation.target_id]}))
       .filter(row=>row.event).sort((a,b)=>String(a.event.date).localeCompare(String(b.event.date)))})).filter(group=>group.rows.length));
     function appearanceSessionLabel(event) {
+      if (!event.session_id && event.end_date && event.end_date !== event.date) return '场次未明确';
       const label = String(event.session_label || '').trim();
       return label && !['本公演','本期节目'].includes(label) &&
         !String(event.title || '').toLowerCase().includes(label.toLowerCase()) ? label : '';
+    }
+    function appearanceDateLabel(event) {
+      return event.date ? event.date + (!event.session_id && event.end_date && event.end_date !== event.date ? ' – ' + event.end_date : '') : '待公布';
     }
     const animeMusicItems = computed(() => {
       const items = new Map();
@@ -3204,15 +3208,25 @@ const umaApp = createApp({
     }
     const eventVoiceCast = computed(function () {
       const event = eventDetail.value;
-      const all = ((event && event.cast) || []).filter(function (item) { return item.voice_actor_id && item.character_id; });
+      const all = ((event && event.cast) || []).filter(function (item) { return item.voice_actor_id; });
       const session = selectedEventSession.value;
-      const explicit = ((session && session.cast) || []).filter(function (item) { return item.voice_actor_id && item.character_id; });
-      if (explicit.length) return explicit;
+      if (session && Array.isArray(session.cast)) return session.cast.filter(function (item) { return item.voice_actor_id; });
       const allowed = new Set((session && session.character_ids) || []);
       if ((event && event.sessions || []).length > 1 && allowed.size) {
         return all.filter(function (item) { return allowed.has(item.character_id); });
       }
-      return all;
+      return (event && event.sessions || []).length > 1 ? [] : all;
+    });
+    const eventUnscopedCast = computed(function () {
+      const event = eventDetail.value;
+      if (!event || (event.sessions || []).length < 2) return [];
+      const scoped = new Set();
+      (event.sessions || []).forEach(function (session) {
+        (session.cast || []).forEach(function (item) { if (item.voice_actor_id) scoped.add(item.voice_actor_id); });
+        const characters = new Set(session.character_ids || []);
+        (event.cast || []).forEach(function (item) { if (characters.has(item.character_id)) scoped.add(item.voice_actor_id); });
+      });
+      return (event.cast || []).filter(function (item) { return item.voice_actor_id && !scoped.has(item.voice_actor_id); });
     });
     function eventSongCount(event) {
       if (Number.isFinite(event && event.song_count)) return event.song_count;
@@ -3765,7 +3779,7 @@ const umaApp = createApp({
       eventsPage, eventsPageCount, eventsTotal, eventsPageStart, eventsPageEnd, eventsPageList,
       setEventsPage, goEventsPage, pastEvent, onEventImageError, loadEvents,
       nextUpcomingEvent, nextUpcomingHref, openNextUpcoming,
-      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, eventPerformanceKey, playEventTrack, addEventTrack, playEventSession, enqueueEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
+      eventDetail, selectedEventSession, selectedEventSessionId, selectEventSession, eventPlayableRows, eventPerformanceKey, playEventTrack, addEventTrack, playEventSession, enqueueEventSession, eventMediaCards, activeMediaKey, activateEventMedia, eventVoiceCast, eventUnscopedCast, openEvent, eventDateLabel, eventSummary, eventKindLabel, eventKindColor, eventPaletteStyle, eventModeLabel, eventSeriesName, eventSongCount, eventSessionTable, onEventSetlistClick,
       songCatalog, songCatalogError, songCatalogLoading, songDetail, songSection, setSongSection, songDbQuery, songDbFiltered, songDbPaged, songDbPage, songDbPageCount, songTotal, songDbPageStart, songDbPageEnd, songDbPageList, setSongDbPage, goSongDbPage, songDetailReleases, songDetailReleaseVersions, songDetailPerformances, songCreditVersions, creditRoleGroups, songSingerLabel, playableSongRelease, playCatalogSong, playSongPrimary, addSongPrimary, playSongRelease, playRelationRelease, playSongTrack, addSongTrack, relationSong, relationSongVersions, relationReleaseVocalists, expandedRelationSongId, toggleRelationSong, openSong, openAlbumFromSong, openEventUrl, loadSongCatalog, characterName, characterImage, characterColor, voiceName, voicePhoto, voicePhotoByName, voicePaletteStyle, albumTrackVocalists, albumTrackSecondary, releaseSingerLabel,
       albumTrackSongId,
       songLyricVersions, songLyricVersionOptions, selectedSongLyricVersion, selectedSongLyricLines, songLyricVersionId, songLyricTranslation, setSongLyricVersion, expandedSongReleaseId, expandedSongCreditId, songLinkVersion, songLinkRelease, toggleSongRelease, toggleSongCredit,
@@ -3781,7 +3795,7 @@ const umaApp = createApp({
       openAnimeWork, openAnimeUnit, showAnimeLibrary, retryAnime,
       animeSection, setAnimeSection, animeStaffQuery, animeStaffGroups, animeStaffAggregate, animeStaffAggregateGroups, animeUnitGroups, animeAdjacentUnits, animeEpisodeDirectoryHref, animeUnitHref,
       animeSingle, animeEdition, setAnimeEdition, animeContentUnit, animeTabs, animeStillUnit, animeStillGroups, animeVisibleStillGroups, animeStillOptions, creatorAnimeWorks, creatorAnimeCueWorks, characterAnimeWorks, voiceAnimeWorks, songAnimeWorks, albumAnimeWorks,
-      staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups, animeUsefulRelations, animeEventGroups, eventAnimeWorks, appearanceSessionLabel, animeMusicItems, animeMusicVersions, animeMusicCover, animeMusicSong,
+      staffQuery, staffSort, staffSortOptions, staffPage, staffPageCount, staffPaged, staffPageList, setStaffPage, staffDetail, staffFiltered, staffVisibleRoles, staffPortrait, staffCredits, staffDisplayAliases, creatorAnimeStaff, animeCurrentCast, staffHref, staffName, animeLink, animeDates, animeMusicGroups, animeMusicCues, animeMusicCueGroups, animeUsefulRelations, animeEventGroups, eventAnimeWorks, appearanceSessionLabel, appearanceDateLabel, animeMusicItems, animeMusicVersions, animeMusicCover, animeMusicSong,
       otherSection, setOtherSection, curatedVideos, horseFacts, horseMajorRows, horseMajorExpanded, horseMajorTotal, toggleHorseMajor,
       horsesList, horsesListError, horseDetail, horseQuery, horsePage, horsesPerPage, horseFiltered, horsePaged, horsePageCount, horsePageStart, horsePageEnd, horsePageList, setHorsePage, goHorsePage, findHorseById, openHorse, horseSexLabel, horseChars, horseSourceName, onHorseImageError, loadHorsesData, retryHorses,
       relFilter, relAlbums, relTypeList, relYearList, relWorkList, relQuery, relWork, relSort, relYear, relPage, relFiltered, relPaged, relPageCount, relPageStart, relPageEnd, relPageList, setRelPage, goRelPage,

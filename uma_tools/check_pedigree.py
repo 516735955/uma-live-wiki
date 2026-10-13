@@ -36,13 +36,15 @@ def main():
     for character_id, mapping in mappings.items():
         horse_id = mapping.get("horse")
         kind = mapping.get("kind")
-        if kind not in ("horse", "original", "non_uma"):
+        if kind not in ("horse", "original", "non_uma", "unknown"):
             errors.append("invalid mapping kind for %s: %r" % (character_id, kind))
         if horse_id and canonical(horse_id) not in canonical_ids:
             errors.append("mapped horse is missing: %s -> %s" % (
                 character_id, horse_id
             ))
-        if horse_id is None and kind not in ("original", "non_uma"):
+        if kind == "unknown" and not mapping.get("auto_source"):
+            errors.append("unknown mapping requires an automatic-source marker: %s" % character_id)
+        if horse_id is None and kind not in ("original", "non_uma", "unknown"):
             errors.append("horse mapping missing for %s" % character_id)
         if horse_id is not None and kind != "horse":
             errors.append("horse mapping kind drift for %s" % character_id)
@@ -57,6 +59,9 @@ def main():
     for mare_id in sorted(mapped_horses):
         mare = by_id.get(mare_id) or {}
         if mare.get("sex") != "female":
+            continue
+        if mare.get("auto_source") and "breeding_partners" not in mare:
+            # An unpublished breeding record is unknown, rather than no partners.
             continue
         if not mare.get("breeding_source_url"):
             errors.append("mapped mare has no breeding source: %s" % mare_id)
@@ -370,6 +375,10 @@ def main():
     han_text = re.compile(r"[\u3400-\u9fff]")
     for node_id in sorted(complete_scope):
         record = by_id.get(node_id) or {}
+        if record.get("auto_source"):
+            if not (record.get("metadata_source_url") or record.get("profile_url")):
+                errors.append("automatic horse has no source URL: %s" % node_id)
+            continue
         for field in ("zh", "ja", "en", "sex", "born", "country"):
             if not record.get(field):
                 errors.append("incomplete visualization horse %s: %s" % (

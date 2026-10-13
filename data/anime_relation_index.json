@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-cc940c0f9dc3e235",
+  "build_id": "anime-22dc9b93bb95e6c8",
   "generated_at": "2026-10-13T00:00:00+08:00",
   "targets": {
     "event": {
@@ -17101,6 +17101,41 @@
           "source_id": "anime-umayuru-fullgate-e03",
           "work_id": "anime-umayuru-fullgate"
         }
+      ],
+      "akasakamisato": [
+        {
+          "relation_id": "anime-cinderella-gray-e01-auto-verified-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "実況(赤坂美聡)",
+          "voice_actor_id": "va-0082",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e01",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e13-auto-verified-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "実況（赤坂美聡）",
+          "voice_actor_id": "va-0082",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e13",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e14-auto-verified-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "実況（赤坂美聡）",
+          "voice_actor_id": "va-0082",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e14",
+          "work_id": "anime-cinderella-gray"
+        }
       ]
     },
     "voice_actor": {
@@ -33892,6 +33927,41 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e03",
           "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0082": [
+        {
+          "relation_id": "anime-cinderella-gray-e01-auto-verified-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "実況(赤坂美聡)",
+          "voice_actor_id": "va-0082",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e01",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e13-auto-verified-cast-22",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "実況（赤坂美聡）",
+          "voice_actor_id": "va-0082",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e13",
+          "work_id": "anime-cinderella-gray"
+        },
+        {
+          "relation_id": "anime-cinderella-gray-e14-auto-verified-cast-17",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "実況（赤坂美聡）",
+          "voice_actor_id": "va-0082",
+          "source_type": "anime_unit",
+          "source_id": "anime-cinderella-gray-e14",
+          "work_id": "anime-cinderella-gray"
         }
       ]
     },

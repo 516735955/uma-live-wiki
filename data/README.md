@@ -24,6 +24,6 @@ python3 uma_tools/update_events.py --check
 
 `news_snapshot.json` 是最近一次完整新闻结果，`lantis_news.json` 是 CD 新闻抓取快照。服务热加载并增量更新；缺失条目和空字段不删除已有内容。新闻、CD 新闻使用同一合并逻辑。人工订正放在 `uma_tools/news-overrides.json`，机器缓存不能覆盖它。
 
-生产数据保存在部署目录的 `shared/data`，代码发布只关联这份数据，不用仓库底库替换线上精调。人工资料仍通过上述维护入口增量更新，首次部署才安装底库。
+生产数据保存在部署目录的 `shared/data`，代码发布补入缺失的文件并关联这份数据，不用仓库底库替换线上精调。人工资料通过上述维护入口增量更新；每日自动更新由 `sync_knowledge.py` 执行，新增资料和空白字段根据免费公开来源补齐，既有人工值保留。`data/auto_update` 只保存运行期限和进度，不参与知识资料展示，不提交 Git。
 
 图片、日志、抓取状态的分工见 [工具说明](../uma_tools/README.md)。

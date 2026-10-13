@@ -33092,6 +33092,48 @@
       "evidence_refs": [
         "official-ending-anime-umayuru-fullgate-e03"
       ]
+    },
+    {
+      "id": "anime-cinderella-gray-e01-auto-verified-cast-17",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e01",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "akasakamisato",
+      "voice_actor_id": "va-0082",
+      "signature": "実況(赤坂美聡)",
+      "display_order": 17,
+      "evidence_refs": [
+        "official-ending-anime-cinderella-gray-e01"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e13-auto-verified-cast-22",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e13",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "akasakamisato",
+      "voice_actor_id": "va-0082",
+      "signature": "実況（赤坂美聡）",
+      "display_order": 22,
+      "evidence_refs": [
+        "official-ending-anime-cinderella-gray-e13"
+      ]
+    },
+    {
+      "id": "anime-cinderella-gray-e14-auto-verified-cast-17",
+      "source_type": "anime_unit",
+      "source_id": "anime-cinderella-gray-e14",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "akasakamisato",
+      "voice_actor_id": "va-0082",
+      "signature": "実況（赤坂美聡）",
+      "display_order": 17,
+      "evidence_refs": [
+        "official-ending-anime-cinderella-gray-e14"
+      ]
     }
   ]
 }

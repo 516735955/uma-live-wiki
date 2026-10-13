@@ -434,7 +434,11 @@ def main():
                 k = row.get('link')
                 if k:
                     r = {kk: vv for kk, vv in row.items() if kk != '_manual'}
-                    all_events[k] = dict(all_events.get(k) or {}, **r)
+                    previous = all_events.get(k) or {}
+                    # Empty maintenance placeholders do not retract an existing
+                    # cast. Explicit corrections still retain their priority.
+                    all_events[k] = dict(previous, **{field: value for field, value in r.items()
+                                                     if value not in ('', None, [], {}) or field not in previous})
             print('manual events merged:', flush=True)
         except Exception as ex:
             print('manual events load failed:', str(ex)[:80], flush=True)

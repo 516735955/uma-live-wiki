@@ -146,14 +146,14 @@ def validate(
     unique(resources, "watch resources")
     unique(relations, "relations")
 
-    allowed_formats = {"tv", "movie", "web", "short", "special"}
+    allowed_formats = {"tv", "movie", "web", "short", "special", "unknown"}
     allowed_work_statuses = {"announced", "airing", "completed"}
     for work in works:
         if work.get("format") not in allowed_formats:
             errors.append(f"work {work.get('id')} has invalid format {work.get('format')}")
         if work.get("status") not in allowed_work_statuses:
             errors.append(f"work {work.get('id')} has invalid status {work.get('status')}")
-        if not work.get("summary_zh"):
+        if not work.get("summary_zh") and not work.get("auto_source"):
             errors.append(f"work {work.get('id')} has no fixed Chinese summary")
         for source_ref in work.get("source_refs") or []:
             if source_ref not in source_ids:

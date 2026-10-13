@@ -953,6 +953,39 @@ def parse_cast_text(value: str) -> list[dict[str, str]]:
     return out
 
 
+def cast_lines_for_session(value: str, date_value: Any, day_index: int) -> list[str]:
+    """Inherit a day label from nested cast groups, including guests and MCs."""
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(value or '', 'html.parser')
+    lines = soup.select('.cast-line')
+    if not lines:
+        return [value or '']
+    session_date = event_date_for_day(date_value, day_index)
+    session_day = dt.date.fromisoformat(session_date).day if session_date else 0
+    out = []
+    for line in lines:
+        labels = []
+        own = line.select_one('.cast-label')
+        if own:
+            labels.append(own.get_text(' ', strip=True))
+        for group in line.find_parents(class_='cast-group'):
+            first = group.select_one('.cast-label')
+            if first:
+                labels.append(first.get_text(' ', strip=True))
+        applies = True
+        for label in labels:
+            match = re.search(r'((?:\d{1,2}[、,，/・]?\s*)+)日', label)
+            days = {int(number) for number in re.findall(r'\d+', match.group(1))} if match else set()
+            day_number = re.search(r'DAY\s*(\d+)', label, re.I)
+            if (days and (not session_day or session_day not in days)) or (day_number and int(day_number.group(1)) != day_index + 1):
+                applies = False
+                break
+        if applies:
+            out.append(str(line))
+    return out
+
+
 def cast_characters_for_session(
     value: str,
     identities: "IdentityIndex",
@@ -960,17 +993,12 @@ def cast_characters_for_session(
     day_index: int,
 ) -> list[str]:
     """Resolve the performing character cast for one day of a curated event."""
-    lines = CAST_LINE_RE.findall(value or "") or [value or ""]
-    session_date = event_date_for_day(date_value, day_index)
-    session_day = dt.date.fromisoformat(session_date).day if session_date else 0
+    lines = cast_lines_for_session(value, date_value, day_index)
     character_ids = []
     for line in lines:
         label_match = CAST_LABEL_RE.search(line)
         label = clean_text(label_match.group(1)) if label_match else ""
         if label and NON_PERFORMER_CAST_LABEL_RE.search(label):
-            continue
-        day_match = re.search(r"(?:仅|僅)?(\d{1,2})日", label)
-        if day_match and session_day and int(day_match.group(1)) != session_day:
             continue
         for item in parse_cast_text(line):
             character_id = identities.character_id(item.get("role") or "")
@@ -1452,6 +1480,8 @@ def numbered_events(data: list[dict[str, Any]], identities: IdentityIndex, used:
                     "songs": [performance["song"] for performance in performances],
                     "character_ids": characters,
                     "performances": performances,
+                    "cast": make_cast([item for line in cast_lines_for_session(sub.get("cast") or "", sub.get("date"), day_index)
+                                       for item in parse_cast_text(line)], identities, "curated_live_cast"),
                 }
                 if table:
                     session["setlist_html"] = table
@@ -1869,10 +1899,12 @@ def build_appearance_index(events: list[dict[str, Any]], songs_catalog: dict[str
                 if actor_id:
                     cast_actor_by_character[char_id].add(actor_id)
         event_songs: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+        actor_songs: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
         session_appearances: list[tuple[dict[str, Any], set[str], dict[str, set[str]]]] = []
         for session in event.get("sessions") or []:
             session_chars = set(session.get("character_ids") or [])
             session_voice: dict[str, set[str]] = defaultdict(set)
+            scoped_actors: dict[str, set[str]] = defaultdict(set)
             for cast in session.get("cast") or []:
                 actor_id = cast.get("voice_actor_id") or ""
                 char_id = cast.get("character_id") or ""
@@ -1882,6 +1914,19 @@ def build_appearance_index(events: list[dict[str, Any]], songs_catalog: dict[str
                     session_chars.add(char_id)
                     if actor_id:
                         cast_actor_by_character[char_id].add(actor_id)
+                        scoped_actors[char_id].add(actor_id)
+            explicit_actors = set(session_voice)
+
+            def actors_for_character(char_id):
+                character = identities.character_by_id.get(char_id) or {}
+                actor_ids = scoped_actors.get(char_id) or (cast_actor_by_character.get(char_id) if 'cast' not in session else set()) or set()
+                if not actor_ids and not character.get('cv_former'):
+                    current_actor = identities.voice_id(character.get('cv') or character.get('cv_zh') or '')
+                    if current_actor:
+                        actor_ids = {current_actor}
+                # A credited character in a video or song table does not prove
+                # that its current voice actor attended this specific session.
+                return actor_ids & explicit_actors if 'cast' in session else actor_ids
             char_in_event.update(session_chars)
             for performance in session.get("performances") or []:
                 song = performance.get("song_title") or performance.get("song") or ""
@@ -1898,33 +1943,29 @@ def build_appearance_index(events: list[dict[str, Any]], songs_catalog: dict[str
                     relation["performance_ids"].append(f"{session.get('id') or event['id']}:{version_id}")
                     relation["version_ids"].append(version_id)
                 for char_id in performance_chars:
-                    character = identities.character_by_id.get(char_id) or {}
-                    actor_ids = cast_actor_by_character.get(char_id) or set()
-                    if not actor_ids and not character.get("cv_former"):
-                        current_actor = identities.voice_id(character.get("cv") or character.get("cv_zh") or "")
-                        if current_actor:
-                            actor_ids = {current_actor}
+                    actor_ids = actors_for_character(char_id)
                     for actor_id in actor_ids:
                         voice_in_event[actor_id].add("setlist_character")
                         session_voice[actor_id].add("setlist_character")
+                        relation = actor_songs[actor_id].setdefault(song_id, {
+                            'song_id': song_id, 'name': song, 'event_ids': [], 'performance_ids': [], 'version_ids': []})
+                        relation['event_ids'].append(event['id'])
+                        relation['performance_ids'].append(f"{session.get('id') or event['id']}:{version_id}")
+                        relation['version_ids'].append(version_id)
             for char_id in session_chars:
-                character = identities.character_by_id.get(char_id) or {}
-                actor_ids = cast_actor_by_character.get(char_id) or set()
-                if not actor_ids and not character.get("cv_former"):
-                    current_actor = identities.voice_id(character.get("cv") or character.get("cv_zh") or "")
-                    if current_actor:
-                        actor_ids = {current_actor}
+                actor_ids = actors_for_character(char_id)
                 for actor_id in actor_ids:
                     session_voice[actor_id].update(voice_in_event.get(actor_id) or {"canonical_character_cast"})
             if session_chars or session_voice:
                 session_appearances.append((session, session_chars, session_voice))
-        base = {"event_id": event["id"], "date": event.get("date") or "", "title": event.get("title") or "", "kind": event.get("kind") or "", "series_id": event.get("series_id") or ""}
+        base = {"event_id": event["id"], "date": event.get("date") or "", "end_date": event.get("end_date") or "", "title": event.get("title") or "", "kind": event.get("kind") or "", "series_id": event.get("series_id") or ""}
         covered_actors: set[str] = set()
         covered_characters: set[str] = set()
         for session, session_chars, session_voice in session_appearances:
             session_base = {
                 **base,
                 "date": session.get("date") or base["date"],
+                "end_date": session.get("date") or base["date"],
                 "session_id": session.get("id") or "",
                 "session_label": session.get("label") or "",
             }
@@ -1963,19 +2004,14 @@ def build_appearance_index(events: list[dict[str, Any]], songs_catalog: dict[str
                 })
                 for key in ("event_ids", "performance_ids", "version_ids"):
                     char_relation[key].extend(relation[key])
-                character = identities.character_by_id.get(char_id) or {}
-                actor_ids = cast_actor_by_character.get(char_id) or set()
-                if not actor_ids and not character.get("cv_former"):
-                    current_actor = identities.voice_id(character.get("cv") or character.get("cv_zh") or "")
-                    if current_actor:
-                        actor_ids = {current_actor}
-                for actor_id in actor_ids:
-                    if actor_id in voice:
-                        actor_relation = voice[actor_id]["performed_songs"].setdefault(song_id, {
-                            "song_id": song_id, "name": relation["name"], "event_ids": [], "performance_ids": [], "version_ids": [],
-                        })
-                        for key in ("event_ids", "performance_ids", "version_ids"):
-                            actor_relation[key].extend(relation[key])
+        for actor_id, songs in actor_songs.items():
+            if actor_id not in voice:
+                continue
+            for song_id, relation in songs.items():
+                actor_relation = voice[actor_id]["performed_songs"].setdefault(song_id, {
+                    "song_id": song_id, "name": relation["name"], "event_ids": [], "performance_ids": [], "version_ids": []})
+                for key in ("event_ids", "performance_ids", "version_ids"):
+                    actor_relation[key].extend(relation[key])
     for bucket in (voice, chars):
         for value in bucket.values():
             value["events"].sort(key=lambda row: (row.get("date") or "0000-00-00", row["event_id"]), reverse=True)

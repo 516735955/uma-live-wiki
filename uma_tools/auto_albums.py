@@ -15,7 +15,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BASE)
 DATA_DIR = os.path.join(ROOT, 'data')
 ALBUMS_JSON = os.path.join(DATA_DIR, 'albums.json')
-STATE_JSON = os.path.join(BASE, 'albums_auto_state.json')
+STATE_JSON = os.path.join(DATA_DIR, 'auto_update', 'albums.json')
 LOG_FILE = os.path.join(BASE, 'albums_auto.log')
 
 MICROCMS_URL = 'https://6azuq3sitt-aw4monxblm4y4x0oos66.microcms.io/api/v1/goods'
@@ -272,6 +272,7 @@ def load_list(path):
 
 
 def save_atomic(path, obj):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     tmp = path + '.tmp'
     with io.open(tmp, 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False, indent=1)

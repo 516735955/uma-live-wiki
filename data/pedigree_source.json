@@ -9,6 +9,10 @@
       "name": "netkeiba",
       "url": "https://db.netkeiba.com/horse/",
       "note": "Direct parentage checked against the individual horse pedigree page."
+    },
+    "wikipedia": {
+      "name": "Wikipedia cited racehorse infobox",
+      "url": "https://ja.wikipedia.org/"
     }
   },
   "character_mappings": {
@@ -759,6 +763,16 @@
     "ellerslie_pride": {
       "horse": "bonecrusher",
       "kind": "horse"
+    },
+    "akasakamisato": {
+      "horse": null,
+      "kind": "non_uma",
+      "auto_source": true
+    },
+    "hosoejunko": {
+      "horse": null,
+      "kind": "non_uma",
+      "auto_source": true
     }
   },
   "nodes": [
@@ -33384,6 +33398,22 @@
       "country": "JPN",
       "profile_url": "https://www.jbis.or.jp/horse/0000376803/",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000052964/pedigree/"
+    },
+    {
+      "id": "akasakamisato",
+      "zh": "赤坂美聡",
+      "ja": "赤坂美聡",
+      "en": "Akasaka Misato",
+      "auto_source": true,
+      "metadata_source_url": "https://umamusume.jp/character/akasakamisato/"
+    },
+    {
+      "id": "hosoejunko",
+      "zh": "细江纯子",
+      "ja": "細江純子",
+      "en": "Hosoe Junko",
+      "auto_source": true,
+      "metadata_source_url": "https://umamusume.jp/character/hosoejunko/"
     }
   ],
   "horse_pages": [

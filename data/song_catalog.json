@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-12T20:48:42+00:00",
+  "generated_at": "2026-10-13T08:48:29+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -48893,6 +48893,7 @@
         "高柳知葉、髙橋ミナミ、衣川里佳、田所あずさ、福原綾香、大和田仁美、天海由梨奈、矢野妃菜喜、ファイルーズあい、東山奈央、菊池紗矢香、佐藤榛夏、日笠陽子、芹澤 優、石原夏織、茂木淳一"
       ],
       "character_ids": [
+        "akasakamisato",
         "almondeye",
         "believe",
         "biwahayahide",
@@ -49002,6 +49003,7 @@
         "va-0180"
       ],
       "released_character_ids": [
+        "akasakamisato",
         "almondeye",
         "cesario",
         "elcondorpasa",
@@ -49916,8 +49918,16 @@
                 {
                   "voice_actor_id": "va-0082",
                   "voice_actor_name": "明坂聪美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
+                  }
                 }
               ]
             }
@@ -116720,6 +116730,7 @@
         "airgroove",
         "airmessiah",
         "airshakur",
+        "akasakamisato",
         "almondeye",
         "astonmachan",
         "believe",
@@ -117026,6 +117037,7 @@
         "airgroove",
         "airmessiah",
         "airshakur",
+        "akasakamisato",
         "almondeye",
         "astonmachan",
         "believe",
@@ -118158,8 +118170,16 @@
                 {
                   "voice_actor_id": "va-0082",
                   "voice_actor_name": "明坂聪美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
+                  }
                 }
               ]
             },
@@ -124751,8 +124771,16 @@
                 {
                   "voice_actor_id": "va-0082",
                   "voice_actor_name": "明坂聪美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
+                  }
                 }
               ]
             },
@@ -132705,8 +132733,16 @@
                 {
                   "voice_actor_id": "va-0082",
                   "voice_actor_name": "明坂聪美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
+                  }
                 }
               ]
             },
@@ -140195,8 +140231,16 @@
                 {
                   "voice_actor_id": "va-0082",
                   "voice_actor_name": "明坂聪美",
-                  "character_id": "",
-                  "character": null
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
+                  }
                 }
               ]
             },
@@ -247972,5 +248016,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "4d924cfce5735396e554"
+  "build_id": "10d613bc7006804a4f24"
 }

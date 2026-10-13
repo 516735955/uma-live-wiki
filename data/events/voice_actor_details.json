@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
-  "refreshed_at": "2026-10-02T21:12:51+00:00",
+  "refreshed_at": "2026-10-13T08:28:48+00:00",
   "refresh_policy": "add new records; upgrade source-unavailable placeholders; preserve every accepted sourced record",
   "coverage": {
     "records": 195,
@@ -21,7 +21,7 @@
     },
     "added_in_refresh": 0,
     "upgraded_in_refresh": 0,
-    "repaired_profile_photos": 5
+    "repaired_profile_photos": 0
   },
   "records": [
     {
@@ -4152,6 +4152,34 @@
       ]
     },
     {
+      "lookup_name": "豊口めぐみ",
+      "name_zh": "丰口惠美",
+      "name_ja": "豊口めぐみ",
+      "aliases": [],
+      "kana": "",
+      "birthday": "1月2日",
+      "birthplace": "東京都",
+      "agency": "81 Produce",
+      "official_profile": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "事务所官方资料",
+          "url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252"
+        }
+      ],
+      "photo_url": "https://www.81produce.co.jp/dcms_media/image/toyoguchi_megumi.jpg",
+      "photo_source_url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
+      "photo_source_title": "事务所官方资料"
+    },
+    {
       "lookup_name": "豊崎愛生",
       "name_zh": "丰崎爱生",
       "name_ja": "豊崎愛生",
@@ -4904,34 +4932,6 @@
           "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E9%A0%AD%E6%98%8E%E9%87%8C"
         }
       ]
-    },
-    {
-      "lookup_name": "豊口めぐみ",
-      "name_zh": "丰口惠美",
-      "name_ja": "豊口めぐみ",
-      "aliases": [],
-      "kana": "",
-      "birthday": "1月2日",
-      "birthplace": "東京都",
-      "agency": "81 Produce",
-      "official_profile": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
-      "field_status": {
-        "birthday": "verified",
-        "birthplace": "verified",
-        "agency": "verified",
-        "official_profile": "verified"
-      },
-      "status": "complete",
-      "sources": [
-        {
-          "kind": "official_profile",
-          "label": "事务所官方资料",
-          "url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252"
-        }
-      ],
-      "photo_url": "https://www.81produce.co.jp/dcms_media/image/toyoguchi_megumi.jpg",
-      "photo_source_url": "https://www.81produce.co.jp/dcms_plusdb/index.php/item?id=252",
-      "photo_source_title": "事务所官方资料"
     }
   ]
 }

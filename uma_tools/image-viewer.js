@@ -131,7 +131,10 @@ function openViewer(img) {
   // PhotoSwipe's default activation retries an error by replacing its element,
   // leaving the custom preview behind. Only the explicit retry replaces it.
   pswp.on('contentActivate', event => {
-    if (event.content.isError()) event.preventDefault();
+    if (event.content.isError()) {
+      event.preventDefault();
+      event.content.slide?.holderElement?.setAttribute('aria-hidden', 'false');
+    }
   });
   pswp.on('loadComplete', ({content, isError}) => {
     const element = content.element;
@@ -148,7 +151,7 @@ function openViewer(img) {
   });
   pswp.on('openingAnimationEnd', refreshReadySlide);
   pswp.on('change', refreshReadySlide);
-  pswp.on('mainScrollAnimComplete', refreshReadySlide);
+  pswp.on('moveMainScroll', () => { if (readySlides.size) refreshReadySlide(); });
   pswp.on('destroy', () => {
     retryImages.forEach(image => { image.onload = image.onerror = null; image.src = ''; });
     retryImages.clear();

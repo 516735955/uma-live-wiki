@@ -34,7 +34,18 @@ sudo bash update.sh /var/www/umamusume /tmp/uma-release.tgz
 
 ## 自动刷新
 
-新闻启动即后台更新；官网新闻 TTL 为 15 分钟，CD 新闻为 30 分钟。角色、活动、专辑、官方节目每 6 小时串行更新，单项抓取有超时。每日 02:00 重启与抓取独立。
+新闻每 30 分钟主动刷新；官网新闻 TTL 为 15 分钟，CD 新闻为 30 分钟。其他知识资料由 `sync_knowledge.py` 每日增量更新：官方角色与学园关系者、原型马与血统、活动与节目、专辑与歌单、音乐署名与歌词、声优资料、官方动画及其关联。网站每小时检查哪些步骤到期；成功步骤间隔 24 小时，失败来源一小时后重试，其余步骤继续。每日 02:00 重启不会重置更新期限。
+
+`shared/data/auto_update` 保存最近一次执行状态和来源进度，跨发布保留；它不是审阅台。全流程只使用免费公开来源与本地解析，不调用付费模型。已有非空资料与人工订正保留，无法确定的字段留空；来源未披露的内容、无法唯一匹配的身份和未解析的新网站结构不编造补齐。图片只保存页面需要的本地版本，视频与音频保留来源链接。
+
+服务器检查状态或立即执行某一项：
+
+```bash
+python3 uma_tools/sync_knowledge.py --status
+python3 uma_tools/sync_knowledge.py --force --only characters pedigree-source pedigree-build
+```
+
+Python 依赖为 Pillow、beautifulsoup4 与 openpyxl；发布脚本会检查并安装。普通本地预览仍使用 `--no-crawl`，不会后台修改源数据。
 
 ## 验证
 

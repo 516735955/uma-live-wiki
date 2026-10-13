@@ -235,7 +235,7 @@ def main():
     if report["filled"] and not args.dry_run:
         write_json(args.live_cat, catalog)
     write_json(args.report, report)
-    print("sheet-sync: %d blocks, %d filled, %d unchanged, %d require review" %
+    print("sheet-sync: %d blocks, %d filled, %d unchanged, %d preserved without a unique empty match" %
           (report["sheet_blocks"], len(report["filled"]), report["unchanged"], len(report["review"])))
 
 

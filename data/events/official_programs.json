@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-10-08T13:34:56+00:00",
+  "refreshed_at": "2026-10-13T08:16:28+00:00",
   "coverage": {
-    "official_youtube_refresh": "tool_unavailable",
+    "official_youtube_refresh": "verified",
     "expected_regular_episodes": 124,
     "records": 227,
     "source_verified_regular_episodes": 124,
@@ -6606,10 +6606,10 @@
       "title": "ぱかライブTV' #7",
       "date": "2026-09-27",
       "end_date": "2026-09-27",
-      "video_id": "",
-      "url": "",
-      "thumbnail": "",
-      "duration": null,
+      "video_id": "CHDZJgHuiGo",
+      "url": "https://www.youtube.com/watch?v=CHDZJgHuiGo",
+      "thumbnail": "https://i.ytimg.com/vi/CHDZJgHuiGo/maxresdefault.jpg",
+      "duration": 10266,
       "cast_status": "verified",
       "cast": [
         {
@@ -6656,10 +6656,45 @@
         }
       ],
       "characters": [],
-      "sessions": [],
+      "sessions": [
+        {
+          "label": "本期节目",
+          "date": "2026-09-27",
+          "cast": [
+            {
+              "name": "前田玲奈",
+              "role": "グラスワンダー"
+            },
+            {
+              "name": "衣川里佳",
+              "role": "ナリタブライアン"
+            },
+            {
+              "name": "田所あずさ",
+              "role": "シンボリルドルフ"
+            },
+            {
+              "name": "秋奈",
+              "role": "ドゥラメンテ"
+            },
+            {
+              "name": "鈴木日菜",
+              "role": "アドマイヤグルーヴ"
+            },
+            {
+              "name": "菊池ゆりな",
+              "role": "ローズキングダム"
+            },
+            {
+              "name": "浅見春那",
+              "role": "ファレノプシス"
+            }
+          ]
+        }
+      ],
       "summary": "公式生配信番組「ぱかライブTV' #7」の出走者と放送日時が決定しました！10月に追加予定の新育成シナリオや、ガチャ更新情報、次回ストーリーイベントなど、ゲーム最新情報を発表！「ぱかライブTV' #7」放送終了後に配信するアニメ『うまゆる ふるげ～と！』最新情報や、『7th EVENT WORLD TOUR “THE STAGE” in LOS ANGELES』の続報もお届け！さらに、アニメ『うまゆる ふるげ～と！』の公開を記念して、うまゆる早押しクイズに挑戦します！放送日時：2026年9月27日（日）20:00 ",
-      "source_kind": "official_announcement",
-      "source_url": "https://umamusume.jp/news/detail?id=3462",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=CHDZJgHuiGo",
       "sources": [
         {
           "kind": "official_announcement",
@@ -6670,6 +6705,11 @@
           "kind": "community_archive",
           "label": "Umamusume Wiki 补档",
           "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=CHDZJgHuiGo"
         }
       ],
       "media": []

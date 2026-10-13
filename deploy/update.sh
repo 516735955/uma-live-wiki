@@ -113,9 +113,9 @@ chmod 0755 "$RELEASE"
 find "$ROOT/shared/data" -type d -exec chmod 0755 {} +
 find "$ROOT/shared/data" -type f \( -name '*.json' -o -name '*.js' \) -exec chmod 0644 {} +
 node --check "$RELEASE/uma_tools/server.js"
-if ! python3 -c 'import PIL' >/dev/null 2>&1; then
-  if command -v apt-get >/dev/null 2>&1; then apt-get update; apt-get install -y python3-pil;
-  else python3 -m pip install Pillow; fi
+if ! python3 -c 'import PIL, bs4, openpyxl' >/dev/null 2>&1; then
+  if command -v apt-get >/dev/null 2>&1; then apt-get update; apt-get install -y python3-pil python3-bs4 python3-openpyxl;
+  else python3 -m pip install Pillow beautifulsoup4 openpyxl; fi
 fi
 # Exercise the complete candidate against live data before switching nginx.
 runuser -u "$UMA_USER" -- node "$RELEASE/uma_tools/server.js" 8081 "$RELEASE" --no-crawl > "$WORK/probe.log" 2>&1 &

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-12T20:48:42+00:00",
+  "generated_at": "2026-10-13T08:48:29+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -1719,8 +1719,8 @@
         }
       ],
       "stats": {
-        "events": 15,
-        "concerts": 5,
+        "events": 16,
+        "concerts": 6,
         "programs": 6,
         "songs": 5
       }
@@ -2165,8 +2165,8 @@
         }
       ],
       "stats": {
-        "events": 105,
-        "concerts": 33,
+        "events": 103,
+        "concerts": 31,
         "programs": 27,
         "songs": 35
       }
@@ -2333,8 +2333,8 @@
         }
       ],
       "stats": {
-        "events": 17,
-        "concerts": 7,
+        "events": 16,
+        "concerts": 6,
         "programs": 6,
         "songs": 12
       }
@@ -4436,10 +4436,20 @@
         "source_url": "https://zh.moegirl.org.cn/%E6%98%8E%E5%9D%82%E8%81%AA%E7%BE%8E",
         "source_title": "明坂聪美"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "akasakamisato",
+          "name": "赤坂美聡",
+          "name_ja": "赤坂美聡",
+          "former": false,
+          "image": "/uma_official/akasakamisato.png",
+          "color_main": "#2A8E6E",
+          "color_sub": "#D75938"
+        }
+      ],
       "stats": {
-        "events": 37,
-        "concerts": 12,
+        "events": 48,
+        "concerts": 23,
         "programs": 18,
         "songs": 2
       }
@@ -7753,7 +7763,17 @@
         "source_url": "https://x.com/junkohosoe",
         "source_title": "@junkohosoe"
       },
-      "roles": [],
+      "roles": [
+        {
+          "character_id": "hosoejunko",
+          "name": "细江纯子",
+          "name_ja": "細江純子",
+          "former": false,
+          "image": "/uma_official/hosoejunko.png",
+          "color_main": "#485CC7",
+          "color_sub": "#D8CEDA"
+        }
+      ],
       "stats": {
         "events": 1,
         "concerts": 1,
@@ -10829,5 +10849,5 @@
       }
     }
   ],
-  "build_id": "4d924cfce5735396e554"
+  "build_id": "10d613bc7006804a4f24"
 }

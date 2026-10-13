@@ -1263,7 +1263,8 @@ server.listen(PORT, () => {
   });
   setTimeout(() => runCatalogRefresh('startup'), 60 * 1000);
   setTimeout(() => ensureLantisFresh(), 5 * 1000);
-  setInterval(() => runCatalogRefresh('scheduled'), 6 * 60 * 60 * 1000);
+  // The persistent runner selects daily jobs and retries only failed sources.
+  setInterval(() => runCatalogRefresh('scheduled'), 60 * 60 * 1000);
   // 定时自愈：访客触发之外每 30 分钟主动刷一次新闻/CD相关，挂死/失败也能自行恢复
   setInterval(() => {
     ensureLantisFresh();
@@ -1273,72 +1274,17 @@ server.listen(PORT, () => {
   }, 30 * 60 * 1000);
 });
 
-// ---- Events auto-crawl (Eventernote -> events_data.json) ----
+// ---- Daily incremental knowledge refresh ----
 const { execFile } = require('child_process');
-const CRAWL_SCRIPT = path.join(__dirname, 'crawl_events.py');
-const OFFICIAL_PROGRAM_SCRIPT = path.join(__dirname, 'crawl_official_programs.py');
-const CATALOG_CRAWL_TIMEOUT = 60 * 60 * 1000;
-let crawlRunning = false;
+const KNOWLEDGE_SCRIPT = path.join(__dirname, 'sync_knowledge.py');
 let catalogRefreshRunning = false;
-let catalogRefreshQueued = false;
 function runCatalogRefresh(reason) {
-  if (catalogRefreshRunning) {
-    catalogRefreshQueued = true;
-    return;
-  }
+  if (catalogRefreshRunning) return;
   catalogRefreshRunning = true;
-  runCharsCrawl(reason, () => runEventsCrawl(reason, () => runAlbumsCrawl(reason, () => runEventBuild(reason, () => {
+  execFile(PYTHON_BIN, [KNOWLEDGE_SCRIPT], { windowsHide: true, timeout: 6 * 60 * 60 * 1000 }, (err, stdout, stderr) => {
     catalogRefreshRunning = false;
-    if (catalogRefreshQueued) {
-      catalogRefreshQueued = false;
-      runCatalogRefresh('queued');
-    }
-  }))));
-}
-
-function runCharsCrawl(reason, done) {
-  if (charsRunning) { if (done) done(); return; }
-  charsRunning = true;
-  const t0 = Date.now();
-  execFile(PYTHON_BIN, [CHARS_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
-    charsRunning = false;
-    const tag = '[chars-crawl ' + reason + ']';
-    if (err) console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-    else console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
-    if (done) done();
-  });
-}
-let charsRunning = false;
-const CHARS_SCRIPT = path.join(__dirname, 'crawl_characters.py');
-function runEventsCrawl(reason, done) {
-  if (crawlRunning) { if (done) done(); return; }
-  crawlRunning = true;
-  const t0 = Date.now();
-  execFile(PYTHON_BIN, [CRAWL_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
-    const tag = '[events-crawl ' + reason + ']';
-    if (err) {
-      console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-    } else {
-      console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n').pop());
-    }
-    crawlRunning = false;
-    if (done) done();
-  });
-}
-
-function runEventBuild(reason, done) {
-  const t0 = Date.now();
-  // Program discovery rebuilds and validates the unified catalogs itself.
-  // Voice-actor biographies are a slower, separately reviewed maintenance job
-  // and must not be re-scraped by every six-hour event refresh.
-  execFile(PYTHON_BIN, [OFFICIAL_PROGRAM_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
-    const tag = '[events-build ' + reason + ']';
-    if (err) {
-      console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-    } else {
-      console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', String(stdout).trim().split('\n')[0]);
-    }
-    if (done) done();
+    if (stdout.trim()) console.log('[knowledge ' + reason + ']\n' + stdout.trim());
+    if (err) console.error('[knowledge ' + reason + '] incomplete:', String(stderr || err.message || '').trim().split('\n').pop());
   });
 }
 
@@ -1359,25 +1305,5 @@ function runLantisCrawl(reason) {
     lantisAt = Date.now();
     // 抓取结果直接合并进 news_snapshot.json，不再重抓官网新闻来完成合并。
     if (!err) publishLantisMerge();
-  });
-}
-
-// ---- Album auto-crawl (microCMS -> albums.json placeholders; netease enrich) ----
-const ALBUMS_SCRIPT = path.join(__dirname, 'auto_albums.py');
-let albumsRunning = false;
-function runAlbumsCrawl(reason, done) {
-  if (albumsRunning) { if (done) done(); return; }
-  albumsRunning = true;
-  const t0 = Date.now();
-  execFile(PYTHON_BIN, [ALBUMS_SCRIPT], { windowsHide: true, timeout: CATALOG_CRAWL_TIMEOUT }, (err, stdout, stderr) => {
-    albumsRunning = false;
-    const tag = '[albums-crawl ' + reason + ']';
-    if (err) {
-      console.log(tag, 'FAILED:', String(stderr || err.message || '').trim().split('\n').pop());
-    } else {
-      const lines = String(stdout || '').trim().split('\n');
-      console.log(tag, 'done in ' + ((Date.now() - t0) / 1000 | 0) + 's |', lines[lines.length - 1]);
-    }
-    if (done) done();
   });
 }
