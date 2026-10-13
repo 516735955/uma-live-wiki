@@ -1,12 +1,14 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
 class TranslationCache {
-  constructor(file) {
+  constructor(file, seedFile) {
     // Resolve the release symlink so atomic replacement updates the shared cache.
     this.file = fs.existsSync(file) ? fs.realpathSync(file) : file;
-    this.values = {};
+    this.seed = seedFile && fs.existsSync(seedFile) ? JSON.parse(fs.readFileSync(seedFile, 'utf8')) : {};
+    this.values = { ...this.seed };
     this.mtime = 0;
     this.reload();
   }
@@ -14,7 +16,7 @@ class TranslationCache {
     if (!fs.existsSync(this.file)) return;
     const mtime = fs.statSync(this.file).mtimeMs;
     if (mtime === this.mtime) return;
-    this.values = JSON.parse(fs.readFileSync(this.file, 'utf8'));
+    this.values = { ...this.seed, ...JSON.parse(fs.readFileSync(this.file, 'utf8')) };
     this.mtime = mtime;
   }
   get(key) {
@@ -28,6 +30,7 @@ class TranslationCache {
     const next = { ...this.values, [key]: value };
     const temporary = this.file + '.' + process.pid + '.tmp';
     try {
+      fs.mkdirSync(path.dirname(this.file), { recursive: true });
       fs.writeFileSync(temporary, JSON.stringify(next, null, 1), { mode: 0o644 });
       fs.renameSync(temporary, this.file);
     } finally {

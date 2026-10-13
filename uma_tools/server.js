@@ -166,7 +166,7 @@ try {
 } catch (e) { /* the first successful refresh creates the snapshot */ }
 
 // ---- machine translation of news titles (Baidu Translate API, cached) ----
-const TRANS_CACHE_FILE = path.join(__dirname, 'trans_cache.json');
+const TRANS_CACHE_FILE = path.join(ROOT, 'data', 'auto_update', 'trans_cache.json');
 // Baidu Translate API credentials. Resolution order: env vars > baidu.conf.json.
 // The conf file is committed so a fresh clone/pull works out of the box,
 // while BAIDU_APPID / BAIDU_SECRET env vars can still override it.
@@ -186,7 +186,7 @@ function loadBaiduCreds() {
 const _baiduCreds = loadBaiduCreds();
 const BAIDU_APPID = _baiduCreds.appid;
 const BAIDU_SECRET = _baiduCreds.secret;
-const translations = new TranslationCache(TRANS_CACHE_FILE);
+const translations = new TranslationCache(TRANS_CACHE_FILE, path.join(__dirname, 'trans_cache.json'));
 let termStamp = '', translationTerms;
 function currentTerms() {
   const stamp = ['character_index_data.js', 'voice_actor_profiles.json'].map((file) => fs.statSync(path.join(DATA_DIR, file)).mtimeMs).join(':');

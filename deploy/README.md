@@ -2,6 +2,8 @@
 
 站点使用 `/var/www/umamusume`，服务用户由部署配置指定，Node 监听 8080。`current` 指向正在发布的代码目录；`shared/data`、翻译缓存和图片跨版本保留。
 
+运行时翻译缓存保存在 `data/auto_update/trans_cache.json`。仓库的 `uma_tools/trans_cache.json` 和旧发布共享缓存作为初始翻译种子，只读取；新译文写入运行时目录。本机 `.impeccable/config.json` 属于设计工具状态，不参与代码发布。
+
 ## 更新
 
 服务器自动解析 main 的具体提交、下载该提交并生成资源：
