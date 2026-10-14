@@ -26,7 +26,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api4-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(snapshot.buildId.includes('-api5-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');

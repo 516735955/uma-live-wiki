@@ -81,8 +81,8 @@ exports.createService = function (deps) {
           ? "public, max-age=3600, stale-while-revalidate=86400"
           : versioned
             ? "public, max-age=31536000, immutable"
-            : isMedia
-              ? "public, max-age=2592000, stale-while-revalidate=86400"
+          : isMedia
+            ? (/^[a-f0-9]{40}$/.test(requestUrl.searchParams.get('v') || '') ? "public, max-age=2592000" : "no-cache")
               : "no-cache";
       const headers = {
         "Content-Type": MIME[ext] || "application/octet-stream",

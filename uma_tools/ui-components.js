@@ -334,7 +334,7 @@
         <section class="audio-dock" :class="['is-'+player.status,{expanded:player.panelOpen}]" role="region" aria-label="音频播放器" :style="progressStyle">
           <div class="audio-dock-inner">
             <div class="audio-cover">
-              <img v-if="current && current.cover" :src="current.cover" alt="" @error="onImageError" @load="onImageLoad">
+              <img v-if="current && current.cover" v-media-src="current.cover" alt="" @error="onImageError" @load="onImageLoad">
               <span v-if="current && playing" class="audio-playing-bars" aria-hidden="true"><i></i><i></i><i></i></span>
             </div>
             <div class="audio-dock-copy">

@@ -441,7 +441,7 @@
     if (item.role) {
       var image = document.createElement('img');
       image.className = 'ped-avatar';
-      image.src = item.avatar;
+      image.src = window.UmaMedia ? window.UmaMedia.url(item.avatar) : item.avatar;
       image.alt = '';
       image.loading = 'lazy';
       element.appendChild(image);

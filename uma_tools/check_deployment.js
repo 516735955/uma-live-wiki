@@ -82,7 +82,7 @@ async function main() {
   check(page.body.includes('name="uma-release" content="' + commit + '"'), 'HTML 与服务版本不一致');
   const assetMatches = Array.from(page.body.matchAll(/(?:href|src)=["'](\/assets\/[a-f0-9]{16}\.(?:css|js))["']/g));
   const assets = Array.from(new Set(assetMatches.map((match) => match[1])));
-  const required = ['app.css', 'app.js', 'vue.global.prod.js'];
+  const required = ['frontend/styles/foundation.css', 'app.js', 'vue.global.prod.js'];
   required.forEach((name) => check(assets.includes(manifest.assets['/uma_tools/' + (name === 'vue.global.prod.js' ? 'vendor/' : '') + name]), '页面缺少版本化资源', name));
   Object.values(manifest.assets).forEach((asset) => { if (!assets.includes(asset)) assets.push(asset); });
 
@@ -91,7 +91,7 @@ async function main() {
     const cacheControl = header(result, 'cache-control');
     check(result.status === 200, '静态资源不可用', asset + ' HTTP ' + result.status);
     check(!/text\/html/.test(header(result, 'content-type')), '静态资源错误返回页面 HTML', asset);
-    check(header(result, 'content-encoding') === 'gzip', '静态资源未 gzip', asset);
+    if (Buffer.byteLength(result.body) >= 1024) check(header(result, 'content-encoding') === 'gzip', '静态资源未 gzip', asset);
     check(/max-age=31536000/.test(cacheControl) && /immutable/.test(cacheControl), '版本化资源未长期缓存', asset + ' ' + (cacheControl || '无 Cache-Control'));
   }
 

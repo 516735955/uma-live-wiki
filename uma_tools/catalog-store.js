@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const CATALOG_RESPONSE_SCHEMA = 4;
+const CATALOG_RESPONSE_SCHEMA = 5;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',

@@ -12,7 +12,10 @@ function prepareRelease(root, commit, ancestors = []) {
   const pattern = /\/uma_tools\/[\w./-]+\.(?:js|css)(?:\?v=[\w.-]+)?/g;
   const output = path.join(root, 'assets');
   fs.mkdirSync(output, { recursive: true });
-  const rewrite = (text) => text.replace(pattern, (url) => build(url.split('?')[0]));
+  const rewrite = (text) => text.replace(pattern, (url) => build(url.split('?')[0])).replace(
+    /\/uma_tools\/img\/[\w./-]+\.(?:png|jpe?g|webp|gif|svg|ico)(?:\?v=[\w.-]+)?/g,
+    url => url.split('?')[0] + '?v=' + commit,
+  );
   function build(url) {
     if (assets[url]) return assets[url];
     if (visiting.has(url)) throw new Error('Circular asset dependency: ' + url);
