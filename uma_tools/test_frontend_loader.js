@@ -8,6 +8,12 @@ const vm = require("vm");
 function loadFrontend(context) {
   const directory = path.join(__dirname, "frontend");
   const wiring = fs.readFileSync(path.join(directory, "domains.js"), "utf8");
+  const labels = fs.readFileSync(path.join(directory, 'anime-labels.js'), 'utf8').replace(/export function /g, 'function ');
+  Object.assign(context, vm.runInContext('(function(){' + labels + ';return {animeFormatLabel,animeStatusLabel,animePlatformLabel};})()', context));
+  for (const [file, name] of [['anime-participation', 'createAnimeParticipation'], ['anime-music', 'createAnimeMusic']]) {
+    const source = fs.readFileSync(path.join(directory, file + '.js'), 'utf8').replace('export function ' + name, 'function ' + name);
+    context[name] = vm.runInContext('(function(){' + source + ';return ' + name + ';})()', context, { filename: file + '.js' });
+  }
   const imports = Array.from(
     wiring.matchAll(
       /import\s*\{\s*(\w+)\s*\}\s*from "\/uma_tools\/frontend\/domains\/([\w-]+)\.js";/g,
@@ -16,7 +22,7 @@ function loadFrontend(context) {
   for (const [, name, file] of imports) {
     const source = fs
       .readFileSync(path.join(directory, "domains", file + ".js"), "utf8")
-      .replace("export function " + name, "function " + name);
+      .replace("export function " + name, "function " + name).replace(/import\s+[\s\S]*?\sfrom\s+"[^"]+";\n/g, '');
     context[name] = vm.runInContext('(function(){' + source + ';return ' + name + ';})()', context, { filename: file + '.js' });
   }
   vm.runInContext(
