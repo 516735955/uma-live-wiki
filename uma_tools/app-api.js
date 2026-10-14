@@ -24,14 +24,12 @@
     });
     const cached = resolved.get(cacheKey);
     if (!settings.fresh && cached && Date.now() - cached.at < maxAge) return Promise.resolve(cached.data);
-    if (!settings.fresh && pending.has(cacheKey)) return pending.get(cacheKey);
+    if (settings.signal && settings.signal.aborted) return Promise.reject(new DOMException('Aborted', 'AbortError'));
+    if (!settings.fresh && pending.has(cacheKey)) return subscribe(pending.get(cacheKey), settings.signal);
     const controller = new AbortController();
     const cancel = function () { controller.abort(); };
-    if (settings.signal) {
-      if (settings.signal.aborted) cancel();
-      else settings.signal.addEventListener('abort', cancel, { once: true });
-    }
     const timer = setTimeout(cancel, 25000);
+    const entry = { controller: controller, subscribers: 0, settled: false, promise: null };
     const promise = fetch(path, {
       headers: { Accept: 'application/json' },
       cache: settings.fresh ? 'no-cache' : 'default',
@@ -40,25 +38,49 @@
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
     }).then(function (data) {
-      if (pending.get(cacheKey) === promise) {
+      if (pending.get(cacheKey) === entry) {
         resolved.set(cacheKey, { at: Date.now(), expiresAt: Date.now() + maxAge, data: data });
         pending.delete(cacheKey);
       }
       return data;
     }).catch(function (error) {
-      if (pending.get(cacheKey) === promise) pending.delete(cacheKey);
+      if (pending.get(cacheKey) === entry) pending.delete(cacheKey);
       throw error;
     });
-    pending.set(cacheKey, promise);
-    return promise.finally(function () {
+    entry.promise = promise.finally(function () {
+      entry.settled = true;
       clearTimeout(timer);
-      if (settings.signal) settings.signal.removeEventListener('abort', cancel);
+    });
+    pending.set(cacheKey, entry);
+    return subscribe(entry, settings.signal);
+  }
+
+  // Each consumer owns its cancellation. The wire is shared until no consumers remain.
+  function subscribe(entry, signal) {
+    entry.subscribers += 1;
+    return new Promise(function (resolve, reject) {
+      let done = false;
+      function finish(callback, value) {
+        if (done) return;
+        done = true;
+        if (signal) signal.removeEventListener('abort', cancel);
+        entry.subscribers -= 1;
+        callback(value);
+        if (!entry.subscribers && !entry.settled) entry.controller.abort();
+      }
+      function cancel() { finish(reject, new DOMException('Aborted', 'AbortError')); }
+      if (signal) signal.addEventListener('abort', cancel, { once: true });
+      entry.promise.then(function (data) { finish(resolve, data); }, function (error) { finish(reject, error); });
     });
   }
 
   function invalidate(prefix) {
     Array.from(resolved.keys()).forEach(function (key) {
       if (!prefix || String(key).indexOf(prefix) === 0) resolved.delete(key);
+    });
+    // Existing callers may finish; detaching prevents their obsolete result entering the cache.
+    Array.from(pending.keys()).forEach(function (key) {
+      if (!prefix || String(key).indexOf(prefix) === 0) pending.delete(key);
     });
   }
 

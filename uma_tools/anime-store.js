@@ -39,16 +39,26 @@ class AnimeStore {
   }
 
   async load() {
+    try { return await this.reload(); }
+    catch (error) {
+      this.lastError = error;
+      if (this.catalog) return this.catalog;
+      throw error;
+    }
+  }
+
+  async reload() {
     const stat = await fs.promises.stat(this.file);
     const signature = stat.mtimeMs + ':' + stat.size;
     if (this.catalog && signature === this.signature) return this.catalog;
-    if (this.pending) { await this.pending; return this.load(); }
+    if (this.pending) return this.pending;
     this.pending = fs.promises.readFile(this.file, 'utf8').then(text => {
       const data = JSON.parse(text);
       if (!data.build_id || !['works', 'units', 'people', 'staff', 'relations', 'watch_resources']
         .every(key => Array.isArray(data[key]))) throw new Error('Invalid anime catalog');
       this.catalog = data;
       this.signature = signature;
+      this.lastError = null;
       this.responses.clear();
       this.staffByWork = new Map();
       this.staffByPerson = new Map();

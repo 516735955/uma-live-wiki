@@ -4,7 +4,7 @@ const fs = require('fs');
 const vm = require('vm');
 let now = 0, requests = 0;
 const context = vm.createContext({
-  window: {}, URLSearchParams, AbortController, setTimeout, clearTimeout, Date: { now: () => now },
+  window: {}, URLSearchParams, AbortController, DOMException, setTimeout, clearTimeout, Date: { now: () => now },
   fetch: async () => { requests += 1; return { ok: true, json: async () => ({ requests }) }; }
 });
 // Read cache size in the test context without exposing it in the application.
@@ -26,6 +26,21 @@ vm.runInContext(source, context);
   replies[0]({ ok: true, json: async () => ({ version: 'old' }) });
   await old;
   assert.strictEqual((await api.request('/race')).version, 'latest', 'late refresh cannot regress the shared cache');
+  const controller = new AbortController();
+  const cancelled = api.request('/shared', { signal: controller.signal });
+  const survivor = api.request('/shared');
+  controller.abort();
+  await assert.rejects(cancelled, { name: 'AbortError' });
+  replies[2]({ ok: true, json: async () => ({ shared: true }) });
+  assert.strictEqual((await survivor).shared, true);
+  const invalidated = api.request('/invalidate');
+  api.invalidate('/invalidate');
+  replies[3]({ ok: true, json: async () => ({ obsolete: true }) });
+  await invalidated;
+  const refreshed = api.request('/invalidate');
+  assert.strictEqual(replies.length, 5, 'invalidation detaches pending cache writer');
+  replies[4]({ ok: true, json: async () => ({ obsolete: false }) });
+  await refreshed;
   const { scoreAlbum, buildCandidate } = require('./scrape');
   assert.strictEqual(scoreAlbum('ANIMATION DERBY Season 2 Vol.1', 'ANIMATION DERBY Season 3 Vol.1'), 0);
   assert.strictEqual(scoreAlbum('WINNING MELODY', 'WINNING MELODY Remix'), 0);
