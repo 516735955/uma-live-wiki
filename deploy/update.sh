@@ -113,8 +113,8 @@ chmod 0755 "$RELEASE"
 find "$ROOT/shared/data" -type d -exec chmod 0755 {} +
 find "$ROOT/shared/data" -type f \( -name '*.json' -o -name '*.js' \) -exec chmod 0644 {} +
 node --check "$RELEASE/uma_tools/server.js"
-if ! python3 -c 'import PIL, bs4, openpyxl' >/dev/null 2>&1 || ! command -v yt-dlp >/dev/null 2>&1; then
-  if command -v apt-get >/dev/null 2>&1; then apt-get update; apt-get install -y python3-pil python3-bs4 python3-openpyxl yt-dlp;
+if ! python3 -c 'import PIL, bs4, openpyxl' >/dev/null 2>&1 || ! command -v yt-dlp >/dev/null 2>&1 || ! command -v ffmpeg >/dev/null 2>&1 || ! command -v tesseract >/dev/null 2>&1; then
+  if command -v apt-get >/dev/null 2>&1; then apt-get update; apt-get install -y python3-pil python3-bs4 python3-openpyxl yt-dlp ffmpeg tesseract-ocr tesseract-ocr-jpn;
   else python3 -m pip install Pillow beautifulsoup4 openpyxl yt-dlp; fi
 fi
 # Exercise the complete candidate against live data before switching nginx.

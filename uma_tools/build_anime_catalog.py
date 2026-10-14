@@ -97,7 +97,7 @@ def expand_units(series_rows: list[dict[str, Any]], works_by_id: dict[str, dict[
         titles_ja = list(series.get("titles_ja") or [])
         types = series.get("types") or {}
         labels = series.get("labels") or {}
-        for number in range(1, min(count, released_count) + 1):
+        for number in series.get('published_numbers', range(1, min(count, released_count) + 1)):
             key = str(number)
             unit_type = str(types.get(key) or series.get("unit_type") or "episode")
             label = str(labels.get(key) or unit_label(unit_type, number))
