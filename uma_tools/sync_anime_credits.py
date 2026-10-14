@@ -11,49 +11,99 @@ import shutil
 import subprocess
 import tempfile
 import time
-from PIL import Image
+from PIL import Image, ImageOps, ImageStat
 from anime_credit_text import staff_text_rows
 from anime_labels import ROLES, person_name_key
 from knowledge_io import ROOT, fetch, read_json, read_window, unique_names, write_json
 from sync_anime_sources import publish_episode, source
 from public_video import yt_command
+from video_fragment import range_source, select_video
 
 DATA = ROOT / 'data/anime'
 STATE = ROOT / 'data/auto_update/anime_credits.json'
 EVIDENCE = DATA / 'credit_evidence'
 TEMP = ROOT / 'data/auto_update/credit_tmp'
-MODEL = ROOT / 'data/auto_update/tessdata/jpn.traineddata'
+MODEL = ROOT / 'data/auto_update/tessdata_best/jpn.traineddata'
 
 
 def command(arguments, timeout=90):
-    return subprocess.run(arguments, check=True, capture_output=True, text=True, encoding='utf-8', timeout=timeout)
+    return subprocess.run(arguments, check=True, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=timeout)
 
 
 def ocr_image(frame, run=command):
     if not MODEL.exists():
-        data = fetch('https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/main/jpn.traineddata', binary=True)
+        data = fetch('https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/main/jpn.traineddata', binary=True)
         MODEL.parent.mkdir(parents=True, exist_ok=True)
         temporary = MODEL.with_suffix('.tmp')
         try:
             temporary.write_bytes(data); temporary.replace(MODEL)
         finally:
             temporary.unlink(missing_ok=True)
-    result = run(['tesseract', str(frame), 'stdout', '--tessdata-dir', str(MODEL.parent), '-l', 'jpn', '--psm', '11', 'tsv'], timeout=15)
+    frame = Path(frame).resolve()
+    processed = frame.with_suffix('.ocr.png')
+    try:
+        with Image.open(frame) as original:
+            image = ImageOps.autocontrast(ImageOps.grayscale(original))
+            if ImageStat.Stat(image).mean[0] < 128:
+                image = ImageOps.invert(image)
+            image.resize((image.width * 2, image.height * 2)).save(processed)
+        # A custom language-model directory has no bundled tsv config file.
+        # Request TSV explicitly; otherwise Tesseract silently emits plain text.
+        result = run(['tesseract', str(processed), 'stdout', '--tessdata-dir', str(MODEL.parent), '-l', 'jpn', '--psm', '11', '-c', 'tessedit_create_tsv=1'], timeout=15)
+    finally:
+        processed.unlink(missing_ok=True)
+    if not result.stdout.startswith('level\tpage_num\t'):
+        raise ValueError('Tesseract did not emit its required TSV fields')
     lines = collections.OrderedDict()
     for row in csv.DictReader(io.StringIO(result.stdout), delimiter='\t'):
         if not row.get('text', '').strip() or float(row.get('conf', -1)) < 0:
             continue
         key = (row['block_num'], row['par_num'], row['line_num'])
-        line = lines.setdefault(key, {'words':[], 'confidence':[]})
-        line['words'].append(row['text'].strip())
+        line = lines.setdefault(key, {'words':[], 'confidence':[], 'left':int(row['left']), 'top':int(row['top']), 'bottom':0})
+        line['words'].append((int(row['left']), int(row['width']), row['text'].strip()))
+        line['bottom'] = max(line['bottom'], int(row['top']) + int(row['height']))
         line['confidence'].append(float(row['conf']))
-    return [{'text':' '.join(line['words']), 'confidence':sum(line['confidence']) / len(line['confidence'])} for line in lines.values()]
+    result = []
+    for line in lines.values():
+        words = sorted(line['words'])
+        widths = sorted(width for _, width, _ in words)
+        threshold = widths[len(widths)//2] * 1.7
+        text, right = '', None
+        for left, width, word in words:
+            text += ('  ' if right is not None and left - right > threshold else '') + word
+            right = left + width
+        result.append({key:value for key,value in line.items() if key not in ('words','confidence')} |
+                      {'text':text, 'confidence':sum(line['confidence']) / len(line['confidence']), 'column':int(line['left'] > image.width)})
+    return result
 
 
 def frame_signatures(lines, roles, people, organizations, characters, voices):
     accepted = [line['text'] for line in lines if line['confidence'] >= 85]
-    text = '\n'.join(accepted)
-    staff = staff_text_rows(text, roles)
+    if lines and all('top' in line for line in lines):
+        known = {re.sub(r'\s+', '', role):role for role in roles}
+        staff = []
+        for column in (0, 1):
+            active, bottom, height = '', 0, 1
+            for line in sorted((line for line in lines if line['column']==column),key=lambda row:(row['top'],row['left'])):
+                role = known.get(re.sub(r'\s+', '', line['text']))
+                if role and line['confidence'] >= 85:
+                    active, bottom, height = role, line['bottom'], max(1,line['bottom']-line['top'])
+                elif active:
+                    if line['top'] - bottom > height * 2.2:
+                        active = ''
+                    elif line['confidence'] < 85:
+                        # An unreadable name is skipped. A compact heading ends
+                        # the role group, so its following names cannot inherit
+                        # a previously recognized, unrelated role.
+                        if line['bottom'] - line['top'] <= height * 1.25:
+                            active = ''
+                        else:
+                            bottom = line['bottom']
+                    else:
+                        staff.append({'title':active, 'name':line['text']})
+                        bottom = line['bottom']
+    else:
+        staff = staff_text_rows('\n'.join(accepted), roles)
     result = []
     for row in staff:
         for name in re.split(r'[、，]|\s{2,}', row['name']):
@@ -92,21 +142,18 @@ def extract(resource, directory, run=command, recognize=ocr_image):
     duration = float(metadata.get('duration') or 0)
     if duration <= 15 or metadata.get('is_live') or metadata.get('availability') in ('private','needs_auth','subscriber_only','premium_only'):
         raise ValueError('official public clip metadata is unavailable')
-    start, end = max(0, duration - 170), max(0, duration - 4)
-    run(yt_command(['--no-playlist','--no-warnings','--socket-timeout','12','--max-filesize','35M',
-         '-f','bestvideo[height<=720]/best[height<=720]','--download-sections',f'*{start}-{end}',
-         '-o',str(directory / 'clip.%(ext)s'),resource['url']]), timeout=240)
-    clips = [file for file in directory.glob('clip.*') if file.suffix not in ('.part','.ytdl')]
-    if len(clips) != 1 or clips[0].stat().st_size > 35 * 1024 * 1024:
-        raise ValueError('ending clip exceeds its resource budget')
-    run(['ffmpeg','-nostdin','-v','error','-i',str(clips[0]),'-an','-vf','fps=1/3,scale=-2:720',
-         '-frames:v','56',str(directory / 'frame-%03d.png')], timeout=90)
+    start, end = max(0, duration - min(170,max(24,duration*.25))), max(0, duration - 4)
+    video = select_video(metadata,end-start)
+    with range_source(video['url'],{**metadata.get('http_headers',{}),**video.get('http_headers',{})}) as local:
+        run(['ffmpeg','-nostdin','-v','error','-rw_timeout','15000000','-ss',str(start),'-i',local,
+             '-t',str(end-start),'-an','-vf','fps=1/2,scale=-2:720','-frames:v','90',
+             str(directory/'frame-%03d.png')],timeout=240)
     observations = []
     for index, frame in enumerate(sorted(directory.glob('frame-*.png'))):
         if time.monotonic() - started >= 480:
             break
         try:
-            observations.append((start + index * 3, frame, recognize(frame)))
+            observations.append((start + index * 2, frame, recognize(frame)))
         except subprocess.TimeoutExpired:
             continue
     return observations
@@ -184,7 +231,9 @@ def main():
                     documents['ending_credits']['episodes'].append(observed)
         except (OSError,ValueError,subprocess.SubprocessError) as error:
             failures.append(uid)
-            print('ending source retryable:',uid,type(error).__name__,flush=True)
+            reason = error.stderr if isinstance(error,subprocess.CalledProcessError) else str(error)
+            reason = re.sub(r'https?://\S+','<public source>',reason or '')[-350:]
+            print('ending source retryable:',uid,type(error).__name__,reason,flush=True)
     if not args.dry_run:
         for name in names:
             write_json(DATA / (name+'.json'),documents[name])
