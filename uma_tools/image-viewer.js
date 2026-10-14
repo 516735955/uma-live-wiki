@@ -102,7 +102,9 @@ function openViewer(img) {
       // Keep the working preview attached while a separate image retries the original.
       const image = new Image();
       retryImages.add(image);
-      const finish = () => { retryImages.delete(image); image.onload = image.onerror = null; };
+      const timer = setTimeout(() => { image.onerror?.(); image.src = ''; }, 15000);
+      retryTimers.add(timer);
+      const finish = () => { clearTimeout(timer); retryTimers.delete(timer); retryImages.delete(image); image.onload = image.onerror = null; };
       image.onerror = () => {
         finish();
         if (pswp.isDestroying) return;
@@ -122,6 +124,20 @@ function openViewer(img) {
     return box;
   });
   const retryImages = new Set();
+  const retryTimers = new Set();
+  const loadTimers = new Map();
+  pswp.on('contentLoadImage', ({content}) => {
+    clearTimeout(loadTimers.get(content));
+    loadTimers.set(content, setTimeout(() => {
+      loadTimers.delete(content);
+      if (pswp.isDestroying || !content.isLoading()) return;
+      if (content.element) { content.element.onload = content.element.onerror = null; content.element.src = ''; }
+      content.onError();
+    }, 15000));
+  });
+  function clearLoad(content) { clearTimeout(loadTimers.get(content)); loadTimers.delete(content); }
+  pswp.on('loadComplete', ({content}) => clearLoad(content));
+  pswp.on('contentDestroy', ({content}) => clearLoad(content));
   const readySlides = new Set();
   const refreshReadySlide = () => requestAnimationFrame(() => {
     if (pswp.isDestroying || !pswp.opener.isOpen || pswp.mainScroll.isShifted() || !readySlides.has(pswp.currIndex)) return;
@@ -155,6 +171,10 @@ function openViewer(img) {
   pswp.on('destroy', () => {
     retryImages.forEach(image => { image.onload = image.onerror = null; image.src = ''; });
     retryImages.clear();
+    retryTimers.forEach(clearTimeout);
+    retryTimers.clear();
+    loadTimers.forEach(clearTimeout);
+    loadTimers.clear();
     readySlides.clear();
   });
   pswp.on('uiRegister', () => {
