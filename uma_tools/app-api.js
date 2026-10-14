@@ -19,12 +19,12 @@
     const cacheKey = settings.cacheKey || path;
     const maxAge = Number.isFinite(settings.maxAge) ? settings.maxAge : 5 * 60 * 1000;
     const now = Date.now();
+    if (settings.signal && settings.signal.aborted) return Promise.reject(new DOMException('Aborted', 'AbortError'));
     resolved.forEach(function (entry, key) {
       if (now >= entry.expiresAt) resolved.delete(key);
     });
     const cached = resolved.get(cacheKey);
     if (!settings.fresh && cached && Date.now() - cached.at < maxAge) return Promise.resolve(cached.data);
-    if (settings.signal && settings.signal.aborted) return Promise.reject(new DOMException('Aborted', 'AbortError'));
     if (!settings.fresh && pending.has(cacheKey)) return subscribe(pending.get(cacheKey), settings.signal);
     const controller = new AbortController();
     const cancel = function () { controller.abort(); };

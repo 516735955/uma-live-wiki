@@ -21,6 +21,9 @@ function imageStore(directory, options = {}) {
   async function cleanup() {
     if (Date.now() - lastCleanup < 60000) return;
     lastCleanup = Date.now();
+    for (const [file, attemptedAt] of attempts) {
+      if (!pending.has(file) && Date.now() - attemptedAt >= 60000) attempts.delete(file);
+    }
     const names = await fs.promises.readdir(directory).catch(() => []);
     const rows = await Promise.all(names.filter(name => /^[a-f0-9]{64}\.(?:png|jpe?g|webp|gif)$/.test(name)).map(async name => {
       const file = path.join(directory, name);
