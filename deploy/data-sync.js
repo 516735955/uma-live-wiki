@@ -30,7 +30,7 @@ function files(root) {
 
 function read(file) {
   if (!fs.existsSync(file)) return undefined;
-  const text = fs.readFileSync(file, 'utf8');
+  const text = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
   if (file.endsWith('.js')) {
     const match = text.match(/^\s*window\.(\w+)\s*=\s*([\s\S]*?)\s*;?\s*$/);
     if (!match) throw new Error('Unrecognized data assignment: ' + path.basename(file));
