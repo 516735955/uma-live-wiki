@@ -82,8 +82,8 @@ async function main() {
     createElement() { return {}; },
     head: { appendChild(script) { pedigreeAttempts += 1; queueMicrotask(() => script.onerror()); } }
   };
-  context.Vue.createApp = (options) => ({ component() {}, mount() { app = options.setup(); } });
-  vm.runInContext(source('app.js'), context);
+  context.Vue.createApp = (options) => ({ component() {}, directive() {}, mount() { app = options.setup(); } });
+  require('./test_frontend_loader').loadFrontend(context);
   await app.applyCurrentRoute();
   assert.strictEqual(app.songDbPaged.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');
@@ -251,7 +251,7 @@ async function main() {
   app.animeQuery.value = actualUnit.title_ja;
   assert(app.animeWorkHref(app.animeFiltered.value.find(work => work.id === 'anime-s3')).includes(actualUnit.id), 'a unique episode title opens that episode');
 
-  animeFailure = 'work';
+  animeFailure = 'unit';
   location.href = 'http://localhost/zh-Hans/database/anime/anime-s3/episodes/anime-s3-e11?section=staff&staff=' + encodeURIComponent('原画');
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeDetail.value, null);
@@ -306,6 +306,7 @@ async function main() {
   await app.retryAnime();
   assert.strictEqual(app.staffDetail.value.id, 'staff-ump', 'legacy person links survive detail failure and retry');
 
+  const graphCalls = calls.filter(url => url.includes('scope=graph')).length;
   delayedGraph = deferred();
   location.href = 'http://localhost/zh-Hans/database/voice-actors';
   const oldGraphRoute = app.applyCurrentRoute();
@@ -316,6 +317,7 @@ async function main() {
   await oldGraphRoute;
   delayedGraph = null;
   assert.strictEqual(app.animeError.value, '', 'an abandoned graph failure does not replace the current page with an error');
+  assert.strictEqual(calls.filter(url => url.includes('scope=graph')).length, graphCalls, 'ordinary voice and anime lists never load the full relation graph');
   console.log('frontend regressions passed');
 }
 

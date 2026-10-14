@@ -1,0 +1,44 @@
+name: Code checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  checks:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONUTF8: '1'
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow beautifulsoup4 openpyxl
+      - name: Node behavior and release checks
+        run: |
+          npm --prefix uma_tools run test:regressions
+          npm --prefix uma_tools run test:catalog
+          npm --prefix uma_tools run test:routes
+          npm --prefix uma_tools run test:brand
+          npm --prefix uma_tools run test:player
+          node deploy/test_release.js
+          node deploy/test_data_sync.js
+          bash -n deploy/update.sh
+      - name: Parsers, incremental updates and committed catalogs
+        run: |
+          python -m unittest discover -s uma_tools -p 'test_*.py'
+          python uma_tools/update_events.py --check
+          python uma_tools/sync_music_metadata.py --check
+          python uma_tools/build_anime_catalog.py --check

@@ -3,7 +3,7 @@
 import copy
 import unittest
 
-from auto_setlists import compare, fill_from_published_catalog, song_table
+from auto_setlists import compare, fill_from_published_catalog, song_table, attach_discovered_sessions, parse_sheet
 
 
 CAST = '<div class="cast-line">Machico（东海帝王）、大橋彩香（伏特加）</div>'
@@ -26,6 +26,32 @@ def sheet(songs=None):
 
 
 class SheetPublicationTests(unittest.TestCase):
+    def test_new_sourced_session_is_registered_once_without_guessing_roles(self):
+        block = {'title': 'New Uma LIVE', 'date': '2026-10-14', 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
+        event = {'title': block['title'], 'date': block['date'], 'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}
+        source = {}
+        self.assertEqual(len(attach_discovered_sessions([block], source, [event])), 1)
+        self.assertEqual(attach_discovered_sessions([block], source, [event]), [])
+        table = source['other']['groups'][0]['subs'][0]['days'][0]['table']
+        self.assertIn('guest-performer', table)
+        self.assertNotIn('东海帝王', table)
+        self.assertEqual(attach_discovered_sessions([block], {}, [event, dict(event)]), [])
+
+    def test_all_data_tabs_are_parsed(self):
+        import io
+        try:
+            import openpyxl
+        except ImportError:
+            self.skipTest('openpyxl is a declared deployment dependency')
+        workbook = openpyxl.Workbook()
+        workbook.active.append(['README'])
+        for name in ['Later', 'Earlier']:
+            sheet = workbook.create_sheet(name)
+            sheet.append(['2026-10-14', name, None, None])
+            sheet.append([None, None, 'M1 Song', 'Machico'])
+        stream = io.BytesIO(); workbook.save(stream); workbook.close()
+        self.assertEqual([block['title'] for block in parse_sheet(stream.getvalue())], ['Later', 'Earlier'])
+
     def test_github_fallback_only_fills_matching_empty_tables(self):
         table = song_table(sheet()[0], CAST)
         source = catalog()

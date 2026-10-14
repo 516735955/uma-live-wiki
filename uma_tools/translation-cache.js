@@ -7,7 +7,11 @@ class TranslationCache {
   constructor(file, seedFile) {
     // Resolve the release symlink so atomic replacement updates the shared cache.
     this.file = fs.existsSync(file) ? fs.realpathSync(file) : file;
-    this.seed = seedFile && fs.existsSync(seedFile) ? JSON.parse(fs.readFileSync(seedFile, 'utf8')) : {};
+    this.seed = {};
+    if (seedFile && fs.existsSync(seedFile)) {
+      try { this.seed = JSON.parse(fs.readFileSync(seedFile, 'utf8')); }
+      catch (_) { console.warn('Translation seed is unreadable; using runtime cache.'); }
+    }
     this.values = { ...this.seed };
     this.mtime = 0;
     this.reload();
@@ -16,7 +20,13 @@ class TranslationCache {
     if (!fs.existsSync(this.file)) return;
     const mtime = fs.statSync(this.file).mtimeMs;
     if (mtime === this.mtime) return;
-    this.values = { ...this.seed, ...JSON.parse(fs.readFileSync(this.file, 'utf8')) };
+    try {
+      const values = JSON.parse(fs.readFileSync(this.file, 'utf8'));
+      if (!values || typeof values !== 'object' || Array.isArray(values)) throw new Error('Invalid translation cache');
+      this.values = { ...this.seed, ...values };
+    } catch (_) {
+      console.warn('Translation cache is unreadable; keeping the last usable translations.');
+    }
     this.mtime = mtime;
   }
   get(key) {

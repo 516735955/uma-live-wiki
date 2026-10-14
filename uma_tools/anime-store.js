@@ -39,16 +39,26 @@ class AnimeStore {
   }
 
   async load() {
+    try { return await this.reload(); }
+    catch (error) {
+      this.lastError = error;
+      if (this.catalog) return this.catalog;
+      throw error;
+    }
+  }
+
+  async reload() {
     const stat = await fs.promises.stat(this.file);
     const signature = stat.mtimeMs + ':' + stat.size;
     if (this.catalog && signature === this.signature) return this.catalog;
-    if (this.pending) { await this.pending; return this.load(); }
+    if (this.pending) return this.pending;
     this.pending = fs.promises.readFile(this.file, 'utf8').then(text => {
       const data = JSON.parse(text);
       if (!data.build_id || !['works', 'units', 'people', 'staff', 'relations', 'watch_resources']
         .every(key => Array.isArray(data[key]))) throw new Error('Invalid anime catalog');
       this.catalog = data;
       this.signature = signature;
+      this.lastError = null;
       this.responses.clear();
       this.staffByWork = new Map();
       this.staffByPerson = new Map();
@@ -85,6 +95,32 @@ class AnimeStore {
       payload.relations = displayData(data.relations);
       payload.people = displayData(data.people.filter(person => person.creator_id));
       payload.staff = payload.people.flatMap(person => this.staffByPerson.get(person.id) || []);
+    } else if (scope === 'unit') {
+      const unit = data.units.find(row => row.id === id);
+      if (!unit) return null;
+      const work = data.works.find(row => row.id === unit.work_id);
+      payload.works = [displayData(work)];
+      payload.units = data.units.filter(row => row.work_id === unit.work_id).map(row => row.id === id ? displayData(row) : unitSummary(row));
+      payload.relations = displayData(data.relations.filter(row => row.source_id === id ||
+        (row.source_id === unit.work_id && row.relation_type === 'related_event')));
+      payload.watch_resources = displayData(data.watch_resources.filter(row => row.scope.id === id || row.scope.id === unit.work_id));
+      payload.staff = (this.staffByWork.get(unit.work_id) || []).filter(row => !row.unit_id || row.unit_id === id);
+      const people = new Set(payload.staff.map(row => row.person_id).filter(Boolean));
+      payload.people = displayData(data.people.filter(row => people.has(row.id)));
+    } else if (scope === 'entity') {
+      const separator = id.indexOf(':');
+      const type = id.slice(0, separator), entityId = id.slice(separator + 1);
+      const people = data.people.filter(row => type === 'creator' && row.creator_id === entityId);
+      payload.people = displayData(people);
+      payload.staff = people.flatMap(person => this.staffByPerson.get(person.id) || []);
+      payload.relations = displayData(data.relations.filter(row => (row.target_type === type && row.target_id === entityId) ||
+        (type === 'voice_actor' && row.voice_actor_id === entityId)));
+      const unitIds = new Set(payload.relations.filter(row => row.source_type === 'anime_unit').map(row => row.source_id));
+      const workIds = new Set(payload.staff.map(row => row.work_id));
+      data.units.filter(row => unitIds.has(row.id)).forEach(row => workIds.add(row.work_id));
+      payload.relations.filter(row => row.source_type === 'anime_work').forEach(row => workIds.add(row.source_id));
+      payload.works = data.works.filter(row => workIds.has(row.id)).map(workSummary);
+      payload.units = data.units.filter(row => workIds.has(row.work_id)).map(unitSummary);
     } else if (scope === 'work') {
       const work = data.works.find(row => row.id === id);
       if (!work) return null;

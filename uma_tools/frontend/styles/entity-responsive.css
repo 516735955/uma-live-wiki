@@ -1,0 +1,170 @@
+
+
+        #tab-db-voice ul.va-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #tab-db-voice ul.va-grid li { position: relative; left: auto; top: auto; width: auto; height: auto; opacity: 1; transform: none; }
+        #tab-db-voice .va-card {
+            display: grid;
+            grid-template-columns: 68px minmax(0, 1fr);
+            align-items: center;
+            gap: 13px;
+            min-height: 104px;
+            padding: 10px 13px 10px 10px;
+            overflow: hidden;
+            border: 1px solid var(--surface-line);
+            border-color: color-mix(in srgb, var(--color-main) 48%, var(--surface-line));
+            border-radius: 9px;
+            background: var(--card);
+            color: inherit;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(35, 38, 51, 0.055);
+            transition: transform 280ms cubic-bezier(.19, 1, .22, 1), border-color 180ms ease, box-shadow 180ms ease;
+        }
+        #tab-db-voice .va-card:hover { border-color: var(--color-main); box-shadow: 0 9px 19px color-mix(in srgb, var(--color-main) 18%, transparent); transform: translateY(-3px); }
+        #tab-db-voice .va-card-img,
+        #tab-db-voice .va-ph-fb {
+            width: 68px;
+            height: 88px;
+            border: 0;
+            border-radius: 6px;
+            background: var(--surface-muted);
+            object-fit: cover;
+            object-position: top center;
+        }
+        #tab-db-voice .va-ph-fb { display: grid; place-items: center; color: var(--navy); font-size: 1.6rem; font-weight: 900; }
+        #tab-db-voice .va-card-txt { min-width: 0; }
+        #tab-db-voice .va-name { margin: 0; color: var(--text); font-size: 1rem; font-weight: 900; }
+        #tab-db-voice .va-kana { margin: 4px 0 0; color: var(--text-3); font-size: 0.75rem; }
+        #tab-db-voice .va-card-roles { margin-top: 9px; }
+        #tab-db-voice .va-card-roles .performer-chip { margin: 0; font-size: 0.73rem; }
+        #tab-db-voice .va-card-roles .performer-chip img,
+        #tab-db-voice .va-card-roles .performer-chip-fallback { width: 28px; height: 28px; }
+        #tab-db-voice .va-nodata { display: none; }
+
+        .pedigree-section { overflow: visible; }
+        .c-char-blood { min-height: 520px; }
+
+        @media (max-width: 900px) {
+            .song-entity-detail,
+            .album-entity-detail { grid-template-columns: minmax(240px, 290px) minmax(0, 1fr); }
+            .event-catalog-row { grid-template-columns: 100px 86px minmax(0, 1fr) 24px; }
+            .event-catalog-cover { width: 100px; }
+            .event-catalog-facts { grid-column: 3 / 4; justify-content: flex-start; }
+            .event-catalog-row > svg { grid-column: 4; grid-row: 1 / 3; }
+            .song-catalog-row { grid-template-columns: 58px minmax(0, 1fr) 86px 86px 24px; }
+            .song-catalog-row > i:last-of-type { display: none; }
+            .album-catalog-row { grid-template-columns: 58px 88px minmax(0, 1fr) 24px; }
+            .album-catalog-row > i { display: none; }
+            .event-video-grid,
+            .video-library,
+            .setting-book-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 15px 12px; }
+            .archive-surface { padding-bottom: 36px; }
+            .library-heading { min-height: 76px; margin-bottom: 18px; padding-bottom: 14px; }
+            .library-heading h1 { font-size: 2rem; }
+            .library-heading > strong { font-size: 1.15rem; }
+            .library-controls { flex-wrap: wrap; }
+            .ui-search { flex-basis: 100%; }
+            .library-filters { flex-direction: column; padding: 12px; }
+            .ui-filter-group { width: 100%; align-items: flex-start; }
+            .ui-filter-group > span { width: 42px; padding-top: 8px; }
+            .database-directory { grid-template-columns: 1fr; }
+            .song-entity-detail,
+            .album-entity-detail { display: block; }
+            .song-entity-detail > .entity-hero,
+            .album-entity-detail > .entity-hero {
+                display: grid;
+                min-height: 230px;
+                grid-template-columns: 118px minmax(0, 1fr);
+                gap: 20px;
+                padding: 20px 16px;
+            }
+            .media-content { margin-top: 18px; }
+
+            .event-catalog-row {
+                grid-template-columns: 92px minmax(0, 1fr) 22px;
+                grid-template-rows: auto auto auto;
+                gap: 5px 13px;
+                padding: 12px 9px;
+            }
+            .event-catalog-cover { grid-row: 1 / 4; width: 92px; }
+            .event-catalog-row > time { grid-column: 2; grid-row: 1; }
+            .event-catalog-row > time.event-date-range { flex-direction: row; gap: 6px; }
+            .event-catalog-main { grid-column: 2; grid-row: 2; }
+            .event-catalog-facts { grid-column: 2; grid-row: 3; justify-content: flex-start; }
+            .event-catalog-row > svg { grid-column: 3; grid-row: 1 / 4; }
+            .event-catalog-facts b { display: none; }
+
+            .song-catalog-row { grid-template-columns: 58px minmax(0, 1fr) 22px; gap: 12px; }
+            .song-catalog-row > i { display: none; }
+            .album-catalog-row { grid-template-columns: 58px minmax(0, 1fr) 22px; gap: 12px; }
+            .album-catalog-row > time { grid-column: 2; grid-row: 2; }
+            .album-catalog-row > span { grid-column: 2; grid-row: 1; }
+            .album-catalog-row > svg { grid-column: 3; grid-row: 1 / 3; }
+
+            .entity-hero {
+                grid-template-columns: 118px minmax(0, 1fr);
+                gap: 20px;
+                min-height: 230px;
+                padding: 20px 16px;
+            }
+            .entity-cover { width: 100%; border-width: 3px; box-shadow: 7px 8px 0 color-mix(in srgb, var(--entity-accent) 70%, transparent); }
+            .entity-intro h1 { font-size: clamp(1.35rem, 6vw, 2rem); }
+            .entity-kind { margin-bottom: 7px; }
+            .entity-reading { margin-top: 6px; font-size: 0.78rem; letter-spacing: 0.04em; }
+            .entity-summary { display: none; }
+            .entity-meta { grid-template-columns: 1fr; margin-top: 13px; }
+            .entity-meta > div { grid-template-columns: 68px minmax(0, 1fr); }
+            .entity-meta dt,
+            .entity-meta dd { padding: 7px 8px; font-size: 0.75rem; }
+            .entity-tabs button { min-height: 44px; padding: 9px 15px; }
+            .entity-section { padding: 16px 13px; }
+            .detail-meta { grid-template-columns: 1fr; }
+            .detail-meta > div:nth-child(2) { border-top: 1px solid var(--surface-line); }
+            .history-list > button,
+            .history-years section > button { grid-template-columns: 86px minmax(0, 1fr); }
+            .history-list em,
+            .history-years em { grid-column: 2; }
+            .ui-pager { align-items: flex-start; flex-direction: column; }
+            .ui-pager > div { justify-content: flex-start; }
+            #tab-characters .cio-list ul.cio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+            #tab-db-voice ul.va-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+        }
+
+        @media (max-width: 480px) {
+            .library-heading > strong { display: none; }
+            .entity-tabs { gap: 6px; overflow-x: hidden; }
+            .entity-tabs button {
+                flex: 1 1 0;
+                min-width: 0;
+                padding: 9px 7px;
+                font-size: 0.76rem;
+                white-space: nowrap;
+            }
+            .entity-hero { grid-template-columns: 100px minmax(0, 1fr); gap: 15px; }
+            .entity-hero::before { right: -22%; width: 68%; }
+            .entity-hero .performer-chip-list { margin-top: 10px; }
+            .event-video-grid,
+            .video-library,
+            .setting-book-list { grid-template-columns: 1fr; }
+            #tab-characters .cio-list ul.cio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            #tab-db-voice ul.va-grid { grid-template-columns: 1fr; }
+            .album-track-list > div { grid-template-columns: 38px minmax(0, 1fr) 38px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .tab-content.active,
+            .entity-intro { animation: none; }
+            .archive-surface *,
+            .archive-surface *::before,
+            .archive-surface *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+        }

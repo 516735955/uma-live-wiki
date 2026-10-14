@@ -16,6 +16,31 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_dependencies_rebuild_only_after_an_input_changes_even_on_partial_failure(self):
+        with tempfile.TemporaryDirectory() as folder, patch.object(runner, 'ROOT', Path(folder)), patch.object(runner, 'STATE', Path(folder) / 'state.json'), patch.object(runner, 'STEPS', [('events', ['a.py']), ('catalogs', ['b.py'])]):
+            data = Path(folder) / 'data'; data.mkdir()
+            runner.STATE.write_text(json.dumps({'steps': {'catalogs': {'next_at': 99999}}}))
+            calls = []
+            publish = False
+            def execute(command, **kwargs):
+                name = Path(command[1]).name; calls.append(name)
+                if name == 'a.py' and publish:
+                    (data / 'events_data.json').write_text('{"events":[{"id":"new"}]}')
+                return subprocess.CompletedProcess(command, 1 if name == 'a.py' else 0, 'partial source', 'offline')
+            runner.run_updates(run=execute, clock=lambda:100)
+            self.assertEqual(calls, ['a.py'])
+            publish = True; calls.clear()
+            runner.run_updates(run=execute, clock=lambda:4000)
+            self.assertEqual(calls, ['a.py', 'b.py'])
+
+    def test_curated_pedigree_missing_parent_is_filled_without_changing_known_facts(self):
+        source = {'nodes': [{'id': 'known', 'ja': '新馬', 'zh': '人工名称', 'parents': {'dam': 'old-dam'}}, {'id': 'father', 'ja': '父馬'}], 'character_mappings': {}, 'horse_pages': []}
+        facts = {'ja': '新馬', 'zh': '自动名称', 'sire_name': '父馬', 'source_url': 'https://example.test/source'}
+        pedigree.add_horse(source, {'id': 'new', 'ja': '新馬', 'zh': '新马'}, lookup=lambda name: facts if name == '新馬' else None)
+        self.assertEqual(source['nodes'][0]['parents']['sire'], 'father')
+        self.assertEqual(source['nodes'][0]['parents']['dam'], 'old-dam')
+        self.assertEqual(source['nodes'][0]['zh'], '人工名称')
+
     def test_daily_state_survives_restart_and_failed_sources_retry(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(runner, 'STATE', Path(folder) / 'state.json'), patch.object(runner, 'STEPS', [('failed', ['a.py']), ('healthy', ['b.py'])]):
             calls = []
@@ -98,7 +123,12 @@ class KnowledgeTests(unittest.TestCase):
     def test_episode_gap_is_not_published_as_a_complete_sequence(self):
         documents = self.documents()
         anime.publish_episode({'work_id': 'work', 'number': 4, 'title_ja': '第四话', 'source_url': 'https://example.test/4'}, documents, {}, {})
-        self.assertEqual(documents['units']['series'][0]['released_count'], 1)
+        self.assertEqual(documents['units']['series'][0]['published_numbers'], [1, 4])
+        from build_anime_catalog import expand_units
+        units = expand_units(documents['units']['series'], {'work': documents['works']['works'][0]})
+        self.assertEqual([unit['number'] for unit in units], [1, 4])
+        anime.publish_episode({'work_id':'work','number':2,'title_ja':'第二话','source_url':'https://example.test/2'},documents,{}, {})
+        self.assertEqual(documents['units']['series'][0]['published_numbers'], [1, 2, 4])
 
     def test_later_official_images_keep_existing_image_identity(self):
         documents = self.documents()

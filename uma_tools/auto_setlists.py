@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Fill only uniquely matched, empty curated setlists from the Google sheet.
+"""Publish sourced sessions and fill uniquely matched empty setlists.
 
-The sheet is authoritative for its setlists, but already published nonempty
-records are reviewed by people. This job never creates an event or changes
-cast, dates, links, or an existing song table.
+Existing nonempty cast, dates and song tables retain their curated values.
+New sessions require one exact public event, date and explicit performer list.
 """
 
 import argparse
@@ -65,31 +64,33 @@ def parse_sheet(data):
 
     workbook = openpyxl.load_workbook(io.BytesIO(data), read_only=True, data_only=True)
     try:
-        sheet = workbook[workbook.sheetnames[0]]
         blocks = []
-        current = None
-        current_date = ""
-        for row in sheet.iter_rows(values_only=True):
-            date, title, song, performers = (list(row[:4]) + [None] * 4)[:4]
-            if date is not None:
-                current_date = event_date(date)
-            if title is not None and str(title).strip():
-                current = {"date": current_date, "title": str(title).strip(), "songs": []}
-                blocks.append(current)
-            elif song is not None and str(song).strip() and current is not None:
-                text = str(song).strip()
-                match = SONG_RE.match(text)
-                current["songs"].append({
-                    "no": (match.group(1).lstrip("0") or "0") if match else "",
-                    "name": match.group(2).strip() if match else text,
-                    "performers": split_performers(performers) if performers else [],
-                })
-            elif performers is not None and str(performers).strip() and current and current["songs"]:
-                if not current["songs"][-1]["performers"]:
-                    current["songs"][-1]["performers"] = split_performers(performers)
+        for sheet in workbook.worksheets:
+            blocks.extend(parse_worksheet(sheet))
         return [block for block in blocks if block["songs"]]
     finally:
         workbook.close()
+
+
+def parse_worksheet(sheet):
+    blocks, current, current_date = [], None, ''
+    for row in sheet.iter_rows(values_only=True):
+        date, title, song, performers = (list(row[:4]) + [None] * 4)[:4]
+        if date is not None:
+            current_date = event_date(date)
+        if title is not None and str(title).strip():
+            current = {'date': current_date, 'title': str(title).strip(), 'songs': []}
+            blocks.append(current)
+        elif song is not None and str(song).strip() and current is not None:
+            text = str(song).strip()
+            match = SONG_RE.match(text)
+            current['songs'].append({'no': (match.group(1).lstrip('0') or '0') if match else '',
+                                    'name': match.group(2).strip() if match else text,
+                                    'performers': split_performers(performers) if performers else []})
+        elif performers is not None and str(performers).strip() and current and current['songs']:
+            if not current['songs'][-1]['performers']:
+                current['songs'][-1]['performers'] = split_performers(performers)
+    return blocks
 
 
 def curated_slots(catalog):
@@ -204,6 +205,35 @@ def compare(blocks, catalog):
     return report
 
 
+def attach_discovered_sessions(blocks, catalog, events):
+    """Create a session only when event and performer evidence identifies it uniquely."""
+    slots = curated_slots(catalog)
+    groups = catalog.setdefault('other', {}).setdefault('groups', [])
+    added = []
+    for block in blocks:
+        key = (normalized_title(block['title']), block['date'], session_label(block['title']))
+        if not block['date'] or any((normalized_title(slot['title']), slot['date'], slot['label']) == key for slot in slots):
+            continue
+        matches = [event for event in events if (normalized_title(event.get('title')), event.get('date'), session_label(event.get('title'))) == key
+                   and event.get('link', '').startswith('https://www.eventernote.com/events/')]
+        if len(matches) != 1:
+            continue
+        event = matches[0]
+        actors = list(dict.fromkeys(actor['name'] for actor in event.get('actors', [])
+                                   if actor.get('name') and not re.search(r'gal.?up|ウマ娘\s*プリティーダービー', actor['name'], re.I)))
+        singers = {name for song in block['songs'] for name in song['performers']}
+        if not actors or not singers or not singers <= set(actors) or any(not song['performers'] for song in block['songs']):
+            continue
+        cast = '、'.join(html.escape(name) for name in actors)
+        sub = {'title': event['title'], 'date': event['date'], 'cast': cast, 'source_url': event['link'],
+               'vids': [], 'tips': '出处：' + event['link'],
+               'days': [{'label': key[2], 'table': song_table(block, cast)}]}
+        groups.append({'group': event['title'], 'subs': [sub], 'source_url': event['link']})
+        slots = curated_slots(catalog)
+        added.append({'sheet_title': block['title'], 'date': block['date'], 'session': key[2], 'songs': len(block['songs'])})
+    return added
+
+
 def fill_from_published_catalog(published, catalog):
     """Reuse the existing GitHub sheet job without replacing live curated tables."""
     slots = curated_slots(catalog)
@@ -290,7 +320,11 @@ def main():
         blocks = parse_sheet(data)
         if not blocks:
             raise ValueError("Google sheet has no setlists; refusing to update curated data")
+        events_file = ROOT / 'data/events_data.json'
+        events = json.loads(events_file.read_text(encoding='utf-8')).get('events', []) if events_file.exists() else []
+        added = attach_discovered_sessions(blocks, catalog, events)
         report = compare(blocks, catalog)
+        report['filled'].extend(added)
     except (OSError, ValueError):
         if args.sheet_xlsx:
             raise
