@@ -26,7 +26,7 @@ def http_get(url, binary=False, timeout=60):
     digest = pipeline_common.hashlib.sha1(url.encode('utf-8')).hexdigest()[:16]
     ext = '.bin' if binary else '.txt'
     path = pipeline_common.os.path.join(pipeline_common.CACHE_DIR, digest + ext)
-    if pipeline_common.os.path.isfile(path):
+    if pipeline_common.os.path.isfile(path) and pipeline_common.time.time() - pipeline_common.os.path.getmtime(path) < 86400:
         with open(path, 'rb') as handle:
             data = handle.read()
         return data if binary else data.decode('utf-8', 'replace')
@@ -39,8 +39,14 @@ def http_get(url, binary=False, timeout=60):
             try:
                 with _opener(use_proxy).open(_request(url), timeout=timeout) as resp:
                     data = resp.read()
-                with open(path, 'wb') as handle:
-                    handle.write(data)
+                descriptor, temporary = pipeline_common.tempfile.mkstemp(prefix='horse-source-', dir=pipeline_common.CACHE_DIR)
+                try:
+                    with pipeline_common.os.fdopen(descriptor, 'wb') as handle:
+                        handle.write(data)
+                    pipeline_common.os.replace(temporary, path)
+                finally:
+                    if pipeline_common.os.path.exists(temporary):
+                        pipeline_common.os.unlink(temporary)
                 return data if binary else data.decode('utf-8', 'replace')
             except pipeline_common.urllib.error.HTTPError as exc:
                 last_error = exc
