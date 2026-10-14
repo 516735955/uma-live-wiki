@@ -3,6 +3,7 @@
 set -euo pipefail
 ROOT="${1:-/var/www/umamusume}"
 ARCHIVE="${2:-}"
+PREVIOUS_ARCHIVE="${3:-}"
 UMA_USER="${UMA_USER:-alaemiryoung}"
 [ "$ROOT" = /var/www/umamusume ] && [ "$UMA_USER" = alaemiryoung ] || {
   echo 'Update systemd/nginx paths before changing the deployment directory.'; exit 1;
@@ -112,6 +113,14 @@ if [ -n "$OLD" ]; then
   PREVIOUS_SHA="$(node -p 'require(process.argv[1]).commit' "$ROOT/current/release.json")"
   if [ "$PREVIOUS_SHA" = "$SHA" ]; then
     PREVIOUS_SOURCE="$SRC"
+  elif [ -n "$PREVIOUS_ARCHIVE" ]; then
+    [ -f "$PREVIOUS_ARCHIVE" ] || { echo 'Previous release archive not found'; exit 1; }
+    tar -xzf "$PREVIOUS_ARCHIVE" -C "$PREVIOUS_SOURCE"
+    node - "$PREVIOUS_SOURCE/release.json" "$PREVIOUS_SHA" <<'NODE'
+if (require(process.argv[2]).commit !== process.argv[3]) {
+  console.error('Previous source archive does not match the running release'); process.exit(1);
+}
+NODE
   else
     fetch_file "https://codeload.github.com/516735955/uma-live-wiki/tar.gz/$PREVIOUS_SHA" "$WORK/previous-source.tgz"
     tar -xzf "$WORK/previous-source.tgz" -C "$PREVIOUS_SOURCE" --strip-components=1
