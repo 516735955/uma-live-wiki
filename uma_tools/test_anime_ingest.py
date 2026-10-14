@@ -14,6 +14,37 @@ import sync_anime_sources as source
 
 
 class AnimeIngestTests(unittest.TestCase):
+    def test_ending_source_failure_retries_after_one_hour_and_recovers_to_daily_refresh(self):
+        state = {'attempted_at': {}}
+        documents = {name: {} for name in ('works','relations','asset_sources')}
+        documents.update(units={'series':[{'work_id':'work','released_count':1}]},
+                         staff={'credits':[]}, people={'people':[]}, source_registry={'sources':[]},
+                         ending_credits={'episodes':[]}, voice_actor_profiles={'voice_actors':[]},
+                         watch_resources={'resources':[{'authority':'official','content_type':'full_episode',
+                           'status':'active','scope':{'id':'work-e01'},'url':'https://example.test/episode'}]})
+        def read(file, *args):
+            return state if file == credits.STATE else documents[file.stem]
+        with tempfile.TemporaryDirectory() as directory, patch.object(credits,'TEMP',Path(directory)/'jobs'), \
+             patch.object(credits,'read_json',side_effect=read), patch.object(credits,'read_window',return_value=[]), \
+             patch.object(credits.shutil,'which',return_value='/tool'), patch('sys.argv',['collector','--dry-run']), \
+             patch.object(credits.time,'time',return_value=100000) as clock, \
+             patch.object(credits,'extract',side_effect=ValueError('public source unavailable')) as extract:
+            self.assertEqual(credits.main(),1)
+            self.assertEqual(state['attempted_at']['work-e01'],100000)
+            clock.return_value = 103599
+            self.assertEqual(credits.main(),0)
+            self.assertEqual(extract.call_count,1)
+            clock.return_value = 103601
+            extract.side_effect = None
+            extract.return_value = []
+            signature={'kind':'staff','title':'監督','name':'作者','entity_type':'person'}
+            with patch.object(credits,'consensus',return_value=[(1,Path('frame.png'),signature)]), \
+                 patch.object(credits,'publish_episode'):
+                self.assertEqual(credits.main(),0)
+            self.assertEqual(extract.call_count,2)
+            self.assertEqual(state['next_attempt_at']['work-e01'],103601+86400)
+            self.assertEqual(documents['ending_credits']['episodes'][0]['staff'][0]['name'],'作者')
+
     def test_episode_cues_recover_after_the_recording_is_registered_without_duplicates(self):
         documents={'works':{'works':[{'id':'work','title_ja':'Work'}]},
                    'units':{'series':[{'work_id':'work','released_count':1,'details':{}}]},
