@@ -54,6 +54,7 @@ const releaseInfo = fs.existsSync(path.join(ROOT, 'release.json')) ? JSON.parse(
 const DATA_DIR = path.join(ROOT, 'data');
 const catalogStore = new CatalogStore(DATA_DIR);
 const animeStore = new AnimeStore(DATA_DIR);
+const horseStore = new (require('./horse-store').HorseStore)(DATA_DIR);
 const loadNewsImage = imageStore(path.join(DATA_DIR, 'news_image_cache'));
 
 function isInsideRoot(filePath) {
@@ -600,17 +601,18 @@ async function handleCatalogApi(req, res, urlPath, params) {
     let result;
     if (urlPath === '/api/catalog/anime') {
       const scope = params.get('scope') || 'index';
-      if (!['index', 'graph', 'people', 'work', 'person'].includes(scope)) {
+      if (!['index', 'graph', 'people', 'work', 'person', 'unit', 'entity'].includes(scope)) {
         sendJson(res, 400, { error: 'invalid anime scope' });
         return;
       }
       result = await animeStore.response(scope, params.get('id') || '');
     }
     else if (urlPath === '/api/catalog/anime-media') {
-      const work = await animeStore.response('work', params.get('id') || '');
+      const work = await animeStore.response(params.get('unit') ? 'unit' : 'work', params.get('unit') || params.get('id') || '');
       if (!work) { sendCatalogResult(req, res, null, req.url); return; }
       const songs = new Set(work.relations.filter(row => row.target_type === 'song').map(row => row.target_id));
       work.units.forEach(unit => (unit.music_cues || []).forEach(cue => { if (cue.song_id) songs.add(cue.song_id); }));
+      if (params.get('kind') === 'events') songs.clear();
       const events = new Set(work.relations.filter(row => row.target_type === 'event').map(row => row.target_id));
       const songRows = await Promise.all(Array.from(songs, id => catalogStore.song(id)));
       const eventRows = await Promise.all(Array.from(events, id => catalogStore.event(id)));
@@ -626,7 +628,9 @@ async function handleCatalogApi(req, res, urlPath, params) {
     else if (urlPath === '/api/catalog/creator') result = await catalogStore.creator(params.get('id'));
     else if (urlPath === '/api/catalog/albums') result = await catalogStore.albums(params);
     else if (urlPath === '/api/catalog/album') result = await catalogStore.album(params.get('id'), params.get('name'));
-    else if (urlPath === '/api/catalog/voice-actors') result = await catalogStore.voices();
+    else if (urlPath === '/api/catalog/voice-actors') result = await catalogStore.voices(params);
+    else if (urlPath === '/api/catalog/horses') result = await horseStore.index(params);
+    else if (urlPath === '/api/catalog/horse') result = await horseStore.detail(params.get('id'));
     else if (urlPath === '/api/catalog/appearance') {
       const type = params.get('type');
       if (type !== 'character' && type !== 'voice_actor') {

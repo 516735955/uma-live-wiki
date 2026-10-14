@@ -673,9 +673,12 @@ class CatalogStore {
     return { build_id: store.buildId, album, catalog_songs: Array.from(new Map(songs.map((song) => [song.id, song])).values()) };
   }
 
-  async voices() {
+  async voices(params) {
     const store = await this.get();
-    return { build_id: store.buildId, voice_actors: store.voicesDoc.voice_actors || [] };
+    let voices = store.voicesDoc.voice_actors || [];
+    if (params && params.get('id')) voices = voices.filter(row => row.id === params.get('id'));
+    else if (params && params.get('scope') === 'index') voices = voices.map(row => ({id:row.id,identity:row.identity,photo:row.photo,roles:row.roles}));
+    return { build_id: store.buildId, voice_actors: voices };
   }
 
   async appearance(type, id) {

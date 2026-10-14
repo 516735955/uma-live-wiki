@@ -13,6 +13,10 @@
     function data() {
       return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
     }
+    const cards = new Map();
+    const divider = document.createElement('li');
+    divider.className = 'cio-group-title';
+    divider.textContent = '非赛马娘角色';
     function render() {
       if (!grid.isConnected) { characterRender = null; return; }
       var q = norm(input.value.trim());
@@ -30,14 +34,13 @@
       var umaCharacters = list.filter(function (c) { return c.role_type !== 'human' && !nonUmaIds.has(c.id); });
       var otherCharacters = list.filter(function (c) { return c.role_type === 'human' || nonUmaIds.has(c.id); });
       list = umaCharacters.concat(otherCharacters);
-      grid.innerHTML = '';
+      const fragment = document.createDocumentFragment();
       list.forEach(function (c, i) {
         if (otherCharacters.length && i === umaCharacters.length) {
-          var divider = document.createElement('li');
-          divider.className = 'cio-group-title';
-          divider.textContent = '非赛马娘角色';
-          grid.appendChild(divider);
+          fragment.appendChild(divider);
         }
+        const previous = cards.get(c.id);
+        if (previous && previous.data === c) { fragment.appendChild(previous.element); return; }
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'cio-card';
@@ -63,13 +66,19 @@
           '</dl>' +
           '<div class="cio-veil"><p>View more</p><span class="cio-arrow">&gt;</span></div>';
         li.appendChild(card);
-        grid.appendChild(li);
+        cards.set(c.id, {data:c,element:li});
+        fragment.appendChild(li);
       });
+      grid.replaceChildren(fragment);
       var nodata = (root || document).querySelector('#cIntroNoData');
       if (nodata) nodata.style.display = list.length ? 'none' : 'block';
       if (listBox) listBox.classList.remove('loading');
     }
-    input.addEventListener('input', render);
+    let pendingFrame;
+    input.addEventListener('input', () => {
+      cancelAnimationFrame(pendingFrame);
+      pendingFrame = requestAnimationFrame(render);
+    });
     characterRender = render;
     render();
   }

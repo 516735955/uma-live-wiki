@@ -35,6 +35,10 @@ const umaApp = createApp({
     const albums = ref([]);
     const albumsError = ref('');
     const albumsLoading = ref(false);
+    const albumsTotal = ref(0);
+    const albumTypes = ref([]);
+    const albumYears = ref([]);
+    let albumListRevision = 0;
     const activeTab = ref(initialTab);
     const home = ref(initialSegments.length === 0);
     const routeReady = ref(false);
@@ -77,7 +81,7 @@ const umaApp = createApp({
     let newsTranslationRequest = null;
     let albumsLoadPromise = null;
     let creatorCatalogLoadPromise = null;
-    let relationshipLoadPromise = null;
+    const voiceDataRequests = new Map();
     let homeSummaryLoadPromise = null;
     let pedigreeLoadPromise = null;
     let pedigreeMetaLoadPromise = null;
@@ -181,6 +185,9 @@ const umaApp = createApp({
     const voiceSection = ref('profile');
     const otherSection = ref('relationships');
     const horsesList = ref([]);
+    const horsesTotal = ref(0);
+    const horsesPagedByApi = ref(false);
+    let horseListRevision = 0;
     const horsesListError = ref('');
     const horseDetail = ref(null);
     const horseQuery = ref('');
@@ -188,19 +195,25 @@ const umaApp = createApp({
     const horsesPerPage = 30;
     let horsesDataPromise = null;
     let horsesListPromise = null;
-    function loadHorsesListData() {
-      if (window.HORSES && window.HORSES.length) {
+    let horseIndexUpdatedAt = Date.now();
+    function loadHorsesListData(params) {
+      const paged = currentUrlPath().split('?')[0] === routes.horses();
+      if (!paged && window.HORSES && window.HORSES.length && Date.now() - horseIndexUpdatedAt < 300000) {
         horsesList.value = window.HORSES;
         return Promise.resolve();
       }
-      if (horsesListPromise) return horsesListPromise;
-      const source = '/data/horses_list.js';
-      horsesListPromise = loadDataScript(source, 'HORSES').then(function () {
-        if (!window.HORSES || !window.HORSES.length) throw new Error('empty horses list');
-        horsesList.value = window.HORSES;
+      const revision = ++horseListRevision;
+      const query = paged ? params || {q:horseQuery.value,page:horsePage.value,page_size:horsesPerPage} : {scope:'index'};
+      horsesListPromise = api.request('/api/catalog/horses' + api.query(query)).then(function (data) {
+        if (revision !== horseListRevision) return;
+        if (!data || !Array.isArray(data.items)) throw new Error('invalid horses list');
+        horsesPagedByApi.value = paged;
+        horsesList.value = data.items;
+        horsesTotal.value = data.total;
+        if (paged) horsePage.value = data.page;
+        else { window.HORSES = data.items; horseIndexUpdatedAt = Date.now(); }
       }).catch(function () {
         horsesListPromise = null;
-        delete dataScriptPromises[source];
         throw new Error('horses list load failed');
       });
       return horsesListPromise;
@@ -293,14 +306,13 @@ const umaApp = createApp({
       return loadDataScript('/data/character_index_data.js', 'CHAR_INDEX');
     }
     function loadPedigreeMeta() {
-      if (window.CHARACTER_PEDIGREE_META) return Promise.resolve();
       if (pedigreeMetaLoadPromise) return pedigreeMetaLoadPromise;
       const source = '/data/character_pedigree_meta.js';
       pedigreeMetaLoadPromise = loadDataScript(source, 'CHARACTER_PEDIGREE_META')
         .catch(function () {
           delete dataScriptPromises[source];
           pedigreeMetaLoadPromise = null;
-        });
+        }).finally(function () { pedigreeMetaLoadPromise = null; });
       return pedigreeMetaLoadPromise;
     }
     function loadCharacterDetailData() {
@@ -309,23 +321,26 @@ const umaApp = createApp({
         loadDataScript('/data/character_detail_data.js', 'CHAR_DETAIL')
       ]);
     }
-    function loadVoiceData() {
-      if (relationshipLoadPromise) return relationshipLoadPromise;
+    function loadVoiceData(id) {
+      const key = id || 'index';
+      if (voiceDataRequests.has(key)) return voiceDataRequests.get(key);
       voiceLoading.value = true;
       voiceError.value = '';
-      relationshipLoadPromise = api.request('/api/catalog/voice-actors')
+      const promise = api.request('/api/catalog/voice-actors' + api.query(id ? {id:id} : {scope:'index'}))
         .then(function (data) {
           if (!data || !Array.isArray(data.voice_actors) || !data.voice_actors.length) throw new Error('声优资料暂时无法载入。');
-          relationshipLoadPromise = null;
-          voiceProfiles.value = data.voice_actors;
+          const rows = new Map(voiceProfiles.value.map(row => [row.id, row]));
+          data.voice_actors.forEach(row => rows.set(row.id, {...rows.get(row.id), ...row}));
+          voiceProfiles.value = Array.from(rows.values());
           window.dispatchEvent(new CustomEvent('uma-voice-data'));
         }).catch(function () {
-          relationshipLoadPromise = null;
           voiceError.value = '声优资料暂时无法载入，请重试。';
         }).finally(function () {
-          voiceLoading.value = false;
+          voiceDataRequests.delete(key);
+          voiceLoading.value = voiceDataRequests.size > 0;
         });
-      return relationshipLoadPromise;
+      voiceDataRequests.set(key, promise);
+      return promise;
     }
     const appearanceLoads = {};
     function mergeSong(song) {
@@ -362,11 +377,6 @@ const umaApp = createApp({
       return loadRelationshipData(type, id);
     }
     function loadPedigreeData() {
-      if (window.PED_REL && window.PED_REL.length) {
-        pedigreeStatus.value = 'ready';
-        pedigreeError.value = '';
-        return Promise.resolve();
-      }
       if (pedigreeLoadPromise) return pedigreeLoadPromise;
       pedigreeStatus.value = 'loading';
       pedigreeError.value = '';
@@ -382,7 +392,7 @@ const umaApp = createApp({
           delete dataScriptPromises[source];
           pedigreeStatus.value = 'error';
           pedigreeError.value = '血统资料暂时无法载入，请重试。';
-        });
+        }).finally(function () { pedigreeLoadPromise = null; });
       return pedigreeLoadPromise;
     }
     function retryPedigree() {
@@ -390,24 +400,21 @@ const umaApp = createApp({
         Vue.nextTick(renderCharBlood);
       });
     }
-    function loadHorsesData() {
-      if (window.HORSES && window.HORSES.length && window.HORSES_DETAIL) {
-        horsesList.value = window.HORSES;
-        horsesListError.value = '';
-        return Promise.resolve();
-      }
-      if (horsesDataPromise) return horsesDataPromise;
+    function loadHorsesData(id) {
+      id = id || decodeURIComponent(routeSegments()[2] || '');
+      if (!id) return loadHorsesListData();
       horsesListError.value = '';
-      const detailSource = '/data/horses_details.js';
       horsesDataPromise = Promise.all([
         loadHorsesListData(),
-        loadDataScript(detailSource, 'HORSES_DETAIL')
-      ]).then(function () {
-        if (!window.HORSES_DETAIL) throw new Error('empty horses data');
-      }).catch(function () {
+        api.request('/api/catalog/horse' + api.query({id}))
+      ]).then(function (rows) {
+        if (!rows[1]?.horse) throw new Error('empty horse data');
+        window.HORSES_DETAIL = {...window.HORSES_DETAIL, [id]:rows[1].horse};
+      }).catch(function (error) {
         horsesDataPromise = null;
-        delete dataScriptPromises[detailSource];
+        if (error.message === 'HTTP 404') { window.HORSES_DETAIL = {...window.HORSES_DETAIL,[id]:null}; return; }
         horsesListError.value = '原型马资料暂时无法载入，请重试。';
+        throw error;
       });
       return horsesDataPromise;
     }
@@ -487,10 +494,12 @@ const umaApp = createApp({
     }
     function animeRouteLoadTarget() {
       const seg = routeSegments();
-      if ((seg[0] || '').toLowerCase() !== 'database') return ['graph', ''];
-      if ((seg[1] || '').toLowerCase() === 'anime' && seg[2]) return ['work', decodeURIComponent(seg[2])];
+      if ((seg[1] || '').toLowerCase() === 'anime' && seg[2]) return seg[4] ? ['unit', decodeURIComponent(seg[4])] : ['work', decodeURIComponent(seg[2])];
       if ((seg[1] || '').toLowerCase() === 'staff') return [seg[2] ? 'person' : 'people', seg[2] ? decodeURIComponent(seg[2]) : ''];
-      return [(seg[1] || '').toLowerCase() === 'anime' ? 'index' : 'graph', ''];
+      const type = ({characters:'character','voice-actors':'voice_actor',creators:'creator',songs:'song',albums:'album'})[seg[1]];
+      if (type && seg[2]) return ['entity', type + ':' + decodeURIComponent(seg[2])];
+      if (seg[0] === 'events' && seg[1]) return ['entity', 'event:' + decodeURIComponent(seg[1])];
+      return ['index', ''];
     }
     function retryAnime() {
       const target = animeRouteLoadTarget();
@@ -505,18 +514,24 @@ const umaApp = createApp({
         }
       }).catch(function () {});
     }
-    function loadAnimeCatalogOptional() { return loadAnimeCatalog('graph').catch(function () { return null; }); }
-    function loadAnimeRelatedMedia(workId, retry) {
-      if (retry) delete animeMediaLoads[workId];
-      if (animeMediaLoads[workId]) return animeMediaLoads[workId];
+    function loadAnimeCatalogOptional(type, id) {
+      const target = type && id ? ['entity', type + ':' + id] : animeRouteLoadTarget();
+      if (target[0] !== 'entity') return Promise.resolve(null);
+      return loadAnimeCatalog(target[0], target[1]).catch(function () { return null; });
+    }
+    function loadAnimeRelatedMedia(workId, retry, kind) {
+      kind = kind || (new URL(window.location.href).searchParams.get('section') === 'music' ? 'all' : 'events');
+      const mediaKey = workId + ':' + (routeSegments()[4] || '') + ':' + kind;
+      if (retry) delete animeMediaLoads[mediaKey];
+      if (animeMediaLoads[mediaKey]) return animeMediaLoads[mediaKey];
       const sourcePath = currentUrlPath();
       const navigation = navigationRevision.value;
       animeLoadingCount += 1;
       animeLoading.value = true;
-      animeMediaLoads[workId] = Promise.all([
-        loadAnimeCatalog('work', workId, !!retry),
-        loadAlbums(),
-        api.request('/api/catalog/anime-media' + api.query({id: workId}), { fresh: !!retry })
+      animeMediaLoads[mediaKey] = Promise.all([
+        loadAnimeCatalog(routeSegments()[4] ? 'unit' : 'work', routeSegments()[4] || workId, !!retry),
+        Promise.resolve(),
+        api.request('/api/catalog/anime-media' + api.query({id: workId, unit: routeSegments()[4],kind}), { fresh: !!retry })
       ]).then(function (results) {
         const media = results[2] || {};
         (media.songs || []).forEach(mergeSong);
@@ -526,11 +541,11 @@ const umaApp = createApp({
         if (navigation === navigationRevision.value && sourcePath === currentUrlPath()) animeError.value = '动画关联资料暂时无法载入。';
         throw error;
       }).finally(function () {
-        delete animeMediaLoads[workId];
+        delete animeMediaLoads[mediaKey];
         animeLoadingCount = Math.max(0, animeLoadingCount - 1);
         animeLoading.value = animeLoadingCount > 0;
       });
-      return animeMediaLoads[workId];
+      return animeMediaLoads[mediaKey];
     }
     function findAnimeWork(id) {
       return (animeCatalog.value.works || []).find(function (work) { return work.id === id; }) || null;
@@ -680,7 +695,10 @@ const umaApp = createApp({
       if (!path || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault(); navigateTo(path);
     }
-    function setAnimeSection(section) { animeSection.value = section; pushUrl(true); }
+    function setAnimeSection(section) {
+      animeSection.value = section; pushUrl(true);
+      if (section === 'music' && animeDetail.value) loadAnimeRelatedMedia(animeDetail.value.id, false, 'all').catch(() => {});
+    }
     const animeDates = computed(() => {
       const content = animeContentUnit.value || animeDetail.value || {};
       const labels = {'ぱかチューブっ！配信':'YouTube上线','TOKYO MX・BS11放送':'TOKYO MX／BS11首播','TBS系放送':'TBS电视网首播','官网公开公告':'公开日期'};
@@ -1099,9 +1117,6 @@ const umaApp = createApp({
       resetPageScroll();
       pushUrl();
     }
-    function loadMusicRelations() {
-      return Promise.all([loadVoiceData(), loadCharacterIndexData(), loadSongCatalog(), loadAlbums()]);
-    }
     function prepareCurrentRoute() {
       const seg = routeSegments();
       if (!seg.length) return Promise.resolve();
@@ -1114,7 +1129,7 @@ const umaApp = createApp({
         const musicSection = (seg[1] || '').toLowerCase();
         if (musicSection === 'creators') return Promise.all([seg.length > 2 ? Promise.resolve() : loadCreatorCatalog(), loadAnimeCatalogOptional()]);
         if (musicSection === 'songs') return seg.length > 2 ? Promise.resolve() : loadSongCatalog(listParamsFromUrl());
-        return seg.length > 2 ? Promise.resolve() : loadAlbums();
+        return seg.length > 2 ? Promise.resolve() : loadAlbums(listParamsFromUrl());
       }
       if (first === 'events') return Promise.all([seg.length > 1 ? Promise.resolve() : loadEvents(listParamsFromUrl()), loadAnimeCatalogOptional()]);
       if (first === 'resources') return Promise.resolve();
@@ -1138,10 +1153,10 @@ const umaApp = createApp({
       if (sub === 'anime') {
         const animePath = (seg[2] || '').toLowerCase();
         if (!animePath) return loadAnimeCatalog();
-        return Promise.all([loadAnimeRelatedMedia(animePath), loadCharacterIndexData(), loadVoiceData(), loadHorsesListData()]);
+        return Promise.all([loadAnimeRelatedMedia(animePath), loadCharacterIndexData(), loadVoiceData()]);
       }
       if (sub === 'staff') return loadAnimeCatalog(seg[2] ? 'person' : 'people', seg[2] ? decodeURIComponent(seg[2]) : '');
-      if (sub === 'horses') return Promise.all([seg.length > 2 ? loadHorsesData() : loadHorsesListData(), loadCharacterIndexData()]);
+      if (sub === 'horses') return Promise.all([seg.length > 2 ? loadHorsesData(seg[2]) : loadHorsesListData(listParamsFromUrl()), loadCharacterIndexData()]);
       return Promise.resolve();
     }
     function loadHomeSummary() {
@@ -1528,6 +1543,7 @@ const umaApp = createApp({
       return null;
     }
     const horseFiltered = computed(function () {
+      if (horsesPagedByApi.value) return horsesList.value;
       let rows = horsesList.value.slice();
       const query = String(horseQuery.value || '').trim().toLowerCase();
       if (query) {
@@ -1541,17 +1557,18 @@ const umaApp = createApp({
       return rows;
     });
     const horsePaged = computed(function () {
+      if (horsesPagedByApi.value) return horsesList.value;
       const start = (horsePage.value - 1) * horsesPerPage;
       return horseFiltered.value.slice(start, start + horsesPerPage);
     });
     const horsePageCount = computed(function () {
-      return Math.max(1, Math.ceil(horseFiltered.value.length / horsesPerPage));
+      return Math.max(1, Math.ceil((horsesPagedByApi.value ? horsesTotal.value : horseFiltered.value.length) / horsesPerPage));
     });
     const horsePageStart = computed(function () {
       return horseFiltered.value.length ? (horsePage.value - 1) * horsesPerPage + 1 : 0;
     });
     const horsePageEnd = computed(function () {
-      return Math.min(horsePage.value * horsesPerPage, horseFiltered.value.length);
+      return Math.min(horsePage.value * horsesPerPage, horsesPagedByApi.value ? horsesTotal.value : horseFiltered.value.length);
     });
     const horsePageList = computed(function () {
       return pagerList(horsePage.value, horsePageCount.value);
@@ -1559,6 +1576,7 @@ const umaApp = createApp({
     function setHorsePage(page) {
       const next = Math.min(Math.max(1, Number(page) || 1), horsePageCount.value);
       horsePage.value = next;
+      if (horsesPagedByApi.value) loadHorsesListData();
       resetPageScroll();
       pushUrl();
     }
@@ -1579,7 +1597,7 @@ const umaApp = createApp({
         resetPageScroll();
         pushUrl();
       };
-      return Promise.resolve(loadHorsesData()).then(show, show);
+      return Promise.resolve(loadHorsesData(id)).then(show, show);
     }
     const horseMajorExpanded = ref(false);
     watch(horseDetail, function () { horseMajorExpanded.value = false; });
@@ -1725,6 +1743,12 @@ const umaApp = createApp({
       if (!String(image.src || '').endsWith('album-placeholder.svg')) image.src = replaced;
     }
     watch(horseQuery, function () { if (!restoringRoute) { horsePage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    let horseSearchTimer;
+    watch(horseQuery, function () {
+      if (restoringRoute || currentUrlPath().split('?')[0] !== routes.horses()) return;
+      window.clearTimeout(horseSearchTimer);
+      horseSearchTimer = window.setTimeout(() => loadHorsesListData(), 180);
+    }, {flush:'sync'});
     function renderCharBlood() {
       var box = document.getElementById('cCharBlood');
       if (!box) return;
@@ -1853,7 +1877,7 @@ const umaApp = createApp({
         if (!isCurrent.fromRoute) resetPageScroll();
         pushUrl(isCurrent.fromRoute);
       };
-      return Promise.all([loadVoiceData(), loadCharacterIndexData(), loadAnimeCatalogOptional()]).then(loadCharacterUi).then(show, show);
+      return Promise.all([loadVoiceData().then(() => { const actor = findVaBySlug(actorId); return actor ? loadVoiceData(actor.id) : null; }), loadCharacterIndexData()]).then(loadCharacterUi).then(show, show);
     }
     function openVa(slug) {
       return openVoice(slug);
@@ -1960,6 +1984,7 @@ const umaApp = createApp({
         dbView.value = 'creators';
         if (!isCurrent.fromRoute) resetPageScroll();
         pushUrl(isCurrent.fromRoute);
+        return loadAnimeCatalogOptional('creator', found.id);
       }).catch(function () { if (isCurrent()) navigationError.value = '创作者资料暂时无法载入，请重试。'; });
     }
     function creatorRoleLabels(roles) {
@@ -2217,11 +2242,12 @@ const umaApp = createApp({
         if (!isCurrent.fromRoute) resetPageScroll();
         if (recordingUrl) restoreSongRecording(recordingUrl);
         pushUrl(isCurrent.fromRoute);
+        return loadAnimeCatalogOptional('song', found.id);
       };
       return Promise.all([
         api.request('/api/catalog/song' + api.query({ id: requested, revision: songCatalog.value.build_id })),
         loadVoiceData(),
-        loadCharacterIndexData(), loadAnimeCatalogOptional()
+        loadCharacterIndexData()
       ]).then(function (rows) { return show(rows[0]); }).catch(function () { if (isCurrent()) navigationError.value = '歌曲资料暂时无法载入，请重试。'; });
     }
     function toggleSongRelease(versionId) {
@@ -2290,7 +2316,7 @@ const umaApp = createApp({
     }
     function findAlbumTrackSong(track, trackIndex, album) {
       const number = Number(trackIndex) + 1;
-      return (songCatalog.value.songs || []).find(song => (song.versions || []).some(version =>
+      return Object.values(songsById).concat(songCatalog.value.songs || []).find(song => (song.versions || []).some(version =>
         (version.releases || []).some(release => Number(release.track_number) === number && album &&
           ((album.id && release.album_id === album.id) || (album.catalog && release.catalog === album.catalog) || release.album_name === album.name))
       ));
@@ -2659,7 +2685,7 @@ const umaApp = createApp({
       if (!name && !(a && a.id)) return Promise.resolve();
       return Promise.all([
         api.request('/api/catalog/album' + api.query({ id: a.id, name: name })),
-        loadVoiceData(), loadCharacterIndexData(), loadAnimeCatalogOptional(), loadSongCatalog()
+        loadVoiceData(), loadCharacterIndexData(), loadAnimeCatalogOptional('album', a.id)
       ]).then(function (rows) {
         if (!isCurrent()) return;
         const data = rows[0];
@@ -2970,20 +2996,9 @@ const umaApp = createApp({
       if (homeStats.songs !== null) return homeStats.songs;
       return albums.value.reduce(function (n, a) { return n + (a.track_count || (a.songs || []).length); }, 0);
     });
-    const statAlbums = computed(function () { return homeStats.albums !== null ? homeStats.albums : albums.value.length; });
+    const statAlbums = computed(function () { return homeStats.albums !== null ? homeStats.albums : albumsTotal.value; });
     const relAlbums = computed(function () {
-      let out = albums.value.slice();
-      const query = String(relQuery.value || '').trim().toLowerCase();
-      if (query) out = out.filter(function (album) {
-        return String(album.search_text || ((album.name || '') + ' ' + (album.catalog || ''))).toLowerCase().indexOf(query) !== -1;
-      });
-      if (relWork.value) out = out.filter(function (album) { return (album.work || albumWorkOf(album.name)) === relWork.value; });
-      if (relFilter.value) out = out.filter(function (a) { return a.type === relFilter.value; });
-      if (relYear.value) out = out.filter(function (a) { return (/^\d{4}/.test(a.release || '') ? String(a.release).slice(0, 4) : 'unknown') === relYear.value; });
-      return out.slice().sort(function (a, b) {
-        if (relSort.value === 'name') return String(a.name).localeCompare(String(b.name), 'ja');
-        return String(b.release).localeCompare(String(a.release)) || String(a.name).localeCompare(String(b.name), 'ja');
-      });
+      return albums.value;
     });
     function albumWorkOf(name) {
       const value = String(name || '');
@@ -3002,11 +3017,11 @@ const umaApp = createApp({
     }
     const relTypeList = computed(function () {
       return ['专辑', '单曲', '原声带', '精选辑', '其他'].filter(function (t) {
-        return albums.value.some(function (a) { return a.type === t; });
+        return albumTypes.value.includes(t);
       });
     });
     const relYearList = computed(function () {
-      const ys = albums.value.map(function (a) { return /^\d{4}/.test(a.release || '') ? String(a.release).slice(0, 4) : 'unknown'; });
+      const ys = albumYears.value;
       return Array.from(new Set(ys)).sort().reverse();
     });
     const relFiltered = computed(function () {
@@ -3014,11 +3029,10 @@ const umaApp = createApp({
     });
     const relPerPage = 30;
     const relPageCount = computed(function () {
-      return Math.max(1, Math.ceil(relFiltered.value.length / relPerPage));
+      return Math.max(1, Math.ceil(albumsTotal.value / relPerPage));
     });
     const relPaged = computed(function () {
-      const s = (relPage.value - 1) * relPerPage;
-      return relFiltered.value.slice(s, s + relPerPage);
+      return albums.value;
     });
     const relPageStart = computed(function () {
       if (!relFiltered.value.length) return 0;
@@ -3026,7 +3040,7 @@ const umaApp = createApp({
     });
     const relPageEnd = computed(function () {
       if (!relFiltered.value.length) return 0;
-      return Math.min(relFiltered.value.length, relPage.value * relPerPage);
+      return Math.min(albumsTotal.value, relPage.value * relPerPage);
     });
     const relPageList = computed(function () {
       const total = relPageCount.value;
@@ -3046,6 +3060,7 @@ const umaApp = createApp({
       if (isNaN(n)) return;
       if (n < 1 || n > relPageCount.value) return;
       relPage.value = n;
+      loadAlbums();
       pushUrl(true);
       const el = document.querySelector('#tab-db-albums .album-database-grid');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -3058,6 +3073,12 @@ const umaApp = createApp({
     watch(relFilter, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
     watch(relYear, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
     watch(relSort, function () { if (!restoringRoute) { relPage.value = 1; pushUrl(true); } }, { flush: 'sync' });
+    let albumSearchTimer;
+    watch([relQuery, relWork, relFilter, relYear, relSort], function () {
+      if (restoringRoute || activeTab.value !== 'database' || dbView.value !== 'albums' || albumDetail.value) return;
+      window.clearTimeout(albumSearchTimer);
+      albumSearchTimer = window.setTimeout(() => loadAlbums(), 180);
+    }, {flush:'sync'});
     const statLive = computed(function () {
       if (homeStats.live !== null) return homeStats.live;
       return eventsAll.value.filter(function (event) { return event.kind === 'concert'; }).length;
@@ -3377,6 +3398,7 @@ const umaApp = createApp({
         activeTab.value = 'live';
         if (!isCurrent.fromRoute) resetPageScroll();
         pushUrl(isCurrent.fromRoute);
+        return loadAnimeCatalogOptional('event', found.id);
       };
       return Promise.all([
         api.request('/api/catalog/event' + api.query({ id: id })),
@@ -3786,17 +3808,27 @@ const umaApp = createApp({
         .finally(function () { clearTimeout(request.timer); if (newsDetailRequest === request) { newsDetailRequest = null; newsDetailLoading.value = false; } });
       return request.promise;
     }
-    function loadAlbums() {
-      if (albumsLoadPromise) return albumsLoadPromise;
+    function loadAlbums(params) {
+      const query = params || {q:relQuery.value, type:relFilter.value, work:relWork.value, year:relYear.value, sort:relSort.value, page:relPage.value};
+      const revision = ++albumListRevision;
       albumsError.value = '';
       albumsLoading.value = true;
-      albumsLoadPromise = api.request('/api/catalog/albums?page_size=500')
-        .then(function (data) { albumsLoadPromise = null; albums.value = data && Array.isArray(data.items) ? data.items : []; })
+      albumsLoadPromise = api.request('/api/catalog/albums' + api.query({...query,page_size:relPerPage}))
+        .then(function (data) {
+          if (revision !== albumListRevision) return;
+          albumsLoadPromise = null;
+          albums.value = data && Array.isArray(data.items) ? data.items : [];
+          albumsTotal.value = data.total || 0;
+          albumTypes.value = data.types || [];
+          albumYears.value = data.years || [];
+          relPage.value = data.page || 1;
+        })
         .catch(function (e) {
+          if (revision !== albumListRevision) return;
           albumsLoadPromise = null;
           albumsError.value = '无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）';
         }).finally(function () {
-          albumsLoading.value = false;
+          if (revision === albumListRevision) albumsLoading.value = false;
         });
       return albumsLoadPromise;
     }
