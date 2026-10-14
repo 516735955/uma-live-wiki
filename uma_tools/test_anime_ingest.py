@@ -62,6 +62,9 @@ class AnimeIngestTests(unittest.TestCase):
         self.assertEqual(anime_credit_text.entity_kind(rows[0],rows[0]['name'],{'阿部憶人'},set()),'person')
         self.assertEqual(anime_credit_text.entity_kind(rows[1],rows[1]['name'],set(),set()),'organization')
         self.assertEqual(anime_credit_text.entity_kind({'title':'協力'},'OCT',set(),set()),'unresolved')
+        self.assertEqual(anime_credit_text.entity_kind({'title':'制作協力'},'新しい個人',set(),set()),'unresolved')
+        self.assertEqual(anime_credit_text.entity_kind({'title':'制作協力','@type':'Person'},'個人',set(),set()),'person')
+        self.assertEqual(anime_credit_text.entity_kind({'title':'原作'},'既知の作者',{'既知の作者'},set()),'person')
 
     def test_ocr_requires_repeated_original_spellings_and_keeps_distinct_names(self):
         a={'kind':'staff','title':'原画','name':'楊烈駿','entity_type':'person'}

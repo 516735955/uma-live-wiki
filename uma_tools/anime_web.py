@@ -29,11 +29,18 @@ def episode_records(markup, work_id, page_url):
             if not str(number).isdigit() or not any(key in record for key in ('story', 'text', 'summary', 'images', 'scene', 'cast', 'staff')):
                 continue
             images = record.get('images') or record.get('scene') or []
+            images = images if isinstance(images, list) else [images]
+            def image_url(image):
+                if isinstance(image, str):
+                    return urllib.parse.urljoin(page_url, image)
+                if isinstance(image, dict):
+                    return image_url(image.get('image') or image.get('url') or image.get('src') or '')
+                return ''
             rows.append({'work_id': work_id, 'number': int(number), 'title_ja': record.get('title') or record.get('name'),
                          'summary_ja': record.get('story') or record.get('text') or record.get('summary') or '',
                          'release_date': str(record.get('release_date') or record.get('datePublished') or '')[:10],
                          'source_url': page_url, 'staff': record.get('staff') or [], 'cast': record.get('cast') or [],
-                         'stills': [urllib.parse.urljoin(page_url, (image.get('image') or image).get('url', '')) for image in images if isinstance(image, dict)]})
+                         'stills': [url for image in images if (url := image_url(image))]})
     title = soup.select_one('.episode-title, .story-title, #storyOnce h2, .story__title, .episode__title')
     summary = soup.select_one('.episode-summary, .story__description, .story-text, #storyOnce p, .story__contents.type-story')
     number_node = soup.select_one('[data-episode-number]')
@@ -58,7 +65,10 @@ def work_metadata(markup):
     soup = BeautifulSoup(markup, 'html.parser')
     result = {}
     for script in soup.select('script[type="application/ld+json"]'):
-        payload = json.loads(script.string or script.get_text())
+        try:
+            payload = json.loads(script.string or script.get_text())
+        except (ValueError, TypeError):
+            continue
         records = payload if isinstance(payload, list) else [payload]
         for row in records:
             if not isinstance(row, dict) or row.get('@type') not in ('TVSeries', 'Movie', 'CreativeWorkSeries'):
