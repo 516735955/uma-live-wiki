@@ -5,8 +5,18 @@ const fs = require('fs');
 const vm = require('vm');
 const crypto = require('crypto');
 const { EventEmitter } = require('events');
-const source = fs.readFileSync(require.resolve('./server.js'), 'utf8');
-const section = (start, end) => source.slice(source.indexOf(start), source.indexOf(end));
+// Deterministic upstream failures exercise the shipped service functions with
+// fixture dependencies. The browser/API tests exercise complete composition.
+const sources = ['server-news', 'server-translation', 'server-transport'].map(name =>
+  fs.readFileSync(require.resolve('./' + name), 'utf8'));
+const section = (start, end) => {
+  const source = sources.find(text => text.includes(start));
+  if (!source) throw new Error('Missing service function: ' + start);
+  const begin = source.indexOf(start);
+  const finish = source.indexOf(end, begin);
+  const lifecycle = source.slice(begin).search(/\n\s*function start\(\)/);
+  return source.slice(begin, finish < 0 ? begin + lifecycle : finish).replace(/\bdeps\s*\./g, '');
+};
 const tick = async () => { for (let i = 0; i < 5; i++) await Promise.resolve(); };
 const { mergeNews } = require('./news-content');
 const { createTerms } = require('./translation-terms');
@@ -27,7 +37,7 @@ async function main() {
     persistNewsSnapshot(data) { saved.push(data); },
     mergeLantis() {}, backfillNewsImages(rows, callback) { images.push({ rows, callback }); },
     translateTitle() {}, reloadNewsSnapshotIfNewer() {}, reloadLantisIfNewer() {},
-    console: { log() {}, error() {} }, crypto,
+    console: { log() {}, error() {} }, crypto, require,
     sendJson(res, status, body, options) { res.body = body; res.options = options; }
   });
   vm.runInContext(section('function refreshNewsIndex()', 'function handleNewsDetail('), context);
@@ -57,7 +67,7 @@ async function main() {
   assert.notStrictEqual(first.options.etag, second.options.etag, 'ETag changes when translation changes');
 
   let manualTitle = '', manualMessage = '';
-  const articles = vm.createContext({ AbortController, Date, Map, Set, crypto,
+  const articles = vm.createContext({ AbortController, Date, Map, Set, crypto, require,
     newsContent: {
       apply: (item) => ({ ...item, title_zh: manualTitle || item.title_zh }),
       message: () => manualMessage
@@ -111,7 +121,7 @@ async function main() {
   assert.strictEqual(requestCount, 1, 'rejected translations are not split into context-free fragments');
 
   const translation = vm.createContext({
-    crypto, Buffer, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
+    crypto, Buffer, require, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
     hasCjk: () => true,
     currentTerms: () => emptyTerms, translationKey: (source) => source,
     newsContent: { message: () => '' },
@@ -139,7 +149,8 @@ async function main() {
   translation.translateBatchLines = (lines, callback) => callback(['译文']);
   translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   assert.strictEqual(result, '<p>译文</p>');
-  assert.strictEqual(Object.keys(translation.transCache).length, 1);
+  assert.strictEqual(Object.keys(translation.transCache).filter(key => key.startsWith('msg_')).length, 1);
+  assert.strictEqual(translation.transCache['fragment:原文'], '译文');
 
   translation.fetchTranslation = async (text) => ({ trans_result: text.split('\n').map((src) => ({ src, dst: src.replace(/原文/g, '译文') })) });
   vm.runInContext(section('function translateBatchLines(', 'function translateHtmlMessage('), translation);
@@ -168,6 +179,13 @@ async function main() {
   translation.translateBatchLines(['開場12:00'], (value) => { lines = value; });
   await tick();
   assert.strictEqual(lines[0], '开场12：00', 'full-width colons are formatting, not a changed time');
+  for (const [source, destination] of [['1.5倍', '15倍'], ['開場12:30', '开场1:23:0'], ['開催します', '開催します']]) {
+    translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: destination }] });
+    translation.translateBatchLines([source], (value, dirty) => { lines = value; linesDirty = dirty; });
+    await tick();
+    assert.strictEqual(lines[0], source);
+    assert.strictEqual(linesDirty, true);
+  }
   translation.translateBatchLines(['原文'.repeat(1000)], (value, dirty) => { lines = value; linesDirty = dirty; });
   assert.strictEqual(lines[0], '原文'.repeat(1000), 'query length is checked before sending and oversized lines keep the original');
   assert.strictEqual(linesDirty, true);

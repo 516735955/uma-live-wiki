@@ -1,0 +1,59 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+        [v-cloak] { display: none; }
+
+        :root {
+            --navy: #20283b;
+            --navy-2: #2c3650;
+            --navy-3: #141a29;
+            --accent: #ff7b16;
+            --accent-dark: #ff7b16;
+            --brand: #ff7b16;
+            --brand-dark: #213aa8;
+            --cyan: #16a8b7;
+            --lime: #8fbd35;
+            --bg: #f5f4f9;
+            --bg-2: #f0eef6;
+            --card: #ffffff;
+            --border: #e6e4ee;
+            --border-strong: #d8d5e2;
+            --text: #26272b;
+            --text-2: #5f5f6a;
+            --text-3: #70717c;
+            --text-1: var(--text);
+            --bg-2: #f0f1f6;
+            --brand-light: #fff5e6;
+            --amber: #b4550d;
+            --radius: 8px;
+            --shadow: 0 1px 2px rgba(20, 20, 40, 0.05), 0 4px 16px rgba(20, 20, 40, 0.05);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', Meiryo, 'Noto Sans CJK SC', 'Noto Sans CJK JP', system-ui, sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow-x: clip;
+        }
+        body.subpage-bg { background-image: url('/uma_tools/img/bg_texture_white.webp'); }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+        #app[v-cloak] { display: none; }
+        #app > .container { flex: 1 0 auto; width: 100%; }
+        #app > .sub-header,
+        #app > .home-layout,
+        #app > .site-footer { flex-shrink: 0; }
+
+        ::selection { background: rgba(255, 123, 22, 0.2); color: var(--navy-3); }
+        :focus-visible { outline: 2px solid rgba(255, 123, 22, 0.72); outline-offset: 2px; }

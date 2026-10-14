@@ -1,0 +1,203 @@
+
+        /* ===== NEWS ===== */
+        .news-list { min-height: calc(100vh - 61px); padding-bottom: 84px; }
+        .news-error { padding: 20px; text-align: center; color: var(--amber); font-size: 0.92em; }
+        .news-hero-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 18px; margin-bottom: 22px;
+        }
+        .news-hero-card {
+            position: relative; display: flex; flex-direction: column;
+            border-radius: var(--radius); overflow: hidden; cursor: pointer;
+            background: var(--card); border: 1px solid var(--border);
+            box-shadow: 4px 6px 16px -4px rgba(20, 20, 40, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .news-hero-card:hover { transform: translateY(-3px); border-color: var(--brand); }
+        .news-hero-cover { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #ecebf3; }
+        .news-hero-body { flex: 1; padding: 13px 16px 15px; }
+        .news-hero-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .news-hero-tag {
+            display: inline-block; padding: 2px 9px; border-radius: 999px;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+        }
+        .news-hero-tag.media { background: var(--brand); }
+        .news-hero-tag.game { background: #5b7bd5; }
+        .news-hero-tag.cd { background: #2a9d8f; }
+        .news-hero-date { font-size: 0.74em; color: var(--text-3); font-variant-numeric: tabular-nums; margin-bottom: 5px; }
+        .news-hero-title {
+            font-size: 1em; font-weight: 700; color: var(--text); line-height: 1.45;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .news-hero-skeleton { pointer-events: none; box-shadow: none; }
+        .news-hero-skeleton .news-hero-cover {
+            background: linear-gradient(100deg, #ecebf3 20%, #f7f6fa 40%, #ecebf3 60%);
+            background-size: 200% 100%; animation: newsSkeleton 1.4s ease-in-out infinite;
+        }
+        .news-skeleton-line {
+            display: block; width: 88%; height: 12px; margin-top: 10px; border-radius: 999px;
+            background: #ecebf3;
+        }
+        .news-skeleton-line.short { width: 38%; margin-top: 0; }
+        @keyframes newsSkeleton { to { background-position-x: -200%; } }
+        .news-rows { display: flex; flex-direction: column; }
+        .news-row {
+            display: grid;
+            grid-template-columns: 110px 82px 1fr 190px;
+            align-items: center;
+            gap: 8px 18px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer; transition: background 0.15s;
+        }
+        .news-row:last-child { border-bottom: none; }
+        .news-row:hover { background: var(--card); }
+        .news-row-head {
+            cursor: default; padding-top: 4px; padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-strong);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+            color: var(--text-3); text-transform: uppercase;
+        }
+        .news-row-head:hover { background: transparent; }
+        .nw-d {
+            font-size: 0.78rem; color: var(--text-3);
+            font-variant-numeric: tabular-nums; white-space: nowrap;
+        }
+        .nw-t {
+            display: inline-block; justify-self: start;
+            padding: 2px 10px; border-radius: 999px;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+            white-space: nowrap;
+        }
+        .nw-t.media { background: var(--brand); }
+        .nw-t.game { background: #5b7bd5; }
+        .nw-t.cd { background: #2a9d8f; }
+        .nw-title {
+            font-size: 0.95rem; font-weight: 600; color: var(--text);
+            line-height: 1.45; min-width: 0;
+        }
+        .news-row:hover .nw-title { color: var(--brand-dark, #b94c00); }
+        .nw-source { font-size: 0.76rem; color: var(--text-3); white-space: nowrap; }
+        .news-empty { padding: 60px 20px; text-align: center; color: var(--text-3); font-size: 0.95em; }
+
+        @media (max-width: 900px) {
+            .news-row {
+                display: flex; flex-wrap: wrap; align-items: center;
+                gap: 4px 12px; padding: 12px 14px;
+            }
+            .news-row-head { display: none; }
+            .nw-d { flex: 0 0 auto; }
+            .nw-t { flex: 0 0 auto; }
+            .nw-title { flex: 1 1 100%; min-width: 0; white-space: normal; overflow: visible; text-overflow: clip; margin-top: 2px; }
+            .nw-source { flex: 1 1 100%; margin-top: 2px; font-size: 0.8em; white-space: normal; }
+        }
+
+        /* song detail page */
+        .song-back-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .song-back-row .back-btn { margin-bottom: 22px; }
+        .song-detail-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+        .song-detail-thumb {
+            flex: 0 0 80px; width: 80px; height: 80px; border-radius: 12px;
+            background: linear-gradient(135deg, #3157ed 0%, #213aa8 100%);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 28px; font-weight: 700;
+        }
+        .song-detail-info { flex: 1; min-width: 0; }
+        .song-detail-sub { font-size: 0.82em; color: var(--text-3); margin-bottom: 4px; }
+        .song-detail-title { font-size: 1.5em; font-weight: 700; color: var(--text); margin: 0 0 8px; line-height: 1.3; }
+        .song-detail-release { font-size: 0.88em; color: var(--text-2); }
+        .song-detail-meta { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; font-size: 0.88em; }
+        .song-detail-label { color: var(--text-3); font-weight: 600; }
+        .song-detail-artist { color: var(--text-2); }
+        .song-detail-link { color: var(--brand); text-decoration: none; font-weight: 600; }
+        .song-detail-link:hover { text-decoration: none; }
+
+        .song-section { margin-bottom: 24px; }
+        .song-section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .song-section-title {
+            font-size: 1.1em; font-weight: 700; color: var(--text); margin: 0;
+            padding-bottom: 6px; border-bottom: 2px solid var(--brand);
+        }
+        .song-section-more {
+            font-size: 0.88em; color: var(--brand); text-decoration: none; font-weight: 600;
+        }
+        .song-section-more:hover { text-decoration: none; }
+        .song-list { list-style: none; margin: 0; padding: 0; }
+        .song-list-item {
+            display: flex; align-items: center; gap: 12px; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 0.88em;
+            transition: background 0.15s;
+        }
+        .song-list-item:last-child { border-bottom: none; }
+        .song-list-item:hover { background: var(--bg-2); }
+        .song-list-date { color: var(--text-3); font-size: 0.82em; min-width: 80px; }
+        .song-list-artist {
+            color: var(--text-2); font-size: 0.85em; flex: 0 1 auto;
+            min-width: 0; max-width: 260px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
+        .song-list-cnt { color: var(--brand); font-weight: 700; min-width: 40px; }
+.song-list-link { color: var(--brand); text-decoration: none; flex: 1; display: flex; align-items: center; gap: 12px; min-width: 0; }
+        .song-list-name { color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .song-list-arrow { margin-left: auto; color: var(--brand); }
+        .song-list-more { color: var(--text-3); font-size: 0.82em; margin-top: 8px; }
+        .song-list-extra { margin-top: 12px; }
+        .song-list-toggle {
+            display: block; width: 100%; margin-top: 10px; padding: 10px 14px; cursor: pointer;
+            color: var(--brand); border: 1px solid var(--border); border-radius: 8px; background: var(--card);
+            font: 600 12px/1 "Microsoft YaHei", "PingFang SC", sans-serif; transition: all .15s;
+        }
+        .song-list-toggle:hover { border-color: var(--brand); background: var(--brand-light, #fff5e6); }
+
+        .news-pager {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+            gap: 12px; padding: 18px 4px 0; border-top: 1px solid var(--border); margin-top: 8px;
+        }
+        .news-pager-count { font-size: 0.82em; color: var(--text-3); font-variant-numeric: tabular-nums; }
+        .news-pager-btns { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .news-pager-btn {
+            min-width: 34px; height: 32px; padding: 0 8px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 8px; cursor: pointer;
+            font-family: inherit; font-size: 0.86em; font-weight: 600; color: var(--text-2);
+            background: var(--card); border: 1px solid var(--border-strong);
+            transition: all 0.15s;
+        }
+        .news-pager-btn:hover:not(:disabled):not(.active) { border-color: var(--brand); color: var(--brand); }
+        .news-pager-btn.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+        .news-pager-btn:disabled { opacity: 0.4; cursor: default; }
+        .news-pager-ellipsis {
+            min-width: 26px; height: 32px; border: none; background: transparent;
+            font-size: 0.86em; color: var(--text-3);
+        }
+
+        .news-detail { padding-bottom: 84px; max-width: 860px; margin: 0 auto; }
+        .news-detail-actions {
+            display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+        }
+        .news-detail-actions .ui-back { margin-bottom: 0; }
+        .news-detail-external {
+            display: inline-flex; align-items: center; gap: 6px;
+            min-height: 40px; padding: 7px 16px;
+            border: 1px solid #8aa0de; border-radius: 999px;
+            background: var(--card);
+            color: var(--navy); font-family: inherit; font-size: 0.84em; font-weight: 800;
+            text-decoration: none; cursor: pointer;
+            box-shadow: 0 5px 10px rgba(49, 87, 237, 0.12);
+            transition: transform 280ms cubic-bezier(.19, 1, .22, 1), border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+        }
+        .news-detail-external:hover {
+            color: var(--brand-dark); border-color: var(--brand);
+            box-shadow: 0 7px 16px rgba(255, 123, 22, 0.17); transform: scale(.97);
+        }
+        .news-detail-cover { width: 100%; border-radius: var(--radius); margin-bottom: 18px; background: #ecebf3; }
+        .news-detail-date { font-size: 0.8em; color: var(--text-3); font-variant-numeric: tabular-nums; margin-bottom: 8px; }
+        .news-detail-title { font-size: 1.5em; font-weight: 800; color: var(--text); line-height: 1.4; margin-bottom: 14px; }
+        .news-detail-body { line-height: 1.9; font-size: 0.95em; color: var(--text); }
+        .news-detail-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 8px 0; }
+        .news-detail-body .news-embed {
+            display: block; width: 100%; max-width: 720px; aspect-ratio: 16 / 9;
+            height: auto; margin: 12px auto; border: 0; border-radius: 8px;
+        }
+        .news-detail-body a { color: var(--brand-dark, #b94c00); text-decoration: none; }
+        .news-detail-body span[data-text-custom-color] { color: inherit; }

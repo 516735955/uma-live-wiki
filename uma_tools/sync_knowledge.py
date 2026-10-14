@@ -28,8 +28,45 @@ STEPS = [
     ('voice-profiles', ['update_events.py', '--refresh-profiles']),
     ('music-build', ['update_events.py', '--music-only']),
     ('anime', ['sync_anime_sources.py']),
+    ('anime-watch', ['sync_anime_watch.py']),
+    ('anime-credits', ['sync_anime_credits.py']),
     ('anime-build', ['build_anime_catalog.py']),
 ]
+
+STEP_OUTPUTS = {
+    'characters': ['character_index_data.js', 'character_detail_data.js'],
+    'pedigree-source': ['pedigree_source.json'],
+    'horse-profiles': ['horses_details.js', 'horses_list.js'],
+    'pedigree-build': ['pedigree_data.js', 'character_pedigree_meta.js'],
+    'events': ['events_data.json'], 'programs': ['events/official_programs.json'],
+    'albums': ['albums.json'], 'setlists': ['live_cat_data.json'],
+    'catalogs': ['events_catalog.json', 'song_catalog.json', 'voice_actor_profiles.json'],
+    'music-metadata': ['music/credits.json', 'music/creators.json', 'music/lyrics.json', 'music/lyric_timings.json'],
+    'voice-profiles': ['events/voice_actor_details.json'],
+    'music-build': ['song_catalog.json', 'creator_catalog.json', 'appearance_index.json'],
+    'anime': ['anime/*.json'], 'anime-build': ['anime_catalog.json'],
+    'anime-watch': ['anime/watch_resources.json'],
+    'anime-credits': ['anime/ending_credits.json', 'anime/staff.json', 'anime/people.json', 'anime/relations.json'],
+}
+
+
+def output_contents(name):
+    """Compare published inputs, excluding refresh bookkeeping, within one run."""
+    import json
+    contents = {}
+    for pattern in STEP_OUTPUTS.get(name, []):
+        for path in (ROOT / 'data').glob(pattern):
+            raw = path.read_bytes()
+            if path.suffix == '.json':
+                try:
+                    value = json.loads(raw)
+                    if isinstance(value, dict):
+                        value = {key: item for key, item in value.items() if key not in ('generated_at', 'refreshed_at', 'observed_at', 'build_id')}
+                    raw = value
+                except ValueError:
+                    pass
+            contents[str(path)] = raw
+    return contents
 
 
 @contextmanager
@@ -73,12 +110,13 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             'pedigree-build': {'pedigree-source'}, 'voice-profiles': {'characters'},
             'catalogs': {'characters', 'events', 'programs', 'albums', 'setlists'},
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
-            'anime-build': {'anime', 'music-build'},
+            'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},
         }
         dependency_changed = bool(dependencies.get(name, set()) & executed)
         if not force and not dependency_changed and float(previous.get('next_at', 0)) > clock():
             continue
         started = clock()
+        before = output_contents(name)
         try:
             completed = run([sys.executable, str(ROOT / 'uma_tools' / arguments[0]), *arguments[1:]],
                             cwd=ROOT, capture_output=True, text=True, encoding='utf-8',
@@ -89,16 +127,19 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         except (OSError, subprocess.TimeoutExpired) as error:
             ok, message = False, type(error).__name__
         finished = clock()
+        changed = output_contents(name) != before
         entry = {'status': 'ok' if ok else 'failed', 'started_at': started,
                  'finished_at': finished, 'next_at': finished + (DAY if ok else RETRY),
-                 'last_success_at': finished if ok else previous.get('last_success_at'), 'message': message}
+                 'last_success_at': finished if ok else previous.get('last_success_at'), 'message': message,
+                 'changed': changed}
         state['steps'][name] = entry
         state['updated_at'] = dt.datetime.now(dt.timezone.utc).isoformat()
         write_json(STATE, state)
         results.append(entry)
         # A source may publish a usable subset before reporting another failed
         # page. Its dependent builders must still publish that usable subset.
-        executed.add(name)
+        if changed:
+            executed.add(name)
         print(f'[knowledge:{name}] {entry["status"]} {int(finished-started)}s | {message}', flush=True)
     return sum(row['status'] == 'failed' for row in results)
 

@@ -3,7 +3,8 @@
 Usage: python3 crawl_events.py
 """
 import io, sys, json, re, html, time, os, urllib.request
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+if __name__ == '__main__':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS_DIR)
@@ -23,6 +24,44 @@ ACTOR_RE = re.compile(r'<li><a href="([^"]+)">([^<]+)</a></li>', re.S)
 
 def fetch(url):
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40).read().decode('utf-8', 'replace')
+
+
+def parse_event_detail(markup, previous):
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(markup, 'html.parser')
+    fields = {}
+    for row in soup.select('table.table tr'):
+        cells = row.find_all('td', recursive=False)
+        if len(cells) == 2:
+            fields[cells[0].get_text(strip=True)] = cells[1]
+    date_cell = fields.get('開催日時')
+    date = re.search(r'\d{4}-\d{2}-\d{2}', date_cell.get_text() if date_cell else '')
+    if not date:
+        raise ValueError('event detail date layout was not recognized')
+    incoming = {'date': date.group(), 'date_zh': date_cell.get_text(' ', strip=True)}
+    if fields.get('時間'):
+        incoming['times'] = fields['時間'].get_text(' ', strip=True)
+    venue = fields.get('開催場所')
+    if venue:
+        incoming['venue'] = venue.get_text(' ', strip=True)
+    cast = fields.get('出演者')
+    if cast:
+        incoming['actors'] = [{'name': anchor.get_text(' ', strip=True), 'url': 'https://www.eventernote.com' + anchor['href']}
+                              for anchor in cast.select('ul.actors a[href^="/actors/"]')]
+    return {**previous, **{key: value for key, value in incoming.items() if value not in ('', [], None)}}
+
+
+def merge_listing(previous, incoming):
+    """A listing may truncate its cast; only detail pages replace a full roster."""
+    merged = {**previous, **{key:value for key,value in incoming.items() if value not in ('', None, [], {}) and key != 'live'}}
+    actors = {}
+    for actor in [*incoming.get('actors', []), *previous.get('actors', [])]:
+        key = actor.get('url') or actor.get('name')
+        if key and key not in actors:
+            actors[key] = actor
+    if actors:
+        merged['actors'] = list(actors.values())
+    return merged
 
 
 def extract_blocks(content):
@@ -238,23 +277,23 @@ def _conflict(a, b):
 
 
 def build_series_index():
-    """numbered-series (1st~7th EVENT) index from live_data.json/SERIES_GRID.
+    """Numbered-series index from the maintained live_data.json source.
     One entry per DAY (deep link /{no}_EVENT/{perf}/{day}), dates inferred from
     the sub's start date because EN lists shows per day."""
     try:
-        h = io.open(APP_JS, encoding='utf-8').read()
         LD = json.load(io.open(NUMBERED_LIVE_DATA, encoding='utf-8'))
-        SG = json.loads(re.search(r'const SERIES_GRID = (\[.*?\]);\n', h, re.S).group(1))
     except Exception as ex:
         print('series index unavailable:', str(ex)[:80], flush=True)
         return []
     import datetime
     idx = []
-    for gi, sg in enumerate(SG):
-        if gi >= len(LD):
-            break
-        base = '/zh-Hans/live/number_series_event/%s_EVENT' % sg.get('no')
-        for pi, sub in enumerate(LD[gi].get('subs') or []):
+    for group in LD:
+        match = re.search(r'第(\d+)回|(\d+)(?:st|nd|rd|th)\s*EVENT', group.get('group', ''), re.I)
+        if not match:
+            raise ValueError('numbered event identity missing: ' + group.get('group', ''))
+        number = next(value for value in match.groups() if value)
+        base = '/zh-Hans/live/number_series_event/%s_EVENT' % number
+        for pi, sub in enumerate(group.get('subs') or []):
             days = sub.get('days') or [{}]
             raw_d = (sub.get('date') or '').split(' ')[0].replace('.', '-')
             parts = raw_d.split('-')
@@ -380,7 +419,7 @@ def load_existing():
                     out[k] = e
             return out
         except Exception as ex:
-            print('existing data unreadable, full crawl:', str(ex)[:80], flush=True)
+            raise ValueError('Existing event data is unreadable; refusing to replace it with a partial crawl') from ex
     return {}
 
 
@@ -389,6 +428,7 @@ def main():
     base_n = len(all_events)
     print('base events: %d' % base_n, flush=True)
     fresh = []
+    failures = []
     page = 1
     import datetime
     today = datetime.date.today().isoformat()
@@ -402,8 +442,13 @@ def main():
                 print('first page failed, abort:', str(ex)[:120], flush=True)
                 return 1
             print('page failed (%s), stop here' % str(ex)[:80], flush=True)
+            failures.append(url)
             break
         blocks = extract_blocks(content)
+        if not blocks and not re.search(r'イベント(?:が登録されていません|はありません)|該当するイベント', content):
+            failures.append(url)
+            print('event listing layout was not recognized:', url, flush=True)
+            break
         new_cnt = 0
         for b in blocks:
             ev = parse_block(b)
@@ -411,6 +456,7 @@ def main():
                 continue
             key = ev['link'] or (ev['date'] + ev['title'])
             if key in all_events:
+                all_events[key] = merge_listing(all_events[key], ev)
                 continue
             all_events[key] = ev
             fresh.append(ev)
@@ -422,6 +468,48 @@ def main():
         page += 1
         time.sleep(1.2)
     print('crawl done: +%d new' % (len(all_events) - base_n), flush=True)
+    # Registered performers' own listings can expose related events absent from the group listing.
+    from knowledge_io import read_json, write_json
+    profiles = read_json(os.path.join(DATA_DIR, 'voice_actor_profiles.json'), {'voice_actors': []})
+    names = {row.get('identity', {}).get('ja') for row in profiles.get('voice_actors', [])}
+    pages = sorted({actor.get('url') for event in all_events.values() for actor in event.get('actors', [])
+                    if actor.get('name') in names and re.match(r'https://www\.eventernote\.com/actors/.+/\d+$', actor.get('url', ''))})
+    state_file = os.path.join(DATA_DIR, 'auto_update', 'event_sources.json')
+    state = read_json(state_file, {'attempted_at': {}})
+    attempts = state.setdefault('attempted_at', {})
+    candidates = [event for event in all_events.values() if event.get('link', '').startswith('https://www.eventernote.com/events/')
+                  and (not event.get('actors') or event.get('date', '') >= today
+                       or all('ウマ娘' in actor.get('name', '') for actor in event.get('actors', [])))]
+    for event in sorted(candidates, key=lambda item: attempts.get(item['link'], 0))[:12]:
+        attempts[event['link']] = time.time()
+        try:
+            all_events[event['link']] = parse_event_detail(fetch(event['link']), event)
+        except Exception as error:
+            failures.append(event['link'])
+            print('event detail failed:', event['link'], type(error).__name__, flush=True)
+    for actor_page in sorted(pages, key=lambda item: attempts.get(item, 0))[:12]:
+        attempts[actor_page] = time.time()
+        try:
+            content = fetch(actor_page + '/events?limit=100')
+            if 'eventernote' not in content.lower():
+                raise ValueError('performer listing was not recognized')
+            blocks = extract_blocks(content)
+            if not blocks and not re.search(r'イベント(?:が登録されていません|はありません)|該当するイベント', content):
+                raise ValueError('performer event layout was not recognized')
+            for block in blocks:
+                ev = parse_block(block)
+                if not ev or not re.search(r'ウマ娘|うまゆる|うまよん', ev['title']):
+                    continue
+                key = ev['link']
+                if key not in all_events:
+                    all_events[key] = ev
+                    fresh.append(ev)
+                else:
+                    all_events[key] = merge_listing(all_events[key], ev)
+        except Exception as error:
+            failures.append(actor_page)
+            print('performer source failed:', actor_page, type(error).__name__, flush=True)
+    write_json(state_file, state)
 
     # export freshly crawled events into events_list.xlsx (insert at row 2)
     export_events_xlsx(fresh)
@@ -457,6 +545,7 @@ def main():
             'actor': 'ウマ娘 プリティーダービー(gal’up!)',
             'count': len(events),
             'scraped_at': today,
+            'source_failures': failures,
         },
         'events': events,
     }
@@ -465,7 +554,7 @@ def main():
         json.dump(data, f, ensure_ascii=False, indent=1)
     os.replace(tmp, OUT)
     print('WROTE %s events=%d linked=%d scraped_at=%s' % (OUT, len(events), linked_total, today), flush=True)
-    return 0
+    return 1 if failures else 0
 
 
 if __name__ == '__main__':

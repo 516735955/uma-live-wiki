@@ -26,7 +26,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api4-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(snapshot.buildId.includes('-api5-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -75,6 +75,13 @@ async function main() {
   assert.strictEqual(albumList.items[0].id, stableAlbumId(albumList.items[0]), 'album URL id must be stable');
   const album = await store.album(albumList.items[0].id, '');
   assert(album && album.album && Array.isArray(album.catalog_songs), 'album detail is incomplete');
+  const cinderella = await store.album('album-laca-19146', '');
+  for (const title of ['約束', '葛藤']) {
+    const song = cinderella.catalog_songs.find(row => row.title === title);
+    assert(song, 'Cinderella soundtrack includes ' + title);
+    assert(song.versions.some(version => version.releases.some(release => release.album_id === cinderella.album.id)));
+  }
+  assert.strictEqual(await store.song('約束'), null, 'ambiguous title requires a stable song identity');
   const solo = await store.album('album-lacz-10116', '');
   assert.strictEqual(solo.catalog_songs.length, new Set(solo.catalog_songs.map((song) => song.id)).size, 'solo tracks must not duplicate full song objects');
   assert.strictEqual(solo.album.songs.length, 77, 'all solo recordings remain present');

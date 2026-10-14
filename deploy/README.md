@@ -24,13 +24,15 @@ node deploy/package-release.js HEAD /tmp/uma-release.tgz
 sudo bash update.sh /var/www/umamusume /tmp/uma-release.tgz
 ```
 
-发布串行执行，旧提交不能覆盖已上线的新提交。新版本先使用线上数据启动临时实例并检查，再切换 `current`、重载 nginx、重启正式服务。公网验证失败时恢复上一版代码和配置，不回退或覆盖运行数据。
+服务器下载 GitHub 来源缓慢时，可在本地用 `package-release.js <线上提交号> /tmp/uma-previous-release.tgz` 打包上一版，并与新包一起上传。把旧包作为更新脚本的第三个参数传入；脚本核对旧包提交号与运行版本一致，再执行同样的字段和图片同步。发布成功后删除上传的临时包。文件下载中断时最多尝试三次并续传；依赖安装只报告待重启服务，本站重启由发布流程统一执行。
 
-保留当前与上一版代码，其他旧代码版本自动清理；两版引用的资源始终保留，其他内容版本资源至少保留 30 天，供已打开的页面使用。相同内容共用同一个文件。首次切换保留原部署文件作为迁移恢复入口。普通发布只补入缺失的 data 文件，不覆盖已有 data、照片和翻译缓存；确认后的资料订正在源层增量合并后使用项目维护工具重新生成目录。
+发布串行执行，旧提交不能覆盖已上线的新提交。发布器按运行版本取得上次 Git 来源，将本次真正修改的字段应用到线上资料副本；未改动字段和线上增量记录保留。候选副本重建目录并启动临时实例验证，然后原子写入改动文件、切换 `current`、重载 nginx、重启正式服务。来源不完整、生成或验证失败就停止；公网验证失败时恢复上一版代码、配置及本次修改的数据与图片。
+
+保留当前与上一版代码，其他旧代码版本自动清理；两版引用的资源始终保留，其他内容版本资源至少保留 30 天，供已打开的页面使用。相同内容共用同一个文件。首次切换保留原部署文件作为迁移恢复入口。发布期间取得现有自动更新锁，防止来源采集与发布互相覆盖。新闻快照、翻译缓存和来源尝试状态作为运行数据保留；临时来源副本、候选数据和回滚副本在结束后清理。
 
 ## 资源与版本
 
-`prepare-release.js` 自动处理页面、懒加载和血统 iframe 的 JS/CSS 引用，资源按内容生成文件名。入口 HTML 和可变 data JS 重新校验，`assets` 长期缓存。已打开的上一版页面仍可读取原资源，不需用户清缓存。
+`prepare-release.js` 自动处理页面、原生模块、懒加载模板和血统 iframe 的 JS/CSS 引用，资源按内容生成文件名。入口 HTML 和可变 data JS 重新校验，`assets` 长期缓存。本地图片带发布版本参数，同路径订正随新页面取得新图；无版本图片重新校验。已打开的上一版页面仍可读取原脚本资源，不需用户清缓存。
 
 `/api/release` 返回进程启动时的提交；入口 HTML 和 release.json 记录同一提交。检查实际运行版本，不以文件复制成功代替上线成功。
 
@@ -47,7 +49,7 @@ python3 uma_tools/sync_knowledge.py --status
 python3 uma_tools/sync_knowledge.py --force --only characters pedigree-source pedigree-build
 ```
 
-Python 依赖为 Pillow、beautifulsoup4 与 openpyxl；发布脚本会检查并安装。普通本地预览仍使用 `--no-crawl`，不会后台修改源数据。
+Python 依赖为 Pillow、beautifulsoup4 与 openpyxl；片尾还需要 FFmpeg、Tesseract 与支持当前公开视频协议的 yt-dlp。发布脚本会检查并安装，旧发行包的 yt-dlp 会用官方发行版更新。日文模型免费按需缓存。普通本地预览仍使用 `--no-crawl`，不会后台修改源数据。
 
 Google 歌单表在服务器不可达时，读取已有 GitHub `sheet-sync` 工作流发布到 main 的资料；直连 GitHub 不可达时使用同仓库的 CDN 副本。备用入口同样只补唯一匹配、出演角色映射一致的空歌单，不替换线上已有歌单、日期或名单。
 
@@ -55,6 +57,7 @@ Google 歌单表在服务器不可达时，读取已有 GitHub `sheet-sync` 工�
 
 ```bash
 node deploy/test_release.js
+node deploy/test_data_sync.js
 node uma_tools/check_deployment.js https://umamusumelivewiki.top <完整提交号>
 systemctl is-active umamusume
 ```

@@ -1,0 +1,391 @@
+"""Program discovery responsibilities for the canonical catalog pipeline."""
+from __future__ import annotations
+
+from . import archives as pipeline_archives
+from . import common as pipeline_common
+from . import program_text as pipeline_program_text
+from . import text as pipeline_text
+
+
+def fetch_video_metadata(video_id: str) -> dict[str, pipeline_common.Any] | None:
+    from public_video import yt_command
+    command = yt_command(["--skip-download", "--no-warnings", "--socket-timeout", "12", "--dump-single-json", f"https://www.youtube.com/watch?v={video_id}"])
+    try:
+        result = pipeline_common.subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=90)
+        return pipeline_common.json.loads(result.stdout)
+    except (OSError, pipeline_common.subprocess.SubprocessError, pipeline_common.json.JSONDecodeError):
+        return None
+
+
+def discover_channel_feed(feed: str, limit: int) -> list[dict[str, pipeline_common.Any]]:
+    from public_video import yt_command
+    command = yt_command(["--flat-playlist", "--playlist-end", str(limit), "--no-warnings", "--socket-timeout", "12", "--dump-json", f"https://www.youtube.com/@UMAMUSUME_official/{feed}"])
+    result = pipeline_common.subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=300)
+    rows = []
+    for line in result.stdout.splitlines():
+        try:
+            rows.append(pipeline_common.json.loads(line))
+        except pipeline_common.json.JSONDecodeError:
+            continue
+    return rows
+
+
+class DiscoveryRows(list):
+    def __init__(self, rows=(), errors=()):
+        super().__init__(rows)
+        self.errors = list(errors)
+
+
+def discover_official_channel() -> list[dict[str, pipeline_common.Any]]:
+    rows, errors = [], []
+    with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+        futures = [
+            executor.submit(discover_channel_feed, "videos", 1600),
+            executor.submit(discover_channel_feed, "streams", 400),
+        ]
+        for future in futures:
+            try:
+                rows.extend(future.result())
+            except (OSError, pipeline_common.subprocess.SubprocessError) as error:
+                errors.append('official channel feed: ' + type(error).__name__)
+    by_id = {str(row["id"]): row for row in rows if row.get("id")}
+    return DiscoveryRows(by_id.values(), errors)
+
+
+def is_pakatube_character_program(title: str) -> bool:
+    value = pipeline_common.unicodedata.normalize("NFKC", title or "")
+    if pipeline_program_text.program_identity(value)[0]:
+        return False
+    if pipeline_common.re.search(r"(?:CM|PV|MV|ショート|Shorts|特報|ティザー|トレーラー)", value, pipeline_common.re.I):
+        return False
+    return bool(pipeline_common.re.search(
+        r"ゲーム実況|ボドゲ実況|お絵かき配信|打ち上げプチ配信|^【配信】|同時視聴|"
+        r"ぱかチューブっ!出張版|ぴすラジッ|ゴルシトーク|ぱかトークっ!|"
+        r"完全密着|梅雨特別企画|焼肉シミュレーター|メカダービー",
+        value,
+        pipeline_common.re.I,
+    ))
+
+
+def is_official_special_video(title: str) -> bool:
+    value = pipeline_common.unicodedata.normalize("NFKC", title or "")
+    return bool(
+        pipeline_common.re.fullmatch(r"そこそこぱかライブTV\s*-EXTRA STAGE-", value, pipeline_common.re.I)
+        or pipeline_common.re.search(r"うまよん.*オーディオコメンタリーリレー第\d+回", value, pipeline_common.re.I)
+    )
+
+
+def announcement_identity(title: str, message: str, date: str) -> tuple[str, str]:
+    regular = pipeline_program_text.program_identity(title)
+    if not regular[0]:
+        regular = pipeline_program_text.program_identity(pipeline_text.clean_text(message))
+    if regular[0]:
+        return regular
+    value = pipeline_common.unicodedata.normalize("NFKC", title or "")
+    if "ぱかスペース" in value and "同時視聴" in value:
+        match = pipeline_common.re.search(r"(\d+(?:st|nd|rd|th)\s*EVENT\s*-[A-Z ]+-)", value, pipeline_common.re.I)
+        suffix = pipeline_text.stable_title_suffix(match.group(1) if match else value)
+        return f"official-special-paka-space-{suffix}", "official-special"
+    if "ウマ娘が出走決定" in value and pipeline_common.re.search(r"放送|テレビ|NHK", value, pipeline_common.re.I):
+        match = pipeline_common.re.search(r"[「『]([^」』]+)[」』]", value)
+        program_name = match.group(1) if match else value
+        return f"official-special-{date.replace('-', '') or 'undated'}-{pipeline_text.stable_title_suffix(program_name)}", "official-special"
+    return "", ""
+
+
+def is_official_program_announcement(title: str) -> bool:
+    value = pipeline_common.unicodedata.normalize("NFKC", title or "")
+    regular = bool(pipeline_program_text.program_identity(value)[0] and pipeline_common.re.search(r"放送|配信|公開", value) and "発表まとめ" not in value)
+    return bool(
+        regular
+        or ("ぱかスペース" in value and "同時視聴" in value)
+        or ("ウマ娘が出走決定" in value and pipeline_common.re.search(r"放送|テレビ|NHK", value, pipeline_common.re.I))
+        or ("そこぱか" in value and "生放送" in value and "振り返りスペシャル" in value)
+    )
+
+
+def fetch_json_url(url: str) -> dict[str, pipeline_common.Any]:
+    request = pipeline_common.urllib.request.Request(url, headers={"User-Agent": "uma-live-wiki event updater"})
+    with pipeline_common.urllib.request.urlopen(request, timeout=30) as response:
+        return pipeline_common.json.load(response)
+
+
+def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
+    index_rows = []
+    first = fetch_json_url("https://umamusume.jp/api/ajax/pr_info_index?format=json&page=1")
+    index_rows.extend(first.get("information_list") or [])
+    total_pages = int(first.get("total_page_count") or 1)
+
+    def fetch_page(page: int) -> list[dict[str, pipeline_common.Any]]:
+        try:
+            return fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_index?format=json&page={page}").get("information_list") or []
+        except Exception:
+            return []
+
+    with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+        for rows in executor.map(fetch_page, range(2, total_pages + 1)):
+            index_rows.extend(rows)
+    candidates = []
+    for row in index_rows:
+        if is_official_program_announcement(row.get("title") or ""):
+            candidates.append(row)
+
+    def fetch_detail(row: dict[str, pipeline_common.Any]) -> tuple[dict[str, pipeline_common.Any], dict[str, pipeline_common.Any]]:
+        try:
+            data = fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_detail?format=json&announce_id={row['announce_id']}")
+            return row, data.get("detail") or {}
+        except Exception:
+            return row, {}
+
+    programs = []
+    with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+        for row, detail in executor.map(fetch_detail, candidates):
+            title = detail.get("title") or row.get("title") or ""
+            message = detail.get("message") or ""
+            fallback_date = pipeline_text.first_date(detail.get("post_at") or row.get("post_at"))
+            date = pipeline_program_text.parse_program_date(message) or pipeline_text.first_date(message) or fallback_date
+            event_id, series_id = announcement_identity(title, message, date)
+            if not event_id:
+                continue
+            youtube_match = pipeline_common.re.search(r"https?://(?:www\.)?(?:youtube\.com/(?:live|watch\?v=)|youtu\.be/)([A-Za-z0-9_-]{11})", pipeline_common.html.unescape(message))
+            video_id = youtube_match.group(1) if youtube_match else ""
+            video_url = f"https://www.youtube.com/watch?v={video_id}" if video_id else ""
+            official_url = f"https://umamusume.jp/news/detail?id={row['announce_id']}"
+            program_message = message
+            if "プレミアの巣窟" in title or "ONE SONG FES" in title:
+                program_message = pipeline_common.re.split(r"[「『]TOKYO IDOL FESTIVAL[^」』]*[」』]概要", message, maxsplit=1)[0]
+            sessions = pipeline_program_text.parse_program_sessions(program_message, date)
+            cast = pipeline_program_text.parse_program_cast(program_message) or pipeline_program_text.parse_intro_cast(program_message)
+            if "プレミアの巣窟" in title and not sessions:
+                schedule_text = pipeline_common.re.split(r"※放送時間|番組概要", "\n".join(pipeline_program_text.program_text_lines(program_message)), maxsplit=1)[0]
+                parsed_dates = pipeline_text.all_dates(schedule_text)
+                if len(parsed_dates) > 1:
+                    sessions = [{"label": f"第{index + 1}回", "date": value, "cast": cast} for index, value in enumerate(parsed_dates[:2])]
+            programs.append({
+                "id": event_id, "series_id": series_id, "title": title, "date": date,
+                "end_date": sessions[-1]["date"] if sessions and sessions[-1].get("date") else date,
+                "video_id": video_id, "url": video_url, "thumbnail": row.get("image") or "", "duration": None,
+                "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [], "sessions": sessions,
+                "summary": pipeline_text.clean_text(message)[:260], "source_kind": "official_announcement", "source_url": official_url,
+            })
+    return programs
+
+
+def refresh_programs() -> dict[str, pipeline_common.Any]:
+    existing_doc = pipeline_common.read_json(pipeline_common.EVENTS_DIR / "official_programs.json") if (pipeline_common.EVENTS_DIR / "official_programs.json").exists() else {"programs": []}
+    existing_programs = list(existing_doc.get("programs") or [])
+    youtube_available = bool(pipeline_common.shutil_which("yt-dlp"))
+    channel_entries = discover_official_channel() if youtube_available else []
+    source_errors = list(getattr(channel_entries, 'errors', []))
+    if not youtube_available:
+        source_errors.append('required program collector yt-dlp is unavailable')
+    rebuild_regular = int(existing_doc.get("schema_version") or 1) < 2 and bool(channel_entries)
+    expected_ids = pipeline_program_text.expected_regular_program_ids([*existing_programs, *channel_entries])
+    expected_id_values = set(expected_ids.values())
+    programs = []
+    for row in existing_programs:
+        event_id, series_id = pipeline_program_text.program_identity(row.get("title") or "")
+        if rebuild_regular and event_id and series_id in pipeline_common.REGULAR_PROGRAM_BASELINES:
+            continue
+        if event_id and series_id in pipeline_common.REGULAR_PROGRAM_BASELINES and "発表まとめ" in (row.get("title") or ""):
+            continue
+        if not event_id or series_id not in pipeline_common.REGULAR_PROGRAM_BASELINES or row.get("id") in expected_id_values:
+            programs.append(row)
+    existing_video_ids = {
+        str(video_id)
+        for row in programs
+        for video_id in [row.get("video_id"), *(item.get("video_id") for item in row.get("media") or [])]
+        if video_id
+    }
+    candidates = {
+        str(row["id"]): row
+        for row in channel_entries
+        if row.get("id")
+        and (
+            (pipeline_program_text.program_identity(row.get("title") or "")[0] in expected_id_values and str(row["id"]) not in existing_video_ids)
+            or (is_pakatube_character_program(row.get("title") or "") and str(row["id"]) not in existing_video_ids)
+            or (is_official_special_video(row.get("title") or "") and str(row["id"]) not in existing_video_ids)
+        )
+    }
+    fetched_metadata = []
+    with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {executor.submit(fetch_video_metadata, video_id): video_id for video_id in candidates}
+        for future in pipeline_common.concurrent.futures.as_completed(futures):
+            metadata = future.result()
+            if not metadata or metadata.get("channel_id") != pipeline_common.OFFICIAL_CHANNEL_ID:
+                source_errors.append('official video metadata unavailable: ' + futures[future])
+                continue
+            fetched_metadata.append(metadata)
+            event_id, series_id = pipeline_program_text.program_identity(metadata.get("title") or "")
+            if not event_id:
+                continue
+            description = metadata.get("description") or ""
+            broadcast_date = pipeline_program_text.parse_program_date(description)
+            if not broadcast_date:
+                raw_date = metadata.get("upload_date") or ""
+                broadcast_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:8]}" if len(raw_date) == 8 else ""
+            cast = pipeline_program_text.parse_program_cast(description)
+            programs.append({
+                "id": event_id, "series_id": series_id, "title": metadata.get("title") or "", "date": broadcast_date,
+                "video_id": metadata.get("id") or "", "url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata.get('id')}",
+                "thumbnail": metadata.get("thumbnail") or "", "duration": metadata.get("duration"),
+                "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [],
+                "sessions": pipeline_program_text.parse_program_sessions(description, broadcast_date),
+                "summary": next((line.strip() for line in description.splitlines() if line.strip()), ""),
+                "source_kind": "official_youtube", "source_url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata.get('id')}",
+            })
+    try:
+        news_programs = official_news_programs()
+    except Exception as error:
+        news_programs = []
+        source_errors.append('official announcement discovery: ' + type(error).__name__)
+    programs.extend(news_programs)
+    try:
+        programs.extend(pipeline_archives.historical_programs())
+    except Exception as error:
+        # The committed snapshot remains authoritative when the supplementary
+        # archive is temporarily unavailable.
+        source_errors.append('supplementary program archive: ' + type(error).__name__)
+    programs.extend(pipeline_archives.official_radio_programs(existing_programs))
+    character_metadata = [metadata for metadata in fetched_metadata if is_pakatube_character_program(metadata.get("title") or "")]
+    character_groups: dict[str, list[dict[str, pipeline_common.Any]]] = pipeline_common.defaultdict(list)
+    for metadata in character_metadata:
+        base_title = pipeline_common.re.sub(r"【[^】]*(?:視点)[^】]*】\s*$", "", metadata.get("title") or "").strip()
+        raw_date = metadata.get("upload_date") or ""
+        date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:8]}" if len(raw_date) == 8 else ""
+        character_groups[f"{date}\t{base_title}"].append(metadata)
+    for group_key, group in character_groups.items():
+        metadata = sorted(group, key=lambda row: row.get("id") or "")[0]
+        raw_date = metadata.get("upload_date") or ""
+        date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:8]}" if len(raw_date) == 8 else ""
+        description = metadata.get("description") or ""
+        base_title = group_key.split("\t", 1)[1]
+        suffix = pipeline_text.stable_suffix(base_title) or metadata["id"]
+        media = [
+            {"url": item.get("webpage_url") or f"https://www.youtube.com/watch?v={item['id']}", "label": "官方视频", "video_id": item.get("id") or "", "duration": item.get("duration")}
+            for item in sorted(group, key=lambda row: row.get("title") or "")
+        ]
+        programs.append({
+            "id": f"pakatube-{date.replace('-', '') or 'undated'}-{suffix}", "series_id": "pakatube-character-program", "title": base_title,
+            "date": date, "video_id": metadata.get("id") or "", "url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata['id']}",
+            "thumbnail": metadata.get("thumbnail") or "", "duration": metadata.get("duration"),
+            "cast_status": "character_only", "cast": [], "characters": [],
+            "summary": pipeline_text.clean_text(description)[:500] or "角色出演节目。未将角色配音关系记作声优本人出演。",
+            "source_kind": "official_youtube", "source_url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata['id']}",
+            "media": media,
+            "sources": [{"kind": "official_youtube", "label": "官方 YouTube", "url": item["url"]} for item in media],
+        })
+    for metadata in fetched_metadata:
+        if not is_official_special_video(metadata.get("title") or ""):
+            continue
+        description = metadata.get("description") or ""
+        raw_date = metadata.get("upload_date") or ""
+        date = pipeline_program_text.parse_program_date(description) or (f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:8]}" if len(raw_date) == 8 else "")
+        cast = pipeline_program_text.parse_program_cast(description)
+        url = metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata.get('id')}"
+        programs.append({
+            "id": f"official-special-{date.replace('-', '') or 'undated'}-{pipeline_text.stable_title_suffix(metadata.get('title') or '')}",
+            "series_id": "official-special",
+            "title": metadata.get("title") or "",
+            "date": date,
+            "video_id": metadata.get("id") or "",
+            "url": url,
+            "thumbnail": metadata.get("thumbnail") or "",
+            "duration": metadata.get("duration"),
+            "cast_status": "verified" if cast else "pending",
+            "cast": cast,
+            "characters": [],
+            "sessions": pipeline_program_text.parse_program_sessions(description, date),
+            "summary": next((line.strip() for line in description.splitlines() if line.strip()), ""),
+            "source_kind": "official_youtube",
+            "source_url": url,
+        })
+
+    def implicit_sources(row: dict[str, pipeline_common.Any]) -> list[dict[str, str]]:
+        if row.get("sources"):
+            return list(row["sources"])
+        source_url = row.get("source_url") or row.get("url") or ""
+        if not source_url:
+            return []
+        source_kind = row.get("source_kind") or "official_youtube"
+        labels = {
+            "official_announcement": "官方公告",
+            "official_youtube": "官方 YouTube",
+            "community_archive": "Umamusume Wiki 补档",
+            "official_broadcaster": "节目官方页",
+        }
+        return [{"kind": source_kind, "label": labels.get(source_kind, "资料来源"), "url": source_url}]
+
+    # Combine archive metadata and announcements under one stable program ID.
+    # The richer record supplies presentation fields; all evidence links, cast,
+    # media, and session-specific cast remain available.
+    by_id: dict[str, dict[str, pipeline_common.Any]] = {}
+    for program in sorted(programs, key=lambda row: (bool(row.get("cast")), bool(row.get("video_id")), row.get("date") or "", row.get("video_id") or "")):
+        event_id = program["id"]
+        if event_id not in by_id:
+            by_id[event_id] = dict(program)
+            by_id[event_id]["sources"] = implicit_sources(program)
+            continue
+        target = by_id[event_id]
+        target_priority = pipeline_common.PROGRAM_SOURCE_PRIORITY.get(str(target.get("source_kind") or ""), 0)
+        program_priority = pipeline_common.PROGRAM_SOURCE_PRIORITY.get(str(program.get("source_kind") or ""), 0)
+        richer = program_priority > target_priority or (
+            program_priority == target_priority
+            and (bool(program.get("cast")) or bool(program.get("video_id")))
+        )
+        if richer:
+            for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status"):
+                if program.get(field):
+                    target[field] = program[field]
+        target["sources"] = list({(item.get("kind"), item.get("url")): item for item in [*target.get("sources", []), *implicit_sources(program)] if item.get("url")}.values())
+        target["media"] = list({item.get("video_id") or item.get("url"): item for item in [*target.get("media", []), *program.get("media", [])] if item.get("video_id") or item.get("url")}.values())
+        target["cast"] = list({(pipeline_text.fold_name(item.get("name") or ""), pipeline_text.fold_name(item.get("role") or "")): item for item in [*target.get("cast", []), *program.get("cast", [])] if item.get("name")}.values())
+        sessions_by_key = {}
+        for session in [*target.get("sessions", []), *program.get("sessions", [])]:
+            key = (session.get("label"), session.get("date"))
+            if key not in sessions_by_key:
+                sessions_by_key[key] = dict(session)
+                continue
+            merged = sessions_by_key[key]
+            merged["cast"] = list({
+                (pipeline_text.fold_name(item.get("name") or ""), pipeline_text.fold_name(item.get("role") or "")): item
+                for item in [*merged.get("cast", []), *session.get("cast", [])]
+                if item.get("name")
+            }.values())
+        target["sessions"] = list(sessions_by_key.values())
+        if target.get("cast"):
+            target["cast_status"] = "verified"
+    # Keep all known episode identities visible even when a retired archive and
+    # expired announcement leave metadata incomplete. These records never create
+    # cast relationships and are explicitly marked pending.
+    for (_, _), event_id in expected_ids.items():
+        if event_id in by_id:
+            continue
+        series_id = event_id.rsplit("-", 1)[0]
+        number = int(event_id.rsplit("-", 1)[1])
+        name = {"paka-live-tv": "ぱかライブTV", "paka-live-tv-prime": "ぱかライブTV'", "sokosoko-paka-live-tv": "そこそこぱかライブTV"}[series_id]
+        marker = f"#{number}" if series_id == "paka-live-tv-prime" else f"Vol.{number}"
+        by_id[event_id] = {
+            "id": event_id, "series_id": series_id, "title": f"{name} {marker}", "date": "", "video_id": "", "url": "",
+            "thumbnail": "", "duration": None, "cast_status": "pending", "cast": [], "characters": [],
+            "summary": "节目条目已建立，播出日期、出演者与官方来源链接待补充。", "metadata_status": "pending",
+        }
+    ordered = sorted(by_id.values(), key=lambda row: (row["series_id"], row["id"]))
+    found_ids = {row["id"] for row in ordered if row["id"] in set(expected_ids.values()) and row.get("date") and (row.get("source_url") or row.get("url"))}
+    missing_ids = sorted(set(expected_ids.values()) - found_ids)
+    return {
+        "schema_version": 2,
+        "source": f"official YouTube channel {pipeline_common.OFFICIAL_CHANNEL_ID} and official portal announcements",
+        "refreshed_at": pipeline_common.dt.datetime.now(pipeline_common.dt.timezone.utc).replace(microsecond=0).isoformat(),
+        "coverage": {
+            "official_youtube_refresh": "verified" if channel_entries else ("tool_unavailable" if not youtube_available else "source_unavailable"),
+            "source_errors": source_errors,
+            "expected_regular_episodes": len(expected_ids),
+            "records": len(ordered),
+            "source_verified_regular_episodes": len(found_ids),
+            "metadata_pending_ids": missing_ids,
+            "pakatube_character_programs": sum(row.get("series_id") == "pakatube-character-program" for row in ordered),
+            "official_special_programs": sum(row.get("series_id") == "official-special" for row in ordered),
+        },
+        "programs": ordered,
+    }
