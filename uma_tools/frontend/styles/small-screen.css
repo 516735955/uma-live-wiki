@@ -93,7 +93,7 @@
     .ui-filter-group button,
     .ui-pager button,
     .entity-action { touch-action: manipulation; }
-    
+
     .ui-filter-group { display: grid; grid-template-columns: 42px minmax(0,1fr); }
     .ui-filter-group > div {
         display: flex;

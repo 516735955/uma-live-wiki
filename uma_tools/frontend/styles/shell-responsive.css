@@ -96,7 +96,7 @@
     .ui-search { flex-basis: 100%; }
     .ui-select-control,
     .ui-select-control.ui-select-wide { flex: 1 1 155px; min-width: 0; }
-    
+
     .ui-filter-group { width: 100%; align-items: flex-start; }
     .ui-filter-group > span { width: 40px; padding-top: 8px; }
     .song-catalog-row { grid-template-columns: 58px minmax(0,1fr) 38px 20px; gap: 10px; }
