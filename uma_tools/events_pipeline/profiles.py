@@ -318,7 +318,7 @@ def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
 
 
 def apply_additive_voice_detail_refresh(existing: dict[str, pipeline_common.Any], discovered: dict[str, pipeline_common.Any]) -> dict[str, pipeline_common.Any]:
-    """Add profiles and replace only explicit source-unavailable placeholders."""
+    """Fill missing profile facts while preserving accepted values and sources."""
     existing_records = list(existing.get("records") or [])
     by_lookup = {
         pipeline_text.fold_name(str(record.get("lookup_name") or record.get("name_ja") or record.get("name_zh") or "")): record
@@ -339,9 +339,9 @@ def apply_additive_voice_detail_refresh(existing: dict[str, pipeline_common.Any]
             by_lookup[lookup] = record
             added += 1
         elif previous.get("status") == "source_unavailable" and record.get("status") != "source_unavailable":
-            by_lookup[lookup] = record
+            previous['status'] = record['status']
             upgraded += 1
-        elif has_generic_photo(previous) and not has_generic_photo(record):
+        elif has_generic_photo(previous) and record.get('photo_url') and not has_generic_photo(record):
             previous.update({key: value for key, value in record.items() if key.startswith('photo_') and value})
             repaired_photos += 1
         if previous is not None:

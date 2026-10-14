@@ -1,9 +1,26 @@
 import unittest
 from unittest.mock import patch
 import auto_albums
+import crawl_events
+import update_events
 
 
 class AlbumImportTests(unittest.TestCase):
+    def test_recovered_voice_source_keeps_the_existing_accepted_fields(self):
+        original={'records':[{'lookup_name':'山本','status':'source_unavailable','birthday':'1月1日','agency':'curated','sources':[]}]}
+        fetched={'records':[{'lookup_name':'山本','status':'complete','birthday':'2月2日','birthplace':'Tokyo','agency':'new source','sources':[]}]}
+        result=update_events.apply_additive_voice_detail_refresh(original,fetched)['records'][0]
+        self.assertEqual(result['birthday'],'1月1日')
+        self.assertEqual(result['agency'],'curated')
+        self.assertEqual(result['birthplace'],'Tokyo')
+        self.assertEqual(result['status'],'complete')
+    def test_truncated_event_listing_preserves_the_detail_roster(self):
+        previous={'actors':[{'name':'A','url':'/a'},{'name':'B','url':'/b'}],'title':'old','live':'linked'}
+        incoming={'actors':[{'name':'A','url':'/a'}],'title':'correct','live':''}
+        result=crawl_events.merge_listing(previous,incoming)
+        self.assertEqual(result['actors'],previous['actors'])
+        self.assertEqual(result['title'],'correct')
+        self.assertEqual(result['live'],'linked')
     def test_official_failure_is_not_an_empty_success(self):
         with patch.object(auto_albums, 'http_json', return_value=None):
             with self.assertRaises(RuntimeError):
