@@ -175,6 +175,7 @@ def main():
     documents = {name:read_json(DATA / (name+'.json')) for name in names}
     state = read_json(STATE, {'attempted_at':{}})
     attempts = state.setdefault('attempted_at', {})
+    next_attempts = state.setdefault('next_attempt_at', {})
     complete = {(row['work_id'],int(row['number'])) for row in documents['ending_credits']['episodes']
                 if row.get('staff_status') == 'complete' and row.get('cast_status') == 'complete'}
     known_units = {f"{series['work_id']}-e{int(number):02d}":(series['work_id'],int(number))
@@ -182,7 +183,7 @@ def main():
     jobs = [row for row in documents['watch_resources']['resources'] if row.get('authority') == 'official'
             and row.get('content_type') == 'full_episode' and row.get('status') == 'active'
             and row.get('scope',{}).get('id') in known_units and known_units[row['scope']['id']] not in complete
-            and time.time() - attempts.get(row['scope']['id'],0) >= 86400]
+            and time.time() >= next_attempts.get(row['scope']['id'], attempts.get(row['scope']['id'],0) + 86400)]
     jobs.sort(key=lambda row:attempts.get(row['scope']['id'],0))
     if jobs and any(not shutil.which(tool) for tool in ('yt-dlp','ffmpeg','tesseract')):
         raise RuntimeError('ending collector requires yt-dlp, ffmpeg and tesseract')
@@ -196,6 +197,7 @@ def main():
     for resource in jobs[:args.limit]:
         uid = resource['scope']['id']; work_id, number = known_units[uid]
         attempts[uid] = time.time()
+        next_attempts[uid] = attempts[uid] + 86400
         try:
             with tempfile.TemporaryDirectory(prefix='job-',dir=TEMP) as directory:
                 observations = extract(resource, Path(directory))
@@ -231,6 +233,7 @@ def main():
                     documents['ending_credits']['episodes'].append(observed)
         except (OSError,ValueError,subprocess.SubprocessError) as error:
             failures.append(uid)
+            next_attempts[uid] = time.time() + 3600
             reason = error.stderr if isinstance(error,subprocess.CalledProcessError) else str(error)
             reason = re.sub(r'https?://\S+','<public source>',reason or '')[-350:]
             print('ending source retryable:',uid,type(error).__name__,reason,flush=True)
