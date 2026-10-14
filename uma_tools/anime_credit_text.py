@@ -4,8 +4,6 @@ import unicodedata
 from bs4 import BeautifulSoup
 from anime_labels import ROLES
 
-ORGANIZATION_ROLES = {'アニメーション制作', '制作協力', '美術制作', '音響制作', '録音スタジオ', '原作', '製作'}
-
 
 def staff_text_rows(markup, roles=()):
     soup = BeautifulSoup(markup or '', 'html.parser')
@@ -34,11 +32,16 @@ def staff_text_rows(markup, roles=()):
 
 def entity_kind(entry, name, known_people, organizations):
     kind = str(entry.get('entity_type') or entry.get('@type') or '').lower()
-    if kind in ('organization', 'institution') or name in organizations or re.search(
-            r'株式会社|有限会社|組合|協会|委員会|Co\.,?\s*Ltd|\bStudio\b|スタジオ|プロダクション', name, re.I) or entry.get('title') in ORGANIZATION_ROLES:
-        return 'organization'
-    if kind == 'person' or name in known_people:
+    if kind == 'person':
         return 'person'
+    if kind in ('organization', 'institution'):
+        return 'organization'
+    if name in known_people and name in organizations:
+        return 'unresolved'
+    if name in known_people:
+        return 'person'
+    if name in organizations or re.search(r'株式会社|有限会社|組合|協会|委員会|Co\.,?\s*Ltd|\bStudio\b|スタジオ|プロダクション', name, re.I):
+        return 'organization'
     return 'unresolved'
 
 
