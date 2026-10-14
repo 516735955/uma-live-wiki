@@ -20,7 +20,16 @@
         result.generated_at = data.generated_at;
         fields.forEach(field => data[field].forEach(row => {
           const key = field === 'staff' ? row._row : row.id;
-          lists[field].set(key, { ...(lists[field].get(key) || {}), ...row });
+          const previous = lists[field].get(key) || {};
+          const combined = { ...previous };
+          Object.keys(row).forEach(name => {
+            const value = row[name];
+            // Reverse-index summaries can arrive after a detailed response.
+            // Their empty placeholders are not a deletion of accepted fields.
+            if (value !== undefined && value !== '' && value !== null && (!Array.isArray(value) || value.length)) combined[name] = value;
+            else if (!(name in combined)) combined[name] = value;
+          });
+          lists[field].set(key, combined);
         }));
       });
       fields.forEach(field => { result[field] = Array.from(lists[field].values()); });
