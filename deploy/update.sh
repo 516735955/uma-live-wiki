@@ -34,6 +34,7 @@ recover() {
         node "$SRC/deploy/$kind-sync.js" rollback "$destination" "$WORK/$kind-backup"
       fi
     done
+    chown -R "$UMA_USER:$UMA_USER" "$ROOT/shared"
   fi
   if [ "$ACTIVATED" = 1 ]; then
     if [ -n "$OLD" ]; then
@@ -179,6 +180,9 @@ if [ -L "$RELEASE/data" ] && [ "$(readlink "$RELEASE/data")" = "$WORK/candidate-
   DATA_PUBLISHED=1
   node "$SRC/deploy/data-sync.js" publish "$WORK/candidate-data" "$ROOT/shared/data" "$WORK/data-backup"
   node "$SRC/deploy/media-sync.js" publish "$RELEASE" "$ROOT/shared" "$WORK/media-backup"
+  # Atomic replacement and newly created source directories must remain writable
+  # by the service's existing incremental updater.
+  chown -R "$UMA_USER:$UMA_USER" "$ROOT/shared"
   rm "$RELEASE/data"
   ln -s "$ROOT/shared/data" "$RELEASE/data"
   for name in album_covers uma_avatars uma_moe uma_official uma_va video_thumbs uma_tools/img; do

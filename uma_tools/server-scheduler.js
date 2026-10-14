@@ -12,7 +12,7 @@ exports.createService = function (deps) {
     execFile(
       deps.PYTHON_BIN,
       [KNOWLEDGE_SCRIPT],
-      { windowsHide: true, timeout: 6 * 60 * 60 * 1000 },
+      { windowsHide: true, timeout: 6 * 60 * 60 * 1000, env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' } },
       (err, stdout, stderr) => {
         catalogRefreshRunning = false;
         if (stdout.trim())
@@ -40,7 +40,7 @@ exports.createService = function (deps) {
     execFile(
       deps.PYTHON_BIN,
       [LANTIS_SCRIPT],
-      { windowsHide: true, timeout: deps.LANTIS_CRAWL_TIMEOUT },
+      { windowsHide: true, timeout: deps.LANTIS_CRAWL_TIMEOUT, env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' } },
       (err, stdout, stderr) => {
         lantisRunning = false;
         const tag = "[lantis-crawl " + reason + "]";
