@@ -14,20 +14,34 @@ function officialImage(value) {
   } catch (error) { return null; }
 }
 
-function imageStore(directory) {
-  const pending = new Map();
-  return async function load(value) {
-    const url = officialImage(value);
-    if (!url) throw new Error('unsupported news image');
-    const extension = path.extname(url.pathname).toLowerCase();
-    const file = path.join(directory, crypto.createHash('sha256').update(url.href).digest('hex') + extension);
+function imageStore(directory, options = {}) {
+  const pending = new Map(), attempts = new Map();
+  const capacity = Number(options.capacity || process.env.NEWS_IMAGE_CACHE_BYTES) || 256 * 1024 * 1024;
+  let lastCleanup = 0;
+  async function cleanup() {
+    if (Date.now() - lastCleanup < 60000) return;
+    lastCleanup = Date.now();
+    const names = await fs.promises.readdir(directory).catch(() => []);
+    const rows = await Promise.all(names.filter(name => /^[a-f0-9]{64}\.(?:png|jpe?g|webp|gif)$/.test(name)).map(async name => {
+      const file = path.join(directory, name);
+      const stat = await fs.promises.stat(file).catch(() => null);
+      return stat && { file, size: stat.size, at: stat.atimeMs };
+    }));
+    const files = rows.filter(Boolean).sort((a, b) => a.at - b.at);
+    let total = files.reduce((sum, row) => sum + row.size, 0);
+    for (const row of files) {
+      if (total <= capacity) break;
+      if (pending.has(row.file)) continue;
+      await fs.promises.unlink(row.file).catch(() => {});
+      total -= row.size;
+    }
+  }
+  async function refresh(url, file, extension) {
     if (pending.has(file)) return pending.get(file);
+    attempts.set(file, Date.now());
     const task = (async () => {
-      try {
-        const stat = await fs.promises.stat(file);
-        if (Date.now() - stat.mtimeMs < 86400000) return { bytes: await fs.promises.readFile(file), extension };
-      } catch (error) { if (error.code !== 'ENOENT') throw error; }
       const bytes = await new Promise((resolve, reject) => {
+        let timer;
         const request = https.get(url, { family: 4 }, (response) => {
           if (response.statusCode !== 200 || !/^image\/(?:png|jpeg|webp|gif)(?:;|$)/i.test(response.headers['content-type'] || '')) {
             response.resume(); reject(new Error('news image HTTP ' + response.statusCode)); return;
@@ -42,17 +56,36 @@ function imageStore(directory) {
           response.on('error', reject);
           response.on('aborted', () => reject(new Error('news image response aborted')));
         });
-        request.setTimeout(15000, () => request.destroy(new Error('news image timeout')));
+        timer = setTimeout(() => request.destroy(new Error('news image timeout')), 15000);
         request.on('error', reject);
+        request.on('close', () => clearTimeout(timer));
       });
       await fs.promises.mkdir(directory, { recursive: true });
       const temporary = file + '.' + process.pid + '.tmp';
-      await fs.promises.writeFile(temporary, bytes);
-      await fs.promises.rename(temporary, file);
+      try {
+        await fs.promises.writeFile(temporary, bytes);
+        await fs.promises.rename(temporary, file);
+      } finally { await fs.promises.unlink(temporary).catch(() => {}); }
       return { bytes, extension };
     })();
     pending.set(file, task);
-    try { return await task; } finally { pending.delete(file); }
+    try { return await task; } finally { pending.delete(file); await cleanup(); }
+  }
+  return async function load(value) {
+    const url = officialImage(value);
+    if (!url) throw new Error('unsupported news image');
+    const extension = path.extname(url.pathname).toLowerCase();
+    const file = path.join(directory, crypto.createHash('sha256').update(url.href).digest('hex') + extension);
+    try {
+      const stat = await fs.promises.stat(file);
+      const bytes = await fs.promises.readFile(file);
+      if (Date.now() - stat.mtimeMs >= 86400000 && Date.now() - (attempts.get(file) || 0) >= 60000) {
+        refresh(url, file, extension).catch(() => {});
+      }
+      cleanup().catch(() => {});
+      return { bytes, extension };
+    } catch (error) { if (error.code !== 'ENOENT') throw error; }
+    return refresh(url, file, extension);
   };
 }
 

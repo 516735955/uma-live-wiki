@@ -27,7 +27,7 @@ async function main() {
     persistNewsSnapshot(data) { saved.push(data); },
     mergeLantis() {}, backfillNewsImages(rows, callback) { images.push({ rows, callback }); },
     translateTitle() {}, reloadNewsSnapshotIfNewer() {}, reloadLantisIfNewer() {},
-    console: { log() {}, error() {} }, crypto,
+    console: { log() {}, error() {} }, crypto, require,
     sendJson(res, status, body, options) { res.body = body; res.options = options; }
   });
   vm.runInContext(section('function refreshNewsIndex()', 'function handleNewsDetail('), context);
@@ -57,7 +57,7 @@ async function main() {
   assert.notStrictEqual(first.options.etag, second.options.etag, 'ETag changes when translation changes');
 
   let manualTitle = '', manualMessage = '';
-  const articles = vm.createContext({ AbortController, Date, Map, Set, crypto,
+  const articles = vm.createContext({ AbortController, Date, Map, Set, crypto, require,
     newsContent: {
       apply: (item) => ({ ...item, title_zh: manualTitle || item.title_zh }),
       message: () => manualMessage
@@ -139,7 +139,8 @@ async function main() {
   translation.translateBatchLines = (lines, callback) => callback(['译文']);
   translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   assert.strictEqual(result, '<p>译文</p>');
-  assert.strictEqual(Object.keys(translation.transCache).length, 1);
+  assert.strictEqual(Object.keys(translation.transCache).filter(key => key.startsWith('msg_')).length, 1);
+  assert.strictEqual(translation.transCache['fragment:原文'], '译文');
 
   translation.fetchTranslation = async (text) => ({ trans_result: text.split('\n').map((src) => ({ src, dst: src.replace(/原文/g, '译文') })) });
   vm.runInContext(section('function translateBatchLines(', 'function translateHtmlMessage('), translation);

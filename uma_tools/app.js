@@ -74,6 +74,7 @@ const umaApp = createApp({
     const dataScriptLoadedAt = {};
     let newsLoadPromise = null;
     let newsDetailRequest = null;
+    let newsTranslationRequest = null;
     let albumsLoadPromise = null;
     let creatorCatalogLoadPromise = null;
     let relationshipLoadPromise = null;
@@ -3636,10 +3637,41 @@ const umaApp = createApp({
       } catch (error) { return value; }
     }
     function cancelNewsDetailRequest() {
+      if (newsTranslationRequest) newsTranslationRequest.abort();
+      newsTranslationRequest = null;
       if (newsDetailRequest) clearTimeout(newsDetailRequest.timer);
       if (newsDetailRequest && newsDetailRequest.controller) newsDetailRequest.controller.abort();
       newsDetailRequest = null;
       newsDetailLoading.value = false;
+    }
+    async function pollNewsTranslation(request, detail) {
+      clearTimeout(request.timer);
+      newsDetailLoading.value = false;
+      if (!detail.translation_state || detail.translation_state === 'complete') return;
+      const controller = new AbortController();
+      newsTranslationRequest = controller;
+      const endpoint = String(request.key).startsWith('lantis-') ? '/api/lantis-detail' : '/api/news-detail';
+      const deadline = setTimeout(() => controller.abort(), 120000);
+      try {
+        while (!controller.signal.aborted && currentUrlPath().split('?')[0] === request.path) {
+          await new Promise(resolve => {
+            const done = () => { clearTimeout(timer); controller.signal.removeEventListener('abort', done); resolve(); };
+            const timer = setTimeout(done, 3000);
+            controller.signal.addEventListener('abort', done, {once:true});
+          });
+          if (controller.signal.aborted) break;
+          const response = await fetch(endpoint + '?id=' + encodeURIComponent(request.key), {cache:'no-cache',signal:controller.signal});
+          if (!response.ok) break;
+          const data = await response.json();
+          if (controller.signal.aborted || currentUrlPath().split('?')[0] !== request.path || newsTranslationRequest !== controller) break;
+          if (data.detail) {
+            Object.assign(newsDetail.value, data.detail);
+            newsDetailBody.value = cleanNewsBody(data.detail.message_zh || data.detail.message);
+          }
+          if (data.detail?.translation_state === 'complete') break;
+        }
+      } catch (_) { /* The readable article remains available on a poll failure. */ }
+      finally { clearTimeout(deadline); if (newsTranslationRequest === controller) newsTranslationRequest = null; }
     }
     function newsDetailPlaceholder(id, source) {
       const key = String(id);
@@ -3726,6 +3758,7 @@ const umaApp = createApp({
               image: dd.image || (item && item.image) || ''
             };
             newsDetailBody.value = cleanNewsBody(dd.message_zh || dd.message);
+            pollNewsTranslation(request, dd);
           })
           .catch(function (error) {
             if (error && error.name === 'AbortError') return;
@@ -3743,6 +3776,7 @@ const umaApp = createApp({
           newsDetailBody.value = cleanNewsBody(d.detail.message_zh || d.detail.message);
           newsPrevId.value = d.prev_announce_id || 0;
           newsNextId.value = d.next_announce_id || 0;
+          pollNewsTranslation(request, d.detail);
         })
         .catch(function (error) {
           if (!error || error.name !== 'AbortError') {
