@@ -14,6 +14,30 @@ import sync_anime_sources as source
 
 
 class AnimeIngestTests(unittest.TestCase):
+    def test_episode_cues_recover_after_the_recording_is_registered_without_duplicates(self):
+        documents={'works':{'works':[{'id':'work','title_ja':'Work'}]},
+                   'units':{'series':[{'work_id':'work','released_count':1,'details':{}}]},
+                   'source_registry':{'sources':[]},'relations':{'relations':[]}}
+        row={'work_id':'work','number':1,'source_url':'https://example.test/story/1',
+             'staff_text':'エンディングテーマ「Song」'}
+        source.publish_episode_music(row,documents,[])
+        self.assertEqual(documents['units']['series'][0]['details']['1']['music_cues'][0]['title'],'Song')
+        self.assertEqual(documents['relations']['relations'],[])
+        songs=[{'id':'song','title':'Song','versions':[{'id':'version','title':'Song',
+                'releases':[{'album_id':'album','album_name':'Work OST'}]}]}]
+        source.publish_episode_music(row,documents,songs)
+        documents['relations']['relations'][0]['id']='accepted-manual-id'
+        source.publish_episode_music(row,documents,songs)
+        self.assertEqual(len(documents['relations']['relations']),1)
+        self.assertEqual(documents['relations']['relations'][0]['id'],'accepted-manual-id')
+
+    def test_source_identifier_collision_keeps_the_new_actual_url(self):
+        documents={'source_registry':{'sources':[]}}
+        first=source.source(documents,'source','https://example.test/old','old')
+        newer=source.source(documents,'source','https://example.test/new','new')
+        self.assertNotEqual(first['id'],newer['id'])
+        self.assertEqual(newer['url'],'https://example.test/new')
+        self.assertEqual(source.source(documents,'source','https://example.test/new','new')['id'],newer['id'])
     def test_custom_language_folder_requests_real_tsv_and_removes_processed_image(self):
         with tempfile.TemporaryDirectory() as directory:
             model = Path(directory)/'jpn.traineddata'

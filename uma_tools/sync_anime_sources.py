@@ -89,9 +89,12 @@ def source(documents, identifier, url, label, kind='official'):
     existing = next((row for row in rows if row.get('url') == url and row.get('kind') == kind), None)
     if existing:
         return existing
-    if not any(row['id'] == identifier for row in rows):
-        rows.append({'id': identifier, 'url': url, 'label': label, 'kind': kind,
-                     'observed_at': dt.datetime.now(dt.timezone.utc).date().isoformat()})
+    base, ordinal = identifier, 2
+    while any(row['id'] == identifier for row in rows):
+        identifier = base + '-' + str(ordinal)
+        ordinal += 1
+    rows.append({'id': identifier, 'url': url, 'label': label, 'kind': kind,
+                 'observed_at': dt.datetime.now(dt.timezone.utc).date().isoformat()})
     return next(row for row in rows if row['id'] == identifier)
 
 
@@ -257,7 +260,7 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
 
 def publish_episode_music(row, documents, songs):
     from anime_credit_text import music_rows
-    music_signatures = [*row.get('music', []), *music_rows(row.get('music_text', ''))]
+    music_signatures = [*row.get('music', []), *music_rows(row.get('music_text', '')), *music_rows(row.get('staff_text', ''))]
     if not music_signatures:
         return
     uid = f"{row['work_id']}-e{int(row['number']):02d}"
@@ -266,8 +269,18 @@ def publish_episode_music(row, documents, songs):
         return
     work = next(work for work in documents['works']['works'] if work['id'] == row['work_id'])
     names = [normalized(work.get('title_ja', '')), *map(normalized, work.get('aliases', []))]
-    evidence = source(documents, 'official-auto-music-' + uid, row['source_url'], '官方剧集音乐署名')['id']
     for music in music_signatures:
+        if not music.get('title') or music.get('usage_type') not in {'opening','ending','insert','theme','bgm'}:
+            continue
+        valid_refs = {entry['id'] for entry in documents['source_registry']['sources']}
+        evidence = next((ref for ref in music.get('source_refs', []) if ref in valid_refs), None)
+        if not evidence:
+            evidence = source(documents, 'official-auto-music-' + uid, row['source_url'], '官方剧集音乐署名')['id']
+        series = next(series for series in documents['units']['series'] if series['work_id']==row['work_id'])
+        cues = series.setdefault('details', {}).setdefault(str(row['number']), {}).setdefault('music_cues', [])
+        if not any(normalized(cue.get('title'))==normalized(music['title']) and cue.get('usage_type')==music['usage_type'] for cue in cues):
+            cues.append({'title':music['title'], 'usage_type':music['usage_type'], 'credits':[], 'institutions':[], 'source_refs':[evidence],
+                         **({field:music[field] for field in ('version_label','source_time') if field in music})})
         matches = []
         for song in songs:
             for version in song.get('versions', []):
@@ -282,6 +295,12 @@ def publish_episode_music(row, documents, songs):
         if len(identities) != 1 or music.get('usage_type') not in {'opening','ending','insert','theme','bgm'}:
             continue
         song, version, release = next(iter(identities.values()))
+        existing = next((relation for relation in documents['relations']['relations'] if relation.get('source_id')==uid
+                         and relation.get('relation_type')=='uses_song' and relation.get('target_id')==song['id']
+                         and relation.get('version_id')==version['id'] and relation.get('usage_type')==music['usage_type']),None)
+        if existing:
+            existing['evidence_refs'] = list(dict.fromkeys([*existing.get('evidence_refs', []),evidence]))
+            continue
         identifier = uid + '-auto-music-' + version['id'] + '-' + music['usage_type']
         if any(relation['id'] == identifier for relation in documents['relations']['relations']):
             continue
@@ -411,6 +430,16 @@ def main():
             errors.append(work['id'])
             print('anime source unavailable:', work['id'], type(error).__name__, flush=True)
     relate_public_entities(documents, read_json(ROOT / 'data/events_catalog.json')['events'], read_json(ROOT / 'data/albums.json'))
+    # A recording can become available after its episode. Re-resolve accepted
+    # cues from persisted source facts without requiring another video download.
+    for series in documents['units']['series']:
+        for number, detail in list(series.get('details', {}).items()):
+            if detail.get('music_cues'):
+                cited = next((entry['url'] for entry in documents['source_registry']['sources']
+                              if entry['id'] in detail['music_cues'][0].get('source_refs',[])), '')
+                if cited:
+                    publish_episode_music({'work_id':series['work_id'], 'number':int(number), 'music':list(detail['music_cues']),
+                                           'source_url':cited}, documents, songs)
     publish_verified_cast(documents, characters, voices)
     if not args.dry_run:
         for name in names:
