@@ -4,9 +4,28 @@ import auto_albums
 import crawl_events
 import update_events
 import crawl_horses
+from horses_pipeline import transport, common as horse_config
+from pathlib import Path
+import hashlib
+import os
+import tempfile
+import io
 
 
 class AlbumImportTests(unittest.TestCase):
+    def test_horse_source_cache_rechecks_expired_pages(self):
+        url='https://example.test/horse'
+        with tempfile.TemporaryDirectory() as directory:
+            cached=Path(directory)/(hashlib.sha1(url.encode()).hexdigest()[:16]+'.txt')
+            cached.write_text('old source')
+            os.utime(cached,(0,0))
+            class Opener:
+                def open(self,*args,**kwargs):return io.BytesIO(b'new source')
+            with patch.object(horse_config,'CACHE_DIR',directory),patch.object(transport,'_opener',return_value=Opener()) as opener:
+                self.assertEqual(transport.http_get(url),'new source')
+                self.assertEqual(transport.http_get(url),'new source')
+                self.assertEqual(opener.call_count,1)
+            self.assertEqual(cached.read_text(),'new source')
     def test_historical_birth_precision_keeps_explicit_real_dates(self):
         year=crawl_horses.birth_precision({'born':1700,'birthdate':'1700.01.01'})
         exact=crawl_horses.birth_precision({'born':1764,'birthdate':'1764-04-01'})
