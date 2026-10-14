@@ -54,6 +54,33 @@ async function main() {
       assert.deepStrictEqual(errors, []);
       await page.close();
     }
+    const page = await browser.newPage({viewport:{width:390,height:850}});
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.addInitScript(() => {
+      const timeout = window.setTimeout;
+      window.setTimeout = (callback, delay, ...args) => timeout(callback, delay === 15000 ? 150 : delay, ...args);
+    });
+    const preview = fs.readFileSync(path.join(__dirname, 'img/anime/episodes/anime-umayuru-e01.webp'));
+    await page.route('**/__viewer-timeout', route => route.fulfill({contentType:'text/html',body:
+      '<link rel="stylesheet" href="/uma_tools/vendor/photoswipe/photoswipe.css"><link rel="stylesheet" href="/uma_tools/image-viewer.css">' +
+      '<script type="module" src="/uma_tools/image-viewer.js"></script><button class="image-view-trigger"><img src="/timeout-preview.webp" data-original="/timeout-original.webp" width="150" alt="Timeout"></button>'}));
+    await page.route('**/timeout-preview.webp', route => route.fulfill({contentType:'image/webp',body:preview}));
+    const stalled = [];
+    await page.route('**/timeout-original.webp', route => {stalled.push(route);});
+    await page.goto((process.env.UMA_TEST_URL || 'http://localhost:18082') + '/__viewer-timeout');
+    await page.locator('img.original-image').click();
+    const retry = page.locator('.viewer-failure button');
+    await retry.waitFor();
+    await retry.click();
+    await page.waitForTimeout(300);
+    assert(await retry.isEnabled(), 'a stalled retry returns to an operable state');
+    assert(await page.locator('.viewer-failure img').evaluate(image => image.naturalWidth > 0), 'timeout preserves the preview');
+    await page.keyboard.press('Escape');
+    await page.locator('.pswp').waitFor({state:'detached'});
+    await Promise.all(stalled.map(route => route.abort().catch(() => {})));
+    assert.deepStrictEqual(errors, []);
+    await page.close();
     console.log('viewer preview, retry, repeated gallery navigation and recovery passed at 390/1440px');
   } finally {
     await browser.close();
