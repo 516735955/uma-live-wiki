@@ -257,7 +257,9 @@ function translateOne(text, attempt, signal) {
         try {
           if (j && j.trans_result && j.trans_result.length) {
             const t = j.trans_result.map(function (x) { return x.dst; }).join('');
-            resolve(protectedText.restore(t) || '');
+            const restored = protectedText.restore(t);
+            const { translationFactsMatch, untranslatedJapanese } = require('./translation-facts');
+            resolve(restored && translationFactsMatch(protectedText.text, t) && !untranslatedJapanese(protectedText.text, t) ? restored : '');
             return;
           }
           const code = j && j.error_code;
@@ -336,10 +338,8 @@ function translateBatchLines(lines, cb, signal, attempt = 0) {
                 // Ratings are facts. Baidu sometimes adds a star to a leading ★★★.
                 const rating = lines[i].match(/^★+/);
                 const candidate = rating ? restored.replace(/^★+/, rating[0]) : restored;
-                const normalizeDigits = (value) => String(value).replace(/[,，]/g, '').replace(/[\uFF10-\uFF19]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0)).replace(/[：／．]/g, (ch) => ({ '：': ':', '／': '/', '．': '.' }[ch]));
-                const numbers = (value) => (normalizeDigits(value).match(/\d+(?:[/:.]\d+)*/g) || []).sort().join('|');
-                const digitStream = (value) => normalizeDigits(value).replace(/\D/g, '');
-                if (numbers(j.trans_result[i].dst) === numbers(protectedLines[i].text) || digitStream(j.trans_result[i].dst) === digitStream(protectedLines[i].text)) value = candidate;
+                const { translationFactsMatch, untranslatedJapanese } = require('./translation-facts');
+                if (translationFactsMatch(protectedLines[i].text, j.trans_result[i].dst) && !untranslatedJapanese(protectedLines[i].text, j.trans_result[i].dst)) value = candidate;
               }
             }
             if (!value) { value = lines[i]; dirty = true; }
