@@ -234,15 +234,17 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
         for name in BeautifulSoup(staff.get('name', ''), 'html.parser').get_text('\n', strip=True).splitlines():
             name = name.strip()
             key = (uid, role_key(role), person_name_key(name), staff.get('group', ''))
-            if not name or not role or key in existing:
+            previous = next((item for item in credits if (item.get('unit_id'), role_key(item.get('role', '')), person_name_key(item.get('name', '')), item.get('group', '')) == key), None) if key in existing else None
+            if not name or not role or previous and (not previous.get('auto_source') or previous.get('entity_type') != 'unresolved'):
                 continue
-            credit = {'work_id': work_id, 'unit_id': uid, 'role': role, 'name': name, 'order': order, 'source_ref': evidence, 'auto_source': True}
+            credit = previous or {'work_id': work_id, 'unit_id': uid, 'role': role, 'name': name, 'order': order, 'source_ref': evidence, 'auto_source': True}
             for field in ('group', 'source_time'):
                 if staff.get(field) is not None:
                     credit[field] = staff[field]
             kind = entity_kind(staff, name, {person['name'] for person in people}, organizations)
             if kind == 'organization':
                 credit['organization'] = name
+                credit.pop('entity_type', None)
             elif kind == 'person':
                 person = known_people.get(person_name_key(name))
                 if person is None:
@@ -252,9 +254,11 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
                     people.append(person)
                     known_people[person_name_key(name)] = person
                 credit['person_id'] = person['id']
+                credit.pop('entity_type', None)
             else:
                 credit['entity_type'] = 'unresolved'
-            credits.append(credit)
+            if previous is None:
+                credits.append(credit)
             existing.add(key)
 
 
