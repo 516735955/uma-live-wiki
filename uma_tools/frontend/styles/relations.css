@@ -261,6 +261,33 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
 .pedigree-section > .c-pedigree-lens { margin: 0; border-radius: 4px; box-shadow: none; }
 .pedigree-empty { margin: 0; padding: 36px 20px; color: var(--text-2); text-align: center; }
 
+.hero-video-aside {
+    grid-column: 3;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    min-width: 216px;
+    max-width: 320px;
+}
+.hero-video-aside > b {
+    color: color-mix(in srgb, var(--entity-accent) 72%, #1c2b4a);
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+.hero-video-aside .horse-link-chip {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    text-align: left;
+}
+@media (max-width: 980px) {
+    .hero-video-aside { grid-column: 1 / -1; max-width: none; }
+}
+
 /* ===== AUDIO PLAYER ===== */
 :root {
     --audio-dock-height: 78px;

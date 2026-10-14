@@ -272,6 +272,7 @@ export function createViewModel(domains, routes) {
     charHistoryKind: domains.characters.charHistoryKind,
     charHistoryEvents: domains.events.charHistoryEvents,
     horseUrlForCharacter: domains.horses.horseUrlForCharacter,
+    horseVideosForCharacter: domains.horses.horseVideosForCharacter,
     openHorseForCharacter: domains.horses.openHorseForCharacter,
     voiceProfiles: domains.voices.voiceProfiles,
     voiceLoading: domains.voices.voiceLoading,

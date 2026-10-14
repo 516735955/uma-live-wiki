@@ -1,4 +1,4 @@
-export const bindings = ["coverThumb","onCatalogImageError","isActive","voiceHrefByName","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePhotoByName","charDetail","charSort","characterSortOptions","charSection","charHasPedigree","setCharSection","charAppearance","charHistoryQuery","charHistoryKind","charHistoryEvents","horseUrlForCharacter","openVoice","appearanceIsLoading","appearanceError","retryAppearance","pedigreeStatus","pedigreeError","retryPedigree","animeError","retryAnime","characterAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes"];
+export const bindings = ["coverThumb","onCatalogImageError","isActive","voiceHrefByName","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePhotoByName","charDetail","charSort","characterSortOptions","charSection","charHasPedigree","setCharSection","charAppearance","charHistoryQuery","charHistoryKind","charHistoryEvents","horseUrlForCharacter","horseVideosForCharacter","openVoice","appearanceIsLoading","appearanceError","retryAppearance","pedigreeStatus","pedigreeError","retryPedigree","animeError","retryAnime","characterAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes"];
 export const template = `
             <template v-if="!charDetail">
                 <div class="archive-toolbar">
@@ -19,6 +19,10 @@ export const template = `
                             <a v-if="horseUrlForCharacter(charDetail.id)" class="horse-link-chip" :href="horseUrlForCharacter(charDetail.id)" @click="animeLink($event,horseUrlForCharacter(charDetail.id))">原型马 <em>↗</em></a>
                         </div>
                     </div>
+                    <aside v-if="horseVideosForCharacter(charDetail.id).length" class="hero-video-aside">
+                        <b>原型马解说视频：</b>
+                        <a v-for="video in horseVideosForCharacter(charDetail.id)" :key="video.id" class="horse-link-chip" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener">{{ video.title }} <em>↗</em></a>
+                    </aside>
                 </div>
                 <nav class="entity-tabs" aria-label="角色栏目">
                     <button :class="{active:charSection==='profile'}" @click="setCharSection('profile')">角色信息</button>
