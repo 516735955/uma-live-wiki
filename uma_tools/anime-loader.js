@@ -7,7 +7,7 @@
   const fields = ['works', 'units', 'people', 'staff', 'relations', 'watch_resources'];
 
   function create(request) {
-    const responses = new Map(), pending = new Map();
+    const responses = new Map(), pending = new Map(), loadedAt = new Map();
     let buildId = '', revision = 0;
     function assemble() {
       const result = { build_id: buildId };
@@ -30,7 +30,7 @@
       scope = scope || 'index';
       const key = scope + ':' + (id || '');
       if (retry) { responses.delete(key); pending.delete(key); }
-      if (responses.has(key)) return assemble();
+      if (responses.has(key) && Date.now() - (loadedAt.get(key) || 0) < 5 * 60 * 1000) return assemble();
       if (pending.has(key)) return pending.get(key);
       const started = revision;
       const params = new URLSearchParams({ scope });
@@ -49,10 +49,12 @@
           if (buildId !== data.build_id) {
             revision += 1;
             responses.clear();
+            loadedAt.clear();
             pending.clear();
           }
           buildId = data.build_id;
           responses.set(key, data);
+          loadedAt.set(key, Date.now());
           return assemble();
         }).finally(() => { if (pending.get(key) === promise) pending.delete(key); });
       pending.set(key, promise);
