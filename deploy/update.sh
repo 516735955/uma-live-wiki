@@ -56,6 +56,16 @@ recover() {
 trap recover ERR
 trap 'recover; exit 1' INT TERM
 fetch() { curl -fsSL --connect-timeout 15 --max-time 180 "$@"; }
+fetch_file() {
+  local url="$1" target="$2" attempt status
+  for attempt in 1 2 3; do
+    if curl -fsSL --connect-timeout 15 --max-time 180 --continue-at - "$url" -o "$target"; then return 0; else status=$?; fi
+    # A server without byte ranges needs a fresh request, not a corrupt append.
+    if [ "$status" = 33 ]; then rm -f "$target"; fi
+    [ "$attempt" = 3 ] || sleep 2
+  done
+  return 1
+}
 
 if [ -n "$ARCHIVE" ]; then
   [ -f "$ARCHIVE" ] || { echo 'Release archive not found'; exit 1; }
@@ -64,7 +74,7 @@ if [ -n "$ARCHIVE" ]; then
 else
   SHA="$(fetch https://api.github.com/repos/516735955/uma-live-wiki/commits/main | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>console.log(JSON.parse(s).sha))')"
   [[ "$SHA" =~ ^[a-f0-9]{40}$ ]] || { echo 'Cannot resolve main commit'; exit 1; }
-  fetch "https://codeload.github.com/516735955/uma-live-wiki/tar.gz/$SHA" -o "$WORK/source.tgz"
+  fetch_file "https://codeload.github.com/516735955/uma-live-wiki/tar.gz/$SHA" "$WORK/source.tgz"
   mkdir "$WORK/source"
   tar -xzf "$WORK/source.tgz" -C "$WORK/source" --strip-components=1
   SRC="$WORK/source"
@@ -75,13 +85,15 @@ fi
 SHA="$(node -p 'require(process.argv[1]).commit' "$SRC/release.json")"
 [[ "$SHA" =~ ^[a-f0-9]{40}$ ]] || { echo 'Invalid release commit'; exit 1; }
 if ! python3 -c 'import PIL, bs4, openpyxl' >/dev/null 2>&1 || ! command -v yt-dlp >/dev/null 2>&1 || ! command -v ffmpeg >/dev/null 2>&1 || ! command -v tesseract >/dev/null 2>&1; then
-  if command -v apt-get >/dev/null 2>&1; then apt-get update; apt-get install -y python3-pil python3-bs4 python3-openpyxl yt-dlp ffmpeg tesseract-ocr tesseract-ocr-jpn;
+  if command -v apt-get >/dev/null 2>&1; then
+    DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=l apt-get update
+    DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=l apt-get install -y --no-install-recommends python3-pil python3-bs4 python3-openpyxl yt-dlp ffmpeg tesseract-ocr tesseract-ocr-jpn
   else python3 -m pip install Pillow beautifulsoup4 openpyxl yt-dlp; fi
 fi
 # Distribution packages may predate the current public-video extractor protocol.
 yt-dlp --help > "$WORK/yt-dlp-help"
 if ! grep -q -- '--js-runtimes' "$WORK/yt-dlp-help"; then
-  fetch https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o "$WORK/yt-dlp"
+  fetch_file https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp "$WORK/yt-dlp"
   chmod 0755 "$WORK/yt-dlp"
   "$WORK/yt-dlp" --version
   install -m 0755 "$WORK/yt-dlp" /usr/local/bin/yt-dlp
@@ -101,7 +113,7 @@ if [ -n "$OLD" ]; then
   if [ "$PREVIOUS_SHA" = "$SHA" ]; then
     PREVIOUS_SOURCE="$SRC"
   else
-    fetch "https://codeload.github.com/516735955/uma-live-wiki/tar.gz/$PREVIOUS_SHA" -o "$WORK/previous-source.tgz"
+    fetch_file "https://codeload.github.com/516735955/uma-live-wiki/tar.gz/$PREVIOUS_SHA" "$WORK/previous-source.tgz"
     tar -xzf "$WORK/previous-source.tgz" -C "$PREVIOUS_SOURCE" --strip-components=1
     rm "$WORK/previous-source.tgz"
   fi
