@@ -245,6 +245,7 @@ def build_songs(tracks, cover):
 
 
 def enrich_entry(ent):
+    before = json.dumps(ent, ensure_ascii=False, sort_keys=True)
     title = ent.get('name') or ''
     best, score = netease_search(title)
     time.sleep(SLEEP_AFTER_CALL)
@@ -272,7 +273,7 @@ def enrich_entry(ent):
                 track['url'] = matches[0]['url']
     else:
         ent['songs'] = incoming
-    return True
+    return before != json.dumps(ent, ensure_ascii=False, sort_keys=True)
 
 
 # ---------- 主流程 ----------

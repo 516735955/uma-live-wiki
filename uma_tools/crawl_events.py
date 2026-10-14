@@ -51,6 +51,19 @@ def parse_event_detail(markup, previous):
     return {**previous, **{key: value for key, value in incoming.items() if value not in ('', [], None)}}
 
 
+def merge_listing(previous, incoming):
+    """A listing may truncate its cast; only detail pages replace a full roster."""
+    merged = {**previous, **{key:value for key,value in incoming.items() if value not in ('', None, [], {}) and key != 'live'}}
+    actors = {}
+    for actor in [*incoming.get('actors', []), *previous.get('actors', [])]:
+        key = actor.get('url') or actor.get('name')
+        if key and key not in actors:
+            actors[key] = actor
+    if actors:
+        merged['actors'] = list(actors.values())
+    return merged
+
+
 def extract_blocks(content):
     blocks = []
     starts = [m.start() for m in re.finditer(r'<li class="clearfix', content)]
@@ -406,7 +419,7 @@ def load_existing():
                     out[k] = e
             return out
         except Exception as ex:
-            print('existing data unreadable, full crawl:', str(ex)[:80], flush=True)
+            raise ValueError('Existing event data is unreadable; refusing to replace it with a partial crawl') from ex
     return {}
 
 
@@ -432,6 +445,10 @@ def main():
             failures.append(url)
             break
         blocks = extract_blocks(content)
+        if not blocks and not re.search(r'イベント(?:が登録されていません|はありません)|該当するイベント', content):
+            failures.append(url)
+            print('event listing layout was not recognized:', url, flush=True)
+            break
         new_cnt = 0
         for b in blocks:
             ev = parse_block(b)
@@ -439,8 +456,7 @@ def main():
                 continue
             key = ev['link'] or (ev['date'] + ev['title'])
             if key in all_events:
-                old = all_events[key]
-                old.update({field: value for field, value in ev.items() if value not in ('', None, [], {}) and field != 'live'})
+                all_events[key] = merge_listing(all_events[key], ev)
                 continue
             all_events[key] = ev
             fresh.append(ev)
@@ -462,7 +478,8 @@ def main():
     state = read_json(state_file, {'attempted_at': {}})
     attempts = state.setdefault('attempted_at', {})
     candidates = [event for event in all_events.values() if event.get('link', '').startswith('https://www.eventernote.com/events/')
-                  and (not event.get('actors') or event.get('date', '') >= today)]
+                  and (not event.get('actors') or event.get('date', '') >= today
+                       or all('ウマ娘' in actor.get('name', '') for actor in event.get('actors', [])))]
     for event in sorted(candidates, key=lambda item: attempts.get(item['link'], 0))[:12]:
         attempts[event['link']] = time.time()
         try:
@@ -476,7 +493,10 @@ def main():
             content = fetch(actor_page + '/events?limit=100')
             if 'eventernote' not in content.lower():
                 raise ValueError('performer listing was not recognized')
-            for block in extract_blocks(content):
+            blocks = extract_blocks(content)
+            if not blocks and not re.search(r'イベント(?:が登録されていません|はありません)|該当するイベント', content):
+                raise ValueError('performer event layout was not recognized')
+            for block in blocks:
                 ev = parse_block(block)
                 if not ev or not re.search(r'ウマ娘|うまゆる|うまよん', ev['title']):
                     continue
@@ -485,7 +505,7 @@ def main():
                     all_events[key] = ev
                     fresh.append(ev)
                 else:
-                    all_events[key].update({field: value for field, value in ev.items() if value not in ('', None, [], {}) and field != 'live'})
+                    all_events[key] = merge_listing(all_events[key], ev)
         except Exception as error:
             failures.append(actor_page)
             print('performer source failed:', actor_page, type(error).__name__, flush=True)
