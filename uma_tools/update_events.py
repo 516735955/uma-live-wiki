@@ -3149,7 +3149,8 @@ def apply_additive_voice_detail_refresh(existing: dict[str, Any], discovered: di
 
 
 def fetch_video_metadata(video_id: str) -> dict[str, Any] | None:
-    command = ["yt-dlp", "--skip-download", "--no-warnings", "--dump-single-json", f"https://www.youtube.com/watch?v={video_id}"]
+    from public_video import yt_command
+    command = yt_command(["--skip-download", "--no-warnings", "--socket-timeout", "12", "--dump-single-json", f"https://www.youtube.com/watch?v={video_id}"])
     try:
         result = subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=90)
         return json.loads(result.stdout)
@@ -3158,7 +3159,8 @@ def fetch_video_metadata(video_id: str) -> dict[str, Any] | None:
 
 
 def discover_channel_feed(feed: str, limit: int) -> list[dict[str, Any]]:
-    command = ["yt-dlp", "--flat-playlist", "--playlist-end", str(limit), "--no-warnings", "--dump-json", f"https://www.youtube.com/@UMAMUSUME_official/{feed}"]
+    from public_video import yt_command
+    command = yt_command(["--flat-playlist", "--playlist-end", str(limit), "--no-warnings", "--socket-timeout", "12", "--dump-json", f"https://www.youtube.com/@UMAMUSUME_official/{feed}"])
     result = subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=300)
     rows = []
     for line in result.stdout.splitlines():

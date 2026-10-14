@@ -123,7 +123,12 @@ class KnowledgeTests(unittest.TestCase):
     def test_episode_gap_is_not_published_as_a_complete_sequence(self):
         documents = self.documents()
         anime.publish_episode({'work_id': 'work', 'number': 4, 'title_ja': '第四话', 'source_url': 'https://example.test/4'}, documents, {}, {})
-        self.assertEqual(documents['units']['series'][0]['released_count'], 1)
+        self.assertEqual(documents['units']['series'][0]['published_numbers'], [1, 4])
+        from build_anime_catalog import expand_units
+        units = expand_units(documents['units']['series'], {'work': documents['works']['works'][0]})
+        self.assertEqual([unit['number'] for unit in units], [1, 4])
+        anime.publish_episode({'work_id':'work','number':2,'title_ja':'第二话','source_url':'https://example.test/2'},documents,{}, {})
+        self.assertEqual(documents['units']['series'][0]['published_numbers'], [1, 2, 4])
 
     def test_later_official_images_keep_existing_image_identity(self):
         documents = self.documents()

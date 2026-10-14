@@ -28,6 +28,8 @@ STEPS = [
     ('voice-profiles', ['update_events.py', '--refresh-profiles']),
     ('music-build', ['update_events.py', '--music-only']),
     ('anime', ['sync_anime_sources.py']),
+    ('anime-watch', ['sync_anime_watch.py']),
+    ('anime-credits', ['sync_anime_credits.py']),
     ('anime-build', ['build_anime_catalog.py']),
 ]
 
@@ -43,6 +45,8 @@ STEP_OUTPUTS = {
     'voice-profiles': ['events/voice_actor_details.json'],
     'music-build': ['song_catalog.json', 'creator_catalog.json', 'appearance_index.json'],
     'anime': ['anime/*.json'], 'anime-build': ['anime_catalog.json'],
+    'anime-watch': ['anime/watch_resources.json'],
+    'anime-credits': ['anime/ending_credits.json', 'anime/staff.json', 'anime/people.json', 'anime/relations.json'],
 }
 
 
@@ -106,7 +110,7 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             'pedigree-build': {'pedigree-source'}, 'voice-profiles': {'characters'},
             'catalogs': {'characters', 'events', 'programs', 'albums', 'setlists'},
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
-            'anime-build': {'anime', 'music-build'},
+            'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},
         }
         dependency_changed = bool(dependencies.get(name, set()) & executed)
         if not force and not dependency_changed and float(previous.get('next_at', 0)) > clock():
