@@ -597,6 +597,18 @@ def valid_date(value):
     return re.sub(r'\s*\(?\d+歳\)?\s*$', '', text).strip()
 
 
+def birth_precision(record):
+    """Ancestors known only by year do not acquire a synthetic January 1."""
+    date = str(record.get('birthdate') or '')
+    year = re.search(r'\d{4}', str(record.get('born') or ''))
+    if year and int(year.group()) < 1800:
+        record['birthdate'] = ''
+        record['birth_precision'] = 'approximate_year' if re.search(r'約|约|circa|c\.', str(record.get('born')), re.I) else 'year'
+    else:
+        record['birth_precision'] = 'day' if re.search(r'\d{4}[./年-]\d{1,2}[./月-]\d{1,2}', date) else 'year'
+    return record
+
+
 def split_top_level(text, separator='|'):
     """按顶层分隔符切分（避开 {{...}} 模板与 [[链接|显示名]] 的内层竖线）。"""
     parts = []
@@ -1433,7 +1445,7 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
         print('  [birth year mismatch] %s born=%s bd=%s -> drop bd' % (
             record['id'], record.get('born'), record.get('birthdate')))
         record['birthdate'] = ''
-    return record
+    return birth_precision(record)
 
 
 def serialize(prefix, payload):
