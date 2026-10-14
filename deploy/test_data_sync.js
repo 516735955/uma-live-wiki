@@ -24,7 +24,7 @@ try {
   const [previousRoot,incomingRoot,liveRoot,candidateRoot,backupRoot,mediaBackup] = directories;
   for (const directory of directories) fs.mkdirSync(path.join(directory,'data'),{recursive:true});
   function write(directory, file, value) { const target=path.join(directory,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,value); }
-  write(previousRoot,'data/albums.json',JSON.stringify(before));
+  write(previousRoot,'data/albums.json','\uFEFF'+JSON.stringify(before));
   write(previousRoot,'data/obsolete.json','{"old":true}');
   write(liveRoot,'data/obsolete.json','{"old":true}');
   write(incomingRoot,'data/albums.json',JSON.stringify(incoming));
