@@ -1,3 +1,10 @@
+import {
+  animeFormatLabel,
+  animeStatusLabel,
+  animePlatformLabel,
+} from "/uma_tools/frontend/anime-labels.js";
+import { createAnimeMusic } from "/uma_tools/frontend/anime-music.js";
+import { createAnimeParticipation } from "/uma_tools/frontend/anime-participation.js";
 /* anime state and behavior; external dependencies are explicit live ports. */
 export function createAnime(deps) {
   let animeLoader = null;
@@ -666,141 +673,6 @@ export function createAnime(deps) {
     });
   });
 
-  function groupAnimeParticipation(rows) {
-    const works = new Map();
-    rows.forEach((row) => {
-      if (!row.work) return;
-      let group = works.get(row.work.id);
-      if (!group) {
-        group = { work: row.work, roles: [] };
-        works.set(row.work.id, group);
-      }
-      let label;
-      if (row.entry)
-        label = [row.entry.group, row.entry.role].filter(Boolean).join(" · ");
-      else if (row.relation.target_type === "character")
-        label = deps.characterName(row.relation.target_id);
-      else if (row.relation.target_type === "song") {
-        const version =
-          row.relation.version_label !== animeRelationTargetLabel(row.relation)
-            ? row.relation.version_label
-            : "";
-        label = [animeMusicUsageLabel(row.relation.usage_type), version]
-          .filter(Boolean)
-          .join(" · ");
-      } else
-        label =
-          row.relation.role_name ||
-          row.relation.signature ||
-          row.relation.label ||
-          "";
-      const institutions = row.entry ? row.entry.institutions || [] : [];
-      const key = label;
-      let role = group.roles.find((role) => role.key === key);
-      if (!role) {
-        role = { key, label, units: [], editions: [], scopes: [] };
-        group.roles.push(role);
-      }
-      const editions =
-        row.work.id === "anime-rttt"
-          ? row.unit
-            ? ["web"]
-            : animeRowEditions(row.entry || row.relation)
-          : [""];
-      (editions.length ? editions : [""]).forEach((edition) => {
-        const scopeKey = JSON.stringify([edition, institutions]);
-        let scope = role.scopes.find((item) => item.key === scopeKey);
-        if (!scope) {
-          scope = { key: scopeKey, edition, institutions, units: [] };
-          role.scopes.push(scope);
-        }
-        if (
-          row.unit &&
-          !["movie", "special"].includes(row.work.format) &&
-          !scope.units.some((unit) => unit.id === row.unit.id)
-        )
-          scope.units.push(row.unit);
-      });
-      if (
-        row.unit &&
-        !["movie", "special"].includes(row.work.format) &&
-        !role.units.some((unit) => unit.id === row.unit.id)
-      )
-        role.units.push(row.unit);
-      if (row.work.id === "anime-rttt" && !row.unit) {
-        const editions = animeRowEditions(row.entry || row.relation);
-        editions.forEach((edition) => {
-          if (!role.editions.includes(edition)) role.editions.push(edition);
-        });
-      }
-    });
-    return Array.from(works.values())
-      .sort((a, b) =>
-        String(a.work.start_date).localeCompare(String(b.work.start_date)),
-      )
-      .map((group) => {
-        group.roles.forEach((role) => {
-          role.units.sort((a, b) => a.number - b.number);
-          role.scopes.forEach((scope) =>
-            scope.units.sort((a, b) => a.number - b.number),
-          );
-          role.scopes.sort(
-            (a, b) =>
-              (a.edition === "film" ? 0 : 1) - (b.edition === "film" ? 0 : 1),
-          );
-        });
-        group.roles.sort((a, b) =>
-          window.UmaAnimeStaff.compareRoles(a.label, b.label),
-        );
-        return group;
-      });
-  }
-
-  const creatorAnimeWorks = deps.computed(() =>
-    groupAnimeParticipation(deps.creatorAnimeStaff.value),
-  );
-
-  const creatorAnimeCueWorks = deps.computed(() => {
-    if (!deps.creatorDetail.value) return [];
-    const rows = [];
-    (animeCatalog.value.units || []).forEach((unit) =>
-      (unit.music_cues || []).forEach((cue) => {
-        (cue.credits || [])
-          .filter((credit) =>
-            (credit.creator_ids || []).includes(deps.creatorDetail.value.id),
-          )
-          .forEach((credit) => {
-            rows.push({
-              entry: {
-                group: cue.title,
-                role: credit.role,
-                institutions: credit.institutions,
-              },
-              work: findAnimeWork(unit.work_id),
-              unit,
-            });
-          });
-      }),
-    );
-    return groupAnimeParticipation(rows);
-  });
-
-  const characterAnimeWorks = deps.computed(() =>
-    groupAnimeParticipation(characterAnimeRelations.value),
-  );
-
-  const voiceAnimeWorks = deps.computed(() =>
-    groupAnimeParticipation(voiceAnimeRelations.value),
-  );
-
-  const songAnimeWorks = deps.computed(() =>
-    groupAnimeParticipation(songAnimeRelations.value),
-  );
-
-  const albumAnimeWorks = deps.computed(() =>
-    groupAnimeParticipation(albumAnimeRelations.value),
-  );
-
   const animeTabs = deps.computed(() =>
     [
       {
@@ -819,7 +691,9 @@ export function createAnime(deps) {
       {
         id: "music",
         label: "音乐",
-        show: animeMusicGroups.value.length || animeMusicCues.value.length,
+        show:
+          music.animeMusicGroups.value.length ||
+          music.animeMusicCues.value.length,
       },
       {
         id: "staff",
@@ -830,82 +704,6 @@ export function createAnime(deps) {
       },
       { id: "stills", label: "剧照", show: animeStillGroups.value.length },
     ].filter((tab) => tab.show),
-  );
-
-  const animeMusicUsageLabels = {
-    album: "原声专辑",
-    op: "片头曲",
-    ed: "片尾曲",
-    theme: "主题曲",
-    insert: "插入曲",
-    winning_live: "胜者舞台",
-    bgm: "背景配乐",
-    other: "其他音乐",
-  };
-
-  function animeMusicUsageKind(kind) {
-    return animeMusicUsageLabels[kind] ? kind : "other";
-  }
-
-  function animeMusicUsageLabel(kind) {
-    return animeMusicUsageLabels[animeMusicUsageKind(kind)];
-  }
-
-  const animeMusicGroups = deps.computed(() => {
-    const labels = animeMusicUsageLabels;
-    return Object.entries(labels)
-      .map(([kind, label]) => ({
-        kind,
-        label,
-        rows: animeCurrentRelations.value.filter((row) =>
-          row.target_type === "album"
-            ? kind === "album"
-            : row.target_type === "song" &&
-              animeMusicUsageKind(row.usage_type) === kind &&
-              !animeMusicCues.value.some(
-                (cue) =>
-                  cue.song_id === row.target_id &&
-                  cue.units.some((unit) => unit.id === row.source_id),
-              ),
-        ),
-      }))
-      .filter((group) => group.rows.length);
-  });
-
-  const animeMusicCues = deps.computed(() => {
-    const units = animeContentUnit.value
-      ? [animeContentUnit.value]
-      : animeWorkUnits.value;
-    const cues = new Map();
-    units.forEach((unit) =>
-      (unit.music_cues || []).forEach((cue) => {
-        const key = [
-          cue.title,
-          cue.usage_type,
-          JSON.stringify(cue.credits),
-          JSON.stringify(cue.institutions),
-        ].join(":");
-        if (!cues.has(key)) cues.set(key, { ...cue, units: [] });
-        if (!cues.get(key).units.some((item) => item.id === unit.id))
-          cues.get(key).units.push(unit);
-      }),
-    );
-    return Array.from(cues.values());
-  });
-
-  const animeMusicCueGroups = deps.computed(() =>
-    [
-      { kind: "fanfare", label: "比赛号角" },
-      { kind: "insert", label: "插入曲" },
-      { kind: "bgm", label: "背景配乐" },
-    ]
-      .map((group) => ({
-        ...group,
-        rows: animeMusicCues.value.filter(
-          (cue) => !cue.song_id && cue.usage_type === group.kind,
-        ),
-      }))
-      .filter((group) => group.rows.length),
   );
 
   const animeUsefulRelations = deps.computed(() =>
@@ -937,222 +735,6 @@ export function createAnime(deps) {
       }))
       .filter((group) => group.rows.length),
   );
-
-  const animeMusicItems = deps.computed(() => {
-    const items = new Map();
-    animeMusicGroups.value.forEach((group) =>
-      group.rows.forEach((relation) => {
-        const key = relation.target_type + ":" + relation.target_id;
-        if (!items.has(key))
-          items.set(key, { key, relation, usages: [], relations: [] });
-        const item = items.get(key);
-        if (!item.usages.includes(group.label)) item.usages.push(group.label);
-        item.relations.push(relation);
-      }),
-    );
-    animeMusicCues.value
-      .filter((cue) => cue.song_id)
-      .forEach((cue) => {
-        const key = "song:" + cue.song_id;
-        if (!items.has(key))
-          items.set(key, {
-            key,
-            relation: { target_type: "song", target_id: cue.song_id },
-            usages: [],
-            relations: [],
-          });
-        const item = items.get(key);
-        if (!item.cues) item.cues = [];
-        item.cues.push(cue);
-        const label =
-          cue.usage_type === "fanfare"
-            ? "比赛号角"
-            : animeMusicUsageLabel(cue.usage_type);
-        if (!item.usages.includes(label)) item.usages.push(label);
-      });
-    return Array.from(items.values());
-  });
-
-  function animeMusicVersions(item) {
-    const song = deps.findSong(item.relation.target_id);
-    if (!song) return [];
-    return (song.versions || [])
-      .filter(
-        (version) =>
-          !item.relations.length ||
-          item.relations.some(
-            (relation) =>
-              !relation.version_id || relation.version_id === version.id,
-          ),
-      )
-      .map((version) => ({
-        ...version,
-        releases: (version.releases || []).filter(
-          (release) =>
-            !item.relations.length ||
-            item.relations.some(
-              (relation) =>
-                (!relation.version_id || relation.version_id === version.id) &&
-                (!relation.release_id ||
-                  relation.release_id === release.album_id),
-            ),
-        ),
-      }));
-  }
-
-  function animeMusicCover(item) {
-    if (item.relation.target_type === "album")
-      return (deps.findAlbumById(item.relation.target_id) || {}).cover || "";
-    const version = animeMusicVersions(item)[0];
-    return version && version.releases.length
-      ? version.releases[0].cover || ""
-      : (deps.findSong(item.relation.target_id) || {}).cover || "";
-  }
-
-  function animeMusicSong(item) {
-    return deps.findSong(item.relation.target_id);
-  }
-
-  function relatedAnimeRows(targetType, targetIds) {
-    const ids = new Set(
-      (Array.isArray(targetIds) ? targetIds : [targetIds]).filter(Boolean),
-    );
-    if (!ids.size) return [];
-    const seen = new Set();
-    return (animeCatalog.value.relations || [])
-      .filter(function (relation) {
-        return (
-          (relation.target_type === targetType &&
-            ids.has(relation.target_id)) ||
-          (targetType === "voice_actor" && ids.has(relation.voice_actor_id))
-        );
-      })
-      .map(function (relation) {
-        const unit =
-          relation.source_type === "anime_unit"
-            ? findAnimeUnit(relation.source_id)
-            : null;
-        const work = findAnimeWork(unit ? unit.work_id : relation.source_id);
-        return work ? { relation: relation, work: work, unit: unit } : null;
-      })
-      .filter(function (row) {
-        if (!row) return false;
-        const key = [
-          row.work.id,
-          row.unit ? row.unit.id : "work",
-          row.relation.target_id,
-          row.relation.relation_type,
-          row.relation.usage_type || "",
-          row.relation.version_id || "",
-          row.relation.role_name || row.relation.signature || "",
-        ].join(":");
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      })
-      .sort(function (a, b) {
-        return (
-          String(a.work.start_date || "").localeCompare(
-            String(b.work.start_date || ""),
-          ) ||
-          String(a.work.title_zh || "").localeCompare(
-            String(b.work.title_zh || ""),
-          )
-        );
-      });
-  }
-
-  const characterAnimeRelations = deps.computed(function () {
-    return relatedAnimeRows(
-      "character",
-      deps.charDetail.value && deps.charDetail.value.id,
-    );
-  });
-
-  const voiceAnimeRelations = deps.computed(function () {
-    return relatedAnimeRows(
-      "voice_actor",
-      deps.voiceDetail.value && deps.voiceDetail.value.id,
-    );
-  });
-
-  const songAnimeRelations = deps.computed(function () {
-    return relatedAnimeRows(
-      "song",
-      deps.songDetail.value && deps.songDetail.value.id,
-    );
-  });
-
-  const albumAnimeRelations = deps.computed(function () {
-    return relatedAnimeRows(
-      "album",
-      deps.albumDetail.value && deps.albumDetail.value.data.id,
-    );
-  });
-
-  const eventAnimeRelations = deps.computed(function () {
-    return relatedAnimeRows(
-      "event",
-      deps.eventDetail.value && deps.eventDetail.value.id,
-    );
-  });
-
-  const eventAnimeWorks = deps.computed(() => {
-    const rows = eventAnimeRelations.value;
-    return groupAnimeParticipation(
-      rows.filter(
-        (row) =>
-          row.unit ||
-          !rows.some((other) => other.unit && other.work.id === row.work.id),
-      ),
-    );
-  });
-
-  function animeRelationContext(row) {
-    if (!row) return "";
-    return [row.unit && row.unit.label, row.relation.label]
-      .filter(Boolean)
-      .join(" · ");
-  }
-
-  function relatedAnimeHref(row) {
-    return deps.routes.anime(row.work.id, row.unit && row.unit.id);
-  }
-
-  function animeFormatLabel(format) {
-    return (
-      {
-        tv: "电视动画",
-        movie: "剧场版",
-        short: "短篇动画",
-        web: "网络动画",
-        special: "特别动画",
-        unknown: "待公布",
-      }[format] || "动画"
-    );
-  }
-
-  function animeStatusLabel(status) {
-    return (
-      { completed: "已完结", airing: "连载中", announced: "待播出" }[status] ||
-      status ||
-      "状态待补"
-    );
-  }
-
-  function animePlatformLabel(platform) {
-    return (
-      {
-        youtube: "YouTube",
-        bilibili: "哔哩哔哩",
-        bahamut: "巴哈姆特动画疯",
-        abema: "ABEMA",
-        unext: "U-NEXT",
-        official: "官方网站",
-        official_site: "官方网站",
-      }[platform] || platform
-    );
-  }
 
   function animeRelationTargetLabel(relation) {
     if (!relation) return "";
@@ -1244,10 +826,80 @@ export function createAnime(deps) {
         animeSection.value = tabs[0].id;
     });
   }
+  const participation = createAnimeParticipation({
+    get animeRowEditions() {
+      return animeRowEditions;
+    },
+    get animeRelationTargetLabel() {
+      return animeRelationTargetLabel;
+    },
+    get animeMusicUsageLabel() {
+      return music.animeMusicUsageLabel;
+    },
+    get animeCatalog() {
+      return animeCatalog;
+    },
+    get findAnimeWork() {
+      return findAnimeWork;
+    },
+    get findAnimeUnit() {
+      return findAnimeUnit;
+    },
+    get characterName() {
+      return deps.characterName;
+    },
+    get computed() {
+      return deps.computed;
+    },
+    get creatorAnimeStaff() {
+      return deps.creatorAnimeStaff;
+    },
+    get creatorDetail() {
+      return deps.creatorDetail;
+    },
+    get charDetail() {
+      return deps.charDetail;
+    },
+    get voiceDetail() {
+      return deps.voiceDetail;
+    },
+    get songDetail() {
+      return deps.songDetail;
+    },
+    get albumDetail() {
+      return deps.albumDetail;
+    },
+    get eventDetail() {
+      return deps.eventDetail;
+    },
+    get routes() {
+      return deps.routes;
+    },
+  });
+  const music = createAnimeMusic({
+    get animeCurrentRelations() {
+      return animeCurrentRelations;
+    },
+    get animeContentUnit() {
+      return animeContentUnit;
+    },
+    get animeWorkUnits() {
+      return animeWorkUnits;
+    },
+    get computed() {
+      return deps.computed;
+    },
+    get findSong() {
+      return deps.findSong;
+    },
+    get findAlbumById() {
+      return deps.findAlbumById;
+    },
+  });
   return {
     start,
-    albumAnimeRelations,
-    albumAnimeWorks,
+    albumAnimeRelations: participation.albumAnimeRelations,
+    albumAnimeWorks: participation.albumAnimeWorks,
     animeAdjacentUnits,
     animeArtwork,
     animeCatalog,
@@ -1271,16 +923,16 @@ export function createAnime(deps) {
     animeLink,
     animeLoading,
     animeMatchedUnits,
-    animeMusicCover,
-    animeMusicCueGroups,
-    animeMusicCues,
-    animeMusicGroups,
-    animeMusicItems,
-    animeMusicSong,
-    animeMusicVersions,
+    animeMusicCover: music.animeMusicCover,
+    animeMusicCueGroups: music.animeMusicCueGroups,
+    animeMusicCues: music.animeMusicCues,
+    animeMusicGroups: music.animeMusicGroups,
+    animeMusicItems: music.animeMusicItems,
+    animeMusicSong: music.animeMusicSong,
+    animeMusicVersions: music.animeMusicVersions,
     animePlatformLabel,
     animeQuery,
-    animeRelationContext,
+    animeRelationContext: participation.animeRelationContext,
     animeRelationHref,
     animeRelationTargetLabel,
     animeRowMatchesEdition,
@@ -1305,29 +957,29 @@ export function createAnime(deps) {
     animeWorkHref,
     animeWorkUnits,
     animeWorkYears,
-    characterAnimeRelations,
-    characterAnimeWorks,
+    characterAnimeRelations: participation.characterAnimeRelations,
+    characterAnimeWorks: participation.characterAnimeWorks,
     clearAnimeFilters,
-    creatorAnimeCueWorks,
-    creatorAnimeWorks,
-    eventAnimeRelations,
-    eventAnimeWorks,
+    creatorAnimeCueWorks: participation.creatorAnimeCueWorks,
+    creatorAnimeWorks: participation.creatorAnimeWorks,
+    eventAnimeRelations: participation.eventAnimeRelations,
+    eventAnimeWorks: participation.eventAnimeWorks,
     findAnimeUnit,
     findAnimeWork,
-    groupAnimeParticipation,
+    groupAnimeParticipation: participation.groupAnimeParticipation,
     loadAnimeCatalog,
     loadAnimeCatalogOptional,
     loadAnimeRelatedMedia,
     openAnimeUnit,
     openAnimeWork,
-    relatedAnimeHref,
+    relatedAnimeHref: participation.relatedAnimeHref,
     retryAnime,
     setAnimeEdition,
     setAnimeSection,
     showAnimeLibrary,
-    songAnimeRelations,
-    songAnimeWorks,
-    voiceAnimeRelations,
-    voiceAnimeWorks,
+    songAnimeRelations: participation.songAnimeRelations,
+    songAnimeWorks: participation.songAnimeWorks,
+    voiceAnimeRelations: participation.voiceAnimeRelations,
+    voiceAnimeWorks: participation.voiceAnimeWorks,
   };
 }
