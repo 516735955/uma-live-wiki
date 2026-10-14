@@ -5,8 +5,18 @@ const fs = require('fs');
 const vm = require('vm');
 const crypto = require('crypto');
 const { EventEmitter } = require('events');
-const source = fs.readFileSync(require.resolve('./server.js'), 'utf8');
-const section = (start, end) => source.slice(source.indexOf(start), source.indexOf(end));
+// Deterministic upstream failures exercise the shipped service functions with
+// fixture dependencies. The browser/API tests exercise complete composition.
+const sources = ['server-news', 'server-translation', 'server-transport'].map(name =>
+  fs.readFileSync(require.resolve('./' + name), 'utf8'));
+const section = (start, end) => {
+  const source = sources.find(text => text.includes(start));
+  if (!source) throw new Error('Missing service function: ' + start);
+  const begin = source.indexOf(start);
+  const finish = source.indexOf(end, begin);
+  const lifecycle = source.slice(begin).search(/\n\s*function start\(\)/);
+  return source.slice(begin, finish < 0 ? begin + lifecycle : finish).replace(/\bdeps\s*\./g, '');
+};
 const tick = async () => { for (let i = 0; i < 5; i++) await Promise.resolve(); };
 const { mergeNews } = require('./news-content');
 const { createTerms } = require('./translation-terms');

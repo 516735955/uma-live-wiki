@@ -83,7 +83,7 @@ async function main() {
     head: { appendChild(script) { pedigreeAttempts += 1; queueMicrotask(() => script.onerror()); } }
   };
   context.Vue.createApp = (options) => ({ component() {}, mount() { app = options.setup(); } });
-  vm.runInContext(source('app.js'), context);
+  require('./test_frontend_loader').loadFrontend(context);
   await app.applyCurrentRoute();
   assert.strictEqual(app.songDbPaged.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');

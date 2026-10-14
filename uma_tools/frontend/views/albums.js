@@ -1,0 +1,60 @@
+export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions"];
+export const template = `
+            <div v-if="albumsError" class="ui-state ui-state-error">{{ albumsError }}</div>
+            <template v-if="!albumDetail">
+                <div class="archive-toolbar">
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="relQuery" aria-label="搜索专辑、歌曲、歌手或商品编号" placeholder="搜索专辑、歌曲、歌手或商品编号" autocomplete="off"><button v-if="relQuery" type="button" @click.prevent="relQuery=''" aria-label="清空搜索">×</button></label>
+                    <div class="archive-controls">
+                        <ui-select v-model="relFilter" label="类型" :options="[{value:'',label:'全部'},...relTypeList.map(type=>({value:type,label:type}))]"></ui-select>
+                        <ui-select v-model="relWork" label="作品" :options="[{value:'',label:'全部'},...relWorkList.map(item=>({value:item.key,label:item.label}))]"></ui-select>
+                        <ui-select v-model="relYear" label="年份" :options="[{value:'',label:'全部'},...relYearList.map(year=>({value:year,label:year==='unknown'?'未知':year}))]"></ui-select>
+                        <ui-select v-model="relSort" label="排序" :options="albumSortOptions"></ui-select>
+                    </div>
+                </div>
+                <div class="albums-grid album-database-grid">
+                    <template v-if="albumsLoading && !albums.length">
+                        <div v-for="i in 8" :key="'album-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div>
+                    </template>
+                    <button v-for="(album,index) in relPaged" :key="album.name" type="button" class="album-card" :style="coverStyle(album)" @click="openAlbumFromDb(album)">
+                            <img class="album-cover" :src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 2 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" decoding="async" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
+                        <div class="album-info">
+                            <div class="album-name">{{ album.name }}</div>
+                            <div class="album-count">{{ album.release || '日期待补' }} · {{ album.type }}</div>
+                        </div>
+                        <div class="album-overlay"><span class="album-more">View more<i class="more-a">&nbsp;</i><b class="more-gr">&gt;</b><b class="more-wh">&gt;</b></span></div>
+                    </button>
+                    <div v-if="!relFiltered.length" class="ui-state">没有符合条件的专辑</div>
+                </div>
+                <div v-if="relFiltered.length" class="ui-pager"><span>{{ relPageStart }}–{{ relPageEnd }} / {{ relFiltered.length }}</span><div><button :disabled="relPage<=1" @click="goRelPage(-1)">上一页</button><button v-for="(page,i) in relPageList" :key="i" :class="{active:page===relPage}" :disabled="page==='…'" @click="setRelPage(page)">{{ page }}</button><button :disabled="relPage>=relPageCount" @click="goRelPage(1)">下一页</button></div></div>
+            </template>
+            <article v-else class="entity-detail album-entity-detail">
+                <div class="entity-hero music-archive-hero">
+                    <div class="entity-cover album-cover-detail"><img :src="coverThumb(albumDetail.data.cover,720)" :data-original="albumDetail.data.cover" :alt="albumDetail.data.name" fetchpriority="high" @error="onCatalogImageError($event)"></div>
+                    <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
+                </div>
+                <div class="media-content">
+                    <dl v-if="albumDetail.data.company" class="entity-overview album-release-overview"><div><dt>发行</dt><dd>{{ albumDetail.data.company }}</dd></div></dl>
+                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
+                    <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
+                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
+                        <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
+                    </section>
+                    <section class="entity-section">
+                        <div class="section-toolbar"><span class="credit-role-tag">曲目</span><div class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span></div></div>
+                        <div class="album-track-list">
+                            <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
+                                <span>{{ String(index+1).padStart(2,'0') }}</span>
+                                <div class="album-track-main">
+                                    <button class="text-link" @click="openSong(albumTrackSongId(song,index))"><b>{{ song.name }}</b></button>
+                                    <div v-if="albumTrackVocalists(song,index).length" class="performer-chip-list compact">
+                                        <button v-for="vocalist in albumTrackVocalists(song,index)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.color}" @click="openVoice(vocalist.voice_actor_id)"><img :src="vocalist.image" alt=""><span>{{ vocalist.name }}</span></button>
+                                    </div>
+                                    <span v-else-if="albumTrackSecondary(song)" class="secondary-line">{{ albumTrackSecondary(song) }}</span>
+                                </div>
+                                <entity-actions v-if="song.url" size="compact" :playing="isActive(song.url)" @play="playAlbumTrack(albumDetail,index)" @add="addAlbumTrack(albumDetail,index)"></entity-actions>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        `;
