@@ -3,9 +3,17 @@ from unittest.mock import patch
 import auto_albums
 import crawl_events
 import update_events
+import crawl_horses
 
 
 class AlbumImportTests(unittest.TestCase):
+    def test_historical_birth_precision_keeps_explicit_real_dates(self):
+        year=crawl_horses.birth_precision({'born':1700,'birthdate':'1700.01.01'})
+        exact=crawl_horses.birth_precision({'born':1764,'birthdate':'1764-04-01'})
+        accepted=crawl_horses.birth_precision({'born':1750,'birthdate':'1750-01-01','birth_precision':'day'})
+        self.assertEqual(year['birthdate'],'')
+        self.assertEqual(exact['birth_precision'],'day')
+        self.assertEqual(accepted['birthdate'],'1750-01-01')
     def test_recovered_voice_source_keeps_the_existing_accepted_fields(self):
         original={'records':[{'lookup_name':'山本','status':'source_unavailable','birthday':'1月1日','agency':'curated','sources':[]}]}
         fetched={'records':[{'lookup_name':'山本','status':'complete','birthday':'2月2日','birthplace':'Tokyo','agency':'new source','sources':[]}]}

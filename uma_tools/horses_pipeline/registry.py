@@ -72,9 +72,11 @@ def birth_precision(record):
     """Ancestors known only by year do not acquire a synthetic January 1."""
     date = str(record.get('birthdate') or '')
     year = pipeline_common.re.search(r'\d{4}', str(record.get('born') or ''))
-    if year and int(year.group()) < 1800:
+    has_day = bool(pipeline_common.re.search(r'\d{4}[./年-]\d{1,2}[./月-]\d{1,2}', date))
+    synthetic_january = bool(pipeline_common.re.search(r'\d{4}(?:[./-]0?1[./-]0?1|年0?1月0?1日)', date))
+    if year and int(year.group()) < 1800 and record.get('birth_precision') != 'day' and (not has_day or synthetic_january):
         record['birthdate'] = ''
         record['birth_precision'] = 'approximate_year' if pipeline_common.re.search(r'約|约|circa|c\.', str(record.get('born')), pipeline_common.re.I) else 'year'
     else:
-        record['birth_precision'] = 'day' if pipeline_common.re.search(r'\d{4}[./年-]\d{1,2}[./月-]\d{1,2}', date) else 'year'
+        record['birth_precision'] = 'day' if has_day else 'year'
     return record
