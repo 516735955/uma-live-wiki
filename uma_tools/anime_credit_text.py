@@ -57,4 +57,9 @@ def music_rows(markup):
         name = title.get_text(' ', strip=True) if title else quoted.group(1) if quoted else ''
         if name and usage in set(labels.values()):
             rows.append({'title':name, 'usage_type':usage})
+    for line in soup.get_text('\n', strip=True).splitlines():
+        match = re.search(r'(オープニング(?:テーマ)?|エンディング(?:テーマ)?|挿入歌|主題歌|BGM|背景音楽)\s*[「『](.+?)[」』]', line)
+        if match:
+            label = match.group(1).replace('テーマ', '')
+            rows.append({'title':match.group(2), 'usage_type':labels[label]})
     return rows
