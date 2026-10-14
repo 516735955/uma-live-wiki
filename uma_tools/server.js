@@ -205,10 +205,10 @@ let transQueue = [];
 let transRunning = false;
 
 
-let translationRequests = Promise.resolve();
+const translationScheduler = new (require('./translation-queue').TranslationQueue)();
 let nextTranslationAt = 0;
 function fetchTranslation(text, signal) {
-  const result = translationRequests.then(async () => {
+  const result = translationScheduler.run(async (signal) => {
     if (signal && signal.aborted) return null;
     const delay = nextTranslationAt - Date.now();
     if (delay > 0) await new Promise((resolve) => setTimeout(resolve, delay));
@@ -244,8 +244,7 @@ function fetchTranslation(text, signal) {
       }
       request.end(form);
     });
-  });
-  translationRequests = result.catch(() => null);
+  }, signal, signal ? 0 : 1);
   return result;
 }
 
@@ -390,9 +389,15 @@ function translateHtmlMessage(html, cb, signal) {
     return cb(src);
   }
   // Limits apply to the protected query, not to the shorter original Japanese.
+  const translated = new Map();
+  runs.forEach(run => {
+    const cachedFragment = translations.get('fragment:' + translationKey(run.text));
+    if (cachedFragment) translated.set(run, cachedFragment);
+  });
   const chunks = [];
   let cur = [];
   runs.forEach(function (r) {
+    if (translated.has(r)) return;
     const query = cur.concat(r).map((run, index) => currentTerms().protect(run.text, String(index)).text).join('\n');
     if ((query.length > 950 || Buffer.byteLength(query) > 5500) && cur.length) {
       chunks.push(cur); cur = [];
@@ -400,7 +405,6 @@ function translateHtmlMessage(html, cb, signal) {
     cur.push(r);
   });
   if (cur.length) chunks.push(cur);
-  const translated = new Map();
   let done = 0;
   let dirty = false;
   chunks.forEach(function (chunk, ci) {
@@ -410,12 +414,16 @@ function translateHtmlMessage(html, cb, signal) {
         chunk.forEach(function (r) { translated.set(r, r.text); });
       } else {
         if (chunkDirty) dirty = true;
-        outs.forEach(function (zh, k) { translated.set(chunk[k], zh || chunk[k].text); });
+        outs.forEach(function (zh, k) {
+          translated.set(chunk[k], zh || chunk[k].text);
+          if (zh && zh !== chunk[k].text) translations.set('fragment:' + translationKey(chunk[k].text), zh);
+        });
       }
       done++;
       if (done === chunks.length) finish();
     }, signal);
   });
+  if (!chunks.length) finish();
   function finish() {
     if (signal && signal.aborted) return cb('');
     const textNodes = new Map();
@@ -425,25 +433,29 @@ function translateHtmlMessage(html, cb, signal) {
       return tok;
     }).join('');
     if (!dirty) translations.set(key, out);
-    cb(out);
+    cb(out, dirty);
   }
 }
 
 function translateArticle(detail, signal, finish) {
   Object.assign(detail, newsContent.apply(detail));
+  let incomplete = false;
   let remaining = 2;
   const complete = () => {
     if (--remaining) return;
+    detail.translation_state = incomplete ? 'partial' : 'complete';
     finish(200, { response_code: 1, detail });
   };
   if (detail.title_zh || !detail.title) complete();
   else translateTitle(detail.title, (zh) => {
     detail.title_zh = zh && !(zh === detail.title && /[\u3040-\u30ff]/.test(detail.title)) ? zh : '';
+    if (!detail.title_zh) incomplete = true;
     complete();
   }, signal);
   if (detail.message_zh || !detail.message) complete();
-  else translateHtmlMessage(detail.message, (zh) => {
+  else translateHtmlMessage(detail.message, (zh, dirty) => {
     detail.message_zh = zh || detail.message;
+    if (dirty || !zh || (zh === detail.message && /[\u3040-\u30ff]/.test(detail.message))) incomplete = true;
     complete();
   }, signal);
 }
@@ -888,8 +900,11 @@ function handleNewsIndex(res) {
     });
 }
 
-const articleCache = new Map();
-const articleRequests = new Map();
+const articleCache = require('./article-cache').createArticleCache({
+  send: (res, status, data) => sendJson(res, status, data, { cacheControl: 'no-store' }),
+  applyEdits: applyArticleEdits,
+  translate: (detail, signal, done) => translateArticle(detail, signal, done)
+});
 function applyArticleEdits(data) {
   if (!data.detail) return data;
   const detail = newsContent.apply(data.detail);
@@ -900,37 +915,7 @@ function applyArticleEdits(data) {
   }
   return { ...data, detail };
 }
-function serveArticle(key, res, load) {
-  const cached = articleCache.get(key);
-  if (cached && Date.now() - cached.at < 15 * 60 * 1000) { sendJson(res, 200, applyArticleEdits(cached.data)); return; }
-  if (cached) articleCache.delete(key);
-  let pending = articleRequests.get(key);
-  const fresh = !pending;
-  if (!pending) {
-    pending = { controller: new AbortController(), responses: new Set() };
-    articleRequests.set(key, pending);
-  }
-  pending.responses.add(res);
-  res.once('close', () => {
-    pending.responses.delete(res);
-    if (articleRequests.get(key) === pending && !pending.responses.size) {
-      articleRequests.delete(key);
-      pending.controller.abort();
-    }
-  });
-  if (!fresh) return;
-  load(pending.controller.signal, (status, data) => {
-    if (articleRequests.get(key) !== pending) return;
-    articleRequests.delete(key);
-    if (status === 200) {
-      articleCache.set(key, { at: Date.now(), data });
-      if (articleCache.size > 128) articleCache.delete(articleCache.keys().next().value);
-    }
-    const result = status === 200 ? applyArticleEdits(data) : data;
-    pending.responses.forEach((response) => sendJson(response, status, result));
-    pending.responses.clear();
-  });
-}
+function serveArticle(key, res, load, withTranslation) { articleCache.serve(key, res, load, withTranslation); }
 
 function handleNewsDetail(req, res, params) {
   const id = parseInt((params.get('id') || ''), 10);
@@ -946,9 +931,9 @@ function handleNewsDetail(req, res, params) {
         return;
       }
       if (!json.detail) return finish(502, { error: 'missing upstream detail' });
-      translateArticle(json.detail, signal, (status, data) => finish(status, status === 200 ? { ...json, detail: data.detail } : data));
+      finish(200, json);
     }, signal);
-  });
+  }, true);
 }
 
 // ---- Lantis news: re-run the scraper on demand, then return the merged list ----
@@ -995,9 +980,9 @@ function handleLantisDetail(req, res, params) {
       if (tm) detail.title = cleanHtml(tm[1]).trim();
       const inner = extractInnercon(body) || '';
       detail.message = inner;
-      translateArticle(detail, signal, finish);
+      finish(200, { response_code: 1, detail });
     }, 0, signal);
-  });
+  }, true);
 }
 function cleanHtml(s) { return String(s || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim(); }
 function extractInnercon(body) {

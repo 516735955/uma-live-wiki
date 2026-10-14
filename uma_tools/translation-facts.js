@@ -3,10 +3,10 @@
 function numericFacts(value) {
   const normalized = String(value || '').normalize('NFKC')
     .replace(/(?<=\d)[,，](?=\d{3}(?:\D|$))/g, '')
-    .replace(/(?<=\d)\s+(?=\d)/g, '');
-  // Joining preserves a date immediately followed by a time when translation
-  // removes whitespace, while decimal/time separators remain meaningful.
-  return (normalized.match(/\d+(?:[/:.]\d+)*/g) || []).join('');
+    .replace(/(\d{1,2}\/\d{1,2})\s*(\d{1,2}:\d{2})/g, '$1 | $2');
+  // Normalize a date immediately followed by a time; preserve every other
+  // numeric boundary as well as meaningful decimal/time separators.
+  return (normalized.match(/\d+(?:[/:.]\d+)*/g) || []).join('|');
 }
 
 function translationFactsMatch(source, translated) {
