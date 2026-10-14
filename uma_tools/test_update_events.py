@@ -68,7 +68,7 @@ class EventPipelineTest(unittest.TestCase):
         )
 
     def test_voice_actor_ids_come_from_the_canonical_registry(self):
-        with mock.patch.object(UPDATE_EVENTS, "read_json", wraps=UPDATE_EVENTS.read_json) as reader:
+        with mock.patch('events_pipeline.common.read_json', wraps=UPDATE_EVENTS.read_json) as reader:
             built = UPDATE_EVENTS.build()
         read_paths = {call.args[0] for call in reader.call_args_list}
         self.assertIn(UPDATE_EVENTS.VOICE_IDENTITIES_FILE, read_paths)
@@ -846,13 +846,14 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertNotEqual(UPDATE_EVENTS.wikipedia_title_key("上田瞳"), UPDATE_EVENTS.wikipedia_title_key("高柳知葉"))
 
     def test_official_profile_photo_reads_supported_agency_pages(self):
-        original_json = UPDATE_EVENTS.fetch_json_url
-        original_text = UPDATE_EVENTS.fetch_text_url
+        from events_pipeline import program_discovery, common
+        original_json = program_discovery.fetch_json_url
+        original_text = common.fetch_text_url
         try:
-            UPDATE_EVENTS.fetch_json_url = lambda _url: {
+            program_discovery.fetch_json_url = lambda _url: {
                 "talent": {"image_path1": "https://across-ent.com/assets/media/portrait.jpg"}
             }
-            UPDATE_EVENTS.fetch_text_url = lambda _url: '<meta property="og:image" content="/ogp.jpg"><div class="photo"><img src="/img/talent/32/1.jpg"></div>'
+            common.fetch_text_url = lambda _url: '<meta property="og:image" content="/ogp.jpg"><div class="photo"><img src="/img/talent/32/1.jpg"></div>'
             self.assertEqual(
                 UPDATE_EVENTS.official_profile_photo("https://across-ent.com/voice_actor/detail.html?id=110")["photo_url"],
                 "https://across-ent.com/assets/media/portrait.jpg",
@@ -862,8 +863,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 "https://www.kenproduction.co.jp/img/talent/32/1.jpg",
             )
         finally:
-            UPDATE_EVENTS.fetch_json_url = original_json
-            UPDATE_EVENTS.fetch_text_url = original_text
+            program_discovery.fetch_json_url = original_json
+            common.fetch_text_url = original_text
 
     def test_version_metadata_inherits_without_copying_full_lyrics_to_short_or_instrumental(self):
         work = {
