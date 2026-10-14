@@ -635,6 +635,10 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                             <a v-if="horseUrlForCharacter(charDetail.id)" class="horse-link-chip" :href="horseUrlForCharacter(charDetail.id)" @click="animeLink($event,horseUrlForCharacter(charDetail.id))">原型马 <em>↗</em></a>
                         </div>
                     </div>
+                    <aside v-if="horseVideosForCharacter(charDetail.id).length" class="hero-video-aside">
+                        <b>原型马解说视频：</b>
+                        <a v-for="video in horseVideosForCharacter(charDetail.id)" :key="video.id" class="horse-link-chip" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener">{{ video.title }} <em>↗</em></a>
+                    </aside>
                 </div>
                 <nav class="entity-tabs" aria-label="角色栏目">
                     <button :class="{active:charSection==='profile'}" @click="setCharSection('profile')">角色信息</button>

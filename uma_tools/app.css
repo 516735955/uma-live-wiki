@@ -3586,6 +3586,32 @@ body.audio-dock-active .home-layout { height: calc(100vh - var(--audio-dock-heig
 }
 .hero-chip-row .performer-chip,
 .hero-chip-row .horse-link-chip { margin: 0; }
+.hero-video-aside {
+    grid-column: 3;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    min-width: 216px;
+    max-width: 320px;
+}
+.hero-video-aside > b {
+    color: color-mix(in srgb, var(--entity-accent) 72%, #1c2b4a);
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+.hero-video-aside .horse-link-chip {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    text-align: left;
+}
+@media (max-width: 980px) {
+    .hero-video-aside { grid-column: 1 / -1; max-width: none; }
+}
 @media (max-width: 640px) {
     .horse-entity-detail > .entity-hero { grid-template-columns: 112px minmax(0, 1fr); gap: 18px; min-height: 0; padding: 20px 16px; }
     .horse-entity-detail .horse-cover { max-width: 120px; }
