@@ -224,16 +224,19 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
     credits, people = documents['staff']['credits'], documents['people']['people']
     known_people = unique_names(people, lambda person: [person_name_key(name) for name in [person['name'], *person.get('aliases', [])]])
     organizations = {name for item in credits for name in [item.get('organization', ''), *item.get('institutions', [])] if name}
-    existing = {(item.get('unit_id'), role_key(item.get('role', '')), person_name_key(item.get('name', ''))) for item in credits}
+    existing = {(item.get('unit_id'), role_key(item.get('role', '')), person_name_key(item.get('name', '')), item.get('group', '')) for item in credits}
     signatures = [*row.get('staff', []), *staff_text_rows(row.get('staff_text', ''), [item.get('role', '') for item in credits])]
     for order, staff in enumerate(signatures):
         role = BeautifulSoup(staff.get('title', ''), 'html.parser').get_text('', strip=True)
         for name in BeautifulSoup(staff.get('name', ''), 'html.parser').get_text('\n', strip=True).splitlines():
             name = name.strip()
-            key = (uid, role_key(role), person_name_key(name))
+            key = (uid, role_key(role), person_name_key(name), staff.get('group', ''))
             if not name or not role or key in existing:
                 continue
             credit = {'work_id': work_id, 'unit_id': uid, 'role': role, 'name': name, 'order': order, 'source_ref': evidence, 'auto_source': True}
+            for field in ('group', 'source_time'):
+                if staff.get(field) is not None:
+                    credit[field] = staff[field]
             kind = entity_kind(staff, name, {person['name'] for person in people}, organizations)
             if kind == 'organization':
                 credit['organization'] = name

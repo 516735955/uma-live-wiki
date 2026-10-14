@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import subprocess
+from PIL import Image
 import anime_credit_text
 import anime_web
 import sync_anime_credits as credits
@@ -13,6 +14,35 @@ import sync_anime_sources as source
 
 
 class AnimeIngestTests(unittest.TestCase):
+    def test_custom_language_folder_requests_real_tsv_and_removes_processed_image(self):
+        with tempfile.TemporaryDirectory() as directory:
+            model = Path(directory)/'jpn.traineddata'
+            model.write_bytes(b'model fixture')
+            frame = Path(directory)/'frame.png'
+            Image.new('RGB',(200,100),'white').save(frame)
+            def run(arguments,timeout=90):
+                # Tesseract accepts an absent named config with exit 0 and emits
+                # plain text. The collector must not misread that as empty TSV.
+                output='監督 山本健'
+                if 'tessedit_create_tsv=1' in arguments:
+                    output='level\tpage_num\tblock_num\tpar_num\tline_num\tword_num\tleft\ttop\twidth\theight\tconf\ttext\n5\t1\t1\t1\t1\t1\t5\t5\t40\t20\t99\t監督\n'
+                return subprocess.CompletedProcess(arguments,0,output,'')
+            with patch.object(credits,'MODEL',model):
+                lines=credits.ocr_image(frame,run=run)
+                self.assertEqual(lines[0]['text'],'監督')
+                self.assertFalse(frame.with_suffix('.ocr.png').exists())
+                with self.assertRaisesRegex(ValueError,'TSV'):
+                    credits.ocr_image(frame,run=lambda *args,**kwargs:subprocess.CompletedProcess([],0,'plain text',''))
+                self.assertFalse(frame.with_suffix('.ocr.png').exists())
+
+    def test_ocr_columns_do_not_give_people_the_other_columns_role(self):
+        lines=[{'text':'監督','confidence':99,'column':0,'left':10,'top':0,'bottom':20},
+               {'text':'山本健','confidence':99,'column':0,'left':10,'top':26,'bottom':53},
+               {'text':'撮影監督','confidence':99,'column':1,'left':400,'top':0,'bottom':20},
+               {'text':'大図佑','confidence':99,'column':1,'left':400,'top':26,'bottom':53}]
+        rows=credits.frame_signatures(lines,{'監督','撮影監督'},{'山本健','大図佑'},set(),{}, {})
+        self.assertEqual([(row['title'],row['name']) for row in rows],[('監督','山本健'),('撮影監督','大図佑')])
+
     def test_official_html_episode_and_explicit_work_end_date(self):
         markup = '<h2 class="episode-title">第3話 最終話</h2><p class="story-text">官方简介</p><div class="episode"><img src="/3.jpg"></div>'
         rows = anime_web.episode_records(markup,'work','https://example.test/story/3/')
@@ -52,19 +82,19 @@ class AnimeIngestTests(unittest.TestCase):
         def run(arguments, timeout=90):
             calls.append(arguments)
             if arguments[0]=='yt-dlp' and '--skip-download' in arguments:
-                return subprocess.CompletedProcess(arguments,0,json.dumps({'duration':200}), '')
-            if arguments[0]=='yt-dlp':
-                pattern=Path(arguments[arguments.index('-o')+1]); Path(str(pattern).replace('%(ext)s','mp4')).write_bytes(b'clip')
-            else:
+                return subprocess.CompletedProcess(arguments,0,json.dumps({'duration':200,'formats':[{'protocol':'https','url':'https://example.test/video','vcodec':'h264','acodec':'none','height':720,'tbr':500}]}), '')
+            if arguments[0]=='ffmpeg':
                 pattern=arguments[-1]
                 Path(pattern.replace('%03d','001')).write_bytes(b'frame')
                 Path(pattern.replace('%03d','002')).write_bytes(b'frame')
             return subprocess.CompletedProcess(arguments,0,'','')
-        with tempfile.TemporaryDirectory() as directory:
+        from contextlib import nullcontext
+        with tempfile.TemporaryDirectory() as directory, patch.object(credits,'range_source',return_value=nullcontext('http://127.0.0.1/video')):
             rows=credits.extract({'url':'https://example.test/official'},Path(directory),run=run,recognize=lambda path:[{'text':'監督 山本健','confidence':99}])
-            self.assertEqual([row[0] for row in rows],[30,33])
-        self.assertIn('--download-sections',calls[1])
-        self.assertIn('--max-filesize',calls[1])
+            self.assertEqual([row[0] for row in rows],[150,152])
+        self.assertIn('-ss',calls[1])
+        self.assertIn('-t',calls[1])
+        self.assertEqual(list(Path(directory).glob('*')),[])
 
 
 if __name__=='__main__':
