@@ -12,7 +12,7 @@
     emits: ['update:modelValue', 'change'],
     data: function () {
       sequence += 1;
-      return { open: false, activeIndex: -1, group: null, listId: 'ui-select-' + sequence };
+      return { open: false, activeIndex: -1, group: null, menuShift: 0, listId: 'ui-select-' + sequence };
     },
     computed: {
       selectedOption: function () {
@@ -39,6 +39,14 @@
               return String(option.value) === String(this.modelValue);
             }, this))
           : -1;
+        this.$nextTick(() => {
+          this.menuShift = 0;
+          this.$nextTick(() => {
+            const rect = this.$refs.menu.getBoundingClientRect();
+            const width = document.documentElement.clientWidth;
+            this.menuShift = rect.right > width - 8 ? width - 8 - rect.right : rect.left < 8 ? 8 - rect.left : 0;
+          });
+        });
       },
       choose: function (option) {
         if (!option || option.disabled) return;
@@ -79,7 +87,7 @@
           <span>{{ selectedOption.label }}</span>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
         </button>
-        <div v-show="open" :id="listId" class="ui-select-menu" role="listbox">
+        <div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :style="{transform:'translateX(' + menuShift + 'px)',maxWidth:'calc(100vw - 16px)'}" role="listbox">
           <button v-if="group" class="ui-select-back" type="button" @click="group=null;activeIndex=0">‹ {{ label }} · {{ group.label }}</button>
           <button v-for="(option,index) in visibleOptions" :key="String(option.value)" type="button" role="option" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
             <span>{{ option.label }}</span>

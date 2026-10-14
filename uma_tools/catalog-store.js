@@ -463,7 +463,10 @@ class CatalogStore {
     songRows.forEach((row) => {
       [row.data.id, ...(row.data.legacy_ids || []), row.data.title, ...(row.data.aliases || [])].forEach((key) => {
         const normalized = songIdentityKey(key);
-        if (normalized) snapshot.songAliases.set(normalized, row.data);
+        if (!normalized) return;
+        const previous = snapshot.songAliases.get(normalized);
+        if (!snapshot.songAliases.has(normalized) || (previous && previous.id === row.data.id)) snapshot.songAliases.set(normalized, row.data);
+        else snapshot.songAliases.set(normalized, null);
       });
     });
     albumRowsIndexed.forEach((row) => {
@@ -661,9 +664,11 @@ class CatalogStore {
     const store = await this.get();
     const album = (id && store.albumsById.get(String(id))) || (name && store.albumsByName.get(String(name)));
     if (!album) return null;
-    const songs = (album.songs || []).map((track) => {
-      const key = songIdentityKey(track.name);
-      return store.songAliases.get(key);
+    const songs = (album.songs || []).map((track, index) => {
+      // A title is not an identity. Album and track position identify the release.
+      return store.songRows.map(row => row.data).find(song => (song.versions || []).some(version =>
+        (version.releases || []).some(release => release.album_id === stableAlbumId(album) &&
+          Number(release.track_number) === index + 1)));
     }).filter(Boolean);
     return { build_id: store.buildId, album, catalog_songs: Array.from(new Map(songs.map((song) => [song.id, song])).values()) };
   }

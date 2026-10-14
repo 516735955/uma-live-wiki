@@ -71,6 +71,7 @@ const umaApp = createApp({
     const newsDefaultCover = '/uma_tools/img/news-card-default.webp';
     const liveView = ref('eventHub');
     const dataScriptPromises = {};
+    const dataScriptLoadedAt = {};
     let newsLoadPromise = null;
     let newsDetailRequest = null;
     let albumsLoadPromise = null;
@@ -252,7 +253,10 @@ const umaApp = createApp({
     const relPage = ref(1);
 
     function loadDataScript(src, globalName) {
-      if (globalName && window[globalName]) return Promise.resolve();
+      const mutable = src.startsWith('/data/');
+      if (mutable && globalName && window[globalName] && dataScriptLoadedAt[src] === undefined) dataScriptLoadedAt[src] = Date.now();
+      if (mutable && Date.now() - (dataScriptLoadedAt[src] || 0) >= 5 * 60 * 1000) delete dataScriptPromises[src];
+      if (globalName && window[globalName] && (!mutable || Date.now() - dataScriptLoadedAt[src] < 5 * 60 * 1000)) return Promise.resolve();
       if (dataScriptPromises[src]) return dataScriptPromises[src];
       dataScriptPromises[src] = new Promise(function (resolve, reject) {
         const script = document.createElement('script');
@@ -269,6 +273,9 @@ const umaApp = createApp({
         script.onload = function () {
           if (globalName && !window[globalName]) { fail(); return; }
           clearTimeout(timer);
+          dataScriptLoadedAt[src] = Date.now();
+          script.onload = script.onerror = null;
+          if (script.parentNode) script.parentNode.removeChild(script);
           resolve();
         };
         script.onerror = fail;
@@ -1434,6 +1441,14 @@ const umaApp = createApp({
       if (animeDetail.value) return items.concat([{ label: '企划' }, { label: '动漫', path: routes.anime() }, { label: animeDetail.value.title_zh }]);
       return [];
     });
+    watch(function () {
+      const crumbs = breadcrumbItems.value;
+      const entity = crumbs.length ? crumbs[crumbs.length - 1].label : '';
+      const section = ({profile:'资料',pedigree:'血统溯源',songs:'歌曲',anime:'动画出演',events:'活动出演',episodes:'剧集',characters:'角色',music:'音乐',staff:'制作人员',lyrics:'歌词',credits:'创作署名',performances:'演出',releases:'收录',works:'作品',collaborators:'合作'})[
+        charDetail.value ? charSection.value : voiceDetail.value ? voiceSection.value : songDetail.value ? songSection.value : creatorDetail.value ? creatorSection.value : animeDetail.value ? animeSection.value : ''];
+      const directory = activeTab.value === 'database' ? ({characters:'角色',voice:'声优',songs:'歌曲',albums:'专辑',creators:'创作者',anime:'动漫',staff:'制作人员',other:otherSection.value==='horses'?'原型马':'资料库'})[dbView.value] : ({news:'新闻',live:'活动',links:'友链'})[activeTab.value];
+      return home.value ? '赛马娘演出综合站' : [entity || directory, entity && section, '赛马娘演出综合站'].filter(Boolean).join(' · ');
+    }, function (title) { document.title = title; }, { immediate: true });
     function setCharSection(section) {
       if (['profile', 'pedigree', 'songs', 'anime', 'events'].indexOf(section) === -1) return;
       if (section === 'pedigree' && !charHasPedigree.value) section = 'profile';
@@ -1547,7 +1562,7 @@ const umaApp = createApp({
       pushUrl();
     }
     function goHorsePage(page) {
-      setHorsePage(page);
+      setHorsePage(horsePage.value + page);
     }
     function openHorse(id) {
       const isCurrent = beginEntityNavigation();
@@ -2277,7 +2292,7 @@ const umaApp = createApp({
       return (songCatalog.value.songs || []).find(song => (song.versions || []).some(version =>
         (version.releases || []).some(release => Number(release.track_number) === number && album &&
           ((album.id && release.album_id === album.id) || (album.catalog && release.catalog === album.catalog) || release.album_name === album.name))
-      )) || findSong(track && track.name);
+      ));
     }
     function albumTrackSongId(track, trackIndex) {
       const song = findAlbumTrackSong(track, trackIndex, albumDetail.value && albumDetail.value.data);

@@ -195,7 +195,7 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
             relations = documents['relations']['relations']
             if any(item['source_id'] == uid and item.get('relation_type') == 'credited_cast' and item.get('target_id') == character['id'] and item.get('voice_actor_id') == voice['id'] for item in relations):
                 continue
-            relations.append({'id': f'{uid}-auto-cast-{order}', 'source_type': 'anime_unit', 'source_id': uid,
+            relations.append({'id': f"{uid}-auto-cast-{character['id']}-{voice['id']}", 'source_type': 'anime_unit', 'source_id': uid,
                 'relation_type': 'credited_cast', 'target_type': 'character', 'target_id': character['id'],
                 'voice_actor_id': voice['id'], 'signature': signature, 'display_order': order, 'evidence_refs': [evidence]})
     if checked.get('staff_status') == 'complete':
