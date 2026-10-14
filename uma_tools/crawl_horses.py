@@ -1494,17 +1494,35 @@ def main():
     list_rows = []
     details = {}
     if args.missing:
+        from knowledge_io import read_json, write_json, fill_empty
+        state_path = os.path.join(DATA_DIR, 'auto_update', 'horse_profiles.json')
+        profile_state = read_json(state_path, {'attempted_at': {}})
+        attempts = profile_state.setdefault('attempted_at', {})
         with open(OUT_DETAIL, encoding='utf-8') as handle:
             details = json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
         with open(OUT_LIST, encoding='utf-8') as handle:
             list_rows = json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
+        horses.sort(key=lambda horse: (horse['id'] in details, attempts.get(horse['id'], 0)))
+    refreshed = 0
     for index, horse in enumerate(horses, 1):
         if args.missing and horse['id'] in details:
             record = details[horse['id']]
             record['cids'] = sorted(set(record.get('cids', []) + horse['cids']))
+            missing = any(not record.get(field) for field in ('photo', 'intro')) or (battle_count(record) and len(record.get('races', [])) < battle_count(record))
+            if missing and refreshed < 12 and time.time() - attempts.get(horse['id'], 0) >= 86400:
+                attempts[horse['id']] = time.time()
+                refreshed += 1
+                incoming = fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
+                fill_empty(record, incoming)
+                record['races'] = merge_races(record.get('races', []), incoming.get('races', []))
+            if args.localize_photos and record.get('photo') and not record['photo'].startswith('/uma_tools/'):
+                record['photo'] = localize_photo(record) or record['photo']
+            birth_precision(record)
             for row in list_rows:
                 if row['id'] == horse['id']:
                     row['cids'] = record['cids']
+                    fill_empty(row, {field: record.get(field) for field in ('photo', 'sex', 'born', 'birthdate')})
+                    birth_precision(row)
             continue
         done_path = os.path.join(CACHE_DIR, 'detail_%s.json' % horse['id'])
         if args.races_only:
@@ -1553,6 +1571,14 @@ def main():
             if changed:
                 with open(done_path, 'w', encoding='utf-8') as handle:
                     json.dump(record, handle, ensure_ascii=False)
+        elif args.missing:
+            record = fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
+            if args.localize_photos and record.get('photo'):
+                record['photo'] = localize_photo(record) or record['photo']
+            attempts[horse['id']] = time.time()
+            os.makedirs(CACHE_DIR, exist_ok=True)
+            with open(done_path, 'w', encoding='utf-8') as handle:
+                json.dump(record, handle, ensure_ascii=False)
         elif args.localize_photos:
             if not os.path.isfile(done_path):
                 continue
@@ -1623,6 +1649,8 @@ def main():
         if index % 10 == 0:
             print('  ...complete %d/%d' % (index, total))
 
+    if args.missing:
+        write_json(state_path, profile_state)
     atomic_write(OUT_LIST, serialize(LIST_PREFIX, list_rows))
     atomic_write(OUT_DETAIL, serialize(DETAIL_PREFIX, details))
     print('wrote %s' % os.path.relpath(OUT_LIST, ROOT))

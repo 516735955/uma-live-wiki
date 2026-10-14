@@ -79,18 +79,18 @@ def add_horse(source, character, *, lookup=horse_page, generations=3):
         if key in matches and len(matches[key]) > 1:
             return None
         old_node = by_name.get(key)
-        if old_node and (not old_node.get('auto_source') or not depth or all((old_node.get('parents') or {}).get(role) for role in ('sire', 'dam'))):
+        if old_node and (not depth or all((old_node.get('parents') or {}).get(role) for role in ('sire', 'dam'))):
             return old_node['id']
         facts = lookup(name)
         if not facts:
-            return None
+            return old_node['id'] if old_node else None
         identifier = old_node['id'] if old_node else cid or 'horse-auto-' + name
         if not old_node and any(row['id'] == identifier for row in source['nodes']):
             return None
         visiting.add(key)
         node = old_node or {'id': identifier, 'zh': character.get('zh') if cid else name, 'auto_source': True}
         fill_empty(node, {k: v for k, v in facts.items() if k not in {'sire_name', 'dam_name', 'source_url'} and v})
-        if node.get('metadata_source_url') == character.get('page'):
+        if character.get('page') and node.get('metadata_source_url') == character.get('page') and facts.get('metadata_source_url'):
             node['metadata_source_url'] = facts['metadata_source_url']
         if not old_node:
             source['nodes'].append(node)

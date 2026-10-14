@@ -101,13 +101,14 @@ def main():
     ids = list(categories)
     colors = {cid: (main.upper(), sub.upper()) for cid, main, sub in re.findall(
         r'href="/character/([a-z0-9_]+)/?"[^>]*style="[^\"]*--color-main:\s*(#[0-9a-fA-F]{6});\s*--color-sub:\s*(#[0-9a-fA-F]{6})', page)}
-    # Only updater-created entries are revisited for missing fields. Existing
-    # characters retain the user's curated scope, names, text and portraits.
+    # Existing identities participate in missing-field refresh while retaining curated values.
     state_path = ROOT / 'data/auto_update/characters.json'
     state = read_json(state_path, {'ids': []})
     added, failed = 0, []
     for cid in ids:
-        if cid in existing and cid not in state['ids']:
+        old = existing.get(cid, {})
+        fields = ('ja', 'cv', 'img', 'av') + (tuple(PROFILE_FIELDS.values()) if categories[cid] == 'uma' else ())
+        if old and all(old.get(field) for field in fields) and details.get(cid, {}).get('html'):
             continue
         try:
             record, detail, art, avatar = parse_character(fetch(OFFICIAL + cid + '/'), cid)
@@ -135,7 +136,7 @@ def main():
                 added += 1
             else:
                 fill_empty(existing[cid], record)
-            details.setdefault(cid, detail)
+            fill_empty(details.setdefault(cid, {}), detail)
         except Exception as error:
             failed.append(cid)
             print('character unavailable:', cid, type(error).__name__, flush=True)

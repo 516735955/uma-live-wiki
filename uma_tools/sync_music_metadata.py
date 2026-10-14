@@ -1183,8 +1183,9 @@ def apply_utaten_results(
         recording = recordings[version_id]
         if result.get("credits") and not (credit_versions.get(version_id) or {}).get("manual"):
             current = credit_versions.get(version_id) or {}
-            current_roles = {row.get("role") for row in current.get("credits") or []}
-            additions = [row for row in result["credits"] if row.get("role") not in current_roles]
+            credit_key = lambda row: (row.get("role"), row.get("creator_id") or row.get("name") or row.get("creator"))
+            current_keys = {credit_key(row) for row in current.get("credits") or []}
+            additions = [row for row in result["credits"] if credit_key(row) not in current_keys]
             if additions or not current:
                 credit_versions[version_id] = {
                     **current,
@@ -1241,6 +1242,7 @@ def main(argv: list[str] | None = None) -> int:
         "umamusu_wiki_checked": [],
     })
     netease_checked = set(source_state.get("netease_checked") or [])
+    netease_checked_at = dict(source_state.get('netease_checked_at') or {})
     utaten_checked = set(source_state.get("utaten_checked") or [])
     utaten_checked_at = dict(source_state.get('utaten_checked_at') or {})
     lrclib_checked = set(source_state.get("lrclib_checked") or [])
@@ -1411,7 +1413,9 @@ def main(argv: list[str] | None = None) -> int:
                 or (not row["instrumental"] and version_id not in existing_lyrics)
             )
         }
-        targets = sorted({source_track for row in target_versions.values() for source_track in row["tracks"] if source_track not in netease_checked})
+        targets = sorted({source_track for row in target_versions.values() for source_track in row["tracks"]
+                          if source_track not in netease_checked or time.time() - float(netease_checked_at.get(source_track, 0)) >= 86400},
+                         key=lambda track: float(netease_checked_at.get(track, 0)))
         if args.limit:
             targets = targets[: max(0, args.limit)]
         fetched: dict[str, dict[str, Any] | None] = {}
@@ -1420,6 +1424,7 @@ def main(argv: list[str] | None = None) -> int:
             for index, future in enumerate(concurrent.futures.as_completed(futures), 1):
                 source_track, payload, error = future.result()
                 fetched[source_track] = payload
+                netease_checked_at[source_track] = time.time()
                 if error:
                     errors.append((source_track, error))
                 else:
@@ -1550,6 +1555,7 @@ def main(argv: list[str] | None = None) -> int:
     write_json(SOURCE_STATE_FILE, {
         "schema_version": 1,
         "netease_checked": sorted(netease_checked),
+        "netease_checked_at": netease_checked_at,
         "utaten_checked": sorted(utaten_checked),
         "utaten_checked_at": utaten_checked_at,
         "lrclib_checked": sorted(lrclib_checked),
