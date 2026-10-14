@@ -2990,6 +2990,8 @@ def refresh_voice_actor_details() -> dict[str, Any]:
         fold_name(str(record.get("lookup_name") or record.get("name_ja") or record.get("name_zh") or ""))
         for record in previous_details
         if record.get("status") == "complete" and not has_generic_photo(record)
+        and all(record.get(field) or (record.get('field_status') or {}).get(field) == 'not_applicable'
+                for field in ('birthday', 'birthplace', 'agency', 'official_profile'))
     }
     previous_by_lookup = {
         fold_name(str(record.get("lookup_name") or "")): record
@@ -3111,14 +3113,21 @@ def apply_additive_voice_detail_refresh(existing: dict[str, Any], discovered: di
             by_lookup[lookup] = record
             upgraded += 1
         elif has_generic_photo(previous) and not has_generic_photo(record):
-            by_lookup[lookup] = record
+            previous.update({key: value for key, value in record.items() if key.startswith('photo_') and value})
             repaired_photos += 1
+        if previous is not None:
+            for field in ('birthday', 'birthplace', 'agency', 'official_profile', 'kana', 'photo_url', 'photo_source_url', 'photo_source_title'):
+                if not previous.get(field) and record.get(field):
+                    previous[field] = record[field]
+                    previous.setdefault('field_status', {})[field] = 'verified'
+                    upgraded += 1
+            previous['sources'] = merge_program_list('sources', previous.get('sources') or [], record.get('sources') or [])
     records = sorted(by_lookup.values(), key=lambda row: fold_name(row.get("name_ja") or row.get("name_zh") or ""))
     return {
         "schema_version": max(int(existing.get("schema_version") or 1), int(discovered.get("schema_version") or 1)),
         "source": existing.get("source") or discovered.get("source") or "",
         "refreshed_at": discovered.get("refreshed_at") or existing.get("refreshed_at") or "",
-        "refresh_policy": "add new records; upgrade source-unavailable placeholders; preserve every accepted sourced record",
+        "refresh_policy": "fill missing fields and sources; preserve accepted nonempty facts",
         "coverage": {
             "records": len(records),
             "source_pages": sum(bool(row.get("sources")) for row in records),
@@ -3160,8 +3169,14 @@ def discover_channel_feed(feed: str, limit: int) -> list[dict[str, Any]]:
     return rows
 
 
+class DiscoveryRows(list):
+    def __init__(self, rows=(), errors=()):
+        super().__init__(rows)
+        self.errors = list(errors)
+
+
 def discover_official_channel() -> list[dict[str, Any]]:
-    rows = []
+    rows, errors = [], []
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
         futures = [
             executor.submit(discover_channel_feed, "videos", 1600),
@@ -3170,10 +3185,10 @@ def discover_official_channel() -> list[dict[str, Any]]:
         for future in futures:
             try:
                 rows.extend(future.result())
-            except (OSError, subprocess.SubprocessError):
-                continue
+            except (OSError, subprocess.SubprocessError) as error:
+                errors.append('official channel feed: ' + type(error).__name__)
     by_id = {str(row["id"]): row for row in rows if row.get("id")}
-    return list(by_id.values())
+    return DiscoveryRows(by_id.values(), errors)
 
 
 def is_pakatube_character_program(title: str) -> bool:
@@ -3300,6 +3315,9 @@ def refresh_programs() -> dict[str, Any]:
     existing_programs = list(existing_doc.get("programs") or [])
     youtube_available = bool(shutil_which("yt-dlp"))
     channel_entries = discover_official_channel() if youtube_available else []
+    source_errors = list(getattr(channel_entries, 'errors', []))
+    if not youtube_available:
+        source_errors.append('required program collector yt-dlp is unavailable')
     rebuild_regular = int(existing_doc.get("schema_version") or 1) < 2 and bool(channel_entries)
     expected_ids = expected_regular_program_ids([*existing_programs, *channel_entries])
     expected_id_values = set(expected_ids.values())
@@ -3334,6 +3352,7 @@ def refresh_programs() -> dict[str, Any]:
         for future in concurrent.futures.as_completed(futures):
             metadata = future.result()
             if not metadata or metadata.get("channel_id") != OFFICIAL_CHANNEL_ID:
+                source_errors.append('official video metadata unavailable: ' + futures[future])
                 continue
             fetched_metadata.append(metadata)
             event_id, series_id = program_identity(metadata.get("title") or "")
@@ -3356,15 +3375,16 @@ def refresh_programs() -> dict[str, Any]:
             })
     try:
         news_programs = official_news_programs()
-    except Exception:
+    except Exception as error:
         news_programs = []
+        source_errors.append('official announcement discovery: ' + type(error).__name__)
     programs.extend(news_programs)
     try:
         programs.extend(historical_programs())
-    except Exception:
+    except Exception as error:
         # The committed snapshot remains authoritative when the supplementary
         # archive is temporarily unavailable.
-        pass
+        source_errors.append('supplementary program archive: ' + type(error).__name__)
     programs.extend(official_radio_programs(existing_programs))
     character_metadata = [metadata for metadata in fetched_metadata if is_pakatube_character_program(metadata.get("title") or "")]
     character_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -3498,6 +3518,7 @@ def refresh_programs() -> dict[str, Any]:
         "refreshed_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
         "coverage": {
             "official_youtube_refresh": "verified" if channel_entries else ("tool_unavailable" if not youtube_available else "source_unavailable"),
+            "source_errors": source_errors,
             "expected_regular_episodes": len(expected_ids),
             "records": len(ordered),
             "source_verified_regular_episodes": len(found_ids),
@@ -3900,6 +3921,10 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print(f"event data written: {coverage['events']} events, {coverage['official_programs']} official programs, {len(built['profiles']['voice_actors'])} voice actors")
         print("curated live source integrity: " + ", ".join(f"{name}={info['sha256'][:12]}" for name, info in built["catalog"]["source_integrity"].items()))
+    errors = (refreshed_programs or {}).get('coverage', {}).get('source_errors', [])
+    if errors:
+        print('program discovery partially failed: ' + '; '.join(errors), file=sys.stderr)
+        return 1
     return 0
 
 

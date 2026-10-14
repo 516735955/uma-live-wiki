@@ -13,6 +13,12 @@ SPEC.loader.exec_module(SYNC)
 
 
 class MusicMetadataSyncTest(unittest.TestCase):
+    def test_utaten_preserves_multiple_people_in_the_same_role(self):
+        docs = ({'creators': []}, {'versions': {'one': {'credits': [{'role': 'composer', 'name': 'Alice'}]}}}, {'versions': {}}, {'versions': {}})
+        result = {'credits': [{'role': 'composer', 'name': 'Bob'}], 'source_url': 'https://example.test/song'}
+        _, credits, _, _ = SYNC.apply_utaten_results({'one': {'instrumental': True}}, {'one': result}, *docs)
+        self.assertEqual([row['name'] for row in credits['versions']['one']['credits']], ['Alice', 'Bob'])
+
     def test_wrapping_deduplication_preserves_source_and_timestamps(self):
         recordings = {"split": {"song_id": "one"}, "joined": {"song_id": "one"}}
         lyrics = {"versions": {

@@ -120,7 +120,9 @@ def get_official_goods():
         j = http_json(MICROCMS_URL + '?' + q,
                       {'user-agent': UA, 'X-MICROCMS-API-KEY': MICROCMS_KEY}, tries=2, sleep_base=3.0)
         if not j:
-            break
+            raise RuntimeError('official music goods request failed at offset %d' % offset)
+        if not isinstance(j.get('contents'), list):
+            raise ValueError('official music goods layout was not recognized')
         items.extend(j.get('contents') or [])
         if not j.get('contents') or len(j.get('contents')) < limit or len(items) >= (j.get('totalCount') or 0):
             break
@@ -148,7 +150,7 @@ def parse_goods_meta(html):
 def infer_type(title):
     if u'サウンドトラック' in title or 'Soundtrack' in title or 'OST' in title:
         return u'原声带'
-    if u'主題歌' in title:
+    if re.search(r'主題歌|(?:デジタル)?シングル|digital\s+single', title, re.I):
         return u'单曲'
     return u'专辑'
 
@@ -253,11 +255,23 @@ def enrich_entry(ent):
         return False
     tracks = alb.get('songs') or []
     cover = alb.get('picUrl') or alb.get('blurPicUrl') or ent.get('cover') or ''
-    ent['count'] = str(len(tracks)) + u' 曲'
-    if cover:
+    if not ent.get('count'):
+        ent['count'] = str(len(tracks)) + u' 曲'
+    if cover and not ent.get('cover'):
         ent['cover'] = cover
-    ent['neteaseAlbumId'] = str(best.get('id'))
-    ent['songs'] = build_songs(tracks, cover)
+    if not ent.get('neteaseAlbumId'):
+        ent['neteaseAlbumId'] = str(best.get('id'))
+    incoming = build_songs(tracks, cover)
+    if ent.get('songs'):
+        by_name = {}
+        for track in incoming:
+            by_name.setdefault(norm_key(track['name']), []).append(track)
+        for track in ent['songs']:
+            matches = by_name.get(norm_key(track.get('name')), [])
+            if len(matches) == 1 and not track.get('url') and matches[0].get('url'):
+                track['url'] = matches[0]['url']
+    else:
+        ent['songs'] = incoming
     return True
 
 
@@ -283,7 +297,7 @@ def main():
     albums = load_list(ALBUMS_JSON)
     if not albums:
         log('albums.json 读取失败，终止')
-        return
+        return 1
 
     state = load_list(STATE_JSON) or {}
     if not isinstance(state, dict):
@@ -341,13 +355,13 @@ def main():
         time.sleep(SLEEP_AFTER_CALL)
 
     # 2) 已发售但未补全 -> 网易云补全
-    for ent in albums:
+    for ent in sorted(albums, key=lambda row: float(state.get(norm_key(row.get('name', ''))) or 0)):
         if tried >= MAX_ENRICH_PER_RUN:
             break
         release = ent.get('release') or ''
         if not release or release > local_today():
             continue
-        if ent.get('songs') or ent.get('neteaseAlbumId'):
+        if ent.get('songs') and all(track.get('url') for track in ent['songs']):
             continue
         key = norm_key(ent.get('name', ''))
         last = state.get(key) or 0
@@ -375,8 +389,9 @@ def main():
         log('已写入 albums.json | 新增 %d | 补全 %d | 共 %d 张' % (added, enriched, len(albums)))
     else:
         log('无变化 | 共 %d 张' % len(albums))
+    return 0
 
 
 if __name__ == '__main__':
     import urllib.parse
-    main()
+    raise SystemExit(main())
