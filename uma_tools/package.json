@@ -10,7 +10,7 @@
     "check:music": "python3 sync_music_metadata.py --check",
     "check:anime": "python3 build_anime_catalog.py --check && python3 sync_anime_assets.py --check && python3 apply_cingray_character_additions.py --check",
     "test:music": "python3 -m unittest test_sync_music_metadata",
-    "test:catalog": "node test_catalog_store.js",
+    "test:catalog": "node test_catalog_store.js && node test_scoped_catalogs.js",
     "test:routes": "node test_routes.js",
     "test:brand": "node test_brand_tokens.js",
     "test:player": "node test_player_controller.js",

@@ -14,7 +14,7 @@
       const lists = Object.fromEntries(fields.map(key => [key, new Map()]));
       // Summaries are applied before detail responses, so a late index never erases detail fields.
       const ordered = Array.from(responses.values()).sort((a, b) =>
-        Number(['work', 'person'].includes(a.scope)) - Number(['work', 'person'].includes(b.scope)));
+        Number(['work', 'person', 'unit', 'entity'].includes(a.scope)) - Number(['work', 'person', 'unit', 'entity'].includes(b.scope)));
       ordered.forEach(data => {
         result.coverage = data.coverage;
         result.generated_at = data.generated_at;
