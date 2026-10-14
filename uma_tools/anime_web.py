@@ -31,6 +31,8 @@ def episode_records(markup, work_id, page_url):
             images = record.get('images') or record.get('scene') or []
             images = images if isinstance(images, list) else [images]
             def image_url(image):
+                if not image:
+                    return ''
                 if isinstance(image, str):
                     return urllib.parse.urljoin(page_url, image)
                 if isinstance(image, dict):

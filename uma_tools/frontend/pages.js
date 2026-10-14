@@ -33,6 +33,12 @@ export function registerPages(app) {
         const page = await import(url + (revision ? "?retry=" + revision : ""));
         return {
           template: page.template,
+          mounted() {
+            if (name === 'characters') {
+              window.UmaCharacterUi?.init();
+              this.$root.renderCharBlood();
+            }
+          },
           setup() {
             const view = Vue.getCurrentInstance().proxy.$root;
             return Object.fromEntries(page.bindings.map(name => [
