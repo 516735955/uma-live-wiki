@@ -111,7 +111,7 @@ async function main() {
   assert.strictEqual(requestCount, 1, 'rejected translations are not split into context-free fragments');
 
   const translation = vm.createContext({
-    crypto, Buffer, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
+    crypto, Buffer, require, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
     hasCjk: () => true,
     currentTerms: () => emptyTerms, translationKey: (source) => source,
     newsContent: { message: () => '' },
@@ -168,6 +168,13 @@ async function main() {
   translation.translateBatchLines(['開場12:00'], (value) => { lines = value; });
   await tick();
   assert.strictEqual(lines[0], '开场12：00', 'full-width colons are formatting, not a changed time');
+  for (const [source, destination] of [['1.5倍', '15倍'], ['開場12:30', '开场1:23:0'], ['開催します', '開催します']]) {
+    translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: destination }] });
+    translation.translateBatchLines([source], (value, dirty) => { lines = value; linesDirty = dirty; });
+    await tick();
+    assert.strictEqual(lines[0], source);
+    assert.strictEqual(linesDirty, true);
+  }
   translation.translateBatchLines(['原文'.repeat(1000)], (value, dirty) => { lines = value; linesDirty = dirty; });
   assert.strictEqual(lines[0], '原文'.repeat(1000), 'query length is checked before sending and oversized lines keep the original');
   assert.strictEqual(linesDirty, true);
