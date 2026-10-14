@@ -295,6 +295,7 @@ export function createViewModel(domains, routes) {
     pedigreeStatus: domains.horses.pedigreeStatus,
     pedigreeError: domains.horses.pedigreeError,
     retryPedigree: domains.horses.retryPedigree,
+    renderCharBlood: domains.horses.renderCharBlood,
     animeCatalog: domains.anime.animeCatalog,
     animeLoading: domains.anime.animeLoading,
     animeError: domains.anime.animeError,
