@@ -22,7 +22,7 @@ export const template = `
                     </template>
                     <button v-for="(event,i) in eventsPaged" :key="event.id" class="event-catalog-row" type="button" @click="openEvent(event)">
                         <span class="event-catalog-cover">
-                            <img :src="event.image" :alt="event.title" :loading="i===0?'eager':'lazy'" :fetchpriority="i===0?'high':'auto'" decoding="async" @error="onEventImageError($event,event)">
+                            <img v-media-src="event.image" :alt="event.title" :loading="i===0?'eager':'lazy'" :fetchpriority="i===0?'high':'auto'" decoding="async" @error="onEventImageError($event,event)">
                         </span>
                         <time v-if="event.end_date && event.end_date !== event.date" class="event-date-range"><span>{{ event.date }}</span><span aria-hidden="true">—</span><span>{{ event.end_date }}</span></time>
                         <time v-else>{{ event.date || '待公布' }}</time>
@@ -53,7 +53,7 @@ export const template = `
                 <article class="entity-detail event-entity-detail">
                     <div class="entity-hero">
                         <div class="entity-cover event-cover">
-                            <img :src="eventDetail.image" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
+                            <img v-media-src="eventDetail.image" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
                         </div>
                         <div class="entity-intro">
                             <span class="entity-kind">{{ eventKindLabel(eventDetail.kind) }}</span>
@@ -87,7 +87,7 @@ export const template = `
                                 <td class="setlist-no">{{ index + 1 }}</td>
                                 <td class="setlist-song"><button class="text-link setlist-song-link" type="button" @click="openSong(performance.song_id)">{{ performance.song }}</button></td>
                                 <td class="setlist-perf"><button v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" type="button" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)">
-                                    <img v-if="characterImage(characterId)" :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span>
+                                    <img v-if="characterImage(characterId)" v-media-src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span>
                                 </button><span v-for="guest in (performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></td>
                                 <td class="setlist-src">{{ performance.source || '现场演唱' }}</td>
                                 <td class="setlist-actions"><entity-actions v-if="playableSongRelease(relationSong(performance))" size="compact" :playing="isActive(playableSongRelease(relationSong(performance)).release.audio_url)" @play="playEventTrack(performance)" @add="addEventTrack(performance)"></entity-actions><span v-else>—</span></td>
@@ -100,14 +100,14 @@ export const template = `
                         <div class="section-toolbar"><span class="credit-role-tag">出演阵容</span><span>{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-chip-list">
                             <button v-for="cast in eventVoiceCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" type="button" :style="{'--chip-color':characterColor(cast.character_id)}" @click="openVoice(cast.voice_actor_id)">
-                                <img v-if="voicePhoto(cast.voice_actor_id)" :src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
+                                <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
                             </button>
                         </div>
                         <div v-else class="ui-state compact">暂无出演阵容</div>
                     </section>
                     <section v-if="eventUnscopedCast.length" class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">场次未明确</span></div>
-                        <div class="performer-chip-list"><button v-for="cast in eventUnscopedCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" type="button" @click="openVoice(cast.voice_actor_id)"><img v-if="voicePhoto(cast.voice_actor_id)" :src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span></button></div>
+                        <div class="performer-chip-list"><button v-for="cast in eventUnscopedCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" type="button" @click="openVoice(cast.voice_actor_id)"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span></button></div>
                     </section>
 
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
@@ -120,15 +120,15 @@ export const template = `
                         <div class="section-toolbar"><span class="credit-role-tag">节目影像</span></div>
                         <div class="event-video-grid">
                             <div v-for="media in eventMediaCards" :key="media.key" class="event-video" :class="'event-video-'+media.platform">
-                                <iframe v-if="media.embedUrl && activeMediaKey===media.key" :src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+' · '+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe v-if="media.embedUrl && activeMediaKey===media.key" v-media-src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+' · '+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <button v-else-if="media.embedUrl" class="event-video-launch" type="button" @click="activateEventMedia(media)">
-                                    <img :src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
+                                    <img v-media-src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
                                     <span class="event-video-platform">{{ media.platformLabel }}</span>
                                     <span class="event-video-label">{{ media.label }}</span>
                                     <span class="event-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></span>
                                 </button>
                                 <a v-else :href="media.url" target="_blank" rel="noopener noreferrer">
-                                    <img :src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
+                                    <img v-media-src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
                                     <span class="event-video-platform">{{ media.platformLabel }}</span>
                                     <span class="event-video-label">{{ media.label }}</span>
                                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>

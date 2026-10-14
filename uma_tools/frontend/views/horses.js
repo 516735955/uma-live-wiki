@@ -14,7 +14,7 @@ export const template = `
             </section>
             <section v-else-if="otherSection==='videos'" class="entity-section other-section">
                 <div class="video-library">
-                    <a v-for="video in curatedVideos" :key="video.id" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener"><img :src="'/video_thumbs/'+video.id+'.jpg'" :alt="video.title" loading="lazy"><b>{{ video.title }}</b><span>观看 ↗</span></a>
+                    <a v-for="video in curatedVideos" :key="video.id" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener"><img v-media-src="'/video_thumbs/'+video.id+'.jpg'" :alt="video.title" loading="lazy"><b>{{ video.title }}</b><span>观看 ↗</span></a>
                 </div>
             </section>
             <section v-else-if="otherSection==='horses'" class="horse-db-section">
@@ -25,7 +25,7 @@ export const template = `
                     <div v-if="horsesListError" class="ui-state ui-state-error" role="alert"><span>{{ horsesListError }}</span><button type="button" class="ui-retry" @click="retryHorses">重试</button></div>
                     <div v-else-if="horsePaged.length" class="horse-list">
                         <a v-for="horse in horsePaged" :key="horse.id" class="horse-row" :href="routes.horses(horse.id)" @click.prevent="openHorse(horse.id)">
-                            <span class="horse-thumb"><img v-if="horse.photo" :src="horse.photo" :alt="horse.zh" loading="lazy" @error="onHorseImageError($event)"><i v-else>{{ (horse.zh || '马').slice(0,1) }}</i></span>
+                            <span class="horse-thumb"><img v-if="horse.photo" v-media-src="horse.photo" :alt="horse.zh" loading="lazy" @error="onHorseImageError($event)"><i v-else>{{ (horse.zh || '马').slice(0,1) }}</i></span>
                             <span class="horse-row-main"><b>{{ horse.zh }}</b><span class="horse-row-ja">{{ horse.ja }}<template v-if="horse.en"> · {{ horse.en }}</template></span><span class="horse-row-meta">{{ horseSexLabel(horse) }}<template v-if="horse.born"> · {{ horse.born }} 年出生</template><template v-if="horse.birthdate"> · {{ horse.birthdate }}</template></span></span>
                             <span class="horse-row-go">查看 <em>→</em></span>
                         </a>
@@ -43,7 +43,7 @@ export const template = `
                 <article v-else class="entity-detail horse-entity-detail">
                     <button type="button" class="horse-back" @click="setOtherSection('horses')">← 返回原型马列表</button>
                     <div class="entity-hero" :class="{'entity-hero-text':!horseDetail.photo}">
-                        <div v-if="horseDetail.photo" class="entity-cover horse-cover"><img :src="horseDetail.photo" :alt="horseDetail.zh" fetchpriority="high" @error="onHorseImageError($event)"></div>
+                        <div v-if="horseDetail.photo" class="entity-cover horse-cover"><img v-media-src="horseDetail.photo" :alt="horseDetail.zh" fetchpriority="high" @error="onHorseImageError($event)"></div>
                         <div class="entity-intro">
                             <span class="entity-kind">原型马 · {{ horseSexLabel(horseDetail) }}</span>
                             <h1>{{ horseDetail.zh }}</h1>
@@ -55,7 +55,7 @@ export const template = `
                                 <span v-if="horseDetail.death" class="horse-badge horse-badge-death">卒 {{ horseDetail.death }}</span>
                             </p>
                             <div v-if="horseChars(horseDetail).length" class="hero-chip-row">
-                                <button v-for="character in horseChars(horseDetail)" :key="character.id" type="button" class="performer-chip character-chip" :style="{'--chip-color':characterColor(character.id)}" @click="openCharDetail(character.id)"><img v-if="characterImage(character.id)" :src="characterImage(character.id)" alt=""><span>{{ character.zh }}</span></button>
+                                <button v-for="character in horseChars(horseDetail)" :key="character.id" type="button" class="performer-chip character-chip" :style="{'--chip-color':characterColor(character.id)}" @click="openCharDetail(character.id)"><img v-if="characterImage(character.id)" v-media-src="characterImage(character.id)" alt=""><span>{{ character.zh }}</span></button>
                             </div>
                         </div>
                     </div>

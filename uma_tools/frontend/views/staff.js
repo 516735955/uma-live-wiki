@@ -10,7 +10,7 @@ export const template = `
                     </div>
                     <div class="creator-catalog">
                         <a v-for="person in staffPaged" :key="person.id" class="creator-catalog-row" :href="staffHref(person)" @click="animeLink($event,staffHref(person))">
-                            <span class="identity-portrait staff-portrait"><img :src="staffPortrait(person)" alt="" loading="lazy" @error="person.photo=''"></span>
+                            <span class="identity-portrait staff-portrait"><img v-media-src="staffPortrait(person)" alt="" loading="lazy" @error="person.photo=''"></span>
                             <span class="creator-catalog-name"><b>{{ person.name }}</b></span>
                             <span class="creator-catalog-roles role-tag-row"><em v-for="role in staffVisibleRoles(person)" :key="role" class="credit-role-tag">{{ role }}</em></span>
 
@@ -20,6 +20,6 @@ export const template = `
                     </div>
                     <div v-if="staffFiltered.length" class="ui-pager"><div><button :disabled="staffPage===1" @click="setStaffPage(staffPage-1)">上一页</button><button v-for="page in staffPageList" :key="page" :class="{active:page===staffPage}" :disabled="page==='…'" @click="setStaffPage(page)">{{ page }}</button><button :disabled="staffPage===staffPageCount" @click="setStaffPage(staffPage+1)">下一页</button></div></div>
                 </template>
-            <article v-else class="entity-detail staff-entity-detail"><div class="entity-hero creator-hero music-archive-hero"><div class="entity-cover"><img :src="staffPortrait(staffDetail)" :alt="staffDetail.name" @error="staffDetail.photo=''"></div><div class="entity-intro"><span class="entity-kind">制作人员</span><h1>{{ staffDetail.name }}</h1><p v-if="staffDisplayAliases.length" class="entity-reading">{{ staffDisplayAliases.join(' / ') }}</p><p v-if="staffDetail.bio">{{ staffDetail.bio }}</p><dl class="entity-meta"><div v-if="staffDetail.birthday"><dt>生日</dt><dd>{{ staffDetail.birthday }}</dd></div></dl></div></div><div class="media-content"><section class="entity-section"><anime-participation :works="staffCredits" section="staff"></anime-participation></section></div></article>
+            <article v-else class="entity-detail staff-entity-detail"><div class="entity-hero creator-hero music-archive-hero"><div class="entity-cover"><img v-media-src="staffPortrait(staffDetail)" :alt="staffDetail.name" @error="staffDetail.photo=''"></div><div class="entity-intro"><span class="entity-kind">制作人员</span><h1>{{ staffDetail.name }}</h1><p v-if="staffDisplayAliases.length" class="entity-reading">{{ staffDisplayAliases.join(' / ') }}</p><p v-if="staffDetail.bio">{{ staffDetail.bio }}</p><dl class="entity-meta"><div v-if="staffDetail.birthday"><dt>生日</dt><dd>{{ staffDetail.birthday }}</dd></div></dl></div></div><div class="media-content"><section class="entity-section"><anime-participation :works="staffCredits" section="staff"></anime-participation></section></div></article>
             </template>
         `;

@@ -2,7 +2,7 @@ export const bindings = ["newsItems","newsError","newsLoading","refreshNews","ne
 export const template = `
             <div v-if="newsDetail" class="news-detail">
                 <div v-if="newsDetail.image_big" class="news-detail-cover-wrap">
-                    <img class="news-detail-cover" :src="newsImage(newsDetail.image_big)" :alt="newsDetail.title_zh || newsDetail.title">
+                    <img class="news-detail-cover" v-media-src="newsImage(newsDetail.image_big)" :alt="newsDetail.title_zh || newsDetail.title">
                 </div>
                 <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">原文 ↗</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
                 <h2 class="news-detail-title">{{ newsDetail.title_zh || newsDetail.title }}</h2>
@@ -16,7 +16,7 @@ export const template = `
                 <div v-if="newsItems.length || newsLoading" class="news-hero-grid">
                     <template v-if="newsItems.length">
                         <div v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" @click="openNews(n.announce_id)">
-                            <img class="news-hero-cover" :src="newsHeroCover(n)" :alt="n.title" :loading="i === 0 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" decoding="async">
+                            <img class="news-hero-cover" v-media-src="newsHeroCover(n)" :alt="n.title" :loading="i === 0 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" decoding="async">
                             <div class="news-hero-body">
                                 <div class="news-hero-meta">
                                     <span class="news-hero-tag" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>

@@ -9,11 +9,11 @@ export const template = `
             </template>
             <article v-else class="entity-detail voice-entity-detail" :style="voicePaletteStyle(voiceDetail)">
                 <div class="entity-hero" :class="{'entity-hero-text':!voiceDetail.photo}">
-                    <div v-if="voiceDetail.photo" class="entity-cover portrait-cover"><img :src="voiceDetail.photo" :alt="voiceDetail.zh" fetchpriority="high"></div>
+                    <div v-if="voiceDetail.photo" class="entity-cover portrait-cover"><img v-media-src="voiceDetail.photo" :alt="voiceDetail.zh" fetchpriority="high"></div>
                     <div class="entity-intro">
                         <span class="entity-kind">声优</span><h1>{{ voiceDetail.zh }}</h1><p class="entity-reading">{{ voiceDetail.ja }}</p>
                         <div class="performer-chip-list">
-                            <button v-for="role in voiceDetail.roles" :key="role.id" class="performer-chip character-chip" :style="{'--chip-color':role.main}" @click="openCharacter(role.id)"><img v-if="role.img" :src="role.img" alt=""><span>{{ role.zh }}</span></button>
+                            <button v-for="role in voiceDetail.roles" :key="role.id" class="performer-chip character-chip" :style="{'--chip-color':role.main}" @click="openCharacter(role.id)"><img v-if="role.img" v-media-src="role.img" alt=""><span>{{ role.zh }}</span></button>
                         </div>
                     </div>
                 </div>
@@ -40,13 +40,13 @@ export const template = `
                     <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
                     <div v-else-if="voiceAppearance.songs.length" class="relation-song-list">
                         <ui-disclosure v-for="song in voiceAppearance.songs" :key="song.song_id" class="relation-song-row" :open="expandedRelationSongId===song.song_id" @toggle="toggleRelationSong(song.song_id)">
-                            <template #leading><img :src="coverThumb((relationSong(song)||{}).cover,112)" alt=""></template><template #title><b>{{ song.name }}</b></template>
+                            <template #leading><img v-media-src="coverThumb((relationSong(song)||{}).cover,112)" alt=""></template><template #title><b>{{ song.name }}</b></template>
                             <div class="relation-song-detail">
                                 <section v-for="version in relationSongVersions(song,'voice_actor',voiceDetail.id)" :key="version.id" class="relation-version">
                                     <header><a class="text-link" :href="routes.songs(song.song_id)" @click="animeLink($event,$event.currentTarget.href)">{{ version.title }}</a><span>{{ version.version_label || '原始版本' }}</span></header>
                                     <div v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" class="relation-release">
-                                        <button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,88)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.release_date || '日期待补' }} · {{ release.catalog || release.type }}</span></span></button>
-                                        <div class="performer-chip-list compact"><button v-for="vocalist in relationReleaseVocalists(release,'voice_actor',voiceDetail.id)" :key="vocalist.voice_actor_id+'-'+(vocalist.character_id || '')" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div>
+                                        <button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img v-media-src="coverThumb(release.cover,88)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.release_date || '日期待补' }} · {{ release.catalog || release.type }}</span></span></button>
+                                        <div class="performer-chip-list compact"><button v-for="vocalist in relationReleaseVocalists(release,'voice_actor',voiceDetail.id)" :key="vocalist.voice_actor_id+'-'+(vocalist.character_id || '')" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" v-media-src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div>
                                         <entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playRelationRelease(relationSong(song),version,release)" @add="addSongTrack(relationSong(song),version,release)"></entity-actions>
                                     </div>
                                 </section>

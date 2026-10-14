@@ -72,5 +72,13 @@ const umaApp = createApp({
   },
 });
 registerComponents(umaApp, routes);
+umaApp.directive('media-src', {
+  created(element, binding) { if (binding.value) element.src = window.UmaMedia.url(binding.value); },
+  beforeUpdate(element, binding) {
+    if (binding.value === binding.oldValue) return;
+    if (binding.value) element.src = window.UmaMedia.url(binding.value);
+    else element.removeAttribute('src');
+  },
+});
 registerPages(umaApp);
 umaApp.mount("#app");

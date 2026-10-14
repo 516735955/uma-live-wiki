@@ -56,7 +56,7 @@
         card.innerHTML =
           '<dl>' +
             '<dt>' +
-              (c.img || c.av ? '<div class="cio-img"><img src="' + (c.img || c.av) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
+              (c.img || c.av ? '<div class="cio-img"><img src="' + (window.UmaMedia ? window.UmaMedia.url(c.img || c.av) : (c.img || c.av)) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
               '<div class="cio-bg"><p>' + (c.en || c.ja || '') + '</p></div>' +
             '</dt>' +
             '<dd>' +
@@ -183,6 +183,7 @@
       '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css">' +
       '<script>window.PEDIGREE_SAMPLE=' + JSON.stringify(sampleId) +
       ';window.PEDIGREE_EMBEDDED=true;' +
+      'window.UmaMedia=window.parent.UmaMedia;' +
       'window.CHAR_INDEX=window.parent.CHAR_INDEX||[];' +
       'window.PED_REL=window.parent.PED_REL||[];<\/script>' +
       '<script defer src="/uma_tools/pedigree-lab.js"><\/script></head>' +

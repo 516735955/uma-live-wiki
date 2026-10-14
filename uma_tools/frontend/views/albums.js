@@ -16,7 +16,7 @@ export const template = `
                         <div v-for="i in 8" :key="'album-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div>
                     </template>
                     <button v-for="(album,index) in relPaged" :key="album.name" type="button" class="album-card" :style="coverStyle(album)" @click="openAlbumFromDb(album)">
-                            <img class="album-cover" :src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 2 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" decoding="async" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
+                            <img class="album-cover" v-media-src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 2 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" decoding="async" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
                         <div class="album-info">
                             <div class="album-name">{{ album.name }}</div>
                             <div class="album-count">{{ album.release || '日期待补' }} · {{ album.type }}</div>
@@ -29,7 +29,7 @@ export const template = `
             </template>
             <article v-else class="entity-detail album-entity-detail">
                 <div class="entity-hero music-archive-hero">
-                    <div class="entity-cover album-cover-detail"><img :src="coverThumb(albumDetail.data.cover,720)" :data-original="albumDetail.data.cover" :alt="albumDetail.data.name" fetchpriority="high" @error="onCatalogImageError($event)"></div>
+                    <div class="entity-cover album-cover-detail"><img v-media-src="coverThumb(albumDetail.data.cover,720)" :data-original="albumDetail.data.cover" :alt="albumDetail.data.name" fetchpriority="high" @error="onCatalogImageError($event)"></div>
                     <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
                 </div>
                 <div class="media-content">
@@ -47,7 +47,7 @@ export const template = `
                                 <div class="album-track-main">
                                     <button class="text-link" @click="openSong(albumTrackSongId(song,index))"><b>{{ song.name }}</b></button>
                                     <div v-if="albumTrackVocalists(song,index).length" class="performer-chip-list compact">
-                                        <button v-for="vocalist in albumTrackVocalists(song,index)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.color}" @click="openVoice(vocalist.voice_actor_id)"><img :src="vocalist.image" alt=""><span>{{ vocalist.name }}</span></button>
+                                        <button v-for="vocalist in albumTrackVocalists(song,index)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.color}" @click="openVoice(vocalist.voice_actor_id)"><img v-media-src="vocalist.image" alt=""><span>{{ vocalist.name }}</span></button>
                                     </div>
                                     <span v-else-if="albumTrackSecondary(song)" class="secondary-line">{{ albumTrackSecondary(song) }}</span>
                                 </div>

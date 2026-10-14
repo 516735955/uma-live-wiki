@@ -11,7 +11,7 @@ export const template = `
                     </template>
                     <article v-for="song in songDbPaged" :key="song.id" class="music-card song-card">
                         <button class="music-card-main" type="button" @click="openSong(song)">
-                            <img :src="coverThumb(song.cover,320)" :alt="song.title" loading="lazy" @error="onCatalogImageError($event)">
+                            <img v-media-src="coverThumb(song.cover,320)" :alt="song.title" loading="lazy" @error="onCatalogImageError($event)">
                             <span class="music-card-copy"><b>{{ song.title }}</b><small>{{ songSingerLabel(song) }}</small></span>
                             <span class="music-card-meta"><em>{{ song.version_count }} 版本</em><em>{{ song.performance_count }} 场演出</em></span>
                         </button>
@@ -24,7 +24,7 @@ export const template = `
 
             <article v-else class="entity-detail song-entity-detail">
                 <div class="entity-hero music-archive-hero">
-                    <div class="entity-cover album-cover-detail"><img :src="coverThumb(songDetail.cover,720)" :data-original="songDetail.cover" :alt="songDetail.title" fetchpriority="high" @error="onCatalogImageError($event)"></div>
+                    <div class="entity-cover album-cover-detail"><img v-media-src="coverThumb(songDetail.cover,720)" :data-original="songDetail.cover" :alt="songDetail.title" fetchpriority="high" @error="onCatalogImageError($event)"></div>
                     <div class="entity-intro">
                         <span class="entity-kind">歌曲</span>
                         <h1>{{ songDetail.title }}</h1>
@@ -53,9 +53,9 @@ export const template = `
                                 <thead><tr><th>#</th><th>专辑</th><th>发售日</th><th>歌手</th><th>试听</th></tr></thead>
                                 <tbody><tr v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" :class="{'anime-selected-release':songLinkVersion===version.id && songLinkRelease===release.album_id}">
                                     <td data-label="#">{{ release.track_number }}</td>
-                                    <td data-label="专辑"><button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img :src="coverThumb(release.cover,96)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.catalog || release.type }}</span></span></button></td>
+                                    <td data-label="专辑"><button class="album-inline" type="button" @click="openAlbumFromSong({version:version,release:release})"><img v-media-src="coverThumb(release.cover,96)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.catalog || release.type }}</span></span></button></td>
                                     <td data-label="发售日">{{ release.release_date || '—' }}</td>
-                                    <td data-label="歌手"><div v-if="release.vocalists.length" class="performer-chip-list compact"><button v-for="vocalist in release.vocalists" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" :src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div><span v-else-if="releaseSingerLabel(version,release)">{{ releaseSingerLabel(version,release) }}</span><span v-else>—</span></td>
+                                    <td data-label="歌手"><div v-if="release.vocalists.length" class="performer-chip-list compact"><button v-for="vocalist in release.vocalists" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" @click="openVoice(vocalist.voice_actor_id)"><img v-if="voicePhoto(vocalist.voice_actor_id)" v-media-src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></button></div><span v-else-if="releaseSingerLabel(version,release)">{{ releaseSingerLabel(version,release) }}</span><span v-else>—</span></td>
                                     <td data-label="试听"><entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playSongRelease({version:version,release:release})" @add="addSongTrack(songDetail,version,release)"></entity-actions><span v-else>—</span></td>
                                 </tr></tbody>
                             </table>
@@ -109,7 +109,7 @@ export const template = `
                             <td data-label="日期">{{ row.performance.session_date || row.performance.event_date || '—' }}</td>
                             <td data-label="活动 / 场次"><button class="text-link stacked" type="button" @click="openEventUrl(row.performance.event_url)"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }}<template v-if="row.display_no"> · 第 {{ row.display_no }} 首</template></span></button></td>
                             <td data-label="版本">{{ (row.performance.performance_variant && (row.performance.performance_variant.label || row.performance.performance_variant.title)) || row.version.version_label || '原始版本' }}</td>
-                            <td data-label="演唱角色"><div class="performer-chip-list compact song-performance-cast"><button v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)"><img v-if="characterImage(characterId)" :src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></button><span v-for="guest in (row.performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></div></td>
+                            <td data-label="演唱角色"><div class="performer-chip-list compact song-performance-cast"><button v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)"><img v-if="characterImage(characterId)" v-media-src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></button><span v-for="guest in (row.performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></div></td>
                         </tr></tbody>
                     </table>
                     <div v-else class="ui-state compact">暂无现场演出</div>

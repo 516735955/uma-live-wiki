@@ -82,7 +82,7 @@ async function main() {
     createElement() { return {}; },
     head: { appendChild(script) { pedigreeAttempts += 1; queueMicrotask(() => script.onerror()); } }
   };
-  context.Vue.createApp = (options) => ({ component() {}, mount() { app = options.setup(); } });
+  context.Vue.createApp = (options) => ({ component() {}, directive() {}, mount() { app = options.setup(); } });
   require('./test_frontend_loader').loadFrontend(context);
   await app.applyCurrentRoute();
   assert.strictEqual(app.songDbPaged.value.length, 30);
