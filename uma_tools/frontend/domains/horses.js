@@ -151,13 +151,10 @@ export function createHorses(deps) {
     id = id || decodeURIComponent(deps.routeSegments()[2] || "");
     if (!id) return loadHorsesListData();
     horsesListError.value = "";
-    horsesDataPromise = Promise.all([
-      loadHorsesListData(),
-      deps.api.request("/api/catalog/horse" + deps.api.query({ id })),
-    ])
-      .then(function (rows) {
-        if (!rows[1]?.horse) throw new Error("empty horse data");
-        window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: rows[1].horse };
+    horsesDataPromise = deps.api.request("/api/catalog/horse" + deps.api.query({ id }))
+      .then(function (data) {
+        if (!data?.horse) throw new Error("empty horse data");
+        window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: data.horse };
       })
       .catch(function (error) {
         horsesDataPromise = null;
