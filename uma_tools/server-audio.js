@@ -101,15 +101,17 @@ exports.createService = function (deps) {
         r.headers.location
       ) {
         r.resume();
-        const next = new URL(r.headers.location, u).href;
-        audioFetchOnce(next, headers, done, hops + 1, onRequest);
+        try {
+          const next = new URL(r.headers.location, u).href;
+          audioFetchOnce(next, headers, done, hops + 1, onRequest);
+        } catch (error) { done(error, null, pref); }
         return;
       }
       done(null, r, pref);
     });
     if (onRequest) onRequest(pref);
     pref.on("error", (e) => done(e, null, pref));
-    pref.setTimeout(20000, function () {
+    pref.setTimeout(5000, function () {
       try {
         pref.destroy(new Error("timeout"));
       } catch (e) {}
@@ -129,6 +131,12 @@ exports.createService = function (deps) {
     let activeUpstream = null;
     let activeResponse = null;
     let clientClosed = false;
+    const deadline = setTimeout(() => {
+      clientClosed = true;
+      if (activeUpstream) activeUpstream.destroy(new Error('audio deadline'));
+      if (!res.headersSent) { res.writeHead(504); res.end('audio source timed out'); }
+      else res.destroy();
+    }, 18000);
 
     function tryNext() {
       if (clientClosed) return;
@@ -165,7 +173,7 @@ exports.createService = function (deps) {
           const ct = String(r.headers["content-type"] || "");
           const isAudio = /audio\//i.test(ct) || /octet-stream/i.test(ct);
           const bad =
-            r.statusCode >= 400 || (!isAudio && /html|json|text/i.test(ct));
+            ![200, 206].includes(r.statusCode) || !isAudio;
           const invalidRange =
             r.statusCode === 206 && !r.headers["content-range"];
           if (bad || invalidRange) {
@@ -189,6 +197,7 @@ exports.createService = function (deps) {
           if (r.headers["content-range"])
             h["Content-Range"] = r.headers["content-range"];
           try {
+            clearTimeout(deadline);
             res.writeHead(r.statusCode || 200, h);
             activeResponse = r;
             deps.pipeline(r, res, function (streamError) {
@@ -212,6 +221,7 @@ exports.createService = function (deps) {
       );
     }
     res.on("close", () => {
+      clearTimeout(deadline);
       clientClosed = true;
       try {
         if (activeResponse) activeResponse.destroy();

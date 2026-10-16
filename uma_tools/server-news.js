@@ -506,7 +506,8 @@ exports.createService = function (deps) {
   }
 
   function handleNewsDetail(req, res, params) {
-    const id = parseInt(params.get("id") || "", 10);
+    const rawId = params.get("id") || "";
+    const id = /^[1-9]\d*$/.test(rawId) && Number.isSafeInteger(Number(rawId)) ? Number(rawId) : 0;
     if (!id) {
       deps.sendJson(res, 400, { error: "missing id" });
       return;
@@ -573,9 +574,8 @@ exports.createService = function (deps) {
 
   function handleLantisDetail(req, res, params) {
     const raw = (params.get("id") || "").toString();
-    const digits = String(raw)
-      .replace(/^lantis-/, "")
-      .replace(/\D/g, "");
+    const match = raw.match(/^(?:lantis-)?([1-9]\d*)$/);
+    const digits = match ? match[1] : '';
     if (!digits) {
       deps.sendJson(res, 400, { error: "missing id" });
       return;
@@ -613,6 +613,7 @@ exports.createService = function (deps) {
               ) || body.match(/<title>([^<]*)<\/title>/i);
             if (tm) detail.title = cleanHtml(tm[1]).trim();
             const inner = extractInnercon(body) || "";
+            if (!inner.trim()) return finish(502, { error: "unrecognized lantis article" });
             detail.message = inner;
             finish(200, { response_code: 1, detail });
           },

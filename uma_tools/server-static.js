@@ -27,16 +27,12 @@ exports.createService = function (deps) {
   ]);
 
   function requestAcceptsGzip(req) {
-    return String(req.headers["accept-encoding"] || "")
-      .split(",")
-      .some((entry) => {
-        const parts = entry.trim().toLowerCase().split(";");
-        if (parts[0] !== "gzip" && parts[0] !== "*") return false;
-        const quality = parts
-          .slice(1)
-          .find((part) => part.trim().startsWith("q="));
-        return !quality || Number(quality.trim().slice(2)) > 0;
-      });
+    const values = new Map(String(req.headers['accept-encoding'] || '').split(',').map(entry => {
+      const [name, ...parameters] = entry.trim().toLowerCase().split(';');
+      const quality = parameters.find(value => value.trim().startsWith('q='));
+      return [name, quality ? Number(quality.trim().slice(2)) : 1];
+    }));
+    return (values.has('gzip') ? values.get('gzip') : values.get('*') || 0) > 0;
   }
 
   function isInsideRoot(filePath) {
@@ -88,6 +84,7 @@ exports.createService = function (deps) {
         "Content-Type": MIME[ext] || "application/octet-stream",
         "Cache-Control": cacheControl,
         "Last-Modified": st2.mtime.toUTCString(),
+        "Vary": "Accept-Encoding",
       };
       const ifModifiedSince = Date.parse(
         req.headers["if-modified-since"] || "",

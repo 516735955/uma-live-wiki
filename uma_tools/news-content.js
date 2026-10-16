@@ -12,7 +12,7 @@ function mergeNews(previous, incoming) {
     Object.entries(item).forEach(([field, value]) => {
       if (value !== null && value !== undefined && value !== '') merged[field] = value;
     });
-    if (old.image) merged.image = old.image;
+    if (old.image && (!item.image || old.image_source === 'manual')) merged.image = old.image;
     if (old.title && item.title && old.title !== item.title) merged.title_zh = item.title_zh || '';
     rows.set(key, merged);
   });
@@ -44,6 +44,7 @@ class NewsContent {
     const edit = this.edits.news[String(item.announce_id)];
     const result = { ...item, title_zh: this.title(item.title, item.title_zh) };
     if (edit) {
+      if (edit.image) result.image_source = 'manual';
       Object.entries(edit).forEach(([field, value]) => {
         if (field === 'source_title' || field === 'source_message') return;
         if (field === 'title_zh' && edit.source_title !== item.title) return;

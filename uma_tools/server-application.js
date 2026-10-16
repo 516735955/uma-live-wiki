@@ -16,6 +16,13 @@ exports.createService = function (deps) {
         return;
       }
       const params = urlObj.searchParams;
+      if (/(?:^|\/)(?:\.[^/]+|baidu\.conf\.json)(?:\/|$)/i.test(urlPath) ||
+          /^\/data\/(?:auto_update|horses_cache|news_image_cache)(?:\/|$)/i.test(urlPath) ||
+          /\.(?:sqlite3?|db)(?:-wal|-shm)?$/i.test(urlPath)) {
+        res.writeHead(404, { "Cache-Control": "no-store" });
+        res.end("Not Found");
+        return;
+      }
 
       if (req.method === "GET" && urlPath === "/api/release")
         return deps.sendJson(

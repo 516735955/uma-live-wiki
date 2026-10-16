@@ -21,6 +21,8 @@ function request(pathname) {
     }, (res) => {
       const chunks = [];
       res.on('data', (chunk) => chunks.push(chunk));
+      res.on('error', reject);
+      res.on('aborted', () => reject(new Error('response aborted')));
       res.on('end', () => {
         const raw = Buffer.concat(chunks);
         let body = raw;
@@ -37,6 +39,8 @@ function request(pathname) {
       });
     });
     req.setTimeout(15000, () => req.destroy(new Error('request timed out')));
+    const deadline = setTimeout(() => req.destroy(new Error('request deadline')), 20000);
+    req.on('close', () => clearTimeout(deadline));
     req.on('error', reject);
   });
 }

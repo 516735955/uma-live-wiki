@@ -5,9 +5,11 @@ exports.createService = function (deps) {
     // cb 只允许调一次：timeout destroy 会同时触发 req/res 的 error 事件，
     // 双回调会让新闻刷新的页计数错乱，造成 promise 永久挂死（所有后续刷新被挡）。
     let settled = false;
+    let deadline;
     const done = (err, json, body) => {
       if (settled) return;
       settled = true;
+      clearTimeout(deadline);
       if (signal) signal.removeEventListener("abort", abort);
       cb(err, json, body);
     };
@@ -22,8 +24,17 @@ exports.createService = function (deps) {
         },
       },
       (res) => {
+        if (res.statusCode !== 200) {
+          res.resume();
+          return done(Object.assign(new Error('HTTP ' + res.statusCode), { status: res.statusCode }));
+        }
         const chunks = [];
-        res.on("data", (c) => chunks.push(c));
+        let size = 0;
+        res.on("data", (c) => {
+          size += c.length;
+          if (size > 8 * 1024 * 1024) req.destroy(new Error('upstream response too large'));
+          else chunks.push(c);
+        });
         res.on("end", () => {
           const body = Buffer.concat(chunks).toString("utf8");
           let json = null;
@@ -41,6 +52,7 @@ exports.createService = function (deps) {
       },
     );
     const abort = () => req.destroy(new Error("cancelled"));
+    deadline = setTimeout(() => req.destroy(new Error('upstream deadline')), 25000);
     req.on("error", (e) => done(e, null, null));
     if (signal) {
       signal.addEventListener("abort", abort, { once: true });
@@ -55,12 +67,14 @@ exports.createService = function (deps) {
     req.end();
   }
 
-  function httpsGetHtml(url, cb, redirects, signal) {
+  function httpsGetHtml(url, cb, redirects, signal, expires = Date.now() + 25000) {
     let completed = false;
     let abort;
+    let deadline;
     const done = (err, body) => {
       if (!completed) {
         completed = true;
+        clearTimeout(deadline);
         if (signal && abort) signal.removeEventListener("abort", abort);
         cb(err, body);
       }
@@ -96,6 +110,7 @@ exports.createService = function (deps) {
               done,
               (redirects || 0) + 1,
               signal,
+              expires,
             );
           } catch (error) {
             done(error);
@@ -108,13 +123,19 @@ exports.createService = function (deps) {
           return;
         }
         const chunks = [];
-        res.on("data", (c) => chunks.push(c));
+        let size = 0;
+        res.on("data", (c) => {
+          size += c.length;
+          if (size > 8 * 1024 * 1024) req.destroy(new Error('upstream response too large'));
+          else chunks.push(c);
+        });
         res.on("end", () => done(null, Buffer.concat(chunks).toString("utf8")));
         res.on("error", (e) => done(e, null));
         res.on("aborted", () => done(new Error("upstream response aborted")));
       },
     );
     abort = () => req.destroy(new Error("cancelled"));
+    deadline = setTimeout(() => req.destroy(new Error('upstream deadline')), Math.max(1, expires - Date.now()));
     req.on("error", (e) => done(e, null));
     if (signal) {
       signal.addEventListener("abort", abort, { once: true });
@@ -131,7 +152,6 @@ exports.createService = function (deps) {
   function sendJson(res, code, obj, options) {
     if (res.destroyed || res.writableEnded) return;
     const settings = options || {};
-    const body = Buffer.from(JSON.stringify(obj));
     const headers = Object.assign(
       {
         "Content-Type": "application/json; charset=utf-8",
@@ -140,6 +160,7 @@ exports.createService = function (deps) {
       },
       settings.headers || {},
     );
+    headers.Vary = 'Accept-Encoding';
     if (settings.etag) headers.ETag = settings.etag;
     if (
       settings.etag &&
@@ -150,6 +171,7 @@ exports.createService = function (deps) {
       res.end();
       return;
     }
+    const body = Buffer.from(JSON.stringify(obj));
     const finish = (payload, compressed) => {
       if (res.destroyed || res.writableEnded) return;
       if (compressed) {

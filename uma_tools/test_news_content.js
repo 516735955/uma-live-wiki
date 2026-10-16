@@ -10,11 +10,13 @@ const { officialImage } = require('./news-images');
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-news-test-'));
 try {
   const rows = mergeNews([
-    { announce_id: 1, title: 'source', title_zh: '人工订正', image: 'tuned.jpg', label: 'kept' },
+    { announce_id: 1, title: 'source', title_zh: '人工订正', image: 'tuned.jpg', image_source: 'manual', label: 'kept' },
     { announce_id: 2, title: 'missing page' }
   ], [{ announce_id: '1', title: 'source', image: 'incoming.jpg', label: '' }]);
   assert.strictEqual(rows.length, 2, 'an absent upstream row is not a deletion');
   assert.strictEqual(rows[0].image, 'tuned.jpg');
+  assert.strictEqual(mergeNews([{ announce_id: 3, image: 'old.jpg' }],
+    [{ announce_id: 3, image: 'new.jpg' }])[0].image, 'new.jpg', 'source image corrections replace automatic images');
   assert.strictEqual(rows[0].label, 'kept');
   assert.strictEqual(rows[0].title_zh, '人工订正');
   assert.strictEqual(mergeNews(rows, [{ announce_id: 1, title: 'new source' }])[0].title_zh, '');

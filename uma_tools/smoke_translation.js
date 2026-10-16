@@ -5,6 +5,10 @@ const https = require('https');
 const crypto = require('crypto');
 const { loadTerms, createTerms, readJson } = require('./translation-terms');
 const root = path.resolve(__dirname, '..');
+if (!process.argv.includes('--live')) {
+  require('./test_news_content');
+  return;
+}
 const config = readJson(path.join(__dirname, 'baidu.conf.json'));
 const appid = process.env.BAIDU_APPID || config.appid;
 const secret = process.env.BAIDU_SECRET || config.secret;

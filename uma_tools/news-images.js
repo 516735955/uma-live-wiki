@@ -16,6 +16,18 @@ function officialImage(value) {
 
 function imageStore(directory, options = {}) {
   const pending = new Map(), attempts = new Map();
+  let active = 0;
+  const waiting = [];
+  async function acquire() {
+    if (active >= 4) {
+      if (waiting.length >= 64) throw new Error('news image queue full');
+      await new Promise(resolve => waiting.push(resolve));
+    } else active++;
+  }
+  function release() {
+    if (waiting.length) waiting.shift()();
+    else active--;
+  }
   const capacity = Number(options.capacity || process.env.NEWS_IMAGE_CACHE_BYTES) || 256 * 1024 * 1024;
   let lastCleanup = 0;
   async function cleanup() {
@@ -41,8 +53,11 @@ function imageStore(directory, options = {}) {
   }
   async function refresh(url, file, extension) {
     if (pending.has(file)) return pending.get(file);
+    if (Date.now() - (attempts.get(file) || 0) < 60000) throw new Error('news image retry deferred');
     attempts.set(file, Date.now());
     const task = (async () => {
+      await acquire();
+      try {
       const bytes = await new Promise((resolve, reject) => {
         let timer;
         const request = https.get(url, { family: 4 }, (response) => {
@@ -70,6 +85,7 @@ function imageStore(directory, options = {}) {
         await fs.promises.rename(temporary, file);
       } finally { await fs.promises.unlink(temporary).catch(() => {}); }
       return { bytes, extension };
+      } finally { release(); }
     })();
     pending.set(file, task);
     try { return await task; } finally { pending.delete(file); await cleanup(); }
