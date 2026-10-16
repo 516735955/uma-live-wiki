@@ -14,6 +14,7 @@ try {
   fs.mkdirSync(stage);
   execFileSync('git', ['archive', '--format=tar', '-o', archive, commit], { cwd: root });
   execFileSync('tar', ['-xf', archive, '-C', stage]);
+  fs.rmSync(archive);
   const ancestors = execFileSync('git', ['rev-list', commit], { cwd: root, encoding: 'utf8' }).trim().split('\n');
   // Use the committed release builder, not an uncommitted local implementation.
   require(path.join(stage, 'deploy/prepare-release')).prepareRelease(stage, commit, ancestors,
