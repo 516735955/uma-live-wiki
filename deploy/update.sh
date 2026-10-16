@@ -149,6 +149,9 @@ if [ "$OLD_SERVICE" = umamusume.service ]; then
 fi
 ln -sfn "$RELEASE" "$ROOT/slots/$PORT"
 systemctl daemon-reload
+if [ "$PORT" = 8080 ] && systemctl is-active --quiet umamusume.service; then
+  systemctl stop umamusume.service
+fi
 systemctl start "$SERVICE"
 STARTED=1
 for attempt in {1..30}; do
