@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T11:12:28+00:00",
+  "generated_at": "2026-10-16T18:20:00+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
     "albums": 115,
     "release_tracks": 2235,
-    "live_performances": 1265,
+    "live_performances": 1369,
     "credited_songs": 332,
     "lyric_songs": 244,
     "credited_versions": 1295,
@@ -2283,6 +2283,28 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 23,
+              "setlist_no": "23",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "上田瞳",
+                "衣川里佳",
+                "近藤唯",
+                "日笠陽子",
+                "月城日花"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -2311,7 +2333,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -2343,7 +2365,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 5,
+      "performance_count": 6,
       "original_version_id": "song-amprefire-b503e6653a-v-b503e6653a",
       "creator_ids": [
         "creator-6d35eb906e"
@@ -3643,6 +3665,24 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 12,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "衣川里佳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -3663,7 +3703,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -3762,7 +3802,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-blaze-b4bd8fc766-v-b4bd8fc766",
       "creator_ids": [
         "creator-ae568b1ff4",
@@ -4260,6 +4300,35 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 20,
+              "setlist_no": "20",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "星谷美緒",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "芹澤優",
+                "紫月杏朱彩",
+                "中島由貴",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -4711,7 +4780,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 16,
+          "performance_count": 17,
           "instrumental": false,
           "credits": [
             {
@@ -5924,7 +5993,7 @@
       ],
       "version_count": 15,
       "release_count": 15,
-      "performance_count": 16,
+      "performance_count": 17,
       "original_version_id": "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df",
       "creator_ids": [
         "creator-22a01c071a",
@@ -6178,6 +6247,30 @@
               }
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 10,
+              "setlist_no": "10",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "下地紫野",
+                "指出毬亜",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "菊池紗矢香",
+                "久保田未夢"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -6210,7 +6303,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -6741,7 +6834,7 @@
       ],
       "version_count": 5,
       "release_count": 5,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-boc-izm-655025f69f-v-655025f69f",
       "creator_ids": [
         "creator-disc-jokey-honda-41291dbf4b",
@@ -6910,6 +7003,25 @@
               "event_url": "/zh-Hans/events/live-other-2025-11-15-animax-musix-2025-yokohama?session=live-other-2025-11-15-animax-musix-2025-yokohama-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 18,
+              "setlist_no": "18",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "瀬戸桃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -6932,7 +7044,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -7006,7 +7118,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-brightest-heart-dd824b4715-v-dd824b4715",
       "creator_ids": [
         "creator-500b86dc49",
@@ -7870,6 +7982,24 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-2"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 16,
+              "setlist_no": "16",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大橋彩香"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -7909,7 +8039,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -8039,7 +8169,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-catch-the-victory-e56a0d6f90-v-e56a0d6f90",
       "creator_ids": [
         "creator-269d4179e5",
@@ -10485,6 +10615,24 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "西連寺亜希"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -10524,7 +10672,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -10556,7 +10704,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-dear-my-dream-007a8ac43a-v-007a8ac43a",
       "creator_ids": [
         "creator-09658ba257",
@@ -21601,6 +21749,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 11,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "松井恵理子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -21678,7 +21844,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -21822,7 +21988,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-dream-jack-5cb0f93900-v-5cb0f93900",
       "creator_ids": [
         "creator-26d314f2c8",
@@ -21960,6 +22126,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-12-16-cygamesfes2018-2-special-live-day2?session=live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 13,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "青木瑠璃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -22037,7 +22221,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 5,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -22167,7 +22351,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 5,
+      "performance_count": 6,
       "original_version_id": "song-empress-game-c140ff5898-v-c140ff5898",
       "creator_ids": [
         "creator-09658ba257",
@@ -22613,6 +22797,26 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "青木瑠璃子",
+                "星谷美緒",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -22634,6 +22838,29 @@
                 "va-0173"
               ],
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "前田玲奈",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -22808,7 +23035,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 13,
+          "performance_count": 15,
           "instrumental": false,
           "credits": [
             {
@@ -23616,7 +23843,7 @@
       ],
       "version_count": 10,
       "release_count": 10,
-      "performance_count": 13,
+      "performance_count": 15,
       "original_version_id": "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
       "creator_ids": [
         "creator-16e2e72a5f",
@@ -24610,6 +24837,28 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-2"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 15,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "上田瞳",
+                "下地紫野",
+                "日笠陽子",
+                "吉岡茉祐",
+                "日比優理香"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -24864,7 +25113,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 9,
+          "performance_count": 10,
           "instrumental": false,
           "credits": [
             {
@@ -25915,7 +26164,7 @@
       ],
       "version_count": 15,
       "release_count": 15,
-      "performance_count": 9,
+      "performance_count": 10,
       "original_version_id": "song-everlasting-beats-3a805703a6-v-3a805703a6",
       "creator_ids": [
         "creator-500b86dc49",
@@ -28200,6 +28449,30 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 29,
+              "setlist_no": "29",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大西沙織"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -28232,7 +28505,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 15,
+          "performance_count": 16,
           "instrumental": false,
           "credits": [
             {
@@ -28833,7 +29106,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 15,
+      "performance_count": 16,
       "original_version_id": "song-find-my-only-way-46f68c23ae-v-46f68c23ae",
       "creator_ids": [
         "creator-500b86dc49",
@@ -30120,6 +30393,30 @@
               "event_url": "/zh-Hans/events/live-other-2025-08-02-tokyo-idol-festival-2025-day2?session=live-other-2025-08-02-tokyo-idol-festival-2025-day2-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "衣川里佳",
+                "香坂さき",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "芹澤優",
+                "夏目妃菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -30147,6 +30444,30 @@
                 "va-0162"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 11,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "星谷美緒",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "西連寺亜希",
+                "宮下早紀",
+                "稲垣好"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -30644,7 +30965,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 16,
+          "performance_count": 18,
           "instrumental": false,
           "credits": [
             {
@@ -35036,7 +35357,7 @@
       ],
       "version_count": 62,
       "release_count": 62,
-      "performance_count": 16,
+      "performance_count": 18,
       "original_version_id": "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a",
       "creator_ids": [
         "creator-500b86dc49",
@@ -36431,6 +36752,31 @@
               "event_url": "/zh-Hans/events/live-other-2025-07-24-atc-special-stage-pretty-derby?session=live-other-2025-07-24-atc-special-stage-pretty-derby-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "羊宮妃那",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -37294,6 +37640,42 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -37350,7 +37732,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 26,
+          "performance_count": 28,
           "instrumental": false,
           "credits": [
             {
@@ -38331,7 +38713,7 @@
       ],
       "version_count": 4,
       "release_count": 4,
-      "performance_count": 26,
+      "performance_count": 28,
       "original_version_id": "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
       "creator_ids": [
         "creator-647bf144a4",
@@ -39595,6 +39977,24 @@
               "event_url": "/zh-Hans/events/live-cd-2025-08-24-winning-live-26?session=live-cd-2025-08-24-winning-live-26-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 20,
+              "setlist_no": "20",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "石原夏織"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -39615,7 +40015,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -39647,7 +40047,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-glory-eyes-7d0a444aaf-v-7d0a444aaf",
       "creator_ids": [
         "creator-c436f537bf"
@@ -39797,6 +40197,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 19,
+              "setlist_no": "19",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "上田瞳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -39874,7 +40292,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 6,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -40004,7 +40422,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 6,
+      "performance_count": 7,
       "original_version_id": "song-goal-to-my-ship-01b3127078-v-01b3127078",
       "creator_ids": [
         "creator-500b86dc49",
@@ -43289,6 +43707,27 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "天海由梨奈",
+                "奥野香耶",
+                "日比優理香",
+                "久保田未夢"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -43312,6 +43751,27 @@
                 "va-0080"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "天海由梨奈",
+                "遠野ひかる",
+                "夏吉ゆうこ",
+                "菊池紗矢香"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -43396,7 +43856,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -43896,7 +44356,7 @@
       ],
       "version_count": 7,
       "release_count": 7,
-      "performance_count": 4,
+      "performance_count": 6,
       "original_version_id": "song-hat-on-your-head-7901565fc6-v-7901565fc6",
       "creator_ids": [
         "creator-078370b132",
@@ -46764,6 +47224,27 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 11,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "上田瞳",
+                "優木かな",
+                "下地紫野",
+                "紫月杏朱彩"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -46787,6 +47268,30 @@
                 "va-0141"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 12,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "塚田悠衣",
+                "亜咲花",
+                "紫月杏朱彩",
+                "真名瀬日和"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -46968,7 +47473,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 7,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -48247,7 +48752,7 @@
       ],
       "version_count": 16,
       "release_count": 17,
-      "performance_count": 7,
+      "performance_count": 9,
       "original_version_id": "song-l-arc-de-gloire-aa7474ca7e-v-aa7474ca7e",
       "creator_ids": [
         "creator-5745b16f97",
@@ -48362,6 +48867,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "髙橋ミナミ"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -48379,6 +48902,24 @@
                 "va-0180"
               ],
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 21,
+              "setlist_no": "21",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "髙橋ミナミ"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -48458,7 +48999,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 5,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -48590,7 +49131,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 5,
+      "performance_count": 7,
       "original_version_id": "song-l-s-surprise-4127ca305e-v-4127ca305e",
       "creator_ids": [
         "creator-500b86dc49",
@@ -48672,6 +49213,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 15,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "芹澤優"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -48692,7 +49251,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -48727,7 +49286,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 1,
+      "performance_count": 2,
       "original_version_id": "song-lady-g-donna-cc1740ca06-v-cc1740ca06",
       "creator_ids": [
         "creator-b6d34cda6b",
@@ -49508,6 +50067,51 @@
               "event_url": "/zh-Hans/events/live-cd-2025-08-24-winning-live-26?session=live-cd-2025-08-24-winning-live-26-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 24,
+              "setlist_no": "24",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -49577,6 +50181,51 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 24,
+              "setlist_no": "24",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -49653,7 +50302,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 7,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -50704,7 +51353,7 @@
       ],
       "version_count": 12,
       "release_count": 13,
-      "performance_count": 7,
+      "performance_count": 9,
       "original_version_id": "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5",
       "creator_ids": [
         "creator-6d35eb906e"
@@ -51602,6 +52251,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 13,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "東山奈央"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -51641,7 +52308,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -51674,7 +52341,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-love-will-come-through-1e8fb7a9e0-v-1e8fb7a9e0",
       "creator_ids": [
         "creator-80a28506af",
@@ -53295,6 +53962,29 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大坪由佳",
+                "衣川里佳",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "渡部恵子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -53529,6 +54219,30 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大西沙織"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -53699,7 +54413,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 38,
+          "performance_count": 40,
           "instrumental": false,
           "credits": [
             {
@@ -54400,7 +55114,7 @@
       ],
       "version_count": 7,
       "release_count": 7,
-      "performance_count": 38,
+      "performance_count": 40,
       "original_version_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
       "creator_ids": [
         "creator-6ed889314c",
@@ -55696,6 +56410,25 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 12,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "日笠陽子",
+                "芹澤優"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -55715,6 +56448,25 @@
                 "va-0146"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 16,
+              "setlist_no": "16",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "羊宮妃那",
+                "石原夏織"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -56058,7 +56810,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 14,
+          "performance_count": 16,
           "instrumental": false,
           "credits": [
             {
@@ -61248,7 +62000,7 @@
       ],
       "version_count": 76,
       "release_count": 76,
-      "performance_count": 14,
+      "performance_count": 16,
       "original_version_id": "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8",
       "creator_ids": [
         "creator-500b86dc49",
@@ -62206,6 +62958,30 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 17,
+              "setlist_no": "17",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "大空直美",
+                "香坂さき",
+                "優木かな",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -62783,6 +63559,42 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 19,
+              "setlist_no": "19",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -62839,7 +63651,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 22,
+          "performance_count": 24,
           "instrumental": false,
           "credits": [
             {
@@ -65437,7 +66249,7 @@
       ],
       "version_count": 35,
       "release_count": 35,
-      "performance_count": 22,
+      "performance_count": 24,
       "original_version_id": "song-never-looking-back-d2ca0c4311-v-d2ca0c4311",
       "creator_ids": [
         "creator-16e2e72a5f",
@@ -65988,6 +66800,28 @@
               "event_url": "/zh-Hans/events/live-other-2025-07-24-atc-special-stage-pretty-derby?session=live-other-2025-07-24-atc-special-stage-pretty-derby-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 19,
+              "setlist_no": "19",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "紫月杏朱彩",
+                "中島由貴",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -66394,6 +67228,26 @@
               }
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 11,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "前田玲奈",
+                "徳井青空",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -66418,7 +67272,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 22,
+          "performance_count": 24,
           "instrumental": false,
           "credits": [
             {
@@ -67412,7 +68266,7 @@
       ],
       "version_count": 12,
       "release_count": 13,
-      "performance_count": 22,
+      "performance_count": 24,
       "original_version_id": "song-next-frontier-5267707c1b-v-5267707c1b",
       "creator_ids": [
         "creator-724bd18b67",
@@ -71028,6 +71882,30 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-2"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 21,
+              "setlist_no": "21",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -71110,7 +71988,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -71830,7 +72708,7 @@
       ],
       "version_count": 9,
       "release_count": 9,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-precious-star-dreamer-b7c22c4296-v-b7c22c4296",
       "creator_ids": [
         "creator-6f5b36ad80",
@@ -75465,6 +76343,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 17,
+              "setlist_no": "17",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "木村千咲"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -75542,7 +76438,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -75672,7 +76568,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 7,
+      "performance_count": 8,
       "original_version_id": "song-rising-girl-a1bf16c093-v-a1bf16c093",
       "creator_ids": [
         "creator-0fab8f5af3",
@@ -76811,7 +77707,8 @@
       "title": "Secret GRADUATION",
       "aliases": [
         "Secret GRADUATION",
-        "Secret GRADUATION (2021 Remastered Version)"
+        "Secret GRADUATION (2021 Remastered Version)",
+        "Secret GRADUATION ※Long Intro Ver."
       ],
       "legacy_ids": [],
       "artists": [
@@ -76968,6 +77865,28 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 25,
+              "setlist_no": "25",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "前田玲奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "Secret GRADUATION ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -77045,7 +77964,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -77175,7 +78094,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 7,
+      "performance_count": 8,
       "original_version_id": "song-secret-graduation-6bf6aaa7ba-v-6bf6aaa7ba",
       "creator_ids": [
         "creator-500b86dc49",
@@ -77516,6 +78435,24 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 14,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "田所あずさ"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -77593,7 +78530,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 6,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -77869,7 +78806,7 @@
       ],
       "version_count": 4,
       "release_count": 6,
-      "performance_count": 6,
+      "performance_count": 7,
       "original_version_id": "song-seven-a00bbe560e-v-a00bbe560e",
       "creator_ids": [
         "creator-apis-7e6674d509",
@@ -77992,6 +78929,26 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "星谷美緒",
+                "福原綾香",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -78016,7 +78973,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -78161,7 +79118,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 1,
+      "performance_count": 2,
       "original_version_id": "song-shakerock-02a094e64b-v-02a094e64b",
       "creator_ids": [
         "creator-c436f537bf",
@@ -78769,6 +79726,51 @@
               "event_url": "/zh-Hans/events/live-cd-2025-09-06-winning-live-27?session=live-cd-2025-09-06-winning-live-27-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 25,
+              "setlist_no": "25",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -78838,6 +79840,51 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 25,
+              "setlist_no": "25",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -78914,7 +79961,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -78949,7 +79996,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 5,
+      "performance_count": 7,
       "original_version_id": "song-shake-the-world-6a204b97d3-v-6a204b97d3",
       "creator_ids": [
         "creator-a41b1c66ba",
@@ -79088,7 +80135,8 @@
         "Silent Star",
         "Silent Star (2021 Remastered Version)",
         "Silent Star (TV Size)",
-        "Silent Star (TV Size) (2021 Remastered Version)"
+        "Silent Star (TV Size) (2021 Remastered Version)",
+        "Silent Star ※Long Intro Ver."
       ],
       "legacy_ids": [],
       "artists": [
@@ -79188,6 +80236,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 17,
+              "setlist_no": "17",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高野麻里佳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -79243,6 +80309,28 @@
                 "va-0184"
               ],
               "event_url": "/zh-Hans/events/live-other-2018-12-15-cygamesfes2018-1-special-live-day1?session=live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 27,
+              "setlist_no": "27",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高野麻里佳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "Silent Star ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -79360,7 +80448,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 9,
+          "performance_count": 11,
           "instrumental": false,
           "credits": [
             {
@@ -79636,7 +80724,7 @@
       ],
       "version_count": 4,
       "release_count": 6,
-      "performance_count": 9,
+      "performance_count": 11,
       "original_version_id": "song-silent-star-5582fe43d4-v-5582fe43d4",
       "creator_ids": [
         "creator-corochi-3d0a352bef",
@@ -80109,6 +81197,7 @@
         "Special Record! (Off Vocal) (2021 Remastered Version)",
         "Special Record! (TV Size)",
         "Special Record! (TV Size) (2021 Remastered Version)",
+        "Special Record! ※Long Intro Ver.",
         "Special Record!(Ever After Ver.)",
         "Special Record！ (Game Size)（アドマイヤグルーヴ）"
       ],
@@ -81133,6 +82222,42 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 18,
+              "setlist_no": "18",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -81186,6 +82311,46 @@
                 "va-0184"
               ],
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 15,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "巽悠衣子",
+                "大西沙織",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "Special Record! ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -81244,7 +82409,7 @@
             }
           ],
           "release_count": 4,
-          "performance_count": 13,
+          "performance_count": 15,
           "instrumental": false,
           "credits": [
             {
@@ -82986,7 +84151,7 @@
       ],
       "version_count": 9,
       "release_count": 16,
-      "performance_count": 13,
+      "performance_count": 15,
       "original_version_id": "song-special-record-c828cf2dc0-v-c828cf2dc0",
       "creator_ids": [
         "creator-6ed889314c",
@@ -83996,6 +85161,51 @@
               "event_url": "/zh-Hans/events/live-cd-2025-07-06-winning-live-24?session=live-cd-2025-07-06-winning-live-24-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -84065,6 +85275,51 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -84141,7 +85396,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -85485,7 +86740,7 @@
       ],
       "version_count": 17,
       "release_count": 17,
-      "performance_count": 5,
+      "performance_count": 7,
       "original_version_id": "song-starting-force-c0c6c398c4-v-c0c6c398c4",
       "creator_ids": [
         "creator-3b78b1a677",
@@ -85647,6 +86902,24 @@
               "event_url": "/zh-Hans/events/live-cd-2025-07-06-winning-live-24?session=live-cd-2025-07-06-winning-live-24-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 13,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "吉岡茉祐"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -85667,7 +86940,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -85697,7 +86970,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-stay-on-course-25be371353-v-25be371353",
       "creator_ids": [
         "creator-70bf07a860",
@@ -89683,6 +90956,29 @@
               "event_url": "/zh-Hans/events/live-other-2025-07-24-atc-special-stage-pretty-derby?session=live-other-2025-07-24-atc-special-stage-pretty-derby-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "秋山実咲",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -90269,7 +91565,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 16,
+          "performance_count": 17,
           "instrumental": false,
           "credits": [
             {
@@ -90858,7 +92154,7 @@
       ],
       "version_count": 5,
       "release_count": 5,
-      "performance_count": 16,
+      "performance_count": 17,
       "original_version_id": "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae",
       "creator_ids": [
         "creator-c436f537bf",
@@ -95851,6 +97147,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 18,
+              "setlist_no": "18",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -95925,6 +97239,24 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-other-2018-12-15-cygamesfes2018-1-special-live-day1?session=live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 24,
+              "setlist_no": "24",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -96004,7 +97336,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 8,
+          "performance_count": 10,
           "instrumental": false,
           "credits": [
             {
@@ -96134,7 +97466,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 8,
+      "performance_count": 10,
       "original_version_id": "song-unbreakable-8c599c4256-v-8c599c4256",
       "creator_ids": [
         "creator-095e4a5b84",
@@ -97277,6 +98609,26 @@
               "event_url": "/zh-Hans/events/live-cd-2021-11-06-starting-gate-unit-song-collection?session=live-cd-2021-11-06-starting-gate-unit-song-collection-session-1"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 13,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "木村千咲",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -97389,7 +98741,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 17,
+          "performance_count": 18,
           "instrumental": false,
           "credits": [
             {
@@ -98120,7 +99472,7 @@
       ],
       "version_count": 9,
       "release_count": 11,
-      "performance_count": 17,
+      "performance_count": 18,
       "original_version_id": "song-unlimited-impact-3293fdf81d-v-3293fdf81d",
       "creator_ids": [
         "creator-28646fea7b",
@@ -101083,6 +102435,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 26,
+              "setlist_no": "26",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大西沙織"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -101122,7 +102492,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -101252,7 +102622,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-waiting-for-tomorrow-5144cde439-v-5144cde439",
       "creator_ids": [
         "creator-0fab8f5af3",
@@ -110840,6 +112210,27 @@
               "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 22,
+              "setlist_no": "22",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "優木かな",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "日原あゆみ"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -111361,6 +112752,29 @@
               "event_url": "/zh-Hans/events/live-other-2021-11-20-animax-musix-2021-yokohama-part2?session=live-other-2021-11-20-animax-musix-2021-yokohama-part2-session-1"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "Machico",
+                "大坪由佳",
+                "衣川里佳",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -111449,7 +112863,7 @@
             }
           ],
           "release_count": 3,
-          "performance_count": 24,
+          "performance_count": 26,
           "instrumental": false,
           "credits": [
             {
@@ -112934,7 +114348,7 @@
       ],
       "version_count": 17,
       "release_count": 23,
-      "performance_count": 24,
+      "performance_count": 26,
       "original_version_id": "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f",
       "creator_ids": [
         "creator-340e11375e",
@@ -113653,6 +115067,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "塚田悠衣"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -113692,7 +115124,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -113724,7 +115156,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-zokzok-8b2c14f7fa-v-8b2c14f7fa",
       "creator_ids": [
         "creator-lucas-nainemoutou-2d8686f23a"
@@ -113990,6 +115422,25 @@
               "event_url": "/zh-Hans/events/live-cd-2025-07-26-1-1?session=live-cd-2025-07-26-1-1-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 19,
+              "setlist_no": "19",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "瀬戸桃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -114012,7 +115463,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -114084,7 +115535,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-38f64525a9-v-38f64525a9",
       "creator_ids": [
         "creator-honoka-takahashi-370b06424b"
@@ -115268,6 +116719,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 16,
+              "setlist_no": "16",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -115344,6 +116813,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 28,
+              "setlist_no": "28",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -115366,7 +116853,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -115719,7 +117206,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 5,
+      "performance_count": 7,
       "original_version_id": "song-66e8f91931-v-66e8f91931",
       "creator_ids": [
         "creator-apis-7e6674d509",
@@ -116635,6 +118122,9 @@
         "うまぴょい伝説 (TV Size)",
         "うまぴょい伝説 (TV Size) (2021 Remastered Version)",
         "うまぴょい伝説 (TV Size) [13話EDテーマ]",
+        "うまぴょい伝説 ※-TEAM A-",
+        "うまぴょい伝説 ※-TEAM B-",
+        "うまぴょい伝説 ※-TEAM C-",
         "うまぴょい伝説 ※Game size",
         "うまぴょい伝説 ※Short ver.",
         "うまぴょい伝説 ※うまぴょいSummerとして披露",
@@ -127541,6 +129031,51 @@
               "event_url": "/zh-Hans/events/live-cd-2025-07-06-winning-live-24?session=live-cd-2025-07-06-winning-live-24-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 26,
+              "setlist_no": "26",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -127610,6 +129145,52 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 26,
+              "setlist_no": "26",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹",
+                "瀬戸桃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -130912,6 +132493,44 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 20,
+              "setlist_no": "20",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより",
+                "藤井ゆきよ",
+                "明坂聡美"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -131358,6 +132977,124 @@
                 "va-0184"
               ],
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "巽悠衣子",
+                "大西沙織",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 30,
+              "setlist_no": "30",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "前田玲奈",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "うまぴょい伝説 ※-TEAM C-",
+                "label": "-TEAM C-"
+              }
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 31,
+              "setlist_no": "31",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大坪由佳",
+                "巽悠衣子",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "うまぴょい伝説 ※-TEAM B-",
+                "label": "-TEAM B-"
+              }
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 32,
+              "setlist_no": "32",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大西沙織"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "うまぴょい伝説 ※-TEAM A-",
+                "label": "-TEAM A-"
+              }
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -132610,7 +134347,7 @@
             }
           ],
           "release_count": 49,
-          "performance_count": 159,
+          "performance_count": 166,
           "instrumental": false,
           "credits": [
             {
@@ -147172,7 +148909,7 @@
       ],
       "version_count": 24,
       "release_count": 125,
-      "performance_count": 159,
+      "performance_count": 166,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
         "creator-eaf94340d3",
@@ -151019,6 +152756,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "月城日花"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -151058,7 +152813,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -151087,7 +152842,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-c56140a402-v-c56140a402",
       "creator_ids": [
         "creator-yoss-72dee9e4ed"
@@ -152519,7 +154274,8 @@
       "id": "song-a470359a05",
       "title": "ぱかチューブっ！ですが、何か？",
       "aliases": [
-        "ぱかチューブっ！ですが、何か？"
+        "ぱかチューブっ！ですが、何か？",
+        "ぱかチューブっ！ですが、何か？ ※Short Intro Ver."
       ],
       "legacy_ids": [],
       "artists": [
@@ -152659,6 +154415,29 @@
               "event_url": "/zh-Hans/events/live-other-2019-04-14-2?session=live-other-2019-04-14-2-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 18,
+              "setlist_no": "18",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Machico",
+                "上田瞳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "ぱかチューブっ！ですが、何か？ ※Short Intro Ver.",
+                "label": "Short Intro Ver."
+              }
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -152681,7 +154460,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -152728,7 +154507,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-a470359a05-v-a470359a05",
       "creator_ids": [
         "creator-14a2ce8737",
@@ -153321,6 +155100,28 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 10,
+              "setlist_no": "10",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "星谷美緒",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -153403,7 +155204,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 8,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -153971,7 +155772,7 @@
       ],
       "version_count": 8,
       "release_count": 8,
-      "performance_count": 8,
+      "performance_count": 9,
       "original_version_id": "song-cdf2727e54-v-cdf2727e54",
       "creator_ids": [
         "creator-9be9261917",
@@ -159685,6 +161486,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-12-15-cygamesfes2018-1-special-live-day1?session=live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "和氣あず未"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -159800,7 +161619,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 10,
+          "performance_count": 11,
           "instrumental": false,
           "credits": [
             {
@@ -159930,7 +161749,7 @@
       ],
       "version_count": 2,
       "release_count": 3,
-      "performance_count": 10,
+      "performance_count": 11,
       "original_version_id": "song-c42fc6be53-v-c42fc6be53",
       "creator_ids": [
         "creator-9dd245e820",
@@ -168740,6 +170559,29 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 23,
+              "setlist_no": "23",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大坪由佳",
+                "巽悠衣子",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -168881,7 +170723,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 13,
+          "performance_count": 14,
           "instrumental": false,
           "credits": [
             {
@@ -169486,7 +171328,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 13,
+      "performance_count": 14,
       "original_version_id": "song-15e2b8f183-v-15e2b8f183",
       "creator_ids": [
         "creator-4f0b2872a5",
@@ -172292,6 +174134,27 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "奥野香耶",
+                "月城日花",
+                "中島由貴",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -172583,7 +174446,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 12,
+          "performance_count": 13,
           "instrumental": false,
           "credits": [
             {
@@ -175128,7 +176991,7 @@
       ],
       "version_count": 24,
       "release_count": 24,
-      "performance_count": 12,
+      "performance_count": 13,
       "original_version_id": "song-a6384dba1c-v-a6384dba1c",
       "creator_ids": [
         "creator-3e35bf54dc",
@@ -188957,6 +190820,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "亜咲花"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -188996,7 +190877,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -189029,7 +190910,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-4631f698b0-v-4631f698b0",
       "creator_ids": [
         "creator-14a2ce8737",
@@ -193294,6 +195175,31 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 15,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -193427,7 +195333,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 24,
+          "performance_count": 25,
           "instrumental": false,
           "credits": [
             {
@@ -194664,7 +196570,7 @@
       ],
       "version_count": 16,
       "release_count": 17,
-      "performance_count": 24,
+      "performance_count": 25,
       "original_version_id": "song-4bfe85c283-v-4bfe85c283",
       "creator_ids": [
         "creator-3b78b1a677",
@@ -198172,6 +200078,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 12,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高野麻里佳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -198211,7 +200135,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 6,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -198556,7 +200480,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 6,
+      "performance_count": 7,
       "original_version_id": "song-c7cdb22480-v-c7cdb22480",
       "creator_ids": [
         "creator-8734859531",
@@ -200634,6 +202558,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-11-25-title-aae05e9ef411?session=live-other-2018-11-25-title-aae05e9ef411-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 10,
+              "setlist_no": "10",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -200692,7 +202634,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -200822,7 +202764,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 7,
+      "performance_count": 8,
       "original_version_id": "song-778904f80f-v-778904f80f",
       "creator_ids": [
         "creator-500b86dc49",
@@ -201097,6 +203039,24 @@
               "event_url": "/zh-Hans/events/live-cd-2025-07-06-winning-live-24?session=live-cd-2025-07-06-winning-live-24-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 14,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "日笠陽子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -201119,7 +203079,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -201148,7 +203108,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-43bf8ce883-v-43bf8ce883",
       "creator_ids": [
         "creator-cf49f62a1e"
@@ -207434,6 +209394,24 @@
               "event_url": "/zh-Hans/events/live-cd-2025-07-06-winning-live-24?session=live-cd-2025-07-06-winning-live-24-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "天海由梨奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -207454,7 +209432,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -207486,7 +209464,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-7fb2cff5ec-v-7fb2cff5ec",
       "creator_ids": [
         "creator-aira-f4bc4d87cd"
@@ -212309,6 +214287,28 @@
               }
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "徳井青空"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "performance_variant": {
+                "title": "帝笑歌劇～讃えよ永久に～",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -212326,6 +214326,28 @@
                 "va-0073"
               ],
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1",
+              "performance_variant": {
+                "title": "帝笑歌劇～讃えよ永久に～",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "徳井青空"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
               "performance_variant": {
                 "title": "帝笑歌劇～讃えよ永久に～",
                 "label": ""
@@ -212425,7 +214447,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 6,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -212525,7 +214547,7 @@
       ],
       "version_count": 2,
       "release_count": 3,
-      "performance_count": 6,
+      "performance_count": 8,
       "original_version_id": "song-4b30d8d74a-v-eb67a20d4a",
       "creator_ids": [
         "creator-078370b132",
@@ -213833,6 +215855,30 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-2"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 22,
+              "setlist_no": "22",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "羊宮妃那",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -214001,6 +216047,29 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-1"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "前田玲奈",
+                "徳井青空",
+                "青木瑠璃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -214031,7 +216100,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 9,
+          "performance_count": 11,
           "instrumental": false,
           "credits": [
             {
@@ -215223,7 +217292,7 @@
       ],
       "version_count": 14,
       "release_count": 17,
-      "performance_count": 9,
+      "performance_count": 11,
       "original_version_id": "song-phantasia-81aafc5f7e-v-81aafc5f7e",
       "creator_ids": [
         "creator-85bf4015b4",
@@ -216135,6 +218204,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Machico"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -216190,6 +218277,24 @@
                 "va-0003"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
+            },
+            {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Machico"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
             },
             {
               "event_id": "live-numbered-2nd-event-2018-10-14",
@@ -216269,7 +218374,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -216622,7 +218727,7 @@
       ],
       "version_count": 5,
       "release_count": 7,
-      "performance_count": 7,
+      "performance_count": 9,
       "original_version_id": "song-3dc019b31d-v-3dc019b31d",
       "creator_ids": [
         "creator-corochi-3d0a352bef",
@@ -217376,6 +219481,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 14,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "宮下早紀"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -217415,7 +219538,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -217447,7 +219570,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-c4bc0eb443-v-c4bc0eb443",
       "creator_ids": [
         "creator-6d35eb906e"
@@ -222868,6 +224991,26 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-2"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 10,
+              "setlist_no": "10",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "秋山実咲",
+                "望月ゆみこ",
+                "野木奏"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -222889,6 +225032,26 @@
                 "va-0163"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 21,
+              "setlist_no": "21",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "福原綾香",
+                "指出毬亜",
+                "夏目妃菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -223344,6 +225507,29 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-2"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 14,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "大坪由佳",
+                "髙橋ミナミ",
+                "青木瑠璃子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -223374,7 +225560,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 20,
+          "performance_count": 23,
           "instrumental": false,
           "credits": [
             {
@@ -224444,7 +226630,7 @@
       ],
       "version_count": 14,
       "release_count": 15,
-      "performance_count": 20,
+      "performance_count": 23,
       "original_version_id": "song-87be3723c2-v-87be3723c2",
       "creator_ids": [
         "creator-434eff6e60",
@@ -225567,6 +227753,24 @@
               "event_url": "/zh-Hans/events/live-other-2018-12-15-cygamesfes2018-1-special-live-day1?session=live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "鬼頭明里"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -225606,7 +227810,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -225736,7 +227940,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-tuning-heart-c3af3e8174-v-c3af3e8174",
       "creator_ids": [
         "creator-76282ff619",
@@ -226996,6 +229200,26 @@
               "event_url": "/zh-Hans/events/live-cd-2021-11-06-winning-live-02?session=live-cd-2021-11-06-winning-live-02-session-1"
             },
             {
+              "event_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+              "event_title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+              "event_date": "2021-08-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2021-08-28",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "近藤唯",
+                "渡部優衣",
+                "渡部恵子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2021-08-28-3rd-event-winning-dream-stage-day1?session=live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
               "event_date": "2021-08-28",
@@ -227020,7 +229244,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -227369,7 +229593,7 @@
       ],
       "version_count": 5,
       "release_count": 5,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-aad00d3081-v-aad00d3081",
       "creator_ids": [
         "creator-500b86dc49",
@@ -227870,6 +230094,28 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "大空直美",
+                "近藤唯",
+                "真名瀬日和"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -227898,7 +230144,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -228452,7 +230698,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 1,
+      "performance_count": 2,
       "original_version_id": "song-memoire-4bad1537a4-v-4bad1537a4",
       "creator_ids": [
         "creator-c436f537bf"
@@ -229326,6 +231572,29 @@
               "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大和田仁美",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "稲垣好",
+                "菊池紗矢香"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -229528,7 +231797,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 8,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -230606,7 +232875,7 @@
       ],
       "version_count": 14,
       "release_count": 14,
-      "performance_count": 8,
+      "performance_count": 9,
       "original_version_id": "song-461862b933-v-461862b933",
       "creator_ids": [
         "creator-cf49f62a1e"
@@ -232117,7 +234386,8 @@
       "aliases": [
         "直感ノープロブレム!",
         "直感ノープロブレム！",
-        "直感ノープロブレム！ (2021 Remastered Version)"
+        "直感ノープロブレム！ (2021 Remastered Version)",
+        "直感ノープロブレム！ ※Long Intro Ver."
       ],
       "legacy_ids": [],
       "artists": [
@@ -232217,6 +234487,28 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大坪由佳"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "直感ノープロブレム！ ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -232294,7 +234586,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -232426,7 +234718,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-1c25da4b8b-v-1c25da4b8b",
       "creator_ids": [
         "creator-16e2e72a5f",
@@ -233151,6 +235443,24 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-2"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Lynn"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -233228,7 +235538,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 6,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -233436,7 +235746,7 @@
       ],
       "version_count": 3,
       "release_count": 5,
-      "performance_count": 6,
+      "performance_count": 7,
       "original_version_id": "song-burning-heart-c74e3107bb-v-c74e3107bb",
       "creator_ids": [
         "creator-ajurika-e2947b5d62",
@@ -235197,6 +237507,31 @@
               "event_url": "/zh-Hans/events/live-other-2025-08-02-tokyo-idol-festival-2025-day2?session=live-other-2025-08-02-tokyo-idol-festival-2025-day2-session-1"
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "香坂さき",
+                "奥野香耶",
+                "秋山実咲",
+                "芹澤優",
+                "望月ゆみこ",
+                "野木奏",
+                "石原夏織",
+                "夏目妃菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -235226,6 +237561,26 @@
                 "va-0163"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "大和田仁美",
+                "稲垣好",
+                "菊池紗矢香"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -235313,7 +237668,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 6,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -235412,7 +237767,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 6,
+      "performance_count": 8,
       "original_version_id": "song-2b5335a8e0-v-2b5335a8e0",
       "creator_ids": [
         "creator-24ff9668ab",
@@ -240795,6 +243150,7 @@
       "aliases": [
         "走れウマ娘",
         "走れウマ娘 (Shuhei Takahashi Remix)",
+        "走れウマ娘 ※Short Intro Ver.",
         "走れウマ娘 ※大晦日特別ver.",
         "走れウマ娘（Remix Ver.）",
         "走れウマ娘（どんどこみっくす）"
@@ -241623,6 +243979,31 @@
               "event_url": "/zh-Hans/events/live-other-2018-12-16-cygamesfes2018-2-special-live-day2?session=live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1"
             },
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 22,
+              "setlist_no": "22",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "Lynn",
+                "松井恵理子",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "performance_variant": {
+                "title": "走れウマ娘 ※Short Intro Ver.",
+                "label": "Short Intro Ver."
+              }
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -241649,7 +244030,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 10,
+          "performance_count": 11,
           "instrumental": false,
           "credits": [
             {
@@ -241800,7 +244181,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 10,
+      "performance_count": 11,
       "original_version_id": "song-2d2a6742e3-v-2d2a6742e3",
       "creator_ids": [
         "creator-47bf338b49",
@@ -241821,6 +244202,7 @@
         "超える (オグリキャップ&タマモクロス)",
         "超える (オグリキャップ)",
         "超える ※Short ver.",
+        "超える ※TV ver.",
         "超える(feat.オグリキャップ)"
       ],
       "legacy_ids": [],
@@ -241921,6 +244303,25 @@
               }
             },
             {
+              "event_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+              "event_date": "2025-05-25",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+              "session_label": "DAY2",
+              "session_date": "2025-05-25",
+              "performance_index": 16,
+              "setlist_no": "16",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉",
+                "大空直美"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-25-6th-event-the-new-frontier-day2?session=live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -241940,6 +244341,28 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-2"
+            },
+            {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 17,
+              "setlist_no": "17",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "高柳知葉"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "performance_variant": {
+                "title": "超える ※TV ver.",
+                "label": "TV ver."
+              }
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -241981,7 +244404,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -242241,7 +244664,7 @@
       ],
       "version_count": 5,
       "release_count": 5,
-      "performance_count": 5,
+      "performance_count": 7,
       "original_version_id": "song-82faef5370-v-82faef5370",
       "creator_ids": [
         "creator-0c7880053b",
@@ -247176,6 +249599,24 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+              "event_title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+              "event_date": "2018-10-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+              "session_label": "本公演",
+              "session_date": "2018-10-14",
+              "performance_index": 20,
+              "setlist_no": "20",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "巽悠衣子"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2018-10-14-2nd-event-sound-fanfare?session=live-other-2018-10-14-2nd-event-sound-fanfare-session-1"
+            },
+            {
               "event_id": "live-numbered-2nd-event-2018-10-14",
               "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
               "event_date": "2018-10-14",
@@ -247253,7 +249694,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -247383,7 +249824,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-cedd69644c-v-cedd69644c",
       "creator_ids": [
         "creator-639bbfdb11",
@@ -247785,6 +250226,29 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+              "event_title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+              "event_date": "2025-05-24",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-05-24",
+              "performance_index": 23,
+              "setlist_no": "23",
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "guest_performers": [
+                "指出毬亜",
+                "東山奈央",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "芹澤優"
+              ],
+              "event_url": "/zh-Hans/events/live-other-2025-05-24-6th-event-the-new-frontier-day1?session=live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -247815,7 +250279,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -247847,7 +250311,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-41a5f3cfb9-v-41a5f3cfb9",
       "creator_ids": [
         "creator-8ccf39ae29"
@@ -248016,5 +250480,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "445b4f2f21fc37207941"
+  "build_id": "d1781cd48a5fb25239a7"
 }

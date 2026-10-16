@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T11:12:27+00:00",
+  "generated_at": "2026-10-16T18:20:00+00:00",
   "source_integrity": {
     "live_data.json": {
-      "sha256": "ef236d54f8ef3690e865b3829a60127b33caf8f14bcfc3dc18083e7e230c2bea",
+      "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "0afa1f599269b5da08baf403e670ceb26566c31524188a709edbda89bd1fa89d",
+      "sha256": "e29c4d63b5ef3852b707ad861c501c5c32b210b0fd7f128af40105d090637499",
       "preserved": true
     }
   },
   "coverage": {
-    "events": 473,
+    "events": 477,
     "by_kind": {
       "concert": 81,
       "official_program": 227,
-      "onsite": 165
+      "onsite": 169
     },
     "by_mode": {
       "online": 227,
-      "onsite": 246
+      "onsite": 250
     },
     "official_programs": 227,
     "unresolved_cast_names": 0
@@ -23498,6 +23498,2025 @@
       "metadata_status": "complete",
       "legacy_aliases": [],
       "setlist_status": "none"
+    },
+    {
+      "id": "live-other-2025-05-25-6th-event-the-new-frontier-day2",
+      "title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY2",
+      "date": "2025-05-25",
+      "end_date": "2025-05-25",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0179",
+          "name": "高柳知叶",
+          "character_id": "oguricap",
+          "role": "小栗帽",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0009",
+          "name": "上田瞳",
+          "character_id": "goldship",
+          "role": "黄金船",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0155",
+          "name": "衣川里佳",
+          "character_id": "naritabrian",
+          "role": "成田白仁",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0052",
+          "name": "大空直美",
+          "character_id": "tamamocross",
+          "role": "玉藻十字",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0158",
+          "name": "近藤唯",
+          "character_id": "biwahayahide",
+          "role": "琵琶晨光",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0176",
+          "name": "香坂沙希",
+          "character_id": "goldcity",
+          "role": "黄金城市",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0033",
+          "name": "优木加奈",
+          "character_id": "supercreek",
+          "role": "超级溪流",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0010",
+          "name": "下地紫野",
+          "character_id": "nakayamafesta",
+          "role": "中山庆典",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0055",
+          "name": "天海由梨奈",
+          "character_id": "mrcb",
+          "role": "千明代表",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0162",
+          "name": "野口瑠璃子",
+          "character_id": "sakurachiyonoo",
+          "role": "樱花千代王",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0026",
+          "name": "会泽纱弥",
+          "character_id": "mejiroardan",
+          "role": "目白阿尔丹",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0079",
+          "name": "日原步美",
+          "character_id": "yaenomuteki",
+          "role": "八重无敌",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0056",
+          "name": "奥野香耶",
+          "character_id": "verxina",
+          "role": "极峰",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0081",
+          "name": "日笠阳子",
+          "character_id": "orfevre",
+          "role": "黄金巨匠",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0146",
+          "name": "芹泽优",
+          "character_id": "gentildonna",
+          "role": "贵妇人",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0088",
+          "name": "月城日花",
+          "character_id": "winvariation",
+          "role": "凯旋芭蕾",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0080",
+          "name": "日比优理香",
+          "character_id": "fenomeno",
+          "role": "超常骏骥",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0141",
+          "name": "紫月杏朱彩",
+          "character_id": "blastonepiece",
+          "role": "防爆装束",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0127",
+          "name": "石原夏织",
+          "character_id": "almondeye",
+          "role": "杏目",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0011",
+          "name": "中岛由贵",
+          "character_id": "luckylilac",
+          "role": "旺紫丁",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0048",
+          "name": "夏目妃菜",
+          "character_id": "granalegria",
+          "role": "放声欢呼",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0015",
+          "name": "久保田未梦",
+          "character_id": "lovesonlyyou",
+          "role": "唯独爱你",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0124",
+          "name": "真名濑日和",
+          "character_id": "chronogenesis",
+          "role": "创世驹",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0062",
+          "name": "小田杏树",
+          "character_id": "currenbouquetdor",
+          "role": "机伶金花",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0082",
+          "name": "明坂聪美",
+          "character_id": "akasakamisato",
+          "role": "赤坂美聡",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0136",
+          "name": "秋山实咲",
+          "character_id": "believe",
+          "role": "信念",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0038",
+          "name": "吉冈茉祐",
+          "character_id": "dreamjourney",
+          "role": "梦之旅",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0089",
+          "name": "望月裕美子",
+          "character_id": "calstonelighto",
+          "role": "金镇之光",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0163",
+          "name": "野木奏",
+          "character_id": "durandal",
+          "role": "多旺达",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "live-other-2025-05-25-6th-event-the-new-frontier-day2-session-1",
+          "label": "DAY2",
+          "date": "2025-05-25",
+          "songs": [
+            "STARTING FORCE",
+            "U.M.A. NEW WORLD!!",
+            "立ち位置ゼロ番！順位は一番！",
+            "夢疾風",
+            "どこまで走れば",
+            "ソシテミンナノ",
+            "灰のmemoire",
+            "Hat on your Head!",
+            "Gaze on Me!",
+            "本能スピード",
+            "L'Arc de gloire",
+            "Ms. VICTORIA",
+            "Stay on Course",
+            "以下、勅命",
+            "Everlasting BEATS",
+            "超える",
+            "Never Looking Back",
+            "unbreakable",
+            "NEXT FRONTIER",
+            "Glory Eyes",
+            "Precious Star Dreamer",
+            "winning the soul",
+            "AmpReFire",
+            "Legend-Changer",
+            "Shake The World!!",
+            "うまぴょい伝説"
+          ],
+          "character_ids": [],
+          "performances": [
+            {
+              "song": "STARTING FORCE",
+              "character_ids": [],
+              "setlist_no": "1",
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-starting-force-c0c6c398c4",
+              "version_id": "song-starting-force-c0c6c398c4-v-c0c6c398c4",
+              "song_title": "STARTING FORCE"
+            },
+            {
+              "song": "U.M.A. NEW WORLD!!",
+              "character_ids": [],
+              "setlist_no": "2",
+              "guest_performers": [
+                "秋山実咲",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香"
+              ],
+              "song_id": "song-u-m-a-new-world-ca9ae685ae",
+              "version_id": "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae",
+              "song_title": "U.M.A. NEW WORLD!!"
+            },
+            {
+              "song": "立ち位置ゼロ番！順位は一番！",
+              "character_ids": [],
+              "setlist_no": "3",
+              "guest_performers": [
+                "香坂さき",
+                "奥野香耶",
+                "秋山実咲",
+                "芹澤優",
+                "望月ゆみこ",
+                "野木奏",
+                "石原夏織",
+                "夏目妃菜"
+              ],
+              "song_id": "song-2b5335a8e0",
+              "version_id": "song-2b5335a8e0-v-2b5335a8e0",
+              "song_title": "立ち位置ゼロ番！順位は一番！"
+            },
+            {
+              "song": "夢疾風",
+              "character_ids": [],
+              "setlist_no": "4",
+              "guest_performers": [
+                "天海由梨奈"
+              ],
+              "song_id": "song-7fb2cff5ec",
+              "version_id": "song-7fb2cff5ec-v-7fb2cff5ec",
+              "song_title": "夢疾風"
+            },
+            {
+              "song": "どこまで走れば",
+              "character_ids": [],
+              "setlist_no": "5",
+              "guest_performers": [
+                "月城日花"
+              ],
+              "song_id": "song-c56140a402",
+              "version_id": "song-c56140a402-v-c56140a402",
+              "song_title": "どこまで走れば"
+            },
+            {
+              "song": "ソシテミンナノ",
+              "character_ids": [],
+              "setlist_no": "6",
+              "guest_performers": [
+                "奥野香耶",
+                "月城日花",
+                "中島由貴",
+                "小田杏樹"
+              ],
+              "song_id": "song-a6384dba1c",
+              "version_id": "song-a6384dba1c-v-a6384dba1c",
+              "song_title": "ソシテミンナノ"
+            },
+            {
+              "song": "灰のmemoire",
+              "character_ids": [],
+              "setlist_no": "7",
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "大空直美",
+                "近藤唯",
+                "真名瀬日和"
+              ],
+              "song_id": "song-memoire-4bad1537a4",
+              "version_id": "song-memoire-4bad1537a4-v-4bad1537a4",
+              "song_title": "灰のmemoire"
+            },
+            {
+              "song": "Hat on your Head!",
+              "character_ids": [],
+              "setlist_no": "8",
+              "guest_performers": [
+                "天海由梨奈",
+                "奥野香耶",
+                "日比優理香",
+                "久保田未夢"
+              ],
+              "song_id": "song-hat-on-your-head-7901565fc6",
+              "version_id": "song-hat-on-your-head-7901565fc6-v-7901565fc6",
+              "song_title": "Hat on your Head！"
+            },
+            {
+              "song": "Gaze on Me!",
+              "character_ids": [],
+              "setlist_no": "9",
+              "guest_performers": [
+                "衣川里佳",
+                "香坂さき",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "芹澤優",
+                "夏目妃菜"
+              ],
+              "song_id": "song-gaze-on-me-90b0b1d78a",
+              "version_id": "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a",
+              "song_title": "Gaze on Me!"
+            },
+            {
+              "song": "本能スピード",
+              "character_ids": [],
+              "setlist_no": "10",
+              "guest_performers": [
+                "秋山実咲",
+                "望月ゆみこ",
+                "野木奏"
+              ],
+              "song_id": "song-87be3723c2",
+              "version_id": "song-87be3723c2-v-87be3723c2",
+              "song_title": "本能スピード"
+            },
+            {
+              "song": "L'Arc de gloire",
+              "character_ids": [],
+              "setlist_no": "11",
+              "guest_performers": [
+                "上田瞳",
+                "優木かな",
+                "下地紫野",
+                "紫月杏朱彩"
+              ],
+              "song_id": "song-l-arc-de-gloire-aa7474ca7e",
+              "version_id": "song-l-arc-de-gloire-aa7474ca7e-v-aa7474ca7e",
+              "song_title": "L'Arc de gloire"
+            },
+            {
+              "song": "Ms. VICTORIA",
+              "character_ids": [],
+              "setlist_no": "12",
+              "guest_performers": [
+                "日笠陽子",
+                "芹澤優"
+              ],
+              "song_id": "song-ms-victoria-8fdfbbf2a8",
+              "version_id": "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8",
+              "song_title": "Ms. VICTORIA"
+            },
+            {
+              "song": "Stay on Course",
+              "character_ids": [],
+              "setlist_no": "13",
+              "guest_performers": [
+                "吉岡茉祐"
+              ],
+              "song_id": "song-stay-on-course-25be371353",
+              "version_id": "song-stay-on-course-25be371353-v-25be371353",
+              "song_title": "Stay on Course"
+            },
+            {
+              "song": "以下、勅命",
+              "character_ids": [],
+              "setlist_no": "14",
+              "guest_performers": [
+                "日笠陽子"
+              ],
+              "song_id": "song-43bf8ce883",
+              "version_id": "song-43bf8ce883-v-43bf8ce883",
+              "song_title": "以下、勅命"
+            },
+            {
+              "song": "Everlasting BEATS",
+              "character_ids": [],
+              "setlist_no": "15",
+              "guest_performers": [
+                "上田瞳",
+                "下地紫野",
+                "日笠陽子",
+                "吉岡茉祐",
+                "日比優理香"
+              ],
+              "song_id": "song-everlasting-beats-3a805703a6",
+              "version_id": "song-everlasting-beats-3a805703a6-v-3a805703a6",
+              "song_title": "Everlasting BEATS"
+            },
+            {
+              "song": "超える",
+              "character_ids": [],
+              "setlist_no": "16",
+              "guest_performers": [
+                "高柳知葉",
+                "大空直美"
+              ],
+              "song_id": "song-82faef5370",
+              "version_id": "song-82faef5370-v-82faef5370",
+              "song_title": "超える"
+            },
+            {
+              "song": "Never Looking Back",
+              "character_ids": [],
+              "setlist_no": "17",
+              "guest_performers": [
+                "高柳知葉",
+                "大空直美",
+                "香坂さき",
+                "優木かな",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ"
+              ],
+              "song_id": "song-never-looking-back-d2ca0c4311",
+              "version_id": "song-never-looking-back-d2ca0c4311-v-d2ca0c4311",
+              "song_title": "Never Looking Back"
+            },
+            {
+              "song": "unbreakable",
+              "character_ids": [],
+              "setlist_no": "18",
+              "guest_performers": [
+                "高柳知葉"
+              ],
+              "song_id": "song-unbreakable-8c599c4256",
+              "version_id": "song-unbreakable-8c599c4256-v-8c599c4256",
+              "song_title": "unbreakable"
+            },
+            {
+              "song": "NEXT FRONTIER",
+              "character_ids": [],
+              "setlist_no": "19",
+              "guest_performers": [
+                "紫月杏朱彩",
+                "中島由貴",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-next-frontier-5267707c1b",
+              "version_id": "song-next-frontier-5267707c1b-v-5267707c1b",
+              "song_title": "NEXT FRONTIER"
+            },
+            {
+              "song": "Glory Eyes",
+              "character_ids": [],
+              "setlist_no": "20",
+              "guest_performers": [
+                "石原夏織"
+              ],
+              "song_id": "song-glory-eyes-7d0a444aaf",
+              "version_id": "song-glory-eyes-7d0a444aaf-v-7d0a444aaf",
+              "song_title": "Glory Eyes"
+            },
+            {
+              "song": "Precious Star Dreamer",
+              "character_ids": [],
+              "setlist_no": "21",
+              "guest_performers": [
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-precious-star-dreamer-b7c22c4296",
+              "version_id": "song-precious-star-dreamer-b7c22c4296-v-b7c22c4296",
+              "song_title": "Precious Star Dreamer"
+            },
+            {
+              "song": "winning the soul",
+              "character_ids": [],
+              "setlist_no": "22",
+              "guest_performers": [
+                "優木かな",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "日原あゆみ"
+              ],
+              "song_id": "song-winning-the-soul-7eddcf2b7f",
+              "version_id": "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f",
+              "song_title": "winning the soul"
+            },
+            {
+              "song": "AmpReFire",
+              "character_ids": [],
+              "setlist_no": "23",
+              "guest_performers": [
+                "上田瞳",
+                "衣川里佳",
+                "近藤唯",
+                "日笠陽子",
+                "月城日花"
+              ],
+              "song_id": "song-amprefire-b503e6653a",
+              "version_id": "song-amprefire-b503e6653a-v-b503e6653a",
+              "song_title": "AmpReFire"
+            },
+            {
+              "song": "Legend-Changer",
+              "character_ids": [],
+              "setlist_no": "24",
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-legend-changer-fcb0cca1c5",
+              "version_id": "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5",
+              "song_title": "Legend-Changer"
+            },
+            {
+              "song": "Shake The World!!",
+              "character_ids": [],
+              "setlist_no": "25",
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-shake-the-world-6a204b97d3",
+              "version_id": "song-shake-the-world-6a204b97d3-v-6a204b97d3",
+              "song_title": "Shake The World!!"
+            },
+            {
+              "song": "うまぴょい伝説",
+              "character_ids": [],
+              "setlist_no": "26",
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "衣川里佳",
+                "大空直美",
+                "近藤唯",
+                "香坂さき",
+                "優木かな",
+                "下地紫野",
+                "天海由梨奈",
+                "野口瑠璃子",
+                "会沢紗弥",
+                "日原あゆみ",
+                "奥野香耶",
+                "秋山実咲",
+                "日笠陽子",
+                "芹澤優",
+                "月城日花",
+                "吉岡茉祐",
+                "望月ゆみこ",
+                "野木奏",
+                "日比優理香",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">STARTING FORCE</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">会沢紗弥</span><span class=\"guest-performer\">日原あゆみ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">月城日花</span><span class=\"guest-performer\">吉岡茉祐</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span><span class=\"guest-performer\">日比優理香</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">U.M.A. NEW WORLD!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">月城日花</span><span class=\"guest-performer\">吉岡茉祐</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span><span class=\"guest-performer\">日比優理香</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">立ち位置ゼロ番！順位は一番！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">夏目妃菜</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">夢疾風</td><td class=\"setlist-perf\"><span class=\"guest-performer\">天海由梨奈</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">どこまで走れば</td><td class=\"setlist-perf\"><span class=\"guest-performer\">月城日花</span></td></tr>\n<tr><td class=\"setlist-no\">6</td><td class=\"setlist-song\">ソシテミンナノ</td><td class=\"setlist-perf\"><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">月城日花</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">7</td><td class=\"setlist-song\">灰のmemoire</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">真名瀬日和</span></td></tr>\n<tr><td class=\"setlist-no\">8</td><td class=\"setlist-song\">Hat on your Head!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">日比優理香</span><span class=\"guest-performer\">久保田未夢</span></td></tr>\n<tr><td class=\"setlist-no\">9</td><td class=\"setlist-song\">Gaze on Me!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">会沢紗弥</span><span class=\"guest-performer\">日原あゆみ</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">夏目妃菜</span></td></tr>\n<tr><td class=\"setlist-no\">10</td><td class=\"setlist-song\">本能スピード</td><td class=\"setlist-perf\"><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span></td></tr>\n<tr><td class=\"setlist-no\">11</td><td class=\"setlist-song\">L&#x27;Arc de gloire</td><td class=\"setlist-perf\"><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">紫月杏朱彩</span></td></tr>\n<tr><td class=\"setlist-no\">12</td><td class=\"setlist-song\">Ms. VICTORIA</td><td class=\"setlist-perf\"><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">芹澤優</span></td></tr>\n<tr><td class=\"setlist-no\">13</td><td class=\"setlist-song\">Stay on Course</td><td class=\"setlist-perf\"><span class=\"guest-performer\">吉岡茉祐</span></td></tr>\n<tr><td class=\"setlist-no\">14</td><td class=\"setlist-song\">以下、勅命</td><td class=\"setlist-perf\"><span class=\"guest-performer\">日笠陽子</span></td></tr>\n<tr><td class=\"setlist-no\">15</td><td class=\"setlist-song\">Everlasting BEATS</td><td class=\"setlist-perf\"><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">吉岡茉祐</span><span class=\"guest-performer\">日比優理香</span></td></tr>\n<tr><td class=\"setlist-no\">16</td><td class=\"setlist-song\">超える</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">大空直美</span></td></tr>\n<tr><td class=\"setlist-no\">17</td><td class=\"setlist-song\">Never Looking Back</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">会沢紗弥</span><span class=\"guest-performer\">日原あゆみ</span></td></tr>\n<tr><td class=\"setlist-no\">18</td><td class=\"setlist-song\">unbreakable</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span></td></tr>\n<tr><td class=\"setlist-no\">19</td><td class=\"setlist-song\">NEXT FRONTIER</td><td class=\"setlist-perf\"><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">20</td><td class=\"setlist-song\">Glory Eyes</td><td class=\"setlist-perf\"><span class=\"guest-performer\">石原夏織</span></td></tr>\n<tr><td class=\"setlist-no\">21</td><td class=\"setlist-song\">Precious Star Dreamer</td><td class=\"setlist-perf\"><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">22</td><td class=\"setlist-song\">winning the soul</td><td class=\"setlist-perf\"><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">日原あゆみ</span></td></tr>\n<tr><td class=\"setlist-no\">23</td><td class=\"setlist-song\">AmpReFire</td><td class=\"setlist-perf\"><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">月城日花</span></td></tr>\n<tr><td class=\"setlist-no\">24</td><td class=\"setlist-song\">Legend-Changer</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">会沢紗弥</span><span class=\"guest-performer\">日原あゆみ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">月城日花</span><span class=\"guest-performer\">吉岡茉祐</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span><span class=\"guest-performer\">日比優理香</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">25</td><td class=\"setlist-song\">Shake The World!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">会沢紗弥</span><span class=\"guest-performer\">日原あゆみ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">月城日花</span><span class=\"guest-performer\">吉岡茉祐</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span><span class=\"guest-performer\">日比優理香</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">26</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">香坂さき</span><span class=\"guest-performer\">優木かな</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">野口瑠璃子</span><span class=\"guest-performer\">会沢紗弥</span><span class=\"guest-performer\">日原あゆみ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">秋山実咲</span><span class=\"guest-performer\">日笠陽子</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">月城日花</span><span class=\"guest-performer\">吉岡茉祐</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">野木奏</span><span class=\"guest-performer\">日比優理香</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/live_cat_data.json",
+            "category": "other",
+            "section": null,
+            "group": 64,
+            "performance": 0,
+            "day": 0
+          },
+          "setlist_status": "verified"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "curated_live",
+          "label": "站内精调歌单",
+          "url": "/zh-Hans/live/other/64"
+        }
+      ],
+      "legacy_url": "/zh-Hans/live/other/64",
+      "legacy_aliases": [
+        "/zh-Hans/live/other/64",
+        "/zh-Hans/live/other/64/0/0"
+      ],
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "summary": "出处：https://www.eventernote.com/events/410099",
+      "setlist_status": "verified"
+    },
+    {
+      "id": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+      "title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier 春公演 DAY1",
+      "date": "2025-05-24",
+      "end_date": "2025-05-24",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0179",
+          "name": "高柳知叶",
+          "character_id": "oguricap",
+          "role": "小栗帽",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0085",
+          "name": "星谷美绪",
+          "character_id": "mayanotopgun",
+          "role": "摩耶重炮",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0132",
+          "name": "福原绫香",
+          "character_id": "seekingthepearl",
+          "role": "采珠",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0049",
+          "name": "大和田仁美",
+          "character_id": "smartfalcon",
+          "role": "醒目飞鹰",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0010",
+          "name": "下地紫野",
+          "character_id": "nakayamafesta",
+          "role": "中山庆典",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0078",
+          "name": "新田日和",
+          "character_id": "matikanefukukitaru",
+          "role": "待兼福来",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0055",
+          "name": "天海由梨奈",
+          "character_id": "mrcb",
+          "role": "千明代表",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0156",
+          "name": "西连寺亚希",
+          "character_id": "furioso",
+          "role": "狂怒乐章",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0046",
+          "name": "冢田悠衣",
+          "character_id": "transcend",
+          "role": "创升",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0020",
+          "name": "亚咲花",
+          "character_id": "espoircity",
+          "role": "希望之城",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0076",
+          "name": "指出毬亚",
+          "character_id": "northflight",
+          "role": "北方飞翔",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0094",
+          "name": "东山奈央",
+          "character_id": "mejiroramonu",
+          "role": "目白高峰",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0047",
+          "name": "夏吉优子",
+          "character_id": "chevalgrand",
+          "role": "高尚骏逸",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0056",
+          "name": "奥野香耶",
+          "character_id": "verxina",
+          "role": "极峰",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0025",
+          "name": "伊藤彩沙",
+          "character_id": "vivlos",
+          "role": "强击",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0057",
+          "name": "宫下早纪",
+          "character_id": "stillinlove",
+          "role": "爱如往昔",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0137",
+          "name": "稻垣好",
+          "character_id": "copanorickey",
+          "role": "小林历奇",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0148",
+          "name": "菊池纱矢香",
+          "character_id": "hokkotarumae",
+          "role": "北港火山",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0146",
+          "name": "芹泽优",
+          "character_id": "gentildonna",
+          "role": "贵妇人",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0141",
+          "name": "紫月杏朱彩",
+          "character_id": "blastonepiece",
+          "role": "防爆装束",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0127",
+          "name": "石原夏织",
+          "character_id": "almondeye",
+          "role": "杏目",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0011",
+          "name": "中岛由贵",
+          "character_id": "luckylilac",
+          "role": "旺紫丁",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0048",
+          "name": "夏目妃菜",
+          "character_id": "granalegria",
+          "role": "放声欢呼",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0015",
+          "name": "久保田未梦",
+          "character_id": "lovesonlyyou",
+          "role": "唯独爱你",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0124",
+          "name": "真名濑日和",
+          "character_id": "chronogenesis",
+          "role": "创世驹",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0062",
+          "name": "小田杏树",
+          "character_id": "currenbouquetdor",
+          "role": "机伶金花",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0082",
+          "name": "明坂聪美",
+          "character_id": "akasakamisato",
+          "role": "赤坂美聡",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0161",
+          "name": "远野光",
+          "character_id": "matikanetannhauser",
+          "role": "待兼诗歌剧",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0143",
+          "name": "羊宫妃那",
+          "character_id": "daringtact",
+          "role": "谋勇兼备",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0115",
+          "name": "濑户桃子",
+          "character_id": "zankan_koukou",
+          "role": "崭新光辉",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "live-other-2025-05-24-6th-event-the-new-frontier-day1-session-1",
+          "label": "DAY1",
+          "date": "2025-05-24",
+          "songs": [
+            "STARTING FORCE",
+            "GIRLS' LEGEND U",
+            "立ち位置ゼロ番！順位は一番！",
+            "ピヨっピヨにしてやんよッ！",
+            "ZOKZOK",
+            "Dear My Dream",
+            "爆熱マイソウル",
+            "SHAKEROCK",
+            "Hat on your Head!",
+            "BoC-izm",
+            "Gaze on Me!",
+            "L'Arc de gloire",
+            "Love Will Come Through",
+            "愛舞い、喰らい。",
+            "LADY G DONNA",
+            "Ms. VICTORIA",
+            "超える ※TV ver.",
+            "BRIGHTEST HEART",
+            "∞",
+            "BLOW my GALE",
+            "本能スピード",
+            "彩 Phantasia",
+            "黎明に咲く華",
+            "Legend-Changer",
+            "Shake The World!!",
+            "うまぴょい伝説"
+          ],
+          "character_ids": [],
+          "performances": [
+            {
+              "song": "STARTING FORCE",
+              "character_ids": [],
+              "setlist_no": "1",
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-starting-force-c0c6c398c4",
+              "version_id": "song-starting-force-c0c6c398c4-v-c0c6c398c4",
+              "song_title": "STARTING FORCE"
+            },
+            {
+              "song": "GIRLS' LEGEND U",
+              "character_ids": [],
+              "setlist_no": "2",
+              "guest_performers": [
+                "羊宮妃那",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-girls-legend-u-a4a797abe1",
+              "version_id": "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
+              "song_title": "GIRLS' LEGEND U"
+            },
+            {
+              "song": "立ち位置ゼロ番！順位は一番！",
+              "character_ids": [],
+              "setlist_no": "3",
+              "guest_performers": [
+                "大和田仁美",
+                "稲垣好",
+                "菊池紗矢香"
+              ],
+              "song_id": "song-2b5335a8e0",
+              "version_id": "song-2b5335a8e0-v-2b5335a8e0",
+              "song_title": "立ち位置ゼロ番！順位は一番！"
+            },
+            {
+              "song": "ピヨっピヨにしてやんよッ！",
+              "character_ids": [],
+              "setlist_no": "4",
+              "guest_performers": [
+                "亜咲花"
+              ],
+              "song_id": "song-4631f698b0",
+              "version_id": "song-4631f698b0-v-4631f698b0",
+              "song_title": "ピヨっピヨにしてやんよッ！"
+            },
+            {
+              "song": "ZOKZOK",
+              "character_ids": [],
+              "setlist_no": "5",
+              "guest_performers": [
+                "塚田悠衣"
+              ],
+              "song_id": "song-zokzok-8b2c14f7fa",
+              "version_id": "song-zokzok-8b2c14f7fa-v-8b2c14f7fa",
+              "song_title": "ZOKZOK"
+            },
+            {
+              "song": "Dear My Dream",
+              "character_ids": [],
+              "setlist_no": "6",
+              "guest_performers": [
+                "西連寺亜希"
+              ],
+              "song_id": "song-dear-my-dream-007a8ac43a",
+              "version_id": "song-dear-my-dream-007a8ac43a-v-007a8ac43a",
+              "song_title": "Dear My Dream"
+            },
+            {
+              "song": "爆熱マイソウル",
+              "character_ids": [],
+              "setlist_no": "7",
+              "guest_performers": [
+                "大和田仁美",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "稲垣好",
+                "菊池紗矢香"
+              ],
+              "song_id": "song-461862b933",
+              "version_id": "song-461862b933-v-461862b933",
+              "song_title": "爆熱マイソウル"
+            },
+            {
+              "song": "SHAKEROCK",
+              "character_ids": [],
+              "setlist_no": "8",
+              "guest_performers": [
+                "星谷美緒",
+                "福原綾香",
+                "新田ひより"
+              ],
+              "song_id": "song-shakerock-02a094e64b",
+              "version_id": "song-shakerock-02a094e64b-v-02a094e64b",
+              "song_title": "SHAKEROCK"
+            },
+            {
+              "song": "Hat on your Head!",
+              "character_ids": [],
+              "setlist_no": "9",
+              "guest_performers": [
+                "天海由梨奈",
+                "遠野ひかる",
+                "夏吉ゆうこ",
+                "菊池紗矢香"
+              ],
+              "song_id": "song-hat-on-your-head-7901565fc6",
+              "version_id": "song-hat-on-your-head-7901565fc6-v-7901565fc6",
+              "song_title": "Hat on your Head！"
+            },
+            {
+              "song": "BoC-izm",
+              "character_ids": [],
+              "setlist_no": "10",
+              "guest_performers": [
+                "下地紫野",
+                "指出毬亜",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "菊池紗矢香",
+                "久保田未夢"
+              ],
+              "song_id": "song-boc-izm-655025f69f",
+              "version_id": "song-boc-izm-655025f69f-v-655025f69f",
+              "song_title": "BoC-izm"
+            },
+            {
+              "song": "Gaze on Me!",
+              "character_ids": [],
+              "setlist_no": "11",
+              "guest_performers": [
+                "星谷美緒",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "西連寺亜希",
+                "宮下早紀",
+                "稲垣好"
+              ],
+              "song_id": "song-gaze-on-me-90b0b1d78a",
+              "version_id": "song-gaze-on-me-90b0b1d78a-v-90b0b1d78a",
+              "song_title": "Gaze on Me!"
+            },
+            {
+              "song": "L'Arc de gloire",
+              "character_ids": [],
+              "setlist_no": "12",
+              "guest_performers": [
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "塚田悠衣",
+                "亜咲花",
+                "紫月杏朱彩",
+                "真名瀬日和"
+              ],
+              "song_id": "song-l-arc-de-gloire-aa7474ca7e",
+              "version_id": "song-l-arc-de-gloire-aa7474ca7e-v-aa7474ca7e",
+              "song_title": "L'Arc de gloire"
+            },
+            {
+              "song": "Love Will Come Through",
+              "character_ids": [],
+              "setlist_no": "13",
+              "guest_performers": [
+                "東山奈央"
+              ],
+              "song_id": "song-love-will-come-through-1e8fb7a9e0",
+              "version_id": "song-love-will-come-through-1e8fb7a9e0-v-1e8fb7a9e0",
+              "song_title": "Love Will Come Through"
+            },
+            {
+              "song": "愛舞い、喰らい。",
+              "character_ids": [],
+              "setlist_no": "14",
+              "guest_performers": [
+                "宮下早紀"
+              ],
+              "song_id": "song-c4bc0eb443",
+              "version_id": "song-c4bc0eb443-v-c4bc0eb443",
+              "song_title": "愛舞い、喰らい。"
+            },
+            {
+              "song": "LADY G DONNA",
+              "character_ids": [],
+              "setlist_no": "15",
+              "guest_performers": [
+                "芹澤優"
+              ],
+              "song_id": "song-lady-g-donna-cc1740ca06",
+              "version_id": "song-lady-g-donna-cc1740ca06-v-cc1740ca06",
+              "song_title": "LADY G DONNA"
+            },
+            {
+              "song": "Ms. VICTORIA",
+              "character_ids": [],
+              "setlist_no": "16",
+              "guest_performers": [
+                "羊宮妃那",
+                "石原夏織"
+              ],
+              "song_id": "song-ms-victoria-8fdfbbf2a8",
+              "version_id": "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8",
+              "song_title": "Ms. VICTORIA"
+            },
+            {
+              "song": "超える ※TV ver.",
+              "character_ids": [],
+              "setlist_no": "17",
+              "guest_performers": [
+                "高柳知葉"
+              ],
+              "song_id": "song-82faef5370",
+              "version_id": "song-82faef5370-v-82faef5370",
+              "song_title": "超える",
+              "performance_variant": {
+                "title": "超える ※TV ver.",
+                "label": "TV ver."
+              }
+            },
+            {
+              "song": "BRIGHTEST HEART",
+              "character_ids": [],
+              "setlist_no": "18",
+              "guest_performers": [
+                "高柳知葉",
+                "瀬戸桃子"
+              ],
+              "song_id": "song-brightest-heart-dd824b4715",
+              "version_id": "song-brightest-heart-dd824b4715-v-dd824b4715",
+              "song_title": "BRIGHTEST HEART"
+            },
+            {
+              "song": "∞",
+              "character_ids": [],
+              "setlist_no": "19",
+              "guest_performers": [
+                "高柳知葉",
+                "瀬戸桃子"
+              ],
+              "song_id": "song-38f64525a9",
+              "version_id": "song-38f64525a9-v-38f64525a9",
+              "song_title": "∞"
+            },
+            {
+              "song": "BLOW my GALE",
+              "character_ids": [],
+              "setlist_no": "20",
+              "guest_performers": [
+                "星谷美緒",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "芹澤優",
+                "紫月杏朱彩",
+                "中島由貴",
+                "小田杏樹"
+              ],
+              "song_id": "song-blow-my-gale-0d9e0c78df",
+              "version_id": "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df",
+              "song_title": "BLOW my GALE"
+            },
+            {
+              "song": "本能スピード",
+              "character_ids": [],
+              "setlist_no": "21",
+              "guest_performers": [
+                "福原綾香",
+                "指出毬亜",
+                "夏目妃菜"
+              ],
+              "song_id": "song-87be3723c2",
+              "version_id": "song-87be3723c2-v-87be3723c2",
+              "song_title": "本能スピード"
+            },
+            {
+              "song": "彩 Phantasia",
+              "character_ids": [],
+              "setlist_no": "22",
+              "guest_performers": [
+                "羊宮妃那",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-phantasia-81aafc5f7e",
+              "version_id": "song-phantasia-81aafc5f7e-v-81aafc5f7e",
+              "song_title": "彩 Phantasia"
+            },
+            {
+              "song": "黎明に咲く華",
+              "character_ids": [],
+              "setlist_no": "23",
+              "guest_performers": [
+                "指出毬亜",
+                "東山奈央",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "芹澤優"
+              ],
+              "song_id": "song-41a5f3cfb9",
+              "version_id": "song-41a5f3cfb9-v-41a5f3cfb9",
+              "song_title": "黎明に咲く華"
+            },
+            {
+              "song": "Legend-Changer",
+              "character_ids": [],
+              "setlist_no": "24",
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-legend-changer-fcb0cca1c5",
+              "version_id": "song-legend-changer-fcb0cca1c5-v-fcb0cca1c5",
+              "song_title": "Legend-Changer"
+            },
+            {
+              "song": "Shake The World!!",
+              "character_ids": [],
+              "setlist_no": "25",
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹"
+              ],
+              "song_id": "song-shake-the-world-6a204b97d3",
+              "version_id": "song-shake-the-world-6a204b97d3-v-6a204b97d3",
+              "song_title": "Shake The World!!"
+            },
+            {
+              "song": "うまぴょい伝説",
+              "character_ids": [],
+              "setlist_no": "26",
+              "guest_performers": [
+                "高柳知葉",
+                "星谷美緒",
+                "福原綾香",
+                "大和田仁美",
+                "下地紫野",
+                "新田ひより",
+                "天海由梨奈",
+                "遠野ひかる",
+                "羊宮妃那",
+                "西連寺亜希",
+                "塚田悠衣",
+                "亜咲花",
+                "指出毬亜",
+                "東山奈央",
+                "夏吉ゆうこ",
+                "奥野香耶",
+                "伊藤彩沙",
+                "宮下早紀",
+                "稲垣好",
+                "菊池紗矢香",
+                "芹澤優",
+                "紫月杏朱彩",
+                "石原夏織",
+                "中島由貴",
+                "夏目妃菜",
+                "久保田未夢",
+                "真名瀬日和",
+                "小田杏樹",
+                "瀬戸桃子"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">STARTING FORCE</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">西連寺亜希</span><span class=\"guest-performer\">塚田悠衣</span><span class=\"guest-performer\">亜咲花</span><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">宮下早紀</span><span class=\"guest-performer\">稲垣好</span><span class=\"guest-performer\">菊池紗矢香</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">GIRLS&#x27; LEGEND U</td><td class=\"setlist-perf\"><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">立ち位置ゼロ番！順位は一番！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">稲垣好</span><span class=\"guest-performer\">菊池紗矢香</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">ピヨっピヨにしてやんよッ！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">亜咲花</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">ZOKZOK</td><td class=\"setlist-perf\"><span class=\"guest-performer\">塚田悠衣</span></td></tr>\n<tr><td class=\"setlist-no\">6</td><td class=\"setlist-song\">Dear My Dream</td><td class=\"setlist-perf\"><span class=\"guest-performer\">西連寺亜希</span></td></tr>\n<tr><td class=\"setlist-no\">7</td><td class=\"setlist-song\">爆熱マイソウル</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">西連寺亜希</span><span class=\"guest-performer\">塚田悠衣</span><span class=\"guest-performer\">亜咲花</span><span class=\"guest-performer\">稲垣好</span><span class=\"guest-performer\">菊池紗矢香</span></td></tr>\n<tr><td class=\"setlist-no\">8</td><td class=\"setlist-song\">SHAKEROCK</td><td class=\"setlist-perf\"><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">9</td><td class=\"setlist-song\">Hat on your Head!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">菊池紗矢香</span></td></tr>\n<tr><td class=\"setlist-no\">10</td><td class=\"setlist-song\">BoC-izm</td><td class=\"setlist-perf\"><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">菊池紗矢香</span><span class=\"guest-performer\">久保田未夢</span></td></tr>\n<tr><td class=\"setlist-no\">11</td><td class=\"setlist-song\">Gaze on Me!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">西連寺亜希</span><span class=\"guest-performer\">宮下早紀</span><span class=\"guest-performer\">稲垣好</span></td></tr>\n<tr><td class=\"setlist-no\">12</td><td class=\"setlist-song\">L&#x27;Arc de gloire</td><td class=\"setlist-perf\"><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">塚田悠衣</span><span class=\"guest-performer\">亜咲花</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">真名瀬日和</span></td></tr>\n<tr><td class=\"setlist-no\">13</td><td class=\"setlist-song\">Love Will Come Through</td><td class=\"setlist-perf\"><span class=\"guest-performer\">東山奈央</span></td></tr>\n<tr><td class=\"setlist-no\">14</td><td class=\"setlist-song\">愛舞い、喰らい。</td><td class=\"setlist-perf\"><span class=\"guest-performer\">宮下早紀</span></td></tr>\n<tr><td class=\"setlist-no\">15</td><td class=\"setlist-song\">LADY G DONNA</td><td class=\"setlist-perf\"><span class=\"guest-performer\">芹澤優</span></td></tr>\n<tr><td class=\"setlist-no\">16</td><td class=\"setlist-song\">Ms. VICTORIA</td><td class=\"setlist-perf\"><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">石原夏織</span></td></tr>\n<tr><td class=\"setlist-no\">17</td><td class=\"setlist-song\">超える ※TV ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span></td></tr>\n<tr><td class=\"setlist-no\">18</td><td class=\"setlist-song\">BRIGHTEST HEART</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">瀬戸桃子</span></td></tr>\n<tr><td class=\"setlist-no\">19</td><td class=\"setlist-song\">∞</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">瀬戸桃子</span></td></tr>\n<tr><td class=\"setlist-no\">20</td><td class=\"setlist-song\">BLOW my GALE</td><td class=\"setlist-perf\"><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">21</td><td class=\"setlist-song\">本能スピード</td><td class=\"setlist-perf\"><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">夏目妃菜</span></td></tr>\n<tr><td class=\"setlist-no\">22</td><td class=\"setlist-song\">彩 Phantasia</td><td class=\"setlist-perf\"><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">23</td><td class=\"setlist-song\">黎明に咲く華</td><td class=\"setlist-perf\"><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">宮下早紀</span><span class=\"guest-performer\">芹澤優</span></td></tr>\n<tr><td class=\"setlist-no\">24</td><td class=\"setlist-song\">Legend-Changer</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">西連寺亜希</span><span class=\"guest-performer\">塚田悠衣</span><span class=\"guest-performer\">亜咲花</span><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">宮下早紀</span><span class=\"guest-performer\">稲垣好</span><span class=\"guest-performer\">菊池紗矢香</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">25</td><td class=\"setlist-song\">Shake The World!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">西連寺亜希</span><span class=\"guest-performer\">塚田悠衣</span><span class=\"guest-performer\">亜咲花</span><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">宮下早紀</span><span class=\"guest-performer\">稲垣好</span><span class=\"guest-performer\">菊池紗矢香</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span></td></tr>\n<tr><td class=\"setlist-no\">26</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">大和田仁美</span><span class=\"guest-performer\">下地紫野</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">天海由梨奈</span><span class=\"guest-performer\">遠野ひかる</span><span class=\"guest-performer\">羊宮妃那</span><span class=\"guest-performer\">西連寺亜希</span><span class=\"guest-performer\">塚田悠衣</span><span class=\"guest-performer\">亜咲花</span><span class=\"guest-performer\">指出毬亜</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">夏吉ゆうこ</span><span class=\"guest-performer\">奥野香耶</span><span class=\"guest-performer\">伊藤彩沙</span><span class=\"guest-performer\">宮下早紀</span><span class=\"guest-performer\">稲垣好</span><span class=\"guest-performer\">菊池紗矢香</span><span class=\"guest-performer\">芹澤優</span><span class=\"guest-performer\">紫月杏朱彩</span><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">真名瀬日和</span><span class=\"guest-performer\">小田杏樹</span><span class=\"guest-performer\">瀬戸桃子</span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/live_cat_data.json",
+            "category": "other",
+            "section": null,
+            "group": 63,
+            "performance": 0,
+            "day": 0
+          },
+          "setlist_status": "verified"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "curated_live",
+          "label": "站内精调歌单",
+          "url": "/zh-Hans/live/other/63"
+        }
+      ],
+      "legacy_url": "/zh-Hans/live/other/63",
+      "legacy_aliases": [
+        "/zh-Hans/live/other/63",
+        "/zh-Hans/live/other/63/0/0"
+      ],
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "summary": "出处：https://www.eventernote.com/events/410098",
+      "setlist_status": "verified"
     },
     {
       "id": "live-numbered-6th-event-2025-05-24",
@@ -96616,6 +98635,751 @@
       "setlist_status": "none"
     },
     {
+      "id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+      "title": "ウマ娘 プリティーダービー 3rd EVENT WINNING DREAM STAGE DAY1",
+      "date": "2021-08-28",
+      "end_date": "2021-08-28",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0040",
+          "name": "和气杏未",
+          "character_id": "specialweek",
+          "role": "特别周",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0184",
+          "name": "高野麻里佳",
+          "character_id": "silencesuzuka",
+          "role": "无声铃鹿",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0003",
+          "name": "Machico",
+          "character_id": "tokaiteio",
+          "role": "东海帝王",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0179",
+          "name": "高柳知叶",
+          "character_id": "oguricap",
+          "role": "小栗帽",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0009",
+          "name": "上田瞳",
+          "character_id": "goldship",
+          "role": "黄金船",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0090",
+          "name": "木村千咲",
+          "character_id": "daiwascarlet",
+          "role": "大和赤骥",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0050",
+          "name": "大坪由佳",
+          "character_id": "taikishuttle",
+          "role": "大树快车",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0035",
+          "name": "前田玲奈",
+          "character_id": "grasswonder",
+          "role": "草上飞",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0180",
+          "name": "高桥未奈美",
+          "character_id": "elcondorpasa",
+          "role": "神鹰",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0073",
+          "name": "德井青空",
+          "character_id": "tmoperao",
+          "role": "好歌剧",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0155",
+          "name": "衣川里佳",
+          "character_id": "naritabrian",
+          "role": "成田白仁",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0173",
+          "name": "青木瑠璃子",
+          "character_id": "airgroove",
+          "role": "气槽",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0158",
+          "name": "近藤唯",
+          "character_id": "biwahayahide",
+          "role": "琵琶晨光",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0085",
+          "name": "星谷美绪",
+          "character_id": "mayanotopgun",
+          "role": "摩耶重炮",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0113",
+          "name": "渡部优衣",
+          "character_id": "winningticket",
+          "role": "胜利奖券",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0007",
+          "name": "三泽纱千香",
+          "character_id": "sakurabakushino",
+          "role": "樱花进王",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0114",
+          "name": "渡部惠子",
+          "character_id": "naritataishin",
+          "role": "成田大进",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0175",
+          "name": "首藤志奈",
+          "character_id": "haruurara",
+          "role": "春乌拉拉",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0078",
+          "name": "新田日和",
+          "character_id": "matikanefukukitaru",
+          "role": "待兼福来",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0151",
+          "name": "藤井幸代",
+          "character_id": "hayakawatazuna",
+          "role": "骏川手纲",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0082",
+          "name": "明坂聪美",
+          "character_id": "akasakamisato",
+          "role": "赤坂美聡",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1-session-1",
+          "label": "DAY1",
+          "date": "2021-08-28",
+          "songs": [
+            "GIRLS' LEGEND U",
+            "winning the soul",
+            "彩 Phantasia",
+            "Make debut!",
+            "恋はダービー☆",
+            "L’s Surprise!!",
+            "帝笑歌劇～讃えよ永久に～",
+            "ENDLESS DREAM!!",
+            "涙ひかって明日になれ！",
+            "ぴょいっと♪はれるや！",
+            "NEXT FRONTIER",
+            "BLAZE",
+            "UNLIMITED IMPACT",
+            "本能スピード",
+            "ユメヲカケル！",
+            "ありがとう、神様",
+            "Silent Star",
+            "Special Record!",
+            "Never Looking Back",
+            "うまぴょい伝説"
+          ],
+          "character_ids": [],
+          "performances": [
+            {
+              "song": "GIRLS' LEGEND U",
+              "character_ids": [],
+              "setlist_no": "1",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "song_id": "song-girls-legend-u-a4a797abe1",
+              "version_id": "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
+              "song_title": "GIRLS' LEGEND U"
+            },
+            {
+              "song": "winning the soul",
+              "character_ids": [],
+              "setlist_no": "2",
+              "guest_performers": [
+                "和氣あず未",
+                "Machico",
+                "大坪由佳",
+                "衣川里佳",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "song_id": "song-winning-the-soul-7eddcf2b7f",
+              "version_id": "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f",
+              "song_title": "winning the soul"
+            },
+            {
+              "song": "彩 Phantasia",
+              "character_ids": [],
+              "setlist_no": "3",
+              "guest_performers": [
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "前田玲奈",
+                "徳井青空",
+                "青木瑠璃子"
+              ],
+              "song_id": "song-phantasia-81aafc5f7e",
+              "version_id": "song-phantasia-81aafc5f7e-v-81aafc5f7e",
+              "song_title": "彩 Phantasia"
+            },
+            {
+              "song": "Make debut!",
+              "character_ids": [],
+              "setlist_no": "4",
+              "guest_performers": [
+                "大坪由佳",
+                "衣川里佳",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "渡部恵子"
+              ],
+              "song_id": "song-make-debut-2c6c00a71e",
+              "version_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+              "song_title": "Make debut!"
+            },
+            {
+              "song": "恋はダービー☆",
+              "character_ids": [],
+              "setlist_no": "5",
+              "guest_performers": [
+                "Machico"
+              ],
+              "song_id": "song-3dc019b31d",
+              "version_id": "song-3dc019b31d-v-3dc019b31d",
+              "song_title": "恋はダービー☆"
+            },
+            {
+              "song": "L’s Surprise!!",
+              "character_ids": [],
+              "setlist_no": "6",
+              "guest_performers": [
+                "髙橋ミナミ"
+              ],
+              "song_id": "song-l-s-surprise-4127ca305e",
+              "version_id": "song-l-s-surprise-4127ca305e-v-4127ca305e",
+              "song_title": "L's Surprise!!"
+            },
+            {
+              "song": "帝笑歌劇～讃えよ永久に～",
+              "character_ids": [],
+              "setlist_no": "7",
+              "guest_performers": [
+                "徳井青空"
+              ],
+              "song_id": "song-4b30d8d74a",
+              "version_id": "song-4b30d8d74a-v-eb67a20d4a",
+              "song_title": "帝笑歌劇～讃えよ永久に～",
+              "performance_variant": {
+                "title": "帝笑歌劇～讃えよ永久に～",
+                "label": ""
+              }
+            },
+            {
+              "song": "ENDLESS DREAM!!",
+              "character_ids": [],
+              "setlist_no": "8",
+              "guest_performers": [
+                "青木瑠璃子",
+                "星谷美緒",
+                "新田ひより"
+              ],
+              "song_id": "song-endless-dream-eabbcc4d12",
+              "version_id": "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
+              "song_title": "ENDLESS DREAM!!"
+            },
+            {
+              "song": "涙ひかって明日になれ！",
+              "character_ids": [],
+              "setlist_no": "9",
+              "guest_performers": [
+                "近藤唯",
+                "渡部優衣",
+                "渡部恵子"
+              ],
+              "song_id": "song-aad00d3081",
+              "version_id": "song-aad00d3081-v-aad00d3081",
+              "song_title": "涙ひかって明日になれ！"
+            },
+            {
+              "song": "ぴょいっと♪はれるや！",
+              "character_ids": [],
+              "setlist_no": "10",
+              "guest_performers": [
+                "和氣あず未",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "星谷美緒",
+                "首藤志奈"
+              ],
+              "song_id": "song-cdf2727e54",
+              "version_id": "song-cdf2727e54-v-cdf2727e54",
+              "song_title": "ぴょいっと♪はれるや！"
+            },
+            {
+              "song": "NEXT FRONTIER",
+              "character_ids": [],
+              "setlist_no": "11",
+              "guest_performers": [
+                "前田玲奈",
+                "徳井青空",
+                "新田ひより"
+              ],
+              "song_id": "song-next-frontier-5267707c1b",
+              "version_id": "song-next-frontier-5267707c1b-v-5267707c1b",
+              "song_title": "NEXT FRONTIER"
+            },
+            {
+              "song": "BLAZE",
+              "character_ids": [],
+              "setlist_no": "12",
+              "guest_performers": [
+                "衣川里佳"
+              ],
+              "song_id": "song-blaze-b4bd8fc766",
+              "version_id": "song-blaze-b4bd8fc766-v-b4bd8fc766",
+              "song_title": "BLAZE"
+            },
+            {
+              "song": "UNLIMITED IMPACT",
+              "character_ids": [],
+              "setlist_no": "13",
+              "guest_performers": [
+                "高柳知葉",
+                "木村千咲",
+                "首藤志奈"
+              ],
+              "song_id": "song-unlimited-impact-3293fdf81d",
+              "version_id": "song-unlimited-impact-3293fdf81d-v-3293fdf81d",
+              "song_title": "UNLIMITED IMPACT"
+            },
+            {
+              "song": "本能スピード",
+              "character_ids": [],
+              "setlist_no": "14",
+              "guest_performers": [
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "大坪由佳",
+                "髙橋ミナミ",
+                "青木瑠璃子"
+              ],
+              "song_id": "song-87be3723c2",
+              "version_id": "song-87be3723c2-v-87be3723c2",
+              "song_title": "本能スピード"
+            },
+            {
+              "song": "ユメヲカケル！",
+              "character_ids": [],
+              "setlist_no": "15",
+              "guest_performers": [
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "song_id": "song-4bfe85c283",
+              "version_id": "song-4bfe85c283-v-4bfe85c283",
+              "song_title": "ユメヲカケル！"
+            },
+            {
+              "song": "ありがとう、神様",
+              "character_ids": [],
+              "setlist_no": "16",
+              "guest_performers": [
+                "和氣あず未"
+              ],
+              "song_id": "song-66e8f91931",
+              "version_id": "song-66e8f91931-v-66e8f91931",
+              "song_title": "ありがとう、神様"
+            },
+            {
+              "song": "Silent Star",
+              "character_ids": [],
+              "setlist_no": "17",
+              "guest_performers": [
+                "高野麻里佳"
+              ],
+              "song_id": "song-silent-star-5582fe43d4",
+              "version_id": "song-silent-star-5582fe43d4-v-5582fe43d4",
+              "song_title": "Silent Star"
+            },
+            {
+              "song": "Special Record!",
+              "character_ids": [],
+              "setlist_no": "18",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "song_id": "song-special-record-c828cf2dc0",
+              "version_id": "song-special-record-c828cf2dc0-v-c828cf2dc0",
+              "song_title": "Special Record!"
+            },
+            {
+              "song": "Never Looking Back",
+              "character_ids": [],
+              "setlist_no": "19",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより"
+              ],
+              "song_id": "song-never-looking-back-d2ca0c4311",
+              "version_id": "song-never-looking-back-d2ca0c4311-v-d2ca0c4311",
+              "song_title": "Never Looking Back"
+            },
+            {
+              "song": "うまぴょい伝説",
+              "character_ids": [],
+              "setlist_no": "20",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "高柳知葉",
+                "上田瞳",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "髙橋ミナミ",
+                "徳井青空",
+                "衣川里佳",
+                "青木瑠璃子",
+                "近藤唯",
+                "星谷美緒",
+                "渡部優衣",
+                "三澤紗千香",
+                "渡部恵子",
+                "首藤志奈",
+                "新田ひより",
+                "藤井ゆきよ",
+                "明坂聡美"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">GIRLS&#x27; LEGEND U</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">渡部優衣</span><span class=\"guest-performer\">三澤紗千香</span><span class=\"guest-performer\">渡部恵子</span><span class=\"guest-performer\">首藤志奈</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">winning the soul</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">首藤志奈</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">彩 Phantasia</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">青木瑠璃子</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">Make debut!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">渡部優衣</span><span class=\"guest-performer\">渡部恵子</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">恋はダービー☆</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Machico</span></td></tr>\n<tr><td class=\"setlist-no\">6</td><td class=\"setlist-song\">L’s Surprise!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">髙橋ミナミ</span></td></tr>\n<tr><td class=\"setlist-no\">7</td><td class=\"setlist-song\">帝笑歌劇～讃えよ永久に～</td><td class=\"setlist-perf\"><span class=\"guest-performer\">徳井青空</span></td></tr>\n<tr><td class=\"setlist-no\">8</td><td class=\"setlist-song\">ENDLESS DREAM!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">9</td><td class=\"setlist-song\">涙ひかって明日になれ！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">渡部優衣</span><span class=\"guest-performer\">渡部恵子</span></td></tr>\n<tr><td class=\"setlist-no\">10</td><td class=\"setlist-song\">ぴょいっと♪はれるや！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">11</td><td class=\"setlist-song\">NEXT FRONTIER</td><td class=\"setlist-perf\"><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">12</td><td class=\"setlist-song\">BLAZE</td><td class=\"setlist-perf\"><span class=\"guest-performer\">衣川里佳</span></td></tr>\n<tr><td class=\"setlist-no\">13</td><td class=\"setlist-song\">UNLIMITED IMPACT</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">14</td><td class=\"setlist-song\">本能スピード</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">青木瑠璃子</span></td></tr>\n<tr><td class=\"setlist-no\">15</td><td class=\"setlist-song\">ユメヲカケル！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">首藤志奈</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">16</td><td class=\"setlist-song\">ありがとう、神様</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span></td></tr>\n<tr><td class=\"setlist-no\">17</td><td class=\"setlist-song\">Silent Star</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高野麻里佳</span></td></tr>\n<tr><td class=\"setlist-no\">18</td><td class=\"setlist-song\">Special Record!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">渡部優衣</span><span class=\"guest-performer\">三澤紗千香</span><span class=\"guest-performer\">渡部恵子</span><span class=\"guest-performer\">首藤志奈</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">19</td><td class=\"setlist-song\">Never Looking Back</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">渡部優衣</span><span class=\"guest-performer\">三澤紗千香</span><span class=\"guest-performer\">渡部恵子</span><span class=\"guest-performer\">首藤志奈</span><span class=\"guest-performer\">新田ひより</span></td></tr>\n<tr><td class=\"setlist-no\">20</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">衣川里佳</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">近藤唯</span><span class=\"guest-performer\">星谷美緒</span><span class=\"guest-performer\">渡部優衣</span><span class=\"guest-performer\">三澤紗千香</span><span class=\"guest-performer\">渡部恵子</span><span class=\"guest-performer\">首藤志奈</span><span class=\"guest-performer\">新田ひより</span><span class=\"guest-performer\">藤井ゆきよ</span><span class=\"guest-performer\">明坂聡美</span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/live_cat_data.json",
+            "category": "other",
+            "section": null,
+            "group": 62,
+            "performance": 0,
+            "day": 0
+          },
+          "setlist_status": "verified"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "curated_live",
+          "label": "站内精调歌单",
+          "url": "/zh-Hans/live/other/62"
+        }
+      ],
+      "legacy_url": "/zh-Hans/live/other/62",
+      "legacy_aliases": [
+        "/zh-Hans/live/other/62",
+        "/zh-Hans/live/other/62/0/0"
+      ],
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "summary": "出处：https://www.eventernote.com/events/274736",
+      "setlist_status": "verified"
+    },
+    {
       "id": "live-numbered-3rd-event-2021-08-28",
       "title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
       "date": "2021-08-28",
@@ -107045,6 +109809,896 @@
       "metadata_status": "complete",
       "legacy_aliases": [],
       "setlist_status": "none"
+    },
+    {
+      "id": "live-other-2018-10-14-2nd-event-sound-fanfare",
+      "title": "ウマ娘 プリティーダービー2nd EVENT「Sound Fanfare！」",
+      "date": "2018-10-14",
+      "end_date": "2018-10-14",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0040",
+          "name": "和气杏未",
+          "character_id": "specialweek",
+          "role": "特别周",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0184",
+          "name": "高野麻里佳",
+          "character_id": "silencesuzuka",
+          "role": "无声铃鹿",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0003",
+          "name": "Machico",
+          "character_id": "tokaiteio",
+          "role": "东海帝王",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0051",
+          "name": "大桥彩香",
+          "character_id": "vodka",
+          "role": "伏特加",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0090",
+          "name": "木村千咲",
+          "character_id": "daiwascarlet",
+          "role": "大和赤骥",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0009",
+          "name": "上田瞳",
+          "character_id": "goldship",
+          "role": "黄金船",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0053",
+          "name": "大西沙织",
+          "character_id": "mejiromcqueen",
+          "role": "目白麦昆",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0118",
+          "name": "田所梓",
+          "character_id": "symbolirudolf",
+          "role": "鲁道夫象征",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0095",
+          "name": "松井惠理子",
+          "character_id": "fujikiseki",
+          "role": "富士奇石",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0050",
+          "name": "大坪由佳",
+          "character_id": "taikishuttle",
+          "role": "大树快车",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0071",
+          "name": "巽悠衣子",
+          "character_id": "hishiamazon",
+          "role": "菱亚马逊",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0001",
+          "name": "Lynn",
+          "character_id": "maruzensky",
+          "role": "丸善斯基",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0173",
+          "name": "青木瑠璃子",
+          "character_id": "airgroove",
+          "role": "气槽",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0180",
+          "name": "高桥未奈美",
+          "character_id": "elcondorpasa",
+          "role": "神鹰",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0073",
+          "name": "德井青空",
+          "character_id": "tmoperao",
+          "role": "好歌剧",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0179",
+          "name": "高柳知叶",
+          "character_id": "oguricap",
+          "role": "小栗帽",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0185",
+          "name": "鬼头明里",
+          "character_id": "seiunsky",
+          "role": "青云天空",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0175",
+          "name": "首藤志奈",
+          "character_id": "haruurara",
+          "role": "春乌拉拉",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0151",
+          "name": "藤井幸代",
+          "character_id": "hayakawatazuna",
+          "role": "骏川手纲",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0035",
+          "name": "前田玲奈",
+          "character_id": "grasswonder",
+          "role": "草上飞",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0082",
+          "name": "明坂聪美",
+          "character_id": "akasakamisato",
+          "role": "赤坂美聡",
+          "evidence": "curated_live_cast",
+          "source_url": "",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "curated_live_cast",
+              "url": ""
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "live-other-2018-10-14-2nd-event-sound-fanfare-session-1",
+          "label": "本公演",
+          "date": "2018-10-14",
+          "songs": [
+            "うまぴょい伝説",
+            "Make debut!",
+            "ENDLESS DREAM!!",
+            "恋はダービー☆",
+            "帝笑歌劇～讃えよ永久に～",
+            "気まぐれTuning Heart",
+            "わたしの印は大本命◎",
+            "禁断Burning Heart",
+            "直感ノープロブレム！ ※Long Intro Ver.",
+            "今日もウララかケセラセラ！",
+            "DREAM JACK",
+            "七色の景色",
+            "EMPRESS GAME",
+            "SEVEN",
+            "Special Record! ※Long Intro Ver.",
+            "CATCH THE VICTORY!",
+            "Rising Girl",
+            "ぱかチューブっ！ですが、何か？ ※Short Intro Ver.",
+            "Goal To My SHIP",
+            "鳥かごのロンリーバード",
+            "L’s Surprise!!",
+            "走れウマ娘 ※Short Intro Ver.",
+            "グロウアップ・シャイン！",
+            "unbreakable",
+            "Secret GRADUATION ※Long Intro Ver.",
+            "Waiting for Tomorrow",
+            "Silent Star ※Long Intro Ver.",
+            "ありがとう、神様",
+            "Find My Only Way",
+            "うまぴょい伝説 ※-TEAM C-",
+            "うまぴょい伝説 ※-TEAM B-",
+            "うまぴょい伝説 ※-TEAM A-"
+          ],
+          "character_ids": [],
+          "performances": [
+            {
+              "song": "うまぴょい伝説",
+              "character_ids": [],
+              "setlist_no": "1",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "巽悠衣子",
+                "大西沙織",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
+            },
+            {
+              "song": "Make debut!",
+              "character_ids": [],
+              "setlist_no": "2",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大西沙織"
+              ],
+              "song_id": "song-make-debut-2c6c00a71e",
+              "version_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+              "song_title": "Make debut!"
+            },
+            {
+              "song": "ENDLESS DREAM!!",
+              "character_ids": [],
+              "setlist_no": "3",
+              "guest_performers": [
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "前田玲奈",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "song_id": "song-endless-dream-eabbcc4d12",
+              "version_id": "song-endless-dream-eabbcc4d12-v-eabbcc4d12",
+              "song_title": "ENDLESS DREAM!!"
+            },
+            {
+              "song": "恋はダービー☆",
+              "character_ids": [],
+              "setlist_no": "4",
+              "guest_performers": [
+                "Machico"
+              ],
+              "song_id": "song-3dc019b31d",
+              "version_id": "song-3dc019b31d-v-3dc019b31d",
+              "song_title": "恋はダービー☆"
+            },
+            {
+              "song": "帝笑歌劇～讃えよ永久に～",
+              "character_ids": [],
+              "setlist_no": "5",
+              "guest_performers": [
+                "徳井青空"
+              ],
+              "song_id": "song-4b30d8d74a",
+              "version_id": "song-4b30d8d74a-v-eb67a20d4a",
+              "song_title": "帝笑歌劇～讃えよ永久に～",
+              "performance_variant": {
+                "title": "帝笑歌劇～讃えよ永久に～",
+                "label": ""
+              }
+            },
+            {
+              "song": "気まぐれTuning Heart",
+              "character_ids": [],
+              "setlist_no": "6",
+              "guest_performers": [
+                "鬼頭明里"
+              ],
+              "song_id": "song-tuning-heart-c3af3e8174",
+              "version_id": "song-tuning-heart-c3af3e8174-v-c3af3e8174",
+              "song_title": "気まぐれTuning Heart"
+            },
+            {
+              "song": "わたしの印は大本命◎",
+              "character_ids": [],
+              "setlist_no": "7",
+              "guest_performers": [
+                "和氣あず未"
+              ],
+              "song_id": "song-c42fc6be53",
+              "version_id": "song-c42fc6be53-v-c42fc6be53",
+              "song_title": "わたしの印は大本命◎"
+            },
+            {
+              "song": "禁断Burning Heart",
+              "character_ids": [],
+              "setlist_no": "8",
+              "guest_performers": [
+                "Lynn"
+              ],
+              "song_id": "song-burning-heart-c74e3107bb",
+              "version_id": "song-burning-heart-c74e3107bb-v-c74e3107bb",
+              "song_title": "禁断Burning Heart"
+            },
+            {
+              "song": "直感ノープロブレム！ ※Long Intro Ver.",
+              "character_ids": [],
+              "setlist_no": "9",
+              "guest_performers": [
+                "大坪由佳"
+              ],
+              "song_id": "song-1c25da4b8b",
+              "version_id": "song-1c25da4b8b-v-1c25da4b8b",
+              "song_title": "直感ノープロブレム！",
+              "performance_variant": {
+                "title": "直感ノープロブレム！ ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
+            },
+            {
+              "song": "今日もウララかケセラセラ！",
+              "character_ids": [],
+              "setlist_no": "10",
+              "guest_performers": [
+                "首藤志奈"
+              ],
+              "song_id": "song-778904f80f",
+              "version_id": "song-778904f80f-v-778904f80f",
+              "song_title": "今日もウララかケセラセラ！"
+            },
+            {
+              "song": "DREAM JACK",
+              "character_ids": [],
+              "setlist_no": "11",
+              "guest_performers": [
+                "松井恵理子"
+              ],
+              "song_id": "song-dream-jack-5cb0f93900",
+              "version_id": "song-dream-jack-5cb0f93900-v-5cb0f93900",
+              "song_title": "DREAM JACK"
+            },
+            {
+              "song": "七色の景色",
+              "character_ids": [],
+              "setlist_no": "12",
+              "guest_performers": [
+                "高野麻里佳"
+              ],
+              "song_id": "song-c7cdb22480",
+              "version_id": "song-c7cdb22480-v-c7cdb22480",
+              "song_title": "七色の景色"
+            },
+            {
+              "song": "EMPRESS GAME",
+              "character_ids": [],
+              "setlist_no": "13",
+              "guest_performers": [
+                "青木瑠璃子"
+              ],
+              "song_id": "song-empress-game-c140ff5898",
+              "version_id": "song-empress-game-c140ff5898-v-c140ff5898",
+              "song_title": "EMPRESS GAME"
+            },
+            {
+              "song": "SEVEN",
+              "character_ids": [],
+              "setlist_no": "14",
+              "guest_performers": [
+                "田所あずさ"
+              ],
+              "song_id": "song-seven-a00bbe560e",
+              "version_id": "song-seven-a00bbe560e-v-a00bbe560e",
+              "song_title": "SEVEN"
+            },
+            {
+              "song": "Special Record! ※Long Intro Ver.",
+              "character_ids": [],
+              "setlist_no": "15",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大坪由佳",
+                "前田玲奈",
+                "巽悠衣子",
+                "大西沙織",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "song_id": "song-special-record-c828cf2dc0",
+              "version_id": "song-special-record-c828cf2dc0-v-c828cf2dc0",
+              "song_title": "Special Record!",
+              "performance_variant": {
+                "title": "Special Record! ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
+            },
+            {
+              "song": "CATCH THE VICTORY!",
+              "character_ids": [],
+              "setlist_no": "16",
+              "guest_performers": [
+                "大橋彩香"
+              ],
+              "song_id": "song-catch-the-victory-e56a0d6f90",
+              "version_id": "song-catch-the-victory-e56a0d6f90-v-e56a0d6f90",
+              "song_title": "CATCH THE VICTORY!"
+            },
+            {
+              "song": "Rising Girl",
+              "character_ids": [],
+              "setlist_no": "17",
+              "guest_performers": [
+                "木村千咲"
+              ],
+              "song_id": "song-rising-girl-a1bf16c093",
+              "version_id": "song-rising-girl-a1bf16c093-v-a1bf16c093",
+              "song_title": "Rising Girl"
+            },
+            {
+              "song": "ぱかチューブっ！ですが、何か？ ※Short Intro Ver.",
+              "character_ids": [],
+              "setlist_no": "18",
+              "guest_performers": [
+                "Machico",
+                "上田瞳"
+              ],
+              "song_id": "song-a470359a05",
+              "version_id": "song-a470359a05-v-a470359a05",
+              "song_title": "ぱかチューブっ！ですが、何か？",
+              "performance_variant": {
+                "title": "ぱかチューブっ！ですが、何か？ ※Short Intro Ver.",
+                "label": "Short Intro Ver."
+              }
+            },
+            {
+              "song": "Goal To My SHIP",
+              "character_ids": [],
+              "setlist_no": "19",
+              "guest_performers": [
+                "上田瞳"
+              ],
+              "song_id": "song-goal-to-my-ship-01b3127078",
+              "version_id": "song-goal-to-my-ship-01b3127078-v-01b3127078",
+              "song_title": "Goal To My SHIP"
+            },
+            {
+              "song": "鳥かごのロンリーバード",
+              "character_ids": [],
+              "setlist_no": "20",
+              "guest_performers": [
+                "巽悠衣子"
+              ],
+              "song_id": "song-cedd69644c",
+              "version_id": "song-cedd69644c-v-cedd69644c",
+              "song_title": "鳥かごのロンリーバード"
+            },
+            {
+              "song": "L’s Surprise!!",
+              "character_ids": [],
+              "setlist_no": "21",
+              "guest_performers": [
+                "髙橋ミナミ"
+              ],
+              "song_id": "song-l-s-surprise-4127ca305e",
+              "version_id": "song-l-s-surprise-4127ca305e-v-4127ca305e",
+              "song_title": "L's Surprise!!"
+            },
+            {
+              "song": "走れウマ娘 ※Short Intro Ver.",
+              "character_ids": [],
+              "setlist_no": "22",
+              "guest_performers": [
+                "Lynn",
+                "松井恵理子",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "song_id": "song-2d2a6742e3",
+              "version_id": "song-2d2a6742e3-v-2d2a6742e3",
+              "song_title": "走れウマ娘",
+              "performance_variant": {
+                "title": "走れウマ娘 ※Short Intro Ver.",
+                "label": "Short Intro Ver."
+              }
+            },
+            {
+              "song": "グロウアップ・シャイン！",
+              "character_ids": [],
+              "setlist_no": "23",
+              "guest_performers": [
+                "大坪由佳",
+                "巽悠衣子",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子"
+              ],
+              "song_id": "song-15e2b8f183",
+              "version_id": "song-15e2b8f183-v-15e2b8f183",
+              "song_title": "グロウアップ・シャイン！"
+            },
+            {
+              "song": "unbreakable",
+              "character_ids": [],
+              "setlist_no": "24",
+              "guest_performers": [
+                "高柳知葉"
+              ],
+              "song_id": "song-unbreakable-8c599c4256",
+              "version_id": "song-unbreakable-8c599c4256-v-8c599c4256",
+              "song_title": "unbreakable"
+            },
+            {
+              "song": "Secret GRADUATION ※Long Intro Ver.",
+              "character_ids": [],
+              "setlist_no": "25",
+              "guest_performers": [
+                "前田玲奈"
+              ],
+              "song_id": "song-secret-graduation-6bf6aaa7ba",
+              "version_id": "song-secret-graduation-6bf6aaa7ba-v-6bf6aaa7ba",
+              "song_title": "Secret GRADUATION",
+              "performance_variant": {
+                "title": "Secret GRADUATION ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
+            },
+            {
+              "song": "Waiting for Tomorrow",
+              "character_ids": [],
+              "setlist_no": "26",
+              "guest_performers": [
+                "大西沙織"
+              ],
+              "song_id": "song-waiting-for-tomorrow-5144cde439",
+              "version_id": "song-waiting-for-tomorrow-5144cde439-v-5144cde439",
+              "song_title": "Waiting for Tomorrow"
+            },
+            {
+              "song": "Silent Star ※Long Intro Ver.",
+              "character_ids": [],
+              "setlist_no": "27",
+              "guest_performers": [
+                "高野麻里佳"
+              ],
+              "song_id": "song-silent-star-5582fe43d4",
+              "version_id": "song-silent-star-5582fe43d4-v-5582fe43d4",
+              "song_title": "Silent Star",
+              "performance_variant": {
+                "title": "Silent Star ※Long Intro Ver.",
+                "label": "Long Intro Ver."
+              }
+            },
+            {
+              "song": "ありがとう、神様",
+              "character_ids": [],
+              "setlist_no": "28",
+              "guest_performers": [
+                "和氣あず未"
+              ],
+              "song_id": "song-66e8f91931",
+              "version_id": "song-66e8f91931-v-66e8f91931",
+              "song_title": "ありがとう、神様"
+            },
+            {
+              "song": "Find My Only Way",
+              "character_ids": [],
+              "setlist_no": "29",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大西沙織"
+              ],
+              "song_id": "song-find-my-only-way-46f68c23ae",
+              "version_id": "song-find-my-only-way-46f68c23ae-v-46f68c23ae",
+              "song_title": "Find My Only Way"
+            },
+            {
+              "song": "うまぴょい伝説 ※-TEAM C-",
+              "character_ids": [],
+              "setlist_no": "30",
+              "guest_performers": [
+                "Lynn",
+                "松井恵理子",
+                "高柳知葉",
+                "前田玲奈",
+                "鬼頭明里",
+                "首藤志奈"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説",
+              "performance_variant": {
+                "title": "うまぴょい伝説 ※-TEAM C-",
+                "label": "-TEAM C-"
+              }
+            },
+            {
+              "song": "うまぴょい伝説 ※-TEAM B-",
+              "character_ids": [],
+              "setlist_no": "31",
+              "guest_performers": [
+                "大坪由佳",
+                "巽悠衣子",
+                "髙橋ミナミ",
+                "徳井青空",
+                "田所あずさ",
+                "青木瑠璃子"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説",
+              "performance_variant": {
+                "title": "うまぴょい伝説 ※-TEAM B-",
+                "label": "-TEAM B-"
+              }
+            },
+            {
+              "song": "うまぴょい伝説 ※-TEAM A-",
+              "character_ids": [],
+              "setlist_no": "32",
+              "guest_performers": [
+                "和氣あず未",
+                "高野麻里佳",
+                "Machico",
+                "上田瞳",
+                "大橋彩香",
+                "木村千咲",
+                "大西沙織"
+              ],
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説",
+              "performance_variant": {
+                "title": "うまぴょい伝説 ※-TEAM A-",
+                "label": "-TEAM A-"
+              }
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">Lynn</span><span class=\"guest-performer\">松井恵理子</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大橋彩香</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">巽悠衣子</span><span class=\"guest-performer\">大西沙織</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">田所あずさ</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">鬼頭明里</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">Make debut!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大橋彩香</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大西沙織</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">ENDLESS DREAM!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Lynn</span><span class=\"guest-performer\">松井恵理子</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">鬼頭明里</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">恋はダービー☆</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Machico</span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">帝笑歌劇～讃えよ永久に～</td><td class=\"setlist-perf\"><span class=\"guest-performer\">徳井青空</span></td></tr>\n<tr><td class=\"setlist-no\">6</td><td class=\"setlist-song\">気まぐれTuning Heart</td><td class=\"setlist-perf\"><span class=\"guest-performer\">鬼頭明里</span></td></tr>\n<tr><td class=\"setlist-no\">7</td><td class=\"setlist-song\">わたしの印は大本命◎</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span></td></tr>\n<tr><td class=\"setlist-no\">8</td><td class=\"setlist-song\">禁断Burning Heart</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Lynn</span></td></tr>\n<tr><td class=\"setlist-no\">9</td><td class=\"setlist-song\">直感ノープロブレム！ ※Long Intro Ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span></td></tr>\n<tr><td class=\"setlist-no\">10</td><td class=\"setlist-song\">今日もウララかケセラセラ！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">11</td><td class=\"setlist-song\">DREAM JACK</td><td class=\"setlist-perf\"><span class=\"guest-performer\">松井恵理子</span></td></tr>\n<tr><td class=\"setlist-no\">12</td><td class=\"setlist-song\">七色の景色</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高野麻里佳</span></td></tr>\n<tr><td class=\"setlist-no\">13</td><td class=\"setlist-song\">EMPRESS GAME</td><td class=\"setlist-perf\"><span class=\"guest-performer\">青木瑠璃子</span></td></tr>\n<tr><td class=\"setlist-no\">14</td><td class=\"setlist-song\">SEVEN</td><td class=\"setlist-perf\"><span class=\"guest-performer\">田所あずさ</span></td></tr>\n<tr><td class=\"setlist-no\">15</td><td class=\"setlist-song\">Special Record! ※Long Intro Ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">Lynn</span><span class=\"guest-performer\">松井恵理子</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大橋彩香</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">巽悠衣子</span><span class=\"guest-performer\">大西沙織</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">田所あずさ</span><span class=\"guest-performer\">青木瑠璃子</span><span class=\"guest-performer\">鬼頭明里</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">16</td><td class=\"setlist-song\">CATCH THE VICTORY!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大橋彩香</span></td></tr>\n<tr><td class=\"setlist-no\">17</td><td class=\"setlist-song\">Rising Girl</td><td class=\"setlist-perf\"><span class=\"guest-performer\">木村千咲</span></td></tr>\n<tr><td class=\"setlist-no\">18</td><td class=\"setlist-song\">ぱかチューブっ！ですが、何か？ ※Short Intro Ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">上田瞳</span></td></tr>\n<tr><td class=\"setlist-no\">19</td><td class=\"setlist-song\">Goal To My SHIP</td><td class=\"setlist-perf\"><span class=\"guest-performer\">上田瞳</span></td></tr>\n<tr><td class=\"setlist-no\">20</td><td class=\"setlist-song\">鳥かごのロンリーバード</td><td class=\"setlist-perf\"><span class=\"guest-performer\">巽悠衣子</span></td></tr>\n<tr><td class=\"setlist-no\">21</td><td class=\"setlist-song\">L’s Surprise!!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">髙橋ミナミ</span></td></tr>\n<tr><td class=\"setlist-no\">22</td><td class=\"setlist-song\">走れウマ娘 ※Short Intro Ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Lynn</span><span class=\"guest-performer\">松井恵理子</span><span class=\"guest-performer\">鬼頭明里</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">23</td><td class=\"setlist-song\">グロウアップ・シャイン！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">巽悠衣子</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">田所あずさ</span><span class=\"guest-performer\">青木瑠璃子</span></td></tr>\n<tr><td class=\"setlist-no\">24</td><td class=\"setlist-song\">unbreakable</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span></td></tr>\n<tr><td class=\"setlist-no\">25</td><td class=\"setlist-song\">Secret GRADUATION ※Long Intro Ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">前田玲奈</span></td></tr>\n<tr><td class=\"setlist-no\">26</td><td class=\"setlist-song\">Waiting for Tomorrow</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大西沙織</span></td></tr>\n<tr><td class=\"setlist-no\">27</td><td class=\"setlist-song\">Silent Star ※Long Intro Ver.</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高野麻里佳</span></td></tr>\n<tr><td class=\"setlist-no\">28</td><td class=\"setlist-song\">ありがとう、神様</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span></td></tr>\n<tr><td class=\"setlist-no\">29</td><td class=\"setlist-song\">Find My Only Way</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大橋彩香</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大西沙織</span></td></tr>\n<tr><td class=\"setlist-no\">30</td><td class=\"setlist-song\">うまぴょい伝説 ※-TEAM C-</td><td class=\"setlist-perf\"><span class=\"guest-performer\">Lynn</span><span class=\"guest-performer\">松井恵理子</span><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">前田玲奈</span><span class=\"guest-performer\">鬼頭明里</span><span class=\"guest-performer\">首藤志奈</span></td></tr>\n<tr><td class=\"setlist-no\">31</td><td class=\"setlist-song\">うまぴょい伝説 ※-TEAM B-</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">巽悠衣子</span><span class=\"guest-performer\">髙橋ミナミ</span><span class=\"guest-performer\">徳井青空</span><span class=\"guest-performer\">田所あずさ</span><span class=\"guest-performer\">青木瑠璃子</span></td></tr>\n<tr><td class=\"setlist-no\">32</td><td class=\"setlist-song\">うまぴょい伝説 ※-TEAM A-</td><td class=\"setlist-perf\"><span class=\"guest-performer\">和氣あず未</span><span class=\"guest-performer\">高野麻里佳</span><span class=\"guest-performer\">Machico</span><span class=\"guest-performer\">上田瞳</span><span class=\"guest-performer\">大橋彩香</span><span class=\"guest-performer\">木村千咲</span><span class=\"guest-performer\">大西沙織</span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/live_cat_data.json",
+            "category": "other",
+            "section": null,
+            "group": 61,
+            "performance": 0,
+            "day": 0
+          },
+          "setlist_status": "verified"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "curated_live",
+          "label": "站内精调歌单",
+          "url": "/zh-Hans/live/other/61"
+        }
+      ],
+      "legacy_url": "/zh-Hans/live/other/61",
+      "legacy_aliases": [
+        "/zh-Hans/live/other/61",
+        "/zh-Hans/live/other/61/0/0"
+      ],
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "summary": "出处：https://www.eventernote.com/events/157286",
+      "setlist_status": "verified"
     },
     {
       "id": "live-numbered-2nd-event-2018-10-14",
@@ -119077,5 +122731,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "445b4f2f21fc37207941"
+  "build_id": "d1781cd48a5fb25239a7"
 }
