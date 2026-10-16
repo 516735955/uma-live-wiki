@@ -17,6 +17,7 @@ journalctl -u umamusume-update.service -n 80 --no-pager
 本机发布已提交的确定版本：
 
 ```bash
+npm ci --prefix uma_tools --include=dev --no-audit --no-fund
 node deploy/package-release.js HEAD /tmp/uma-release.tgz
 ```
 
@@ -42,7 +43,7 @@ sudo bash /var/www/umamusume/deploy/rollback.sh
 
 ## 资源与版本
 
-`prepare-release.js` 自动处理页面、原生模块、懒加载模板和血统 iframe 的 JS/CSS 引用，资源按内容生成文件名。发布版按原有层叠顺序合并入口样式，并预加载启动所需的关键模块。入口 HTML 和可变 data JS 重新校验，`assets` 长期缓存。本地图片带发布版本参数，同路径订正随新页面取得新图；无版本图片重新校验。已打开的上一版页面仍可读取原脚本资源。
+`prepare-release.js` 自动处理页面、原生模块、懒加载模板和血统 iframe 的 JS/CSS 引用，资源按内容生成文件名。发布构建使用锁定版本的 esbuild 合并压缩启动模块，页面模板继续按需导入；构建依赖不随发布包运行。发布版按原有层叠顺序合并入口样式，仅预加载已打包的启动入口。入口 HTML 和可变 data JS 重新校验，`assets` 长期缓存。本地图片带发布版本参数，同路径订正随新页面取得新图；无版本图片重新校验。已打开的上一版页面仍可读取原脚本资源。
 
 `/api/release` 返回进程启动时的提交；入口 HTML 和 release.json 记录同一提交。检查实际运行版本，不以文件复制成功代替上线成功。
 

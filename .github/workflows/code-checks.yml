@@ -26,6 +26,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install Pillow beautifulsoup4 openpyxl
+      - run: npm ci --prefix uma_tools --include=dev --no-audit --no-fund
       - name: Browser dependencies
         if: runner.os == 'Linux'
         run: |

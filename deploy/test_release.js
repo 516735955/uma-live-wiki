@@ -12,7 +12,8 @@ try {
   fs.writeFileSync(path.join(root, 'uma_tools/base.css'), '.card{color:red}');
   fs.writeFileSync(path.join(root, 'uma_tools/detail.css'), '.card{color:blue}');
   fs.writeFileSync(path.join(root, '赛马娘LIVE相关.html'), html);
-  fs.writeFileSync(path.join(root, 'uma_tools/app.js'), 'load("/uma_tools/child.js"); load("/data/index.js");');
+  fs.writeFileSync(path.join(root, 'uma_tools/app.js'), 'import { value } from "/uma_tools/shared.js"; globalThis.startupValue = value; load("/uma_tools/child.js"); load("/data/index.js");');
+  fs.writeFileSync(path.join(root, 'uma_tools/shared.js'), 'export const value = 42;');
   fs.writeFileSync(path.join(root, 'uma_tools/child.js'), 'const value = 1;');
   fs.copyFileSync(path.join(__dirname, '../uma_tools/image-viewer.js'), path.join(root, 'uma_tools/image-viewer.js'));
   const vendor = path.join(root, 'uma_tools/vendor/photoswipe/photoswipe.esm.min.js');
@@ -25,6 +26,10 @@ try {
   assert.strictEqual(styles.length, 1, 'publication combines render-blocking styles into one request');
   assert.strictEqual(fs.readFileSync(path.join(root, styles[0][1]), 'utf8'), '.card{color:red}\n.card{color:blue}', 'the CSS cascade order survives publication');
   const firstApp = fs.readFileSync(path.join(root, first.assets['/uma_tools/app.js']), 'utf8');
+  assert(!/\bfrom\s*["']/.test(firstApp), 'the startup static graph has no follow-up module requests');
+  const context = { load() {} };
+  require('vm').runInNewContext(firstApp, context);
+  assert.strictEqual(context.startupValue, 42, 'bundling retains imported runtime behavior');
   assert(firstApp.includes(first.assets['/uma_tools/child.js']), 'lazy loader references its exact dependency');
   assert(firstApp.includes('/data/index.js'), 'mutable data is not bundled into immutable assets');
   const viewer = fs.readFileSync(path.join(root, first.assets['/uma_tools/image-viewer.js']), 'utf8');

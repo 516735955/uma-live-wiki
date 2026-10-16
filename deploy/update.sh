@@ -65,7 +65,9 @@ else
   STATUS="$(fetch "https://api.github.com/repos/516735955/uma-live-wiki/compare/$RUNNING...$SHA" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>console.log(JSON.parse(s).status))')"
   [ "$STATUS" = ahead ] || { echo 'Refusing an older or unrelated main commit'; exit 1; }
   printf '%s\n' "$RUNNING" > "$WORK/ancestors"
+  npm ci --prefix "$SRC/uma_tools" --include=dev --no-audit --no-fund
   node "$SRC/deploy/prepare-release.js" "$SRC" "$SHA" "$WORK/ancestors"
+  rm -rf "$SRC/uma_tools/node_modules"
 fi
 [ -f "$SRC/release.json" ] || { echo 'Use: node deploy/package-release.js HEAD /tmp/uma-release.tgz'; exit 1; }
 SHA="$(node -p 'require(process.argv[1]).commit' "$SRC/release.json")"

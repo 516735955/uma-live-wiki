@@ -16,7 +16,8 @@ try {
   execFileSync('tar', ['-xf', archive, '-C', stage]);
   const ancestors = execFileSync('git', ['rev-list', commit], { cwd: root, encoding: 'utf8' }).trim().split('\n');
   // Use the committed release builder, not an uncommitted local implementation.
-  require(path.join(stage, 'deploy/prepare-release')).prepareRelease(stage, commit, ancestors);
+  require(path.join(stage, 'deploy/prepare-release')).prepareRelease(stage, commit, ancestors,
+    require('../uma_tools/node_modules/esbuild'));
   // Do not serialize macOS extended attributes into Linux release packages.
   const tarOptions = process.platform === 'darwin' ? ['--no-xattrs'] : [];
   execFileSync('tar', [...tarOptions, '-czf', target, '-C', stage, '.'], { env: { ...process.env, COPYFILE_DISABLE: '1' } });

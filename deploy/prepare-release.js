@@ -3,8 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const os = require('os');
 
-function prepareRelease(root, commit, ancestors = []) {
+function prepareRelease(root, commit, ancestors = [], compiler) {
   if (!/^[a-f0-9]{40}$/.test(commit)) throw new Error('A full Git commit is required');
   const entry = path.join(root, '赛马娘LIVE相关.html');
   const assets = {};
@@ -31,6 +32,30 @@ function prepareRelease(root, commit, ancestors = []) {
     return assets[url];
   }
   let html = rewrite(fs.readFileSync(entry, 'utf8'));
+  if (assets['/uma_tools/app.js']) {
+    const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-entry-'));
+    try {
+      // Resolve the published static graph locally; route imports keep their
+      // immutable public URLs and continue loading only when opened.
+      for (const url of new Set(Object.values(assets))) {
+        if (!url.endsWith('.js')) continue;
+        const source = fs.readFileSync(path.join(root, url), 'utf8')
+          .replace(/(\bfrom\s*["'])\/assets\//g, '$1./');
+        fs.writeFileSync(path.join(temporary, path.basename(url)), source);
+      }
+      const previous = assets['/uma_tools/app.js'];
+      const result = (compiler || require('../uma_tools/node_modules/esbuild')).buildSync({
+        entryPoints: [path.join(temporary, path.basename(previous))],
+        bundle: true, format: 'esm', platform: 'browser', target: 'es2020',
+        minify: true, charset: 'utf8', write: false, logLevel: 'silent',
+      });
+      const source = result.outputFiles[0].text;
+      const digest = crypto.createHash('sha256').update(source).digest('hex').slice(0, 16);
+      assets['/uma_tools/app.js'] = '/assets/' + digest + '.js';
+      fs.writeFileSync(path.join(root, assets['/uma_tools/app.js']), source);
+      html = html.split(previous).join(assets['/uma_tools/app.js']);
+    } finally { fs.rmSync(temporary, { recursive: true, force: true }); }
+  }
   const styles = [...html.matchAll(/<link\s+rel="stylesheet"\s+href="(\/assets\/[^" ]+\.css)"\s*>/g)];
   if (styles.length > 1) {
     const css = styles.map(match => fs.readFileSync(path.join(root, match[1]), 'utf8')).join('\n');
@@ -45,7 +70,7 @@ function prepareRelease(root, commit, ancestors = []) {
       return '<link rel="stylesheet" href="' + bundle + '">';
     });
   }
-  const critical = ['/uma_tools/app.js', '/uma_tools/frontend/components.js', '/uma_tools/frontend/view-model.js', '/uma_tools/frontend/pages.js', '/uma_tools/frontend/domains.js'];
+  const critical = ['/uma_tools/app.js'];
   const preloads = critical.filter(url => assets[url]).map(url => '<link rel="modulepreload" href="' + assets[url] + '">').join('\n');
   html = html.replace('</head>', preloads + '\n<meta name="uma-release" content="' + commit + '">\n</head>');
   fs.writeFileSync(entry, html);
