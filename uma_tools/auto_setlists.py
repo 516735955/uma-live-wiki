@@ -205,14 +205,17 @@ def compare(blocks, catalog):
     return report
 
 
-def attach_discovered_sessions(blocks, catalog, events):
+def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
     """Create a session only when event and performer evidence identifies it uniquely."""
     slots = curated_slots(catalog)
     groups = catalog.setdefault('other', {}).setdefault('groups', [])
     added = []
+    published = {(normalized_title(event.get('title')), event.get('date')) for event in existing_events}
     for block in blocks:
         key = (normalized_title(block['title']), block['date'], session_label(block['title']))
         if not block['date'] or any((normalized_title(slot['title']), slot['date'], slot['label']) == key for slot in slots):
+            continue
+        if (key[0], key[1]) in published:
             continue
         matches = [event for event in events if (normalized_title(event.get('title')), event.get('date'), session_label(event.get('title'))) == key
                    and event.get('link', '').startswith('https://www.eventernote.com/events/')]
@@ -322,7 +325,9 @@ def main():
             raise ValueError("Google sheet has no setlists; refusing to update curated data")
         events_file = ROOT / 'data/events_data.json'
         events = json.loads(events_file.read_text(encoding='utf-8')).get('events', []) if events_file.exists() else []
-        added = attach_discovered_sessions(blocks, catalog, events)
+        published_file = ROOT / 'data/events_catalog.json'
+        published = json.loads(published_file.read_text(encoding='utf-8')).get('events', []) if published_file.exists() else []
+        added = attach_discovered_sessions(blocks, catalog, events, published)
         report = compare(blocks, catalog)
         report['filled'].extend(added)
     except (OSError, ValueError):

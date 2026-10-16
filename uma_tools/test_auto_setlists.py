@@ -26,6 +26,14 @@ def sheet(songs=None):
 
 
 class SheetPublicationTests(unittest.TestCase):
+    def test_existing_canonical_event_is_not_registered_again_in_another_category(self):
+        block = {'title': 'Uma 1st EVENT@Hall', 'date': '2026-10-14', 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
+        event = {'title': block['title'], 'date': block['date'], 'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}
+        source = {}
+        published = [{'id': 'live-numbered-1st', 'title': 'Uma 1st EVENT', 'date': block['date']}]
+        self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
+        self.assertEqual(source['other']['groups'], [])
+
     def test_new_sourced_session_is_registered_once_without_guessing_roles(self):
         block = {'title': 'New Uma LIVE', 'date': '2026-10-14', 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
         event = {'title': block['title'], 'date': block['date'], 'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}
