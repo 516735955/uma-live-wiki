@@ -1,6 +1,6 @@
 name: sheet-sync
 
-# 唯一的 Google Sheet 写入链路：仅补唯一匹配的空白歌单。
+# Google Sheet 写入链路：核对来源后登记新场次，并补唯一匹配的空白歌单。
 # 已有非空资料的差异只记录到工作流报告，留待人工处理；不发邮件。
 on:
   schedule:
@@ -24,6 +24,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
       - name: Install Python deps
         run: |
@@ -53,9 +57,12 @@ jobs:
             python -c "import json; r=json.load(open('data/events/sheet_apply_report.json')); print('Filled:',len(r['filled']),'Review:',len(r['review'])); [print(x) for x in r['review']]"
           fi
 
+      - name: Read the complete generated catalog before publication
+        run: node uma_tools/test_catalog_store.js
+
       - name: Commit generated data (if changed)
         run: |
-          git add data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
+          git add data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/creator_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
