@@ -86,8 +86,10 @@ async function main() {
   check(page.body.includes('name="uma-release" content="' + commit + '"'), 'HTML 与服务版本不一致');
   const assetMatches = Array.from(page.body.matchAll(/(?:href|src)=["'](\/assets\/[a-f0-9]{16}\.(?:css|js))["']/g));
   const assets = Array.from(new Set(assetMatches.map((match) => match[1])));
-  const required = ['frontend/styles/foundation.css', 'app.js', 'vue.global.prod.js'];
-  required.forEach((name) => check(assets.includes(manifest.assets['/uma_tools/' + (name === 'vue.global.prod.js' ? 'vendor/' : '') + name]), '页面缺少版本化资源', name));
+  const stylesheet = manifest.assets['/uma_tools/bundle.css'] || manifest.assets['/uma_tools/frontend/styles/foundation.css'];
+  check(assets.includes(stylesheet), '页面缺少版本化资源', 'entry stylesheet');
+  const required = ['app.js', 'vendor/vue.global.prod.js'];
+  required.forEach((name) => check(assets.includes(manifest.assets['/uma_tools/' + name]), '页面缺少版本化资源', name));
   Object.values(manifest.assets).forEach((asset) => { if (!assets.includes(asset)) assets.push(asset); });
 
   for (const asset of assets) {
