@@ -63,6 +63,9 @@ async function main() {
   assert.strictEqual(girlsLegendLegacy.song.id, girlsLegend.song.id, 'merged song legacy IDs must keep resolving');
 
   const creatorList = await store.creators(new URLSearchParams('page_size=5000'));
+  const personPage = await store.creators(new URLSearchParams('type=person&page=2&page_size=40'));
+  assert(personPage.total > 40 && personPage.items.length <= 40);
+  assert(personPage.items.every(person => person.type !== 'organization'));
   assert.strictEqual(creatorList.total, snapshot.creatorRows.length);
   assert(creatorList.items.every((creator) => !creator.works && !creator.collaborators), 'creator list leaked detail payloads');
   const creator = await store.creator(creatorList.items[0].id);
@@ -117,6 +120,14 @@ async function main() {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-catalog-profile-'));
   try {
     copyDir(path.join(__dirname, '..', 'data'), temporary);
+    const manifestFile = path.join(temporary, 'catalog_manifest.json');
+    const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
+    const expectedHome = await store.home();
+    manifest.home_stats = expectedHome.stats;
+    fs.writeFileSync(manifestFile, JSON.stringify(manifest));
+    const homeStore = new CatalogStore(temporary);
+    homeStore.get = () => { throw new Error('home must not parse the full music catalogs'); };
+    assert.deepStrictEqual((await homeStore.home()).stats, expectedHome.stats);
     const editedStore = new CatalogStore(temporary);
     const before = await editedStore.voices();
     const filename = path.join(temporary, 'voice_actor_profiles.json');

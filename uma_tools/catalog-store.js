@@ -489,6 +489,21 @@ class CatalogStore {
   }
 
   async home() {
+    const files = ['catalog_manifest.json', 'events_catalog.json'];
+    const stats = await Promise.all(files.map(name => fs.promises.stat(path.join(this.dataDir, name))));
+    const signature = stats.map(stat => stat.size + ':' + stat.mtimeMs).join('|') + new Date().toDateString();
+    if (this.homeSnapshot?.signature === signature) return this.homeSnapshot.value;
+    const [manifest, catalog] = await Promise.all(files.map(async name => JSON.parse(await fs.promises.readFile(path.join(this.dataDir, name), 'utf8'))));
+    if (manifest.home_stats && manifest.build_id === catalog.build_id) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const next = (catalog.events || []).filter(event =>
+        new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime() >= today.getTime())
+        .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0];
+      const value = { build_id: manifest.build_id + '-home1', stats: manifest.home_stats, nextEvent: next ? eventSummary(next) : null };
+      this.homeSnapshot = { signature, value };
+      return value;
+    }
     const store = await this.get();
     const events = store.eventsDoc.events || [];
     const liveEvents = events.filter((event) => event.kind === 'concert');
@@ -610,6 +625,7 @@ class CatalogStore {
     const query = normalize(params.get('q'));
     const role = params.get('role') || '';
     let rows = store.creatorRows.filter((row) => {
+      if (params.get('type') === 'person' && row.data.type === 'organization') return false;
       if (query && !row.search.includes(query)) return false;
       if (role && !(row.data.roles || []).some((item) => item.role === role)) return false;
       return true;

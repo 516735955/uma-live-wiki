@@ -104,6 +104,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
         "schema_version": 1,
         "build_id": build_id,
         "generated_at": generated_at,
+        "home_stats": home_statistics(catalog, songs_catalog, appearances, profiles_doc),
         "files": {
             "events": "/data/events_catalog.json",
             "songs": "/data/song_catalog.json",
@@ -159,6 +160,7 @@ def build_music_only() -> dict[str, pipeline_common.Any]:
         document["build_id"] = build_id
     manifest["build_id"] = build_id
     manifest["generated_at"] = generated_at
+    manifest['home_stats'] = home_statistics(catalog, songs_catalog, appearances, profiles_doc)
     manifest.setdefault("files", {})["creators"] = "/data/creator_catalog.json"
     errors = pipeline_validation.validate(
         catalog,
@@ -176,4 +178,15 @@ def build_music_only() -> dict[str, pipeline_common.Any]:
         "appearances": appearances,
         "profiles": profiles_doc,
         "manifest": manifest,
+    }
+
+
+def home_statistics(catalog, songs, appearances, profiles):
+    events = catalog.get('events') or []
+    concerts = [event for event in events if event.get('kind') == 'concert']
+    return {
+        'songs': songs['coverage']['songs'], 'albums': songs['coverage']['albums'],
+        'live': sum(max(1, len(event.get('sessions') or [])) for event in concerts),
+        'performances': len(concerts), 'characters': len(appearances.get('characters') or {}),
+        'voiceActors': len(profiles.get('voice_actors') or []), 'events': len(events),
     }

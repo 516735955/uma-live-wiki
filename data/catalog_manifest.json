@@ -8,5 +8,14 @@
     "creators": "/data/creator_catalog.json",
     "appearances": "/data/appearance_index.json",
     "voice_actors": "/data/voice_actor_profiles.json"
+  },
+  "home_stats": {
+    "songs": 1035,
+    "albums": 115,
+    "live": 96,
+    "performances": 81,
+    "characters": 189,
+    "voiceActors": 195,
+    "events": 473
   }
 }

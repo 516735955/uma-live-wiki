@@ -115,9 +115,6 @@ exports.createService = function (deps) {
         "News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...",
       );
       deps.reloadLantis();
-      deps.catalogStore
-        .get()
-        .catch((error) => console.error("[catalog:warm]", error.message));
       if (deps.NO_AUTO_CRAWL) {
         console.log("Automatic data refresh disabled (--no-crawl).");
         return;
