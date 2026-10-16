@@ -33,6 +33,10 @@ class SheetPublicationTests(unittest.TestCase):
         published = [{'id': 'live-numbered-1st', 'title': 'Uma 1st EVENT', 'date': block['date']}]
         self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
         self.assertEqual(source['other']['groups'], [])
+        block['title'] = 'Uma 1st EVENT！@Hall'
+        event['title'] = block['title']
+        published[0]['title'] = 'Uma 1st EVENT!'
+        self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
 
     def test_new_sourced_session_is_registered_once_without_guessing_roles(self):
         block = {'title': 'New Uma LIVE', 'date': '2026-10-14', 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}

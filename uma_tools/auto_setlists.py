@@ -15,6 +15,7 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
+import unicodedata
 import urllib.request
 import urllib.error
 
@@ -40,7 +41,7 @@ PERFORMER_SPLIT_RE = re.compile(r"[、，,､/・]")
 def normalized_title(value):
     title = TITLE_SPLIT_RE.split(str(value or "").strip(), 1)[0]
     title = REGION_RE.sub("", title).strip()
-    return re.sub(r"\s+", "", title).casefold()
+    return re.sub(r"\s+", "", unicodedata.normalize('NFKC', title)).casefold()
 
 
 def event_date(value):
