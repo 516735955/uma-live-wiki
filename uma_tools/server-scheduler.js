@@ -63,9 +63,7 @@ exports.createService = function (deps) {
       },
     );
   }
-  function start() {}
   return {
-    start,
     get lantisRunning() {
       return lantisRunning;
     },

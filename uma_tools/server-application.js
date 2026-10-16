@@ -122,10 +122,10 @@ exports.createService = function (deps) {
       const refreshNews = () => {
         if (deps.NO_AUTO_CRAWL) return;
         deps.refreshNewsIndex().catch((error) => {
-        console.error(
-          "[news] startup refresh failed:",
-          (error && error.message) || error,
-        );
+          console.error(
+            "[news] startup refresh failed:",
+            (error && error.message) || error,
+          );
         });
       };
       refreshNews();

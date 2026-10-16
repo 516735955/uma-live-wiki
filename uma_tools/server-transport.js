@@ -205,6 +205,5 @@ exports.createService = function (deps) {
       finish(body, false);
     }
   }
-  function start() {}
-  return { start, httpsGet, sendJson, httpsGetHtml };
+  return { httpsGet, sendJson, httpsGetHtml };
 };

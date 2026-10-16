@@ -148,6 +148,5 @@ exports.createService = function (deps) {
       deps.sendJson(res, 503, { error: "catalog temporarily unavailable" });
     }
   }
-  function start() {}
-  return { start, handleHomeSummary, handleCatalogApi };
+  return { handleHomeSummary, handleCatalogApi };
 };

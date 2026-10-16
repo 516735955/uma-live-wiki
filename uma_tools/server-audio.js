@@ -232,6 +232,5 @@ exports.createService = function (deps) {
     });
     tryNext();
   }
-  function start() {}
-  return { start, handleAudioProxy };
+  return { handleAudioProxy };
 };

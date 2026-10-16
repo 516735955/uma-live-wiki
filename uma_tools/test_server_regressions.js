@@ -15,7 +15,8 @@ const section = (start, end) => {
   const begin = source.indexOf(start);
   const finish = source.indexOf(end, begin);
   const lifecycle = source.slice(begin).search(/\n\s*function start\(\)/);
-  return source.slice(begin, finish < 0 ? begin + lifecycle : finish).replace(/\bdeps\s*\./g, '');
+  const boundary = lifecycle < 0 ? source.lastIndexOf('\n  return {') : begin + lifecycle;
+  return source.slice(begin, finish < 0 ? boundary : finish).replace(/\bdeps\s*\./g, '');
 };
 const tick = async () => { for (let i = 0; i < 5; i++) await Promise.resolve(); };
 const { mergeNews } = require('./news-content');

@@ -498,7 +498,6 @@ exports.createService = function (deps) {
         detail.archive_fragments,
       );
   }
-  function start() {}
-  return { start, newsContent, translateTitle, translateArticle,
+  return { newsContent, translateTitle, translateArticle,
     get translationAvailable() { return !!BAIDU_APPID && !!BAIDU_SECRET && Date.now() >= blockedUntil; } };
 };
