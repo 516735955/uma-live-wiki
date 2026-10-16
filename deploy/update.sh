@@ -11,6 +11,7 @@ UMA_USER="${UMA_USER:-alaemiryoung}"
 mkdir -p "$ROOT/releases" "$ROOT/shared" "$ROOT/slots" "$ROOT/deploy"
 exec 9>"$ROOT/.deploy.lock"
 flock 9
+systemctl disable --now umamusume-restart.timer 2>/dev/null || true
 WORK="$(mktemp -d)"
 ACTIVATED=0
 STARTED=0
