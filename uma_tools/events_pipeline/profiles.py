@@ -204,6 +204,10 @@ def official_profile_photo(profile_url: str) -> dict[str, str]:
 
 
 def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
+    from knowledge_io import read_json, write_json
+    state_path = pipeline_common.DATA_DIR / 'auto_update' / 'voice_profiles.json'
+    state = read_json(state_path, {'attempted_at': {}})
+    attempts = state.setdefault('attempted_at', {})
     characters = pipeline_common.read_window_data(pipeline_common.DATA_DIR / "character_index_data.js", "CHAR_INDEX")
     voice_list = pipeline_common.read_window_data(pipeline_common.DATA_DIR / "voice_list_data.js", "VA_LIST")
     photos = pipeline_common.read_window_data(pipeline_common.DATA_DIR / "va_photos_data.js", "VA_PHOTOS")
@@ -291,10 +295,19 @@ def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
     profiles_to_fetch = [
         profile for profile in identities.profiles
         if pipeline_text.fold_name(str((profile.get("identity") or {}).get("ja") or "")) not in accepted_lookups
+        and pipeline_common.time.time() - attempts.get((profile.get('identity') or {}).get('ja') or '', 0) >= 86400
     ]
+    profiles_to_fetch.sort(key=lambda profile: attempts.get(profile['identity'].get('ja') or '', 0))
+    profiles_to_fetch = profiles_to_fetch[:6]
     with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-        for record in executor.map(fetch, profiles_to_fetch):
+        futures = {executor.submit(fetch, profile): profile for profile in profiles_to_fetch}
+        for future in pipeline_common.concurrent.futures.as_completed(futures):
+            record = future.result()
             records.append(record)
+            attempts[futures[future]['identity'].get('ja') or ''] = pipeline_common.time.time()
+            merged = apply_additive_voice_detail_refresh({'records': previous_details}, {'records': records})
+            write_json(pipeline_common.VOICE_DETAILS_FILE, merged)
+            write_json(state_path, state)
     records.sort(key=lambda row: pipeline_text.fold_name(row.get("name_ja") or row.get("name_zh") or ""))
     return {
         "schema_version": 2,

@@ -3,10 +3,12 @@ from __future__ import annotations
 
 from . import common as pipeline_common
 
+deadline = float('inf')
+
 
 def _opener(use_proxy):
     if not use_proxy:
-        return pipeline_common.urllib.request.build_opener()
+        return pipeline_common.urllib.request.build_opener(pipeline_common.urllib.request.ProxyHandler({}))
     handler = pipeline_common.urllib.request.ProxyHandler({
         'http': pipeline_common.PROXY,
         'https': pipeline_common.PROXY,
@@ -21,7 +23,7 @@ def _request(url):
     })
 
 
-def http_get(url, binary=False, timeout=60):
+def http_get(url, binary=False, timeout=12):
     """带磁盘缓存、429/瞬断退避与代理回退的抓取。Wikipedia 域名走代理优先。"""
     digest = pipeline_common.hashlib.sha1(url.encode('utf-8')).hexdigest()[:16]
     ext = '.bin' if binary else '.txt'
@@ -34,10 +36,13 @@ def http_get(url, binary=False, timeout=60):
     needs_proxy = ('wikipedia.org' in url) or ('wikimedia.org' in url) or ('netkeiba.com' in url)
     order = [True, False] if needs_proxy else [False, True]
     last_error = None
-    for attempt in range(3):
+    for attempt in range(2):
         for use_proxy in order:
+            remaining = deadline - pipeline_common.time.monotonic()
+            if remaining <= 0:
+                raise RuntimeError('horse update time budget exhausted')
             try:
-                with _opener(use_proxy).open(_request(url), timeout=timeout) as resp:
+                with _opener(use_proxy).open(_request(url), timeout=min(timeout, remaining)) as resp:
                     data = resp.read()
                 descriptor, temporary = pipeline_common.tempfile.mkstemp(prefix='horse-source-', dir=pipeline_common.CACHE_DIR)
                 try:
@@ -50,7 +55,9 @@ def http_get(url, binary=False, timeout=60):
                 return data if binary else data.decode('utf-8', 'replace')
             except pipeline_common.urllib.error.HTTPError as exc:
                 last_error = exc
-                if exc.code in (429, 500, 502, 503, 504) and attempt < 2:
+                if exc.code not in (429, 500, 502, 503, 504):
+                    raise RuntimeError('HTTP %s: %s' % (exc.code, url)) from exc
+                if attempt < 1:
                     pipeline_common.time.sleep(2 + attempt * 4)
                     continue
             except Exception as exc:  # noqa: BLE001

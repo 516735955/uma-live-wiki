@@ -65,12 +65,23 @@ def main():
             list_rows = pipeline_common.json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
         horses.sort(key=lambda horse: (horse['id'] in details, attempts.get(horse['id'], 0)))
     refreshed = 0
+    if args.missing:
+        pipeline_transport.deadline = pipeline_common.time.monotonic() + 15 * 60
+
+    def checkpoint():
+        if args.missing:
+            atomic_write(pipeline_common.OUT_DETAIL, serialize(pipeline_common.DETAIL_PREFIX, details))
+            atomic_write(pipeline_common.OUT_LIST, serialize(pipeline_common.LIST_PREFIX, list_rows))
+            write_json(state_path, profile_state)
+
     for index, horse in enumerate(horses, 1):
+        if args.missing and (refreshed >= 8 or pipeline_common.time.monotonic() >= pipeline_transport.deadline):
+            break
         if args.missing and horse['id'] in details:
             record = details[horse['id']]
             record['cids'] = sorted(set(record.get('cids', []) + horse['cids']))
             missing = any(not record.get(field) for field in ('photo', 'intro')) or (pipeline_races.battle_count(record) and len(record.get('races', [])) < pipeline_races.battle_count(record))
-            if missing and refreshed < 12 and pipeline_common.time.time() - attempts.get(horse['id'], 0) >= 86400:
+            if missing and pipeline_common.time.time() - attempts.get(horse['id'], 0) >= 86400:
                 attempts[horse['id']] = pipeline_common.time.time()
                 refreshed += 1
                 incoming = pipeline_profiles.fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
@@ -84,6 +95,7 @@ def main():
                     row['cids'] = record['cids']
                     fill_empty(row, {field: record.get(field) for field in ('photo', 'sex', 'born', 'birthdate')})
                     pipeline_registry.birth_precision(row)
+            checkpoint()
             continue
         done_path = pipeline_common.os.path.join(pipeline_common.CACHE_DIR, 'detail_%s.json' % horse['id'])
         if args.races_only:
@@ -133,6 +145,7 @@ def main():
                 with open(done_path, 'w', encoding='utf-8') as handle:
                     pipeline_common.json.dump(record, handle, ensure_ascii=False)
         elif args.missing:
+            refreshed += 1
             record = pipeline_profiles.fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
             if args.localize_photos and record.get('photo'):
                 record['photo'] = pipeline_photos.localize_photo(record) or record['photo']
@@ -209,6 +222,7 @@ def main():
         ))
         if index % 10 == 0:
             print('  ...complete %d/%d' % (index, total))
+        checkpoint()
 
     if args.missing:
         write_json(state_path, profile_state)

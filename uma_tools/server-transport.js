@@ -1,5 +1,7 @@
 // transport service. Dependencies are explicit live ports.
 exports.createService = function (deps) {
+  const representations = new Map();
+  let representationBytes = 0;
   function httpsGet(url, cb, signal) {
     const u = new URL(url);
     // cb 只允许调一次：timeout destroy 会同时触发 req/res 的 error 事件，
@@ -171,7 +173,20 @@ exports.createService = function (deps) {
       res.end();
       return;
     }
-    const body = Buffer.from(JSON.stringify(obj));
+    let representation = settings.etag && representations.get(settings.etag);
+    if (!representation) {
+      representation = { body: Buffer.from(JSON.stringify(obj)), gzip: null };
+      if (code === 200 && settings.etag && representation.body.length <= 4 * 1024 * 1024) {
+        representations.set(settings.etag, representation);
+        representationBytes += representation.body.length;
+        while (representations.size > 64 || representationBytes > 16 * 1024 * 1024) {
+          const key = representations.keys().next().value;
+          representationBytes -= representations.get(key).body.length;
+          representations.delete(key);
+        }
+      }
+    }
+    const body = representation.body;
     const finish = (payload, compressed) => {
       if (res.destroyed || res.writableEnded) return;
       if (compressed) {
@@ -183,9 +198,9 @@ exports.createService = function (deps) {
       res.end(payload);
     };
     if (body.length >= 1024 && res.req && deps.requestAcceptsGzip(res.req)) {
-      deps.zlib.gzip(body, (err, compressed) =>
-        finish(err ? body : compressed, !err),
-      );
+      if (!representation.gzip) representation.gzip = new Promise(resolve =>
+        deps.zlib.gzip(body, (error, compressed) => resolve(error ? null : compressed)));
+      representation.gzip.then(compressed => finish(compressed || body, !!compressed));
     } else {
       finish(body, false);
     }

@@ -8,7 +8,9 @@ const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-release-test-'));
 try {
   const root = path.join(temporary, 'source');
   fs.mkdirSync(path.join(root, 'uma_tools'), { recursive: true });
-  const html = '<head><script src="/uma_tools/app.js"></script><script type="module" src="/uma_tools/image-viewer.js"></script></head>';
+  const html = '<head><link rel="stylesheet" href="/uma_tools/base.css"><link rel="stylesheet" href="/uma_tools/detail.css"><script src="/uma_tools/app.js"></script><script type="module" src="/uma_tools/image-viewer.js"></script></head>';
+  fs.writeFileSync(path.join(root, 'uma_tools/base.css'), '.card{color:red}');
+  fs.writeFileSync(path.join(root, 'uma_tools/detail.css'), '.card{color:blue}');
   fs.writeFileSync(path.join(root, '赛马娘LIVE相关.html'), html);
   fs.writeFileSync(path.join(root, 'uma_tools/app.js'), 'load("/uma_tools/child.js"); load("/data/index.js");');
   fs.writeFileSync(path.join(root, 'uma_tools/child.js'), 'const value = 1;');
@@ -18,6 +20,10 @@ try {
   fs.writeFileSync(vendor, 'export default class PhotoSwipe {}');
   const commit = 'a'.repeat(40);
   const first = prepareRelease(root, commit);
+  const publishedHtml = fs.readFileSync(path.join(root, '赛马娘LIVE相关.html'), 'utf8');
+  const styles = [...publishedHtml.matchAll(/rel="stylesheet" href="([^"]+)"/g)];
+  assert.strictEqual(styles.length, 1, 'publication combines render-blocking styles into one request');
+  assert.strictEqual(fs.readFileSync(path.join(root, styles[0][1]), 'utf8'), '.card{color:red}\n.card{color:blue}', 'the CSS cascade order survives publication');
   const firstApp = fs.readFileSync(path.join(root, first.assets['/uma_tools/app.js']), 'utf8');
   assert(firstApp.includes(first.assets['/uma_tools/child.js']), 'lazy loader references its exact dependency');
   assert(firstApp.includes('/data/index.js'), 'mutable data is not bundled into immutable assets');

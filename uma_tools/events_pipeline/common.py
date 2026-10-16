@@ -256,11 +256,11 @@ def atomic_json(path: Path, value: Any) -> None:
         raise
 
 
-def fetch_text_url(url: str, attempts: int = 3) -> str:
+def fetch_text_url(url: str, attempts: int = 2) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": "uma-live-wiki data updater/1.0"})
     for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=12) as response:
                 return response.read().decode("utf-8", "replace")
         except urllib.error.HTTPError as error:
             if error.code == 404 or error.code < 429 or attempt + 1 >= attempts:

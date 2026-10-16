@@ -7,6 +7,7 @@ import re, io, json, sys, time, urllib.request, ssl, os, tempfile
 
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'lantis_news.json')
 MAX_PAGES = 30  # upper bound safety
+SOURCE_FAILURES = []
 
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
 
@@ -61,6 +62,7 @@ def crawl_category(base, pageless, seen):
             html = fetch(url)
         except Exception as e:
             print('fetch fail', url, e)
+            SOURCE_FAILURES.append(url)
             break
         got = parse_list(html)
         if not got:
@@ -115,6 +117,7 @@ def ensure_images(items, max_fetch=None):
             continue
         if max_fetch is not None and fetched >= max_fetch:
             break
+        fetched += 1
         try:
             html = fetch(it['url'])
         except Exception as e:
@@ -123,13 +126,13 @@ def ensure_images(items, max_fetch=None):
         img = extract_image(html)
         if img:
             it['image'] = img
-        fetched += 1
         if fetched % 20 == 0:
             print('  images so far:', fetched)
         time.sleep(0.25)
     return items
 
 def main():
+    SOURCE_FAILURES.clear()
     seen = set()
     items = []
     # Preserve previously-crawled images/ids so re-runs are cheap.
@@ -161,7 +164,7 @@ def main():
     uniq.sort(key=date_key, reverse=True)
     if not uniq and old:
         print('crawl returned no items; keeping', len(old), 'existing ->', OUT)
-        return
+        return bool(SOURCE_FAILURES)
     # 与旧数据合并：部分页抓取失败时也不丢已有条目（新条目覆盖同 id 旧条目）
     merged = {it['id']: it for it in old.values()}
     for it in uniq:
@@ -171,6 +174,7 @@ def main():
     ensure_images(uniq, max_fetch=40)
     write_json_atomic(OUT, uniq)
     print('total', len(uniq), 'with images:', sum(1 for it in uniq if it.get('image')), '->', OUT)
+    return bool(SOURCE_FAILURES)
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

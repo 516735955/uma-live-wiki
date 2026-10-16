@@ -345,22 +345,6 @@ export function createAlbums(deps) {
     return albums.value;
   });
 
-  function albumWorkOf(name) {
-    const value = String(name || "");
-    if (/ANIMATION DERBY Season 2/.test(value)) return "s2";
-    if (/ANIMATION DERBY Season 3/.test(value)) return "s3";
-    if (/ANIMATION DERBY/.test(value)) return "s1";
-    if (/ROAD TO THE TOP/.test(value)) return "rttp";
-    if (/新時代の扉/.test(value)) return "movie";
-    if (/シンデレラグレイ|^超える$/.test(value)) return "cinderella";
-    if (/うまよん/.test(value)) return "yon";
-    if (/うまゆる/.test(value)) return "yuru";
-    if (/STARTING GATE/.test(value)) return "starting-gate";
-    if (/Solo Vocal Tracks/.test(value)) return "solo-vocal";
-    if (/WINNING LIVE/.test(value)) return "winning-live";
-    return "other";
-  }
-
   const relTypeList = deps.computed(function () {
     return ["专辑", "单曲", "原声带", "精选辑", "其他"].filter(function (t) {
       return albumTypes.value.includes(t);

@@ -460,9 +460,16 @@ class CatalogStore {
       creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
       songAliases: new Map(),
       albumsById: new Map(),
-      albumsByName: new Map()
+      albumsByName: new Map(),
+      albumTracks: new Map()
     };
     songRows.forEach((row) => {
+      for (const version of row.data.versions || []) {
+        for (const release of version.releases || []) {
+          const key = release.album_id + ':' + Number(release.track_number);
+          if (!snapshot.albumTracks.has(key)) snapshot.albumTracks.set(key, row.data);
+        }
+      }
       [row.data.id, ...(row.data.legacy_ids || []), row.data.title, ...(row.data.aliases || [])].forEach((key) => {
         const normalized = songIdentityKey(key);
         if (!normalized) return;
@@ -669,9 +676,7 @@ class CatalogStore {
     if (!album) return null;
     const songs = (album.songs || []).map((track, index) => {
       // A title is not an identity. Album and track position identify the release.
-      return store.songRows.map(row => row.data).find(song => (song.versions || []).some(version =>
-        (version.releases || []).some(release => release.album_id === stableAlbumId(album) &&
-          Number(release.track_number) === index + 1)));
+      return store.albumTracks.get(stableAlbumId(album) + ':' + (index + 1));
     }).filter(Boolean);
     return { build_id: store.buildId, album, catalog_songs: Array.from(new Map(songs.map((song) => [song.id, song])).values()) };
   }

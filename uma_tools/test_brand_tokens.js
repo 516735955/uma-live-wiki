@@ -4,7 +4,13 @@ const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
 
-const files = ['app.css', 'music-components.css', 'app.js', '../赛马娘LIVE相关.html'];
+function sources(directory) {
+  return fs.readdirSync(path.join(__dirname, directory), {withFileTypes: true}).flatMap(entry => {
+    const file = path.join(directory, entry.name);
+    return entry.isDirectory() ? sources(file) : /\.(css|js)$/.test(file) ? [file] : [];
+  });
+}
+const files = ['app.css', 'music-components.css', 'app.js', '../赛马娘LIVE相关.html', ...sources('frontend')];
 const forbidden = ['#3558d8', '#315fc2', '#ff8c1a', '#f58220', '#ff7f18', '#ffad38'];
 const failures = [];
 

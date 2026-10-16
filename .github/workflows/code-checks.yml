@@ -26,6 +26,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install Pillow beautifulsoup4 openpyxl
+      - name: Browser dependencies
+        if: runner.os == 'Linux'
+        run: |
+          npm install --prefix uma_tools --no-save --package-lock=false playwright@1.58.2
+          cd uma_tools
+          npx playwright install --with-deps chromium
       - name: Node behavior and release checks
         run: |
           npm --prefix uma_tools run test:regressions
@@ -36,6 +42,17 @@ jobs:
           node deploy/test_release.js
           node deploy/test_data_sync.js
           bash -n deploy/update.sh
+      - name: Browser routes and responsive behavior
+        if: runner.os == 'Linux'
+        run: |
+          node uma_tools/server.js 18083 "$PWD" --no-crawl > /tmp/uma-preview.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid" || true' EXIT
+          for attempt in {1..30}; do
+            if curl -fsS http://localhost:18083/api/release > /dev/null; then break; fi
+            sleep 1
+          done
+          node uma_tools/test_frontend_browser.js
       - name: Parsers, incremental updates and committed catalogs
         run: |
           python -m unittest discover -s uma_tools -p 'test_*.py'

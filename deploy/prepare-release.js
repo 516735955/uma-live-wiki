@@ -30,7 +30,23 @@ function prepareRelease(root, commit, ancestors = []) {
     visiting.delete(url);
     return assets[url];
   }
-  const html = rewrite(fs.readFileSync(entry, 'utf8')).replace('</head>', '<meta name="uma-release" content="' + commit + '">\n</head>');
+  let html = rewrite(fs.readFileSync(entry, 'utf8'));
+  const styles = [...html.matchAll(/<link\s+rel="stylesheet"\s+href="(\/assets\/[^" ]+\.css)"\s*>/g)];
+  if (styles.length > 1) {
+    const css = styles.map(match => fs.readFileSync(path.join(root, match[1]), 'utf8')).join('\n');
+    const digest = crypto.createHash('sha256').update(css).digest('hex').slice(0, 16);
+    const bundle = '/assets/' + digest + '.css';
+    fs.writeFileSync(path.join(root, bundle), css);
+    let first = true;
+    html = html.replace(/<link\s+rel="stylesheet"\s+href="\/assets\/[^" ]+\.css"\s*>/g, () => {
+      if (!first) return '';
+      first = false;
+      return '<link rel="stylesheet" href="' + bundle + '">';
+    });
+  }
+  const critical = ['/uma_tools/app.js', '/uma_tools/frontend/components.js', '/uma_tools/frontend/view-model.js', '/uma_tools/frontend/pages.js', '/uma_tools/frontend/domains.js'];
+  const preloads = critical.filter(url => assets[url]).map(url => '<link rel="modulepreload" href="' + assets[url] + '">').join('\n');
+  html = html.replace('</head>', preloads + '\n<meta name="uma-release" content="' + commit + '">\n</head>');
   fs.writeFileSync(entry, html);
   fs.writeFileSync(path.join(root, 'release.json'), JSON.stringify({ commit, ancestors, assets }, null, 2) + '\n');
   return { commit, assets };
