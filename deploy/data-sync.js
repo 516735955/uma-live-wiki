@@ -110,7 +110,7 @@ function write(file, document) {
 }
 
 function stage(incomingRoot, previousRoot, liveRoot, candidateRoot) {
-  fs.cpSync(liveRoot, candidateRoot, { recursive: true });
+  fs.cpSync(fs.realpathSync(liveRoot), candidateRoot, { recursive: true });
   const removed = [];
   for (const name of new Set([...files(previousRoot), ...files(incomingRoot)])) {
     if (GENERATED.has(name) || RUNTIME.has(name) || name.startsWith('anime/source_snapshots/')) continue;

@@ -100,11 +100,11 @@ exports.createService = function (deps) {
   const NEWS_MAX_CONC = 3;
 
   const NEWS_SNAPSHOT_FILE = deps.path.join(
-    deps.DATA_DIR,
+    process.env.NEWS_RUNTIME_DIR || deps.DATA_DIR,
     "news_snapshot.json",
   );
 
-  const LANTIS_FILE = deps.path.join(deps.DATA_DIR, "lantis_news.json");
+  const LANTIS_FILE = deps.path.join(process.env.NEWS_RUNTIME_DIR || deps.DATA_DIR, "lantis_news.json");
 
   const LANTIS_TTL = 30 * 60 * 1000;
 
@@ -723,7 +723,7 @@ exports.createService = function (deps) {
     return null;
   }
   function start() {
-    if (!deps.NO_AUTO_CRAWL) {
+    if (!(deps.AUTO_CRAWL_DISABLED ?? deps.NO_AUTO_CRAWL)) {
       setTimeout(refreshArchivedNews, 10000);
       setInterval(translateArchivedNews, 15000);
       setInterval(refreshArchivedNews, 30 * 60 * 1000);

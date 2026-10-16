@@ -7,7 +7,7 @@ exports.createService = function (deps) {
   let catalogRefreshRunning = false;
 
   function runCatalogRefresh(reason) {
-    if (catalogRefreshRunning) return;
+    if (catalogRefreshRunning || deps.NO_AUTO_CRAWL) return;
     catalogRefreshRunning = true;
     execFile(
       deps.PYTHON_BIN,
@@ -34,7 +34,7 @@ exports.createService = function (deps) {
   let lantisRunning = false;
 
   function runLantisCrawl(reason) {
-    if (lantisRunning) return;
+    if (lantisRunning || deps.NO_AUTO_CRAWL) return;
     lantisRunning = true;
     const t0 = Date.now();
     execFile(

@@ -36,6 +36,7 @@ function prepareRelease(root, commit, ancestors = []) {
     const css = styles.map(match => fs.readFileSync(path.join(root, match[1]), 'utf8')).join('\n');
     const digest = crypto.createHash('sha256').update(css).digest('hex').slice(0, 16);
     const bundle = '/assets/' + digest + '.css';
+    assets['/uma_tools/bundle.css'] = bundle;
     fs.writeFileSync(path.join(root, bundle), css);
     let first = true;
     html = html.replace(/<link\s+rel="stylesheet"\s+href="\/assets\/[^" ]+\.css"\s*>/g, () => {

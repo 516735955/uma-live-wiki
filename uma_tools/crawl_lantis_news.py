@@ -5,7 +5,7 @@
 # then <a href="url">title</a> inside <ul class="news_list"><li>...</li>.
 import re, io, json, sys, time, urllib.request, ssl, os, tempfile
 
-OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'lantis_news.json')
+OUT = os.path.join(os.environ.get('NEWS_RUNTIME_DIR') or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data'), 'lantis_news.json')
 MAX_PAGES = 30  # upper bound safety
 SOURCE_FAILURES = []
 

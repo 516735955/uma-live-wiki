@@ -41,6 +41,7 @@ jobs:
           npm --prefix uma_tools run test:player
           node deploy/test_release.js
           node deploy/test_data_sync.js
+          node deploy/test_deployment_state.js
           bash -n deploy/update.sh
       - name: Browser routes and responsive behavior
         if: runner.os == 'Linux'

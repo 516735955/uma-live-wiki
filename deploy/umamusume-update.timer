@@ -1,0 +1,10 @@
+[Unit]
+Description=Publish Uma Musume Live Wiki main daily at 04:00 China time
+
+[Timer]
+OnCalendar=*-*-* 04:00:00 Asia/Shanghai
+Persistent=true
+Unit=umamusume-update.service
+
+[Install]
+WantedBy=timers.target

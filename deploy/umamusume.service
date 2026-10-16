@@ -7,9 +7,9 @@ Type=simple
 User=alaemiryoung
 Group=alaemiryoung
 WorkingDirectory=/var/www/umamusume/current
-# Auto-refresh enabled: news refreshes on startup and on demand, catalogs every
-# 6 hours, Lantis daily. Catalog requests adopt complete refreshed snapshots
-# without restarting; deploy/umamusume-restart.timer restarts the process daily.
+# Legacy migration unit. New deployments use umamusume@8080/8081.service.
+# The active instance checks knowledge sources hourly and news every 30 minutes.
+# umamusume-update.timer publishes the latest main daily at 04:00 Asia/Shanghai.
 ExecStart=/usr/bin/node /var/www/umamusume/current/uma_tools/server.js 8080 /var/www/umamusume/current
 Restart=on-failure
 RestartSec=3

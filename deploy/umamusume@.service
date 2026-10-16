@@ -1,0 +1,19 @@
+[Unit]
+Description=Uma Musume Live Wiki on port %i
+After=network.target
+
+[Service]
+Type=simple
+User=alaemiryoung
+Group=alaemiryoung
+WorkingDirectory=/var/www/umamusume/slots/%i
+ExecStart=/usr/bin/node /var/www/umamusume/slots/%i/uma_tools/server.js %i /var/www/umamusume/slots/%i
+Restart=on-failure
+RestartSec=3
+Environment=NODE_ENV=production
+Environment=UMA_ACTIVE_FILE=/var/www/umamusume/shared/active-release
+Environment=NEWS_RUNTIME_DIR=/var/www/umamusume/shared/runtime
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

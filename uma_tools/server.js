@@ -21,6 +21,12 @@ const PORT = parseInt(POSITIONAL_ARGS[0] || "8080", 10);
 const ROOT = fs.realpathSync(
   path.resolve(POSITIONAL_ARGS[1] || path.join(__dirname, "..")),
 );
+function autoCrawlDisabled() {
+  if (NO_AUTO_CRAWL) return true;
+  if (!process.env.UMA_ACTIVE_FILE) return false;
+  try { return fs.readFileSync(process.env.UMA_ACTIVE_FILE, 'utf8').trim() !== ROOT + ':' + PORT; }
+  catch (_) { return true; }
+}
 const releaseInfo = fs.existsSync(path.join(ROOT, "release.json"))
   ? JSON.parse(fs.readFileSync(path.join(ROOT, "release.json"), "utf8"))
   : { commit: "development" };
@@ -108,6 +114,7 @@ services.catalog = require("./server-catalog").createService({
   },
 });
 services.news = require("./server-news").createService({
+  AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   get translationAvailable() { return services.translation.translationAvailable; },
   get path() {
     return path;
@@ -128,7 +135,7 @@ services.news = require("./server-news").createService({
     return mergeNews;
   },
   get NO_AUTO_CRAWL() {
-    return NO_AUTO_CRAWL;
+    return autoCrawlDisabled();
   },
   get translateTitle() {
     return services.translation.translateTitle;
@@ -164,6 +171,7 @@ services.audio = require("./server-audio").createService({
   },
 });
 services.scheduler = require("./server-scheduler").createService({
+  get NO_AUTO_CRAWL() { return autoCrawlDisabled(); },
   get path() {
     return path;
   },
@@ -187,6 +195,7 @@ services.scheduler = require("./server-scheduler").createService({
   },
 });
 services.application = require("./server-application").createService({
+  AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   get http() {
     return http;
   },
@@ -251,7 +260,7 @@ services.application = require("./server-application").createService({
     return catalogStore;
   },
   get NO_AUTO_CRAWL() {
-    return NO_AUTO_CRAWL;
+    return autoCrawlDisabled();
   },
   get refreshNewsIndex() {
     return services.news.refreshNewsIndex;

@@ -115,16 +115,20 @@ exports.createService = function (deps) {
         "News proxy ready: /api/news-index  /api/news-detail?id=xxx  /api/lantis-news  /api/audio?url=...",
       );
       deps.reloadLantis();
-      if (deps.NO_AUTO_CRAWL) {
+      if (deps.AUTO_CRAWL_DISABLED ?? deps.NO_AUTO_CRAWL) {
         console.log("Automatic data refresh disabled (--no-crawl).");
         return;
       }
-      deps.refreshNewsIndex().catch((error) => {
+      const refreshNews = () => {
+        if (deps.NO_AUTO_CRAWL) return;
+        deps.refreshNewsIndex().catch((error) => {
         console.error(
           "[news] startup refresh failed:",
           (error && error.message) || error,
         );
-      });
+        });
+      };
+      refreshNews();
       setTimeout(() => deps.runCatalogRefresh("startup"), 60 * 1000);
       setTimeout(() => deps.ensureLantisFresh(), 5 * 1000);
       // The persistent runner selects daily jobs and retries only failed sources.
@@ -132,6 +136,7 @@ exports.createService = function (deps) {
       // 定时自愈：访客触发之外每 30 分钟主动刷一次新闻/CD相关，挂死/失败也能自行恢复
       setInterval(
         () => {
+          if (deps.NO_AUTO_CRAWL) return;
           deps.ensureLantisFresh();
           deps.refreshNewsIndex().catch((error) => {
             console.error(

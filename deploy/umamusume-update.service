@@ -1,0 +1,9 @@
+[Unit]
+Description=Deploy the latest Uma Musume Live Wiki main commit
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /var/www/umamusume/deploy/update.sh
+TimeoutStartSec=8h
