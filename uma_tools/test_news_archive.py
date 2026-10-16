@@ -2,6 +2,7 @@
 import tempfile
 import json
 import subprocess
+import sqlite3
 import sys
 from pathlib import Path
 import unittest
@@ -9,6 +10,29 @@ from news_database import NewsDatabase
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_existing_archive_migrates_titles_without_changing_full_text(self):
+        with tempfile.TemporaryDirectory() as directory:
+            file = Path(directory) / 'news.sqlite'
+            source = {'detail': {'title': 'ニュース', 'message': '<p>原文</p>'}}
+            translated = {'title_zh': '归档新闻', 'message_zh': '<p>译文</p>'}
+            connection = sqlite3.connect(file)
+            connection.executescript('''
+                CREATE TABLE versions(article_key TEXT,revision INTEGER,original TEXT,translated TEXT,
+                    japanese_text TEXT,chinese_text TEXT,state TEXT,translator TEXT,created_at TEXT,
+                    PRIMARY KEY(article_key,revision));
+            ''')
+            connection.execute('INSERT INTO versions VALUES(?,?,?,?,?,?,?,?,?)',
+                ('official-1', 1, json.dumps(source), json.dumps(translated), '原文', '译文', 'complete', 'assistant', '2026-10-17'))
+            connection.commit()
+            connection.close()
+            archive = NewsDatabase(file)
+            archive.db.execute('INSERT INTO articles(key,revision,owner,checked_at) VALUES(?,?,?,?)',
+                ('official-1', 1, 'assistant', 0))
+            archive.db.commit()
+            self.assertEqual(archive.dispatch('titles', {}), {'official-1': {'title': 'ニュース', 'title_zh': '归档新闻'}})
+            self.assertEqual(archive.get('official-1')['detail']['message_zh'], '<p>译文</p>')
+            archive.db.close()
+
     def test_reviewed_import_retains_its_source_version_after_a_source_update(self):
         with tempfile.TemporaryDirectory() as directory:
             file = Path(directory) / 'news.sqlite'
@@ -44,6 +68,7 @@ class NewsArchiveTest(unittest.TestCase):
             self.assertEqual(article['detail']['translation_owner'], 'assistant')
             detail = dict(article['detail'], title_zh='新闻', message_zh='<p>10月17日</p>')
             first.translate('official-1', 1, detail, 'assistant')
+            self.assertEqual(first.dispatch('titles', {})['official-1']['title_zh'], '新闻')
             second = NewsDatabase(file)
             self.assertEqual(second.get('official-1')['detail']['message_zh'], '<p>10月17日</p>')
             self.assertEqual(second.put('official-1', source)['detail']['archive_revision'], 1)
@@ -56,6 +81,7 @@ class NewsArchiveTest(unittest.TestCase):
             updated = {'detail': dict(source['detail'], message='<p>10月18日</p>')}
             self.assertEqual(second.put('official-1', updated)['detail']['archive_revision'], 3)
             self.assertFalse(second.get('official-1')['detail'].get('message_zh'))
+            self.assertEqual(second.dispatch('titles', {})['official-1']['title_zh'], '新闻')
             self.assertEqual(second.get('official-1')['detail']['archive_fragments']['10月17日'], '10月17日')
             with self.assertRaises(ValueError):
                 second.translate('official-1', 3, detail, 'assistant')
@@ -65,6 +91,8 @@ class NewsArchiveTest(unittest.TestCase):
             first.dispatch('backup', {'path': str(backup)})
             restored = NewsDatabase(backup)
             self.assertEqual(restored.get('official-1')['detail']['archive_revision'], 3)
+            second.put('official-1', {'detail': dict(updated['detail'], title='新しいニュース')})
+            self.assertNotIn('official-1', second.dispatch('titles', {}))
             restored.db.close()
             first.db.close()
             second.db.close()

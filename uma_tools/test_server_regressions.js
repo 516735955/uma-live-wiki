@@ -38,6 +38,7 @@ async function main() {
     persistNewsSnapshot(data) { saved.push(data); },
     mergeLantis() {}, backfillNewsImages(rows, callback) { images.push({ rows, callback }); },
     translateTitle() {}, reloadNewsSnapshotIfNewer() {}, reloadLantisIfNewer() {},
+    archive: { request: async () => ({}) },
     console: { log() {}, error() {} }, crypto, require,
     sendJson(res, status, body, options) { res.body = body; res.options = options; }
   });
@@ -62,9 +63,9 @@ async function main() {
   assert.strictEqual(context.newsIndexCache.data.information_list.length, 2, 'image backfill retains newly merged CD news');
   assert.strictEqual(context.newsIndexCache.data.information_list[0].image, 'cover.webp');
   const first = {}, second = {};
-  context.handleNewsIndex(first);
+  await context.handleNewsIndex(first);
   context.transCache.new = '新标题';
-  context.handleNewsIndex(second);
+  await context.handleNewsIndex(second);
   assert.notStrictEqual(first.options.etag, second.options.etag, 'ETag changes when translation changes');
 
   let requestCount = 0;

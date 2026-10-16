@@ -511,15 +511,25 @@ exports.createService = function (deps) {
     reloadLantisIfNewer();
     if (!newsIndexCache.data) return null;
     const cached = JSON.parse(JSON.stringify(newsIndexCache.data));
-    cached.information_list = cached.information_list.map((item) =>
-      deps.newsContent.apply(item),
-    );
     return cached;
   }
 
-  function handleNewsIndex(res) {
+  async function archivedTitles(items) {
+    let titles = {};
+    try { titles = await archive.request('titles', {}); }
+    catch (error) { console.error('[news:archive:titles]', error.message); }
+    return items.map(item => {
+      const key = item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id;
+      const archived = titles[key];
+      return deps.newsContent.apply(archived?.title === item.title
+        ? { ...item, title_zh: archived.title_zh } : item);
+    });
+  }
+
+  async function handleNewsIndex(res) {
     const cached = newsResponseSnapshot();
     if (cached) {
+      cached.information_list = await archivedTitles(cached.information_list);
       deps.sendJson(res, 200, cached, {
         cacheControl: "public, max-age=60, stale-while-revalidate=300",
         etag:
@@ -622,11 +632,11 @@ exports.createService = function (deps) {
     deps.runLantisCrawl("auto");
   }
 
-  function handleLantisNews(res) {
+  async function handleLantisNews(res) {
     reloadLantisIfNewer();
     ensureLantisFresh();
     // Serve the last complete CD snapshot immediately (same shape as the news index).
-    const items = lantisNewsItems();
+    const items = await archivedTitles(lantisNewsItems());
     deps.sendJson(
       res,
       200,

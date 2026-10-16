@@ -55,6 +55,7 @@ class NewsDatabase:
             CREATE TABLE IF NOT EXISTS versions (
                 article_key TEXT NOT NULL, revision INTEGER NOT NULL,
                 original TEXT NOT NULL, translated TEXT,
+                original_title TEXT NOT NULL DEFAULT '', translated_title TEXT NOT NULL DEFAULT '',
                 japanese_text TEXT NOT NULL, chinese_text TEXT,
                 state TEXT NOT NULL DEFAULT 'pending', translator TEXT,
                 created_at TEXT NOT NULL,
@@ -70,6 +71,17 @@ class NewsDatabase:
                 PRIMARY KEY(article_key,source)
             );
         ''')
+        with self.db:
+            self.db.execute('BEGIN IMMEDIATE')
+            columns = {row['name'] for row in self.db.execute('PRAGMA table_info(versions)')}
+            if 'original_title' not in columns:
+                self.db.execute("ALTER TABLE versions ADD COLUMN original_title TEXT NOT NULL DEFAULT ''")
+                self.db.execute("ALTER TABLE versions ADD COLUMN translated_title TEXT NOT NULL DEFAULT ''")
+                for row in self.db.execute('SELECT article_key,revision,original,translated FROM versions').fetchall():
+                    original = json.loads(row['original'])['detail']
+                    translated = json.loads(row['translated']) if row['translated'] else {}
+                    self.db.execute('UPDATE versions SET original_title=?,translated_title=? WHERE article_key=? AND revision=?',
+                        (original.get('title', ''), translated.get('title_zh', ''), row['article_key'], row['revision']))
 
     def get(self, key):
         row = self.db.execute('''SELECT a.*, v.original, v.translated, v.state, v.translator
@@ -117,11 +129,12 @@ class NewsDatabase:
                     translator = current['translator']
                 complete = bool(reused.get('title_zh') and reused.get('message_zh'))
                 translated = dict(detail, **reused) if reused else None
-                self.db.execute('''INSERT INTO versions(article_key,revision,original,japanese_text,created_at,translated,chinese_text,state,translator)
-                    VALUES(?,?,?,?,?,?,?,?,?)''', (key, revision, json.dumps(original, ensure_ascii=False),
+                self.db.execute('''INSERT INTO versions(article_key,revision,original,japanese_text,created_at,translated,chinese_text,state,translator,original_title,translated_title)
+                    VALUES(?,?,?,?,?,?,?,?,?,?,?)''', (key, revision, json.dumps(original, ensure_ascii=False),
                     plain_text(detail.get('message', '')), dt.datetime.now(dt.timezone.utc).isoformat(),
                     json.dumps(translated, ensure_ascii=False) if translated else None,
-                    plain_text(reused.get('message_zh', '')), 'complete' if complete else 'pending', translator))
+                    plain_text(reused.get('message_zh', '')), 'complete' if complete else 'pending', translator,
+                    detail.get('title', ''), reused.get('title_zh', '')))
             else:
                 self.db.execute('UPDATE versions SET original=? WHERE article_key=? AND revision=?',
                     (json.dumps(original, ensure_ascii=False), key, revision))
@@ -143,9 +156,9 @@ class NewsDatabase:
             source = json.loads(row['original'])['detail']
             if detail.get('message') != source.get('message') or detail.get('title') != source.get('title'):
                 raise ValueError('Translation does not match the original version')
-            self.db.execute('''UPDATE versions SET translated=?,chinese_text=?,state='complete',translator=?
+            self.db.execute('''UPDATE versions SET translated=?,chinese_text=?,state='complete',translator=?,translated_title=?
                 WHERE article_key=? AND revision=?''', (json.dumps({name: detail[name] for name in ('title_zh', 'message_zh')}, ensure_ascii=False),
-                plain_text(detail['message_zh']), translator, key, revision))
+                plain_text(detail['message_zh']), translator, detail['title_zh'], key, revision))
             self.db.execute("UPDATE articles SET lease_until=0,error='' WHERE key=? AND revision=?", (key, revision))
             sources, targets = text_nodes(source.get('message')), text_nodes(detail['message_zh'])
             if len(sources) == len(targets):
@@ -176,6 +189,11 @@ class NewsDatabase:
             return True
         if operation == 'get':
             return self.get(args['key'])
+        if operation == 'titles':
+            return {row['key']: {'title': row['original_title'], 'title_zh': row['translated_title']}
+                    for row in self.db.execute('''SELECT a.key,v.original_title,v.translated_title
+                        FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
+                        WHERE v.translated_title!='' ''')}
         if operation == 'source_failure':
             with self.db:
                 self.db.execute('INSERT OR REPLACE INTO source_failures(key,checked_at,next_at,error) VALUES(?,?,?,?)',
