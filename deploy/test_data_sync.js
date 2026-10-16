@@ -17,6 +17,8 @@ assert.deepStrictEqual(merged, [
 assert.deepStrictEqual(data.merge(before, incoming, merged), merged, 'repeating publication is idempotent');
 assert.deepStrictEqual(data.merge({ obsolete: 1, keep: 2 }, { keep: 2 }, { obsolete: 1, keep: 3, extra: 4 }), { keep: 3, extra: 4 });
 assert.deepStrictEqual(data.merge([{id:'remove'}], [], [{id:'remove'},{id:'runtime'}]), [{id:'runtime'}]);
+assert.deepStrictEqual(data.merge([{id:'restore',title:'old'}], [{id:'restore',title:'new'}], []),
+  [{id:'restore',title:'new'}], 'Git-restored changed records retain their identity');
 assert.deepStrictEqual(data.merge(['repeat','repeat','old'],['repeat','repeat','new'],['repeat','repeat','old','runtime']),['repeat','repeat','new','runtime']);
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-data-publish-'));
 try {

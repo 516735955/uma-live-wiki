@@ -366,6 +366,8 @@ class CatalogStore {
         return await this.load(signature);
       } catch (error) {
         // All readers keep the last complete revision during a refresh.
+        if (this.lastError !== error.message) console.error('[catalog:reload]', error.message);
+        this.lastError = error.message;
         if (this.snapshot) return this.snapshot;
         throw error;
       }
@@ -474,6 +476,7 @@ class CatalogStore {
       snapshot.albumsByName.set(String(row.data.name), row.data);
     });
     this.snapshot = snapshot;
+    this.lastError = null;
     this.signature = signature;
     return snapshot;
   }

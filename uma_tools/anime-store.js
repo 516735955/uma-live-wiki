@@ -147,7 +147,9 @@ class AnimeStore {
     } else {
       throw new Error('Unknown anime scope');
     }
-    this.responses.set(key, payload);
+    if (this.responses.size >= 256) this.responses.delete(this.responses.keys().next().value);
+    if (scope !== 'entity' || payload.relations.length || payload.staff.length)
+      this.responses.set(key, payload);
     return payload;
   }
 }

@@ -187,8 +187,11 @@ export function createCreators(deps) {
         deps.pushUrl(isCurrent.fromRoute);
         return deps.loadAnimeCatalogOptional("creator", found.id);
       })
-      .catch(function () {
-        if (isCurrent())
+      .catch(function (error) {
+        if (isCurrent() && error.message === "HTTP 404") {
+          deps.notFound.value = true;
+          deps.activeTab.value = "not-found";
+        } else if (isCurrent())
           deps.navigationError.value = "创作者资料暂时无法载入，请重试。";
       });
   }

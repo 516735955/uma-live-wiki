@@ -155,6 +155,7 @@ export function createHorses(deps) {
       .then(function (data) {
         if (!data?.horse) throw new Error("empty horse data");
         window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: data.horse };
+        horseGradeIndex = null;
       })
       .catch(function (error) {
         horsesDataPromise = null;
@@ -317,7 +318,7 @@ export function createHorses(deps) {
       horseGradeIndex = {};
       let found = false;
       Object.keys(window.HORSES_DETAIL).forEach(function (id) {
-        (window.HORSES_DETAIL[id].major || []).forEach(function (m) {
+        (window.HORSES_DETAIL[id]?.major || []).forEach(function (m) {
           if (!m.grade || !m.race) return;
           found = true;
           const year = String(m.date || "").slice(0, 4);
@@ -350,14 +351,7 @@ export function createHorses(deps) {
     };
     const year = String(date || "").slice(0, 4);
     if (entry[year]) return pick(entry[year]);
-    const years = Object.keys(entry);
-    if (!years.length) return "";
-    years.sort(function (a, b) {
-      return (
-        Math.abs(Number(a) - Number(year)) - Math.abs(Number(b) - Number(year))
-      );
-    });
-    return pick(entry[years[0]]);
+    return "";
   }
 
   const horseMajorRows = deps.computed(function () {

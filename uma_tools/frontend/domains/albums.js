@@ -220,8 +220,11 @@ export function createAlbums(deps) {
         if (!isCurrent.fromRoute) deps.resetPageScroll();
         deps.pushUrl(isCurrent.fromRoute);
       })
-      .catch(function () {
-        if (isCurrent())
+      .catch(function (error) {
+        if (isCurrent() && error.message === "HTTP 404") {
+          deps.notFound.value = true;
+          deps.activeTab.value = "not-found";
+        } else if (isCurrent())
           deps.navigationError.value = "专辑资料暂时无法载入，请重试。";
       });
   }

@@ -52,7 +52,10 @@ export function createRouting(deps) {
     if (!sub) return deps.loadCharacterIndexData().then(deps.loadCharacterUi);
     if (sub === "voice-actors") {
       return Promise.all([
-        deps.loadVoiceData(),
+        deps.loadVoiceData().then(() => {
+          const actor = seg[2] && deps.findVaBySlug(decodeURIComponent(seg[2]));
+          return actor ? deps.loadVoiceData(actor.id) : null;
+        }),
         deps.loadCharacterIndexData(),
         deps.loadAnimeCatalogOptional(),
       ]).then(deps.loadCharacterUi);
@@ -68,7 +71,7 @@ export function createRouting(deps) {
           : deps.loadCharacterIndexData();
       return Promise.all([
         Promise.resolve(characterReady),
-        deps.loadHorsesListData(),
+        deps.loadHorsesListData().catch(() => null),
         deps.loadPedigreeMeta(),
         deps.loadAnimeCatalogOptional(),
       ]).then(deps.loadCharacterUi);
@@ -168,12 +171,15 @@ export function createRouting(deps) {
     entityRequestRevision += 1;
     clearEntityDetails();
     const sourcePath = currentUrlPath();
-    return Promise.resolve(prepareCurrentRoute()).then(apply, function () {
+    return Promise.resolve(prepareCurrentRoute()).then(apply, function (error) {
       if (
         revision === navigationRevision.value &&
         sourcePath === currentUrlPath()
       ) {
-        routeError.value = "资料暂时无法载入，请重试。";
+        if (error?.message === "HTTP 404") {
+          notFound.value = true;
+          deps.activeTab.value = "not-found";
+        } else routeError.value = "资料暂时无法载入，请重试。";
         routeReady.value = true;
       }
     });
@@ -494,7 +500,8 @@ export function createRouting(deps) {
             ) >= 0
               ? url.searchParams.get("kind")
               : "all";
-          deps.evMode.value = "all";
+          deps.evMode.value = ["online", "onsite"].includes(url.searchParams.get("mode"))
+            ? url.searchParams.get("mode") : "all";
           deps.evYear.value =
             /^20\d{2}$/.test(url.searchParams.get("year") || "") ||
             url.searchParams.get("year") === "unknown"

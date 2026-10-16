@@ -65,6 +65,9 @@ function identity(row) {
 function merge(previous, incoming, live) {
   if (equal(previous, incoming)) return live;
   if (incoming === undefined) return undefined;
+  // A changed record restored from Git needs its complete identity, not a
+  // field-only patch applied to an absent live object.
+  if (live === undefined) return structuredClone(incoming);
   if (Array.isArray(incoming) && Array.isArray(previous) && Array.isArray(live)) {
     function keyed(rows) {
       const occurrences = new Map();

@@ -646,7 +646,7 @@ export function createNavigation(deps) {
     if (n < 1 || n > deps.relPageCount.value) return;
     deps.relPage.value = n;
     deps.loadAlbums();
-    deps.pushUrl(true);
+    deps.pushUrl();
     const el = document.querySelector("#tab-db-albums .album-database-grid");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }

@@ -3,8 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 class HorseStore {
-  constructor(directory) { this.directory = directory; this.snapshots = new Map(); }
+  constructor(directory) { this.directory = directory; this.snapshots = new Map(); this.pending = new Map(); }
   async read(file) {
+    if (this.pending.has(file)) return this.pending.get(file);
+    const pending = this.load(file).finally(() => this.pending.delete(file));
+    this.pending.set(file, pending);
+    return pending;
+  }
+  async load(file) {
     const cached = this.snapshots.get(file);
     try {
       const location = path.join(this.directory, file);
@@ -32,7 +38,7 @@ class HorseStore {
   }
   async detail(id) {
     const snapshot = await this.read('horses_details.js');
-    const horse = snapshot.value[id];
+    const horse = Object.hasOwn(snapshot.value, id) ? snapshot.value[id] : null;
     return horse ? {build_id:snapshot.signature,horse} : null;
   }
 }
