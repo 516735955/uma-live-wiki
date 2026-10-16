@@ -4,6 +4,7 @@ from __future__ import annotations
 from . import common as pipeline_common
 
 deadline = float('inf')
+failures = []
 
 
 def _opener(use_proxy):
@@ -40,6 +41,7 @@ def http_get(url, binary=False, timeout=12):
         for use_proxy in order:
             remaining = deadline - pipeline_common.time.monotonic()
             if remaining <= 0:
+                failures.append('horse update time budget exhausted')
                 raise RuntimeError('horse update time budget exhausted')
             try:
                 with _opener(use_proxy).open(_request(url), timeout=min(timeout, remaining)) as resp:
@@ -56,6 +58,10 @@ def http_get(url, binary=False, timeout=12):
             except pipeline_common.urllib.error.HTTPError as exc:
                 last_error = exc
                 if exc.code not in (429, 500, 502, 503, 504):
+                    if exc.code != 404 and use_proxy != order[-1]:
+                        continue
+                    if exc.code != 404:
+                        failures.append('HTTP %s: %s' % (exc.code, url))
                     raise RuntimeError('HTTP %s: %s' % (exc.code, url)) from exc
                 if attempt < 1:
                     pipeline_common.time.sleep(2 + attempt * 4)
@@ -64,4 +70,5 @@ def http_get(url, binary=False, timeout=12):
                 last_error = exc
                 continue
         pipeline_common.time.sleep(1 + attempt * 2)
+    failures.append(str(last_error))
     raise RuntimeError(repr(last_error))

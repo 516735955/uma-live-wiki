@@ -203,7 +203,7 @@ def official_profile_photo(profile_url: str) -> dict[str, str]:
     }
 
 
-def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
+def refresh_voice_actor_details(*, persist=True) -> dict[str, pipeline_common.Any]:
     from knowledge_io import read_json, write_json
     state_path = pipeline_common.DATA_DIR / 'auto_update' / 'voice_profiles.json'
     state = read_json(state_path, {'attempted_at': {}})
@@ -241,6 +241,7 @@ def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
     }
 
     def fetch(profile: dict[str, pipeline_common.Any]) -> dict[str, pipeline_common.Any]:
+        retryable = False
         identity = profile["identity"]
         aliases = [*identity.get("aliases", []), *reverse_aliases.get(pipeline_text.fold_name(identity.get("ja") or ""), [])]
         patch = next(
@@ -265,6 +266,7 @@ def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
         else:
             record = voice_detail_from_wikipedia(identity.get("zh") or "", identity.get("ja") or "", aliases)
             if not record.get("sources"):
+                retryable = True
                 previous = previous_by_lookup.get(pipeline_text.fold_name(identity.get("ja") or ""))
                 if previous:
                     record = dict(previous)
@@ -285,13 +287,16 @@ def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
             try:
                 record.update(official_profile_photo(str(record["official_profile"])))
             except Exception:
+                retryable = True
                 previous = previous_by_lookup.get(pipeline_text.fold_name(identity.get("ja") or "")) or {}
                 for field in ("photo_url", "photo_source_url", "photo_source_title"):
                     if previous.get(field):
                         record[field] = previous[field]
+        record['_source_retryable'] = retryable
         return record
 
     records = []
+    source_errors = []
     profiles_to_fetch = [
         profile for profile in identities.profiles
         if pipeline_text.fold_name(str((profile.get("identity") or {}).get("ja") or "")) not in accepted_lookups
@@ -303,17 +308,24 @@ def refresh_voice_actor_details() -> dict[str, pipeline_common.Any]:
         futures = {executor.submit(fetch, profile): profile for profile in profiles_to_fetch}
         for future in pipeline_common.concurrent.futures.as_completed(futures):
             record = future.result()
+            retryable = record.pop('_source_retryable', False)
             records.append(record)
-            attempts[futures[future]['identity'].get('ja') or ''] = pipeline_common.time.time()
+            lookup = futures[future]['identity'].get('ja') or ''
+            attempts[lookup] = pipeline_common.time.time() - (86400 - 3600 if retryable else 0)
+            if retryable:
+                source_errors.append('voice profile source unavailable: ' + lookup)
+            state['source_errors'] = source_errors
             merged = apply_additive_voice_detail_refresh({'records': previous_details}, {'records': records})
-            write_json(pipeline_common.VOICE_DETAILS_FILE, merged)
-            write_json(state_path, state)
+            if persist:
+                write_json(pipeline_common.VOICE_DETAILS_FILE, merged)
+                write_json(state_path, state)
     records.sort(key=lambda row: pipeline_text.fold_name(row.get("name_ja") or row.get("name_zh") or ""))
     return {
         "schema_version": 2,
         "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
         "refreshed_at": pipeline_common.dt.datetime.now(pipeline_common.dt.timezone.utc).replace(microsecond=0).isoformat(),
         "coverage": {
+            "source_errors": source_errors,
             "records": len(records),
             "source_pages": sum(bool(row.get("sources")) for row in records),
             "complete_fields": {

@@ -24,12 +24,14 @@ def main(argv: list[str] | None = None) -> int:
     refreshed_programs = None
     program_report = None
     refreshed_details = None
+    profile_errors = []
     if args.refresh_programs or args.refresh_all:
         existing_programs = pipeline_common.read_json(pipeline_common.EVENTS_DIR / "official_programs.json")
         discovered_programs = pipeline_program_discovery.refresh_programs()
         refreshed_programs, program_report = pipeline_program_merge.apply_additive_program_refresh(existing_programs, discovered_programs)
     if args.refresh_profiles or args.refresh_all:
-        discovered_details = pipeline_profiles.refresh_voice_actor_details()
+        discovered_details = pipeline_profiles.refresh_voice_actor_details(persist=not args.dry_run)
+        profile_errors = discovered_details.get('coverage', {}).get('source_errors', [])
         existing_details = pipeline_common.read_json(pipeline_common.VOICE_DETAILS_FILE) if pipeline_common.VOICE_DETAILS_FILE.exists() else {"records": []}
         refreshed_details = pipeline_profiles.apply_additive_voice_detail_refresh(existing_details, discovered_details)
     built = pipeline_build.build_music_only() if args.music_only else pipeline_build.build(refreshed_programs, refreshed_details)
@@ -76,8 +78,8 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print(f"event data written: {coverage['events']} events, {coverage['official_programs']} official programs, {len(built['profiles']['voice_actors'])} voice actors")
         print("curated live source integrity: " + ", ".join(f"{name}={info['sha256'][:12]}" for name, info in built["catalog"]["source_integrity"].items()))
-    errors = (refreshed_programs or {}).get('coverage', {}).get('source_errors', [])
+    errors = (refreshed_programs or {}).get('coverage', {}).get('source_errors', []) + profile_errors
     if errors:
-        print('program discovery partially failed: ' + '; '.join(errors), file=pipeline_common.sys.stderr)
+        print('source updates partially failed: ' + '; '.join(errors), file=pipeline_common.sys.stderr)
         return 1
     return 0

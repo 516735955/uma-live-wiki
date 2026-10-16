@@ -6,10 +6,11 @@ import json
 import re
 import subprocess
 import time
+import threading
 import urllib.error
 import urllib.request
 from knowledge_io import ROOT, read_json, write_json, USER_AGENT
-from public_video import yt_command
+from public_video import yt_command, error_reason
 
 FILE = ROOT / 'data/anime/watch_resources.json'
 STATE = ROOT / 'data/auto_update/anime_watch.json'
@@ -26,7 +27,7 @@ def check_resource(resource, run=subprocess.run):
                 return 'region_limited', 'provider reports a region restriction'
             if re.search(r'video (?:has been )?removed|private video|does not exist|account.*terminated', error, re.I):
                 return 'expired', 'provider reports an unavailable video'
-            return 'source_unavailable', 'metadata request failed'
+            return 'source_unavailable', error_reason(subprocess.CalledProcessError(result.returncode, 'yt-dlp', stderr=error))
         metadata = json.loads(result.stdout)
         if metadata.get('availability') in ('private', 'needs_auth', 'subscriber_only', 'premium_only'):
             return 'expired', 'public access is unavailable'
@@ -52,9 +53,17 @@ def refresh(document, state, check=check_resource, now=None, limit=12):
     rows = [row for row in document['resources'] if now - attempts.get(row['id'], 0) >= 86400]
     rows.sort(key=lambda row: (row.get('status') != 'unverified', attempts.get(row['id'], 0)))
     failures = []
+    network_failed = threading.Event()
     def probe(row):
-        try: return check(row)
-        except (OSError, ValueError, subprocess.SubprocessError): return 'source_unavailable', 'resource metadata request failed'
+        if row.get('platform') == 'youtube' and network_failed.is_set():
+            return 'source_unavailable', 'public video network unavailable in this update; retry later'
+        try:
+            result = check(row)
+        except (OSError, ValueError, subprocess.SubprocessError) as error:
+            result = ('source_unavailable', error_reason(error))
+        if row.get('platform') == 'youtube' and result[0] == 'source_unavailable' and 'network' in result[1]:
+            network_failed.set()
+        return result
     selected = rows[:limit]
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
         for row, (status, evidence) in zip(selected, pool.map(probe, selected)):

@@ -16,7 +16,7 @@ from anime_credit_text import staff_text_rows
 from anime_labels import ROLES, person_name_key
 from knowledge_io import ROOT, fetch, read_json, read_window, unique_names, write_json
 from sync_anime_sources import publish_episode, source
-from public_video import yt_command
+from public_video import yt_command, error_reason
 from video_fragment import range_source, select_video
 
 DATA = ROOT / 'data/anime'
@@ -194,11 +194,19 @@ def main():
     voices = unique_names(read_json(ROOT / 'data/voice_actor_profiles.json')['voice_actors'],lambda row:[person_name_key(row['identity'].get('ja',''))])
     cleanup_interrupted()
     failures = []
+    network_failed = False
+    def checkpoint():
+        if not args.dry_run:
+            for name in names:
+                write_json(DATA / (name+'.json'), documents[name])
+            write_json(STATE, state)
     for resource in jobs[:args.limit]:
         uid = resource['scope']['id']; work_id, number = known_units[uid]
         attempts[uid] = time.time()
         next_attempts[uid] = attempts[uid] + 86400
         try:
+            if network_failed and re.search(r'youtube\.com|youtu\.be', resource['url']):
+                raise ValueError('public video network unavailable in this update; retry later')
             with tempfile.TemporaryDirectory(prefix='job-',dir=TEMP) as directory:
                 observations = extract(resource, Path(directory))
                 signatures = consensus([(position,frame,frame_signatures(lines,roles,people,organizations,characters,voices))
@@ -234,13 +242,13 @@ def main():
         except (OSError,ValueError,subprocess.SubprocessError) as error:
             failures.append(uid)
             next_attempts[uid] = time.time() + 3600
-            reason = error.stderr if isinstance(error,subprocess.CalledProcessError) else str(error)
-            reason = re.sub(r'https?://\S+','<public source>',reason or '')[-350:]
+            reason = error_reason(error)
+            if 'network' in reason and re.search(r'youtube\.com|youtu\.be', resource['url']):
+                network_failed = True
             print('ending source retryable:',uid,type(error).__name__,reason,flush=True)
-    if not args.dry_run:
-        for name in names:
-            write_json(DATA / (name+'.json'),documents[name])
-        write_json(STATE,state)
+        checkpoint()
+    if not jobs:
+        checkpoint()
     print('ending collector: %d selected, %d retryable; temporary media removed' % (min(len(jobs),args.limit),len(failures)))
     if TEMP.exists() and not any(TEMP.iterdir()):
         TEMP.rmdir()

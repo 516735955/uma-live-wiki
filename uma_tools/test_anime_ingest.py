@@ -11,6 +11,7 @@ import anime_web
 import sync_anime_credits as credits
 import sync_anime_watch as watch
 import sync_anime_sources as source
+from events_pipeline import program_discovery
 
 
 class AnimeIngestTests(unittest.TestCase):
@@ -134,6 +135,24 @@ class AnimeIngestTests(unittest.TestCase):
         self.assertEqual(failures,['good'])
         self.assertEqual(document['resources'][0]['status'],'active')
         self.assertEqual(document['resources'][1]['status'],'expired')
+
+    def test_one_network_outage_does_not_probe_every_youtube_link(self):
+        document = {'resources': [{'id': str(i), 'platform': 'youtube', 'url': 'https://www.youtube.com/watch?v='+str(i), 'status': 'active'} for i in range(12)]}
+        calls = []
+        def unavailable(row):
+            calls.append(row['id'])
+            return 'source_unavailable', 'public video network timeout or connection failure'
+        failures = watch.refresh(document, {}, check=unavailable, now=100000)
+        self.assertLessEqual(len(calls), 3)
+        self.assertEqual(len(failures), 12)
+        self.assertTrue(all(row['status'] == 'active' for row in document['resources']))
+
+    def test_failed_channel_page_preserves_rows_already_received(self):
+        result = subprocess.CompletedProcess([], 1, '{"id":"video1","title":"public program"}\n', 'API page timed out')
+        with patch.object(program_discovery.pipeline_common.subprocess, 'run', return_value=result):
+            rows = program_discovery.discover_channel_feed('videos', 12)
+        self.assertEqual(rows[0]['id'], 'video1')
+        self.assertIn('network', rows.errors[0])
 
     def test_clip_extraction_is_bounded_and_frames_have_time_positions(self):
         calls=[]

@@ -65,11 +65,13 @@ def main():
             list_rows = pipeline_common.json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
         horses.sort(key=lambda horse: (horse['id'] in details, attempts.get(horse['id'], 0)))
     refreshed = 0
+    pipeline_transport.failures.clear()
     if args.missing:
         pipeline_transport.deadline = pipeline_common.time.monotonic() + 15 * 60
 
     def checkpoint():
         if args.missing:
+            profile_state['source_errors'] = pipeline_transport.failures[-12:]
             atomic_write(pipeline_common.OUT_DETAIL, serialize(pipeline_common.DETAIL_PREFIX, details))
             atomic_write(pipeline_common.OUT_LIST, serialize(pipeline_common.LIST_PREFIX, list_rows))
             write_json(state_path, profile_state)
@@ -84,7 +86,10 @@ def main():
             if missing and pipeline_common.time.time() - attempts.get(horse['id'], 0) >= 86400:
                 attempts[horse['id']] = pipeline_common.time.time()
                 refreshed += 1
+                failures_before = len(pipeline_transport.failures)
                 incoming = pipeline_profiles.fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
+                if len(pipeline_transport.failures) > failures_before:
+                    attempts[horse['id']] -= 86400 - 3600
                 fill_empty(record, incoming)
                 record['races'] = pipeline_races.merge_races(record.get('races', []), incoming.get('races', []))
             if args.localize_photos and record.get('photo') and not record['photo'].startswith('/uma_tools/'):
@@ -146,10 +151,13 @@ def main():
                     pipeline_common.json.dump(record, handle, ensure_ascii=False)
         elif args.missing:
             refreshed += 1
+            failures_before = len(pipeline_transport.failures)
             record = pipeline_profiles.fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
             if args.localize_photos and record.get('photo'):
                 record['photo'] = pipeline_photos.localize_photo(record) or record['photo']
             attempts[horse['id']] = pipeline_common.time.time()
+            if len(pipeline_transport.failures) > failures_before:
+                attempts[horse['id']] -= 86400 - 3600
             pipeline_common.os.makedirs(pipeline_common.CACHE_DIR, exist_ok=True)
             with open(done_path, 'w', encoding='utf-8') as handle:
                 pipeline_common.json.dump(record, handle, ensure_ascii=False)
@@ -230,3 +238,7 @@ def main():
     atomic_write(pipeline_common.OUT_DETAIL, serialize(pipeline_common.DETAIL_PREFIX, details))
     print('wrote %s' % pipeline_common.os.path.relpath(pipeline_common.OUT_LIST, pipeline_common.ROOT))
     print('wrote %s' % pipeline_common.os.path.relpath(pipeline_common.OUT_DETAIL, pipeline_common.ROOT))
+    if args.missing and pipeline_transport.failures:
+        print('horse sources partially unavailable; saved completed records and will retry', file=pipeline_common.sys.stderr)
+        return 1
+    return 0

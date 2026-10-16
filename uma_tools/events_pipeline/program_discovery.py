@@ -5,6 +5,7 @@ from . import archives as pipeline_archives
 from . import common as pipeline_common
 from . import program_text as pipeline_program_text
 from . import text as pipeline_text
+import sqlite3
 
 
 def fetch_video_metadata(video_id: str) -> dict[str, pipeline_common.Any] | None:
@@ -20,14 +21,20 @@ def fetch_video_metadata(video_id: str) -> dict[str, pipeline_common.Any] | None
 def discover_channel_feed(feed: str, limit: int) -> list[dict[str, pipeline_common.Any]]:
     from public_video import yt_command
     command = yt_command(["--flat-playlist", "--playlist-end", str(limit), "--no-warnings", "--socket-timeout", "12", "--dump-json", f"https://www.youtube.com/@UMAMUSUME_official/{feed}"])
-    result = pipeline_common.subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=300)
+    result = pipeline_common.subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=120)
     rows = []
     for line in result.stdout.splitlines():
         try:
             rows.append(pipeline_common.json.loads(line))
         except pipeline_common.json.JSONDecodeError:
             continue
-    return rows
+    errors = []
+    if not rows:
+        errors.append('official channel ' + feed + ': no readable public entries')
+    if result.returncode:
+        from public_video import error_reason
+        errors.append('official channel ' + feed + ': ' + error_reason(pipeline_common.subprocess.CalledProcessError(result.returncode, command, stderr=result.stderr)))
+    return DiscoveryRows(rows, errors)
 
 
 class DiscoveryRows(list):
@@ -45,9 +52,12 @@ def discover_official_channel() -> list[dict[str, pipeline_common.Any]]:
         ]
         for future in futures:
             try:
-                rows.extend(future.result())
+                discovered = future.result()
+                rows.extend(discovered)
+                errors.extend(getattr(discovered, 'errors', []))
             except (OSError, pipeline_common.subprocess.SubprocessError) as error:
-                errors.append('official channel feed: ' + type(error).__name__)
+                from public_video import error_reason
+                errors.append('official channel feed: ' + error_reason(error))
     by_id = {str(row["id"]): row for row in rows if row.get("id")}
     return DiscoveryRows(by_id.values(), errors)
 
@@ -111,15 +121,22 @@ def fetch_json_url(url: str) -> dict[str, pipeline_common.Any]:
 
 
 def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
+    errors = []
     index_rows = []
     first = fetch_json_url("https://umamusume.jp/api/ajax/pr_info_index?format=json&page=1")
+    if first.get('response_code') != 1:
+        raise ValueError('Official announcement index unavailable')
     index_rows.extend(first.get("information_list") or [])
     total_pages = int(first.get("total_page_count") or 1)
 
     def fetch_page(page: int) -> list[dict[str, pipeline_common.Any]]:
         try:
-            return fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_index?format=json&page={page}").get("information_list") or []
+            data = fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_index?format=json&page={page}")
+            if data.get('response_code') != 1:
+                raise ValueError('Official announcement page unavailable')
+            return data.get("information_list") or []
         except Exception:
+            errors.append('official announcement index page unavailable: ' + str(page))
             return []
 
     with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
@@ -130,16 +147,39 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
         if is_official_program_announcement(row.get("title") or ""):
             candidates.append(row)
 
+    archived = {}
+    archive_file = pipeline_common.DATA_DIR / 'auto_update/news.sqlite'
+    if archive_file.exists():
+        from news_database import NewsDatabase
+        archive = None
+        try:
+            archive = NewsDatabase(archive_file)
+            for row in candidates:
+                data = archive.get('official-' + str(row['announce_id']))
+                if data and (not row.get('update_at') or data['detail'].get('update_at') == row['update_at']):
+                    archived[str(row['announce_id'])] = data['detail']
+        except (OSError, sqlite3.Error, ValueError):
+            errors.append('news archive could not be read; collecting announcements directly')
+        finally:
+            if archive:
+                archive.db.close()
+
     def fetch_detail(row: dict[str, pipeline_common.Any]) -> tuple[dict[str, pipeline_common.Any], dict[str, pipeline_common.Any]]:
+        if str(row['announce_id']) in archived:
+            return row, archived[str(row['announce_id'])]
         try:
             data = fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_detail?format=json&announce_id={row['announce_id']}")
             return row, data.get("detail") or {}
         except Exception:
+            errors.append('official announcement detail unavailable: ' + str(row['announce_id']))
             return row, {}
 
     programs = []
     with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
         for row, detail in executor.map(fetch_detail, candidates):
+            if not detail.get('message'):
+                errors.append('official announcement body unavailable: ' + str(row['announce_id']))
+                continue
             title = detail.get("title") or row.get("title") or ""
             message = detail.get("message") or ""
             fallback_date = pipeline_text.first_date(detail.get("post_at") or row.get("post_at"))
@@ -168,7 +208,7 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
                 "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [], "sessions": sessions,
                 "summary": pipeline_text.clean_text(message)[:260], "source_kind": "official_announcement", "source_url": official_url,
             })
-    return programs
+    return DiscoveryRows(programs, errors)
 
 
 def refresh_programs() -> dict[str, pipeline_common.Any]:
@@ -209,7 +249,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
     }
     fetched_metadata = []
     with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {executor.submit(fetch_video_metadata, video_id): video_id for video_id in candidates}
+        futures = {executor.submit(fetch_video_metadata, video_id): video_id for video_id in list(candidates)[:12]}
         for future in pipeline_common.concurrent.futures.as_completed(futures):
             metadata = future.result()
             if not metadata or metadata.get("channel_id") != pipeline_common.OFFICIAL_CHANNEL_ID:
@@ -240,6 +280,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         news_programs = []
         source_errors.append('official announcement discovery: ' + type(error).__name__)
     programs.extend(news_programs)
+    source_errors.extend(getattr(news_programs, 'errors', []))
     try:
         programs.extend(pipeline_archives.historical_programs())
     except Exception as error:
