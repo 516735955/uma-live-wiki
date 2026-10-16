@@ -65,10 +65,15 @@ def main():
     archive = NewsDatabase(args.database)
     if args.fetch:
         rows = json.loads(args.snapshot.read_text(encoding='utf-8'))['information_list']
+        if args.owner == 'assistant':
+            archive.dispatch('register_history', {'keys': [str(item['announce_id']) if item.get('source') == 'lantis' else 'official-' + str(item['announce_id']) for item in rows]})
         missing = []
         for item in rows:
             key = str(item['announce_id']) if item.get('source') == 'lantis' else 'official-' + str(item['announce_id'])
             data = archive.get(key)
+            failure = archive.dispatch('source_status', {'key': key})
+            if not data and failure and failure['next_at'] > time.time():
+                continue
             if not data or time.time() - data['detail']['archive_checked_at'] >= 86400:
                 missing.append(item)
         if args.limit:

@@ -10,8 +10,10 @@ class NewsArchiveTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             file = Path(directory) / 'news.sqlite'
             first = NewsDatabase(file)
+            first.dispatch('register_history', {'keys': ['official-1']})
             source = {'detail': {'announce_id': 1, 'title': 'ニュース', 'message': '<p>10月17日</p>'}}
-            article = first.put('official-1', source, 'assistant')
+            article = first.put('official-1', source)
+            self.assertEqual(article['detail']['translation_owner'], 'assistant')
             detail = dict(article['detail'], title_zh='新闻', message_zh='<p>10月17日</p>')
             first.translate('official-1', 1, detail, 'assistant')
             second = NewsDatabase(file)

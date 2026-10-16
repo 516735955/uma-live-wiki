@@ -14,7 +14,10 @@ class NewsArchive {
   start() {
     if (this.child) return;
     const child = spawn(process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3'),
-      [path.join(__dirname, 'news_database.py'), this.file], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] });
+      [path.join(__dirname, 'news_database.py'), this.file], {
+        windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],
+        env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' },
+      });
     this.child = child;
     createInterface({ input: child.stdout }).on('line', line => {
       let response;

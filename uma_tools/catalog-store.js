@@ -500,7 +500,9 @@ class CatalogStore {
       const next = (catalog.events || []).filter(event =>
         new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime() >= today.getTime())
         .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0];
-      const value = { build_id: manifest.build_id + '-home1', stats: manifest.home_stats, nextEvent: next ? eventSummary(next) : null };
+      const payload = { stats: manifest.home_stats, nextEvent: next ? eventSummary(next) : null };
+      const revision = crypto.createHash('sha1').update(JSON.stringify(payload)).digest('hex').slice(0, 12);
+      const value = { build_id: manifest.build_id + '-home1-' + revision, ...payload };
       this.homeSnapshot = { signature, value };
       return value;
     }

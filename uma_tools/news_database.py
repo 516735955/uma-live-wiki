@@ -99,10 +99,10 @@ class NewsDatabase:
         with self.db:
             self.db.execute('BEGIN IMMEDIATE')
             current = self.db.execute('''SELECT a.revision, v.original, v.state, v.translated, v.translator FROM articles a
-                JOIN versions v ON v.article_key=a.key AND v.revision=a.revision WHERE a.key=?''', (key,)).fetchone()
+                LEFT JOIN versions v ON v.article_key=a.key AND v.revision=a.revision WHERE a.key=?''', (key,)).fetchone()
             revision = current['revision'] if current else 0
-            previous = json.loads(current['original'])['detail'] if current else {}
-            changed = not current or any(previous.get(field, '') != detail.get(field, '') for field in ('title', 'message'))
+            previous = json.loads(current['original'])['detail'] if current and current['original'] else {}
+            changed = not current or not current['original'] or any(previous.get(field, '') != detail.get(field, '') for field in ('title', 'message'))
             if changed:
                 revision += 1
                 reused = {}
@@ -169,6 +169,11 @@ class NewsDatabase:
         return [{'key': row['key'], 'data': self.get(row['key'])} for row in rows]
 
     def dispatch(self, operation, args):
+        if operation == 'register_history':
+            with self.db:
+                self.db.executemany("INSERT OR IGNORE INTO articles(key,revision,owner,checked_at) VALUES(?,0,'assistant',0)",
+                                    [(key,) for key in args['keys']])
+            return True
         if operation == 'get':
             return self.get(args['key'])
         if operation == 'source_failure':
@@ -192,7 +197,8 @@ class NewsDatabase:
             return True
         if operation == 'stats':
             return [dict(row) for row in self.db.execute('''SELECT a.owner,v.state,count(*) AS count
-                FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision GROUP BY a.owner,v.state''')]
+                FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision GROUP BY a.owner,v.state
+                UNION ALL SELECT owner,'awaiting_source',count(*) FROM articles WHERE revision=0 GROUP BY owner''')]
         if operation == 'backup':
             destination = sqlite3.connect(args['path'])
             try:

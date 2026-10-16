@@ -4,7 +4,6 @@ exports.createService = function (deps) {
   const archiveLoads = new Map();
   let archiveRefreshRunning = false;
   let translationRunning = false;
-  const historicalKeys = new Set();
 
   async function fillArchive(key, load) {
     if (archiveLoads.has(key)) return archiveLoads.get(key);
@@ -15,7 +14,7 @@ exports.createService = function (deps) {
       .then(async ({ status, data }) => {
         if (status === 0) return;
         if (status !== 200) return archive.request('source_failure', { key, error: 'upstream article HTTP ' + status });
-        await archive.request('put', { key, data, owner: historicalKeys.has(key) ? 'assistant' : 'baidu' });
+        await archive.request('put', { key, data, owner: 'baidu' });
       }).catch(error => console.error('[news:archive]', error.message))
       .finally(() => archiveLoads.delete(key));
     archiveLoads.set(key, task);
@@ -740,8 +739,6 @@ exports.createService = function (deps) {
       adoptNewsSnapshot(
         JSON.parse(deps.fs.readFileSync(NEWS_SNAPSHOT_FILE, "utf8")),
       );
-      for (const item of newsIndexCache.data?.information_list || [])
-        historicalKeys.add(item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id);
     } catch (e) {
       /* the first successful refresh creates the snapshot */
     }
