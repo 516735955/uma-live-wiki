@@ -56,7 +56,6 @@ export function createDomains(env) {
         staff: ["staffDetail"],
         voices: ["voiceDetail", "voiceProfileForName", "voiceSection"],
       },
-      [],
     ),
   );
   domains.albums = createAlbums(
@@ -88,7 +87,6 @@ export function createDomains(env) {
         voices: ["findVaBySlug", "loadVoiceData", "voiceDetail", "voiceName"],
         anime: ["loadAnimeCatalogOptional"],
       },
-      [],
     ),
   );
   domains.routing = createRouting(
@@ -144,7 +142,6 @@ export function createDomains(env) {
           "staffPage",
           "staffPageCount",
           "staffQuery",
-          "staffSort",
         ],
         news: [
           "cancelNewsDetailRequest",
@@ -172,7 +169,6 @@ export function createDomains(env) {
           "creatorPage",
           "creatorPageCount",
           "creatorQuery",
-          "creatorRole",
           "creatorSection",
           "loadCreatorCatalog",
           "openCreator",
@@ -224,7 +220,6 @@ export function createDomains(env) {
           "songSection",
         ],
       },
-      [],
     ),
   );
   domains.songs = createSongs(
@@ -266,7 +261,6 @@ export function createDomains(env) {
         voices: ["findVaBySlug", "loadVoiceData"],
         anime: ["loadAnimeCatalogOptional"],
       },
-      [],
     ),
   );
   domains.player = createPlayer(
@@ -278,7 +272,6 @@ export function createDomains(env) {
         songs: ["openSong", "proxySongUrl", "songDetail", "songSingerLabel"],
         environment: ["reactive", "ref", "watch"],
       },
-      [],
     ),
   );
   domains.characters = createCharacters(
@@ -305,7 +298,6 @@ export function createDomains(env) {
         anime: ["loadAnimeCatalogOptional"],
         voices: ["loadVoiceData"],
       },
-      [],
     ),
   );
   domains.events = createEvents(
@@ -345,7 +337,6 @@ export function createDomains(env) {
         anime: ["loadAnimeCatalogOptional"],
         voices: ["loadVoiceData"],
       },
-      [],
     ),
   );
   domains.news = createNews(
@@ -367,7 +358,6 @@ export function createDomains(env) {
         horses: ["horsePageCount"],
         albums: ["relPageCount"],
       },
-      [],
     ),
   );
   domains.creators = createCreators(
@@ -389,7 +379,6 @@ export function createDomains(env) {
         songs: ["findSong", "mergeSong"],
         anime: ["loadAnimeCatalogOptional"],
       },
-      [],
     ),
   );
   domains.voices = createVoices(
@@ -410,7 +399,6 @@ export function createDomains(env) {
         songs: ["expandedRelationSongId"],
         anime: ["loadAnimeCatalogOptional"],
       },
-      [],
     ),
   );
   domains.horses = createHorses(
@@ -442,7 +430,6 @@ export function createDomains(env) {
           "loadCharacterUi",
         ],
       },
-      [],
     ),
   );
   domains.anime = createAnime(
@@ -474,7 +461,6 @@ export function createDomains(env) {
         songs: ["findSong", "mergeSong", "songDetail"],
         voices: ["voiceDetail", "voiceName"],
       },
-      [],
     ),
   );
   domains.staff = createStaff(
@@ -499,7 +485,6 @@ export function createDomains(env) {
         creators: ["creatorDetail", "creatorsPerPage"],
         routing: ["pushUrl", "restoringRoute", "routeReady"],
       },
-      [],
     ),
   );
   Object.values(domains).forEach((domain) => domain.start());
@@ -508,20 +493,13 @@ export function createDomains(env) {
 
 // Domains receive only declared dependencies. Getters preserve mutable route and
 // request state without copying it or exposing another domain's private fields.
-function ports(env, domains, dependencies, writable) {
+function ports(env, domains, dependencies) {
   const result = {};
   for (const [owner, names] of Object.entries(dependencies)) {
     for (const name of names) {
       const target = () => (owner === "environment" ? env : domains[owner]);
       Object.defineProperty(result, name, {
         get: () => target()[name],
-        ...(writable.includes(name)
-          ? {
-              set: (value) => {
-                target()[name] = value;
-              },
-            }
-          : {}),
       });
     }
   }

@@ -1,5 +1,94 @@
 // news service. Dependencies are explicit live ports.
 exports.createService = function (deps) {
+  const archive = new (require('./news-archive').NewsArchive)(deps.DATA_DIR);
+  const archiveLoads = new Map();
+  let archiveRefreshRunning = false;
+  let translationRunning = false;
+  const historicalKeys = new Set();
+
+  async function fillArchive(key, load) {
+    if (archiveLoads.has(key)) return archiveLoads.get(key);
+    const task = archive.request('source_status', { key }).then(failure => {
+      if (failure && failure.next_at > Date.now() / 1000) return { status: 0 };
+      return new Promise(resolve => load(new AbortController().signal, (status, data) => resolve({ status, data })));
+    })
+      .then(async ({ status, data }) => {
+        if (status === 0) return;
+        if (status !== 200) return archive.request('source_failure', { key, error: 'upstream article HTTP ' + status });
+        await archive.request('put', { key, data, owner: historicalKeys.has(key) ? 'assistant' : 'baidu' });
+      }).catch(error => console.error('[news:archive]', error.message))
+      .finally(() => archiveLoads.delete(key));
+    archiveLoads.set(key, task);
+    return task;
+  }
+
+  async function serveArchivedArticle(key, res, load) {
+    try {
+      const data = await archive.request('get', { key });
+      if (data) {
+        return deps.sendJson(res, 200, applyArticleEdits(data), { cacheControl: 'no-store' });
+      }
+      const id = key.replace(/^official-/, '');
+      const item = newsIndexCache.data?.information_list.find(row => String(row.announce_id) === id);
+      if (!item) return deps.sendJson(res, 404, { error: 'news not found' });
+      const failure = await archive.request('source_status', { key });
+      if (failure && failure.next_at > Date.now() / 1000)
+        return deps.sendJson(res, 503, { error: 'news source temporarily unavailable' });
+      fillArchive(key, load);
+      deps.sendJson(res, 202, { detail: { ...item, message: '', message_zh: '', archive_state: 'pending' } });
+    } catch (error) {
+      console.error('[news:archive]', error.message);
+      deps.sendJson(res, 503, { error: 'news archive unavailable' });
+    }
+  }
+
+  async function translateArchivedNews() {
+    if (translationRunning || deps.NO_AUTO_CRAWL || deps.translationAvailable === false) return;
+    translationRunning = true;
+    try {
+      const jobs = await archive.request('jobs', { owner: 'baidu', limit: 1, claim: true });
+      for (const job of jobs) {
+        const detail = applyArticleEdits(job.data).detail;
+        const controller = new AbortController();
+        const result = await new Promise(resolve => {
+          const timer = setTimeout(() => { controller.abort(); resolve(null); }, 240000);
+          deps.translateArticle(detail, controller.signal, (status, data) => {
+            clearTimeout(timer);
+            resolve(status === 200 ? data.detail : null);
+          });
+        });
+        if (result?.translation_state === 'complete') {
+          await archive.request('translate', { key: job.key, revision: detail.archive_revision, detail: result, translator: 'baidu' });
+        } else await archive.request('retry', { key: job.key, delay: 3600 });
+      }
+    } catch (error) { console.error('[news:translation]', error.message); }
+    finally { translationRunning = false; }
+  }
+
+  async function refreshArchivedNews() {
+    if (archiveRefreshRunning || deps.NO_AUTO_CRAWL) return;
+    archiveRefreshRunning = true;
+    try {
+      const rows = newsIndexCache.data?.information_list || [];
+      for (let index = 0; index < rows.length; index += 3) {
+        await Promise.all(rows.slice(index, index + 3).map(async item => {
+          const key = item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id;
+          const data = await archive.request('get', { key });
+          if (data && Date.now() / 1000 - data.detail.archive_checked_at < 86400 &&
+            (data.detail.update_at || data.detail.post_at) === (item.update_at || item.post_at)) return;
+          // Reuse the source loader; this response is an archive sink, never a visitor.
+          const sink = { destroyed: false, writableEnded: false, archiveLoad: true,
+            writeHead() {}, end() {}, once() {} };
+          const params = new URLSearchParams({ id: String(item.announce_id) });
+          const handler = item.source === 'lantis' ? handleLantisDetail : handleNewsDetail;
+          handler(null, sink, params);
+          if (archiveLoads.has(key)) await archiveLoads.get(key);
+        }));
+      }
+    } catch (error) { console.error('[news:archive-refresh]', error.message); }
+    finally { archiveRefreshRunning = false; }
+  }
+
   const NEWS_INDEX_URL =
     "https://umamusume.jp/api/ajax/pr_info_index?format=json";
 
@@ -378,6 +467,7 @@ exports.createService = function (deps) {
             data.generated_at,
           );
           resolve(data);
+          if (typeof refreshArchivedNews === 'function') refreshArchivedNews();
 
           // Image discovery and translation improve the next response but never
           // delay the list currently being read by a visitor.
@@ -405,12 +495,7 @@ exports.createService = function (deps) {
               persistNewsSnapshot(updated);
             }
           });
-          list
-            .filter((item) => !deps.newsContent.title(item.title))
-            .slice(0, 20)
-            .forEach((item) => {
-              deps.translateTitle(item.title, function () {}, undefined, true);
-            });
+          // Titles are translated with their archived article by the background worker.
         }
         pump();
       });
@@ -480,14 +565,6 @@ exports.createService = function (deps) {
       });
   }
 
-  const articleCache = require("./article-cache").createArticleCache({
-    send: (res, status, data) =>
-      deps.sendJson(res, status, data, { cacheControl: "no-store" }),
-    applyEdits: applyArticleEdits,
-    translate: (detail, signal, done) =>
-      deps.translateArticle(detail, signal, done),
-  });
-
   function applyArticleEdits(data) {
     if (!data.detail) return data;
     const detail = deps.newsContent.apply(data.detail);
@@ -501,10 +578,6 @@ exports.createService = function (deps) {
     return { ...data, detail };
   }
 
-  function serveArticle(key, res, load, withTranslation) {
-    articleCache.serve(key, res, load, withTranslation);
-  }
-
   function handleNewsDetail(req, res, params) {
     const rawId = params.get("id") || "";
     const id = /^[1-9]\d*$/.test(rawId) && Number.isSafeInteger(Number(rawId)) ? Number(rawId) : 0;
@@ -512,7 +585,8 @@ exports.createService = function (deps) {
       deps.sendJson(res, 400, { error: "missing id" });
       return;
     }
-    serveArticle(
+    const serve = res.archiveLoad ? (key, response, load) => fillArchive(key, load) : serveArchivedArticle;
+    serve(
       "official-" + id,
       res,
       (signal, finish) => {
@@ -585,7 +659,8 @@ exports.createService = function (deps) {
     });
     const url =
       (it && it.url) || "https://umamusume.lantis.jp/news/" + digits + "/";
-    serveArticle(
+    const serve = res.archiveLoad ? (key, response, load) => fillArchive(key, load) : serveArchivedArticle;
+    serve(
       "lantis-" + digits,
       res,
       (signal, finish) => {
@@ -648,6 +723,11 @@ exports.createService = function (deps) {
     return null;
   }
   function start() {
+    if (!deps.NO_AUTO_CRAWL) {
+      setTimeout(refreshArchivedNews, 10000);
+      setInterval(translateArchivedNews, 15000);
+      setInterval(refreshArchivedNews, 30 * 60 * 1000);
+    }
     try {
       lantisList = JSON.parse(deps.fs.readFileSync(LANTIS_FILE, "utf8"));
       lantisSnapshotMtime = deps.fs.statSync(LANTIS_FILE).mtimeMs;
@@ -660,12 +740,15 @@ exports.createService = function (deps) {
       adoptNewsSnapshot(
         JSON.parse(deps.fs.readFileSync(NEWS_SNAPSHOT_FILE, "utf8")),
       );
+      for (const item of newsIndexCache.data?.information_list || [])
+        historicalKeys.add(item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id);
     } catch (e) {
       /* the first successful refresh creates the snapshot */
     }
   }
   return {
     start,
+    close() { archive.close(); },
     handleNewsIndex,
     handleNewsDetail,
     handleLantisNews,

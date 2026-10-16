@@ -108,6 +108,7 @@ services.catalog = require("./server-catalog").createService({
   },
 });
 services.news = require("./server-news").createService({
+  get translationAvailable() { return services.translation.translationAvailable; },
   get path() {
     return path;
   },

@@ -58,7 +58,10 @@ try {
   const articleKey = 'msg_' + require('crypto').createHash('md5').update(articleSource).digest('hex');
   fs.writeFileSync(edits, JSON.stringify({ titles: {}, messages: {}, news: { 1: { source_message: articleKey, message_zh: '订正正文' } } }));
   fs.utimesSync(edits, new Date(), new Date(Date.now() + 2000));
+  const now = Date.now;
+  Date.now = () => now() + 2000;
   assert.strictEqual(content.apply({ announce_id: 1, message: articleSource }).message_zh, '订正正文');
   assert.strictEqual(content.apply({ announce_id: 1, message: '原文已更新' }).message_zh, undefined, 'a correction does not overwrite changed source content');
+  Date.now = now;
   console.log('news content, external cache edits and glossary regressions passed');
 } finally { fs.rmSync(temporary, { recursive: true, force: true }); }

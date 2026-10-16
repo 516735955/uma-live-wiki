@@ -1,6 +1,9 @@
 /* creators state and behavior; external dependencies are explicit live ports. */
 export function createCreators(deps) {
   let creatorCatalogLoadPromise = null;
+  let creatorListRevision = 0;
+  let creatorSearchTimer;
+  const creatorTotal = deps.ref(0);
 
   const creatorCatalog = deps.ref({ coverage: {}, creators: [] });
 
@@ -16,19 +19,19 @@ export function createCreators(deps) {
 
   const creatorQuery = deps.ref("");
 
-  const creatorRole = deps.ref("all");
-
   const creatorPage = deps.ref(1);
 
   const creatorsPerPage = 40;
 
-  function loadCreatorCatalog() {
-    if (creatorCatalogLoadPromise) return creatorCatalogLoadPromise;
+  function loadCreatorCatalog(params) {
+    const revision = ++creatorListRevision;
+    const query = params || { q: creatorQuery.value, page: creatorPage.value };
     creatorCatalogError.value = "";
     creatorCatalogLoading.value = true;
     creatorCatalogLoadPromise = deps.api
-      .request("/api/catalog/creators?page_size=5000")
+      .request('/api/catalog/creators' + deps.api.query({ ...query, type: 'person', page_size: creatorsPerPage }))
       .then(function (data) {
+        if (revision !== creatorListRevision) return;
         creatorCatalog.value =
           data && Array.isArray(data.items)
             ? {
@@ -37,15 +40,17 @@ export function createCreators(deps) {
                 creators: data.items,
               }
             : { build_id: "", coverage: {}, creators: [] };
-        if (!creatorCatalog.value.creators.length)
-          creatorCatalogError.value = "创作者资料为空。";
+        creatorTotal.value = data.total || 0;
+        creatorPage.value = data.page || 1;
       })
       .catch(function () {
+        if (revision !== creatorListRevision) return;
         creatorCatalogLoadPromise = null;
         creatorCatalog.value = { coverage: {}, creators: [] };
         creatorCatalogError.value = "创作者资料暂时无法载入。";
       })
       .finally(function () {
+        if (revision !== creatorListRevision) return;
         creatorCatalogLoadPromise = null;
         creatorCatalogLoading.value = false;
       });
@@ -59,42 +64,18 @@ export function createCreators(deps) {
   }
 
   const creatorFiltered = deps.computed(function () {
-    const query = String(creatorQuery.value || "")
-      .trim()
-      .toLowerCase();
-    return (creatorCatalog.value.creators || []).filter(function (creator) {
-      if (creator.type === "organization") return false;
-      if (
-        creatorRole.value !== "all" &&
-        !(creator.roles || []).some(function (role) {
-          return role.role === creatorRole.value;
-        })
-      )
-        return false;
-      if (!query) return true;
-      return (
-        String(
-          creator.search_text ||
-            [creator.name]
-              .concat(creator.aliases || [], creator.affiliations || [])
-              .join(" "),
-        )
-          .toLowerCase()
-          .indexOf(query) !== -1
-      );
-    });
+    return creatorCatalog.value.creators || [];
   });
 
   const creatorPageCount = deps.computed(function () {
     return Math.max(
       1,
-      Math.ceil(creatorFiltered.value.length / creatorsPerPage),
+      Math.ceil(creatorTotal.value / creatorsPerPage),
     );
   });
 
   const creatorPaged = deps.computed(function () {
-    const start = (creatorPage.value - 1) * creatorsPerPage;
-    return creatorFiltered.value.slice(start, start + creatorsPerPage);
+    return creatorFiltered.value;
   });
 
   const creatorPageStart = deps.computed(function () {
@@ -106,7 +87,7 @@ export function createCreators(deps) {
   const creatorPageEnd = deps.computed(function () {
     return Math.min(
       creatorPage.value * creatorsPerPage,
-      creatorFiltered.value.length,
+      creatorTotal.value,
     );
   });
 
@@ -120,18 +101,13 @@ export function createCreators(deps) {
     if (isNaN(next) || next < 1 || next > creatorPageCount.value) return;
     creatorPage.value = next;
     deps.pushUrl();
+    loadCreatorCatalog();
     const top = document.getElementById("creatorArchiveTop");
     if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function goCreatorPage(delta) {
     setCreatorPage(creatorPage.value + delta);
-  }
-
-  function setCreatorRole(role) {
-    creatorRole.value = role;
-    creatorPage.value = 1;
-    deps.pushUrl();
   }
 
   function openCreator(creatorOrId, section) {
@@ -281,6 +257,8 @@ export function createCreators(deps) {
         if (!deps.restoringRoute) {
           creatorPage.value = 1;
           deps.pushUrl(true);
+          clearTimeout(creatorSearchTimer);
+          creatorSearchTimer = setTimeout(() => loadCreatorCatalog(), 250);
         }
       },
       { flush: "sync" },
@@ -303,7 +281,6 @@ export function createCreators(deps) {
     creatorQuery,
     creatorRecordingErrors,
     creatorRecordingLoading,
-    creatorRole,
     creatorRoleLabel,
     creatorRoleLabels,
     creatorSection,
@@ -316,7 +293,6 @@ export function createCreators(deps) {
     loadCreatorRecording,
     openCreator,
     setCreatorPage,
-    setCreatorRole,
     setCreatorSection,
     toggleCreatorWork,
   };

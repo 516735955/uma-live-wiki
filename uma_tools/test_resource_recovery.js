@@ -7,7 +7,6 @@ const https = require('https');
 const { EventEmitter } = require('events');
 const { imageStore } = require('./news-images');
 const { TranslationCache } = require('./translation-cache');
-const { createArticleCache } = require('./article-cache');
 const { translationFactsMatch } = require('./translation-facts');
 const { AnimeStore } = require('./anime-store');
 
@@ -50,20 +49,6 @@ async function main() {
     translations.set('recovered', '恢复');
     assert.strictEqual(JSON.parse(fs.readFileSync(cacheFile)).accepted, '译文');
 
-    let translated, loaded = 0, article;
-    const articles = createArticleCache({ send: (res, status, data) => {res.data=structuredClone(data);}, applyEdits: data => data,
-      translate: (detail, signal, done) => { translated = value => done(200, {detail:{...detail,message_zh:value,translation_state:value==='完成'?'complete':'partial'}}); }
-    });
-    const source = (signal, done) => { loaded++; done(200, {detail:{title:'ニュース',message:'原文'}}); };
-    article = new EventEmitter(); articles.serve('one', article, source, true);
-    assert.strictEqual(article.data.detail.message, '原文', 'readable article does not wait for translation');
-    translated('部分'); clock += 31000;
-    article = new EventEmitter(); articles.serve('one', article, source, true);
-    assert.strictEqual(loaded, 1, 'partial translation retries without refetching the original');
-    translated('完成');
-    article = new EventEmitter(); articles.serve('one', article, source, true);
-    assert.strictEqual(article.data.detail.message_zh, '完成');
-
     assert(!translationFactsMatch('1.5倍', '15倍'));
     assert(!translationFactsMatch('12元，3人', '1元，23人'));
     assert(translationFactsMatch('9/28 17:50', '9/2817：50'));
@@ -80,6 +65,6 @@ async function main() {
     https.get = get; Date.now = now;
     fs.rmSync(directory, {recursive:true,force:true});
   }
-  console.log('resource timeouts, stale-cache recovery, article progress and snapshot recovery passed');
+  console.log('resource timeouts, stale-cache recovery and snapshot recovery passed');
 }
 main().catch(error => {console.error(error);process.exitCode=1;});

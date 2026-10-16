@@ -14,9 +14,12 @@ class TranslationCache {
     }
     this.values = { ...this.seed };
     this.mtime = 0;
+    this.checkedAt = 0;
     this.reload();
   }
-  reload() {
+  reload(force = false) {
+    if (!force && Date.now() - this.checkedAt < 1000) return;
+    this.checkedAt = Date.now();
     if (!fs.existsSync(this.file)) return;
     const mtime = fs.statSync(this.file).mtimeMs;
     if (mtime === this.mtime) return;
@@ -36,7 +39,7 @@ class TranslationCache {
   set(key, value) {
     // Merge one completed translation into the latest disk contents, never a
     // stale in-memory copy of the whole cache. The service is its sole writer.
-    this.reload();
+    this.reload(true);
     const next = { ...this.values, [key]: value };
     const temporary = this.file + '.' + process.pid + '.tmp';
     try {

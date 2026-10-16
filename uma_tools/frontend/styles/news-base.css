@@ -1,5 +1,10 @@
 
         /* ===== NEWS ===== */
+        .news-language { display: flex; gap: 6px; margin: 16px 0 24px; }
+        .news-language button { border: 1px solid var(--border-strong); border-radius: 999px; padding: 8px 20px; background: var(--card); color: var(--text-2); font: inherit; cursor: pointer; }
+        .news-language button.active { background: var(--brand-dark); border-color: var(--brand-dark); color: var(--card); }
+        .news-language button:hover { border-color: var(--brand-dark); }
+        .news-translation-status { color: var(--text-2); margin: 24px 0; line-height: 1.7; }
         .news-list { min-height: calc(100vh - 61px); padding-bottom: 84px; }
         .news-error { padding: 20px; text-align: center; color: var(--amber); font-size: 0.92em; }
         .news-hero-grid {

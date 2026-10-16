@@ -1,13 +1,19 @@
-export const bindings = ["newsItems","newsError","newsLoading","refreshNews","newsRange","newsType","newsFiltered","newsHero","newsDetail","newsDetailBody","newsDetailLoading","newsImage","newsDate","newsTypeOf","newsTypeLabel","newsTitle","openNews","newsHeroCover","newsPage","newsPaged","newsPageCount","newsPageStart","newsPageEnd","newsPageList","setNewsPage","goNewsPage"];
+export const bindings = ["newsItems","newsError","newsLoading","newsUpdatedAt","refreshNews","newsRange","newsType","newsFiltered","newsHero","newsDetail","newsDetailBody","newsDetailLoading","newsLanguage","setNewsLanguage","newsImage","newsDate","newsTypeOf","newsTypeLabel","newsTitle","openNews","newsHeroCover","newsPage","newsPaged","newsPageCount","newsPageStart","newsPageEnd","newsPageList","setNewsPage","goNewsPage"];
 export const template = `
             <div v-if="newsDetail" class="news-detail">
                 <div v-if="newsDetail.image_big" class="news-detail-cover-wrap">
                     <img class="news-detail-cover" v-media-src="newsImage(newsDetail.image_big)" :alt="newsDetail.title_zh || newsDetail.title">
                 </div>
                 <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">原文 ↗</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
-                <h2 class="news-detail-title">{{ newsDetail.title_zh || newsDetail.title }}</h2>
-                <div v-if="newsDetailLoading" class="ui-state ui-state-loading" role="status">正文与中文翻译加载中</div>
-                <div class="news-detail-body" v-html="newsDetailBody"></div>
+                <h2 class="news-detail-title">{{ newsLanguage === 'ja' ? newsDetail.title : (newsDetail.title_zh || newsDetail.title) }}</h2>
+                <div class="news-language" role="group" aria-label="新闻语言">
+                    <button type="button" :class="{active:newsLanguage==='zh'}" :aria-pressed="newsLanguage==='zh'" @click="setNewsLanguage('zh')">中文</button>
+                    <button type="button" :class="{active:newsLanguage==='ja'}" :aria-pressed="newsLanguage==='ja'" @click="setNewsLanguage('ja')">日文</button>
+                </div>
+                <div v-if="newsError" class="ui-state ui-state-error" role="alert">{{ newsError }} <button type="button" @click="openNews(newsDetail.announce_id)">重试</button></div>
+                <div v-else-if="newsDetailLoading || newsDetail.archive_state==='pending'" class="ui-state ui-state-loading" role="status">正在读取归档正文…</div>
+                <p v-else-if="newsLanguage==='zh' && !newsDetail.message_zh" class="news-translation-status">中文译文正在整理中，可切换日文查看原文。</p>
+                <div class="news-detail-body" :lang="newsLanguage==='ja'?'ja':'zh-Hans'" v-html="newsDetailBody"></div>
             </div>
 
             <div v-else class="news-list">
@@ -42,7 +48,8 @@ export const template = `
                         <ui-select v-model="newsRange" label="时间" :options="[{value:'all',label:'全部'},{value:'7',label:'7天内'},{value:'30',label:'30天内'},{value:'90',label:'90天内'}]"></ui-select>
                         <ui-select v-model="newsType" label="类型" :options="[{value:'all',label:'全部'},{value:'media',label:'MEDIA'},{value:'game',label:'GAME'},{value:'cd',label:'CD相关'}]"></ui-select>
                     </div>
-                    <button type="button" class="news-refresh-btn" :disabled="newsLoading" @click="refreshNews">{{ newsLoading ? '刷新中…' : '刷新' }}</button>
+                    <span v-if="newsUpdatedAt" class="news-translation-status">列表更新于 {{ newsUpdatedAt }}</span>
+                    <button type="button" class="news-refresh-btn" :disabled="newsLoading" @click="refreshNews">{{ newsLoading ? '读取中…' : '重新读取' }}</button>
                 </div>
 
                 <div id="news-list-top" class="news-rows">

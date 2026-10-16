@@ -31,6 +31,9 @@ exports.createService = function (deps) {
   const BAIDU_APPID = _baiduCreds.appid;
 
   const BAIDU_SECRET = _baiduCreds.secret;
+  const statusFile = deps.path.join(deps.DATA_DIR, 'auto_update', 'translation_status.json');
+  let blockedUntil = 0;
+  try { blockedUntil = JSON.parse(deps.fs.readFileSync(statusFile, 'utf8')).blocked_until || 0; } catch (_) {}
 
   const translations = new deps.TranslationCache(
     TRANS_CACHE_FILE,
@@ -39,8 +42,11 @@ exports.createService = function (deps) {
 
   let termStamp = "",
     translationTerms;
+  let termsCheckedAt = 0;
 
   function currentTerms() {
+    if (translationTerms && Date.now() - termsCheckedAt < 1000) return translationTerms;
+    termsCheckedAt = Date.now();
     const stamp = ["character_index_data.js", "voice_actor_profiles.json"]
       .map(
         (file) => deps.fs.statSync(deps.path.join(deps.DATA_DIR, file)).mtimeMs,
@@ -76,9 +82,10 @@ exports.createService = function (deps) {
   let nextTranslationAt = 0;
 
   function fetchTranslation(text, signal) {
+    if (Date.now() < blockedUntil) return Promise.resolve(null);
     const result = translationScheduler.run(
       async (signal) => {
-        if (signal && signal.aborted) return null;
+        if ((signal && signal.aborted) || Date.now() < blockedUntil) return null;
         const delay = nextTranslationAt - Date.now();
         if (delay > 0)
           await new Promise((resolve) => setTimeout(resolve, delay));
@@ -123,7 +130,16 @@ exports.createService = function (deps) {
               });
               response.on("end", () => {
                 try {
-                  finish(JSON.parse(body));
+                  const result = JSON.parse(body);
+                  if (result.error_code && !['54003', '54005', '52001', '52002'].includes(String(result.error_code))) {
+                    blockedUntil = Date.now() + 3600000;
+                    try {
+                      deps.fs.mkdirSync(deps.path.dirname(statusFile), { recursive: true });
+                      deps.fs.writeFileSync(statusFile + '.tmp', JSON.stringify({ blocked_until: blockedUntil, code: String(result.error_code) }), { mode: 0o600 });
+                      deps.fs.renameSync(statusFile + '.tmp', statusFile);
+                    } catch (_) { console.error('[translation] cannot save API retry status'); }
+                  }
+                  finish(result);
                 } catch (error) {
                   finish(null);
                 }
@@ -319,7 +335,7 @@ exports.createService = function (deps) {
       .catch(() => fallback());
   }
 
-  function translateHtmlMessage(html, cb, signal) {
+  function translateHtmlMessage(html, cb, signal, archivedFragments = {}) {
     const src = String(html || "");
     if (signal && signal.aborted) return cb("");
     if (!src) return cb("");
@@ -365,7 +381,7 @@ exports.createService = function (deps) {
     // Limits apply to the protected query, not to the shorter original Japanese.
     const translated = new Map();
     runs.forEach((run) => {
-      const cachedFragment = translations.get(
+      const cachedFragment = archivedFragments[run.text] || translations.get(
         "fragment:" + translationKey(run.text),
       );
       if (cachedFragment) translated.set(run, cachedFragment);
@@ -479,8 +495,10 @@ exports.createService = function (deps) {
           complete();
         },
         signal,
+        detail.archive_fragments,
       );
   }
   function start() {}
-  return { start, newsContent, translateTitle, translateArticle };
+  return { start, newsContent, translateTitle, translateArticle,
+    get translationAvailable() { return !!BAIDU_APPID && !!BAIDU_SECRET && Date.now() >= blockedUntil; } };
 };

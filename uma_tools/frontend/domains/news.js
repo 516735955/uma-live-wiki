@@ -5,6 +5,7 @@ export function createNews(deps) {
   const newsError = deps.ref("");
 
   const newsLoading = deps.ref(false);
+  const newsUpdatedAt = deps.ref('');
 
   const newsRange = deps.ref("all");
 
@@ -13,6 +14,16 @@ export function createNews(deps) {
   const newsDetail = deps.ref(null);
 
   const newsDetailBody = deps.ref("");
+  const newsLanguage = deps.ref('zh');
+  function renderNewsBody() {
+    const detail = newsDetail.value;
+    newsDetailBody.value = detail ? cleanNewsBody(newsLanguage.value === 'ja' ? detail.message : detail.message_zh) : '';
+  }
+  function setNewsLanguage(language) {
+    if (!['zh', 'ja'].includes(language)) return;
+    newsLanguage.value = language;
+    renderNewsBody();
+  }
 
   const newsDetailLoading = deps.ref(false);
 
@@ -331,13 +342,14 @@ export function createNews(deps) {
       .then(function (d) {
         newsLoadPromise = null;
         newsItems.value = (d && d.information_list) || [];
+        newsUpdatedAt.value = d?.generated_at ? new Date(d.generated_at).toLocaleString('zh-CN') : '';
         newsLoading.value = false;
       })
       .catch(function () {
         newsLoadPromise = null;
         newsLoading.value = false;
         newsError.value =
-          "无法加载新闻数据（请通过本地服务访问，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）";
+          "新闻列表暂时无法载入，请稍后重试。";
       });
     return newsLoadPromise;
   }
@@ -386,7 +398,7 @@ export function createNews(deps) {
   async function pollNewsTranslation(request, detail) {
     clearTimeout(request.timer);
     newsDetailLoading.value = false;
-    if (!detail.translation_state || detail.translation_state === "complete")
+    if (detail.archive_state !== 'pending')
       return;
     const controller = new AbortController();
     newsTranslationRequest = controller;
@@ -423,11 +435,9 @@ export function createNews(deps) {
           break;
         if (data.detail) {
           Object.assign(newsDetail.value, data.detail);
-          newsDetailBody.value = cleanNewsBody(
-            data.detail.message_zh || data.detail.message,
-          );
+          renderNewsBody();
         }
-        if (data.detail?.translation_state === "complete") break;
+        if (data.detail && data.detail.archive_state !== 'pending') break;
       }
     } catch (_) {
       /* The readable article remains available on a poll failure. */
@@ -493,13 +503,10 @@ export function createNews(deps) {
     if (!newsDetailRequestIsCurrent(request)) return;
     console.error("[news] detail " + request.key + ": " + error.message);
     cancelNewsDetailRequest();
-    newsDetail.value = null;
     newsDetailBody.value = "";
-    newsError.value = "";
+    newsError.value = /HTTP 404/.test(error.message) ? '这篇新闻不存在或已下架。' : '新闻暂时无法载入，请重试。';
     newsPrevId.value = 0;
     newsNextId.value = 0;
-    deps.pushUrl(true);
-    loadNews();
   }
 
   function openNews(id) {
@@ -514,6 +521,7 @@ export function createNews(deps) {
     deps.clearEntityDetails("news");
     const isLantis = String(id).indexOf("lantis-") === 0;
     newsError.value = "";
+    newsLanguage.value = 'zh';
     deps.activeTab.value = "news";
     newsDetail.value = newsDetailPlaceholder(id, isLantis ? "lantis" : "");
     newsDetailBody.value = "";
@@ -542,6 +550,7 @@ export function createNews(deps) {
           if (!newsDetailRequestIsCurrent(request)) return;
           const dd = d.detail;
           newsDetail.value = {
+            ...dd,
             announce_id: dd.announce_id,
             title: dd.title || (item && item.title) || "",
             title_zh: dd.title_zh || (item && item.title_zh) || dd.title || "",
@@ -550,7 +559,7 @@ export function createNews(deps) {
             url: dd.url || (item && item.url) || "",
             image: dd.image || (item && item.image) || "",
           };
-          newsDetailBody.value = cleanNewsBody(dd.message_zh || dd.message);
+          renderNewsBody();
           pollNewsTranslation(request, dd);
         })
         .catch(function (error) {
@@ -579,9 +588,7 @@ export function createNews(deps) {
           throw new Error("no detail");
         if (!newsDetailRequestIsCurrent(request)) return;
         newsDetail.value = d.detail;
-        newsDetailBody.value = cleanNewsBody(
-          d.detail.message_zh || d.detail.message,
-        );
+        renderNewsBody();
         newsPrevId.value = d.prev_announce_id || 0;
         newsNextId.value = d.next_announce_id || 0;
         pollNewsTranslation(request, d.detail);
@@ -641,6 +648,8 @@ export function createNews(deps) {
     newsDate,
     newsDetail,
     newsDetailBody,
+    newsLanguage,
+    setNewsLanguage,
     newsDetailLoading,
     get newsDetailRequest() {
       return newsDetailRequest;
@@ -655,6 +664,7 @@ export function createNews(deps) {
     newsImage,
     newsItems,
     newsLoading,
+    newsUpdatedAt,
     newsNextId,
     newsPage,
     newsPageCount,

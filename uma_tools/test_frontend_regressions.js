@@ -169,9 +169,10 @@ async function main() {
   const missingNews = app.openNews(999999);
   newsDetail.resolve({ ok: false, status: 404 });
   await missingNews;
-  assert.strictEqual(app.newsDetail.value, null, 'failed articles do not retain an empty placeholder');
-  assert.strictEqual(location.pathname, '/zh-Hans/news', 'failed articles return to the news list');
-  assert.strictEqual(app.newsError.value, '', 'no detail retry notice leaks into the list');
+  assert.strictEqual(app.newsDetail.value.announce_id, 999999, 'failed articles retain their target for retry');
+  assert(app.newsError.value.includes('不存在'), 'a missing article has an explicit error');
+  assert.strictEqual(location.pathname, '/zh-Hans/news/999999', 'failed articles preserve their permalink for retry');
+  assert(app.newsError.value, 'failed article retains its explanatory notice');
 
   const creatorLoads = calls.filter((url) => url.startsWith('/api/catalog/creators')).length;
   await app.loadCreatorCatalog();

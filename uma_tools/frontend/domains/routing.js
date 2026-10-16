@@ -28,7 +28,7 @@ export function createRouting(deps) {
       const musicSection = (seg[1] || "").toLowerCase();
       if (musicSection === "creators")
         return Promise.all([
-          seg.length > 2 ? Promise.resolve() : deps.loadCreatorCatalog(),
+          seg.length > 2 ? Promise.resolve() : deps.loadCreatorCatalog(deps.listParamsFromUrl()),
           deps.loadAnimeCatalogOptional(),
         ]);
       if (musicSection === "songs")
@@ -350,10 +350,6 @@ export function createRouting(deps) {
             {
               q: deps.staffDetail.value ? "" : deps.staffQuery.value,
               page: deps.staffDetail.value ? "" : deps.staffPage.value,
-              sort:
-                deps.staffDetail.value || deps.staffSort.value === "works"
-                  ? ""
-                  : deps.staffSort.value,
             },
           );
         } else if (deps.dbView.value === "other") {
@@ -547,7 +543,6 @@ export function createRouting(deps) {
           return reject();
         deps.creatorSection.value = section;
         deps.creatorQuery.value = url.searchParams.get("q") || "";
-        deps.creatorRole.value = "all";
         deps.creatorPage.value = Math.max(
           1,
           parseInt(url.searchParams.get("page") || "1", 10) || 1,
@@ -713,7 +708,6 @@ export function createRouting(deps) {
           deps.staffPageCount.value,
           Math.max(1, parseInt(url.searchParams.get("page") || "1", 10) || 1),
         );
-        deps.staffSort.value = "works";
         deps.staffDetail.value = seg[2]
           ? (deps.animeCatalog.value.people || []).find(
               (person) =>

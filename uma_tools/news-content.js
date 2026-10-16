@@ -25,9 +25,12 @@ class NewsContent {
     this.translation = translation;
     this.previousTranslation = previousTranslation;
     this.mtime = 0;
+    this.checkedAt = 0;
     this.edits = { titles: {}, messages: {}, news: {} };
   }
   reload() {
+    if (Date.now() - this.checkedAt < 1000) return;
+    this.checkedAt = Date.now();
     const stat = fs.statSync(this.file);
     if (stat.mtimeMs !== this.mtime) {
       this.edits = JSON.parse(fs.readFileSync(this.file, 'utf8'));

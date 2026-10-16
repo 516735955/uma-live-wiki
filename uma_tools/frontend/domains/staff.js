@@ -2,8 +2,6 @@
 export function createStaff(deps) {
   const staffQuery = deps.ref("");
 
-  const staffSort = deps.ref("works");
-
   const staffPage = deps.ref(1);
 
   const staffDetail = deps.ref(null);
@@ -246,11 +244,6 @@ export function createStaff(deps) {
     return window.UmaUi.identityPortrait(person);
   }
 
-  const staffSortOptions = [
-    { value: "works", label: "参与作品数" },
-    { value: "name", label: "姓名" },
-  ];
-
   const staffFiltered = deps.computed(() => {
     const q = staffQuery.value.trim().toLowerCase();
     return (deps.animeCatalog.value.people || [])
@@ -269,9 +262,7 @@ export function createStaff(deps) {
       )
       .slice()
       .sort((a, b) =>
-        staffSort.value === "name"
-          ? String(a.name || "").localeCompare(String(b.name || ""), "zh")
-          : (Number(b.work_count) || 0) - (Number(a.work_count) || 0) ||
+        (Number(b.work_count) || 0) - (Number(a.work_count) || 0) ||
             String(a.name || "").localeCompare(String(b.name || ""), "zh"),
       );
   });
@@ -371,7 +362,7 @@ export function createStaff(deps) {
   });
   function start() {
     deps.watch(
-      [staffQuery, staffSort],
+      staffQuery,
       () => {
         if (deps.restoringRoute) return;
         staffPage.value = 1;
@@ -407,8 +398,6 @@ export function createStaff(deps) {
     staffPaged,
     staffPortrait,
     staffQuery,
-    staffSort,
-    staffSortOptions,
     staffVisibleRoles,
   };
 }
