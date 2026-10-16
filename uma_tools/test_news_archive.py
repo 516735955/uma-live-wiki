@@ -1,11 +1,39 @@
 """Exercise persisted versions, independent readers, leases and online backups."""
 import tempfile
+import json
+import subprocess
+import sys
 from pathlib import Path
 import unittest
 from news_database import NewsDatabase
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_reviewed_import_retains_its_source_version_after_a_source_update(self):
+        with tempfile.TemporaryDirectory() as directory:
+            file = Path(directory) / 'news.sqlite'
+            archive = NewsDatabase(file)
+            source = {'detail': {'announce_id': 1, 'title': 'ニュース', 'message': '<p>10月17日</p>'}}
+            archive.put('official-1', source, 'assistant')
+            archive.put('official-1', {'detail': dict(source['detail'], message='<p>10月18日</p>')})
+            archive.db.close()
+            reviewed = Path(directory) / 'reviewed.json'
+            reviewed.write_text(json.dumps([{'key': 'official-1', 'revision': 1,
+                                              'title_zh': '新闻', 'message_zh': '<p>10月17日</p>'}], ensure_ascii=False), encoding='utf-8')
+            result = subprocess.run([sys.executable, str(Path(__file__).with_name('archive_news.py')),
+                                     '--database', str(file), '--import-translations', str(reviewed)],
+                                    capture_output=True, text=True, encoding='utf-8', timeout=15)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            restored = NewsDatabase(file)
+            current = restored.get('official-1')['detail']
+            self.assertEqual(current['archive_revision'], 2)
+            self.assertEqual(current['translation_state'], 'pending')
+            self.assertFalse(current.get('message_zh'))
+            previous = restored.db.execute('SELECT state,translated FROM versions WHERE article_key=? AND revision=1', ('official-1',)).fetchone()
+            self.assertEqual(previous['state'], 'complete')
+            self.assertEqual(json.loads(previous['translated'])['message_zh'], '<p>10月17日</p>')
+            restored.db.close()
+
     def test_versions_and_restarts(self):
         with tempfile.TemporaryDirectory() as directory:
             file = Path(directory) / 'news.sqlite'

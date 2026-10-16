@@ -98,10 +98,12 @@ def main():
     if args.import_translations:
         records = json.loads(args.import_translations.read_text(encoding='utf-8'))
         for record in records:
-            current = archive.get(record['key'])
-            if not current or current['detail']['archive_revision'] != record['revision']:
-                raise ValueError('Reviewed translation belongs to a different source version: ' + record['key'])
-            detail = record.get('detail') or dict(current['detail'], title_zh=record['title_zh'], message_zh=record['message_zh'])
+            version = archive.db.execute('SELECT original FROM versions WHERE article_key=? AND revision=?',
+                                         (record['key'], record['revision'])).fetchone()
+            if not version:
+                raise ValueError('Reviewed translation has no archived source version: ' + record['key'])
+            original = json.loads(version['original'])['detail']
+            detail = record.get('detail') or dict(original, title_zh=record['title_zh'], message_zh=record['message_zh'])
             archive.translate(record['key'], record['revision'], detail, 'assistant')
         print('reviewed translations saved:', len(records))
     if args.backup:
