@@ -29,6 +29,7 @@ def version_recordings(songs: dict[str, pipeline_common.Any]) -> dict[str, dict[
                     "album_name": release.get("album_name") or "",
                     "catalog": release.get("catalog") or "",
                     "track_number": release.get("track_number"),
+                    "duration": release.get("duration"),
                 })
                 for artist in pipeline_common.re.split(r"[、,，／/&＋+]", str(release.get("artist") or "")):
                     artist = pipeline_common.re.sub(r"[()（）]", " ", artist).strip()

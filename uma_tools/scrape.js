@@ -21,7 +21,10 @@ async function fetchJson(url, opts = {}, tries = 3) {
     try {
       const r = await fetch(url, { ...opts, signal: AbortSignal.timeout(25000) });
       if (r.status === 200) return await r.json();
-      if (r.status === 429) { await sleep(1200 * i); continue; }
+      if (r.status === 429) {
+        if (i === tries) throw new Error('HTTP 429: source rate limit exhausted after ' + tries + ' attempts');
+        await sleep(1200 * i); continue;
+      }
       throw new Error('HTTP ' + r.status);
     } catch (e) {
       if (i === tries) throw e;
@@ -40,6 +43,7 @@ function normKey(s) {
 const versionKey = (title) => (norm(title).match(/season\d+|(?:20\d\d)?remaster(?:ed)?(?:version)?|remix/g) || []).join('|');
 function scoreAlbum(title, name) {
   if (versionKey(title) !== versionKey(name)) return 0;
+  if ((title.normalize('NFKC').match(/\d+/g) || []).join('|') !== (name.normalize('NFKC').match(/\d+/g) || []).join('|')) return 0;
   const target = normKey(title), candidate = normKey(name);
   if (target && candidate === target) return 100;
   return target.length >= 8 && candidate.length >= 8 && (target.includes(candidate) || candidate.includes(target)) ? 80 : 0;
@@ -88,12 +92,13 @@ async function neteaseSearchAlbum(title) {
     headers: { 'user-agent': UA, 'referer': 'https://music.163.com/' }
   });
   const albums = (j.result && j.result.albums) || [];
-  let best = null, bestScore = 0;
+  let best = null, bestScore = 0, bestIds = new Set();
   for (const a of albums) {
     const score = scoreAlbum(title, a.name);
-    if (score > bestScore) { bestScore = score; best = a; }
+    if (score > bestScore) { bestScore = score; best = a; bestIds = new Set([a.id]); }
+    else if (score === bestScore && score > 0) bestIds.add(a.id);
   }
-  return { best, score: bestScore };
+  return bestIds.size === 1 ? { best, score: bestScore } : { best: null, score: 0 };
 }
 
 async function neteaseAlbumDetail(album) {
@@ -222,5 +227,5 @@ async function main() {
   console.log('待审核文件: ' + PENDING_JSON);
   console.log('预览:      ' + PREVIEW_MD);
 }
-module.exports = { normKey, scoreAlbum, buildCandidate };
+module.exports = { normKey, scoreAlbum, buildCandidate, fetchJson, neteaseSearchAlbum };
 if (require.main === module) main().catch((error) => { console.error(error.message); process.exitCode = 1; });

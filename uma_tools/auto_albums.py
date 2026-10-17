@@ -38,7 +38,7 @@ def stable_album_id(album):
     catalog = re.sub(r'[^a-z0-9]+', '-', str(album.get('catalog') or '').lower()).strip('-')
     if catalog:
         return 'album-' + catalog
-    title = unicodedata.normalize('NFKC', str(album.get('name') or '')).strip().lower()
+    title = re.sub(r'\s+', '', unicodedata.normalize('NFKC', str(album.get('name') or '')).lower())
     return 'album-' + hashlib.sha1(title.encode('utf-8')).hexdigest()[:12]
 
 
@@ -124,10 +124,15 @@ def get_official_goods():
         if not isinstance(j.get('contents'), list):
             raise ValueError('official music goods layout was not recognized')
         items.extend(j.get('contents') or [])
-        if not j.get('contents') or len(j.get('contents')) < limit or len(items) >= (j.get('totalCount') or 0):
-            break
+        total = j.get('totalCount')
+        if isinstance(total, int) and len(items) >= total:
+            return items
+        if len(j['contents']) < limit:
+            if isinstance(total, int) and len(items) < total:
+                raise RuntimeError('official music goods ended before totalCount')
+            return items
         offset += limit
-    return items
+    raise RuntimeError('official music goods exceeded 2000-item request budget; no partial import was saved')
 
 
 def parse_goods_meta(html):
@@ -178,6 +183,8 @@ def search_queries(title):
 def score_album(title, a_name):
     if version_key(title) != version_key(a_name):
         return 0
+    if re.findall(r'\d+', unicodedata.normalize('NFKC', title)) != re.findall(r'\d+', unicodedata.normalize('NFKC', a_name)):
+        return 0
     target = norm_key(title)
     s = norm_key(a_name)
     if target and s == target:
@@ -195,12 +202,16 @@ def netease_search(title):
             continue
         best = None
         best_score = 0
+        best_ids = set()
         for a in (j.get('result') or {}).get('albums') or []:
             sc = score_album(title, a.get('name', ''))
             if sc > best_score:
                 best_score = sc
                 best = a
-        if best and best_score >= 50:
+                best_ids = {a.get('id')}
+            elif sc == best_score and sc > 0:
+                best_ids.add(a.get('id'))
+        if best and best_score >= 50 and len(best_ids) == 1:
             return best, best_score
         time.sleep(SLEEP_AFTER_CALL)
     return None, 0

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
+const { stableAlbumId: albumId } = require('./catalog-store');
 const { spawnSync } = require('child_process');
 
 // apply.js - 把待审核(pending.json)中已确认的候选并入 albums.json
@@ -11,11 +11,6 @@ const ALBUMS_JSON = path.join(ROOT, 'data', 'albums.json');
 const PENDING_JSON = path.join(__dirname, 'pending.json');
 
 const norm = (s) => String(s || '').replace(/[『』（）()\[\]「」・ー\u3000\s]/g, '').toLowerCase();
-const albumId = (album) => {
-  if (album.id) return album.id;
-  const catalog = String(album.catalog || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  return catalog ? 'album-' + catalog : 'album-' + crypto.createHash('sha1').update(norm(album.name)).digest('hex').slice(0, 12);
-};
 
 let albums = JSON.parse(fs.readFileSync(ALBUMS_JSON, 'utf8'));
 if (!fs.existsSync(PENDING_JSON)) { console.error('未找到 pending.json，先运行 scrape.js'); process.exit(1); }

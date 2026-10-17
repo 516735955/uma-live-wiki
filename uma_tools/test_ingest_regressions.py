@@ -10,9 +10,48 @@ import hashlib
 import os
 import tempfile
 import io
+import json
+import subprocess
+from music_pipeline.timings import fetch_lrclib_timing
+from music_pipeline import common as music_common
 
 
 class AlbumImportTests(unittest.TestCase):
+    def test_album_checker_rejects_empty_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            file = Path(directory) / 'albums.json'
+            file.write_text('[{}]', encoding='utf-8')
+            result = subprocess.run([os.sys.executable, str(Path(__file__).with_name('check_albums.py')), str(file)], capture_output=True)
+            self.assertNotEqual(result.returncode, 0)
+
+    def test_album_identity_matches_node_and_preserves_existing_ids(self):
+        albums = [{'name': name} for name in ['A B', 'Ａ　Ｂ', '「日本語」・ー', ' Foo\tBar ']]
+        albums += [{'id': 'existing-id', 'name': 'A B'}, {'catalog': 'LACA-12345'}]
+        node = subprocess.run(['node', '-e', "const {stableAlbumId}=require('./catalog-store'); console.log(JSON.stringify(JSON.parse(process.argv[1]).map(stableAlbumId)))", json.dumps(albums)], cwd=Path(__file__).parent, capture_output=True, text=True, check=True)
+        self.assertEqual([auto_albums.stable_album_id(album) for album in albums], json.loads(node.stdout))
+
+    def test_numbered_album_and_ambiguous_candidates_are_rejected(self):
+        self.assertEqual(auto_albums.score_album('WINNING LIVE 01', 'WINNING LIVE 010'), 0)
+        with patch.object(auto_albums, 'http_json', return_value={'result': {'albums': [
+                {'id': 1, 'name': 'WINNING LIVE 01'}, {'id': 2, 'name': 'WINNING LIVE 01'}]}}), patch.object(auto_albums.time, 'sleep'):
+            self.assertEqual(auto_albums.netease_search('WINNING LIVE 01'), (None, 0))
+        with patch.object(auto_albums, 'http_json', return_value={'totalCount': 2001, 'contents': [{}] * 100}):
+            with self.assertRaisesRegex(RuntimeError, '2000-item'):
+                auto_albums.get_official_goods()
+
+    def test_lrclib_requires_unique_release_performer_and_optional_duration(self):
+        recording = {'version_id': 'v', 'version_title': 'Title', 'artists': ['Artist'],
+                     'duration': 180, 'releases': [{'album_name': 'Album'}]}
+        item = {'id': 1, 'trackName': 'Title', 'albumName': 'Album', 'artistName': 'Artist',
+                'duration': 180, 'syncedLyrics': '[00:01.00]歌詞'}
+        def match(items):
+            with patch.object(music_common.urllib.request, 'urlopen', return_value=io.BytesIO(json.dumps(items).encode())):
+                return fetch_lrclib_timing(recording, ['歌詞'])[1]
+        self.assertEqual(match([item])['source_id'], 1)
+        for changes in [{'duration': 190}, {'artistName': 'Other'}, {'albumName': 'Album Remix'}]:
+            self.assertIsNone(match([dict(item, **changes)]))
+        self.assertIsNone(match([item, dict(item, id=2)]))
+
     def test_horse_source_cache_rechecks_expired_pages(self):
         url='https://example.test/horse'
         with tempfile.TemporaryDirectory() as directory:
