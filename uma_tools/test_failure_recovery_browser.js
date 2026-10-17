@@ -76,6 +76,15 @@ async function main() {
     await page.locator('.fix-feedback.error').waitFor();
     assert(await page.locator('.fix-submit').isEnabled(),'a stalled submission stops waiting');
     await page.clock.resume();
+    let pendingSubmission;
+    const submitted = new Promise(resolve => { pendingSubmission = resolve; });
+    await page.route('https://formsubmit.co/**', route => pendingSubmission(route));
+    await page.locator('.fix-submit').click();
+    const submission = await submitted;
+    await page.locator('#fixBody').fill('发送途中编辑的草稿仍可提交');
+    await submission.fulfill({json:{success:true}});
+    await page.waitForFunction(() => window.__uma_app.fixSendState === '');
+    assert(await page.locator('.fix-submit').isEnabled(),'an earlier success does not lock the newer draft');
 
     let homeFailed = true;
     await page.route('**/api/home-summary', route => homeFailed ? route.abort() : route.continue());

@@ -337,6 +337,7 @@ export function createNavigation(deps) {
     };
     const kindText = k[fix.kind] || "其他";
     const subject = "【资料订正】" + (fix.title || "未分类") + " - " + kindText;
+    const submittedDraft = JSON.stringify(fix);
     const controller = new AbortController();
     const deadline = setTimeout(() => controller.abort(), 20000);
     return fetch("https://formsubmit.co/ajax/" + contactEmails[0], {
@@ -371,8 +372,8 @@ export function createNavigation(deps) {
           !result.success
         )
           throw new Error("FormSubmit rejected the request");
-        fixDone.value = true;
-        fixSendState.value = "ok";
+        fixDone.value = JSON.stringify(fix) === submittedDraft;
+        fixSendState.value = fixDone.value ? "ok" : "";
       })
       .catch(function () {
         fixDone.value = false;
