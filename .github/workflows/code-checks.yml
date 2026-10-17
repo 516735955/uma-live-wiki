@@ -44,6 +44,7 @@ jobs:
           node uma_tools/test_image_previews.js
           node deploy/test_data_sync.js
           node deploy/test_deployment_state.js
+          node uma_tools/test_deployment_checker.js
           bash -n deploy/update.sh
       - name: Browser routes and responsive behavior
         if: runner.os == 'Linux'
@@ -56,6 +57,7 @@ jobs:
             sleep 1
           done
           node uma_tools/test_frontend_browser.js
+          node uma_tools/test_failure_recovery_browser.js
       - name: Parsers, incremental updates and committed catalogs
         run: |
           python -m unittest discover -s uma_tools -p 'test_*.py'

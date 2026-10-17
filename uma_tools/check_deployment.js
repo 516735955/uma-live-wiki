@@ -14,6 +14,8 @@ function request(pathname) {
   const client = url.protocol === 'https:' ? https : http;
   return new Promise((resolve, reject) => {
     const req = client.get(url, {
+      // Each check gets a fresh connection across nginx's graceful worker reload.
+      agent: false,
       headers: {
         'Accept-Encoding': 'gzip',
         'User-Agent': 'uma-live-deployment-check/1.0'

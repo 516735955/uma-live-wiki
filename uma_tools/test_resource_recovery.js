@@ -13,13 +13,20 @@ const { AnimeStore } = require('./anime-store');
 async function main() {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-recovery-'));
   const get = https.get, now = Date.now;
-  let clock = now(), offline = false, bytes = Buffer.from('first');
+  let clock = now(), offline = false, bytes = Buffer.from('first'), failedRequests = 0;
+  async function until(check) {
+    const deadline = now() + 5000;
+    while (!(await check())) {
+      if (now() >= deadline) throw new Error('cache recovery did not complete within 5 seconds');
+      await new Promise(resolve => setTimeout(resolve, 10));
+    }
+  }
   Date.now = () => clock;
   https.get = (url, options, callback) => {
     const request = new EventEmitter();
     request.destroy = error => { request.emit('error', error); request.emit('close'); };
     setImmediate(() => {
-      if (offline) return request.destroy(new Error('offline'));
+      if (offline) { failedRequests++; return request.destroy(new Error('offline')); }
       const response = new EventEmitter();
       response.statusCode = 200; response.headers = {'content-type':'image/webp'};
       callback(response); response.emit('data', bytes); response.emit('end'); request.emit('close');
@@ -32,12 +39,13 @@ async function main() {
     assert.strictEqual((await load(url)).bytes.toString(), 'first');
     const file = path.join(directory, 'images', fs.readdirSync(path.join(directory, 'images'))[0]);
     fs.utimesSync(file, new Date(0), new Date(0));
+    clock += 61000;
     offline = true;
     assert.strictEqual((await load(url)).bytes.toString(), 'first', 'stale preview survives source failure');
-    await new Promise(resolve => setTimeout(resolve, 20));
+    await until(() => failedRequests === 1);
     clock += 61000; offline = false; bytes = Buffer.from('updated');
     await load(url);
-    await new Promise(resolve => setTimeout(resolve, 20));
+    await until(async () => (await load(url)).bytes.toString() === 'updated');
     assert.strictEqual((await load(url)).bytes.toString(), 'updated', 'source recovery replaces actual cache content');
 
     const cacheFile = path.join(directory, 'translations.json');
