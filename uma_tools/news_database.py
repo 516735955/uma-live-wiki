@@ -82,6 +82,26 @@ class NewsDatabase:
                     translated = json.loads(row['translated']) if row['translated'] else {}
                     self.db.execute('UPDATE versions SET original_title=?,translated_title=? WHERE article_key=? AND revision=?',
                         (original.get('title', ''), translated.get('title_zh', ''), row['article_key'], row['revision']))
+            fragment_columns = {row['name'] for row in self.db.execute('PRAGMA table_info(fragments)')}
+            if 'ambiguous' not in fragment_columns:
+                self.db.execute('ALTER TABLE fragments ADD COLUMN ambiguous INTEGER NOT NULL DEFAULT 0')
+                self.db.execute('DELETE FROM fragments')
+                for row in self.db.execute('SELECT article_key,original,translated FROM versions WHERE translated IS NOT NULL ORDER BY revision').fetchall():
+                    self.store_fragments(row['article_key'], json.loads(row['original'])['detail'].get('message', ''),
+                                         json.loads(row['translated']).get('message_zh', ''))
+
+    def store_fragments(self, key, original, translated):
+        sources, targets = text_nodes(original), text_nodes(translated)
+        if len(sources) != len(targets):
+            return
+        grouped = {}
+        for source, target in zip(sources, targets):
+            normalized = re.sub(r'\s*\r?\n\s*', ' ', source.strip())
+            grouped.setdefault(normalized, set()).add(target.strip())
+        for source, choices in grouped.items():
+            ambiguous = len(choices) != 1
+            self.db.execute('INSERT OR REPLACE INTO fragments(article_key,source,target,ambiguous) VALUES(?,?,?,?)',
+                            (key, source, '' if ambiguous else next(iter(choices)), ambiguous))
 
     def get(self, key):
         row = self.db.execute('''SELECT a.*, v.original, v.translated, v.state, v.translator
@@ -100,7 +120,7 @@ class NewsDatabase:
         detail['translator'] = row['translator'] or ''
         detail['archive_checked_at'] = row['checked_at']
         if row['state'] != 'complete':
-            detail['archive_fragments'] = dict(self.db.execute('SELECT source,target FROM fragments WHERE article_key=?', (key,)))
+            detail['archive_fragments'] = dict(self.db.execute('SELECT source,target FROM fragments WHERE article_key=? AND ambiguous=0', (key,)))
         return result
 
     def put(self, key, data, owner='baidu'):
@@ -150,22 +170,20 @@ class NewsDatabase:
         if not detail.get('message_zh') or not detail.get('title_zh'):
             raise ValueError('Complete title and body are required')
         with self.db:
-            row = self.db.execute('SELECT original FROM versions WHERE article_key=? AND revision=?', (key, revision)).fetchone()
+            self.db.execute('BEGIN IMMEDIATE')
+            row = self.db.execute('SELECT original,state FROM versions WHERE article_key=? AND revision=?', (key, revision)).fetchone()
             if not row:
                 raise ValueError('Unknown article version')
             source = json.loads(row['original'])['detail']
             if detail.get('message') != source.get('message') or detail.get('title') != source.get('title'):
                 raise ValueError('Translation does not match the original version')
+            if translator == 'baidu' and row['state'] == 'complete':
+                return self.get(key)
             self.db.execute('''UPDATE versions SET translated=?,chinese_text=?,state='complete',translator=?,translated_title=?
                 WHERE article_key=? AND revision=?''', (json.dumps({name: detail[name] for name in ('title_zh', 'message_zh')}, ensure_ascii=False),
                 plain_text(detail['message_zh']), translator, detail['title_zh'], key, revision))
             self.db.execute("UPDATE articles SET lease_until=0,error='' WHERE key=? AND revision=?", (key, revision))
-            sources, targets = text_nodes(source.get('message')), text_nodes(detail['message_zh'])
-            if len(sources) == len(targets):
-                for original, target in zip(sources, targets):
-                    normalized = re.sub(r'\s*\r?\n\s*', ' ', original.strip())
-                    self.db.execute('INSERT OR REPLACE INTO fragments(article_key,source,target) VALUES(?,?,?)',
-                                    (key, normalized, target.strip()))
+            self.store_fragments(key, source.get('message'), detail['message_zh'])
         return self.get(key)
 
     def jobs(self, owner, limit=10, claim=False):

@@ -10,6 +10,30 @@ from news_database import NewsDatabase
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_background_result_cannot_replace_review_and_ambiguous_fragments_are_not_reused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            file = Path(directory) / 'news.sqlite'
+            archive = NewsDatabase(file)
+            source = {'detail': {'title': '同じ', 'message': '<p>同じ</p><p>同じ</p><p>別</p>'}}
+            archive.put('official-1', source)
+            archive.jobs('baidu', claim=True)
+            reviewed = dict(source['detail'], title_zh='人工核对', message_zh='<p>相同</p><p>一样</p><p>另一条</p>')
+            archive.translate('official-1', 1, reviewed, 'assistant')
+            stale = dict(source['detail'], title_zh='机器', message_zh='<p>旧</p><p>旧</p><p>旧</p>')
+            archive.translate('official-1', 1, stale, 'baidu')
+            self.assertEqual(archive.get('official-1')['detail']['title_zh'], '人工核对')
+            # Reopening an old schema rebuilds the ambiguous fragment cache from full texts.
+            archive.db.execute('ALTER TABLE fragments DROP COLUMN ambiguous')
+            archive.db.commit()
+            archive.db.close()
+            restored = NewsDatabase(file)
+            updated = {'detail': dict(source['detail'], message=source['detail']['message'] + '<p>新</p>')}
+            fragments = restored.put('official-1', updated)['detail']['archive_fragments']
+            self.assertNotIn('同じ', fragments)
+            self.assertEqual(fragments['別'], '另一条')
+            self.assertEqual(restored.db.execute('PRAGMA integrity_check').fetchone()[0], 'ok')
+            restored.db.close()
+
     def test_glossary_maintenance_preserves_versions_urls_and_reusable_fragments(self):
         with tempfile.TemporaryDirectory() as directory:
             file = Path(directory) / 'news.sqlite'
