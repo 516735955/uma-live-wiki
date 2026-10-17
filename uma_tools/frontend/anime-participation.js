@@ -14,11 +14,17 @@ export function createAnimeParticipation(deps) {
       else if (row.relation.target_type === "character")
         label = deps.characterName(row.relation.target_id);
       else if (row.relation.target_type === "song") {
-        const version =
+        let version =
           row.relation.version_label !==
           deps.animeRelationTargetLabel(row.relation)
             ? row.relation.version_label
             : "";
+        if (row.unit) {
+          version = String(version || '').split(/\s*[/／]\s*/).filter(part => {
+            const episode = part.match(/(?:第[一二三四五六七八九十\d]+季)?第?\s*(\d+)\s*[话話]/);
+            return !episode || Number(episode[1]) !== Number(row.unit.number);
+          }).join(' · ');
+        }
         label = [deps.animeMusicUsageLabel(row.relation.usage_type), version]
           .filter(Boolean)
           .join(" · ");

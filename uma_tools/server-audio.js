@@ -186,7 +186,7 @@ exports.createService = function (deps) {
           }
           const h = {
             "Access-Control-Allow-Origin": "*",
-            "Cache-Control": "no-store",
+            "Cache-Control": "private, max-age=3600",
           };
           if (r.headers["content-type"])
             h["Content-Type"] = r.headers["content-type"];
@@ -198,6 +198,7 @@ exports.createService = function (deps) {
             h["Content-Range"] = r.headers["content-range"];
           try {
             clearTimeout(deadline);
+            pref.setTimeout(20000);
             res.writeHead(r.statusCode || 200, h);
             activeResponse = r;
             deps.pipeline(r, res, function (streamError) {

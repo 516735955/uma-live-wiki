@@ -65,6 +65,13 @@ export function createEvents(deps) {
   }
 
   function onEventSetlistClick(event) {
+    const voiceLink = event.target.closest("a[data-voice-id]");
+    if (voiceLink) {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      deps.openVoice(voiceLink.getAttribute("data-voice-id"));
+      return;
+    }
     var playButton = event.target.closest("button[data-play-key]");
     if (playButton) {
       const key = playButton.getAttribute("data-play-key");

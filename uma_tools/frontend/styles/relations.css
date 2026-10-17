@@ -167,6 +167,8 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     font-weight: 900;
 }
 .voice-chip img { background: #fff; }
+.setlist-voice-link { text-decoration: none; }
+.setlist-voice-link:hover { color: var(--ui-cobalt-deep); }
 .entity-hero .performer-chip { margin-top: 16px; color: #fff; }
 .entity-hero .performer-chip-list .performer-chip { margin-top: 0; }
 .album-track-main .performer-chip { font-size: .72rem; }

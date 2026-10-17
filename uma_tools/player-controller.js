@@ -101,7 +101,8 @@
     const schedule = options.setTimeout || setTimeout;
     const cancelSchedule = options.clearTimeout || clearTimeout;
     const now = options.now || Date.now;
-    const stallTimeout = Number(options.stallTimeout) || 4000;
+    const stallTimeout = Number(options.stallTimeout) || 12000;
+    const initialTimeout = Number(options.initialTimeout) || (options.stallTimeout ? stallTimeout : 22000);
     const stablePlaybackWindow = Number(options.stablePlaybackWindow) || 8000;
     const retryDelays = Array.isArray(options.retryDelays) ? options.retryDelays : [1500, 3000, 6000];
     const storage = safeStorage(options.storage);
@@ -135,6 +136,7 @@
     let retryCount = 0;
     let lastProgressAt = now();
     let lastProgressTime = 0;
+    let lastBufferedEnd = 0;
 
     function scheduleTask(callback, delay) {
       const timer = schedule(callback, delay);
@@ -306,17 +308,20 @@
       state.duration = 0;
       state.buffered = 0;
       state.pendingSeek = resumeTime;
+      lastBufferedEnd = 0;
       state.status = 'loading';
       audio.pause();
       audio.volume = state.volume;
       audio.muted = state.muted;
+      audio.preload = 'auto';
       audio.src = proxyUrl(state.current.url);
       if (typeof audio.load === 'function') audio.load();
       updateMediaSession();
       persist(true);
       const result = autoplay ? requestPlay() : Promise.resolve(true);
       const generation = sourceGeneration;
-      Promise.resolve(result).then(function () { if (generation === sourceGeneration) prefetchNextMetadata(); });
+      // Next-track metadata must not compete with an unbuffered current track.
+      Promise.resolve(result).then(function () { if (generation === sourceGeneration) updatePositionState(); });
       return result;
     }
 
@@ -674,7 +679,8 @@
       if (!intendedPlay || !state.current) return;
       const generation = sourceGeneration;
       const elapsed = Math.max(0, now() - lastProgressAt);
-      const delay = Math.max(1, stallTimeout - elapsed);
+      const timeout = state.duration ? stallTimeout : initialTimeout;
+      const delay = Math.max(1, timeout - elapsed);
       recoveryTimer = scheduleTask(function () {
         recoveryTimer = null;
         if (!intendedPlay || generation !== sourceGeneration || !state.current) return;
@@ -684,6 +690,10 @@
           lastProgressTime = position;
           lastProgressAt = now();
           scheduleStallCheck('progress');
+          return;
+        }
+        if (now() - lastProgressAt < (state.duration ? stallTimeout : initialTimeout)) {
+          scheduleStallCheck('download-progress');
           return;
         }
         recoverPlayback(reason || 'stalled');
@@ -759,6 +769,11 @@
       });
       on('progress', function () {
         state.buffered = bufferedEnd(audio);
+        if (state.buffered > lastBufferedEnd + 0.2) {
+          lastBufferedEnd = state.buffered;
+          lastProgressAt = now();
+        }
+        if (!prefetchAudio && state.buffered - state.currentTime >= 20) prefetchNextMetadata();
       });
       on('seeked', function () { state.currentTime = audio.currentTime || 0; lastProgressTime = state.currentTime; lastProgressAt = now(); if (intendedPlay) scheduleStallCheck('seeked'); persist(true); });
       on('error', function () {

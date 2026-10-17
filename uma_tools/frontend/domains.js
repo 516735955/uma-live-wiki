@@ -259,7 +259,7 @@ export function createDomains(env) {
           "findCharByDisplayName",
           "loadCharacterIndexData",
         ],
-        voices: ["findVaBySlug", "loadVoiceData"],
+        voices: ["findVaBySlug", "loadVoiceData", "voiceProfileForName"],
         anime: ["loadAnimeCatalogOptional"],
       },
     ),
@@ -336,7 +336,7 @@ export function createDomains(env) {
         ],
         songs: ["findSong", "linkSetlistSongs", "openSong"],
         anime: ["loadAnimeCatalogOptional"],
-        voices: ["loadVoiceData"],
+        voices: ["loadVoiceData", "openVoice"],
       },
     ),
   );

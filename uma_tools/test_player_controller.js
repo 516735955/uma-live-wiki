@@ -298,6 +298,40 @@ async function run() {
   assert.equal(restoredQueue.state.visible, false);
 
   const clock = new FakeClock();
+  const slowClock = new FakeClock();
+  const slowSource = setup(null, null, {
+    now: slowClock.now.bind(slowClock),
+    setTimeout: slowClock.setTimeout.bind(slowClock),
+    clearTimeout: slowClock.clearTimeout.bind(slowClock)
+  });
+  slowSource.audio.play = function () { return new Promise(() => {}); };
+  slowSource.controller.playTrack(track('slow-source'));
+  const slowLoads = slowSource.audio.loadCount;
+  slowClock.advance(19000);
+  assert.equal(slowSource.audio.loadCount, slowLoads, 'initial playback allows the proxy mirror deadline to finish');
+  slowClock.advance(5000);
+  assert(slowSource.audio.loadCount > slowLoads, 'an unresponsive source still has bounded recovery');
+  slowSource.controller.destroy();
+
+  const downloadClock = new FakeClock();
+  const downloading = setup(null, null, {
+    now: downloadClock.now.bind(downloadClock),
+    setTimeout: downloadClock.setTimeout.bind(downloadClock),
+    clearTimeout: downloadClock.clearTimeout.bind(downloadClock)
+  });
+  await downloading.controller.playTrack(track('downloading'));
+  downloading.audio.metadata(120);
+  downloading.audio.emit('waiting');
+  const downloadLoads = downloading.audio.loadCount;
+  for (let end = 1; end <= 4; end++) {
+    downloadClock.advance(5000);
+    downloading.audio.buffered = { length: 1, start: () => 0, end: () => end };
+    downloading.audio.emit('progress');
+  }
+  assert.equal(downloading.audio.loadCount, downloadLoads, 'a growing buffer is retained across a slow download');
+  assert.equal(downloading.audio.currentTime, 0, 'downloading data does not trigger a recovery seek');
+  downloading.controller.destroy();
+
   const initialClock = new FakeClock();
   const pendingInitial = setup(null, null, {
     stallTimeout: 20, retryDelays: [0],

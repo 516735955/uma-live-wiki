@@ -562,6 +562,14 @@ export function createSongs(deps) {
         );
       },
     );
+    linked = linked.replace(/<span class=["']guest-performer["']>([^<]*)<\/span>/gi, function (whole, name) {
+      const profile = deps.voiceProfileForName?.(deps.decodeHtml(name));
+      const voice = profile && deps.findVaBySlug(profile.id);
+      if (!voice) return whole;
+      const escape = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+      const photo = voice.photo ? '<img loading="lazy" src="/api/image?' + (/^https?:\/\//i.test(voice.photo) ? 'url=' : 'path=') + encodeURIComponent(voice.photo) + '&amp;w=96" alt="">' : '';
+      return '<a class="performer-chip voice-chip setlist-voice-link" data-voice-id="' + escape(voice.id) + '" href="' + escape(deps.routes.voiceActors(voice.id)) + '">' + photo + '<span>' + escape(voice.zh || voice.ja) + '</span></a>';
+    });
     return linked.replace(
       /<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi,
       function (whole, image, alt, label) {

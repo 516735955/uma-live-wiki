@@ -132,8 +132,11 @@ export function registerComponents(umaApp, routes) {
     },
     template: `<div class="anime-participation">
     <article v-for="group in works" :key="group.work.id" class="anime-participation-work">
+      <a class="anime-participation-cover" :href="href(group.work,null,group)" :aria-label="group.work.title_zh" @click="follow($event,href(group.work,null,group))">
+        <img v-media-src="artwork(group)" alt="" loading="lazy">
+      </a>
       <a class="anime-participation-title" :href="href(group.work,null,group)" @click="follow($event,href(group.work,null,group))">
-        <img v-media-src="artwork(group)" alt="" loading="lazy"><b>{{group.work.title_zh}}</b>
+        <b>{{group.work.title_zh}}</b>
         <svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>
       <div class="participation-editions">
