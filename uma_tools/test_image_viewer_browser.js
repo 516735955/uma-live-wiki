@@ -54,12 +54,30 @@ async function main() {
       assert.deepStrictEqual(errors, []);
       await page.close();
     }
+    const slow = await browser.newPage({viewport:{width:390,height:850}});
+    await slow.clock.install();
+    const slowImage = fs.readFileSync(path.join(__dirname, 'img/anime/episodes/anime-umayuru-e01.webp'));
+    let acceptSlow;
+    const slowRequest = new Promise(resolve => { acceptSlow = resolve; });
+    await slow.route('**/__viewer-slow', route => route.fulfill({contentType:'text/html',body:
+      '<link rel="stylesheet" href="/uma_tools/vendor/photoswipe/photoswipe.css"><link rel="stylesheet" href="/uma_tools/image-viewer.css">' +
+      '<script type="module" src="/uma_tools/image-viewer.js"></script><button class="image-view-trigger"><img src="/slow-preview.webp" data-original="/slow-original.webp" width="150" alt="Slow original"></button>'}));
+    await slow.route('**/slow-preview.webp', route => route.fulfill({contentType:'image/webp',body:slowImage}));
+    await slow.route('**/slow-original.webp', route => acceptSlow(route));
+    await slow.goto((process.env.UMA_TEST_URL || 'http://localhost:18082') + '/__viewer-slow');
+    await slow.locator('img.original-image').click();
+    const original = await slowRequest;
+    await slow.clock.runFor(16000);
+    assert.strictEqual(await slow.locator('.viewer-failure').count(), 0, 'a progressing large original has more than 15 seconds to arrive');
+    await original.fulfill({contentType:'image/webp',body:slowImage});
+    await slow.waitForFunction(() => Array.from(document.querySelectorAll('.pswp__img')).some(image => image.src.endsWith('/slow-original.webp') && image.naturalWidth > 0));
+    await slow.close();
     const page = await browser.newPage({viewport:{width:390,height:850}});
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     await page.addInitScript(() => {
       const timeout = window.setTimeout;
-      window.setTimeout = (callback, delay, ...args) => timeout(callback, delay === 15000 ? 150 : delay, ...args);
+      window.setTimeout = (callback, delay, ...args) => timeout(callback, delay === 120000 ? 150 : delay, ...args);
     });
     const preview = fs.readFileSync(path.join(__dirname, 'img/anime/episodes/anime-umayuru-e01.webp'));
     await page.route('**/__viewer-timeout', route => route.fulfill({contentType:'text/html',body:

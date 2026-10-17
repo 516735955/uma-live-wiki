@@ -6,6 +6,8 @@ const esc = value => String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;',
 const icon = path => '<svg class="pswp__icn" viewBox="0 0 24 24" aria-hidden="true">' + path + '</svg>';
 let activeViewer = null;
 let activeTrigger = null;
+// Full originals can take over a minute on slow connections; keep the preview visible.
+const originalLoadTimeout = 120000;
 function original(img) {
   const url = new URL(img.dataset.original || img.dataset.mediaOriginal || img.currentSrc || img.src, location.href);
   if (url.hostname === 'images.microcms-assets.io') url.search = '';
@@ -107,7 +109,7 @@ function openViewer(img) {
       // Keep the working preview attached while a separate image retries the original.
       const image = new Image();
       retryImages.add(image);
-      const timer = setTimeout(() => { image.onerror?.(); image.src = ''; }, 15000);
+      const timer = setTimeout(() => { image.onerror?.(); image.src = ''; }, originalLoadTimeout);
       retryTimers.add(timer);
       const finish = () => { clearTimeout(timer); retryTimers.delete(timer); retryImages.delete(image); image.onload = image.onerror = null; };
       image.onerror = () => {
@@ -140,7 +142,7 @@ function openViewer(img) {
       if (pswp.isDestroying || !content.isLoading()) return;
       if (content.element) { content.element.onload = content.element.onerror = null; content.element.src = ''; }
       content.onError();
-    }, 15000));
+    }, originalLoadTimeout));
   });
   pswp.on('slideActivate', ({ slide }) => {
     if (slide.content.element && !slide.content.element.getAttribute('src')) slide.content.loadImage(false);
