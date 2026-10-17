@@ -97,6 +97,7 @@ class SourceBoundaryTests(unittest.TestCase):
             with patch.object(cli.pipeline_common.sys, 'argv', ['crawl_horses.py', '--limit', '1', '--resume']), \
                  patch.object(cli.pipeline_registry, 'load_pedigree_source', return_value={}), \
                  patch.object(cli.pipeline_registry, 'build_horses', return_value=rows), \
+                 patch.object(cli.pipeline_common, 'ROOT', str(root)), \
                  patch.object(cli.pipeline_common, 'OUT_DETAIL', str(detail)), \
                  patch.object(cli.pipeline_common, 'OUT_LIST', str(listing)), \
                  patch.object(cli.pipeline_common, 'CACHE_DIR', str(root)):

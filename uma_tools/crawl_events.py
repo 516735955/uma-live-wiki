@@ -542,7 +542,9 @@ def main():
     man_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'manual_events.json')
     if os.path.exists(man_path):
         try:
-            for row in json.load(io.open(man_path, encoding='utf-8')):
+            with io.open(man_path, encoding='utf-8') as handle:
+                manual_rows = json.load(handle)
+            for row in manual_rows:
                 k = row.get('link')
                 if k:
                     r = {kk: vv for kk, vv in row.items() if kk != '_manual'}
