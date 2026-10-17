@@ -306,8 +306,11 @@ export function createNews(deps) {
       }
       if (el.tagName === "IMG") {
         el.setAttribute("loading", "lazy");
-        if (el.hasAttribute("src"))
-          el.setAttribute("src", newsImage(el.getAttribute("src")));
+        if (el.hasAttribute("src")) {
+          const original = el.getAttribute("src");
+          el.setAttribute("data-original", original);
+          el.setAttribute("src", newsImage(original));
+        }
       }
       if (el.hasAttribute("srcset")) {
         el.setAttribute(

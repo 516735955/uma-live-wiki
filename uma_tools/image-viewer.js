@@ -1,7 +1,7 @@
 /* PhotoSwipe 5.4.4 adapter for real artwork; synthetic identity SVGs remain static. */
 import PhotoSwipe from '/uma_tools/vendor/photoswipe/photoswipe.esm.min.js';
 
-const selector = '.entity-cover img, .image-view-trigger img, .roommate-image';
+const selector = '.entity-cover img, .image-view-trigger img, .roommate-image, .news-detail-cover, .news-detail-body img';
 const esc = value => String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon = path => '<svg class="pswp__icn" viewBox="0 0 24 24" aria-hidden="true">' + path + '</svg>';
 let activeViewer = null;
@@ -35,7 +35,7 @@ function decorate() {
 }
 function openViewer(img) {
   if (activeViewer || !eligible(img)) return;
-  const gallery = img.closest('.anime-stills');
+  const gallery = img.closest('.anime-stills, .news-detail');
   const images = gallery ? Array.from(gallery.querySelectorAll('img')).filter(eligible) : [img];
   const trigger = img.closest('button, a') || img;
   const data = images.map(element => ({
