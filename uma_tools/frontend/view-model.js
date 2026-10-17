@@ -94,6 +94,7 @@ export function createViewModel(domains, routes) {
     newsTypeOf: domains.news.newsTypeOf,
     newsTypeLabel: domains.news.newsTypeLabel,
     newsTitle: domains.news.newsTitle,
+    newsLink: domains.news.newsLink,
     openNews: domains.news.openNews,
     loadNews: domains.news.loadNews,
     newsHeroCover: domains.news.newsHeroCover,

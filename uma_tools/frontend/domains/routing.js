@@ -93,7 +93,7 @@ export function createRouting(deps) {
     if (sub === "horses")
       return Promise.all([
         seg.length > 2
-          ? deps.loadHorsesData(seg[2])
+          ? deps.loadHorsesData(decodeURIComponent(seg[2]))
           : deps.loadHorsesListData(deps.listParamsFromUrl()),
         deps.loadCharacterIndexData(),
       ]);
@@ -506,13 +506,7 @@ export function createRouting(deps) {
               ? url.searchParams.get("year")
               : "all";
           deps.evSeries.value = url.searchParams.get("series") || "all";
-          if (deps.evSeries.value !== "all" && deps.evKind.value === "all") {
-            if (deps.evSeries.value === "unclassified")
-              deps.evSeries.value = "all";
-            else
-              deps.evKind.value =
-                deps.eventSeriesMap.value[deps.evSeries.value]?.kind || "all";
-          }
+          if (deps.evSeries.value === 'unclassified' && deps.evKind.value === 'all') deps.evSeries.value = 'all';
           deps.eventsPage.value = Math.max(
             1,
             parseInt(url.searchParams.get("page") || "1", 10) || 1,

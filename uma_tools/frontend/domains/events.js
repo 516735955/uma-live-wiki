@@ -159,6 +159,7 @@ export function createEvents(deps) {
           { value: "series:" + kind + ":unclassified", label: "其他" + label },
         ],
       })),
+      eventSeries.value.map(series => ({ value: 'series:all:' + series.id, label: series.name + '（全部类型）' })),
     );
   });
 
@@ -571,11 +572,12 @@ export function createEvents(deps) {
       [eventsQuery, evTime, evKind, evMode, evYear, evSeries],
       function () {
         if (deps.restoringRoute) return;
+        eventListRevision += 1;
         eventsPage.value = 1;
         deps.pushUrl(true);
         window.clearTimeout(eventSearchTimer);
         eventSearchTimer = window.setTimeout(function () {
-          loadEvents();
+          if (window.location.pathname === '/zh-Hans/events') loadEvents();
         }, 180);
       },
       { flush: "sync" },

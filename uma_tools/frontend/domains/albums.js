@@ -104,28 +104,41 @@ export function createAlbums(deps) {
   function openAlbumFromSong(item) {
     const release = item && item.release ? item.release : item;
     const album = albums.value.find(function (entry) {
-      return entry.name === release.album_name;
-    }) || { name: release.album_name };
+      return release.album_id ? entry.id === release.album_id : entry.name === release.album_name;
+    }) || { id: release.album_id, name: release.album_name };
     if (!album.name) return;
     openAlbum(album);
   }
 
+  function matchesAlbum(release, album) {
+    if (!album) return false;
+    if (album.id && release.album_id) return album.id === release.album_id;
+    if (album.catalog && release.catalog) return album.catalog === release.catalog;
+    return !!album.name && release.album_name === album.name;
+  }
+
+  const albumTrackIndex = deps.computed(() => {
+    const index = new Map();
+    const songs = new Map((deps.songCatalog.value.songs || []).concat(Object.values(deps.songsById)).map(song => [song.id, song]));
+    for (const song of songs.values()) for (const version of song.versions || []) for (const release of version.releases || []) {
+      for (const [type, value] of [['id', release.album_id], ['catalog', release.catalog], ['name', release.album_name]]) {
+        if (!value) continue;
+        const key = JSON.stringify([type, value, Number(release.track_number)]);
+        if (!index.has(key)) index.set(key, []);
+        index.get(key).push({ song, release });
+      }
+    }
+    return index;
+  });
+
   function findAlbumTrackSong(track, trackIndex, album) {
-    const number = Number(trackIndex) + 1;
-    return Object.values(deps.songsById)
-      .concat(deps.songCatalog.value.songs || [])
-      .find((song) =>
-        (song.versions || []).some((version) =>
-          (version.releases || []).some(
-            (release) =>
-              Number(release.track_number) === number &&
-              album &&
-              ((album.id && release.album_id === album.id) ||
-                (album.catalog && release.catalog === album.catalog) ||
-                release.album_name === album.name),
-          ),
-        ),
-      );
+    if (!album) return null;
+    for (const [type, value] of [['id', album.id], ['catalog', album.catalog], ['name', album.name]]) {
+      if (!value) continue;
+      const rows = (albumTrackIndex.value.get(JSON.stringify([type, value, Number(trackIndex) + 1])) || []).filter(row => matchesAlbum(row.release, album));
+      if (rows.length) return new Set(rows.map(row => row.song.id)).size === 1 ? rows[0].song : null;
+    }
+    return null;
   }
 
   function albumTrackSongId(track, trackIndex) {
@@ -145,7 +158,7 @@ export function createAlbums(deps) {
     for (const version of song.versions || []) {
       for (const release of version.releases || []) {
         if (
-          release.album_name !== album.name ||
+          !matchesAlbum(release, album) ||
           Number(release.track_number) !== number
         )
           continue;
@@ -238,12 +251,8 @@ export function createAlbums(deps) {
       let matchedRelease = null;
       ((found && found.versions) || []).some(function (version) {
         const release = (version.releases || []).find(function (row) {
-          const sameCatalog =
-            detail && detail.catalog && row.catalog === detail.catalog;
-          const sameAlbum =
-            detail && detail.name && row.album_name === detail.name;
           return (
-            (sameCatalog || sameAlbum) && Number(row.track_number) === index + 1
+            matchesAlbum(row, detail) && Number(row.track_number) === index + 1
           );
         });
         if (!release) return false;
@@ -555,6 +564,7 @@ export function createAlbums(deps) {
     deps.watch(
       [relQuery, relWork, relFilter, relYear, relSort],
       function () {
+        albumListRevision += 1;
         if (
           deps.restoringRoute ||
           deps.activeTab.value !== "database" ||
@@ -563,7 +573,9 @@ export function createAlbums(deps) {
         )
           return;
         window.clearTimeout(albumSearchTimer);
-        albumSearchTimer = window.setTimeout(() => loadAlbums(), 180);
+        albumSearchTimer = window.setTimeout(() => {
+          if (window.location.pathname === '/zh-Hans/music/albums' && !albumDetail.value) loadAlbums();
+        }, 180);
       },
       { flush: "sync" },
     );

@@ -175,6 +175,12 @@ export function createNews(deps) {
     return n.title_zh || n.title || "";
   }
 
+  function newsLink(event, id) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    return openNews(id);
+  }
+
   function cleanNewsBody(html) {
     if (!html) return "";
     const doc = new DOMParser().parseFromString(String(html), "text/html");
@@ -669,6 +675,7 @@ export function createNews(deps) {
     newsPaged,
     newsRange,
     newsTitle,
+    newsLink,
     newsType,
     newsTypeLabel,
     newsTypeOf,

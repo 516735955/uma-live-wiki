@@ -5,6 +5,8 @@
   const pending = new Map();
   const cacheCapacity = 64;
   const cacheBytes = 16 * 1024 * 1024;
+  let catalogBuild = '', catalogGeneration = 0;
+  const musicCatalog = path => /^\/api\/catalog\/(?:songs?|albums?|creators?|events?|voice-actors|appearance)(?:\?|$)/.test(path);
   function retain(key, data, maxAge) {
     const size = JSON.stringify(data).length * 2;
     resolved.delete(key);
@@ -39,8 +41,10 @@
     });
     const cached = resolved.get(cacheKey);
     if (!settings.fresh && cached && Date.now() - cached.at < maxAge) return Promise.resolve(cached.data);
-    if (!settings.fresh && pending.has(cacheKey)) return subscribe(pending.get(cacheKey), settings.signal);
+    if (!settings.fresh && pending.has(cacheKey) && !pending.get(cacheKey).controller.signal.aborted)
+      return subscribe(pending.get(cacheKey), settings.signal);
     const controller = new AbortController();
+    const startedGeneration = catalogGeneration;
     const cancel = function () { controller.abort(); };
     const timer = setTimeout(cancel, 25000);
     const entry = { controller: controller, subscribers: 0, settled: false, promise: null };
@@ -52,6 +56,16 @@
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
     }).then(function (data) {
+      if (musicCatalog(path) && data.build_id) {
+        if (startedGeneration !== catalogGeneration && data.build_id !== catalogBuild)
+          return request(path, { ...settings, fresh: true });
+        if (catalogBuild && data.build_id !== catalogBuild) {
+          invalidate('/api/catalog/');
+          catalogGeneration += 1;
+          if (window.dispatchEvent && typeof CustomEvent !== 'undefined') window.dispatchEvent(new CustomEvent('uma-catalog-change'));
+        }
+        catalogBuild = data.build_id;
+      }
       if (pending.get(cacheKey) === entry) {
         retain(cacheKey, data, maxAge);
         pending.delete(cacheKey);

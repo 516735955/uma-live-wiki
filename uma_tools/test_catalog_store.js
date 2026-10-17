@@ -26,7 +26,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api6-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(snapshot.buildId.includes('-api7-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -85,6 +85,11 @@ async function main() {
     assert(song.versions.some(version => version.releases.some(release => release.album_id === cinderella.album.id)));
   }
   assert.strictEqual(await store.song('約束'), null, 'ambiguous title requires a stable song identity');
+  assert.strictEqual(await store.voices(new URLSearchParams('id=missing')), null);
+  for (const id of ['missing', '__proto__', 'constructor']) assert.strictEqual(await store.appearance('character', id), null);
+  const scopedAlbum = await store.album('album-lacz-10116', '');
+  assert(Buffer.byteLength(JSON.stringify(scopedAlbum)) < 300 * 1024, 'album recordings must remain scoped to the requested album');
+  assert(scopedAlbum.catalog_songs.every(song => !song.performances && !song.detail_complete));
   const solo = await store.album('album-lacz-10116', '');
   assert.strictEqual(solo.catalog_songs.length, new Set(solo.catalog_songs.map((song) => song.id)).size, 'solo tracks must not duplicate full song objects');
   assert.strictEqual(solo.album.songs.length, 77, 'all solo recordings remain present');
@@ -143,6 +148,14 @@ async function main() {
     const after = await editedStore.voices();
     assert.strictEqual(after.voice_actors.length, before.voice_actors.length - 1);
     assert.notStrictEqual(after.build_id, before.build_id, 'profile edits must change the HTTP catalog revision');
+    const generated = ['catalog_manifest.json','events_catalog.json','song_catalog.json','creator_catalog.json','appearance_index.json','voice_actor_profiles.json'];
+    const saved = Object.fromEntries(generated.map(name => [name, JSON.parse(fs.readFileSync(path.join(temporary, name), 'utf8'))]));
+    fs.mkdirSync(path.join(temporary, 'auto_update'), {recursive:true});
+    const pending = path.join(temporary, 'auto_update/catalog_pending.json');
+    fs.writeFileSync(pending, JSON.stringify(saved));
+    fs.writeFileSync(path.join(temporary, 'song_catalog.json'), JSON.stringify({...saved['song_catalog.json'],build_id:'interrupted'}));
+    const recovered = await new CatalogStore(temporary).get();
+    assert.strictEqual(recovered.manifest.build_id, saved['catalog_manifest.json'].build_id, 'cold readers recover a complete generation after interrupted publication');
   } finally {
     fs.rmSync(temporary, { recursive: true, force: true });
   }

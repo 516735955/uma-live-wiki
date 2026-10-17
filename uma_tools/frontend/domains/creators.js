@@ -109,7 +109,6 @@ export function createCreators(deps) {
         "/api/catalog/creator" +
           deps.api.query({
             id: requested,
-            revision: creatorCatalog.value.build_id,
           }),
       )
       .then(function (data) {
@@ -202,7 +201,7 @@ export function createCreators(deps) {
   async function loadCreatorRecording(work) {
     if (!work || creatorRecordingLoading[work.song_id]) return;
     if (
-      deps.findSong(work.song_id)?.versions &&
+      deps.findSong(work.song_id)?.detail_complete &&
       !creatorRecordingErrors[work.song_id]
     )
       return;
@@ -234,10 +233,13 @@ export function createCreators(deps) {
       creatorQuery,
       function () {
         if (!deps.restoringRoute) {
+          creatorListRevision += 1;
           creatorPage.value = 1;
           deps.pushUrl(true);
           clearTimeout(creatorSearchTimer);
-          creatorSearchTimer = setTimeout(() => loadCreatorCatalog(), 250);
+          creatorSearchTimer = setTimeout(() => {
+            if (window.location.pathname === deps.routes.creators()) loadCreatorCatalog();
+          }, 250);
         }
       },
       { flush: "sync" },

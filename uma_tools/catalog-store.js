@@ -5,7 +5,7 @@ const path = require('path');
 const crypto = require('crypto');
 const businessDate = require('./business-date');
 
-const CATALOG_RESPONSE_SCHEMA = 6;
+const CATALOG_RESPONSE_SCHEMA = 7;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -206,6 +206,7 @@ function timingDocument(music, reference) {
 
 function hydrateSong(song, music) {
   return Object.assign({}, song, {
+    detail_complete: true,
     versions: (song.versions || []).map((version) => {
       const lyric = version.has_lyrics ? lyricDocument(music, version.lyrics_ref) : null;
       const timing = lyric ? timingDocument(music, version.lyrics_ref) : null;
@@ -261,6 +262,7 @@ function songSummarySearchText(song, music) {
 function songSummary(song, searchText, music) {
   return {
     id: song.id,
+    ambiguous_aliases: song.ambiguous_aliases || [],
     title: song.title,
     aliases: song.aliases || [],
     artists: song.artists || [],
@@ -354,8 +356,25 @@ class CatalogStore {
   }
 
   async fileSignature() {
+    if (this.signatureCheckedAt && Date.now() - this.signatureCheckedAt < 100) return this.checkedSignature;
     const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
-    return stats.map((stat) => stat.size + ':' + Math.floor(stat.mtimeMs)).join('|');
+    const pending = await fs.promises.stat(path.join(this.dataDir, 'auto_update/catalog_pending.json')).catch(error => { if (error.code !== 'ENOENT') throw error; return null; });
+    this.checkedSignature = stats.map((stat) => stat.size + ':' + stat.mtimeMs).join('|') + ':' + (pending ? pending.mtimeMs + ':' + pending.size : 'published');
+    this.signatureCheckedAt = Date.now();
+    return this.checkedSignature;
+  }
+
+  async readTexts(names) {
+    const pendingFile = path.join(this.dataDir, 'auto_update/catalog_pending.json');
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const readPending = () => fs.promises.readFile(pendingFile, 'utf8').catch(error => { if (error.code !== 'ENOENT') throw error; return null; });
+      const before = await readPending();
+      const saved = before ? JSON.parse(before) : {};
+      const texts = await Promise.all(names.map(name => Object.hasOwn(saved, name)
+        ? JSON.stringify(saved[name]) : fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
+      if (before === await readPending()) return texts;
+    }
+    throw new Error('Catalog publication changed during reading');
   }
 
   async get() {
@@ -379,7 +398,7 @@ class CatalogStore {
   }
 
   async load(signature) {
-    const texts = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.readFile(path.join(this.dataDir, name), 'utf8')));
+    const texts = await this.readTexts(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE));
     const manifest = JSON.parse(texts[0]);
     const eventsDoc = JSON.parse(texts[1]);
     const songsDoc = JSON.parse(texts[2]);
@@ -418,6 +437,7 @@ class CatalogStore {
     const albumRows = Array.isArray(albums) ? albums.map(album => ({...album, type: albumType(album.type)})) : [];
     const characters = JSON.parse(texts[10].replace(/^window\.CHAR_INDEX\s*=\s*/, '').replace(/;\s*$/, ''));
     const charactersById = new Map(characters.map((character) => [character.id, character]));
+    const actorsById = new Map(voiceActors.map(actor => [actor.id, actor]));
     const seriesById = new Map((eventsDoc.series || []).map((series) => [series.id, series]));
     const eventRows = events.map((event) => {
       const series = seriesById.get(event.series_id) || {};
@@ -432,7 +452,7 @@ class CatalogStore {
       const search = songSearchText(song, music);
       const summary = songSummary(song, search, music);
       summary.artist_names = (song.voice_actor_ids || []).map((id) => {
-        const actor = voiceActors.find((item) => item.id === id);
+        const actor = actorsById.get(id);
         return actor && actor.identity && (actor.identity.zh || actor.identity.ja);
       }).filter(Boolean);
       return { data: song, summary, search };
@@ -482,6 +502,11 @@ class CatalogStore {
     albumRowsIndexed.forEach((row) => {
       snapshot.albumsById.set(row.summary.id, row.data);
       snapshot.albumsByName.set(String(row.data.name), row.data);
+    });
+    songRows.forEach(row => {
+      const ambiguous = [row.data.title, ...(row.data.aliases || [])].map(songIdentityKey).filter(key => snapshot.songAliases.has(key) && !snapshot.songAliases.get(key));
+      row.data.ambiguous_aliases = ambiguous;
+      row.summary.ambiguous_aliases = ambiguous;
     });
     this.snapshot = snapshot;
     this.lastError = null;
@@ -655,7 +680,11 @@ class CatalogStore {
   async creator(id) {
     const store = await this.get();
     const creator = store.creatorsById.get(String(id));
-    return creator ? { build_id: store.buildId, creator } : null;
+    return creator ? { build_id: store.buildId, creator: { ...creator,
+      collaborators: (creator.collaborators || []).map(relation => {
+        const other = store.creatorsById.get(relation.creator_id);
+        return { ...(other ? creatorSummary(other) : {}), ...relation };
+      }) } } : null;
   }
 
   async albums(params) {
@@ -699,15 +728,27 @@ class CatalogStore {
     if (!album) return null;
     const songs = (album.songs || []).map((track, index) => {
       // A title is not an identity. Album and track position identify the release.
-      return store.albumTracks.get(stableAlbumId(album) + ':' + (index + 1));
+      const song = store.albumTracks.get(stableAlbumId(album) + ':' + (index + 1));
+      return song ? { ...songSummary(song, '', store.music), versions: (song.versions || []).map(version => ({
+        id: version.id, title: version.title, version_label: version.version_label,
+        releases: (version.releases || []).filter(release => release.album_id === stableAlbumId(album))
+      })).filter(version => version.releases.length) } : null;
     }).filter(Boolean);
     return { build_id: store.buildId, album, catalog_songs: Array.from(new Map(songs.map((song) => [song.id, song])).values()) };
+  }
+
+  async albumSummaries(ids) {
+    const store = await this.get();
+    return ids.map(id => store.albumsById.get(id)).filter(Boolean).map(albumSummary);
   }
 
   async voices(params) {
     const store = await this.get();
     let voices = store.voicesDoc.voice_actors || [];
-    if (params && params.get('id')) voices = voices.filter(row => row.id === params.get('id'));
+    if (params && params.get('id')) {
+      voices = voices.filter(row => row.id === params.get('id'));
+      if (!voices.length) return null;
+    }
     else if (params && params.get('scope') === 'index') voices = voices.map(row => ({id:row.id,identity:row.identity,photo:row.photo,roles:row.roles}));
     return { build_id: store.buildId, voice_actors: voices };
   }
@@ -715,7 +756,8 @@ class CatalogStore {
   async appearance(type, id) {
     const store = await this.get();
     const table = type === 'voice_actor' ? store.appearancesDoc.voice_actors : store.appearancesDoc.characters;
-    const appearance = (table && table[id]) || { events: [], songs: [], performed_songs: [] };
+    if (!table || !Object.hasOwn(table, id)) return null;
+    const appearance = table[id];
     const songIds = new Set((appearance.songs || []).map((item) => item.song_id).filter(Boolean));
     const songs = Array.from(songIds)
       .map((songId) => store.songsById.get(String(songId)))

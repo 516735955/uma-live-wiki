@@ -85,6 +85,9 @@ exports.createService = function (deps) {
             .filter((row) => row.target_type === "event")
             .map((row) => row.target_id),
         );
+        if (params.get('kind') === 'music') events.clear();
+        const albumIds = new Set(work.relations.filter(row => row.target_type === 'album').map(row => row.target_id));
+        const albumRows = params.get('kind') === 'events' ? [] : await deps.catalogStore.albumSummaries(Array.from(albumIds));
         const songRows = await Promise.all(
           Array.from(songs, (id) => deps.catalogStore.song(id)),
         );
@@ -100,6 +103,7 @@ exports.createService = function (deps) {
             ((songRows[0] || eventRows[0] || {}).build_id || ""),
           songs: songRows.map((row) => row.song),
           events: eventRows.map((row) => row.event),
+          albums: albumRows,
         };
       } else if (urlPath === "/api/catalog/events")
         result = await deps.catalogStore.events(params);

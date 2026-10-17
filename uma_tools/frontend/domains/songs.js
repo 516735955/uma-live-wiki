@@ -38,7 +38,13 @@ export function createSongs(deps) {
 
   function mergeSong(song) {
     if (!song || !song.id) return;
+    if (songsById[song.id]?.detail_complete && !song.detail_complete) return;
     if (!songsById[song.id] || song.versions) songsById[song.id] = song;
+  }
+
+  function songKey(value) {
+    return String(value || '').normalize('NFKC').toLowerCase().replace(/[\ufe0e\ufe0f]/g, '')
+      .replace(/[‘’]/g, "'").replace(/[‐‑‒–—−－]/g, '-').replace(/・/g, '·').replace(/\s+/g, '');
   }
 
   function loadSongCatalog(params) {
@@ -84,13 +90,13 @@ export function createSongs(deps) {
   }
 
   const songAliasMap = deps.computed(function () {
-    const map = {};
+    const map = Object.create(null);
     (songCatalog.value.songs || [])
       .concat(deps.eventSongs.value, Object.values(songsById))
       .forEach(function (song) {
         [song.title].concat(song.aliases || []).forEach(function (title) {
-          const key = deps.normName(title);
-          if (key) map[key] = song;
+          const key = songKey(title);
+          if (key) map[key] = (song.ambiguous_aliases || []).includes(key) ? null : !(key in map) || map[key]?.id === song.id ? song : null;
         });
       });
     return map;
@@ -103,7 +109,7 @@ export function createSongs(deps) {
         : songOrId && (songOrId.id || songOrId.song_id);
     if (!target) return null;
     const direct =
-      songsById[target] ||
+      (Object.hasOwn(songsById, target) && songsById[target]) ||
       deps.eventSongs.value.find(function (song) {
         return song.id === target;
       }) ||
@@ -111,7 +117,7 @@ export function createSongs(deps) {
         return song.id === target;
       });
     if (direct) return direct;
-    const key = deps.normName(target);
+    const key = songKey(target);
     return songAliasMap.value[key] || null;
   }
 
@@ -366,7 +372,7 @@ export function createSongs(deps) {
         : songOrId && (songOrId.id || songOrId.song_id);
     const requestedUrl = new URL(window.location.href);
     const recordingUrl =
-      requestedUrl.pathname === deps.routes.songs(requested)
+      [deps.routes.songs(requested), ...deps.routes.sections.song.map(section => deps.routes.songs(requested, section))].includes(requestedUrl.pathname)
         ? requestedUrl
         : null;
     const show = function (data) {
@@ -411,7 +417,6 @@ export function createSongs(deps) {
         "/api/catalog/song" +
           deps.api.query({
             id: requested,
-            revision: songCatalog.value.build_id,
           }),
       ),
       deps.loadVoiceData(),
@@ -597,15 +602,19 @@ export function createSongs(deps) {
     return '—';
   });
   function start() {
+    window.addEventListener?.('uma-catalog-change', () => {
+      Object.keys(songsById).forEach(key => delete songsById[key]);
+    });
     deps.watch(
       songDbQuery,
       function () {
         if (deps.restoringRoute) return;
+        songListRevision += 1;
         songDbPage.value = 1;
         deps.pushUrl(true);
         window.clearTimeout(songSearchTimer);
         songSearchTimer = window.setTimeout(function () {
-          loadSongCatalog();
+          if (window.location.pathname === deps.routes.songs()) loadSongCatalog();
         }, 180);
       },
       { flush: "sync" },

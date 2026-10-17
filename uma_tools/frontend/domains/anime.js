@@ -22,6 +22,7 @@ export function createAnime(deps) {
   });
 
   const animeRelatedEvents = deps.reactive({});
+  const animeRelatedAlbums = deps.reactive({});
 
   const animeMediaLoads = {};
 
@@ -158,7 +159,7 @@ export function createAnime(deps) {
     kind =
       kind ||
       (new URL(window.location.href).searchParams.get("section") === "music"
-        ? "all"
+        ? "music"
         : "events");
     const mediaKey =
       workId + ":" + (deps.routeSegments()[4] || "") + ":" + kind;
@@ -184,6 +185,7 @@ export function createAnime(deps) {
       .then(function (results) {
         const media = results[2] || {};
         (media.songs || []).forEach(deps.mergeSong);
+        (media.albums || []).forEach(album => { animeRelatedAlbums[album.id] = album; });
         (media.events || []).forEach(function (event) {
           if (event && event.id) animeRelatedEvents[event.id] = event;
         });
@@ -515,7 +517,7 @@ export function createAnime(deps) {
     animeSection.value = section;
     deps.pushUrl(true);
     if (section === "music" && animeDetail.value)
-      loadAnimeRelatedMedia(animeDetail.value.id, false, "all").catch(() => {});
+      loadAnimeRelatedMedia(animeDetail.value.id, false, "music").catch(() => {});
   }
 
   const animeDates = deps.computed(() => {
@@ -753,7 +755,7 @@ export function createAnime(deps) {
     if (relation.target_type === "voice_actor")
       return relation.signature || deps.voiceName(relation.target_id);
     if (relation.target_type === "album") {
-      const album = deps.albums.value.find(
+      const album = animeRelatedAlbums[relation.target_id] || deps.albums.value.find(
         (row) => (row.data || row).id === relation.target_id,
       );
       return (
@@ -876,7 +878,7 @@ export function createAnime(deps) {
       return deps.findSong;
     },
     get findAlbumById() {
-      return deps.findAlbumById;
+      return id => animeRelatedAlbums[id] || deps.findAlbumById(id);
     },
   });
   return {

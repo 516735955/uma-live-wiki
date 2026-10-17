@@ -22,9 +22,8 @@
     computed: {
       compact: function () { return this.width < 720; },
       collaborators: function () {
-        const byId = new Map(this.catalog.map(function (item) { return [item.id, item]; }));
         return (this.creator.collaborators || []).map(function (relation) {
-          return Object.assign({}, byId.get(relation.creator_id) || {}, relation);
+          return { ...relation, id: relation.creator_id };
         }).sort(function (a, b) {
           return (b.shared_work_count - a.shared_work_count) || String(a.name).localeCompare(String(b.name), 'ja');
         });

@@ -34,9 +34,10 @@ export function createVoices(deps) {
           !data.voice_actors.length
         )
           throw new Error("声优资料暂时无法载入。");
-        const rows = new Map(voiceProfiles.value.map((row) => [row.id, row]));
+        const previous = new Map(voiceProfiles.value.map((row) => [row.id, row]));
+        const rows = id ? new Map(previous) : new Map();
         data.voice_actors.forEach((row) =>
-          rows.set(row.id, { ...rows.get(row.id), ...row }),
+          rows.set(row.id, { ...previous.get(row.id), ...row }),
         );
         voiceProfiles.value = Array.from(rows.values());
         window.dispatchEvent(new CustomEvent("uma-voice-data"));

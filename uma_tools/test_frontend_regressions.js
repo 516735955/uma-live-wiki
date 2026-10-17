@@ -87,6 +87,28 @@ async function main() {
   await app.applyCurrentRoute();
   assert.strictEqual(app.songDbPaged.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');
+  const isolatedSongs = context.createSongs({...context.Vue, eventSongs: context.Vue.ref([])});
+  isolatedSongs.mergeSong({id:'same-a',title:'奇跡',versions:[],detail_complete:true});
+  isolatedSongs.mergeSong({id:'same-a',title:'奇跡',versions:[{id:'partial'}]});
+  assert.strictEqual(isolatedSongs.findSong('same-a').versions.length, 0, 'an event summary cannot replace a complete song');
+  isolatedSongs.mergeSong({id:'same-b',title:'奇跡',versions:[]});
+  assert.strictEqual(isolatedSongs.findSong('奇跡'), null, 'ambiguous aliases never select the last registered song');
+  isolatedSongs.mergeSong({id:'unseen',title:'約束',ambiguous_aliases:['約束'],versions:[]});
+  assert.strictEqual(isolatedSongs.findSong('約束'), null, 'global ambiguity remains known even when only one matching song is cached');
+  const recording = {versions:[{id:'live',releases:[]},{id:'studio',releases:[{audio_url:'studio.mp3'}]}]};
+  assert.strictEqual(app.playableSongRelease(recording,'live'), null, 'missing live audio cannot silently select studio audio');
+  assert.strictEqual(app.playableSongRelease(recording).version.id, 'studio');
+  let detailRequests = 0;
+  const isolatedCreators = context.createCreators({...context.Vue,
+    findSong: () => ({id:'partial',versions:[{}]}), mergeSong() {},
+    api:{query:()=>'',request:async()=>{detailRequests++;return {song:{id:'partial',detail_complete:true,versions:[]}};}}
+  });
+  await isolatedCreators.loadCreatorRecording({song_id:'partial'});
+  assert.strictEqual(detailRequests, 1, 'recording expansion loads complete detail despite cached partial versions');
+  const indexedSongs = context.Vue.reactive({one:{id:'one',versions:[{releases:[{album_id:'other',album_name:'同名',track_number:1}]}]}});
+  const isolatedAlbums = context.createAlbums({...context.Vue,songsById:indexedSongs,songCatalog:context.Vue.ref({songs:[]})});
+  isolatedAlbums.albumDetail.value={id:'wanted',name:'同名'};
+  assert.strictEqual(isolatedAlbums.albumTrackSongId({name:'Song'},0), 'Song', 'a conflicting album ID cannot resolve the other album song identity');
 
   const vocalists = [{voice_actor_id:'other-a'}, {voice_actor_id:'current'}, {voice_actor_id:'other-b'}];
   assert.deepStrictEqual(Array.from(app.relationReleaseVocalists({vocalists}, 'voice_actor', 'current'), row => row.voice_actor_id),

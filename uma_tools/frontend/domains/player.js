@@ -29,6 +29,7 @@ export function createPlayer(deps) {
         return !!release.audio_url;
       });
     if (exactRelease) return { version: exact, release: exactRelease };
+    if (versionId) return null;
     if (song && song.playable) {
       return {
         version: {

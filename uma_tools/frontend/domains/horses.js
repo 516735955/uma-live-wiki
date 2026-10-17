@@ -53,13 +53,14 @@ export function createHorses(deps) {
       return Promise.resolve();
     }
     const revision = ++horseListRevision;
-    const query = paged
+    const requested = paged
       ? params || {
           q: horseQuery.value,
           page: horsePage.value,
           page_size: horsesPerPage,
         }
       : { scope: "index" };
+    const query = paged ? { q: requested.q, page: requested.page, page_size: horsesPerPage } : requested;
     horsesListPromise = deps.api
       .request("/api/catalog/horses" + deps.api.query(query))
       .then(function (data) {
@@ -645,6 +646,7 @@ export function createHorses(deps) {
       horseQuery,
       function () {
         if (!deps.restoringRoute) {
+          horseListRevision += 1;
           horsePage.value = 1;
           deps.pushUrl(true);
         }
@@ -660,7 +662,9 @@ export function createHorses(deps) {
         )
           return;
         window.clearTimeout(horseSearchTimer);
-        horseSearchTimer = window.setTimeout(() => loadHorsesListData().catch(() => {}), 180);
+        horseSearchTimer = window.setTimeout(() => {
+          if (deps.currentUrlPath().split('?')[0] === deps.routes.horses()) loadHorsesListData().catch(() => {});
+        }, 180);
       },
       { flush: "sync" },
     );

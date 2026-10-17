@@ -1,4 +1,4 @@
-export const bindings = ["newsItems","newsError","newsLoading","newsRange","newsType","newsFiltered","newsHero","newsDetail","newsDetailBody","newsDetailLoading","newsLanguage","setNewsLanguage","newsImage","newsDate","newsTypeOf","newsTypeLabel","newsTitle","openNews","newsHeroCover","newsPage","newsPaged","newsPageCount","newsPageStart","newsPageEnd","newsPageList","setNewsPage","goNewsPage"];
+export const bindings = ["newsItems","newsError","newsLoading","newsRange","newsType","newsFiltered","newsHero","newsDetail","newsDetailBody","newsDetailLoading","newsLanguage","setNewsLanguage","newsImage","newsDate","newsTypeOf","newsTypeLabel","newsTitle","openNews","newsHeroCover","newsPage","newsPaged","newsPageCount","newsPageStart","newsPageEnd","newsPageList","setNewsPage","goNewsPage","loadNews","newsLink","routes"];
 export const template = `
             <div v-if="newsDetail" class="news-detail">
                 <div v-if="newsDetail.image_big" class="news-detail-cover-wrap">
@@ -21,11 +21,11 @@ export const template = `
             </div>
 
             <div v-else class="news-list">
-                <div v-if="newsError" class="news-error">{{ newsError }}</div>
+                <div v-if="newsError" class="news-error">{{ newsError }} <button type="button" class="ui-retry" @click="loadNews(true)">重试</button></div>
 
                 <div v-if="newsItems.length || newsLoading" class="news-hero-grid">
                     <template v-if="newsItems.length">
-                        <div v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" @click="openNews(n.announce_id)">
+                        <a v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" :href="routes.news(n.announce_id)" @click="newsLink($event,n.announce_id)" style="color:inherit;text-decoration:none">
                             <img class="news-hero-cover" v-media-src="newsHeroCover(n)" :alt="n.title" :loading="i === 0 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" decoding="async">
                             <div class="news-hero-body">
                                 <div class="news-hero-meta">
@@ -34,7 +34,7 @@ export const template = `
                                 </div>
                                 <div class="news-hero-title">{{ newsTitle(n) }}</div>
                             </div>
-                        </div>
+                        </a>
                     </template>
                     <template v-else>
                         <div v-for="i in 3" :key="'news-skeleton-' + i" class="news-hero-card news-hero-skeleton" aria-hidden="true">
@@ -60,11 +60,11 @@ export const template = `
                         <span class="nw-t">类型</span>
                         <span class="nw-title">标题</span>
                     </div>
-                    <div v-for="n in newsPaged" :key="n.announce_id" class="news-row" @click="openNews(n.announce_id)">
+                    <a v-for="n in newsPaged" :key="n.announce_id" class="news-row" :href="routes.news(n.announce_id)" @click="newsLink($event,n.announce_id)" style="color:inherit;text-decoration:none">
                         <span class="nw-d">{{ newsDate(n.post_at) }}</span>
                         <span class="nw-t" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>
                         <span class="nw-title">{{ newsTitle(n) }}</span>
-                    </div>
+                    </a>
                     <div v-if="!newsFiltered.length && newsItems.length" class="news-empty">当前筛选下暂无新闻</div>
                     <div v-if="newsLoading" class="news-empty">新闻加载中...</div>
                 </div>
