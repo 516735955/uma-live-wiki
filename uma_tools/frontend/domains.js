@@ -255,6 +255,7 @@ export function createDomains(env) {
         ],
         events: ["eventPerformanceKey", "eventSongs"],
         characters: [
+          "characterPerformanceImage",
           "findCharByAvatar",
           "findCharByDisplayName",
           "loadCharacterIndexData",

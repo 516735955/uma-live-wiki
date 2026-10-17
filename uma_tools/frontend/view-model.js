@@ -210,6 +210,7 @@ export function createViewModel(domains, routes) {
     loadSongCatalog: domains.songs.loadSongCatalog,
     characterName: domains.characters.characterName,
     characterImage: domains.characters.characterImage,
+    characterPerformanceImage: domains.characters.characterPerformanceImage,
     characterColor: domains.characters.characterColor,
     voiceName: domains.voices.voiceName,
     voicePhoto: domains.voices.voicePhoto,

@@ -190,6 +190,11 @@ export function createCharacters(deps) {
     return character ? character.img : "";
   }
 
+  function characterPerformanceImage(characterId) {
+    const character = findCharById(characterId);
+    return character ? character.av : "";
+  }
+
   function characterColor(characterId) {
     const character = findCharById(characterId);
     return character ? character.main : "#3157ed";
@@ -209,6 +214,7 @@ export function createCharacters(deps) {
           ja: c.ja || c.name,
           en: c.en || c.name,
           img: c.img || c.av || "",
+          av: c.av || "",
           cv: c.cv || "",
           cv_zh: c.cv_zh || c.cv || "",
           main: c.main || "#8c83ff",
@@ -291,6 +297,7 @@ export function createCharacters(deps) {
     charSort,
     characterColor,
     characterImage,
+    characterPerformanceImage,
     characterName,
     characterSortOptions,
     findCharByAvatar,

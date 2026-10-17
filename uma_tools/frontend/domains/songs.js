@@ -578,6 +578,11 @@ export function createSongs(deps) {
           deps.findCharByAvatar(srcMatch ? srcMatch[1] : "") ||
           deps.findCharByDisplayName(deps.decodeHtml(alt));
         if (!character) return whole;
+        const avatar = deps.characterPerformanceImage(character.id);
+        if (avatar) {
+          const source = window.UmaMedia ? window.UmaMedia.preview(avatar, 160) : avatar;
+          image = image.replace(/\bsrc=["'][^"']*["']/i, 'src="' + source.replace(/&/g, '&amp;') + '"');
+        }
         var shown = [character.zh, character.ja, character.en].some(
           function (value) {
             return deps.normName(value) === deps.normName(label);

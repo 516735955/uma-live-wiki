@@ -269,6 +269,7 @@ def main():
         chars.append({'id': cid, 'zh': info['zh'], 'ja': obj['ja'], 'en': obj['en'],
                       'cv_zh': info['cv'], 'cv': info['cv'],
                       'img': '/uma_official/%s.png' % cid,
+                      **({'av': '/uma_avatars/%s.png' % cid} if os.path.isfile(os.path.join(ROOT, 'uma_avatars', cid + '.png')) else {}),
                       'page': 'https://zh.moegirl.org.cn/' + urllib.parse.quote(info['zh']),
                       'main': official_main, 'sub': official_sub,
                       **profile_from_intro(info['block'])})

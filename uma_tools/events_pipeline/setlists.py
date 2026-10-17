@@ -47,7 +47,7 @@ def display_table(original, block, known_cast, identities):
     def character_chip(character_id):
         character = identities.character_by_id[character_id]
         label = html.escape(character.get('zh') or character.get('ja') or character_id, quote=True)
-        image = character.get('av') or character.get('img') or ''
+        image = character.get('av') or ''
         avatar = '<img class="char-avatar" src="%s" alt="%s">' % (html.escape(image, quote=True), label) if image else ''
         return '<span class="perf-item">%s<span class="perf-name">%s</span></span>' % (avatar, label)
 

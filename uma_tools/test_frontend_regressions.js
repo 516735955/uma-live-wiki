@@ -85,6 +85,16 @@ async function main() {
   context.Vue.createApp = (options) => ({ component() {}, directive() {}, mount() { app = options.setup(); } });
   require('./test_frontend_loader').loadFrontend(context);
   await app.applyCurrentRoute();
+  window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
+  assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
+  assert.strictEqual(app.characterPerformanceImage('avatar-check'), '/uma_avatars/AvatarCheck.png', 'performance records use the performance avatar');
+  const avatarSongs = context.createSongs({...context.Vue,
+    normName:value=>value,decodeHtml:value=>value,
+    findCharByAvatar:()=>null,findCharByDisplayName:()=>({id:'avatar-check',zh:'头像核对',main:'#123456'}),
+    characterPerformanceImage:app.characterPerformanceImage});
+  const legacyAvatar = avatarSongs.linkSetlistSongs('<span class="perf-item"><img src="/uma_official/avatar-check.png" alt="头像核对"><span class="perf-name">头像核对</span></span>', []);
+  assert(legacyAvatar.includes('src="/uma_avatars/AvatarCheck.png"'), 'legacy setlists normalize to the same avatar as generated full-cast rows');
+  window.CHAR_INDEX.pop();
   assert.strictEqual(app.songDbPaged.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');
   const isolatedSongs = context.createSongs({...context.Vue, eventSongs: context.Vue.ref([])});
