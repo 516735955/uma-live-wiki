@@ -9,7 +9,7 @@
     var listBox = (root || document).querySelector('#cIntroList');
     if (!grid || !input || grid.getAttribute('data-c-inited')) return;
     grid.setAttribute('data-c-inited', '1');
-    function norm(c) { return String(c || '').toLowerCase(); }
+    function norm(c) { return String(c || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim(); }
     function data() {
       return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
     }
@@ -226,16 +226,19 @@
     var input = (root || document).querySelector('#vaSearch');
     if (!grid || !input || grid.getAttribute('data-va-inited')) return;
     grid.setAttribute('data-va-inited', '1');
-    function norm(v) { return String(v || '').toLowerCase(); }
+    function norm(v) { return String(v || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim(); }
+    const cards = new Map();
     function data() {
       var generated = window.__uma_app && window.__uma_app.voiceProfiles;
       if (generated && generated.length) {
         return generated.map(function (profile) {
           var identity = profile.identity || {}, photo = profile.photo || {};
           return {
+            id: profile.id,
             key: identity.zh || identity.ja || profile.id,
             slug: profile.slug || profile.id,
             zh: identity.zh || identity.ja || '', ja: identity.ja || identity.zh || '',
+            kana: identity.kana || '', aliases: identity.aliases || [],
             photo: photo.url || '',
             roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', image: role.image || '', main: role.color_main || '#8c83ff' }; })
           };
@@ -244,17 +247,23 @@
       return [];
     }
     function render() {
+      if (!grid.isConnected) { voiceRender = null; return; }
       var q = norm(input.value.trim());
       var list = data().filter(function (v) {
         if (!q) return true;
-        if (norm(v.zh).indexOf(q) >= 0 || norm(v.ja).indexOf(q) >= 0) return true;
+        if ([v.zh, v.ja, v.kana].concat(v.aliases).some(name => norm(name).includes(q))) return true;
         for (var i = 0; i < v.roles.length; i++) {
           if (norm(v.roles[i].zh).indexOf(q) >= 0) return true;
         }
         return false;
       });
-      grid.innerHTML = '';
+      const fragment = document.createDocumentFragment();
+      const available = new Set(data().map(voice => voice.id));
+      for (const id of cards.keys()) if (!available.has(id)) cards.delete(id);
       list.forEach(function (v, i) {
+        const signature = JSON.stringify(v);
+        const previous = cards.get(v.id);
+        if (previous && previous.signature === signature) { fragment.appendChild(previous.element); return; }
         var li = document.createElement('li');
         var card = document.createElement('a');
         card.className = 'va-card';
@@ -282,12 +291,18 @@
           if (window.__uma_app && typeof window.__uma_app.openVa === 'function') window.__uma_app.openVa(v.slug);
         });
         li.appendChild(card);
-        grid.appendChild(li);
+        cards.set(v.id, {signature, element:li});
+        fragment.appendChild(li);
       });
+      grid.replaceChildren(fragment);
       var nodata = (root || document).querySelector('#vaNoData');
       if (nodata) nodata.style.display = list.length ? 'none' : 'block';
     }
-    input.addEventListener('input', render);
+    let pendingFrame;
+    input.addEventListener('input', () => {
+      cancelAnimationFrame(pendingFrame);
+      pendingFrame = requestAnimationFrame(render);
+    });
     voiceRender = function () { if (grid.isConnected) render(); else voiceRender = null; };
     render();
   }

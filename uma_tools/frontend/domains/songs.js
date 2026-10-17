@@ -156,21 +156,6 @@ export function createSongs(deps) {
 
   let songSearchTimer = 0;
 
-  const songDetailReleases = deps.computed(function () {
-    if (!songDetail.value) return [];
-    const rows = [];
-    (songDetail.value.versions || []).forEach(function (version) {
-      (version.releases || []).forEach(function (release) {
-        rows.push({ version: version, release: release });
-      });
-    });
-    return rows.sort(function (a, b) {
-      return String(b.release.release_date).localeCompare(
-        String(a.release.release_date),
-      );
-    });
-  });
-
   const songDetailReleaseVersions = deps.computed(function () {
     return ((songDetail.value && songDetail.value.versions) || []).filter(
       function (version) {
@@ -609,9 +594,7 @@ export function createSongs(deps) {
     )
       return songCatalog.value.coverage.songs;
     if (deps.homeStats.songs !== null) return deps.homeStats.songs;
-    return deps.albums.value.reduce(function (n, a) {
-      return n + (a.track_count || (a.songs || []).length);
-    }, 0);
+    return '—';
   });
   function start() {
     deps.watch(
@@ -663,7 +646,6 @@ export function createSongs(deps) {
     songDetail,
     songDetailPerformances,
     songDetailReleaseVersions,
-    songDetailReleases,
     songLinkRelease,
     songLinkVersion,
     songLyricTranslation,

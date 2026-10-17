@@ -168,7 +168,12 @@ export function createCharacters(deps) {
       deps.loadAnimeCatalogOptional(),
     ])
       .then(loadCharacterUi)
-      .then(show, show);
+      .then(show, function () {
+        if (!isCurrent()) return;
+        show();
+        deps.navigationError.value = "角色完整资料暂时无法载入，请重试。";
+        deps.navigationRetry.value = () => openCharacter(id);
+      });
   }
 
   function openCharDetail(id) {

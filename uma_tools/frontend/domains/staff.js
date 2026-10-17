@@ -7,6 +7,7 @@ export function createStaff(deps) {
   const staffDetail = deps.ref(null);
 
   const animeStaffQuery = deps.ref("");
+  const peopleById = deps.computed(() => new Map((deps.animeCatalog.value.people || []).map(person => [person.id, person])));
 
   const animeDisplayStaff = deps.computed(() =>
     (deps.animeCatalog.value.staff || []).flatMap((entry) =>
@@ -50,9 +51,7 @@ export function createStaff(deps) {
   function staffName(entry) {
     return (
       (
-        (deps.animeCatalog.value.people || []).find(
-          (person) => person.id === entry.person_id,
-        ) || {}
+        peopleById.value.get(entry.person_id) || {}
       ).name ||
       entry.name ||
       ""
@@ -62,9 +61,7 @@ export function createStaff(deps) {
   function staffHref(entry) {
     const person = entry.id
       ? entry
-      : (deps.animeCatalog.value.people || []).find(
-          (row) => row.id === entry.person_id,
-        );
+      : peopleById.value.get(entry.person_id);
     return person
       ? person.creator_id
         ? deps.routes.creators(person.creator_id)

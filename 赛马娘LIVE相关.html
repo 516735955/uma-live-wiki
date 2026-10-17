@@ -68,6 +68,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <div class="home-stat"><div class="home-stat-number">{{ statAlbums }}</div><div class="home-stat-label">专辑数</div></div>
             <div class="home-stat"><div class="home-stat-number">{{ statLive }}</div><div class="home-stat-label">live场次</div></div>
             <div class="home-stat"><div class="home-stat-number">{{ statGongyan }}</div><div class="home-stat-label">公演次数</div></div>
+            <div v-if="homeSummaryError" class="ui-state home-summary-error">{{ homeSummaryError }} <button type="button" @click="loadHomeSummary()">重试</button></div>
         </div>
         <div class="home-nav">
             <nav class="site-nav site-nav-home" aria-label="主导航">
@@ -83,7 +84,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             </nav>
         </div>
         <div class="home-hero"></div>
-        <a v-if="nextUpcomingEvent" class="home-upcoming" :href="nextUpcomingHref" @click.prevent="openNextUpcoming()">
+        <a v-if="nextUpcomingEvent" class="home-upcoming" :href="nextUpcomingHref" @click="internalLink($event, openNextUpcoming)">
             <span class="hu-badge">即将举办</span>
             <span class="hu-title">{{ nextUpcomingEvent.title }}</span>
             <span class="hu-meta">{{ eventDateLabel(nextUpcomingEvent) }}<template v-if="nextUpcomingEvent.venue"> · {{ nextUpcomingEvent.venue }}</template></span>
@@ -116,7 +117,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <button type="button" @click="navNavigate(routes.home())">返回首页</button>
         </section>
         <template v-else>
-        <div v-if="navigationError" class="ui-state ui-state-error">{{ navigationError }}</div>
+        <div v-if="navigationError" class="ui-state ui-state-error">{{ navigationError }} <button v-if="navigationRetry" type="button" @click="navigationRetry()">重试</button></div>
         <nav v-if="breadcrumbItems.length" class="route-breadcrumb" aria-label="面包屑">
             <template v-for="(item,index) in breadcrumbItems" :key="index">
                 <span v-if="index" aria-hidden="true">›</span>
@@ -201,13 +202,13 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 <div class="footer-cols">
                 <div class="footer-col">
                     <div class="footer-col-title">参与共建</div>
-                    <a class="footer-link" href="/zh-Hans/contribute/fix" @click.prevent="goContributeFix()">资料订正表单</a>
-                    <a class="footer-link" href="/zh-Hans/contribute/contact" @click.prevent="goContributeContact()">联系我们</a>
+                    <a class="footer-link" href="/zh-Hans/contribute/fix" @click="internalLink($event, goContributeFix)">资料订正表单</a>
+                    <a class="footer-link" href="/zh-Hans/contribute/contact" @click="internalLink($event, goContributeContact)">联系我们</a>
                 </div>
                 <div class="footer-col">
                     <div class="footer-col-title">法律</div>
-                    <a class="footer-link" href="/zh-Hans/legal/privacy" @click.prevent="goLegal('privacy')">隐私政策</a>
-                    <a class="footer-link" href="/zh-Hans/legal/terms" @click.prevent="goLegal('terms')">使用条款</a>
+                    <a class="footer-link" href="/zh-Hans/legal/privacy" @click="internalLink($event, () => goLegal('privacy'))">隐私政策</a>
+                    <a class="footer-link" href="/zh-Hans/legal/terms" @click="internalLink($event, () => goLegal('terms'))">使用条款</a>
                 </div>
                 </div>
                 <div class="footer-community">

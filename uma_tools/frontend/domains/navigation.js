@@ -147,6 +147,7 @@ export function createNavigation(deps) {
 
   function loadHomeSummary() {
     if (homeSummaryLoadPromise) return homeSummaryLoadPromise;
+    homeSummaryError.value = "";
     homeSummaryLoadPromise = deps.api
       .request("/api/home-summary", { fresh: true })
       .then(function (data) {
@@ -169,6 +170,7 @@ export function createNavigation(deps) {
       })
       .catch(function () {
         homeSummaryLoadPromise = null;
+        homeSummaryError.value = "统计暂时无法载入。";
         return null;
       });
     return homeSummaryLoadPromise;
@@ -265,6 +267,22 @@ export function createNavigation(deps) {
   const fixDone = deps.ref(false);
 
   const fixSendState = deps.ref("");
+  let fixAutoPage = '';
+  const homeSummaryError = deps.ref('');
+  function resetFixState() {
+    if (fixSendState.value === 'sending') return;
+    fixDone.value = false;
+    fixSendState.value = '';
+  }
+  deps.watch(fix, function () {
+    if (fixSendState.value === 'ok') resetFixState();
+  }, { deep: true, flush: 'sync' });
+
+  function internalLink(event, action) {
+    if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    action();
+  }
 
   const fixMailto = deps.computed(function () {
     const kind =
@@ -319,8 +337,11 @@ export function createNavigation(deps) {
     };
     const kindText = k[fix.kind] || "其他";
     const subject = "【资料订正】" + (fix.title || "未分类") + " - " + kindText;
-    fetch("https://formsubmit.co/ajax/" + contactEmails[0], {
+    const controller = new AbortController();
+    const deadline = setTimeout(() => controller.abort(), 20000);
+    return fetch("https://formsubmit.co/ajax/" + contactEmails[0], {
       method: "POST",
+      signal: controller.signal,
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -356,14 +377,16 @@ export function createNavigation(deps) {
       .catch(function () {
         fixDone.value = false;
         fixSendState.value = "error";
-      });
+      }).finally(() => clearTimeout(deadline));
   }
 
   function goContributeFix() {
-    if (!fix.page && isAtomicView()) fix.page = window.location.href;
+    if (isAtomicView() && (!fix.page || fix.page === fixAutoPage)) {
+      fix.page = window.location.href;
+      fixAutoPage = fix.page;
+    }
     deps.beginEntityNavigation();
-    fixDone.value = false;
-    fixSendState.value = "";
+    resetFixState();
     home.value = false;
     activeTab.value = "contribute";
     deps.clearEntityDetails();
@@ -658,16 +681,12 @@ export function createNavigation(deps) {
 
   const statLive = deps.computed(function () {
     if (homeStats.live !== null) return homeStats.live;
-    return deps.eventsAll.value.filter(function (event) {
-      return event.kind === "concert";
-    }).length;
+    return '—';
   });
 
   const statGongyan = deps.computed(function () {
     if (homeStats.performances !== null) return homeStats.performances;
-    return deps.eventsAll.value.reduce(function (total, event) {
-      return total + (event.sessions || []).length;
-    }, 0);
+    return '—';
   });
 
   const nextUpcomingHref = deps.computed(function () {
@@ -831,6 +850,10 @@ export function createNavigation(deps) {
     historyKindOptions,
     home,
     homeStats,
+    homeSummaryError,
+    internalLink,
+    loadHomeSummary,
+    resetFixState,
     isAtomicView,
     listParamsFromUrl,
     loadDataScript,

@@ -78,19 +78,6 @@ export function createCreators(deps) {
     return creatorFiltered.value;
   });
 
-  const creatorPageStart = deps.computed(function () {
-    return creatorFiltered.value.length
-      ? (creatorPage.value - 1) * creatorsPerPage + 1
-      : 0;
-  });
-
-  const creatorPageEnd = deps.computed(function () {
-    return Math.min(
-      creatorPage.value * creatorsPerPage,
-      creatorTotal.value,
-    );
-  });
-
   const creatorPageList = deps.computed(function () {
     return deps.pagerList(creatorPage.value, creatorPageCount.value);
   });
@@ -170,14 +157,6 @@ export function createCreators(deps) {
         } else if (isCurrent())
           deps.navigationError.value = "创作者资料暂时无法载入，请重试。";
       });
-  }
-
-  function creatorRoleLabels(roles) {
-    return (roles || [])
-      .map(function (role) {
-        return role.label || role.role;
-      })
-      .join(" · ");
   }
 
   function creatorRoleLabel(role) {
@@ -273,16 +252,13 @@ export function createCreators(deps) {
     creatorFiltered,
     creatorPage,
     creatorPageCount,
-    creatorPageEnd,
     creatorPageList,
-    creatorPageStart,
     creatorPaged,
     creatorPortrait,
     creatorQuery,
     creatorRecordingErrors,
     creatorRecordingLoading,
     creatorRoleLabel,
-    creatorRoleLabels,
     creatorSection,
     creatorWorkRoleLabels,
     creatorWorkVersions,

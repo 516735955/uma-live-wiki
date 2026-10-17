@@ -99,6 +99,7 @@ export function createDomains(env) {
           "activeTab",
           "dbView",
           "fixDone",
+          "resetFixState",
           "home",
           "isAtomicView",
           "listParamsFromUrl",
@@ -287,7 +288,7 @@ export function createDomains(env) {
           "resetPageScroll",
         ],
         environment: ["api", "computed", "reactive", "ref", "watch"],
-        routing: ["beginEntityNavigation", "clearEntityDetails", "pushUrl"],
+        routing: ["beginEntityNavigation", "clearEntityDetails", "pushUrl", "navigationError", "navigationRetry"],
         horses: [
           "charHasPedigree",
           "loadPedigreeData",

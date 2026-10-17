@@ -1,5 +1,12 @@
 /* news state and behavior; external dependencies are explicit live ports. */
 export function createNews(deps) {
+  const newsDateFormatter = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
+  // Official and Lantis timestamps without an offset are published in Japan.
+  function newsTimestamp(value) {
+    const text = String(value || '').replace(' ', 'T');
+    return Date.parse(/^\d{4}-\d{2}-\d{2}$/.test(text) ? text + 'T00:00:00+09:00'
+      : /(?:Z|[+-]\d{2}:?\d{2})$/i.test(text) ? text : text + '+09:00');
+  }
   const newsItems = deps.ref([]);
 
   const newsError = deps.ref("");
@@ -26,10 +33,6 @@ export function createNews(deps) {
 
   const newsDetailLoading = deps.ref(false);
 
-  const newsPrevId = deps.ref(0);
-
-  const newsNextId = deps.ref(0);
-
   const newsPage = deps.ref(1);
 
   const newsPerPage = 20;
@@ -45,7 +48,7 @@ export function createNews(deps) {
   const newsHero = deps.computed(function () {
     function timeOf(n) {
       const s = n.post_at || n.update_at || "";
-      const t = new Date(String(s).replace(" ", "T")).getTime();
+      const t = newsTimestamp(s);
       if (!isNaN(t)) return t;
       return -1;
     }
@@ -74,7 +77,7 @@ export function createNews(deps) {
       const days = parseInt(newsRange.value, 10);
       const cut = Date.now() - days * 86400000;
       out = out.filter(function (n) {
-        var t = new Date(String(n.post_at).replace(" ", "T")).getTime();
+        var t = newsTimestamp(n.post_at);
         return !isNaN(t) && t >= cut;
       });
     }
@@ -86,8 +89,8 @@ export function createNews(deps) {
     // Sort by original publish time (post_at) newest-first so the list always shows
     // the latest-posted news on top regardless of server update_at ordering.
     out = out.slice().sort(function (a, b) {
-      const ta = new Date(String(a.post_at || "").replace(" ", "T")).getTime();
-      const tb = new Date(String(b.post_at || "").replace(" ", "T")).getTime();
+      const ta = newsTimestamp(a.post_at);
+      const tb = newsTimestamp(b.post_at);
       if (!isNaN(ta) && !isNaN(tb)) return tb - ta;
       if (!isNaN(ta)) return -1;
       if (!isNaN(tb)) return 1;
@@ -149,12 +152,8 @@ export function createNews(deps) {
 
   function newsDate(s) {
     if (!s) return "";
-    const d = new Date(s.replace(" ", "T"));
-    if (isNaN(d)) return s;
-    const y = d.getFullYear(),
-      m = String(d.getMonth() + 1).padStart(2, "0"),
-      day = String(d.getDate()).padStart(2, "0");
-    return y + "-" + m + "-" + day;
+    const time = newsTimestamp(s);
+    return Number.isFinite(time) ? newsDateFormatter.format(time) : s;
   }
 
   function newsTypeOf(n) {
@@ -397,7 +396,8 @@ export function createNews(deps) {
   async function pollNewsTranslation(request, detail) {
     clearTimeout(request.timer);
     newsDetailLoading.value = false;
-    if (detail.archive_state !== 'pending')
+    const pending = item => item && (item.archive_state === 'pending' || item.translation_state === 'pending');
+    if (!pending(detail))
       return;
     const controller = new AbortController();
     newsTranslationRequest = controller;
@@ -433,16 +433,20 @@ export function createNews(deps) {
         )
           break;
         if (data.detail) {
-          Object.assign(newsDetail.value, data.detail);
+          Object.assign(newsDetail.value, { archive_state: '', waiting_stopped: false }, data.detail);
           renderNewsBody();
         }
-        if (data.detail && data.detail.archive_state !== 'pending') break;
+        if (data.detail && !pending(data.detail)) break;
       }
     } catch (_) {
       /* The readable article remains available on a poll failure. */
     } finally {
       clearTimeout(deadline);
-      if (newsTranslationRequest === controller) newsTranslationRequest = null;
+      if (newsTranslationRequest === controller) {
+        newsTranslationRequest = null;
+        if (newsDetail.value && deps.currentUrlPath().split('?')[0] === request.path && pending(newsDetail.value))
+          newsDetail.value.waiting_stopped = true;
+      }
     }
   }
 
@@ -504,8 +508,6 @@ export function createNews(deps) {
     cancelNewsDetailRequest();
     newsDetailBody.value = "";
     newsError.value = /HTTP 404/.test(error.message) ? '这篇新闻不存在或已下架。' : '新闻暂时无法载入，请重试。';
-    newsPrevId.value = 0;
-    newsNextId.value = 0;
   }
 
   function openNews(id) {
@@ -524,8 +526,6 @@ export function createNews(deps) {
     deps.activeTab.value = "news";
     newsDetail.value = newsDetailPlaceholder(id, isLantis ? "lantis" : "");
     newsDetailBody.value = "";
-    newsPrevId.value = 0;
-    newsNextId.value = 0;
     deps.resetPageScroll();
     deps.pushUrl();
     const request = startNewsDetailRequest(id);
@@ -588,8 +588,6 @@ export function createNews(deps) {
         if (!newsDetailRequestIsCurrent(request)) return;
         newsDetail.value = d.detail;
         renderNewsBody();
-        newsPrevId.value = d.prev_announce_id || 0;
-        newsNextId.value = d.next_announce_id || 0;
         pollNewsTranslation(request, d.detail);
       })
       .catch(function (error) {
@@ -663,14 +661,12 @@ export function createNews(deps) {
     newsImage,
     newsItems,
     newsLoading,
-    newsNextId,
     newsPage,
     newsPageCount,
     newsPageEnd,
     newsPageList,
     newsPageStart,
     newsPaged,
-    newsPrevId,
     newsRange,
     newsTitle,
     newsType,

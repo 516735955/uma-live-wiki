@@ -41,6 +41,13 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             padding: 0 24px; min-width: 96px;
         }
+        .home-summary-error {
+            position: absolute; top: 100%; right: 0; pointer-events: auto;
+            color: var(--text); text-shadow: none; margin-top: 8px;
+        }
+        @media (max-width: 900px) {
+            .home-summary-error { position: static; flex-basis: 100%; margin: 8px 0 0; }
+        }
         .home-stat + .home-stat { border-left: 1px solid rgba(255, 255, 255, 0.3); }
         .home-stat-number { font-size: 1.7rem; font-weight: 800; line-height: 1.1; letter-spacing: 0.02em; }
         .home-stat-label { margin-top: 5px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; opacity: 0.85; }

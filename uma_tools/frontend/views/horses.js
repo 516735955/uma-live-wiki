@@ -1,4 +1,4 @@
-export const bindings = ["characterImage","characterColor","openCharDetail","otherSection","setOtherSection","curatedVideos","horseFacts","horseMajorRows","horseMajorExpanded","horseMajorTotal","toggleHorseMajor","horsesListError","horseDetail","horseQuery","horsePage","horseFiltered","horsePaged","horsePageCount","horsePageStart","horsePageEnd","horsePageList","setHorsePage","goHorsePage","openHorse","horseSexLabel","horseChars","onHorseImageError","retryHorses","routes"];
+export const bindings = ["characterImage","characterColor","openCharDetail","otherSection","setOtherSection","curatedVideos","horseFacts","horseMajorRows","horseMajorExpanded","horseMajorTotal","toggleHorseMajor","horsesListError","horseDetail","horseQuery","horsePage","horseFiltered","horsePaged","horsePageCount","horsePageStart","horsePageEnd","horsePageList","setHorsePage","goHorsePage","openHorse","horseSexLabel","horseChars","onHorseImageError","retryHorses","routes","horsesTotal","internalLink"];
 export const template = `
             <nav v-if="!['horses','jockeys'].includes(otherSection)" class="entity-tabs" aria-label="其他栏目"><button :class="{active:otherSection==='relationships'}" @click="setOtherSection('relationships')">角色设定相关</button><button :class="{active:otherSection==='videos'}" @click="setOtherSection('videos')">精选推荐视频</button></nav>
             <section v-if="otherSection==='relationships'" class="entity-section other-section">
@@ -24,7 +24,7 @@ export const template = `
                     </div>
                     <div v-if="horsesListError" class="ui-state ui-state-error" role="alert"><span>{{ horsesListError }}</span><button type="button" class="ui-retry" @click="retryHorses">重试</button></div>
                     <div v-else-if="horsePaged.length" class="horse-list">
-                        <a v-for="horse in horsePaged" :key="horse.id" class="horse-row" :href="routes.horses(horse.id)" @click.prevent="openHorse(horse.id)">
+                        <a v-for="horse in horsePaged" :key="horse.id" class="horse-row" :href="routes.horses(horse.id)" @click="internalLink($event, () => openHorse(horse.id))">
                             <span class="horse-thumb"><img v-if="horse.photo" v-media-src="horse.photo" :alt="horse.zh" loading="lazy" @error="onHorseImageError($event)"><i v-else>{{ (horse.zh || '马').slice(0,1) }}</i></span>
                             <span class="horse-row-main"><b>{{ horse.zh }}</b><span class="horse-row-ja">{{ horse.ja }}<template v-if="horse.en"> · {{ horse.en }}</template></span><span class="horse-row-meta">{{ horseSexLabel(horse) }}<template v-if="horse.born"> · {{ horse.born }} 年出生</template><template v-if="horse.birthdate"> · {{ horse.birthdate }}</template></span></span>
                             <span class="horse-row-go">查看 <em>→</em></span>
@@ -32,7 +32,7 @@ export const template = `
                     </div>
                     <div v-else class="ui-state">没有匹配的原型马</div>
                     <div v-if="horsePaged.length" class="ui-pager">
-                        <span>{{ horsePageStart }}–{{ horsePageEnd }} / {{ horseFiltered.length }}</span>
+                        <span>{{ horsePageStart }}–{{ horsePageEnd }} / {{ horsesTotal }}</span>
                         <div>
                             <button :disabled="horsePage<=1" @click="goHorsePage(-1)">上一页</button>
                             <button v-for="(page,index) in horsePageList" :key="index" :class="{active:page===horsePage}" :disabled="page==='…'" @click="setHorsePage(page)">{{ page }}</button>

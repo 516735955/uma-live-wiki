@@ -7,6 +7,7 @@ export function createVoices(deps) {
   const voiceLoading = deps.ref(false);
 
   const voiceError = deps.ref("");
+  let failedVoiceId = '';
 
   const voiceDetail = deps.ref(null);
 
@@ -41,6 +42,7 @@ export function createVoices(deps) {
         window.dispatchEvent(new CustomEvent("uma-voice-data"));
       })
       .catch(function () {
+        failedVoiceId = id || '';
         voiceError.value = "声优资料暂时无法载入，请重试。";
       })
       .finally(function () {
@@ -89,6 +91,9 @@ export function createVoices(deps) {
   }
 
   function vaList() {
+    return voiceList.value;
+  }
+  const voiceList = deps.computed(function () {
     if (voiceProfiles.value.length) {
       return voiceProfiles.value.map(function (profile) {
         const identity = profile.identity || {};
@@ -139,11 +144,13 @@ export function createVoices(deps) {
       });
     }
     return [];
-  }
+  });
+  const voiceBySlug = deps.computed(() => new Map(vaList().flatMap(voice => [[voice.id, voice], [voice.slug, voice]])));
 
   function findVaBySlug(slug) {
     var target = String(slug || "");
     if (!target) return null;
+    if (voiceBySlug.value.has(target)) return voiceBySlug.value.get(target);
     var list = vaList();
     for (var i = 0; i < list.length; i++) {
       if (list[i].slug === target || list[i].id === target) return list[i];
@@ -230,14 +237,10 @@ export function createVoices(deps) {
   function openVa(slug) {
     return openVoice(slug);
   }
-
-  function openVoiceByName(name) {
-    const profile = voiceProfileForName(name);
-    if (profile) return openVoice(profile.id);
-  }
-
-  function openCharFromVoice(id) {
-    return deps.openCharacter(id);
+  function retryVoice() {
+    return loadVoiceData((voiceDetail.value && voiceDetail.value.id) || failedVoiceId).then(() => {
+      if (voiceDetail.value) voiceDetail.value = findVaBySlug(voiceDetail.value.id) || voiceDetail.value;
+    });
   }
 
   function voiceName(actorId, fallback) {
@@ -297,10 +300,9 @@ export function createVoices(deps) {
     start,
     findVaBySlug,
     loadVoiceData,
-    openCharFromVoice,
+    retryVoice,
     openVa,
     openVoice,
-    openVoiceByName,
     setVoiceSection,
     voiceAppearance,
     voiceDetail,

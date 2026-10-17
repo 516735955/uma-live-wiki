@@ -41,6 +41,7 @@ export function createHorses(deps) {
   let horseIndexUpdatedAt = Date.now();
 
   function loadHorsesListData(params) {
+    horsesListError.value = "";
     const paged = deps.currentUrlPath().split("?")[0] === deps.routes.horses();
     if (
       !paged &&
@@ -75,7 +76,10 @@ export function createHorses(deps) {
         }
       })
       .catch(function () {
-        horsesListPromise = null;
+        if (revision === horseListRevision) {
+          horsesListPromise = null;
+          horsesListError.value = "原型马目录暂时无法载入，请重试。";
+        }
         throw new Error("horses list load failed");
       });
     return horsesListPromise;
@@ -170,7 +174,7 @@ export function createHorses(deps) {
   }
 
   function retryHorses() {
-    loadHorsesData();
+    return loadHorsesData().catch(() => {});
   }
 
   function setOtherSection(section) {
@@ -185,17 +189,6 @@ export function createHorses(deps) {
         horsesListError.value = "原型马目录暂时无法载入，请重试。";
       });
     deps.pushUrl();
-  }
-
-  function findHorseById(id) {
-    if (!id) return null;
-    const arr =
-      window.HORSES && window.HORSES.length ? window.HORSES : horsesList.value;
-    const norm = String(id).toLowerCase();
-    for (let i = 0; i < arr.length; i++) {
-      if (String(arr[i].id || "").toLowerCase() === norm) return arr[i];
-    }
-    return null;
   }
 
   const horseFiltered = deps.computed(function () {
@@ -260,7 +253,7 @@ export function createHorses(deps) {
   function setHorsePage(page) {
     const next = Math.min(Math.max(1, Number(page) || 1), horsePageCount.value);
     horsePage.value = next;
-    if (horsesPagedByApi.value) loadHorsesListData();
+    if (horsesPagedByApi.value) loadHorsesListData().catch(() => {});
     deps.resetPageScroll();
     deps.pushUrl();
   }
@@ -444,11 +437,6 @@ export function createHorses(deps) {
     return horse ? deps.routes.horses(horse.id) : "";
   }
 
-  function openHorseForCharacter(characterId) {
-    const horse = horseForCharacter(characterId);
-    if (horse) openHorse(horse.id);
-  }
-
   const horseVideos = {
     "sakurabakushino": [{ id: "BV12K4y1N78N", title: "短途领域的爆进之王" }],
     "haruurara": [{ id: "BV1xp4y1t7VS", title: "百战百败努力家，不胜传说乌拉拉" }],
@@ -616,15 +604,6 @@ export function createHorses(deps) {
     return ((horse && horse.cids) || []).map(deps.findCharById).filter(Boolean);
   }
 
-  function horseSourceName(url) {
-    const value = String(url || "");
-    if (value.indexOf("jbis.or.jp") !== -1) return "JBIS（轻井泽赛马信息）";
-    if (value.indexOf("db.netkeiba.com") !== -1) return "netkeiba";
-    if (value.indexOf("zh.wikipedia.org") !== -1) return "中文维基百科";
-    if (value.indexOf("ja.wikipedia.org") !== -1) return "日文维基百科";
-    return value;
-  }
-
   function onHorseImageError(event) {
     const image = event && event.currentTarget;
     if (!image) return;
@@ -681,7 +660,7 @@ export function createHorses(deps) {
         )
           return;
         window.clearTimeout(horseSearchTimer);
-        horseSearchTimer = window.setTimeout(() => loadHorsesListData(), 180);
+        horseSearchTimer = window.setTimeout(() => loadHorsesListData().catch(() => {}), 180);
       },
       { flush: "sync" },
     );
@@ -690,7 +669,6 @@ export function createHorses(deps) {
     start,
     charHasPedigree,
     curatedVideos,
-    findHorseById,
     goHorsePage,
     horseChars,
     horseDetail,
@@ -707,11 +685,11 @@ export function createHorses(deps) {
     horsePaged,
     horseQuery,
     horseSexLabel,
-    horseSourceName,
     horseUrlForCharacter,
     horseVideosForCharacter,
     horsesList,
     horsesListError,
+    horsesTotal,
     horsesPerPage,
     loadHorsesData,
     loadHorsesListData,
@@ -719,7 +697,6 @@ export function createHorses(deps) {
     loadPedigreeMeta,
     onHorseImageError,
     openHorse,
-    openHorseForCharacter,
     otherSection,
     pedigreeError,
     pedigreeStatus,

@@ -9,6 +9,19 @@
   function create(request) {
     const responses = new Map(), pending = new Map(), loadedAt = new Map();
     let buildId = '', revision = 0;
+    function prune() {
+      for (const key of responses.keys()) {
+        if (Date.now() - loadedAt.get(key) >= 5 * 60 * 1000) {
+          responses.delete(key);
+          loadedAt.delete(key);
+        }
+      }
+      while (responses.size > 32) {
+        const key = responses.keys().next().value;
+        responses.delete(key);
+        loadedAt.delete(key);
+      }
+    }
     function assemble() {
       const result = { build_id: buildId };
       const lists = Object.fromEntries(fields.map(key => [key, new Map()]));
@@ -38,6 +51,7 @@
     async function load(scope, id, retry) {
       scope = scope || 'index';
       const key = scope + ':' + (id || '');
+      prune();
       if (retry) { responses.delete(key); pending.delete(key); }
       if (responses.has(key) && Date.now() - (loadedAt.get(key) || 0) < 5 * 60 * 1000) return assemble();
       if (pending.has(key)) return pending.get(key);
@@ -64,6 +78,7 @@
           buildId = data.build_id;
           responses.set(key, data);
           loadedAt.set(key, Date.now());
+          prune();
           return assemble();
         }).finally(() => { if (pending.get(key) === promise) pending.delete(key); });
       pending.set(key, promise);

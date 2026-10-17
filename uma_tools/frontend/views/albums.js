@@ -1,6 +1,6 @@
-export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions"];
+export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums"];
 export const template = `
-            <div v-if="albumsError" class="ui-state ui-state-error">{{ albumsError }}</div>
+            <div v-if="albumsError" class="ui-state ui-state-error">{{ albumsError }} <button type="button" @click="loadAlbums()">重试</button></div>
             <template v-if="!albumDetail">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="relQuery" aria-label="搜索专辑、歌曲、歌手或商品编号" placeholder="搜索专辑、歌曲、歌手或商品编号" autocomplete="off"><button v-if="relQuery" type="button" @click.prevent="relQuery=''" aria-label="清空搜索">×</button></label>
@@ -25,7 +25,7 @@ export const template = `
                     </button>
                     <div v-if="!relFiltered.length" class="ui-state">没有符合条件的专辑</div>
                 </div>
-                <div v-if="relFiltered.length" class="ui-pager"><span>{{ relPageStart }}–{{ relPageEnd }} / {{ relFiltered.length }}</span><div><button :disabled="relPage<=1" @click="goRelPage(-1)">上一页</button><button v-for="(page,i) in relPageList" :key="i" :class="{active:page===relPage}" :disabled="page==='…'" @click="setRelPage(page)">{{ page }}</button><button :disabled="relPage>=relPageCount" @click="goRelPage(1)">下一页</button></div></div>
+                <div v-if="relFiltered.length" class="ui-pager"><span>{{ relPageStart }}–{{ relPageEnd }} / {{ albumsTotal }}</span><div><button :disabled="relPage<=1" @click="goRelPage(-1)">上一页</button><button v-for="(page,i) in relPageList" :key="i" :class="{active:page===relPage}" :disabled="page==='…'" @click="setRelPage(page)">{{ page }}</button><button :disabled="relPage>=relPageCount" @click="goRelPage(1)">下一页</button></div></div>
             </template>
             <article v-else class="entity-detail album-entity-detail">
                 <div class="entity-hero music-archive-hero">

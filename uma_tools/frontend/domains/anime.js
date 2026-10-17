@@ -33,8 +33,6 @@ export function createAnime(deps) {
 
   const animeUnitDetail = deps.ref(null);
 
-  const animeView = deps.ref("library");
-
   const animeQuery = deps.ref("");
 
   const animeEpisodeQuery = deps.ref("");
@@ -796,21 +794,6 @@ export function createAnime(deps) {
     return relation.url || "";
   }
 
-  function openAnimeWork(id) {
-    return deps.navigateTo(deps.routes.anime(id));
-  }
-
-  function openAnimeUnit(workId, unitId) {
-    return deps.navigateTo(deps.routes.anime(workId, unitId));
-  }
-
-  function showAnimeLibrary() {
-    animeView.value = "library";
-    animeDetail.value = null;
-    animeUnitDetail.value = null;
-    deps.resetPageScroll();
-    deps.pushUrl();
-  }
   function start() {
     deps.watch([animeQuery, animeFormat, animeStatus, animeSort], () => {
       if (
@@ -951,7 +934,6 @@ export function createAnime(deps) {
     animeUnitGroups,
     animeUnitHref,
     animeUsefulRelations,
-    animeView,
     animeVisibleStillGroups,
     animeWorkFormats,
     animeWorkHref,
@@ -970,13 +952,10 @@ export function createAnime(deps) {
     loadAnimeCatalog,
     loadAnimeCatalogOptional,
     loadAnimeRelatedMedia,
-    openAnimeUnit,
-    openAnimeWork,
     relatedAnimeHref: participation.relatedAnimeHref,
     retryAnime,
     setAnimeEdition,
     setAnimeSection,
-    showAnimeLibrary,
     songAnimeRelations: participation.songAnimeRelations,
     songAnimeWorks: participation.songAnimeWorks,
     voiceAnimeRelations: participation.voiceAnimeRelations,

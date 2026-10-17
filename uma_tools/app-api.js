@@ -3,6 +3,20 @@
 
   const resolved = new Map();
   const pending = new Map();
+  const cacheCapacity = 64;
+  const cacheBytes = 16 * 1024 * 1024;
+  function retain(key, data, maxAge) {
+    const size = JSON.stringify(data).length * 2;
+    resolved.delete(key);
+    if (size > cacheBytes || maxAge <= 0) return;
+    resolved.set(key, { at: Date.now(), expiresAt: Date.now() + maxAge, data, size });
+    let total = Array.from(resolved.values()).reduce((sum, entry) => sum + entry.size, 0);
+    while (resolved.size > cacheCapacity || total > cacheBytes) {
+      const oldest = resolved.keys().next().value;
+      total -= resolved.get(oldest).size;
+      resolved.delete(oldest);
+    }
+  }
 
   function query(params) {
     const search = new URLSearchParams();
@@ -39,7 +53,7 @@
       return response.json();
     }).then(function (data) {
       if (pending.get(cacheKey) === entry) {
-        resolved.set(cacheKey, { at: Date.now(), expiresAt: Date.now() + maxAge, data: data });
+        retain(cacheKey, data, maxAge);
         pending.delete(cacheKey);
       }
       return data;

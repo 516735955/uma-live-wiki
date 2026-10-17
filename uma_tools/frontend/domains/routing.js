@@ -9,6 +9,7 @@ export function createRouting(deps) {
   const navigationRevision = deps.ref(0);
 
   const navigationError = deps.ref("");
+  const navigationRetry = deps.ref(null);
 
   let pendingEntitySource = false;
 
@@ -21,8 +22,7 @@ export function createRouting(deps) {
     if (!seg.length) return Promise.resolve();
     const first = (seg[0] || "").toLowerCase();
     if (first === "news") {
-      const newsReady = deps.loadNews();
-      return newsReady;
+      return seg.length > 1 ? Promise.resolve() : deps.loadNews();
     }
     if (first === "music") {
       const musicSection = (seg[1] || "").toLowerCase();
@@ -147,6 +147,7 @@ export function createRouting(deps) {
         currentUrlPath(),
       );
     navigationError.value = "";
+    navigationRetry.value = null;
     deps.cancelNewsDetailRequest();
     navigationRevision.value += 1;
     pendingEntitySource = !fromRoute && routeWillBeAtomic(currentUrlPath());
@@ -414,6 +415,7 @@ export function createRouting(deps) {
       history.replaceState(history.state, "", canonicalPath);
     navigationError.value = "";
     entityRequestRevision += 1;
+    navigationRetry.value = null;
     restoringRoute = true;
     try {
       const url = new URL(window.location.href);
@@ -704,10 +706,7 @@ export function createRouting(deps) {
         deps.activeTab.value = "database";
         deps.dbView.value = "staff";
         deps.staffQuery.value = url.searchParams.get("q") || "";
-        deps.staffPage.value = Math.min(
-          deps.staffPageCount.value,
-          Math.max(1, parseInt(url.searchParams.get("page") || "1", 10) || 1),
-        );
+        deps.staffPage.value = Math.max(1, parseInt(url.searchParams.get("page") || "1", 10) || 1);
         deps.staffDetail.value = seg[2]
           ? (deps.animeCatalog.value.people || []).find(
               (person) =>
@@ -779,6 +778,7 @@ export function createRouting(deps) {
         deps.activeTab.value =
           seg[1] === "contact" ? "contribute-contact" : "contribute";
         deps.fixDone.value = false;
+        deps.resetFixState();
       } else if (
         first === "legal" &&
         (seg[1] === "privacy" || seg[1] === "terms") &&
@@ -840,6 +840,7 @@ export function createRouting(deps) {
         deps.routes.albums(),
         music && deps.dbView.value === "albums",
       ],
+      [deps.staffPage, deps.staffPageCount, deps.routes.staff(), music && deps.dbView.value === "staff"],
     ].forEach(function (pair) {
       const page = Math.min(Math.max(1, pair[0].value), pair[1].value);
       if (pair[0].value !== page) {
@@ -859,6 +860,7 @@ export function createRouting(deps) {
     currentUrlPath,
     navigateTo,
     navigationError,
+    navigationRetry,
     navigationRevision,
     notFound,
     prepareCurrentRoute,

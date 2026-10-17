@@ -178,10 +178,6 @@ export function createAlbums(deps) {
     return (release && release.artist) || "";
   }
 
-  function albumName(a) {
-    return a.name;
-  }
-
   function findAlbumById(id) {
     const target = String(id || "");
     return target
@@ -338,7 +334,7 @@ export function createAlbums(deps) {
   const statAlbums = deps.computed(function () {
     return deps.homeStats.albums !== null
       ? deps.homeStats.albums
-      : albumsTotal.value;
+      : '—';
   });
 
   const relAlbums = deps.computed(function () {
@@ -498,8 +494,7 @@ export function createAlbums(deps) {
       .catch(function (e) {
         if (revision !== albumListRevision) return;
         albumsLoadPromise = null;
-        albumsError.value =
-          "无法加载专辑数据（请通过本地服务访问本页，例如 node uma_tools/server.js --no-crawl 后打开 http://localhost:8080/）";
+        albumsError.value = "专辑资料暂时无法载入，请重试。";
       })
       .finally(function () {
         if (revision === albumListRevision) albumsLoading.value = false;
@@ -577,7 +572,6 @@ export function createAlbums(deps) {
     start,
     addAlbumTrack,
     albumDetail,
-    albumName,
     albumPlayableCount,
     albumSortOptions,
     albumTrackSecondary,
@@ -585,6 +579,7 @@ export function createAlbums(deps) {
     albumTrackVocalists,
     albums,
     albumsError,
+    albumsTotal,
     albumsLoading,
     coverStyle,
     coverThumb,

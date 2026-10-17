@@ -14,6 +14,7 @@ export const template = `
                 </div>
                 <h2 class="news-detail-title">{{ newsLanguage === 'ja' ? newsDetail.title : (newsDetail.title_zh || newsDetail.title) }}</h2>
                 <div v-if="newsError" class="ui-state ui-state-error" role="alert">{{ newsError }} <button type="button" @click="openNews(newsDetail.announce_id)">重试</button></div>
+                <div v-else-if="newsDetail.waiting_stopped" class="ui-state" role="status">后台仍在整理，可稍后重新读取。 <button type="button" @click="openNews(newsDetail.announce_id)">重新读取</button></div>
                 <div v-else-if="newsDetailLoading || newsDetail.archive_state==='pending'" class="ui-state ui-state-loading" role="status">正在读取归档正文…</div>
                 <p v-else-if="newsLanguage==='zh' && !newsDetail.message_zh" class="news-translation-status">中文译文正在整理中，可切换日文查看原文。</p>
                 <div class="news-detail-body" :lang="newsLanguage==='ja'?'ja':'zh-Hans'" v-html="newsDetailBody"></div>
@@ -71,7 +72,7 @@ export const template = `
                 <div v-if="newsFiltered.length && !newsLoading" class="news-pager">
                     <div class="news-pager-count">显示 {{ newsPageStart }}-{{ newsPageEnd }} 共 {{ newsFiltered.length }} 条</div>
                     <div class="news-pager-btns">
-                        <button type="button" class="news-pager-btn" :disabled="newsPage<=1" @click="goNewsPage(-1)">«</button>
+                        <button type="button" class="news-pager-btn" :disabled="newsPage<=1" @click="setNewsPage(1)">«</button>
                         <button type="button" class="news-pager-btn" :disabled="newsPage<=1" @click="goNewsPage(-1)">‹</button>
                         <template v-for="(p,i) in newsPageList" :key="'p'+i">
                             <button v-if="p==='…'" type="button" class="news-pager-ellipsis" disabled>…</button>

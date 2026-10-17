@@ -178,21 +178,6 @@ export function createEvents(deps) {
     },
   });
 
-  const eventSeriesOptions = deps.computed(function () {
-    const rows = [{ value: "all", label: "全部系列" }];
-    ["concert", "onsite", "official_program"].forEach(function (kind) {
-      eventSeries.value
-        .filter(function (series) {
-          return series.kind === kind;
-        })
-        .forEach(function (series) {
-          rows.push({ value: series.id, label: series.name });
-        });
-    });
-    rows.push({ value: "unclassified", label: "其他活动" });
-    return rows;
-  });
-
   const eventsFiltered = deps.computed(function () {
     return eventsAll.value;
   });
@@ -244,13 +229,6 @@ export function createEvents(deps) {
 
   function goEventsPage(dir) {
     setEventsPage(eventsPage.value + dir);
-  }
-
-  function pastEvent(e) {
-    var t = new Date((e.end_date || e.date) + "T00:00:00").getTime();
-    var today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return !isNaN(t) && t < today.getTime();
   }
 
   function eventDateLabel(event) {
@@ -504,6 +482,11 @@ export function createEvents(deps) {
         deps.activeTab.value = "not-found";
         return;
       }
+      if (requestedSessionId && !(found.sessions || []).some(session => session.id === requestedSessionId)) {
+        deps.navigationError.value = "所请求的活动场次不存在，请返回活动列表选择有效场次。";
+        return;
+      }
+      if (data.series) eventSeries.value = [...eventSeries.value.filter(series => series.id !== data.series.id), data.series];
       deps.clearEntityDetails("event");
       eventDetail.value = found;
       eventSongs.value = data.catalog_songs || [];
@@ -534,44 +517,8 @@ export function createEvents(deps) {
       });
   }
 
-  function eventPaletteStyle(event) {
-    const series = eventSeriesMap.value[(event && event.series_id) || ""];
-    const fallback = {
-      concert: ["#3157ed", "#ff7b16"],
-      onsite: ["#28A8AE", "#B9D934"],
-      official_program: ["#4169D8", "#34CED0"],
-    }[(event && event.kind) || ""] || ["#3157ed", "#ff7b16"];
-    return {
-      "--entity-accent": (series && series.primary) || fallback[0],
-      "--entity-sub": (series && series.secondary) || fallback[1],
-    };
-  }
-
-  function eventKindColor(kind) {
-    return (
-      { concert: "#3157ed", onsite: "#28A8AE", official_program: "#4169D8" }[
-        kind
-      ] || "#3157ed"
-    );
-  }
-
   const nextUpcomingEvent = deps.computed(function () {
-    if (homeNextEvent.value) return homeNextEvent.value;
-    const now = new Date();
-    now.setHours(0, 0, 0, 0);
-    const today = now.getTime();
-    let best = null,
-      bestT = 0;
-    (eventsAll.value || []).forEach(function (e) {
-      const t = new Date(e.date + "T00:00:00").getTime();
-      if (isNaN(t)) return;
-      if (t < today) return;
-      if (!best || t < bestT) {
-        best = e;
-        bestT = t;
-      }
-    });
-    return best;
+    return homeNextEvent.value;
   });
 
   function onEventImageError(ev, event) {
@@ -648,16 +595,13 @@ export function createEvents(deps) {
     evYear,
     eventDateLabel,
     eventDetail,
-    eventKindColor,
     eventKindLabel,
     eventMediaCards,
     eventModeLabel,
-    eventPaletteStyle,
     eventPerformanceKey,
     eventPlayableRows,
     eventSeriesMap,
     eventSeriesName,
-    eventSeriesOptions,
     eventSessionTable,
     eventSongCount,
     eventSongs,
@@ -669,6 +613,8 @@ export function createEvents(deps) {
     eventYearOptions,
     eventYears,
     eventsAll,
+    eventsError,
+    eventsLoading,
     eventsFiltered,
     eventsPage,
     eventsPageCount,
@@ -687,7 +633,6 @@ export function createEvents(deps) {
     onEventSetlistClick,
     openEvent,
     openEventUrl,
-    pastEvent,
     playEventSession,
     playEventTrack,
     selectEventSession,
