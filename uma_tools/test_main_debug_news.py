@@ -15,7 +15,7 @@ class ArchiveTextTests(unittest.TestCase):
             article = {'detail': {'title': 'ニュース', 'message': '<p>赛<b>马娘</b>新闻</p>'}}
             archive.put('test', article, owner='assistant')
             archive.translate('test', 1, {**article['detail'], 'title_zh': '新闻', 'message_zh': '<p>完整人工译文</p>'}, 'assistant')
-            update = {'detail': {**article['detail'], 'message': '<p class="new">赛<b>马娘</b>新闻</p>'}}
+            update = {'detail': {**article['detail'], 'title': '&#12491;ュース', 'message': '<p class="new">赛<b>马娘</b>新闻</p>'}}
             result = archive.put('test', update)
             self.assertEqual(result['detail']['translation_state'], 'complete')
             self.assertEqual(result['detail']['message_zh'], '<p>完整人工译文</p>')

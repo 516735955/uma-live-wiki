@@ -736,7 +736,13 @@ exports.createService = function (deps) {
   function cleanHtml(s) {
     return String(s || "")
       .replace(/<[^>]+>/g, "")
+      .replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, value) => {
+        const point = /^x/i.test(value) ? parseInt(value.slice(1), 16) : Number(value);
+        return point > 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : entity;
+      })
       .replace(/&nbsp;/g, " ")
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
       .replace(/&amp;/g, "&")
       .trim();
   }

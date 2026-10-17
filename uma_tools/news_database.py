@@ -112,7 +112,7 @@ class NewsDatabase:
                     self.db.execute('UPDATE versions SET japanese_text=?,chinese_text=? WHERE article_key=? AND revision=?',
                                     (plain_text(original.get('message', '')), plain_text(translated.get('message_zh', '')), row['article_key'], row['revision']))
                 self.db.execute('PRAGMA user_version=1')
-            if self.db.execute('PRAGMA user_version').fetchone()[0] < 2:
+            if self.db.execute('PRAGMA user_version').fetchone()[0] < 3:
                 pending = self.db.execute('''SELECT a.key,a.revision,v.original,old.original AS previous,
                     old.translated,old.translator FROM articles a JOIN versions v
                     ON v.article_key=a.key AND v.revision=a.revision JOIN versions old
@@ -125,7 +125,7 @@ class NewsDatabase:
                     source = json.loads(row['original'])['detail']
                     previous = json.loads(row['previous'])['detail']
                     accepted = json.loads(row['translated'])
-                    if source.get('title') != previous.get('title') or not accepted.get('title_zh'):
+                    if html.unescape(source.get('title', '')) != html.unescape(previous.get('title', '')) or not accepted.get('title_zh'):
                         continue
                     body = reframe_html(previous.get('message'), accepted.get('message_zh'), source.get('message'))
                     if not body:
@@ -137,7 +137,7 @@ class NewsDatabase:
                     self.store_fragments(row['key'], source.get('message'), body)
                     repaired.add(row['key'])
                 self.db.execute("UPDATE articles SET owner='assistant' WHERE EXISTS (SELECT 1 FROM versions v WHERE v.article_key=articles.key AND v.revision=articles.revision AND v.state='complete' AND v.translator='assistant')")
-                self.db.execute('PRAGMA user_version=2')
+                self.db.execute('PRAGMA user_version=3')
 
     def store_fragments(self, key, original, translated):
         sources, targets = text_nodes(original), text_nodes(translated)
@@ -191,7 +191,7 @@ class NewsDatabase:
                 translator = None
                 if current and current['translated']:
                     old = json.loads(current['translated'])
-                    if previous.get('title') == detail.get('title'):
+                    if html.unescape(previous.get('title', '')) == html.unescape(detail.get('title', '')):
                         reused['title_zh'] = old.get('title_zh', '')
                     body = reframe_html(previous.get('message'), old.get('message_zh'), detail.get('message'))
                     if body:

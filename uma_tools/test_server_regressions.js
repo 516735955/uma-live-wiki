@@ -24,6 +24,9 @@ const { createTerms } = require('./translation-terms');
 const emptyTerms = createTerms([{ ja: 'トウカイテイオー', zh: '东海帝王' }]);
 
 async function main() {
+  const headlines = vm.createContext({});
+  vm.runInContext(section('function cleanHtml(', 'function extractInnercon('), headlines);
+  assert.strictEqual(headlines.cleanHtml('A &#038; B &#x1F40E;'), 'A & B 🐎', 'online Lantis headings decode numeric entities like the archive parser');
   const timers = [];
   const pages = [];
   const images = [];
