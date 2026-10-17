@@ -3359,24 +3359,6 @@
           "performances": 8
         },
         {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-2",
-            "live-other-2019-04-14-1",
-            "live-numbered-2nd-event-2018-10-14",
-            "live-numbered-1st-event-2017-07-01",
-            "live-cd-2017-01-08-starting-gate-01-2",
-            "live-cd-2017-01-08-starting-gate-01-1"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
-          ],
-          "performances": 8
-        },
-        {
           "song_id": "song-never-looking-back-d2ca0c4311",
           "name": "Never Looking Back",
           "event_ids": [
@@ -3393,17 +3375,19 @@
           "performances": 7
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-3dc019b31d",
+          "name": "恋はダービー☆",
           "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-5th-event-2023-09-16",
-            "live-other-2022-12-31-6-2022-2023",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05"
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2019-04-14-2",
+            "live-other-2019-04-14-1",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-numbered-1st-event-2017-07-01",
+            "live-cd-2017-01-08-starting-gate-01-2",
+            "live-cd-2017-01-08-starting-gate-01-1"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 7
         },
@@ -3447,6 +3431,20 @@
           ],
           "version_ids": [
             "song-b90b0841b4-v-b90b0841b4"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2022-12-31-6-2022-2023",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 6
         },
@@ -3609,6 +3607,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2019-04-14-2",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 3
+        },
+        {
           "song_id": "song-f4ab00a70a",
           "name": "ミッドナイト・エピローグ",
           "event_ids": [
@@ -3716,18 +3727,6 @@
           ],
           "version_ids": [
             "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-a470359a05",
-          "name": "ぱかチューブっ！ですが、何か？",
-          "event_ids": [
-            "live-other-2019-04-14-2",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-a470359a05-v-a470359a05"
           ],
           "performances": 2
         },
@@ -3965,6 +3964,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-remix-ver-g-z-20764ac4a6",
+          "name": "恋はダービー☆(Remix Ver.)+G'z",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-remix-ver-g-z-20764ac4a6-v-20764ac4a6"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-87be3723c2",
           "name": "本能スピード",
           "event_ids": [
@@ -3983,6 +3993,17 @@
           ],
           "version_ids": [
             "song-496f508d38-v-496f508d38"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -4688,6 +4709,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-d4772b46bb",
           "name": "ウィーアー！",
           "event_ids": [
@@ -4717,17 +4749,6 @@
           ],
           "version_ids": [
             "song-29e836f0da-v-29e836f0da"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 1
         },
@@ -4877,6 +4898,28 @@
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 1
         }
@@ -5800,17 +5843,16 @@
           "performances": 4
         },
         {
-          "song_id": "song-ready-steady-derby-7e8ed0ad57",
-          "name": "Ready!!! Steady!!! Derby!!!",
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
           "event_ids": [
             "live-numbered-6th-event-2025-10-18",
-            "live-other-2024-05-06-title-7caa082310e6",
             "live-numbered-5th-event-2024-03-22"
           ],
           "version_ids": [
-            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
           ],
-          "performances": 3
+          "performances": 2
         },
         {
           "song_id": "song-482b01a04d",
@@ -5898,6 +5940,17 @@
           ],
           "version_ids": [
             "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ready-steady-derby-7e8ed0ad57",
+          "name": "Ready!!! Steady!!! Derby!!!",
+          "event_ids": [
+            "live-other-2024-05-06-title-7caa082310e6"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
           "performances": 1
         },
@@ -8024,6 +8077,20 @@
           "performances": 4
         },
         {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-cd-2022-07-17-winning-live-05-winning-live-06",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2019-04-14-2",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 4
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -8084,19 +8151,6 @@
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-a470359a05",
-          "name": "ぱかチューブっ！ですが、何か？",
-          "event_ids": [
-            "live-cd-2022-07-17-winning-live-05-winning-live-06",
-            "live-other-2019-04-14-2",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-a470359a05-v-a470359a05"
           ],
           "performances": 3
         },
@@ -8449,13 +8503,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
+          "song_id": "song-remix-ver-g-z-20764ac4a6",
+          "name": "恋はダービー☆(Remix Ver.)+G'z",
           "event_ids": [
             "live-numbered-5th-event-2023-09-16"
           ],
           "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
+            "song-remix-ver-g-z-20764ac4a6-v-20764ac4a6"
           ],
           "performances": 1
         },
@@ -13915,7 +13969,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -13933,7 +13987,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-sunrise-54bf3dc2c4-v-54bf3dc2c4"
+            "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
           "performances": 8
         },
@@ -14001,6 +14055,17 @@
           "performances": 2
         },
         {
+          "song_id": "song-a-no-ne-f2fe8f2091",
+          "name": "A・NO・NE",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-a-no-ne-f2fe8f2091-v-f2fe8f2091"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-comeback-story-v-33f3540048",
           "name": "Comeback Story V",
           "event_ids": [
@@ -14056,6 +14121,28 @@
           "performances": 1
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-f6a7a99d5c",
+          "name": "ひたむきマイノート",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-f6a7a99d5c-v-f6a7a99d5c"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-9a102f980a",
           "name": "アウト・オブ・トライアングル",
           "event_ids": [
@@ -14078,6 +14165,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-2ef859c836",
+          "name": "マーベラスサンデータイム☆★",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-2ef859c836-v-2ef859c836"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-f4ab00a70a",
           "name": "ミッドナイト・エピローグ",
           "event_ids": [
@@ -14089,6 +14187,28 @@
           "performances": 1
         },
         {
+          "song_id": "song-61ea3bc114",
+          "name": "メジロ讃歌",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-61ea3bc114-v-61ea3bc114"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-88c09416fe",
+          "name": "ラキハピファンタスティック",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-88c09416fe-v-88c09416fe"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-4b30d8d74a",
           "name": "帝笑歌劇～讃えよ永久に～",
           "event_ids": [
@@ -14096,6 +14216,28 @@
           ],
           "version_ids": [
             "song-4b30d8d74a-v-eb67a20d4a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-a020e73256",
+          "name": "笑っちゃお！",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-a020e73256-v-a020e73256"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -16827,7 +16969,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-fade-to-black-6c2a8e8237-v-6c2a8e8237"
+            "song-fade-to-black-6c2a8e8237-v-6d94677003"
           ],
           "performances": 8
         },
@@ -16863,7 +17005,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -17008,6 +17150,17 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -38428,19 +38581,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-ready-steady-derby-7e8ed0ad57",
-          "name": "Ready!!! Steady!!! Derby!!!",
-          "event_ids": [
-            "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
-            "live-other-2024-05-06-title-7caa082310e6",
-            "live-numbered-5th-event-2024-03-22"
-          ],
-          "version_ids": [
-            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-comeback-story-v-33f3540048",
           "name": "Comeback Story V",
           "event_ids": [
@@ -38448,6 +38588,18 @@
           ],
           "version_ids": [
             "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ready-steady-derby-7e8ed0ad57",
+          "name": "Ready!!! Steady!!! Derby!!!",
+          "event_ids": [
+            "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
+            "live-other-2024-05-06-title-7caa082310e6"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
           "performances": 2
         },
@@ -38527,6 +38679,17 @@
           ],
           "version_ids": [
             "song-prismatic-spurt-5d848409a4-v-5d848409a4"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
           ],
           "performances": 1
         },
@@ -40980,7 +41143,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -41034,7 +41197,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-sunrise-54bf3dc2c4-v-54bf3dc2c4"
+            "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
           "performances": 8
         },
@@ -41109,6 +41272,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-a020e73256",
+          "name": "笑っちゃお！",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-cd-2022-11-27-winning-live-08",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-a020e73256-v-a020e73256"
+          ],
+          "performances": 3
+        },
+        {
           "song_id": "song-comeback-story-v-33f3540048",
           "name": "Comeback Story V",
           "event_ids": [
@@ -41121,6 +41297,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -41129,18 +41317,6 @@
           ],
           "version_ids": [
             "song-29e836f0da-v-29e836f0da"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-a020e73256",
-          "name": "笑っちゃお！",
-          "event_ids": [
-            "live-cd-2022-11-27-winning-live-08",
-            "live-numbered-4th-event-extra-2022-11-05"
-          ],
-          "version_ids": [
-            "song-a020e73256-v-a020e73256"
           ],
           "performances": 2
         },
@@ -41167,6 +41343,17 @@
             "song-fallin-love-9a20ebe280-v-9a20ebe280"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-a-no-ne-f2fe8f2091",
+          "name": "A・NO・NE",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-a-no-ne-f2fe8f2091-v-f2fe8f2091"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-everlasting-beats-3a805703a6",
@@ -41290,6 +41477,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-f6a7a99d5c",
+          "name": "ひたむきマイノート",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-f6a7a99d5c-v-f6a7a99d5c"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-9a102f980a",
           "name": "アウト・オブ・トライアングル",
           "event_ids": [
@@ -41323,6 +41521,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-2ef859c836",
+          "name": "マーベラスサンデータイム☆★",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-2ef859c836-v-2ef859c836"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-f4ab00a70a",
           "name": "ミッドナイト・エピローグ",
           "event_ids": [
@@ -41334,6 +41543,28 @@
           "performances": 1
         },
         {
+          "song_id": "song-61ea3bc114",
+          "name": "メジロ讃歌",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-61ea3bc114-v-61ea3bc114"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-88c09416fe",
+          "name": "ラキハピファンタスティック",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-88c09416fe-v-88c09416fe"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-4b30d8d74a",
           "name": "帝笑歌劇～讃えよ永久に～",
           "event_ids": [
@@ -41341,17 +41572,6 @@
           ],
           "version_ids": [
             "song-4b30d8d74a-v-eb67a20d4a"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 1
         },
@@ -41374,6 +41594,17 @@
           ],
           "version_ids": [
             "song-beyond-the-future-aaed329475-v-aaed329475"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -43961,18 +44192,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-4th-event-2022-05-04"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-amprefire-b503e6653a",
           "name": "AmpReFire",
           "event_ids": [
@@ -44099,6 +44318,17 @@
           ],
           "version_ids": [
             "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 2
         },
@@ -44319,6 +44549,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -47005,6 +47246,19 @@
           ]
         },
         {
+          "event_id": "live-numbered-7th-event-2026-06-20",
+          "date": "2026-06-21",
+          "end_date": "2026-06-21",
+          "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-7th-event-2026-06-20-session-2",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "paka-live-tv-062",
           "date": "2026-02-22",
           "end_date": "2026-02-22",
@@ -47556,13 +47810,36 @@
           "song_id": "song-2d2a6742e3",
           "name": "走れウマ娘",
           "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
             "live-numbered-4th-event-2022-05-04",
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
             "song-2d2a6742e3-v-2d2a6742e3"
           ],
-          "performances": 4
+          "performances": 6
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
         }
       ]
     },
@@ -47665,13 +47942,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
           "event_ids": [
             "live-numbered-7th-event-2026-06-20"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -51294,13 +51571,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
           "event_ids": [
             "live-numbered-7th-event-2026-06-20"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         },
@@ -56667,6 +56944,28 @@
             "song-228f943b49-v-228f943b49"
           ],
           "performances": 1
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
         }
       ]
     },
@@ -56901,6 +57200,17 @@
             "song-228f943b49-v-228f943b49"
           ],
           "performances": 3
+        },
+        {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-be4063b951",
@@ -58595,6 +58905,17 @@
           ],
           "version_ids": [
             "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 1
         },
@@ -65679,6 +66000,7 @@
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
+            "song-ambitious-world-d3e9adbb88-v-7b2ce70bc0",
             "song-ambitious-world-d3e9adbb88-v-d3e9adbb88"
           ],
           "performances": 5
@@ -65989,6 +66311,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
           ],
           "performances": 1
         },
@@ -67931,7 +68264,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-fade-to-black-6c2a8e8237-v-6c2a8e8237"
+            "song-fade-to-black-6c2a8e8237-v-6d94677003"
           ],
           "performances": 8
         },
@@ -67967,7 +68300,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -68069,7 +68402,7 @@
             "live-numbered-5th-event-2023-07-15"
           ],
           "version_ids": [
-            "song-sunrise-54bf3dc2c4-v-54bf3dc2c4"
+            "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
           "performances": 1
         },
@@ -68114,6 +68447,17 @@
           ],
           "version_ids": [
             "song-phantasia-81aafc5f7e-v-81aafc5f7e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -69136,19 +69480,17 @@
           "song_id": "song-ready-steady-derby-7e8ed0ad57",
           "name": "Ready!!! Steady!!! Derby!!!",
           "event_ids": [
-            "live-numbered-6th-event-2025-10-18",
             "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
             "live-twinkle-2024-10-20-twinkle-circle-day2-2",
             "live-twinkle-2024-10-20-twinkle-circle-day2-1",
             "live-twinkle-2024-10-19-twinkle-circle-day1",
             "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
-            "live-other-2024-05-06-title-7caa082310e6",
-            "live-numbered-5th-event-2024-03-22"
+            "live-other-2024-05-06-title-7caa082310e6"
           ],
           "version_ids": [
             "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
-          "performances": 8
+          "performances": 6
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -69191,6 +69533,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-uma-summer-d7e35f6a48",
           "name": "UMA Summer",
           "event_ids": [
@@ -69199,18 +69553,6 @@
           ],
           "version_ids": [
             "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-e07b1a7277",
-          "name": "私が主役じゃダメですか？",
-          "event_ids": [
-            "live-numbered-6th-event-2025-10-18",
-            "live-cd-2024-08-10-winning-live-19"
-          ],
-          "version_ids": [
-            "song-e07b1a7277-v-e07b1a7277"
           ],
           "performances": 2
         },
@@ -69244,6 +69586,17 @@
           ],
           "version_ids": [
             "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dear-my-dream-007a8ac43a",
+          "name": "Dear My Dream",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-dear-my-dream-007a8ac43a-v-007a8ac43a"
           ],
           "performances": 1
         },
@@ -69376,6 +69729,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-e07b1a7277",
+          "name": "私が主役じゃダメですか？",
+          "event_ids": [
+            "live-cd-2024-08-10-winning-live-19"
+          ],
+          "version_ids": [
+            "song-e07b1a7277-v-e07b1a7277"
           ],
           "performances": 1
         }
@@ -71631,6 +71995,7 @@
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
+            "song-ambitious-world-d3e9adbb88-v-7b2ce70bc0",
             "song-ambitious-world-d3e9adbb88-v-d3e9adbb88"
           ],
           "performances": 5
@@ -73023,18 +73388,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-dance-dance-roman-94f17ecc33",
-          "name": "DANCE！DANCE！“ROMAN”",
-          "event_ids": [
-            "live-cd-2023-11-05-winning-live-13-14",
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-dance-dance-roman-94f17ecc33-v-94f17ecc33"
-          ],
-          "performances": 2
-        },
-        {
           "song_id": "song-never-looking-back-d2ca0c4311",
           "name": "Never Looking Back",
           "event_ids": [
@@ -73067,6 +73420,28 @@
             "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-dance-dance-roman-09e34d34d1",
+          "name": "DANCE！DANCE！\"ROMAN\"",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-dance-dance-roman-09e34d34d1-v-09e34d34d1"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dance-dance-roman-94f17ecc33",
+          "name": "DANCE！DANCE！“ROMAN”",
+          "event_ids": [
+            "live-cd-2023-11-05-winning-live-13-14"
+          ],
+          "version_ids": [
+            "song-dance-dance-roman-94f17ecc33-v-94f17ecc33"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-everlasting-beats-3a805703a6",
@@ -73120,6 +73495,17 @@
           ],
           "version_ids": [
             "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
           ],
           "performances": 1
         },
@@ -75071,6 +75457,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -76296,6 +76693,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -76562,6 +76970,18 @@
           "performances": 3
         },
         {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-stand-by-music-27e8a3950c",
           "name": "Stand by...MUSIC!!!",
           "event_ids": [
@@ -76573,13 +76993,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
           "event_ids": [
-            "live-numbered-4th-event-2022-03-05"
+            "live-numbered-5th-event-2023-09-16"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-29e836f0da-v-29e836f0da"
           ],
           "performances": 1
         }
@@ -78104,13 +78524,12 @@
             "live-twinkle-2024-10-20-twinkle-circle-day2-1",
             "live-twinkle-2024-10-19-twinkle-circle-day1",
             "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
-            "live-other-2024-05-06-title-7caa082310e6",
-            "live-numbered-5th-event-2024-03-22"
+            "live-other-2024-05-06-title-7caa082310e6"
           ],
           "version_ids": [
             "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
-          "performances": 7
+          "performances": 6
         },
         {
           "song_id": "song-uma-summer-d7e35f6a48",
@@ -78337,6 +78756,17 @@
           ],
           "version_ids": [
             "song-o-ac4dfa58e3-v-ac4dfa58e3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
           ],
           "performances": 1
         },
@@ -82486,6 +82916,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-cdf2727e54",
           "name": "ぴょいっと♪はれるや！",
           "event_ids": [
@@ -83155,19 +83596,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-make-debut-2c6c00a71e",
           "name": "Make debut!",
           "event_ids": [
@@ -83223,6 +83651,18 @@
           ],
           "version_ids": [
             "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 2
         },
@@ -83388,6 +83828,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -90395,17 +90846,6 @@
           ],
           "version_ids": [
             "song-c3dda232a9-v-c3dda232a9"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 1
         },
@@ -102307,24 +102747,6 @@
           "performances": 8
         },
         {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-2",
-            "live-other-2019-04-14-1",
-            "live-numbered-2nd-event-2018-10-14",
-            "live-numbered-1st-event-2017-07-01",
-            "live-cd-2017-01-08-starting-gate-01-2",
-            "live-cd-2017-01-08-starting-gate-01-1"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
-          ],
-          "performances": 8
-        },
-        {
           "song_id": "song-never-looking-back-d2ca0c4311",
           "name": "Never Looking Back",
           "event_ids": [
@@ -102341,17 +102763,19 @@
           "performances": 7
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-3dc019b31d",
+          "name": "恋はダービー☆",
           "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-5th-event-2023-09-16",
-            "live-other-2022-12-31-6-2022-2023",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05"
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2019-04-14-2",
+            "live-other-2019-04-14-1",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-numbered-1st-event-2017-07-01",
+            "live-cd-2017-01-08-starting-gate-01-2",
+            "live-cd-2017-01-08-starting-gate-01-1"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 7
         },
@@ -102395,6 +102819,20 @@
           ],
           "version_ids": [
             "song-b90b0841b4-v-b90b0841b4"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2022-12-31-6-2022-2023",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 6
         },
@@ -102557,6 +102995,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2019-04-14-2",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 3
+        },
+        {
           "song_id": "song-f4ab00a70a",
           "name": "ミッドナイト・エピローグ",
           "event_ids": [
@@ -102664,18 +103115,6 @@
           ],
           "version_ids": [
             "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-a470359a05",
-          "name": "ぱかチューブっ！ですが、何か？",
-          "event_ids": [
-            "live-other-2019-04-14-2",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-a470359a05-v-a470359a05"
           ],
           "performances": 2
         },
@@ -102913,6 +103352,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-remix-ver-g-z-20764ac4a6",
+          "name": "恋はダービー☆(Remix Ver.)+G'z",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-remix-ver-g-z-20764ac4a6-v-20764ac4a6"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-87be3723c2",
           "name": "本能スピード",
           "event_ids": [
@@ -102931,6 +103381,17 @@
           ],
           "version_ids": [
             "song-496f508d38-v-496f508d38"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -107919,6 +108380,20 @@
           "performances": 4
         },
         {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-cd-2022-07-17-winning-live-05-winning-live-06",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2019-04-14-2",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 4
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -107979,19 +108454,6 @@
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-a470359a05",
-          "name": "ぱかチューブっ！ですが、何か？",
-          "event_ids": [
-            "live-cd-2022-07-17-winning-live-05-winning-live-06",
-            "live-other-2019-04-14-2",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-a470359a05-v-a470359a05"
           ],
           "performances": 3
         },
@@ -108344,13 +108806,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
+          "song_id": "song-remix-ver-g-z-20764ac4a6",
+          "name": "恋はダービー☆(Remix Ver.)+G'z",
           "event_ids": [
             "live-numbered-5th-event-2023-09-16"
           ],
           "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
+            "song-remix-ver-g-z-20764ac4a6-v-20764ac4a6"
           ],
           "performances": 1
         },
@@ -116046,18 +116508,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-4th-event-2022-05-04"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-amprefire-b503e6653a",
           "name": "AmpReFire",
           "event_ids": [
@@ -116184,6 +116634,17 @@
           ],
           "version_ids": [
             "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 2
         },
@@ -116404,6 +116865,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -123207,19 +123679,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-ready-steady-derby-7e8ed0ad57",
-          "name": "Ready!!! Steady!!! Derby!!!",
-          "event_ids": [
-            "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
-            "live-other-2024-05-06-title-7caa082310e6",
-            "live-numbered-5th-event-2024-03-22"
-          ],
-          "version_ids": [
-            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-comeback-story-v-33f3540048",
           "name": "Comeback Story V",
           "event_ids": [
@@ -123227,6 +123686,18 @@
           ],
           "version_ids": [
             "song-comeback-story-v-33f3540048-v-33f3540048"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-ready-steady-derby-7e8ed0ad57",
+          "name": "Ready!!! Steady!!! Derby!!!",
+          "event_ids": [
+            "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
+            "live-other-2024-05-06-title-7caa082310e6"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
           "performances": 2
         },
@@ -123306,6 +123777,17 @@
           ],
           "version_ids": [
             "song-prismatic-spurt-5d848409a4-v-5d848409a4"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
           ],
           "performances": 1
         },
@@ -126314,17 +126796,16 @@
           "performances": 4
         },
         {
-          "song_id": "song-ready-steady-derby-7e8ed0ad57",
-          "name": "Ready!!! Steady!!! Derby!!!",
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
           "event_ids": [
             "live-numbered-6th-event-2025-10-18",
-            "live-other-2024-05-06-title-7caa082310e6",
             "live-numbered-5th-event-2024-03-22"
           ],
           "version_ids": [
-            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
           ],
-          "performances": 3
+          "performances": 2
         },
         {
           "song_id": "song-482b01a04d",
@@ -126412,6 +126893,17 @@
           ],
           "version_ids": [
             "song-ms-victoria-8fdfbbf2a8-v-8fdfbbf2a8"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ready-steady-derby-7e8ed0ad57",
+          "name": "Ready!!! Steady!!! Derby!!!",
+          "event_ids": [
+            "live-other-2024-05-06-title-7caa082310e6"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
           "performances": 1
         },
@@ -131102,17 +131594,6 @@
           ],
           "version_ids": [
             "song-c3dda232a9-v-c3dda232a9"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 1
         },
@@ -143809,6 +144290,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-cdf2727e54",
           "name": "ぴょいっと♪はれるや！",
           "event_ids": [
@@ -145251,6 +145743,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-d4772b46bb",
           "name": "ウィーアー！",
           "event_ids": [
@@ -145280,17 +145783,6 @@
           ],
           "version_ids": [
             "song-29e836f0da-v-29e836f0da"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 1
         },
@@ -145788,7 +146280,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -145842,7 +146334,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-sunrise-54bf3dc2c4-v-54bf3dc2c4"
+            "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
           "performances": 8
         },
@@ -145917,6 +146409,19 @@
           "performances": 3
         },
         {
+          "song_id": "song-a020e73256",
+          "name": "笑っちゃお！",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-cd-2022-11-27-winning-live-08",
+            "live-numbered-4th-event-extra-2022-11-05"
+          ],
+          "version_ids": [
+            "song-a020e73256-v-a020e73256"
+          ],
+          "performances": 3
+        },
+        {
           "song_id": "song-comeback-story-v-33f3540048",
           "name": "Comeback Story V",
           "event_ids": [
@@ -145929,6 +146434,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -145937,18 +146454,6 @@
           ],
           "version_ids": [
             "song-29e836f0da-v-29e836f0da"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-a020e73256",
-          "name": "笑っちゃお！",
-          "event_ids": [
-            "live-cd-2022-11-27-winning-live-08",
-            "live-numbered-4th-event-extra-2022-11-05"
-          ],
-          "version_ids": [
-            "song-a020e73256-v-a020e73256"
           ],
           "performances": 2
         },
@@ -145975,6 +146480,17 @@
             "song-fallin-love-9a20ebe280-v-9a20ebe280"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-a-no-ne-f2fe8f2091",
+          "name": "A・NO・NE",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-a-no-ne-f2fe8f2091-v-f2fe8f2091"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-everlasting-beats-3a805703a6",
@@ -146098,6 +146614,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-f6a7a99d5c",
+          "name": "ひたむきマイノート",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-f6a7a99d5c-v-f6a7a99d5c"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-9a102f980a",
           "name": "アウト・オブ・トライアングル",
           "event_ids": [
@@ -146131,6 +146658,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-2ef859c836",
+          "name": "マーベラスサンデータイム☆★",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-2ef859c836-v-2ef859c836"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-f4ab00a70a",
           "name": "ミッドナイト・エピローグ",
           "event_ids": [
@@ -146142,6 +146680,28 @@
           "performances": 1
         },
         {
+          "song_id": "song-61ea3bc114",
+          "name": "メジロ讃歌",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-61ea3bc114-v-61ea3bc114"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-88c09416fe",
+          "name": "ラキハピファンタスティック",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-88c09416fe-v-88c09416fe"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-4b30d8d74a",
           "name": "帝笑歌劇～讃えよ永久に～",
           "event_ids": [
@@ -146149,17 +146709,6 @@
           ],
           "version_ids": [
             "song-4b30d8d74a-v-eb67a20d4a"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 1
         },
@@ -146182,6 +146731,17 @@
           ],
           "version_ids": [
             "song-beyond-the-future-aaed329475-v-aaed329475"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -147505,6 +148065,7 @@
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
+            "song-ambitious-world-d3e9adbb88-v-7b2ce70bc0",
             "song-ambitious-world-d3e9adbb88-v-d3e9adbb88"
           ],
           "performances": 5
@@ -148869,6 +149430,7 @@
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
+            "song-ambitious-world-d3e9adbb88-v-7b2ce70bc0",
             "song-ambitious-world-d3e9adbb88-v-d3e9adbb88"
           ],
           "performances": 5
@@ -149179,6 +149741,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
           ],
           "performances": 1
         },
@@ -149794,19 +150367,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-make-debut-2c6c00a71e",
           "name": "Make debut!",
           "event_ids": [
@@ -149862,6 +150422,18 @@
           ],
           "version_ids": [
             "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 2
         },
@@ -150029,6 +150601,17 @@
             "song-461862b933-v-461862b933"
           ],
           "performances": 1
+        },
+        {
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-45d2925d46-v-45d2925d46"
+          ],
+          "performances": 1
         }
       ]
     },
@@ -150150,6 +150733,28 @@
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 1
         }
@@ -154492,7 +155097,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -154510,7 +155115,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-sunrise-54bf3dc2c4-v-54bf3dc2c4"
+            "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
           "performances": 8
         },
@@ -154578,6 +155183,17 @@
           "performances": 2
         },
         {
+          "song_id": "song-a-no-ne-f2fe8f2091",
+          "name": "A・NO・NE",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-a-no-ne-f2fe8f2091-v-f2fe8f2091"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-comeback-story-v-33f3540048",
           "name": "Comeback Story V",
           "event_ids": [
@@ -154633,6 +155249,28 @@
           "performances": 1
         },
         {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-f6a7a99d5c",
+          "name": "ひたむきマイノート",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-f6a7a99d5c-v-f6a7a99d5c"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-9a102f980a",
           "name": "アウト・オブ・トライアングル",
           "event_ids": [
@@ -154655,6 +155293,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-2ef859c836",
+          "name": "マーベラスサンデータイム☆★",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-2ef859c836-v-2ef859c836"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-f4ab00a70a",
           "name": "ミッドナイト・エピローグ",
           "event_ids": [
@@ -154666,6 +155315,28 @@
           "performances": 1
         },
         {
+          "song_id": "song-61ea3bc114",
+          "name": "メジロ讃歌",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-61ea3bc114-v-61ea3bc114"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-88c09416fe",
+          "name": "ラキハピファンタスティック",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-88c09416fe-v-88c09416fe"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-4b30d8d74a",
           "name": "帝笑歌劇～讃えよ永久に～",
           "event_ids": [
@@ -154673,6 +155344,28 @@
           ],
           "version_ids": [
             "song-4b30d8d74a-v-eb67a20d4a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-a020e73256",
+          "name": "笑っちゃお！",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03"
+          ],
+          "version_ids": [
+            "song-a020e73256-v-a020e73256"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -157863,7 +158556,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-fade-to-black-6c2a8e8237-v-6c2a8e8237"
+            "song-fade-to-black-6c2a8e8237-v-6d94677003"
           ],
           "performances": 8
         },
@@ -157899,7 +158592,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -158001,7 +158694,7 @@
             "live-numbered-5th-event-2023-07-15"
           ],
           "version_ids": [
-            "song-sunrise-54bf3dc2c4-v-54bf3dc2c4"
+            "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
           "performances": 1
         },
@@ -158046,6 +158739,17 @@
           ],
           "version_ids": [
             "song-phantasia-81aafc5f7e-v-81aafc5f7e"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -161519,19 +162223,17 @@
           "song_id": "song-ready-steady-derby-7e8ed0ad57",
           "name": "Ready!!! Steady!!! Derby!!!",
           "event_ids": [
-            "live-numbered-6th-event-2025-10-18",
             "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
             "live-twinkle-2024-10-20-twinkle-circle-day2-2",
             "live-twinkle-2024-10-20-twinkle-circle-day2-1",
             "live-twinkle-2024-10-19-twinkle-circle-day1",
             "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
-            "live-other-2024-05-06-title-7caa082310e6",
-            "live-numbered-5th-event-2024-03-22"
+            "live-other-2024-05-06-title-7caa082310e6"
           ],
           "version_ids": [
             "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
-          "performances": 8
+          "performances": 6
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -161574,6 +162276,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-uma-summer-d7e35f6a48",
           "name": "UMA Summer",
           "event_ids": [
@@ -161582,18 +162296,6 @@
           ],
           "version_ids": [
             "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-e07b1a7277",
-          "name": "私が主役じゃダメですか？",
-          "event_ids": [
-            "live-numbered-6th-event-2025-10-18",
-            "live-cd-2024-08-10-winning-live-19"
-          ],
-          "version_ids": [
-            "song-e07b1a7277-v-e07b1a7277"
           ],
           "performances": 2
         },
@@ -161627,6 +162329,17 @@
           ],
           "version_ids": [
             "song-dramatic-journey-60664c4bb2-v-60664c4bb2"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dear-my-dream-007a8ac43a",
+          "name": "Dear My Dream",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18"
+          ],
+          "version_ids": [
+            "song-dear-my-dream-007a8ac43a-v-007a8ac43a"
           ],
           "performances": 1
         },
@@ -161759,6 +162472,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-e07b1a7277",
+          "name": "私が主役じゃダメですか？",
+          "event_ids": [
+            "live-cd-2024-08-10-winning-live-19"
+          ],
+          "version_ids": [
+            "song-e07b1a7277-v-e07b1a7277"
           ],
           "performances": 1
         }
@@ -162071,7 +162795,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-fade-to-black-6c2a8e8237-v-6c2a8e8237"
+            "song-fade-to-black-6c2a8e8237-v-6d94677003"
           ],
           "performances": 8
         },
@@ -162107,7 +162831,7 @@
             "live-other-2023-01-15-1-15-13-00"
           ],
           "version_ids": [
-            "song-happiness-554d029033-v-554d029033"
+            "song-happiness-554d029033-v-b918fcaa47"
           ],
           "performances": 8
         },
@@ -162241,6 +162965,17 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-c082420c30",
+          "name": "赛马娘舞台剧",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15"
+          ],
+          "version_ids": [
+            "song-c082420c30-v-c082420c30"
           ],
           "performances": 1
         }
@@ -162960,13 +163695,12 @@
             "live-twinkle-2024-10-20-twinkle-circle-day2-1",
             "live-twinkle-2024-10-19-twinkle-circle-day1",
             "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
-            "live-other-2024-05-06-title-7caa082310e6",
-            "live-numbered-5th-event-2024-03-22"
+            "live-other-2024-05-06-title-7caa082310e6"
           ],
           "version_ids": [
             "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57"
           ],
-          "performances": 7
+          "performances": 6
         },
         {
           "song_id": "song-uma-summer-d7e35f6a48",
@@ -163193,6 +163927,17 @@
           ],
           "version_ids": [
             "song-o-ac4dfa58e3-v-ac4dfa58e3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-ready-steady-derby-79449ccbdb",
+          "name": "Ready!! Steady!! Derby!!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22"
+          ],
+          "version_ids": [
+            "song-ready-steady-derby-79449ccbdb-v-79449ccbdb"
           ],
           "performances": 1
         },
@@ -167989,18 +168734,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-dance-dance-roman-94f17ecc33",
-          "name": "DANCE！DANCE！“ROMAN”",
-          "event_ids": [
-            "live-cd-2023-11-05-winning-live-13-14",
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-dance-dance-roman-94f17ecc33-v-94f17ecc33"
-          ],
-          "performances": 2
-        },
-        {
           "song_id": "song-never-looking-back-d2ca0c4311",
           "name": "Never Looking Back",
           "event_ids": [
@@ -168033,6 +168766,28 @@
             "song-2d2a6742e3-v-2d2a6742e3"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-dance-dance-roman-09e34d34d1",
+          "name": "DANCE！DANCE！\"ROMAN\"",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-dance-dance-roman-09e34d34d1-v-09e34d34d1"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-dance-dance-roman-94f17ecc33",
+          "name": "DANCE！DANCE！“ROMAN”",
+          "event_ids": [
+            "live-cd-2023-11-05-winning-live-13-14"
+          ],
+          "version_ids": [
+            "song-dance-dance-roman-94f17ecc33-v-94f17ecc33"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-everlasting-beats-3a805703a6",
@@ -168086,6 +168841,17 @@
           ],
           "version_ids": [
             "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-mix-975dcc6f86",
+          "name": "ばか☆マゲ↑MIX",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-mix-975dcc6f86-v-975dcc6f86"
           ],
           "performances": 1
         },
@@ -172530,6 +173296,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -174136,13 +174913,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
           "event_ids": [
             "live-numbered-7th-event-2026-06-20"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         },
@@ -174738,13 +175515,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
+          "song_id": "song-45d2925d46",
+          "name": "走れ〇〇オー",
           "event_ids": [
             "live-numbered-7th-event-2026-06-20"
           ],
           "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
+            "song-45d2925d46-v-45d2925d46"
           ],
           "performances": 1
         }
@@ -180433,6 +181210,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -180581,6 +181369,17 @@
           ],
           "version_ids": [
             "song-everlasting-beats-3a805703a6-v-3a805703a6"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 1
         },
@@ -181320,10 +182119,22 @@
           "song_id": "song-2d2a6742e3",
           "name": "走れウマ娘",
           "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
             "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
           ],
           "performances": 1
         }
@@ -181772,6 +182583,28 @@
             "song-228f943b49-v-228f943b49"
           ],
           "performances": 1
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 1
         }
       ]
     },
@@ -182173,6 +183006,17 @@
           "performances": 3
         },
         {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-be4063b951",
           "name": "トレセン体操",
           "event_ids": [
@@ -182271,6 +183115,16 @@
           "series_id": "paka-live-tv-prime",
           "session_id": "paka-live-tv-prime-006-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-7th-event-2026-06-20",
+          "date": "2026-06-21",
+          "end_date": "2026-06-21",
+          "title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-7th-event-2026-06-20-session-2",
+          "session_label": "DAY2"
         },
         {
           "event_id": "paka-live-tv-062",
@@ -182694,13 +183548,36 @@
           "song_id": "song-2d2a6742e3",
           "name": "走れウマ娘",
           "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
             "live-numbered-4th-event-2022-05-04",
             "live-numbered-4th-event-2022-03-05"
           ],
           "version_ids": [
             "song-2d2a6742e3-v-2d2a6742e3"
           ],
-          "performances": 4
+          "performances": 6
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
         }
       ]
     },
@@ -182711,6 +183588,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-17T14:31:58+00:00",
+  "generated_at": "2026-10-17T14:53:00+00:00",
   "build_id": "f7f94714fa09605d2eba"
 }

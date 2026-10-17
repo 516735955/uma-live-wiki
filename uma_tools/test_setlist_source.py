@@ -3,7 +3,7 @@ import copy
 import unittest
 
 from events_pipeline.events import dedupe_events
-from events_pipeline.setlists import apply_sheet, merge_numbered_sources
+from events_pipeline.setlists import apply_sheet, merge_numbered_sources, display_table, curated_performances
 
 
 class Identities:
@@ -14,8 +14,34 @@ class Identities:
     def voice_id(self, name):
         return {'Actor A': 'va-a', 'Actor B': 'va-b'}.get(name, '')
 
+    def character_id(self, name):
+        return {'角色甲': 'char-a'}.get(name, '')
+
 
 class GoogleSetlistTests(unittest.TestCase):
+    def test_curated_table_keeps_roles_sources_notes_and_sections(self):
+        table = ('<table><thead><tr><th>歌曲信息</th></tr></thead><tbody>'
+                 '<tr><td class="setlist-no">1</td><td class="setlist-song">Finale</td>'
+                 '<td class="setlist-perf">全员（2人）</td><td class="setlist-src">原出处（注释）</td></tr>'
+                 '<tr><td colspan="4">安可</td></tr>'
+                 '<tr><td class="setlist-no">2</td><td class="setlist-song">Solo ※备注</td>'
+                 '<td class="setlist-perf"><span class="perf-name">队名：</span><span class="perf-item">'
+                 '<img src="a.png" alt="角色甲"><span class="perf-name">角色甲</span></span></td>'
+                 '<td class="setlist-src">另一出处</td></tr></tbody></table>')
+        cast = [{'voice_actor_id': 'va-a', 'character_id': 'char-a'}]
+        block = {'songs': [{'name': 'Finale', 'performers': ['Actor A', 'Actor B']}]}
+        rendered = display_table(table, block, cast, Identities())
+        self.assertIn('原出处（注释）', rendered)
+        self.assertIn('队名：', rendered)
+        self.assertIn('Solo ※备注', rendered)
+        self.assertIn('<td colspan="4">安可</td>', rendered)
+        self.assertEqual(rendered[rendered.index('<tr><td class="setlist-no">2'):], table[table.index('<tr><td class="setlist-no">2'):])
+        self.assertIn('>角色甲</span>', rendered)
+        self.assertIn('>Actor B</span>', rendered, 'an unconfirmed role stays a named person')
+        credits = curated_performances(table, [{'song': 'Finale', 'setlist_no': '1', 'voice_actor_ids': ['va-a', 'va-b'], 'character_ids': ['char-a']}], Identities(), cast)
+        self.assertEqual([row['song'] for row in credits], ['Finale', 'Solo ※备注'])
+        self.assertEqual(credits[0]['voice_actor_ids'], ['va-a', 'va-b'])
+
     def test_primary_sheet_replaces_legacy_credits_and_expands_the_whole_event_cast(self):
         session = {'id': 'canonical-session-1', 'label': 'DAY1', 'date': '2026-10-17',
                    'performances': [{'song': 'Old'}], 'songs': ['Old'], 'setlist_html': '<table>Old</table>',

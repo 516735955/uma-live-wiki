@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-17T14:31:58+00:00",
+  "generated_at": "2026-10-17T14:53:00+00:00",
   "coverage": {
-    "songs": 1031,
-    "versions": 2047,
+    "songs": 1035,
+    "versions": 2051,
     "albums": 115,
     "release_tracks": 2235,
-    "live_performances": 1264,
+    "live_performances": 1265,
     "credited_songs": 332,
     "lyric_songs": 244,
     "credited_versions": 1295,
@@ -1271,8 +1271,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 16,
-              "setlist_no": "16",
+              "performance_index": 17,
+              "setlist_no": "17",
               "character_ids": [
                 "airshakur"
               ],
@@ -1443,7 +1443,7 @@
         "Ambitious World (Beyond The Promise Ver.)",
         "Ambitious World (PV Size)",
         "Ambitious World -ウマ巫女参り Ver-",
-        "Ambitious World ※Beyond The Promise Ver."
+        "Ambitious World（Beyond The Promise Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -1534,56 +1534,6 @@
           ],
           "performances": [
             {
-              "event_id": "live-numbered-5th-event-2024-03-22",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
-              "event_date": "2024-03-22",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2024-03-22-session-1",
-              "session_label": "DAY1",
-              "session_date": "2024-03-22",
-              "performance_index": 24,
-              "setlist_no": "24",
-              "character_ids": [
-                "satonodiamond",
-                "kitasanblack"
-              ],
-              "voice_actor_ids": [
-                "va-0126",
-                "va-0138"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
-              "performance_variant": {
-                "title": "Ambitious World ※Beyond The Promise Ver.",
-                "label": "Beyond The Promise Ver."
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
-              "session_label": "DAY2",
-              "session_date": "2023-09-17",
-              "performance_index": 27,
-              "setlist_no": "27",
-              "character_ids": [
-                "satonodiamond",
-                "kitasanblack"
-              ],
-              "voice_actor_ids": [
-                "va-0126",
-                "va-0138"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
-              "performance_variant": {
-                "title": "Ambitious World ※Beyond The Promise Ver.",
-                "label": "Beyond The Promise Ver."
-              }
-            },
-            {
               "event_id": "live-numbered-4th-event-extra-2022-11-05",
               "event_title": "ウマ娘 4th EVENT「SPECIAL DREAMERS!!」-EXTRA STAGE",
               "event_date": "2022-11-05",
@@ -1648,7 +1598,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -1731,9 +1681,52 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-5th-event-2024-03-22",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
+              "event_date": "2024-03-22",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-03-22-session-1",
+              "session_label": "DAY1",
+              "session_date": "2024-03-22",
+              "performance_index": 24,
+              "setlist_no": "24",
+              "character_ids": [
+                "satonodiamond",
+                "kitasanblack"
+              ],
+              "voice_actor_ids": [
+                "va-0126",
+                "va-0138"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1"
+            },
+            {
+              "event_id": "live-numbered-5th-event-2023-09-16",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+              "event_date": "2023-09-16",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
+              "session_label": "DAY2",
+              "session_date": "2023-09-17",
+              "performance_index": 25,
+              "setlist_no": "24",
+              "character_ids": [
+                "satonodiamond",
+                "kitasanblack"
+              ],
+              "voice_actor_ids": [
+                "va-0126",
+                "va-0138"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -2362,7 +2355,8 @@
       "title": "A・NO・NE",
       "aliases": [
         "A・NO・NE",
-        "A・NO・NE (2021 Remastered Version)"
+        "A・NO・NE (2021 Remastered Version)",
+        "A・NO・NE(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -2370,12 +2364,16 @@
         "鬼頭明里"
       ],
       "character_ids": [
+        "daitakuhelios",
         "goldcity",
         "seiunsky",
+        "yamaninzephyr",
         "yukinobijin"
       ],
       "voice_actor_ids": [
+        "va-0022",
         "va-0063",
+        "va-0065",
         "va-0176",
         "va-0185"
       ],
@@ -2390,12 +2388,16 @@
         "va-0185"
       ],
       "performed_character_ids": [
+        "daitakuhelios",
         "goldcity",
         "seiunsky",
+        "yamaninzephyr",
         "yukinobijin"
       ],
       "performed_voice_actor_ids": [
+        "va-0022",
         "va-0063",
+        "va-0065",
         "va-0176",
         "va-0185"
       ],
@@ -2444,6 +2446,31 @@
           ],
           "performances": [
             {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 9,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
+              "performance_variant": {
+                "title": "A・NO・NE(Remix Ver.)",
+                "label": "Remix Ver."
+              }
+            },
+            {
               "event_id": "live-cd-2018-03-17-starting-gate-07-08",
               "event_title": "「ウマ娘 プリティーダービー STARTING GATE 07&08」発売記念イベント",
               "event_date": "2018-03-17",
@@ -2468,7 +2495,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -2654,7 +2681,7 @@
       ],
       "version_count": 2,
       "release_count": 3,
-      "performance_count": 1,
+      "performance_count": 2,
       "original_version_id": "song-a-no-ne-f2fe8f2091-v-f2fe8f2091",
       "creator_ids": [
         "creator-500b86dc49",
@@ -3766,7 +3793,7 @@
         "BLOW my GALE (Game Size)（マンハッタンカフェ）",
         "BLOW my GALE (Game Size)（メジロマックイーン）",
         "BLOW my GALE (TeddyLoid Remix)",
-        "BLOW my GALE ※Blasting The Noise Ver."
+        "BLOW my GALE（Blasting The Noise Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -4437,7 +4464,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "BLOW my GALE ※Blasting The Noise Ver.",
+                "title": "BLOW my GALE（Blasting The Noise Ver.）",
                 "label": "Blasting The Noise Ver."
               }
             },
@@ -5929,7 +5956,8 @@
         "BoC-izm (AM×i Size)",
         "BoC-izm (CΛ2 Size)",
         "BoC-izm (OK→U Size)",
-        "BoC-izm (PV Size)"
+        "BoC-izm (PV Size)",
+        "BoC-izm（GOLD Remix）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -6157,7 +6185,11 @@
                 "va-0080",
                 "va-0159"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-2"
+              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-2",
+              "performance_variant": {
+                "title": "BoC-izm（GOLD Remix）",
+                "label": "GOLD Remix"
+              }
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -7704,7 +7736,7 @@
       "aliases": [
         "CATCH THE VICTORY!",
         "CATCH THE VICTORY! (2021 Remastered Version)",
-        "CATCH THE VICTORY! ※The Glory Revision"
+        "CATCH THE VICTORY!（The Glory Revision）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -7828,7 +7860,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "CATCH THE VICTORY! ※The Glory Revision",
+                "title": "CATCH THE VICTORY!（The Glory Revision）",
                 "label": "The Glory Revision"
               }
             },
@@ -9115,8 +9147,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 29,
-              "setlist_no": "29",
+              "performance_index": 27,
+              "setlist_no": "26",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
@@ -9176,8 +9208,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 27,
-              "setlist_no": "27",
+              "performance_index": 24,
+              "setlist_no": "24",
               "character_ids": [
                 "specialweek",
                 "tokaiteio",
@@ -9443,8 +9475,12 @@
       "released_voice_actor_ids": [
         "va-0140"
       ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
+      "performed_character_ids": [
+        "tapdancecity"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0140"
+      ],
       "cover": "https://p1.music.126.net/qf0Ll58ax8GNhmjlArJAxw==/109951170973796351.jpg",
       "release_date": "2023-09-13",
       "versions": [
@@ -9488,9 +9524,29 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-5th-event-2023-09-16",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+              "event_date": "2023-09-16",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2023-09-16-session-1",
+              "session_label": "DAY1",
+              "session_date": "2023-09-16",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [
+                "tapdancecity"
+              ],
+              "voice_actor_ids": [
+                "va-0140"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0,
+          "performance_count": 1,
           "instrumental": false,
           "credits": [
             {
@@ -9522,7 +9578,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 0,
+      "performance_count": 1,
       "original_version_id": "song-dance-dance-roman-09e34d34d1-v-09e34d34d1",
       "creator_ids": [
         "creator-27a7191e7e",
@@ -9580,29 +9636,10 @@
                 "va-0140"
               ],
               "event_url": "/zh-Hans/events/live-cd-2023-11-05-winning-live-13-14?session=live-cd-2023-11-05-winning-live-13-14-session-1"
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-1",
-              "session_label": "DAY1",
-              "session_date": "2023-09-16",
-              "performance_index": 9,
-              "setlist_no": "9",
-              "character_ids": [
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0140"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1"
             }
           ],
           "release_count": 0,
-          "performance_count": 2,
+          "performance_count": 1,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -9613,7 +9650,7 @@
       ],
       "version_count": 1,
       "release_count": 0,
-      "performance_count": 2,
+      "performance_count": 1,
       "original_version_id": "song-dance-dance-roman-94f17ecc33-v-94f17ecc33",
       "creator_ids": [],
       "has_lyrics": false
@@ -9948,8 +9985,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 22,
-              "setlist_no": "22",
+              "performance_index": 20,
+              "setlist_no": "19",
               "character_ids": [
                 "currenchan",
                 "smartfalcon",
@@ -9975,8 +10012,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 20,
-              "setlist_no": "20",
+              "performance_index": 17,
+              "setlist_no": "17",
               "character_ids": [
                 "daiwascarlet",
                 "mihonobourbon",
@@ -10377,9 +10414,11 @@
         "西連寺亜希"
       ],
       "character_ids": [
+        "dantsuflame",
         "furioso"
       ],
       "voice_actor_ids": [
+        "va-0134",
         "va-0156"
       ],
       "released_character_ids": [
@@ -10389,9 +10428,11 @@
         "va-0156"
       ],
       "performed_character_ids": [
+        "dantsuflame",
         "furioso"
       ],
       "performed_voice_actor_ids": [
+        "va-0134",
         "va-0156"
       ],
       "cover": "https://p1.music.126.net/rzJxJxj2l9cTKs1XE5ICrg==/109951170977404427.jpg",
@@ -10439,6 +10480,25 @@
           ],
           "performances": [
             {
+              "event_id": "live-numbered-6th-event-2025-10-18",
+              "event_title": "ウマ娘 6th EVENT「The New Frontier」—秋公演",
+              "event_date": "2025-10-18",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-6th-event-2025-10-18-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-10-18",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [
+                "dantsuflame"
+              ],
+              "voice_actor_ids": [
+                "va-0134"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
+            },
+            {
               "event_id": "live-numbered-6th-event-2025-05-24",
               "event_title": "ウマ娘 6th EVENT「The New Frontier」—春公演",
               "event_date": "2025-05-24",
@@ -10478,7 +10538,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -10510,7 +10570,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-dear-my-dream-007a8ac43a-v-007a8ac43a",
       "creator_ids": [
         "creator-09658ba257",
@@ -11019,7 +11079,7 @@
       "title": "Destroy for Dasein",
       "aliases": [
         "Destroy for Dasein",
-        "Destroy for Dasein ※Do or Die(MIX)"
+        "Destroy for Dasein（Do or Die(MIX)）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -11110,7 +11170,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "Destroy for Dasein ※Do or Die(MIX)",
+                "title": "Destroy for Dasein（Do or Die(MIX)）",
                 "label": "Do or Die(MIX)"
               }
             },
@@ -12411,7 +12471,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 21,
+              "performance_index": 28,
               "setlist_no": "21",
               "character_ids": [
                 "specialweek",
@@ -23929,8 +23989,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 13,
-              "setlist_no": "13",
+              "performance_index": 14,
+              "setlist_no": "14",
               "character_ids": [
                 "goldship",
                 "biwahayahide",
@@ -24826,8 +24886,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 25,
-              "setlist_no": "25",
+              "performance_index": 26,
+              "setlist_no": "26",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
@@ -26253,7 +26313,7 @@
       "aliases": [
         "Exercise the Right",
         "Exercise the Right (Menma The Cat Remix)",
-        "Exercise the Right ※Remix Ver."
+        "Exercise the Right（Remix Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -26352,7 +26412,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-2",
               "performance_variant": {
-                "title": "Exercise the Right ※Remix Ver.",
+                "title": "Exercise the Right（Remix Ver.）",
                 "label": "Remix Ver."
               }
             },
@@ -26538,7 +26598,8 @@
       "id": "song-fade-to-black-6c2a8e8237",
       "title": "Fade to black",
       "aliases": [
-        "Fade to black"
+        "Fade to black",
+        "Fade to black（舞台剧中曲）"
       ],
       "legacy_ids": [],
       "artists": [],
@@ -26564,9 +26625,9 @@
       "release_date": "",
       "versions": [
         {
-          "id": "song-fade-to-black-6c2a8e8237-v-6c2a8e8237",
-          "title": "Fade to black",
-          "version_label": "",
+          "id": "song-fade-to-black-6c2a8e8237-v-6d94677003",
+          "title": "Fade to black（舞台剧中曲）",
+          "version_label": "舞台剧中曲",
           "artists": [],
           "releases": [],
           "performances": [
@@ -26579,8 +26640,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 9,
-              "setlist_no": "9",
+              "performance_index": 10,
+              "setlist_no": "10",
               "character_ids": [
                 "daiichiruby",
                 "ksmiracle"
@@ -26610,7 +26671,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-29-1-29-13-00",
@@ -26631,7 +26696,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -26652,7 +26721,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-13-00",
@@ -26673,7 +26746,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-27-1-27-18-00",
@@ -26694,7 +26771,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -26715,7 +26796,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-13-00",
@@ -26736,7 +26821,11 @@
                 "va-0029",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
             }
           ],
           "release_count": 0,
@@ -26752,7 +26841,7 @@
       "version_count": 1,
       "release_count": 0,
       "performance_count": 8,
-      "original_version_id": "song-fade-to-black-6c2a8e8237-v-6c2a8e8237",
+      "original_version_id": "song-fade-to-black-6c2a8e8237-v-6d94677003",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -27483,8 +27572,8 @@
         "Find My Only Way (Off Vocal) (2021 Remastered Version)",
         "Find My Only Way (TV Size)",
         "Find My Only Way (TV Size) (2021 Remastered Version)",
-        "Find My Only Way ※Acoustic Ver.",
-        "Find My Only Way ※Short ver."
+        "Find My Only Way ※Short ver.",
+        "Find My Only Way（Acoustic Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -27816,8 +27905,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 25,
-              "setlist_no": "25",
+              "performance_index": 23,
+              "setlist_no": "22",
               "character_ids": [
                 "oguricap",
                 "grasswonder",
@@ -28070,7 +28159,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-1",
               "performance_variant": {
-                "title": "Find My Only Way ※Acoustic Ver.",
+                "title": "Find My Only Way（Acoustic Ver.）",
                 "label": "Acoustic Ver."
               }
             },
@@ -28164,8 +28253,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 14,
-              "setlist_no": "14",
+              "performance_index": 15,
+              "setlist_no": "15",
               "character_ids": [
                 "symbolirudolf",
                 "kinghalo",
@@ -30359,8 +30448,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 21,
-              "setlist_no": "21",
+              "performance_index": 18,
+              "setlist_no": "18",
               "character_ids": [
                 "naritabrian",
                 "mayanotopgun",
@@ -30395,7 +30484,7 @@
               "session_label": "DAY2",
               "session_date": "2023-07-16",
               "performance_index": 24,
-              "setlist_no": "24",
+              "setlist_no": "25",
               "character_ids": [
                 "tokaiteio",
                 "daiwascarlet",
@@ -30455,8 +30544,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 26,
-              "setlist_no": "26",
+              "performance_index": 27,
+              "setlist_no": "27",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
@@ -35474,7 +35563,7 @@
         "GIRLS' LEGEND U (tofubeats Remix)",
         "GIRLS' LEGEND U ―やっとみんな会えたね―",
         "GIRLS' LEGEND U ※Short ver.",
-        "GIRLS' LEGEND U ※The Infinite Ver."
+        "GIRLS' LEGEND U（The Infinite Ver.）"
       ],
       "legacy_ids": [
         "song-girls-legend-u-68f74d7b92"
@@ -36530,7 +36619,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2",
               "performance_variant": {
-                "title": "GIRLS' LEGEND U ※The Infinite Ver.",
+                "title": "GIRLS' LEGEND U（The Infinite Ver.）",
                 "label": "The Infinite Ver."
               }
             },
@@ -36577,7 +36666,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "GIRLS' LEGEND U ※The Infinite Ver.",
+                "title": "GIRLS' LEGEND U（The Infinite Ver.）",
                 "label": "The Infinite Ver."
               }
             },
@@ -36590,7 +36679,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 17,
+              "performance_index": 24,
               "setlist_no": "17",
               "character_ids": [
                 "sakuralaurel",
@@ -36619,8 +36708,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 14,
-              "setlist_no": "14",
+              "performance_index": 15,
+              "setlist_no": "15",
               "character_ids": [
                 "tokaiteio",
                 "vodka",
@@ -38601,7 +38690,8 @@
         "Glorious Moment! (Game Size)（メイショウドトウ）",
         "Glorious Moment！",
         "Glorious Moment！ (Anime Size)",
-        "Glorious Moment！ (Game Size)"
+        "Glorious Moment！ (Game Size)",
+        "Glorious Moment！(Fateful Showdown Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -38746,7 +38836,11 @@
                 "va-0039",
                 "va-0073"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
+              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1",
+              "performance_variant": {
+                "title": "Glorious Moment！(Fateful Showdown Ver.)",
+                "label": "Fateful Showdown Ver."
+              }
             },
             {
               "event_id": "live-numbered-6th-event-2025-10-18",
@@ -38849,7 +38943,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 19,
+              "performance_index": 26,
               "setlist_no": "19",
               "character_ids": [
                 "tmoperao",
@@ -41592,7 +41686,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 12,
+              "performance_index": 19,
               "setlist_no": "12",
               "character_ids": [
                 "tokaiteio",
@@ -41625,8 +41719,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 24,
-              "setlist_no": "24",
+              "performance_index": 22,
+              "setlist_no": "21",
               "character_ids": [
                 "tokaiteio",
                 "goldship",
@@ -41658,8 +41752,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 22,
-              "setlist_no": "22",
+              "performance_index": 19,
+              "setlist_no": "19",
               "character_ids": [
                 "specialweek",
                 "tokaiteio",
@@ -42202,8 +42296,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 23,
-              "setlist_no": "23",
+              "performance_index": 21,
+              "setlist_no": "20",
               "character_ids": [
                 "goldcity",
                 "tosenjordan",
@@ -42783,7 +42877,8 @@
       "id": "song-happiness-554d029033",
       "title": "Happiness",
       "aliases": [
-        "Happiness"
+        "Happiness",
+        "Happiness（舞台剧中曲）"
       ],
       "legacy_ids": [],
       "artists": [],
@@ -42817,9 +42912,9 @@
       "release_date": "",
       "versions": [
         {
-          "id": "song-happiness-554d029033-v-554d029033",
-          "title": "Happiness",
-          "version_label": "",
+          "id": "song-happiness-554d029033-v-b918fcaa47",
+          "title": "Happiness（舞台剧中曲）",
+          "version_label": "舞台剧中曲",
           "artists": [],
           "releases": [],
           "performances": [
@@ -42832,8 +42927,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 12,
-              "setlist_no": "12",
+              "performance_index": 13,
+              "setlist_no": "13",
               "character_ids": [
                 "daitakuhelios",
                 "yamaninzephyr",
@@ -42871,7 +42966,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-29-1-29-13-00",
@@ -42896,7 +42995,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -42921,7 +43024,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-13-00",
@@ -42946,7 +43053,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-27-1-27-18-00",
@@ -42971,7 +43082,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -42996,7 +43111,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-13-00",
@@ -43021,7 +43140,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
             }
           ],
           "release_count": 0,
@@ -43037,7 +43160,7 @@
       "version_count": 1,
       "release_count": 0,
       "performance_count": 8,
-      "original_version_id": "song-happiness-554d029033-v-554d029033",
+      "original_version_id": "song-happiness-554d029033-v-b918fcaa47",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -51158,7 +51281,7 @@
       "title": "LIKE THE WIND",
       "aliases": [
         "LIKE THE WIND",
-        "LIKE THE WIND ※Remix Ver."
+        "LIKE THE WIND(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -51239,7 +51362,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 8,
+              "performance_index": 15,
               "setlist_no": "8",
               "character_ids": [
                 "daitakuhelios",
@@ -51251,7 +51374,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
               "performance_variant": {
-                "title": "LIKE THE WIND ※Remix Ver.",
+                "title": "LIKE THE WIND(Remix Ver.)",
                 "label": "Remix Ver."
               }
             },
@@ -51704,7 +51827,7 @@
       "aliases": [
         "Lucky Comes True!",
         "Lucky Comes True! (2021 Remastered Version)",
-        "Lucky Comes True! ※運 or むん(MIX)"
+        "Lucky Comes True!（運 or むん(MIX)）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -51791,7 +51914,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "Lucky Comes True! ※運 or むん(MIX)",
+                "title": "Lucky Comes True!（運 or むん(MIX)）",
                 "label": "運 or むん(MIX)"
               }
             },
@@ -52239,10 +52362,10 @@
         "Make debut! (TV Size)",
         "Make debut! (TV Size) (2021 Remastered Version)",
         "Make debut! (モリシー (Awesome City Club) Remix)",
-        "Make debut! ※Beyond The Dreams Ver.",
         "Make debut! ※Game size",
-        "Make debut! ※Remix Ver.",
-        "Make debut! ※Short ver."
+        "Make debut! ※Short ver.",
+        "Make debut!（Beyond The Dreams Ver.）",
+        "Make debut!（Remix Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -52674,7 +52797,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 15,
+              "performance_index": 22,
               "setlist_no": "15",
               "character_ids": [
                 "specialweek",
@@ -52688,7 +52811,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
               "performance_variant": {
-                "title": "Make debut! ※Beyond The Dreams Ver.",
+                "title": "Make debut!（Beyond The Dreams Ver.）",
                 "label": "Beyond The Dreams Ver."
               }
             },
@@ -52728,8 +52851,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 25,
-              "setlist_no": "25",
+              "performance_index": 22,
+              "setlist_no": "22",
               "character_ids": [
                 "specialweek",
                 "grasswonder",
@@ -52744,7 +52867,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
               "performance_variant": {
-                "title": "Make debut! ※Beyond The Dreams Ver.",
+                "title": "Make debut!（Beyond The Dreams Ver.）",
                 "label": "Beyond The Dreams Ver."
               }
             },
@@ -52812,7 +52935,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1",
               "performance_variant": {
-                "title": "Make debut! ※Remix Ver.",
+                "title": "Make debut!（Remix Ver.）",
                 "label": "Remix Ver."
               }
             },
@@ -54857,7 +54980,7 @@
         "Ms. VICTORIA (Game Size)（ユキノビジン）",
         "Ms. VICTORIA (Game Size)（ライスシャワー）",
         "Ms. VICTORIA (Game Size)（ワンダーアキュート）",
-        "Ms. VICTORIA ※The Legends Ver."
+        "Ms. VICTORIA（The Legends Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -55799,7 +55922,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2",
               "performance_variant": {
-                "title": "Ms. VICTORIA ※The Legends Ver.",
+                "title": "Ms. VICTORIA（The Legends Ver.）",
                 "label": "The Legends Ver."
               }
             },
@@ -55838,7 +55961,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "Ms. VICTORIA ※The Legends Ver.",
+                "title": "Ms. VICTORIA（The Legends Ver.）",
                 "label": "The Legends Ver."
               }
             },
@@ -55987,8 +56110,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 20,
-              "setlist_no": "20",
+              "performance_index": 21,
+              "setlist_no": "21",
               "character_ids": [
                 "vodka",
                 "agnesdigital",
@@ -61691,8 +61814,9 @@
         "Never Looking Back (Game Size)（ライスシャワー）",
         "Never Looking Back (PandaBoY Remix)",
         "Never Looking Back -Band Ver-",
-        "Never Looking Back ※Remix Ver.",
-        "Never Looking Back ※Short ver."
+        "Never Looking Back ※Short ver.",
+        "Never Looking Back （Remix Ver.）",
+        "Never Looking Back（Remix Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -62320,7 +62444,7 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 15,
+              "performance_index": 16,
               "setlist_no": "15",
               "character_ids": [
                 "grasswonder",
@@ -62377,7 +62501,11 @@
                 "va-0152",
                 "va-0172"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-2"
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-2",
+              "performance_variant": {
+                "title": "Never Looking Back （Remix Ver.）",
+                "label": "Remix Ver."
+              }
             },
             {
               "event_id": "live-other-2023-01-29-1-29-18-00",
@@ -62603,7 +62731,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-2",
               "performance_variant": {
-                "title": "Never Looking Back ※Remix Ver.",
+                "title": "Never Looking Back （Remix Ver.）",
                 "label": "Remix Ver."
               }
             },
@@ -62756,8 +62884,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 19,
-              "setlist_no": "19",
+              "performance_index": 20,
+              "setlist_no": "20",
               "character_ids": [
                 "specialweek",
                 "silencesuzuka",
@@ -66208,8 +66336,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 19,
-              "setlist_no": "19",
+              "performance_index": 20,
+              "setlist_no": "20",
               "character_ids": [
                 "oguricap",
                 "daiwascarlet",
@@ -69200,7 +69328,8 @@
         "Overrunner! (Game Size)（ダイイチルビー）",
         "Overrunner! (Game Size)（ダイタクヘリオス）",
         "Overrunner! (Game Size)（ヤマニンゼファー）",
-        "Overrunner! ※Short ver."
+        "Overrunner! ※Short ver.",
+        "Overrunner!（舞台剧中曲）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -69394,7 +69523,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 18,
+              "performance_index": 25,
               "setlist_no": "18",
               "character_ids": [
                 "elcondorpasa",
@@ -69419,8 +69548,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 13,
-              "setlist_no": "13",
+              "performance_index": 14,
+              "setlist_no": "14",
               "character_ids": [
                 "daitakuhelios",
                 "yamaninzephyr",
@@ -69433,7 +69562,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1",
+              "performance_variant": {
+                "title": "Overrunner!（舞台剧中曲）",
+                "label": "舞台剧中曲"
+              }
             },
             {
               "event_id": "live-cd-2023-04-02-winning-live-10",
@@ -71094,7 +71227,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 11,
+              "performance_index": 18,
               "setlist_no": "11",
               "character_ids": [
                 "specialweek",
@@ -73243,30 +73376,6 @@
               "event_url": "/zh-Hans/events/live-other-2026-07-12-animelo-summer-live-2026-messenger-day3?session=live-other-2026-07-12-animelo-summer-live-2026-messenger-day3-session-1"
             },
             {
-              "event_id": "live-numbered-6th-event-2025-10-18",
-              "event_title": "ウマ娘 6th EVENT「The New Frontier」—秋公演",
-              "event_date": "2025-10-18",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-6th-event-2025-10-18-session-1",
-              "session_label": "DAY1",
-              "session_date": "2025-10-18",
-              "performance_index": 4,
-              "setlist_no": "4",
-              "character_ids": [
-                "agnestachyon",
-                "dantsuflame"
-              ],
-              "voice_actor_ids": [
-                "va-0008",
-                "va-0134"
-              ],
-              "guest_performers": [
-                "オーイシマサヨシ"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
-            },
-            {
               "event_id": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
               "event_title": "Lemino presents ANIMAX MUSIX 2024 FALL",
               "event_date": "2024-11-23",
@@ -73424,35 +73533,10 @@
                 "va-0153"
               ],
               "event_url": "/zh-Hans/events/live-other-2024-05-06-title-7caa082310e6?session=live-other-2024-05-06-title-7caa082310e6-session-1"
-            },
-            {
-              "event_id": "live-numbered-5th-event-2024-03-22",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
-              "event_date": "2024-03-22",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2024-03-22-session-2",
-              "session_label": "DAY2",
-              "session_date": "2024-03-23",
-              "performance_index": 25,
-              "setlist_no": "25",
-              "character_ids": [
-                "manhattancafe",
-                "agnestachyon",
-                "dantsuflame",
-                "junglepocket"
-              ],
-              "voice_actor_ids": [
-                "va-0008",
-                "va-0058",
-                "va-0134",
-                "va-0153"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2"
             }
           ],
           "release_count": 0,
-          "performance_count": 9,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -73463,7 +73547,7 @@
       ],
       "version_count": 1,
       "release_count": 0,
-      "performance_count": 9,
+      "performance_count": 7,
       "original_version_id": "song-ready-steady-derby-7e8ed0ad57-v-7e8ed0ad57",
       "creator_ids": [],
       "has_lyrics": false
@@ -73559,8 +73643,18 @@
         "va-0175",
         "va-0176"
       ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
+      "performed_character_ids": [
+        "agnestachyon",
+        "dantsuflame",
+        "junglepocket",
+        "manhattancafe"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0008",
+        "va-0058",
+        "va-0134",
+        "va-0153"
+      ],
       "cover": "https://p2.music.126.net/3NaL-e9sz32F4v2zHOmgfw==/109951170973880546.jpg",
       "release_date": "2024-05-24",
       "versions": [
@@ -73646,9 +73740,56 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-6th-event-2025-10-18",
+              "event_title": "ウマ娘 6th EVENT「The New Frontier」—秋公演",
+              "event_date": "2025-10-18",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-6th-event-2025-10-18-session-1",
+              "session_label": "DAY1",
+              "session_date": "2025-10-18",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [
+                "dantsuflame",
+                "agnestachyon"
+              ],
+              "voice_actor_ids": [
+                "va-0008",
+                "va-0134"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
+            },
+            {
+              "event_id": "live-numbered-5th-event-2024-03-22",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
+              "event_date": "2024-03-22",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-03-22-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-03-23",
+              "performance_index": 25,
+              "setlist_no": "25",
+              "character_ids": [
+                "agnestachyon",
+                "manhattancafe",
+                "junglepocket",
+                "dantsuflame"
+              ],
+              "voice_actor_ids": [
+                "va-0008",
+                "va-0058",
+                "va-0134",
+                "va-0153"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -74715,7 +74856,7 @@
       ],
       "version_count": 14,
       "release_count": 14,
-      "performance_count": 0,
+      "performance_count": 2,
       "original_version_id": "song-ready-steady-derby-79449ccbdb-v-79449ccbdb",
       "creator_ids": [
         "creator-5b93eb96dd",
@@ -75087,8 +75228,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 11,
-              "setlist_no": "11",
+              "performance_index": 12,
+              "setlist_no": "12",
               "character_ids": [
                 "tokaiteio",
                 "symbolirudolf",
@@ -76842,8 +76983,7 @@
       "title": "Secret GRADUATION",
       "aliases": [
         "Secret GRADUATION",
-        "Secret GRADUATION (2021 Remastered Version)",
-        "Secret GRADUATION ※Long Intro Ver."
+        "Secret GRADUATION (2021 Remastered Version)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -76951,8 +77091,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 23,
-              "setlist_no": "23",
+              "performance_index": 20,
+              "setlist_no": "20",
               "character_ids": [
                 "grasswonder"
               ],
@@ -77016,11 +77156,7 @@
               "voice_actor_ids": [
                 "va-0035"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "Secret GRADUATION ※Long Intro Ver.",
-                "label": "Long Intro Ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             },
             {
               "event_id": "live-numbered-1st-event-2017-07-01",
@@ -77541,8 +77677,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 7,
-              "setlist_no": "7",
+              "performance_index": 8,
+              "setlist_no": "8",
               "character_ids": [
                 "symbolirudolf"
               ],
@@ -79140,8 +79276,7 @@
         "Silent Star",
         "Silent Star (2021 Remastered Version)",
         "Silent Star (TV Size)",
-        "Silent Star (TV Size) (2021 Remastered Version)",
-        "Silent Star ※Long Intro Ver."
+        "Silent Star (TV Size) (2021 Remastered Version)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -79314,11 +79449,7 @@
               "voice_actor_ids": [
                 "va-0184"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "Silent Star ※Long Intro Ver.",
-                "label": "Long Intro Ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             },
             {
               "event_id": "live-numbered-1st-event-2017-07-01",
@@ -80234,7 +80365,7 @@
         "Special Record! (Off Vocal) (2021 Remastered Version)",
         "Special Record! (TV Size)",
         "Special Record! (TV Size) (2021 Remastered Version)",
-        "Special Record! ※Long Intro Ver.",
+        "Special Record!(Ever After Ver.)",
         "Special Record！ (Game Size)（アドマイヤグルーヴ）"
       ],
       "legacy_ids": [],
@@ -80980,7 +81111,11 @@
                 "va-0127",
                 "va-0143"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
+              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1",
+              "performance_variant": {
+                "title": "Special Record!(Ever After Ver.)",
+                "label": "Ever After Ver."
+              }
             },
             {
               "event_id": "live-numbered-6th-event-2025-10-18",
@@ -81087,7 +81222,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 13,
+              "performance_index": 20,
               "setlist_no": "13",
               "character_ids": [
                 "tmoperao",
@@ -81145,8 +81280,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 21,
-              "setlist_no": "21",
+              "performance_index": 22,
+              "setlist_no": "22",
               "character_ids": [
                 "tokaiteio",
                 "naritabrian",
@@ -81211,8 +81346,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 18,
-              "setlist_no": "18",
+              "performance_index": 19,
+              "setlist_no": "19",
               "character_ids": [
                 "specialweek",
                 "silencesuzuka",
@@ -81365,11 +81500,7 @@
                 "va-0184",
                 "va-0185"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "Special Record! ※Long Intro Ver.",
-                "label": "Long Intro Ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             }
           ],
           "release_count": 4,
@@ -85980,7 +86111,8 @@
       "id": "song-sunrise-54bf3dc2c4",
       "title": "SUNRISE",
       "aliases": [
-        "SUNRISE"
+        "SUNRISE",
+        "SUNRISE（舞台剧中曲）"
       ],
       "legacy_ids": [],
       "artists": [],
@@ -86010,9 +86142,9 @@
       "release_date": "",
       "versions": [
         {
-          "id": "song-sunrise-54bf3dc2c4-v-54bf3dc2c4",
-          "title": "SUNRISE",
-          "version_label": "",
+          "id": "song-sunrise-54bf3dc2c4-v-4c284d1cf0",
+          "title": "SUNRISE（舞台剧中曲）",
+          "version_label": "舞台剧中曲",
           "artists": [],
           "releases": [],
           "performances": [
@@ -86025,8 +86157,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 10,
-              "setlist_no": "10",
+              "performance_index": 11,
+              "setlist_no": "11",
               "character_ids": [
                 "daitakuhelios",
                 "yamaninzephyr",
@@ -86058,7 +86190,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-29-1-29-13-00",
@@ -86079,7 +86215,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -86100,7 +86240,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-13-00",
@@ -86121,7 +86265,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-27-1-27-18-00",
@@ -86142,7 +86290,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -86163,7 +86315,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-13-00",
@@ -86184,7 +86340,11 @@
                 "va-0022",
                 "va-0065"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
             }
           ],
           "release_count": 0,
@@ -86200,7 +86360,7 @@
       "version_count": 1,
       "release_count": 0,
       "performance_count": 8,
-      "original_version_id": "song-sunrise-54bf3dc2c4-v-54bf3dc2c4",
+      "original_version_id": "song-sunrise-54bf3dc2c4-v-4c284d1cf0",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -86333,7 +86493,7 @@
       "title": "TAILWIND",
       "aliases": [
         "TAILWIND",
-        "TAILWIND ※運 or むん(MIX)"
+        "TAILWIND（運 or むん(MIX)）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -86420,7 +86580,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "TAILWIND ※運 or むん(MIX)",
+                "title": "TAILWIND（運 or むん(MIX)）",
                 "label": "運 or むん(MIX)"
               }
             },
@@ -86663,7 +86823,7 @@
       "title": "THE SUPER STRONG S",
       "aliases": [
         "THE SUPER STRONG S",
-        "THE SUPER STRONG S ※Do or Die(MIX)"
+        "THE SUPER STRONG S（Do or Die(MIX)）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -86754,7 +86914,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "THE SUPER STRONG S ※Do or Die(MIX)",
+                "title": "THE SUPER STRONG S（Do or Die(MIX)）",
                 "label": "Do or Die(MIX)"
               }
             },
@@ -86767,8 +86927,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 17,
-              "setlist_no": "17",
+              "performance_index": 18,
+              "setlist_no": "18",
               "character_ids": [
                 "symbolikriss"
               ],
@@ -91199,7 +91359,8 @@
         "UMA IN AMERICA (Game Size)（フォーエバーヤング）",
         "UMA IN AMERICA (Game Size)（マルシュロレーヌ）",
         "UMA IN AMERICA (Game Size)（ラヴズオンリーユー）",
-        "UMA IN AMERICA (Game Size)（レッドディザイア）"
+        "UMA IN AMERICA (Game Size)（レッドディザイア）",
+        "UMA IN TOKYO"
       ],
       "legacy_ids": [],
       "artists": [
@@ -91214,6 +91375,7 @@
       "character_ids": [
         "admiregroove",
         "agnesdigital",
+        "akasakamisato",
         "almondeye",
         "buenavista",
         "calstonelighto",
@@ -91229,6 +91391,7 @@
         "fenomeno",
         "finemotion",
         "foreveryoung",
+        "gentildonna",
         "goldship",
         "granalegria",
         "grasswonder",
@@ -91245,11 +91408,13 @@
         "naritatoproad",
         "reddesire",
         "rosekingdom",
+        "rulership",
         "seekingthepearl",
         "staygold",
         "symbolikriss",
         "taikishuttle",
         "tapdancecity",
+        "titleholder",
         "tosenjordan",
         "victoirepisa"
       ],
@@ -91272,19 +91437,23 @@
         "va-0071",
         "va-0074",
         "va-0080",
+        "va-0082",
         "va-0084",
         "va-0086",
         "va-0089",
         "va-0098",
         "va-0102",
         "va-0111",
+        "va-0112",
         "va-0124",
         "va-0126",
         "va-0127",
         "va-0132",
         "va-0135",
         "va-0140",
+        "va-0146",
         "va-0147",
+        "va-0149",
         "va-0153",
         "va-0154",
         "va-0159",
@@ -91329,6 +91498,7 @@
       ],
       "performed_character_ids": [
         "admiregroove",
+        "akasakamisato",
         "almondeye",
         "buenavista",
         "calstonelighto",
@@ -91342,6 +91512,7 @@
         "fenomeno",
         "finemotion",
         "foreveryoung",
+        "gentildonna",
         "goldship",
         "granalegria",
         "hishiamazon",
@@ -91357,9 +91528,11 @@
         "naritatoproad",
         "reddesire",
         "rosekingdom",
+        "rulership",
         "staygold",
         "taikishuttle",
         "tapdancecity",
+        "titleholder",
         "tosenjordan",
         "victoirepisa"
       ],
@@ -91380,17 +91553,21 @@
         "va-0071",
         "va-0074",
         "va-0080",
+        "va-0082",
         "va-0084",
         "va-0089",
         "va-0098",
         "va-0102",
         "va-0111",
+        "va-0112",
         "va-0124",
         "va-0126",
         "va-0127",
         "va-0135",
         "va-0140",
+        "va-0146",
         "va-0147",
+        "va-0149",
         "va-0153",
         "va-0154",
         "va-0159",
@@ -91706,30 +91883,34 @@
               "performance_index": 1,
               "setlist_no": "1",
               "character_ids": [
+                "meishodoto",
+                "buenavista",
+                "calstonelighto",
+                "almondeye",
+                "reddesire",
+                "foreveryoung",
+                "marchelorraine",
+                "epiphaneia",
+                "victoirepisa",
+                "akasakamisato",
                 "goldship",
                 "finemotion",
                 "eishinflash",
                 "tosenjordan",
                 "nakayamafesta",
-                "meishodoto",
                 "kitasanblack",
                 "naritatoproad",
                 "junglepocket",
                 "duramente",
-                "buenavista",
                 "admiregroove",
                 "dreamjourney",
-                "calstonelighto",
                 "fenomeno",
-                "almondeye",
                 "staygold",
-                "reddesire",
-                "foreveryoung",
-                "marchelorraine",
-                "epiphaneia",
                 "logotype",
-                "victoirepisa",
-                "rosekingdom"
+                "rosekingdom",
+                "rulership",
+                "gentildonna",
+                "titleholder"
               ],
               "voice_actor_ids": [
                 "va-0009",
@@ -91741,14 +91922,18 @@
                 "va-0041",
                 "va-0069",
                 "va-0080",
+                "va-0082",
                 "va-0089",
                 "va-0098",
                 "va-0102",
                 "va-0111",
+                "va-0112",
                 "va-0126",
                 "va-0127",
                 "va-0135",
+                "va-0146",
                 "va-0147",
+                "va-0149",
                 "va-0153",
                 "va-0154",
                 "va-0159",
@@ -91757,10 +91942,11 @@
                 "va-0170",
                 "va-0181"
               ],
-              "guest_performers": [
-                "海野水玉。"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-2"
+              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-2",
+              "performance_variant": {
+                "title": "UMA IN TOKYO",
+                "label": "UMA IN TOKYO"
+              }
             },
             {
               "event_id": "live-numbered-7th-event-2026-06-20",
@@ -96925,7 +97111,7 @@
         "UNLIMITED IMPACT (Game Size)（ワンダーアキュート）",
         "UNLIMITED IMPACT (Shinichi Osawa Remix)",
         "UNLIMITED IMPACT -夏の夕映え Ver-",
-        "UNLIMITED IMPACT ※Remix Ver."
+        "UNLIMITED IMPACT(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -97318,7 +97504,7 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 11,
+              "performance_index": 12,
               "setlist_no": "11",
               "character_ids": [
                 "oguricap",
@@ -97336,7 +97522,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
               "performance_variant": {
-                "title": "UNLIMITED IMPACT ※Remix Ver.",
+                "title": "UNLIMITED IMPACT(Remix Ver.)",
                 "label": "Remix Ver."
               }
             },
@@ -97349,8 +97535,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 15,
-              "setlist_no": "15",
+              "performance_index": 16,
+              "setlist_no": "16",
               "character_ids": [
                 "oguricap",
                 "hokkotarumae",
@@ -102760,7 +102946,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 14,
+              "performance_index": 21,
               "setlist_no": "14",
               "character_ids": [
                 "mihonobourbon",
@@ -102789,8 +102975,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 24,
-              "setlist_no": "24",
+              "performance_index": 21,
+              "setlist_no": "21",
               "character_ids": [
                 "oguricap",
                 "vodka",
@@ -102822,8 +103008,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 22,
-              "setlist_no": "22",
+              "performance_index": 23,
+              "setlist_no": "23",
               "character_ids": [
                 "tokaiteio",
                 "agnesdigital",
@@ -110182,7 +110368,7 @@
       "aliases": [
         "WINNING MELODY",
         "WINNING MELODY (2021 Remastered Version)",
-        "WINNING MELODY ※The Vivid Revision"
+        "WINNING MELODY（The Vivid Revision）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -110269,7 +110455,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "WINNING MELODY ※The Vivid Revision",
+                "title": "WINNING MELODY（The Vivid Revision）",
                 "label": "The Vivid Revision"
               }
             },
@@ -110466,10 +110652,11 @@
         "winning the soul (Off Vocal)",
         "winning the soul (PandaBoY Remix)",
         "winning the soul (TV Size)",
-        "winning the soul ※GO BEYOND Mix Ver.",
         "winning the soul ※Game size",
-        "winning the soul ※High-voltage Ver.",
-        "winning the soul ※Remix Ver."
+        "winning the soul ※Remix Ver.",
+        "winning the soul（GO BEYOND Mix Ver.）",
+        "winning the soul（High-voltage Ver.）",
+        "winning the soul（Remix Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -111110,7 +111297,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2",
               "performance_variant": {
-                "title": "winning the soul ※High-voltage Ver.",
+                "title": "winning the soul（High-voltage Ver.）",
                 "label": "High-voltage Ver."
               }
             },
@@ -111143,7 +111330,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "winning the soul ※High-voltage Ver.",
+                "title": "winning the soul（High-voltage Ver.）",
                 "label": "High-voltage Ver."
               }
             },
@@ -111197,7 +111384,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-1",
               "performance_variant": {
-                "title": "winning the soul ※GO BEYOND Mix Ver.",
+                "title": "winning the soul（GO BEYOND Mix Ver.）",
                 "label": "GO BEYOND Mix Ver."
               }
             },
@@ -111210,7 +111397,7 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 16,
+              "performance_index": 17,
               "setlist_no": "16",
               "character_ids": [
                 "tokaiteio",
@@ -111233,8 +111420,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 30,
-              "setlist_no": "30",
+              "performance_index": 28,
+              "setlist_no": "27",
               "character_ids": [
                 "tokaiteio",
                 "goldship",
@@ -111306,8 +111493,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 18,
-              "setlist_no": "18",
+              "performance_index": 19,
+              "setlist_no": "19",
               "character_ids": [
                 "tokaiteio",
                 "naritabrian",
@@ -111322,7 +111509,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1",
               "performance_variant": {
-                "title": "winning the soul ※GO BEYOND Mix Ver.",
+                "title": "winning the soul（GO BEYOND Mix Ver.）",
                 "label": "GO BEYOND Mix Ver."
               }
             },
@@ -111419,7 +111606,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-1",
               "performance_variant": {
-                "title": "winning the soul ※Remix Ver.",
+                "title": "winning the soul（Remix Ver.）",
                 "label": "Remix Ver."
               }
             },
@@ -116848,13 +117035,10 @@
         "うまぴょい伝説 (TV Size)",
         "うまぴょい伝説 (TV Size) (2021 Remastered Version)",
         "うまぴょい伝説 (TV Size) [13話EDテーマ]",
-        "うまぴょい伝説 ※-TEAM A-",
-        "うまぴょい伝説 ※-TEAM B-",
-        "うまぴょい伝説 ※-TEAM C-",
         "うまぴょい伝説 ※Game size",
         "うまぴょい伝説 ※Short ver.",
         "うまぴょい伝説 ※うまぴょいSummerとして披露",
-        "うまぴょい伝説 ※どんどこみっくす"
+        "うまぴょい伝説（どんどこみっくす）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -127590,79 +127774,6 @@
               "event_date": "2025-10-18",
               "kind": "concert",
               "series_id": "numbered-live",
-              "session_id": "live-numbered-6th-event-2025-10-18-session-2",
-              "session_label": "DAY2",
-              "session_date": "2025-10-19",
-              "performance_index": 28,
-              "setlist_no": "28",
-              "character_ids": [
-                "oguricap",
-                "mejiroryan",
-                "inesfujin",
-                "kawakamiprincess",
-                "goldcity",
-                "sweeptosho",
-                "supercreek",
-                "bikopegasus",
-                "satonodiamond",
-                "kitasanblack",
-                "yaenomuteki",
-                "transcend",
-                "chevalgrand",
-                "verxina",
-                "vivlos",
-                "hokkotarumae",
-                "wonderacute",
-                "rheinkraft",
-                "cesario",
-                "airmessiah",
-                "daringheart",
-                "fusaichipandora",
-                "admiregroove",
-                "buenavista",
-                "chronogenesis",
-                "staygold"
-              ],
-              "voice_actor_ids": [
-                "va-0025",
-                "va-0030",
-                "va-0032",
-                "va-0033",
-                "va-0041",
-                "va-0043",
-                "va-0046",
-                "va-0047",
-                "va-0056",
-                "va-0059",
-                "va-0072",
-                "va-0079",
-                "va-0093",
-                "va-0098",
-                "va-0100",
-                "va-0117",
-                "va-0124",
-                "va-0126",
-                "va-0138",
-                "va-0148",
-                "va-0166",
-                "va-0168",
-                "va-0174",
-                "va-0176",
-                "va-0179",
-                "va-0182"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-2",
-              "performance_variant": {
-                "title": "うまぴょい伝説 ※Game size",
-                "label": "Game size"
-              }
-            },
-            {
-              "event_id": "live-numbered-6th-event-2025-10-18",
-              "event_title": "ウマ娘 6th EVENT「The New Frontier」—秋公演",
-              "event_date": "2025-10-18",
-              "kind": "concert",
-              "series_id": "numbered-live",
               "session_id": "live-numbered-6th-event-2025-10-18-session-1",
               "session_label": "DAY1",
               "session_date": "2025-10-18",
@@ -129265,7 +129376,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 27,
+              "performance_index": 34,
               "setlist_no": "27",
               "character_ids": [
                 "specialweek",
@@ -129503,34 +129614,34 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 31,
-              "setlist_no": "31",
+              "performance_index": 29,
+              "setlist_no": "28",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
-                "goldship",
                 "grasswonder",
                 "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "akasakamisato",
+                "goldship",
                 "currenchan",
                 "goldcity",
                 "smartfalcon",
                 "tosenjordan",
                 "nakayamafesta",
                 "haruurara",
-                "nicenature",
-                "matikanetannhauser",
-                "ikunodictus",
                 "mejiropalmer",
                 "daitakuhelios",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "siriussymboli",
                 "satonocrown",
                 "neouniverse",
-                "tapdancecity",
-                "hayakawatazuna",
-                "akasakamisato"
+                "siriussymboli",
+                "hayakawatazuna"
               ],
               "voice_actor_ids": [
                 "va-0003",
@@ -129561,7 +129672,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
               "performance_variant": {
-                "title": "うまぴょい伝説 ※どんどこみっくす",
+                "title": "うまぴょい伝説（どんどこみっくす）",
                 "label": "どんどこみっくす"
               }
             },
@@ -129574,32 +129685,32 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 28,
-              "setlist_no": "28",
+              "performance_index": 25,
+              "setlist_no": "25",
               "character_ids": [
-                "specialweek",
                 "tokaiteio",
                 "oguricap",
-                "vodka",
-                "daiwascarlet",
                 "grasswonder",
                 "elcondorpasa",
-                "naritabrian",
-                "mayanotopgun",
-                "mihonobourbon",
-                "riceshower",
-                "inarione",
                 "nicenature",
-                "kinghalo",
                 "matikanetannhauser",
                 "ikunodictus",
                 "twinturbo",
                 "satonodiamond",
                 "kitasanblack",
-                "yaenomuteki",
-                "sakuralaurel",
                 "tapdancecity",
                 "akasakamisato",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "kinghalo",
+                "yaenomuteki",
+                "sakuralaurel",
                 "bochuzoku"
               ],
               "voice_actor_ids": [
@@ -129630,7 +129741,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
               "performance_variant": {
-                "title": "うまぴょい伝説 ※どんどこみっくす",
+                "title": "うまぴょい伝説（どんどこみっくす）",
                 "label": "どんどこみっくす"
               }
             },
@@ -129671,7 +129782,7 @@
               "session_label": "DAY2",
               "session_date": "2023-07-16",
               "performance_index": 25,
-              "setlist_no": "25",
+              "setlist_no": "26",
               "character_ids": [
                 "tokaiteio",
                 "daiwascarlet",
@@ -129736,8 +129847,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 27,
-              "setlist_no": "27",
+              "performance_index": 28,
+              "setlist_no": "28",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
@@ -130265,7 +130376,9 @@
                 "tsurumarutsuyoshi",
                 "naritatoproad",
                 "symbolikriss",
-                "taninogimlet"
+                "taninogimlet",
+                "akasakamisato",
+                "spica_trainer"
               ],
               "voice_actor_ids": [
                 "va-0001",
@@ -130282,8 +130395,10 @@
                 "va-0049",
                 "va-0065",
                 "va-0073",
+                "va-0082",
                 "va-0086",
                 "va-0096",
+                "va-0105",
                 "va-0113",
                 "va-0118",
                 "va-0119",
@@ -130419,7 +130534,9 @@
                 "daiichiruby",
                 "astonmachan",
                 "ksmiracle",
-                "copanorickey"
+                "copanorickey",
+                "anshinzawasasami",
+                "akasakamisato"
               ],
               "voice_actor_ids": [
                 "va-0001",
@@ -130427,6 +130544,7 @@
                 "va-0012",
                 "va-0014",
                 "va-0016",
+                "va-0017",
                 "va-0022",
                 "va-0026",
                 "va-0027",
@@ -130440,6 +130558,7 @@
                 "va-0052",
                 "va-0054",
                 "va-0079",
+                "va-0082",
                 "va-0085",
                 "va-0090",
                 "va-0125",
@@ -131406,8 +131525,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 20,
-              "setlist_no": "20",
+              "performance_index": 21,
+              "setlist_no": "21",
               "character_ids": [
                 "specialweek",
                 "silencesuzuka",
@@ -131983,94 +132102,48 @@
               "performance_index": 30,
               "setlist_no": "30",
               "character_ids": [
+                "specialweek",
+                "silencesuzuka",
+                "tokaiteio",
                 "maruzensky",
                 "fujikiseki",
                 "oguricap",
+                "goldship",
+                "vodka",
+                "daiwascarlet",
+                "taikishuttle",
                 "grasswonder",
+                "hishiamazon",
+                "mejiromcqueen",
+                "elcondorpasa",
+                "tmoperao",
+                "symbolirudolf",
+                "airgroove",
                 "seiunsky",
                 "haruurara"
               ],
               "voice_actor_ids": [
                 "va-0001",
-                "va-0035",
-                "va-0095",
-                "va-0175",
-                "va-0179",
-                "va-0185"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "うまぴょい伝説 ※-TEAM C-",
-                "label": "-TEAM C-"
-              }
-            },
-            {
-              "event_id": "live-numbered-2nd-event-2018-10-14",
-              "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
-              "event_date": "2018-10-14",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-2nd-event-2018-10-14-session-1",
-              "session_label": "DAY1",
-              "session_date": "2018-10-14",
-              "performance_index": 31,
-              "setlist_no": "31",
-              "character_ids": [
-                "taikishuttle",
-                "hishiamazon",
-                "elcondorpasa",
-                "tmoperao",
-                "symbolirudolf",
-                "airgroove"
-              ],
-              "voice_actor_ids": [
-                "va-0050",
-                "va-0071",
-                "va-0073",
-                "va-0118",
-                "va-0173",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "うまぴょい伝説 ※-TEAM B-",
-                "label": "-TEAM B-"
-              }
-            },
-            {
-              "event_id": "live-numbered-2nd-event-2018-10-14",
-              "event_title": "ウマ娘 2nd EVENT『Sound Fanfare!』",
-              "event_date": "2018-10-14",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-2nd-event-2018-10-14-session-1",
-              "session_label": "DAY1",
-              "session_date": "2018-10-14",
-              "performance_index": 32,
-              "setlist_no": "32",
-              "character_ids": [
-                "specialweek",
-                "silencesuzuka",
-                "tokaiteio",
-                "goldship",
-                "vodka",
-                "daiwascarlet",
-                "mejiromcqueen"
-              ],
-              "voice_actor_ids": [
                 "va-0003",
                 "va-0009",
+                "va-0035",
                 "va-0040",
+                "va-0050",
                 "va-0051",
                 "va-0053",
+                "va-0071",
+                "va-0073",
                 "va-0090",
-                "va-0184"
+                "va-0095",
+                "va-0118",
+                "va-0173",
+                "va-0175",
+                "va-0179",
+                "va-0180",
+                "va-0184",
+                "va-0185"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "うまぴょい伝説 ※-TEAM A-",
-                "label": "-TEAM A-"
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             },
             {
               "event_id": "live-other-2018-10-08-vol-21-climax-run-3-in",
@@ -132533,10 +132606,14 @@
                 "mejiromcqueen",
                 "elcondorpasa",
                 "airgroove",
-                "naritabrian"
+                "naritabrian",
+                "seiunsky",
+                "sakurabakushino",
+                "naritataishin"
               ],
               "voice_actor_ids": [
                 "va-0003",
+                "va-0007",
                 "va-0009",
                 "va-0035",
                 "va-0040",
@@ -132546,11 +132623,13 @@
                 "va-0071",
                 "va-0090",
                 "va-0095",
+                "va-0114",
                 "va-0123",
                 "va-0173",
                 "va-0179",
                 "va-0180",
-                "va-0184"
+                "va-0184",
+                "va-0185"
               ],
               "event_url": "/zh-Hans/events/live-numbered-1st-event-2017-07-01?session=live-numbered-1st-event-2017-07-01-session-1"
             },
@@ -132580,10 +132659,10 @@
                 "mejiromcqueen",
                 "elcondorpasa",
                 "airgroove",
+                "naritabrian",
                 "seiunsky",
                 "sakurabakushino",
-                "naritataishin",
-                "naritabrian"
+                "naritataishin"
               ],
               "voice_actor_ids": [
                 "va-0003",
@@ -133217,7 +133296,7 @@
             }
           ],
           "release_count": 49,
-          "performance_count": 162,
+          "performance_count": 159,
           "instrumental": false,
           "credits": [
             {
@@ -147779,7 +147858,7 @@
       ],
       "version_count": 24,
       "release_count": 125,
-      "performance_count": 162,
+      "performance_count": 159,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
         "creator-eaf94340d3",
@@ -149741,8 +149820,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 16,
-              "setlist_no": "16",
+              "performance_index": 17,
+              "setlist_no": "17",
               "character_ids": [
                 "riceshower"
               ],
@@ -153058,11 +153137,128 @@
       "has_lyrics": true
     },
     {
+      "id": "song-mix-975dcc6f86",
+      "title": "ばか☆マゲ↑MIX",
+      "aliases": [
+        "ばか☆マゲ↑MIX"
+      ],
+      "legacy_ids": [],
+      "artists": [],
+      "character_ids": [
+        "daitakuhelios",
+        "kitasanblack",
+        "matikanetannhauser",
+        "mejiropalmer",
+        "tapdancecity",
+        "yamaninzephyr"
+      ],
+      "voice_actor_ids": [
+        "va-0004",
+        "va-0022",
+        "va-0065",
+        "va-0126",
+        "va-0140",
+        "va-0161"
+      ],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [
+        "daitakuhelios",
+        "kitasanblack",
+        "matikanetannhauser",
+        "mejiropalmer",
+        "tapdancecity",
+        "yamaninzephyr"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0004",
+        "va-0022",
+        "va-0065",
+        "va-0126",
+        "va-0140",
+        "va-0161"
+      ],
+      "cover": "/album_covers/placeholder.webp",
+      "release_date": "",
+      "versions": [
+        {
+          "id": "song-mix-975dcc6f86-v-975dcc6f86",
+          "title": "ばか☆マゲ↑MIX",
+          "version_label": "",
+          "artists": [],
+          "releases": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 7,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2"
+            },
+            {
+              "event_id": "live-numbered-5th-event-2023-09-16",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+              "event_date": "2023-09-16",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
+              "session_label": "DAY2",
+              "session_date": "2023-09-17",
+              "performance_index": 11,
+              "setlist_no": "",
+              "character_ids": [
+                "matikanetannhauser",
+                "mejiropalmer",
+                "daitakuhelios",
+                "kitasanblack",
+                "tapdancecity"
+              ],
+              "voice_actor_ids": [
+                "va-0004",
+                "va-0065",
+                "va-0126",
+                "va-0140",
+                "va-0161"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2"
+            }
+          ],
+          "release_count": 0,
+          "performance_count": 2,
+          "instrumental": false,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 0,
+      "performance_count": 2,
+      "original_version_id": "song-mix-975dcc6f86-v-975dcc6f86",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
       "id": "song-a470359a05",
       "title": "ぱかチューブっ！ですが、何か？",
       "aliases": [
-        "ぱかチューブっ！ですが、何か？",
-        "ぱかチューブっ！ですが、何か？ ※Short Intro Ver."
+        "ぱかチューブっ！ですが、何か？"
       ],
       "legacy_ids": [],
       "artists": [
@@ -153070,11 +153266,13 @@
       ],
       "character_ids": [
         "goldship",
+        "spica_trainer",
         "tokaiteio"
       ],
       "voice_actor_ids": [
         "va-0003",
-        "va-0009"
+        "va-0009",
+        "va-0105"
       ],
       "released_character_ids": [
         "goldship"
@@ -153084,11 +153282,13 @@
       ],
       "performed_character_ids": [
         "goldship",
+        "spica_trainer",
         "tokaiteio"
       ],
       "performed_voice_actor_ids": [
         "va-0003",
-        "va-0009"
+        "va-0009",
+        "va-0105"
       ],
       "cover": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
       "release_date": "2022-04-27",
@@ -153154,6 +153354,29 @@
               "event_url": "/zh-Hans/events/live-cd-2022-07-17-winning-live-05-winning-live-06?session=live-cd-2022-07-17-winning-live-05-winning-live-06-session-1"
             },
             {
+              "event_id": "live-numbered-3rd-event-2021-08-28",
+              "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
+              "event_date": "2021-08-28",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
+              "session_label": "DAY2",
+              "session_date": "2021-08-29",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [
+                "goldship",
+                "tokaiteio",
+                "spica_trainer"
+              ],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0009",
+                "va-0105"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
               "event_date": "2019-04-14",
@@ -153193,15 +153416,11 @@
                 "va-0003",
                 "va-0009"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "ぱかチューブっ！ですが、何か？ ※Short Intro Ver.",
-                "label": "Short Intro Ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -153248,7 +153467,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-a470359a05-v-a470359a05",
       "creator_ids": [
         "creator-14a2ce8737",
@@ -153263,16 +153482,21 @@
       "id": "song-f6a7a99d5c",
       "title": "ひたむきマイノート",
       "aliases": [
-        "ひたむきマイノート"
+        "ひたむきマイノート",
+        "ひたむきマイノート(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
         "野口瑠璃子"
       ],
       "character_ids": [
-        "sakurachiyonoo"
+        "daitakuhelios",
+        "sakurachiyonoo",
+        "yamaninzephyr"
       ],
       "voice_actor_ids": [
+        "va-0022",
+        "va-0065",
         "va-0162"
       ],
       "released_character_ids": [
@@ -153282,9 +153506,13 @@
         "va-0162"
       ],
       "performed_character_ids": [
-        "sakurachiyonoo"
+        "daitakuhelios",
+        "sakurachiyonoo",
+        "yamaninzephyr"
       ],
       "performed_voice_actor_ids": [
+        "va-0022",
+        "va-0065",
         "va-0162"
       ],
       "cover": "https://p2.music.126.net/Xq0-ZspY3r_7nA2fM-4sQA==/109951170973794250.jpg",
@@ -153332,6 +153560,31 @@
           ],
           "performances": [
             {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 12,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
+              "performance_variant": {
+                "title": "ひたむきマイノート(Remix Ver.)",
+                "label": "Remix Ver."
+              }
+            },
+            {
               "event_id": "live-cd-2022-05-22-cd-winning-live-04",
               "event_title": "ウマ娘 プリティーダービー CD WINNING LIVE 04 発売記念配信イベント",
               "event_date": "2022-05-22",
@@ -153371,7 +153624,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -153404,7 +153657,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-f6a7a99d5c-v-f6a7a99d5c",
       "creator_ids": [
         "creator-290b52c636",
@@ -153792,8 +154045,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 10,
-              "setlist_no": "10",
+              "performance_index": 11,
+              "setlist_no": "11",
               "character_ids": [
                 "specialweek",
                 "kinghalo",
@@ -160046,7 +160299,7 @@
       "aliases": [
         "わたしの印は大本命◎",
         "わたしの印は大本命◎ (2021 Remastered Version)",
-        "わたしの印は大本命◎ ※Marching Band Ver."
+        "わたしの印は大本命◎（Marching Band Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -160133,7 +160386,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-1",
               "performance_variant": {
-                "title": "わたしの印は大本命◎ ※Marching Band Ver.",
+                "title": "わたしの印は大本命◎（Marching Band Ver.）",
                 "label": "Marching Band Ver."
               }
             },
@@ -160660,7 +160913,7 @@
       "aliases": [
         "アウト・オブ・トライアングル",
         "アウト・オブ・トライアングル (2021 Remastered Version)",
-        "アウト・オブ・トライアングル ※Remix Ver."
+        "アウト・オブ・トライアングル(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -160753,7 +161006,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 9,
+              "performance_index": 16,
               "setlist_no": "9",
               "character_ids": [
                 "nicenature",
@@ -160771,7 +161024,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
               "performance_variant": {
-                "title": "アウト・オブ・トライアングル ※Remix Ver.",
+                "title": "アウト・オブ・トライアングル(Remix Ver.)",
                 "label": "Remix Ver."
               }
             },
@@ -160803,8 +161056,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 8,
-              "setlist_no": "8",
+              "performance_index": 9,
+              "setlist_no": "9",
               "character_ids": [
                 "nicenature"
               ],
@@ -162102,7 +162355,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 25,
+              "performance_index": 32,
               "setlist_no": "25",
               "character_ids": [
                 "specialweek",
@@ -163528,7 +163781,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 22,
+              "performance_index": 29,
               "setlist_no": "22",
               "character_ids": [
                 "tmoperao",
@@ -169121,7 +169374,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 23,
+              "performance_index": 30,
               "setlist_no": "23",
               "character_ids": [
                 "specialweek",
@@ -169365,8 +169618,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 9,
-              "setlist_no": "9",
+              "performance_index": 10,
+              "setlist_no": "10",
               "character_ids": [
                 "daiwascarlet",
                 "biwahayahide",
@@ -170681,7 +170934,7 @@
       "title": "ゴルシでラップ -It's むりむり-",
       "aliases": [
         "ゴルシでラップ -It's むりむり-",
-        "ゴルシでラップ -It's むりむり- ※Remix Ver."
+        "ゴルシでラップ -It's むりむり-（Remix Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -170780,7 +171033,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-2",
               "performance_variant": {
-                "title": "ゴルシでラップ -It's むりむり- ※Remix Ver.",
+                "title": "ゴルシでラップ -It's むりむり-（Remix Ver.）",
                 "label": "Remix Ver."
               }
             }
@@ -171375,8 +171628,7 @@
       "title": "シャドーロールの誓い",
       "aliases": [
         "シャドーロールの誓い",
-        "シャドーロールの誓い (2021 Remastered Version)",
-        "シャドーロールの誓い ※The Solid Revision"
+        "シャドーロールの誓い (2021 Remastered Version)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -171494,11 +171746,7 @@
               "voice_actor_ids": [
                 "va-0155"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2",
-              "performance_variant": {
-                "title": "シャドーロールの誓い ※The Solid Revision",
-                "label": "The Solid Revision"
-              }
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2"
             },
             {
               "event_id": "live-numbered-1st-event-2017-07-01",
@@ -172593,7 +172841,7 @@
         "ソシテミンナノ (Off Vocal)",
         "ソシテミンナノ (TV Size)",
         "ソシテミンナノ (TV Size) [13話Ver.]",
-        "ソシテミンナノ ※Breaking The Limit Ver."
+        "ソシテミンナノ（Breaking The Limit Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -173050,7 +173298,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-2",
               "performance_variant": {
-                "title": "ソシテミンナノ ※Breaking The Limit Ver.",
+                "title": "ソシテミンナノ（Breaking The Limit Ver.）",
                 "label": "Breaking The Limit Ver."
               }
             },
@@ -173079,7 +173327,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-03-22?session=live-numbered-5th-event-2024-03-22-session-1",
               "performance_variant": {
-                "title": "ソシテミンナノ ※Breaking The Limit Ver.",
+                "title": "ソシテミンナノ（Breaking The Limit Ver.）",
                 "label": "Breaking The Limit Ver."
               }
             },
@@ -173152,7 +173400,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 20,
+              "performance_index": 27,
               "setlist_no": "20",
               "character_ids": [
                 "goldship",
@@ -179825,7 +180073,7 @@
         "トレセン音頭 -下剋上 Ver-",
         "トレセン音頭 -雅 Ver-",
         "トレセン音頭 ※Long ver.",
-        "トレセン音頭 ※どんどこみっくす"
+        "トレセン音頭（どんどこみっくす）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -179888,9 +180136,11 @@
         "admirevega",
         "agnestachyon",
         "airmessiah",
+        "akasakamisato",
         "astonmachan",
         "bamboomemory",
         "bikopegasus",
+        "bochuzoku",
         "calstonelighto",
         "cesario",
         "chevalgrand",
@@ -179907,6 +180157,7 @@
         "goldship",
         "grasswonder",
         "haruurara",
+        "hayakawatazuna",
         "hishiakebono",
         "hishimiracle",
         "hokkotarumae",
@@ -180013,6 +180264,7 @@
         "va-0073",
         "va-0078",
         "va-0079",
+        "va-0082",
         "va-0085",
         "va-0086",
         "va-0087",
@@ -180021,6 +180273,7 @@
         "va-0096",
         "va-0097",
         "va-0100",
+        "va-0103",
         "va-0107",
         "va-0108",
         "va-0113",
@@ -180042,6 +180295,7 @@
         "va-0145",
         "va-0148",
         "va-0150",
+        "va-0151",
         "va-0152",
         "va-0153",
         "va-0155",
@@ -180166,8 +180420,10 @@
         "admirevega",
         "agnestachyon",
         "airmessiah",
+        "akasakamisato",
         "astonmachan",
         "bikopegasus",
+        "bochuzoku",
         "calstonelighto",
         "cesario",
         "chevalgrand",
@@ -180184,6 +180440,7 @@
         "goldship",
         "grasswonder",
         "haruurara",
+        "hayakawatazuna",
         "hishimiracle",
         "hokkotarumae",
         "ikunodictus",
@@ -180215,6 +180472,7 @@
         "satonocrown",
         "satonodiamond",
         "silencesuzuka",
+        "siriussymboli",
         "smartfalcon",
         "soundsofearth",
         "specialweek",
@@ -180240,6 +180498,7 @@
         "va-0002",
         "va-0003",
         "va-0004",
+        "va-0005",
         "va-0008",
         "va-0009",
         "va-0010",
@@ -180270,6 +180529,7 @@
         "va-0073",
         "va-0078",
         "va-0079",
+        "va-0082",
         "va-0085",
         "va-0086",
         "va-0087",
@@ -180277,6 +180537,7 @@
         "va-0090",
         "va-0096",
         "va-0100",
+        "va-0103",
         "va-0108",
         "va-0113",
         "va-0117",
@@ -180295,6 +180556,7 @@
         "va-0140",
         "va-0145",
         "va-0148",
+        "va-0151",
         "va-0152",
         "va-0153",
         "va-0155",
@@ -180704,7 +180966,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 26,
+              "performance_index": 33,
               "setlist_no": "26",
               "character_ids": [
                 "specialweek",
@@ -180908,41 +181170,46 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 17,
+              "performance_index": 18,
               "setlist_no": "17",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
-                "goldship",
                 "grasswonder",
                 "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "akasakamisato",
+                "goldship",
                 "currenchan",
                 "goldcity",
                 "smartfalcon",
                 "tosenjordan",
                 "nakayamafesta",
                 "haruurara",
-                "nicenature",
-                "matikanetannhauser",
-                "ikunodictus",
                 "mejiropalmer",
                 "daitakuhelios",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
                 "satonocrown",
                 "neouniverse",
-                "tapdancecity"
+                "siriussymboli",
+                "hayakawatazuna"
               ],
               "voice_actor_ids": [
                 "va-0003",
                 "va-0004",
+                "va-0005",
                 "va-0009",
                 "va-0010",
                 "va-0034",
                 "va-0035",
                 "va-0049",
                 "va-0065",
+                "va-0082",
                 "va-0119",
                 "va-0121",
                 "va-0126",
@@ -180950,6 +181217,7 @@
                 "va-0139",
                 "va-0140",
                 "va-0145",
+                "va-0151",
                 "va-0161",
                 "va-0164",
                 "va-0167",
@@ -180960,202 +181228,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
               "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
-                "label": "どんどこみっくす"
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
-              "session_label": "DAY2",
-              "session_date": "2023-09-17",
-              "performance_index": 18,
-              "setlist_no": "18",
-              "character_ids": [
-                "tokaiteio",
-                "oguricap",
-                "goldship",
-                "grasswonder",
-                "elcondorpasa",
-                "currenchan",
-                "goldcity",
-                "smartfalcon",
-                "tosenjordan",
-                "nakayamafesta",
-                "haruurara",
-                "nicenature",
-                "matikanetannhauser",
-                "ikunodictus",
-                "mejiropalmer",
-                "daitakuhelios",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "satonocrown",
-                "neouniverse",
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0004",
-                "va-0009",
-                "va-0010",
-                "va-0034",
-                "va-0035",
-                "va-0049",
-                "va-0065",
-                "va-0119",
-                "va-0121",
-                "va-0126",
-                "va-0138",
-                "va-0139",
-                "va-0140",
-                "va-0145",
-                "va-0161",
-                "va-0164",
-                "va-0167",
-                "va-0175",
-                "va-0176",
-                "va-0179",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
-              "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
-                "label": "どんどこみっくす"
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
-              "session_label": "DAY2",
-              "session_date": "2023-09-17",
-              "performance_index": 19,
-              "setlist_no": "19",
-              "character_ids": [
-                "tokaiteio",
-                "oguricap",
-                "goldship",
-                "grasswonder",
-                "elcondorpasa",
-                "currenchan",
-                "goldcity",
-                "smartfalcon",
-                "tosenjordan",
-                "nakayamafesta",
-                "haruurara",
-                "nicenature",
-                "matikanetannhauser",
-                "ikunodictus",
-                "mejiropalmer",
-                "daitakuhelios",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "satonocrown",
-                "neouniverse",
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0004",
-                "va-0009",
-                "va-0010",
-                "va-0034",
-                "va-0035",
-                "va-0049",
-                "va-0065",
-                "va-0119",
-                "va-0121",
-                "va-0126",
-                "va-0138",
-                "va-0139",
-                "va-0140",
-                "va-0145",
-                "va-0161",
-                "va-0164",
-                "va-0167",
-                "va-0175",
-                "va-0176",
-                "va-0179",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
-              "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
-                "label": "どんどこみっくす"
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
-              "session_label": "DAY2",
-              "session_date": "2023-09-17",
-              "performance_index": 20,
-              "setlist_no": "20",
-              "character_ids": [
-                "tokaiteio",
-                "oguricap",
-                "goldship",
-                "grasswonder",
-                "elcondorpasa",
-                "currenchan",
-                "goldcity",
-                "smartfalcon",
-                "tosenjordan",
-                "nakayamafesta",
-                "haruurara",
-                "nicenature",
-                "matikanetannhauser",
-                "ikunodictus",
-                "mejiropalmer",
-                "daitakuhelios",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "satonocrown",
-                "neouniverse",
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0004",
-                "va-0009",
-                "va-0010",
-                "va-0034",
-                "va-0035",
-                "va-0049",
-                "va-0065",
-                "va-0119",
-                "va-0121",
-                "va-0126",
-                "va-0138",
-                "va-0139",
-                "va-0140",
-                "va-0145",
-                "va-0161",
-                "va-0164",
-                "va-0167",
-                "va-0175",
-                "va-0176",
-                "va-0179",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
-              "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
+                "title": "トレセン音頭（どんどこみっくす）",
                 "label": "どんどこみっくす"
               }
             },
@@ -181171,28 +181244,30 @@
               "performance_index": 15,
               "setlist_no": "15",
               "character_ids": [
-                "specialweek",
                 "tokaiteio",
                 "oguricap",
-                "vodka",
-                "daiwascarlet",
                 "grasswonder",
                 "elcondorpasa",
-                "naritabrian",
-                "mayanotopgun",
-                "mihonobourbon",
-                "riceshower",
-                "inarione",
                 "nicenature",
-                "kinghalo",
                 "matikanetannhauser",
                 "ikunodictus",
                 "twinturbo",
                 "satonodiamond",
                 "kitasanblack",
+                "tapdancecity",
+                "akasakamisato",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "kinghalo",
                 "yaenomuteki",
                 "sakuralaurel",
-                "tapdancecity"
+                "bochuzoku"
               ],
               "voice_actor_ids": [
                 "va-0003",
@@ -181203,8 +181278,10 @@
                 "va-0040",
                 "va-0051",
                 "va-0079",
+                "va-0082",
                 "va-0085",
                 "va-0090",
+                "va-0103",
                 "va-0119",
                 "va-0125",
                 "va-0126",
@@ -181220,208 +181297,13 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
               "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
-                "label": "どんどこみっくす"
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-1",
-              "session_label": "DAY1",
-              "session_date": "2023-09-16",
-              "performance_index": 16,
-              "setlist_no": "16",
-              "character_ids": [
-                "specialweek",
-                "tokaiteio",
-                "oguricap",
-                "vodka",
-                "daiwascarlet",
-                "grasswonder",
-                "elcondorpasa",
-                "naritabrian",
-                "mayanotopgun",
-                "mihonobourbon",
-                "riceshower",
-                "inarione",
-                "nicenature",
-                "kinghalo",
-                "matikanetannhauser",
-                "ikunodictus",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "yaenomuteki",
-                "sakuralaurel",
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0018",
-                "va-0027",
-                "va-0034",
-                "va-0035",
-                "va-0040",
-                "va-0051",
-                "va-0079",
-                "va-0085",
-                "va-0090",
-                "va-0119",
-                "va-0125",
-                "va-0126",
-                "va-0129",
-                "va-0138",
-                "va-0140",
-                "va-0145",
-                "va-0155",
-                "va-0161",
-                "va-0169",
-                "va-0179",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
-              "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
-                "label": "どんどこみっくす"
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-1",
-              "session_label": "DAY1",
-              "session_date": "2023-09-16",
-              "performance_index": 17,
-              "setlist_no": "17",
-              "character_ids": [
-                "specialweek",
-                "tokaiteio",
-                "oguricap",
-                "vodka",
-                "daiwascarlet",
-                "grasswonder",
-                "elcondorpasa",
-                "naritabrian",
-                "mayanotopgun",
-                "mihonobourbon",
-                "riceshower",
-                "inarione",
-                "nicenature",
-                "kinghalo",
-                "matikanetannhauser",
-                "ikunodictus",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "yaenomuteki",
-                "sakuralaurel",
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0018",
-                "va-0027",
-                "va-0034",
-                "va-0035",
-                "va-0040",
-                "va-0051",
-                "va-0079",
-                "va-0085",
-                "va-0090",
-                "va-0119",
-                "va-0125",
-                "va-0126",
-                "va-0129",
-                "va-0138",
-                "va-0140",
-                "va-0145",
-                "va-0155",
-                "va-0161",
-                "va-0169",
-                "va-0179",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
-              "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
-                "label": "どんどこみっくす"
-              }
-            },
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-1",
-              "session_label": "DAY1",
-              "session_date": "2023-09-16",
-              "performance_index": 18,
-              "setlist_no": "18",
-              "character_ids": [
-                "specialweek",
-                "tokaiteio",
-                "oguricap",
-                "vodka",
-                "daiwascarlet",
-                "grasswonder",
-                "elcondorpasa",
-                "naritabrian",
-                "mayanotopgun",
-                "mihonobourbon",
-                "riceshower",
-                "inarione",
-                "nicenature",
-                "kinghalo",
-                "matikanetannhauser",
-                "ikunodictus",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
-                "yaenomuteki",
-                "sakuralaurel",
-                "tapdancecity"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0018",
-                "va-0027",
-                "va-0034",
-                "va-0035",
-                "va-0040",
-                "va-0051",
-                "va-0079",
-                "va-0085",
-                "va-0090",
-                "va-0119",
-                "va-0125",
-                "va-0126",
-                "va-0129",
-                "va-0138",
-                "va-0140",
-                "va-0145",
-                "va-0155",
-                "va-0161",
-                "va-0169",
-                "va-0179",
-                "va-0180"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
-              "performance_variant": {
-                "title": "トレセン音頭 ※どんどこみっくす",
+                "title": "トレセン音頭（どんどこみっくす）",
                 "label": "どんどこみっくす"
               }
             }
           ],
           "release_count": 1,
-          "performance_count": 15,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -185794,7 +185676,7 @@
       ],
       "version_count": 55,
       "release_count": 55,
-      "performance_count": 15,
+      "performance_count": 9,
       "original_version_id": "song-29e836f0da-v-29e836f0da",
       "creator_ids": [
         "creator-0a12f443ae",
@@ -191372,17 +191254,22 @@
       "id": "song-2ef859c836",
       "title": "マーベラスサンデータイム☆★",
       "aliases": [
-        "マーベラスサンデータイム☆★"
+        "マーベラスサンデータイム☆★",
+        "マーベラスサンデータイム☆★(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
         "三宅麻理恵"
       ],
       "character_ids": [
-        "marveloussunday"
+        "daitakuhelios",
+        "marveloussunday",
+        "yamaninzephyr"
       ],
       "voice_actor_ids": [
-        "va-0006"
+        "va-0006",
+        "va-0022",
+        "va-0065"
       ],
       "released_character_ids": [
         "marveloussunday"
@@ -191391,10 +191278,14 @@
         "va-0006"
       ],
       "performed_character_ids": [
-        "marveloussunday"
+        "daitakuhelios",
+        "marveloussunday",
+        "yamaninzephyr"
       ],
       "performed_voice_actor_ids": [
-        "va-0006"
+        "va-0006",
+        "va-0022",
+        "va-0065"
       ],
       "cover": "https://p1.music.126.net/5SYwvzdrQ4xrhfvEQgssgQ==/109951170973786852.jpg",
       "release_date": "2022-08-17",
@@ -191441,6 +191332,31 @@
           ],
           "performances": [
             {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 10,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
+              "performance_variant": {
+                "title": "マーベラスサンデータイム☆★(Remix Ver.)",
+                "label": "Remix Ver."
+              }
+            },
+            {
               "event_id": "live-cd-2022-09-25-winning-live-07",
               "event_title": "『ウマ娘 プリティーダービー』WINNING LIVE 07 発売記念 配信イベント",
               "event_date": "2022-09-25",
@@ -191461,7 +191377,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 1,
+          "performance_count": 2,
           "instrumental": false,
           "credits": [
             {
@@ -191494,7 +191410,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 1,
+      "performance_count": 2,
       "original_version_id": "song-2ef859c836-v-2ef859c836",
       "creator_ids": [
         "creator-29c23c234c",
@@ -191633,7 +191549,7 @@
         "ミッドナイト・エピローグ",
         "ミッドナイト・エピローグ (Anime Size)",
         "ミッドナイト・エピローグ (Off Vocal)",
-        "ミッドナイト・エピローグ ※Remix Ver."
+        "ミッドナイト・エピローグ(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -191891,7 +191807,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 7,
+              "performance_index": 14,
               "setlist_no": "7",
               "character_ids": [
                 "daitakuhelios",
@@ -191913,7 +191829,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
               "performance_variant": {
-                "title": "ミッドナイト・エピローグ ※Remix Ver.",
+                "title": "ミッドナイト・エピローグ(Remix Ver.)",
                 "label": "Remix Ver."
               }
             },
@@ -192493,27 +192409,32 @@
       "id": "song-61ea3bc114",
       "title": "メジロ讃歌",
       "aliases": [
-        "メジロ讃歌"
+        "メジロ讃歌",
+        "メジロ讃歌(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
         "大西沙織、土師亜文、久保田ひかり、のぐちゆり、会沢紗弥、大西綺華"
       ],
       "character_ids": [
+        "daitakuhelios",
         "mejiroardan",
         "mejirobright",
         "mejirodober",
         "mejiromcqueen",
         "mejiropalmer",
-        "mejiroryan"
+        "mejiroryan",
+        "yamaninzephyr"
       ],
       "voice_actor_ids": [
         "va-0004",
         "va-0014",
+        "va-0022",
         "va-0026",
         "va-0043",
         "va-0053",
-        "va-0054"
+        "va-0054",
+        "va-0065"
       ],
       "released_character_ids": [
         "mejiroardan",
@@ -192532,18 +192453,22 @@
         "va-0054"
       ],
       "performed_character_ids": [
+        "daitakuhelios",
         "mejiroardan",
         "mejirobright",
         "mejirodober",
         "mejiropalmer",
-        "mejiroryan"
+        "mejiroryan",
+        "yamaninzephyr"
       ],
       "performed_voice_actor_ids": [
         "va-0004",
         "va-0014",
+        "va-0022",
         "va-0026",
         "va-0043",
-        "va-0054"
+        "va-0054",
+        "va-0065"
       ],
       "cover": "https://p1.music.126.net/5SYwvzdrQ4xrhfvEQgssgQ==/109951170973786852.jpg",
       "release_date": "2022-08-17",
@@ -192710,6 +192635,31 @@
               "event_url": "/zh-Hans/events/live-twinkle-2024-11-16-twinkle-circle-day1?session=live-twinkle-2024-11-16-twinkle-circle-day1-session-1"
             },
             {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 13,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
+              "performance_variant": {
+                "title": "メジロ讃歌(Remix Ver.)",
+                "label": "Remix Ver."
+              }
+            },
+            {
               "event_id": "live-numbered-4th-event-extra-2022-11-05",
               "event_title": "ウマ娘 4th EVENT「SPECIAL DREAMERS!!」-EXTRA STAGE",
               "event_date": "2022-11-05",
@@ -192735,7 +192685,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -192768,7 +192718,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-61ea3bc114-v-61ea3bc114",
       "creator_ids": [
         "creator-70bf07a860",
@@ -193339,7 +193289,7 @@
         "ユメヲカケル！ (Takeshi Nakatsuka Remix)",
         "ユメヲカケル！ -トレセン学園応援団 Ver-",
         "ユメヲカケル！ ※Short ver.",
-        "ユメヲカケル！ ※Symphonic Ver.",
+        "ユメヲカケル！（Symphonic Ver.）",
         "ユメヲカケル！（ウオッカ）",
         "ユメヲカケル！（ゴールドシップ）",
         "ユメヲカケル！（サイレンススズカ）",
@@ -193900,7 +193850,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 16,
+              "performance_index": 23,
               "setlist_no": "16",
               "character_ids": [
                 "tokaiteio",
@@ -193925,8 +193875,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 26,
-              "setlist_no": "26",
+              "performance_index": 24,
+              "setlist_no": "23",
               "character_ids": [
                 "tokaiteio",
                 "nicenature",
@@ -193947,7 +193897,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
               "performance_variant": {
-                "title": "ユメヲカケル！ ※Symphonic Ver.",
+                "title": "ユメヲカケル！（Symphonic Ver.）",
                 "label": "Symphonic Ver."
               }
             },
@@ -194015,7 +193965,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-2",
               "performance_variant": {
-                "title": "ユメヲカケル！ ※Symphonic Ver.",
+                "title": "ユメヲカケル！（Symphonic Ver.）",
                 "label": "Symphonic Ver."
               }
             },
@@ -194028,8 +193978,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 23,
-              "setlist_no": "23",
+              "performance_index": 24,
+              "setlist_no": "24",
               "character_ids": [
                 "mrcb",
                 "mejiropalmer",
@@ -196305,16 +196255,21 @@
       "id": "song-88c09416fe",
       "title": "ラキハピファンタスティック",
       "aliases": [
-        "ラキハピファンタスティック"
+        "ラキハピファンタスティック",
+        "ラキハピファンタスティック(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
         "稲垣好"
       ],
       "character_ids": [
-        "copanorickey"
+        "copanorickey",
+        "daitakuhelios",
+        "yamaninzephyr"
       ],
       "voice_actor_ids": [
+        "va-0022",
+        "va-0065",
         "va-0137"
       ],
       "released_character_ids": [
@@ -196324,9 +196279,13 @@
         "va-0137"
       ],
       "performed_character_ids": [
-        "copanorickey"
+        "copanorickey",
+        "daitakuhelios",
+        "yamaninzephyr"
       ],
       "performed_voice_actor_ids": [
+        "va-0022",
+        "va-0065",
         "va-0137"
       ],
       "cover": "https://p1.music.126.net/3g-MUjUaUVPXNc3Nazplcg==/109951170973792144.jpg",
@@ -196374,6 +196333,31 @@
           ],
           "performances": [
             {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 11,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
+              "performance_variant": {
+                "title": "ラキハピファンタスティック(Remix Ver.)",
+                "label": "Remix Ver."
+              }
+            },
+            {
               "event_id": "live-numbered-5th-event-2023-07-15",
               "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -WISH-",
               "event_date": "2023-07-15",
@@ -196413,7 +196397,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -196453,7 +196437,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-88c09416fe-v-88c09416fe",
       "creator_ids": [
         "creator-229e0a2630",
@@ -210733,7 +210717,8 @@
       "id": "song-0ec3138e2c",
       "title": "奇跡",
       "aliases": [
-        "奇跡"
+        "奇跡",
+        "奇跡（舞台剧中曲）"
       ],
       "legacy_ids": [],
       "artists": [],
@@ -210756,8 +210741,8 @@
       "versions": [
         {
           "id": "song-0ec3138e2c-v-0ec3138e2c",
-          "title": "奇跡",
-          "version_label": "",
+          "title": "奇跡（舞台剧中曲）",
+          "version_label": "舞台剧中曲",
           "artists": [],
           "releases": [],
           "performances": [
@@ -210770,8 +210755,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 11,
-              "setlist_no": "11",
+              "performance_index": 12,
+              "setlist_no": "12",
               "character_ids": [
                 "ksmiracle"
               ],
@@ -210797,7 +210782,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-29-1-29-13-00",
@@ -210816,7 +210805,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -210835,7 +210828,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-28-1-28-13-00",
@@ -210854,7 +210851,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-27-1-27-18-00",
@@ -210873,7 +210874,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -210892,7 +210897,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             },
             {
               "event_id": "live-other-2023-01-15-1-15-13-00",
@@ -210911,7 +210920,11 @@
               "voice_actor_ids": [
                 "va-0029"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
             }
           ],
           "release_count": 0,
@@ -213628,7 +213641,7 @@
         "帝笑歌劇～讃えよ永久に～",
         "帝笑歌劇～讃えよ永久に～ (2021 Remastered Version)",
         "帝笑歌劇～讃えよ永久に～ (yasushi Remix)",
-        "帝笑歌劇～讃えよ永久に～ ※Remix Ver."
+        "帝笑歌劇～讃えよ永久に～(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -213760,7 +213773,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 10,
+              "performance_index": 17,
               "setlist_no": "10",
               "character_ids": [
                 "tmoperao",
@@ -213780,7 +213793,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
               "performance_variant": {
-                "title": "帝笑歌劇～讃えよ永久に～ ※Remix Ver.",
+                "title": "帝笑歌劇～讃えよ永久に～(Remix Ver.)",
                 "label": "Remix Ver."
               }
             },
@@ -217511,26 +217524,17 @@
         "恋はダービー☆ (2021 Remastered Version)",
         "恋はダービー☆ (DÉ DÉ MOUSE Remix)",
         "恋はダービー☆ (TV Edit)",
-        "恋はダービー☆ (TV Edit) (2021 Remastered Version)",
-        "恋はダービー☆ ※Remix Ver."
+        "恋はダービー☆ (TV Edit) (2021 Remastered Version)"
       ],
       "legacy_ids": [],
       "artists": [
         "Machico"
       ],
       "character_ids": [
-        "daitakuhelios",
-        "goldcity",
-        "goldship",
-        "mejiropalmer",
         "tokaiteio"
       ],
       "voice_actor_ids": [
-        "va-0003",
-        "va-0004",
-        "va-0009",
-        "va-0065",
-        "va-0176"
+        "va-0003"
       ],
       "released_character_ids": [
         "tokaiteio"
@@ -217539,18 +217543,10 @@
         "va-0003"
       ],
       "performed_character_ids": [
-        "daitakuhelios",
-        "goldcity",
-        "goldship",
-        "mejiropalmer",
         "tokaiteio"
       ],
       "performed_voice_actor_ids": [
-        "va-0003",
-        "va-0004",
-        "va-0009",
-        "va-0065",
-        "va-0176"
+        "va-0003"
       ],
       "cover": "/album_covers/LACA-15621.webp",
       "release_date": "2016-11-30",
@@ -217627,37 +217623,6 @@
             }
           ],
           "performances": [
-            {
-              "event_id": "live-numbered-5th-event-2023-09-16",
-              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-              "event_date": "2023-09-16",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
-              "session_label": "DAY2",
-              "session_date": "2023-09-17",
-              "performance_index": 12,
-              "setlist_no": "12",
-              "character_ids": [
-                "tokaiteio",
-                "goldship",
-                "goldcity",
-                "mejiropalmer",
-                "daitakuhelios"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0004",
-                "va-0009",
-                "va-0065",
-                "va-0176"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
-              "performance_variant": {
-                "title": "恋はダービー☆ ※Remix Ver.",
-                "label": "Remix Ver."
-              }
-            },
             {
               "event_id": "live-numbered-3rd-event-2021-08-28",
               "event_title": "ウマ娘 3rd EVENT「WINNING DREAM STAGE」",
@@ -217793,7 +217758,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 8,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -218146,7 +218111,7 @@
       ],
       "version_count": 5,
       "release_count": 7,
-      "performance_count": 8,
+      "performance_count": 7,
       "original_version_id": "song-3dc019b31d-v-3dc019b31d",
       "creator_ids": [
         "creator-corochi-3d0a352bef",
@@ -218155,6 +218120,81 @@
         "creator-eaf94340d3"
       ],
       "has_lyrics": true
+    },
+    {
+      "id": "song-remix-ver-g-z-20764ac4a6",
+      "title": "恋はダービー☆(Remix Ver.)+G'z",
+      "aliases": [
+        "恋はダービー☆(Remix Ver.)+G'z"
+      ],
+      "legacy_ids": [],
+      "artists": [],
+      "character_ids": [
+        "goldship",
+        "tokaiteio"
+      ],
+      "voice_actor_ids": [
+        "va-0003",
+        "va-0009"
+      ],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [
+        "goldship",
+        "tokaiteio"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0003",
+        "va-0009"
+      ],
+      "cover": "/album_covers/placeholder.webp",
+      "release_date": "",
+      "versions": [
+        {
+          "id": "song-remix-ver-g-z-20764ac4a6-v-20764ac4a6",
+          "title": "恋はダービー☆(Remix Ver.)+G'z",
+          "version_label": "",
+          "artists": [],
+          "releases": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-5th-event-2023-09-16",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+              "event_date": "2023-09-16",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2023-09-16-session-2",
+              "session_label": "DAY2",
+              "session_date": "2023-09-17",
+              "performance_index": 13,
+              "setlist_no": "12",
+              "character_ids": [
+                "tokaiteio",
+                "goldship"
+              ],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0009"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2"
+            }
+          ],
+          "release_count": 0,
+          "performance_count": 1,
+          "instrumental": false,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 0,
+      "performance_count": 1,
+      "original_version_id": "song-remix-ver-g-z-20764ac4a6-v-20764ac4a6",
+      "creator_ids": [],
+      "has_lyrics": false
     },
     {
       "id": "song-0dd903149c",
@@ -223007,6 +223047,7 @@
         "木漏れ日のエール (Sasuke Haraguchi Remix)",
         "木漏れ日のエール (TV Size)",
         "木漏れ日のエール (TV Size) [12話Ver.]",
+        "木漏れ日のエール（12集双人互换歌词版）",
         "木漏れ日のエール（トウカイテイオー）",
         "木漏れ日のエール（メジロマックイーン）"
       ],
@@ -223127,7 +223168,7 @@
               "session_id": "live-numbered-5th-event-2024-02-03-session-2",
               "session_label": "DAY2",
               "session_date": "2024-02-04",
-              "performance_index": 24,
+              "performance_index": 31,
               "setlist_no": "24",
               "character_ids": [
                 "tokaiteio",
@@ -223198,8 +223239,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 17,
-              "setlist_no": "17",
+              "performance_index": 18,
+              "setlist_no": "18",
               "character_ids": [
                 "tokaiteio",
                 "mejiromcqueen"
@@ -223208,7 +223249,11 @@
                 "va-0003",
                 "va-0053"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
+              "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2",
+              "performance_variant": {
+                "title": "木漏れ日のエール（12集双人互换歌词版）",
+                "label": "12集双人互换歌词版"
+              }
             },
             {
               "event_id": "live-other-2021-07-11-twinkle-holiday",
@@ -223960,7 +224005,8 @@
         "本能スピード (Game Size)（ナイスネイチャ）",
         "本能スピード (Game Size)（ノースフライト）",
         "本能スピード (Game Size)（ビコーペガサス）",
-        "本能スピード ※Short ver."
+        "本能スピード ※Short ver.",
+        "本能スピード（舞台剧中曲）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -224452,7 +224498,7 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 14,
+              "performance_index": 15,
               "setlist_no": "14",
               "character_ids": [
                 "oguricap",
@@ -224504,8 +224550,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 8,
-              "setlist_no": "8",
+              "performance_index": 9,
+              "setlist_no": "9",
               "character_ids": [
                 "daitakuhelios",
                 "yamaninzephyr",
@@ -224518,7 +224564,11 @@
                 "va-0065",
                 "va-0130"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1",
+              "performance_variant": {
+                "title": "本能スピード（舞台剧中曲）",
+                "label": "舞台剧中曲"
+              }
             },
             {
               "event_id": "live-other-2023-01-29-1-29-18-00",
@@ -227447,8 +227497,8 @@
               "session_id": "live-numbered-5th-event-2023-07-15-session-1",
               "session_label": "DAY1",
               "session_date": "2023-07-15",
-              "performance_index": 24,
-              "setlist_no": "24",
+              "performance_index": 25,
+              "setlist_no": "25",
               "character_ids": [
                 "oguricap",
                 "vodka",
@@ -233567,8 +233617,7 @@
       "aliases": [
         "直感ノープロブレム!",
         "直感ノープロブレム！",
-        "直感ノープロブレム！ (2021 Remastered Version)",
-        "直感ノープロブレム！ ※Long Intro Ver."
+        "直感ノープロブレム！ (2021 Remastered Version)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -233684,11 +233733,7 @@
               "voice_actor_ids": [
                 "va-0050"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "直感ノープロブレム！ ※Long Intro Ver.",
-                "label": "Long Intro Ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             },
             {
               "event_id": "live-numbered-1st-event-2017-07-01",
@@ -234448,7 +234493,7 @@
         "禁断Burning Heart",
         "禁断Burning Heart (2021 Remastered Version)",
         "禁断Burning Heart (AJURIKA Remix)",
-        "禁断Burning Heart ※Remix Ver."
+        "禁断Burning Heart（Remix Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -234582,7 +234627,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-2",
               "performance_variant": {
-                "title": "禁断Burning Heart ※Remix Ver.",
+                "title": "禁断Burning Heart（Remix Ver.）",
                 "label": "Remix Ver."
               }
             },
@@ -235220,25 +235265,6 @@
           ],
           "performances": [
             {
-              "event_id": "live-numbered-6th-event-2025-10-18",
-              "event_title": "ウマ娘 6th EVENT「The New Frontier」—秋公演",
-              "event_date": "2025-10-18",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-6th-event-2025-10-18-session-1",
-              "session_label": "DAY1",
-              "session_date": "2025-10-18",
-              "performance_index": 6,
-              "setlist_no": "6",
-              "character_ids": [
-                "dantsuflame"
-              ],
-              "voice_actor_ids": [
-                "va-0134"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
-            },
-            {
               "event_id": "live-cd-2024-08-10-winning-live-19",
               "event_title": "WINNING LIVE 19 発売記念イベント",
               "event_date": "2024-08-10",
@@ -235259,7 +235285,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 1,
           "instrumental": false,
           "credits": [
             {
@@ -235291,7 +235317,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 1,
       "original_version_id": "song-e07b1a7277-v-e07b1a7277",
       "creator_ids": [
         "creator-e2518d6bbc"
@@ -237100,16 +237126,19 @@
       "id": "song-a020e73256",
       "title": "笑っちゃお！",
       "aliases": [
-        "笑っちゃお！"
+        "笑っちゃお！",
+        "笑っちゃお！(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
         "山根綺"
       ],
       "character_ids": [
-        "daitakuhelios"
+        "daitakuhelios",
+        "yamaninzephyr"
       ],
       "voice_actor_ids": [
+        "va-0022",
         "va-0065"
       ],
       "released_character_ids": [
@@ -237119,9 +237148,11 @@
         "va-0065"
       ],
       "performed_character_ids": [
-        "daitakuhelios"
+        "daitakuhelios",
+        "yamaninzephyr"
       ],
       "performed_voice_actor_ids": [
+        "va-0022",
         "va-0065"
       ],
       "cover": "https://p1.music.126.net/u61WHBLZempoMXt2knYkWw==/109951170973797158.jpg",
@@ -237169,6 +237200,31 @@
           ],
           "performances": [
             {
+              "event_id": "live-numbered-5th-event-2024-02-03",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+              "event_date": "2024-02-03",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+              "session_label": "DAY2",
+              "session_date": "2024-02-04",
+              "performance_index": 8,
+              "setlist_no": "",
+              "character_ids": [
+                "daitakuhelios",
+                "yamaninzephyr"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2024-02-03?session=live-numbered-5th-event-2024-02-03-session-2",
+              "performance_variant": {
+                "title": "笑っちゃお！(Remix Ver.)",
+                "label": "Remix Ver."
+              }
+            },
+            {
               "event_id": "live-cd-2022-11-27-winning-live-08",
               "event_title": "『ウマ娘 プリティーダービー』WINNING LIVE 08 発売記念 配信イベント",
               "event_date": "2022-11-27",
@@ -237208,7 +237264,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -237237,7 +237293,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-a020e73256-v-a020e73256",
       "creator_ids": [
         "creator-a9987f1a38"
@@ -237575,8 +237631,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 28,
-              "setlist_no": "28",
+              "performance_index": 26,
+              "setlist_no": "25",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
@@ -237636,8 +237692,8 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 26,
-              "setlist_no": "26",
+              "performance_index": 23,
+              "setlist_no": "23",
               "character_ids": [
                 "specialweek",
                 "tokaiteio",
@@ -241766,6 +241822,93 @@
       "has_lyrics": false
     },
     {
+      "id": "song-c082420c30",
+      "title": "赛马娘舞台剧",
+      "aliases": [
+        "赛马娘舞台剧"
+      ],
+      "legacy_ids": [],
+      "artists": [],
+      "character_ids": [
+        "daiichiruby",
+        "daitakuhelios",
+        "ksmiracle",
+        "yamaninzephyr"
+      ],
+      "voice_actor_ids": [
+        "va-0022",
+        "va-0029",
+        "va-0065",
+        "va-0130"
+      ],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [
+        "daiichiruby",
+        "daitakuhelios",
+        "ksmiracle",
+        "yamaninzephyr"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0022",
+        "va-0029",
+        "va-0065",
+        "va-0130"
+      ],
+      "cover": "/album_covers/placeholder.webp",
+      "release_date": "",
+      "versions": [
+        {
+          "id": "song-c082420c30-v-c082420c30",
+          "title": "赛马娘舞台剧",
+          "version_label": "",
+          "artists": [],
+          "releases": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-5th-event-2023-07-15",
+              "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -WISH-",
+              "event_date": "2023-07-15",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-5th-event-2023-07-15-session-1",
+              "session_label": "DAY1",
+              "session_date": "2023-07-15",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [
+                "daitakuhelios",
+                "daiichiruby",
+                "yamaninzephyr",
+                "ksmiracle"
+              ],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
+            }
+          ],
+          "release_count": 0,
+          "performance_count": 1,
+          "instrumental": false,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 0,
+      "performance_count": 1,
+      "original_version_id": "song-c082420c30-v-c082420c30",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
       "id": "song-6046c23bf6",
       "title": "走らない理由",
       "aliases": [
@@ -242086,15 +242229,107 @@
       "has_lyrics": false
     },
     {
+      "id": "song-45d2925d46",
+      "title": "走れ〇〇オー",
+      "aliases": [
+        "走れ〇〇オー"
+      ],
+      "legacy_ids": [],
+      "artists": [],
+      "character_ids": [
+        "calstonelighto",
+        "sakurachitoseo",
+        "sakurachiyonoo",
+        "tmoperao",
+        "tokaiteio"
+      ],
+      "voice_actor_ids": [
+        "va-0003",
+        "va-0073",
+        "va-0083",
+        "va-0089",
+        "va-0162"
+      ],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [
+        "calstonelighto",
+        "sakurachitoseo",
+        "sakurachiyonoo",
+        "tmoperao",
+        "tokaiteio"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0003",
+        "va-0073",
+        "va-0083",
+        "va-0089",
+        "va-0162"
+      ],
+      "cover": "/album_covers/placeholder.webp",
+      "release_date": "",
+      "versions": [
+        {
+          "id": "song-45d2925d46-v-45d2925d46",
+          "title": "走れ〇〇オー",
+          "version_label": "",
+          "artists": [],
+          "releases": [],
+          "performances": [
+            {
+              "event_id": "live-numbered-7th-event-2026-06-20",
+              "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
+              "event_date": "2026-06-20",
+              "kind": "concert",
+              "series_id": "numbered-live",
+              "session_id": "live-numbered-7th-event-2026-06-20-session-1",
+              "session_label": "DAY1",
+              "session_date": "2026-06-20",
+              "performance_index": 11,
+              "setlist_no": "11",
+              "character_ids": [
+                "calstonelighto",
+                "tmoperao",
+                "tokaiteio",
+                "sakurachitoseo",
+                "sakurachiyonoo"
+              ],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0073",
+                "va-0083",
+                "va-0089",
+                "va-0162"
+              ],
+              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
+            }
+          ],
+          "release_count": 0,
+          "performance_count": 1,
+          "instrumental": false,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 0,
+      "performance_count": 1,
+      "original_version_id": "song-45d2925d46-v-45d2925d46",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
       "id": "song-2d2a6742e3",
       "title": "走れウマ娘",
       "aliases": [
         "走れウマ娘",
         "走れウマ娘 (Shuhei Takahashi Remix)",
-        "走れウマ娘 ※Remix Ver.",
-        "走れウマ娘 ※Short Intro Ver.",
-        "走れウマ娘 ※どんどこみっくす",
-        "走れウマ娘 ※大晦日特別ver."
+        "走れウマ娘 ※大晦日特別ver.",
+        "走れウマ娘（Remix Ver.）",
+        "走れウマ娘（どんどこみっくす）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -242106,7 +242341,7 @@
         "akasakamisato",
         "bitterglasse",
         "biwahayahide",
-        "calstonelighto",
+        "bochuzoku",
         "currenchan",
         "daitakuhelios",
         "daiwascarlet",
@@ -242147,13 +242382,13 @@
         "oguricap",
         "otonashietsuko",
         "riceshower",
-        "sakurachitoseo",
         "sakurachiyonoo",
         "sakuralaurel",
         "satonocrown",
         "satonodiamond",
         "seiunsky",
         "silencesuzuka",
+        "siriussymboli",
         "smartfalcon",
         "specialweek",
         "supercreek",
@@ -242175,6 +242410,7 @@
         "va-0001",
         "va-0003",
         "va-0004",
+        "va-0005",
         "va-0009",
         "va-0010",
         "va-0012",
@@ -242201,14 +242437,13 @@
         "va-0078",
         "va-0079",
         "va-0082",
-        "va-0083",
         "va-0085",
         "va-0086",
-        "va-0089",
         "va-0090",
         "va-0095",
         "va-0096",
         "va-0102",
+        "va-0103",
         "va-0107",
         "va-0113",
         "va-0114",
@@ -242258,7 +242493,7 @@
         "akasakamisato",
         "bitterglasse",
         "biwahayahide",
-        "calstonelighto",
+        "bochuzoku",
         "currenchan",
         "daitakuhelios",
         "daiwascarlet",
@@ -242299,13 +242534,13 @@
         "oguricap",
         "otonashietsuko",
         "riceshower",
-        "sakurachitoseo",
         "sakurachiyonoo",
         "sakuralaurel",
         "satonocrown",
         "satonodiamond",
         "seiunsky",
         "silencesuzuka",
+        "siriussymboli",
         "smartfalcon",
         "specialweek",
         "supercreek",
@@ -242327,6 +242562,7 @@
         "va-0001",
         "va-0003",
         "va-0004",
+        "va-0005",
         "va-0009",
         "va-0010",
         "va-0012",
@@ -242353,14 +242589,13 @@
         "va-0078",
         "va-0079",
         "va-0082",
-        "va-0083",
         "va-0085",
         "va-0086",
-        "va-0089",
         "va-0090",
         "va-0095",
         "va-0096",
         "va-0102",
+        "va-0103",
         "va-0107",
         "va-0113",
         "va-0114",
@@ -242467,33 +242702,6 @@
           ],
           "performances": [
             {
-              "event_id": "live-numbered-7th-event-2026-06-20",
-              "event_title": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
-              "event_date": "2026-06-20",
-              "kind": "concert",
-              "series_id": "numbered-live",
-              "session_id": "live-numbered-7th-event-2026-06-20-session-1",
-              "session_label": "DAY1",
-              "session_date": "2026-06-20",
-              "performance_index": 11,
-              "setlist_no": "11",
-              "character_ids": [
-                "tokaiteio",
-                "tmoperao",
-                "sakurachiyonoo",
-                "calstonelighto",
-                "sakurachitoseo"
-              ],
-              "voice_actor_ids": [
-                "va-0003",
-                "va-0073",
-                "va-0083",
-                "va-0089",
-                "va-0162"
-              ],
-              "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
-            },
-            {
               "event_id": "live-numbered-5th-event-2023-09-16",
               "event_title": "ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
               "event_date": "2023-09-16",
@@ -242502,41 +242710,46 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 21,
-              "setlist_no": "21",
+              "performance_index": 19,
+              "setlist_no": "18",
               "character_ids": [
                 "tokaiteio",
                 "oguricap",
-                "goldship",
                 "grasswonder",
                 "elcondorpasa",
+                "nicenature",
+                "matikanetannhauser",
+                "ikunodictus",
+                "twinturbo",
+                "satonodiamond",
+                "kitasanblack",
+                "tapdancecity",
+                "akasakamisato",
+                "goldship",
                 "currenchan",
                 "goldcity",
                 "smartfalcon",
                 "tosenjordan",
                 "nakayamafesta",
                 "haruurara",
-                "nicenature",
-                "matikanetannhauser",
-                "ikunodictus",
                 "mejiropalmer",
                 "daitakuhelios",
-                "twinturbo",
-                "satonodiamond",
-                "kitasanblack",
                 "satonocrown",
                 "neouniverse",
-                "tapdancecity"
+                "siriussymboli",
+                "hayakawatazuna"
               ],
               "voice_actor_ids": [
                 "va-0003",
                 "va-0004",
+                "va-0005",
                 "va-0009",
                 "va-0010",
                 "va-0034",
                 "va-0035",
                 "va-0049",
                 "va-0065",
+                "va-0082",
                 "va-0119",
                 "va-0121",
                 "va-0126",
@@ -242544,6 +242757,7 @@
                 "va-0139",
                 "va-0140",
                 "va-0145",
+                "va-0151",
                 "va-0161",
                 "va-0164",
                 "va-0167",
@@ -242554,7 +242768,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
               "performance_variant": {
-                "title": "走れウマ娘 ※どんどこみっくす",
+                "title": "走れウマ娘（どんどこみっくす）",
                 "label": "どんどこみっくす"
               }
             },
@@ -242567,31 +242781,33 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-1",
               "session_label": "DAY1",
               "session_date": "2023-09-16",
-              "performance_index": 19,
-              "setlist_no": "19",
+              "performance_index": 16,
+              "setlist_no": "16",
               "character_ids": [
-                "specialweek",
                 "tokaiteio",
                 "oguricap",
-                "vodka",
-                "daiwascarlet",
                 "grasswonder",
                 "elcondorpasa",
-                "naritabrian",
-                "mayanotopgun",
-                "mihonobourbon",
-                "riceshower",
-                "inarione",
                 "nicenature",
-                "kinghalo",
                 "matikanetannhauser",
                 "ikunodictus",
                 "twinturbo",
                 "satonodiamond",
                 "kitasanblack",
+                "tapdancecity",
+                "akasakamisato",
+                "specialweek",
+                "vodka",
+                "daiwascarlet",
+                "naritabrian",
+                "mayanotopgun",
+                "mihonobourbon",
+                "riceshower",
+                "inarione",
+                "kinghalo",
                 "yaenomuteki",
                 "sakuralaurel",
-                "tapdancecity"
+                "bochuzoku"
               ],
               "voice_actor_ids": [
                 "va-0003",
@@ -242602,8 +242818,10 @@
                 "va-0040",
                 "va-0051",
                 "va-0079",
+                "va-0082",
                 "va-0085",
                 "va-0090",
+                "va-0103",
                 "va-0119",
                 "va-0125",
                 "va-0126",
@@ -242619,7 +242837,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1",
               "performance_variant": {
-                "title": "走れウマ娘 ※どんどこみっくす",
+                "title": "走れウマ娘（どんどこみっくす）",
                 "label": "どんどこみっくす"
               }
             },
@@ -242693,7 +242911,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-2",
               "performance_variant": {
-                "title": "走れウマ娘 ※Remix Ver.",
+                "title": "走れウマ娘（Remix Ver.）",
                 "label": "Remix Ver."
               }
             },
@@ -243011,15 +243229,11 @@
                 "va-0175",
                 "va-0185"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1",
-              "performance_variant": {
-                "title": "走れウマ娘 ※Short Intro Ver.",
-                "label": "Short Intro Ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-2nd-event-2018-10-14?session=live-numbered-2nd-event-2018-10-14-session-1"
             }
           ],
           "release_count": 1,
-          "performance_count": 11,
+          "performance_count": 10,
           "instrumental": false,
           "credits": [
             {
@@ -243170,7 +243384,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 11,
+      "performance_count": 10,
       "original_version_id": "song-2d2a6742e3-v-2d2a6742e3",
       "creator_ids": [
         "creator-47bf338b49",
@@ -243191,7 +243405,7 @@
         "超える (オグリキャップ&タマモクロス)",
         "超える (オグリキャップ)",
         "超える ※Short ver.",
-        "超える ※TV ver."
+        "超える(feat.オグリキャップ)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -243290,7 +243504,11 @@
               "guest_performers": [
                 "[Alexandros]"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
+              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1",
+              "performance_variant": {
+                "title": "超える(feat.オグリキャップ)",
+                "label": "feat.オグリキャップ"
+              }
             },
             {
               "event_id": "live-numbered-6th-event-2025-05-24",
@@ -243330,11 +243548,7 @@
               "voice_actor_ids": [
                 "va-0179"
               ],
-              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-1",
-              "performance_variant": {
-                "title": "超える ※TV ver.",
-                "label": "TV ver."
-              }
+              "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-1"
             },
             {
               "event_id": "paka-live-tv-052",
@@ -244189,7 +244403,7 @@
         "逃げ切りっ！Fallin' Love (Off Vocal)",
         "逃げ切りっ！Fallin' Love (TV Size)",
         "逃げ切りっ！Fallin' Love (YUC'e Remix)",
-        "逃げ切りっ！Fallin' Love ※Remix Ver."
+        "逃げ切りっ！Fallin' Love(Remix Ver.)"
       ],
       "legacy_ids": [],
       "artists": [
@@ -244388,7 +244602,7 @@
               "session_id": "live-numbered-5th-event-2023-09-16-session-2",
               "session_label": "DAY2",
               "session_date": "2023-09-17",
-              "performance_index": 13,
+              "performance_index": 14,
               "setlist_no": "13",
               "character_ids": [
                 "smartfalcon",
@@ -244408,7 +244622,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2",
               "performance_variant": {
-                "title": "逃げ切りっ！Fallin' Love ※Remix Ver.",
+                "title": "逃げ切りっ！Fallin' Love(Remix Ver.)",
                 "label": "Remix Ver."
               }
             },
@@ -244506,8 +244720,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 12,
-              "setlist_no": "12",
+              "performance_index": 13,
+              "setlist_no": "13",
               "character_ids": [
                 "silencesuzuka",
                 "mihonobourbon",
@@ -247731,7 +247945,7 @@
       "title": "願いのカタチ",
       "aliases": [
         "願いのカタチ",
-        "願いのカタチ ※Strings Ver."
+        "願いのカタチ（Strings Ver.）"
       ],
       "legacy_ids": [],
       "artists": [
@@ -247849,7 +248063,7 @@
               ],
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-1",
               "performance_variant": {
-                "title": "願いのカタチ ※Strings Ver.",
+                "title": "願いのカタチ（Strings Ver.）",
                 "label": "Strings Ver."
               }
             },
@@ -247862,8 +248076,8 @@
               "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
               "session_label": "DAY2",
               "session_date": "2021-08-29",
-              "performance_index": 15,
-              "setlist_no": "15",
+              "performance_index": 16,
+              "setlist_no": "16",
               "character_ids": [
                 "tokaiteio"
               ],

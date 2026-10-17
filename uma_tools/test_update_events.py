@@ -520,8 +520,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         day_one, day_two = event["sessions"]
         self.assertNotIn("bikopegasus", day_one["character_ids"])
         self.assertIn("bikopegasus", day_two["character_ids"])
-        self.assertIn('guest-performer">田中あいみ</span>', day_two['setlist_html'])
-        self.assertNotIn('guest-performer">田中あいみ</span>', day_one['setlist_html'])
+        self.assertIn('alt="黄金旅程"', day_two['setlist_html'])
+        self.assertNotIn('guest-performer">田中あいみ</span>', day_two['setlist_html'])
 
         character_events = [
             row for row in built["appearances"]["characters"]["bikopegasus"]["events"]
