@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T18:27:27+00:00",
+  "generated_at": "2026-10-17T12:19:46+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -240807,7 +240807,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "和氣あず未、渡部優衣、野口瑠璃子、奥野香耶、根本京里、田辺留依、月城日花、浅見春那",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3440482749",
               "image": "/album_covers/LZC-3651.webp",
               "instrumental": false,
               "vocalists": [
@@ -240990,7 +240990,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "和氣あず未、渡部優衣、野口瑠璃子、奥野香耶、根本京里、田辺留依、月城日花、浅見春那",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3440482815",
               "image": "/album_covers/LZC-3651.webp",
               "instrumental": false,
               "vocalists": [
@@ -241173,7 +241173,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "Instrumental",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3440482814",
               "image": "/album_covers/LZC-3651.webp",
               "instrumental": true,
               "vocalists": []
@@ -250480,5 +250480,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "d1781cd48a5fb25239a7"
+  "build_id": "14f63f2eb83d080c96d1"
 }
