@@ -59,6 +59,7 @@ function imageStore(directory, options = {}) {
     const task = (async () => {
       await acquire();
       try {
+      const deadline = Date.now() + 90000;
       const download = source => new Promise((resolve, reject) => {
         let timer;
         const request = https.get(source, { family: 4, headers: { 'User-Agent': 'UmaLiveWiki/1.0', Accept: 'image/*' } }, (response) => {
@@ -81,7 +82,7 @@ function imageStore(directory, options = {}) {
         // A progressing image download can exceed 15 seconds on agency hosts.
         // Stop stalled sockets promptly and keep a separate total deadline.
         request.setTimeout(15000, () => request.destroy(new Error('news image stalled')));
-        timer = setTimeout(() => request.destroy(new Error('news image timeout')), 90000);
+        timer = setTimeout(() => request.destroy(new Error('news image timeout')), Math.max(1, deadline - Date.now()));
         request.on('error', reject);
         request.on('close', () => clearTimeout(timer));
       });
