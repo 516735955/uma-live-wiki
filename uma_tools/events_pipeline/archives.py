@@ -27,14 +27,16 @@ def wiki_table_rows(source: str, caption: str) -> list[list[str]]:
     if start < 0 or end < 0:
         return []
     rows = []
-    for block in source[start:end].split("|-")[2:]:
+    for block in source[start:end].split("|-"):
         cells: list[str] = []
         current: str | None = None
         for line in block.splitlines():
-            if line.startswith("|") and not line.startswith("|}"):
+            if line.startswith("|") and not line.startswith(("|}", '|+', '{|')):
                 if current is not None:
                     cells.append(current)
-                current = line[1:].strip()
+                pieces = line[1:].split('||')
+                cells.extend(piece.strip() for piece in pieces[:-1])
+                current = pieces[-1].strip()
             elif current is not None:
                 current += " " + line.strip()
         if current is not None:

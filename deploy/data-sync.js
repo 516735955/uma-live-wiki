@@ -53,6 +53,9 @@ function identity(row) {
   for (const key of ['id', 'cid', 'announce_id', 'output', 'version_id', 'catalog', 'link']) {
     if (row[key] !== undefined && row[key] !== '') return key + ':' + row[key];
   }
+  if (row.track_number !== undefined) return 'track:' + String(row.disc_number || row.disc || 1) + ':' + row.track_number;
+  if (row.n !== undefined && (row.t || row.title)) return 'track:' + String(row.disc || 1) + ':' + row.n;
+  if (row.name && (row.artist !== undefined || row.pic !== undefined)) return 'track-title:' + row.name;
   if (row.work_id && row.number !== undefined) return 'episode:' + row.work_id + ':' + row.number;
   if (row.work_id && row.role && (row.person_id || row.organization || row.name))
     return JSON.stringify([row.work_id, row.unit_id || '', row.role, row.person_id || row.organization || row.name, row.group || '', [...(row.institutions || [])].sort()]);

@@ -18,6 +18,8 @@ import tempfile
 import unicodedata
 import urllib.request
 import urllib.error
+import zipfile
+from xml.etree.ElementTree import ParseError
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,7 +43,8 @@ ALL_CAST_RE = re.compile(r'^(?:(?:他)?(?:出演)?(?:キャスト|出演者)?全
 
 def normalized_title(value):
     title = TITLE_SPLIT_RE.split(str(value or "").strip(), 1)[0]
-    title = REGION_RE.sub("", title).strip()
+    title = REGION_RE.sub(lambda match: '' if re.search(r'東京|大阪|京都|北海道|[都府県区]|ホール|会館|会場|メッセ|アリーナ|ドーム|Hall|Stadium', match.group(0), re.I)
+                          and not re.search(r'昼|夜|公演|DAY|部|限定', match.group(0), re.I) else match.group(0), title).strip()
     return re.sub(r"\s+", "", unicodedata.normalize('NFKC', title)).casefold()
 
 
@@ -87,7 +90,7 @@ def canonical_match(block, events):
 
 
 def session_label(title):
-    match = re.search(r"(?:DAY\s*\d+|[1-3]部|第[一二三四]部|アフターパート)", title or "", re.I)
+    match = re.search(r"(?:DAY\s*\d+|[1-3]部|第[一二三四]部|アフターパート|昼公演|夜公演|昼の部|夜の部)", title or "", re.I)
     return match.group(0) if match else "本公演"
 
 
@@ -116,10 +119,15 @@ def parse_rows(rows):
     blocks, current, current_date = [], None, ''
     for row in rows:
         date, title, song, performers = (list(row[:4]) + [None] * 4)[:4]
-        if date:
-            current_date = event_date(date)
+        incoming_date = event_date(date) if date else ''
+        changed_date = bool(incoming_date and incoming_date != current_date)
+        if incoming_date:
+            current_date = incoming_date
         if title is not None and str(title).strip():
             current = {'date': current_date, 'title': str(title).strip(), 'songs': []}
+            blocks.append(current)
+        elif changed_date and current is not None:
+            current = {'date': current_date, 'title': current['title'], 'songs': []}
             blocks.append(current)
         if song is not None and str(song).strip() and current is not None:
             text = str(song).strip()
@@ -140,11 +148,12 @@ def curated_slots(catalog):
         for section in root.get("sections") or [root]:
             for group in section.get("groups") or []:
                 for sub in group.get("subs") or []:
-                    for day in sub.get("days") or []:
+                    for day_index, day in enumerate(sub.get("days") or []):
+                        from events_pipeline.text import event_date_for_day
                         slots.append({
                             "group": group.get("group") or "",
                             "title": sub.get("title") or "",
-                            "date": event_date(sub.get("date")),
+                            "date": event_date(day.get('date')) or event_date_for_day(sub.get('date'), day_index) or event_date(sub.get('date')),
                             "label": day.get("label") or "本公演",
                             "cast": sub.get("cast") or "",
                             "day": day,
@@ -250,14 +259,15 @@ def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
     slots = curated_slots(catalog)
     groups = catalog.setdefault('other', {}).setdefault('groups', [])
     added = []
-    published = {(normalized_title(event.get('title')), event.get('date')) for event in existing_events}
+    published = {(normalized_title(event.get('title')), row.get('date') or event.get('date'), row.get('label') or session_label(event.get('title')))
+                 for event in existing_events for row in event.get('sessions') or [{'date': event.get('date'), 'label': session_label(event.get('title'))}]}
     for block in blocks:
         key = (normalized_title(block['title']), block['date'], session_label(block['title']))
         if not block['date'] or any((normalized_title(slot['title']), slot['date'], slot['label']) == key for slot in slots):
             continue
         if canonical_match(block, existing_events):
             continue
-        if (key[0], key[1]) in published:
+        if key in published:
             continue
         matches = [event for event in events if (normalized_title(event.get('title')), event.get('date'), session_label(event.get('title'))) == key
                    and event.get('link', '').startswith('https://www.eventernote.com/events/')]
@@ -353,6 +363,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     catalog = json.loads(args.live_cat.read_text(encoding="utf-8"))
+    primary_available = True
     try:
         if args.sheet_xlsx:
             data = args.sheet_xlsx.read_bytes()
@@ -383,17 +394,20 @@ def main():
         added = attach_discovered_sessions(blocks, catalog, events, published)
         report = compare(blocks, catalog)
         report['filled'].extend(added)
-    except (OSError, ValueError):
+    except (OSError, ValueError, zipfile.BadZipFile, ParseError, EOFError):
         if args.sheet_xlsx:
             raise
         report = fill_from_published_catalog(published_catalog(), catalog)
+        primary_available = False
         print('sheet-sync: using the existing GitHub published setlists', flush=True)
     if report["filled"] and not args.dry_run:
         write_json(args.live_cat, catalog)
+    report['primary_source_available'] = primary_available
     write_json(args.report, report)
     print("sheet-sync: %d blocks, %d filled, %d unchanged, %d preserved without a unique empty match" %
           (report["sheet_blocks"], len(report["filled"]), report["unchanged"], len(report["review"])))
+    return 0 if primary_available else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

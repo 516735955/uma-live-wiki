@@ -137,7 +137,7 @@ def title_series_id(title: str) -> str:
     return ""
 
 
-def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_identities.IdentityIndex, used: set[str]) -> list[dict[str, pipeline_common.Any]]:
+def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_identities.IdentityIndex, used: set[str], stable_ids: dict[str, str] | None = None) -> list[dict[str, pipeline_common.Any]]:
     out = []
     for category, root in data.items():
         if not isinstance(root, dict):
@@ -150,7 +150,6 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
                     title = sub.get("title") or group.get("group") or ""
                     date = pipeline_text.first_date(sub.get("date"))
                     suffix = pipeline_text.stable_title_suffix(title) or f"item-{section_index + 1}-{group_index + 1}"
-                    event_id = pipeline_text.unique_id(f"live-{category}-{date or 'undated'}-{suffix}", used)
                     legacy = f"/zh-Hans/live/{category}/"
                     if has_sections:
                         legacy += f"{section_index}/{group_index}"
@@ -158,6 +157,11 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
                         legacy += str(group_index)
                     if performance_index:
                         legacy += f"/{performance_index}/0"
+                    source_url = sub.get('source_url') or group.get('source_url') or legacy
+                    stable = sub.get('id') or (stable_ids or {}).get(source_url) or (stable_ids or {}).get(legacy)
+                    if not stable:
+                        stable = f"live-{category}-source-" + pipeline_common.hashlib.sha1(source_url.encode('utf-8')).hexdigest()[:12]
+                    event_id = pipeline_text.unique_id(stable, used)
                     legacy_aliases = [legacy]
                     if performance_index == 0:
                         legacy_aliases.append(f"{legacy}/0/0")

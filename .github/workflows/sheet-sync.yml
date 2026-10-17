@@ -68,5 +68,19 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "chore(events): auto sync sheet setlists $(date -u +%Y-%m-%d)"
-            git push
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then exit 0; fi
+              # Reapply the source refresh on the collaborator's latest main;
+              # generated catalogs are rebuilt rather than merged as text.
+              git fetch origin main
+              git branch "sheet-sync-result-$attempt" HEAD
+              git switch -c "sheet-sync-retry-$attempt" origin/main
+              python uma_tools/auto_setlists.py
+              python uma_tools/update_events.py
+              node uma_tools/test_catalog_store.js
+              git add 'data/events/赛马娘LIVE歌单导出.csv' data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/creator_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
+              if git diff --cached --quiet; then exit 0; fi
+              git commit -m "chore(events): auto sync sheet setlists $(date -u +%Y-%m-%d)"
+            done
+            git push origin HEAD:main
           fi

@@ -6,6 +6,7 @@ exec 9>"$ROOT/.deploy.lock"
 flock 9
 WORK="$(mktemp -d)"
 SWITCHED=0
+STARTED=0
 trap 'rm -rf "$WORK"' EXIT
 CURRENT="$(readlink -f "$ROOT/current")"
 cp "$ROOT/shared/deployment.json" "$WORK/original-state.json"
@@ -26,6 +27,7 @@ TARGET_DATA="$(readlink -f "$RELEASE/data")"
 exec 8>"$ROOT/shared/data/auto_update/.lock"
 flock -w 21600 8
 recover() {
+  if [ "$STARTED" = 1 ]; then systemctl stop "$SERVICE" || true; fi
   ln -sfn "$TARGET_DATA" "$RELEASE/data"
   if [ "$SWITCHED" = 1 ]; then
     node "$ROOT/deploy/deployment-state.js" restore "$ROOT" "$WORK/original-state.json"
@@ -38,6 +40,7 @@ trap 'recover; exit 1' INT TERM
 ln -sfn "$(readlink -f "$ROOT/shared/data")" "$RELEASE/data"
 if systemctl is-active --quiet umamusume.service && [ "$PORT" = 8080 ]; then systemctl stop umamusume.service; fi
 ln -sfn "$RELEASE" "$ROOT/slots/$PORT"
+if ! systemctl is-active --quiet "$SERVICE"; then STARTED=1; fi
 systemctl start "$SERVICE"
 for attempt in {1..30}; do
   if curl -fsS --max-time 2 "http://127.0.0.1:$PORT/api/release" >/dev/null; then break; fi

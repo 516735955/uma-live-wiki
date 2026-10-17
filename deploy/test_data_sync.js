@@ -5,6 +5,8 @@ const os = require('os');
 const path = require('path');
 const data = require('./data-sync');
 const media = require('./media-sync');
+assert.deepStrictEqual(data.merge([{name:'Song',artist:'A',url:''}], [{name:'Song',artist:'A',url:'new'}], [{name:'Song',artist:'B',url:''}]),
+  [{name:'Song',artist:'B',url:'new'}], 'a link update and a live singer correction merge into one track');
 
 const before = [{ id: 'old', title: 'typo', count: 1, accepted: 'original' }];
 const incoming = [{ id: 'old', title: 'correct', count: 1, accepted: 'original' }, { id: 'new', title: 'new' }];

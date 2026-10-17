@@ -49,6 +49,8 @@ def all_dates(value: pipeline_common.Any) -> list[str]:
         if current_year is None:
             continue
         try:
+            if not match.group(1) and out and int(match.group(2)) == 1 and out[-1][5:7] == '12':
+                current_year += 1
             parsed = pipeline_common.dt.date(current_year, int(match.group(2)), int(match.group(3))).isoformat()
         except ValueError:
             continue
@@ -58,6 +60,10 @@ def all_dates(value: pipeline_common.Any) -> list[str]:
 
 
 def event_date_for_day(value: pipeline_common.Any, offset: int) -> str:
+    text = str(value or '')
+    explicit = list(dict.fromkeys([*all_dates(text), *(first_date(match.group(0)) for match in pipeline_common.DATE_RE.finditer(text))]))
+    if len(explicit) > offset and len(explicit) > 1:
+        return explicit[offset]
     base = first_date(value)
     if not base:
         return ""

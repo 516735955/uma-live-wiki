@@ -28,7 +28,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     identities = pipeline_identities.IdentityIndex(characters, voice_list, photos, overrides, identity_registry, details)
     used: set[str] = set()
     events = pipeline_events.numbered_events(live_data, identities, used, overrides.get("stable_event_ids") or {})
-    events.extend(pipeline_events.category_events(live_cat_data, identities, used))
+    events.extend(pipeline_events.category_events(live_cat_data, identities, used, overrides.get('stable_event_ids') or {}))
     pipeline_events.attach_eventernote(events, eventernote, identities, used)
     pipeline_events.add_programs(events, programs, identities, used)
     pipeline_events.add_programs(events, {"programs": overrides.get("additional_events") or []}, identities, used)

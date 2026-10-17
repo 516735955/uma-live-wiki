@@ -11,27 +11,229 @@
       "source_kind": "official_announcement",
       "source_url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
       "sources": [
-        {"kind": "official_announcement", "label": "Cygames 先行上映与场次公告", "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"},
-        {"kind": "official_announcement", "label": "Cygames 活动报道", "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html"}
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 先行上映与场次公告",
+          "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 活动报道",
+          "url": "https://prtimes.jp/main/html/rd/p/000001083.000005593.html"
+        }
       ],
       "thumbnail": "/uma_tools/img/anime/anime-cinderella-gray.webp",
       "summary": "第1、2话先行上映及出演声优谈话。第1部12:00开演，第2部14:20开演；时间为官方公告所列计划。",
       "cast": [
-        {"name": "高柳知葉", "role": "オグリキャップ"},
-        {"name": "瀬戸桃子", "role": "ベルノライト"},
-        {"name": "小西克幸", "role": "北原穣"},
-        {"name": "伊瀬茉莉也", "role": "フジマサマーチ"}
+        {
+          "name": "高柳知葉",
+          "role": "オグリキャップ"
+        },
+        {
+          "name": "瀬戸桃子",
+          "role": "ベルノライト"
+        },
+        {
+          "name": "小西克幸",
+          "role": "北原穣"
+        },
+        {
+          "name": "伊瀬茉莉也",
+          "role": "フジマサマーチ"
+        }
       ],
       "sessions": [
-        {"label": "第1部", "date": "2025-03-30", "doors_time": "11:30", "start_time": "12:00", "cast": [{"name": "高柳知葉", "role": "オグリキャップ"}, {"name": "瀬戸桃子", "role": "ベルノライト"}, {"name": "小西克幸", "role": "北原穣"}, {"name": "伊瀬茉莉也", "role": "フジマサマーチ"}]},
-        {"label": "第2部", "date": "2025-03-30", "doors_time": "13:50", "start_time": "14:20", "cast": [{"name": "高柳知葉", "role": "オグリキャップ"}, {"name": "瀬戸桃子", "role": "ベルノライト"}, {"name": "小西克幸", "role": "北原穣"}, {"name": "伊瀬茉莉也", "role": "フジマサマーチ"}]}
+        {
+          "label": "第1部",
+          "date": "2025-03-30",
+          "doors_time": "11:30",
+          "start_time": "12:00",
+          "cast": [
+            {
+              "name": "高柳知葉",
+              "role": "オグリキャップ"
+            },
+            {
+              "name": "瀬戸桃子",
+              "role": "ベルノライト"
+            },
+            {
+              "name": "小西克幸",
+              "role": "北原穣"
+            },
+            {
+              "name": "伊瀬茉莉也",
+              "role": "フジマサマーチ"
+            }
+          ]
+        },
+        {
+          "label": "第2部",
+          "date": "2025-03-30",
+          "doors_time": "13:50",
+          "start_time": "14:20",
+          "cast": [
+            {
+              "name": "高柳知葉",
+              "role": "オグリキャップ"
+            },
+            {
+              "name": "瀬戸桃子",
+              "role": "ベルノライト"
+            },
+            {
+              "name": "小西克幸",
+              "role": "北原穣"
+            },
+            {
+              "name": "伊瀬茉莉也",
+              "role": "フジマサマーチ"
+            }
+          ]
+        }
       ]
     }
   ],
   "stable_event_ids": {
     "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-LONDON": "live-numbered-7th-event-3",
     "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-SEOUL": "live-numbered-7th-event-4",
-    "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-YOKOHAMA": "live-numbered-7th-event-5"
+    "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR「THE STAGE」-YOKOHAMA": "live-numbered-7th-event-5",
+    "/zh-Hans/live/cd/0/0": "live-cd-2021-04-04-winning-live-01",
+    "/zh-Hans/live/cd/0/1": "live-cd-2021-11-06-winning-live-02",
+    "/zh-Hans/live/cd/0/2": "live-cd-2022-04-02-cd-winning-live-03",
+    "/zh-Hans/live/cd/0/3": "live-cd-2022-05-22-cd-winning-live-04",
+    "/zh-Hans/live/cd/0/4": "live-cd-2022-07-17-winning-live-05-winning-live-06",
+    "/zh-Hans/live/cd/0/5": "live-cd-2022-09-25-winning-live-07",
+    "/zh-Hans/live/cd/0/6": "live-cd-2022-11-27-winning-live-08",
+    "/zh-Hans/live/cd/0/7": "live-cd-2023-02-12-winning-live-09",
+    "/zh-Hans/live/cd/0/8": "live-cd-2023-04-02-winning-live-10",
+    "/zh-Hans/live/cd/0/9": "live-cd-2023-05-07-winning-live-11",
+    "/zh-Hans/live/cd/0/10": "live-cd-2023-11-05-winning-live-13-14",
+    "/zh-Hans/live/cd/0/11": "live-cd-2024-05-12-winning-live-15",
+    "/zh-Hans/live/cd/0/12": "live-cd-2024-06-22-winning-live-16",
+    "/zh-Hans/live/cd/0/13": "live-cd-2024-07-27-winning-live-18",
+    "/zh-Hans/live/cd/0/14": "live-cd-2024-08-10-winning-live-19",
+    "/zh-Hans/live/cd/0/15": "live-cd-2024-10-26-winning-live-20",
+    "/zh-Hans/live/cd/0/16": "live-cd-2024-11-10-winning-live-21",
+    "/zh-Hans/live/cd/0/17": "live-cd-2025-01-12-winning-live-22",
+    "/zh-Hans/live/cd/0/18": "live-cd-2025-02-15-winning-live-23",
+    "/zh-Hans/live/cd/0/19": "live-cd-2025-07-06-winning-live-24",
+    "/zh-Hans/live/cd/0/20": "live-cd-2025-08-24-winning-live-26",
+    "/zh-Hans/live/cd/0/21": "live-cd-2025-09-06-winning-live-27",
+    "/zh-Hans/live/cd/0/22": "live-cd-2025-11-02-winning-live-28",
+    "/zh-Hans/live/cd/0/23": "live-cd-2025-11-15-winning-live-29",
+    "/zh-Hans/live/cd/0/24": "live-cd-2026-01-31-winning-live-30",
+    "/zh-Hans/live/cd/0/25": "live-cd-2026-08-15-winning-live-31",
+    "/zh-Hans/live/cd/0/26": "live-cd-2026-08-16-winning-live-33",
+    "/zh-Hans/live/cd/0/27": "live-cd-2026-09-13-winning-live-34",
+    "/zh-Hans/live/cd/1/0": "live-cd-2017-01-08-starting-gate-01-1",
+    "/zh-Hans/live/cd/1/0/1/0": "live-cd-2017-01-08-starting-gate-01-2",
+    "/zh-Hans/live/cd/1/1": "live-cd-2017-02-11-starting-gate-02-1",
+    "/zh-Hans/live/cd/1/1/1/0": "live-cd-2017-02-11-starting-gate-02-2",
+    "/zh-Hans/live/cd/1/2": "live-cd-2017-03-18-starting-gate-03-1",
+    "/zh-Hans/live/cd/1/2/1/0": "live-cd-2017-03-18-starting-gate-03-2",
+    "/zh-Hans/live/cd/1/3": "live-cd-2017-04-08-starting-gate-04-1",
+    "/zh-Hans/live/cd/1/3/1/0": "live-cd-2017-04-08-starting-gate-04-2",
+    "/zh-Hans/live/cd/1/4": "live-cd-2017-04-29-starting-gate-05-1",
+    "/zh-Hans/live/cd/1/4/1/0": "live-cd-2017-04-29-starting-gate-05-2",
+    "/zh-Hans/live/cd/1/5": "live-cd-2017-05-13-starting-gate-06-1",
+    "/zh-Hans/live/cd/1/5/1/0": "live-cd-2017-05-13-starting-gate-06-2",
+    "/zh-Hans/live/cd/1/6": "live-cd-2018-03-17-starting-gate-07-08",
+    "/zh-Hans/live/cd/1/7": "live-cd-2018-05-13-starting-gate-09-10",
+    "/zh-Hans/live/cd/1/8": "live-cd-2018-07-15-starting-gate-11-12",
+    "/zh-Hans/live/cd/1/9": "live-cd-2021-11-06-starting-gate-unit-song-collection",
+    "/zh-Hans/live/cd/2/0": "live-cd-2018-07-08-op-ed",
+    "/zh-Hans/live/cd/2/1": "live-cd-2021-04-04-tv-season-2-animation-derby-season-2-vol",
+    "/zh-Hans/live/cd/2/2": "live-cd-2021-08-04-title-3968b924ad22",
+    "/zh-Hans/live/cd/2/3": "live-cd-2023-08-13-road-to-the-top",
+    "/zh-Hans/live/cd/2/4": "live-cd-2024-02-18-tv-season-3-animation-derby-season-3-vol",
+    "/zh-Hans/live/cd/2/5": "live-cd-2025-07-26-1-1",
+    "/zh-Hans/live/cd/2/6": "live-cd-2025-07-26-1-2",
+    "/zh-Hans/live/twinkle/0": "live-twinkle-2024-08-31-twinkle-circle-day1",
+    "/zh-Hans/live/twinkle/0/1/0": "live-twinkle-2024-09-01-twinkle-circle-day2",
+    "/zh-Hans/live/twinkle/1": "live-twinkle-2024-09-28-twinkle-circle-day1",
+    "/zh-Hans/live/twinkle/1/1/0": "live-twinkle-2024-09-29-twinkle-circle-day2-1",
+    "/zh-Hans/live/twinkle/1/2/0": "live-twinkle-2024-09-29-twinkle-circle-day2-2",
+    "/zh-Hans/live/twinkle/2": "live-twinkle-2024-10-19-twinkle-circle-day1",
+    "/zh-Hans/live/twinkle/2/1/0": "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+    "/zh-Hans/live/twinkle/2/2/0": "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+    "/zh-Hans/live/twinkle/3": "live-twinkle-2024-11-16-twinkle-circle-day1",
+    "/zh-Hans/live/twinkle/3/1/0": "live-twinkle-2024-11-17-twinkle-circle-day2",
+    "/zh-Hans/live/twinkle/4": "live-twinkle-2024-12-15-twinkle-circle",
+    "/zh-Hans/live/twinkle/4/1/0": "live-twinkle-2024-12-15-twinkle-circle-2",
+    "/zh-Hans/live/other/0": "live-other-2016-03-26-animejapan-2016",
+    "/zh-Hans/live/other/1": "live-other-2016-03-27-animejapan-2016",
+    "/zh-Hans/live/other/2": "live-other-2016-05-04-vol-16-2-1r",
+    "/zh-Hans/live/other/3": "live-other-2016-08-21-cygames-next-2016-3",
+    "/zh-Hans/live/other/4": "live-other-2016-10-09-vol-17-climax-run-2-2r",
+    "/zh-Hans/live/other/5": "live-other-2017-03-25-animejapan-2017-1-cygames",
+    "/zh-Hans/live/other/6": "live-other-2017-05-07-vol-18-3-in",
+    "/zh-Hans/live/other/7": "live-other-2017-09-09-hibiki-radio-station-cygames-re-dive",
+    "/zh-Hans/live/other/8": "live-other-2017-10-08-vol-19-2-in-vol-2",
+    "/zh-Hans/live/other/9": "live-other-2017-12-16-2017",
+    "/zh-Hans/live/other/10": "live-other-2018-05-05-vol-20-in",
+    "/zh-Hans/live/other/11": "live-other-2018-07-29-2018-tv",
+    "/zh-Hans/live/other/12": "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
+    "/zh-Hans/live/other/13": "live-other-2018-10-08-vol-21-climax-run-3-in",
+    "/zh-Hans/live/other/14": "live-other-2018-11-25-title-aae05e9ef411",
+    "/zh-Hans/live/other/15": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
+    "/zh-Hans/live/other/15/1/0": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+    "/zh-Hans/live/other/16": "live-other-2019-01-19-animax-musix-2019-osaka",
+    "/zh-Hans/live/other/17": "live-other-2019-04-14-1",
+    "/zh-Hans/live/other/17/1/0": "live-other-2019-04-14-2",
+    "/zh-Hans/live/other/18": "live-other-2021-01-16-tv-vol-3",
+    "/zh-Hans/live/other/19": "live-other-2021-07-11-twinkle-holiday",
+    "/zh-Hans/live/other/20": "live-other-2021-07-17-title-120f9f043a5b",
+    "/zh-Hans/live/other/21": "live-other-2021-10-06-fns",
+    "/zh-Hans/live/other/22": "live-other-2021-10-09-and-more-fes-2021",
+    "/zh-Hans/live/other/23": "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
+    "/zh-Hans/live/other/24": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
+    "/zh-Hans/live/other/25": "live-other-2021-12-01-2021-fns",
+    "/zh-Hans/live/other/26": "live-other-2021-12-31-z-5",
+    "/zh-Hans/live/other/27": "live-other-2022-01-01-cdtv-2021-2022",
+    "/zh-Hans/live/other/28": "live-other-2022-02-13-2022",
+    "/zh-Hans/live/other/29": "live-other-2022-03-20-sp",
+    "/zh-Hans/live/other/30": "live-other-2022-04-30-vtuber-fes-japan-2022",
+    "/zh-Hans/live/other/31": "live-other-2022-06-12-v-carnival-vol-2-day2",
+    "/zh-Hans/live/other/32": "live-other-2022-07-16-2022",
+    "/zh-Hans/live/other/33": "live-other-2022-07-17-bilibili-macro-link-star-phase-2022",
+    "/zh-Hans/live/other/34": "live-other-2022-08-07-tokyo-idol-festival-2022",
+    "/zh-Hans/live/other/35": "live-other-2022-08-27-animelo-summer-live-2022-sparkle",
+    "/zh-Hans/live/other/36": "live-other-2022-11-19-animax-musix-2022",
+    "/zh-Hans/live/other/37": "live-other-2022-12-31-6-2022-2023",
+    "/zh-Hans/live/other/38": "live-other-2023-01-15-1-15-13-00",
+    "/zh-Hans/live/other/38/1/0": "live-other-2023-01-15-1-15-18-00",
+    "/zh-Hans/live/other/38/2/0": "live-other-2023-01-27-1-27-18-00",
+    "/zh-Hans/live/other/38/3/0": "live-other-2023-01-28-1-28-13-00",
+    "/zh-Hans/live/other/38/4/0": "live-other-2023-01-28-1-28-18-00",
+    "/zh-Hans/live/other/38/5/0": "live-other-2023-01-29-1-29-13-00",
+    "/zh-Hans/live/other/38/6/0": "live-other-2023-01-29-1-29-18-00",
+    "/zh-Hans/live/other/39": "live-other-2023-02-12-2023-2",
+    "/zh-Hans/live/other/40": "live-other-2023-11-18-animax-musix-2023",
+    "/zh-Hans/live/other/41": "live-other-2023-12-06-2023-fns-1",
+    "/zh-Hans/live/other/42": "live-other-2023-12-31-7-2023-2024",
+    "/zh-Hans/live/other/43": "live-other-2024-02-25-2024-day2",
+    "/zh-Hans/live/other/44": "live-other-2024-03-16-venue101",
+    "/zh-Hans/live/other/45": "live-other-2024-05-06-title-7caa082310e6",
+    "/zh-Hans/live/other/46": "live-other-2024-07-25-tif-presents-one-song-fes",
+    "/zh-Hans/live/other/47": "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage",
+    "/zh-Hans/live/other/48": "live-other-2024-09-22-2024-day2",
+    "/zh-Hans/live/other/49": "live-other-2024-11-08-idol-square-6",
+    "/zh-Hans/live/other/50": "live-other-2024-11-23-lemino-presents-animax-musix-2024-fall",
+    "/zh-Hans/live/other/51": "live-other-2024-12-31-8",
+    "/zh-Hans/live/other/52": "live-other-2025-04-27-tv-vol-52",
+    "/zh-Hans/live/other/53": "live-other-2025-07-24-atc-special-stage-pretty-derby",
+    "/zh-Hans/live/other/54": "live-other-2025-08-02-tokyo-idol-festival-2025-day2",
+    "/zh-Hans/live/other/55": "live-other-2025-11-15-animax-musix-2025-yokohama",
+    "/zh-Hans/live/other/56": "live-other-2025-12-31-9",
+    "/zh-Hans/live/other/57": "live-other-2026-04-25-2026",
+    "/zh-Hans/live/other/58": "live-other-2026-07-12-animelo-summer-live-2026-messenger-day3",
+    "/zh-Hans/live/other/59": "live-other-2026-08-02-tokyo-idol-festival-2026-day3",
+    "/zh-Hans/live/other/60": "live-other-2026-09-19-2026",
+    "/zh-Hans/live/other/61": "live-other-2018-10-14-2nd-event-sound-fanfare",
+    "/zh-Hans/live/other/62": "live-other-2021-08-28-3rd-event-winning-dream-stage-day1",
+    "/zh-Hans/live/other/63": "live-other-2025-05-24-6th-event-the-new-frontier-day1",
+    "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
     "live-other-2023-01-15-1-15-18-00": {
