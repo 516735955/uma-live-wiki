@@ -29,7 +29,9 @@ async function main() {
     setImmediate(() => {
       if (offline) { failedRequests++; return request.destroy(new Error('offline')); }
       const response = new EventEmitter();
-      response.statusCode = 200; response.headers = {'content-type':'image/webp'};
+      response.resume = () => {};
+      response.statusCode = url.pathname.endsWith('/maxresdefault.jpg') ? 404 : 200;
+      response.headers = {'content-type':'image/webp'};
       callback(response); response.emit('data', bytes); response.emit('end'); request.emit('close');
     });
     return request;
@@ -51,6 +53,8 @@ async function main() {
     const lazy = await load(url, {deferBytes:true});
     assert.strictEqual(lazy.bytes, undefined, 'preview lookup does not read the original bytes');
     assert.strictEqual((await lazy.read()).toString(), 'updated');
+    const thumbnails = imageStore(path.join(directory, 'thumbnails'), {validateUrl:require('./media-url').remoteImage});
+    assert.strictEqual((await thumbnails('https://i.ytimg.com/vi/example/maxresdefault.jpg')).bytes.toString(), 'updated', 'a video without max-resolution artwork uses its available standard thumbnail');
 
     const cacheFile = path.join(directory, 'translations.json');
     fs.writeFileSync(cacheFile, '{"accepted":"译文"}');

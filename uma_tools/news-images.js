@@ -59,11 +59,14 @@ function imageStore(directory, options = {}) {
     const task = (async () => {
       await acquire();
       try {
-      const bytes = await new Promise((resolve, reject) => {
+      const download = source => new Promise((resolve, reject) => {
         let timer;
-        const request = https.get(url, { family: 4, headers: { 'User-Agent': 'UmaLiveWiki/1.0', Accept: 'image/*' } }, (response) => {
+        const request = https.get(source, { family: 4, headers: { 'User-Agent': 'UmaLiveWiki/1.0', Accept: 'image/*' } }, (response) => {
           if (response.statusCode !== 200 || !/^image\/(?:png|jpeg|webp|gif)(?:;|$)/i.test(response.headers['content-type'] || '')) {
-            response.resume(); reject(new Error('news image HTTP ' + response.statusCode)); return;
+            response.resume();
+            const error = new Error('news image HTTP ' + response.statusCode);
+            error.statusCode = response.statusCode;
+            reject(error); return;
           }
           const chunks = []; let size = 0;
           response.on('data', (chunk) => {
@@ -81,6 +84,14 @@ function imageStore(directory, options = {}) {
         timer = setTimeout(() => request.destroy(new Error('news image timeout')), 90000);
         request.on('error', reject);
         request.on('close', () => clearTimeout(timer));
+      });
+      const bytes = await download(url).catch(error => {
+        if ([404, 410].includes(error.statusCode) && url.hostname === 'i.ytimg.com' && /\/maxresdefault\.jpg$/.test(url.pathname)) {
+          const fallback = new URL(url.href);
+          fallback.pathname = fallback.pathname.replace(/maxresdefault\.jpg$/, 'hqdefault.jpg');
+          return download(fallback);
+        }
+        throw error;
       });
       await fs.promises.mkdir(directory, { recursive: true });
       const temporary = file + '.' + process.pid + '.tmp';
