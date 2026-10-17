@@ -323,7 +323,7 @@ export function createNews(deps) {
             .split(",")
             .map(function (entry) {
               const parts = entry.trim().split(/\s+/);
-              parts[0] = newsImage(parts[0]);
+              parts[0] = window.UmaMedia.preview(newsImage(parts[0]), 960);
               return parts.join(" ");
             })
             .join(", "),
