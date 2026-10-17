@@ -148,10 +148,6 @@ async function main() {
   await app.applyCurrentRoute();
   assert.strictEqual(app.newsType.value, 'media');
   assert.strictEqual(app.newsPage.value, 2, 'restoring filters must not reset a restored page: ' + location.href + ' count=' + app.newsFiltered.value.length);
-  const beforeRefresh = newsCalls;
-  await app.refreshNews();
-  assert.strictEqual(newsCalls, beforeRefresh + 1, 'refresh issues a new request');
-  assert.strictEqual(app.newsPage.value, 2);
   const pendingNews = app.openNews(1);
   assert.strictEqual(app.newsDetailLoading.value, true, 'news loading is visible instead of an empty article');
   location.href = 'http://localhost/zh-Hans/music/albums?sort=name&page=2';

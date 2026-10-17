@@ -5,7 +5,6 @@ export function createNews(deps) {
   const newsError = deps.ref("");
 
   const newsLoading = deps.ref(false);
-  const newsUpdatedAt = deps.ref('');
 
   const newsRange = deps.ref("all");
 
@@ -342,7 +341,6 @@ export function createNews(deps) {
       .then(function (d) {
         newsLoadPromise = null;
         newsItems.value = (d && d.information_list) || [];
-        newsUpdatedAt.value = d?.generated_at ? new Date(d.generated_at).toLocaleString('zh-CN') : '';
         newsLoading.value = false;
       })
       .catch(function () {
@@ -352,11 +350,6 @@ export function createNews(deps) {
           "新闻列表暂时无法载入，请稍后重试。";
       });
     return newsLoadPromise;
-  }
-
-  function refreshNews() {
-    if (newsLoading.value) return;
-    return loadNews(true);
   }
 
   function newsHeroCover(n) {
@@ -664,7 +657,6 @@ export function createNews(deps) {
     newsImage,
     newsItems,
     newsLoading,
-    newsUpdatedAt,
     newsNextId,
     newsPage,
     newsPageCount,
@@ -679,7 +671,6 @@ export function createNews(deps) {
     newsTypeLabel,
     newsTypeOf,
     openNews,
-    refreshNews,
     setNewsPage,
   };
 }
