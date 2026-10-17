@@ -39,22 +39,32 @@ exports.createService = function (deps) {
         return deps.handleCatalogApi(req, res, urlPath, params);
       if (req.method === "GET" && urlPath === "/api/news-detail")
         return deps.handleNewsDetail(req, res, params);
-      if (req.method === "GET" && urlPath === "/api/news-image") {
-        deps
-          .loadNewsImage(params.get("url"))
-          .then(({ bytes, extension }) => {
+      if (req.method === "GET" && ["/api/news-image", "/api/image"].includes(urlPath)) {
+        (async () => {
+          if (urlPath === '/api/image') return deps.loadLocalPreview(params.get('path'), params.get('w'));
+          const original = await deps.loadNewsImage(params.get('url'));
+          if (!params.has('w')) return original;
+          const identity = deps.crypto.createHash('sha256').update(original.bytes).digest('hex');
+          return deps.previewImage(identity, params.get('w'), () => original.bytes);
+        })()
+          .then(({ bytes, extension, etag }) => {
             if (res.destroyed || res.writableEnded) return;
+            if (etag && req.headers['if-none-match'] === etag) {
+              res.writeHead(304, { ETag: etag, 'Cache-Control': 'public, max-age=3600' });
+              return res.end();
+            }
             res.writeHead(200, {
               "Content-Type": deps.MIME[extension],
               "Content-Length": bytes.length,
               "Cache-Control": "public, max-age=3600",
+              ...(etag ? { ETag: etag } : {}),
             });
             res.end(bytes);
           })
           .catch((error) =>
             deps.sendJson(
               res,
-              error.message === "unsupported news image" ? 400 : 502,
+              /unsupported|invalid preview/.test(error.message) ? 400 : error.code === 'ENOENT' ? 404 : 502,
               { error: error.message },
             ),
           );

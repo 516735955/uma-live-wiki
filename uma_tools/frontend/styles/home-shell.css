@@ -63,9 +63,10 @@
         .home-tab:hover::after { opacity: 1; transform: translate(6px, -50%); }
         .home-hero {
             flex: 1 1 auto; min-width: 0; position: relative;
+            background-color: #20283b;
             background:
                 linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
-                url('/uma_tools/img/hero_bg.webp') center center / cover no-repeat;
+                image-set(url('/uma_tools/img/hero_bg.avif') type('image/avif'), url('/uma_tools/img/hero_bg.webp') type('image/webp')) center center / cover no-repeat;
         }
         .home-upcoming {
             position: absolute; right: 28px; bottom: 24px; z-index: 5;

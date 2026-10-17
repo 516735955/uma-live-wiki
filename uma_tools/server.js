@@ -35,6 +35,9 @@ const catalogStore = new CatalogStore(DATA_DIR);
 const animeStore = new AnimeStore(DATA_DIR);
 const horseStore = new (require("./horse-store").HorseStore)(DATA_DIR);
 const loadNewsImage = imageStore(path.join(DATA_DIR, "news_image_cache"));
+const { previewStore, localImageLoader } = require('./image-previews');
+const previewImage = previewStore(path.join(DATA_DIR, 'news_image_cache', 'previews'), PYTHON_BIN);
+const loadLocalPreview = localImageLoader(ROOT, previewImage);
 const services = {};
 services.static = require("./server-static").createService({
   path, ROOT, fs, zlib, pipeline,
@@ -85,7 +88,7 @@ services.scheduler = require("./server-scheduler").createService({
   publishLantisMerge: services.news.publishLantisMerge,
 });
 services.application = require("./server-application").createService({
-  http, path, ROOT, fs, loadNewsImage, PORT, catalogStore, releaseInfo,
+  http, path, ROOT, fs, crypto, loadNewsImage, previewImage, loadLocalPreview, PORT, catalogStore, releaseInfo,
   AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   sendJson: services.transport.sendJson,
   handleNewsIndex: services.news.handleNewsIndex,

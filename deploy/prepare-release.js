@@ -14,7 +14,7 @@ function prepareRelease(root, commit, ancestors = [], compiler) {
   const output = path.join(root, 'assets');
   fs.mkdirSync(output, { recursive: true });
   const rewrite = (text) => text.replace(pattern, (url) => build(url.split('?')[0])).replace(
-    /\/uma_tools\/img\/[\w./-]+\.(?:png|jpe?g|webp|gif|svg|ico)(?:\?v=[\w.-]+)?/g,
+    /\/uma_tools\/img\/[\w./-]+\.(?:png|jpe?g|webp|avif|gif|svg|ico)(?:\?v=[\w.-]+)?/g,
     url => url.split('?')[0] + '?v=' + commit,
   );
   function build(url) {

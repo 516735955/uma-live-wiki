@@ -41,6 +41,7 @@ jobs:
           npm --prefix uma_tools run test:brand
           npm --prefix uma_tools run test:player
           node deploy/test_release.js
+          node uma_tools/test_image_previews.js
           node deploy/test_data_sync.js
           node deploy/test_deployment_state.js
           bash -n deploy/update.sh

@@ -11,5 +11,39 @@
       return target.pathname + target.search + target.hash;
     } catch { return value; }
   }
-  root.UmaMedia = { url };
+  function preview(value, width) {
+    if (!value) return value;
+    try {
+      const target = new URL(value, location.href);
+      if (target.origin === location.origin && target.pathname === '/api/news-image') {
+        target.searchParams.set('w', width);
+        return target.pathname + target.search;
+      }
+      if (target.hostname === 'images.microcms-assets.io') {
+        target.searchParams.set('w', width);
+        target.searchParams.set('fm', 'webp');
+        target.searchParams.set('q', '78');
+        return target.href;
+      }
+      if (/^p\d+\.music\.126\.net$/.test(target.hostname)) {
+        target.searchParams.set('param', width + 'y' + width);
+        return target.href;
+      }
+      if (target.origin === location.origin && /^\/(?:uma_tools\/img|album_covers|uma_avatars|uma_moe|uma_official|uma_va|video_thumbs)\/.+\.(?:png|jpe?g|webp)$/i.test(target.pathname)) {
+        return '/api/image?path=' + encodeURIComponent(url(target.pathname)) + '&w=' + width;
+      }
+    } catch (_) {}
+    return url(value);
+  }
+  function apply(element, value) {
+    if (!value) { element.removeAttribute('src'); element.removeAttribute('srcset'); delete element.dataset.mediaOriginal; return; }
+    const small = element.closest('.performer-chip, .album-inline, .identity-portrait, .anime-episode-list, .relation-leading');
+    const card = element.closest('.albums-grid, .news-hero-card, .anime-stills');
+    const size = small ? 80 : card ? 360 : 720;
+    const targetWidth = [160, 480, 960, 1440].find(width => width >= size * Math.min(devicePixelRatio || 1, 2)) || 1440;
+    element.dataset.mediaOriginal = url(value);
+    element.decoding = 'async';
+    element.src = preview(value, targetWidth);
+  }
+  root.UmaMedia = { url, preview, apply };
 })(window);

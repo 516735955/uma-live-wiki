@@ -7,8 +7,12 @@ const icon = path => '<svg class="pswp__icn" viewBox="0 0 24 24" aria-hidden="tr
 let activeViewer = null;
 let activeTrigger = null;
 function original(img) {
-  const url = new URL(img.dataset.original || img.currentSrc || img.src, location.href);
+  const url = new URL(img.dataset.original || img.dataset.mediaOriginal || img.currentSrc || img.src, location.href);
   if (url.hostname === 'images.microcms-assets.io') url.search = '';
+  if (/^p\d+\.music\.126\.net$/.test(url.hostname)) url.searchParams.delete('param');
+  if (url.origin === location.origin && url.pathname === '/api/news-image') url.searchParams.delete('w');
+  if (['prd-info-umamusume.akamaized.net', 'umamusume.lantis.jp'].includes(url.hostname))
+    return '/api/news-image?url=' + encodeURIComponent(url.href);
   return url.href;
 }
 function eligible(img) {
@@ -42,7 +46,7 @@ function openViewer(img) {
     src: original(element), msrc: element.currentSrc || element.src,
     width: Number(element.dataset.width) || element.naturalWidth || 1280,
     height: Number(element.dataset.height) || element.naturalHeight || 720,
-    alt: element.alt || '', source: element.dataset.source || original(element),
+    alt: element.alt || '', source: element.dataset.source || element.dataset.original || element.dataset.mediaOriginal || original(element),
     element
   }));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -51,7 +55,7 @@ function openViewer(img) {
     showHideAnimationType: getComputedStyle(img).objectFit==='cover'?'fade':'zoom',
     showAnimationDuration: reduced ? 0 : 240, hideAnimationDuration: reduced ? 0 : 190,
     easing: 'cubic-bezier(.22,1,.36,1)', counter: false, zoom: false, returnFocus: false,
-    preloaderDelay: 450, preload: [0,1], initialZoomLevel: levels=>Math.min(1,levels.fit), secondaryZoomLevel: 1,
+    preloaderDelay: 450, preload: [0,0], initialZoomLevel: levels=>Math.min(1,levels.fit), secondaryZoomLevel: 1,
     arrowPrev: data.length>1, arrowNext: data.length>1,
     maxZoomLevel: 4, paddingFn: v => ({top:v.x<650?68:76,bottom:16,left:v.x<650?12:74,right:v.x<650?12:74}),
     closeSVG: icon('<path d="m6 6 12 12M18 6 6 18"/>'),
@@ -126,7 +130,9 @@ function openViewer(img) {
   const retryImages = new Set();
   const retryTimers = new Set();
   const loadTimers = new Map();
-  pswp.on('contentLoadImage', ({content}) => {
+  pswp.on('contentLoadImage', event => {
+    const { content } = event;
+    if (content.index !== pswp.currIndex) { event.preventDefault(); return; }
     clearTimeout(loadTimers.get(content));
     loadTimers.set(content, setTimeout(() => {
       loadTimers.delete(content);
@@ -134,6 +140,9 @@ function openViewer(img) {
       if (content.element) { content.element.onload = content.element.onerror = null; content.element.src = ''; }
       content.onError();
     }, 15000));
+  });
+  pswp.on('slideActivate', ({ slide }) => {
+    if (slide.content.element && !slide.content.element.getAttribute('src')) slide.content.loadImage(false);
   });
   function clearLoad(content) { clearTimeout(loadTimers.get(content)); loadTimers.delete(content); }
   pswp.on('loadComplete', ({content}) => clearLoad(content));

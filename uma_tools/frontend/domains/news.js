@@ -309,10 +309,13 @@ export function createNews(deps) {
         if (el.hasAttribute("src")) {
           const original = el.getAttribute("src");
           el.setAttribute("data-original", original);
-          el.setAttribute("src", newsImage(original));
+          el.setAttribute("src", window.UmaMedia.preview(newsImage(original), 960));
+          el.setAttribute('srcset', [480, 960, 1440].map(width => window.UmaMedia.preview(newsImage(original), width) + ' ' + width + 'w').join(', '));
+          el.setAttribute('sizes', '(max-width: 768px) calc(100vw - 48px), (max-width: 1280px) calc(100vw - 80px), 1160px');
+          el.setAttribute('decoding', 'async');
         }
       }
-      if (el.hasAttribute("srcset")) {
+      if (el.tagName !== 'IMG' && el.hasAttribute("srcset")) {
         el.setAttribute(
           "srcset",
           el

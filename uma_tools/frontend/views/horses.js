@@ -10,7 +10,7 @@ export const template = `
                     <a style="--thumb:url('/video_thumbs/BV18FbM6jEA5.jpg')" href="https://www.bilibili.com/read/cv52884578" target="_blank" rel="noopener"><b>第4册</b><span>阅读 ↗</span></a>
                 </div>
                 <div class="section-toolbar"><span class="credit-role-tag">宿舍室友关系</span></div>
-                <img src="/uma_tools/img/character-roommates.jpg" alt="宿舍室友关系图" class="roommate-image" loading="lazy">
+                <img v-media-src="'/uma_tools/img/character-roommates.jpg'" alt="宿舍室友关系图" class="roommate-image" loading="lazy">
             </section>
             <section v-else-if="otherSection==='videos'" class="entity-section other-section">
                 <div class="video-library">

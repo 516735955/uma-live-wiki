@@ -629,7 +629,8 @@ export function createNavigation(deps) {
     return String(html || "").replace(
       /(["'])uma_avatars\//g,
       "$1/uma_avatars/",
-    );
+    ).replace(/(<img\b[^>]*\bsrc=)(["'])([^"']+)\2/gi, (match, prefix, quote, source) =>
+      prefix + quote + (window.UmaMedia ? window.UmaMedia.preview(source, 160) : source) + quote);
   }
 
   function hideEncorePerf(html) {

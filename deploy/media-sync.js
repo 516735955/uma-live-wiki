@@ -10,7 +10,7 @@ function images(root) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
       const relative = name + '/' + entry.name;
       if (entry.isDirectory()) visit(path.join(directory, entry.name), relative);
-      else if (entry.isFile() && /\.(?:png|jpe?g|webp|gif|svg|ico)$/i.test(entry.name)) result.push(relative);
+      else if (entry.isFile() && /\.(?:png|jpe?g|webp|avif|gif|svg|ico)$/i.test(entry.name)) result.push(relative);
     }
   }
   for (const name of MEDIA) visit(path.join(root, name), name);

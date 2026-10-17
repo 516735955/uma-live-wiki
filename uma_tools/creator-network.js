@@ -155,18 +155,18 @@
               <path v-for="person in layout.nodes" :key="'edge-'+person.creator_id" :d="edgePath(person)" :class="edgeClass(person)"/>
             </svg>
             <button class="creator-graph-node is-root" type="button" :style="nodeStyle(layout.root)" aria-current="true">
-              <i class="identity-portrait"><img :src="portrait(creator)" alt=""></i>
+              <i class="identity-portrait"><img v-media-src="portrait(creator)" alt=""></i>
               <span><b>{{ creator.name }}</b><small>{{ roleText(creator) }}</small></span>
             </button>
             <button v-for="person in layout.nodes" :key="person.creator_id" class="creator-graph-node" :class="nodeClass(person)" type="button" :style="nodeStyle(person)" :aria-label="'查看与 '+person.name+' 的合作'" :aria-pressed="selectedId===person.creator_id" @mouseenter="hoverId=person.creator_id" @mouseleave="hoverId=''" @focus="hoverId=person.creator_id" @blur="hoverId=''" @click="choose(person)" @keydown="onNodeKey($event,person)">
-              <i class="identity-portrait"><img :src="portrait(person)" alt=""></i>
+              <i class="identity-portrait"><img v-media-src="portrait(person)" alt=""></i>
               <span><b>{{ person.name }}</b><small>{{ roleText(person) }}</small></span>
             </button>
           </div>
           <aside v-if="selected" class="creator-network-inspector" aria-live="polite">
             <button class="creator-inspector-close" type="button" aria-label="关闭合作详情" @click="close"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
             <header>
-              <i class="identity-portrait"><img :src="portrait(selected)" alt=""></i>
+              <i class="identity-portrait"><img v-media-src="portrait(selected)" alt=""></i>
               <span><b>{{ selected.name }}</b><small>{{ roleText(selected) }}</small></span>
             </header>
             <button class="horse-link-chip creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
@@ -175,7 +175,7 @@
             <ol v-else-if="sharedWorks.length" class="collaboration-timeline">
               <li v-for="work in sharedWorks" :key="work.song_id">
                 <time>{{ work.release_date || '日期待补' }}</time>
-                <button type="button" @click="$emit('open-song',work.song_id)"><img :src="work.cover || '/uma_tools/img/album-placeholder.svg'" alt=""><span><b>{{ work.title }}</b><small v-if="work.album">{{ work.album }}</small><em><i v-for="role in work.roles" :key="role">{{ roleLabel(role) }}</i></em></span></button>
+                <button type="button" @click="$emit('open-song',work.song_id)"><img v-media-src="work.cover || '/uma_tools/img/album-placeholder.svg'" alt=""><span><b>{{ work.title }}</b><small v-if="work.album">{{ work.album }}</small><em><i v-for="role in work.roles" :key="role">{{ roleLabel(role) }}</i></em></span></button>
               </li>
             </ol>
             <div v-else class="ui-state compact">暂无可确认的共同作品</div>

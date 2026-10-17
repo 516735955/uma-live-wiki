@@ -56,7 +56,7 @@
         card.innerHTML =
           '<dl>' +
             '<dt>' +
-              (c.img || c.av ? '<div class="cio-img"><img src="' + (window.UmaMedia ? window.UmaMedia.url(c.img || c.av) : (c.img || c.av)) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
+              (c.img || c.av ? '<div class="cio-img"><img src="' + (window.UmaMedia ? window.UmaMedia.preview(c.img || c.av, 480) : (c.img || c.av)) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
               '<div class="cio-bg"><p>' + (c.en || c.ja || '') + '</p></div>' +
             '</dt>' +
             '<dd>' +
@@ -262,12 +262,12 @@
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
         var ph = v.photo ? { img: v.photo } : null;
         var roleHtml = v.roles.map(function (role) {
-          var roleImage = role.image ? '<img src="' + role.image + '" alt="">' : '<span class="performer-chip-fallback" aria-hidden="true">' + (role.zh || '?').charAt(0) + '</span>';
+          var roleImage = role.image ? '<img src="' + (window.UmaMedia ? window.UmaMedia.preview(role.image, 160) : role.image) + '" alt="">' : '<span class="performer-chip-fallback" aria-hidden="true">' + (role.zh || '?').charAt(0) + '</span>';
           return '<span class="performer-chip character-chip" style="--chip-color:' + role.main + '">' + roleImage + '<span>' + role.zh + '</span></span>';
         }).join('');
         var imageAttrs = (i < 2 ? ' loading="eager"' : ' loading="lazy"') + (i === 0 ? ' fetchpriority="high"' : '') + ' decoding="async"';
         var imgHtml = ph
-          ? '<img class="va-card-img" src="' + ph.img + '" alt="' + v.zh + '"' + imageAttrs + '>'
+          ? '<img class="va-card-img" src="' + (window.UmaMedia ? window.UmaMedia.preview(ph.img, 480) : ph.img) + '" alt="' + v.zh + '"' + imageAttrs + '>'
           : '<span class="va-ph-fb">' + (v.zh || v.ja || '?').charAt(0) + '</span>';
           card.innerHTML =
           imgHtml +

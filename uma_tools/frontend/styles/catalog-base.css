@@ -251,7 +251,7 @@
                 position: absolute; inset: 0; z-index: 0; min-height: 0;
                 background-image:
                     linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
-                    url('/uma_tools/img/hero_bg_tablet.webp');
+                    image-set(url('/uma_tools/img/hero_bg_tablet.avif') type('image/avif'), url('/uma_tools/img/hero_bg_tablet.webp') type('image/webp'));
             }
             .home-brand { position: relative; z-index: 1; top: 0; left: 0; width: 100%; padding: 26px 10px 8px; margin: 0; align-items: center; }
             .home-brand .hl-zh { font-size: 1.7rem; letter-spacing: 0.08em; white-space: nowrap; max-width: 100%; }
@@ -286,7 +286,7 @@
             .home-hero {
                 background-image:
                     linear-gradient(180deg, rgba(24, 30, 48, 0.25) 0%, rgba(20, 26, 41, 0.42) 100%),
-                    url('/uma_tools/img/hero_bg_phone.webp');
+                    image-set(url('/uma_tools/img/hero_bg_phone.avif') type('image/avif'), url('/uma_tools/img/hero_bg_phone.webp') type('image/webp'));
             }
             .setlist-table { font-size: 0.78em; }
         }
