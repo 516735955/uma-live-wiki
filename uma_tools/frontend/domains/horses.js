@@ -160,7 +160,6 @@ export function createHorses(deps) {
       .then(function (data) {
         if (!data?.horse) throw new Error("empty horse data");
         window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: data.horse };
-        horseGradeIndex = null;
       })
       .catch(function (error) {
         horsesDataPromise = null;
@@ -304,48 +303,15 @@ export function createHorses(deps) {
     return horseRaceRows(detail).length;
   });
 
-  let horseGradeIndex = null;
-
-  function horseGradeFor(race, date) {
-    if (!window.HORSES_DETAIL) return "";
-    if (!horseGradeIndex) {
-      horseGradeIndex = {};
-      let found = false;
-      Object.keys(window.HORSES_DETAIL).forEach(function (id) {
-        (window.HORSES_DETAIL[id]?.major || []).forEach(function (m) {
-          if (!m.grade || !m.race) return;
-          found = true;
-          const year = String(m.date || "").slice(0, 4);
-          const core = m.race.replace(/（[^）]*）/g, "").trim();
-          [m.race, core].forEach(function (key) {
-            if (!key) return;
-            const slots = horseGradeIndex[key] || (horseGradeIndex[key] = {});
-            const slot = slots[year] || (slots[year] = {});
-            slot[m.grade] = (slot[m.grade] || 0) + 1;
-          });
-        });
+  function horseGradeFor(race, date, track) {
+    if (!window.HORSES_DETAIL || !track || !/^\\d{4}[.-]\\d{2}[.-]\\d{2}$/.test(String(date || ""))) return "";
+    const grades = new Set();
+    Object.values(window.HORSES_DETAIL).forEach(function (horse) {
+      [...(horse?.races || []), ...(horse?.major || [])].forEach(function (row) {
+        if (row.race === race && row.date === date && row.track === track && row.grade) grades.add(row.grade);
       });
-      if (!found) horseGradeIndex = null;
-    }
-    if (!horseGradeIndex) return "";
-    const key = String(race || "");
-    const core = key.replace(/（[^）]*）/g, "").trim();
-    const entry = horseGradeIndex[key] || horseGradeIndex[core];
-    if (!entry) return "";
-    const pick = function (slot) {
-      let best = "";
-      let bestN = 0;
-      Object.keys(slot).forEach(function (g) {
-        if (slot[g] > bestN) {
-          best = g;
-          bestN = slot[g];
-        }
-      });
-      return best;
-    };
-    const year = String(date || "").slice(0, 4);
-    if (entry[year]) return pick(entry[year]);
-    return "";
+    });
+    return grades.size === 1 ? [...grades][0] : "";
   }
 
   const horseMajorRows = deps.computed(function () {
@@ -358,7 +324,7 @@ export function createHorses(deps) {
         date: row.date || "",
         track: row.track || "",
         race: row.race || "",
-        grade: row.grade || horseGradeFor(row.race, row.date) || "",
+        grade: row.grade || horseGradeFor(row.race, row.date, row.track) || "",
         placeLabel: /^\d+$/.test(place) ? place + "着" : place || "—",
         surface: row.surface || "",
         distance: distance

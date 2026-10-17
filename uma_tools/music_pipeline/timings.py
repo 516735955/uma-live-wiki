@@ -3,6 +3,7 @@ from __future__ import annotations
 import math
 
 from . import common as pipeline_common
+from knowledge_io import bounded_read
 from . import lyrics as pipeline_lyrics
 from . import recordings as pipeline_recordings
 
@@ -21,7 +22,7 @@ def fetch_lrclib_timing(
             headers={"User-Agent": pipeline_common.UA},
         )
         with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
-            payload = pipeline_common.json.loads(response.read().decode("utf-8", errors="replace"))
+            payload = pipeline_common.json.loads(bounded_read(response, limit=8 * 1024 * 1024).decode("utf-8", errors="replace"))
         candidates = {}
         for item in payload if isinstance(payload, list) else []:
             if not isinstance(item, dict):

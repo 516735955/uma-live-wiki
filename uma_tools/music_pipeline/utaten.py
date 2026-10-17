@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from . import common as pipeline_common
+from knowledge_io import bounded_read
 from . import credits as pipeline_credits
 from . import recordings as pipeline_recordings
 
@@ -118,7 +119,7 @@ def fetch_utaten(recording: dict[str, pipeline_common.Any]) -> tuple[str, dict[s
         request = pipeline_common.urllib.request.Request(search_url, headers={"User-Agent": pipeline_common.UA})
         try:
             with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
-                search_page = response.read().decode("utf-8", errors="replace")
+                search_page = bounded_read(response, limit=8 * 1024 * 1024).decode("utf-8", errors="replace")
         except pipeline_common.urllib.error.HTTPError as error:
             if error.code != 400:
                 raise
@@ -127,13 +128,13 @@ def fetch_utaten(recording: dict[str, pipeline_common.Any]) -> tuple[str, dict[s
             query = pipeline_common.re.sub(r'[^\w\s\u3040-\u30ff\u3400-\u9fff]', ' ', recording['version_title'])
             request = pipeline_common.urllib.request.Request(pipeline_common.UTATEN_SEARCH_URL.format(title=pipeline_common.urllib.parse.quote(query.strip())), headers={'User-Agent': pipeline_common.UA})
             with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
-                search_page = response.read().decode('utf-8', errors='replace')
+                search_page = bounded_read(response, limit=8 * 1024 * 1024).decode('utf-8', errors='replace')
         matches = []
         for result_path in utaten_search_results(search_page, recording["version_title"]):
             source_url = pipeline_common.urllib.parse.urljoin("https://utaten.com", result_path)
             request = pipeline_common.urllib.request.Request(source_url, headers={"User-Agent": pipeline_common.UA})
             with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
-                page = response.read().decode("utf-8", errors="replace")
+                page = bounded_read(response, limit=8 * 1024 * 1024).decode("utf-8", errors="replace")
             composition = json_ld_composition(page)
             if artist_match(recording, composition):
                 matches.append((source_url, page, composition))
@@ -169,7 +170,7 @@ def verify_utaten_source(recording: dict[str, pipeline_common.Any], source_url: 
     try:
         request = pipeline_common.urllib.request.Request(source_url, headers={"User-Agent": pipeline_common.UA})
         with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
-            page = response.read().decode("utf-8", errors="replace")
+            page = bounded_read(response, limit=8 * 1024 * 1024).decode("utf-8", errors="replace")
         return version_id, artist_match(recording, json_ld_composition(page)), ""
     except (pipeline_common.urllib.error.URLError, TimeoutError, pipeline_common.json.JSONDecodeError) as error:
         return version_id, False, str(error)

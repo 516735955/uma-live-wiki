@@ -4,6 +4,32 @@ from __future__ import annotations
 from . import common as pipeline_common
 from . import transport as pipeline_transport
 from . import wikipedia as pipeline_wikipedia
+from PIL import Image
+import io
+
+
+def valid_photo(source):
+    try:
+        with Image.open(source) as image:
+            image.verify()
+        return True
+    except (OSError, ValueError):
+        return False
+
+
+def save_photo(path, data):
+    if not valid_photo(io.BytesIO(data)):
+        return False
+    descriptor, temporary = pipeline_common.tempfile.mkstemp(prefix='.horse-photo-', dir=pipeline_common.os.path.dirname(path))
+    try:
+        with pipeline_common.os.fdopen(descriptor, 'wb') as handle:
+            handle.write(data)
+        pipeline_common.os.chmod(temporary, 0o644)
+        pipeline_common.os.replace(temporary, path)
+        return True
+    finally:
+        if pipeline_common.os.path.exists(temporary):
+            pipeline_common.os.unlink(temporary)
 
 
 def clean_photo_url(url):
@@ -84,7 +110,9 @@ def _url_matches(name, url):
     if not name:
         return False
     decoded = pipeline_common.urllib.parse.unquote(url)
-    return _name_in_photo(name, decoded)
+    filename = pipeline_common.urllib.parse.urlparse(decoded).path.rsplit('/', 1)[-1]
+    filename = pipeline_common.re.sub(r'^\d+px-', '', filename)
+    return _name_in_photo(name, filename)
 
 
 def photo_from_commons(names):
@@ -121,7 +149,7 @@ def photo_from_netkeiba(record):
     local_name = '%s.jpg' % record['id']
     local_path = pipeline_common.os.path.join(pipeline_common.PHOTO_DIR, local_name)
     if pipeline_common.os.path.isfile(local_path) and pipeline_common.os.path.getsize(local_path) > 5000:
-        if _image_md5(local_path) not in pipeline_common._PLACEHOLDER_MD5:
+        if valid_photo(local_path) and _image_md5(local_path) not in pipeline_common._PLACEHOLDER_MD5:
             return '/uma_tools/img/horses/' + local_name
     nos = []
     try:
@@ -144,9 +172,8 @@ def photo_from_netkeiba(record):
         if pipeline_common.hashlib.md5(data).hexdigest().upper() in pipeline_common._PLACEHOLDER_MD5:
             continue  # netkeiba 无图时的默认占位照
         pipeline_common.os.makedirs(pipeline_common.PHOTO_DIR, exist_ok=True)
-        with open(local_path, 'wb') as handle:
-            handle.write(data)
-        return '/uma_tools/img/horses/' + local_name
+        if save_photo(local_path, data):
+            return '/uma_tools/img/horses/' + local_name
     return ''
 
 
@@ -190,6 +217,6 @@ def localize_photo(record):
         return ''
     pipeline_common.os.makedirs(pipeline_common.PHOTO_DIR, exist_ok=True)
     local_name = '%s%s' % (record['id'], ext)
-    with open(pipeline_common.os.path.join(pipeline_common.PHOTO_DIR, local_name), 'wb') as handle:
-        handle.write(data)
-    return '/uma_tools/img/horses/' + local_name
+    if save_photo(pipeline_common.os.path.join(pipeline_common.PHOTO_DIR, local_name), data):
+        return '/uma_tools/img/horses/' + local_name
+    return ''

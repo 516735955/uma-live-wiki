@@ -54,6 +54,12 @@ def main():
     total = len(horses)
     list_rows = []
     details = {}
+    if args.limit or args.photos_only or args.races_only or args.localize_photos or args.resume:
+        for file, target in ((pipeline_common.OUT_DETAIL, details), (pipeline_common.OUT_LIST, list_rows)):
+            if pipeline_common.os.path.isfile(file):
+                with open(file, encoding='utf-8') as handle:
+                    existing = pipeline_common.json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
+                target.update(existing) if isinstance(target, dict) else target.extend(existing)
     if args.missing:
         from knowledge_io import read_json, write_json, fill_empty
         state_path = pipeline_common.os.path.join(pipeline_common.DATA_DIR, 'auto_update', 'horse_profiles.json')
@@ -70,6 +76,7 @@ def main():
         pipeline_transport.deadline = pipeline_common.time.monotonic() + 15 * 60
 
     def checkpoint():
+        list_rows[:] = list({row['id']: row for row in list_rows}.values())
         if args.missing:
             profile_state['source_errors'] = pipeline_transport.failures[-12:]
             atomic_write(pipeline_common.OUT_DETAIL, serialize(pipeline_common.DETAIL_PREFIX, details))
@@ -83,7 +90,7 @@ def main():
             record = details[horse['id']]
             record['cids'] = sorted(set(record.get('cids', []) + horse['cids']))
             missing = any(not record.get(field) for field in ('photo', 'intro')) or (pipeline_races.battle_count(record) and len(record.get('races', [])) < pipeline_races.battle_count(record))
-            if missing and pipeline_common.time.time() - attempts.get(horse['id'], 0) >= 86400:
+            if pipeline_common.time.time() - attempts.get(horse['id'], 0) >= (86400 if missing else 30 * 86400):
                 attempts[horse['id']] = pipeline_common.time.time()
                 refreshed += 1
                 failures_before = len(pipeline_transport.failures)
@@ -234,6 +241,7 @@ def main():
 
     if args.missing:
         write_json(state_path, profile_state)
+    list_rows[:] = list({row['id']: row for row in list_rows}.values())
     atomic_write(pipeline_common.OUT_LIST, serialize(pipeline_common.LIST_PREFIX, list_rows))
     atomic_write(pipeline_common.OUT_DETAIL, serialize(pipeline_common.DETAIL_PREFIX, details))
     print('wrote %s' % pipeline_common.os.path.relpath(pipeline_common.OUT_LIST, pipeline_common.ROOT))

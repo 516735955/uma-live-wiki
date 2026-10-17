@@ -39,13 +39,14 @@ def horse_page(name):
             end = start + token.end()
             if not depth:
                 break
-        fields = {key.strip(): plain(value) for key, value in re.findall(r'^\s*\|\s*([^=\n]+)=\s*([^\n]*)', raw[start:end], re.M)}
-        birth = fields.get('生', fields.get('生年月日', fields.get('foaled', '')))
+        raw_fields = {key.strip(): value for key, value in re.findall(r'^\s*\|\s*([^=\n]+)=\s*([^\n]*)', raw[start:end], re.M)}
+        fields = {key: plain(value) for key, value in raw_fields.items()}
+        birth = raw_fields.get('生', raw_fields.get('生年月日', raw_fields.get('foaled', '')))
         year = re.search(r'(?:17|18|19|20)\d{2}', birth)
         if not year:
             continue
         sex_value = fields.get('性', fields.get('性別', fields.get('sex', '')))
-        sex = 'female' if re.search(r'牝|Mare|Filly', sex_value, re.I) else 'male' if re.search(r'牡|騸|セン|Stallion|Colt|Gelding', sex_value, re.I) else ''
+        sex = 'gelding' if re.search(r'騸|セン|Gelding', sex_value, re.I) else 'female' if re.search(r'牝|Mare|Filly', sex_value, re.I) else 'male' if re.search(r'牡|Stallion|Colt', sex_value, re.I) else ''
         url = 'https://ja.wikipedia.org/wiki/' + urllib.parse.quote(page['title'].replace(' ', '_'))
         jbis = re.search(r'https://www\.jbis\.(?:or\.jp|jp)/horse/\d+/', raw)
         netkeiba = re.search(r'https://db\.netkeiba\.com/horse/\d+/', raw)
@@ -79,7 +80,7 @@ def add_horse(source, character, *, lookup=horse_page, generations=3):
         if key in matches and len(matches[key]) > 1:
             return None
         old_node = by_name.get(key)
-        if old_node and (not depth or all((old_node.get('parents') or {}).get(role) for role in ('sire', 'dam'))):
+        if old_node and all(old_node.get(field) for field in ('born', 'sex')) and (not depth or all((old_node.get('parents') or {}).get(role) for role in ('sire', 'dam'))):
             return old_node['id']
         facts = lookup(name)
         if not facts:

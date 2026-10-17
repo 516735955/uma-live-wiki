@@ -9,6 +9,8 @@ import tempfile
 import time
 import urllib.error
 import urllib.request
+import threading
+import socket
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = 'Mozilla/5.0 (compatible; UmaLiveWiki/1.0; public source updater)'
@@ -30,7 +32,7 @@ def read_window(path):
             'const vm=require("vm"),fs=require("fs");const window={};'
             'vm.runInNewContext(fs.readFileSync(process.argv[1],"utf8"),{window},{timeout:1000});'
             'process.stdout.write(JSON.stringify(window[process.argv[2]]));', str(path), name],
-            capture_output=True, text=True, check=True, timeout=10)
+            capture_output=True, text=True, encoding='utf-8', check=True, timeout=10)
         return json.loads(result.stdout)
 
 
@@ -60,19 +62,57 @@ def write_window(path, name, value):
     write_text(path, 'window.' + name + ' = ' + json.dumps(value, ensure_ascii=False, separators=(',', ':')) + ';\n')
 
 
+def bounded_read(response, *, limit=20 * 1024 * 1024, deadline=None):
+    """Read a bounded response within an absolute wall-clock deadline."""
+    deadline = deadline if deadline is not None else time.monotonic() + 30
+    def interrupt():
+        try:
+            connection = response.fp.raw._sock
+            connection.shutdown(socket.SHUT_RDWR)
+        except (AttributeError, OSError):
+            response.close()
+    timer = threading.Timer(max(0, deadline - time.monotonic()), interrupt)
+    timer.daemon = True
+    timer.start()
+    data, size = [], 0
+    try:
+        read = getattr(response, 'read1', response.read)
+        while True:
+            if time.monotonic() >= deadline:
+                raise TimeoutError('source response deadline exceeded')
+            chunk = read(min(65536, limit + 1 - size))
+            if not chunk:
+                break
+            size += len(chunk)
+            if size > limit:
+                raise ValueError('source response exceeds byte limit')
+            data.append(chunk)
+        if time.monotonic() >= deadline:
+            raise TimeoutError('source response deadline exceeded')
+        return b''.join(data)
+    finally:
+        timer.cancel()
+
+
 def fetch(url, *, binary=False, timeout=25):
+    deadline = time.monotonic() + timeout * 3
     for attempt in range(3):
         try:
             request = urllib.request.Request(url, headers={'User-Agent': USER_AGENT, 'Accept-Language': 'ja,en;q=0.8'})
-            with urllib.request.urlopen(request, timeout=timeout) as response:
-                data = response.read(20 * 1024 * 1024 + 1)
-            if len(data) > 20 * 1024 * 1024:
-                raise ValueError('source exceeds 20 MiB: ' + url)
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise TimeoutError('source fetch deadline exceeded')
+            with urllib.request.urlopen(request, timeout=min(timeout, remaining)) as response:
+                data = bounded_read(response, deadline=min(deadline, time.monotonic() + timeout))
             return data if binary else data.decode('utf-8', 'replace')
+        except urllib.error.HTTPError as error:
+            if error.code not in (408, 429, 500, 502, 503, 504) or attempt == 2:
+                raise
+            time.sleep(min(2 * (attempt + 1), max(0, deadline - time.monotonic())))
         except (OSError, urllib.error.URLError):
             if attempt == 2:
                 raise
-            time.sleep(2 * (attempt + 1))
+            time.sleep(min(2 * (attempt + 1), max(0, deadline - time.monotonic())))
 
 
 def fill_empty(target, incoming):

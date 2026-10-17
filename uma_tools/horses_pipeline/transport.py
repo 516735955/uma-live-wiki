@@ -2,9 +2,33 @@
 from __future__ import annotations
 
 from . import common as pipeline_common
+from knowledge_io import bounded_read
 
 deadline = float('inf')
 failures = []
+_last_cleanup = 0
+
+
+def cleanup_cache():
+    global _last_cleanup
+    now = pipeline_common.time.time()
+    if now - _last_cleanup < 3600:
+        return
+    _last_cleanup = now
+    rows = []
+    for item in pipeline_common.os.scandir(pipeline_common.CACHE_DIR):
+        if item.is_file() and pipeline_common.re.fullmatch(r'[0-9a-f]{16}\.(txt|bin)', item.name):
+            stat = item.stat()
+            rows.append((stat.st_mtime, stat.st_size, item.path))
+    total = sum(row[1] for row in rows)
+    for modified, size, path in sorted(rows):
+        if now - modified <= 7 * 86400 and total <= 128 * 1024 * 1024:
+            continue
+        try:
+            pipeline_common.os.unlink(path)
+            total -= size
+        except FileNotFoundError:
+            pass
 
 
 def _opener(use_proxy):
@@ -34,18 +58,20 @@ def http_get(url, binary=False, timeout=12):
             data = handle.read()
         return data if binary else data.decode('utf-8', 'replace')
     pipeline_common.os.makedirs(pipeline_common.CACHE_DIR, exist_ok=True)
+    cleanup_cache()
+    request_deadline = min(deadline, pipeline_common.time.monotonic() + timeout * 4)
     needs_proxy = ('wikipedia.org' in url) or ('wikimedia.org' in url) or ('netkeiba.com' in url)
     order = [True, False] if needs_proxy else [False, True]
     last_error = None
     for attempt in range(2):
         for use_proxy in order:
-            remaining = deadline - pipeline_common.time.monotonic()
+            remaining = request_deadline - pipeline_common.time.monotonic()
             if remaining <= 0:
                 failures.append('horse update time budget exhausted')
                 raise RuntimeError('horse update time budget exhausted')
             try:
                 with _opener(use_proxy).open(_request(url), timeout=min(timeout, remaining)) as resp:
-                    data = resp.read()
+                    data = bounded_read(resp, limit=16 * 1024 * 1024, deadline=request_deadline)
                 descriptor, temporary = pipeline_common.tempfile.mkstemp(prefix='horse-source-', dir=pipeline_common.CACHE_DIR)
                 try:
                     with pipeline_common.os.fdopen(descriptor, 'wb') as handle:

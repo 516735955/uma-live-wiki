@@ -36,7 +36,9 @@ def search_jbis_url(name, born=''):
             ids = [prefix_id]
         if not ids:
             continue
-        if len(ids) == 1 or not want_year:
+        if not want_year:
+            if len(ids) != 1:
+                return ''
             return 'https://www.jbis.or.jp/horse/%s/' % ids[0]
         # 同名多匹：按生年消歧
         for hid in ids:
@@ -46,9 +48,10 @@ def search_jbis_url(name, born=''):
                 birth = pipeline_common.html_lib.unescape(m.group(1)).strip() if m else ''
             except Exception:  # noqa: BLE001
                 continue
-            if want_year in pipeline_common.re.sub(r'\D', '', birth):
+            year = pipeline_common.re.search(r'(?:17|18|19|20)\d{2}', birth)
+            if year and year.group() == want_year:
                 return 'https://www.jbis.or.jp/horse/%s/' % hid
-        return 'https://www.jbis.or.jp/horse/%s/' % ids[0]
+        return ''
     return ''
 
 
@@ -162,13 +165,7 @@ def parse_tables(html_text):
             grade_element = cells[2].find('span')
             race = race_link.get_text(' ', strip=True) if race_link else values[2]
             grade_token = grade_element.get_text(strip=True) if grade_element else ''
-            grade = ''
-            for grade_idx, chars in (
-                (1, ('Ⅰ', '１', '1')), (2, ('Ⅱ', '２', '2')), (3, ('Ⅲ', '３', '3')),
-            ):
-                if 'G' in grade_token and any(ch in grade_token for ch in chars):
-                    grade = 'G%d' % grade_idx
-                    break
+            grade = normalized_grade(grade_token)
             data['major'].append({
                 'date': values[0],
                 'track': values[1],
@@ -185,7 +182,22 @@ def parse_tables(html_text):
 def _grade_like(token):
     """判断 JBIS 战绩行里隔位处是否像比赛格付（G1/G2/G3/OP/L 等），而非赛事名。"""
     text = str(token or '').replace('Ｇ', 'G').replace('Ⅰ', 'I').replace('Ⅱ', 'II').replace('Ⅲ', 'III').replace('３', '3').replace('２', '2').replace('１', '1')
-    return bool(pipeline_common.re.search(r'\bG\s*I{1,3}\b|\bG[123]\b|\bOP\b|\bL\b|重賞', text))
+    return bool(normalized_grade(text))
+
+
+def normalized_grade(raw):
+    import unicodedata
+    text = unicodedata.normalize('NFKC', pipeline_text.strip_markup(raw)).upper().strip()
+    japanese = pipeline_common.re.search(r'(?<![A-Z])JPN\s*(III|II|I|[123])(?![A-Z0-9])', text)
+    if japanese:
+        return 'Jpn' + {'I': '1', 'II': '2', 'III': '3'}.get(japanese.group(1), japanese.group(1))
+    match = pipeline_common.re.search(r'(?<![A-Z])(?:J[・. -]?)?G\s*(III|II|I|[123])(?![A-Z0-9])', text)
+    if match:
+        level = {'I': '1', 'II': '2', 'III': '3'}.get(match.group(1), match.group(1))
+        return ('JG' if pipeline_common.re.search(r'J[・. -]?G', match.group()) else 'G') + level
+    if text in ('OP', 'L', 'LISTED', '重賞', '八大競走', '八'):
+        return 'L' if text == 'LISTED' else 'G1' if text in ('八大競走', '八') else text
+    return ''
 
 
 def parse_wiki_races(wikitext, lang):
@@ -216,13 +228,7 @@ def parse_wiki_races(wikitext, lang):
         return pipeline_text.strip_markup(text)
 
     def grade_of(raw):
-        text = pipeline_text.strip_markup(raw)
-        m = pipeline_common.re.search(r'G\s*(I{1,3}|[123])', text)
-        if m:
-            return {'1': 'G1', '2': 'G2', '3': 'G3', 'I': 'G1', 'II': 'G2', 'III': 'G3'}[m.group(1)]
-        if '八大競走' in text or text.strip() == '八':
-            return 'G1'
-        return ''
+        return normalized_grade(raw)
 
     def place_of(raw):
         text = cell_text(raw)
@@ -234,14 +240,16 @@ def parse_wiki_races(wikitext, lang):
         return text if text in ('除外', '取消', '中止', '失格', '除', '取消') else ''
 
     def dist_of(raw):
-        m = pipeline_common.re.search(r'(芝|草|ダ|泥|障)\s*(\d+)\s*([mf])?', raw)
+        m = pipeline_common.re.search(r'(芝|草|ダ|泥|障)\s*(\d+(?:\.\d+)?)\s*(mi|m|f)?', raw)
         if not m:
             return '', '', ''
         surface = {'草': '芝', '泥': 'ダ'}.get(m.group(1), m.group(1))
-        dist = int(m.group(2))
+        dist = float(m.group(2))
         if (m.group(3) or '').lower() == 'f':
-            dist *= 200  # 8f = 1600m
-        return surface, str(dist), raw.replace(m.group(0), '')
+            dist *= 201.168
+        elif (m.group(3) or '').lower() == 'mi':
+            dist *= 1609.344
+        return surface, str(round(dist)), raw.replace(m.group(0), '')
 
     races = []
     for body in bodies:
