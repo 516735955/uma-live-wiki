@@ -6,6 +6,7 @@ exports.createService = function (deps) {
   let translationRunning = false;
 
   async function fillArchive(key, load) {
+    if (deps.newsContent.isRemoved(key)) return;
     if (archiveLoads.has(key)) return archiveLoads.get(key);
     const task = archive.request('source_status', { key }).then(failure => {
       if (failure && failure.next_at > Date.now() / 1000) return { status: 0 };
@@ -22,6 +23,7 @@ exports.createService = function (deps) {
   }
 
   async function serveArchivedArticle(key, res, load) {
+    if (deps.newsContent.isRemoved(key)) return deps.sendJson(res, 404, { error: 'news not found' });
     try {
       const data = await archive.request('get', { key });
       if (data) {
@@ -68,7 +70,7 @@ exports.createService = function (deps) {
     if (archiveRefreshRunning || deps.NO_AUTO_CRAWL) return;
     archiveRefreshRunning = true;
     try {
-      const rows = newsIndexCache.data?.information_list || [];
+      const rows = (newsIndexCache.data?.information_list || []).filter(item => !deps.newsContent.isRemoved(item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id));
       for (let index = 0; index < rows.length; index += 3) {
         await Promise.all(rows.slice(index, index + 3).map(async item => {
           const key = item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id;
@@ -445,6 +447,7 @@ exports.createService = function (deps) {
                 [],
               incoming,
             )
+            .filter(item => !deps.newsContent.isRemoved(item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id))
             .map((item) => deps.newsContent.apply(item));
           list.sort((a, b) =>
             String(b.update_at || b.post_at).localeCompare(
@@ -515,6 +518,7 @@ exports.createService = function (deps) {
   }
 
   async function archivedTitles(items) {
+    items = items.filter(item => !deps.newsContent.isRemoved(item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id));
     let titles = {};
     try { titles = await archive.request('titles', {}); }
     catch (error) { console.error('[news:archive:titles]', error.message); }

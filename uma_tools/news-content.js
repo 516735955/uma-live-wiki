@@ -42,6 +42,10 @@ class NewsContent {
     const edited = existing && existing !== this.previousTranslation(source) ? existing : '';
     return this.edits.titles[source] || edited || this.translation(source) || existing || '';
   }
+  isRemoved(key) {
+    this.reload();
+    return (this.edits.removed || []).includes(key);
+  }
   apply(item) {
     this.reload();
     const edit = this.edits.news[String(item.announce_id)];

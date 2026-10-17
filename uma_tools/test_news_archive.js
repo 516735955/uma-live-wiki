@@ -22,7 +22,7 @@ async function main() {
     fs.writeFileSync(path.join(directory, 'news_snapshot.json'), JSON.stringify({ generated_at: new Date().toISOString(), information_list: [{ announce_id: 1, title: source.detail.title, title_zh: '旧标题' }] }));
     fs.writeFileSync(path.join(directory, 'lantis_news.json'), JSON.stringify([{id: 'lantis-2', title: lantis.detail.title}]));
     service = require('./server-news').createService({ DATA_DIR: directory, path, fs, crypto,
-      NO_AUTO_CRAWL: true, newsContent: { apply: item => item, message: () => '', title: (_, existing) => existing || '' },
+      NO_AUTO_CRAWL: true, newsContent: { isRemoved: key => key === 'official-1568', apply: item => item, message: () => '', title: (_, existing) => existing || '' },
       httpsGet() { sourceCalls++; throw new Error('Visitor requested upstream source'); },
       translateArticle() { translationCalls++; throw new Error('Visitor requested translation'); },
       sendJson(res, status, data, options) { res.status = status; res.data = data; res.options = options; } });
@@ -32,6 +32,9 @@ async function main() {
     await service.handleLantisNews(cd);
     assert.strictEqual(index.data.information_list[0].title_zh, '新闻');
     assert.strictEqual(cd.data.information_list[0].title_zh, '发售新闻');
+    const removed = {};
+    await service.handleNewsDetail(null, removed, new URLSearchParams('id=1568'));
+    assert.strictEqual(removed.status, 404);
     await archive.request('translate', { key: 'official-1', revision: 1, translator: 'assistant',
       detail: { ...source.detail, title_zh: '修订后的新闻', message_zh: '<p>新闻正文</p>' } });
     const updated = {};
