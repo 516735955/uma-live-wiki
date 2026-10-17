@@ -549,6 +549,7 @@ exports.createService = function (deps) {
       return;
     }
     const cached = newsResponseSnapshot();
+    const source = newsIndexCache.data;
     if (cached) {
       cached.information_list = await archivedTitles(cached.information_list);
       const options = {
@@ -562,7 +563,7 @@ exports.createService = function (deps) {
             .slice(0, 12) +
           '"',
       };
-      indexRepresentation = { source: newsIndexCache.data, signature, at: now, data: cached, options };
+      indexRepresentation = { source, signature, at: now, data: cached, options };
       deps.sendJson(res, 200, cached, options);
       if (!deps.NO_AUTO_CRAWL) {
         // CD相关 与官网新闻各自按需 TTL 补抓，互不牵制。

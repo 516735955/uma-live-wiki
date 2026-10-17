@@ -33,6 +33,7 @@ function references(root, names) {
       if (['node_modules', '.git', 'vendor', 'auto_update', 'source_snapshots', RETIRED].includes(entry.name)) continue;
       const file = path.join(directory, entry.name);
       if (entry.isDirectory()) visit(file);
+      else if (entry.isSymbolicLink() && entry.name === 'data' && directory === root) visit(file);
       else if (entry.isFile() && /\.(?:json|js|html|css)$/.test(entry.name)) {
         const text = fs.readFileSync(file, 'utf8');
         for (const name of names) if (text.includes(name) || text.includes(encodeURI(name))) referenced.add(name);

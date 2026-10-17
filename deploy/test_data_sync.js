@@ -64,6 +64,11 @@ try {
   const retired = JSON.parse(fs.readFileSync(retiredFile,'utf8'));
   retired['uma_tools/img/retired.jpg'].at -= 8 * 86400000;
   write(liveRoot,'.media-retired.json',JSON.stringify(retired));
+  const referenceFile = 'data/retained-media.json';
+  write(candidateRoot,referenceFile,JSON.stringify({cover:'/uma_tools/img/retired.jpg'}));
+  media.stage(incomingRoot,previousRoot,liveRoot,candidateRoot);
+  assert(fs.existsSync(path.join(candidateRoot,'uma_tools/img/retired.jpg')), 'current data references retain retired media after its deadline');
+  fs.unlinkSync(path.join(candidateRoot,referenceFile));
   media.stage(incomingRoot,previousRoot,liveRoot,candidateRoot);
   const retiredBackup = path.join(root,'retirement-backup');
   media.publish(candidateRoot,liveRoot,retiredBackup);
