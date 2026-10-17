@@ -5,6 +5,7 @@ const path = require('path');
 const os = require('os');
 const { execFileSync } = require('child_process');
 const { previewStore, localImageLoader, previewWidth } = require('./image-previews');
+const { remoteImage } = require('./media-url');
 
 async function main() {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-preview-test-'));
@@ -28,6 +29,10 @@ async function main() {
     await assert.rejects(load('https://example.com/uma_tools/img/foo.png', 480), /unsupported/);
     assert.throws(() => previewWidth('nonsense'), /invalid/);
     assert.strictEqual(previewWidth(9000), 1440);
+    assert(remoteImage('https://www.81produce.co.jp/images/photo.jpg'));
+    assert(!remoteImage('https://example.com/photo.jpg'));
+    assert(!remoteImage('https://www.81produce.co.jp:8080/photo.jpg'));
+    assert(!remoteImage('https://www.81produce.co.jp/page.html'));
     console.log('real image resizing, proportional dimensions, shared cache and restricted sources passed');
   } finally { fs.rmSync(directory, {recursive: true, force: true}); }
 }

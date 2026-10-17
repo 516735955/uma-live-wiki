@@ -41,8 +41,8 @@ exports.createService = function (deps) {
         return deps.handleNewsDetail(req, res, params);
       if (req.method === "GET" && ["/api/news-image", "/api/image"].includes(urlPath)) {
         (async () => {
-          if (urlPath === '/api/image') return deps.loadLocalPreview(params.get('path'), params.get('w'));
-          const original = await deps.loadNewsImage(params.get('url'));
+          if (urlPath === '/api/image' && !params.has('url')) return deps.loadLocalPreview(params.get('path'), params.get('w'));
+          const original = await (urlPath === '/api/image' ? deps.loadRemoteImage : deps.loadNewsImage)(params.get('url'));
           if (!params.has('w')) return original;
           const identity = deps.crypto.createHash('sha256').update(original.bytes).digest('hex');
           return deps.previewImage(identity, params.get('w'), () => original.bytes);

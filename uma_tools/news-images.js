@@ -15,6 +15,7 @@ function officialImage(value) {
 }
 
 function imageStore(directory, options = {}) {
+  const validateUrl = options.validateUrl || officialImage;
   const pending = new Map(), attempts = new Map();
   let active = 0;
   const waiting = [];
@@ -91,7 +92,7 @@ function imageStore(directory, options = {}) {
     try { return await task; } finally { pending.delete(file); await cleanup(); }
   }
   return async function load(value) {
-    const url = officialImage(value);
+    const url = validateUrl(value);
     if (!url) throw new Error('unsupported news image');
     const extension = path.extname(url.pathname).toLowerCase();
     const file = path.join(directory, crypto.createHash('sha256').update(url.href).digest('hex') + extension);

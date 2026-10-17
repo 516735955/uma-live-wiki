@@ -10,9 +10,10 @@ function original(img) {
   const url = new URL(img.dataset.original || img.dataset.mediaOriginal || img.currentSrc || img.src, location.href);
   if (url.hostname === 'images.microcms-assets.io') url.search = '';
   if (/^p\d+\.music\.126\.net$/.test(url.hostname)) url.searchParams.delete('param');
-  if (url.origin === location.origin && url.pathname === '/api/news-image') url.searchParams.delete('w');
+  if (url.origin === location.origin && ['/api/news-image', '/api/image'].includes(url.pathname)) url.searchParams.delete('w');
   if (['prd-info-umamusume.akamaized.net', 'umamusume.lantis.jp'].includes(url.hostname))
     return '/api/news-image?url=' + encodeURIComponent(url.href);
+  if (window.UmaMedia?.remoteImage(url.href)) return '/api/image?url=' + encodeURIComponent(url.href);
   return url.href;
 }
 function eligible(img) {

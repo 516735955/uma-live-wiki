@@ -31,6 +31,8 @@
 
 `news-images.js` 缓存官网与 Lantis 新闻原图；`/api/news-image?url=…&w=480` 返回压缩预览，省略 `w` 返回原图。`/api/image?path=…&w=480` 为本站媒体生成等比例 WebP 预览，宽度归并为 160、480、960、1440，不放大源图。编码使用已有 Pillow，最多两个并发，预览缓存上限 128 MiB，原图缓存默认 256 MiB（`NEWS_IMAGE_CACHE_BYTES`）。页面按显示场景选择预览，新闻正文使用响应式候选；查看器在选中图片后读取原图。缓存不改写照片、封面或源数据。首页使用提前加载的 AVIF 背景，保留 WebP 兼容版本。
 
+`/api/image?url=…&w=480` 同样缓存现有目录使用的声优事务所、制作人员照片、Apple 封面和 YouTube 缩略图，来源域名由浏览器和服务器共用的 `media-url.js` 明确列出。省略 `w` 仅供查看器读取原图。网易云、microCMS 继续使用来源自身的尺寸参数；SVG 图标和排印字章保持矢量。
+
 实际 API 小样本检查：`node uma_tools/smoke_translation.js`。该命令不修改缓存，只输出原文和译文。
 
 ```bash

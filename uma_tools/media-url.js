@@ -1,5 +1,20 @@
-(function (root) {
+(function (root, factory) {
+  const media = factory();
+  if (typeof module === 'object' && module.exports) module.exports = media;
+  if (root) root.UmaMedia = media;
+})(typeof window !== 'undefined' ? window : null, function () {
   'use strict';
+  const remoteHosts = new Set(['i.ytimg.com', 'is1-ssl.mzstatic.com', 'www.kenproduction.co.jp',
+    'across-ent.com', 'columbia.jp', 'www.vims.co.jp', 'osawa-inc.co.jp', 'www.81produce.co.jp',
+    'crazy-box.co.jp', 'voicekit.jp', 'tomorrowjam.jp', 'yuhko-kaida.com', 'aptepro.jp',
+    'st-kai.jp', 'anime-fantasista-japan.jp']);
+  function remoteImage(value) {
+    try {
+      const target = new URL(value);
+      return target.protocol === 'https:' && !target.username && !target.password && !target.port &&
+        remoteHosts.has(target.hostname) && /\.(?:png|jpe?g|webp|gif)$/i.test(target.pathname) ? target : null;
+    } catch (_) { return null; }
+  }
   function url(value) {
     if (!value) return value;
     const revision = document.querySelector('meta[name="uma-release"]')?.content;
@@ -29,6 +44,7 @@
         target.searchParams.set('param', width + 'y' + width);
         return target.href;
       }
+      if (remoteImage(target.href)) return '/api/image?url=' + encodeURIComponent(target.href) + '&w=' + width;
       if (target.origin === location.origin && /^\/(?:uma_tools\/img|album_covers|uma_avatars|uma_moe|uma_official|uma_va|video_thumbs)\/.+\.(?:png|jpe?g|webp)$/i.test(target.pathname)) {
         return '/api/image?path=' + encodeURIComponent(url(target.pathname)) + '&w=' + width;
       }
@@ -45,5 +61,5 @@
     element.decoding = 'async';
     element.src = preview(value, targetWidth);
   }
-  root.UmaMedia = { url, preview, apply };
-})(window);
+  return { url, preview, apply, remoteImage };
+});
