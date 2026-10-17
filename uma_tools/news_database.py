@@ -45,6 +45,10 @@ def reframe_html(source, translated, updated):
     targets = text_nodes(translated)
     normalize = lambda node: re.sub(r'\s+', ' ', html.unescape(node)).strip()
     if not targets or len(original) != len(targets) or list(map(normalize, original)) != list(map(normalize, incoming)):
+        # Human translations can merge inline nodes. Preserve the accepted full
+        # translation when only the source's HTML serialization changed.
+        if plain_text(source) and plain_text(source) == plain_text(updated) and translated:
+            return translated
         return None
     replacements = iter(targets)
     return ''.join(next(replacements) if node.strip() and not node.startswith('<') else node
@@ -108,6 +112,32 @@ class NewsDatabase:
                     self.db.execute('UPDATE versions SET japanese_text=?,chinese_text=? WHERE article_key=? AND revision=?',
                                     (plain_text(original.get('message', '')), plain_text(translated.get('message_zh', '')), row['article_key'], row['revision']))
                 self.db.execute('PRAGMA user_version=1')
+            if self.db.execute('PRAGMA user_version').fetchone()[0] < 2:
+                pending = self.db.execute('''SELECT a.key,a.revision,v.original,old.original AS previous,
+                    old.translated,old.translator FROM articles a JOIN versions v
+                    ON v.article_key=a.key AND v.revision=a.revision JOIN versions old
+                    ON old.article_key=a.key AND old.revision<a.revision
+                    WHERE v.state!='complete' AND old.state='complete' ORDER BY a.key,old.revision DESC''').fetchall()
+                repaired = set()
+                for row in pending:
+                    if row['key'] in repaired:
+                        continue
+                    source = json.loads(row['original'])['detail']
+                    previous = json.loads(row['previous'])['detail']
+                    accepted = json.loads(row['translated'])
+                    if source.get('title') != previous.get('title') or not accepted.get('title_zh'):
+                        continue
+                    body = reframe_html(previous.get('message'), accepted.get('message_zh'), source.get('message'))
+                    if not body:
+                        continue
+                    accepted['message_zh'] = body
+                    self.db.execute('''UPDATE versions SET translated=?,chinese_text=?,translated_title=?,state='complete',translator=?
+                        WHERE article_key=? AND revision=?''', (json.dumps(accepted, ensure_ascii=False), plain_text(body), accepted['title_zh'], row['translator'], row['key'], row['revision']))
+                    self.db.execute("UPDATE articles SET owner=?,error='',lease_until=0 WHERE key=?", (row['translator'] or 'assistant', row['key']))
+                    self.store_fragments(row['key'], source.get('message'), body)
+                    repaired.add(row['key'])
+                self.db.execute("UPDATE articles SET owner='assistant' WHERE EXISTS (SELECT 1 FROM versions v WHERE v.article_key=articles.key AND v.revision=articles.revision AND v.state='complete' AND v.translator='assistant')")
+                self.db.execute('PRAGMA user_version=2')
 
     def store_fragments(self, key, original, translated):
         sources, targets = text_nodes(original), text_nodes(translated)
@@ -154,6 +184,7 @@ class NewsDatabase:
             revision = current['revision'] if current else 0
             previous = json.loads(current['original'])['detail'] if current and current['original'] else {}
             changed = not current or not current['original'] or any(previous.get(field, '') != detail.get(field, '') for field in ('title', 'message'))
+            translation_incomplete = False
             if changed:
                 revision += 1
                 reused = {}
@@ -167,6 +198,7 @@ class NewsDatabase:
                         reused['message_zh'] = body
                     translator = current['translator']
                 complete = bool(reused.get('title_zh') and reused.get('message_zh'))
+                translation_incomplete = not complete
                 translated = dict(detail, **reused) if reused else None
                 self.db.execute('''INSERT INTO versions(article_key,revision,original,japanese_text,created_at,translated,chinese_text,state,translator,original_title,translated_title)
                     VALUES(?,?,?,?,?,?,?,?,?,?,?)''', (key, revision, json.dumps(original, ensure_ascii=False),
@@ -182,7 +214,7 @@ class NewsDatabase:
                 next_at=CASE WHEN articles.revision!=excluded.revision THEN 0 ELSE articles.next_at END,
                 lease_until=CASE WHEN articles.revision!=excluded.revision THEN 0 ELSE articles.lease_until END,
                 owner=CASE WHEN articles.revision!=excluded.revision AND ? THEN excluded.owner ELSE articles.owner END''',
-                (key, revision, owner, time.time(), bool(current and current['state'] == 'complete')))
+                (key, revision, owner, time.time(), bool(current and current['state'] == 'complete' and translation_incomplete)))
             self.db.execute('DELETE FROM source_failures WHERE key=?', (key,))
         return self.get(key)
 
