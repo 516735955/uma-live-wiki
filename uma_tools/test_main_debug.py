@@ -70,6 +70,8 @@ class MainDebugTests(unittest.TestCase):
             first = lantis.crawl_category('https://example.test/', 'https://example.test', set())
             second = lantis.crawl_category('https://example.test/', 'https://example.test', set())
         self.assertEqual(first[0]['id'], second[0]['id'])
+        self.assertRegex(first[0]['id'], r'^lantis-[1-9]\d*$')
+        self.assertLess(int(first[0]['id'].split('-')[1]), 2**53)
         self.assertTrue(lantis.SOURCE_FAILURES)
 
     def test_watch_login_and_generic_pages_are_not_active(self):

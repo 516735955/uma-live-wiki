@@ -75,7 +75,7 @@ def crawl_category(base, pageless, seen):
             seen.add(key)
             # id = digits from URL
             mid = re.search(r'/(\d+)/?$', u)
-            nid = ('lantis-' + mid.group(1)) if mid else ('lantis-url-' + hashlib.sha256(u.encode('utf-8')).hexdigest()[:20])
+            nid = ('lantis-' + mid.group(1)) if mid else ('lantis-' + str(int(hashlib.sha256(u.encode('utf-8')).hexdigest()[:13], 16)))
             items.append({'id': nid, 'date': date, 'url': u, 'title': title, 'category': 'cd'})
             added += 1
         print('category page', page, 'got', len(got), 'new', added)
