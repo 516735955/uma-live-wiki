@@ -35,13 +35,16 @@
         return target.pathname + target.search;
       }
       if (target.hostname === 'images.microcms-assets.io') {
-        target.searchParams.set('w', width);
+        const existing = Number(target.searchParams.get('w'));
+        target.searchParams.set('w', existing > 0 ? Math.min(existing, width) : width);
         target.searchParams.set('fm', 'webp');
         target.searchParams.set('q', '78');
         return target.href;
       }
       if (/^p\d+\.music\.126\.net$/.test(target.hostname)) {
-        target.searchParams.set('param', width + 'y' + width);
+        const existing = /^(\d+)y\d+$/.exec(target.searchParams.get('param') || '');
+        const pixels = existing ? Math.min(Number(existing[1]), width) : width;
+        target.searchParams.set('param', pixels + 'y' + pixels);
         return target.href;
       }
       if (remoteImage(target.href)) return '/api/image?url=' + encodeURIComponent(target.href) + '&w=' + width;
@@ -54,8 +57,9 @@
   function apply(element, value) {
     if (!value) { element.removeAttribute('src'); element.removeAttribute('srcset'); delete element.dataset.mediaOriginal; return; }
     const small = element.closest('.performer-chip, .album-inline, .identity-portrait, .anime-episode-list, .relation-leading');
-    const card = element.closest('.albums-grid, .news-hero-card, .anime-stills');
-    const size = small ? 80 : card ? 360 : 720;
+    const card = element.closest('.albums-grid, .album-database-grid, .album-card, .news-hero-card, .anime-stills, .event-catalog-cover, .video-library');
+    const renderedWidth = element.getBoundingClientRect().width;
+    const size = renderedWidth > 0 ? renderedWidth : small ? 80 : card ? 360 : 720;
     const targetWidth = [160, 480, 960, 1440].find(width => width >= size * Math.min(devicePixelRatio || 1, 2)) || 1440;
     element.dataset.mediaOriginal = url(value);
     element.decoding = 'async';
