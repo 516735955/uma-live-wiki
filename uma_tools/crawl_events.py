@@ -161,18 +161,27 @@ def export_events_xlsx(new_events):
             cand = '佐伯伊織' if nm == '佐伯伊織(NU-KO)' else nm
             if cand in vnames:
                 kept.append(cand)
-        rows.append([date, title, venue, '、'.join(kept)])
+        rows.append([date, title, venue, '、'.join(kept), e.get('link', '')])
     # 3) insert at row 2 (header stays at row 1, former row 2 shifts down)
     try:
         import openpyxl
         wb = openpyxl.load_workbook(EVENTS_XLSX)
         ws = wb[wb.sheetnames[0]]
+        existing_links = {str(ws.cell(r, 5).value or '') for r in range(2, ws.max_row + 1)}
+        legacy_rows = {tuple(str(ws.cell(r, c).value or '') for c in range(1, 4))
+                       for r in range(2, ws.max_row + 1) if not ws.cell(r, 5).value}
+        rows = [row for row in rows if (not row[4] or row[4] not in existing_links) and tuple(str(v or '') for v in row[:3]) not in legacy_rows]
         n = len(rows)
+        if not n:
+            return
+        ws.cell(1, 5, '来源链接')
         ws.insert_rows(2, n)
         for i, row in enumerate(rows):
             for c, val in enumerate(row, start=1):
                 ws.cell(2 + i, c, val)
-        wb.save(EVENTS_XLSX)
+        temporary = EVENTS_XLSX + '.tmp.xlsx'
+        wb.save(temporary)
+        os.replace(temporary, EVENTS_XLSX)
         print('export xlsx: inserted %d new rows into %s' % (n, EVENTS_XLSX), flush=True)
     except Exception as ex:
         print('export xlsx: write failed:', str(ex)[:80], flush=True)
@@ -424,6 +433,11 @@ def load_existing():
 
 
 def main():
+    from knowledge_io import read_json, write_json
+    state_file = os.path.join(DATA_DIR, 'auto_update', 'event_sources.json')
+    state = read_json(state_file, {'attempted_at': {}})
+    history_page = max(2, int(state.get('history_page') or 2))
+    fetched_pages = set()
     all_events = load_existing()
     base_n = len(all_events)
     print('base events: %d' % base_n, flush=True)
@@ -433,6 +447,7 @@ def main():
     import datetime
     today = datetime.date.today().isoformat()
     while True:
+        fetched_pages.add(page)
         url = BASE + ('?page=%d&limit=%d' % (page, LIMIT)) if page > 1 else BASE + '?limit=%d' % LIMIT
         print('fetch page=%d ...' % page, flush=True)
         try:
@@ -462,20 +477,21 @@ def main():
             fresh.append(ev)
             new_cnt += 1
         print('  blocks=%d new=%d total=%d' % (len(blocks), new_cnt, len(all_events)), flush=True)
-        # actor page is newest-first: once a page yields nothing new, older pages won't either
-        if len(blocks) < LIMIT or new_cnt == 0:
+        if len(blocks) < LIMIT:
+            state['history_page'] = 2
             break
-        page += 1
+        next_page = page + 1 if new_cnt else max(page + 1, history_page)
+        state['history_page'] = next_page
+        if len(fetched_pages) >= 5:
+            break
+        page = next_page
         time.sleep(1.2)
     print('crawl done: +%d new' % (len(all_events) - base_n), flush=True)
     # Registered performers' own listings can expose related events absent from the group listing.
-    from knowledge_io import read_json, write_json
     profiles = read_json(os.path.join(DATA_DIR, 'voice_actor_profiles.json'), {'voice_actors': []})
     names = {row.get('identity', {}).get('ja') for row in profiles.get('voice_actors', [])}
     pages = sorted({actor.get('url') for event in all_events.values() for actor in event.get('actors', [])
                     if actor.get('name') in names and re.match(r'https://www\.eventernote\.com/actors/.+/\d+$', actor.get('url', ''))})
-    state_file = os.path.join(DATA_DIR, 'auto_update', 'event_sources.json')
-    state = read_json(state_file, {'attempted_at': {}})
     attempts = state.setdefault('attempted_at', {})
     candidates = [event for event in all_events.values() if event.get('link', '').startswith('https://www.eventernote.com/events/')
                   and (not event.get('actors') or event.get('date', '') >= today
@@ -490,12 +506,23 @@ def main():
     for actor_page in sorted(pages, key=lambda item: attempts.get(item, 0))[:12]:
         attempts[actor_page] = time.time()
         try:
-            content = fetch(actor_page + '/events?limit=100')
-            if 'eventernote' not in content.lower():
-                raise ValueError('performer listing was not recognized')
-            blocks = extract_blocks(content)
-            if not blocks and not re.search(r'イベント(?:が登録されていません|はありません)|該当するイベント', content):
-                raise ValueError('performer event layout was not recognized')
+            cursors = state.setdefault('actor_history_pages', {})
+            blocks = []
+            start = max(2, int(cursors.get(actor_page) or 2))
+            for actor_page_number in (1, start, start + 1):
+                content = fetch(actor_page + '/events?limit=100&page=' + str(actor_page_number))
+                if 'eventernote' not in content.lower():
+                    raise ValueError('performer listing was not recognized')
+                batch = extract_blocks(content)
+                if not batch and not re.search(r'イベント(?:が登録されていません|はありません)|該当するイベント', content):
+                    raise ValueError('performer event layout was not recognized')
+                blocks.extend(batch)
+                if len(batch) < 100:
+                    cursors[actor_page] = 2
+                    break
+                if actor_page_number > 1:
+                    cursors[actor_page] = actor_page_number + 1
+                time.sleep(1.2)
             for block in blocks:
                 ev = parse_block(block)
                 if not ev or not re.search(r'ウマ娘|うまゆる|うまよん', ev['title']):
@@ -510,9 +537,6 @@ def main():
             failures.append(actor_page)
             print('performer source failed:', actor_page, type(error).__name__, flush=True)
     write_json(state_file, state)
-
-    # export freshly crawled events into events_list.xlsx (insert at row 2)
-    export_events_xlsx(fresh)
 
     # merge manually curated events (pre-linked to specific场次)
     man_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'manual_events.json')
@@ -529,6 +553,7 @@ def main():
                                                      if value not in ('', None, [], {}) or field not in previous})
             print('manual events merged:', flush=True)
         except Exception as ex:
+            failures.append(man_path)
             print('manual events load failed:', str(ex)[:80], flush=True)
 
     events = sorted(all_events.values(), key=lambda e: e['date'], reverse=True)
@@ -553,6 +578,7 @@ def main():
     with io.open(tmp, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
     os.replace(tmp, OUT)
+    export_events_xlsx(events)
     print('WROTE %s events=%d linked=%d scraped_at=%s' % (OUT, len(events), linked_total, today), flush=True)
     return 1 if failures else 0
 

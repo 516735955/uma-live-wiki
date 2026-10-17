@@ -47,7 +47,7 @@ def write_cover(asset, *, fetch_image=fetch):
     if asset.get("mode") == "still" and not asset.get("original_output") and urllib.parse.urlparse(source_url).hostname == "images.microcms-assets.io":
         parts = urllib.parse.urlsplit(source_url)
         query = dict(urllib.parse.parse_qsl(parts.query))
-        query.update({"w": "1280", "q": "90"})
+        query.update({"q": "90"})
         source_url = urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(query)))
     body = fetch_image(source_url)
     image = Image.open(io.BytesIO(body)).convert("RGBA")
@@ -96,7 +96,7 @@ def validate(assets):
                     errors.append("empty cover: %s" % asset["output"])
                 if image.format != "WEBP":
                     errors.append("unexpected cover format: %s" % asset["output"])
-                if asset.get("mode") == "still" and (image.width < 1280 or image.height < 720):
+                if asset.get("mode") == "still" and max(image.size) < 1280:
                     errors.append("low-resolution still: %s" % asset["output"])
         except Exception as caught:
             errors.append("invalid cover %s: %s" % (asset["output"], caught))

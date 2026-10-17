@@ -18,6 +18,9 @@ def staff_text_rows(markup, roles=()):
     active = ''
     for line in text.splitlines():
         line = unicodedata.normalize('NFKC', line).strip()
+        if re.fullmatch(r'(?:キャスト|CAST|スタッフ|STAFF|音楽|MUSIC|主題歌|製作|制作情報)', line, re.I):
+            active = ''
+            continue
         if line in known:
             active = line
             continue
@@ -51,7 +54,11 @@ def music_rows(markup):
     labels = {'オープニング':'opening', 'OP':'opening', 'エンディング':'ending', 'ED':'ending', '挿入歌':'insert', '主題歌':'theme', 'BGM':'bgm', '背景音楽':'bgm'}
     for item in soup.select('[data-music-usage], .episode-music li, .music-list li'):
         text = item.get_text(' ', strip=True)
-        usage = item.get('data-music-usage') or next((value for label, value in labels.items() if label in text), '')
+        usage_text = re.sub(r'[「『].*?[」』]', '', text)
+        if item.select_one('.song-title'):
+            usage_text = usage_text.replace(item.select_one('.song-title').get_text(' ', strip=True), '')
+        usage = item.get('data-music-usage') or next((value for label, value in labels.items()
+            if re.search(r'(?<![A-Za-z])' + re.escape(label) + r'(?![A-Za-z])', usage_text, re.I)), '')
         title = item.select_one('.song-title')
         quoted = re.search(r'[「『](.+?)[」』]', text)
         name = title.get_text(' ', strip=True) if title else quoted.group(1) if quoted else ''

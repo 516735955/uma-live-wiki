@@ -10,7 +10,12 @@ def episode_records(markup, work_id, page_url):
     rows = []
     payload = soup.select_one('#__NUXT_DATA__')
     if payload:
-        values = json.loads(payload.string or payload.get_text())
+        try:
+            values = json.loads(payload.string or payload.get_text())
+        except (ValueError, TypeError):
+            values = []
+        if not isinstance(values, list):
+            values = []
         def resolve(index, trail=()):
             if not isinstance(index, int) or index < 0 or index >= len(values) or index in trail:
                 return None

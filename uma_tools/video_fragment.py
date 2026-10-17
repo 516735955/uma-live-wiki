@@ -49,9 +49,9 @@ def range_source(url, headers, budget=35 * 1024 * 1024):
 
 def select_video(metadata, span):
     formats = [row for row in metadata.get('formats',[]) if row.get('protocol') in ('http','https')
-               and row.get('vcodec') not in (None,'none') and row.get('acodec') == 'none'
+               and row.get('vcodec') not in (None,'none')
                and 0 < float(row.get('height') or 0) <= 720 and not row.get('has_drm')
                and float(row.get('tbr') or 0) * span * 1000 / 8 <= 35 * 1024 * 1024]
     if not formats:
-        raise ValueError('No bounded public video-only format was available')
-    return max(formats,key=lambda row:(row.get('height') or 0,-float(row.get('tbr') or 0)))
+        raise ValueError('No bounded public video format was available')
+    return max(formats,key=lambda row:(row.get('acodec') == 'none', row.get('height') or 0,-float(row.get('tbr') or 0)))

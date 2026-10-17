@@ -3,6 +3,7 @@
 import argparse
 import datetime as dt
 import html
+import hashlib
 import json
 import re
 import unicodedata
@@ -81,7 +82,22 @@ def collect_new_work(work):
         rows.extend(structured_episodes(fetch(link), work['id'], link))
     if not rows and not (work.get('status') == 'announced' and re.search(r'coming\s*soon|近日公開|放送予定|配信予定', markup, re.I)):
         raise ValueError('official episode layout was not recognized: ' + url)
-    return list({row['number']: row for row in rows}.values())
+    return merge_episode_records(rows)
+
+
+def merge_episode_records(rows):
+    merged = {}
+    for row in rows:
+        current = merged.setdefault(row['number'], {})
+        for key, value in row.items():
+            if not value:
+                continue
+            if isinstance(value, list):
+                existing = current.setdefault(key, [])
+                existing.extend(item for item in value if item not in existing)
+            elif not current.get(key):
+                current[key] = value
+    return list(merged.values())
 
 
 def source(documents, identifier, url, label, kind='official'):
@@ -113,8 +129,8 @@ def discover_work(row, documents, *, get=fetch, save_image=write_cover):
     identifier = 'anime-' + (slug if slug and slug != 'anime' else urllib.parse.urlparse(url).hostname.replace('.', '-'))
     if existing:
         identifier = existing['id']
-    elif any(work['id'] == identifier for work in documents['works']['works']):
-        return None
+    else:
+        identifier += '-' + hashlib.sha256(url.rstrip('/').encode('utf-8')).hexdigest()[:12]
     evidence = 'official-auto-' + identifier
     evidence = source(documents, evidence, url, title)['id']
     work = existing or {'id': identifier, 'title_ja': title, 'title_zh': title, 'format': kind,

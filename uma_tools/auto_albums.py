@@ -3,7 +3,7 @@
 #   1) sync: 抓官网 microCMS 音乐商品 -> 未收录的新专辑登记为占位条目（品番/发售日/封面）
 #   2) enrich: 对「已发售但还没曲目」的专辑，从网易云补全曲目/封面/专辑ID
 # 用法: python uma_tools/auto_albums.py
-import hashlib, json, os, re, sys, io, time, unicodedata, urllib.request
+import hashlib, json, os, re, sys, io, time, unicodedata, urllib.request, urllib.parse
 
 if sys.version_info[0] == 2:
     sys.exit('requires python3')
@@ -46,6 +46,8 @@ def log(msg):
     line = '[%s] %s' % (time.strftime('%Y-%m-%d %H:%M:%S'), msg)
     print(line, flush=True)
     try:
+        if os.path.exists(LOG_FILE) and os.path.getsize(LOG_FILE) >= 2 * 1024 * 1024:
+            os.replace(LOG_FILE, LOG_FILE + '.1')
         with io.open(LOG_FILE, 'a', encoding='utf-8') as f:
             f.write(line + '\n')
     except Exception:
@@ -198,8 +200,8 @@ def netease_search(title):
     for q in search_queries(title):
         j = http_json(NETEASE_SEARCH + '?' + urllib.parse.urlencode({'s': q, 'type': '10', 'limit': '8'}),
                       {'user-agent': UA, 'referer': 'https://music.163.com/'}, tries=2, sleep_base=3.0)
-        if not j:
-            continue
+        if not isinstance(j, dict) or j.get('code', 200) != 200:
+            raise RuntimeError('NetEase album search is temporarily unavailable')
         best = None
         best_score = 0
         best_ids = set()
@@ -222,6 +224,8 @@ def netease_detail(album_id):
                   {'user-agent': UA, 'referer': 'https://music.163.com/', 'cookie': 'appver=2.0.2'},
                   tries=4, sleep_base=6.0)
     alb = (j or {}).get('album') or {}
+    if not isinstance(j, dict) or j.get('code', 200) != 200:
+        raise RuntimeError('NetEase album detail is temporarily unavailable')
     tracks = alb.get('songs') or []
     if not tracks:
         return None
@@ -261,10 +265,10 @@ def enrich_entry(ent):
     best, score = netease_search(title)
     time.sleep(SLEEP_AFTER_CALL)
     if not best:
-        return False
+        return 'no_match'
     alb = netease_detail(best.get('id'))
     if not alb:
-        return False
+        return 'no_match'
     tracks = alb.get('songs') or []
     cover = alb.get('picUrl') or alb.get('blurPicUrl') or ent.get('cover') or ''
     if not ent.get('count'):
@@ -284,7 +288,7 @@ def enrich_entry(ent):
                 track['url'] = matches[0]['url']
     else:
         ent['songs'] = incoming
-    return before != json.dumps(ent, ensure_ascii=False, sort_keys=True)
+    return 'changed' if before != json.dumps(ent, ensure_ascii=False, sort_keys=True) else 'unchanged'
 
 
 # ---------- 主流程 ----------
@@ -327,6 +331,19 @@ def main():
     added = 0
     tried = 0
     enriched = 0
+    failures = []
+    def attempt(entry):
+        key = norm_key(entry.get('name', ''))
+        try:
+            result = enrich_entry(entry)
+        except (OSError, ValueError, RuntimeError) as error:
+            failures.append(key)
+            state[key] = now_ts - RETRY_SKIP_HOURS * 3600 + 3600
+            log('  补全来源失败，一小时后重试: ' + type(error).__name__)
+            return 'error'
+        state[key] = now_ts
+        log('  补全结果: ' + result)
+        return result
     for g in goods:
         title = (g.get('title') or '').strip()
         if not title:
@@ -357,8 +374,7 @@ def main():
         # 已发售的新登记条目，马上补全
         if release and release <= local_today() and tried < MAX_ENRICH_PER_RUN:
             tried += 1
-            state[norm_key(title)] = now_ts
-            if enrich_entry(entry):
+            if attempt(entry) == 'changed':
                 enriched += 1
                 log('  补全成功 -> %s 曲' % entry['count'])
             else:
@@ -380,9 +396,8 @@ def main():
         if isinstance(last, (int, float)) and now_ts - last < RETRY_SKIP_HOURS * 3600:
             continue
         tried += 1
-        ok = enrich_entry(ent)
-        state[key] = now_ts
-        if ok:
+        outcome = attempt(ent)
+        if outcome == 'changed':
             enriched += 1
             log('补全: %s -> %s' % (ent.get('name'), ent['count']))
             changed = True
@@ -401,7 +416,7 @@ def main():
         log('已写入 albums.json | 新增 %d | 补全 %d | 共 %d 张' % (added, enriched, len(albums)))
     else:
         log('无变化 | 共 %d 张' % len(albums))
-    return 0
+    return 1 if failures else 0
 
 
 if __name__ == '__main__':

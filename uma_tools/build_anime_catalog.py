@@ -164,7 +164,7 @@ def validate(
         if unit.get("status") not in {"released", "scheduled"}:
             errors.append(f"unit {unit.get('id')} has invalid status")
         for cue in unit.get("music_cues", []):
-            if not cue.get("title") or cue.get("usage_type") not in {"fanfare", "insert", "bgm"}:
+            if not cue.get("title") or cue.get("usage_type") not in {"fanfare", "insert", "bgm", "opening", "ending", "theme", "op", "ed"}:
                 errors.append(f"unit {unit.get('id')} has an invalid music cue")
             if not cue.get("source_refs") or any(ref not in source_ids for ref in cue["source_refs"]):
                 errors.append(f"unit {unit.get('id')} has a music cue without registered evidence")
@@ -254,6 +254,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
     works = list(documents["works.json"].get("works") or [])
     works_by_id = {str(work["id"]): work for work in works}
     units = expand_units(list(documents["units.json"].get("series") or []), works_by_id)
+    units = [{**unit, "music_cues": [{**cue, "usage_type": music_usage(cue.get("usage_type"))}
+              for cue in unit["music_cues"]]} if unit.get("music_cues") else unit for unit in units]
     resources = list(documents["watch_resources.json"].get("resources") or [])
     relations = list(documents["relations.json"].get("relations") or [])
     relations = [{**row, "usage_type_raw": row["usage_type"], "usage_type": music_usage(row["usage_type"])}
@@ -323,7 +325,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
         })
 
     source_payload = {name: documents[name] for name in SOURCE_FILES}
-    build_id = "anime-" + compact_hash(source_payload)
+    build_id = "anime-" + compact_hash({"sources": source_payload, "works": built_works,
+        "units": units, "resources": resources, "relations": relations, "staff": staff, "people": people, "sources_out": sources})
     observed_date = max((source.get("observed_at") or "2026-10-03")[:10] for source in sources)
     generated_at = observed_date + "T00:00:00+08:00"
     catalog = {

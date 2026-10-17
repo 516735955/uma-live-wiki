@@ -27,6 +27,8 @@ def main():
     characters = json.loads((ROOT / "data/character_index_data.js").read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
     voice_document = json.loads((ROOT / "data/voice_actor_profiles.json").read_text(encoding="utf-8"))
     voices = voice_document["voice_actors"]
+    overrides_path = ROOT / "data/events/overrides.json"
+    overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
     character_names = {normalized(name): character for character in characters for name in [character["ja"], *character.get("aliases", [])]}
     voice_names = {normalized(name): voice for voice in voices for name in [voice["identity"]["ja"], *voice["identity"].get("aliases", [])]}
     voice_names[normalized("高橋未奈美")] = next(voice for voice in voices if voice["id"] == "va-0180")
@@ -69,6 +71,15 @@ def main():
             voice = voice_names.get(normalized(actor))
             if voice is None:
                 raise ValueError(f"unresolved voice actor: {unit}: {signature}: {actor}")
+            if character and not any(role.get("character_id") == character["id"] for role in voice.get("roles", [])):
+                actors = overrides.setdefault("additional_voice_actors", [])
+                actor_entry = next((item for item in actors if item.get("ja") == voice["identity"]["ja"]), None)
+                if actor_entry is None:
+                    actor_entry = {"ja": voice["identity"]["ja"], "zh": voice["identity"]["zh"], "roles": []}
+                    actors.append(actor_entry)
+                if not any(role.get("character_id") == character["id"] for role in actor_entry.get("roles", [])):
+                    actor_entry.setdefault("roles", []).append({"character_id": character["id"], "name": character["zh"], "name_ja": character["ja"],
+                        "image": character["img"], "color_main": character["main"], "color_sub": character["sub"]})
             key = (unit, signature, voice["id"])
             if key in existing:
                 continue
@@ -87,15 +98,12 @@ def main():
             relations.append(relation)
             existing.add(key)
             imported += 1
-            if character and not any(role.get("character_id") == character["id"] for role in voice.get("roles", [])):
-                voice.setdefault("roles", []).append({"character_id": character["id"], "name": character["zh"], "name_ja": character["ja"], "former": False,
-                                                     "image": character["img"], "color_main": character["main"], "color_sub": character["sub"]})
     print(f"Episode transcriptions: {len(snapshot['episodes'])}; new verified identity relations: {imported}")
     print("Unmatched signatures (not imported): " + ", ".join(sorted(unresolved)))
     if args.write:
         atomic_json(DATA / "relations.json", relations_doc)
         atomic_json(DATA / "source_registry.json", source_doc)
-        atomic_json(ROOT / "data/voice_actor_profiles.json", voice_document)
+        atomic_json(overrides_path, overrides)
 
 
 if __name__ == "__main__":
