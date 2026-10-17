@@ -1,7 +1,6 @@
 name: sheet-sync
 
-# Google Sheet 写入链路：核对来源后登记新场次，并补唯一匹配的空白歌单。
-# 已有非空资料的差异只记录到工作流报告，留待人工处理；不发邮件。
+# Google 歌单导出是逐曲出演者的第一顺位来源；编号演唱会复用已有身份。
 on:
   schedule:
     - cron: '16 2 * * *'        # 每天 02:16 UTC（北京时间 10:16）
@@ -39,9 +38,9 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
 
-      - name: Rebuild catalog if sheet sync filled a blank setlist
+      - name: Rebuild catalog when the Google export or legacy source changes
         run: |
-          if git status --porcelain -- data/live_cat_data.json | grep -q .; then
+          if git status --porcelain -- data/live_cat_data.json 'data/events/赛马娘LIVE歌单导出.csv' | grep -q .; then
             echo "Sheet sync changed sources; rebuilding catalog..."
             python uma_tools/update_events.py
           else
@@ -62,7 +61,7 @@ jobs:
 
       - name: Commit generated data (if changed)
         run: |
-          git add data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/creator_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
+          git add 'data/events/赛马娘LIVE歌单导出.csv' data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/creator_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

@@ -248,7 +248,11 @@ def build_song_catalog(
                 performance["version_id"] = version["id"]
                 performance["song_title"] = work["title"]
                 character_ids = list(dict.fromkeys(performance.get("character_ids") or []))
-                voice_actor_ids = set()
+                voice_actor_ids = set(performance.get('voice_actor_ids') or [])
+                guests = performance.get('guest_performers') or []
+                if hasattr(identities, 'voice_id'):
+                    voice_actor_ids.update(actor for name in guests if (actor := identities.voice_id(name)))
+                    guests = [name for name in guests if not identities.voice_id(name)]
                 for character_id in character_ids:
                     resolved = actor_ids_by_character.get(character_id) or set()
                     character = getattr(identities, "character_by_id", {}).get(character_id) or {}
@@ -257,6 +261,8 @@ def build_song_catalog(
                         if current_actor:
                             resolved = {current_actor}
                     voice_actor_ids.update(resolved)
+                performance['voice_actor_ids'] = sorted(voice_actor_ids)
+                performance['guest_performers'] = guests
                 work["character_ids"].update(character_ids)
                 work["voice_actor_ids"].update(voice_actor_ids)
                 work["performed_character_ids"].update(character_ids)
@@ -268,7 +274,7 @@ def build_song_catalog(
                     "session_date": session.get("date") or "", "performance_index": performance_index,
                     "setlist_no": performance.get("setlist_no") if "setlist_no" in performance else None,
                     "character_ids": character_ids, "voice_actor_ids": sorted(voice_actor_ids),
-                    **({"guest_performers": list(performance.get("guest_performers") or [])} if performance.get("guest_performers") else {}),
+                    **({'guest_performers': list(guests)} if guests else {}),
                     "event_url": f"/zh-Hans/events/{pipeline_common.urllib.parse.quote(str(event.get('id') or ''))}?session={pipeline_common.urllib.parse.quote(str(session.get('id') or ''))}",
                 })
 

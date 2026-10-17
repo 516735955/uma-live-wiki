@@ -7,6 +7,7 @@ from . import events as pipeline_events
 from . import identities as pipeline_identities
 from . import music as pipeline_music
 from . import validation as pipeline_validation
+from . import setlists as pipeline_setlists
 
 
 def build(programs_override: dict[str, pipeline_common.Any] | None = None, details_override: dict[str, pipeline_common.Any] | None = None) -> dict[str, pipeline_common.Any]:
@@ -32,14 +33,16 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     pipeline_events.add_programs(events, programs, identities, used)
     pipeline_events.add_programs(events, {"programs": overrides.get("additional_events") or []}, identities, used)
     events = pipeline_events.apply_overrides(events, overrides, identities)
-    events = pipeline_events.dedupe_events(events)
+    events = pipeline_events.dedupe_events(pipeline_setlists.merge_numbered_sources(events))
+    sheet_blocks = pipeline_setlists.read_blocks(pipeline_common.ROOT)
+    pipeline_setlists.apply_sheet(events, sheet_blocks, identities, eventernote)
     for event in events:
         # Preserve known franchise actors with documented participation even
         # when their character is outside the curated character catalogue.
         event["cast"] = [
             item for item in event.get("cast") or []
             if item.get("voice_actor_id") in identities.profile_by_id
-            and (item.get("character_id") or not identities.profile_by_id[item["voice_actor_id"]].get("roles"))
+            and (item.get("character_id") or item.get('evidence') == 'google_sheet' or not identities.profile_by_id[item["voice_actor_id"]].get("roles"))
         ]
         if event["cast"]:
             event["cast_status"] = "verified"
@@ -94,6 +97,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
         "voice_details": details, "overrides": overrides, "characters": characters,
         "voice_list": voice_list, "voice_photos": photos, "voice_identities": identity_registry,
         "music_sources": music_sources,
+        "google_setlists": sheet_blocks,
     }
     build_id = pipeline_common.hashlib.sha256(
         pipeline_common.json.dumps(build_material, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")

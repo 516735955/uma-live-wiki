@@ -490,6 +490,8 @@ export function createEvents(deps) {
         deps.activeTab.value = "not-found";
         return;
       }
+      const aliasedSession = (found.sessions || []).find(session => (session.id_aliases || []).includes(requestedSessionId));
+      if (aliasedSession) requestedSessionId = aliasedSession.id;
       if (requestedSessionId && !(found.sessions || []).some(session => session.id === requestedSessionId)) {
         deps.navigationError.value = "所请求的活动场次不存在，请返回活动列表选择有效场次。";
         return;

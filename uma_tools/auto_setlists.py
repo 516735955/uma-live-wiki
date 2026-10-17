@@ -36,6 +36,7 @@ TITLE_SPLIT_RE = re.compile(r"[＠@]", re.I)
 REGION_RE = re.compile(r"\s*[（(][^()（）]*[）)]\s*$")
 DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 PERFORMER_SPLIT_RE = re.compile(r"[、，,､/・\r\n]+")
+ALL_CAST_RE = re.compile(r'^(?:(?:他)?(?:出演)?(?:キャスト|出演者)?全[員员](?:\s*[（(]\d+人[）)])?|ALL|全体出演者|全出演者)$', re.I)
 
 
 def normalized_title(value):
@@ -48,7 +49,41 @@ def event_date(value):
     if isinstance(value, (dt.date, dt.datetime)):
         return value.isoformat()[:10]
     match = DATE_RE.search(str(value or ""))
-    return match.group(0) if match else ""
+    if match:
+        return match.group(0)
+    match = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', str(value or ''))
+    return dt.date(*map(int, match.groups())).isoformat() if match else ''
+
+
+def numbered_key(title):
+    match = re.search(r'(?<!\d)(\d+)(?:st|nd|rd|th)\s*EVENT\b', unicodedata.normalize('NFKC', title or ''), re.I)
+    return int(match.group(1)) if match else None
+
+
+def numbered_match(block, events):
+    number = numbered_key(block['title'])
+    if number is None:
+        return None
+    matches = [event for event in events
+               if (event.get('series_id') == 'numbered-live' or event.get('id', '').startswith('live-numbered-'))
+               and numbered_key(event.get('title')) == number
+               and block['date'] in {event.get('date'), *(session.get('date') for session in event.get('sessions', []))}]
+    primary = [event for event in matches if event.get('series_id') == 'numbered-live']
+    matches = primary or matches
+    return matches[0] if len(matches) == 1 else None
+
+
+def canonical_match(block, events):
+    event = numbered_match(block, events)
+    if event:
+        return event
+    volume = re.search(r'ぱかライブTV\s*Vol\.?\s*(\d+)', block['title'], re.I)
+    if not volume or re.search(r'そこそこ|Prime|プライム', block['title'], re.I):
+        return None
+    identifier = f'paka-live-tv-{int(volume.group(1)):03d}'
+    matches = [event for event in events if event['id'] == identifier and event.get('kind') == 'official_program'
+               and block['date'] in {event.get('date'), *(session.get('date') for session in event.get('sessions', []))}]
+    return matches[0] if len(matches) == 1 else None
 
 
 def session_label(title):
@@ -74,10 +109,14 @@ def parse_sheet(data):
 
 
 def parse_worksheet(sheet):
+    return parse_rows(sheet.iter_rows(values_only=True))
+
+
+def parse_rows(rows):
     blocks, current, current_date = [], None, ''
-    for row in sheet.iter_rows(values_only=True):
+    for row in rows:
         date, title, song, performers = (list(row[:4]) + [None] * 4)[:4]
-        if date is not None:
+        if date:
             current_date = event_date(date)
         if title is not None and str(title).strip():
             current = {'date': current_date, 'title': str(title).strip(), 'songs': []}
@@ -216,6 +255,8 @@ def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
         key = (normalized_title(block['title']), block['date'], session_label(block['title']))
         if not block['date'] or any((normalized_title(slot['title']), slot['date'], slot['label']) == key for slot in slots):
             continue
+        if canonical_match(block, existing_events):
+            continue
         if (key[0], key[1]) in published:
             continue
         matches = [event for event in events if (normalized_title(event.get('title')), event.get('date'), session_label(event.get('title'))) == key
@@ -225,7 +266,7 @@ def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
         event = matches[0]
         actors = list(dict.fromkeys(actor['name'] for actor in event.get('actors', [])
                                    if actor.get('name') and not re.search(r'gal.?up|ウマ娘\s*プリティーダービー', actor['name'], re.I)))
-        singers = {name for song in block['songs'] for name in song['performers']}
+        singers = {name for song in block['songs'] for name in song['performers'] if not ALL_CAST_RE.fullmatch(name)}
         if not actors or not singers or not singers <= set(actors) or any(not song['performers'] for song in block['songs']):
             continue
         cast = '、'.join(html.escape(name) for name in actors)
@@ -324,6 +365,17 @@ def main():
         blocks = parse_sheet(data)
         if not blocks:
             raise ValueError("Google sheet has no setlists; refusing to update curated data")
+        if not args.dry_run:
+            import csv
+            # The checked-in Google export is the primary, portable setlist source.
+            output = io.StringIO(newline='')
+            writer = csv.writer(output, lineterminator='\n')
+            for block in blocks:
+                writer.writerow([block['date'], block['title'], '', ''])
+                for song in block['songs']:
+                    writer.writerow(['', '', 'M' + (song['no'] or '') + '. ' + song['name'], '、'.join(song['performers'])])
+            from knowledge_io import write_text
+            write_text(ROOT / 'data/events/赛马娘LIVE歌单导出.csv', output.getvalue())
         events_file = ROOT / 'data/events_data.json'
         events = json.loads(events_file.read_text(encoding='utf-8')).get('events', []) if events_file.exists() else []
         published_file = ROOT / 'data/events_catalog.json'

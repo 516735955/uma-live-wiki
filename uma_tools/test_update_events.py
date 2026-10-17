@@ -332,12 +332,13 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         catalog = UPDATE_EVENTS.read_json(ROOT / "data" / "events_catalog.json")
         event = next(row for row in catalog["events"] if row["id"] == "live-other-2023-11-18-animax-musix-2023")
         expected = {"tokaiteio", "vodka", "mrcb", "matikanetannhauser", "kitasanblack", "symbolikriss", "katsuragiace"}
-        self.assertEqual({item["character_id"] for item in event["cast"]}, expected)
-        self.assertEqual(len(event["cast"]), 7)
+        self.assertEqual({item['character_id'] for item in event['cast'] if item.get('character_id')}, expected)
+        self.assertTrue(all(item.get('voice_actor_id') for item in event['cast']))
         table = event["sessions"][0]["setlist_html"]
         for guest in ("伊藤美来", "上坂すみれ", "東山奈央", "羊宮妃那"):
             self.assertIn(f'class="guest-performer">{guest}</span>', table)
         self.assertEqual(set(event["sessions"][0]["performances"][-1]["character_ids"]), expected)
+        self.assertIn('伊藤美来', event['sessions'][0]['performances'][-1]['guest_performers'])
 
     def test_setlist_song_versions_are_preserved(self):
         self.assertEqual(
@@ -519,8 +520,8 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         day_one, day_two = event["sessions"]
         self.assertNotIn("bikopegasus", day_one["character_ids"])
         self.assertIn("bikopegasus", day_two["character_ids"])
-        self.assertIn('uma_avatars/BikoPegasus.png" alt="微光飞驹"', day_two["setlist_html"])
-        self.assertNotIn('uma_avatars/ShinkoWindy.png" alt="微光飞驹"', day_two["setlist_html"])
+        self.assertIn('guest-performer">田中あいみ</span>', day_two['setlist_html'])
+        self.assertNotIn('guest-performer">田中あいみ</span>', day_one['setlist_html'])
 
         character_events = [
             row for row in built["appearances"]["characters"]["bikopegasus"]["events"]
@@ -615,14 +616,21 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                                 "day": day_index,
                             }
                             expected[json.dumps(locator, sort_keys=True)] = day.get("table") or ""
-        self.assertEqual(set(actual), set(expected))
+        retained = {json.dumps(source, sort_keys=True) for event in built['catalog']['events']
+                    for session in event.get('sessions', [])
+                    for source in [session.get('setlist_source'), *session.get('alternate_setlist_sources', [])] if source}
+        self.assertTrue(set(expected) <= retained, 'legacy source locators remain available after Google replacement and event merging')
 
         class NoCharacters:
             @staticmethod
             def character_id(_name):
                 return ""
 
-        for locator, table in expected.items():
+        for locator, session in actual.items():
+            if locator not in expected:
+                self.assertEqual(session['setlist_source']['file'], 'data/events/赛马娘LIVE歌单导出.csv')
+                continue
+            table = expected[locator]
             parsed_songs = [row["song"] for row in UPDATE_EVENTS.table_performances(table, NoCharacters())]
             self.assertEqual(actual[locator]["songs"], parsed_songs, locator)
             self.assertEqual(actual[locator]["setlist_html"], table, locator)
@@ -635,7 +643,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 self.assertEqual(session["setlist_status"], expected_status)
                 if session.get("songs") or session.get("performances"):
                     self.assertIn(session.get("setlist_source", {}).get("file"), {
-                        "data/live_data.json", "data/live_cat_data.json",
+                        "data/live_data.json", "data/live_cat_data.json", "data/events/赛马娘LIVE歌单导出.csv",
                     })
                 if session.get("setlist_source"):
                     self.assertTrue(session.get("setlist_html"), session.get("id"))

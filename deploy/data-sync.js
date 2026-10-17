@@ -21,7 +21,7 @@ function files(root) {
       const name = prefix + entry.name;
       if (entry.isDirectory() && !/^(?:auto_update|horses_cache|news_image_cache|anime\/source_snapshots)(?:\/|$)/.test(name)) {
         visit(path.join(directory, entry.name), name + '/');
-      } else if (entry.isFile() && /\.(?:json|js)$/.test(name)) result.push(name);
+      } else if (entry.isFile() && (/\.(?:json|js)$/.test(name) || name === 'events/赛马娘LIVE歌单导出.csv')) result.push(name);
     }
   }
   visit(root);
@@ -31,6 +31,7 @@ function files(root) {
 function read(file) {
   if (!fs.existsSync(file)) return undefined;
   const text = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
+  if (file.endsWith('.csv')) return { value: text };
   if (file.endsWith('.js')) {
     const match = text.match(/^\s*window\.(\w+)\s*=\s*([\s\S]*?)\s*;?\s*$/);
     if (!match) throw new Error('Unrecognized data assignment: ' + path.basename(file));
@@ -103,7 +104,7 @@ function merge(previous, incoming, live) {
 function write(file, document) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   const temporary = file + '.deploy.tmp';
-  const payload = JSON.stringify(document.value, null, 2);
+  const payload = file.endsWith('.csv') ? document.value.trimEnd() : JSON.stringify(document.value, null, 2);
   try {
     fs.writeFileSync(temporary, (document.global ? 'window.' + document.global + ' = ' + payload + ';' : payload) + '\n');
     fs.renameSync(temporary, file);

@@ -39,7 +39,7 @@ STEP_OUTPUTS = {
     'horse-profiles': ['horses_details.js', 'horses_list.js'],
     'pedigree-build': ['pedigree_data.js', 'character_pedigree_meta.js'],
     'events': ['events_data.json'], 'programs': ['events/official_programs.json'],
-    'albums': ['albums.json'], 'setlists': ['live_cat_data.json'],
+    'albums': ['albums.json'], 'setlists': ['live_cat_data.json', 'events/赛马娘LIVE歌单导出.csv'],
     'catalogs': ['events_catalog.json', 'song_catalog.json', 'voice_actor_profiles.json'],
     'music-metadata': ['music/credits.json', 'music/creators.json', 'music/lyrics.json', 'music/lyric_timings.json'],
     'voice-profiles': ['events/voice_actor_details.json'],

@@ -195,7 +195,9 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
                         "series_id": cat_series_id(category, section.get("group") or "", group.get("group") or ""),
                         "venue": venue, "cast_status": "verified" if cast else "partial", "cast": cast, "character_ids": [],
                         "sessions": sessions, "media": curated_media(sub.get("vids") or []),
-                        "sources": [{"kind": "curated_live", "label": "站内精调歌单", "url": legacy}],
+                        "sources": [{"kind": "curated_live", "label": "站内精调歌单", "url": legacy}] +
+                            ([{'kind': 'eventernote', 'label': 'Eventernote', 'url': sub.get('source_url') or group.get('source_url')}]
+                             if str(sub.get('source_url') or group.get('source_url') or '').startswith('https://www.eventernote.com/events/') else []),
                         "legacy_url": legacy, "legacy_aliases": legacy_aliases, "image": "", "summary": sub.get("tips") or "",
                     })
     return out
@@ -203,13 +205,14 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
 
 def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote_doc: dict[str, pipeline_common.Any], identities: pipeline_identities.IdentityIndex, used: set[str]) -> None:
     by_legacy = {}
+    by_source = {source['url']: event for event in events for source in event.get('sources', []) if source.get('kind') == 'eventernote'}
     for event in events:
         for legacy in [event.get("legacy_url"), *(event.get("legacy_aliases") or [])]:
             if legacy:
                 by_legacy[legacy] = event
     for source in eventernote_doc.get("events") or []:
         legacy = source.get("live") or ""
-        linked = by_legacy.get(legacy)
+        linked = by_legacy.get(legacy) or by_source.get(source.get('link'))
         cast = pipeline_identities.make_cast(source.get("actors") or [], identities, "eventernote", source.get("link") or "")
         eventernote_id = ""
         match = pipeline_common.EVENTERNOTE_ID_RE.search(source.get("link") or "")
@@ -222,7 +225,8 @@ def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote
             else:
                 linked["cast"] = pipeline_identities.merge_cast_records([*linked["cast"], *cast])
                 linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
-            linked["sources"].append({"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""})
+            if not any(item.get('kind') == 'eventernote' and item.get('url') == source.get('link') for item in linked['sources']):
+                linked["sources"].append({"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""})
             linked["image"] = linked.get("image") or source.get("img") or ""
             linked["venue"] = linked.get("venue") or source.get("venue") or ""
             continue
@@ -329,6 +333,8 @@ def apply_overrides(events: list[dict[str, pipeline_common.Any]], overrides: dic
         event["id"] = canonical
         patch = patches.get(canonical)
         if patch:
+            if patch.get('title') and patch['title'] != event['title']:
+                event.setdefault('title_aliases', []).append(event['title'])
             event.update({key: value for key, value in patch.items() if key not in ("cast_add", "sources_add")})
             if "character_ids" in patch:
                 allowed_characters = set(patch.get("character_ids") or [])
@@ -389,6 +395,11 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
         return out
 
     def merge_session(target: dict[str, pipeline_common.Any], incoming: dict[str, pipeline_common.Any]) -> None:
+        target['id_aliases'] = list(dict.fromkeys([*target.get('id_aliases', []), incoming['id'], *incoming.get('id_aliases', [])]))
+        target['alternate_setlist_sources'] = [*target.get('alternate_setlist_sources', []),
+                                                *incoming.get('alternate_setlist_sources', [])]
+        if incoming.get('setlist_source') and incoming.get('setlist_source') != target.get('setlist_source'):
+            target['alternate_setlist_sources'].append(incoming['setlist_source'])
         target["songs"] = unique([*target.get("songs", []), *incoming.get("songs", [])], lambda value: value)
         target["character_ids"] = unique([*target.get("character_ids", []), *incoming.get("character_ids", [])], lambda value: value)
         target["cast"] = pipeline_identities.merge_cast_records([*target.get("cast", []), *incoming.get("cast", [])])
@@ -406,12 +417,16 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
             rows,
             key=lambda row: (
                 row.get("kind") == "official_program",
+                row.get('series_id') == 'numbered-live',
                 bool(row.get("date")),
                 bool(row.get("image")),
                 len(row.get("summary") or ""),
             ),
         )
         merged = dict(primary)
+        merged['title_aliases'] = unique([title for row in rows for title in [row['title'], *row.get('title_aliases', [])]
+                                          if title != merged['title']], lambda value: value)
+        merged['id_aliases'] = unique([alias for row in rows for alias in row.get('id_aliases', [])], lambda value: value)
         merged["sources"] = unique(
             [source for row in rows for source in row.get("sources", [])],
             lambda source: (source.get("kind"), source.get("url")),
@@ -450,7 +465,9 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
                 else:
                     sessions.append(dict(incoming))
         for index, session in enumerate(sessions):
+            session['id_aliases'] = unique([session['id'], *session.get('id_aliases', [])], lambda value: value)
             session["id"] = f"{event_id}-session-{index + 1}"
+            session['id_aliases'] = [alias for alias in session['id_aliases'] if alias != session['id']]
         merged["sessions"] = sessions
         if len(rows) > 1 and any(row.get("kind") == "official_program" for row in rows):
             merged["kind"] = "official_program"

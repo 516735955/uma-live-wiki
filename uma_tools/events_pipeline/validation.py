@@ -120,7 +120,7 @@ def validate(
                 errors.append(f"event {event['id']} publishes non-Uma cast {cast.get('name')}")
             if not cast.get("voice_actor_id"):
                 errors.append(f"event {event['id']} has cast without voice-actor identity {cast.get('name')}")
-            if not cast.get("character_id") and cast.get("voice_actor_id") not in character_optional_actors:
+            if not cast.get("character_id") and cast.get("voice_actor_id") not in character_optional_actors and cast.get('evidence') != 'google_sheet':
                 errors.append(f"event {event['id']} has cast without canonical character {cast.get('name')}")
             if cast.get("voice_actor_id") and cast["voice_actor_id"] not in known_actors:
                 errors.append(f"event {event['id']} references unknown actor {cast['voice_actor_id']}")

@@ -5,7 +5,7 @@ const path = require('path');
 const crypto = require('crypto');
 const businessDate = require('./business-date');
 
-const CATALOG_RESPONSE_SCHEMA = 7;
+const CATALOG_RESPONSE_SCHEMA = 8;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -476,7 +476,7 @@ class CatalogStore {
       creatorRows,
       music,
       albumRows: albumRowsIndexed,
-      eventsById: new Map(events.map((event) => [String(event.id), event])),
+      eventsById: new Map(events.flatMap(event => [event.id, ...(event.id_aliases || [])].map(id => [String(id), event]))),
       songsById: new Map(songs.map((song) => [String(song.id), song])),
       creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
       songAliases: new Map(),

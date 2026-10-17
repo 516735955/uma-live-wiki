@@ -93,16 +93,17 @@ def build_appearance_index(events: list[dict[str, pipeline_common.Any]], songs_c
                     relation["event_ids"].append(event["id"])
                     relation["performance_ids"].append(f"{session.get('id') or event['id']}:{version_id}")
                     relation["version_ids"].append(version_id)
+                actor_ids = set(performance.get('voice_actor_ids') or [])
                 for char_id in performance_chars:
-                    actor_ids = actors_for_character(char_id)
-                    for actor_id in actor_ids:
-                        voice_in_event[actor_id].add("setlist_character")
-                        session_voice[actor_id].add("setlist_character")
-                        relation = actor_songs[actor_id].setdefault(song_id, {
-                            'song_id': song_id, 'name': song, 'event_ids': [], 'performance_ids': [], 'version_ids': []})
-                        relation['event_ids'].append(event['id'])
-                        relation['performance_ids'].append(f"{session.get('id') or event['id']}:{version_id}")
-                        relation['version_ids'].append(version_id)
+                    actor_ids.update(actors_for_character(char_id))
+                for actor_id in actor_ids:
+                    voice_in_event[actor_id].add("setlist_performer")
+                    session_voice[actor_id].add("setlist_performer")
+                    relation = actor_songs[actor_id].setdefault(song_id, {
+                        'song_id': song_id, 'name': song, 'event_ids': [], 'performance_ids': [], 'version_ids': []})
+                    relation['event_ids'].append(event['id'])
+                    relation['performance_ids'].append(f"{session.get('id') or event['id']}:{version_id}")
+                    relation['version_ids'].append(version_id)
             for char_id in session_chars:
                 actor_ids = actors_for_character(char_id)
                 for actor_id in actor_ids:

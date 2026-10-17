@@ -75,5 +75,16 @@ try {
   assert(!fs.existsSync(path.join(liveRoot,'uma_tools/img/retired.jpg')), 'unreferenced retired Git media is eventually reclaimed');
   media.rollback(liveRoot,retiredBackup);
   assert(fs.existsSync(path.join(liveRoot,'uma_tools/img/retired.jpg')), 'media reclamation is included in rollback');
+  const sheet = 'events/赛马娘LIVE歌单导出.csv';
+  const sheetTarget = path.join(root, 'sheet-candidate');
+  for (const [directory, contents] of [[previousRoot, 'old,song\n'], [incomingRoot, 'Google,new song\n'], [liveRoot, 'old,song\n']])
+    write(directory, 'data/' + sheet, contents);
+  data.stage(path.join(incomingRoot,'data'),path.join(previousRoot,'data'),path.join(liveRoot,'data'),sheetTarget);
+  assert.strictEqual(fs.readFileSync(path.join(sheetTarget,sheet),'utf8'), 'Google,new song\n', 'a changed Google source reaches the release');
+  write(previousRoot, 'data/' + sheet, 'Google,new song\n');
+  write(liveRoot, 'data/' + sheet, 'Google,newer runtime song\n');
+  const runtimeSheet = path.join(root, 'sheet-runtime');
+  data.stage(path.join(incomingRoot,'data'),path.join(previousRoot,'data'),path.join(liveRoot,'data'),runtimeSheet);
+  assert.strictEqual(fs.readFileSync(path.join(runtimeSheet,sheet),'utf8'), 'Google,newer runtime song\n', 'an unchanged Git export retains the live Google refresh');
   console.log('field publication, independent runtime facts, media replacement, idempotency and rollback passed');
 } finally {fs.rmSync(root,{recursive:true,force:true});}

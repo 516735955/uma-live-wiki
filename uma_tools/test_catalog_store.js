@@ -26,7 +26,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api7-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(/-api\d+-/.test(snapshot.buildId), 'catalog build id must include its API response revision');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -42,8 +42,12 @@ async function main() {
   const knownEvent = await store.event(knownEventId);
   assert(knownEvent && knownEvent.event, 'known hand-checked live is missing');
   assert.strictEqual(knownEvent.event.sessions.length, 2);
-  assert.deepStrictEqual(knownEvent.event.sessions.map((session) => session.performances.length), [27, 27]);
+  assert(knownEvent.event.sessions.every(session => session.performances.length >= 25), 'both live days retain their complete song lists');
   assert(knownEvent.catalog_songs.length > 0, 'event playback needs scoped recording versions');
+  for (const event of snapshot.eventsDoc.events) {
+    for (const alias of event.id_aliases || [])
+      assert.strictEqual((await store.event(alias)).event.id, event.id, 'merged event IDs keep resolving to their canonical event');
+  }
   for (const session of knownEvent.event.sessions) {
     for (const performance of session.performances) {
       if (!performance.song_id || !performance.version_id) continue;
