@@ -125,7 +125,9 @@ async function main() {
     const local = new AnimeStore(temporary);
     await local.response('index');
     fs.writeFileSync(fixtureFile, '{');
-    await assert.rejects(local.response('index'), /JSON/);
+    assert.strictEqual((await local.response('index')).build_id, original.build_id,
+      'a corrupt refresh keeps the last complete catalog available');
+    assert(local.lastError instanceof SyntaxError, 'a corrupt refresh still records the parsing failure');
     fs.writeFileSync(fixtureFile, JSON.stringify({ ...original, build_id: 'changed-build' }));
     assert.strictEqual((await local.response('index')).build_id, 'changed-build', 'failed refresh can recover without a server restart');
   } finally { fs.rmSync(temporary, { recursive: true, force: true }); }
