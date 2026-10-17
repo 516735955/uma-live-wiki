@@ -61,7 +61,7 @@ function imageStore(directory, options = {}) {
       try {
       const bytes = await new Promise((resolve, reject) => {
         let timer;
-        const request = https.get(url, { family: 4 }, (response) => {
+        const request = https.get(url, { family: 4, headers: { 'User-Agent': 'UmaLiveWiki/1.0', Accept: 'image/*' } }, (response) => {
           if (response.statusCode !== 200 || !/^image\/(?:png|jpeg|webp|gif)(?:;|$)/i.test(response.headers['content-type'] || '')) {
             response.resume(); reject(new Error('news image HTTP ' + response.statusCode)); return;
           }
@@ -75,7 +75,10 @@ function imageStore(directory, options = {}) {
           response.on('error', reject);
           response.on('aborted', () => reject(new Error('news image response aborted')));
         });
-        timer = setTimeout(() => request.destroy(new Error('news image timeout')), 15000);
+        // A progressing image download can exceed 15 seconds on agency hosts.
+        // Stop stalled sockets promptly and keep a separate total deadline.
+        request.setTimeout(15000, () => request.destroy(new Error('news image stalled')));
+        timer = setTimeout(() => request.destroy(new Error('news image timeout')), 90000);
         request.on('error', reject);
         request.on('close', () => clearTimeout(timer));
       });

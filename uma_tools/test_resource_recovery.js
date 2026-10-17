@@ -24,6 +24,7 @@ async function main() {
   Date.now = () => clock;
   https.get = (url, options, callback) => {
     const request = new EventEmitter();
+    request.setTimeout = () => request;
     request.destroy = error => { request.emit('error', error); request.emit('close'); };
     setImmediate(() => {
       if (offline) { failedRequests++; return request.destroy(new Error('offline')); }
