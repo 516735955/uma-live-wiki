@@ -43,7 +43,7 @@ fetch() { curl -fsSL --retry 2 --connect-timeout 15 --max-time 180 "$@"; }
 fetch_file() {
   local url="$1" target="$2" attempt status
   for attempt in 1 2 3; do
-    if curl -fsSL --connect-timeout 15 --max-time 180 --continue-at - "$url" -o "$target"; then return 0; else status=$?; fi
+    if curl -fsSL --connect-timeout 15 --max-time 1800 --speed-time 60 --speed-limit 1024 --continue-at - "$url" -o "$target"; then return 0; else status=$?; fi
     if [ "$status" = 33 ]; then rm -f "$target"; fi
     [ "$attempt" = 3 ] || sleep 2
   done
