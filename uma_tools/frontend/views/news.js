@@ -2,7 +2,7 @@ export const bindings = ["newsItems","newsError","newsLoading","newsRange","news
 export const template = `
             <div v-if="newsDetail" class="news-detail">
                 <div v-if="newsDetail.image_big" class="news-detail-cover-wrap">
-                    <img class="news-detail-cover" v-media-src="newsImage(newsDetail.image_big)" :alt="newsDetail.title_zh || newsDetail.title">
+                    <img class="news-detail-cover" v-media-src="newsImage(newsDetail.image_big)" :data-original="newsDetail.image_big" :alt="newsDetail.title_zh || newsDetail.title">
                 </div>
                 <div class="news-detail-meta">
                     <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">原文 ↗</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
