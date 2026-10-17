@@ -51,6 +51,14 @@ try {
   assert.strictEqual(numbered.restore(numbered.text), '东海帝王、和气杏未');
   const gacha = terms.protect('10回引く!（有償） / 10回引く!（通常） / 1回引く! / 有償ジュエル / 無償ジュエル');
   assert.strictEqual(gacha.restore(gacha.text), '付费十连抽 / 普通十连抽 / 单抽 / 付费宝石 / 免费宝石');
+  const program = terms.protect('そこそこぱかライブTV／ぱかライブTV\'／ぱかチューブっ!');
+  assert.strictEqual(program.restore(program.text), 'SokoSoko PakaLive TV／PakaLive TV\'／PakaTube');
+  const linkedProgram = terms.protect('ぱかライブTV https://example.com/ぱかライブTV?id=123');
+  assert.strictEqual(linkedProgram.restore(linkedProgram.text), 'PakaLive TV https://example.com/ぱかライブTV?id=123');
+  assert.strictEqual(terms.normalize('<a href="https://example.com/ぱかライブTV">ぱか直播TV</a>'),
+    '<a href="https://example.com/ぱかライブTV">PakaLive TV</a>');
+  const { untranslatedJapanese } = require('./translation-facts');
+  assert(untranslatedJapanese('新しい情報をご確認ください。', '请确认新しい情報をご確認ください。'));
   assert(officialImage('https://prd-info-umamusume.akamaized.net/announce/3469/Header/test.png?c=1'));
   assert.strictEqual(officialImage('https://example.com/test.png'), null);
   assert.strictEqual(officialImage('https://prd-info-umamusume.akamaized.net:8080/announce/1/Header/test.png'), null);

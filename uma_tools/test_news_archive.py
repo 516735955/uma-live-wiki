@@ -10,6 +10,28 @@ from news_database import NewsDatabase
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_glossary_maintenance_preserves_versions_urls_and_reusable_fragments(self):
+        with tempfile.TemporaryDirectory() as directory:
+            file = Path(directory) / 'news.sqlite'
+            archive = NewsDatabase(file)
+            source = {'detail': {'announce_id': 1, 'title': 'ぱかライブTV',
+                                 'message': '<p>ぱかライブTV</p><a href="https://example.com/ぱかライブTV">URL</a>'}}
+            article = archive.put('official-1', source, 'assistant')
+            archive.translate('official-1', 1, dict(article['detail'], title_zh='ぱか直播TV',
+                              message_zh='<p>ぱか直播TV</p><a href="https://example.com/ぱかライブTV">URL</a>'), 'assistant')
+            archive.db.close()
+            command = [sys.executable, str(Path(__file__).with_name('archive_news.py')), '--database', str(file), '--normalize-terms']
+            subprocess.run(command, check=True, capture_output=True)
+            subprocess.run(command, check=True, capture_output=True)
+            restored = NewsDatabase(file)
+            detail = restored.get('official-1')['detail']
+            self.assertEqual(detail['archive_revision'], 1)
+            self.assertEqual(detail['translator'], 'assistant')
+            self.assertEqual(detail['title_zh'], 'PakaLive TV')
+            self.assertIn('href="https://example.com/ぱかライブTV"', detail['message_zh'])
+            self.assertEqual(restored.db.execute('SELECT target FROM fragments WHERE source=?', ('ぱかライブTV',)).fetchone()[0], 'PakaLive TV')
+            restored.db.close()
+
     def test_existing_archive_migrates_titles_without_changing_full_text(self):
         with tempfile.TemporaryDirectory() as directory:
             file = Path(directory) / 'news.sqlite'

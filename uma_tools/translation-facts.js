@@ -14,7 +14,8 @@ function translationFactsMatch(source, translated) {
 }
 
 function untranslatedJapanese(source, translated) {
-  return source === translated && /[\u3040-\u30ff]/.test(source);
+  return (source === translated && /[\u3040-\u30ff]/.test(source)) ||
+    /ございます|いたします|ください|されます|しました|となります|のとおり/.test(translated);
 }
 
 module.exports = { translationFactsMatch, untranslatedJapanese };

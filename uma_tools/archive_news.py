@@ -4,13 +4,14 @@ import concurrent.futures
 import json
 from pathlib import Path
 import sys
+import subprocess
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 
 from bs4 import BeautifulSoup
-from news_database import NewsDatabase
+from news_database import NewsDatabase, plain_text
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -61,8 +62,37 @@ def main():
     parser.add_argument('--export-pending', action='store_true')
     parser.add_argument('--import-translations', type=Path)
     parser.add_argument('--backup', type=Path)
+    parser.add_argument('--normalize-terms', action='store_true', help='Apply the shared project glossary to completed translations')
     args = parser.parse_args()
+    if args.normalize_terms and not args.database.is_file():
+        parser.error('--normalize-terms requires an existing news database')
     archive = NewsDatabase(args.database)
+    if args.normalize_terms:
+        rows = []
+        for key, revision, translated in archive.db.execute('SELECT article_key,revision,translated FROM versions WHERE state="complete" AND translated IS NOT NULL'):
+            detail = json.loads(translated)
+            fragments = dict(archive.db.execute('SELECT source,target FROM fragments WHERE article_key=?', (key,)))
+            rows.append({'key': key, 'revision': revision, 'title_zh': detail.get('title_zh', ''),
+                         'message_zh': detail.get('message_zh', ''), 'fragments': fragments})
+        result = subprocess.run(['node', str(ROOT / 'uma_tools/translation-terms.js')],
+                                input=json.dumps(rows, ensure_ascii=False), text=True, encoding='utf-8',
+                                capture_output=True, check=True, timeout=60)
+        changed = 0
+        with archive.db:
+            for old, new in zip(rows, json.loads(result.stdout)):
+                if old == new:
+                    continue
+                record = archive.db.execute('SELECT translated FROM versions WHERE article_key=? AND revision=?',
+                                            (old['key'], old['revision'])).fetchone()
+                detail = dict(json.loads(record['translated']), title_zh=new['title_zh'], message_zh=new['message_zh'])
+                archive.db.execute('UPDATE versions SET translated=?,chinese_text=?,translated_title=? WHERE article_key=? AND revision=?',
+                                   (json.dumps(detail, ensure_ascii=False), plain_text(new['message_zh']), new['title_zh'], old['key'], old['revision']))
+                # Reused fragments must retain the same terminology as the full text.
+                for source, target in new['fragments'].items():
+                    archive.db.execute('UPDATE fragments SET target=? WHERE article_key=? AND source=?',
+                                       (target, old['key'], source))
+                changed += 1
+        print('glossary translations updated:', changed)
     if args.fetch:
         rows = json.loads(args.snapshot.read_text(encoding='utf-8'))['information_list']
         if args.owner == 'assistant':

@@ -47,10 +47,11 @@ exports.createService = function (deps) {
   function currentTerms() {
     if (translationTerms && Date.now() - termsCheckedAt < 1000) return translationTerms;
     termsCheckedAt = Date.now();
-    const stamp = ["character_index_data.js", "voice_actor_profiles.json"]
+    const stamp = ["character_index_data.js", "voice_actor_profiles.json", "events_catalog.json", "anime/works.json"]
       .map(
         (file) => deps.fs.statSync(deps.path.join(deps.DATA_DIR, file)).mtimeMs,
       )
+      .concat(deps.fs.statSync(deps.path.join(__dirname, 'translation-glossary.json')).mtimeMs)
       .join(":");
     if (stamp !== termStamp) {
       translationTerms = deps.createTerms(deps.loadTerms(deps.ROOT));
@@ -167,6 +168,9 @@ exports.createService = function (deps) {
 
   function translateOne(text, attempt, signal) {
     if (signal && signal.aborted) return Promise.resolve("");
+    const known = currentTerms().protect(text);
+    if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
+      return Promise.resolve(known.restore(known.text));
     return new Promise((resolve) => {
       const protectedText = currentTerms().protect(text);
       fetchTranslation(protectedText.text, signal)
@@ -231,7 +235,7 @@ exports.createService = function (deps) {
 
   function translateTitle(text, cb, signal, background = false) {
     if (!text) return cb(text || "");
-    const cached = newsContent.title(text);
+    const cached = currentTerms().normalize(newsContent.title(text));
     if (cached) return cb(cached);
     if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
     const duplicate = transQueue.find(
@@ -345,7 +349,7 @@ exports.createService = function (deps) {
       ? "msg_terms_" + currentTerms().revision + "_" + hash
       : originalKey;
     const cached = newsContent.message(originalKey) || translations.get(key);
-    if (cached && cached !== src) return cb(cached);
+    if (cached && cached !== src) return cb(currentTerms().normalize(cached));
     if (!BAIDU_APPID || !BAIDU_SECRET) return cb("");
     // tokenize: alternates text / tag
     const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
@@ -384,7 +388,12 @@ exports.createService = function (deps) {
       const cachedFragment = archivedFragments[run.text] || translations.get(
         "fragment:" + translationKey(run.text),
       );
-      if (cachedFragment) translated.set(run, cachedFragment);
+      if (cachedFragment) translated.set(run, currentTerms().normalize(cachedFragment));
+      else {
+        const known = currentTerms().protect(run.text);
+        if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
+          translated.set(run, known.restore(known.text));
+      }
     });
     const chunks = [];
     let cur = [];
