@@ -24,7 +24,7 @@ STEPS = [
     ('albums', ['auto_albums.py']),
     ('setlists', ['auto_setlists.py']),
     ('catalogs', ['update_events.py']),
-    ('music-metadata', ['sync_music_metadata.py', '--workers', '3', '--limit', '40', '--utaten', '--lrclib']),
+    ('music-metadata', ['sync_music_metadata.py', '--workers', '3', '--limit', '40', '--utaten']),
     ('voice-profiles', ['update_events.py', '--refresh-profiles']),
     ('music-build', ['update_events.py', '--music-only']),
     ('anime', ['sync_anime_sources.py']),

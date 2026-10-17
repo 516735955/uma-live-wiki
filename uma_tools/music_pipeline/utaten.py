@@ -50,6 +50,10 @@ class UtaTenLyricParser(pipeline_common.HTMLParser):
 
 
 def utaten_search_result(page: str, title: str) -> str:
+    return next(iter(utaten_search_results(page, title)), '')
+
+
+def utaten_search_results(page: str, title: str) -> list[str]:
     target = pipeline_recordings.folded_title(title)
     candidates: list[tuple[int, str]] = []
     for match in pipeline_common.re.finditer(r'<a\s+href="(/lyric/[^"/?#]+/)"[^>]*>([\s\S]*?)</a>', page, pipeline_common.re.I):
@@ -62,7 +66,7 @@ def utaten_search_result(page: str, title: str) -> str:
         if score >= 75:
             candidates.append((score, match.group(1)))
     candidates.sort(key=lambda row: (-row[0], len(row[1]), row[1]))
-    return candidates[0][1] if candidates else ""
+    return list(dict.fromkeys(row[1] for row in candidates))[:8]
 
 
 def json_ld_composition(page: str) -> dict[str, pipeline_common.Any]:
@@ -71,8 +75,16 @@ def json_ld_composition(page: str) -> dict[str, pipeline_common.Any]:
             value = pipeline_common.json.loads(raw.strip())
         except pipeline_common.json.JSONDecodeError:
             continue
-        if isinstance(value, dict) and value.get("@type") == "MusicComposition":
-            return value
+        pending = [value]
+        while pending:
+            item = pending.pop(0)
+            if isinstance(item, list):
+                pending.extend(item)
+            elif isinstance(item, dict):
+                kinds = item.get('@type', [])
+                if 'MusicComposition' in ([kinds] if isinstance(kinds, str) else kinds):
+                    return item
+                pending.extend(value for value in item.values() if isinstance(value, (dict, list)))
     return {}
 
 
@@ -89,12 +101,12 @@ def utaten_artist_names(composition: dict[str, pipeline_common.Any]) -> list[str
 
 
 def artist_match(recording: dict[str, pipeline_common.Any], composition: dict[str, pipeline_common.Any]) -> bool:
-    source = "".join(pipeline_recordings.normalized_name(name) for name in utaten_artist_names(composition))
+    source = {pipeline_recordings.normalized_name(name) for name in utaten_artist_names(composition)}
     if not source:
         return False
     for name in recording.get("artists") or []:
         key = pipeline_recordings.normalized_name(name)
-        if len(key) >= 3 and key in source:
+        if key and key in source:
             return True
     return False
 
@@ -116,18 +128,20 @@ def fetch_utaten(recording: dict[str, pipeline_common.Any]) -> tuple[str, dict[s
             request = pipeline_common.urllib.request.Request(pipeline_common.UTATEN_SEARCH_URL.format(title=pipeline_common.urllib.parse.quote(query.strip())), headers={'User-Agent': pipeline_common.UA})
             with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
                 search_page = response.read().decode('utf-8', errors='replace')
-        result_path = utaten_search_result(search_page, recording["version_title"])
-        if not result_path:
+        matches = []
+        for result_path in utaten_search_results(search_page, recording["version_title"]):
+            source_url = pipeline_common.urllib.parse.urljoin("https://utaten.com", result_path)
+            request = pipeline_common.urllib.request.Request(source_url, headers={"User-Agent": pipeline_common.UA})
+            with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
+                page = response.read().decode("utf-8", errors="replace")
+            composition = json_ld_composition(page)
+            if artist_match(recording, composition):
+                matches.append((source_url, page, composition))
+        if len(matches) != 1:
             return version_id, None, ""
-        source_url = pipeline_common.urllib.parse.urljoin("https://utaten.com", result_path)
-        request = pipeline_common.urllib.request.Request(source_url, headers={"User-Agent": pipeline_common.UA})
-        with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
-            page = response.read().decode("utf-8", errors="replace")
+        source_url, page, composition = matches[0]
         parser = UtaTenLyricParser()
         parser.feed(page)
-        composition = json_ld_composition(page)
-        if not artist_match(recording, composition):
-            return version_id, None, ""
         credits: list[dict[str, str]] = []
         for role, key in (("lyricist", "lyricist"), ("composer", "composer")):
             for raw_name in pipeline_credits.credit_names(composition.get(key)):

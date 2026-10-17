@@ -35,10 +35,11 @@ def fetch_lrclib_timing(
             releases = [release for release in recording.get('releases') or []
                         if pipeline_recordings.folded_title(str(release.get('album_name') or ''))
                         and pipeline_recordings.folded_title(str(release.get('album_name') or '')) == pipeline_recordings.folded_title(album)]
-            artists = {pipeline_recordings.normalized_name(artist) for artist in recording.get('artists') or [] if artist}
             incoming_artists = {pipeline_recordings.normalized_name(artist) for artist in pipeline_common.re.split(
                 r'[、,，／/&＋+]', str(item.get('artistName') or '')) if artist.strip()}
-            if not releases or not artists or artists != incoming_artists:
+            releases = [release for release in releases if
+                        {pipeline_recordings.normalized_name(artist) for artist in release.get('artists', recording.get('artists') or []) if artist} == incoming_artists and incoming_artists]
+            if not releases:
                 continue
             durations = [float(release['duration']) for release in releases if release.get('duration')]
             if recording.get('duration'):
@@ -58,10 +59,11 @@ def fetch_lrclib_timing(
         return version_id, None, str(error)
 
 
-def apply_lrclib_results(results: dict[str, dict[str, pipeline_common.Any] | None], timings: dict[str, pipeline_common.Any]) -> None:
+def apply_lrclib_results(results: dict[str, dict[str, pipeline_common.Any] | None], timings: dict[str, pipeline_common.Any], refresh: set[str] | None = None) -> None:
     timing_versions = timings.setdefault("versions", {})
     for version_id, result in results.items():
-        if not result or version_id in timing_versions:
+        current = timing_versions.get(version_id) or {}
+        if not result or (current and (version_id not in (refresh or set()) or current.get('manual') or current.get('source') == 'manual')):
             continue
         timing_versions[version_id] = {
             "lines": result["lines"],

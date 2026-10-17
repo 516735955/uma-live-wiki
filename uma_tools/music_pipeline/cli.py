@@ -40,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
     utaten_checked = set(source_state.get("utaten_checked") or [])
     utaten_checked_at = dict(source_state.get('utaten_checked_at') or {})
     lrclib_checked = set(source_state.get("lrclib_checked") or [])
+    lrclib_checked_at = dict(source_state.get('lrclib_checked_at') or {})
+    wiki_checked_at = dict(source_state.get('umamusu_wiki_checked_at') or {})
     umamusu_wiki_checked = {int(value) for value in source_state.get("umamusu_wiki_checked") or [] if str(value).isdigit()}
     overrides = pipeline_common.read_json(pipeline_common.OVERRIDES_FILE, {"schema_version": 1, "versions": {}})
     if not isinstance(overrides.get("versions"), dict):
@@ -270,7 +272,8 @@ def main(argv: list[str] | None = None) -> int:
         except (pipeline_common.urllib.error.URLError, TimeoutError, pipeline_common.json.JSONDecodeError) as error:
             category_pages = []
             errors.append((pipeline_common.UMAMUSU_WIKI_CATEGORY, str(error)))
-        pending_pages = [row for row in category_pages if int(row.get("pageid") or 0) not in umamusu_wiki_checked]
+        pending_pages = [row for row in category_pages if int(row.get("pageid") or 0) not in umamusu_wiki_checked
+                         or now - float(wiki_checked_at.get(str(row.get('pageid')), 0)) >= 7 * 86400]
         if args.limit:
             pending_pages = pending_pages[: max(0, args.limit)]
         fetched_pages, wiki_errors = pipeline_sources.wiki_page_wikitext([int(row["pageid"]) for row in pending_pages])
@@ -293,6 +296,7 @@ def main(argv: list[str] | None = None) -> int:
         for page in fetched_pages:
             page_id = int(page.get("pageid") or 0)
             umamusu_wiki_checked.add(page_id)
+            wiki_checked_at[str(page_id)] = now
             version_id, lines = pipeline_lyrics.parse_wiki_song(page, original_versions)
             if not version_id or not lines or (version_id in lyric_versions and version_id not in refresh):
                 continue
@@ -312,9 +316,9 @@ def main(argv: list[str] | None = None) -> int:
             (row, pipeline_lyrics.lyric_document_lines(lyrics, version_id))
             for version_id, row in recordings.items()
             if not row["instrumental"]
-            and (version_id in refresh or version_id not in lrclib_checked)
+            and (version_id in refresh or version_id not in lrclib_checked or now - float(lrclib_checked_at.get(version_id, 0)) >= 7 * 86400)
             and version_id in lyric_versions
-            and version_id not in timing_versions
+            and (version_id not in timing_versions or version_id in refresh)
         ]
         if args.limit:
             target_lrclib = target_lrclib[: max(0, args.limit)]
@@ -328,9 +332,10 @@ def main(argv: list[str] | None = None) -> int:
                     errors.append((version_id, error))
                 else:
                     lrclib_checked.add(version_id)
+                    lrclib_checked_at[version_id] = now
                 if index % 50 == 0 or index == len(futures):
                     print(f"LRCLIB checked: {index}/{len(futures)}", flush=True)
-        pipeline_timings.apply_lrclib_results(results, timings)
+        pipeline_timings.apply_lrclib_results(results, timings, refresh)
 
     pipeline_credits.normalize_automatic_credit_rows(credits)
     creators["creators"] = pipeline_credits.creator_rows(credits, creators)
@@ -353,6 +358,8 @@ def main(argv: list[str] | None = None) -> int:
         "utaten_checked": sorted(utaten_checked),
         "utaten_checked_at": utaten_checked_at,
         "lrclib_checked": sorted(lrclib_checked),
+        "lrclib_checked_at": lrclib_checked_at,
+        "umamusu_wiki_checked_at": wiki_checked_at,
         "umamusu_wiki_checked": sorted(umamusu_wiki_checked),
     })
     print(

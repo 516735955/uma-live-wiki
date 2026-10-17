@@ -12,8 +12,10 @@ def fetch_track(track: str, tries: int = 3) -> tuple[str, dict[str, pipeline_com
             request = pipeline_common.urllib.request.Request(url, headers={"User-Agent": pipeline_common.UA, "Referer": "https://music.163.com/"})
             with pipeline_common.urllib.request.urlopen(request, timeout=20) as response:
                 payload = pipeline_common.json.loads(response.read().decode("utf-8", errors="replace"))
+            if not isinstance(payload, dict) or payload.get('code', 200) != 200:
+                raise ValueError('NetEase business response: ' + str(payload.get('code') if isinstance(payload, dict) else 'invalid payload'))
             return track, payload, ""
-        except (pipeline_common.urllib.error.URLError, TimeoutError, pipeline_common.json.JSONDecodeError) as error:
+        except (pipeline_common.urllib.error.URLError, TimeoutError, ValueError) as error:
             last_error = str(error)
             if attempt + 1 < tries:
                 pipeline_common.time.sleep(0.4 * (attempt + 1))

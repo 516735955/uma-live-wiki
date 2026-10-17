@@ -37,7 +37,18 @@ def stable_creator_id(name: str) -> str:
 
 def split_creators(value: str) -> list[str]:
     cleaned = pipeline_common.re.sub(r"\s+(?:and|＆)\s+", "、", value.strip(), flags=pipeline_common.re.I)
-    parts = pipeline_common.re.split(r"\s*(?:/|／|、|，|,|;|；|・)\s*", cleaned)
+    parts, current, depth = [], [], 0
+    for char in cleaned:
+        if char in '(（[【':
+            depth += 1
+        elif char in ')）]】':
+            depth = max(0, depth - 1)
+        if not depth and char in '/／、，,;；・':
+            parts.append(''.join(current))
+            current = []
+        else:
+            current.append(char)
+    parts.append(''.join(current))
     out: list[str] = []
     for part in parts:
         part = pipeline_common.re.sub(r"\s+(?:arranged|composed|written)\s+by\s+", "", part, flags=pipeline_common.re.I).strip()
@@ -242,6 +253,7 @@ def credit_names(value: pipeline_common.Any) -> list[str]:
 
 def creator_rows(credits_doc: dict[str, pipeline_common.Any], existing: dict[str, pipeline_common.Any]) -> list[dict[str, pipeline_common.Any]]:
     existing_by_key: dict[str, dict[str, pipeline_common.Any]] = {}
+    existing_by_id = {row['id']: row for row in existing.get('creators') or []}
     for creator in existing.get("creators") or []:
         for name in [creator.get("name") or "", *(creator.get("aliases") or [])]:
             if name:
@@ -254,8 +266,9 @@ def creator_rows(credits_doc: dict[str, pipeline_common.Any], existing: dict[str
             key = pipeline_recordings.normalized_name(name)
             if not key:
                 continue
-            existing_creator = existing_by_key.get(key)
-            creator_id = (existing_creator or {}).get("id") or stable_creator_id(name)
+            explicit_id = credit.get('creator_id') or ''
+            existing_creator = existing_by_id.get(explicit_id) or existing_by_key.get(key)
+            creator_id = (existing_creator or {}).get("id") or (explicit_id if not automatic else '') or stable_creator_id(name)
             creator = collected.setdefault(creator_id, {
                 **(existing_creator or {}),
                 "id": creator_id,
@@ -274,6 +287,8 @@ def creator_rows(credits_doc: dict[str, pipeline_common.Any], existing: dict[str
                 if affiliations and not credit.get("affiliation"):
                     credit["affiliation"] = affiliations[0]
             credit["creator_id"] = creator_id
+            existing_by_key[key] = creator
+            existing_by_id[creator_id] = creator
     for creator in existing.get("creators") or []:
         canonical = existing_by_key.get(pipeline_recordings.normalized_name(creator.get("name") or ""))
         if creator.get("id") not in collected and (creator.get("manual") or canonical is creator):

@@ -50,7 +50,7 @@ def lyric_document_lines(lyrics: dict[str, pipeline_common.Any], version_id: str
 
 
 def lyric_line_key(value: str) -> str:
-    return pipeline_common.re.sub(r"[^0-9a-zぁ-んァ-ヶ一-龯]+", "", pipeline_common.unicodedata.normalize("NFKC", value).lower())
+    return pipeline_common.re.sub(r"[^0-9a-zぁ-んァ-ヶー一-龯]+", "", pipeline_common.unicodedata.normalize("NFKC", value).lower())
 
 
 def lyric_subsequence(needle: list[str], haystack: list[str]) -> list[int] | None:
@@ -147,7 +147,7 @@ def canonicalize_lyrics(
                 continue
             sequence = lyric_line_key("".join(normalized))
             match = next((cluster for cluster in clusters if
-                          sequence == lyric_line_key("".join(cluster["lines"]))
+                          (sequence == lyric_line_key("".join(cluster["lines"])) and not any(key.startswith('translat') for key in metadata_by_version[version_id]))
                           or lyric_subsequence(normalized, cluster["lines"]) is not None), None)
             if match is None:
                 match = {"lines": normalized, "versions": []}
@@ -224,7 +224,7 @@ def canonicalize_lyrics(
             )
             for line in raw_timing_lines
         ]
-        normalized_timing = normalize_lyric_lines(raw_timing_text)
+        normalized_timing = [normalize_lyric_line(text) for text in raw_timing_text]
         positions = timing_line_positions(normalized_timing, expected_text)
         aligned_ids = [expected_ids[index] if index is not None else "" for index in positions]
         lines = []
@@ -265,11 +265,14 @@ def parse_lyric(raw: str) -> tuple[list[dict[str, pipeline_common.Any]], list[di
     timed: list[dict[str, pipeline_common.Any]] = []
     credits: list[dict[str, str]] = []
     seen_credits: set[tuple[str, str]] = set()
+    offset_match = pipeline_common.re.search(r'\[offset:\s*([+-]?\d+)\]', str(raw or ''), pipeline_common.re.I)
+    offset = int(offset_match.group(1)) if offset_match else 0
     for source_line in str(raw or "").replace("\r", "").split("\n"):
         match = pipeline_common.TIMED_LINE_RE.match(source_line.strip())
         if not match:
             continue
-        text = match.group(4).strip()
+        stamps = list(pipeline_common.re.finditer(r'\[(\d+):(\d{1,2})(?:[.:](\d+))?\]', source_line))
+        text = source_line[stamps[-1].end():].strip() if stamps else match.group(4).strip()
         if not text:
             continue
         credit_match = pipeline_common.CREDIT_LINE_RE.match(text)
@@ -294,10 +297,9 @@ def parse_lyric(raw: str) -> tuple[list[dict[str, pipeline_common.Any]], list[di
             continue
         if pipeline_common.NO_LYRIC_RE.match(text):
             continue
-        timed.append({
-            "start_ms": milliseconds(match.group(1), match.group(2), match.group(3)),
-            "text": text,
-        })
+        for stamp in stamps:
+            timed.append({"start_ms": max(0, milliseconds(*stamp.groups()) - offset), "text": text})
+    timed.sort(key=lambda row: row['start_ms'])
     return timed, credits
 
 
@@ -358,7 +360,7 @@ def language_of(lines: list[dict[str, pipeline_common.Any]]) -> str:
 
 def folded_lyric(lines: list[str]) -> str:
     return pipeline_common.re.sub(
-        r"[^0-9a-zぁ-んァ-ヶ一-龯]+",
+        r"[^0-9a-zぁ-んァ-ヶー一-龯]+",
         "",
         pipeline_common.unicodedata.normalize("NFKC", "".join(lines)).lower(),
     )

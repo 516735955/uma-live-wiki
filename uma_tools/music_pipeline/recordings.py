@@ -30,6 +30,7 @@ def version_recordings(songs: dict[str, pipeline_common.Any]) -> dict[str, dict[
                     "catalog": release.get("catalog") or "",
                     "track_number": release.get("track_number"),
                     "duration": release.get("duration"),
+                    "artists": [artist.strip() for artist in pipeline_common.re.split(r'[、,，／/&＋+]', str(release.get('artist') or '')) if artist.strip()],
                 })
                 for artist in pipeline_common.re.split(r"[、,，／/&＋+]", str(release.get("artist") or "")):
                     artist = pipeline_common.re.sub(r"[()（）]", " ", artist).strip()
@@ -70,15 +71,13 @@ def match_recording_version(
 ) -> str:
     title_key = folded_title(title)
     candidates = [row for row in recordings.values() if folded_title(row["version_title"]) == title_key]
-    if len(candidates) == 1:
-        return candidates[0]["version_id"]
-    if release_name:
+    if release_name or track_number is not None:
         release_key = folded_title(release_name)
         narrowed = []
         for row in candidates:
             for release in row.get("releases") or []:
                 album_key = folded_title(str(release.get("album_name") or ""))
-                same_release = release_key and (release_key == album_key or release_key in album_key or album_key in release_key)
+                same_release = not release_name or bool(release_key and album_key and release_key == album_key)
                 same_track = track_number is None or int(release.get("track_number") or 0) == track_number
                 if same_release and same_track:
                     narrowed.append(row)
@@ -111,4 +110,4 @@ def choose_candidate(recording: dict[str, pipeline_common.Any], fetched: dict[st
 def folded_title(value: str) -> str:
     text = pipeline_common.unicodedata.normalize("NFKC", pipeline_common.html.unescape(value or ""))
     text = pipeline_common.re.sub(r"[（(][^）)]*(?:主題歌|テーマ|挿入歌)[^）)]*[）)]", "", text, flags=pipeline_common.re.I)
-    return pipeline_common.re.sub(r"[^0-9a-zぁ-んァ-ヶ一-龯]+", "", text.lower())
+    return pipeline_common.re.sub(r"[^0-9a-zぁ-んァ-ヶー一-龯]+", "", text.lower())
