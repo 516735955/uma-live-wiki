@@ -4,6 +4,35 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
+const { ImageJobs } = require('./image-jobs');
+const identities = new Map(), accesses = new Map();
+function touchImage(file) {
+  accesses.delete(file);
+  accesses.set(file, Date.now());
+  if (accesses.size > 8192) accesses.delete(accesses.keys().next().value);
+}
+function imageAccess(file, stat) { return accesses.get(file) || stat.mtimeMs; }
+async function fileIdentity(file, stat, read) {
+  const key = file + ':' + stat.ino + ':' + stat.mtimeMs + ':' + stat.size;
+  if (!identities.has(key)) {
+    const task = Promise.resolve().then(read).then(bytes => crypto.createHash('sha256').update(bytes).digest('hex'));
+    identities.set(key, task);
+    task.catch(() => identities.delete(key));
+    if (identities.size > 2048) identities.delete(identities.keys().next().value);
+  }
+  return identities.get(key);
+}
+
+async function readSnapshot(handle, size) {
+  const bytes = Buffer.alloc(size);
+  let offset = 0;
+  while (offset < size) {
+    const result = await handle.read(bytes, offset, size - offset, offset);
+    if (!result.bytesRead) throw new Error('image changed while reading');
+    offset += result.bytesRead;
+  }
+  return bytes;
+}
 
 function officialImage(value) {
   try {
@@ -16,19 +45,8 @@ function officialImage(value) {
 
 function imageStore(directory, options = {}) {
   const validateUrl = options.validateUrl || officialImage;
-  const pending = new Map(), attempts = new Map();
-  let active = 0;
-  const waiting = [];
-  async function acquire() {
-    if (active >= 4) {
-      if (waiting.length >= 64) throw new Error('news image queue full');
-      await new Promise(resolve => waiting.push(resolve));
-    } else active++;
-  }
-  function release() {
-    if (waiting.length) waiting.shift()();
-    else active--;
-  }
+  const pending = new Map(), attempts = new Map(), invalidated = new Map();
+  const jobs = new ImageJobs(4);
   const capacity = Number(options.capacity || process.env.NEWS_IMAGE_CACHE_BYTES) || 256 * 1024 * 1024;
   let lastCleanup = 0;
   async function cleanup() {
@@ -37,11 +55,12 @@ function imageStore(directory, options = {}) {
     for (const [file, attemptedAt] of attempts) {
       if (!pending.has(file) && Date.now() - attemptedAt >= 60000) attempts.delete(file);
     }
+    for (const [file, at] of invalidated) if (!pending.has(file) && Date.now() - at >= 60000) invalidated.delete(file);
     const names = await fs.promises.readdir(directory).catch(() => []);
     const rows = await Promise.all(names.filter(name => /^[a-f0-9]{64}\.(?:png|jpe?g|webp|gif)$/.test(name)).map(async name => {
       const file = path.join(directory, name);
       const stat = await fs.promises.stat(file).catch(() => null);
-      return stat && { file, size: stat.size, at: stat.atimeMs };
+      return stat && { file, size: stat.size, at: imageAccess(file, stat) };
     }));
     const files = rows.filter(Boolean).sort((a, b) => a.at - b.at);
     let total = files.reduce((sum, row) => sum + row.size, 0);
@@ -52,14 +71,10 @@ function imageStore(directory, options = {}) {
       total -= row.size;
     }
   }
-  async function refresh(url, file, extension) {
-    if (pending.has(file)) return pending.get(file);
-    if (Date.now() - (attempts.get(file) || 0) < 60000) throw new Error('news image retry deferred');
-    attempts.set(file, Date.now());
-    const task = (async () => {
-      await acquire();
-      try {
-      const deadline = Date.now() + 90000;
+  async function refresh(url, file, extension, signal) {
+    if (!jobs.jobs.has(file) && Date.now() - (attempts.get(file) || 0) < 60000) throw new Error('news image retry deferred');
+    const task = jobs.run(file, async (workSignal, deadline) => {
+      attempts.set(file, Date.now());
       const download = source => new Promise((resolve, reject) => {
         let timer;
         const request = https.get(source, { family: 4, headers: { 'User-Agent': 'UmaLiveWiki/1.0', Accept: 'image/*' } }, (response) => {
@@ -82,9 +97,12 @@ function imageStore(directory, options = {}) {
         // A progressing image download can exceed 15 seconds on agency hosts.
         // Stop stalled sockets promptly and keep a separate total deadline.
         request.setTimeout(15000, () => request.destroy(new Error('news image stalled')));
+        const abort = () => request.destroy(workSignal.reason || new Error('image cancelled'));
+        workSignal.addEventListener('abort', abort, { once: true });
+        if (workSignal.aborted) abort();
         timer = setTimeout(() => request.destroy(new Error('news image timeout')), Math.max(1, deadline - Date.now()));
         request.on('error', reject);
-        request.on('close', () => clearTimeout(timer));
+        request.on('close', () => { clearTimeout(timer); workSignal.removeEventListener('abort', abort); });
       });
       const bytes = await download(url).catch(error => {
         if ([404, 410].includes(error.statusCode) && url.hostname === 'i.ytimg.com' && /\/maxresdefault\.jpg$/.test(url.pathname)) {
@@ -100,29 +118,51 @@ function imageStore(directory, options = {}) {
         await fs.promises.writeFile(temporary, bytes);
         await fs.promises.rename(temporary, file);
       } finally { await fs.promises.unlink(temporary).catch(() => {}); }
-      return { bytes, extension, identity: crypto.createHash('sha256').update(bytes).digest('hex') };
-      } finally { release(); }
-    })();
+      const stat = await fs.promises.stat(file);
+      touchImage(file);
+      return { bytes, extension, identity: crypto.createHash('sha256').update(bytes).digest('hex'), invalidate: () => invalidate(file, stat) };
+    }, signal, 90000);
     pending.set(file, task);
-    try { return await task; } finally { pending.delete(file); await cleanup(); }
+    try { return await task; }
+    catch (error) { if (/image cancelled/.test(error.message)) attempts.delete(file); throw error; }
+    finally { if (pending.get(file) === task) pending.delete(file); await cleanup(); }
   }
-  return async function load(value, { deferBytes = false } = {}) {
+  async function invalidate(file, snapshot) {
+    const current = await fs.promises.stat(file).catch(() => null);
+    if (current && current.ino === snapshot.ino && current.mtimeMs === snapshot.mtimeMs && current.size === snapshot.size) await fs.promises.unlink(file).catch(() => {});
+    if (Date.now() - (invalidated.get(file) || 0) >= 60000) {
+      invalidated.set(file, Date.now());
+      attempts.delete(file);
+    }
+  }
+  return async function load(value, { deferBytes = false, signal } = {}) {
     const url = validateUrl(value);
     if (!url) throw new Error('unsupported news image');
     const extension = path.extname(url.pathname).toLowerCase();
     const file = path.join(directory, crypto.createHash('sha256').update(url.href).digest('hex') + extension);
     try {
-      const stat = await fs.promises.stat(file);
+      const handle = await fs.promises.open(file, 'r');
+      let returned = false;
+      try {
+      const stat = await handle.stat();
+      if (stat.size > 8 * 1024 * 1024) throw new Error('news image too large');
+      touchImage(file);
       if (Date.now() - stat.mtimeMs >= 86400000 && Date.now() - (attempts.get(file) || 0) >= 60000) {
         refresh(url, file, extension).catch(() => {});
       }
       cleanup().catch(() => {});
-      const read = () => fs.promises.readFile(file);
-      const identity = file + ':' + stat.mtimeMs + ':' + stat.size;
-      return { ...(deferBytes ? { read } : { bytes: await read() }), extension, identity };
+      let closed = false;
+      const dispose = async () => { if (!closed) { closed = true; await handle.close(); } };
+      const snapshot = () => readSnapshot(handle, stat.size);
+      const identity = await fileIdentity(file, stat, snapshot);
+      const read = async () => { try { return await snapshot(); } finally { await dispose(); } };
+      const result = { ...(deferBytes ? { read, dispose } : { bytes: await read() }), extension, identity, invalidate: () => invalidate(file, stat) };
+      returned = true;
+      return result;
+      } finally { if (!returned) await handle.close(); }
     } catch (error) { if (error.code !== 'ENOENT') throw error; }
-    return refresh(url, file, extension);
+    return refresh(url, file, extension, signal);
   };
 }
 
-module.exports = { officialImage, imageStore };
+module.exports = { officialImage, imageStore, fileIdentity, readSnapshot, touchImage, imageAccess };

@@ -6,6 +6,7 @@ const os = require('os');
 const { execFileSync } = require('child_process');
 const { previewStore, localImageLoader, previewWidth } = require('./image-previews');
 const { remoteImage } = require('./media-url');
+const { ImageJobs } = require('./image-jobs');
 
 async function main() {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-preview-test-'));
@@ -29,6 +30,27 @@ async function main() {
     await assert.rejects(load('https://example.com/uma_tools/img/foo.png', 480), /unsupported/);
     assert.throws(() => previewWidth('nonsense'), /invalid/);
     assert.strictEqual(previewWidth(9000), 1440);
+    const otherRoot = path.join(directory, 'other-release');
+    fs.mkdirSync(path.join(otherRoot, 'uma_tools/img'), {recursive:true});
+    fs.copyFileSync(path.join(__dirname, 'img/hero_bg.jpg'), path.join(otherRoot, 'uma_tools/img/hero_bg.jpg'));
+    const other = await localImageLoader(otherRoot, preview)(source, 480);
+    assert.strictEqual(other.etag, results[0].etag, 'unchanged images reuse the encoded preview across releases');
+    let invalidated = false;
+    await assert.rejects(preview('corrupt-source', 160, () => Buffer.from('corrupt image'), {invalidate:async () => { invalidated = true; }}), /preview failed/);
+    assert(invalidated, 'confirmed decode failures evict the corrupt original');
+    const jobs = new ImageJobs(1);
+    let finish;
+    const active = jobs.run('active', () => new Promise(resolve => { finish = resolve; }), undefined, 1000);
+    await new Promise(resolve => setImmediate(resolve));
+    const controller = new AbortController();
+    let started = false;
+    const cancelled = jobs.run('cancel', () => { started = true; }, controller.signal, 1000);
+    controller.abort();
+    await assert.rejects(cancelled, /cancelled/);
+    const expired = jobs.run('expires', () => { started = true; }, undefined, 15);
+    await assert.rejects(expired, /deadline/);
+    finish('done'); await active;
+    assert.strictEqual(started, false, 'abandoned and expired work never consumes an encoding slot');
     assert(remoteImage('https://www.81produce.co.jp/images/photo.jpg'));
     assert(!remoteImage('https://example.com/photo.jpg'));
     assert(!remoteImage('https://www.81produce.co.jp:8080/photo.jpg'));

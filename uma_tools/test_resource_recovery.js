@@ -39,7 +39,9 @@ async function main() {
   try {
     const load = imageStore(path.join(directory, 'images'));
     const url = 'https://prd-info-umamusume.akamaized.net/announce/1/Header/test.webp';
-    assert.strictEqual((await load(url)).bytes.toString(), 'first');
+    const first = await load(url);
+    assert.strictEqual(first.bytes.toString(), 'first');
+    assert.strictEqual((await load(url)).identity, first.identity, 'cold and warm source identities are identical');
     const file = path.join(directory, 'images', fs.readdirSync(path.join(directory, 'images'))[0]);
     fs.utimesSync(file, new Date(0), new Date(0));
     clock += 61000;
@@ -53,6 +55,9 @@ async function main() {
     const lazy = await load(url, {deferBytes:true});
     assert.strictEqual(lazy.bytes, undefined, 'preview lookup does not read the original bytes');
     assert.strictEqual((await lazy.read()).toString(), 'updated');
+    const held = await load(url, {deferBytes:true});
+    fs.unlinkSync(file);
+    assert.strictEqual((await held.read()).toString(), 'updated', 'queued preview readers survive cache eviction');
     const thumbnails = imageStore(path.join(directory, 'thumbnails'), {validateUrl:require('./media-url').remoteImage});
     assert.strictEqual((await thumbnails('https://i.ytimg.com/vi/example/maxresdefault.jpg')).bytes.toString(), 'updated', 'a video without max-resolution artwork uses its available standard thumbnail');
 
@@ -66,6 +71,8 @@ async function main() {
     assert.strictEqual(JSON.parse(fs.readFileSync(cacheFile)).accepted, '译文');
 
     assert(!translationFactsMatch('1.5倍', '15倍'));
+    assert(!translationFactsMatch('-12', '12'));
+    assert(translationFactsMatch('2026-10-18', '2026年10月18日'));
     assert(!translationFactsMatch('12元，3人', '1元，23人'));
     assert(translationFactsMatch('9/28 17:50', '9/2817：50'));
     const animeFile = path.join(directory, 'anime_catalog.json');

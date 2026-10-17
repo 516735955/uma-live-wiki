@@ -89,6 +89,30 @@ async function main() {
   await sensitive.translateOne('拒绝', 0);
   assert.strictEqual(requestCount, 1, 'rejected translations are not split into context-free fragments');
 
+  let finishTitle, titleCalls = 0;
+  const titleQueue = vm.createContext({
+    titlePending: new Map(), transQueue: [], transRunning: false,
+    AbortController, BAIDU_APPID: 'test', BAIDU_SECRET: 'test',
+    translationKey: text => text, currentTerms: () => ({normalize: value => value}),
+    newsContent: {title: () => ''}, console: {error() {}},
+    setTimeout(callback) { queueMicrotask(callback); },
+    translations: {set() { throw new Error('cache write failed'); }},
+    translateOne() { titleCalls++; return new Promise(resolve => { finishTitle = resolve; }); }
+  });
+  vm.runInContext(section('async function pumpTranslations()', 'function hasCjk('), titleQueue);
+  const titleResults = [];
+  titleQueue.translateTitle('same', value => titleResults.push(value));
+  titleQueue.translateTitle('same', value => titleResults.push(value));
+  assert.strictEqual(titleCalls, 1, 'in-flight titles share one provider request');
+  finishTitle('译文');
+  await tick();
+  assert.deepStrictEqual(titleResults, ['译文', '译文']);
+  assert.strictEqual(titleQueue.transRunning, false, 'cache failures do not strand the title queue');
+  titleQueue.translateTitle('next', () => {});
+  assert.strictEqual(titleCalls, 2, 'the next title still runs after a cache failure');
+  finishTitle('下一个');
+  await tick();
+
   const translation = vm.createContext({
     crypto, Buffer, require, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
     hasCjk: () => true,

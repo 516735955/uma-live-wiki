@@ -4,6 +4,7 @@ exports.createService = function (deps) {
 
   function start() {
     server = deps.http.createServer((req, res) => {
+      Promise.resolve().then(() => {
       let urlObj;
       let urlPath;
       try {
@@ -40,12 +41,16 @@ exports.createService = function (deps) {
       if (req.method === "GET" && urlPath === "/api/news-detail")
         return deps.handleNewsDetail(req, res, params);
       if (req.method === "GET" && ["/api/news-image", "/api/image"].includes(urlPath)) {
+        const controller = new AbortController();
+        const cancel = () => { if (!res.writableEnded) controller.abort(); };
+        res.once('close', cancel);
+        let original;
         (async () => {
-          if (urlPath === '/api/image' && !params.has('url')) return deps.loadLocalPreview(params.get('path'), params.get('w'));
-          const original = await (urlPath === '/api/image' ? deps.loadRemoteImage : deps.loadNewsImage)(params.get('url'), { deferBytes: params.has('w') });
+          if (urlPath === '/api/image' && !params.has('url')) return deps.loadLocalPreview(params.get('path'), params.get('w'), { signal: controller.signal });
+          original = await (urlPath === '/api/image' ? deps.loadRemoteImage : deps.loadNewsImage)(params.get('url'), { deferBytes: params.has('w'), signal: controller.signal });
           if (!params.has('w')) return original;
           const identity = original.identity || deps.crypto.createHash('sha256').update(original.bytes).digest('hex');
-          return deps.previewImage(identity, params.get('w'), original.read || (() => original.bytes));
+          return deps.previewImage(identity, params.get('w'), original.read || (() => original.bytes), { signal: controller.signal, invalidate: original.invalidate });
         })()
           .then(({ bytes, extension, etag }) => {
             if (res.destroyed || res.writableEnded) return;
@@ -67,7 +72,10 @@ exports.createService = function (deps) {
               /unsupported|invalid preview/.test(error.message) ? 400 : error.code === 'ENOENT' ? 404 : 502,
               { error: error.message },
             ),
-          );
+          ).finally(async () => {
+            res.removeListener('close', cancel);
+            if (original?.dispose) await original.dispose().catch(() => {});
+          });
         return;
       }
       if (req.method === "GET" && urlPath === "/api/lantis-news")
@@ -120,6 +128,12 @@ exports.createService = function (deps) {
           return;
         }
         deps.serveFile(filePath, req, res);
+      });
+      }).catch(error => {
+        console.error('[request]', error.message);
+        if (res.destroyed || res.writableEnded) return;
+        if (res.headersSent) return res.destroy();
+        deps.sendJson(res, 503, { error: 'request temporarily unavailable' });
       });
     });
     server.listen(deps.PORT, () => {

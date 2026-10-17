@@ -722,7 +722,7 @@ exports.createService = function (deps) {
             if (tm) detail.title = cleanHtml(tm[1]).trim();
             const inner = extractInnercon(body) || "";
             if (!inner.trim()) return finish(502, { error: "unrecognized lantis article" });
-            detail.message = inner;
+            detail.message = require('./news-content').absoluteArticleLinks(inner, url);
             finish(200, { response_code: 1, detail });
           },
           0,

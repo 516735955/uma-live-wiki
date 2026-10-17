@@ -27,6 +27,12 @@ try {
   assert.strictEqual(content.title('other', '其他精调'), '其他精调');
   assert.strictEqual(content.title('other', '旧的机器结果'), '新的机器结果');
   assert.strictEqual(content.message('msg_1'), '订正正文');
+  fs.writeFileSync(edits, '{invalid');
+  content.checkedAt = 0;
+  assert.strictEqual(content.message('msg_1'), '订正正文', 'an interrupted edit keeps the last usable overrides');
+  const absolute = require('./news-content').absoluteArticleLinks('<a href="../info/">详情</a><img src="img/a.jpg">', 'https://umamusume.lantis.jp/news/1/');
+  assert(absolute.includes('https://umamusume.lantis.jp/news/info/'));
+  assert(absolute.includes('https://umamusume.lantis.jp/news/1/img/a.jpg'));
   const file = path.join(temporary, 'cache.json');
   fs.writeFileSync(file, JSON.stringify({ first: 'one' }));
   const cache = new TranslationCache(file);

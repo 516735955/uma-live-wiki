@@ -16,11 +16,23 @@ def plain_text(html):
         def __init__(self):
             super().__init__()
             self.parts = []
+            self.hidden = 0
+        def handle_starttag(self, tag, attrs):
+            if tag in ('script', 'style'):
+                self.hidden += 1
+            if tag in ('p', 'div', 'li', 'br', 'section', 'article', 'tr', 'h1', 'h2', 'h3', 'blockquote'):
+                self.parts.append('\n')
+        def handle_endtag(self, tag):
+            if tag in ('script', 'style'):
+                self.hidden = max(0, self.hidden - 1)
+            if tag in ('p', 'div', 'li', 'section', 'article', 'tr', 'h1', 'h2', 'h3', 'blockquote'):
+                self.parts.append('\n')
         def handle_data(self, data):
-            self.parts.append(data)
+            if not self.hidden:
+                self.parts.append(re.sub(r'\s+', ' ', data))
     parser = Text()
     parser.feed(html or '')
-    return '\n'.join(part.strip() for part in parser.parts if part.strip())
+    return '\n'.join(line.strip() for line in ''.join(parser.parts).splitlines() if line.strip())
 
 
 def text_nodes(markup):
@@ -89,6 +101,13 @@ class NewsDatabase:
                 for row in self.db.execute('SELECT article_key,original,translated FROM versions WHERE translated IS NOT NULL ORDER BY revision').fetchall():
                     self.store_fragments(row['article_key'], json.loads(row['original'])['detail'].get('message', ''),
                                          json.loads(row['translated']).get('message_zh', ''))
+            if self.db.execute('PRAGMA user_version').fetchone()[0] < 1:
+                for row in self.db.execute('SELECT article_key,revision,original,translated FROM versions'):
+                    original = json.loads(row['original'])['detail']
+                    translated = json.loads(row['translated']) if row['translated'] else {}
+                    self.db.execute('UPDATE versions SET japanese_text=?,chinese_text=? WHERE article_key=? AND revision=?',
+                                    (plain_text(original.get('message', '')), plain_text(translated.get('message_zh', '')), row['article_key'], row['revision']))
+                self.db.execute('PRAGMA user_version=1')
 
     def store_fragments(self, key, original, translated):
         sources, targets = text_nodes(original), text_nodes(translated)

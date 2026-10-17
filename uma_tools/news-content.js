@@ -31,10 +31,22 @@ class NewsContent {
   reload() {
     if (Date.now() - this.checkedAt < 1000) return;
     this.checkedAt = Date.now();
-    const stat = fs.statSync(this.file);
-    if (stat.mtimeMs !== this.mtime) {
-      this.edits = JSON.parse(fs.readFileSync(this.file, 'utf8'));
-      this.mtime = stat.mtimeMs;
+    try {
+      const stat = fs.statSync(this.file);
+      if (stat.mtimeMs !== this.mtime) {
+        const edits = JSON.parse(fs.readFileSync(this.file, 'utf8'));
+        if (!edits || typeof edits !== 'object' || Array.isArray(edits)) throw new Error('invalid news edits');
+        for (const key of ['titles', 'messages', 'news']) {
+          if (edits[key] && (typeof edits[key] !== 'object' || Array.isArray(edits[key]))) throw new Error('invalid news edits field');
+        }
+        if (edits.removed && !Array.isArray(edits.removed)) throw new Error('invalid removed news list');
+        this.edits = { ...edits, titles: edits.titles || {}, messages: edits.messages || {}, news: edits.news || {} };
+        this.mtime = stat.mtimeMs;
+        this.reloadError = '';
+      }
+    } catch (error) {
+      if (this.reloadError !== error.message) console.warn('[news] keeping last usable edits:', error.message);
+      this.reloadError = error.message;
     }
   }
   title(source, existing) {
@@ -67,4 +79,15 @@ class NewsContent {
   }
 }
 
-module.exports = { mergeNews, NewsContent };
+function absoluteArticleLinks(markup, base) {
+  return String(markup || '').replace(/\b(href|src)\s*=\s*(["'])([^"']*)\2/gi, (whole, attr, quote, value) => {
+    if (!value || value.startsWith('#')) return whole;
+    try {
+      const url = new URL(value.replace(/&amp;/g, '&'), base);
+      if (!['http:', 'https:'].includes(url.protocol)) return whole;
+      return attr + '=' + quote + url.href.replace(/&/g, '&amp;').replace(/'/g, '&#39;') + quote;
+    } catch (_) { return whole; }
+  });
+}
+
+module.exports = { mergeNews, NewsContent, absoluteArticleLinks };

@@ -76,6 +76,7 @@ exports.createService = function (deps) {
   let transQueue = [];
 
   let transRunning = false;
+  const titlePending = new Map();
 
   const translationScheduler =
     new (require("./translation-queue").TranslationQueue)();
@@ -219,18 +220,24 @@ exports.createService = function (deps) {
   async function pumpTranslations() {
     if (transRunning) return;
     transRunning = true;
-    while (transQueue.length) {
+    try { while (transQueue.length) {
       const item = transQueue.shift();
       // Baidu free tier is ~1 QPS; translate serially with a small delay.
-      const key = translationKey(item.text);
-      const zh = await translateOne(item.text, 0, item.signal);
-      if (zh && zh !== item.text) {
-        translations.set(key, zh);
+      let zh = '';
+      try {
+        zh = await translateOne(item.text, 0, item.signal);
+        if (zh && zh !== item.text) translations.set(item.key, zh);
+      } catch (error) { console.error('[translation]', error.message); }
+      finally {
+        if (titlePending.get(item.key) === item) titlePending.delete(item.key);
+        item.callbacks.forEach(({ cb, signal, abort }) => {
+          if (signal) signal.removeEventListener('abort', abort);
+          try { cb(signal?.aborted ? item.text : zh || item.text); }
+          catch (error) { console.error('[translation callback]', error.message); }
+        });
       }
-      item.cb(zh || item.text);
       await new Promise((r) => setTimeout(r, 250));
-    }
-    transRunning = false;
+    } } finally { transRunning = false; }
   }
 
   function translateTitle(text, cb, signal, background = false) {
@@ -238,18 +245,20 @@ exports.createService = function (deps) {
     const cached = currentTerms().normalize(newsContent.title(text));
     if (cached) return cb(cached);
     if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
-    const duplicate = transQueue.find(
-      (item) => item.text === text && item.signal === signal,
-    );
-    if (duplicate) {
-      const previous = duplicate.cb;
-      duplicate.cb = (value) => {
-        previous(value);
-        cb(value);
-      };
-      return;
+    if (signal?.aborted) return cb(text);
+    const key = translationKey(text);
+    let item = titlePending.get(key);
+    if (item?.signal.aborted) item = null;
+    const duplicate = !!item;
+    if (!item) {
+      const controller = new AbortController();
+      item = { text, key, controller, signal: controller.signal, callbacks: [] };
+      titlePending.set(key, item);
     }
-    const item = { text, cb, signal };
+    const abort = () => { if (item.callbacks.every(row => row.signal?.aborted)) item.controller.abort(); };
+    item.callbacks.push({ cb, signal, abort });
+    if (signal) signal.addEventListener('abort', abort, { once: true });
+    if (duplicate) return;
     if (background) transQueue.push(item);
     else transQueue.unshift(item);
     pumpTranslations();
