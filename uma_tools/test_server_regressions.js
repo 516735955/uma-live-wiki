@@ -31,7 +31,7 @@ async function main() {
   const context = vm.createContext({
     newsRefreshPromise: null, newsRefreshRevision: 0,
     newsIndexCache: { at: 0, data: { information_list: [] } }, transCache: {},
-    mergeNews, newsContent: { apply: (item) => ({ ...item, title_zh: item.title_zh || context.transCache[item.title] || '' }), title: () => '' },
+    mergeNews, newsContent: { isRemoved: () => false, apply: (item) => ({ ...item, title_zh: item.title_zh || context.transCache[item.title] || '' }), title: () => '' },
     NEWS_MAX_CONC: 3, NEWS_TTL: 900000, NO_AUTO_CRAWL: true,
     setTimeout(callback) { timers.push(callback); return timers.length; }, clearTimeout() {},
     fetchNewsPageRetry(page, callback) { pages.push(callback); },
