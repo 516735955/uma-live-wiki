@@ -18,11 +18,11 @@ def staff_text_rows(markup, roles=()):
     active = ''
     for line in text.splitlines():
         line = unicodedata.normalize('NFKC', line).strip()
-        if re.fullmatch(r'(?:キャスト|CAST|スタッフ|STAFF|音楽|MUSIC|主題歌|製作|制作情報)', line, re.I):
-            active = ''
-            continue
         if line in known:
             active = line
+            continue
+        if re.fullmatch(r'(?:キャスト|CAST|スタッフ|STAFF|音楽|MUSIC|主題歌|製作|制作情報)', line, re.I):
+            active = ''
             continue
         match = pattern.match(line)
         if match:

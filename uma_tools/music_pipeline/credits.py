@@ -296,7 +296,7 @@ def creator_rows(credits_doc: dict[str, pipeline_common.Any], existing: dict[str
             collected[creator["id"]].setdefault("type", "person")
     rows = list(collected.values())
     for row in rows:
-        row["aliases"] = sorted(set(row.get("aliases") or []), key=pipeline_recordings.normalized_name)
+        row["aliases"] = sorted(set(row.get("aliases") or []), key=lambda name: (pipeline_recordings.normalized_name(name), name))
         row["affiliations"] = sorted(set(row.get("affiliations") or []), key=pipeline_recordings.normalized_name)
     rows.sort(key=lambda row: (pipeline_recordings.normalized_name(row.get("name") or ""), row["id"]))
     return rows
