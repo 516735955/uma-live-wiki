@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-17T14:20:35+00:00",
+  "generated_at": "2026-10-17T14:31:58+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -2326,49 +2326,49 @@
       "cast": [
         {
           "voice_actor_id": "va-0179",
-          "name": "高柳知叶",
           "character_id": "oguricap",
+          "name": "高柳知叶",
           "role": "小栗帽",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0052",
-          "name": "大空直美",
           "character_id": "tamamocross",
+          "name": "大空直美",
           "role": "玉藻十字",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0018",
-          "name": "井上遥乃",
           "character_id": "inarione",
+          "name": "井上遥乃",
           "role": "稻荷一",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -2393,85 +2393,146 @@
           "performances": [
             {
               "song": "Make debut!",
-              "character_ids": [
-                "oguricap",
-                "tamamocross",
-                "inarione"
-              ],
               "setlist_no": "1",
-              "song_id": "song-make-debut-2c6c00a71e",
-              "version_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
-              "song_title": "Make debut!",
               "voice_actor_ids": [
                 "va-0018",
                 "va-0052",
                 "va-0179"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-make-debut-2c6c00a71e",
+              "version_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
+              "song_title": "Make debut!"
             },
             {
               "song": "ふたり",
+              "setlist_no": "2",
+              "voice_actor_ids": [
+                "va-0052",
+                "va-0179"
+              ],
               "character_ids": [
                 "oguricap",
                 "tamamocross"
               ],
-              "setlist_no": "2",
+              "guest_performers": [],
+              "full_cast": false,
               "song_id": "song-864b1bb2e9",
               "version_id": "song-864b1bb2e9-v-864b1bb2e9",
-              "song_title": "ふたり",
-              "voice_actor_ids": [
-                "va-0052",
-                "va-0179"
-              ],
-              "guest_performers": []
+              "song_title": "ふたり"
             },
             {
               "song": "NEXT FRONTIER",
-              "character_ids": [
-                "oguricap",
-                "tamamocross",
-                "inarione"
-              ],
               "setlist_no": "3",
-              "song_id": "song-next-frontier-5267707c1b",
-              "version_id": "song-next-frontier-5267707c1b-v-5267707c1b",
-              "song_title": "NEXT FRONTIER",
               "voice_actor_ids": [
                 "va-0018",
                 "va-0052",
                 "va-0179"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-next-frontier-5267707c1b",
+              "version_id": "song-next-frontier-5267707c1b-v-5267707c1b",
+              "song_title": "NEXT FRONTIER"
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": [
-                "oguricap",
-                "tamamocross",
-                "inarione"
-              ],
               "setlist_no": "4",
-              "song_id": "song-228f943b49",
-              "version_id": "song-228f943b49-v-228f943b49",
-              "song_title": "うまぴょい伝説",
               "voice_actor_ids": [
                 "va-0018",
                 "va-0052",
                 "va-0179"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "oguricap",
+                "tamamocross",
+                "inarione"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">Make debut!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/OguriCap.png\" alt=\"小栗帽\" title=\"小栗帽\"><span class=\"perf-name\">小栗帽</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TamamoCross.png\" alt=\"玉藻十字\" title=\"玉藻十字\"><span class=\"perf-name\">玉藻十字</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/InariOne.png\" alt=\"稻荷一\" title=\"稻荷一\"><span class=\"perf-name\">稻荷一</span></span></td></tr><tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">ふたり</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/OguriCap.png\" alt=\"小栗帽\" title=\"小栗帽\"><span class=\"perf-name\">小栗帽</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TamamoCross.png\" alt=\"玉藻十字\" title=\"玉藻十字\"><span class=\"perf-name\">玉藻十字</span></span></td></tr><tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">NEXT FRONTIER</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/OguriCap.png\" alt=\"小栗帽\" title=\"小栗帽\"><span class=\"perf-name\">小栗帽</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TamamoCross.png\" alt=\"玉藻十字\" title=\"玉藻十字\"><span class=\"perf-name\">玉藻十字</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/InariOne.png\" alt=\"稻荷一\" title=\"稻荷一\"><span class=\"perf-name\">稻荷一</span></span></td></tr><tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/OguriCap.png\" alt=\"小栗帽\" title=\"小栗帽\"><span class=\"perf-name\">小栗帽</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TamamoCross.png\" alt=\"玉藻十字\" title=\"玉藻十字\"><span class=\"perf-name\">玉藻十字</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/InariOne.png\" alt=\"稻荷一\" title=\"稻荷一\"><span class=\"perf-name\">稻荷一</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">Make debut!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">井上遥乃</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">ふたり</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">大空直美</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">NEXT FRONTIER</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">井上遥乃</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">高柳知葉</span><span class=\"guest-performer\">大空直美</span><span class=\"guest-performer\">井上遥乃</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
-            "file": "data/live_cat_data.json",
-            "category": "other",
-            "section": null,
-            "group": 60,
-            "performance": 0,
-            "day": 0
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "ナガノアニエラフェスタ2026@駒場公園(長野・佐久市)"
           },
           "id_aliases": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0179",
+              "character_id": "oguricap",
+              "name": "高柳知叶",
+              "role": "小栗帽",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0052",
+              "character_id": "tamamocross",
+              "name": "大空直美",
+              "role": "玉藻十字",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0018",
+              "character_id": "inarione",
+              "name": "井上遥乃",
+              "role": "稻荷一",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            }
+          ],
+          "alternate_setlist_sources": [
+            {
+              "file": "data/live_cat_data.json",
+              "category": "other",
+              "section": null,
+              "group": 60,
+              "performance": 0,
+              "day": 0
+            }
+          ],
           "setlist_status": "verified"
         }
       ],
@@ -2486,6 +2547,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/453804"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "/zh-Hans/live/other/60",
@@ -2512,97 +2578,97 @@
       "cast": [
         {
           "voice_actor_id": "va-0102",
-          "name": "桥本千波",
           "character_id": "finemotion",
+          "name": "桥本千波",
           "role": "美妙姿势",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0039",
-          "name": "和多田美咲",
           "character_id": "meishodoto",
+          "name": "和多田美咲",
           "role": "名将怒涛",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0034",
-          "name": "前田佳织里",
           "character_id": "nicenature",
+          "name": "前田佳织里",
           "role": "优秀素质",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0012",
-          "name": "中村栞奈",
           "character_id": "naritatoproad",
+          "name": "中村栞奈",
           "role": "成田路",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0089",
-          "name": "望月裕美子",
           "character_id": "calstonelighto",
+          "name": "望月裕美子",
           "role": "金镇之光",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0098",
-          "name": "松田飒水",
           "character_id": "staygold",
+          "name": "松田飒水",
           "role": "黄金旅程",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -2630,18 +2696,7 @@
           "performances": [
             {
               "song": "トレセンラーメン列伝",
-              "character_ids": [
-                "finemotion",
-                "meishodoto",
-                "nicenature",
-                "naritatoproad",
-                "calstonelighto",
-                "staygold"
-              ],
               "setlist_no": "1",
-              "song_id": "song-ee92751546",
-              "version_id": "song-ee92751546-v-ee92751546",
-              "song_title": "トレセンラーメン列伝",
               "voice_actor_ids": [
                 "va-0012",
                 "va-0034",
@@ -2650,50 +2705,53 @@
                 "va-0098",
                 "va-0102"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "finemotion",
+                "meishodoto",
+                "nicenature",
+                "naritatoproad",
+                "calstonelighto",
+                "staygold"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-ee92751546",
+              "version_id": "song-ee92751546-v-ee92751546",
+              "song_title": "トレセンラーメン列伝"
             },
             {
               "song": "O-Light-O",
-              "character_ids": [
-                "calstonelighto"
-              ],
               "setlist_no": "2",
-              "song_id": "song-o-light-o-0864ec7338",
-              "version_id": "song-o-light-o-0864ec7338-v-0864ec7338",
-              "song_title": "O-Light-O",
               "voice_actor_ids": [
                 "va-0089"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "calstonelighto"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-o-light-o-0864ec7338",
+              "version_id": "song-o-light-o-0864ec7338-v-0864ec7338",
+              "song_title": "O-Light-O"
             },
             {
               "song": "Gold-Recollection",
-              "character_ids": [
-                "staygold"
-              ],
               "setlist_no": "3",
-              "song_id": "song-gold-recollection-f1b218e1d0",
-              "version_id": "song-gold-recollection-f1b218e1d0-v-f1b218e1d0",
-              "song_title": "Gold-Recollection",
               "voice_actor_ids": [
                 "va-0098"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "staygold"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-gold-recollection-f1b218e1d0",
+              "version_id": "song-gold-recollection-f1b218e1d0-v-f1b218e1d0",
+              "song_title": "Gold-Recollection"
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": [
-                "finemotion",
-                "meishodoto",
-                "nicenature",
-                "naritatoproad",
-                "calstonelighto",
-                "staygold"
-              ],
               "setlist_no": "4",
-              "song_id": "song-228f943b49",
-              "version_id": "song-228f943b49-v-228f943b49",
-              "song_title": "うまぴょい伝説",
               "voice_actor_ids": [
                 "va-0012",
                 "va-0034",
@@ -2702,19 +2760,136 @@
                 "va-0098",
                 "va-0102"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "finemotion",
+                "meishodoto",
+                "nicenature",
+                "naritatoproad",
+                "calstonelighto",
+                "staygold"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセンラーメン列伝</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/FineMotion.png\" alt=\"美妙姿势\" title=\"美妙姿势\"><span class=\"perf-name\">美妙姿势</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MeishoDoto.png\" alt=\"名将怒涛\" title=\"名将怒涛\"><span class=\"perf-name\">名将怒涛</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NiceNature.png\" alt=\"优秀素质\" title=\"优秀素质\"><span class=\"perf-name\">优秀素质</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NaritaTopRoad.png\" alt=\"成田路\" title=\"成田路\"><span class=\"perf-name\">成田路</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/CalstoneLightO.png\" alt=\"金镇之光\" title=\"金镇之光\"><span class=\"perf-name\">金镇之光</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/StayGold.png\" alt=\"黄金旅程\" title=\"黄金旅程\"><span class=\"perf-name\">黄金旅程</span></span></td></tr><tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">O-Light-O</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/CalstoneLightO.png\" alt=\"金镇之光\" title=\"金镇之光\"><span class=\"perf-name\">金镇之光</span></span></td></tr><tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Gold-Recollection</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/StayGold.png\" alt=\"黄金旅程\" title=\"黄金旅程\"><span class=\"perf-name\">黄金旅程</span></span></td></tr><tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/FineMotion.png\" alt=\"美妙姿势\" title=\"美妙姿势\"><span class=\"perf-name\">美妙姿势</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/MeishoDoto.png\" alt=\"名将怒涛\" title=\"名将怒涛\"><span class=\"perf-name\">名将怒涛</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NiceNature.png\" alt=\"优秀素质\" title=\"优秀素质\"><span class=\"perf-name\">优秀素质</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/NaritaTopRoad.png\" alt=\"成田路\" title=\"成田路\"><span class=\"perf-name\">成田路</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/CalstoneLightO.png\" alt=\"金镇之光\" title=\"金镇之光\"><span class=\"perf-name\">金镇之光</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/StayGold.png\" alt=\"黄金旅程\" title=\"黄金旅程\"><span class=\"perf-name\">黄金旅程</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">トレセンラーメン列伝</td><td class=\"setlist-perf\"><span class=\"guest-performer\">橋本ちなみ</span><span class=\"guest-performer\">和多田美咲</span><span class=\"guest-performer\">前田佳織里</span><span class=\"guest-performer\">中村カンナ</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">松田颯水</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">O-Light-O</td><td class=\"setlist-perf\"><span class=\"guest-performer\">望月ゆみこ</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Gold-Recollection</td><td class=\"setlist-perf\"><span class=\"guest-performer\">松田颯水</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">橋本ちなみ</span><span class=\"guest-performer\">和多田美咲</span><span class=\"guest-performer\">前田佳織里</span><span class=\"guest-performer\">中村カンナ</span><span class=\"guest-performer\">望月ゆみこ</span><span class=\"guest-performer\">松田颯水</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
-            "file": "data/live_cat_data.json",
-            "category": "cd",
-            "section": 0,
-            "group": 27,
-            "performance": 0,
-            "day": 0
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "WINNING LIVE 34 発売記念イベント@THE GRAND HALL(東京・港区)"
           },
           "id_aliases": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0102",
+              "character_id": "finemotion",
+              "name": "桥本千波",
+              "role": "美妙姿势",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0039",
+              "character_id": "meishodoto",
+              "name": "和多田美咲",
+              "role": "名将怒涛",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0034",
+              "character_id": "nicenature",
+              "name": "前田佳织里",
+              "role": "优秀素质",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0012",
+              "character_id": "naritatoproad",
+              "name": "中村栞奈",
+              "role": "成田路",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0089",
+              "character_id": "calstonelighto",
+              "name": "望月裕美子",
+              "role": "金镇之光",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0098",
+              "character_id": "staygold",
+              "name": "松田飒水",
+              "role": "黄金旅程",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            }
+          ],
+          "alternate_setlist_sources": [
+            {
+              "file": "data/live_cat_data.json",
+              "category": "cd",
+              "section": 0,
+              "group": 27,
+              "performance": 0,
+              "day": 0
+            }
+          ],
           "setlist_status": "verified"
         }
       ],
@@ -2729,6 +2904,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/483280"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "/zh-Hans/live/cd/0/27",
@@ -4094,97 +4274,97 @@
       "cast": [
         {
           "voice_actor_id": "va-0050",
-          "name": "大坪由佳",
           "character_id": "taikishuttle",
+          "name": "大坪由佳",
           "role": "大树快车",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0071",
-          "name": "巽悠衣子",
           "character_id": "hishiamazon",
+          "name": "巽悠衣子",
           "role": "菱亚马逊",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0140",
-          "name": "篠田南",
           "character_id": "tapdancecity",
+          "name": "篠田南",
           "role": "跳舞城",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0015",
-          "name": "久保田未梦",
           "character_id": "lovesonlyyou",
+          "name": "久保田未梦",
           "role": "唯独爱你",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0170",
-          "name": "关根瞳",
           "character_id": "reddesire",
+          "name": "关根瞳",
           "role": "红色梦想",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0159",
-          "name": "近贞月乃",
           "character_id": "marchelorraine",
+          "name": "近贞月乃",
           "role": "洛林军歌",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -4212,18 +4392,7 @@
           "performances": [
             {
               "song": "UMA IN AMERICA",
-              "character_ids": [
-                "taikishuttle",
-                "hishiamazon",
-                "tapdancecity",
-                "lovesonlyyou",
-                "reddesire",
-                "marchelorraine"
-              ],
               "setlist_no": "1",
-              "song_id": "song-uma-in-america-b359c2cb83",
-              "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
-              "song_title": "UMA IN AMERICA",
               "voice_actor_ids": [
                 "va-0015",
                 "va-0050",
@@ -4232,50 +4401,53 @@
                 "va-0159",
                 "va-0170"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "taikishuttle",
+                "hishiamazon",
+                "tapdancecity",
+                "lovesonlyyou",
+                "reddesire",
+                "marchelorraine"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-uma-in-america-b359c2cb83",
+              "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
+              "song_title": "UMA IN AMERICA"
             },
             {
               "song": "【おやすみ配信】みんなとラヴ補充した～い",
-              "character_ids": [
-                "lovesonlyyou"
-              ],
               "setlist_no": "2",
-              "song_id": "song-77d255fd95",
-              "version_id": "song-77d255fd95-v-77d255fd95",
-              "song_title": "【おやすみ配信】みんなとラヴ補充した～い",
               "voice_actor_ids": [
                 "va-0015"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "lovesonlyyou"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-77d255fd95",
+              "version_id": "song-77d255fd95-v-77d255fd95",
+              "song_title": "【おやすみ配信】みんなとラヴ補充した～い"
             },
             {
               "song": "ちょっとだけの勇気。",
-              "character_ids": [
-                "marchelorraine"
-              ],
               "setlist_no": "3",
-              "song_id": "song-7d143234cb",
-              "version_id": "song-7d143234cb-v-7d143234cb",
-              "song_title": "ちょっとだけの勇気。",
               "voice_actor_ids": [
                 "va-0159"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "marchelorraine"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-7d143234cb",
+              "version_id": "song-7d143234cb-v-7d143234cb",
+              "song_title": "ちょっとだけの勇気。"
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": [
-                "taikishuttle",
-                "hishiamazon",
-                "tapdancecity",
-                "lovesonlyyou",
-                "reddesire",
-                "marchelorraine"
-              ],
               "setlist_no": "4",
-              "song_id": "song-228f943b49",
-              "version_id": "song-228f943b49-v-228f943b49",
-              "song_title": "うまぴょい伝説",
               "voice_actor_ids": [
                 "va-0015",
                 "va-0050",
@@ -4284,19 +4456,136 @@
                 "va-0159",
                 "va-0170"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "taikishuttle",
+                "hishiamazon",
+                "tapdancecity",
+                "lovesonlyyou",
+                "reddesire",
+                "marchelorraine"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TaikiShuttle.png\" alt=\"大树快车\" title=\"大树快车\"><span class=\"perf-name\">大树快车</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/HishiAmazon.png\" alt=\"菱亚马逊\" title=\"菱亚马逊\"><span class=\"perf-name\">菱亚马逊</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TapDanceCity.png\" alt=\"跳舞城\" title=\"跳舞城\"><span class=\"perf-name\">跳舞城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/洛林军歌.png\" alt=\"洛林军歌\" title=\"洛林军歌\"><span class=\"perf-name\">洛林军歌</span></span></td></tr><tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">【おやすみ配信】みんなとラヴ補充した～い</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span></td></tr><tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">ちょっとだけの勇気。</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/洛林军歌.png\" alt=\"洛林军歌\" title=\"洛林军歌\"><span class=\"perf-name\">洛林军歌</span></span></td></tr><tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TaikiShuttle.png\" alt=\"大树快车\" title=\"大树快车\"><span class=\"perf-name\">大树快车</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/HishiAmazon.png\" alt=\"菱亚马逊\" title=\"菱亚马逊\"><span class=\"perf-name\">菱亚马逊</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/TapDanceCity.png\" alt=\"跳舞城\" title=\"跳舞城\"><span class=\"perf-name\">跳舞城</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LovesOnlyYou.png\" alt=\"唯独爱你\" title=\"唯独爱你\"><span class=\"perf-name\">唯独爱你</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/红色梦想.png\" alt=\"红色梦想\" title=\"红色梦想\"><span class=\"perf-name\">红色梦想</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/洛林军歌.png\" alt=\"洛林军歌\" title=\"洛林军歌\"><span class=\"perf-name\">洛林军歌</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">巽悠衣子</span><span class=\"guest-performer\">篠田みなみ</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">関根瞳</span><span class=\"guest-performer\">近貞月乃</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">【おやすみ配信】みんなとラヴ補充した～い</td><td class=\"setlist-perf\"><span class=\"guest-performer\">久保田未夢</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">ちょっとだけの勇気。</td><td class=\"setlist-perf\"><span class=\"guest-performer\">近貞月乃</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">大坪由佳</span><span class=\"guest-performer\">巽悠衣子</span><span class=\"guest-performer\">篠田みなみ</span><span class=\"guest-performer\">久保田未夢</span><span class=\"guest-performer\">関根瞳</span><span class=\"guest-performer\">近貞月乃</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
-            "file": "data/live_cat_data.json",
-            "category": "cd",
-            "section": 0,
-            "group": 26,
-            "performance": 0,
-            "day": 0
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "WINNING LIVE 33 発売記念イベント@大手町三井ホール(東京・千代田区)"
           },
           "id_aliases": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0050",
+              "character_id": "taikishuttle",
+              "name": "大坪由佳",
+              "role": "大树快车",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0071",
+              "character_id": "hishiamazon",
+              "name": "巽悠衣子",
+              "role": "菱亚马逊",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0140",
+              "character_id": "tapdancecity",
+              "name": "篠田南",
+              "role": "跳舞城",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0015",
+              "character_id": "lovesonlyyou",
+              "name": "久保田未梦",
+              "role": "唯独爱你",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0170",
+              "character_id": "reddesire",
+              "name": "关根瞳",
+              "role": "红色梦想",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0159",
+              "character_id": "marchelorraine",
+              "name": "近贞月乃",
+              "role": "洛林军歌",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            }
+          ],
+          "alternate_setlist_sources": [
+            {
+              "file": "data/live_cat_data.json",
+              "category": "cd",
+              "section": 0,
+              "group": 26,
+              "performance": 0,
+              "day": 0
+            }
+          ],
           "setlist_status": "verified"
         }
       ],
@@ -4311,6 +4600,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/470369"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "/zh-Hans/live/cd/0/26",
@@ -4337,97 +4631,97 @@
       "cast": [
         {
           "voice_actor_id": "va-0132",
-          "name": "福原绫香",
           "character_id": "seekingthepearl",
+          "name": "福原绫香",
           "role": "采珠",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0084",
-          "name": "星希成奏",
           "character_id": "kiseki",
+          "name": "星希成奏",
           "role": "神业",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0111",
-          "name": "海弓首里",
           "character_id": "foreveryoung",
+          "name": "海弓首里",
           "role": "青春永驻",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0036",
-          "name": "千贺光莉",
           "character_id": "epiphaneia",
+          "name": "千贺光莉",
           "role": "神威启示",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0069",
-          "name": "岛野花",
           "character_id": "victoirepisa",
+          "name": "岛野花",
           "role": "比萨胜驹",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0112",
-          "name": "海野水玉",
           "character_id": "rulership",
+          "name": "海野水玉",
           "role": "统治地位",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -4455,18 +4749,7 @@
           "performances": [
             {
               "song": "VOLTAGE",
-              "character_ids": [
-                "seekingthepearl",
-                "kiseki",
-                "foreveryoung",
-                "epiphaneia",
-                "victoirepisa",
-                "rulership"
-              ],
               "setlist_no": "1",
-              "song_id": "song-voltage-cb8dbfb97b",
-              "version_id": "song-voltage-cb8dbfb97b-v-cb8dbfb97b",
-              "song_title": "VOLTAGE",
               "voice_actor_ids": [
                 "va-0036",
                 "va-0069",
@@ -4475,50 +4758,53 @@
                 "va-0112",
                 "va-0132"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "seekingthepearl",
+                "kiseki",
+                "foreveryoung",
+                "epiphaneia",
+                "victoirepisa",
+                "rulership"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-voltage-cb8dbfb97b",
+              "version_id": "song-voltage-cb8dbfb97b-v-cb8dbfb97b",
+              "song_title": "VOLTAGE"
             },
             {
               "song": "Seeking The Pearl ～真珠を探して〜",
-              "character_ids": [
-                "seekingthepearl"
-              ],
               "setlist_no": "2",
-              "song_id": "song-seeking-the-pearl-690b8aeb16",
-              "version_id": "song-seeking-the-pearl-690b8aeb16-v-690b8aeb16",
-              "song_title": "Seeking The Pearl ～真珠を探して〜",
               "voice_actor_ids": [
                 "va-0132"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "seekingthepearl"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-seeking-the-pearl-690b8aeb16",
+              "version_id": "song-seeking-the-pearl-690b8aeb16-v-690b8aeb16",
+              "song_title": "Seeking The Pearl ～真珠を探して〜"
             },
             {
               "song": "希望よ永遠に",
-              "character_ids": [
-                "victoirepisa"
-              ],
               "setlist_no": "3",
-              "song_id": "song-de758e0f61",
-              "version_id": "song-de758e0f61-v-de758e0f61",
-              "song_title": "希望よ永遠に",
               "voice_actor_ids": [
                 "va-0069"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "victoirepisa"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-de758e0f61",
+              "version_id": "song-de758e0f61-v-de758e0f61",
+              "song_title": "希望よ永遠に"
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": [
-                "seekingthepearl",
-                "kiseki",
-                "foreveryoung",
-                "epiphaneia",
-                "victoirepisa",
-                "rulership"
-              ],
               "setlist_no": "4",
-              "song_id": "song-228f943b49",
-              "version_id": "song-228f943b49-v-228f943b49",
-              "song_title": "うまぴょい伝説",
               "voice_actor_ids": [
                 "va-0036",
                 "va-0069",
@@ -4527,19 +4813,136 @@
                 "va-0112",
                 "va-0132"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "seekingthepearl",
+                "kiseki",
+                "foreveryoung",
+                "epiphaneia",
+                "victoirepisa",
+                "rulership"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">VOLTAGE</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SeekingthePearl.png\" alt=\"采珠\" title=\"采珠\"><span class=\"perf-name\">采珠</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神威启示.png\" alt=\"神威启示\" title=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/比萨胜驹.png\" alt=\"比萨胜驹\" title=\"比萨胜驹\"><span class=\"perf-name\">比萨胜驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/统治地位.png\" alt=\"统治地位\" title=\"统治地位\"><span class=\"perf-name\">统治地位</span></span></td></tr><tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">Seeking The Pearl ～真珠を探して〜</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SeekingthePearl.png\" alt=\"采珠\" title=\"采珠\"><span class=\"perf-name\">采珠</span></span></td></tr><tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">希望よ永遠に</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/比萨胜驹.png\" alt=\"比萨胜驹\" title=\"比萨胜驹\"><span class=\"perf-name\">比萨胜驹</span></span></td></tr><tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/SeekingthePearl.png\" alt=\"采珠\" title=\"采珠\"><span class=\"perf-name\">采珠</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神业.png\" alt=\"神业\" title=\"神业\"><span class=\"perf-name\">神业</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/青春永驻.png\" alt=\"青春永驻\" title=\"青春永驻\"><span class=\"perf-name\">青春永驻</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/神威启示.png\" alt=\"神威启示\" title=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/比萨胜驹.png\" alt=\"比萨胜驹\" title=\"比萨胜驹\"><span class=\"perf-name\">比萨胜驹</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/统治地位.png\" alt=\"统治地位\" title=\"统治地位\"><span class=\"perf-name\">统治地位</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">VOLTAGE</td><td class=\"setlist-perf\"><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">星希成奏</span><span class=\"guest-performer\">海弓シュリ</span><span class=\"guest-performer\">千賀光莉</span><span class=\"guest-performer\">嶋野花</span><span class=\"guest-performer\">海野水玉</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">Seeking The Pearl ～真珠を探して〜</td><td class=\"setlist-perf\"><span class=\"guest-performer\">福原綾香</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">希望よ永遠に</td><td class=\"setlist-perf\"><span class=\"guest-performer\">嶋野花</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">福原綾香</span><span class=\"guest-performer\">星希成奏</span><span class=\"guest-performer\">海弓シュリ</span><span class=\"guest-performer\">千賀光莉</span><span class=\"guest-performer\">嶋野花</span><span class=\"guest-performer\">海野水玉</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
-            "file": "data/live_cat_data.json",
-            "category": "cd",
-            "section": 0,
-            "group": 25,
-            "performance": 0,
-            "day": 0
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "WINNING LIVE 31 発売記念イベント@大手町三井ホール(東京・千代田区)"
           },
           "id_aliases": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0132",
+              "character_id": "seekingthepearl",
+              "name": "福原绫香",
+              "role": "采珠",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0084",
+              "character_id": "kiseki",
+              "name": "星希成奏",
+              "role": "神业",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0111",
+              "character_id": "foreveryoung",
+              "name": "海弓首里",
+              "role": "青春永驻",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0036",
+              "character_id": "epiphaneia",
+              "name": "千贺光莉",
+              "role": "神威启示",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0069",
+              "character_id": "victoirepisa",
+              "name": "岛野花",
+              "role": "比萨胜驹",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0112",
+              "character_id": "rulership",
+              "name": "海野水玉",
+              "role": "统治地位",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            }
+          ],
+          "alternate_setlist_sources": [
+            {
+              "file": "data/live_cat_data.json",
+              "category": "cd",
+              "section": 0,
+              "group": 25,
+              "performance": 0,
+              "day": 0
+            }
+          ],
           "setlist_status": "verified"
         }
       ],
@@ -4554,6 +4957,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/464538"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "/zh-Hans/live/cd/0/25",
@@ -4580,65 +4988,65 @@
       "cast": [
         {
           "voice_actor_id": "va-0127",
-          "name": "石原夏织",
           "character_id": "almondeye",
+          "name": "石原夏织",
           "role": "杏目",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0011",
-          "name": "中岛由贵",
           "character_id": "luckylilac",
+          "name": "中岛由贵",
           "role": "旺紫丁",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0048",
-          "name": "夏目妃菜",
           "character_id": "granalegria",
+          "name": "夏目妃菜",
           "role": "放声欢呼",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
         {
           "voice_actor_id": "va-0124",
-          "name": "真名濑日和",
           "character_id": "chronogenesis",
+          "name": "真名濑日和",
           "role": "创世驹",
-          "evidence": "curated_live_cast",
-          "source_url": "",
+          "evidence": "google_sheet",
+          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -4664,95 +5072,172 @@
           "performances": [
             {
               "song": "UMA IN AMERICA",
-              "character_ids": [
-                "almondeye",
-                "luckylilac",
-                "granalegria",
-                "chronogenesis"
-              ],
               "setlist_no": "1",
-              "song_id": "song-uma-in-america-b359c2cb83",
-              "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
-              "song_title": "UMA IN AMERICA",
               "voice_actor_ids": [
                 "va-0011",
                 "va-0048",
                 "va-0124",
                 "va-0127"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "chronogenesis"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-uma-in-america-b359c2cb83",
+              "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
+              "song_title": "UMA IN AMERICA"
             },
             {
               "song": "めにしゅき♡ラッシュっしゅ！",
-              "character_ids": [
-                "almondeye",
-                "luckylilac",
-                "granalegria",
-                "chronogenesis"
-              ],
               "setlist_no": "2",
-              "song_id": "song-e05b91c506",
-              "version_id": "song-e05b91c506-v-e05b91c506",
-              "song_title": "めにしゅき♡ラッシュっしゅ！",
               "voice_actor_ids": [
                 "va-0011",
                 "va-0048",
                 "va-0124",
                 "va-0127"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "chronogenesis"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-e05b91c506",
+              "version_id": "song-e05b91c506-v-e05b91c506",
+              "song_title": "めにしゅき♡ラッシュっしゅ！"
             },
             {
               "song": "彩 Phantasia",
-              "character_ids": [
-                "almondeye",
-                "luckylilac",
-                "granalegria",
-                "chronogenesis"
-              ],
               "setlist_no": "3",
-              "song_id": "song-phantasia-81aafc5f7e",
-              "version_id": "song-phantasia-81aafc5f7e-v-81aafc5f7e",
-              "song_title": "彩 Phantasia",
               "voice_actor_ids": [
                 "va-0011",
                 "va-0048",
                 "va-0124",
                 "va-0127"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "chronogenesis"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-phantasia-81aafc5f7e",
+              "version_id": "song-phantasia-81aafc5f7e-v-81aafc5f7e",
+              "song_title": "彩 Phantasia"
             },
             {
               "song": "うまぴょい伝説",
-              "character_ids": [
-                "almondeye",
-                "luckylilac",
-                "granalegria",
-                "chronogenesis"
-              ],
               "setlist_no": "4",
-              "song_id": "song-228f943b49",
-              "version_id": "song-228f943b49-v-228f943b49",
-              "song_title": "うまぴょい伝説",
               "voice_actor_ids": [
                 "va-0011",
                 "va-0048",
                 "va-0124",
                 "va-0127"
               ],
-              "guest_performers": []
+              "character_ids": [
+                "almondeye",
+                "luckylilac",
+                "granalegria",
+                "chronogenesis"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LuckyLilac.png\" alt=\"旺紫丁\" title=\"旺紫丁\"><span class=\"perf-name\">旺紫丁</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/GranAlegria.png\" alt=\"放声欢呼\" title=\"放声欢呼\"><span class=\"perf-name\">放声欢呼</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/ChronoGenesis.png\" alt=\"创世驹\" title=\"创世驹\"><span class=\"perf-name\">创世驹</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">めにしゅき♡ラッシュっしゅ！</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LuckyLilac.png\" alt=\"旺紫丁\" title=\"旺紫丁\"><span class=\"perf-name\">旺紫丁</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/GranAlegria.png\" alt=\"放声欢呼\" title=\"放声欢呼\"><span class=\"perf-name\">放声欢呼</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/ChronoGenesis.png\" alt=\"创世驹\" title=\"创世驹\"><span class=\"perf-name\">创世驹</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">彩 Phantasia</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LuckyLilac.png\" alt=\"旺紫丁\" title=\"旺紫丁\"><span class=\"perf-name\">旺紫丁</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/GranAlegria.png\" alt=\"放声欢呼\" title=\"放声欢呼\"><span class=\"perf-name\">放声欢呼</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/ChronoGenesis.png\" alt=\"创世驹\" title=\"创世驹\"><span class=\"perf-name\">创世驹</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/AlmondEye.png\" alt=\"杏目\" title=\"杏目\"><span class=\"perf-name\">杏目</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/LuckyLilac.png\" alt=\"旺紫丁\" title=\"旺紫丁\"><span class=\"perf-name\">旺紫丁</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/GranAlegria.png\" alt=\"放声欢呼\" title=\"放声欢呼\"><span class=\"perf-name\">放声欢呼</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"uma_avatars/ChronoGenesis.png\" alt=\"创世驹\" title=\"创世驹\"><span class=\"perf-name\">创世驹</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">真名瀬日和</span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">めにしゅき♡ラッシュっしゅ！</td><td class=\"setlist-perf\"><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">真名瀬日和</span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">彩 Phantasia</td><td class=\"setlist-perf\"><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">真名瀬日和</span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"guest-performer\">石原夏織</span><span class=\"guest-performer\">中島由貴</span><span class=\"guest-performer\">夏目妃菜</span><span class=\"guest-performer\">真名瀬日和</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
-            "file": "data/live_cat_data.json",
-            "category": "other",
-            "section": null,
-            "group": 59,
-            "performance": 0,
-            "day": 0
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "TOKYO IDOL FESTIVAL 2026 DAY3@Zepp DiverCity(東京・江東区)"
           },
           "id_aliases": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0127",
+              "character_id": "almondeye",
+              "name": "石原夏织",
+              "role": "杏目",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0011",
+              "character_id": "luckylilac",
+              "name": "中岛由贵",
+              "role": "旺紫丁",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0048",
+              "character_id": "granalegria",
+              "name": "夏目妃菜",
+              "role": "放声欢呼",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0124",
+              "character_id": "chronogenesis",
+              "name": "真名濑日和",
+              "role": "创世驹",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            }
+          ],
+          "alternate_setlist_sources": [
+            {
+              "file": "data/live_cat_data.json",
+              "category": "other",
+              "section": null,
+              "group": 59,
+              "performance": 0,
+              "day": 0
+            }
+          ],
           "setlist_status": "verified"
         }
       ],
@@ -4767,6 +5252,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/467331"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "/zh-Hans/live/other/59",
@@ -149820,5 +150310,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "124a3e194d2e73914323"
+  "build_id": "f7f94714fa09605d2eba"
 }
