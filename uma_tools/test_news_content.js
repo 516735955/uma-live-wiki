@@ -53,6 +53,8 @@ try {
   assert.strictEqual(gacha.restore(gacha.text), '付费十连抽 / 普通十连抽 / 单抽 / 付费宝石 / 免费宝石');
   const program = terms.protect('そこそこぱかライブTV／ぱかライブTV\'／ぱかチューブっ!');
   assert.strictEqual(program.restore(program.text), 'SokoSoko PakaLive TV／PakaLive TV\'／PakaTube');
+  assert.strictEqual(terms.normalize('差不多Paka Live TV／赛马娘直播TV／ぱか频道っ!'),
+    'SokoSoko PakaLive TV／PakaLive TV／PakaTube');
   const linkedProgram = terms.protect('ぱかライブTV https://example.com/ぱかライブTV?id=123');
   assert.strictEqual(linkedProgram.restore(linkedProgram.text), 'PakaLive TV https://example.com/ぱかライブTV?id=123');
   assert.strictEqual(terms.normalize('<a href="https://example.com/ぱかライブTV">ぱか直播TV</a>'),
