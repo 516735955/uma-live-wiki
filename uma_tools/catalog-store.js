@@ -5,7 +5,7 @@ const path = require('path');
 const crypto = require('crypto');
 const businessDate = require('./business-date');
 
-const CATALOG_RESPONSE_SCHEMA = 8;
+const CATALOG_RESPONSE_SCHEMA = 9;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -125,15 +125,16 @@ function eventSongCount(event) {
   }, 0);
 }
 
-function eventSearchText(event) {
+function eventSearchText(event, actors = new Map()) {
   const cast = (event.cast || []).map((person) => [
+    ...Object.values(actors.get(person.voice_actor_id)?.identity || {}).flat(),
     person.name,
     person.voice_actor_name,
     person.character_name,
     person.role
   ].filter(Boolean).join(' '));
   const sessions = (event.sessions || []).flatMap((session) => {
-    const songs = (session.performances || session.songs || []).map((row) => [row.song, row.title, row.source].filter(Boolean).join(' '));
+    const songs = (session.performances?.length ? session.performances : session.songs || []).map((row) => typeof row === 'string' ? row : [row.song, row.title, row.source].filter(Boolean).join(' '));
     return [session.label, session.venue].concat(songs);
   });
   return normalize([
@@ -445,7 +446,7 @@ class CatalogStore {
         const character = charactersById.get(id) || {};
         return [character.zh, character.ja, character.en].filter(Boolean).join(' ');
       });
-      const search = normalize([eventSearchText(event), series.name, series.name_ja, ...names].filter(Boolean).join(' '));
+      const search = normalize([eventSearchText(event, actorsById), series.name, series.name_ja, ...names].filter(Boolean).join(' '));
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {
@@ -550,6 +551,7 @@ class CatalogStore {
       .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
     return {
       build_id: store.buildId,
+      business_date: today,
       stats: {
         songs: store.songsDoc.coverage.songs,
         albums: store.songsDoc.coverage.albums,
@@ -592,6 +594,7 @@ class CatalogStore {
     const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
     return {
       build_id: store.buildId,
+      business_date: today,
       series: (store.eventsDoc.series || []).map(series => ({...series,
         kinds: [...new Set(store.eventRows.filter(row => row.data.series_id === series.id).map(row => row.data.kind))]
       })),
@@ -603,8 +606,8 @@ class CatalogStore {
     };
   }
 
-  async event(id, legacy) {
-    const store = await this.get();
+  async event(id, legacy, snapshot) {
+    const store = snapshot || await this.get();
     const event = (id && store.eventsById.get(String(id))) || (legacy && (store.eventsDoc.events || [])
       .find((item) => item.legacy_url === legacy || (item.legacy_aliases || []).includes(legacy)));
     if (!event) return null;
@@ -645,8 +648,8 @@ class CatalogStore {
     };
   }
 
-  async song(id) {
-    const store = await this.get();
+  async song(id, snapshot) {
+    const store = snapshot || await this.get();
     const target = songIdentityKey(id);
     const song = store.songsById.get(String(id)) || store.songAliases.get(target);
     return song ? { build_id: store.buildId, song: hydrateSong(song, store.music) } : null;
@@ -737,8 +740,8 @@ class CatalogStore {
     return { build_id: store.buildId, album, catalog_songs: Array.from(new Map(songs.map((song) => [song.id, song])).values()) };
   }
 
-  async albumSummaries(ids) {
-    const store = await this.get();
+  async albumSummaries(ids, snapshot) {
+    const store = snapshot || await this.get();
     return ids.map(id => store.albumsById.get(id)).filter(Boolean).map(albumSummary);
   }
 

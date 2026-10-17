@@ -407,6 +407,7 @@ export function createAlbums(deps) {
   const coverTint = deps.reactive({});
 
   const tintSet = new Set();
+  const tintPending = new Set();
 
   const catalogCoverFallback = "/uma_tools/img/album-placeholder.svg";
 
@@ -431,19 +432,16 @@ export function createAlbums(deps) {
       image.src = catalogCoverFallback;
   }
 
-  function microCmsImage(url, width) {
-    const src = String(url || "");
-    if (!/^https:\/\/images\.microcms-assets\.io\//i.test(src)) return src;
-    const px = Math.max(1, Math.round(width || 560));
-    return (
-      src + (src.indexOf("?") === -1 ? "?" : "&") + "w=" + px + "&fm=webp&q=75"
-    );
-  }
-
   function sampleCover(event, url) {
-    if (!url || tintSet.has(url)) return;
-    tintSet.add(url);
-    const img = event && event.currentTarget;
+    if (!url || tintSet.has(url) || tintPending.has(url)) return;
+    const shown = event && event.currentTarget;
+    if (!shown?.naturalWidth) return;
+    if (!window.Image) return;
+    const img = new window.Image();
+    tintPending.add(url);
+    img.crossOrigin = 'anonymous';
+    img.onerror = () => { tintPending.delete(url); };
+    img.onload = () => {
     if (!img || !img.naturalWidth) return;
     try {
       const c = document.createElement("canvas");
@@ -465,9 +463,12 @@ export function createAlbums(deps) {
       }
       coverTint[url] =
         Math.round(r / n) + "," + Math.round(g / n) + "," + Math.round(b / n);
+      tintSet.add(url);
     } catch (e) {
       /* keep fallback tint */
-    }
+    } finally { tintPending.delete(url); }
+    };
+    img.src = window.UmaMedia ? window.UmaMedia.preview(url, 160) : url;
   }
 
   function coverStyle(album) {
@@ -598,7 +599,6 @@ export function createAlbums(deps) {
     enqueueAlbum,
     findAlbumById,
     loadAlbums,
-    microCmsImage,
     onCatalogImageError,
     openAlbum,
     openAlbumFromDb,

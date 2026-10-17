@@ -14,6 +14,7 @@ export function createNews(deps) {
   const newsLoading = deps.ref(false);
 
   const newsRange = deps.ref("all");
+  const newsNow = deps.ref(Date.now());
 
   const newsType = deps.ref("all");
 
@@ -75,7 +76,7 @@ export function createNews(deps) {
     let out = newsItems.value;
     if (newsRange.value !== "all") {
       const days = parseInt(newsRange.value, 10);
-      const cut = Date.now() - days * 86400000;
+      const cut = newsNow.value - days * 86400000;
       out = out.filter(function (n) {
         var t = newsTimestamp(n.post_at);
         return !isNaN(t) && t >= cut;
@@ -245,6 +246,11 @@ export function createNews(deps) {
       "loading",
       "colspan",
       "rowspan",
+      "id",
+      "start",
+      "value",
+      "type",
+      "media",
     ]);
     const iframeAttrs = new Set([
       "src",
@@ -305,7 +311,7 @@ export function createNews(deps) {
           el.removeAttribute(attr.name);
         }
       });
-      if (el.tagName === "A" && el.hasAttribute("href")) {
+      if (el.tagName === "A" && el.hasAttribute("href") && !el.getAttribute('href').startsWith('#')) {
         el.setAttribute("target", "_blank");
         el.setAttribute("rel", "noopener noreferrer");
       }
@@ -611,6 +617,9 @@ export function createNews(deps) {
     return request.promise;
   }
   function start() {
+    const timer = window.setInterval?.(() => { newsNow.value = Date.now(); }, 60000);
+    timer?.unref?.();
+    window.addEventListener?.('pageshow', () => { newsNow.value = Date.now(); });
     deps.watch(
       newsRange,
       function () {

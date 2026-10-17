@@ -58,6 +58,9 @@ export function createAnimeMusic(deps) {
   const animeMusicCueGroups = deps.computed(() =>
     [
       { kind: "fanfare", label: "比赛号角" },
+      { kind: "op", label: "片头曲" },
+      { kind: "ed", label: "片尾曲" },
+      { kind: "theme", label: "主题曲" },
       { kind: "insert", label: "插入曲" },
       { kind: "bgm", label: "背景配乐" },
     ]

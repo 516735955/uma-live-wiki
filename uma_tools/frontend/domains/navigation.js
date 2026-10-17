@@ -141,7 +141,7 @@ export function createNavigation(deps) {
   }
 
   function listParamsFromUrl() {
-    const params = new URL(window.location.href).searchParams;
+    const params = new URL(deps.routes.resolve(window.location.pathname + window.location.search), window.location.href).searchParams;
     return Object.fromEntries(params.entries());
   }
 

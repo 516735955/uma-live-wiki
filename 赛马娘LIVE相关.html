@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>赛马娘综合站</title>
 <script>
+(function () {
+    function failedBoot() {
+        const boot = document.getElementById('app-boot');
+        if (!boot || window.__uma_app) return;
+        const main = boot.querySelector('.app-boot-main');
+        if (!main || main.dataset.failed) return;
+        main.dataset.failed = 'true';
+        boot.removeAttribute('aria-hidden');
+        const text = document.createElement('p');
+        text.setAttribute('role', 'alert');
+        text.textContent = '页面加载失败，请检查网络后重试。';
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'ui-retry'; button.textContent = '重新加载';
+        button.addEventListener('click', () => location.reload());
+        main.replaceChildren(text, button);
+    }
+    window.addEventListener('error', event => {
+        if (event.target === window || event.target?.tagName === 'SCRIPT') failedBoot();
+    }, true);
+    window.addEventListener('unhandledrejection', failedBoot);
+    setTimeout(failedBoot, 20000);
+})();
+</script>
+<script>
 if (['/', '/zh-Hans', '/zh-Hans/'].includes(location.pathname)) {
     const preload = document.createElement('link');
     preload.rel = 'preload'; preload.as = 'image'; preload.type = 'image/avif'; preload.fetchPriority = 'high';
@@ -76,9 +100,9 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                     <button v-if="item.children" class="site-nav-trigger" type="button" :aria-expanded="openNavGroup===item.key" @click="activateNavGroup(item.key,$event)">
                         <span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span><svg class="site-nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
                     </button>
-                    <button v-else class="site-nav-trigger" type="button" @click="navNavigate(item.path)"><span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span></button>
+                    <a v-else class="site-nav-trigger" :href="item.path" @click="internalLink($event, () => navNavigate(item.path))"><span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span></a>
                     <div v-if="item.children" v-show="openNavGroup===item.key" class="site-nav-menu">
-                        <button v-for="child in item.children" :key="child.key" type="button" @click="navNavigate(child.path)"><span>{{ child.label }}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
+                        <a v-for="child in item.children" :key="child.key" :href="child.path" @click="internalLink($event, () => navNavigate(child.path))"><span>{{ child.label }}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></a>
                     </div>
                 </div>
             </nav>
@@ -93,15 +117,15 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
     </div>
 
     <header v-if="!home" class="sub-header">
-        <button class="sub-brand" type="button" @click="goHome()"><span>赛马娘演出综合站</span></button>
+        <a class="sub-brand" :href="routes.home()" @click="internalLink($event, goHome)"><span>赛马娘演出综合站</span></a>
         <nav class="site-nav site-nav-sub" aria-label="主导航">
             <div v-for="item in navItems" :key="item.key" class="site-nav-item" :class="{open:openNavGroup===item.key,active:navItemActive(item.key)}">
                 <button v-if="item.children" class="site-nav-trigger" type="button" :aria-expanded="openNavGroup===item.key" @click="activateNavGroup(item.key,$event)">
                     <span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span><svg class="site-nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
                 </button>
-                <button v-else class="site-nav-trigger" type="button" @click="navNavigate(item.path)"><span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span></button>
+                <a v-else class="site-nav-trigger" :href="item.path" @click="internalLink($event, () => navNavigate(item.path))"><span class="site-nav-icon" v-html="item.icon"></span><span>{{ item.label }}</span></a>
                 <div v-if="item.children" v-show="openNavGroup===item.key" class="site-nav-menu">
-                    <button v-for="child in item.children" :key="child.key" type="button" @click="navNavigate(child.path)"><span>{{ child.label }}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
+                    <a v-for="child in item.children" :key="child.key" :href="child.path" @click="internalLink($event, () => navNavigate(child.path))"><span>{{ child.label }}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></a>
                 </div>
             </div>
         </nav>

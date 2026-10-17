@@ -126,6 +126,7 @@ export function createRouting(deps) {
   function routeWillBeAtomic(path) {
     const clean = String(path || "")
       .split("?")[0]
+      .replace(/\/+$/, '')
       .replace(/^\/zh-Hans/i, "");
     return (
       /^\/news\/[^/]+$/.test(clean) ||

@@ -224,7 +224,7 @@ export function createAnime(deps) {
   }
 
   function animeWorkFormats(work) {
-    return [work.format || "unknown"];
+    return [...new Set([work.format || "unknown", ...(work.film_cover || work.film_release_date ? ['movie'] : [])])];
   }
 
   function animeWorkYears(work) {

@@ -12,7 +12,7 @@
     emits: ['update:modelValue', 'change'],
     data: function () {
       sequence += 1;
-      return { open: false, activeIndex: -1, group: null, menuShift: 0, listId: 'ui-select-' + sequence };
+      return { open: false, activeIndex: -1, group: null, menuShift: 0, menuAbove: false, menuHeight: 286, listId: 'ui-select-' + sequence };
     },
     computed: {
       selectedOption: function () {
@@ -26,6 +26,23 @@
     mounted: function () { document.addEventListener('pointerdown', this.onOutside); },
     beforeUnmount: function () { document.removeEventListener('pointerdown', this.onOutside); },
     methods: {
+      revealActive: function () {
+        this.$nextTick(() => {
+          const menu = this.$refs.menu;
+          const option = menu?.querySelectorAll('[role="option"]')[this.activeIndex];
+          if (option && menu) {
+            const bounds = option.getBoundingClientRect(), container = menu.getBoundingClientRect();
+            if (bounds.top < container.top) menu.scrollTop -= container.top - bounds.top;
+            else if (bounds.bottom > container.bottom) menu.scrollTop += bounds.bottom - container.bottom;
+          }
+        });
+      },
+      back: function () {
+        this.group = null;
+        this.activeIndex = Math.max(0, this.visibleOptions.findIndex(option => !option.disabled));
+        this.$refs.trigger?.focus();
+        this.revealActive();
+      },
       onOutside: function (event) {
         if (this.open && !this.$el.contains(event.target)) this.close();
       },
@@ -40,17 +57,22 @@
             }, this))
           : -1;
         this.$nextTick(() => {
+          const trigger = this.$refs.trigger.getBoundingClientRect();
+          const below = window.innerHeight - trigger.bottom - 16, above = trigger.top - 16;
+          this.menuAbove = below < 180 && above > below;
+          this.menuHeight = Math.max(40, Math.min(286, this.menuAbove ? above : below));
           this.menuShift = 0;
           this.$nextTick(() => {
             const rect = this.$refs.menu.getBoundingClientRect();
             const width = document.documentElement.clientWidth;
             this.menuShift = rect.right > width - 8 ? width - 8 - rect.right : rect.left < 8 ? 8 - rect.left : 0;
+            this.revealActive();
           });
         });
       },
       choose: function (option) {
         if (!option || option.disabled) return;
-        if (option.children) { this.group = option; this.activeIndex = 0; return; }
+        if (option.children) { this.group = option; this.activeIndex = Math.max(0, this.visibleOptions.findIndex(row => !row.disabled)); this.$refs.trigger?.focus(); this.revealActive(); return; }
         this.$emit('update:modelValue', option.value);
         this.$emit('change', option.value);
         this.close();
@@ -60,8 +82,14 @@
       },
       onKeydown: function (event) {
         if (event.key === 'Escape' || event.key === 'Tab') { this.close(); return; }
-        if (event.key === 'ArrowLeft' && this.group) { event.preventDefault(); this.group = null; this.activeIndex = 0; return; }
+        if (event.key === 'ArrowLeft' && this.group) { event.preventDefault(); this.back(); return; }
         if (event.key === 'ArrowRight' && this.open) { event.preventDefault(); const option = this.visibleOptions[this.activeIndex]; if (option?.children) this.choose(option); return; }
+        if (this.open && ['Home', 'End'].includes(event.key)) {
+          event.preventDefault();
+          const indices = this.visibleOptions.flatMap((option, index) => option.disabled ? [] : [index]);
+          this.activeIndex = event.key === 'Home' ? indices[0] : indices.at(-1);
+          this.revealActive(); return;
+        }
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           if (!this.open) this.toggle();
@@ -78,18 +106,19 @@
         let next = this.activeIndex < 0 ? 0 : this.activeIndex;
         do { next = (next + direction + total) % total; } while (this.visibleOptions[next] && this.visibleOptions[next].disabled);
         this.activeIndex = next;
+        this.revealActive();
       }
     },
     template: `
       <div class="ui-select-control" :class="{open:open}">
         <span v-if="label" class="ui-select-label">{{ label }}</span>
-        <button ref="trigger" class="ui-select-trigger" type="button" :aria-label="ariaLabel || label" :aria-expanded="open" :aria-controls="listId" @click="toggle" @keydown="onKeydown">
+        <button ref="trigger" class="ui-select-trigger" type="button" role="combobox" aria-autocomplete="none" aria-haspopup="listbox" :aria-label="ariaLabel || label" :aria-expanded="open" :aria-controls="listId" :aria-activedescendant="open && activeIndex>=0 ? listId+'-option-'+activeIndex : undefined" @click="toggle" @keydown="onKeydown">
           <span>{{ selectedOption.label }}</span>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
         </button>
-        <div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :style="{transform:'translateX(' + menuShift + 'px)',maxWidth:'calc(100vw - 16px)'}" role="listbox">
-          <button v-if="group" class="ui-select-back" type="button" @click="group=null;activeIndex=0">‹ {{ label }} · {{ group.label }}</button>
-          <button v-for="(option,index) in visibleOptions" :key="String(option.value)" type="button" role="option" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
+        <div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :style="{transform:'translateX(' + menuShift + 'px)',maxWidth:'calc(100vw - 16px)',maxHeight:menuHeight+'px',top:menuAbove?'auto':undefined,bottom:menuAbove?'calc(100% + 7px)':undefined}" role="listbox" @keydown="onKeydown">
+          <button v-if="group" class="ui-select-back" type="button" @click="back">‹ {{ label }} · {{ group.label }}</button>
+          <button v-for="(option,index) in visibleOptions" :id="listId+'-option-'+index" :key="String(option.value)" type="button" role="option" tabindex="-1" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
             <span>{{ option.label }}</span>
             <svg v-if="option.children" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
             <svg v-else-if="String(option.value)===String(modelValue)" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg>

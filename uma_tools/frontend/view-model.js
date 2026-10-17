@@ -42,7 +42,6 @@ export function createViewModel(domains, routes) {
     coverStyle: domains.albums.coverStyle,
     coverThumb: domains.albums.coverThumb,
     onCatalogImageError: domains.albums.onCatalogImageError,
-    microCmsImage: domains.albums.microCmsImage,
     sampleCover: domains.albums.sampleCover,
     fix: domains.navigation.fix,
     fixDone: domains.navigation.fixDone,

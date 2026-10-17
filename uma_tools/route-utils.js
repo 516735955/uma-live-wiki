@@ -52,6 +52,21 @@
       url.searchParams.delete('year');
       if (url.searchParams.get('format') === 'web_short') url.searchParams.set('format', 'short');
     }
+    const oneOf = (key, values) => {
+      if (url.searchParams.has(key) && !values.includes(url.searchParams.get(key))) url.searchParams.delete(key);
+    };
+    if (/^\/zh-Hans\/events\/?$/.test(url.pathname)) {
+      oneOf('kind', ['concert', 'onsite', 'official_program', 'all']);
+      oneOf('mode', ['online', 'onsite', 'all']);
+      oneOf('time', ['upcoming', 'past', 'announced', 'all']);
+      if (url.searchParams.has('year') && !/^(20\d{2}|unknown|all)$/.test(url.searchParams.get('year'))) url.searchParams.delete('year');
+      if (url.searchParams.get('series') === 'unclassified' && !['concert', 'onsite', 'official_program'].includes(url.searchParams.get('kind'))) url.searchParams.delete('series');
+    }
+    if (/^\/zh-Hans\/music\/albums\/?$/.test(url.pathname)) {
+      oneOf('sort', ['name', 'newest']);
+      if (url.searchParams.get('type') === '数字单曲') url.searchParams.set('type', '单曲');
+    }
+    if (url.searchParams.has('page') && !/^[1-9]\d*$/.test(url.searchParams.get('page'))) url.searchParams.delete('page');
     const query = url.searchParams.toString();
     return url.pathname + (query ? '?' + query : '') + (url.hash || '');
   }

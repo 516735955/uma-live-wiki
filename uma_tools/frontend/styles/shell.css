@@ -25,7 +25,8 @@ body.subpage-bg {
 .site-nav { display: flex; }
 .site-nav-item { position: relative; }
 .site-nav-trigger,
-.site-nav-menu button {
+.site-nav-menu :is(button,a) {
+    text-decoration: none;
     border: 0;
     color: inherit;
     font: inherit;
@@ -70,7 +71,7 @@ body.subpage-bg {
     transition: opacity 160ms ease, transform 360ms var(--ui-ease);
 }
 .site-nav-item.open > .site-nav-menu { pointer-events: auto; opacity: 1; transform: translateY(0); }
-.site-nav-menu button {
+.site-nav-menu :is(button,a) {
     position: relative;
     display: flex;
     width: 100%;
@@ -80,7 +81,7 @@ body.subpage-bg {
     background: transparent;
     text-align: left;
 }
-.site-nav-menu button::before {
+.site-nav-menu :is(button,a)::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -89,8 +90,8 @@ body.subpage-bg {
     clip-path: inset(0 100% 0 0);
     transition: clip-path 420ms var(--ui-ease);
 }
-.site-nav-menu button:hover::before { clip-path: inset(0 0 0 0); }
-.site-nav-menu button:hover svg { transform: translateX(4px); }
+.site-nav-menu :is(button,a):hover::before { clip-path: inset(0 0 0 0); }
+.site-nav-menu :is(button,a):hover svg { transform: translateX(4px); }
 
 .site-nav-home { width: 100%; flex-direction: column; min-height: 0; overflow-y: auto; }
 .site-nav-home .site-nav-trigger { min-height: 54px; justify-content: flex-start; padding: 0 25px; color: #fff; font-size: 1.04rem; }
@@ -98,7 +99,7 @@ body.subpage-bg {
 .site-nav-home .site-nav-item.open { background: rgba(9,27,101,.18); }
 .site-nav-home .site-nav-menu { position: static; }
 .site-nav-home .site-nav-menu { transition: opacity 160ms ease, transform 360ms var(--ui-ease); }
-.site-nav-home .site-nav-menu button { min-height: 43px; padding: 0 26px 0 43px; color: rgba(255,255,255,.9); }
+.site-nav-home .site-nav-menu :is(button,a) { min-height: 43px; padding: 0 26px 0 43px; color: rgba(255,255,255,.9); }
 
 .sub-header {
     position: sticky;
@@ -112,6 +113,7 @@ body.subpage-bg {
     box-shadow: 0 7px 18px rgba(27,47,125,.2);
 }
 .sub-brand {
+    text-decoration: none;
     display: inline-flex;
     flex: 0 0 25%;
     min-width: 230px;
@@ -163,7 +165,7 @@ body.subpage-bg {
     transform: skewX(30deg) translateY(-8px);
 }
 .site-nav-sub .site-nav-item.open > .site-nav-menu { transform: skewX(30deg) translateY(0); }
-.site-nav-sub .site-nav-menu button { min-height: 44px; padding: 0 18px; color: #fff; }
+.site-nav-sub .site-nav-menu :is(button,a) { min-height: 44px; padding: 0 18px; color: #fff; }
 
 .route-breadcrumb {
     display: flex;

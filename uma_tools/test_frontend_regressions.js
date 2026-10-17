@@ -172,7 +172,7 @@ async function main() {
   await app.openSong('music');
   assert.strictEqual(app.songCreditVersions.value.length, 2, 'removed contributors still produce a visible version difference');
   assert.strictEqual(app.songCreditVersions.value[1].display_credits[0].name, 'A');
-  assert.strictEqual(app.songLyricVersions.value.length, 1, 'punctuation and line wrapping do not create duplicate lyrics');
+  assert.strictEqual(app.songLyricVersions.value.length, 2, 'recordings retain their own lyric, translation and timing selection even when wording matches');
   assert.strictEqual(app.selectedSongLyricLines.value[1].start_ms, undefined, 'a missing timing does not shift the next line');
   assert.strictEqual(app.selectedSongLyricLines.value[2].start_ms, 900);
 
@@ -265,7 +265,7 @@ async function main() {
   assert.strictEqual(selection.loadError, '');
   location.href = 'http://localhost/zh-Hans/database/anime?format=movie&year=2023';
   await app.applyCurrentRoute();
-  assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id), ['anime-movie-beginning-new-era'], 'primary formats are mutually exclusive and retired year URLs do not hide entries');
+  assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id).sort(), ['anime-movie-beginning-new-era', 'anime-rttt'], 'movie filtering includes confirmed theatrical editions and ignores retired year filters');
   location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeFiltered.value.length, 1, 'network format remains available without a year filter');

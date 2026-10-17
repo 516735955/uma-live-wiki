@@ -19,16 +19,15 @@ const pages = {
 const loading = { template: '<div class="ui-state loading">正在加载页面…</div>' };
 const failure = {
   template: '<div class="ui-state ui-state-error">页面加载失败。<button class="ui-retry" @click="retry">重试</button></div>',
-  methods: { retry() { location.reload(); } },
 };
 
 export function registerPages(app) {
   for (const [name, url] of Object.entries(pages)) {
     let revision = 0;
-    app.component(name + "-page", Vue.defineAsyncComponent({
+    function createPage(reload) { return Vue.defineAsyncComponent({
       timeout: 25000,
       loadingComponent: loading,
-      errorComponent: failure,
+      errorComponent: { template: failure.template, methods: { retry() { revision++; reload(); } } },
       async loader() {
         const page = await import(url + (revision ? "?retry=" + revision : ""));
         return {
@@ -56,6 +55,14 @@ export function registerPages(app) {
         revision += 1;
         setTimeout(retry, 500 * attempts);
       },
-    }));
+    }); }
+    app.component(name + '-page', {
+      setup() {
+        const component = Vue.shallowRef();
+        const reload = () => { component.value = createPage(reload); };
+        reload();
+        return () => Vue.h(component.value);
+      },
+    });
   }
 }

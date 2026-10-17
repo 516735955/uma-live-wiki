@@ -6,7 +6,7 @@ exports.createService = function (deps) {
       .then((data) =>
         deps.sendJson(res, 200, data, {
           cacheControl: "public, max-age=60, stale-while-revalidate=600",
-          etag: catalogEtag(data.build_id, "home:" + new Date().toDateString()),
+          etag: catalogEtag(data.build_id, "home:" + (data.business_date || require('./business-date').today())),
         }),
       )
       .catch(() =>
@@ -34,7 +34,7 @@ exports.createService = function (deps) {
         result.build_id,
         scope +
           (req.url.startsWith("/api/catalog/events")
-            ? ":" + new Date().toDateString()
+            ? ":" + (result.business_date || require('./business-date').today())
             : ""),
       ),
     });
@@ -87,12 +87,13 @@ exports.createService = function (deps) {
         );
         if (params.get('kind') === 'music') events.clear();
         const albumIds = new Set(work.relations.filter(row => row.target_type === 'album').map(row => row.target_id));
-        const albumRows = params.get('kind') === 'events' ? [] : await deps.catalogStore.albumSummaries(Array.from(albumIds));
+        const snapshot = await deps.catalogStore.get();
+        const albumRows = params.get('kind') === 'events' ? [] : await deps.catalogStore.albumSummaries(Array.from(albumIds), snapshot);
         const songRows = await Promise.all(
-          Array.from(songs, (id) => deps.catalogStore.song(id)),
+          Array.from(songs, (id) => deps.catalogStore.song(id, snapshot)),
         );
         const eventRows = await Promise.all(
-          Array.from(events, (id) => deps.catalogStore.event(id)),
+          Array.from(events, (id) => deps.catalogStore.event(id, undefined, snapshot)),
         );
         if (songRows.some((row) => !row) || eventRows.some((row) => !row))
           throw new Error("Missing anime media");
@@ -100,7 +101,7 @@ exports.createService = function (deps) {
           build_id:
             work.build_id +
             ":" +
-            ((songRows[0] || eventRows[0] || {}).build_id || ""),
+            snapshot.buildId,
           songs: songRows.map((row) => row.song),
           events: eventRows.map((row) => row.event),
           albums: albumRows,

@@ -50,7 +50,7 @@
     const entry = { controller: controller, subscribers: 0, settled: false, promise: null };
     const promise = fetch(path, {
       headers: { Accept: 'application/json' },
-      cache: settings.fresh ? 'no-cache' : 'default',
+      cache: settings.fresh || musicCatalog(path) ? 'no-cache' : 'default',
       signal: controller.signal
     }).then(function (response) {
       if (!response.ok) throw new Error('HTTP ' + response.status);

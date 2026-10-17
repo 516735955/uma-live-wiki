@@ -272,7 +272,6 @@ export function createSongs(deps) {
 
   const songLyricVersions = deps.computed(function () {
     const accepted = [];
-    const seenSequences = new Set();
     ((songDetail.value && songDetail.value.versions) || []).forEach(
       function (version) {
         if (!version.lyrics || version.instrumental) return;
@@ -282,8 +281,7 @@ export function createSongs(deps) {
           .normalize("NFKC")
           .replace(/[\p{P}\p{Z}\s]/gu, "")
           .toLowerCase();
-        if (!sequence || seenSequences.has(sequence)) return;
-        seenSequences.add(sequence);
+        if (!sequence) return;
         accepted.push(version);
       },
     );
