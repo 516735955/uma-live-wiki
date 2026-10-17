@@ -3,8 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const businessDate = require('./business-date');
 
-const CATALOG_RESPONSE_SCHEMA = 5;
+const CATALOG_RESPONSE_SCHEMA = 6;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -62,7 +63,7 @@ function albumSlug(name) {
 }
 
 function stableAlbumId(album) {
-  if (album && album.id) return String(album.id);
+  if (album && String(album.id || '').trim()) return String(album.id).trim();
   const catalog = String((album && album.catalog) || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   if (catalog) return 'album-' + catalog;
   return 'album-' + crypto.createHash('sha1').update(normalize(album && album.name).replace(/ /g, '')).digest('hex').slice(0, 12);
@@ -489,16 +490,22 @@ class CatalogStore {
   }
 
   async home() {
+    if (this.homeLoading) return this.homeLoading;
+    this.homeLoading = this.loadHome();
+    try { return await this.homeLoading; }
+    finally { this.homeLoading = null; }
+  }
+
+  async loadHome() {
     const files = ['catalog_manifest.json', 'events_catalog.json'];
     const stats = await Promise.all(files.map(name => fs.promises.stat(path.join(this.dataDir, name))));
-    const signature = stats.map(stat => stat.size + ':' + stat.mtimeMs).join('|') + new Date().toDateString();
+    const signature = stats.map(stat => stat.size + ':' + stat.mtimeMs).join('|') + businessDate.today();
     if (this.homeSnapshot?.signature === signature) return this.homeSnapshot.value;
     const [manifest, catalog] = await Promise.all(files.map(async name => JSON.parse(await fs.promises.readFile(path.join(this.dataDir, name), 'utf8'))));
     if (manifest.home_stats && manifest.build_id === catalog.build_id) {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
+      const today = businessDate.today();
       const next = (catalog.events || []).filter(event =>
-        new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime() >= today.getTime())
+        businessDate.eventDate(event.end_date || event.date) >= today)
         .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0];
       const payload = { stats: manifest.home_stats, nextEvent: next ? eventSummary(next) : null };
       const revision = crypto.createHash('sha1').update(JSON.stringify(payload)).digest('hex').slice(0, 12);
@@ -509,12 +516,11 @@ class CatalogStore {
     const store = await this.get();
     const events = store.eventsDoc.events || [];
     const liveEvents = events.filter((event) => event.kind === 'concert');
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const today = businessDate.today();
     const nextEvent = events
       .filter((event) => {
-        const time = new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime();
-        return Number.isFinite(time) && time >= today.getTime();
+        const time = businessDate.eventDate(event.end_date || event.date);
+        return time && time >= today;
       })
       .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
     return {
@@ -540,19 +546,18 @@ class CatalogStore {
     const mode = params.get('mode') || 'all';
     const year = params.get('year') || 'all';
     const series = params.get('series') || 'all';
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const today = businessDate.today();
     let rows = store.eventRows.filter((row) => {
       const event = row.data;
-      const eventTime = new Date(String(event.end_date || event.date || '') + 'T00:00:00').getTime();
+      const eventTime = businessDate.eventDate(event.end_date || event.date);
       if (query && !row.search.includes(query)) return false;
       if (kind !== 'all' && event.kind !== kind) return false;
       if (mode !== 'all' && event.mode !== mode) return false;
       if (year !== 'all' && releaseYear(event.date) !== year) return false;
       if (series !== 'all' && (event.series_id || 'unclassified') !== series) return false;
-      if (time === 'upcoming' && (!Number.isFinite(eventTime) || eventTime < today.getTime())) return false;
-      if (time === 'past' && (!Number.isFinite(eventTime) || eventTime >= today.getTime())) return false;
-      if (time === 'announced' && Number.isFinite(eventTime)) return false;
+      if (time === 'upcoming' && (!eventTime || eventTime < today)) return false;
+      if (time === 'past' && (!eventTime || eventTime >= today)) return false;
+      if (time === 'announced' && eventTime) return false;
       return true;
     });
     rows = rows.slice().sort((a, b) => String(b.data.date || '').localeCompare(String(a.data.date || '')) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
@@ -593,7 +598,7 @@ class CatalogStore {
         }))
       });
     }).filter(Boolean);
-    return { build_id: store.buildId, event, catalog_songs: songs };
+    return { build_id: store.buildId, event, series: (store.eventsDoc.series || []).find(series => series.id === event.series_id) || null, catalog_songs: songs };
   }
 
   async songs(params) {

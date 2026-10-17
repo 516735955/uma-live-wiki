@@ -26,7 +26,7 @@ async function main() {
   const store = new CatalogStore(path.join(__dirname, '..', 'data'));
   const snapshot = await store.get();
   assert(snapshot.buildId, 'catalog build id is required');
-  assert(snapshot.buildId.includes('-api5-'), 'catalog response revision must invalidate caches when the API schema changes');
+  assert(snapshot.buildId.includes('-api6-'), 'catalog response revision must invalidate caches when the API schema changes');
   assert(snapshot.eventRows.length > 400, 'event catalog is unexpectedly small');
   assert(snapshot.songRows.length > 1000, 'song catalog is unexpectedly small');
   assert(snapshot.creatorRows.length > 100, 'creator catalog is unexpectedly small');
@@ -127,6 +127,12 @@ async function main() {
     fs.writeFileSync(manifestFile, JSON.stringify(manifest));
     const homeStore = new CatalogStore(temporary);
     homeStore.get = () => { throw new Error('home must not parse the full music catalogs'); };
+    const loadHome = homeStore.loadHome.bind(homeStore);
+    let homeLoads = 0;
+    homeStore.loadHome = async () => { homeLoads++; return loadHome(); };
+    const summaries = await Promise.all(Array.from({length: 20}, () => homeStore.home()));
+    assert.strictEqual(homeLoads, 1, 'concurrent cold home reads share one load');
+    assert(summaries.every(summary => summary === summaries[0]));
     assert.deepStrictEqual((await homeStore.home()).stats, expectedHome.stats);
     const editedStore = new CatalogStore(temporary);
     const before = await editedStore.voices();
