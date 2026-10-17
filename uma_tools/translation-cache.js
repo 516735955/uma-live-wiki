@@ -37,10 +37,13 @@ class TranslationCache {
     return this.values[key];
   }
   set(key, value) {
+    this.setMany({ [key]: value });
+  }
+  setMany(entries) {
     // Merge one completed translation into the latest disk contents, never a
     // stale in-memory copy of the whole cache. The service is its sole writer.
     this.reload(true);
-    const next = { ...this.values, [key]: value };
+    const next = { ...this.values, ...entries };
     const temporary = this.file + '.' + process.pid + '.tmp';
     try {
       fs.mkdirSync(path.dirname(this.file), { recursive: true });

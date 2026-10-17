@@ -51,6 +51,11 @@ exports.createService = function (deps) {
   let INDEX_FILE = "index.html";
 
   function serveFile(filePath, req, res) {
+    if (!['GET', 'HEAD'].includes(req.method)) {
+      res.writeHead(405, { Allow: 'GET, HEAD' });
+      res.end();
+      return;
+    }
     deps.fs.stat(filePath, (err2, st2) => {
       if (err2 || !st2.isFile()) {
         res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
@@ -83,6 +88,7 @@ exports.createService = function (deps) {
             ? (/^[a-f0-9]{40}$/.test(requestUrl.searchParams.get('v') || '') ? "public, max-age=2592000" : "no-cache")
               : "no-cache";
       const headers = {
+        "ETag": '"' + st2.size.toString(16) + '-' + st2.mtimeMs.toString(16) + '"',
         "Content-Type": MIME[ext] || "application/octet-stream",
         "Cache-Control": cacheControl,
         "Last-Modified": st2.mtime.toUTCString(),
@@ -92,8 +98,9 @@ exports.createService = function (deps) {
         req.headers["if-modified-since"] || "",
       );
       if (
-        !isNaN(ifModifiedSince) &&
-        Math.floor(st2.mtimeMs / 1000) <= Math.floor(ifModifiedSince / 1000)
+        req.headers['if-none-match']
+          ? req.headers['if-none-match'].split(',').map(value => value.trim().replace(/^W\//, '')).some(value => value === '*' || value === headers.ETag)
+          : !isNaN(ifModifiedSince) && st2.mtimeMs <= ifModifiedSince
       ) {
         res.writeHead(304, headers);
         res.end();

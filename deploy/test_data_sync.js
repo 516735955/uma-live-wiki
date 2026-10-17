@@ -20,6 +20,9 @@ assert.deepStrictEqual(data.merge([{id:'remove'}], [], [{id:'remove'},{id:'runti
 assert.deepStrictEqual(data.merge([{id:'restore',title:'old'}], [{id:'restore',title:'new'}], []),
   [{id:'restore',title:'new'}], 'Git-restored changed records retain their identity');
 assert.deepStrictEqual(data.merge(['repeat','repeat','old'],['repeat','repeat','new'],['repeat','repeat','old','runtime']),['repeat','repeat','new','runtime']);
+const staff = ['anime-s1','anime-s2'].map(work_id => ({work_id,role:'原作',name:'Cygames'}));
+assert.deepStrictEqual(data.merge(staff, [...staff].reverse(), staff.map(row => ({...row,note:row.work_id}))).map(row => [row.work_id,row.note]),
+  [['anime-s2','anime-s2'],['anime-s1','anime-s1']], 'staff corrections follow the work identity after reordering');
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-data-publish-'));
 try {
   const directories = ['previous', 'incoming', 'live', 'candidate', 'backup', 'media-backup'].map(name=>path.join(root,name));
@@ -45,12 +48,27 @@ try {
   assert.strictEqual(fs.readFileSync(path.join(candidateRoot,'uma_tools/img/runtime.jpg'),'utf8'),'runtime image');
   assert.strictEqual(data.publish(path.join(candidateRoot,'data'),path.join(liveRoot,'data'),backupRoot),2);
   assert(!fs.existsSync(path.join(liveRoot,'data/obsolete.json')));
-  assert.strictEqual(media.publish(candidateRoot,liveRoot,mediaBackup),1);
+  assert.strictEqual(media.publish(candidateRoot,liveRoot,mediaBackup),2);
   assert.strictEqual(data.publish(path.join(candidateRoot,'data'),path.join(liveRoot,'data'),path.join(root,'repeat')),0);
   data.rollback(path.join(liveRoot,'data'),backupRoot);
   assert(fs.existsSync(path.join(liveRoot,'data/obsolete.json')));
   media.rollback(liveRoot,mediaBackup);
   assert.deepStrictEqual(JSON.parse(fs.readFileSync(path.join(liveRoot,'data/albums.json'))),live);
   assert.strictEqual(fs.readFileSync(path.join(liveRoot,'uma_tools/img/a.jpg'),'utf8'),'old image');
+  write(previousRoot,'uma_tools/img/retired.jpg','retired');
+  write(liveRoot,'uma_tools/img/retired.jpg','retired');
+  media.stage(incomingRoot,previousRoot,liveRoot,candidateRoot);
+  media.publish(candidateRoot,liveRoot,path.join(root,'retirement-start'));
+  assert(fs.existsSync(path.join(liveRoot,'uma_tools/img/retired.jpg')), 'deleted Git media remains available during the retention period');
+  const retiredFile = path.join(liveRoot,'.media-retired.json');
+  const retired = JSON.parse(fs.readFileSync(retiredFile,'utf8'));
+  retired['uma_tools/img/retired.jpg'].at -= 8 * 86400000;
+  write(liveRoot,'.media-retired.json',JSON.stringify(retired));
+  media.stage(incomingRoot,previousRoot,liveRoot,candidateRoot);
+  const retiredBackup = path.join(root,'retirement-backup');
+  media.publish(candidateRoot,liveRoot,retiredBackup);
+  assert(!fs.existsSync(path.join(liveRoot,'uma_tools/img/retired.jpg')), 'unreferenced retired Git media is eventually reclaimed');
+  media.rollback(liveRoot,retiredBackup);
+  assert(fs.existsSync(path.join(liveRoot,'uma_tools/img/retired.jpg')), 'media reclamation is included in rollback');
   console.log('field publication, independent runtime facts, media replacement, idempotency and rollback passed');
 } finally {fs.rmSync(root,{recursive:true,force:true});}

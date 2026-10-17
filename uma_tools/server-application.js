@@ -42,10 +42,10 @@ exports.createService = function (deps) {
       if (req.method === "GET" && ["/api/news-image", "/api/image"].includes(urlPath)) {
         (async () => {
           if (urlPath === '/api/image' && !params.has('url')) return deps.loadLocalPreview(params.get('path'), params.get('w'));
-          const original = await (urlPath === '/api/image' ? deps.loadRemoteImage : deps.loadNewsImage)(params.get('url'));
+          const original = await (urlPath === '/api/image' ? deps.loadRemoteImage : deps.loadNewsImage)(params.get('url'), { deferBytes: params.has('w') });
           if (!params.has('w')) return original;
-          const identity = deps.crypto.createHash('sha256').update(original.bytes).digest('hex');
-          return deps.previewImage(identity, params.get('w'), () => original.bytes);
+          const identity = original.identity || deps.crypto.createHash('sha256').update(original.bytes).digest('hex');
+          return deps.previewImage(identity, params.get('w'), original.read || (() => original.bytes));
         })()
           .then(({ bytes, extension, etag }) => {
             if (res.destroyed || res.writableEnded) return;
@@ -78,6 +78,11 @@ exports.createService = function (deps) {
         return deps.handleAudioProxy(req, res, params);
       if (urlPath.startsWith("/api/"))
         return deps.sendJson(res, 404, { error: "unknown api endpoint" });
+
+      if (!['GET', 'HEAD'].includes(req.method)) {
+        res.writeHead(405, { Allow: 'GET, HEAD' });
+        return res.end();
+      }
 
       if (urlPath === "/") {
         res.writeHead(302, {

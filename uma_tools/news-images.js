@@ -85,25 +85,26 @@ function imageStore(directory, options = {}) {
         await fs.promises.writeFile(temporary, bytes);
         await fs.promises.rename(temporary, file);
       } finally { await fs.promises.unlink(temporary).catch(() => {}); }
-      return { bytes, extension };
+      return { bytes, extension, identity: crypto.createHash('sha256').update(bytes).digest('hex') };
       } finally { release(); }
     })();
     pending.set(file, task);
     try { return await task; } finally { pending.delete(file); await cleanup(); }
   }
-  return async function load(value) {
+  return async function load(value, { deferBytes = false } = {}) {
     const url = validateUrl(value);
     if (!url) throw new Error('unsupported news image');
     const extension = path.extname(url.pathname).toLowerCase();
     const file = path.join(directory, crypto.createHash('sha256').update(url.href).digest('hex') + extension);
     try {
       const stat = await fs.promises.stat(file);
-      const bytes = await fs.promises.readFile(file);
       if (Date.now() - stat.mtimeMs >= 86400000 && Date.now() - (attempts.get(file) || 0) >= 60000) {
         refresh(url, file, extension).catch(() => {});
       }
       cleanup().catch(() => {});
-      return { bytes, extension };
+      const read = () => fs.promises.readFile(file);
+      const identity = file + ':' + stat.mtimeMs + ':' + stat.size;
+      return { ...(deferBytes ? { read } : { bytes: await read() }), extension, identity };
     } catch (error) { if (error.code !== 'ENOENT') throw error; }
     return refresh(url, file, extension);
   };

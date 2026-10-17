@@ -430,14 +430,13 @@ exports.createService = function (deps) {
             });
           } else {
             if (chunkDirty) dirty = true;
+            const fragments = {};
             outs.forEach(function (zh, k) {
               translated.set(chunk[k], zh || chunk[k].text);
               if (zh && zh !== chunk[k].text)
-                translations.set(
-                  "fragment:" + translationKey(chunk[k].text),
-                  zh,
-                );
+                fragments["fragment:" + translationKey(chunk[k].text)] = zh;
             });
+            if (Object.keys(fragments).length) translations.setMany(fragments);
           }
           done++;
           if (done === chunks.length) finish();

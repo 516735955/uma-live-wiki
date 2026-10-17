@@ -24,17 +24,83 @@ function copy(source, target) {
 function different(first, second) {
   return !fs.existsSync(second) || !fs.readFileSync(first).equals(fs.readFileSync(second));
 }
+const RETIRED = '.media-retired.json';
+function references(root, names) {
+  const referenced = new Set();
+  function visit(directory) {
+    if (!fs.existsSync(directory)) return;
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      if (['node_modules', '.git', 'vendor', 'auto_update', 'source_snapshots', RETIRED].includes(entry.name)) continue;
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) visit(file);
+      else if (entry.isFile() && /\.(?:json|js|html|css)$/.test(entry.name)) {
+        const text = fs.readFileSync(file, 'utf8');
+        for (const name of names) if (text.includes(name) || text.includes(encodeURI(name))) referenced.add(name);
+      }
+    }
+  }
+  visit(root);
+  return referenced;
+}
 function stage(incoming, previous, live, candidate) {
+  const incomingImages = new Set(images(incoming));
+  const previousImages = new Set(images(previous));
+  const retiredFile = path.join(live, RETIRED);
+  const retired = fs.existsSync(retiredFile) ? JSON.parse(fs.readFileSync(retiredFile, 'utf8')) : {};
+  const removed = [];
   for (const name of images(live)) copy(path.join(live, name), path.join(candidate, name));
   for (const name of images(incoming)) {
     if (different(path.join(incoming, name), path.join(previous, name)) || !fs.existsSync(path.join(candidate, name))) {
       copy(path.join(incoming, name), path.join(candidate, name));
     }
   }
+  // Keep retired media for seven days so draining browsers and the previous
+  // release can still fetch it. Runtime replacements and live references survive.
+  for (const name of previousImages) {
+    if (incomingImages.has(name)) continue;
+    const target = path.join(candidate, name);
+    if (!fs.existsSync(target) || different(path.join(previous, name), target)) continue;
+    retired[name] ||= { at: Date.now(), bytes: require('crypto').createHash('sha256').update(fs.readFileSync(target)).digest('hex') };
+  }
+  const used = references(candidate, Object.keys(retired));
+  for (const [name, row] of Object.entries(retired)) {
+    const target = path.join(candidate, name);
+    if (incomingImages.has(name) || !fs.existsSync(target) ||
+        require('crypto').createHash('sha256').update(fs.readFileSync(target)).digest('hex') !== row.bytes) {
+      delete retired[name];
+      continue;
+    }
+    if (used.has(name)) continue;
+    if (Date.now() - row.at >= 7 * 86400000) {
+      fs.unlinkSync(target);
+      removed.push(name);
+      delete retired[name];
+    }
+  }
+  fs.writeFileSync(path.join(candidate, RETIRED), JSON.stringify(retired));
+  fs.writeFileSync(candidate + '.media-deleted.json', JSON.stringify(removed));
 }
 function publish(candidate, live, backup) {
   const changes = [];
   fs.mkdirSync(backup, { recursive: true });
+  const manifest = path.join(candidate, RETIRED), targetManifest = path.join(live, RETIRED);
+  if (fs.existsSync(manifest) && different(manifest, targetManifest)) {
+    const existed = fs.existsSync(targetManifest);
+    if (existed) copy(targetManifest, path.join(backup, RETIRED));
+    changes.push({ name: RETIRED, existed });
+    fs.writeFileSync(path.join(backup, 'changes.json'), JSON.stringify(changes));
+    copy(manifest, targetManifest);
+  }
+  const deletedFile = candidate + '.media-deleted.json';
+  const deleted = fs.existsSync(deletedFile) ? JSON.parse(fs.readFileSync(deletedFile, 'utf8')) : [];
+  for (const name of deleted) {
+    const target = path.join(live, name);
+    if (!fs.existsSync(target)) continue;
+    copy(target, path.join(backup, name));
+    changes.push({ name, existed: true });
+    fs.writeFileSync(path.join(backup, 'changes.json'), JSON.stringify(changes));
+    fs.unlinkSync(target);
+  }
   for (const name of images(candidate)) {
     const source = path.join(candidate, name), target = path.join(live, name);
     if (!different(source, target)) continue;

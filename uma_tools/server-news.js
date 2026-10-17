@@ -4,6 +4,14 @@ exports.createService = function (deps) {
   const archiveLoads = new Map();
   let archiveRefreshRunning = false;
   let translationRunning = false;
+  let indexRepresentation;
+
+  function archiveSignature() {
+    return [archive.file, archive.file + '-wal'].map(file => {
+      try { const stat = deps.fs.statSync(file); return stat.mtimeMs + ':' + stat.size; }
+      catch (error) { if (error.code === 'ENOENT') return ''; throw error; }
+    }).join('|');
+  }
 
   async function fillArchive(key, load) {
     if (deps.newsContent.isRemoved(key)) return;
@@ -60,7 +68,7 @@ exports.createService = function (deps) {
         });
         if (result?.translation_state === 'complete') {
           await archive.request('translate', { key: job.key, revision: detail.archive_revision, detail: result, translator: 'baidu' });
-        } else await archive.request('retry', { key: job.key, delay: 3600 });
+        } else await archive.request('retry', { key: job.key, revision: detail.archive_revision, delay: 3600 });
       }
     } catch (error) { console.error('[news:translation]', error.message); }
     finally { translationRunning = false; }
@@ -531,10 +539,19 @@ exports.createService = function (deps) {
   }
 
   async function handleNewsIndex(res) {
+    reloadNewsSnapshotIfNewer();
+    reloadLantisIfNewer();
+    const signature = archiveSignature();
+    const now = Date.now();
+    if (indexRepresentation && indexRepresentation.source === newsIndexCache.data &&
+        indexRepresentation.signature === signature && now - indexRepresentation.at < 1000) {
+      deps.sendJson(res, 200, indexRepresentation.data, indexRepresentation.options);
+      return;
+    }
     const cached = newsResponseSnapshot();
     if (cached) {
       cached.information_list = await archivedTitles(cached.information_list);
-      deps.sendJson(res, 200, cached, {
+      const options = {
         cacheControl: "public, max-age=60, stale-while-revalidate=300",
         etag:
           '"news-' +
@@ -544,7 +561,9 @@ exports.createService = function (deps) {
             .digest("hex")
             .slice(0, 12) +
           '"',
-      });
+      };
+      indexRepresentation = { source: newsIndexCache.data, signature, at: now, data: cached, options };
+      deps.sendJson(res, 200, cached, options);
       if (!deps.NO_AUTO_CRAWL) {
         // CD相关 与官网新闻各自按需 TTL 补抓，互不牵制。
         ensureLantisFresh();

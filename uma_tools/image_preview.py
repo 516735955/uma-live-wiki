@@ -11,7 +11,13 @@ width = int(sys.argv[1])
 with Image.open(io.BytesIO(sys.stdin.buffer.read())) as source:
     frames = []
     durations = []
+    decoded_pixels = 0
     for frame in ImageSequence.Iterator(source):
+        decoded_pixels += frame.width * frame.height
+        if len(frames) >= 120 or decoded_pixels > 40_000_000:
+            frames = frames[:1]
+            durations = durations[:1]
+            break
         image = ImageOps.exif_transpose(frame).convert('RGBA')
         image.thumbnail((width, width * 8), Image.Resampling.LANCZOS)
         frames.append(image)

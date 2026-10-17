@@ -53,7 +53,8 @@ function identity(row) {
     if (row[key] !== undefined && row[key] !== '') return key + ':' + row[key];
   }
   if (row.work_id && row.number !== undefined) return 'episode:' + row.work_id + ':' + row.number;
-  if (row.unit_id && row.role && row.name) return JSON.stringify([row.unit_id, row.role, row.name, row.group || '']);
+  if (row.work_id && row.role && (row.person_id || row.organization || row.name))
+    return JSON.stringify([row.work_id, row.unit_id || '', row.role, row.person_id || row.organization || row.name, row.group || '', [...(row.institutions || [])].sort()]);
   if (row.role && (row.creator_id || row.name)) return JSON.stringify([row.role, row.creator_id || row.name]);
   if (row.work_id) return 'work:' + row.work_id;
   if (row.url) return 'url:' + row.url;

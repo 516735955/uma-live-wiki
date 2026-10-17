@@ -47,6 +47,9 @@ async function main() {
     await load(url);
     await until(async () => (await load(url)).bytes.toString() === 'updated');
     assert.strictEqual((await load(url)).bytes.toString(), 'updated', 'source recovery replaces actual cache content');
+    const lazy = await load(url, {deferBytes:true});
+    assert.strictEqual(lazy.bytes, undefined, 'preview lookup does not read the original bytes');
+    assert.strictEqual((await lazy.read()).toString(), 'updated');
 
     const cacheFile = path.join(directory, 'translations.json');
     fs.writeFileSync(cacheFile, '{"accepted":"译文"}');

@@ -29,7 +29,8 @@ async function main() {
   const images = [];
   const saved = [];
   const context = vm.createContext({
-    newsRefreshPromise: null, newsRefreshRevision: 0,
+    newsRefreshPromise: null, newsRefreshRevision: 0, indexRepresentation: null,
+    archiveSignature: () => String(Object.keys(context.transCache).length),
     newsIndexCache: { at: 0, data: { information_list: [] } }, transCache: {},
     mergeNews, newsContent: { isRemoved: () => false, apply: (item) => ({ ...item, title_zh: item.title_zh || context.transCache[item.title] || '' }), title: () => '' },
     NEWS_MAX_CONC: 3, NEWS_TTL: 900000, NO_AUTO_CRAWL: true,
@@ -101,7 +102,7 @@ async function main() {
       return request;
     } }
   });
-  translation.translations = { get: (key) => translation.transCache[key], set: (key, value) => { translation.transCache[key] = value; } };
+  translation.translations = { get: (key) => translation.transCache[key], set: (key, value) => { translation.transCache[key] = value; }, setMany: entries => Object.assign(translation.transCache, entries) };
   vm.runInContext(section('function translateBatchLines(', 'function httpsGet('), translation);
   let callbacks = 0;
   translation.translateBatchLines(['原文'], () => { callbacks += 1; });
