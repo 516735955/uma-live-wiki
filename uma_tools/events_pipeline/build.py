@@ -152,7 +152,11 @@ def build_music_only() -> dict[str, pipeline_common.Any]:
         for path in pipeline_common.IMMUTABLE_LIVE_FILES
     }
     build_id = pipeline_common.hashlib.sha256(pipeline_common.json.dumps({
-        "previous_build": manifest.get("build_id") or "",
+        "events": pipeline_common.comparable(catalog),
+        "characters": characters, "voice_list": voice_list, "photos": photos,
+        "voice_details": pipeline_common.read_json(pipeline_common.VOICE_DETAILS_FILE) if pipeline_common.VOICE_DETAILS_FILE.exists() else {},
+        "voice_identities": pipeline_common.read_json(pipeline_common.VOICE_IDENTITIES_FILE),
+        "overrides": overrides,
         "albums": albums,
         "music_sources": music_sources,
     }, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()[:20]

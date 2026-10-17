@@ -118,7 +118,9 @@ def main():
         assets = [asset for asset in assets if asset.get("work_id")]
     if args.write:
         from concurrent.futures import ThreadPoolExecutor, as_completed
-        selected = [asset for asset in assets if not args.missing or not os.path.exists(os.path.join(ROOT, asset["output"]))]
+        selected = [asset for asset in assets if not args.missing
+                    or not os.path.exists(os.path.join(ROOT, asset["output"]))
+                    or (asset.get('original_output') and not os.path.exists(os.path.join(ROOT, asset['original_output'])))]
         failed = []
         with ThreadPoolExecutor(max_workers=4) as pool:
             pending = {pool.submit(write_cover, asset): asset for asset in selected}

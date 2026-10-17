@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import datetime as dt
 import json
+import html
 import re
 import subprocess
 import time
@@ -38,8 +39,13 @@ def check_resource(resource, run=subprocess.run):
     try:
         with urllib.request.urlopen(request, timeout=15) as response:
             body = response.read(1024 * 1024).decode('utf-8', 'replace')
-            if response.status == 200 and re.search(r'<title\b|property=["\']og:title', body, re.I) and not re.search(r'<title[^>]*>\s*(?:404|Page not found)', body, re.I):
-                return 'active', 'provider page is available; existing access and region terms apply'
+            title = re.search(r'<title[^>]*>(.*?)</title>', body, re.I | re.S)
+            title = html.unescape(re.sub(r'<[^>]+>', '', title.group(1))).strip() if title else ''
+            blocked = re.search(r'404|not found|access denied|sign[ -]?in|log[ -]?in|登录|登入|驗證|验证|エラー|ページが見つかりません', title, re.I)
+            redirected = response.geturl().split('?')[0] != url.split('?')[0]
+            identity = re.search(r'ウマ娘|赛马娘|賽馬娘|[Uu]ma\s*[Mm]usume', title)
+            if response.status == 200 and identity and not blocked and not redirected:
+                return 'active', 'provider title identifies the requested series; existing access and region terms apply'
             return 'source_unavailable', 'provider page metadata was not recognized'
     except urllib.error.HTTPError as error:
         return ('expired' if error.code in (404, 410) else 'source_unavailable'), 'provider HTTP ' + str(error.code)

@@ -161,6 +161,7 @@ class NewsDatabase:
             self.db.execute('''INSERT INTO articles(key,revision,owner,checked_at) VALUES(?,?,?,?)
                 ON CONFLICT(key) DO UPDATE SET revision=excluded.revision, checked_at=excluded.checked_at,
                 next_at=CASE WHEN articles.revision!=excluded.revision THEN 0 ELSE articles.next_at END,
+                lease_until=CASE WHEN articles.revision!=excluded.revision THEN 0 ELSE articles.lease_until END,
                 owner=CASE WHEN articles.revision!=excluded.revision AND ? THEN excluded.owner ELSE articles.owner END''',
                 (key, revision, owner, time.time(), bool(current and current['state'] == 'complete')))
             self.db.execute('DELETE FROM source_failures WHERE key=?', (key,))
@@ -228,8 +229,8 @@ class NewsDatabase:
             return self.jobs(args.get('owner', 'baidu'), args.get('limit', 10), args.get('claim', False))
         if operation == 'retry':
             with self.db:
-                self.db.execute('UPDATE articles SET next_at=?,lease_until=0,error=? WHERE key=?',
-                    (time.time()+max(60, args.get('delay', 3600)), args.get('error', 'translation incomplete')[:200], args['key']))
+                self.db.execute('UPDATE articles SET next_at=?,lease_until=0,error=? WHERE key=? AND revision=?',
+                    (time.time()+max(60, args.get('delay', 3600)), args.get('error', 'translation incomplete')[:200], args['key'], args['revision']))
             return True
         if operation == 'stats':
             return [dict(row) for row in self.db.execute('''SELECT a.owner,v.state,count(*) AS count

@@ -6,6 +6,7 @@ from . import common as pipeline_common
 from . import profiles as pipeline_profiles
 from . import program_discovery as pipeline_program_discovery
 from . import program_merge as pipeline_program_merge
+from catalog_publication import publish_catalog
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -66,8 +67,7 @@ def main(argv: list[str] | None = None) -> int:
     if refreshed_details is not None:
         pipeline_common.atomic_json(pipeline_common.VOICE_DETAILS_FILE, refreshed_details)
         print(f"voice actor details refreshed: {len(refreshed_details['records'])}")
-    for key, path in pipeline_common.OUTPUT_FILES.items():
-        pipeline_common.atomic_json(path, built[key])
+    publish_catalog(pipeline_common.OUTPUT_FILES, built, pipeline_common.atomic_json)
     coverage = built["catalog"]["coverage"]
     if args.music_only:
         print(

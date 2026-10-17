@@ -107,7 +107,7 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         previous = state['steps'].get(name, {})
         dependencies = {
             'pedigree-source': {'characters'}, 'horse-profiles': {'pedigree-source'},
-            'pedigree-build': {'pedigree-source'}, 'voice-profiles': {'characters'},
+            'pedigree-build': {'characters', 'pedigree-source'}, 'voice-profiles': {'characters'},
             'catalogs': {'characters', 'events', 'programs', 'albums', 'setlists'},
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
             'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},

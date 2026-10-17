@@ -14,7 +14,7 @@ def validate(
     profiles: list[dict[str, pipeline_common.Any]],
 ) -> list[str]:
     errors: list[str] = []
-    build_ids = {catalog.get("build_id"), songs_catalog.get("build_id"), appearances.get("build_id")}
+    build_ids = {catalog.get("build_id"), songs_catalog.get("build_id"), creators_catalog.get("build_id"), appearances.get("build_id")}
     if len(build_ids) != 1 or not next(iter(build_ids), ""):
         errors.append("catalog documents do not share one build ID")
     event_ids = [event.get("id") for event in catalog.get("events") or []]
@@ -53,6 +53,8 @@ def validate(
         for version in song.get("versions") or []
     ]
     known_versions = set(version_ids)
+    versions_by_song = {song.get('id'): {version.get('id') for version in song.get('versions') or []}
+                        for song in songs_catalog.get('songs') or []}
     if len(song_ids) != len(known_songs):
         errors.append("duplicate song IDs")
     if len(version_ids) != len(known_versions):
@@ -167,6 +169,8 @@ def validate(
                     errors.append(f"session {session.get('id')} references unknown song {performance.get('song_id')}")
                 if performance.get("version_id") not in known_versions:
                     errors.append(f"session {session.get('id')} references unknown song version {performance.get('version_id')}")
+                elif performance.get('version_id') not in versions_by_song.get(performance.get('song_id'), set()):
+                    errors.append(f"session {session.get('id')} references a version belonging to a different song")
     for semantic_key, matching_ids in semantic_events.items():
         if semantic_key[1] and len(matching_ids) > 1:
             errors.append(f"duplicate event identity {semantic_key}: {', '.join(matching_ids)}")

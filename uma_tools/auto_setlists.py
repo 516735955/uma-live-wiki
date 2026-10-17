@@ -35,7 +35,7 @@ SONG_RE = re.compile(r"^M\s*(\d+)[.\s]\s*(.*)$", re.I)
 TITLE_SPLIT_RE = re.compile(r"[＠@]", re.I)
 REGION_RE = re.compile(r"\s*[（(][^()（）]*[）)]\s*$")
 DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
-PERFORMER_SPLIT_RE = re.compile(r"[、，,､/・]")
+PERFORMER_SPLIT_RE = re.compile(r"[、，,､/・\r\n]+")
 
 
 def normalized_title(value):
@@ -82,7 +82,7 @@ def parse_worksheet(sheet):
         if title is not None and str(title).strip():
             current = {'date': current_date, 'title': str(title).strip(), 'songs': []}
             blocks.append(current)
-        elif song is not None and str(song).strip() and current is not None:
+        if song is not None and str(song).strip() and current is not None:
             text = str(song).strip()
             match = SONG_RE.match(text)
             current['songs'].append({'no': (match.group(1).lstrip('0') or '0') if match else '',

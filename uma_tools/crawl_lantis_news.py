@@ -3,7 +3,7 @@
 # Output: lantis_news.json  (list of {id, date, title, url, category})
 # Approach: crawl paginated list pages, parse <span class="list_time">date</span>
 # then <a href="url">title</a> inside <ul class="news_list"><li>...</li>.
-import re, io, json, sys, time, urllib.request, ssl, os, tempfile
+import re, io, json, sys, time, urllib.request, ssl, os, tempfile, hashlib
 
 OUT = os.path.join(os.environ.get('NEWS_RUNTIME_DIR') or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data'), 'lantis_news.json')
 MAX_PAGES = 30  # upper bound safety
@@ -27,8 +27,6 @@ def write_json_atomic(path, value):
 
 def fetch(url, timeout=20):
     ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
     req = urllib.request.Request(url, headers={'User-Agent': UA})
     with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
         return r.read().decode('utf-8', errors='ignore')
@@ -66,6 +64,8 @@ def crawl_category(base, pageless, seen):
             break
         got = parse_list(html)
         if not got:
+            if page == 1 or not re.search(r'class=["\'][^"\']*news_list', html):
+                SOURCE_FAILURES.append(url + ' (unrecognized news list)')
             break
         added = 0
         for date, u, title in got:
@@ -75,15 +75,17 @@ def crawl_category(base, pageless, seen):
             seen.add(key)
             # id = digits from URL
             mid = re.search(r'/(\d+)/?$', u)
-            nid = ('lantis-' + mid.group(1)) if mid else ('lantis-' + str(abs(hash(u)) & 0xFFFFFF))
+            nid = ('lantis-' + mid.group(1)) if mid else ('lantis-url-' + hashlib.sha256(u.encode('utf-8')).hexdigest()[:20])
             items.append({'id': nid, 'date': date, 'url': u, 'title': title, 'category': 'cd'})
             added += 1
         print('category page', page, 'got', len(got), 'new', added)
         if added == 0:
             break
         # find NEXT link
-        if '<div class="ban_more">' in html and 'NEXT' not in html:
+        if not re.search(r'>\s*NEXT\s*<', html, re.I):
             break
+        if page == MAX_PAGES:
+            SOURCE_FAILURES.append(url + ' (pagination limit reached with NEXT remaining)')
         page += 1
         time.sleep(0.4)
     return items
