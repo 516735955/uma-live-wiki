@@ -455,24 +455,42 @@ export function createAlbums(deps) {
         g = 0,
         b = 0,
         n = 0;
+      const colours = new Map();
       for (let i = 0; i < d.length; i += 4) {
+        if (d[i + 3] < 128) continue;
         r += d[i];
         g += d[i + 1];
         b += d[i + 2];
         n++;
+        const highest = Math.max(d[i], d[i + 1], d[i + 2]);
+        const lowest = Math.min(d[i], d[i + 1], d[i + 2]);
+        if (highest - lowest < 28 || highest < 60 || lowest > 225) continue;
+        const key = [d[i], d[i + 1], d[i + 2]].map(value => value >> 5).join(',');
+        const colour = colours.get(key) || { sum: [0, 0, 0], count: 0 };
+        colour.count++;
+        colour.sum = colour.sum.map((value, channel) => value + d[i + channel]);
+        colours.set(key, colour);
       }
-      coverTint[url] =
-        Math.round(r / n) + "," + Math.round(g / n) + "," + Math.round(b / n);
+      const dominant = [...colours.values()].sort((a, b) => b.count - a.count)[0];
+      coverTint[url] = dominant
+        ? dominant.sum.map(value => Math.round(value / dominant.count)).join(',')
+        : n ? [r, g, b].map(value => Math.round(value / n)).join(',') : '49,87,237';
       tintSet.add(url);
     } catch (e) {
       /* keep fallback tint */
     } finally { tintPending.delete(url); }
     };
-    img.src = window.UmaMedia ? window.UmaMedia.preview(url, 160) : url;
+    const source = shown.src.includes(catalogCoverFallback) ? catalogCoverFallback : coverThumb(url, 160);
+    img.src = window.UmaMedia ? window.UmaMedia.preview(source, 160) : source;
   }
 
   function coverStyle(album) {
-    return { "--cover-tint": coverTint[album.cover] || "22,26,41" };
+    const tint = coverTint[album.cover] || "22,26,41";
+    const [red, green, blue] = tint.split(",").map(Number);
+    return {
+      "--card-accent": "rgb(" + tint + ")",
+      "--card-veil-ink": red * .299 + green * .587 + blue * .114 > 170 ? "#20283b" : "#fff",
+    };
   }
 
   function loadAlbums(params) {

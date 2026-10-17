@@ -21,7 +21,7 @@ export const template = `
                             <div class="album-name">{{ album.name }}</div>
                             <div class="album-count">{{ album.release || '日期待补' }} · {{ album.type }}</div>
                         </div>
-                        <div class="album-overlay"><span class="album-more">View more<i class="more-a">&nbsp;</i><b class="more-gr">&gt;</b><b class="more-wh">&gt;</b></span></div>
+                        <div class="card-veil"><p>View more</p><span class="card-veil-arrow" aria-hidden="true">&gt;</span></div>
                     </button>
                     <div v-if="!relFiltered.length" class="ui-state">没有符合条件的专辑</div>
                 </div>

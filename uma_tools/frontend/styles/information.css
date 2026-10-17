@@ -145,10 +145,6 @@
         #tab-characters .cio-bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; display: flex; }
         #tab-characters .cio-bg::before { content: ""; background-color: var(--color-main); width: 82%; height: 86%; }
         #tab-characters .cio-bg p { margin: 6px 0 0; color: var(--color-main); writing-mode: vertical-rl; flex: auto; display: flex; align-items: center; font-family: "Trebuchet MS", Arial, Raleway, sans-serif; font-size: 14px; letter-spacing: .05em; font-weight: 700; line-height: 1.2; }
-        #tab-characters .cio-veil { position: absolute; inset: 0; z-index: 3; background: var(--color-main); color: #fff; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .3s ease; pointer-events: none; }
-        #tab-characters .cio-card:hover .cio-veil { opacity: .82; }
-        #tab-characters .cio-veil p { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 18px; letter-spacing: .04em; margin: 0; }
-        #tab-characters .cio-veil .cio-arrow { margin-left: 8px; font-size: 20px; line-height: 1; }
         #tab-characters .cio-card dd { border-top: 1px solid var(--color-main); position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; padding: 10px 12px 10px 14px; min-height: 62px; }
         #tab-characters .cio-card dd::before { content: ""; background-color: var(--color-main); position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
         #tab-characters .cio-name { margin: 0; font-size: 15px; font-weight: 700; color: #20283b; line-height: 1.35; }

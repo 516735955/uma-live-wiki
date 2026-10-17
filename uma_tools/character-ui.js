@@ -64,7 +64,7 @@
               '<p class="cio-cv"><span>CV:</span>' + (c.cv_zh || c.cv || '') + '</p>' +
             '</dd>' +
           '</dl>' +
-          '<div class="cio-veil"><p>View more</p><span class="cio-arrow">&gt;</span></div>';
+          '<div class="card-veil"><p>View more</p><span class="card-veil-arrow" aria-hidden="true">&gt;</span></div>';
         li.appendChild(card);
         cards.set(c.id, {data:c,element:li});
         fragment.appendChild(li);

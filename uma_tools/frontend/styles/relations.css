@@ -3,7 +3,6 @@
 .albums-grid { grid-template-columns: repeat(auto-fill,minmax(210px,1fr)); gap: 18px; }
 .album-card { border-radius: 2px; box-shadow: 0 4px 14px rgba(24,31,70,.1); }
 .album-card:hover { border-color: var(--ui-orange); box-shadow: 0 10px 24px rgba(24,31,70,.15); transform: translateY(-4px); }
-.album-overlay { background: rgba(49,87,237,.84); }
 .news-row { grid-template-columns: 110px 82px minmax(0,1fr); }
 .news-detail-date { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .news-detail-date a { color: var(--ui-orange-deep); font-size: .82rem; font-weight: 800; text-decoration: none; }

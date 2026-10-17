@@ -75,21 +75,19 @@
             .db-card { min-height: 120px; }
         }
 
-        /* Album-card hover treatment shared by the canonical album catalog. */
-        .album-overlay {
+        /* Catalog cards share one primary-colour hover treatment. */
+        .card-veil {
             position: absolute; inset: 0; z-index: 3;
             display: flex; align-items: center; justify-content: center;
-            background: rgba(var(--cover-tint, 22, 26, 41), 0.58);
-            opacity: 0; transition: opacity 0.22s ease;
+            background: var(--card-accent, var(--color-main, #3157ed));
+            color: var(--card-veil-ink, #fff);
+            opacity: 0; transition: opacity .3s ease;
             pointer-events: none;
         }
-        .album-card:hover .album-overlay { opacity: 1; }
-        .album-more {
-            display: inline-flex; align-items: center;
-            color: #fff; font-size: 1.05rem; font-weight: 800;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+        :is(.album-card, .cio-card):is(:hover, :focus-visible) > .card-veil { opacity: .82; }
+        .card-veil p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic; font-size: 18px; font-weight: 400;
+            letter-spacing: .04em; margin: 0;
         }
-        .album-more .more-a { font-style: normal; width: 0.55em; }
-        .album-more .more-gr { font-style: normal; font-size: 1.3em; font-weight: 900; line-height: 1; color: rgba(255, 255, 255, 0.35); }
-        .album-more .more-wh { font-style: normal; font-size: 1.3em; font-weight: 900; line-height: 1; color: #fff; }
+        .card-veil-arrow { margin-left: 8px; font-size: 20px; font-weight: 400; line-height: 1; }
