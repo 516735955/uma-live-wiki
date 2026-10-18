@@ -1,4 +1,4 @@
-export const bindings = ["characterImage","characterColor","openCharDetail","otherSection","setOtherSection","curatedVideos","horseFacts","horseMajorRows","horseMajorExpanded","horseMajorTotal","toggleHorseMajor","horsesListError","horseDetail","horseQuery","horsePage","horseFiltered","horsePaged","horsePageCount","horsePageStart","horsePageEnd","horsePageList","setHorsePage","goHorsePage","openHorse","horseSexLabel","horseChars","onHorseImageError","retryHorses","routes","horsesTotal","internalLink"];
+export const bindings = ["characterImage","characterColor","openCharDetail","otherSection","setOtherSection","curatedVideos","horseFacts","horseMajorRows","horseMajorExpanded","horseMajorTotal","toggleHorseMajor","horsesListError","horseDetail","horseQuery","horseSex","horseSexOptions","horseSort","horseSortOptions","horsePage","horseFiltered","horsePaged","horsePageCount","horsePageStart","horsePageEnd","horsePageList","setHorsePage","goHorsePage","openHorse","horseSexLabel","horseChars","onHorseImageError","retryHorses","routes","horsesTotal","internalLink"];
 export const template = `
             <nav v-if="!['horses','jockeys'].includes(otherSection)" class="entity-tabs" aria-label="其他栏目"><button :class="{active:otherSection==='relationships'}" @click="setOtherSection('relationships')">角色设定相关</button><button :class="{active:otherSection==='videos'}" @click="setOtherSection('videos')">精选推荐视频</button></nav>
             <section v-if="otherSection==='relationships'" class="entity-section other-section">
@@ -21,6 +21,10 @@ export const template = `
                 <template v-if="!horseDetail">
                     <div class="archive-toolbar">
                         <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="horseQuery" aria-label="搜索马名或出生日期…" placeholder="搜索马名或出生日期…" autocomplete="off"></label>
+                        <div class="archive-controls">
+                            <ui-select v-model="horseSex" label="性别" :options="horseSexOptions"></ui-select>
+                            <ui-select v-model="horseSort" label="排序" :options="horseSortOptions"></ui-select>
+                        </div>
                     </div>
                     <div v-if="horsesListError" class="ui-state ui-state-error" role="alert"><span>{{ horsesListError }}</span><button type="button" class="ui-retry" @click="retryHorses">重试</button></div>
                     <div v-else-if="horsePaged.length" class="horse-list">

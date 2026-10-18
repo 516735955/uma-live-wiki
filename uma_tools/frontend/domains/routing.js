@@ -365,7 +365,12 @@ export function createRouting(deps) {
               deps.routes.horses(
                 deps.horseDetail.value && deps.horseDetail.value.id,
               ),
-              { q: deps.horseQuery.value, page: deps.horsePage.value },
+              {
+                q: deps.horseQuery.value,
+                page: deps.horsePage.value,
+                sex: deps.horseSex.value,
+                sort: deps.horseSort.value === "newest" ? "" : deps.horseSort.value,
+              },
             );
           } else if (deps.otherSection.value === "videos") {
             path = deps.routes.videos();
@@ -736,6 +741,16 @@ export function createRouting(deps) {
           1,
           parseInt(url.searchParams.get("page") || "1", 10) || 1,
         );
+        deps.horseSex.value = ["male", "female", "gelding"].includes(
+          url.searchParams.get("sex"),
+        )
+          ? url.searchParams.get("sex")
+          : "";
+        deps.horseSort.value = ["oldest", "name"].includes(
+          url.searchParams.get("sort"),
+        )
+          ? url.searchParams.get("sort")
+          : "newest";
         deps.horseDetail.value =
           seg[2] && window.HORSES_DETAIL
             ? window.HORSES_DETAIL[decodeURIComponent(seg[2])] || null

@@ -203,6 +203,8 @@ export function createDomains(env) {
           "horsePage",
           "horsePageCount",
           "horseQuery",
+          "horseSex",
+          "horseSort",
           "loadHorsesData",
           "loadHorsesListData",
           "loadPedigreeMeta",

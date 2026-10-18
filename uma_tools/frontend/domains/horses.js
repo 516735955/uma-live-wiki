@@ -32,6 +32,23 @@ export function createHorses(deps) {
 
   const horsePage = deps.ref(1);
 
+  const horseSex = deps.ref("");
+
+  const horseSort = deps.ref("newest");
+
+  const horseSexOptions = [
+    { value: "", label: "全部" },
+    { value: "male", label: "牡马" },
+    { value: "female", label: "牝马" },
+    { value: "gelding", label: "阉马" },
+  ];
+
+  const horseSortOptions = [
+    { value: "newest", label: "出生日期（新→老）" },
+    { value: "oldest", label: "出生日期（老→新）" },
+    { value: "name", label: "名称" },
+  ];
+
   const horsesPerPage = 30;
 
   let horsesDataPromise = null;
@@ -56,11 +73,21 @@ export function createHorses(deps) {
     const requested = paged
       ? params || {
           q: horseQuery.value,
+          sex: horseSex.value,
+          sort: horseSort.value,
           page: horsePage.value,
           page_size: horsesPerPage,
         }
       : { scope: "index" };
-    const query = paged ? { q: requested.q, page: requested.page, page_size: horsesPerPage } : requested;
+    const query = paged
+      ? {
+          q: requested.q,
+          sex: requested.sex || "",
+          sort: requested.sort || "newest",
+          page: requested.page,
+          page_size: horsesPerPage,
+        }
+      : requested;
     horsesListPromise = deps.api
       .request("/api/catalog/horses" + deps.api.query(query))
       .then(function (data) {
@@ -634,6 +661,21 @@ export function createHorses(deps) {
       },
       { flush: "sync" },
     );
+    const onFilterChange = function () {
+      if (!deps.restoringRoute) {
+        horseListRevision += 1;
+        horsePage.value = 1;
+        deps.pushUrl(true);
+      }
+      if (
+        deps.restoringRoute ||
+        deps.currentUrlPath().split("?")[0] !== deps.routes.horses()
+      )
+        return;
+      loadHorsesListData().catch(() => {});
+    };
+    deps.watch(horseSex, onFilterChange);
+    deps.watch(horseSort, onFilterChange);
   }
   return {
     start,
@@ -654,7 +696,11 @@ export function createHorses(deps) {
     horsePageStart,
     horsePaged,
     horseQuery,
+    horseSex,
     horseSexLabel,
+    horseSexOptions,
+    horseSort,
+    horseSortOptions,
     horseUrlForCharacter,
     horseVideosForCharacter,
     horsesList,
