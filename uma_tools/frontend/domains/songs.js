@@ -387,7 +387,7 @@ export function createSongs(deps) {
       songSection.value = section || "releases";
       expandedSongReleaseId.value =
         (
-          (found.versions || []).find(function (version) {
+          window.UmaCatalog.playableRecording(found)?.version || (found.versions || []).find(function (version) {
             return version.releases && version.releases.length;
           }) || {}
         ).id || "";
@@ -526,7 +526,7 @@ export function createSongs(deps) {
             const queueKey = matchedPerformance
               ? deps.eventPerformanceKey(matchedPerformance)
               : "";
-            const recording = deps.playableSongRelease(song);
+            const recording = deps.playableSongRelease(song, matchedPerformance?.version_id);
             const playing =
               recording && deps.isActive(recording.release.audio_url);
             queueButtons =

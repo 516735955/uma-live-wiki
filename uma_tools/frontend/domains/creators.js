@@ -161,18 +161,9 @@ export function createCreators(deps) {
   }
 
   function creatorRoleLabel(role) {
-    return (
-      {
-        lyricist: "作词",
-        composer: "作曲",
-        arranger: "编曲",
-        remixer: "混音改编",
-        producer: "制作",
-        orchestrator: "配器",
-      }[role] ||
-      role ||
-      ""
-    );
+    const roles = [...(creatorDetail.value?.roles || []),
+      ...creatorCatalog.value.creators.flatMap(creator => creator.roles || [])];
+    return roles.find(entry => entry.role === role)?.label || role || '';
   }
 
   function creatorWorkRoleLabels(roles) {

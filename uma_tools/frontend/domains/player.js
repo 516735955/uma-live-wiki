@@ -20,39 +20,7 @@ export function createPlayer(deps) {
   const player = playerController.state;
 
   function playableSongRelease(song, versionId) {
-    const exact = ((song && song.versions) || []).find(function (version) {
-      return version.id === versionId;
-    });
-    const exactRelease =
-      exact &&
-      (exact.releases || []).find(function (release) {
-        return !!release.audio_url;
-      });
-    if (exactRelease) return { version: exact, release: exactRelease };
-    if (versionId) return null;
-    if (song && song.playable) {
-      return {
-        version: {
-          id: song.playable.version_id,
-          title: song.playable.version_title,
-        },
-        release: {
-          audio_url: song.playable.audio_url,
-          artist: song.playable.artist,
-          cover: song.playable.cover,
-          album_id: song.playable.album_id,
-          album_name: song.playable.album_name,
-          voice_actor_ids:
-            song.playable.voice_actor_ids || song.voice_actor_ids || [],
-        },
-      };
-    }
-    for (const version of (song && song.versions) || []) {
-      for (const release of version.releases || []) {
-        if (release.audio_url) return { version: version, release: release };
-      }
-    }
-    return null;
+    return window.UmaCatalog.playableRecording(song, versionId);
   }
 
   function playCatalogSong(song, event) {

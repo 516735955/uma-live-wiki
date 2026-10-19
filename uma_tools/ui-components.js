@@ -5,6 +5,13 @@
   function searchText(value) {
     return String(value || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim();
   }
+  const addedTimers = new WeakMap();
+  function cancelAdded(target) { window.clearTimeout(addedTimers.get(target)); addedTimers.delete(target); }
+  function flashAdded(target, update) {
+    cancelAdded(target);
+    update(true);
+    addedTimers.set(target, window.setTimeout(() => { addedTimers.delete(target); update(false); }, 900));
+  }
   const UiSelect = {
     props: {
       modelValue: { type: [String, Number], default: '' },
@@ -156,14 +163,12 @@
       playing: { type: Boolean, default: false }
     },
     emits: ['play', 'add'],
-    data() { return { added: false, addedTimer: null }; },
-    beforeUnmount() { window.clearTimeout(this.addedTimer); },
+    data() { return { added: false }; },
+    beforeUnmount() { cancelAdded(this); },
     methods: {
       add() {
         this.$emit('add');
-        this.added = true;
-        window.clearTimeout(this.addedTimer);
-        this.addedTimer = window.setTimeout(() => { this.added = false; }, 900);
+        flashAdded(this, added => { this.added = added; });
       }
     },
     template: `
@@ -428,5 +433,5 @@
     identityPortraitCache.set(name,url);
     return url;
   }
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait, searchText: searchText });
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait, searchText: searchText, flashAdded: flashAdded });
 })();

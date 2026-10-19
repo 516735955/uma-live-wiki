@@ -87,15 +87,12 @@ export function createEvents(deps) {
     var addButton = event.target.closest("button[data-add-key]");
     if (addButton) {
       addEventTrackByKey(addButton.getAttribute("data-add-key"));
-      addButton.classList.add("entity-action-added");
-      addButton.setAttribute("aria-label", "已加入播放列表");
-      addButton.querySelector("path").setAttribute("d", "m5 12 4 4 10-10");
-      window.setTimeout(() => {
+      window.UmaUi.flashAdded(addButton, added => {
         if (!addButton.isConnected) return;
-        addButton.classList.remove("entity-action-added");
-        addButton.setAttribute("aria-label", "加入播放列表");
-        addButton.querySelector("path").setAttribute("d", "M12 5v14M5 12h14");
-      }, 900);
+        addButton.classList.toggle('entity-action-added', added);
+        addButton.setAttribute('aria-label', added ? '已加入播放列表' : '加入播放列表');
+        addButton.querySelector('path').setAttribute('d', added ? 'm5 12 4 4 10-10' : 'M12 5v14M5 12h14');
+      });
       return;
     }
     var songLink = event.target.closest("a[data-song-id]");
@@ -310,10 +307,7 @@ export function createEvents(deps) {
   });
 
   function eventSongCount(event) {
-    if (Number.isFinite(event && event.song_count)) return event.song_count;
-    return (event.sessions || []).reduce(function (total, session) {
-      return total + (session.songs || []).length;
-    }, 0);
+    return window.UmaCatalog.eventSongCount(event);
   }
 
   const eventMediaCards = deps.computed(function () {
@@ -321,12 +315,12 @@ export function createEvents(deps) {
     const seen = new Set();
     return ((event && event.media) || [])
       .map(function (item, index) {
-        const videoId = String(item.video_id || "");
+        const videoId = window.UmaCatalog.youtubeVideoId(item.url) || window.UmaCatalog.youtubeVideoId(item.video_id);
         const url = String(
           item.url ||
             (videoId ? "https://www.youtube.com/watch?v=" + videoId : ""),
         );
-        const key = videoId || url;
+        const key = videoId ? 'youtube:' + videoId : url;
         if (!key || seen.has(key)) return null;
         seen.add(key);
         let host = "";

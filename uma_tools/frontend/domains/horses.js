@@ -334,7 +334,7 @@ export function createHorses(deps) {
   });
 
   function horseGradeFor(race, date, track) {
-    if (!window.HORSES_DETAIL || !track || !/^\\d{4}[.-]\\d{2}[.-]\\d{2}$/.test(String(date || ""))) return "";
+    if (!window.HORSES_DETAIL || !track || !/^\d{4}[.-]\d{2}[.-]\d{2}$/.test(String(date || ""))) return "";
     const grades = new Set();
     Object.values(window.HORSES_DETAIL).forEach(function (horse) {
       [...(horse?.races || []), ...(horse?.major || [])].forEach(function (row) {

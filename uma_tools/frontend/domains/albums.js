@@ -69,6 +69,7 @@ export function createAlbums(deps) {
           id: version.id,
           title: version.title,
           version_label: version.version_label,
+          instrumental: version.instrumental,
           releases: releases,
         };
       })
@@ -167,8 +168,7 @@ export function createAlbums(deps) {
   }
 
   function albumTrackSecondary(track) {
-    const title = String((track && track.name) || "").normalize("NFKC");
-    if (/(?:off[ -]?vocal|instrumental|inst\.?|BGM|伴奏|纯音乐)/i.test(title))
+    if (track?.instrumental ?? window.UmaCatalog.isInstrumental(track?.name, track?.artist))
       return "";
     return (track && track.artist) || "";
   }
@@ -307,17 +307,17 @@ export function createAlbums(deps) {
 
   function playAlbum(album) {
     const detail = album && (album.data || album);
+    const tracks = buildAlbumPlayerTracks(album).filter(track => track.url);
+    if (!tracks.length) return;
+    const queue = deps.player.queue || [];
     if (
       deps.player.current &&
-      deps.player.current.albumId === (detail.id || detail.catalog)
+      deps.player.current.albumId === (detail.id || detail.catalog) &&
+      queue.length === tracks.length && queue.every((track, index) => track.id === tracks[index].id && track.url === tracks[index].url)
     ) {
       deps.playerController.togglePlay();
       return;
     }
-    const tracks = buildAlbumPlayerTracks(album).filter(function (track) {
-      return !!track.url;
-    });
-    if (!tracks.length) return;
     deps.playerController.setQueue(tracks, 0, tracks[0].sourceContext, true);
   }
 

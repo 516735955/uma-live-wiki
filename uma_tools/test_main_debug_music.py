@@ -1,5 +1,10 @@
 """Identity and lyric boundary cases from the main maintenance audit."""
 import unittest
+import subprocess
+import json
+from pathlib import Path
+from auto_albums import stable_album_id as automatic_album_id
+from events_pipeline.song_identity import stable_album_id as catalog_album_id
 
 from music_pipeline.credits import creator_rows, parse_credit_text
 from music_pipeline.recordings import match_recording_version, folded_title
@@ -9,6 +14,15 @@ from music_pipeline.timings import apply_lrclib_results
 
 
 class MusicBoundaryTests(unittest.TestCase):
+    def test_album_identity_matches_runtime_for_punctuation_and_unicode(self):
+        rows = [{'name': 'A・B'}, {'name': 'We’re Full！'}, {'name': ' ＣＤ １ '}, {'name': '改名', 'id': 'kept-id'}]
+        runtime = json.loads(subprocess.check_output(['node', '-e',
+            'const {stableAlbumId}=require("./uma_tools/catalog-store");'
+            'process.stdout.write(JSON.stringify(JSON.parse(process.argv[1]).map(stableAlbumId)));',
+            json.dumps(rows)], cwd=Path(__file__).resolve().parents[1], text=True))
+        self.assertEqual([automatic_album_id(row) for row in rows], runtime)
+        self.assertEqual([catalog_album_id(row) for row in rows], runtime)
+
     def test_release_evidence_is_required_even_for_one_title(self):
         recordings = {'v': {'version_id': 'v', 'version_title': 'Song', 'releases': [
             {'album_name': 'Album', 'track_number': 2}]}}

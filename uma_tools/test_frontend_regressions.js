@@ -28,6 +28,7 @@ async function main() {
     CHAR_INDEX: [{ id: 'mock', name: 'Mock' }], CHAR_DETAIL: {}, UmaCharacterUi: { init() {} },
     HORSES: [{ id: 'mock-horse', zh: 'Mock Horse' }],
     UmaPlayer: require('./player-controller'), UmaRoutes: require('./route-utils'),
+    UmaCatalog: require('./catalog-model'),
     UmaUi: {}, UmaCreatorNetwork: {}, UmaAnimeLoader: require('./anime-loader'), UmaAnimeStaff: require('./anime-staff')
   };
   const history = {

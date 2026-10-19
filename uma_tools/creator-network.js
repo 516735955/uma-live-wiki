@@ -4,7 +4,8 @@
   const CreatorNetwork = {
     props: {
       creator: { type: Object, required: true },
-      catalog: { type: Array, default: function () { return []; } }
+      catalog: { type: Array, default: function () { return []; } },
+      roleLabel: { type: Function, default: role => role }
     },
     emits: ['open-creator', 'open-song'],
     data: function () {
@@ -126,9 +127,6 @@
           selected: this.selectedId === person.creator_id,
           muted: !!this.hoverId && this.hoverId !== person.creator_id
         };
-      },
-      roleLabel: function (role) {
-        return { lyricist: '作词', composer: '作曲', arranger: '编曲', remixer: '混音改编', producer: '制作', orchestrator: '配器' }[role] || role;
       },
       choose: function (person) {
         const selection = ++this.selectionRequest;
