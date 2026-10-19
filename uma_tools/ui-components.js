@@ -2,6 +2,9 @@
   'use strict';
 
   let sequence = 0;
+  function searchText(value) {
+    return String(value || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim();
+  }
   const UiSelect = {
     props: {
       modelValue: { type: [String, Number], default: '' },
@@ -425,5 +428,5 @@
     identityPortraitCache.set(name,url);
     return url;
   }
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait });
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait, searchText: searchText });
 })();

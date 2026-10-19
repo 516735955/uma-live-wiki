@@ -14,6 +14,13 @@ const {HorseStore} = require('./horse-store');
   assert(unit.units.length > 1, 'adjacent episodes remain navigable');
   const entity = await anime.response('entity', 'voice_actor:va-0001');
   assert(entity.relations.every(row => row.voice_actor_id === 'va-0001' || row.target_id === 'va-0001'));
+  const source = await anime.load();
+  const cueCreator = source.units.flatMap(unit => (unit.music_cues || []).flatMap(cue =>
+    (cue.credits || []).flatMap(credit => credit.creator_ids || [])))[0];
+  assert(cueCreator, 'fixture includes a creator credited in episode music');
+  const creatorCues = await anime.response('entity', 'creator:' + cueCreator);
+  assert(creatorCues.units.some(unit => unit.music_cues?.some(cue =>
+    cue.credits.some(credit => credit.creator_ids?.includes(cueCreator)))), 'direct creator responses include music cue credits');
   const horse = await horses.detail('specialweek');
   assert(horse.horse.races.length > 0, 'entity projection retains the complete career');
   assert(Buffer.byteLength(JSON.stringify(horse)) < 100 * 1024);

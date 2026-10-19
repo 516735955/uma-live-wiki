@@ -129,8 +129,8 @@ export function createAnime(deps) {
     const sourcePath = deps.currentUrlPath();
     const navigation = deps.navigationRevision.value;
     const ready =
-      target[0] === "work"
-        ? loadAnimeRelatedMedia(target[1], true)
+      ["work", "unit"].includes(target[0])
+        ? loadAnimeRelatedMedia(deps.routeSegments()[2], true)
         : loadAnimeCatalog(target[0], target[1], true);
     return ready
       .then(function () {
@@ -228,7 +228,16 @@ export function createAnime(deps) {
   }
 
   function animeWorkYears(work) {
-    return work && work.start_date ? [String(work.start_date).slice(0, 4)] : [];
+    const date = animeCardFilm(work) ? work.film_release_date : work?.start_date;
+    return date ? [String(date).slice(0, 4)] : [];
+  }
+
+  function animeCardFilm(work) {
+    return animeFormat.value === 'movie' && !!(work?.film_cover || work?.film_release_date);
+  }
+
+  function animeCardArtwork(work) {
+    return animeArtwork(work, animeCardFilm(work));
   }
 
   function animeArtwork(work, film = false) {
@@ -304,7 +313,7 @@ export function createAnime(deps) {
     )
       return animeUnitHref(matched[0], "characters");
     return deps.routes.query(deps.routes.anime(work.id), {
-      edition: work.id === "anime-rttt" ? "web" : "",
+      edition: work.id === "anime-rttt" ? (animeCardFilm(work) ? "film" : "web") : "",
       section:
         matched.length && animeFormat.value !== "movie" ? "episodes" : "",
       episodes:
@@ -350,8 +359,8 @@ export function createAnime(deps) {
           String(b.title_zh || b.title_ja || ""),
           "zh",
         );
-      const aDate = String(a.start_date || "9999-99-99"),
-        bDate = String(b.start_date || "9999-99-99");
+      const aDate = String((animeCardFilm(a) ? a.film_release_date : a.start_date) || "9999-99-99"),
+        bDate = String((animeCardFilm(b) ? b.film_release_date : b.start_date) || "9999-99-99");
       return animeSort.value === "oldest"
         ? aDate.localeCompare(bDate)
         : bDate.localeCompare(aDate);
@@ -460,7 +469,7 @@ export function createAnime(deps) {
         const scope = resource.scope || {};
         if (!["official", "licensed"].includes(resource.authority))
           return false;
-        if (!["active", "region_limited"].includes(resource.status))
+        if (!["active", "region_limited", "membership"].includes(resource.status))
           return false;
         if (
           !["full_episode", "playlist", "series"].includes(
@@ -470,8 +479,9 @@ export function createAnime(deps) {
           return false;
         if (
           workId === "anime-rttt" &&
-          animeEdition.value === "film" &&
-          resource.edition !== "film"
+          (animeEdition.value === "film"
+            ? !animeRowEditions(resource).includes('film')
+            : !animeRowMatchesEdition(resource, 'web'))
         )
           return false;
         if (scope.type === "unit") return scope.id === unitId;
@@ -511,6 +521,12 @@ export function createAnime(deps) {
       return;
     event.preventDefault();
     deps.navigateTo(path);
+  }
+
+  function animeWatchAccess(resource) {
+    return [resource.status === 'membership' ? '需会员' : '',
+      resource.status === 'region_limited' ? '有地区限制' : '',
+      resource.region_label || ''].filter(Boolean).join(' · ');
   }
 
   function setAnimeSection(section) {
@@ -938,6 +954,8 @@ export function createAnime(deps) {
     animeUsefulRelations,
     animeVisibleStillGroups,
     animeWorkFormats,
+    animeCardArtwork,
+    animeWatchAccess,
     animeWorkHref,
     animeWorkUnits,
     animeWorkYears,

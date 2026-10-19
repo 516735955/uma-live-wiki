@@ -77,6 +77,7 @@ async function main() {
     }
   });
   vm.runInContext(source('vendor/vue.global.prod.js'), context);
+  vm.runInContext(source('ui-components.js'), context);
   context.document = {
     body: { classList: { toggle() {} } }, getElementById() { return null; }, querySelector() { return null; },
     createElement() { return {}; },
@@ -84,6 +85,20 @@ async function main() {
   };
   context.Vue.createApp = (options) => ({ component() {}, directive() {}, mount() { app = options.setup(); } });
   require('./test_frontend_loader').loadFrontend(context);
+  const animeMusic = context.createAnimeMusic({...context.Vue,
+    animeCurrentRelations:context.Vue.ref([]), animeContentUnit:context.Vue.ref(null),
+    animeWorkUnits:context.Vue.ref([{id:'u',music_cues:[
+      {title:'同名',usage_type:'op',song_id:'a'}, {title:'同名',usage_type:'op',song_id:'b'},
+      {title:'其他曲目',usage_type:'new-kind'}]}])});
+  assert.strictEqual(animeMusic.animeMusicCues.value.length,3,'same cue labels do not merge different song identities');
+  assert.strictEqual(animeMusic.animeMusicCueGroups.value.find(group=>group.kind==='other').rows.length,1,'unknown standalone cues stay visible');
+  const institutionStaff = context.createStaff({...context.Vue,
+    animeCatalog:context.Vue.ref({people:[],staff:[
+      {work_id:'w',unit_id:'u1',person_id:'p',roles:['作画'],institutions:['A','B']},
+      {work_id:'w',unit_id:'u2',person_id:'p',roles:['作画'],institutions:['B','A']}]}),
+    animeDetail:context.Vue.ref({id:'w'}),animeUnitDetail:context.Vue.ref(null),animeSingle:context.Vue.ref(false),
+    findAnimeUnit:id=>({id,number:id==='u1'?1:2})});
+  assert.deepStrictEqual(Array.from(institutionStaff.animeStaffAggregateGroups.value[0].rows[0].units,u=>u.id),['u1','u2'],'institution order never discards credited episodes');
   await app.applyCurrentRoute();
   window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');

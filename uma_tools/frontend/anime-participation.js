@@ -167,6 +167,8 @@ export function createAnimeParticipation(deps) {
           row.relation.relation_type,
           row.relation.usage_type || "",
           row.relation.version_id || "",
+          row.relation.release_id || "",
+          [...deps.animeRowEditions(row.relation)].sort().join(','),
           row.relation.role_name || row.relation.signature || "",
         ].join(":");
         if (seen.has(key)) return false;
