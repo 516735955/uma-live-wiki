@@ -228,12 +228,18 @@ export function createAnime(deps) {
   }
 
   function animeWorkYears(work) {
-    const date = animeCardFilm(work) ? work.film_release_date : work?.start_date;
+    const date = animeCardDate(work);
     return date ? [String(date).slice(0, 4)] : [];
   }
 
   function animeCardFilm(work) {
     return animeFormat.value === 'movie' && !!(work?.film_cover || work?.film_release_date);
+  }
+
+  function animeCardDate(work) {
+    if (!animeCardFilm(work)) return work?.start_date;
+    return work.film_release_date || (work.dates || []).filter(row => row.edition === 'film')
+      .map(row => row.date).filter(Boolean).sort()[0];
   }
 
   function animeCardArtwork(work) {
@@ -359,8 +365,8 @@ export function createAnime(deps) {
           String(b.title_zh || b.title_ja || ""),
           "zh",
         );
-      const aDate = String((animeCardFilm(a) ? a.film_release_date : a.start_date) || "9999-99-99"),
-        bDate = String((animeCardFilm(b) ? b.film_release_date : b.start_date) || "9999-99-99");
+      const aDate = String(animeCardDate(a) || "9999-99-99"),
+        bDate = String(animeCardDate(b) || "9999-99-99");
       return animeSort.value === "oldest"
         ? aDate.localeCompare(bDate)
         : bDate.localeCompare(aDate);
@@ -813,6 +819,12 @@ export function createAnime(deps) {
   }
 
   function start() {
+    window.addEventListener?.('uma-catalog-change', () => {
+      Object.keys(animeRelatedEvents).forEach(key => delete animeRelatedEvents[key]);
+      Object.keys(animeRelatedAlbums).forEach(key => delete animeRelatedAlbums[key]);
+      if (animeDetail.value && ['music','events'].includes(animeSection.value))
+        loadAnimeRelatedMedia(animeDetail.value.id).catch(() => {});
+    });
     deps.watch([animeQuery, animeFormat, animeStatus, animeSort], () => {
       if (
         deps.routeReady.value &&

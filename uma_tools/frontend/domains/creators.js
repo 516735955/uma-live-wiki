@@ -147,14 +147,16 @@ export function createCreators(deps) {
         deps.dbView.value = "creators";
         if (!isCurrent.fromRoute) deps.resetPageScroll();
         deps.pushUrl(isCurrent.fromRoute);
-        return deps.loadAnimeCatalogOptional("creator", found.id);
+        deps.loadAnimeCatalogOptional("creator", found.id);
       })
       .catch(function (error) {
         if (isCurrent() && error.message === "HTTP 404") {
           deps.notFound.value = true;
           deps.activeTab.value = "not-found";
-        } else if (isCurrent())
+        } else if (isCurrent()) {
           deps.navigationError.value = "创作者资料暂时无法载入，请重试。";
+          deps.navigationRetry.value = () => openCreator(creatorOrId, section);
+        }
       });
   }
 

@@ -28,20 +28,7 @@ export function createAlbums(deps) {
 
   const relSort = deps.ref("newest");
 
-  const relWorkList = [
-    { key: "s1", label: "动画 Season 1" },
-    { key: "s2", label: "动画 Season 2" },
-    { key: "s3", label: "动画 Season 3" },
-    { key: "rttp", label: "ROAD TO THE TOP" },
-    { key: "movie", label: "新時代の扉" },
-    { key: "cinderella", label: "芦毛灰姑娘" },
-    { key: "yon", label: "赛马娘四格" },
-    { key: "yuru", label: "摇曳马娘" },
-    { key: "starting-gate", label: "STARTING GATE" },
-    { key: "winning-live", label: "WINNING LIVE" },
-    { key: "solo-vocal", label: "Solo Vocal Tracks" },
-    { key: "other", label: "其他作品／独立发行" },
-  ];
+  const relWorkList = window.UmaRoutes.albumWorks;
 
   const relPage = deps.ref(1);
 
@@ -211,7 +198,6 @@ export function createAlbums(deps) {
       ),
       deps.loadVoiceData(),
       deps.loadCharacterIndexData(),
-      deps.loadAnimeCatalogOptional("album", a.id),
     ])
       .then(function (rows) {
         if (!isCurrent()) return;
@@ -228,13 +214,16 @@ export function createAlbums(deps) {
         albumDetail.value = { data: data.album, songs: data.album.songs || [] };
         if (!isCurrent.fromRoute) deps.resetPageScroll();
         deps.pushUrl(isCurrent.fromRoute);
+        deps.loadAnimeCatalogOptional("album", data.album.id);
       })
       .catch(function (error) {
         if (isCurrent() && error.message === "HTTP 404") {
           deps.notFound.value = true;
           deps.activeTab.value = "not-found";
-        } else if (isCurrent())
+        } else if (isCurrent()) {
           deps.navigationError.value = "专辑资料暂时无法载入，请重试。";
+          deps.navigationRetry.value = () => openAlbum(a);
+        }
       });
   }
 
@@ -609,6 +598,7 @@ export function createAlbums(deps) {
     albumTrackSongId,
     albumTrackVocalists,
     albums,
+    albumYears,
     albumsError,
     albumsTotal,
     albumsLoading,

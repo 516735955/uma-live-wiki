@@ -9,7 +9,7 @@
     var listBox = (root || document).querySelector('#cIntroList');
     if (!grid || !input || grid.getAttribute('data-c-inited')) return;
     grid.setAttribute('data-c-inited', '1');
-    function norm(c) { return String(c || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim(); }
+    var norm = window.UmaUi.searchText;
     function data() {
       return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
     }
@@ -226,7 +226,7 @@
     var input = (root || document).querySelector('#vaSearch');
     if (!grid || !input || grid.getAttribute('data-va-inited')) return;
     grid.setAttribute('data-va-inited', '1');
-    function norm(v) { return String(v || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim(); }
+    var norm = window.UmaUi.searchText;
     const cards = new Map();
     function data() {
       var generated = window.__uma_app && window.__uma_app.voiceProfiles;
@@ -240,7 +240,7 @@
             zh: identity.zh || identity.ja || '', ja: identity.ja || identity.zh || '',
             kana: identity.kana || '', aliases: identity.aliases || [],
             photo: photo.url || '',
-            roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', image: role.image || '', main: role.color_main || '#8c83ff' }; })
+            roles: (profile.roles || []).map(function (role) { return { id: role.character_id || '', zh: role.name || '', ja: role.name_ja || '', image: role.image || '', main: role.color_main || '#8c83ff' }; })
           };
         });
       }
@@ -253,7 +253,7 @@
         if (!q) return true;
         if ([v.zh, v.ja, v.kana].concat(v.aliases).some(name => norm(name).includes(q))) return true;
         for (var i = 0; i < v.roles.length; i++) {
-          if (norm(v.roles[i].zh).indexOf(q) >= 0) return true;
+          if ([v.roles[i].zh, v.roles[i].ja].some(name => norm(name).includes(q))) return true;
         }
         return false;
       });

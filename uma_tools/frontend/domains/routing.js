@@ -29,7 +29,6 @@ export function createRouting(deps) {
       if (musicSection === "creators")
         return Promise.all([
           seg.length > 2 ? Promise.resolve() : deps.loadCreatorCatalog(deps.listParamsFromUrl()),
-          deps.loadAnimeCatalogOptional(),
         ]);
       if (musicSection === "songs")
         return seg.length > 2
@@ -44,7 +43,6 @@ export function createRouting(deps) {
         seg.length > 1
           ? Promise.resolve()
           : deps.loadEvents(deps.listParamsFromUrl()),
-        deps.loadAnimeCatalogOptional(),
       ]);
     if (first === "resources") return Promise.resolve();
     if (first !== "database") return Promise.resolve();
@@ -57,7 +55,6 @@ export function createRouting(deps) {
           return actor ? deps.loadVoiceData(actor.id) : null;
         }),
         deps.loadCharacterIndexData(),
-        deps.loadAnimeCatalogOptional(),
       ]).then(deps.loadCharacterUi);
     }
     if (sub === "characters") {
@@ -73,7 +70,6 @@ export function createRouting(deps) {
         Promise.resolve(characterReady),
         deps.loadHorsesListData().catch(() => null),
         deps.loadPedigreeMeta(),
-        deps.loadAnimeCatalogOptional(),
       ]).then(deps.loadCharacterUi);
     }
     if (sub === "anime") {
@@ -167,6 +163,8 @@ export function createRouting(deps) {
   }
 
   function applyCurrentRoute() {
+    const canonicalPath = deps.routes.resolve(currentUrlPath());
+    if (canonicalPath !== currentUrlPath()) history.replaceState(history.state, '', canonicalPath);
     routeReady.value = false;
     routeError.value = "";
     const revision = ++navigationRevision.value;
@@ -416,7 +414,10 @@ export function createRouting(deps) {
   }
 
   function syncFromUrl() {
-    const canonicalPath = deps.routes.resolve(currentUrlPath());
+    const canonicalPath = deps.routes.resolve(currentUrlPath(), {
+      eventSeries: Object.keys(deps.eventSeriesMap.value).length ? Object.keys(deps.eventSeriesMap.value) : undefined,
+      albumYears: deps.albumYears.value.length ? deps.albumYears.value : undefined,
+    });
     if (canonicalPath !== currentUrlPath())
       history.replaceState(history.state, "", canonicalPath);
     navigationError.value = "";

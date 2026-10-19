@@ -183,6 +183,8 @@ export function createHorses(deps) {
     id = id || decodeURIComponent(deps.routeSegments()[2] || "");
     if (!id) return loadHorsesListData();
     horsesListError.value = "";
+    const sourcePath = deps.currentUrlPath();
+    const navigation = deps.navigationRevision.value;
     horsesDataPromise = deps.api.request("/api/catalog/horse" + deps.api.query({ id }))
       .then(function (data) {
         if (!data?.horse) throw new Error("empty horse data");
@@ -194,7 +196,8 @@ export function createHorses(deps) {
           window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: null };
           return;
         }
-        horsesListError.value = "原型马资料暂时无法载入，请重试。";
+        if (sourcePath === deps.currentUrlPath() && navigation === deps.navigationRevision.value)
+          horsesListError.value = "原型马资料暂时无法载入，请重试。";
         throw error;
       });
     return horsesDataPromise;

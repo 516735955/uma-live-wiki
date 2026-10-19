@@ -6,7 +6,7 @@
   const cacheCapacity = 64;
   const cacheBytes = 16 * 1024 * 1024;
   let catalogBuild = '', catalogGeneration = 0;
-  const musicCatalog = path => /^\/api\/catalog\/(?:songs?|albums?|creators?|events?|voice-actors|appearance)(?:\?|$)/.test(path);
+  const musicCatalog = path => /^\/api\/catalog\/(?:songs?|albums?|creators?|events?|voice-actors|appearance|anime-media)(?:\?|$)/.test(path);
   function retain(key, data, maxAge) {
     const size = JSON.stringify(data).length * 2;
     resolved.delete(key);

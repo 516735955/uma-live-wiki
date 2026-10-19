@@ -99,6 +99,22 @@ async function main() {
     animeDetail:context.Vue.ref({id:'w'}),animeUnitDetail:context.Vue.ref(null),animeSingle:context.Vue.ref(false),
     findAnimeUnit:id=>({id,number:id==='u1'?1:2})});
   assert.deepStrictEqual(Array.from(institutionStaff.animeStaffAggregateGroups.value[0].rows[0].units,u=>u.id),['u1','u2'],'institution order never discards credited episodes');
+  const optionalWait = deferred();
+  let shownAlbum = false;
+  const fastAlbum = context.createAlbums({...context.Vue,beginEntityNavigation:()=>()=>true,
+    api:{query:()=>'',request:async()=>({album:{id:'fast',songs:[]}})},
+    loadVoiceData:async()=>{},loadCharacterIndexData:async()=>{},loadAnimeCatalogOptional:()=>optionalWait.promise,
+    clearEntityDetails(){},activeTab:context.Vue.ref(''),dbView:context.Vue.ref(''),resetPageScroll(){},
+    pushUrl(){shownAlbum=true;},mergeSong(){},notFound:context.Vue.ref(false),navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)});
+  await fastAlbum.openAlbum({id:'fast'});
+  assert(shownAlbum && fastAlbum.albumDetail.value,'an optional stalled relation never blocks the album body');
+  optionalWait.resolve(null);
+  // The retry callback is written to the shared routing port.
+  const errorPorts={...context.Vue,beginEntityNavigation:()=>()=>true,
+    api:{query:()=>'',request:async()=>{throw Error('HTTP 503');}},loadVoiceData:async()=>{},loadCharacterIndexData:async()=>{},
+    navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)};
+  await context.createAlbums(errorPorts).openAlbum({id:'retry'});
+  assert.strictEqual(typeof errorPorts.navigationRetry.value,'function','a failed detail offers a real retry');
   await app.applyCurrentRoute();
   window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
@@ -281,6 +297,9 @@ async function main() {
   location.href = 'http://localhost/zh-Hans/database/anime?format=movie&year=2023';
   await app.applyCurrentRoute();
   assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id).sort(), ['anime-movie-beginning-new-era', 'anime-rttt'], 'movie filtering includes confirmed theatrical editions and ignores retired year filters');
+  const movieRttt = app.animeFiltered.value.find(work=>work.id==='anime-rttt');
+  assert(app.animeWorkHref(movieRttt).includes('edition=film'));
+  assert(app.animeWorkYears(movieRttt).includes('2024'),'theatrical filtering uses its release year');
   location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeFiltered.value.length, 1, 'network format remains available without a year filter');

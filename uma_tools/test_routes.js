@@ -19,6 +19,9 @@ assert.strictEqual(routes.voiceActors('waki-azumi', 'appearances'), '/zh-Hans/da
 assert.strictEqual(routes.resolve('/zh-Hans/database/characters/specialweek/appearances?x=1'), '/zh-Hans/database/characters/specialweek/events?x=1');
 assert.strictEqual(routes.resolve('/zh-Hans/database/characters/specialweek?section=appearances&x=1'), '/zh-Hans/database/characters/specialweek/events?x=1');
 assert.strictEqual(routes.resolve('/zh-Hans/database/voice-actors/va-0040?section=events'), '/zh-Hans/database/voice-actors/va-0040/events');
+assert.strictEqual(routes.resolve('/zh-Hans/database/characters/specialweek/?section=songs&x=1'), '/zh-Hans/database/characters/specialweek/songs?x=1');
+assert.strictEqual(routes.resolve('/zh-Hans/events?series=missing&q=Uma', {eventSeries:['real']}), '/zh-Hans/events?q=Uma');
+assert.strictEqual(routes.resolve('/zh-Hans/music/albums?work=missing&type=missing&year=2020', {albumYears:['2025']}), '/zh-Hans/music/albums');
 assert.strictEqual(routes.resolve('/zh-Hans/database/characters/specialweek/anime?section=appearances'), '/zh-Hans/database/characters/specialweek/anime');
 assert.strictEqual(routes.resolve('/zh-Hans/database/voice-actors/waki-azumi/appearances?section=appearances'), '/zh-Hans/database/voice-actors/waki-azumi/events');
 assert.strictEqual(routes.resolve('https://example.com/characters/specialweek/appearances'), '/characters/specialweek/appearances');

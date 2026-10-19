@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const routes = require('./route-utils');
 const crypto = require('crypto');
 const businessDate = require('./business-date');
 
@@ -567,6 +568,9 @@ class CatalogStore {
 
   async events(params) {
     const store = await this.get();
+    params = new URL('http://catalog.invalid' + routes.resolve('/zh-Hans/events?' + params, {
+      eventSeries: (store.eventsDoc.series || []).map(row => row.id),
+    })).searchParams;
     const query = normalize(params.get('q'));
     const time = params.get('time') || 'all';
     const kind = params.get('kind') || 'all';
@@ -692,6 +696,9 @@ class CatalogStore {
 
   async albums(params) {
     const store = await this.get();
+    params = new URL('http://catalog.invalid' + routes.resolve('/zh-Hans/music/albums?' + params, {
+      albumYears: [...new Set(store.albums.map(row => releaseYear(row.release)))],
+    })).searchParams;
     const query = normalize(params.get('q'));
     const work = params.get('work') || '';
     const type = params.get('type') ? albumType(params.get('type')) : '';

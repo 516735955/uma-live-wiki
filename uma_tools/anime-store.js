@@ -26,7 +26,7 @@ function unitSummary(unit) {
 
 function workSummary(work) {
   return select(work, ['id', 'title_zh', 'title_ja', 'aliases', 'format', 'series', 'status',
-    'start_date', 'end_date', 'cover', 'film_cover', 'film_release_date', 'unit_count', 'released_count']);
+    'start_date', 'end_date', 'dates', 'cover', 'film_cover', 'film_release_date', 'unit_count', 'released_count']);
 }
 
 class AnimeStore {

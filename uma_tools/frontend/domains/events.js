@@ -511,7 +511,7 @@ export function createEvents(deps) {
       deps.activeTab.value = "live";
       if (!isCurrent.fromRoute) deps.resetPageScroll();
       deps.pushUrl(isCurrent.fromRoute);
-      return deps.loadAnimeCatalogOptional("event", found.id);
+      deps.loadAnimeCatalogOptional("event", found.id);
     };
     return Promise.all([
       deps.api.request("/api/catalog/event" + deps.api.query({ id: id })),
@@ -522,8 +522,10 @@ export function createEvents(deps) {
         return show(rows[0]);
       })
       .catch(function () {
-        if (isCurrent())
+        if (isCurrent()) {
           deps.navigationError.value = "活动资料暂时无法载入，请重试。";
+          deps.navigationRetry.value = () => openEvent(eventOrId, requestedSessionId);
+        }
       });
   }
 

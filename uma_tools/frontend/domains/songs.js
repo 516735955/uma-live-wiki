@@ -408,7 +408,7 @@ export function createSongs(deps) {
       if (!isCurrent.fromRoute) deps.resetPageScroll();
       if (recordingUrl) restoreSongRecording(recordingUrl);
       deps.pushUrl(isCurrent.fromRoute);
-      return deps.loadAnimeCatalogOptional("song", found.id);
+      deps.loadAnimeCatalogOptional("song", found.id);
     };
     return Promise.all([
       deps.api.request(
@@ -427,8 +427,10 @@ export function createSongs(deps) {
         if (isCurrent() && error.message === "HTTP 404") {
           deps.notFound.value = true;
           deps.activeTab.value = "not-found";
-        } else if (isCurrent())
+        } else if (isCurrent()) {
           deps.navigationError.value = "歌曲资料暂时无法载入，请重试。";
+          deps.navigationRetry.value = () => openSong(songOrId, section);
+        }
       });
   }
 
