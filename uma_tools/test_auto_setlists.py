@@ -38,6 +38,29 @@ class SheetPublicationTests(unittest.TestCase):
         published[0]['title'] = 'Uma 1st EVENT!'
         self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
 
+    def test_identity_equal_catalog_event_is_not_registered_again(self):
+        block = {'title': 'アニメウマ娘シンデレラグレイ第1クールエンディング主題歌発売記念リリースイベント2部',
+                 'date': '2025-07-26',
+                 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
+        event = {'title': block['title'], 'date': block['date'],
+                 'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}
+        published = [{'id': 'live-cd-2025-07-26-1-2',
+                      'title': 'アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】',
+                      'date': '2025-07-26', 'sessions': [{'label': '本公演', 'date': '2025-07-26'}]}]
+        source = {}
+        self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
+        self.assertEqual(source.get('other', {}).get('groups', []), [])
+        block = {'title': 'cygamesfes20182日目ウマ娘プリティーダービーspecialliveday2',
+                 'date': '2018-12-16',
+                 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
+        event = {'title': block['title'], 'date': block['date'],
+                 'link': 'https://www.eventernote.com/events/456', 'actors': [{'name': 'Machico'}]}
+        published = [{'id': 'live-other-2018-12-16-cygamesfes2018-2-special-live-day2',
+                      'title': 'CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2',
+                      'date': '2018-12-16'}]
+        self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
+        self.assertEqual(source.get('other', {}).get('groups', []), [])
+
     def test_new_sourced_session_is_registered_once_without_guessing_roles(self):
         block = {'title': 'New Uma LIVE', 'date': '2026-10-14', 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
         event = {'title': block['title'], 'date': block['date'], 'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}

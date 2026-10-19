@@ -48,6 +48,11 @@ def normalized_title(value):
     return re.sub(r"\s+", "", unicodedata.normalize('NFKC', title)).casefold()
 
 
+def identity_title(value):
+    """Catalog validation event identity: NFKC, lowercased, without non-word marks."""
+    return re.sub(r"[\W_]+", "", unicodedata.normalize('NFKC', str(value or "")).lower())
+
+
 def event_date(value):
     if isinstance(value, (dt.date, dt.datetime)):
         return value.isoformat()[:10]
@@ -261,9 +266,14 @@ def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
     added = []
     published = {(normalized_title(event.get('title')), row.get('date') or event.get('date'), row.get('label') or session_label(event.get('title')))
                  for event in existing_events for row in event.get('sessions') or [{'date': event.get('date'), 'label': session_label(event.get('title'))}]}
+    published_identities = {(identity_title(event.get('title')), row.get('date') or event.get('date'))
+                            for event in existing_events for row in event.get('sessions') or [{'date': event.get('date')}]}
     for block in blocks:
         key = (normalized_title(block['title']), block['date'], session_label(block['title']))
+        identity = (identity_title(block['title']), block['date'])
         if not block['date'] or any((normalized_title(slot['title']), slot['date'], slot['label']) == key for slot in slots):
+            continue
+        if identity in published_identities or any((identity_title(slot['title']), slot['date']) == identity for slot in slots):
             continue
         if canonical_match(block, existing_events):
             continue
