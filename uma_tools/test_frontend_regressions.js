@@ -118,6 +118,7 @@ async function main() {
   assert.strictEqual(typeof errorPorts.navigationRetry.value,'function','a failed detail offers a real retry');
   const labelSource=context.createCreators({...context.Vue});
   assert.strictEqual(labelSource.creatorRoleLabel('lyricist',[{roles:[{role:'lyricist',label:'作词'}]}]),'作词','the collaborator panel uses labels from its loaded creator response');
+  assert.strictEqual(labelSource.creatorWorkRoleLabels(['lyricist','composer']),'lyricist · composer','list indices are not passed as creator metadata');
   await app.applyCurrentRoute();
   window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
