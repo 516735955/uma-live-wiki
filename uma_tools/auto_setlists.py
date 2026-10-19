@@ -259,7 +259,10 @@ def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
     slots = curated_slots(catalog)
     groups = catalog.setdefault('other', {}).setdefault('groups', [])
     added = []
-    published = {(normalized_title(event.get('title')), row.get('date') or event.get('date'), row.get('label') or session_label(event.get('title')))
+    # A single-session event can put DAY/part in its title and use the generic
+    # session label. Explicit multi-session labels still distinguish sessions.
+    published = {(normalized_title(event.get('title')), row.get('date') or event.get('date'),
+                  row['label'] if row.get('label') not in (None, '', '本公演') else session_label(event.get('title')))
                  for event in existing_events for row in event.get('sessions') or [{'date': event.get('date'), 'label': session_label(event.get('title'))}]}
     for block in blocks:
         key = (normalized_title(block['title']), block['date'], session_label(block['title']))
