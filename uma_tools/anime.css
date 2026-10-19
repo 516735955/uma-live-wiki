@@ -2,7 +2,7 @@
 .anime-catalog-grid .album-info { position: static; padding: 12px 14px 16px; background: var(--card); color: var(--ui-navy); }
 .anime-catalog-grid .album-name { color: var(--ui-navy); font-size: 1rem; line-height: 1.45; }
 .anime-catalog-grid .album-count { color: var(--text-2); font-size: .85rem; }
-.anime-catalog-grid .album-card { align-self: stretch; display: flex; flex-direction: column; }
+.anime-catalog-grid .album-card { align-self: stretch; display: flex; flex-direction: column; aspect-ratio: auto; }
 .anime-catalog-grid .album-info { flex: 1; }
 .anime-catalog-grid a, .anime-episode-list a, .archive-surface a.music-card-main { text-decoration: none; color: inherit; }
 .anime-action-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; flex-shrink: 0; }

@@ -220,8 +220,8 @@
         .relation-list,
         .history-list { border-top: 1px solid var(--surface-line); }
         .relation-list > button,
-        .history-list > button,
-        .history-years section > button {
+        .history-list > a,
+        .history-years section > a {
             display: grid;
             width: 100%;
             align-items: center;
@@ -237,8 +237,8 @@
         .relation-list > button { grid-template-columns: minmax(0, 1fr) 24px; }
         .relation-list b { display: block; color: var(--text); font-size: 0.92rem; }
         .relation-list small { display: block; margin-top: 4px; color: var(--text-2); font-size: 0.75rem; }
-        .history-list > button,
-        .history-years section > button { grid-template-columns: 105px minmax(0, 1fr) auto; }
+        .history-list > a,
+        .history-years section > a { grid-template-columns: 105px minmax(0, 1fr) auto; }
         .history-list time,
         .history-years time { color: var(--navy); font-size: 0.78rem; font-weight: 800; font-variant-numeric: tabular-nums; }
         .history-list span,

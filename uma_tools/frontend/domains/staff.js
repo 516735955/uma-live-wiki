@@ -304,7 +304,7 @@ export function createStaff(deps) {
     staffPage.value = page;
     deps.pushUrl();
     const top = document.getElementById("staffArchiveTop");
-    if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (top) top.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   const creatorAnimeStaff = deps.computed(() => {

@@ -53,7 +53,7 @@
         .news-rows { display: flex; flex-direction: column; }
         .news-row {
             display: grid;
-            grid-template-columns: 110px 82px 1fr 190px;
+            grid-template-columns: 110px 82px minmax(0,1fr);
             align-items: center;
             gap: 8px 18px;
             padding: 12px 16px;
@@ -87,7 +87,6 @@
             line-height: 1.45; min-width: 0;
         }
         .news-row:hover .nw-title { color: var(--brand-dark, #b94c00); }
-        .nw-source { font-size: 0.76rem; color: var(--text-3); white-space: nowrap; }
         .news-empty { padding: 60px 20px; text-align: center; color: var(--text-3); font-size: 0.95em; }
 
         @media (max-width: 900px) {
@@ -99,7 +98,6 @@
             .nw-d { flex: 0 0 auto; }
             .nw-t { flex: 0 0 auto; }
             .nw-title { flex: 1 1 100%; min-width: 0; white-space: normal; overflow: visible; text-overflow: clip; margin-top: 2px; }
-            .nw-source { flex: 1 1 100%; margin-top: 2px; font-size: 0.8em; white-space: normal; }
         }
 
         /* song detail page */

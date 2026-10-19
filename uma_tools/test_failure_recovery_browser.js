@@ -86,7 +86,13 @@ async function main() {
 
     await page.goto(base+'/zh-Hans/music/albums?page=2');
     await page.locator('.album-card').first().waitFor();
+    await page.waitForFunction(() => [...document.querySelectorAll('.album-card img')].slice(0,6)
+      .every(img => img.complete && img.naturalWidth > 0));
     assert(/31[–-]60\s*\/\s*115/.test(await page.locator('.ui-pager').innerText()));
+    await page.goto(base+'/zh-Hans/events');
+    await page.locator('.event-catalog-cover img').first().waitFor();
+    await page.waitForFunction(() => [...document.querySelectorAll('.event-catalog-cover img')].slice(0,3)
+      .every(img => img.complete && img.naturalWidth > 0));
     await page.goto(base+'/zh-Hans/database/horses?page=2');
     await page.locator('.horse-row').first().waitFor();
     assert(!/\/\s*30\b/.test(await page.locator('.ui-pager').innerText()));

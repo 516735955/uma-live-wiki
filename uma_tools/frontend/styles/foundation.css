@@ -28,6 +28,7 @@
         }
 
         html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
         body {
             font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', Meiryo, 'Noto Sans CJK SC', 'Noto Sans CJK JP', system-ui, sans-serif;

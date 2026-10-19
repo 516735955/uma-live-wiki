@@ -1,4 +1,4 @@
-export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums"];
+export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
 export const template = `
             <div v-if="albumsError" class="ui-state ui-state-error">{{ albumsError }} <button type="button" @click="loadAlbums()">重试</button></div>
             <template v-if="!albumDetail">
@@ -15,14 +15,14 @@ export const template = `
                     <template v-if="albumsLoading && !albums.length">
                         <div v-for="i in 8" :key="'album-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div>
                     </template>
-                    <button v-for="(album,index) in relPaged" :key="album.name" type="button" class="album-card" :style="coverStyle(album)" @click="openAlbumFromDb(album)">
+                    <a v-for="(album,index) in relPaged" :key="album.name" class="album-card" :style="coverStyle(album)" :href="routes.albums(album.id)" @click="internalLink($event, () => openAlbumFromDb(album))">
                             <img class="album-cover" v-media-src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 2 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" decoding="async" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
                         <div class="album-info">
                             <div class="album-name">{{ album.name }}</div>
                             <div class="album-count">{{ album.release || '日期待补' }} · {{ album.type }}</div>
                         </div>
                         <div class="card-veil"><p>View more</p><span class="card-veil-arrow" aria-hidden="true">&gt;</span></div>
-                    </button>
+                    </a>
                     <div v-if="!relFiltered.length" class="ui-state">没有符合条件的专辑</div>
                 </div>
                 <div v-if="relFiltered.length" class="ui-pager"><span>{{ relPageStart }}–{{ relPageEnd }} / {{ albumsTotal }}</span><div><button :disabled="relPage<=1" @click="goRelPage(-1)">上一页</button><button v-for="(page,i) in relPageList" :key="i" :class="{active:page===relPage}" :disabled="page==='…'" @click="setRelPage(page)">{{ page }}</button><button :disabled="relPage>=relPageCount" @click="goRelPage(1)">下一页</button></div></div>
@@ -45,9 +45,9 @@ export const template = `
                             <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
                                 <span>{{ String(index+1).padStart(2,'0') }}</span>
                                 <div class="album-track-main">
-                                    <button class="text-link" @click="openSong(albumTrackSongId(song,index))"><b>{{ song.name }}</b></button>
+                                    <a class="text-link" :href="routes.songs(albumTrackSongId(song,index))" @click="internalLink($event, () => openSong(albumTrackSongId(song,index)))"><b>{{ song.name }}</b></a>
                                     <div v-if="albumTrackVocalists(song,index).length" class="performer-chip-list compact">
-                                        <button v-for="vocalist in albumTrackVocalists(song,index)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.color}" @click="openVoice(vocalist.voice_actor_id)"><img v-media-src="vocalist.image" alt=""><span>{{ vocalist.name }}</span></button>
+                                        <a v-for="vocalist in albumTrackVocalists(song,index)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.color}" :href="routes.voiceActors(vocalist.voice_actor_id)" @click="internalLink($event, () => openVoice(vocalist.voice_actor_id))"><img v-media-src="vocalist.image" alt=""><span>{{ vocalist.name }}</span></a>
                                     </div>
                                     <span v-else-if="albumTrackSecondary(song)" class="secondary-line">{{ albumTrackSecondary(song) }}</span>
                                 </div>

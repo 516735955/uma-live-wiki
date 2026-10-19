@@ -1,6 +1,9 @@
 
 
 /* One control family for every archive. */
+a:is(.album-card,.music-card-main,.creator-catalog-row,.event-catalog-row,.album-inline,.relation-detail-link),
+.history-list > a,.history-years section > a { color: inherit; text-decoration: none; }
+.ui-search input::placeholder { color: var(--text-3); }
 .archive-toolbar {
     display: flex;
     align-items: center;
@@ -18,16 +21,20 @@
     box-shadow: none;
     transition: border-color 160ms ease, box-shadow 160ms ease, transform 300ms var(--ui-ease);
 }
-.ui-search { flex: 1 1 360px; }
+.ui-search { position: relative; display: flex; flex: 1 1 360px; align-items: center; min-width: 190px; }
 .ui-select-control { position: relative; display: flex; flex: 0 1 190px; min-width: 154px; align-items: center; }
 .ui-select-control.ui-select-wide { flex-basis: 260px; }
 .ui-search:focus-within,
 .ui-select-control.open,
 .ui-select-control:focus-within { border-color: var(--ui-orange); box-shadow: 0 0 0 3px rgba(245,130,32,.13); }
-.ui-search > svg { stroke: var(--ui-cobalt-deep); }
+.ui-search > svg { width: 20px; height: 20px; margin-left: 14px; fill: none; stroke: var(--ui-cobalt-deep); stroke-width: 2; flex: none; }
 .ui-search input,
 #tab-characters .ui-search .c-search,
-#tab-db-voice .ui-search .va-search { height: 44px; }
+#tab-db-voice .ui-search .va-search {
+    width: 100%; height: 44px; margin: 0; padding: 0 42px 0 11px; border: 0; border-radius: 0;
+    outline: 0; background: transparent; box-shadow: none; color: var(--text); font-size: .92rem;
+}
+.ui-search > button { position: absolute; top: 50%; right: 8px; display: grid; place-items: center; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--text-3); font-size: 1.35rem; transform: translateY(-50%); cursor: pointer; }
 .ui-select-label {
     display: flex;
     min-width: 54px;
@@ -107,6 +114,8 @@
     background: #fff;
     box-shadow: none;
     font-family: inherit;
+    color: var(--text-2); font-size: .8rem; font-weight: 700; cursor: pointer;
+    transition: transform 280ms var(--ui-ease), background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 .ui-filter-group button.active {
     border-color: var(--ui-cobalt);
@@ -119,9 +128,6 @@
 /* Crisp archive rows with purposeful movement. */
 .event-catalog,
 .song-catalog { border-top: 3px solid var(--ui-cobalt-deep); }
-.event-catalog-row:hover,
-.song-catalog-row:hover { background: #f7f9ff; box-shadow: none; transform: translateX(3px); }
+.event-catalog-row:hover { background: #f7f9ff; box-shadow: none; transform: translateX(3px); }
 .event-catalog-row > svg,
-.song-catalog-row > svg,
 .relation-song-row svg { stroke: var(--ui-orange-deep); }
-.song-catalog-row { grid-template-columns: 64px minmax(0,1fr) repeat(3,88px) 40px 22px; }

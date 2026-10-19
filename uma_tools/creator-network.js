@@ -98,6 +98,12 @@
     },
     beforeUnmount: function () { this.selectionRequest += 1; if (this.observer) this.observer.disconnect(); },
     methods: {
+      songHref(id) { return window.UmaRoutes.songs(id); },
+      creatorHref(id) { return window.UmaRoutes.creators(id); },
+      follow(event, kind, id) {
+        if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault(); this.$emit('open-' + kind, id);
+      },
       measure: function () { this.width = Math.max(180, Math.round(this.$el.clientWidth || 960)); },
       portrait: function (person) { return person.image || person.photo || window.UmaUi.identityPortrait(person); },
       roleText: function (person) {
@@ -166,13 +172,13 @@
               <i class="identity-portrait"><img v-media-src="portrait(selected)" alt=""></i>
               <span><b>{{ selected.name }}</b><small>{{ roleText(selected) }}</small></span>
             </header>
-            <button class="horse-link-chip creator-profile-link" type="button" @click="$emit('open-creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></button>
+            <a class="horse-link-chip creator-profile-link" :href="creatorHref(selected.creator_id)" @click="follow($event,'creator',selected.creator_id)">查看创作者资料 <span aria-hidden="true">→</span></a>
             <div v-if="loading" class="ui-state compact">共同作品加载中</div>
             <div v-else-if="loadError" class="ui-state compact">{{ loadError }}<button class="horse-link-chip creator-profile-link" type="button" @click="choose(selected)">重新加载</button></div>
             <ol v-else-if="sharedWorks.length" class="collaboration-timeline">
               <li v-for="work in sharedWorks" :key="work.song_id">
                 <time>{{ work.release_date || '日期待补' }}</time>
-                <button type="button" @click="$emit('open-song',work.song_id)"><img v-media-src="work.cover || '/uma_tools/img/album-placeholder.svg'" alt=""><span><b>{{ work.title }}</b><small v-if="work.album">{{ work.album }}</small><em><i v-for="role in work.roles" :key="role">{{ roleLabel(role) }}</i></em></span></button>
+                <a :href="songHref(work.song_id)" @click="follow($event,'song',work.song_id)"><img v-media-src="work.cover || '/uma_tools/img/album-placeholder.svg'" alt=""><span><b>{{ work.title }}</b><small v-if="work.album">{{ work.album }}</small><em><i v-for="role in work.roles" :key="role">{{ roleLabel(role,[selectedDetail]) }}</i></em></span></a>
               </li>
             </ol>
             <div v-else class="ui-state compact">暂无可确认的共同作品</div>

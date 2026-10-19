@@ -1,55 +1,4 @@
 
-
-        /* ===== SUBPAGE HEADER (top navy bar, like umamusume.jp sub pages) ===== */
-        .sub-header {
-            position: sticky; top: 0; z-index: 1001;
-            display: flex; align-items: stretch; color: #fff;
-            overflow-x: clip;
-            background-color: #3157ed;
-            background-image: url('/uma_tools/img/bg_blue.webp');
-            background-size: 100vw auto;
-            background-repeat: repeat-y;
-            background-position: left top;
-            box-shadow: 0 8px 24px rgba(20, 26, 41, 0.35);
-        }
-        .sub-brand {
-            display: inline-flex; flex: 0 0 27%; min-width: 0;
-            align-items: center; justify-content: center; gap: 8px; white-space: nowrap;
-            padding: 0 16px; border: none; border-right: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.06); color: #fff; cursor: pointer;
-            font-family: inherit; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.04em;
-            transform: skewX(-30deg);
-            transition: background 0.2s;
-        }
-        .sub-brand > span { display: inline-block; transform: skewX(30deg); }
-        .sub-brand:hover { background: rgba(255, 255, 255, 0.14); }
-        .sub-tabs {
-            flex: 1 1 auto; display: flex; align-items: stretch; padding: 0; height: 61px;
-        }
-        .sub-tab {
-            position: relative; flex: 1 1 0; min-width: 0;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            border: none; border-right: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.06); color: #fff; cursor: pointer;
-            font-family: inherit; font-size: 1.05em; font-weight: 700; letter-spacing: 0.05em;
-            transform: skewX(-30deg);
-            transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
-        }
-        .sub-tab > span { display: inline-block; transform: skewX(30deg); }
-        .sub-tab:first-child { border-left: none; }
-        .sub-tab:last-child { border-right: none; }
-        .sub-tab svg { width: 18px; height: 18px; flex-shrink: 0; }
-        .sub-tab:hover { color: #fff; background: rgba(255, 255, 255, 0.16); }
-        .sub-tab.active {
-            color: #fff;
-            background: linear-gradient(125deg, #ff7b16, #ffa932);
-            height: calc(100% + 8px);
-            transform: translateY(-8px) skewX(-30deg);
-            box-shadow: 0 18px 42px rgba(20, 26, 41, 0.38);
-        }
-
-        /* ===== CONTAINER ===== */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeSlideIn 0.3s ease; }
         @keyframes fadeSlideIn {
@@ -58,23 +7,24 @@
         }
 
         .albums-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px; min-height: 70vh; align-content: start; padding-bottom: 84px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 18px; min-height: 70vh; align-content: start; padding-bottom: 84px;
         }
 
         .album-card {
             position: relative; display: block; width: 100%; padding: 0;
-            border-radius: var(--radius); overflow: hidden; cursor: pointer;
+            aspect-ratio: 1;
+            border-radius: 2px; overflow: hidden; cursor: pointer;
             background: var(--card);
             border: 1px solid var(--border);
             color: inherit; font: inherit; text-align: left;
-            box-shadow: 4px 6px 16px -4px rgba(20, 20, 40, 0.32);
+            box-shadow: 0 4px 14px rgba(24,31,70,.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
         .album-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--brand);
-            box-shadow: 8px 12px 24px -6px rgba(20, 20, 40, 0.42);
+            transform: translateY(-4px);
+            border-color: var(--ui-orange);
+            box-shadow: 0 10px 24px rgba(24,31,70,.15);
         }
         .album-cover { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #f0eef6; }
 
@@ -240,11 +190,6 @@
         .news-list { display: flex; flex-direction: column; gap: 14px; }
 
         .hidden { display: none !important; }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .sub-brand { padding: 0 16px; font-size: 1.15em; }
-        }
         @media (max-width: 768px) {
             .home-layout { flex-direction: column; height: auto; min-height: 100vh; position: relative; background: #0d1220; }
             .home-hero {
@@ -267,15 +212,6 @@
             .home-tab { flex: none; justify-content: flex-start; padding: 14px 18px; border-left: none; border-bottom: none; border-radius: 12px; background: rgba(35, 65, 143, 0.45); border: 1px solid rgba(255, 255, 255, 0.18); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
             .home-tab:hover { border-left: none; border-bottom: none; background: rgba(58, 109, 240, 0.42); }
             .home-tab::after { display: none; }
-            .sub-tabs { flex: 0 0 auto; flex-wrap: wrap; padding: 0; width: 100%; height: auto; overflow: visible; }
-            .sub-tab { flex: 1 1 110px; min-width: 0; height: 52px; padding: 0 12px; font-size: 0.9em; transform: skewX(-30deg); white-space: normal; }
-            .sub-tab > span { transform: skewX(30deg); }
-            .sub-tab svg { width: 15px; height: 15px; }
-            .sub-tab.active { height: 52px; transform: skewX(-30deg); box-shadow: none; }
-            .sub-tab.active > span { transform: skewX(30deg); }
-            .sub-header { flex-direction: column; flex-wrap: nowrap; overflow: visible; }
-            .sub-brand { flex: 0 0 44px; width: 100%; min-width: 0; justify-content: flex-start; padding: 0 16px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); transform: none; font-size: 1.05em; }
-            .sub-brand > span { transform: none; white-space: nowrap; }
             .albums-grid { grid-template-columns: 1fr; }
             .event-setlists { flex-direction: column; }
             .event-date { display: none; }

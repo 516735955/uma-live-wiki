@@ -153,7 +153,7 @@ export function createSongs(deps) {
     deps.pushUrl();
     loadSongCatalog();
     const top = document.getElementById("songArchiveTop");
-    if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (top) top.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goSongDbPage(delta) {

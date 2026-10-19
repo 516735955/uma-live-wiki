@@ -5,6 +5,7 @@
   function searchText(value) {
     return String(value || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim();
   }
+  function scrollBehavior() { return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'; }
   const addedTimers = new WeakMap();
   function cancelAdded(target) { window.clearTimeout(addedTimers.get(target)); addedTimers.delete(target); }
   function flashAdded(target, update) {
@@ -463,5 +464,5 @@
     identityPortraitCache.set(name,url);
     return url;
   }
-  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait, searchText: searchText, flashAdded: flashAdded });
+  window.UmaUi = Object.freeze({ UiSelect: UiSelect, UiDisclosure: UiDisclosure, EntityActions: EntityActions, AudioDock: AudioDock, identityPortrait: identityPortrait, searchText: searchText, flashAdded: flashAdded, scrollBehavior: scrollBehavior });
 })();

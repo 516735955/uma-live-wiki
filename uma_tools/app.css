@@ -1,4 +1,4 @@
-/* Compatibility entry for the shared stylesheet. */
+/* Compatibility entry follows the same stylesheet order as the main page. */
 @import url("/uma_tools/frontend/styles/foundation.css");
 @import url("/uma_tools/frontend/styles/home-shell.css");
 @import url("/uma_tools/frontend/styles/catalog-base.css");
@@ -7,11 +7,17 @@
 @import url("/uma_tools/frontend/styles/information.css");
 @import url("/uma_tools/frontend/styles/archive-components.css");
 @import url("/uma_tools/frontend/styles/entity-components.css");
-@import url("/uma_tools/frontend/styles/entity-responsive.css");
 @import url("/uma_tools/frontend/styles/shell.css");
 @import url("/uma_tools/frontend/styles/controls.css");
 @import url("/uma_tools/frontend/styles/relations.css");
+@import url("/uma_tools/frontend/styles/entity-responsive.css");
 @import url("/uma_tools/frontend/styles/audio-player.css");
+@import url("/uma_tools/frontend/styles/footer.css");
 @import url("/uma_tools/frontend/styles/shell-responsive.css");
 @import url("/uma_tools/frontend/styles/small-screen.css");
 @import url("/uma_tools/frontend/styles/horses.css");
+@import url("/uma_tools/music-components.css");
+@import url("/uma_tools/anime.css");
+@import url("/uma_tools/vendor/photoswipe/photoswipe.css");
+@import url("/uma_tools/image-viewer.css");
+@import url("/uma_tools/context-navigation.css");

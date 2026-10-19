@@ -530,9 +530,13 @@ export function createAnime(deps) {
   }
 
   function animeWatchAccess(resource) {
-    return [resource.status === 'membership' ? '需会员' : '',
-      resource.status === 'region_limited' ? '有地区限制' : '',
-      resource.region_label || ''].filter(Boolean).join(' · ');
+    const regionNames = {CN:'中国大陆',TW:'台湾',HK:'香港',MO:'澳门',JP:'日本'};
+    const regions = (resource.regions || []).filter(region => region !== 'global');
+    const regionLabel = resource.region_label || (regions.length
+      ? '地区：' + regions.map(region => regionNames[region] || region).join('、')
+      : resource.status === 'region_limited' ? '有地区限制' : '');
+    return [resource.access === 'membership' ? '需会员' : resource.status === 'membership' ? '需登录或会员' : '',
+      regionLabel].filter(Boolean).join(' · ');
   }
 
   function setAnimeSection(section) {

@@ -229,7 +229,7 @@ export function createEvents(deps) {
     deps.pushUrl();
     loadEvents();
     const el = document.getElementById("eventsRowsTop");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goEventsPage(dir) {

@@ -108,7 +108,6 @@
         #tab-characters { padding-bottom: 20px; }
         #tab-characters #c-intro { position: relative; }
         #tab-characters .cio-toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
-        #tab-characters .cio-toolbar .c-search { margin-bottom: 0; }
         #tab-characters .cio-sort { position: relative; display: flex; align-items: center; background: #fff; border: 1px solid #6f64ff; border-radius: 42px; height: 42px; overflow: hidden; }
         #tab-characters .cio-sort p { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #7c76cf; font-size: 13px; margin: 0; pointer-events: none; }
         #tab-characters .cio-sort select { appearance: none; border: none; background: transparent; height: 100%; padding: 0 34px 0 54px; font-size: 13px; color: #2c3650; cursor: pointer; outline: none; font-family: inherit; }
@@ -179,83 +178,6 @@
         @media screen and (max-width: 700px) {
             #tab-characters .c-pedigree-lens { border-radius: 12px; }
             #tab-characters .c-pedigree-lens-frame { height: 690px; }
-        }
-        /* ===== SITE FOOTER ===== */
-        .home-layout + .site-footer { margin-top: 0; }
-        .site-footer {
-            margin-top: 40px; padding: 40px 20px 28px; border-top: 1px solid rgba(255, 255, 255, 0.14);
-            background-color: #3157ed;
-            background-image: url('/uma_tools/img/bg_blue.webp');
-            background-size: 100vw auto;
-            background-repeat: repeat-y;
-            background-position: left top;
-            color: rgba(255, 255, 255, 0.85);
-        }
-        .footer-inner { max-width: 1200px; margin: 0 auto; }
-        .footer-brand { display: flex; flex-direction: column; gap: 4px; margin-bottom: 26px; }
-        .footer-brand-name {
-            font-size: 1.18em; font-weight: 800; letter-spacing: 0.12em;
-            line-height: 1.15; color: #fff;
-        }
-        .footer-brand-sub {
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em;
-            color: rgba(255, 255, 255, 0.72);
-        }
-        .footer-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 28px 20px; }
-        .footer-col { display: flex; flex-direction: column; gap: 9px; }
-        .footer-col-title {
-            font-size: 0.82em; font-weight: 700; color: rgba(255, 255, 255, 0.95);
-            letter-spacing: 0.06em; margin-bottom: 4px;
-        }
-        .footer-link {
-            font-size: 0.86em; color: rgba(255, 255, 255, 0.65); text-decoration: none;
-            transition: color 0.15s;
-        }
-        .footer-link:hover { color: var(--brand); }
-        .footer-join-card {
-            display: flex; flex-direction: column; gap: 8px;
-            padding: 20px 22px 18px; text-decoration: none;
-            background: rgba(255, 255, 255, 0.98); color: var(--navy);
-            border: 1px solid rgba(255, 255, 255, 0.46); border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-            transition: background 0.15s, transform 0.15s;
-        }
-        .footer-join-card:hover { background: #fff; transform: translateY(-2px); }
-        .footer-join-card .jc-tag {
-            font-family: Consolas, 'Courier New', monospace; letter-spacing: 0.14em;
-            color: #6f7480; text-transform: uppercase; font-size: 11px;
-        }
-        .footer-join-card .jc-title {
-            font-size: 40px; font-weight: 800; line-height: 1;
-            letter-spacing: -0.015em; color: var(--navy); margin: 2px 0;
-        }
-        .footer-join-card .jc-sub { color: #5f6570; font-size: 12px; line-height: 1.6; }
-        .footer-join-card .jc-cta {
-            font-family: Consolas, 'Courier New', monospace; letter-spacing: 0.08em;
-            text-transform: uppercase; color: #12b7f5;
-            margin-top: 12px; font-size: 11px;
-        }
-        .footer-note {
-            margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.14);
-            font-size: 0.8em; line-height: 1.9; color: rgba(255, 255, 255, 0.6);
-        }
-        .footer-copy {
-            margin-top: 14px; font-size: 0.76em; color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 0.02em;
-        }
-        .footer-note {
-            margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.12);
-            font-size: 0.8em; line-height: 1.9; color: rgba(255, 255, 255, 0.55);
-        }
-        .footer-copy {
-            margin-top: 14px; font-size: 0.76em; color: rgba(255, 255, 255, 0.45);
-            letter-spacing: 0.02em;
-        }
-        @media (max-width: 700px) {
-            .footer-cols { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 480px) {
-            .footer-cols { grid-template-columns: 1fr; }
         }
 
         /* ===== CANONICAL ARCHIVE UI ===== */

@@ -61,7 +61,7 @@
       if (url.searchParams.get('format') === 'web_short') url.searchParams.set('format', 'short');
     }
     const oneOf = (key, values) => {
-      if (url.searchParams.has(key) && !values.includes(url.searchParams.get(key))) url.searchParams.delete(key);
+      if (url.searchParams.has(key) && (url.searchParams.get(key) === 'all' || !values.includes(url.searchParams.get(key)))) url.searchParams.delete(key);
     };
     if (/^\/zh-Hans\/events\/?$/.test(url.pathname)) {
       oneOf('kind', ['concert', 'onsite', 'official_program', 'all']);
@@ -73,7 +73,7 @@
     }
     if (/^\/zh-Hans\/music\/albums\/?$/.test(url.pathname)) {
       oneOf('sort', ['name', 'newest']);
-      if (url.searchParams.get('type') === '数字单曲') url.searchParams.set('type', '单曲');
+      if (['数字单曲','デジタルシングル','Digital Single'].includes(url.searchParams.get('type'))) url.searchParams.set('type', '单曲');
       oneOf('type', ['专辑','单曲','原声带','精选辑','其他','all']);
       oneOf('work', [...albumWorks.map(work => work.key),'all']);
       if (url.searchParams.has('year') && !/^(\d{4}|unknown|all)$/.test(url.searchParams.get('year'))) url.searchParams.delete('year');

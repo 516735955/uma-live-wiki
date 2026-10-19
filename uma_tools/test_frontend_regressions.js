@@ -116,6 +116,8 @@ async function main() {
     navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)};
   await context.createAlbums(errorPorts).openAlbum({id:'retry'});
   assert.strictEqual(typeof errorPorts.navigationRetry.value,'function','a failed detail offers a real retry');
+  const labelSource=context.createCreators({...context.Vue});
+  assert.strictEqual(labelSource.creatorRoleLabel('lyricist',[{roles:[{role:'lyricist',label:'作词'}]}]),'作词','the collaborator panel uses labels from its loaded creator response');
   await app.applyCurrentRoute();
   window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
@@ -301,6 +303,8 @@ async function main() {
   const movieRttt = app.animeFiltered.value.find(work=>work.id==='anime-rttt');
   assert(app.animeWorkHref(movieRttt).includes('edition=film'));
   assert(app.animeWorkYears(movieRttt).includes('2024'),'theatrical filtering uses its release year');
+  assert(app.animeWatchAccess({access:'membership',regions:['JP']}).includes('需会员'));
+  assert(app.animeWatchAccess({status:'region_limited',regions:['TW','HK','MO']}).includes('台湾、香港、澳门'));
   location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeFiltered.value.length, 1, 'network format remains available without a year filter');

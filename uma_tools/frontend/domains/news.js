@@ -144,7 +144,7 @@ export function createNews(deps) {
     newsPage.value = n;
     deps.pushUrl();
     const el = document.getElementById("news-list-top");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goNewsPage(dir) {

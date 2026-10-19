@@ -90,7 +90,7 @@ export function createCreators(deps) {
     deps.pushUrl();
     loadCreatorCatalog();
     const top = document.getElementById("creatorArchiveTop");
-    if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (top) top.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goCreatorPage(delta) {
@@ -160,8 +160,9 @@ export function createCreators(deps) {
       });
   }
 
-  function creatorRoleLabel(role) {
+  function creatorRoleLabel(role, related = []) {
     const roles = [...(creatorDetail.value?.roles || []),
+      ...related.flatMap(creator => creator?.roles || []),
       ...creatorCatalog.value.creators.flatMap(creator => creator.roles || [])];
     return roles.find(entry => entry.role === role)?.label || role || '';
   }

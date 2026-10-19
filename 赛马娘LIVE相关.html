@@ -47,11 +47,12 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 <link rel="stylesheet" href="/uma_tools/frontend/styles/information.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/archive-components.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/entity-components.css">
-<link rel="stylesheet" href="/uma_tools/frontend/styles/entity-responsive.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/shell.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/controls.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/relations.css">
+<link rel="stylesheet" href="/uma_tools/frontend/styles/entity-responsive.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/audio-player.css">
+<link rel="stylesheet" href="/uma_tools/frontend/styles/footer.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/shell-responsive.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/small-screen.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/horses.css">
@@ -146,7 +147,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         <nav v-if="breadcrumbItems.length" class="route-breadcrumb" aria-label="面包屑">
             <template v-for="(item,index) in breadcrumbItems" :key="index">
                 <span v-if="index" aria-hidden="true">›</span>
-                <button v-if="item.path" type="button" @click="navNavigate(item.path)">{{ item.label }}</button>
+                <a v-if="item.path" :href="item.path" @click="internalLink($event, () => navNavigate(item.path))">{{ item.label }}</a>
                 <em v-else>{{ item.label }}</em>
             </template>
         </nav>
