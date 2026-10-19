@@ -1,4 +1,4 @@
-export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsPaged","eventsFiltered","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","eventDateLabel","eventSummary","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents"];
+export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsPaged","eventsFiltered","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","eventDateLabel","eventSummary","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
 export const template = `
             <div v-if="eventsError" class="ui-state ui-state-error">{{ eventsError }} <button type="button" @click="loadEvents()">重试</button></div>
 
@@ -20,7 +20,7 @@ export const template = `
                     <template v-if="eventsLoading && !eventsAll.length">
                         <div v-for="i in 6" :key="'event-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
                     </template>
-                    <button v-for="(event,i) in eventsPaged" :key="event.id" class="event-catalog-row" type="button" @click="openEvent(event)">
+                    <a v-for="(event,i) in eventsPaged" :key="event.id" class="event-catalog-row" :href="routes.events(event.id)" @click="internalLink($event, () => openEvent(event))">
                         <span class="event-catalog-cover">
                             <img v-media-src="event.image" :alt="event.title" :loading="i===0?'eager':'lazy'" :fetchpriority="i===0?'high':'auto'" decoding="async" @error="onEventImageError($event,event)">
                         </span>
@@ -36,7 +36,7 @@ export const template = `
                             <b v-if="eventSongCount(event)">{{ eventSongCount(event) }} 首曲目</b>
                         </span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-                    </button>
+                    </a>
                     <div v-if="!eventsLoading && !eventsFiltered.length" class="ui-state">没有符合条件的活动</div>
                 </div>
                 <div v-if="eventsFiltered.length" class="ui-pager">
@@ -85,10 +85,10 @@ export const template = `
                             <thead><tr><th>#</th><th>曲名</th><th>出演者</th><th>出处</th><th>试听</th></tr></thead>
                             <tbody><tr v-for="(performance,index) in selectedEventSession.performances" :key="performance.version_id || performance.song">
                                 <td class="setlist-no">{{ index + 1 }}</td>
-                                <td class="setlist-song"><button class="text-link setlist-song-link" type="button" @click="openSong(performance.song_id)">{{ performance.song }}</button></td>
-                                <td class="setlist-perf"><button v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" type="button" :style="{'--chip-color':characterColor(characterId)}" @click="openCharacter(characterId)">
+                                <td class="setlist-song"><a class="text-link setlist-song-link" :href="routes.songs(performance.song_id)" @click="internalLink($event, () => openSong(performance.song_id))">{{ performance.song }}</a></td>
+                                <td class="setlist-perf"><a v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" :href="routes.characters(characterId)" @click="internalLink($event, () => openCharacter(characterId))">
                                     <img v-if="characterPerformanceImage(characterId)" v-media-src="characterPerformanceImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span>
-                                </button><span v-for="guest in (performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></td>
+                                </a><span v-for="guest in (performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></td>
                                 <td class="setlist-src">{{ performance.source || '现场演唱' }}</td>
                                 <td class="setlist-actions"><entity-actions v-if="playableSongRelease(relationSong(performance))" size="compact" :playing="isActive(playableSongRelease(relationSong(performance)).release.audio_url)" @play="playEventTrack(performance)" @add="addEventTrack(performance)"></entity-actions><span v-else>—</span></td>
                             </tr></tbody>
@@ -99,15 +99,15 @@ export const template = `
                     <section class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">出演阵容</span><span>{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-chip-list">
-                            <button v-for="cast in eventVoiceCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" type="button" :style="{'--chip-color':characterColor(cast.character_id)}" @click="openVoice(cast.voice_actor_id)">
+                            <a v-for="cast in eventVoiceCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(cast.character_id)}" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))">
                                 <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
-                            </button>
+                            </a>
                         </div>
                         <div v-else class="ui-state compact">暂无出演阵容</div>
                     </section>
                     <section v-if="eventUnscopedCast.length" class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">场次未明确</span></div>
-                        <div class="performer-chip-list"><button v-for="cast in eventUnscopedCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" type="button" @click="openVoice(cast.voice_actor_id)"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span></button></div>
+                        <div class="performer-chip-list"><a v-for="cast in eventUnscopedCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span></a></div>
                     </section>
 
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>

@@ -183,6 +183,8 @@ export function createHorses(deps) {
     id = id || decodeURIComponent(deps.routeSegments()[2] || "");
     if (!id) return loadHorsesListData();
     horsesListError.value = "";
+    const sourcePath = deps.currentUrlPath();
+    const navigation = deps.navigationRevision.value;
     horsesDataPromise = deps.api.request("/api/catalog/horse" + deps.api.query({ id }))
       .then(function (data) {
         if (!data?.horse) throw new Error("empty horse data");
@@ -194,7 +196,8 @@ export function createHorses(deps) {
           window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: null };
           return;
         }
-        horsesListError.value = "原型马资料暂时无法载入，请重试。";
+        if (sourcePath === deps.currentUrlPath() && navigation === deps.navigationRevision.value)
+          horsesListError.value = "原型马资料暂时无法载入，请重试。";
         throw error;
       });
     return horsesDataPromise;
@@ -331,7 +334,7 @@ export function createHorses(deps) {
   });
 
   function horseGradeFor(race, date, track) {
-    if (!window.HORSES_DETAIL || !track || !/^\\d{4}[.-]\\d{2}[.-]\\d{2}$/.test(String(date || ""))) return "";
+    if (!window.HORSES_DETAIL || !track || !/^\d{4}[.-]\d{2}[.-]\d{2}$/.test(String(date || ""))) return "";
     const grades = new Set();
     Object.values(window.HORSES_DETAIL).forEach(function (horse) {
       [...(horse?.races || []), ...(horse?.major || [])].forEach(function (row) {
@@ -601,9 +604,7 @@ export function createHorses(deps) {
   function onHorseImageError(event) {
     const image = event && event.currentTarget;
     if (!image) return;
-    const replaced = "/uma_tools/img/album-placeholder.svg";
-    if (!String(image.src || "").endsWith("album-placeholder.svg"))
-      image.src = replaced;
+    window.UmaMedia.fallback(image, '/uma_tools/img/album-placeholder.svg');
   }
 
   let horseSearchTimer;

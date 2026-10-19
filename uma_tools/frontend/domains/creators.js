@@ -90,7 +90,7 @@ export function createCreators(deps) {
     deps.pushUrl();
     loadCreatorCatalog();
     const top = document.getElementById("creatorArchiveTop");
-    if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (top) top.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goCreatorPage(delta) {
@@ -147,34 +147,28 @@ export function createCreators(deps) {
         deps.dbView.value = "creators";
         if (!isCurrent.fromRoute) deps.resetPageScroll();
         deps.pushUrl(isCurrent.fromRoute);
-        return deps.loadAnimeCatalogOptional("creator", found.id);
+        deps.loadAnimeCatalogOptional("creator", found.id);
       })
       .catch(function (error) {
         if (isCurrent() && error.message === "HTTP 404") {
           deps.notFound.value = true;
           deps.activeTab.value = "not-found";
-        } else if (isCurrent())
+        } else if (isCurrent()) {
           deps.navigationError.value = "创作者资料暂时无法载入，请重试。";
+          deps.navigationRetry.value = () => openCreator(creatorOrId, section);
+        }
       });
   }
 
-  function creatorRoleLabel(role) {
-    return (
-      {
-        lyricist: "作词",
-        composer: "作曲",
-        arranger: "编曲",
-        remixer: "混音改编",
-        producer: "制作",
-        orchestrator: "配器",
-      }[role] ||
-      role ||
-      ""
-    );
+  function creatorRoleLabel(role, related = []) {
+    const roles = [...(creatorDetail.value?.roles || []),
+      ...related.flatMap(creator => creator?.roles || []),
+      ...creatorCatalog.value.creators.flatMap(creator => creator.roles || [])];
+    return roles.find(entry => entry.role === role)?.label || role || '';
   }
 
   function creatorWorkRoleLabels(roles) {
-    return (roles || []).map(creatorRoleLabel).join(" · ");
+    return (roles || []).map(role => creatorRoleLabel(role)).join(" · ");
   }
 
   function creatorPortrait(creator) {

@@ -309,6 +309,8 @@ export function createViewModel(domains, routes) {
     animeFiltered: domains.anime.animeFiltered,
     animeWorkHref: domains.anime.animeWorkHref,
     animeArtwork: domains.anime.animeArtwork,
+    animeCardArtwork: domains.anime.animeCardArtwork,
+    animeWatchAccess: domains.anime.animeWatchAccess,
     animeHeroArtwork: domains.anime.animeHeroArtwork,
     animeHeroOriginal: domains.anime.animeHeroOriginal,
     animeMatchedUnits: domains.anime.animeMatchedUnits,

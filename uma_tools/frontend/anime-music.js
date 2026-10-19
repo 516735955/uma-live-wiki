@@ -7,6 +7,7 @@ export function createAnimeMusic(deps) {
     insert: "插入曲",
     winning_live: "胜者舞台",
     bgm: "背景配乐",
+    fanfare: "比赛号角",
     other: "其他音乐",
   };
   function animeMusicUsageKind(kind) {
@@ -43,12 +44,15 @@ export function createAnimeMusic(deps) {
     units.forEach((unit) =>
       (unit.music_cues || []).forEach((cue) => {
         const key = [
+          cue.song_id || "",
+          cue.version_id || "",
+          cue.release_id || "",
           cue.title,
           cue.usage_type,
           JSON.stringify(cue.credits),
           JSON.stringify(cue.institutions),
         ].join(":");
-        if (!cues.has(key)) cues.set(key, { ...cue, units: [] });
+        if (!cues.has(key)) cues.set(key, { ...cue, key, units: [] });
         if (!cues.get(key).units.some((item) => item.id === unit.id))
           cues.get(key).units.push(unit);
       }),
@@ -56,18 +60,12 @@ export function createAnimeMusic(deps) {
     return Array.from(cues.values());
   });
   const animeMusicCueGroups = deps.computed(() =>
-    [
-      { kind: "fanfare", label: "比赛号角" },
-      { kind: "op", label: "片头曲" },
-      { kind: "ed", label: "片尾曲" },
-      { kind: "theme", label: "主题曲" },
-      { kind: "insert", label: "插入曲" },
-      { kind: "bgm", label: "背景配乐" },
-    ]
+    Object.entries(animeMusicUsageLabels).filter(([kind]) => kind !== 'album')
+      .map(([kind, label]) => ({kind, label}))
       .map((group) => ({
         ...group,
         rows: animeMusicCues.value.filter(
-          (cue) => !cue.song_id && cue.usage_type === group.kind,
+          (cue) => !cue.song_id && animeMusicUsageKind(cue.usage_type) === group.kind,
         ),
       }))
       .filter((group) => group.rows.length),

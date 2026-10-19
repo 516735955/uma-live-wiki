@@ -59,7 +59,7 @@ export const template = `
                                 <span v-if="horseDetail.death" class="horse-badge horse-badge-death">卒 {{ horseDetail.death }}</span>
                             </p>
                             <div v-if="horseChars(horseDetail).length" class="hero-chip-row">
-                                <button v-for="character in horseChars(horseDetail)" :key="character.id" type="button" class="performer-chip character-chip" :style="{'--chip-color':characterColor(character.id)}" @click="openCharDetail(character.id)"><img v-if="characterImage(character.id)" v-media-src="characterImage(character.id)" alt=""><span>{{ character.zh }}</span></button>
+                                <a v-for="character in horseChars(horseDetail)" :key="character.id" class="performer-chip character-chip" :style="{'--chip-color':characterColor(character.id)}" :href="routes.characters(character.id)" @click="internalLink($event, () => openCharDetail(character.id))"><img v-if="characterImage(character.id)" v-media-src="characterImage(character.id)" alt=""><span>{{ character.zh }}</span></a>
                             </div>
                         </div>
                     </div>

@@ -26,6 +26,30 @@ def sheet(songs=None):
 
 
 class SheetPublicationTests(unittest.TestCase):
+    def test_published_generic_session_uses_the_part_already_in_its_title(self):
+        for title in ('CygamesFes2018 SPECIAL LIVE DAY1', 'ぱかラジッ！公開録音 2部',
+                      'シンデレラグレイ リリースイベント【1部】'):
+            with self.subTest(title=title):
+                block = {'title': title + '@Hall', 'date': '2026-10-14',
+                         'songs': [{'name': 'Song ※備考', 'no': '1', 'performers': ['Machico']}]}
+                event = {'title': title, 'date': block['date'],
+                         'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}
+                published = [{'id': 'existing', 'title': title, 'date': block['date'],
+                              'sessions': [{'label': '本公演', 'date': block['date']}]}]
+                source = catalog('<table><!--注释--><tr><td>东海帝王 ※备注</td></tr></table>')
+                before = copy.deepcopy(source)
+                self.assertEqual(attach_discovered_sessions([block], source, [event], published), [])
+                self.assertEqual(source, before, 'existing roles, notes and comments remain byte-for-byte intact')
+
+    def test_explicit_session_label_does_not_hide_another_part_on_the_same_date(self):
+        block = {'title': 'Example 2部', 'date': '2026-10-14',
+                 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
+        event = {'title': block['title'], 'date': block['date'],
+                 'link': 'https://www.eventernote.com/events/124', 'actors': [{'name': 'Machico'}]}
+        published = [{'id': 'first', 'title': block['title'], 'date': block['date'],
+                      'sessions': [{'label': '1部', 'date': block['date']}]}]
+        self.assertEqual(len(attach_discovered_sessions([block], {}, [event], published)), 1)
+
     def test_existing_canonical_event_is_not_registered_again_in_another_category(self):
         block = {'title': 'Uma 1st EVENT@Hall', 'date': '2026-10-14', 'songs': [{'name': 'Song', 'no': '1', 'performers': ['Machico']}]}
         event = {'title': block['title'], 'date': block['date'], 'link': 'https://www.eventernote.com/events/123', 'actors': [{'name': 'Machico'}]}

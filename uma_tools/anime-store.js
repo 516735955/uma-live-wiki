@@ -26,7 +26,7 @@ function unitSummary(unit) {
 
 function workSummary(work) {
   return select(work, ['id', 'title_zh', 'title_ja', 'aliases', 'format', 'series', 'status',
-    'start_date', 'end_date', 'cover', 'film_cover', 'unit_count', 'released_count']);
+    'start_date', 'end_date', 'dates', 'cover', 'film_cover', 'film_release_date', 'unit_count', 'released_count']);
 }
 
 class AnimeStore {
@@ -116,11 +116,16 @@ class AnimeStore {
       payload.relations = displayData(data.relations.filter(row => (row.target_type === type && row.target_id === entityId) ||
         (type === 'voice_actor' && row.voice_actor_id === entityId)));
       const unitIds = new Set(payload.relations.filter(row => row.source_type === 'anime_unit').map(row => row.source_id));
+      const creatorCues = new Map(type === 'creator' ? data.units.map(unit => [unit.id,
+        (unit.music_cues || []).filter(cue => (cue.credits || []).some(credit =>
+          (credit.creator_ids || []).includes(entityId)))]) : []);
+      for (const [unitId, cues] of creatorCues) if (cues.length) unitIds.add(unitId);
       const workIds = new Set(payload.staff.map(row => row.work_id));
       data.units.filter(row => unitIds.has(row.id)).forEach(row => workIds.add(row.work_id));
       payload.relations.filter(row => row.source_type === 'anime_work').forEach(row => workIds.add(row.source_id));
       payload.works = data.works.filter(row => workIds.has(row.id)).map(workSummary);
-      payload.units = data.units.filter(row => workIds.has(row.work_id)).map(unitSummary);
+      payload.units = data.units.filter(row => workIds.has(row.work_id)).map(unit => ({ ...unitSummary(unit),
+        ...(creatorCues.get(unit.id)?.length ? { music_cues: displayData(creatorCues.get(unit.id)) } : {}) }));
     } else if (scope === 'work') {
       const work = data.works.find(row => row.id === id);
       if (!work) return null;
@@ -148,7 +153,7 @@ class AnimeStore {
       throw new Error('Unknown anime scope');
     }
     if (this.responses.size >= 256) this.responses.delete(this.responses.keys().next().value);
-    if (scope !== 'entity' || payload.relations.length || payload.staff.length)
+    if (scope !== 'entity' || payload.relations.length || payload.staff.length || payload.units.some(unit => unit.music_cues?.length))
       this.responses.set(key, payload);
     return payload;
   }

@@ -87,15 +87,12 @@ export function createEvents(deps) {
     var addButton = event.target.closest("button[data-add-key]");
     if (addButton) {
       addEventTrackByKey(addButton.getAttribute("data-add-key"));
-      addButton.classList.add("entity-action-added");
-      addButton.setAttribute("aria-label", "已加入播放列表");
-      addButton.querySelector("path").setAttribute("d", "m5 12 4 4 10-10");
-      window.setTimeout(() => {
+      window.UmaUi.flashAdded(addButton, added => {
         if (!addButton.isConnected) return;
-        addButton.classList.remove("entity-action-added");
-        addButton.setAttribute("aria-label", "加入播放列表");
-        addButton.querySelector("path").setAttribute("d", "M12 5v14M5 12h14");
-      }, 900);
+        addButton.classList.toggle('entity-action-added', added);
+        addButton.setAttribute('aria-label', added ? '已加入播放列表' : '加入播放列表');
+        addButton.querySelector('path').setAttribute('d', added ? 'm5 12 4 4 10-10' : 'M12 5v14M5 12h14');
+      });
       return;
     }
     var songLink = event.target.closest("a[data-song-id]");
@@ -232,7 +229,7 @@ export function createEvents(deps) {
     deps.pushUrl();
     loadEvents();
     const el = document.getElementById("eventsRowsTop");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goEventsPage(dir) {
@@ -310,10 +307,7 @@ export function createEvents(deps) {
   });
 
   function eventSongCount(event) {
-    if (Number.isFinite(event && event.song_count)) return event.song_count;
-    return (event.sessions || []).reduce(function (total, session) {
-      return total + (session.songs || []).length;
-    }, 0);
+    return window.UmaCatalog.eventSongCount(event);
   }
 
   const eventMediaCards = deps.computed(function () {
@@ -321,12 +315,12 @@ export function createEvents(deps) {
     const seen = new Set();
     return ((event && event.media) || [])
       .map(function (item, index) {
-        const videoId = String(item.video_id || "");
+        const videoId = window.UmaCatalog.youtubeVideoId(item.url) || window.UmaCatalog.youtubeVideoId(item.video_id);
         const url = String(
           item.url ||
             (videoId ? "https://www.youtube.com/watch?v=" + videoId : ""),
         );
-        const key = videoId || url;
+        const key = videoId ? 'youtube:' + videoId : url;
         if (!key || seen.has(key)) return null;
         seen.add(key);
         let host = "";
@@ -511,7 +505,7 @@ export function createEvents(deps) {
       deps.activeTab.value = "live";
       if (!isCurrent.fromRoute) deps.resetPageScroll();
       deps.pushUrl(isCurrent.fromRoute);
-      return deps.loadAnimeCatalogOptional("event", found.id);
+      deps.loadAnimeCatalogOptional("event", found.id);
     };
     return Promise.all([
       deps.api.request("/api/catalog/event" + deps.api.query({ id: id })),
@@ -522,8 +516,10 @@ export function createEvents(deps) {
         return show(rows[0]);
       })
       .catch(function () {
-        if (isCurrent())
+        if (isCurrent()) {
           deps.navigationError.value = "活动资料暂时无法载入，请重试。";
+          deps.navigationRetry.value = () => openEvent(eventOrId, requestedSessionId);
+        }
       });
   }
 
@@ -533,9 +529,7 @@ export function createEvents(deps) {
 
   function onEventImageError(ev, event) {
     const image = ev && ev.target;
-    if (!image || image.getAttribute("data-fallback") === "1") return;
-    image.setAttribute("data-fallback", "1");
-    image.src = "/uma_tools/img/event-covers/onsite.svg";
+    if (image) window.UmaMedia.fallback(image, '/uma_tools/img/event-covers/onsite.svg');
   }
 
   function loadEvents(params) {

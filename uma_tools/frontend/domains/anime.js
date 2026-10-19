@@ -129,8 +129,8 @@ export function createAnime(deps) {
     const sourcePath = deps.currentUrlPath();
     const navigation = deps.navigationRevision.value;
     const ready =
-      target[0] === "work"
-        ? loadAnimeRelatedMedia(target[1], true)
+      ["work", "unit"].includes(target[0])
+        ? loadAnimeRelatedMedia(deps.routeSegments()[2], true)
         : loadAnimeCatalog(target[0], target[1], true);
     return ready
       .then(function () {
@@ -228,7 +228,22 @@ export function createAnime(deps) {
   }
 
   function animeWorkYears(work) {
-    return work && work.start_date ? [String(work.start_date).slice(0, 4)] : [];
+    const date = animeCardDate(work);
+    return date ? [String(date).slice(0, 4)] : [];
+  }
+
+  function animeCardFilm(work) {
+    return animeFormat.value === 'movie' && !!(work?.film_cover || work?.film_release_date);
+  }
+
+  function animeCardDate(work) {
+    if (!animeCardFilm(work)) return work?.start_date;
+    return work.film_release_date || (work.dates || []).filter(row => row.edition === 'film')
+      .map(row => row.date).filter(Boolean).sort()[0];
+  }
+
+  function animeCardArtwork(work) {
+    return animeArtwork(work, animeCardFilm(work));
   }
 
   function animeArtwork(work, film = false) {
@@ -304,7 +319,7 @@ export function createAnime(deps) {
     )
       return animeUnitHref(matched[0], "characters");
     return deps.routes.query(deps.routes.anime(work.id), {
-      edition: work.id === "anime-rttt" ? "web" : "",
+      edition: work.id === "anime-rttt" ? (animeCardFilm(work) ? "film" : "web") : "",
       section:
         matched.length && animeFormat.value !== "movie" ? "episodes" : "",
       episodes:
@@ -350,8 +365,8 @@ export function createAnime(deps) {
           String(b.title_zh || b.title_ja || ""),
           "zh",
         );
-      const aDate = String(a.start_date || "9999-99-99"),
-        bDate = String(b.start_date || "9999-99-99");
+      const aDate = String(animeCardDate(a) || "9999-99-99"),
+        bDate = String(animeCardDate(b) || "9999-99-99");
       return animeSort.value === "oldest"
         ? aDate.localeCompare(bDate)
         : bDate.localeCompare(aDate);
@@ -460,7 +475,7 @@ export function createAnime(deps) {
         const scope = resource.scope || {};
         if (!["official", "licensed"].includes(resource.authority))
           return false;
-        if (!["active", "region_limited"].includes(resource.status))
+        if (!["active", "region_limited", "membership"].includes(resource.status))
           return false;
         if (
           !["full_episode", "playlist", "series"].includes(
@@ -470,8 +485,9 @@ export function createAnime(deps) {
           return false;
         if (
           workId === "anime-rttt" &&
-          animeEdition.value === "film" &&
-          resource.edition !== "film"
+          (animeEdition.value === "film"
+            ? !animeRowEditions(resource).includes('film')
+            : !animeRowMatchesEdition(resource, 'web'))
         )
           return false;
         if (scope.type === "unit") return scope.id === unitId;
@@ -511,6 +527,16 @@ export function createAnime(deps) {
       return;
     event.preventDefault();
     deps.navigateTo(path);
+  }
+
+  function animeWatchAccess(resource) {
+    const regionNames = {CN:'中国大陆',TW:'台湾',HK:'香港',MO:'澳门',JP:'日本'};
+    const regions = (resource.regions || []).filter(region => region !== 'global');
+    const regionLabel = resource.region_label || (regions.length
+      ? '地区：' + regions.map(region => regionNames[region] || region).join('、')
+      : resource.status === 'region_limited' ? '有地区限制' : '');
+    return [resource.access === 'membership' ? '需会员' : resource.status === 'membership' ? '需登录或会员' : '',
+      regionLabel].filter(Boolean).join(' · ');
   }
 
   function setAnimeSection(section) {
@@ -797,6 +823,12 @@ export function createAnime(deps) {
   }
 
   function start() {
+    window.addEventListener?.('uma-catalog-change', () => {
+      Object.keys(animeRelatedEvents).forEach(key => delete animeRelatedEvents[key]);
+      Object.keys(animeRelatedAlbums).forEach(key => delete animeRelatedAlbums[key]);
+      if (animeDetail.value && ['music','events'].includes(animeSection.value))
+        loadAnimeRelatedMedia(animeDetail.value.id).catch(() => {});
+    });
     deps.watch([animeQuery, animeFormat, animeStatus, animeSort], () => {
       if (
         deps.routeReady.value &&
@@ -938,6 +970,8 @@ export function createAnime(deps) {
     animeUsefulRelations,
     animeVisibleStillGroups,
     animeWorkFormats,
+    animeCardArtwork,
+    animeWatchAccess,
     animeWorkHref,
     animeWorkUnits,
     animeWorkYears,

@@ -156,6 +156,7 @@ export function createCharacters(deps) {
       charSection.value = "profile";
       if (!isCurrent.fromRoute) deps.resetPageScroll();
       deps.pushUrl(isCurrent.fromRoute);
+      deps.loadAnimeCatalogOptional('character', found.id);
       Vue.nextTick(function () {
         if (typeof window.renderCharacterDetail === "function")
           window.renderCharacterDetail(null);
@@ -165,7 +166,6 @@ export function createCharacters(deps) {
       loadCharacterDetailData(),
       deps.loadVoiceData(),
       deps.loadPedigreeMeta(),
-      deps.loadAnimeCatalogOptional(),
     ])
       .then(loadCharacterUi)
       .then(show, function () {
@@ -267,6 +267,12 @@ export function createCharacters(deps) {
     );
   }
   function start() {
+    window.addEventListener?.('uma-catalog-change', () => {
+      Object.keys(appearanceSongs).forEach(key => delete appearanceSongs[key]);
+      appearanceIndex.value = {voice_actors:{},characters:{}};
+      if (charDetail.value && ['songs','events'].includes(charSection.value))
+        loadRelationshipData('character', charDetail.value.id);
+    });
     deps.watch(
       function () {
         return charDetail.value && charDetail.value.id;

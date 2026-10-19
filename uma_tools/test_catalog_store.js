@@ -1,6 +1,14 @@
 'use strict';
 
 const assert = require('assert');
+const model = require('./catalog-model');
+const versionChoice = {original_version_id:'original',versions:[
+  {id:'other',releases:[{audio_url:'other.mp3'}]}, {id:'original',releases:[{audio_url:'original.mp3'}]}]};
+assert.strictEqual(model.playableRecording(versionChoice).release.audio_url,'original.mp3');
+assert.strictEqual(model.playableRecording(versionChoice,'missing'),null,'an explicit missing version never falls back to another recording');
+assert.strictEqual(model.eventSongCount({sessions:[{performances:[{song:'Song'}]}]}),1);
+assert.strictEqual(model.youtubeVideoId('https://youtu.be/dQw4w9WgXcQ?t=3'),model.youtubeVideoId('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
+assert.strictEqual(model.youtubeVideoId('https://youtube.com.example.org/watch?v=dQw4w9WgXcQ'),'');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');

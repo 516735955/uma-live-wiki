@@ -19,7 +19,7 @@ body.subpage-bg {
     background-color: #f7f8fc;
     background-image: url('/uma_tools/img/bg_texture_white.webp');
 }
-.container { position: relative; max-width: 1280px; padding: 26px 24px 38px; }
+.container { position: relative; max-width: 1280px; margin: 0 auto; padding: 26px 24px 38px; }
 
 /* The same disclosure navigation is used on home and inner pages. */
 .site-nav { display: flex; }
@@ -107,6 +107,7 @@ body.subpage-bg {
     z-index: 1001;
     display: flex;
     min-height: 56px;
+    color: #fff;
     align-items: stretch;
     overflow: visible;
     background: var(--ui-cobalt) url('/uma_tools/img/bg_blue.webp') center / cover;
@@ -119,6 +120,8 @@ body.subpage-bg {
     min-width: 230px;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
     padding: 0 18px;
     border: 0;
     border-right: 1px solid rgba(255,255,255,.32);
@@ -132,7 +135,7 @@ body.subpage-bg {
     cursor: pointer;
     transition: background 180ms ease;
 }
-.sub-brand > span { transform: skewX(30deg); }
+.sub-brand > span { display: inline-block; transform: skewX(30deg); }
 .sub-brand:hover { background: rgba(255,255,255,.15); }
 .site-nav-sub { flex: 1; align-items: stretch; justify-content: flex-end; }
 .site-nav-sub .site-nav-item {
@@ -178,10 +181,10 @@ body.subpage-bg {
     font-weight: 700;
     white-space: nowrap;
 }
-.route-breadcrumb button,
+.route-breadcrumb a,
 .route-breadcrumb em { overflow: hidden; border: 0; background: transparent; color: inherit; font: inherit; font-style: normal; text-overflow: ellipsis; }
-.route-breadcrumb button { cursor: pointer; transition: color 160ms ease; }
-.route-breadcrumb button:hover { color: var(--ui-orange-deep); }
+.route-breadcrumb a { text-decoration: none; cursor: pointer; transition: color 160ms ease; }
+.route-breadcrumb a:hover { color: var(--ui-orange-deep); }
 .route-breadcrumb em:last-child { color: var(--ui-navy); }
 .context-back {
     position: fixed;

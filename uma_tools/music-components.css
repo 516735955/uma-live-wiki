@@ -502,10 +502,10 @@
 .collaboration-timeline li { position: relative; min-height: 78px; padding: 0 0 16px; }
 .collaboration-timeline li::before { content: ''; position: absolute; left: -27px; top: 14px; width: 10px; height: 10px; border: 3px solid #fff; border-radius: 50%; background: var(--ui-orange); box-shadow: 0 0 0 2px var(--ui-orange); }
 .collaboration-timeline time { position: absolute; top: 10px; left: -104px; width: 68px; color: #68728a; font-size: .74rem; font-weight: 800; text-align: right; }
-.collaboration-timeline button { display: flex; width: 100%; align-items: center; gap: 12px; padding: 8px; border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
-.collaboration-timeline button:hover { background: #f4f6fc; }
+.collaboration-timeline a { display: flex; width: 100%; align-items: center; gap: 12px; padding: 8px; border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: none; cursor: pointer; }
+.collaboration-timeline a:hover { background: #f4f6fc; }
 .collaboration-timeline img { width: 58px; height: 58px; border-radius: 5px; object-fit: cover; }
-.collaboration-timeline button > span { display: grid; min-width: 0; gap: 3px; }
+.collaboration-timeline a > span { display: grid; min-width: 0; gap: 3px; }
 .collaboration-timeline b { color: var(--ui-navy); font-size: .88rem; }
 .collaboration-timeline small { overflow: hidden; color: #6a748c; font-size: .76rem; text-overflow: ellipsis; white-space: nowrap; }
 .collaboration-timeline em { display: flex; flex-wrap: wrap; gap: 5px; font-style: normal; }

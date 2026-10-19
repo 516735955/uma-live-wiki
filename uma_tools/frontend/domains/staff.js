@@ -37,7 +37,7 @@ export function createStaff(deps) {
           entry.role,
           entry.group || "",
           entry.person_id || entry.organization || entry.name,
-          (entry.institutions || []).join("|"),
+          animeStaffInstitutionKey(entry),
         ].join(":");
         if (seen.has(key)) return false;
         seen.add(key);
@@ -108,15 +108,14 @@ export function createStaff(deps) {
         entry.organization,
         ...(entry.institutions || []),
       ].some((value) =>
-        String(value || "")
-          .toLowerCase()
+        window.UmaUi.searchText(value)
           .includes(query),
       )
     );
   }
 
   const animeStaffGroups = deps.computed(() => {
-    const q = animeStaffQuery.value.trim().toLowerCase(),
+    const q = window.UmaUi.searchText(animeStaffQuery.value),
       groups = [];
     animeCurrentStaff.value.forEach((entry) => {
       const displayEntry = animeStaffDisplayEntry(entry);
@@ -162,7 +161,7 @@ export function createStaff(deps) {
     )
       return [];
     const rows = [],
-      q = animeStaffQuery.value.trim().toLowerCase();
+      q = window.UmaUi.searchText(animeStaffQuery.value);
     animeDisplayStaff.value
       .filter(
         (entry) =>
@@ -175,7 +174,7 @@ export function createStaff(deps) {
           entry.person_id || entry.organization,
           entry.group || "",
           entry.role,
-          ...(entry.institutions || []),
+          animeStaffInstitutionKey(entry),
         ].join(":");
         let row = rows.find((item) => item.key === key);
         if (!row) {
@@ -242,7 +241,7 @@ export function createStaff(deps) {
   }
 
   const staffFiltered = deps.computed(() => {
-    const q = staffQuery.value.trim().toLowerCase();
+    const q = window.UmaUi.searchText(staffQuery.value);
     return (deps.animeCatalog.value.people || [])
       .filter(
         (person) =>
@@ -252,8 +251,7 @@ export function createStaff(deps) {
             ...(person.aliases || []),
             ...(person.roles || []),
           ].some((value) =>
-            String(value || "")
-              .toLowerCase()
+            window.UmaUi.searchText(value)
               .includes(q),
           ),
       )
@@ -268,19 +266,17 @@ export function createStaff(deps) {
     const roles = (Array.isArray(person.roles) ? person.roles : [])
       .slice()
       .sort(window.UmaAnimeStaff.compareRoles);
-    const q = staffQuery.value.trim().toLowerCase();
+    const q = window.UmaUi.searchText(staffQuery.value);
     if (!q) return roles.slice(0, 2);
     return roles
       .filter((role) =>
-        String(role || "")
-          .toLowerCase()
+        window.UmaUi.searchText(role)
           .includes(q),
       )
       .concat(
         roles.filter(
           (role) =>
-            !String(role || "")
-              .toLowerCase()
+            !window.UmaUi.searchText(role)
               .includes(q),
         ),
       )
@@ -308,7 +304,7 @@ export function createStaff(deps) {
     staffPage.value = page;
     deps.pushUrl();
     const top = document.getElementById("staffArchiveTop");
-    if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (top) top.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   const creatorAnimeStaff = deps.computed(() => {

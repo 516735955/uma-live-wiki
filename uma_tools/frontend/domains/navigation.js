@@ -456,7 +456,7 @@ export function createNavigation(deps) {
   }
 
   function backToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: window.UmaUi.scrollBehavior() });
   }
 
   function navNavigate(path) {
@@ -673,7 +673,7 @@ export function createNavigation(deps) {
     deps.loadAlbums();
     deps.pushUrl();
     const el = document.querySelector("#tab-db-albums .album-database-grid");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: window.UmaUi.scrollBehavior(), block: "start" });
   }
 
   function goRelPage(dir) {

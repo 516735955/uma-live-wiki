@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const routes = require('./route-utils');
+const catalogModel = require('./catalog-model');
 const crypto = require('crypto');
 const businessDate = require('./business-date');
 
@@ -97,32 +99,25 @@ function releaseYear(value) {
 }
 
 function firstPlayableRelease(song) {
-  for (const version of (song.versions || [])) {
-    for (const release of (version.releases || [])) {
-      if (release.audio_url) {
-        return {
-          version_id: version.id,
-          version_title: version.title,
-          audio_url: release.audio_url,
-          artist: release.artist || '',
-          cover: release.cover || song.cover || '',
-          album_id: release.album_id || '',
-          album_name: release.album_name || '',
-          voice_actor_ids: [...new Set((release.vocalists || []).map((vocalist) => vocalist.voice_actor_id).filter(Boolean))]
-        };
-      }
-    }
+  const row = catalogModel.playableRecording(song);
+  if (row) {
+    const {version, release} = row;
+    return {
+      version_id: version.id,
+      version_title: version.title,
+      audio_url: release.audio_url,
+      artist: release.artist || '',
+      cover: release.cover || song.cover || '',
+      album_id: release.album_id || '',
+      album_name: release.album_name || '',
+      voice_actor_ids: [...new Set((release.vocalists || []).map((vocalist) => vocalist.voice_actor_id).filter(Boolean))]
+    };
   }
   return null;
 }
 
 function eventSongCount(event) {
-  return (event.sessions || []).reduce((total, session) => {
-    const rows = (session.performances && session.performances.length)
-      ? session.performances
-      : (session.songs || []);
-    return total + rows.length;
-  }, 0);
+  return catalogModel.eventSongCount(event);
 }
 
 function eventSearchText(event, actors = new Map()) {
@@ -567,6 +562,9 @@ class CatalogStore {
 
   async events(params) {
     const store = await this.get();
+    params = new URL('http://catalog.invalid' + routes.resolve('/zh-Hans/events?' + params, {
+      eventSeries: (store.eventsDoc.series || []).map(row => row.id),
+    })).searchParams;
     const query = normalize(params.get('q'));
     const time = params.get('time') || 'all';
     const kind = params.get('kind') || 'all';
@@ -621,7 +619,7 @@ class CatalogStore {
       if (!song) return null;
       return Object.assign(songSummary(song, '', store.music), {
         versions: (song.versions || []).filter((version) => versionIds.has(version.id)).map((version) => ({
-          id: version.id, title: version.title, version_label: version.version_label,
+          id: version.id, title: version.title, version_label: version.version_label, instrumental: !!version.instrumental,
           releases: (version.releases || []).filter((release) => release.audio_url).slice(0, 1)
         }))
       });
@@ -692,6 +690,9 @@ class CatalogStore {
 
   async albums(params) {
     const store = await this.get();
+    params = new URL('http://catalog.invalid' + routes.resolve('/zh-Hans/music/albums?' + params, {
+      albumYears: [...new Set(store.albums.map(row => releaseYear(row.release)))],
+    })).searchParams;
     const query = normalize(params.get('q'));
     const work = params.get('work') || '';
     const type = params.get('type') ? albumType(params.get('type')) : '';
@@ -733,7 +734,7 @@ class CatalogStore {
       // A title is not an identity. Album and track position identify the release.
       const song = store.albumTracks.get(stableAlbumId(album) + ':' + (index + 1));
       return song ? { ...songSummary(song, '', store.music), versions: (song.versions || []).map(version => ({
-        id: version.id, title: version.title, version_label: version.version_label,
+        id: version.id, title: version.title, version_label: version.version_label, instrumental: !!version.instrumental,
         releases: (version.releases || []).filter(release => release.album_id === stableAlbumId(album))
       })).filter(version => version.releases.length) } : null;
     }).filter(Boolean);

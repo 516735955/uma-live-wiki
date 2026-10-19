@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from . import common as pipeline_common
 from . import text as pipeline_text
+from album_identity import stable_album_id
 
 
 def clean_song(raw: str) -> str:
@@ -185,20 +186,9 @@ def stable_version_id(song_id: str, title: str) -> str:
     return f"{song_id}-v-{digest}"
 
 
-def stable_album_id(album: dict[str, pipeline_common.Any]) -> str:
-    persisted = str(album.get("id") or "").strip()
-    if persisted:
-        return persisted
-    catalog = pipeline_common.re.sub(r"[^a-z0-9]+", "-", str(album.get("catalog") or "").lower()).strip("-")
-    if catalog:
-        return "album-" + catalog
-    title = str(album.get("name") or "")
-    return "album-" + pipeline_common.hashlib.sha1(fold_song_key(title).encode("utf-8")).hexdigest()[:12]
-
-
 def is_instrumental_track(title: str, artist: str) -> bool:
     value = pipeline_common.unicodedata.normalize("NFKC", f"{title} {artist}")
-    return bool(pipeline_common.re.search(r"(?:off[ -]?vocal|instrumental|inst\.?|纯音乐|伴奏)", value, pipeline_common.re.I))
+    return bool(pipeline_common.re.search(r"(?:off[ -]?vocal|instrumental|inst\.?|\bBGM\b|纯音乐|伴奏)", value, pipeline_common.re.I))
 
 
 def is_short_recording(title: str, label: str = "") -> bool:

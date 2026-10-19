@@ -28,6 +28,7 @@ async function main() {
     CHAR_INDEX: [{ id: 'mock', name: 'Mock' }], CHAR_DETAIL: {}, UmaCharacterUi: { init() {} },
     HORSES: [{ id: 'mock-horse', zh: 'Mock Horse' }],
     UmaPlayer: require('./player-controller'), UmaRoutes: require('./route-utils'),
+    UmaCatalog: require('./catalog-model'),
     UmaUi: {}, UmaCreatorNetwork: {}, UmaAnimeLoader: require('./anime-loader'), UmaAnimeStaff: require('./anime-staff')
   };
   const history = {
@@ -77,6 +78,7 @@ async function main() {
     }
   });
   vm.runInContext(source('vendor/vue.global.prod.js'), context);
+  vm.runInContext(source('ui-components.js'), context);
   context.document = {
     body: { classList: { toggle() {} } }, getElementById() { return null; }, querySelector() { return null; },
     createElement() { return {}; },
@@ -84,6 +86,39 @@ async function main() {
   };
   context.Vue.createApp = (options) => ({ component() {}, directive() {}, mount() { app = options.setup(); } });
   require('./test_frontend_loader').loadFrontend(context);
+  const animeMusic = context.createAnimeMusic({...context.Vue,
+    animeCurrentRelations:context.Vue.ref([]), animeContentUnit:context.Vue.ref(null),
+    animeWorkUnits:context.Vue.ref([{id:'u',music_cues:[
+      {title:'同名',usage_type:'op',song_id:'a'}, {title:'同名',usage_type:'op',song_id:'b'},
+      {title:'其他曲目',usage_type:'new-kind'}]}])});
+  assert.strictEqual(animeMusic.animeMusicCues.value.length,3,'same cue labels do not merge different song identities');
+  assert.strictEqual(animeMusic.animeMusicCueGroups.value.find(group=>group.kind==='other').rows.length,1,'unknown standalone cues stay visible');
+  const institutionStaff = context.createStaff({...context.Vue,
+    animeCatalog:context.Vue.ref({people:[],staff:[
+      {work_id:'w',unit_id:'u1',person_id:'p',roles:['作画'],institutions:['A','B']},
+      {work_id:'w',unit_id:'u2',person_id:'p',roles:['作画'],institutions:['B','A']}]}),
+    animeDetail:context.Vue.ref({id:'w'}),animeUnitDetail:context.Vue.ref(null),animeSingle:context.Vue.ref(false),
+    findAnimeUnit:id=>({id,number:id==='u1'?1:2})});
+  assert.deepStrictEqual(Array.from(institutionStaff.animeStaffAggregateGroups.value[0].rows[0].units,u=>u.id),['u1','u2'],'institution order never discards credited episodes');
+  const optionalWait = deferred();
+  let shownAlbum = false;
+  const fastAlbum = context.createAlbums({...context.Vue,beginEntityNavigation:()=>()=>true,
+    api:{query:()=>'',request:async()=>({album:{id:'fast',songs:[]}})},
+    loadVoiceData:async()=>{},loadCharacterIndexData:async()=>{},loadAnimeCatalogOptional:()=>optionalWait.promise,
+    clearEntityDetails(){},activeTab:context.Vue.ref(''),dbView:context.Vue.ref(''),resetPageScroll(){},
+    pushUrl(){shownAlbum=true;},mergeSong(){},notFound:context.Vue.ref(false),navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)});
+  await fastAlbum.openAlbum({id:'fast'});
+  assert(shownAlbum && fastAlbum.albumDetail.value,'an optional stalled relation never blocks the album body');
+  optionalWait.resolve(null);
+  // The retry callback is written to the shared routing port.
+  const errorPorts={...context.Vue,beginEntityNavigation:()=>()=>true,
+    api:{query:()=>'',request:async()=>{throw Error('HTTP 503');}},loadVoiceData:async()=>{},loadCharacterIndexData:async()=>{},
+    navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)};
+  await context.createAlbums(errorPorts).openAlbum({id:'retry'});
+  assert.strictEqual(typeof errorPorts.navigationRetry.value,'function','a failed detail offers a real retry');
+  const labelSource=context.createCreators({...context.Vue});
+  assert.strictEqual(labelSource.creatorRoleLabel('lyricist',[{roles:[{role:'lyricist',label:'作词'}]}]),'作词','the collaborator panel uses labels from its loaded creator response');
+  assert.strictEqual(labelSource.creatorWorkRoleLabels(['lyricist','composer']),'lyricist · composer','list indices are not passed as creator metadata');
   await app.applyCurrentRoute();
   window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
@@ -266,6 +301,11 @@ async function main() {
   location.href = 'http://localhost/zh-Hans/database/anime?format=movie&year=2023';
   await app.applyCurrentRoute();
   assert.deepStrictEqual(Array.from(app.animeFiltered.value, work => work.id).sort(), ['anime-movie-beginning-new-era', 'anime-rttt'], 'movie filtering includes confirmed theatrical editions and ignores retired year filters');
+  const movieRttt = app.animeFiltered.value.find(work=>work.id==='anime-rttt');
+  assert(app.animeWorkHref(movieRttt).includes('edition=film'));
+  assert(app.animeWorkYears(movieRttt).includes('2024'),'theatrical filtering uses its release year');
+  assert(app.animeWatchAccess({access:'membership',regions:['JP']}).includes('需会员'));
+  assert(app.animeWatchAccess({status:'region_limited',regions:['TW','HK','MO']}).includes('台湾、香港、澳门'));
   location.href = 'http://localhost/zh-Hans/database/anime?format=web&year=2024';
   await app.applyCurrentRoute();
   assert.strictEqual(app.animeFiltered.value.length, 1, 'network format remains available without a year filter');

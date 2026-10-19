@@ -19,10 +19,11 @@ export function createVoices(deps) {
 
   function loadVoiceData(id) {
     const key = id || "index";
-    if (voiceDataRequests.has(key)) return voiceDataRequests.get(key);
     voiceLoading.value = true;
     voiceError.value = "";
-    const promise = deps.api
+    const sourcePath = deps.currentUrlPath();
+    const navigation = deps.navigationRevision.value;
+    const promise = voiceDataRequests.get(key) || deps.api
       .request(
         "/api/catalog/voice-actors" +
           deps.api.query(id ? { id: id } : { scope: "index" }),
@@ -42,16 +43,16 @@ export function createVoices(deps) {
         voiceProfiles.value = Array.from(rows.values());
         window.dispatchEvent(new CustomEvent("uma-voice-data"));
       })
-      .catch(function () {
-        failedVoiceId = id || '';
-        voiceError.value = "声优资料暂时无法载入，请重试。";
-      })
       .finally(function () {
         voiceDataRequests.delete(key);
         voiceLoading.value = voiceDataRequests.size > 0;
       });
     voiceDataRequests.set(key, promise);
-    return promise;
+    return promise.catch(function () {
+      if (sourcePath !== deps.currentUrlPath() || navigation !== deps.navigationRevision.value) return;
+      failedVoiceId = id || '';
+      voiceError.value = "声优资料暂时无法载入，请重试。";
+    });
   }
 
   function setVoiceSection(section) {
@@ -223,6 +224,7 @@ export function createVoices(deps) {
       voiceSection.value = "profile";
       if (!isCurrent.fromRoute) deps.resetPageScroll();
       deps.pushUrl(isCurrent.fromRoute);
+      deps.loadAnimeCatalogOptional('voice_actor', found.id);
     };
     return Promise.all([
       loadVoiceData().then(() => {
@@ -286,6 +288,10 @@ export function createVoices(deps) {
     );
   }
   function start() {
+    window.addEventListener?.('uma-catalog-change', () => {
+      if (voiceDetail.value && ['songs','events'].includes(voiceSection.value))
+        deps.loadRelationshipData('voice_actor', voiceDetail.value.id);
+    });
     deps.watch(
       function () {
         return voiceDetail.value && voiceDetail.value.id;

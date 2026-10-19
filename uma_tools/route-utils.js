@@ -14,6 +14,12 @@
     voiceActor: ['profile', 'songs', 'anime', 'events']
   });
   const sectionAliases = Object.freeze({ appearances: 'events' });
+  const albumWorks = [
+    {key:'s1',label:'动画 Season 1'}, {key:'s2',label:'动画 Season 2'}, {key:'s3',label:'动画 Season 3'},
+    {key:'rttp',label:'ROAD TO THE TOP'}, {key:'movie',label:'新時代の扉'}, {key:'cinderella',label:'芦毛灰姑娘'},
+    {key:'yon',label:'赛马娘四格'}, {key:'yuru',label:'摇曳马娘'}, {key:'starting-gate',label:'STARTING GATE'},
+    {key:'winning-live',label:'WINNING LIVE'}, {key:'solo-vocal',label:'Solo Vocal Tracks'}, {key:'other',label:'其他作品／独立发行'},
+  ];
 
   function normalizeSection(section) {
     return sectionAliases[String(section || '').toLowerCase()] || section;
@@ -29,9 +35,11 @@
     return path;
   }
 
-  function resolve(path) {
+  function resolve(path, metadata = {}) {
     const input = String(path || '');
     const url = new URL(input, 'http://uma-live-wiki.invalid');
+    if (url.pathname.startsWith(prefix + '/') && url.pathname !== prefix + '/')
+      url.pathname = url.pathname.replace(/\/+$/, '');
     const segments = url.pathname.split('/');
     const entityIndex = segments[1] === language && segments[2] === 'database' &&
       (segments[3] === 'characters' || segments[3] === 'voice-actors') ? 3 : -1;
@@ -53,7 +61,7 @@
       if (url.searchParams.get('format') === 'web_short') url.searchParams.set('format', 'short');
     }
     const oneOf = (key, values) => {
-      if (url.searchParams.has(key) && !values.includes(url.searchParams.get(key))) url.searchParams.delete(key);
+      if (url.searchParams.has(key) && (url.searchParams.get(key) === 'all' || !values.includes(url.searchParams.get(key)))) url.searchParams.delete(key);
     };
     if (/^\/zh-Hans\/events\/?$/.test(url.pathname)) {
       oneOf('kind', ['concert', 'onsite', 'official_program', 'all']);
@@ -61,10 +69,15 @@
       oneOf('time', ['upcoming', 'past', 'announced', 'all']);
       if (url.searchParams.has('year') && !/^(20\d{2}|unknown|all)$/.test(url.searchParams.get('year'))) url.searchParams.delete('year');
       if (url.searchParams.get('series') === 'unclassified' && !['concert', 'onsite', 'official_program'].includes(url.searchParams.get('kind'))) url.searchParams.delete('series');
+      if (metadata.eventSeries) oneOf('series', [...metadata.eventSeries, 'unclassified', 'all']);
     }
     if (/^\/zh-Hans\/music\/albums\/?$/.test(url.pathname)) {
       oneOf('sort', ['name', 'newest']);
-      if (url.searchParams.get('type') === '数字单曲') url.searchParams.set('type', '单曲');
+      if (['数字单曲','デジタルシングル','Digital Single'].includes(url.searchParams.get('type'))) url.searchParams.set('type', '单曲');
+      oneOf('type', ['专辑','单曲','原声带','精选辑','其他','all']);
+      oneOf('work', [...albumWorks.map(work => work.key),'all']);
+      if (url.searchParams.has('year') && !/^(\d{4}|unknown|all)$/.test(url.searchParams.get('year'))) url.searchParams.delete('year');
+      if (metadata.albumYears) oneOf('year', [...metadata.albumYears, 'all']);
     }
     if (url.searchParams.has('page') && !/^[1-9]\d*$/.test(url.searchParams.get('page'))) url.searchParams.delete('page');
     const query = url.searchParams.toString();
@@ -84,6 +97,7 @@
     language: language,
     prefix: prefix,
     sections: sections,
+    albumWorks: albumWorks,
     normalizeSection: normalizeSection,
     resolve: resolve,
     home: function () { return prefix + '/'; },

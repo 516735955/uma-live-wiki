@@ -31,9 +31,68 @@ async function main() {
     assert.deepStrictEqual(after,before,'switch position stays fixed when heading wraps');
     assert.strictEqual(page.url(),url);
 
+    const pictures = await page.evaluate(() => {
+      const app = window.__uma_app, saved = app.newsDetail;
+      app.newsDetail = {...saved,message:'<picture><source sizes="50vw" srcset="/uma_tools/img/hero_bg.jpg 2000w"><img data-src="/uma_tools/img/hero_bg.jpg"></picture>'};
+      app.setNewsLanguage('ja');
+      const body = new DOMParser().parseFromString(app.newsDetailBody,'text/html');
+      const source = body.querySelector('source'), img = body.querySelector('img');
+      const result = {source:source.getAttribute('srcset'),sizes:source.getAttribute('sizes'),img:img.getAttribute('src')};
+      app.newsDetail = saved; app.setNewsLanguage('zh');
+      return result;
+    });
+    assert(pictures.img && pictures.source.includes('1440w') && !pictures.source.includes('2000w'));
+    assert.strictEqual(pictures.sizes,'50vw');
+
+    await page.evaluate(async () => {
+      const host = document.createElement('div'); host.style='position:fixed;top:80px;left:20px;width:220px;z-index:99999'; document.body.append(host);
+      const options = Vue.ref([{value:'group',label:'Group',children:[{value:'old',label:'Old'}]}]);
+      let select;
+      const fixture = Vue.createApp({setup:()=>()=>Vue.h(window.UmaUi.UiSelect,{ref:value=>select=value,options:options.value,modelValue:'old'})});
+      fixture.mount(host); select.toggle(); await Vue.nextTick();
+      select.$el.querySelector('.ui-select-back').focus(); select.onKeydown({key:'Escape',preventDefault(){},stopPropagation(){}});
+      if (document.activeElement !== select.$refs.trigger) throw Error('Escape lost the select trigger focus');
+      select.toggle(); options.value=[{value:'disabled',label:'Disabled',disabled:true},{value:'enabled',label:'Enabled'}]; await Vue.nextTick();
+      if (select.visibleOptions.some(row=>row.value==='old') || select.visibleOptions[select.activeIndex]?.disabled) throw Error('select kept stale or disabled options');
+      window.selectFixture={select,host,fixture};
+    });
+    await page.setViewportSize({width:390,height:320});
+    await page.waitForFunction(()=>{const r=window.selectFixture.select.$refs.menu.getBoundingClientRect();return r.top>=0 && r.bottom<=innerHeight;});
+    await page.evaluate(()=>{window.selectFixture.fixture.unmount();window.selectFixture.host.remove();delete window.selectFixture;});
+    await page.setViewportSize({width:390,height:900});
+
+    const imageBehavior = await page.evaluate(async () => {
+      const img=document.createElement('img');img.style='position:fixed;top:0;left:0;width:100px';document.body.append(img);
+      window.UmaMedia.apply(img,'/uma_tools/img/hero_bg.jpg');
+      await new Promise(resolve=>{if(img.complete)resolve();else img.onload=resolve;});
+      img.style.width='500px';
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      const sizes=img.sizes;
+      window.UmaMedia.fallback(img,'/uma_tools/img/album-placeholder.svg');
+      window.UmaMedia.apply(img,'/uma_tools/img/news-card-default.webp');
+      window.UmaMedia.fallback(img,'/uma_tools/img/album-placeholder.svg');
+      const reset=!img.srcset && img.src.endsWith('album-placeholder.svg');
+      const emitted=[];
+      const method=window.__uma_app.$.appContext.components['audio-dock'].methods.onDocumentKeydown;
+      img.setAttribute('role','button');
+      for(const defaultPrevented of [false,true]) method.call({player:{current:{id:'test'}},$emit:(...args)=>emitted.push(args)},
+        {key:' ',code:'Space',target:img,defaultPrevented,preventDefault(){}});
+      window.UmaMedia.release(img);img.remove();
+      return {sizes,reset,emitted};
+    });
+    assert.strictEqual(imageBehavior.sizes,'500px','image candidates follow their actual resized container');
+    assert(imageBehavior.reset,'a second failed source still receives its fallback');
+    assert.strictEqual(imageBehavior.emitted.length,0,'image interaction never also controls audio');
+
     await page.goto(base+'/zh-Hans/music/albums?page=2');
     await page.locator('.album-card').first().waitFor();
+    await page.waitForFunction(() => [...document.querySelectorAll('.album-card img')].slice(0,6)
+      .every(img => img.complete && img.naturalWidth > 0));
     assert(/31[–-]60\s*\/\s*115/.test(await page.locator('.ui-pager').innerText()));
+    await page.goto(base+'/zh-Hans/events');
+    await page.locator('.event-catalog-cover img').first().waitFor();
+    await page.waitForFunction(() => [...document.querySelectorAll('.event-catalog-cover img')].slice(0,3)
+      .every(img => img.complete && img.naturalWidth > 0));
     await page.goto(base+'/zh-Hans/database/horses?page=2');
     await page.locator('.horse-row').first().waitFor();
     assert(!/\/\s*30\b/.test(await page.locator('.ui-pager').innerText()));

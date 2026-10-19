@@ -30,7 +30,7 @@
     if (!value) return value;
     try {
       const target = new URL(value, location.href);
-      if (target.origin === location.origin && target.pathname === '/api/news-image') {
+      if (target.origin === location.origin && ['/api/news-image', '/api/image'].includes(target.pathname)) {
         target.searchParams.set('w', width);
         return target.pathname + target.search;
       }
@@ -55,7 +55,12 @@
     return url(value);
   }
   function apply(element, value) {
-    if (!value) { element.removeAttribute('src'); element.removeAttribute('srcset'); delete element.dataset.mediaOriginal; return; }
+    if (!value) { release(element); element.removeAttribute('src'); element.removeAttribute('srcset'); delete element.dataset.mediaOriginal; return; }
+    value = original(value);
+    if (element.dataset.mediaOriginal !== url(value)) {
+      element.removeAttribute('data-fallback');
+      element.classList.remove('is-missing');
+    }
     const small = element.closest('.performer-chip, .album-inline, .identity-portrait, .anime-episode-list, .relation-leading');
     const card = element.closest('.albums-grid, .album-database-grid, .album-card, .news-hero-card, .anime-stills, .event-catalog-cover, .video-library');
     const renderedWidth = element.getBoundingClientRect().width;
@@ -63,7 +68,46 @@
     const targetWidth = [160, 480, 960, 1440].find(width => width >= size * Math.min(devicePixelRatio || 1, 2)) || 1440;
     element.dataset.mediaOriginal = url(value);
     element.decoding = 'async';
+    if (element.tagName === 'IMG') {
+      const candidates = [160,480,960,1440].map(width => [preview(value, width),width]);
+      if (new Set(candidates.map(row => row[0])).size > 1) {
+        element.sizes = Math.ceil(size) + 'px';
+        element.srcset = candidates.map(([src,width]) => src + ' ' + width + 'w').join(', ');
+        getObserver()?.observe(element);
+      } else element.removeAttribute('srcset');
+    }
     element.src = preview(value, targetWidth);
   }
-  return { url, preview, apply, remoteImage };
+
+  function original(value) {
+    try {
+      const target = new URL(value, location.href);
+      if (target.hostname === 'images.microcms-assets.io') {
+        ['w','h','fit','fm','q'].forEach(key => target.searchParams.delete(key));
+      }
+      if (/^p\d+\.music\.126\.net$/.test(target.hostname)) target.searchParams.delete('param');
+      if (target.origin === location.origin && ['/api/image','/api/news-image'].includes(target.pathname)) target.searchParams.delete('w');
+      return target.origin === location.origin ? target.pathname + target.search + target.hash : target.href;
+    } catch (_) { return value; }
+  }
+
+  let observer;
+  function getObserver() {
+    if (!observer && typeof ResizeObserver !== 'undefined') observer = new ResizeObserver(entries => {
+      for (const {target,contentRect} of entries) {
+        if (contentRect.width > 0) target.sizes = Math.ceil(contentRect.width) + 'px';
+      }
+    });
+    return observer;
+  }
+  function release(element) { observer?.unobserve(element); }
+  function fallback(element, value) {
+    release(element);
+    element.removeAttribute('srcset');
+    element.removeAttribute('sizes');
+    const target = value ? new URL(value, location.href).href : '';
+    if (target && element.src !== target) element.src = target;
+    if (!target) element.removeAttribute('src');
+  }
+  return { url, preview, apply, remoteImage, original, release, fallback };
 });

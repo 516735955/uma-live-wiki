@@ -1,9 +1,5 @@
 
 .catalog-play { align-self: center; }
-.albums-grid { grid-template-columns: repeat(auto-fill,minmax(210px,1fr)); gap: 18px; }
-.album-card { border-radius: 2px; box-shadow: 0 4px 14px rgba(24,31,70,.1); }
-.album-card:hover { border-color: var(--ui-orange); box-shadow: 0 10px 24px rgba(24,31,70,.15); transform: translateY(-4px); }
-.news-row { grid-template-columns: 110px 82px minmax(0,1fr); }
 .news-detail-date { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .news-detail-date a { color: var(--ui-orange-deep); font-size: .82rem; font-weight: 800; text-decoration: none; }
 .news-detail-date a:hover { text-decoration: none; }
@@ -210,8 +206,6 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
 .song-credit-version dd small { display: block; margin-top: 3px; color: #66708a; font-size: .75rem; font-weight: 600; }
 
 .lyrics-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 2px solid var(--ui-cobalt-deep); }
-.lyrics-toolbar label { display: grid; min-width: min(360px,100%); gap: 5px; color: #5f6980; font-size: .75rem; font-weight: 800; }
-.lyrics-toolbar select { width: 100%; min-height: 42px; padding: 0 38px 0 12px; border: 1px solid #cfd5e5; border-radius: 3px; background: #fff; color: var(--ui-navy); font: inherit; font-size: .84rem; font-weight: 750; }
 .lyrics-sheet { max-width: 780px; margin: 0 auto; padding: 28px clamp(4px,5vw,48px) 36px; list-style: none; counter-reset: lyric-line; }
 .lyrics-sheet li { position: relative; min-height: 31px; padding: 4px 12px 4px 18px; color: #343d54; font-size: .9rem; line-height: 1.65; transition: color 180ms ease,transform 220ms var(--ui-ease); }
 .lyrics-sheet li::before { content: ''; position: absolute; top: 8px; bottom: 8px; left: 0; width: 3px; background: transparent; }
