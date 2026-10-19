@@ -78,6 +78,7 @@ umaApp.directive('media-src', {
     if (binding.value === binding.oldValue) return;
     window.UmaMedia.apply(element, binding.value);
   },
+  unmounted(element) { window.UmaMedia.release(element); },
 });
 registerPages(umaApp);
 umaApp.mount("#app");

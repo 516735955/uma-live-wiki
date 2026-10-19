@@ -417,8 +417,7 @@ export function createAlbums(deps) {
 
   function onCatalogImageError(event) {
     const image = event && event.currentTarget;
-    if (image && !String(image.src || "").endsWith(catalogCoverFallback))
-      image.src = catalogCoverFallback;
+    if (image) window.UmaMedia.fallback(image, catalogCoverFallback);
   }
 
   function sampleCover(event, url) {

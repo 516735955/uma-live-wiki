@@ -22,20 +22,63 @@
     emits: ['update:modelValue', 'change'],
     data: function () {
       sequence += 1;
-      return { open: false, activeIndex: -1, group: null, menuShift: 0, menuAbove: false, menuHeight: 286, listId: 'ui-select-' + sequence };
+      return { open: false, activeIndex: -1, groupValue: null, menuShift: 0, menuAbove: false, menuHeight: 286, listId: 'ui-select-' + sequence };
     },
     computed: {
       selectedOption: function () {
         const value = String(this.modelValue);
         return this.options.flatMap(option => [option, ...(option.children || [])]).find(function (option) {
           return String(option.value) === value;
-        }) || this.options[0] || { label: '' };
+        }) || this.options.find(option => !option.disabled) || { label: '' };
+      },
+      group: {
+        get() { return this.options.find(option => String(option.value) === this.groupValue && option.children) || null; },
+        set(option) { this.groupValue = option ? String(option.value) : null; }
       },
       visibleOptions: function () { return this.group ? this.group.children : this.options; }
     },
-    mounted: function () { document.addEventListener('pointerdown', this.onOutside); },
-    beforeUnmount: function () { document.removeEventListener('pointerdown', this.onOutside); },
+    watch: {
+      options: { deep: true, handler() { if (this.open) { this.activeIndex = this.initialIndex(); this.positionMenu(); } } },
+      modelValue() { if (this.open) this.activeIndex = this.initialIndex(); }
+    },
+    mounted: function () {
+      document.addEventListener('pointerdown', this.onOutside);
+      window.addEventListener('resize', this.positionMenu);
+      window.visualViewport?.addEventListener('resize', this.positionMenu);
+      window.visualViewport?.addEventListener('scroll', this.positionMenu);
+    },
+    beforeUnmount: function () {
+      document.removeEventListener('pointerdown', this.onOutside);
+      window.removeEventListener('resize', this.positionMenu);
+      window.visualViewport?.removeEventListener('resize', this.positionMenu);
+      window.visualViewport?.removeEventListener('scroll', this.positionMenu);
+    },
     methods: {
+      initialIndex: function () {
+        const selected = this.visibleOptions.findIndex(option => !option.disabled && String(option.value) === String(this.modelValue));
+        return selected >= 0 ? selected : this.visibleOptions.findIndex(option => !option.disabled);
+      },
+      positionMenu: function () {
+        if (!this.open) return;
+        this.$nextTick(() => {
+          if (!this.open || !this.$refs.trigger || !this.$refs.menu) return;
+          const trigger = this.$refs.trigger.getBoundingClientRect();
+          const viewport = window.visualViewport;
+          const height = viewport?.height || window.innerHeight, top = viewport?.offsetTop || 0;
+          const below = top + height - trigger.bottom - 16, above = trigger.top - top - 16;
+          this.menuAbove = below < 180 && above > below;
+          this.menuHeight = Math.max(40, Math.min(286, window.innerWidth <= 700 ? height * .52 : 286, this.menuAbove ? above : below));
+          this.menuShift = 0;
+          this.$nextTick(() => {
+            if (!this.open || !this.$refs.menu) return;
+            const rect = this.$refs.menu.getBoundingClientRect();
+            const left = viewport?.offsetLeft || 0;
+            const right = left + (viewport?.width || document.documentElement.clientWidth);
+            this.menuShift = rect.right > right - 8 ? right - 8 - rect.right : rect.left < left + 8 ? left + 8 - rect.left : 0;
+            this.revealActive();
+          });
+        });
+      },
       revealActive: function () {
         this.$nextTick(() => {
           const menu = this.$refs.menu;
@@ -49,40 +92,25 @@
       },
       back: function () {
         this.group = null;
-        this.activeIndex = Math.max(0, this.visibleOptions.findIndex(option => !option.disabled));
+        this.activeIndex = this.initialIndex();
         this.$refs.trigger?.focus();
         this.revealActive();
+        this.positionMenu();
       },
       onOutside: function (event) {
         if (this.open && !this.$el.contains(event.target)) this.close();
       },
-      close: function () { this.open = false; this.activeIndex = -1; this.group = null; },
+      close: function (restoreFocus = false) { this.open = false; this.activeIndex = -1; this.group = null; if (restoreFocus) this.$refs.trigger?.focus(); },
       toggle: function () {
         if (this.open) { this.close(); return; }
         this.open = true;
         this.group = this.options.find(option => (option.children || []).some(child => String(child.value) === String(this.modelValue))) || null;
-        this.activeIndex = this.open
-          ? Math.max(0, this.visibleOptions.findIndex(function (option) {
-              return String(option.value) === String(this.modelValue);
-            }, this))
-          : -1;
-        this.$nextTick(() => {
-          const trigger = this.$refs.trigger.getBoundingClientRect();
-          const below = window.innerHeight - trigger.bottom - 16, above = trigger.top - 16;
-          this.menuAbove = below < 180 && above > below;
-          this.menuHeight = Math.max(40, Math.min(286, this.menuAbove ? above : below));
-          this.menuShift = 0;
-          this.$nextTick(() => {
-            const rect = this.$refs.menu.getBoundingClientRect();
-            const width = document.documentElement.clientWidth;
-            this.menuShift = rect.right > width - 8 ? width - 8 - rect.right : rect.left < 8 ? 8 - rect.left : 0;
-            this.revealActive();
-          });
-        });
+        this.activeIndex = this.initialIndex();
+        this.positionMenu();
       },
       choose: function (option) {
         if (!option || option.disabled) return;
-        if (option.children) { this.group = option; this.activeIndex = Math.max(0, this.visibleOptions.findIndex(row => !row.disabled)); this.$refs.trigger?.focus(); this.revealActive(); return; }
+        if (option.children) { this.group = option; this.activeIndex = this.initialIndex(); this.$refs.trigger?.focus(); this.positionMenu(); return; }
         this.$emit('update:modelValue', option.value);
         this.$emit('change', option.value);
         this.close();
@@ -91,7 +119,8 @@
         });
       },
       onKeydown: function (event) {
-        if (event.key === 'Escape' || event.key === 'Tab') { this.close(); return; }
+        if (event.key === 'Escape' && this.open) { event.preventDefault(); event.stopPropagation(); this.close(true); return; }
+        if (event.key === 'Tab') { if (this.$refs.menu?.contains(document.activeElement)) this.$refs.trigger?.focus(); this.close(); return; }
         if (event.key === 'ArrowLeft' && this.group) { event.preventDefault(); this.back(); return; }
         if (event.key === 'ArrowRight' && this.open) { event.preventDefault(); const option = this.visibleOptions[this.activeIndex]; if (option?.children) this.choose(option); return; }
         if (this.open && ['Home', 'End'].includes(event.key)) {
@@ -256,10 +285,11 @@
       },
       onSeek: function (event) { this.$emit('seek', Number(event.target.value)); },
       onDocumentKeydown: function (event) {
+        if (event.defaultPrevented) return;
         if (event.key === 'Escape' && this.player.panelOpen) { this.$emit('close-panel'); return; }
         if (!this.player.current || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
         const target = event.target;
-        if (target && target.closest && target.closest('input,textarea,select,button,a,[contenteditable="true"],[role="option"],[role="listbox"],.ui-select-control')) return;
+        if (target && target.closest && target.closest('input,textarea,select,button,a,[contenteditable="true"],[role="button"],[role="option"],[role="listbox"],.ui-select-control,.pswp')) return;
         if (event.key === ' ' || event.code === 'Space') { event.preventDefault(); if (!event.repeat) this.$emit('toggle-play'); }
         else if (event.key === 'ArrowLeft') { event.preventDefault(); this.$emit('skip', -15); }
         else if (event.key === 'ArrowRight') { event.preventDefault(); this.$emit('skip', 15); }
@@ -274,7 +304,7 @@
       },
       onImageError: function (event) {
         event.currentTarget.classList.add('is-missing');
-        event.currentTarget.removeAttribute('src');
+        window.UmaMedia.fallback(event.currentTarget, '');
       },
       onImageLoad: function (event) { event.currentTarget.classList.remove('is-missing'); },
       queueArtist: function (track) {

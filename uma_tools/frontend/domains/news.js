@@ -251,6 +251,7 @@ export function createNews(deps) {
       "value",
       "type",
       "media",
+      "sizes",
     ]);
     const iframeAttrs = new Set([
       "src",
@@ -300,6 +301,10 @@ export function createNews(deps) {
         el.remove();
         return;
       }
+      if (el.tagName === 'IMG' && !el.getAttribute('src') && el.getAttribute('data-src'))
+        el.setAttribute('src', el.getAttribute('data-src'));
+      if (el.tagName === 'SOURCE' && !el.getAttribute('srcset') && el.getAttribute('data-srcset'))
+        el.setAttribute('srcset', el.getAttribute('data-srcset'));
       const attrs = el.tagName === "IFRAME" ? iframeAttrs : allowedAttrs;
       Array.from(el.attributes).forEach(function (attr) {
         const name = attr.name.toLowerCase();
@@ -318,27 +323,24 @@ export function createNews(deps) {
       if (el.tagName === "IMG") {
         el.setAttribute("loading", "lazy");
         if (el.hasAttribute("src")) {
-          const original = el.getAttribute("src");
-          el.setAttribute("data-original", original);
-          el.setAttribute("src", window.UmaMedia.preview(newsImage(original), 960));
-          el.setAttribute('srcset', [480, 960, 1440].map(width => window.UmaMedia.preview(newsImage(original), width) + ' ' + width + 'w').join(', '));
+          const original = window.UmaMedia.original(newsImage(el.getAttribute('src')));
+          if (!el.closest('picture')?.querySelector('source')) el.setAttribute('data-original', original);
+          el.setAttribute("src", window.UmaMedia.preview(original, 960));
+          el.setAttribute('srcset', [480, 960, 1440].map(width => window.UmaMedia.preview(original, width) + ' ' + width + 'w').join(', '));
           el.setAttribute('sizes', '(max-width: 768px) calc(100vw - 48px), (max-width: 1280px) calc(100vw - 80px), 1160px');
           el.setAttribute('decoding', 'async');
         }
       }
-      if (el.tagName !== 'IMG' && el.hasAttribute("srcset")) {
-        el.setAttribute(
-          "srcset",
-          el
-            .getAttribute("srcset")
-            .split(",")
-            .map(function (entry) {
-              const parts = entry.trim().split(/\s+/);
-              parts[0] = window.UmaMedia.preview(newsImage(parts[0]), 960);
-              return parts.join(" ");
-            })
-            .join(", "),
-        );
+      if (el.tagName === 'SOURCE' && el.hasAttribute('srcset')) {
+        const entries = el.getAttribute('srcset').split(',').map(entry => entry.trim().split(/\s+/));
+        const ranked = entries.map(([src,descriptor]) => ({src,width:/^\d+w$/.test(descriptor || '') ? parseInt(descriptor) : Infinity}));
+        const largest = ranked.sort((a,b) => b.width-a.width)[0];
+        const widths = [160,480,960,1440].filter(width => width <= largest.width);
+        if (widths.length) {
+          const original = window.UmaMedia.original(newsImage(largest.src));
+          el.setAttribute('srcset', widths.map(width => window.UmaMedia.preview(original,width)+' '+width+'w').join(', '));
+          if (!el.hasAttribute('sizes')) el.setAttribute('sizes','(max-width: 768px) calc(100vw - 48px), 1160px');
+        }
       }
       if (el.tagName === "IFRAME") {
         el.className = "news-embed";

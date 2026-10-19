@@ -529,9 +529,7 @@ export function createEvents(deps) {
 
   function onEventImageError(ev, event) {
     const image = ev && ev.target;
-    if (!image || image.getAttribute("data-fallback") === "1") return;
-    image.setAttribute("data-fallback", "1");
-    image.src = "/uma_tools/img/event-covers/onsite.svg";
+    if (image) window.UmaMedia.fallback(image, '/uma_tools/img/event-covers/onsite.svg');
   }
 
   function loadEvents(params) {

@@ -604,9 +604,7 @@ export function createHorses(deps) {
   function onHorseImageError(event) {
     const image = event && event.currentTarget;
     if (!image) return;
-    const replaced = "/uma_tools/img/album-placeholder.svg";
-    if (!String(image.src || "").endsWith("album-placeholder.svg"))
-      image.src = replaced;
+    window.UmaMedia.fallback(image, '/uma_tools/img/album-placeholder.svg');
   }
 
   let horseSearchTimer;
