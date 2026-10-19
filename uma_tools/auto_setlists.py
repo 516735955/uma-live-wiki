@@ -53,6 +53,13 @@ def identity_title(value):
     return re.sub(r"[\W_]+", "", unicodedata.normalize('NFKC', str(value or "")).lower())
 
 
+def part_key(title, label=None):
+    """Generic session labels defer the part to the title; explicit labels win."""
+    if label not in (None, '', '本公演'):
+        return re.sub(r"\s+", "", label).lower()
+    return re.sub(r"\s+", "", session_label(title)).lower()
+
+
 def event_date(value):
     if isinstance(value, (dt.date, dt.datetime)):
         return value.isoformat()[:10]
@@ -269,14 +276,14 @@ def attach_discovered_sessions(blocks, catalog, events, existing_events=()):
     published = {(normalized_title(event.get('title')), row.get('date') or event.get('date'),
                   row['label'] if row.get('label') not in (None, '', '本公演') else session_label(event.get('title')))
                  for event in existing_events for row in event.get('sessions') or [{'date': event.get('date'), 'label': session_label(event.get('title'))}]}
-    published_identities = {(identity_title(event.get('title')), row.get('date') or event.get('date'))
-                            for event in existing_events for row in event.get('sessions') or [{'date': event.get('date')}]}
+    published_identities = {(identity_title(event.get('title')), row.get('date') or event.get('date'), part_key(event.get('title'), row.get('label')))
+                            for event in existing_events for row in event.get('sessions') or [{'date': event.get('date'), 'label': session_label(event.get('title'))}]}
     for block in blocks:
         key = (normalized_title(block['title']), block['date'], session_label(block['title']))
-        identity = (identity_title(block['title']), block['date'])
+        identity = (identity_title(block['title']), block['date'], part_key(block['title']))
         if not block['date'] or any((normalized_title(slot['title']), slot['date'], slot['label']) == key for slot in slots):
             continue
-        if identity in published_identities or any((identity_title(slot['title']), slot['date']) == identity for slot in slots):
+        if identity in published_identities or any((identity_title(slot['title']), slot['date'], part_key(slot['title'], slot['label'])) == identity for slot in slots):
             continue
         if canonical_match(block, existing_events):
             continue
