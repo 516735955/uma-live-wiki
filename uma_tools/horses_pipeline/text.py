@@ -5,10 +5,11 @@ from . import common as pipeline_common
 
 
 def strip_markup(text):
+    text = pipeline_common.re.sub(r'<!--.*?-->', '', text, flags=pipeline_common.re.S)
     text = pipeline_common.re.sub(r'<ref[^>]*/>', '', text)
     text = pipeline_common.re.sub(r'<ref[^>]*>.*?</ref>', '', text, flags=pipeline_common.re.S)
+    text = pipeline_common.re.sub(r'<(?:br|/p|/div|/li|/dt|/dd)\s*/?>', '\n', text, flags=pipeline_common.re.I)
     text = pipeline_common.re.sub(r'<[^>]+>', '', text)
-    text = pipeline_common.re.sub(r'<!--.*?-->', '', text, flags=pipeline_common.re.S)
     text = pipeline_common.re.sub(r'&nbsp;', ' ', text)
     text = pipeline_common.re.sub(r'&amp;', '&', text)
     # 国旗占位模板只保留代码
@@ -23,7 +24,8 @@ def strip_markup(text):
 
 def extract_template(wikitext, name):
     """在 wikitext 里按花括号配对取出指定模板全文（返回 None 表示未找到）。"""
-    start = wikitext.find('{{' + name)
+    match = pipeline_common.re.search(r'\{\{\s*' + pipeline_common.re.escape(name) + r'(?=\s*[|}])', wikitext)
+    start = match.start() if match else -1
     if start == -1:
         return None
     pos = start + 2
@@ -49,8 +51,9 @@ def infobox_fields(wikitext):
     if not infobox:
         return {}
     fields = {}
-    for line in infobox.splitlines():
-        match = pipeline_common.re.match(r'\s*\|\s*([^=|]+?)\s*=\s*(.*)$', line)
+    body = infobox[infobox.find('|') + 1:-2]
+    for line in split_top_level(body):
+        match = pipeline_common.re.match(r'\s*([^=|]+?)\s*=\s*(.*)$', line, flags=pipeline_common.re.S)
         if match:
             fields[match.group(1).strip()] = match.group(2).strip()
     return fields
@@ -157,7 +160,7 @@ def parse_medals(infobox):
             wins.append({'grade': grade, 'race': race, 'year': year})
     seen, out = set(), []
     for win in wins:
-        key = (win['grade'], win['race'])
+        key = (win['grade'], win['race'], win['year'])
         if key in seen:
             continue
         seen.add(key)

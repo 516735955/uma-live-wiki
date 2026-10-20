@@ -1,11 +1,28 @@
 """Text responsibilities for the canonical catalog pipeline."""
 from __future__ import annotations
 
+from html.parser import HTMLParser
+
 from . import common as pipeline_common
 
 
 def clean_text(value: pipeline_common.Any) -> str:
-    return pipeline_common.re.sub(r"\s+", " ", pipeline_common.html.unescape(pipeline_common.HTML_TAG_RE.sub("", str(value or "")))).strip()
+    class _VisibleText(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.parts = []
+        def handle_data(self, data):
+            self.parts.append(data)
+        def handle_starttag(self, tag, attrs):
+            if tag.lower() in {'br', 'p', 'div', 'li', 'tr', 'td', 'dd', 'dt'}:
+                self.parts.append('\n')
+        def handle_endtag(self, tag):
+            if tag.lower() in {'p', 'div', 'li', 'tr', 'td', 'dd', 'dt'}:
+                self.parts.append('\n')
+    parser = _VisibleText()
+    parser.feed(str(value or ''))
+    parser.close()
+    return pipeline_common.re.sub(r"\s+", " ", ''.join(parser.parts)).strip()
 
 
 def concise_program_summary(value: pipeline_common.Any, limit: int = 300) -> str:

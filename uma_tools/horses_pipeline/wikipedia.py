@@ -9,7 +9,16 @@ from . import transport as pipeline_transport
 def api_get(lang, params):
     host = 'commons.wikimedia.org' if lang == 'commons' else '%s.wikipedia.org' % lang
     url = 'https://%s/w/api.php?%s' % (host, pipeline_common.urllib.parse.urlencode(params))
-    return pipeline_common.json.loads(pipeline_transport.http_get(url))
+    try:
+        return pipeline_common.json.loads(pipeline_transport.http_get(url))
+    except (ValueError, pipeline_common.json.JSONDecodeError):
+        digest = pipeline_common.hashlib.sha1(url.encode('utf-8')).hexdigest()[:16]
+        path = pipeline_common.os.path.join(pipeline_common.CACHE_DIR, digest + '.txt')
+        try:
+            pipeline_common.os.unlink(path)
+        except FileNotFoundError:
+            pass
+        raise RuntimeError('invalid Wikipedia API response')
 
 
 def normalize_title(value):
@@ -69,7 +78,10 @@ def resolve_wikipedia(horse):
         if 'missing' in page or 'invalid' in page:
             continue
         real = page.get('title') or title
-        resolved.append({'lang': lang, 'title': real, 'score': page_score(lang, real)})
+        score = page_score(lang, real)
+        if score == 2:
+            return {'lang': lang, 'title': real}
+        resolved.append({'lang': lang, 'title': real, 'score': score})
     # 优先明确赛马词条，其次不确定项；明确非赛马丢弃
     for target in (2, 0):
         for item in resolved:

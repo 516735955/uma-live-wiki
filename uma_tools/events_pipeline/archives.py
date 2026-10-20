@@ -34,7 +34,11 @@ def wiki_table_rows(source: str, caption: str) -> list[list[str]]:
             if line.startswith("|") and not line.startswith(("|}", '|+', '{|')):
                 if current is not None:
                     cells.append(current)
-                pieces = line[1:].split('||')
+                line_body = line[1:]
+                attribute = pipeline_common.re.match(r'^\s*[^|=]+=[^|]*\|\s*', line_body)
+                if attribute:
+                    line_body = line_body[attribute.end():]
+                pieces = line_body.split('||')
                 cells.extend(piece.strip() for piece in pieces[:-1])
                 current = pieces[-1].strip()
             elif current is not None:
@@ -93,9 +97,14 @@ def historical_cast(value: str, characters: list[dict[str, pipeline_common.Any]]
         role_english = pipeline_common.re.sub(r"^\?+\s*[-=]*>\s*", "", role_english).strip()
         role_key = aliases.get(english_identity_key(role_english), english_identity_key(role_english))
         character = by_english.get(role_key)
-        if character:
+        # Historical archives record the actor explicitly; a current CV is not
+        # evidence that the historical actor was replaced.
+        if character and actor_english and pipeline_text.fold_name(actor_english) in {
+            pipeline_text.fold_name(str(character.get("cv") or "")),
+            pipeline_text.fold_name(str(character.get("cv_former") or "")),
+        }:
             item = {
-                "name": str(character.get("cv") or character.get("cv_zh") or actor_english),
+                "name": actor_english,
                 "role": str(character.get("ja") or character.get("zh") or role_english),
                 "source_kind": "community_archive",
                 "source_url": source_url,
@@ -138,6 +147,7 @@ def historical_programs() -> list[dict[str, pipeline_common.Any]]:
     main_source = pipeline_common.fetch_text_url(pipeline_common.PAKALIVE_ARCHIVE_PAGES["paka-live-tv"] + "?action=raw")
     for cells in wiki_table_rows(main_source, "PakaLive TV Volumes"):
         volume = plain_wikitext(cells[0]) if cells else ""
+        volume = pipeline_common.re.sub(r'^.*?\|\s*', '', volume).strip()
         if not volume.isdigit() or len(cells) < 5:
             continue
         number = int(volume)
@@ -278,7 +288,12 @@ def official_radio_programs(existing_programs: list[dict[str, pipeline_common.An
         if date_match:
             month, day = int(date_match.group(1)), int(date_match.group(2))
             page_date = None
-            for year in range(latest_date.year, latest_date.year + 3):
+            # A month/day without a year cannot establish a new future episode.
+            explicit_year = pipeline_common.re.search(r'\b(20\d{2})[年/-]', description)
+            if not explicit_year:
+                page_date = None
+                raise StopIteration
+            for year in range(int(explicit_year.group(1)), int(explicit_year.group(1)) + 1):
                 try:
                     candidate = pipeline_common.dt.date(year, month, day)
                 except ValueError:
@@ -296,7 +311,7 @@ def official_radio_programs(existing_programs: list[dict[str, pipeline_common.An
                         "",
                     )
                 cast = []
-                for role, name in pipeline_common.re.findall(r"([ァ-ヺー一-龯々〆ヵヶA-Za-z・]+)役の([ぁ-ゖァ-ヺー一-龯々〆ヵヶA-Za-z・]+)", description):
+                for role, name in pipeline_common.re.findall(r"([ァ-ヺー一-龯々〆ヵヶA-Za-z・]+)役の([ぁ-ゖァ-ゖァ-ヺー一-龯々〆ヵヶA-Za-z・]+?)(?=が|は|、|。|$)", description):
                     cast.append({"name": name, "role": role})
                 assistant = pipeline_common.re.search(
                     r"アシスタントは(?:フリーアナウンサーの)?"

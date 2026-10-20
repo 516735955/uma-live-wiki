@@ -28,15 +28,32 @@ def fetch(url: str) -> str:
 
 
 def cms(domain: str, key: str, endpoint: str) -> dict:
-    request = urllib.request.Request(
-        f"https://{domain}.microcms.io/api/v1/{endpoint}?limit=100",
-        headers={"X-MICROCMS-API-KEY": key},
-    )
-    with urllib.request.urlopen(request, timeout=45) as response:
-        data = json.load(response)
-    if not isinstance(data.get("contents"), list) or len(data["contents"]) != data.get("totalCount"):
+    # microCMS caps a response at 100 records.  Walk offset pages so a legal
+    # collection crossing that boundary is not rejected as incomplete.
+    limit = 100
+    contents = []
+    total = None
+    offset = 0
+    while total is None or offset < total:
+        query = urllib.parse.urlencode({"limit": limit, "offset": offset})
+        request = urllib.request.Request(
+            f"https://{domain}.microcms.io/api/v1/{endpoint}?{query}",
+            headers={"X-MICROCMS-API-KEY": key},
+        )
+        with urllib.request.urlopen(request, timeout=45) as response:
+            data = json.load(response)
+        page = data.get("contents")
+        if not isinstance(page, list):
+            raise ValueError("invalid official CMS response")
+        if total is None:
+            total = int(data.get("totalCount") or 0)
+        contents.extend(page)
+        if not page or len(page) < limit:
+            break
+        offset += len(page)
+    if total is None or len(contents) < total:
         raise ValueError("incomplete official CMS response")
-    return data
+    return {**data, "contents": contents[:total], "totalCount": total}
 
 
 def archived_episode(work: str, number: int) -> dict:

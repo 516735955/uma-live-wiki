@@ -112,8 +112,10 @@ def role_label(raw):
 
 
 ROLE_UNSPLIT = frozenset({
-    # The punctuation belongs to one published job name, not two credits.
-    "L/O", "アイキャッチ・サブタイトルデザイン", "海外・配信セールス", "ビデオグラム制作・宣伝",
+    # These phrases are atomic even though their punctuation resembles a
+    # credit separator.  L/O itself is handled as a mapped role so it can
+    # still be combined with a neighbouring 原画 credit.
+    "アイキャッチ・サブタイトルデザイン", "海外・配信セールス", "ビデオグラム制作・宣伝",
 })
 
 # A trailing modifier can apply to every duty in the cell.  Do not interpret
@@ -135,12 +137,16 @@ def role_labels(raw, group=""):
     source = re.sub(r"<[^>]*>", "", html.unescape(raw)).strip()
     if source in COMPOUND_ROLE_LABELS:
         return list(COMPOUND_ROLE_LABELS[source])
-    if source in ROLE_UNSPLIT:
-        return [role_label_for_group(source, group)]
+    protected = {}
+    for index, token in enumerate(("L/O", *ROLE_UNSPLIT)):
+        marker = f"__ROLE_PART_{index}__"
+        if token in source:
+            source = source.replace(token, marker)
+            protected[marker] = token
     # Split the source credit before translation.  Splitting the translated
     # value would corrupt a translated single role containing punctuation.
     parts = re.split(r"[／/･・]", source)
-    return list(dict.fromkeys(role_label_for_group(part.strip(), group) for part in parts if part.strip()))
+    return list(dict.fromkeys(role_label_for_group(protected.get(part.strip(), part.strip()), group) for part in parts if part.strip()))
 
 
 @lru_cache(maxsize=1024)

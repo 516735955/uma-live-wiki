@@ -108,7 +108,9 @@ def main():
     for cid in ids:
         old = existing.get(cid, {})
         fields = ('ja', 'cv', 'img', 'av') + (tuple(PROFILE_FIELDS.values()) if categories[cid] == 'uma' else ())
-        if old and all(old.get(field) for field in fields) and details.get(cid, {}).get('html'):
+        assets_ok = all((not old.get(field)) or (ROOT / str(old[field]).lstrip('/')).exists()
+                        for field in ('img', 'av'))
+        if old and all(old.get(field) for field in fields) and assets_ok and details.get(cid, {}).get('html'):
             continue
         try:
             record, detail, art, avatar = parse_character(fetch(OFFICIAL + cid + '/'), cid)
@@ -149,7 +151,8 @@ def main():
         scope_path = ROOT / 'data/anime/overrides.json'
         scope = read_json(scope_path, {})
         excluded = scope.get('excluded_characters', [])
-        retained = [row for row in excluded if row['id'] not in state['ids']]
+        confirmed_ids = {cid for cid, category in categories.items() if category == 'uma'}
+        retained = [row for row in excluded if row['id'] not in confirmed_ids]
         if retained != excluded:
             scope['excluded_characters'] = retained
             write_json(scope_path, scope)

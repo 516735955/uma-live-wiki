@@ -9,7 +9,8 @@ from . import text as pipeline_text
 
 
 def balanced_template(source: str, name: str) -> str:
-    start = source.find("{{" + name)
+    match = pipeline_common.re.search(r"\{\{\s*" + pipeline_common.re.escape(name) + r"(?=\s*[|}])", source)
+    start = match.start() if match else -1
     if start < 0:
         return ""
     depth = 0
@@ -128,9 +129,13 @@ def voice_detail_from_wikipedia(name_zh: str, name_ja: str, aliases: list[str]) 
         birthday_source = fields.get("生") or source[:5000]
         birthday_match = pipeline_common.re.search(r"(?:生年月日と年齢|birth date and age)\s*\|\s*\d{4}\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})", birthday_source, pipeline_common.re.I)
         if not birthday_match:
-            birthday_match = pipeline_common.re.search(r"\[\[(?:19|20)\d{2}年\]\]\s*\[\[(\d{1,2})月\]\]\s*\[\[(\d{1,2})日\]\]", birthday_source)
+            birthday_match = pipeline_common.re.search(r"(?:\[\[(?:19|20)\d{2}年\]\]|(?:19|20)\d{2}年)\s*(?:\[\[(\d{1,2})月\]\]|(\d{1,2})月)\s*(?:\[\[(\d{1,2})日\]\]|(\d{1,2})日)", birthday_source)
         if birthday_match:
-            month, day = birthday_match.groups()
+            groups = birthday_match.groups()
+            if len(groups) == 2:
+                month, day = groups
+            else:
+                month, day = next((v for v in groups[0:2] if v), ''), next((v for v in groups[2:] if v), '')
     birthday = f"{int(month)}月{int(day)}日" if month and day else ""
     birthplace = clean_wikipedia_field(fields.get("出身地") or fields.get("出生地") or fields.get("出") or "")
     agency = clean_wikipedia_field(fields.get("事務所") or "")

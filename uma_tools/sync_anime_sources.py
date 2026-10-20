@@ -49,7 +49,13 @@ def structured_episodes(markup, work_id, page_url):
                         'summary_ja': value.get('description', ''), 'source_url': urllib.parse.urljoin(page_url, value.get('url') or page_url),
                         'release_date': str(value.get('datePublished', ''))[:10],
                         'stills': [urllib.parse.urljoin(page_url, image.get('url', '') if isinstance(image, dict) else image) for image in images if image],
-                        'cast': [{'title': item.get('characterName', ''), 'name': item.get('name', '')} for item in actors if isinstance(item, dict)],
+                    'cast': [
+                        {
+                            'title': (item.get('characterName') or (item.get('character') or {}).get('name') or ''),
+                            'name': ((item.get('actor') or {}).get('name') if isinstance(item.get('actor'), dict) else item.get('name', '')),
+                        }
+                        for item in actors if isinstance(item, dict)
+                    ],
                         'staff': [{'title': '監督', 'name': item['name']} for item in (value.get('director', []) if isinstance(value.get('director'), list) else [value.get('director', {})]) if isinstance(item, dict) and item.get('name')]})
             for item in value.values():
                 if isinstance(item, (dict, list)):
@@ -79,7 +85,10 @@ def collect_new_work(work):
         if urllib.parse.urlparse(link).netloc == urllib.parse.urlparse(url).netloc and re.search(r'/(?:episodes?|story)/(?:[a-z_-]*\d+)(?:[./?]|$)', urllib.parse.urlparse(link).path):
             links.add(link)
     for link in sorted(links)[:100]:
-        rows.extend(structured_episodes(fetch(link), work['id'], link))
+        try:
+            rows.extend(structured_episodes(fetch(link), work['id'], link))
+        except (OSError, ValueError, urllib.error.URLError):
+            continue
     if not rows and not (work.get('status') == 'announced' and re.search(r'coming\s*soon|近日公開|放送予定|配信予定', markup, re.I)):
         raise ValueError('official episode layout was not recognized: ' + url)
     return merge_episode_records(rows)
@@ -229,7 +238,7 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
         for order, cast in enumerate(row.get('cast', [])):
             signature = BeautifulSoup(cast.get('title', ''), 'html.parser').get_text('', strip=True)
             actor = BeautifulSoup(cast.get('name', ''), 'html.parser').get_text('', strip=True)
-            character, voice = characters.get(normalized(signature)), voices.get(normalized(actor))
+            character, voice = characters.get(person_name_key(signature)), voices.get(person_name_key(actor))
             if not character or not voice:
                 continue
             relations = documents['relations']['relations']
@@ -257,7 +266,8 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
             for field in ('group', 'source_time'):
                 if staff.get(field) is not None:
                     credit[field] = staff[field]
-            kind = entity_kind(staff, name, {person['name'] for person in people}, organizations)
+            known_names = {alias for person in people for alias in (person.get('name'), *person.get('aliases', [])) if alias}
+            kind = entity_kind(staff, name, known_names, organizations)
             if kind == 'organization':
                 credit['organization'] = name
                 credit.pop('entity_type', None)

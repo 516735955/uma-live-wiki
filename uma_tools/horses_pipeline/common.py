@@ -89,7 +89,7 @@ _NON_HORSE_WIKI = re.compile(
 
 
 _RACEHORSE_MARK = re.compile(
-    r'Infobox\s*(?:racehorse|horse)|競走馬インフォボックス'
+    r'Infobox\s*(?:racehorse|horse)|競走馬インフォボックス|競走馬情報ボックス'
     r'|\[\[(?:Category|カテゴリ|分类|分類):[^\]]*(?:競走馬|竞赛马|赛马|racehorse)'
     r'|戦績|重賞|GI競走|ダービー|オークス|有馬記念|天皇賞|战绩|一级赛|日本德比|日本打吡'
 )

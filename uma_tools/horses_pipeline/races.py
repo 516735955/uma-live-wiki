@@ -504,7 +504,7 @@ def parse_races(html_text):
             'time': pipeline_text.strip_markup(time_margin.group(1)) if time_margin else '',
             'margin': pipeline_text.strip_markup(time_margin.group(2)) if time_margin else '',
             'winner': winner,
-            'bodyweight': (pipeline_common.re.search(r'(\d+（[+\-]\d+）)', chunk) or [None, ''])[1],
-            'prize': (pipeline_common.re.search(r'([\d.]+万円)', chunk) or [None, ''])[1],
+            'bodyweight': (pipeline_common.re.search(r'(\d+（(?:[+\-]\d+|0)）)', chunk) or [None, ''])[1],
+            'prize': (pipeline_common.re.search(r'([\d,]+(?:\.\d+)?万円)', chunk) or [None, ''])[1].replace(',', ''),
         })
     return races

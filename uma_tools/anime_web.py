@@ -77,8 +77,21 @@ def work_metadata(markup):
         except (ValueError, TypeError):
             continue
         records = payload if isinstance(payload, list) else [payload]
+        expanded = []
+        pending = list(records)
+        while pending:
+            item = pending.pop(0)
+            if isinstance(item, dict) and '@graph' in item:
+                pending.extend(item.get('@graph') or [])
+            else:
+                expanded.append(item)
+        records = expanded
         for row in records:
-            if not isinstance(row, dict) or row.get('@type') not in ('TVSeries', 'Movie', 'CreativeWorkSeries'):
+            if not isinstance(row, dict):
+                continue
+            types = row.get('@type') if isinstance(row.get('@type'), list) else [row.get('@type')]
+            types = {re.sub(r'^https?://schema.org/', '', str(value or '')) for value in types}
+            if not types.intersection({'TVSeries', 'Movie', 'CreativeWorkSeries'}):
                 continue
             for source, destination in [('startDate', 'start_date'), ('endDate', 'end_date')]:
                 if re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(row.get(source, ''))[:10]):

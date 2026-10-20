@@ -88,7 +88,7 @@ def main():
             break
         if args.missing and horse['id'] in details:
             record = details[horse['id']]
-            record['cids'] = sorted(set(record.get('cids', []) + horse['cids']))
+            record['cids'] = sorted(set(horse['cids']))
             missing = any(not record.get(field) for field in ('photo', 'intro')) or (pipeline_races.battle_count(record) and len(record.get('races', [])) < pipeline_races.battle_count(record))
             if pipeline_common.time.time() - attempts.get(horse['id'], 0) >= (86400 if missing else 30 * 86400):
                 attempts[horse['id']] = pipeline_common.time.time()
@@ -97,7 +97,10 @@ def main():
                 incoming = pipeline_profiles.fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
                 if len(pipeline_transport.failures) > failures_before:
                     attempts[horse['id']] -= 86400 - 3600
-                fill_empty(record, incoming)
+                for field, value in (incoming.get('facts') or {}).items():
+                    if value and not (record.setdefault('facts', {}).get(field)):
+                        record['facts'][field] = value
+                fill_empty(record, {k: v for k, v in incoming.items() if k != 'facts'})
                 record['races'] = pipeline_races.merge_races(record.get('races', []), incoming.get('races', []))
             if args.localize_photos and record.get('photo') and not record['photo'].startswith('/uma_tools/'):
                 record['photo'] = pipeline_photos.localize_photo(record) or record['photo']

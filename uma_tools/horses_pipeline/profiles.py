@@ -60,7 +60,12 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             info = {'title': title, 'photo': '', 'extract': ''}
             print('  [wiki info fail] %s %s' % (horse['id'], exc))
         pipeline_common.time.sleep(pipeline_common.WIKI_SLEEP)
-        wikitext = pipeline_wikipedia.wiki_wikitext(lang, title) if use_wiki else ''
+        try:
+            wikitext = pipeline_wikipedia.wiki_wikitext(lang, title) if use_wiki else ''
+        except Exception as exc:  # noqa: BLE001
+            print('  [wiki text fail] %s %s' % (horse['id'], exc))
+            pipeline_transport.failures.append('wiki text unavailable: %s: %s' % (horse['id'], exc))
+            wikitext = ''
         # wiki 首图须像马匹照片（拒绝求图占位/马主纹章/logo 等；只查文件名防误伤 wikimedia 域名）
         photo_name = pipeline_common.urllib.parse.unquote((info['photo'] or '').split('/')[-1])
         if info['photo'] and not pipeline_common._NON_HORSE_PHOTO.search(photo_name):
@@ -111,6 +116,7 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             record['jbis'] = jbis_url
             print('  [jbis found] %s %s' % (horse['id'], jbis_url))
     if use_jbis and record['jbis'] and 'jbis.or.jp' in record['jbis']:
+        jbis_identity_ok = True
         try:
             pipeline_common.time.sleep(pipeline_common.JBIS_SLEEP)
             page = pipeline_transport.http_get(record['jbis'])
@@ -119,9 +125,18 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             print('  [jbis fail] %s %s' % (horse['id'], exc))
             parsed = {}
         if parsed:
+            profile = parsed.get('profile') or {}
+            expected = pipeline_common.re.sub(r'\D', '', str(record.get('born') or ''))[:4]
+            actual = pipeline_common.re.sub(r'\D', '', str(profile.get('生年月日') or ''))[:4]
+            if expected and actual and expected != actual:
+                jbis_identity_ok = False
+                print('  [jbis identity mismatch] %s -> discard all derived records' % horse['id'])
+                parsed = {}
+            if not parsed:
+                profile = {}
+        if parsed:
             if parsed.get('photo') and not record['photo']:
                 record['photo'] = parsed['photo']
-            profile = parsed.get('profile') or {}
             facts = record['facts']
             facts['registration'] = profile.get('登録', '')
             if not facts.get('owner'):
@@ -149,11 +164,12 @@ def fetch_horse(horse, use_wiki=True, use_jbis=True):
             record['major'] = parsed.get('major') or record['major']
             record['awards'] = parsed.get('awards') or record['awards']
             record['jbis_pedigree'] = parsed.get('pedigree') or []
-        try:
-            pipeline_common.time.sleep(pipeline_common.JBIS_SLEEP)
-            record['races'] = pipeline_races.parse_races(pipeline_transport.http_get(record['jbis'].rstrip('/') + '/record/'))
-        except Exception as exc:  # noqa: BLE001
-            print('  [jbis record fail] %s %s' % (horse['id'], exc))
+        if jbis_identity_ok:
+            try:
+                pipeline_common.time.sleep(pipeline_common.JBIS_SLEEP)
+                record['races'] = pipeline_races.parse_races(pipeline_transport.http_get(record['jbis'].rstrip('/') + '/record/'))
+            except Exception as exc:  # noqa: BLE001
+                print('  [jbis record fail] %s %s' % (horse['id'], exc))
     if not record['photo']:
         record['photo'] = pipeline_photos.fill_missing_photo(record)
     if record['photo'] and not record['photo'].startswith('/uma_tools/'):
