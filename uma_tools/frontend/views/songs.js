@@ -1,6 +1,6 @@
-export const bindings = ["coverThumb","onCatalogImageError","isActive","songCatalog","songCatalogError","songCatalogLoading","songDetail","songSection","setSongSection","songDbQuery","songDbCurrentPage","songDbPage","songDbPageCount","songTotal","songDbPageStart","songDbPageEnd","songDbPageList","setSongDbPage","goSongDbPage","songDetailReleaseVersions","songDetailPerformances","songCreditVersions","creditRoleGroups","songSingerLabel","playableSongRelease","playCatalogSong","playSongPrimary","addSongPrimary","playSongRelease","addSongTrack","openSong","openAlbumFromSong","openEventUrl","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","releaseSingerLabel","songLyricVersions","songLyricVersionOptions","selectedSongLyricVersion","selectedSongLyricLines","songLyricVersionId","songLyricTranslation","setSongLyricVersion","expandedSongReleaseId","expandedSongCreditId","songLinkVersion","songLinkRelease","toggleSongRelease","toggleSongCredit","openCreator","openCharacter","openVoice","animeError","songAnimeRelations","retryAnime","songAnimeWorks","internalLink","routes"];
+export const bindings = ["coverThumb","onCatalogImageError","isActive","songCatalog","songCatalogError","songCatalogLoading","loadSongCatalog","songDetail","songSection","setSongSection","songDbQuery","songDbCurrentPage","songDbPage","songDbPageCount","songTotal","songDbPageStart","songDbPageEnd","songDbPageList","setSongDbPage","goSongDbPage","songDetailReleaseVersions","songDetailPerformances","songCreditVersions","creditRoleGroups","songSingerLabel","playableSongRelease","playCatalogSong","playSongPrimary","addSongPrimary","playSongRelease","addSongTrack","openSong","openAlbumFromSong","openEventUrl","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","releaseSingerLabel","songLyricVersions","songLyricsApplicable","songLyricVersionOptions","selectedSongLyricVersion","selectedSongLyricLines","songLyricVersionId","songLyricTranslation","setSongLyricVersion","expandedSongReleaseId","expandedSongCreditId","songLinkVersion","songLinkRelease","toggleSongRelease","toggleSongCredit","openCreator","openCharacter","openVoice","animeError","songAnimeRelations","retryAnime","songAnimeWorks","internalLink","routes"];
 export const template = `
-            <div v-if="songCatalogError" class="ui-state ui-state-error">{{ songCatalogError }}</div>
+            <content-state v-if="songCatalogError" state="error" subject="歌曲资料" :retry="true" @retry="loadSongCatalog()"></content-state>
             <template v-if="!songDetail">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="songDbQuery" aria-label="搜索曲名、版本、创作者或歌词" placeholder="搜索曲名、版本、创作者或歌词" autocomplete="off"><button v-if="songDbQuery" type="button" @click.prevent="songDbQuery=''" aria-label="清空搜索">×</button></label>
@@ -13,11 +13,11 @@ export const template = `
                         <a class="music-card-main" :href="routes.songs(song.id)" @click="internalLink($event, () => openSong(song))">
                             <img v-media-src="coverThumb(song.cover,320)" :alt="song.title" loading="lazy" @error="onCatalogImageError($event)">
                             <span class="music-card-copy"><b>{{ song.title }}</b><small>{{ songSingerLabel(song) }}</small></span>
-                            <span class="music-card-meta"><em>{{ song.version_count }} 版本</em><em>{{ song.performance_count }} 场演出</em></span>
+                            <span class="music-card-meta"><em>{{ song.version_count }} 版本</em><em v-if="song.performance_count">{{ song.performance_count }} 场演出</em></span>
                         </a>
                         <entity-actions v-if="playableSongRelease(song)" size="compact" :playing="isActive(playableSongRelease(song).release.audio_url)" @play="playCatalogSong(song)" @add="addSongTrack(song,playableSongRelease(song).version,playableSongRelease(song).release)"></entity-actions>
                     </article>
-                    <div v-if="!songCatalogError && !songCatalogLoading && !songDbCurrentPage.length" class="ui-state">没有符合条件的歌曲</div>
+                    <content-state v-if="!songCatalogError && !songCatalogLoading && !songDbCurrentPage.length" :state="songDbQuery ? 'filtered' : 'uncollected'" subject="歌曲" :clear="Boolean(songDbQuery)" @clear="songDbQuery='';songDbPage=1"></content-state>
                 </div>
                 <div v-if="songDbCurrentPage.length" class="ui-pager"><span>{{ songDbPageStart }}–{{ songDbPageEnd }} / {{ songTotal }}</span><div><button :disabled="songDbPage<=1" @click="goSongDbPage(-1)">上一页</button><button v-for="(page,index) in songDbPageList" :key="index" :class="{active:page===songDbPage}" :disabled="page==='…'" @click="setSongDbPage(page)">{{ page }}</button><button :disabled="songDbPage>=songDbPageCount" @click="goSongDbPage(1)">下一页</button></div></div>
             </template>
@@ -32,7 +32,7 @@ export const template = `
                     </div>
                 </div>
                 <div class="media-content">
-                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
+                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
                         <anime-participation :works="songAnimeWorks" section="music"></anime-participation>
@@ -40,7 +40,7 @@ export const template = `
                     <nav class="entity-tabs" aria-label="歌曲栏目">
                         <button :class="{active:songSection==='releases'}" @click="setSongSection('releases')">收录信息</button>
                         <button :class="{active:songSection==='credits'}" @click="setSongSection('credits')">创作信息</button>
-                        <button :class="{active:songSection==='lyrics'}" @click="setSongSection('lyrics')">歌词</button>
+                        <button v-if="songLyricsApplicable" :class="{active:songSection==='lyrics'}" @click="setSongSection('lyrics')">歌词</button>
                         <button :class="{active:songSection==='performances'}" @click="setSongSection('performances')">出演记录</button>
                     </nav>
 
@@ -60,7 +60,7 @@ export const template = `
                                 </tr></tbody>
                             </table>
                         </ui-disclosure>
-                        <div v-if="!songDetailReleaseVersions.length" class="ui-state compact">尚无可确认的正式音源收录</div>
+                        <content-state v-if="!songDetailReleaseVersions.length" state="uncollected" subject="正式音源收录"></content-state>
                     </div>
                     </section>
 
@@ -86,7 +86,7 @@ export const template = `
                             </ui-disclosure>
                             </div>
                         </div>
-                        <div v-else class="ui-state compact">暂无创作人资料</div>
+                        <content-state v-else state="uncollected" subject="创作资料"></content-state>
                     </section>
 
                     <section v-else-if="songSection==='lyrics'" class="entity-section song-lyrics-section">
@@ -99,7 +99,8 @@ export const template = `
                                 <li v-for="line in selectedSongLyricLines" :key="line.index"><span>{{ line.text }}</span></li>
                             </ol>
                         </template>
-                        <div v-else class="ui-state compact">该歌曲暂无可确认的歌词</div>
+                        <content-state v-else-if="!songLyricsApplicable" state="not_applicable" subject="歌词" reason="该录音为纯音乐，无歌词"></content-state>
+                        <content-state v-else state="uncollected" subject="歌词"></content-state>
                     </section>
 
                     <section v-else-if="songSection==='performances'" class="entity-section">
@@ -112,7 +113,7 @@ export const template = `
                             <td data-label="演唱角色"><div class="performer-chip-list compact song-performance-cast"><a v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" :href="routes.characters(characterId)" @click="internalLink($event, () => openCharacter(characterId))"><img v-if="characterPerformanceImage(characterId)" v-media-src="characterPerformanceImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></a><span v-for="guest in (row.performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></div></td>
                         </tr></tbody>
                     </table>
-                    <div v-else class="ui-state compact">暂无现场演出</div>
+                    <content-state v-else state="uncollected" subject="演出记录"></content-state>
                     </section>
 
                 </div>

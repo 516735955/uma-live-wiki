@@ -148,10 +148,10 @@ async function main() {
     let homeFailed = true;
     await page.route('**/api/home-summary', route => homeFailed ? route.abort() : route.continue());
     await page.goto(base+'/zh-Hans/');
-    await page.getByText('统计暂时无法载入。').waitFor();
+    await page.locator('.home-summary-error .content-state-error').waitFor();
     assert((await page.locator('.home-stat-number').allTextContents()).every(text => text.trim() === '—'));
     homeFailed = false;
-    await page.getByText('统计暂时无法载入。').getByRole('button',{name:'重试'}).click();
+    await page.locator('.home-summary-error').getByRole('button',{name:'重试'}).click();
     await page.waitForFunction(() => document.querySelector('.home-stat-number')?.textContent.trim() !== '—');
 
     let horseFailed = false;
@@ -160,28 +160,28 @@ async function main() {
     await page.locator('.horse-row').first().waitFor();
     horseFailed = true;
     await page.locator('input[type=search]').fill('a');
-    await page.getByText('原型马目录暂时无法载入，请重试。').waitFor();
+    await page.locator('.content-state-error').filter({hasText:'原型马资料'}).waitFor();
     horseFailed = false;
-    await page.locator('.ui-state-error').filter({hasText:'原型马目录暂时无法载入，请重试。'}).getByRole('button',{name:'重试'}).click();
+    await page.locator('.content-state-error').filter({hasText:'原型马资料'}).getByRole('button',{name:'重试'}).click();
     await page.locator('.horse-row').first().waitFor();
-    assert.strictEqual(await page.getByText('原型马目录暂时无法载入，请重试。').count(),0);
+    assert.strictEqual(await page.locator('.content-state-error').count(),0);
 
     let characterFailed = true;
     await page.route('**/data/character_detail_data.js*', route => characterFailed ? route.abort() : route.continue());
     await page.goto(base+'/zh-Hans/database/characters');
     await page.locator('#cIntroGrid a').first().waitFor();
     await page.locator('#cIntroGrid a').first().click();
-    await page.getByText('角色完整资料暂时无法载入，请重试。').waitFor();
+    await page.locator('.content-state-error').waitFor();
     characterFailed = false;
-    await page.getByText('角色完整资料暂时无法载入，请重试。').getByRole('button',{name:'重试'}).click();
+    await page.locator('.content-state-error').getByRole('button',{name:'重试'}).click();
     await page.waitForFunction(() => window.__uma_app?.charDetail && !window.__uma_app.navigationError);
 
     let voiceFailed = true;
     await page.route('**/api/catalog/voice-actors?id=*', route => voiceFailed ? route.abort() : route.continue());
     await page.goto(base+'/zh-Hans/database/voice-actors/va-0142');
-    await page.getByText('声优资料暂时无法载入，请重试。').waitFor();
+    await page.locator('.content-state-error').filter({hasText:'声优资料'}).waitFor();
     voiceFailed = false;
-    await page.getByText('声优资料暂时无法载入，请重试。').getByRole('button',{name:'重试'}).click();
+    await page.locator('.content-state-error').filter({hasText:'声优资料'}).getByRole('button',{name:'重试'}).click();
     await page.waitForFunction(() => window.__uma_app?.voiceDetail && !window.__uma_app.voiceError);
     assert.deepStrictEqual(errors,[]);
     console.log('news pending stages, stable switch, totals, modifier clicks, staff URL, voice aliases/node reuse and feedback recovery passed');

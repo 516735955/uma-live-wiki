@@ -728,7 +728,10 @@ export function createAnime(deps) {
         label: "制作人员",
         show:
           deps.animeCurrentStaff.value.length ||
-          deps.animeStaffAggregate.value.length,
+          (!animeUnitDetail.value && !animeSingle.value &&
+            (animeCatalog.value.staff || []).some(entry =>
+              entry.work_id === animeDetail.value?.id && entry.unit_id &&
+              entry.roles?.length && animeRowMatchesEdition(entry, animeEdition.value))),
       },
       { id: "stills", label: "剧照", show: animeStillGroups.value.length },
     ].filter((tab) => tab.show),
@@ -841,7 +844,8 @@ export function createAnime(deps) {
         deps.pushUrl(true);
     });
     deps.watch(animeTabs, (tabs) => {
-      if (tabs.length && !tabs.some((tab) => tab.id === animeSection.value))
+      const requested = window.location && new URL(window.location.href).searchParams.get("section");
+      if (!requested && tabs.length && !tabs.some(tab => tab.id === animeSection.value))
         animeSection.value = tabs[0].id;
     });
   }

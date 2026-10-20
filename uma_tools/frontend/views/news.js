@@ -13,17 +13,18 @@ export const template = `
                     </button>
                 </div>
                 <h2 class="news-detail-title">{{ newsLanguage === 'ja' ? newsDetail.title : (newsDetail.title_zh || newsDetail.title) }}</h2>
-                <div v-if="newsError" class="ui-state ui-state-error" role="alert">{{ newsError }} <button type="button" @click="openNews(newsDetail.announce_id)">重试</button></div>
-                <div v-else-if="newsDetail.waiting_stopped" class="ui-state" role="status">后台仍在整理，可稍后重新读取。 <button type="button" @click="openNews(newsDetail.announce_id)">重新读取</button></div>
-                <div v-else-if="newsDetailLoading || newsDetail.archive_state==='pending'" class="ui-state ui-state-loading" role="status">正在读取归档正文…</div>
-                <p v-else-if="newsLanguage==='zh' && !newsDetail.message_zh" class="news-translation-status">中文译文正在整理中，可切换日文查看原文。</p>
+                <content-state v-if="newsError" state="error" subject="新闻正文" :retry="true" @retry="openNews(newsDetail.announce_id)"></content-state>
+                <content-state v-else-if="newsDetail.waiting_stopped" state="error" subject="新闻正文" reason="新闻正文读取超时" :retry="true" @retry="openNews(newsDetail.announce_id)"></content-state>
+                <content-state v-else-if="newsDetailLoading || newsDetail.archive_state==='pending'" state="loading" subject="新闻正文"></content-state>
+                <content-state v-else-if="newsLanguage==='zh' && !newsDetail.message_zh && newsDetail.translation_state==='pending'" state="loading" subject="中文译文"></content-state>
+                <content-state v-else-if="newsLanguage==='zh' && !newsDetail.message_zh" state="uncollected" subject="中文译文"></content-state>
                 <div class="news-detail-body" :lang="newsLanguage==='ja'?'ja':'zh-Hans'" v-html="newsDetailBody"></div>
             </div>
 
             <div v-else class="news-list">
-                <div v-if="newsError" class="news-error">{{ newsError }} <button type="button" class="ui-retry" @click="loadNews(true)">重试</button></div>
+                <content-state v-if="newsError" state="error" subject="新闻" :retry="true" @retry="loadNews(true)"></content-state>
 
-                <div v-if="newsItems.length || newsLoading" class="news-hero-grid">
+                <div v-if="!newsError && (newsItems.length || newsLoading)" class="news-hero-grid">
                     <template v-if="newsItems.length">
                         <a v-for="(n,i) in newsHero" :key="n.announce_id" class="news-hero-card" :href="routes.news(n.announce_id)" @click="newsLink($event,n.announce_id)" style="color:inherit;text-decoration:none">
                             <img class="news-hero-cover" v-media-src="newsHeroCover(n)" :alt="n.title" :loading="i === 0 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" decoding="async">
@@ -47,14 +48,14 @@ export const template = `
                     </template>
                 </div>
 
-                <div class="archive-toolbar">
+                <div v-if="!newsError" class="archive-toolbar">
                     <div class="archive-controls">
                         <ui-select v-model="newsRange" label="时间" :options="[{value:'all',label:'全部'},{value:'7',label:'7天内'},{value:'30',label:'30天内'},{value:'90',label:'90天内'}]"></ui-select>
                         <ui-select v-model="newsType" label="类型" :options="[{value:'all',label:'全部'},{value:'media',label:'MEDIA'},{value:'game',label:'GAME'},{value:'cd',label:'CD相关'}]"></ui-select>
                     </div>
                 </div>
 
-                <div id="news-list-top" class="news-rows">
+                <div v-if="!newsError && newsFiltered.length && !newsLoading" id="news-list-top" class="news-rows">
                     <div class="news-row news-row-head">
                         <span class="nw-d">时间</span>
                         <span class="nw-t">类型</span>
@@ -65,11 +66,12 @@ export const template = `
                         <span class="nw-t" :class="newsTypeOf(n)">{{ newsTypeLabel(n) }}</span>
                         <span class="nw-title">{{ newsTitle(n) }}</span>
                     </a>
-                    <div v-if="!newsFiltered.length && newsItems.length" class="news-empty">当前筛选下暂无新闻</div>
-                    <div v-if="newsLoading" class="news-empty">新闻加载中...</div>
                 </div>
+                <content-state v-if="!newsError && newsLoading" state="loading" subject="新闻"></content-state>
+                <content-state v-else-if="!newsError && newsItems.length && !newsFiltered.length" state="filtered" subject="新闻" :clear="true" @clear="newsRange='all';newsType='all'"></content-state>
+                <content-state v-else-if="!newsError && !newsLoading && !newsItems.length" state="uncollected" subject="新闻"></content-state>
 
-                <div v-if="newsFiltered.length && !newsLoading" class="news-pager">
+                <div v-if="!newsError && newsFiltered.length && !newsLoading" class="news-pager">
                     <div class="news-pager-count">显示 {{ newsPageStart }}-{{ newsPageEnd }} 共 {{ newsFiltered.length }} 条</div>
                     <div class="news-pager-btns">
                         <button type="button" class="news-pager-btn" :disabled="newsPage<=1" @click="setNewsPage(1)">«</button>

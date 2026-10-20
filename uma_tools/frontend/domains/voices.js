@@ -275,7 +275,7 @@ export function createVoices(deps) {
   }
 
   function voiceFieldLabel(voice, field) {
-    if (!voice) return "——";
+    if (!voice) return "尚未收录";
     const value = field === "birthday" ? voice.birth : voice[field];
     if (value) return value;
     const status = (voice.fieldStatus || {})[field];
@@ -284,7 +284,7 @@ export function createVoices(deps) {
         not_published: "未公开",
         not_applicable: "不适用",
         source_unavailable: "暂无可核实公开资料",
-      }[status] || "——"
+      }[status] || "尚未收录"
     );
   }
   function start() {

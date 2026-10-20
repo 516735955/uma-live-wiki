@@ -238,7 +238,8 @@ export function createSongs(deps) {
         }),
       );
     });
-    return rows;
+    // Only populated recording credits enter the ledger.
+    return rows.filter(function (row) { return row.display_credits.length; });
   });
 
   const songDetailPerformances = deps.computed(function () {
@@ -283,6 +284,13 @@ export function createSongs(deps) {
       },
     );
     return accepted;
+  });
+
+  const songLyricsApplicable = deps.computed(function () {
+    const versions = (songDetail.value && songDetail.value.versions) || [];
+    return !(versions.length && versions.every(function (version) {
+      return version.instrumental === true;
+    }));
   });
 
   const songLyricVersionOptions = deps.computed(function () {
@@ -679,6 +687,7 @@ export function createSongs(deps) {
     songLyricVersionId,
     songLyricVersionOptions,
     songLyricVersions,
+    songLyricsApplicable,
     songSection,
     songSingerLabel,
     songTotal,

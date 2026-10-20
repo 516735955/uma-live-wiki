@@ -73,6 +73,8 @@ components:
     rounded: "{rounded.md}"
 ---
 
+内容模块的空、加载和错误状态统一遵循[内容状态规范](docs/content-states.md)。
+
 # Design System: Uma Musume Live Wiki
 
 ## Overview

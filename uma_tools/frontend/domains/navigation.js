@@ -215,7 +215,6 @@ export function createNavigation(deps) {
       icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>',
       children: [
         { key: "horses", label: "原型马", path: deps.routes.horses() },
-        { key: "jockeys", label: "骑师", path: deps.routes.jockeys() },
         { key: "other", label: "其他", path: deps.routes.other() },
       ],
     },

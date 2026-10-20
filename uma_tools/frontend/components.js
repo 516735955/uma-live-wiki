@@ -1,9 +1,12 @@
+import { ContentState } from "/uma_tools/frontend/content-state.js";
+
 export function registerComponents(umaApp, routes) {
   umaApp.component("ui-select", window.UmaUi.UiSelect);
   umaApp.component("ui-disclosure", window.UmaUi.UiDisclosure);
   umaApp.component("entity-actions", window.UmaUi.EntityActions);
   umaApp.component("creator-network", window.UmaCreatorNetwork.CreatorNetwork);
   umaApp.component("audio-dock", window.UmaUi.AudioDock);
+  umaApp.component("content-state", ContentState);
   umaApp.component("platform-mark", {
     props: { platform: String },
     // Brand paths: Simple Icons (CC0), icons/bilibili.svg and icons/youtube.svg.

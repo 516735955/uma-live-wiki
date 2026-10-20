@@ -128,8 +128,6 @@ export function createCharacters(deps) {
       -1
     )
       return;
-    if (section === "pedigree" && !deps.charHasPedigree.value)
-      section = "profile";
     charSection.value = section;
     deps.pushUrl(true);
     if (section === "pedigree") {

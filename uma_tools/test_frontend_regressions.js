@@ -214,6 +214,23 @@ async function main() {
   assert.strictEqual(app.selectedSongLyricLines.value[1].start_ms, undefined, 'a missing timing does not shift the next line');
   assert.strictEqual(app.selectedSongLyricLines.value[2].start_ms, 900);
 
+  const sparse = deferred(); details.set('sparse', sparse);
+  sparse.resolve({ song: { id: 'sparse', title: 'Sparse', original_version_id: 'sparse-original', versions: [
+    { id: 'sparse-original', credits: [] },
+    { id: 'sparse-variant', credits: [{ role: 'composer', name: 'Variant' }] }
+  ] } });
+  await app.openSong('sparse', 'credits');
+  assert.strictEqual(app.songCreditVersions.value.length, 1, 'an empty original is omitted when a credited variant exists');
+  assert.strictEqual(app.songCreditVersions.value[0].display_credits[0].name, 'Variant');
+
+  const instrumental = deferred(); details.set('instrumental', instrumental);
+  instrumental.resolve({ song: { id: 'instrumental', title: 'Instrumental', versions: [
+    { id: 'instrumental-original', instrumental: true, lyrics: { lines: [] } }
+  ] } });
+  await app.openSong('instrumental', 'lyrics');
+  assert.strictEqual(app.songLyricsApplicable.value, false, 'a lyrics route remains explainable for an explicitly instrumental recording');
+  assert.strictEqual(app.songSection.value, 'lyrics');
+
   location.href = 'http://localhost/zh-Hans/news?type=media&page=2';
   await app.applyCurrentRoute();
   assert.strictEqual(app.newsType.value, 'media');

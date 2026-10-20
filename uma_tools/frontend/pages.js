@@ -16,9 +16,9 @@ const pages = {
   "legal-privacy": "/uma_tools/frontend/views/legal-privacy.js",
   "legal-terms": "/uma_tools/frontend/views/legal-terms.js",
 };
-const loading = { template: '<div class="ui-state loading">正在加载页面…</div>' };
+const loading = { template: '<content-state state="loading" subject="页面"></content-state>' };
 const failure = {
-  template: '<div class="ui-state ui-state-error">页面加载失败。<button class="ui-retry" @click="retry">重试</button></div>',
+  template: '<content-state state="error" subject="页面" :retry="true" @retry="retry"></content-state>',
 };
 
 export function registerPages(app) {

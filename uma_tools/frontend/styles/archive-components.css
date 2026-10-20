@@ -97,8 +97,11 @@
             text-align: center;
         }
         .ui-state.compact { padding: 22px 12px; }
+        .ui-state.content-state { border: 0; padding: 18px 12px; text-align: left; }
+        .home-summary-error .ui-state.content-state { color: inherit; padding: 0; }
         .ui-state-error { color: #7f3020; border-color: rgba(185, 76, 0, 0.2); }
-        .ui-state-error .ui-retry {
+        .ui-state-error .ui-retry,
+        .content-state .ui-retry {
             min-height: 40px;
             margin-inline-start: 12px;
             padding: 0 16px;
@@ -111,7 +114,8 @@
             cursor: pointer;
             transition: border-color 180ms ease, color 180ms ease, transform 260ms var(--ui-ease);
         }
-        .ui-state-error .ui-retry:hover { border-color: var(--ui-orange); color: var(--ui-orange-deep); transform: translateY(-1px); }
+        .ui-state-error .ui-retry:hover,
+        .content-state .ui-retry:hover { border-color: var(--ui-orange); color: var(--ui-orange-deep); transform: translateY(-1px); }
 
         .event-catalog,
         .song-catalog,

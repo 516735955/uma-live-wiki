@@ -1,11 +1,11 @@
 export const bindings = ["coverThumb","onCatalogImageError","isActive","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePaletteStyle","openCharacter","voiceProfiles","voiceLoading","voiceError","voiceDetail","voiceSection","setVoiceSection","voiceAppearance","voicePastByYear","voiceHistoryQuery","voiceHistoryKind","voiceFieldLabel","openVoice","appearanceIsLoading","appearanceError","retryAppearance","animeError","retryAnime","voiceAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes","retryVoice","internalLink"];
 export const template = `
-            <div v-if="voiceError" class="ui-state ui-state-error">{{ voiceError }} <button type="button" @click="retryVoice()">重试</button></div>
+            <content-state v-if="voiceError" state="error" subject="声优资料" :retry="true" @retry="retryVoice()"></content-state>
             <template v-if="!voiceDetail">
                 <div class="archive-toolbar"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="va-search" id="vaSearch" aria-label="搜索声优名或角色名" placeholder="搜索声优名或角色名" autocomplete="off"></label></div>
                 <div v-if="voiceLoading && !voiceProfiles.length" class="archive-card-skeletons" aria-hidden="true"><span v-for="i in 8" :key="'voice-load-'+i"></span></div>
                 <ul class="va-grid" id="vaGrid"></ul>
-                <div class="ui-state" id="vaNoData">没有找到匹配的声优</div>
+                <div id="vaNoData"><content-state state="filtered" subject="声优"></content-state></div>
             </template>
             <article v-else class="entity-detail voice-entity-detail" :style="voicePaletteStyle(voiceDetail)">
                 <div class="entity-hero" :class="{'entity-hero-text':!voiceDetail.photo}">
@@ -37,7 +37,7 @@ export const template = `
                 </section>
                 <section v-else-if="voiceSection==='songs'" class="entity-section">
                     <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">歌曲信息加载中</div>
-                    <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
+                    <content-state v-else-if="appearanceError('voice_actor',voiceDetail.id)" state="error" subject="歌曲信息" :retry="true" @retry="retryAppearance('voice_actor',voiceDetail.id)"></content-state>
                     <div v-else-if="voiceAppearance.songs.length" class="relation-song-list">
                         <ui-disclosure v-for="song in voiceAppearance.songs" :key="song.song_id" class="relation-song-row" :open="expandedRelationSongId===song.song_id" @toggle="toggleRelationSong(song.song_id)">
                             <template #leading><img v-media-src="coverThumb((relationSong(song)||{}).cover,112)" alt=""></template><template #title><b>{{ song.name }}</b></template>
@@ -54,19 +54,20 @@ export const template = `
                             </div>
                         </ui-disclosure>
                     </div>
-                    <div v-else class="ui-state compact">暂无演唱歌曲</div>
+                    <content-state v-else state="uncollected" subject="演唱歌曲"></content-state>
                 </section>
                 <section v-else-if="voiceSection==='anime'" class="entity-section">
-                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
+                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <anime-participation v-else-if="voiceAnimeWorks.length" :works="voiceAnimeWorks" hide-single-role></anime-participation>
-                    <div v-else class="ui-state compact">暂无动画出演</div>
+                    <content-state v-else state="uncollected" subject="动画出演"></content-state>
                 </section>
                 <section v-else-if="voiceSection==='events'" class="entity-section">
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="voiceHistoryQuery" aria-label="搜索活动或年份" placeholder="搜索活动或年份"></label><ui-select v-model="voiceHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('voice_actor',voiceDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
-                    <div v-else-if="appearanceError('voice_actor',voiceDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('voice_actor',voiceDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('voice_actor',voiceDetail.id)">重试</button></div>
+                    <content-state v-else-if="appearanceError('voice_actor',voiceDetail.id)" state="error" subject="出演记录" :retry="true" @retry="retryAppearance('voice_actor',voiceDetail.id)"></content-state>
                     <div v-else-if="voicePastByYear.length" class="history-years"><section v-for="group in voicePastByYear" :key="group.year"><span class="credit-role-tag history-year">{{ group.year }}</span><a v-for="event in group.events" :key="event.event_id+'-'+(event.session_id||'event')" :href="routes.events(event.event_id,event.session_id)" @click="internalLink($event, () => openEvent(event.event_id,event.session_id))"><time>{{ appearanceDateLabel(event) }}</time><span>{{ event.title }}<em v-if="appearanceSessionLabel(event)" class="credit-role-tag session-tag">{{ appearanceSessionLabel(event) }}</em><em v-if="event.participation_label" class="credit-role-tag session-tag">{{ event.participation_label }}</em></span><em>{{ eventKindLabel(event.kind) }}</em></a></section></div>
-                    <div v-else class="ui-state compact">暂无演出活动</div>
+                    <content-state v-else-if="voiceHistoryQuery || voiceHistoryKind!=='all'" state="filtered" subject="演出活动" :clear="true" @clear="voiceHistoryQuery='';voiceHistoryKind='all'"></content-state>
+                    <content-state v-else state="uncollected" subject="演出活动"></content-state>
                 </section>
             </article>
         `;

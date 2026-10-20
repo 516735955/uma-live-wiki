@@ -1,11 +1,12 @@
 export const bindings = ["coverThumb","onCatalogImageError","isActive","voiceHrefByName","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePhotoByName","charDetail","charSort","characterSortOptions","charSection","charHasPedigree","setCharSection","charAppearance","charHistoryQuery","charHistoryKind","charHistoryEvents","horseUrlForCharacter","horseVideosForCharacter","openVoice","appearanceIsLoading","appearanceError","retryAppearance","pedigreeStatus","pedigreeError","retryPedigree","animeError","retryAnime","characterAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes","internalLink"];
+bindings.push("charPedigreeApplicable");
 export const template = `
             <template v-if="!charDetail">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="c-search" id="cIntroSearch" aria-label="搜索角色名或声优名" placeholder="搜索角色名或声优名" autocomplete="off"></label>
                     <ui-select v-model="charSort" label="排序" :options="characterSortOptions"></ui-select>
                 </div>
-                <div class="cio-list loading" id="cIntroList"><ul class="cio-grid" id="cIntroGrid"></ul><div class="ui-state" id="cIntroNoData">没有找到匹配的角色</div></div>
+                <div class="cio-list loading" id="cIntroList"><ul class="cio-grid" id="cIntroGrid"></ul><div id="cIntroNoData"><content-state state="filtered" subject="角色"></content-state></div></div>
             </template>
             <article v-else id="cIntroDetail" class="entity-detail character-entity-detail" :style="{'--entity-accent':charDetail.main || '#3157ed','--entity-sub':charDetail.sub || '#ffa932'}">
                 <div class="entity-hero" :class="{'entity-hero-text':!charDetail.img}">
@@ -26,7 +27,7 @@ export const template = `
                 </div>
                 <nav class="entity-tabs" aria-label="角色栏目">
                     <button :class="{active:charSection==='profile'}" @click="setCharSection('profile')">角色信息</button>
-                    <button v-if="charHasPedigree" :class="{active:charSection==='pedigree'}" @click="setCharSection('pedigree')">血统溯源</button>
+                    <button v-if="charPedigreeApplicable" :class="{active:charSection==='pedigree'}" @click="setCharSection('pedigree')">血统溯源</button>
                     <button :class="{active:charSection==='songs'}" @click="setCharSection('songs')">歌曲信息</button>
                     <button :class="{active:charSection==='anime'}" @click="setCharSection('anime')">动画出演</button>
                     <button :class="{active:charSection==='events'}" @click="setCharSection('events')">活动出演</button>
@@ -40,14 +41,15 @@ export const template = `
                     </dl>
                     <div class="c-detail-block" id="cDetailBlock"></div>
                 </section>
-                <section v-if="charHasPedigree && charSection==='pedigree'" class="pedigree-section">
-                    <div v-if="pedigreeStatus==='loading' || pedigreeStatus==='idle'" class="ui-state ui-state-loading" role="status">血统关系加载中</div>
-                    <div v-else-if="pedigreeStatus==='error'" class="ui-state ui-state-error" role="alert"><span>{{ pedigreeError }}</span><button type="button" class="ui-retry" @click="retryPedigree">重试</button></div>
+                <section v-if="charSection==='pedigree'" class="pedigree-section">
+                    <content-state v-if="!charHasPedigree" :state="charPedigreeApplicable ? 'uncollected' : 'not_applicable'" subject="血统资料"></content-state>
+                    <div v-else-if="pedigreeStatus==='loading' || pedigreeStatus==='idle'" class="ui-state ui-state-loading" role="status">血统关系加载中</div>
+                    <content-state v-else-if="pedigreeStatus==='error'" state="error" subject="血统关系" :retry="true" @retry="retryPedigree"></content-state>
                     <div v-else id="cCharBlood"></div>
                 </section>
                 <section v-if="charSection==='songs'" class="entity-section">
                     <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">歌曲信息加载中</div>
-                    <div v-else-if="appearanceError('character',charDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('character',charDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('character',charDetail.id)">重试</button></div>
+                    <content-state v-else-if="appearanceError('character',charDetail.id)" state="error" subject="歌曲信息" :retry="true" @retry="retryAppearance('character',charDetail.id)"></content-state>
                     <div v-else-if="charAppearance.songs.length" class="relation-song-list">
                         <ui-disclosure v-for="song in charAppearance.songs" :key="song.song_id" class="relation-song-row" :open="expandedRelationSongId===song.song_id" @toggle="toggleRelationSong(song.song_id)">
                             <template #leading><img v-media-src="coverThumb((relationSong(song)||{}).cover,112)" alt=""></template><template #title><b>{{ song.name }}</b></template>
@@ -64,19 +66,20 @@ export const template = `
                             </div>
                         </ui-disclosure>
                     </div>
-                    <div v-else class="ui-state compact">暂无演唱歌曲</div>
+                    <content-state v-else state="uncollected" subject="演唱歌曲"></content-state>
                 </section>
                 <section v-if="charSection==='anime'" class="entity-section">
-                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
+                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <anime-participation v-else-if="characterAnimeWorks.length" :works="characterAnimeWorks" :self-character-id="charDetail.id"></anime-participation>
-                    <div v-else class="ui-state compact">暂无动画出演</div>
+                    <content-state v-else state="uncollected" subject="动画出演"></content-state>
                 </section>
                 <section v-if="charSection==='events'" class="entity-section">
                     <div class="archive-toolbar compact"><label class="ui-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="charHistoryQuery" aria-label="搜索活动或年份" placeholder="搜索活动或年份"></label><ui-select v-model="charHistoryKind" label="类型" :options="historyKindOptions"></ui-select></div>
                     <div v-if="appearanceIsLoading('character',charDetail.id)" class="ui-state ui-state-loading">出演记录加载中</div>
-                    <div v-else-if="appearanceError('character',charDetail.id)" class="ui-state ui-state-error" role="alert"><span>{{ appearanceError('character',charDetail.id) }}</span><button type="button" class="ui-retry" @click="retryAppearance('character',charDetail.id)">重试</button></div>
+                    <content-state v-else-if="appearanceError('character',charDetail.id)" state="error" subject="出演记录" :retry="true" @retry="retryAppearance('character',charDetail.id)"></content-state>
                     <div v-else-if="charHistoryEvents.length" class="history-list"><a v-for="event in charHistoryEvents" :key="event.event_id+'-'+(event.session_id||'event')" :href="routes.events(event.event_id,event.session_id)" @click="internalLink($event, () => openEvent(event.event_id,event.session_id))"><time>{{ appearanceDateLabel(event) }}</time><span>{{ event.title }}<em v-if="appearanceSessionLabel(event)" class="credit-role-tag session-tag">{{ appearanceSessionLabel(event) }}</em></span><em>{{ eventKindLabel(event.kind) }}</em></a></div>
-                    <div v-else class="ui-state compact">暂无演出活动</div>
+                    <content-state v-else-if="charHistoryQuery || charHistoryKind!=='all'" state="filtered" subject="演出活动" :clear="true" @clear="charHistoryQuery='';charHistoryKind='all'"></content-state>
+                    <content-state v-else state="uncollected" subject="演出活动"></content-state>
                 </section>
             </article>
         `;

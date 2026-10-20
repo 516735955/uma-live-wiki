@@ -1,6 +1,6 @@
 export const bindings = ["characterImage","characterColor","openCharDetail","otherSection","setOtherSection","curatedVideos","horseFacts","horseMajorRows","horseMajorExpanded","horseMajorTotal","toggleHorseMajor","horsesListError","horseDetail","horseQuery","horseSex","horseSexOptions","horseSort","horseSortOptions","horsePage","horseFiltered","horsePaged","horsePageCount","horsePageStart","horsePageEnd","horsePageList","setHorsePage","goHorsePage","openHorse","horseSexLabel","horseChars","onHorseImageError","retryHorses","routes","horsesTotal","internalLink"];
 export const template = `
-            <nav v-if="!['horses','jockeys'].includes(otherSection)" class="entity-tabs" aria-label="其他栏目"><button :class="{active:otherSection==='relationships'}" @click="setOtherSection('relationships')">角色设定相关</button><button :class="{active:otherSection==='videos'}" @click="setOtherSection('videos')">精选推荐视频</button></nav>
+            <nav v-if="!['horses','jockeys'].includes(otherSection)" class="entity-tabs" aria-label="其他栏目"><button :class="{active:otherSection==='relationships'}" @click="setOtherSection('relationships')">角色设定相关</button><button v-if="curatedVideos.length" :class="{active:otherSection==='videos'}" @click="setOtherSection('videos')">精选推荐视频</button></nav>
             <section v-if="otherSection==='relationships'" class="entity-section other-section">
                 <div class="section-toolbar"><span class="credit-role-tag">赛马娘设定集</span></div>
                 <div class="setting-book-list">
@@ -13,7 +13,8 @@ export const template = `
                 <img v-media-src="'/uma_tools/img/character-roommates.jpg'" alt="宿舍室友关系图" class="roommate-image" loading="lazy">
             </section>
             <section v-else-if="otherSection==='videos'" class="entity-section other-section">
-                <div class="video-library">
+                <content-state v-if="!curatedVideos.length" state="uncollected" subject="推荐视频"></content-state>
+                <div v-else class="video-library">
                     <a v-for="video in curatedVideos" :key="video.id" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener"><img v-media-src="'/video_thumbs/'+video.id+'.jpg'" :alt="video.title" loading="lazy"><b>{{ video.title }}</b><span>观看 ↗</span></a>
                 </div>
             </section>
@@ -26,7 +27,7 @@ export const template = `
                             <ui-select v-model="horseSort" label="排序" :options="horseSortOptions"></ui-select>
                         </div>
                     </div>
-                    <div v-if="horsesListError" class="ui-state ui-state-error" role="alert"><span>{{ horsesListError }}</span><button type="button" class="ui-retry" @click="retryHorses">重试</button></div>
+                    <content-state v-if="horsesListError" state="error" subject="原型马资料" :retry="true" @retry="retryHorses"></content-state>
                     <div v-else-if="horsePaged.length" class="horse-list">
                         <a v-for="horse in horsePaged" :key="horse.id" class="horse-row" :href="routes.horses(horse.id)" @click="internalLink($event, () => openHorse(horse.id))">
                             <span class="horse-thumb"><img v-if="horse.photo" v-media-src="horse.photo" :alt="horse.zh" loading="lazy" @error="onHorseImageError($event)"><i v-else>{{ (horse.zh || '马').slice(0,1) }}</i></span>
@@ -34,7 +35,7 @@ export const template = `
                             <span class="horse-row-go">查看 <em>→</em></span>
                         </a>
                     </div>
-                    <div v-else class="ui-state">没有匹配的原型马</div>
+                    <content-state v-else state="filtered" subject="原型马" :clear="true" @clear="horseQuery='';setHorsePage(1)"></content-state>
                     <div v-if="horsePaged.length" class="ui-pager">
                         <span>{{ horsePageStart }}–{{ horsePageEnd }} / {{ horsesTotal }}</span>
                         <div>
@@ -115,6 +116,6 @@ export const template = `
             </section>
             <section v-else class="entity-section other-section">
                 <div class="section-toolbar"><span class="credit-role-tag">骑师</span></div>
-                <div class="ui-state">骑师资料建设中，敬请期待。</div>
+                <content-state state="uncollected" subject="骑师资料"></content-state>
             </section>
         `;

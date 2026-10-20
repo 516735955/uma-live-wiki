@@ -94,7 +94,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <div class="home-stat"><div class="home-stat-number">{{ statAlbums }}</div><div class="home-stat-label">专辑数</div></div>
             <div class="home-stat"><div class="home-stat-number">{{ statLive }}</div><div class="home-stat-label">live场次</div></div>
             <div class="home-stat"><div class="home-stat-number">{{ statGongyan }}</div><div class="home-stat-label">公演次数</div></div>
-            <div v-if="homeSummaryError" class="ui-state home-summary-error">{{ homeSummaryError }} <button type="button" @click="loadHomeSummary()">重试</button></div>
+            <div v-if="homeSummaryError" class="home-summary-error"><content-state state="error" subject="统计资料" :retry="true" @retry="loadHomeSummary()"></content-state></div>
         </div>
         <div class="home-nav">
             <nav class="site-nav site-nav-home" aria-label="主导航">
@@ -135,7 +135,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 
     <div class="container" v-if="!home">
         <div v-if="!routeReady" class="ui-state loading">正在加载资料…</div>
-        <div v-else-if="routeError" class="ui-state ui-state-error"><span>{{ routeError }}</span><button class="ui-retry" @click="retryCurrentRoute">重试</button></div>
+        <content-state v-else-if="routeError" state="error" subject="页面" :retry="true" @retry="retryCurrentRoute"></content-state>
         <section v-else-if="notFound" class="not-found-page" aria-labelledby="not-found-title">
             <span>404</span>
             <h1 id="not-found-title">没有找到这个页面</h1>
@@ -143,7 +143,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <button type="button" @click="navNavigate(routes.home())">返回首页</button>
         </section>
         <template v-else>
-        <div v-if="navigationError" class="ui-state ui-state-error">{{ navigationError }} <button v-if="navigationRetry" type="button" @click="navigationRetry()">重试</button></div>
+        <content-state v-if="navigationError" state="error" subject="页面资料" :retry="!!navigationRetry" @retry="navigationRetry()"></content-state>
         <nav v-if="breadcrumbItems.length" class="route-breadcrumb" aria-label="面包屑">
             <template v-for="(item,index) in breadcrumbItems" :key="index">
                 <span v-if="index" aria-hidden="true">›</span>

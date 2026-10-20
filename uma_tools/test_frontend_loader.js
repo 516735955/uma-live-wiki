@@ -15,6 +15,9 @@ function loadFrontend(context) {
     const source = read(path.join(directory, file + '.js')).replace('export function ' + name, 'function ' + name);
     context[name] = vm.runInContext('(function(){' + source + ';return ' + name + ';})()', context, { filename: file + '.js' });
   }
+  const contentStateSource = read(path.join(directory, 'content-state.js'))
+    .replace('export const ContentState', 'const ContentState');
+  context.ContentState = vm.runInContext('(function(){' + contentStateSource + ';return ContentState;})()', context, { filename: 'content-state.js' });
   const imports = Array.from(
     wiring.matchAll(
       /import\s*\{\s*(\w+)\s*\}\s*from "\/uma_tools\/frontend\/domains\/([\w-]+)\.js";/g,
@@ -34,6 +37,7 @@ function loadFrontend(context) {
   );
   for (const name of ["view-model", "pages", "components"]) {
     const module = read(path.join(directory, name + ".js"))
+      .replace(/^import .*;\n/gm, "")
       .replace(/export function /g, "function ");
     const exported = { 'view-model': 'createViewModel', pages: 'registerPages', components: 'registerComponents' }[name];
     context[exported] = vm.runInContext('(function(){' + module + ';return ' + exported + ';})()', context, { filename: name + '.js' });

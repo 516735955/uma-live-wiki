@@ -14,6 +14,12 @@ export function createHorses(deps) {
     return !!id && (meta.available || []).indexOf(id) >= 0;
   });
 
+  const charPedigreeApplicable = deps.computed(function () {
+    const id = deps.charDetail.value && deps.charDetail.value.id;
+    const meta = window.CHARACTER_PEDIGREE_META || {};
+    return !!id && !(meta.not_applicable || meta.non_uma || []).includes(id);
+  });
+
   const otherSection = deps.ref("relationships");
 
   const horsesList = deps.ref([]);
@@ -681,6 +687,7 @@ export function createHorses(deps) {
   return {
     start,
     charHasPedigree,
+    charPedigreeApplicable,
     curatedVideos,
     goHorsePage,
     horseChars,

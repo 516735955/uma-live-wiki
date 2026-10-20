@@ -1,6 +1,6 @@
 export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","eventDateLabel","eventSummary","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
 export const template = `
-            <div v-if="eventsError" class="ui-state ui-state-error">{{ eventsError }} <button type="button" @click="loadEvents()">重试</button></div>
+            <content-state v-if="eventsError" state="error" subject="活动" :retry="true" @retry="loadEvents()"></content-state>
 
             <template v-if="liveView==='eventHub'">
                 <div class="archive-toolbar">
@@ -33,12 +33,12 @@ export const template = `
                         <span class="event-catalog-facts">
                             <em v-if="event.schedule_status==='cancelled'" class="event-status-cancelled">已取消</em>
                             <i>{{ eventKindLabel(event.kind) }}</i>
-                            <b>{{ event.cast_count || 0 }} 位{{ event.schedule_status==='cancelled' ? '原定出演' : '出演' }}</b>
+                            <b v-if="event.cast_count">{{ event.cast_count }} 位{{ event.schedule_status==='cancelled' ? '原定出演' : '出演' }}</b>
                             <b v-if="eventSongCount(event)">{{ eventSongCount(event) }} 首曲目</b>
                         </span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
-                    <div v-if="!eventsLoading && !eventsCurrentPage.length" class="ui-state">没有符合条件的活动</div>
+                    <content-state v-if="!eventsError && !eventsLoading && !eventsCurrentPage.length" :state="(eventsQuery || evTime!=='all' || eventTypeSelection!=='kind:all' || evYear!=='all') ? 'filtered' : 'uncollected'" subject="活动" :clear="!!(eventsQuery || evTime!=='all' || eventTypeSelection!=='kind:all' || evYear!=='all')" @clear="eventsQuery='';evTime='all';eventTypeSelection='kind:all';evYear='all';eventsPage=1"></content-state>
                 </div>
                 <div v-if="eventsCurrentPage.length" class="ui-pager">
                     <span>{{ eventsPageStart }}–{{ eventsPageEnd }} / {{ eventsTotal }}</span>
@@ -96,24 +96,24 @@ export const template = `
                                 <td class="setlist-actions"><entity-actions v-if="playableSongRelease(relationSong(performance))" size="compact" :playing="isActive(playableSongRelease(relationSong(performance)).release.audio_url)" @play="playEventTrack(performance)" @add="addEventTrack(performance)"></entity-actions><span v-else>—</span></td>
                             </tr></tbody>
                         </table>
-                        <div v-else class="ui-state compact">无演出曲目</div>
+                        <content-state v-else state="uncollected" subject="曲目"></content-state>
                     </section>
 
                     <section class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">{{ eventDetail.schedule_status==='cancelled' ? '原定出演' : '出演阵容' }}</span><span>{{ eventVoiceCast.length }} 位</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">{{ eventDetail.schedule_status==='cancelled' ? '原定出演' : '出演阵容' }}</span><span v-if="eventVoiceCast.length">{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-chip-list">
                             <a v-for="cast in eventVoiceCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(cast.character_id)}" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))">
                                 <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
                             </a>
                         </div>
-                        <div v-else class="ui-state compact">暂无出演阵容</div>
+                        <content-state v-else state="uncollected" subject="出演阵容"></content-state>
                     </section>
                     <section v-if="eventUnscopedCast.length" class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">场次未明确</span></div>
                         <div class="performer-chip-list"><a v-for="cast in eventUnscopedCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span></a></div>
                     </section>
 
-                    <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
+                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <section v-if="eventAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
                         <anime-participation :works="eventAnimeWorks"></anime-participation>
