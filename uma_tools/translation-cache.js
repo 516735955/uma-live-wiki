@@ -40,20 +40,34 @@ class TranslationCache {
     this.setMany({ [key]: value });
   }
   setMany(entries) {
-    // Merge one completed translation into the latest disk contents, never a
-    // stale in-memory copy of the whole cache. The service is its sole writer.
-    this.reload(true);
-    const next = { ...this.values, ...entries };
+    // Serialize the read/merge/rename sequence across blue/green processes.
+    // Atomic rename prevents torn files, while this lock prevents lost keys.
+    const lock = this.file + '.lock';
+    fs.mkdirSync(path.dirname(this.file), { recursive: true });
+    const started = Date.now();
+    while (true) {
+      try { fs.writeFileSync(lock, String(process.pid), { flag: 'wx' }); break; }
+      catch (error) {
+        if (error.code !== 'EEXIST') throw error;
+        try {
+          if (Date.now() - fs.statSync(lock).mtimeMs > 30000) fs.unlinkSync(lock);
+        } catch (_) {}
+        if (Date.now() - started > 30000) throw new Error('translation cache lock timeout');
+        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 10);
+      }
+    }
     const temporary = this.file + '.' + process.pid + '.tmp';
     try {
-      fs.mkdirSync(path.dirname(this.file), { recursive: true });
+      this.reload(true);
+      const next = { ...this.values, ...entries };
       fs.writeFileSync(temporary, JSON.stringify(next, null, 1), { mode: 0o644 });
       fs.renameSync(temporary, this.file);
+      this.values = next;
+      this.mtime = fs.statSync(this.file).mtimeMs;
     } finally {
       if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
+      if (fs.existsSync(lock)) fs.unlinkSync(lock);
     }
-    this.values = next;
-    this.mtime = fs.statSync(this.file).mtimeMs;
   }
 }
 

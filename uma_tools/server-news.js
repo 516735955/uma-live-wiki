@@ -193,7 +193,9 @@ exports.createService = function (deps) {
         (newsIndexCache.data && newsIndexCache.data.generated_at) || "",
       ) || 0;
     const incomingAt = Date.parse(snapshot.generated_at || "") || 0;
-    if (!newsIndexCache.data || incomingAt > currentAt) {
+    const sameTimestampChanged = incomingAt === currentAt && newsIndexCache.data &&
+      JSON.stringify(newsIndexCache.data.information_list) !== JSON.stringify(snapshot.information_list);
+    if (!newsIndexCache.data || incomingAt > currentAt || sameTimestampChanged) {
       newsIndexCache = {
         at: Math.max(newsIndexCache.at || 0, incomingAt),
         data: snapshot,
@@ -268,13 +270,17 @@ exports.createService = function (deps) {
       cb();
       return;
     }
+    const controller = new AbortController();
     let idx = 0,
       active = 0,
       done = 0,
       finished = false;
+    let timer;
     const finish = () => {
       if (!finished) {
         finished = true;
+        clearTimeout(timer);
+        controller.abort();
         cb();
       }
     };
@@ -297,11 +303,12 @@ exports.createService = function (deps) {
             if (done === need.length) finish();
             else pump();
           },
+          controller.signal,
         );
       }
     }
     pump();
-    setTimeout(() => {
+    timer = setTimeout(() => {
       if (!finished) finish();
     }, BACKFILL_TIMEOUT);
   }
@@ -584,11 +591,13 @@ exports.createService = function (deps) {
       return;
     }
     refreshNewsIndex()
-      .then((data) =>
-        deps.sendJson(res, 200, data, {
+      .then(async (data) => {
+        const listed = await archivedTitles(data.information_list || []);
+        const response = { ...data, information_list: listed };
+        deps.sendJson(res, 200, response, {
           cacheControl: "public, max-age=60, stale-while-revalidate=300",
-        }),
-      )
+        });
+      })
       .catch((error) => {
         console.error(
           "[news] refresh failed:",
@@ -734,26 +743,29 @@ exports.createService = function (deps) {
   }
 
   function cleanHtml(s) {
+    const named = {
+      nbsp: " ", amp: "&", lt: "<", gt: ">", quot: '"', apos: "'",
+      copy: "©", reg: "®", hellip: "…", mdash: "—", ndash: "–",
+      middot: "·", laquo: "«", raquo: "»", yen: "¥", times: "×", plusmn: "±",
+    };
     return String(s || "")
       .replace(/<[^>]+>/g, "")
       .replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, value) => {
         const point = /^x/i.test(value) ? parseInt(value.slice(1), 16) : Number(value);
         return point > 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : entity;
       })
-      .replace(/&nbsp;/g, " ")
-      .replace(/&quot;/g, '"')
-      .replace(/&apos;/g, "'")
-      .replace(/&amp;/g, "&")
+      .replace(/&([a-z][a-z0-9]+);/gi, (entity, name) => named[name.toLowerCase()] ?? entity)
       .trim();
   }
 
   function extractInnercon(body) {
-    const i = body.indexOf('class="innercon"');
-    if (i === -1) return null;
-    const start = body.indexOf(">", i) + 1;
+    const open = body.match(/<div\b[^>]*\bclass\s*=\s*(["'])[^"']*\binnercon\b[^"']*\1[^>]*>/i);
+    if (!open) return null;
+    const start = open.index + open[0].length;
     // simpler: capture up to the ban_more nav which follows the content div
-    const endMarker = body.indexOf('<div class="ban_more">', start);
-    if (endMarker !== -1) {
+    const marker = body.slice(start).match(/<div\b[^>]*\bclass\s*=\s*(["'])[^"']*\bban_more\b[^"']*\1[^>]*>/i);
+    if (marker) {
+      const endMarker = start + marker.index;
       return body
         .slice(start, endMarker)
         .replace(/<\/div>\s*$/, "")

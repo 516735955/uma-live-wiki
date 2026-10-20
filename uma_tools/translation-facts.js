@@ -14,9 +14,16 @@ function translationFactsMatch(source, translated) {
   return numericFacts(source) === numericFacts(translated);
 }
 
+function starFactsMatch(source, translated) {
+  const groups = value => (String(value || '').match(/★+/g) || []).map(group => group.length);
+  const expected = groups(source);
+  const actual = groups(translated);
+  return expected.length === actual.length && expected.every((count, index) => count === actual[index]);
+}
+
 function untranslatedJapanese(source, translated) {
   return (source === translated && /[\u3040-\u30ff]/.test(source)) ||
     /ございます|いたします|ください|されます|しました|となります|のとおり/.test(translated);
 }
 
-module.exports = { translationFactsMatch, untranslatedJapanese };
+module.exports = { translationFactsMatch, starFactsMatch, untranslatedJapanese };

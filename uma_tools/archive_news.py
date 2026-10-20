@@ -67,6 +67,7 @@ def main():
     if args.normalize_terms and not args.database.is_file():
         parser.error('--normalize-terms requires an existing news database')
     archive = NewsDatabase(args.database)
+    exit_code = 0
     if args.normalize_terms:
         rows = []
         for key, revision, translated in archive.db.execute('SELECT article_key,revision,translated FROM versions WHERE state="complete" AND translated IS NOT NULL'):
@@ -118,6 +119,7 @@ def main():
                     complete += 1
                 except Exception as error:
                     failed += 1
+                    exit_code = 1
                     item = futures[future]
                     key = str(item['announce_id']) if item.get('source') == 'lantis' else 'official-' + str(item['announce_id'])
                     archive.dispatch('source_failure', {'key': key, 'error': str(error)})
@@ -144,7 +146,8 @@ def main():
     else:
         print(json.dumps(archive.dispatch('stats', {}), ensure_ascii=False))
     archive.db.close()
+    return exit_code
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

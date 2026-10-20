@@ -62,6 +62,10 @@ exports.createService = function (deps) {
 
   function translationKey(source) {
     const terms = currentTerms();
+    return translationKeyWithTerms(source, terms);
+  }
+
+  function translationKeyWithTerms(source, terms) {
     return terms.protect(source).count
       ? "terms_" + terms.revision + ":" + source
       : source;
@@ -167,13 +171,13 @@ exports.createService = function (deps) {
     return result;
   }
 
-  function translateOne(text, attempt, signal) {
+  function translateOne(text, attempt, signal, terms = currentTerms()) {
     if (signal && signal.aborted) return Promise.resolve("");
-    const known = currentTerms().protect(text);
+    const known = terms.protect(text);
     if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
       return Promise.resolve(known.restore(known.text));
     return new Promise((resolve) => {
-      const protectedText = currentTerms().protect(text);
+      const protectedText = terms.protect(text);
       fetchTranslation(protectedText.text, signal)
         .then((j) => {
           try {
@@ -184,15 +188,19 @@ exports.createService = function (deps) {
                 })
                 .join("");
               const restored = protectedText.restore(t);
+              const rating = text.match(/^★+/);
+              const candidate = rating ? restored.replace(/^★+/, rating[0]) : restored;
               const {
                 translationFactsMatch,
+                starFactsMatch,
                 untranslatedJapanese,
               } = require("./translation-facts");
               resolve(
-                restored &&
+                  candidate &&
                   translationFactsMatch(protectedText.text, t) &&
+                  starFactsMatch(text, candidate) &&
                   !untranslatedJapanese(protectedText.text, t)
-                  ? restored
+                  ? candidate
                   : "",
               );
               return;
@@ -202,7 +210,7 @@ exports.createService = function (deps) {
               // rate-limited: wait and retry
               setTimeout(
                 function () {
-                  translateOne(text, (attempt || 0) + 1, signal).then(resolve);
+                  translateOne(text, (attempt || 0) + 1, signal, terms).then(resolve);
                 },
                 1200 * ((attempt || 0) + 1),
               );
@@ -225,7 +233,7 @@ exports.createService = function (deps) {
       // Baidu free tier is ~1 QPS; translate serially with a small delay.
       let zh = '';
       try {
-        zh = await translateOne(item.text, 0, item.signal);
+        zh = await translateOne(item.text, 0, item.signal, item.terms);
         if (zh && zh !== item.text) translations.set(item.key, zh);
       } catch (error) { console.error('[translation]', error.message); }
       finally {
@@ -242,17 +250,22 @@ exports.createService = function (deps) {
 
   function translateTitle(text, cb, signal, background = false) {
     if (!text) return cb(text || "");
-    const cached = currentTerms().normalize(newsContent.title(text));
+    const terms = currentTerms();
+    const cached = terms.normalize(newsContent.title(text));
     if (cached) return cb(cached);
     if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
     if (signal?.aborted) return cb(text);
-    const key = translationKey(text);
+    const key = terms.protect
+      ? (terms.protect(text).count
+      ? "terms_" + terms.revision + ":" + text
+      : text)
+      : text;
     let item = titlePending.get(key);
     if (item?.signal.aborted) item = null;
     const duplicate = !!item;
     if (!item) {
       const controller = new AbortController();
-      item = { text, key, controller, signal: controller.signal, callbacks: [] };
+      item = { text, key, terms, controller, signal: controller.signal, callbacks: [] };
       titlePending.set(key, item);
     }
     const abort = () => { if (item.callbacks.every(row => row.signal?.aborted)) item.controller.abort(); };
@@ -268,7 +281,7 @@ exports.createService = function (deps) {
     return /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff]/.test(s);
   }
 
-  function translateBatchLines(lines, cb, signal, attempt = 0) {
+  function translateBatchLines(lines, cb, signal, attempt = 0, terms = currentTerms()) {
     let completed = false;
     const finish = (out, dirty) => {
       if (!completed) {
@@ -280,7 +293,7 @@ exports.createService = function (deps) {
     // translate multiple short text runs in one Baidu request (newline-joined)
     if (!lines.length) return finish([], false);
     const protectedLines = lines.map((line, index) =>
-      currentTerms().protect(line, String(index).padStart(4, "0")),
+      terms.protect(line, String(index).padStart(4, "0")),
     );
     const text = protectedLines.map((line) => line.text).join("\n");
     if (text.length > 950 || Buffer.byteLength(text) > 5500) return fallback();
@@ -294,7 +307,7 @@ exports.createService = function (deps) {
             for (let i = 0; i < lines.length; i++) {
               let value = "";
               if (j.trans_result[i].src === protectedLines[i].text) {
-                const restored = protectedLines[i].restore(
+                  const restored = protectedLines[i].restore(
                   j.trans_result[i].dst,
                 );
                 if (restored) {
@@ -305,6 +318,7 @@ exports.createService = function (deps) {
                     : restored;
                   const {
                     translationFactsMatch,
+                    starFactsMatch,
                     untranslatedJapanese,
                   } = require("./translation-facts");
                   if (
@@ -312,6 +326,7 @@ exports.createService = function (deps) {
                       protectedLines[i].text,
                       j.trans_result[i].dst,
                     ) &&
+                    starFactsMatch(lines[i], candidate) &&
                     !untranslatedJapanese(
                       protectedLines[i].text,
                       j.trans_result[i].dst,
@@ -335,7 +350,7 @@ exports.createService = function (deps) {
             !(signal && signal.aborted)
           ) {
             setTimeout(
-              () => translateBatchLines(lines, finish, signal, attempt + 1),
+              () => translateBatchLines(lines, finish, signal, attempt + 1, terms),
               1200 * (attempt + 1),
             );
             return;
@@ -352,19 +367,26 @@ exports.createService = function (deps) {
     const src = String(html || "");
     if (signal && signal.aborted) return cb("");
     if (!src) return cb("");
+    const terms = currentTerms();
     const hash = deps.crypto.createHash("md5").update(src).digest("hex");
     const originalKey = "msg_" + hash;
-    const key = currentTerms().protect(src).count
-      ? "msg_terms_" + currentTerms().revision + "_" + hash
+    const key = terms.protect(src).count
+      ? "msg_terms_" + terms.revision + "_" + hash
       : originalKey;
     const cached = newsContent.message(originalKey) || translations.get(key);
-    if (cached && cached !== src) return cb(currentTerms().normalize(cached));
+    if (cached && cached !== src) return cb(terms.normalize(cached));
     if (!BAIDU_APPID || !BAIDU_SECRET) return cb("");
     // tokenize: alternates text / tag
     const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
     const runs = []; // Each text node retains its index and ordered fragments.
+    let hidden = false;
     tokens.forEach(function (tok, i) {
-      if (tok[0] !== "<" && hasCjk(tok) && tok.trim()) {
+      if (tok[0] === "<") {
+        if (/^<\s*(script|style)\b/i.test(tok)) hidden = true;
+        if (/^<\s*\/\s*(script|style)\b/i.test(tok)) hidden = false;
+        return;
+      }
+      if (!hidden && hasCjk(tok) && tok.trim()) {
         const text = tok.trim().replace(/\s*\r?\n\s*/g, " ");
         for (let start = 0; start < text.length;) {
           let end = Math.min(start + 600, text.length);
@@ -378,7 +400,7 @@ exports.createService = function (deps) {
           }
           while (
             end > start + 1 &&
-            currentTerms().protect(text.slice(start, end), "99").text.length >
+            terms.protect(text.slice(start, end), "99").text.length >
               900
           )
             end = start + Math.floor((end - start) / 2);
@@ -395,11 +417,13 @@ exports.createService = function (deps) {
     const translated = new Map();
     runs.forEach((run) => {
       const cachedFragment = archivedFragments[run.text] || translations.get(
-        "fragment:" + translationKey(run.text),
+        "fragment:" + (terms.protect(run.text).count
+          ? "terms_" + terms.revision + ":" + run.text
+          : run.text),
       );
-      if (cachedFragment) translated.set(run, currentTerms().normalize(cachedFragment));
+      if (cachedFragment) translated.set(run, terms.normalize(cachedFragment));
       else {
-        const known = currentTerms().protect(run.text);
+        const known = terms.protect(run.text);
         if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
           translated.set(run, known.restore(known.text));
       }
@@ -411,7 +435,7 @@ exports.createService = function (deps) {
       const query = cur
         .concat(r)
         .map(
-          (run, index) => currentTerms().protect(run.text, String(index)).text,
+            (run, index) => terms.protect(run.text, String(index)).text,
         )
         .join("\n");
       if (
@@ -450,7 +474,7 @@ exports.createService = function (deps) {
           done++;
           if (done === chunks.length) finish();
         },
-        signal,
+        signal, 0, terms,
       );
     });
     if (!chunks.length) finish();

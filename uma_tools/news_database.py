@@ -45,11 +45,37 @@ def reframe_html(source, translated, updated):
     targets = text_nodes(translated)
     normalize = lambda node: re.sub(r'\s+', ' ', html.unescape(node)).strip()
     if not targets or len(original) != len(targets) or list(map(normalize, original)) != list(map(normalize, incoming)):
-        # Human translations can merge inline nodes. Preserve the accepted full
-        # translation when only the source's HTML serialization changed.
-        if plain_text(source) and plain_text(source) == plain_text(updated) and translated:
-            return translated
-        return None
+        if not plain_text(source) or plain_text(source) != plain_text(updated) or not translated:
+            return None
+
+        class Resources(HTMLParser):
+            def __init__(self, markup):
+                super().__init__(convert_charrefs=True)
+                self.rows = []
+                self.feed(markup or '')
+            def handle_starttag(self, tag, attrs):
+                self.rows.extend((tag, key, value or '') for key, value in attrs if key in ('src', 'href'))
+            handle_startendtag = handle_starttag
+
+        before, after = Resources(source).rows, Resources(updated).rows
+        if [(tag, key) for tag, key, _ in before] != [(tag, key) for tag, key, _ in after]:
+            return None
+        replacements = {}
+        for (tag, key, previous), (_, _, value) in zip(before, after):
+            identity = (key, previous)
+            if identity in replacements and replacements[identity] != value:
+                return None
+            replacements[identity] = value
+
+        def sync_tag(match):
+            def sync_attribute(attribute):
+                prefix, quote, value = attribute.groups()
+                key = prefix.split('=')[0].strip().lower()
+                replacement = replacements.get((key, html.unescape(value)), value)
+                return prefix + quote + html.escape(replacement, quote=True) + quote
+            return re.sub(r'(\b(?:src|href)\s*=\s*)(["\'])(.*?)\2', sync_attribute, match.group(0), flags=re.I)
+
+        return re.sub(r'<[^>]+>', sync_tag, translated)
     replacements = iter(targets)
     return ''.join(next(replacements) if node.strip() and not node.startswith('<') else node
                    for node in re.split(r'(<[^>]+>)', updated or ''))
@@ -140,6 +166,7 @@ class NewsDatabase:
                 self.db.execute('PRAGMA user_version=3')
 
     def store_fragments(self, key, original, translated):
+        self.db.execute('DELETE FROM fragments WHERE article_key=?', (key,))
         sources, targets = text_nodes(original), text_nodes(translated)
         if len(sources) != len(targets):
             return
@@ -152,10 +179,10 @@ class NewsDatabase:
             self.db.execute('INSERT OR REPLACE INTO fragments(article_key,source,target,ambiguous) VALUES(?,?,?,?)',
                             (key, source, '' if ambiguous else next(iter(choices)), ambiguous))
 
-    def get(self, key):
+    def get(self, key, revision=None):
         row = self.db.execute('''SELECT a.*, v.original, v.translated, v.state, v.translator
             FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
-            WHERE a.key=?''', (key,)).fetchone()
+            WHERE a.key=? AND v.revision=COALESCE(?, a.revision)''', (key, revision)).fetchone()
         if not row:
             return None
         result = json.loads(row['original'])
@@ -196,6 +223,18 @@ class NewsDatabase:
                     body = reframe_html(previous.get('message'), old.get('message_zh'), detail.get('message'))
                     if body:
                         reused['message_zh'] = body
+                    # A changed node shape cannot be aligned safely; invalidate
+                    # only projections whose source node disappeared. Unique
+                    # nodes that remain in the new body stay reusable.
+                    if len(text_nodes(previous.get('message'))) != len(text_nodes(detail.get('message'))):
+                        surviving = sorted({re.sub(r'\s*\r?\n\s*', ' ', node.strip())
+                                            for node in text_nodes(detail.get('message'))})
+                        if surviving:
+                            marks = ','.join('?' for _ in surviving)
+                            self.db.execute('DELETE FROM fragments WHERE article_key=? AND source NOT IN (' + marks + ')',
+                                            (key, *surviving))
+                        else:
+                            self.db.execute('DELETE FROM fragments WHERE article_key=?', (key,))
                     translator = current['translator']
                 complete = bool(reused.get('title_zh') and reused.get('message_zh'))
                 translation_incomplete = not complete
@@ -235,21 +274,27 @@ class NewsDatabase:
                 WHERE article_key=? AND revision=?''', (json.dumps({name: detail[name] for name in ('title_zh', 'message_zh')}, ensure_ascii=False),
                 plain_text(detail['message_zh']), translator, detail['title_zh'], key, revision))
             self.db.execute("UPDATE articles SET lease_until=0,error='' WHERE key=? AND revision=?", (key, revision))
-            self.store_fragments(key, source.get('message'), detail['message_zh'])
+            current = self.db.execute('SELECT revision FROM articles WHERE key=?', (key,)).fetchone()
+            if current and current['revision'] == revision:
+                self.store_fragments(key, source.get('message'), detail['message_zh'])
         return self.get(key)
 
     def jobs(self, owner, limit=10, claim=False):
+        payload = []
         with self.db:
             if claim:
                 self.db.execute('BEGIN IMMEDIATE')
-            rows = self.db.execute('''SELECT a.key FROM articles a JOIN versions v
+            rows = self.db.execute('''SELECT a.key,a.revision FROM articles a JOIN versions v
                 ON v.article_key=a.key AND v.revision=a.revision
                 WHERE a.owner=? AND v.state!='complete' AND a.next_at<=? AND a.lease_until<=?
                 ORDER BY a.checked_at, a.key LIMIT ?''', (owner, time.time(), time.time(), min(100, max(1, limit)))).fetchall()
             if claim:
                 for row in rows:
                     self.db.execute('UPDATE articles SET lease_until=? WHERE key=?', (time.time()+300, row['key']))
-        return [{'key': row['key'], 'data': self.get(row['key'])} for row in rows]
+            # Read the claimed revision while the write lock is held. A later
+            # put() must not change the body paired with this lease.
+            payload = [{'key': row['key'], 'data': self.get(row['key'], row['revision'])} for row in rows]
+        return payload
 
     def dispatch(self, operation, args):
         if operation == 'register_history':
