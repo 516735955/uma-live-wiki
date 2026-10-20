@@ -86,7 +86,7 @@ export const template = `
                         <div v-if="eventSessionTable(selectedEventSession)" class="setlist-frame" @click="onEventSetlistClick($event)" v-html="eventSessionTable(selectedEventSession)"></div>
                         <table v-else-if="selectedEventSession.performances && selectedEventSession.performances.length" class="data-table setlist-table">
                             <thead><tr><th>#</th><th>曲名</th><th>出演者</th><th>出处</th><th>试听</th></tr></thead>
-                            <tbody><tr v-for="(performance,index) in selectedEventSession.performances" :key="performance.version_id || performance.song">
+                            <tbody><tr v-for="(performance,index) in selectedEventSession.performances" :key="performance.id || index">
                                 <td class="setlist-no">{{ index + 1 }}</td>
                                 <td class="setlist-song"><a class="text-link setlist-song-link" :href="routes.songs(performance.song_id)" @click="internalLink($event, () => openSong(performance.song_id))">{{ performance.song }}</a></td>
                                 <td class="setlist-perf"><a v-for="characterId in performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" :href="routes.characters(characterId)" @click="internalLink($event, () => openCharacter(characterId))">
