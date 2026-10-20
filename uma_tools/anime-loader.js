@@ -37,6 +37,16 @@
           const combined = { ...previous };
           Object.keys(row).forEach(name => {
             const value = row[name];
+            if (name === 'music_cues' && Array.isArray(value) && Array.isArray(combined[name])) {
+              const cues = new Map();
+              [...combined[name], ...value].forEach(cue => {
+                const cueKey = cue.id || [cue.song_id || '', cue.version_id || '', cue.release_id || '',
+                  cue.title || '', cue.usage_type || '', JSON.stringify(cue.credits || [])].join('|');
+                cues.set(cueKey, { ...cues.get(cueKey), ...cue });
+              });
+              combined[name] = Array.from(cues.values());
+              return;
+            }
             // Reverse-index summaries can arrive after a detailed response.
             // Their empty placeholders are not a deletion of accepted fields.
             if (value !== undefined && value !== '' && value !== null && (!Array.isArray(value) || value.length)) combined[name] = value;

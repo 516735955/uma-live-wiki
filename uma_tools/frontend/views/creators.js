@@ -1,4 +1,4 @@
-export const bindings = ["albums","coverThumb","onCatalogImageError","isActive","playSongTrack","addSongTrack","relationSong","openSong","creatorCatalog","creatorCatalogError","creatorCatalogLoading","creatorDetail","creatorSection","setCreatorSection","creatorQuery","creatorFiltered","creatorPaged","creatorPage","creatorPageCount","creatorPageList","setCreatorPage","goCreatorPage","openCreator","creatorRoleLabel","creatorWorkRoleLabels","creatorPortrait","creatorWorkVersions","creatorRecordingLoading","creatorRecordingErrors","loadCreatorRecording","expandedCreatorWorkId","toggleCreatorWork","animeError","retryAnime","creatorAnimeWorks","creatorAnimeCueWorks","animeLink","routes","loadCreatorCatalog","internalLink"];
+export const bindings = ["albums","coverThumb","onCatalogImageError","isActive","playSongTrack","addSongTrack","relationSong","openSong","creatorCatalog","creatorCatalogError","creatorCatalogLoading","creatorDetail","creatorSection","setCreatorSection","creatorQuery","creatorCurrentPage","creatorPage","creatorPageCount","creatorPageList","setCreatorPage","goCreatorPage","openCreator","creatorRoleLabel","creatorWorkRoleLabels","creatorPortrait","creatorWorkVersions","creatorRecordingLoading","creatorRecordingErrors","loadCreatorRecording","expandedCreatorWorkId","toggleCreatorWork","animeError","retryAnime","creatorAnimeWorks","creatorAnimeCueWorks","animeLink","routes","loadCreatorCatalog","internalLink"];
 export const template = `
             <div v-if="creatorCatalogError" class="ui-state ui-state-error">{{ creatorCatalogError }} <button type="button" class="ui-retry" @click="loadCreatorCatalog()">重试</button></div>
             <template v-if="!creatorDetail">
@@ -7,16 +7,16 @@ export const template = `
                 </div>
                 <div id="creatorArchiveTop" class="creator-catalog">
                     <template v-if="creatorCatalogLoading && !creatorCatalog.creators.length"><div v-for="i in 8" :key="'creator-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div></template>
-                    <a v-for="creator in creatorPaged" :key="creator.id" class="creator-catalog-row" :href="routes.creators(creator.id)" @click="internalLink($event, () => openCreator(creator))">
+                    <a v-for="creator in creatorCurrentPage" :key="creator.id" class="creator-catalog-row" :href="routes.creators(creator.id)" @click="internalLink($event, () => openCreator(creator))">
                         <span class="identity-portrait"><img v-media-src="creatorPortrait(creator)" alt="" loading="lazy" @error="creator.image='';creator.photo=''"></span>
                         <span class="creator-catalog-name"><b>{{ creator.name }}</b><small v-if="creator.affiliations.length">{{ creator.affiliations.join(' · ') }}</small></span>
                         <span class="creator-catalog-roles role-tag-row"><em v-for="role in creator.roles" :key="role.role" class="credit-role-tag">{{ role.label || creatorRoleLabel(role.role) }}</em></span>
 
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
-                    <div v-if="!creatorCatalogError && !creatorCatalogLoading && !creatorFiltered.length" class="ui-state">没有符合条件的创作者</div>
+                    <div v-if="!creatorCatalogError && !creatorCatalogLoading && !creatorCurrentPage.length" class="ui-state">没有符合条件的创作者</div>
                 </div>
-                <div v-if="creatorFiltered.length" class="ui-pager"><div><button :disabled="creatorPage<=1" @click="goCreatorPage(-1)">上一页</button><button v-for="(page,index) in creatorPageList" :key="index" :class="{active:page===creatorPage}" :disabled="page==='…'" @click="setCreatorPage(page)">{{ page }}</button><button :disabled="creatorPage>=creatorPageCount" @click="goCreatorPage(1)">下一页</button></div></div>
+                <div v-if="creatorCurrentPage.length" class="ui-pager"><div><button :disabled="creatorPage<=1" @click="goCreatorPage(-1)">上一页</button><button v-for="(page,index) in creatorPageList" :key="index" :class="{active:page===creatorPage}" :disabled="page==='…'" @click="setCreatorPage(page)">{{ page }}</button><button :disabled="creatorPage>=creatorPageCount" @click="goCreatorPage(1)">下一页</button></div></div>
             </template>
 
             <article v-else class="entity-detail creator-entity-detail">

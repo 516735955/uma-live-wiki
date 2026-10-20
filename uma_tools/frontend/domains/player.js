@@ -74,7 +74,7 @@ export function createPlayer(deps) {
 
   function playerVocalistsFromArtist(artist) {
     const names = String(artist || "")
-      .split(/[、,，/／・]+/)
+      .split(/[、,，/／・&＆+＋]+/)
       .map(function (name) {
         const trimmed = name.trim();
         const cv = trimmed.match(/(?:CV\s*[.．:：]?\s*)([^)）]+)/i);
@@ -103,7 +103,6 @@ export function createPlayer(deps) {
     if (!credits.length) return exact;
     // Curated release vocalist rows are authoritative. Artist text is only
     // needed when it contains additional guest credits without a site page.
-    if (credits.length <= exact.length) return exact;
     const used = new Set();
     const merged = credits.map(function (credit) {
       const matchIndex = exact.findIndex(function (row, index) {

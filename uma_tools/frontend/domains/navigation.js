@@ -715,29 +715,12 @@ export function createNavigation(deps) {
     deps.pushUrl();
   }
 
-  function setEvKind(value) {
-    deps.evKind.value = value;
-    deps.eventsPage.value = 1;
-    deps.pushUrl();
-  }
-
-  function setEvMode(value) {
-    deps.evMode.value = value;
-    deps.eventsPage.value = 1;
-    deps.pushUrl();
-  }
-
   function setEvYear(value) {
     deps.evYear.value = value;
     deps.eventsPage.value = 1;
     deps.pushUrl();
   }
 
-  function setEvSeries(value) {
-    deps.evSeries.value = value;
-    deps.eventsPage.value = 1;
-    deps.pushUrl();
-  }
   function start() {
     syncBodyBackground(home.value);
     deps.watch(home, syncBodyBackground);
@@ -872,9 +855,6 @@ export function createNavigation(deps) {
     resetPageScroll,
     routeSegments,
     seek,
-    setEvKind,
-    setEvMode,
-    setEvSeries,
     setEvTime,
     setEvYear,
     setRelPage,

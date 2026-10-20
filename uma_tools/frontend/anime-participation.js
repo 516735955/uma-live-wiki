@@ -35,23 +35,35 @@ export function createAnimeParticipation(deps) {
           row.relation.label ||
           "";
       const institutions = row.entry ? row.entry.institutions || [] : [];
-      const key = label;
+      const recordingKey = row.relation && row.relation.target_type === 'song'
+        ? [row.relation.target_id, row.relation.version_id || '', row.relation.release_id || ''].join('|')
+        : '';
+      const key = [label, recordingKey].filter(Boolean).join('|');
       let role = group.roles.find((role) => role.key === key);
       if (!role) {
-        role = { key, label, units: [], editions: [], scopes: [] };
+        role = { key, label, units: [], editions: [], scopes: [], recordings: [] };
         group.roles.push(role);
       }
+      if (recordingKey && !role.recordings.some((item) => item.key === recordingKey))
+        role.recordings.push({
+          key: recordingKey,
+          song: row.relation.target_id,
+          version: row.relation.version_id || '',
+          release: row.relation.release_id || '',
+        });
       const editions =
         row.work.id === "anime-rttt"
           ? row.unit
             ? ["web"]
             : deps.animeRowEditions(row.entry || row.relation)
           : [""];
+      const scopeVersion = row.relation && row.relation.version_id || '';
+      const scopeRelease = row.relation && row.relation.release_id || '';
       (editions.length ? editions : [""]).forEach((edition) => {
-        const scopeKey = JSON.stringify([edition, institutions]);
+        const scopeKey = JSON.stringify([edition, institutions, scopeVersion, scopeRelease]);
         let scope = role.scopes.find((item) => item.key === scopeKey);
         if (!scope) {
-          scope = { key: scopeKey, edition, institutions, units: [] };
+          scope = { key: scopeKey, edition, institutions, version_id: scopeVersion, release_id: scopeRelease, units: [] };
           role.scopes.push(scope);
         }
         if (
@@ -113,6 +125,13 @@ export function createAnimeParticipation(deps) {
                 group: cue.title,
                 role: credit.role,
                 institutions: credit.institutions,
+              },
+              relation: {
+                target_type: 'song',
+                target_id: cue.song_id,
+                version_id: cue.version_id || '',
+                release_id: cue.release_id || '',
+                usage_type: cue.usage_type || '',
               },
               work: deps.findAnimeWork(unit.work_id),
               unit,
@@ -233,7 +252,13 @@ export function createAnimeParticipation(deps) {
       .join(" · ");
   }
   function relatedAnimeHref(row) {
-    return deps.routes.anime(row.work.id, row.unit && row.unit.id);
+    const relation = row && row.relation;
+    return deps.routes.query(
+      deps.routes.anime(row.work.id, row.unit && row.unit.id),
+      relation && relation.target_type === 'song'
+        ? { section: 'music', version: relation.version_id, release: relation.release_id }
+        : {},
+    );
   }
   return {
     groupAnimeParticipation,

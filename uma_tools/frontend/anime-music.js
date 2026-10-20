@@ -16,6 +16,16 @@ export function createAnimeMusic(deps) {
   function animeMusicUsageLabel(kind) {
     return animeMusicUsageLabels[animeMusicUsageKind(kind)];
   }
+  function animeMediaScope() {
+    return (deps.animeMediaScope && deps.animeMediaScope()) || null;
+  }
+  function cueMatchesRelation(cue, relation) {
+    if (cue.song_id !== relation.target_id) return false;
+    if ((cue.usage_type || '') !== (relation.usage_type || '')) return false;
+    if ((cue.version_id || '') !== (relation.version_id || '')) return false;
+    if ((cue.release_id || '') !== (relation.release_id || '')) return false;
+    return cue.units.some((unit) => unit.id === relation.source_id);
+  }
   const animeMusicGroups = deps.computed(() => {
     const labels = animeMusicUsageLabels;
     return Object.entries(labels)
@@ -29,8 +39,7 @@ export function createAnimeMusic(deps) {
               animeMusicUsageKind(row.usage_type) === kind &&
               !animeMusicCues.value.some(
                 (cue) =>
-                  cue.song_id === row.target_id &&
-                  cue.units.some((unit) => unit.id === row.source_id),
+                  cueMatchesRelation(cue, row),
               ),
         ),
       }))
@@ -102,31 +111,36 @@ export function createAnimeMusic(deps) {
             : animeMusicUsageLabel(cue.usage_type);
         if (!item.usages.includes(label)) item.usages.push(label);
       });
-    return Array.from(items.values());
+    return Array.from(items.values()).filter((item) => {
+      const scope = animeMediaScope();
+      return !scope || animeMusicVersions(item).length;
+    });
   });
   function animeMusicVersions(item) {
     const song = deps.findSong(item.relation.target_id);
     if (!song) return [];
+    const routeScope = animeMediaScope();
+    const evidenceRows = [...(item.relations || []), ...(item.cues || [])];
+    const evidence = evidenceRows.filter((row) => row.version_id || row.release_id);
+    const evidenceWildcard = evidenceRows.some((row) => !row.version_id && !row.release_id);
+    const matchesVersion = (version, scope) =>
+      (!scope.version_id || scope.version_id === version.id) &&
+      (!scope.release_id || (version.releases || []).some((release) => release.album_id === scope.release_id));
+    const matches = (version, release, scope) =>
+      (!scope.version_id || scope.version_id === version.id) &&
+      (!scope.release_id || (release && release.album_id === scope.release_id));
     return (song.versions || [])
       .filter(
         (version) =>
-          !item.relations.length ||
-          item.relations.some(
-            (relation) =>
-              !relation.version_id || relation.version_id === version.id,
-          ),
+          (evidenceWildcard || !evidence.length || evidence.some((scope) => matchesVersion(version, scope))) &&
+          (!routeScope || matchesVersion(version, routeScope)),
       )
       .map((version) => ({
         ...version,
         releases: (version.releases || []).filter(
           (release) =>
-            !item.relations.length ||
-            item.relations.some(
-              (relation) =>
-                (!relation.version_id || relation.version_id === version.id) &&
-                (!relation.release_id ||
-                  relation.release_id === release.album_id),
-            ),
+            (evidenceWildcard || !evidence.length || evidence.some((scope) => matches(version, release, scope))) &&
+            (!routeScope || matches(version, release, routeScope)),
         ),
       }));
   }

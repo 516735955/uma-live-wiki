@@ -31,7 +31,7 @@
   }
 
   function isInstrumental(title, artist) {
-    return /(?:off[ -]?vocal|instrumental|inst\.?|\bBGM\b|纯音乐|伴奏)/i
+    return /(?:off[ -]?vocal|instrumental|\binst\b\.?|\bBGM\b|纯音乐|伴奏)/i
       .test(String(title || '').normalize('NFKC') + ' ' + String(artist || '').normalize('NFKC'));
   }
 

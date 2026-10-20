@@ -40,12 +40,24 @@ export function registerComponents(umaApp, routes) {
               (group &&
                 group.roles.some((role) => role.editions.includes("web"))));
         const edition = work.id === "anime-rttt" ? (web ? "web" : "film") : "";
+        const recordings = group
+          ? group.roles.flatMap((role) => role.recordings || [])
+          : [];
+        const uniqueRecordings = recordings.filter((recording, index, all) =>
+          all.findIndex((item) => item.key === recording.key) === index,
+        );
+        const media = uniqueRecordings.length === 1 ? uniqueRecordings[0] : null;
         return routes.query(
           routes.anime(
             work.id,
             unit && !["movie", "special"].includes(unit.unit_type) && unit.id,
           ),
-          { section: this.section, edition },
+          {
+            section: media ? "music" : this.section,
+            edition,
+            version: media && media.version,
+            release: media && media.release,
+          },
         );
       },
       editionHref(work, edition) {
@@ -54,7 +66,7 @@ export function registerComponents(umaApp, routes) {
           edition,
         });
       },
-      scopeHref(work, unit, edition) {
+      scopeHref(work, unit, edition, scope) {
         return routes.query(
           routes.anime(
             work.id,
@@ -65,6 +77,8 @@ export function registerComponents(umaApp, routes) {
           {
             section: this.section,
             edition: work.id === "anime-rttt" ? (unit ? "web" : edition) : "",
+            version: (scope && scope.version_id) || "",
+            release: (scope && scope.release_id) || "",
           },
         );
       },
@@ -148,7 +162,7 @@ export function registerComponents(umaApp, routes) {
               <dd v-if="hasScopeContent(role)" class="participation-scopes">
                 <div v-for="scope in role.scopes.filter(scope=>scope.units.length || scope.institutions.length)" :key="scope.key" class="participation-scope">
                   <span v-if="scope.institutions.length" class="participation-institution">机构：{{scope.institutions.join('、')}}</span>
-                  <div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition)" @click="follow($event,scopeHref(group.work,unit,scope.edition))">{{unit.label}}</a></div>
+                  <div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition,scope)" @click="follow($event,scopeHref(group.work,unit,scope.edition,scope))">{{unit.label}}</a></div>
                 </div>
               </dd>
             </div>

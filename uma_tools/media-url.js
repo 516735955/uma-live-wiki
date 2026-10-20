@@ -109,5 +109,14 @@
     if (target && element.src !== target) element.src = target;
     if (!target) element.removeAttribute('src');
   }
+  if (typeof document !== 'undefined' && document.addEventListener) {
+    document.addEventListener('error', event => {
+      const element = event.target;
+      if (element?.tagName !== 'IMG' || !element.hasAttribute('data-media-fallback')) return;
+      const value = element.getAttribute('data-media-fallback');
+      element.removeAttribute('data-media-fallback');
+      fallback(element, url(value));
+    }, true);
+  }
   return { url, preview, apply, remoteImage, original, release, fallback };
 });

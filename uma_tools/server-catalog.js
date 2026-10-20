@@ -31,7 +31,7 @@ exports.createService = function (deps) {
     deps.sendJson(res, 200, result, {
       cacheControl: "public, max-age=300, stale-while-revalidate=300",
       etag: catalogEtag(
-        result.build_id,
+        result.build_id || [result.anime_build_id, result.music_build_id].filter(Boolean).join(':'),
         scope +
           (req.url.startsWith("/api/catalog/events")
             ? ":" + (result.business_date || require('./business-date').today())
@@ -98,10 +98,8 @@ exports.createService = function (deps) {
         if (songRows.some((row) => !row) || eventRows.some((row) => !row))
           throw new Error("Missing anime media");
         result = {
-          build_id:
-            work.build_id +
-            ":" +
-            snapshot.buildId,
+          anime_build_id: work.build_id,
+          music_build_id: snapshot.buildId,
           songs: songRows.map((row) => row.song),
           events: eventRows.map((row) => row.event),
           albums: albumRows,

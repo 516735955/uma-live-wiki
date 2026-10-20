@@ -7,37 +7,6 @@
 .secondary-line { display: block; margin-top: 4px; color: #687086; font-size: .78rem; font-weight: 550; line-height: 1.45; overflow-wrap: anywhere; }
 
 /* Detail pages share one composition; orange stays the secondary accent. */
-.entity-hero {
-    border: 0;
-    border-radius: 4px;
-    background:
-        linear-gradient(120deg,rgba(34,64,187,.96),rgba(49,87,237,.88)),
-        url('/uma_tools/img/bg_blue.webp') center / cover;
-    box-shadow: none;
-}
-.entity-hero::after {
-    content: '';
-    position: absolute;
-    right: -10%;
-    bottom: -46%;
-    width: 54%;
-    aspect-ratio: 1;
-    border: 34px solid rgba(255,255,255,.08);
-    transform: rotate(22deg);
-}
-.entity-cover { border-radius: 3px; box-shadow: 8px 9px 0 var(--ui-orange); }
-.entity-kind { border-radius: 3px; background: var(--ui-orange); color: var(--ui-navy); }
-.entity-tabs { gap: 8px; border-bottom: 1px solid var(--ui-line); }
-.entity-tabs button {
-    min-height: 42px;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: inset 0 -3px 0 transparent;
-}
-.entity-tabs button:hover { color: var(--ui-orange-deep); transform: none; }
-.entity-tabs button.active { background: transparent; color: var(--ui-cobalt-deep); box-shadow: inset 0 -3px 0 var(--ui-orange); }
-.entity-section { border-radius: 4px; box-shadow: none; }
 /* Character, voice actor and event records use their own canonical two-colour identity. */
 .event-entity-detail > .entity-hero,
 .character-entity-detail > .entity-hero,
@@ -133,7 +102,7 @@
     white-space: nowrap;
 }
 button.performer-chip,
-button.setlist-performer-link { cursor: pointer; }
+.setlist-performer-link { cursor: pointer; text-decoration: none; }
 .performer-chip img,
 .perf-item img {
     width: 34px;

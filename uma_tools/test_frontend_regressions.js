@@ -124,13 +124,16 @@ async function main() {
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
   assert.strictEqual(app.characterPerformanceImage('avatar-check'), '/uma_avatars/AvatarCheck.png', 'performance records use the performance avatar');
   const avatarSongs = context.createSongs({...context.Vue,
+    routes: window.UmaRoutes,
     normName:value=>value,decodeHtml:value=>value,
     findCharByAvatar:()=>null,findCharByDisplayName:()=>({id:'avatar-check',zh:'头像核对',main:'#123456'}),
     characterPerformanceImage:app.characterPerformanceImage});
   const legacyAvatar = avatarSongs.linkSetlistSongs('<span class="perf-item"><img src="/uma_official/avatar-check.png" alt="头像核对"><span class="perf-name">头像核对</span></span>', []);
   assert(legacyAvatar.includes('src="/uma_avatars/AvatarCheck.png"'), 'legacy setlists normalize to the same avatar as generated full-cast rows');
+  assert(legacyAvatar.includes('href="/zh-Hans/database/characters/avatar-check"'), 'setlist roles expose normal character links');
+  assert(legacyAvatar.includes('data-media-fallback='), 'injected role portraits use the shared media fallback');
   window.CHAR_INDEX.pop();
-  assert.strictEqual(app.songDbPaged.value.length, 30);
+  assert.strictEqual(app.songDbCurrentPage.value.length, 30);
   assert(calls.every((url) => !url.includes('page_size=2000')), 'song archive uses real API pagination');
   const isolatedSongs = context.createSongs({...context.Vue, eventSongs: context.Vue.ref([])});
   isolatedSongs.mergeSong({id:'same-a',title:'奇跡',versions:[],detail_complete:true});
@@ -185,7 +188,7 @@ async function main() {
   assert(!location.search.includes('999'));
   location.href = 'http://localhost/zh-Hans/music/songs?q=' + encodeURIComponent('アタシたちは必ず掴む勝利');
   await app.applyCurrentRoute();
-  assert(app.songDbPaged.value.some((song) => song.title.includes('ウマRAP')), 'frontend keeps backend lyric search matches');
+  assert(app.songDbCurrentPage.value.some((song) => song.title.includes('ウマRAP')), 'frontend keeps backend lyric search matches');
 
   const a = deferred(), b = deferred();
   details.set('a', a); details.set('b', b);

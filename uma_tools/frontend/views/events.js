@@ -1,4 +1,4 @@
-export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsPaged","eventsFiltered","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","eventDateLabel","eventSummary","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
+export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","eventDateLabel","eventSummary","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
 export const template = `
             <div v-if="eventsError" class="ui-state ui-state-error">{{ eventsError }} <button type="button" @click="loadEvents()">重试</button></div>
 
@@ -20,7 +20,7 @@ export const template = `
                     <template v-if="eventsLoading && !eventsAll.length">
                         <div v-for="i in 6" :key="'event-load-'+i" class="archive-row-skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
                     </template>
-                    <a v-for="(event,i) in eventsPaged" :key="event.id" class="event-catalog-row" :href="routes.events(event.id)" @click="internalLink($event, () => openEvent(event))">
+                    <a v-for="(event,i) in eventsCurrentPage" :key="event.id" class="event-catalog-row" :href="routes.events(event.id)" @click="internalLink($event, () => openEvent(event))">
                         <span class="event-catalog-cover">
                             <img v-media-src="event.image" :alt="event.title" :loading="i===0?'eager':'lazy'" :fetchpriority="i===0?'high':'auto'" decoding="async" @error="onEventImageError($event,event)">
                         </span>
@@ -38,9 +38,9 @@ export const template = `
                         </span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
-                    <div v-if="!eventsLoading && !eventsFiltered.length" class="ui-state">没有符合条件的活动</div>
+                    <div v-if="!eventsLoading && !eventsCurrentPage.length" class="ui-state">没有符合条件的活动</div>
                 </div>
-                <div v-if="eventsFiltered.length" class="ui-pager">
+                <div v-if="eventsCurrentPage.length" class="ui-pager">
                     <span>{{ eventsPageStart }}–{{ eventsPageEnd }} / {{ eventsTotal }}</span>
                     <div>
                         <button :disabled="eventsPage<=1" @click="goEventsPage(-1)">上一页</button>

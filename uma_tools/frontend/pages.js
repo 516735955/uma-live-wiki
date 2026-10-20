@@ -33,11 +33,13 @@ export function registerPages(app) {
         return {
           template: page.template,
           mounted() {
+            this.$nextTick(() => window.dispatchEvent(new CustomEvent('uma-page-rendered')));
             if (name === 'characters') {
               window.UmaCharacterUi?.init();
               this.$root.renderCharBlood();
             }
           },
+          updated() { window.dispatchEvent(new CustomEvent('uma-page-rendered')); },
           setup() {
             const view = Vue.getCurrentInstance().proxy.$root;
             return Object.fromEntries(page.bindings.map(name => [

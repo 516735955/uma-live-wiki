@@ -658,13 +658,15 @@ export function createAnime(deps) {
     }),
   );
 
-  function animeUnitHref(unit, section = animeSection.value) {
+  function animeUnitHref(unit, section = animeSection.value, scope = null) {
     if (!unit) return "";
     return deps.routes.query(deps.routes.anime(unit.work_id, unit.id), {
       section: section || "episodes",
       staff: section === "staff" ? deps.animeStaffQuery.value : "",
       episodes: animeEpisodeQuery.value,
       edition: unit.work_id === "anime-rttt" ? "web" : "",
+      version: (scope && scope.version_id) || "",
+      release: (scope && scope.release_id) || "",
     });
   }
 
@@ -894,6 +896,13 @@ export function createAnime(deps) {
     },
   });
   const music = createAnimeMusic({
+    animeMediaScope() {
+      deps.navigationRevision.value;
+      const params = new URL(window.location.href).searchParams;
+      const version = params.get('version') || '';
+      const release = params.get('release') || '';
+      return version || release ? { version_id: version, release_id: release } : null;
+    },
     get animeCurrentRelations() {
       return animeCurrentRelations;
     },

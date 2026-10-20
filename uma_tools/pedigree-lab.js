@@ -281,7 +281,7 @@
       ';--role-sub-color:' + escapeHtml(item.roleSubColor) + ';--role-ink:' + escapeHtml(item.roleInk) + '"' : '';
     var html = '<div class="inspector-card ' + detailClass + '"' + style + '>';
     html += '<div class="inspector-heading">';
-    if (item.role && item.avatar) html += '<img class="inspector-avatar" src="' + escapeHtml(window.UmaMedia ? window.UmaMedia.preview(item.avatar, 160) : item.avatar) + '" alt="">';
+    if (item.role && item.avatar) html += '<img class="inspector-avatar" data-media-fallback="/uma_tools/img/person-placeholder.svg" src="' + escapeHtml(window.UmaMedia ? window.UmaMedia.preview(item.avatar, 160) : item.avatar) + '" alt="">';
     html += '<div class="inspector-identity"><span class="inspector-type ' + escapeHtml(item.group) + '">' +
       escapeHtml(item.tag || groupNames[item.group] || '赛马资料') + '</span>';
     html += '<h2' + (headingId ? ' id="' + escapeHtml(headingId) + '"' : '') + '>' + escapeHtml(item.name) + '</h2>';

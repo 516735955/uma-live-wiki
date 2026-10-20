@@ -313,7 +313,7 @@ export function createAlbums(deps) {
     if (
       deps.player.current &&
       deps.player.current.albumId === (detail.id || detail.catalog) &&
-      queue.length === tracks.length && queue.every((track, index) => track.id === tracks[index].id && track.url === tracks[index].url)
+      queue.length === tracks.length && queue.every((track, index) => track.id === window.UmaPlayer.normalizeTrack(tracks[index]).id && track.url === tracks[index].url)
     ) {
       deps.playerController.togglePlay();
       return;

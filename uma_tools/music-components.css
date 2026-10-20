@@ -118,19 +118,18 @@
 .music-archive-hero .entity-reading,
 .music-archive-hero .entity-meta dt { color: #657089; }
 .music-archive-hero .entity-meta dd { color: var(--ui-navy); }
-.music-archive-hero .entity-cover { width: 176px; max-width: none; border: 5px solid #fff; border-radius: 6px; box-shadow: 8px 10px 22px rgba(13,19,35,.2); }
 .music-archive-hero .entity-kind { color: var(--ui-navy); background: var(--ui-orange); }
 
-.ui-disclosure-list { border-top: 2px solid var(--ui-cobalt-deep); }
+.ui-disclosure-list { border-top: 1px solid #aebdec; }
 .ui-disclosure { border-bottom: 1px solid var(--ui-line); }
 .ui-disclosure-summary {
     display: grid;
     width: 100%;
-    min-height: 64px;
+    min-height: 68px;
     grid-template-columns: minmax(0,1fr) 22px;
     align-items: center;
     gap: 14px;
-    padding: 11px 10px;
+    padding: 12px 14px;
     border: 0;
     color: inherit;
     background: transparent;
@@ -139,22 +138,29 @@
     cursor: pointer;
     transition: background 160ms ease,color 160ms ease;
 }
-.ui-disclosure-summary:hover { background: #f5f7ff; }
+.ui-disclosure-summary:hover { background: #f7f8fc; }
 .ui-disclosure.has-leading > .ui-disclosure-summary { grid-template-columns: auto minmax(0,1fr) 22px; }
 .ui-disclosure.has-meta > .ui-disclosure-summary { grid-template-columns: minmax(0,1fr) auto 22px; }
 .ui-disclosure.has-leading.has-meta > .ui-disclosure-summary { grid-template-columns: auto minmax(0,1fr) auto 22px; }
-.ui-disclosure.open > .ui-disclosure-summary { background: linear-gradient(90deg,#f2f5ff,rgba(255,255,255,.4)); }
+.ui-disclosure.open > .ui-disclosure-summary { background: #f2f5ff; }
 .ui-disclosure-leading { display: grid; place-items: center; }
 .ui-disclosure-leading img { width: 52px; height: 52px; border-radius: 5px; object-fit: cover; }
 .ui-disclosure-copy { min-width: 0; }
 .ui-disclosure-copy b,.ui-disclosure-copy small { display: block; }
 .ui-disclosure-copy b { overflow: hidden; color: var(--ui-navy); font-size: .9rem; font-weight: 880; text-overflow: ellipsis; white-space: nowrap; }
-.ui-disclosure-copy small { margin-top: 4px; color: #657089; font-size: .76rem; line-height: 1.45; }
-.ui-disclosure-meta { color: #657089; font-size: .76rem; font-weight: 750; white-space: nowrap; }
+.ui-disclosure-copy small { margin-top: 4px; color: #657089; font-size: .78rem; line-height: 1.45; }
+.ui-disclosure-meta { color: #657089; font-size: .78rem; font-weight: 750; white-space: nowrap; }
 .ui-disclosure-chevron { width: 20px; height: 20px; fill: none; stroke: var(--ui-orange-deep); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 220ms var(--ui-ease); }
 .ui-disclosure.open .ui-disclosure-chevron { transform: rotate(180deg); }
 .ui-disclosure-summary:focus-visible { outline: 2px solid var(--ui-cobalt); outline-offset: -3px; }
-.ui-disclosure-detail { animation: disclosureReveal 220ms var(--ui-ease) both; }
+.ui-disclosure-detail {
+    margin: 0 12px 14px;
+    padding: 14px 16px;
+    border: 1px solid #dce2f3;
+    border-radius: 10px;
+    background: #fbfcff;
+    animation: disclosureReveal 220ms var(--ui-ease) both;
+}
 .song-credit-list { border-top: 0; }
 .song-credit-version { border-bottom: 1px solid var(--ui-line); }
 .song-credit-version dl { display: grid; gap: 0; margin: 0; padding: 0 8px 16px; }
@@ -237,6 +243,7 @@
 }
 
 /* PR10 v4: one compact entity, relation and action language. */
+.entity-hero { position: relative; }
 .entity-detail > .entity-hero,
 .song-entity-detail > .music-archive-hero,
 .album-entity-detail > .music-archive-hero,
@@ -401,21 +408,7 @@
 .entity-overview .text-link:hover { color: var(--ui-orange-deep); }
 .album-release-overview { margin-bottom: 0; }
 
-.ui-disclosure-list,.creator-relation-list { border-top: 1px solid #aebdec; }
-.ui-disclosure { border-bottom: 1px solid var(--ui-line); }
-.ui-disclosure-summary { min-height: 68px; padding: 12px 14px; }
-.ui-disclosure-summary:hover { background: #f7f8fc; }
-.ui-disclosure.open > .ui-disclosure-summary { background: #f2f5ff; }
-.ui-disclosure-detail {
-    margin: 0 12px 14px;
-    padding: 14px 16px;
-    border: 1px solid #dce2f3;
-    border-radius: 10px;
-    background: #fbfcff;
-}
 .relation-song-detail,.creator-relation-detail { margin: 0; padding: 0; }
-.ui-disclosure-copy small { color: #657089; font-size: .78rem; }
-.ui-disclosure-meta { font-size: .78rem; }
 
 .song-credit-list { max-width: 980px; margin-inline: auto; }
 .song-credit-version .ui-disclosure-summary { grid-template-columns: minmax(0,1fr) 22px; }

@@ -121,7 +121,7 @@ export function createSongs(deps) {
     return songAliasMap.value[key] || null;
   }
 
-  const songDbFiltered = deps.computed(function () {
+  const songDbCurrentPage = deps.computed(function () {
     return songCatalog.value.songs || [];
   });
 
@@ -129,9 +129,6 @@ export function createSongs(deps) {
     return Math.max(1, Math.ceil(songTotal.value / songDbPerPage));
   });
 
-  const songDbPaged = deps.computed(function () {
-    return songDbFiltered.value;
-  });
 
   const songDbPageStart = deps.computed(function () {
     return songTotal.value ? (songDbPage.value - 1) * songDbPerPage + 1 : 0;
@@ -329,8 +326,12 @@ export function createSongs(deps) {
   });
 
   function setSongLyricVersion(versionId) {
+    if (!songLyricVersions.value.some(version => version.id === versionId)) return;
     songLyricVersionId.value = versionId;
     songLyricTranslation.value = false;
+    songLinkVersion.value = versionId;
+    songLinkRelease.value = "";
+    deps.pushUrl();
   }
 
   function addSongPrimary() {
@@ -462,6 +463,10 @@ export function createSongs(deps) {
     )
       ? release
       : "";
+    if (songSection.value === "lyrics") {
+      if (songLyricVersions.value.some(row => row.id === version.id)) songLyricVersionId.value = version.id;
+      return;
+    }
     expandedSongReleaseId.value = version.id;
     Vue.nextTick(() => {
       const element = document.getElementById("recording-" + version.id);
@@ -570,7 +575,7 @@ export function createSongs(deps) {
       const photo = voice.photo ? '<img loading="lazy" src="/api/image?' + (/^https?:\/\//i.test(voice.photo) ? 'url=' : 'path=') + encodeURIComponent(voice.photo) + '&amp;w=96" alt="">' : '';
       return '<a class="performer-chip voice-chip setlist-voice-link" data-voice-id="' + escape(voice.id) + '" href="' + escape(deps.routes.voiceActors(voice.id)) + '">' + photo + '<span>' + escape(voice.zh || voice.ja) + '</span></a>';
     });
-    return linked.replace(
+    const result = linked.replace(
       /<span class=["']perf-item["']>(<img[^>]*\balt=["']([^"']+)["'][^>]*>)<span class=["']perf-name["']>([\s\S]*?)<\/span><\/span>/gi,
       function (whole, image, alt, label) {
         var srcMatch = image.match(/\bsrc=["']([^"']+)["']/i);
@@ -591,7 +596,7 @@ export function createSongs(deps) {
           ? label
           : character.zh;
         return (
-          '<button type="button" class="perf-item setlist-performer-link" data-character-id="' +
+          '<a class="perf-item setlist-performer-link" href="' + deps.routes.characters(character.id) + '" data-character-id="' +
           character.id +
           '" style="--chip-color:' +
           character.main +
@@ -599,10 +604,11 @@ export function createSongs(deps) {
           image +
           '<span class="perf-name">' +
           shown +
-          "</span></button>"
+          "</span></a>"
         );
       },
     );
+    return result.replace(/<img\b(?![^>]*\bdata-media-fallback)/gi, '<img data-media-fallback="/uma_tools/img/person-placeholder.svg"');
   }
 
   const statSongs = deps.computed(function () {
@@ -657,13 +663,12 @@ export function createSongs(deps) {
     songCatalogError,
     songCatalogLoading,
     songCreditVersions,
-    songDbFiltered,
+    songDbCurrentPage,
     songDbPage,
     songDbPageCount,
     songDbPageEnd,
     songDbPageList,
     songDbPageStart,
-    songDbPaged,
     songDbQuery,
     songDetail,
     songDetailPerformances,

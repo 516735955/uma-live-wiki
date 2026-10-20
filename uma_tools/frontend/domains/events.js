@@ -109,9 +109,12 @@ export function createEvents(deps) {
       deps.openSong(songLink.getAttribute("data-song-id"), "performances");
       return;
     }
-    var performer = event.target.closest("button[data-character-id]");
-    if (performer)
+    var performer = event.target.closest("a[data-character-id]");
+    if (performer) {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
       deps.openCharacter(performer.getAttribute("data-character-id"));
+    }
   }
 
   function eventSessionTable(session) {
@@ -183,17 +186,12 @@ export function createEvents(deps) {
     },
   });
 
-  const eventsFiltered = deps.computed(function () {
-    return eventsAll.value;
-  });
+  const eventsCurrentPage = eventsAll;
 
   const eventsPageCount = deps.computed(function () {
     return Math.max(1, Math.ceil(eventsTotal.value / eventsPerPage));
   });
 
-  const eventsPaged = deps.computed(function () {
-    return eventsAll.value;
-  });
 
   const eventsPageStart = deps.computed(function () {
     return eventsTotal.value ? (eventsPage.value - 1) * eventsPerPage + 1 : 0;
@@ -384,11 +382,15 @@ export function createEvents(deps) {
     );
   });
 
-  function eventPerformanceKey(performance) {
+  function eventPerformanceKey(performance, index) {
+    if (performance && performance.id) return performance.id;
+    const position = index === undefined
+      ? ((selectedEventSession.value && selectedEventSession.value.performances) || []).indexOf(performance)
+      : index;
     return [
       performance &&
         (performance.version_id || performance.song_id || performance.song),
-      performance && performance.performance_index,
+      position >= 0 ? position : performance && performance.performance_index,
     ]
       .filter(function (value) {
         return value !== undefined && value !== null && value !== "";
@@ -402,12 +404,12 @@ export function createEvents(deps) {
       (selectedEventSession.value && selectedEventSession.value.performances) ||
       []
     )
-      .map(function (performance) {
+      .map(function (performance, index) {
         const song = deps.findSong(performance.song_id || performance.song);
         const playable = deps.playableSongRelease(song, performance.version_id);
         return playable
           ? {
-              key: eventPerformanceKey(performance),
+              key: eventPerformanceKey(performance, index),
               performance: performance,
               track: deps.buildReleasePlayerTrack(
                 song,
@@ -628,13 +630,12 @@ export function createEvents(deps) {
     eventsAll,
     eventsError,
     eventsLoading,
-    eventsFiltered,
+    eventsCurrentPage,
     eventsPage,
     eventsPageCount,
     eventsPageEnd,
     eventsPageList,
     eventsPageStart,
-    eventsPaged,
     eventsQuery,
     eventsTotal,
     goEventsPage,

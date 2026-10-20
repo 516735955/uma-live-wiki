@@ -63,7 +63,7 @@ export function createCreators(deps) {
     deps.pushUrl(true);
   }
 
-  const creatorFiltered = deps.computed(function () {
+  const creatorCurrentPage = deps.computed(function () {
     return creatorCatalog.value.creators || [];
   });
 
@@ -74,9 +74,6 @@ export function createCreators(deps) {
     );
   });
 
-  const creatorPaged = deps.computed(function () {
-    return creatorFiltered.value;
-  });
 
   const creatorPageList = deps.computed(function () {
     return deps.pagerList(creatorPage.value, creatorPageCount.value);
@@ -245,11 +242,10 @@ export function createCreators(deps) {
     creatorCatalogError,
     creatorCatalogLoading,
     creatorDetail,
-    creatorFiltered,
+    creatorCurrentPage,
     creatorPage,
     creatorPageCount,
     creatorPageList,
-    creatorPaged,
     creatorPortrait,
     creatorQuery,
     creatorRecordingErrors,

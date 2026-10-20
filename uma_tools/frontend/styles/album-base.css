@@ -20,3 +20,4 @@
             letter-spacing: .04em; margin: 0;
         }
         .card-veil-arrow { margin-left: 8px; font-size: 20px; font-weight: 400; line-height: 1; }
+        .album-entity-detail .entity-intro .entity-meta { grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); }

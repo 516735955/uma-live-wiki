@@ -35,6 +35,63 @@ const umaApp = createApp({
     const self = this;
     window.__uma_app = this;
     let popRevision = 0;
+    let restoreRevision = 0;
+    let renderedRevision = 0;
+    window.addEventListener('uma-page-rendered', () => { renderedRevision += 1; });
+    function restoreScrollWhenReady(target, revision, path) {
+      const job = ++restoreRevision;
+      const startY = window.scrollY;
+      const renderStart = renderedRevision;
+      let observer;
+      let frame = 0;
+      const deadline = performance.now() + 4000;
+      const stop = () => {
+        observer?.disconnect();
+        if (frame) cancelAnimationFrame(frame);
+      };
+      const attempt = () => {
+        if (
+          job !== restoreRevision ||
+          revision !== popRevision ||
+          window.location.pathname + window.location.search !== path
+        ) {
+          stop();
+          return;
+        }
+        // A scroll before the list is ready is a user decision; never
+        // overwrite it with the stale history position.
+        if (Math.abs(window.scrollY - startY) > 2) {
+          stop();
+          return;
+        }
+        const loading = document.querySelector('#app .ui-state.loading, #app [aria-busy="true"]');
+        if (!self.routeReady || renderedRevision <= renderStart || loading) {
+          if (performance.now() >= deadline) stop();
+          else frame = window.requestAnimationFrame(attempt);
+          return;
+        }
+        const maxScroll = Math.max(
+          0,
+          document.documentElement.scrollHeight - window.innerHeight,
+        );
+        frame = window.requestAnimationFrame(() => {
+          if (job !== restoreRevision || revision !== popRevision ||
+              window.location.pathname + window.location.search !== path ||
+              Math.abs(window.scrollY - startY) > 2) {
+            stop();
+            return;
+          }
+          window.scrollTo(0, Math.min(target, maxScroll));
+          stop();
+        });
+      };
+      observer = new MutationObserver(attempt);
+      observer.observe(document.querySelector('#app') || document.body, {
+        childList: true,
+        subtree: true,
+      });
+      window.requestAnimationFrame(attempt);
+    }
     const syncPrepared = function (event) {
       const revision = ++popRevision;
       const scrollY =
@@ -49,9 +106,7 @@ const umaApp = createApp({
         )
           return;
         if (scrollY !== null)
-          Vue.nextTick(() =>
-            window.requestAnimationFrame(() => window.scrollTo(0, scrollY)),
-          );
+          Vue.nextTick(() => restoreScrollWhenReady(scrollY, revision, preparedPath));
       });
     };
     window.addEventListener("popstate", syncPrepared);

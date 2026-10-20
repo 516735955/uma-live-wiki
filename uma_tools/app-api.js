@@ -56,15 +56,18 @@
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
     }).then(function (data) {
-      if (musicCatalog(path) && data.build_id) {
-        if (startedGeneration !== catalogGeneration && data.build_id !== catalogBuild)
+      const musicBuild = path.indexOf('/api/catalog/anime-media') === 0
+        ? data.music_build_id
+        : data.build_id;
+      if (musicCatalog(path) && musicBuild) {
+        if (startedGeneration !== catalogGeneration && musicBuild !== catalogBuild)
           return request(path, { ...settings, fresh: true });
-        if (catalogBuild && data.build_id !== catalogBuild) {
+        if (catalogBuild && musicBuild !== catalogBuild) {
           invalidate('/api/catalog/');
           catalogGeneration += 1;
           if (window.dispatchEvent && typeof CustomEvent !== 'undefined') window.dispatchEvent(new CustomEvent('uma-catalog-change'));
         }
-        catalogBuild = data.build_id;
+        catalogBuild = musicBuild;
       }
       if (pending.get(cacheKey) === entry) {
         retain(cacheKey, data, maxAge);

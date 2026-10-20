@@ -317,6 +317,9 @@ export function createRouting(deps) {
           }
         } else if (deps.dbView.value === "anime") {
           if (deps.animeDetail.value) {
+            const current = new URL(window.location.href);
+            const workPath = deps.routes.anime(deps.animeDetail.value.id);
+            const sameWork = current.pathname === workPath || current.pathname.startsWith(workPath + "/");
             path = deps.routes.query(
               deps.routes.anime(
                 deps.animeDetail.value.id,
@@ -331,6 +334,8 @@ export function createRouting(deps) {
                     : "",
                 still: deps.animeStillUnit.value,
                 episodes: deps.animeEpisodeQuery.value,
+                version: sameWork ? current.searchParams.get("version") : "",
+                release: sameWork ? current.searchParams.get("release") : "",
               },
             );
           } else {

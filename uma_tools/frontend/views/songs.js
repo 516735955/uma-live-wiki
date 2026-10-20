@@ -1,4 +1,4 @@
-export const bindings = ["coverThumb","onCatalogImageError","isActive","songCatalog","songCatalogError","songCatalogLoading","songDetail","songSection","setSongSection","songDbQuery","songDbFiltered","songDbPaged","songDbPage","songDbPageCount","songTotal","songDbPageStart","songDbPageEnd","songDbPageList","setSongDbPage","goSongDbPage","songDetailReleaseVersions","songDetailPerformances","songCreditVersions","creditRoleGroups","songSingerLabel","playableSongRelease","playCatalogSong","playSongPrimary","addSongPrimary","playSongRelease","addSongTrack","openSong","openAlbumFromSong","openEventUrl","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","releaseSingerLabel","songLyricVersions","songLyricVersionOptions","selectedSongLyricVersion","selectedSongLyricLines","songLyricVersionId","songLyricTranslation","setSongLyricVersion","expandedSongReleaseId","expandedSongCreditId","songLinkVersion","songLinkRelease","toggleSongRelease","toggleSongCredit","openCreator","openCharacter","openVoice","animeError","songAnimeRelations","retryAnime","songAnimeWorks","internalLink","routes"];
+export const bindings = ["coverThumb","onCatalogImageError","isActive","songCatalog","songCatalogError","songCatalogLoading","songDetail","songSection","setSongSection","songDbQuery","songDbCurrentPage","songDbPage","songDbPageCount","songTotal","songDbPageStart","songDbPageEnd","songDbPageList","setSongDbPage","goSongDbPage","songDetailReleaseVersions","songDetailPerformances","songCreditVersions","creditRoleGroups","songSingerLabel","playableSongRelease","playCatalogSong","playSongPrimary","addSongPrimary","playSongRelease","addSongTrack","openSong","openAlbumFromSong","openEventUrl","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","releaseSingerLabel","songLyricVersions","songLyricVersionOptions","selectedSongLyricVersion","selectedSongLyricLines","songLyricVersionId","songLyricTranslation","setSongLyricVersion","expandedSongReleaseId","expandedSongCreditId","songLinkVersion","songLinkRelease","toggleSongRelease","toggleSongCredit","openCreator","openCharacter","openVoice","animeError","songAnimeRelations","retryAnime","songAnimeWorks","internalLink","routes"];
 export const template = `
             <div v-if="songCatalogError" class="ui-state ui-state-error">{{ songCatalogError }}</div>
             <template v-if="!songDetail">
@@ -9,7 +9,7 @@ export const template = `
                     <template v-if="songCatalogLoading && !songCatalog.songs.length">
                         <div v-for="i in 8" :key="'song-load-'+i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div>
                     </template>
-                    <article v-for="song in songDbPaged" :key="song.id" class="music-card song-card">
+                    <article v-for="song in songDbCurrentPage" :key="song.id" class="music-card song-card">
                         <a class="music-card-main" :href="routes.songs(song.id)" @click="internalLink($event, () => openSong(song))">
                             <img v-media-src="coverThumb(song.cover,320)" :alt="song.title" loading="lazy" @error="onCatalogImageError($event)">
                             <span class="music-card-copy"><b>{{ song.title }}</b><small>{{ songSingerLabel(song) }}</small></span>
@@ -17,9 +17,9 @@ export const template = `
                         </a>
                         <entity-actions v-if="playableSongRelease(song)" size="compact" :playing="isActive(playableSongRelease(song).release.audio_url)" @play="playCatalogSong(song)" @add="addSongTrack(song,playableSongRelease(song).version,playableSongRelease(song).release)"></entity-actions>
                     </article>
-                    <div v-if="!songCatalogError && !songCatalogLoading && !songDbFiltered.length" class="ui-state">没有符合条件的歌曲</div>
+                    <div v-if="!songCatalogError && !songCatalogLoading && !songDbCurrentPage.length" class="ui-state">没有符合条件的歌曲</div>
                 </div>
-                <div v-if="songDbFiltered.length" class="ui-pager"><span>{{ songDbPageStart }}–{{ songDbPageEnd }} / {{ songTotal }}</span><div><button :disabled="songDbPage<=1" @click="goSongDbPage(-1)">上一页</button><button v-for="(page,index) in songDbPageList" :key="index" :class="{active:page===songDbPage}" :disabled="page==='…'" @click="setSongDbPage(page)">{{ page }}</button><button :disabled="songDbPage>=songDbPageCount" @click="goSongDbPage(1)">下一页</button></div></div>
+                <div v-if="songDbCurrentPage.length" class="ui-pager"><span>{{ songDbPageStart }}–{{ songDbPageEnd }} / {{ songTotal }}</span><div><button :disabled="songDbPage<=1" @click="goSongDbPage(-1)">上一页</button><button v-for="(page,index) in songDbPageList" :key="index" :class="{active:page===songDbPage}" :disabled="page==='…'" @click="setSongDbPage(page)">{{ page }}</button><button :disabled="songDbPage>=songDbPageCount" @click="goSongDbPage(1)">下一页</button></div></div>
             </template>
 
             <article v-else class="entity-detail song-entity-detail">

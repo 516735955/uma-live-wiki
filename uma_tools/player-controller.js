@@ -221,6 +221,7 @@
 
     function prefetchNextMetadata() {
       clearPrefetch();
+      if (state.playbackMode !== 'list') return;
       const connection = typeof navigator !== 'undefined' && navigator.connection;
       if (connection && connection.saveData) return;
       const index = nextQueueIndex();
@@ -544,6 +545,7 @@
     }
 
     function cyclePlaybackMode() {
+      clearPrefetch();
       const index = PLAYBACK_MODES.indexOf(state.playbackMode);
       state.playbackMode = PLAYBACK_MODES[(index + 1) % PLAYBACK_MODES.length];
       if (state.playbackMode !== 'shuffle') shuffleHistory = [];
