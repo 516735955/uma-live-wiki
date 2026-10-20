@@ -1,28 +1,26 @@
 
 
         /* ===== FRIEND LINKS TAB ===== */
-        .links-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 20px; }
+        .links-list { overflow: hidden; background: var(--card); border: 1px solid var(--ui-line); border-radius: 12px; }
         .link-card {
-            display: block; padding: 18px 20px; background: var(--card);
-            border: 1px solid var(--border); border-radius: var(--radius);
-            box-shadow: var(--shadow); text-decoration: none; color: var(--text);
-            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            display: grid; grid-template-columns: 80px minmax(0,1fr) 32px; align-items: center; gap: 28px;
+            padding: 28px 36px; text-decoration: none; color: var(--ui-navy);
+            transition: background 180ms ease;
         }
-        .link-card:hover { border-color: var(--brand); box-shadow: 0 8px 24px rgba(255, 123, 22, 0.18); transform: translateY(-2px); }
-        .link-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .link-logo {
-            width: 36px; height: 36px; flex-shrink: 0;
-            object-fit: contain; border-radius: 9px; background: #fff;
-            border: 1px solid var(--border); padding: 3px;
+        .link-card + .link-card { border-top: 1px solid var(--ui-line); }
+        .link-card:hover { background: var(--ui-cobalt-soft); }
+        .link-logo { display: block; width: 80px; height: 80px; object-fit: contain; }
+        .link-card-copy { min-width: 0; }
+        .link-card-copy h2 { margin: 0; color: var(--ui-navy); font-size: clamp(1.12rem,1.8vw,1.4rem); font-weight: 850; line-height: 1.3; overflow-wrap: anywhere; }
+        .link-card-copy p { margin: 8px 0 0; color: var(--text-2); font-size: .9rem; line-height: 1.65; }
+        .link-card-arrow { width: 28px; height: 28px; fill: none; stroke: var(--ui-cobalt); stroke-width: 1.7; transition: transform 200ms var(--ui-ease),stroke 180ms ease; }
+        .link-card:hover .link-card-arrow { transform: translateX(4px); stroke: var(--ui-orange-deep); }
+        @media (max-width: 700px) {
+            .link-card { grid-template-columns: 56px minmax(0,1fr) 22px; gap: 16px; padding: 22px 18px; }
+            .link-logo { width: 56px; height: 56px; }
+            .link-card-arrow { width: 22px; height: 22px; }
+            .link-card-copy p { margin-top: 6px; font-size: .82rem; }
         }
-        .link-logo-g {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 36px; height: 36px; flex-shrink: 0;
-            border-radius: 9px; border: 1px solid #e3ddcd; background: #fffaf0;
-            color: #d4a853; font-weight: 800; font-size: 1.3em; line-height: 1;
-        }
-        .link-card-title { font-size: 1.05em; font-weight: 700; color: var(--brand-dark); margin-bottom: 0; }
-        .link-card-desc { font-size: 0.85em; color: var(--text-2); line-height: 1.7; }
         @media (max-width: 900px) {
             .events-rows { overflow-x: hidden; }
             .events-row {
@@ -70,7 +68,6 @@
         .info-page > .entity-hero.music-archive-hero { grid-template-columns: minmax(0,1fr); min-height: 120px; }
         .info-page > .entity-hero::before { opacity: .08; }
         .info-page .entity-intro { padding-left: 0; }
-        .information-document > .legal-section { max-width: 80ch; }
         .fix-row { margin-bottom: 20px; }
         .fix-label { display: block; margin-bottom: 7px; color: var(--ui-navy); font-size: .86rem; font-weight: 850; }
         .fix-label .req { margin-left: 3px; color: var(--ui-orange-deep); }

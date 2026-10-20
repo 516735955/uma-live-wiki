@@ -33,7 +33,7 @@ export const template = `
                     <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
                 </div>
                 <div class="media-content">
-                    <dl v-if="albumDetail.data.company" class="entity-overview album-release-overview"><div><dt>发行</dt><dd>{{ albumDetail.data.company }}</dd></div></dl>
+                    <section v-if="albumDetail.data.company" class="entity-overview album-release-overview"><dl><div><dt>发行</dt><dd>{{ albumDetail.data.company }}</dd></div></dl></section>
                     <div v-if="animeError" class="ui-state ui-state-error" role="alert"><span>动画关联暂时无法载入。</span><button class="ui-retry" @click="retryAnime">重试</button></div>
                     <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>

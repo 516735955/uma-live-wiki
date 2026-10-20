@@ -162,6 +162,7 @@ export function createViewModel(domains, routes) {
     openEvent: domains.events.openEvent,
     eventDateLabel: domains.events.eventDateLabel,
     eventSummary: domains.events.eventSummary,
+    eventStatusNewsId: domains.events.eventStatusNewsId,
     eventKindLabel: domains.events.eventKindLabel,
     eventModeLabel: domains.events.eventModeLabel,
     eventSeriesName: domains.events.eventSeriesName,

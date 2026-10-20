@@ -252,6 +252,12 @@ export function createEvents(deps) {
     return value;
   }
 
+  function eventStatusNewsId(event) {
+    const source = String((event && event.status_source_url) || "");
+    const match = source.match(/^https:\/\/umamusume\.jp\/news\/detail\?id=(\d+)(?:&|$)/);
+    return match ? match[1] : "";
+  }
+
   function eventKindLabel(kind) {
     return (
       { concert: "音乐演出", onsite: "线下活动", official_program: "官方节目" }[
@@ -612,6 +618,7 @@ export function createEvents(deps) {
     eventSongCount,
     eventSongs,
     eventSummary,
+    eventStatusNewsId,
     eventTypeOptions,
     eventTypeSelection,
     eventUnscopedCast,

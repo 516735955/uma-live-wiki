@@ -107,7 +107,22 @@
         if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         event.preventDefault(); this.$emit('open-' + kind, id);
       },
-      measure: function () { this.width = Math.max(180, Math.round(this.$refs.viewport.clientWidth || 960)); },
+      measure: function () {
+        const viewport = this.$refs.viewport;
+        const width = Math.max(180, Math.round(viewport.clientWidth || 960));
+        if (width === this.width) return;
+        this.width = width;
+        this.$nextTick(() => {
+          const node = viewport.querySelector('.creator-graph-node.selected');
+          if (!node) return;
+          if (node.offsetTop < viewport.scrollTop + 12) viewport.scrollTop = node.offsetTop - 12;
+          else if (node.offsetTop + node.offsetHeight > viewport.scrollTop + viewport.clientHeight - 12)
+            viewport.scrollTop = node.offsetTop + node.offsetHeight - viewport.clientHeight + 12;
+          if (node.offsetLeft < viewport.scrollLeft + 12) viewport.scrollLeft = node.offsetLeft - 12;
+          else if (node.offsetLeft + node.offsetWidth > viewport.scrollLeft + viewport.clientWidth - 12)
+            viewport.scrollLeft = node.offsetLeft + node.offsetWidth - viewport.clientWidth + 12;
+        });
+      },
       portrait: function (person) { return person.image || person.photo || window.UmaUi.identityPortrait(person); },
       roleText: function (person) {
         return ((person.roles || []).map(function (role) { return role.label || role.role; }).join(' · ')) || '创作者';
