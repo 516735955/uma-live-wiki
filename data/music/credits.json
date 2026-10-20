@@ -1,6 +1,1693 @@
 {
   "schema_version": 1,
   "versions": {
+    "song-you-aim-a-5686752029-v-5686752029": {
+      "credits": [
+        {"role": "lyricist", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
+        {"role": "composer", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
+        {"role": "arranger", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"}
+      ],
+      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+    },
+    "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c": {
+      "credits": [
+        {"role": "lyricist", "name": "柴田凌輔", "creator_id": "creator-847c4f59b6", "affiliation": "Cygames"},
+        {"role": "composer", "name": "廣田慎矢", "creator_id": "creator-64c2eb10ff", "affiliation": "Cygames"},
+        {"role": "arranger", "name": "江口亮", "creator_id": "creator-6af7080acf"},
+        {"role": "arranger", "name": "廣田慎矢", "creator_id": "creator-64c2eb10ff", "affiliation": "Cygames"},
+        {"role": "strings_arranger", "name": "江口亮", "creator_id": "creator-6af7080acf"},
+        {"role": "strings_arranger", "name": "獅子之響", "creator_id": "creator-63418115d8"}
+      ],
+      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+    },
+    "song-d375262b50-v-d375262b50": {
+      "credits": [
+        {"role": "lyricist", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
+        {"role": "composer", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
+        {"role": "arranger", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
+        {"role": "strings_arranger", "name": "椿山日南子", "creator_id": "creator-8ccf39ae29", "affiliation": "Dream Monster"}
+      ],
+      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+    },
+    "song-e74bdc4483-v-e74bdc4483": {
+      "credits": [
+        {"role": "lyricist", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
+        {"role": "composer", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
+        {"role": "arranger", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"}
+      ],
+      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+    },
+    "song-e74bdc4483-v-efc36499b1": {
+      "credits": [
+        {"role": "lyricist", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
+        {"role": "composer", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
+        {"role": "arranger", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"}
+      ],
+      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+    },
+    "song-598f2f343d-v-598f2f343d": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "arranger",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-u-m-a-new-diary-389a53d0fe-v-389a53d0fe": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-4637d2e765-v-4637d2e765": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-u-m-a-new-ballad-9de2f65dba-v-9de2f65dba": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "康貞蘭",
+          "creator_id": "creator-90ee476c0a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-4262c0f823-v-4262c0f823": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-b1f88762a0-v-b1f88762a0": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "千葉梓",
+          "creator_id": "creator-3e35bf54dc"
+        },
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "arranger",
+          "name": "千葉梓",
+          "creator_id": "creator-3e35bf54dc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-95e449cd92-v-95e449cd92": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "中町友洋",
+          "creator_id": "creator-a558bf7304"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-86db0f08b7-v-86db0f08b7": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-ad7d521cd2-v-ad7d521cd2": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        },
+        {
+          "role": "arranger",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-af4e7e9904-v-af4e7e9904": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "中町友洋",
+          "creator_id": "creator-a558bf7304"
+        },
+        {
+          "role": "arranger",
+          "name": "中町友洋",
+          "creator_id": "creator-a558bf7304"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-242c71cfa2-v-242c71cfa2": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-87a776616e-v-87a776616e": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        },
+        {
+          "role": "arranger",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-0bde6f7fd2-v-0bde6f7fd2": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "小半大",
+          "creator_id": "creator-eb4fbbffa7"
+        },
+        {
+          "role": "arranger",
+          "name": "小半大",
+          "creator_id": "creator-eb4fbbffa7"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-e7885e3118-v-e7885e3118": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "西村真吾",
+          "creator_id": "creator-56f9dada0b"
+        },
+        {
+          "role": "arranger",
+          "name": "西村真吾",
+          "creator_id": "creator-56f9dada0b"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-8fa0c794a4-v-8fa0c794a4": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "composer",
+          "name": "eba",
+          "creator_id": "creator-eba-9883157c46"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-flowering-phantasia-bbd1969f13-v-bbd1969f13": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "田山里奈",
+          "creator_id": "creator-f8ce711c54"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-christmas-moment-b8b55826fc-v-b8b55826fc": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "三好啓太",
+          "creator_id": "creator-6f5b36ad80"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-glorious-5d90805baa-v-5d90805baa": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "三好啓太",
+          "creator_id": "creator-6f5b36ad80"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-d6d23d880c-v-d6d23d880c": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-6fc567dad5-v-6fc567dad5": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "内田哲也",
+          "creator_id": "creator-9be9261917"
+        },
+        {
+          "role": "composer",
+          "name": "大熊淳生",
+          "creator_id": "creator-13d17e7497"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-for-u-e95882f053-v-e95882f053": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "ハマダコウキ",
+          "creator_id": "creator-6e76d30733"
+        },
+        {
+          "role": "arranger",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-special-record-088b617bc8-v-088b617bc8": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-propaganda-d81f4cc2f0-v-d81f4cc2f0": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "composer",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-14fb600780-v-14fb600780": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-phantasmagoria-c5bf54e91b-v-c5bf54e91b": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "田山里奈",
+          "creator_id": "creator-f8ce711c54"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-f5d38baa11-v-f5d38baa11": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-8db5d03c95-v-8db5d03c95": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-2078fdecc9-v-2078fdecc9": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-36d5edf61b-v-36d5edf61b": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        },
+        {
+          "role": "arranger",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-stella-pride-292620f20f-v-292620f20f": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-stella-pride-208914b160-v-208914b160": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-stella-pride-d0a001077e-v-d0a001077e": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-ed0ab4d48c-v-ed0ab4d48c": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-legend-eb9296df69-v-eb9296df69": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-legend-b4b483a260-v-b4b483a260": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        },
+        {
+          "role": "arranger",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-dream-fest-legend-d11226fa56-v-d11226fa56": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        },
+        {
+          "role": "arranger",
+          "name": "松尾早人",
+          "creator_id": "creator-0b07e3069a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-32b0b222f2-v-32b0b222f2": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "arranger",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-cm-classic-cd7173c94d-v-cd7173c94d": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-cm-tiara-c38be05f02-v-c38be05f02": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "吉川美矩",
+          "creator_id": "creator-2def8e906f"
+        },
+        {
+          "role": "arranger",
+          "name": "吉川美矩",
+          "creator_id": "creator-2def8e906f"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-cm-dirt-172a045df3-v-172a045df3": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "植田能平",
+          "creator_id": "creator-75bb212e99"
+        },
+        {
+          "role": "arranger",
+          "name": "植田能平",
+          "creator_id": "creator-75bb212e99"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-cm-sprint-mile-271daeca2b-v-271daeca2b": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff"
+        },
+        {
+          "role": "arranger",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-the-twinkle-legends-cm-middle-long-bd5a86459c-v-bd5a86459c": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "植田能平",
+          "creator_id": "creator-75bb212e99"
+        },
+        {
+          "role": "arranger",
+          "name": "植田能平",
+          "creator_id": "creator-75bb212e99"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-43f4ff0a88-v-43f4ff0a88": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-u-pop-tune-241d14fad4-v-241d14fad4": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-83f6eee605-v-83f6eee605": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "康貞蘭",
+          "creator_id": "creator-90ee476c0a"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-24d7ee0134-v-24d7ee0134": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "康貞蘭",
+          "creator_id": "creator-90ee476c0a"
+        },
+        {
+          "role": "arranger",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-design-your-island-948e51da66-v-948e51da66": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "composer",
+          "name": "MK",
+          "creator_id": "creator-mk-a91dcbb4df"
+        },
+        {
+          "role": "arranger",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "arranger",
+          "name": "MK",
+          "creator_id": "creator-mk-a91dcbb4df"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-design-your-island-78e56c16ac-v-78e56c16ac": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-de-your-island-cbcc96e8ce-v-cbcc96e8ce": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "太田光宏",
+          "creator_id": "creator-c01db1f1ba"
+        },
+        {
+          "role": "arranger",
+          "name": "MK",
+          "creator_id": "creator-mk-a91dcbb4df"
+        },
+        {
+          "role": "arranger",
+          "name": "網野航平",
+          "creator_id": "creator-59668a1cc9"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-design-your-island-7b11b28441-v-7b11b28441": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        },
+        {
+          "role": "arranger",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-0f2cb589cb-v-0f2cb589cb": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "池田健仁",
+          "creator_id": "creator-14a2ce8737"
+        },
+        {
+          "role": "arranger",
+          "name": "MK",
+          "creator_id": "creator-mk-a91dcbb4df"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-atono-grand-re-ort-d03d9e06bf-v-d03d9e06bf": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "composer",
+          "name": "千葉梓",
+          "creator_id": "creator-3e35bf54dc"
+        },
+        {
+          "role": "arranger",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-beach-747fea21c9-v-747fea21c9": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "滝澤俊輔",
+          "creator_id": "creator-27a7191e7e"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-starting-2136faae40-v-2136faae40": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-d234621153-v-d234621153": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        },
+        {
+          "role": "arranger",
+          "name": "吉川美矩",
+          "creator_id": "creator-2def8e906f"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-1706019be7-v-1706019be7": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "Max Mullowney",
+          "creator_id": "creator-max-mullowney-46d1023bc5"
+        },
+        {
+          "role": "arranger",
+          "name": "Max Mullowney",
+          "creator_id": "creator-max-mullowney-46d1023bc5"
+        },
+        {
+          "role": "arranger",
+          "name": "西村真吾",
+          "creator_id": "creator-56f9dada0b"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-fb9000e3ae-v-fb9000e3ae": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-7f5504ac58-v-7f5504ac58": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e"
+        },
+        {
+          "role": "arranger",
+          "name": "西村真吾",
+          "creator_id": "creator-56f9dada0b"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-u-m-a-my-world-939bcc851d-v-939bcc851d": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "兼松衆",
+          "creator_id": "creator-5caa86b58a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-7af2e4f396-v-7af2e4f396": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-528e34d8c4-v-528e34d8c4": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "田山里奈",
+          "creator_id": "creator-f8ce711c54"
+        },
+        {
+          "role": "arranger",
+          "name": "田山里奈",
+          "creator_id": "creator-f8ce711c54"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-442608b9d5-v-442608b9d5": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "composer",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-8083b00821-v-8083b00821": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-09fb8b1d10-v-09fb8b1d10": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-beeb4c7e57-v-beeb4c7e57": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-bb6492e715-v-bb6492e715": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-41e53658e2-v-41e53658e2": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "塚越廉",
+          "creator_id": "creator-55633887c2"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-aee13bd730-v-aee13bd730": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "composer",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        },
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-393286132b-v-393286132b": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-808c459e6c-v-808c459e6c": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "長谷部翔",
+          "creator_id": "creator-8ba66086c5"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-034e072c80-v-034e072c80": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-81c41e2629-v-81c41e2629": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-act-0-81c9ca6d9e-v-81c9ca6d9e": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "arranger",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-ad009446b1-v-ad009446b1": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        },
+        {
+          "role": "arranger",
+          "name": "畑田浩孝",
+          "creator_id": "creator-c49c6037fc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-2c97a22505-v-2c97a22505": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-7a52ab5e4a-v-7a52ab5e4a": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "守谷勇人",
+          "creator_id": "creator-648b8ab7cc"
+        },
+        {
+          "role": "arranger",
+          "name": "守谷勇人",
+          "creator_id": "creator-648b8ab7cc"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-993878f1b0-v-993878f1b0": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "中町友洋",
+          "creator_id": "creator-a558bf7304"
+        },
+        {
+          "role": "arranger",
+          "name": "中町友洋",
+          "creator_id": "creator-a558bf7304"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-e66a3d0939-v-e66a3d0939": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "守谷勇人",
+          "creator_id": "creator-648b8ab7cc"
+        },
+        {
+          "role": "composer",
+          "name": "滝澤俊輔",
+          "creator_id": "creator-27a7191e7e"
+        },
+        {
+          "role": "composer",
+          "name": "坪田修平",
+          "creator_id": "creator-9df1809a60"
+        },
+        {
+          "role": "composer",
+          "name": "田山里奈",
+          "creator_id": "creator-f8ce711c54"
+        },
+        {
+          "role": "composer",
+          "name": "兼松衆",
+          "creator_id": "creator-5caa86b58a"
+        },
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-cf665c757f-v-cf665c757f": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "田山里奈",
+          "creator_id": "creator-f8ce711c54"
+        },
+        {
+          "role": "composer",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "arranger",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-01156d6850-v-01156d6850": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "戸田信子",
+          "creator_id": "creator-a50daef52d"
+        },
+        {
+          "role": "composer",
+          "name": "陣内一真",
+          "creator_id": "creator-5fe0c81649"
+        },
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "composer",
+          "name": "市橋卓也",
+          "creator_id": "creator-cf49f62a1e"
+        },
+        {
+          "role": "composer",
+          "name": "久保早瑠菜",
+          "creator_id": "creator-70bf07a860"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
+    "song-b3a40dba2f-v-b3a40dba2f": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "西木康智",
+          "creator_id": "creator-81f0c8dcf2"
+        },
+        {
+          "role": "composer",
+          "name": "守谷勇人",
+          "creator_id": "creator-648b8ab7cc"
+        },
+        {
+          "role": "composer",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        },
+        {
+          "role": "arranger",
+          "name": "加藤慶久",
+          "creator_id": "creator-0a12f443ae"
+        }
+      ],
+      "source": "kinokuniya_tracklist",
+      "source_catalog": "LACA-19165",
+      "source_url": "https://www.kinokuniya.co.jp/f/dsg-10-4540774191659",
+      "manual": true
+    },
     "song-find-my-only-way-46f68c23ae-v-46f68c23ae": {
       "credits": [
         {

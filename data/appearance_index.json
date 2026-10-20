@@ -8733,6 +8733,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
@@ -8741,6 +8752,7 @@
             "album-laca-35146",
             "album-laca-25151",
             "album-laca-25276",
+            "album-laca-25304",
             "album-laca-9973"
           ],
           "version_ids": [
@@ -8748,7 +8760,7 @@
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 12
+          "releases": 13
         },
         {
           "song_id": "song-29e836f0da",
@@ -13216,11 +13228,23 @@
           "releases": 4
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25135",
             "album-laca-25269",
+            "album-laca-25304",
             "album-lacz-10288"
           ],
           "version_ids": [
@@ -13228,7 +13252,7 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-c676696ddc"
           ],
-          "releases": 5
+          "releases": 6
         },
         {
           "song_id": "song-4631f698b0",
@@ -39230,13 +39254,14 @@
             "album-laca-25119",
             "album-laca-35146",
             "album-laca-25177",
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-de771d359f",
@@ -39252,6 +39277,17 @@
             "song-de771d359f-v-1d797699c6"
           ],
           "releases": 3
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-pom-pon-1fe868e5e6",
@@ -47881,6 +47917,17 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
           "name": "winning the soul",
           "album_ids": [
@@ -47896,13 +47943,14 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25268"
+            "album-laca-25268",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 2
+          "releases": 3
         }
       ],
       "performed_songs": [
@@ -49544,19 +49592,31 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25034",
             "album-lacm-24348",
             "album-laca-25135",
-            "album-laca-25269"
+            "album-laca-25269",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-happy-days-01845306a9",
@@ -51048,6 +51108,17 @@
       ],
       "songs": [
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-o-light-o-0864ec7338",
           "name": "O-Light-O",
           "album_ids": [
@@ -51099,13 +51170,14 @@
           "album_ids": [
             "album-laca-25119",
             "album-laca-25235",
-            "album-laca-25276"
+            "album-laca-25276",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-621055f139",
@@ -51129,6 +51201,17 @@
             "song-ee92751546-v-6d642a0659"
           ],
           "releases": 2
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-37f050c610",
@@ -55093,6 +55176,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -55119,6 +55213,7 @@
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25100",
+            "album-laca-25304",
             "album-laca-9814"
           ],
           "version_ids": [
@@ -55126,7 +55221,7 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-5d0c6ea225"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -56360,6 +56455,7 @@
           "album_ids": [
             "album-laca-15709",
             "album-laca-25276",
+            "album-laca-25304",
             "album-lzc-1963",
             "album-laca-9973"
           ],
@@ -56369,7 +56465,7 @@
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-621055f139",
@@ -56405,6 +56501,17 @@
             "song-ee92751546-v-6d642a0659"
           ],
           "releases": 2
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-799c270538",
@@ -57223,6 +57330,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -57250,13 +57368,14 @@
           "album_ids": [
             "album-laca-15879",
             "album-lacm-24249",
-            "album-laca-25100"
+            "album-laca-25100",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -58206,13 +58325,25 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25294"
+            "album-laca-25294",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 2
+          "releases": 3
+        },
+        {
+          "song_id": "song-d375262b50",
+          "name": "胡蝶蘭は結ぶ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-d375262b50-v-d375262b50"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-aed14a1a3a",
@@ -58428,17 +58559,29 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25268",
-            "album-laca-25269"
+            "album-laca-25269",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 4
+          "releases": 5
         }
       ],
       "performed_songs": [
@@ -66496,6 +66639,17 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
@@ -66503,13 +66657,14 @@
             "album-laca-25151",
             "album-laca-25156",
             "album-laca-25163",
-            "album-laca-25268"
+            "album-laca-25268",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-phantasia-81aafc5f7e",
@@ -68503,6 +68658,17 @@
           "releases": 3
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -68556,13 +68722,14 @@
             "album-laca-25151",
             "album-laca-25156",
             "album-laca-25268",
-            "album-laca-25269"
+            "album-laca-25269",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-29e836f0da",
@@ -69170,6 +69337,7 @@
             "album-laca-25099",
             "album-laca-25119",
             "album-laca-25235",
+            "album-laca-25304",
             "album-lacz-10312"
           ],
           "version_ids": [
@@ -69177,7 +69345,18 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-4a308b7364"
           ],
-          "releases": 8
+          "releases": 9
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-37f050c610",
@@ -70406,13 +70585,37 @@
       ],
       "songs": [
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
+            "album-laca-25304",
             "album-lacz-10288"
           ],
           "version_ids": [
+            "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-d0e897e8c0"
+          ],
+          "releases": 2
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
           ],
           "releases": 1
         }
@@ -72360,6 +72563,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -72388,6 +72602,7 @@
             "album-laca-25098",
             "album-laca-25156",
             "album-laca-25177",
+            "album-laca-25304",
             "album-laca-9983"
           ],
           "version_ids": [
@@ -72395,7 +72610,7 @@
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-e05b91c506",
@@ -75006,6 +75221,17 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
@@ -75013,13 +75239,14 @@
             "album-laca-25109",
             "album-laca-25119",
             "album-laca-25151",
-            "album-laca-25163"
+            "album-laca-25163",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-41a5f3cfb9",
@@ -76457,6 +76684,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -76464,6 +76702,17 @@
           ],
           "version_ids": [
             "song-ms-victoria-8fdfbbf2a8-v-4a11d148e4"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
           ],
           "releases": 1
         },
@@ -83676,6 +83925,17 @@
       ],
       "songs": [
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-starting-force-c0c6c398c4",
           "name": "STARTING FORCE",
           "album_ids": [
@@ -83690,13 +83950,25 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 2
+          "releases": 3
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-37f050c610",
@@ -120757,6 +121029,7 @@
           "album_ids": [
             "album-laca-15709",
             "album-laca-25276",
+            "album-laca-25304",
             "album-lzc-1963",
             "album-laca-9973"
           ],
@@ -120766,7 +121039,7 @@
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-621055f139",
@@ -120802,6 +121075,17 @@
             "song-ee92751546-v-6d642a0659"
           ],
           "releases": 2
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-799c270538",
@@ -124695,6 +124979,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -124721,6 +125016,7 @@
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25100",
+            "album-laca-25304",
             "album-laca-9814"
           ],
           "version_ids": [
@@ -124728,7 +125024,7 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-5d0c6ea225"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -129655,6 +129951,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -129683,6 +129990,7 @@
             "album-laca-25098",
             "album-laca-25156",
             "album-laca-25177",
+            "album-laca-25304",
             "album-laca-9983"
           ],
           "version_ids": [
@@ -129690,7 +129998,7 @@
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-e05b91c506",
@@ -131508,6 +131816,17 @@
           "releases": 3
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -131561,13 +131880,14 @@
             "album-laca-25151",
             "album-laca-25156",
             "album-laca-25268",
-            "album-laca-25269"
+            "album-laca-25269",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-29e836f0da",
@@ -134956,6 +135276,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
@@ -134964,6 +135295,7 @@
             "album-laca-35146",
             "album-laca-25151",
             "album-laca-25276",
+            "album-laca-25304",
             "album-laca-9973"
           ],
           "version_ids": [
@@ -134971,7 +135303,7 @@
             "song-228f943b49-v-115f12d608",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 12
+          "releases": 13
         },
         {
           "song_id": "song-29e836f0da",
@@ -135885,6 +136217,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -135912,13 +136255,14 @@
           "album_ids": [
             "album-laca-15879",
             "album-lacm-24249",
-            "album-laca-25100"
+            "album-laca-25100",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-d9f7cd7c8b",
@@ -136955,6 +137299,17 @@
           "releases": 1
         },
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
           "name": "Ms. VICTORIA",
           "album_ids": [
@@ -136962,6 +137317,17 @@
           ],
           "version_ids": [
             "song-ms-victoria-8fdfbbf2a8-v-4a11d148e4"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
           ],
           "releases": 1
         },
@@ -155651,11 +156017,23 @@
           "releases": 4
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25135",
             "album-laca-25269",
+            "album-laca-25304",
             "album-lacz-10288"
           ],
           "version_ids": [
@@ -155663,7 +156041,7 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-c676696ddc"
           ],
-          "releases": 5
+          "releases": 6
         },
         {
           "song_id": "song-4631f698b0",
@@ -156535,19 +156913,31 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25034",
             "album-lacm-24348",
             "album-laca-25135",
-            "album-laca-25269"
+            "album-laca-25269",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 8
+          "releases": 9
         },
         {
           "song_id": "song-happy-days-01845306a9",
@@ -161444,6 +161834,7 @@
             "album-laca-25099",
             "album-laca-25119",
             "album-laca-25235",
+            "album-laca-25304",
             "album-lacz-10312"
           ],
           "version_ids": [
@@ -161451,7 +161842,18 @@
             "song-228f943b49-v-7006bca4f7",
             "song-228f943b49-v-4a308b7364"
           ],
-          "releases": 8
+          "releases": 9
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-37f050c610",
@@ -163348,13 +163750,37 @@
       ],
       "songs": [
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
+            "album-laca-25304",
             "album-lacz-10288"
           ],
           "version_ids": [
+            "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-d0e897e8c0"
+          ],
+          "releases": 2
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
           ],
           "releases": 1
         }
@@ -169322,13 +169748,14 @@
             "album-laca-25119",
             "album-laca-35146",
             "album-laca-25177",
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 14
+          "releases": 15
         },
         {
           "song_id": "song-de771d359f",
@@ -169344,6 +169771,17 @@
             "song-de771d359f-v-1d797699c6"
           ],
           "releases": 3
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-pom-pon-1fe868e5e6",
@@ -172373,6 +172811,17 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
@@ -172380,13 +172829,14 @@
             "album-laca-25109",
             "album-laca-25119",
             "album-laca-25151",
-            "album-laca-25163"
+            "album-laca-25163",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-41a5f3cfb9",
@@ -173829,6 +174279,17 @@
       ],
       "songs": [
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-o-light-o-0864ec7338",
           "name": "O-Light-O",
           "album_ids": [
@@ -173880,13 +174341,14 @@
           "album_ids": [
             "album-laca-25119",
             "album-laca-25235",
-            "album-laca-25276"
+            "album-laca-25276",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 6
+          "releases": 7
         },
         {
           "song_id": "song-621055f139",
@@ -173910,6 +174372,17 @@
             "song-ee92751546-v-6d642a0659"
           ],
           "releases": 2
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-37f050c610",
@@ -174317,6 +174790,17 @@
       ],
       "songs": [
         {
+          "song_id": "song-lightningfast-1ca8f6c83c",
+          "name": "Lightning Fast",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-starting-force-c0c6c398c4",
           "name": "STARTING FORCE",
           "album_ids": [
@@ -174331,13 +174815,25 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25235"
+            "album-laca-25235",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 2
+          "releases": 3
+        },
+        {
+          "song_id": "song-e74bdc4483",
+          "name": "ホメメテオ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-e74bdc4483-v-e74bdc4483"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-37f050c610",
@@ -175627,6 +176123,17 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
@@ -175634,13 +176141,14 @@
             "album-laca-25151",
             "album-laca-25156",
             "album-laca-25163",
-            "album-laca-25268"
+            "album-laca-25268",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 10
+          "releases": 11
         },
         {
           "song_id": "song-phantasia-81aafc5f7e",
@@ -178802,6 +179310,17 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
           "name": "winning the soul",
           "album_ids": [
@@ -178817,13 +179336,14 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25268"
+            "album-laca-25268",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 2
+          "releases": 3
         }
       ],
       "performed_songs": [
@@ -179120,17 +179640,29 @@
           "releases": 2
         },
         {
+          "song_id": "song-you-aim-a-5686752029",
+          "name": "You! Aim! A!!",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "releases": 1
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
             "album-laca-25268",
-            "album-laca-25269"
+            "album-laca-25269",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 4
+          "releases": 5
         }
       ],
       "performed_songs": [
@@ -180706,13 +181238,25 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "album_ids": [
-            "album-laca-25294"
+            "album-laca-25294",
+            "album-laca-25304"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49",
             "song-228f943b49-v-7006bca4f7"
           ],
-          "releases": 2
+          "releases": 3
+        },
+        {
+          "song_id": "song-d375262b50",
+          "name": "胡蝶蘭は結ぶ",
+          "album_ids": [
+            "album-laca-25304"
+          ],
+          "version_ids": [
+            "song-d375262b50-v-d375262b50"
+          ],
+          "releases": 1
         },
         {
           "song_id": "song-aed14a1a3a",
@@ -182832,6 +183376,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-20T10:46:01+00:00",
-  "build_id": "140cef3bf512857e3a4e"
+  "generated_at": "2026-10-20T12:05:33+00:00",
+  "build_id": "907f9824490f572f0389"
 }

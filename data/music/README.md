@@ -21,6 +21,8 @@
 
 创作者使用稳定 ID；同一人的别名和所属信息在 `creators.json` 中合并。署名落在录音版本上，缺失字段在构建时直接继承原版，前端不额外标记继承状态。
 
+弦乐编曲使用 `strings_arranger`，与普通编曲 `arranger` 分别保存、展示；同一人同时承担两项岗位时保留两条署名，不用备注替代岗位。具体岗位及所属机构只按对应来源录入，不从同专辑其他曲目推断。
+
 `lyrics.json` 使用共享歌词文档：规范正文中的每一行拥有稳定 `lyric_line_id`，录音版本只引用自己实际唱到的行。完整录音、Game Size 和 Short Version 可以共用正文，但各自保留独立行序列。来源文本若与规范展示文本不同，只在 `raw_line_overrides` 中保存差异。`lyric_timings.json` 仍按真实录音保存时间轴，以 `recording_id`、`lyric_document_id` 和 `lyric_line_id` 关联，不因标点归一或正文去重丢失时间。
 
 ## 维护命令

@@ -111,6 +111,9 @@ ROLE_LABELS = {
     "編曲": "arranger",
     "编曲": "arranger",
     "arranger": "arranger",
+    "ストリングスアレンジ": "strings_arranger",
+    "弦乐编曲": "strings_arranger",
+    "strings_arranger": "strings_arranger",
     "リミックス": "remixer",
     "remix": "remixer",
     "remixer": "remixer",
@@ -124,12 +127,12 @@ ROLE_LABELS = {
 
 ROLE_ORDER = {
     "lyricist": 0, "composer": 1, "arranger": 2, "remixer": 3,
-    "producer": 4, "orchestrator": 5,
+    "producer": 4, "orchestrator": 5, "strings_arranger": 6,
 }
 
 
 ROLE_SOURCE_LABEL = (
-    r"作詞|作词|詞|词|作曲|編曲|编曲|リミックス|"
+    r"ストリングスアレンジ|strings_arranger|弦乐编曲|作詞|作词|詞|词|作曲|編曲|编曲|リミックス|"
     r"プロデュース|オーケストレーション|lyricist|lyrics|composer|arranger|"
     r"remixer?|producer|orchestrat(?:ion|or)"
 )

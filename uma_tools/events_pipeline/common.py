@@ -133,6 +133,7 @@ CREATOR_ROLE_LABELS = {
     "lyricist": "作词",
     "composer": "作曲",
     "arranger": "编曲",
+    "strings_arranger": "弦乐编曲",
     "remixer": "混音改编",
     "producer": "制作",
     "orchestrator": "配器",

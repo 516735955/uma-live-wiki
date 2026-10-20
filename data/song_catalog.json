@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-20T10:46:01+00:00",
+  "generated_at": "2026-10-20T12:05:33+00:00",
   "coverage": {
-    "songs": 1035,
-    "versions": 2051,
+    "songs": 1038,
+    "versions": 2055,
     "albums": 115,
-    "release_tracks": 2235,
+    "release_tracks": 2242,
     "live_performances": 1265,
-    "credited_songs": 332,
+    "credited_songs": 417,
     "lyric_songs": 244,
-    "credited_versions": 1295,
+    "credited_versions": 1381,
     "lyric_versions": 454
   },
   "songs": [
@@ -61,8 +61,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6ed889314c"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            }
+          ],
+          "creator_ids": [
+            "creator-6ed889314c",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -72,7 +86,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-special-record-088b617bc8-v-088b617bc8",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-6ed889314c",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -488,8 +505,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6e76d30733"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-64c2eb10ff"
+            }
+          ],
+          "creator_ids": [
+            "creator-64c2eb10ff",
+            "creator-6e76d30733"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -499,7 +530,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-for-u-e95882f053-v-e95882f053",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-64c2eb10ff",
+        "creator-6e76d30733"
+      ],
       "has_lyrics": false
     },
     {
@@ -1175,8 +1209,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-70bf07a860"
+            }
+          ],
+          "creator_ids": [
+            "creator-70bf07a860"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -1186,7 +1233,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-act-0-81c9ca6d9e-v-81c9ca6d9e",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-70bf07a860"
+      ],
       "has_lyrics": false
     },
     {
@@ -8109,8 +8158,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6f5b36ad80"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-6f5b36ad80",
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -8120,7 +8183,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-christmas-moment-b8b55826fc-v-b8b55826fc",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-6f5b36ad80",
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -21066,8 +21132,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            }
+          ],
+          "creator_ids": [
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21077,7 +21156,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-2078fdecc9-v-2078fdecc9",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -21128,8 +21209,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0b07e3069a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0b07e3069a"
+            }
+          ],
+          "creator_ids": [
+            "creator-0b07e3069a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21139,7 +21233,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-legend-b4b483a260-v-b4b483a260",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0b07e3069a"
+      ],
       "has_lyrics": false
     },
     {
@@ -21190,8 +21286,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c49c6037fc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21201,7 +21310,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-legend-eb9296df69-v-eb9296df69",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -21252,8 +21363,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0b07e3069a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0b07e3069a"
+            }
+          ],
+          "creator_ids": [
+            "creator-0b07e3069a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21263,7 +21387,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-legend-d11226fa56-v-d11226fa56",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0b07e3069a"
+      ],
       "has_lyrics": false
     },
     {
@@ -21314,8 +21440,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21325,7 +21464,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-stella-pride-208914b160-v-208914b160",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -21376,8 +21517,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c49c6037fc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21387,7 +21541,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-stella-pride-292620f20f-v-292620f20f",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -21438,8 +21594,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21449,7 +21618,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-stella-pride-d0a001077e-v-d0a001077e",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -21500,8 +21671,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0b07e3069a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0b07e3069a"
+            }
+          ],
+          "creator_ids": [
+            "creator-0b07e3069a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -21511,7 +21695,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dream-fest-36d5edf61b-v-36d5edf61b",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0b07e3069a"
+      ],
       "has_lyrics": false
     },
     {
@@ -28960,8 +29146,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-f8ce711c54"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3",
+            "creator-f8ce711c54"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -28971,7 +29171,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-flowering-phantasia-bbd1969f13-v-bbd1969f13",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-eaf94340d3",
+        "creator-f8ce711c54"
+      ],
       "has_lyrics": false
     },
     {
@@ -39561,8 +39764,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6f5b36ad80"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4",
+            "creator-6f5b36ad80"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -39572,7 +39789,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-glorious-5d90805baa-v-5d90805baa",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4",
+        "creator-6f5b36ad80"
+      ],
       "has_lyrics": false
     },
     {
@@ -51105,6 +51325,261 @@
       "original_version_id": "song-lightnin-tachyon-92c434f74e-v-92c434f74e",
       "creator_ids": [
         "creator-af5e5cc3e5"
+      ],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-lightningfast-1ca8f6c83c",
+      "title": "Lightning Fast",
+      "aliases": [
+        "Lightning Fast"
+      ],
+      "legacy_ids": [],
+      "artists": [
+        "ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、ビリーヴ (CV. 秋山実咲)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)"
+      ],
+      "character_ids": [
+        "bamboomemory",
+        "believe",
+        "calstonelighto",
+        "currenchan",
+        "durandal",
+        "hishiakebono",
+        "nishinoflower",
+        "seekingthepearl"
+      ],
+      "voice_actor_ids": [
+        "va-0089",
+        "va-0097",
+        "va-0107",
+        "va-0132",
+        "va-0136",
+        "va-0139",
+        "va-0150",
+        "va-0163"
+      ],
+      "released_character_ids": [
+        "bamboomemory",
+        "believe",
+        "calstonelighto",
+        "currenchan",
+        "durandal",
+        "hishiakebono",
+        "nishinoflower",
+        "seekingthepearl"
+      ],
+      "released_voice_actor_ids": [
+        "va-0089",
+        "va-0097",
+        "va-0107",
+        "va-0132",
+        "va-0136",
+        "va-0139",
+        "va-0150",
+        "va-0163"
+      ],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+      "release_date": "2026-10-21",
+      "versions": [
+        {
+          "id": "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c",
+          "title": "Lightning Fast",
+          "version_label": "",
+          "artists": [
+            "ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、ビリーヴ (CV. 秋山実咲)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 2,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、ビリーヴ (CV. 秋山実咲)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0097",
+                  "voice_actor_name": "松嵜丽",
+                  "character_id": "hishiakebono",
+                  "character": {
+                    "id": "hishiakebono",
+                    "name": "菱曙",
+                    "name_ja": "ヒシアケボノ",
+                    "name_en": "Hishi Akebono",
+                    "image": "/uma_official/hishiakebono.png",
+                    "color_main": "#208BCD",
+                    "color_sub": "#FA6F8B"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0139",
+                  "voice_actor_name": "篠原侑",
+                  "character_id": "currenchan",
+                  "character": {
+                    "id": "currenchan",
+                    "name": "真机伶",
+                    "name_ja": "カレンチャン",
+                    "name_en": "Curren Chan",
+                    "image": "/uma_official/currenchan.png",
+                    "color_main": "#F86669",
+                    "color_sub": "#47423E"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0132",
+                  "voice_actor_name": "福原绫香",
+                  "character_id": "seekingthepearl",
+                  "character": {
+                    "id": "seekingthepearl",
+                    "name": "采珠",
+                    "name_ja": "シーキングザパール",
+                    "name_en": "Seeking the Pearl",
+                    "image": "/uma_official/seekingthepearl.png",
+                    "color_main": "#B02D40",
+                    "color_sub": "#1690D4"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0107",
+                  "voice_actor_name": "河井晴菜",
+                  "character_id": "nishinoflower",
+                  "character": {
+                    "id": "nishinoflower",
+                    "name": "西野花",
+                    "name_ja": "ニシノフラワー",
+                    "name_en": "Nishino Flower",
+                    "image": "/uma_official/nishinoflower.png",
+                    "color_main": "#E26ECB",
+                    "color_sub": "#F6EB61"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0150",
+                  "voice_actor_name": "蓝原琴美",
+                  "character_id": "bamboomemory",
+                  "character": {
+                    "id": "bamboomemory",
+                    "name": "青竹回忆",
+                    "name_ja": "バンブーメモリー",
+                    "name_en": "Bamboo Memory",
+                    "image": "/uma_official/bamboomemory.png",
+                    "color_main": "#366965",
+                    "color_sub": "#2D2926"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0136",
+                  "voice_actor_name": "秋山实咲",
+                  "character_id": "believe",
+                  "character": {
+                    "id": "believe",
+                    "name": "信念",
+                    "name_ja": "ビリーヴ",
+                    "name_en": "Believe",
+                    "image": "/uma_official/believe.png",
+                    "color_main": "#4baece",
+                    "color_sub": "#c63663"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0089",
+                  "voice_actor_name": "望月裕美子",
+                  "character_id": "calstonelighto",
+                  "character": {
+                    "id": "calstonelighto",
+                    "name": "金镇之光",
+                    "name_ja": "カルストンライトオ",
+                    "name_en": "Calstone Light O",
+                    "image": "/uma_official/calstonelighto.png",
+                    "color_main": "#131b4c",
+                    "color_sub": "#f7eb49"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0163",
+                  "voice_actor_name": "野木奏",
+                  "character_id": "durandal",
+                  "character": {
+                    "id": "durandal",
+                    "name": "多旺达",
+                    "name_ja": "デュランダル",
+                    "name_en": "Durandal",
+                    "image": "/uma_official/durandal.png",
+                    "color_main": "#efa605",
+                    "color_sub": "#d22630"
+                  }
+                }
+              ]
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-847c4f59b6",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-64c2eb10ff",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-64c2eb10ff",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-6af7080acf"
+            },
+            {
+              "role": "strings_arranger",
+              "role_label": "弦乐编曲",
+              "creator_id": "creator-63418115d8"
+            },
+            {
+              "role": "strings_arranger",
+              "role_label": "弦乐编曲",
+              "creator_id": "creator-6af7080acf"
+            }
+          ],
+          "creator_ids": [
+            "creator-63418115d8",
+            "creator-64c2eb10ff",
+            "creator-6af7080acf",
+            "creator-847c4f59b6"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c",
+      "creator_ids": [
+        "creator-63418115d8",
+        "creator-64c2eb10ff",
+        "creator-6af7080acf",
+        "creator-847c4f59b6"
       ],
       "has_lyrics": false
     },
@@ -70540,8 +71015,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-f8ce711c54"
+            }
+          ],
+          "creator_ids": [
+            "creator-c436f537bf",
+            "creator-f8ce711c54"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -70551,7 +71045,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-phantasmagoria-c5bf54e91b-v-c5bf54e91b",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c436f537bf",
+        "creator-f8ce711c54"
+      ],
       "has_lyrics": false
     },
     {
@@ -73062,8 +73559,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c49c6037fc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-c436f537bf",
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -73073,7 +73589,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-propaganda-d81f4cc2f0-v-d81f4cc2f0",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c436f537bf",
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -85920,8 +86439,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -85931,7 +86464,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-starting-2136faae40-v-2136faae40",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -87081,8 +87617,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87092,7 +87641,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-f5d38baa11-v-f5d38baa11",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae"
+      ],
       "has_lyrics": false
     },
     {
@@ -87143,8 +87694,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87154,7 +87718,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-cm-classic-cd7173c94d-v-cd7173c94d",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -87205,8 +87771,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-75bb212e99"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-75bb212e99"
+            }
+          ],
+          "creator_ids": [
+            "creator-75bb212e99"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87216,7 +87795,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-cm-dirt-172a045df3-v-172a045df3",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-75bb212e99"
+      ],
       "has_lyrics": false
     },
     {
@@ -87267,8 +87848,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-75bb212e99"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-75bb212e99"
+            }
+          ],
+          "creator_ids": [
+            "creator-75bb212e99"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87278,7 +87872,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-cm-middle-long-bd5a86459c-v-bd5a86459c",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-75bb212e99"
+      ],
       "has_lyrics": false
     },
     {
@@ -87329,8 +87925,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-64c2eb10ff"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-64c2eb10ff"
+            }
+          ],
+          "creator_ids": [
+            "creator-64c2eb10ff"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87340,7 +87949,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-cm-sprint-mile-271daeca2b-v-271daeca2b",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-64c2eb10ff"
+      ],
       "has_lyrics": false
     },
     {
@@ -87391,8 +88002,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-2def8e906f"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-2def8e906f"
+            }
+          ],
+          "creator_ids": [
+            "creator-2def8e906f"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87402,7 +88026,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-cm-tiara-c38be05f02-v-c38be05f02",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-2def8e906f"
+      ],
       "has_lyrics": false
     },
     {
@@ -87453,8 +88079,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87464,7 +88103,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-ed0ab4d48c-v-ed0ab4d48c",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -87515,8 +88156,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf"
+            }
+          ],
+          "creator_ids": [
+            "creator-55633887c2",
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -87526,7 +88186,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-the-twinkle-legends-8db5d03c95-v-8db5d03c95",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-55633887c2",
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -88663,8 +89326,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-64c2eb10ff"
+            }
+          ],
+          "creator_ids": [
+            "creator-64c2eb10ff",
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -88674,7 +89351,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-u-pop-tune-241d14fad4-v-241d14fad4",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-64c2eb10ff",
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -89035,8 +89715,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-5caa86b58a"
+            }
+          ],
+          "creator_ids": [
+            "creator-5caa86b58a",
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -89046,7 +89740,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-u-m-a-my-world-939bcc851d-v-939bcc851d",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-5caa86b58a",
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -89097,8 +89794,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-90ee476c0a"
+            }
+          ],
+          "creator_ids": [
+            "creator-90ee476c0a",
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -89108,7 +89819,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-u-m-a-new-ballad-9de2f65dba-v-9de2f65dba",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-90ee476c0a",
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -89159,8 +89873,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf"
+            }
+          ],
+          "creator_ids": [
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -89170,7 +89897,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-u-m-a-new-diary-389a53d0fe-v-389a53d0fe",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -113518,7 +114247,9 @@
         "You! Aim! A!!"
       ],
       "legacy_ids": [],
-      "artists": [],
+      "artists": [
+        "ナカヤマフェスタ (CV. 下地紫野)、エスポワールシチー (CV. 亜咲花)、シンボリクリスエス (CV. 春川芽生)、ジェンティルドンナ (CV. 芹澤優)、アーモンドアイ (CV. 石原夏織)、キセキ (CV. 星希成奏)、フォーエバーヤング (CV. 海弓シュリ)"
+      ],
       "character_ids": [
         "admiregroove",
         "agnesdigital",
@@ -113607,8 +114338,24 @@
         "va-0179",
         "va-0181"
       ],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
+      "released_character_ids": [
+        "almondeye",
+        "espoircity",
+        "foreveryoung",
+        "gentildonna",
+        "kiseki",
+        "nakayamafesta",
+        "symbolikriss"
+      ],
+      "released_voice_actor_ids": [
+        "va-0010",
+        "va-0020",
+        "va-0084",
+        "va-0086",
+        "va-0111",
+        "va-0127",
+        "va-0146"
+      ],
       "performed_character_ids": [
         "admiregroove",
         "agnesdigital",
@@ -113697,15 +114444,133 @@
         "va-0179",
         "va-0181"
       ],
-      "cover": "/album_covers/placeholder.webp",
-      "release_date": "",
+      "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+      "release_date": "2026-10-21",
       "versions": [
         {
           "id": "song-you-aim-a-5686752029-v-5686752029",
           "title": "You! Aim! A!!",
           "version_label": "",
-          "artists": [],
-          "releases": [],
+          "artists": [
+            "ナカヤマフェスタ (CV. 下地紫野)、エスポワールシチー (CV. 亜咲花)、シンボリクリスエス (CV. 春川芽生)、ジェンティルドンナ (CV. 芹澤優)、アーモンドアイ (CV. 石原夏織)、キセキ (CV. 星希成奏)、フォーエバーヤング (CV. 海弓シュリ)"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 1,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "ナカヤマフェスタ (CV. 下地紫野)、エスポワールシチー (CV. 亜咲花)、シンボリクリスエス (CV. 春川芽生)、ジェンティルドンナ (CV. 芹澤優)、アーモンドアイ (CV. 石原夏織)、キセキ (CV. 星希成奏)、フォーエバーヤング (CV. 海弓シュリ)",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0010",
+                  "voice_actor_name": "下地紫野",
+                  "character_id": "nakayamafesta",
+                  "character": {
+                    "id": "nakayamafesta",
+                    "name": "中山庆典",
+                    "name_ja": "ナカヤマフェスタ",
+                    "name_en": "Nakayama Festa",
+                    "image": "/uma_official/nakayamafesta.png",
+                    "color_main": "#C0453F",
+                    "color_sub": "#236192"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0020",
+                  "voice_actor_name": "亚咲花",
+                  "character_id": "espoircity",
+                  "character": {
+                    "id": "espoircity",
+                    "name": "希望之城",
+                    "name_ja": "エスポワールシチー",
+                    "name_en": "Espoir City",
+                    "image": "/uma_official/espoircity.png",
+                    "color_main": "#d93842",
+                    "color_sub": "#293aab"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0086",
+                  "voice_actor_name": "春川芽生",
+                  "character_id": "symbolikriss",
+                  "character": {
+                    "id": "symbolikriss",
+                    "name": "吉兆",
+                    "name_ja": "シンボリクリスエス",
+                    "name_en": "Symboli Kris S",
+                    "image": "/uma_official/symbolikriss.png",
+                    "color_main": "#12762f",
+                    "color_sub": "#292d45"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0146",
+                  "voice_actor_name": "芹泽优",
+                  "character_id": "gentildonna",
+                  "character": {
+                    "id": "gentildonna",
+                    "name": "贵妇人",
+                    "name_ja": "ジェンティルドンナ",
+                    "name_en": "Gentildonna",
+                    "image": "/uma_official/gentildonna.png",
+                    "color_main": "#cf2f2b",
+                    "color_sub": "#533c3d"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0127",
+                  "voice_actor_name": "石原夏织",
+                  "character_id": "almondeye",
+                  "character": {
+                    "id": "almondeye",
+                    "name": "杏目",
+                    "name_ja": "アーモンドアイ",
+                    "name_en": "Almond Eye",
+                    "image": "/uma_official/almondeye.png",
+                    "color_main": "#69a9e9",
+                    "color_sub": "#cc3300"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0084",
+                  "voice_actor_name": "星希成奏",
+                  "character_id": "kiseki",
+                  "character": {
+                    "id": "kiseki",
+                    "name": "神业",
+                    "name_ja": "キセキ",
+                    "name_en": "Kiseki",
+                    "image": "/uma_official/kiseki.png",
+                    "color_main": "#2c9c46",
+                    "color_sub": "#c8dbe9"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0111",
+                  "voice_actor_name": "海弓首里",
+                  "character_id": "foreveryoung",
+                  "character": {
+                    "id": "foreveryoung",
+                    "name": "青春永驻",
+                    "name_ja": "フォーエバーヤング",
+                    "name_en": "Forever Young",
+                    "image": "/uma_official/foreveryoung.png",
+                    "color_main": "#822b4a",
+                    "color_sub": "#d8ced2"
+                  }
+                }
+              ]
+            }
+          ],
           "performances": [
             {
               "event_id": "live-numbered-7th-event-2026-06-20",
@@ -113844,21 +114709,44 @@
               "event_url": "/zh-Hans/events/live-numbered-7th-event-2026-06-20?session=live-numbered-7th-event-2026-06-20-session-1"
             }
           ],
-          "release_count": 0,
+          "release_count": 1,
           "performance_count": 2,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-6d35eb906e",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6d35eb906e",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-6d35eb906e",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-6d35eb906e"
+          ],
           "lyrics_ref": "song-you-aim-a-5686752029-v-5686752029",
           "has_lyrics": true,
           "has_timing": false
         }
       ],
       "version_count": 1,
-      "release_count": 0,
+      "release_count": 1,
       "performance_count": 2,
       "original_version_id": "song-you-aim-a-5686752029-v-5686752029",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-6d35eb906e"
+      ],
       "has_lyrics": true
     },
     {
@@ -114224,8 +115112,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-70bf07a860"
+            }
+          ],
+          "creator_ids": [
+            "creator-70bf07a860"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -114235,7 +115136,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-32b0b222f2-v-32b0b222f2",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-70bf07a860"
+      ],
       "has_lyrics": false
     },
     {
@@ -114286,8 +115189,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-55633887c2"
+            }
+          ],
+          "creator_ids": [
+            "creator-55633887c2"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -114297,7 +115213,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-fb9000e3ae-v-fb9000e3ae",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-55633887c2"
+      ],
       "has_lyrics": false
     },
     {
@@ -115146,8 +116064,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -115157,7 +116088,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-09fb8b1d10-v-09fb8b1d10",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -115369,8 +116302,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -115380,7 +116326,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-7af2e4f396-v-7af2e4f396",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae"
+      ],
       "has_lyrics": false
     },
     {
@@ -116661,8 +117609,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-56f9dada0b"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-56f9dada0b"
+            }
+          ],
+          "creator_ids": [
+            "creator-56f9dada0b"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -116672,7 +117633,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-e7885e3118-v-e7885e3118",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-56f9dada0b"
+      ],
       "has_lyrics": false
     },
     {
@@ -117088,6 +118051,7 @@
         "Machico、長谷川育美、井上遥乃、三澤紗千香、新田ひより、前田佳織里、佐伯伊織、遠野ひかる、塚田悠衣、福嶋晴菜、佐藤日向、菊池紗矢香、須藤叶希、藤原夏海、春日さくら、小島菜々恵、佐藤榛夏、月城日花、望月ゆみこ、野木 奏、真名瀬日和",
         "エリオスライジングヒーローズ",
         "スペシャルウィーク (CV. 和氣あず未)、ナリタブライアン (CV. 衣川里佳)、ビワハヤヒデ (CV. 近藤 唯)、シンコウウインディ (CV. 高田憂希)、トランセンド (CV. 塚田悠衣)、ドゥラメンテ (CV. 秋奈)、フサイチパンドラ (CV. 佳原萌枝)、ブエナビスタ (CV. 和泉風花)、エピファネイア (CV. 千賀光莉)、ロゴタイプ (CV. 髙橋美空)、ヴィクトワールピサ (CV. 嶋野 花)、ルーラーシップ (CV. 海野水玉)、エフフォーリア (CV. 香里有佐)、タイトルホルダー (CV. 華成 結)、ファレノプシス (CV. 浅見春那)、ウマ娘 プリティーダービー",
+        "ファインモーション (CV. 橋本ちなみ)、ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ナカヤマフェスタ (CV. 下地紫野)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、エスポワールシチー (CV. 亜咲花)、シンボリクリスエス (CV. 春川芽生)、ダンツフレーム (CV. 福嶋晴菜)、ビリーヴ (CV. 秋山実咲)、ラインクラフト (CV. 小島菜々恵)、ジェンティルドンナ (CV. 芹澤優)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)、アーモンドアイ (CV. 石原夏織)、キセキ (CV. 星希成奏)、フォーエバーヤング (CV. 海弓シュリ)、ファレノプシス (CV. 浅見春那)",
         "上田 瞳、下地紫野、天海由梨奈、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
         "上田瞳、大橋彩香、髙橋ミナミ、小倉唯、津田美波、藤野彩水、香坂さき、鈴木絵理、下地紫野、のぐちゆり、山根綺、立花日菜、矢野妃菜喜、ファイルーズあい、真野美月、白石晴香、篠田みなみ",
         "上田瞳、橋本ちなみ、下地紫野、和多田美咲、前田佳織里、中村カンナ、日笠陽子、吉岡茉祐、望月ゆみこ、日比優理香、松田颯水",
@@ -117174,6 +118138,7 @@
         "almondeye",
         "anshinzawasasami",
         "astonmachan",
+        "bamboomemory",
         "believe",
         "bikopegasus",
         "bitterglasse",
@@ -117453,6 +118418,7 @@
         "va-0147",
         "va-0148",
         "va-0149",
+        "va-0150",
         "va-0151",
         "va-0152",
         "va-0153",
@@ -117499,6 +118465,7 @@
         "akasakamisato",
         "almondeye",
         "astonmachan",
+        "bamboomemory",
         "believe",
         "bikopegasus",
         "biwahayahide",
@@ -117748,6 +118715,7 @@
         "va-0147",
         "va-0148",
         "va-0149",
+        "va-0150",
         "va-0152",
         "va-0153",
         "va-0154",
@@ -118110,6 +119078,7 @@
             "Machico、長谷川育美、井上遥乃、三澤紗千香、新田ひより、前田佳織里、佐伯伊織、遠野ひかる、塚田悠衣、福嶋晴菜、佐藤日向、菊池紗矢香、須藤叶希、藤原夏海、春日さくら、小島菜々恵、佐藤榛夏、月城日花、望月ゆみこ、野木 奏、真名瀬日和",
             "エリオスライジングヒーローズ",
             "スペシャルウィーク (CV. 和氣あず未)、ナリタブライアン (CV. 衣川里佳)、ビワハヤヒデ (CV. 近藤 唯)、シンコウウインディ (CV. 高田憂希)、トランセンド (CV. 塚田悠衣)、ドゥラメンテ (CV. 秋奈)、フサイチパンドラ (CV. 佳原萌枝)、ブエナビスタ (CV. 和泉風花)、エピファネイア (CV. 千賀光莉)、ロゴタイプ (CV. 髙橋美空)、ヴィクトワールピサ (CV. 嶋野 花)、ルーラーシップ (CV. 海野水玉)、エフフォーリア (CV. 香里有佐)、タイトルホルダー (CV. 華成 結)、ファレノプシス (CV. 浅見春那)、ウマ娘 プリティーダービー",
+            "ファインモーション (CV. 橋本ちなみ)、ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ナカヤマフェスタ (CV. 下地紫野)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、エスポワールシチー (CV. 亜咲花)、シンボリクリスエス (CV. 春川芽生)、ダンツフレーム (CV. 福嶋晴菜)、ビリーヴ (CV. 秋山実咲)、ラインクラフト (CV. 小島菜々恵)、ジェンティルドンナ (CV. 芹澤優)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)、アーモンドアイ (CV. 石原夏織)、キセキ (CV. 星希成奏)、フォーエバーヤング (CV. 海弓シュリ)、ファレノプシス (CV. 浅見春那)",
             "上田 瞳、下地紫野、天海由梨奈、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
             "上田瞳、大橋彩香、髙橋ミナミ、小倉唯、津田美波、藤野彩水、香坂さき、鈴木絵理、下地紫野、のぐちゆり、山根綺、立花日菜、矢野妃菜喜、ファイルーズあい、真野美月、白石晴香、篠田みなみ",
             "上田瞳、橋本ちなみ、下地紫野、和多田美咲、前田佳織里、中村カンナ、日笠陽子、吉岡茉祐、望月ゆみこ、日比優理香、松田颯水",
@@ -127252,6 +128221,289 @@
                   }
                 }
               ]
+            },
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 5,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "ファインモーション (CV. 橋本ちなみ)、ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ナカヤマフェスタ (CV. 下地紫野)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、エスポワールシチー (CV. 亜咲花)、シンボリクリスエス (CV. 春川芽生)、ダンツフレーム (CV. 福嶋晴菜)、ビリーヴ (CV. 秋山実咲)、ラインクラフト (CV. 小島菜々恵)、ジェンティルドンナ (CV. 芹澤優)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)、アーモンドアイ (CV. 石原夏織)、キセキ (CV. 星希成奏)、フォーエバーヤング (CV. 海弓シュリ)、ファレノプシス (CV. 浅見春那)",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0102",
+                  "voice_actor_name": "桥本千波",
+                  "character_id": "finemotion",
+                  "character": {
+                    "id": "finemotion",
+                    "name": "美妙姿势",
+                    "name_ja": "ファインモーション",
+                    "name_en": "Fine Motion",
+                    "image": "/uma_official/finemotion.png",
+                    "color_main": "#20A95C",
+                    "color_sub": "#EE5340"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0097",
+                  "voice_actor_name": "松嵜丽",
+                  "character_id": "hishiakebono",
+                  "character": {
+                    "id": "hishiakebono",
+                    "name": "菱曙",
+                    "name_ja": "ヒシアケボノ",
+                    "name_en": "Hishi Akebono",
+                    "image": "/uma_official/hishiakebono.png",
+                    "color_main": "#208BCD",
+                    "color_sub": "#FA6F8B"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0139",
+                  "voice_actor_name": "篠原侑",
+                  "character_id": "currenchan",
+                  "character": {
+                    "id": "currenchan",
+                    "name": "真机伶",
+                    "name_ja": "カレンチャン",
+                    "name_en": "Curren Chan",
+                    "image": "/uma_official/currenchan.png",
+                    "color_main": "#F86669",
+                    "color_sub": "#47423E"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0132",
+                  "voice_actor_name": "福原绫香",
+                  "character_id": "seekingthepearl",
+                  "character": {
+                    "id": "seekingthepearl",
+                    "name": "采珠",
+                    "name_ja": "シーキングザパール",
+                    "name_en": "Seeking the Pearl",
+                    "image": "/uma_official/seekingthepearl.png",
+                    "color_main": "#B02D40",
+                    "color_sub": "#1690D4"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0010",
+                  "voice_actor_name": "下地紫野",
+                  "character_id": "nakayamafesta",
+                  "character": {
+                    "id": "nakayamafesta",
+                    "name": "中山庆典",
+                    "name_ja": "ナカヤマフェスタ",
+                    "name_en": "Nakayama Festa",
+                    "image": "/uma_official/nakayamafesta.png",
+                    "color_main": "#C0453F",
+                    "color_sub": "#236192"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0107",
+                  "voice_actor_name": "河井晴菜",
+                  "character_id": "nishinoflower",
+                  "character": {
+                    "id": "nishinoflower",
+                    "name": "西野花",
+                    "name_ja": "ニシノフラワー",
+                    "name_en": "Nishino Flower",
+                    "image": "/uma_official/nishinoflower.png",
+                    "color_main": "#E26ECB",
+                    "color_sub": "#F6EB61"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0150",
+                  "voice_actor_name": "蓝原琴美",
+                  "character_id": "bamboomemory",
+                  "character": {
+                    "id": "bamboomemory",
+                    "name": "青竹回忆",
+                    "name_ja": "バンブーメモリー",
+                    "name_en": "Bamboo Memory",
+                    "image": "/uma_official/bamboomemory.png",
+                    "color_main": "#366965",
+                    "color_sub": "#2D2926"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0020",
+                  "voice_actor_name": "亚咲花",
+                  "character_id": "espoircity",
+                  "character": {
+                    "id": "espoircity",
+                    "name": "希望之城",
+                    "name_ja": "エスポワールシチー",
+                    "name_en": "Espoir City",
+                    "image": "/uma_official/espoircity.png",
+                    "color_main": "#d93842",
+                    "color_sub": "#293aab"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0086",
+                  "voice_actor_name": "春川芽生",
+                  "character_id": "symbolikriss",
+                  "character": {
+                    "id": "symbolikriss",
+                    "name": "吉兆",
+                    "name_ja": "シンボリクリスエス",
+                    "name_en": "Symboli Kris S",
+                    "image": "/uma_official/symbolikriss.png",
+                    "color_main": "#12762f",
+                    "color_sub": "#292d45"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0134",
+                  "voice_actor_name": "福岛晴菜",
+                  "character_id": "dantsuflame",
+                  "character": {
+                    "id": "dantsuflame",
+                    "name": "烈焰快驹",
+                    "name_ja": "ダンツフレーム",
+                    "name_en": "Dantsu Flame",
+                    "image": "/uma_official/dantsuflame.png",
+                    "color_main": "#e97d97",
+                    "color_sub": "#119d76"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0136",
+                  "voice_actor_name": "秋山实咲",
+                  "character_id": "believe",
+                  "character": {
+                    "id": "believe",
+                    "name": "信念",
+                    "name_ja": "ビリーヴ",
+                    "name_en": "Believe",
+                    "image": "/uma_official/believe.png",
+                    "color_main": "#4baece",
+                    "color_sub": "#c63663"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0059",
+                  "voice_actor_name": "小岛菜菜惠",
+                  "character_id": "rheinkraft",
+                  "character": {
+                    "id": "rheinkraft",
+                    "name": "莱茵力量",
+                    "name_ja": "ラインクラフト",
+                    "name_en": "Rhein Kraft",
+                    "image": "/uma_official/rheinkraft.png",
+                    "color_main": "#f15b75",
+                    "color_sub": "#2c9679"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0146",
+                  "voice_actor_name": "芹泽优",
+                  "character_id": "gentildonna",
+                  "character": {
+                    "id": "gentildonna",
+                    "name": "贵妇人",
+                    "name_ja": "ジェンティルドンナ",
+                    "name_en": "Gentildonna",
+                    "image": "/uma_official/gentildonna.png",
+                    "color_main": "#cf2f2b",
+                    "color_sub": "#533c3d"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0089",
+                  "voice_actor_name": "望月裕美子",
+                  "character_id": "calstonelighto",
+                  "character": {
+                    "id": "calstonelighto",
+                    "name": "金镇之光",
+                    "name_ja": "カルストンライトオ",
+                    "name_en": "Calstone Light O",
+                    "image": "/uma_official/calstonelighto.png",
+                    "color_main": "#131b4c",
+                    "color_sub": "#f7eb49"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0163",
+                  "voice_actor_name": "野木奏",
+                  "character_id": "durandal",
+                  "character": {
+                    "id": "durandal",
+                    "name": "多旺达",
+                    "name_ja": "デュランダル",
+                    "name_en": "Durandal",
+                    "image": "/uma_official/durandal.png",
+                    "color_main": "#efa605",
+                    "color_sub": "#d22630"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0127",
+                  "voice_actor_name": "石原夏织",
+                  "character_id": "almondeye",
+                  "character": {
+                    "id": "almondeye",
+                    "name": "杏目",
+                    "name_ja": "アーモンドアイ",
+                    "name_en": "Almond Eye",
+                    "image": "/uma_official/almondeye.png",
+                    "color_main": "#69a9e9",
+                    "color_sub": "#cc3300"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0084",
+                  "voice_actor_name": "星希成奏",
+                  "character_id": "kiseki",
+                  "character": {
+                    "id": "kiseki",
+                    "name": "神业",
+                    "name_ja": "キセキ",
+                    "name_en": "Kiseki",
+                    "image": "/uma_official/kiseki.png",
+                    "color_main": "#2c9c46",
+                    "color_sub": "#c8dbe9"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0111",
+                  "voice_actor_name": "海弓首里",
+                  "character_id": "foreveryoung",
+                  "character": {
+                    "id": "foreveryoung",
+                    "name": "青春永驻",
+                    "name_ja": "フォーエバーヤング",
+                    "name_en": "Forever Young",
+                    "image": "/uma_official/foreveryoung.png",
+                    "color_main": "#822b4a",
+                    "color_sub": "#d8ced2"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0110",
+                  "voice_actor_name": "浅见春那",
+                  "character_id": "phalaenopsis",
+                  "character": {
+                    "id": "phalaenopsis",
+                    "name": "蝴蝶兰",
+                    "name_ja": "ファレノプシス",
+                    "name_en": "Phalaenopsis",
+                    "image": "/uma_official/phalaenopsis.png",
+                    "color_main": "#5BA4D9",
+                    "color_sub": "#AE4555"
+                  }
+                }
+              ]
             }
           ],
           "performances": [
@@ -133334,7 +134586,7 @@
               }
             }
           ],
-          "release_count": 49,
+          "release_count": 50,
           "performance_count": 159,
           "instrumental": false,
           "credits": [
@@ -142952,10 +144204,26 @@
                   }
                 }
               ]
+            },
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 7,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": []
             }
           ],
           "performances": [],
-          "release_count": 31,
+          "release_count": 32,
           "performance_count": 0,
           "instrumental": false,
           "credits": [
@@ -147896,7 +149164,7 @@
         }
       ],
       "version_count": 24,
-      "release_count": 125,
+      "release_count": 127,
       "performance_count": 159,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
@@ -148934,8 +150202,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4",
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -148945,7 +150227,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-8083b00821-v-8083b00821",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4",
+        "creator-eaf94340d3"
+      ],
       "has_lyrics": false
     },
     {
@@ -149338,8 +150623,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -149349,7 +150647,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-2c97a22505-v-2c97a22505",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -149400,8 +150700,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-a558bf7304"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-a558bf7304"
+            }
+          ],
+          "creator_ids": [
+            "creator-a558bf7304"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -149411,7 +150724,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-993878f1b0-v-993878f1b0",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-a558bf7304"
+      ],
       "has_lyrics": false
     },
     {
@@ -149462,8 +150777,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-648b8ab7cc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-648b8ab7cc"
+            }
+          ],
+          "creator_ids": [
+            "creator-648b8ab7cc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -149473,7 +150801,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-7a52ab5e4a-v-7a52ab5e4a",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-648b8ab7cc"
+      ],
       "has_lyrics": false
     },
     {
@@ -150641,8 +151971,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -150652,7 +151995,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-beeb4c7e57-v-beeb4c7e57",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -163622,8 +164967,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0b07e3069a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0b07e3069a"
+            }
+          ],
+          "creator_ids": [
+            "creator-0b07e3069a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -163633,7 +164991,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-ad7d521cd2-v-ad7d521cd2",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0b07e3069a"
+      ],
       "has_lyrics": false
     },
     {
@@ -163684,8 +165044,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c49c6037fc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -163695,7 +165068,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-86db0f08b7-v-86db0f08b7",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -166855,8 +168230,33 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-8ba66086c5"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4",
+            "creator-8ba66086c5",
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -166866,7 +168266,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-aee13bd730-v-aee13bd730",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4",
+        "creator-8ba66086c5",
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -168377,8 +169781,28 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-8ba66086c5"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-8ba66086c5",
+            "creator-c436f537bf",
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -168388,7 +169812,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-808c459e6c-v-808c459e6c",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-8ba66086c5",
+        "creator-c436f537bf",
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -170731,8 +172159,28 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-2def8e906f"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-2def8e906f",
+            "creator-c49c6037fc",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -170742,7 +172190,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-d234621153-v-d234621153",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-2def8e906f",
+        "creator-c49c6037fc",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -172838,8 +174290,34 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-3e35bf54dc"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8ba66086c5"
+            }
+          ],
+          "creator_ids": [
+            "creator-3e35bf54dc",
+            "creator-8ba66086c5",
+            "creator-eaf94340d3",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -172849,7 +174327,12 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-atono-grand-re-ort-d03d9e06bf-v-d03d9e06bf",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-3e35bf54dc",
+        "creator-8ba66086c5",
+        "creator-eaf94340d3",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -178241,8 +179724,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-a558bf7304"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-a558bf7304"
+            }
+          ],
+          "creator_ids": [
+            "creator-a558bf7304"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -178252,7 +179748,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-af4e7e9904-v-af4e7e9904",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-a558bf7304"
+      ],
       "has_lyrics": false
     },
     {
@@ -178303,8 +179801,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -178314,7 +179826,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-393286132b-v-393286132b",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-eaf94340d3"
+      ],
       "has_lyrics": false
     },
     {
@@ -180038,8 +181553,28 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-14a2ce8737"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-mk-a91dcbb4df"
+            }
+          ],
+          "creator_ids": [
+            "creator-14a2ce8737",
+            "creator-c436f537bf",
+            "creator-mk-a91dcbb4df"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -180049,7 +181584,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-0f2cb589cb-v-0f2cb589cb",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-14a2ce8737",
+        "creator-c436f537bf",
+        "creator-mk-a91dcbb4df"
+      ],
       "has_lyrics": false
     },
     {
@@ -188162,8 +189701,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -188173,7 +189725,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-43f4ff0a88-v-43f4ff0a88",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -188309,8 +189863,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-27a7191e7e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-27a7191e7e",
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -188320,7 +189888,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-beach-747fea21c9-v-747fea21c9",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-27a7191e7e",
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -189599,8 +191170,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-70bf07a860"
+            }
+          ],
+          "creator_ids": [
+            "creator-70bf07a860"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -189610,7 +191194,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-598f2f343d-v-598f2f343d",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-70bf07a860"
+      ],
       "has_lyrics": false
     },
     {
@@ -190749,6 +192335,259 @@
       "has_lyrics": false
     },
     {
+      "id": "song-e74bdc4483",
+      "title": "ホメメテオ",
+      "aliases": [
+        "ホメメテオ",
+        "ホメメテオ (MV Size)"
+      ],
+      "legacy_ids": [],
+      "artists": [
+        "ファインモーション (CV. 橋本ちなみ)、ダンツフレーム (CV. 福嶋晴菜)、ビリーヴ (CV. 秋山実咲)、ラインクラフト (CV. 小島菜々恵)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)"
+      ],
+      "character_ids": [
+        "believe",
+        "calstonelighto",
+        "dantsuflame",
+        "durandal",
+        "finemotion",
+        "rheinkraft"
+      ],
+      "voice_actor_ids": [
+        "va-0059",
+        "va-0089",
+        "va-0102",
+        "va-0134",
+        "va-0136",
+        "va-0163"
+      ],
+      "released_character_ids": [
+        "believe",
+        "calstonelighto",
+        "dantsuflame",
+        "durandal",
+        "finemotion",
+        "rheinkraft"
+      ],
+      "released_voice_actor_ids": [
+        "va-0059",
+        "va-0089",
+        "va-0102",
+        "va-0134",
+        "va-0136",
+        "va-0163"
+      ],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+      "release_date": "2026-10-21",
+      "versions": [
+        {
+          "id": "song-e74bdc4483-v-e74bdc4483",
+          "title": "ホメメテオ",
+          "version_label": "",
+          "artists": [
+            "ファインモーション (CV. 橋本ちなみ)、ダンツフレーム (CV. 福嶋晴菜)、ビリーヴ (CV. 秋山実咲)、ラインクラフト (CV. 小島菜々恵)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 4,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "ファインモーション (CV. 橋本ちなみ)、ダンツフレーム (CV. 福嶋晴菜)、ビリーヴ (CV. 秋山実咲)、ラインクラフト (CV. 小島菜々恵)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0102",
+                  "voice_actor_name": "桥本千波",
+                  "character_id": "finemotion",
+                  "character": {
+                    "id": "finemotion",
+                    "name": "美妙姿势",
+                    "name_ja": "ファインモーション",
+                    "name_en": "Fine Motion",
+                    "image": "/uma_official/finemotion.png",
+                    "color_main": "#20A95C",
+                    "color_sub": "#EE5340"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0134",
+                  "voice_actor_name": "福岛晴菜",
+                  "character_id": "dantsuflame",
+                  "character": {
+                    "id": "dantsuflame",
+                    "name": "烈焰快驹",
+                    "name_ja": "ダンツフレーム",
+                    "name_en": "Dantsu Flame",
+                    "image": "/uma_official/dantsuflame.png",
+                    "color_main": "#e97d97",
+                    "color_sub": "#119d76"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0136",
+                  "voice_actor_name": "秋山实咲",
+                  "character_id": "believe",
+                  "character": {
+                    "id": "believe",
+                    "name": "信念",
+                    "name_ja": "ビリーヴ",
+                    "name_en": "Believe",
+                    "image": "/uma_official/believe.png",
+                    "color_main": "#4baece",
+                    "color_sub": "#c63663"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0059",
+                  "voice_actor_name": "小岛菜菜惠",
+                  "character_id": "rheinkraft",
+                  "character": {
+                    "id": "rheinkraft",
+                    "name": "莱茵力量",
+                    "name_ja": "ラインクラフト",
+                    "name_en": "Rhein Kraft",
+                    "image": "/uma_official/rheinkraft.png",
+                    "color_main": "#f15b75",
+                    "color_sub": "#2c9679"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0089",
+                  "voice_actor_name": "望月裕美子",
+                  "character_id": "calstonelighto",
+                  "character": {
+                    "id": "calstonelighto",
+                    "name": "金镇之光",
+                    "name_ja": "カルストンライトオ",
+                    "name_en": "Calstone Light O",
+                    "image": "/uma_official/calstonelighto.png",
+                    "color_main": "#131b4c",
+                    "color_sub": "#f7eb49"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0163",
+                  "voice_actor_name": "野木奏",
+                  "character_id": "durandal",
+                  "character": {
+                    "id": "durandal",
+                    "name": "多旺达",
+                    "name_ja": "デュランダル",
+                    "name_en": "Durandal",
+                    "image": "/uma_official/durandal.png",
+                    "color_main": "#efa605",
+                    "color_sub": "#d22630"
+                  }
+                }
+              ]
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-c436f537bf",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-c436f537bf"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        },
+        {
+          "id": "song-e74bdc4483-v-efc36499b1",
+          "title": "ホメメテオ (MV Size)",
+          "version_label": "MV Size",
+          "artists": [],
+          "releases": [
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 6,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-c436f537bf",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c436f537bf",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-c436f537bf"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 2,
+      "release_count": 2,
+      "performance_count": 0,
+      "original_version_id": "song-e74bdc4483-v-e74bdc4483",
+      "creator_ids": [
+        "creator-c436f537bf"
+      ],
+      "has_lyrics": false
+    },
+    {
       "id": "song-d5fdbb21dc",
       "title": "ホントの気持ち",
       "aliases": [
@@ -191275,8 +193114,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c49c6037fc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c49c6037fc"
+            }
+          ],
+          "creator_ids": [
+            "creator-c49c6037fc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -191286,7 +193138,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-ad009446b1-v-ad009446b1",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-c49c6037fc"
+      ],
       "has_lyrics": false
     },
     {
@@ -197411,8 +199265,28 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-13d17e7497"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-9be9261917"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-13d17e7497",
+            "creator-9be9261917"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -197422,7 +199296,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-6fc567dad5-v-6fc567dad5",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-13d17e7497",
+        "creator-9be9261917"
+      ],
       "has_lyrics": false
     },
     {
@@ -197907,8 +199785,33 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-648b8ab7cc"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-81f0c8dcf2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-648b8ab7cc",
+            "creator-81f0c8dcf2"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -197918,7 +199821,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-b3a40dba2f-v-b3a40dba2f",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-648b8ab7cc",
+        "creator-81f0c8dcf2"
+      ],
       "has_lyrics": false
     },
     {
@@ -198607,8 +200514,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eba-9883157c46"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4",
+            "creator-eba-9883157c46"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -198618,7 +200544,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-8fa0c794a4-v-8fa0c794a4",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4",
+        "creator-eba-9883157c46"
+      ],
       "has_lyrics": false
     },
     {
@@ -199740,8 +201669,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -199751,7 +201693,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-034e072c80-v-034e072c80",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -201863,8 +203807,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8ba66086c5"
+            }
+          ],
+          "creator_ids": [
+            "creator-8ba66086c5",
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -201874,7 +203832,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-14fb600780-v-14fb600780",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-8ba66086c5",
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -203360,8 +205321,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-a558bf7304"
+            }
+          ],
+          "creator_ids": [
+            "creator-a558bf7304",
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -203371,7 +205346,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-95e449cd92-v-95e449cd92",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-a558bf7304",
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -204943,8 +206921,39 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-f8ce711c54"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-70bf07a860"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-70bf07a860",
+            "creator-cf49f62a1e",
+            "creator-f8ce711c54"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -204954,7 +206963,12 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-cf665c757f-v-cf665c757f",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-70bf07a860",
+        "creator-cf49f62a1e",
+        "creator-f8ce711c54"
+      ],
       "has_lyrics": false
     },
     {
@@ -207312,8 +209326,28 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c01db1f1ba"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-59668a1cc9"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-mk-a91dcbb4df"
+            }
+          ],
+          "creator_ids": [
+            "creator-59668a1cc9",
+            "creator-c01db1f1ba",
+            "creator-mk-a91dcbb4df"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -207323,7 +209357,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-de-your-island-cbcc96e8ce-v-cbcc96e8ce",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-59668a1cc9",
+        "creator-c01db1f1ba",
+        "creator-mk-a91dcbb4df"
+      ],
       "has_lyrics": false
     },
     {
@@ -211821,8 +213859,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-cf49f62a1e"
+            }
+          ],
+          "creator_ids": [
+            "creator-cf49f62a1e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -211832,7 +213883,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-242c71cfa2-v-242c71cfa2",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-cf49f62a1e"
+      ],
       "has_lyrics": false
     },
     {
@@ -212757,8 +214810,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -212768,7 +214834,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-bb6492e715-v-bb6492e715",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -218621,8 +220689,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-55633887c2",
+            "creator-647bf144a4"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -218632,7 +220714,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-41e53658e2-v-41e53658e2",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-55633887c2",
+        "creator-647bf144a4"
+      ],
       "has_lyrics": false
     },
     {
@@ -219030,8 +221115,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6d35eb906e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-56f9dada0b"
+            }
+          ],
+          "creator_ids": [
+            "creator-56f9dada0b",
+            "creator-6d35eb906e"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -219041,7 +221140,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-7f5504ac58-v-7f5504ac58",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-56f9dada0b",
+        "creator-6d35eb906e"
+      ],
       "has_lyrics": false
     },
     {
@@ -219530,8 +221632,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-90ee476c0a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-55633887c2"
+            }
+          ],
+          "creator_ids": [
+            "creator-55633887c2",
+            "creator-90ee476c0a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -219541,7 +221657,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-24d7ee0134-v-24d7ee0134",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-55633887c2",
+        "creator-90ee476c0a"
+      ],
       "has_lyrics": false
     },
     {
@@ -220442,8 +222561,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            }
+          ],
+          "creator_ids": [
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -220453,7 +222585,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-4262c0f823-v-4262c0f823",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -222707,8 +224841,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-max-mullowney-46d1023bc5"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-56f9dada0b"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-max-mullowney-46d1023bc5"
+            }
+          ],
+          "creator_ids": [
+            "creator-56f9dada0b",
+            "creator-max-mullowney-46d1023bc5"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -222718,7 +224871,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-1706019be7-v-1706019be7",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-56f9dada0b",
+        "creator-max-mullowney-46d1023bc5"
+      ],
       "has_lyrics": false
     },
     {
@@ -226412,8 +228568,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -226423,7 +228592,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-4637d2e765-v-4637d2e765",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae"
+      ],
       "has_lyrics": false
     },
     {
@@ -226676,8 +228847,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-3e35bf54dc"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-3e35bf54dc"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-3e35bf54dc"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -226687,7 +228877,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-b1f88762a0-v-b1f88762a0",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-3e35bf54dc"
+      ],
       "has_lyrics": false
     },
     {
@@ -228142,8 +230335,57 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-5fe0c81649"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-a50daef52d"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-cf49f62a1e"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-5fe0c81649",
+            "creator-647bf144a4",
+            "creator-70bf07a860",
+            "creator-a50daef52d",
+            "creator-cf49f62a1e",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -228153,7 +230395,15 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-01156d6850-v-01156d6850",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-5fe0c81649",
+        "creator-647bf144a4",
+        "creator-70bf07a860",
+        "creator-a50daef52d",
+        "creator-cf49f62a1e",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -230124,8 +232374,32 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-mk-a91dcbb4df"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-70bf07a860"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-mk-a91dcbb4df"
+            }
+          ],
+          "creator_ids": [
+            "creator-70bf07a860",
+            "creator-mk-a91dcbb4df"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -230135,7 +232409,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-design-your-island-948e51da66-v-948e51da66",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-70bf07a860",
+        "creator-mk-a91dcbb4df"
+      ],
       "has_lyrics": false
     },
     {
@@ -230186,8 +232463,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-8ba66086c5"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8ba66086c5"
+            }
+          ],
+          "creator_ids": [
+            "creator-8ba66086c5"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -230197,7 +232487,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-design-your-island-7b11b28441-v-7b11b28441",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-8ba66086c5"
+      ],
       "has_lyrics": false
     },
     {
@@ -230248,8 +232540,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-64c2eb10ff"
+            }
+          ],
+          "creator_ids": [
+            "creator-55633887c2",
+            "creator-64c2eb10ff"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -230259,7 +232570,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-design-your-island-78e56c16ac-v-78e56c16ac",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-55633887c2",
+        "creator-64c2eb10ff"
+      ],
       "has_lyrics": false
     },
     {
@@ -232758,8 +235072,33 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-8ba66086c5"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-8ba66086c5",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -232769,7 +235108,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-442608b9d5-v-442608b9d5",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-8ba66086c5",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
       "has_lyrics": false
     },
     {
@@ -232820,8 +235163,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-55633887c2"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-55633887c2"
+            }
+          ],
+          "creator_ids": [
+            "creator-55633887c2"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -232831,7 +235187,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-d6d23d880c-v-d6d23d880c",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-55633887c2"
+      ],
       "has_lyrics": false
     },
     {
@@ -236079,8 +238437,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c436f537bf"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-647bf144a4",
+            "creator-c436f537bf"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -236090,7 +238462,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-81c41e2629-v-81c41e2629",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-647bf144a4",
+        "creator-c436f537bf"
+      ],
       "has_lyrics": false
     },
     {
@@ -239662,6 +242037,122 @@
       "has_lyrics": false
     },
     {
+      "id": "song-d375262b50",
+      "title": "胡蝶蘭は結ぶ",
+      "aliases": [
+        "胡蝶蘭は結ぶ"
+      ],
+      "legacy_ids": [],
+      "artists": [
+        "ファレノプシス (CV. 浅見春那)"
+      ],
+      "character_ids": [
+        "phalaenopsis"
+      ],
+      "voice_actor_ids": [
+        "va-0110"
+      ],
+      "released_character_ids": [
+        "phalaenopsis"
+      ],
+      "released_voice_actor_ids": [
+        "va-0110"
+      ],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+      "release_date": "2026-10-21",
+      "versions": [
+        {
+          "id": "song-d375262b50-v-d375262b50",
+          "title": "胡蝶蘭は結ぶ",
+          "version_label": "",
+          "artists": [
+            "ファレノプシス (CV. 浅見春那)"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-25304",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 36",
+              "release_date": "2026-10-21",
+              "catalog": "LACA-25304",
+              "type": "专辑",
+              "cover": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.webp",
+              "track_number": 3,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "ファレノプシス (CV. 浅見春那)",
+              "audio_url": "",
+              "image": "",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0110",
+                  "voice_actor_name": "浅见春那",
+                  "character_id": "phalaenopsis",
+                  "character": {
+                    "id": "phalaenopsis",
+                    "name": "蝴蝶兰",
+                    "name_ja": "ファレノプシス",
+                    "name_en": "Phalaenopsis",
+                    "image": "/uma_official/phalaenopsis.png",
+                    "color_main": "#5BA4D9",
+                    "color_sub": "#AE4555"
+                  }
+                }
+              ]
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-6d35eb906e",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-6d35eb906e",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-6d35eb906e",
+              "institution": "Cygames"
+            },
+            {
+              "role": "strings_arranger",
+              "role_label": "弦乐编曲",
+              "creator_id": "creator-8ccf39ae29",
+              "institution": "Dream Monster"
+            }
+          ],
+          "creator_ids": [
+            "creator-6d35eb906e",
+            "creator-8ccf39ae29"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-d375262b50-v-d375262b50",
+      "creator_ids": [
+        "creator-6d35eb906e",
+        "creator-8ccf39ae29"
+      ],
+      "has_lyrics": false
+    },
+    {
       "id": "song-25dac2a02b",
       "title": "脚取りは重く",
       "aliases": [
@@ -239932,8 +242423,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-f8ce711c54"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-f8ce711c54"
+            }
+          ],
+          "creator_ids": [
+            "creator-f8ce711c54"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -239943,7 +242447,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-528e34d8c4-v-528e34d8c4",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-f8ce711c54"
+      ],
       "has_lyrics": false
     },
     {
@@ -245332,8 +247838,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-8ba66086c5"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8ba66086c5"
+            }
+          ],
+          "creator_ids": [
+            "creator-8ba66086c5"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -245343,7 +247862,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-87a776616e-v-87a776616e",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-8ba66086c5"
+      ],
       "has_lyrics": false
     },
     {
@@ -245518,8 +248039,57 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-0a12f443ae"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-27a7191e7e"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-5caa86b58a"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-648b8ab7cc"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-9df1809a60"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-f8ce711c54"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-27a7191e7e",
+            "creator-5caa86b58a",
+            "creator-648b8ab7cc",
+            "creator-9df1809a60",
+            "creator-eaf94340d3",
+            "creator-f8ce711c54"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -245529,7 +248099,15 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-e66a3d0939-v-e66a3d0939",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-27a7191e7e",
+        "creator-5caa86b58a",
+        "creator-648b8ab7cc",
+        "creator-9df1809a60",
+        "creator-eaf94340d3",
+        "creator-f8ce711c54"
+      ],
       "has_lyrics": false
     },
     {
@@ -245774,8 +248352,21 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eb4fbbffa7"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eb4fbbffa7"
+            }
+          ],
+          "creator_ids": [
+            "creator-eb4fbbffa7"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -245785,7 +248376,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-0bde6f7fd2-v-0bde6f7fd2",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-eb4fbbffa7"
+      ],
       "has_lyrics": false
     },
     {
@@ -247670,8 +250263,22 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-90ee476c0a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-0a12f443ae"
+            }
+          ],
+          "creator_ids": [
+            "creator-0a12f443ae",
+            "creator-90ee476c0a"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -247681,7 +250288,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-83f6eee605-v-83f6eee605",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-0a12f443ae",
+        "creator-90ee476c0a"
+      ],
       "has_lyrics": false
     },
     {
@@ -249658,5 +252268,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "140cef3bf512857e3a4e"
+  "build_id": "907f9824490f572f0389"
 }
