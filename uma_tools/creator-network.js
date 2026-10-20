@@ -30,26 +30,26 @@
         });
       },
       layout: function () {
-        const nodeWidth = this.compact ? Math.max(160, this.width - 32) : 190;
-        const nodeHeight = 66;
+        const nodeWidth = this.compact ? Math.max(140, this.width - 64) : 210;
+        const nodeHeight = 80;
         if (this.compact) {
-          const top = 108;
+          const top = 120;
           return {
             width: this.width,
-            height: Math.max(300, top + this.collaborators.length * 80 + 16),
-            root: { x: 16, y: 18, width: nodeWidth, height: 72 },
+            height: Math.max(300, top + this.collaborators.length * 100 + 16),
+            root: { x: 32, y: 18, width: nodeWidth, height: 80 },
             nodes: this.collaborators.map(function (person, index) {
-              return Object.assign({}, person, { x: 16, y: top + index * 80, width: nodeWidth, height: nodeHeight });
+              return Object.assign({}, person, { x: 48, y: top + index * 100, width: nodeWidth, height: nodeHeight });
             })
           };
         }
         const rootWidth = 188;
-        const startX = 260;
-        const horizontalGap = 210;
-        const columns = Math.max(2, Math.min(4, Math.floor((this.width - startX + 20) / horizontalGap)));
+        const startX = 280;
+        const horizontalGap = 250;
+        const columns = Math.max(1, Math.min(4, Math.floor((this.width - startX + 40) / horizontalGap)));
         const rows = Math.max(1, Math.ceil(this.collaborators.length / columns));
-        const verticalGap = 86;
-        const height = Math.max(350, rows * verticalGap + 34);
+        const verticalGap = 100;
+        const height = Math.max(350, rows * verticalGap + 80);
         return {
           width: this.width,
           height: height,
@@ -58,7 +58,7 @@
             const column = index % columns;
             const row = Math.floor(index / columns);
             const occupiedHeight = rows * verticalGap;
-            const offsetY = Math.round((height - occupiedHeight) / 2 + 10);
+            const offsetY = Math.round((height - occupiedHeight) / 2 + 30);
             return Object.assign({}, person, {
               x: startX + column * horizontalGap,
               y: offsetY + row * verticalGap,
@@ -78,12 +78,15 @@
         const otherWorks = new Map(((this.selectedDetail && this.selectedDetail.works) || []).map(function (work) { return [work.song_id, work]; }));
         return (this.creator.works || []).filter(function (work) { return ids.has(work.song_id); }).map(function (work) {
           const counterpart = otherWorks.get(work.song_id);
+          const sharedVersions = new Set(work.version_ids || []);
+          const roles = ((counterpart && counterpart.versions) || [])
+            .filter(version => sharedVersions.has(version.id)).flatMap(version => version.roles || []);
           return {
             song_id: work.song_id,
             title: work.title,
             cover: work.cover,
             release_date: work.release_date,
-            roles: Array.from(new Set([].concat(work.roles || [], (counterpart && counterpart.roles) || []))),
+            roles: Array.from(new Set(roles)),
             album: work.album_name || (counterpart && counterpart.album_name) || ''
           };
         }).sort(function (a, b) { return String(a.release_date || '').localeCompare(String(b.release_date || '')); });
@@ -93,7 +96,7 @@
       this.measure();
       if (window.ResizeObserver) {
         this.observer = new ResizeObserver(this.measure);
-        this.observer.observe(this.$el);
+        this.observer.observe(this.$refs.viewport);
       }
     },
     beforeUnmount: function () { this.selectionRequest += 1; if (this.observer) this.observer.disconnect(); },
@@ -104,10 +107,10 @@
         if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         event.preventDefault(); this.$emit('open-' + kind, id);
       },
-      measure: function () { this.width = Math.max(180, Math.round(this.$el.clientWidth || 960)); },
+      measure: function () { this.width = Math.max(180, Math.round(this.$refs.viewport.clientWidth || 960)); },
       portrait: function (person) { return person.image || person.photo || window.UmaUi.identityPortrait(person); },
       roleText: function (person) {
-        return ((person.roles || []).slice(0, 2).map(function (role) { return role.label || role.role; }).join(' · ')) || '创作者';
+        return ((person.roles || []).map(function (role) { return role.label || role.role; }).join(' · ')) || '创作者';
       },
       nodeStyle: function (node) {
         return { left: node.x + 'px', top: node.y + 'px', width: node.width + 'px', minHeight: node.height + 'px' };
@@ -118,9 +121,8 @@
         const startY = root.y + root.height / 2;
         const endX = node.x;
         const endY = node.y + node.height / 2;
-        if (this.compact) return 'M ' + (root.x + root.width / 2) + ' ' + (root.y + root.height) + ' L ' + (node.x + node.width / 2) + ' ' + endY;
-        const bend = startX + Math.max(30, (endX - startX) * 0.42);
-        return 'M ' + startX + ' ' + startY + ' C ' + bend + ' ' + startY + ', ' + bend + ' ' + endY + ', ' + endX + ' ' + endY;
+        if (this.compact) return 'M ' + root.x + ' ' + startY + ' H 16 V ' + endY + ' H ' + endX;
+        return 'M ' + startX + ' ' + startY + ' H 236 V 20 H ' + (endX - 20) + ' V ' + endY + ' H ' + endX;
       },
       edgeClass: function (person) {
         return {
@@ -152,7 +154,7 @@
     },
     template: `
       <div class="creator-network" :class="{'has-selection':selected}">
-        <div class="creator-graph-viewport" :style="{height:layout.height+'px'}">
+        <div ref="viewport" class="creator-graph-viewport" :style="{height:layout.height+'px'}">
           <div class="creator-graph-stage" :style="{width:layout.width+'px',height:layout.height+'px'}">
             <svg class="creator-graph-edges" :viewBox="'0 0 '+layout.width+' '+layout.height" aria-hidden="true">
               <path v-for="person in layout.nodes" :key="'edge-'+person.creator_id" :d="edgePath(person)" :class="edgeClass(person)"/>
@@ -166,7 +168,8 @@
               <span><b>{{ person.name }}</b><small>{{ roleText(person) }}</small></span>
             </button>
           </div>
-          <aside v-if="selected" class="creator-network-inspector" aria-live="polite">
+        </div>
+        <aside v-if="selected" class="creator-network-inspector" aria-live="polite">
             <button class="creator-inspector-close" type="button" aria-label="关闭合作详情" @click="close"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
             <header>
               <i class="identity-portrait"><img v-media-src="portrait(selected)" alt=""></i>
@@ -182,8 +185,7 @@
               </li>
             </ol>
             <div v-else class="ui-state compact">暂无可确认的共同作品</div>
-          </aside>
-        </div>
+        </aside>
       </div>`
   };
 

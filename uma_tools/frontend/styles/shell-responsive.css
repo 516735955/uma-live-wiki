@@ -78,8 +78,6 @@
     .container { padding: 18px max(12px,env(safe-area-inset-right)) calc(34px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left)); }
     .route-breadcrumb { margin-bottom: 12px; }
     .info-page { padding-bottom: 34px; }
-    .info-page-head { margin-bottom: 16px; padding-bottom: 15px; }
-    .fix-card, .contact-card { padding: 17px; }
     .fix-chips { display: block; }
     .fix-chips > div { display: flex; flex-wrap: wrap; overflow: visible; }
     .contact-row { grid-template-columns: 1fr; gap: 3px; }

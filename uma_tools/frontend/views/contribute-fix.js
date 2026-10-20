@@ -1,13 +1,13 @@
 export const bindings = ["fix","fixDone","fixSendState","fixMailto","submitFix","goLegal","fixTitleOptions"];
 export const template = `
             <div class="fix-wrap info-page">
-                <header class="info-page-head"><span class="info-page-kicker">参与共建 · CONTRIBUTE</span><h1 class="fix-title">提交订正</h1><p class="fix-desc">发现资料有误或缺漏？请说明条目、建议内容和依据。维护者核实后处理，提交不会直接改动已发布资料。</p></header>
+                <header class="entity-hero music-archive-hero entity-hero-text"><div class="entity-intro"><h1>资料订正</h1></div></header>
 
-                <form class="fix-card" @submit.prevent="submitFix">
+                <form class="entity-section fix-card" @submit.prevent="submitFix">
                     <div class="fix-row">
                         <label class="fix-label" for="fixPage">页面 URL<span class="req">*</span></label>
                         <input class="fix-input" id="fixPage" type="text" v-model.trim="fix.page"
-                            placeholder="请粘贴含有错误信息的页面的 URL（例如 /zh-Hans/database/characters/tokaiteio）" required>
+                            placeholder="请粘贴需要订正的页面链接" required>
                     </div>
 
                     <div class="fix-row">
@@ -25,7 +25,6 @@ export const template = `
                     <div class="fix-row">
                         <label class="fix-label" for="fixTitle">这是哪类条目？</label>
                         <ui-select id="fixTitle" v-model="fix.title" :options="fixTitleOptions" aria-label="条目类型"></ui-select>
-                        <p class="fix-hint">不确定类型的话，直接在下方的描述中说明即可。</p>
                     </div>
 
                     <div class="fix-row">
@@ -58,7 +57,6 @@ export const template = `
                     <button class="fix-submit" type="submit" :disabled="!fix.page || !fix.body || !fix.agree || fixSendState==='sending' || fixSendState==='ok'">
                         {{ fixSendState==='sending' ? '正在提交…' : '提交订正' }}
                     </button>
-                    <p class="fix-note">表单由 FormSubmit 转发给两位维护者。请勿提交他人的非公开个人信息；如发送失败，你可以保留当前内容并重试，或自行发送邮件。</p>
                     <div v-if="fixSendState==='error'" class="fix-feedback error" role="alert">本次未确认发送成功，内容仍保留在表单中。<button type="button" class="info-inline-action" @click="submitFix()">重试</button><a :href="fixMailto">改用邮件发送 ↗</a></div>
                     <div v-if="fixDone" class="fix-feedback success" role="status">订正已提交。维护者核实后才会更新资料，感谢反馈！</div>
                 </form>

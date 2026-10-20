@@ -427,12 +427,18 @@
 .credit-ledger dd { margin: 0; color: var(--ui-navy); font-size: .9rem; font-weight: 800; line-height: 1.65; }
 .credit-ledger .text-link { display: inline; width: auto; color: var(--ui-cobalt-deep); text-decoration: none; }
 
-.creator-network { width: 100%; min-width: 0; }
+.event-status-cancelled { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 6px; background: #b42332; color: #fff; font-size: .8rem; font-style: normal; font-weight: 800; white-space: nowrap; }
+.event-hero-status { position: absolute; z-index: 2; top: 16px; right: 16px; }
+.event-entity-detail:has(.event-hero-status) .entity-intro { padding-top: 24px; }
+.creator-network { display: grid; gap: 16px; width: 100%; min-width: 0; align-items: start; }
+.creator-network.has-selection { grid-template-columns: minmax(0,1fr) minmax(320px,400px); }
 .creator-graph-viewport {
     position: relative;
     width: 100%;
     min-height: 350px;
-    overflow: hidden;
+    max-height: 560px;
+    min-width: 0;
+    overflow: auto;
     border: 1px solid #d7ddec;
     border-radius: 12px;
     background-color: #f7f8fb;
@@ -471,15 +477,14 @@
 .creator-graph-node > span { display: grid; min-width: 0; gap: 3px; }
 .creator-graph-node b,.creator-graph-node small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .creator-graph-node b { font-size: .82rem; }
-.creator-graph-node small { color: #667089; font-size: .75rem; font-weight: 650; }
+.creator-graph-node small { color: #667089; font-size: .75rem; font-weight: 650; white-space: normal; line-height: 1.35; }
 .creator-graph-node > em { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 7px; color: #fff; background: var(--ui-cobalt); font-size: .75rem; font-style: normal; font-weight: 900; }
 .creator-network-inspector {
-    position: absolute;
+    position: relative;
     z-index: 12;
-    top: 16px;
-    right: 16px;
-    bottom: 16px;
-    width: min(370px,calc(100% - 32px));
+    width: 100%;
+    min-width: 0;
+    max-height: 560px;
     overflow: auto;
     padding: 20px;
     border: 1px solid #d1daf2;
@@ -497,11 +502,11 @@
 .creator-inspector-close { position: absolute; top: 12px; right: 12px; display: grid; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; color: var(--ui-cobalt-deep); background: #eef2ff; place-items: center; cursor: pointer; }
 .creator-inspector-close svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; }
 .creator-profile-link { margin: 14px 0 2px 70px; }
-.collaboration-timeline { position: relative; display: grid; gap: 0; margin: 18px 0 0; padding: 0 0 0 104px; list-style: none; }
-.collaboration-timeline::before { content: ''; position: absolute; left: 82px; top: 8px; bottom: 8px; width: 2px; background: #cbd5f0; }
+.collaboration-timeline { position: relative; display: grid; gap: 0; margin: 18px 0 0; padding: 0 0 0 24px; list-style: none; }
+.collaboration-timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: #cbd5f0; }
 .collaboration-timeline li { position: relative; min-height: 78px; padding: 0 0 16px; }
-.collaboration-timeline li::before { content: ''; position: absolute; left: -27px; top: 14px; width: 10px; height: 10px; border: 3px solid #fff; border-radius: 50%; background: var(--ui-orange); box-shadow: 0 0 0 2px var(--ui-orange); }
-.collaboration-timeline time { position: absolute; top: 10px; left: -104px; width: 68px; color: #68728a; font-size: .74rem; font-weight: 800; text-align: right; }
+.collaboration-timeline li::before { content: ''; position: absolute; left: -23px; top: 5px; width: 10px; height: 10px; border: 3px solid #fff; border-radius: 50%; background: var(--ui-orange); box-shadow: 0 0 0 2px var(--ui-orange); }
+.collaboration-timeline time { display: block; color: #68728a; font-size: .74rem; font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .collaboration-timeline a { display: flex; width: 100%; align-items: center; gap: 12px; padding: 8px; border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: none; cursor: pointer; }
 .collaboration-timeline a:hover { background: #f4f6fc; }
 .collaboration-timeline img { width: 58px; height: 58px; border-radius: 5px; object-fit: cover; }
@@ -539,10 +544,8 @@
     .entity-overview { display: grid; gap: 9px; padding: 12px 14px; }
     .entity-overview dl { flex-wrap: wrap; gap: 10px 22px; }
     .ui-disclosure-detail { margin-inline: 6px; padding: 12px; }
-    .collaboration-timeline { padding-left: 78px; }
-    .collaboration-timeline::before { left: 60px; }
-    .collaboration-timeline time { left: -78px; width: 50px; }
-    .collaboration-timeline li::before { left: -23px; }
+    .creator-network.has-selection { grid-template-columns: minmax(0,1fr); }
+    .creator-network-inspector { max-height: none; }
 }
 
 @media (max-width: 430px) {
@@ -552,10 +555,9 @@
     .entity-detail .entity-kind { margin-bottom: 7px; font-size: .75rem; }
     .entity-actions { margin-top: 10px; }
     .credit-ledger > div { grid-template-columns: 72px minmax(0,1fr); gap: 10px; }
-    .creator-graph-viewport { overflow-x: auto; overflow-y: hidden; border: 0; background: transparent; }
+    .creator-graph-viewport { overflow: auto; border: 0; background: transparent; }
     .creator-graph-stage { border: 1px solid #d7ddec; border-radius: 10px; background-color: #f7f8fb; background-image: linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62)),radial-gradient(circle,#cfd5e4 1px,transparent 1px); background-size: auto,22px 22px; }
     .creator-graph-node { grid-template-columns: 42px minmax(0,1fr); }
-    .creator-network-inspector { position: fixed; top: auto; right: 10px; bottom: calc(var(--audio-safe-bottom) + 10px); left: 10px; width: auto; max-height: min(70dvh,620px); }
 }
 
 /* Desktop is the primary reading surface. Keep records compact and use the full

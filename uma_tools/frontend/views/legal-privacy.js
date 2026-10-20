@@ -1,8 +1,9 @@
 export const bindings = ["contactEmails"];
 export const template = `
             <div class="legal-wrap info-page">
-                <header class="info-page-head"><span class="info-page-kicker">站点说明 · PRIVACY</span><h1 class="legal-title">隐私政策</h1><p class="legal-intro">本站是由个人粉丝自愿维护的非官方资料站。本页说明浏览本站、打开外部媒体或主动提交订正时可能涉及的信息与第三方服务。</p></header>
+                <header class="entity-hero music-archive-hero entity-hero-text"><div class="entity-intro"><h1>隐私政策</h1></div></header>
 
+                <article class="entity-section information-document">
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">一、</span><span class="legal-sec-title">浏览与账户</span></div>
                     <p class="legal-text">浏览本站无需注册或登录。本站目前不提供访问者账户，也不会要求您提供姓名或联系方式才能查看公开资料。</p>
@@ -53,5 +54,6 @@ export const template = `
                 </div>
 
                 <p class="legal-updated">最后更新：2026-09-20</p>
+                </article>
             </div>
         `;

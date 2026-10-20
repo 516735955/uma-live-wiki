@@ -1,8 +1,9 @@
 export const bindings = ["contactEmails"];
 export const template = `
             <div class="legal-wrap info-page">
-                <header class="info-page-head"><span class="info-page-kicker">站点说明 · TERMS</span><h1 class="legal-title">使用条款</h1><p class="legal-intro">本站是由个人粉丝自愿维护的非官方、非商业资料站。本页说明本站与权利方的关系、资料与素材使用、用户提交及联系方式。</p></header>
+                <header class="entity-hero music-archive-hero entity-hero-text"><div class="entity-intro"><h1>使用条款</h1></div></header>
 
+                <article class="entity-section information-document">
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">一、</span><span class="legal-sec-title">法律地位与运营性质</span></div>
                     <p class="legal-text">本站是由个人粉丝自愿维护的非官方、非商业资料站，供《赛马娘 Pretty Derby》同好查阅活动与音乐信息。本站不代表任何权利方或艺人。</p>
@@ -64,5 +65,6 @@ export const template = `
                 </div>
 
                 <p class="legal-updated">最后更新：2026-09-20</p>
+                </article>
             </div>
         `;

@@ -6,7 +6,7 @@
   bar.setAttribute('aria-label', '当前条目与栏目');
   bar.hidden = true;
   document.body.appendChild(bar);
-  let current = null, observer = null, signature = '', pending = false;
+  let current = null, signature = '', pending = false;
   function headerHeight() {
     const header = document.querySelector('.sub-header');
     if (header && bar.parentElement !== header) header.appendChild(bar);
@@ -22,19 +22,14 @@
     const hero = detail?.querySelector('.entity-hero');
     const height = headerHeight();
     if (hero !== current) {
-      observer?.disconnect();
       current = hero; signature = ''; bar.hidden = true;
-      if (hero) {
-        observer = new IntersectionObserver(() => {
-          bar.hidden = hero.getBoundingClientRect().bottom > headerHeight();
-        }, {rootMargin: '-' + height + 'px 0px 0px 0px',threshold:0});
-        observer.observe(hero);
-      }
     }
     if (!hero) return;
     const title = hero.querySelector('h1')?.textContent.trim() || '';
     const image = hero.querySelector('.entity-cover img');
-    const tabs = Array.from(detail.querySelectorAll('.entity-tabs > button'));
+    const tabBar = detail.querySelector('.entity-tabs');
+    const tabs = Array.from(tabBar?.querySelectorAll(':scope > button') || []);
+    bar.hidden = (tabBar || hero).getBoundingClientRect().bottom > height;
     const next = JSON.stringify([title,image?.src,...tabs.map(tab=>[tab.textContent.trim(),tab.classList.contains('active')])]);
     if (next === signature) return;
     signature = next;
@@ -57,9 +52,13 @@
       button.setAttribute('aria-pressed',String(tab.classList.contains('active')));
       button.onclick = () => {
         tab.click();
-        requestAnimationFrame(() => detail.querySelector('.entity-section')?.scrollIntoView({
-          behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'
-        }));
+        requestAnimationFrame(() => {
+          let section = tabBar.nextElementSibling;
+          while (section && !section.getClientRects().length) section = section.nextElementSibling;
+          section?.scrollIntoView({
+            behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'
+          });
+        });
       };
       actions.appendChild(button);
     });
