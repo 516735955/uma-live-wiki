@@ -7,6 +7,12 @@ const data = require('./data-sync');
 const media = require('./media-sync');
 assert.deepStrictEqual(data.merge([{name:'Song',artist:'A',url:''}], [{name:'Song',artist:'A',url:'new'}], [{name:'Song',artist:'B',url:''}]),
   [{name:'Song',artist:'B',url:'new'}], 'a link update and a live singer correction merge into one track');
+assert.deepStrictEqual(data.merge(
+  [{name:'Theme',artist:'A',version:'live'}, {name:'Theme',artist:'B',version:'live'}],
+  [{name:'Theme',artist:'B',version:'live'}, {name:'Theme',artist:'A',version:'live'}],
+  [{name:'Theme',artist:'A',version:'live',runtime:'a'}, {name:'Theme',artist:'B',version:'live',runtime:'b'}]
+).map(row => [row.artist, row.runtime]),
+  [['B','b'], ['A','a']], 'same-title artist variants remain isolated when source order changes');
 
 const before = [{ id: 'old', title: 'typo', count: 1, accepted: 'original' }];
 const incoming = [{ id: 'old', title: 'correct', count: 1, accepted: 'original' }, { id: 'new', title: 'new' }];

@@ -99,6 +99,7 @@ def update_lock():
 
 def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
     state = read_json(STATE, {'schema_version': 1, 'steps': {}})
+    pending_dependencies = set(state.get('pending_dependencies', []))
     results = []
     executed = set()
     for name, arguments in STEPS:
@@ -112,7 +113,7 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
             'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},
         }
-        dependency_changed = bool(dependencies.get(name, set()) & executed)
+        dependency_changed = name in pending_dependencies or bool(dependencies.get(name, set()) & executed)
         if not force and not dependency_changed and float(previous.get('next_at', 0)) > clock():
             continue
         started = clock()
@@ -133,6 +134,15 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
                  'last_success_at': finished if ok else previous.get('last_success_at'), 'message': message,
                  'changed': changed}
         state['steps'][name] = entry
+        if ok:
+            pending_dependencies.discard(name)
+            if changed:
+                pending_dependencies.update(
+                    dependent for dependent, required in dependencies.items() if name in required
+                )
+        elif changed:
+            pending_dependencies.add(name)
+        state['pending_dependencies'] = sorted(pending_dependencies)
         state['updated_at'] = dt.datetime.now(dt.timezone.utc).isoformat()
         write_json(STATE, state)
         results.append(entry)

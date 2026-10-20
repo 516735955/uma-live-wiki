@@ -22,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm --prefix uma_tools ci
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

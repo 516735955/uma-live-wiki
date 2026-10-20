@@ -9,11 +9,18 @@ const { EventEmitter } = require('events');
 // fixture dependencies. The browser/API tests exercise complete composition.
 const sources = ['server-news', 'server-translation', 'server-transport'].map(name =>
   fs.readFileSync(require.resolve('./' + name), 'utf8'));
+const declaration = (source, requested) => {
+  const name = requested.match(/function\s+([A-Za-z_$][\w$]*)/)?.[1];
+  if (!name) return -1;
+  const match = source.match(new RegExp('(?:async\\s+)?function\\s+' + name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + '\\s*\\('));
+  return match ? match.index : -1;
+};
 const section = (start, end) => {
   const source = sources.find(text => text.includes(start));
   if (!source) throw new Error('Missing service function: ' + start);
-  const begin = source.indexOf(start);
-  const finish = source.indexOf(end, begin);
+  const begin = declaration(source, start);
+  if (begin < 0) throw new Error('Missing service function: ' + start);
+  const finish = declaration(source, end);
   const lifecycle = source.slice(begin).search(/\n\s*function start\(\)/);
   const boundary = lifecycle < 0 ? source.lastIndexOf('\n  return {') : begin + lifecycle;
   return source.slice(begin, finish < 0 ? boundary : finish).replace(/\bdeps\s*\./g, '');

@@ -56,8 +56,13 @@ exports.createService = function (deps) {
       res.end();
       return;
     }
-    deps.fs.stat(filePath, (err2, st2) => {
+    deps.fs.open(filePath, 'r', (openError, fd) => {
+      if (openError) {
+        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" }); res.end("404 Not Found"); return;
+      }
+      deps.fs.fstat(fd, (err2, st2) => {
       if (err2 || !st2.isFile()) {
+        deps.fs.close(fd, () => {});
         res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
         res.end("404 Not Found");
         return;
@@ -102,6 +107,7 @@ exports.createService = function (deps) {
           ? req.headers['if-none-match'].split(',').map(value => value.trim().replace(/^W\//, '')).some(value => value === '*' || value === headers.ETag)
           : !isNaN(ifModifiedSince) && st2.mtimeMs <= ifModifiedSince
       ) {
+        deps.fs.close(fd, () => {});
         res.writeHead(304, headers);
         res.end();
         return;
@@ -118,15 +124,17 @@ exports.createService = function (deps) {
       }
       res.writeHead(200, headers);
       if (req.method === "HEAD") {
+        deps.fs.close(fd, () => {});
         res.end();
         return;
       }
-      const input = deps.fs.createReadStream(filePath);
+        const input = deps.fs.createReadStream(null, { fd, autoClose: true });
       const streams = shouldCompress
         ? [input, deps.zlib.createGzip(), res]
         : [input, res];
       deps.pipeline(...streams, (error) => {
         if (error && !res.destroyed) res.destroy(error);
+      });
       });
     });
   }

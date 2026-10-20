@@ -20,6 +20,7 @@ function copyDir(from, to) {
     const [src, dst] = stack.pop();
     fs.mkdirSync(dst, { recursive: true });
     for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+      if (entry.name === 'auto_update' || entry.name === 'horses_cache' || entry.name === 'news_image_cache') continue;
       const s = path.join(src, entry.name);
       const d = path.join(dst, entry.name);
       if (entry.isDirectory()) stack.push([s, d]);

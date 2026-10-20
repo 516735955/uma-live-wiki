@@ -189,7 +189,7 @@ install -m 0644 "$RELEASE/deploy/umamusume-update.timer" /etc/systemd/system/uma
 systemctl daemon-reload
 systemctl enable --now umamusume-update.timer
 if crontab -l > "$WORK/root-cron" 2>/dev/null; then
-  awk '!(/\/var\/www\/umamusume/ && /git pull/)' "$WORK/root-cron" > "$WORK/root-cron-next"
+  awk '!(/\/var\/www\/umamusume(\/|[[:space:]\042\047]|$)/ && /git pull/)' "$WORK/root-cron" > "$WORK/root-cron-next"
   crontab "$WORK/root-cron-next"
 fi
 systemd-run --unit="uma-drain-$PORT-$(date +%s)" --on-active=30m /bin/bash "$ROOT/deploy/drain-release.sh" "$OLD" "$OLD_SERVICE"

@@ -48,14 +48,20 @@ function read(file) {
   return { value: JSON.parse(text) };
 }
 
-function identity(row) {
+function identity(row, ambiguousTitles = new Set()) {
   if (!row || typeof row !== 'object' || Array.isArray(row)) return JSON.stringify(row);
   for (const key of ['id', 'cid', 'announce_id', 'output', 'version_id', 'catalog', 'link']) {
     if (row[key] !== undefined && row[key] !== '') return key + ':' + row[key];
   }
   if (row.track_number !== undefined) return 'track:' + String(row.disc_number || row.disc || 1) + ':' + row.track_number;
   if (row.n !== undefined && (row.t || row.title)) return 'track:' + String(row.disc || 1) + ':' + row.n;
-  if (row.name && (row.artist !== undefined || row.pic !== undefined)) return 'track-title:' + row.name;
+  if (row.name && (row.artist !== undefined || row.pic !== undefined)) {
+    const title = String(row.name);
+    if (!ambiguousTitles.has(title)) return 'track-title:' + title;
+    const artist = String(row.artist || '');
+    const version = String(row.version_id || row.version || row.version_label || '');
+    return 'track-title:' + title + '|artist:' + artist + '|version:' + version;
+  }
   if (row.work_id && row.number !== undefined) return 'episode:' + row.work_id + ':' + row.number;
   if (row.work_id && row.role && (row.person_id || row.organization || row.name))
     return JSON.stringify([row.work_id, row.unit_id || '', row.role, row.person_id || row.organization || row.name, row.group || '', [...(row.institutions || [])].sort()]);
@@ -74,10 +80,19 @@ function merge(previous, incoming, live) {
   // field-only patch applied to an absent live object.
   if (live === undefined) return structuredClone(incoming);
   if (Array.isArray(incoming) && Array.isArray(previous) && Array.isArray(live)) {
+    const titleVariants = new Map();
+    for (const row of [...previous, ...incoming]) {
+      if (!row || typeof row !== 'object' || !row.name || (row.artist === undefined && row.pic === undefined)) continue;
+      const title = String(row.name);
+      const artist = String(row.artist || '');
+      const version = String(row.version_id || row.version || row.version_label || '');
+      titleVariants.set(title, (titleVariants.get(title) || new Set()).add(artist + '|version:' + version));
+    }
+    const ambiguousTitles = new Set([...titleVariants].filter(([, variants]) => variants.size > 1).map(([title]) => title));
     function keyed(rows) {
       const occurrences = new Map();
       return new Map(rows.map(row => {
-        const key = identity(row), ordinal = occurrences.get(key) || 0;
+        const key = identity(row, ambiguousTitles), ordinal = occurrences.get(key) || 0;
         occurrences.set(key, ordinal + 1);
         return [key + '#' + ordinal, row];
       }));

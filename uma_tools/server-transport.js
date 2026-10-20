@@ -172,11 +172,8 @@ exports.createService = function (deps) {
     );
     headers.Vary = 'Accept-Encoding';
     if (settings.etag) headers.ETag = settings.etag;
-    if (
-      settings.etag &&
-      res.req &&
-      res.req.headers["if-none-match"] === settings.etag
-    ) {
+    const matchesEtag = (value, etag) => String(value || '').split(',').map(item => item.trim()).some(item => item === '*' || item.replace(/^W\//, '') === etag.replace(/^W\//, ''));
+    if (settings.etag && res.req && matchesEtag(res.req.headers["if-none-match"], settings.etag)) {
       res.writeHead(304, headers);
       res.end();
       return;

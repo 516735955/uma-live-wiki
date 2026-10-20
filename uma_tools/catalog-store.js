@@ -522,10 +522,22 @@ class CatalogStore {
 
   async loadHome() {
     const files = ['catalog_manifest.json', 'events_catalog.json'];
-    const stats = await Promise.all(files.map(name => fs.promises.stat(path.join(this.dataDir, name))));
+    let stats;
+    try {
+      stats = await Promise.all(files.map(name => fs.promises.stat(path.join(this.dataDir, name))));
+    } catch (error) {
+      if (this.homeSnapshot) return this.homeSnapshot.value;
+      throw error;
+    }
     const signature = stats.map(stat => stat.size + ':' + stat.mtimeMs).join('|') + businessDate.today();
     if (this.homeSnapshot?.signature === signature) return this.homeSnapshot.value;
-    const [manifest, catalog] = await Promise.all(files.map(async name => JSON.parse(await fs.promises.readFile(path.join(this.dataDir, name), 'utf8'))));
+    let manifest, catalog;
+    try {
+      [manifest, catalog] = await Promise.all(files.map(async name => JSON.parse(await fs.promises.readFile(path.join(this.dataDir, name), 'utf8'))));
+    } catch (error) {
+      if (this.homeSnapshot) return this.homeSnapshot.value;
+      throw error;
+    }
     if (manifest.home_stats && manifest.build_id === catalog.build_id) {
       const today = businessDate.today();
       const next = (catalog.events || []).filter(event =>
