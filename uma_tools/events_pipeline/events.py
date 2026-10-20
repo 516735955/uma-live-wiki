@@ -407,10 +407,33 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
         target["songs"] = unique([*target.get("songs", []), *incoming.get("songs", [])], lambda value: value)
         target["character_ids"] = unique([*target.get("character_ids", []), *incoming.get("character_ids", [])], lambda value: value)
         target["cast"] = pipeline_identities.merge_cast_records([*target.get("cast", []), *incoming.get("cast", [])])
-        target["performances"] = unique(
-            [*target.get("performances", []), *incoming.get("performances", [])],
-            lambda item: (item.get("song"), tuple(item.get("character_ids") or [])),
-        )
+        merged_performances = []
+        occurrence_counts = {}
+        seen_performance_ids = set()
+        target_performances = [dict(item) for item in target.get("performances", [])]
+        incoming_performances = [dict(item) for item in incoming.get("performances", [])]
+        no_id_by_source: list[dict[tuple, list[dict]]] = [{}, {}]
+        explicit_counts: dict[tuple, int] = {}
+        for source_index, source_rows in enumerate((target_performances, incoming_performances)):
+            for item in source_rows:
+                row = dict(item)
+                base = (row.get("song_id") or row.get("song"), row.get("version_id") or "", row.get("release_id") or "", tuple(row.get("character_ids") or []))
+                if row.get("id"):
+                    if row["id"] in seen_performance_ids:
+                        continue
+                    seen_performance_ids.add(row["id"])
+                    explicit_counts[base] = explicit_counts.get(base, 0) + 1
+                    merged_performances.append(row)
+                else:
+                    no_id_by_source[source_index].setdefault(base, []).append(row)
+        for base in set(no_id_by_source[0]) | set(no_id_by_source[1]):
+            rows = [*no_id_by_source[0].get(base, []), *no_id_by_source[1].get(base, [])]
+            desired = max(len(no_id_by_source[0].get(base, [])), len(no_id_by_source[1].get(base, [])), explicit_counts.get(base, 0))
+            for row in rows[:max(0, desired - explicit_counts.get(base, 0))]:
+                occurrence_counts[base] = occurrence_counts.get(base, 0) + 1
+                row["id"] = ":".join(str(value) for value in base[:3] if value) + f":{occurrence_counts[base]}"
+                merged_performances.append(row)
+        target["performances"] = merged_performances
         if incoming.get("setlist_source") and not target.get("setlist_source"):
             target["setlist_source"] = incoming["setlist_source"]
             target["setlist_html"] = incoming.get("setlist_html") or ""

@@ -176,8 +176,9 @@ def song_version_config(title: str, overrides: dict[str, pipeline_common.Any] | 
 
 def stable_song_id(title: str) -> str:
     normalized = pipeline_common.unicodedata.normalize("NFKC", title or "").strip()
-    readable = pipeline_text.stable_suffix(normalized)[:40]
-    digest = pipeline_common.hashlib.sha1(fold_song_key(normalized).encode("utf-8")).hexdigest()[:10]
+    folded = fold_song_key(normalized)
+    readable = pipeline_text.stable_suffix(folded)[:40]
+    digest = pipeline_common.hashlib.sha1(folded.encode("utf-8")).hexdigest()[:10]
     return "song-" + ((readable + "-") if readable else "") + digest
 
 
@@ -188,7 +189,7 @@ def stable_version_id(song_id: str, title: str) -> str:
 
 def is_instrumental_track(title: str, artist: str) -> bool:
     value = pipeline_common.unicodedata.normalize("NFKC", f"{title} {artist}")
-    return bool(pipeline_common.re.search(r"(?:off[ -]?vocal|instrumental|inst\.?|\bBGM\b|纯音乐|伴奏)", value, pipeline_common.re.I))
+    return bool(pipeline_common.re.search(r"(?:off[ -]?vocal|instrumental|\binst\.?\b|\bBGM\b|纯音乐|伴奏)", value, pipeline_common.re.I))
 
 
 def is_short_recording(title: str, label: str = "") -> bool:
@@ -211,13 +212,13 @@ def select_original_version(work: dict[str, pipeline_common.Any], overrides: dic
     if exact:
         return min(
             exact,
-            key=lambda row: min((release.get("release_date") or "9999-99-99") for release in row["releases"]),
+            key=lambda row: (min((release.get("release_date") or "9999-99-99") for release in row["releases"]), fold_song_key(row["title"]), row["id"]),
         )["id"]
     released = [version for version in versions if not version.get("instrumental") and version.get("releases")]
     if released:
         return min(
             released,
-            key=lambda row: min((release.get("release_date") or "9999-99-99") for release in row["releases"]),
+            key=lambda row: (min((release.get("release_date") or "9999-99-99") for release in row["releases"]), fold_song_key(row["title"]), row["id"]),
         )["id"]
     vocal = [version for version in versions if not version.get("instrumental")]
     return (vocal or versions)[0]["id"] if versions else ""
@@ -239,11 +240,25 @@ def effective_music_metadata(
     original_id = select_original_version(work, overrides_doc)
     original_credits = list((source_credits.get(original_id) or {}).get("credits") or [])
 
+    def inherited_document(source: dict[str, pipeline_common.Any], version_id: str, fallback=None):
+        """Resolve override parent chains transitively, with cycle protection."""
+        seen: set[str] = set()
+        current = version_id
+        merged = []
+        while current and current not in seen:
+            seen.add(current)
+            row = source.get(current) or {}
+            values = list(row.get("credits") or []) if "credits" in row else list(row.get("lines") or [])
+            if values:
+                merged = values + merged
+            current = str((overrides.get(current) or {}).get("parent_version_id") or "")
+        return merged or list(fallback or [])
+
     for version in versions:
         version_id = version["id"]
         version_override = overrides.get(version_id) or {}
         parent_id = version_override.get("parent_version_id") or original_id
-        parent_credits = list((source_credits.get(parent_id) or {}).get("credits") or original_credits)
+        parent_credits = inherited_document(source_credits, parent_id, original_credits)
         explicit = list((source_credits.get(version_id) or {}).get("credits") or [])
         explicit_roles = {row.get("role") for row in explicit if row.get("role")}
         credits = explicit + [row for row in parent_credits if row.get("role") not in explicit_roles]
@@ -279,6 +294,16 @@ def effective_music_metadata(
             lyric_source_id = str(version_override.get("lyrics_from") or parent_id)
             lyric = source_lyrics.get(lyric_source_id)
             timing = source_timings.get(lyric_source_id)
+            visited = set()
+            while not lyric and lyric_source_id and lyric_source_id not in visited:
+                visited.add(lyric_source_id)
+                source_override = overrides.get(lyric_source_id) or {}
+                next_id = str(source_override.get("lyrics_from") or source_override.get("parent_version_id") or "")
+                if not next_id:
+                    break
+                lyric_source_id = next_id
+                lyric = source_lyrics.get(lyric_source_id)
+                timing = source_timings.get(lyric_source_id)
         if version.get("instrumental") or version_override.get("no_lyrics"):
             lyric = None
             timing = None

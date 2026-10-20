@@ -59,9 +59,11 @@ def apply_utaten_results(
     credits: dict[str, pipeline_common.Any],
     lyrics: dict[str, pipeline_common.Any],
     timings: dict[str, pipeline_common.Any],
+    refresh: set[str] | None = None,
 ) -> tuple[dict[str, pipeline_common.Any], ...]:
     credit_versions = credits.setdefault("versions", {})
     lyric_versions = lyrics.setdefault("versions", {})
+    refresh = refresh or set()
     for version_id, result in results.items():
         if not result:
             continue
@@ -78,7 +80,7 @@ def apply_utaten_results(
                     "source": current.get("source") or "utaten",
                     "source_url": current.get("source_url") or result["source_url"],
                 }
-        if result.get("lines") and version_id not in lyric_versions and not recording["instrumental"]:
+        if result.get("lines") and (version_id not in lyric_versions or version_id in refresh) and not recording["instrumental"]:
             lyric_versions[version_id] = {
                 "language": pipeline_lyrics.language_of([{"text": line} for line in result["lines"]]),
                 "lines": list(result["lines"]),

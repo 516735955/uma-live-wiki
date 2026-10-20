@@ -146,6 +146,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     refresh = set(args.refresh)
+    now = pipeline_common.time.time()
     creators = pipeline_common.read_json(pipeline_common.CREATORS_FILE, {"schema_version": 1, "creators": []})
     credits = pipeline_common.read_json(pipeline_common.CREDITS_FILE, {"schema_version": 1, "versions": {}})
     lyrics = pipeline_common.read_json(pipeline_common.LYRICS_FILE, {"schema_version": 1, "versions": {}})
@@ -198,6 +199,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"official credits matched: {len(official)} versions")
 
     errors: list[tuple[str, str]] = []
+    errors.extend(("utaten-" + version_id, error) for version_id, error in audit_errors) if args.revalidate_utaten else None
     if not args.utaten_only and not args.lrclib_only and not args.community_only and not args.infer_remixers_only and not args.normalize_lyrics_only:
         existing_credits = credits.get("versions") or {}
         existing_lyrics = lyrics.get("versions") or {}
@@ -209,8 +211,9 @@ def main(argv: list[str] | None = None) -> int:
                 or (not row["instrumental"] and version_id not in existing_lyrics)
             )
         }
+        refresh_tracks = {source_track for version_id, row in target_versions.items() if version_id in refresh for source_track in row["tracks"]}
         targets = sorted({source_track for row in target_versions.values() for source_track in row["tracks"]
-                          if source_track not in netease_checked or pipeline_common.time.time() - float(netease_checked_at.get(source_track, 0)) >= 86400},
+                          if source_track in refresh_tracks or source_track not in netease_checked or now - float(netease_checked_at.get(source_track, 0)) >= 86400},
                          key=lambda track: float(netease_checked_at.get(track, 0)))
         if args.limit:
             targets = targets[: max(0, args.limit)]
@@ -257,7 +260,9 @@ def main(argv: list[str] | None = None) -> int:
                     utaten_checked_at[version_id] = now
                 if index % 50 == 0 or index == len(futures):
                     print(f"UtaTen checked: {index}/{len(futures)}", flush=True)
-        creators, credits, lyrics, timings = pipeline_documents.apply_utaten_results(recordings, results, creators, credits, lyrics, timings)
+        creators, credits, lyrics, timings = pipeline_documents.apply_utaten_results(
+            recordings, results, creators, credits, lyrics, timings, refresh
+        )
 
     if args.community or args.community_only:
         try:

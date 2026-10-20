@@ -13,6 +13,7 @@ const PENDING_JSON = path.join(__dirname, 'pending.json');
 const norm = (s) => String(s || '').replace(/[『』（）()\[\]「」・ー\u3000\s]/g, '').toLowerCase();
 
 let albums = JSON.parse(fs.readFileSync(ALBUMS_JSON, 'utf8'));
+const originalAlbumsJson = fs.readFileSync(ALBUMS_JSON, 'utf8');
 if (!fs.existsSync(PENDING_JSON)) { console.error('未找到 pending.json，先运行 scrape.js'); process.exit(1); }
 const report = JSON.parse(fs.readFileSync(PENDING_JSON, 'utf8'));
 
@@ -36,10 +37,16 @@ function writeJson(file, value) {
 }
 if (added) {
   writeJson(ALBUMS_JSON, albums);
+  const writtenAlbumsJson = fs.readFileSync(ALBUMS_JSON, 'utf8');
   const python = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
   const build = spawnSync(python, [path.join(__dirname, 'update_events.py'), '--music-only'], { cwd: ROOT, stdio: 'inherit', windowsHide: true });
   if (build.error || build.status !== 0) {
-    console.error('专辑已保存，目录重建失败，请运行 uma_tools/update_events.py --music-only。');
+    if (fs.readFileSync(ALBUMS_JSON, 'utf8') === writtenAlbumsJson) {
+      fs.writeFileSync(ALBUMS_JSON, originalAlbumsJson, 'utf8');
+      console.error('目录重建失败，已回滚 albums.json，待审核记录保留以便重试。');
+    } else {
+      console.error('目录重建失败，但 albums.json 已被其他进程修改，保留协作者更新并等待重试。');
+    }
     process.exitCode = 1;
     return;
   }

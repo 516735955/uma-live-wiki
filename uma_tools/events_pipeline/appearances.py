@@ -83,19 +83,30 @@ def build_appearance_index(events: list[dict[str, pipeline_common.Any]], songs_c
                 # that its current voice actor attended this specific session.
                 return actor_ids & explicit_actors if 'cast' in session else actor_ids
             char_in_event.update(session_chars)
-            for performance in session.get("performances") or []:
+            performance_ids_seen: dict[str, int] = {}
+            for performance_index, performance in enumerate(session.get("performances") or []):
                 song = performance.get("song_title") or performance.get("song") or ""
                 song_id = performance.get("song_id") or ""
                 version_id = performance.get("version_id") or ""
                 if not song or not song_id:
                     continue
                 performance_chars = set(performance.get("character_ids") or [])
+                # A return/encore can legitimately reuse the same song and
+                # recording in one session.  Keep the old compact identity for
+                # the first occurrence and add a stable ordinal only when the
+                # same key repeats, so existing links remain unchanged while
+                # every row remains addressable.
+                performance_base = f"{session.get('id') or event['id']}:{version_id}"
+                occurrence = performance_ids_seen.get(performance_base, 0) + 1
+                performance_ids_seen[performance_base] = occurrence
+                performance_identity = performance_base if occurrence == 1 else f"{performance_base}:{occurrence}"
+                performance.setdefault("id", performance_identity)
                 for char_id in performance_chars:
                     relation = event_songs[char_id].setdefault(song_id, {
                         "song_id": song_id, "name": song, "event_ids": [], "performance_ids": [], "version_ids": [],
                     })
                     relation["event_ids"].append(event["id"])
-                    relation["performance_ids"].append(f"{session.get('id') or event['id']}:{version_id}")
+                    relation["performance_ids"].append(performance_identity)
                     relation["version_ids"].append(version_id)
                 actor_ids = set(performance.get('voice_actor_ids') or [])
                 for char_id in performance_chars:
@@ -106,7 +117,7 @@ def build_appearance_index(events: list[dict[str, pipeline_common.Any]], songs_c
                     relation = actor_songs[actor_id].setdefault(song_id, {
                         'song_id': song_id, 'name': song, 'event_ids': [], 'performance_ids': [], 'version_ids': []})
                     relation['event_ids'].append(event['id'])
-                    relation['performance_ids'].append(f"{session.get('id') or event['id']}:{version_id}")
+                    relation['performance_ids'].append(performance_identity)
                     relation['version_ids'].append(version_id)
             for char_id in session_chars:
                 actor_ids = actors_for_character(char_id)

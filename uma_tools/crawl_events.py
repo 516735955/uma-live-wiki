@@ -376,8 +376,10 @@ def attach_live(events, index):
                     s = max(s, 0.97)
                 if s < min_sim:
                     continue
+                # An explicitly numbered performance must never attach to the
+                # other part merely because its title is otherwise similar.
                 if part and e['part'] and part != e['part']:
-                    s -= 0.25
+                    continue
                 cands.append((s, dd, e))
             return cands
 

@@ -145,7 +145,7 @@ def parse_goods_meta(html):
 
 
 def infer_type(title):
-    if u'サウンドトラック' in title or 'Soundtrack' in title or 'OST' in title:
+    if u'サウンドトラック' in title or re.search(r'(?i)sound\s*track|(?<![A-Za-z])OST(?![A-Za-z])', title):
         return u'原声带'
     if re.search(r'主題歌|(?:デジタル)?シングル|digital\s+single', title, re.I):
         return u'单曲'
@@ -269,12 +269,16 @@ def enrich_entry(ent):
         ent['neteaseAlbumId'] = str(best.get('id'))
     incoming = build_songs(tracks, cover)
     if ent.get('songs'):
+        existing_counts = {}
+        for track in ent['songs']:
+            key = norm_key(track.get('name'))
+            existing_counts[key] = existing_counts.get(key, 0) + 1
         by_name = {}
         for track in incoming:
             by_name.setdefault(norm_key(track['name']), []).append(track)
         for track in ent['songs']:
             matches = by_name.get(norm_key(track.get('name')), [])
-            if len(matches) == 1 and not track.get('url') and matches[0].get('url'):
+            if existing_counts.get(norm_key(track.get('name'))) == 1 and len(matches) == 1 and not track.get('url') and matches[0].get('url'):
                 track['url'] = matches[0]['url']
     else:
         ent['songs'] = incoming
@@ -394,8 +398,6 @@ def main():
         else:
             log('未匹配网易云(稍后重试): %s' % ent.get('name'))
 
-    save_atomic(STATE_JSON, state)
-
     for ent in albums:
         if not ent.get('id'):
             ent['id'] = stable_album_id(ent)
@@ -406,6 +408,7 @@ def main():
         log('已写入 albums.json | 新增 %d | 补全 %d | 共 %d 张' % (added, enriched, len(albums)))
     else:
         log('无变化 | 共 %d 张' % len(albums))
+    save_atomic(STATE_JSON, state)
     return 1 if failures else 0
 
 

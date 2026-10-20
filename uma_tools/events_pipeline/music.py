@@ -112,8 +112,10 @@ def release_vocalists(artist: str, identities: "IdentityIndex") -> list[dict[str
     seen: set[tuple[str, str]] = set()
     for raw in pipeline_common.re.split(r"[、,，／/&＋+・]|\s{2,}", str(artist or "")):
         label = raw.strip()
+        explicit_character = ""
         credited_actor = pipeline_common.re.search(r"[（(]\s*CV[.:：]?\s*([^）)]+)[）)]", label, pipeline_common.re.I)
         if credited_actor:
+            explicit_character = label[:credited_actor.start()].strip()
             label = credited_actor.group(1).strip()
         else:
             parenthetical = pipeline_common.re.search(r"[（(]([^）)]+)[）)]", label)
@@ -123,13 +125,19 @@ def release_vocalists(artist: str, identities: "IdentityIndex") -> list[dict[str
         if not label or pipeline_common.re.search(r"^(?:声优剧|ドラマ|トーク|SE|BGM)$", label, pipeline_common.re.I):
             continue
         actor_id = identities.voice_id(label)
-        character_id = identities.current_character_id(actor_id) if actor_id else identities.character_id(label)
+        character_id = identities.character_id(explicit_character) if explicit_character else (
+            identities.current_character_id(actor_id) if actor_id else identities.character_id(label)
+        )
         if character_id and not actor_id:
             character = identities.character_by_id.get(character_id) or {}
             actor_id = identities.voice_id(character.get("cv") or character.get("cv_zh") or "")
         if not actor_id:
             continue
-        character_id = character_id or identities.current_character_id(actor_id)
+        # An explicit but unresolved role must stay unresolved; selecting the
+        # actor's current role would mis-credit releases where one actor voices
+        # multiple characters.
+        if not character_id and not explicit_character:
+            character_id = identities.current_character_id(actor_id)
         key = (actor_id, character_id)
         if key in seen:
             continue
@@ -174,6 +182,31 @@ def build_song_catalog(
         if pipeline_song_identity.clean_song(str(performance.get("song") or ""))
     )
     works: dict[str, dict[str, pipeline_common.Any]] = {}
+    used_song_ids: dict[str, str] = {}
+    published_song_ids: dict[str, str] = {}
+    # Keep URLs for already published works stable while allowing newly seen
+    # equivalent titles to use the same folded identity.  The catalog is only
+    # a compatibility index here; a failed or partial read must not block a
+    # rebuild.
+    try:
+        catalog_path = pipeline_common.OUTPUT_FILES.get("songs")
+        if catalog_path and pipeline_common.os.path.isfile(catalog_path):
+            with open(catalog_path, encoding="utf-8") as handle:
+                previous_catalog = pipeline_common.json.load(handle)
+            published_candidates: dict[str, set[str]] = {}
+            for previous in previous_catalog.get("songs") or []:
+                previous_id = str(previous.get("id") or "")
+                if not previous_id:
+                    continue
+                for title in [previous.get("title"), *(previous.get("aliases") or [])]:
+                    key = pipeline_song_identity.fold_song_key(str(title or ""))
+                    if key:
+                        published_candidates.setdefault(key, set()).add(previous_id)
+            published_song_ids = {
+                key: next(iter(ids)) for key, ids in published_candidates.items() if len(ids) == 1
+            }
+    except (OSError, ValueError, TypeError):
+        published_song_ids = {}
 
     def ensure_version(exact_title: str, release_variant: str = "", work_context: str = "") -> tuple[dict[str, pipeline_common.Any], dict[str, pipeline_common.Any]]:
         title = pipeline_song_identity.clean_song(exact_title)
@@ -185,8 +218,14 @@ def build_song_catalog(
             base, version_label = pipeline_song_identity.split_song_version(title, identities, raw_titles)
         work_identity = base + (f" ({work_context})" if work_context else "")
         work_key = pipeline_song_identity.fold_song_key(work_identity)
+        stable_id = published_song_ids.get(work_key) or pipeline_song_identity.stable_song_id(work_identity)
+        prior_key = used_song_ids.get(stable_id)
+        if prior_key and prior_key != work_key:
+            suffix = pipeline_common.hashlib.sha1(work_key.encode("utf-8")).hexdigest()[:8]
+            stable_id = f"{stable_id}-{suffix}"
+        used_song_ids[stable_id] = work_key
         work = works.setdefault(work_key, {
-            "id": pipeline_song_identity.stable_song_id(work_identity), "title": base, "aliases": set(), "artists": set(),
+            "id": stable_id, "title": base, "aliases": set(), "artists": set(),
             "legacy_ids": set(),
             "character_ids": set(), "voice_actor_ids": set(),
             "released_character_ids": set(), "released_voice_actor_ids": set(),

@@ -95,7 +95,7 @@ def parse_credit_text(value: str) -> list[dict[str, str]]:
     text = pipeline_common.re.sub(r"(?:ファンファーレ)?作曲\s*[・/&]\s*編曲", "作曲・編曲", text)
     text = pipeline_common.re.sub(r"(?:ストリングス|ブラス|ファンファーレ)\s*(?:アレンジ|編曲)", "編曲", text, flags=pipeline_common.re.I)
     label_pattern = rf"(?:{pipeline_common.ROLE_SOURCE_LABEL})(?:\s*[・/&、]\s*(?:{pipeline_common.ROLE_SOURCE_LABEL}))*"
-    matches = list(pipeline_common.re.finditer(rf"({label_pattern})\s*[:：]\s*(.*?)(?=\s+{label_pattern}\s*[:：]|$)", text, pipeline_common.re.I))
+    matches = list(pipeline_common.re.finditer(rf"({label_pattern})\s*[:：]\s*(.*?)(?=\s*(?:[・/&、／]\s*)?{label_pattern}\s*[:：]|$)", text, pipeline_common.re.I))
     credits: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
     for match in matches:

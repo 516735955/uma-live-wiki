@@ -50,7 +50,11 @@ def lyric_document_lines(lyrics: dict[str, pipeline_common.Any], version_id: str
 
 
 def lyric_line_key(value: str) -> str:
-    return pipeline_common.re.sub(r"[^0-9a-zぁ-んァ-ヶー一-龯]+", "", pipeline_common.unicodedata.normalize("NFKC", value).lower())
+    # Keep every Unicode letter/number.  The previous ASCII/Japanese allow-list
+    # silently removed accented Latin (for example ``café`` became ``caf``),
+    # causing distinct lyric lines to collide during timing alignment.
+    normalized = pipeline_common.unicodedata.normalize("NFKC", str(value or "")).lower()
+    return "".join(char for char in normalized if char.isalnum() or char == "ー")
 
 
 def lyric_subsequence(needle: list[str], haystack: list[str]) -> list[int] | None:
@@ -267,7 +271,9 @@ def parse_lyric(raw: str) -> tuple[list[dict[str, pipeline_common.Any]], list[di
     seen_credits: set[tuple[str, str]] = set()
     offset_match = pipeline_common.re.search(r'\[offset:\s*([+-]?\d+)\]', str(raw or ''), pipeline_common.re.I)
     offset = int(offset_match.group(1)) if offset_match else 0
-    for source_line in str(raw or "").replace("\r", "").split("\n"):
+    # UTF-8 BOMs are occasionally present in downloaded LRC files.  Treat the
+    # marker as transport metadata so the first timestamp is not discarded.
+    for source_line in str(raw or "").lstrip("\ufeff").replace("\r", "").split("\n"):
         match = pipeline_common.TIMED_LINE_RE.match(source_line.strip())
         if not match:
             continue

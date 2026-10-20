@@ -64,6 +64,11 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
             if event.get("schedule_status") == "cancelled":
                 session["schedule_status"] = "cancelled"
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
+    for event in events:
+        if not event.get("series_id"):
+            derived = pipeline_events.title_series_id(event.get("title") or "")
+            if derived:
+                event["series_id"] = derived
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     generated_at = pipeline_common.dt.datetime.now(pipeline_common.dt.timezone.utc).replace(microsecond=0).isoformat()
     songs_catalog = pipeline_music.build_song_catalog(albums, events, identities, generated_at, overrides, music_sources)
@@ -73,11 +78,6 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     current_hashes = {path.name: pipeline_common.sha256(path) for path in pipeline_common.IMMUTABLE_LIVE_FILES}
     if current_hashes != source_hashes:
         raise RuntimeError("curated live sources changed during event build")
-    for event in events:
-        if not event.get("series_id"):
-            derived = pipeline_events.title_series_id(event.get("title") or "")
-            if derived:
-                event["series_id"] = derived
     kinds = pipeline_common.Counter(event.get("kind") or "unknown" for event in events)
     modes = pipeline_common.Counter(event.get("mode") or "unknown" for event in events)
     catalog = {
@@ -97,9 +97,8 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
         "live": live_data, "live_categories": live_cat_data, "albums": albums,
         "eventernote": eventernote, "series": series, "programs": programs,
         "voice_details": details, "overrides": overrides, "characters": characters,
-        "voice_list": voice_list, "voice_photos": photos, "voice_identities": identity_registry,
-        "music_sources": music_sources,
-        "google_setlists": sheet_blocks,
+        "voice_list": voice_list, "photos": photos, "voice_identities": identity_registry,
+        "music_sources": music_sources, "google_setlists": sheet_blocks,
     }
     build_id = pipeline_common.hashlib.sha256(
         pipeline_common.json.dumps(build_material, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
@@ -157,15 +156,20 @@ def build_music_only() -> dict[str, pipeline_common.Any]:
         path.name: {"sha256": pipeline_common.sha256(path), "preserved": True}
         for path in pipeline_common.IMMUTABLE_LIVE_FILES
     }
-    build_id = pipeline_common.hashlib.sha256(pipeline_common.json.dumps({
-        "events": pipeline_common.comparable(catalog),
-        "characters": characters, "voice_list": voice_list, "photos": photos,
-        "voice_details": pipeline_common.read_json(pipeline_common.VOICE_DETAILS_FILE) if pipeline_common.VOICE_DETAILS_FILE.exists() else {},
-        "voice_identities": pipeline_common.read_json(pipeline_common.VOICE_IDENTITIES_FILE),
-        "overrides": overrides,
+    identity_material = {
+        "live": pipeline_common.read_json(pipeline_common.DATA_DIR / "live_data.json"),
+        "live_categories": pipeline_common.read_json(pipeline_common.DATA_DIR / "live_cat_data.json"),
         "albums": albums,
+        "eventernote": pipeline_common.read_json(pipeline_common.DATA_DIR / "events_data.json"),
+        "series": pipeline_common.read_json(pipeline_common.EVENTS_DIR / "series.json"),
+        "programs": pipeline_common.read_json(pipeline_common.EVENTS_DIR / "official_programs.json"),
+        "voice_details": pipeline_common.read_json(pipeline_common.VOICE_DETAILS_FILE) if pipeline_common.VOICE_DETAILS_FILE.exists() else {},
+        "overrides": overrides, "characters": characters, "voice_list": voice_list, "photos": photos,
+        "voice_identities": pipeline_common.read_json(pipeline_common.VOICE_IDENTITIES_FILE),
         "music_sources": music_sources,
-    }, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()[:20]
+        "google_setlists": pipeline_setlists.read_blocks(pipeline_common.ROOT),
+    }
+    build_id = pipeline_common.hashlib.sha256(pipeline_common.json.dumps(identity_material, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()[:20]
     for document in (catalog, songs_catalog, creators_catalog, appearances, profiles_doc):
         document["build_id"] = build_id
     manifest["build_id"] = build_id

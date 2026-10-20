@@ -52,7 +52,10 @@ function dateOf(ms) {
   if (!ms) return '';
   const d = new Date(ms);
   const p = (n) => String(n).padStart(2, '0');
-  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).formatToParts(d).map(({type, value}) => [type, value]));
+  return parts.year + '-' + parts.month + '-' + parts.day;
 }
 
 async function getOfficialGoods() {
@@ -160,7 +163,12 @@ async function main() {
   let found = 0, missing = 0;
   function isAlreadyInStock(key) {
     if (key.length < 12) return existingNames.includes(key);
-    return existingNames.some((e) => e === key || (versionKey(e) === versionKey(key) && e.includes(key)));
+    return existingNames.some((e) => {
+      if (e === key || versionKey(e) !== versionKey(key)) return e === key;
+      const index = e.indexOf(key);
+      if (index < 0) return false;
+      return !/[0-9]/.test(e[index - 1] || '') && !/[0-9]/.test(e[index + key.length] || '');
+    });
   }
   for (const g of goods) {
     const title = g.title;
