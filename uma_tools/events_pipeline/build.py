@@ -61,6 +61,8 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
             if source.get("kind") == "curated_live":
                 source["label"] = "站内精调歌单" if event["setlist_status"] == "verified" else "站内精调资料"
         for session in event.get("sessions") or []:
+            if event.get("schedule_status") == "cancelled":
+                session["schedule_status"] = "cancelled"
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     generated_at = pipeline_common.dt.datetime.now(pipeline_common.dt.timezone.utc).replace(microsecond=0).isoformat()
@@ -191,10 +193,10 @@ def build_music_only() -> dict[str, pipeline_common.Any]:
 
 def home_statistics(catalog, songs, appearances, profiles):
     events = catalog.get('events') or []
-    concerts = [event for event in events if event.get('kind') == 'concert']
+    concerts = [event for event in events if event.get('kind') == 'concert' and event.get('schedule_status') != 'cancelled']
     return {
         'songs': songs['coverage']['songs'], 'albums': songs['coverage']['albums'],
-        'live': sum(max(1, len(event.get('sessions') or [])) for event in concerts),
+        'live': sum(max(1, sum(session.get('schedule_status') != 'cancelled' for session in event.get('sessions') or [])) for event in concerts),
         'performances': len(concerts), 'characters': len(appearances.get('characters') or {}),
         'voiceActors': len(profiles.get('voice_actors') or []), 'events': len(events),
     }

@@ -10,7 +10,7 @@ export const template = `
                         <button v-if="eventsQuery" type="button" @click.prevent="eventsQuery=''" aria-label="清空搜索">×</button>
                     </label>
                     <div class="archive-controls">
-                        <ui-select v-model="evTime" label="状态" :options="[{value:'all',label:'全部'},{value:'upcoming',label:'未结束'},{value:'past',label:'已结束'},{value:'announced',label:'日期未知'}]" @change="setEvTime"></ui-select>
+                        <ui-select v-model="evTime" label="状态" :options="[{value:'all',label:'全部'},{value:'upcoming',label:'未结束'},{value:'past',label:'已结束'},{value:'announced',label:'日期未知'},{value:'cancelled',label:'已取消'}]" @change="setEvTime"></ui-select>
                         <ui-select v-model="eventTypeSelection" label="类型" :options="eventTypeOptions"></ui-select>
                         <ui-select v-model="evYear" label="年份" :options="eventYearOptions" @change="setEvYear"></ui-select>
                     </div>
@@ -31,8 +31,9 @@ export const template = `
                             <span>{{ eventSeriesName(event) || eventKindLabel(event.kind) }}<template v-if="event.venue"> · {{ event.venue }}</template></span>
                         </span>
                         <span class="event-catalog-facts">
+                            <em v-if="event.schedule_status==='cancelled'" class="event-status-cancelled">已取消</em>
                             <i>{{ eventKindLabel(event.kind) }}</i>
-                            <b>{{ event.cast_count || 0 }} 位出演</b>
+                            <b>{{ event.cast_count || 0 }} 位{{ event.schedule_status==='cancelled' ? '原定出演' : '出演' }}</b>
                             <b v-if="eventSongCount(event)">{{ eventSongCount(event) }} 首曲目</b>
                         </span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
@@ -52,6 +53,7 @@ export const template = `
             <template v-else-if="eventDetail">
                 <article class="entity-detail event-entity-detail">
                     <div class="entity-hero">
+                        <span v-if="eventDetail.schedule_status==='cancelled'" class="event-status-cancelled event-hero-status">已取消</span>
                         <div class="entity-cover event-cover">
                             <img v-media-src="eventDetail.image" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
                         </div>
@@ -68,6 +70,7 @@ export const template = `
                     <section class="entity-overview">
                         <dl><div><dt>形式</dt><dd>{{ eventModeLabel(eventDetail.mode) }}</dd></div><div v-if="eventSeriesName(eventDetail)"><dt>系列</dt><dd>{{ eventSeriesName(eventDetail) }}</dd></div></dl>
                         <p v-if="eventSummary(eventDetail)">{{ eventSummary(eventDetail) }}</p>
+                        <p v-if="eventDetail.schedule_status==='cancelled'">{{ eventDetail.status_note }} <a v-if="eventDetail.status_source_url" class="text-link" :href="eventDetail.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
                     </section>
 
                     <nav v-if="eventDetail.sessions && eventDetail.sessions.length>1" class="entity-tabs" aria-label="活动场次">
@@ -76,7 +79,7 @@ export const template = `
                         </button>
                     </nav>
 
-                    <section v-if="selectedEventSession" class="entity-section">
+                    <section v-if="selectedEventSession && eventDetail.schedule_status!=='cancelled' && selectedEventSession.schedule_status!=='cancelled'" class="entity-section">
                         <div class="section-toolbar">
                             <div class="entity-section-actions"><span>{{ selectedEventSession.date || eventDetail.date }}<template v-if="selectedEventSession.songs.length"> · {{ selectedEventSession.songs.length }} 首</template></span><entity-actions v-if="eventPlayableRows.length" size="compact" play-label="播放本场" add-label="加入本场" @play="playEventSession" @add="enqueueEventSession"></entity-actions></div>
                         </div>
@@ -97,7 +100,7 @@ export const template = `
                     </section>
 
                     <section class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">出演阵容</span><span>{{ eventVoiceCast.length }} 位</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">{{ eventDetail.schedule_status==='cancelled' ? '原定出演' : '出演阵容' }}</span><span>{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-chip-list">
                             <a v-for="cast in eventVoiceCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(cast.character_id)}" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))">
                                 <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>

@@ -494,7 +494,7 @@ export function createRouting(deps) {
         else {
           deps.eventsQuery.value = url.searchParams.get("q") || "";
           deps.evTime.value =
-            ["upcoming", "past", "announced"].indexOf(
+            ["upcoming", "past", "announced", "cancelled"].indexOf(
               url.searchParams.get("time"),
             ) >= 0
               ? url.searchParams.get("time")

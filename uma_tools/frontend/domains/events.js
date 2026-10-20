@@ -391,6 +391,7 @@ export function createEvents(deps) {
   }
 
   const eventPlayableRows = deps.computed(function () {
+    if (eventDetail.value?.schedule_status === 'cancelled' || selectedEventSession.value?.schedule_status === 'cancelled') return [];
     return (
       (selectedEventSession.value && selectedEventSession.value.performances) ||
       []

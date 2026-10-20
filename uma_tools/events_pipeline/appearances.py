@@ -35,6 +35,8 @@ def build_appearance_index(events: list[dict[str, pipeline_common.Any]], songs_c
                         add_release(chars[character_id], song, version["id"], release)
 
     for event in events:
+        if event.get("schedule_status") == "cancelled":
+            continue
         voice_in_event: dict[str, set[str]] = pipeline_common.defaultdict(set)
         char_in_event: set[str] = set(event.get("character_ids") or [])
         cast_actor_by_character: dict[str, set[str]] = pipeline_common.defaultdict(set)
@@ -53,6 +55,8 @@ def build_appearance_index(events: list[dict[str, pipeline_common.Any]], songs_c
         actor_songs: dict[str, dict[str, dict[str, pipeline_common.Any]]] = pipeline_common.defaultdict(dict)
         session_appearances: list[tuple[dict[str, pipeline_common.Any], set[str], dict[str, set[str]]]] = []
         for session in event.get("sessions") or []:
+            if session.get("schedule_status") == "cancelled":
+                continue
             session_chars = set(session.get("character_ids") or [])
             session_voice: dict[str, set[str]] = pipeline_common.defaultdict(set)
             scoped_actors: dict[str, set[str]] = pipeline_common.defaultdict(set)

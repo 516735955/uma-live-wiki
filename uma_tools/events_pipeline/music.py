@@ -167,7 +167,9 @@ def build_song_catalog(
     raw_titles.update(
         pipeline_song_identity.fold_song_key(str(performance.get("song") or ""))
         for event in events
+        if event.get("schedule_status") != "cancelled"
         for session in event.get("sessions") or []
+        if session.get("schedule_status") != "cancelled"
         for performance in session.get("performances") or []
         if pipeline_song_identity.clean_song(str(performance.get("song") or ""))
     )
@@ -234,7 +236,11 @@ def build_song_catalog(
             version["releases"].append(release)
 
     for event in events:
+        if event.get("schedule_status") == "cancelled":
+            continue
         for session in event.get("sessions") or []:
+            if session.get("schedule_status") == "cancelled":
+                continue
             actor_ids_by_character: dict[str, set[str]] = pipeline_common.defaultdict(set)
             for cast in [*(event.get("cast") or []), *(session.get("cast") or [])]:
                 if cast.get("character_id") and cast.get("voice_actor_id"):

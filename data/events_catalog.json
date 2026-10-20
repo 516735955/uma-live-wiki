@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-17T16:34:02+00:00",
+  "generated_at": "2026-10-20T08:16:51+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -1240,6 +1240,7 @@
             }
           ],
           "id_aliases": [],
+          "schedule_status": "cancelled",
           "setlist_status": "none"
         },
         {
@@ -1542,6 +1543,7 @@
             }
           ],
           "id_aliases": [],
+          "schedule_status": "cancelled",
           "setlist_status": "none"
         }
       ],
@@ -1561,6 +1563,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/485604"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "公演取消公告",
+          "url": "https://umamusume.jp/news/detail?id=3503"
         }
       ],
       "legacy_url": "/zh-Hans/live/number_series_event/7th_EVENT/1/0",
@@ -1570,6 +1577,9 @@
       ],
       "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "",
+      "schedule_status": "cancelled",
+      "status_source_url": "https://umamusume.jp/news/detail?id=3503",
+      "status_note": "因未能取得赴美所需签证，原定于当地时间2026年10月22日、23日举行的洛杉矶公演均已取消。",
       "title_aliases": [],
       "id_aliases": [],
       "setlist_status": "none"
@@ -150162,5 +150172,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "508f2a9db001db79b670"
+  "build_id": "86608875cb9296bca11b"
 }

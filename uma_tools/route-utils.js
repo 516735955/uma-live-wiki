@@ -66,7 +66,7 @@
     if (/^\/zh-Hans\/events\/?$/.test(url.pathname)) {
       oneOf('kind', ['concert', 'onsite', 'official_program', 'all']);
       oneOf('mode', ['online', 'onsite', 'all']);
-      oneOf('time', ['upcoming', 'past', 'announced', 'all']);
+      oneOf('time', ['upcoming', 'past', 'announced', 'cancelled', 'all']);
       if (url.searchParams.has('year') && !/^(20\d{2}|unknown|all)$/.test(url.searchParams.get('year'))) url.searchParams.delete('year');
       if (url.searchParams.get('series') === 'unclassified' && !['concert', 'onsite', 'official_program'].includes(url.searchParams.get('kind'))) url.searchParams.delete('series');
       if (metadata.eventSeries) oneOf('series', [...metadata.eventSeries, 'unclassified', 'all']);

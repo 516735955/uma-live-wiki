@@ -709,7 +709,7 @@ export function createNavigation(deps) {
   }
 
   function setEvTime(v) {
-    if (!["all", "upcoming", "past", "announced"].includes(v)) return;
+    if (!["all", "upcoming", "past", "announced", "cancelled"].includes(v)) return;
     deps.evTime.value = v;
     deps.eventsPage.value = 1;
     deps.pushUrl();

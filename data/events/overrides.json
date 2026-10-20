@@ -236,6 +236,18 @@
     "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
+    "live-numbered-7th-event-2026-10-22": {
+      "schedule_status": "cancelled",
+      "status_source_url": "https://umamusume.jp/news/detail?id=3503",
+      "status_note": "因未能取得赴美所需签证，原定于当地时间2026年10月22日、23日举行的洛杉矶公演均已取消。",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "公演取消公告",
+          "url": "https://umamusume.jp/news/detail?id=3503"
+        }
+      ]
+    },
     "live-other-2023-01-15-1-15-18-00": {
       "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00"
     },

@@ -24,8 +24,9 @@
   }
 
   function eventSongCount(event) {
+    if (event?.schedule_status === 'cancelled') return 0;
     if (!event?.sessions) return Number.isFinite(event?.song_count) ? event.song_count : 0;
-    return event.sessions.reduce((total, session) => total +
+    return event.sessions.filter(session => session.schedule_status !== 'cancelled').reduce((total, session) => total +
       (session.performances?.length ? session.performances : session.songs || []).length, 0);
   }
 

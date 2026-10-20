@@ -149,6 +149,9 @@ function eventSummary(event, searchText) {
     title: event.title,
     date: event.date,
     end_date: event.end_date,
+    schedule_status: event.schedule_status,
+    status_source_url: event.status_source_url,
+    status_note: event.status_note,
     kind: event.kind,
     mode: event.mode,
     series_id: event.series_id,
@@ -526,7 +529,7 @@ class CatalogStore {
     if (manifest.home_stats && manifest.build_id === catalog.build_id) {
       const today = businessDate.today();
       const next = (catalog.events || []).filter(event =>
-        businessDate.eventDate(event.end_date || event.date) >= today)
+        event.schedule_status !== 'cancelled' && businessDate.eventDate(event.end_date || event.date) >= today)
         .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0];
       const payload = { stats: manifest.home_stats, nextEvent: next ? eventSummary(next) : null };
       const revision = crypto.createHash('sha1').update(JSON.stringify(payload)).digest('hex').slice(0, 12);
@@ -536,12 +539,12 @@ class CatalogStore {
     }
     const store = await this.get();
     const events = store.eventsDoc.events || [];
-    const liveEvents = events.filter((event) => event.kind === 'concert');
+    const liveEvents = events.filter((event) => event.kind === 'concert' && event.schedule_status !== 'cancelled');
     const today = businessDate.today();
     const nextEvent = events
       .filter((event) => {
         const time = businessDate.eventDate(event.end_date || event.date);
-        return time && time >= today;
+        return event.schedule_status !== 'cancelled' && time && time >= today;
       })
       .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
     return {
@@ -580,7 +583,8 @@ class CatalogStore {
       if (mode !== 'all' && event.mode !== mode) return false;
       if (year !== 'all' && releaseYear(event.date) !== year) return false;
       if (series !== 'all' && (event.series_id || 'unclassified') !== series) return false;
-      if (time === 'upcoming' && (!eventTime || eventTime < today)) return false;
+      if (time === 'upcoming' && (event.schedule_status === 'cancelled' || !eventTime || eventTime < today)) return false;
+      if (time === 'cancelled' && event.schedule_status !== 'cancelled') return false;
       if (time === 'past' && (!eventTime || eventTime >= today)) return false;
       if (time === 'announced' && eventTime) return false;
       return true;
