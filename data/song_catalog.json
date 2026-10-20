@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-20T08:16:51+00:00",
+  "generated_at": "2026-10-20T10:46:01+00:00",
   "coverage": {
     "songs": 1035,
     "versions": 2051,
@@ -61422,8 +61422,12 @@
       "voice_actor_ids": [
         "va-0052"
       ],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
+      "released_character_ids": [
+        "tamamocross"
+      ],
+      "released_voice_actor_ids": [
+        "va-0052"
+      ],
       "performed_character_ids": [
         "tamamocross"
       ],
@@ -61454,8 +61458,23 @@
               "artist": "大空直美",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557579175",
               "image": "https://p1.music.126.net/YR5nQMGFDi-vIZjIxzCVyQ==/109951163288618546.jpg",
-              "instrumental": true,
-              "vocalists": []
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0052",
+                  "voice_actor_name": "大空直美",
+                  "character_id": "tamamocross",
+                  "character": {
+                    "id": "tamamocross",
+                    "name": "玉藻十字",
+                    "name_ja": "タマモクロス",
+                    "name_en": "Tamamo Cross",
+                    "image": "/uma_official/tamamocross.png",
+                    "color_main": "#3290D6",
+                    "color_sub": "#C6DAE7"
+                  }
+                }
+              ]
             }
           ],
           "performances": [
@@ -61500,7 +61519,7 @@
           ],
           "release_count": 1,
           "performance_count": 2,
-          "instrumental": true,
+          "instrumental": false,
           "credits": [
             {
               "role": "lyricist",
@@ -61547,14 +61566,29 @@
               "artist": "大空直美",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703854391",
               "image": "https://p2.music.126.net/fKaYXGFomCbHvVMXsubr4Q==/109951170973808938.jpg",
-              "instrumental": true,
-              "vocalists": []
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0052",
+                  "voice_actor_name": "大空直美",
+                  "character_id": "tamamocross",
+                  "character": {
+                    "id": "tamamocross",
+                    "name": "玉藻十字",
+                    "name_ja": "タマモクロス",
+                    "name_en": "Tamamo Cross",
+                    "image": "/uma_official/tamamocross.png",
+                    "color_main": "#3290D6",
+                    "color_sub": "#C6DAE7"
+                  }
+                }
+              ]
             }
           ],
           "performances": [],
           "release_count": 1,
           "performance_count": 0,
-          "instrumental": true,
+          "instrumental": false,
           "credits": [
             {
               "role": "lyricist",
@@ -61564,6 +61598,11 @@
             {
               "role": "composer",
               "role_label": "作曲",
+              "creator_id": "creator-c02c150e3b"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
               "creator_id": "creator-c02c150e3b"
             }
           ],
@@ -61579,7 +61618,7 @@
       "version_count": 2,
       "release_count": 2,
       "performance_count": 2,
-      "original_version_id": "song-my-against-fight-7a3344525e-v-92a6621002",
+      "original_version_id": "song-my-against-fight-7a3344525e-v-7a3344525e",
       "creator_ids": [
         "creator-500b86dc49",
         "creator-c02c150e3b"
@@ -249619,5 +249658,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "86608875cb9296bca11b"
+  "build_id": "140cef3bf512857e3a4e"
 }

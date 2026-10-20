@@ -521,7 +521,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 14
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -3202,7 +3202,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 64
+          "performances": 71
         },
         {
           "song_id": "song-4bfe85c283",
@@ -3249,7 +3249,7 @@
           "version_ids": [
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
-          "performances": 14
+          "performances": 15
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -4386,7 +4386,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -5369,7 +5369,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 6
         },
         {
           "song_id": "song-1bd7539454",
@@ -7898,7 +7898,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 35
+          "performances": 41
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -7963,6 +7963,20 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
+            "live-cd-2021-04-04-winning-live-01"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 5
         },
@@ -8033,20 +8047,6 @@
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
-          ],
-          "performances": 4
-        },
-        {
-          "song_id": "song-winning-the-soul-7eddcf2b7f",
-          "name": "winning the soul",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-other-2023-02-12-2023-2",
-            "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
-            "live-cd-2021-04-04-winning-live-01"
-          ],
-          "version_ids": [
-            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 4
         },
@@ -10171,7 +10171,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 18
+          "performances": 20
         },
         {
           "song_id": "song-glorious-moment-8308fce210",
@@ -11031,7 +11031,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 8
+          "performances": 9
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -12247,7 +12247,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 7
         },
         {
           "song_id": "song-87be3723c2",
@@ -12474,7 +12474,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 1
+          "performances": 2
         }
       ]
     },
@@ -13826,6 +13826,26 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 17
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -13845,27 +13865,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 12
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-07-15",
-            "live-cd-2023-04-02-winning-live-10",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 10
+          "performances": 13
         },
         {
           "song_id": "song-find-my-only-way-46f68c23ae",
@@ -15152,7 +15152,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -16059,7 +16059,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 20
+          "performances": 22
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -16864,6 +16864,25 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 16
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -16882,26 +16901,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2023-07-15",
-            "live-cd-2023-04-02-winning-live-10",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 9
+          "performances": 12
         },
         {
           "song_id": "song-fade-to-black-6c2a8e8237",
@@ -18836,7 +18836,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 14
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -20166,7 +20166,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 24
+          "performances": 26
         },
         {
           "song_id": "song-4bfe85c283",
@@ -21470,7 +21470,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 22
+          "performances": 28
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -23325,7 +23325,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 8
+          "performances": 9
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -25589,7 +25589,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 59
+          "performances": 69
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -27051,7 +27051,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 15
         },
         {
           "song_id": "song-glorious-moment-8308fce210",
@@ -27861,7 +27861,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 10
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -30814,7 +30814,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 14
+          "performances": 15
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -31712,7 +31712,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 12
+          "performances": 15
         },
         {
           "song_id": "song-15e2b8f183",
@@ -32809,7 +32809,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 26
+          "performances": 29
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -33650,6 +33650,19 @@
           "releases": 2
         },
         {
+          "song_id": "song-my-against-fight-7a3344525e",
+          "name": "My Against Fight",
+          "album_ids": [
+            "album-laca-15710",
+            "album-lzc-1964"
+          ],
+          "version_ids": [
+            "song-my-against-fight-7a3344525e-v-7a3344525e",
+            "song-my-against-fight-7a3344525e-v-92a6621002"
+          ],
+          "releases": 2
+        },
+        {
           "song_id": "song-next-frontier-5267707c1b",
           "name": "NEXT FRONTIER",
           "album_ids": [
@@ -33844,7 +33857,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -34715,7 +34728,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 8
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -35123,7 +35136,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-61ea3bc114",
@@ -40862,26 +40875,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
-        },
-        {
-          "song_id": "song-girls-legend-u-a4a797abe1",
-          "name": "GIRLS' LEGEND U",
-          "event_ids": [
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00",
-            "live-numbered-4th-event-extra-2022-11-05",
-            "live-other-2022-08-27-animelo-summer-live-2022-sparkle"
-          ],
-          "version_ids": [
-            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 9
+          "performances": 18
         },
         {
           "song_id": "song-overrunner-39c89e20aa",
@@ -40899,6 +40893,25 @@
           ],
           "version_ids": [
             "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 16
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2022-08-27-animelo-summer-live-2022-sparkle"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
           ],
           "performances": 9
         },
@@ -42178,7 +42191,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 7
+          "performances": 9
         },
         {
           "song_id": "song-cedd69644c",
@@ -43829,7 +43842,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 21
+          "performances": 23
         },
         {
           "song_id": "song-next-frontier-5267707c1b",
@@ -45330,7 +45343,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 14
+          "performances": 16
         },
         {
           "song_id": "song-lucky-comes-true-cdcf832135",
@@ -46138,7 +46151,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -47596,7 +47609,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 16
+          "performances": 18
         },
         {
           "song_id": "song-2d2a6742e3",
@@ -48622,7 +48635,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 14
         },
         {
           "song_id": "song-run-run-70769b632a",
@@ -49584,7 +49597,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 18
+          "performances": 19
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -52415,7 +52428,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 30
+          "performances": 36
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -54130,7 +54143,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 17
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -54692,7 +54705,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -56991,7 +57004,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 3
+          "performances": 4
         },
         {
           "song_id": "song-a470359a05",
@@ -59288,7 +59301,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 14
+          "performances": 15
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -60017,7 +60030,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -61401,7 +61414,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 15
+          "performances": 17
         },
         {
           "song_id": "song-cdbc25c785",
@@ -62156,7 +62169,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-4bfe85c283",
@@ -62878,6 +62891,17 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -62941,17 +62965,6 @@
           ],
           "version_ids": [
             "song-l-arc-de-gloire-aa7474ca7e-v-aa7474ca7e"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-winning-the-soul-7eddcf2b7f",
-          "name": "winning the soul",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 1
         },
@@ -63276,7 +63289,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 8
         },
         {
           "song_id": "song-cdbc25c785",
@@ -64320,7 +64333,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-comeback-story-v-33f3540048",
@@ -65602,7 +65615,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 29
+          "performances": 32
         },
         {
           "song_id": "song-a6384dba1c",
@@ -67351,7 +67364,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-dramatic-journey-60664c4bb2",
@@ -67959,6 +67972,25 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 16
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -67976,26 +68008,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2023-07-15",
-            "live-cd-2023-04-02-winning-live-10",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-87be3723c2",
@@ -69214,7 +69227,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 14
         },
         {
           "song_id": "song-ready-steady-derby-7e8ed0ad57",
@@ -70776,7 +70789,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -71649,7 +71662,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 21
+          "performances": 23
         },
         {
           "song_id": "song-a6384dba1c",
@@ -74405,7 +74418,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-4bfe85c283",
@@ -79529,7 +79542,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 15
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -82096,7 +82109,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 21
+          "performances": 22
         },
         {
           "song_id": "song-4bfe85c283",
@@ -83150,7 +83163,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 13
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -86511,7 +86524,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 12
         },
         {
           "song_id": "song-4bfe85c283",
@@ -87338,7 +87351,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-happy-days-01845306a9",
@@ -87963,7 +87976,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-cdbc25c785",
@@ -89256,7 +89269,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
+          "performances": 22
         },
         {
           "song_id": "song-778904f80f",
@@ -90109,7 +90122,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 16
+          "performances": 17
         },
         {
           "song_id": "song-gsk-5bda42ace7",
@@ -92177,7 +92190,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 43
+          "performances": 49
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -93724,7 +93737,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 28
+          "performances": 33
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -96021,7 +96034,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 42
+          "performances": 51
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -96695,7 +96708,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 8
+          "performances": 12
         },
         {
           "song_id": "song-tuning-heart-c3af3e8174",
@@ -98579,7 +98592,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 59
+          "performances": 69
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -100140,7 +100153,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 42
+          "performances": 51
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -102154,7 +102167,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 66
+          "performances": 73
         },
         {
           "song_id": "song-4bfe85c283",
@@ -102201,7 +102214,7 @@
           "version_ids": [
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
-          "performances": 14
+          "performances": 15
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -103375,7 +103388,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 14
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -103996,7 +104009,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 17
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -105512,7 +105525,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 43
+          "performances": 49
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -107745,7 +107758,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 35
+          "performances": 41
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -107810,6 +107823,20 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2023-02-12-2023-2",
+            "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
+            "live-cd-2021-04-04-winning-live-01"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 5
         },
@@ -107880,20 +107907,6 @@
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
-          ],
-          "performances": 4
-        },
-        {
-          "song_id": "song-winning-the-soul-7eddcf2b7f",
-          "name": "winning the soul",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-other-2023-02-12-2023-2",
-            "live-other-2021-11-20-animax-musix-2021-yokohama-part2",
-            "live-cd-2021-04-04-winning-live-01"
-          ],
-          "version_ids": [
-            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 4
         },
@@ -109066,7 +109079,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 26
+          "performances": 29
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -110392,7 +110405,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 30
+          "performances": 36
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -111301,7 +111314,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 12
+          "performances": 15
         },
         {
           "song_id": "song-15e2b8f183",
@@ -112238,7 +112251,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 22
+          "performances": 28
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -112941,7 +112954,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 7
+          "performances": 9
         },
         {
           "song_id": "song-cedd69644c",
@@ -113609,7 +113622,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 8
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -114476,7 +114489,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 28
+          "performances": 33
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -115831,7 +115844,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 21
+          "performances": 23
         },
         {
           "song_id": "song-next-frontier-5267707c1b",
@@ -116993,7 +117006,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 18
+          "performances": 23
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -118004,7 +118017,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 15
+          "performances": 17
         },
         {
           "song_id": "song-cdbc25c785",
@@ -118671,7 +118684,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-cdbc25c785",
@@ -119643,7 +119656,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 8
+          "performances": 12
         },
         {
           "song_id": "song-tuning-heart-c3af3e8174",
@@ -120051,6 +120064,19 @@
           "releases": 2
         },
         {
+          "song_id": "song-my-against-fight-7a3344525e",
+          "name": "My Against Fight",
+          "album_ids": [
+            "album-laca-15710",
+            "album-lzc-1964"
+          ],
+          "version_ids": [
+            "song-my-against-fight-7a3344525e-v-7a3344525e",
+            "song-my-against-fight-7a3344525e-v-92a6621002"
+          ],
+          "releases": 2
+        },
+        {
           "song_id": "song-next-frontier-5267707c1b",
           "name": "NEXT FRONTIER",
           "album_ids": [
@@ -120245,7 +120271,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -122319,7 +122345,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 14
         },
         {
           "song_id": "song-run-run-70769b632a",
@@ -123707,7 +123733,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 12
         },
         {
           "song_id": "song-4bfe85c283",
@@ -125360,7 +125386,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-dramatic-journey-60664c4bb2",
@@ -126887,7 +126913,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 15
         },
         {
           "song_id": "song-glorious-moment-8308fce210",
@@ -128236,7 +128262,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 14
+          "performances": 15
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -130685,7 +130711,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 16
+          "performances": 17
         },
         {
           "song_id": "song-gsk-5bda42ace7",
@@ -131342,7 +131368,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 6
         },
         {
           "song_id": "song-1bd7539454",
@@ -132589,7 +132615,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 14
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -133578,7 +133604,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 14
+          "performances": 15
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -135544,7 +135570,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -136565,7 +136591,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
+          "performances": 22
         },
         {
           "song_id": "song-778904f80f",
@@ -137935,7 +137961,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 14
+          "performances": 16
         },
         {
           "song_id": "song-lucky-comes-true-cdcf832135",
@@ -139428,7 +139454,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 8
+          "performances": 9
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -140045,7 +140071,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 8
+          "performances": 9
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -141068,7 +141094,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 24
+          "performances": 26
         },
         {
           "song_id": "song-4bfe85c283",
@@ -142160,7 +142186,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 20
+          "performances": 22
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -143192,7 +143218,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 21
+          "performances": 22
         },
         {
           "song_id": "song-4bfe85c283",
@@ -144107,7 +144133,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-4bfe85c283",
@@ -144804,7 +144830,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -145565,26 +145591,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
-        },
-        {
-          "song_id": "song-girls-legend-u-a4a797abe1",
-          "name": "GIRLS' LEGEND U",
-          "event_ids": [
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00",
-            "live-numbered-4th-event-extra-2022-11-05",
-            "live-other-2022-08-27-animelo-summer-live-2022-sparkle"
-          ],
-          "version_ids": [
-            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 9
+          "performances": 18
         },
         {
           "song_id": "song-overrunner-39c89e20aa",
@@ -145602,6 +145609,25 @@
           ],
           "version_ids": [
             "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 16
+        },
+        {
+          "song_id": "song-girls-legend-u-a4a797abe1",
+          "name": "GIRLS' LEGEND U",
+          "event_ids": [
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-2022-08-27-animelo-summer-live-2022-sparkle"
+          ],
+          "version_ids": [
+            "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
           ],
           "performances": 9
         },
@@ -146469,7 +146495,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-4bfe85c283",
@@ -147343,7 +147369,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 21
+          "performances": 23
         },
         {
           "song_id": "song-a6384dba1c",
@@ -148584,7 +148610,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 29
+          "performances": 32
         },
         {
           "song_id": "song-a6384dba1c",
@@ -149603,7 +149629,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 13
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -150342,7 +150368,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -150888,7 +150914,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-blow-my-gale-0d9e0c78df",
@@ -151433,7 +151459,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-happy-days-01845306a9",
@@ -151823,7 +151849,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-61ea3bc114",
@@ -152626,7 +152652,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-comeback-story-v-33f3540048",
@@ -153504,7 +153530,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 18
+          "performances": 20
         },
         {
           "song_id": "song-glorious-moment-8308fce210",
@@ -154304,6 +154330,26 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 17
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -154323,27 +154369,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 12
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-07-15",
-            "live-cd-2023-04-02-winning-live-10",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 10
+          "performances": 13
         },
         {
           "song_id": "song-find-my-only-way-46f68c23ae",
@@ -156562,7 +156588,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 18
+          "performances": 19
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -157284,7 +157310,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
@@ -157783,6 +157809,25 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 16
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -157800,26 +157845,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2023-07-15",
-            "live-cd-2023-04-02-winning-live-10",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 9
+          "performances": 11
         },
         {
           "song_id": "song-87be3723c2",
@@ -158485,7 +158511,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 7
         },
         {
           "song_id": "song-87be3723c2",
@@ -161475,7 +161501,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 14
         },
         {
           "song_id": "song-ready-steady-derby-7e8ed0ad57",
@@ -162000,6 +162026,25 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-cd-2023-04-02-winning-live-10",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 16
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -162018,26 +162063,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2023-07-15",
-            "live-cd-2023-04-02-winning-live-10",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 9
+          "performances": 12
         },
         {
           "song_id": "song-fade-to-black-6c2a8e8237",
@@ -164453,7 +164479,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -167150,6 +167176,17 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-winning-the-soul-7eddcf2b7f",
+          "name": "winning the soul",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -167213,17 +167250,6 @@
           ],
           "version_ids": [
             "song-l-arc-de-gloire-aa7474ca7e-v-aa7474ca7e"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-winning-the-soul-7eddcf2b7f",
-          "name": "winning the soul",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 1
         },
@@ -181470,7 +181496,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 1
+          "performances": 2
         }
       ]
     },
@@ -182221,7 +182247,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 3
+          "performances": 4
         },
         {
           "song_id": "song-a470359a05",
@@ -182760,7 +182786,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 16
+          "performances": 18
         },
         {
           "song_id": "song-2d2a6742e3",
@@ -182806,6 +182832,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-20T08:16:51+00:00",
-  "build_id": "86608875cb9296bca11b"
+  "generated_at": "2026-10-20T10:46:01+00:00",
+  "build_id": "140cef3bf512857e3a4e"
 }
