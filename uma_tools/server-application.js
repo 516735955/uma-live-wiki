@@ -46,7 +46,7 @@ exports.createService = function (deps) {
         res.once('close', cancel);
         let original;
         (async () => {
-          if (urlPath === '/api/image' && !params.has('url')) return deps.loadLocalPreview(params.get('path'), params.get('w'), { signal: controller.signal });
+          if (urlPath === '/api/image' && !params.has('url')) return deps.loadLocalPreview(params.get('path'), params.has('w') ? params.get('w') : undefined, { signal: controller.signal });
           original = await (urlPath === '/api/image' ? deps.loadRemoteImage : deps.loadNewsImage)(params.get('url'), { deferBytes: params.has('w'), signal: controller.signal });
           if (!params.has('w')) return original;
           const identity = original.identity || deps.crypto.createHash('sha256').update(original.bytes).digest('hex');

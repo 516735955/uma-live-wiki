@@ -161,6 +161,7 @@ export function createDomains(env) {
         characters: [
           "charDetail",
           "charSection",
+          "charSort",
           "findCharById",
           "loadCharacterDetailData",
           "loadCharacterIndexData",

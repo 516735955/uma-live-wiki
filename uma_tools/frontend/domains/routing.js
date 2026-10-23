@@ -268,15 +268,18 @@ export function createRouting(deps) {
         }
       } else if (deps.activeTab.value === "database") {
         if (deps.dbView.value === "characters") {
-          path = deps.routes.characters(
-            deps.charDetail.value && deps.charDetail.value.id,
-            deps.charSection.value,
-          );
+          path = deps.charDetail.value
+            ? deps.routes.characters(deps.charDetail.value.id, deps.charSection.value)
+            : deps.routes.query(deps.routes.characters(), {
+                q: document.querySelector('#cIntroSearch')?.value || '',
+                sort: deps.charSort.value === 'default' ? '' : deps.charSort.value,
+              });
         } else if (deps.dbView.value === "voice") {
-          path = deps.routes.voiceActors(
-            deps.voiceDetail.value && deps.voiceDetail.value.id,
-            deps.voiceSection.value,
-          );
+          path = deps.voiceDetail.value
+            ? deps.routes.voiceActors(deps.voiceDetail.value.id, deps.voiceSection.value)
+            : deps.routes.query(deps.routes.voiceActors(), {
+                q: document.querySelector('#vaSearch')?.value || '',
+              });
         } else if (deps.dbView.value === "albums") {
           path = deps.albumDetail.value
             ? deps.routes.albums(deps.albumDetail.value.data.id)
@@ -588,6 +591,7 @@ export function createRouting(deps) {
           return reject();
         deps.charDetail.value = requested ? deps.findCharById(requested) : null;
         deps.charSection.value = section;
+        deps.charSort.value = url.searchParams.get('sort') || 'default';
         if (requested && !deps.charDetail.value && window.CHAR_INDEX) reject();
         else if (deps.charDetail.value && section !== "profile")
           deps.setCharSection(section);

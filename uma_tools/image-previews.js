@@ -84,6 +84,9 @@ function localImageLoader(root, preview) {
       const stat = await handle.stat();
       if (!stat.isFile() || stat.size > 32 * 1024 * 1024) throw new Error('unsupported preview image');
       const read = () => readSnapshot(handle, stat.size);
+      if (width === undefined || width === null || width === '') {
+        return { bytes: await read(), extension: path.extname(pathname).toLowerCase() };
+      }
       return await preview(await fileIdentity(file, stat, read), width, read, options);
     } finally { await handle.close(); }
   };

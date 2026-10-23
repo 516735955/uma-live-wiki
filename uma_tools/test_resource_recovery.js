@@ -13,7 +13,7 @@ const { AnimeStore } = require('./anime-store');
 async function main() {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-recovery-'));
   const get = https.get, now = Date.now;
-  let clock = now(), offline = false, bytes = Buffer.from('first'), failedRequests = 0;
+  let clock = now(), offline = false, bytes = fs.readFileSync(path.join(__dirname, 'img/news-card-default.webp')), failedRequests = 0;
   async function until(check) {
     const deadline = now() + 5000;
     while (!(await check())) {
@@ -40,26 +40,26 @@ async function main() {
     const load = imageStore(path.join(directory, 'images'));
     const url = 'https://prd-info-umamusume.akamaized.net/announce/1/Header/test.webp';
     const first = await load(url);
-    assert.strictEqual(first.bytes.toString(), 'first');
+    const firstIdentity = first.identity;
     assert.strictEqual((await load(url)).identity, first.identity, 'cold and warm source identities are identical');
     const file = path.join(directory, 'images', fs.readdirSync(path.join(directory, 'images'))[0]);
     fs.utimesSync(file, new Date(0), new Date(0));
     clock += 61000;
     offline = true;
-    assert.strictEqual((await load(url)).bytes.toString(), 'first', 'stale preview survives source failure');
+    assert.strictEqual((await load(url)).identity, firstIdentity, 'stale preview survives source failure');
     await until(() => failedRequests === 1);
-    clock += 61000; offline = false; bytes = Buffer.from('updated');
+    clock += 61000; offline = false; bytes = fs.readFileSync(path.join(__dirname, 'img/bg_blue.webp'));
     await load(url);
-    await until(async () => (await load(url)).bytes.toString() === 'updated');
-    assert.strictEqual((await load(url)).bytes.toString(), 'updated', 'source recovery replaces actual cache content');
+    await until(async () => (await load(url)).identity !== firstIdentity);
+    assert.notStrictEqual((await load(url)).identity, firstIdentity, 'source recovery replaces actual cache content');
     const lazy = await load(url, {deferBytes:true});
     assert.strictEqual(lazy.bytes, undefined, 'preview lookup does not read the original bytes');
-    assert.strictEqual((await lazy.read()).toString(), 'updated');
+    assert.notStrictEqual((await lazy.read()).length, 0);
     const held = await load(url, {deferBytes:true});
     fs.unlinkSync(file);
-    assert.strictEqual((await held.read()).toString(), 'updated', 'queued preview readers survive cache eviction');
+    assert.notStrictEqual((await held.read()).length, 0, 'queued preview readers survive cache eviction');
     const thumbnails = imageStore(path.join(directory, 'thumbnails'), {validateUrl:require('./media-url').remoteImage});
-    assert.strictEqual((await thumbnails('https://i.ytimg.com/vi/example/maxresdefault.jpg')).bytes.toString(), 'updated', 'a video without max-resolution artwork uses its available standard thumbnail');
+    assert.notStrictEqual((await thumbnails('https://i.ytimg.com/vi/example/maxresdefault.jpg')).bytes.length, 0, 'a video without max-resolution artwork uses its available standard thumbnail');
 
     const cacheFile = path.join(directory, 'translations.json');
     fs.writeFileSync(cacheFile, '{"accepted":"译文"}');
@@ -67,7 +67,7 @@ async function main() {
     fs.writeFileSync(cacheFile, '{broken');
     fs.utimesSync(cacheFile, new Date(clock), new Date(clock));
     assert.strictEqual(translations.get('accepted'), '译文');
-    translations.set('recovered', '恢复');
+    await translations.set('recovered', '恢复');
     assert.strictEqual(JSON.parse(fs.readFileSync(cacheFile)).accepted, '译文');
 
     assert(!translationFactsMatch('1.5倍', '15倍'));

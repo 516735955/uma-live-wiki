@@ -4,7 +4,7 @@
   if (root) root.UmaMedia = media;
 })(typeof window !== 'undefined' ? window : null, function () {
   'use strict';
-  const remoteHosts = new Set(['i.ytimg.com', 'is1-ssl.mzstatic.com', 'www.kenproduction.co.jp',
+  const remoteHosts = new Set(['i.ytimg.com', 'is1-ssl.mzstatic.com', 'umamusume.lantis.jp', 'prd-info-umamusume.akamaized.net', 'www.kenproduction.co.jp',
     'across-ent.com', 'columbia.jp', 'www.vims.co.jp', 'osawa-inc.co.jp', 'www.81produce.co.jp',
     'crazy-box.co.jp', 'voicekit.jp', 'tomorrowjam.jp', 'yuhko-kaida.com', 'aptepro.jp',
     'st-kai.jp', 'anime-fantasista-japan.jp']);

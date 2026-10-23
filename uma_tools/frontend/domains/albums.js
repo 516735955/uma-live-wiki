@@ -427,7 +427,8 @@ export function createAlbums(deps) {
     if (!window.Image) return;
     const img = new window.Image();
     tintPending.add(url);
-    img.crossOrigin = 'anonymous';
+    // Same-origin preview responses are readable without CORS. Only request
+    // anonymous cross-origin pixels for sources that cannot be proxied.
     img.onerror = () => { tintPending.delete(url); };
     img.onload = () => {
     if (!img || !img.naturalWidth) return;
@@ -469,7 +470,11 @@ export function createAlbums(deps) {
     } finally { tintPending.delete(url); }
     };
     const source = shown.src.includes(catalogCoverFallback) ? catalogCoverFallback : coverThumb(url, 160);
-    img.src = window.UmaMedia ? window.UmaMedia.preview(source, 160) : source;
+    const sampled = window.UmaMedia ? window.UmaMedia.preview(source, 160) : source;
+    try {
+      if (new URL(sampled, location.href).origin !== location.origin) img.crossOrigin = 'anonymous';
+    } catch (_) {}
+    img.src = sampled;
   }
 
   function coverStyle(album) {

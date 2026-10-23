@@ -1,13 +1,13 @@
 export const bindings = ["coverThumb","onCatalogImageError","isActive","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePaletteStyle","openCharacter","voiceProfiles","voiceLoading","voiceError","voiceDetail","voiceSection","setVoiceSection","voiceAppearance","voicePastByYear","voiceHistoryQuery","voiceHistoryKind","voiceFieldLabel","openVoice","appearanceIsLoading","appearanceError","retryAppearance","animeError","retryAnime","voiceAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes","retryVoice","internalLink"];
 export const template = `
             <content-state v-if="voiceError" state="error" subject="声优资料" :retry="true" @retry="retryVoice()"></content-state>
-            <template v-if="!voiceDetail">
+            <template v-if="!voiceDetail && !voiceError">
                 <div class="archive-toolbar"><label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="va-search" id="vaSearch" aria-label="搜索声优名或角色名" placeholder="搜索声优名或角色名" autocomplete="off"></label></div>
                 <div v-if="voiceLoading && !voiceProfiles.length" class="archive-card-skeletons" aria-hidden="true"><span v-for="i in 8" :key="'voice-load-'+i"></span></div>
                 <ul class="va-grid" id="vaGrid"></ul>
                 <div id="vaNoData"><content-state state="filtered" subject="声优"></content-state></div>
             </template>
-            <article v-else class="entity-detail voice-entity-detail" :style="voicePaletteStyle(voiceDetail)">
+            <article v-else-if="voiceDetail" class="entity-detail voice-entity-detail" :style="voicePaletteStyle(voiceDetail)">
                 <div class="entity-hero" :class="{'entity-hero-text':!voiceDetail.photo}">
                     <div v-if="voiceDetail.photo" class="entity-cover portrait-cover"><img v-media-src="voiceDetail.photo" :alt="voiceDetail.zh" fetchpriority="high"></div>
                     <div class="entity-intro">

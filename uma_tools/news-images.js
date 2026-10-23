@@ -5,6 +5,7 @@ const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
 const { ImageJobs } = require('./image-jobs');
+const { execFile } = require('child_process');
 const identities = new Map(), accesses = new Map();
 function touchImage(file) {
   accesses.delete(file);
@@ -12,6 +13,25 @@ function touchImage(file) {
   if (accesses.size > 8192) accesses.delete(accesses.keys().next().value);
 }
 function imageAccess(file, stat) { return accesses.get(file) || stat.mtimeMs; }
+function validImageBytes(bytes, contentType) {
+  const type = String(contentType || '').split(';', 1)[0].toLowerCase();
+  if (type === 'image/png') return bytes.length >= 8 && bytes.subarray(0, 8).equals(Buffer.from('\x89PNG\r\n\x1a\n', 'binary'));
+  if (type === 'image/jpeg') return bytes.length >= 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff;
+  if (type === 'image/webp') return bytes.length >= 12 && bytes.subarray(0, 4).toString() === 'RIFF' && bytes.subarray(8, 12).toString() === 'WEBP';
+  if (type === 'image/gif') return bytes.length >= 6 && (bytes.subarray(0, 6).toString() === 'GIF87a' || bytes.subarray(0, 6).toString() === 'GIF89a');
+  return false;
+}
+async function verifyImageBytes(bytes) {
+  const python = process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3');
+  const script = "import io,sys,warnings; from PIL import Image; Image.MAX_IMAGE_PIXELS=40000000; warnings.simplefilter('error', Image.DecompressionBombWarning); raw=sys.stdin.buffer.read(); Image.open(io.BytesIO(raw)).verify(); im=Image.open(io.BytesIO(raw)); im.seek(0); im.convert('RGBA').load()";
+  await new Promise((resolve, reject) => {
+    const child = execFile(python, ['-c', script], {
+      encoding: 'buffer', timeout: 10000, maxBuffer: 4 * 1024 * 1024,
+    }, error => error ? reject(error) : resolve());
+    child.stdin.on('error', () => {});
+    child.stdin.end(bytes);
+  });
+}
 async function fileIdentity(file, stat, read) {
   const key = file + ':' + stat.ino + ':' + stat.mtimeMs + ':' + stat.size;
   if (!identities.has(key)) {
@@ -90,7 +110,19 @@ function imageStore(directory, options = {}) {
             if (size > 8 * 1024 * 1024) request.destroy(new Error('news image too large'));
             else chunks.push(chunk);
           });
-          response.on('end', () => resolve(Buffer.concat(chunks)));
+          response.on('end', () => {
+            const bytes = Buffer.concat(chunks);
+            if (!validImageBytes(bytes, response.headers['content-type'])) {
+              const error = new Error('news image content is not a valid image');
+              error.code = 'INVALID_IMAGE';
+              reject(error);
+              return;
+            }
+            verifyImageBytes(bytes).then(() => resolve(bytes), error => {
+              error.code = 'INVALID_IMAGE';
+              reject(error);
+            });
+          });
           response.on('error', reject);
           response.on('aborted', () => reject(new Error('news image response aborted')));
         });

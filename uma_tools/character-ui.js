@@ -1,4 +1,28 @@
 (function () {
+  var searchPopstate = null;
+  function escapeHtml(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function (ch) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+  function syncQuery(input, render) {
+    var url = new URL(window.location.href);
+    var q = url.searchParams.get('q') || '';
+    if (input.value !== q) input.value = q;
+    if (searchPopstate) window.removeEventListener('popstate', searchPopstate);
+    searchPopstate = function () {
+      if (!input.isConnected) return;
+      var next = new URL(window.location.href).searchParams.get('q') || '';
+      if (input.value !== next) { input.value = next; render(); }
+    };
+    window.addEventListener('popstate', searchPopstate);
+  }
+  function updateQuery(input) {
+    var url = new URL(window.location.href);
+    if (input.value.trim()) url.searchParams.set('q', input.value.trim());
+    else url.searchParams.delete('q');
+    history.replaceState(Object.assign({}, history.state, {scrollY: window.scrollY}), '', url.pathname + (url.search ? url.search : ''));
+  }
   var characterRender = null;
   var voiceRender = null;
   window.addEventListener('uma-character-sort', function () { if (characterRender) characterRender(); });
@@ -56,12 +80,12 @@
         card.innerHTML =
           '<dl>' +
             '<dt>' +
-              (c.img || c.av ? '<div class="cio-img"><img src="' + (window.UmaMedia ? window.UmaMedia.preview(c.img || c.av, 480) : (c.img || c.av)) + '" alt="' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
-              '<div class="cio-bg"><p>' + (c.en || c.ja || '') + '</p></div>' +
+              (c.img || c.av ? '<div class="cio-img"><img src="' + escapeHtml(window.UmaMedia ? window.UmaMedia.preview(c.img || c.av, 480) : (c.img || c.av)) + '" alt="' + escapeHtml((c.zh || '').replace(/（[^（）]*）$/, '')) + '"' + imageAttrs + '></div>' : '<div class="cio-img cio-img-empty"><p>暂无图片</p></div>') +
+              '<div class="cio-bg"><p>' + escapeHtml(c.en || c.ja || '') + '</p></div>' +
             '</dt>' +
             '<dd>' +
-              '<p class="cio-name">' + ((c.zh || '').replace(/（[^（）]*）$/, '')) + '</p>' +
-              '<p class="cio-cv"><span>CV:</span>' + (c.cv_zh || c.cv || '') + '</p>' +
+              '<p class="cio-name">' + escapeHtml((c.zh || '').replace(/（[^（）]*）$/, '')) + '</p>' +
+              '<p class="cio-cv"><span>CV:</span>' + escapeHtml(c.cv_zh || c.cv || '') + '</p>' +
             '</dd>' +
           '</dl>' +
           '<div class="card-veil"><p>View more</p><span class="card-veil-arrow" aria-hidden="true">&gt;</span></div>';
@@ -77,9 +101,11 @@
     let pendingFrame;
     input.addEventListener('input', () => {
       cancelAnimationFrame(pendingFrame);
+      updateQuery(input);
       pendingFrame = requestAnimationFrame(render);
     });
     characterRender = render;
+    syncQuery(input, render);
     render();
   }
 
@@ -271,18 +297,18 @@
         card.style.setProperty('--color-main', v.roles[0] && v.roles[0].main ? v.roles[0].main : '#8c83ff');
         var ph = v.photo ? { img: v.photo } : null;
         var roleHtml = v.roles.map(function (role) {
-          var roleImage = role.image ? '<img src="' + (window.UmaMedia ? window.UmaMedia.preview(role.image, 160) : role.image) + '" alt="">' : '<span class="performer-chip-fallback" aria-hidden="true">' + (role.zh || '?').charAt(0) + '</span>';
-          return '<span class="performer-chip character-chip" style="--chip-color:' + role.main + '">' + roleImage + '<span>' + role.zh + '</span></span>';
+          var roleImage = role.image ? '<img src="' + escapeHtml(window.UmaMedia ? window.UmaMedia.preview(role.image, 160) : role.image) + '" alt="" loading="lazy" decoding="async">' : '<span class="performer-chip-fallback" aria-hidden="true">' + escapeHtml((role.zh || '?').charAt(0)) + '</span>';
+          return '<span class="performer-chip character-chip" style="--chip-color:' + escapeHtml(role.main) + '">' + roleImage + '<span>' + escapeHtml(role.zh) + '</span></span>';
         }).join('');
         var imageAttrs = (i < 2 ? ' loading="eager"' : ' loading="lazy"') + (i === 0 ? ' fetchpriority="high"' : '') + ' decoding="async"';
         var imgHtml = ph
-          ? '<img class="va-card-img" src="' + (window.UmaMedia ? window.UmaMedia.preview(ph.img, 480) : ph.img) + '" alt="' + v.zh + '"' + imageAttrs + '>'
-          : '<span class="va-ph-fb">' + (v.zh || v.ja || '?').charAt(0) + '</span>';
+          ? '<img class="va-card-img" src="' + escapeHtml(window.UmaMedia ? window.UmaMedia.preview(ph.img, 480) : ph.img) + '" alt="' + escapeHtml(v.zh) + '"' + imageAttrs + '>'
+          : '<span class="va-ph-fb">' + escapeHtml((v.zh || v.ja || '?').charAt(0)) + '</span>';
           card.innerHTML =
           imgHtml +
           '<span class="va-card-txt">' +
-            '<p class="va-name">' + v.zh + '</p>' +
-            '<p class="va-kana">' + v.ja + '</p>' +
+            '<p class="va-name">' + escapeHtml(v.zh) + '</p>' +
+            '<p class="va-kana">' + escapeHtml(v.ja) + '</p>' +
             '<span class="performer-chip-list compact va-card-roles">' + roleHtml + '</span>' +
           '</span>';
         card.addEventListener('click', function (e) {
@@ -301,9 +327,11 @@
     let pendingFrame;
     input.addEventListener('input', () => {
       cancelAnimationFrame(pendingFrame);
+      updateQuery(input);
       pendingFrame = requestAnimationFrame(render);
     });
     voiceRender = function () { if (grid.isConnected) render(); else voiceRender = null; };
+    syncQuery(input, render);
     render();
   }
 

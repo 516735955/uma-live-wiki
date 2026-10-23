@@ -26,6 +26,9 @@ async function main() {
     assert(Math.abs(dimensions[0] / dimensions[1] - 2428 / 1518) < 0.01);
     assert.strictEqual((await load(source, 480)).etag, results[0].etag);
     assert.notStrictEqual((await load(source, 960)).etag, results[0].etag);
+    const original = await load(source);
+    assert.strictEqual(original.extension, '.jpg', 'local original requests keep the source extension');
+    assert(original.bytes.equals(fs.readFileSync(path.join(__dirname, 'img/hero_bg.jpg'))), 'local original requests return source bytes');
     await assert.rejects(load('/data/baidu.conf.json', 480), /unsupported/);
     await assert.rejects(load('https://example.com/uma_tools/img/foo.png', 480), /unsupported/);
     assert.throws(() => previewWidth('nonsense'), /invalid/);
@@ -52,6 +55,8 @@ async function main() {
     finish('done'); await active;
     assert.strictEqual(started, false, 'abandoned and expired work never consumes an encoding slot');
     assert(remoteImage('https://www.81produce.co.jp/images/photo.jpg'));
+    assert(remoteImage('https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/2026/01/cover.jpg'));
+    assert(remoteImage('https://prd-info-umamusume.akamaized.net/announce/1/Header/cover.webp'));
     assert(!remoteImage('https://example.com/photo.jpg'));
     assert(!remoteImage('https://www.81produce.co.jp:8080/photo.jpg'));
     assert(!remoteImage('https://www.81produce.co.jp/page.html'));
