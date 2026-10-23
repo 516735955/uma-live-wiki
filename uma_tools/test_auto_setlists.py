@@ -138,6 +138,17 @@ class SheetPublicationTests(unittest.TestCase):
         self.assertNotIn('class="perf-name">Guest</span>', table)
         self.assertEqual(compare(sheet(), source)["unchanged"], 1)
 
+    def test_day_spacing_in_title_matches_explicit_day_label(self):
+        source = {"other": {"groups": [{"group": "Show", "subs": [{
+            "title": "Show", "date": "2026-01-01", "cast": CAST,
+            "days": [{"label": "DAY1", "table": ""}],
+        }]}]}}
+        blocks = [{"title": "Show DAY 1", "date": "2026-01-01",
+                   "songs": [{"no": "1", "name": "First song", "performers": ["Machico"]}]}]
+        report = compare(blocks, source)
+        self.assertEqual(len(report["filled"]), 1)
+        self.assertEqual(report["review"], [])
+
     def test_nonempty_setlist_is_never_replaced(self):
         source = catalog("<table>hand-curated</table>")
         report = compare(sheet(), source)

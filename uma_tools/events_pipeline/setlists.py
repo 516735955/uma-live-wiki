@@ -102,6 +102,12 @@ def merge_numbered_sources(events):
         if target is None or target is event:
             continue
         target.setdefault('id_aliases', []).append(event['id'])
+        # The category import can carry a different session URL for the same
+        # numbered performance. Preserve it before the event-level dedupe.
+        target_sessions = target.get('sessions') or []
+        imported_sessions = event.get('sessions') or []
+        if len(target_sessions) == len(imported_sessions) == 1:
+            target_sessions[0].setdefault('id_aliases', []).append(imported_sessions[0].get('id'))
         event['id'] = target['id']
     return events
 

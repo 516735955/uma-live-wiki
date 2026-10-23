@@ -106,6 +106,18 @@ def session_label(title):
     return match.group(0) if match else "本公演"
 
 
+def canonical_session_label(value):
+    """Normalize DAY spacing while preserving the numbered day identity."""
+    label = unicodedata.normalize('NFKC', str(value or '')).casefold()
+    match = re.fullmatch(r'day\s*(\d+)', label)
+    return f'day{int(match.group(1))}' if match else re.sub(r'\s+', '', label)
+
+
+def title_without_day_suffix(value):
+    title = unicodedata.normalize('NFKC', str(value or '')).strip()
+    return re.sub(r'\s+DAY\s*\d+\s*$', '', title, flags=re.I).strip()
+
+
 def split_performers(value):
     return [item.strip() for item in PERFORMER_SPLIT_RE.split(str(value)) if item.strip()]
 
@@ -230,9 +242,13 @@ def compare(blocks, catalog):
         title = normalized_title(block["title"])
         date = block["date"]
         label = session_label(block["title"])
+        label_key = canonical_session_label(label)
         # No fuzzy guesses: a single title/date/session match is required.
-        matches = [slot for slot in slots if normalized_title(slot["title"]) == title
-                   and slot["date"] == date and slot["label"] == label]
+        matches = [slot for slot in slots
+                   if slot["date"] == date
+                   and canonical_session_label(slot["label"]) == label_key
+                   and (normalized_title(slot["title"]) == title
+                        or (label_key.startswith('day') and normalized_title(title_without_day_suffix(block["title"])) == normalized_title(slot["title"]))) ]
         descriptor = {"sheet_title": block["title"], "date": date, "session": label}
         if len(matches) != 1:
             report["review"].append({**descriptor, "reason": "unmatched_or_ambiguous", "matches": len(matches)})

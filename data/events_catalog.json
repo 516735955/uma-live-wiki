@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-20T12:05:33+00:00",
+  "generated_at": "2026-10-23T06:27:56+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -26055,6 +26055,181 @@
       "setlist_status": "none"
     },
     {
+      "id": "official-special-20250706-title-c9fd71d65c11",
+      "title": "7月6日(日)、7月13日(日)放送のフジテレビ「プレミアの巣窟」にウマ娘が出走決定！",
+      "date": "2025-07-07",
+      "end_date": "2025-07-13",
+      "kind": "official_program",
+      "mode": "online",
+      "series_id": "official-special",
+      "venue": "在线播出",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0141",
+          "name": "紫月杏朱彩",
+          "character_id": "blastonepiece",
+          "role": "防爆装束",
+          "evidence": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=2638",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_announcement",
+              "url": "https://umamusume.jp/news/detail?id=2638"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0015",
+          "name": "久保田未梦",
+          "character_id": "lovesonlyyou",
+          "role": "唯独爱你",
+          "evidence": "official_announcement",
+          "source_url": "https://umamusume.jp/news/detail?id=2638",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_announcement",
+              "url": "https://umamusume.jp/news/detail?id=2638"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "official-special-20250706-title-c9fd71d65c11-session-1",
+          "label": "第1回",
+          "date": "2025-07-07",
+          "songs": [],
+          "character_ids": [
+            "blastonepiece",
+            "lovesonlyyou"
+          ],
+          "cast": [
+            {
+              "voice_actor_id": "va-0141",
+              "name": "紫月杏朱彩",
+              "character_id": "blastonepiece",
+              "role": "防爆装束",
+              "evidence": "official_announcement",
+              "source_url": "https://umamusume.jp/news/detail?id=2638",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0015",
+              "name": "久保田未梦",
+              "character_id": "lovesonlyyou",
+              "role": "唯独爱你",
+              "evidence": "official_announcement",
+              "source_url": "https://umamusume.jp/news/detail?id=2638",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                }
+              ]
+            }
+          ],
+          "source_date": "2025-07-06",
+          "id_aliases": [],
+          "setlist_status": "none"
+        },
+        {
+          "id": "official-special-20250706-title-c9fd71d65c11-session-2",
+          "label": "第2回",
+          "date": "2025-07-13",
+          "songs": [],
+          "character_ids": [
+            "blastonepiece",
+            "lovesonlyyou"
+          ],
+          "cast": [
+            {
+              "voice_actor_id": "va-0141",
+              "name": "紫月杏朱彩",
+              "character_id": "blastonepiece",
+              "role": "防爆装束",
+              "evidence": "official_announcement",
+              "source_url": "https://umamusume.jp/news/detail?id=2638",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0015",
+              "name": "久保田未梦",
+              "character_id": "lovesonlyyou",
+              "role": "唯独爱你",
+              "evidence": "official_announcement",
+              "source_url": "https://umamusume.jp/news/detail?id=2638",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_announcement",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                },
+                {
+                  "kind": "official_character_credit",
+                  "url": "https://umamusume.jp/news/detail?id=2638"
+                }
+              ]
+            }
+          ],
+          "id_aliases": [],
+          "setlist_status": "none"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "官方公告",
+          "url": "https://umamusume.jp/news/detail?id=2638"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/official-program.svg",
+      "summary": "2025年7月6日（日）、7月13日（日）深夜に放送のフジテレビ『「プレミアの巣窟」TIF2025大特集SP！』にウマ娘の出走が決定しました！8月2日（土）の「TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック」に出走するキャストから、紫月杏朱彩さん（ブラストワンピース役）、久保田未夢さん（ラヴズオンリーユー役）が出走します！番組概要■番組名「プレミアの巣窟」TIF2025大特集SP！■放送日時2025年7月6日（日）25:55 ～ 26:202025年7月13日（日）2",
+      "schedule_status": "scheduled",
+      "metadata_status": "complete",
+      "source_date": "2025-07-06",
+      "title_aliases": [],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none"
+    },
+    {
       "id": "live-cd-2025-07-06-winning-live-24",
       "title": "WINNING LIVE 24 発売記念イベント",
       "date": "2025-07-06",
@@ -26431,179 +26606,6 @@
       "title_aliases": [],
       "id_aliases": [],
       "setlist_status": "verified"
-    },
-    {
-      "id": "official-special-20250706-title-c9fd71d65c11",
-      "title": "7月6日(日)、7月13日(日)放送のフジテレビ「プレミアの巣窟」にウマ娘が出走決定！",
-      "date": "2025-07-06",
-      "end_date": "2025-07-13",
-      "kind": "official_program",
-      "mode": "online",
-      "series_id": "official-special",
-      "venue": "在线播出",
-      "cast_status": "verified",
-      "cast": [
-        {
-          "voice_actor_id": "va-0141",
-          "name": "紫月杏朱彩",
-          "character_id": "blastonepiece",
-          "role": "防爆装束",
-          "evidence": "official_announcement",
-          "source_url": "https://umamusume.jp/news/detail?id=2638",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "official_announcement",
-              "url": "https://umamusume.jp/news/detail?id=2638"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "va-0015",
-          "name": "久保田未梦",
-          "character_id": "lovesonlyyou",
-          "role": "唯独爱你",
-          "evidence": "official_announcement",
-          "source_url": "https://umamusume.jp/news/detail?id=2638",
-          "person_type": "voice_actor",
-          "resolution": "resolved",
-          "evidence_sources": [
-            {
-              "kind": "official_announcement",
-              "url": "https://umamusume.jp/news/detail?id=2638"
-            }
-          ]
-        }
-      ],
-      "character_ids": [],
-      "sessions": [
-        {
-          "id": "official-special-20250706-title-c9fd71d65c11-session-1",
-          "label": "第1回",
-          "date": "2025-07-06",
-          "songs": [],
-          "character_ids": [
-            "blastonepiece",
-            "lovesonlyyou"
-          ],
-          "cast": [
-            {
-              "voice_actor_id": "va-0141",
-              "name": "紫月杏朱彩",
-              "character_id": "blastonepiece",
-              "role": "防爆装束",
-              "evidence": "official_announcement",
-              "source_url": "https://umamusume.jp/news/detail?id=2638",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                },
-                {
-                  "kind": "official_character_credit",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0015",
-              "name": "久保田未梦",
-              "character_id": "lovesonlyyou",
-              "role": "唯独爱你",
-              "evidence": "official_announcement",
-              "source_url": "https://umamusume.jp/news/detail?id=2638",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                },
-                {
-                  "kind": "official_character_credit",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                }
-              ]
-            }
-          ],
-          "id_aliases": [],
-          "setlist_status": "none"
-        },
-        {
-          "id": "official-special-20250706-title-c9fd71d65c11-session-2",
-          "label": "第2回",
-          "date": "2025-07-13",
-          "songs": [],
-          "character_ids": [
-            "blastonepiece",
-            "lovesonlyyou"
-          ],
-          "cast": [
-            {
-              "voice_actor_id": "va-0141",
-              "name": "紫月杏朱彩",
-              "character_id": "blastonepiece",
-              "role": "防爆装束",
-              "evidence": "official_announcement",
-              "source_url": "https://umamusume.jp/news/detail?id=2638",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                },
-                {
-                  "kind": "official_character_credit",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0015",
-              "name": "久保田未梦",
-              "character_id": "lovesonlyyou",
-              "role": "唯独爱你",
-              "evidence": "official_announcement",
-              "source_url": "https://umamusume.jp/news/detail?id=2638",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "official_announcement",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                },
-                {
-                  "kind": "official_character_credit",
-                  "url": "https://umamusume.jp/news/detail?id=2638"
-                }
-              ]
-            }
-          ],
-          "id_aliases": [],
-          "setlist_status": "none"
-        }
-      ],
-      "media": [],
-      "sources": [
-        {
-          "kind": "official_announcement",
-          "label": "官方公告",
-          "url": "https://umamusume.jp/news/detail?id=2638"
-        }
-      ],
-      "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/official-program.svg",
-      "summary": "2025年7月6日（日）、7月13日（日）深夜に放送のフジテレビ『「プレミアの巣窟」TIF2025大特集SP！』にウマ娘の出走が決定しました！8月2日（土）の「TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック」に出走するキャストから、紫月杏朱彩さん（ブラストワンピース役）、久保田未夢さん（ラヴズオンリーユー役）が出走します！番組概要■番組名「プレミアの巣窟」TIF2025大特集SP！■放送日時2025年7月6日（日）25:55 ～ 26:202025年7月13日（日）2",
-      "schedule_status": "scheduled",
-      "metadata_status": "complete",
-      "title_aliases": [],
-      "id_aliases": [],
-      "legacy_aliases": [],
-      "setlist_status": "none"
     },
     {
       "id": "sokosoko-paka-live-tv-046",
@@ -32297,6 +32299,7 @@
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "id_aliases": [
+        "live-other-2025-04-27-tv-vol-52",
         "paka-live-tv-052"
       ],
       "title_aliases": [
@@ -53574,10 +53577,6 @@
             {
               "kind": "google_sheet",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "official_broadcaster",
-              "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
             }
           ]
         },
@@ -53594,10 +53593,6 @@
             {
               "kind": "google_sheet",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "official_broadcaster",
-              "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
             }
           ]
         },
@@ -53614,10 +53609,6 @@
             {
               "kind": "google_sheet",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "official_broadcaster",
-              "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
             }
           ]
         }
@@ -53664,57 +53655,11 @@
             "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
             "sheet_title": "TIF presents ONE SONG FES.@FCGビル(東京・港区)【無観客】"
           },
-          "id_aliases": [],
-          "cast": [
-            {
-              "voice_actor_id": "va-0073",
-              "character_id": "tmoperao",
-              "name": "德井青空",
-              "role": "好歌剧",
-              "evidence": "google_sheet",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0134",
-              "character_id": "dantsuflame",
-              "name": "福岛晴菜",
-              "role": "烈焰快驹",
-              "evidence": "google_sheet",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0153",
-              "character_id": "junglepocket",
-              "name": "藤本侑里",
-              "role": "森林宝穴",
-              "evidence": "google_sheet",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            }
+          "id_aliases": [
+            "official-special-20240724-tif-presents-one-song-fes-session-1",
+            "live-other-2024-07-25-tif-presents-one-song-fes-session-2"
           ],
+          "source_date": "2024-07-24",
           "alternate_setlist_sources": [
             {
               "file": "data/live_cat_data.json",
@@ -53725,68 +53670,57 @@
               "day": 0
             }
           ],
-          "setlist_status": "verified"
-        },
-        {
-          "id": "live-other-2024-07-25-tif-presents-one-song-fes-session-2",
-          "label": "本期节目",
-          "date": "2024-07-24",
-          "songs": [],
-          "character_ids": [],
           "cast": [
             {
-              "voice_actor_id": "va-0153",
-              "name": "藤本侑里",
-              "character_id": "junglepocket",
-              "role": "森林宝穴",
-              "evidence": "official_broadcaster",
-              "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast",
+              "voice_actor_id": "va-0073",
+              "character_id": "tmoperao",
+              "name": "德井青空",
+              "role": "好歌剧",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
-                  "kind": "official_broadcaster",
-                  "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
             {
               "voice_actor_id": "va-0134",
-              "name": "福岛晴菜",
               "character_id": "dantsuflame",
+              "name": "福岛晴菜",
               "role": "烈焰快驹",
-              "evidence": "official_broadcaster",
-              "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
-                  "kind": "official_broadcaster",
-                  "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
             {
-              "voice_actor_id": "va-0073",
-              "name": "德井青空",
-              "character_id": "tmoperao",
-              "role": "好歌剧",
-              "evidence": "official_broadcaster",
-              "source_url": "https://official.idolfes.com/s/tif2024/page/broadcast",
+              "voice_actor_id": "va-0153",
+              "character_id": "junglepocket",
+              "name": "藤本侑里",
+              "role": "森林宝穴",
+              "evidence": "google_sheet",
+              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
               "person_type": "voice_actor",
               "resolution": "resolved",
               "evidence_sources": [
                 {
-                  "kind": "official_broadcaster",
-                  "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             }
           ],
-          "id_aliases": [
-            "official-special-20240724-tif-presents-one-song-fes-session-1"
-          ],
-          "setlist_status": "none"
+          "setlist_status": "verified"
         }
       ],
       "media": [],
@@ -53817,10 +53751,13 @@
       "summary": "2024年7月24日（水）26:10から放送のフジテレビ「TIF presents ONE SONG FES.」にウマ娘の出走が決定しました！さらに出走者も発表です！2024年8月2日（金）、3日（土）、4日（日）に開催予定の「TOKYO IDOL FESTIVAL 2024」の事前番組です！8月3日（土）のウマ娘の出走に向け、皆さまぜひご覧ください！番組概要■番組名TIF presents ONE SONG FES.■放送日時【フジテレビ】2024年7月24日（水）26:10 ～ 27:10■再放送日時【フジテレ",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
+      "source_date": "2024-07-24",
+      "id_aliases": [
+        "official-special-20240724-tif-presents-one-song-fes"
+      ],
       "title_aliases": [
         "TIF presents ONE SONG FES."
       ],
-      "id_aliases": [],
       "legacy_aliases": [
         "/zh-Hans/live/other/46",
         "/zh-Hans/live/other/46/0/0"
@@ -63479,10 +63416,12 @@
       "summary": "2024年3月16日（土）23:00から放送のNHK「Venue101」にウマ娘の出走が決定しました！さらに出走者も発表です！皆さまぜひご覧ください！番組概要■番組名Venue101■放送情報【NHK総合/NHKワールド・プレミアム】2024年3月16日（土）23:00 ～ 23:30■配信情報【NHKプラス】同時配信 ：2024年3月16日（土）23:00 ～ 23:30見逃し配信：2024年3月16日（土）23:30 ～ 3月23日（土）23:30■出走者詳細は「Venue101」の公式HP（https://w",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
+      "id_aliases": [
+        "official-special-20240316-venue101"
+      ],
       "title_aliases": [
         "Venue101"
       ],
-      "id_aliases": [],
       "legacy_aliases": [
         "/zh-Hans/live/other/44",
         "/zh-Hans/live/other/44/0/0"
@@ -151437,5 +151376,5 @@
       "setlist_status": "none"
     }
   ],
-  "build_id": "907f9824490f572f0389"
+  "build_id": "a3ba01e754293e9815ea"
 }

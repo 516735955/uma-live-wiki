@@ -217,6 +217,20 @@ def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote
     for source in eventernote_doc.get("events") or []:
         legacy = source.get("live") or ""
         linked = by_legacy.get(legacy) or by_source.get(source.get('link'))
+        if linked is None:
+            source_title = pipeline_text.fold_name(source.get("title") or "")
+            source_date = pipeline_text.first_date(source.get("date"))
+            source_venue = pipeline_text.fold_name(source.get("venue") or "")
+            candidates = [event for event in events
+                          if pipeline_text.fold_name(event.get("title") or "") == source_title
+                          and pipeline_text.first_date(event.get("date")) == source_date]
+            # Title/date alone are insufficient: Eventernote often has several
+            # same-day parts. Link only when a non-empty venue agrees exactly;
+            # otherwise preserve the source as an unresolved separate record.
+            venue_matches = [event for event in candidates
+                             if source_venue and pipeline_text.fold_name(event.get("venue") or "") == source_venue]
+            if len(venue_matches) == 1:
+                linked = venue_matches[0]
         cast = pipeline_identities.make_cast(source.get("actors") or [], identities, "eventernote", source.get("link") or "")
         eventernote_id = ""
         match = pipeline_common.EVENTERNOTE_ID_RE.search(source.get("link") or "")
@@ -248,8 +262,27 @@ def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote
 
 
 def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dict[str, pipeline_common.Any], identities: pipeline_identities.IdentityIndex, used: set[str]) -> None:
+    def normalized_broadcast_date(value: object, text: str) -> tuple[str, str]:
+        """Use the civil date for 24:00+ broadcasts and retain the TV date."""
+        original = pipeline_text.first_date(value)
+        if not original:
+            return "", ""
+        year, month, day = original.split("-")
+        match = pipeline_common.re.search(
+            rf"{int(year)}(?:年|[-/.])0?{int(month)}(?:月|[-/.])0?{int(day)}日?[^0-9]{{0,80}}(2[4-9]):[0-5][0-9]",
+            text or "",
+        )
+        if not match:
+            return original, ""
+        normalized = (pipeline_common.dt.date.fromisoformat(original) + pipeline_common.dt.timedelta(days=1)).isoformat()
+        return normalized, original
+
     for source in programs_doc.get("programs") or []:
-        event_id = pipeline_text.unique_id(source.get("id") or f"program-{source.get('date') or 'undated'}-{pipeline_text.stable_suffix(source.get('title') or '')}", used)
+        source_text = " ".join(str(source.get(key) or "") for key in ("title", "summary"))
+        program_date, source_date = normalized_broadcast_date(source.get("date"), source_text)
+        source_end_date = pipeline_text.first_date(source.get("end_date"))
+        program_end_date = normalized_broadcast_date(source_end_date, source_text)[0] if source_end_date else program_date
+        event_id = pipeline_text.unique_id(source.get("id") or f"program-{program_date or 'undated'}-{pipeline_text.stable_suffix(source.get('title') or '')}", used)
         source_kind = source.get("source_kind") or "official_youtube"
         kind = source.get("kind") or "official_program"
         source_url = source.get("source_url") or source.get("url") or ""
@@ -303,20 +336,26 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                     *session_cast,
                     *pipeline_identities.make_character_cast(session_characters, identities, "official_character_credit", source_url),
                 ])
+            session_date, session_source_date = normalized_broadcast_date(
+                source_session.get("date") or source.get("date"),
+                " ".join(str(source_session.get(key) or "") for key in ("label", "start_time", "summary")) + " " + source_text,
+            )
             sessions.append({
                 "id": f"{event_id}-session-{index + 1}",
                 "label": source_session.get("label") or f"场次 {index + 1}",
-                "date": source_session.get("date") or source.get("date") or "",
+                "date": session_date or program_date,
                 "songs": [],
                 "character_ids": session_characters,
                 "cast": session_cast,
+                **({"source_date": session_source_date} if session_source_date else {}),
                 **({"start_time": source_session["start_time"]} if source_session.get("start_time") else {}),
                 **({"doors_time": source_session["doors_time"]} if source_session.get("doors_time") else {}),
             })
         if not sessions:
-            sessions = [{"id": f"{event_id}-session-1", "label": "本期节目", "date": source.get("date") or "", "songs": [], "character_ids": characters, "cast": cast}]
+            sessions = [{"id": f"{event_id}-session-1", "label": "本期节目", "date": program_date, "songs": [], "character_ids": characters, "cast": cast,
+                         **({"source_date": source_date} if source_date else {})}]
         events.append({
-            "id": event_id, "title": source.get("title") or "", "date": source.get("date") or "", "end_date": source.get("end_date") or source.get("date") or "",
+            "id": event_id, "title": source.get("title") or "", "date": program_date, "end_date": program_end_date,
             "kind": kind, "mode": source.get("mode") or "online", "series_id": source.get("series_id") or ("official-special" if kind == "official_program" else ""), "venue": source.get("venue") or "在线播出",
             "cast_status": "verified" if cast else (source.get("cast_status") or "pending"), "cast": cast, "character_ids": characters,
             "sessions": sessions,
@@ -325,6 +364,7 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
             "legacy_url": "", "image": source.get("thumbnail") or "", "summary": pipeline_text.concise_program_summary(source.get("summary")),
             "schedule_status": source.get("schedule_status") or ("scheduled" if source.get("date") else "unknown"),
             "metadata_status": source.get("metadata_status") or "complete",
+            **({"source_date": source_date} if source_date else {}),
         })
 
 
@@ -334,6 +374,8 @@ def apply_overrides(events: list[dict[str, pipeline_common.Any]], overrides: dic
     hidden = set(overrides.get("hidden_event_ids") or [])
     for event in events:
         canonical = aliases.get(event["id"], event["id"])
+        if canonical != event["id"]:
+            event.setdefault("id_aliases", []).append(event["id"])
         event["id"] = canonical
         patch = patches.get(canonical)
         if patch:
@@ -355,6 +397,11 @@ def apply_overrides(events: list[dict[str, pipeline_common.Any]], overrides: dic
             event.setdefault("sources", []).extend(
                 source for source in patch.get("sources_add") or [] if source not in event.get("sources", [])
             )
+            for session in event.get("sessions") or []:
+                for session_id, aliases_for_session in (patch.get("session_aliases") or {}).items():
+                    if session.get("id") == session_id:
+                        values = aliases_for_session if isinstance(aliases_for_session, list) else [aliases_for_session]
+                        session["id_aliases"] = list(dict.fromkeys([*session.get("id_aliases", []), *values]))
         event_characters = list(dict.fromkeys([
             *(str(item or "") for item in event.get("character_ids") or [] if item),
             *(str(item.get("character_id") or "") for item in event.get("cast") or [] if item.get("character_id")),
@@ -400,6 +447,8 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
 
     def merge_session(target: dict[str, pipeline_common.Any], incoming: dict[str, pipeline_common.Any]) -> None:
         target['id_aliases'] = list(dict.fromkeys([*target.get('id_aliases', []), incoming['id'], *incoming.get('id_aliases', [])]))
+        if incoming.get('source_date') and not target.get('source_date'):
+            target['source_date'] = incoming['source_date']
         target['alternate_setlist_sources'] = [*target.get('alternate_setlist_sources', []),
                                                 *incoming.get('alternate_setlist_sources', [])]
         if incoming.get('setlist_source') and incoming.get('setlist_source') != target.get('setlist_source'):
@@ -475,6 +524,12 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
         sessions: list[dict[str, pipeline_common.Any]] = []
         for row in rows:
             row_sessions = row.get("sessions") or []
+            row_aliases = set(row.get("id_aliases", []))
+            primary_aliases = set(primary.get("id_aliases", []))
+            # ``merge_numbered_sources`` and event aliases leave the original
+            # event ID here; any such alias is explicit evidence that rows in
+            # this canonical group describe the same event.
+            same_explicit_event = bool(row_aliases or primary_aliases)
             for incoming in row_sessions:
                 same = next(
                     (
@@ -482,7 +537,15 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
                         if session.get("date") == incoming.get("date")
                         and (
                             pipeline_text.fold_name(session.get("label") or "") == pipeline_text.fold_name(incoming.get("label") or "")
-                            or (len(row_sessions) == 1 and len(primary.get("sessions") or []) == 1)
+                            or (
+                                same_explicit_event
+                                and len(row_sessions) == len(primary.get("sessions") or []) == 1
+                            )
+                            or (
+                                ({session.get("id"), *session.get("id_aliases", [])}
+                                 & {incoming.get("id"), *incoming.get("id_aliases", [])})
+                                and {pipeline_text.fold_name(session.get("label") or ""), pipeline_text.fold_name(incoming.get("label") or "")} <= {"本公演", "本期节目", "场次1", "场次01"}
+                            )
                         )
                     ),
                     None,
@@ -496,6 +559,7 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
             session["id"] = f"{event_id}-session-{index + 1}"
             session['id_aliases'] = [alias for alias in session['id_aliases'] if alias != session['id']]
         merged["sessions"] = sessions
+        merged.pop("session_aliases", None)
         if len(rows) > 1 and any(row.get("kind") == "official_program" for row in rows):
             merged["kind"] = "official_program"
             merged["mode"] = "online"

@@ -37,6 +37,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     sheet_blocks = pipeline_setlists.read_blocks(pipeline_common.ROOT)
     pipeline_setlists.apply_sheet(events, sheet_blocks, identities, eventernote)
     for event in events:
+        event.pop("session_aliases", None)
         # Preserve known franchise actors with documented participation even
         # when their character is outside the curated character catalogue.
         event["cast"] = [
