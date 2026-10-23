@@ -127,6 +127,7 @@ async function main() {
     crypto, Buffer, require, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
     hasCjk: () => true,
     currentTerms: () => emptyTerms, translationKey: (source) => source,
+    translationKeyWithTerms: (source) => source,
     newsContent: { message: () => '' },
     fetchTranslation: () => Promise.reject(new Error('timeout')),
     https: { get() {
@@ -145,12 +146,12 @@ async function main() {
   translation.translateBatchLines = (lines, callback) => callback(null);
   translation.translateOne = async () => '';
   let result;
-  translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
+  await translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   await tick();
   assert.strictEqual(result, '<p>原文</p>', 'a failed translation falls back to the original text instead of dropping the article');
   assert.strictEqual(Object.keys(translation.transCache).length, 0, 'fallback results are not cached so translations remain retryable');
   translation.translateBatchLines = (lines, callback) => callback(['译文']);
-  translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
+  await translation.translateHtmlMessage('<p>原文</p>', (value) => { result = value; });
   assert.strictEqual(result, '<p>译文</p>');
   assert.strictEqual(Object.keys(translation.transCache).filter(key => key.startsWith('msg_')).length, 1);
   assert.strictEqual(translation.transCache['fragment:原文'], '译文');
@@ -158,7 +159,7 @@ async function main() {
   translation.fetchTranslation = async (text) => ({ trans_result: text.split('\n').map((src) => ({ src, dst: src.replace(/原文/g, '译文') })) });
   vm.runInContext(section('function translateBatchLines(', 'function translateHtmlMessage('), translation);
   let lines, linesDirty;
-  translation.translateHtmlMessage('<p>原文\n原文</p>', (value) => { result = value; });
+  await translation.translateHtmlMessage('<p>原文\n原文</p>', (value) => { result = value; });
   await tick();
   assert.strictEqual(result, '<p>译文 译文</p>', 'HTML whitespace does not create extra API translation rows');
   translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '★★★★译文1500' }] });

@@ -234,7 +234,7 @@ exports.createService = function (deps) {
       let zh = '';
       try {
         zh = await translateOne(item.text, 0, item.signal, item.terms);
-        if (zh && zh !== item.text) translations.set(item.key, zh);
+        if (zh && zh !== item.text) await translations.set(item.key, zh);
       } catch (error) { console.error('[translation]', error.message); }
       finally {
         if (titlePending.get(item.key) === item) titlePending.delete(item.key);
@@ -364,30 +364,25 @@ exports.createService = function (deps) {
   }
 
   function translateHtmlMessage(html, cb, signal, archivedFragments = {}) {
+    const { splitHtmlText, escapeText } = require('./html-text');
+    const work = async () => {
     const src = String(html || "");
-    if (signal && signal.aborted) return cb("");
-    if (!src) return cb("");
+    if (signal && signal.aborted) return { value: '', dirty: true };
+    if (!src) return { value: '', dirty: false };
     const terms = currentTerms();
     const hash = deps.crypto.createHash("md5").update(src).digest("hex");
     const originalKey = "msg_" + hash;
     const key = terms.protect(src).count
-      ? "msg_terms_" + terms.revision + "_" + hash
-      : originalKey;
+      ? "msg_html2_terms_" + terms.revision + "_" + hash
+      : "msg_html2_" + hash;
     const cached = newsContent.message(originalKey) || translations.get(key);
-    if (cached && cached !== src) return cb(terms.normalize(cached));
-    if (!BAIDU_APPID || !BAIDU_SECRET) return cb("");
-    // tokenize: alternates text / tag
-    const tokens = src.match(/<[^>]+>|[^<]+/g) || [src];
+    if (cached && cached !== src) return { value: terms.normalize(cached), dirty: false };
+    if (!BAIDU_APPID || !BAIDU_SECRET) return { value: '', dirty: true };
+    const tokens = await splitHtmlText(src, signal);
     const runs = []; // Each text node retains its index and ordered fragments.
-    let hidden = false;
     tokens.forEach(function (tok, i) {
-      if (tok[0] === "<") {
-        if (/^<\s*(script|style)\b/i.test(tok)) hidden = true;
-        if (/^<\s*\/\s*(script|style)\b/i.test(tok)) hidden = false;
-        return;
-      }
-      if (!hidden && hasCjk(tok) && tok.trim()) {
-        const text = tok.trim().replace(/\s*\r?\n\s*/g, " ");
+      if (tok.text && hasCjk(tok.text) && tok.text.trim()) {
+        const text = tok.text.trim().replace(/\s*\r?\n\s*/g, " ");
         for (let start = 0; start < text.length;) {
           let end = Math.min(start + 600, text.length);
           if (end < text.length) {
@@ -404,19 +399,19 @@ exports.createService = function (deps) {
               900
           )
             end = start + Math.floor((end - start) / 2);
-          runs.push({ idx: i, text: text.slice(start, end) });
+          runs.push({ idx: i, text: text.slice(start, end),
+            archiveText: start === 0 && end === text.length ? tok.source.trim().replace(/\s*\r?\n\s*/g, ' ') : '' });
           start = end;
         }
       }
     });
     if (!runs.length) {
-      translations.set(key, src);
-      return cb(src);
+      return { value: src, dirty: false };
     }
     // Limits apply to the protected query, not to the shorter original Japanese.
     const translated = new Map();
     runs.forEach((run) => {
-      const cachedFragment = archivedFragments[run.text] || translations.get(
+      const cachedFragment = archivedFragments[run.text] || archivedFragments[run.archiveText] || translations.get(
         "fragment:" + (terms.protect(run.text).count
           ? "terms_" + terms.revision + ":" + run.text
           : run.text),
@@ -448,14 +443,13 @@ exports.createService = function (deps) {
       cur.push(r);
     });
     if (cur.length) chunks.push(cur);
-    let done = 0;
     let dirty = false;
-    chunks.forEach(function (chunk, ci) {
+    await Promise.all(chunks.map(chunk => new Promise(resolve => {
       translateBatchLines(
         chunk.map(function (r) {
           return r.text;
         }),
-        function (outs, chunkDirty) {
+        async function (outs, chunkDirty) {
           if (outs === null) {
             dirty = true;
             chunk.forEach(function (r) {
@@ -467,19 +461,19 @@ exports.createService = function (deps) {
             outs.forEach(function (zh, k) {
               translated.set(chunk[k], zh || chunk[k].text);
               if (zh && zh !== chunk[k].text)
-                fragments["fragment:" + translationKey(chunk[k].text)] = zh;
+                fragments["fragment:" + translationKeyWithTerms(chunk[k].text, terms)] = zh;
             });
-            if (Object.keys(fragments).length) translations.setMany(fragments);
+            if (Object.keys(fragments).length) {
+              try { await translations.setMany(fragments); }
+              catch (error) { console.error('[translation cache]', error.message); }
+            }
           }
-          done++;
-          if (done === chunks.length) finish();
+          resolve();
         },
         signal, 0, terms,
       );
-    });
-    if (!chunks.length) finish();
-    function finish() {
-      if (signal && signal.aborted) return cb("");
+    })));
+      if (signal && signal.aborted) return { value: '', dirty: true };
       const textNodes = new Map();
       runs.forEach((run) =>
         textNodes.set(
@@ -489,13 +483,25 @@ exports.createService = function (deps) {
       );
       const out = tokens
         .map(function (tok, i) {
-          if (textNodes.has(i)) return textNodes.get(i);
-          return tok;
+          if (textNodes.has(i)) {
+            const leading = tok.text.match(/^\s*/)[0];
+            const trailing = tok.text.match(/\s*$/)[0];
+            return escapeText(leading + textNodes.get(i) + trailing);
+          }
+          return tok.markup ?? tok.source;
         })
         .join("");
-      if (!dirty) translations.set(key, out);
-      cb(out, dirty);
-    }
+      if (!dirty) {
+        try { await translations.set(key, out); }
+        catch (error) { console.error('[translation cache]', error.message); }
+      }
+      return { value: out, dirty };
+    };
+    return work().then(({ value, dirty }) => { cb(value, dirty); return value; }, error => {
+      if (!signal?.aborted) console.error('[translation HTML]', error.message);
+      cb('', true);
+      return '';
+    });
   }
 
   function translateArticle(detail, signal, finish) {

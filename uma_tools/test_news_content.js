@@ -7,6 +7,7 @@ const { mergeNews, NewsContent } = require('./news-content');
 const { TranslationCache } = require('./translation-cache');
 const { createTerms, loadTerms } = require('./translation-terms');
 const { officialImage } = require('./news-images');
+async function main() {
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-news-test-'));
 try {
   const rows = mergeNews([
@@ -38,12 +39,27 @@ try {
   const cache = new TranslationCache(file);
   fs.writeFileSync(file, JSON.stringify({ first: 'changed outside', second: 'two' }));
   fs.utimesSync(file, new Date(), new Date(Date.now() + 1000));
-  cache.set('third', 'three');
+  await cache.set('third', 'three');
   assert.deepStrictEqual(JSON.parse(fs.readFileSync(file)), { first: 'changed outside', second: 'two', third: 'three' });
+  fs.writeFileSync(file + '.lock', 'other writer');
+  let heartbeat = false;
+  setTimeout(() => {
+    heartbeat = true;
+    const current = JSON.parse(fs.readFileSync(file));
+    fs.writeFileSync(file, JSON.stringify({ ...current, external: 'arrived while waiting' }));
+    fs.unlinkSync(file + '.lock');
+  }, 25);
+  await cache.set('waiting', 'saved');
+  assert(heartbeat, 'waiting for the cross-process lock leaves the event loop available');
+  assert.strictEqual(JSON.parse(fs.readFileSync(file)).external, 'arrived while waiting');
+  await Promise.all([cache.set('writerA', 'a'), new TranslationCache(file).set('writerB', 'b')]);
+  const concurrent = JSON.parse(fs.readFileSync(file));
+  assert.strictEqual(concurrent.writerA, 'a');
+  assert.strictEqual(concurrent.writerB, 'b', 'concurrent cache writers retain both accepted translations');
   if (process.platform !== 'win32') {
     const link = path.join(temporary, 'release-cache.json');
     fs.symlinkSync(file, link);
-    new TranslationCache(link).set('fourth', 'four');
+    await new TranslationCache(link).set('fourth', 'four');
     assert(fs.lstatSync(link).isSymbolicLink(), 'cache writes retain the shared release symlink');
     assert.strictEqual(JSON.parse(fs.readFileSync(file)).fourth, 'four');
   }
@@ -81,3 +97,5 @@ try {
   Date.now = now;
   console.log('news content, external cache edits and glossary regressions passed');
 } finally { fs.rmSync(temporary, { recursive: true, force: true }); }
+}
+main().catch(error => { console.error(error); process.exitCode = 1; });
