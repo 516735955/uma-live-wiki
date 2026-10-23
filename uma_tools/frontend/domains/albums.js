@@ -192,16 +192,12 @@ export function createAlbums(deps) {
     const isCurrent = deps.beginEntityNavigation();
     const name = a && a.name;
     if (!name && !(a && a.id)) return Promise.resolve();
-    return Promise.all([
-      deps.api.request(
+    deps.loadMusicPeople();
+    return deps.api.request(
         "/api/catalog/album" + deps.api.query({ id: a.id, name: name }),
-      ),
-      deps.loadVoiceData(),
-      deps.loadCharacterIndexData(),
-    ])
-      .then(function (rows) {
+      )
+      .then(function (data) {
         if (!isCurrent()) return;
-        const data = rows[0];
         if (!data || !data.album) {
           deps.notFound.value = true;
           deps.activeTab.value = "not-found";

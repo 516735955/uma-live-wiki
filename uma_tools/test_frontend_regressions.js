@@ -104,18 +104,28 @@ async function main() {
   let shownAlbum = false;
   const fastAlbum = context.createAlbums({...context.Vue,beginEntityNavigation:()=>()=>true,
     api:{query:()=>'',request:async()=>({album:{id:'fast',songs:[]}})},
-    loadVoiceData:async()=>{},loadCharacterIndexData:async()=>{},loadAnimeCatalogOptional:()=>optionalWait.promise,
+    loadMusicPeople:()=>optionalWait.promise,loadAnimeCatalogOptional:()=>optionalWait.promise,
     clearEntityDetails(){},activeTab:context.Vue.ref(''),dbView:context.Vue.ref(''),resetPageScroll(){},
     pushUrl(){shownAlbum=true;},mergeSong(){},notFound:context.Vue.ref(false),navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)});
   await fastAlbum.openAlbum({id:'fast'});
-  assert(shownAlbum && fastAlbum.albumDetail.value,'an optional stalled relation never blocks the album body');
+  assert(shownAlbum && fastAlbum.albumDetail.value,'stalled people and anime dependencies never block the album body');
   optionalWait.resolve(null);
   // The retry callback is written to the shared routing port.
   const errorPorts={...context.Vue,beginEntityNavigation:()=>()=>true,
-    api:{query:()=>'',request:async()=>{throw Error('HTTP 503');}},loadVoiceData:async()=>{},loadCharacterIndexData:async()=>{},
+    api:{query:()=>'',request:async()=>{throw Error('HTTP 503');}},loadMusicPeople:async()=>{},
     navigationError:context.Vue.ref(''),navigationRetry:context.Vue.ref(null)};
   await context.createAlbums(errorPorts).openAlbum({id:'retry'});
   assert.strictEqual(typeof errorPorts.navigationRetry.value,'function','a failed detail offers a real retry');
+  const horseDomain = context.createHorses({...context.Vue});
+  const horseSource = {races:[{date:'2015.09.21',track:'中山',race:'朝日杯セントライト記念',distance:'2200',winner:'Original',notes:'Keep'}],
+    major:[{date:'2015.09.21',track:'中山',race:'セントライト記念',distance:'2200m',grade:'G2',beaten:'Secondary',notes:'Other'}]};
+  horseDomain.horseDetail.value = horseSource;
+  assert.strictEqual(horseDomain.horseMajorTotal.value,1,'two sources describe one race');
+  assert.strictEqual(horseDomain.horseMajorRows.value[0].grade,'G2','same-race alias supplies the missing grade');
+  assert.strictEqual(horseDomain.horseMajorRows.value[0].top,'Original','the existing result is preserved');
+  assert.strictEqual(horseSource.races[0].grade,undefined,'display merging does not mutate source data');
+  horseDomain.horseDetail.value = {...horseSource,major:[{...horseSource.major[0],track:'東京'}]};
+  assert.strictEqual(horseDomain.horseMajorRows.value[0].grade,'','another track cannot supply a grade');
   const labelSource=context.createCreators({...context.Vue});
   assert.strictEqual(labelSource.creatorRoleLabel('lyricist',[{roles:[{role:'lyricist',label:'作词'}]}]),'作词','the collaborator panel uses labels from its loaded creator response');
   assert.strictEqual(labelSource.creatorWorkRoleLabels(['lyricist','composer']),'lyricist · composer','list indices are not passed as creator metadata');

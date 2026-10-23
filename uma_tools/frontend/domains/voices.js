@@ -8,6 +8,23 @@ export function createVoices(deps) {
 
   const voiceError = deps.ref("");
   let failedVoiceId = '';
+  const musicPeopleError = deps.ref("");
+  let musicPeopleRequest = null;
+
+  function loadMusicPeople() {
+    if (musicPeopleRequest) return musicPeopleRequest;
+    musicPeopleError.value = "";
+    musicPeopleRequest = Promise.allSettled([
+      loadVoiceData(),
+      deps.loadCharacterIndexData(),
+    ]).then(function (results) {
+      if (results.some(result => result.status === "rejected" || result.value === false))
+        musicPeopleError.value = "人物资料暂时无法载入。";
+    }).finally(function () {
+      musicPeopleRequest = null;
+    });
+    return musicPeopleRequest;
+  }
 
   const voiceDetail = deps.ref(null);
 
@@ -42,6 +59,7 @@ export function createVoices(deps) {
         );
         voiceProfiles.value = Array.from(rows.values());
         window.dispatchEvent(new CustomEvent("uma-voice-data"));
+        return true;
       })
       .finally(function () {
         voiceDataRequests.delete(key);
@@ -49,9 +67,11 @@ export function createVoices(deps) {
       });
     voiceDataRequests.set(key, promise);
     return promise.catch(function () {
-      if (sourcePath !== deps.currentUrlPath() || navigation !== deps.navigationRevision.value) return;
-      failedVoiceId = id || '';
-      voiceError.value = "声优资料暂时无法载入，请重试。";
+      if (sourcePath === deps.currentUrlPath() && navigation === deps.navigationRevision.value) {
+        failedVoiceId = id || '';
+        voiceError.value = "声优资料暂时无法载入，请重试。";
+      }
+      return false;
     });
   }
 
@@ -307,6 +327,8 @@ export function createVoices(deps) {
     start,
     findVaBySlug,
     loadVoiceData,
+    loadMusicPeople,
+    musicPeopleError,
     retryVoice,
     openVa,
     openVoice,

@@ -419,19 +419,11 @@ export function createSongs(deps) {
       deps.pushUrl(isCurrent.fromRoute);
       deps.loadAnimeCatalogOptional("song", found.id);
     };
-    return Promise.all([
-      deps.api.request(
-        "/api/catalog/song" +
-          deps.api.query({
-            id: requested,
-          }),
-      ),
-      deps.loadVoiceData(),
-      deps.loadCharacterIndexData(),
-    ])
-      .then(function (rows) {
-        return show(rows[0]);
-      })
+    deps.loadMusicPeople();
+    return deps.api.request(
+        "/api/catalog/song" + deps.api.query({ id: requested }),
+      )
+      .then(show)
       .catch(function (error) {
         if (isCurrent() && error.message === "HTTP 404") {
           deps.notFound.value = true;

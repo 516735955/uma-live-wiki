@@ -39,6 +39,8 @@ export function createViewModel(domains, routes) {
     statLive: domains.navigation.statLive,
     statGongyan: domains.navigation.statGongyan,
     loadAlbums: domains.albums.loadAlbums,
+    loadMusicPeople: domains.voices.loadMusicPeople,
+    musicPeopleError: domains.voices.musicPeopleError,
     coverStyle: domains.albums.coverStyle,
     coverThumb: domains.albums.coverThumb,
     onCatalogImageError: domains.albums.onCatalogImageError,

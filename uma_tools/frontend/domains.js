@@ -65,7 +65,7 @@ export function createDomains(env) {
       {
         navigation: ["activeTab", "dbView", "homeStats", "resetPageScroll"],
         environment: ["api", "computed", "reactive", "ref", "watch"],
-        characters: ["appearanceSongs", "charDetail", "loadCharacterIndexData"],
+        characters: ["appearanceSongs", "charDetail"],
         routing: [
           "beginEntityNavigation",
           "clearEntityDetails",
@@ -85,7 +85,7 @@ export function createDomains(env) {
           "playerVocalistsFromRelease",
         ],
         songs: ["findSong", "mergeSong", "songCatalog", "songsById"],
-        voices: ["findVaBySlug", "loadVoiceData", "voiceDetail", "voiceName"],
+        voices: ["findVaBySlug", "loadMusicPeople", "voiceDetail", "voiceName"],
         anime: ["loadAnimeCatalogOptional"],
       },
     ),
@@ -264,9 +264,8 @@ export function createDomains(env) {
           "characterPerformanceImage",
           "findCharByAvatar",
           "findCharByDisplayName",
-          "loadCharacterIndexData",
         ],
-        voices: ["findVaBySlug", "loadVoiceData", "voiceProfileForName"],
+        voices: ["findVaBySlug", "loadMusicPeople", "voiceProfileForName"],
         anime: ["loadAnimeCatalogOptional"],
       },
     ),

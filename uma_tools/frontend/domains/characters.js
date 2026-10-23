@@ -1,5 +1,6 @@
 /* characters state and behavior; external dependencies are explicit live ports. */
 export function createCharacters(deps) {
+  const characterIndex = deps.ref(window.CHAR_INDEX || []);
   const appearanceSongs = deps.reactive({});
 
   const appearanceIndex = deps.ref({ voice_actors: {}, characters: {} });
@@ -36,7 +37,9 @@ export function createCharacters(deps) {
   }
 
   function loadCharacterIndexData() {
-    return deps.loadDataScript("/data/character_index_data.js", "CHAR_INDEX");
+    return deps.loadDataScript("/data/character_index_data.js", "CHAR_INDEX").then(function () {
+      characterIndex.value = window.CHAR_INDEX || [];
+    });
   }
 
   function loadCharacterDetailData() {
@@ -200,8 +203,7 @@ export function createCharacters(deps) {
 
   function findCharById(id) {
     if (!id) return null;
-    var arr =
-      window.CHAR_INDEX && window.CHAR_INDEX.length ? window.CHAR_INDEX : [];
+    var arr = characterIndex.value;
     var norm = String(id).toLowerCase();
     for (var i = 0; i < arr.length; i++) {
       if (String(arr[i].id || "").toLowerCase() === norm) {
@@ -236,8 +238,7 @@ export function createCharacters(deps) {
   function findCharByDisplayName(name) {
     var target = deps.normName(name);
     if (!target) return null;
-    var arr =
-      window.CHAR_INDEX && window.CHAR_INDEX.length ? window.CHAR_INDEX : [];
+    var arr = characterIndex.value;
     for (var i = 0; i < arr.length; i++) {
       var candidate = arr[i];
       var names = [candidate.zh, candidate.ja, candidate.name, candidate.en];

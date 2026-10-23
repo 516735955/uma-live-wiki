@@ -183,6 +183,23 @@ async function main() {
     voiceFailed = false;
     await page.locator('.content-state-error').filter({hasText:'声优资料'}).getByRole('button',{name:'重试'}).click();
     await page.waitForFunction(() => window.__uma_app?.voiceDetail && !window.__uma_app.voiceError);
+    for (const [detailPath, dependency] of [
+      ['/music/songs/song-fb9000e3ae/credits', '**/data/character_index_data.js*'],
+      ['/music/albums/album-laca-15859', '**/api/catalog/voice-actors?scope=index'],
+    ]) {
+      let failed = true;
+      await page.route(dependency, route => failed ? route.abort() : route.continue());
+      await page.goto(base + '/zh-Hans' + detailPath, {waitUntil:'domcontentloaded'});
+      await page.locator('.entity-hero h1').waitFor();
+      const warning = page.locator('.content-state-error').filter({hasText:'人物资料'});
+      await warning.waitFor();
+      assert.strictEqual(await page.locator('.content-state-uncollected').filter({hasText:/尚未收录(歌曲|专辑)$/}).count(),0);
+      failed = false;
+      await warning.getByRole('button',{name:'重试'}).click();
+      await page.waitForFunction(() => window.CHAR_INDEX?.length > 0 && window.__uma_app.voiceProfiles.length > 0 && !window.__uma_app.musicPeopleError);
+      assert.strictEqual(await page.locator('.entity-hero h1').count(),1,'retry keeps the music detail visible');
+      await page.unroute(dependency);
+    }
     assert.deepStrictEqual(errors,[]);
     console.log('news pending stages, stable switch, totals, modifier clicks, staff URL, voice aliases/node reuse and feedback recovery passed');
   } finally {await browser.close();}

@@ -1,4 +1,5 @@
 export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
+bindings.push("musicPeopleError", "loadMusicPeople");
 export const template = `
             <content-state v-if="albumsError" state="error" subject="专辑资料" :retry="true" @retry="loadAlbums()"></content-state>
             <template v-if="!albumDetail">
@@ -33,6 +34,7 @@ export const template = `
                     <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div><div v-if="albumDetail.data.company"><dt>发行公司</dt><dd>{{ albumDetail.data.company }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
                 </div>
                 <div class="media-content">
+                    <content-state v-if="musicPeopleError" state="error" subject="人物资料" :retry="true" @retry="loadMusicPeople"></content-state>
                     <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>

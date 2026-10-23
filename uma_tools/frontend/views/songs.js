@@ -1,4 +1,5 @@
 export const bindings = ["coverThumb","onCatalogImageError","isActive","songCatalog","songCatalogError","songCatalogLoading","loadSongCatalog","songDetail","songSection","setSongSection","songDbQuery","songDbCurrentPage","songDbPage","songDbPageCount","songTotal","songDbPageStart","songDbPageEnd","songDbPageList","setSongDbPage","goSongDbPage","songDetailReleaseVersions","songDetailPerformances","songCreditVersions","creditRoleGroups","songSingerLabel","playableSongRelease","playCatalogSong","playSongPrimary","addSongPrimary","playSongRelease","addSongTrack","openSong","openAlbumFromSong","openEventUrl","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","releaseSingerLabel","songLyricVersions","songLyricsApplicable","songLyricVersionOptions","selectedSongLyricVersion","selectedSongLyricLines","songLyricVersionId","songLyricTranslation","setSongLyricVersion","expandedSongReleaseId","expandedSongCreditId","songLinkVersion","songLinkRelease","toggleSongRelease","toggleSongCredit","openCreator","openCharacter","openVoice","animeError","songAnimeRelations","retryAnime","songAnimeWorks","internalLink","routes"];
+bindings.push("musicPeopleError", "loadMusicPeople");
 export const template = `
             <content-state v-if="songCatalogError" state="error" subject="歌曲资料" :retry="true" @retry="loadSongCatalog()"></content-state>
             <template v-if="!songDetail">
@@ -32,6 +33,7 @@ export const template = `
                     </div>
                 </div>
                 <div class="media-content">
+                    <content-state v-if="musicPeopleError" state="error" subject="人物资料" :retry="true" @retry="loadMusicPeople"></content-state>
                     <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
