@@ -74,6 +74,12 @@ async function main() {
   assert(girlsLegend.song.versions.some((version) => version.lyrics && version.lyrics.lines.length > 0), 'canonical lyric documents were not hydrated');
   const girlsLegendLegacy = await store.song('song-girls-legend-u-68f74d7b92');
   assert.strictEqual(girlsLegendLegacy.song.id, girlsLegend.song.id, 'merged song legacy IDs must keep resolving');
+  for (const method of ['songs', 'albums', 'creators']) {
+    const straight = await store[method](new URLSearchParams({q:"Girls' Legend",page_size:5000}));
+    const curved = await store[method](new URLSearchParams({q:'Girls’ Legend',page_size:5000}));
+    assert(straight.total > 0, method + ' contains the known title');
+    assert.deepStrictEqual(curved.items.map(row => row.id), straight.items.map(row => row.id), method + ' search accepts equivalent apostrophes');
+  }
 
   const creatorList = await store.creators(new URLSearchParams('page_size=5000'));
   const personPage = await store.creators(new URLSearchParams('type=person&page=2&page_size=40'));

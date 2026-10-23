@@ -29,6 +29,10 @@ function normalize(value) {
   return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
 }
 
+function musicSearchText(value) {
+  return normalize(value).replace(/[‘’]/g, "'").replace(/[‐‑‒–—−－]/g, '-').replace(/・/g, '·');
+}
+
 function songIdentityKey(value) {
   return normalize(value)
     .replace(/[\ufe0e\ufe0f]/g, '')
@@ -232,7 +236,7 @@ function songSearchText(song, music) {
     const lyric = lyricDocument(music, version.lyrics_ref) || {};
     return [...(lyric.lines || []), ...(lyric.translation_lines || [])];
   });
-  return normalize([
+  return musicSearchText([
     song.title,
     ...(song.aliases || []),
     ...(song.artists || []),
@@ -249,7 +253,7 @@ function songSummarySearchText(song, music) {
     release.artist
   ].filter(Boolean).join(' ')));
   const creators = (song.versions || []).flatMap((version) => (version.credits || []).map((credit) => musicCreatorName(music, credit.creator_id) || credit.name));
-  return normalize([
+  return musicSearchText([
     song.title,
     ...(song.aliases || []),
     ...(song.artists || []),
@@ -282,7 +286,7 @@ function songSummary(song, searchText, music) {
 }
 
 function creatorSearchText(creator) {
-  return normalize([
+  return musicSearchText([
     creator.name,
     ...(creator.aliases || []),
     ...(creator.affiliations || []),
@@ -342,7 +346,7 @@ function albumSummary(album) {
     type: album.type,
     neteaseAlbumId: album.neteaseAlbumId,
     work: albumWork(album.name),
-    search_text: normalize([album.name, album.catalog, ...tracks].join(' '))
+    search_text: musicSearchText([album.name, album.catalog, ...tracks].join(' '))
   };
 }
 
@@ -645,7 +649,7 @@ class CatalogStore {
 
   async songs(params) {
     const store = await this.get();
-    const query = normalize(params.get('q'));
+    const query = musicSearchText(params.get('q'));
     let rows = query ? store.songRows.filter((row) => row.search.includes(query)) : store.songRows.slice();
     rows.sort((a, b) => String(a.data.title).localeCompare(String(b.data.title), 'ja'));
     const total = rows.length;
@@ -671,7 +675,7 @@ class CatalogStore {
 
   async creators(params) {
     const store = await this.get();
-    const query = normalize(params.get('q'));
+    const query = musicSearchText(params.get('q'));
     const role = params.get('role') || '';
     let rows = store.creatorRows.filter((row) => {
       if (params.get('type') === 'person' && row.data.type === 'organization') return false;
@@ -709,7 +713,7 @@ class CatalogStore {
     params = new URL('http://catalog.invalid' + routes.resolve('/zh-Hans/music/albums?' + params, {
       albumYears: [...new Set(store.albums.map(row => releaseYear(row.release)))],
     })).searchParams;
-    const query = normalize(params.get('q'));
+    const query = musicSearchText(params.get('q'));
     const work = params.get('work') || '';
     const type = params.get('type') ? albumType(params.get('type')) : '';
     const year = params.get('year') || '';
