@@ -318,7 +318,15 @@ export function createHorses(deps) {
   const horseMajorExpanded = deps.ref(false);
 
   function horseRaceRows(detail) {
-    const rows = (detail.races || []).slice();
+    const rows = (detail.races || []).map(row => ({ ...row }));
+    const raceName = value => {
+      const name = String(value || "").normalize("NFKC").toLowerCase().replace(/\s+/g, "");
+      return ({
+        "朝日杯セントライト記念": "セントライト記念",
+        "サウジアラビアロイヤルc": "サウジアラビアrc",
+        "東京大賞典(中央交流)": "東京大賞典",
+      })[name] || name;
+    };
     const dates = new Set(
       rows
         .map((row) => row.date)
@@ -327,8 +335,24 @@ export function createHorses(deps) {
     const keys = new Set(rows.map((row) => row.date + ":" + row.race));
     (detail.major || []).forEach((row) => {
       const key = row.date + ":" + row.race;
+      const matches = rows.filter(candidate =>
+        /^\d{4}\.\d{2}\.\d{2}$/.test(row.date) && candidate.date === row.date &&
+        raceName(candidate.race) === raceName(row.race) &&
+        ["track", "surface", "distance"].every(field => {
+          const unit = value => String(value || "").normalize("NFKC").replace(/m$/, "").trim();
+          return !candidate[field] || !row[field] || unit(candidate[field]) === unit(row[field]);
+        }));
+      if (matches.length === 1) {
+        const target = matches[0];
+        Object.entries(row).forEach(([field, value]) => {
+          // The two sources name the same result column differently.
+          if ((field === "beaten" && target.winner) || (field === "winner" && target.beaten)) return;
+          if (target[field] == null || target[field] === "") target[field] = value;
+        });
+        return;
+      }
       if (dates.has(row.date) || keys.has(key)) return;
-      rows.push(row);
+      rows.push({ ...row });
       keys.add(key);
     });
     return rows;
