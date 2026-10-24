@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T17:07:02+00:00",
+  "generated_at": "2026-10-24T21:31:02+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -2176,10 +2176,9 @@
           "doors_time": "16:30",
           "start_time": "17:30",
           "end_time": "18:30",
-          "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 37 発売記念イベント    開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
+          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 37 発売記念イベント    開場 16:30 開演 17:30 終演 18:30 開場 16:30 開演 17:30 終演 18:30",
           "time_source_url": "https://www.eventernote.com/events/497787"
         }
       ],
@@ -2194,7 +2193,7 @@
       "legacy_url": "",
       "image": "https://eventernote.s3.amazonaws.com/images/events/497787_s.jpg",
       "summary": "",
-      "source_time_text": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
+      "source_time_text": "開場 16:30 開演 17:30 終演 18:30",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
@@ -2682,9 +2681,10 @@
           "doors_time": "16:30",
           "start_time": "17:00",
           "end_time": "19:00",
+          "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 開場 16:30 開演 17:00 終演 19:00",
+          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
           "time_source_url": "https://www.eventernote.com/events/494412"
         }
       ],
@@ -2699,7 +2699,7 @@
       "legacy_url": "",
       "image": "https://eventernote.s3.amazonaws.com/images/events/494412_s.jpg",
       "summary": "",
-      "source_time_text": "開場 16:30 開演 17:00 終演 19:00",
+      "source_time_text": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
@@ -3445,9 +3445,10 @@
           "doors_time": "15:00",
           "start_time": "16:00",
           "end_time": "17:00",
+          "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント    開場 15:00 開演 16:00 終演 17:00 開場 15:00 開演 16:00 終演 17:00",
+          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント    開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります 開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
           "time_source_url": "https://www.eventernote.com/events/490155"
         }
       ],
@@ -3462,7 +3463,7 @@
       "legacy_url": "",
       "image": "https://eventernote.s3.amazonaws.com/images/events/490155_s.jpg",
       "summary": "",
-      "source_time_text": "開場 15:00 開演 16:00 終演 17:00",
+      "source_time_text": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
@@ -18376,7 +18377,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
+      "image": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
       "summary": "目白善信与跳舞城赢得空气曲棍球双打比赛冠军，一起举杯庆祝。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -172649,5 +172650,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "24868a6c37c6f78d9272"
+  "build_id": "04de00d82d339520d8e0"
 }
