@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T05:42:05+00:00",
+  "generated_at": "2026-10-24T05:42:45+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -145404,7 +145404,7 @@
     },
     {
       "id": "eventernote-2018-07-01",
-      "title": "『STARTING GATE! －ウマ娘プリティーダービー―』③巻発売記念お渡し会",
+      "title": "漫画《STARTING GATE！赛马娘 Pretty Derby》第3卷发售纪念手递活动",
       "date": "2018-07-01",
       "end_date": "2018-07-01",
       "kind": "onsite",
@@ -145474,15 +145474,16 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
-      "summary": "開場 14:30 開演 15:00 終演 17:00",
+      "summary": "14:30开场，15:00开演，17:00结束。",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "『STARTING GATE! －ウマ娘プリティーダービー―』③巻発売記念お渡し会",
       "summary_ja": "開場 14:30 開演 15:00 終演 17:00",
-      "summary_zh": "開場 14:30 開演 15:00 終演 17:00",
-      "localization_state": "pending"
+      "title_zh": "漫画《STARTING GATE！赛马娘 Pretty Derby》第3卷发售纪念手递活动",
+      "summary_zh": "14:30开场，15:00开演，17:00结束。",
+      "localization_state": "complete"
     },
     {
       "id": "official-special-abema-stakes-04",
@@ -150175,7 +150176,7 @@
     },
     {
       "id": "eventernote-2017-09-02",
-      "title": "サイコミ創刊&「STARTING GATE！－ウマ娘プリティーダービー－」1巻発売記念 トークショー&お渡し会",
+      "title": "Cycomi创刊暨漫画《STARTING GATE！赛马娘 Pretty Derby》第1卷发售纪念谈话与手递活动",
       "date": "2017-09-02",
       "end_date": "2017-09-02",
       "kind": "onsite",
@@ -150229,15 +150230,16 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/starting-gate.svg",
-      "summary": "開場 - 開演 16:00 終演 17:00",
+      "summary": "16:00开演，17:00结束；开场时间未公布。",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "サイコミ創刊&「STARTING GATE！－ウマ娘プリティーダービー－」1巻発売記念 トークショー&お渡し会",
       "summary_ja": "開場 - 開演 16:00 終演 17:00",
-      "summary_zh": "開場 - 開演 16:00 終演 17:00",
-      "localization_state": "pending"
+      "title_zh": "Cycomi创刊暨漫画《STARTING GATE！赛马娘 Pretty Derby》第1卷发售纪念谈话与手递活动",
+      "summary_zh": "16:00开演，17:00结束；开场时间未公布。",
+      "localization_state": "complete"
     },
     {
       "id": "live-numbered-1st-event-2017-07-01",
@@ -158001,5 +158003,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "f20b7a86f367588223d4"
+  "build_id": "686b6aed7b3c891bdf59"
 }
