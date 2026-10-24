@@ -55,6 +55,36 @@ async function main() {
     await new Promise(resolve => shared.translateTitle('架空名新闻', resolve, new AbortController().signal));
     assert.strictEqual(calls, 0, 'entity copy reuses an already translated news text fragment');
 
+    let successfulCalls = 0;
+    const diskRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-translation-restart-'));
+    try {
+      const actualCache = require('./translation-cache').TranslationCache;
+      const makePersistentService = () => createService({
+        fs, path, crypto, ROOT: diskRoot, DATA_DIR: dataDir,
+        TranslationCache: actualCache, NewsContent, createTerms, loadTerms: () => [{ ja: '架空名', zh: '名称' }],
+        https: { request(url, options, callback) {
+          successfulCalls++;
+          const request = new EventEmitter();
+          request.setTimeout = () => request;
+          request.destroy = error => request.emit('error', error);
+          request.end = () => setImmediate(() => {
+            const response = new EventEmitter();
+            callback(response);
+            response.emit('data', JSON.stringify({ trans_result: [{ src: '新しい説明', dst: '新增说明' }] }));
+            response.emit('end');
+          });
+          return request;
+        } }
+      });
+      const first = makePersistentService();
+      const get = service => new Promise(resolve => service.translateTitle('新しい説明', resolve, new AbortController().signal));
+      assert.strictEqual(await get(first), '新增说明');
+      assert.strictEqual(await get(first), '新增说明');
+      assert.strictEqual(await get(makePersistentService()), '新增说明');
+      assert.strictEqual(successfulCalls, 1, 'a successful provider result survives service recreation and repeated collection');
+      assert(fs.existsSync(path.join(diskRoot, 'data/auto_update/trans_cache.json')), 'translation is stored on disk before returning');
+    } finally { fs.rmSync(diskRoot, { recursive: true, force: true }); }
+
     let quotaCalls = 0;
     const quotaService = serviceFor(dataDir, {}, () => { quotaCalls++; });
     const translate = () => new Promise(resolve => quotaService.translateTitle('新しいタイトル', resolve, new AbortController().signal));
