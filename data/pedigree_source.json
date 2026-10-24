@@ -13,6 +13,10 @@
     "wikipedia": {
       "name": "Wikipedia cited racehorse infobox",
       "url": "https://ja.wikipedia.org/"
+    },
+    "tomisato_history": {
+      "name": "房総の馬たち vol.2 — 吾妻号と下総御料牧場",
+      "url": "https://ryoso-b.jp/wp-content/themes/chiba-thoroughbred/pdf/umanoayumi_vol2.pdf"
     }
   },
   "character_mappings": {
@@ -773,6 +777,15 @@
       "horse": null,
       "kind": "non_uma",
       "auto_source": true
+    },
+    "winmarilyn": {
+      "horse": "winmarilyn",
+      "kind": "horse",
+      "auto_source": true
+    },
+    "azuma": {
+      "horse": "azuma",
+      "kind": "horse"
     }
   },
   "nodes": [
@@ -33414,6 +33427,158 @@
       "en": "Hosoe Junko",
       "auto_source": true,
       "metadata_source_url": "https://umamusume.jp/character/hosoejunko/"
+    },
+    {
+      "id": "winmarilyn",
+      "zh": "玛莲必胜",
+      "auto_source": true,
+      "ja": "ウインマリリン",
+      "born": 2017,
+      "sex": "female",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0001232347/",
+      "profile_url": "https://db.netkeiba.com/horse/2017101431/",
+      "parents": {
+        "sire": "horse-auto-スクリーンヒーロー",
+        "dam": "horse-auto-コスモチェーロ",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0001232347/"
+      },
+      "en": "Win Marilyn",
+      "country": "日本"
+    },
+    {
+      "id": "horse-auto-スクリーンヒーロー",
+      "zh": "スクリーンヒーロー",
+      "auto_source": true,
+      "ja": "スクリーンヒーロー",
+      "born": 2004,
+      "sex": "male",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000801447/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000801447/",
+      "parents": {
+        "sire": "grasswonder",
+        "dam": "horse-auto-ランニングヒロイン",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000801447/"
+      }
+    },
+    {
+      "id": "horse-auto-ランニングヒロイン",
+      "zh": "ランニングヒロイン",
+      "auto_source": true,
+      "ja": "ランニングヒロイン",
+      "born": 1993,
+      "sex": "female",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000274839/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000274839/",
+      "parents": {
+        "sire": "sunday_silence",
+        "dam": "dyna_actress",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000274839/"
+      }
+    },
+    {
+      "id": "horse-auto-コスモチェーロ",
+      "zh": "コスモチェーロ",
+      "auto_source": true,
+      "ja": "コスモチェーロ",
+      "born": 2003,
+      "sex": "female",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000901762/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000901762/",
+      "parents": {
+        "sire": "horse-auto-Fusaichi Pegasus",
+        "dam": "horse-auto-Shorwon",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000901762/"
+      }
+    },
+    {
+      "id": "horse-auto-Fusaichi Pegasus",
+      "zh": "Fusaichi Pegasus",
+      "auto_source": true,
+      "ja": "Fusaichi Pegasus",
+      "born": 1997,
+      "sex": "male",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000621167/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000621167/",
+      "parents": {
+        "sire": "mr_prospector",
+        "dam": "horse-auto-Angel Fever",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000621167/"
+      }
+    },
+    {
+      "id": "horse-auto-Angel Fever",
+      "zh": "Angel Fever",
+      "auto_source": true,
+      "ja": "Angel Fever",
+      "born": 1990,
+      "sex": "female",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000621732/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000621732/"
+    },
+    {
+      "id": "horse-auto-Shorwon",
+      "zh": "Shorwon",
+      "auto_source": true,
+      "ja": "Shorwon",
+      "born": 1983,
+      "sex": "female",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000442960/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000442960/",
+      "parents": {
+        "sire": "horse-auto-Buena Shore",
+        "dam": "horse-auto-April Wonder",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000442960/"
+      }
+    },
+    {
+      "id": "horse-auto-Buena Shore",
+      "zh": "Buena Shore",
+      "auto_source": true,
+      "ja": "Buena Shore",
+      "born": 1973,
+      "sex": "male",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000344752/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000344752/"
+    },
+    {
+      "id": "horse-auto-April Wonder",
+      "zh": "April Wonder",
+      "auto_source": true,
+      "ja": "April Wonder",
+      "born": 1959,
+      "sex": "female",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000442961/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000442961/"
+    },
+    {
+      "id": "azuma",
+      "zh": "吾妻",
+      "ja": "吾妻",
+      "en": "Azuma",
+      "sex": "female",
+      "born": 1870,
+      "country": "日本",
+      "metadata_source_url": "https://db.netkeiba.com/horse/000a01c145/",
+      "profile_url": "https://db.netkeiba.com/horse/000a01c145/",
+      "parents": {
+        "sire": null,
+        "dam": "takasago_azuma_dam",
+        "source": "tomisato_history"
+      }
+    },
+    {
+      "id": "takasago_azuma_dam",
+      "zh": "高砂",
+      "ja": "高砂",
+      "en": "Takasago",
+      "sex": "female",
+      "metadata_source_url": "https://ryoso-b.jp/wp-content/themes/chiba-thoroughbred/pdf/umanoayumi_vol2.pdf"
     }
   ],
   "horse_pages": [
@@ -33421,6 +33586,7 @@
     "fujino_northern",
     "legend_teio",
     "rugger_black",
-    "ニッポーテイオー"
+    "ニッポーテイオー",
+    "winmarilyn"
   ]
 }

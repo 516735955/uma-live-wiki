@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T07:17:17+00:00",
+  "generated_at": "2026-10-24T12:42:05+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -10298,6 +10298,61 @@
       }
     },
     {
+      "id": "va-auto-254329e26cfb",
+      "slug": "va-auto-254329e26cfb",
+      "identity": {
+        "zh": "三石琴乃",
+        "ja": "三石琴乃",
+        "kana": "みついし ことの",
+        "aliases": [
+          "三石琴乃"
+        ]
+      },
+      "profile": {
+        "birthday": "12月8日",
+        "birthplace": "",
+        "agency": "自由职业",
+        "official_profile": "https://kotochawan.com/main/profile.php",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "not_published",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "官方个人资料页",
+            "url": "https://kotochawan.com/main/profile.php"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "/uma_va/mitsuishi_kotono.png",
+        "source_url": "https://kotochawan.com/main/profile.php",
+        "source_title": "官方个人资料页"
+      },
+      "roles": [
+        {
+          "character_id": "azuma",
+          "name": "吾妻",
+          "name_ja": "吾妻",
+          "former": false,
+          "image": "/uma_official/azuma.png",
+          "color_main": "#de3b34",
+          "color_sub": "#ddccb3"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
+      }
+    },
+    {
       "id": "va-auto-31471c207961",
       "slug": "va-auto-31471c207961",
       "identity": {
@@ -10567,6 +10622,62 @@
         "concerts": 0,
         "programs": 0,
         "songs": 1
+      }
+    },
+    {
+      "id": "va-auto-7580e073385d",
+      "slug": "va-auto-7580e073385d",
+      "identity": {
+        "zh": "广濑千夏",
+        "ja": "廣瀬千夏",
+        "kana": "ひろせ ちなつ",
+        "aliases": [
+          "广濑千夏",
+          "廣瀬千夏"
+        ]
+      },
+      "profile": {
+        "birthday": "8月25日",
+        "birthplace": "埼玉县",
+        "agency": "アトミックモンキー",
+        "official_profile": "https://www.atomicmonkey.jp/talent/hirosechinatsu",
+        "social": [],
+        "field_status": {
+          "birthday": "verified",
+          "birthplace": "verified",
+          "agency": "verified",
+          "official_profile": "verified"
+        },
+        "sources": [
+          {
+            "kind": "official_profile",
+            "label": "官方个人资料页",
+            "url": "https://www.atomicmonkey.jp/talent/hirosechinatsu"
+          }
+        ],
+        "status": "complete"
+      },
+      "photo": {
+        "url": "/uma_va/hirose_chinatsu.png",
+        "source_url": "https://www.atomicmonkey.jp/talent/hirosechinatsu",
+        "source_title": "官方个人资料页"
+      },
+      "roles": [
+        {
+          "character_id": "winmarilyn",
+          "name": "玛莲必胜",
+          "name_ja": "ウインマリリン",
+          "former": false,
+          "image": "/uma_official/winmarilyn.png",
+          "color_main": "#b9214a",
+          "color_sub": "#283640"
+        }
+      ],
+      "stats": {
+        "events": 0,
+        "concerts": 0,
+        "programs": 0,
+        "songs": 0
       }
     },
     {
@@ -10849,5 +10960,5 @@
       }
     }
   ],
-  "build_id": "6ab18552c46714f9dd9b"
+  "build_id": "b62679e655c25b869149"
 }

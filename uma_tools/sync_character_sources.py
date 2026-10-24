@@ -50,6 +50,8 @@ def parse_character(markup, cid):
         value = label.find_next_sibling('dd')
         if key and value:
             record[key] = value.get_text(' ', strip=True)
+            if key == 'height':
+                record[key] = re.sub(r'\s*cm$', '', record[key], flags=re.I)
     urls = list(dict.fromkeys(html.unescape(url) for url in re.findall(r'https://images\.microcms-assets\.io[^"\s<>]+', markup)))
     art = next((url for url in urls if urllib.parse.urlparse(url).path.rsplit('/', 1)[-1].startswith(cid + '_01.')), '')
     avatar = next((url for url in urls if urllib.parse.urlparse(url).path.rsplit('/', 1)[-1].startswith(cid + '_icon.')), '')

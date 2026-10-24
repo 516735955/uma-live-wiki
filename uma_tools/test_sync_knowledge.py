@@ -80,10 +80,11 @@ class KnowledgeTests(unittest.TestCase):
             self.assertEqual(path.read_text(), original)
 
     def test_official_character_does_not_require_paid_translation_or_moegirl(self):
-        markup = '<div class="character-detail__text"><div class="name">新キャラ</div><div class="en">New Horse</div><div class="cv"><p>CV：新声優</p></div><dl class="profile"><dt>誕生日</dt><dd>4月13日</dd></dl><div class="detail-text">公式紹介&lt;script&gt;</div></div>'
+        markup = '<div class="character-detail__text"><div class="name">新キャラ</div><div class="en">New Horse</div><div class="cv"><p>CV：新声優</p></div><dl class="profile"><dt>誕生日</dt><dd>4月13日</dd><dt>身長</dt><dd>158cm</dd></dl><div class="detail-text">公式紹介&lt;script&gt;</div></div>'
         row, detail, _, _ = characters.parse_character(markup, 'newhorse')
         self.assertEqual(row['cv'], '新声優')
         self.assertEqual(row['birth'], '4月13日')
+        self.assertEqual(row['height'], '158')
         self.assertEqual(detail['language'], 'ja')
         self.assertIn('uma-description', detail['html'])
         self.assertNotIn('<script>', detail['html'])

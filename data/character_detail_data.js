@@ -1442,5 +1442,7 @@ window.CHAR_DETAIL = {
     "source_url": "https://umamusume.jp/character/hosoejunko/",
     "language": "zh",
     "html_ja": "<div class=\"uma-description\"><p>ウマ娘やレースに造詣が深く、大きなレースではよく解説者として顔を出す。</p></div>"
-  }
+  },
+  "azuma": {"zh": "吾妻", "ja": "吾妻", "en": "Azuma", "cv_zh": "三石琴乃", "html": "<div class=\"uma-description\"><p>主持每十二年举行一次的“午式骏大祭”的巫女。<br>她熟知过往的历史，尤其是赛马娘与人类的历史，甚至据说知晓无人知晓的往事。<br>大家怀着敬畏与爱戴，尊称她为“吾妻大人”。<br>她究竟担任巫女多久，至今无人知晓。<br>她的心愿，是让赛马娘与人类之间的羁绊永远延续。</p></div>", "source_url": "https://umamusume.jp/character/azuma/", "language": "zh-Hans", "html_ja": "<div class=\"uma-description\"><p>十二年に一度行われる、午式駿大祭を司る巫女。<br>過去の歴史に詳しく、とりわけウマ娘と人の歴史に関しては誰も知らぬことすら知ると囁かれている。<br>皆は畏敬を込め、彼女を“吾妻様”と呼び慕う。<br>どれほど長く巫女を務めているかは定かではない。<br>彼女の願いは、ウマ娘と人の絆が永久に続くこと。</p></div>"},
+  "winmarilyn": {"zh": "玛莲必胜", "ja": "ウインマリリン", "en": "Win Marilyn", "cv_zh": "广濑千夏", "html": "<div class=\"uma-description\"><p>父亲是一位名演员，自己也从童星时期便活跃于电视剧和电影，是一名现役演员赛马娘。<br>或许因为自幼便熟悉演艺圈，她的沟通能力和自我展现能力都十分出色。<br>她始终举止端庄、华丽，是一颗冉冉升起的“银幕之星”。<br>她最拿手的角色，是在赛场上惩恶扬善的不良少女首领。</p></div>", "source_url": "https://umamusume.jp/character/winmarilyn/", "language": "zh-Hans", "html_ja": "<div class=\"uma-description\"><p>名優の父を持ち、子役の頃からドラマや映画で活躍してきた現役俳優ウマ娘。<br>幼い頃から芸能界に慣れ親しんできたためか、コミュニケーション能力と自己プロデュース能力は非常に高い。<br>常に淑やかかつ華麗に振る舞う、『銀幕のスタア』の卵。<br>当たり役はレースで敵を成敗していくスケバンの役。</p></div>"}
 };

@@ -1,25 +1,25 @@
 {
   "schema_version": 2,
-  "source": "Japanese Wikipedia voice-actor infoboxes, with portraits resolved from cited official agency profiles when the local photo index has no entry",
-  "refreshed_at": "2026-10-14T11:12:26+00:00",
+  "source": "Cited Japanese Wikipedia and official personal or agency profiles",
+  "refreshed_at": "2026-10-24T12:41:42+00:00",
   "refresh_policy": "add new records; upgrade source-unavailable placeholders; preserve every accepted sourced record",
   "coverage": {
-    "records": 195,
-    "source_pages": 195,
+    "records": 197,
+    "source_pages": 197,
     "complete_fields": {
-      "birthday": 194,
-      "birthplace": 194,
-      "agency": 190,
-      "official_profile": 167
-    },
-    "official_profile_photos": 5,
-    "accounted_fields": {
-      "birthday": 195,
+      "birthday": 196,
       "birthplace": 195,
-      "agency": 195,
-      "official_profile": 195
+      "agency": 192,
+      "official_profile": 169
     },
-    "added_in_refresh": 0,
+    "official_profile_photos": 7,
+    "accounted_fields": {
+      "birthday": 197,
+      "birthplace": 197,
+      "agency": 197,
+      "official_profile": 197
+    },
+    "added_in_refresh": 2,
     "upgraded_in_refresh": 0,
     "repaired_profile_photos": 0
   },
@@ -4932,6 +4932,62 @@
           "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E9%A0%AD%E6%98%8E%E9%87%8C"
         }
       ]
+    },
+    {
+      "lookup_name": "三石琴乃",
+      "name_zh": "三石琴乃",
+      "name_ja": "三石琴乃",
+      "kana": "みついし ことの",
+      "aliases": [],
+      "birthday": "12月8日",
+      "birthplace": "",
+      "agency": "自由职业",
+      "official_profile": "https://kotochawan.com/main/profile.php",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "not_published",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "官方个人资料页",
+          "url": "https://kotochawan.com/main/profile.php"
+        }
+      ],
+      "photo_url": "/uma_va/mitsuishi_kotono.png",
+      "photo_source_url": "https://kotochawan.com/main/profile.php",
+      "photo_source_title": "官方个人资料页"
+    },
+    {
+      "lookup_name": "廣瀬千夏",
+      "name_zh": "广濑千夏",
+      "name_ja": "廣瀬千夏",
+      "kana": "ひろせ ちなつ",
+      "aliases": [],
+      "birthday": "8月25日",
+      "birthplace": "埼玉县",
+      "agency": "アトミックモンキー",
+      "official_profile": "https://www.atomicmonkey.jp/talent/hirosechinatsu",
+      "field_status": {
+        "birthday": "verified",
+        "birthplace": "verified",
+        "agency": "verified",
+        "official_profile": "verified"
+      },
+      "status": "complete",
+      "sources": [
+        {
+          "kind": "official_profile",
+          "label": "官方个人资料页",
+          "url": "https://www.atomicmonkey.jp/talent/hirosechinatsu"
+        }
+      ],
+      "photo_url": "/uma_va/hirose_chinatsu.png",
+      "photo_source_url": "https://www.atomicmonkey.jp/talent/hirosechinatsu",
+      "photo_source_title": "官方个人资料页"
     }
   ]
 }
