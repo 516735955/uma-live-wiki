@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T05:42:45+00:00",
+  "generated_at": "2026-10-24T05:45:57+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -254,15 +254,15 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/winning-live.svg",
-      "summary": "開場 16:30 開演 17:30 終演 18:30",
+      "summary": "开场 16:30 开演 17:30 结束 18:30；结束时间仅供参考。",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント",
-      "summary_ja": "開場 16:30 開演 17:30 終演 18:30",
+      "summary_ja": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
       "title_zh": "『赛马娘 Pretty Derby』WINNING LIVE 36发售纪念活动",
-      "summary_zh": "開場 16:30 開演 17:30 終演 18:30",
+      "summary_zh": "开场 16:30 开演 17:30 结束 18:30；结束时间仅供参考。",
       "localization_state": "complete"
     },
     {
@@ -663,16 +663,15 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/winning-live.svg",
-      "summary": "開場 15:00 開演 16:00 終演 17:00",
+      "summary": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-      "summary_ja": "開場 15:00 開演 16:00 終演 17:00",
+      "summary_ja": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
       "title_zh": "『赛马娘 Pretty Derby』WINNING LIVE 35发售纪念活动",
-      "summary_zh": "開場 15:00 開演 16:00 終演 17:00",
-      "localization_state": "complete"
+      "localization_state": "pending"
     },
     {
       "id": "paka-live-tv-prime-008",
@@ -158003,5 +158002,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "686b6aed7b3c891bdf59"
+  "build_id": "8d2af0cc9197936c6c47"
 }
