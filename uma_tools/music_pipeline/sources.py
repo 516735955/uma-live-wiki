@@ -16,7 +16,7 @@ def fetch_track(track: str, tries: int = 3) -> tuple[str, dict[str, pipeline_com
             if not isinstance(payload, dict) or payload.get('code', 200) != 200:
                 raise ValueError('NetEase business response: ' + str(payload.get('code') if isinstance(payload, dict) else 'invalid payload'))
             return track, payload, ""
-        except (pipeline_common.urllib.error.URLError, TimeoutError, ValueError) as error:
+        except (OSError, pipeline_common.urllib.error.URLError, ValueError) as error:
             last_error = str(error)
             if attempt + 1 < tries:
                 pipeline_common.time.sleep(0.4 * (attempt + 1))

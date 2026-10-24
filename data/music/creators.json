@@ -1,114 +1,6 @@
 {
   "schema_version": 1,
   "creators": [
-    {"id": "creator-847c4f59b6", "name": "柴田凌輔", "aliases": [], "type": "person", "affiliations": ["Cygames"]},
-    {"id": "creator-6af7080acf", "name": "江口亮", "aliases": [], "type": "person", "affiliations": []},
-    {"id": "creator-63418115d8", "name": "獅子之響", "aliases": [], "type": "person", "affiliations": []},
-    {
-      "id": "creator-a558bf7304",
-      "name": "中町友洋",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-c49c6037fc",
-      "name": "畑田浩孝",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-0b07e3069a",
-      "name": "松尾早人",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-eb4fbbffa7",
-      "name": "小半大",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-56f9dada0b",
-      "name": "西村真吾",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-2def8e906f",
-      "name": "吉川美矩",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-75bb212e99",
-      "name": "植田能平",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-c01db1f1ba",
-      "name": "太田光宏",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-59668a1cc9",
-      "name": "網野航平",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-max-mullowney-46d1023bc5",
-      "name": "Max Mullowney",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-5caa86b58a",
-      "name": "兼松衆",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-648b8ab7cc",
-      "name": "守谷勇人",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-a50daef52d",
-      "name": "戸田信子",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-5fe0c81649",
-      "name": "陣内一真",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
-      "id": "creator-81f0c8dcf2",
-      "name": "西木康智",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
     {
       "id": "creator-aira-f4bc4d87cd",
       "name": "Aira",
@@ -394,6 +286,13 @@
     {
       "id": "creator-maeshima-soshi-7807cc5c25",
       "name": "maeshima soshi",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-max-mullowney-46d1023bc5",
+      "name": "Max Mullowney",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -953,6 +852,13 @@
       ]
     },
     {
+      "id": "creator-a558bf7304",
+      "name": "中町友洋",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-e9c5e6c554",
       "name": "中西亮輔",
       "aliases": [],
@@ -1115,6 +1021,13 @@
       "affiliations": []
     },
     {
+      "id": "creator-5caa86b58a",
+      "name": "兼松衆",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-069c623e41",
       "name": "内田ましろ",
       "aliases": [],
@@ -1160,7 +1073,9 @@
     {
       "id": "creator-3e35bf54dc",
       "name": "千葉 梓",
-      "aliases": [],
+      "aliases": [
+        "千葉梓"
+      ],
       "type": "person",
       "affiliations": [
         "Cygames"
@@ -1206,6 +1121,13 @@
     {
       "id": "creator-554ce141ca",
       "name": "叶人",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-2def8e906f",
+      "name": "吉川美矩",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -1347,8 +1269,22 @@
       "affiliations": []
     },
     {
+      "id": "creator-c01db1f1ba",
+      "name": "太田光宏",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-703d309e1a",
       "name": "太田貴之",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-648b8ab7cc",
+      "name": "守谷勇人",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -1391,6 +1327,13 @@
       "affiliations": [
         "SUPA LOVE"
       ]
+    },
+    {
+      "id": "creator-eb4fbbffa7",
+      "name": "小半大",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
     },
     {
       "id": "creator-ed68f22a07",
@@ -1564,7 +1507,9 @@
     {
       "id": "creator-90ee476c0a",
       "name": "康 貞蘭",
-      "aliases": [],
+      "aliases": [
+        "康貞蘭"
+      ],
       "type": "person",
       "affiliations": [
         "Cygames"
@@ -1603,6 +1548,13 @@
       "affiliations": [
         "SUPA LOVE"
       ]
+    },
+    {
+      "id": "creator-a50daef52d",
+      "name": "戸田信子",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
     },
     {
       "id": "creator-amazuti-b79d925362",
@@ -1726,6 +1678,13 @@
       "affiliations": []
     },
     {
+      "id": "creator-0b07e3069a",
+      "name": "松尾早人",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-ac7a8c2766",
       "name": "松田彬人",
       "aliases": [],
@@ -1738,6 +1697,15 @@
       "aliases": [],
       "type": "person",
       "affiliations": []
+    },
+    {
+      "id": "creator-847c4f59b6",
+      "name": "柴田凌輔",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [
+        "Cygames"
+      ]
     },
     {
       "id": "creator-998ddf144b",
@@ -1794,6 +1762,13 @@
       "aliases": [
         "森由里子"
       ],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-75bb212e99",
+      "name": "植田能平",
+      "aliases": [],
       "type": "person",
       "affiliations": []
     },
@@ -1877,6 +1852,13 @@
     {
       "id": "creator-4f527d5f6f",
       "name": "永井正道",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-6af7080acf",
+      "name": "江口亮",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -2000,6 +1982,13 @@
       "affiliations": []
     },
     {
+      "id": "creator-63418115d8",
+      "name": "獅子之響",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-c02c150e3b",
       "name": "田中俊亮",
       "aliases": [],
@@ -2055,6 +2044,13 @@
     {
       "id": "creator-be179b1cab",
       "name": "由良崇将",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-c49c6037fc",
+      "name": "畑田浩孝",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -2176,6 +2172,13 @@
       "affiliations": []
     },
     {
+      "id": "creator-59668a1cc9",
+      "name": "網野航平",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-bf45e85e1d",
       "name": "綾葉",
       "aliases": [],
@@ -2237,6 +2240,20 @@
     {
       "id": "creator-142f44fbe2",
       "name": "藤末 樹",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-81f0c8dcf2",
+      "name": "西木康智",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-56f9dada0b",
+      "name": "西村真吾",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -2322,6 +2339,13 @@
       "affiliations": [
         "Cygames"
       ]
+    },
+    {
+      "id": "creator-5fe0c81649",
+      "name": "陣内一真",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
     },
     {
       "id": "creator-ffdda239bb",

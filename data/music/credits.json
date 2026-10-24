@@ -3,47 +3,154 @@
   "versions": {
     "song-you-aim-a-5686752029-v-5686752029": {
       "credits": [
-        {"role": "lyricist", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
-        {"role": "composer", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
-        {"role": "arranger", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"}
+        {
+          "role": "lyricist",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "composer",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "arranger",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e",
+          "affiliation": "Cygames"
+        }
       ],
-      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+      "source": "official_release",
+      "source_catalog": "LACA-25304",
+      "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/",
+      "manual": true
     },
     "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c": {
       "credits": [
-        {"role": "lyricist", "name": "柴田凌輔", "creator_id": "creator-847c4f59b6", "affiliation": "Cygames"},
-        {"role": "composer", "name": "廣田慎矢", "creator_id": "creator-64c2eb10ff", "affiliation": "Cygames"},
-        {"role": "arranger", "name": "江口亮", "creator_id": "creator-6af7080acf"},
-        {"role": "arranger", "name": "廣田慎矢", "creator_id": "creator-64c2eb10ff", "affiliation": "Cygames"},
-        {"role": "strings_arranger", "name": "江口亮", "creator_id": "creator-6af7080acf"},
-        {"role": "strings_arranger", "name": "獅子之響", "creator_id": "creator-63418115d8"}
+        {
+          "role": "lyricist",
+          "name": "柴田凌輔",
+          "creator_id": "creator-847c4f59b6",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "composer",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "arranger",
+          "name": "江口亮",
+          "creator_id": "creator-6af7080acf"
+        },
+        {
+          "role": "arranger",
+          "name": "廣田慎矢",
+          "creator_id": "creator-64c2eb10ff",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "strings_arranger",
+          "name": "江口亮",
+          "creator_id": "creator-6af7080acf"
+        },
+        {
+          "role": "strings_arranger",
+          "name": "獅子之響",
+          "creator_id": "creator-63418115d8"
+        }
       ],
-      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+      "source": "official_release",
+      "source_catalog": "LACA-25304",
+      "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/",
+      "manual": true
     },
     "song-d375262b50-v-d375262b50": {
       "credits": [
-        {"role": "lyricist", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
-        {"role": "composer", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
-        {"role": "arranger", "name": "梯拓哉", "creator_id": "creator-6d35eb906e", "affiliation": "Cygames"},
-        {"role": "strings_arranger", "name": "椿山日南子", "creator_id": "creator-8ccf39ae29", "affiliation": "Dream Monster"}
+        {
+          "role": "lyricist",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "composer",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "arranger",
+          "name": "梯拓哉",
+          "creator_id": "creator-6d35eb906e",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "strings_arranger",
+          "name": "椿山日南子",
+          "creator_id": "creator-8ccf39ae29",
+          "affiliation": "Dream Monster"
+        }
       ],
-      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+      "source": "official_release",
+      "source_catalog": "LACA-25304",
+      "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/",
+      "manual": true
     },
     "song-e74bdc4483-v-e74bdc4483": {
       "credits": [
-        {"role": "lyricist", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
-        {"role": "composer", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
-        {"role": "arranger", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"}
+        {
+          "role": "lyricist",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf",
+          "affiliation": "Cygames"
+        }
       ],
-      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+      "source": "official_release",
+      "source_catalog": "LACA-25304",
+      "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/",
+      "manual": true
     },
     "song-e74bdc4483-v-efc36499b1": {
       "credits": [
-        {"role": "lyricist", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
-        {"role": "composer", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"},
-        {"role": "arranger", "name": "伊禮完", "creator_id": "creator-c436f537bf", "affiliation": "Cygames"}
+        {
+          "role": "lyricist",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "composer",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf",
+          "affiliation": "Cygames"
+        },
+        {
+          "role": "arranger",
+          "name": "伊禮完",
+          "creator_id": "creator-c436f537bf",
+          "affiliation": "Cygames"
+        }
       ],
-      "source": "official_release", "source_catalog": "LACA-25304", "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/", "manual": true
+      "source": "official_release",
+      "source_catalog": "LACA-25304",
+      "source_url": "https://umamusume.lantis.jp/discography/winning-live-36/",
+      "manual": true
     },
     "song-598f2f343d-v-598f2f343d": {
       "credits": [

@@ -56,7 +56,7 @@ def fetch_lrclib_timing(
             return version_id, None, ""
         source_id, lines = next(iter(candidates.items()))
         return version_id, {"source_id": source_id, "lines": lines}, ""
-    except (pipeline_common.urllib.error.URLError, TimeoutError, ValueError, TypeError) as error:
+    except (OSError, pipeline_common.urllib.error.URLError, ValueError, TypeError) as error:
         return version_id, None, str(error)
 
 

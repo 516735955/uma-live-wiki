@@ -161,7 +161,7 @@ def fetch_utaten(recording: dict[str, pipeline_common.Any]) -> tuple[str, dict[s
                     credit["affiliation"] = affiliations[0]
                 credits.append(credit)
         return version_id, {"source_url": source_url, "lines": parser.lines, "credits": credits}, ""
-    except (pipeline_common.urllib.error.URLError, TimeoutError, pipeline_common.json.JSONDecodeError) as error:
+    except (OSError, ValueError, pipeline_common.urllib.error.URLError) as error:
         return version_id, None, str(error)
 
 
@@ -172,5 +172,5 @@ def verify_utaten_source(recording: dict[str, pipeline_common.Any], source_url: 
         with pipeline_common.urllib.request.urlopen(request, timeout=25) as response:
             page = bounded_read(response, limit=8 * 1024 * 1024).decode("utf-8", errors="replace")
         return version_id, artist_match(recording, json_ld_composition(page)), ""
-    except (pipeline_common.urllib.error.URLError, TimeoutError, pipeline_common.json.JSONDecodeError) as error:
+    except (OSError, ValueError, pipeline_common.urllib.error.URLError) as error:
         return version_id, False, str(error)
