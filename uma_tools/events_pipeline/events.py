@@ -51,6 +51,8 @@ def resolve_event_cover(event: dict[str, pipeline_common.Any], series_by_id: dic
         for token, cover in pipeline_common.NUMBERED_EVENT_COVERS.items():
             if token in event_id:
                 return cover
+    if image and "no_image" not in image:
+        return image
     series = series_by_id.get(str(event.get("series_id") or "")) or {}
     return str(series.get("cover") or pipeline_common.EVENT_COVER_BY_KIND.get(
         str(event.get("kind") or ""), pipeline_common.EVENT_COVER_BY_KIND["onsite"]
@@ -100,6 +102,17 @@ def numbered_events(data: list[dict[str, pipeline_common.Any]], identities: pipe
                 alias = base_legacy if performance_index == 0 and day_index == 0 else f"{base_legacy}/{performance_index}/{day_index}"
                 if alias not in legacy_aliases:
                     legacy_aliases.append(alias)
+            # Historical Eventernote rows used the pre-normalization route
+            # spelling for this curated parent. Keep both route spellings so
+            # DAY1/DAY2 sources attach to the existing parent sessions instead
+            # of creating standalone events and losing the curated setlists.
+            if series_token == "4th-event-extra":
+                legacy_aliases.extend([
+                    "/zh-Hans/live/number_series_event/4thExtra_EVENT",
+                    "/zh-Hans/live/number_series_event/4thExtra_EVENT/0/0",
+                    "/zh-Hans/live/number_series_event/4thExtra_EVENT/0/1",
+                ])
+                legacy_aliases = list(dict.fromkeys(legacy_aliases))
             if performance_index == 0 and f"{base_legacy}/0/0" not in legacy_aliases:
                 legacy_aliases.append(f"{base_legacy}/0/0")
             out.append({
@@ -161,7 +174,14 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
                     stable = sub.get('id') or (stable_ids or {}).get(source_url) or (stable_ids or {}).get(legacy)
                     if not stable:
                         stable = f"live-{category}-source-" + pipeline_common.hashlib.sha1(source_url.encode('utf-8')).hexdigest()[:12]
-                    event_id = pipeline_text.unique_id(stable, used)
+                    # An explicit stable-event override identifies an already
+                    # curated record even when the crawler's category index
+                    # moved.  Reuse that ID so dedupe can merge the fresh
+                    # source into the old event instead of creating `-2`
+                    # duplicates and dropping its role/setlist evidence.
+                    event_id = stable if stable in used else pipeline_text.unique_id(stable, used)
+                    imported_id = f"live-{category}-source-" + pipeline_common.hashlib.sha1(source_url.encode('utf-8')).hexdigest()[:12]
+                    imported_alias = imported_id if source_url.startswith('https://www.eventernote.com/events/') and imported_id != event_id else ""
                     legacy_aliases = [legacy]
                     if performance_index == 0:
                         legacy_aliases.append(f"{legacy}/0/0")
@@ -184,6 +204,7 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
                         ]))
                         session = {
                             "id": f"{event_id}-session-{day_index + 1}", "label": day.get("label") or "本公演",
+                            **({"id_aliases": [f"{imported_alias}-session-{day_index + 1}"]} if imported_alias else {}),
                             "date": pipeline_text.event_date_for_day(sub.get("date"), day_index), "songs": [performance["song"] for performance in performances],
                             "character_ids": characters,
                             "performances": performances,
@@ -195,6 +216,7 @@ def category_events(data: dict[str, pipeline_common.Any], identities: pipeline_i
                     venue = pipeline_text.venue_from_date_text(sub.get("date")) if date else str(sub.get("date") or "")
                     out.append({
                         "id": event_id, "title": title, "date": date, "end_date": sessions[-1]["date"] if sessions else date,
+                        **({"id_aliases": [imported_alias]} if imported_alias else {}),
                         "kind": "concert" if category in ("cd", "twinkle") else "onsite", "mode": "onsite",
                         "series_id": cat_series_id(category, section.get("group") or "", group.get("group") or ""),
                         "venue": venue, "cast_status": "verified" if cast else "partial", "cast": cast, "character_ids": [],
@@ -237,6 +259,7 @@ def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote
         if match:
             eventernote_id = match.group(1)
         if linked:
+            eventernote_source = {"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""}
             has_curated = any(s.get("kind") == "curated_live" for s in linked.get("sources") or [])
             if has_curated:
                 linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
@@ -244,8 +267,28 @@ def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote
                 linked["cast"] = pipeline_identities.merge_cast_records([*linked["cast"], *cast])
                 linked["cast_status"] = "verified" if linked["cast"] else linked["cast_status"]
             if not any(item.get('kind') == 'eventernote' and item.get('url') == source.get('link') for item in linked['sources']):
-                linked["sources"].append({"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""})
-            linked["image"] = linked.get("image") or source.get("img") or ""
+                linked["sources"].append(eventernote_source)
+            # Preserve the source-to-session relationship when a parent
+            # curated event has multiple dated sessions (notably 4th EXTRA).
+            # Eventernote times and cast remain evidence; the existing
+            # setlist HTML/performances are never replaced here.
+            source_date = pipeline_text.first_date(source.get("date"))
+            matching_sessions = [
+                session for session in linked.get("sessions") or []
+                if pipeline_text.first_date(session.get("date")) == source_date
+            ]
+            if len(matching_sessions) == 1:
+                session = matching_sessions[0]
+                session_sources = session.setdefault("sources", [])
+                if not any(item.get("kind") == "eventernote" and item.get("url") == eventernote_source["url"] for item in session_sources):
+                    session_sources.append(dict(eventernote_source))
+                if source.get("times") and not session.get("source_time_text"):
+                    session["source_time_text"] = source["times"]
+            current_image = str(linked.get("image") or "")
+            source_image = str(source.get("img") or "")
+            if not current_image or ("/event-covers/" in current_image and current_image.endswith(".svg")):
+                if source_image and "no_image" not in source_image:
+                    linked["image"] = source_image
             linked["venue"] = linked.get("venue") or source.get("venue") or ""
             continue
         date = pipeline_text.first_date(source.get("date"))
@@ -285,6 +328,7 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
     for source in programs_doc.get("programs") or []:
         source_text = " ".join(str(source.get(key) or "") for key in ("title", "summary"))
         program_date, source_date = normalized_broadcast_date(source.get("date"), source_text)
+        program_date = source.get("broadcast_date") or program_date
         source_end_date = pipeline_text.first_date(source.get("end_date"))
         program_end_date = normalized_broadcast_date(source_end_date, source_text)[0] if source_end_date else program_date
         event_id = pipeline_text.unique_id(source.get("id") or f"program-{program_date or 'undated'}-{pipeline_text.stable_suffix(source.get('title') or '')}", used)
@@ -343,12 +387,18 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                 "character_ids": session_characters,
                 "cast": session_cast,
                 **({"source_date": session_source_date} if session_source_date else {}),
-                **({"start_time": source_session["start_time"]} if source_session.get("start_time") else {}),
+                **({"start_time": source_session["start_time"]} if source_session.get("start_time") and kind != "official_program" else {}),
+                **({"broadcast_time": source_session.get("broadcast_time") or source_session["start_time"]} if source_session.get("broadcast_time") or (kind == "official_program" and source_session.get("start_time")) else {}),
+                **({"end_time": source_session["end_time"]} if source_session.get("end_time") else {}),
                 **({"doors_time": source_session["doors_time"]} if source_session.get("doors_time") else {}),
             })
         if not sessions:
             sessions = [{"id": f"{event_id}-session-1", "label": "本期节目", "date": program_date, "songs": [], "character_ids": characters, "cast": cast,
                          **({"source_date": source_date} if source_date else {})}]
+        if len(sessions) == 1:
+            for field in ("broadcast_time", "end_time", "time_precision", "time_source_url", "source_time_text", "broadcast_time_kind"):
+                if source.get(field) and not sessions[0].get(field):
+                    sessions[0][field] = source[field]
         events.append({
             "id": event_id, "title": source.get("title") or "", "date": program_date, "end_date": program_end_date,
             **({"id_aliases": list(dict.fromkeys(source.get("id_aliases") or []))} if source.get("id_aliases") else {}),
@@ -428,6 +478,52 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
     # IDs are merged only after an explicit alias or exact source identity has
     # established equivalence. The richer program record supplies the shell,
     # while curated setlists, legacy links, cast evidence, and media are unioned.
+    # Eventernote is an identity source, not merely corroborating metadata:
+    # category imports and the historical event import can otherwise create two
+    # IDs for the same page. Normalize exact links before ID grouping so the
+    # stable curated ID remains primary and every displaced ID is retained as
+    # an alias. A page on a different date is deliberately not merged.
+    def eventernote_key(value: object) -> str:
+        parsed = pipeline_common.urllib.parse.urlsplit(str(value or "").strip())
+        if parsed.netloc.lower() != "www.eventernote.com" or not parsed.path.startswith("/events/"):
+            return ""
+        return f"https://www.eventernote.com{parsed.path.rstrip('/')}"
+
+    def eventernote_urls(row: dict[str, pipeline_common.Any]) -> set[str]:
+        return {
+            key
+            for source in row.get("sources") or []
+            for key in [eventernote_key(source.get("url"))]
+            if source.get("kind") == "eventernote" and key
+        }
+
+    def source_owner_key(row: dict[str, pipeline_common.Any], position: int) -> tuple[int, int, str, int]:
+        # Stable hand-curated IDs conventionally do not contain the importer
+        # hash (`-source-`). Keep the first equally-ranked record, matching the
+        # existing catalog order rather than inventing a new canonical ID.
+        return (
+            1 if "-source-" in str(row.get("id") or "") else 0,
+            1 if row.get("kind") == "eventernote" else 0,
+            str(row.get("id") or ""),
+            position,
+        )
+
+    owners: dict[str, tuple[dict[str, pipeline_common.Any], int]] = {}
+    for position, row in enumerate(events):
+        for source_url in eventernote_urls(row):
+            current = owners.get(source_url)
+            if current is None or source_owner_key(row, position) < source_owner_key(current[0], current[1]):
+                owners[source_url] = (row, position)
+    for row in events:
+        for source_url in eventernote_urls(row):
+            owner = owners[source_url][0]
+            if owner is row or pipeline_text.first_date(owner.get("date")) != pipeline_text.first_date(row.get("date")):
+                continue
+            if row.get("id") == owner.get("id"):
+                continue
+            owner.setdefault("id_aliases", []).extend([row.get("id"), *(row.get("id_aliases") or [])])
+            row["id"] = owner["id"]
+
     grouped: dict[str, list[dict[str, pipeline_common.Any]]] = pipeline_common.defaultdict(list)
     for event in events:
         grouped[event["id"]].append(event)

@@ -39,6 +39,7 @@ export const ActivityTime = {
     date: { type: String, default: '' }, endDate: { type: String, default: '' },
     doorsTime: { type: String, default: '' }, startTime: { type: String, default: '' },
     endTime: { type: String, default: '' }, broadcastTime: { type: String, default: '' },
+    endEstimated: { type: Boolean, default: false },
     label: { type: String, default: '时间' }, channels: { type: Array, default: () => [] },
   },
   computed: {
@@ -52,7 +53,7 @@ export const ActivityTime = {
       return [
         ['开场', this.doorsTime, this.date],
         ['开演', this.startTime, this.date],
-        ['结束', this.endTime, this.endDate || this.date],
+        [this.endEstimated ? '预计结束' : '结束', this.endTime, this.endDate || this.date],
         ['播出', this.broadcastTime && !this.startTime ? this.broadcastTime : '', this.date],
       ].filter((row) => row[1]).map(([label, value, date]) => {
         const normalized = normalizeActivityTime(date, value);

@@ -1,19 +1,17 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-10-24T05:44:27+00:00",
+  "refreshed_at": "2026-10-24T16:20:40+00:00",
   "coverage": {
-    "official_youtube_refresh": "metadata_recheck_pending",
+    "official_youtube_refresh": "verified",
     "source_errors": [],
-    "metadata_recheck_pending": [
-      "official video metadata unavailable: 402qxqFvifg: default: missing channel; android: missing channel; official watch page: public watch date unavailable"
-    ],
+    "metadata_recheck_pending": [],
     "expected_regular_episodes": 125,
     "records": 250,
     "source_verified_regular_episodes": 125,
     "metadata_pending_ids": [],
-    "metadata_candidate_count": 3,
-    "metadata_batch_count": 3,
+    "metadata_candidate_count": 174,
+    "metadata_batch_count": 174,
     "metadata_pending_video_ids": [],
     "pakatube_character_programs": 89,
     "official_special_programs": 30
@@ -90,6 +88,11 @@
           "kind": "official_youtube",
           "label": "官方 YouTube",
           "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
+        },
+        {
+          "kind": "official_broadcaster",
+          "label": "节目官方页",
+          "url": "https://www.allnightnippon.com/umamusume/"
         }
       ],
       "media": [],
@@ -131,30 +134,67 @@
         }
       ],
       "media": [],
-      "sessions": []
+      "sessions": [],
+      "broadcast_time": "22:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "minute",
+      "broadcast_date": "2026-09-25",
+      "time_source_url": "https://www.allnightnippon.com/umamusume/"
     },
     {
       "id": "all-night-nippon-gold-004",
       "series_id": "all-night-nippon-gold",
       "title": "ウマ娘のオールナイトニッポンGOLD 第4回",
-      "date": "",
-      "cast_status": "announced_tba",
-      "cast": [],
+      "date": "2026-11-27",
+      "start_time": "22:00",
+      "end_time": "24:00",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "name": "高柳知葉",
+          "role": "オグリキャップ"
+        },
+        {
+          "name": "瀬戸桃子",
+          "role": "ベルノライト"
+        },
+        {
+          "name": "優木かな",
+          "role": "スーパークリーク"
+        },
+        {
+          "name": "川上洋平",
+          "role": "[Alexandros]",
+          "person_type": "external_guest"
+        }
+      ],
       "characters": [],
       "sessions": [],
-      "schedule_status": "announced_tba",
-      "metadata_status": "announced_tba",
-      "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "source_kind": "official_broadcaster",
-      "source_url": "https://www.allnightnippon.com/umamusume/",
+      "schedule_status": "announced",
+      "metadata_status": "verified",
+      "summary": "2026年11月27日（周五）22:00～24:00将直播《赛马娘的 All Night Nippon GOLD》第4期。高柳知叶（小栗帽）、濑户桃子（崭新光辉）、优木加奈（超级溪流）担任主持，并邀请[Alexandros]的川上洋平担任嘉宾。节目以日本放送为核心台，在全国19家电台联播。",
+      "source_kind": "official_announcement",
+      "source_url": "https://umamusume.jp/news/detail?id=3528",
       "sources": [
         {
           "kind": "official_broadcaster",
           "label": "节目官方页（待定期次）",
           "url": "https://www.allnightnippon.com/umamusume/"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "站内官方公告（3528）",
+          "url": "https://umamusume.jp/news/detail?id=3528"
         }
       ],
-      "media": []
+      "media": [],
+      "broadcast_time": "22:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "minute",
+      "broadcast_date": "2026-11-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3528"
     },
     {
       "id": "all-night-nippon-gold-005",
@@ -168,13 +208,18 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "source_kind": "official_broadcaster",
-      "source_url": "https://www.allnightnippon.com/umamusume/",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
       "sources": [
         {
           "kind": "official_broadcaster",
           "label": "节目官方页（待定期次）",
           "url": "https://www.allnightnippon.com/umamusume/"
+        },
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
         }
       ],
       "media": []
@@ -191,13 +236,18 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "source_kind": "official_broadcaster",
-      "source_url": "https://www.allnightnippon.com/umamusume/",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
       "sources": [
         {
           "kind": "official_broadcaster",
           "label": "节目官方页（待定期次）",
           "url": "https://www.allnightnippon.com/umamusume/"
+        },
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
         }
       ],
       "media": []
@@ -247,7 +297,7 @@
           ]
         }
       ],
-      "summary": "第1話『40点下!トレセン学園追試特別』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！",
+      "summary": "第1話『40点下!トレセン学園追試特別』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 スペシャルウィーク役　和氣あず未 サイレンススズカ役　　高野麻里佳 トウカイテイオー役　　Machico 今後も一部のエピソードを公開予定！ ぜひ、ご期待ください！ 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。 ---+-----+-----+-----+-----+-----+-----+-----+--- 【「うまよん」公式サイト】 アニメ：https://umamusume.jp/umayon/ サイコミ（原作）：https://cycomi.com/fw/cycomibrowser/chapter/title/86 【「ウマ娘 プリティーダービー」公式サイト】 ポータルサイト：https://umamusume.jp/ 【「ウマ娘 プリティーダービー」公式Twitter】 ウマ娘プロジェクト：https://twitter.com/uma_musu",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=ytqhmfhd6aY",
       "sources": [
@@ -257,7 +307,8 @@
           "url": "https://www.youtube.com/watch?v=ytqhmfhd6aY"
         }
       ],
-      "metadata_checked_at": 1792772347.2985153
+      "metadata_checked_at": 1792772347.2985153,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20200825-2",
@@ -304,7 +355,7 @@
           ]
         }
       ],
-      "summary": "第2話『出来立て!トレセン学園案内VTR』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！",
+      "summary": "第2話『出来立て!トレセン学園案内VTR』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 トウカイテイオー役　Machico 駿川たづな役　藤井ゆきよ オグリキャップ役　高柳知葉 今後も一部のエピソードを公開予定！ ぜひ、ご期待ください！ 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。 ---+-----+-----+-----+-----+-----+-----+-----+--- 【「うまよん」公式サイト】 アニメ：https://umamusume.jp/umayon/ サイコミ（原作）：https://cycomi.com/fw/cycomibrowser/chapter/title/86 【「ウマ娘 プリティーダービー」公式サイト】 ポータルサイト：https://umamusume.jp/ 【「ウマ娘 プリティーダービー」公式Twitter】 ウマ娘プロジェクト：https://twitter.com/uma_musu",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=jjDII67gWIA",
       "sources": [
@@ -314,7 +365,8 @@
           "url": "https://www.youtube.com/watch?v=jjDII67gWIA"
         }
       ],
-      "metadata_checked_at": 1792772341.165286
+      "metadata_checked_at": 1792772341.165286,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20200908-5",
@@ -361,7 +413,7 @@
           ]
         }
       ],
-      "summary": "アニメ「うまよん」の中から選りすぐりのエピソードをお届け！",
+      "summary": "アニメ「うまよん」の中から選りすぐりのエピソードをお届け！ 第1話、第2話に続き、第5話『大激戦！ラーメン杯（ＧⅡ）』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 スペシャルウィーク役　和氣あず未 トウカイテイオー役　Machico オグリキャップ役　高柳知葉 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。 ---+-----+-----+-----+-----+-----+-----+-----+--- 【「うまよん」公式サイト】 アニメ：https://umamusume.jp/umayon/ サイコミ（原作）：https://cycomi.com/fw/cycomibrowser/chapter/title/86 【「ウマ娘 プリティーダービー」公式サイト】 ポータルサイト：https://umamusume.jp/ 【「ウマ娘 プリティーダービー」公式Twitter】 ウマ娘プロジェクト：https://twitter.com/uma_musu",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=PGJh8LyFYZE",
       "sources": [
@@ -371,7 +423,8 @@
           "url": "https://www.youtube.com/watch?v=PGJh8LyFYZE"
         }
       ],
-      "metadata_checked_at": 1792772295.5973175
+      "metadata_checked_at": 1792772295.5973175,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20210505-gw-tv-vol-564",
@@ -386,7 +439,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "公式（自称）生配信番組「ぱかライブTV Vol.564」を放送するぜ！",
+      "summary": "公式（自称）生配信番組「ぱかライブTV Vol.564」を放送するぜ！ ゴルシちゃんをスタジオに迎え、ゴルシちゃんの最新情報をゴルシちゃんがお届け！ 見逃すんじゃないぞ～！ ----------------------------------- ■「ゴルシちゃんのゴルシちゃんによるGWキャンペーンジャック」開催期間 2021年4月30日（金）12:00～2021年5月15日（土）4:59 ■開催内容 ・GW特別ログインボーナス ・毎日ガチャ1回無料キャンペーン ・GW特別ミッション ・GW限定！ショップラインナップ追加！ ・ゴルシちゃんモード 詳細はお知らせをご確認ください。 ※開催期間や内容は予告なく変更となる場合がございます。あらかじめご了承ください。 ----------------------------------- Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware Co., Ltd.",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=402qxqFvifg",
       "sources": [
@@ -397,7 +450,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792769169.5977461
+      "metadata_checked_at": 1792769169.5977461,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20221130-tv-extra-stage",
@@ -474,7 +528,7 @@
           ]
         }
       ],
-      "summary": "今回は特別版！「そこそこぱかライブTV -EXTRA STAGE-」",
+      "summary": "今回は特別版！「そこそこぱかライブTV -EXTRA STAGE-」 2022年11月5日(土)6日(日)に開催された『ウマ娘 プリティーダービー 4th EVENT SPECIAL DREAMERS!! EXTRA STAGE』を振り返ります！ イベントでお世話になった人の話やステージ裏の話など、\"EXTRA\"なお話を前後編の2部構成でお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=l87gSEs_6f4",
       "sources": [
@@ -485,7 +539,15 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792772161.0496671
+      "metadata_checked_at": 1792772161.0496671,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-11-30",
+      "source_time_text": "1669802411",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=l87gSEs_6f4",
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20240316-venue101",
@@ -511,7 +573,13 @@
           "url": "https://umamusume.jp/news/detail?id=1805"
         }
       ],
-      "media": []
+      "media": [],
+      "broadcast_time": "23:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "minute",
+      "broadcast_date": "2024-03-16",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1805"
     },
     {
       "id": "official-special-20240724-tif-presents-one-song-fes",
@@ -542,7 +610,13 @@
           "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
         }
       ],
-      "media": []
+      "media": [],
+      "broadcast_time": "02:10",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "minute",
+      "broadcast_date": "2024-07-25",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2024"
     },
     {
       "id": "official-special-20250706-title-c9fd71d65c11",
@@ -607,7 +681,13 @@
         }
       ],
       "media": [],
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "broadcast_time": "01:55",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "minute",
+      "broadcast_date": "2025-07-07",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2638"
     },
     {
       "id": "official-special-20251024-title-7233bfc605a9",
@@ -648,7 +728,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nテイオーとドゥラメンテが何やら話をしているぞ！",
+      "summary": "オマエら！ テイオーとドゥラメンテが何やら話をしているぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=y2KtHvrFV-8",
       "sources": [
@@ -659,7 +739,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771833.4825296
+      "metadata_checked_at": 1792771833.4825296,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20251219-title-2ce21c7638a2",
@@ -674,7 +755,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nロブロイ、ユニヴァース、スティル、アルヴの同期4人が、ランチミーティングでクリスマスに向けた話をしているみたいだぞ！",
+      "summary": "オマエら！ ロブロイ、ユニヴァース、スティル、アルヴの同期4人が、ランチミーティングでクリスマスに向けた話をしているみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=jhmvTVvm4hc",
       "sources": [
@@ -685,7 +766,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771819.429287
+      "metadata_checked_at": 1792771819.429287,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260101-title-7f8ce4632b5d",
@@ -700,7 +782,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！あけおめ！\nダート組の面々が、賑やかなお正月を過ごしているみたいだぞ！",
+      "summary": "オマエら！あけおめ！ ダート組の面々が、賑やかなお正月を過ごしているみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=e4MmvPk7j7U",
       "sources": [
@@ -711,7 +793,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771818.7099857
+      "metadata_checked_at": 1792771818.7099857,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260217-title-d6b66ddf95eb",
@@ -726,7 +809,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nエル、アケボノ、カレン、バンブー、ヤエノ、アキュートさんの6人が「最強の格闘技」について話しているみたいだぞ！",
+      "summary": "オマエら！ エル、アケボノ、カレン、バンブー、ヤエノ、アキュートさんの6人が「最強の格闘技」について話しているみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=NQnwmSFbudM",
       "sources": [
@@ -737,7 +820,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771814.2041485
+      "metadata_checked_at": 1792771814.2041485,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260302-title-418326f2a6f0",
@@ -752,7 +836,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nスイープ、カワカミ、クラフト、パンドラの4人が今度の雛祭りイベントに向けた話をしているみたいだぞ！",
+      "summary": "オマエら！ スイープ、カワカミ、クラフト、パンドラの4人が今度の雛祭りイベントに向けた話をしているみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=EtrC13GWP9M",
       "sources": [
@@ -763,7 +847,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771796.867143
+      "metadata_checked_at": 1792771796.867143,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260418-doubles",
@@ -772,13 +857,13 @@
       "date": "2026-04-18",
       "video_id": "RYLpUts_K74",
       "url": "https://www.youtube.com/watch?v=RYLpUts_K74",
-      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
       "duration": 352,
       "cast_status": "character_only",
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nパーマーとタップが、エアホッケー大会のダブルスで優勝して祝杯をあげてるみたいだぞ！",
+      "summary": "オマエら！ パーマーとタップが、エアホッケー大会のダブルスで優勝して祝杯をあげてるみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=RYLpUts_K74",
       "sources": [
@@ -789,7 +874,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792817257.0921142
+      "metadata_checked_at": 1792771789.7442234,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260522-title-844e004f3003",
@@ -804,7 +890,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nネイチャ、イクノ、タンホイザ、ロイスがランチしてるみたいだぞ！",
+      "summary": "オマエら！ ネイチャ、イクノ、タンホイザ、ロイスがランチしてるみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=-vs_1Fz8Vgo",
       "sources": [
@@ -815,7 +901,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771790.2266793
+      "metadata_checked_at": 1792771790.2266793,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260619-title-c46c83f42650",
@@ -830,7 +917,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nウオッカとスカーレットの2人が、週末にマーチャンとどこに遊びに行くのか、とーーっても仲良く和気あいあいと話し合ってるぞ！",
+      "summary": "オマエら！ ウオッカとスカーレットの2人が、週末にマーチャンとどこに遊びに行くのか、とーーっても仲良く和気あいあいと話し合ってるぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=Z-Vw1QGh7qw",
       "sources": [
@@ -841,7 +928,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771775.8087757
+      "metadata_checked_at": 1792771775.8087757,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260720-title-d71ffe698f19",
@@ -856,7 +944,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nルーラー、ラヴズ、シャカール、テイオー、タイシンが大富豪をやってるみたいだぞ！",
+      "summary": "オマエら！ ルーラー、ラヴズ、シャカール、テイオー、タイシンが大富豪をやってるみたいだぞ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=EWmCp_9MIj0",
       "sources": [
@@ -867,7 +955,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771774.233497
+      "metadata_checked_at": 1792771774.233497,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260820-title-fdde93df2901",
@@ -882,7 +971,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nスペとシーザリオとブエナが一緒に夏祭りに行くみたいだぞ！\n\nでも、どうやらなかなか待ち合わせ場所にたどり着かないみたいだ…",
+      "summary": "オマエら！ スペとシーザリオとブエナが一緒に夏祭りに行くみたいだぞ！ でも、どうやらなかなか待ち合わせ場所にたどり着かないみたいだ…",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=f_U2Q9J5mwI",
       "sources": [
@@ -893,7 +982,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771765.9011116
+      "metadata_checked_at": 1792771765.9011116,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20260917-title-670bcc41f03c",
@@ -908,7 +998,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！\nどうやらビリーヴがお茶を買おうとしたら、自販機の前でライトオとデュランダルが騒いでたみたいだぞ！\n\nいったいどうしたんだろうにゃ",
+      "summary": "オマエら！ どうやらビリーヴがお茶を買おうとしたら、自販機の前でライトオとデュランダルが騒いでたみたいだぞ！ いったいどうしたんだろうにゃ",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=NFCA4edYh_U",
       "sources": [
@@ -919,7 +1009,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771748.179129
+      "metadata_checked_at": 1792771748.179129,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20261009-title-4097cc4c13f5",
@@ -934,7 +1025,7 @@
       "cast": [],
       "characters": [],
       "sessions": [],
-      "summary": "オマエら！大変だ！！\nどうやら「ウマ娘消失事件」が発生したらしいぞ！？\n\nチヨノオー、クリーク、イナリ、アルダンが事件について話してるから、オマエらも聞いてみようぜ！",
+      "summary": "オマエら！大変だ！！ どうやら「ウマ娘消失事件」が発生したらしいぞ！？ チヨノオー、クリーク、イナリ、アルダンが事件について話してるから、オマエらも聞いてみようぜ！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=ODCHf6O2LeQ",
       "sources": [
@@ -945,7 +1036,8 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771749.2495234
+      "metadata_checked_at": 1792771749.2495234,
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-20261017-re-dive",
@@ -1024,7 +1116,7 @@
           ]
         }
       ],
-      "summary": "ペコリーヌ役のM・A・Oさん、コッコロ役の伊藤美来さん、キャル役の立花理香さん、そして「ウマ娘 プリティーダービー」から、ゴールドシップ役の上田瞳さん、アーモンドアイ役の石原夏織さん、ラッキーライラック役の中島由貴さん、デアリングタクト役の羊宮妃那さんをお迎えし、「ウマ娘 プリティーダービー」とのコラボ情報をたっぷりご紹介いたします！",
+      "summary": "ペコリーヌ役のM・A・Oさん、コッコロ役の伊藤美来さん、キャル役の立花理香さん、そして「ウマ娘 プリティーダービー」から、ゴールドシップ役の上田瞳さん、アーモンドアイ役の石原夏織さん、ラッキーライラック役の中島由貴さん、デアリングタクト役の羊宮妃那さんをお迎えし、「ウマ娘 プリティーダービー」とのコラボ情報をたっぷりご紹介いたします！ また、生放送当日は「プリンセスコネクト！Re:Dive」公式Xにてリポストキャンペーンを開催いたします！ 抽選で3名様に、KVを使用した額縁入りイラストをプレゼント♪お見逃しなく！ ■出演 M・A・O(ペコリーヌ役) 伊藤美来(コッコロ役) 立花理香(キャル役) 上田瞳(ゴールドシップ役) 石原夏織(アーモンドアイ役) 中島由貴(ラッキーライラック役) 羊宮妃那(デアリングタクト役) ※敬称略・順不同 「プリンセスコネクト！Re:Dive」好評配信中！ ▼App Store ▼Google Play ▼DMM GAMES ■「プリンセスコネクト！Re:Dive」とは もう一度、キミとつながる物語 Cygamesが贈るドラマチックアニメRPG 【公式サイト】 【公式X】",
       "source_kind": "official_external",
       "source_url": "https://www.youtube.com/watch?v=0rKu9PQsHBk",
       "sources": [
@@ -1034,7 +1126,15 @@
           "url": "https://www.youtube.com/watch?v=0rKu9PQsHBk"
         }
       ],
-      "metadata_checked_at": 1792773477.8191898
+      "metadata_checked_at": 1792773477.8191898,
+      "broadcast_time": "18:45",
+      "broadcast_date": "2026-10-17",
+      "source_time_text": "1792230314",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=0rKu9PQsHBk",
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-abema-stakes-01",
@@ -1577,7 +1677,13 @@
         }
       ],
       "media": [],
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-03-30",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1827"
     },
     {
       "id": "official-special-paka-space-5th-event-yell",
@@ -1678,7 +1784,13 @@
         }
       ],
       "media": [],
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-02-10",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1768"
     },
     {
       "id": "paka-live-tv-001",
@@ -4446,7 +4558,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.35」は11月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.35」は11月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2023-11-29",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1638"
     },
     {
       "id": "paka-live-tv-036",
@@ -4563,7 +4681,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.36」は12月27日22時半に放送！TVアニメの振り返りや最新情報お届け！"
+      "source_title": "「ぱかライブTV Vol.36」は12月27日22時半に放送！TVアニメの振り返りや最新情報お届け！",
+      "broadcast_time": "22:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2023-12-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1682"
     },
     {
       "id": "paka-live-tv-037",
@@ -4687,7 +4811,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.37」は1月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.37」は1月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-01-29",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1732"
     },
     {
       "id": "paka-live-tv-038",
@@ -4875,7 +5005,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.38」は2月22日(木)20時に放送！3周年の最新情報などをお届け！"
+      "source_title": "「ぱかライブTV Vol.38」は2月22日(木)20時に放送！3周年の最新情報などをお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-02-22",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1781"
     },
     {
       "id": "paka-live-tv-039",
@@ -4999,7 +5135,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.39」は3月28日20時に放送！次回のガチャ更新などゲームの最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.39」は3月28日20時に放送！次回のガチャ更新などゲームの最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-03-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1841"
     },
     {
       "id": "paka-live-tv-040",
@@ -5123,7 +5265,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.40」は4月28日20時に放送！GWキャンペーンやゲームの最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.40」は4月28日20時に放送！GWキャンペーンやゲームの最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-04-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1907"
     },
     {
       "id": "paka-live-tv-041",
@@ -5247,7 +5395,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.41」は5月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.41」は5月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-05-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1952"
     },
     {
       "id": "paka-live-tv-042",
@@ -5371,7 +5525,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.42」は6月24日20時に放送！新育成シナリオや新たなウマ娘の情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.42」は6月24日20時に放送！新育成シナリオや新たなウマ娘の情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-06-24",
+      "time_source_url": "https://umamusume.jp/news/detail?id=1990"
     },
     {
       "id": "paka-live-tv-043",
@@ -5495,7 +5655,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.43」は7月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.43」は7月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-07-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2031"
     },
     {
       "id": "paka-live-tv-044",
@@ -5697,7 +5863,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.44」は8月23日(金)20時に放送！3.5周年の最新情報などをお届け！"
+      "source_title": "「ぱかライブTV Vol.44」は8月23日(金)20時に放送！3.5周年の最新情報などをお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-08-23",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2074"
     },
     {
       "id": "paka-live-tv-045",
@@ -5821,7 +5993,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.45」は9月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.45」は9月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-09-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2140"
     },
     {
       "id": "paka-live-tv-046",
@@ -5945,7 +6123,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.46」は10月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.46」は10月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-10-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2181"
     },
     {
       "id": "paka-live-tv-047",
@@ -6069,7 +6253,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.47」は11月27日20時に放送！ゲーム最新情報や新たなウマ娘の情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.47」は11月27日20時に放送！ゲーム最新情報や新たなウマ娘の情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-11-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2233"
     },
     {
       "id": "paka-live-tv-048",
@@ -6205,7 +6395,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.48」は12月25日20時に放送！アニメ『シングレ』やゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.48」は12月25日20時に放送！アニメ『シングレ』やゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-12-25",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2286"
     },
     {
       "id": "paka-live-tv-049",
@@ -6329,7 +6525,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.49」は1月29日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.49」は1月29日20時に放送！新育成シナリオなどゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-01-29",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2346"
     },
     {
       "id": "paka-live-tv-050",
@@ -6531,7 +6733,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.50」は2月22日(土)20時に放送！4周年の最新情報などをお届け！"
+      "source_title": "「ぱかライブTV Vol.50」は2月22日(土)20時に放送！4周年の最新情報などをお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-02-22",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2391"
     },
     {
       "id": "paka-live-tv-051",
@@ -6655,7 +6863,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.51」は3月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.51」は3月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-03-29",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2463"
     },
     {
       "id": "paka-live-tv-052",
@@ -6800,7 +7014,13 @@
       "media": [],
       "source_title": "「ぱかライブTV Vol.52」は4月27日20時に放送！GWキャンペーンやゲームの最新情報をお届け！",
       "summary_translation_status": "stale",
-      "metadata_checked_at": 1792771863.6959147
+      "metadata_checked_at": 1792771863.6959147,
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-04-27",
+      "time_source_url": "https://www.youtube.com/watch?v=V34w6OzrI24"
     },
     {
       "id": "paka-live-tv-053",
@@ -6924,7 +7144,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.53」は5月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.53」は5月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-05-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2570"
     },
     {
       "id": "paka-live-tv-054",
@@ -7041,7 +7267,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.54」は6月25日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.54」は6月25日20時に放送！新育成シナリオなどゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-06-25",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2600"
     },
     {
       "id": "paka-live-tv-055",
@@ -7165,7 +7397,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.55」は7月30日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.55」は7月30日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-07-30",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2669"
     },
     {
       "id": "paka-live-tv-056",
@@ -7341,7 +7579,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.56」は8月22日(金)20時に放送！4.5周年の最新情報などをお届け！"
+      "source_title": "「ぱかライブTV Vol.56」は8月22日(金)20時に放送！4.5周年の最新情報などをお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-08-22",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2706"
     },
     {
       "id": "paka-live-tv-057",
@@ -7465,7 +7709,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.57」は9月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.57」は9月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-09-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2783"
     },
     {
       "id": "paka-live-tv-058",
@@ -7589,7 +7839,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.58」は10月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.58」は10月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-10-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2843"
     },
     {
       "id": "paka-live-tv-059",
@@ -7706,7 +7962,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.59」は11月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.59」は11月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-11-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2913"
     },
     {
       "id": "paka-live-tv-060",
@@ -7830,7 +8092,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.60」は12月24日20時に放送！ゲーム最新情報や新たなウマ娘の情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.60」は12月24日20時に放送！ゲーム最新情報や新たなウマ娘の情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-12-24",
+      "time_source_url": "https://umamusume.jp/news/detail?id=2962"
     },
     {
       "id": "paka-live-tv-061",
@@ -7960,7 +8228,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.61」は1月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV Vol.61」は1月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-01-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3019"
     },
     {
       "id": "paka-live-tv-062",
@@ -8136,7 +8410,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV Vol.62」は2月22日20時に放送！5周年の最新情報などをお届け！"
+      "source_title": "「ぱかライブTV Vol.62」は2月22日20時に放送！5周年の最新情報などをお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-02-22",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3064"
     },
     {
       "id": "paka-live-tv-prime-001",
@@ -8260,7 +8540,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #1」は3月27日20時に放送！次回ガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV' #1」は3月27日20時に放送！次回ガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-03-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3147"
     },
     {
       "id": "paka-live-tv-prime-002",
@@ -8391,7 +8677,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #2」は4月28日20時に放送！GWキャンペーンやゲームの最新情報をお届け！"
+      "source_title": "「ぱかライブTV' #2」は4月28日20時に放送！GWキャンペーンやゲームの最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-04-28",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3205"
     },
     {
       "id": "paka-live-tv-prime-003",
@@ -8522,7 +8814,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #3」は5月27日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV' #3」は5月27日20時に放送！新育成シナリオなどゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-05-27",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3241"
     },
     {
       "id": "paka-live-tv-prime-004",
@@ -8653,7 +8951,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #4」は6月26日20時に放送！新育成シナリオの詳細などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV' #4」は6月26日20時に放送！新育成シナリオの詳細などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-06-26",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3290"
     },
     {
       "id": "paka-live-tv-prime-005",
@@ -8784,7 +9088,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #5」は7月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV' #5」は7月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-07-29",
+      "time_source_url": "https://umamusume.jp/news/detail?id=3343"
     },
     {
       "id": "paka-live-tv-prime-006",
@@ -9019,7 +9329,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #6」は8月22日19時に放送！5.5周年の最新情報などをお届け！"
+      "source_title": "「ぱかライブTV' #6」は8月22日19時に放送！5.5周年の最新情報などをお届け！",
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-08-22",
+      "time_source_url": "https://www.youtube.com/watch?v=604WzTEF4is"
     },
     {
       "id": "paka-live-tv-prime-007",
@@ -9190,7 +9506,13 @@
         }
       ],
       "media": [],
-      "source_title": "「ぱかライブTV' #7」は9月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+      "source_title": "「ぱかライブTV' #7」は9月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！",
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-09-27",
+      "time_source_url": "https://www.youtube.com/watch?v=CHDZJgHuiGo"
     },
     {
       "id": "paka-live-tv-prime-008",
@@ -9201,7 +9523,7 @@
       "video_id": "YFsYv2UV8rU",
       "url": "https://www.youtube.com/watch?v=YFsYv2UV8rU",
       "thumbnail": "https://i.ytimg.com/vi/YFsYv2UV8rU/maxresdefault.jpg",
-      "duration": null,
+      "duration": 9182,
       "cast_status": "verified",
       "cast": [
         {
@@ -9316,6 +9638,13 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Chinatsu Hirose",
+          "role": "Win Marilyn",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -9355,7 +9684,7 @@
           ]
         }
       ],
-      "summary": "公式生配信番組「ぱかライブTV' #8」を放送します！",
+      "summary": "今回は未発表の新たなウマ娘役として廣瀬千夏さんが初出走！ 番組内では新たなウマ娘を発表するほか、新育成シナリオ「朋、史解き　―午式駿大祭―」の詳細や新育成シナリオ公開に合わせたキャンペーンなど、ゲーム最新情報を発表！ 『ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE”』の最新情報もお届けします！ さらに、「ぱか'チャレンジ！」では、新育成シナリオ「朋、史解き　―午式駿大祭―」にちなんだ、音楽を使ったリズムゲームに挑戦します！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=YFsYv2UV8rU",
       "sources": [
@@ -9378,7 +9707,13 @@
       "media": [],
       "source_title": "「ぱかライブTV' #8」は10月24日20時に放送！新ウマ娘や新育成シナリオの情報をお届け！",
       "summary_translation_status": "stale",
-      "metadata_checked_at": 1792817266.7713993
+      "metadata_checked_at": 1792855101.2649095,
+      "broadcast_time": "20:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-10-24",
+      "time_source_url": "https://www.youtube.com/watch?v=YFsYv2UV8rU"
     },
     {
       "id": "pakatube-20180409-3TFnrD1sYNU",
@@ -10661,7 +10996,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792772066.18006
+      "metadata_checked_at": 1792772066.18006,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2024-02-15",
+      "source_time_text": "1707991209",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk"
     },
     {
       "id": "pakatube-20240318-p6myBSMi6o0",
@@ -11090,7 +11432,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771914.388823
+      "metadata_checked_at": 1792771914.388823,
+      "broadcast_time": "18:00",
+      "broadcast_date": "2024-11-23",
+      "source_time_text": "1732352406",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY"
     },
     {
       "id": "pakatube-20241228-party-animals-4",
@@ -11189,7 +11538,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771892.626012
+      "metadata_checked_at": 1792771892.626012,
+      "broadcast_time": "20:00",
+      "broadcast_date": "2025-02-14",
+      "source_time_text": "1739530806",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM"
     },
     {
       "id": "pakatube-20250228-6HuEMtJfDmA",
@@ -11486,7 +11842,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771845.7719352
+      "metadata_checked_at": 1792771845.7719352,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2025-06-28",
+      "source_time_text": "1751104806",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI"
     },
     {
       "id": "pakatube-20250806-wb-shadowverse-worlds-beyond",
@@ -11519,7 +11882,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771849.5889328
+      "metadata_checked_at": 1792771849.5889328,
+      "broadcast_time": "18:00",
+      "broadcast_date": "2025-08-06",
+      "source_time_text": "1754470806",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U"
     },
     {
       "id": "pakatube-20251009-4",
@@ -11617,7 +11987,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771832.9547207
+      "metadata_checked_at": 1792771832.9547207,
+      "broadcast_time": "20:00",
+      "broadcast_date": "2025-11-24",
+      "source_time_text": "1763982007",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM"
     },
     {
       "id": "pakatube-20251125-shadow-corridor",
@@ -11650,7 +12027,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771818.1827374
+      "metadata_checked_at": 1792771818.1827374,
+      "broadcast_time": "20:00",
+      "broadcast_date": "2025-11-25",
+      "source_time_text": "1764068406",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY"
     },
     {
       "id": "pakatube-20251126-shadow-corridor",
@@ -11683,7 +12067,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771819.4976308
+      "metadata_checked_at": 1792771819.4976308,
+      "broadcast_time": "20:00",
+      "broadcast_date": "2025-11-26",
+      "source_time_text": "1764154806",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg"
     },
     {
       "id": "pakatube-20260131-golf-world-4",
@@ -11716,7 +12107,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771814.2211027
+      "metadata_checked_at": 1792771814.2211027,
+      "broadcast_time": "20:00",
+      "broadcast_date": "2026-01-31",
+      "source_time_text": "1769857206",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40"
     },
     {
       "id": "pakatube-20260201-golf-world-4",
@@ -11749,7 +12147,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771814.823313
+      "metadata_checked_at": 1792771814.823313,
+      "broadcast_time": "20:00",
+      "broadcast_date": "2026-02-01",
+      "source_time_text": "1769943606",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0"
     },
     {
       "id": "pakatube-20260301-among-us-3d-6",
@@ -11870,7 +12275,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771796.384729
+      "metadata_checked_at": 1792771796.384729,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2026-03-22",
+      "source_time_text": "1774173606",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE"
     },
     {
       "id": "pakatube-20260606-peak-4",
@@ -11903,7 +12315,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771788.2498677
+      "metadata_checked_at": 1792771788.2498677,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2026-06-06",
+      "source_time_text": "1780740006",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw"
     },
     {
       "id": "pakatube-20260607-peak-4",
@@ -12068,7 +12487,14 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771765.9197278
+      "metadata_checked_at": 1792771765.9197278,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2026-08-29",
+      "source_time_text": "1787997606",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM"
     },
     {
       "id": "pakatube-20260830-r-e-p-o-4",
@@ -12460,7 +12886,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の新番組「そこそこぱかライブTV」Vol.1！",
+      "summary": "不定期配信の新番組「そこそこぱかライブTV」Vol.1！ これまでの「ぱかライブTV」とは少し雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE",
       "sources": [
@@ -12470,7 +12896,15 @@
           "url": "https://www.youtube.com/watch?v=9r9YWhDqIDE"
         }
       ],
-      "metadata_checked_at": 1792772296.0687277
+      "metadata_checked_at": 1792772296.0687277,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-07-02",
+      "source_time_text": "1625220012",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-002",
@@ -12517,7 +12951,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.2」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.2」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8",
       "sources": [
@@ -12527,7 +12961,15 @@
           "url": "https://www.youtube.com/watch?v=kPYoTH8KRW8"
         }
       ],
-      "metadata_checked_at": 1792772295.673018
+      "metadata_checked_at": 1792772295.673018,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-07-31",
+      "source_time_text": "1627725613",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-003",
@@ -12574,7 +13016,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.3」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.3」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw",
       "sources": [
@@ -12584,7 +13026,15 @@
           "url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw"
         }
       ],
-      "metadata_checked_at": 1792772284.671479
+      "metadata_checked_at": 1792772284.671479,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-08-25",
+      "source_time_text": "1629885613",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-004",
@@ -12631,7 +13081,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.4」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.4」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM",
       "sources": [
@@ -12641,7 +13091,15 @@
           "url": "https://www.youtube.com/watch?v=6UTYrO9lFHM"
         }
       ],
-      "metadata_checked_at": 1792772287.3645177
+      "metadata_checked_at": 1792772287.3645177,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-09-22",
+      "source_time_text": "1632304814",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-005",
@@ -12688,7 +13146,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.5」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.5」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0",
       "sources": [
@@ -12698,7 +13156,15 @@
           "url": "https://www.youtube.com/watch?v=7lPxHiqI5i0"
         }
       ],
-      "metadata_checked_at": 1792772288.7221427
+      "metadata_checked_at": 1792772288.7221427,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-10-15",
+      "source_time_text": "1634292014",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-006",
@@ -12745,7 +13211,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.6」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.6」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=fwY396b2bGo",
       "sources": [
@@ -12755,7 +13221,15 @@
           "url": "https://www.youtube.com/watch?v=fwY396b2bGo"
         }
       ],
-      "metadata_checked_at": 1792772273.400879
+      "metadata_checked_at": 1792772273.400879,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-11-11",
+      "source_time_text": "1636624813",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-007",
@@ -12802,7 +13276,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.7」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.7」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw",
       "sources": [
@@ -12812,7 +13286,15 @@
           "url": "https://www.youtube.com/watch?v=bFeTcVeYggw"
         }
       ],
-      "metadata_checked_at": 1792772278.1204054
+      "metadata_checked_at": 1792772278.1204054,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2021-12-24",
+      "source_time_text": "1640340013",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-008",
@@ -12859,7 +13341,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.8」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.8」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI",
       "sources": [
@@ -12869,7 +13351,15 @@
           "url": "https://www.youtube.com/watch?v=pHRrr3IPpuI"
         }
       ],
-      "metadata_checked_at": 1792772269.4336545
+      "metadata_checked_at": 1792772269.4336545,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-01-19",
+      "source_time_text": "1642586413",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-009",
@@ -12916,7 +13406,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.9」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.9」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI",
       "sources": [
@@ -12926,7 +13416,15 @@
           "url": "https://www.youtube.com/watch?v=XpTVCTBD6cI"
         }
       ],
-      "metadata_checked_at": 1792772267.375639
+      "metadata_checked_at": 1792772267.375639,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-02-18",
+      "source_time_text": "1645178413",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-010",
@@ -12973,7 +13471,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.10」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.10」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o",
       "sources": [
@@ -12983,7 +13481,15 @@
           "url": "https://www.youtube.com/watch?v=F6ONB0JKO0o"
         }
       ],
-      "metadata_checked_at": 1792774927.0524757
+      "metadata_checked_at": 1792774927.0524757,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-03-17",
+      "source_time_text": "1647511211",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-011",
@@ -13030,7 +13536,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.11」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.11」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI",
       "sources": [
@@ -13040,7 +13546,15 @@
           "url": "https://www.youtube.com/watch?v=IRm0RuKU5CI"
         }
       ],
-      "metadata_checked_at": 1792772236.5503619
+      "metadata_checked_at": 1792772236.5503619,
+      "broadcast_time": "19:01",
+      "broadcast_date": "2022-04-20",
+      "source_time_text": "1650448866",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-012",
@@ -13087,7 +13601,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.12」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.12」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU",
       "sources": [
@@ -13097,7 +13611,15 @@
           "url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU"
         }
       ],
-      "metadata_checked_at": 1792772235.763314
+      "metadata_checked_at": 1792772235.763314,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-05-19",
+      "source_time_text": "1652954413",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-013",
@@ -13144,7 +13666,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.13」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.13」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
       "sources": [
@@ -13154,7 +13676,15 @@
           "url": "https://www.youtube.com/watch?v=C_I-AURSOBw"
         }
       ],
-      "metadata_checked_at": 1792772189.2806613
+      "metadata_checked_at": 1792772189.2806613,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-06-18",
+      "source_time_text": "1655546441",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-014",
@@ -13201,7 +13731,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.14」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.14」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE",
       "sources": [
@@ -13211,7 +13741,15 @@
           "url": "https://www.youtube.com/watch?v=4tNdgNujHGE"
         }
       ],
-      "metadata_checked_at": 1792772178.6069582
+      "metadata_checked_at": 1792772178.6069582,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-07-15",
+      "source_time_text": "1657879210",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-015",
@@ -13258,7 +13796,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.15」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.15」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=oik6grPHqtc",
       "sources": [
@@ -13268,7 +13806,15 @@
           "url": "https://www.youtube.com/watch?v=oik6grPHqtc"
         }
       ],
-      "metadata_checked_at": 1792772178.088896
+      "metadata_checked_at": 1792772178.088896,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-08-26",
+      "source_time_text": "1661508012",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-016",
@@ -13315,7 +13861,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.16」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.16」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE",
       "sources": [
@@ -13325,7 +13871,15 @@
           "url": "https://www.youtube.com/watch?v=yEsm4cbcyvE"
         }
       ],
-      "metadata_checked_at": 1792772179.3258178
+      "metadata_checked_at": 1792772179.3258178,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-09-16",
+      "source_time_text": "1663322412",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-017",
@@ -13372,7 +13926,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.17」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.17」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY",
       "sources": [
@@ -13382,7 +13936,15 @@
           "url": "https://www.youtube.com/watch?v=uJi0ShuWnbY"
         }
       ],
-      "metadata_checked_at": 1792772173.32843
+      "metadata_checked_at": 1792772173.32843,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-10-19",
+      "source_time_text": "1666173611",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-018",
@@ -13429,7 +13991,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.18」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.18」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM",
       "sources": [
@@ -13439,7 +14001,15 @@
           "url": "https://www.youtube.com/watch?v=NcABqxdsgjM"
         }
       ],
-      "metadata_checked_at": 1792772160.5930095
+      "metadata_checked_at": 1792772160.5930095,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2022-12-23",
+      "source_time_text": "1671789611",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-019",
@@ -13494,7 +14064,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.19」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.19」！ 「ぱかライブTV」とは雰囲気を変えて、舞台「ウマ娘 プリティーダービー」～Sprinters' Story～メインキャストの4人が ”そこそこ” なトークをゆるりとお届けします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ",
       "sources": [
@@ -13504,7 +14074,15 @@
           "url": "https://www.youtube.com/watch?v=cpJjJUTexQQ"
         }
       ],
-      "metadata_checked_at": 1792772173.0572238
+      "metadata_checked_at": 1792772173.0572238,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-01-14",
+      "source_time_text": "1673690410",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-020",
@@ -13551,7 +14129,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.20」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.20」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！ 今回は2月24日（金）に迎えるゲームリリース2周年をお祝いして、これまでの『忘れられない思い出』やウマ娘のお披露目イベントにまつわるそこそこウラ話などをお届け！ さらに出走者の 『そこそこおいしい話』など、“そこそこ” なトークをゆるりとお送りします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k",
       "sources": [
@@ -13561,7 +14139,15 @@
           "url": "https://www.youtube.com/watch?v=uDmuOJbG4-k"
         }
       ],
-      "metadata_checked_at": 1792772148.138856
+      "metadata_checked_at": 1792772148.138856,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-02-17",
+      "source_time_text": "1676628008",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-021",
@@ -13616,7 +14202,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.21」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.21」！ 「ぱかライブTV」とは雰囲気を変えて、アニメ「ウマ娘 プリティーダービー ROAD TO THE TOP」のメインキャスト4人が ”そこそこ” なトークをゆるりとお送りします！ 今回はアニメのそこそこウラ話や見どころ、さらに出走者の 『そこそこ頑張ってる話』や『そこそこお得だった話』などをお届け！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y",
       "sources": [
@@ -13626,7 +14212,15 @@
           "url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y"
         }
       ],
-      "metadata_checked_at": 1792772147.332892
+      "metadata_checked_at": 1792772147.332892,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-03-17",
+      "source_time_text": "1679047210",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-022",
@@ -13673,7 +14267,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.22」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.22」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！ 今回は「オーディション」のそこそこウラ話や、「私のヒミツ！」などをお届け！ さらに、新作コミカライズ「ウマ娘 プリティーダービー スターブロッサム」についてのお話など、\"そこそこ\" なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA",
       "sources": [
@@ -13683,7 +14277,15 @@
           "url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA"
         }
       ],
-      "metadata_checked_at": 1792772133.7479436
+      "metadata_checked_at": 1792772133.7479436,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-04-14",
+      "source_time_text": "1681466407",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-023",
@@ -13730,7 +14332,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.23」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.23」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はエイプリルフール企画から生まれた「BoC'z」やゴールデンウィークに開催された「ギャルウィークキャンペーン」のそこそこウラ話などをお届け！ さらに出走者の 「そこそこ挑戦している話」や「そこそこ自慢できる話」など、“そこそこ” なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE",
       "sources": [
@@ -13740,7 +14342,15 @@
           "url": "https://www.youtube.com/watch?v=dkmXQiLzgzE"
         }
       ],
-      "metadata_checked_at": 1792772117.77059
+      "metadata_checked_at": 1792772117.77059,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-05-12",
+      "source_time_text": "1683885611",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-024",
@@ -13795,7 +14405,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.24」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.24」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はアニメ『ウマ娘 プリティーダービー ROAD TO THE TOP』ゴールイン！スペシャルとして、メインキャストの4人が再び出走！ 全4話の振り返りや収録時のエピソードなど、作品にまつわるそこそこウラ話をお届け！ さらに出走者の 「そこそこ好きなお菓子の話」や「そこそこ好きなビジュの話」など、“そこそこ” なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg",
       "sources": [
@@ -13805,7 +14415,15 @@
           "url": "https://www.youtube.com/watch?v=5rbC0ltYmUg"
         }
       ],
-      "metadata_checked_at": 1792772117.8908179
+      "metadata_checked_at": 1792772117.8908179,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-06-16",
+      "source_time_text": "1686909609",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-025",
@@ -13860,7 +14478,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.25」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.25」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、2023年7月15日（土）、16日（日）に開催された「5th EVENT ARENA TOUR GO BEYOND - WISH - 」の模様を振り返りながらそこそこウラ話をお届け！ 披露した楽曲の話や、キャストとの関わりの話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4",
       "sources": [
@@ -13870,7 +14488,15 @@
           "url": "https://www.youtube.com/watch?v=omVPOgL9zg4"
         }
       ],
-      "metadata_checked_at": 1792772118.1418774
+      "metadata_checked_at": 1792772118.1418774,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-08-04",
+      "source_time_text": "1691143209",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-026",
@@ -13917,7 +14543,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.26」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.26」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は「BNW」の3人が出走！ 「BNWが初めて揃ったときのこと」などのそこそこウラ話をお届け！ さらに出走者の「そこそこ夏を感じる話」や「そこそこもらい泣きした話」など、\"そこそこ\"なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w",
       "sources": [
@@ -13927,7 +14553,15 @@
           "url": "https://www.youtube.com/watch?v=oDH8tGlUe2w"
         }
       ],
-      "metadata_checked_at": 1792772084.675308
+      "metadata_checked_at": 1792772084.675308,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-09-04",
+      "source_time_text": "1693821612",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-027",
@@ -13983,7 +14617,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.27」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.27」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、2023年9月16日（土）、17日（日）に開催された「5th EVENT ARENA TOUR GO BEYOND - GAZE - 」の模様を振り返りながらそこそこウラ話をお届け！ 披露した楽曲の話や、舞台裏でキャストが目撃した出来事の話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=M_l8docDJwY",
       "sources": [
@@ -13999,7 +14633,15 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792772117.0787146
+      "metadata_checked_at": 1792772117.0787146,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2023-10-13",
+      "source_time_text": "1697191207",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-028",
@@ -14047,7 +14689,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.28」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.28」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はTVアニメ『ウマ娘 プリティーダービー Season 3』に出演中のキャスト3人が出走！ TVアニメのシーンの振り返りや収録時のエピソードなど、作品にまつわるそこそこウラ話をお届け！ さらに出走者の「そこそこガマンできない話」や「そこそこ染みた話」など、\"そこそこ\"なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk",
       "sources": [
@@ -14064,7 +14706,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.28」11月22日(水)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792772084.8476326
+      "metadata_checked_at": 1792772084.8476326,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2023-11-22",
+      "time_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-029",
@@ -14112,7 +14761,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.29」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.29」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はTVアニメ『ウマ娘 プリティーダービー Season 3』より、三姉妹役のキャスト3人が出走！ TVアニメのシーンの振り返りや収録時のエピソードなど、作品にまつわるそこそこウラ話をお届け！ さらに出走者の「そこそこベリッシマ！な話」や「そこそこ気になってるものの話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc",
       "sources": [
@@ -14129,7 +14778,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.29」12月22日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792772077.4153135
+      "metadata_checked_at": 1792772077.4153135,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2023-12-22",
+      "time_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-030",
@@ -14185,7 +14841,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.30」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.30」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はTVアニメ『ウマ娘 プリティーダービー Season 3』に出演したキャスト4人による、「そこそこウラ話 TVアニメ第3期 ゴールイン！スペシャル」をお届け！ シーンの振り返りや今だから言えること、収録時のエピソードなど、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ",
       "sources": [
@@ -14202,7 +14858,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.30」1月12日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792772068.39904
+      "metadata_checked_at": 1792772068.39904,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-01-12",
+      "time_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-031",
@@ -14258,7 +14921,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.31」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.31」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、2024年2月3日（土）、4日（日）に開催された「ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND - YELL - 」の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなどそこそこウラ話をお届け！ さらに出走者の「そこそこ好きな食べ物の話」や「そこそこ良い姉妹の話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo",
       "sources": [
@@ -14275,7 +14938,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.31」3月15日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792772067.0738301
+      "metadata_checked_at": 1792772067.0738301,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-03-15",
+      "time_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-032",
@@ -14331,7 +15001,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.32」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.32」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はメインストーリー第2部 前編「ヒカリ射し、芽吹くとき！」に登場したキャスト4人が出走！ それぞれが演じるウマ娘の話や収録時のエピソードなど、メインストーリー第2部にまつわるそこそこウラ話をお届け！ さらに、3月に開催された「5th EVENT 第4公演」に出走したときの話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
       "sources": [
@@ -14348,7 +15018,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.32」4月19日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792772045.0536954
+      "metadata_checked_at": 1792772045.0536954,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-04-19",
+      "time_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-033",
@@ -14404,7 +15081,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.33」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.33」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は劇場版『ウマ娘 プリティーダービー 新時代の扉』と劇場用再編集版『ウマ娘 プリティーダービー ROAD TO THE TOP』から4人のキャストが出走！ いよいよ公開が目前に迫った劇場版のウラ話や作品の魅力など、“そこそこ”なトークをゆるりとお送りします！ キャスト同士でお悩み相談をする新コーナーもお届け！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8",
       "sources": [
@@ -14421,7 +15098,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.33」5月9日(木)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792772004.496576
+      "metadata_checked_at": 1792772004.496576,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-05-09",
+      "time_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-034",
@@ -14477,7 +15161,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.34」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.34」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はエイプリルフール企画「UMA STARS」や、ゴールデンウィークに開催された「GOCHI WEEK」から4人のキャストが出走！ キャンペーンの振り返りや今だから話せるエピソードなど、そこそこウラ話をお届け！ さらに“そこそこ”なトークだけでなく、「GOCHI WEEK」で公開されたオリジナルレシピの料理にも“そこそこ”チャレンジします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=yROD36Huu3E",
       "sources": [
@@ -14494,7 +15178,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.34」6月14日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771972.950016
+      "metadata_checked_at": 1792771972.950016,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-06-14",
+      "time_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-035",
@@ -14542,7 +15233,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.35」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.35」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はそこそこぱかライブTV初出走の河野ひよりさん、春日さくらさんと初MCの春川芽生さんがそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこやってみたいなぁな話」、「そこそこ変化した話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA",
       "sources": [
@@ -14559,7 +15250,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.35」7月13日(土)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771926.6773036
+      "metadata_checked_at": 1792771926.6773036,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-07-13",
+      "time_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-036",
@@ -14607,7 +15305,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.36」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.36」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の津田美波さん、和多田美咲さん、野木奏さんの3人がそこそこウラ話をお届け！ オーディション時のエピソードや「そこそここそこそな話」、「そこそこおどろいた話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4",
       "sources": [
@@ -14624,7 +15322,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.36」8月16日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771927.1370666
+      "metadata_checked_at": 1792771927.1370666,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-08-16",
+      "time_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-037",
@@ -14680,7 +15385,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.37」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.37」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は発売されたばかりのゲーム『ウマ娘 プリティーダービー 熱血ハチャメチャ大感謝祭！』から4人のキャストが出走！ 出走者の4人が『ハチャウマ』を“そこそこ”…ではなく“ガチ”でプレイします！ さらに、『ハチャウマ』のそこそこウラ話や、「そこそこ お悩み相談！」など、“そこそこ”なトークをゆるりとお送りします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA",
       "sources": [
@@ -14697,7 +15402,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.37」9月6日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771926.3793108
+      "metadata_checked_at": 1792771926.3793108,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-09-06",
+      "time_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-038",
@@ -14745,7 +15457,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.38」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.38」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はそこそこぱかライブTV初出走の松嵜麗さん、田中あいみさんと初MCの衣川里佳さんがそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ勝負メシな話」、「そこそこみつけちゃった♡話」など、“そこそこ”なトークをゆるりとお送りします！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g",
       "sources": [
@@ -14762,7 +15474,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.38」10月11日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771913.6005213
+      "metadata_checked_at": 1792771913.6005213,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-10-11",
+      "time_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-039",
@@ -14810,7 +15529,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.39」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.39」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は星谷美緒さん、福原綾香さん、新田ひよりさんが出走！ ストーリーイベント「スラップスティック・クラッシュ！」のウラ話をお届け！ 3人の“そこそこ”なトークをゆるりとお楽しみください♪",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M",
       "sources": [
@@ -14827,7 +15546,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.39」11月15日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771913.5718544
+      "metadata_checked_at": 1792771913.5718544,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-11-15",
+      "time_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-040",
@@ -14875,7 +15601,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.40」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.40」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこぱか初出走の西連寺亜希さん、塚田悠衣さん、亜咲花さんがお届け！ 3人の“そこそこ”なトークをゆるりとお楽しみください♪",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s",
       "sources": [
@@ -14892,7 +15618,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.40」12月13日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771900.2393863
+      "metadata_checked_at": 1792771900.2393863,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2024-12-13",
+      "time_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-041",
@@ -14940,7 +15673,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.41」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV Vol.41」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、ウマ娘が過去最多の5都市を駆け巡ったリアルイベント「ウマ娘 プリティーダービー Twinkle Circle!」全公演の模様を振り返りながら、披露した楽曲や舞台裏でのエピソードなどそこそこウラ話をお届け！ さらに新年恒例のおみくじや、出走者の「そこそこ困った話」や「そこそこ泣いちゃった話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
       "sources": [
@@ -14957,7 +15690,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.41」1月17日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771901.193277
+      "metadata_checked_at": 1792771901.193277,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-01-17",
+      "time_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-042",
@@ -15013,7 +15753,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、劇場版『ウマ娘 プリティーダービー 新時代の扉』から小倉唯さん、上坂すみれさん、福嶋晴菜さん、藤本侑里さんの4人が出走！ そこぱか初出走の小倉唯さん、上坂すみれさんがそれぞれが演じるウマ娘についてなどのそこそこウラ話をお届け！ さらに、劇場版について「今すぐ見直してほしいシーン！」やアフレコ現場でのウラ話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
       "sources": [
@@ -15030,7 +15770,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.42」2月21日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771893.306874
+      "metadata_checked_at": 1792771893.306874,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-02-21",
+      "time_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-043",
@@ -15078,7 +15825,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がマイラーウマ娘役の大橋彩香さん、指出毬亜さん、夏目妃菜さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ深まった話」、「そこそこシュンとした話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8",
       "sources": [
@@ -15095,7 +15842,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.43」4月11日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771878.3844728
+      "metadata_checked_at": 1792771878.3844728,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-04-11",
+      "time_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-044",
@@ -15143,7 +15897,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はゴールデンウィークに開催された「Gray Week」から、近藤唯さん、篠原侑さん、真名瀬日和さんが出走！ アニメ『うまゆる ぷりてぃ～ぐれい』など「Gray Week」の振り返りやそれぞれが演じるウマ娘の話など、そこそこウラ話をお届け！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0",
       "sources": [
@@ -15160,7 +15914,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.44」5月16日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771864.1213741
+      "metadata_checked_at": 1792771864.1213741,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-05-16",
+      "time_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-045",
@@ -15207,7 +15968,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の紫月杏朱彩さん、石原夏織さん、中島由貴さんの3人がそこそこウラ話をお届け！ 2025年5月24日（土）、25日（日）に開催された「ウマ娘 プリティーダービー 6th EVENT The New Frontier」春公演の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなど、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA",
       "sources": [
@@ -15217,7 +15978,15 @@
           "url": "https://www.youtube.com/watch?v=MsE4sJxW1lA"
         }
       ],
-      "metadata_checked_at": 1792771851.9665384
+      "metadata_checked_at": 1792771851.9665384,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2025-06-20",
+      "source_time_text": "1750413606",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-046",
@@ -15273,7 +16042,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 今回はアニメ『ウマ娘 シンデレラグレイ』第1クール完走を記念して、特別に生放送でお届け！ カサマツの物語を彩ったキャストたちが出走！ 演じるキャラクターの話やアニメの振り返りをはじめ、トレーナーの皆さんから募集した感想もご紹介します！ さらに、スタッフやキャストからのメッセージも！ ぜひお楽しみに！ ◆◆◆トレーナーの皆さまから、アニメ『シングレ』の好きなシーンを大募集◆◆◆ ※回答は締め切らせていただきました。たくさんのご協力ありがとうございました！※ ------------------------------------------------------------------------------",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=EtyMt8pfEf8",
       "sources": [
@@ -15289,7 +16058,15 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792775340.588029
+      "metadata_checked_at": 1792775340.588029,
+      "broadcast_time": "19:55",
+      "broadcast_date": "2025-07-03",
+      "source_time_text": "1751540111",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=EtyMt8pfEf8",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-047",
@@ -15328,7 +16105,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はメインストーリー第2部から小島菜々恵さんと、そこそこぱかライブTV初出走の佳原萌枝さんが出走！ メインストーリー第2部 中編「盛夏の星、晩秋の華」と後編「種を貴方に、希望は巡る」を振り返りながら、収録時のエピソードやそれぞれが演じるウマ娘の話などそこそこウラ話をお届け！ さらに「そこそこ消費してる話」や「そこそこカワイイ話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY",
       "sources": [
@@ -15338,7 +16115,15 @@
           "url": "https://www.youtube.com/watch?v=nYA3CObgLpY"
         }
       ],
-      "metadata_checked_at": 1792774927.1805274
+      "metadata_checked_at": 1792774927.1805274,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2025-08-08",
+      "source_time_text": "1754647206",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-048",
@@ -15386,7 +16171,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の吉岡茉祐さん、日比優理香さん、松田颯水さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ悔いてる話」、「そこそこレアな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、一族の絆を確かめるゲームにも挑戦！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk",
       "sources": [
@@ -15403,7 +16188,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.48」9月12日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771844.3814347
+      "metadata_checked_at": 1792771844.3814347,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-09-12",
+      "time_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-049",
@@ -15451,7 +16243,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がスプリンターウマ娘役の秋山実咲さん、望月ゆみこさん、野木奏さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ大変だった話」、「そこそこ健やかな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、一瞬で流れる音楽で何の曲かを当てる「超ウルトラスプリント楽曲クイズ！」にも挑戦！ ぜひお楽しみに！ ------------------------------------------ ※2025年10月17日（金）追記 27：06 「6th EVENT The New Frontier」秋公演 DAY2の出走者に関して DAY2に出演を予定しておりましたタマモクロス役の大空直美さんにつきまして、体調不良により出演を見送ることとなりました。 詳細はお知らせをご覧ください。 ------------------------------------------",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=d3TidydxtoE",
       "sources": [
@@ -15468,7 +16260,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.49」10月17日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771843.0048993
+      "metadata_checked_at": 1792771843.0048993,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2025-10-17",
+      "time_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-050",
@@ -15523,7 +16322,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は2025年10月18日（土）、19日（日）に開催された「ウマ娘 プリティーダービー 6th EVENT The New Frontier」秋公演から、前田玲奈さん、長江里加さん、田中あいみさん、福嶋晴菜さんの4人がそこそこウラ話をお届け！ 公演の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなど、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0",
       "sources": [
@@ -15533,7 +16332,15 @@
           "url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0"
         }
       ],
-      "metadata_checked_at": 1792771835.8885658
+      "metadata_checked_at": 1792771835.8885658,
+      "broadcast_time": "19:00",
+      "broadcast_date": "2025-11-14",
+      "source_time_text": "1763114406",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-051",
@@ -15589,7 +16396,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 今回はアニメ『ウマ娘 シンデレラグレイ』第2クール完走を記念して、特別に生放送でお届け！ 出走キャストたちがアニメ収録時のそこそこウラ話をお届けするほか、 キャストやスタッフからのメッセージもそこそこたっぷりご紹介します！ また、生放送に向けてX（Twitter）で事前にコメントを大募集！ 「#そこぱか生放送」をつけてアニメの感想やキャストへのメッセージなど、 たくさんの投稿をお待ちしています！ 生放送当日も、X（Twitter）やYouTubeのチャット欄で、 “数日遅れのクリスマス会”を盛り上げてくださいね！ ------------------------------------------------------------------------------",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=gIwX-jwD2Sk",
       "sources": [
@@ -15605,7 +16412,15 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792775340.8457751
+      "metadata_checked_at": 1792775340.8457751,
+      "broadcast_time": "19:55",
+      "broadcast_date": "2025-12-28",
+      "source_time_text": "1766919311",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=gIwX-jwD2Sk",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-052",
@@ -15653,7 +16468,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は上田瞳さん、奥野香耶さんと、そこそこぱかライブTV初出走の芹澤優さんがそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ癒された話」、「そこそこ恐かった話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、握力を競うゲームにも挑戦！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U",
       "sources": [
@@ -15670,7 +16485,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.52」2月13日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771814.8633358
+      "metadata_checked_at": 1792771814.8633358,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-02-13",
+      "time_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-053",
@@ -15718,7 +16540,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の久保田未夢さん、小田杏樹さん、近貞月乃さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこおいしかった話」、「そこそこ怪力な話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、自己紹介クイズにも挑戦！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY",
       "sources": [
@@ -15735,7 +16557,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.53」4月17日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771796.37994
+      "metadata_checked_at": 1792771796.37994,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-04-17",
+      "time_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-054",
@@ -15782,7 +16611,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 今回は『7th EVENT WORLD TOUR 「THE STAGE」 in TOKYO』完走を記念して、特別に生放送でお届けします！ 今回は全員がそこそこぱかライブTV初出走の関根瞳さん、海弓シュリさん、嶋野花さんの3人がそこそこウラ話をお届け！ 2026年6月20日（土）、21日（日）に開催された『7th EVENT WORLD TOUR 「THE STAGE」 in TOKYO』の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなど、“そこそこ”なトークをゆるりとお送りします！ また、生放送に向けてX（Twitter）で事前にコメントを大募集！ 「#そこぱか生放送」をつけて7th EVENTの感想やキャストへのメッセージなど、 たくさんの投稿をお待ちしています！ ぜひお楽しみに！ ------------------------------------------------------------------------------",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=CbCs_zfy4mk",
       "sources": [
@@ -15792,7 +16621,15 @@
           "url": "https://www.youtube.com/watch?v=CbCs_zfy4mk"
         }
       ],
-      "metadata_checked_at": 1792775340.8891678
+      "metadata_checked_at": 1792775340.8891678,
+      "broadcast_time": "18:50",
+      "broadcast_date": "2026-06-28",
+      "source_time_text": "1782640241",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "time_source_url": "https://www.youtube.com/watch?v=CbCs_zfy4mk",
+      "summary_translation_status": "stale"
     },
     {
       "id": "sokosoko-paka-live-tv-055",
@@ -15840,7 +16677,7 @@
           ]
         }
       ],
-      "summary": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の鈴木日菜さん、星希成奏さん、華成結さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこラヴリー♡な話」、「そこそこニコニコな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、3人の絆を確かめるゲームにも挑戦！ ぜひお楽しみに！",
       "source_kind": "official_youtube",
       "source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY",
       "sources": [
@@ -15857,7 +16694,14 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.55」8月28日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771767.7113774
+      "metadata_checked_at": 1792771767.7113774,
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "announced",
+      "time_precision": "hour",
+      "broadcast_date": "2026-08-28",
+      "time_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY",
+      "summary_translation_status": "stale"
     }
   ]
 }

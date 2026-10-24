@@ -355,8 +355,8 @@ export function createNews(deps) {
     return doc.body.innerHTML;
   }
 
-  function loadNews(fresh) {
-    const requestedQuery = String(newsQuery.value || '').trim();
+  function loadNews(fresh, routeQuery) {
+    const requestedQuery = String(routeQuery === undefined ? newsQuery.value || '' : routeQuery).trim();
     if (newsLoadPromise && newsLoadQuery === requestedQuery) return newsLoadPromise;
     const serial = ++newsLoadSerial;
     newsLoadQuery = requestedQuery;

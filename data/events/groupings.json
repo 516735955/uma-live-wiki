@@ -548,6 +548,156 @@
           "label": "第2场"
         }
       ]
+    },
+    {
+      "id": "starting-gate-01-release-talks",
+      "kind": "release_event",
+      "title": "STARTING GATE 01 发售纪念活动",
+      "title_ja": "STARTING GATE 01 発売記念イベント",
+      "summary": "STARTING GATE 01 发售纪念活动的第1回与第2回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-cd-2017-01-08-starting-gate-01-1", "role": "child", "label": "第1回"},
+        {"event_id": "live-cd-2017-01-08-starting-gate-01-2", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "starting-gate-02-release-talks",
+      "kind": "release_event",
+      "title": "STARTING GATE 02 发售纪念活动",
+      "title_ja": "STARTING GATE 02 発売記念イベント",
+      "summary": "STARTING GATE 02 发售纪念活动的第1回与第2回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-cd-2017-02-11-starting-gate-02-1", "role": "child", "label": "第1回"},
+        {"event_id": "live-cd-2017-02-11-starting-gate-02-2", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "starting-gate-03-release-talks",
+      "kind": "release_event",
+      "title": "STARTING GATE 03 发售纪念活动",
+      "title_ja": "STARTING GATE 03 発売記念イベント",
+      "summary": "STARTING GATE 03 发售纪念活动的第1回与第2回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-cd-2017-03-18-starting-gate-03-1", "role": "child", "label": "第1回"},
+        {"event_id": "live-cd-2017-03-18-starting-gate-03-2", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "starting-gate-04-release-talks",
+      "kind": "release_event",
+      "title": "STARTING GATE 04 发售纪念活动",
+      "title_ja": "STARTING GATE 04 発売記念イベント",
+      "summary": "STARTING GATE 04 发售纪念活动的第1回与第2回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-cd-2017-04-08-starting-gate-04-1", "role": "child", "label": "第1回"},
+        {"event_id": "live-cd-2017-04-08-starting-gate-04-2", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "starting-gate-05-release-talks",
+      "kind": "release_event",
+      "title": "STARTING GATE 05 发售纪念活动",
+      "title_ja": "STARTING GATE 05 発売記念イベント",
+      "summary": "STARTING GATE 05 发售纪念活动的第1回与第2回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-cd-2017-04-29-starting-gate-05-1", "role": "child", "label": "第1回"},
+        {"event_id": "live-cd-2017-04-29-starting-gate-05-2", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "starting-gate-06-release-talks",
+      "kind": "release_event",
+      "title": "STARTING GATE 06 发售纪念活动",
+      "title_ja": "STARTING GATE 06 発売記念イベント",
+      "summary": "STARTING GATE 06 发售纪念活动的第1回与第2回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-cd-2017-05-13-starting-gate-06-1", "role": "child", "label": "第1回"},
+        {"event_id": "live-cd-2017-05-13-starting-gate-06-2", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "anime-bnw-screenings-2018-11-04",
+      "kind": "screening",
+      "title": "《BNW的誓言》提前放映会",
+      "title_ja": "『BNWの誓い』先行上映会",
+      "summary": "动画《赛马娘 Pretty Derby》全新篇章《BNW的誓言》提前放映会的第1场与第2场。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "eventernote-2018-11-04", "role": "child", "label": "第1场"},
+        {"event_id": "eventernote-2018-11-04-2", "role": "child", "label": "第2场"}
+      ]
+    },
+    {
+      "id": "paka-radio-2019-04-14-recordings",
+      "kind": "recording_event",
+      "title": "PakaRadio！平成最后的 Precious Pretty Party 公开录音",
+      "title_ja": "ぱかラジッ！平成最後のプレシャスプリティーパーティー公開録音",
+      "summary": "PakaRadio！公开录音活动的第1部与第2部。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-other-2019-04-14-1", "role": "child", "label": "第1部"},
+        {"event_id": "live-other-2019-04-14-2", "role": "child", "label": "第2部"}
+      ]
+    },
+    {
+      "id": "cygamesfes-2018-uma-musume",
+      "kind": "festival_program",
+      "title": "CygamesFes2018 赛马娘节目",
+      "title_ja": "CygamesFes2018 ウマ娘ステージ・SPECIAL LIVE",
+      "summary": "CygamesFes2018 两日的赛马娘 SPECIAL LIVE 与闭幕舞台来源。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1", "role": "child", "label": "DAY1 SPECIAL LIVE"},
+        {"event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2", "role": "child", "label": "DAY2 SPECIAL LIVE"},
+        {"event_id": "eventernote-2018-12-16", "role": "child", "label": "DAY2 闭幕舞台"}
+      ]
+    },
+    {
+      "id": "saga-race-collaboration-talks-2023",
+      "kind": "onsite_group",
+      "title": "佐贺赛马联动谈话活动（2023）",
+      "title_ja": "佐賀競馬場コラボトークイベント（2023）",
+      "summary": "2023年佐贺赛马联动期间的特别谈话活动，按日期与场次保留子活动。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "eventernote-2023-02-12-2", "role": "child", "label": "2月12日 第1场"},
+        {"event_id": "eventernote-2023-02-12-3", "role": "child", "label": "2月12日 第2场"},
+        {"event_id": "eventernote-2023-12-16", "role": "child", "label": "12月16日 第1场"},
+        {"event_id": "eventernote-2023-12-16-2", "role": "child", "label": "12月16日 第2场"},
+        {"event_id": "eventernote-2023-12-17-2", "role": "child", "label": "12月17日 第1场"},
+        {"event_id": "eventernote-2023-12-17-3", "role": "child", "label": "12月17日 第2场"}
+      ]
+    },
+    {
+      "id": "sonoda-race-collaboration-talks-2024-06-28",
+      "kind": "onsite_group",
+      "title": "园田赛马场联动谈话活动（2024）",
+      "title_ja": "園田競馬場コラボトークイベント（2024）",
+      "summary": "2024年6月28日园田赛马场联动谈话活动的第1场与第2场。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "eventernote-2024-06-28", "role": "child", "label": "第1场"},
+        {"event_id": "eventernote-2024-06-28-2", "role": "child", "label": "第2场"}
+      ]
+    },
+    {
+      "id": "yonkoma-audio-commentary-relay-2020",
+      "kind": "online_series",
+      "title": "《四格马娘》音频评论接力",
+      "title_ja": "『うまよん』オーディオコメンタリーリレー",
+      "summary": "《四格马娘》特别企划音频评论接力，当前目录收录已确认的第1、2、5回。",
+      "source_urls": [],
+      "members": [
+        {"event_id": "official-special-20200811-1", "role": "child", "label": "第1回"},
+        {"event_id": "official-special-20200825-2", "role": "child", "label": "第2回"},
+        {"event_id": "official-special-20200908-5", "role": "child", "label": "第5回"}
+      ]
     }
   ]
 }

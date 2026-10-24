@@ -2,6 +2,41 @@
   "schema_version": 1,
   "source": "data/events_catalog.json",
   "records": {
+    "eventernote-2027-02-06": {
+      "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 37 発売記念イベント",
+      "title_zh": "《赛马娘 Pretty Derby》WINNING LIVE 37 发售纪念活动",
+      "title_translator": "assistant"
+    },
+    "live-other-source-d8047d25f070": {
+      "title_ja": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
+      "title_zh": "动画《赛马娘 芦毛灰姑娘》第1季度片尾主题曲《∞》发售纪念活动【第2部】",
+      "title_translator": "assistant"
+    },
+    "live-other-source-3ecbf19d7cc8": {
+      "title_ja": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
+      "title_zh": "动画《赛马娘 芦毛灰姑娘》第1季度片尾主题曲《∞》发售纪念活动【第1部】",
+      "title_translator": "assistant"
+    },
+    "live-other-source-188f6109b0ea": {
+      "title_ja": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+      "title_zh": "PakaRadio！～赛马娘宣传部～ 公开录音：平成最后的 Precious Pretty Party 第2部",
+      "title_translator": "assistant"
+    },
+    "live-other-source-39a0b6c84f97": {
+      "title_ja": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+      "title_zh": "PakaRadio！～赛马娘宣传部～ 公开录音：平成最后的 Precious Pretty Party 第1部",
+      "title_translator": "assistant"
+    },
+    "live-other-source-2d0f3bde0354": {
+      "title_ja": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+      "title_zh": "CygamesFes2018《赛马娘 Pretty Derby》特别演唱会 DAY2",
+      "title_translator": "assistant"
+    },
+    "live-other-source-90b641fafdd4": {
+      "title_ja": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+      "title_zh": "CygamesFes2018《赛马娘 Pretty Derby》特别演唱会 DAY1",
+      "title_translator": "assistant"
+    },
     "eventernote-2026-12-12": {
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント",
       "summary_ja": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
@@ -104,9 +139,10 @@
     },
     "sokosoko-paka-live-tv-055": {
       "title_ja": "そこそこぱかライブTV Vol.55",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の鈴木日菜さん、星希成奏さん、華成結さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこラヴリー♡な話」、「そこそこニコニコな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、3人の絆を確かめるゲームにも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.55",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的铃木日菜、星希成奏、华成结3人带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微可爱的故事”“稍微笑眯眯的故事”等，悠闲地展开“稍微”风格的谈话！此外还将挑战一款检验3人羁绊的游戏！敬请期待！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-prime-006": {
       "title_ja": "「ウマ娘 プリティーダービー」ぱかライブTV' #6 5.5周年スペシャル！",
@@ -176,10 +212,11 @@
     },
     "sokosoko-paka-live-tv-054": {
       "title_ja": "そこそこぱかライブTV Vol.54 7th EVENT 「THE STAGE」 in TOKYO 振り返り生放送スペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 今回は『7th EVENT WORLD TOUR 「THE STAGE」 in TOKYO』完走を記念して、特別に生放送でお届けします！ 今回は全員がそこそこぱかライブTV初出走の関根瞳さん、海弓シュリさん、嶋野花さんの3人がそこそこウラ話をお届け！ 2026年6月20日（土）、21日（日）に開催された『7th EVENT WORLD TOUR 「THE STAGE」 in TOKYO』の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなど、“そこそこ”なトークをゆるりとお送りします！",
       "title_zh": "SokoSoko PakaLive TV Vol.54 第七次活动「THE STAGE」东京公演回顾直播特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！为纪念《7th EVENT WORLD TOUR「THE STAGE」in TOKYO》圆满结束，本期特别以直播形式播出！首次参加《SokoSoko PakaLive TV》的关根瞳、海弓修利、岛野花3人将带来幕后趣闻！节目会回顾2026年6月20日（周六）和21日（周日）举办的《7th EVENT WORLD TOUR「THE STAGE」in TOKYO》，悠闲聊聊现场演唱的歌曲和舞台幕后经历等“稍微”风格的话题！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "pakatube-20260627-3": {
       "title_ja": "【配信】ファインとカップ麺が出来上がるまでの3分間を一緒に待とうぜ",
@@ -256,9 +293,10 @@
     },
     "sokosoko-paka-live-tv-053": {
       "title_ja": "そこそこぱかライブTV Vol.53",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の久保田未夢さん、小田杏樹さん、近貞月乃さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこおいしかった話」、「そこそこ怪力な話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、自己紹介クイズにも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.53",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的久保田未梦、小田杏树、近贞月乃3人带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微美味的故事”“稍微力气大的故事”等，悠闲地展开“稍微”风格的谈话！此外还将挑战自我介绍问答！敬请期待！",
+      "summary_translator": "assistant"
     },
     "eventernote-2026-03-28-3": {
       "title_ja": "ウマ娘 プリティーダービー×ノーザンホースパーク コラボイベント Part3 ウマ娘 プリティーダービーキャスト トークショー③",
@@ -311,9 +349,10 @@
     },
     "sokosoko-paka-live-tv-052": {
       "title_ja": "そこそこぱかライブTV Vol.52",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は上田瞳さん、奥野香耶さんと、そこそこぱかライブTV初出走の芹澤優さんがそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ癒された話」、「そこそこ恐かった話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、握力を競うゲームにも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.52",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由上田瞳、奥野香耶，以及首次参加《SokoSoko PakaLive TV》的芹泽优带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微被治愈的故事”“稍微可怕的故事”等，悠闲地展开“稍微”风格的谈话！此外还将挑战握力比赛游戏！敬请期待！",
+      "summary_translator": "assistant"
     },
     "pakatube-20260201-golf-world-4": {
       "title_ja": "【みんなのGOLF WORLD】メジロ家のパーマー、ライアン、アルダン、ブライトの4人でゲーム実況だ！【後編】",
@@ -352,10 +391,11 @@
     },
     "sokosoko-paka-live-tv-051": {
       "title_ja": "そこそこぱかライブTV Vol.51 アニメ『ウマ娘 シンデレラグレイ』第2クール振り返り生放送スペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 今回はアニメ『ウマ娘 シンデレラグレイ』第2クール完走を記念して、特別に生放送でお届け！ 出走キャストたちがアニメ収録時のそこそこウラ話をお届けするほか、 キャストやスタッフからのメッセージもそこそこたっぷりご紹介します！ また、生放送に向けてX（Twitter）で事前にコメントを大募集！ 「#そこぱか生放送」をつけてアニメの感想やキャストへのメッセージなど、 たくさんの投稿をお待ちしています！ 生放送当日も、X（Twitter）やYouTubeのチャット欄で、 “数日遅れのクリスマス会”を盛り上げてくださいね！",
       "title_zh": "SokoSoko PakaLive TV Vol.51 动画《赛马娘 Cinderella Gray》第2季度回顾直播特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！为纪念动画《赛马娘 芦毛灰姑娘》第2季度圆满结束，本期特别以直播形式播出！出演演员们将分享动画录音时的幕后趣闻，还会介绍演员和工作人员带来的大量留言！此外，节目还将在直播前通过X（Twitter）征集评论！请添加“#稍微PakaLive直播”话题，分享对动画的感想或给演员的留言，我们期待大家踊跃投稿！直播当天也请在X（Twitter）或YouTube聊天栏中，一起为“迟到几天的圣诞会”助兴吧！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "eventernote-2025-12-27": {
       "title_ja": "ウマ娘×ウィナーズレディコラボ in 中山競馬場 2025年12月27日",
@@ -419,10 +459,11 @@
     },
     "sokosoko-paka-live-tv-050": {
       "title_ja": "そこそこぱかライブTV Vol.50 6th EVENT 秋公演 振り返りスペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は2025年10月18日（土）、19日（日）に開催された「ウマ娘 プリティーダービー 6th EVENT The New Frontier」秋公演から、前田玲奈さん、長江里加さん、田中あいみさん、福嶋晴菜さんの4人がそこそこウラ話をお届け！ 公演の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなど、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.50 第六次活动秋季公演回顾特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期将从2025年10月18日（周六）和19日（周日）举办的《赛马娘 Pretty Derby 6th EVENT The New Frontier》秋季公演出发，邀请前田玲奈、长江里加、田中爱美、福岛晴菜4人分享幕后趣闻！节目会回顾公演现场，悠闲聊聊演唱的歌曲和舞台幕后经历等“稍微”风格的话题！敬请期待！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "live-cd-2025-11-02-winning-live-28": {
       "title_ja": "WINNING LIVE 28 発売記念イベント",
@@ -450,9 +491,10 @@
     },
     "sokosoko-paka-live-tv-049": {
       "title_ja": "そこそこぱかライブTV Vol.49",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がスプリンターウマ娘役の秋山実咲さん、望月ゆみこさん、野木奏さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ大変だった話」、「そこそこ健やかな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、一瞬で流れる音楽で何の曲かを当てる「超ウルトラスプリント楽曲クイズ！」にも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.49",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由饰演短跑型赛马娘、全部首次参加节目的秋山实咲、望月由美子、野木奏3人带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微辛苦的故事”“稍微健康的故事”等，悠闲地展开“稍微”风格的谈话！此外还将挑战“超级超短跑歌曲问答”，根据一闪而过的音乐猜出歌曲名称！敬请期待！",
+      "summary_translator": "assistant"
     },
     "eventernote-2025-10-12-2": {
       "title_ja": "ウマ娘 プリティーダービー×金沢けいばコラボイベント「ウマ娘 プリティーダービー声優 トークショー」②",
@@ -497,9 +539,10 @@
     },
     "sokosoko-paka-live-tv-048": {
       "title_ja": "そこそこぱかライブTV Vol.48",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の吉岡茉祐さん、日比優理香さん、松田颯水さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ悔いてる話」、「そこそこレアな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、一族の絆を確かめるゲームにも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.48",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的吉冈茉祐、日比优理香、松田飒水3人带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微后悔的故事”“稍微稀奇的故事”等，悠闲地展开“稍微”风格的谈话！此外还将挑战一款检验家族羁绊的游戏！敬请期待！",
+      "summary_translator": "assistant"
     },
     "live-cd-2025-09-06-winning-live-27": {
       "title_ja": "WINNING LIVE 27 発売記念イベント",
@@ -519,9 +562,10 @@
     },
     "sokosoko-paka-live-tv-047": {
       "title_ja": "そこそこぱかライブTV Vol.47",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はメインストーリー第2部から小島菜々恵さんと、そこそこぱかライブTV初出走の佳原萌枝さんが出走！ メインストーリー第2部 中編「盛夏の星、晩秋の華」と後編「種を貴方に、希望は巡る」を振り返りながら、収録時のエピソードやそれぞれが演じるウマ娘の話などそこそこウラ話をお届け！ さらに「そこそこ消費してる話」や「そこそこカワイイ話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.47",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期将邀请主线故事第2部的演员小岛菜菜惠，以及首次参加《SokoSoko PakaLive TV》的佳原萌枝！节目会回顾主线故事第2部中篇《盛夏之星，晚秋之花》和后篇《种子予你，希望轮回》，分享录音时的趣闻以及各自饰演的赛马娘等幕后话题！此外还将悠闲聊聊“稍微消耗的故事”“稍微可爱的故事”等“稍微”风格的话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "pakatube-20250806-wb-shadowverse-worlds-beyond": {
       "title_ja": "【シャドバWB ゲーム実況】ギャルウマ娘たちがルンルンと一緒に「Shadowverse: Worlds Beyond」で遊んでみたぞ！",
@@ -583,10 +627,11 @@
     },
     "sokosoko-paka-live-tv-046": {
       "title_ja": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 今回はアニメ『ウマ娘 シンデレラグレイ』第1クール完走を記念して、特別に生放送でお届け！ カサマツの物語を彩ったキャストたちが出走！ 演じるキャラクターの話やアニメの振り返りをはじめ、トレーナーの皆さんから募集した感想もご紹介します！ さらに、スタッフやキャストからのメッセージも！ ぜひお楽しみに！ ◆◆◆トレーナーの皆さまから、アニメ『シングレ』の好きなシーンを大募集◆◆◆ ※回答は締め切らせていただきました。たくさんのご協力ありがとうございました！※",
       "title_zh": "SokoSoko PakaLive TV Vol.46 动画《赛马娘 Cinderella Gray》回顾直播特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！为纪念动画《赛马娘 芦毛灰姑娘》第1季度圆满结束，本期特别以直播形式播出！为笠松故事增添光彩的演员们将登场！节目不仅会聊到各自饰演的角色并回顾动画，还会介绍从训练员们那里征集到的感想！此外还会带来工作人员和演员的留言！敬请期待！◆◆◆现公开征集训练员们最喜欢的动画《赛马娘 芦毛灰姑娘》场景◆◆◆※征集已截止。感谢大家的大力协助！※",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "pakatube-20250628-2wlbgvgv2yi": {
       "title_ja": "【ボドゲ実況】タマモ、ライアン、アイネス、シチーがカタンをプレイしたぞ！【新育成シナリオ公開記念】",
@@ -608,10 +653,11 @@
     },
     "sokosoko-paka-live-tv-045": {
       "title_ja": "そこそこぱかライブTV Vol.45 6th EVENT 春公演 振り返りスペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の紫月杏朱彩さん、石原夏織さん、中島由貴さんの3人がそこそこウラ話をお届け！ 2025年5月24日（土）、25日（日）に開催された「ウマ娘 プリティーダービー 6th EVENT The New Frontier」春公演の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなど、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.45 第六次活动春季公演回顾特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的紫月杏朱彩、石原夏织、中岛由贵3人带来幕后趣闻！节目会回顾2025年5月24日（周六）和25日（周日）举办的《赛马娘 Pretty Derby 6th EVENT The New Frontier》春季公演，悠闲聊聊演唱的歌曲和舞台幕后经历等“稍微”风格的话题！敬请期待！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-053": {
       "title_ja": "ぱかライブTV Vol.53",
@@ -634,9 +680,10 @@
     },
     "sokosoko-paka-live-tv-044": {
       "title_ja": "そこそこぱかライブTV Vol.44",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はゴールデンウィークに開催された「Gray Week」から、近藤唯さん、篠原侑さん、真名瀬日和さんが出走！ アニメ『うまゆる ぷりてぃ～ぐれい』など「Gray Week」の振り返りやそれぞれが演じるウマ娘の話など、そこそこウラ話をお届け！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.44",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期将邀请近藤唯、筱原侑、真名濑日和，回顾黄金周期间举办的“Gray Week”！节目会回顾《Gray Week》及动画《赛马娘 Pretty Gray》等内容，也会聊到各自饰演的赛马娘和幕后趣闻！敬请期待！",
+      "summary_translator": "assistant"
     },
     "pakatube-20250514-uzs-rg5f6uy": {
       "title_ja": "【オンラインボドゲ実況】ヴィルシーナ、リッキー、タルマエ、シオンが海底探険をプレイしたぞ！【後編】",
@@ -667,9 +714,10 @@
     },
     "sokosoko-paka-live-tv-043": {
       "title_ja": "そこそこぱかライブTV Vol.43",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がマイラーウマ娘役の大橋彩香さん、指出毬亜さん、夏目妃菜さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ深まった話」、「そこそこシュンとした話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.43",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由全部饰演英里型赛马娘的大桥彩香、指出毬亚、夏目妃菜3人带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微有进展的故事”“稍微失落的故事”等，悠闲地展开“稍微”风格的谈话！敬请期待！",
+      "summary_translator": "assistant"
     },
     "anime-cinderella-gray-screening-20250330": {
       "title_ja": "アニメ『ウマ娘 シンデレラグレイ』先行上映会＆トークショー",
@@ -725,10 +773,11 @@
     },
     "sokosoko-paka-live-tv-042": {
       "title_ja": "そこそこぱかライブTV Vol.42 劇場版『新時代の扉』スペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、劇場版『ウマ娘 プリティーダービー 新時代の扉』から小倉唯さん、上坂すみれさん、福嶋晴菜さん、藤本侑里さんの4人が出走！ そこぱか初出走の小倉唯さん、上坂すみれさんがそれぞれが演じるウマ娘についてなどのそこそこウラ話をお届け！ さらに、劇場版について「今すぐ見直してほしいシーン！」やアフレコ現場でのウラ話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.42 剧场版《新时代之扉》特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期将邀请剧场版《赛马娘 Pretty Derby 新时代之门》的小仓唯、上坂堇、福岛晴菜、藤本侑里4人登场！首次参加《SokoSoko PakaLive TV》的小仓唯和上坂堇将聊聊各自饰演的赛马娘等幕后话题！此外还会围绕剧场版，悠闲聊聊“希望大家现在马上重看的场景！”以及配音现场的幕后趣闻等“稍微”风格的话题！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "live-cd-2025-02-15-winning-live-23": {
       "title_ja": "WINNING LIVE 23 発売記念イベント",
@@ -750,10 +799,11 @@
     },
     "sokosoko-paka-live-tv-041": {
       "title_ja": "そこそこぱかライブTV Vol.41 Twinkle Circle! 振り返りスペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.41」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.41」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、ウマ娘が過去最多の5都市を駆け巡ったリアルイベント「ウマ娘 プリティーダービー Twinkle Circle!」全公演の模様を振り返りながら、披露した楽曲や舞台裏でのエピソードなどそこそこウラ話をお届け！ さらに新年恒例のおみくじや、出走者の「そこそこ困った話」や「そこそこ泣いちゃった話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.41 Twinkle Circle! 回顾特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.41》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期将回顾赛马娘奔赴历史最多5座城市举办的线下活动《赛马娘 Pretty Derby Twinkle Circle!》全部公演，分享演唱的歌曲和舞台幕后经历等趣闻！此外还会进行新年惯例的抽签，并悠闲聊聊出演者“稍微伤脑筋的故事”“稍微忍不住哭的故事”等“稍微”风格的话题！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "live-cd-2025-01-12-winning-live-22": {
       "title_ja": "WINNING LIVE 22 発売記念イベント",
@@ -813,9 +863,10 @@
     },
     "sokosoko-paka-live-tv-040": {
       "title_ja": "そこそこぱかライブTV Vol.40",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.40」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.40」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこぱか初出走の西連寺亜希さん、塚田悠衣さん、亜咲花さんがお届け！ 3人の“そこそこ”なトークをゆるりとお楽しみください♪",
       "title_zh": "SokoSoko PakaLive TV Vol.40",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.40》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的西连寺亚希、塚田悠衣、亚咲花带来节目！请悠闲享受3人的“稍微”风格谈话♪",
+      "summary_translator": "assistant"
     },
     "eventernote-2024-12-08": {
       "title_ja": "ウマ娘 プリティーダービー×東京メガイルミ コラボ ウマ娘キャストトークショー",
@@ -859,9 +910,10 @@
     },
     "sokosoko-paka-live-tv-039": {
       "title_ja": "そこそこぱかライブTV Vol.39",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.39」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.39」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は星谷美緒さん、福原綾香さん、新田ひよりさんが出走！ ストーリーイベント「スラップスティック・クラッシュ！」のウラ話をお届け！ 3人の“そこそこ”なトークをゆるりとお楽しみください♪",
       "title_zh": "SokoSoko PakaLive TV Vol.39",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.39》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由星谷美绪、福原绫香、新田日和登场！她们将带来故事活动《Slapstick Crash!》的幕后趣闻！请悠闲享受3人的“稍微”风格谈话♪",
+      "summary_translator": "assistant"
     },
     "live-cd-2024-11-10-winning-live-21": {
       "title_ja": "WINNING LIVE 21 発売記念イベント",
@@ -913,9 +965,10 @@
     },
     "sokosoko-paka-live-tv-038": {
       "title_ja": "そこそこぱかライブTV Vol.38",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.38」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.38」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はそこそこぱかライブTV初出走の松嵜麗さん、田中あいみさんと初MCの衣川里佳さんがそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこ勝負メシな話」、「そこそこみつけちゃった♡話」など、“そこそこ”なトークをゆるりとお送りします！",
       "title_zh": "SokoSoko PakaLive TV Vol.38",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.38》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的松嵜丽、田中爱美，以及首次担任主持人的衣川里佳带来幕后趣闻！她们还将聊到各自饰演的赛马娘，以及“稍微决胜餐的故事”“稍微发现了什么的故事”等，悠闲地展开“稍微”风格的谈话！",
+      "summary_translator": "assistant"
     },
     "live-twinkle-2024-09-29-twinkle-circle-day2-2": {
       "title_ja": "ウマ娘 プリティーダービー Twinkle Circle! 愛知公演 Day2 2部",
@@ -978,9 +1031,10 @@
     },
     "sokosoko-paka-live-tv-037": {
       "title_ja": "そこそこぱかライブTV Vol.37",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.37」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.37」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は発売されたばかりのゲーム『ウマ娘 プリティーダービー 熱血ハチャメチャ大感謝祭！』から4人のキャストが出走！ 出走者の4人が『ハチャウマ』を“そこそこ”…ではなく“ガチ”でプレイします！ さらに、『ハチャウマ』のそこそこウラ話や、「そこそこ お悩み相談！」など、“そこそこ”なトークをゆるりとお送りします！",
       "title_zh": "SokoSoko PakaLive TV Vol.37",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.37》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期将邀请刚刚发售的游戏《赛马娘 Pretty Derby 热血大感谢祭！》的4位演员登场！4位出演者将不再“稍微”游玩《热血赛马娘》，而是认真全力挑战！此外还会悠闲聊聊《热血赛马娘》的幕后趣闻，以及“稍微烦恼咨询！”等“稍微”风格的话题！",
+      "summary_translator": "assistant"
     },
     "live-twinkle-2024-09-01-twinkle-circle-day2": {
       "title_ja": "ウマ娘 プリティーダービー Twinkle Circle! 函館公演 Day2",
@@ -1000,9 +1054,10 @@
     },
     "sokosoko-paka-live-tv-036": {
       "title_ja": "そこそこぱかライブTV Vol.36",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.36」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.36」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の津田美波さん、和多田美咲さん、野木奏さんの3人がそこそこウラ話をお届け！ オーディション時のエピソードや「そこそここそこそな話」、「そこそこおどろいた話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.36",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.36》！节目将以不同于《PakaLive TV》的氛围，由赛马娘的演员们轻松带来“稍微”风格的聊天！本期由首次参加《SokoSoko PakaLive TV》的津田美波、和多田美咲、野木奏3人带来幕后趣闻！她们将分享试镜时的经历，以及“稍微又稍微的故事”“稍微惊讶的故事”等，悠闲地展开“稍微”风格的谈话！敬请期待！",
+      "summary_translator": "assistant"
     },
     "live-cd-2024-08-10-winning-live-19": {
       "title_ja": "WINNING LIVE 19 発売記念イベント",
@@ -1034,9 +1089,10 @@
     },
     "sokosoko-paka-live-tv-035": {
       "title_ja": "そこそこぱかライブTV Vol.35",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.35」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.35」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はそこそこぱかライブTV初出走の河野ひよりさん、春日さくらさんと初MCの春川芽生さんがそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこやってみたいなぁな話」、「そこそこ変化した話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.35",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.35」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次邀请首次出演SokoSoko PakaLive TV的河野日和、春日樱，以及首次担任主持的春川芽生，为大家分享一些幕后趣闻！节目将聊到她们各自饰演的赛马娘、「稍稍想尝试的事情」和「稍稍发生变化的事情」等，轻松展开各种“稍稍”话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "pakatube-20240710-5": {
       "title_ja": "【ブーメランヒュー】スペ・アケボノ・ライス・フラワー・エースの5人でゲーム実況だ！【後編】",
@@ -1121,9 +1177,10 @@
     },
     "sokosoko-paka-live-tv-034": {
       "title_ja": "そこそこぱかライブTV Vol.34",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.34」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.34」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はエイプリルフール企画「UMA STARS」や、ゴールデンウィークに開催された「GOCHI WEEK」から4人のキャストが出走！ キャンペーンの振り返りや今だから話せるエピソードなど、そこそこウラ話をお届け！ さらに“そこそこ”なトークだけでなく、「GOCHI WEEK」で公開されたオリジナルレシピの料理にも“そこそこ”チャレンジします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.34",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.34」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将有4位演员从愚人节企划「UMA STARS」和黄金周举办的「GOCHI WEEK」中登场！她们将回顾活动，并分享一些只有现在才能说的幕后故事！此外，除了“稍稍”聊天，还会挑战制作「GOCHI WEEK」公开的原创食谱料理！敬请期待！",
+      "summary_translator": "assistant"
     },
     "eventernote-2024-06-13": {
       "title_ja": "劇場版ウマ娘Fビレッジスペシャルトークショー",
@@ -1180,9 +1237,10 @@
     },
     "sokosoko-paka-live-tv-033": {
       "title_ja": "そこそこぱかライブTV Vol.33",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.33」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.33」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は劇場版『ウマ娘 プリティーダービー 新時代の扉』と劇場用再編集版『ウマ娘 プリティーダービー ROAD TO THE TOP』から4人のキャストが出走！ いよいよ公開が目前に迫った劇場版のウラ話や作品の魅力など、“そこそこ”なトークをゆるりとお送りします！ キャスト同士でお悩み相談をする新コーナーもお届け！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.33",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.33」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将有4位演员分别来自剧场版《赛马娘 Pretty Derby 新时代之门》和剧场重新剪辑版《赛马娘 Pretty Derby ROAD TO THE TOP》！在剧场版即将上映之际，她们将分享作品的幕后故事与魅力，轻松展开各种“稍稍”话题！节目还将带来演员之间互相咨询烦恼的新环节！敬请期待！",
+      "summary_translator": "assistant"
     },
     "live-other-2024-05-06-title-7caa082310e6": {
       "title_ja": "劇場版『ウマ娘 プリティーダービー 新時代の扉』完成披露プレミア",
@@ -1203,9 +1261,10 @@
     },
     "sokosoko-paka-live-tv-032": {
       "title_ja": "そこそこぱかライブTV Vol.32",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.32」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.32」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はメインストーリー第2部 前編「ヒカリ射し、芽吹くとき！」に登場したキャスト4人が出走！ それぞれが演じるウマ娘の話や収録時のエピソードなど、メインストーリー第2部にまつわるそこそこウラ話をお届け！ さらに、3月に開催された「5th EVENT 第4公演」に出走したときの話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.32",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.32」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将有4位曾出演主线故事第2部前篇「光芒照耀、萌芽之时！」的演员登场！她们会聊到各自饰演的赛马娘以及录音时的故事，带来与主线故事第2部相关的幕后趣闻！此外，还会轻松聊聊她们参加3月举办的「5th EVENT 第4公演」时的经历！敬请期待！",
+      "summary_translator": "assistant"
     },
     "pakatube-20240412-move-or-die-4": {
       "title_ja": "【Move or Die】クラフト・シーザリオ・メサイア・ハートの4人でゲーム実況だ！【後編】",
@@ -1256,10 +1315,11 @@
     },
     "sokosoko-paka-live-tv-031": {
       "title_ja": "そこそこぱかライブTV Vol.31 5th EVENT 第3公演 -YELL- 振り返りスペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.31」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.31」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、2024年2月3日（土）、4日（日）に開催された「ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND - YELL - 」の模様を振り返りながら、披露した楽曲の話や舞台裏でのエピソードなどそこそこウラ話をお届け！ さらに出走者の「そこそこ好きな食べ物の話」や「そこそこ良い姉妹の話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.31 第五次活动第3公演 -YELL- 回顾特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.31」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将一边回顾2024年2月3日（周六）、4日（周日）举办的「赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND - YELL -」，一边分享演唱歌曲以及舞台幕后故事等稍稍趣闻！此外，出演者还会聊聊「稍稍喜欢的食物」和「稍稍不错的姐妹故事」等轻松话题！敬请期待！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "live-other-2024-02-25-2024-day2": {
       "title_ja": "オダイバ!!超次元音楽祭 フユフェス2024 Day2",
@@ -1306,9 +1366,10 @@
     },
     "sokosoko-paka-live-tv-030": {
       "title_ja": "そこそこぱかライブTV Vol.30",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.30」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.30」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はTVアニメ『ウマ娘 プリティーダービー Season 3』に出演したキャスト4人による、「そこそこウラ話 TVアニメ第3期 ゴールイン！スペシャル」をお届け！ シーンの振り返りや今だから言えること、収録時のエピソードなど、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.30",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.30」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次带来由出演电视动画《赛马娘 Pretty Derby Season 3》的4位演员参加的「稍稍幕后故事 TV动画第3期冲线！特别篇」！节目将回顾动画场景、分享如今可以说出的事情以及录音时的故事等，轻松展开各种“稍稍”话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "live-other-2023-12-31-7-2023-2024": {
       "title_ja": "第7回 ももいろ歌合戦 2023→2024",
@@ -1341,9 +1402,10 @@
     },
     "sokosoko-paka-live-tv-029": {
       "title_ja": "そこそこぱかライブTV Vol.29",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.29」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.29」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はTVアニメ『ウマ娘 プリティーダービー Season 3』より、三姉妹役のキャスト3人が出走！ TVアニメのシーンの振り返りや収録時のエピソードなど、作品にまつわるそこそこウラ話をお届け！ さらに出走者の「そこそこベリッシマ！な話」や「そこそこ気になってるものの話」など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.29",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.29」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将有电视动画《赛马娘 Pretty Derby Season 3》中饰演三姐妹的3位演员登场！她们将回顾动画场景、分享录音时的故事等与作品有关的幕后趣闻！此外还会聊聊出演者「稍稍精彩绝伦的事情」和「稍稍在意的事物」等轻松话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "eventernote-2023-12-17": {
       "title_ja": "ウマ娘 プリティーダービー×佐賀競馬 コラボイベント ウェルカムステージ",
@@ -1407,9 +1469,10 @@
     },
     "sokosoko-paka-live-tv-028": {
       "title_ja": "そこそこぱかライブTV Vol.28",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.28」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.28」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はTVアニメ『ウマ娘 プリティーダービー Season 3』に出演中のキャスト3人が出走！ TVアニメのシーンの振り返りや収録時のエピソードなど、作品にまつわるそこそこウラ話をお届け！ さらに出走者の「そこそこガマンできない話」や「そこそこ染みた話」など、\"そこそこ\"なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.28",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.28」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将有3位正在出演电视动画《赛马娘 Pretty Derby Season 3》的演员登场！她们将回顾动画场景、分享录音时的故事等与作品有关的幕后趣闻！此外还会聊聊出演者「稍稍无法忍耐的事情」和「稍稍触动内心的事情」等轻松话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "live-other-2023-11-18-animax-musix-2023": {
       "title_ja": "ANIMAX MUSIX 2023",
@@ -1447,10 +1510,11 @@
     },
     "sokosoko-paka-live-tv-027": {
       "title_ja": "そこそこぱかライブTV Vol.27 5th EVENT 第2公演 -GAZE- 振り返りスペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.27」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.27」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、2023年9月16日（土）、17日（日）に開催された「5th EVENT ARENA TOUR GO BEYOND - GAZE - 」の模様を振り返りながらそこそこウラ話をお届け！ 披露した楽曲の話や、舞台裏でキャストが目撃した出来事の話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.27 第五次活动第2公演 -GAZE- 回顾特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.27」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将一边回顾2023年9月16日（周六）、17日（周日）举办的「5th EVENT ARENA TOUR GO BEYOND - GAZE -」，一边分享幕后趣闻！节目还会聊到演唱歌曲，以及演员在舞台后台目睹的事情等，轻松展开各种“稍稍”话题！敬请期待！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "pakatube-20231013-tv-3-1": {
       "title_ja": "【TVアニメ第3期】第1話の同時視聴やっちゃうぞ！",
@@ -1485,9 +1549,10 @@
     },
     "sokosoko-paka-live-tv-026": {
       "title_ja": "そこそこぱかライブTV Vol.26",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.26」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.26」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は「BNW」の3人が出走！ 「BNWが初めて揃ったときのこと」などのそこそこウラ話をお届け！ さらに出走者の「そこそこ夏を感じる話」や「そこそこもらい泣きした話」など、\"そこそこ\"なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.26",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.26」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次由「BNW」的3位成员登场！节目将分享「BNW首次聚齐时的事情」等幕后趣闻，还会聊聊出演者「稍稍感受到夏日的事情」和「稍稍感动到落泪的事情」等轻松话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-032": {
       "title_ja": "ぱかライブTV Vol.32",
@@ -1503,10 +1568,11 @@
     },
     "sokosoko-paka-live-tv-025": {
       "title_ja": "そこそこぱかライブTV Vol.25 5th EVENT 第1公演 -WISH- 振り返りスペシャル",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.25」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.25」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は、2023年7月15日（土）、16日（日）に開催された「5th EVENT ARENA TOUR GO BEYOND - WISH - 」の模様を振り返りながらそこそこウラ話をお届け！ 披露した楽曲の話や、キャストとの関わりの話など、“そこそこ”なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.25 第五次活动第1公演 -WISH- 回顾特别篇",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！",
-      "translator": "assistant"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.25」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将一边回顾2023年7月15日（周六）、16日（周日）举办的「5th EVENT ARENA TOUR GO BEYOND - WISH -」，一边分享幕后趣闻！节目还会聊到演唱歌曲以及与演员之间的关系等，轻松展开各种“稍稍”话题！敬请期待！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "eventernote-2023-07-30": {
       "title_ja": "ウマ娘 プリティーダービー×金沢けいばコラボイベント「香坂さき トークショー」",
@@ -1534,9 +1600,10 @@
     },
     "sokosoko-paka-live-tv-024": {
       "title_ja": "そこそこぱかライブTV Vol.24",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.24」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.24」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はアニメ『ウマ娘 プリティーダービー ROAD TO THE TOP』ゴールイン！スペシャルとして、メインキャストの4人が再び出走！ 全4話の振り返りや収録時のエピソードなど、作品にまつわるそこそこウラ話をお届け！ さらに出走者の 「そこそこ好きなお菓子の話」や「そこそこ好きなビジュの話」など、“そこそこ” なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.24",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.24」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次作为动画《赛马娘 Pretty Derby ROAD TO THE TOP》冲线！特别篇，4位主要演员再次登场！她们将回顾全4集并分享录音时的故事等与作品有关的幕后趣闻！此外还会聊聊出演者「稍稍喜欢的点心」和「稍稍喜欢的视觉设计」等轻松话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-029": {
       "title_ja": "ぱかライブTV Vol.29",
@@ -1546,9 +1613,10 @@
     },
     "sokosoko-paka-live-tv-023": {
       "title_ja": "そこそこぱかライブTV Vol.23",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.23」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.23」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回はエイプリルフール企画から生まれた「BoC'z」やゴールデンウィークに開催された「ギャルウィークキャンペーン」のそこそこウラ話などをお届け！ さらに出走者の 「そこそこ挑戦している話」や「そこそこ自慢できる話」など、“そこそこ” なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.23",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.23」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将分享愚人节企划诞生的「BoC'z」以及黄金周举办的「辣妹周活动」的幕后趣闻！此外还会聊聊出演者「稍稍正在挑战的事情」和「稍稍值得自豪的事情」等轻松话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "live-cd-2023-05-07-winning-live-11": {
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 11 & アニメ『うまゆる』アルバム合同発売記念イベント",
@@ -1575,9 +1643,10 @@
     },
     "sokosoko-paka-live-tv-022": {
       "title_ja": "そこそこぱかライブTV Vol.22",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.22」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.22」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！ 今回は「オーディション」のそこそこウラ話や、「私のヒミツ！」などをお届け！ さらに、新作コミカライズ「ウマ娘 プリティーダービー スターブロッサム」についてのお話など、\"そこそこ\" なトークをゆるりとお送りします！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.22",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.22」！节目氛围与「PakaLive TV」不同，赛马娘的演员们将为大家带来轻松的“稍稍”聊天！本次将分享「试镜」的幕后趣闻，以及「我的秘密！」等内容！此外还会聊到新漫画化作品《赛马娘 Pretty Derby Star Blossom》，轻松展开各种“稍稍”话题！敬请期待！",
+      "summary_translator": "assistant"
     },
     "eventernote-2023-04-09": {
       "title_ja": "ウマ娘 プリティーダービー 4th EVENT SPECIAL DREAMERS!! Blu-ray発売記念イベント",
@@ -1625,9 +1694,10 @@
     },
     "sokosoko-paka-live-tv-021": {
       "title_ja": "そこそこぱかライブTV Vol.21",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.21」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.21」！ 「ぱかライブTV」とは雰囲気を変えて、アニメ「ウマ娘 プリティーダービー ROAD TO THE TOP」のメインキャスト4人が ”そこそこ” なトークをゆるりとお送りします！ 今回はアニメのそこそこウラ話や見どころ、さらに出走者の 『そこそこ頑張ってる話』や『そこそこお得だった話』などをお届け！",
       "title_zh": "SokoSoko PakaLive TV Vol.21",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.21」！节目氛围与「PakaLive TV」不同，动画《赛马娘 Pretty Derby ROAD TO THE TOP》的4位主要演员将为大家带来轻松的“稍稍”聊天！本次将分享动画的幕后趣闻与看点，以及出演者「稍稍努力着的事情」「稍稍觉得划算的事情」等内容！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-026": {
       "title_ja": "ぱかライブTV Vol.26",
@@ -1637,9 +1707,10 @@
     },
     "sokosoko-paka-live-tv-020": {
       "title_ja": "そこそこぱかライブTV Vol.20",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.20」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.20」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！ 今回は2月24日（金）に迎えるゲームリリース2周年をお祝いして、これまでの『忘れられない思い出』やウマ娘のお披露目イベントにまつわるそこそこウラ話などをお届け！ さらに出走者の 『そこそこおいしい話』など、“そこそこ” なトークをゆるりとお送りします！",
       "title_zh": "SokoSoko PakaLive TV Vol.20",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.20」！节目氛围与「PakaLive TV」不同，负责赛马娘配音的演员们将为大家带来轻松的“稍稍”聊天！本次为庆祝2月24日（周五）迎来的游戏发行2周年，将分享至今「难以忘怀的回忆」以及与赛马娘亮相活动有关的幕后趣闻！此外还会聊聊出演者「稍稍好吃的故事」等轻松话题！",
+      "summary_translator": "assistant"
     },
     "eventernote-2023-02-12": {
       "title_ja": "ワンダーフェスティバル2023[冬] 『WONDERFUL HOBBY LIFE FOR YOU!! 36』ブース『ウマ娘 プリティーダービー』ステージ",
@@ -1714,9 +1785,10 @@
     },
     "sokosoko-paka-live-tv-019": {
       "title_ja": "そこそこぱかライブTV Vol.19",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.19」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.19」！ 「ぱかライブTV」とは雰囲気を変えて、舞台「ウマ娘 プリティーダービー」～Sprinters' Story～メインキャストの4人が ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.19",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.19」！节目氛围与「PakaLive TV」不同，舞台剧《赛马娘 Pretty Derby》～Sprinters' Story～的4位主要演员将为大家带来轻松的“稍稍”聊天！",
+      "summary_translator": "assistant"
     },
     "live-other-2022-12-31-6-2022-2023": {
       "title_ja": "第6回 ももいろ歌合戦 2022→2023",
@@ -1746,9 +1818,10 @@
     },
     "sokosoko-paka-live-tv-018": {
       "title_ja": "そこそこぱかライブTV Vol.18",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.18」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.18」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.18",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.18」！节目氛围与「PakaLive TV」不同，负责赛马娘配音的演员们将为大家带来轻松的“稍稍”聊天！",
+      "summary_translator": "assistant"
     },
     "eventernote-2022-12-17": {
       "title_ja": "ウマ娘 プリティーダービー×ウィナーズレディコラボ in 中山競馬場 12月17日",
@@ -1767,10 +1840,11 @@
     },
     "official-special-20221130-tv-extra-stage": {
       "title_ja": "そこそこぱかライブTV -EXTRA STAGE-",
-      "summary_ja": "今回は特別版！「そこそこぱかライブTV -EXTRA STAGE-」",
+      "summary_ja": "今回は特別版！「そこそこぱかライブTV -EXTRA STAGE-」 2022年11月5日(土)6日(日)に開催された『ウマ娘 プリティーダービー 4th EVENT SPECIAL DREAMERS!! EXTRA STAGE』を振り返ります！ イベントでお世話になった人の話やステージ裏の話など、\"EXTRA\"なお話を前後編の2部構成でお届けします！",
       "title_zh": "SokoSoko PakaLive TV -EXTRA STAGE-",
-      "summary_zh": "SokoSoko PakaLive TV的EXTRA STAGE特别篇。",
-      "translator": "assistant"
+      "summary_zh": "本次是特别版！「SokoSoko PakaLive TV -EXTRA STAGE-」将回顾2022年11月5日（周六）、6日（周日）举办的『赛马娘 Pretty Derby 4th EVENT SPECIAL DREAMERS!! EXTRA STAGE』！节目将以前后篇2部分的形式，分享与活动中帮助过我们的工作人员有关的故事以及舞台幕后趣闻等“EXTRA”内容！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "live-cd-2022-11-27-winning-live-08": {
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 08 発売記念 配信イベント",
@@ -1826,9 +1900,10 @@
     },
     "sokosoko-paka-live-tv-017": {
       "title_ja": "そこそこぱかライブTV Vol.17",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.17」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.17」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.17",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.17」！节目氛围与「PakaLive TV」不同，负责赛马娘配音的演员们将为大家带来轻松的“稍稍”聊天！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-021": {
       "title_ja": "ぱかライブTV Vol.21",
@@ -1857,9 +1932,10 @@
     },
     "sokosoko-paka-live-tv-016": {
       "title_ja": "そこそこぱかライブTV Vol.16",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.16」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.16」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.16",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV Vol.16」！节目氛围与「PakaLive TV」不同，负责赛马娘配音的演员们将为大家带来轻松的“稍稍”聊天！",
+      "summary_translator": "assistant"
     },
     "live-other-2022-08-27-animelo-summer-live-2022-sparkle": {
       "title_ja": "Animelo Summer Live 2022 -Sparkle-",
@@ -1868,9 +1944,10 @@
     },
     "sokosoko-paka-live-tv-015": {
       "title_ja": "そこそこぱかライブTV Vol.15",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.15」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.15」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.15",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.15》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-020": {
       "title_ja": "ぱかライブTV Vol.20",
@@ -1920,9 +1997,10 @@
     },
     "sokosoko-paka-live-tv-014": {
       "title_ja": "そこそこぱかライブTV Vol.14",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.14」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.14」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.14",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.14》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-018": {
       "title_ja": "ぱかライブTV Vol.18",
@@ -1939,9 +2017,10 @@
     },
     "sokosoko-paka-live-tv-013": {
       "title_ja": "そこそこぱかライブTV Vol.13",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.13」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.13」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.13",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.13》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "pakatube-20220616-shlgvtzq-c8": {
       "title_ja": "【梅雨特別企画！】梅雨の季節を楽しく乗り切るための雨の雑学を紹介するぜ！",
@@ -1975,9 +2054,10 @@
     },
     "sokosoko-paka-live-tv-012": {
       "title_ja": "そこそこぱかライブTV Vol.12",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.12」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.12」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.12",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.12》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "live-numbered-4th-event-2022-05-04": {
       "title_ja": "ウマ娘 4th EVENT「SPECIAL DREAMERS!!」-横滨公演",
@@ -1998,9 +2078,10 @@
     },
     "sokosoko-paka-live-tv-011": {
       "title_ja": "そこそこぱかライブTV Vol.11",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.11」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.11」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.11",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.11》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "eventernote-2022-04-10-2": {
       "title_ja": "名古屋競馬場 オープニングイベント「安藤勝己&ウマ娘プリティーダービー出演声優高柳知葉（オグリキャップ役）トークショー」15:00",
@@ -2035,9 +2116,10 @@
     },
     "sokosoko-paka-live-tv-010": {
       "title_ja": "そこそこぱかライブTV Vol.10",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.10」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.10」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.10",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.10》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "pakatube-20220317-ixoha1g0r7q": {
       "title_ja": "【ぴすラジッ！】オマエらからのコメント紹介はもちろん！新企画も始動するぜ！",
@@ -2067,9 +2149,10 @@
     },
     "sokosoko-paka-live-tv-009": {
       "title_ja": "そこそこぱかライブTV Vol.9",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.9」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.9」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.9",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.9》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "live-other-2022-02-13-2022": {
       "title_ja": "オダイバ!!超次元音楽祭-ヨコハマからハッピーバレンタインフェス2022-",
@@ -2091,9 +2174,10 @@
     },
     "sokosoko-paka-live-tv-008": {
       "title_ja": "そこそこぱかライブTV Vol.8",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.8」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.8」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.8",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.8》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "live-other-2022-01-01-cdtv-2021-2022": {
       "title_ja": "CDTVスペシャル！年越しプレミアライブ2021→2022",
@@ -2115,9 +2199,10 @@
     },
     "sokosoko-paka-live-tv-007": {
       "title_ja": "そこそこぱかライブTV Vol.7",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.7」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.7」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.7",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.7》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-012": {
       "title_ja": "ぱかライブTV Vol.12",
@@ -2155,9 +2240,10 @@
     },
     "sokosoko-paka-live-tv-006": {
       "title_ja": "そこそこぱかライブTV Vol.6",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.6」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.6」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.6",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.6》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "live-cd-2021-11-06-winning-live-02": {
       "title_ja": "WINNING LIVE 02 発売記念配信イベント",
@@ -2184,9 +2270,10 @@
     },
     "sokosoko-paka-live-tv-005": {
       "title_ja": "そこそこぱかライブTV Vol.5",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.5」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.5」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.5",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.5》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "live-other-2021-10-09-and-more-fes-2021": {
       "title_ja": "シブヤノオト and more FES.2021",
@@ -2201,9 +2288,10 @@
     },
     "sokosoko-paka-live-tv-004": {
       "title_ja": "そこそこぱかライブTV Vol.4",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.4」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.4」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.4",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.4》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-009": {
       "title_ja": "ぱかライブTV Vol.9",
@@ -2219,9 +2307,10 @@
     },
     "sokosoko-paka-live-tv-003": {
       "title_ja": "そこそこぱかライブTV Vol.3",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.3」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.3」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.3",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.3》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "pakatube-20210820-uuvp1x5g33s": {
       "title_ja": "【ぴすラジッ！】ウマ娘楽曲でトークしちゃうぞ！",
@@ -2250,9 +2339,10 @@
     },
     "sokosoko-paka-live-tv-002": {
       "title_ja": "そこそこぱかライブTV Vol.2",
-      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.2」！",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV Vol.2」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.2",
-      "summary_zh": "不定期播出的节目「SokoSoko PakaLive TV」！"
+      "summary_zh": "不定期播出的节目《SokoSoko PakaLive TV Vol.2》！节目风格与《PakaLive TV》有所不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "live-other-2021-07-17-title-120f9f043a5b": {
       "title_ja": "シブヤノオト",
@@ -2266,9 +2356,10 @@
     },
     "sokosoko-paka-live-tv-001": {
       "title_ja": "そこそこぱかライブTV Vol.1",
-      "summary_ja": "不定期配信の新番組「そこそこぱかライブTV」Vol.1！",
+      "summary_ja": "不定期配信の新番組「そこそこぱかライブTV」Vol.1！ これまでの「ぱかライブTV」とは少し雰囲気を変えて、ウマ娘の声を担当しているキャストの皆さんが ”そこそこ” なトークをゆるりとお届けします！",
       "title_zh": "SokoSoko PakaLive TV Vol.1",
-      "summary_zh": "不定期播出的新节目「SokoSoko PakaLive TV」Vol.1！"
+      "summary_zh": "不定期播出的新节目《SokoSoko PakaLive TV》Vol.1！节目风格与此前的《PakaLive TV》略有不同，由担任赛马娘配音的各位演员轻松展开“还算可以”的闲聊，为大家悠闲地带来谈话内容！",
+      "summary_translator": "assistant"
     },
     "paka-live-tv-007": {
       "title_ja": "ぱかライブTV Vol.7",
@@ -2324,24 +2415,27 @@
     },
     "official-special-20200908-5": {
       "title_ja": "アニメ「うまよん」特別企画 オーディオコメンタリーリレー第５回",
-      "summary_ja": "アニメ「うまよん」の中から選りすぐりのエピソードをお届け！",
+      "summary_ja": "アニメ「うまよん」の中から選りすぐりのエピソードをお届け！ 第1話、第2話に続き、第5話『大激戦！ラーメン杯（ＧⅡ）』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 スペシャルウィーク役 和氣あず未 トウカイテイオー役 Machico オグリキャップ役 高柳知葉 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。",
       "title_zh": "动画「四格马娘」特别企划 音频评论接力第５回",
-      "summary_zh": "精选动画《四格马娘》的片段，由出演者带来音频评论。",
-      "translator": "assistant"
+      "summary_zh": "精选动画《四格马娘》中的精彩集数！继第1集、第2集之后，本期将与出演演员的视频一同欣赏第5集《大激战！拉面杯（GⅡ）》的音频评论！出演：特别周役 和气杏未、东海帝王役 Machico、小栗帽役 高柳知叶。【播出信息】TOKYO MX、BS11、AT-X自2020年7月7日起每周二21:54播出。※播出时间可能未经预告变更。",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "official-special-20200825-2": {
       "title_ja": "アニメ「うまよん」特別企画 オーディオコメンタリーリレー第２回",
-      "summary_ja": "第2話『出来立て!トレセン学園案内VTR』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！",
+      "summary_ja": "第2話『出来立て!トレセン学園案内VTR』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 トウカイテイオー役 Machico 駿川たづな役 藤井ゆきよ オグリキャップ役 高柳知葉 今後も一部のエピソードを公開予定！ ぜひ、ご期待ください！ 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。",
       "title_zh": "动画「四格马娘」特别企划 音频评论接力第２回",
-      "summary_zh": "结合出演者画面，欣赏《四格马娘》第2集《新鲜出炉！特雷森学园导览录像》的音频评论。",
-      "translator": "assistant"
+      "summary_zh": "本期将与出演演员的视频一同欣赏第2集《刚做好的！特雷森学园导览VTR》的音频评论！出演：东海帝王役 Machico、骏川手纲役 藤井幸代、小栗帽役 高柳知叶。今后还将公开部分集数，敬请期待！【播出信息】TOKYO MX、BS11、AT-X自2020年7月7日起每周二21:54播出。※播出时间可能未经预告变更。",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "official-special-20200811-1": {
       "title_ja": "アニメ「うまよん」特別企画 オーディオコメンタリーリレー第１回",
-      "summary_ja": "第1話『40点下!トレセン学園追試特別』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！",
+      "summary_ja": "第1話『40点下!トレセン学園追試特別』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 スペシャルウィーク役 和氣あず未 サイレンススズカ役 高野麻里佳 トウカイテイオー役 Machico 今後も一部のエピソードを公開予定！ ぜひ、ご期待ください！ 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。",
       "title_zh": "动画「四格马娘」特别企划 音频评论接力第１回",
-      "summary_zh": "结合出演者画面，欣赏《四格马娘》第1集《40分以下！特雷森学园补考特辑》的音频评论。",
-      "translator": "assistant"
+      "summary_zh": "本期将与出演演员的视频一同欣赏第1集《40分以下！特雷森学园补考特别篇》的音频评论！出演：特别周役 和气杏未、无声铃鹿役 高野麻里佳、东海帝王役 Machico。今后还将公开部分集数，敬请期待！【播出信息】TOKYO MX、BS11、AT-X自2020年7月7日起每周二21:54播出。※播出时间可能未经预告变更。",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "pakatube-20191218-2": {
       "title_ja": "【メカダービー】ゴルシちゃん最速への道～その2～【ぱかチューブっ！杯】@ウマ娘",
@@ -2821,8 +2915,8 @@
     },
     "all-night-nippon-gold-004": {
       "title_ja": "ウマ娘のオールナイトニッポンGOLD 第4回",
-      "summary_ja": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "summary_zh": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
+      "summary_ja": "2026年11月27日（金）22:00～24:00に「ウマ娘のオールナイトニッポンGOLD」第4回を生放送！パーソナリティは高柳知葉（オグリキャップ役）、瀬戸桃子（ベルノライト役）、優木かな（スーパークリーク役）。ゲストに[Alexandros]の川上洋平さんを迎えます。",
+      "summary_zh": "2026年11月27日22:00至24:00直播《赛马娘的 All Night Nippon GOLD》第4期。高柳知叶（小栗帽）、濑户桃子（崭新光辉）、优木加奈（超级溪流）担任主持，并邀请[Alexandros]的川上洋平担任嘉宾；节目以日本放送为核心台，在全国19家电台联播。",
       "title_zh": "赛马娘 All Night Nippon GOLD 第4期",
       "translator": "assistant"
     },
@@ -2846,9 +2940,9 @@
     },
     "paka-live-tv-prime-008": {
       "title_ja": "ぱかライブTV' #8",
-      "summary_ja": "公式生配信番組「ぱかライブTV' #8」を放送します！",
+      "summary_ja": "今回は未発表の新たなウマ娘役として廣瀬千夏さんが初出走！ 番組内では新たなウマ娘を発表するほか、新育成シナリオ「朋、史解き ―午式駿大祭―」の詳細や新育成シナリオ公開に合わせたキャンペーンなど、ゲーム最新情報を発表！ 『ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE”』の最新情報もお届けします！ さらに、「ぱか'チャレンジ！」では、新育成シナリオ「朋、史解き ―午式駿大祭―」にちなんだ、音楽を使ったリズムゲームに挑戦します！ ぜひお楽しみに！",
       "title_zh": "PakaLive TV' #8",
-      "summary_zh": "介绍新育成剧本、新赛马娘及游戏更新，并带来第七次活动的后续情报。星谷美绪担任主持，木村千咲、山本希望、河野日和、紫月杏朱彩、海野水玉与广濑千夏出演。",
+      "summary_zh": "广濑千夏将以尚未公布的新赛马娘的声优身份首次出演！节目除公布新赛马娘外，还将介绍新培育剧本《与友解史―午式骏大祭―》的详情、配合剧本公开的活动等游戏最新消息，并带来《赛马娘 Pretty Derby 7th EVENT WORLD TOUR “THE STAGE”》的最新情报。在「Paka'挑战！」环节中，还将挑战呼应新剧本主题的音乐节奏游戏，敬请期待！",
       "translator": "assistant"
     },
     "pakatube-20261023-gang-beasts-g-5": {
@@ -2895,10 +2989,11 @@
     },
     "official-special-20261017-re-dive": {
       "title_ja": "プリンセスコネクト！Re:Dive×ウマ娘 プリティーダービーコラボ記念生放送！",
-      "summary_ja": "ペコリーヌ役のM・A・Oさん、コッコロ役の伊藤美来さん、キャル役の立花理香さん、そして「ウマ娘 プリティーダービー」から、ゴールドシップ役の上田瞳さん、アーモンドアイ役の石原夏織さん、ラッキーライラック役の中島由貴さん、デアリングタクト役の羊宮妃那さんをお迎えし、「ウマ娘 プリティーダービー」とのコラボ情報をたっぷりご紹介いたします！",
+      "summary_ja": "ペコリーヌ役のM・A・Oさん、コッコロ役の伊藤美来さん、キャル役の立花理香さん、そして「ウマ娘 プリティーダービー」から、ゴールドシップ役の上田瞳さん、アーモンドアイ役の石原夏織さん、ラッキーライラック役の中島由貴さん、デアリングタクト役の羊宮妃那さんをお迎えし、「ウマ娘 プリティーダービー」とのコラボ情報をたっぷりご紹介いたします！ また、生放送当日は「プリンセスコネクト！Re:Dive」公式Xにてリポストキャンペーンを開催いたします！ 抽選で3名様に、KVを使用した額縁入りイラストをプレゼント♪お見逃しなく！",
       "title_zh": "公主连结！Re:Dive×赛马娘 Pretty Derby 联动纪念直播",
-      "summary_zh": "M・A・O、伊藤美来、立花理香与赛马娘出演者上田瞳、石原夏织、中岛由贵、羊宫妃那共同介绍联动内容。",
-      "translator": "assistant"
+      "summary_zh": "我们将邀请饰演佩可莉姆的M·A·O、饰演可可萝的伊藤美来、饰演凯露的立花理香，以及来自《赛马娘 Pretty Derby》的上田瞳（黄金船役）、石原夏织（杏目役）、中岛由贵（旺紫丁役）和羊宫妃那（谋勇兼备役），为大家带来丰富的《赛马娘 Pretty Derby》联动资讯！直播当天还将在《公主连结！Re:Dive》官方X举办转发活动！抽选3位幸运观众，赠送使用主视觉制作的装框插画♪千万不要错过！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "pakatube-20261017-gang-beasts-a-4": {
       "title_ja": "【Gang Beasts最強決定戦｜予選リーグA】ライアン、パーマー、アルダン、ブライトの4人が真剣勝負だ！【ゲーム実況】",
@@ -3091,10 +3186,11 @@
     },
     "official-special-20210505-gw-tv-vol-564": {
       "title_ja": "【ゴルシちゃんのGW計画】「ウマ娘 プリティーダービー」ぱかライブTV Vol.564開催だぜ！　@ウマ娘",
-      "summary_ja": "公式（自称）生配信番組「ぱかライブTV Vol.564」を放送するぜ！",
+      "summary_ja": "公式（自称）生配信番組「ぱかライブTV Vol.564」を放送するぜ！ ゴルシちゃんをスタジオに迎え、ゴルシちゃんの最新情報をゴルシちゃんがお届け！ 見逃すんじゃないぞ～！",
       "title_zh": "黄金船的黄金周计划：PakaLive TV Vol.564 特别节目",
-      "summary_zh": "黄金船推出自称官方的PakaLive TV Vol.564直播，这是黄金周特别企划。",
-      "translator": "assistant"
+      "summary_zh": "自称官方的直播节目《PakaLive TV Vol.564》要开播啦！黄金船将来到演播室，由黄金船亲自带来黄金船的最新消息！可别错过啦～！",
+      "translator": "assistant",
+      "summary_translator": "assistant"
     },
     "eventernote-2018-02-25": {
       "title_ja": "「STARTING GATE！―ウマ娘プリティーダービー―」2巻発売記念 トークショー&お渡し会",

@@ -79,6 +79,30 @@ class GoogleSetlistTests(unittest.TestCase):
         another_day['id'], another_day['date'] = 'different-day', '2026-10-18'
         self.assertEqual(len(dedupe_events(merge_numbered_sources([copy.deepcopy(primary), another_day]))), 2)
 
+    def test_exact_eventernote_identity_merges_importer_copy_and_keeps_alias(self):
+        source = 'https://www.eventernote.com/events/424802/'
+        primary = {
+            'id': 'live-cd-2025-07-26-1-1', 'title': '发售活动【1部】', 'date': '2025-07-26',
+            'kind': 'concert', 'sources': [{'kind': 'eventernote', 'url': source}],
+            'sessions': [{'id': 'primary-session', 'label': '第1部', 'date': '2025-07-26', 'songs': [], 'character_ids': [], 'cast': [], 'performances': []}],
+        }
+        imported = {
+            'id': 'live-other-source-3ecbf19d7cc8', 'title': '发售活动【第1部】', 'date': '2025-07-26',
+            'kind': 'onsite', 'sources': [{'kind': 'eventernote', 'url': 'https://www.eventernote.com/events/424802'}],
+            'sessions': [{'id': 'imported-session', 'label': '场次1', 'date': '2025-07-26', 'songs': [], 'character_ids': [], 'cast': [], 'performances': []}],
+        }
+        result = dedupe_events([primary, imported])
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]['id'], 'live-cd-2025-07-26-1-1')
+        self.assertIn('live-other-source-3ecbf19d7cc8', result[0]['id_aliases'])
+        self.assertGreaterEqual(len(result[0]['sessions']), 1)
+
+        another_day = copy.deepcopy(imported)
+        another_day['id'] = 'different-day'
+        another_day['date'] = '2025-07-27'
+        another_day['sessions'][0]['date'] = '2025-07-27'
+        self.assertEqual(len(dedupe_events([copy.deepcopy(primary), another_day])), 2)
+
 
 if __name__ == '__main__':
     unittest.main()

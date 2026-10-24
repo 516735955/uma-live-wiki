@@ -16,4 +16,6 @@ assert(!search.includes('Machico', 'Lynn'));
 assert.strictEqual(search.kanaToRomaji('キャラ'), 'kyara');
 assert.strictEqual(search.kanaToRomaji('トウカイテイオー'), 'toukaiteio');
 assert.strictEqual(search.kanaToRomaji('マックイーン'), 'makkuin');
+assert(search.includes('繚乱縁舞', 'ryouran enbu'));
+assert(search.includes('繚乱縁舞', 'ryouranenbu'));
 console.log('search text checks passed');

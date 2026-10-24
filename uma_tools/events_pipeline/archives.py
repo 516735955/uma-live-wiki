@@ -272,9 +272,9 @@ def official_radio_programs(existing_programs: list[dict[str, pipeline_common.An
                 {"name": "オーイシマサヨシ", "role": "ゲスト", "person_type": "external_guest"},
             ],
             "summary": "劇場版『新時代の扉』出演者を中心にしたラジオ特別番組。",
-            "source_kind": "official_youtube",
-            "source_url": trailer_url,
-            "sources": [{"kind": "official_youtube", "label": "官方 YouTube", "url": trailer_url}],
+            "source_kind": "official_broadcaster",
+            "source_url": pipeline_common.ANN_PROGRAM_URL,
+            "sources": [{"kind": "official_broadcaster", "label": "节目官方页", "url": pipeline_common.ANN_PROGRAM_URL}],
         },
     ]
     known = {row["id"]: row for row in [*existing_programs, *rows] if row.get("series_id") == series_id}
@@ -353,8 +353,8 @@ def official_radio_programs(existing_programs: list[dict[str, pipeline_common.An
             "schedule_status": "announced_tba",
             "metadata_status": "announced_tba",
             "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-            "source_kind": "official_youtube",
-            "source_url": trailer_url,
-            "sources": [{"kind": "official_youtube", "label": "官方 YouTube", "url": trailer_url}],
+            "source_kind": "official_broadcaster",
+            "source_url": pipeline_common.ANN_PROGRAM_URL,
+            "sources": [{"kind": "official_broadcaster", "label": "节目官方页", "url": pipeline_common.ANN_PROGRAM_URL}],
         })
     return rows

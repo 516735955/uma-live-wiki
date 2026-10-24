@@ -55,7 +55,7 @@ function sourceRecords(root, options = {}) {
   for (const [id, row] of Object.entries(detail)) {
     // Only send a character description when it really contains Japanese.
     const original = row.language === 'ja' ? row.html : (row.html_ja || row.html);
-    if ((row.language === 'ja' || row.html_ja) && hasJapaneseDescription(original)) records.push({ key: `character:${id}`, entity_type: 'character', entity_id: id, file: 'characters', summary_ja: original, summary_zh: row.language === 'zh' ? row.html : '' });
+    if ((row.language === 'ja' || row.html_ja) && hasJapaneseDescription(original)) records.push({ key: `character:${id}`, entity_type: 'character', entity_id: id, file: 'characters', summary_ja: original, summary_zh: /^zh(?:-|$)/i.test(row.language || '') ? row.html : '' });
   }
   const horses = readWindow(path.join(data, 'horses_details.js'), 'HORSES_DETAIL');
   for (const [id, row] of Object.entries(horses)) {
@@ -177,10 +177,10 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
   let animeChanged = false;
   const scope = options.scope || '';
   const allSources = sourceRecords(root);
-  const selectedSources = allSources.filter(item => !scope || (scope === 'horses' ? item.entity_type === 'horse' : scope === 'characters' ? item.entity_type === 'character' : scope === 'anime' ? item.entity_type.startsWith('anime_') : item.entity_type === scope));
-  const selectedKeys = new Set(selectedSources.map(item => item.key));
+  const inScope = type => !scope || (scope === 'horses' ? type === 'horse' : scope === 'characters' ? type === 'character' : scope === 'anime' ? type.startsWith('anime_') : type === scope);
+  const selectedSources = allSources.filter(item => inScope(item.entity_type));
   // A scoped run must not discard another maintainer's pending queue.
-  pending = (document.pending || []).filter(item => !selectedKeys.has(item.key));
+  pending = (document.pending || []).filter(item => !inScope(records[item.key]?.entity_type || item.key.split(':')[0].replace(/-/g, '_')));
   for (const source of selectedSources) {
     handledKeys.add(source.key);
     const previous = records[source.key] || {};

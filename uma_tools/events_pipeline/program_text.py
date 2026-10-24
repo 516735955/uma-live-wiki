@@ -76,6 +76,43 @@ def program_text_lines(value: str) -> list[str]:
     return [line.strip() for line in text.splitlines()]
 
 
+def program_summary(description: str) -> str:
+    """Return editorial programme copy, excluding player warnings and boilerplate.
+
+    Video descriptions often start with a recording-quality disclaimer.  That
+    is useful provenance, but it is not the programme summary.  Keep the full
+    description in ``source_description`` and extract the editorial paragraphs
+    before the schedule/cast block instead.
+    """
+    lines = program_text_lines(description)
+    warning = pipeline_common.re.compile(
+        r"ノイズ|音声に不具合|ご視聴の際はご注意|視聴の際.*注意|"
+        r"technical issue|ご迷惑をおかけしまして",
+        pipeline_common.re.I,
+    )
+    boilerplate = pipeline_common.re.compile(
+        r"^公式(?:生)?配信番組.*(?:放送|配信)します[！!。]?$",
+        pipeline_common.re.I,
+    )
+    stop = pipeline_common.re.compile(r"^(?:放送|配信)日時[:：]|^(?:出走者|出演者)[:：]?$", pipeline_common.re.I)
+    editorial: list[str] = []
+    warning_seen = False
+    for line in lines:
+        if warning.search(line):
+            warning_seen = True
+            continue
+        if stop.search(line):
+            break
+        if not line or boilerplate.search(line) or line.startswith(("http://", "https://")):
+            continue
+        # An apology immediately following a skipped warning is also part of
+        # the warning block, even when the source omits the warning keyword.
+        if warning_seen and pipeline_common.re.search(r"申し訳|お詫び", line):
+            continue
+        editorial.append(line)
+    return " ".join(editorial).strip()
+
+
 def parse_program_cast_line(line: str) -> dict[str, str] | None:
     value = pipeline_common.re.sub(r"[【\[].*?[】\]]", "", line or "").strip()
     if pipeline_common.re.search(r"\.\.\.|…|and more|について|として|決定|更新|情報|コラボ|^[・［\[]|^は", value, pipeline_common.re.I):

@@ -54,8 +54,12 @@ async function main() {
   assert(knownEvent.event.sessions.every(session => session.performances.length >= 25), 'both live days retain their complete song lists');
   assert(knownEvent.catalog_songs.length > 0, 'event playback needs scoped recording versions');
   for (const event of snapshot.eventsDoc.events) {
-    for (const alias of event.id_aliases || [])
-      assert.strictEqual((await store.event(alias)).event.id, event.id, 'merged event IDs keep resolving to their canonical event');
+    for (const alias of event.id_aliases || []) {
+      const resolved = (await store.event(alias)).event;
+      const grouped = snapshot.parentForChild.get(event.id);
+      assert.strictEqual(resolved.id, grouped ? grouped.parent.id : event.id, 'merged event IDs keep resolving to their canonical presentation');
+      if (grouped) assert.strictEqual(resolved.requested_session_id, grouped.session_id, 'old child aliases retain the intended session');
+    }
   }
   for (const session of knownEvent.event.sessions) {
     for (const performance of session.performances) {

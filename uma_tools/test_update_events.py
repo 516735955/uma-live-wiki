@@ -90,6 +90,22 @@ class EventPipelineTest(unittest.TestCase):
             "北海道の動物たちに魅了されたサクラチヨノオーが…… ■イベント開催中！",
         )
 
+    def test_program_summary_skips_recording_warning_and_keeps_editorial_copy(self):
+        description = (
+            "※43分23秒に大きなノイズが発生しております。ご視聴の際はご注意ください。\n"
+            "ご迷惑をおかけしまして、誠に申し訳ございません。\n\n"
+            "公式生配信番組「ぱかライブTV' #8」を放送します！\n\n"
+            "今回は未発表の新たなウマ娘役として廣瀬千夏さんが初出走！\n\n"
+            "番組内では新たなウマ娘を発表するほか、新育成シナリオの詳細を発表！\n\n"
+            "放送日時：2026年10月24日（土）20:00 ～ 予定\n"
+            "出走者："
+        )
+        summary = UPDATE_EVENTS.program_summary(description)
+        self.assertNotIn("ノイズ", summary)
+        self.assertIn("廣瀬千夏", summary)
+        self.assertIn("新育成シナリオの詳細", summary)
+        self.assertNotIn("放送日時", summary)
+
     def test_program_identity_distinguishes_all_regular_series(self):
         self.assertEqual(
             UPDATE_EVENTS.program_identity("そこそこぱかライブTV Vol.55"),
@@ -738,7 +754,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         for event in built["catalog"]["events"]:
             self.assertTrue(event["image"], event["id"])
             self.assertNotIn("image_fallback", event, event["id"])
-            self.assertNotIn("eventernote.s3.amazonaws.com/", event["image"], event["id"])
+            self.assertTrue(event["image"].startswith(("/", "https://")), event["id"])
         numbered = [event for event in built["catalog"]["events"] if event.get("series_id") == "numbered-live"]
         self.assertEqual({event["image"] for event in numbered}, {
             "/uma_tools/img/event-covers/numbered/1st.png",

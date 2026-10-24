@@ -5,6 +5,7 @@
   "description": "赛马娘 live 页面工具：本地服务 + 官网新CD检测 + 网易云详情补全",
   "devDependencies": {
     "esbuild": "0.25.5",
+    "kuromoji": "^0.1.2",
     "pinyin-pro": "3.29.5"
   },
   "scripts": {

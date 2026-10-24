@@ -61,10 +61,10 @@ export const template = `
                         <div class="entity-intro">
                             <span class="entity-kind">{{ eventKindLabel(eventDetail.kind) }}</span>
                             <h1>{{ eventDetail.title }}</h1><p v-if="eventDetail.title_ja && eventDetail.title_ja !== eventDetail.title" class="entity-reading">{{ eventDetail.title_ja }}</p>
-                            <activity-time v-if="eventSessionOptions.length > 1" :date="eventDetail.date" :end-date="eventDetail.end_date"></activity-time>
+                            <activity-time v-if="eventSessionOptions.length > 1 || !selectedEventSession" :date="eventDetail.date" :end-date="eventDetail.end_date"></activity-time>
                             <dl v-if="eventDetail.venue" class="entity-meta event-venue-meta"><div><dt>地点</dt><dd>{{ eventDetail.venue }}</dd></div></dl>
                             <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || eventDetail.eventunit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
-                            <activity-time v-if="selectedEventSession" class="event-session-time" :date="selectedEventSession.date || eventDetail.date" :end-date="selectedEventSession.end_date" :doors-time="selectedEventSession.doors_time" :start-time="selectedEventSession.start_time" :end-time="selectedEventSession.end_time" :broadcast-time="selectedEventSession.broadcast_time || selectedEventSession.broadcast"></activity-time>
+                            <activity-time v-if="selectedEventSession" class="event-session-time" :date="selectedEventSession.date || eventDetail.date" :end-date="selectedEventSession.end_date" :doors-time="selectedEventSession.doors_time" :start-time="selectedEventSession.start_time" :end-time="selectedEventSession.end_time" :end-estimated="!!selectedEventSession.end_time_estimated" :broadcast-time="selectedEventSession.broadcast_time || selectedEventSession.broadcast"></activity-time>
                         </div>
                     </div>
 

@@ -22,7 +22,7 @@ export function createRouting(deps) {
     if (!seg.length) return Promise.resolve();
     const first = (seg[0] || "").toLowerCase();
     if (first === "news") {
-      return seg.length > 1 ? Promise.resolve() : deps.loadNews();
+      return seg.length > 1 ? Promise.resolve() : deps.loadNews(false, new URL(window.location.href).searchParams.get('q') || '');
     }
     if (first === "music") {
       const musicSection = (seg[1] || "").toLowerCase();

@@ -467,7 +467,10 @@ class CatalogStore {
         if (target !== siteRoot && !target.startsWith(siteRoot + path.sep)) return '';
         return fs.existsSync(target) ? value : '';
       };
+      const imageSources = new Map([...(eventsDoc.events || []), ...(eventsDoc.event_groups || [])].map(row => [String(row.id), row]));
       eventImages = Object.fromEntries(Object.entries(document.items || {}).flatMap(([id, item]) => {
+        const source = imageSources.get(id);
+        if (source && item?.source_image && item.source_image !== source.image) return [];
         const mapped = item && typeof item === 'object' ? {
           ...item,
           image_url: localAsset(item.image_url),

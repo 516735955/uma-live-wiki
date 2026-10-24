@@ -198,6 +198,12 @@ def apply_news_images(events: list[dict], snapshot: dict | None = None) -> list[
             news_title = str(item.get("title") or "")
             if not common.re.search(r"ぱかライブTV", news_title, common.re.I):
                 continue
+            # Equal episode numbers from the three regular programmes are
+            # different identities, including their official artwork.
+            source_series = "sokosoko-paka-live-tv" if "そこそこ" in news_title else (
+                "paka-live-tv-prime" if common.re.search(r"ぱかライブTV\s*['’′＇]", news_title) else "paka-live-tv")
+            if row.get("series_id") and row["series_id"] != source_series:
+                continue
             if not common.re.search(rf"(?:Vol\.?\s*{number}\b|#\s*{number}\b)", news_title, common.re.I):
                 continue
             if item.get("image"):
@@ -212,8 +218,8 @@ def apply_news_images(events: list[dict], snapshot: dict | None = None) -> list[
 
 def apply_source_times(events: list[dict]) -> list[dict]:
     """Promote explicitly published clock times without deriving an end time."""
-    marker = common.re.compile(r"(?:开场|開場|入場)\s*([01]?\d|2[0-3]):([0-5]\d).*?(?:开演|開演|開始|start)\s*([01]?\d|2[0-3]):([0-5]\d).*?(?:终演|終演|終了|end)\s*([01]?\d|2[0-3]):([0-5]\d)", common.re.I | common.re.S)
-    start_only = common.re.compile(r"(?:开演|開演|開始|start)\s*([01]?\d|2[0-3]):([0-5]\d)", common.re.I)
+    patterns = {field: common.re.compile(rf"(?:{labels})\s*([0-3]?\d|4[0-7]):([0-5]\d)", common.re.I)
+                for field, labels in (("doors_time", "开场|開場|入場"), ("start_time", "开演|開演|開始|start"), ("end_time", "终演|終演|終了|end"))}
     title_time = common.re.compile(r"(?:^|[\s【\[（(])([01]?\d|2[0-3]):([0-5]\d)(?:$|[\s】\]）)])")
     archived = _read(EVENTERNOTE_FILE) if EVENTERNOTE_FILE.exists() else {}
     archived_by_link = {str(item.get("link")): item for item in archived.get("events") or [] if item.get("link")}
@@ -225,10 +231,8 @@ def apply_source_times(events: list[dict]) -> list[dict]:
         archived_item = archived_by_link.get(str(event_source.get("url"))) if event_source else None
         if archived_item and archived_item.get("times"):
             source_text = f"{source_text} {archived_item['times']}"
-        match = marker.search(source_text)
-        start = start_only.search(source_text)
         title_match = title_time.search(str(row.get("title") or ""))
-        if not row.get("sessions") and (match or start or title_match):
+        if not row.get("sessions") and (any(pattern.search(source_text) for pattern in patterns.values()) or title_match):
             row["sessions"] = [{
                 "id": f"{row.get('id', 'event')}-session-1",
                 "label": "本场",
@@ -238,32 +242,30 @@ def apply_source_times(events: list[dict]) -> list[dict]:
                 "cast": list(row.get("cast") or []),
                 "setlist_status": "none",
             }]
-        # A single source-level clock cannot be assigned to multiple sessions
-        # safely.  Leave those rows untouched unless a future source provides
-        # per-session evidence; never broadcast one time to every session.
-        if len(row.get("sessions") or []) > 1:
-            output.append(row)
-            continue
+        multiple = len(row.get("sessions") or []) > 1
         for session in row.get("sessions") or []:
             child = dict(session)
-            if match:
-                child.setdefault("doors_time", f"{int(match.group(1)):02d}:{match.group(2)}")
-                child.setdefault("start_time", f"{int(match.group(3)):02d}:{match.group(4)}")
-                child.setdefault("end_time", f"{int(match.group(5)):02d}:{match.group(6)}")
-                child["time_source"] = "eventernote" if archived_item else "event_source_text"
-                child["time_precision"] = "minute"
-                if archived_item:
-                    child["time_source_url"] = archived_item.get("link") or event_source.get("url")
-            elif start:
-                child.setdefault("start_time", f"{int(start.group(1)):02d}:{start.group(2)}")
-                child["time_source"] = "eventernote" if archived_item else "event_source_text"
-                child["time_precision"] = "minute"
-                if archived_item:
-                    child["time_source_url"] = archived_item.get("link") or event_source.get("url")
-            elif title_match:
-                child.setdefault("start_time", f"{int(title_match.group(1)):02d}:{title_match.group(2)}")
-                child["time_source"] = "event_title"
-                child["time_precision"] = "minute"
+            own_source = next((item for item in child.get("sources") or [] if item.get("kind") == "eventernote"), None)
+            own_archive = archived_by_link.get(str(own_source.get("url"))) if own_source else None
+            text = " ".join([str(child.get("source_time_text") or ""), str((own_archive or {}).get("times") or ""), "" if multiple else source_text])
+            filled = False
+            for field, pattern in patterns.items():
+                match = pattern.search(text)
+                if match and not child.get(field):
+                    child[field] = f"{int(match.group(1)):02d}:{match.group(2)}"
+                    filled = True
+                    if field == "end_time" and common.re.search(r"目安|预计|預計|予定|预定", text):
+                        child["end_time_estimated"] = True
+            if not multiple and title_match and not child.get("start_time"):
+                child["start_time"] = f"{int(title_match.group(1)):02d}:{title_match.group(2)}"
+                filled = True
+            if filled:
+                evidence = own_archive or (archived_item if not multiple else None)
+                child.setdefault("time_source", "eventernote" if evidence else "event_source_text")
+                child.setdefault("time_precision", "minute")
+                child.setdefault("source_time_text", text.strip())
+                if evidence:
+                    child.setdefault("time_source_url", evidence.get("link") or "")
             row.setdefault("time_source", child.get("time_source"))
             row.setdefault("time_precision", child.get("time_precision"))
             session.clear(); session.update(child)

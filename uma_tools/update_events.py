@@ -142,6 +142,7 @@ from events_pipeline.program_text import (
     parse_program_cast_line,
     parse_program_date,
     parse_program_sessions,
+    program_summary,
     program_identity,
     program_text_lines,
     canonical_program_title,

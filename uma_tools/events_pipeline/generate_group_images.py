@@ -42,11 +42,11 @@ def rebuild(events: list[dict] | None = None, groups: list[dict] | None = None) 
     OUT.mkdir(parents=True, exist_ok=True)
     rebuilt = 0
     for group in groups:
-        if group.get("image") and "/event-groups/" not in group["image"]:
+        if (group.get("image_source") or {}).get("kind") == "official_shared_visual":
             continue
         children = [events.get(str(member.get("event_id"))) for member in group.get("members") or []]
         children = [item for item in children if item]
-        if not children:
+        if len(children) < 2:
             continue
         tiles = []
         for item in children:

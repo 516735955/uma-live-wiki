@@ -30,7 +30,7 @@
   }
   function pronunciationEntry(value) {
     var entry = PRONUNCIATIONS[value];
-    if (Array.isArray(entry)) return { pinyin: entry[0] || '', initials: entry[1] || '' };
+    if (Array.isArray(entry)) return { pinyin: entry[0] || '', initials: entry[1] || '', romaji: entry[2] || '' };
     return entry || null;
   }
   function pinyin(value) {
@@ -91,14 +91,15 @@
     list.forEach(function (value) {
       if (value == null || value === '') return;
       var text = normalize(value); out.push(text);
-      var roman = kanaToRomaji(text); if (roman && roman !== text) out.push(roman);
+      var roman = kanaToRomaji(text), reading = pronunciationEntry(text); if (roman && roman !== text) out.push(roman); if (reading && reading.romaji) out.push(reading.romaji);
       var py = pinyin(text); if (py) { out.push(py); out.push(initials(text)); }
     });
     return out.join(' ');
   }
   function variants(value) {
-    var text = normalize(value), roman = kanaToRomaji(text), out = text ? [text] : [];
+    var text = normalize(value), roman = kanaToRomaji(text), reading = pronunciationEntry(text), out = text ? [text] : [];
     if (roman && roman !== text) out.push(roman);
+    if (reading && reading.romaji && out.indexOf(reading.romaji) === -1) out.push(reading.romaji);
     return out;
   }
   function includes(values, query) {

@@ -5,6 +5,7 @@ from . import archives as pipeline_archives
 from . import common as pipeline_common
 from . import program_text as pipeline_program_text
 from . import text as pipeline_text
+from . import program_schedule as pipeline_program_schedule
 import sqlite3
 import datetime as _datetime
 from html.parser import HTMLParser
@@ -141,11 +142,16 @@ def public_watch_metadata(video_id: str, expected_channel: str = "") -> dict[str
             stamp = stamp.replace(tzinfo=_datetime.timezone(_datetime.timedelta(hours=9)))
     except (ValueError, AttributeError):
         raise ValueError('public watch date unavailable')
+    release_precision = 'date'
+    if pipeline_common.re.search(r'T\d{2}:\d{2}', str(released)):
+        release_precision = 'second' if pipeline_common.re.search(r'T\d{2}:\d{2}:\d{2}', str(released)) else 'minute'
     thumbnails = (details.get('thumbnail') or {}).get('thumbnails') or []
     result = {
         'id': details.get('videoId'), 'channel_id': details.get('channelId'),
         'title': details.get('title'), 'description': details.get('shortDescription') or '',
         'release_timestamp': stamp.timestamp(),
+        'release_raw': released,
+        'release_precision': release_precision,
         'thumbnail': thumbnails[-1].get('url', '') if thumbnails else (meta('thumbnailUrl') or meta('og:image')),
         'webpage_url': f'https://www.youtube.com/watch?v={video_id}',
         'duration': int(details.get('lengthSeconds') or 0), 'metadata_origin': 'official_watch_page',
@@ -509,9 +515,11 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
                 if len(parsed_dates) > 1:
                     sessions = [{"label": f"第{index + 1}回", "date": value, "cast": cast} for index, value in enumerate(parsed_dates[:2])]
             display_title = pipeline_program_text.canonical_program_title(title)
+            schedule = pipeline_program_schedule.schedule_for_program(source_title=title, source_description=message, broadcast_date=date, source_url=official_url)
             programs.append({
                 "id": event_id, "series_id": series_id, "title": display_title,
                 **({"source_title": title} if display_title != title else {}), "date": date,
+                **schedule,
                 "end_date": sessions[-1]["date"] if sessions and sessions[-1].get("date") else date,
                 "video_id": video_id, "url": video_url, "thumbnail": row.get("image") or "", "duration": None,
                 "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [], "sessions": sessions,
@@ -637,6 +645,12 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             cast = pipeline_program_text.parse_program_cast(description)
             source_title = metadata.get("title") or ""
             display_title = pipeline_program_text.canonical_program_title(source_title)
+            schedule = pipeline_program_schedule.schedule_for_program(
+                source_title=source_title,
+                source_description=str(metadata.get("description") or metadata.get("shortDescription") or ""),
+                metadata=metadata,
+                broadcast_date=broadcast_date,
+            )
             if not event_id and not is_pakatube_character_program(source_title) and (is_official_special_video(source_title) or is_official_collaboration_program(source_title)):
                 series_id = "official-special"
                 suffix = pipeline_text.stable_title_suffix(source_title) or str(metadata.get("id") or futures[future])
@@ -646,12 +660,14 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
                 continue
             programs.append({
                 "id": event_id, "series_id": series_id, "title": display_title, **({"source_title": source_title} if display_title != source_title else {}), "date": broadcast_date,
+                **schedule,
                 "metadata_checked_at": metadata['_metadata_checked_at'],
                 "video_id": metadata.get("id") or "", "url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata.get('id')}",
                 "thumbnail": metadata.get("thumbnail") or "", "duration": metadata.get("duration"),
                 "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [],
                 "sessions": pipeline_program_text.parse_program_sessions(description, broadcast_date),
-                "summary": next((line.strip() for line in description.splitlines() if line.strip()), ""),
+                "source_description": description,
+                "summary": pipeline_program_text.program_summary(description),
                 "source_kind": "official_external" if source_row.get("source_channel") else "official_youtube", "source_url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata.get('id')}",
                 "sources": [{
                     "kind": "official_external" if source_row.get("source_channel") else "official_youtube",
@@ -721,7 +737,10 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             "cast": cast,
             "characters": [],
             "sessions": pipeline_program_text.parse_program_sessions(description, date),
-            "summary": description.split('▼', 1)[0].strip() if '【ウマ娘の日常】' in str(metadata.get('title') or '') else next((line.strip() for line in description.splitlines() if line.strip()), ""),
+            "source_description": description,
+            "summary": (pipeline_program_text.program_summary(description.split('▼', 1)[0])
+                         if '【ウマ娘の日常】' in str(metadata.get('title') or '')
+                         else pipeline_program_text.program_summary(description)),
             "source_kind": "official_youtube",
             "source_url": url,
         })
